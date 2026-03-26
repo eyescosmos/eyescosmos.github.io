@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>アフターイメージ | 写真と世界の交点</title>
 <meta name="description" content="写真史と世界情勢を紐づけた個人サイト。1839年から現代まで、時代と表現のムーブメントから写真の歴史を探ります。">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@700;900&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 /* 廻想体 ネクスト ユーピー — もじワク研究 (https://moji-waku.com/kaiso/) Free font, commercial use OK */
 @font-face {
@@ -35,8 +35,8 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Noto Serif JP', serif;
-  font-weight: 300;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
   line-height: 1.8;
   min-height: 100vh;
 }
@@ -151,9 +151,9 @@ h1 em { font-style: normal; color: var(--accent); }
   50% { opacity: 0.3; }
 }
 .random-name {
-  font-family: 'Noto Serif JP', serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 4px;
 }
 .random-meta {
@@ -291,12 +291,12 @@ h1 em { font-style: normal; color: var(--accent); }
   margin-bottom: 56px;
 }
 .era-date {
-  font-family: 'Playfair Display', serif;
+  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: normal;
   color: var(--accent);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
 }
 .era-date span {
   display: block;
@@ -308,11 +308,11 @@ h1 em { font-style: normal; color: var(--accent); }
   margin-top: 8px;
 }
 .era-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 400;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
   margin-bottom: 20px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
 }
 
 .context-block {
@@ -393,9 +393,9 @@ h1 em { font-style: normal; color: var(--accent); }
   gap: 6px;
 }
 .card-name {
-  font-family: 'Noto Serif JP', serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 4px;
   line-height: 1.3;
 }
@@ -468,10 +468,10 @@ h1 em { font-style: normal; color: var(--accent); }
   margin-bottom: 28px;
 }
 .detail-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 .detail-meta {
   font-family: 'DM Mono', monospace;
@@ -579,12 +579,12 @@ h1 em { font-style: normal; color: var(--accent); }
   margin-bottom: 40px;
 }
 .movement-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  font-weight: 400;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
   color: var(--accent);
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
 }
 .movement-name-en {
   display: block;
@@ -754,7 +754,7 @@ const ERAS = [
     period: '1839 — 1860s',
     title: '黎明期：帝国主義と写真の誕生',
     worldEvents: {
-      text: '蒸気船・鉄道・電信が世界をつなぎ、ヨーロッパ列強は資源と市場を求めてアジア・アフリカへ植民地を拡大した。1839年、イギリスへのアヘン密輸に抵抗した清がアヘン戦争（1839–42年）で敗北し、香港をイギリスに割譲した（『南京条約』1842年）。1848年には「諸国民の春」と呼ばれる革命の波がヨーロッパ全土を席巻した。1853–56年のクリミア戦争では初めて戦場写真が撮影され、1857年のインド大反乱（セポイの乱）によりイギリス東インド会社の直接統治が終わった。1860年代には南北戦争（1861–65年）がアメリカを分断した。',
+      text: 'ヨーロッパ列強が資源を求めてアジア・アフリカへ植民地を拡大した時代。清がアヘン戦争（1839–42年）で敗北し香港を割譲。1848年「諸国民の春」の革命がヨーロッパを席巻し、1853–56年のクリミア戦争、1857年インド大反乱、1861–65年の南北戦争と戦乱が続いた。技術面では1851年スコット・アーチャーが湿板コロジオン法を発表して露光時間を劇的に短縮し、戦場での撮影を可能にした。1844年モールスが有線電信を実用化し、報道とビジュアルが連動する土台が生まれた。',
       sources: [
         { text: 'Britannica — Opium Wars', url: 'https://www.britannica.com/topic/Opium-Wars' },
         { text: 'CFR Education — Industrialization and Imperialism', url: 'https://education.cfr.org/learn/learning-journey/contemporary-history-pre-1900-industrialization-and-imperialism/what-are-the-causes-and-consequences-of-industrialization' },
@@ -775,7 +775,7 @@ const ERAS = [
     period: '1870 — 1890s',
     title: '産業化・社会改革・写真の大衆化',
     worldEvents: {
-      text: '普仏戦争（1870–71年）でフランスが敗北し、ドイツ帝国が誕生した。パリ・コミューン（1871年）はフランス史上初の労働者自治政府として72日間続いたのち、「血の週」と呼ばれる鎮圧で終わった。1873年の世界恐慌は欧米で大規模な労働運動を引き起こし、都市スラムの問題が社会問題として認識され始めた。アメリカでは「金ぴか時代（Gilded Age）」の急速な工業化とともに大量移民が流入し、ニューヨークのロウアーイーストサイドなど都市部の過密化が進んだ。1884–85年のベルリン会議では、ヨーロッパ列強がアフリカを分割する「スクランブル・フォー・アフリカ」を制度化した。',
+      text: '普仏戦争（1870–71年）でフランスが敗北しドイツ帝国が誕生。パリ・コミューン（1871年）は72日で鎮圧され、1873年恐慌が欧米で大規模な労働運動を引き起こした。アメリカでは「金ぴか時代」の急速な工業化と大量移民で都市過密化が進んだ。1884–85年のベルリン会議でアフリカ分割が制度化された。技術面では1871年リチャード・マドックスがゼラチン乾板を発明し撮影直前の薬品塗布が不要に。1880年ニューヨーク・デイリー・グラフィック紙がハーフトーン印刷で写真を新聞掲載し、1888年コダックカメラが大衆写真を開いた。',
       sources: [
         { text: 'Britannica — Franco-Prussian War', url: 'https://www.britannica.com/event/Franco-German-War' },
         { text: 'Wikipedia — Paris Commune', url: 'https://en.wikipedia.org/wiki/Paris_Commune' },
@@ -796,7 +796,7 @@ const ERAS = [
     period: '1890 — 1910s',
     title: 'ピクトリアリズム全盛・写真分離派・世紀転換期',
     worldEvents: {
-      text: '帝国主義の競合が激化する中、1894〜95年の日清戦争で日本が清を破り、台湾・澎湖諸島を割譲させた。1898年の米西戦争でアメリカはスペインからフィリピン・グアム・プエルトリコを獲得し、太平洋における帝国的地位を確立した。1899〜1902年のボーア戦争ではイギリスが南アフリカを制圧した。1900年の義和団の乱では清が西洋列強の連合軍に敗北し、北京議定書により巨額の賠償金を課された。1904〜05年の日露戦争で日本がロシアを破ったことはアジアに衝撃を与え、白人列強の「不敗」神話を崩した。1905年にはロシア第一革命が起き、ロマノフ朝の権威は揺らぎ始めた。1910年には日本が朝鮮を併合し、メキシコ革命が始まった。',
+      text: '日清戦争（1894–95年）・米西戦争（1898年）・ボーア戦争（1899–1902年）・日露戦争（1904–05年）と列強の衝突が続いた。日露戦争での日本の勝利は白人列強「不敗」神話を崩し、アジア各地のナショナリズムを刺激した。1905年ロシア第一革命、1910年日韓併合・メキシコ革命と激動の時代。技術面では1895年レントゲンのX線発見が「見えないものを可視化する」写真の可能性を拡大。1895年リュミエール兄弟が映画を公開し、動く写真が誕生。リュミエール兄弟が発明したオートクローム（1904年特許・1907年商業発売）が世界初の実用的カラー写真技術として登場した。',
       sources: [
         { text: 'Britannica — First Sino-Japanese War', url: 'https://www.britannica.com/event/First-Sino-Japanese-War' },
         { text: 'Britannica — Spanish-American War', url: 'https://www.britannica.com/event/Spanish-American-War' },
