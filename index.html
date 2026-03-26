@@ -7,6 +7,15 @@
 <meta name="description" content="写真史と世界情勢を紐づけた個人サイト。1839年から現代まで、時代と表現のムーブメントから写真の歴史を探ります。">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@700;900&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
+/* 廻想体 ネクスト ユーピー — もじワク研究 (https://moji-waku.com/kaiso/) Free font, commercial use OK */
+@font-face {
+  font-family: 'KaisotaiNextUP';
+  src: url('fonts/Kaisotai-Next-UP-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -55,14 +64,35 @@ header::before {
   margin-bottom: 20px;
 }
 h1 {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
   font-size: clamp(28px, 4.5vw, 58px);
-  font-weight: 900;
+  font-weight: normal;
   line-height: 1.1;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   max-width: 800px;
 }
 h1 em { font-style: normal; color: var(--accent); }
+.title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.wip-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  padding: 3px 10px;
+  white-space: nowrap;
+  position: relative;
+  top: -2px;
+}
+.wip-badge::before {
+  content: '▸ ';
+  opacity: 0.7;
+}
 .header-subtitle {
   font-family: 'DM Mono', monospace;
   font-size: 16px;
@@ -629,7 +659,10 @@ footer a:hover { color: var(--accent); }
 <header>
 <div class="container">
   <div class="header-label">Photography History × World Events</div>
-  <h1><em>アフターイメージ</em></h1>
+  <div class="title-row">
+    <h1><em>アフターイメージ</em></h1>
+    <span class="wip-badge">製作中</span>
+  </div>
   <p class="header-subtitle">写真と世界の交点</p>
   <p class="header-sub">写真は常にその時代の社会・政治・技術の文脈の中に生まれてきた。年代をたどりながら、世界の動きと写真表現の関係を探る。</p>
   <div class="ai-disclaimer">※ 本サイトの情報はAIがウェブ上の資料から収集したものです。出典を明記していますが、曖昧さや誤りが含まれる可能性があります。気になった作家・表現・時代については、ぜひご自身でさらに調べてみてください。誤りを発見した場合はお知らせください。</div>
