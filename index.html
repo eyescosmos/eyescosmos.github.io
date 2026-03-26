@@ -17,8 +17,8 @@
   --accent: #c8a96e;
   --accent-dim: #7a6540;
   --text: #e8e0d4;
-  --text-dim: #8a7f72;
-  --text-muted: #4a4440;
+  --text-dim: #c0b4a8;
+  --text-muted: #6e6560;
 }
 
 html { scroll-behavior: smooth; }
@@ -66,7 +66,7 @@ h1 em { font-style: italic; color: var(--accent); }
 .header-sub {
   margin-top: 24px;
   color: var(--text-dim);
-  font-size: 14px;
+  font-size: 15px;
   max-width: 520px;
   line-height: 1.9;
 }
@@ -126,7 +126,7 @@ h1 em { font-style: italic; color: var(--accent); }
   margin-bottom: 10px;
 }
 .random-excerpt {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-dim);
   line-height: 1.8;
 }
@@ -292,7 +292,7 @@ h1 em { font-style: italic; color: var(--accent); }
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-.context-text { font-size: 14px; color: var(--text-dim); line-height: 1.9; }
+.context-text { font-size: 15px; color: var(--text-dim); line-height: 1.9; }
 .context-source {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
@@ -362,6 +362,12 @@ h1 em { font-style: italic; color: var(--accent); }
   margin-bottom: 6px;
   line-height: 1.3;
 }
+.card-name-ja {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
 .card-years {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
@@ -406,6 +412,10 @@ h1 em { font-style: italic; color: var(--accent); }
   animation: slideDown 0.3s ease;
 }
 .detail-panel.open { display: block; }
+/* movement tab panels have no left indent */
+#movement-main .detail-panel {
+  margin-left: calc(280px + 48px);
+}
 
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-10px); }
@@ -468,7 +478,7 @@ h1 em { font-style: italic; color: var(--accent); }
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-.detail-text { font-size: 14px; color: var(--text-dim); line-height: 1.95; }
+.detail-text { font-size: 15px; color: var(--text-dim); line-height: 1.95; }
 .detail-source {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
@@ -594,6 +604,7 @@ footer a:hover { color: var(--accent); }
   .photographers-grid, .photographers-label { margin-left: 0; }
   .photographers-label { padding-left: 0; }
   .detail-panel { margin-left: 0; padding: 24px 20px; }
+  #movement-main .detail-panel { margin-left: 0; }
   .movement-header { grid-template-columns: 1fr; gap: 20px; }
   .movement-grid { margin-left: 0; }
   .filter-bar { flex-direction: column; align-items: flex-start; }
@@ -687,6 +698,10 @@ const MOVEMENTS_META = {
   'シュルレアリスム': { en: 'Surrealism', desc: '夢・無意識・非合理を探求するシュルレアリスム運動の写真実践（レイヨグラフなど）。' },
   'カラー写真': { en: 'Color Photography', desc: '色彩を表現の核として積極的に使用した写真実践。' },
   'コンセプチュアル': { en: 'Conceptual', desc: '概念・アイデア・批評性を前景化し、表象そのものを問い直す写真実践。' },
+  '科学写真': { en: 'Scientific Photography', desc: '運動・天文・医学など科学的目的で行われた写真実践。後の映画・アニメーションの源流でもある。' },
+  '実験的技法': { en: 'Experimental Technique', desc: '連続撮影・クロノフォトグラフィーなど、当時の技術の限界に挑戦した実験的な写真実践。' },
+  '自然主義写真': { en: 'Naturalistic Photography', desc: 'P.H.エマーソンが提唱した、合成や操作を排し自然を「ありのまま」に記録することを重視した写真思想。' },
+  '都市記録': { en: 'Urban Documentation', desc: '都市の変容・消滅していく街並みを体系的に記録した写真実践。近代化の証言として機能する。' },
 };
 
 const ERAS = [
@@ -707,6 +722,28 @@ const ERAS = [
         { text: 'Britannica — History of Photography', url: 'https://www.britannica.com/technology/photography/Photographys-early-evolution-c-1840-c-1900' },
         { text: 'Taylor & Francis — Photography, Colonialism, and War', url: 'https://www.tandfonline.com/doi/full/10.1080/07292473.2025.2463752' },
         { text: 'Photoworks — Images and Imperialism', url: 'https://photoworks.org.uk/images-and-imperialism-a-photographic-record-of-british-india/' },
+      ]
+    }
+  },
+
+  {
+    id: '1870',
+    period: '1870 — 1890s',
+    title: '産業化・社会改革・写真の大衆化',
+    worldEvents: {
+      text: '普仏戦争（1870–71年）でフランスが敗北し、ドイツ帝国が誕生した。パリ・コミューン（1871年）はフランス史上初の労働者自治政府として72日間続いたのち、「血の週」と呼ばれる鎮圧で終わった。1873年の世界恐慌は欧米で大規模な労働運動を引き起こし、都市スラムの問題が社会問題として認識され始めた。アメリカでは「金ぴか時代（Gilded Age）」の急速な工業化とともに大量移民が流入し、ニューヨークのロウアーイーストサイドなど都市部の過密化が進んだ。1884–85年のベルリン会議では、ヨーロッパ列強がアフリカを分割する「スクランブル・フォー・アフリカ」を制度化した。',
+      sources: [
+        { text: 'Britannica — Franco-Prussian War', url: 'https://www.britannica.com/event/Franco-German-War' },
+        { text: 'Wikipedia — Paris Commune', url: 'https://en.wikipedia.org/wiki/Paris_Commune' },
+        { text: 'Britannica — Scramble for Africa', url: 'https://www.britannica.com/event/Scramble-for-Africa' },
+      ]
+    },
+    photoContext: {
+      text: 'リチャード・マドックスが1871年にゼラチン乾板を発明したことで、撮影直前の薬品塗布が不要になり写真の携帯性が飛躍的に向上した。1888年、ジョージ・イーストマンがロールフィルム内蔵の「コダック」カメラを発売し、「ボタンを押すだけ」の写真撮影を一般大衆に開放した（「You press the button, we do the rest」）。社会的には、移民・スラム・児童労働などを記録するドキュメンタリー写真の先駆けが生まれた。科学の分野ではマイブリッジとマレーが連続写真で運動の解析を行い、後の映画誕生への道を開いた。',
+      sources: [
+        { text: 'Britannica — History of Photography', url: 'https://www.britannica.com/technology/photography' },
+        { text: 'George Eastman Museum — Kodak and the Democratization of Photography', url: 'https://www.eastman.org/george-eastman' },
+        { text: 'Wikipedia — Dry plate', url: 'https://en.wikipedia.org/wiki/Dry_plate' },
       ]
     }
   }
@@ -901,6 +938,195 @@ const PHOTOGRAPHERS = [
     }
   },
 
+  /* ────────── 1870–1890s ────────── */
+  {
+    id: 'muybridge',
+    name: 'Eadweard Muybridge',
+    nameJa: 'エドワード・マイブリッジ',
+    nationality: 'GB / US',
+    flag: '🇬🇧',
+    years: '1830–1904',
+    era: '1870',
+    movements: ['科学写真', '実験的技法'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Eadweard_Muybridge' },
+      { label: 'Kingston Museum', url: 'https://www.kingstonmuseum.co.uk/eadweard-muybridge/' },
+      { label: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/Eadweard_Muybridge' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'マイブリッジはカリフォルニア鉄道王リーランド・スタンフォードの依頼で、馬が疾走する際に四肢が同時に地面を離れる瞬間があるかどうかを検証した。1878年にサクラメント近郊のパロ・アルトで、コースに沿って並べた24台のカメラを馬が次々とトリップワイヤーで作動させる方法で連続撮影を実施、「馬の動き（The Horse in Motion）」として公開した。この連続写真は馬がすべての蹄を地面から離す瞬間が存在することを視覚的に証明した。1880年代にはフィラデルフィア大学で人間・動物の多様な動作を系統的に撮影し、11冊の写真集『動物の動作（Animal Locomotion）』（1887年）として刊行した。',
+      sources: [
+        { text: 'Wikipedia — Eadweard Muybridge', url: 'https://en.wikipedia.org/wiki/Eadweard_Muybridge' },
+        { text: 'Britannica — Eadweard Muybridge', url: 'https://www.britannica.com/biography/Eadweard-Muybridge' },
+      ]
+    },
+    context: {
+      text: 'マイブリッジは1879年に「ズープラキシスコープ（Zoopraxiscope）」を発明した。これは連続写真をガラス円盤に描いてプロジェクターで投影する装置であり、映画の前身と見なされている。1893年のシカゴ万博では世界初の映画館の一つとなる「ズープラキシグラフィカル・ホール」でプロジェクション上映を行った。彼の仕事はエジソンの映写機開発やリュミエール兄弟の映画誕生に影響を与えたと広く認識されている。',
+      sources: [
+        { text: 'Wikipedia — Eadweard Muybridge', url: 'https://en.wikipedia.org/wiki/Eadweard_Muybridge' },
+        { text: 'Kingston Museum — Muybridge and Cinema', url: 'https://www.kingstonmuseum.co.uk/eadweard-muybridge/' },
+      ]
+    }
+  },
+
+  {
+    id: 'marey',
+    name: 'Étienne-Jules Marey',
+    nameJa: 'エティエンヌ＝ジュール・マレー',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1830–1904',
+    era: '1870',
+    movements: ['科学写真', '実験的技法'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/%C3%89tienne-Jules_Marey' },
+      { label: 'Musée Marey', url: 'https://musee-marey.fr' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'フランスの生理学者・発明家であるマレーは、人間・動物の運動を科学的に研究するために「クロノフォトグラフィー（chronophotography）」を開発した。1882年に発明した「クロノフォトグラフィック・ガン（photographic gun）」は毎秒12コマで撮影できる回転式ガラス板カメラで、鳥の飛翔・人間の歩行・落下する猫などを一枚の乾板に連続露光する手法で撮影した。マイブリッジが複数のカメラを並べたのに対し、マレーは単一のカメラで時系列の運動軌跡を一画面に収めた。この手法は後のフュチュリスモ（未来派）や抽象表現にも影響を与えた。',
+      sources: [
+        { text: 'Wikipedia — Étienne-Jules Marey', url: 'https://en.wikipedia.org/wiki/%C3%89tienne-Jules_Marey' },
+        { text: 'Britannica — Étienne-Jules Marey', url: 'https://www.britannica.com/biography/Etienne-Jules-Marey' },
+      ]
+    },
+    context: {
+      text: 'マレーはパリの生理学研究所（Collège de France）とフランス政府の支援を受けて研究を行った。彼の写真技術は医学・生理学・体育教育の分野で活用され、また軍事訓練の効率化にも応用された。「科学のための写真」という実践において、マレーはマイブリッジと並んで最も影響力ある人物のひとりであり、ルミエール兄弟が映画を開発するうえでの直接的な前史をなしている。',
+      sources: [
+        { text: 'Wikipedia — Étienne-Jules Marey', url: 'https://en.wikipedia.org/wiki/%C3%89tienne-Jules_Marey' },
+      ]
+    }
+  },
+
+  {
+    id: 'riis',
+    name: 'Jacob Riis',
+    nameJa: 'ジェイコブ・リース',
+    nationality: 'DK / US',
+    flag: '🇩🇰',
+    years: '1849–1914',
+    era: '1870',
+    movements: ['社会ドキュメンタリー', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Jacob_Riis' },
+      { label: 'MoMA', url: 'https://www.moma.org/artists/4978' },
+      { label: 'Library of Congress', url: 'https://www.loc.gov/pictures/collection/ggbain/item/ggb2005025700/' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'デンマーク出身のジャーナリスト・写真家リースはニューヨーク・イブニング・サンの記者として、マグネシウム・フラッシュを使ったはじめての本格的な室内社会記録写真を撮影した。1890年に刊行した『向こう半分の人々はどう暮らしているか（How the Other Half Lives）』は、ニューヨーク・ロウアーイーストサイドの移民・貧困層のテネメント（集合住宅）の実態を写真と文章で記録した先駆的なドキュメンタリー書籍である。被写体となった人々の多くは突然のフラッシュ光に驚かされており、撮影の倫理的問題を内包する作品でもある。',
+      sources: [
+        { text: 'Wikipedia — Jacob Riis', url: 'https://en.wikipedia.org/wiki/Jacob_Riis' },
+        { text: 'Museum of the City of New York — Jacob Riis Collection', url: 'https://www.mcny.org/story/jacob-riis' },
+      ]
+    },
+    context: {
+      text: '『向こう半分の人々はどう暮らしているか』はセオドア・ルーズベルト（当時ニューヨーク警察委員長、後の大統領）に深い影響を与え、テネメント住宅改革法の成立につながった。リースの社会改革的ドキュメンタリーは、写真を単なる記録ではなく社会変革のツールとして使った最初期の事例として位置づけられる。一方で彼の視点はアイルランド系・ユダヤ系・中国系移民への固定観念を反映しており、現代では批判的に再評価されている。',
+      sources: [
+        { text: 'Wikipedia — Jacob Riis', url: 'https://en.wikipedia.org/wiki/Jacob_Riis' },
+        { text: 'Smithsonian — Jacob Riis and Social Photography', url: 'https://www.smithsonianmag.com/history/how-jacob-riis-exposed-shame-new-york-city-slums-180956836/' },
+      ]
+    }
+  },
+
+  {
+    id: 'emerson',
+    name: 'Peter Henry Emerson',
+    nameJa: 'ピーター・ヘンリー・エマーソン',
+    nationality: 'GB',
+    flag: '🇬🇧',
+    years: '1856–1936',
+    era: '1870',
+    movements: ['自然主義写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Peter_Henry_Emerson' },
+      { label: 'Victoria & Albert Museum', url: 'https://www.vam.ac.uk/collections/photography' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'エマーソンは1889年に著書『芸術学生のための自然主義写真（Naturalistic Photography for Students of the Art）』を発表し、写真は「ありのままの自然」を記録することで芸術たりうると主張した。ル・グレーやキャメロンらが行ったコンビネーション・プリント（複数ネガの合成）を「不正直」として批判し、単一ネガによる撮影と、人間の目が中心部にのみ焦点を合わせるという視覚生理学に基づいた周辺部の意図的なソフトフォーカスを推奨した。イングランド東部・ノーフォーク・ブロードズの農漁民の日常生活を撮影した連作が代表作。',
+      sources: [
+        { text: 'Wikipedia — Peter Henry Emerson', url: 'https://en.wikipedia.org/wiki/Peter_Henry_Emerson' },
+        { text: 'Smarthistory — Pictorialism', url: 'https://smarthistory.org/pictorialism/' },
+      ]
+    },
+    context: {
+      text: '1891年、エマーソンは自らの主張を撤回する「自然主義写真の死（The Death of Naturalistic Photography）」と題した書簡を写真界に送り、写真は「最低の芸術」であると宣言した。この撤回の理由は物理学者ハーシェルの色調再現に関する論文を読んだためとされるが、真意は今も議論が続いている。この事件自体が、19世紀末に写真が「芸術」として認められるか否かをめぐる論争の熱さを示している。',
+      sources: [
+        { text: 'Wikipedia — Peter Henry Emerson', url: 'https://en.wikipedia.org/wiki/Peter_Henry_Emerson' },
+      ]
+    }
+  },
+
+  {
+    id: 'marville',
+    name: 'Charles Marville',
+    nameJa: 'シャルル・マルヴィル',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1813–1879',
+    era: '1870',
+    movements: ['ドキュメンタリー', '都市記録'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=charles+marville' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Charles_Marville' },
+      { label: 'Bibliothèque Historique de la Ville de Paris', url: 'https://bibliotheques-specialisees.paris.fr' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'パリ市公式写真家（Photographe de la Ville de Paris）に任命されたマルヴィルは、ジョルジュ＝ウジェーヌ・オスマン男爵による大規模なパリ改造（1853–1870年）の前後に、取り壊される中世来の路地・建物を体系的に記録した。湿板コロジオン法を用いた大判写真は、ノートルダム大聖堂周辺・シテ島・レ・アル地区などが近代的なブールヴァールに取って替わられる前の姿を後世に伝える歴史的記録となった。',
+      sources: [
+        { text: 'Metropolitan Museum of Art — Charles Marville', url: 'https://www.metmuseum.org/art/collection/search?q=charles+marville' },
+        { text: 'Wikipedia — Charles Marville', url: 'https://en.wikipedia.org/wiki/Charles_Marville' },
+      ]
+    },
+    context: {
+      text: 'オスマンのパリ改造は衛生・交通・治安の改善を名目に行われたが、スラム街と同時に歴史的な街並みを消し去り、多くの貧困層をパリ郊外へ追いやった。マルヴィルの写真は「記録」として依頼されたものだが、結果として近代化の暴力性と失われた都市の記憶を残す資料となった。この「公的依頼による批評的アーカイブ」という逆説的な性格は、その後のドキュメンタリー写真の歴史に繰り返し現れるパターンである。',
+      sources: [
+        { text: 'Wikipedia — Haussmann\'s renovation of Paris', url: 'https://en.wikipedia.org/wiki/Haussmann%27s_renovation_of_Paris' },
+        { text: 'Wikipedia — Charles Marville', url: 'https://en.wikipedia.org/wiki/Charles_Marville' },
+      ]
+    }
+  },
+
+  {
+    id: 'annan',
+    name: 'Thomas Annan',
+    nameJa: 'トーマス・アナン',
+    nationality: 'GB',
+    flag: '🇬🇧',
+    years: '1829–1887',
+    era: '1870',
+    movements: ['社会ドキュメンタリー', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Thomas_Annan_(photographer)' },
+      { label: 'Glasgow Museums', url: 'https://www.glasgowmuseums.com' },
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=thomas+annan' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'スコットランドの写真家アナンは1868年、グラスゴー市改善委員会（Glasgow City Improvement Trust）の委嘱を受け、撤去予定のスラム街「クローズ（closes）」と呼ばれる路地裏を湿板コロジオン法で撮影した。『グラスゴーの古い路地と街路の写真（Photographs of the Old Closes and Streets of Glasgow）』（初版1868–71年、拡大版1878–79年）として刊行されたこの作品群は、グラスゴーの労働者階級の生活環境を後世に伝える貴重な記録であると同時に、都市スラム記録写真の先駆として位置づけられる。',
+      sources: [
+        { text: 'Wikipedia — Thomas Annan', url: 'https://en.wikipedia.org/wiki/Thomas_Annan_(photographer)' },
+        { text: 'Metropolitan Museum of Art — Thomas Annan', url: 'https://www.metmuseum.org/art/collection/search?q=thomas+annan' },
+      ]
+    },
+    context: {
+      text: 'アナンの写真はリース（ニューヨーク）より20年早く、公的機関による委嘱で都市貧困層の環境を記録した事例として重要である。マルヴィルのパリ写真と同様、改善・再開発のための記録が結果として社会史の資料となった。アナンの作品はジェイコブ・リースやルイス・ハインらの社会ドキュメンタリーに先行しており、写真が社会改革の言説と結びつく歴史的な原点のひとつとされる。',
+      sources: [
+        { text: 'Wikipedia — Thomas Annan', url: 'https://en.wikipedia.org/wiki/Thomas_Annan_(photographer)' },
+      ]
+    }
+  },
+
+  /* ────────── 1839–1860s（再掲） ────────── */
   {
     id: 'brady',
     name: 'Mathew Brady',
@@ -1031,12 +1257,13 @@ function renderEraTab() {
   setupObserver();
 }
 
-function renderCard(p) {
+function renderCard(p, extraAttrs = '') {
   const tags = p.movements.map(m => `<span class="card-tag">${m}</span>`).join('');
   return `
-    <div class="photographer-card" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}">
+    <div class="photographer-card" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" ${extraAttrs}>
       <div class="card-flag-nat">${p.flag} ${p.nationality}</div>
       <div class="card-name">${p.name}</div>
+      ${p.nameJa ? `<div class="card-name-ja">${p.nameJa}</div>` : ''}
       <div class="card-years">${p.years}</div>
       <div class="card-tags">${tags}</div>
       <div class="card-arrow">↗</div>
@@ -1044,7 +1271,11 @@ function renderCard(p) {
   `;
 }
 
-function renderDetailPanel(p) {
+function renderDetailPanel(p, idPrefix = 'panel-') {
+  const isMovement = idPrefix !== 'panel-';
+  const panelId = `${idPrefix}${p.id}`;
+  const closeFn = isMovement ? `closeMovementDetail('${p.id}')` : `closeDetail('${p.id}')`;
+
   const expSources = p.expression.sources.map(s =>
     `<a href="${s.url}" target="_blank" rel="noopener">${s.text}</a>`
   ).join(' / ');
@@ -1060,13 +1291,13 @@ function renderDetailPanel(p) {
     : `<div class="amazon-placeholder">写真集へのリンク（準備中）</div>`;
 
   return `
-    <div class="detail-panel" id="panel-${p.id}">
+    <div class="detail-panel" id="${panelId}">
       <div class="detail-header">
         <div>
           <div class="detail-name">${p.name}</div>
           <div class="detail-meta">${p.flag} ${p.nationality} &nbsp;/&nbsp; ${p.years}</div>
         </div>
-        <button class="close-btn" onclick="closeDetail('${p.id}')">✕</button>
+        <button class="close-btn" onclick="${closeFn}">✕</button>
       </div>
       <div class="detail-tags">${tags}</div>
       <div class="detail-section">
@@ -1151,7 +1382,8 @@ function applyFilters() {
 
   let visibleCount = 0;
 
-  document.querySelectorAll('.photographer-card').forEach(card => {
+  // Only filter cards in era-main (not movement tab)
+  document.querySelectorAll('#era-main .photographer-card').forEach(card => {
     const nat = card.dataset.nationality;
     const movs = card.dataset.movements.split(',');
     const matchC = !activeFilters.country || nat.includes(activeFilters.country);
@@ -1186,7 +1418,7 @@ function resetFilters() {
   document.getElementById('filter-country').value = '';
   document.getElementById('filter-movement-era').value = '';
   activeFilters = { country: '', movement: '' };
-  document.querySelectorAll('.photographer-card').forEach(c => c.classList.remove('filtered-out'));
+  document.querySelectorAll('#era-main .photographer-card').forEach(c => c.classList.remove('filtered-out'));
   document.querySelectorAll('.era').forEach(e => e.classList.remove('hidden'));
   document.getElementById('no-results').classList.remove('visible');
   document.getElementById('filter-count').textContent = `${PHOTOGRAPHERS.length}人`;
@@ -1210,18 +1442,13 @@ function renderMovementTab() {
 
   Object.entries(movementMap).sort((a, b) => a[0].localeCompare(b[0], 'ja')).forEach(([mvName, photographers]) => {
     const meta = MOVEMENTS_META[mvName] || { en: mvName, desc: '' };
+    const mvId = mvName.replace(/[^a-zA-Z\u3000-\u9fff]/g, '');
 
-    const cardsHTML = photographers.map(p => `
-      <div class="photographer-card" data-pid="${p.id}" onclick="goToPhotographer('${p.id}')">
-        <div class="card-flag-nat">${p.flag} ${p.nationality}</div>
-        <div class="card-name">${p.name}</div>
-        <div class="card-years">${p.years}</div>
-        <div class="card-arrow">↗</div>
-      </div>
-    `).join('');
+    const cardsHTML = photographers.map(p => renderCard(p, `data-mv="${mvId}" onclick="toggleMovementDetail('${p.id}','${mvId}',this)"`)).join('');
 
     const section = document.createElement('section');
     section.className = 'movement-section';
+    section.dataset.mv = mvId;
     section.innerHTML = `
       <div class="movement-header">
         <div>
@@ -1233,24 +1460,42 @@ function renderMovementTab() {
           <div class="context-text">${meta.desc}</div>
         </div>
       </div>
-      <div class="movement-grid">${cardsHTML}</div>
+      <div class="movement-grid" id="mvgrid-${mvId}">${cardsHTML}</div>
+      <div id="mvpanels-${mvId}"></div>
     `;
     main.appendChild(section);
   });
 
-  setupObserver();
+  setupObserver('.movement-section');
 }
 
-function goToPhotographer(pid) {
-  // Switch to era tab and scroll to/open the photographer
-  switchTab('era');
-  setTimeout(() => {
-    const card = document.querySelector(`[data-pid="${pid}"]`);
-    if (card) {
-      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => card.click(), 600);
+function toggleMovementDetail(pid, mvId, card) {
+  const section = card.closest('.movement-section');
+  const panelContainer = section.querySelector(`[id^="mvpanels-"]`);
+  const panelId = `mvpanel-${pid}`;
+  const existingPanel = document.getElementById(panelId);
+  const isOpen = existingPanel && existingPanel.classList.contains('open');
+
+  // Close all open panels in this movement section
+  section.querySelectorAll('.detail-panel.open').forEach(p => p.classList.remove('open'));
+  section.querySelectorAll('.photographer-card.active').forEach(c => c.classList.remove('active'));
+
+  if (!isOpen) {
+    if (!existingPanel) {
+      const p = PHOTOGRAPHERS.find(ph => ph.id === pid);
+      if (p) panelContainer.insertAdjacentHTML('beforeend', renderDetailPanel(p, 'mvpanel-'));
     }
-  }, 100);
+    const panel = document.getElementById(panelId);
+    panel.classList.add('open');
+    card.classList.add('active');
+    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  }
+}
+
+function closeMovementDetail(pid) {
+  const panel = document.getElementById(`mvpanel-${pid}`);
+  if (panel) panel.classList.remove('open');
+  document.querySelectorAll('.photographer-card.active').forEach(c => c.classList.remove('active'));
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
