@@ -745,6 +745,7 @@ const MOVEMENTS_META = {
   '実験的技法': { en: 'Experimental Technique', desc: '連続撮影・クロノフォトグラフィーなど、当時の技術の限界に挑戦した実験的な写真実践。' },
   '自然主義写真': { en: 'Naturalistic Photography', desc: 'P.H.エマーソンが提唱した、合成や操作を排し自然を「ありのまま」に記録することを重視した写真思想。' },
   '都市記録': { en: 'Urban Documentation', desc: '都市の変容・消滅していく街並みを体系的に記録した写真実践。近代化の証言として機能する。' },
+  '写真分離派': { en: 'Photo-Secession', desc: '1902年にスティーグリッツがニューヨークで結成した写真家グループ。ギャラリー291とCamera Work誌を拠点に、写真を絵画と同等の芸術として認めさせる運動を展開した。' },
 };
 
 const ERAS = [
@@ -787,6 +788,29 @@ const ERAS = [
         { text: 'Britannica — History of Photography', url: 'https://www.britannica.com/technology/photography' },
         { text: 'George Eastman Museum — Kodak and the Democratization of Photography', url: 'https://www.eastman.org/george-eastman' },
         { text: 'Wikipedia — Dry plate', url: 'https://en.wikipedia.org/wiki/Dry_plate' },
+      ]
+    }
+  }
+  {
+    id: '1890',
+    period: '1890 — 1910s',
+    title: 'ピクトリアリズム全盛・写真分離派・世紀転換期',
+    worldEvents: {
+      text: '帝国主義の競合が激化する中、1894〜95年の日清戦争で日本が清を破り、台湾・澎湖諸島を割譲させた。1898年の米西戦争でアメリカはスペインからフィリピン・グアム・プエルトリコを獲得し、太平洋における帝国的地位を確立した。1899〜1902年のボーア戦争ではイギリスが南アフリカを制圧した。1900年の義和団の乱では清が西洋列強の連合軍に敗北し、北京議定書により巨額の賠償金を課された。1904〜05年の日露戦争で日本がロシアを破ったことはアジアに衝撃を与え、白人列強の「不敗」神話を崩した。1905年にはロシア第一革命が起き、ロマノフ朝の権威は揺らぎ始めた。1910年には日本が朝鮮を併合し、メキシコ革命が始まった。',
+      sources: [
+        { text: 'Britannica — First Sino-Japanese War', url: 'https://www.britannica.com/event/First-Sino-Japanese-War' },
+        { text: 'Britannica — Spanish-American War', url: 'https://www.britannica.com/event/Spanish-American-War' },
+        { text: 'Britannica — Russo-Japanese War', url: 'https://www.britannica.com/event/Russo-Japanese-War' },
+        { text: 'Wikipedia — 1900s', url: 'https://en.wikipedia.org/wiki/1900s' },
+      ]
+    },
+    photoContext: {
+      text: 'ピクトリアリズムは、写真を絵画と同等の芸術として位置づけるため、ソフトフォーカス・ゴム重クロム酸塩プリント・プラチナプリント・オイルプリントなど手工芸的技法を駆使した国際運動の最盛期を迎えた。イギリスでは「リンクト・リング（Linked Ring Brotherhood）」（1892年）、フランスでは「フォト・クラブ・ド・パリ」が芸術写真を推進した。アメリカではアルフレッド・スティーグリッツが1902年に「写真分離派（Photo-Secession）」を結成し、1903年には高品質写真誌『カメラ・ワーク（Camera Work）』を創刊した。1905年にニューヨーク五番街に開廊した「ギャラリー291」は、芸術写真に加えマティス・ピカソらのヨーロッパ前衛美術をアメリカで初めて紹介する場となった。一方でP.H.エマーソンの「自然主義写真論」（1889年）は、合成・操作を排した自然記録の倫理を提唱し、後のストレート写真への伏線となった。',
+      sources: [
+        { text: 'Britannica — Pictorialism', url: 'https://www.britannica.com/technology/Pictorialism' },
+        { text: 'The Art Story — Pictorialism', url: 'https://www.theartstory.org/movement/pictorialism/' },
+        { text: 'Smarthistory — 291 Little Galleries of the Photo-Secession', url: 'https://smarthistory.org/291-stieglitz/' },
+        { text: 'Wikipedia — Camera Work', url: 'https://en.wikipedia.org/wiki/Camera_Work' },
       ]
     }
   }
@@ -1232,6 +1256,174 @@ const PHOTOGRAPHERS = [
       sources: [
         { text: 'Wikipedia — Julia Margaret Cameron', url: 'https://en.wikipedia.org/wiki/Julia_Margaret_Cameron' },
         { text: 'Tate — Julia Margaret Cameron', url: 'https://www.tate.org.uk/art/artists/julia-margaret-cameron-725' },
+      ]
+    }
+  },
+
+  /* ────────── 1890–1910s ────────── */
+  {
+    id: 'emerson',
+    name: 'Peter Henry Emerson',
+    nameJa: 'ピーター・ヘンリー・エマーソン',
+    nationality: 'GB',
+    flag: '🇬🇧',
+    years: '1856–1936',
+    era: '1890',
+    movements: ['自然主義写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Peter_Henry_Emerson' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Peter-Henry-Emerson' },
+      { label: 'Tate Papers — Emerson\'s Evolution', url: 'https://www.tate.org.uk/research/tate-papers/27/emersons-evolution' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'キューバ生まれ（米国人父・英国人母）でケンブリッジ大学医学部出身のエマーソンは、東アングリアの漁師や農民の生活を記録するフィールドワークから写真家としてのキャリアを始めた。代表作『ノーフォーク・ブローズの生活と風景（Life and Landscape on the Norfolk Broads）』（1886年）など記録写真集を刊行した後、1889年に著書『芸術学生のための自然主義写真論（Naturalistic Photography for Students of the Art）』でドイツの生理学者ヘルマン・フォン・ヘルムホルツの視覚論をもとに「差動焦点法（differential focusing）」を提唱した。これは主要被写体のみを鋭く描写し周囲をやや軟焦点にすることで人間の視覚に近い像を作る手法であり、合成写真やスタジオ演出への批判として、ありのままの自然を記録することを写真の倫理と定めた。しかし1891年には「自然主義写真の死（The Death of Naturalistic Photography）」と題した黒縁のパンフレットで自らの理論を撤回した。撤回後も彼の初期の考え方は20世紀のストレート写真（Straight Photography）の理論的先駆として評価されている。',
+      sources: [
+        { text: 'Wikipedia — Peter Henry Emerson', url: 'https://en.wikipedia.org/wiki/Peter_Henry_Emerson' },
+        { text: 'Britannica — Peter Henry Emerson', url: 'https://www.britannica.com/biography/Peter-Henry-Emerson' },
+        { text: 'Tate Papers — Emerson\'s Evolution', url: 'https://www.tate.org.uk/research/tate-papers/27/emersons-evolution' },
+      ]
+    },
+    context: {
+      text: 'エマーソンは1885年にロンドン・カメラ・クラブの設立に関与し、翌年フォトグラフィック・ソサエティの評議員に選ばれた。後にアルフレッド・スティーグリッツを見出して励ましを与えた。スティーグリッツはエマーソンが19世紀末に始めた写真芸術化の運動を20世紀において継承・発展させた。エマーソン自身は1895年以降写真から離れたが、著書は欧米の写真家コミュニティに広く読まれた。',
+      sources: [
+        { text: 'Wikipedia — Peter Henry Emerson', url: 'https://en.wikipedia.org/wiki/Peter_Henry_Emerson' },
+        { text: 'International Photography Hall of Fame — Peter Henry Emerson', url: 'https://www.iphf.org/hof-peter-henry-emerson' },
+      ]
+    }
+  },
+
+  {
+    id: 'stieglitz',
+    name: 'Alfred Stieglitz',
+    nameJa: 'アルフレッド・スティーグリッツ',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1864–1946',
+    era: '1890',
+    movements: ['ピクトリアリズム', '写真分離派', 'ストレート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Alfred_Stieglitz' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Alfred-Stieglitz' },
+      { label: 'V&A', url: 'https://www.vam.ac.uk/articles/alfred-stieglitz-pioneer-of-modern-photography' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'ニュージャージー州ホーボーケン生まれのスティーグリッツは、ベルリン工科大学でドイツの写真化学者ヘルマン・フォーゲルに写真を学んだ後、1890年にニューヨークへ戻った。1902年に「写真分離派（Photo-Secession）」を結成し、1903年に写真誌『カメラ・ワーク（Camera Work）』を創刊、1905年にギャラリー291を開廊することで、写真を芸術として制度化するための一連の組織的活動を展開した。初期のプラチナプリントによる大気感ある作品（「波止場（The Terminal）」1893年、「五番街の冬（Winter, Fifth Avenue）」1893年）から、1907年にSSカイザー・ヴィルヘルムII世の船上で撮影した「船室（The Steerage）」へ至る転換は、ピクトリアリズムとの決別を示すモダニスト的転換点とされる。スティーグリッツ自身がこの作品を「初めての近代写真」と呼び、1911年に『カメラ・ワーク』誌に掲載した。',
+      sources: [
+        { text: 'Metropolitan Museum of Art — Alfred Stieglitz (1864–1946) and American Photography', url: 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography' },
+        { text: 'Britannica — Alfred Stieglitz', url: 'https://www.britannica.com/biography/Alfred-Stieglitz' },
+        { text: 'Yale Beinecke — The Steerage by Alfred Stieglitz', url: 'https://beineckeroadshow.yale.edu/steerage-alfred-stieglitz' },
+      ]
+    },
+    context: {
+      text: 'ギャラリー291では1908年以降、ロダン・マティス・セザンヌ・ピカソらのアメリカ初個展を開催し、ヨーロッパ前衛美術の紹介拠点としても機能した。1917年に閉廊するまで計61回の展覧会のうち写真展は6回のみで、後半はほぼ現代美術ギャラリーとして機能していた（出典：Smarthistory）。スティーグリッツは晩年まで「エクイヴァレンツ（Equivalents）」と題した雲の写真（1922〜34年）を撮り続け、これは写真初の純粋抽象作品として評価される。死後にメトロポリタン美術館に遺贈されたコレクションは同館の近代美術コレクションの礎となった。',
+      sources: [
+        { text: 'Smarthistory — 291 Little Galleries of the Photo-Secession', url: 'https://smarthistory.org/291-stieglitz/' },
+        { text: 'Metropolitan Museum of Art — Alfred Stieglitz (1864–1946) and American Photography', url: 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography' },
+      ]
+    }
+  },
+
+  {
+    id: 'kasebier',
+    name: 'Gertrude Käsebier',
+    nameJa: 'ガートルード・ケーゼビア',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1852–1934',
+    era: '1890',
+    movements: ['ピクトリアリズム', '写真分離派', 'ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/calendar/exhibitions/365' },
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/267530' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Gertrude_K%C3%A4sebier' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Gertrude-Kasebier' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'アイオワ州生まれのケーゼビアは、結婚・育児の後、プラット・インスティチュートおよびフランスの美術学校で絵画を学び40代に写真家へ転身した。1898年にニューヨーク五番街にポートレートスタジオを開設し、スティーグリッツから「この国で最高の肖像写真家（the leading portrait photographer in this country）」と評された（出典：Britannica）。代表作「女たちの中に祝福された人よ（Blessed Art Thou Among Women）」（1899年）は、母と娘を聖書的・象徴的な構成で捉えたプラチナプリントで、スティーグリッツの写真誌『カメラ・ノーツ』（1900年）と1903年創刊の『カメラ・ワーク』第1号に掲載された。主にプラチナプリントを使用し、1901年以降はゴム重クロム酸塩プリントも導入した。ネイティブ・アメリカン（バッファロー・ビルの旅行公演の出演者を含む）を被写体とした作品も残している。',
+      sources: [
+        { text: 'Britannica — Gertrude Käsebier', url: 'https://www.britannica.com/biography/Gertrude-Kasebier' },
+        { text: 'Metropolitan Museum of Art — Blessed Art Thou Among Women', url: 'https://www.metmuseum.org/art/collection/search/267530' },
+        { text: 'Wikipedia — Gertrude Käsebier', url: 'https://en.wikipedia.org/wiki/Gertrude_K%C3%A4sebier' },
+      ]
+    },
+    context: {
+      text: '1900年にイギリスの芸術写真家組織「リンクト・リング」に女性として初めて選出された。1902年の写真分離派設立メンバーであったが、商業写真への姿勢などをめぐりスティーグリッツと対立し1912年に脱退した。1916年にクラレンス・H・ホワイトとともに「ピクトリアル・フォトグラファーズ・オブ・アメリカ（Pictorial Photographers of America）」を共同設立した。後世の女性写真家クララ・シペレル・ローラ・ギルピン・イモジェン・カニンガムらに影響を与えたとされる。',
+      sources: [
+        { text: 'Wikipedia — Gertrude Käsebier', url: 'https://en.wikipedia.org/wiki/Gertrude_K%C3%A4sebier' },
+        { text: 'Britannica — Gertrude Käsebier', url: 'https://www.britannica.com/biography/Gertrude-Kasebier' },
+      ]
+    }
+  },
+
+  {
+    id: 'steichen',
+    name: 'Edward Steichen',
+    nameJa: 'エドワード・スタイケン',
+    nationality: 'LU / US',
+    flag: '🇱🇺',
+    years: '1879–1973',
+    era: '1890',
+    movements: ['ピクトリアリズム', '写真分離派', 'ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/edward-j-steichen-1879-1973-the-photo-secession-years' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Edward_Steichen' },
+      { label: 'The Art Story', url: 'https://www.theartstory.org/artist/steichen-edward/' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'ルクセンブルクのビヴァンジュ生まれ、生後18ヶ月で渡米。ミルウォーキーで石版印刷工の見習いとして働きながら写真を始め、1900年にスティーグリッツと出会い認められた。代表作「フラットアイアン（The Flatiron）」（1904年）はプラチナプリントにゴム重クロム酸塩層を重ねた多層刷りの実験的作品で、薄暮の大気感と竣工2年の摩天楼の幾何学的形態を組み合わせた。2022年11月のクリスティーズのオークションでは1200万ドルで落札され、写真作品の歴史的最高落札額のひとつとなった（出典：Metropolitan Museum of Art）。',
+      sources: [
+        { text: 'Metropolitan Museum of Art — Edward J. Steichen (1879–1973): The Photo-Secession Years', url: 'https://www.metmuseum.org/essays/edward-j-steichen-1879-1973-the-photo-secession-years' },
+        { text: 'Wikipedia — Edward Steichen', url: 'https://en.wikipedia.org/wiki/Edward_Steichen' },
+        { text: 'The Art Story — Edward Steichen', url: 'https://www.theartstory.org/artist/steichen-edward/' },
+      ]
+    },
+    context: {
+      text: 'パリに度々滞在したスタイケンは、ロダン・マティスをスティーグリッツに紹介しギャラリー291での初アメリカ展を実現させる橋渡し役を担った。1901年にはロンドンの「リンクト・リング」にも選出された。1902年の写真分離派設立メンバー。第一次世界大戦中は航空写真家として従軍し、戦後はピクトリアリスト的な絵画的操作を捨てストレート写真に転換した。1923〜37年はコンデ・ナスト社主任写真家としてヴォーグ・ヴァニティ・フェアを手掛け、戦後はMoMAの写真部門ディレクターとして「人間家族（The Family of Man）」展（1955年）を企画し38カ国・900万人が鑑賞した。',
+      sources: [
+        { text: 'Metropolitan Museum of Art — Edward J. Steichen (1879–1973): The Photo-Secession Years', url: 'https://www.metmuseum.org/essays/edward-j-steichen-1879-1973-the-photo-secession-years' },
+        { text: 'Wikipedia — Edward Steichen', url: 'https://en.wikipedia.org/wiki/Edward_Steichen' },
+      ]
+    }
+  },
+
+  {
+    id: 'demachy',
+    name: 'Robert Demachy',
+    nameJa: 'ロベール・ドマシー',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1859–1936',
+    era: '1890',
+    movements: ['ピクトリアリズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/289550' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Robert_Demachy' },
+      { label: 'Monovisions — Robert Demachy Biography', url: 'https://monovisions.com/robert-demachy-biography-pictorial-photographer/' },
+    ],
+    amazon: '',
+    expression: {
+      text: 'パリ近郊サン＝ジェルマン＝アン＝レー生まれ。家業の銀行（バンク・ドマシー）による富裕な環境で育ち、生涯にわたり職業を持たないアマチュア写真家として活動した。1882年にソシエテ・フランセーズ・ドゥ・フォトグラフィーに入会し、1888年にモーリス・ビュケとともにフォト・クラブ・ド・パリを設立した。1894年にゴム重クロム酸塩プリントを本格導入し、粗い紙の上に顔料入りゴム液を重ねて絵の具のような筆跡や色彩を写真プリントに残す技法を確立した。スティーグリッツは1904年に彼を「ゴムプリントの父（father of gum-printing）」と称した。代表作「速度（Speed）」（1904年）はダンサーをゴム重クロム酸塩プロセスで激しく操作し動感を表した作品。生涯で1000点以上の写真評論を執筆し、第一次世界大戦の勃発とともに突然写真を止め素描に転じた。',
+      sources: [
+        { text: 'Wikipedia — Robert Demachy', url: 'https://en.wikipedia.org/wiki/Robert_Demachy' },
+        { text: 'Monovisions — Robert Demachy Biography', url: 'https://monovisions.com/robert-demachy-biography-pictorial-photographer/' },
+        { text: 'Metropolitan Museum of Art — Robert Demachy, Struggle', url: 'https://www.metmuseum.org/art/collection/search/289550' },
+      ]
+    },
+    context: {
+      text: 'ドマシーの活動はアメリカの写真分離派と並行するフランスのピクトリアリズム運動の中核をなした。フォト・クラブ・ド・パリは欧米の主要な写真展に参加し、ドマシーは1895年にロンドンの「リンクト・リング」会員にも選出された。1898年にスティーグリッツと文通を始め15年以上にわたり交流した。ゴム重クロム酸塩プリントの技術的普及と批評的擁護を通じて、欧米ピクトリアリズムの視覚的語彙の定着に貢献した。',
+      sources: [
+        { text: 'Wikipedia — Robert Demachy', url: 'https://en.wikipedia.org/wiki/Robert_Demachy' },
+        { text: 'Monovisions — Robert Demachy Biography', url: 'https://monovisions.com/robert-demachy-biography-pictorial-photographer/' },
       ]
     }
   },
