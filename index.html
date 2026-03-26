@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>写真と世界史の交点</title>
+<title>アフターイメージ | 写真と世界の交点</title>
 <meta name="description" content="写真史と世界情勢を紐づけた個人サイト。1839年から現代まで、時代と表現のムーブメントから写真の歴史を探ります。">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -63,6 +63,13 @@ h1 {
   max-width: 700px;
 }
 h1 em { font-style: italic; color: var(--accent); }
+.header-subtitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  margin-top: 12px;
+}
 .header-sub {
   margin-top: 24px;
   color: var(--text-dim);
@@ -114,8 +121,8 @@ h1 em { font-style: italic; color: var(--accent); }
   50% { opacity: 0.3; }
 }
 .random-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 24px;
   font-weight: 400;
   margin-bottom: 4px;
 }
@@ -164,7 +171,7 @@ h1 em { font-style: italic; color: var(--accent); }
   border: none;
   color: var(--text-muted);
   font-family: 'DM Mono', monospace;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   padding: 20px 24px;
   cursor: pointer;
@@ -322,7 +329,7 @@ h1 em { font-style: italic; color: var(--accent); }
 /* ── PHOTOGRAPHER CARD ── */
 .photographer-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px solid #4a3c22;
   padding: 24px;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
@@ -356,17 +363,19 @@ h1 em { font-style: italic; color: var(--accent); }
   gap: 6px;
 }
 .card-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Noto Serif JP', serif;
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   line-height: 1.3;
 }
-.card-name-ja {
-  font-size: 12px;
-  color: var(--text-dim);
-  margin-bottom: 4px;
+.card-name-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
   line-height: 1.4;
+  letter-spacing: 0.04em;
 }
 .card-years {
   font-family: 'DM Mono', monospace;
@@ -620,7 +629,8 @@ footer a:hover { color: var(--accent); }
 <header>
 <div class="container">
   <div class="header-label">Photography History × World Events</div>
-  <h1>写真と<em>世界史</em>の交点</h1>
+  <h1><em>アフターイメージ</em></h1>
+  <p class="header-subtitle">写真と世界の交点</p>
   <p class="header-sub">写真は常にその時代の社会・政治・技術の文脈の中に生まれてきた。年代をたどりながら、世界の動きと写真表現の関係を探る。</p>
   <div class="ai-disclaimer">※ 本サイトの情報はAIがウェブ上の資料から収集したものです。出典を明記していますが、曖昧さや誤りが含まれる可能性があります。気になった作家・表現・時代については、ぜひご自身でさらに調べてみてください。誤りを発見した場合はお知らせください。</div>
 
@@ -1262,8 +1272,8 @@ function renderCard(p, extraAttrs = '') {
   return `
     <div class="photographer-card" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" ${extraAttrs}>
       <div class="card-flag-nat">${p.flag} ${p.nationality}</div>
-      <div class="card-name">${p.name}</div>
-      ${p.nameJa ? `<div class="card-name-ja">${p.nameJa}</div>` : ''}
+      <div class="card-name">${p.nameJa || p.name}</div>
+      ${p.nameJa ? `<div class="card-name-sub">${p.name}</div>` : ''}
       <div class="card-years">${p.years}</div>
       <div class="card-tags">${tags}</div>
       <div class="card-arrow">↗</div>
@@ -1526,7 +1536,7 @@ function initRandom() {
   const idx = Math.abs(hash) % PHOTOGRAPHERS.length;
   const p = PHOTOGRAPHERS[idx];
 
-  document.getElementById('random-name').textContent = p.name;
+  document.getElementById('random-name').textContent = p.nameJa || p.name;
   document.getElementById('random-meta').textContent =
     `${p.flag} ${p.nationality}  /  ${p.years}  /  ${p.movements.join(' · ')}`;
   document.getElementById('random-excerpt').textContent =
