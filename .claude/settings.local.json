@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m pip install --target \"/tmp/brokenpic_pkgs\" fastapi uvicorn h11 python-multipart Pillow numpy scipy tifffile rawpy --quiet)"
+    ]
+  }
+}

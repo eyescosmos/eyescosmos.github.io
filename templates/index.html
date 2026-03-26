@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binary Image Destroyer</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d0d0f; --surface: #16181c; --surface2: #1e2128; --border: #2a2d35;
+    --accent: #e05a2b; --accent2: #4a9eff; --text: #d4d8e0; --text-dim: #6b7280;
+    --green: #4ade80; --red: #f87171; --yellow: #fbbf24;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'SF Mono','Fira Code',monospace; font-size: 13px; min-height: 100vh; }
+  h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: .05em; }
+  header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; gap: 12px; }
+  .logo { width: 28px; height: 28px; background: var(--accent); clip-path: polygon(50% 0%,100% 100%,0% 100%); flex-shrink: 0; }
+  .header-sub { color: var(--text-dim); font-size: 11px; margin-left: auto; }
+
+  #upload-zone { border: 2px dashed var(--border); border-radius: 10px; padding: 48px 24px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; margin: 24px; }
+  #upload-zone.drag-over { border-color: var(--accent); background: rgba(224,90,43,.06); }
+  #upload-zone .icon { font-size: 2.5rem; margin-bottom: 12px; }
+  #upload-zone p { color: var(--text-dim); }
+  #upload-zone strong { color: var(--text); }
+  #file-input { display: none; }
+  #upload-progress { display: none; text-align: center; padding: 32px; color: var(--text-dim); }
+
+  #app-area { display: none; }
+  .tabs { display: flex; border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .tab-btn { padding: 10px 20px; cursor: pointer; border: none; background: none; color: var(--text-dim); font: inherit; font-size: 13px; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .2s, border-color .2s; }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-btn:hover:not(.active) { color: var(--text); }
+  .tab-panel { display: none; padding: 20px 24px; }
+  .tab-panel.active { display: block; }
+
+  #file-info-bar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 8px 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .info-chip { background: var(--surface2); padding: 3px 10px; border-radius: 4px; font-size: 11px; color: var(--text-dim); }
+  .info-chip span { color: var(--text); }
+
+  /* ── Tab 1 ── */
+  .viz-toolbar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+  .viz-btn { padding: 7px 16px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface2); color: var(--text-dim); cursor: pointer; font: inherit; font-size: 12px; transition: all .15s; }
+  .viz-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .viz-btn:hover:not(.active) { border-color: var(--accent2); color: var(--text); }
+  .dct-toggle { display: none; gap: 6px; }
+  .dct-toggle.show { display: flex; }
+  .viz-dl-btn { margin-left: auto; padding: 6px 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface2); color: var(--text-dim); cursor: pointer; font: inherit; font-size: 12px; transition: all .15s; }
+  .viz-dl-btn:hover:not(:disabled) { border-color: var(--green); color: var(--green); }
+  .viz-dl-btn:disabled { opacity: .35; cursor: not-allowed; }
+  .mini-btn { padding: 5px 12px; border: 1px solid var(--border); border-radius: 4px; background: var(--surface2); color: var(--text-dim); cursor: pointer; font: inherit; font-size: 11px; transition: all .15s; }
+  .mini-btn.active { background: var(--accent2); border-color: var(--accent2); color: #fff; }
+  #viz-box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center; }
+  #viz-img { max-width: 100%; max-height: 600px; border-radius: 4px; display: none; }
+  #viz-msg { color: var(--text-dim); }
+  .struct-panel { margin-top: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; max-height: 380px; overflow-y: auto; }
+  .struct-panel h3 { color: var(--accent); margin-bottom: 10px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+  .struct-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .struct-table th { text-align: left; color: var(--text-dim); padding: 4px 8px; border-bottom: 1px solid var(--border); }
+  .struct-table td { padding: 4px 8px; border-bottom: 1px solid var(--border); word-break: break-all; }
+  .struct-table tr:last-child td { border-bottom: none; }
+  .c-name { color: var(--accent2); }
+  .c-off  { color: var(--yellow); }
+  .c-sz   { color: var(--green); }
+
+  /* ── Tab 2 Step Accordion ── */
+  .step-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 12px; overflow: hidden;
+    transition: opacity .2s;
+  }
+  .step-card.locked { opacity: .45; pointer-events: none; }
+  .step-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 18px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    user-select: none;
+  }
+  .step-num {
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 12px;
+    background: var(--accent); color: #fff; flex-shrink: 0;
+  }
+  .step-card.locked .step-num { background: var(--border); }
+  .step-card.done .step-num { background: var(--green); color: #000; }
+  .step-title { font-size: 13px; font-weight: 600; color: var(--text); }
+  .step-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .step-badge.current { background: var(--accent); color: #fff; }
+  .step-badge.done-badge { background: var(--green); color: #000; }
+  .step-lock-icon { margin-left: auto; color: var(--text-dim); font-size: 14px; }
+  .step-body { padding: 16px 18px; }
+  .step-body.hidden { display: none; }
+
+  /* canvas area */
+  .destroy-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 860px) { .destroy-layout { grid-template-columns: 1fr; } }
+  .destroy-layout.three-col { grid-template-columns: 1fr 1fr 1fr; }
+  @media (max-width: 1100px) { .destroy-layout.three-col { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 860px)  { .destroy-layout.three-col { grid-template-columns: 1fr; } }
+  #diff-overlay-panel { display: none; }
+  #diff-overlay-panel.visible { display: block; }
+  .canvas-wrap { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+  .canvas-wrap h3 { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+  canvas { display: block; max-width: 100%; border-radius: 4px; }
+
+  /* intensity */
+  .ctrl-panel { margin-top: 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .ctrl-grp { display: flex; flex-direction: column; gap: 6px; }
+  .ctrl-grp label { font-size: 11px; color: var(--text-dim); }
+  .int-row { display: flex; align-items: center; gap: 10px; }
+  .int-row input[type=range] { flex: 1; cursor: pointer; accent-color: var(--accent); }
+  .int-val { color: var(--accent); font-size: 12px; min-width: 34px; text-align: right; }
+
+  /* action row */
+  .action-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; align-items: center; }
+  .btn { padding: 9px 18px; border-radius: 6px; border: 1px solid transparent; cursor: pointer; font: inherit; font-size: 13px; font-weight: 600; transition: all .15s; }
+  .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn-primary:hover:not(:disabled) { background: #c94f24; }
+  .btn-primary:disabled { background: var(--border); border-color: var(--border); color: var(--text-dim); cursor: not-allowed; }
+  .btn-sec { background: var(--surface2); color: var(--text); border-color: var(--border); }
+  .btn-sec:hover:not(:disabled) { border-color: var(--accent2); color: var(--accent2); }
+  .btn-sec:disabled { opacity: .4; cursor: not-allowed; }
+  .btn-danger { background: transparent; color: var(--red); border-color: var(--red); }
+  .btn-danger:hover:not(:disabled) { background: rgba(248,113,113,.1); }
+  .btn-next {
+    margin-left: auto; background: var(--accent2); color: #fff;
+    border-color: var(--accent2); padding: 9px 22px;
+  }
+  .btn-next:hover:not(:disabled) { background: #3a8eef; }
+  .btn-next:disabled { background: var(--border); border-color: var(--border); color: var(--text-dim); cursor: not-allowed; }
+  .undo-lbl { font-size: 11px; color: var(--text-dim); }
+
+  #status-bar { margin-top: 10px; padding: 10px 14px; border-radius: 6px; font-size: 12px; display: none; }
+  #status-bar.info    { background: rgba(74,158,255,.08); border: 1px solid rgba(74,158,255,.3); color: var(--accent2); }
+  #status-bar.warn    { background: rgba(251,191,36,.08);  border: 1px solid rgba(251,191,36,.3);  color: var(--yellow); }
+  #status-bar.error   { background: rgba(248,113,113,.08); border: 1px solid rgba(248,113,113,.3); color: var(--red); }
+  #status-bar.success { background: rgba(74,222,128,.08);  border: 1px solid rgba(74,222,128,.3);  color: var(--green); }
+  #byte-info { margin-top: 6px; font-size: 11px; color: var(--text-dim); }
+
+  /* auto-destroy panel */
+  .auto-panel { margin-top: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .auto-panel-header { display: flex; align-items: center; gap: 10px; user-select: none; }
+  .auto-panel-header h3 { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .08em; margin: 0; }
+  .auto-panel-header .badge { background: var(--accent2); color: #fff; font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 600; }
+  .auto-panel-body { margin-top: 14px; }
+  .methods-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .method-chip { display: flex; align-items: center; gap: 5px; background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 11px; transition: all .15s; }
+  .method-chip input { accent-color: var(--accent2); cursor: pointer; }
+  .method-chip:has(input:checked) { border-color: var(--accent2); color: var(--accent2); }
+  .ctrl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 680px) { .ctrl-grid { grid-template-columns: 1fr; } }
+  .ctrl-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 860px) { .ctrl-grid-3 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .ctrl-grid-3 { grid-template-columns: 1fr; } }
+  .progress-bar-wrap { margin-top: 14px; display: none; }
+  .progress-bar-track { background: var(--surface2); border-radius: 4px; height: 6px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: var(--accent2); border-radius: 4px; width: 0%; transition: width .3s; }
+  .progress-label { font-size: 11px; color: var(--text-dim); margin-top: 5px; }
+  .auto-log { margin-top: 12px; max-height: 140px; overflow-y: auto; font-size: 11px; display: none; }
+  .auto-log-row { display: flex; gap: 8px; padding: 3px 0; border-bottom: 1px solid var(--border); color: var(--text-dim); }
+  .auto-log-row .ok   { color: var(--green); }
+  .auto-log-row .skip { color: var(--red); }
+
+  /* ── Step 2: Decode Grid ── */
+  .decode-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-bottom: 14px;
+  }
+  @media (max-width: 700px) { .decode-grid { grid-template-columns: 1fr; } }
+  .decode-cell {
+    background: var(--surface2); border: 2px solid var(--border);
+    border-radius: 8px; padding: 12px;
+    display: flex; flex-direction: column; gap: 8px;
+    transition: border-color .2s;
+  }
+  .decode-cell.selected { border-color: var(--accent2); background: rgba(74,158,255,.05); }
+  .decode-cell-title { font-size: 12px; font-weight: 600; color: var(--text); }
+  .decode-cell-desc  { font-size: 10px; color: var(--text-dim); line-height: 1.5; }
+  .decode-img-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; min-height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
+  }
+  .decode-img { max-width: 100%; max-height: 220px; display: block; border-radius: 2px; }
+  .decode-loading { color: var(--text-dim); font-size: 11px; position: absolute; }
+  .decode-select-btn {
+    width: 100%; padding: 7px 0; border: 1px solid var(--border);
+    border-radius: 5px; background: var(--surface); color: var(--text-dim);
+    cursor: pointer; font: inherit; font-size: 11px; font-weight: 600;
+    transition: all .15s; text-align: center;
+  }
+  .decode-select-btn:hover { border-color: var(--accent2); color: var(--accent2); }
+  .decode-cell.selected .decode-select-btn {
+    background: var(--accent2); border-color: var(--accent2); color: #fff;
+  }
+
+  /* ── Step 3: Save ── */
+  .fmt-btns { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .fmt-btn {
+    padding: 8px 20px; border: 1px solid var(--border);
+    border-radius: 6px; background: var(--surface2); color: var(--text-dim);
+    cursor: pointer; font: inherit; font-size: 12px; font-weight: 600;
+    transition: all .15s;
+  }
+  .fmt-btn.active { background: var(--accent2); border-color: var(--accent2); color: #fff; }
+  .fmt-btn:hover:not(.active) { border-color: var(--accent2); color: var(--text); }
+  .save-info { font-size: 11px; color: var(--text-dim); margin-bottom: 14px; line-height: 1.6; }
+  .save-preview-box {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 6px; padding: 10px; text-align: center;
+    min-height: 80px; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+  }
+  #save-preview-img { max-width: 100%; max-height: 260px; border-radius: 4px; display: none; }
+
+  /* step connector */
+  .step-connector { width: 2px; height: 14px; background: var(--border); margin: 0 24px; }
+
+  .pos-btn { padding: 5px 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface2); color: var(--text-dim); cursor: pointer; font: inherit; font-size: 12px; transition: all .15s; }
+  .pos-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .pos-btn:hover:not(.active) { border-color: var(--accent); color: var(--text); }
+
+  .diff-color-btn { width: 20px; height: 20px; border-radius: 4px; border: 2px solid transparent; cursor: pointer; padding: 0; transition: transform .1s, border-color .1s; flex-shrink: 0; }
+  .diff-color-btn:hover { transform: scale(1.2); }
+  .diff-color-btn.active { border-color: #fff; box-shadow: 0 0 0 1px #888; transform: scale(1.15); }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"></div>
+  <h1>Binary Image Destroyer</h1>
+  <span class="header-sub">バイナリ構造の可視化と破壊</span>
+</header>
+
+<div id="upload-zone">
+  <div class="icon">🗂</div>
+  <strong>ドラッグ＆ドロップ or クリックでファイルを選択</strong>
+  <p style="margin-top:8px">JPEG / TIFF / BMP / PNG / RAW (CR2, NEF, ARW, DNG…)</p>
+  <input type="file" id="file-input" accept="image/*,.cr2,.cr3,.nef,.arw,.dng,.raf,.orf,.rw2,.pef,.raw">
+</div>
+<div id="upload-progress">⏳ アップロード・解析中...</div>
+
+<div id="app-area">
+  <div id="file-info-bar"></div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="structure">🔬 構造ビューア</button>
+    <button class="tab-btn" data-tab="destroy">💥 バイナリ破壊</button>
+  </div>
+
+  <!-- ══ Tab 1: Structure Viewer ══ -->
+  <div id="tab-structure" class="tab-panel active">
+    <div class="viz-toolbar">
+      <button class="viz-btn active" data-viz="fft">📊 FFT スペクトル</button>
+      <button class="viz-btn" data-viz="dct">🧩 DCT 係数マップ</button>
+      <button class="viz-btn" data-viz="bayer">🎨 ベイヤー配列</button>
+      <div class="dct-toggle" id="dct-toggle">
+        <button class="mini-btn active" data-dct="ac">AC 成分</button>
+        <button class="mini-btn" data-dct="dc">DC 成分</button>
+      </div>
+      <button class="viz-dl-btn" id="btn-dl-viz" disabled title="元の解像度でダウンロード">⬇ 可視化を保存</button>
+    </div>
+    <div id="viz-box">
+      <span id="viz-msg">画像をアップロードしてください</span>
+      <img id="viz-img" alt="">
+    </div>
+    <div class="struct-panel">
+      <h3>ファイル構造</h3>
+      <div id="struct-content"><span style="color:var(--text-dim)">読み込み中...</span></div>
+    </div>
+  </div>
+
+  <!-- ══ Tab 2: 3-Step Binary Destruction ══ -->
+  <div id="tab-destroy" class="tab-panel">
+
+    <!-- ─── Step 1: Binary Destruction ─── -->
+    <div class="step-card" id="step1-card">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">バイナリ破壊</div>
+        <span class="step-badge current" id="step1-badge">現在</span>
+      </div>
+      <div class="step-body" id="step1-body">
+        <!-- Canvases -->
+        <div class="destroy-layout">
+          <div class="canvas-wrap">
+            <h3>元画像</h3>
+            <canvas id="original-canvas"></canvas>
+          </div>
+          <div class="canvas-wrap">
+            <h3>破壊後プレビュー</h3>
+            <canvas id="destroy-canvas"></canvas>
+          </div>
+          <div class="canvas-wrap" id="diff-overlay-panel">
+            <h3>🔢 バイナリ変化の可視化</h3>
+            <canvas id="diff-canvas"></canvas>
+            <div style="margin-top:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <label style="font-size:11px;color:var(--text-dim)">フォントサイズ</label>
+              <input type="number" id="diff-font-size" min="1" max="30" value="6"
+                style="width:52px;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:2px 6px;border-radius:4px;font-size:11px">
+              <label style="font-size:11px;color:var(--text-dim);margin-left:8px">均一度: <span id="flat-var-val">150</span></label>
+              <input type="range" id="diff-flat-var" min="0" max="800" step="10" value="150"
+                style="width:100px;accent-color:var(--accent2)">
+              <button id="diff-reload-btn" class="btn btn-sec" style="font-size:11px;padding:4px 10px">再描画</button>
+              <button id="diff-download-btn" class="btn btn-sec" style="font-size:11px;padding:4px 10px">⬇ PNG保存</button>
+            </div>
+            <div style="margin-top:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <label style="font-size:11px;color:var(--text-dim);white-space:nowrap">テキスト色</label>
+              <div id="diff-color-swatches" style="display:flex;gap:4px;flex-wrap:wrap">
+                <!-- color, label, shadow -->
+                <button class="diff-color-btn active" data-color="#00e650" title="緑"    style="background:#00e650"></button>
+                <button class="diff-color-btn"        data-color="#ffffff" title="白"    style="background:#ffffff"></button>
+                <button class="diff-color-btn"        data-color="#000000" title="黒"    style="background:#000000;border-color:#555"></button>
+                <button class="diff-color-btn"        data-color="#ff3333" title="赤"    style="background:#ff3333"></button>
+                <button class="diff-color-btn"        data-color="#4488ff" title="青"    style="background:#4488ff"></button>
+                <button class="diff-color-btn"        data-color="#ffee00" title="黄"    style="background:#ffee00"></button>
+                <button class="diff-color-btn"        data-color="#00ffff" title="シアン" style="background:#00ffff"></button>
+                <button class="diff-color-btn"        data-color="#ff8800" title="橙"    style="background:#ff8800"></button>
+                <button class="diff-color-btn"        data-color="#ff66cc" title="ピンク" style="background:#ff66cc"></button>
+                <button class="diff-color-btn"        data-color="#aa44ff" title="紫"    style="background:#aa44ff"></button>
+              </div>
+            </div>
+            <div style="margin-top:8px">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                <label style="font-size:11px;color:var(--text-dim);white-space:nowrap">カスタムテキスト</label>
+                <span style="font-size:10px;color:var(--text-dim)">空欄でRGB値 / 入力すると破壊箇所にループ表示</span>
+                <button id="diff-clear-text-btn" class="btn btn-sec" style="font-size:11px;padding:3px 8px;margin-left:auto" title="クリア">✕ クリア</button>
+              </div>
+              <textarea id="diff-custom-text" rows="3" placeholder="ここにテキストを入力&#10;スペース区切りで単語ごとにループします&#10;例: LOST DATA ERROR MISSING CORRUPT"
+                style="width:100%;box-sizing:border-box;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:6px 8px;border-radius:4px;font-size:11px;font-family:inherit;resize:vertical;line-height:1.5"></textarea>
+              <div style="font-size:10px;color:var(--text-dim);margin-top:3px">入力後 Enter または「再描画」ボタンで反映</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="ctrl-panel">
+          <div class="action-row" style="margin-top:0">
+            <button class="btn btn-sec"     id="btn-undo"    disabled>↩ アンドゥ</button>
+            <button class="btn btn-sec"     id="btn-dl"      disabled title="破壊済みバイナリをそのまま保存">⬇ 生バイナリ保存</button>
+            <button class="btn btn-danger"  id="btn-reset"   disabled>🔁 リセット</button>
+            <span class="undo-lbl" id="undo-lbl"></span>
+            <button class="btn btn-next"    id="btn-step1-next" disabled>次へ →</button>
+          </div>
+          <div id="status-bar"></div>
+          <div id="byte-info"></div>
+        </div>
+
+        <!-- Auto-destroy (always open) -->
+        <div class="auto-panel">
+          <div class="auto-panel-header">
+            <span style="font-size:1.2rem">🎰</span>
+            <h3>ランダム自動破壊</h3>
+            <span class="badge" style="background:var(--accent2);color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">AUTO</span>
+          </div>
+          <div class="auto-panel-body">
+            <p style="font-size:11px;color:var(--text-dim);margin-bottom:14px">
+              ファイルが開ける範囲でランダムに領域・方式・強度を選択して繰り返し破壊します。<br>
+              各ステップで二分探索により「壊れる直前の最大強度」を自動的に見つけます。
+            </p>
+            <div class="ctrl-grid-3">
+              <div class="ctrl-grp">
+                <label>破壊回数: <span class="int-val" id="auto-iter-val">10 回</span></label>
+                <div class="int-row">
+                  <input type="range" id="auto-iter" min="1" max="30" value="10">
+                </div>
+              </div>
+              <div class="ctrl-grp">
+                <label>最大強度上限: <span class="int-val" id="auto-intensity-val">40%</span></label>
+                <div class="int-row">
+                  <input type="range" id="auto-intensity" min="1" max="100" value="40">
+                </div>
+                <div style="font-size:10px;color:var(--text-dim);margin-top:2px">二分探索で実際の最大値を自動調整</div>
+              </div>
+              <div class="ctrl-grp" id="rst-interval-grp" style="display:none">
+                <label>RST間隔: <span class="int-val" id="rst-interval-val">50 MCU</span></label>
+                <div class="int-row">
+                  <input type="range" id="rst-interval-slider" min="1" max="500" value="50">
+                </div>
+                <div style="font-size:10px;color:var(--text-dim);margin-top:2px">JPEG専用 — 小さいほど細かいブロック境界</div>
+              </div>
+            </div>
+            <div class="ctrl-grp" style="margin-top:14px" id="tear-position-grp">
+              <label style="margin-bottom:6px">✂️ ちぎる — 破壊位置</label>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px" id="pos-btn-row">
+                <button class="pos-btn active" data-pos="random">🎲 完全ランダム</button>
+                <!-- portrait buttons (default) -->
+                <button class="pos-btn pos-portrait" data-pos="q1">⬆ 上</button>
+                <button class="pos-btn pos-portrait" data-pos="q2">↑ 上中</button>
+                <button class="pos-btn pos-portrait" data-pos="q3">↓ 下中</button>
+                <button class="pos-btn pos-portrait" data-pos="q4">⬇ 下</button>
+                <!-- landscape buttons (hidden until landscape detected) -->
+                <button class="pos-btn pos-landscape" data-pos="q1" style="display:none">◀ 左</button>
+                <button class="pos-btn pos-landscape" data-pos="q2" style="display:none">◁ 左中</button>
+                <button class="pos-btn pos-landscape" data-pos="q3" style="display:none">▷ 右中</button>
+                <button class="pos-btn pos-landscape" data-pos="q4" style="display:none">▶ 右</button>
+              </div>
+            </div>
+            <div class="ctrl-grp" style="margin-top:14px">
+              <label style="margin-bottom:6px">使用する破壊方式（複数選択可）</label>
+              <div class="methods-grid">
+                <label class="method-chip"><input type="checkbox" value="noise"     checked> 🌪 ノイズ</label>
+                <label class="method-chip"><input type="checkbox" value="tear"      checked> ✂️ ちぎる</label>
+                <label class="method-chip"><input type="checkbox" value="invert"    checked> 🔄 反転</label>
+                <label class="method-chip"><input type="checkbox" value="shuffle"   checked> 🎲 シャッフル</label>
+                <label class="method-chip"><input type="checkbox" value="pattern"   checked> 〰️ パターン</label>
+                <label class="method-chip"><input type="checkbox" value="black">           ⬛ 黒</label>
+                <label class="method-chip"><input type="checkbox" value="white">           ⬜ 白</label>
+                <label class="method-chip"><input type="checkbox" value="frequency">       📡 周波数</label>
+                <label class="method-chip"><input type="checkbox" value="blockshift">     🎨 色ズレ</label>
+                <label class="method-chip"><input type="checkbox" value="blockshift_orig"> 📦 ブロックシフト初期</label>
+                <label class="method-chip"><input type="checkbox" value="hshift">          ↔️ 左右ズレ</label>
+              </div>
+            </div>
+            <div class="ctrl-grp" style="margin-top:14px" id="blockshift-amount-grp" style="display:none">
+              <label>📦 シフト量: <span class="int-val" id="blockshift-amount-val">3%</span></label>
+              <div class="int-row">
+                <input type="range" id="blockshift-amount-slider" min="1" max="50" value="3">
+              </div>
+              <div style="font-size:10px;color:var(--text-dim);margin-top:2px">ズレ量（%）。色ズレ：バイト回転量 / ブロックシフト初期：行ブロック高さ / 左右ズレ：横シフト距離</div>
+            </div>
+            <div style="margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+              <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:12px;color:var(--text-dim);user-select:none">
+                <input type="checkbox" id="vertical-stripe-toggle" style="accent-color:var(--accent2);width:14px;height:14px">
+                <span>🔄 縦ずれ</span>
+              </label>
+              <span style="font-size:10px;color:var(--text-dim)">ONにすると画像を90°回転してから破壊→戻すことで横ストライプを縦ストライプに変換</span>
+            </div>
+            <div class="action-row" style="margin-top:10px">
+              <button class="btn btn-primary" id="btn-auto-destroy" disabled>🎰 ランダム破壊を実行</button>
+              <span style="font-size:11px;color:var(--text-dim)" id="auto-result-lbl"></span>
+            </div>
+            <div class="progress-bar-wrap" id="auto-progress-wrap">
+              <div class="progress-bar-track"><div class="progress-bar-fill" id="auto-progress-fill"></div></div>
+              <div class="progress-label" id="auto-progress-label">処理中...</div>
+            </div>
+            <div class="auto-log" id="auto-log"></div>
+          </div>
+        </div>
+      </div><!-- /step1-body -->
+    </div><!-- /step1-card -->
+
+    <div class="step-connector"></div>
+
+    <!-- ─── Step 2: Decode Method Selection ─── -->
+    <div class="step-card locked" id="step2-card">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">デコード方式選択</div>
+        <span class="step-lock-icon">🔒</span>
+      </div>
+      <div class="step-body hidden" id="step2-body">
+        <p style="font-size:11px;color:var(--text-dim);margin-bottom:14px">
+          破壊済みファイルを4種類のデコーダーで表示します。好みの結果を選んで次へ進んでください。
+        </p>
+        <div class="decode-grid" id="decode-grid">
+          <!-- pillow -->
+          <div class="decode-cell" id="cell-pillow">
+            <div class="decode-cell-title">🐍 Pillow エラートレラント</div>
+            <div class="decode-cell-desc">LOAD_TRUNCATED_IMAGES=True で強制デコード。<br>できる限り多くの画像を復元します。</div>
+            <div class="decode-img-box" id="box-pillow">
+              <span class="decode-loading" id="load-pillow">⏳ 読み込み中...</span>
+              <img class="decode-img" id="img-pillow" alt="">
+            </div>
+            <button class="decode-select-btn" data-decode="pillow">これを選ぶ</button>
+          </div>
+          <!-- opencv -->
+          <div class="decode-cell" id="cell-opencv">
+            <div class="decode-cell-title">👁 OpenCV 独自復元</div>
+            <div class="decode-cell-desc">cv2.imdecode(IMREAD_ANYCOLOR) — OpenCVの独自エラー復元アルゴリズム。</div>
+            <div class="decode-img-box" id="box-opencv">
+              <span class="decode-loading" id="load-opencv">⏳ 読み込み中...</span>
+              <img class="decode-img" id="img-opencv" alt="">
+            </div>
+            <button class="decode-select-btn" data-decode="opencv">これを選ぶ</button>
+          </div>
+          <!-- libjpeg -->
+          <div class="decode-cell" id="cell-libjpeg">
+            <div class="decode-cell-title">🌉 libjpeg エラートレラント</div>
+            <div class="decode-cell-desc">Pillow truncation + MedianFilter による<br>エラー隠蔽処理（Adobe Bridge 的）。</div>
+            <div class="decode-img-box" id="box-libjpeg">
+              <span class="decode-loading" id="load-libjpeg">⏳ 読み込み中...</span>
+              <img class="decode-img" id="img-libjpeg" alt="">
+            </div>
+            <button class="decode-select-btn" data-decode="libjpeg">これを選ぶ</button>
+          </div>
+          <!-- strict -->
+          <div class="decode-cell" id="cell-strict">
+            <div class="decode-cell-title">📷 厳密モード</div>
+            <div class="decode-cell-desc">通常デコードのみ。失敗時はJPEGの有効プレフィクスを二分探索（Photoshop 的）。</div>
+            <div class="decode-img-box" id="box-strict">
+              <span class="decode-loading" id="load-strict">⏳ 読み込み中...</span>
+              <img class="decode-img" id="img-strict" alt="">
+            </div>
+            <button class="decode-select-btn" data-decode="strict">これを選ぶ</button>
+          </div>
+        </div>
+        <div class="action-row">
+          <span style="font-size:11px;color:var(--text-dim)" id="step2-hint">デコード方式を選択してください</span>
+          <button class="btn btn-next" id="btn-step2-next" disabled>次へ →</button>
+        </div>
+      </div>
+    </div><!-- /step2-card -->
+
+    <div class="step-connector"></div>
+
+    <!-- ─── Step 3: Save ─── -->
+    <div class="step-card locked" id="step3-card">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">正常ファイルとして保存</div>
+        <span class="step-lock-icon">🔒</span>
+      </div>
+      <div class="step-body hidden" id="step3-body">
+        <p style="font-size:11px;color:var(--text-dim);margin-bottom:14px">
+          選択したデコード方式で元の解像度にデコードし、指定フォーマットで保存します。
+        </p>
+        <div class="save-preview-box">
+          <span style="color:var(--text-dim);font-size:11px" id="save-preview-msg">⏳ プレビュー準備中...</span>
+          <img id="save-preview-img" alt="">
+        </div>
+        <div class="fmt-btns">
+          <button class="fmt-btn active" data-fmt="jpeg">JPEG</button>
+          <button class="fmt-btn" data-fmt="png">PNG</button>
+          <button class="fmt-btn" data-fmt="tiff">TIFF（非圧縮）</button>
+        </div>
+        <div class="save-info" id="save-info">選択方式: —  フォーマット: JPEG</div>
+        <div class="action-row">
+          <button class="btn btn-primary" id="btn-save" disabled style="font-size:14px;padding:11px 28px">⬇ ダウンロード</button>
+        </div>
+      </div>
+    </div><!-- /step3-card -->
+
+  </div><!-- /tab-destroy -->
+</div><!-- /app-area -->
+
+<script>
+// ── state ─────────────────────────────────────────────────────────────────────
+let fileId = null, imgW = 0, imgH = 0;
+let currentViz = 'fft', dctMode = 'ac';
+let undoDepth = 0;
+let selectedDecodeMethod = null;
+let selectedSaveFormat = 'jpeg';
+let step1Done = false;   // at least one destruction made
+let lastDestroyedDataUrl = null;
+
+const origCanvas = document.getElementById('original-canvas');
+const origCtx    = origCanvas.getContext('2d');
+const destCanvas = document.getElementById('destroy-canvas');
+const destCtx    = destCanvas.getContext('2d');
+
+let origImg = new Image();
+const MAX_CANVAS_W = 500;
+
+// ── upload ─────────────────────────────────────────────────────────────────────
+const uploadZone = document.getElementById('upload-zone');
+const fileInput  = document.getElementById('file-input');
+
+uploadZone.addEventListener('click', () => fileInput.click());
+uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
+uploadZone.addEventListener('drop', e => {
+  e.preventDefault(); uploadZone.classList.remove('drag-over');
+  if (e.dataTransfer.files[0]) doUpload(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', () => { if (fileInput.files[0]) doUpload(fileInput.files[0]); });
+
+async function doUpload(file) {
+  uploadZone.style.display = 'none';
+  const prog = document.getElementById('upload-progress');
+  prog.style.display = 'block';
+  prog.textContent = '⏳ アップロード・解析中...';
+  const fd = new FormData();
+  fd.append('file', file);
+  try {
+    const r = await fetch('/upload', { method: 'POST', body: fd });
+    if (!r.ok) { const e = await r.json(); throw new Error(e.detail || 'Upload failed'); }
+    const d = await r.json();
+    fileId = d.file_id; imgW = d.width; imgH = d.height;
+    prog.style.display = 'none';
+    document.getElementById('app-area').style.display = 'block';
+    renderInfoBar(d);
+    renderStructure(d.structure);
+    loadViz();
+    loadImages();
+    ['btn-dl','btn-reset','btn-auto-destroy','btn-dl-viz'].forEach(
+      id => document.getElementById(id).disabled = false
+    );
+    // Fetch image info for RST interval default (JPEG only)
+    if (d.format === 'JPEG') {
+      try {
+        const infoR = await fetch(`/info/${fileId}`);
+        if (infoR.ok) {
+          const info = await infoR.json();
+          const slider = document.getElementById('rst-interval-slider');
+          slider.value = info.default_rst_interval;
+          updateRstLabel();
+          document.getElementById('rst-interval-grp').style.display = '';
+          if (info.default_font_size) {
+            document.getElementById('diff-font-size').value = info.default_font_size;
+          }
+        }
+      } catch(e) { /* ignore */ }
+    }
+  } catch(err) {
+    prog.textContent = '❌ エラー: ' + err.message;
+  }
+}
+
+// ── info bar ──────────────────────────────────────────────────────────────────
+function renderInfoBar(d) {
+  const st = d.structure || {};
+  const chips = [
+    ['フォーマット', st.type || d.format || '?'],
+    ['解像度', d.width && d.height ? `${d.width} × ${d.height} px` : '不明'],
+    ['ファイルサイズ', fmtBytes(d.size)],
+  ];
+  if (st.scan_data_start != null)
+    chips.push(['スキャンデータ開始', `0x${st.scan_data_start.toString(16).toUpperCase()}`]);
+  if (st.pixel_offset != null)
+    chips.push(['ピクセルデータ開始', `0x${st.pixel_offset.toString(16).toUpperCase()}`]);
+  if (st.image_data_start != null)
+    chips.push(['画像データ開始', `0x${st.image_data_start.toString(16).toUpperCase()}`]);
+  document.getElementById('file-info-bar').innerHTML =
+    chips.map(([k,v]) => `<div class="info-chip">${k}: <span>${v}</span></div>`).join('');
+}
+
+function fmtBytes(n) {
+  if (n < 1024) return n + ' B';
+  if (n < 1048576) return (n/1024).toFixed(1) + ' KB';
+  return (n/1048576).toFixed(2) + ' MB';
+}
+
+// ── structure ─────────────────────────────────────────────────────────────────
+function renderStructure(st) {
+  const el = document.getElementById('struct-content');
+  if (!st) { el.innerHTML = '<span style="color:var(--text-dim)">構造情報なし</span>'; return; }
+  let html = '';
+  if (st.type === 'JPEG' && st.markers) {
+    html += `<table class="struct-table"><thead><tr><th>マーカー</th><th>オフセット</th><th>サイズ</th></tr></thead><tbody>`;
+    for (const m of st.markers)
+      html += `<tr><td class="c-name">${m.name}</td><td class="c-off">0x${m.offset.toString(16).toUpperCase().padStart(6,'0')}</td><td class="c-sz">${m.size} B</td></tr>`;
+    html += '</tbody></table>';
+    if (st.scan_data_start != null)
+      html += `<p style="margin-top:8px;color:var(--text-dim)">スキャンデータ範囲: <span style="color:var(--yellow)">0x${st.scan_data_start.toString(16).toUpperCase()}</span> → <span style="color:var(--yellow)">0x${st.scan_data_end.toString(16).toUpperCase()}</span> <span style="color:var(--green)">(${fmtBytes(st.scan_data_end - st.scan_data_start)})</span></p>`;
+  } else if (st.type === 'BMP') {
+    const rows = [
+      ['ファイルサイズ', fmtBytes(st.file_size||0)],
+      ['ピクセルデータ開始', `0x${(st.pixel_offset||0).toString(16).toUpperCase()}`],
+      ['DIBヘッダーサイズ', `${st.dib_header_size||0} B`],
+      ['解像度', `${st.width} × ${st.height} px`],
+      ['ビット深度', `${st.bit_count} bpp`],
+      ['圧縮', st.compression||''],
+      ['行サイズ (4B境界)', `${st.row_size||0} B`],
+      ['画像データサイズ', fmtBytes(st.image_data_size||0)],
+      ['格納方向', st.height_flipped ? '上→下' : '下→上 (標準BMP)'],
+    ];
+    html += `<table class="struct-table"><tbody>${rows.map(([k,v])=>`<tr><td class="c-name">${k}</td><td>${v}</td></tr>`).join('')}</tbody></table>`;
+  } else if (st.tags) {
+    html += `<p style="color:var(--text-dim);margin-bottom:8px">バイト順: <span style="color:var(--accent2)">${st.byte_order||'?'}</span>  IFD: <span style="color:var(--yellow)">0x${(st.ifd_offset||0).toString(16).toUpperCase()}</span></p>`;
+    html += `<table class="struct-table"><thead><tr><th>タグ</th><th>値</th></tr></thead><tbody>`;
+    for (const t of st.tags) {
+      const v = Array.isArray(t.value) ? t.value.slice(0,8).join(', ')+(t.value.length>8?'…':'') : String(t.value).slice(0,80);
+      html += `<tr><td class="c-name">${t.name}</td><td>${v}</td></tr>`;
+    }
+    html += '</tbody></table>';
+    if (st.strip_offsets?.length)
+      html += `<p style="margin-top:8px;color:var(--text-dim)">StripOffsets: <span style="color:var(--yellow)">${st.strip_offsets.map(o=>'0x'+o.toString(16).toUpperCase()).join(', ')}</span></p>`;
+  } else if (st.type === 'PNG' && st.chunks) {
+    html += `<table class="struct-table"><thead><tr><th>チャンク</th><th>オフセット</th><th>データサイズ</th></tr></thead><tbody>`;
+    for (const c of st.chunks)
+      html += `<tr><td class="c-name">${c.type}</td><td class="c-off">0x${c.offset.toString(16).toUpperCase().padStart(6,'0')}</td><td class="c-sz">${fmtBytes(c.data_size)}</td></tr>`;
+    html += '</tbody></table>';
+  } else {
+    html += `<pre style="color:var(--text-dim);font-size:11px;white-space:pre-wrap">${JSON.stringify(st,null,2)}</pre>`;
+  }
+  el.innerHTML = html;
+}
+
+// ── visualization ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.viz-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.viz-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentViz = btn.dataset.viz;
+    document.getElementById('dct-toggle').classList.toggle('show', currentViz === 'dct');
+    if (fileId) loadViz();
+  });
+});
+document.querySelectorAll('[data-dct]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-dct]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    dctMode = btn.dataset.dct;
+    if (fileId && currentViz === 'dct') loadViz();
+  });
+});
+
+function vizUrl(forDownload = false) {
+  let url = currentViz === 'bayer' ? `/visualize/bayer/${fileId}`
+           : currentViz === 'dct'  ? `/visualize/dct/${fileId}?mode=${dctMode}`
+                                    : `/visualize/fft/${fileId}`;
+  const sep = url.includes('?') ? '&' : '?';
+  if (forDownload) url += sep + 'download=1';
+  else             url += sep + 't=' + Date.now();
+  return url;
+}
+
+function loadViz() {
+  if (!fileId) return;
+  const msg = document.getElementById('viz-msg');
+  const img = document.getElementById('viz-img');
+  msg.textContent = '⏳ 生成中...'; msg.style.display = 'inline';
+  img.style.display = 'none';
+  img.onload  = () => { msg.style.display = 'none'; img.style.display = 'block'; };
+  img.onerror = () => { msg.textContent = '可視化に失敗しました'; };
+  img.src = vizUrl(false);
+}
+
+document.getElementById('btn-dl-viz').addEventListener('click', () => {
+  if (!fileId) return;
+  const a = document.createElement('a'); a.href = vizUrl(true); a.click();
+});
+
+// ── canvas setup ──────────────────────────────────────────────────────────────
+function loadImages() {
+  origImg = new Image();
+  origImg.onload = () => {
+    const scale = Math.min(1, MAX_CANVAS_W / origImg.naturalWidth);
+    origCanvas.width  = Math.round(origImg.naturalWidth  * scale);
+    origCanvas.height = Math.round(origImg.naturalHeight * scale);
+    destCanvas.width  = origCanvas.width;
+    destCanvas.height = origCanvas.height;
+    origCtx.drawImage(origImg, 0, 0, origCanvas.width, origCanvas.height);
+    destCtx.drawImage(origImg, 0, 0, destCanvas.width, destCanvas.height);
+    // Update position buttons based on orientation
+    updatePosBtns(origImg.naturalWidth > origImg.naturalHeight);
+  };
+  origImg.src = `/preview/${fileId}?which=original&t=` + Date.now();
+}
+
+function drawOnCanvas(dataUrl, canvas, ctx) {
+  const img = new Image();
+  img.onload = () => ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  img.src = dataUrl;
+}
+
+
+// ── tear position buttons ─────────────────────────────────────────────────────
+let tearPosition = 'random';
+
+function updatePosBtns(isLandscape) {
+  document.querySelectorAll('.pos-portrait').forEach(b => b.style.display = isLandscape ? 'none' : '');
+  document.querySelectorAll('.pos-landscape').forEach(b => b.style.display = isLandscape ? '' : 'none');
+  // Reset active to random when orientation changes
+  document.querySelectorAll('.pos-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.pos-btn[data-pos="random"]').classList.add('active');
+  tearPosition = 'random';
+}
+
+document.querySelectorAll('.pos-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pos-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    tearPosition = btn.dataset.pos;
+  });
+});
+
+// show/hide tear-position / blockshift groups based on checked methods
+function updateMethodVisibility() {
+  const checked = [...document.querySelectorAll('.methods-grid input:checked')].map(cb => cb.value);
+  const hasTear       = checked.includes('tear') || checked.includes('blockshift') || checked.includes('blockshift_orig') || checked.includes('hshift');
+  const hasBlockshift = checked.includes('blockshift') || checked.includes('blockshift_orig') || checked.includes('hshift');
+  document.getElementById('tear-position-grp').style.display       = hasTear       ? '' : 'none';
+  document.getElementById('blockshift-amount-grp').style.display   = hasBlockshift  ? '' : 'none';
+}
+document.querySelectorAll('.methods-grid input').forEach(cb => {
+  cb.addEventListener('change', updateMethodVisibility);
+});
+updateMethodVisibility();
+
+// blockshift amount slider
+const blockshiftSlider = document.getElementById('blockshift-amount-slider');
+blockshiftSlider.addEventListener('input', () => {
+  document.getElementById('blockshift-amount-val').textContent = blockshiftSlider.value + '%';
+});
+
+// ── RST interval slider ────────────────────────────────────────────────────────
+const rstSlider = document.getElementById('rst-interval-slider');
+function updateRstLabel() {
+  const v = parseInt(rstSlider.value);
+  document.getElementById('rst-interval-val').textContent = `${v} MCU`;
+}
+rstSlider.addEventListener('input', updateRstLabel);
+updateRstLabel();
+
+// ── undo ──────────────────────────────────────────────────────────────────────
+document.getElementById('btn-undo').addEventListener('click', async () => {
+  if (!fileId) return;
+  try {
+    const r = await fetch(`/undo/${fileId}`, { method: 'POST' });
+    const d = await r.json();
+    if (!d.ok) { showStatus(d.msg, 'warn'); return; }
+    undoDepth = d.undo_depth;
+    document.getElementById('btn-undo').disabled = undoDepth === 0;
+    document.getElementById('undo-lbl').textContent = undoDepth > 0 ? `アンドゥ履歴: ${undoDepth}/10` : '';
+    const mime = d.preview_mime || 'image/png';
+    const dataUrl = `data:${mime};base64,${d.preview_b64}`;
+    lastDestroyedDataUrl = dataUrl;
+    const upd = new Image();
+    upd.onload = () => {
+      destCtx.drawImage(upd, 0, 0, destCanvas.width, destCanvas.height);
+    };
+    upd.src = dataUrl;
+    showStatus('↩ アンドゥしました', 'info');
+  } catch(err) {
+    showStatus('アンドゥ失敗: ' + err.message, 'error');
+  }
+});
+
+// ── raw binary download ───────────────────────────────────────────────────────
+document.getElementById('btn-dl').addEventListener('click', () => {
+  if (!fileId) return;
+  const a = document.createElement('a'); a.href = `/download/${fileId}`; a.click();
+});
+
+// ── diff overlay helpers ───────────────────────────────────────────────────────
+const flatVarSlider = document.getElementById('diff-flat-var');
+const flatVarVal    = document.getElementById('flat-var-val');
+flatVarSlider?.addEventListener('input', () => {
+  flatVarVal.textContent = flatVarSlider.value;
+});
+
+function getDiffFontSize() {
+  return parseInt(document.getElementById('diff-font-size')?.value || '6') || 6;
+}
+function getDiffFlatVar() {
+  return parseInt(flatVarSlider?.value || '150') || 150;
+}
+function getDiffCustomText() {
+  return (document.getElementById('diff-custom-text')?.value || '').trim();
+}
+function getDiffTextColor() {
+  const active = document.querySelector('.diff-color-btn.active');
+  return active ? active.dataset.color : '#00e650';
+}
+
+function buildDiffUrl(full = false) {
+  const fs = getDiffFontSize();
+  const fv = getDiffFlatVar();
+  const ct = getDiffCustomText();
+  const tc = getDiffTextColor();
+  let url = `/diff-overlay/${fileId}?font_size=${fs}&flat_var=${fv}&text_color=${encodeURIComponent(tc)}`;
+  if (full) url += '&full=true';
+  if (ct) url += '&custom_text=' + encodeURIComponent(ct);
+  return url;
+}
+
+// Color swatch selection → auto-reload
+document.querySelectorAll('.diff-color-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.diff-color-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    loadDiffOverlay();
+  });
+});
+
+function loadDiffOverlay() {
+  if (!fileId) return;
+  fetch(buildDiffUrl())
+    .then(r => r.blob())
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+      const img = new Image();
+      img.onload = () => {
+        const panel = document.getElementById('diff-overlay-panel');
+        const canvas = document.getElementById('diff-canvas');
+        panel.classList.add('visible');
+        const row = canvas.closest('.destroy-layout');
+        if (row) row.classList.add('three-col');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        canvas.getContext('2d').drawImage(img, 0, 0);
+        URL.revokeObjectURL(url);
+      };
+      img.src = url;
+    })
+    .catch(() => {});
+}
+
+document.getElementById('diff-reload-btn')?.addEventListener('click', loadDiffOverlay);
+
+// Clear custom text
+document.getElementById('diff-clear-text-btn')?.addEventListener('click', () => {
+  const inp = document.getElementById('diff-custom-text');
+  if (inp) { inp.value = ''; inp.focus(); loadDiffOverlay(); }
+});
+
+// Ctrl+Enter or Shift+Enter in textarea → reload
+document.getElementById('diff-custom-text')?.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey || e.shiftKey)) {
+    e.preventDefault();
+    loadDiffOverlay();
+  }
+});
+
+// ── diff overlay download (full resolution via API) ───────────────────────────
+document.getElementById('diff-download-btn')?.addEventListener('click', () => {
+  if (!fileId) return;
+  const a = document.createElement('a');
+  a.href = buildDiffUrl(true);
+  a.download = 'diff_overlay.png';
+  a.click();
+});
+
+// ── reset ─────────────────────────────────────────────────────────────────────
+document.getElementById('btn-reset').addEventListener('click', () => location.reload());
+
+// ── Step 1 → Step 2 ──────────────────────────────────────────────────────────
+document.getElementById('btn-step1-next').addEventListener('click', () => {
+  enterStep2();
+});
+
+function enterStep2() {
+  // Mark step 1 as done
+  const c1 = document.getElementById('step1-card');
+  c1.classList.add('done');
+  const b1 = document.getElementById('step1-badge');
+  b1.textContent = '✓ 完了';
+  b1.classList.remove('current'); b1.classList.add('done-badge');
+
+  // Unlock step 2
+  const c2 = document.getElementById('step2-card');
+  c2.classList.remove('locked');
+  c2.querySelector('.step-lock-icon').remove();
+  document.getElementById('step2-body').classList.remove('hidden');
+
+  // Add "現在" badge to step 2
+  const h2 = c2.querySelector('.step-header');
+  const badge2 = document.createElement('span');
+  badge2.className = 'step-badge current'; badge2.textContent = '現在';
+  h2.appendChild(badge2);
+
+  // Scroll to step 2
+  c2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Load all 4 decode previews
+  ['pillow', 'opencv', 'libjpeg', 'strict'].forEach(m => loadDecodePreview(m));
+}
+
+function loadDecodePreview(method) {
+  const imgEl  = document.getElementById(`img-${method}`);
+  const loadEl = document.getElementById(`load-${method}`);
+  const boxEl  = document.getElementById(`box-${method}`);
+  loadEl.textContent = '⏳ デコード中...';
+  loadEl.style.display = 'inline';
+  imgEl.style.display  = 'none';
+  imgEl.onload = () => {
+    loadEl.style.display = 'none';
+    imgEl.style.display  = 'block';
+  };
+  imgEl.onerror = () => {
+    loadEl.textContent = '❌ デコード失敗';
+  };
+  imgEl.src = `/decode/${method}/${fileId}?t=` + Date.now();
+}
+
+document.querySelectorAll('.decode-select-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const method = btn.dataset.decode;
+    // Deselect all
+    document.querySelectorAll('.decode-cell').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.decode-select-btn').forEach(b => b.textContent = 'これを選ぶ');
+    // Select this one
+    document.getElementById(`cell-${method}`).classList.add('selected');
+    btn.textContent = '✓ 選択中';
+    selectedDecodeMethod = method;
+    document.getElementById('btn-step2-next').disabled = false;
+    document.getElementById('step2-hint').textContent =
+      `選択: ${decodeMethodLabel(method)}`;
+  });
+});
+
+function decodeMethodLabel(m) {
+  return { pillow:'Pillow エラートレラント', opencv:'OpenCV 独自復元',
+           libjpeg:'libjpeg エラートレラント', strict:'厳密モード' }[m] || m;
+}
+
+// ── Step 2 → Step 3 ──────────────────────────────────────────────────────────
+document.getElementById('btn-step2-next').addEventListener('click', () => {
+  enterStep3();
+});
+
+function enterStep3() {
+  // Mark step 2 done
+  const c2 = document.getElementById('step2-card');
+  c2.classList.add('done');
+  const b2 = c2.querySelector('.step-badge');
+  if (b2) { b2.textContent = '✓ 完了'; b2.classList.remove('current'); b2.classList.add('done-badge'); }
+
+  // Unlock step 3
+  const c3 = document.getElementById('step3-card');
+  c3.classList.remove('locked');
+  const lockIcon = c3.querySelector('.step-lock-icon');
+  if (lockIcon) lockIcon.remove();
+  document.getElementById('step3-body').classList.remove('hidden');
+
+  // Add "現在" badge to step 3
+  const h3 = c3.querySelector('.step-header');
+  const badge3 = document.createElement('span');
+  badge3.className = 'step-badge current'; badge3.textContent = '現在';
+  h3.appendChild(badge3);
+
+  // Show the selected decode preview in step 3
+  const selImg = document.getElementById(`img-${selectedDecodeMethod}`);
+  const prevImg = document.getElementById('save-preview-img');
+  const prevMsg = document.getElementById('save-preview-msg');
+  if (selImg && selImg.src && !selImg.src.endsWith('#')) {
+    prevMsg.style.display = 'none';
+    prevImg.src = selImg.src;
+    prevImg.style.display = 'block';
+  } else {
+    prevMsg.textContent = '⏳ プレビュー準備中...';
+  }
+
+  updateSaveInfo();
+  document.getElementById('btn-save').disabled = false;
+
+  // Scroll to step 3
+  c3.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── format selection ──────────────────────────────────────────────────────────
+document.querySelectorAll('.fmt-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fmt-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedSaveFormat = btn.dataset.fmt;
+    updateSaveInfo();
+  });
+});
+
+function updateSaveInfo() {
+  const fmtLabel = { jpeg:'JPEG', png:'PNG', tiff:'TIFF（非圧縮）' }[selectedSaveFormat] || selectedSaveFormat;
+  document.getElementById('save-info').textContent =
+    `選択デコード方式: ${decodeMethodLabel(selectedDecodeMethod)}  ／  保存フォーマット: ${fmtLabel}`;
+}
+
+// ── save / download ───────────────────────────────────────────────────────────
+document.getElementById('btn-save').addEventListener('click', () => {
+  if (!fileId || !selectedDecodeMethod) return;
+  const a = document.createElement('a');
+  a.href = `/save/${fileId}?method=${selectedDecodeMethod}&fmt=${selectedSaveFormat}`;
+  a.click();
+});
+
+// ── tab switching ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    if (btn.dataset.tab === 'structure' && fileId) loadViz();
+    if (btn.dataset.tab === 'destroy' && origImg.complete && origImg.naturalWidth)
+      origCtx.drawImage(origImg, 0, 0, origCanvas.width, origCanvas.height);
+  });
+});
+
+// ── status helper ─────────────────────────────────────────────────────────────
+let statusTimer = null;
+function showStatus(msg, type) {
+  const bar = document.getElementById('status-bar');
+  bar.textContent = msg; bar.className = type; bar.style.display = 'block';
+  clearTimeout(statusTimer);
+  if (type === 'success' || type === 'info')
+    statusTimer = setTimeout(() => { bar.style.display = 'none'; }, 4000);
+}
+
+const autoIter      = document.getElementById('auto-iter');
+const autoIntensity = document.getElementById('auto-intensity');
+autoIter.addEventListener('input',      () => { document.getElementById('auto-iter-val').textContent     = autoIter.value + ' 回'; });
+autoIntensity.addEventListener('input', () => { document.getElementById('auto-intensity-val').textContent = autoIntensity.value + '%'; });
+
+// ── auto-destroy execute ──────────────────────────────────────────────────────
+document.getElementById('btn-auto-destroy').addEventListener('click', async () => {
+  if (!fileId) return;
+  const checkedMethods = [...document.querySelectorAll('.methods-grid input:checked')].map(cb => cb.value);
+  if (checkedMethods.length === 0) { showStatus('破壊方式を1つ以上選択してください', 'warn'); return; }
+
+  const btn           = document.getElementById('btn-auto-destroy');
+  const progressWrap  = document.getElementById('auto-progress-wrap');
+  const progressFill  = document.getElementById('auto-progress-fill');
+  const progressLabel = document.getElementById('auto-progress-label');
+  const resultLbl     = document.getElementById('auto-result-lbl');
+  const logEl         = document.getElementById('auto-log');
+
+  btn.disabled = true; btn.textContent = '⏳ 処理中...';
+  progressWrap.style.display = 'block'; progressFill.style.width = '10%';
+  progressLabel.textContent = 'サーバーに送信中...';
+  logEl.style.display = 'none'; logEl.innerHTML = ''; resultLbl.textContent = '';
+  showStatus('🎰 ランダム破壊を実行中...', 'info');
+
+  const fd = new FormData();
+  fd.append('iterations',    autoIter.value);
+  fd.append('max_intensity', autoIntensity.value / 100);
+  fd.append('methods',       checkedMethods.join(','));
+  fd.append('tear_position',      tearPosition);
+  fd.append('blockshift_amount',  parseInt(blockshiftSlider.value) / 100);
+  fd.append('vertical_stripe',    document.getElementById('vertical-stripe-toggle')?.checked ? 'true' : 'false');
+  // Include RST interval only if the slider is visible (JPEG)
+  const rstGrp = document.getElementById('rst-interval-grp');
+  if (rstGrp.style.display !== 'none') {
+    fd.append('rst_interval', parseInt(rstSlider.value));
+  }
+
+  let pct = 10;
+  const ticker = setInterval(() => {
+    pct = Math.min(90, pct + 4);
+    progressFill.style.width = pct + '%';
+    progressLabel.textContent = `処理中... (${Math.round(pct)}%)`;
+  }, 400);
+
+  try {
+    const r = await fetch(`/auto-destroy/${fileId}`, { method: 'POST', body: fd });
+    const d = await r.json();
+    clearInterval(ticker);
+    if (!r.ok) throw new Error(d.detail || 'Auto-destroy failed');
+
+    progressFill.style.width = '100%';
+    progressLabel.textContent = `完了：${d.accepted} 回成功 / ${d.skipped} 回スキップ`;
+
+    undoDepth = d.undo_depth;
+    document.getElementById('btn-undo').disabled = false;
+    document.getElementById('undo-lbl').textContent = `アンドゥ履歴: ${undoDepth}/10`;
+    resultLbl.textContent = `✅ ${d.accepted}/${d.accepted + d.skipped} 回適用`;
+
+    const mime = d.preview_mime || 'image/png';
+    const dataUrl = `data:${mime};base64,${d.preview_b64}`;
+    lastDestroyedDataUrl = dataUrl;
+    const upd = new Image();
+    upd.onload = () => {
+      destCtx.drawImage(upd, 0, 0, destCanvas.width, destCanvas.height);
+    };
+    upd.src = dataUrl;
+
+    // Load diff overlay
+    loadDiffOverlay();
+
+    if (!step1Done && d.accepted > 0) {
+      step1Done = true;
+      document.getElementById('btn-step1-next').disabled = false;
+    }
+
+    if (d.log && d.log.length) {
+      logEl.style.display = 'block';
+      logEl.innerHTML = d.log.map((row, i) => {
+        if (row.ok) {
+          const [x1,y1,x2,y2] = row.region;
+          return `<div class="auto-log-row"><span style="color:var(--text-dim);min-width:22px">#${i+1}</span><span class="ok">✓</span><span style="min-width:70px;color:var(--accent2)">${row.method}</span><span>強度 ${Math.round(row.intensity*100)}%</span><span style="margin-left:auto;font-size:10px">(${x1},${y1})→(${x2},${y2})</span></div>`;
+        } else {
+          return `<div class="auto-log-row"><span style="color:var(--text-dim);min-width:22px">#${i+1}</span><span class="skip">✗</span><span style="color:var(--text-dim)">${row.method} — 開けなくなるためスキップ</span></div>`;
+        }
+      }).join('');
+    }
+    showStatus(`🎰 ランダム破壊完了：${d.accepted} 回適用、${d.skipped} 回スキップ`, 'success');
+  } catch(err) {
+    clearInterval(ticker);
+    progressFill.style.width = '0%';
+    showStatus('❌ エラー: ' + err.message, 'error');
+  }
+  btn.disabled = false; btn.textContent = '🎰 ランダム破壊を実行';
+});
+</script>
+</body>
+</html>
