@@ -540,6 +540,57 @@ h1 em { font-style: normal; color: var(--accent); }
 .detail-source a { color: var(--accent-dim); text-decoration: none; }
 .detail-source a:hover { color: var(--accent); }
 
+/* ── CITATION FOOTNOTES ── */
+.cite-ref {
+  display: inline;
+  position: relative;
+  cursor: pointer;
+}
+.cite-ref sup {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--accent);
+  margin-left: 1px;
+  letter-spacing: 0;
+}
+.cite-ref .cite-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--accent-dim);
+  padding: 6px 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  z-index: 200;
+  pointer-events: none;
+  max-width: 280px;
+  white-space: normal;
+  text-align: left;
+}
+.cite-ref:hover .cite-tooltip { display: block; }
+.cite-list {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.cite-item {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.cite-num { color: var(--accent); flex-shrink: 0; }
+.cite-item a { color: var(--accent-dim); text-decoration: none; }
+.cite-item a:hover { color: var(--accent); }
+
 .detail-links {
   display: flex;
   flex-wrap: wrap;
@@ -759,6 +810,12 @@ const MOVEMENTS_META = {
   '自然主義写真': { en: 'Naturalistic Photography', desc: 'P.H.エマーソンが提唱した、合成や操作を排し自然を「ありのまま」に記録することを重視した写真思想。' },
   '都市記録': { en: 'Urban Documentation', desc: '都市の変容・消滅していく街並みを体系的に記録した写真実践。近代化の証言として機能する。' },
   '写真分離派': { en: 'Photo-Secession', desc: '1902年にスティーグリッツがニューヨークで結成した写真家グループ。ギャラリー291とCamera Work誌を拠点に、写真を絵画と同等の芸術として認めさせる運動を展開した。' },
+  'ダダ': { en: 'Dada', desc: '1916年チューリッヒのカバレー・ヴォルテールで生まれた前衛運動。第一次世界大戦への幻滅から、理性・進歩・国家・芸術の権威を解体しようとした。写真にフォトモンタージュという新形式をもたらした。' },
+  'レイオグラフ': { en: 'Rayograph / Photogram', desc: 'カメラを使わず印画紙の上に直接物を置いて感光させる技法。マン・レイが「レイオグラフ」と命名。モホイ＝ナジも「フォトグラム」として同様の技法を独自に発展させた。' },
+  'バウハウス': { en: 'Bauhaus', desc: '1919年ヴァルター・グロピウスがドイツ・ヴァイマールに設立した美術・工芸・建築の総合学校。モホイ＝ナジらが写真を「光の操作・空間表現の媒体」として理論化し、新しいヴィジョンを提唱した。' },
+  '新しいヴィジョン': { en: 'New Vision', desc: 'バウハウスのモホイ＝ナジが提唱した写真概念。俯瞰・仰角・極端なクローズアップ・フォトグラムなど従来の自然な視点を否定し、写真固有の視覚表現を探求した。' },
+  '新即物主義': { en: 'Neue Sachlichkeit', desc: '1920年代ドイツで生まれた芸術潮流。感傷的修飾を排し、対象を鮮明・直接的に記録することを重視した。ザンダーの組織的人物記録、レンガー＝パッチュの工業物体クローズアップが代表的。' },
+  'ヴォルテクシズム': { en: 'Vorticism', desc: '1914年頃ロンドンで詩人エズラ・パウンドらが起こした前衛運動。機械・都市・速度の美学を探求した。コバーンの「ヴォルトグラフ」は写真史上最初期の純粋抽象写真とされる。' },
 };
 
 const ERAS = [
@@ -827,11 +884,34 @@ const ERAS = [
       ]
     }
   }
+  ,{
+    id: '1910',
+    period: '1910 — 1920s',
+    title: 'モダニズムの台頭：大戦・ダダ・ストレート写真',
+    worldEvents: {
+      text: '第一次世界大戦（1914–18年）は機関銃・毒ガス・航空機による「工業化された大量死」として、過去のあらゆる戦争と次元の異なる惨禍をもたらした。1917年にはロシア革命が勃発しロマノフ朝が崩壊、史上初の社会主義国家ソビエトが誕生した。同年アメリカが参戦し、戦後のヴェルサイユ体制はドイツに苛酷な賠償を課した。文化面では1916年チューリッヒのカバレー・ヴォルテールでダダが誕生し、理性・進歩・国家への根本的な懐疑が前衛芸術として噴出した。1919年にはバウハウスがヴァイマールに開校し、美術・工芸・建築・写真の統合的教育が始まった。アメリカでは「狂騒の20年代」と大量消費社会の到来が、写真を広告・ファッション・報道の主要メディアとして確立させた。',
+      sources: [
+        { text: 'Britannica — World War I', url: 'https://www.britannica.com/event/World-War-I' },
+        { text: 'Wikipedia — Bauhaus', url: 'https://en.wikipedia.org/wiki/Bauhaus' },
+        { text: 'Britannica — Dada', url: 'https://www.britannica.com/art/Dada' },
+      ]
+    },
+    photoContext: {
+      text: 'アメリカではポール・ストランドが1916–17年にピクトリアリズムを決定的に離れ、幾何学的構成と直接的なフォーカスによる「ストレート写真」を確立した。スティーグリッツは『カメラ・ワーク』誌（1917年最終号）でストランドの仕事を「これまで写真界に現れた最も直接的な表現」と評した。ダダとシュルレアリスムの文脈では、マン・レイがカメラなしで印画紙に直接像を作る「レイオグラフ」（1921年）を発明し、写真の「記録」という定義を根底から問い直した。ドイツではバウハウスのモホイ＝ナジが俯瞰・仰角・フォトグラムによる「新しいヴィジョン」を理論化し、ザンダーは20世紀のドイツ社会の全階層を組織的に肖像記録する「人類の生理学的アルバム」プロジェクトを開始した。',
+      sources: [
+        { text: 'Smarthistory — Paul Strand', url: 'https://smarthistory.org/paul-strand-blind-woman/' },
+        { text: 'MoMA — Photography and Modernism', url: 'https://www.moma.org/collection/works?classification=photography&date_begin=1910&date_end=1929' },
+        { text: 'Wikipedia — Neue Sachlichkeit', url: 'https://en.wikipedia.org/wiki/Neue_Sachlichkeit' },
+      ]
+    }
+  }
   /* 次のセクションは順次追加 */
 ];
 
 const PHOTOGRAPHERS = [
-  /* ────────── 1839–1860s ────────── */
+  /* ─────────────────────────────────────────
+     1839–1860s
+     ───────────────────────────────────────── */
   {
     id: 'daguerre',
     name: 'Louis Daguerre',
@@ -1444,6 +1524,161 @@ const PHOTOGRAPHERS = [
       ]
     }
   },
+
+  /* ─────────────────────────────────────────
+     1910–1920s
+     ───────────────────────────────────────── */
+  {
+    id: 'strand',
+    name: 'Paul Strand',
+    nameJa: 'ポール・ストランド',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1890–1976',
+    era: '1910',
+    movements: ['ストレート写真', 'モダニズム', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/5722' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Paul_Strand' },
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=paul+strand' },
+    ],
+    amazon: '',
+    context: {
+      text: 'スティーグリッツの「ギャラリー291」と『カメラ・ワーク』誌に強く影響を受けたストランドは、1912年頃にピクトリアリズムのソフトフォーカスから離れ、シャープなフォーカスと大胆な幾何学的構成に向かった*1。1916年のニューヨークで撮影した幾何学的抽象写真（「ボウルとポーチ」「裏庭の柵」など）と、ロウアーイーストサイドでの人物スナップ（隠しカメラで視線を逸らした人々を撮影した「盲目の女（Blind Woman）」など）は、1916–17年の『カメラ・ワーク』最終号（第49–50号）に掲載され、スティーグリッツから「これまで写真界に現れた最も直接的な表現」と評された*2。第一次世界大戦中は軍の医療部門でX線技師として勤務し、戦後に映画撮影に転じてシャルル・シェラーとの共同作「マンハッタ（Manhatta）」（1921年）を制作した。1932年にウェストン・アダムスらと「f/64グループ」を創設し、「操作なし・直接プリント」のストレート写真の理念を組織的に共有した*3。彼の1916–17年の仕事は、写真が絵画の模倣から自立した瞬間として写真史に位置づけられている。',
+      citations: [
+        { num: 1, name: 'Metropolitan Museum of Art — Paul Strand', url: 'https://www.metmuseum.org/art/collection/search?q=paul+strand' },
+        { num: 2, name: 'Wikipedia — Paul Strand', url: 'https://en.wikipedia.org/wiki/Paul_Strand' },
+        { num: 3, name: 'MoMA — Paul Strand', url: 'https://www.moma.org/artists/5722' },
+      ]
+    }
+  },
+
+  {
+    id: 'coburn',
+    name: 'Alvin Langdon Coburn',
+    nameJa: 'アルヴィン・ラングドン・コバーン',
+    nationality: 'US / GB',
+    flag: '🇺🇸',
+    years: '1882–1966',
+    era: '1910',
+    movements: ['モダニズム', 'ヴォルテクシズム', '実験的技法'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Alvin_Langdon_Coburn' },
+      { label: 'Tate — Vortograph', url: 'https://www.tate.org.uk/art/artworks/coburn-vortograph-p04469' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ボストン生まれのコバーンは10代からカメラを手にし、1900年代にスティーグリッツの写真分離派に参加してロンドンとニューヨークを行き来しながら都市・肖像写真を制作した*1。1910年代にロンドンで詩人・批評家エズラ・パウンドらのヴォルテクシズム（Vorticism）運動と交流し、写真の抽象的可能性を探るようになった。1917年に三枚の鏡と複数のガラス片を組み合わせたカレイドスコープ状の装置「ヴォルトスコープ（Vortoscope）」を自作し、これを通じて撮影した「ヴォルトグラフ（Vortograph）」を発表した*2。写真史上最初期の純粋抽象写真と位置づけられる。パウンドは「コバーンは風景の詩人であり、写真を芸術に対する人間の最初の完全な主張にした」と評した*1。コバーンはその後神智学・フリーメーソンに転向し写真から離れ、20世紀後半に「写真と抽象」研究の中で再発見された。彼の実験はモホイ＝ナジの「新しいヴィジョン」とは独立して、写真が「見ること」の変革になりうることを示した先駆的な仕事として評価されている。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Alvin Langdon Coburn', url: 'https://en.wikipedia.org/wiki/Alvin_Langdon_Coburn' },
+        { num: 2, name: 'Tate — Vortograph', url: 'https://www.tate.org.uk/art/artworks/coburn-vortograph-p04469' },
+      ]
+    }
+  },
+
+  {
+    id: 'manray',
+    name: 'Man Ray',
+    nameJa: 'マン・レイ',
+    nationality: 'US / FR',
+    flag: '🇺🇸',
+    years: '1890–1976',
+    era: '1910',
+    movements: ['ダダ', 'シュルレアリスム', 'レイオグラフ'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/3787' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Man_Ray' },
+      { label: 'Tate', url: 'https://www.tate.org.uk/art/artists/man-ray-1542' },
+    ],
+    amazon: '',
+    context: {
+      text: 'フィラデルフィア生まれのエマニュエル・ラドニツキー（マン・レイ）は1912年頃からニューヨーク・ダダの中心人物マルセル・デュシャンと交流し「ニューヨーク・ダダ」誌（1921年）の制作に参加した*1。第一次世界大戦の惨禍に幻滅したダダは、理性・進歩・国家・既成の芸術概念を解体しようとする運動であり、マン・レイはその写真的実践を担った。1921年にパリへ移りシュルレアリスム運動に加わり、偶然の発見から暗室で印画紙の上に直接物を置いて感光させる技法（カメラレス写真）を発明。マン・レイはこれを「レイオグラフ（Rayograph）」と命名し、アンドレ・ブルトンは「光が最初に自分自身の輪郭を引いた瞬間」と評した*2。1929年にはアシスタントのリー・ミラーの偶然の失敗から「ソラリゼーション」技法（像の部分反転）を開発した。ヴォーグ・ヴァニティ・フェアでのファッション写真は商業的成功をもたらした一方、「芸術家がメディアの需要に対して何をどこまで妥協するか」という問いを彼自身の実践を通じて写真史に埋め込んだ*3。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Man Ray', url: 'https://en.wikipedia.org/wiki/Man_Ray' },
+        { num: 2, name: 'MoMA — Man Ray', url: 'https://www.moma.org/artists/3787' },
+        { num: 3, name: 'Tate — Man Ray', url: 'https://www.tate.org.uk/art/artists/man-ray-1542' },
+      ]
+    }
+  },
+
+  {
+    id: 'moholy',
+    name: 'László Moholy-Nagy',
+    nameJa: 'ラースロー・モホイ＝ナジ',
+    nationality: 'HU / DE',
+    flag: '🇭🇺',
+    years: '1895–1946',
+    era: '1910',
+    movements: ['バウハウス', '新しいヴィジョン', 'レイオグラフ', '実験的技法'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/4016' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Moholy-Nagy' },
+      { label: 'Bauhaus-Archiv', url: 'https://www.bauhaus.de/en/sammlung/6574_laszlo_moholy_nagy/' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ハンガリー生まれのモホイ＝ナジは第一次世界大戦に従軍した後、ベルリンのダダ・構成主義の文脈で活動を始めた*1。1923年にバウハウス（ヴァイマール）に教師として招かれ、1925年の著書『絵画・写真・映画（Malerei Fotografie Film）』で「光自体が創作の材料だ」という理念を展開した。フォトグラム（暗室での物体の直接感光）・俯瞰・仰角・極端なクローズアップなど従来の「自然な視点」を否定する手法をバウハウスの教育に組み込み、「新しいヴィジョン（New Vision）」として体系化した*2。鉄骨から縦横に糸を張って光を屈折させる「光・空間調整装置（Licht-Raum-Modulator）」（1930年完成）は写真・映画・彫刻の境界を融合した実験だった。「写真はいかなる絵画よりも客観的だと信じていたが、今では写真が主観的なヴィジョンの最も鋭い武器だと気づいた」というのが彼の到達した見方だった*3。1933年のナチス政権樹立でバウハウスは閉校となり、1937年にシカゴで「ニュー・バウハウス（現イリノイ工科大学）」を設立した。バウハウスの視覚教育は戦後のグラフィックデザイン・広告写真・建築写真に直接継承されている。',
+      citations: [
+        { num: 1, name: 'Wikipedia — László Moholy-Nagy', url: 'https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Moholy-Nagy' },
+        { num: 2, name: 'Bauhaus-Archiv — Moholy-Nagy', url: 'https://www.bauhaus.de/en/sammlung/6574_laszlo_moholy_nagy/' },
+        { num: 3, name: 'MoMA — László Moholy-Nagy', url: 'https://www.moma.org/artists/4016' },
+      ]
+    }
+  },
+
+  {
+    id: 'sander',
+    name: 'August Sander',
+    nameJa: 'アウグスト・ザンダー',
+    nationality: 'DE',
+    flag: '🇩🇪',
+    years: '1876–1964',
+    era: '1910',
+    movements: ['新即物主義', '社会ドキュメンタリー', 'ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/5180' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/August_Sander' },
+      { label: 'Tate', url: 'https://www.tate.org.uk/art/artists/august-sander-1860' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ヴァイマール共和国（1919–33年）のドイツで、ザンダーは「20世紀の人々（Menschen des 20. Jahrhunderts）」という野心的な組織的肖像プロジェクトに取り組んだ。農民・職人・労働者・芸術家・公務員・貴族・失業者など社会のあらゆる層を体系的に記録し、それを「人類の生理学的アルバム」として構成しようとした*1。1929年刊行の写真集『時代の顔（Antlitz der Zeit）』には導入として45点が収録された。ベルリン・ダダの画家オットー・ディックスが賞賛し、感傷的修飾を排した直接的な描写という点で新即物主義（Neue Sachlichkeit）の画家たちと美学的に呼応していた*2。1934年、ナチス政権はザンダーの息子エーリッヒ（共産主義者として投獄・後に獄死）への圧力のため『時代の顔』の残部を没収・廃棄し、元のネガを破壊した。ザンダー自身は戦争を生き延び、1960年代以降の写真史再評価で中心的な存在となった。彼のプロジェクトはウォーカー・エヴァンズらのドキュメンタリー写真家に影響を与え、「肖像写真が社会の証言となりうる」という考え方の基礎として評価されている*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — August Sander', url: 'https://en.wikipedia.org/wiki/August_Sander' },
+        { num: 2, name: 'MoMA — August Sander', url: 'https://www.moma.org/artists/5180' },
+      ]
+    }
+  },
+
+  {
+    id: 'renger',
+    name: 'Albert Renger-Patzsch',
+    nameJa: 'アルベルト・レンガー＝パッチュ',
+    nationality: 'DE',
+    flag: '🇩🇪',
+    years: '1897–1966',
+    era: '1910',
+    movements: ['新即物主義', 'モダニズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Albert_Renger-Patzsch' },
+      { label: 'J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/artist/2038' },
+      { label: 'Tate', url: 'https://www.tate.org.uk/art/artists/albert-renger-patzsch-1814' },
+    ],
+    amazon: '',
+    context: {
+      text: 'バウハウスと同時代の1920年代ドイツで、レンガー＝パッチュはピクトリアリズムとバウハウスの実験的写真の双方に対抗する写真美学を打ち出した。1928年刊行の写真集『世界は美しい（Die Welt ist schön）』では工場・機械・植物・建築などを極端なクローズアップで捉え、「物そのものの視覚的構造」を前景化した*1。書名は出版社が変更したもので、レンガー＝パッチュ自身は「本来のタイトルは《物（Die Dinge）》にしたかった」と述べていた。ヴァルター・ベンヤミンは1931年の「写真の小史（Kleine Geschichte der Photographie）」でレンガー＝パッチュを取り上げ、「現実の物質的条件から美を切り離す写真の傾向」を批判した*2。ザンダーとともに「新即物主義写真」の代表とされるが、ザンダーが社会の総体を記録しようとしたのに対し、レンガー＝パッチュは個別の事物の視覚的精度にこだわった。1944年の連合軍爆撃でコレクションの大部分を失ったが、戦後も活動を続け、ドイツの産業・景観写真に長く影響を与えた*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Albert Renger-Patzsch', url: 'https://en.wikipedia.org/wiki/Albert_Renger-Patzsch' },
+        { num: 2, name: 'Tate — Albert Renger-Patzsch', url: 'https://www.tate.org.uk/art/artists/albert-renger-patzsch-1814' },
+      ]
+    }
+  },
 ];
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1523,17 +1758,25 @@ function renderCard(p, extraAttrs = '') {
   `;
 }
 
+/* 脚注マーカー *1 *2 をツールチップ付きの<span>に変換 */
+function renderCiteText(text, citations) {
+  if (!citations || !citations.length) return text;
+  let result = text;
+  citations.forEach(c => {
+    const tooltip = `<span class="cite-tooltip">${c.name}</span>`;
+    result = result.replace(
+      new RegExp('\\*' + c.num + '(?!\\d)', 'g'),
+      `<span class="cite-ref">${tooltip}<sup>*${c.num}</sup></span>`
+    );
+  });
+  return result;
+}
+
 function renderDetailPanel(p, idPrefix = 'panel-') {
   const isMovement = idPrefix !== 'panel-';
   const panelId = `${idPrefix}${p.id}`;
   const closeFn = isMovement ? `closeMovementDetail('${p.id}')` : `closeDetail('${p.id}')`;
 
-  const expSources = p.expression.sources.map(s =>
-    `<a href="${s.url}" target="_blank" rel="noopener">${s.text}</a>`
-  ).join(' / ');
-  const ctxSources = p.context.sources.map(s =>
-    `<a href="${s.url}" target="_blank" rel="noopener">${s.text}</a>`
-  ).join(' / ');
   const tags = p.movements.map(m => `<span class="detail-tag">${m}</span>`).join('');
   const linksHTML = p.links.map(l =>
     `<a class="detail-link" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`
@@ -1542,26 +1785,54 @@ function renderDetailPanel(p, idPrefix = 'panel-') {
     ? `<a class="detail-link" href="${p.amazon}" target="_blank" rel="noopener sponsored">写真集を Amazon で見る ↗</a>`
     : `<div class="amazon-placeholder">写真集へのリンク（準備中）</div>`;
 
+  /* ── 文脈セクション：新旧フォーマット両対応 ── */
+  let contextHTML;
+  if (p.context && p.context.citations) {
+    /* 新フォーマット：context.text に *1 *2 マーカー、context.citations に出典 */
+    const ctxText = renderCiteText(p.context.text, p.context.citations);
+    const citeListHTML = p.context.citations.map(c =>
+      `<div class="cite-item"><span class="cite-num">*${c.num}</span><a href="${c.url}" target="_blank" rel="noopener">${c.name}</a></div>`
+    ).join('');
+    contextHTML = `
+      <div class="detail-section">
+        <div class="detail-section-title">文脈</div>
+        <div class="detail-text">${ctxText}</div>
+        <div class="cite-list">${citeListHTML}</div>
+      </div>`;
+  } else {
+    /* 旧フォーマット：expression.text + context.text を結合し、全出典を自動番号化 */
+    const expText = (p.expression && p.expression.text) || '';
+    const ctxText = (p.context && p.context.text) || '';
+    const combined = expText + (expText && ctxText ? '<br><br>' : '') + ctxText;
+    const allSrc = [
+      ...((p.expression && p.expression.sources) || []),
+      ...((p.context && p.context.sources) || []),
+    ];
+    /* 重複URLを除去 */
+    const seen = new Set();
+    const dedupSrc = allSrc.filter(s => { if (seen.has(s.url)) return false; seen.add(s.url); return true; });
+    const citeListHTML = dedupSrc.map((s, i) =>
+      `<div class="cite-item"><span class="cite-num">*${i+1}</span><a href="${s.url}" target="_blank" rel="noopener">${s.text}</a></div>`
+    ).join('');
+    contextHTML = `
+      <div class="detail-section">
+        <div class="detail-section-title">文脈</div>
+        <div class="detail-text">${combined}</div>
+        ${citeListHTML ? `<div class="cite-list">${citeListHTML}</div>` : ''}
+      </div>`;
+  }
+
   return `
     <div class="detail-panel" id="${panelId}">
       <div class="detail-header">
         <div>
-          <div class="detail-name">${p.name}</div>
+          <div class="detail-name">${p.nameJa || p.name}${p.nameJa ? `<span style="display:block;font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);font-weight:normal;margin-top:3px;letter-spacing:0.04em">${p.name}</span>` : ''}</div>
           <div class="detail-meta">${p.flag} ${p.nationality} &nbsp;/&nbsp; ${p.years}</div>
         </div>
         <button class="close-btn" onclick="${closeFn}">✕</button>
       </div>
       <div class="detail-tags">${tags}</div>
-      <div class="detail-section">
-        <div class="detail-section-title">表現と手法</div>
-        <div class="detail-text">${p.expression.text}</div>
-        <div class="detail-source">出典：${expSources}</div>
-      </div>
-      <div class="detail-section">
-        <div class="detail-section-title">歴史的文脈</div>
-        <div class="detail-text">${p.context.text}</div>
-        <div class="detail-source">出典：${ctxSources}</div>
-      </div>
+      ${contextHTML}
       <div class="detail-section">
         <div class="detail-section-title">外部リンク</div>
         <div class="detail-links">${linksHTML}</div>
@@ -1781,8 +2052,9 @@ function initRandom() {
   document.getElementById('random-name').textContent = p.nameJa || p.name;
   document.getElementById('random-meta').textContent =
     `${p.flag} ${p.nationality}  /  ${p.years}  /  ${p.movements.join(' · ')}`;
+  const excerptSrc = (p.context && p.context.text) || (p.expression && p.expression.text) || '';
   document.getElementById('random-excerpt').textContent =
-    p.expression.text.slice(0, 80) + '…';
+    excerptSrc.replace(/\*\d+/g, '').slice(0, 80) + '…';
 
   document.getElementById('random-box').dataset.pid = p.id;
 }
