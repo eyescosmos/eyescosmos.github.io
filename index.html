@@ -816,6 +816,16 @@ const MOVEMENTS_META = {
   '新しいヴィジョン': { en: 'New Vision', desc: 'バウハウスのモホイ＝ナジが提唱した写真概念。俯瞰・仰角・極端なクローズアップ・フォトグラムなど従来の自然な視点を否定し、写真固有の視覚表現を探求した。' },
   '新即物主義': { en: 'Neue Sachlichkeit', desc: '1920年代ドイツで生まれた芸術潮流。感傷的修飾を排し、対象を鮮明・直接的に記録することを重視した。ザンダーの組織的人物記録、レンガー＝パッチュの工業物体クローズアップが代表的。' },
   'ヴォルテクシズム': { en: 'Vorticism', desc: '1914年頃ロンドンで詩人エズラ・パウンドらが起こした前衛運動。機械・都市・速度の美学を探求した。コバーンの「ヴォルトグラフ」は写真史上最初期の純粋抽象写真とされる。' },
+  'FSA写真': { en: 'FSA Photography', desc: 'ルーズベルト政権のFarm Security Administrationが1935–44年に実施した写真記録プロジェクト。ロイ・ストライカーの指揮下でラング・エヴァンスら8名が大恐慌下の農村・移民労働者を組織的に記録し、約17万枚の写真を残した。' },
+  'フォトジャーナリズム': { en: 'Photojournalism', desc: '報道機関と連携して時事的出来事を写真で伝える職能的実践。LIFE誌（1936年〜）の成功とマグナム・フォト（1947年〜）の設立によって写真家の著作権と独立性が確立された。' },
+  '決定的瞬間': { en: 'Decisive Moment', desc: 'カルティエ＝ブレッソンが1952年の写真集タイトルで示した概念。被写体の形・意味・感情が最も強度を持つ一瞬を捉えることを写真の本質とした。ライカ小型カメラの普及と不可分の実践。' },
+  'リアリズム写真': { en: 'Realism Photography', desc: '1930–50年代の日本で展開した写真論。土門拳が提唱した「絶対非演出・絶対スナップ」を原則とし、社会現実を操作なく記録することを写真の倫理とした。' },
+  '私写真': { en: 'I-Photography (Shi-shashin)', desc: '1970年代の日本で展開した写真表現。荒木経惟らが私的な日常・性・死・関係性を撮影の主題とし、写真集という形式を通じて「私」の経験を作品化した。文学の「私小説」になぞらえた概念。' },
+  '日本写真': { en: 'Japanese Photography', desc: '1960–70年代に国際的に評価された日本発の写真表現。東松照明・森山大道らがアメリカ占領・高度成長・原爆の記憶を独自の視覚言語で記録・表現した。「プロヴォーク」誌（1968–70年）がその象徴。' },
+  'プロヴォーク': { en: 'Provoke', desc: '1968–70年に中平卓馬・多木浩二・高梨豊・森山大道が参加した日本の写真・思想誌。「アレ・ブレ・ボケ（粗い・ブレた・ぼけた）」の美学を実践し、高度成長期の日本の視覚的不安定を表現した。' },
+  'アメリカ写真': { en: 'American Photography', desc: '戦後アメリカの社会・文化・矛盾をドキュメントした写真実践。ロバート・フランクの「The Americans」（1958/59年）が転換点となり、LIFEの楽観主義に代わる批評的眼差しをアメリカ写真に定着させた。' },
+  'ピクチャーズ世代': { en: 'Pictures Generation', desc: '1977年のダグラス・クリンプによる「ピクチャーズ」展（NY）で概念化された1970–80年代の美術家グループ。シャーマン・クルーガー・レヴィンらが広告・映画・テレビのイメージを引用・操作し、視覚表象の構造を批評の対象とした。' },
+  'フェミニズム写真': { en: 'Feminist Photography', desc: '第二波フェミニズム運動（1960年代後半〜）の文脈で展開した写真実践。女性の身体・ジェンダー・セクシュアリティの表象に内在する権力構造を批評・解体することを目的とした。シャーマン・クルーガーらが代表的実践者。' },
 };
 
 const ERAS = [
@@ -902,6 +912,67 @@ const ERAS = [
         { text: 'Smarthistory — Paul Strand', url: 'https://smarthistory.org/paul-strand-blind-woman/' },
         { text: 'MoMA — Photography and Modernism', url: 'https://www.moma.org/collection/works?classification=photography&date_begin=1910&date_end=1929' },
         { text: 'Wikipedia — Neue Sachlichkeit', url: 'https://en.wikipedia.org/wiki/Neue_Sachlichkeit' },
+      ]
+    }
+  }
+ ,{
+    id: '1930',
+    period: '1930 — 1940s',
+    title: '大恐慌・ファシズム・第二次世界大戦',
+    worldEvents: {
+      text: '1929年のウォール街株式市場暴落を発端とする大恐慌は欧米を席巻し、アメリカでは失業者が1500万人を超えた。ルーズベルト政権のニューディール政策（1933年〜）が雇用・農業・インフラ支援を実施。ヨーロッパではファシズムが台頭し、1933年ヒトラーがドイツ首相に就任、1936年スペイン内戦、1937年日中戦争勃発、1939年第二次世界大戦開始と戦火が拡大した。1941年の真珠湾攻撃でアメリカが参戦。1945年8月の広島・長崎への原子爆弾投下で大戦は終結した。ホロコーストによるユダヤ人約600万人の虐殺が連合国軍の進軍によって記録された。',
+      sources: [
+        { text: 'Britannica — Great Depression', url: 'https://www.britannica.com/event/Great-Depression' },
+        { text: 'Wikipedia — World War II', url: 'https://en.wikipedia.org/wiki/World_War_II' },
+        { text: 'Britannica — New Deal', url: 'https://www.britannica.com/event/New-Deal' },
+      ]
+    },
+    photoContext: {
+      text: 'ルーズベルト政権のFSA（農業安定局）写真プロジェクト（1935–44年）ではロイ・ストライカーの指揮下でラング・エヴァンスら8名が農村の窮状を組織的に記録し、約17万枚の写真を残した。1936年創刊のLIFE誌は写真報道誌として急成長し、毎週数百万部を売る「写真が報道を担う」時代を開いた。第二次世界大戦では従軍写真家が連合国の情報戦・戦意高揚に組み込まれる一方、硫黄島の星条旗（ジョー・ローゼンタール）など個々の写真が戦争の象徴として流通した。1947年に戦場写真家キャパ・カルティエ＝ブレッソン・ロジャーら5名がマグナム・フォトを設立し、独立系フォトエージェンシーとして写真家の権利と著作権を守る組織モデルを生んだ。',
+      sources: [
+        { text: 'Library of Congress — FSA/OWI Collection', url: 'https://www.loc.gov/pictures/collection/fsa/' },
+        { text: 'Wikipedia — LIFE magazine', url: 'https://en.wikipedia.org/wiki/Life_(magazine)' },
+        { text: 'Magnum Photos — About Magnum', url: 'https://www.magnumphotos.com/about-magnum/history/' },
+      ]
+    }
+  },{
+    id: '1950',
+    period: '1950 — 1960s',
+    title: '戦後・冷戦・公民権運動',
+    worldEvents: {
+      text: '冷戦の幕開けとともに核の恐怖が世界を覆った。朝鮮戦争（1950–53年）・キューバ危機（1962年）・ベトナム戦争介入（1964年〜）とアメリカの関与が続いた。アジア・アフリカでは植民地独立運動が相次ぎ、1960年の「アフリカの年」には17カ国が独立した。アメリカでは1955年のロサ・パークス事件から公民権運動が高まり、1963年キング牧師「I Have a Dream」演説・1964年公民権法制定へと至った。1957年のスプートニク打上げに始まる米ソ宇宙開発競争は科学技術への楽観と核の恐怖の同居を象徴した。',
+      sources: [
+        { text: 'Britannica — Cold War', url: 'https://www.britannica.com/event/Cold-War' },
+        { text: 'Wikipedia — Civil Rights Movement', url: 'https://en.wikipedia.org/wiki/Civil_rights_movement' },
+        { text: 'Britannica — Decolonization', url: 'https://www.britannica.com/topic/decolonization' },
+      ]
+    },
+    photoContext: {
+      text: '1950年代のLIFE誌（最盛期の発行部数850万部）は写真報道の頂点に立ったが、テレビの普及とともにその地位が揺らぎ始めた。ロバート・フランクの「The Americans」（1958/59年）はLIFE的な明朗さを否定する暗さ・粒子感・傾いた水平線で、戦後アメリカ写真の転換点となった。日本では1958年に東松照明・川田喜久治らがVIVO（写真家集団）を結成し「日本の戦後」を記録。1968–70年の「プロヴォーク」誌（中平卓馬・森山大道・多木浩二ら）は「アレ・ブレ・ボケ」の美学を提唱し、日本写真の国際的評価の起点となった。写真家が著作権を持つマグナム・モデルが定着し、フォトジャーナリストが固有の視点を持つ「作者」として評価される文化が形成された。',
+      sources: [
+        { text: 'Wikipedia — The Americans', url: 'https://en.wikipedia.org/wiki/The_Americans' },
+        { text: 'Wikipedia — Provoke (magazine)', url: 'https://en.wikipedia.org/wiki/Provoke_(magazine)' },
+        { text: 'MoMA — New Japanese Photography 1974', url: 'https://www.moma.org/calendar/exhibitions/2576' },
+      ]
+    }
+  },{
+    id: '1970',
+    period: '1970 — 1980s',
+    title: 'コンセプチュアルアート・フェミニズム・ポストモダン',
+    worldEvents: {
+      text: 'ベトナム戦争は1975年のサイゴン陥落まで続き、テレビ放送された映像が反戦世論を形成した。第二波フェミニズム運動（1960年代後半〜）は女性の表象・身体・労働の権利を政治化した。1981年にAIDS危機が始まりニューヨーク・サンフランシスコのゲイコミュニティを直撃。レーガン政権（1981–89年）とサッチャー政権（1979–90年）の新自由主義が福祉国家を後退させた。1979年のイラン・イスラム革命・ニカラグア革命と第三世界の政治変動が続き、1989年のベルリンの壁崩壊が冷戦の終焉を告げた。メディア環境の飽和が「イメージそのものを問う」思想（ポストモダン）を生んだ。',
+      sources: [
+        { text: 'Wikipedia — Second-wave feminism', url: 'https://en.wikipedia.org/wiki/Second-wave_feminism' },
+        { text: 'Wikipedia — AIDS epidemic', url: 'https://en.wikipedia.org/wiki/HIV/AIDS_in_the_United_States' },
+        { text: 'Wikipedia — Fall of the Berlin Wall', url: 'https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall' },
+      ]
+    },
+    photoContext: {
+      text: '写真が美術館・ギャラリーで「ファインアート」として展示・売買される市場が1970年代のニューヨークで確立した。1977年のダグラス・クリンプによる「ピクチャーズ」展（Artists Space）はシャーマン・レヴィン・プリンスらの「イメージの盗用・引用」を「ピクチャーズ世代」として概念化し、広告・映画・テレビのイメージを流用することで視覚表象の構造自体を批評の対象とした。1976年のMoMAにおけるウィリアム・エグルストン個展は、カラー写真がファインアートとして美術館に入った最初の主要な事例となった。日本では「プロヴォーク」後に森山大道・荒木経惟らが各自の方向へ展開し、「私写真」と呼ばれる私的なドキュメントの潮流が生まれた。',
+      sources: [
+        { text: 'Wikipedia — Pictures Generation', url: 'https://en.wikipedia.org/wiki/Pictures_Generation' },
+        { text: 'MoMA — William Eggleston\'s Guide (1976)', url: 'https://www.moma.org/calendar/exhibitions/2531' },
+        { text: 'Wikipedia — Provoke (magazine)', url: 'https://en.wikipedia.org/wiki/Provoke_(magazine)' },
       ]
     }
   }
@@ -1679,6 +1750,459 @@ const PHOTOGRAPHERS = [
       ]
     }
   },
+  /* ─────────────────────────────────────────
+     1930–1940s
+     ───────────────────────────────────────── */
+
+  {
+    id: 'lange',
+    name: 'Dorothea Lange',
+    nameJa: 'ドロシア・ラング',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1895–1965',
+    era: '1930',
+    movements: ['FSA写真', '社会ドキュメンタリー', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/3373' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Dorothea_Lange' },
+      { label: 'Library of Congress', url: 'https://guides.loc.gov/migrant-mother' },
+    ],
+    amazon: '',
+    context: {
+      text: '1929年の大恐慌と失業の波がアメリカを覆うなか、ラングはサンフランシスコの商業スタジオを出て街頭の失業者を撮り始めた。1933年の「ホワイト・エンジェル・ブレッドライン」（ホームレスの給食列）が注目を集め、1935年に農業安定局（FSA）に雇用された*1。1936年3月、カリフォルニア州ニポモでのフィールドワーク中に撮影した「マイグラント・マザー」は、32歳のフローレンス・オーウェンズ・トンプソンと子どもたちを捉えた写真で、掲載翌日に政府による緊急食料支援が実施された*2。ラングは「写真家は人に何かをさせてはならない——起きていることを記録するだけだ」と語り、その哲学はドキュメンタリー写真の倫理的基準となった。1939年には写真集『アメリカの脱出（An American Exodus）』を刊行。FSAプロジェクト全体で蓄積された約17万枚の写真は米国議会図書館に収蔵され、今日もアメリカ大恐慌の記憶として参照される*2。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Dorothea Lange', url: 'https://en.wikipedia.org/wiki/Dorothea_Lange' },
+        { num: 2, name: 'Library of Congress — Migrant Mother', url: 'https://guides.loc.gov/migrant-mother' },
+      ]
+    }
+  },
+
+  {
+    id: 'evans',
+    name: 'Walker Evans',
+    nameJa: 'ウォーカー・エヴァンス',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1903–1975',
+    era: '1930',
+    movements: ['FSA写真', 'ドキュメンタリー', 'ストリート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/walker-evans-1903-1975' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Walker_Evans' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/walker-evans' },
+    ],
+    amazon: '',
+    context: {
+      text: 'セントルイス生まれのエヴァンスは1927年のパリ滞在でフランス文学・写真を吸収し、スティーグリッツ流の「芸術写真」に対抗する「事実そのものの詩的共鳴」という美学を築いた。1935年にFSAへ参加し、農村の教会・寝室・看板・ぼろ服を大判カメラの鮮明な像で記録した*1。1936年夏、雑誌「フォーチュン」の委託でライター・ジェームズ・エイジーとともにアラバマ州ヘイル郡の小作人家族3世帯に滞在。この記録は1941年に『名声と富の輝く人々よ（Let Us Now Praise Famous Men）』として刊行され、初版600部しか売れなかったが後に20世紀アメリカ文学の傑作と再評価された*2。1938年にMoMAがエヴァンスの個展と写真集『アメリカの写真』を同時刊行し、写真家個人の「著者」性を公に認定した初の事例となった*1。彼の影響はロバート・フランク・ダイアン・アーバスら次世代全般に及んだ。',
+      citations: [
+        { num: 1, name: 'Metropolitan Museum of Art — Walker Evans', url: 'https://www.metmuseum.org/essays/walker-evans-1903-1975' },
+        { num: 2, name: 'Wikipedia — Let Us Now Praise Famous Men', url: 'https://en.wikipedia.org/wiki/Let_Us_Now_Praise_Famous_Men' },
+      ]
+    }
+  },
+
+  {
+    id: 'cartierbresson',
+    name: 'Henri Cartier-Bresson',
+    nameJa: 'アンリ・カルティエ＝ブレッソン',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1908–2004',
+    era: '1930',
+    movements: ['決定的瞬間', 'フォトジャーナリズム', 'ストリート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Fondation HCB', url: 'https://www.henricartierbresson.org/en/hcb/biography/' },
+      { label: 'Magnum Photos', url: 'https://www.magnumphotos.com/photographer/henri-cartier-bresson/' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Henri_Cartier-Bresson' },
+    ],
+    amazon: '',
+    context: {
+      text: 'フランス・シャントルー生まれのカルティエ＝ブレッソンは1927–28年にキュビスム画家アンドレ・ロートに師事し、1932年のアフリカ旅行で初めてライカを手にした。シュルレアリスムの「偶然と無意識」への関心が、路上に現れる一瞬の幾何学的構造を捉える写真哲学の核となった*1。1940年にドイツ軍の捕虜となり、3度目の試みで1943年に脱走して地下写真部隊で活動した。1947年にロバート・キャパら4名と写真家の著作権を守る独立エージェンシー「マグナム・フォト」を設立し*2、1948年にはガンジーの国葬、1949年には中国内戦の最終局面を取材した。1952年刊行の写真集『逃げ去るイメージ（英題: The Decisive Moment）』は126点と自筆序文からなり、「決定的瞬間」概念を世界に広めた（表紙はアンリ・マティス画）*1。1955年にルーヴル美術館で初めて写真家として個展を開いた。',
+      citations: [
+        { num: 1, name: 'Fondation Henri Cartier-Bresson — Biography', url: 'https://www.henricartierbresson.org/en/hcb/biography/' },
+        { num: 2, name: 'Magnum Photos — Henri Cartier-Bresson', url: 'https://www.magnumphotos.com/photographer/henri-cartier-bresson/' },
+      ]
+    }
+  },
+
+  {
+    id: 'capa',
+    name: 'Robert Capa',
+    nameJa: 'ロバート・キャパ',
+    nationality: 'HU',
+    flag: '🇭🇺',
+    years: '1913–1954',
+    era: '1930',
+    movements: ['戦争写真', 'フォトジャーナリズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Magnum Photos', url: 'https://www.magnumphotos.com/photographer/robert-capa/' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Robert_Capa' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/robert-capa' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ハンガリー・ブダペスト生まれのアンドレ・フリードマンはナチスの台頭を逃れて1933年にパリへ移住し、恋人のゲルダ・タロとともに架空のアメリカ人写真家「ロバート・キャパ」のブランドを作り出した*1。1936年のスペイン内戦で撮影した「崩れ落ちる兵士」は同年9月23日のフランス誌「Vu」で初公開され、翌年7月のLIFE誌掲載後に世界的に知られた。1938年、イギリスの写真誌「ピクチャー・ポスト」は25歳のキャパを「世界最高の戦争写真家」と呼んだ*2。「写真が十分よくないなら、近づき方が足りない」という言葉はフォトジャーナリズムの指針となった。1944年6月6日のノルマンディー上陸作戦（オマハ・ビーチ）では決死の近距離撮影を敢行した。1947年にカルティエ＝ブレッソンら4名とマグナム・フォトを共同設立し、1954年5月25日にベトナム・タイビンで地雷を踏んで戦死した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Robert Capa', url: 'https://en.wikipedia.org/wiki/Robert_Capa' },
+        { num: 2, name: 'Magnum Photos — Robert Capa', url: 'https://www.magnumphotos.com/photographer/robert-capa/' },
+      ]
+    }
+  },
+
+  {
+    id: 'domon',
+    name: 'Ken Domon',
+    nameJa: '土門拳',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1909–1990',
+    era: '1930',
+    movements: ['社会ドキュメンタリー', 'リアリズム写真', '日本写真'],
+    thumbnail: '',
+    links: [
+      { label: '土門拳記念館', url: 'http://www.domonken-kinenkan.jp/' },
+      { label: 'Wikipedia (JA)', url: 'https://ja.wikipedia.org/wiki/%E5%9C%9F%E9%96%80%E6%8B%B3' },
+      { label: 'Artscape', url: 'https://artscape.jp/artword/index.php/%E5%9C%9F%E9%96%80%E6%8B%B3' },
+    ],
+    amazon: '',
+    context: {
+      text: '山形県酒田市生まれの土門拳は1935年に国際グラフ雑誌を手がけた「日本工房」に入り、報道写真の実践を積んだ*1。戦後の1950年代に「絶対非演出の絶対スナップ」を掲げるリアリズム論を発表し、メーキャップや演出を一切排した直接的な撮影をドキュメンタリーの倫理として提唱した*2。1960年刊行の写真集『筑豊のこどもたち』（パトリア書店）は炭鉱地帯の貧困と子どもたちの姿を写し、初版発行後まもなく10万部を超えるベストセラーとなって社会に衝撃を与えた*1。一方で1950年代から取り組んだ『古寺巡礼』シリーズは仏像・建築をストレート写真で撮影し、文化財記録写真という分野を確立した。1979年に脳血栓で倒れ右半身不随となったが車椅子で撮影を続けた。土門の仕事は「記録性」と「芸術性」が両立するという日本写真の価値観を形成する上で中心的役割を果たした*2。',
+      citations: [
+        { num: 1, name: '土門拳記念館', url: 'http://www.domonken-kinenkan.jp/' },
+        { num: 2, name: 'Wikipedia ja — 土門拳', url: 'https://ja.wikipedia.org/wiki/%E5%9C%9F%E9%96%80%E6%8B%B3' },
+      ]
+    }
+  },
+
+  {
+    id: 'eugenesmith',
+    name: 'W. Eugene Smith',
+    nameJa: 'W・ユージン・スミス',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1918–1978',
+    era: '1930',
+    movements: ['戦争写真', '社会ドキュメンタリー', 'フォトジャーナリズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/W._Eugene_Smith' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/w-eugene-smith' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/W-Eugene-Smith' },
+    ],
+    amazon: '',
+    context: {
+      text: 'カンザス州ウィチタ生まれのスミスは14歳でカメラを手にし、1939年からLIFE誌専属として活動した*1。第二次世界大戦の太平洋戦線でサイパン・硫黄島・沖縄を撮影し、1945年の沖縄戦で迫撃砲弾を受けて重傷。2年間・32回の手術後、回復の記念として子どもたちを森へ撮影した「楽園への歩み（The Walk to Paradise Garden）」（1947年）はMoMA展「人類の家族（The Family of Man）」（1955年）の締めくくりを飾った*2。1948年のフォトエッセイ「カントリー・ドクター」（地方医師の1日に密着）は写真報道の長編ストーリーテリング様式を確立したとされる*1。1971年から妻アイリーンとともに水俣市に3年間住み、チッソ化学工場の水銀汚染による水俣病患者を記録。1972年にチッソ社員に暴行されほぼ失明に近い重傷を負いながらも撮影を続け、1975年に写真集『MINAMATA』を刊行した*2。',
+      citations: [
+        { num: 1, name: 'Wikipedia — W. Eugene Smith', url: 'https://en.wikipedia.org/wiki/W._Eugene_Smith' },
+        { num: 2, name: 'Britannica — W. Eugene Smith', url: 'https://www.britannica.com/biography/W-Eugene-Smith' },
+      ]
+    }
+  },
+
+  /* ─────────────────────────────────────────
+     1950–1960s
+     ───────────────────────────────────────── */
+
+  {
+    id: 'robertfrank',
+    name: 'Robert Frank',
+    nameJa: 'ロバート・フランク',
+    nationality: 'CH',
+    flag: '🇨🇭',
+    years: '1924–2019',
+    era: '1950',
+    movements: ['アメリカ写真', 'ドキュメンタリー', 'ストリート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Robert_Frank' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/robert-frank' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Robert-Frank' },
+    ],
+    amazon: '',
+    context: {
+      text: 'チューリッヒ生まれのフランクは1947年にアメリカへ移住し、ハーパーズ・バザーのアート・ディレクター、アレクセイ・ブロドヴィッチのもとでファッション写真に就くが商業的制約に嫌気がさして辞職した*1。ウォーカー・エヴァンスらの推薦を得て1955年にグッゲンハイム奨学金を受給し、中古フォードを運転して43州・2万8千枚を撮影した。そのうち83枚を選んで1958年にパリのロベール・デルピール社から『レ・ザメリカン』として刊行し、1959年にニューヨークのグローブ・プレスから作家ジャック・ケルアックの序文付きで『ジ・アメリカンズ』として出版した*2。LIFE誌的な楽観主義を拒み、アメリカの格差・人種・孤独を粒子の荒さと傾いた構図で記録した本作は初め「反アメリカ的」と批判されたが、1960年代以降に革命的傑作として再評価された。短編映画「プル・マイ・デイジー」（1959年、アレン・ギンズバーグ出演）を発表してビート・ジェネレーションとの紐帯を示した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Robert Frank', url: 'https://en.wikipedia.org/wiki/Robert_Frank' },
+        { num: 2, name: 'Wikipedia — The Americans', url: 'https://en.wikipedia.org/wiki/The_Americans_(photography)' },
+      ]
+    }
+  },
+
+  {
+    id: 'williamklein',
+    name: 'William Klein',
+    nameJa: 'ウィリアム・クライン',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1926–2022',
+    era: '1950',
+    movements: ['ストリート写真', 'アメリカ写真', 'フォトジャーナリズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/William_Klein_(photographer)' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/william-klein' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ニューヨーク生まれのクラインはG.I.ビルで渡欧後、パリでフェルナン・レジェに絵画を学んだ。ミラノでの抽象画パネル制作を写真記録したことを契機に1954年からヴォーグ誌専属に招かれ、モデルをスタジオから街頭へ引き出すファッション写真の革命を起こした*1。同年ニューヨークへ戻り、ワイドアングル・ハイコントラスト・モーションブラーを駆使して「Life Is Good and Good for You in New York（New York 1954–55）」を制作。1956年に刊行された同書はピクトリアリズムも「記録中立性」も否定する主観的・暴力的な都市表現として衝撃を与え、1957年にフランスのプリ・ナダールを受賞した*2。以後ローマ・モスクワ・東京など各都市を同様の手法で記録する写真集を制作しながら、1960年代中頃からは映画監督にも転身した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — William Klein', url: 'https://en.wikipedia.org/wiki/William_Klein_(photographer)' },
+        { num: 2, name: 'Artforum — William Klein and the Radioactive Fifties', url: 'https://www.artforum.com/features/william-klein-and-the-radioactive-fifties-214042/' },
+      ]
+    }
+  },
+
+  {
+    id: 'araki',
+    name: 'Nobuyoshi Araki',
+    nameJa: '荒木経惟',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1940–',
+    era: '1950',
+    movements: ['私写真', '日本写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (JA)', url: 'https://ja.wikipedia.org/wiki/%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F' },
+      { label: 'Artscape', url: 'https://artscape.jp/artword/index.php/%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F' },
+    ],
+    amazon: '',
+    context: {
+      text: '東京・千束（浅草）生まれの荒木経惟は千葉大学写真印刷工学科を卒業後、1963年に電通へ入社した。1964年に下町の少年を撮った「さっちん」で太陽賞を受賞し、広告写真家として認められた*1。1971年に新婚旅行を撮影した写真集『センチメンタルな旅』を限定1000部で私家版として自費出版し、「私写真家宣言」とでも呼ぶべき方向性を打ち出した*2。公私の境界・エロス・死・時間を主題とする私写真の方法論は、日本写真史の中で独自の潮流を形成した。電通退社後は独立し、生涯で500冊以上の写真集を発表するという前例のない多産な創作活動を展開。東京の路地・女性ポートレート・花・食など多様な主題を通じて「写真は生そのものだ」という姿勢を示した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia ja — 荒木経惟', url: 'https://ja.wikipedia.org/wiki/%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F' },
+        { num: 2, name: 'Artscape — 荒木経惟', url: 'https://artscape.jp/artword/index.php/%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F' },
+      ]
+    }
+  },
+
+  {
+    id: 'tomatsu',
+    name: 'Shomei Tomatsu',
+    nameJa: '東松照明',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1930–2012',
+    era: '1950',
+    movements: ['日本写真', '社会ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'SFMOMA', url: 'https://www.sfmoma.org/artist/shomei_tomatsu/' },
+      { label: 'Wikipedia (JA)', url: 'https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%9D%BE%E7%85%A7%E6%98%8E' },
+    ],
+    amazon: '',
+    context: {
+      text: '愛知県名古屋市生まれの東松照明は愛知大学経済学部在学中に写真を始め、卒業後に上京してフリーランスとなった。1959年に奈良原一高・川田喜久治・細江英公・佐藤明・丹野章とともに写真家集団「VIVO」を結成し、戦後日本社会の内側からの記録を目指した*1。1961年に初めて長崎を訪れ、被爆地の傷痕と現在の生活が混在する光景に衝撃を受けた。以後10年にわたる取材の成果が1966年刊行の写真集『〈11時02分〉NAGASAKI』として結実し、広島・長崎の記憶を国際的写真表現として定着させた*2。高度経済成長と核の遺産が併存する「日本の戦後」という固有の主題を継続的に掘り下げた仕事は「日本の戦後写真」の核心をなすと評価されている。1974–76年には「WORKSHOP写真学校」を開設し後進を育成した。2012年12月14日、沖縄県那覇市で没した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia ja — 東松照明', url: 'https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%9D%BE%E7%85%A7%E6%98%8E' },
+        { num: 2, name: 'SFMOMA — Shomei Tomatsu', url: 'https://www.sfmoma.org/artist/shomei_tomatsu/' },
+      ]
+    }
+  },
+
+  {
+    id: 'winogrand',
+    name: 'Garry Winogrand',
+    nameJa: 'ゲリー・ウィノグランド',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1928–1984',
+    era: '1950',
+    movements: ['ストリート写真', 'アメリカ写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Garry_Winogrand' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Garry-Winogrand' },
+      { label: 'Fraenkel Gallery', url: 'https://fraenkelgallery.com/artists/garry-winogrand' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ニューヨーク・ブロンクス生まれのウィノグランドは1949年にニュースクールでハーパーズ・バザーの名アート・ディレクター、アレクセイ・ブロドヴィッチの教えを受け、「直感に従え」という哲学を写真の核に据えた*1。ライカと広角レンズ、斜めに傾けたフレームで1960年代からニューヨークの路上に入り込み、「スナップショット美学」と呼ばれる独自のスタイルを確立した。1967年にMoMAのジョン・ザーカウスキーが企画した「ニュー・ドキュメンツ」展でリー・フリードランダー・ダイアン・アーバスとともに紹介され、街頭写真の次世代として国際的に位置づけられた*2。1975年刊行の写真集『ウィメン・アー・ビューティフル』（85点）はフェミニズム運動のさなかで激しい論争を引き起こした。グッゲンハイム奨学金を3度受給。1984年にティファナで没した時には未現像フィルムが約2500本残されており、死後も作品の発掘が続いた*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Garry Winogrand', url: 'https://en.wikipedia.org/wiki/Garry_Winogrand' },
+        { num: 2, name: 'Britannica — Garry Winogrand', url: 'https://www.britannica.com/biography/Garry-Winogrand' },
+      ]
+    }
+  },
+
+  {
+    id: 'friedlander',
+    name: 'Lee Friedlander',
+    nameJa: 'リー・フリードランダー',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1934–',
+    era: '1950',
+    movements: ['ストリート写真', 'アメリカ写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/calendar/exhibitions/113' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Lee_Friedlander' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ワシントン州アバディーン生まれのフリードランダーは14歳で写真を始め、1956年にニューヨークへ移住後アトランティック・レコードのジャズミュージシャン（チャールズ・ミンガス・ジョン・コルトレーンら）を撮影してキャリアを開始した*1。1960年代から「ソーシャル・ランドスケープ（社会的風景）」という概念のもと、ショーウィンドウの映り込み・看板・フェンス・自身の影を複層的に画面に組み込む独特の視覚言語を発展させた。1966年のジョージ・イーストマン・ハウス展「ソーシャル・ランドスケープに向けて」に参加し、1967年にウィノグランド・アーバスとともにMoMAの「ニュー・ドキュメンツ」展で3人の名声が確立した*2。2000年にMoMAが1000点の作品を購入（存命写真家による当時最大規模の収蔵）。2005年に同館で大回顧展が開かれ、同年ハッセルブラッド賞を受賞した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Lee Friedlander', url: 'https://en.wikipedia.org/wiki/Lee_Friedlander' },
+        { num: 2, name: 'MoMA — New Documents', url: 'https://www.moma.org/calendar/exhibitions/113' },
+      ]
+    }
+  },
+
+  /* ─────────────────────────────────────────
+     1970–1980s
+     ───────────────────────────────────────── */
+
+  {
+    id: 'arbus',
+    name: 'Diane Arbus',
+    nameJa: 'ダイアン・アーバス',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1923–1971',
+    era: '1970',
+    movements: ['ドキュメンタリー', 'ポートレート', '社会ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Aperture', url: 'https://aperture.org/books/diane-arbus-an-aperture-monograph/' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Diane_Arbus' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ニューヨーク生まれのアーバスは18歳で写真家アラン・アーバスと結婚し、1950年代を夫婦で「ヴォーグ」「ハーパーズ・バザー」のファッション写真家として過ごした。1950年代後半にリゼット・モデルに師事したことで決定的な転機が訪れ、障害を持つ人・巨人・小人・性転換者・サーカス芸人など社会の周縁に生きる人々を正面から直視する二眼レフの正方形ポートレートを撮り始めた*1。1963年と1966年にグッゲンハイム奨学金を受給。1967年にMoMAの「ニュー・ドキュメンツ」展でウィノグランド・フリードランダーとともに展示され三者の名声が確立した。1971年7月26日に48歳で自死。1972年にアメリカ代表としてヴェネツィア・ビエンナーレに参加した初の写真家となり（没後）、MoMAの回顧展（1972年）は同館史上当時最高の入場者数を記録した*2。1972年にアパーチャー社から刊行されたモノグラフ（娘ドゥーン・アーバス編集、80点収録）は絶版になったことがない*2。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Diane Arbus', url: 'https://en.wikipedia.org/wiki/Diane_Arbus' },
+        { num: 2, name: 'Aperture — Diane Arbus Monograph', url: 'https://aperture.org/books/diane-arbus-an-aperture-monograph/' },
+      ]
+    }
+  },
+
+  {
+    id: 'moriyama',
+    name: 'Daido Moriyama',
+    nameJa: '森山大道',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1938–',
+    era: '1970',
+    movements: ['プロヴォーク', '日本写真', 'ストリート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (JA)', url: 'https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%B1%B1%E5%A4%A7%E9%81%93' },
+      { label: 'Artscape', url: 'https://artscape.jp/artword/index.php/%E6%A3%AE%E5%B1%B1%E5%A4%A7%E9%81%93' },
+    ],
+    amazon: '',
+    context: {
+      text: '大阪府池田市生まれの森山大道は1959年に大阪の写真家・岩宮武二のスタジオで修業後、東京に移って細江英公のアシスタントとなり、1964年に独立した*1。写真家集団VIVO解散直後のタイミングで上京し、VIVOとは異なる個人的・即興的な路線を歩み始めた。1968年創刊の写真誌「プロヴォーク」第2号から参加し、中平卓馬・多木浩二らと「アレ・ブレ・ボケ（粗く・ぶれた・ぼけた）」の美学を体現する写真を発表した*2。1972年刊行の写真集『写真よさようなら』は自己の写真行為自体への根本的な懐疑を示す過激な作品として知られる。その後も路上・犬・記憶・都市をテーマに撮影し続け、2012年にICPインフィニティ賞を受賞し、ロンドン・テート・モダンでウィリアム・クラインとの二人展を開催した。2019年にはハッセルブラッド賞を受賞した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia ja — 森山大道', url: 'https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%B1%B1%E5%A4%A7%E9%81%93' },
+        { num: 2, name: 'Wikipedia — Provoke magazine', url: 'https://en.wikipedia.org/wiki/Provoke_(magazine)' },
+      ]
+    }
+  },
+
+  {
+    id: 'sherman',
+    name: 'Cindy Sherman',
+    nameJa: 'シンディ・シャーマン',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1954–',
+    era: '1970',
+    movements: ['ピクチャーズ世代', 'コンセプチュアル', 'フェミニズム写真'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/5376' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Cindy_Sherman' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ニュージャージー州グレン・リッジ生まれのシャーマンはバッファロー州立大学でコンセプチュアル・アートに触れ、1976年にニューヨークへ移住した。1977年末から制作を開始した「アンタイトルド・フィルム・スチルズ」シリーズは、B級映画・フィルム・ノワール・ネオリアリズムの映画スチール写真を模した8×11インチの白黒写真（全70点）で、常にシャーマン自身が主演・スタイリスト・撮影者を兼ねた*1。1977年にダグラス・クリンプが企画した「ピクチャーズ」展（Artist Space、ニューヨーク）でロバート・ロンゴらとともに「ピクチャーズ世代」として概念化され、広告・映画・テレビが生産する女性イメージの構造そのものを批評対象とした*2。1995年12月にMoMAが同シリーズ全点を推定100万ドルで購入。1978年に全米芸術基金フェローシップ、1995年にマッカーサー「天才賞」を受賞した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Cindy Sherman', url: 'https://en.wikipedia.org/wiki/Cindy_Sherman' },
+        { num: 2, name: 'Wikipedia — Untitled Film Stills', url: 'https://en.wikipedia.org/wiki/Untitled_Film_Stills' },
+      ]
+    }
+  },
+
+  {
+    id: 'mapplethorpe',
+    name: 'Robert Mapplethorpe',
+    nameJa: 'ロバート・メイプルソープ',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1946–1989',
+    era: '1970',
+    movements: ['コンセプチュアル', 'ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Robert_Mapplethorpe' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Robert-Mapplethorpe' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ニューヨーク・クイーンズ区フローラル・パーク生まれのメイプルソープはプラット・インスティテュートで1963–69年に絵画・彫刻を学び（写真は独学）、1967年に詩人のパティ・スミスと出会い1969年にともにチェルシー・ホテルへ移住した*1。1977年にホーリー・ソロモン・ギャラリーで初の個展を開催し、花・セレブリティ・ヌード・サドマゾキズムを白黒の幾何学的構成で写した「X（SM）・Y（花）・Z（黒人男性ヌード）」3部作のポートフォリオで知られるようになった。1989年3月9日、AIDS合併症で死去。没後にICPフィラデルフィア主催の回顧展「ザ・パーフェクト・モーメント」が全米を巡回し、NEA（全米芸術基金）の資金援助をめぐる議会論争（ジェシー・ヘルムズ上院議員による猥褻表現規制提案）を引き起こした*2。1990年にシンシナティ現代美術センター館長が展示を理由に起訴されたが無罪となり、メイプルソープは芸術的自由をめぐる世紀末のアメリカ文化戦争の象徴となった*2。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Robert Mapplethorpe', url: 'https://en.wikipedia.org/wiki/Robert_Mapplethorpe' },
+        { num: 2, name: 'Wikipedia — The Perfect Moment', url: 'https://en.wikipedia.org/wiki/The_Perfect_Moment' },
+      ]
+    }
+  },
+
+  {
+    id: 'kruger',
+    name: 'Barbara Kruger',
+    nameJa: 'バーバラ・クルーガー',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1945–',
+    era: '1970',
+    movements: ['ピクチャーズ世代', 'コンセプチュアル', 'フェミニズム写真'],
+    thumbnail: '',
+    links: [
+      { label: 'The Broad', url: 'https://www.thebroad.org/art/barbara-kruger/untitled-your-body-battleground' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Barbara_Kruger' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Barbara-Kruger' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ニュージャージー州ニューアーク生まれのクルーガーは1966年にパーソンズ・スクール・オブ・デザインに入学し、写真家ダイアン・アーバスとグラフィック・デザイナーのマーヴィン・イスラエルに師事した。1967年には雑誌「マドモワゼル」の主任デザイナーに昇進し、その後「アパーチャー」誌のピクチャー・エディターとしても働いた*1。1970年代後半に独自の表現へ転換し、マス・メディアの写真に赤・白・黒のフツーラ・ボールド体テキストを重ねる形式で権力・消費主義・ジェンダーを批評するコラージュを発展させた。シャーマン・レヴィン・プリンス・ロンゴらとともに「ピクチャーズ世代」の一員と位置づけられた。1989年に「あなたの身体は戦場である（Your Body Is a Battleground）」を生殖権擁護のワシントン大行進のために制作し*2、2022年のRoe v. Wade最高裁判決覆後に再び世界的な注目を集めた。2005年のヴェネツィア・ビエンナーレで「レオーネ・ドーロ」（生涯功労賞）を受賞した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — Barbara Kruger', url: 'https://en.wikipedia.org/wiki/Barbara_Kruger' },
+        { num: 2, name: 'JSTOR Daily — Your Body Is a Battleground', url: 'https://daily.jstor.org/the-history-your-body-is-a-battleground/' },
+      ]
+    }
+  },
+
+  {
+    id: 'eggleston',
+    name: 'William Eggleston',
+    nameJa: 'ウィリアム・エグルストン',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1939–',
+    era: '1970',
+    movements: ['カラー写真', 'アメリカ写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/William_Eggleston' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/William-Eggleston' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ミシシッピ州サムナー生まれのエグルストンはメンフィスを拠点に1960年代後半からカラー写真の実験を始め、広告業界のダイ・トランスファー（色素転写）印刷法を芸術写真に応用することで鮮烈な色彩表現を獲得した*1。ウォーカー・エヴァンス・カルティエ＝ブレッソンに影響を受けたとされるが、「電球・駐車場・冷蔵庫・道端のありきたりなものに向ける民主的なカメラ」の方法論は全く独自だった。1976年にMoMAで開かれた「ウィリアム・エグルストンズ・ガイド」展（ジョン・ザーカウスキー企画）は、カラー写真が美術館でファインアートとして展示された歴史的な事例とされ、ニューヨーク・タイムズに「完璧なほど凡庸で退屈だ」と酷評されながらも写真史上の転換点となった*2。1974年にグッゲンハイム奨学金、1989年に写真集『民主的な森（The Democratic Forest）』（約1万2千枚から厳選）を刊行、1998年にハッセルブラッド賞を受賞した*1。',
+      citations: [
+        { num: 1, name: 'Wikipedia — William Eggleston', url: 'https://en.wikipedia.org/wiki/William_Eggleston' },
+        { num: 2, name: 'Britannica — William Eggleston', url: 'https://www.britannica.com/biography/William-Eggleston' },
+      ]
+    }
+  },
+
 ];
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
