@@ -288,7 +288,6 @@ h1 em { font-style: normal; color: var(--accent); }
 
 /* ── ERA SECTION ── */
 .era {
-  padding: 80px 0;
   border-bottom: 1px solid var(--border);
   opacity: 0;
   transform: translateY(30px);
@@ -297,12 +296,37 @@ h1 em { font-style: normal; color: var(--accent); }
 .era.visible { opacity: 1; transform: translateY(0); }
 .era.hidden { display: none; }
 
-.era-header {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 48px;
-  margin-bottom: 56px;
+/* Era toggle (always visible, clickable) */
+.era-toggle {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 36px 0;
+  cursor: pointer;
+  user-select: none;
 }
+.era-toggle:hover .era-date { opacity: 0.8; }
+.era-toggle-arrow {
+  margin-left: auto;
+  color: var(--accent-dim);
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.1em;
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+.era.open .era-toggle-arrow { transform: rotate(180deg); }
+
+/* Era accordion body */
+.era-body {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.45s ease;
+}
+.era-body-content {
+  padding-bottom: 72px;
+}
+
 .era-date {
   font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
   font-size: 48px;
@@ -310,6 +334,7 @@ h1 em { font-style: normal; color: var(--accent); }
   color: var(--accent);
   line-height: 1;
   letter-spacing: 0.08em;
+  flex-shrink: 0;
 }
 .era-date span {
   display: block;
@@ -319,6 +344,10 @@ h1 em { font-style: normal; color: var(--accent); }
   color: var(--text-muted);
   letter-spacing: 0.1em;
   margin-top: 8px;
+}
+.era-info {
+  padding-left: calc(180px + 48px);
+  margin-bottom: 40px;
 }
 .era-title {
   font-family: 'Noto Sans JP', sans-serif;
@@ -702,8 +731,9 @@ footer a:hover { color: var(--accent); }
 @media (max-width: 768px) {
   header { padding: 48px 20px 40px; }
   .container, .tab-nav-inner { padding: 0 20px; }
-  .era-header { grid-template-columns: 1fr; gap: 24px; }
+  .era-toggle { gap: 16px; padding: 28px 0; }
   .era-date { font-size: 36px; }
+  .era-info { padding-left: 0; }
   .photographers-grid, .photographers-label { margin-left: 0; }
   .photographers-label { padding-left: 0; }
   .detail-panel { margin-left: 0; padding: 24px 20px; }
@@ -2374,25 +2404,30 @@ function renderEraTab() {
     section.id = `era-${era.id}`;
     section.dataset.eraId = era.id;
     section.innerHTML = `
-      <div class="era-header">
+      <div class="era-toggle" onclick="toggleEra('${era.id}')">
         <div class="era-date">${era.id}<span>— ${era.period.split('—')[1].trim()}</span></div>
-        <div class="era-info">
-          <h2 class="era-title">${era.title}</h2>
-          <div class="context-block">
-            <div class="context-label">世界情勢</div>
-            <div class="context-text">${era.worldEvents.text}</div>
-            <div class="context-source">出典：${worldSources}</div>
-          </div>
-          <div class="context-block">
-            <div class="context-label">写真と時代</div>
-            <div class="context-text">${era.photoContext.text}</div>
-            <div class="context-source">出典：${photoSources}</div>
-          </div>
-        </div>
+        <div class="era-title" style="margin:0">${era.title}</div>
+        <div class="era-toggle-arrow">▼</div>
       </div>
-      <div class="photographers-label">この時代の写真家</div>
-      <div class="photographers-grid" id="grid-${era.id}">${cardsHTML}</div>
-      <div id="panels-${era.id}"></div>
+      <div class="era-body">
+        <div class="era-body-content">
+            <div class="era-info">
+              <div class="context-block">
+                <div class="context-label">世界情勢</div>
+                <div class="context-text">${era.worldEvents.text}</div>
+                <div class="context-source">出典：${worldSources}</div>
+              </div>
+              <div class="context-block">
+                <div class="context-label">写真と時代</div>
+                <div class="context-text">${era.photoContext.text}</div>
+                <div class="context-source">出典：${photoSources}</div>
+              </div>
+            </div>
+            <div class="photographers-label">この時代の写真家</div>
+            <div class="photographers-grid" id="grid-${era.id}">${cardsHTML}</div>
+            <div id="panels-${era.id}"></div>
+          </div>
+      </div>
     `;
 
     main.appendChild(section);
@@ -2700,6 +2735,38 @@ function switchTab(tabId) {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ERA ACCORDION
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+function toggleEra(eraId) {
+  const section = document.getElementById(`era-${eraId}`);
+  if (!section) return;
+  const body = section.querySelector('.era-body');
+  if (section.classList.contains('open')) {
+    // closing: fix height first, then animate to 0
+    body.style.height = body.scrollHeight + 'px';
+    requestAnimationFrame(() => requestAnimationFrame(() => { body.style.height = '0'; }));
+    section.classList.remove('open');
+  } else {
+    section.classList.add('open');
+    body.style.height = body.scrollHeight + 'px';
+    body.addEventListener('transitionend', () => {
+      if (section.classList.contains('open')) body.style.height = 'auto';
+    }, { once: true });
+  }
+}
+
+function openEra(eraId) {
+  const section = document.getElementById(`era-${eraId}`);
+  if (!section || section.classList.contains('open')) return;
+  const body = section.querySelector('.era-body');
+  section.classList.add('open');
+  body.style.height = body.scrollHeight + 'px';
+  body.addEventListener('transitionend', () => {
+    if (section.classList.contains('open')) body.style.height = 'auto';
+  }, { once: true });
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    RANDOM PHOTOGRAPHER
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function initRandom() {
@@ -2730,9 +2797,11 @@ function scrollToPhotographer() {
   setTimeout(() => {
     const card = document.querySelector(`#era-main [data-pid="${pid}"]`);
     if (!card) return;
-    // Force the era section visible before scrolling (it starts at opacity:0)
     const era = card.closest('.era');
-    if (era) era.classList.add('visible');
+    if (era) {
+      era.classList.add('visible');
+      openEra(era.dataset.eraId);
+    }
     card.scrollIntoView({ behavior: 'smooth', block: 'center' });
     setTimeout(() => toggleDetail(pid, card), 600);
   }, 100);
