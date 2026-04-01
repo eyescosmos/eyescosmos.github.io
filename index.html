@@ -2728,11 +2728,13 @@ function scrollToPhotographer() {
   if (!pid) return;
   switchTab('era');
   setTimeout(() => {
-    const card = document.querySelector(`[data-pid="${pid}"]`);
-    if (card) {
-      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => card.click(), 600);
-    }
+    const card = document.querySelector(`#era-main [data-pid="${pid}"]`);
+    if (!card) return;
+    // Force the era section visible before scrolling (it starts at opacity:0)
+    const era = card.closest('.era');
+    if (era) era.classList.add('visible');
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => toggleDetail(pid, card), 600);
   }, 100);
 }
 
