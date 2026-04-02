@@ -163,17 +163,17 @@
       : Date.now();
     state.ambientMotionUntil = now + 1100;
     state.stars = Array.from(
-      { length: Math.max(180, Math.round((state.width * state.height) / 11000)) },
+      { length: Math.max(260, Math.round((state.width * state.height) / 8200)) },
       (_, index) => ({
         x: (index * 197.3) % state.width,
         y: (index * 113.7) % state.height,
-        radius: ((index * 17) % 10) / 10 + 0.45,
-        alpha: (((index * 23) % 10) / 10) * 0.28 + 0.08,
+        radius: ((index * 17) % 10) / 10 + 0.5,
+        alpha: (((index * 23) % 10) / 10) * 0.34 + 0.1,
         phase: ((index * 29) % 360) * (Math.PI / 180),
-        driftX: (((index * 19) % 10) / 10 - 0.5) * 4.2,
-        driftY: (((index * 31) % 10) / 10 - 0.5) * 3.6,
+        driftX: (((index * 19) % 10) / 10 - 0.5) * 4.8,
+        driftY: (((index * 31) % 10) / 10 - 0.5) * 4.1,
         pulse: (((index * 13) % 10) / 10) * 0.2 + 0.9,
-        glow: ((index * 7) % 10) > 6 ? 1 : 0
+        glow: ((index * 7) % 10) > 5 ? 1 : 0
       })
     );
   }
@@ -1007,6 +1007,7 @@
       state.width * 0.78
     );
     gradient.addColorStop(0, 'rgba(15, 18, 24, 0.82)');
+    gradient.addColorStop(0.35, 'rgba(11, 14, 20, 0.48)');
     gradient.addColorStop(1, 'rgba(4, 5, 8, 0)');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, state.width, state.height);
@@ -1017,9 +1018,11 @@
       const offsetY = star.driftY * introEase * Math.cos(time * 0.95 + star.phase);
       const pulse = 0.9 + Math.sin(time * star.pulse + star.phase) * 0.12;
       ctx.beginPath();
-      ctx.fillStyle = `rgba(255, 247, 235, ${Math.min(0.5, star.alpha * pulse)})`;
-      ctx.shadowBlur = star.glow ? 8 + introEase * 4 : 0;
-      ctx.shadowColor = 'rgba(255, 243, 224, 0.28)';
+      ctx.fillStyle = `rgba(255, 247, 235, ${Math.min(0.72, star.alpha * pulse)})`;
+      ctx.shadowBlur = star.glow ? 11 + introEase * 5 : 2;
+      ctx.shadowColor = star.glow
+        ? 'rgba(255, 243, 224, 0.42)'
+        : 'rgba(210, 225, 255, 0.12)';
       ctx.arc(star.x + offsetX, star.y + offsetY, star.radius * (0.96 + pulse * 0.08), 0, Math.PI * 2);
       ctx.fill();
     });
