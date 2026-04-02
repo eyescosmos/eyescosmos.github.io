@@ -89,6 +89,9 @@ body.is-navigating #page-fade {
 
 .title {
   margin: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
   font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
   font-size: clamp(34px, 5vw, 66px);
   font-weight: normal;
@@ -99,6 +102,21 @@ body.is-navigating #page-fade {
 .title em {
   font-style: normal;
   color: var(--accent);
+}
+
+.title-status {
+  color: var(--text-muted);
+  font: 400 12px/1.2 'DM Mono', monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.title-subcopy {
+  max-width: 32rem;
+  margin-top: 14px;
+  color: rgba(238, 230, 216, 0.8);
+  font-size: 13px;
+  line-height: 1.75;
 }
 
 .title-note {
@@ -243,7 +261,8 @@ body.is-navigating #page-fade {
 
   <div class="hud">
     <div class="eyebrow">Prototype / Photo Coordinates</div>
-    <h1 class="title"><em>写真の座標</em></h1>
+    <h1 class="title"><em>写真の座標</em><span class="title-status">更新中</span></h1>
+    <div class="title-subcopy">写真史を、写真家・運動・思想の関係からたどるサイトです。</div>
     <div class="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
     <div class="lede">
       写真家、運動、思想を大きな平面の上にひらいた試作ページです。
