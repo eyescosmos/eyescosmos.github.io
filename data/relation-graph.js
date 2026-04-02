@@ -74,7 +74,6 @@
 
   const ideas = [
     { id: 'idea:machine-eye', label: '機械の眼', subtitle: 'apparatus / optics', type: 'idea' },
-    { id: 'idea:document', label: '記録と証拠', subtitle: 'document / witness', type: 'idea' },
     { id: 'idea:portrait-self', label: '肖像と自己', subtitle: 'identity / body', type: 'idea' },
     { id: 'idea:city-street', label: '都市を歩く視線', subtitle: 'street / city', type: 'idea' },
     { id: 'idea:experiment', label: '実験と抽象', subtitle: 'experiment / abstraction', type: 'idea' },
@@ -125,7 +124,6 @@
 
   const featuredIdeaIds = new Set([
     'idea:machine-eye',
-    'idea:document',
     'idea:city-street',
     'idea:experiment',
     'idea:staged-image',
@@ -136,38 +134,38 @@
 
   const movementIdeaMap = {
     '発明・技術': ['idea:machine-eye', 'idea:experiment'],
-    'ドキュメンタリー': ['idea:document', 'idea:city-street'],
-    '戦争写真': ['idea:document', 'idea:critique'],
-    '植民地写真': ['idea:critique', 'idea:document'],
+    'ドキュメンタリー': ['idea:city-street', 'idea:critique'],
+    '戦争写真': ['idea:critique', 'idea:city-street'],
+    '植民地写真': ['idea:critique', 'idea:city-street'],
     'ポートレート': ['idea:portrait-self'],
     '風景写真': ['idea:landscape', 'idea:machine-eye'],
     'ピクトリアリズム': ['idea:experiment', 'idea:portrait-self'],
-    'ストレート写真': ['idea:document', 'idea:machine-eye'],
-    'ストリート写真': ['idea:city-street', 'idea:document'],
-    '社会ドキュメンタリー': ['idea:document', 'idea:critique'],
+    'ストレート写真': ['idea:machine-eye', 'idea:city-street'],
+    'ストリート写真': ['idea:city-street', 'idea:critique'],
+    '社会ドキュメンタリー': ['idea:critique', 'idea:city-street'],
     'モダニズム': ['idea:experiment', 'idea:machine-eye'],
     'シュルレアリスム': ['idea:experiment', 'idea:portrait-self'],
     'カラー写真': ['idea:color', 'idea:landscape'],
     'コンセプチュアル': ['idea:staged-image', 'idea:critique'],
     '科学写真': ['idea:machine-eye', 'idea:experiment'],
     '実験的技法': ['idea:machine-eye', 'idea:experiment'],
-    '自然主義写真': ['idea:landscape', 'idea:document'],
-    '都市記録': ['idea:city-street', 'idea:document'],
+    '自然主義写真': ['idea:landscape', 'idea:machine-eye'],
+    '都市記録': ['idea:city-street', 'idea:critique'],
     '写真分離派': ['idea:experiment', 'idea:portrait-self'],
     'ダダ': ['idea:experiment', 'idea:critique'],
     'レイオグラフ': ['idea:experiment', 'idea:machine-eye'],
     'バウハウス': ['idea:experiment', 'idea:machine-eye'],
     '新しいヴィジョン': ['idea:experiment', 'idea:machine-eye'],
-    '新即物主義': ['idea:system', 'idea:document'],
+    '新即物主義': ['idea:system', 'idea:machine-eye'],
     'ヴォルテクシズム': ['idea:experiment', 'idea:machine-eye'],
-    'FSA写真': ['idea:document', 'idea:critique'],
-    'フォトジャーナリズム': ['idea:document', 'idea:critique'],
-    '決定的瞬間': ['idea:city-street', 'idea:document'],
-    'リアリズム写真': ['idea:document', 'idea:critique'],
+    'FSA写真': ['idea:critique', 'idea:city-street'],
+    'フォトジャーナリズム': ['idea:critique', 'idea:city-street'],
+    '決定的瞬間': ['idea:city-street', 'idea:machine-eye'],
+    'リアリズム写真': ['idea:critique', 'idea:city-street'],
     '私写真': ['idea:intimacy', 'idea:portrait-self'],
     '日本写真': ['idea:city-street', 'idea:critique'],
     'プロヴォーク': ['idea:city-street', 'idea:critique'],
-    'アメリカ写真': ['idea:city-street', 'idea:document'],
+    'アメリカ写真': ['idea:city-street', 'idea:color'],
     'ピクチャーズ世代': ['idea:critique', 'idea:staged-image'],
     'フェミニズム写真': ['idea:portrait-self', 'idea:critique'],
     'LGBTQ+': ['idea:intimacy', 'idea:portrait-self'],
@@ -175,13 +173,13 @@
     'コンセプチュアルアート': ['idea:staged-image', 'idea:critique'],
     'シネマトグラフィック写真': ['idea:staged-image', 'idea:color'],
     'ステージド写真': ['idea:staged-image', 'idea:critique'],
-    'タイポロジー写真': ['idea:system', 'idea:document'],
+    'タイポロジー写真': ['idea:system', 'idea:machine-eye'],
     'デュッセルドルフ派': ['idea:system', 'idea:landscape'],
     'ニューカラー': ['idea:color', 'idea:city-street'],
     'プライベート写真': ['idea:intimacy', 'idea:portrait-self'],
     '大判カラー写真': ['idea:color', 'idea:system'],
     '環境写真': ['idea:landscape', 'idea:critique'],
-    '社会的写真': ['idea:critique', 'idea:document']
+    '社会的写真': ['idea:critique', 'idea:city-street']
   };
 
   const movementRelations = [
@@ -294,7 +292,7 @@
   });
 
   usedMovements.forEach(name => {
-    const relatedIdeas = (movementIdeaMap[name] || ['idea:document'])
+    const relatedIdeas = (movementIdeaMap[name] || ['idea:critique'])
       .filter(ideaId => featuredIdeaIds.has(ideaId));
     relatedIdeas.forEach(ideaId => {
       pushUniqueLink(links, seenLinks, `movement:${name}`, ideaId, 'idea');

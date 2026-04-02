@@ -40,6 +40,8 @@
     cameraY: 0,
     targetCameraX: 0,
     targetCameraY: 0,
+    focusAnchorX: 0,
+    focusAnchorY: 0,
     cameraLockedToFocus: false,
     pointerX: 0,
     pointerY: 0,
@@ -307,7 +309,7 @@
     }
 
     if (node.id === focused.id) {
-      return { x: focused.homeX, y: focused.homeY };
+      return { x: state.focusAnchorX, y: state.focusAnchorY };
     }
 
     const layoutMap = getFocusLayoutMap(focused);
@@ -404,8 +406,8 @@
                 : 80;
           const radius = ringRadius + typeOffset + jitter(`${focused.id}:${node.id}:radius`, 18);
           map.set(node.id, {
-            x: focused.homeX + Math.cos(angle) * radius,
-            y: focused.homeY + Math.sin(angle) * radius * 0.78
+            x: state.focusAnchorX + Math.cos(angle) * radius,
+            y: state.focusAnchorY + Math.sin(angle) * radius * 0.78
           });
         });
       });
@@ -479,8 +481,10 @@
     state.focusLayoutCache = null;
     state.cameraLockedToFocus = true;
     const node = state.nodesById.get(id);
-    state.targetCameraX = node.x;
-    state.targetCameraY = node.y;
+    state.focusAnchorX = node.x;
+    state.focusAnchorY = node.y;
+    state.targetCameraX = state.focusAnchorX;
+    state.targetCameraY = state.focusAnchorY;
     node.glow = 1.4;
     clampCamera();
     updateFocusPanel();
@@ -898,6 +902,8 @@
     state.targetCameraX = initialNode.x;
     state.cameraY = initialNode.y;
     state.targetCameraY = initialNode.y;
+    state.focusAnchorX = initialNode.x;
+    state.focusAnchorY = initialNode.y;
     state.focusedNodeId = '';
     state.focusClusterCache = null;
     state.focusTraversalCache = null;
