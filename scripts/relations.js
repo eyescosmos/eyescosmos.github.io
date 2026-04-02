@@ -117,14 +117,6 @@
     return hashNumber(value) % 100000;
   }
 
-  function createSeededRandom(seed) {
-    let stateValue = seed >>> 0;
-    return function next() {
-      stateValue = (stateValue * 1664525 + 1013904223) >>> 0;
-      return stateValue / 4294967296;
-    };
-  }
-
   function angleFromHome(focused, node) {
     const dx = node.homeX - focused.homeX;
     const dy = node.homeY - focused.homeY;
@@ -169,24 +161,21 @@
     const now = typeof performance !== 'undefined' && performance.now
       ? performance.now()
       : Date.now();
-    const random = createSeededRandom(
-      ((Math.round(state.width) * 73856093) ^ (Math.round(state.height) * 19349663) ^ 0x9e3779b9) >>> 0
-    );
     state.ambientMotionUntil = now + 1600;
     state.stars = Array.from(
       { length: Math.max(320, Math.round((state.width * state.height) / 7000)) },
       () => {
-        const bright = random() > 0.78;
+        const bright = Math.random() > 0.78;
         return {
-          x: random() * state.width,
-          y: random() * state.height,
-          radius: 0.55 + random() * 0.7 + (bright ? 0.45 + random() * 0.35 : 0),
-          alpha: 0.14 + random() * 0.34 + (bright ? 0.08 : 0),
-          phase: random() * Math.PI * 2,
-          driftX: (random() - 0.5) * 8.2,
-          driftY: (random() - 0.5) * 7.1,
-          pulse: 0.9 + random() * 0.22,
-          glow: bright ? 1 : random() > 0.6 ? 1 : 0
+          x: Math.random() * state.width,
+          y: Math.random() * state.height,
+          radius: 0.55 + Math.random() * 0.7 + (bright ? 0.45 + Math.random() * 0.35 : 0),
+          alpha: 0.14 + Math.random() * 0.34 + (bright ? 0.08 : 0),
+          phase: Math.random() * Math.PI * 2,
+          driftX: (Math.random() - 0.5) * 8.2,
+          driftY: (Math.random() - 0.5) * 7.1,
+          pulse: 0.9 + Math.random() * 0.22,
+          glow: bright ? 1 : Math.random() > 0.6 ? 1 : 0
         };
       }
     );
