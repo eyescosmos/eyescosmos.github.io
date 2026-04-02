@@ -262,6 +262,23 @@ h1 em { font-style: normal; color: var(--accent); }
 }
 .filter-select:hover { border-color: var(--accent-dim); }
 .filter-select:focus { outline: none; border-color: var(--accent); }
+.filter-input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  padding: 6px 10px;
+  min-width: 220px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.filter-input::placeholder { color: var(--text-muted); }
+.filter-input:hover { border-color: var(--accent-dim); }
+.filter-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  color: var(--text);
+}
 .filter-reset {
   background: none;
   border: 1px solid var(--border);
@@ -806,6 +823,13 @@ footer a:hover { color: var(--accent); }
   <div class="container">
     <div class="filter-bar">
       <span class="filter-label">絞り込み</span>
+      <input
+        type="search"
+        class="filter-input"
+        id="filter-search"
+        placeholder="写真家名で検索"
+        oninput="applyFilters()"
+      >
       <select class="filter-select" id="filter-country" onchange="applyFilters()">
         <option value="">すべての国</option>
       </select>

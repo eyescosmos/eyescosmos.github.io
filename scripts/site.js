@@ -3,7 +3,7 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    STATE
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-let activeFilters = { country: '', movement: '' };
+let activeFilters = { search: '', country: '', movement: '' };
 const EMPTY_BLOCK = '<div class="empty-copy" aria-hidden="true"></div>';
 
 function realPhotographers() {
@@ -37,6 +37,24 @@ function displaySubName(p) {
 
 function displayMeta(p) {
   return [p.flag, p.nationality].filter(Boolean).join(' ').trim();
+}
+
+function normalizeSearch(value) {
+  return (value || '').toLowerCase().trim();
+}
+
+function hasActiveFilters() {
+  return Boolean(activeFilters.search || activeFilters.country || activeFilters.movement);
+}
+
+function buildSearchIndex(p) {
+  return normalizeSearch([
+    p.name,
+    p.nameJa,
+    p.nationality,
+    p.years,
+    ...(p.movements || []),
+  ].filter(Boolean).join(' '));
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -100,8 +118,9 @@ function renderCard(p, extraAttrs = '') {
   const tags = p.movements.length
     ? p.movements.map(m => `<span class="card-tag">${m}</span>`).join('')
     : '';
+  const searchIndex = buildSearchIndex(p);
   return `
-    <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" ${extraAttrs}>
+    <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" data-search="${searchIndex}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" ${extraAttrs}>
       <div class="card-flag-nat">${displayMeta(p)}</div>
       <div class="card-name">${displayName(p)}</div>
       ${displaySubName(p)}
@@ -279,6 +298,7 @@ function populateFilters() {
 }
 
 function applyFilters() {
+  activeFilters.search = normalizeSearch(document.getElementById('filter-search').value);
   activeFilters.country = document.getElementById('filter-country').value;
   activeFilters.movement = document.getElementById('filter-movement-era').value;
 
@@ -287,14 +307,16 @@ function applyFilters() {
   // Only filter cards in era-main (not movement tab)
   document.querySelectorAll('#era-main .photographer-card').forEach(card => {
     if (card.dataset.placeholder === 'true') {
-      card.classList.toggle('filtered-out', Boolean(activeFilters.country || activeFilters.movement));
+      card.classList.toggle('filtered-out', hasActiveFilters());
       return;
     }
     const nat = card.dataset.nationality;
     const movs = card.dataset.movements.split(',');
+    const searchText = card.dataset.search || '';
+    const matchS = !activeFilters.search || searchText.includes(activeFilters.search);
     const matchC = !activeFilters.country || nat.includes(activeFilters.country);
     const matchM = !activeFilters.movement || movs.includes(activeFilters.movement);
-    if (matchC && matchM) {
+    if (matchS && matchC && matchM) {
       card.classList.remove('filtered-out');
       visibleCount++;
     } else {
@@ -313,7 +335,7 @@ function applyFilters() {
 
   const countEl = document.getElementById('filter-count');
   const total = realPhotographers().length;
-  if (activeFilters.country || activeFilters.movement) {
+  if (hasActiveFilters()) {
     countEl.textContent = `${visibleCount} / ${total}人`;
   } else {
     countEl.textContent = `${total}人`;
@@ -321,9 +343,10 @@ function applyFilters() {
 }
 
 function resetFilters() {
+  document.getElementById('filter-search').value = '';
   document.getElementById('filter-country').value = '';
   document.getElementById('filter-movement-era').value = '';
-  activeFilters = { country: '', movement: '' };
+  activeFilters = { search: '', country: '', movement: '' };
   document.querySelectorAll('#era-main .photographer-card').forEach(c => c.classList.remove('filtered-out'));
   document.querySelectorAll('.era').forEach(e => e.classList.remove('hidden'));
   document.getElementById('no-results').classList.remove('visible');
