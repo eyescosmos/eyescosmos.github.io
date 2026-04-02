@@ -119,10 +119,7 @@
   ]);
 
   const featuredIdeaIds = new Set([
-    'idea:machine-eye',
-    'idea:portrait-self',
-    'idea:color',
-    'idea:landscape'
+    'idea:machine-eye'
   ]);
 
   const movementIdeaMap = {
