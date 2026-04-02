@@ -16,6 +16,7 @@
     idea: '#d7c4f0',
     activeText: '#f5ecdf',
     text: 'rgba(238, 230, 216, 0.78)',
+    textOutline: '#040507',
     link: 'rgba(211, 186, 151, 0.5)',
     linkGlow: 'rgba(211, 186, 151, 0.12)',
     focusLinkDepth1: 'rgba(126, 212, 255, 0.92)',
@@ -956,12 +957,18 @@
     const labelY = point.y - 4;
     ctx.textAlign = placeLeft ? 'right' : 'left';
     ctx.font = nodeState.active
-      ? '500 12px "Noto Sans JP", sans-serif'
+      ? '500 15px "Noto Sans JP", sans-serif'
       : nodeState.related
         ? '400 11px "Noto Sans JP", sans-serif'
         : nodeState.chained
           ? '400 10px "Noto Sans JP", sans-serif'
         : '400 9px "Noto Sans JP", sans-serif';
+    ctx.lineJoin = 'round';
+    ctx.miterLimit = 2;
+    ctx.strokeStyle = palette.textOutline;
+    ctx.lineWidth = nodeState.active ? 5.5 : nodeState.related ? 4 : 3.2;
+    ctx.globalAlpha = nodeState.active ? 0.96 : nodeState.related ? 0.82 : Math.max(0.26, nodeState.emphasis);
+    ctx.strokeText(node.label, labelX, labelY);
     ctx.fillStyle = nodeState.active ? palette.activeText : palette.text;
     ctx.globalAlpha = nodeState.active ? 0.98 : nodeState.related ? 0.82 : Math.max(0.24, nodeState.emphasis);
     ctx.fillText(node.label, labelX, labelY);
