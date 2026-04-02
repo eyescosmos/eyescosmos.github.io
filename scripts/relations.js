@@ -165,8 +165,8 @@
     state.stars = Array.from(
       { length: Math.max(320, Math.round((state.width * state.height) / 7000)) },
       (_, index) => ({
-        x: (index * 197.3) % state.width,
-        y: (index * 113.7) % state.height,
+        x: ((hashNumber(`star:${index}:x`) % 10000) / 9999) * state.width,
+        y: ((hashNumber(`star:${index}:y`) % 10000) / 9999) * state.height,
         radius: ((index * 17) % 10) / 10 + 0.62 + (((index * 37) % 10) > 7 ? 0.45 : 0),
         alpha: (((index * 23) % 10) / 10) * 0.38 + 0.14,
         phase: ((index * 29) % 360) * (Math.PI / 180),
@@ -1110,19 +1110,21 @@
         ? 1.65
         : 1.45;
     const radius = baseRadius + (nodeState.active ? 3.2 : nodeState.related ? 1.6 : 0) + node.glow;
+    const lightBoost = node.type === 'photographer' && node.prominence ? 0.14 : 0;
+    const coreBoost = node.type === 'photographer' && node.prominence ? 0.18 : 0;
 
     ctx.beginPath();
     ctx.fillStyle = palette[node.type];
-    ctx.globalAlpha = 0.14 + nodeState.emphasis * 0.82;
-    ctx.shadowBlur = 10 + nodeState.emphasis * 16 + prominenceBoost * 6;
+    ctx.globalAlpha = 0.16 + nodeState.emphasis * (0.82 + lightBoost);
+    ctx.shadowBlur = 12 + nodeState.emphasis * 18 + prominenceBoost * 10;
     ctx.shadowColor = palette[node.type];
     ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
     ctx.fill();
 
     ctx.beginPath();
     ctx.fillStyle = '#ffffff';
-    ctx.globalAlpha = 0.08 + nodeState.emphasis * 0.36;
-    ctx.arc(point.x, point.y, Math.max(0.6, radius * 0.34), 0, Math.PI * 2);
+    ctx.globalAlpha = 0.11 + nodeState.emphasis * (0.38 + coreBoost);
+    ctx.arc(point.x, point.y, Math.max(0.7, radius * (0.36 + coreBoost * 0.08)), 0, Math.PI * 2);
     ctx.fill();
     ctx.shadowBlur = 0;
 
