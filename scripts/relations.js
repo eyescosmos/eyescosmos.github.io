@@ -57,6 +57,7 @@
     focusClusterCache: null,
     focusTraversalCache: null,
     focusLayoutCache: null,
+    maxVisibleDepth: 2,
     adjacency: new Map(),
     nodesById: new Map(),
     stars: [],
@@ -380,6 +381,7 @@
     Array.from(buckets.entries())
       .sort((a, b) => a[0] - b[0])
       .forEach(([depth, bucket]) => {
+        if (depth > state.maxVisibleDepth) return;
         const ordered = [...bucket].sort((a, b) => angleFromHome(focused, a) - angleFromHome(focused, b));
         const density = ordered.length;
         const ringRadius =
@@ -498,9 +500,11 @@
 
     const relatedCount = state.adjacency.get(target.id)?.size || 0;
     const traversal = node && node.id === target.id ? getFocusTraversal(target) : null;
-    const reachCount = traversal ? traversal.depths.size - 1 : 0;
+    const reachCount = traversal
+      ? Array.from(traversal.depths.values()).filter(depth => depth > 0 && depth <= state.maxVisibleDepth).length
+      : 0;
     labelEl.textContent = target.label;
-    metaEl.textContent = `${typeLabel[target.type]} / 直接 ${relatedCount} / 系譜 ${reachCount}${target.subtitle ? ` / ${target.subtitle}` : ''}`;
+    metaEl.textContent = `${typeLabel[target.type]} / 直接 ${relatedCount} / 表示中 ${reachCount}${target.subtitle ? ` / ${target.subtitle}` : ''}`;
     if (node && node.id === target.id) {
       hintEl.textContent = target.url
         ? '固定中。線はこの対象から辿れるつながりを示します。もう一度クリックで詳細へ。'
@@ -673,6 +677,9 @@
       }
       if (traversal?.depths.has(node.id)) {
         const depth = traversal.depths.get(node.id);
+        if (depth > state.maxVisibleDepth) {
+          return { emphasis: 0.015, active: false, related: false, chained: false, hovered: false };
+        }
         const emphasis = Math.max(0.18, 0.62 - depth * 0.1);
         return { emphasis, active: false, related: false, chained: true, hovered: false };
       }
@@ -750,6 +757,7 @@
       const parent = state.nodesById.get(parentId);
       if (!node || !parent) return;
       const depth = traversal.depths.get(nodeId) || 1;
+      if (depth > state.maxVisibleDepth) return;
       const start = worldToScreen(parent.x, parent.y);
       const end = worldToScreen(node.x, node.y);
       ctx.beginPath();
@@ -785,6 +793,10 @@
   }
 
   function drawNode(node, nodeState) {
+    if (!nodeState.active && nodeState.emphasis < 0.018) {
+      return;
+    }
+
     const point = worldToScreen(node.x, node.y);
     const baseRadius = node.type === 'photographer' ? 1.7 : node.type === 'movement' ? 1.5 : 1.3;
     const radius = baseRadius + (nodeState.active ? 3.2 : nodeState.related ? 1.6 : nodeState.hovered ? 1 : 0) + node.glow;
@@ -803,6 +815,10 @@
     ctx.arc(point.x, point.y, Math.max(0.6, radius * 0.34), 0, Math.PI * 2);
     ctx.fill();
     ctx.shadowBlur = 0;
+
+    if (!nodeState.active && nodeState.emphasis < 0.07) {
+      return;
+    }
 
     const labelX = point.x + 11;
     const labelY = point.y - 4;
