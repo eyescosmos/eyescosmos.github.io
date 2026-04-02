@@ -52,6 +52,7 @@
     hoveredNodeId: '',
     focusedNodeId: '',
     frameHandle: 0,
+    focusClusterCache: null,
     adjacency: new Map(),
     nodesById: new Map(),
     stars: [],
@@ -94,6 +95,10 @@
 
   function stableAngle(value) {
     return (hashNumber(value) % 360) * (Math.PI / 180);
+  }
+
+  function stableSortValue(value) {
+    return hashNumber(value) % 100000;
   }
 
   function relaxHorizontally(list, minGap, iterations) {
@@ -281,6 +286,7 @@
   function getDisplayTarget(node) {
     const focused = getFocusedNode();
     if (!focused) {
+      state.focusClusterCache = null;
       return { x: node.homeX, y: node.homeY };
     }
 
@@ -288,23 +294,60 @@
       return { x: focused.homeX, y: focused.homeY };
     }
 
-    const relatedIds = state.adjacency.get(focused.id);
-    if (!relatedIds || !relatedIds.has(node.id)) {
+    const clusterMap = getFocusClusterMap(focused);
+    if (!clusterMap.has(node.id)) {
       return { x: node.homeX, y: node.homeY };
     }
 
-    const radius =
-      node.type === 'photographer'
-        ? 220
-        : node.type === 'movement'
-          ? 180
-          : 260;
-    const angle = stableAngle(`${focused.id}:${node.id}`);
+    return clusterMap.get(node.id);
+  }
 
-    return {
-      x: focused.homeX + Math.cos(angle) * radius,
-      y: focused.homeY + Math.sin(angle) * radius * 0.72
-    };
+  function getFocusClusterMap(focused) {
+    if (state.focusClusterCache && state.focusClusterCache.focusId === focused.id) {
+      return state.focusClusterCache.map;
+    }
+
+    const relatedIds = state.adjacency.get(focused.id);
+    const map = new Map();
+    if (!relatedIds || !relatedIds.size) {
+      state.focusClusterCache = { focusId: focused.id, map };
+      return map;
+    }
+
+    const relatedNodes = Array.from(relatedIds)
+      .map(id => state.nodesById.get(id))
+      .filter(Boolean)
+      .sort((a, b) => {
+        if (a.type !== b.type) return a.type.localeCompare(b.type, 'ja');
+        return stableSortValue(`${focused.id}:${a.id}`) - stableSortValue(`${focused.id}:${b.id}`);
+      });
+
+    const total = relatedNodes.length;
+    const ringCapacity = total > 14 ? 10 : 8;
+    const baseRadius = 300 + Math.max(0, total - 4) * 26;
+
+    relatedNodes.forEach((relatedNode, index) => {
+      const ringIndex = Math.floor(index / ringCapacity);
+      const slotsInRing = Math.min(ringCapacity, total - ringIndex * ringCapacity);
+      const slot = index % ringCapacity;
+      const typeOffset =
+        relatedNode.type === 'photographer'
+          ? 40
+          : relatedNode.type === 'movement'
+            ? 0
+            : 90;
+      const radius = baseRadius + ringIndex * 170 + typeOffset;
+      const angleOffset = (stableAngle(`${focused.id}:${relatedNode.id}`) - Math.PI) * 0.08;
+      const angle = -Math.PI / 2 + (slot / Math.max(1, slotsInRing)) * Math.PI * 2 + angleOffset;
+
+      map.set(relatedNode.id, {
+        x: focused.homeX + Math.cos(angle) * radius,
+        y: focused.homeY + Math.sin(angle) * radius * 0.8
+      });
+    });
+
+    state.focusClusterCache = { focusId: focused.id, map };
+    return map;
   }
 
   function clampCamera() {
@@ -334,6 +377,7 @@
   function setFocusedNode(id) {
     if (!id || !state.nodesById.has(id)) return;
     state.focusedNodeId = id;
+    state.focusClusterCache = null;
     state.cameraLockedToFocus = true;
     const node = state.nodesById.get(id);
     state.targetCameraX = node.x;
