@@ -161,7 +161,7 @@
     const now = typeof performance !== 'undefined' && performance.now
       ? performance.now()
       : Date.now();
-    state.ambientMotionUntil = now + 1100;
+    state.ambientMotionUntil = now + 1600;
     state.stars = Array.from(
       { length: Math.max(320, Math.round((state.width * state.height) / 7000)) },
       (_, index) => ({
@@ -170,8 +170,8 @@
         radius: ((index * 17) % 10) / 10 + 0.62 + (((index * 37) % 10) > 7 ? 0.45 : 0),
         alpha: (((index * 23) % 10) / 10) * 0.38 + 0.14,
         phase: ((index * 29) % 360) * (Math.PI / 180),
-        driftX: (((index * 19) % 10) / 10 - 0.5) * 5.4,
-        driftY: (((index * 31) % 10) / 10 - 0.5) * 4.6,
+        driftX: (((index * 19) % 10) / 10 - 0.5) * 8.2,
+        driftY: (((index * 31) % 10) / 10 - 0.5) * 7.1,
         pulse: (((index * 13) % 10) / 10) * 0.2 + 0.9,
         glow: ((index * 7) % 10) > 4 ? 1 : 0
       })
@@ -994,7 +994,7 @@
     const now = typeof performance !== 'undefined' && performance.now
       ? performance.now()
       : Date.now();
-    const introProgress = Math.max(0, Math.min(1, (state.ambientMotionUntil - now) / 1100));
+    const introProgress = Math.max(0, Math.min(1, (state.ambientMotionUntil - now) / 1600));
     const introEase = introProgress > 0 ? introProgress * introProgress * (3 - 2 * introProgress) : 0;
     const time = now * 0.001;
 
@@ -1039,9 +1039,9 @@
     ctx.fillRect(0, 0, state.width, state.height);
 
     state.stars.forEach(star => {
-      const driftWave = Math.sin(time * 1.1 + star.phase);
+      const driftWave = Math.sin(time * 1.25 + star.phase);
       const offsetX = star.driftX * introEase * driftWave;
-      const offsetY = star.driftY * introEase * Math.cos(time * 0.95 + star.phase);
+      const offsetY = star.driftY * introEase * Math.cos(time * 1.08 + star.phase);
       const pulse = 0.9 + Math.sin(time * star.pulse + star.phase) * 0.12;
       ctx.beginPath();
       ctx.fillStyle = `rgba(255, 247, 235, ${Math.min(0.85, star.alpha * pulse)})`;
@@ -1109,7 +1109,7 @@
       : node.type === 'movement'
         ? 1.65
         : 1.45;
-    const radius = baseRadius + (nodeState.active ? 3.2 : nodeState.related ? 1.6 : nodeState.hovered ? 1 : 0) + node.glow;
+    const radius = baseRadius + (nodeState.active ? 3.2 : nodeState.related ? 1.6 : 0) + node.glow;
 
     ctx.beginPath();
     ctx.fillStyle = palette[node.type];
