@@ -57,6 +57,14 @@ function buildSearchIndex(p) {
   ].filter(Boolean).join(' '));
 }
 
+function setLocationHash(hashValue) {
+  const next = hashValue ? `#${hashValue}` : '';
+  if (window.location.hash === next) return;
+  const url = new URL(window.location.href);
+  url.hash = hashValue || '';
+  history.replaceState(null, '', url.toString());
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    RENDER: ERA TAB
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -264,6 +272,7 @@ function toggleDetail(pid, card) {
     const panel = document.getElementById(`panel-${pid}`);
     panel.classList.add('open');
     card.classList.add('active');
+    setLocationHash(`photographer-${pid}`);
     setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
   }
 }
@@ -272,6 +281,9 @@ function closeDetail(pid) {
   const panel = document.getElementById(`panel-${pid}`);
   if (panel) panel.classList.remove('open');
   document.querySelectorAll('.photographer-card.active').forEach(c => c.classList.remove('active'));
+  if (window.location.hash === `#photographer-${pid}`) {
+    setLocationHash('');
+  }
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -378,6 +390,7 @@ function renderMovementTab() {
     const section = document.createElement('section');
     section.className = 'movement-section';
     section.dataset.mv = mvId;
+    section.id = `movement-${mvId}`;
     section.innerHTML = `
       <div class="movement-header">
         <div>
@@ -516,6 +529,52 @@ function scrollToPhotographer() {
   }, 100);
 }
 
+function revealPhotographerFromHash(pid) {
+  if (!pid) return;
+  switchTab('era');
+  setTimeout(() => {
+    const card = document.querySelector(`#era-main [data-pid="${pid}"]`);
+    if (!card) return;
+    const era = card.closest('.era');
+    if (era) {
+      era.classList.remove('hidden');
+      openEra(era.dataset.eraId);
+    }
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => {
+      const panel = document.getElementById(`panel-${pid}`);
+      if (!panel || !panel.classList.contains('open')) {
+        toggleDetail(pid, card);
+      }
+    }, 280);
+  }, 80);
+}
+
+function revealMovementFromHash(mvId) {
+  if (!mvId) return;
+  switchTab('movement');
+  setTimeout(() => {
+    const section = document.getElementById(`movement-${mvId}`);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 80);
+}
+
+function handleDeepLink() {
+  const hash = window.location.hash.replace(/^#/, '');
+  if (!hash) return;
+
+  if (hash.startsWith('photographer-')) {
+    revealPhotographerFromHash(hash.slice('photographer-'.length));
+    return;
+  }
+
+  if (hash.startsWith('movement-')) {
+    revealMovementFromHash(hash.slice('movement-'.length));
+  }
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    INTERSECTION OBSERVER
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -533,3 +592,5 @@ renderEraTab();
 renderMovementTab();
 initRandom();
 applyFilters(); // initialize count
+handleDeepLink();
+window.addEventListener('hashchange', handleDeepLink);

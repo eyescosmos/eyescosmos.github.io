@@ -196,15 +196,15 @@ body.is-navigating #page-fade {
     <div class="eyebrow">Prototype / Relation Constellation</div>
     <h1 class="title"><em>関係の星図</em></h1>
     <div class="lede">
-      写真家、運動、思想を宇宙のような距離感で配置した試作ページです。
-      ホバーで関係性が立ち上がり、クリックで次のページへ沈むように移動します。
+      写真家、運動、思想を大きな平面の上にひらいた試作ページです。
+      クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。
     </div>
   </div>
 
   <div class="focus-card">
     <div class="focus-label" id="focus-label">関係の星図</div>
-    <div class="focus-meta" id="focus-meta">星に触れると、その関係だけが静かに立ち上がります。</div>
-    <div class="focus-hint" id="focus-hint">ホバーで固定、クリックで移動します。</div>
+    <div class="focus-meta" id="focus-meta">点ではなく名前そのものをたどりながら、関係の地図を横断します。</div>
+    <div class="focus-hint" id="focus-hint">クリックで中心化、同じ名前をもう一度クリックで詳細へ。</div>
   </div>
 
   <a class="back-link" href="index.html">アーカイブへ戻る</a>
@@ -212,6 +212,8 @@ body.is-navigating #page-fade {
 
 <div id="page-fade" aria-hidden="true"></div>
 
+<script src="data/movements.js"></script>
+<script src="data/photographers.js"></script>
 <script src="data/relation-graph.js"></script>
 <script src="scripts/relations.js"></script>
 </body>
