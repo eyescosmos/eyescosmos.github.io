@@ -5,6 +5,8 @@
   const metaEl = document.getElementById('focus-meta');
   const hintEl = document.getElementById('focus-hint');
   const fadeEl = document.getElementById('page-fade');
+  const zoomInButton = document.getElementById('zoom-in');
+  const zoomOutButton = document.getElementById('zoom-out');
   const prefersCoarse = window.matchMedia('(pointer: coarse)').matches;
 
   const palette = {
@@ -13,12 +15,8 @@
     idea: '#d7c4f0',
     activeText: '#f5ecdf',
     text: 'rgba(238, 230, 216, 0.78)',
-    textDim: 'rgba(238, 230, 216, 0.24)',
     link: 'rgba(211, 186, 151, 0.5)',
-    linkGlow: 'rgba(211, 186, 151, 0.12)',
-    guide: 'rgba(238, 230, 216, 0.07)',
-    guideText: 'rgba(238, 230, 216, 0.2)',
-    frame: 'rgba(198, 170, 130, 0.1)'
+    linkGlow: 'rgba(211, 186, 151, 0.12)'
   };
 
   const typeLabel = {
@@ -33,8 +31,9 @@
     ratio: 1,
     scale: 1,
     targetScale: 1,
-    overviewScale: 1,
-    focusScale: 1,
+    defaultScale: 0.5,
+    minScale: 0.3,
+    maxScale: 1.15,
     cameraX: 0,
     cameraY: 0,
     targetCameraX: 0,
@@ -112,7 +111,7 @@
     canvas.style.height = `${state.height}px`;
     ctx.setTransform(state.ratio, 0, 0, state.ratio, 0, 0);
     createStars();
-    updateScaleTargets();
+    updateScaleBounds();
   }
 
   function layoutNodes() {
@@ -190,24 +189,31 @@
     state.targetCameraX = state.cameraX;
     state.cameraY = (state.world.minY + state.world.maxY) * 0.5;
     state.targetCameraY = state.cameraY;
-    updateScaleTargets();
+    updateScaleBounds();
   }
 
-  function updateScaleTargets() {
+  function updateScaleBounds() {
     const worldWidth = Math.max(1, state.world.maxX - state.world.minX);
     const worldHeight = Math.max(1, state.world.maxY - state.world.minY);
-    const fitX = (state.width * 0.82) / worldWidth;
-    const fitY = (state.height * 0.72) / worldHeight;
-    state.overviewScale = Math.max(0.14, Math.min(0.34, fitX, fitY));
-    state.focusScale = Math.max(0.42, Math.min(0.72, state.overviewScale * 2.1));
+    const fitX = (state.width * 0.54) / worldWidth;
+    const fitY = (state.height * 0.5) / worldHeight;
+    const baseScale = Math.max(0.34, Math.min(0.64, fitX * 2.6, fitY * 2.6));
+    state.defaultScale = baseScale;
+    state.minScale = Math.max(0.22, baseScale * 0.7);
+    state.maxScale = Math.max(1.05, baseScale * 2);
 
     if (!state.scale || state.scale === 1) {
-      state.scale = state.overviewScale;
-      state.targetScale = state.overviewScale;
+      state.scale = state.defaultScale;
+      state.targetScale = state.defaultScale;
       return;
     }
 
-    state.targetScale = state.focusedNodeId ? state.focusScale : state.overviewScale;
+    state.scale = clampScale(state.scale);
+    state.targetScale = clampScale(state.targetScale);
+  }
+
+  function clampScale(value) {
+    return Math.max(state.minScale, Math.min(state.maxScale, value));
   }
 
   function worldToScreen(x, y) {
@@ -248,7 +254,7 @@
     const node = state.nodesById.get(id);
     state.targetCameraX = node.x;
     state.targetCameraY = node.y;
-    state.targetScale = state.focusScale;
+    state.targetScale = Math.max(state.targetScale, state.defaultScale);
     node.glow = 1.4;
     clampCamera();
     updateFocusPanel();
@@ -263,8 +269,8 @@
       labelEl.textContent = '関係の星図';
       metaEl.textContent = '点ではなく名前そのものをたどりながら、関係の地図を横断します。';
       hintEl.textContent = prefersCoarse
-        ? 'タップで中心に寄せ、同じ名前をもう一度タップで詳細へ。'
-        : 'クリックで中心に寄せ、同じ名前をもう一度クリックで詳細へ。';
+        ? 'タップで中心へ。ピンチやボタンで拡大縮小、同じ名前をもう一度タップで詳細へ。'
+        : 'クリックで中心へ。ホイールやボタンで拡大縮小、同じ名前をもう一度クリックで詳細へ。';
       return;
     }
 
@@ -273,7 +279,7 @@
     metaEl.textContent = `${typeLabel[target.type]} / ${relatedCount}つの接続${target.subtitle ? ` / ${target.subtitle}` : ''}`;
     if (node && node.id === target.id) {
       hintEl.textContent = target.url
-        ? '固定中。もう一度クリックすると詳細ページへ移動します。'
+        ? '固定中。もう一度クリックすると詳細ページへ移動します。ホイールで拡大縮小できます。'
         : '固定中。ドラッグで地図を移動できます。';
     } else {
       hintEl.textContent = 'まだ固定されていません。クリックするとこの名前が中心になります。';
@@ -315,6 +321,18 @@
       return;
     }
     canvas.style.cursor = findNodeAt(state.pointerX, state.pointerY) ? 'pointer' : 'grab';
+  }
+
+  function nudgeZoom(multiplier) {
+    state.targetScale = clampScale(state.targetScale * multiplier);
+    clampCamera();
+  }
+
+  function handleWheel(event) {
+    event.preventDefault();
+    const multiplier = Math.exp(-event.deltaY * 0.0012);
+    state.targetScale = clampScale(state.targetScale * multiplier);
+    clampCamera();
   }
 
   function navigateTo(node) {
@@ -435,9 +453,6 @@
   }
 
   function updateFrameState() {
-    if (!state.focusedNodeId) {
-      state.targetScale = state.overviewScale;
-    }
     clampCamera();
     state.scale += (state.targetScale - state.scale) * 0.08;
     state.cameraX += (state.targetCameraX - state.cameraX) * 0.08;
@@ -470,53 +485,6 @@
       ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
       ctx.fill();
     });
-  }
-
-  function drawWorldGuides() {
-    ctx.save();
-    ctx.strokeStyle = palette.guide;
-    ctx.lineWidth = 1;
-
-    for (let x = Math.ceil(state.world.minX / 240) * 240; x <= state.world.maxX; x += 240) {
-      const start = worldToScreen(x, state.world.minY);
-      const end = worldToScreen(x, state.world.maxY);
-      ctx.beginPath();
-      ctx.moveTo(start.x, start.y);
-      ctx.lineTo(end.x, end.y);
-      ctx.stroke();
-    }
-
-    for (let y = Math.ceil(state.world.minY / 220) * 220; y <= state.world.maxY; y += 220) {
-      const start = worldToScreen(state.world.minX, y);
-      const end = worldToScreen(state.world.maxX, y);
-      ctx.beginPath();
-      ctx.moveTo(start.x, start.y);
-      ctx.lineTo(end.x, end.y);
-      ctx.stroke();
-    }
-
-    ctx.strokeStyle = palette.frame;
-    const topLeft = worldToScreen(state.world.minX, state.world.minY);
-    const bottomRight = worldToScreen(state.world.maxX, state.world.maxY);
-    ctx.strokeRect(
-      topLeft.x,
-      topLeft.y,
-      bottomRight.x - topLeft.x,
-      bottomRight.y - topLeft.y
-    );
-
-    ctx.font = '400 10px "DM Mono", monospace';
-    ctx.fillStyle = palette.guideText;
-    RELATION_GRAPH.eras.forEach((era, index) => {
-      const x = -((RELATION_GRAPH.eras.length - 1) * 520) / 2 + index * 520;
-      const point = worldToScreen(x, -1060);
-      ctx.fillText(era.label, point.x - 24, point.y);
-    });
-
-    ctx.fillText('運動', worldToScreen(state.world.minX + 120, -990).x, worldToScreen(state.world.minX + 120, -990).y);
-    ctx.fillText('写真家', worldToScreen(state.world.minX + 120, -40).x, worldToScreen(state.world.minX + 120, -40).y);
-    ctx.fillText('思想', worldToScreen(state.world.minX + 120, 980).x, worldToScreen(state.world.minX + 120, 980).y);
-    ctx.restore();
   }
 
   function drawLinks() {
@@ -593,21 +561,38 @@
   function frame() {
     updateFrameState();
     drawBackground();
-    drawWorldGuides();
     drawLinks();
     drawNodes();
     requestAnimationFrame(frame);
+  }
+
+  function centerInitialNode() {
+    const preferred = state.nodesById.get('photographer:stieglitz');
+    const fallback = nodes.find(node => node.type === 'photographer') || nodes[0];
+    const initialNode = preferred || fallback;
+    if (!initialNode) return;
+    state.scale = state.defaultScale;
+    state.targetScale = state.defaultScale;
+    state.cameraX = initialNode.x;
+    state.targetCameraX = initialNode.x;
+    state.cameraY = initialNode.y;
+    state.targetCameraY = initialNode.y;
+    state.focusedNodeId = initialNode.id;
+    updateFocusPanel();
   }
 
   canvas.addEventListener('pointerdown', handlePointerDown);
   canvas.addEventListener('pointermove', handlePointerMove);
   canvas.addEventListener('pointerup', handlePointerUp);
   canvas.addEventListener('pointerleave', handlePointerLeave);
+  canvas.addEventListener('wheel', handleWheel, { passive: false });
   window.addEventListener('resize', resize);
+  zoomInButton.addEventListener('click', () => nudgeZoom(1.18));
+  zoomOutButton.addEventListener('click', () => nudgeZoom(1 / 1.18));
 
   resize();
   layoutNodes();
-  updateFocusPanel();
+  centerInitialNode();
   updateCursor();
   frame();
 })();

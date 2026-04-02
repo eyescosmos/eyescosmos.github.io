@@ -66,7 +66,8 @@ body.is-navigating #page-fade {
 
 .hud,
 .focus-card,
-.back-link {
+.back-link,
+.zoom-controls {
   position: absolute;
   z-index: 2;
 }
@@ -150,6 +151,30 @@ body.is-navigating #page-fade {
   background: rgba(198, 170, 130, 0.06);
 }
 
+.zoom-controls {
+  right: 32px;
+  bottom: 32px;
+  display: flex;
+  gap: 8px;
+}
+
+.zoom-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  background: rgba(10, 12, 18, 0.62);
+  color: var(--text);
+  font: 400 18px/1 'DM Mono', monospace;
+  cursor: pointer;
+  backdrop-filter: blur(18px);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.zoom-btn:hover {
+  border-color: rgba(198, 170, 130, 0.34);
+  background: rgba(198, 170, 130, 0.08);
+}
+
 #page-fade {
   position: fixed;
   inset: 0;
@@ -163,7 +188,8 @@ body.is-navigating #page-fade {
 @media (max-width: 720px) {
   .hud,
   .focus-card,
-  .back-link {
+  .back-link,
+  .zoom-controls {
     left: 18px;
     right: 18px;
   }
@@ -184,6 +210,12 @@ body.is-navigating #page-fade {
   .focus-card {
     bottom: 68px;
     width: auto;
+  }
+
+  .zoom-controls {
+    left: auto;
+    right: 18px;
+    bottom: 18px;
   }
 }
 </style>
@@ -208,6 +240,10 @@ body.is-navigating #page-fade {
   </div>
 
   <a class="back-link" href="index.html">アーカイブへ戻る</a>
+  <div class="zoom-controls" aria-label="ズーム操作">
+    <button class="zoom-btn" id="zoom-out" type="button" aria-label="縮小">-</button>
+    <button class="zoom-btn" id="zoom-in" type="button" aria-label="拡大">+</button>
+  </div>
 </div>
 
 <div id="page-fade" aria-hidden="true"></div>
