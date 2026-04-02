@@ -163,17 +163,17 @@
       : Date.now();
     state.ambientMotionUntil = now + 1100;
     state.stars = Array.from(
-      { length: Math.max(260, Math.round((state.width * state.height) / 8200)) },
+      { length: Math.max(320, Math.round((state.width * state.height) / 7000)) },
       (_, index) => ({
         x: (index * 197.3) % state.width,
         y: (index * 113.7) % state.height,
-        radius: ((index * 17) % 10) / 10 + 0.5,
-        alpha: (((index * 23) % 10) / 10) * 0.34 + 0.1,
+        radius: ((index * 17) % 10) / 10 + 0.62 + (((index * 37) % 10) > 7 ? 0.45 : 0),
+        alpha: (((index * 23) % 10) / 10) * 0.38 + 0.14,
         phase: ((index * 29) % 360) * (Math.PI / 180),
-        driftX: (((index * 19) % 10) / 10 - 0.5) * 4.8,
-        driftY: (((index * 31) % 10) / 10 - 0.5) * 4.1,
+        driftX: (((index * 19) % 10) / 10 - 0.5) * 5.4,
+        driftY: (((index * 31) % 10) / 10 - 0.5) * 4.6,
         pulse: (((index * 13) % 10) / 10) * 0.2 + 0.9,
-        glow: ((index * 7) % 10) > 5 ? 1 : 0
+        glow: ((index * 7) % 10) > 4 ? 1 : 0
       })
     );
   }
@@ -1012,17 +1012,43 @@
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, state.width, state.height);
 
+    const nebulaA = ctx.createRadialGradient(
+      state.width * 0.68,
+      state.height * 0.28,
+      0,
+      state.width * 0.68,
+      state.height * 0.28,
+      state.width * 0.34
+    );
+    nebulaA.addColorStop(0, 'rgba(104, 138, 255, 0.08)');
+    nebulaA.addColorStop(1, 'rgba(104, 138, 255, 0)');
+    ctx.fillStyle = nebulaA;
+    ctx.fillRect(0, 0, state.width, state.height);
+
+    const nebulaB = ctx.createRadialGradient(
+      state.width * 0.24,
+      state.height * 0.7,
+      0,
+      state.width * 0.24,
+      state.height * 0.7,
+      state.width * 0.28
+    );
+    nebulaB.addColorStop(0, 'rgba(226, 192, 146, 0.06)');
+    nebulaB.addColorStop(1, 'rgba(226, 192, 146, 0)');
+    ctx.fillStyle = nebulaB;
+    ctx.fillRect(0, 0, state.width, state.height);
+
     state.stars.forEach(star => {
       const driftWave = Math.sin(time * 1.1 + star.phase);
       const offsetX = star.driftX * introEase * driftWave;
       const offsetY = star.driftY * introEase * Math.cos(time * 0.95 + star.phase);
       const pulse = 0.9 + Math.sin(time * star.pulse + star.phase) * 0.12;
       ctx.beginPath();
-      ctx.fillStyle = `rgba(255, 247, 235, ${Math.min(0.72, star.alpha * pulse)})`;
-      ctx.shadowBlur = star.glow ? 11 + introEase * 5 : 2;
+      ctx.fillStyle = `rgba(255, 247, 235, ${Math.min(0.85, star.alpha * pulse)})`;
+      ctx.shadowBlur = star.glow ? 15 + introEase * 6 : 3;
       ctx.shadowColor = star.glow
-        ? 'rgba(255, 243, 224, 0.42)'
-        : 'rgba(210, 225, 255, 0.12)';
+        ? 'rgba(255, 243, 224, 0.52)'
+        : 'rgba(210, 225, 255, 0.16)';
       ctx.arc(star.x + offsetX, star.y + offsetY, star.radius * (0.96 + pulse * 0.08), 0, Math.PI * 2);
       ctx.fill();
     });
@@ -1077,13 +1103,18 @@
     }
 
     const point = worldToScreen(node.x, node.y);
-    const baseRadius = node.type === 'photographer' ? 1.7 : node.type === 'movement' ? 1.5 : 1.3;
+    const prominenceBoost = node.type === 'photographer' && node.prominence ? 1.15 : 0;
+    const baseRadius = node.type === 'photographer'
+      ? 2.15 + prominenceBoost
+      : node.type === 'movement'
+        ? 1.65
+        : 1.45;
     const radius = baseRadius + (nodeState.active ? 3.2 : nodeState.related ? 1.6 : nodeState.hovered ? 1 : 0) + node.glow;
 
     ctx.beginPath();
     ctx.fillStyle = palette[node.type];
     ctx.globalAlpha = 0.14 + nodeState.emphasis * 0.82;
-    ctx.shadowBlur = 8 + nodeState.emphasis * 14;
+    ctx.shadowBlur = 10 + nodeState.emphasis * 16 + prominenceBoost * 6;
     ctx.shadowColor = palette[node.type];
     ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
     ctx.fill();
@@ -1106,10 +1137,10 @@
     ctx.font = nodeState.active
       ? '500 15px "Noto Sans JP", sans-serif'
       : nodeState.related
-        ? '400 11px "Noto Sans JP", sans-serif'
+        ? `400 ${node.type === 'photographer' && node.prominence ? 12 : 11}px "Noto Sans JP", sans-serif`
         : nodeState.chained
-          ? '400 10px "Noto Sans JP", sans-serif'
-        : '400 9px "Noto Sans JP", sans-serif';
+          ? `400 ${node.type === 'photographer' && node.prominence ? 11 : 10}px "Noto Sans JP", sans-serif`
+        : `400 ${node.type === 'photographer' && node.prominence ? 10 : 9}px "Noto Sans JP", sans-serif`;
     ctx.lineJoin = 'round';
     ctx.miterLimit = 2;
     ctx.strokeStyle = palette.textOutline;

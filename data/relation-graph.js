@@ -233,6 +233,19 @@
     )
   ).sort((a, b) => a.localeCompare(b, 'ja'));
 
+  const featuredPhotographerIds = new Set([
+    'stieglitz',
+    'strand',
+    'atget',
+    'manray',
+    'evans',
+    'capa',
+    'domon',
+    'araki',
+    'frank',
+    'becher'
+  ]);
+
   const photographerNodes = photographers.map((p, index) => ({
     id: `photographer:${p.id}`,
     key: p.id,
@@ -242,6 +255,7 @@
     era: p.era,
     years: p.years,
     order: index,
+    prominence: featuredPhotographerIds.has(p.id) ? 1 : 0,
     url: `archive.html#photographer-${p.id}`
   }));
 
