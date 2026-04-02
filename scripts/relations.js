@@ -812,11 +812,11 @@
   function navigateTo(node) {
     if (!node.url) return;
     node.glow = 2;
-    document.body.classList.add('is-navigating');
     scheduleFrame();
-    fadeEl.addEventListener('transitionend', () => {
+    const popup = window.open(node.url, '_blank', 'noopener,noreferrer');
+    if (!popup) {
       window.location.href = node.url;
-    }, { once: true });
+    }
   }
 
   function resetView() {
