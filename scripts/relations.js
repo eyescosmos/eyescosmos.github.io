@@ -56,6 +56,7 @@
     frameHandle: 0,
     focusClusterCache: null,
     focusTraversalCache: null,
+    focusLayoutCache: null,
     adjacency: new Map(),
     nodesById: new Map(),
     stars: [],
@@ -102,6 +103,15 @@
 
   function stableSortValue(value) {
     return hashNumber(value) % 100000;
+  }
+
+  function angleFromHome(focused, node) {
+    const dx = node.homeX - focused.homeX;
+    const dy = node.homeY - focused.homeY;
+    if (Math.abs(dx) < 0.001 && Math.abs(dy) < 0.001) {
+      return stableAngle(`${focused.id}:${node.id}`);
+    }
+    return Math.atan2(dy, dx);
   }
 
   function relaxHorizontally(list, minGap, iterations) {
@@ -291,6 +301,7 @@
     if (!focused) {
       state.focusClusterCache = null;
       state.focusTraversalCache = null;
+      state.focusLayoutCache = null;
       return { x: node.homeX, y: node.homeY };
     }
 
@@ -298,12 +309,8 @@
       return { x: focused.homeX, y: focused.homeY };
     }
 
-    const clusterMap = getFocusClusterMap(focused);
-    if (!clusterMap.has(node.id)) {
-      return { x: node.homeX, y: node.homeY };
-    }
-
-    return clusterMap.get(node.id);
+    const layoutMap = getFocusLayoutMap(focused);
+    return layoutMap.get(node.id) || { x: node.homeX, y: node.homeY };
   }
 
   function getFocusClusterMap(focused) {
@@ -351,6 +358,54 @@
     });
 
     state.focusClusterCache = { focusId: focused.id, map };
+    return map;
+  }
+
+  function getFocusLayoutMap(focused) {
+    if (state.focusLayoutCache && state.focusLayoutCache.focusId === focused.id) {
+      return state.focusLayoutCache.map;
+    }
+
+    const traversal = getFocusTraversal(focused);
+    const map = new Map();
+    const buckets = new Map();
+
+    traversal.depths.forEach((depth, nodeId) => {
+      if (depth === 0) return;
+      if (!buckets.has(depth)) buckets.set(depth, []);
+      const node = state.nodesById.get(nodeId);
+      if (node) buckets.get(depth).push(node);
+    });
+
+    Array.from(buckets.entries())
+      .sort((a, b) => a[0] - b[0])
+      .forEach(([depth, bucket]) => {
+        const ordered = [...bucket].sort((a, b) => angleFromHome(focused, a) - angleFromHome(focused, b));
+        const density = ordered.length;
+        const ringRadius =
+          260 +
+          (depth - 1) * 230 +
+          Math.max(0, density - 6) * 18;
+
+        ordered.forEach((node, index) => {
+          const homeAngle = angleFromHome(focused, node);
+          const spread = density <= 1 ? 0 : ((index / (density - 1)) - 0.5) * Math.min(1.2, density * 0.08);
+          const angle = homeAngle + spread;
+          const typeOffset =
+            node.type === 'photographer'
+              ? 0
+              : node.type === 'movement'
+                ? -40
+                : 55;
+          const radius = ringRadius + typeOffset + jitter(`${focused.id}:${node.id}:radius`, 26);
+          map.set(node.id, {
+            x: focused.homeX + Math.cos(angle) * radius,
+            y: focused.homeY + Math.sin(angle) * radius * 0.78
+          });
+        });
+      });
+
+    state.focusLayoutCache = { focusId: focused.id, map };
     return map;
   }
 
@@ -416,6 +471,7 @@
     state.focusedNodeId = id;
     state.focusClusterCache = null;
     state.focusTraversalCache = null;
+    state.focusLayoutCache = null;
     state.cameraLockedToFocus = true;
     const node = state.nodesById.get(id);
     state.targetCameraX = node.x;
@@ -699,11 +755,11 @@
       ctx.beginPath();
       ctx.moveTo(start.x, start.y);
       ctx.lineTo(end.x, end.y);
-      ctx.strokeStyle = palette.link;
+      ctx.strokeStyle = palette.focusLink;
       ctx.lineWidth = depth === 1 ? 1.25 : depth === 2 ? 1 : 0.85;
-      ctx.globalAlpha = Math.max(0.18, 0.84 - depth * 0.1);
+      ctx.globalAlpha = Math.max(0.16, 0.82 - depth * 0.17);
       ctx.shadowBlur = depth <= 2 ? 8 : 4;
-      ctx.shadowColor = palette.linkGlow;
+      ctx.shadowColor = palette.focusLinkGlow;
       ctx.stroke();
       ctx.shadowBlur = 0;
     });
