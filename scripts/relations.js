@@ -68,6 +68,7 @@
     focusLayoutCache: null,
     maxVisibleDepth: 2,
     adjacency: new Map(),
+    neighborEdges: new Map(),
     nodesById: new Map(),
     stars: [],
     world: {
@@ -142,6 +143,7 @@
   nodes.forEach(node => {
     state.nodesById.set(node.id, node);
     state.adjacency.set(node.id, new Set());
+    state.neighborEdges.set(node.id, []);
   });
 
   links.forEach(link => {
@@ -150,6 +152,8 @@
     if (!link.sourceNode || !link.targetNode) return;
     state.adjacency.get(link.source).add(link.target);
     state.adjacency.get(link.target).add(link.source);
+    state.neighborEdges.get(link.source).push({ id: link.target, type: link.type });
+    state.neighborEdges.get(link.target).push({ id: link.source, type: link.type });
   });
 
   function createStars() {
@@ -482,9 +486,10 @@
     for (let index = 0; index < queue.length; index += 1) {
       const currentId = queue[index];
       const currentDepth = depths.get(currentId);
-      const neighbors = state.adjacency.get(currentId) || new Set();
+      const currentNode = state.nodesById.get(currentId);
+      const edges = getTraversalEdges(focused, currentNode, currentDepth);
 
-      neighbors.forEach(nextId => {
+      edges.forEach(({ id: nextId }) => {
         if (depths.has(nextId)) return;
         depths.set(nextId, currentDepth + 1);
         parents.set(nextId, currentId);
@@ -501,6 +506,118 @@
 
     state.focusTraversalCache = traversal;
     return traversal;
+  }
+
+  function getTraversalEdges(focused, currentNode, currentDepth) {
+    if (!currentNode || currentDepth >= state.maxVisibleDepth) {
+      return [];
+    }
+
+    const edges = (state.neighborEdges.get(currentNode.id) || [])
+      .filter(edge => shouldTraverseEdge(focused, currentNode, edge));
+
+    return prioritizeTraversalEdges(focused, currentNode, currentDepth, edges);
+  }
+
+  function shouldTraverseEdge(focused, currentNode, edge) {
+    const nextNode = state.nodesById.get(edge.id);
+    if (!nextNode || nextNode.id === focused.id) {
+      return false;
+    }
+
+    if (currentNode.type === 'idea') {
+      return false;
+    }
+
+    if (focused.type === 'photographer') {
+      if (currentNode.id === focused.id) {
+        return edge.type === 'movement_peer' || edge.type === 'era' || edge.type === 'belongs_to';
+      }
+      if (currentNode.type === 'movement') {
+        return edge.type === 'belongs_to' || edge.type === 'influences' || edge.type === 'idea';
+      }
+      if (currentNode.type === 'photographer') {
+        return edge.type === 'movement_peer' || edge.type === 'era';
+      }
+      return false;
+    }
+
+    if (focused.type === 'movement') {
+      if (currentNode.type === 'movement') {
+        return edge.type === 'influences' || edge.type === 'idea';
+      }
+      if (currentNode.type === 'photographer') {
+        return edge.type === 'era';
+      }
+      return false;
+    }
+
+    if (focused.type === 'idea') {
+      return currentNode.type === 'movement' && edge.type === 'influences';
+    }
+
+    return false;
+  }
+
+  function prioritizeTraversalEdges(focused, currentNode, currentDepth, edges) {
+    const ranked = [...edges].sort((a, b) => {
+      const scoreDiff = scoreTraversalEdge(focused, currentNode, b) - scoreTraversalEdge(focused, currentNode, a);
+      if (scoreDiff !== 0) return scoreDiff;
+      return stableSortValue(`${currentNode.id}:${a.id}`) - stableSortValue(`${currentNode.id}:${b.id}`);
+    });
+
+    const limit = currentDepth === 0
+      ? focused.type === 'photographer' ? 6 : 7
+      : currentNode.type === 'movement'
+        ? 5
+        : 4;
+
+    return ranked.slice(0, limit);
+  }
+
+  function scoreTraversalEdge(focused, currentNode, edge) {
+    const nextNode = state.nodesById.get(edge.id);
+    if (!nextNode) return -999;
+
+    let score = 0;
+
+    if (focused.type === 'photographer') {
+      if (currentNode.id === focused.id) {
+        if (nextNode.type === 'photographer') score += 120;
+        if (edge.type === 'movement_peer') score += 60;
+        if (edge.type === 'era') score += 35;
+        if (edge.type === 'belongs_to') score += 18;
+      } else if (currentNode.type === 'movement') {
+        if (nextNode.type === 'photographer') score += 100;
+        if (edge.type === 'belongs_to') score += 55;
+        if (edge.type === 'influences') score += 12;
+        if (edge.type === 'idea') score += 6;
+      } else if (currentNode.type === 'photographer') {
+        if (nextNode.type === 'photographer') score += 90;
+        if (edge.type === 'movement_peer') score += 50;
+        if (edge.type === 'era') score += 24;
+      }
+    } else if (focused.type === 'movement') {
+      if (nextNode.type === 'photographer') score += 70;
+      if (edge.type === 'belongs_to') score += 40;
+      if (edge.type === 'influences') score += 18;
+      if (edge.type === 'idea') score += 8;
+    } else {
+      if (edge.type === 'influences') score += 18;
+      if (edge.type === 'belongs_to') score += 8;
+    }
+
+    if (focused.type === 'photographer' && nextNode.type === 'photographer') {
+      const eraDistance = Math.abs((nextNode.order || 0) - (focused.order || 0));
+      score += Math.max(0, 18 - eraDistance * 0.2);
+    }
+
+    if (focused.type === 'photographer' && currentNode.type === 'movement' && nextNode.type === 'photographer') {
+      const orderDistance = Math.abs((nextNode.order || 0) - (focused.order || 0));
+      score += Math.max(0, 22 - orderDistance * 0.18);
+    }
+
+    return score;
   }
 
   function clampCamera() {

@@ -9,6 +9,7 @@
       : (window.MOVEMENTS_META || {});
 
   const photographers = photographersSource.filter(p => !p.isPlaceholder);
+  const photographerOrder = new Map(photographers.map((p, index) => [p.id, index]));
   const movementMeta = Object.assign({}, movementMetaSource, {
     'LGBTQ+': {
       en: 'LGBTQ+ Photography',
@@ -222,6 +223,11 @@
     target.push({ source, target: destination, type });
   }
 
+  function eraIndex(eraId) {
+    const index = eraOrder.indexOf(eraId);
+    return index >= 0 ? index : eraOrder.length;
+  }
+
   const usedMovements = Array.from(
     new Set(
       photographers
@@ -276,6 +282,26 @@
         pushUniqueLink(links, seenLinks, photographerId, `movement:${name}`, 'belongs_to');
       }
     });
+  });
+
+  usedMovements.forEach(name => {
+    const relatedPhotographers = photographers
+      .filter(p => (p.movements || []).includes(name))
+      .sort((a, b) => {
+        const eraDiff = eraIndex(a.era) - eraIndex(b.era);
+        if (eraDiff !== 0) return eraDiff;
+        return (photographerOrder.get(a.id) || 0) - (photographerOrder.get(b.id) || 0);
+      });
+
+    for (let i = 1; i < relatedPhotographers.length; i += 1) {
+      pushUniqueLink(
+        links,
+        seenLinks,
+        `photographer:${relatedPhotographers[i - 1].id}`,
+        `photographer:${relatedPhotographers[i].id}`,
+        'movement_peer'
+      );
+    }
   });
 
   movementRelations.forEach(([source, destination]) => {
