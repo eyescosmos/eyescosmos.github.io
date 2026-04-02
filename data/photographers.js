@@ -107,7 +107,7 @@ const PHOTOGRAPHERS = [
   {
     id: 'nadar',
     name: 'Nadar',
-    nameJa: 'ナダール（ガスパール＝フェリックス・トゥルナション）',
+    nameJa: 'ナダール',
     nationality: 'FR',
     flag: '🇫🇷',
     years: '1820–1910',

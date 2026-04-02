@@ -45,6 +45,8 @@
     targetCameraY: 0,
     focusAnchorX: 0,
     focusAnchorY: 0,
+    stageAnchorX: 0,
+    stageAnchorY: 0,
     cameraLockedToFocus: false,
     pointerX: 0,
     pointerY: 0,
@@ -580,8 +582,8 @@
     state.focusLayoutCache = null;
     state.cameraLockedToFocus = true;
     const node = state.nodesById.get(id);
-    state.focusAnchorX = node.x;
-    state.focusAnchorY = node.y;
+    state.focusAnchorX = state.stageAnchorX;
+    state.focusAnchorY = state.stageAnchorY;
     node.glow = 1.4;
     frameFocusedViewport(node);
     updateFocusPanel();
@@ -696,8 +698,8 @@
     state.focusTraversalCache = null;
     state.focusLayoutCache = null;
     state.cameraLockedToFocus = false;
-    state.focusAnchorX = initialNode.homeX;
-    state.focusAnchorY = initialNode.homeY;
+    state.focusAnchorX = state.stageAnchorX;
+    state.focusAnchorY = state.stageAnchorY;
     state.targetScale = state.minScale;
     state.targetCameraX = initialNode.homeX;
     state.targetCameraY = initialNode.homeY;
@@ -1003,8 +1005,10 @@
     state.targetCameraX = initialNode.x;
     state.cameraY = initialNode.y;
     state.targetCameraY = initialNode.y;
-    state.focusAnchorX = initialNode.x;
-    state.focusAnchorY = initialNode.y;
+    state.stageAnchorX = initialNode.x;
+    state.stageAnchorY = initialNode.y;
+    state.focusAnchorX = state.stageAnchorX;
+    state.focusAnchorY = state.stageAnchorY;
     state.focusedNodeId = '';
     state.focusClusterCache = null;
     state.focusTraversalCache = null;
