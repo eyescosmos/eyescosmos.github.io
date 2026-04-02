@@ -57,7 +57,7 @@
     focusClusterCache: null,
     focusTraversalCache: null,
     focusLayoutCache: null,
-    maxVisibleDepth: 2,
+    maxVisibleDepth: 3,
     adjacency: new Map(),
     nodesById: new Map(),
     stars: [],
