@@ -813,10 +813,12 @@
     if (!node.url) return;
     node.glow = 2;
     scheduleFrame();
-    const popup = window.open(node.url, '_blank', 'noopener,noreferrer');
+    const popup = window.open(node.url, '_blank');
     if (!popup) {
       window.location.href = node.url;
+      return;
     }
+    popup.opener = null;
   }
 
   function resetView() {
