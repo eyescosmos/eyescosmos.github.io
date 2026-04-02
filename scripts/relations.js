@@ -16,7 +16,9 @@
     activeText: '#f5ecdf',
     text: 'rgba(238, 230, 216, 0.78)',
     link: 'rgba(211, 186, 151, 0.5)',
-    linkGlow: 'rgba(211, 186, 151, 0.12)'
+    linkGlow: 'rgba(211, 186, 151, 0.12)',
+    focusLink: 'rgba(120, 202, 255, 0.96)',
+    focusLinkGlow: 'rgba(120, 202, 255, 0.3)'
   };
 
   const typeLabel = {
@@ -433,8 +435,8 @@
       labelEl.textContent = '関係の星図';
       metaEl.textContent = '点ではなく名前そのものをたどりながら、関係の地図を横断します。';
       hintEl.textContent = prefersCoarse
-        ? 'タップで中心へ。ピンチやボタンで拡大縮小、同じ名前をもう一度タップで詳細へ。'
-        : 'クリックで中心へ。ホイールやボタンで拡大縮小、同じ名前をもう一度クリックで詳細へ。';
+        ? 'タップすると線が立ち上がり、関係の流れが見えます。'
+        : 'クリックすると線が立ち上がり、関係の流れが見えます。';
       return;
     }
 
@@ -621,7 +623,7 @@
       if (hovered && node.id === hovered.id) {
         return { emphasis: 0.28, active: false, related: false, chained: false, hovered: true };
       }
-      return { emphasis: 0.08, active: false, related: false, chained: false, hovered: false };
+      return { emphasis: 0.03, active: false, related: false, chained: false, hovered: false };
     }
 
     if (hovered && node.id === hovered.id) {
@@ -714,11 +716,11 @@
       ctx.beginPath();
       ctx.moveTo(start.x, start.y);
       ctx.lineTo(end.x, end.y);
-      ctx.strokeStyle = palette.link;
-      ctx.lineWidth = 1.5;
-      ctx.globalAlpha = 0.95;
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = palette.linkGlow;
+      ctx.strokeStyle = palette.focusLink;
+      ctx.lineWidth = 1.8;
+      ctx.globalAlpha = 0.98;
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = palette.focusLinkGlow;
       ctx.stroke();
       ctx.shadowBlur = 0;
     });
@@ -802,8 +804,10 @@
     state.targetCameraX = initialNode.x;
     state.cameraY = initialNode.y;
     state.targetCameraY = initialNode.y;
-    state.focusedNodeId = initialNode.id;
-    initialNode.glow = 1.8;
+    state.focusedNodeId = '';
+    state.focusClusterCache = null;
+    state.focusTraversalCache = null;
+    initialNode.glow = 1.1;
     updateFocusPanel();
   }
 
