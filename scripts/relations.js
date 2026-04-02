@@ -62,6 +62,7 @@
     hoveredNodeId: '',
     focusedNodeId: '',
     initialNodeId: '',
+    ambientMotionUntil: 0,
     frameHandle: 0,
     focusClusterCache: null,
     focusTraversalCache: null,
@@ -157,13 +158,22 @@
   });
 
   function createStars() {
+    const now = typeof performance !== 'undefined' && performance.now
+      ? performance.now()
+      : Date.now();
+    state.ambientMotionUntil = now + 1100;
     state.stars = Array.from(
-      { length: Math.max(120, Math.round((state.width * state.height) / 16000)) },
+      { length: Math.max(180, Math.round((state.width * state.height) / 11000)) },
       (_, index) => ({
         x: (index * 197.3) % state.width,
         y: (index * 113.7) % state.height,
-        radius: ((index * 17) % 10) / 10 + 0.4,
-        alpha: (((index * 23) % 10) / 10) * 0.22 + 0.04
+        radius: ((index * 17) % 10) / 10 + 0.45,
+        alpha: (((index * 23) % 10) / 10) * 0.28 + 0.08,
+        phase: ((index * 29) % 360) * (Math.PI / 180),
+        driftX: (((index * 19) % 10) / 10 - 0.5) * 4.2,
+        driftY: (((index * 31) % 10) / 10 - 0.5) * 3.6,
+        pulse: (((index * 13) % 10) / 10) * 0.2 + 0.9,
+        glow: ((index * 7) % 10) > 6 ? 1 : 0
       })
     );
   }
@@ -964,6 +974,10 @@
   }
 
   function isAnimating() {
+    const now = typeof performance !== 'undefined' && performance.now
+      ? performance.now()
+      : Date.now();
+    if (now < state.ambientMotionUntil) return true;
     if (state.dragging || state.pointerDown) return true;
     if (Math.abs(state.scale - state.targetScale) > 0.001) return true;
     if (Math.abs(state.cameraX - state.targetCameraX) > 0.2) return true;
@@ -977,6 +991,12 @@
 
   function drawBackground() {
     ctx.clearRect(0, 0, state.width, state.height);
+    const now = typeof performance !== 'undefined' && performance.now
+      ? performance.now()
+      : Date.now();
+    const introProgress = Math.max(0, Math.min(1, (state.ambientMotionUntil - now) / 1100));
+    const introEase = introProgress > 0 ? introProgress * introProgress * (3 - 2 * introProgress) : 0;
+    const time = now * 0.001;
 
     const gradient = ctx.createRadialGradient(
       state.width * 0.52,
@@ -992,11 +1012,18 @@
     ctx.fillRect(0, 0, state.width, state.height);
 
     state.stars.forEach(star => {
+      const driftWave = Math.sin(time * 1.1 + star.phase);
+      const offsetX = star.driftX * introEase * driftWave;
+      const offsetY = star.driftY * introEase * Math.cos(time * 0.95 + star.phase);
+      const pulse = 0.9 + Math.sin(time * star.pulse + star.phase) * 0.12;
       ctx.beginPath();
-      ctx.fillStyle = `rgba(255, 247, 235, ${star.alpha})`;
-      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 247, 235, ${Math.min(0.5, star.alpha * pulse)})`;
+      ctx.shadowBlur = star.glow ? 8 + introEase * 4 : 0;
+      ctx.shadowColor = 'rgba(255, 243, 224, 0.28)';
+      ctx.arc(star.x + offsetX, star.y + offsetY, star.radius * (0.96 + pulse * 0.08), 0, Math.PI * 2);
       ctx.fill();
     });
+    ctx.shadowBlur = 0;
   }
 
   function drawLinks() {
