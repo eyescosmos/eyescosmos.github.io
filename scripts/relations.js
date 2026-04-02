@@ -57,7 +57,7 @@
     focusClusterCache: null,
     focusTraversalCache: null,
     focusLayoutCache: null,
-    maxVisibleDepth: 3,
+    maxVisibleDepth: 2,
     adjacency: new Map(),
     nodesById: new Map(),
     stars: [],
@@ -493,7 +493,7 @@
     const target = node || hovered;
 
     if (!target) {
-      labelEl.textContent = '関係の星図';
+      labelEl.textContent = '写真の座標';
       metaEl.textContent = '点ではなく名前そのものをたどりながら、関係の地図を横断します。';
       hintEl.textContent = prefersCoarse
         ? 'タップすると線が立ち上がり、関係の流れが見えます。'

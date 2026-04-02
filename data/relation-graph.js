@@ -86,6 +86,54 @@
     { id: 'idea:landscape', label: '空間と風景', subtitle: 'landscape / environment', type: 'idea' }
   ];
 
+  const featuredMovements = new Set([
+    'ドキュメンタリー',
+    '戦争写真',
+    '社会ドキュメンタリー',
+    'ピクトリアリズム',
+    'ストレート写真',
+    'ストリート写真',
+    'モダニズム',
+    'シュルレアリスム',
+    'コンセプチュアル',
+    '写真分離派',
+    'ダダ',
+    'レイオグラフ',
+    'バウハウス',
+    '新しいヴィジョン',
+    '新即物主義',
+    'ヴォルテクシズム',
+    'FSA写真',
+    'フォトジャーナリズム',
+    '決定的瞬間',
+    'リアリズム写真',
+    '日本写真',
+    'プロヴォーク',
+    'アメリカ写真',
+    'ピクチャーズ世代',
+    'フェミニズム写真',
+    'デュッセルドルフ派',
+    'コンセプチュアルアート',
+    'ニューカラー',
+    'タイポロジー写真',
+    'ステージド写真',
+    'シネマトグラフィック写真',
+    '私写真',
+    '自然主義写真',
+    '都市記録'
+  ]);
+
+  const featuredIdeaIds = new Set([
+    'idea:machine-eye',
+    'idea:document',
+    'idea:city-street',
+    'idea:experiment',
+    'idea:staged-image',
+    'idea:system',
+    'idea:intimacy',
+    'idea:critique'
+  ]);
+
   const movementIdeaMap = {
     '発明・技術': ['idea:machine-eye', 'idea:experiment'],
     'ドキュメンタリー': ['idea:document', 'idea:city-street'],
@@ -185,7 +233,11 @@
   }
 
   const usedMovements = Array.from(
-    new Set(photographers.flatMap(p => p.movements || []).filter(Boolean))
+    new Set(
+      photographers
+        .flatMap(p => p.movements || [])
+        .filter(name => name && featuredMovements.has(name))
+    )
   ).sort((a, b) => a.localeCompare(b, 'ja'));
 
   const photographerNodes = photographers.map((p, index) => ({
@@ -213,7 +265,17 @@
     };
   });
 
-  const nodes = [...photographerNodes, ...movementNodes, ...ideas];
+  const usedIdeaIds = new Set();
+  usedMovements.forEach(name => {
+    (movementIdeaMap[name] || []).forEach(ideaId => {
+      if (featuredIdeaIds.has(ideaId)) {
+        usedIdeaIds.add(ideaId);
+      }
+    });
+  });
+
+  const ideaNodes = ideas.filter(idea => usedIdeaIds.has(idea.id));
+  const nodes = [...photographerNodes, ...movementNodes, ...ideaNodes];
   const links = [];
   const seenLinks = new Set();
 
@@ -232,7 +294,8 @@
   });
 
   usedMovements.forEach(name => {
-    const relatedIdeas = movementIdeaMap[name] || ['idea:document'];
+    const relatedIdeas = (movementIdeaMap[name] || ['idea:document'])
+      .filter(ideaId => featuredIdeaIds.has(ideaId));
     relatedIdeas.forEach(ideaId => {
       pushUniqueLink(links, seenLinks, `movement:${name}`, ideaId, 'idea');
     });
