@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>写真の座標 | アフターイメージ</title>
+<title>写真の座標</title>
 <meta name="description" content="写真家・運動・思想の関係性を、静かな宇宙のようなインタラクティブUIで可視化する試作ページ。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -66,7 +66,7 @@ body.is-navigating #page-fade {
 
 .hud,
 .focus-card,
-.back-link,
+.page-links,
 .zoom-controls {
   position: absolute;
   z-index: 2;
@@ -98,6 +98,14 @@ body.is-navigating #page-fade {
 .title em {
   font-style: normal;
   color: var(--accent);
+}
+
+.title-note {
+  max-width: 34rem;
+  margin-top: 12px;
+  color: var(--text-muted);
+  font: 400 11px/1.8 'DM Mono', monospace;
+  letter-spacing: 0.03em;
 }
 
 .lede {
@@ -132,9 +140,14 @@ body.is-navigating #page-fade {
   letter-spacing: 0.05em;
 }
 
-.back-link {
+.page-links {
   top: 32px;
   right: 32px;
+  display: flex;
+  gap: 10px;
+}
+
+.page-link {
   padding: 10px 14px;
   border: 1px solid var(--border);
   color: var(--text-dim);
@@ -145,7 +158,7 @@ body.is-navigating #page-fade {
   transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
-.back-link:hover {
+.page-link:hover {
   border-color: rgba(198, 170, 130, 0.34);
   color: var(--text);
   background: rgba(198, 170, 130, 0.06);
@@ -188,7 +201,7 @@ body.is-navigating #page-fade {
 @media (max-width: 720px) {
   .hud,
   .focus-card,
-  .back-link,
+  .page-links,
   .zoom-controls {
     left: 18px;
     right: 18px;
@@ -199,12 +212,14 @@ body.is-navigating #page-fade {
     max-width: none;
   }
 
-  .back-link {
+  .page-links {
     top: auto;
     bottom: 18px;
     left: auto;
     right: 18px;
     width: fit-content;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .focus-card {
@@ -227,6 +242,7 @@ body.is-navigating #page-fade {
   <div class="hud">
     <div class="eyebrow">Prototype / Photo Coordinates</div>
     <h1 class="title"><em>写真の座標</em></h1>
+    <div class="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
     <div class="lede">
       写真家、運動、思想を大きな平面の上にひらいた試作ページです。
       クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。
@@ -239,7 +255,10 @@ body.is-navigating #page-fade {
     <div class="focus-hint" id="focus-hint">クリックで中心化、同じ名前をもう一度クリックで詳細へ。</div>
   </div>
 
-  <a class="back-link" href="index.html">アーカイブへ戻る</a>
+  <div class="page-links" aria-label="一覧ページへの移動">
+    <a class="page-link" href="archive.html#tab-era">年代から見る</a>
+    <a class="page-link" href="archive.html#tab-movement">表現から見る</a>
+  </div>
   <div class="zoom-controls" aria-label="ズーム操作">
     <button class="zoom-btn" id="reset-view" type="button" aria-label="初期表示に戻る">◎</button>
     <button class="zoom-btn" id="zoom-out" type="button" aria-label="縮小">-</button>

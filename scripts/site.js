@@ -565,6 +565,16 @@ function handleDeepLink() {
   const hash = window.location.hash.replace(/^#/, '');
   if (!hash) return;
 
+  if (hash === 'tab-era') {
+    switchTab('era');
+    return;
+  }
+
+  if (hash === 'tab-movement') {
+    switchTab('movement');
+    return;
+  }
+
   if (hash.startsWith('photographer-')) {
     revealPhotographerFromHash(hash.slice('photographer-'.length));
     return;

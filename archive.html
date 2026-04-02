@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>写真の座標 | 年代と表現</title>
+<meta name="description" content="写真史と世界情勢を紐づけた個人サイト。1839年から現代まで、時代と表現のムーブメントから写真の歴史を探ります。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* 廻想体 ネクスト ユーピー — もじワク研究 (https://moji-waku.com/kaiso/) Free font, commercial use OK */
+@font-face {
+  font-family: 'KaisotaiNextUP';
+  src: url('fonts/Kaisotai-Next-UP-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0e0c0a;
+  --surface: #161412;
+  --surface2: #1a1714;
+  --border: #2a2520;
+  --accent: #c8a96e;
+  --accent-dim: #7a6540;
+  --text: #e8e0d4;
+  --text-dim: #c0b4a8;
+  --text-muted: #6e6560;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #080808;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(200,169,110,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(200,169,110,0.05) 0%, transparent 40%);
+  color: var(--text);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(200,169,110,0.06) 1px, transparent 1px);
+  background-size: 100% 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HEADER ── */
+header {
+  padding: 80px 40px 60px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(200,169,110,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.header-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+h1 {
+  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
+  font-size: clamp(28px, 4.5vw, 58px);
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: 0.18em;
+  max-width: 800px;
+}
+h1 em { font-style: normal; color: var(--accent); }
+.title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.wip-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  padding: 3px 10px;
+  white-space: nowrap;
+  position: relative;
+  top: -2px;
+}
+.wip-badge::before {
+  content: '▸ ';
+  opacity: 0.7;
+}
+.header-subtitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  margin-top: 12px;
+}
+.header-sub {
+  margin-top: 24px;
+  color: var(--text-dim);
+  font-size: 15px;
+  max-width: 520px;
+  line-height: 1.9;
+}
+.ai-disclaimer {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-left: 2px solid var(--accent-dim);
+  background: rgba(200,169,110,0.04);
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  max-width: 520px;
+}
+
+/* ── RANDOM PHOTOGRAPHER ── */
+.random-box {
+  margin-top: 40px;
+  padding: 24px 28px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  max-width: 520px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  position: relative;
+}
+.random-box:hover { border-color: var(--accent-dim); }
+.random-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.random-label::before {
+  content: '◉';
+  font-size: 8px;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.random-name {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.random-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.random-excerpt {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+.random-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── TABS ── */
+.tab-nav {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.tab-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  gap: 0;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: color 0.2s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  text-transform: uppercase;
+}
+.tab-btn:hover { color: var(--text-dim); }
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.tab-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  padding: 20px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tab-link:hover {
+  color: var(--text-dim);
+  border-bottom-color: var(--accent-dim);
+}
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.filter-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.filter-select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  padding: 6px 10px;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234a4440'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  transition: border-color 0.2s;
+}
+.filter-select:hover { border-color: var(--accent-dim); }
+.filter-select:focus { outline: none; border-color: var(--accent); }
+.filter-input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  padding: 6px 10px;
+  min-width: 220px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.filter-input::placeholder { color: var(--text-muted); }
+.filter-input:hover { border-color: var(--accent-dim); }
+.filter-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  color: var(--text);
+}
+.filter-reset {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+.filter-reset:hover { border-color: var(--accent-dim); color: var(--text-dim); }
+.filter-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+/* ── TAB CONTENT ── */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ── ERA SECTION ── */
+.era {
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.era.visible { opacity: 1; transform: translateY(0); }
+.era.hidden { display: none; }
+
+/* Era toggle (always visible, clickable) */
+.era-toggle {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 36px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.era-toggle:hover .era-date { opacity: 0.8; }
+.era-toggle-arrow {
+  margin-left: auto;
+  color: var(--accent-dim);
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.1em;
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+.era.open .era-toggle-arrow { transform: rotate(180deg); }
+
+/* Era accordion body */
+.era-body {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.45s ease;
+}
+.era-body-content {
+  padding-bottom: 72px;
+}
+
+.era-date {
+  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+.era-date span {
+  display: block;
+  font-size: 14px;
+  font-family: 'DM Mono', monospace;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+}
+.era-info {
+  padding-left: calc(180px + 48px);
+  margin-bottom: 40px;
+}
+.era-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.context-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 24px 28px;
+  margin-bottom: 16px;
+}
+.context-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.context-text { font-size: 15px; color: var(--text-dim); line-height: 1.9; }
+.context-source {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+.context-source a { color: var(--accent-dim); text-decoration: none; }
+.context-source a:hover { color: var(--accent); }
+.empty-copy {
+  min-height: 5.4em;
+  border: 1px dashed rgba(200, 169, 110, 0.18);
+  background: rgba(200, 169, 110, 0.03);
+}
+
+/* ── PHOTOGRAPHERS GRID ── */
+.photographers-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-left: calc(180px + 48px);
+}
+.photographers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2px;
+  margin-left: calc(180px + 48px);
+}
+
+/* ── PHOTOGRAPHER CARD ── */
+.photographer-card {
+  background: var(--surface);
+  border: 1px solid #4a3c22;
+  padding: 24px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.photographer-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.photographer-card:hover { border-color: var(--accent-dim); background: #1a1714; }
+.photographer-card:hover::after { transform: scaleX(1); }
+.photographer-card.active { border-color: var(--accent); background: #1c1a16; }
+.photographer-card.active::after { transform: scaleX(1); }
+.photographer-card.filtered-out { display: none; }
+.photographer-card.placeholder {
+  border-style: dashed;
+  background: rgba(200, 169, 110, 0.03);
+}
+.photographer-card.placeholder .card-arrow {
+  color: var(--accent-dim);
+}
+
+.card-flag-nat {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-name {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.card-name-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+.card-years {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-height: 18px;
+}
+.card-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  text-transform: uppercase;
+}
+.card-arrow {
+  position: absolute;
+  top: 24px; right: 24px;
+  font-size: 16px;
+  color: var(--text-muted);
+  transition: color 0.2s, transform 0.2s;
+}
+.photographer-card:hover .card-arrow,
+.photographer-card.active .card-arrow {
+  color: var(--accent);
+  transform: rotate(45deg);
+}
+.empty-photographers {
+  margin-left: calc(180px + 48px);
+  padding: 20px 24px;
+  border: 1px dashed var(--border);
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+/* ── DETAIL PANEL ── */
+.detail-panel {
+  margin-left: calc(180px + 48px);
+  margin-top: 2px;
+  background: #1a1714;
+  border: 1px solid var(--accent-dim);
+  padding: 36px 40px;
+  display: none;
+  animation: slideDown 0.3s ease;
+}
+.detail-panel.open { display: block; }
+/* movement tab panels have no left indent */
+#movement-main .detail-panel {
+  margin-left: calc(280px + 48px);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+.detail-name {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.detail-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 6px;
+}
+.close-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  width: 32px; height: 32px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.close-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+.detail-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  padding: 3px 10px;
+  text-transform: uppercase;
+}
+
+.detail-section { margin-bottom: 24px; }
+.detail-section-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.detail-text { font-size: 15px; color: var(--text-dim); line-height: 1.95; }
+.detail-source {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+.detail-source a { color: var(--accent-dim); text-decoration: none; }
+.detail-source a:hover { color: var(--accent); }
+
+/* ── CITATION FOOTNOTES ── */
+.cite-ref {
+  display: inline;
+  position: relative;
+  cursor: pointer;
+}
+.cite-ref sup {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--accent);
+  margin-left: 1px;
+  letter-spacing: 0;
+}
+.cite-ref .cite-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--accent-dim);
+  padding: 6px 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  z-index: 200;
+  pointer-events: none;
+  max-width: 280px;
+  white-space: normal;
+  text-align: left;
+}
+.cite-ref:hover .cite-tooltip { display: block; }
+.cite-list {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.cite-item {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.cite-num { color: var(--accent); flex-shrink: 0; }
+.cite-item a { color: var(--accent-dim); text-decoration: none; }
+.cite-item a:hover { color: var(--accent); }
+
+.detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.detail-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  text-transform: uppercase;
+}
+.detail-link:hover { border-color: var(--accent-dim); color: var(--accent); }
+
+.amazon-placeholder {
+  border: 1px dashed var(--border);
+  padding: 12px 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.amazon-placeholder::before {
+  content: '□';
+  color: var(--accent-dim);
+}
+
+/* ── MOVEMENT VIEW ── */
+.movement-section {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.movement-section.visible { opacity: 1; transform: translateY(0); }
+
+.movement-header {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+.movement-name {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+.movement-name-en {
+  display: block;
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-top: 6px;
+  font-style: normal;
+}
+.movement-period {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.movement-grid {
+  margin-left: calc(280px + 48px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2px;
+}
+
+/* ── NO RESULTS ── */
+.no-results {
+  padding: 60px 0;
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  display: none;
+}
+.no-results.visible { display: block; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 48px 40px;
+  border-top: 1px solid var(--border);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 2;
+}
+footer a { color: var(--accent-dim); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  header { padding: 48px 20px 40px; }
+  .container, .tab-nav-inner { padding: 0 20px; }
+  .era-toggle { gap: 16px; padding: 28px 0; }
+  .era-date { font-size: 36px; }
+  .era-info { padding-left: 0; }
+  .photographers-grid, .photographers-label { margin-left: 0; }
+  .photographers-label { padding-left: 0; }
+  .detail-panel { margin-left: 0; padding: 24px 20px; }
+  #movement-main .detail-panel { margin-left: 0; }
+  .movement-header { grid-template-columns: 1fr; gap: 20px; }
+  .movement-grid { margin-left: 0; }
+  .filter-bar { flex-direction: column; align-items: flex-start; }
+  .filter-count { margin-left: 0; }
+  .tab-btn { font-size: 11px; padding: 16px 16px; }
+  .random-box { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
+<header>
+<div class="container">
+  <div class="header-label">Photo Coordinates / Archive</div>
+  <div class="title-row">
+    <h1><em>写真の座標</em></h1>
+    <span class="wip-badge">製作中</span>
+  </div>
+  <p class="header-subtitle">年代と表現</p>
+  <p class="header-sub">写真は常にその時代の社会・政治・技術の文脈の中に生まれてきた。年代をたどりながら、世界の動きと写真表現の関係を探る。</p>
+  <div class="ai-disclaimer">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、曖昧さや誤りが含まれる可能性があります。気になった作家・表現・時代については、ぜひご自身でも確認してください。</div>
+
+  <div class="random-box" id="random-box" onclick="scrollToPhotographer()">
+    <div class="random-label">今日のランダム写真家</div>
+    <div class="random-name" id="random-name">—</div>
+    <div class="random-meta" id="random-meta">—</div>
+    <div class="random-excerpt" id="random-excerpt">—</div>
+    <div class="random-hint">→ クリックして詳細を見る</div>
+  </div>
+</div>
+</header>
+
+<!-- ══════════════════════════════ TABS ══════════════════════════════ -->
+<nav class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" data-tab="era" onclick="switchTab('era')">年代から見る</button>
+    <button class="tab-btn" data-tab="movement" onclick="switchTab('movement')">表現から見る</button>
+    <a class="tab-link" href="index.html">写真の座標</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════ TAB 1: ERA ══════════════════════════════ -->
+<div id="tab-era" class="tab-content active">
+  <div class="container">
+    <div class="filter-bar">
+      <span class="filter-label">絞り込み</span>
+      <input
+        type="search"
+        class="filter-input"
+        id="filter-search"
+        placeholder="写真家名で検索"
+        oninput="applyFilters()"
+      >
+      <select class="filter-select" id="filter-country" onchange="applyFilters()">
+        <option value="">すべての国</option>
+      </select>
+      <select class="filter-select" id="filter-movement-era" onchange="applyFilters()">
+        <option value="">すべてのムーブメント</option>
+      </select>
+      <button class="filter-reset" onclick="resetFilters()">リセット</button>
+      <span class="filter-count" id="filter-count"></span>
+    </div>
+    <div id="no-results" class="no-results">条件に一致する写真家が見つかりません</div>
+  </div>
+  <main id="era-main" class="container"></main>
+</div>
+
+<!-- ══════════════════════════════ TAB 2: MOVEMENT ══════════════════════════════ -->
+<div id="tab-movement" class="tab-content">
+  <main id="movement-main" class="container"></main>
+</div>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer>
+  <div>本サイトの情報はAIによってウェブ上の資料から収集・整理されたものです。</div>
+  <div style="margin-top:8px">各記述には出典を明記していますが、誤りが含まれる可能性があります。情報の訂正・追加はお気軽にお知らせください。</div>
+  <div style="margin-top:16px">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <span style="margin: 0 12px; color: var(--text-muted)">|</span>
+    <a href="https://github.com/eyescosmos/eyescosmos.github.io" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════ DATA & LOGIC ══════════════════════════════ -->
+<script src="data/movements.js"></script>
+<script src="data/eras.js"></script>
+<script src="data/photographers.js"></script>
+<script src="data/content-helpers.js"></script>
+<script src="data/future/era-1990s.js"></script>
+<script src="data/future/era-2000s.js"></script>
+<script src="data/future/era-2010s.js"></script>
+<script src="data/future/photographers-1990s.js"></script>
+<script src="data/future/photographers-2000s.js"></script>
+<script src="data/future/photographers-2010s.js"></script>
+<script src="scripts/site.js"></script>
+</body>
+</html>

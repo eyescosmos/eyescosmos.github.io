@@ -245,7 +245,7 @@
     era: p.era,
     years: p.years,
     order: index,
-    url: `index.html#photographer-${p.id}`
+    url: `archive.html#photographer-${p.id}`
   }));
 
   const movementNodes = usedMovements.map(name => {
@@ -257,7 +257,7 @@
       subtitle: meta.en || '',
       description: meta.desc || '',
       type: 'movement',
-      url: `index.html#movement-${movementSlug(name)}`
+      url: `archive.html#movement-${movementSlug(name)}`
     };
   });
 
