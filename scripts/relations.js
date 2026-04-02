@@ -51,6 +51,7 @@
     pressedNodeId: '',
     hoveredNodeId: '',
     focusedNodeId: '',
+    frameHandle: 0,
     adjacency: new Map(),
     nodesById: new Map(),
     stars: [],
@@ -140,6 +141,7 @@
     ctx.setTransform(state.ratio, 0, 0, state.ratio, 0, 0);
     createStars();
     updateScaleBounds();
+    scheduleFrame();
   }
 
   function layoutNodes() {
@@ -295,10 +297,10 @@
     const node = state.nodesById.get(id);
     state.targetCameraX = node.x;
     state.targetCameraY = node.y;
-    state.targetScale = Math.max(state.targetScale, state.defaultScale);
     node.glow = 1.4;
     clampCamera();
     updateFocusPanel();
+    scheduleFrame();
   }
 
   function updateFocusPanel() {
@@ -367,6 +369,7 @@
   function nudgeZoom(multiplier) {
     state.targetScale = clampScale(state.targetScale * multiplier);
     clampCamera();
+    scheduleFrame();
   }
 
   function handleWheel(event) {
@@ -374,12 +377,14 @@
     const multiplier = Math.exp(-event.deltaY * 0.0022);
     state.targetScale = clampScale(state.targetScale * multiplier);
     clampCamera();
+    scheduleFrame();
   }
 
   function navigateTo(node) {
     if (!node.url) return;
     node.glow = 2;
     document.body.classList.add('is-navigating');
+    scheduleFrame();
     fadeEl.addEventListener('transitionend', () => {
       window.location.href = node.url;
     }, { once: true });
@@ -399,6 +404,7 @@
     const node = findNodeAt(event.clientX, event.clientY);
     state.pressedNodeId = node ? node.id : '';
     updateCursor();
+    scheduleFrame();
   }
 
   function handlePointerMove(event) {
@@ -417,6 +423,7 @@
         state.targetCameraY = state.dragStartCameraY - (dy / state.scale);
         clampCamera();
         updateCursor();
+        scheduleFrame();
         return;
       }
     }
@@ -426,6 +433,7 @@
     if (state.hoveredNodeId !== nextId) {
       state.hoveredNodeId = nextId;
       updateFocusPanel();
+      scheduleFrame();
     }
     updateCursor();
   }
@@ -434,6 +442,7 @@
     state.hoveredNodeId = '';
     updateFocusPanel();
     updateCursor();
+    scheduleFrame();
   }
 
   function handlePointerUp(event) {
@@ -502,6 +511,14 @@
     nodes.forEach(node => {
       node.glow *= 0.88;
     });
+  }
+
+  function isAnimating() {
+    if (state.dragging || state.pointerDown) return true;
+    if (Math.abs(state.scale - state.targetScale) > 0.001) return true;
+    if (Math.abs(state.cameraX - state.targetCameraX) > 0.2) return true;
+    if (Math.abs(state.cameraY - state.targetCameraY) > 0.2) return true;
+    return nodes.some(node => node.glow > 0.03);
   }
 
   function drawBackground() {
@@ -600,11 +617,19 @@
   }
 
   function frame() {
+    state.frameHandle = 0;
     updateFrameState();
     drawBackground();
     drawLinks();
     drawNodes();
-    requestAnimationFrame(frame);
+    if (isAnimating()) {
+      scheduleFrame();
+    }
+  }
+
+  function scheduleFrame() {
+    if (state.frameHandle) return;
+    state.frameHandle = requestAnimationFrame(frame);
   }
 
   function centerInitialNode() {
@@ -612,8 +637,8 @@
     const fallback = nodes.find(node => node.type === 'photographer') || nodes[0];
     const initialNode = preferred || fallback;
     if (!initialNode) return;
-    state.scale = state.defaultScale;
-    state.targetScale = state.defaultScale;
+    state.scale = state.minScale;
+    state.targetScale = state.minScale;
     state.cameraX = initialNode.x;
     state.targetCameraX = initialNode.x;
     state.cameraY = initialNode.y;
@@ -636,5 +661,5 @@
   layoutNodes();
   centerInitialNode();
   updateCursor();
-  frame();
+  scheduleFrame();
 })();
