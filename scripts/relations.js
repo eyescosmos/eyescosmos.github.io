@@ -385,21 +385,24 @@
         const ordered = [...bucket].sort((a, b) => angleFromHome(focused, a) - angleFromHome(focused, b));
         const density = ordered.length;
         const ringRadius =
-          260 +
-          (depth - 1) * 230 +
-          Math.max(0, density - 6) * 18;
+          320 +
+          (depth - 1) * 260 +
+          Math.max(0, density - 6) * 26;
+        const baseRotation = density
+          ? ordered.reduce((sum, node) => sum + angleFromHome(focused, node), 0) / density
+          : -Math.PI / 2;
 
         ordered.forEach((node, index) => {
           const homeAngle = angleFromHome(focused, node);
-          const spread = density <= 1 ? 0 : ((index / (density - 1)) - 0.5) * Math.min(1.2, density * 0.08);
-          const angle = homeAngle + spread;
+          const evenAngle = baseRotation + (index / Math.max(1, density)) * Math.PI * 2;
+          const angle = evenAngle * 0.72 + homeAngle * 0.28;
           const typeOffset =
             node.type === 'photographer'
               ? 0
               : node.type === 'movement'
-                ? -40
-                : 55;
-          const radius = ringRadius + typeOffset + jitter(`${focused.id}:${node.id}:radius`, 26);
+                ? -55
+                : 80;
+          const radius = ringRadius + typeOffset + jitter(`${focused.id}:${node.id}:radius`, 18);
           map.set(node.id, {
             x: focused.homeX + Math.cos(angle) * radius,
             y: focused.homeY + Math.sin(angle) * radius * 0.78
@@ -760,9 +763,17 @@
       if (depth > state.maxVisibleDepth) return;
       const start = worldToScreen(parent.x, parent.y);
       const end = worldToScreen(node.x, node.y);
+      const mx = (start.x + end.x) * 0.5;
+      const my = (start.y + end.y) * 0.5;
+      const dx = end.x - start.x;
+      const dy = end.y - start.y;
+      const length = Math.max(1, Math.hypot(dx, dy));
+      const curve = Math.min(42, 10 + depth * 8);
+      const cx = mx - (dy / length) * curve;
+      const cy = my + (dx / length) * curve;
       ctx.beginPath();
       ctx.moveTo(start.x, start.y);
-      ctx.lineTo(end.x, end.y);
+      ctx.quadraticCurveTo(cx, cy, end.x, end.y);
       ctx.strokeStyle = palette.focusLink;
       ctx.lineWidth = depth === 1 ? 1.25 : depth === 2 ? 1 : 0.85;
       ctx.globalAlpha = Math.max(0.16, 0.82 - depth * 0.17);
@@ -777,9 +788,16 @@
       if (!active || !link.sourceNode || !link.targetNode) return;
       const start = worldToScreen(link.sourceNode.x, link.sourceNode.y);
       const end = worldToScreen(link.targetNode.x, link.targetNode.y);
+      const mx = (start.x + end.x) * 0.5;
+      const my = (start.y + end.y) * 0.5;
+      const dx = end.x - start.x;
+      const dy = end.y - start.y;
+      const length = Math.max(1, Math.hypot(dx, dy));
+      const cx = mx - (dy / length) * 18;
+      const cy = my + (dx / length) * 18;
       ctx.beginPath();
       ctx.moveTo(start.x, start.y);
-      ctx.lineTo(end.x, end.y);
+      ctx.quadraticCurveTo(cx, cy, end.x, end.y);
       ctx.strokeStyle = palette.focusLink;
       ctx.lineWidth = 1.8;
       ctx.globalAlpha = 0.98;
@@ -820,8 +838,11 @@
       return;
     }
 
-    const labelX = point.x + 11;
+    const focused = getFocusedNode();
+    const placeLeft = focused && node.x < focused.x;
+    const labelX = placeLeft ? point.x - 11 : point.x + 11;
     const labelY = point.y - 4;
+    ctx.textAlign = placeLeft ? 'right' : 'left';
     ctx.font = nodeState.active
       ? '500 13px "Noto Sans JP", sans-serif'
       : nodeState.related
@@ -839,6 +860,7 @@
       ctx.globalAlpha = nodeState.active ? 0.86 : 0.52;
       ctx.fillText(node.subtitle, labelX, labelY + 15);
     }
+    ctx.textAlign = 'left';
   }
 
   function drawNodes() {
