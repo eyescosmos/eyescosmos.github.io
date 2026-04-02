@@ -31,6 +31,10 @@
     width: 0,
     height: 0,
     ratio: 1,
+    scale: 1,
+    targetScale: 1,
+    overviewScale: 1,
+    focusScale: 1,
     cameraX: 0,
     cameraY: 0,
     targetCameraX: 0,
@@ -108,6 +112,7 @@
     canvas.style.height = `${state.height}px`;
     ctx.setTransform(state.ratio, 0, 0, state.ratio, 0, 0);
     createStars();
+    updateScaleTargets();
   }
 
   function layoutNodes() {
@@ -181,37 +186,51 @@
     state.world.maxX = Math.max(...allX) + 620;
     state.world.minY = Math.min(...allY) - 420;
     state.world.maxY = Math.max(...allY) + 420;
-    state.cameraX = 0;
-    state.targetCameraX = 0;
-    state.cameraY = 160;
-    state.targetCameraY = 160;
+    state.cameraX = (state.world.minX + state.world.maxX) * 0.5;
+    state.targetCameraX = state.cameraX;
+    state.cameraY = (state.world.minY + state.world.maxY) * 0.5;
+    state.targetCameraY = state.cameraY;
+    updateScaleTargets();
+  }
+
+  function updateScaleTargets() {
+    const worldWidth = Math.max(1, state.world.maxX - state.world.minX);
+    const worldHeight = Math.max(1, state.world.maxY - state.world.minY);
+    const fitX = (state.width * 0.82) / worldWidth;
+    const fitY = (state.height * 0.72) / worldHeight;
+    state.overviewScale = Math.max(0.14, Math.min(0.34, fitX, fitY));
+    state.focusScale = Math.max(0.42, Math.min(0.72, state.overviewScale * 2.1));
+
+    if (!state.scale || state.scale === 1) {
+      state.scale = state.overviewScale;
+      state.targetScale = state.overviewScale;
+      return;
+    }
+
+    state.targetScale = state.focusedNodeId ? state.focusScale : state.overviewScale;
   }
 
   function worldToScreen(x, y) {
     return {
-      x: state.width * 0.5 + (x - state.cameraX),
-      y: state.height * 0.5 + (y - state.cameraY)
-    };
-  }
-
-  function screenToWorld(x, y) {
-    return {
-      x: state.cameraX + (x - state.width * 0.5),
-      y: state.cameraY + (y - state.height * 0.5)
+      x: state.width * 0.5 + (x - state.cameraX) * state.scale,
+      y: state.height * 0.5 + (y - state.cameraY) * state.scale
     };
   }
 
   function clampCamera() {
-    const marginX = state.width * 0.36;
-    const marginY = state.height * 0.36;
-    state.targetCameraX = Math.max(
-      state.world.minX + marginX,
-      Math.min(state.world.maxX - marginX, state.targetCameraX)
-    );
-    state.targetCameraY = Math.max(
-      state.world.minY + marginY,
-      Math.min(state.world.maxY - marginY, state.targetCameraY)
-    );
+    const halfViewX = state.width / (2 * state.targetScale);
+    const halfViewY = state.height / (2 * state.targetScale);
+    const minX = state.world.minX + halfViewX;
+    const maxX = state.world.maxX - halfViewX;
+    const minY = state.world.minY + halfViewY;
+    const maxY = state.world.maxY - halfViewY;
+
+    state.targetCameraX = minX > maxX
+      ? (state.world.minX + state.world.maxX) * 0.5
+      : Math.max(minX, Math.min(maxX, state.targetCameraX));
+    state.targetCameraY = minY > maxY
+      ? (state.world.minY + state.world.maxY) * 0.5
+      : Math.max(minY, Math.min(maxY, state.targetCameraY));
   }
 
   function getFocusedNode() {
@@ -229,6 +248,7 @@
     const node = state.nodesById.get(id);
     state.targetCameraX = node.x;
     state.targetCameraY = node.y;
+    state.targetScale = state.focusScale;
     node.glow = 1.4;
     clampCamera();
     updateFocusPanel();
@@ -334,8 +354,8 @@
         state.cameraLockedToFocus = false;
       }
       if (state.dragging) {
-        state.targetCameraX = state.dragStartCameraX - dx;
-        state.targetCameraY = state.dragStartCameraY - dy;
+        state.targetCameraX = state.dragStartCameraX - (dx / state.scale);
+        state.targetCameraY = state.dragStartCameraY - (dy / state.scale);
         clampCamera();
         updateCursor();
         return;
@@ -415,7 +435,11 @@
   }
 
   function updateFrameState() {
+    if (!state.focusedNodeId) {
+      state.targetScale = state.overviewScale;
+    }
     clampCamera();
+    state.scale += (state.targetScale - state.scale) * 0.08;
     state.cameraX += (state.targetCameraX - state.cameraX) * 0.08;
     state.cameraY += (state.targetCameraY - state.cameraY) * 0.08;
 
@@ -545,7 +569,7 @@
       ? '500 13px "Noto Sans JP", sans-serif'
       : nodeState.related
         ? '400 12px "Noto Sans JP", sans-serif'
-        : '400 11px "Noto Sans JP", sans-serif';
+        : '400 10px "Noto Sans JP", sans-serif';
     ctx.fillStyle = nodeState.active ? palette.activeText : palette.text;
     ctx.globalAlpha = nodeState.active ? 0.98 : nodeState.related ? 0.82 : Math.max(0.24, nodeState.emphasis);
     ctx.fillText(node.label, labelX, labelY);
