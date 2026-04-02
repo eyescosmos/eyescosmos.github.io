@@ -76,6 +76,34 @@
     targetNode: null
   }));
 
+  function hashNumber(value) {
+    let hash = 0;
+    for (let i = 0; i < value.length; i += 1) {
+      hash = ((hash << 5) - hash) + value.charCodeAt(i);
+      hash |= 0;
+    }
+    return Math.abs(hash);
+  }
+
+  function jitter(value, amplitude) {
+    return ((hashNumber(value) % 1000) / 999 - 0.5) * amplitude;
+  }
+
+  function relaxHorizontally(list, minGap, iterations) {
+    const ordered = [...list].sort((a, b) => a.x - b.x);
+    for (let step = 0; step < iterations; step += 1) {
+      for (let index = 1; index < ordered.length; index += 1) {
+        const left = ordered[index - 1];
+        const right = ordered[index];
+        const gap = right.x - left.x;
+        if (gap >= minGap) continue;
+        const push = (minGap - gap) * 0.5;
+        left.x -= push;
+        right.x += push;
+      }
+    }
+  }
+
   nodes.forEach(node => {
     state.nodesById.set(node.id, node);
     state.adjacency.set(node.id, new Set());
@@ -120,7 +148,7 @@
     const ideas = nodes.filter(node => node.type === 'idea');
     const eraOrder = RELATION_GRAPH.eras.map(era => era.id);
 
-    const eraSpacing = 520;
+    const eraSpacing = 760;
     const startX = -((eraOrder.length - 1) * eraSpacing) / 2;
     const photographerByEra = new Map();
 
@@ -132,13 +160,22 @@
 
     eraOrder.forEach((eraId, eraIndex) => {
       const eraNodes = photographerByEra.get(eraId) || [];
-      const columns = Math.max(1, Math.ceil(eraNodes.length / 5));
+      const columns = Math.max(1, Math.ceil(eraNodes.length / 4));
       eraNodes.forEach((node, index) => {
-        const column = Math.floor(index / 5);
-        const row = index % 5;
-        node.x = startX + eraIndex * eraSpacing + (column - (columns - 1) / 2) * 120;
-        node.y = -120 + row * 180 + ((index + eraIndex) % 2 === 0 ? -24 : 24);
+        const column = Math.floor(index / 4);
+        const row = index % 4;
+        node.x =
+          startX +
+          eraIndex * eraSpacing +
+          (column - (columns - 1) / 2) * 220 +
+          jitter(node.id, 90);
+        node.y =
+          -40 +
+          row * 220 +
+          jitter(`${node.id}:y`, 110);
       });
+
+      relaxHorizontally(eraNodes, 150, 8);
     });
 
     const movementUsage = new Map();
@@ -155,10 +192,12 @@
 
     const sortedMovements = [...movements].sort((a, b) => movementUsage.get(a.id) - movementUsage.get(b.id));
     sortedMovements.forEach((node, index) => {
-      const row = index % 4;
-      node.x = movementUsage.get(node.id) + (row - 1.5) * 70;
-      node.y = -860 + row * 110;
+      const row = index % 5;
+      node.x = movementUsage.get(node.id) + jitter(node.id, 220);
+      node.y = -860 + row * 155 + jitter(`${node.id}:y`, 40);
     });
+
+    relaxHorizontally(sortedMovements, 170, 14);
 
     const ideaUsage = new Map();
     ideas.forEach(node => {
@@ -174,10 +213,12 @@
 
     const sortedIdeas = [...ideas].sort((a, b) => ideaUsage.get(a.id) - ideaUsage.get(b.id));
     sortedIdeas.forEach((node, index) => {
-      const row = index % 3;
-      node.x = ideaUsage.get(node.id) + (row - 1) * 120;
-      node.y = 1040 + row * 120;
+      const row = index % 4;
+      node.x = ideaUsage.get(node.id) + jitter(node.id, 260);
+      node.y = 980 + row * 150 + jitter(`${node.id}:y`, 50);
     });
+
+    relaxHorizontally(sortedIdeas, 180, 14);
 
     const allX = nodes.map(node => node.x);
     const allY = nodes.map(node => node.y);
@@ -197,10 +238,10 @@
     const worldHeight = Math.max(1, state.world.maxY - state.world.minY);
     const fitX = (state.width * 0.54) / worldWidth;
     const fitY = (state.height * 0.5) / worldHeight;
-    const baseScale = Math.max(0.34, Math.min(0.64, fitX * 2.6, fitY * 2.6));
+    const baseScale = Math.max(0.58, Math.min(0.98, fitX * 3.8, fitY * 3.8));
     state.defaultScale = baseScale;
-    state.minScale = Math.max(0.22, baseScale * 0.7);
-    state.maxScale = Math.max(1.05, baseScale * 2);
+    state.minScale = Math.max(0.3, baseScale * 0.5);
+    state.maxScale = Math.max(2.4, baseScale * 3.2);
 
     if (!state.scale || state.scale === 1) {
       state.scale = state.defaultScale;
@@ -330,7 +371,7 @@
 
   function handleWheel(event) {
     event.preventDefault();
-    const multiplier = Math.exp(-event.deltaY * 0.0012);
+    const multiplier = Math.exp(-event.deltaY * 0.0022);
     state.targetScale = clampScale(state.targetScale * multiplier);
     clampCamera();
   }
@@ -454,9 +495,9 @@
 
   function updateFrameState() {
     clampCamera();
-    state.scale += (state.targetScale - state.scale) * 0.08;
-    state.cameraX += (state.targetCameraX - state.cameraX) * 0.08;
-    state.cameraY += (state.targetCameraY - state.cameraY) * 0.08;
+    state.scale += (state.targetScale - state.scale) * 0.18;
+    state.cameraX += (state.targetCameraX - state.cameraX) * 0.1;
+    state.cameraY += (state.targetCameraY - state.cameraY) * 0.1;
 
     nodes.forEach(node => {
       node.glow *= 0.88;
@@ -587,8 +628,8 @@
   canvas.addEventListener('pointerleave', handlePointerLeave);
   canvas.addEventListener('wheel', handleWheel, { passive: false });
   window.addEventListener('resize', resize);
-  zoomInButton.addEventListener('click', () => nudgeZoom(1.18));
-  zoomOutButton.addEventListener('click', () => nudgeZoom(1 / 1.18));
+  zoomInButton.addEventListener('click', () => nudgeZoom(1.35));
+  zoomOutButton.addEventListener('click', () => nudgeZoom(1 / 1.35));
 
   resize();
   layoutNodes();
