@@ -53,6 +53,7 @@
     focusedNodeId: '',
     frameHandle: 0,
     focusClusterCache: null,
+    focusTraversalCache: null,
     adjacency: new Map(),
     nodesById: new Map(),
     stars: [],
@@ -287,6 +288,7 @@
     const focused = getFocusedNode();
     if (!focused) {
       state.focusClusterCache = null;
+      state.focusTraversalCache = null;
       return { x: node.homeX, y: node.homeY };
     }
 
@@ -350,6 +352,39 @@
     return map;
   }
 
+  function getFocusTraversal(focused) {
+    if (state.focusTraversalCache && state.focusTraversalCache.focusId === focused.id) {
+      return state.focusTraversalCache;
+    }
+
+    const depths = new Map([[focused.id, 0]]);
+    const parents = new Map([[focused.id, null]]);
+    const queue = [focused.id];
+
+    for (let index = 0; index < queue.length; index += 1) {
+      const currentId = queue[index];
+      const currentDepth = depths.get(currentId);
+      const neighbors = state.adjacency.get(currentId) || new Set();
+
+      neighbors.forEach(nextId => {
+        if (depths.has(nextId)) return;
+        depths.set(nextId, currentDepth + 1);
+        parents.set(nextId, currentId);
+        queue.push(nextId);
+      });
+    }
+
+    const traversal = {
+      focusId: focused.id,
+      depths,
+      parents,
+      maxDepth: Math.max(...depths.values())
+    };
+
+    state.focusTraversalCache = traversal;
+    return traversal;
+  }
+
   function clampCamera() {
     const halfViewX = state.width / (2 * state.targetScale);
     const halfViewY = state.height / (2 * state.targetScale);
@@ -378,6 +413,7 @@
     if (!id || !state.nodesById.has(id)) return;
     state.focusedNodeId = id;
     state.focusClusterCache = null;
+    state.focusTraversalCache = null;
     state.cameraLockedToFocus = true;
     const node = state.nodesById.get(id);
     state.targetCameraX = node.x;
@@ -403,11 +439,13 @@
     }
 
     const relatedCount = state.adjacency.get(target.id)?.size || 0;
+    const traversal = node && node.id === target.id ? getFocusTraversal(target) : null;
+    const reachCount = traversal ? traversal.depths.size - 1 : 0;
     labelEl.textContent = target.label;
-    metaEl.textContent = `${typeLabel[target.type]} / ${relatedCount}つの接続${target.subtitle ? ` / ${target.subtitle}` : ''}`;
+    metaEl.textContent = `${typeLabel[target.type]} / 直接 ${relatedCount} / 系譜 ${reachCount}${target.subtitle ? ` / ${target.subtitle}` : ''}`;
     if (node && node.id === target.id) {
       hintEl.textContent = target.url
-        ? '固定中。もう一度クリックすると詳細ページへ移動します。ホイールで拡大縮小できます。'
+        ? '固定中。線はこの対象から辿れるつながりを示します。もう一度クリックで詳細へ。'
         : '固定中。ドラッグで地図を移動できます。';
     } else {
       hintEl.textContent = 'まだ固定されていません。クリックするとこの名前が中心になります。';
@@ -565,26 +603,32 @@
   function getNodeState(node) {
     const focused = getFocusedNode();
     const hovered = getHoveredNode();
+    const traversal = focused ? getFocusTraversal(focused) : null;
     const relatedIds = focused ? state.adjacency.get(focused.id) : null;
 
     if (focused) {
       if (node.id === focused.id) {
-        return { emphasis: 1, active: true, related: false, hovered: false };
+        return { emphasis: 1, active: true, related: false, chained: false, hovered: false };
       }
       if (relatedIds?.has(node.id)) {
-        return { emphasis: 0.66, active: false, related: true, hovered: false };
+        return { emphasis: 0.7, active: false, related: true, chained: false, hovered: false };
+      }
+      if (traversal?.depths.has(node.id)) {
+        const depth = traversal.depths.get(node.id);
+        const emphasis = Math.max(0.18, 0.62 - depth * 0.1);
+        return { emphasis, active: false, related: false, chained: true, hovered: false };
       }
       if (hovered && node.id === hovered.id) {
-        return { emphasis: 0.28, active: false, related: false, hovered: true };
+        return { emphasis: 0.28, active: false, related: false, chained: false, hovered: true };
       }
-      return { emphasis: 0.1, active: false, related: false, hovered: false };
+      return { emphasis: 0.08, active: false, related: false, chained: false, hovered: false };
     }
 
     if (hovered && node.id === hovered.id) {
-      return { emphasis: 0.8, active: false, related: false, hovered: true };
+      return { emphasis: 0.8, active: false, related: false, chained: false, hovered: true };
     }
 
-    return { emphasis: 0.38, active: false, related: false, hovered: false };
+    return { emphasis: 0.38, active: false, related: false, chained: false, hovered: false };
   }
 
   function updateFrameState() {
@@ -640,6 +684,27 @@
   function drawLinks() {
     const focused = getFocusedNode();
     if (!focused) return;
+    const traversal = getFocusTraversal(focused);
+
+    traversal.parents.forEach((parentId, nodeId) => {
+      if (!parentId) return;
+      const node = state.nodesById.get(nodeId);
+      const parent = state.nodesById.get(parentId);
+      if (!node || !parent) return;
+      const depth = traversal.depths.get(nodeId) || 1;
+      const start = worldToScreen(parent.x, parent.y);
+      const end = worldToScreen(node.x, node.y);
+      ctx.beginPath();
+      ctx.moveTo(start.x, start.y);
+      ctx.lineTo(end.x, end.y);
+      ctx.strokeStyle = palette.link;
+      ctx.lineWidth = depth === 1 ? 1.25 : depth === 2 ? 1 : 0.85;
+      ctx.globalAlpha = Math.max(0.18, 0.84 - depth * 0.1);
+      ctx.shadowBlur = depth <= 2 ? 8 : 4;
+      ctx.shadowColor = palette.linkGlow;
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+    });
 
     links.forEach(link => {
       const active = link.source === focused.id || link.target === focused.id;
@@ -650,9 +715,9 @@
       ctx.moveTo(start.x, start.y);
       ctx.lineTo(end.x, end.y);
       ctx.strokeStyle = palette.link;
-      ctx.lineWidth = link.type === 'idea' ? 0.8 : 1;
-      ctx.globalAlpha = link.type === 'era' ? 0.34 : 0.88;
-      ctx.shadowBlur = 8;
+      ctx.lineWidth = 1.5;
+      ctx.globalAlpha = 0.95;
+      ctx.shadowBlur = 10;
       ctx.shadowColor = palette.linkGlow;
       ctx.stroke();
       ctx.shadowBlur = 0;
@@ -687,6 +752,8 @@
       ? '500 13px "Noto Sans JP", sans-serif'
       : nodeState.related
         ? '400 12px "Noto Sans JP", sans-serif'
+        : nodeState.chained
+          ? '400 11px "Noto Sans JP", sans-serif'
         : '400 10px "Noto Sans JP", sans-serif';
     ctx.fillStyle = nodeState.active ? palette.activeText : palette.text;
     ctx.globalAlpha = nodeState.active ? 0.98 : nodeState.related ? 0.82 : Math.max(0.24, nodeState.emphasis);
