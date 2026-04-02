@@ -238,10 +238,10 @@
     const worldHeight = Math.max(1, state.world.maxY - state.world.minY);
     const fitX = (state.width * 0.54) / worldWidth;
     const fitY = (state.height * 0.5) / worldHeight;
-    const baseScale = Math.max(0.58, Math.min(0.98, fitX * 3.8, fitY * 3.8));
+    const baseScale = Math.max(0.92, Math.min(1.7, fitX * 6.6, fitY * 6.6));
     state.defaultScale = baseScale;
-    state.minScale = Math.max(0.3, baseScale * 0.5);
-    state.maxScale = Math.max(2.4, baseScale * 3.2);
+    state.minScale = Math.max(0.38, baseScale * 0.45);
+    state.maxScale = Math.max(3.6, baseScale * 3.8);
 
     if (!state.scale || state.scale === 1) {
       state.scale = state.defaultScale;
@@ -619,6 +619,7 @@
     state.cameraY = initialNode.y;
     state.targetCameraY = initialNode.y;
     state.focusedNodeId = initialNode.id;
+    initialNode.glow = 1.8;
     updateFocusPanel();
   }
 

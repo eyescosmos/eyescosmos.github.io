@@ -1,6 +1,15 @@
 (function () {
-  const photographers = (window.PHOTOGRAPHERS || []).filter(p => !p.isPlaceholder);
-  const movementMeta = Object.assign({}, window.MOVEMENTS_META || {}, {
+  const photographersSource =
+    typeof PHOTOGRAPHERS !== 'undefined'
+      ? PHOTOGRAPHERS
+      : (window.PHOTOGRAPHERS || []);
+  const movementMetaSource =
+    typeof MOVEMENTS_META !== 'undefined'
+      ? MOVEMENTS_META
+      : (window.MOVEMENTS_META || {});
+
+  const photographers = photographersSource.filter(p => !p.isPlaceholder);
+  const movementMeta = Object.assign({}, movementMetaSource, {
     'LGBTQ+': {
       en: 'LGBTQ+ Photography',
       desc: '性的マイノリティの経験や共同体、身体の表象をめぐる写真実践。'
