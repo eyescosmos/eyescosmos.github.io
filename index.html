@@ -228,6 +228,24 @@ h1 em { font-style: normal; color: var(--accent); }
   color: var(--accent);
   border-bottom-color: var(--accent);
 }
+.tab-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  padding: 20px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tab-link:hover {
+  color: var(--text-dim);
+  border-bottom-color: var(--accent-dim);
+}
 
 /* ── FILTER BAR ── */
 .filter-bar {
@@ -815,6 +833,7 @@ footer a:hover { color: var(--accent); }
   <div class="tab-nav-inner">
     <button class="tab-btn active" data-tab="era" onclick="switchTab('era')">時代から見る</button>
     <button class="tab-btn" data-tab="movement" onclick="switchTab('movement')">表現から見る</button>
+    <a class="tab-link" href="relations.html">関係の星図</a>
   </div>
 </nav>
 
@@ -855,8 +874,6 @@ footer a:hover { color: var(--accent); }
   <div style="margin-top:8px">各記述には出典を明記していますが、誤りが含まれる可能性があります。情報の訂正・追加はお気軽にお知らせください。</div>
   <div style="margin-top:16px">
     <a href="privacy.html">プライバシーポリシー</a>
-    <span style="margin: 0 12px; color: var(--text-muted)">|</span>
-    <a href="relations.html">関係の星図</a>
     <span style="margin: 0 12px; color: var(--text-muted)">|</span>
     <a href="https://github.com/eyescosmos/eyescosmos.github.io" target="_blank">GitHub</a>
   </div>
