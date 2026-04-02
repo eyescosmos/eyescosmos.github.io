@@ -88,7 +88,6 @@
   const featuredMovements = new Set([
     'ドキュメンタリー',
     '戦争写真',
-    '社会ドキュメンタリー',
     'ピクトリアリズム',
     'ストレート写真',
     'ストリート写真',
@@ -102,7 +101,6 @@
     '新しいヴィジョン',
     '新即物主義',
     'ヴォルテクシズム',
-    'FSA写真',
     'フォトジャーナリズム',
     '決定的瞬間',
     'リアリズム写真',
@@ -115,21 +113,15 @@
     'コンセプチュアルアート',
     'ニューカラー',
     'タイポロジー写真',
-    'ステージド写真',
-    'シネマトグラフィック写真',
     '私写真',
-    '自然主義写真',
-    '都市記録'
+    '自然主義写真'
   ]);
 
   const featuredIdeaIds = new Set([
     'idea:machine-eye',
-    'idea:city-street',
-    'idea:experiment',
-    'idea:staged-image',
-    'idea:system',
-    'idea:intimacy',
-    'idea:critique'
+    'idea:portrait-self',
+    'idea:color',
+    'idea:landscape'
   ]);
 
   const movementIdeaMap = {

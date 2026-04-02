@@ -17,8 +17,10 @@
     text: 'rgba(238, 230, 216, 0.78)',
     link: 'rgba(211, 186, 151, 0.5)',
     linkGlow: 'rgba(211, 186, 151, 0.12)',
-    focusLink: 'rgba(120, 202, 255, 0.96)',
-    focusLinkGlow: 'rgba(120, 202, 255, 0.3)'
+    focusLinkDepth1: 'rgba(126, 212, 255, 0.92)',
+    focusLinkDepth1Glow: 'rgba(126, 212, 255, 0.24)',
+    focusLinkDepth2: 'rgba(227, 198, 149, 0.7)',
+    focusLinkDepth2Glow: 'rgba(227, 198, 149, 0.16)'
   };
 
   const typeLabel = {
@@ -168,6 +170,10 @@
     ctx.setTransform(state.ratio, 0, 0, state.ratio, 0, 0);
     createStars();
     updateScaleBounds();
+    const focused = getFocusedNode();
+    if (focused) {
+      frameFocusedViewport(focused);
+    }
     scheduleFrame();
   }
 
@@ -292,6 +298,24 @@
     return Math.max(state.minScale, Math.min(state.maxScale, value));
   }
 
+  function getViewportInsets() {
+    if (state.width < 900) {
+      return {
+        left: 26,
+        right: 26,
+        top: 120,
+        bottom: 88
+      };
+    }
+
+    return {
+      left: Math.min(360, state.width * 0.29),
+      right: 90,
+      top: 122,
+      bottom: 92
+    };
+  }
+
   function worldToScreen(x, y) {
     return {
       x: state.width * 0.5 + (x - state.cameraX) * state.scale,
@@ -371,46 +395,71 @@
 
     const traversal = getFocusTraversal(focused);
     const map = new Map();
-    const buckets = new Map();
+    const childrenByParent = new Map();
 
-    traversal.depths.forEach((depth, nodeId) => {
-      if (depth === 0) return;
-      if (!buckets.has(depth)) buckets.set(depth, []);
+    traversal.parents.forEach((parentId, nodeId) => {
+      const depth = traversal.depths.get(nodeId);
+      if (!parentId || depth > state.maxVisibleDepth) return;
       const node = state.nodesById.get(nodeId);
-      if (node) buckets.get(depth).push(node);
+      if (!node) return;
+      if (!childrenByParent.has(parentId)) childrenByParent.set(parentId, []);
+      childrenByParent.get(parentId).push(node);
     });
 
-    Array.from(buckets.entries())
-      .sort((a, b) => a[0] - b[0])
-      .forEach(([depth, bucket]) => {
-        if (depth > state.maxVisibleDepth) return;
-        const ordered = [...bucket].sort((a, b) => angleFromHome(focused, a) - angleFromHome(focused, b));
-        const density = ordered.length;
-        const ringRadius =
-          320 +
-          (depth - 1) * 260 +
-          Math.max(0, density - 6) * 26;
-        const baseRotation = density
-          ? ordered.reduce((sum, node) => sum + angleFromHome(focused, node), 0) / density
-          : -Math.PI / 2;
+    childrenByParent.forEach((children, parentId) => {
+      const parentNode = state.nodesById.get(parentId) || focused;
+      children.sort((a, b) => angleFromHome(parentNode, a) - angleFromHome(parentNode, b));
+    });
 
-        ordered.forEach((node, index) => {
-          const homeAngle = angleFromHome(focused, node);
-          const evenAngle = baseRotation + (index / Math.max(1, density)) * Math.PI * 2;
-          const angle = evenAngle * 0.72 + homeAngle * 0.28;
-          const typeOffset =
-            node.type === 'photographer'
-              ? 0
-              : node.type === 'movement'
-                ? -55
-                : 80;
-          const radius = ringRadius + typeOffset + jitter(`${focused.id}:${node.id}:radius`, 18);
-          map.set(node.id, {
-            x: state.focusAnchorX + Math.cos(angle) * radius,
-            y: state.focusAnchorY + Math.sin(angle) * radius * 0.78
-          });
+    const rootChildren = childrenByParent.get(focused.id) || [];
+    const rootCount = rootChildren.length;
+    const rootRadius = 450 + Math.max(0, rootCount - 8) * 30;
+    const rootStart = -Math.PI / 2;
+
+    rootChildren.forEach((node, index) => {
+      const angle = rootStart + (index / Math.max(1, rootCount)) * Math.PI * 2 + jitter(`${focused.id}:${node.id}:angle`, 0.16);
+      const typeOffset =
+        node.type === 'photographer'
+          ? 0
+          : node.type === 'movement'
+            ? -24
+            : 32;
+      const radius = rootRadius + typeOffset + jitter(`${focused.id}:${node.id}:radius`, 14);
+      map.set(node.id, {
+        x: state.focusAnchorX + Math.cos(angle) * radius,
+        y: state.focusAnchorY + Math.sin(angle) * radius * 0.84,
+        angle
+      });
+    });
+
+    rootChildren.forEach(parentNode => {
+      const children = childrenByParent.get(parentNode.id) || [];
+      if (!children.length) return;
+
+      const parentPosition = map.get(parentNode.id);
+      const baseAngle = parentPosition ? parentPosition.angle : angleFromHome(focused, parentNode);
+      const span = Math.min(1.5, 0.64 + children.length * 0.18);
+      const secondRadius = 820 + Math.max(0, children.length - 4) * 28;
+
+      children.forEach((childNode, index) => {
+        const spread = children.length === 1
+          ? 0
+          : ((index / (children.length - 1)) - 0.5) * span;
+        const angle = baseAngle + spread + jitter(`${parentNode.id}:${childNode.id}:angle`, 0.1);
+        const typeOffset =
+          childNode.type === 'photographer'
+            ? 0
+            : childNode.type === 'movement'
+              ? -34
+              : 46;
+        const radius = secondRadius + typeOffset + jitter(`${parentNode.id}:${childNode.id}:radius`, 18);
+        map.set(childNode.id, {
+          x: state.focusAnchorX + Math.cos(angle) * radius,
+          y: state.focusAnchorY + Math.sin(angle) * radius * 0.86,
+          angle
         });
       });
+    });
 
     state.focusLayoutCache = { focusId: focused.id, map };
     return map;
@@ -465,6 +514,54 @@
       : Math.max(minY, Math.min(maxY, state.targetCameraY));
   }
 
+  function getFocusBounds(focused) {
+    const layoutMap = getFocusLayoutMap(focused);
+    const traversal = getFocusTraversal(focused);
+    let minX = state.focusAnchorX;
+    let maxX = state.focusAnchorX;
+    let minY = state.focusAnchorY;
+    let maxY = state.focusAnchorY;
+
+    traversal.depths.forEach((depth, nodeId) => {
+      if (depth === 0 || depth > state.maxVisibleDepth) return;
+      const node = state.nodesById.get(nodeId);
+      if (!node) return;
+      const target = layoutMap.get(nodeId);
+      const x = target ? target.x : node.homeX;
+      const y = target ? target.y : node.homeY;
+      minX = Math.min(minX, x - 220);
+      maxX = Math.max(maxX, x + 220);
+      minY = Math.min(minY, y - 130);
+      maxY = Math.max(maxY, y + 130);
+    });
+
+    return { minX, maxX, minY, maxY };
+  }
+
+  function frameFocusedViewport(focused) {
+    const insets = getViewportInsets();
+    const availableWidth = Math.max(240, state.width - insets.left - insets.right);
+    const availableHeight = Math.max(220, state.height - insets.top - insets.bottom);
+    const bounds = getFocusBounds(focused);
+    const boundsWidth = Math.max(220, bounds.maxX - bounds.minX);
+    const boundsHeight = Math.max(220, bounds.maxY - bounds.minY);
+    const fitScale = clampScale(Math.min(
+      availableWidth / boundsWidth,
+      availableHeight / boundsHeight
+    ) * 0.9);
+
+    state.targetScale = fitScale;
+
+    const desiredScreenX = insets.left + availableWidth * 0.5;
+    const desiredScreenY = insets.top + availableHeight * 0.5;
+    const boundsCenterX = (bounds.minX + bounds.maxX) * 0.5;
+    const boundsCenterY = (bounds.minY + bounds.maxY) * 0.5;
+
+    state.targetCameraX = boundsCenterX - ((desiredScreenX - state.width * 0.5) / state.targetScale);
+    state.targetCameraY = boundsCenterY - ((desiredScreenY - state.height * 0.5) / state.targetScale);
+    clampCamera();
+  }
+
   function getFocusedNode() {
     return state.focusedNodeId ? state.nodesById.get(state.focusedNodeId) : null;
   }
@@ -483,10 +580,8 @@
     const node = state.nodesById.get(id);
     state.focusAnchorX = node.x;
     state.focusAnchorY = node.y;
-    state.targetCameraX = state.focusAnchorX;
-    state.targetCameraY = state.focusAnchorY;
     node.glow = 1.4;
-    clampCamera();
+    frameFocusedViewport(node);
     updateFocusPanel();
     scheduleFrame();
   }
@@ -511,7 +606,7 @@
       ? Array.from(traversal.depths.values()).filter(depth => depth > 0 && depth <= state.maxVisibleDepth).length
       : 0;
     labelEl.textContent = target.label;
-    metaEl.textContent = `${typeLabel[target.type]} / 直接 ${relatedCount} / 表示中 ${reachCount}${target.subtitle ? ` / ${target.subtitle}` : ''}`;
+    metaEl.textContent = `${typeLabel[target.type]} / 直接 ${relatedCount} / 表示中 ${reachCount}`;
     if (node && node.id === target.id) {
       hintEl.textContent = target.url
         ? '固定中。線はこの対象から辿れるつながりを示します。もう一度クリックで詳細へ。'
@@ -527,7 +622,8 @@
 
     for (const node of nodes) {
       const point = worldToScreen(node.x, node.y);
-      const labelLeft = point.x - 10;
+      const placeLeft = isLabelOnLeft(node);
+      const labelLeft = placeLeft ? point.x - 10 - node.hitWidth : point.x - 10;
       const labelTop = point.y - 18;
       const labelRight = labelLeft + node.hitWidth;
       const labelBottom = labelTop + 28;
@@ -570,6 +666,12 @@
     state.targetScale = clampScale(state.targetScale * multiplier);
     clampCamera();
     scheduleFrame();
+  }
+
+  function isLabelOnLeft(node) {
+    const focused = getFocusedNode();
+    if (!focused) return false;
+    return node.x < state.focusAnchorX;
   }
 
   function navigateTo(node) {
@@ -687,7 +789,7 @@
         if (depth > state.maxVisibleDepth) {
           return { emphasis: 0.015, active: false, related: false, chained: false, hovered: false };
         }
-        const emphasis = Math.max(0.18, 0.62 - depth * 0.1);
+        const emphasis = Math.max(0.16, 0.58 - depth * 0.12);
         return { emphasis, active: false, related: false, chained: true, hovered: false };
       }
       if (hovered && node.id === hovered.id) {
@@ -757,6 +859,7 @@
     const focused = getFocusedNode();
     if (!focused) return;
     const traversal = getFocusTraversal(focused);
+    const layoutMap = getFocusLayoutMap(focused);
 
     traversal.parents.forEach((parentId, nodeId) => {
       if (!parentId) return;
@@ -772,41 +875,21 @@
       const dx = end.x - start.x;
       const dy = end.y - start.y;
       const length = Math.max(1, Math.hypot(dx, dy));
-      const curve = Math.min(42, 10 + depth * 8);
-      const cx = mx - (dy / length) * curve;
-      const cy = my + (dx / length) * curve;
+      const childPosition = layoutMap.get(nodeId);
+      const childAngle = childPosition && typeof childPosition.angle === 'number'
+        ? childPosition.angle
+        : Math.atan2(node.y - focused.y, node.x - focused.x);
+      const curve = depth === 1 ? 18 : 34;
+      const cx = mx + Math.cos(childAngle) * curve - (dy / length) * (depth === 1 ? 8 : 18);
+      const cy = my + Math.sin(childAngle) * curve + (dx / length) * (depth === 1 ? 8 : 18);
       ctx.beginPath();
       ctx.moveTo(start.x, start.y);
       ctx.quadraticCurveTo(cx, cy, end.x, end.y);
-      ctx.strokeStyle = palette.focusLink;
-      ctx.lineWidth = depth === 1 ? 1.25 : depth === 2 ? 1 : 0.85;
-      ctx.globalAlpha = Math.max(0.16, 0.82 - depth * 0.17);
-      ctx.shadowBlur = depth <= 2 ? 8 : 4;
-      ctx.shadowColor = palette.focusLinkGlow;
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-    });
-
-    links.forEach(link => {
-      const active = link.source === focused.id || link.target === focused.id;
-      if (!active || !link.sourceNode || !link.targetNode) return;
-      const start = worldToScreen(link.sourceNode.x, link.sourceNode.y);
-      const end = worldToScreen(link.targetNode.x, link.targetNode.y);
-      const mx = (start.x + end.x) * 0.5;
-      const my = (start.y + end.y) * 0.5;
-      const dx = end.x - start.x;
-      const dy = end.y - start.y;
-      const length = Math.max(1, Math.hypot(dx, dy));
-      const cx = mx - (dy / length) * 18;
-      const cy = my + (dx / length) * 18;
-      ctx.beginPath();
-      ctx.moveTo(start.x, start.y);
-      ctx.quadraticCurveTo(cx, cy, end.x, end.y);
-      ctx.strokeStyle = palette.focusLink;
-      ctx.lineWidth = 1.8;
-      ctx.globalAlpha = 0.98;
-      ctx.shadowBlur = 12;
-      ctx.shadowColor = palette.focusLinkGlow;
+      ctx.strokeStyle = depth === 1 ? palette.focusLinkDepth1 : palette.focusLinkDepth2;
+      ctx.lineWidth = depth === 1 ? 1.55 : 1.08;
+      ctx.globalAlpha = depth === 1 ? 0.9 : 0.62;
+      ctx.shadowBlur = depth === 1 ? 10 : 5;
+      ctx.shadowColor = depth === 1 ? palette.focusLinkDepth1Glow : palette.focusLinkDepth2Glow;
       ctx.stroke();
       ctx.shadowBlur = 0;
     });
@@ -842,28 +925,21 @@
       return;
     }
 
-    const focused = getFocusedNode();
-    const placeLeft = focused && node.x < focused.x;
+    const placeLeft = isLabelOnLeft(node);
     const labelX = placeLeft ? point.x - 11 : point.x + 11;
     const labelY = point.y - 4;
     ctx.textAlign = placeLeft ? 'right' : 'left';
     ctx.font = nodeState.active
-      ? '500 13px "Noto Sans JP", sans-serif'
+      ? '500 12px "Noto Sans JP", sans-serif'
       : nodeState.related
-        ? '400 12px "Noto Sans JP", sans-serif'
+        ? '400 11px "Noto Sans JP", sans-serif'
         : nodeState.chained
-          ? '400 11px "Noto Sans JP", sans-serif'
-        : '400 10px "Noto Sans JP", sans-serif';
+          ? '400 10px "Noto Sans JP", sans-serif'
+        : '400 9px "Noto Sans JP", sans-serif';
     ctx.fillStyle = nodeState.active ? palette.activeText : palette.text;
     ctx.globalAlpha = nodeState.active ? 0.98 : nodeState.related ? 0.82 : Math.max(0.24, nodeState.emphasis);
     ctx.fillText(node.label, labelX, labelY);
 
-    if ((nodeState.active || nodeState.hovered) && node.subtitle) {
-      ctx.font = '400 10px "DM Mono", monospace';
-      ctx.fillStyle = 'rgba(238, 230, 216, 0.5)';
-      ctx.globalAlpha = nodeState.active ? 0.86 : 0.52;
-      ctx.fillText(node.subtitle, labelX, labelY + 15);
-    }
     ctx.textAlign = 'left';
   }
 
@@ -907,6 +983,7 @@
     state.focusedNodeId = '';
     state.focusClusterCache = null;
     state.focusTraversalCache = null;
+    state.focusLayoutCache = null;
     initialNode.glow = 1.1;
     updateFocusPanel();
   }
