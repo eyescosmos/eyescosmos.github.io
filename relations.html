@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Constellation | アフターイメージ</title>
+<meta name="description" content="写真家・運動・思想の関係性を、静かな宇宙のようなインタラクティブUIで可視化する試作ページ。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'KaisotaiNextUP';
+  src: url('fonts/Kaisotai-Next-UP-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #040507;
+  --panel: rgba(10, 12, 18, 0.62);
+  --border: rgba(198, 170, 130, 0.16);
+  --text: #eee6d8;
+  --text-dim: rgba(238, 230, 216, 0.68);
+  --text-muted: rgba(238, 230, 216, 0.42);
+  --accent: #c6aa82;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(198, 170, 130, 0.08) 0%, transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(158, 197, 255, 0.06) 0%, transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(201, 184, 255, 0.05) 0%, transparent 30%),
+    var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow: hidden;
+}
+
+body.is-navigating #page-fade {
+  opacity: 1;
+}
+
+.shell {
+  position: relative;
+  min-height: 100vh;
+}
+
+#constellation-canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  touch-action: none;
+}
+
+.hud,
+.focus-card,
+.back-link {
+  position: absolute;
+  z-index: 2;
+}
+
+.hud {
+  top: 32px;
+  left: 32px;
+  max-width: min(420px, calc(100vw - 64px));
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: var(--accent);
+  font: 400 11px/1 'DM Mono', monospace;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
+  font-size: clamp(34px, 5vw, 66px);
+  font-weight: normal;
+  letter-spacing: 0.18em;
+  line-height: 1.05;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.lede {
+  max-width: 30rem;
+  margin-top: 18px;
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.focus-card {
+  left: 32px;
+  bottom: 32px;
+  width: min(320px, calc(100vw - 64px));
+  padding: 18px 20px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+}
+
+.focus-label {
+  font: 500 16px/1.4 'DM Mono', monospace;
+  color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+.focus-meta,
+.focus-hint {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font: 400 11px/1.7 'DM Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.back-link {
+  top: 32px;
+  right: 32px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font: 400 11px/1 'DM Mono', monospace;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.back-link:hover {
+  border-color: rgba(198, 170, 130, 0.34);
+  color: var(--text);
+  background: rgba(198, 170, 130, 0.06);
+}
+
+#page-fade {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.32s ease;
+}
+
+@media (max-width: 720px) {
+  .hud,
+  .focus-card,
+  .back-link {
+    left: 18px;
+    right: 18px;
+  }
+
+  .hud {
+    top: 18px;
+    max-width: none;
+  }
+
+  .back-link {
+    top: auto;
+    bottom: 18px;
+    left: auto;
+    right: 18px;
+    width: fit-content;
+  }
+
+  .focus-card {
+    bottom: 68px;
+    width: auto;
+  }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <canvas id="constellation-canvas" aria-label="写真史の関係性を可視化した宇宙図"></canvas>
+
+  <div class="hud">
+    <div class="eyebrow">Prototype / Constellation</div>
+    <h1 class="title"><em>関係の星図</em></h1>
+    <div class="lede">
+      写真家、運動、思想を宇宙のような距離感で配置した試作ページです。
+      ホバーで関係性が立ち上がり、クリックで次のページへ沈むように移動します。
+    </div>
+  </div>
+
+  <div class="focus-card">
+    <div class="focus-label" id="focus-label">Hover to trace influence</div>
+    <div class="focus-meta" id="focus-meta">Tap on mobile to hold a constellation.</div>
+    <div class="focus-hint" id="focus-hint">Click a node to move deeper into the archive.</div>
+  </div>
+
+  <a class="back-link" href="index.html">Return Archive</a>
+</div>
+
+<div id="page-fade" aria-hidden="true"></div>
+
+<script src="data/relation-graph.js"></script>
+<script src="scripts/relations.js"></script>
+</body>
+</html>
