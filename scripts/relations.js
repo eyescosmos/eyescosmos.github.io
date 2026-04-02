@@ -67,6 +67,8 @@
     ...node,
     x: 0,
     y: 0,
+    homeX: 0,
+    homeY: 0,
     glow: 0,
     hitWidth: Math.max(90, node.label.length * 16 + 36)
   }));
@@ -88,6 +90,10 @@
 
   function jitter(value, amplitude) {
     return ((hashNumber(value) % 1000) / 999 - 0.5) * amplitude;
+  }
+
+  function stableAngle(value) {
+    return (hashNumber(value) % 360) * (Math.PI / 180);
   }
 
   function relaxHorizontally(list, minGap, iterations) {
@@ -228,6 +234,12 @@
     state.world.maxX = Math.max(...allX) + 620;
     state.world.minY = Math.min(...allY) - 420;
     state.world.maxY = Math.max(...allY) + 420;
+
+    nodes.forEach(node => {
+      node.homeX = node.x;
+      node.homeY = node.y;
+    });
+
     state.cameraX = (state.world.minX + state.world.maxX) * 0.5;
     state.targetCameraX = state.cameraX;
     state.cameraY = (state.world.minY + state.world.maxY) * 0.5;
@@ -263,6 +275,35 @@
     return {
       x: state.width * 0.5 + (x - state.cameraX) * state.scale,
       y: state.height * 0.5 + (y - state.cameraY) * state.scale
+    };
+  }
+
+  function getDisplayTarget(node) {
+    const focused = getFocusedNode();
+    if (!focused) {
+      return { x: node.homeX, y: node.homeY };
+    }
+
+    if (node.id === focused.id) {
+      return { x: focused.homeX, y: focused.homeY };
+    }
+
+    const relatedIds = state.adjacency.get(focused.id);
+    if (!relatedIds || !relatedIds.has(node.id)) {
+      return { x: node.homeX, y: node.homeY };
+    }
+
+    const radius =
+      node.type === 'photographer'
+        ? 220
+        : node.type === 'movement'
+          ? 180
+          : 260;
+    const angle = stableAngle(`${focused.id}:${node.id}`);
+
+    return {
+      x: focused.homeX + Math.cos(angle) * radius,
+      y: focused.homeY + Math.sin(angle) * radius * 0.72
     };
   }
 
@@ -509,6 +550,9 @@
     state.cameraY += (state.targetCameraY - state.cameraY) * 0.1;
 
     nodes.forEach(node => {
+      const target = getDisplayTarget(node);
+      node.x += (target.x - node.x) * 0.12;
+      node.y += (target.y - node.y) * 0.12;
       node.glow *= 0.88;
     });
   }
@@ -518,6 +562,10 @@
     if (Math.abs(state.scale - state.targetScale) > 0.001) return true;
     if (Math.abs(state.cameraX - state.targetCameraX) > 0.2) return true;
     if (Math.abs(state.cameraY - state.targetCameraY) > 0.2) return true;
+    if (nodes.some(node => {
+      const target = getDisplayTarget(node);
+      return Math.abs(node.x - target.x) > 0.3 || Math.abs(node.y - target.y) > 0.3;
+    })) return true;
     return nodes.some(node => node.glow > 0.03);
   }
 
