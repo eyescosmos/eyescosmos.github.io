@@ -7,6 +7,7 @@
   const fadeEl = document.getElementById('page-fade');
   const zoomInButton = document.getElementById('zoom-in');
   const zoomOutButton = document.getElementById('zoom-out');
+  const resetViewButton = document.getElementById('reset-view');
   const prefersCoarse = window.matchMedia('(pointer: coarse)').matches;
 
   const palette = {
@@ -57,6 +58,7 @@
     pressedNodeId: '',
     hoveredNodeId: '',
     focusedNodeId: '',
+    initialNodeId: '',
     frameHandle: 0,
     focusClusterCache: null,
     focusTraversalCache: null,
@@ -595,8 +597,8 @@
       labelEl.textContent = '写真の座標';
       metaEl.textContent = '点ではなく名前そのものをたどりながら、関係の地図を横断します。';
       hintEl.textContent = prefersCoarse
-        ? 'タップすると線が立ち上がり、関係の流れが見えます。'
-        : 'クリックすると線が立ち上がり、関係の流れが見えます。';
+        ? 'タップで関係を開き、◎で初期表示に戻れます。'
+        : 'クリックで関係を開き、◎で初期表示に戻れます。';
       return;
     }
 
@@ -682,6 +684,28 @@
     fadeEl.addEventListener('transitionend', () => {
       window.location.href = node.url;
     }, { once: true });
+  }
+
+  function resetView() {
+    const initialNode = state.nodesById.get(state.initialNodeId) || nodes.find(node => node.type === 'photographer') || nodes[0];
+    if (!initialNode) return;
+
+    state.focusedNodeId = '';
+    state.hoveredNodeId = '';
+    state.focusClusterCache = null;
+    state.focusTraversalCache = null;
+    state.focusLayoutCache = null;
+    state.cameraLockedToFocus = false;
+    state.focusAnchorX = initialNode.homeX;
+    state.focusAnchorY = initialNode.homeY;
+    state.targetScale = state.minScale;
+    state.targetCameraX = initialNode.homeX;
+    state.targetCameraY = initialNode.homeY;
+    initialNode.glow = 1.2;
+    clampCamera();
+    updateFocusPanel();
+    updateCursor();
+    scheduleFrame();
   }
 
   function handlePointerDown(event) {
@@ -972,6 +996,7 @@
     const fallback = nodes.find(node => node.type === 'photographer') || nodes[0];
     const initialNode = preferred || fallback;
     if (!initialNode) return;
+    state.initialNodeId = initialNode.id;
     state.scale = state.minScale;
     state.targetScale = state.minScale;
     state.cameraX = initialNode.x;
@@ -996,6 +1021,7 @@
   window.addEventListener('resize', resize);
   zoomInButton.addEventListener('click', () => nudgeZoom(1.35));
   zoomOutButton.addEventListener('click', () => nudgeZoom(1 / 1.35));
+  resetViewButton.addEventListener('click', resetView);
 
   resize();
   layoutNodes();
