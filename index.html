@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-fixed-lang="true" data-page-title-ja="写真の座標" data-page-title-en="Photo Coordinates">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>写真の座標</title>
 <meta name="description" content="写真家・運動・思想の関係性を、静かな宇宙のようなインタラクティブUIで可視化する試作ページ。">
+<link rel="canonical" href="https://eyescosmos.github.io/">
+<link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/">
+<link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="写真の座標">
+<meta property="og:title" content="写真の座標">
+<meta property="og:description" content="写真家・運動・思想の関係性を、静かな宇宙のようなインタラクティブUIで可視化する試作ページ。">
+<meta property="og:url" content="https://eyescosmos.github.io/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHJ31BY6NN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -190,6 +201,9 @@ body.is-navigating #page-fade {
 }
 
 .lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   background: transparent;
   color: var(--text-muted);
@@ -198,6 +212,7 @@ body.is-navigating #page-fade {
   text-transform: uppercase;
   padding: 10px 12px;
   cursor: pointer;
+  text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
 
@@ -322,8 +337,8 @@ body.is-navigating #page-fade {
 
   <div class="page-links" aria-label="一覧ページへの移動">
     <div class="lang-toggle" aria-label="Language switch">
-      <button class="lang-btn" type="button" data-lang="ja">JP</button>
-      <button class="lang-btn" type="button" data-lang="en">EN</button>
+      <a class="lang-btn" data-lang="ja" href="/">Japanese</a>
+      <a class="lang-btn" data-lang="en" href="/en/">English</a>
     </div>
     <a class="page-link" id="page-link-era" href="archive.html#tab-era">年代から見る</a>
     <a class="page-link" id="page-link-movement" href="archive.html#tab-movement">表現から見る</a>
@@ -340,7 +355,7 @@ body.is-navigating #page-fade {
 <script src="data/movements.js?v=20260403d"></script>
 <script src="data/photographers.js?v=20260403d"></script>
 <script src="data/relation-graph.js?v=20260403c"></script>
-<script src="scripts/language.js?v=20260403c"></script>
-<script src="scripts/relations.js?v=20260403c"></script>
+<script src="scripts/language.js?v=20260403e"></script>
+<script src="scripts/relations.js?v=20260403e"></script>
 </body>
 </html>

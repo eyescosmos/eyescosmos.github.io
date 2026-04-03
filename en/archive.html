@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja" data-fixed-lang="true">
+<html lang="en" data-fixed-lang="true">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>写真の座標 | 年代と表現</title>
-<meta name="description" content="写真史と世界情勢を紐づけた個人サイト。1839年から現代まで、時代と表現のムーブメントから写真の歴史を探ります。">
-<link rel="canonical" href="https://eyescosmos.github.io/archive.html">
+<title>Photo Coordinates | Eras and Movements</title>
+<meta name="description" content="Explore photographic history from 1839 to the present through eras, movements, and photographers.">
+<link rel="canonical" href="https://eyescosmos.github.io/en/archive.html">
 <link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/archive.html">
 <link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/archive.html">
 <link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/archive.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="写真の座標">
-<meta property="og:title" content="写真の座標 | 年代と表現">
-<meta property="og:description" content="写真史と世界情勢を紐づけた個人サイト。1839年から現代まで、時代と表現のムーブメントから写真の歴史を探ります。">
-<meta property="og:url" content="https://eyescosmos.github.io/archive.html">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Photo Coordinates">
+<meta property="og:title" content="Photo Coordinates | Eras and Movements">
+<meta property="og:description" content="Explore photographic history from 1839 to the present through eras, movements, and photographers.">
+<meta property="og:url" content="https://eyescosmos.github.io/en/archive.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHJ31BY6NN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -28,7 +28,7 @@
 /* 廻想体 ネクスト ユーピー — もじワク研究 (https://moji-waku.com/kaiso/) Free font, commercial use OK */
 @font-face {
   font-family: 'KaisotaiNextUP';
-  src: url('fonts/Kaisotai-Next-UP-B.woff2') format('woff2');
+  src: url('../fonts/Kaisotai-Next-UP-B.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -966,25 +966,25 @@ footer a:hover { color: var(--accent); }
         <a class="lang-btn" data-lang="ja" href="/archive.html">Japanese</a>
         <a class="lang-btn" data-lang="en" href="/en/archive.html">English</a>
       </div>
-      <a class="header-link" id="archive-back-link" href="index.html">写真の座標へ戻る</a>
+      <a class="header-link" id="archive-back-link" href="index.html">Back to Photo Coordinates</a>
     </div>
   </div>
   <div class="title-row">
-    <h1 id="archive-main-title"><em>写真の座標</em></h1>
-    <span class="wip-badge" id="archive-wip-badge">随時更新中</span>
+    <h1 id="archive-main-title"><em>Photo Coordinates</em></h1>
+    <span class="wip-badge" id="archive-wip-badge">Updating</span>
   </div>
-  <p class="header-subtitle" id="archive-header-subtitle">年代と表現</p>
-  <p class="header-sub" id="archive-header-sub">写真は常にその時代の社会・政治・技術の文脈の中に生まれてきた。年代をたどりながら、世界の動きと写真表現の関係を探る。</p>
-  <div class="ai-disclaimer" id="archive-ai-disclaimer">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、曖昧さや誤りが含まれる可能性があります。気になった作家・表現・時代については、ぜひご自身でも確認してください。</div>
+  <p class="header-subtitle" id="archive-header-subtitle">Eras and Movements</p>
+  <p class="header-sub" id="archive-header-sub">Photography has always emerged within the social, political, and technological conditions of its time. Move through the eras and trace how world events shaped photographic expression.</p>
+  <div class="ai-disclaimer" id="archive-ai-disclaimer">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but ambiguity, errors, or outdated details may remain. Please verify topics that matter to you.</div>
 
   <div class="random-box" id="random-box" onclick="scrollToPhotographer()">
-    <div class="random-label" id="random-label">今日のランダム写真家</div>
+    <div class="random-label" id="random-label">Photographer of the Day</div>
     <div class="random-name" id="random-name">—</div>
     <div class="random-meta" id="random-meta">—</div>
     <div class="random-excerpt" id="random-excerpt">—</div>
     <div class="random-actions">
-      <button class="coordinate-link" id="random-coordinate-button" type="button" onclick="openRandomCoordinates(event)">座標で見る</button>
-      <div class="random-hint" id="random-hint">→ クリックして詳細を見る</div>
+      <button class="coordinate-link" id="random-coordinate-button" type="button" onclick="openRandomCoordinates(event)">View in Coordinates</button>
+      <div class="random-hint" id="random-hint">→ Click to open the detail panel</div>
     </div>
   </div>
 </div>
@@ -993,8 +993,8 @@ footer a:hover { color: var(--accent); }
 <!-- ══════════════════════════════ TABS ══════════════════════════════ -->
 <nav class="tab-nav">
   <div class="tab-nav-inner">
-    <button class="tab-btn active" data-tab="era" onclick="switchTab('era')" id="tab-era-button">年代から見る</button>
-    <button class="tab-btn" data-tab="movement" onclick="switchTab('movement')" id="tab-movement-button">表現から見る</button>
+    <button class="tab-btn active" data-tab="era" onclick="switchTab('era')" id="tab-era-button">Browse by Era</button>
+    <button class="tab-btn" data-tab="movement" onclick="switchTab('movement')" id="tab-movement-button">Browse by Movement</button>
     <a class="tab-link" href="index.html" id="tab-home-link">写真の座標</a>
   </div>
 </nav>
@@ -1003,21 +1003,21 @@ footer a:hover { color: var(--accent); }
 <div id="tab-era" class="tab-content active">
   <div class="container">
     <div class="filter-bar">
-      <span class="filter-label" id="filter-label">絞り込み</span>
+      <span class="filter-label" id="filter-label">Filters</span>
       <input
         type="search"
         class="filter-input"
         id="filter-search"
-        placeholder="写真家名で検索"
+        placeholder="Search photographers"
         oninput="applyFilters()"
       >
       <select class="filter-select" id="filter-country" onchange="applyFilters()">
-        <option value="" id="filter-country-default">すべての国</option>
+        <option value="" id="filter-country-default">All countries</option>
       </select>
       <select class="filter-select" id="filter-movement-era" onchange="applyFilters()">
-        <option value="" id="filter-movement-default">すべてのムーブメント</option>
+        <option value="" id="filter-movement-default">All movements</option>
       </select>
-      <button class="filter-reset" id="filter-reset-button" onclick="resetFilters()">リセット</button>
+      <button class="filter-reset" id="filter-reset-button" onclick="resetFilters()">Reset</button>
       <span class="filter-count" id="filter-count"></span>
     </div>
     <div id="no-results" class="no-results">条件に一致する写真家が見つかりません</div>
@@ -1042,17 +1042,17 @@ footer a:hover { color: var(--accent); }
 </footer>
 
 <!-- ══════════════════════════════ DATA & LOGIC ══════════════════════════════ -->
-<script src="data/movements.js?v=20260403d"></script>
-<script src="data/eras.js?v=20260403c"></script>
-<script src="data/photographers.js?v=20260403d"></script>
-<script src="data/content-helpers.js?v=20260403c"></script>
-<script src="data/future/era-1990s.js?v=20260403c"></script>
-<script src="data/future/era-2000s.js?v=20260403c"></script>
-<script src="data/future/era-2010s.js?v=20260403c"></script>
-<script src="data/future/photographers-1990s.js?v=20260403c"></script>
-<script src="data/future/photographers-2000s.js?v=20260403c"></script>
-<script src="data/future/photographers-2010s.js?v=20260403c"></script>
-<script src="scripts/language.js?v=20260403e"></script>
-<script src="scripts/site.js?v=20260403c"></script>
+<script src="../data/movements.js?v=20260403d"></script>
+<script src="../data/eras.js?v=20260403c"></script>
+<script src="../data/photographers.js?v=20260403d"></script>
+<script src="../data/content-helpers.js?v=20260403c"></script>
+<script src="../data/future/era-1990s.js?v=20260403c"></script>
+<script src="../data/future/era-2000s.js?v=20260403c"></script>
+<script src="../data/future/era-2010s.js?v=20260403c"></script>
+<script src="../data/future/photographers-1990s.js?v=20260403c"></script>
+<script src="../data/future/photographers-2000s.js?v=20260403c"></script>
+<script src="../data/future/photographers-2010s.js?v=20260403c"></script>
+<script src="../scripts/language.js?v=20260403e"></script>
+<script src="../scripts/site.js?v=20260403c"></script>
 </body>
 </html>

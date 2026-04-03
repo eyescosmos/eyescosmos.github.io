@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja" data-fixed-lang="true" data-page-title-ja="写真の座標 | 関係の地図" data-page-title-en="Photo Coordinates | Relation Prototype">
+<html lang="en" data-fixed-lang="true" data-page-title-ja="写真の座標" data-page-title-en="Photo Coordinates">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>写真の座標 | 関係の地図</title>
-<meta name="description" content="写真家・運動・思想の関係性を、静かな宇宙のようなインタラクティブUIで可視化する試作ページ。">
-<link rel="canonical" href="https://eyescosmos.github.io/relations.html">
-<link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/relations.html">
-<link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/relations.html">
-<link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/relations.html">
+<title>Photo Coordinates</title>
+<meta name="description" content="An interactive map that visualizes relationships among photographers, movements, and ideas across photographic history.">
+<link rel="canonical" href="https://eyescosmos.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/">
+<link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="写真の座標">
-<meta property="og:title" content="写真の座標 | 関係の地図">
-<meta property="og:description" content="写真家・運動・思想の関係性を、静かな宇宙のようなインタラクティブUIで可視化する試作ページ。">
-<meta property="og:url" content="https://eyescosmos.github.io/relations.html">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Photo Coordinates">
+<meta property="og:title" content="Photo Coordinates">
+<meta property="og:description" content="An interactive map that visualizes relationships among photographers, movements, and ideas across photographic history.">
+<meta property="og:url" content="https://eyescosmos.github.io/en/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHJ31BY6NN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -27,7 +27,7 @@
 <style>
 @font-face {
   font-family: 'KaisotaiNextUP';
-  src: url('fonts/Kaisotai-Next-UP-B.woff2') format('woff2');
+  src: url('../fonts/Kaisotai-Next-UP-B.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -316,34 +316,34 @@ body.is-navigating #page-fade {
 </head>
 <body>
 <div class="shell">
-  <canvas id="constellation-canvas" aria-label="写真史の関係性を可視化した宇宙図"></canvas>
+  <canvas id="constellation-canvas" aria-label="A star map visualizing relationships in photographic history"></canvas>
 
   <div class="hud">
     <div class="eyebrow">Prototype / Photo Coordinates</div>
-    <h1 class="title"><em id="main-title">写真の座標</em><span class="title-status" id="title-status">随時更新中</span></h1>
-    <div class="title-subcopy" id="title-subcopy">写真史を、写真家・運動・思想の関係からたどるサイトです。</div>
-    <div class="title-note" id="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
+    <h1 class="title"><em id="main-title">Photo Coordinates</em><span class="title-status" id="title-status">Updating</span></h1>
+    <div class="title-subcopy" id="title-subcopy">A site that traces photographic history through relationships among photographers, movements, and ideas.</div>
+    <div class="title-note" id="title-note">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.</div>
     <div class="lede" id="title-lede">
-      写真家、運動、思想を大きな平面の上にひらいた試作ページです。
-      クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。
+      This prototype lays photographers, movements, and ideas across one large plane.
+      Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.
     </div>
   </div>
 
   <div class="focus-card">
-    <div class="focus-label" id="focus-label">写真の座標</div>
-    <div class="focus-meta" id="focus-meta">点ではなく名前そのものをたどりながら、関係の地図を横断します。</div>
-    <div class="focus-hint" id="focus-hint">クリックで中心化、同じ名前をもう一度クリックで詳細へ。</div>
+    <div class="focus-label" id="focus-label">Photo Coordinates</div>
+    <div class="focus-meta" id="focus-meta">Follow names rather than dots, and move across a map of relationships.</div>
+    <div class="focus-hint" id="focus-hint">Click to pin a node, then click again to open its detail page.</div>
   </div>
 
-  <div class="page-links" aria-label="一覧ページへの移動">
+  <div class="page-links" aria-label="Navigate to archive pages">
     <div class="lang-toggle" aria-label="Language switch">
-      <a class="lang-btn" data-lang="ja" href="/relations.html">Japanese</a>
-      <a class="lang-btn" data-lang="en" href="/en/relations.html">English</a>
+      <a class="lang-btn" data-lang="ja" href="/">Japanese</a>
+      <a class="lang-btn" data-lang="en" href="/en/">English</a>
     </div>
-    <a class="page-link" id="page-link-era" href="archive.html#tab-era">年代から見る</a>
-    <a class="page-link" id="page-link-movement" href="archive.html#tab-movement">表現から見る</a>
+    <a class="page-link" id="page-link-era" href="archive.html#tab-era">Browse by Era</a>
+    <a class="page-link" id="page-link-movement" href="archive.html#tab-movement">Browse by Movement</a>
   </div>
-  <div class="zoom-controls" aria-label="ズーム操作">
+  <div class="zoom-controls" aria-label="Zoom controls">
     <button class="zoom-btn" id="reset-view" type="button" aria-label="初期表示に戻る">◎</button>
     <button class="zoom-btn" id="zoom-out" type="button" aria-label="縮小">-</button>
     <button class="zoom-btn" id="zoom-in" type="button" aria-label="拡大">+</button>
@@ -352,10 +352,10 @@ body.is-navigating #page-fade {
 
 <div id="page-fade" aria-hidden="true"></div>
 
-<script src="data/movements.js?v=20260403d"></script>
-<script src="data/photographers.js?v=20260403d"></script>
-<script src="data/relation-graph.js?v=20260403c"></script>
-<script src="scripts/language.js?v=20260403e"></script>
-<script src="scripts/relations.js?v=20260403e"></script>
+<script src="../data/movements.js?v=20260403d"></script>
+<script src="../data/photographers.js?v=20260403d"></script>
+<script src="../data/relation-graph.js?v=20260403c"></script>
+<script src="../scripts/language.js?v=20260403e"></script>
+<script src="../scripts/relations.js?v=20260403e"></script>
 </body>
 </html>

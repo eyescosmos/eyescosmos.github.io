@@ -183,6 +183,8 @@
   }
 
   function applyStaticTranslations() {
+    const pageTitleJa = document.documentElement.dataset.pageTitleJa || uiText.ja.title;
+    const pageTitleEn = document.documentElement.dataset.pageTitleEn || uiText.en.title;
     const titleEl = document.getElementById('main-title');
     const statusEl = document.getElementById('title-status');
     const subcopyEl = document.getElementById('title-subcopy');
@@ -198,7 +200,7 @@
     if (ledeEl) ledeEl.innerHTML = localizedUi('lede');
     if (eraLinkEl) eraLinkEl.textContent = localizedUi('eraLink');
     if (movementLinkEl) movementLinkEl.textContent = localizedUi('movementLink');
-    document.title = localizedUi('title');
+    document.title = currentLanguage === 'en' ? pageTitleEn : pageTitleJa;
   }
 
   function hashNumber(value) {

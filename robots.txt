@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eyescosmos.github.io/sitemap.xml
