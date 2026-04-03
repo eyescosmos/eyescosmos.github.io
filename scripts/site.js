@@ -35,6 +35,12 @@ const UI_TEXT = {
     photographersInEra: 'この時代の写真家',
     movementOverview: '概要',
     movementPhotographers: 'この表現の写真家',
+    relatedReading: 'つながりから読む',
+    influencedBy: '影響を受けた写真家',
+    influencedNext: '影響を与えた写真家',
+    relatedMovement: '関連運動',
+    readNext: '次に読むべきページ',
+    notSet: '準備中',
     registeredCount: count => `登録: ${count}名`,
     explanation: '解説',
     externalLinks: '外部リンク',
@@ -72,6 +78,12 @@ const UI_TEXT = {
     photographersInEra: 'Photographers in this era',
     movementOverview: 'Overview',
     movementPhotographers: 'Photographers in this movement',
+    relatedReading: 'Related Reading',
+    influencedBy: 'Influenced by',
+    influencedNext: 'Influenced',
+    relatedMovement: 'Related movement',
+    readNext: 'Read next',
+    notSet: 'Coming soon',
     registeredCount: count => `${count} registered`,
     explanation: 'Essay',
     externalLinks: 'External Links',
@@ -102,6 +114,9 @@ const GENDER_TEXT = {
   男性: { ja: '男性', en: 'Male' },
   女性: { ja: '女性', en: 'Female' }
 };
+
+const PHOTOGRAPHER_ORDER = new Map(PHOTOGRAPHERS.map((photographer, index) => [photographer.id, index]));
+const ERA_ORDER = new Map((typeof ERAS !== 'undefined' ? ERAS : []).map((era, index) => [era.id, index]));
 
 function t(key, ...args) {
   const value = UI_TEXT[currentLanguage][key] ?? UI_TEXT.ja[key];
@@ -173,6 +188,29 @@ function displayBlockText(block) {
     : (block.text || block.textEn || '');
 }
 
+function movementSlug(value) {
+  return String(value || '').replace(/[^a-zA-Z\u3000-\u9fff]/g, '');
+}
+
+function photographerSortValue(photographer) {
+  return [
+    ERA_ORDER.get(photographer.era) ?? 999,
+    PHOTOGRAPHER_ORDER.get(photographer.id) ?? 9999
+  ];
+}
+
+function comparePhotographersChronologically(a, b) {
+  const [eraA, orderA] = photographerSortValue(a);
+  const [eraB, orderB] = photographerSortValue(b);
+  if (eraA !== eraB) return eraA - eraB;
+  return orderA - orderB;
+}
+
+function sharedMovements(a, b) {
+  const bMovements = new Set(b.movements || []);
+  return (a.movements || []).filter(movement => bMovements.has(movement));
+}
+
 function normalizeSearch(value) {
   return (value || '').toLowerCase().trim();
 }
@@ -203,6 +241,16 @@ function setLocationHash(hashValue) {
 function updateLanguageButtons() {
   document.querySelectorAll('.lang-btn').forEach(button => {
     button.classList.toggle('active', button.dataset.lang === currentLanguage);
+  });
+}
+
+function updateArchiveLanguageLinks() {
+  const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab || 'era';
+  const currentHash = window.location.hash || `#tab-${activeTab}`;
+  document.querySelectorAll('.lang-btn').forEach(button => {
+    if (!(button instanceof HTMLAnchorElement)) return;
+    if (button.dataset.lang === 'ja') button.href = `/archive.html${currentHash}`;
+    if (button.dataset.lang === 'en') button.href = `/en/archive.html${currentHash}`;
   });
 }
 
@@ -264,6 +312,7 @@ function rerenderArchive() {
 
 function initializeLanguageControls() {
   updateLanguageButtons();
+  updateArchiveLanguageLinks();
   applyStaticTranslations();
   document.querySelectorAll('.lang-btn').forEach(button => {
     button.addEventListener('click', () => {
@@ -271,6 +320,7 @@ function initializeLanguageControls() {
       if (next === currentLanguage) return;
       currentLanguage = languageApi ? languageApi.setLanguage(next) : next;
       updateLanguageButtons();
+      updateArchiveLanguageLinks();
       applyStaticTranslations();
       rerenderArchive();
     });
@@ -385,6 +435,153 @@ function renderCiteText(text, citations) {
   return result;
 }
 
+function findInfluencePhotographer(photographer, direction) {
+  const candidates = realPhotographers()
+    .filter(candidate => candidate.id !== photographer.id)
+    .filter(candidate => direction < 0
+      ? comparePhotographersChronologically(candidate, photographer) < 0
+      : comparePhotographersChronologically(candidate, photographer) > 0);
+
+  if (!candidates.length) return null;
+
+  const scored = candidates.map(candidate => {
+    const shared = sharedMovements(photographer, candidate);
+    const eraGap = Math.abs((ERA_ORDER.get(candidate.era) ?? 999) - (ERA_ORDER.get(photographer.era) ?? 999));
+    const orderGap = Math.abs((PHOTOGRAPHER_ORDER.get(candidate.id) ?? 9999) - (PHOTOGRAPHER_ORDER.get(photographer.id) ?? 9999));
+    const nationalityBonus = candidate.nationality === photographer.nationality ? 6 : 0;
+    return {
+      candidate,
+      eraGap,
+      orderGap,
+      score: shared.length * 100 - eraGap * 8 - Math.min(orderGap, 18) + nationalityBonus
+    };
+  });
+
+  scored.sort((left, right) => {
+    if (right.score !== left.score) return right.score - left.score;
+    if (left.eraGap !== right.eraGap) return left.eraGap - right.eraGap;
+    if (left.orderGap !== right.orderGap) return left.orderGap - right.orderGap;
+    return comparePhotographersChronologically(left.candidate, right.candidate);
+  });
+
+  return scored[0]?.candidate || null;
+}
+
+function findReadNextTarget(photographer, influencedBy, influencedNext) {
+  const used = new Set([photographer.id]);
+  if (influencedBy) used.add(influencedBy.id);
+  if (influencedNext) used.add(influencedNext.id);
+
+  const alternateMovement = (photographer.movements || [])[1];
+  if (alternateMovement) {
+    const slug = movementSlug(alternateMovement);
+    return {
+      label: displayMovementName(alternateMovement),
+      href: `#movement-${slug}`,
+      onclick: `openRecommendedMovement(event,'${slug}')`
+    };
+  }
+
+  const nextChronological = realPhotographers()
+    .filter(candidate => !used.has(candidate.id))
+    .sort(comparePhotographersChronologically)
+    .find(candidate => comparePhotographersChronologically(candidate, photographer) > 0);
+
+  if (nextChronological) {
+    return {
+      label: displayName(nextChronological),
+      href: `#photographer-${nextChronological.id}`,
+      onclick: `openRecommendedPhotographer(event,'${nextChronological.id}')`
+    };
+  }
+
+  const primaryMovement = (photographer.movements || [])[0];
+  if (primaryMovement) {
+    const slug = movementSlug(primaryMovement);
+    return {
+      label: displayMovementName(primaryMovement),
+      href: `#movement-${slug}`,
+      onclick: `openRecommendedMovement(event,'${slug}')`
+    };
+  }
+
+  return null;
+}
+
+function renderRecommendationLink(item) {
+  if (!item) return `<span class="detail-related-empty">${t('notSet')}</span>`;
+  return `<a class="detail-related-link" href="${item.href}" onclick="${item.onclick}">${item.label}</a>`;
+}
+
+function buildRelatedReadingSection(photographer) {
+  const influencedBy = findInfluencePhotographer(photographer, -1);
+  const influencedNext = findInfluencePhotographer(photographer, 1);
+  const primaryMovement = (photographer.movements || [])[0]
+    ? {
+        label: displayMovementName(photographer.movements[0]),
+        href: `#movement-${movementSlug(photographer.movements[0])}`,
+        onclick: `openRecommendedMovement(event,'${movementSlug(photographer.movements[0])}')`
+      }
+    : null;
+  const readNext = findReadNextTarget(photographer, influencedBy, influencedNext);
+
+  const items = [
+    [
+      t('influencedBy'),
+      influencedBy
+        ? {
+            label: displayName(influencedBy),
+            href: `#photographer-${influencedBy.id}`,
+            onclick: `openRecommendedPhotographer(event,'${influencedBy.id}')`
+          }
+        : null
+    ],
+    [
+      t('influencedNext'),
+      influencedNext
+        ? {
+            label: displayName(influencedNext),
+            href: `#photographer-${influencedNext.id}`,
+            onclick: `openRecommendedPhotographer(event,'${influencedNext.id}')`
+          }
+        : null
+    ],
+    [t('relatedMovement'), primaryMovement],
+    [t('readNext'), readNext]
+  ];
+
+  const rows = items.map(([label, item]) => `
+      <div class="detail-related-item">
+        <div class="detail-related-label">${label}</div>
+        <div class="detail-related-value">${renderRecommendationLink(item)}</div>
+      </div>
+    `).join('');
+
+  return `
+      <div class="detail-section">
+        <div class="detail-section-title">${t('relatedReading')}</div>
+        <div class="detail-related-grid">${rows}</div>
+      </div>`;
+}
+
+function openRecommendedPhotographer(event, pid) {
+  if (event) event.preventDefault();
+  if (!pid) return false;
+  setLocationHash(`photographer-${pid}`);
+  updateArchiveLanguageLinks();
+  revealPhotographerFromHash(pid);
+  return false;
+}
+
+function openRecommendedMovement(event, mvId) {
+  if (event) event.preventDefault();
+  if (!mvId) return false;
+  setLocationHash(`movement-${mvId}`);
+  updateArchiveLanguageLinks();
+  revealMovementFromHash(mvId);
+  return false;
+}
+
 function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const isMovement = idPrefix !== 'panel-';
   const panelId = `${idPrefix}${p.id}`;
@@ -464,6 +661,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
         <div class="detail-section-title">${t('books')}</div>
         ${amazonHTML}
       </div>` : '';
+  const relatedSection = buildRelatedReadingSection(p);
 
   return `
     <div class="detail-panel" id="${panelId}">
@@ -476,6 +674,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
       </div>
       ${tags ? `<div class="detail-tags">${tags}</div>` : ''}
       ${contextHTML}
+      ${relatedSection}
       ${linksSection}
       ${booksSection}
     </div>
@@ -688,6 +887,7 @@ function switchTab(tabId) {
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById(`tab-${tabId}`).classList.add('active');
   document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+  updateArchiveLanguageLinks();
 
   if (tabId === 'movement') {
     setupObserver('.movement-section');
@@ -882,4 +1082,7 @@ renderMovementTab();
 initRandom();
 applyFilters(); // initialize count
 handleDeepLink();
-window.addEventListener('hashchange', handleDeepLink);
+window.addEventListener('hashchange', () => {
+  handleDeepLink();
+  updateArchiveLanguageLinks();
+});
