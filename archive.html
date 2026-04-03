@@ -75,6 +75,13 @@ header::before {
   gap: 20px;
   margin-bottom: 20px;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 .header-label {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
@@ -100,6 +107,30 @@ header::before {
   border-color: var(--accent-dim);
   color: var(--text);
   background: rgba(200,169,110,0.06);
+}
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  background: rgba(16, 15, 13, 0.7);
+}
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+.lang-btn.active {
+  color: var(--text);
+  background: rgba(200,169,110,0.12);
+}
+.lang-btn + .lang-btn {
+  border-left: 1px solid var(--border);
 }
 h1 {
   font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
@@ -884,6 +915,7 @@ footer a:hover { color: var(--accent); }
 @media (max-width: 768px) {
   header { padding: 48px 20px 40px; }
   .header-top { flex-direction: column; align-items: flex-start; }
+  .header-actions { justify-content: flex-start; }
   .container, .tab-nav-inner { padding: 0 20px; }
   .era-toggle { gap: 16px; padding: 28px 0; }
   .era-date { font-size: 36px; }
@@ -906,25 +938,31 @@ footer a:hover { color: var(--accent); }
 <header>
 <div class="container">
   <div class="header-top">
-    <div class="header-label">Photo Coordinates / Archive</div>
-    <a class="header-link" href="index.html">写真の座標へ戻る</a>
+    <div class="header-label" id="archive-header-label">Photo Coordinates / Archive</div>
+    <div class="header-actions">
+      <div class="lang-toggle" aria-label="Language switch">
+        <button class="lang-btn" type="button" data-lang="ja">JP</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+      </div>
+      <a class="header-link" id="archive-back-link" href="index.html">写真の座標へ戻る</a>
+    </div>
   </div>
   <div class="title-row">
-    <h1><em>写真の座標</em></h1>
-    <span class="wip-badge">随時更新中</span>
+    <h1 id="archive-main-title"><em>写真の座標</em></h1>
+    <span class="wip-badge" id="archive-wip-badge">随時更新中</span>
   </div>
-  <p class="header-subtitle">年代と表現</p>
-  <p class="header-sub">写真は常にその時代の社会・政治・技術の文脈の中に生まれてきた。年代をたどりながら、世界の動きと写真表現の関係を探る。</p>
-  <div class="ai-disclaimer">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、曖昧さや誤りが含まれる可能性があります。気になった作家・表現・時代については、ぜひご自身でも確認してください。</div>
+  <p class="header-subtitle" id="archive-header-subtitle">年代と表現</p>
+  <p class="header-sub" id="archive-header-sub">写真は常にその時代の社会・政治・技術の文脈の中に生まれてきた。年代をたどりながら、世界の動きと写真表現の関係を探る。</p>
+  <div class="ai-disclaimer" id="archive-ai-disclaimer">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、曖昧さや誤りが含まれる可能性があります。気になった作家・表現・時代については、ぜひご自身でも確認してください。</div>
 
   <div class="random-box" id="random-box" onclick="scrollToPhotographer()">
-    <div class="random-label">今日のランダム写真家</div>
+    <div class="random-label" id="random-label">今日のランダム写真家</div>
     <div class="random-name" id="random-name">—</div>
     <div class="random-meta" id="random-meta">—</div>
     <div class="random-excerpt" id="random-excerpt">—</div>
     <div class="random-actions">
-      <button class="coordinate-link" type="button" onclick="openRandomCoordinates(event)">座標で見る</button>
-      <div class="random-hint">→ クリックして詳細を見る</div>
+      <button class="coordinate-link" id="random-coordinate-button" type="button" onclick="openRandomCoordinates(event)">座標で見る</button>
+      <div class="random-hint" id="random-hint">→ クリックして詳細を見る</div>
     </div>
   </div>
 </div>
@@ -933,9 +971,9 @@ footer a:hover { color: var(--accent); }
 <!-- ══════════════════════════════ TABS ══════════════════════════════ -->
 <nav class="tab-nav">
   <div class="tab-nav-inner">
-    <button class="tab-btn active" data-tab="era" onclick="switchTab('era')">年代から見る</button>
-    <button class="tab-btn" data-tab="movement" onclick="switchTab('movement')">表現から見る</button>
-    <a class="tab-link" href="index.html">写真の座標</a>
+    <button class="tab-btn active" data-tab="era" onclick="switchTab('era')" id="tab-era-button">年代から見る</button>
+    <button class="tab-btn" data-tab="movement" onclick="switchTab('movement')" id="tab-movement-button">表現から見る</button>
+    <a class="tab-link" href="index.html" id="tab-home-link">写真の座標</a>
   </div>
 </nav>
 
@@ -943,7 +981,7 @@ footer a:hover { color: var(--accent); }
 <div id="tab-era" class="tab-content active">
   <div class="container">
     <div class="filter-bar">
-      <span class="filter-label">絞り込み</span>
+      <span class="filter-label" id="filter-label">絞り込み</span>
       <input
         type="search"
         class="filter-input"
@@ -952,12 +990,12 @@ footer a:hover { color: var(--accent); }
         oninput="applyFilters()"
       >
       <select class="filter-select" id="filter-country" onchange="applyFilters()">
-        <option value="">すべての国</option>
+        <option value="" id="filter-country-default">すべての国</option>
       </select>
       <select class="filter-select" id="filter-movement-era" onchange="applyFilters()">
-        <option value="">すべてのムーブメント</option>
+        <option value="" id="filter-movement-default">すべてのムーブメント</option>
       </select>
-      <button class="filter-reset" onclick="resetFilters()">リセット</button>
+      <button class="filter-reset" id="filter-reset-button" onclick="resetFilters()">リセット</button>
       <span class="filter-count" id="filter-count"></span>
     </div>
     <div id="no-results" class="no-results">条件に一致する写真家が見つかりません</div>
@@ -982,16 +1020,17 @@ footer a:hover { color: var(--accent); }
 </footer>
 
 <!-- ══════════════════════════════ DATA & LOGIC ══════════════════════════════ -->
-<script src="data/movements.js?v=20260403a"></script>
-<script src="data/eras.js?v=20260403a"></script>
-<script src="data/photographers.js?v=20260403a"></script>
-<script src="data/content-helpers.js?v=20260403a"></script>
-<script src="data/future/era-1990s.js?v=20260403a"></script>
-<script src="data/future/era-2000s.js?v=20260403a"></script>
-<script src="data/future/era-2010s.js?v=20260403a"></script>
-<script src="data/future/photographers-1990s.js?v=20260403a"></script>
-<script src="data/future/photographers-2000s.js?v=20260403a"></script>
-<script src="data/future/photographers-2010s.js?v=20260403a"></script>
-<script src="scripts/site.js?v=20260403a"></script>
+<script src="data/movements.js?v=20260403c"></script>
+<script src="data/eras.js?v=20260403c"></script>
+<script src="data/photographers.js?v=20260403c"></script>
+<script src="data/content-helpers.js?v=20260403c"></script>
+<script src="data/future/era-1990s.js?v=20260403c"></script>
+<script src="data/future/era-2000s.js?v=20260403c"></script>
+<script src="data/future/era-2010s.js?v=20260403c"></script>
+<script src="data/future/photographers-1990s.js?v=20260403c"></script>
+<script src="data/future/photographers-2000s.js?v=20260403c"></script>
+<script src="data/future/photographers-2010s.js?v=20260403c"></script>
+<script src="scripts/language.js?v=20260403c"></script>
+<script src="scripts/site.js?v=20260403c"></script>
 </body>
 </html>

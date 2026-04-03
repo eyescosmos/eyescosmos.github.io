@@ -9,6 +9,8 @@
   const zoomOutButton = document.getElementById('zoom-out');
   const resetViewButton = document.getElementById('reset-view');
   const prefersCoarse = window.matchMedia('(pointer: coarse)').matches;
+  const languageApi = window.PhotoCoordinatesI18n;
+  let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
 
   const palette = {
     photographer: '#f1ddc1',
@@ -26,9 +28,55 @@
   };
 
   const typeLabel = {
-    photographer: '写真家',
-    movement: '運動',
-    idea: '思想'
+    ja: {
+      photographer: '写真家',
+      movement: '運動',
+      idea: '思想'
+    },
+    en: {
+      photographer: 'Photographer',
+      movement: 'Movement',
+      idea: 'Idea'
+    }
+  };
+
+  const uiText = {
+    ja: {
+      title: '写真の座標',
+      status: '随時更新中',
+      subcopy: '写真史を、写真家・運動・思想の関係からたどるサイトです。',
+      note: '※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。',
+      lede: '写真家、運動、思想を大きな平面の上にひらいた試作ページです。<br>クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。',
+      eraLink: '年代から見る',
+      movementLink: '表現から見る',
+      defaultLabel: '写真の座標',
+      defaultMeta: '点ではなく名前そのものをたどりながら、関係の地図を横断します。',
+      defaultHintPointer: 'クリックで関係を開き、◎で初期表示に戻れます。',
+      defaultHintTouch: 'タップで関係を開き、◎で初期表示に戻れます。',
+      focusedHint: '固定中。線はこの対象から辿れるつながりを示します。もう一度クリックで新しいタブに詳細を開きます。',
+      dragHint: '固定中。ドラッグで地図を移動できます。',
+      notFocusedHint: 'まだ固定されていません。クリックするとこの名前が中心になります。',
+      direct: '直接',
+      visible: '表示中'
+    },
+    en: {
+      title: 'Photo Coordinates',
+      status: 'Updating',
+      subcopy: 'A site that traces photographic history through relationships among photographers, movements, and ideas.',
+      note: 'This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.',
+      lede: 'This prototype lays photographers, movements, and ideas across one large plane.<br>Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.',
+      eraLink: 'Browse by Era',
+      movementLink: 'Browse by Movement',
+      defaultLabel: 'Photo Coordinates',
+      defaultMeta: 'Follow names rather than dots, and move across a map of relationships.',
+      defaultHintPointer: 'Click to reveal relationships, and use ◎ to return to the default view.',
+      defaultHintTouch: 'Tap to reveal relationships, and use ◎ to return to the default view.',
+      focusedHint: 'Pinned. The lines show what can be traced outward from this subject. Click once more to open the detail page in a new tab.',
+      dragHint: 'Pinned. You can drag to move around the map.',
+      notFocusedHint: 'This node is not pinned yet. Click to bring it to the center.',
+      direct: 'Direct',
+      visible: 'Visible'
+    }
   };
 
   const state = {
@@ -95,6 +143,63 @@
     sourceNode: null,
     targetNode: null
   }));
+
+  function localizedUi(key) {
+    return uiText[currentLanguage][key] || uiText.ja[key] || '';
+  }
+
+  function getNodeLabel(node) {
+    if (!node) return '';
+    if (currentLanguage === 'en') return node.labelEn || node.label || '';
+    return node.labelJa || node.label || '';
+  }
+
+  function refreshNodeMetrics() {
+    nodes.forEach(node => {
+      node.hitWidth = Math.max(90, getNodeLabel(node).length * 16 + 36);
+    });
+  }
+
+  function applyLanguageControls() {
+    document.querySelectorAll('.lang-btn').forEach(button => {
+      button.classList.toggle('active', button.dataset.lang === currentLanguage);
+    });
+  }
+
+  function initializeLanguageControls() {
+    applyLanguageControls();
+    document.querySelectorAll('.lang-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        if (button.dataset.lang === currentLanguage) return;
+        currentLanguage = languageApi ? languageApi.setLanguage(button.dataset.lang) : button.dataset.lang;
+        applyLanguageControls();
+        applyStaticTranslations();
+        refreshNodeMetrics();
+        updateFocusPanel();
+        updateCursor();
+        scheduleFrame();
+      });
+    });
+  }
+
+  function applyStaticTranslations() {
+    const titleEl = document.getElementById('main-title');
+    const statusEl = document.getElementById('title-status');
+    const subcopyEl = document.getElementById('title-subcopy');
+    const noteEl = document.getElementById('title-note');
+    const ledeEl = document.getElementById('title-lede');
+    const eraLinkEl = document.getElementById('page-link-era');
+    const movementLinkEl = document.getElementById('page-link-movement');
+
+    if (titleEl) titleEl.textContent = localizedUi('title');
+    if (statusEl) statusEl.textContent = localizedUi('status');
+    if (subcopyEl) subcopyEl.textContent = localizedUi('subcopy');
+    if (noteEl) noteEl.textContent = localizedUi('note');
+    if (ledeEl) ledeEl.innerHTML = localizedUi('lede');
+    if (eraLinkEl) eraLinkEl.textContent = localizedUi('eraLink');
+    if (movementLinkEl) movementLinkEl.textContent = localizedUi('movementLink');
+    document.title = localizedUi('title');
+  }
 
   function hashNumber(value) {
     let hash = 0;
@@ -776,11 +881,11 @@
     const target = node || hovered;
 
     if (!target) {
-      labelEl.textContent = '写真の座標';
-      metaEl.textContent = '点ではなく名前そのものをたどりながら、関係の地図を横断します。';
+      labelEl.textContent = localizedUi('defaultLabel');
+      metaEl.textContent = localizedUi('defaultMeta');
       hintEl.textContent = prefersCoarse
-        ? 'タップで関係を開き、◎で初期表示に戻れます。'
-        : 'クリックで関係を開き、◎で初期表示に戻れます。';
+        ? localizedUi('defaultHintTouch')
+        : localizedUi('defaultHintPointer');
       return;
     }
 
@@ -789,14 +894,14 @@
     const reachCount = traversal
       ? Array.from(traversal.depths.values()).filter(depth => depth > 0 && depth <= state.maxVisibleDepth).length
       : 0;
-    labelEl.textContent = target.label;
-    metaEl.textContent = `${typeLabel[target.type]} / 直接 ${relatedCount} / 表示中 ${reachCount}`;
+    labelEl.textContent = getNodeLabel(target);
+    metaEl.textContent = `${typeLabel[currentLanguage][target.type]} / ${localizedUi('direct')} ${relatedCount} / ${localizedUi('visible')} ${reachCount}`;
     if (node && node.id === target.id) {
       hintEl.textContent = target.url
-        ? '固定中。線はこの対象から辿れるつながりを示します。もう一度クリックで新しいタブに詳細を開きます。'
-        : '固定中。ドラッグで地図を移動できます。';
+        ? localizedUi('focusedHint')
+        : localizedUi('dragHint');
     } else {
-      hintEl.textContent = 'まだ固定されていません。クリックするとこの名前が中心になります。';
+      hintEl.textContent = localizedUi('notFocusedHint');
     }
   }
 
@@ -1182,6 +1287,7 @@
       return;
     }
 
+    const label = getNodeLabel(node);
     const placeLeft = isLabelOnLeft(node);
     const labelX = placeLeft ? point.x - 11 : point.x + 11;
     const labelY = point.y - 4;
@@ -1198,10 +1304,10 @@
     ctx.strokeStyle = palette.textOutline;
     ctx.lineWidth = nodeState.active ? 5.5 : nodeState.related ? 4 : 3.2;
     ctx.globalAlpha = nodeState.active ? 0.96 : nodeState.related ? 0.82 : Math.max(0.26, nodeState.emphasis);
-    ctx.strokeText(node.label, labelX, labelY);
+    ctx.strokeText(label, labelX, labelY);
     ctx.fillStyle = nodeState.active ? palette.activeText : palette.text;
     ctx.globalAlpha = nodeState.active ? 0.98 : nodeState.related ? 0.82 : Math.max(0.24, nodeState.emphasis);
-    ctx.fillText(node.label, labelX, labelY);
+    ctx.fillText(label, labelX, labelY);
 
     ctx.textAlign = 'left';
   }
@@ -1269,6 +1375,9 @@
   zoomOutButton.addEventListener('click', () => nudgeZoom(1 / 1.35));
   resetViewButton.addEventListener('click', resetView);
 
+  initializeLanguageControls();
+  applyStaticTranslations();
+  refreshNodeMetrics();
   resize();
   layoutNodes();
   centerInitialNode();

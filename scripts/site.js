@@ -5,6 +5,114 @@
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 let activeFilters = { search: '', country: '', movement: '' };
 const EMPTY_BLOCK = '<div class="empty-copy" aria-hidden="true"></div>';
+const languageApi = window.PhotoCoordinatesI18n;
+let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
+
+const UI_TEXT = {
+  ja: {
+    homeTitle: '写真の座標',
+    homeBack: '写真の座標へ戻る',
+    wip: '随時更新中',
+    archiveHeaderLabel: 'Photo Coordinates / Archive',
+    archiveSubtitle: '年代と表現',
+    archiveLead: '写真は常にその時代の社会・政治・技術の文脈の中に生まれてきた。年代をたどりながら、世界の動きと写真表現の関係を探る。',
+    archiveDisclaimer: '※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、曖昧さや誤りが含まれる可能性があります。気になった作家・表現・時代については、ぜひご自身でも確認してください。',
+    randomLabel: '今日のランダム写真家',
+    randomHint: '→ クリックして詳細を見る',
+    coordinateButton: '座標で見る',
+    coordinateDetail: '解説',
+    eraTab: '年代から見る',
+    movementTab: '表現から見る',
+    filterLabel: '絞り込み',
+    filterSearchPlaceholder: '写真家名で検索',
+    allCountries: 'すべての国',
+    allMovements: 'すべてのムーブメント',
+    reset: 'リセット',
+    noResults: '条件に一致する写真家が見つかりません',
+    emptyEra: 'この時代の写真家はこれから追加予定です。',
+    worldEvents: '世界情勢',
+    photoContext: '写真と時代',
+    photographersInEra: 'この時代の写真家',
+    movementOverview: '概要',
+    movementPhotographers: 'この表現の写真家',
+    registeredCount: count => `登録: ${count}名`,
+    explanation: '解説',
+    externalLinks: '外部リンク',
+    books: '写真集',
+    amazon: '写真集を Amazon で見る ↗',
+    amazonPending: '写真集へのリンク（準備中）',
+    sourcePrefix: '出典：',
+    photographerPlaceholder: '追加予定',
+    totalCount: total => `${total}人`,
+    filteredCount: (visible, total) => `${visible} / ${total}人`
+  },
+  en: {
+    homeTitle: 'Photo Coordinates',
+    homeBack: 'Back to Photo Coordinates',
+    wip: 'Updating',
+    archiveHeaderLabel: 'Photo Coordinates / Archive',
+    archiveSubtitle: 'Era and Movement',
+    archiveLead: 'Photography has always emerged within the social, political, and technological conditions of its time. Move through the eras and trace how world events shaped photographic expression.',
+    archiveDisclaimer: 'This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but ambiguity, errors, or outdated details may remain. Please verify topics that matter to you.',
+    randomLabel: 'Photographer of the Day',
+    randomHint: '→ Click to open the detail panel',
+    coordinateButton: 'View in Coordinates',
+    coordinateDetail: 'Notes',
+    eraTab: 'Browse by Era',
+    movementTab: 'Browse by Movement',
+    filterLabel: 'Filters',
+    filterSearchPlaceholder: 'Search photographers',
+    allCountries: 'All countries',
+    allMovements: 'All movements',
+    reset: 'Reset',
+    noResults: 'No photographers match the current filters.',
+    emptyEra: 'Photographers for this era will be added soon.',
+    worldEvents: 'World Events',
+    photoContext: 'Photography and the Era',
+    photographersInEra: 'Photographers in this era',
+    movementOverview: 'Overview',
+    movementPhotographers: 'Photographers in this movement',
+    registeredCount: count => `${count} registered`,
+    explanation: 'Essay',
+    externalLinks: 'External Links',
+    books: 'Books',
+    amazon: 'View on Amazon ↗',
+    amazonPending: 'Book link coming soon',
+    sourcePrefix: 'Sources:',
+    photographerPlaceholder: 'Coming soon',
+    totalCount: total => `${total}`,
+    filteredCount: (visible, total) => `${visible} / ${total}`
+  }
+};
+
+const COUNTRY_TEXT = {
+  FR: { ja: 'FR', en: 'France' },
+  GB: { ja: 'GB', en: 'United Kingdom' },
+  US: { ja: 'US', en: 'United States' },
+  'IT / GB': { ja: 'IT / GB', en: 'Italy / United Kingdom' },
+  'GB / US': { ja: 'GB / US', en: 'United Kingdom / United States' },
+  'DK / US': { ja: 'DK / US', en: 'Denmark / United States' },
+  DE: { ja: 'DE', en: 'Germany' },
+  JP: { ja: 'JP', en: 'Japan' },
+  BR: { ja: 'BR', en: 'Brazil' },
+  CA: { ja: 'CA', en: 'Canada' }
+};
+
+const GENDER_TEXT = {
+  男性: { ja: '男性', en: 'Male' },
+  女性: { ja: '女性', en: 'Female' }
+};
+
+function t(key, ...args) {
+  const value = UI_TEXT[currentLanguage][key] ?? UI_TEXT.ja[key];
+  return typeof value === 'function' ? value(...args) : value;
+}
+
+function localizeValue(valueJa, valueEn) {
+  return currentLanguage === 'en'
+    ? (valueEn || valueJa || '')
+    : (valueJa || valueEn || '');
+}
 
 function realPhotographers() {
   return PHOTOGRAPHERS.filter(p => !p.isPlaceholder);
@@ -19,24 +127,50 @@ function renderSources(sources) {
   const links = sources.map(s =>
     `<a href="${s.url}" target="_blank" rel="noopener">${s.text}</a>`
   ).join(' / ');
-  return `<div class="context-source">出典：${links}</div>`;
+  return `<div class="context-source">${t('sourcePrefix')}${links}</div>`;
 }
 
 function renderEmptyPhotographerState() {
-  return '<div class="empty-photographers">この時代の写真家はこれから追加予定です。</div>';
+  return `<div class="empty-photographers">${t('emptyEra')}</div>`;
 }
 
 function displayName(p) {
-  return p.nameJa || p.name || '追加予定';
+  if (currentLanguage === 'en') return p.name || p.nameJa || t('photographerPlaceholder');
+  return p.nameJa || p.name || t('photographerPlaceholder');
 }
 
 function displaySubName(p) {
   if (!p.nameJa || !p.name) return '';
-  return `<div class="card-name-sub">${p.name}</div>`;
+  return `<div class="card-name-sub">${currentLanguage === 'en' ? p.nameJa : p.name}</div>`;
 }
 
 function displayMeta(p) {
-  return [p.flag, p.nationality].filter(Boolean).join(' ').trim();
+  const country = COUNTRY_TEXT[p.nationality];
+  const label = country ? country[currentLanguage] : p.nationality;
+  return [p.flag, label].filter(Boolean).join(' ').trim();
+}
+
+function displayGender(value) {
+  if (!value) return '';
+  const text = GENDER_TEXT[value];
+  return text ? text[currentLanguage] : value;
+}
+
+function displayMovementName(movementName) {
+  if (currentLanguage === 'en') {
+    return MOVEMENTS_META[movementName]?.en || movementName;
+  }
+  return movementName;
+}
+
+function displayEraTitle(era) {
+  return currentLanguage === 'en' ? era.titleEn || era.title : era.title;
+}
+
+function displayBlockText(block) {
+  return currentLanguage === 'en'
+    ? (block.textEn || block.text || '')
+    : (block.text || block.textEn || '');
 }
 
 function normalizeSearch(value) {
@@ -54,6 +188,7 @@ function buildSearchIndex(p) {
     p.nationality,
     p.years,
     ...(p.movements || []),
+    ...(p.movements || []).map(m => MOVEMENTS_META[m]?.en || ''),
   ].filter(Boolean).join(' '));
 }
 
@@ -63,6 +198,83 @@ function setLocationHash(hashValue) {
   const url = new URL(window.location.href);
   url.hash = hashValue || '';
   history.replaceState(null, '', url.toString());
+}
+
+function updateLanguageButtons() {
+  document.querySelectorAll('.lang-btn').forEach(button => {
+    button.classList.toggle('active', button.dataset.lang === currentLanguage);
+  });
+}
+
+function applyStaticTranslations() {
+  document.documentElement.lang = currentLanguage;
+  document.title = currentLanguage === 'en' ? 'Photo Coordinates | Eras and Movements' : '写真の座標 | 年代と表現';
+
+  const mappings = [
+    ['archive-back-link', 'homeBack'],
+    ['archive-wip-badge', 'wip'],
+    ['archive-header-subtitle', 'archiveSubtitle'],
+    ['archive-header-sub', 'archiveLead'],
+    ['archive-ai-disclaimer', 'archiveDisclaimer'],
+    ['random-label', 'randomLabel'],
+    ['random-coordinate-button', 'coordinateButton'],
+    ['random-hint', 'randomHint'],
+    ['tab-era-button', 'eraTab'],
+    ['tab-movement-button', 'movementTab'],
+    ['tab-home-link', 'homeTitle'],
+    ['filter-label', 'filterLabel'],
+    ['filter-reset-button', 'reset'],
+    ['no-results', 'noResults']
+  ];
+
+  mappings.forEach(([id, key]) => {
+    const element = document.getElementById(id);
+    if (element) element.textContent = t(key);
+  });
+
+  const titleEl = document.getElementById('archive-main-title');
+  if (titleEl) {
+    titleEl.innerHTML = currentLanguage === 'en' ? '<em>Photo Coordinates</em>' : '<em>写真の座標</em>';
+  }
+
+  const headerLabel = document.getElementById('archive-header-label');
+  if (headerLabel) {
+    headerLabel.textContent = currentLanguage === 'en' ? 'Photo Coordinates / Archive' : 'Photo Coordinates / Archive';
+  }
+
+  const countryDefault = document.getElementById('filter-country-default');
+  if (countryDefault) countryDefault.textContent = t('allCountries');
+
+  const movementDefault = document.getElementById('filter-movement-default');
+  if (movementDefault) movementDefault.textContent = t('allMovements');
+
+  const searchInput = document.getElementById('filter-search');
+  if (searchInput) searchInput.placeholder = t('filterSearchPlaceholder');
+}
+
+function rerenderArchive() {
+  const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab || 'era';
+  renderEraTab();
+  renderMovementTab();
+  initRandom();
+  applyFilters();
+  switchTab(activeTab);
+  handleDeepLink();
+}
+
+function initializeLanguageControls() {
+  updateLanguageButtons();
+  applyStaticTranslations();
+  document.querySelectorAll('.lang-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const next = button.dataset.lang;
+      if (next === currentLanguage) return;
+      currentLanguage = languageApi ? languageApi.setLanguage(next) : next;
+      updateLanguageButtons();
+      applyStaticTranslations();
+      rerenderArchive();
+    });
+  });
 }
 
 function openCoordinatesForPhotographer(pid) {
@@ -96,24 +308,24 @@ function renderEraTab() {
     section.innerHTML = `
       <div class="era-toggle" onclick="toggleEra('${era.id}')">
         <div class="era-date">${era.id}<span>— ${era.period.split('—')[1].trim()}</span></div>
-        <div class="era-title" style="margin:0">${era.title}</div>
+        <div class="era-title" style="margin:0">${displayEraTitle(era)}</div>
         <div class="era-toggle-arrow">▼</div>
       </div>
       <div class="era-body">
         <div class="era-body-content">
             <div class="era-info">
               <div class="context-block">
-                <div class="context-label">世界情勢</div>
-                <div class="context-text">${renderOptionalText(era.worldEvents.text)}</div>
+                <div class="context-label">${t('worldEvents')}</div>
+                <div class="context-text">${renderOptionalText(displayBlockText(era.worldEvents))}</div>
                 ${renderSources(era.worldEvents.sources)}
               </div>
               <div class="context-block">
-                <div class="context-label">写真と時代</div>
-                <div class="context-text">${renderOptionalText(era.photoContext.text)}</div>
+                <div class="context-label">${t('photoContext')}</div>
+                <div class="context-text">${renderOptionalText(displayBlockText(era.photoContext))}</div>
                 ${renderSources(era.photoContext.sources)}
               </div>
             </div>
-            <div class="photographers-label">この時代の写真家</div>
+            <div class="photographers-label">${t('photographersInEra')}</div>
             <div class="photographers-grid" id="grid-${era.id}">${cardsHTML}</div>
             <div id="panels-${era.id}"></div>
           </div>
@@ -135,16 +347,16 @@ function renderEraTab() {
 
 function renderCard(p, extraAttrs = '') {
   const tags = p.movements.length
-    ? p.movements.map(m => `<span class="card-tag">${m}</span>`).join('')
+    ? p.movements.map(m => `<span class="card-tag">${displayMovementName(m)}</span>`).join('')
     : '';
   const searchIndex = buildSearchIndex(p);
   const coordinateButton = p.isPlaceholder
     ? ''
-    : `<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer('${p.id}')">座標で見る</button>`;
+    : `<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer('${p.id}')">${t('coordinateButton')}</button>`;
   return `
     <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" data-search="${searchIndex}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" ${extraAttrs}>
       <div class="card-action">
-        <div class="card-action-label">解説</div>
+        <div class="card-action-label">${t('coordinateDetail')}</div>
         <div class="card-arrow">↗</div>
       </div>
       <div class="card-flag-nat">${displayMeta(p)}</div>
@@ -178,13 +390,13 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const panelId = `${idPrefix}${p.id}`;
   const closeFn = customCloseFn || (isMovement ? `closeMovementDetail('${p.id}')` : `closeDetail('${p.id}')`);
 
-  const tags = p.movements.map(m => `<span class="detail-tag">${m}</span>`).join('');
+  const tags = p.movements.map(m => `<span class="detail-tag">${displayMovementName(m)}</span>`).join('');
   const linksHTML = p.links.map(l =>
     `<a class="detail-link" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`
   ).join('');
   const amazonHTML = p.amazon
-    ? `<a class="detail-link" href="${p.amazon}" target="_blank" rel="noopener sponsored">写真集を Amazon で見る ↗</a>`
-    : `<div class="amazon-placeholder">${p.isPlaceholder ? '' : '写真集へのリンク（準備中）'}</div>`;
+    ? `<a class="detail-link" href="${p.amazon}" target="_blank" rel="noopener sponsored">${t('amazon')}</a>`
+    : `<div class="amazon-placeholder">${p.isPlaceholder ? '' : t('amazonPending')}</div>`;
 
   if (p.isPlaceholder) {
     return `
@@ -197,7 +409,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
           <button class="close-btn" onclick="${closeFn}">✕</button>
         </div>
         <div class="detail-section">
-          <div class="detail-section-title">解説</div>
+          <div class="detail-section-title">${t('explanation')}</div>
           <div class="detail-text">${EMPTY_BLOCK}</div>
         </div>
       </div>
@@ -208,20 +420,20 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   let contextHTML;
   if (p.context && p.context.citations) {
     /* 新フォーマット：context.text に *1 *2 マーカー、context.citations に出典 */
-    const ctxText = renderCiteText(p.context.text, p.context.citations);
+    const ctxText = renderCiteText(localizeValue(p.context.text, p.context.textEn), p.context.citations);
     const citeListHTML = p.context.citations.map(c =>
       `<div class="cite-item"><span class="cite-num">*${c.num}</span><a href="${c.url}" target="_blank" rel="noopener">${c.name}</a></div>`
     ).join('');
     contextHTML = `
       <div class="detail-section">
-        <div class="detail-section-title">解説</div>
+        <div class="detail-section-title">${t('explanation')}</div>
         <div class="detail-text">${ctxText}</div>
         <div class="cite-list">${citeListHTML}</div>
       </div>`;
   } else {
     /* 旧フォーマット：expression.text + context.text を結合し、全出典を自動番号化 */
-    const expText = (p.expression && p.expression.text) || '';
-    const ctxText = (p.context && p.context.text) || '';
+    const expText = p.expression ? localizeValue(p.expression.text, p.expression.textEn) : '';
+    const ctxText = p.context ? localizeValue(p.context.text, p.context.textEn) : '';
     const combined = expText + (expText && ctxText ? '<br><br>' : '') + ctxText;
     const allSrc = [
       ...((p.expression && p.expression.sources) || []),
@@ -235,7 +447,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     ).join('');
     contextHTML = `
       <div class="detail-section">
-        <div class="detail-section-title">解説</div>
+        <div class="detail-section-title">${t('explanation')}</div>
         <div class="detail-text">${combined}</div>
         ${citeListHTML ? `<div class="cite-list">${citeListHTML}</div>` : ''}
           </div>`;
@@ -243,13 +455,13 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
 
   const linksSection = linksHTML ? `
       <div class="detail-section">
-        <div class="detail-section-title">外部リンク</div>
+        <div class="detail-section-title">${t('externalLinks')}</div>
         <div class="detail-links">${linksHTML}</div>
       </div>` : '';
 
   const booksSection = amazonHTML ? `
       <div class="detail-section">
-        <div class="detail-section-title">写真集</div>
+        <div class="detail-section-title">${t('books')}</div>
         ${amazonHTML}
       </div>` : '';
 
@@ -257,7 +469,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     <div class="detail-panel" id="${panelId}">
       <div class="detail-header">
         <div>
-          <div class="detail-name">${displayName(p)}${p.gender ? `<span style="font-size:12px;color:var(--text-muted);font-weight:normal;margin-left:10px;vertical-align:middle;letter-spacing:0.05em">${p.gender}</span>` : ''}${p.nameJa && p.name ? `<span style="display:block;font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);font-weight:normal;margin-top:3px;letter-spacing:0.04em">${p.name}</span>` : ''}</div>
+          <div class="detail-name">${displayName(p)}${p.gender ? `<span style="font-size:12px;color:var(--text-muted);font-weight:normal;margin-left:10px;vertical-align:middle;letter-spacing:0.05em">${displayGender(p.gender)}</span>` : ''}${p.nameJa && p.name ? `<span style="display:block;font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);font-weight:normal;margin-top:3px;letter-spacing:0.04em">${currentLanguage === 'en' ? p.nameJa : p.name}</span>` : ''}</div>
           <div class="detail-meta">${[displayMeta(p), p.years].filter(Boolean).join(' &nbsp;/&nbsp; ')}</div>
         </div>
         <button class="close-btn" onclick="${closeFn}">✕</button>
@@ -315,16 +527,18 @@ function populateFilters() {
   const movements = [...new Set(photographers.flatMap(p => p.movements))].sort();
 
   const cSel = document.getElementById('filter-country');
+  cSel.innerHTML = `<option value="">${t('allCountries')}</option>`;
   countries.forEach(c => {
     const opt = document.createElement('option');
-    opt.value = c; opt.textContent = c;
+    opt.value = c; opt.textContent = COUNTRY_TEXT[c]?.[currentLanguage] || c;
     cSel.appendChild(opt);
   });
 
   const mSel = document.getElementById('filter-movement-era');
+  mSel.innerHTML = `<option value="">${t('allMovements')}</option>`;
   movements.forEach(m => {
     const opt = document.createElement('option');
-    opt.value = m; opt.textContent = m;
+    opt.value = m; opt.textContent = displayMovementName(m);
     mSel.appendChild(opt);
   });
 }
@@ -368,9 +582,9 @@ function applyFilters() {
   const countEl = document.getElementById('filter-count');
   const total = realPhotographers().length;
   if (hasActiveFilters()) {
-    countEl.textContent = `${visibleCount} / ${total}人`;
+    countEl.textContent = t('filteredCount', visibleCount, total);
   } else {
-    countEl.textContent = `${total}人`;
+    countEl.textContent = t('totalCount', total);
   }
 }
 
@@ -382,7 +596,7 @@ function resetFilters() {
   document.querySelectorAll('#era-main .photographer-card').forEach(c => c.classList.remove('filtered-out'));
   document.querySelectorAll('.era').forEach(e => e.classList.remove('hidden'));
   document.getElementById('no-results').classList.remove('visible');
-  document.getElementById('filter-count').textContent = `${realPhotographers().length}人`;
+  document.getElementById('filter-count').textContent = t('totalCount', realPhotographers().length);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -414,18 +628,18 @@ function renderMovementTab() {
     section.innerHTML = `
       <div class="movement-toggle" onclick="toggleMovement('${mvId}')">
         <div>
-          <div class="movement-name">${mvName}<em class="movement-name-en">${meta.en}</em></div>
-          <div class="movement-period">登録: ${photographers.length}名</div>
+          <div class="movement-name">${currentLanguage === 'en' ? (meta.en || mvName) : mvName}<em class="movement-name-en">${currentLanguage === 'en' ? mvName : meta.en}</em></div>
+          <div class="movement-period">${t('registeredCount', photographers.length)}</div>
         </div>
         <div class="movement-toggle-arrow">▼</div>
       </div>
       <div class="movement-body">
         <div class="movement-body-content">
           <div class="context-block" style="margin-bottom:24px">
-            <div class="context-label">概要</div>
-            <div class="context-text">${meta.desc || EMPTY_BLOCK}</div>
+            <div class="context-label">${t('movementOverview')}</div>
+            <div class="context-text">${localizeValue(meta.desc, meta.descEn) || EMPTY_BLOCK}</div>
           </div>
-          <div class="photographers-label">この表現の写真家</div>
+          <div class="photographers-label">${t('movementPhotographers')}</div>
           <div class="movement-grid" id="mvgrid-${mvId}">${cardsHTML}</div>
           <div id="mvpanels-${mvId}"></div>
         </div>
@@ -556,10 +770,13 @@ function initRandom() {
   const idx = Math.abs(hash) % photographers.length;
   const p = photographers[idx];
 
-  document.getElementById('random-name').textContent = p.nameJa || p.name;
+  document.getElementById('random-name').textContent = displayName(p);
   document.getElementById('random-meta').textContent =
-    `${p.flag} ${p.nationality}  /  ${p.years}  /  ${p.movements.join(' · ')}`;
-  const excerptSrc = (p.context && p.context.text) || (p.expression && p.expression.text) || '';
+    `${displayMeta(p)}  /  ${p.years}  /  ${p.movements.map(displayMovementName).join(' · ')}`;
+  const excerptSrc =
+    (p.context && localizeValue(p.context.text, p.context.textEn)) ||
+    (p.expression && localizeValue(p.expression.text, p.expression.textEn)) ||
+    '';
   document.getElementById('random-excerpt').textContent =
     excerptSrc.replace(/\*\d+/g, '').slice(0, 80) + '…';
 
@@ -659,6 +876,7 @@ function setupObserver(selector = '.era') {
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    INIT
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+initializeLanguageControls();
 renderEraTab();
 renderMovementTab();
 initRandom();

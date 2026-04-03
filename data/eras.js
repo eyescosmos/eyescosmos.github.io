@@ -3,8 +3,10 @@ const ERAS = [
     id: '1839',
     period: '1839 — 1860s',
     title: '黎明期：帝国主義と写真の誕生',
+    titleEn: 'Origins: Imperialism and the Birth of Photography',
     worldEvents: {
       text: 'ヨーロッパ列強が資源を求めてアジア・アフリカへ植民地を拡大した時代。清がアヘン戦争（1839–42年）で敗北し香港を割譲。1848年「諸国民の春」の革命がヨーロッパを席巻し、1853–56年のクリミア戦争、1857年インド大反乱、1861–65年の南北戦争と戦乱が続いた。技術面では1851年スコット・アーチャーが湿板コロジオン法を発表して露光時間を劇的に短縮し、戦場での撮影を可能にした。1844年モールスが有線電信を実用化し、報道とビジュアルが連動する土台が生まれた。',
+      textEn: 'European empires expanded into Asia and Africa in search of resources. Qing China was defeated in the Opium Wars (1839–42) and ceded Hong Kong. The revolutions of 1848 swept across Europe, followed by the Crimean War (1853–56), the Indian Rebellion of 1857, and the American Civil War (1861–65). Technologically, Frederick Scott Archer announced the wet collodion process in 1851, dramatically shortening exposure times and making battlefield photography possible. Morse’s telegraph, put into practical use in 1844, also laid the groundwork for modern news circulation in which text and images moved together.',
       sources: [
         { text: 'Britannica — Opium Wars', url: 'https://www.britannica.com/topic/Opium-Wars' },
         { text: 'CFR Education — Industrialization and Imperialism', url: 'https://education.cfr.org/learn/learning-journey/contemporary-history-pre-1900-industrialization-and-imperialism/what-are-the-causes-and-consequences-of-industrialization' },
@@ -12,6 +14,7 @@ const ERAS = [
     },
     photoContext: {
       text: '写真家たちは植民地の軍隊・行政官とともに中東・アジア・南米へ渡り、「異国の文化」をヨーロッパ人に見せた。技術的には、ダゲレオタイプ（一点物の銀板写真）からカロタイプ（紙ネガによる複製可能な写真）、さらにスコット・アーチャーが1851年に発表した湿板コロジオン法へと急速に進化した。湿板法は露光時間を大幅に短縮しポートレート撮影を可能にしたが、撮影直前に薬品を塗布する必要があり、現場での暗室作業が不可欠だった。写真は植民地において「中立な記録」ではなく、支配の物語を構築・正当化する装置として機能した。',
+      textEn: 'Photographers travelled with colonial armies and administrators through the Middle East, Asia, and South America, producing images of “foreign cultures” for European viewers. The medium evolved quickly from the daguerreotype, a unique image on silvered copper, to the calotype, which allowed multiple prints from a paper negative, and then to Archer’s wet collodion process. Wet plates made shorter exposures and portrait work possible, but they still required chemistry to be prepared on site, so darkroom labor remained inseparable from fieldwork. In colonial settings, photography did not function as a neutral record; it often helped construct and legitimize narratives of imperial rule.',
       sources: [
         { text: 'Britannica — History of Photography', url: 'https://www.britannica.com/technology/photography/Photographys-early-evolution-c-1840-c-1900' },
         { text: 'Taylor & Francis — Photography, Colonialism, and War', url: 'https://www.tandfonline.com/doi/full/10.1080/07292473.2025.2463752' },
@@ -24,8 +27,10 @@ const ERAS = [
     id: '1870',
     period: '1870 — 1890s',
     title: '産業化・社会改革・写真の大衆化',
+    titleEn: 'Industrialization, Social Reform, and Mass Photography',
     worldEvents: {
       text: '普仏戦争（1870–71年）でフランスが敗北しドイツ帝国が誕生。パリ・コミューン（1871年）は72日で鎮圧され、1873年恐慌が欧米で大規模な労働運動を引き起こした。アメリカでは「金ぴか時代」の急速な工業化と大量移民で都市過密化が進んだ。1884–85年のベルリン会議でアフリカ分割が制度化された。技術面では1871年リチャード・マドックスがゼラチン乾板を発明し撮影直前の薬品塗布が不要に。1880年ニューヨーク・デイリー・グラフィック紙がハーフトーン印刷で写真を新聞掲載し、1888年コダックカメラが大衆写真を開いた。',
+      textEn: 'France lost the Franco-Prussian War (1870–71), and the German Empire was founded. The Paris Commune of 1871 was violently suppressed after seventy-two days, while the Panic of 1873 triggered large labor movements across Europe and the United States. In America, rapid industrialization and migration during the Gilded Age intensified urban overcrowding. The Berlin Conference of 1884–85 formalized the partition of Africa. In photography, Richard Maddox invented the gelatin dry plate in 1871, removing the need to coat plates immediately before exposure. Halftone printing brought photographs into newspapers by 1880, and Kodak’s camera of 1888 opened picture-making to a mass public.',
       sources: [
         { text: 'Britannica — Franco-Prussian War', url: 'https://www.britannica.com/event/Franco-German-War' },
         { text: 'Wikipedia — Paris Commune', url: 'https://en.wikipedia.org/wiki/Paris_Commune' },
@@ -34,6 +39,7 @@ const ERAS = [
     },
     photoContext: {
       text: 'リチャード・マドックスが1871年にゼラチン乾板を発明したことで、撮影直前の薬品塗布が不要になり写真の携帯性が飛躍的に向上した。1888年、ジョージ・イーストマンがロールフィルム内蔵の「コダック」カメラを発売し、「ボタンを押すだけ」の写真撮影を一般大衆に開放した（「You press the button, we do the rest」）。社会的には、移民・スラム・児童労働などを記録するドキュメンタリー写真の先駆けが生まれた。科学の分野ではマイブリッジとマレーが連続写真で運動の解析を行い、後の映画誕生への道を開いた。',
+      textEn: 'Maddox’s dry plate transformed photography into a more portable practice because photographers no longer needed to prepare chemicals moments before exposure. In 1888, George Eastman introduced the Kodak camera with roll film and marketed it with the promise, “You press the button, we do the rest,” turning photography into an everyday consumer practice. Socially, this was also the period in which early documentary photography emerged to record immigration, slums, and child labor. In scientific work, Muybridge and Marey used sequential photography to analyze motion, helping to open the path toward cinema.',
       sources: [
         { text: 'Britannica — History of Photography', url: 'https://www.britannica.com/technology/photography' },
         { text: 'George Eastman Museum — Kodak and the Democratization of Photography', url: 'https://www.eastman.org/george-eastman' },

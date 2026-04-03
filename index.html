@@ -170,7 +170,37 @@ body.is-navigating #page-fade {
   top: 32px;
   right: 32px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   gap: 10px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  background: rgba(10, 12, 18, 0.62);
+  backdrop-filter: blur(18px);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font: 400 10px/1 'DM Mono', monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-btn.active {
+  color: var(--text);
+  background: rgba(198, 170, 130, 0.12);
+}
+
+.lang-btn + .lang-btn {
+  border-left: 1px solid var(--border);
 }
 
 .page-link {
@@ -268,10 +298,10 @@ body.is-navigating #page-fade {
 
   <div class="hud">
     <div class="eyebrow">Prototype / Photo Coordinates</div>
-    <h1 class="title"><em>写真の座標</em><span class="title-status">随時更新中</span></h1>
-    <div class="title-subcopy">写真史を、写真家・運動・思想の関係からたどるサイトです。</div>
-    <div class="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
-    <div class="lede">
+    <h1 class="title"><em id="main-title">写真の座標</em><span class="title-status" id="title-status">随時更新中</span></h1>
+    <div class="title-subcopy" id="title-subcopy">写真史を、写真家・運動・思想の関係からたどるサイトです。</div>
+    <div class="title-note" id="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
+    <div class="lede" id="title-lede">
       写真家、運動、思想を大きな平面の上にひらいた試作ページです。
       クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。
     </div>
@@ -284,8 +314,12 @@ body.is-navigating #page-fade {
   </div>
 
   <div class="page-links" aria-label="一覧ページへの移動">
-    <a class="page-link" href="archive.html#tab-era">年代から見る</a>
-    <a class="page-link" href="archive.html#tab-movement">表現から見る</a>
+    <div class="lang-toggle" aria-label="Language switch">
+      <button class="lang-btn" type="button" data-lang="ja">JP</button>
+      <button class="lang-btn" type="button" data-lang="en">EN</button>
+    </div>
+    <a class="page-link" id="page-link-era" href="archive.html#tab-era">年代から見る</a>
+    <a class="page-link" id="page-link-movement" href="archive.html#tab-movement">表現から見る</a>
   </div>
   <div class="zoom-controls" aria-label="ズーム操作">
     <button class="zoom-btn" id="reset-view" type="button" aria-label="初期表示に戻る">◎</button>
@@ -296,9 +330,10 @@ body.is-navigating #page-fade {
 
 <div id="page-fade" aria-hidden="true"></div>
 
-<script src="data/movements.js?v=20260403b"></script>
-<script src="data/photographers.js?v=20260403b"></script>
-<script src="data/relation-graph.js?v=20260403b"></script>
-<script src="scripts/relations.js?v=20260403b"></script>
+<script src="data/movements.js?v=20260403c"></script>
+<script src="data/photographers.js?v=20260403c"></script>
+<script src="data/relation-graph.js?v=20260403c"></script>
+<script src="scripts/language.js?v=20260403c"></script>
+<script src="scripts/relations.js?v=20260403c"></script>
 </body>
 </html>

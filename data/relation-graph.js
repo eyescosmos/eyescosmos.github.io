@@ -74,16 +74,16 @@
   };
 
   const ideas = [
-    { id: 'idea:machine-eye', label: '機械の眼', subtitle: 'apparatus / optics', type: 'idea' },
-    { id: 'idea:portrait-self', label: '肖像と自己', subtitle: 'identity / body', type: 'idea' },
-    { id: 'idea:city-street', label: '都市を歩く視線', subtitle: 'street / city', type: 'idea' },
-    { id: 'idea:experiment', label: '実験と抽象', subtitle: 'experiment / abstraction', type: 'idea' },
-    { id: 'idea:staged-image', label: '演出されたイメージ', subtitle: 'staged / cinematic', type: 'idea' },
-    { id: 'idea:system', label: '類型とシステム', subtitle: 'typology / structure', type: 'idea' },
-    { id: 'idea:color', label: '色彩と日常', subtitle: 'color / everyday', type: 'idea' },
-    { id: 'idea:intimacy', label: '私性と記憶', subtitle: 'intimacy / memory', type: 'idea' },
-    { id: 'idea:critique', label: '政治と批評', subtitle: 'critique / representation', type: 'idea' },
-    { id: 'idea:landscape', label: '空間と風景', subtitle: 'landscape / environment', type: 'idea' }
+    { id: 'idea:machine-eye', label: '機械の眼', labelEn: 'Machine Eye', subtitle: 'apparatus / optics', type: 'idea' },
+    { id: 'idea:portrait-self', label: '肖像と自己', labelEn: 'Portrait & Self', subtitle: 'identity / body', type: 'idea' },
+    { id: 'idea:city-street', label: '都市を歩く視線', labelEn: 'City and Street', subtitle: 'street / city', type: 'idea' },
+    { id: 'idea:experiment', label: '実験と抽象', labelEn: 'Experiment & Abstraction', subtitle: 'experiment / abstraction', type: 'idea' },
+    { id: 'idea:staged-image', label: '演出されたイメージ', labelEn: 'Staged Image', subtitle: 'staged / cinematic', type: 'idea' },
+    { id: 'idea:system', label: '類型とシステム', labelEn: 'Typology & System', subtitle: 'typology / structure', type: 'idea' },
+    { id: 'idea:color', label: '色彩と日常', labelEn: 'Color & Everyday Life', subtitle: 'color / everyday', type: 'idea' },
+    { id: 'idea:intimacy', label: '私性と記憶', labelEn: 'Intimacy & Memory', subtitle: 'intimacy / memory', type: 'idea' },
+    { id: 'idea:critique', label: '政治と批評', labelEn: 'Politics & Critique', subtitle: 'critique / representation', type: 'idea' },
+    { id: 'idea:landscape', label: '空間と風景', labelEn: 'Space & Landscape', subtitle: 'landscape / environment', type: 'idea' }
   ];
 
   const featuredMovements = new Set([
@@ -261,6 +261,8 @@
     id: `photographer:${p.id}`,
     key: p.id,
     label: p.nameJa || p.name,
+    labelJa: p.nameJa || p.name,
+    labelEn: p.name || p.nameJa,
     subtitle: [p.name, p.years].filter(Boolean).join(' / '),
     type: 'photographer',
     era: p.era,
@@ -286,6 +288,8 @@
       id: `movement:${name}`,
       key: name,
       label: name,
+      labelJa: name,
+      labelEn: meta.en || name,
       subtitle: meta.en || '',
       description: meta.desc || '',
       type: 'movement',
@@ -319,6 +323,8 @@
     .filter(idea => usedIdeaIds.has(idea.id))
     .map(idea => ({
       ...idea,
+      labelJa: idea.label,
+      labelEn: idea.labelEn || idea.subtitle || idea.label,
       yearValue: average(ideaYearMap.get(idea.id) || [])
     }));
   const nodes = [...photographerNodes, ...movementNodes, ...ideaNodes];
