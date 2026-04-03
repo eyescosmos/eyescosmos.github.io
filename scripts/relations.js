@@ -966,12 +966,15 @@
   }
 
   function navigateTo(node) {
-    if (!node.url) return;
+    const targetUrl = currentLanguage === 'en'
+      ? (node.urlEn || node.urlJa || node.url)
+      : (node.urlJa || node.urlEn || node.url);
+    if (!targetUrl) return;
     node.glow = 2;
     scheduleFrame();
-    const popup = window.open(node.url, '_blank');
+    const popup = window.open(targetUrl, '_blank');
     if (!popup) {
-      window.location.href = node.url;
+      window.location.href = targetUrl;
       return;
     }
     popup.opener = null;
@@ -1085,7 +1088,11 @@
       return;
     }
 
-    if (state.focusedNodeId === node.id && node.url) {
+    const targetUrl = currentLanguage === 'en'
+      ? (node.urlEn || node.urlJa || node.url)
+      : (node.urlJa || node.urlEn || node.url);
+
+    if (state.focusedNodeId === node.id && targetUrl) {
       navigateTo(node);
     } else {
       setFocusedNode(node.id);

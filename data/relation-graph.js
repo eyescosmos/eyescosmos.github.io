@@ -61,7 +61,7 @@
     }
   });
 
-  const eraOrder = ['1839', '1870', '1890', '1910', '1930', '1950', '1970', '1980'];
+  const eraOrder = ['1839', '1870', '1890', '1910', '1930', '1950', '1970', '1980', '1990', '2000', '2010'];
   const eraLabels = {
     '1839': '1839–1860s',
     '1870': '1870–1890s',
@@ -70,7 +70,10 @@
     '1930': '1930–1940s',
     '1950': '1950–1960s',
     '1970': '1970s',
-    '1980': '1980s'
+    '1980': '1980s',
+    '1990': '1990–2000s',
+    '2000': '2000s',
+    '2010': '2010–2020s'
   };
 
   const ideas = [
@@ -270,7 +273,9 @@
     yearValue: parseYearValue(p.years, p.era),
     order: index,
     prominence: featuredPhotographerIds.has(p.id) ? 1 : 0,
-    url: `archive.html#photographer-${p.id}`
+    url: `/photographers/${p.id}.html`,
+    urlJa: `/photographers/${p.id}.html`,
+    urlEn: `/en/photographers/${p.id}.html`
   }));
 
   const movementMembers = new Map();
@@ -294,7 +299,9 @@
       description: meta.desc || '',
       type: 'movement',
       yearValue: average(memberYears),
-      url: `archive.html#movement-${movementSlug(name)}`
+      url: `/archive.html#movement-${movementSlug(name)}`,
+      urlJa: `/archive.html#movement-${movementSlug(name)}`,
+      urlEn: `/en/archive.html#movement-${movementSlug(name)}`
     };
   });
 

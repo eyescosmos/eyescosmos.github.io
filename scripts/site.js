@@ -44,6 +44,7 @@ const UI_TEXT = {
     explanation: '解説',
     externalLinks: '外部リンク',
     books: '写真集',
+    detailPage: '独立ページで読む',
     amazon: '写真集を Amazon で見る ↗',
     amazonPending: '写真集へのリンク（準備中）',
     sourcePrefix: '出典：',
@@ -86,6 +87,7 @@ const UI_TEXT = {
     explanation: 'Essay',
     externalLinks: 'External Links',
     books: 'Books',
+    detailPage: 'Open page',
     amazon: 'View on Amazon ↗',
     amazonPending: 'Book link coming soon',
     sourcePrefix: 'Sources:',
@@ -129,6 +131,20 @@ function localizeValue(valueJa, valueEn) {
 
 function realPhotographers() {
   return PHOTOGRAPHERS.filter(p => !p.isPlaceholder);
+}
+
+function archiveBasePath(lang = currentLanguage) {
+  return lang === 'en' ? '/en/archive.html' : '/archive.html';
+}
+
+function coordinateBasePath(lang = currentLanguage) {
+  return lang === 'en' ? '/en/index.html' : '/index.html';
+}
+
+function photographerPagePath(photographer, lang = currentLanguage) {
+  const id = typeof photographer === 'string' ? photographer : photographer.id;
+  const base = lang === 'en' ? '/en/photographers/' : '/photographers/';
+  return `${base}${id}.html`;
 }
 
 function renderOptionalText(text) {
@@ -327,7 +343,7 @@ function initializeLanguageControls() {
 
 function openCoordinatesForPhotographer(pid) {
   if (!pid) return;
-  const url = `index.html?focus=${encodeURIComponent(`photographer:${pid}`)}`;
+  const url = `${coordinateBasePath()}?focus=${encodeURIComponent(`photographer:${pid}`)}`;
   const popup = window.open(url, '_blank');
   if (!popup) {
     window.location.href = url;
@@ -585,6 +601,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const linksHTML = p.links.map(l =>
     `<a class="detail-link" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`
   ).join('');
+  const detailPageLink = `<a class="detail-link" href="${photographerPagePath(p)}">${t('detailPage')}</a>`;
   const amazonHTML = p.amazon
     ? `<a class="detail-link" href="${p.amazon}" target="_blank" rel="noopener sponsored">${t('amazon')}</a>`
     : `<div class="amazon-placeholder">${p.isPlaceholder ? '' : t('amazonPending')}</div>`;
@@ -644,11 +661,11 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
           </div>`;
   }
 
-  const linksSection = linksHTML ? `
+  const linksSection = `
       <div class="detail-section">
         <div class="detail-section-title">${t('externalLinks')}</div>
-        <div class="detail-links">${linksHTML}</div>
-      </div>` : '';
+        <div class="detail-links">${detailPageLink}${linksHTML}</div>
+      </div>`;
 
   const booksSection = amazonHTML ? `
       <div class="detail-section">
@@ -952,6 +969,8 @@ function openEra(eraId) {
    RANDOM PHOTOGRAPHER
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function initRandom() {
+  const randomBox = document.getElementById('random-box');
+  if (!randomBox) return;
   const photographers = realPhotographers();
   if (!photographers.length) return;
   // Seed by date so it changes daily
@@ -974,17 +993,21 @@ function initRandom() {
   document.getElementById('random-excerpt').textContent =
     excerptSrc.replace(/\*\d+/g, '').slice(0, 80) + '…';
 
-  document.getElementById('random-box').dataset.pid = p.id;
+  randomBox.dataset.pid = p.id;
 }
 
 function openRandomCoordinates(event) {
   event.stopPropagation();
-  const pid = document.getElementById('random-box').dataset.pid;
+  const box = document.getElementById('random-box');
+  if (!box) return;
+  const pid = box.dataset.pid;
   openCoordinatesForPhotographer(pid);
 }
 
 function scrollToPhotographer() {
-  const pid = document.getElementById('random-box').dataset.pid;
+  const box = document.getElementById('random-box');
+  if (!box) return;
+  const pid = box.dataset.pid;
   if (!pid) return;
   switchTab('era');
   setTimeout(() => {
