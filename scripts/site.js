@@ -36,8 +36,7 @@ const UI_TEXT = {
     movementOverview: '概要',
     movementPhotographers: 'この表現の写真家',
     relatedReading: 'つながりから読む',
-    influencedBy: '影響を受けた写真家',
-    influencedNext: '影響を与えた写真家',
+    relatedPhotographers: '関連作家',
     relatedMovement: '関連運動',
     readNext: '次に読むべきページ',
     notSet: '準備中',
@@ -79,8 +78,7 @@ const UI_TEXT = {
     movementOverview: 'Overview',
     movementPhotographers: 'Photographers in this movement',
     relatedReading: 'Related Reading',
-    influencedBy: 'Influenced by',
-    influencedNext: 'Influenced',
+    relatedPhotographers: 'Related photographers',
     relatedMovement: 'Related movement',
     readNext: 'Read next',
     notSet: 'Coming soon',
@@ -513,9 +511,24 @@ function renderRecommendationLink(item) {
   return `<a class="detail-related-link" href="${item.href}" onclick="${item.onclick}">${item.label}</a>`;
 }
 
+function renderRecommendationLinks(items) {
+  const validItems = (items || []).filter(Boolean);
+  if (!validItems.length) return `<span class="detail-related-empty">${t('notSet')}</span>`;
+  return validItems.map(renderRecommendationLink).join('');
+}
+
 function buildRelatedReadingSection(photographer) {
   const influencedBy = findInfluencePhotographer(photographer, -1);
   const influencedNext = findInfluencePhotographer(photographer, 1);
+  const relatedPhotographers = [influencedBy, influencedNext]
+    .filter(Boolean)
+    .filter((item, index, array) => array.findIndex(candidate => candidate.id === item.id) === index)
+    .slice(0, 2)
+    .map(item => ({
+      label: displayName(item),
+      href: `#photographer-${item.id}`,
+      onclick: `openRecommendedPhotographer(event,'${item.id}')`
+    }));
   const primaryMovement = (photographer.movements || [])[0]
     ? {
         label: displayMovementName(photographer.movements[0]),
@@ -526,34 +539,15 @@ function buildRelatedReadingSection(photographer) {
   const readNext = findReadNextTarget(photographer, influencedBy, influencedNext);
 
   const items = [
-    [
-      t('influencedBy'),
-      influencedBy
-        ? {
-            label: displayName(influencedBy),
-            href: `#photographer-${influencedBy.id}`,
-            onclick: `openRecommendedPhotographer(event,'${influencedBy.id}')`
-          }
-        : null
-    ],
-    [
-      t('influencedNext'),
-      influencedNext
-        ? {
-            label: displayName(influencedNext),
-            href: `#photographer-${influencedNext.id}`,
-            onclick: `openRecommendedPhotographer(event,'${influencedNext.id}')`
-          }
-        : null
-    ],
-    [t('relatedMovement'), primaryMovement],
-    [t('readNext'), readNext]
+    [t('relatedPhotographers'), renderRecommendationLinks(relatedPhotographers)],
+    [t('relatedMovement'), renderRecommendationLink(primaryMovement)],
+    [t('readNext'), renderRecommendationLink(readNext)]
   ];
 
-  const rows = items.map(([label, item]) => `
+  const rows = items.map(([label, content]) => `
       <div class="detail-related-item">
         <div class="detail-related-label">${label}</div>
-        <div class="detail-related-value">${renderRecommendationLink(item)}</div>
+        <div class="detail-related-value">${content}</div>
       </div>
     `).join('');
 
