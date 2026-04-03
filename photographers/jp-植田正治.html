@@ -26,7 +26,7 @@ gtag('config', 'G-QHJ31BY6NN');
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles/photographer-page.css">
 </head>
-<body>
+<body data-photographer-id="jp-植田正治" data-page-lang="ja">
   <div class="page-shell">
     <div class="topline">
       <div class="label">Photo Coordinates / Photographer</div>
@@ -48,7 +48,7 @@ gtag('config', 'G-QHJ31BY6NN');
         <div class="meta-chip">1930s / 1930年代</div>
       </div>
       <p class="lead">準備中。</p>
-      <div class="hero-actions"></div>
+      <div class="hero-actions" data-amazon-hero></div>
     </div>
     <div class="section-grid">
       <section class="section">
@@ -67,11 +67,19 @@ gtag('config', 'G-QHJ31BY6NN');
         <h2>外部リンク</h2>
         <div class="links"><div class="note">外部リンクは準備中です。</div></div>
       </section>
+      <section class="section" data-affiliate-section hidden>
+        <h2>関連書籍</h2>
+        <div class="book-grid" data-affiliate-list>
+          <div class="note">関連書籍は準備中です。</div>
+        </div>
+      </section>
       <section class="section">
         <h2>出典</h2>
         <div class="sources"><div class="note">出典は準備中です。</div></div>
       </section>
     </div>
   </div>
+  <script src="../data/affiliate-books.js"></script>
+  <script src="../scripts/photographer-page.js"></script>
 </body>
 </html>

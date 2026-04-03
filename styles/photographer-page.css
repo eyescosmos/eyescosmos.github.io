@@ -36,6 +36,11 @@ body { min-height: 100vh; }
 .tags { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag { padding: 7px 11px; border: 1px solid var(--border); background: var(--panel-soft); text-decoration: none; color: var(--text); font-size: 13px; }
 .related-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.book-grid { display: grid; gap: 12px; }
+.book-card { display: grid; gap: 8px; padding: 14px; border: 1px solid var(--border); background: var(--panel-soft); }
+.book-title { font-size: 15px; font-weight: 500; color: var(--text); }
+.book-note { font-size: 13px; line-height: 1.7; color: var(--muted); }
+.book-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .links, .sources { display: grid; gap: 10px; }
 .links a, .sources a { text-decoration: none; }
 .cite-item { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; }
