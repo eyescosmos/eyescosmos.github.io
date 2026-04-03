@@ -117,70 +117,6 @@
     return hashNumber(value) % 100000;
   }
 
-  function getYearValue(node) {
-    if (!node || !Number.isFinite(node.yearValue)) return 0;
-    return node.yearValue;
-  }
-
-  function compareByChronology(a, b) {
-    const yearDiff = getYearValue(a) - getYearValue(b);
-    if (Math.abs(yearDiff) > 0.01) return yearDiff;
-    return stableSortValue(a.id) - stableSortValue(b.id);
-  }
-
-  function getBranchSide(focused, node, parentPosition = null) {
-    const diff = getYearValue(node) - getYearValue(focused);
-    if (Math.abs(diff) > 6) {
-      return diff < 0 ? 'left' : 'right';
-    }
-
-    const homeDiff = node.homeX - focused.homeX;
-    if (Math.abs(homeDiff) > 40) {
-      return homeDiff < 0 ? 'left' : 'right';
-    }
-
-    if (parentPosition) {
-      return parentPosition.x < state.focusAnchorX ? 'left' : 'right';
-    }
-
-    return stableSortValue(`${focused.id}:${node.id}`) % 2 === 0 ? 'left' : 'right';
-  }
-
-  function distributeAround(centerY, count, gap) {
-    if (count <= 1) return [centerY];
-    const start = centerY - ((count - 1) * gap) * 0.5;
-    return Array.from({ length: count }, (_, index) => start + index * gap);
-  }
-
-  function relaxVertically(items, minGap, minY, maxY, iterations = 14) {
-    if (items.length < 2) return;
-
-    for (let step = 0; step < iterations; step += 1) {
-      items.sort((a, b) => a.y - b.y);
-
-      for (let index = 1; index < items.length; index += 1) {
-        const prev = items[index - 1];
-        const current = items[index];
-        const gap = current.y - prev.y;
-        if (gap >= minGap) continue;
-        const push = (minGap - gap) * 0.5;
-        prev.y -= push;
-        current.y += push;
-      }
-
-      if (items[0].y < minY) {
-        const push = minY - items[0].y;
-        items.forEach(item => { item.y += push; });
-      }
-
-      const last = items[items.length - 1];
-      if (last.y > maxY) {
-        const push = last.y - maxY;
-        items.forEach(item => { item.y -= push; });
-      }
-    }
-  }
-
   function angleFromHome(focused, node) {
     const dx = node.homeX - focused.homeX;
     const dy = node.homeY - focused.homeY;
@@ -482,7 +418,6 @@
     const traversal = getFocusTraversal(focused);
     const map = new Map();
     const childrenByParent = new Map();
-    const depthSideEntries = new Map();
 
     traversal.parents.forEach((parentId, nodeId) => {
       const depth = traversal.depths.get(nodeId);
@@ -493,84 +428,59 @@
       childrenByParent.get(parentId).push(node);
     });
 
-    childrenByParent.forEach(children => {
-      children.sort(compareByChronology);
+    childrenByParent.forEach((children, parentId) => {
+      const parentNode = state.nodesById.get(parentId) || focused;
+      children.sort((a, b) => angleFromHome(parentNode, a) - angleFromHome(parentNode, b));
     });
-
-    const focusTop = state.focusAnchorY - 520;
-    const focusBottom = state.focusAnchorY + 620;
-
-    function trackEntry(depth, side, entry) {
-      const key = `${depth}:${side}`;
-      const list = depthSideEntries.get(key) || [];
-      list.push(entry);
-      depthSideEntries.set(key, list);
-    }
-
-    function positionNodes(group, depth, side, centerY) {
-      if (!group.length) return;
-      const sign = side === 'left' ? -1 : 1;
-      const xBase = state.focusAnchorX + sign * (depth === 1 ? 420 : 820);
-      const gap = depth === 1 ? 108 : 96;
-      const positions = distributeAround(centerY, group.length, gap);
-
-      group.forEach((node, index) => {
-        const target = {
-          x: xBase + jitter(`${node.id}:focus-x`, depth === 1 ? 14 : 18),
-          y: positions[index] + jitter(`${node.id}:focus-y`, 12),
-          side
-        };
-        map.set(node.id, target);
-        trackEntry(depth, side, target);
-      });
-    }
 
     const rootChildren = childrenByParent.get(focused.id) || [];
-    const rootLeft = [];
-    const rootRight = [];
+    const rootCount = rootChildren.length;
+    const rootRadius = 450 + Math.max(0, rootCount - 8) * 30;
+    const rootStart = -Math.PI / 2;
 
-    rootChildren.forEach(node => {
-      const side = getBranchSide(focused, node);
-      if (side === 'left') {
-        rootLeft.push(node);
-      } else {
-        rootRight.push(node);
-      }
+    rootChildren.forEach((node, index) => {
+      const angle = rootStart + (index / Math.max(1, rootCount)) * Math.PI * 2 + jitter(`${focused.id}:${node.id}:angle`, 0.16);
+      const typeOffset =
+        node.type === 'photographer'
+          ? 0
+          : node.type === 'movement'
+            ? -24
+            : 32;
+      const radius = rootRadius + typeOffset + jitter(`${focused.id}:${node.id}:radius`, 14);
+      map.set(node.id, {
+        x: state.focusAnchorX + Math.cos(angle) * radius,
+        y: state.focusAnchorY + Math.sin(angle) * radius * 0.84,
+        angle
+      });
     });
-
-    positionNodes(rootLeft, 1, 'left', state.focusAnchorY - 18);
-    positionNodes(rootRight, 1, 'right', state.focusAnchorY + 18);
 
     rootChildren.forEach(parentNode => {
       const children = childrenByParent.get(parentNode.id) || [];
       if (!children.length) return;
 
       const parentPosition = map.get(parentNode.id);
-      const leftChildren = [];
-      const rightChildren = [];
+      const baseAngle = parentPosition ? parentPosition.angle : angleFromHome(focused, parentNode);
+      const span = Math.min(1.5, 0.64 + children.length * 0.18);
+      const secondRadius = 820 + Math.max(0, children.length - 4) * 28;
 
-      children.forEach(childNode => {
-        const side = getBranchSide(focused, childNode, parentPosition);
-        if (side === 'left') {
-          leftChildren.push(childNode);
-        } else {
-          rightChildren.push(childNode);
-        }
+      children.forEach((childNode, index) => {
+        const spread = children.length === 1
+          ? 0
+          : ((index / (children.length - 1)) - 0.5) * span;
+        const angle = baseAngle + spread + jitter(`${parentNode.id}:${childNode.id}:angle`, 0.1);
+        const typeOffset =
+          childNode.type === 'photographer'
+            ? 0
+            : childNode.type === 'movement'
+              ? -34
+              : 46;
+        const radius = secondRadius + typeOffset + jitter(`${parentNode.id}:${childNode.id}:radius`, 18);
+        map.set(childNode.id, {
+          x: state.focusAnchorX + Math.cos(angle) * radius,
+          y: state.focusAnchorY + Math.sin(angle) * radius * 0.86,
+          angle
+        });
       });
-
-      if (leftChildren.length) {
-        positionNodes(leftChildren, 2, 'left', parentPosition.y);
-      }
-      if (rightChildren.length) {
-        positionNodes(rightChildren, 2, 'right', parentPosition.y);
-      }
-    });
-
-    depthSideEntries.forEach((entries, key) => {
-      const [depthString] = key.split(':');
-      const depth = Number(depthString);
-      const minGap = depth === 1 ? 104 : 90;
-      relaxVertically(entries, minGap, focusTop, focusBottom);
     });
 
     state.focusLayoutCache = { focusId: focused.id, map };
