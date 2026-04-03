@@ -65,6 +65,17 @@ function setLocationHash(hashValue) {
   history.replaceState(null, '', url.toString());
 }
 
+function openCoordinatesForPhotographer(pid) {
+  if (!pid) return;
+  const url = `index.html?focus=${encodeURIComponent(`photographer:${pid}`)}`;
+  const popup = window.open(url, '_blank');
+  if (!popup) {
+    window.location.href = url;
+    return;
+  }
+  popup.opener = null;
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    RENDER: ERA TAB
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -127,14 +138,21 @@ function renderCard(p, extraAttrs = '') {
     ? p.movements.map(m => `<span class="card-tag">${m}</span>`).join('')
     : '';
   const searchIndex = buildSearchIndex(p);
+  const coordinateButton = p.isPlaceholder
+    ? ''
+    : `<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer('${p.id}')">座標で見る</button>`;
   return `
     <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" data-search="${searchIndex}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" ${extraAttrs}>
+      <div class="card-action">
+        <div class="card-action-label">解説</div>
+        <div class="card-arrow">↗</div>
+      </div>
       <div class="card-flag-nat">${displayMeta(p)}</div>
       <div class="card-name">${displayName(p)}</div>
       ${displaySubName(p)}
       <div class="card-years">${p.years}</div>
       <div class="card-tags">${tags}</div>
-      <div class="card-arrow">↗</div>
+      ${coordinateButton}
     </div>
   `;
 }
@@ -144,7 +162,9 @@ function renderCiteText(text, citations) {
   if (!citations || !citations.length) return text;
   let result = text;
   citations.forEach(c => {
-    const tooltip = `<span class="cite-tooltip">${c.name}</span>`;
+    const tooltip = c.url
+      ? `<a class="cite-tooltip" href="${c.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${c.name} ↗</a>`
+      : `<span class="cite-tooltip">${c.name}</span>`;
     result = result.replace(
       new RegExp('\\*' + c.num + '(?!\\d)', 'g'),
       `<span class="cite-ref">${tooltip}<sup>*${c.num}</sup></span>`
@@ -153,10 +173,10 @@ function renderCiteText(text, citations) {
   return result;
 }
 
-function renderDetailPanel(p, idPrefix = 'panel-') {
+function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const isMovement = idPrefix !== 'panel-';
   const panelId = `${idPrefix}${p.id}`;
-  const closeFn = isMovement ? `closeMovementDetail('${p.id}')` : `closeDetail('${p.id}')`;
+  const closeFn = customCloseFn || (isMovement ? `closeMovementDetail('${p.id}')` : `closeDetail('${p.id}')`);
 
   const tags = p.movements.map(m => `<span class="detail-tag">${m}</span>`).join('');
   const linksHTML = p.links.map(l =>
@@ -392,18 +412,24 @@ function renderMovementTab() {
     section.dataset.mv = mvId;
     section.id = `movement-${mvId}`;
     section.innerHTML = `
-      <div class="movement-header">
+      <div class="movement-toggle" onclick="toggleMovement('${mvId}')">
         <div>
           <div class="movement-name">${mvName}<em class="movement-name-en">${meta.en}</em></div>
           <div class="movement-period">登録: ${photographers.length}名</div>
         </div>
-        <div class="context-block" style="margin-bottom:0">
-          <div class="context-label">概要</div>
-          <div class="context-text">${meta.desc}</div>
+        <div class="movement-toggle-arrow">▼</div>
+      </div>
+      <div class="movement-body">
+        <div class="movement-body-content">
+          <div class="context-block" style="margin-bottom:24px">
+            <div class="context-label">概要</div>
+            <div class="context-text">${meta.desc || EMPTY_BLOCK}</div>
+          </div>
+          <div class="photographers-label">この表現の写真家</div>
+          <div class="movement-grid" id="mvgrid-${mvId}">${cardsHTML}</div>
+          <div id="mvpanels-${mvId}"></div>
         </div>
       </div>
-      <div class="movement-grid" id="mvgrid-${mvId}">${cardsHTML}</div>
-      <div id="mvpanels-${mvId}"></div>
     `;
     main.appendChild(section);
   });
@@ -414,7 +440,7 @@ function renderMovementTab() {
 function toggleMovementDetail(pid, mvId, card) {
   const section = card.closest('.movement-section');
   const panelContainer = section.querySelector(`[id^="mvpanels-"]`);
-  const panelId = `mvpanel-${pid}`;
+  const panelId = `mvpanel-${mvId}-${pid}`;
   const existingPanel = document.getElementById(panelId);
   const isOpen = existingPanel && existingPanel.classList.contains('open');
 
@@ -425,7 +451,7 @@ function toggleMovementDetail(pid, mvId, card) {
   if (!isOpen) {
     if (!existingPanel) {
       const p = PHOTOGRAPHERS.find(ph => ph.id === pid);
-      if (p) panelContainer.insertAdjacentHTML('beforeend', renderDetailPanel(p, 'mvpanel-'));
+      if (p) panelContainer.insertAdjacentHTML('beforeend', renderDetailPanel(p, `mvpanel-${mvId}-`, `closeMovementDetail('${pid}','${mvId}')`));
     }
     const panel = document.getElementById(panelId);
     panel.classList.add('open');
@@ -434,8 +460,8 @@ function toggleMovementDetail(pid, mvId, card) {
   }
 }
 
-function closeMovementDetail(pid) {
-  const panel = document.getElementById(`mvpanel-${pid}`);
+function closeMovementDetail(pid, mvId) {
+  const panel = document.getElementById(`mvpanel-${mvId}-${pid}`);
   if (panel) panel.classList.remove('open');
   document.querySelectorAll('.photographer-card.active').forEach(c => c.classList.remove('active'));
 }
@@ -452,6 +478,34 @@ function switchTab(tabId) {
   if (tabId === 'movement') {
     setupObserver('.movement-section');
   }
+}
+
+function toggleMovement(mvId) {
+  const section = document.getElementById(`movement-${mvId}`);
+  if (!section) return;
+  const body = section.querySelector('.movement-body');
+  if (section.classList.contains('open')) {
+    body.style.height = body.scrollHeight + 'px';
+    requestAnimationFrame(() => requestAnimationFrame(() => { body.style.height = '0'; }));
+    section.classList.remove('open');
+  } else {
+    section.classList.add('open');
+    body.style.height = body.scrollHeight + 'px';
+    body.addEventListener('transitionend', () => {
+      if (section.classList.contains('open')) body.style.height = 'auto';
+    }, { once: true });
+  }
+}
+
+function openMovement(mvId) {
+  const section = document.getElementById(`movement-${mvId}`);
+  if (!section || section.classList.contains('open')) return;
+  const body = section.querySelector('.movement-body');
+  section.classList.add('open');
+  body.style.height = body.scrollHeight + 'px';
+  body.addEventListener('transitionend', () => {
+    if (section.classList.contains('open')) body.style.height = 'auto';
+  }, { once: true });
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -512,6 +566,12 @@ function initRandom() {
   document.getElementById('random-box').dataset.pid = p.id;
 }
 
+function openRandomCoordinates(event) {
+  event.stopPropagation();
+  const pid = document.getElementById('random-box').dataset.pid;
+  openCoordinatesForPhotographer(pid);
+}
+
 function scrollToPhotographer() {
   const pid = document.getElementById('random-box').dataset.pid;
   if (!pid) return;
@@ -556,6 +616,7 @@ function revealMovementFromHash(mvId) {
   setTimeout(() => {
     const section = document.getElementById(`movement-${mvId}`);
     if (section) {
+      openMovement(mvId);
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, 80);

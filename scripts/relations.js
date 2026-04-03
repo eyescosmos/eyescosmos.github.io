@@ -117,6 +117,70 @@
     return hashNumber(value) % 100000;
   }
 
+  function getYearValue(node) {
+    if (!node || !Number.isFinite(node.yearValue)) return 0;
+    return node.yearValue;
+  }
+
+  function compareByChronology(a, b) {
+    const yearDiff = getYearValue(a) - getYearValue(b);
+    if (Math.abs(yearDiff) > 0.01) return yearDiff;
+    return stableSortValue(a.id) - stableSortValue(b.id);
+  }
+
+  function getBranchSide(focused, node, parentPosition = null) {
+    const diff = getYearValue(node) - getYearValue(focused);
+    if (Math.abs(diff) > 6) {
+      return diff < 0 ? 'left' : 'right';
+    }
+
+    const homeDiff = node.homeX - focused.homeX;
+    if (Math.abs(homeDiff) > 40) {
+      return homeDiff < 0 ? 'left' : 'right';
+    }
+
+    if (parentPosition) {
+      return parentPosition.x < state.focusAnchorX ? 'left' : 'right';
+    }
+
+    return stableSortValue(`${focused.id}:${node.id}`) % 2 === 0 ? 'left' : 'right';
+  }
+
+  function distributeAround(centerY, count, gap) {
+    if (count <= 1) return [centerY];
+    const start = centerY - ((count - 1) * gap) * 0.5;
+    return Array.from({ length: count }, (_, index) => start + index * gap);
+  }
+
+  function relaxVertically(items, minGap, minY, maxY, iterations = 14) {
+    if (items.length < 2) return;
+
+    for (let step = 0; step < iterations; step += 1) {
+      items.sort((a, b) => a.y - b.y);
+
+      for (let index = 1; index < items.length; index += 1) {
+        const prev = items[index - 1];
+        const current = items[index];
+        const gap = current.y - prev.y;
+        if (gap >= minGap) continue;
+        const push = (minGap - gap) * 0.5;
+        prev.y -= push;
+        current.y += push;
+      }
+
+      if (items[0].y < minY) {
+        const push = minY - items[0].y;
+        items.forEach(item => { item.y += push; });
+      }
+
+      const last = items[items.length - 1];
+      if (last.y > maxY) {
+        const push = last.y - maxY;
+        items.forEach(item => { item.y -= push; });
+      }
+    }
+  }
+
   function angleFromHome(focused, node) {
     const dx = node.homeX - focused.homeX;
     const dy = node.homeY - focused.homeY;
@@ -418,6 +482,7 @@
     const traversal = getFocusTraversal(focused);
     const map = new Map();
     const childrenByParent = new Map();
+    const depthSideEntries = new Map();
 
     traversal.parents.forEach((parentId, nodeId) => {
       const depth = traversal.depths.get(nodeId);
@@ -428,59 +493,84 @@
       childrenByParent.get(parentId).push(node);
     });
 
-    childrenByParent.forEach((children, parentId) => {
-      const parentNode = state.nodesById.get(parentId) || focused;
-      children.sort((a, b) => angleFromHome(parentNode, a) - angleFromHome(parentNode, b));
+    childrenByParent.forEach(children => {
+      children.sort(compareByChronology);
     });
+
+    const focusTop = state.focusAnchorY - 520;
+    const focusBottom = state.focusAnchorY + 620;
+
+    function trackEntry(depth, side, entry) {
+      const key = `${depth}:${side}`;
+      const list = depthSideEntries.get(key) || [];
+      list.push(entry);
+      depthSideEntries.set(key, list);
+    }
+
+    function positionNodes(group, depth, side, centerY) {
+      if (!group.length) return;
+      const sign = side === 'left' ? -1 : 1;
+      const xBase = state.focusAnchorX + sign * (depth === 1 ? 420 : 820);
+      const gap = depth === 1 ? 108 : 96;
+      const positions = distributeAround(centerY, group.length, gap);
+
+      group.forEach((node, index) => {
+        const target = {
+          x: xBase + jitter(`${node.id}:focus-x`, depth === 1 ? 14 : 18),
+          y: positions[index] + jitter(`${node.id}:focus-y`, 12),
+          side
+        };
+        map.set(node.id, target);
+        trackEntry(depth, side, target);
+      });
+    }
 
     const rootChildren = childrenByParent.get(focused.id) || [];
-    const rootCount = rootChildren.length;
-    const rootRadius = 450 + Math.max(0, rootCount - 8) * 30;
-    const rootStart = -Math.PI / 2;
+    const rootLeft = [];
+    const rootRight = [];
 
-    rootChildren.forEach((node, index) => {
-      const angle = rootStart + (index / Math.max(1, rootCount)) * Math.PI * 2 + jitter(`${focused.id}:${node.id}:angle`, 0.16);
-      const typeOffset =
-        node.type === 'photographer'
-          ? 0
-          : node.type === 'movement'
-            ? -24
-            : 32;
-      const radius = rootRadius + typeOffset + jitter(`${focused.id}:${node.id}:radius`, 14);
-      map.set(node.id, {
-        x: state.focusAnchorX + Math.cos(angle) * radius,
-        y: state.focusAnchorY + Math.sin(angle) * radius * 0.84,
-        angle
-      });
+    rootChildren.forEach(node => {
+      const side = getBranchSide(focused, node);
+      if (side === 'left') {
+        rootLeft.push(node);
+      } else {
+        rootRight.push(node);
+      }
     });
+
+    positionNodes(rootLeft, 1, 'left', state.focusAnchorY - 18);
+    positionNodes(rootRight, 1, 'right', state.focusAnchorY + 18);
 
     rootChildren.forEach(parentNode => {
       const children = childrenByParent.get(parentNode.id) || [];
       if (!children.length) return;
 
       const parentPosition = map.get(parentNode.id);
-      const baseAngle = parentPosition ? parentPosition.angle : angleFromHome(focused, parentNode);
-      const span = Math.min(1.5, 0.64 + children.length * 0.18);
-      const secondRadius = 820 + Math.max(0, children.length - 4) * 28;
+      const leftChildren = [];
+      const rightChildren = [];
 
-      children.forEach((childNode, index) => {
-        const spread = children.length === 1
-          ? 0
-          : ((index / (children.length - 1)) - 0.5) * span;
-        const angle = baseAngle + spread + jitter(`${parentNode.id}:${childNode.id}:angle`, 0.1);
-        const typeOffset =
-          childNode.type === 'photographer'
-            ? 0
-            : childNode.type === 'movement'
-              ? -34
-              : 46;
-        const radius = secondRadius + typeOffset + jitter(`${parentNode.id}:${childNode.id}:radius`, 18);
-        map.set(childNode.id, {
-          x: state.focusAnchorX + Math.cos(angle) * radius,
-          y: state.focusAnchorY + Math.sin(angle) * radius * 0.86,
-          angle
-        });
+      children.forEach(childNode => {
+        const side = getBranchSide(focused, childNode, parentPosition);
+        if (side === 'left') {
+          leftChildren.push(childNode);
+        } else {
+          rightChildren.push(childNode);
+        }
       });
+
+      if (leftChildren.length) {
+        positionNodes(leftChildren, 2, 'left', parentPosition.y);
+      }
+      if (rightChildren.length) {
+        positionNodes(rightChildren, 2, 'right', parentPosition.y);
+      }
+    });
+
+    depthSideEntries.forEach((entries, key) => {
+      const [depthString] = key.split(':');
+      const depth = Number(depthString);
+      const minGap = depth === 1 ? 104 : 90;
+      relaxVertically(entries, minGap, focusTop, focusBottom);
     });
 
     state.focusLayoutCache = { focusId: focused.id, map };
@@ -539,7 +629,7 @@
     }
 
     if (currentNode.type === 'idea') {
-      return false;
+      return currentNode.id === focused.id && edge.type === 'idea';
     }
 
     if (focused.type === 'photographer') {
@@ -550,23 +640,35 @@
         return edge.type === 'belongs_to' || edge.type === 'influences' || edge.type === 'idea';
       }
       if (currentNode.type === 'photographer') {
-        return edge.type === 'movement_peer' || edge.type === 'era';
+        return edge.type === 'movement_peer' || edge.type === 'era' || edge.type === 'belongs_to';
       }
       return false;
     }
 
     if (focused.type === 'movement') {
+      if (currentNode.id === focused.id) {
+        return edge.type === 'belongs_to' || edge.type === 'influences' || edge.type === 'idea';
+      }
       if (currentNode.type === 'movement') {
-        return edge.type === 'influences' || edge.type === 'idea';
+        return edge.type === 'belongs_to' || edge.type === 'influences' || edge.type === 'idea';
       }
       if (currentNode.type === 'photographer') {
-        return edge.type === 'era';
+        return edge.type === 'movement_peer' || edge.type === 'era' || edge.type === 'belongs_to';
       }
       return false;
     }
 
     if (focused.type === 'idea') {
-      return currentNode.type === 'movement' && edge.type === 'influences';
+      if (currentNode.id === focused.id) {
+        return edge.type === 'idea';
+      }
+      if (currentNode.type === 'movement') {
+        return edge.type === 'belongs_to' || edge.type === 'influences';
+      }
+      if (currentNode.type === 'photographer') {
+        return edge.type === 'movement_peer' || edge.type === 'era';
+      }
+      return false;
     }
 
     return false;
@@ -579,11 +681,22 @@
       return stableSortValue(`${currentNode.id}:${a.id}`) - stableSortValue(`${currentNode.id}:${b.id}`);
     });
 
+    const rootPhotographerCount = focused.type === 'movement'
+      ? (state.neighborEdges.get(focused.id) || []).filter(edge => {
+        const node = state.nodesById.get(edge.id);
+        return edge.type === 'belongs_to' && node?.type === 'photographer';
+      }).length
+      : 0;
+
     const limit = currentDepth === 0
-      ? focused.type === 'photographer' ? 6 : 7
+      ? focused.type === 'photographer'
+        ? 7
+        : focused.type === 'movement'
+          ? Math.min(12, Math.max(8, rootPhotographerCount + 2))
+          : 6
       : currentNode.type === 'movement'
-        ? 5
-        : 4;
+        ? 6
+        : 5;
 
     return ranked.slice(0, limit);
   }
@@ -611,13 +724,39 @@
         if (edge.type === 'era') score += 24;
       }
     } else if (focused.type === 'movement') {
-      if (nextNode.type === 'photographer') score += 70;
-      if (edge.type === 'belongs_to') score += 40;
-      if (edge.type === 'influences') score += 18;
-      if (edge.type === 'idea') score += 8;
+      if (currentNode.id === focused.id) {
+        if (nextNode.type === 'photographer') score += 150;
+        if (edge.type === 'belongs_to') score += 95;
+        if (nextNode.type === 'movement') score += 48;
+        if (edge.type === 'influences') score += 34;
+        if (nextNode.type === 'idea') score += 16;
+        if (edge.type === 'idea') score += 12;
+      } else if (currentNode.type === 'movement') {
+        if (nextNode.type === 'photographer') score += 116;
+        if (edge.type === 'belongs_to') score += 72;
+        if (nextNode.type === 'movement') score += 38;
+        if (edge.type === 'influences') score += 24;
+        if (nextNode.type === 'idea') score += 10;
+      } else if (currentNode.type === 'photographer') {
+        if (nextNode.type === 'photographer') score += 96;
+        if (edge.type === 'movement_peer') score += 56;
+        if (edge.type === 'era') score += 28;
+        if (edge.type === 'belongs_to') score += 8;
+      }
     } else {
-      if (edge.type === 'influences') score += 18;
-      if (edge.type === 'belongs_to') score += 8;
+      if (currentNode.id === focused.id) {
+        if (nextNode.type === 'movement') score += 130;
+        if (edge.type === 'idea') score += 90;
+      } else if (currentNode.type === 'movement') {
+        if (nextNode.type === 'photographer') score += 92;
+        if (edge.type === 'belongs_to') score += 56;
+        if (nextNode.type === 'movement') score += 24;
+        if (edge.type === 'influences') score += 18;
+      } else if (currentNode.type === 'photographer') {
+        if (nextNode.type === 'photographer') score += 70;
+        if (edge.type === 'movement_peer') score += 34;
+        if (edge.type === 'era') score += 18;
+      }
     }
 
     if (focused.type === 'photographer' && nextNode.type === 'photographer') {
@@ -744,7 +883,7 @@
     metaEl.textContent = `${typeLabel[target.type]} / 直接 ${relatedCount} / 表示中 ${reachCount}`;
     if (node && node.id === target.id) {
       hintEl.textContent = target.url
-        ? '固定中。線はこの対象から辿れるつながりを示します。もう一度クリックで詳細へ。'
+        ? '固定中。線はこの対象から辿れるつながりを示します。もう一度クリックで新しいタブに詳細を開きます。'
         : '固定中。ドラッグで地図を移動できます。';
     } else {
       hintEl.textContent = 'まだ固定されていません。クリックするとこの名前が中心になります。';
@@ -819,6 +958,15 @@
       return;
     }
     popup.opener = null;
+  }
+
+  function getRequestedFocusNodeId() {
+    const params = new URLSearchParams(window.location.search);
+    const focusId = params.get('focus');
+    if (focusId && state.nodesById.has(focusId)) {
+      return focusId;
+    }
+    return '';
   }
 
   function resetView() {
@@ -1064,7 +1212,6 @@
     const focused = getFocusedNode();
     if (!focused) return;
     const traversal = getFocusTraversal(focused);
-    const layoutMap = getFocusLayoutMap(focused);
 
     traversal.parents.forEach((parentId, nodeId) => {
       if (!parentId) return;
@@ -1075,25 +1222,13 @@
       if (depth > state.maxVisibleDepth) return;
       const start = worldToScreen(parent.x, parent.y);
       const end = worldToScreen(node.x, node.y);
-      const mx = (start.x + end.x) * 0.5;
-      const my = (start.y + end.y) * 0.5;
-      const dx = end.x - start.x;
-      const dy = end.y - start.y;
-      const length = Math.max(1, Math.hypot(dx, dy));
-      const childPosition = layoutMap.get(nodeId);
-      const childAngle = childPosition && typeof childPosition.angle === 'number'
-        ? childPosition.angle
-        : Math.atan2(node.y - focused.y, node.x - focused.x);
-      const curve = depth === 1 ? 18 : 34;
-      const cx = mx + Math.cos(childAngle) * curve - (dy / length) * (depth === 1 ? 8 : 18);
-      const cy = my + Math.sin(childAngle) * curve + (dx / length) * (depth === 1 ? 8 : 18);
       ctx.beginPath();
       ctx.moveTo(start.x, start.y);
-      ctx.quadraticCurveTo(cx, cy, end.x, end.y);
+      ctx.lineTo(end.x, end.y);
       ctx.strokeStyle = depth === 1 ? palette.focusLinkDepth1 : palette.focusLinkDepth2;
-      ctx.lineWidth = depth === 1 ? 1.55 : 1.08;
-      ctx.globalAlpha = depth === 1 ? 0.9 : 0.62;
-      ctx.shadowBlur = depth === 1 ? 10 : 5;
+      ctx.lineWidth = depth === 1 ? 1.4 : 1.02;
+      ctx.globalAlpha = depth === 1 ? 0.92 : 0.56;
+      ctx.shadowBlur = depth === 1 ? 9 : 4;
       ctx.shadowColor = depth === 1 ? palette.focusLinkDepth1Glow : palette.focusLinkDepth2Glow;
       ctx.stroke();
       ctx.shadowBlur = 0;
@@ -1207,6 +1342,11 @@
     state.focusLayoutCache = null;
     initialNode.glow = 1.1;
     updateFocusPanel();
+
+    const requestedFocusId = getRequestedFocusNodeId();
+    if (requestedFocusId) {
+      setFocusedNode(requestedFocusId);
+    }
   }
 
   canvas.addEventListener('pointerdown', handlePointerDown);

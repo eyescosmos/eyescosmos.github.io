@@ -225,6 +225,17 @@
     return index >= 0 ? index : eraOrder.length;
   }
 
+  function parseYearValue(value, fallbackEra) {
+    const matched = String(value || '').match(/(\d{4})/);
+    if (matched) return Number(matched[1]);
+    return 1830 + eraIndex(fallbackEra) * 24;
+  }
+
+  function average(values) {
+    if (!values || !values.length) return 0;
+    return values.reduce((sum, current) => sum + current, 0) / values.length;
+  }
+
   const usedMovements = Array.from(
     new Set(
       photographers
@@ -254,13 +265,23 @@
     type: 'photographer',
     era: p.era,
     years: p.years,
+    yearValue: parseYearValue(p.years, p.era),
     order: index,
     prominence: featuredPhotographerIds.has(p.id) ? 1 : 0,
     url: `archive.html#photographer-${p.id}`
   }));
 
+  const movementMembers = new Map();
+  usedMovements.forEach(name => {
+    movementMembers.set(
+      name,
+      photographers.filter(p => (p.movements || []).includes(name))
+    );
+  });
+
   const movementNodes = usedMovements.map(name => {
     const meta = movementMeta[name] || { en: name, desc: '' };
+    const memberYears = (movementMembers.get(name) || []).map(p => parseYearValue(p.years, p.era));
     return {
       id: `movement:${name}`,
       key: name,
@@ -268,6 +289,7 @@
       subtitle: meta.en || '',
       description: meta.desc || '',
       type: 'movement',
+      yearValue: average(memberYears),
       url: `archive.html#movement-${movementSlug(name)}`
     };
   });
@@ -281,7 +303,24 @@
     });
   });
 
-  const ideaNodes = ideas.filter(idea => usedIdeaIds.has(idea.id));
+  const ideaYearMap = new Map();
+  usedMovements.forEach(name => {
+    const movementNode = movementNodes.find(node => node.key === name);
+    if (!movementNode) return;
+    (movementIdeaMap[name] || []).forEach(ideaId => {
+      if (!featuredIdeaIds.has(ideaId)) return;
+      const years = ideaYearMap.get(ideaId) || [];
+      years.push(movementNode.yearValue);
+      ideaYearMap.set(ideaId, years);
+    });
+  });
+
+  const ideaNodes = ideas
+    .filter(idea => usedIdeaIds.has(idea.id))
+    .map(idea => ({
+      ...idea,
+      yearValue: average(ideaYearMap.get(idea.id) || [])
+    }));
   const nodes = [...photographerNodes, ...movementNodes, ...ideaNodes];
   const links = [];
   const seenLinks = new Set();

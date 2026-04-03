@@ -211,6 +211,13 @@ h1 em { font-style: normal; color: var(--accent); }
   color: var(--text-muted);
   margin-top: 12px;
 }
+.random-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
 
 /* ── LAYOUT ── */
 .container {
@@ -495,6 +502,22 @@ h1 em { font-style: normal; color: var(--accent); }
 .photographer-card.placeholder .card-arrow {
   color: var(--accent-dim);
 }
+.card-action {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2px;
+}
+.card-action-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
 
 .card-flag-nat {
   font-family: 'DM Mono', monospace;
@@ -543,8 +566,6 @@ h1 em { font-style: normal; color: var(--accent); }
   text-transform: uppercase;
 }
 .card-arrow {
-  position: absolute;
-  top: 24px; right: 24px;
   font-size: 16px;
   color: var(--text-muted);
   transition: color 0.2s, transform 0.2s;
@@ -553,6 +574,32 @@ h1 em { font-style: normal; color: var(--accent); }
 .photographer-card.active .card-arrow {
   color: var(--accent);
   transform: rotate(45deg);
+}
+.photographer-card:hover .card-action-label,
+.photographer-card.active .card-action-label {
+  color: var(--accent-dim);
+}
+.coordinate-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  min-height: 30px;
+  border: 1px solid var(--border);
+  background: rgba(200, 169, 110, 0.05);
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.coordinate-link:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+  background: rgba(200, 169, 110, 0.08);
 }
 .empty-photographers {
   margin-left: calc(180px + 48px);
@@ -577,7 +624,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .detail-panel.open { display: block; }
 /* movement tab panels have no left indent */
 #movement-main .detail-panel {
-  margin-left: calc(280px + 48px);
+  margin-left: 0;
 }
 
 @keyframes slideDown {
@@ -678,12 +725,16 @@ h1 em { font-style: normal; color: var(--accent); }
   color: var(--text-dim);
   white-space: nowrap;
   z-index: 200;
-  pointer-events: none;
+  pointer-events: auto;
   max-width: 280px;
   white-space: normal;
   text-align: left;
+  text-decoration: none;
 }
-.cite-ref:hover .cite-tooltip { display: block; }
+.cite-ref:hover .cite-tooltip,
+.cite-ref:focus-within .cite-tooltip { display: block; }
+.cite-ref a.cite-tooltip { color: var(--text-dim); }
+.cite-ref a.cite-tooltip:hover { color: var(--accent); }
 .cite-list {
   margin-top: 20px;
   padding-top: 14px;
@@ -739,19 +790,38 @@ h1 em { font-style: normal; color: var(--accent); }
 
 /* ── MOVEMENT VIEW ── */
 .movement-section {
-  padding: 64px 0;
+  padding: 0;
   border-bottom: 1px solid var(--border);
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .movement-section.visible { opacity: 1; transform: translateY(0); }
-
-.movement-header {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 48px;
-  margin-bottom: 40px;
+.movement-toggle {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 36px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.movement-toggle-arrow {
+  margin-left: auto;
+  color: var(--accent-dim);
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.1em;
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+.movement-section.open .movement-toggle-arrow { transform: rotate(180deg); }
+.movement-body {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.45s ease;
+}
+.movement-body-content {
+  padding-bottom: 72px;
 }
 .movement-name {
   font-family: 'Noto Sans JP', sans-serif;
@@ -775,10 +845,11 @@ h1 em { font-style: normal; color: var(--accent); }
   font-size: 11px;
   color: var(--text-muted);
   margin-top: 8px;
+  white-space: nowrap;
 }
 
 .movement-grid {
-  margin-left: calc(280px + 48px);
+  margin-left: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 2px;
@@ -821,7 +892,6 @@ footer a:hover { color: var(--accent); }
   .photographers-label { padding-left: 0; }
   .detail-panel { margin-left: 0; padding: 24px 20px; }
   #movement-main .detail-panel { margin-left: 0; }
-  .movement-header { grid-template-columns: 1fr; gap: 20px; }
   .movement-grid { margin-left: 0; }
   .filter-bar { flex-direction: column; align-items: flex-start; }
   .filter-count { margin-left: 0; }
@@ -841,7 +911,7 @@ footer a:hover { color: var(--accent); }
   </div>
   <div class="title-row">
     <h1><em>写真の座標</em></h1>
-    <span class="wip-badge">製作中</span>
+    <span class="wip-badge">随時更新中</span>
   </div>
   <p class="header-subtitle">年代と表現</p>
   <p class="header-sub">写真は常にその時代の社会・政治・技術の文脈の中に生まれてきた。年代をたどりながら、世界の動きと写真表現の関係を探る。</p>
@@ -852,7 +922,10 @@ footer a:hover { color: var(--accent); }
     <div class="random-name" id="random-name">—</div>
     <div class="random-meta" id="random-meta">—</div>
     <div class="random-excerpt" id="random-excerpt">—</div>
-    <div class="random-hint">→ クリックして詳細を見る</div>
+    <div class="random-actions">
+      <button class="coordinate-link" type="button" onclick="openRandomCoordinates(event)">座標で見る</button>
+      <div class="random-hint">→ クリックして詳細を見る</div>
+    </div>
   </div>
 </div>
 </header>
@@ -909,16 +982,16 @@ footer a:hover { color: var(--accent); }
 </footer>
 
 <!-- ══════════════════════════════ DATA & LOGIC ══════════════════════════════ -->
-<script src="data/movements.js"></script>
-<script src="data/eras.js"></script>
-<script src="data/photographers.js"></script>
-<script src="data/content-helpers.js"></script>
-<script src="data/future/era-1990s.js"></script>
-<script src="data/future/era-2000s.js"></script>
-<script src="data/future/era-2010s.js"></script>
-<script src="data/future/photographers-1990s.js"></script>
-<script src="data/future/photographers-2000s.js"></script>
-<script src="data/future/photographers-2010s.js"></script>
-<script src="scripts/site.js"></script>
+<script src="data/movements.js?v=20260403a"></script>
+<script src="data/eras.js?v=20260403a"></script>
+<script src="data/photographers.js?v=20260403a"></script>
+<script src="data/content-helpers.js?v=20260403a"></script>
+<script src="data/future/era-1990s.js?v=20260403a"></script>
+<script src="data/future/era-2000s.js?v=20260403a"></script>
+<script src="data/future/era-2010s.js?v=20260403a"></script>
+<script src="data/future/photographers-1990s.js?v=20260403a"></script>
+<script src="data/future/photographers-2000s.js?v=20260403a"></script>
+<script src="data/future/photographers-2010s.js?v=20260403a"></script>
+<script src="scripts/site.js?v=20260403a"></script>
 </body>
 </html>
