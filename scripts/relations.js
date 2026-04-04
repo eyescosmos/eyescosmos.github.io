@@ -358,9 +358,9 @@
     const eraSpacing = 1180;
     const startX = -((eraOrder.length - 1) * eraSpacing) / 2;
     const photographerByEra = new Map();
-    const rowsPerEra = 8;
-    const rowSpacing = 420;
-    const columnSpacing = 420;
+    const rowsPerEra = 10;
+    const rowSpacing = 500;
+    const columnSpacing = 310;
 
     photographers.forEach(node => {
       const list = photographerByEra.get(node.era) || [];
@@ -370,14 +370,14 @@
 
     eraOrder.forEach((eraId, eraIndex) => {
       const eraNodes = photographerByEra.get(eraId) || [];
-      const localRows = Math.min(10, Math.max(rowsPerEra, Math.ceil(Math.sqrt(Math.max(eraNodes.length, 1))) + 2));
+      const localRows = Math.min(15, Math.max(rowsPerEra, Math.ceil(Math.sqrt(Math.max(eraNodes.length, 1))) * 3));
       const densityBoost = Math.max(0, eraNodes.length - 10);
       const rightSideBoost = eraIndex / Math.max(1, eraOrder.length - 1);
-      const localRowSpacing = rowSpacing + Math.min(180, densityBoost * 12) + rightSideBoost * 180;
-      const localColumnSpacing = columnSpacing + Math.min(220, densityBoost * 14);
-      const verticalWaveBoost = 190 + rightSideBoost * 150;
-      const verticalJitter = 360 + rightSideBoost * 180;
-      const lowerBiasStrength = 260 + rightSideBoost * 140;
+      const localRowSpacing = rowSpacing + Math.min(220, densityBoost * 14) + rightSideBoost * 240;
+      const localColumnSpacing = Math.max(210, columnSpacing + Math.min(80, densityBoost * 4) - rightSideBoost * 36);
+      const verticalWaveBoost = 260 + rightSideBoost * 220;
+      const verticalJitter = 420 + rightSideBoost * 220;
+      const lowerBiasStrength = 160 + rightSideBoost * 80;
       const columns = Math.max(1, Math.ceil(eraNodes.length / localRows));
       eraNodes.forEach((node, index) => {
         const column = Math.floor(index / localRows);
@@ -385,8 +385,9 @@
         const rowOffset = (row - (localRows - 1) / 2) * localRowSpacing;
         const columnOffset = (column - (columns - 1) / 2) * localColumnSpacing;
         const eraWave = Math.sin(eraIndex * 0.92 + column * 0.55) * verticalWaveBoost;
-        const columnDrift = Math.cos((row + 1) * 0.7 + eraIndex * 0.45) * 80;
-        const lowerBias = ((row / Math.max(1, localRows - 1)) - 0.35) * lowerBiasStrength;
+        const columnDrift = Math.cos((row + 1) * 0.7 + eraIndex * 0.45) * 54;
+        const lowerBias = ((row / Math.max(1, localRows - 1)) - 0.5) * lowerBiasStrength;
+        const columnVerticalOffset = (column % 2 === 0 ? -1 : 1) * (120 + rightSideBoost * 140);
         node.x =
           startX +
           eraIndex * eraSpacing +
@@ -396,14 +397,18 @@
         node.y =
           rowOffset +
           eraWave +
+          columnVerticalOffset +
           lowerBias +
           jitter(`${node.id}:y`, verticalJitter);
       });
 
-      relaxHorizontally(eraNodes, 260, 14);
-      relaxVertically(eraNodes, 220 + rightSideBoost * 60, 12);
-      repelCrowdedNodes(eraNodes, 220, 130 + rightSideBoost * 60, 12);
+      relaxHorizontally(eraNodes, 280, 16);
+      relaxVertically(eraNodes, 250 + rightSideBoost * 110, 14);
+      repelCrowdedNodes(eraNodes, 250, 180 + rightSideBoost * 90, 14);
     });
+
+    repelCrowdedNodes(photographers, 230, 160, 10);
+    relaxVertically(photographers, 120, 4);
 
     const movementUsage = new Map();
     movements.forEach(node => {
@@ -453,10 +458,10 @@
 
     const allX = nodes.map(node => node.x);
     const allY = nodes.map(node => node.y);
-    state.world.minX = Math.min(...allX) - 1400;
-    state.world.maxX = Math.max(...allX) + 1400;
-    state.world.minY = Math.min(...allY) - 1400;
-    state.world.maxY = Math.max(...allY) + 1900;
+    state.world.minX = Math.min(...allX) - 1500;
+    state.world.maxX = Math.max(...allX) + 1500;
+    state.world.minY = Math.min(...allY) - 1800;
+    state.world.maxY = Math.max(...allY) + 2200;
 
     nodes.forEach(node => {
       node.homeX = node.x;
