@@ -7,6 +7,7 @@ let activeFilters = { search: '', country: '', movement: '' };
 const EMPTY_BLOCK = '<div class="empty-copy" aria-hidden="true"></div>';
 const languageApi = window.PhotoCoordinatesI18n;
 let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
+const AFFILIATE_BOOKS = window.PHOTOGRAPHER_AFFILIATE_BOOKS || {};
 
 const UI_TEXT = {
   ja: {
@@ -127,6 +128,78 @@ function localizeValue(valueJa, valueEn) {
   return currentLanguage === 'en'
     ? (valueEn || valueJa || '')
     : (valueJa || valueEn || '');
+}
+
+function resolveAffiliateValue(record, jaKey, enKey, fallbackKey) {
+  if (!record || typeof record !== 'object') return '';
+  return currentLanguage === 'en'
+    ? (record[enKey] || record[jaKey] || record[fallbackKey] || '')
+    : (record[jaKey] || record[enKey] || record[fallbackKey] || '');
+}
+
+function getAffiliateEntry(photographerId) {
+  return AFFILIATE_BOOKS[photographerId] || null;
+}
+
+function getArchiveAffiliateBooks(photographer) {
+  const entry = getAffiliateEntry(photographer.id);
+  if (!entry) {
+    if (!photographer.amazon) return [];
+    return [{
+      title: t('books'),
+      url: photographer.amazon
+    }];
+  }
+
+  const books = Array.isArray(entry.books) ? entry.books : [];
+  const normalized = books
+    .map(book => ({
+      title: resolveAffiliateValue(book, 'titleJa', 'titleEn', 'title'),
+      url: resolveAffiliateValue(book, 'urlJa', 'urlEn', 'url')
+    }))
+    .filter(book => book.title && book.url);
+
+  if (normalized.length) return normalized.slice(0, 2);
+
+  const featured = currentLanguage === 'en'
+    ? (entry.featured?.en || entry.featured?.ja || entry.featured || null)
+    : (entry.featured?.ja || entry.featured?.en || entry.featured || null);
+  if (featured?.url) {
+    return [{
+      title: featured.label || t('books'),
+      url: featured.url
+    }];
+  }
+
+  if (!photographer.amazon) return [];
+  return [{
+    title: t('books'),
+    url: photographer.amazon
+  }];
+}
+
+function renderArchiveAffiliateSection(photographer) {
+  const books = getArchiveAffiliateBooks(photographer);
+  if (!books.length) {
+    return `
+      <div class="detail-section">
+        <div class="detail-section-title">${t('books')}</div>
+        <div class="amazon-placeholder">${t('amazonPending')}</div>
+      </div>`;
+  }
+
+  const links = books.map(book => {
+    const label = book.title && book.title !== t('books')
+      ? `${book.title} / Amazon ↗`
+      : t('amazon');
+    return `<a class="detail-link" href="${book.url}" target="_blank" rel="noopener sponsored">${label}</a>`;
+  }).join('');
+
+  return `
+      <div class="detail-section">
+        <div class="detail-section-title">${t('books')}</div>
+        <div class="detail-links">${links}</div>
+      </div>`;
 }
 
 function realPhotographers() {
@@ -604,10 +677,6 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     `<a class="detail-link" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`
   ).join('');
   const detailPageLink = `<a class="detail-link" href="${photographerPagePath(p)}">${t('detailPage')}</a>`;
-  const amazonHTML = p.amazon
-    ? `<a class="detail-link" href="${p.amazon}" target="_blank" rel="noopener sponsored">${t('amazon')}</a>`
-    : `<div class="amazon-placeholder">${p.isPlaceholder ? '' : t('amazonPending')}</div>`;
-
   if (p.isPlaceholder) {
     return `
       <div class="detail-panel" id="${panelId}">
@@ -669,11 +738,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
         <div class="detail-links">${detailPageLink}${linksHTML}</div>
       </div>`;
 
-  const booksSection = amazonHTML ? `
-      <div class="detail-section">
-        <div class="detail-section-title">${t('books')}</div>
-        ${amazonHTML}
-      </div>` : '';
+  const booksSection = renderArchiveAffiliateSection(p);
   const relatedSection = buildRelatedReadingSection(p);
 
   return `
