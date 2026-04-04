@@ -45,6 +45,7 @@ const UI_TEXT = {
     explanation: '解説',
     externalLinks: '外部リンク',
     books: '写真集',
+    sources: '出典',
     detailPage: '独立ページで読む',
     amazon: '写真集を Amazon で見る ↗',
     amazonPending: '写真集へのリンク（準備中）',
@@ -87,7 +88,8 @@ const UI_TEXT = {
     registeredCount: count => `${count} registered`,
     explanation: 'Essay',
     externalLinks: 'External Links',
-    books: 'Books',
+    books: 'Photobooks',
+    sources: 'Sources',
     detailPage: 'Open page',
     amazon: 'View on Amazon ↗',
     amazonPending: 'Book link coming soon',
@@ -182,23 +184,27 @@ function renderArchiveAffiliateSection(photographer) {
   const books = getArchiveAffiliateBooks(photographer);
   if (!books.length) {
     return `
-      <div class="detail-section">
+      <div class="detail-section detail-books-section">
         <div class="detail-section-title">${t('books')}</div>
         <div class="amazon-placeholder">${t('amazonPending')}</div>
       </div>`;
   }
 
-  const links = books.map(book => {
-    const label = book.title && book.title !== t('books')
-      ? `${book.title} / Amazon ↗`
-      : t('amazon');
-    return `<a class="detail-link" href="${book.url}" target="_blank" rel="noopener sponsored">${label}</a>`;
+  const cards = books.map(book => {
+    const ctaLabel = currentLanguage === 'en' ? 'View on Amazon ↗' : '写真集を Amazon で見る ↗';
+    return `
+      <div class="detail-book-card">
+        <div class="detail-book-title">${book.title}</div>
+        <div class="detail-book-actions">
+          <a class="detail-link detail-link-amazon" href="${book.url}" target="_blank" rel="noopener sponsored">${ctaLabel}</a>
+        </div>
+      </div>`;
   }).join('');
 
   return `
-      <div class="detail-section">
+      <div class="detail-section detail-books-section">
         <div class="detail-section-title">${t('books')}</div>
-        <div class="detail-links">${links}</div>
+        <div class="detail-books-grid">${cards}</div>
       </div>`;
 }
 
@@ -697,17 +703,17 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
 
   /* ── 解説セクション：新旧フォーマット両対応 ── */
   let contextHTML;
+  let citationsHTML = '';
   if (p.context && p.context.citations) {
     /* 新フォーマット：context.text に *1 *2 マーカー、context.citations に出典 */
     const ctxText = renderCiteText(localizeValue(p.context.text, p.context.textEn), p.context.citations);
-    const citeListHTML = p.context.citations.map(c =>
+    citationsHTML = p.context.citations.map(c =>
       `<div class="cite-item"><span class="cite-num">*${c.num}</span><a href="${c.url}" target="_blank" rel="noopener">${c.name}</a></div>`
     ).join('');
     contextHTML = `
       <div class="detail-section">
         <div class="detail-section-title">${t('explanation')}</div>
         <div class="detail-text">${ctxText}</div>
-        <div class="cite-list">${citeListHTML}</div>
       </div>`;
   } else {
     /* 旧フォーマット：expression.text + context.text を結合し、全出典を自動番号化 */
@@ -721,16 +727,21 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     /* 重複URLを除去 */
     const seen = new Set();
     const dedupSrc = allSrc.filter(s => { if (seen.has(s.url)) return false; seen.add(s.url); return true; });
-    const citeListHTML = dedupSrc.map((s, i) =>
+    citationsHTML = dedupSrc.map((s, i) =>
       `<div class="cite-item"><span class="cite-num">*${i+1}</span><a href="${s.url}" target="_blank" rel="noopener">${s.text}</a></div>`
     ).join('');
     contextHTML = `
       <div class="detail-section">
         <div class="detail-section-title">${t('explanation')}</div>
         <div class="detail-text">${combined}</div>
-        ${citeListHTML ? `<div class="cite-list">${citeListHTML}</div>` : ''}
-          </div>`;
+      </div>`;
   }
+
+  const sourcesSection = citationsHTML ? `
+      <div class="detail-section">
+        <div class="detail-section-title">${t('sources')}</div>
+        <div class="cite-list">${citationsHTML}</div>
+      </div>` : '';
 
   const linksSection = `
       <div class="detail-section">
@@ -753,8 +764,9 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
       ${tags ? `<div class="detail-tags">${tags}</div>` : ''}
       ${contextHTML}
       ${relatedSection}
-      ${linksSection}
       ${booksSection}
+      ${linksSection}
+      ${sourcesSection}
     </div>
   `;
 }

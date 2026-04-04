@@ -9,17 +9,17 @@
   const copy = {
     ja: {
       fallbackButton: '写真集を Amazon で見る ↗',
-      fallbackNote: '関連書籍は準備中です。',
+      fallbackNote: '写真集は準備中です。',
       kicker: 'Available at',
       brand: 'Amazon',
-      heroNote: '写真史の流れとあわせて読める関連書籍'
+      heroNote: '写真史の流れとあわせて読める写真集'
     },
     en: {
       fallbackButton: 'View on Amazon ↗',
-      fallbackNote: 'Related books coming soon.',
+      fallbackNote: 'Photobooks coming soon.',
       kicker: 'Available at',
       brand: 'Amazon',
-      heroNote: 'Related books to read alongside this photographer'
+      heroNote: 'Photobooks to read alongside this photographer'
     }
   };
 

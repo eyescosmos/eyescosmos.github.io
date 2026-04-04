@@ -43,6 +43,12 @@
   --border: #2a2520;
   --accent: #c8a96e;
   --accent-dim: #7a6540;
+  --amazon-border: rgba(255, 163, 59, 0.56);
+  --amazon-border-strong: rgba(255, 179, 71, 0.86);
+  --amazon-bg: rgba(66, 38, 8, 0.34);
+  --amazon-bg-soft: rgba(92, 51, 8, 0.18);
+  --amazon-text: #fff1d5;
+  --amazon-brand: #ffb347;
   --text: #e8e0d4;
   --text-dim: #c0b4a8;
   --text-muted: #6e6560;
@@ -799,9 +805,8 @@ h1 em { font-style: normal; color: var(--accent); }
 .cite-ref a.cite-tooltip { color: var(--text-dim); }
 .cite-ref a.cite-tooltip:hover { color: var(--accent); }
 .cite-list {
-  margin-top: 20px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 8px;
 }
 .cite-item {
   font-family: 'DM Mono', monospace;
@@ -881,19 +886,68 @@ h1 em { font-style: normal; color: var(--accent); }
 }
 
 .amazon-placeholder {
-  border: 1px dashed var(--border);
+  border: 1px dashed var(--amazon-border);
   padding: 12px 16px;
   font-family: 'DM Mono', monospace;
   font-size: 10px;
-  color: var(--text-muted);
+  color: rgba(255, 224, 176, 0.82);
   letter-spacing: 0.08em;
   display: flex;
   align-items: center;
   gap: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 179, 71, 0.08), transparent 70%),
+    var(--amazon-bg-soft);
 }
 .amazon-placeholder::before {
   content: '□';
-  color: var(--accent-dim);
+  color: var(--amazon-brand);
+}
+.detail-books-section {
+  border: 1px solid var(--amazon-border);
+  padding: 18px 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 179, 71, 0.06), transparent 38%),
+    rgba(24, 18, 13, 0.7);
+}
+.detail-books-section .detail-section-title {
+  color: var(--amazon-brand);
+}
+.detail-books-grid {
+  display: grid;
+  gap: 12px;
+}
+.detail-book-card {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--amazon-border);
+  background:
+    linear-gradient(180deg, rgba(255, 179, 71, 0.04), transparent 45%),
+    var(--amazon-bg-soft);
+}
+.detail-book-title {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+}
+.detail-book-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.detail-link-amazon {
+  border-color: var(--amazon-border-strong);
+  background:
+    linear-gradient(180deg, rgba(255, 179, 71, 0.18), rgba(255, 163, 59, 0.1)),
+    var(--amazon-bg);
+  color: var(--amazon-text);
+  box-shadow: 0 10px 24px rgba(255, 153, 0, 0.12);
+}
+.detail-link-amazon:hover {
+  border-color: #ffc46b;
+  color: #fff8ea;
+  box-shadow: 0 14px 30px rgba(255, 153, 0, 0.2);
 }
 
 /* ── MOVEMENT VIEW ── */
@@ -1108,6 +1162,6 @@ footer a:hover { color: var(--accent); }
 <script src="data/future/photographers-2010s.js?v=20260403c"></script>
 <script src="data/affiliate-books.js?v=20260404c"></script>
 <script src="scripts/language.js?v=20260403e"></script>
-<script src="scripts/site.js?v=20260404amazon"></script>
+<script src="scripts/site.js?v=20260404books"></script>
 </body>
 </html>
