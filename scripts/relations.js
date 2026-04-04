@@ -372,17 +372,21 @@
       const eraNodes = photographerByEra.get(eraId) || [];
       const localRows = Math.min(10, Math.max(rowsPerEra, Math.ceil(Math.sqrt(Math.max(eraNodes.length, 1))) + 2));
       const densityBoost = Math.max(0, eraNodes.length - 10);
-      const localRowSpacing = rowSpacing + Math.min(180, densityBoost * 12);
+      const rightSideBoost = eraIndex / Math.max(1, eraOrder.length - 1);
+      const localRowSpacing = rowSpacing + Math.min(180, densityBoost * 12) + rightSideBoost * 180;
       const localColumnSpacing = columnSpacing + Math.min(220, densityBoost * 14);
+      const verticalWaveBoost = 190 + rightSideBoost * 150;
+      const verticalJitter = 360 + rightSideBoost * 180;
+      const lowerBiasStrength = 260 + rightSideBoost * 140;
       const columns = Math.max(1, Math.ceil(eraNodes.length / localRows));
       eraNodes.forEach((node, index) => {
         const column = Math.floor(index / localRows);
         const row = index % localRows;
         const rowOffset = (row - (localRows - 1) / 2) * localRowSpacing;
         const columnOffset = (column - (columns - 1) / 2) * localColumnSpacing;
-        const eraWave = Math.sin(eraIndex * 0.92 + column * 0.55) * 190;
+        const eraWave = Math.sin(eraIndex * 0.92 + column * 0.55) * verticalWaveBoost;
         const columnDrift = Math.cos((row + 1) * 0.7 + eraIndex * 0.45) * 80;
-        const lowerBias = ((row / Math.max(1, localRows - 1)) - 0.35) * 260;
+        const lowerBias = ((row / Math.max(1, localRows - 1)) - 0.35) * lowerBiasStrength;
         node.x =
           startX +
           eraIndex * eraSpacing +
@@ -393,12 +397,12 @@
           rowOffset +
           eraWave +
           lowerBias +
-          jitter(`${node.id}:y`, 360);
+          jitter(`${node.id}:y`, verticalJitter);
       });
 
       relaxHorizontally(eraNodes, 260, 14);
-      relaxVertically(eraNodes, 180, 10);
-      repelCrowdedNodes(eraNodes, 220, 120, 10);
+      relaxVertically(eraNodes, 220 + rightSideBoost * 60, 12);
+      repelCrowdedNodes(eraNodes, 220, 130 + rightSideBoost * 60, 12);
     });
 
     const movementUsage = new Map();
