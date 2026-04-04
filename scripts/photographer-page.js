@@ -9,11 +9,17 @@
   const copy = {
     ja: {
       fallbackButton: '写真集を Amazon で見る ↗',
-      fallbackNote: '関連書籍は準備中です。'
+      fallbackNote: '関連書籍は準備中です。',
+      kicker: 'Available at',
+      brand: 'Amazon',
+      heroNote: '写真史の流れとあわせて読める関連書籍'
     },
     en: {
       fallbackButton: 'View on Amazon ↗',
-      fallbackNote: 'Related books coming soon.'
+      fallbackNote: 'Related books coming soon.',
+      kicker: 'Available at',
+      brand: 'Amazon',
+      heroNote: 'Related books to read alongside this photographer'
     }
   };
 
@@ -41,7 +47,22 @@
     anchor.href = url;
     anchor.target = '_blank';
     anchor.rel = 'noopener sponsored';
-    anchor.textContent = label;
+    anchor.setAttribute('aria-label', label);
+
+    const copyWrap = document.createElement('span');
+    copyWrap.className = 'amazon-cta-copy';
+
+    const kicker = document.createElement('span');
+    kicker.className = 'amazon-cta-kicker';
+    kicker.textContent = locale.kicker;
+
+    const brand = document.createElement('span');
+    brand.className = 'amazon-cta-brand';
+    brand.innerHTML = `<span class="amazon-word">${locale.brand}</span> ↗`;
+
+    copyWrap.appendChild(kicker);
+    copyWrap.appendChild(brand);
+    anchor.appendChild(copyWrap);
     return anchor;
   }
 
@@ -51,7 +72,11 @@
     const featuredUrl = featuredRecord && featuredRecord.url;
     if (featuredUrl) {
       const featuredLabel = featuredRecord.label || locale.fallbackButton;
-      hero.appendChild(createAction(featuredUrl, featuredLabel, 'chip-link'));
+      hero.appendChild(createAction(featuredUrl, featuredLabel, 'chip-link amazon-cta'));
+      const note = document.createElement('div');
+      note.className = 'amazon-note';
+      note.textContent = locale.heroNote;
+      hero.appendChild(note);
     }
   }
 
@@ -62,7 +87,9 @@
       const title = resolveByLanguage(book, 'titleJa', 'titleEn', 'title');
       const note = resolveByLanguage(book, 'noteJa', 'noteEn', 'note');
       const url = resolveByLanguage(book, 'urlJa', 'urlEn', 'url');
-      return { title, note, url };
+      const imageUrl = resolveByLanguage(book, 'imageUrlJa', 'imageUrlEn', 'imageUrl');
+      const imageAlt = resolveByLanguage(book, 'imageAltJa', 'imageAltEn', 'imageAlt') || title;
+      return { title, note, url, imageUrl, imageAlt };
     })
     .filter((book) => book.title && book.url);
 
@@ -79,21 +106,39 @@
     const card = document.createElement('div');
     card.className = 'book-card';
 
+    const media = document.createElement('div');
+    media.className = 'book-media';
+
+    if (book.imageUrl) {
+      const image = document.createElement('img');
+      image.className = 'book-thumb';
+      image.src = book.imageUrl;
+      image.alt = book.imageAlt;
+      image.loading = 'lazy';
+      media.appendChild(image);
+    }
+
+    const copy = document.createElement('div');
+    copy.className = 'book-copy';
+
     const title = document.createElement('div');
     title.className = 'book-title';
     title.textContent = book.title;
-    card.appendChild(title);
+    copy.appendChild(title);
 
     if (book.note) {
       const note = document.createElement('div');
       note.className = 'book-note';
       note.textContent = book.note;
-      card.appendChild(note);
+      copy.appendChild(note);
     }
+
+    media.appendChild(copy);
+    card.appendChild(media);
 
     const actions = document.createElement('div');
     actions.className = 'book-actions';
-    actions.appendChild(createAction(book.url, locale.fallbackButton, 'chip-link'));
+    actions.appendChild(createAction(book.url, locale.fallbackButton, 'chip-link amazon-cta'));
     card.appendChild(actions);
 
     list.appendChild(card);
