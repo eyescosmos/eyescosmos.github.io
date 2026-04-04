@@ -315,6 +315,9 @@
     const eraSpacing = 760;
     const startX = -((eraOrder.length - 1) * eraSpacing) / 2;
     const photographerByEra = new Map();
+    const rowsPerEra = 6;
+    const rowSpacing = 250;
+    const columnSpacing = 250;
 
     photographers.forEach(node => {
       const list = photographerByEra.get(node.era) || [];
@@ -324,22 +327,27 @@
 
     eraOrder.forEach((eraId, eraIndex) => {
       const eraNodes = photographerByEra.get(eraId) || [];
-      const columns = Math.max(1, Math.ceil(eraNodes.length / 4));
+      const columns = Math.max(1, Math.ceil(eraNodes.length / rowsPerEra));
       eraNodes.forEach((node, index) => {
-        const column = Math.floor(index / 4);
-        const row = index % 4;
+        const column = Math.floor(index / rowsPerEra);
+        const row = index % rowsPerEra;
+        const rowOffset = (row - (rowsPerEra - 1) / 2) * rowSpacing;
+        const columnOffset = (column - (columns - 1) / 2) * columnSpacing;
+        const eraWave = Math.sin(eraIndex * 0.92 + column * 0.55) * 90;
+        const columnDrift = Math.cos((row + 1) * 0.7 + eraIndex * 0.45) * 28;
         node.x =
           startX +
           eraIndex * eraSpacing +
-          (column - (columns - 1) / 2) * 220 +
-          jitter(node.id, 90);
+          columnOffset +
+          columnDrift +
+          jitter(node.id, 135);
         node.y =
-          -40 +
-          row * 220 +
-          jitter(`${node.id}:y`, 110);
+          rowOffset +
+          eraWave +
+          jitter(`${node.id}:y`, 180);
       });
 
-      relaxHorizontally(eraNodes, 150, 8);
+      relaxHorizontally(eraNodes, 165, 10);
     });
 
     const movementUsage = new Map();
@@ -356,12 +364,12 @@
 
     const sortedMovements = [...movements].sort((a, b) => movementUsage.get(a.id) - movementUsage.get(b.id));
     sortedMovements.forEach((node, index) => {
-      const row = index % 5;
-      node.x = movementUsage.get(node.id) + jitter(node.id, 220);
-      node.y = -860 + row * 155 + jitter(`${node.id}:y`, 40);
+      const row = index % 6;
+      node.x = movementUsage.get(node.id) + jitter(node.id, 260);
+      node.y = -1160 + row * 170 + jitter(`${node.id}:y`, 80);
     });
 
-    relaxHorizontally(sortedMovements, 170, 14);
+    relaxHorizontally(sortedMovements, 180, 16);
 
     const ideaUsage = new Map();
     ideas.forEach(node => {
@@ -377,19 +385,19 @@
 
     const sortedIdeas = [...ideas].sort((a, b) => ideaUsage.get(a.id) - ideaUsage.get(b.id));
     sortedIdeas.forEach((node, index) => {
-      const row = index % 4;
-      node.x = ideaUsage.get(node.id) + jitter(node.id, 260);
-      node.y = 980 + row * 150 + jitter(`${node.id}:y`, 50);
+      const row = index % 5;
+      node.x = ideaUsage.get(node.id) + jitter(node.id, 300);
+      node.y = 1160 + row * 175 + jitter(`${node.id}:y`, 90);
     });
 
-    relaxHorizontally(sortedIdeas, 180, 14);
+    relaxHorizontally(sortedIdeas, 190, 16);
 
     const allX = nodes.map(node => node.x);
     const allY = nodes.map(node => node.y);
     state.world.minX = Math.min(...allX) - 620;
     state.world.maxX = Math.max(...allX) + 620;
-    state.world.minY = Math.min(...allY) - 420;
-    state.world.maxY = Math.max(...allY) + 420;
+    state.world.minY = Math.min(...allY) - 560;
+    state.world.maxY = Math.max(...allY) + 560;
 
     nodes.forEach(node => {
       node.homeX = node.x;
