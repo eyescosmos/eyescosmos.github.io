@@ -248,6 +248,49 @@
     }
   }
 
+  function relaxVertically(list, minGap, iterations) {
+    const ordered = [...list].sort((a, b) => a.y - b.y);
+    for (let step = 0; step < iterations; step += 1) {
+      for (let index = 1; index < ordered.length; index += 1) {
+        const upper = ordered[index - 1];
+        const lower = ordered[index];
+        const gap = lower.y - upper.y;
+        if (gap >= minGap) continue;
+        const push = (minGap - gap) * 0.5;
+        upper.y -= push;
+        lower.y += push;
+      }
+    }
+  }
+
+  function repelCrowdedNodes(list, minXGap, minYGap, iterations) {
+    for (let step = 0; step < iterations; step += 1) {
+      for (let index = 0; index < list.length; index += 1) {
+        for (let otherIndex = index + 1; otherIndex < list.length; otherIndex += 1) {
+          const node = list[index];
+          const other = list[otherIndex];
+          const dx = other.x - node.x;
+          const dy = other.y - node.y;
+          const overlapX = minXGap - Math.abs(dx);
+          const overlapY = minYGap - Math.abs(dy);
+          if (overlapX <= 0 || overlapY <= 0) continue;
+
+          if (overlapX < overlapY) {
+            const push = overlapX * 0.52;
+            const direction = dx === 0 ? (stableSortValue(`${node.id}:${other.id}`) % 2 ? 1 : -1) : Math.sign(dx);
+            node.x -= direction * push;
+            other.x += direction * push;
+          } else {
+            const push = overlapY * 0.52;
+            const direction = dy === 0 ? (stableSortValue(`${node.id}:${other.id}:y`) % 2 ? 1 : -1) : Math.sign(dy);
+            node.y -= direction * push;
+            other.y += direction * push;
+          }
+        }
+      }
+    }
+  }
+
   nodes.forEach(node => {
     state.nodesById.set(node.id, node);
     state.adjacency.set(node.id, new Set());
@@ -312,12 +355,12 @@
     const ideas = nodes.filter(node => node.type === 'idea');
     const eraOrder = RELATION_GRAPH.eras.map(era => era.id);
 
-    const eraSpacing = 1040;
+    const eraSpacing = 1180;
     const startX = -((eraOrder.length - 1) * eraSpacing) / 2;
     const photographerByEra = new Map();
-    const rowsPerEra = 7;
-    const rowSpacing = 360;
-    const columnSpacing = 360;
+    const rowsPerEra = 8;
+    const rowSpacing = 420;
+    const columnSpacing = 420;
 
     photographers.forEach(node => {
       const list = photographerByEra.get(node.era) || [];
@@ -327,27 +370,33 @@
 
     eraOrder.forEach((eraId, eraIndex) => {
       const eraNodes = photographerByEra.get(eraId) || [];
-      const columns = Math.max(1, Math.ceil(eraNodes.length / rowsPerEra));
+      const localRows = Math.min(10, Math.max(rowsPerEra, Math.ceil(Math.sqrt(Math.max(eraNodes.length, 1))) + 2));
+      const densityBoost = Math.max(0, eraNodes.length - 10);
+      const localRowSpacing = rowSpacing + Math.min(180, densityBoost * 12);
+      const localColumnSpacing = columnSpacing + Math.min(220, densityBoost * 14);
+      const columns = Math.max(1, Math.ceil(eraNodes.length / localRows));
       eraNodes.forEach((node, index) => {
-        const column = Math.floor(index / rowsPerEra);
-        const row = index % rowsPerEra;
-        const rowOffset = (row - (rowsPerEra - 1) / 2) * rowSpacing;
-        const columnOffset = (column - (columns - 1) / 2) * columnSpacing;
-        const eraWave = Math.sin(eraIndex * 0.92 + column * 0.55) * 140;
-        const columnDrift = Math.cos((row + 1) * 0.7 + eraIndex * 0.45) * 52;
+        const column = Math.floor(index / localRows);
+        const row = index % localRows;
+        const rowOffset = (row - (localRows - 1) / 2) * localRowSpacing;
+        const columnOffset = (column - (columns - 1) / 2) * localColumnSpacing;
+        const eraWave = Math.sin(eraIndex * 0.92 + column * 0.55) * 190;
+        const columnDrift = Math.cos((row + 1) * 0.7 + eraIndex * 0.45) * 80;
         node.x =
           startX +
           eraIndex * eraSpacing +
           columnOffset +
           columnDrift +
-          jitter(node.id, 220);
+          jitter(node.id, 260);
         node.y =
           rowOffset +
           eraWave +
-          jitter(`${node.id}:y`, 280);
+          jitter(`${node.id}:y`, 360);
       });
 
-      relaxHorizontally(eraNodes, 220, 12);
+      relaxHorizontally(eraNodes, 260, 14);
+      relaxVertically(eraNodes, 180, 10);
+      repelCrowdedNodes(eraNodes, 220, 120, 10);
     });
 
     const movementUsage = new Map();
@@ -366,10 +415,12 @@
     sortedMovements.forEach((node, index) => {
       const row = index % 7;
       node.x = movementUsage.get(node.id) + jitter(node.id, 420);
-      node.y = -1680 + row * 220 + jitter(`${node.id}:y`, 140);
+      node.y = -1980 + row * 260 + jitter(`${node.id}:y`, 180);
     });
 
     relaxHorizontally(sortedMovements, 260, 18);
+    relaxVertically(sortedMovements, 120, 10);
+    repelCrowdedNodes(sortedMovements, 220, 90, 8);
 
     const ideaUsage = new Map();
     ideas.forEach(node => {
@@ -387,17 +438,19 @@
     sortedIdeas.forEach((node, index) => {
       const row = index % 6;
       node.x = ideaUsage.get(node.id) + jitter(node.id, 460);
-      node.y = 1660 + row * 230 + jitter(`${node.id}:y`, 150);
+      node.y = 1960 + row * 270 + jitter(`${node.id}:y`, 190);
     });
 
     relaxHorizontally(sortedIdeas, 280, 18);
+    relaxVertically(sortedIdeas, 120, 10);
+    repelCrowdedNodes(sortedIdeas, 240, 100, 8);
 
     const allX = nodes.map(node => node.x);
     const allY = nodes.map(node => node.y);
-    state.world.minX = Math.min(...allX) - 1000;
-    state.world.maxX = Math.max(...allX) + 1000;
-    state.world.minY = Math.min(...allY) - 900;
-    state.world.maxY = Math.max(...allY) + 900;
+    state.world.minX = Math.min(...allX) - 1400;
+    state.world.maxX = Math.max(...allX) + 1400;
+    state.world.minY = Math.min(...allY) - 1400;
+    state.world.maxY = Math.max(...allY) + 1400;
 
     nodes.forEach(node => {
       node.homeX = node.x;
@@ -416,7 +469,7 @@
     const worldHeight = Math.max(1, state.world.maxY - state.world.minY);
     const fitX = (state.width * 0.54) / worldWidth;
     const fitY = (state.height * 0.5) / worldHeight;
-    const baseScale = Math.max(0.92, Math.min(1.7, fitX * 6.6, fitY * 6.6));
+    const baseScale = Math.max(1.02, Math.min(1.95, fitX * 8.0, fitY * 8.0));
     state.defaultScale = baseScale;
     state.minScale = Math.max(0.38, baseScale * 0.45);
     state.maxScale = Math.max(3.6, baseScale * 3.8);
