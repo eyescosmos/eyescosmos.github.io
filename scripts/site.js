@@ -57,8 +57,8 @@ const UI_TEXT = {
     homeBack: 'Back to Photo Coordinates',
     wip: 'Updating',
     archiveHeaderLabel: 'Photo Coordinates / Archive',
-    archiveSubtitle: 'Browse Photography History by Era',
-    archiveLead: 'Trace photography history from 1839 to the present through photographers, movements, world events, technology, and historical context.',
+    archiveSubtitle: 'History of Photography by Era',
+    archiveLead: 'Browse the history of photography from 1839 to the present through photographers, artistic movements, world events, technology, and visual culture.',
     archiveDisclaimer: 'This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but ambiguity, errors, or outdated details may remain. Please verify topics that matter to you.',
     randomLabel: 'Photographer of the Day',
     randomHint: '→ Click to open the detail panel',
@@ -271,7 +271,7 @@ function updateArchiveLanguageLinks() {
 function applyStaticTranslations() {
   document.documentElement.lang = currentLanguage;
   document.title = currentLanguage === 'en'
-    ? 'Photo Coordinates | Browse Photography History by Era'
+    ? 'Photo Coordinates | History of Photography by Era and Movement'
     : '写真の座標 | 年代からたどる写真史と写真家';
 
   const mappings = [

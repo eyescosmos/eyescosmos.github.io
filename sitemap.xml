@@ -45,6 +45,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/relations.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.github.io/privacy-policy.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.github.io/en/privacy-policy.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/privacy-policy.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.github.io/photographers/daguerre.html</loc>
     <lastmod>2026-04-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/photographers/daguerre.html"/>
