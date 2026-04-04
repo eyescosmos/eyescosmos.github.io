@@ -382,6 +382,7 @@
         const columnOffset = (column - (columns - 1) / 2) * localColumnSpacing;
         const eraWave = Math.sin(eraIndex * 0.92 + column * 0.55) * 190;
         const columnDrift = Math.cos((row + 1) * 0.7 + eraIndex * 0.45) * 80;
+        const lowerBias = ((row / Math.max(1, localRows - 1)) - 0.35) * 260;
         node.x =
           startX +
           eraIndex * eraSpacing +
@@ -391,6 +392,7 @@
         node.y =
           rowOffset +
           eraWave +
+          lowerBias +
           jitter(`${node.id}:y`, 360);
       });
 
@@ -438,7 +440,7 @@
     sortedIdeas.forEach((node, index) => {
       const row = index % 6;
       node.x = ideaUsage.get(node.id) + jitter(node.id, 460);
-      node.y = 1960 + row * 270 + jitter(`${node.id}:y`, 190);
+      node.y = 2380 + row * 320 + jitter(`${node.id}:y`, 240);
     });
 
     relaxHorizontally(sortedIdeas, 280, 18);
@@ -450,7 +452,7 @@
     state.world.minX = Math.min(...allX) - 1400;
     state.world.maxX = Math.max(...allX) + 1400;
     state.world.minY = Math.min(...allY) - 1400;
-    state.world.maxY = Math.max(...allY) + 1400;
+    state.world.maxY = Math.max(...allY) + 1900;
 
     nodes.forEach(node => {
       node.homeX = node.x;
