@@ -14,8 +14,8 @@ const UI_TEXT = {
     homeBack: '写真の座標へ戻る',
     wip: '随時更新中',
     archiveHeaderLabel: 'Photo Coordinates / Archive',
-    archiveSubtitle: '年代と表現',
-    archiveLead: '写真は常にその時代の社会・政治・技術の文脈の中に生まれてきた。年代をたどりながら、世界の動きと写真表現の関係を探る。',
+    archiveSubtitle: '年代からたどる写真史',
+    archiveLead: '1839年から現代までの写真史を、各時代の写真家、表現、世界情勢、技術、時代背景の関係とともにたどります。',
     archiveDisclaimer: '※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、曖昧さや誤りが含まれる可能性があります。気になった作家・表現・時代については、ぜひご自身でも確認してください。',
     randomLabel: '今日のランダム写真家',
     randomHint: '→ クリックして詳細を見る',
@@ -57,8 +57,8 @@ const UI_TEXT = {
     homeBack: 'Back to Photo Coordinates',
     wip: 'Updating',
     archiveHeaderLabel: 'Photo Coordinates / Archive',
-    archiveSubtitle: 'Era and Movement',
-    archiveLead: 'Photography has always emerged within the social, political, and technological conditions of its time. Move through the eras and trace how world events shaped photographic expression.',
+    archiveSubtitle: 'Browse Photography History by Era',
+    archiveLead: 'Trace photography history from 1839 to the present through photographers, movements, world events, technology, and historical context.',
     archiveDisclaimer: 'This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but ambiguity, errors, or outdated details may remain. Please verify topics that matter to you.',
     randomLabel: 'Photographer of the Day',
     randomHint: '→ Click to open the detail panel',
@@ -270,7 +270,9 @@ function updateArchiveLanguageLinks() {
 
 function applyStaticTranslations() {
   document.documentElement.lang = currentLanguage;
-  document.title = currentLanguage === 'en' ? 'Photo Coordinates | Eras and Movements' : '写真の座標 | 年代と表現';
+  document.title = currentLanguage === 'en'
+    ? 'Photo Coordinates | Browse Photography History by Era'
+    : '写真の座標 | 年代からたどる写真史と写真家';
 
   const mappings = [
     ['archive-back-link', 'homeBack'],

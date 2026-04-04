@@ -44,9 +44,9 @@
     ja: {
       title: '写真の座標',
       status: '随時更新中',
-      subcopy: '世界・日本、各国の写真家、運動、思想の関係をたどるサイトです。',
+      subcopy: '写真の座標は、世界・日本・各国の写真家、運動、思想、時代背景の関係から写真史をたどるサイトです。',
       note: '※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。',
-      lede: '写真家、運動、思想を大きな平面の上にひらいた試作ページです。<br>クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。',
+      lede: '写真史の流れを、写真家・表現・時代背景・関連性の重なりとして見渡すための入口です。<br>クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。',
       eraLink: '年代から見る',
       movementLink: '表現から見る',
       defaultLabel: '写真の座標',
@@ -62,9 +62,9 @@
     en: {
       title: 'Photo Coordinates',
       status: 'Updating',
-      subcopy: 'A site that traces photographic history through relationships among photographers, movements, and ideas.',
+      subcopy: 'Photo Coordinates is a site for tracing photography history through photographers, movements, ideas, and historical context.',
       note: 'This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.',
-      lede: 'This prototype lays photographers, movements, and ideas across one large plane.<br>Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.',
+      lede: 'This page helps you view photography history as an overlapping field of photographers, movements, historical context, and relationships.<br>Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.',
       eraLink: 'Browse by Era',
       movementLink: 'Browse by Movement',
       defaultLabel: 'Photo Coordinates',
