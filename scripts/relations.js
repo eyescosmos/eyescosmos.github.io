@@ -116,6 +116,8 @@
     focusTraversalCache: null,
     focusLayoutCache: null,
     maxVisibleDepth: 2,
+    maxNodeDelta: 0,
+    hasActiveGlow: false,
     adjacency: new Map(),
     neighborEdges: new Map(),
     nodesById: new Map(),
@@ -132,6 +134,8 @@
     ...node,
     x: 0,
     y: 0,
+    screenX: 0,
+    screenY: 0,
     homeX: 0,
     homeY: 0,
     glow: 0,
@@ -313,7 +317,7 @@
       : Date.now();
     state.ambientMotionUntil = now + 1600;
     state.stars = Array.from(
-      { length: Math.max(320, Math.round((state.width * state.height) / 7000)) },
+      { length: Math.max(220, Math.round((state.width * state.height) / 11000)) },
       () => {
         const bright = Math.random() > 0.78;
         return {
@@ -522,6 +526,29 @@
       x: state.width * 0.5 + (x - state.cameraX) * state.scale,
       y: state.height * 0.5 + (y - state.cameraY) * state.scale
     };
+  }
+
+  function isNodeNearViewport(node, margin = 160) {
+    const width = Math.max(22, node.hitWidth || 0) + margin;
+    return (
+      node.screenX >= -width
+      && node.screenX <= state.width + width
+      && node.screenY >= -margin
+      && node.screenY <= state.height + margin
+    );
+  }
+
+  function isSegmentNearViewport(start, end, margin = 120) {
+    const minX = Math.min(start.x, end.x);
+    const maxX = Math.max(start.x, end.x);
+    const minY = Math.min(start.y, end.y);
+    const maxY = Math.max(start.y, end.y);
+    return !(
+      maxX < -margin
+      || minX > state.width + margin
+      || maxY < -margin
+      || minY > state.height + margin
+    );
   }
 
   function getDisplayTarget(node) {
@@ -984,7 +1011,8 @@
     let bestScore = Infinity;
 
     for (const node of nodes) {
-      const point = worldToScreen(node.x, node.y);
+      if (!isNodeNearViewport(node, 90)) continue;
+      const point = { x: node.screenX, y: node.screenY };
       const placeLeft = isLabelOnLeft(node);
       const labelLeft = placeLeft ? point.x - 10 - node.hitWidth : point.x - 10;
       const labelTop = point.y - 18;
@@ -1214,12 +1242,22 @@
     state.cameraX += (state.targetCameraX - state.cameraX) * 0.1;
     state.cameraY += (state.targetCameraY - state.cameraY) * 0.1;
 
+    let maxNodeDelta = 0;
+    let hasActiveGlow = false;
     nodes.forEach(node => {
       const target = getDisplayTarget(node);
-      node.x += (target.x - node.x) * 0.12;
-      node.y += (target.y - node.y) * 0.12;
+      const deltaX = target.x - node.x;
+      const deltaY = target.y - node.y;
+      maxNodeDelta = Math.max(maxNodeDelta, Math.abs(deltaX), Math.abs(deltaY));
+      node.x += deltaX * 0.12;
+      node.y += deltaY * 0.12;
       node.glow *= 0.88;
+      if (node.glow > 0.03) hasActiveGlow = true;
+      node.screenX = state.width * 0.5 + (node.x - state.cameraX) * state.scale;
+      node.screenY = state.height * 0.5 + (node.y - state.cameraY) * state.scale;
     });
+    state.maxNodeDelta = maxNodeDelta;
+    state.hasActiveGlow = hasActiveGlow;
   }
 
   function isAnimating() {
@@ -1231,11 +1269,8 @@
     if (Math.abs(state.scale - state.targetScale) > 0.001) return true;
     if (Math.abs(state.cameraX - state.targetCameraX) > 0.2) return true;
     if (Math.abs(state.cameraY - state.targetCameraY) > 0.2) return true;
-    if (nodes.some(node => {
-      const target = getDisplayTarget(node);
-      return Math.abs(node.x - target.x) > 0.3 || Math.abs(node.y - target.y) > 0.3;
-    })) return true;
-    return nodes.some(node => node.glow > 0.03);
+    if (state.maxNodeDelta > 0.3) return true;
+    return state.hasActiveGlow;
   }
 
   function drawBackground() {
@@ -1316,8 +1351,9 @@
       if (!node || !parent) return;
       const depth = traversal.depths.get(nodeId) || 1;
       if (depth > state.maxVisibleDepth) return;
-      const start = worldToScreen(parent.x, parent.y);
-      const end = worldToScreen(node.x, node.y);
+      const start = { x: parent.screenX, y: parent.screenY };
+      const end = { x: node.screenX, y: node.screenY };
+      if (!isSegmentNearViewport(start, end)) return;
       ctx.beginPath();
       ctx.moveTo(start.x, start.y);
       ctx.lineTo(end.x, end.y);
@@ -1338,7 +1374,8 @@
       return;
     }
 
-    const point = worldToScreen(node.x, node.y);
+    if (!isNodeNearViewport(node)) return;
+    const point = { x: node.screenX, y: node.screenY };
     const prominenceBoost = node.type === 'photographer' && node.prominence ? 1.15 : 0;
     const baseRadius = node.type === 'photographer'
       ? 2.15 + prominenceBoost
