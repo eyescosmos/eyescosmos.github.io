@@ -3,38 +3,55 @@ PHOTOGRAPHERS.push(
   "id": "david-octavius-hill",
   "name": "David Octavius Hill",
   "nameJa": "デイヴィッド・オクタヴィアス・ヒル",
-  "nationality": "",
-  "flag": "",
-  "years": "1840s / 1840年代",
-  "gender": "",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1802-1870",
+  "gender": "男性",
   "era": "1839",
-  "movements": [],
+  "movements": ["カロタイプ", "ピクトリアリズム", "肖像写真"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Metropolitan Museum of Art — Hill and Adamson", "url": "https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s" },
+    { "label": "National Galleries of Scotland", "url": "https://www.nationalgalleries.org/art-and-artists/features/hill-adamson" },
+    { "label": "Getty Museum — Hill & Adamson", "url": "https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
-    "textEn": "Coming soon.",
-    "citations": []
+    "text": "デイヴィッド・オクタヴィアス・ヒルは1802年にスコットランドのパースに生まれた風景画家・版画家で、王立スコットランド・アカデミーの創立メンバーかつ書記を長年務めた。エジンバラの知的・文化的サークルの中心にいた人物で、その人なつっこい物腰と気取りのなさが被写体を安心させる特別な能力をもたらした*1。ロバート・アダムソンとの協働（1843〜48年）は、写真を芸術的媒体として意識的に用いた最初の本格的実践として評価されている。二人の協働が始まるきっかけは1843年5月18日のスコットランド宗教改革——「ディスラプション（分離）」と呼ばれる、約155名の牧師が国家権力による教会人事介入に抗議してスコットランド自由教会を設立した事件だった。ヒルはこの歴史的瞬間に居合わせた470名以上の人物全員を描き込む巨大な記念絵画の制作を決意し、参考用の肖像写真が必要となった。植物学者のデイヴィッド・ブリュースターがヒルに新進の写真家アダムソンを紹介し、カロタイプが理想的な参照素材になると提案した*1。ヒルは絵画家として培った構図知識を写真に応用した。レンブラントやオランダ絵画の肖像画法を参照しながら被写体を配置し、アダムソンが撮影・感光紙の調製・現像・プリントの全技術工程を担った。二人は約3000点の作品を残した*2。彼らがダゲレオタイプではなくタルボットのカロタイプ法を選んだことは本質的な芸術的判断だった。ヒル自身が語ったように「紙の粗さこそがカロタイプをダゲレオタイプに細部で劣らせる主因だが、それこそがカロタイプの命だ」——技術的限界を芸術的特質として意識的に選んだのである*2。カロタイプ・プリントの茶褐色の豊かな調子と光を吸収するマットな表面は、同時代の観察者にレンブラントの版画との類似を即座に想起させた。ニューヘブンの漁師・漁師の女性たちを捉えた連作は写真史上最初の重要な社会記録的プロジェクトとして、1846年刊行の『セント・アンドリュースのカロタイプ写真の連作』はメトロポリタン美術館とゲッティ美術館のコレクションに収蔵されている*3。アダムソンが1848年に26〜27歳で死去した後、ヒルは12年間写真を手放して絵画に戻り、「ディスラプション」の絵画は1866年にようやく完成した。スティーグリッツはヒルを「絵画的写真の父」と呼び、Camera Work誌（1905・1909・1912年）でヒル＆アダムソンのフォトグラビュールを掲載した*4。メトロポリタン美術館は彼らの写真を「写真による肖像として最高の達成の一つ」と評している*1。",
+    "textEn": "David Octavius Hill was born in Perth, Scotland, in 1802 — a painter, printmaker, and founding member and long-serving secretary of the Royal Scottish Academy. A prominent figure in Edinburgh's intellectual life, his ease with people and absence of affectation made him an exceptionally effective presence in photographic portraiture*1. The partnership between Hill and Robert Adamson (1843–48) is recognized as the first substantial body of self-consciously artistic work in the history of photography. The collaboration began with a specific commission. On May 18, 1843, approximately 155 ministers walked out of the Church of Scotland's General Assembly to found the Free Church of Scotland — the Disruption. Hill decided to paint a monumental commemorative canvas depicting all 470-plus signatories and needed photographic reference portraits. The physicist David Brewster introduced him to Adamson, proposing that calotypes would serve as ideal reference studies*1. Hill brought a painter's compositional knowledge to photography, placing subjects with reference to Rembrandt and Dutch portraiture. Adamson handled all technical operations: sensitizing paper, exposing the camera, developing negatives, printing. Together they produced approximately 3,000 photographs*2. Their choice of Talbot's calotype process over the daguerreotype was a deliberate artistic judgment. As Hill wrote: 'The rough and unequal texture throughout the paper is the main cause of the calotype failing in details before the Daguerreotype — and this is the very life of it.' The warm brown tonality and matte, light-absorbing surface of their salt prints immediately recalled Rembrandt to contemporaries. Their Newhaven series — portraits of fishermen and fishwives — is recognized as the first significant social documentary project in photography; their Calotype Views of St. Andrews (1846) is held by the Metropolitan Museum and the Getty Museum*3. After Adamson's death in 1848 at 26 or 27, Hill abandoned photography for twelve years and eventually completed the Disruption painting in 1866. Stieglitz called Hill 'the father of pictorial photography' and published Hill and Adamson photogravures in Camera Work in 1905, 1909, and 1912*4. The Metropolitan Museum has written that their photographs 'still rank among the highest achievements of photographic portraiture'*1.",
+    "citations": [
+      { "num": 1, "name": "Metropolitan Museum of Art — David Octavius Hill and Robert Adamson", "url": "https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s" },
+      { "num": 2, "name": "University of Glasgow — Hill & Adamson Calotype Process", "url": "https://www.gla.ac.uk/myglasgow/archivespecialcollections/discover/specialcollectionsa-z/hilladamson/calotypeprocess/" },
+      { "num": 3, "name": "Getty Museum — Hill & Adamson Collection", "url": "https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/" },
+      { "num": 4, "name": "Art of the Photogravure — James Craig Annan", "url": "https://photogravure.com/highlights/james-craig-annan/" }
+    ]
   }
 },
 {
   "id": "robert-adamson",
   "name": "Robert Adamson",
   "nameJa": "ロバート・アダムソン",
-  "nationality": "",
-  "flag": "",
-  "years": "1840s / 1840年代",
-  "gender": "",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1821-1848",
+  "gender": "男性",
   "era": "1839",
-  "movements": [],
+  "movements": ["カロタイプ", "肖像写真"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Metropolitan Museum of Art — Hill and Adamson", "url": "https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s" },
+    { "label": "National Galleries of Scotland", "url": "https://www.nationalgalleries.org/art-and-artists/features/hill-adamson" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
-    "textEn": "Coming soon.",
-    "citations": []
+    "text": "ロバート・アダムソンは1821年にスコットランドのファイフ州バーンサイドに農家の子として生まれた。兄のジョン・アダムソンはスコットランドで最初にタルボットのカロタイプ法を習得した写真家の一人であり、ロバートはその兄から技術を学んだ。1843年初夏にエジンバラのカルトン・ヒルのロック・ハウスにスタジオを構え、同市初のプロのカロタイプ写真家として開業した*1。開業まもなく画家のデイヴィッド・オクタヴィアス・ヒルが「ディスラプション」（スコットランド自由教会の設立）の記念絵画用の肖像写真を求めてやってきた。植物学者デイヴィッド・ブリュースターの仲介によって始まったこの協働は、4年半にわたる写真史上最初の本格的な芸術的写真パートナーシップへと発展した*1。アダムソンが担当したのは技術的な全工程——感光紙の調製・カメラの操作・現像・ソルト・プリントへの焼き付け——であり、ヒルが構図と演出を担当した。アダムソンが使用したカロタイプ法は、タルボットが1841年に特許を取得した、紙のネガから複数のプリントを作成できる手法だった。プリントは茶褐色の豊かな調子と絹のようなマットな質感を持ち、光を反射するダゲレオタイプとは対照的に光を吸収する表面を持つ——この特質がレンブラントの版画との視覚的類似性を生み出した。1843年11月に初めて二人の作品を見た水彩画家ジョン・ハーデンは「これはレンブラントだ、しかしさらに優れている、最高の古典的巨匠たちの様式とそっくりだ」と記している*2。ヒルとの共同制作では、スコットランド教会の牧師の肖像・ニューヘブンの漁師と漁師の女性の連作・エジンバラと周辺の建築風景など約3000点が生み出された。このうちニューヘブンの連作は写真史における最初の重要な社会記録的プロジェクトとして評価されている*3。アダムソンは1847年末に重篤な病に倒れ、1848年1月に26〜27歳という若さで死去した。没後半世紀を経てジェームズ・クレイグ・アナンがカロタイプ・ネガをフォトグラビュールに変換し、スティーグリッツのCamera Work誌（1905・1909・1912年）に掲載されることで二人の業績は写真史の正典に位置づけられた*4。",
+    "textEn": "Robert Adamson was born in 1821 in Burnside, Fife, Scotland, the son of a farmer. His older brother John Adamson was one of the first calotypists in Scotland, trained in Talbot's process; Robert learned the technique from him. In early summer 1843 he established himself at Rock House on Edinburgh's Calton Hill as the city's first professional calotypist*1. Within weeks, the painter David Octavius Hill approached him needing photographic reference portraits for a commemorative canvas of the 1843 Disruption of the Church of Scotland. Brokered by the physicist David Brewster, what began as a practical commission became, over four and a half years, the first major artistic photography partnership in the medium's history*1. Adamson's role was entirely technical: he sensitized the paper, operated the camera, developed the negatives, and printed the salt paper positives. Hill composed the pictures. Adamson worked with Talbot's calotype process (patented 1841), which used paper negatives and enabled multiple prints from a single negative. The resulting salt prints had a warm brown tonality and a matte, velvety surface that absorbed light rather than reflecting it — producing visual qualities that contemporaries immediately compared to Rembrandt. The watercolorist John Harden, on first seeing their work in November 1843, wrote: 'The pictures produced are as Rembrandt's but improved, so like his style and the oldest and finest masters'*2. Together with Hill, Adamson produced approximately 3,000 photographs: ministerial portraits, the landmark Newhaven fishermen and fishwives series, architectural studies, and Edinburgh intellectual life. The Newhaven series is recognized as the first significant social documentary project in photography*3. Adamson fell seriously ill in late 1847 and died in January 1848, aged 26 or 27. Their posthumous recognition came through James Craig Annan, who reproduced the calotypes in photogravure for Stieglitz's Camera Work (1905, 1909, 1912), establishing the partnership permanently in the canon of photographic history*4.",
+    "citations": [
+      { "num": 1, "name": "Metropolitan Museum of Art — David Octavius Hill and Robert Adamson", "url": "https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s" },
+      { "num": 2, "name": "University of Glasgow — Hill & Adamson Calotype Process", "url": "https://www.gla.ac.uk/myglasgow/archivespecialcollections/discover/specialcollectionsa-z/hilladamson/calotypeprocess/" },
+      { "num": 3, "name": "National Galleries of Scotland — Hill & Adamson", "url": "https://www.nationalgalleries.org/art-and-artists/features/hill-adamson" },
+      { "num": 4, "name": "Art of the Photogravure — James Craig Annan", "url": "https://photogravure.com/highlights/james-craig-annan/" }
+    ]
   }
 },
 {
