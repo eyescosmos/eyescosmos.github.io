@@ -313,3 +313,5 @@ const PHOTOGRAPHER_LINK_ALIASES = {
   'アレクサンダー・ロトチェンコ': 'alexander-rodchenko',
   'アレクサンドル・ロトチェンコ': 'alexander-rodchenko',
 };
+
+window.PHOTOGRAPHER_LINK_ALIASES = PHOTOGRAPHER_LINK_ALIASES;

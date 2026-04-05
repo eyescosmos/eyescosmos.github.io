@@ -8,7 +8,8 @@ const EMPTY_BLOCK = '<div class="empty-copy" aria-hidden="true"></div>';
 const languageApi = window.PhotoCoordinatesI18n;
 let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
 const AFFILIATE_BOOKS = window.PHOTOGRAPHER_AFFILIATE_BOOKS || {};
-const PHOTOGRAPHER_LINK_ALIASES = window.PHOTOGRAPHER_LINK_ALIASES || {};
+const PHOTOGRAPHER_LINK_ALIAS_MAP = window.PHOTOGRAPHER_LINK_ALIASES
+  || (typeof PHOTOGRAPHER_LINK_ALIASES !== 'undefined' ? PHOTOGRAPHER_LINK_ALIASES : {});
 
 const UI_TEXT = {
   ja: {
@@ -165,7 +166,7 @@ function buildPhotographerAliasTargets() {
     remember(photographer.name, photographer);
   });
 
-  Object.entries(PHOTOGRAPHER_LINK_ALIASES).forEach(([alias, photographerId]) => {
+  Object.entries(PHOTOGRAPHER_LINK_ALIAS_MAP).forEach(([alias, photographerId]) => {
     const photographer = PHOTOGRAPHER_LOOKUP.get(photographerId);
     remember(alias, photographer);
   });
