@@ -281,6 +281,7 @@ function renderLinkedText(text, options = {}) {
   if (!PHOTOGRAPHER_ALIAS_REGEX) return escapeHtml(source).replace(/\n/g, '<br>');
 
   const excludeId = options.excludeId || '';
+  const linkedIds = options.linkedIds || new Set();
   let html = '';
   let cursor = 0;
   PHOTOGRAPHER_ALIAS_REGEX.lastIndex = 0;
@@ -290,13 +291,19 @@ function renderLinkedText(text, options = {}) {
     const start = match.index ?? 0;
     const end = start + alias.length;
     const photographer = PHOTOGRAPHER_ALIAS_LOOKUP.get(alias);
-    if (!photographer || photographer.id === excludeId || shouldSkipAliasBoundary(source, start, end, alias)) {
+    if (
+      !photographer
+      || photographer.id === excludeId
+      || linkedIds.has(photographer.id)
+      || shouldSkipAliasBoundary(source, start, end, alias)
+    ) {
       continue;
     }
 
     html += escapeHtml(source.slice(cursor, start));
     html += `<a class="inline-photographer-link" href="${photographerPagePath(photographer)}">${escapeHtml(alias)}</a>`;
     cursor = end;
+    linkedIds.add(photographer.id);
   }
 
   html += escapeHtml(source.slice(cursor));
@@ -593,11 +600,12 @@ function renderCard(p, extraAttrs = '') {
 
 /* 脚注マーカー *1 *2 をツールチップ付きの<span>に変換 */
 function renderCiteText(text, citations, options = {}) {
+  const linkedIds = options.linkedIds || new Set();
   return String(text || '')
     .split(/(\*\d+)/g)
     .map(part => {
       const citeMatch = /^\*(\d+)$/.exec(part);
-      if (!citeMatch) return renderLinkedText(part, options);
+      if (!citeMatch) return renderLinkedText(part, { ...options, linkedIds });
 
       const citation = (citations || []).find(item => String(item.num) === citeMatch[1]);
       if (!citation) return escapeHtml(part);
@@ -787,7 +795,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   let citationsHTML = '';
   if (p.context && p.context.citations) {
     /* 新フォーマット：context.text に *1 *2 マーカー、context.citations に出典 */
-    const ctxText = renderCiteText(localizeValue(p.context.text, p.context.textEn), p.context.citations, { excludeId: p.id });
+    const ctxText = renderCiteText(localizeValue(p.context.text, p.context.textEn), p.context.citations, { excludeId: p.id, linkedIds: new Set() });
     citationsHTML = p.context.citations.map(c =>
       `<div class="cite-item"><span class="cite-num">*${c.num}</span><a href="${c.url}" target="_blank" rel="noopener">${c.name}</a></div>`
     ).join('');
@@ -800,9 +808,10 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     /* 旧フォーマット：expression.text + context.text を結合し、全出典を自動番号化 */
     const expText = p.expression ? localizeValue(p.expression.text, p.expression.textEn) : '';
     const ctxText = p.context ? localizeValue(p.context.text, p.context.textEn) : '';
+    const linkedIds = new Set();
     const combined = [expText, ctxText]
       .filter(Boolean)
-      .map(part => renderLinkedText(part, { excludeId: p.id }))
+      .map(part => renderLinkedText(part, { excludeId: p.id, linkedIds }))
       .join('<br><br>');
     const allSrc = [
       ...((p.expression && p.expression.sources) || []),
