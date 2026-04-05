@@ -10,7 +10,7 @@ import re
 
 BASE_URL = "https://eyescosmos.github.io"
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SITEMAP_INDEX_PATH = REPO_ROOT / "sitemap.xml"
+SITEMAP_ROOT_PATH = REPO_ROOT / "sitemap.xml"
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
 
@@ -79,17 +79,6 @@ def render_urlset(page_list: list[Page]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def render_index(entries: list[tuple[str, str]]) -> str:
-    lines = ['<?xml version="1.0" encoding="UTF-8"?>', f'<sitemapindex xmlns="{SITEMAP_NS}">']
-    for url, lastmod in entries:
-        lines.append("  <sitemap>")
-        lines.append(f"    <loc>{xml_escape(url)}</loc>")
-        lines.append(f"    <lastmod>{lastmod}</lastmod>")
-        lines.append("  </sitemap>")
-    lines.append("</sitemapindex>")
-    return "\n".join(lines) + "\n"
-
-
 def group_pages(page_list: list[Page]) -> dict[str, list[Page]]:
     groups = {
         "sitemap-main.xml": [],
@@ -107,16 +96,14 @@ def group_pages(page_list: list[Page]) -> dict[str, list[Page]]:
 
 
 def write_sitemaps() -> None:
-    page_groups = group_pages(pages())
-    index_entries: list[tuple[str, str]] = []
+    page_list = pages()
+    page_groups = group_pages(page_list)
 
     for filename, group in page_groups.items():
         path = REPO_ROOT / filename
         path.write_text(render_urlset(group), encoding="utf-8")
-        latest_lastmod = max((page.lastmod for page in group), default=datetime.now(timezone.utc).date().isoformat())
-        index_entries.append((f"{BASE_URL}/{filename}", latest_lastmod))
 
-    SITEMAP_INDEX_PATH.write_text(render_index(index_entries), encoding="utf-8")
+    SITEMAP_ROOT_PATH.write_text(render_urlset(page_list), encoding="utf-8")
 
 
 if __name__ == "__main__":
