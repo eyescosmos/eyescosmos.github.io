@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 import re
-import xml.etree.ElementTree as ET
+from urllib.parse import quote
 
 
 BASE_URL = "https://eyescosmos.github.io"
@@ -13,10 +13,6 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SITEMAP_PATH = REPO_ROOT / "sitemap.xml"
 
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
-XHTML_NS = "http://www.w3.org/1999/xhtml"
-
-ET.register_namespace("", SITEMAP_NS)
-ET.register_namespace("xhtml", XHTML_NS)
 
 
 @dataclass(frozen=True)
@@ -43,29 +39,13 @@ def to_url(rel: str) -> str:
         return f"{BASE_URL}/"
     if rel == "en/index.html":
         return f"{BASE_URL}/en/"
-    return f"{BASE_URL}/{rel}"
+    encoded_rel = quote(rel, safe="/-_.~")
+    return f"{BASE_URL}/{encoded_rel}"
 
 
 def to_lastmod(path: Path) -> str:
     mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
     return mtime.date().isoformat()
-
-
-def paired_rel(rel: str) -> str | None:
-    if rel == "index.html":
-        return "en/index.html"
-    if rel == "en/index.html":
-        return "index.html"
-    if rel.startswith("en/"):
-        partner = rel[3:]
-    else:
-        partner = f"en/{rel}"
-    partner_path = REPO_ROOT / partner
-    return partner if partner_path.exists() else None
-
-
-def language_for_rel(rel: str) -> str:
-    return "en" if rel.startswith("en/") else "ja"
 
 
 def pages() -> list[Page]:
@@ -79,47 +59,27 @@ def pages() -> list[Page]:
     ]
 
 
-def build_sitemap() -> ET.ElementTree:
+def xml_escape(text: str) -> str:
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+        .replace("'", "&apos;")
+    )
+
+
+def build_sitemap() -> str:
     page_list = pages()
-    page_map = {page.rel: page for page in page_list}
-    root = ET.Element(ET.QName(SITEMAP_NS, "urlset"))
-
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>', f'<urlset xmlns="{SITEMAP_NS}">']
     for page in page_list:
-        url_el = ET.SubElement(root, ET.QName(SITEMAP_NS, "url"))
-        ET.SubElement(url_el, ET.QName(SITEMAP_NS, "loc")).text = page.url
-        ET.SubElement(url_el, ET.QName(SITEMAP_NS, "lastmod")).text = page.lastmod
-
-        partner_rel = paired_rel(page.rel)
-        if partner_rel and partner_rel in page_map:
-            partner = page_map[partner_rel]
-            current_lang = language_for_rel(page.rel)
-            partner_lang = language_for_rel(partner.rel)
-            ET.SubElement(
-                url_el,
-                ET.QName(XHTML_NS, "link"),
-                rel="alternate",
-                hreflang=current_lang,
-                href=page.url,
-            )
-            ET.SubElement(
-                url_el,
-                ET.QName(XHTML_NS, "link"),
-                rel="alternate",
-                hreflang=partner_lang,
-                href=partner.url,
-            )
-            default_url = page.url if current_lang == "ja" else partner.url
-            ET.SubElement(
-                url_el,
-                ET.QName(XHTML_NS, "link"),
-                rel="alternate",
-                hreflang="x-default",
-                href=default_url,
-            )
-
-    return ET.ElementTree(root)
+        lines.append("  <url>")
+        lines.append(f"    <loc>{xml_escape(page.url)}</loc>")
+        lines.append(f"    <lastmod>{page.lastmod}</lastmod>")
+        lines.append("  </url>")
+    lines.append("</urlset>")
+    return "\n".join(lines) + "\n"
 
 
 if __name__ == "__main__":
-    tree = build_sitemap()
-    tree.write(SITEMAP_PATH, encoding="UTF-8", xml_declaration=True)
+    SITEMAP_PATH.write_text(build_sitemap(), encoding="utf-8")
