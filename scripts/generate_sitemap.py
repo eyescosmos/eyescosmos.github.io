@@ -4,14 +4,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-import re
 from urllib.parse import quote
+import re
 
 
 BASE_URL = "https://eyescosmos.github.io"
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SITEMAP_PATH = REPO_ROOT / "sitemap.xml"
-
+SITEMAP_INDEX_PATH = REPO_ROOT / "sitemap.xml"
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
 
@@ -32,6 +31,16 @@ def html_files() -> list[Path]:
             continue
         files.append(path)
     return files
+
+
+def xml_escape(text: str) -> str:
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+        .replace("'", "&apos;")
+    )
 
 
 def to_url(rel: str) -> str:
@@ -59,18 +68,7 @@ def pages() -> list[Page]:
     ]
 
 
-def xml_escape(text: str) -> str:
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-        .replace("'", "&apos;")
-    )
-
-
-def build_sitemap() -> str:
-    page_list = pages()
+def render_urlset(page_list: list[Page]) -> str:
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', f'<urlset xmlns="{SITEMAP_NS}">']
     for page in page_list:
         lines.append("  <url>")
@@ -81,5 +79,45 @@ def build_sitemap() -> str:
     return "\n".join(lines) + "\n"
 
 
+def render_index(entries: list[tuple[str, str]]) -> str:
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>', f'<sitemapindex xmlns="{SITEMAP_NS}">']
+    for url, lastmod in entries:
+        lines.append("  <sitemap>")
+        lines.append(f"    <loc>{xml_escape(url)}</loc>")
+        lines.append(f"    <lastmod>{lastmod}</lastmod>")
+        lines.append("  </sitemap>")
+    lines.append("</sitemapindex>")
+    return "\n".join(lines) + "\n"
+
+
+def group_pages(page_list: list[Page]) -> dict[str, list[Page]]:
+    groups = {
+        "sitemap-main.xml": [],
+        "sitemap-photographers-ja.xml": [],
+        "sitemap-photographers-en.xml": [],
+    }
+    for page in page_list:
+        if page.rel.startswith("photographers/"):
+            groups["sitemap-photographers-ja.xml"].append(page)
+        elif page.rel.startswith("en/photographers/"):
+            groups["sitemap-photographers-en.xml"].append(page)
+        else:
+            groups["sitemap-main.xml"].append(page)
+    return groups
+
+
+def write_sitemaps() -> None:
+    page_groups = group_pages(pages())
+    index_entries: list[tuple[str, str]] = []
+
+    for filename, group in page_groups.items():
+        path = REPO_ROOT / filename
+        path.write_text(render_urlset(group), encoding="utf-8")
+        latest_lastmod = max((page.lastmod for page in group), default=datetime.now(timezone.utc).date().isoformat())
+        index_entries.append((f"{BASE_URL}/{filename}", latest_lastmod))
+
+    SITEMAP_INDEX_PATH.write_text(render_index(index_entries), encoding="utf-8")
+
+
 if __name__ == "__main__":
-    SITEMAP_PATH.write_text(build_sitemap(), encoding="utf-8")
+    write_sitemaps()
