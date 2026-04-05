@@ -48,7 +48,6 @@ const UI_TEXT = {
     externalLinks: '外部リンク',
     books: '写真集',
     sources: '出典',
-    detailPage: '独立ページで読む',
     amazon: '写真集を Amazon で見る ↗',
     amazonPending: '写真集へのリンク（準備中）',
     sourcePrefix: '出典：',
@@ -92,7 +91,6 @@ const UI_TEXT = {
     externalLinks: 'External Links',
     books: 'Photobooks',
     sources: 'Sources',
-    detailPage: 'Open page',
     amazon: 'View on Amazon ↗',
     amazonPending: 'Book link coming soon',
     sourcePrefix: 'Sources:',
@@ -762,6 +760,13 @@ function openRecommendedMovement(event, mvId) {
   return false;
 }
 
+function detailPageLinkLabel(p) {
+  const name = displayName(p);
+  return currentLanguage === 'en'
+    ? `Read ${name} on its page`
+    : `${name}の独立ページを読む`;
+}
+
 function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const isMovement = idPrefix !== 'panel-';
   const panelId = `${idPrefix}${p.id}`;
@@ -771,7 +776,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const linksHTML = p.links.map(l =>
     `<a class="detail-link" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`
   ).join('');
-  const detailPageLink = `<a class="detail-link" href="${photographerPagePath(p)}">${t('detailPage')}</a>`;
+  const detailPageLink = `<a class="detail-link" href="${photographerPagePath(p)}">${detailPageLinkLabel(p)}</a>`;
   if (p.isPlaceholder) {
     return `
       <div class="detail-panel" id="${panelId}">
