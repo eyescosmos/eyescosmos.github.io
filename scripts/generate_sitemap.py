@@ -79,30 +79,8 @@ def render_urlset(page_list: list[Page]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def group_pages(page_list: list[Page]) -> dict[str, list[Page]]:
-    groups = {
-        "sitemap-main.xml": [],
-        "sitemap-photographers-ja.xml": [],
-        "sitemap-photographers-en.xml": [],
-    }
-    for page in page_list:
-        if page.rel.startswith("photographers/"):
-            groups["sitemap-photographers-ja.xml"].append(page)
-        elif page.rel.startswith("en/photographers/"):
-            groups["sitemap-photographers-en.xml"].append(page)
-        else:
-            groups["sitemap-main.xml"].append(page)
-    return groups
-
-
 def write_sitemaps() -> None:
     page_list = pages()
-    page_groups = group_pages(page_list)
-
-    for filename, group in page_groups.items():
-        path = REPO_ROOT / filename
-        path.write_text(render_urlset(group), encoding="utf-8")
-
     SITEMAP_ROOT_PATH.write_text(render_urlset(page_list), encoding="utf-8")
 
 
