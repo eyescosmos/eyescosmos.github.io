@@ -89,36 +89,17 @@
     { id: 'idea:landscape', label: '空間と風景', labelEn: 'Space & Landscape', subtitle: 'landscape / environment', type: 'idea' }
   ];
 
-  const featuredMovements = new Set([
-    'ドキュメンタリー',
-    '戦争写真',
-    'ピクトリアリズム',
-    'ストレート写真',
-    'ストリート写真',
-    'モダニズム',
-    'シュルレアリスム',
-    'コンセプチュアル',
-    '写真分離派',
-    'ダダ',
-    'レイオグラフ',
-    'バウハウス',
-    '新しいヴィジョン',
-    '新即物主義',
-    'ヴォルテクシズム',
-    'フォトジャーナリズム',
-    '決定的瞬間',
-    'リアリズム写真',
-    '日本写真',
-    'プロヴォーク',
-    'アメリカ写真',
-    'ピクチャーズ世代',
-    'フェミニズム写真',
-    'デュッセルドルフ派',
-    'コンセプチュアルアート',
-    'ニューカラー',
-    'タイポロジー写真',
-    '私写真',
-    '自然主義写真'
+  const excludedMovements = new Set([
+    'LGBTQ+',
+    'ポートレート',
+    '科学写真',
+    '実験的技法',
+    '環境写真',
+    'FSA写真',
+    '都市記録',
+    '社会ドキュメンタリー',
+    'ステージド写真',
+    'シネマトグラフィック写真'
   ]);
 
   const featuredIdeaIds = new Set([
@@ -243,7 +224,7 @@
     new Set(
       photographers
         .flatMap(p => p.movements || [])
-        .filter(name => name && featuredMovements.has(name))
+        .filter(name => name && !excludedMovements.has(name))
     )
   ).sort((a, b) => a.localeCompare(b, 'ja'));
 
