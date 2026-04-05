@@ -8,12 +8,6 @@
   --panel: rgba(11, 14, 22, 0.82);
   --panel-soft: rgba(18, 21, 31, 0.7);
   --border: rgba(203, 177, 140, 0.18);
-  --amazon-border: rgba(255, 163, 59, 0.56);
-  --amazon-border-strong: rgba(255, 179, 71, 0.86);
-  --amazon-bg: rgba(66, 38, 8, 0.34);
-  --amazon-bg-soft: rgba(92, 51, 8, 0.18);
-  --amazon-text: #fff1d5;
-  --amazon-brand: #ffb347;
   --text: #efe8da;
   --muted: rgba(239, 232, 218, 0.68);
   --accent: #d7c09c;
@@ -39,52 +33,23 @@ body { min-height: 100vh; }
 .section { border: 1px solid var(--border); background: var(--panel); padding: 24px; }
 .section h2 { margin: 0 0 14px; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'DM Mono', monospace; color: var(--accent); }
 .section p, .essay { margin: 0; color: var(--text); line-height: 1.95; font-size: 15px; }
-.section[data-affiliate-section] {
-  border-color: var(--amazon-border);
-  background:
-    linear-gradient(180deg, rgba(255, 179, 71, 0.06), transparent 28%),
-    var(--panel);
-  box-shadow: 0 0 0 1px rgba(255, 179, 71, 0.06), 0 20px 50px rgba(0, 0, 0, 0.18);
+.essay .inline-photographer-link {
+  color: var(--accent-2);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(159, 180, 223, 0.4);
 }
-.section[data-affiliate-section] h2 {
-  color: var(--amazon-brand);
+.essay .inline-photographer-link:hover {
+  color: var(--accent);
+  border-bottom-color: rgba(215, 192, 156, 0.85);
 }
 .tags { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag { padding: 7px 11px; border: 1px solid var(--border); background: var(--panel-soft); text-decoration: none; color: var(--text); font-size: 13px; }
 .related-grid { display: flex; flex-wrap: wrap; gap: 10px; }
 .book-grid { display: grid; gap: 12px; }
-.book-card {
-  display: grid;
-  gap: 10px;
-  padding: 16px;
-  border: 1px solid var(--amazon-border);
-  background:
-    linear-gradient(180deg, rgba(255, 179, 71, 0.04), transparent 45%),
-    var(--amazon-bg-soft);
-}
+.book-card { display: grid; gap: 8px; padding: 14px; border: 1px solid var(--border); background: var(--panel-soft); }
 .book-title { font-size: 15px; font-weight: 500; color: var(--text); }
 .book-note { font-size: 13px; line-height: 1.7; color: var(--muted); }
 .book-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.book-media {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-}
-.book-thumb {
-  width: 72px;
-  min-width: 72px;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid var(--amazon-border);
-  background: rgba(255,255,255,0.04);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
-}
-.book-copy {
-  display: grid;
-  gap: 8px;
-  min-width: 0;
-}
 .links, .sources { display: grid; gap: 10px; }
 .links a, .sources a { text-decoration: none; }
 .cite-item { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; }
@@ -92,57 +57,9 @@ body { min-height: 100vh; }
 .note { color: var(--muted); font-size: 14px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .hero-actions a { text-decoration: none; }
-.amazon-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border: 1px solid var(--amazon-border-strong);
-  background:
-    linear-gradient(180deg, rgba(255, 179, 71, 0.18), rgba(255, 163, 59, 0.1)),
-    var(--amazon-bg);
-  color: var(--amazon-text);
-  box-shadow: 0 10px 24px rgba(255, 153, 0, 0.12);
-}
-.amazon-cta:hover {
-  border-color: #ffc46b;
-  box-shadow: 0 14px 30px rgba(255, 153, 0, 0.2);
-}
-.amazon-cta-copy {
-  display: grid;
-  gap: 2px;
-  line-height: 1.2;
-}
-.amazon-cta-kicker {
-  font: 400 10px/1 'DM Mono', monospace;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 238, 209, 0.72);
-}
-.amazon-cta-brand {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--amazon-text);
-}
-.amazon-cta-brand .amazon-word {
-  color: var(--amazon-brand);
-}
-.amazon-note {
-  font: 400 11px/1.6 'DM Mono', monospace;
-  color: rgba(255, 224, 176, 0.72);
-}
 .sup-ref a { color: var(--accent-2); text-decoration: none; font-size: 0.8em; }
 @media (max-width: 720px) {
   .page-shell { width: min(100vw - 28px, 1040px); padding-top: 20px; }
   .hero, .section { padding: 20px; }
   .topline { flex-direction: column; }
-  .book-media {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .book-thumb {
-    width: 92px;
-    min-width: 92px;
-  }
 }

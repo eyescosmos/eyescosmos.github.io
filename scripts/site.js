@@ -8,6 +8,7 @@ const EMPTY_BLOCK = '<div class="empty-copy" aria-hidden="true"></div>';
 const languageApi = window.PhotoCoordinatesI18n;
 let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
 const AFFILIATE_BOOKS = window.PHOTOGRAPHER_AFFILIATE_BOOKS || {};
+const PHOTOGRAPHER_LINK_ALIASES = window.PHOTOGRAPHER_LINK_ALIASES || {};
 
 const UI_TEXT = {
   ja: {
@@ -120,6 +121,13 @@ const GENDER_TEXT = {
 
 const PHOTOGRAPHER_ORDER = new Map(PHOTOGRAPHERS.map((photographer, index) => [photographer.id, index]));
 const ERA_ORDER = new Map((typeof ERAS !== 'undefined' ? ERAS : []).map((era, index) => [era.id, index]));
+const ALNUM_BOUNDARY_RE = /[A-Za-z0-9]/;
+const PHOTOGRAPHER_LOOKUP = new Map(PHOTOGRAPHERS.map(photographer => [photographer.id, photographer]));
+const PHOTOGRAPHER_ALIAS_TARGETS = buildPhotographerAliasTargets();
+const PHOTOGRAPHER_ALIAS_LOOKUP = new Map(PHOTOGRAPHER_ALIAS_TARGETS.map(target => [target.alias, target.photographer]));
+const PHOTOGRAPHER_ALIAS_REGEX = PHOTOGRAPHER_ALIAS_TARGETS.length
+  ? new RegExp(PHOTOGRAPHER_ALIAS_TARGETS.map(target => escapeRegExp(target.alias)).join('|'), 'g')
+  : null;
 
 function t(key, ...args) {
   const value = UI_TEXT[currentLanguage][key] ?? UI_TEXT.ja[key];
@@ -130,6 +138,46 @@ function localizeValue(valueJa, valueEn) {
   return currentLanguage === 'en'
     ? (valueEn || valueJa || '')
     : (valueJa || valueEn || '');
+}
+
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function buildPhotographerAliasTargets() {
+  const aliasMap = new Map();
+  const remember = (alias, photographer) => {
+    if (!alias || !photographer || photographer.isPlaceholder) return;
+    if (!aliasMap.has(alias)) aliasMap.set(alias, photographer);
+  };
+
+  PHOTOGRAPHERS.forEach(photographer => {
+    remember(photographer.nameJa, photographer);
+    remember(photographer.name, photographer);
+  });
+
+  Object.entries(PHOTOGRAPHER_LINK_ALIASES).forEach(([alias, photographerId]) => {
+    const photographer = PHOTOGRAPHER_LOOKUP.get(photographerId);
+    remember(alias, photographer);
+  });
+
+  return [...aliasMap.entries()]
+    .sort((left, right) => right[0].length - left[0].length)
+    .map(([alias, photographer]) => ({ alias, photographer }));
+}
+
+function shouldSkipAliasBoundary(source, start, end, alias) {
+  if (!alias || !ALNUM_BOUNDARY_RE.test(alias)) return false;
+  return ALNUM_BOUNDARY_RE.test(source[start - 1] || '') || ALNUM_BOUNDARY_RE.test(source[end] || '');
 }
 
 function resolveAffiliateValue(record, jaKey, enKey, fallbackKey) {
@@ -226,8 +274,36 @@ function photographerPagePath(photographer, lang = currentLanguage) {
   return `${base}${id}.html`;
 }
 
+function renderLinkedText(text, options = {}) {
+  const source = String(text || '');
+  if (!source) return '';
+  if (!PHOTOGRAPHER_ALIAS_REGEX) return escapeHtml(source).replace(/\n/g, '<br>');
+
+  const excludeId = options.excludeId || '';
+  let html = '';
+  let cursor = 0;
+  PHOTOGRAPHER_ALIAS_REGEX.lastIndex = 0;
+
+  for (const match of source.matchAll(PHOTOGRAPHER_ALIAS_REGEX)) {
+    const alias = match[0];
+    const start = match.index ?? 0;
+    const end = start + alias.length;
+    const photographer = PHOTOGRAPHER_ALIAS_LOOKUP.get(alias);
+    if (!photographer || photographer.id === excludeId || shouldSkipAliasBoundary(source, start, end, alias)) {
+      continue;
+    }
+
+    html += escapeHtml(source.slice(cursor, start));
+    html += `<a class="inline-photographer-link" href="${photographerPagePath(photographer)}">${escapeHtml(alias)}</a>`;
+    cursor = end;
+  }
+
+  html += escapeHtml(source.slice(cursor));
+  return html.replace(/\n/g, '<br>');
+}
+
 function renderOptionalText(text) {
-  return text && text.trim() ? text : EMPTY_BLOCK;
+  return text && text.trim() ? renderLinkedText(text) : EMPTY_BLOCK;
 }
 
 function renderSources(sources) {
@@ -515,19 +591,23 @@ function renderCard(p, extraAttrs = '') {
 }
 
 /* 脚注マーカー *1 *2 をツールチップ付きの<span>に変換 */
-function renderCiteText(text, citations) {
-  if (!citations || !citations.length) return text;
-  let result = text;
-  citations.forEach(c => {
-    const tooltip = c.url
-      ? `<a class="cite-tooltip" href="${c.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${c.name} ↗</a>`
-      : `<span class="cite-tooltip">${c.name}</span>`;
-    result = result.replace(
-      new RegExp('\\*' + c.num + '(?!\\d)', 'g'),
-      `<span class="cite-ref">${tooltip}<sup>*${c.num}</sup></span>`
-    );
-  });
-  return result;
+function renderCiteText(text, citations, options = {}) {
+  return String(text || '')
+    .split(/(\*\d+)/g)
+    .map(part => {
+      const citeMatch = /^\*(\d+)$/.exec(part);
+      if (!citeMatch) return renderLinkedText(part, options);
+
+      const citation = (citations || []).find(item => String(item.num) === citeMatch[1]);
+      if (!citation) return escapeHtml(part);
+
+      const label = escapeHtml(citation.name || citation.text || citation.url || '');
+      const tooltip = citation.url
+        ? `<a class="cite-tooltip" href="${citation.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${label} ↗</a>`
+        : `<span class="cite-tooltip">${label}</span>`;
+      return `<span class="cite-ref">${tooltip}<sup>*${citeMatch[1]}</sup></span>`;
+    })
+    .join('');
 }
 
 function findInfluencePhotographer(photographer, direction) {
@@ -706,7 +786,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   let citationsHTML = '';
   if (p.context && p.context.citations) {
     /* 新フォーマット：context.text に *1 *2 マーカー、context.citations に出典 */
-    const ctxText = renderCiteText(localizeValue(p.context.text, p.context.textEn), p.context.citations);
+    const ctxText = renderCiteText(localizeValue(p.context.text, p.context.textEn), p.context.citations, { excludeId: p.id });
     citationsHTML = p.context.citations.map(c =>
       `<div class="cite-item"><span class="cite-num">*${c.num}</span><a href="${c.url}" target="_blank" rel="noopener">${c.name}</a></div>`
     ).join('');
@@ -719,7 +799,10 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     /* 旧フォーマット：expression.text + context.text を結合し、全出典を自動番号化 */
     const expText = p.expression ? localizeValue(p.expression.text, p.expression.textEn) : '';
     const ctxText = p.context ? localizeValue(p.context.text, p.context.textEn) : '';
-    const combined = expText + (expText && ctxText ? '<br><br>' : '') + ctxText;
+    const combined = [expText, ctxText]
+      .filter(Boolean)
+      .map(part => renderLinkedText(part, { excludeId: p.id }))
+      .join('<br><br>');
     const allSrc = [
       ...((p.expression && p.expression.sources) || []),
       ...((p.context && p.context.sources) || []),
@@ -926,7 +1009,7 @@ function renderMovementTab() {
         <div class="movement-body-content">
           <div class="context-block" style="margin-bottom:24px">
             <div class="context-label">${t('movementOverview')}</div>
-            <div class="context-text">${localizeValue(meta.desc, meta.descEn) || EMPTY_BLOCK}</div>
+            <div class="context-text">${renderOptionalText(localizeValue(meta.desc, meta.descEn))}</div>
           </div>
           <div class="photographers-label">${t('movementPhotographers')}</div>
           <div class="movement-grid" id="mvgrid-${mvId}">${cardsHTML}</div>

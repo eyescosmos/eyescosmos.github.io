@@ -758,6 +758,17 @@ h1 em { font-style: normal; color: var(--accent); }
   margin-bottom: 10px;
 }
 .detail-text { font-size: 15px; color: var(--text-dim); line-height: 1.95; }
+.detail-text .inline-photographer-link,
+.context-text .inline-photographer-link {
+  color: var(--accent-dim);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(215, 192, 156, 0.35);
+}
+.detail-text .inline-photographer-link:hover,
+.context-text .inline-photographer-link:hover {
+  color: var(--accent);
+  border-bottom-color: rgba(215, 192, 156, 0.8);
+}
 .detail-source {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
@@ -1153,6 +1164,7 @@ footer a:hover { color: var(--accent); }
 <script src="data/eras.js?v=20260403c"></script>
 <script src="data/photographers.js?v=20260403d"></script>
 <script src="data/photographers-supplement.js?v=20260403h"></script>
+<script src="data/photographers-manual-additions.js?v=20260405a"></script>
 <script src="data/content-helpers.js?v=20260403c"></script>
 <script src="data/future/era-1990s.js?v=20260403c"></script>
 <script src="data/future/era-2000s.js?v=20260403c"></script>
@@ -1162,6 +1174,6 @@ footer a:hover { color: var(--accent); }
 <script src="data/future/photographers-2010s.js?v=20260403c"></script>
 <script src="data/affiliate-books.js?v=20260404c"></script>
 <script src="scripts/language.js?v=20260403e"></script>
-<script src="scripts/site.js?v=20260404books"></script>
+<script src="scripts/site.js?v=20260405links"></script>
 </body>
 </html>
