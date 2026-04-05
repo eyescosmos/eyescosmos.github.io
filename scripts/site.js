@@ -10,6 +10,22 @@ let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
 const AFFILIATE_BOOKS = window.PHOTOGRAPHER_AFFILIATE_BOOKS || {};
 const PHOTOGRAPHER_LINK_ALIAS_MAP = window.PHOTOGRAPHER_LINK_ALIASES
   || (typeof PHOTOGRAPHER_LINK_ALIASES !== 'undefined' ? PHOTOGRAPHER_LINK_ALIASES : {});
+const NON_PHOTOGRAPHER_IDS = new Set([
+  'anri-sala',
+  'ana-torfs',
+  'charles-wirgman',
+  'claude-closky',
+  'collectif-fact',
+  'eve-sussman',
+  'fabian-marti',
+  'g-r-a-m',
+  'gabriel-orozco',
+  'multiplicity',
+  'ohio',
+  'the-atlas-group-walid-raad',
+  'useful-photography',
+  'wangechi-mutu'
+]);
 
 const UI_TEXT = {
   ja: {
@@ -118,10 +134,11 @@ const GENDER_TEXT = {
   女性: { ja: '女性', en: 'Female' }
 };
 
-const PHOTOGRAPHER_ORDER = new Map(PHOTOGRAPHERS.map((photographer, index) => [photographer.id, index]));
+const VISIBLE_PHOTOGRAPHERS = PHOTOGRAPHERS.filter(photographer => !photographer.isPlaceholder && !NON_PHOTOGRAPHER_IDS.has(photographer.id));
+const PHOTOGRAPHER_ORDER = new Map(VISIBLE_PHOTOGRAPHERS.map((photographer, index) => [photographer.id, index]));
 const ERA_ORDER = new Map((typeof ERAS !== 'undefined' ? ERAS : []).map((era, index) => [era.id, index]));
 const ALNUM_BOUNDARY_RE = /[A-Za-z0-9]/;
-const PHOTOGRAPHER_LOOKUP = new Map(PHOTOGRAPHERS.map(photographer => [photographer.id, photographer]));
+const PHOTOGRAPHER_LOOKUP = new Map(VISIBLE_PHOTOGRAPHERS.map(photographer => [photographer.id, photographer]));
 const PHOTOGRAPHER_ALIAS_TARGETS = buildPhotographerAliasTargets();
 const PHOTOGRAPHER_ALIAS_LOOKUP = new Map(PHOTOGRAPHER_ALIAS_TARGETS.map(target => [target.alias, target.photographer]));
 const PHOTOGRAPHER_ALIAS_REGEX = PHOTOGRAPHER_ALIAS_TARGETS.length
@@ -155,11 +172,11 @@ function escapeRegExp(value) {
 function buildPhotographerAliasTargets() {
   const aliasMap = new Map();
   const remember = (alias, photographer) => {
-    if (!alias || !photographer || photographer.isPlaceholder) return;
+    if (!alias || !photographer || photographer.isPlaceholder || NON_PHOTOGRAPHER_IDS.has(photographer.id)) return;
     if (!aliasMap.has(alias)) aliasMap.set(alias, photographer);
   };
 
-  PHOTOGRAPHERS.forEach(photographer => {
+  VISIBLE_PHOTOGRAPHERS.forEach(photographer => {
     remember(photographer.nameJa, photographer);
     remember(photographer.name, photographer);
   });
@@ -256,7 +273,7 @@ function renderArchiveAffiliateSection(photographer) {
 }
 
 function realPhotographers() {
-  return PHOTOGRAPHERS.filter(p => !p.isPlaceholder);
+  return VISIBLE_PHOTOGRAPHERS;
 }
 
 function archiveBasePath(lang = currentLanguage) {
@@ -523,7 +540,7 @@ function renderEraTab() {
   main.innerHTML = '';
 
   ERAS.forEach(era => {
-    const photographers = PHOTOGRAPHERS.filter(p => p.era === era.id);
+    const photographers = realPhotographers().filter(p => p.era === era.id);
     const cardsHTML = photographers.length
       ? photographers.map(p => renderCard(p)).join('')
       : renderEmptyPhotographerState();
@@ -885,7 +902,7 @@ function toggleDetail(pid, card) {
   if (!isOpen) {
     // Inject panel HTML if not already present
     if (!existingPanel) {
-      const p = PHOTOGRAPHERS.find(ph => ph.id === pid);
+      const p = PHOTOGRAPHER_LOOKUP.get(pid);
       if (p) panelContainer.insertAdjacentHTML('beforeend', renderDetailPanel(p));
     }
     const panel = document.getElementById(`panel-${pid}`);
@@ -1051,7 +1068,7 @@ function toggleMovementDetail(pid, mvId, card) {
 
   if (!isOpen) {
     if (!existingPanel) {
-      const p = PHOTOGRAPHERS.find(ph => ph.id === pid);
+      const p = PHOTOGRAPHER_LOOKUP.get(pid);
       if (p) panelContainer.insertAdjacentHTML('beforeend', renderDetailPanel(p, `mvpanel-${mvId}-`, `closeMovementDetail('${pid}','${mvId}')`));
     }
     const panel = document.getElementById(panelId);

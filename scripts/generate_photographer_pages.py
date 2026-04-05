@@ -14,6 +14,22 @@ SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260405c"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
+NON_PHOTOGRAPHER_IDS = {
+    "anri-sala",
+    "ana-torfs",
+    "charles-wirgman",
+    "claude-closky",
+    "collectif-fact",
+    "eve-sussman",
+    "fabian-marti",
+    "g-r-a-m",
+    "gabriel-orozco",
+    "multiplicity",
+    "ohio",
+    "the-atlas-group-walid-raad",
+    "useful-photography",
+    "wangechi-mutu",
+}
 
 
 def eval_js(files: list[str], expression: str):
@@ -373,7 +389,7 @@ COPY = {
 
 
 def main() -> None:
-    photographers = eval_js(
+    all_photographers = eval_js(
         [
             "data/photographers.js",
             "data/photographers-manual-additions.js",
@@ -381,6 +397,7 @@ def main() -> None:
         ],
         "PHOTOGRAPHERS",
     )
+    photographers = [p for p in all_photographers if p["id"] not in NON_PHOTOGRAPHER_IDS]
     alias_map = eval_js(
         [
             "data/photographers.js",
@@ -410,6 +427,10 @@ def main() -> None:
     for lang in ("ja", "en"):
         out_dir = REPO / ("en/photographers" if lang == "en" else "photographers")
         out_dir.mkdir(parents=True, exist_ok=True)
+        for excluded_id in NON_PHOTOGRAPHER_IDS:
+            excluded_file = out_dir / f"{excluded_id}.html"
+            if excluded_file.exists():
+                excluded_file.unlink()
         copy = COPY[lang]
 
         for photographer in photographers:
