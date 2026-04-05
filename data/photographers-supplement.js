@@ -60,19 +60,30 @@ PHOTOGRAPHERS.push(
   "nameJa": "横山松三郎",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1870s / 1870年代",
-  "gender": "",
+  "years": "1838-1884",
+  "gender": "男性",
   "era": "1870",
   "movements": [
-    "日本写真"
+    "日本写真",
+    "写真石版",
+    "明治ドキュメンタリー"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Art Platform Japan — 横山松三郎", "url": "https://artplatform.go.jp/artists/A3646" },
+    { "label": "東京国立博物館 — 壬申検査", "url": "https://www.tnm.jp/modules/r_free_page/index.php?id=147" },
+    { "label": "文化庁 文化遺産データベース", "url": "https://online.bunka.go.jp/db/heritages/detail/564575" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
-    "textEn": "Coming soon.",
-    "citations": []
+    "text": "横山松三郎は天保9年（1838年）に択捉島（現在のロシア領千島列島）で生まれた。家族は廻船問屋を経営していたが、父の死後（1848年）に函館へ移住した。1854年にペリー艦隊に随行した米国人エリファレット・ブラウン・ジュニアとロシア人モジャイスキーが函館でダゲレオタイプを撮影するのを目撃したことが写真との最初の出会いだった。その後、函館のロシア領事館に関係したドイツ人画家ライマンのもとで洋画を学び、ロシア領事ゴシュケーヴィチに写真術を師事した*1。1864年頃に上海へ写真修業に向かったが師を得られず横浜に転じ、下岡蓮杖の門を繰り返し訪れてようやく弟子入りを許された。1868年に東京・上野の池之端に「通天楼」スタジオを開設——当時「日本で最も近代的で設備の整ったスタジオ」と評された。同年、明治政府の役人・蜷川式胤から依頼を受け、改修前の江戸城の撮影に着手。1871〜72年に64点の写真帖「旧江戸城写真帖」として刊行し、現在は東京国立博物館の重要文化財に指定されている*2。1872年には明治政府の壬申検査（日本初の文化財保護調査）に公式写真家として122日間同行し、東大寺大仏殿・正倉院・法隆寺五重塔などを撮影。386点の立体写真・109点の大判写真・70点のガラス原板が東京国立博物館の重要文化財となっている*3。1876年に通天楼を閉じ、陸軍士官学校でフランス人教官アベル・ゲリノーのもとで炭素印画・ゴム印画・シアノタイプを習得。1881年に東京・銀座に写真石版社を設立——日本における写真石版印刷の商業的起点となった。絵画と写真の融合を試みた「写真油絵（しゃしんあぶらえ）」も開発した。明治17年（1884年）10月に46歳で病没。その業績は2023年に文化庁が「横山松三郎関係資料」を重要文化財に指定したことで改めて公式に評価された*4。",
+    "textEn": "Yokoyama Matsusaburo was born in 1838 on Etorofu Island in the Kuril archipelago (present-day Russian territory), into a merchant family. After his father's death in 1848, his family relocated to Hakodate. In 1854 he witnessed daguerreotypes made in Hakodate by American Eliphalet Brown Jr. (attached to Commodore Perry's fleet) and Russian A.F. Mozhaiskii — his first encounter with photography. He subsequently studied Western painting under the German painter Lehmann at the Russian Consulate in Hakodate, and photography under Russian Consul I.A. Goshkevich*1. Around 1864 he traveled to Shanghai to find a photography teacher, was redirected to Yokohama, and ultimately gained entry as a student under the pioneering photographer Shimooka Renjo. In 1868 he opened his studio Tsuten-ro (通天楼) in the Ikenohata district of Ueno, Tokyo — contemporaries described it as 'the most modern and well-equipped studio in Japan.' That year he was commissioned by Meiji government official Ninagawa Noritane to photograph Edo Castle before its reconstruction; the project was published in 1872 as an album of 64 photographs, now an Important Cultural Property at the Tokyo National Museum*2. In 1872 he accompanied Japan's first systematic cultural property survey — the Jinshin Kensa — for 122 days, photographing Todai-ji's Great Buddha Hall, the Shosoin repository, and Horyu-ji's Five-Story Pagoda. The 386 stereoviews, 109 large-format albumen prints, and 70 glass negatives produced are Important Cultural Properties at the Tokyo National Museum*3. From 1876 he taught photography and photolithography at the Japan Military Academy under French instructor Abel Guérineau, mastering carbon printing and other advanced European processes. In 1881 he founded Japan's first dedicated photolithographic printing enterprise, Shashin Sekiban-sha, in Ginza. He also developed shashin abura-e ('photographic oil paintings'), a hybrid technique fusing photographic emulsion with oil pigment. He died in Tokyo in October 1884 at the age of 46. In June 2023, the Agency for Cultural Affairs designated a major collection of his related materials as an Important Cultural Property*4.",
+    "citations": [
+      { "num": 1, "name": "Art Platform Japan — Dictionary of Artists in Japan: 横山松三郎", "url": "https://artplatform.go.jp/artists/A3646" },
+      { "num": 2, "name": "東京国立博物館 — 写真資料 歴史的写真", "url": "https://www.tnm.jp/modules/r_free_page/index.php?id=1392" },
+      { "num": 3, "name": "東京国立博物館 — 壬申検査について", "url": "https://www.tnm.jp/modules/r_free_page/index.php?id=147" },
+      { "num": 4, "name": "文化庁 文化遺産データベース — 横山松三郎関係資料", "url": "https://online.bunka.go.jp/db/heritages/detail/564575" }
+    ]
   }
 },
 {
@@ -81,38 +92,60 @@ PHOTOGRAPHERS.push(
   "nameJa": "冨重利平",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1870s / 1870年代",
-  "gender": "",
+  "years": "1837-1922",
+  "gender": "男性",
   "era": "1870",
   "movements": [
-    "日本写真"
+    "日本写真",
+    "ドキュメンタリー",
+    "肖像写真"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Kotobank — 冨重利平", "url": "https://kotobank.jp/word/%E5%86%A8%E9%87%8D%20%E5%88%A9%E5%B9%B3-1650454" },
+    { "label": "熊本市 — 冨重写真所（登録有形文化財）", "url": "https://www.city.kumamoto.jp/kiji00363798/index.html" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
-    "textEn": "Coming soon.",
-    "citations": []
+    "text": "冨重利平（本姓・篠倉、1837〜1922年）は、九州における明治写真史の最重要人物の一人である。筑後国柳川（現・福岡県）に生まれ、1862年に長崎で亀谷徳次郎のもとで写真術を習い、その後、日本写真界の草分けである上野彦馬の門に入った*1。1866年に柳川で開業した後、明治3年（1870年）に熊本へ移り、同市で最初の写真館と伝わる「冨重写真所」を開設した。明治5年（1872年）から陸軍の依頼で熊本城・水前寺公園・山崎練兵場などを系統的に撮影した。これらの写真は明治10年（1877年）の西南戦争で熊本城が炎上する前の姿を伝える唯一の写真記録として今日も格別の史料価値をもつ。火災で写真所も全焼したが、上野彦馬の指導のもとで翌年に再建した*2。西南戦争では乃木希典大将の要請で3日間にわたり戦火の跡を撮影し、数千枚の印画が傷病兵に配られた。肖像写真の被写体には乃木希典・川上操六・北白川宮能久親王（写真術も指導）といった軍人のほか、熊本第五高等学校赴任中の夏目漱石、ラフカディオ・ハーン（小泉八雲）らの文学者が含まれる。熊本市新町の写真所建物は2006年3月に国の登録有形文化財となり、特徴的な斜壁撮影室が現存する*3。2010年から四代目・冨重利平が受け継ぎ、日本最古級の営業写真館として現在も稼働している。2014年には熊本大学五高記念館で創業140周年記念展が開催され、明治近代化の記録という写真所の歴史的意義が学術的にも確認されている*4。",
+    "textEn": "Tomishige Rihei (born Shinokura Rihei, 1837–1922) is one of the most significant figures in Kyushu's photographic history. Born in Yanagawa, Fukuoka, he trained in photography in Nagasaki in 1862 under Kameya Tokujiro, then entered the studio of Ueno Hikoma — one of Japan's founding professional photographers — developing a lifelong bond with Hikoma. After opening a studio in Yanagawa in 1866, Rihei settled in Kumamoto in 1870 (Meiji 3) and opened what was likely the city's first photographic studio*1. Commissioned by the Kumamoto army garrison from 1872, he systematically documented Kumamoto Castle, Suizenji Garden, and regional landmarks. These photographs became irreplaceable historical records when the castle was destroyed during the 1877 Satsuma Rebellion. When the rebellion burned both the castle and his studio, Rihei built a temporary darkroom under the guidance of Ueno Hikoma and photographed the ruins for three days at the request of General Nogi Maresuke; thousands of prints were distributed to wounded soldiers*2. His portrait subjects included novelist Natsume Soseki, writer Lafcadio Hearn, Generals Nogi Maresuke and Kawakami Soroku, and Prince Kitashirakawa Yoshihisa — to whom Rihei also taught photography. The studio building in Kumamoto (Shinmachi 2-8-5) was designated a nationally registered tangible cultural property in 2006; its distinctive slant-wall shooting room is intact*3. The studio is still in operation under the 4th-generation director (also named Rihei, since 2010), making it one of the oldest continuously operating photographic studios in Japan. A 140th-anniversary exhibition at Kumamoto University's Goko Memorial Hall in 2014 established the studio's four-generation archive as a primary historical source for Meiji modernization*4.",
+    "citations": [
+      { "num": 1, "name": "Kotobank — 冨重利平", "url": "https://kotobank.jp/word/%E5%86%A8%E9%87%8D%20%E5%88%A9%E5%B9%B3-1650454" },
+      { "num": 2, "name": "幕末明治の写真師総覧 — 冨重利平", "url": "https://shashinshi.biz/archives/1993" },
+      { "num": 3, "name": "熊本市 — 冨重写真所（国登録有形文化財）", "url": "https://www.city.kumamoto.jp/kiji00363798/index.html" },
+      { "num": 4, "name": "日本写真学会誌 vol.65 — 日本の近代化を記録した写真", "url": "https://www.jstage.jst.go.jp/article/photogrst1964/65/2/65_2_111/_article/-char/ja/" }
+    ]
   }
 },
 {
   "id": "frederick-h-evans",
   "name": "Frederick H. Evans",
   "nameJa": "フレデリック・H・エヴァンズ",
-  "nationality": "",
-  "flag": "",
-  "years": "1880s / 1880年代",
-  "gender": "",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1853-1943",
+  "gender": "男性",
   "era": "1870",
-  "movements": [],
+  "movements": [
+    "ストレート写真",
+    "建築写真",
+    "ピクトリアリズム"
+  ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA — A Sea of Steps", "url": "https://www.moma.org/collection/works/53618" },
+    { "label": "George Eastman Museum — Frederick H. Evans", "url": "https://collections.eastman.org/people/20017/-/objects/list" },
+    { "label": "Metropolitan Museum of Art — George Bernard Shaw portrait", "url": "https://www.metmuseum.org/art/collection/search/271764" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
-    "textEn": "Coming soon.",
-    "citations": []
+    "text": "フレデリック・H・エヴァンズは1853年にロンドンに生まれた。1880年代から90年代にかけてロンドンのチープサイドで書店を営みながら写真を撮り始め、1889年には保険会社勤めの17歳のオーブリー・ビアズレーが昼休みに店頭を訪れるようになったことを縁に、彼の才能を出版社に推薦してビアズレーのキャリアを決定的に後押しした。ジョージ・バーナード・ショーも常連客だった*1。1898年に書店を閉めて写真に専念し、白金印画（プラチナ・プリント）を主要媒体として英国とフランスの大聖堂の建築写真を系統的に撮り始めた。白金印画は中間調の幅が広く、鉛筆画のような柔らかい質感と版画の精密さを兼ね備え、銀塩プリントより格段に耐久性が高い。1900年に英国王立写真協会で150点の個展を開き、ピクトリアリズムのエリート組織「リンクト・リング」のフェローに選ばれた*2。エヴァンズの撮影哲学は「最も直截な直截写真（the straightest of the straight photography）」——ネガ・プリントへの一切の操作・修整を拒絶し、露光時点で完璧な画像を完成させるという厳格な態度だった。大聖堂を「石で書かれた詩」と呼び、特定の光が得られるまで何週間も建物を研究してから撮影した。1903年にウェルズ大聖堂の「階段の海（A Sea of Steps）」を撮影——MoMAなど主要コレクションが所蔵する写真史上最も有名な建築写真の一枚となった。スティーグリッツは「建築写真の最も偉大な実践者」と賞賛し、同年Camera Work第4号をエヴァンズの特集として発行し、ショーがその序文を書いた*3。1906年にはニューヨークの「291」ギャラリーでも展示された。第一次世界大戦中に白金印画紙の入手が困難になると、代替素材での妥協を拒否してほぼ撮影をやめた。1943年にロンドンで89歳で没した。",
+    "textEn": "Frederick H. Evans was born in London in 1853. Throughout the 1880s and 1890s he ran a bookshop in Cheapside while beginning to photograph; in 1889 the seventeen-year-old Aubrey Beardsley began browsing the shop during his lunch hour. Evans championed Beardsley\'s drawings and introduced him to publisher John M. Dent — the commission that launched Beardsley\'s career. George Bernard Shaw was also a regular customer*1. In 1898 Evans closed the bookshop to devote himself entirely to photography, adopting platinum printing as his exclusive medium. He embarked on a systematic campaign to photograph the interiors of English and French cathedrals — Wells, Lincoln, Ely, Durham, Canterbury, Rheims, Bourges — producing platinum prints whose wide tonal range and matte surface suggested the quality of pencil drawing combined with the precision of etching. In 1900 Evans held a 150-print solo exhibition at the Royal Photographic Society and was elected a Fellow of the Linked Ring*2. His working philosophy was what he called \'the straightest of the straight photography\' — exposing negatives so precisely that no darkroom manipulation would ever be required. He described cathedrals as \'poems in stone\' and would spend weeks studying a building at different times of day before photographing. In 1903 he made \'A Sea of Steps\' at Wells Cathedral — now in MoMA, LACMA, the George Eastman Museum, and other major collections — the most celebrated architectural photograph of its era. Stieglitz called Evans \'the greatest exponent of architectural photography\' and devoted Camera Work No. 4 (October 1903) to his work, with an introductory essay by Shaw*3. Evans exhibited at Stieglitz\'s \'291\' gallery in New York in 1906. When World War I made platinum paper unobtainable, Evans refused to work in substitute materials and effectively retired from photography around 1915. He died in London in 1943, aged 89.",
+    "citations": [
+      { "num": 1, "name": "Metropolitan Museum of Art — George Bernard Shaw portrait (Alfred Stieglitz Collection)", "url": "https://www.metmuseum.org/art/collection/search/271764" },
+      { "num": 2, "name": "George Eastman Museum — Frederick H. Evans collection", "url": "https://collections.eastman.org/people/20017/-/objects/list" },
+      { "num": 3, "name": "MoMA — A Sea of Steps, Wells Cathedral (1903)", "url": "https://www.moma.org/collection/works/53618" }
+    ]
   }
 },
 {
@@ -121,19 +154,24 @@ PHOTOGRAPHERS.push(
   "nameJa": "冨重徳次",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1880s / 1880年代",
-  "gender": "",
+  "years": "明治期",
+  "gender": "男性",
   "era": "1870",
   "movements": [
     "日本写真"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "幕末明治の写真師総覧 — 冨重利平（弟子に冨重徳次）", "url": "https://shashinshi.biz/archives/1993" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
-    "textEn": "Coming soon.",
-    "citations": []
+    "text": "冨重徳次は、明治の熊本写真史を代表する写真師・冨重利平の弟子として、幕末明治の写真師データベース（shashinshi.biz）に記録されている人物である。明治36年（1903年）頃に冨重写真所に入り助手として働き始めたとされており、利平のもとで写真技術を習得した*1。姓が「冨重」であることから、実子あるいは養子縁組による後継者として写真所を引き継いだと推定されており、写真所が四代にわたって継承されてきた歴史のなかで二代目にあたると考えられる。利平に関する記録は、明治43〜44年（1910〜11年）のドレスデン国際衛生博覧会への出品を「息子の名義で」行ったと記しており、その息子が徳次である可能性がある。しかし生没年・個人としての撮影記録・独立した業績については現時点で公開資料に詳細が乏しく、熊本県立美術館や熊本市教育委員会などの機関資料の精査が今後の課題である。冨重写真所が日本の近代化を記録した重要な史料庫であることは日本写真学会誌の学術論文によっても確認されており、徳次もその歴史的継承に果たした役割において近代写真史上の意義を持つ*2。",
+    "textEn": "Tomishige Tokuji is a documented but sparsely recorded figure in the history of Meiji photography. He appears in the Bakumatsu-Meiji photographers database (shashinshi.biz) as a student of Tomishige Rihei, the founder of the Tomishige Photography Studio in Kumamoto, reported to have joined the studio around Meiji 36 (1903) and trained under Rihei*1. As he shares the Tomishige family name — the studio\'s founding name — he is tentatively identified as the studio\'s second-generation director, most likely Rihei\'s biological or adopted son. The records on Rihei note that around 1910–1911, Rihei submitted photographs to the Dresden International Hygiene Exposition under his son\'s name; Tokuji may be this individual, though no source confirms it explicitly. His exact birth and death dates are not available in public sources, and no photographs individually attributed to him have been identified in digitized public collections. The academic significance of the Tomishige Photography Studio as a primary archive for Meiji modernization history has been established in an article in the Photography Society of Japan journal, within which Tokuji\'s role in the studio\'s generational transmission forms part of the broader institutional record*2.",
+    "citations": [
+      { "num": 1, "name": "幕末明治の写真師総覧 — 冨重利平（弟子リストに冨重徳次）", "url": "https://shashinshi.biz/archives/1993" },
+      { "num": 2, "name": "日本写真学会誌 vol.65 — 日本の近代化を記録した写真", "url": "https://www.jstage.jst.go.jp/article/photogrst1964/65/2/65_2_111/_article/-char/ja/" }
+    ]
   }
 },
 {
