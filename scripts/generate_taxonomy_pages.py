@@ -281,7 +281,7 @@ def page_structured_data(title: str, description: str, canonical: str, lang: str
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
-def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, archive_href: str, back_label: str, select_html: str, hero_groups_html: str, list_title: str, list_html: str) -> str:
+def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, archive_href: str, back_label: str, controls_html: str, hero_groups_html: str, list_title: str, list_html: str) -> str:
     label = f"Photo Coordinates / {'Country' if page_kind == 'country' else 'Era'}"
     structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip())
     footer_line1 = "This site gathers and organizes information from publicly available web sources with AI assistance." if lang == "en" else "本サイトの情報はAIによってウェブ上の資料から収集・整理されたものです。"
@@ -331,7 +331,7 @@ gtag('config', '{GA_ID}');
       <div class="top-links">
         <a href="{home_href}">{'Back to Home' if lang == 'en' else 'トップへ戻る'}</a>
         <a href="{archive_href}">{back_label}</a>
-        {select_html}
+        {controls_html}
       </div>
       <h1 class="title">{esc(title.split('｜')[0].split('|')[0].strip())}</h1>
       <p class="lead">{esc(lead)}</p>
@@ -383,20 +383,24 @@ def render_movement_cards(photographers: list[dict], movements_meta: dict, lang:
     return "".join(cards) or f'<p>{"Related movements coming soon." if lang == "en" else "関連する運動は準備中です。"}</p>'
 
 
-def render_country_select(all_nationalities: list[str], current: str, lang: str) -> str:
-    label = "Browse countries" if lang == "en" else "国別で見る"
+def render_country_select(all_nationalities: list[str], current: str | None, lang: str, placeholder_label: str | None = None) -> str:
+    label = "Browse countries" if lang == "en" else "国別でみる"
     options = []
+    if placeholder_label:
+        options.append(f'<option value="" selected>{esc(placeholder_label)}</option>')
     for nationality in all_nationalities:
-        selected = ' selected' if nationality == current else ''
+        selected = ' selected' if placeholder_label is None and nationality == current else ''
         options.append(f'<option value="{country_path(nationality, lang)}"{selected}>{esc(country_label(nationality, lang))}</option>')
     return f'<span class="select-wrap"><select class="tax-select" aria-label="{label}" onchange="if(this.value) window.location.href=this.value">{ "".join(options) }</select></span>'
 
 
-def render_era_select(eras: list[dict], current_id: str, lang: str) -> str:
-    label = "Browse eras" if lang == "en" else "年代で見る"
+def render_era_select(eras: list[dict], current_id: str | None, lang: str, placeholder_label: str | None = None) -> str:
+    label = "Browse eras" if lang == "en" else "年代順にみる"
     options = []
+    if placeholder_label:
+        options.append(f'<option value="" selected>{esc(placeholder_label)}</option>')
     for era in eras:
-        selected = ' selected' if era["id"] == current_id else ''
+        selected = ' selected' if placeholder_label is None and era["id"] == current_id else ''
         options.append(f'<option value="{era_path(era["id"], lang)}"{selected}>{esc(era_short_label(era, lang))}</option>')
     return f'<span class="select-wrap"><select class="tax-select" aria-label="{label}" onchange="if(this.value) window.location.href=this.value">{ "".join(options) }</select></span>'
 
@@ -467,8 +471,12 @@ def main():
                 lead=lead,
                 home_href="/en/" if lang == "en" else "/",
                 archive_href="/en/archive.html" if lang == "en" else "/archive.html",
-                back_label="Browse by Era" if lang == "en" else "年代から見る",
-                select_html=render_era_select(eras, era_id, lang),
+                back_label="Browse by Era" if lang == "en" else "年代順にみる",
+                controls_html=(
+                    render_era_select(eras, era_id, lang)
+                    + f'<a href="{"/en/countries/united-states.html" if lang == "en" else "/countries/united-states.html"}">{"Browse countries" if lang == "en" else "国別でみる"}</a>'
+                    + render_country_select(all_nationalities, None, lang, "Browse countries" if lang == "en" else "国別でみる")
+                ),
                 hero_groups_html=hero_groups,
                 list_title="Photographers" if lang == "en" else "写真家一覧",
                 list_html=render_photographer_cards(people, lang, era_lookup),
@@ -497,7 +505,11 @@ def main():
                 f'<div class="meta-group"><div class="group-label">{"Basic facts" if lang == "en" else "基本情報"}</div><div class="mini-card-grid"><div class="mini-card"><span class="mini-card-label">{"Country" if lang == "en" else "国"}</span><span class="mini-card-value">{esc(short)}</span></div><div class="mini-card"><span class="mini-card-label">{"Photographers" if lang == "en" else "写真家数"}</span><span class="mini-card-value">{len(people)}</span></div></div></div>'
                 f'<div class="meta-group"><div class="group-label">{"Related movements" if lang == "en" else "関連する運動"}</div><div class="tag-grid">{render_movement_cards(people, movements_meta, lang)}</div></div>'
             )
-            select_html = render_country_select(all_nationalities, nationality, lang)
+            controls_html = (
+                render_country_select(all_nationalities, nationality, lang)
+                + f'<a href="{"/en/archive.html#tab-era" if lang == "en" else "/archive.html#tab-era"}">{"Browse by Era" if lang == "en" else "年代順にみる"}</a>'
+                + render_era_select(eras, None, lang, "Browse by Era" if lang == "en" else "年代順にみる")
+            )
             page = render_taxonomy_page(
                 lang=lang,
                 page_kind="country",
@@ -508,8 +520,8 @@ def main():
                 lead=lead,
                 home_href="/en/" if lang == "en" else "/",
                 archive_href="/en/archive.html" if lang == "en" else "/archive.html",
-                back_label="Browse by Era" if lang == "en" else "年代から見る",
-                select_html=select_html,
+                back_label="Browse by Era" if lang == "en" else "年代順にみる",
+                controls_html=controls_html,
                 hero_groups_html=hero_groups,
                 list_title="Photographers" if lang == "en" else "写真家一覧",
                 list_html=render_photographer_cards(people, lang, era_lookup),

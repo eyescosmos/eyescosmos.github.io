@@ -479,7 +479,7 @@ def build_title(photographer: dict, lang: str, era_lookup: dict, movements_meta:
 def build_page_structured_data(photographer: dict, lang: str, title: str, description: str, canonical: str) -> str:
     website_url = f"{SITE}/en/" if lang == "en" else f"{SITE}/"
     website_name = "Photo Coordinates" if lang == "en" else "写真の座標"
-    archive_name = "Browse by Era" if lang == "en" else "年代から見る"
+    archive_name = "Browse by Era" if lang == "en" else "年代順にみる"
     archive_url = f"{SITE}/en/archive.html" if lang == "en" else f"{SITE}/archive.html"
     page_name = display_name(photographer, lang)
 
@@ -621,7 +621,7 @@ COPY = {
     "ja": {
         "site": "写真の座標",
         "label": "Photo Coordinates / Photographer",
-        "archive": "年代から見る",
+        "archive": "年代順にみる",
         "coordinates": "座標で見る",
         "home": "トップへ戻る",
         "essay": "解説",
