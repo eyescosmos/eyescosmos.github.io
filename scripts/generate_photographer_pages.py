@@ -110,6 +110,18 @@ def country_page_path(photographer: dict, lang: str = "ja") -> str:
     return f"/{base}/{slug}.html"
 
 
+def movement_page_path(movement: str, lang: str = "ja") -> str:
+    base = "en/movements" if lang == "en" else "movements"
+    return f"/{base}/{movement_slug(movement)}.html"
+
+
+def render_tax_select(options: list[tuple[str, str, bool]], label: str) -> str:
+    rendered = []
+    for value, text, selected in options:
+        rendered.append(f'<option value="{escape_html(value)}"{ " selected" if selected else "" }>{escape_html(text)}</option>')
+    return f'<span class="select-wrap"><select class="tax-select" aria-label="{escape_html(label)}" onchange="if(this.value) window.location.href=this.value">{"".join(rendered)}</select></span>'
+
+
 def localize_value(record: dict, ja_key: str, en_key: str) -> str:
     return record.get(ja_key) or record.get(en_key) or ""
 
@@ -707,6 +719,14 @@ def main() -> None:
     era_index = {era["id"]: idx for idx, era in enumerate(eras)}
     photographer_index = {p["id"]: idx for idx, p in enumerate(photographers)}
     alias_lookup, alias_regex = build_alias_targets(photographers, alias_map)
+    all_nationalities = sorted(
+        [nationality for nationality in {p.get("nationality") for p in photographers if p.get("nationality")} if nationality in COUNTRY_META],
+        key=lambda nationality: COUNTRY_META[nationality]["ja"],
+    )
+    all_movements = sorted(
+        {movement for photographer in photographers for movement in (photographer.get("movements") or []) if movement},
+        key=lambda movement: (movements_meta.get(movement, {}).get("en", movement) or movement).lower(),
+    )
 
     report_rows = []
 
@@ -732,8 +752,7 @@ def main() -> None:
             for movement in (photographer.get("movements") or []) + (get_enrichment(enrichments, photographer).get("extraMovements") or []):
                 meta = movements_meta.get(movement, {})
                 movement_label = meta.get("en", movement) if lang == "en" else movement
-                archive_path = "/en/archive.html" if lang == "en" else "/archive.html"
-                tag = f'<a class="tag" href="{archive_path}#movement-{movement_slug(movement)}">{escape_html(movement_label)}</a>'
+                tag = f'<a class="tag" href="{movement_page_path(movement, lang)}">{escape_html(movement_label)}</a>'
                 if tag not in movement_links:
                     movement_links.append(tag)
                 if len(movement_links) >= 5:
@@ -761,6 +780,20 @@ def main() -> None:
             coordinates_href = ("/en/index.html" if lang == "en" else "/index.html") + f'?focus=photographer:{photographer["id"]}'
             era_href = era_page_path(photographer, lang)
             country_href = country_page_path(photographer, lang)
+            era_select = render_tax_select(
+                [
+                    (era_page_path({"era": era["id"]}, lang), (era.get("period") or "").replace(" — ", "–"), era["id"] == photographer.get("era"))
+                    for era in eras
+                ],
+                "Browse by Era" if lang == "en" else "年代順にみる",
+            ) if photographer.get("era") else ""
+            country_select = render_tax_select(
+                [
+                    (f"/{'en/' if lang == 'en' else ''}countries/{COUNTRY_META[nationality]['slug']}.html", COUNTRY_META[nationality]["en" if lang == "en" else "ja"], nationality == photographer.get("nationality"))
+                    for nationality in all_nationalities
+                ],
+                "Browse countries" if lang == "en" else "国別でみる",
+            ) if photographer.get("nationality") else ""
             canonical = SITE + photographer_page_path(photographer, lang)
             x_default = SITE + photographer_page_path(photographer, "ja")
             stylesheet_href = ("../../styles/photographer-page.css" if lang == "en" else "../styles/photographer-page.css") + f"?v={ASSET_VERSION}"
@@ -819,6 +852,8 @@ gtag('config', '{GA_ID}');
         <a href="{home_href}">{copy['home']}</a>
         <a href="{archive_href}">{copy['archive']}</a>
         <a href="{coordinates_href}">{copy['coordinates']}</a>
+        {country_select}
+        {era_select}
       </div>
       <h1 class="title">{escape_html(display_name(photographer, lang))}{f'<span class="alt">{escape_html(alt_name)}</span>' if alt_name else ''}</h1>
       <p class="lead">{escape_html(intro)}</p>

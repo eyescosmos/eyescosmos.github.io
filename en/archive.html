@@ -305,6 +305,15 @@ h1 em { font-style: normal; color: var(--accent); }
   display: flex;
   gap: 0;
   min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.tab-nav-selects {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 20px;
 }
 .tab-lang-toggle {
   margin-left: auto;
@@ -381,6 +390,9 @@ h1 em { font-style: normal; color: var(--accent); }
 }
 .filter-select:hover { border-color: var(--accent-dim); }
 .filter-select:focus { outline: none; border-color: var(--accent); }
+.nav-select {
+  min-width: 180px;
+}
 .filter-input {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1103,6 +1115,8 @@ footer a:hover { color: var(--accent); }
   .filter-bar { flex-direction: column; align-items: flex-start; }
   .filter-count { margin-left: 0; }
   .tab-btn { font-size: 11px; padding: 16px 16px; }
+  .tab-nav-selects { width: 100%; padding: 0 0 16px 0; }
+  .nav-select { width: 100%; }
   .random-box { max-width: 100%; }
 }
 </style>
@@ -1138,8 +1152,18 @@ footer a:hover { color: var(--accent); }
   <div class="tab-nav-inner">
     <div class="tab-nav-links">
       <button class="tab-btn active" data-tab="era" onclick="switchTab('era')" id="tab-era-button">Browse by Era</button>
-      <button class="tab-btn" data-tab="movement" onclick="switchTab('movement')" id="tab-movement-button">Browse by Movement</button>
       <a class="tab-link" href="index.html" id="tab-home-link">Photo Coordinates</a>
+      <div class="tab-nav-selects">
+        <select class="filter-select nav-select" id="nav-era-select" onchange="navigateArchiveTaxonomy(this.value)">
+          <option value="">Browse by Era</option>
+        </select>
+        <select class="filter-select nav-select" id="nav-country-select" onchange="navigateArchiveTaxonomy(this.value)">
+          <option value="">Browse countries</option>
+        </select>
+        <select class="filter-select nav-select" id="nav-movement-select" onchange="navigateArchiveTaxonomy(this.value)">
+          <option value="">Browse by Movement</option>
+        </select>
+      </div>
     </div>
     <div class="lang-toggle tab-lang-toggle" aria-label="Language switch">
       <a class="lang-btn" data-lang="ja" href="/archive.html#tab-era">Japanese</a>
@@ -1160,23 +1184,12 @@ footer a:hover { color: var(--accent); }
         placeholder="Search photographers"
         oninput="applyFilters()"
       >
-      <select class="filter-select" id="filter-country" onchange="applyFilters()">
-        <option value="" id="filter-country-default">All countries</option>
-      </select>
-      <select class="filter-select" id="filter-movement-era" onchange="applyFilters()">
-        <option value="" id="filter-movement-default">All movements</option>
-      </select>
       <button class="filter-reset" id="filter-reset-button" onclick="resetFilters()">Reset</button>
       <span class="filter-count" id="filter-count"></span>
     </div>
     <div id="no-results" class="no-results">条件に一致する写真家が見つかりません</div>
   </div>
   <main id="era-main" class="container"></main>
-</div>
-
-<!-- ══════════════════════════════ TAB 2: MOVEMENT ══════════════════════════════ -->
-<div id="tab-movement" class="tab-content">
-  <main id="movement-main" class="container"></main>
 </div>
 
 <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
@@ -1204,6 +1217,6 @@ footer a:hover { color: var(--accent); }
 <script src="../data/affiliate-books.js?v=20260404c"></script>
 <script src="../data/photographer-enrichments.js?v=20260406a"></script>
 <script src="../scripts/language.js?v=20260403e"></script>
-<script src="../scripts/site.js?v=20260406a"></script>
+<script src="../scripts/site.js?v=20260406b"></script>
 </body>
 </html>

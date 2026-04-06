@@ -130,6 +130,19 @@ const COUNTRY_TEXT = {
   CA: { ja: 'CA', en: 'Canada' }
 };
 
+const COUNTRY_ROUTE_META = {
+  FR: { ja: 'フランス', en: 'France', slug: 'france' },
+  GB: { ja: 'イギリス', en: 'United Kingdom', slug: 'united-kingdom' },
+  US: { ja: 'アメリカ', en: 'United States', slug: 'united-states' },
+  'IT / GB': { ja: 'イタリア / イギリス', en: 'Italy / United Kingdom', slug: 'italy-united-kingdom' },
+  'GB / US': { ja: 'イギリス / アメリカ', en: 'United Kingdom / United States', slug: 'united-kingdom-united-states' },
+  'DK / US': { ja: 'デンマーク / アメリカ', en: 'Denmark / United States', slug: 'denmark-united-states' },
+  DE: { ja: 'ドイツ', en: 'Germany', slug: 'germany' },
+  JP: { ja: '日本', en: 'Japan', slug: 'japan' },
+  BR: { ja: 'ブラジル', en: 'Brazil', slug: 'brazil' },
+  CA: { ja: 'カナダ', en: 'Canada', slug: 'canada' }
+};
+
 const GENDER_TEXT = {
   男性: { ja: '男性', en: 'Male' },
   女性: { ja: '女性', en: 'Female' }
@@ -572,8 +585,8 @@ function updateArchiveLanguageLinks() {
 function applyStaticTranslations() {
   document.documentElement.lang = currentLanguage;
   document.title = currentLanguage === 'en'
-    ? 'Photo Coordinates | History of Photography by Era and Movement'
-    : '写真の座標 | 年代からたどる写真史と写真家';
+    ? 'Photo Coordinates | Browse Photography History by Era, Country, and Movement'
+    : '写真の座標 | 年代順・国別・表現でたどる写真史';
 
   const mappings = [
     ['archive-back-link', 'homeBack'],
@@ -585,7 +598,6 @@ function applyStaticTranslations() {
     ['random-coordinate-button', 'coordinateButton'],
     ['random-hint', 'randomHint'],
     ['tab-era-button', 'eraTab'],
-    ['tab-movement-button', 'movementTab'],
     ['tab-home-link', 'homeTitle'],
     ['filter-label', 'filterLabel'],
     ['filter-reset-button', 'reset'],
@@ -607,20 +619,15 @@ function applyStaticTranslations() {
     headerLabel.textContent = currentLanguage === 'en' ? 'Photo Coordinates / Archive' : 'Photo Coordinates / Archive';
   }
 
-  const countryDefault = document.getElementById('filter-country-default');
-  if (countryDefault) countryDefault.textContent = t('allCountries');
-
-  const movementDefault = document.getElementById('filter-movement-default');
-  if (movementDefault) movementDefault.textContent = t('allMovements');
-
   const searchInput = document.getElementById('filter-search');
   if (searchInput) searchInput.placeholder = t('filterSearchPlaceholder');
+
+  populateArchiveNavigation();
 }
 
 function rerenderArchive() {
   const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab || 'era';
   renderEraTab();
-  renderMovementTab();
   initRandom();
   applyFilters();
   switchTab(activeTab);
@@ -642,6 +649,84 @@ function initializeLanguageControls() {
       rerenderArchive();
     });
   });
+}
+
+function movementSlug(name) {
+  return String(name || '').replace(/[^A-Za-z\u3000-\u9fff]/g, '');
+}
+
+function eraPagePath(eraId) {
+  return `${currentLanguage === 'en' ? '/en' : ''}/eras/${eraId}.html`;
+}
+
+function countryPagePath(nationality) {
+  const meta = COUNTRY_ROUTE_META[nationality];
+  const slug = meta?.slug || 'unknown';
+  return `${currentLanguage === 'en' ? '/en' : ''}/countries/${slug}.html`;
+}
+
+function movementPagePath(name) {
+  return `${currentLanguage === 'en' ? '/en' : ''}/movements/${movementSlug(name)}.html`;
+}
+
+function navigateArchiveTaxonomy(value) {
+  if (!value) return;
+  window.location.href = value;
+}
+
+function populateArchiveNavigation() {
+  const photographers = realPhotographers();
+  const eraSelect = document.getElementById('nav-era-select');
+  const countrySelect = document.getElementById('nav-country-select');
+  const movementSelect = document.getElementById('nav-movement-select');
+
+  if (eraSelect) {
+    eraSelect.innerHTML = '';
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = t('eraTab');
+    eraSelect.appendChild(defaultOption);
+    ERAS.forEach(era => {
+      const option = document.createElement('option');
+      option.value = eraPagePath(era.id);
+      option.textContent = currentLanguage === 'en'
+        ? (era.titleEn || era.title)
+        : era.title;
+      eraSelect.appendChild(option);
+    });
+  }
+
+  if (countrySelect) {
+    countrySelect.innerHTML = '';
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = currentLanguage === 'en' ? 'Browse countries' : '国別でみる';
+    countrySelect.appendChild(defaultOption);
+    [...new Set(photographers.map(p => p.nationality).filter(n => COUNTRY_ROUTE_META[n]))]
+      .sort((a, b) => (COUNTRY_ROUTE_META[a]?.[currentLanguage] || a).localeCompare(COUNTRY_ROUTE_META[b]?.[currentLanguage] || b, currentLanguage === 'en' ? 'en' : 'ja'))
+      .forEach(nationality => {
+        const option = document.createElement('option');
+        option.value = countryPagePath(nationality);
+        option.textContent = COUNTRY_ROUTE_META[nationality][currentLanguage];
+        countrySelect.appendChild(option);
+      });
+  }
+
+  if (movementSelect) {
+    movementSelect.innerHTML = '';
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = currentLanguage === 'en' ? 'Browse by Movement' : '表現からみる';
+    movementSelect.appendChild(defaultOption);
+    [...new Set(photographers.flatMap(p => p.movements).filter(Boolean))]
+      .sort((a, b) => displayMovementName(a).localeCompare(displayMovementName(b), currentLanguage === 'en' ? 'en' : 'ja'))
+      .forEach(movement => {
+        const option = document.createElement('option');
+        option.value = movementPagePath(movement);
+        option.textContent = displayMovementName(movement);
+        movementSelect.appendChild(option);
+      });
+  }
 }
 
 function openCoordinatesForPhotographer(pid) {
@@ -1140,31 +1225,14 @@ function closeDetail(pid) {
    FILTERS
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function populateFilters() {
-  const photographers = realPhotographers();
-  const countries = [...new Set(photographers.map(p => p.nationality).filter(Boolean))].sort();
-  const movements = [...new Set(photographers.flatMap(p => p.movements))].sort();
-
-  const cSel = document.getElementById('filter-country');
-  cSel.innerHTML = `<option value="">${t('allCountries')}</option>`;
-  countries.forEach(c => {
-    const opt = document.createElement('option');
-    opt.value = c; opt.textContent = COUNTRY_TEXT[c]?.[currentLanguage] || c;
-    cSel.appendChild(opt);
-  });
-
-  const mSel = document.getElementById('filter-movement-era');
-  mSel.innerHTML = `<option value="">${t('allMovements')}</option>`;
-  movements.forEach(m => {
-    const opt = document.createElement('option');
-    opt.value = m; opt.textContent = displayMovementName(m);
-    mSel.appendChild(opt);
-  });
+  populateArchiveNavigation();
 }
 
 function applyFilters() {
-  activeFilters.search = normalizeSearch(document.getElementById('filter-search').value);
-  activeFilters.country = document.getElementById('filter-country').value;
-  activeFilters.movement = document.getElementById('filter-movement-era').value;
+  const searchInput = document.getElementById('filter-search');
+  activeFilters.search = normalizeSearch(searchInput ? searchInput.value : '');
+  activeFilters.country = '';
+  activeFilters.movement = '';
 
   let visibleCount = 0;
 
@@ -1207,9 +1275,8 @@ function applyFilters() {
 }
 
 function resetFilters() {
-  document.getElementById('filter-search').value = '';
-  document.getElementById('filter-country').value = '';
-  document.getElementById('filter-movement-era').value = '';
+  const searchInput = document.getElementById('filter-search');
+  if (searchInput) searchInput.value = '';
   activeFilters = { search: '', country: '', movement: '' };
   document.querySelectorAll('#era-main .photographer-card').forEach(c => c.classList.remove('filtered-out'));
   document.querySelectorAll('.era').forEach(e => e.classList.remove('hidden'));
@@ -1222,6 +1289,7 @@ function resetFilters() {
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function renderMovementTab() {
   const main = document.getElementById('movement-main');
+  if (!main) return;
   main.innerHTML = '';
 
   // Gather movements that have at least one photographer
@@ -1304,13 +1372,11 @@ function closeMovementDetail(pid, mvId) {
 function switchTab(tabId) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById(`tab-${tabId}`).classList.add('active');
-  document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+  const tabContent = document.getElementById(`tab-${tabId}`);
+  const tabButton = document.querySelector(`[data-tab="${tabId}"]`);
+  if (tabContent) tabContent.classList.add('active');
+  if (tabButton) tabButton.classList.add('active');
   updateArchiveLanguageLinks();
-
-  if (tabId === 'movement') {
-    setupObserver('.movement-section');
-  }
 }
 
 function toggleMovement(mvId) {
@@ -1473,18 +1539,9 @@ function handleDeepLink() {
     return;
   }
 
-  if (hash === 'tab-movement') {
-    switchTab('movement');
-    return;
-  }
-
   if (hash.startsWith('photographer-')) {
     revealPhotographerFromHash(hash.slice('photographer-'.length));
     return;
-  }
-
-  if (hash.startsWith('movement-')) {
-    revealMovementFromHash(hash.slice('movement-'.length));
   }
 }
 

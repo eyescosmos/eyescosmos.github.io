@@ -147,6 +147,10 @@ def country_path(nationality: str, lang: str) -> str:
     return f"/{'en/' if lang == 'en' else ''}countries/{slug}.html"
 
 
+def movement_path(name: str, lang: str) -> str:
+    return f"/{'en/' if lang == 'en' else ''}movements/{movement_slug(name)}.html"
+
+
 def display_name(photographer: dict, lang: str) -> str:
     return photographer.get("name") if lang == "en" else (photographer.get("nameJa") or photographer.get("name") or "")
 
@@ -281,8 +285,24 @@ def page_structured_data(title: str, description: str, canonical: str, lang: str
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
-def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, archive_href: str, back_label: str, controls_html: str, hero_groups_html: str, list_title: str, list_html: str) -> str:
-    label = f"Photo Coordinates / {'Country' if page_kind == 'country' else 'Era'}"
+def short_block_text(text: str, lang: str, limit: int = 120) -> str:
+    value = re.sub(r"\s+", " ", (text or "").strip())
+    if not value:
+        return ""
+    if len(value) <= limit:
+        return value
+    cutoff = value.rfind("。", 0, limit)
+    if cutoff > 20:
+        return value[: cutoff + 1]
+    cutoff = value.rfind(" ", 0, limit)
+    if cutoff < 20:
+        cutoff = limit
+    return value[:cutoff].rstrip(" 、,.") + ("…" if lang == "en" else "…")
+
+
+def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, archive_href: str, back_label: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str) -> str:
+    kind_label = "Movement" if page_kind == "movement" else ("Country" if page_kind == "country" else "Era")
+    label = f"Photo Coordinates / {kind_label}"
     structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip())
     footer_line1 = "This site gathers and organizes information from publicly available web sources with AI assistance." if lang == "en" else "本サイトの情報はAIによってウェブ上の資料から収集・整理されたものです。"
     footer_line2 = "Sources are listed where possible, but errors or outdated details may remain." if lang == "en" else "各記述には出典を明記していますが、誤りが含まれる可能性があります。"
@@ -338,6 +358,7 @@ gtag('config', '{GA_ID}');
       <div class="hero-meta">{hero_groups_html}</div>
     </div>
     <div class="section-grid">
+      {context_html}
       <section class="section">
         <h2>{esc(list_title)}</h2>
         <div class="photographer-grid">{list_html}</div>
@@ -378,8 +399,7 @@ def render_photographer_cards(photographers: list[dict], lang: str, era_lookup: 
 def render_movement_cards(photographers: list[dict], movements_meta: dict, lang: str) -> str:
     cards = []
     for label, original in top_movements(photographers, movements_meta, lang, 5):
-        archive = "/en/archive.html" if lang == "en" else "/archive.html"
-        cards.append(f'<a class="tag-card" href="{archive}#movement-{movement_slug(original)}">{esc(label)}</a>')
+        cards.append(f'<a class="tag-card" href="{movement_path(original, lang)}">{esc(label)}</a>')
     return "".join(cards) or f'<p>{"Related movements coming soon." if lang == "en" else "関連する運動は準備中です。"}</p>'
 
 
@@ -405,6 +425,18 @@ def render_era_select(eras: list[dict], current_id: str | None, lang: str, place
     return f'<span class="select-wrap"><select class="tax-select" aria-label="{label}" onchange="if(this.value) window.location.href=this.value">{ "".join(options) }</select></span>'
 
 
+def render_movement_select(movements: list[str], current: str | None, movements_meta: dict, lang: str, placeholder_label: str | None = None) -> str:
+    label = "Browse movements" if lang == "en" else "表現からみる"
+    options = []
+    if placeholder_label:
+        options.append(f'<option value="" selected>{esc(placeholder_label)}</option>')
+    for movement in movements:
+        movement_label = movements_meta.get(movement, {}).get("en", movement) if lang == "en" else movement
+        selected = ' selected' if placeholder_label is None and movement == current else ''
+        options.append(f'<option value="{movement_path(movement, lang)}"{selected}>{esc(movement_label)}</option>')
+    return f'<span class="select-wrap"><select class="tax-select" aria-label="{label}" onchange="if(this.value) window.location.href=this.value">{ "".join(options) }</select></span>'
+
+
 def main():
     photographers = eval_js([
         "data/photographers.js",
@@ -426,16 +458,29 @@ def main():
     eras_en_dir = REPO / "en/eras"
     countries_dir = REPO / "countries"
     countries_en_dir = REPO / "en/countries"
-    for d in (eras_dir, eras_en_dir, countries_dir, countries_en_dir):
+    movements_dir = REPO / "movements"
+    movements_en_dir = REPO / "en/movements"
+    for d in (eras_dir, eras_en_dir, countries_dir, countries_en_dir, movements_dir, movements_en_dir):
         d.mkdir(parents=True, exist_ok=True)
 
     photographers_by_era = defaultdict(list)
     photographers_by_country = defaultdict(list)
+    photographers_by_movement = defaultdict(list)
     for photographer in photographers:
         photographers_by_era[photographer.get("era")].append(photographer)
         photographers_by_country[photographer.get("nationality")].append(photographer)
+        movement_values = []
+        for movement in photographer.get("movements") or []:
+            if movement and movement not in movement_values:
+                movement_values.append(movement)
+        for movement in movement_values:
+            photographers_by_movement[movement].append(photographer)
 
     all_nationalities = sorted([n for n in photographers_by_country.keys() if n in COUNTRY_META], key=lambda n: country_label(n, "ja"))
+    all_movements = sorted(
+        [movement for movement, items in photographers_by_movement.items() if items],
+        key=lambda movement: movements_meta.get(movement, {}).get("en", movement).lower(),
+    )
 
     for lang in ("ja", "en"):
         # Era pages
@@ -457,6 +502,21 @@ def main():
                 if lang == "en"
                 else f"{short}の写真家を一覧し、関連する運動や写真史の流れとあわせて見渡すためのページです。"
             )
+            context_html = (
+                f'''<section class="section taxonomy-context">
+        <h2>{"Context" if lang == "en" else "この時代の背景"}</h2>
+        <div class="context-grid">
+          <div class="context-block">
+            <div class="context-label">{"World events" if lang == "en" else "世界情勢"}</div>
+            <div class="context-text">{esc(short_block_text((era.get("worldEvents") or {}).get("textEn" if lang == "en" else "text") or (era.get("worldEvents") or {}).get("text") or "", lang, 180 if lang == "en" else 95))}</div>
+          </div>
+          <div class="context-block">
+            <div class="context-label">{"Photography and the era" if lang == "en" else "写真と時代"}</div>
+            <div class="context-text">{esc(short_block_text((era.get("photoContext") or {}).get("textEn" if lang == "en" else "text") or (era.get("photoContext") or {}).get("text") or "", lang, 180 if lang == "en" else 95))}</div>
+          </div>
+        </div>
+      </section>'''
+            )
             hero_groups = (
                 f'<div class="meta-group"><div class="group-label">{"Basic facts" if lang == "en" else "基本情報"}</div><div class="mini-card-grid"><div class="mini-card"><span class="mini-card-label">{"Era" if lang == "en" else "年代"}</span><span class="mini-card-value">{esc(short)}</span></div><div class="mini-card"><span class="mini-card-label">{"Photographers" if lang == "en" else "写真家数"}</span><span class="mini-card-value">{len(people)}</span></div></div></div>'
                 f'<div class="meta-group"><div class="group-label">{"Related movements" if lang == "en" else "関連する運動"}</div><div class="tag-grid">{render_movement_cards(people, movements_meta, lang)}</div></div>'
@@ -474,10 +534,11 @@ def main():
                 back_label="Browse by Era" if lang == "en" else "年代順にみる",
                 controls_html=(
                     render_era_select(eras, era_id, lang)
-                    + f'<a href="{"/en/countries/united-states.html" if lang == "en" else "/countries/united-states.html"}">{"Browse countries" if lang == "en" else "国別でみる"}</a>'
                     + render_country_select(all_nationalities, None, lang, "Browse countries" if lang == "en" else "国別でみる")
+                    + render_movement_select(all_movements, None, movements_meta, lang, "Browse by Movement" if lang == "en" else "表現からみる")
                 ),
                 hero_groups_html=hero_groups,
+                context_html=context_html,
                 list_title="Photographers" if lang == "en" else "写真家一覧",
                 list_html=render_photographer_cards(people, lang, era_lookup),
             )
@@ -507,8 +568,8 @@ def main():
             )
             controls_html = (
                 render_country_select(all_nationalities, nationality, lang)
-                + f'<a href="{"/en/archive.html#tab-era" if lang == "en" else "/archive.html#tab-era"}">{"Browse by Era" if lang == "en" else "年代順にみる"}</a>'
                 + render_era_select(eras, None, lang, "Browse by Era" if lang == "en" else "年代順にみる")
+                + render_movement_select(all_movements, None, movements_meta, lang, "Browse by Movement" if lang == "en" else "表現からみる")
             )
             page = render_taxonomy_page(
                 lang=lang,
@@ -523,10 +584,67 @@ def main():
                 back_label="Browse by Era" if lang == "en" else "年代順にみる",
                 controls_html=controls_html,
                 hero_groups_html=hero_groups,
+                context_html="",
                 list_title="Photographers" if lang == "en" else "写真家一覧",
                 list_html=render_photographer_cards(people, lang, era_lookup),
             )
             (countries_en_dir if lang == "en" else countries_dir).joinpath(f"{COUNTRY_META[nationality]['slug']}.html").write_text(page, encoding="utf-8")
+
+        # Movement pages
+        for movement in all_movements:
+            people = sort_photographers(photographers_by_movement.get(movement, []), lang)
+            movement_label = movements_meta.get(movement, {}).get("en", movement) if lang == "en" else movement
+            title = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates | Eyes Cosmos" if lang == "en" else f"{movement_label}｜表現｜写真史｜写真の座標｜Eyes Cosmos"
+            keyword = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates |" if lang == "en" else f"{movement_label}｜表現｜写真史｜<a href=\"/\">写真の座標</a>｜"
+            canonical = f"{SITE}/{'en/' if lang == 'en' else ''}movements/{movement_slug(movement)}.html"
+            description = (
+                f"Explore {movement_label} on Photo Coordinates through photographers, related eras, and the wider history of photography."
+                if lang == "en"
+                else f"{movement_label}を写真史の中でたどるためのページです。写真の座標で、この表現に関わる写真家や時代背景、関連する運動を一覧できます。"
+            )
+            lead = (
+                f"This page follows {movement_label} through photographers, related eras, and the history of photography."
+                if lang == "en"
+                else f"{movement_label}に関わる写真家を一覧し、写真史の流れの中でその表現がどのように位置づけられるかをたどるためのページです。"
+            )
+            movement_desc = movements_meta.get(movement, {}).get("descEn" if lang == "en" else "desc") or movements_meta.get(movement, {}).get("desc") or ""
+            context_html = (
+                f'''<section class="section taxonomy-context">
+        <h2>{"Overview" if lang == "en" else "この表現について"}</h2>
+        <div class="context-grid">
+          <div class="context-block">
+            <div class="context-label">{"Movement" if lang == "en" else "表現"}</div>
+            <div class="context-text">{esc(short_block_text(movement_desc, lang, 220 if lang == "en" else 120))}</div>
+          </div>
+        </div>
+      </section>'''
+            ) if movement_desc else ""
+            hero_groups = (
+                f'<div class="meta-group"><div class="group-label">{"Basic facts" if lang == "en" else "基本情報"}</div><div class="mini-card-grid"><div class="mini-card"><span class="mini-card-label">{"Movement" if lang == "en" else "表現"}</span><span class="mini-card-value">{esc(movement_label)}</span></div><div class="mini-card"><span class="mini-card-label">{"Photographers" if lang == "en" else "写真家数"}</span><span class="mini-card-value">{len(people)}</span></div></div></div>'
+            )
+            controls_html = (
+                render_era_select(eras, None, lang, "Browse by Era" if lang == "en" else "年代順にみる")
+                + render_country_select(all_nationalities, None, lang, "Browse countries" if lang == "en" else "国別でみる")
+                + render_movement_select(all_movements, movement, movements_meta, lang)
+            )
+            page = render_taxonomy_page(
+                lang=lang,
+                page_kind="movement",
+                title=title,
+                keywordline=keyword,
+                canonical=canonical,
+                description=description,
+                lead=lead,
+                home_href="/en/" if lang == "en" else "/",
+                archive_href="/en/archive.html" if lang == "en" else "/archive.html",
+                back_label="Browse by Era" if lang == "en" else "年代順にみる",
+                controls_html=controls_html,
+                hero_groups_html=hero_groups,
+                context_html=context_html,
+                list_title="Photographers" if lang == "en" else "写真家一覧",
+                list_html=render_photographer_cards(people, lang, era_lookup),
+            )
+            (movements_en_dir if lang == "en" else movements_dir).joinpath(f"{movement_slug(movement)}.html").write_text(page, encoding="utf-8")
 
 
 if __name__ == "__main__":
