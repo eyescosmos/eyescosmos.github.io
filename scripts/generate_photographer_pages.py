@@ -435,6 +435,57 @@ def build_title(photographer: dict, lang: str, era_lookup: dict, movements_meta:
     return f"{name_primary}｜写真史｜{descriptor}｜写真の座標｜Eyes Cosmos" if descriptor else f"{name_primary}｜写真史｜写真の座標｜Eyes Cosmos"
 
 
+def build_page_structured_data(photographer: dict, lang: str, title: str, description: str, canonical: str) -> str:
+    website_url = f"{SITE}/en/" if lang == "en" else f"{SITE}/"
+    website_name = "Photo Coordinates" if lang == "en" else "写真の座標"
+    archive_name = "Browse by Era" if lang == "en" else "年代から見る"
+    archive_url = f"{SITE}/en/archive.html" if lang == "en" else f"{SITE}/archive.html"
+    page_name = display_name(photographer, lang)
+
+    payload = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": canonical,
+                "url": canonical,
+                "name": title,
+                "description": description,
+                "inLanguage": "en" if lang == "en" else "ja",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "name": website_name,
+                    "url": website_url,
+                },
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": website_name,
+                        "item": website_url,
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": archive_name,
+                        "item": archive_url,
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": page_name,
+                        "item": canonical,
+                    },
+                ],
+            },
+        ],
+    }
+    return json.dumps(payload, ensure_ascii=False, indent=2)
+
+
 def related_photographers_for(target: dict, all_photographers: list[dict], era_index: dict, photographer_index: dict, limit: int = 5):
     candidates = []
     target_era_index = era_index.get(target.get("era"), 999)
@@ -668,6 +719,7 @@ def main() -> None:
             home_href = "/en/" if lang == "en" else "/"
             alt_name = display_alt_name(photographer, lang)
             page_path = photographer_page_path(photographer, lang)
+            structured_data = build_page_structured_data(photographer, lang, title, description, canonical)
             page = f"""<!DOCTYPE html>
 <html lang="{ 'en' if lang == 'en' else 'ja' }">
 <head>
@@ -686,6 +738,9 @@ def main() -> None:
 <meta property="og:url" content="{canonical}">
 <meta property="og:locale" content="{ 'en_US' if lang == 'en' else 'ja_JP' }">
 <meta property="og:locale:alternate" content="{ 'ja_JP' if lang == 'en' else 'en_US' }">
+<script type="application/ld+json">
+{structured_data}
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
