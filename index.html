@@ -289,11 +289,13 @@ body.is-navigating #page-fade {
 
 .site-footer {
   position: fixed;
-  right: 28px;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 24px;
   z-index: 4;
   font-size: 12px;
   line-height: 1.7;
+  text-align: center;
 }
 
 .site-footer a {
@@ -339,6 +341,13 @@ body.is-navigating #page-fade {
     left: auto;
     right: 18px;
     bottom: 18px;
+  }
+
+  .site-footer {
+    left: 50%;
+    right: auto;
+    bottom: 18px;
+    transform: translateX(-50%);
   }
 }
 </style>
