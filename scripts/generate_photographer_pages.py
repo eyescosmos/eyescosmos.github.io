@@ -771,9 +771,9 @@ gtag('config', '{GA_ID}');
       </div>
       <h1 class="title">{escape_html(display_name(photographer, lang))}{f'<span class="alt">{escape_html(alt_name)}</span>' if alt_name else ''}</h1>
       <p class="lead">{escape_html(intro)}</p>
-      <div class="hero-info-grid">
-        <div class="info-panel info-panel-facts">
-          <div class="hero-subhead">{'Basic facts' if lang == 'en' else '基本情報'}</div>
+      <div class="hero-info-groups">
+        <div class="info-group">
+          <div class="group-label">{'Basic facts' if lang == 'en' else '基本情報'}</div>
           <div class="facts-grid">
             <div class="fact-item">
               <div class="fact-label">{copy['country']}</div>
@@ -789,13 +789,13 @@ gtag('config', '{GA_ID}');
             </div>
           </div>
         </div>
-        <div class="info-panel hero-column">
-          <div class="hero-subhead">{copy['movements']}</div>
-          <div class="tags">{movement_html}</div>
+        <div class="info-group">
+          <div class="group-label">{copy['movements']}</div>
+          <div class="tags tags-flow">{movement_html}</div>
         </div>
-        <div class="info-panel hero-column info-panel-people">
-          <div class="hero-subhead">{copy['relatedPeople']}</div>
-          <div class="related-grid">{related_people_html}</div>
+        <div class="info-group">
+          <div class="group-label">{copy['relatedPeople']}</div>
+          <div class="related-grid related-grid-flow">{related_people_html}</div>
         </div>
       </div>
     </div>
