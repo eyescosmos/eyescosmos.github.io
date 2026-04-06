@@ -12,7 +12,7 @@ from pathlib import Path
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260405c"
+ASSET_VERSION = "20260406a"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -85,6 +85,18 @@ def photographer_page_path(photographer: dict, lang: str = "ja") -> str:
 
 def localize_value(record: dict, ja_key: str, en_key: str) -> str:
     return record.get(ja_key) or record.get(en_key) or ""
+
+
+def enrichment_value(enrichment: dict, lang: str, base_key: str) -> str:
+    if not enrichment:
+      return ""
+    suffix = "En" if lang == "en" else "Ja"
+    fallback_suffix = "Ja" if lang == "en" else "En"
+    return enrichment.get(f"{base_key}{suffix}") or enrichment.get(f"{base_key}{fallback_suffix}") or ""
+
+
+def get_enrichment(enrichments: dict, photographer: dict) -> dict:
+    return enrichments.get(photographer.get("id"), {}) if enrichments else {}
 
 
 def build_alias_targets(photographers: list[dict], alias_map: dict[str, str]):
@@ -225,6 +237,19 @@ def localized_movement_names(photographer: dict, lang: str, movements_meta: dict
     return names
 
 
+def expanded_movement_names(photographer: dict, lang: str, movements_meta: dict, enrichments: dict, limit: int = 5) -> list[str]:
+    enrichment = get_enrichment(enrichments, photographer)
+    items = list(photographer.get("movements") or [])
+    for movement in enrichment.get("extraMovements") or []:
+        if movement and movement not in items:
+            items.append(movement)
+    localized = []
+    for movement in items:
+        meta = movements_meta.get(movement, {})
+        localized.append(meta.get("en", movement) if lang == "en" else movement)
+    return localized[:limit]
+
+
 def join_list(items: list[str], lang: str) -> str:
     values = [item for item in items if item]
     if not values:
@@ -248,51 +273,118 @@ def is_placeholder_text(text: str, lang: str) -> bool:
     return value in {"準備中。", "Coming soon."}
 
 
-def build_intro(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict) -> str:
+def descriptor_for(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
+    enrichment = get_enrichment(enrichments, photographer)
+    descriptor = enrichment_value(enrichment, lang, "descriptor")
+    if descriptor:
+        return descriptor
+    movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=1)
+    if movement_names:
+        return movement_names[0]
+    era = era_lookup.get(photographer.get("era"), {})
+    return (era.get("titleEn") if lang == "en" else era.get("title")) or era.get("period") or ""
+
+
+def build_keyword_line(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
+    name = display_name(photographer, lang)
+    descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
+    history_label = "History of Photography" if lang == "en" else "写真史"
+    site_label = "Photo Coordinates" if lang == "en" else "写真の座標"
+    parts = [name, history_label]
+    if descriptor:
+        parts.append(descriptor)
+    parts.append(site_label)
+    return "｜".join(parts) + "｜" if lang == "ja" else " | ".join(parts) + " |"
+
+
+def extra_intro_phrase(photographer: dict, lang: str, movements_meta: dict, enrichments: dict) -> str:
+    enrichment = get_enrichment(enrichments, photographer)
+    keywords = enrichment_value(enrichment, lang, "keywords")
+    representative_work = enrichment_value(enrichment, lang, "representativeWork")
+    movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=3)
+    movement_phrase = join_list(movement_names[:2], lang)
+
+    if lang == "en":
+        parts = []
+        if keywords:
+            parts.append(f"It is often discussed through {keywords}.")
+        elif movement_phrase:
+            parts.append(f"It is frequently read through {movement_phrase}.")
+        if representative_work:
+            parts.append(f"A representative work is {representative_work}.")
+        return " ".join(parts)
+
+    parts = []
+    if keywords:
+        parts.append(f"{keywords}といった語でもよく検索される。")
+    elif movement_phrase:
+        parts.append(f"{movement_phrase}の文脈からもたどりやすい。")
+    if representative_work:
+        parts.append(f"代表作には{representative_work}がある。")
+    return "".join(parts)
+
+
+def essay_mentions_name(text: str, names: list[str]) -> bool:
+    plain = normalize_space(strip_tags(strip_cite_markers(text or "")))
+    return any(name and name in plain for name in names)
+
+
+def build_intro(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
     name_primary = display_name(photographer, lang)
     name_secondary = display_alt_name(photographer, lang)
     period = era_period(photographer, era_lookup)
-    movement_names = localized_movement_names(photographer, lang, movements_meta)[:3]
+    movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=5)
     movement_phrase = join_list(movement_names[:2], lang)
     country = display_country(photographer, lang)
     essay_text, _ = collect_text_and_citations(photographer, lang)
     placeholder = is_placeholder_text(essay_text, lang)
+    extra_phrase = extra_intro_phrase(photographer, lang, movements_meta, enrichments)
 
     if lang == "en":
         identity = name_primary if not name_secondary else f"{name_primary} ({name_secondary})"
         if placeholder:
             if movement_phrase:
-                return f"{identity} is part of Photo Coordinates, a history of photography site. This page will be expanded around {movement_phrase} and the wider photographic context of {period}."
-            return f"{identity} is part of Photo Coordinates, a history of photography site. This page will be expanded with historical context, related photographers, and sources."
+                base = f"{identity} is part of Photo Coordinates, a history of photography site. This page will be expanded around {movement_phrase} and the wider photographic context of {period}."
+            else:
+                base = f"{identity} is part of Photo Coordinates, a history of photography site. This page will be expanded with historical context, related photographers, and sources."
+            return normalize_space(f"{base} {extra_phrase}")
         if movement_phrase:
-            return f"{identity} is a key figure for reading the history of photography around {movement_phrase}. This page traces how the photographer fits into the broader history of photography through related photographers, movements, and sources."
-        return f"{identity} is presented here as part of Photo Coordinates, a site about the history of photography. This page follows the photographer through historical context, related photographers, and key sources."
+            base = f"{identity} is a key figure for reading the history of photography around {movement_phrase}. This page traces how the photographer fits into the broader history of photography through related photographers, movements, and sources."
+        else:
+            base = f"{identity} is presented here as part of Photo Coordinates, a site about the history of photography. This page follows the photographer through historical context, related photographers, and key sources."
+        return normalize_space(f"{base} {extra_phrase}")
 
     identity = name_primary if not name_secondary else f"{name_primary}（{name_secondary}）"
     if placeholder:
         if movement_phrase:
-            return f"{identity}を写真史の流れの中で読むための準備ページです。{movement_phrase}や{period}の文脈とあわせて、関連作家・出典を順次追加していきます。"
-        return f"{identity}を写真史の中で位置づけるための準備ページです。写真の座標では、関連作家・時代背景・出典を今後順次整えていきます。"
+            base = f"{identity}を写真史の流れの中で読むための準備ページです。{movement_phrase}や{period}の文脈とあわせて、関連作家・出典を順次追加していきます。"
+        else:
+            base = f"{identity}を写真史の中で位置づけるための準備ページです。写真の座標では、関連作家・時代背景・出典を今後順次整えていきます。"
+        return normalize_space(f"{base} {extra_phrase}")
     if movement_phrase:
-        return f"{identity}は、{movement_phrase}を考えるうえで重要な写真家です。このページでは、写真史の流れの中での位置づけを、関連作家・運動・出典とあわせてたどります。"
+        base = f"{identity}は、{movement_phrase}を考えるうえで重要な写真家です。このページでは、写真史の流れの中での位置づけを、関連作家・運動・出典とあわせてたどります。"
+        return normalize_space(f"{base} {extra_phrase}")
     if country != "—":
-        return f"{identity}は、{country}の写真史を考えるうえで重要な写真家です。このページでは、写真の座標の中での位置づけを、関連作家・出典とともに読み解きます。"
-    return f"{identity}を写真史の流れの中で読み解くためのページです。関連作家や出典を手がかりに、この写真家の位置づけをたどります。"
+        base = f"{identity}は、{country}の写真史を考えるうえで重要な写真家です。このページでは、写真の座標の中での位置づけを、関連作家・出典とともに読み解きます。"
+        return normalize_space(f"{base} {extra_phrase}")
+    base = f"{identity}を写真史の流れの中で読み解くためのページです。関連作家や出典を手がかりに、この写真家の位置づけをたどります。"
+    return normalize_space(f"{base} {extra_phrase}")
 
 
-def build_description(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict) -> str:
+def build_description(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
     name_primary = display_name(photographer, lang)
     period = era_period(photographer, era_lookup)
-    movement_names = localized_movement_names(photographer, lang, movements_meta)[:3]
+    movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=5)
     movement_phrase = join_list(movement_names[:2], lang)
     essay_text, _ = collect_text_and_citations(photographer, lang)
     placeholder = is_placeholder_text(essay_text, lang)
+    descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
 
     if lang == "en":
         if placeholder:
             base = f"{name_primary} on Photo Coordinates, a history of photography site covering photographers, movements, and historical context."
         elif movement_phrase:
-            base = f"{name_primary} in Photo Coordinates. Explore this photographer through {movement_phrase}, photography history, related artists, and sources."
+            base = f"{name_primary} in Photo Coordinates. Explore this photographer through {descriptor or movement_phrase}, {movement_phrase}, photography history, related artists, and sources."
         else:
             base = f"{name_primary} in Photo Coordinates. Explore this photographer through the history of photography, related artists, and sources."
         return truncate_text(base, 155)
@@ -300,20 +392,21 @@ def build_description(photographer: dict, lang: str, era_lookup: dict, movements
     if placeholder:
         base = f"{name_primary}の写真史ページ。写真の座標で、{period}の時代背景や関連作家、出典とともに順次解説を追加します。"
     elif movement_phrase:
-        base = f"{name_primary}の写真史ページ。{movement_phrase}と{period}を手がかりに、写真の座標で位置づけ・関連作家・出典をたどれます。"
+        base = f"{name_primary}の写真史ページ。{descriptor or movement_phrase}、{movement_phrase}、{period}を手がかりに、写真の座標で位置づけ・関連作家・出典をたどれます。"
     else:
         base = f"{name_primary}の写真史ページ。{period}の流れの中で、写真の座標から関連作家・時代背景・出典をたどれます。"
     return truncate_text(base, 110)
 
 
-def build_title(photographer: dict, lang: str) -> str:
+def build_title(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
     name_primary = display_name(photographer, lang)
+    descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
     if lang == "en":
-        return f"{name_primary} | History of Photography | Photo Coordinates | Eyes Cosmos"
-    return f"{name_primary}｜写真史｜写真の座標｜Eyes Cosmos"
+        return f"{name_primary} | History of Photography | {descriptor} | Photo Coordinates | Eyes Cosmos" if descriptor else f"{name_primary} | History of Photography | Photo Coordinates | Eyes Cosmos"
+    return f"{name_primary}｜写真史｜{descriptor}｜写真の座標｜Eyes Cosmos" if descriptor else f"{name_primary}｜写真史｜写真の座標｜Eyes Cosmos"
 
 
-def related_photographers_for(target: dict, all_photographers: list[dict], era_index: dict, photographer_index: dict, limit: int = 3):
+def related_photographers_for(target: dict, all_photographers: list[dict], era_index: dict, photographer_index: dict, limit: int = 5):
     candidates = []
     target_era_index = era_index.get(target.get("era"), 999)
     target_order_index = photographer_index.get(target.get("id"), 9999)
@@ -338,6 +431,71 @@ def related_photographers_for(target: dict, all_photographers: list[dict], era_i
     return [item[3] for item in candidates[:limit]]
 
 
+def person_link_url(person: dict, lang: str) -> str:
+    if person.get("photographerId"):
+        return photographer_page_path({"id": person["photographerId"]}, lang)
+    return person.get("urlEn") if lang == "en" else (person.get("urlJa") or person.get("urlEn") or "")
+
+
+def person_display_name(person: dict, lang: str) -> str:
+    return (person.get("nameEn") if lang == "en" else person.get("nameJa")) or person.get("nameEn") or person.get("nameJa") or ""
+
+
+def person_role(person: dict, lang: str) -> str:
+    return (person.get("roleEn") if lang == "en" else person.get("roleJa")) or person.get("roleEn") or person.get("roleJa") or ("Photographer" if lang == "en" else "写真家")
+
+
+def build_related_people_items(photographer: dict, lang: str, enrichments: dict, all_photographers: list[dict], era_index: dict, photographer_index: dict, essay_text: str) -> list[dict]:
+    enrichment = get_enrichment(enrichments, photographer)
+    items: list[dict] = []
+    used = {photographer.get("id")}
+
+    for person in (enrichment.get("relatedPeople") or [])[:2]:
+        display = person_display_name(person, lang)
+        alt_display = person_display_name(person, "ja" if lang == "en" else "en")
+        items.append({
+            "label": display,
+            "url": person_link_url(person, lang),
+            "role": person_role(person, lang),
+            "show_role": not essay_mentions_name(essay_text, [display, alt_display]),
+        })
+        if person.get("photographerId"):
+            used.add(person["photographerId"])
+
+    for candidate in related_photographers_for(photographer, all_photographers, era_index, photographer_index, limit=8):
+        if candidate["id"] in used:
+            continue
+        label = display_name(candidate, lang)
+        alt_label = display_alt_name(candidate, lang)
+        items.append({
+            "label": label,
+            "url": photographer_page_path(candidate, lang),
+            "role": "Photographer" if lang == "en" else "写真家",
+            "show_role": not essay_mentions_name(essay_text, [label, alt_label]),
+        })
+        used.add(candidate["id"])
+        if len(items) >= 5:
+            break
+
+    return items[:5]
+
+
+def render_related_people_html(items: list[dict], placeholder: str) -> str:
+    if not items:
+        return f'<div class="note">{placeholder}</div>'
+    rendered = []
+    for item in items:
+        role_html = f'<div class="related-person-role">{escape_html(item["role"])}</div>' if item.get("show_role") else ""
+        label_html = escape_html(item["label"])
+        if item.get("url"):
+            extra_attrs = ' target="_blank" rel="noopener"' if item["url"].startswith("http") else ""
+            label_html = f'<a class="related-person-link" href="{escape_html(item["url"])}"{extra_attrs}>{label_html}</a>'
+        else:
+            label_html = f'<span class="related-person-label">{label_html}</span>'
+        rendered.append(f'<div class="related-person-card">{role_html}{label_html}</div>')
+    return "".join(rendered)
+
+
 COPY = {
     "ja": {
         "site": "写真の座標",
@@ -347,8 +505,8 @@ COPY = {
         "home": "トップへ戻る",
         "essay": "解説",
         "movements": "関連する運動",
-        "relatedPhotographers": "関連する写真家",
-        "relatedPhotographersPlaceholder": "関連する写真家は準備中です。",
+        "relatedPeople": "関連する写真家・人物",
+        "relatedPeoplePlaceholder": "関連する写真家・人物は準備中です。",
         "links": "外部リンク",
         "books": "写真集",
         "sources": "出典",
@@ -370,8 +528,8 @@ COPY = {
         "home": "Back to Home",
         "essay": "Essay",
         "movements": "Related movements",
-        "relatedPhotographers": "Related photographers",
-        "relatedPhotographersPlaceholder": "Related photographers coming soon.",
+        "relatedPeople": "Related photographers & figures",
+        "relatedPeoplePlaceholder": "Related photographers and figures coming soon.",
         "links": "External links",
         "books": "Photobooks",
         "sources": "Sources",
@@ -407,6 +565,7 @@ def main() -> None:
         'typeof PHOTOGRAPHER_LINK_ALIASES !== "undefined" ? PHOTOGRAPHER_LINK_ALIASES : {}',
     )
     movements_meta = eval_js(["data/movements.js"], "MOVEMENTS_META")
+    enrichments = eval_js(["data/photographer-enrichments.js"], 'typeof PHOTOGRAPHER_ENRICHMENTS !== "undefined" ? PHOTOGRAPHER_ENRICHMENTS : {}')
     eras = eval_js(
         [
             "data/eras.js",
@@ -436,25 +595,25 @@ def main() -> None:
         for photographer in photographers:
             body_text, citations = collect_text_and_citations(photographer, lang)
             rendered_body = render_cited_text(body_text or copy["placeholder"], lang, alias_lookup, alias_regex, photographer["id"])
-            description = build_description(photographer, lang, era_lookup, movements_meta)
-            title = build_title(photographer, lang)
-            intro = build_intro(photographer, lang, era_lookup, movements_meta)
+            description = build_description(photographer, lang, era_lookup, movements_meta, enrichments)
+            title = build_title(photographer, lang, era_lookup, movements_meta, enrichments)
+            intro = build_intro(photographer, lang, era_lookup, movements_meta, enrichments)
+            keyword_line = build_keyword_line(photographer, lang, era_lookup, movements_meta, enrichments)
 
             movement_links = []
-            for movement in photographer.get("movements") or []:
+            for movement in (photographer.get("movements") or []) + (get_enrichment(enrichments, photographer).get("extraMovements") or []):
                 meta = movements_meta.get(movement, {})
                 movement_label = meta.get("en", movement) if lang == "en" else movement
                 archive_path = "/en/archive.html" if lang == "en" else "/archive.html"
-                movement_links.append(
-                    f'<a class="tag" href="{archive_path}#movement-{movement_slug(movement)}">{escape_html(movement_label)}</a>'
-                )
+                tag = f'<a class="tag" href="{archive_path}#movement-{movement_slug(movement)}">{escape_html(movement_label)}</a>'
+                if tag not in movement_links:
+                    movement_links.append(tag)
+                if len(movement_links) >= 5:
+                    break
             movement_html = "".join(movement_links) or f'<div class="note">{copy["movementPlaceholder"]}</div>'
 
-            related_people = related_photographers_for(photographer, photographers, era_index, photographer_index)
-            related_people_html = "".join(
-                f'<a class="tag" href="{photographer_page_path(candidate, lang)}">{escape_html(display_name(candidate, lang))}</a>'
-                for candidate in related_people
-            ) or f'<div class="note">{copy["relatedPhotographersPlaceholder"]}</div>'
+            related_people = build_related_people_items(photographer, lang, enrichments, photographers, era_index, photographer_index, body_text)
+            related_people_html = render_related_people_html(related_people, copy["relatedPeoplePlaceholder"])
 
             links = photographer.get("links") or []
             links_html = "".join(
@@ -511,7 +670,10 @@ gtag('config', '{GA_ID}');
 <body data-photographer-id="{escape_html(photographer['id'])}" data-page-lang="{lang}">
   <div class="page-shell">
     <div class="topline">
-      <div class="label">{copy['label']}</div>
+      <div class="label-stack">
+        <div class="label">{copy['label']}</div>
+        <div class="keywordline">{escape_html(keyword_line)}</div>
+      </div>
       <div class="lang-toggle" aria-label="Language switch">
         <a href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
         <a href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
@@ -524,25 +686,27 @@ gtag('config', '{GA_ID}');
         <a href="{coordinates_href}">{copy['coordinates']}</a>
       </div>
       <h1 class="title">{escape_html(display_name(photographer, lang))}{f'<span class="alt">{escape_html(alt_name)}</span>' if alt_name else ''}</h1>
+      <p class="lead">{escape_html(intro)}</p>
       <div class="meta">
         <div class="meta-chip">{copy['country']}: {escape_html(display_country(photographer, lang))}</div>
         <div class="meta-chip">{copy['era']}: {escape_html(era_period(photographer, era_lookup))}</div>
         <div class="meta-chip">{escape_html(photographer.get('years') or '—')}</div>
       </div>
-      <p class="lead">{escape_html(intro)}</p>
+      <div class="hero-columns">
+        <div class="hero-column">
+          <div class="hero-subhead">{copy['movements']}</div>
+          <div class="tags">{movement_html}</div>
+        </div>
+        <div class="hero-column">
+          <div class="hero-subhead">{copy['relatedPeople']}</div>
+          <div class="related-grid">{related_people_html}</div>
+        </div>
+      </div>
     </div>
     <div class="section-grid">
       <section class="section">
         <h2>{copy['essay']}</h2>
         <div class="essay">{rendered_body}</div>
-      </section>
-      <section class="section">
-        <h2>{copy['movements']}</h2>
-        <div class="tags">{movement_html}</div>
-      </section>
-      <section class="section">
-        <h2>{copy['relatedPhotographers']}</h2>
-        <div class="related-grid">{related_people_html}</div>
       </section>
       <section class="section" data-affiliate-section hidden>
         <h2>{copy['books']}</h2>

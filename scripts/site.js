@@ -8,6 +8,7 @@ const EMPTY_BLOCK = '<div class="empty-copy" aria-hidden="true"></div>';
 const languageApi = window.PhotoCoordinatesI18n;
 let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
 const AFFILIATE_BOOKS = window.PHOTOGRAPHER_AFFILIATE_BOOKS || {};
+const PHOTOGRAPHER_ENRICHMENTS_DATA = window.PHOTOGRAPHER_ENRICHMENTS || {};
 const PHOTOGRAPHER_LINK_ALIAS_MAP = window.PHOTOGRAPHER_LINK_ALIASES
   || (typeof PHOTOGRAPHER_LINK_ALIASES !== 'undefined' ? PHOTOGRAPHER_LINK_ALIASES : {});
 const NON_PHOTOGRAPHER_IDS = new Set([
@@ -55,7 +56,7 @@ const UI_TEXT = {
     movementOverview: '概要',
     movementPhotographers: 'この表現の写真家',
     relatedReading: 'つながりから読む',
-    relatedPhotographers: '関連作家',
+    relatedPhotographers: '関連する写真家・人物',
     relatedMovement: '関連運動',
     readNext: '次に読むべきページ',
     notSet: '準備中',
@@ -97,9 +98,9 @@ const UI_TEXT = {
     photographersInEra: 'Photographers in this era',
     movementOverview: 'Overview',
     movementPhotographers: 'Photographers in this movement',
-    relatedReading: 'Related Reading',
-    relatedPhotographers: 'Related photographers',
-    relatedMovement: 'Related movement',
+    relatedReading: 'Connections',
+    relatedPhotographers: 'Related photographers & figures',
+    relatedMovement: 'Related movements',
     readNext: 'Read next',
     notSet: 'Coming soon',
     registeredCount: count => `${count} registered`,
@@ -167,6 +168,51 @@ function escapeHtml(value) {
 
 function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function getPhotographerEnrichment(photographer) {
+  const id = typeof photographer === 'string' ? photographer : photographer?.id;
+  return PHOTOGRAPHER_ENRICHMENTS_DATA[id] || {};
+}
+
+function enrichmentValue(photographer, baseKey) {
+  const enrichment = getPhotographerEnrichment(photographer);
+  const primaryKey = `${baseKey}${currentLanguage === 'en' ? 'En' : 'Ja'}`;
+  const fallbackKey = `${baseKey}${currentLanguage === 'en' ? 'Ja' : 'En'}`;
+  return enrichment[primaryKey] || enrichment[fallbackKey] || '';
+}
+
+function expandedMovementNames(photographer, limit = 5) {
+  const names = [];
+  const seen = new Set();
+  const enrichment = getPhotographerEnrichment(photographer);
+  const values = [...(photographer.movements || []), ...(enrichment.extraMovements || [])];
+  values.forEach(movement => {
+    if (!movement || seen.has(movement)) return;
+    seen.add(movement);
+    names.push(displayMovementName(movement));
+  });
+  return names.slice(0, limit);
+}
+
+function descriptorFor(photographer) {
+  return enrichmentValue(photographer, 'descriptor')
+    || expandedMovementNames(photographer, 1)[0]
+    || displayEraTitle(ERAS.find(era => era.id === photographer.era) || {})
+    || '';
+}
+
+function normalizePlainText(value) {
+  return String(value || '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\*\d+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function essayContainsName(text, names = []) {
+  const plain = normalizePlainText(text);
+  return names.some(name => name && plain.includes(name));
 }
 
 function buildPhotographerAliasTargets() {
@@ -374,10 +420,79 @@ function displayEraTitle(era) {
   return currentLanguage === 'en' ? era.titleEn || era.title : era.title;
 }
 
+function buildPhotographerKeywordLine(photographer) {
+  const name = displayName(photographer);
+  const descriptor = descriptorFor(photographer);
+  return currentLanguage === 'en'
+    ? `${name} | History of Photography | ${descriptor || 'Photo Coordinates'} | Photo Coordinates |`
+    : `${name}｜写真史｜${descriptor || '写真の座標'}｜写真の座標｜`;
+}
+
+function buildPhotographerIntro(photographer) {
+  const namePrimary = displayName(photographer);
+  const altName = currentLanguage === 'en' ? (photographer.nameJa || '') : (photographer.name || '');
+  const identity = altName ? (currentLanguage === 'en' ? `${namePrimary} (${altName})` : `${namePrimary}（${altName}）`) : namePrimary;
+  const period = (ERAS.find(era => era.id === photographer.era)?.period) || photographer.years || '';
+  const movementNames = expandedMovementNames(photographer, 5);
+  const movementPhrase = joinList(movementNames.slice(0, 2), currentLanguage);
+  const country = displayMeta(photographer);
+  const descriptor = descriptorFor(photographer);
+  const keywords = enrichmentValue(photographer, 'keywords');
+  const representativeWork = enrichmentValue(photographer, 'representativeWork');
+  const rawEssay = [
+    photographer.expression ? localizeValue(photographer.expression.text, photographer.expression.textEn) : '',
+    photographer.context ? localizeValue(photographer.context.text, photographer.context.textEn) : ''
+  ].filter(Boolean).join(' ');
+  const isPlaceholder = ['準備中。', 'Coming soon.'].includes(normalizePlainText(rawEssay));
+
+  if (currentLanguage === 'en') {
+    let base = '';
+    if (isPlaceholder) {
+      base = movementPhrase
+        ? `${identity} is part of Photo Coordinates, a site about the history of photography. This page will be expanded around ${movementPhrase} and the wider context of ${period}.`
+        : `${identity} is part of Photo Coordinates, a site about the history of photography. This page will be expanded with historical context, related photographers and figures, and sources.`;
+    } else if (movementPhrase) {
+      base = `${identity} is a key figure for reading the history of photography through ${movementPhrase}. This page traces the photographer's place in ${descriptor || 'photography history'} through related photographers, figures, movements, and sources.`;
+    } else {
+      base = `${identity} appears here as part of Photo Coordinates, a site about the history of photography. This page follows the photographer through historical context, related figures, and sources.`;
+    }
+    const extras = [];
+    if (keywords) extras.push(`It is often searched through ${keywords}.`);
+    if (representativeWork) extras.push(`A representative work is ${representativeWork}.`);
+    return [base, ...extras].join(' ').trim();
+  }
+
+  let base = '';
+  if (isPlaceholder) {
+    base = movementPhrase
+      ? `${identity}を写真史の流れの中で読むための準備ページです。${movementPhrase}や${period}の文脈とあわせて、関連作家・人物・出典を順次追加していきます。`
+      : `${identity}を写真史の中で位置づけるための準備ページです。写真の座標では、関連作家・人物・時代背景・出典を今後順次整えていきます。`;
+  } else if (movementPhrase) {
+    base = `${identity}は、${movementPhrase}を考えるうえで重要な写真家です。このページでは、${descriptor || country}の文脈も含めて、写真史の流れの中での位置づけをたどります。`;
+  } else {
+    base = `${identity}を写真史の流れの中で読み解くためのページです。関連作家・人物や出典を手がかりに、この写真家の位置づけをたどります。`;
+  }
+  const extras = [];
+  if (keywords) extras.push(`${keywords}といった語からもたどりやすい。`);
+  else if (movementPhrase) extras.push(`${movementPhrase}の文脈からも読みやすい。`);
+  if (representativeWork) extras.push(`代表作には${representativeWork}がある。`);
+  return [base, ...extras].join('').trim();
+}
+
 function displayBlockText(block) {
   return currentLanguage === 'en'
     ? (block.textEn || block.text || '')
     : (block.text || block.textEn || '');
+}
+
+function joinList(items, lang = currentLanguage) {
+  const values = (items || []).filter(Boolean);
+  if (!values.length) return '';
+  if (values.length === 1) return values[0];
+  if (values.length === 2) return lang === 'en' ? `${values[0]} and ${values[1]}` : `${values[0]}と${values[1]}`;
+  return lang === 'en'
+    ? `${values.slice(0, -1).join(', ')}, and ${values[values.length - 1]}`
+    : `${values.slice(0, -1).join('、')}、${values[values.length - 1]}`;
 }
 
 function movementSlug(value) {
@@ -718,30 +833,110 @@ function renderRecommendationLinks(items) {
   return validItems.map(renderRecommendationLink).join('');
 }
 
-function buildRelatedReadingSection(photographer) {
+function findRelatedPhotographers(photographer, limit = 5) {
+  const targetEraIndex = ERA_ORDER.get(photographer.era) ?? 999;
+  const targetOrderIndex = PHOTOGRAPHER_ORDER.get(photographer.id) ?? 9999;
+  const targetMovements = new Set(photographer.movements || []);
+  const scored = realPhotographers()
+    .filter(candidate => candidate.id !== photographer.id)
+    .map(candidate => {
+      const shared = sharedMovements(photographer, candidate);
+      const sameEra = candidate.era === photographer.era;
+      const sameCountry = candidate.nationality && candidate.nationality === photographer.nationality;
+      if (!shared.length && !sameEra && !sameCountry) return null;
+      const eraGap = Math.abs((ERA_ORDER.get(candidate.era) ?? 999) - targetEraIndex);
+      const orderGap = Math.abs((PHOTOGRAPHER_ORDER.get(candidate.id) ?? 9999) - targetOrderIndex);
+      return {
+        candidate,
+        eraGap,
+        orderGap,
+        score: shared.length * 100 + (sameEra ? 18 : Math.max(0, 10 - eraGap * 3)) + (sameCountry ? 6 : 0) - Math.min(orderGap, 36)
+      };
+    })
+    .filter(Boolean);
+
+  scored.sort((left, right) => {
+    if (right.score !== left.score) return right.score - left.score;
+    if (left.eraGap !== right.eraGap) return left.eraGap - right.eraGap;
+    if (left.orderGap !== right.orderGap) return left.orderGap - right.orderGap;
+    return comparePhotographersChronologically(left.candidate, right.candidate);
+  });
+
+  return scored.slice(0, limit).map(item => item.candidate);
+}
+
+function buildRelatedPeopleEntries(photographer, bodyText = '') {
+  const enrichment = getPhotographerEnrichment(photographer);
+  const related = [];
+  const used = new Set([photographer.id]);
+
+  (enrichment.relatedPeople || []).slice(0, 2).forEach(person => {
+    const label = currentLanguage === 'en'
+      ? (person.nameEn || person.nameJa || '')
+      : (person.nameJa || person.nameEn || '');
+    const altLabel = currentLanguage === 'en' ? (person.nameJa || '') : (person.nameEn || '');
+    const url = person.photographerId
+      ? `#photographer-${person.photographerId}`
+      : (currentLanguage === 'en' ? (person.urlEn || person.urlJa || '') : (person.urlJa || person.urlEn || ''));
+    const onclick = person.photographerId ? `openRecommendedPhotographer(event,'${person.photographerId}')` : '';
+    related.push({
+      label,
+      href: url,
+      onclick,
+      role: currentLanguage === 'en'
+        ? (person.roleEn || person.roleJa || 'Figure')
+        : (person.roleJa || person.roleEn || '人物'),
+      showRole: !essayContainsName(bodyText, [label, altLabel])
+    });
+    if (person.photographerId) used.add(person.photographerId);
+  });
+
+  findRelatedPhotographers(photographer, 8).forEach(candidate => {
+    if (used.has(candidate.id) || related.length >= 5) return;
+    const label = displayName(candidate);
+    const altLabel = currentLanguage === 'en' ? (candidate.nameJa || '') : (candidate.name || '');
+    related.push({
+      label,
+      href: `#photographer-${candidate.id}`,
+      onclick: `openRecommendedPhotographer(event,'${candidate.id}')`,
+      role: currentLanguage === 'en' ? 'Photographer' : '写真家',
+      showRole: !essayContainsName(bodyText, [label, altLabel])
+    });
+    used.add(candidate.id);
+  });
+
+  return related.slice(0, 5);
+}
+
+function renderRelatedPeopleEntries(entries) {
+  if (!(entries || []).length) return `<span class="detail-related-empty">${t('notSet')}</span>`;
+  return entries.map(item => {
+    const role = item.showRole ? `<span class="detail-related-role">${escapeHtml(item.role)}</span>` : '';
+    const anchor = item.href
+      ? `<a class="detail-related-link" href="${item.href}"${item.onclick ? ` onclick="${item.onclick}"` : ' target="_blank" rel="noopener"' }>${escapeHtml(item.label)}</a>`
+      : `<span class="detail-related-empty">${escapeHtml(item.label)}</span>`;
+    return `<span class="detail-related-card">${role}${anchor}</span>`;
+  }).join('');
+}
+
+function buildRelatedReadingSection(photographer, bodyText = '') {
+  const relatedPeople = buildRelatedPeopleEntries(photographer, bodyText);
+  const relatedMovements = expandedMovementNames(photographer, 5).map((movementLabel, index) => {
+    const sourceMovement = ((photographer.movements || []).concat(getPhotographerEnrichment(photographer).extraMovements || []))[index] || movementLabel;
+    const slug = movementSlug(sourceMovement);
+    return {
+      label: movementLabel,
+      href: `#movement-${slug}`,
+      onclick: `openRecommendedMovement(event,'${slug}')`
+    };
+  }).filter(Boolean);
   const influencedBy = findInfluencePhotographer(photographer, -1);
   const influencedNext = findInfluencePhotographer(photographer, 1);
-  const relatedPhotographers = [influencedBy, influencedNext]
-    .filter(Boolean)
-    .filter((item, index, array) => array.findIndex(candidate => candidate.id === item.id) === index)
-    .slice(0, 2)
-    .map(item => ({
-      label: displayName(item),
-      href: `#photographer-${item.id}`,
-      onclick: `openRecommendedPhotographer(event,'${item.id}')`
-    }));
-  const primaryMovement = (photographer.movements || [])[0]
-    ? {
-        label: displayMovementName(photographer.movements[0]),
-        href: `#movement-${movementSlug(photographer.movements[0])}`,
-        onclick: `openRecommendedMovement(event,'${movementSlug(photographer.movements[0])}')`
-      }
-    : null;
   const readNext = findReadNextTarget(photographer, influencedBy, influencedNext);
 
   const items = [
-    [t('relatedPhotographers'), renderRecommendationLinks(relatedPhotographers)],
-    [t('relatedMovement'), renderRecommendationLink(primaryMovement)],
+    [t('relatedMovement'), renderRecommendationLinks(relatedMovements)],
+    [t('relatedPhotographers'), renderRelatedPeopleEntries(relatedPeople)],
     [t('readNext'), renderRecommendationLink(readNext)]
   ];
 
@@ -788,8 +983,14 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const isMovement = idPrefix !== 'panel-';
   const panelId = `${idPrefix}${p.id}`;
   const closeFn = customCloseFn || (isMovement ? `closeMovementDetail('${p.id}')` : `closeDetail('${p.id}')`);
-
-  const tags = p.movements.map(m => `<span class="detail-tag">${displayMovementName(m)}</span>`).join('');
+  const intro = buildPhotographerIntro(p);
+  const keywordLine = buildPhotographerKeywordLine(p);
+  const tags = expandedMovementNames(p, 5)
+    .map((movementLabel, index) => {
+      const sourceMovement = ((p.movements || []).concat(getPhotographerEnrichment(p).extraMovements || []))[index] || movementLabel;
+      const slug = movementSlug(sourceMovement);
+      return `<a class="detail-tag" href="#movement-${slug}" onclick="openRecommendedMovement(event,'${slug}')">${displayMovementName(sourceMovement)}</a>`;
+    }).join('');
   const linksHTML = p.links.map(l =>
     `<a class="detail-link" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`
   ).join('');
@@ -815,9 +1016,11 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   /* ── 解説セクション：新旧フォーマット両対応 ── */
   let contextHTML;
   let citationsHTML = '';
+  let rawEssayText = '';
   if (p.context && p.context.citations) {
     /* 新フォーマット：context.text に *1 *2 マーカー、context.citations に出典 */
-    const ctxText = renderCiteText(localizeValue(p.context.text, p.context.textEn), p.context.citations, { excludeId: p.id, linkedIds: new Set() });
+    rawEssayText = localizeValue(p.context.text, p.context.textEn);
+    const ctxText = renderCiteText(rawEssayText, p.context.citations, { excludeId: p.id, linkedIds: new Set() });
     citationsHTML = p.context.citations.map(c =>
       `<div class="cite-item"><span class="cite-num">*${c.num}</span><a href="${c.url}" target="_blank" rel="noopener">${c.name}</a></div>`
     ).join('');
@@ -830,6 +1033,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     /* 旧フォーマット：expression.text + context.text を結合し、全出典を自動番号化 */
     const expText = p.expression ? localizeValue(p.expression.text, p.expression.textEn) : '';
     const ctxText = p.context ? localizeValue(p.context.text, p.context.textEn) : '';
+    rawEssayText = [expText, ctxText].filter(Boolean).join(' ');
     const linkedIds = new Set();
     const combined = [expText, ctxText]
       .filter(Boolean)
@@ -865,7 +1069,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
       </div>`;
 
   const booksSection = renderArchiveAffiliateSection(p);
-  const relatedSection = buildRelatedReadingSection(p);
+  const relatedSection = buildRelatedReadingSection(p, rawEssayText);
 
   return `
     <div class="detail-panel" id="${panelId}">
@@ -873,12 +1077,14 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
         <div>
           <div class="detail-name">${displayName(p)}${p.gender ? `<span style="font-size:12px;color:var(--text-muted);font-weight:normal;margin-left:10px;vertical-align:middle;letter-spacing:0.05em">${displayGender(p.gender)}</span>` : ''}${p.nameJa && p.name ? `<span style="display:block;font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);font-weight:normal;margin-top:3px;letter-spacing:0.04em">${currentLanguage === 'en' ? p.nameJa : p.name}</span>` : ''}</div>
           <div class="detail-meta">${[displayMeta(p), p.years].filter(Boolean).join(' &nbsp;/&nbsp; ')}</div>
+          <div class="detail-keywordline">${keywordLine}</div>
         </div>
         <button class="close-btn" onclick="${closeFn}">✕</button>
       </div>
+      <div class="detail-lead">${intro}</div>
       ${tags ? `<div class="detail-tags">${tags}</div>` : ''}
-      ${contextHTML}
       ${relatedSection}
+      ${contextHTML}
       ${booksSection}
       ${linksSection}
       ${sourcesSection}
