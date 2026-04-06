@@ -6,6 +6,7 @@ import subprocess
 from collections import Counter, defaultdict
 from pathlib import Path
 import html
+import re
 
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
@@ -39,6 +40,72 @@ COUNTRY_META = {
     "JP": {"ja_code": "JP", "ja_name": "日本", "en_name": "Japan", "slug": "japan"},
     "BR": {"ja_code": "BR", "ja_name": "ブラジル", "en_name": "Brazil", "slug": "brazil"},
     "CA": {"ja_code": "CA", "ja_name": "カナダ", "en_name": "Canada", "slug": "canada"},
+}
+
+JAPANESE_READING_OVERRIDES = {
+    "domon": "どもんけん",
+    "araki": "あらきのぶよし",
+    "tomatsu": "とまつしょうめい",
+    "moriyama": "もりやまだいどう",
+    "takeji-iwamiya": "いわみやたけじ",
+    "kikuji-kawada": "かわだきくじ",
+    "masahisa-fukase": "ふかせまさひさ",
+    "jp-横山松三郎": "よこやままつさぶろう",
+    "jp-冨重利平": "とみしげりへい",
+    "jp-冨重徳次": "とみしげとくじ",
+    "jp-鹿島清兵衛": "かしませいべえ",
+    "jp-亀井茲明": "かめいこれあき",
+    "jp-屋須弘平": "やすこうへい",
+    "jp-鳥居龍蔵": "とりいりゅうぞう",
+    "jp-福原信三": "ふくはらしんぞう",
+    "jp-野島康三": "のじまやすぞう",
+    "jp-中山岩太": "なかやまいわた",
+    "jp-安井仲治": "やすいなかじ",
+    "jp-植田正治": "うえだしょうじ",
+    "jp-金丸重嶺": "かなまるしげね",
+    "jp-鈴木八郎": "すずきはちろう",
+    "jp-長谷川伝次郎": "はせがわでんじろう",
+    "jp-影山光洋": "かげやまこうよう",
+    "takeyoshi-tanuma": "たぬまたけよし",
+    "hideo-haga": "はがひでお",
+    "eikoh-hosoe": "ほそええいこう",
+    "kishin-shinoyama": "しのやまきしん",
+    "takuma-nakahira": "なかひらたくま",
+    "hiroshi-sugimoto": "すぎもとひろし",
+    "issei-suda": "すだいっせい",
+    "kazuyoshi-nomachi": "のまちかずよし",
+    "mitsuaki-iwago": "いわごうみつあき",
+    "miyako-ishiuchi": "いしうちみやこ",
+    "yoshino-oishi": "おおいしよしの",
+    "keizo-kitajima": "きたじまけいぞう",
+    "hiromi-tsuchida": "つちだひろみ",
+    "yasumasa-morimura": "もりむらやすまさ",
+    "rinko-kawauchi": "かわうちりんこ",
+    "takashi-yasumura": "やすむらたかし",
+    "naoya-hatakeyama": "はたけやまなおや",
+    "wang-qingsong": "おうけいしょう",
+    "yang-fudong": "ようふくとう",
+    "jikei-sato": "さとうじけい",
+    "norihiko-matsumoto": "まつもとのりひこ",
+    "yurie-nagashima": "ながしまゆりえ",
+    "mika-ninagawa": "にながわみか",
+    "taiji-matsue": "まつえたいじ",
+    "lieko-shiga": "しがりえこ",
+    "noriko-hayashi": "はやしのりこ",
+    "daisuke-yokota": "よこただいすけ",
+}
+
+GOJUON_ROWS = {
+    "ア": set("あいうえおぁぃぅぇぉゔ"),
+    "カ": set("かきくけこがぎぐげご"),
+    "サ": set("さしすせそざじずぜぞ"),
+    "タ": set("たちつてとだぢづでど"),
+    "ナ": set("なにぬねの"),
+    "ハ": set("はひふへほばびぶべぼぱぴぷぺぽ"),
+    "マ": set("まみむめも"),
+    "ヤ": set("やゆよゃゅょ"),
+    "ラ": set("らりるれろ"),
+    "ワ": set("わをんゎ"),
 }
 
 
@@ -88,6 +155,59 @@ def display_alt_name(photographer: dict, lang: str) -> str:
     return photographer.get("nameJa") if lang == "en" else (photographer.get("name") or "")
 
 
+def katakana_to_hiragana(text: str) -> str:
+    chars = []
+    for char in text:
+        code = ord(char)
+        if 0x30A1 <= code <= 0x30F6:
+            chars.append(chr(code - 0x60))
+        else:
+            chars.append(char)
+    return "".join(chars)
+
+
+def normalized_japanese_reading(photographer: dict) -> str:
+    override = JAPANESE_READING_OVERRIDES.get(photographer.get("id"))
+    if override:
+        return override
+
+    name = (photographer.get("nameJa") or photographer.get("name") or "").strip()
+    if not name:
+        return ""
+
+    paren_match = re.search(r"[（(]([ァ-ヶーぁ-ん]+(?:[・･][ァ-ヶーぁ-ん]+)*)[）)]", name)
+    if paren_match:
+        return katakana_to_hiragana(paren_match.group(1)).replace("・", "").replace("･", "")
+
+    name = re.sub(r"^[A-Za-zＡ-Ｚａ-ｚ0-9０-９\.\-・･\s]+", "", name)
+    name = katakana_to_hiragana(name)
+    return name
+
+
+def gojuon_heading_from_reading(reading: str) -> str:
+    text = (reading or "").strip()
+    if not text:
+        return "#"
+    for char in text:
+        if char in "ー・･ ":
+            continue
+        for heading, chars in GOJUON_ROWS.items():
+            if char in chars:
+                return heading
+        if re.match(r"[a-z]", char):
+            return char.upper()
+        if re.match(r"[A-Z]", char):
+            return char
+    return "#"
+
+
+def japanese_sort_key(photographer: dict) -> str:
+    reading = normalized_japanese_reading(photographer)
+    if reading:
+        return reading
+    return katakana_to_hiragana((display_name(photographer, "ja") or "").lower())
+
+
 def display_country_code(photographer: dict) -> str:
     nationality = photographer.get("nationality") or ""
     return COUNTRY_META.get(nationality, {}).get("ja_code") or nationality or "—"
@@ -108,15 +228,16 @@ def era_short_label(era: dict, lang: str) -> str:
 def sort_photographers(photographers: list[dict], lang: str) -> list[dict]:
     if lang == "en":
         return sorted(photographers, key=lambda p: (display_name(p, "en") or "").lower())
-    return sorted(photographers, key=lambda p: display_name(p, "ja"))
+    return sorted(photographers, key=japanese_sort_key)
 
 
 def group_heading(photographer: dict, lang: str) -> str:
-    name = display_name(photographer, lang).strip()
-    if not name:
-        return "#"
-    char = name[0].upper()
-    return char
+    if lang == "en":
+        name = display_name(photographer, lang).strip()
+        if not name:
+            return "#"
+        return name[0].upper()
+    return gojuon_heading_from_reading(japanese_sort_key(photographer))
 
 
 def top_movements(photographers: list[dict], movements_meta: dict, lang: str, limit: int = 5) -> list[tuple[str, str]]:
