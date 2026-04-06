@@ -276,6 +276,34 @@ body.is-navigating #page-fade {
   transition: opacity 0.32s ease;
 }
 
+.site-footer {
+  position: fixed;
+  left: 28px;
+  bottom: 24px;
+  z-index: 4;
+  max-width: 24rem;
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(239, 232, 218, 0.68);
+}
+
+.site-footer .footer-secondary {
+  margin-top: 4px;
+}
+
+.site-footer .footer-links {
+  margin-top: 10px;
+}
+
+.site-footer a {
+  color: rgba(213, 194, 156, 0.76);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: rgba(235, 224, 204, 0.94);
+}
+
 @media (max-width: 720px) {
   .hud,
   .focus-card,
@@ -351,6 +379,11 @@ body.is-navigating #page-fade {
 </div>
 
 <div id="page-fade" aria-hidden="true"></div>
+<footer class="site-footer">
+  <div>This site gathers and organizes information from publicly available web sources with AI assistance.</div>
+  <div class="footer-secondary">Sources are listed where possible, but errors or outdated details may remain.</div>
+  <div class="footer-links"><a href="privacy-policy.html">Privacy Policy</a></div>
+</footer>
 
 <script src="../data/movements.js?v=20260403d"></script>
 <script src="../data/photographers.js?v=20260405j"></script>

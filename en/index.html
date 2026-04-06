@@ -287,6 +287,24 @@ body.is-navigating #page-fade {
   transition: opacity 0.32s ease;
 }
 
+.site-footer {
+  position: fixed;
+  right: 28px;
+  bottom: 24px;
+  z-index: 4;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.site-footer a {
+  color: rgba(213, 194, 156, 0.76);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: rgba(235, 224, 204, 0.94);
+}
+
 @media (max-width: 720px) {
   .hud,
   .focus-card,
@@ -362,6 +380,9 @@ body.is-navigating #page-fade {
 </div>
 
 <div id="page-fade" aria-hidden="true"></div>
+<footer class="site-footer">
+  <a href="privacy-policy.html">Privacy Policy</a>
+</footer>
 
 <script src="../data/movements.js?v=20260403d"></script>
 <script src="../data/photographers.js?v=20260405j"></script>

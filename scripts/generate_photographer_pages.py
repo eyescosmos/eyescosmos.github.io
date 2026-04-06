@@ -12,7 +12,7 @@ from pathlib import Path
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260406a"
+ASSET_VERSION = "20260406b"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -29,6 +29,18 @@ NON_PHOTOGRAPHER_IDS = {
     "the-atlas-group-walid-raad",
     "useful-photography",
     "wangechi-mutu",
+}
+COUNTRY_META = {
+    "FR": {"slug": "france", "ja": "フランス", "en": "France"},
+    "GB": {"slug": "united-kingdom", "ja": "イギリス", "en": "United Kingdom"},
+    "US": {"slug": "united-states", "ja": "アメリカ", "en": "United States"},
+    "IT / GB": {"slug": "italy-united-kingdom", "ja": "イタリア / イギリス", "en": "Italy / United Kingdom"},
+    "GB / US": {"slug": "united-kingdom-united-states", "ja": "イギリス / アメリカ", "en": "United Kingdom / United States"},
+    "DK / US": {"slug": "denmark-united-states", "ja": "デンマーク / アメリカ", "en": "Denmark / United States"},
+    "DE": {"slug": "germany", "ja": "ドイツ", "en": "Germany"},
+    "JP": {"slug": "japan", "ja": "日本", "en": "Japan"},
+    "BR": {"slug": "brazil", "ja": "ブラジル", "en": "Brazil"},
+    "CA": {"slug": "canada", "ja": "カナダ", "en": "Canada"},
 }
 
 
@@ -81,6 +93,21 @@ def movement_slug(name: str) -> str:
 def photographer_page_path(photographer: dict, lang: str = "ja") -> str:
     base = "en/photographers" if lang == "en" else "photographers"
     return f"/{base}/{photographer['id']}.html"
+
+
+def era_page_path(photographer: dict, lang: str = "ja") -> str:
+    era_id = photographer.get("era") or ""
+    base = "en/eras" if lang == "en" else "eras"
+    return f"/{base}/{era_id}.html" if era_id else ""
+
+
+def country_page_path(photographer: dict, lang: str = "ja") -> str:
+    nationality = photographer.get("nationality") or ""
+    slug = COUNTRY_META.get(nationality, {}).get("slug")
+    if not slug:
+        return ""
+    base = "en/countries" if lang == "en" else "countries"
+    return f"/{base}/{slug}.html"
 
 
 def localize_value(record: dict, ja_key: str, en_key: str) -> str:
@@ -295,6 +322,20 @@ def build_keyword_line(photographer: dict, lang: str, era_lookup: dict, movement
         parts.append(descriptor)
     parts.append(site_label)
     return "｜".join(parts) + "｜" if lang == "ja" else " | ".join(parts) + " |"
+
+
+def build_keyword_line_html(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
+    name = display_name(photographer, lang)
+    descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
+    history_label = "History of Photography" if lang == "en" else "写真史"
+    site_label = "Photo Coordinates" if lang == "en" else "写真の座標"
+    site_href = "/en/" if lang == "en" else "/"
+    parts = [escape_html(name), escape_html(history_label)]
+    if descriptor:
+        parts.append(escape_html(descriptor))
+    parts.append(f'<a href="{site_href}">{escape_html(site_label)}</a>')
+    separator = " | " if lang == "en" else "｜"
+    return separator.join(parts) + separator
 
 
 def extra_intro_phrase(photographer: dict, lang: str, movements_meta: dict, enrichments: dict) -> str:
@@ -599,6 +640,9 @@ COPY = {
         "era": "年代",
         "langJa": "Japanese",
         "langEn": "English",
+        "footerLine1": "本サイトの情報はAIによってウェブ上の資料から収集・整理されたものです。",
+        "footerLine2": "各記述には出典を明記していますが、誤りが含まれる可能性があります。",
+        "privacy": "プライバシーポリシー",
     },
     "en": {
         "site": "Photo Coordinates",
@@ -622,6 +666,9 @@ COPY = {
         "era": "Era",
         "langJa": "Japanese",
         "langEn": "English",
+        "footerLine1": "This site gathers and organizes information from publicly available web sources with AI assistance.",
+        "footerLine2": "Sources are listed where possible, but errors or outdated details may remain.",
+        "privacy": "Privacy Policy",
     },
 }
 
@@ -679,6 +726,7 @@ def main() -> None:
             title = build_title(photographer, lang, era_lookup, movements_meta, enrichments)
             intro = build_intro(photographer, lang, era_lookup, movements_meta, enrichments)
             keyword_line = build_keyword_line(photographer, lang, era_lookup, movements_meta, enrichments)
+            keyword_line_html = build_keyword_line_html(photographer, lang, era_lookup, movements_meta, enrichments)
 
             movement_links = []
             for movement in (photographer.get("movements") or []) + (get_enrichment(enrichments, photographer).get("extraMovements") or []):
@@ -711,12 +759,15 @@ def main() -> None:
 
             archive_href = ("/en/archive.html" if lang == "en" else "/archive.html") + f'#photographer-{photographer["id"]}'
             coordinates_href = ("/en/index.html" if lang == "en" else "/index.html") + f'?focus=photographer:{photographer["id"]}'
+            era_href = era_page_path(photographer, lang)
+            country_href = country_page_path(photographer, lang)
             canonical = SITE + photographer_page_path(photographer, lang)
             x_default = SITE + photographer_page_path(photographer, "ja")
             stylesheet_href = ("../../styles/photographer-page.css" if lang == "en" else "../styles/photographer-page.css") + f"?v={ASSET_VERSION}"
             affiliate_href = ("../../data/affiliate-books.js" if lang == "en" else "../data/affiliate-books.js") + f"?v={ASSET_VERSION}"
             script_href = ("../../scripts/photographer-page.js" if lang == "en" else "../scripts/photographer-page.js") + f"?v={ASSET_VERSION}"
             home_href = "/en/" if lang == "en" else "/"
+            privacy_href = "/en/privacy-policy.html" if lang == "en" else "/privacy-policy.html"
             alt_name = display_alt_name(photographer, lang)
             page_path = photographer_page_path(photographer, lang)
             structured_data = build_page_structured_data(photographer, lang, title, description, canonical)
@@ -756,7 +807,7 @@ gtag('config', '{GA_ID}');
     <div class="topline">
       <div class="label-stack">
         <div class="label">{copy['label']}</div>
-        <div class="keywordline">{escape_html(keyword_line)}</div>
+        <div class="keywordline">{keyword_line_html}</div>
       </div>
       <div class="lang-toggle" aria-label="Language switch">
         <a href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
@@ -776,16 +827,16 @@ gtag('config', '{GA_ID}');
           <div class="group-label">{'Basic facts' if lang == 'en' else '基本情報'}</div>
           <div class="facts-grid">
             <div class="fact-item">
-              <div class="fact-label">{copy['country']}</div>
-              <div class="fact-value">{escape_html(display_country(photographer, lang))}</div>
+              <span class="fact-label">{copy['country']}</span>
+              {f'<a class="fact-value" href="{country_href}">{escape_html(display_country(photographer, lang))}</a>' if country_href else f'<span class="fact-value">{escape_html(display_country(photographer, lang))}</span>'}
             </div>
             <div class="fact-item">
-              <div class="fact-label">{copy['era']}</div>
-              <div class="fact-value">{escape_html(era_period(photographer, era_lookup))}</div>
+              <span class="fact-label">{copy['era']}</span>
+              {f'<a class="fact-value" href="{era_href}">{escape_html(era_period(photographer, era_lookup))}</a>' if era_href else f'<span class="fact-value">{escape_html(era_period(photographer, era_lookup))}</span>'}
             </div>
             <div class="fact-item">
-              <div class="fact-label">{'Years' if lang == 'en' else '生没年'}</div>
-              <div class="fact-value">{escape_html(photographer.get('years') or '—')}</div>
+              <span class="fact-label">{'Years' if lang == 'en' else '生没年'}</span>
+              <span class="fact-value">{escape_html((photographer.get('years') or '—').replace('-', '–'))}</span>
             </div>
           </div>
         </div>
@@ -819,6 +870,11 @@ gtag('config', '{GA_ID}');
         <div class="sources">{citations_html}</div>
       </section>
     </div>
+    <footer class="site-footer">
+      <div>{copy['footerLine1']}</div>
+      <div class="footer-secondary">{copy['footerLine2']}</div>
+      <div class="footer-links"><a href="{privacy_href}">{copy['privacy']}</a></div>
+    </footer>
   </div>
   <script src="{affiliate_href}"></script>
   <script src="{script_href}"></script>
