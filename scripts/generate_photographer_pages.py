@@ -324,6 +324,35 @@ def extra_intro_phrase(photographer: dict, lang: str, movements_meta: dict, enri
     return "".join(parts)
 
 
+def build_focus_phrase(photographer: dict, lang: str, movements_meta: dict, enrichments: dict) -> str:
+    enrichment = get_enrichment(enrichments, photographer)
+    keywords = enrichment_value(enrichment, lang, "keywords")
+    representative_work = enrichment_value(enrichment, lang, "representativeWork")
+    movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=3)
+    movement_phrase = join_list(movement_names[:2], lang)
+
+    if lang == "en":
+        if keywords and representative_work:
+            return f"{keywords}, and the representative work {representative_work}"
+        if keywords:
+            return keywords
+        if representative_work:
+            return f"the representative work {representative_work}"
+        if movement_phrase:
+            return movement_phrase
+        return "key works and related movements"
+
+    if keywords and representative_work:
+        return f"{keywords}、代表作の{representative_work}"
+    if keywords:
+        return keywords
+    if representative_work:
+        return f"代表作の{representative_work}"
+    if movement_phrase:
+        return movement_phrase
+    return "関連作家や主要な作品"
+
+
 def essay_mentions_name(text: str, names: list[str]) -> bool:
     plain = normalize_space(strip_tags(strip_cite_markers(text or "")))
     return any(name and name in plain for name in names)
@@ -338,7 +367,7 @@ def build_intro(photographer: dict, lang: str, era_lookup: dict, movements_meta:
     country = display_country(photographer, lang)
     essay_text, _ = collect_text_and_citations(photographer, lang)
     placeholder = is_placeholder_text(essay_text, lang)
-    extra_phrase = extra_intro_phrase(photographer, lang, movements_meta, enrichments)
+    focus_phrase = build_focus_phrase(photographer, lang, movements_meta, enrichments)
 
     if lang == "en":
         identity = name_primary if not name_secondary else f"{name_primary} ({name_secondary})"
@@ -347,12 +376,12 @@ def build_intro(photographer: dict, lang: str, era_lookup: dict, movements_meta:
                 base = f"{identity} is part of Photo Coordinates, a history of photography site. This page will be expanded around {movement_phrase} and the wider photographic context of {period}."
             else:
                 base = f"{identity} is part of Photo Coordinates, a history of photography site. This page will be expanded with historical context, related photographers, and sources."
-            return normalize_space(f"{base} {extra_phrase}")
+            return normalize_space(base)
         if movement_phrase:
-            base = f"{identity} is a key figure for reading the history of photography around {movement_phrase}. This page traces how the photographer fits into the broader history of photography through related photographers, movements, and sources."
+            base = f"{identity} is a key figure for understanding the history of photography around {movement_phrase}. This page follows the photographer's place in photography history through {focus_phrase}, related photographers, movements, and sources."
         else:
-            base = f"{identity} is presented here as part of Photo Coordinates, a site about the history of photography. This page follows the photographer through historical context, related photographers, and key sources."
-        return normalize_space(f"{base} {extra_phrase}")
+            base = f"{identity} appears here as part of Photo Coordinates, a site about the history of photography. This page follows the photographer through {focus_phrase}, related figures, and key sources."
+        return normalize_space(base)
 
     identity = name_primary if not name_secondary else f"{name_primary}（{name_secondary}）"
     if placeholder:
@@ -360,15 +389,15 @@ def build_intro(photographer: dict, lang: str, era_lookup: dict, movements_meta:
             base = f"{identity}を写真史の流れの中で読むための準備ページです。{movement_phrase}や{period}の文脈とあわせて、関連作家・出典を順次追加していきます。"
         else:
             base = f"{identity}を写真史の中で位置づけるための準備ページです。写真の座標では、関連作家・時代背景・出典を今後順次整えていきます。"
-        return normalize_space(f"{base} {extra_phrase}")
+        return normalize_space(base)
     if movement_phrase:
-        base = f"{identity}は、{movement_phrase}を考えるうえで重要な写真家です。このページでは、写真史の流れの中での位置づけを、関連作家・運動・出典とあわせてたどります。"
-        return normalize_space(f"{base} {extra_phrase}")
+        base = f"{identity}は、{movement_phrase}を考えるうえで欠かせない写真家です。このページでは、{focus_phrase}を手がかりに、写真史の流れの中での位置づけを、関連作家・運動・出典とあわせてたどります。"
+        return normalize_space(base)
     if country != "—":
-        base = f"{identity}は、{country}の写真史を考えるうえで重要な写真家です。このページでは、写真の座標の中での位置づけを、関連作家・出典とともに読み解きます。"
-        return normalize_space(f"{base} {extra_phrase}")
-    base = f"{identity}を写真史の流れの中で読み解くためのページです。関連作家や出典を手がかりに、この写真家の位置づけをたどります。"
-    return normalize_space(f"{base} {extra_phrase}")
+        base = f"{identity}は、{country}の写真史を考えるうえで重要な写真家です。このページでは、{focus_phrase}を手がかりに、写真の座標の中での位置づけを、関連作家・出典とともに読み解きます。"
+        return normalize_space(base)
+    base = f"{identity}を写真史の流れの中で読み解くためのページです。このページでは、{focus_phrase}を手がかりに、関連作家や出典とともにその位置づけをたどります。"
+    return normalize_space(base)
 
 
 def build_description(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
@@ -687,17 +716,29 @@ gtag('config', '{GA_ID}');
       </div>
       <h1 class="title">{escape_html(display_name(photographer, lang))}{f'<span class="alt">{escape_html(alt_name)}</span>' if alt_name else ''}</h1>
       <p class="lead">{escape_html(intro)}</p>
-      <div class="meta">
-        <div class="meta-chip">{copy['country']}: {escape_html(display_country(photographer, lang))}</div>
-        <div class="meta-chip">{copy['era']}: {escape_html(era_period(photographer, era_lookup))}</div>
-        <div class="meta-chip">{escape_html(photographer.get('years') or '—')}</div>
-      </div>
-      <div class="hero-columns">
-        <div class="hero-column">
+      <div class="hero-info-grid">
+        <div class="info-panel info-panel-facts">
+          <div class="hero-subhead">{'Basic facts' if lang == 'en' else '基本情報'}</div>
+          <div class="facts-grid">
+            <div class="fact-item">
+              <div class="fact-label">{copy['country']}</div>
+              <div class="fact-value">{escape_html(display_country(photographer, lang))}</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">{copy['era']}</div>
+              <div class="fact-value">{escape_html(era_period(photographer, era_lookup))}</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">{'Years' if lang == 'en' else '生没年'}</div>
+              <div class="fact-value">{escape_html(photographer.get('years') or '—')}</div>
+            </div>
+          </div>
+        </div>
+        <div class="info-panel hero-column">
           <div class="hero-subhead">{copy['movements']}</div>
           <div class="tags">{movement_html}</div>
         </div>
-        <div class="hero-column">
+        <div class="info-panel hero-column info-panel-people">
           <div class="hero-subhead">{copy['relatedPeople']}</div>
           <div class="related-grid">{related_people_html}</div>
         </div>

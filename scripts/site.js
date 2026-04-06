@@ -445,6 +445,21 @@ function buildPhotographerIntro(photographer) {
   ].filter(Boolean).join(' ');
   const isPlaceholder = ['準備中。', 'Coming soon.'].includes(normalizePlainText(rawEssay));
 
+  const focusPhrase = (() => {
+    if (currentLanguage === 'en') {
+      if (keywords && representativeWork) return `${keywords}, and the representative work ${representativeWork}`;
+      if (keywords) return keywords;
+      if (representativeWork) return `the representative work ${representativeWork}`;
+      if (movementPhrase) return movementPhrase;
+      return 'key works and related movements';
+    }
+    if (keywords && representativeWork) return `${keywords}、代表作の${representativeWork}`;
+    if (keywords) return keywords;
+    if (representativeWork) return `代表作の${representativeWork}`;
+    if (movementPhrase) return movementPhrase;
+    return '関連作家や主要な作品';
+  })();
+
   if (currentLanguage === 'en') {
     let base = '';
     if (isPlaceholder) {
@@ -452,14 +467,11 @@ function buildPhotographerIntro(photographer) {
         ? `${identity} is part of Photo Coordinates, a site about the history of photography. This page will be expanded around ${movementPhrase} and the wider context of ${period}.`
         : `${identity} is part of Photo Coordinates, a site about the history of photography. This page will be expanded with historical context, related photographers and figures, and sources.`;
     } else if (movementPhrase) {
-      base = `${identity} is a key figure for reading the history of photography through ${movementPhrase}. This page traces the photographer's place in ${descriptor || 'photography history'} through related photographers, figures, movements, and sources.`;
+      base = `${identity} is a key figure for understanding the history of photography through ${movementPhrase}. This page follows the photographer's place in ${descriptor || 'photography history'} through ${focusPhrase}, related photographers, figures, movements, and sources.`;
     } else {
-      base = `${identity} appears here as part of Photo Coordinates, a site about the history of photography. This page follows the photographer through historical context, related figures, and sources.`;
+      base = `${identity} appears here as part of Photo Coordinates, a site about the history of photography. This page follows the photographer through ${focusPhrase}, related figures, and sources.`;
     }
-    const extras = [];
-    if (keywords) extras.push(`It is often searched through ${keywords}.`);
-    if (representativeWork) extras.push(`A representative work is ${representativeWork}.`);
-    return [base, ...extras].join(' ').trim();
+    return base.trim();
   }
 
   let base = '';
@@ -468,15 +480,11 @@ function buildPhotographerIntro(photographer) {
       ? `${identity}を写真史の流れの中で読むための準備ページです。${movementPhrase}や${period}の文脈とあわせて、関連作家・人物・出典を順次追加していきます。`
       : `${identity}を写真史の中で位置づけるための準備ページです。写真の座標では、関連作家・人物・時代背景・出典を今後順次整えていきます。`;
   } else if (movementPhrase) {
-    base = `${identity}は、${movementPhrase}を考えるうえで重要な写真家です。このページでは、${descriptor || country}の文脈も含めて、写真史の流れの中での位置づけをたどります。`;
+    base = `${identity}は、${movementPhrase}を考えるうえで欠かせない写真家です。このページでは、${focusPhrase}を手がかりに、${descriptor || country}の文脈も含めて、写真史の流れの中での位置づけをたどります。`;
   } else {
-    base = `${identity}を写真史の流れの中で読み解くためのページです。関連作家・人物や出典を手がかりに、この写真家の位置づけをたどります。`;
+    base = `${identity}を写真史の流れの中で読み解くためのページです。このページでは、${focusPhrase}を手がかりに、関連作家・人物や出典とともにその位置づけをたどります。`;
   }
-  const extras = [];
-  if (keywords) extras.push(`${keywords}といった語からもたどりやすい。`);
-  else if (movementPhrase) extras.push(`${movementPhrase}の文脈からも読みやすい。`);
-  if (representativeWork) extras.push(`代表作には${representativeWork}がある。`);
-  return [base, ...extras].join('').trim();
+  return base.trim();
 }
 
 function displayBlockText(block) {
@@ -1083,8 +1091,8 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
       </div>
       <div class="detail-lead">${intro}</div>
       ${tags ? `<div class="detail-tags">${tags}</div>` : ''}
-      ${relatedSection}
       ${contextHTML}
+      ${relatedSection}
       ${booksSection}
       ${linksSection}
       ${sourcesSection}
