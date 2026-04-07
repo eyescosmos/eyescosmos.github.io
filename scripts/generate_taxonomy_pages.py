@@ -352,7 +352,7 @@ def era_lead_text(era: dict, short: str, people: list[dict], movements_meta: dic
         return f"{short} was shaped by {title}, a context in which photographic institutions and expression changed significantly. This page follows the photographers of the era through world events and shifts in photographic expression."
     if movement_text:
         return f"{short}は、{title}を背景に、写真の制度や表現が大きく動いた時代です。このページでは、{movement_text}などの表現を手がかりに、この時代の写真家と写真史の流れをたどります。"
-    return f"{short}は、{title}を背景に、写真の制度や表現が大きく動いた時代です。このページでは、この時代の写真家を世界情勢や写真表現の変化とあわせてたどります。"
+    return f"{short}は、{title}を背景に、写真の制度や表現が大きく動いた時代です。このページでは、この時代の写真家を時代背景や写真表現の変化とあわせてたどります。"
 
 
 def english_country_phrase(country: str) -> str:
@@ -394,6 +394,34 @@ def movement_lead_text(movement_label: str, movement_desc: str, lang: str) -> st
         summary_body = summary if summary.endswith("。") else f"{summary.rstrip('。')}。"
         return f"{movement_label}は、写真史の流れを考えるうえで重要な表現のひとつです。{summary_body}このページでは、関係する写真家や時代の流れをたどります。"
     return f"{movement_label}は、写真史の流れを考えるうえで重要な表現のひとつです。このページでは、関係する写真家や時代背景をあわせてたどります。"
+
+
+def era_context_html(era: dict, lang: str) -> str:
+    world_text = short_block_text(
+        (era.get("worldEvents") or {}).get("textEn" if lang == "en" else "text") or (era.get("worldEvents") or {}).get("text") or "",
+        lang,
+        260 if lang == "en" else 130,
+    )
+    photo_text = short_block_text(
+        (era.get("photoContext") or {}).get("textEn" if lang == "en" else "text") or (era.get("photoContext") or {}).get("text") or "",
+        lang,
+        260 if lang == "en" else 130,
+    )
+    blocks = [
+        f'''          <div class="context-block">
+            <div class="context-text">{esc(text)}</div>
+          </div>'''
+        for text in (world_text, photo_text)
+        if text
+    ]
+    if not blocks:
+        return ""
+    return f'''<section class="section taxonomy-context">
+        <h2>{"Context" if lang == "en" else "この時代の背景"}</h2>
+        <div class="context-grid">
+{chr(10).join(blocks)}
+        </div>
+      </section>'''
 
 
 def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, archive_href: str, back_label: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str) -> str:
@@ -594,21 +622,7 @@ def main():
                 else f"{short}の写真家を一覧できる写真史ページです。写真の座標で、この時代の写真家、関連運動、写真史の流れをたどれます。"
             )
             lead = era_lead_text(era, short, people, movements_meta, lang)
-            context_html = (
-                f'''<section class="section taxonomy-context">
-        <h2>{"Context" if lang == "en" else "この時代の背景"}</h2>
-        <div class="context-grid">
-          <div class="context-block">
-            <div class="context-label">{"World events" if lang == "en" else "世界情勢"}</div>
-            <div class="context-text">{esc(short_block_text((era.get("worldEvents") or {}).get("textEn" if lang == "en" else "text") or (era.get("worldEvents") or {}).get("text") or "", lang, 260 if lang == "en" else 130))}</div>
-          </div>
-          <div class="context-block">
-            <div class="context-label">{"Photography and the era" if lang == "en" else "写真と時代"}</div>
-            <div class="context-text">{esc(short_block_text((era.get("photoContext") or {}).get("textEn" if lang == "en" else "text") or (era.get("photoContext") or {}).get("text") or "", lang, 260 if lang == "en" else 130))}</div>
-          </div>
-        </div>
-      </section>'''
-            )
+            context_html = era_context_html(era, lang)
             hero_groups = (
                 f'<div class="meta-group"><div class="group-label">{"Basic facts" if lang == "en" else "基本情報"}</div><div class="mini-card-grid"><div class="mini-card"><span class="mini-card-label">{"Era" if lang == "en" else "年代"}</span><span class="mini-card-value">{esc(short)}</span></div><div class="mini-card"><span class="mini-card-label">{"Photographers" if lang == "en" else "写真家数"}</span><span class="mini-card-value">{len(people)}</span></div></div></div>'
                 f'<div class="meta-group"><div class="group-label">{"Related movements" if lang == "en" else "関連する運動"}</div><div class="tag-grid">{render_movement_cards(people, movements_meta, lang)}</div></div>'
