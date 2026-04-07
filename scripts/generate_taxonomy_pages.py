@@ -285,19 +285,115 @@ def page_structured_data(title: str, description: str, canonical: str, lang: str
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
-def short_block_text(text: str, lang: str, limit: int = 120) -> str:
+def clean_inline_text(text: str) -> str:
     value = re.sub(r"\s+", " ", (text or "").strip())
+    return value
+
+
+def sentence_summary(text: str, lang: str, limit: int = 160, max_sentences: int = 2) -> str:
+    value = clean_inline_text(text)
     if not value:
         return ""
     if len(value) <= limit:
         return value
-    cutoff = value.rfind("。", 0, limit)
-    if cutoff > 20:
-        return value[: cutoff + 1]
-    cutoff = value.rfind(" ", 0, limit)
-    if cutoff < 20:
-        cutoff = limit
-    return value[:cutoff].rstrip(" 、,.") + ("…" if lang == "en" else "…")
+
+    if lang == "en":
+        parts = re.findall(r"[^.!?]+[.!?]", value)
+        if not parts:
+            parts = [value]
+        result = ""
+        for part in parts[:max_sentences]:
+            candidate = (result + " " + part.strip()).strip()
+            if len(candidate) > limit and result:
+                break
+            result = candidate
+        if result:
+            return result
+        cutoff = value.rfind(" ", 0, limit)
+        return value[: cutoff if cutoff > 30 else limit].rstrip(" ,.;:") + "."
+
+    parts = [part for part in re.split(r"(?<=。)", value) if part.strip()]
+    result = ""
+    for part in parts[:max_sentences]:
+        candidate = result + part.strip()
+        if len(candidate) > limit and result:
+            break
+        result = candidate
+    if result:
+        return result
+    return value[:limit].rstrip("、。") + "。"
+
+
+def short_block_text(text: str, lang: str, limit: int = 120) -> str:
+    return sentence_summary(text, lang, limit=limit, max_sentences=2)
+
+
+def movement_labels_for_text(photographers: list[dict], movements_meta: dict, lang: str, limit: int = 3) -> list[str]:
+    return [label for label, _movement in top_movements(photographers, movements_meta, lang, limit)]
+
+
+def join_labels(labels: list[str], lang: str) -> str:
+    labels = [label for label in labels if label]
+    if not labels:
+        return ""
+    if lang == "en":
+        if len(labels) == 1:
+            return labels[0]
+        return ", ".join(labels[:-1]) + f", and {labels[-1]}"
+    return "、".join(labels)
+
+
+def era_lead_text(era: dict, short: str, people: list[dict], movements_meta: dict, lang: str) -> str:
+    title = (era.get("titleEn") if lang == "en" else era.get("title")) or short
+    movement_text = join_labels(movement_labels_for_text(people, movements_meta, lang, 3), lang)
+    if lang == "en":
+        if movement_text:
+            return f"{short} was shaped by {title}, a context in which photographic institutions and expression changed significantly. This page follows photographers from the era through {movement_text}, world events, and shifts in photographic expression."
+        return f"{short} was shaped by {title}, a context in which photographic institutions and expression changed significantly. This page follows the photographers of the era through world events and shifts in photographic expression."
+    if movement_text:
+        return f"{short}は、{title}を背景に、写真の制度や表現が大きく動いた時代です。このページでは、{movement_text}などの表現を手がかりに、この時代の写真家と写真史の流れをたどります。"
+    return f"{short}は、{title}を背景に、写真の制度や表現が大きく動いた時代です。このページでは、この時代の写真家を世界情勢や写真表現の変化とあわせてたどります。"
+
+
+def english_country_phrase(country: str) -> str:
+    if country in {"United States", "United Kingdom"}:
+        return f"the {country}"
+    return country
+
+
+def country_lead_text(country: str, people: list[dict], movements_meta: dict, lang: str) -> str:
+    movement_text = join_labels(movement_labels_for_text(people, movements_meta, lang, 3), lang)
+    if lang == "en":
+        country_text = english_country_phrase(country)
+        if movement_text:
+            return f"This page gathers photographers connected to {country_text} and traces how they relate to {movement_text} within the history of photography. It is a country-based entry point for following photographers, eras, and movements in Photo Coordinates."
+        return f"This page gathers photographers connected to {country_text} and places them within the wider history of photography. It is a country-based entry point for following photographers, eras, and movements in Photo Coordinates."
+    if movement_text:
+        return f"{country}に関わる写真家を、{movement_text}などの表現とともにたどるページです。写真史の流れの中で、各作家がどの時代や運動と結びつくのかを見渡せます。"
+    return f"{country}に関わる写真家を、写真史の流れの中でたどるページです。各作家がどの時代や運動と結びつくのかを見渡せます。"
+
+
+def lower_initial(text: str) -> str:
+    if not text:
+        return text
+    return text[0].lower() + text[1:]
+
+
+def movement_lead_text(movement_label: str, movement_desc: str, lang: str) -> str:
+    summary = sentence_summary(movement_desc, lang, limit=160 if lang == "en" else 90, max_sentences=1)
+    if lang == "en":
+        if summary:
+            summary_body = lower_initial(summary.rstrip(".!?"))
+            if summary_body.startswith(("a ", "an ", "the ")):
+                context = f"It can be understood as {summary_body}."
+            else:
+                context = summary.rstrip(".!?") + "."
+            return f"{movement_label} is an important thread within the history of photography. {context} This page follows the photographers, eras, and related contexts connected to it."
+        return f"{movement_label} is an important thread within the history of photography. This page follows the photographers, eras, and related contexts connected to it."
+    if summary:
+        summary_body = summary if summary.endswith("。") else f"{summary.rstrip('。')}。"
+        return f"{movement_label}は、写真史の流れを考えるうえで重要な表現のひとつです。{summary_body}このページでは、関係する写真家や時代の流れをたどります。"
+    return f"{movement_label}は、写真史の流れを考えるうえで重要な表現のひとつです。このページでは、関係する写真家や時代背景をあわせてたどります。"
 
 
 def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, archive_href: str, back_label: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str) -> str:
@@ -497,22 +593,18 @@ def main():
                 if lang == "en"
                 else f"{short}の写真家を一覧できる写真史ページです。写真の座標で、この時代の写真家、関連運動、写真史の流れをたどれます。"
             )
-            lead = (
-                f"This page gathers photographers from {short} and traces their place in the history of photography through artistic movements and visual culture."
-                if lang == "en"
-                else f"{short}の写真家を一覧し、関連する運動や写真史の流れとあわせて見渡すためのページです。"
-            )
+            lead = era_lead_text(era, short, people, movements_meta, lang)
             context_html = (
                 f'''<section class="section taxonomy-context">
         <h2>{"Context" if lang == "en" else "この時代の背景"}</h2>
         <div class="context-grid">
           <div class="context-block">
             <div class="context-label">{"World events" if lang == "en" else "世界情勢"}</div>
-            <div class="context-text">{esc(short_block_text((era.get("worldEvents") or {}).get("textEn" if lang == "en" else "text") or (era.get("worldEvents") or {}).get("text") or "", lang, 180 if lang == "en" else 95))}</div>
+            <div class="context-text">{esc(short_block_text((era.get("worldEvents") or {}).get("textEn" if lang == "en" else "text") or (era.get("worldEvents") or {}).get("text") or "", lang, 260 if lang == "en" else 130))}</div>
           </div>
           <div class="context-block">
             <div class="context-label">{"Photography and the era" if lang == "en" else "写真と時代"}</div>
-            <div class="context-text">{esc(short_block_text((era.get("photoContext") or {}).get("textEn" if lang == "en" else "text") or (era.get("photoContext") or {}).get("text") or "", lang, 180 if lang == "en" else 95))}</div>
+            <div class="context-text">{esc(short_block_text((era.get("photoContext") or {}).get("textEn" if lang == "en" else "text") or (era.get("photoContext") or {}).get("text") or "", lang, 260 if lang == "en" else 130))}</div>
           </div>
         </div>
       </section>'''
@@ -552,11 +644,7 @@ def main():
             keyword = f"{short} | Photographers | History of Photography | Photo Coordinates |" if lang == "en" else f"{short}｜写真家｜写真史｜<a href=\"/\">写真の座標</a>｜"
             people = sort_photographers(photographers_by_country.get(nationality, []), lang)
             canonical = f"{SITE}/{'en/' if lang == 'en' else ''}countries/{COUNTRY_META[nationality]['slug']}.html"
-            lead = (
-                f"This page gathers photographers connected to {short} and traces the history of photography there through movements, visual culture, and key figures."
-                if lang == "en"
-                else f"{short}の写真家を一覧し、写真史、近代写真、ドキュメンタリー、コンセプチュアルアートなどの文脈とあわせてたどるためのページです。"
-            )
+            lead = country_lead_text(short, people, movements_meta, lang)
             description = (
                 f"A country guide to photographers linked to {short} on Photo Coordinates. Explore photography history, related movements, and key figures."
                 if lang == "en"
@@ -602,19 +690,15 @@ def main():
                 if lang == "en"
                 else f"{movement_label}を写真史の中でたどるためのページです。写真の座標で、この表現に関わる写真家や時代背景、関連する運動を一覧できます。"
             )
-            lead = (
-                f"This page follows {movement_label} through photographers, related eras, and the history of photography."
-                if lang == "en"
-                else f"{movement_label}に関わる写真家を一覧し、写真史の流れの中でその表現がどのように位置づけられるかをたどるためのページです。"
-            )
             movement_desc = movements_meta.get(movement, {}).get("descEn" if lang == "en" else "desc") or movements_meta.get(movement, {}).get("desc") or ""
+            lead = movement_lead_text(movement_label, movement_desc, lang)
             context_html = (
                 f'''<section class="section taxonomy-context">
         <h2>{"Overview" if lang == "en" else "この表現について"}</h2>
         <div class="context-grid">
           <div class="context-block">
             <div class="context-label">{"Movement" if lang == "en" else "表現"}</div>
-            <div class="context-text">{esc(short_block_text(movement_desc, lang, 220 if lang == "en" else 120))}</div>
+            <div class="context-text">{esc(short_block_text(movement_desc, lang, 260 if lang == "en" else 150))}</div>
           </div>
         </div>
       </section>'''
