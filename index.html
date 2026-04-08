@@ -109,12 +109,32 @@ body.is-navigating #page-fade {
   max-width: none;
 }
 
+.hero-copy {
+  width: 100%;
+}
+
 .eyebrow {
   margin-bottom: 18px;
   color: var(--accent);
   font: 400 11px/1 'DM Mono', monospace;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+.keywordline {
+  margin: 0 0 16px;
+  color: rgba(198, 170, 130, 0.82);
+  font: 400 10px/1.7 'DM Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+.keywordline a {
+  color: rgba(122, 169, 255, 0.92);
+  text-decoration: none;
+}
+
+.keywordline a:hover {
+  color: var(--text);
 }
 
 .title {
@@ -358,12 +378,15 @@ body.is-navigating #page-fade {
 
   <div class="hud">
     <div class="eyebrow">Prototype / Photo Coordinates</div>
-    <h1 class="title"><em id="main-title">写真の座標</em><span class="title-status" id="title-status">随時更新中</span></h1>
-    <div class="title-subcopy" id="title-subcopy">写真の座標は、世界・日本・各国の写真家、運動、思想、時代背景の関係から写真史をたどるサイトです。</div>
-    <div class="title-note" id="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
-    <div class="lede" id="title-lede">
-      写真史の流れを、写真家・表現・時代背景・関連性の重なりとして見渡すための入口です。
-      クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。
+    <div class="hero-copy">
+      <div class="keywordline">現代写真｜歴史｜文脈｜アート｜解説｜</div>
+      <h1 class="title"><em id="main-title">写真の座標</em><span class="title-status" id="title-status">随時更新中</span></h1>
+      <div class="title-subcopy" id="title-subcopy">写真の座標は、世界・日本・各国の写真家、運動、思想、時代背景の関係から写真史をたどるサイトです。</div>
+      <div class="title-note" id="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
+      <div class="lede" id="title-lede">
+        写真史の流れを、写真家・表現・時代背景・関連性の重なりとして見渡すための入口です。
+        クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。
+      </div>
     </div>
   </div>
 

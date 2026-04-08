@@ -109,12 +109,32 @@ body.is-navigating #page-fade {
   max-width: none;
 }
 
+.hero-copy {
+  width: 100%;
+}
+
 .eyebrow {
   margin-bottom: 18px;
   color: var(--accent);
   font: 400 11px/1 'DM Mono', monospace;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+.keywordline {
+  margin: 0 0 16px;
+  color: rgba(198, 170, 130, 0.82);
+  font: 400 10px/1.7 'DM Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+.keywordline a {
+  color: rgba(122, 169, 255, 0.92);
+  text-decoration: none;
+}
+
+.keywordline a:hover {
+  color: var(--text);
 }
 
 .title {
@@ -349,12 +369,15 @@ body.is-navigating #page-fade {
 
   <div class="hud">
     <div class="eyebrow">Prototype / Photo Coordinates</div>
-    <h1 class="title"><em id="main-title">Photo Coordinates</em><span class="title-status" id="title-status">Updating</span></h1>
-    <div class="title-subcopy" id="title-subcopy">Photo Coordinates is a website exploring the history of photography through photographers, artistic movements, visual culture, and Japanese photography.</div>
-    <div class="title-note" id="title-note">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.</div>
-    <div class="lede" id="title-lede">
-      Use this map to trace how photographers, movements, visual culture, and historical context connect across the history of photography.
-      Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.
+    <div class="hero-copy">
+      <div class="keywordline">Contemporary Photography | History | Context | Art | Essays |</div>
+      <h1 class="title"><em id="main-title">Photo Coordinates</em><span class="title-status" id="title-status">Updating</span></h1>
+      <div class="title-subcopy" id="title-subcopy">Photo Coordinates is a website exploring the history of photography through photographers, artistic movements, visual culture, and Japanese photography.</div>
+      <div class="title-note" id="title-note">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.</div>
+      <div class="lede" id="title-lede">
+        Use this map to trace how photographers, movements, visual culture, and historical context connect across the history of photography.
+        Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.
+      </div>
     </div>
   </div>
 
