@@ -6,11 +6,13 @@
 
 ## 2. Expression / method
 - Main themes: war, military campaign record, and the conversion of battlefield experience into a photographic publication.[S1][S2]
+- Representative work example: the key object is less a single iconic plate than the publication *Meiji nijūshichi-hachinen sen’eki shashinchō*, which gathered the campaign photographs into an organized visual record after the war.[S1][S2]
 - Technique / formal traits: Kamei’s significance lies in organization and commissioning rather than in a single personal visual style. He sent multiple photographers to the front and oversaw a structured record that was later published as *Meiji nijūshichi-hachinen sen’eki shashinchō*.[S1][S2]
 - Why this method was chosen: the project appears to have been driven by the desire to create a systematic visual record of war beyond private souvenir photography or purely official military imaging. That organizational ambition is the key historical point.[S1][S2]
 - Historical context: the work belongs to the media environment of the Sino-Japanese War, when photography, print culture, and visual nationalism were all expanding. Because live battlefield action was difficult to record, war photography often worked through aftermath, encampments, logistics, ruins, and posed or structured scenes.[S2][S3]
 - Relation to contemporaries or movements: Kamei’s project precedes later Japanese war photography and broader modern documentary practices. It should be positioned in relation to Meiji documentary culture rather than autonomous art photography.[S1][S2]
 - Historical significance: the reviewed sources present the project as one of the earliest organized war-photography efforts in Japan and therefore as a precursor to later military and documentary image regimes.[S1][S2]
+- Where and how the work was used: the photographs were compiled for publication and public record; reviewed sources discuss them as part of media history and as a precursor to later visual regimes of war reporting rather than as isolated gallery works.[S1][S2][S3]
 - Critical meaning: Kamei’s case is useful because it shows that photographic history is also shaped by editorial and logistical systems—who sends photographers, who gathers prints, and how war becomes an archive.[S1][S2]
 - Research gap: precise biographical detail, including the most standard romanization of his given name and fuller contemporary reception, remains thin in the reviewed sources. This should be marked as uncertain in any final prose.[S1][S2]
 
@@ -18,6 +20,7 @@
 - Current reception largely treats Kamei through archive history and media history rather than through artist-centered criticism.[S1][S2]
 - He appears as a founding figure in Japanese war-photography history because of the scope and organization of the project, not because of a canon of stylistic criticism.[S1][S2]
 - Secondary studies on war media suggest that such early war photography must be read together with other visual forms such as prints and war illustrations.[S3]
+- This means the strongest reception frame is not `great photographer` but `foundational organizer of an early visual war archive`.[S1][S2]
 
 ## 4. Quote candidates
 - No reliable first-person statement was identified in the reviewed sources.

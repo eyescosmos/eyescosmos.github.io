@@ -6,11 +6,13 @@
 
 ## 2. Expression / method
 - Main themes: studio portraiture, urban and architectural views, and photographic traces of Guatemala’s social and cultural life in the late 19th and early 20th centuries.[S1][S2][S3]
+- Representative work example: reviewed exhibition materials describe Yasu’s output through studio portraits, views of Guatemala City, and image groups that survive as a record of local society rather than through one internationally canonical single work.[S1][S3]
 - Technique / formal traits: studio-based portrait practice combined with location images; the reviewed exhibition materials also point to architectural views, staged studio compositions, and experimental composite work.[S1][S3]
 - Why this method was chosen: the studio format responded to local demand and to the commercial conditions of photography in Guatemala City, while also allowing Yasu to build a durable visual record of a society undergoing change.[S1][S2]
 - Historical context: Yasu belongs to the early history of Japanese migration as well as to Central American studio photography. His work sits at the intersection of migration history, cross-cultural exchange, and local portrait commerce rather than within the mainstream narrative of Japanese domestic photography.[S1][S2]
 - Relation to contemporaries or movements: Yasu should be positioned in relation to transnational studio photography and migration history. He is historically important precisely because he falls outside the standard Japan-centered canon.[S1][S2][S3]
 - Historical significance: later exhibitions in Guatemala and Japan have treated him as an important figure for understanding Japanese migration, bilateral cultural history, and early photographic records of Guatemala.[S1][S2]
+- Where and how the work was used: in his own time the photographs served studio and local clientele; in later reception they have been mobilized mainly through commemorative and research exhibitions about migration and cultural exchange.[S1][S2][S3]
 - Critical meaning: Yasu expands the map of Japanese photo history. His case shows that “Japanese photography” in the modern period cannot be reduced to work made inside Japan; it also includes diasporic commercial and documentary practices abroad.[S1][S2]
 - Research gap: detailed scholarly English-language analysis is limited. Much of the reviewed material comes from exhibitions and cultural institutions rather than from a large secondary literature, so claims about style or influence should remain measured.[S1][S2][S3]
 
