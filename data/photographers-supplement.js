@@ -178,19 +178,28 @@ PHOTOGRAPHERS.push(
   "id": "eugene-atget",
   "name": "Eugène Atget",
   "nameJa": "ウジェーヌ・アジェ",
-  "nationality": "",
-  "flag": "",
-  "years": "1890s / 1890年代",
-  "gender": "",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1857–1927",
+  "gender": "男性",
   "era": "1890",
-  "movements": [],
+  "movements": ["ドキュメンタリー", "都市記録"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA", "url": "https://www.moma.org/artists/229" },
+    { "label": "Metropolitan Museum of Art", "url": "https://www.metmuseum.org/art/collection/search#!?q=atget" },
+    { "label": "ICP", "url": "https://www.icp.org/browse/archive/constituents/eugen-atget?all/all/all/all/0" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "アジェがカメラを手にしたのは1897年頃、40歳のときだった。俳優と画家への夢を断ち、「芸術家のためのドキュメント」（Documents pour artistes）と名刺に刷り、画家や工芸職人にパリの参照写真を売ることを生業にした。機材は時代遅れの大判木製蛇腹カメラ（18×24cm）とガラス乾板。プリントは1888年頃から第一次世界大戦まで、当時すでに廃れていたアルブミン印画法を使い続け、拡大機を一度も使わない接触プリントで仕上げた。金トーニング処理を施すため画面は純粋な黒白ではなく、深いセピア〜紫褐色の色調を帯びる。早朝のパリ——オスマンによる都市改造で失われつつある路地・中庭・店頭・廃娼館・行商人——を長時間露光で静止させた約10,000枚は、いずれも装飾を排した直接記録だった。アジェ自身は自分の仕事を「芸術写真」と位置づけなかった。1926年にマン・レイが数点を超現実主義誌『ラ・レヴォリュシオン・シュルレアリスト』に掲載しようとしたとき、アジェは「名前を出さないでくれ、これは単なるドキュメントだ」と答えたと伝えられる*1。しかしシュルレアリストたちはアジェの写真が持つ不在感・反射・人気のない街路に強く引かれた。哲学者ヴァルター・ベンヤミンは1931年の論考「写真の小さな歴史」で、アジェが写真から「アウラ」を解放したと論じ、その作品がシュルレアリスムに先んじて現実の疎外性を可視化したと評した*2。アジェの遺産を確立したのはアメリカ人写真家ベレニス・アボットだった。マン・レイのアシスタント時代にアジェと出会ったアボットは、1927年の死後、ディーラーのジュリアン・レヴィーの協力を得て遺したアーカイブをまとめて購入しニューヨークに持ち帰った。1930年代から展覧会と出版を通じてアボットはアジェを「近代ドキュメンタリー写真の先駆者」として提示した*3。1968年にMoMAがこのアーカイブを購入すると、写真部門責任者ジョン・シャーコウスキーは12年以上かけてアジェ自身の分類体系を再構築し、マリア・モーリス・ハンバーグとともに大規模な研究と展覧会シリーズを実現させた。シャーコウスキーの論旨は、アジェが「資料」という出発点にもかかわらず、光の階調・物体の質感・時間の断片性という写真固有の特性を通じて独自の視覚言語を獲得したというものである*4。「記録」と「表現」の境界が崩れる地点に、アジェは意図せず立っていた。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Wikipedia — Eugène Atget（マン・レイとのエピソードを含む）", "url": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Atget" },
+      { "num": 2, "name": "Wikipedia — Walter Benjamin「写真の小さな歴史」（1931）", "url": "https://en.wikipedia.org/wiki/Walter_Benjamin" },
+      { "num": 3, "name": "ICP — Eugène Atget（ベレニス・アボットによるアーカイブ保存）", "url": "https://www.icp.org/browse/archive/constituents/eugen-atget?all/all/all/all/0" },
+      { "num": 4, "name": "MoMA — Eugène Atget（ジョン・シャーコウスキーの評価）", "url": "https://www.moma.org/artists/229" }
+    ]
   }
 },
 {
@@ -199,19 +208,24 @@ PHOTOGRAPHERS.push(
   "nameJa": "鹿島清兵衛",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1890s / 1890年代",
-  "gender": "",
+  "years": "1866–1924",
+  "gender": "男性",
   "era": "1890",
-  "movements": [
-    "日本写真"
-  ],
+  "movements": ["日本写真"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "フジフイルムスクエア — 鹿島清兵衛物語", "url": "https://fujifilmsquare.jp/detail/19060104.html" },
+    { "label": "IMA ONLINE — 鹿島清兵衛の生涯と功績", "url": "https://imaonline.jp/news/exhibition/20190329/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "鹿島清兵衛（1866–1924）は、横浜・銀座を拠点とした明治の貿易商・写真愛好家で、「写真大尽（しゃしんだいじん）」の異名で知られる。銀座に「玄鹿館」スタジオを開設し、乾板製造への資金提供や写真協会の設立支援を通じて明治の写真文化形成に貢献した*1。彼の活動で最も注目されるのはX線撮影の公開実演と、マグネシウムフラッシュを用いた葬儀行列の夜間撮影など、当時の写真技術の限界を押し広げる試みである*2。鹿島は特定のスタイルを持つ写真作家というよりも、写真を技術実験と社会的展示の場として拡張させた人物として意義を持つ。乾板製造への投資と写真協会への支援を通じ、後の日本写真の技術的・制度的基盤を整備した点で、作品よりも環境を創り出した人物として写真史に位置づけられる*1*2。近年の展覧会は彼を「日本写真近代化の鍵となる人物」として再評価し、「写真大尽」という呼称そのものが、技術への情熱・資産・庇護・演劇的個性を混在させた明治写真文化の特異な形態を象徴するものとして論じられている*3。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "フジフイルムスクエア「明治に生きた"写真大尽"鹿島清兵衛物語」", "url": "https://fujifilmsquare.jp/detail/19060104.html" },
+      { "num": 2, "name": "IMA ONLINE「日本写真界を発展させた"写真大尽"鹿島清兵衛の生涯と功績」", "url": "https://imaonline.jp/news/exhibition/20190329/" },
+      { "num": 3, "name": "Maison de la culture du Japon à Paris「ル・ステュディオ：横浜写真IV 鹿島清兵衛」", "url": "https://www.mcjp.fr/ja/le-studio-rubrique-jp/lestudio-photographie-yokohama-shashin-iv-jp/lestudio-photographie-yokohama-shashin/lestudio-photographie-yokohama-shashin-ii/lestudio-photographie-yokohama-shashin-iv" }
+    ]
   }
 },
 {
@@ -220,38 +234,51 @@ PHOTOGRAPHERS.push(
   "nameJa": "亀井茲明",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1890s / 1890年代",
-  "gender": "",
+  "years": "1858–1896",
+  "gender": "男性",
   "era": "1890",
-  "movements": [
-    "日本写真"
-  ],
+  "movements": ["日本写真", "ドキュメンタリー"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "東京大学附属図書館 — 亀井文庫", "url": "https://www.lib.u-tokyo.ac.jp/html/tenjikai/josetsu/2003_12-02/kamei.html" },
+    { "label": "放送ライブラリー — NHKセミナー", "url": "https://www.bpcj.or.jp/program/detail/005056/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "亀井茲明（1858–1896）は日本の公家・伯爵で、日清戦争（1894–95）の記録写真事業を組織した人物として写真史に名を残す。複数の写真家を戦地に派遣して従軍撮影を指揮し、戦後に写真帖『明治廿七八年戦役写真帖』として取りまとめた*1*2。亀井は自ら撮影した写真家というより、写真記録を組織・編集した指揮者として重要な意義を持つ。個人的な記念写真や軍の公式記録を超えて、戦場の記録を系統的なアーカイブとして構築しようとした組織的な意図が、このプロジェクトの歴史的価値の核心にある*2。批評的に重要なのは、写真史が撮影者個人の視覚だけでなく、誰が写真家を派遣し、プリントを集め、戦争をアーカイブにするかという編集・物流の体系によっても形成される事実を示している点である*1*2。現在の受容はアーカイブ史・メディア史の文脈が中心で、日清戦争のメディア環境——写真・錦絵・視覚的ナショナリズムが交差する——の中で、後の軍事的・報道的映像制度の先駆として参照される*3。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "東京大学附属図書館「亀井文庫 亀井茲明について」", "url": "https://www.lib.u-tokyo.ac.jp/html/tenjikai/josetsu/2003_12-02/kamei.html" },
+      { "num": 2, "name": "放送ライブラリー「NHKセミナー 日清戦争従軍カメラマン 伯爵亀井茲明の撮った300枚」", "url": "https://www.bpcj.or.jp/program/detail/005056/" },
+      { "num": 3, "name": "立命館大学「戦争記録映画の誕生―日清・日露戦争と戦場のリアリズム―」", "url": "https://rwp-museum.jp/wp/wp-content/uploads/2021/06/mwp_22_otsuki%E7%B8%AE%E5%B0%8F.pdf" }
+    ]
   }
 },
 {
   "id": "lewis-hine",
   "name": "Lewis Hine",
   "nameJa": "ルイス・ハイン",
-  "nationality": "",
-  "flag": "",
-  "years": "1900s / 1900年代",
-  "gender": "",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1874–1940",
+  "gender": "男性",
   "era": "1890",
-  "movements": [],
+  "movements": ["社会ドキュメンタリー", "ドキュメンタリー"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA", "url": "https://www.moma.org/artists/2680" },
+    { "label": "ICP", "url": "https://www.icp.org/browse/archive/constituents/lewis-wickes-hine?all/all/all/all/0" },
+    { "label": "Library of Congress — NCLC Collection", "url": "https://www.loc.gov/pictures/collection/nclc/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ルイス・ハインの写真実践は、視覚メディアを社会変革の証拠として体系的に用いた最初の試みのひとつである。ハインはウィスコンシン州オシュコシュに生まれ、シカゴ大学で社会学を学んだのち、ニューヨーク倫理文化学校の教員となった1904年頃からカメラを始めた。1905年からはエリス島での移民記録を開始した。彼の目的は移民を「問題」として報道するメディアの傾向に対抗し、「個々の人間の尊厳と希望」を可視化することにあった*1。1908年からはナショナル・チャイルド・レイバー・コミッティ（NCLC）の専属調査員として、南部の綿花工場・ガラス工場・石炭選炭場・タバコ農場・路上売り子など、労働する子どもたちを撮影した。工場主は外部調査員の立ち入りを拒否したため、ハインは機械点検係・宗教書の行商人などを名乗って潜入し撮影した。各写真には撮影時の聞き取りメモ（年齢・身長・労働時間・賃金）が付記され、議会証言の際に「証拠写真」として提出された*2。この一連の仕事は1916年の連邦児童労働法（キーティング＝オーウェン法）成立に寄与したと評価されているが、ハインの写真の政策効果を単独で定量化することは困難であり、広範な進歩主義運動の一環として捉える必要がある。1930–31年にはエンパイア・ステート・ビル建設現場を記録した写真集『Men at Work』（1932年）を刊行し、今度は労働を「英雄的なもの」として提示した——労働搾取の告発から労働の讃歌へという転換は批評的に論じられることも多い*3。1930年代以降は仕事の依頼を失い経済的に窮乏した状態で1940年に没した。死後、FSA写真と並ぶ社会ドキュメンタリーの先駆として再評価が進んだ。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "ICP — Lewis Wickes Hine", "url": "https://www.icp.org/browse/archive/constituents/lewis-wickes-hine?all/all/all/all/0" },
+      { "num": 2, "name": "Library of Congress — National Child Labor Committee Collection", "url": "https://www.loc.gov/pictures/collection/nclc/" },
+      { "num": 3, "name": "Wikipedia — Lewis Hine", "url": "https://en.wikipedia.org/wiki/Lewis_Hine" }
+    ]
   }
 },
 {
@@ -277,38 +304,52 @@ PHOTOGRAPHERS.push(
   "id": "jacques-henri-lartigue",
   "name": "Jacques Henri Lartigue",
   "nameJa": "ジャック＝アンリ・ラルティーグ",
-  "nationality": "",
-  "flag": "",
-  "years": "1900s / 1900年代",
-  "gender": "",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1894–1986",
+  "gender": "男性",
   "era": "1890",
-  "movements": [],
+  "movements": ["プライベート写真"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA", "url": "https://www.moma.org/artists/3433" },
+    { "label": "Donation Jacques Henri Lartigue", "url": "https://www.lartigue.org/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ジャック＝アンリ・ラルティーグが写真を始めたのは1901年、7歳のときだった。裕福な実業家の父から与えられたカメラで、ブーローニュの屋敷での家族の遊び・初期飛行機の実験・自動車レース・スキーを撮り続けた。ラルティーグの初期写真の特徴は、動きの捉え方の卓抜さにある。1905年の「従妹ビションナードの跳躍」では、女性が階段を飛び降りる瞬間をスナップショットで静止させ、当時の写真では難しかった空中の人物像を記録した。1912年の「グラン・プリ・ド・ロートモービル・クラブ・ド・フランス」では、走行する自動車にカメラを追従させることで車体が鮮明に写り、背景と観衆が横に流れた——「速度」の視覚的等価物として機能する結果となった*1。重要なのは、この写真群が長らく「私的な家族アルバム」として存在していた点である。ラルティーグは画家としての活動を本業とし、写真は生涯を通じて個人的な記録の手段だった。彼が写真家として「発見」されたのは1963年、ニューヨーク近代美術館のキュレーター、ジョン・シャーコウスキーによってであった。このとき彼は69歳で、MoMAでの個展は雑誌『ライフ』の大型特集と同時に行われ、世界的な注目を集めた*2。この「発見」のタイミングは批評的に重要である。1963年の時点でラルティーグの写真は「純粋な視線の喜び」という形で受容されたが、後の写真史研究では彼の記録が「ベル・エポックの上流階級の生活」を特定の立場から可視化したものであり、労働者や植民地の現実が不在であるという指摘も生まれている。ラルティーグは1986年にニースで没し、写真全コレクションをフランス国家に遺贈した。現在はラルティーグ協会（Donation Jacques Henri Lartigue）が管理している*3。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "MoMA — Jacques Henri Lartigue", "url": "https://www.moma.org/artists/3433" },
+      { "num": 2, "name": "Donation Jacques Henri Lartigue — 公式アーカイブ", "url": "https://www.lartigue.org/" },
+      { "num": 3, "name": "Wikipedia — Jacques Henri Lartigue", "url": "https://en.wikipedia.org/wiki/Jacques_Henri_Lartigue" }
+    ]
   }
 },
 {
   "id": "paul-geniaux",
   "name": "Paul Géniaux",
   "nameJa": "ポール・ジェニオー",
-  "nationality": "",
-  "flag": "",
-  "years": "1900s / 1900年代",
-  "gender": "",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1873–1930",
+  "gender": "男性",
   "era": "1890",
-  "movements": [],
+  "movements": ["ドキュメンタリー", "社会ドキュメンタリー"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Musée d'Orsay", "url": "https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/paul-geniaux-14400" },
+    { "label": "Bibliothèque nationale de France", "url": "https://data.bnf.fr/14977926/paul_geniaux/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ポール・ジェニオー（Paul Géniaux、1873–1930）はレンヌ生まれのフランス人写真家で、小説家・詩人・画家でもあった兄シャルル（1870–1931）とともに「ジェニオー兄弟（Géniaux frères）」として活動した。ポールの写真活動は1893年頃に始まり、1898年頃に兄弟でパリに移住してからは、路地の行商人・職人・露天商・靴磨き・牛乳売りなど都市の労働者を中心に記録した*1。批評的に重要なのは、彼のスタイルがドマシーやピュヨと同じ被写体（街頭の人物）を扱いながら、ピクトリアリズムの手工芸的操作を採用せず、むしろ現実的・詩的な直接記録を志向した点である*2。またブルターニュの伝統的農漁村——亜麻・塩・スレートの収穫・加工——の記録も残しており、故郷の民俗誌的ドキュメントとして評価されている。1914年に第一次世界大戦で動員されたが、1916年に腸チフスで8か月入院し除隊となった。生前は商業的な仕事で生計を立てながら記録的な仕事を続けた写真家であり、20世紀初頭のフランスにおけるドキュメンタリー写真の展開を示す一例として参照される*3。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "The Géniaux Brothers Record Fashion during La Belle Époque", "url": "https://www.nolwennfaligot.fr/post/the-geniaux-brothers-record-fashion" },
+      { "num": 2, "name": "Musée Dévoilé — Charles et Paul Géniaux, deux frères en photographie", "url": "https://musee-devoile.blog/2020/05/04/charles-et-paul-geniaux-deux-freres-en-photographie/" },
+      { "num": 3, "name": "Musée d'Orsay — Paul Géniaux", "url": "https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/paul-geniaux-14400" }
+    ]
   }
 },
 {
@@ -336,19 +377,24 @@ PHOTOGRAPHERS.push(
   "nameJa": "屋須弘平",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1900s / 1900年代",
-  "gender": "",
+  "years": "1846–1917",
+  "gender": "男性",
   "era": "1890",
-  "movements": [
-    "日本写真"
-  ],
+  "movements": ["日本写真"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "在グアテマラ日本国大使館 — 屋須弘平没後100周年記念写真展", "url": "https://www.gt.emb-japan.go.jp/itpr_ja/CIRMA.html" },
+    { "label": "在グアテマラ日本国大使館 — 日本人移民撮影写真展", "url": "https://www.gt.emb-japan.go.jp/itpr_ja/EF20250206.html" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "屋須弘平（1846–1917）は日本生まれの写真家で、渡航後はグアテマラに定住し「Juan José de Jesús Yas」の名で活動した。1878年にグアテマラ・シティに「Fotografía Japonesa」スタジオを開設し、中央アメリカで活躍した異色の日本人写真家として記録されている*1*2。スタジオ肖像・都市および建築ビュー・地域社会の記録からなる活動は、当地の商業的需要に応えながら、変化する社会の持続的な視覚記録を残した。写真家としての孤立した傑作よりも、19世紀後半から20世紀初頭のグアテマラ社会を記録したアーカイブ全体として評価される*2*3。歴史的意義は、日本人移民史と中米写真史の交差点に位置する点にある。「日本写真史」は日本国内に限定されず、海外の日系ディアスポラによる商業的・記録的実践を含む広がりを持つことを彼の例は示している*1*2。受容は主に移民史と日本グアテマラ文化交流をテーマとした発見的・記念的展覧会によって支えられており、現存する素材は写真作品としてだけでなく、明治期の日本人移民とラテンアメリカを結ぶ記録されにくかった歴史の証拠として評価されている*1*3。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "在グアテマラ日本国大使館「屋須弘平没後100周年記念写真展」", "url": "https://www.gt.emb-japan.go.jp/itpr_ja/CIRMA.html" },
+      { "num": 2, "name": "在グアテマラ日本国大使館「日・グアテマラ外交樹立90周年記念日本人移民撮影写真展の実施」", "url": "https://www.gt.emb-japan.go.jp/itpr_ja/EF20250206.html" },
+      { "num": 3, "name": "museum.or.jp「写真家 屋須弘平展 ～写真と遺品が語るグアテマラ移住と望郷～」", "url": "https://www.museum.or.jp/event/24113" }
+    ]
   }
 },
 {
@@ -357,19 +403,24 @@ PHOTOGRAPHERS.push(
   "nameJa": "鳥居龍蔵",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1900s / 1900年代",
-  "gender": "",
+  "years": "1870–1953",
+  "gender": "男性",
   "era": "1890",
-  "movements": [
-    "日本写真"
-  ],
+  "movements": ["日本写真", "ドキュメンタリー"],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "徳島県立鳥居龍蔵記念博物館", "url": "https://torii-museum.bunmori.tokushima.jp/about.html" },
+    { "label": "鳥居龍蔵写真資料", "url": "http://torii.akazawa-project.jp/cms/photos_by_torii.html" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "鳥居龍蔵（1870–1953）は日本の人類学者・考古学者で、北海道・台湾・沖縄・朝鮮・満洲・モンゴル・中国西南部・後に南米にわたる広範なフィールドワークに写真を体系的に活用した*1*2。代表的な記録はアイヌ・台湾・満洲の調査写真群で、現存するガラス原板アーカイブに保存されている。写真は民族誌的・考古学的比較のための証拠資料として機能し、連続性・地理的広がり・記録の一貫性がその意義の核心にある。手法は芸術的な自律作品としてではなく研究記録としての系統的フィールド写真として位置づけられる*2*3。批評的に注意すべきは、彼の調査が明治・大正の帝国的知識生産と不可分であり、写真が非対称な調査現場と分類的な制度の産物でもある点である。現在の受容は保存・目録作成・学術的評価を中心とし、従来的な芸術写真批評とは異なる文脈で扱われる。写真資料の地理的・量的な広大さと、調査対象となった地域社会のその後の変化を考えると、これらの記録が持つ歴史的重要性は大きい*1*3。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "徳島県立鳥居龍蔵記念博物館「鳥居龍蔵について」", "url": "https://torii-museum.bunmori.tokushima.jp/about.html" },
+      { "num": 2, "name": "鳥居龍蔵写真資料（鳥居龍蔵とその世界）", "url": "http://torii.akazawa-project.jp/cms/photos_by_torii.html" },
+      { "num": 3, "name": "KAKEN「鳥居龍蔵博士撮影の日本周辺諸民族写真・乾板の再生・保存・照合」", "url": "https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-63300013/" }
+    ]
   }
 },
 {
