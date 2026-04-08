@@ -354,7 +354,7 @@ def books_heading(photographer: dict, lang: str) -> str:
     name = display_name(photographer, lang)
     if lang == "en":
         return f"{name} Photobooks"
-    return f"{name}＋写真集"
+    return f"{name} 写真集"
 
 
 def extra_intro_phrase(photographer: dict, lang: str, movements_meta: dict, enrichments: dict) -> str:
