@@ -110,7 +110,8 @@ body.is-navigating #page-fade {
 }
 
 .hero-copy {
-  width: 100%;
+  width: min(38rem, 100%);
+  max-width: 100%;
 }
 
 .eyebrow {
@@ -139,11 +140,8 @@ body.is-navigating #page-fade {
 
 .title {
   margin: 0;
-  display: flex;
+  display: block;
   width: 100%;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 12px;
   font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
   font-size: clamp(34px, 5vw, 66px);
   font-weight: normal;
@@ -157,6 +155,8 @@ body.is-navigating #page-fade {
 }
 
 .title-status {
+  display: block;
+  margin-top: 10px;
   color: var(--text-muted);
   font: 400 12px/1.2 'DM Mono', monospace;
   letter-spacing: 0.18em;
@@ -368,16 +368,17 @@ body.is-navigating #page-fade {
   <canvas id="constellation-canvas" aria-label="A star map visualizing relationships in photographic history"></canvas>
 
   <div class="hud">
-    <div class="eyebrow">Prototype / Photo Coordinates</div>
     <div class="hero-copy">
+      <div class="eyebrow">Prototype / Photo Coordinates</div>
       <div class="keywordline">Contemporary Photography | History | Context | Art | Essays |</div>
-      <h1 class="title"><em id="main-title">Photo Coordinates</em><span class="title-status" id="title-status">Updating</span></h1>
-      <div class="title-subcopy" id="title-subcopy">Photo Coordinates is a website exploring the history of photography through photographers, artistic movements, visual culture, and Japanese photography.</div>
-      <div class="title-note" id="title-note">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.</div>
+      <h1 class="title"><em id="main-title">Photo Coordinates</em></h1>
+      <div class="title-status" id="title-status">Updating</div>
       <div class="lede" id="title-lede">
         Use this map to trace how photographers, movements, visual culture, and historical context connect across the history of photography.
         Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.
       </div>
+      <div class="title-note" id="title-note">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.</div>
+      <div class="title-subcopy" id="title-subcopy">Photo Coordinates is a website exploring the history of photography through photographers, artistic movements, visual culture, and Japanese photography.</div>
     </div>
   </div>
 

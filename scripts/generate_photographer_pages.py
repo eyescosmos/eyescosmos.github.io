@@ -350,6 +350,13 @@ def build_keyword_line_html(photographer: dict, lang: str, era_lookup: dict, mov
     return separator.join(parts) + separator
 
 
+def books_heading(photographer: dict, lang: str) -> str:
+    name = display_name(photographer, lang)
+    if lang == "en":
+        return f"{name} Photobooks"
+    return f"{name}＋写真集"
+
+
 def extra_intro_phrase(photographer: dict, lang: str, movements_meta: dict, enrichments: dict) -> str:
     enrichment = get_enrichment(enrichments, photographer)
     keywords = enrichment_value(enrichment, lang, "keywords")
@@ -891,7 +898,7 @@ gtag('config', '{GA_ID}');
         <div class="essay">{rendered_body}</div>
       </section>
       <section class="section" data-affiliate-section hidden>
-        <h2>{copy['books']}</h2>
+        <h2>{escape_html(books_heading(photographer, lang))}</h2>
         <div class="book-grid" data-affiliate-list>
           <div class="note">{copy['booksPlaceholder']}</div>
         </div>

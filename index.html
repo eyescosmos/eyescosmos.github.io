@@ -110,7 +110,8 @@ body.is-navigating #page-fade {
 }
 
 .hero-copy {
-  width: 100%;
+  width: min(38rem, 100%);
+  max-width: 100%;
 }
 
 .eyebrow {
@@ -139,11 +140,8 @@ body.is-navigating #page-fade {
 
 .title {
   margin: 0;
-  display: flex;
+  display: block;
   width: 100%;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 12px;
   font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
   font-size: clamp(34px, 5vw, 66px);
   font-weight: normal;
@@ -157,6 +155,8 @@ body.is-navigating #page-fade {
 }
 
 .title-status {
+  display: block;
+  margin-top: 10px;
   color: var(--text-muted);
   font: 400 12px/1.2 'DM Mono', monospace;
   letter-spacing: 0.18em;
@@ -377,16 +377,17 @@ body.is-navigating #page-fade {
   <canvas id="constellation-canvas" aria-label="写真史の関係性を可視化した宇宙図"></canvas>
 
   <div class="hud">
-    <div class="eyebrow">Prototype / Photo Coordinates</div>
     <div class="hero-copy">
+      <div class="eyebrow">Prototype / Photo Coordinates</div>
       <div class="keywordline">現代写真｜歴史｜文脈｜アート｜解説｜</div>
-      <h1 class="title"><em id="main-title">写真の座標</em><span class="title-status" id="title-status">随時更新中</span></h1>
-      <div class="title-subcopy" id="title-subcopy">写真の座標は、世界・日本・各国の写真家、運動、思想、時代背景の関係から写真史をたどるサイトです。</div>
-      <div class="title-note" id="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
+      <h1 class="title"><em id="main-title">写真の座標</em></h1>
+      <div class="title-status" id="title-status">随時更新中</div>
       <div class="lede" id="title-lede">
         写真史の流れを、写真家・表現・時代背景・関連性の重なりとして見渡すための入口です。
         クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。
       </div>
+      <div class="title-note" id="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
+      <div class="title-subcopy" id="title-subcopy">写真の座標は、世界・日本・各国の写真家、運動、思想、時代背景の関係から写真史をたどるサイトです。</div>
     </div>
   </div>
 
