@@ -105,17 +105,25 @@ body.is-navigating #page-fade {
 .hud {
   top: 32px;
   left: 32px;
-  width: min(24rem, calc(100vw - 64px));
-  max-width: none;
+  width: auto;
+  max-width: calc(100vw - 64px);
 }
 
-.hero-copy {
-  width: min(38rem, 100%);
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: min(38rem, calc(100vw - 64px));
   max-width: 100%;
 }
 
+.hero-text > * {
+  width: 100%;
+  margin: 0;
+}
+
 .eyebrow {
-  margin-bottom: 18px;
   color: var(--accent);
   font: 400 11px/1 'DM Mono', monospace;
   letter-spacing: 0.22em;
@@ -123,7 +131,6 @@ body.is-navigating #page-fade {
 }
 
 .keywordline {
-  margin: 0 0 16px;
   color: rgba(198, 170, 130, 0.82);
   font: 400 10px/1.7 'DM Mono', monospace;
   letter-spacing: 0.08em;
@@ -139,9 +146,7 @@ body.is-navigating #page-fade {
 }
 
 .title {
-  margin: 0;
   display: block;
-  width: 100%;
   font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
   font-size: clamp(34px, 5vw, 66px);
   font-weight: normal;
@@ -156,7 +161,6 @@ body.is-navigating #page-fade {
 
 .title-status {
   display: block;
-  margin-top: 10px;
   color: var(--text-muted);
   font: 400 12px/1.2 'DM Mono', monospace;
   letter-spacing: 0.18em;
@@ -164,27 +168,18 @@ body.is-navigating #page-fade {
 }
 
 .title-subcopy {
-  width: 100%;
-  max-width: none;
-  margin-top: 14px;
   color: rgba(238, 230, 216, 0.8);
   font-size: 13px;
   line-height: 1.75;
 }
 
 .title-note {
-  width: 100%;
-  max-width: none;
-  margin-top: 12px;
   color: var(--text-muted);
   font: 400 11px/1.8 'DM Mono', monospace;
   letter-spacing: 0.03em;
 }
 
 .lede {
-  width: 100%;
-  max-width: none;
-  margin-top: 16px;
   color: var(--text-dim);
   font-size: 12px;
   line-height: 1.85;
@@ -377,7 +372,7 @@ body.is-navigating #page-fade {
   <canvas id="constellation-canvas" aria-label="写真史の関係性を可視化した宇宙図"></canvas>
 
   <div class="hud">
-    <div class="hero-copy">
+    <div class="hero-text">
       <div class="eyebrow">Prototype / Photo Coordinates</div>
       <div class="keywordline">現代写真｜歴史｜文脈｜アート｜解説｜</div>
       <h1 class="title"><em id="main-title">写真の座標</em></h1>
