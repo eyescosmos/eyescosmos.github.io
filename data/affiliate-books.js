@@ -45,16 +45,18 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.talbot = {
   },
   books: [
     {
-      titleJa: 'The Pencil of Nature',
-      titleEn: 'The Pencil of Nature',
+      titleJa: 'The Pencil of Nature (Classics and Annotated)',
+      titleEn: 'The Pencil of Nature (Classics and Annotated)',
       noteJa: 'ネガ/ポジと複製可能な写真文化の出発点。',
       noteEn: 'The starting point of negative/positive reproducibility in photographic culture.',
       urlJa: 'https://amzn.to/3PSfN6C',
       urlEn: 'https://amzn.to/4tqMgPV'
     },
     {
-      titleJa: 'The Pencil of Nature（別版）',
-      titleEn: 'The Pencil of Nature (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4c5wx1L'
     }
   ]
@@ -84,7 +86,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.beato = {
   },
   books: [
     {
-      titleJa: 'Felice Beato: A Photographer on the Eastern Road',
+      titleJa: 'Felice Beato: A Photographer on the Eastern Road (Getty Publications –)',
       titleEn: 'Felice Beato: A Photographer on the Eastern Road',
       noteJa: '帝国・アジア表象・幕末日本をつなぐ初期報道写真の要。',
       noteEn: 'A key bridge between empire, Asia, and late-Edo/Meiji visual culture.',
@@ -101,8 +103,8 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.nadar = {
   },
   books: [
     {
-      titleJa: 'Nadar',
-      titleEn: 'Nadar',
+      titleJa: 'Les Nadar - Une légende photographique',
+      titleEn: 'Les Nadar - Une légende photographique',
       noteJa: '肖像と都市の両面から近代パリを立ち上げた写真家。',
       noteEn: 'A photographer who helped build modern Paris through portraiture and city views.',
       urlJa: 'https://amzn.to/3PMgmPu',
@@ -119,15 +121,17 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.legray = {
   books: [
     {
       titleJa: 'Gustave Le Gray',
-      titleEn: 'Gustave Le Gray',
+      titleEn: 'Gustave Le Gray, 1820-1884',
       noteJa: '海景と技術革新を通じて美術写真の洗練が見える。',
       noteEn: 'Shows the refinement of art photography through seascapes and technical innovation.',
       urlJa: 'https://amzn.to/4bRGz7L',
       urlEn: 'https://amzn.to/4mcYObd'
     },
     {
-      titleJa: 'Gustave Le Gray（別版）',
-      titleEn: 'Gustave Le Gray (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4mkAPqH'
     }
   ]
@@ -148,8 +152,10 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.muybridge = {
       urlEn: 'https://amzn.to/4c7FkjC'
     },
     {
-      titleJa: 'Muybridge: The Complete Human and Animal Locomotion（別版）',
-      titleEn: 'Muybridge: The Complete Human and Animal Locomotion (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/41LYc2O',
       urlEn: 'https://amzn.to/4m605Ri'
     }
@@ -163,16 +169,18 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.marey = {
   },
   books: [
     {
-      titleJa: 'Etienne-Jules Marey',
-      titleEn: 'Etienne-Jules Marey',
+      titleJa: 'Chronophotographie etienne jules marey',
+      titleEn: 'Picturing Time: The Work of Etienne-Jules Marey (1830-1904)',
       noteJa: '科学写真と時間分析の原点。',
       noteEn: 'A foundation for scientific photography and the analysis of time.',
       urlJa: 'https://amzn.to/3OisV4A',
       urlEn: 'https://amzn.to/41O5XFu'
     },
     {
-      titleJa: 'Etienne-Jules Marey（別版）',
-      titleEn: 'Etienne-Jules Marey (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlEn: 'https://amzn.to/4sR3MNn'
     }
   ]
@@ -186,15 +194,17 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.riis = {
   books: [
     {
       titleJa: 'How the Other Half Lives',
-      titleEn: 'How the Other Half Lives',
+      titleEn: 'How the Other Half Lives: Studies Among the Tenements of New York',
       noteJa: '社会改革写真の古典中の古典。',
       noteEn: 'A classic of reform photography.',
       urlJa: 'https://amzn.to/4c7N0CH',
       urlEn: 'https://amzn.to/4sf0Bhs'
     },
     {
-      titleJa: 'How the Other Half Lives（別版）',
-      titleEn: 'How the Other Half Lives (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/3O9lTyS',
       urlEn: 'https://amzn.to/3PNAD7f'
     }
@@ -208,7 +218,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.marville = {
   },
   books: [
     {
-      titleJa: 'Charles Marville: Photographer of Paris',
+      titleJa: 'Charles Marville: Photographer of Paris (Metropolitan Museum, New York: Exhibition Catalogues)',
       titleEn: 'Charles Marville: Photographer of Paris',
       noteJa: '消えゆくパリの記録が都市改造の証言になる。',
       noteEn: 'A record of disappearing Paris that became testimony to urban transformation.',
@@ -216,8 +226,10 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.marville = {
       urlEn: 'https://amzn.to/47DBwWa'
     },
     {
-      titleJa: 'Charles Marville: Photographer of Paris（別版）',
-      titleEn: 'Charles Marville: Photographer of Paris (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlEn: 'https://amzn.to/4v1nKXc'
     }
   ]
@@ -230,8 +242,8 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.annan = {
   },
   books: [
     {
-      titleJa: 'The Old Closes and Streets of Glasgow',
-      titleEn: 'The Old Closes and Streets of Glasgow',
+      titleJa: 'Photographs of the Old Closes and Streets of Glasgow, 1868-1877',
+      titleEn: 'Photographs of the Old Closes and Streets of Glasgow, 1868-1877',
       noteJa: '都市貧困の記録がそのまま社会の証言へ変わる原点。',
       noteEn: 'An origin point where records of urban poverty became social testimony.',
       urlJa: 'https://amzn.to/4maAM0B',
@@ -264,7 +276,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.cameron = {
   },
   books: [
     {
-      titleJa: 'Julia Margaret Cameron: The Complete Photographs',
+      titleJa: 'Julia Margaret Cameron: Photographs from the J. Paul Getty Museum (In Focus)',
       titleEn: 'Julia Margaret Cameron: The Complete Photographs',
       noteJa: '写真を芸術へ押し上げた精神性の核。',
       noteEn: 'At the heart of photography’s rise toward art.',
@@ -272,8 +284,10 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.cameron = {
       urlEn: 'https://amzn.to/4e8LouK'
     },
     {
-      titleJa: 'Julia Margaret Cameron: The Complete Photographs（別版）',
-      titleEn: 'Julia Margaret Cameron: The Complete Photographs (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4vcdxHq',
       urlEn: 'https://amzn.to/4c9O5Kc'
     }
@@ -287,16 +301,18 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.emerson = {
   },
   books: [
     {
-      titleJa: 'Naturalistic Photography for Students of the Art',
-      titleEn: 'Naturalistic Photography for Students of the Art',
+      titleJa: 'Naturalistic Photography for Students of the Art (Classic Reprint)',
+      titleEn: 'Naturalistic Photography for Students of the Art: Second Edition',
       noteJa: '自然主義写真論の一次資料として重要。',
       noteEn: 'An important primary text of naturalistic photography.',
       urlJa: 'https://amzn.to/4medUNN',
       urlEn: 'https://amzn.to/3NHcgHO'
     },
     {
-      titleJa: 'Naturalistic Photography for Students of the Art（別版）',
-      titleEn: 'Naturalistic Photography for Students of the Art (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlEn: 'https://amzn.to/4sf72B0'
     }
   ]
@@ -309,7 +325,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.stieglitz = {
   },
   books: [
     {
-      titleJa: 'Alfred Stieglitz: The Key Set',
+      titleJa: 'Alfred Stieglitz: The Key Set - Volume I &amp; II: The Alfred Stieglitz Collection of Photographs',
       titleEn: 'Alfred Stieglitz: The Key Set',
       noteJa: '写真を美術館時代へ接続した中心人物を総覧できる。',
       noteEn: 'A survey of the central figure who linked photography to the museum age.',
@@ -317,8 +333,10 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.stieglitz = {
       urlEn: 'https://amzn.to/4tsEepB'
     },
     {
-      titleJa: 'Alfred Stieglitz: The Key Set（別版）',
-      titleEn: 'Alfred Stieglitz: The Key Set (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4sd7UWM',
       urlEn: 'https://amzn.to/4spoeUM'
     }
@@ -332,8 +350,8 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.kasebier = {
   },
   books: [
     {
-      titleJa: 'Gertrude Kasebier',
-      titleEn: 'Gertrude Kasebier',
+      titleJa: 'Gertrude Kasebier: The Photographer and Her Photographs',
+      titleEn: 'Gertrude Kasebier: The Photographer and Her Photographs',
       noteJa: '女性肖像と母性表象からピクトリアリズムを見直せる。',
       noteEn: 'Reconsiders pictorialism through female portraiture and images of motherhood.',
       urlJa: 'https://amzn.to/4cykwmL',
@@ -349,22 +367,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.steichen = {
   },
   books: [
     {
-      titleJa: 'Edward Steichen',
-      titleEn: 'Edward Steichen',
+      titleJa: 'The Family of Man: The Greatest Photographic Exhibition of All Time',
+      titleEn: 'Edward Steichen: Lives in Photography',
       noteJa: '写真・モダニズム・ファッションを横断する巨人。',
       noteEn: 'A major figure across photography, modernism, and fashion.',
       urlJa: 'https://amzn.to/4cd7hGH',
       urlEn: 'https://amzn.to/47KiKwk'
     },
     {
-      titleJa: 'Edward Steichen（別版）',
-      titleEn: 'Edward Steichen (Alternate Edition)',
+      titleJa: 'エドワード・スタイケン写真集成',
+      titleEn: 'The Family of Man, 30th Anniversary Edition',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/3Ovdsy6',
       urlEn: 'https://amzn.to/4tBUKUC'
     },
     {
-      titleJa: 'Edward Steichen（別版 2）',
-      titleEn: 'Edward Steichen (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/3PQcEV5',
       urlEn: 'https://amzn.to/4taKZNd'
     }
@@ -378,16 +400,18 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.demachy = {
   },
   books: [
     {
-      titleJa: 'Robert Demachy Photographe',
-      titleEn: 'Robert Demachy Photographe',
+      titleJa: 'Robert Demachy: Photographs and Essays',
+      titleEn: 'Robert Demachy photographe',
       noteJa: '操作写真と芸術写真論の核を押さえる。',
       noteEn: 'A key volume on manipulated photography and debates around art photography.',
       urlJa: 'https://amzn.to/4vgv7du',
       urlEn: 'https://amzn.to/41Tz2iT'
     },
     {
-      titleJa: 'Robert Demachy Photographe（別版）',
-      titleEn: 'Robert Demachy Photographe (Alternate Edition)',
+      titleJa: 'Robert Demachy',
+      titleEn: 'Robert Demachy',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4cxpDDI'
     }
   ]
@@ -400,22 +424,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.strand = {
   },
   books: [
     {
-      titleJa: 'Paul Strand',
-      titleEn: 'Paul Strand',
+      titleJa: 'Aperture Masters: Paul Strand',
+      titleEn: 'Paul Strand: Aperture Masters of Photography',
       noteJa: 'モダニズムと社会的まなざしの接点。',
       noteEn: 'A key junction between modernism and a socially attentive photographic gaze.',
       urlJa: 'https://amzn.to/41j44AD',
       urlEn: 'https://amzn.to/47RcVNx'
     },
     {
-      titleJa: 'Paul Strand（別版）',
-      titleEn: 'Paul Strand (Alternate Edition)',
+      titleJa: 'Paul Strand: Photographs from The J. Paul Getty Museum (In Focus)',
+      titleEn: 'Paul Strand: The Garden at Orgeval',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4cfgKxp',
       urlEn: 'https://amzn.to/41Hiefb'
     },
     {
-      titleJa: 'Paul Strand（別版 2）',
-      titleEn: 'Paul Strand (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/41WUB20',
       urlEn: 'https://amzn.to/4t0D317'
     }
@@ -437,14 +465,18 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.coburn = {
       urlEn: 'https://amzn.to/4ecaI37'
     },
     {
-      titleJa: 'Alvin Langdon Coburn（別版）',
-      titleEn: 'Alvin Langdon Coburn (Alternate Edition)',
+      titleJa: 'Alvin langdon coburn t.94',
+      titleEn: 'Alvin Langdon Coburn: Photographs 1900-1924',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4tyWbCW',
       urlEn: 'https://amzn.to/4ehbADw'
     },
     {
-      titleJa: 'Alvin Langdon Coburn（別版 2）',
-      titleEn: 'Alvin Langdon Coburn (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/3PX6BxW',
       urlEn: 'https://amzn.to/48lD4Ek'
     }
@@ -458,22 +490,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.manray = {
   },
   books: [
     {
-      titleJa: 'Man Ray Photographs',
-      titleEn: 'Man Ray Photographs',
+      titleJa: 'Man Ray: When Objects Dream',
+      titleEn: 'Man Ray: When Objects Dream',
       noteJa: 'ダダ/シュルレアリスムの実験精神を代表。',
       noteEn: 'A representative volume of Dada and Surrealist experimentation.',
       urlJa: 'https://amzn.to/4sliOda',
       urlEn: 'https://amzn.to/4dChW0e'
     },
     {
-      titleJa: 'Man Ray Photographs（別版）',
-      titleEn: 'Man Ray Photographs (Alternate Edition)',
+      titleJa: 'Man Ray Photograph (4992 989)',
+      titleEn: 'Man Ray Photograph (4992 989)',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4dwqndo',
       urlEn: 'https://amzn.to/41qITwv'
     },
     {
-      titleJa: 'Man Ray Photographs（別版 2）',
-      titleEn: 'Man Ray Photographs (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4ecaWat',
       urlEn: 'https://amzn.to/4spfldJ'
     }
@@ -487,22 +523,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.moholy = {
   },
   books: [
     {
-      titleJa: 'Painting Photography Film',
-      titleEn: 'Painting Photography Film',
+      titleJa: 'Painting, Photography, Film',
+      titleEn: 'Painting, photography, film; ([A Bauhaus book])',
       noteJa: 'バウハウス的視覚教育の必読書。',
       noteEn: 'An essential Bauhaus text on visual education.',
       urlJa: 'https://amzn.to/4dVlg6T',
       urlEn: 'https://amzn.to/4tbP03O'
     },
     {
-      titleJa: 'Painting Photography Film（別版）',
-      titleEn: 'Painting Photography Film (Alternate Edition)',
+      titleJa: 'László Moholy-Nagy: Painting, Photography, Film (Bauhausbuecher)',
+      titleEn: 'László Moholy-Nagy: Painting, Photography, Film: Bauhausbücher 8',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4snJIRM',
       urlEn: 'https://amzn.to/4tBVCbQ'
     },
     {
-      titleJa: 'Painting Photography Film（別版 2）',
-      titleEn: 'Painting Photography Film (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4tzI5kX',
       urlEn: 'https://amzn.to/47PayLh'
     }
@@ -516,22 +556,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.sander = {
   },
   books: [
     {
-      titleJa: '20世紀の人間たち',
-      titleEn: 'People of the 20th Century',
+      titleJa: 'August Sander: Citizens of the 20th Century: Portrait Photographs 1892-1952',
+      titleEn: 'August Sander: Citizens of the 20th Century: Portrait Photographs 1892-1952',
       noteJa: '類型と社会階層を可視化した20世紀肖像の柱。',
       noteEn: 'A central work of twentieth-century portraiture that visualizes type and class.',
       urlJa: 'https://amzn.to/4mtdZ07',
       urlEn: 'https://amzn.to/4dxBKll'
     },
     {
-      titleJa: '20世紀の人間たち（別版）',
-      titleEn: 'People of the 20th Century (Alternate Edition)',
+      titleJa: '20世紀の人間たち: 肖像写真集 1892-1952',
+      titleEn: 'August Sander: People of the 20th Century: A Cultural Work in Photographs',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/3PUQcKs',
       urlEn: 'https://amzn.to/4sH4GeJ'
     },
     {
-      titleJa: '20世紀の人間たち（別版 2）',
-      titleEn: 'People of the 20th Century (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlEn: 'https://amzn.to/3QtvQIf'
     }
   ]
@@ -544,22 +588,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.renger = {
   },
   books: [
     {
-      titleJa: 'The World Is Beautiful',
-      titleEn: 'The World Is Beautiful',
+      titleJa: 'Die Welt Der Pflanze',
+      titleEn: 'The Absolute Realist: Collected Writings of Albert Renger-Patzsch, 1923–1967',
       noteJa: '新即物主義の冷たい美学の決定版。',
-      noteEn: 'A definitive statement of New Objectivity\'s cool aesthetic.',
+      noteEn: 'A definitive statement of New Objectivity\\',
       urlJa: 'https://amzn.to/47PaJ9p',
       urlEn: 'https://amzn.to/4moW5f8'
     },
     {
-      titleJa: 'The World Is Beautiful（別版）',
-      titleEn: 'The World Is Beautiful (Alternate Edition)',
+      titleJa: 'The Absolute Realist: Collected Writings of Albert Renger-Patzsch, 1923–1967',
+      titleEn: 'Albert Renger-Patzsch',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/41UIa6O',
       urlEn: 'https://amzn.to/3QdYDk1'
     },
     {
-      titleJa: 'The World Is Beautiful（別版 2）',
-      titleEn: 'The World Is Beautiful (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/41pcSF7',
       urlEn: 'https://amzn.to/4mgi1J0'
     }
@@ -573,22 +621,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.lange = {
   },
   books: [
     {
-      titleJa: 'Dorothea Lange: Words & Pictures',
-      titleEn: 'Dorothea Lange: Words & Pictures',
+      titleJa: 'Dorothea Lange: Words &amp; Pictures',
+      titleEn: 'Dorothea Lange: Words &amp; Pictures',
       noteJa: 'FSAと社会記録の倫理を見渡しやすい。',
       noteEn: 'An accessible entry into the ethics of FSA social documentary.',
       urlJa: 'https://amzn.to/3O3J1yZ',
       urlEn: 'https://amzn.to/4cilna4'
     },
     {
-      titleJa: 'Dorothea Lange: Words & Pictures（別版）',
-      titleEn: 'Dorothea Lange: Words & Pictures (Alternate Edition)',
+      titleJa: 'Dorothea Lange: 500 FSA Photographs',
+      titleEn: 'Dorothea Lange: 500 FSA Photographs',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4dwEJuh',
       urlEn: 'https://amzn.to/4mj59BS'
     },
     {
-      titleJa: 'Dorothea Lange: Words & Pictures（別版 2）',
-      titleEn: 'Dorothea Lange: Words & Pictures (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4cfIX7c',
       urlEn: 'https://amzn.to/4c9bPy0'
     }
@@ -602,22 +654,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.evans = {
   },
   books: [
     {
-      titleJa: 'American Photographs',
-      titleEn: 'American Photographs',
+      titleJa: 'Walker Evans: American Photographs',
+      titleEn: 'Walker Evans: American Photographs: Seventy-Fifth Anniversary Edition',
       noteJa: 'アメリカ・ドキュメンタリーの基準点。',
       noteEn: 'A benchmark for American documentary photography.',
       urlJa: 'https://amzn.to/3Q8Zanh',
       urlEn: 'https://amzn.to/48azPzN'
     },
     {
-      titleJa: 'American Photographs（別版）',
-      titleEn: 'American Photographs (Alternate Edition)',
+      titleJa: 'Walker Evans',
+      titleEn: 'Walker Evans: The Magazine Work',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4cxr1WW',
       urlEn: 'https://amzn.to/4mlCADZ'
     },
     {
-      titleJa: 'American Photographs（別版 2）',
-      titleEn: 'American Photographs (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4dVm4Zt',
       urlEn: 'https://amzn.to/47REer4'
     }
@@ -631,22 +687,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.cartierbresson = {
   },
   books: [
     {
-      titleJa: '決定的瞬間',
-      titleEn: 'The Decisive Moment',
+      titleJa: 'The Decisive Moment',
+      titleEn: 'Henri Cartier-Bresson: The Decisive Moment',
       noteJa: '決定的瞬間の神話と実践を読む定番。',
       noteEn: 'A classic for reading the myth and practice of the decisive moment.',
       urlJa: 'https://amzn.to/4ch0xrA',
       urlEn: 'https://amzn.to/4vk8Ewb'
     },
     {
-      titleJa: '決定的瞬間（別版）',
-      titleEn: 'The Decisive Moment (Alternate Edition)',
+      titleJa: 'Henri Cartier-Bresson (New Horizons)',
+      titleEn: 'Henri Cartier-Bresson: Paris Revisited',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/48nUCQd',
       urlEn: 'https://amzn.to/47LVpdB'
     },
     {
-      titleJa: '決定的瞬間（別版 2）',
-      titleEn: 'The Decisive Moment (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4vpvR0a',
       urlEn: 'https://amzn.to/4vkav47'
     }
@@ -660,22 +720,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.capa = {
   },
   books: [
     {
-      titleJa: 'Slightly Out of Focus',
-      titleEn: 'Slightly Out of Focus',
+      titleJa: 'Slightly Out Of Focus',
+      titleEn: 'Slightly Out of Focus (Modern Library)',
       noteJa: '戦場写真の主体性と神話性を同時に読める。',
       noteEn: 'Reads the agency and mythology of war photography together.',
       urlJa: 'https://amzn.to/4cc1yRE',
       urlEn: 'https://amzn.to/4mjMdTP'
     },
     {
-      titleJa: 'Slightly Out of Focus（別版）',
-      titleEn: 'Slightly Out of Focus (Alternate Edition)',
+      titleJa: 'Slightly Out of Focus: The Legendary Photojournalist&#39;s Illustrated Memoir of World War II (Modern Library War)',
+      titleEn: 'Slightly Out of Focus: The Legendary Photojournalist&#39;s Illustrated Memoir of World War II (Modern Library War)',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4meFhXS',
       urlEn: 'https://amzn.to/48iQfWE'
     },
     {
-      titleJa: 'Slightly Out of Focus（別版 2）',
-      titleEn: 'Slightly Out of Focus (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/41WWfAI',
       urlEn: 'https://amzn.to/4tyovFD'
     }
@@ -689,22 +753,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.domon = {
   },
   books: [
     {
-      titleJa: '土門拳 ヒロシマ',
-      titleEn: 'Ken Domon Hiroshima',
+      titleJa: '生きているヒロシマ 土門拳 築地書館',
+      titleEn: 'Hiroshima 1958 1ST PRINTING SLIPCASE',
       noteJa: '日本リアリズムの到達点として外せない。',
       noteEn: 'An essential landmark of Japanese realism.',
       urlJa: 'https://amzn.to/3Q9VYry',
       urlEn: 'https://amzn.to/4mtfhIv'
     },
     {
-      titleJa: '土門拳 ヒロシマ（別版）',
-      titleEn: 'Ken Domon Hiroshima (Alternate Edition)',
+      titleJa: '土門拳全集〈10〉ヒロシマ',
+      titleEn: 'Ken Domon Living Hiroshima 1st. 1978,w/obi,excellent',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4t4frsm',
       urlEn: 'https://amzn.to/4ehcZtM'
     },
     {
-      titleJa: '土門拳 ヒロシマ（別版 2）',
-      titleEn: 'Ken Domon Hiroshima (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4sWThIn',
       urlEn: 'https://amzn.to/4bZV09R'
     }
@@ -719,15 +787,17 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.eugenesmith = {
   books: [
     {
       titleJa: 'MINAMATA',
-      titleEn: 'Minamata',
+      titleEn: 'MINAMATA',
       noteJa: 'ルポルタージュが人間の尊厳へ届く代表例。',
       noteEn: 'A defining example of photojournalism reaching human dignity.',
       urlJa: 'https://amzn.to/3OwBTeB',
       urlEn: 'https://amzn.to/4t0EKM1'
     },
     {
-      titleJa: 'MINAMATA（別版）',
-      titleEn: 'Minamata (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4voDrIo',
       urlEn: 'https://amzn.to/4twfywv'
     }
@@ -741,21 +811,25 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.robertfrank = {
   },
   books: [
     {
-      titleJa: 'アメリカ人',
-      titleEn: 'The Americans',
+      titleJa: 'Robert Frank: The Americans: Trade Edition',
+      titleEn: 'Robert Frank: The Americans: Trade Edition',
       noteJa: '戦後アメリカ像を根底から更新した一冊。',
       noteEn: 'A book that fundamentally reshaped postwar images of America.',
       urlJa: 'https://amzn.to/3PQeKEr',
       urlEn: 'https://amzn.to/3PY9wGC'
     },
     {
-      titleJa: 'アメリカ人（別版）',
-      titleEn: 'The Americans (Alternate Edition)',
+      titleJa: 'ロバート・フランク 写真の歴史シリーズ',
+      titleEn: 'ロバート・フランク 写真の歴史シリーズ',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4miItC3'
     },
     {
-      titleJa: 'アメリカ人（別版 2）',
-      titleEn: 'The Americans (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/48nV5St',
       urlEn: 'https://amzn.to/4tBrltp'
     }
@@ -777,8 +851,10 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.williamklein = {
       urlEn: 'https://amzn.to/4eaj7E7'
     },
     {
-      titleJa: 'New York 1954.55（別版）',
-      titleEn: 'New York 1954.55 (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4vl6xIn',
       urlEn: 'https://amzn.to/4miIHZV'
     }
@@ -792,22 +868,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.araki = {
   },
   books: [
     {
-      titleJa: 'センチメンタルな旅 冬の旅',
-      titleEn: 'Sentimental Journey Winter Journey',
+      titleJa: 'センチメンタルな旅・冬の旅',
+      titleEn: 'Diary Sentimental Journey (Japanese Edition)',
       noteJa: '私写真の核を最も端的に掴める。',
       noteEn: 'A concise entry into the core of the Japanese I-photograph tradition.',
       urlJa: 'https://amzn.to/4eaNWbS',
       urlEn: 'https://amzn.to/3QrrAsK'
     },
     {
-      titleJa: 'センチメンタルな旅 冬の旅（別版）',
-      titleEn: 'Sentimental Journey Winter Journey (Alternate Edition)',
+      titleJa: '荒木経惟 センチメンタルな旅 1971-2017-',
+      titleEn: 'Nobuyoshi Araki Sentimental Journey 1971',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/47TFkCK',
       urlEn: 'https://amzn.to/47KkW72'
     },
     {
-      titleJa: 'センチメンタルな旅 冬の旅（別版 2）',
-      titleEn: 'Sentimental Journey Winter Journey (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4ce1GAe',
       urlEn: 'https://amzn.to/4sjoHI1'
     }
@@ -822,21 +902,25 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.tomatsu = {
   books: [
     {
       titleJa: 'Shomei Tomatsu: Chewing Gum and Chocolate',
-      titleEn: 'Shomei Tomatsu: Chewing Gum and Chocolate',
+      titleEn: 'Shomei Tomatsu Chewing Gum Chocolate',
       noteJa: '戦後日本の傷跡と消費社会の視覚化。',
       noteEn: 'Visualizes the scars of postwar Japan and the rise of consumer society.',
       urlJa: 'https://amzn.to/47Q5xC8',
       urlEn: 'https://amzn.to/3PXT74Z'
     },
     {
-      titleJa: 'Shomei Tomatsu: Chewing Gum and Chocolate（別版）',
-      titleEn: 'Shomei Tomatsu: Chewing Gum and Chocolate (Alternate Edition)',
+      titleJa: 'Shomei Tomatsu (Phaidon 55s)',
+      titleEn: 'Shomei Tomatsu',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/41ntHAd',
       urlEn: 'https://amzn.to/3QtxJoj'
     },
     {
-      titleJa: 'Shomei Tomatsu: Chewing Gum and Chocolate（別版 2）',
-      titleEn: 'Shomei Tomatsu: Chewing Gum and Chocolate (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/3OdJn5Z',
       urlEn: 'https://amzn.to/41VcQoB'
     }
@@ -850,22 +934,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.winogrand = {
   },
   books: [
     {
-      titleJa: 'The Man in the Crowd',
-      titleEn: 'The Man in the Crowd',
+      titleJa: 'The Man in the Crowd: The Uneasy Streets of Garry Winogrand',
+      titleEn: 'Man Crowd Uneasy Streets Winogrand',
       noteJa: '60〜70年代アメリカの視覚的過剰を読む。',
       noteEn: 'A key to the visual excess of America in the 1960s and 1970s.',
       urlJa: 'https://amzn.to/3QbQWe5',
       urlEn: 'https://amzn.to/4tBwXnE'
     },
     {
-      titleJa: 'The Man in the Crowd（別版）',
-      titleEn: 'The Man in the Crowd (Alternate Edition)',
+      titleJa: 'GARRY WINOGRAND:WINOGRAND COLOR(H)',
+      titleEn: 'Garry Winogrand Color anglais',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/48zZvFQ',
       urlEn: 'https://amzn.to/47OBzhM'
     },
     {
-      titleJa: 'The Man in the Crowd（別版 2）',
-      titleEn: 'The Man in the Crowd (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4c9mMB3',
       urlEn: 'https://amzn.to/4tjyQWx'
     }
@@ -887,14 +975,18 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.friedlander = {
       urlEn: 'https://amzn.to/3QtOIa0'
     },
     {
-      titleJa: 'Self Portrait（別版）',
-      titleEn: 'Self Portrait (Alternate Edition)',
+      titleJa: 'Lee Friedlander: Prayer Pilgrimage for Freedom',
+      titleEn: 'Lee Friedlander: Prayer Pilgrimage for Freedom',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4cyiVgQ',
       urlEn: 'https://amzn.to/4vhfCBY'
     },
     {
-      titleJa: 'Self Portrait（別版 2）',
-      titleEn: 'Self Portrait (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4mgnC26',
       urlEn: 'https://amzn.to/4c0j4tf'
     }
@@ -908,7 +1000,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.arbus = {
   },
   books: [
     {
-      titleJa: 'ダイアン・アーバス',
+      titleJa: 'Diane Arbus: An Aperture Monograph',
       titleEn: 'Diane Arbus: An Aperture Monograph',
       noteJa: '周縁と親密さをめぐる戦後肖像の転換点。',
       noteEn: 'A turning point in postwar portraiture around marginality and intimacy.',
@@ -916,8 +1008,10 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.arbus = {
       urlEn: 'https://amzn.to/4cjt4Nd'
     },
     {
-      titleJa: 'ダイアン・アーバス（別版）',
-      titleEn: 'Diane Arbus: An Aperture Monograph (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4mm4Eaq',
       urlEn: 'https://amzn.to/41j2qiq'
     }
@@ -931,21 +1025,25 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.moriyama = {
   },
   books: [
     {
-      titleJa: 'Bye Bye Photography',
-      titleEn: 'Daido Moriyama: Bye Bye Photography',
+      titleJa: '写真よさようなら 普及版',
+      titleEn: 'Bye Photography',
       noteJa: '粒子・ブレ・ボケ以後の写真史を象徴。',
       noteEn: 'Emblematic of photographic history after grain, blur, and rough focus.',
       urlJa: 'https://amzn.to/4tAdzY4',
       urlEn: 'https://amzn.to/4ck9qkh'
     },
     {
-      titleJa: 'Bye Bye Photography（別版）',
-      titleEn: 'Daido Moriyama: Bye Bye Photography (Alternate Edition)',
+      titleJa: 'Bye Bye Photography',
+      titleEn: 'Bye Bye Photography',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4meGtKQ'
     },
     {
-      titleJa: 'Bye Bye Photography（別版 2）',
-      titleEn: 'Daido Moriyama: Bye Bye Photography (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4vkNY7i',
       urlEn: 'https://amzn.to/4mlKBJa'
     }
@@ -959,22 +1057,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.sherman = {
   },
   books: [
     {
-      titleJa: 'アンタイトルド・フィルム・スティルズ',
-      titleEn: 'The Complete Untitled Film Stills',
+      titleJa: 'Untitled Film Stills',
+      titleEn: 'Cindy Sherman Complete Untitled Stills',
       noteJa: '写真とアイデンティティ演技の必修書。',
       noteEn: 'A foundational work on photography and performed identity.',
       urlJa: 'https://amzn.to/4sjb4s7',
       urlEn: 'https://amzn.to/4cxZMLZ'
     },
     {
-      titleJa: 'アンタイトルド・フィルム・スティルズ（別版）',
-      titleEn: 'The Complete Untitled Film Stills (Alternate Edition)',
+      titleJa: 'The Complete Untitled Film Stills',
+      titleEn: 'Cindy Sherman Untitled Film Stills',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4t4gJ6G',
       urlEn: 'https://amzn.to/4e97ugK'
     },
     {
-      titleJa: 'アンタイトルド・フィルム・スティルズ（別版 2）',
-      titleEn: 'The Complete Untitled Film Stills (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4tDeEyt',
       urlEn: 'https://amzn.to/4sZ1QCq'
     }
@@ -988,22 +1090,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.mapplethorpe = {
   },
   books: [
     {
-      titleJa: 'ロバート・メイプルソープ写真集',
-      titleEn: 'Robert Mapplethorpe',
+      titleJa: 'MAPPLETHORPE FLORA(H)',
+      titleEn: 'MAPPLETHORPE FLORA(H)',
       noteJa: '美・欲望・検閲をめぐる80年代の焦点。',
       noteEn: 'A focal point for debates around beauty, desire, and censorship in the 1980s.',
       urlJa: 'https://amzn.to/4czkPO8',
       urlEn: 'https://amzn.to/4so0K22'
     },
     {
-      titleJa: 'ロバート・メイプルソープ写真集（別版）',
-      titleEn: 'Robert Mapplethorpe (Alternate Edition)',
+      titleJa: 'ロバート・メイプルソープ写真集 (PARCO Vision CONTEMPORARY)',
+      titleEn: 'Mapplethorpe Flora Complete Mark Holborn',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4dVo7wD',
       urlEn: 'https://amzn.to/4syjNag'
     },
     {
-      titleJa: 'ロバート・メイプルソープ写真集（別版 2）',
-      titleEn: 'Robert Mapplethorpe (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/41nxZrh',
       urlEn: 'https://amzn.to/4taOxPx'
     }
@@ -1017,22 +1123,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.kruger = {
   },
   books: [
     {
-      titleJa: 'Thinking of You. I Mean Me. I Mean You.',
-      titleEn: 'Thinking of You. I Mean Me. I Mean You.',
+      titleJa: 'Barbara Kruger: Thinking of You. I Mean Me. I Mean You',
+      titleEn: 'Barbara Kruger Thinking You Mean',
       noteJa: '写真と言葉の政治学を一冊で掴みやすい。',
       noteEn: 'A strong single volume on the politics of image and text.',
       urlJa: 'https://amzn.to/4t2nmqf',
       urlEn: 'https://amzn.to/3PYFPFt'
     },
     {
-      titleJa: 'Thinking of You. I Mean Me. I Mean You.（別版）',
-      titleEn: 'Thinking of You. I Mean Me. I Mean You. (Alternate Edition)',
+      titleJa: 'Barbara Kruger',
+      titleEn: 'Barbara Kruger Thinking You',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4tGT8cd',
       urlEn: 'https://amzn.to/3NVCNkJ'
     },
     {
-      titleJa: 'Thinking of You. I Mean Me. I Mean You.（別版 2）',
-      titleEn: 'Thinking of You. I Mean Me. I Mean You. (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/3QbSgxz',
       urlEn: 'https://amzn.to/4vokpSo'
     }
@@ -1046,22 +1156,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.eggleston = {
   },
   books: [
     {
-      titleJa: 'ウィリアム・エグルストンズ・ガイド',
-      titleEn: 'William Eggleston\'s Guide',
+      titleJa: 'William Eggleston&#39;s Guide',
+      titleEn: 'William Egglestons Guide John Szarkowski',
       noteJa: 'カラー写真を美術へ押し上げた基準点。',
-      noteEn: 'A benchmark for color photography\'s entry into art discourse.',
+      noteEn: 'A benchmark for color photography\\',
       urlJa: 'https://amzn.to/41jyR0f',
       urlEn: 'https://amzn.to/48nZiFL'
     },
     {
-      titleJa: 'ウィリアム・エグルストンズ・ガイド（別版）',
-      titleEn: 'William Eggleston\'s Guide (Alternate Edition)',
+      titleJa: 'William Eggleston: The Last Dyes',
+      titleEn: 'William Eggleston 2 1 4',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4taRX4P',
       urlEn: 'https://amzn.to/4tzM7tB'
     },
     {
-      titleJa: 'ウィリアム・エグルストンズ・ガイド（別版 2）',
-      titleEn: 'William Eggleston\'s Guide (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/47TI8zM',
       urlEn: 'https://amzn.to/4mjT5QT'
     }
@@ -1075,16 +1189,18 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.goldin = {
   },
   books: [
     {
-      titleJa: '性的依存のバラード',
-      titleEn: 'The Ballad of Sexual Dependency',
+      titleJa: 'NAN GOLDIN:BALLAD OF SEXUAL DEPENDENCY(H',
+      titleEn: 'Nan Goldin Ballad Sexual Dependency',
       noteJa: '私的共同体と親密圏の写真史的転換。',
       noteEn: 'A photographic-historical turning point for intimacy and chosen communities.',
       urlJa: 'https://amzn.to/4sq7eh8',
       urlEn: 'https://amzn.to/47KniTq'
     },
     {
-      titleJa: '性的依存のバラード（別版）',
-      titleEn: 'The Ballad of Sexual Dependency (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4tBu9Xt',
       urlEn: 'https://amzn.to/4slw1CU'
     }
@@ -1098,7 +1214,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.wall = {
   },
   books: [
     {
-      titleJa: 'ジェフ・ウォール写真集',
+      titleJa: 'Jeff Wall',
       titleEn: 'Jeff Wall',
       noteJa: '演出写真と美術館展示の新基準。',
       noteEn: 'A new standard for staged photography and museum-scale display.',
@@ -1106,14 +1222,18 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.wall = {
       urlEn: 'https://amzn.to/4tB0UnI'
     },
     {
-      titleJa: 'ジェフ・ウォール写真集（別版）',
-      titleEn: 'Jeff Wall (Alternate Edition)',
+      titleJa: 'Jeff Wall',
+      titleEn: 'Jeff Wall',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/48l72s6',
       urlEn: 'https://amzn.to/48DPgAr'
     },
     {
-      titleJa: 'ジェフ・ウォール写真集（別版 2）',
-      titleEn: 'Jeff Wall (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/3PXaUcA',
       urlEn: 'https://amzn.to/4vkVyi4'
     }
@@ -1127,7 +1247,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.gursky = {
   },
   books: [
     {
-      titleJa: 'アンドレアス・グルスキー写真集',
+      titleJa: 'Andreas Gursky',
       titleEn: 'Andreas Gursky',
       noteJa: '大判カラーとグローバル資本主義の視覚。',
       noteEn: 'A vision of large-format color photography and global capitalism.',
@@ -1135,8 +1255,10 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.gursky = {
       urlEn: 'https://amzn.to/4dCmHa6'
     },
     {
-      titleJa: 'アンドレアス・グルスキー写真集（別版）',
-      titleEn: 'Andreas Gursky (Alternate Edition)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4vitXxZ',
       urlEn: 'https://amzn.to/4sjs95r'
     }
@@ -1150,22 +1272,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.salgado = {
   },
   books: [
     {
-      titleJa: 'Workers',
-      titleEn: 'Workers',
+      titleJa: 'Sebastião Salgado: Workers. An Archaeology of the Industrial Age',
+      titleEn: 'Sebastião Salgado Workers Archaeology Industrial',
       noteJa: '労働と人間のスケールを壮大に捉える代表作。',
       noteEn: 'A major work on labor and the human scale.',
       urlJa: 'https://amzn.to/4dVq9gf',
       urlEn: 'https://amzn.to/41ro6ca'
     },
     {
-      titleJa: 'Workers（別版）',
-      titleEn: 'Workers (Alternate Edition)',
+      titleJa: 'WORKERS セバスチャン・サルガド写真展 [図録]',
+      titleEn: 'Sebastião Salgado Workers Archaeology Industrial',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4cdgjn7',
       urlEn: 'https://amzn.to/4t7bMKu'
     },
     {
-      titleJa: 'Workers（別版 2）',
-      titleEn: 'Workers (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/41ro2sW',
       urlEn: 'https://amzn.to/4cn8Thw'
     }
@@ -1179,22 +1305,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.parr = {
   },
   books: [
     {
-      titleJa: 'The Last Resort',
-      titleEn: 'The Last Resort',
+      titleJa: 'The Last Resort: Photographs of New Brighton',
+      titleEn: 'Last Resort Martin Parr',
       noteJa: '消費社会の色彩とアイロニーを読む鍵。',
       noteEn: 'A key to reading color, irony, and consumer culture.',
       urlJa: 'https://amzn.to/4vk2I6m',
       urlEn: 'https://amzn.to/4voplGU'
     },
     {
-      titleJa: 'The Last Resort（別版）',
-      titleEn: 'The Last Resort (Alternate Edition)',
+      titleJa: 'Global Warning',
+      titleEn: 'Small World Martin Parr',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4mlMHc0',
       urlEn: 'https://amzn.to/4sH9CjL'
     },
     {
-      titleJa: 'The Last Resort（別版 2）',
-      titleEn: 'The Last Resort (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4tDigR3',
       urlEn: 'https://amzn.to/4mhg1k1'
     }
@@ -1208,22 +1338,26 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.becher = {
   },
   books: [
     {
-      titleJa: 'Anonymous Sculptures',
-      titleEn: 'Anonymous Sculptures: A Typology of Technical Constructions',
+      titleJa: 'Becher Bernd &amp; Hilla - Typologien',
+      titleEn: 'Bernd &amp; Hilla Becher',
       noteJa: '類型学とデュッセルドルフ派の出発点。',
       noteEn: 'The starting point for typology and the Dusseldorf School.',
       urlJa: 'https://amzn.to/41roozM',
       urlEn: 'https://amzn.to/4tbU884'
     },
     {
-      titleJa: 'Anonymous Sculptures（別版）',
-      titleEn: 'Anonymous Sculptures: A Typology of Technical Constructions (Alternate Edition)',
+      titleJa: 'Bernd &amp; Hilla Becher: Basic Forms',
+      titleEn: 'Bernd &amp; Hilla Becher Geschichte einer Methode /allemand',
+      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
+      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4tBMnby',
       urlEn: 'https://amzn.to/4t0uxiz'
     },
     {
-      titleJa: 'Anonymous Sculptures（別版 2）',
-      titleEn: 'Anonymous Sculptures: A Typology of Technical Constructions (Alternate Edition 2)',
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や別の版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/4sZ3YtU',
       urlEn: 'https://amzn.to/4mm7gFg'
     }

@@ -91,7 +91,8 @@
       const imageAlt = resolveByLanguage(book, 'imageAltJa', 'imageAltEn', 'imageAlt') || title;
       return { title, note, url, imageUrl, imageAlt };
     })
-    .filter((book) => book.title && book.url);
+    .filter((book) => book.title && book.url)
+    .slice(0, 3);
 
   if (!validBooks.length) {
     section.hidden = true;

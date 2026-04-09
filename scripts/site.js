@@ -272,6 +272,7 @@ function getArchiveAffiliateBooks(photographer) {
     if (!photographer.amazon) return [];
     return [{
       title: t('books'),
+      note: '',
       url: photographer.amazon
     }];
   }
@@ -280,11 +281,12 @@ function getArchiveAffiliateBooks(photographer) {
   const normalized = books
     .map(book => ({
       title: resolveAffiliateValue(book, 'titleJa', 'titleEn', 'title'),
+      note: resolveAffiliateValue(book, 'noteJa', 'noteEn', 'note'),
       url: resolveAffiliateValue(book, 'urlJa', 'urlEn', 'url')
     }))
     .filter(book => book.title && book.url);
 
-  if (normalized.length) return normalized.slice(0, 2);
+  if (normalized.length) return normalized.slice(0, 3);
 
   const featured = currentLanguage === 'en'
     ? (entry.featured?.en || entry.featured?.ja || entry.featured || null)
@@ -292,6 +294,7 @@ function getArchiveAffiliateBooks(photographer) {
   if (featured?.url) {
     return [{
       title: featured.label || t('books'),
+      note: '',
       url: featured.url
     }];
   }
@@ -299,6 +302,7 @@ function getArchiveAffiliateBooks(photographer) {
   if (!photographer.amazon) return [];
   return [{
     title: t('books'),
+    note: '',
     url: photographer.amazon
   }];
 }
@@ -318,6 +322,7 @@ function renderArchiveAffiliateSection(photographer) {
     return `
       <div class="detail-book-card">
         <div class="detail-book-title">${book.title}</div>
+        ${book.note ? `<div class="detail-book-note">${book.note}</div>` : ''}
         <div class="detail-book-actions">
           <a class="detail-link detail-link-amazon" href="${book.url}" target="_blank" rel="noopener sponsored">${ctaLabel}</a>
         </div>
