@@ -7,27 +7,33 @@
 ## 2. Expression / method
 - Main themes: family, class, domestic disorder, intimacy, care, embarrassment, and the politics of looking at working-class life.[S1][S2]
 - Technique / formal traits: apparently casual color snapshots made in close domestic proximity, often using cheap materials and available light; the force of the work comes from its immediacy, repetition, and refusal to idealize or stabilize the household scene.[S1][S2]
-- Representative work examples: *Ray’s a Laugh* is the key body of work, especially images of Billingham’s parents Ray and Liz and the re-edited later publication sometimes described as a “director’s cut,” because they established the terms through which his practice has been understood—simultaneously familial, painterly, diaristic, and socially charged.[S1][S2][S3][S4]
+- Representative work examples: *Ray’s a Laugh* is the key body of work, especially images of Billingham’s parents Ray and Liz and the re-edited later publication sometimes described as a “director’s cut,” because they established the terms through which his practice has been understood—simultaneously familial, painterly, diaristic, and socially charged. The work is best understood as sequence rather than isolated shock-image; Billingham’s own comments on books and image ordering make that especially clear.[S1][S2][S3][S4][S5]
 - Why this method was chosen: the work originated while Billingham was still interested in painting and using photographs in relation to that practice. This matters because the photographs were not initially conceived as social-documentary witness from outside, but as intimate material from within family life. Photoworks is particularly useful because it preserves Billingham’s own reflections on how painting, snapshot aesthetics, and the camera’s dependence on what is physically present shaped the work.[S1][S2][S4]
 - Historical context: Billingham’s emergence in the 1990s coincided with renewed British attention to class, realism, and the politics of representation after the high period of humanist documentary. His work became controversial and influential because it seemed to replace dignified distance with uncomfortable intimacy.[S1][S2]
 - Relation to contemporaries or movements: Billingham is often placed in relation to documentary photography, but the work is different from classical social reportage because it does not arrive as outside observation. Its point of view is familial, unstable, and implicated.[S1][S2]
 - Historical significance: Billingham matters because *Ray’s a Laugh* changed how contemporary photography could picture class and domestic life. It made the snapshot, with all its instability and ethical risk, central to museum photography discourse.[S1][S2]
 - Critical meaning: the work remains important because it does not let viewers settle into pity, superiority, or sentimental identification. The images are too close for sociological distance and too socially charged for purely personal reading.[S1][S2][S4]
-- Where and how the work was used: interviews and institutional discussion show that *Ray’s a Laugh* became a major point of reference in British contemporary art, not only as a photobook but as a recurring problem in how photography represents family and class. Later returns to the series in gallery and critical contexts confirm its long afterlife rather than treating it as a one-off sensation-era scandal.[S1][S2][S3][S4]
+- Where and how the work was used: interviews and institutional discussion show that *Ray’s a Laugh* became a major point of reference in British contemporary art, not only as a photobook but as a recurring problem in how photography represents family and class. Later returns to the series in gallery and critical contexts confirm its long afterlife rather than treating it as a one-off sensation-era scandal. Early Guardian coverage is useful because it records how rapidly the work entered public discussion through the intertwined channels of class visibility, publishing, and gallery display.[S1][S2][S3][S4][S6]
 
 ## 3. Criticism and reception
 - The Tate interview is especially useful because it preserves early discussion around the work’s class politics and the difficulty of separating intimacy from public display.[S1]
 - Final website copy should note that Billingham’s reception has always involved ethical tension: the work is celebrated for its directness, but that directness has also made it a flashpoint around exposure, exploitation, and social gaze. The Guardian’s 2024 revisit helps show that this tension remains central to the work’s legacy.[S1][S2][S3]
 - His place in photographic history is strongest when described as a transformation of vernacular family imagery into a disturbing and historically consequential art form.[S1][S2][S4]
+- Billingham’s own comments also help keep the work from being reduced to scandal or sociology alone: interview material repeatedly brings it back to sequence, form, painting, and the practical conditions of photographing what was immediately there. That makes the work important not only for what it shows, but for how it turns familial proximity into a deliberately structured photographic language.[S4][S5][S7]
 
 ## 4. Artist statement / artist's own words
-- Billingham explains that documentary photography depends on “what’s in front of you,” a useful clue to why the *Ray’s a Laugh* pictures remain anchored in the immediacy of family life even when they entered art discourse.[S4]
+- Billingham explains that documentary photography depends on `what’s in front of you,` a useful clue to why the *Ray’s a Laugh* pictures remain anchored in the immediacy of family life even when they entered art discourse.[S4]
+- Billingham also says that in his books `one photograph after another, each image had to interconnect, similar to scenes in a sequence,` which is especially useful for final prose because it frames *Ray’s a Laugh* as constructed photographic narration rather than as a loose pile of shocking snapshots.[S5]
 
 ## 5. Quote candidates
 - `with documentary it depends on what’s in front of you` [S4]
+- `one photograph after another, each image had to interconnect, similar to scenes in a sequence` [S5]
 
 ## 6. Sources
 - [S1] Billingham, Richard — Interview with James Lingwood (1998). Tate archive PDF. https://eprints.glos.ac.uk/10347/43/Interview%20with%20James%20Lingwood%20%281998%29.pdf
 - [S2] My favourite exhibit from ‘In the Blink of an Eye: Media and Movement’. National Science and Media Museum blog. https://blog.scienceandmediamuseum.org.uk/richard-billingham-in-the-blink-of-an-eye-media-and-movement/
 - [S3] The big picture: Richard Billingham revisits his Black Country roots. The Guardian. https://www.theguardian.com/artanddesign/2024/mar/10/the-big-picture-richard-billingham-rays-a-laugh-directors-cut
 - [S4] Richard Billingham. Photoworks interview archive. https://photoworks.org.uk/richard-billingham/
+- [S5] Interview: Richard Billingham. Redbrick. https://www.redbrick.me/interview-richard-billingham/
+- [S6] Candid camera. The Guardian / The Observer. https://www.theguardian.com/theobserver/2000/may/28/features.magazine27
+- [S7] Ray of Light: An Interview With Richard Billingham. The Quietus. https://thequietus.com/articles/26164-ray-liz-richard-billingham-interview
