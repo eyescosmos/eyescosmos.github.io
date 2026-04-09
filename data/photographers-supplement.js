@@ -664,12 +664,18 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Tate — Bill Brandt", "url": "https://www.tate.org.uk/art/artists/bill-brandt-377" },
+    { "label": "MoMA — Bill Brandt", "url": "https://www.moma.org/calendar/exhibitions/2639" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ビル・ブラント（1904–1983）はイギリスの写真家。1930年代の社会記録から出発し、肖像・風景・ヌードへと活動を広げた*1。\n\n初期の代表作《炭鉱夫の妻》や写真集「The English at Home」（1936年）・「A Night in London」（1938年）では、階級によって分断されたイギリス社会を強いトーン対比と演出的な構図で記録した。ジャロウへの帰路を急ぐ炭鉱夫を捉えた《Coal Searcher Going Home to Jarrow》（1937年）など、社会的事実を視覚的緊張として提示する手法が特徴である*2。後期には広角レンズを使った大胆な歪みによる裸体や風景の撮影へ移行し、記録から心理的・超現実的な形式表現へと踏み込んだ*1。\n\nテートやMoMAをはじめとする機関は、社会記録期と後期の形式的急進化を同等に評価し、ブラントを20世紀イギリス写真の中心的人物として位置づけている。写真集を媒体として発表を重ねたことも彼の受容に重要な役割を果たした*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Tate — Bill Brandt", "url": "https://www.tate.org.uk/art/artists/bill-brandt-377" },
+      { "num": 2, "name": "MoMA — Bill Brandt", "url": "https://www.moma.org/calendar/exhibitions/2639" }
+    ]
   }
 },
 {
@@ -683,12 +689,19 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA — Brassaï", "url": "https://www.moma.org/calendar/exhibitions/2634" },
+    { "label": "MACBA — Brassaï", "url": "https://www.macba.cat/en/actor/brassai/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ブラッサイ（本名：ジュラ・ハラース、1899–1984）はハンガリー生まれ、パリを拠点に活動した写真家。夜のパリの記録のほか、グラフィティ、肖像、文学・芸術サークルとの交流でも知られる*1。\n\n代表作「Paris de nuit」（1932年）は、霧に煙る街路、カフェ、娼婦、恋人たちを濃密なモノクロで捉えた写真集で、近代写真における夜の都市表現の基点となった。構成的な照明と闇の密度を駆使し、観察された現実を同時にステージのように見せる演出力が特徴である*1*2。後年のグラフィティ連作では、壁面に刻まれた匿名の痕跡を真剣な視覚素材として提示し、「見ること」の対象の拡張を試みた*3。\n\nMoMAとMACBAはブラッサイをシュルレアリスムとドキュメンタリーの交差点に位置づける。「Paris de nuit」は今日も20世紀を代表するフォトブックとして繰り返し参照され、都市の無意識を視覚化した写真家として評価が定まっている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "MoMA — Brassaï", "url": "https://www.moma.org/calendar/exhibitions/2634" },
+      { "num": 2, "name": "MACBA — Brassaï", "url": "https://www.macba.cat/en/actor/brassai/" },
+      { "num": 3, "name": "MoMA Press Release No. 109", "url": "https://www.moma.org/docs/press_archives/4135/releases/MOMA_1968_July-December_0067_109.pdf" }
+    ]
   }
 },
 {
@@ -702,12 +715,20 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA — Manuel Álvarez Bravo", "url": "https://www.moma.org/calendar/exhibitions/239" },
+    { "label": "Getty — Manuel Álvarez Bravo", "url": "https://www.getty.edu/art/exhibitions/bravo/" },
+    { "label": "Metropolitan Museum of Art — Los Agachados", "url": "https://www.metmuseum.org/art/collection/search/265452" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "マヌエル・アルバレス・ブラボ（1902–2002）はメキシコの写真家。メキシコ革命後の変動期に活動を始め、ストリート写真・静物・身体・廃墟・近代的アレゴリーにまたがる実践を、100年に及ぶ生涯を通じて展開した*1*2。\n\n主要作品《俯く人びと（Los Agachados）》（1934年頃）や《眠れる評判（The Good Reputation Sleeping）》（1938年）は、日常のメキシコ的場面に象徴的な多義性を与えながら、民俗的リアリティを失わない点が特徴である*2*3。白黒の抑制されたトーン、正面あるいは側面からの静かな構図、視覚的圧縮を重視した手法は、ドキュメントとしての読み取りと詩的解釈の両方を可能にする*1。ティナ・モドッティやエドワード・ウェストン、アンドレ・ブルトンとの交流は彼の形成に影響を与えたが、ブルトンのシュルレアリスムとも距離を保ち、明示的な夢イメージに頼らずにメキシコの日常から象徴的な電荷を引き出す独自の位置を築いた*2。メキシコ革命後の時代、民族的アイデンティティ・モダニズム・国際的前衛の交差点に立ちながら、いずれにも還元されない視覚言語を形成したことが、写真史上の独自性となっている*1*2。\n\nMoMAやゲッティ美術館を中心とする機関の受容は、ブラボをラテンアメリカ写真における近代的視覚語彙の発明者として位置づける。ナショナリズム・シュルレアリスムいずれのラベルも超えた写真家として現在も論じられている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "MoMA — Manuel Álvarez Bravo", "url": "https://www.moma.org/calendar/exhibitions/239" },
+      { "num": 2, "name": "Getty — Manuel Álvarez Bravo", "url": "https://www.getty.edu/art/exhibitions/bravo/" },
+      { "num": 3, "name": "Metropolitan Museum of Art — Los Agachados", "url": "https://www.metmuseum.org/art/collection/search/265452" }
+    ]
   }
 },
 {
@@ -721,12 +742,19 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "ICP — Margaret Bourke-White", "url": "https://www.icp.org/browse/archive/objects/margaret-bourke-white" },
+    { "label": "MoMA — Bourke-White Collection Work", "url": "https://www.moma.org/collection/works/47157" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "マーガレット・バーク＝ホワイト（1904–1971）はアメリカの写真家。「フォーチュン」「ライフ」誌の主要カメラマンとして、産業・恐慌・戦争を幅広く撮影した*1。\n\n初期の産業写真ではダム・製鉄所・工場を堂々とした構図と強いコントラストで記録し、アメリカ近代産業の視覚的表象を作り上げた。大恐慌期の《At the Time of the Louisville Flood》（1937年）では、「ゆとりある生活」を謳う看板の前に並ぶ洪水被災者を対置させ、社会矛盾を視覚的な象徴へと凝縮した*2*3。その後、第二次世界大戦の従軍取材や戦後の記録へと領域を広げ、歴史的事件を大衆メディアを通じて伝えるフォトジャーナリストとして評価を確立した。\n\nICPやMoMAは、バーク＝ホワイトをフォトジャーナリズムを先導した女性写真家の先駆者として位置づけつつ、産業的崇高と社会批判が共存する彼女のビジュアル言語にも注目する。雑誌を媒体として構築されたスペクタクル的な映像が20世紀写真史に残した影響は大きい*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "ICP — Margaret Bourke-White", "url": "https://www.icp.org/browse/archive/objects/margaret-bourke-white" },
+      { "num": 2, "name": "MoMA — Bourke-White Collection Work", "url": "https://www.moma.org/collection/works/47157" },
+      { "num": 3, "name": "MoMA Catalogue — Photography at MoMA", "url": "https://assets.moma.org/documents/moma_catalogue_238_300145800.pdf" }
+    ]
   }
 },
 {
@@ -740,12 +768,18 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "ICP — Travaux & Les Jeux (Doisneau)", "url": "https://www.icp.org/content/travaux-les-jeux" },
+    { "label": "Musée Maillol — Robert Doisneau", "url": "https://www.museemaillol.com/en/exposition/robert-doisneau/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ロベール・ドアノー（1912–1994）はフランスの写真家。パリの街頭写真で知られるが、労働・産業・肖像の分野でも長く活動した*1。\n\n小型カメラを手に日常的なパリの光景——労働者、子ども、路上の恋人たち——を間近から記録し、人間の動作と偶然の構図を組み合わせた独自の語法を築いた。《市庁舎前のキス》（1950年）はその代名詞的作品だが、労働者の生活や職場環境を捉えた初期の記録写真もドアノーの写真的基盤を形成している*2。構図は軽妙だが、公共空間における人間関係と日常の構造を読み取ることへの一貫した関心が作品群を支えている*1。\n\nフランス人道主義写真（Willy Ronisらと並置される文脈）の代表者として受容されることが多いが、後の批評はそのパリ像の構築性にも着目する。写真集と展覧会によって定着した彼の評価は、記録的な側面と詩的な演出の両面を含む点で複層的である*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "ICP — Travaux & Les Jeux (Doisneau)", "url": "https://www.icp.org/content/travaux-les-jeux" },
+      { "num": 2, "name": "Musée Maillol — Robert Doisneau", "url": "https://www.museemaillol.com/en/exposition/robert-doisneau/" }
+    ]
   }
 },
 {
@@ -759,12 +793,20 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Jeu de Paume — François Kollar", "url": "https://jeudepaume.org/en/evenement/francois-kollar-2/" },
+    { "label": "Le Monde — François Kollar", "url": "https://www.lemonde.fr/en/m-le-mag/article/2026/01/26/francois-kollar-shines-a-light-on-parisian-workers-between-the-wars_6749800_117.html" },
+    { "label": "Palais Galliera — François Kollar", "url": "https://www.palaisgalliera.paris.fr/collections/les-collections-du-musee/photographies/francois-kollar" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "フランソワ・コラー（1904–1979）はスロバキア生まれ、主にフランスで活動した写真家。産業報道・広告・ファッション写真を横断しながら、1930年代のフランス写真文化を担った*1*2。\n\nコラーの代表的仕事は連作「La France travaille」（1931–1934年）である。鉄道・炭鉱・繊維工場・港湾など多岐にわたる現場の労働者を撮影し、15冊の写真グラビア冊子として刊行した。各冊子にはロマン・ロランなど著名作家のテキストを添え、フォトグラビュールの精緻な印刷と組み合わせた*1。構図は明確でありながら労働者の身体的な力感を前面に出す。労働条件の批判よりも、働く身体への敬意と巨大なスケール感が作品全体を覆う*2。ジェルメーヌ・クリュルやアンドレ・ケルテスとも同時代に働いたが、工業化フランスの全域を系統的に記録したモニュメンタルな規模がコラーの独自性となっている*1。広告・ファッションでも洗練された感覚を発揮しており、ドキュメントと商業的写真実践を並行した複合的な写真家として位置づけられる*2*3。\n\nジュ・ド・ポームなど近年の展覧会は「La France travaille」を戦間期フランスにおける最重要の労働写真調査として再評価している。スケール・流通・視覚的一貫性の三点が評価軸として繰り返し強調されている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Jeu de Paume — François Kollar", "url": "https://jeudepaume.org/en/evenement/francois-kollar-2/" },
+      { "num": 2, "name": "Le Monde — François Kollar", "url": "https://www.lemonde.fr/en/m-le-mag/article/2026/01/26/francois-kollar-shines-a-light-on-parisian-workers-between-the-wars_6749800_117.html" },
+      { "num": 3, "name": "Palais Galliera — François Kollar", "url": "https://www.palaisgalliera.paris.fr/collections/les-collections-du-musee/photographies/francois-kollar" }
+    ]
   }
 },
 {
@@ -778,12 +820,18 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Metropolitan Museum of Art — Marcel Bovis", "url": "https://www.metmuseum.org/art/collection/search/288676" },
+    { "label": "BnF — Marcel Bovis", "url": "https://catalogue.bnf.fr/ark%3A/12148/cb11893654v" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "マルセル・ボヴィス（1904–1997）はフランスの写真家。雑誌・広告・都市写真を軸に活動し、戦後はル・グループ・デ・カンズ（Le Groupe des XV）に参加して写真の芸術的地位の確立を求めた*1*2。\n\n主要な主題はパリの街路・遊園地・建築の断片・室内空間で、《Hotel de l'Univers, Nantes》などの作品はニュー・ヴィジョンの幾何学的構成と都市ドキュメントの眼を結合している*1。急角度や俯瞰、強い影のパターンを用いながら、都市の表面が持つグラフィック的な可能性を引き出す構図が特徴である。記録的な出発点を持ちながら、写真的デザインとして再組織された画面は、社会記録と形式的モダニズムが対立しないことを示している*1*2。1930年代フランスにおけるニュー・ヴィジョン受容から戦後の写真の芸術化運動へと繋がる連続性のなかに位置づけられる*2。\n\nメトロポリタン美術館やBnFなどの所蔵・記録はボヴィスを主要なフランス近代写真家として位置づける。受容は一部の同時代人ほど広くはないが、1930年代の形式的実験と戦後の写真芸術化という二つの文脈をつなぐ人物として再評価が続いている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Metropolitan Museum of Art — Marcel Bovis", "url": "https://www.metmuseum.org/art/collection/search/288676" },
+      { "num": 2, "name": "BnF — Marcel Bovis", "url": "https://catalogue.bnf.fr/ark%3A/12148/cb11893654v" }
+    ]
   }
 },
 {
@@ -799,12 +847,20 @@ PHOTOGRAPHERS.push(
     "日本写真"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "植田正治写真美術館", "url": "https://www.houki-town.jp/ueda/" },
+    { "label": "東京都写真美術館 — 植田正治：写真の作法", "url": "https://topmuseum.jp/contents/exhibition/index-766.html" },
+    { "label": "ShaSha — 植田正治とその時代", "url": "https://www.kitamura.jp/shasha/article/japanese-masterpiece-series-20231025/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "植田正治（1913–2000）は鳥取県境港生まれの写真家。1930年代に活動を開始し、鳥取砂丘や山陰地方の風景を舞台に独自の演出写真「植田調」を確立した*1*2。\n\n植田の代表的な方法は、家族や近隣の人びとを砂丘など開けた場所に配置し、前景に向かって整然と組み立てた画面のなかに、静かな滑稽味と詩的な感覚を同居させることにある。作品集「小さい伝記」や砂丘シリーズは、非都市・非アカデミックな地点から生まれた演出写真として、日本写真史の中で特異な位置を占める*2*3。構成の要素は正面性・疎な空間・精密な人物配置で、即興的なリアリズムとも都市的モダニズムとも異なる方法論をとる*1。1930〜40年代に機能した地方のアマチュア写真ネットワークを足場にしながら、独立した様式言語を発展させた点も重要で、写真史における革新が東京一極ではないことを示している*2*3。\n\n日本での受容は一貫して強く、植田正治写真美術館（1995年開館）と東京都写真美術館などの回顧展が、1930年代初期作から晩年の砂丘作品まで一連の文脈として提示し、単一のモチーフへの矮小化を防いでいる*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "植田正治写真美術館", "url": "https://www.houki-town.jp/ueda/" },
+      { "num": 2, "name": "東京都写真美術館 — 植田正治：写真の作法", "url": "https://topmuseum.jp/contents/exhibition/index-766.html" },
+      { "num": 3, "name": "ShaSha — 植田正治とその時代", "url": "https://www.kitamura.jp/shasha/article/japanese-masterpiece-series-20231025/" }
+    ]
   }
 },
 {
@@ -820,12 +876,18 @@ PHOTOGRAPHERS.push(
     "日本写真"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "国書刊行会 — 新興写真の先駆者 金丸重嶺", "url": "https://www.kokusho.co.jp/news/2022/01/202201261850.html" },
+    { "label": "アートプラットフォームジャパン — 金丸重嶺", "url": "https://artplatform.go.jp/ja/artists/A5649" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "金丸重嶺（1900–1977）は日本の写真家・評論家・教育者。1930年代の日本モダン写真運動において、実践・批評・教育の三方向から日本近代写真の制度を整えた*1*2。\n\n金丸は木村専一・木村伊兵衛・野島康三・名取洋之助らと並び、国際的なニュー・フォトグラフィーの潮流を日本に移植し、体系化した人物として位置づけられる*1。個々の作品よりも、教育・批評・商業写真の組み合わせによる「写真の近代化」への寄与が評価の中心であり、写真的モダニティが美術館や展覧会だけでなく、批評と教育の制度を通じて構築された事実を示している*2。\n\nアートプラットフォームジャパンや国書刊行会による近年の再評価は、金丸を「新興写真の先駆者」として位置づけ、写真史の中でもっとも影響力ある仲介者・制度構築者の一人として再考する動きが広がっている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "国書刊行会 — 新興写真の先駆者 金丸重嶺", "url": "https://www.kokusho.co.jp/news/2022/01/202201261850.html" },
+      { "num": 2, "name": "アートプラットフォームジャパン — 金丸重嶺", "url": "https://artplatform.go.jp/ja/artists/A5649" }
+    ]
   }
 },
 {
@@ -841,12 +903,18 @@ PHOTOGRAPHERS.push(
     "日本写真"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "JCIIフォトサロン — 鈴木八郎のまなざし", "url": "https://www.jcii-cameramuseum.jp/photosalon/2009/12/01/9123/" },
+    { "label": "JCII Library — 写真人とその本 30 ／鈴木八郎", "url": "https://www.jcii-camera.or.jp/business/pdf/photographer_books30.pdf" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "鈴木八郎（1900–1985）は日本の写真家・編集者・写真史家。撮影者としての実践と、編集・批評・カメラ文化の歴史研究を並行して行った、複合的な役割の人物である*1*2。\n\n鈴木の意義は、個々の作品のみならず、雑誌・写真研究・教育という場の形成に求められる。戦前から戦後にかけての日本写真文化が、雑誌・サロン・編集者を通じて技術と趣味を媒介することで成立していた点で、鈴木はその媒介的位置を担った*2。金丸重嶺との共同作業や写真雑誌「Camera Club」への関与は、「新しい写真」の理念が広い受け手に届く経路を整えた*1*2。写真史においては、傑出した名声よりも、写真的モダニティを支えたインフラとしての役割が評価される*1。\n\nJCIIフォトサロンは鈴木の多面的な役割——写真家・編集者・研究者・歴史家——を強調した回顧展を開催している。批評的受容は、単一の作家スタイルの解析よりも、写真文化の生態系における位置づけを優先する傾向にある*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "JCIIフォトサロン — 鈴木八郎のまなざし", "url": "https://www.jcii-cameramuseum.jp/photosalon/2009/12/01/9123/" },
+      { "num": 2, "name": "JCII Library — 写真人とその本 30 ／鈴木八郎", "url": "https://www.jcii-camera.or.jp/business/pdf/photographer_books30.pdf" }
+    ]
   }
 },
 {
@@ -862,12 +930,18 @@ PHOTOGRAPHERS.push(
     "日本写真"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "アートプラットフォームジャパン — 長谷川伝次郎", "url": "https://artplatform.go.jp/ja/artists/A5647" },
+    { "label": "国立国会図書館サーチ — 満洲幻想", "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000001937870" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "長谷川伝次郎（1894–1976）は日本の写真家・旅行者。チベット・満洲を含む辺境地域の撮影と出版で知られ、主流の展覧会史とは異なる経路で写真を用いた人物として記録されている*1*2。\n\n長谷川の活動は、探検・旅行・出版というコンテクストのなかで写真を機能させる実践として特徴づけられる。著書「満洲幻想：伝説の写真家長谷川伝次郎」に記録された活動は、カメラを芸術的自己表現よりも探索と記録の手段として使った証左である*2。都市的モダニズムや展覧会写真の文脈とは距離を置き、日本写真史の「辺縁」において政治的に帯電した地域を写真と旅で結びつけた点に独自の意味がある*1。個別の形式的スタイルの確定は資料の制約から困難だが、写真文化が多様な使用形態をとっていた時代を示す事例として位置づけられる*1*2。\n\n受容は比較的限られており、遡及的な再構成が中心となっている。現在の評価は旅行と記録の実践者としての歴史的位置に集中しており、作品の形式分析よりも活動の文脈的意義が強調されている*1。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "アートプラットフォームジャパン — 長谷川伝次郎", "url": "https://artplatform.go.jp/ja/artists/A5647" },
+      { "num": 2, "name": "国立国会図書館サーチ — 満洲幻想", "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000001937870" }
+    ]
   }
 },
 {
@@ -881,12 +955,20 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Magnum Photos — David Seymour", "url": "https://www.magnumphotos.com/photographer/david-seymour/" },
+    { "label": "Magnum — David Seymour: A Life Worth Living", "url": "https://www.magnumphotos.com/theory-and-practice/david-seymour-life-worth-living/" },
+    { "label": "National Gallery of Art — David Seymour", "url": "https://www.nga.gov/artists/31211-david-seymour" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "デヴィッド・シーモア（本名：ダヴィド・シミン、1911–1956）はポーランド生まれの写真家。スペイン内戦の報道からキャリアを始め、戦後はマグナム・フォトスの創設メンバーとして活動した*1*2。\n\n主要な主題はスペイン内戦の市民生活・第二次世界大戦の戦場・戦後ヨーロッパの子どもたちである。とりわけ、戦後のUNICEF支援で撮影した欧州の戦争孤児・難民の子どもたちを記録した連作は、フォトエッセイの形式で政治的惨禍を人間的スケールに翻訳した代表的実践として繰り返し参照される*2*3。彼自身の言葉——「私はもはやリトグラフを作っていない。私は記者だ、より正確にいえばフォト・リポーターだ」——は、写真を報告手段として明確に位置づける自覚を示している*2。「政治的事件の効果を、抽象としてではなく身体と共同体のレベルで撮る」という方法的方針は、マグナムの人道的フォトジャーナリズムの倫理的軸の一つを形成した*1。\n\nマグナムの公式的な評価はシーモアの戦後子ども連作をジャーナリズムと写真倫理の両面で持続的に参照し続けている。キャパやカルティエ＝ブレッソンに比べて一般的な認知度は相対的に低いが、後の批評はその人道的集中度と社会的感受性を独自の資質として評価している*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Magnum Photos — David Seymour", "url": "https://www.magnumphotos.com/photographer/david-seymour/" },
+      { "num": 2, "name": "Magnum — David Seymour: A Life Worth Living", "url": "https://www.magnumphotos.com/theory-and-practice/david-seymour-life-worth-living/" },
+      { "num": 3, "name": "National Gallery of Art — David Seymour", "url": "https://www.nga.gov/artists/31211-david-seymour" }
+    ]
   }
 },
 {
@@ -900,12 +982,18 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Library of Congress — John Vachon Papers", "url": "https://findingaids.loc.gov/repositories/17/resources/1646" },
+    { "label": "Library of Congress — FSA-OWI Collection (Vachon)", "url": "https://www.loc.gov/search/?in=partof%3Afarm+security+administration-office+of+war+information+photo+collection&q=%22John+Vachon%22" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ジョン・ヴァション（1914–1975）はアメリカの写真家。FSA（農業安定局）・OWI（戦時情報局）での記録活動から始まり、後に「Look」誌などの雑誌写真家として活動した*1*2。\n\nFSA時代の主要な主題は、テキサス・ヴァージニア・中西部の小さな町・道路沿いの建築・労働者・看板・日常の空間であった。劇的な瞬間よりも、建造環境の細部や静かな社会的テクスチャーに向かう観察の傾向が特徴で、FSA写真家のなかでは比較的内省的・省察的なスタイルとして後に評価されている*1。ヴァーナキュラー建築や看板への強い関心は、社会記録が「象徴的な場面」だけで成り立つのではなく、蓄積された場の観察からも成立することを示している*2。\n\nアーカイブ的な再評価によって、ヴァションはFSA世代のなかでもっとも「静かな観察者」的な写真家として位置づけられてきた。彼の記録は象徴的傑作よりも持続的な注意力によってFSAアーカイブの厚みを構成したと評価される*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Library of Congress — John Vachon Papers", "url": "https://findingaids.loc.gov/repositories/17/resources/1646" },
+      { "num": 2, "name": "Library of Congress — FSA-OWI Collection (Vachon)", "url": "https://www.loc.gov/search/?in=partof%3Afarm+security+administration-office+of+war+information+photo+collection&q=%22John+Vachon%22" }
+    ]
   }
 },
 {
@@ -919,12 +1007,20 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "ICP — Arthur Rothstein", "url": "https://www.icp.org/browse/archive/constituents/arthur-rothstein" },
+    { "label": "Smithsonian American Art Museum — Arthur Rothstein", "url": "https://americanart.si.edu/artist/arthur-rothstein-32144" },
+    { "label": "APAG — Arthur Rothstein", "url": "https://www.apag.us/arthur-rothstein/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "アーサー・ロススタイン（1915–1985）はアメリカの写真家。ロイ・ストライカー率いるFSA写真プロジェクト最初期のメンバーとして、大恐慌期の農村危機を記録した*1*2。\n\nダスト・ボウル（黒土嵐）地帯での撮影で知られ、なかでもサウスダコタの乾燥地帯で砂塵から逃げる父子を捉えた写真は、FSA記録写真の象徴的イメージとして広く流通した*1。強調的な構図、環境条件への感度、社会的・生態的危機を広範な受け手に向けて可読化する能力が特徴である*2。1936年に牛の頭骨を意図的に配置して撮影したとして演出論争が起きたことは、ドキュメンタリー写真における「真正性」の問題を提起した事例として現在も議論されている*3。後にニュー・ディール期を超えて雑誌写真家・編集者としての幅広いキャリアを展開した。\n\nICPとスミソニアンはロススタインを1930年代アメリカ社会ドキュメント写真の定義的な担い手として位置づける。彼の画像がどのように公共的説得の回路に組み込まれて機能したかという問いは、後の批評が繰り返し立ち返る論点である*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "ICP — Arthur Rothstein", "url": "https://www.icp.org/browse/archive/constituents/arthur-rothstein" },
+      { "num": 2, "name": "Smithsonian American Art Museum — Arthur Rothstein", "url": "https://americanart.si.edu/artist/arthur-rothstein-32144" },
+      { "num": 3, "name": "APAG — Arthur Rothstein", "url": "https://www.apag.us/arthur-rothstein/" }
+    ]
   }
 },
 {
@@ -938,12 +1034,20 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Archives of American Art — Jack Delano Papers", "url": "https://www.aaa.si.edu/collections/jack-delano-papers-9300/more-information" },
+    { "label": "Library of Congress — Jack Delano Papers", "url": "https://findingaids.loc.gov/repositories/19/resources/2969" },
+    { "label": "Library of Congress — Portrait of Jack Delano", "url": "https://www.loc.gov/resource/fsa.8b31250/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ジャック・デラーノ（1914–1997）はウクライナ生まれのアメリカ人写真家。FSA・OWIの写真家として活動した後、プエルトリコに移住して写真・映画・音楽の多分野で活動した*1*2。\n\nFSA・OWI時代の代表的作品はペンシルヴェニアや中西部の鉄道・炭鉱・農業・労働者の記録で、とりわけカラー写真の使用が際立っている。戦時中にFSA写真家としてカラーフィルムを用いた少数の例の一人として、デラーノの作品は近年の再評価で注目されている*1*3。インフラ——鉄道・道路・産業施設——への強い関心が特徴で、人物だけでなく社会が組織される構造的な網の目を視覚化しようとする方法論をとる*1。後のプエルトリコでの活動は、FSAの大陸的ドキュメンタリーをカリブ海へと拡張した実践として位置づけられる*2。\n\nアーカイブへのアクセスと近年のカラー写真再評価によって、デラーノはFSA世代のなかでも独自の位置が認識されつつある。社会的問題の記録と色彩的・インフラ的な感受性の組み合わせが再評価の軸となっている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Archives of American Art — Jack Delano Papers", "url": "https://www.aaa.si.edu/collections/jack-delano-papers-9300/more-information" },
+      { "num": 2, "name": "Library of Congress — Jack Delano Papers", "url": "https://findingaids.loc.gov/repositories/19/resources/2969" },
+      { "num": 3, "name": "Library of Congress — Portrait of Jack Delano", "url": "https://www.loc.gov/resource/fsa.8b31250/" }
+    ]
   }
 },
 {
@@ -957,12 +1061,18 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Library of Congress — Russell Lee Biography", "url": "https://www.loc.gov/item/prn-21-012/definitive-biography-brings-life-of-influential-documentary-photographer-russell-lee-out-of-the-shadows-drawing-on-librarys-photography-archive/2021-03-01/" },
+    { "label": "National Archives — Russell Lee Exhibit", "url": "https://www.archives.gov/news/articles/power-and-light-follow-up" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ラッセル・リー（1903–1986）はアメリカの写真家。FSAの主要写真家のひとりとして、農業・労働・農村コミュニティを中心に大規模なドキュメント活動を行った*1*2。\n\nリーの方法論の特徴は、単一の傑作よりも体系的な蓄積によって社会的現実を記録しようとする姿勢にある。石炭・農業労働・中西部の小都市など、特定のコミュニティや産業を連続的に撮影し、一連の記録が持つ社会的密度を重視した*1。FSA写真家のなかでもっとも多くのプリントを残したとされており、アーカイブの規模自体が歴史的意義をもつ*1。特定の象徴的フレームではなく、コミュニティが実際に生き働く様子を複数の写真として積み上げる方法は、ドキュメンタリーの別の可能性を示している*2。\n\n議会図書館とナショナル・アーカイブズはリーを中心的なFSA写真家として位置づけ、近年のアーカイブ整備と伝記研究を通じてその全体像の再評価が進んでいる。数少ない名作への集中ではなく、アーカイブ全体の重みを評価する視点が強まっている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Library of Congress — Russell Lee Biography", "url": "https://www.loc.gov/item/prn-21-012/definitive-biography-brings-life-of-influential-documentary-photographer-russell-lee-out-of-the-shadows-drawing-on-librarys-photography-archive/2021-03-01/" },
+      { "num": 2, "name": "National Archives — Russell Lee Exhibit", "url": "https://www.archives.gov/news/articles/power-and-light-follow-up" }
+    ]
   }
 },
 {
@@ -976,12 +1086,18 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Smithsonian American Art Museum — Ben Shahn", "url": "https://americanart.si.edu/artist/ben-shahn-4330" },
+    { "label": "MoMA — Ben Shahn", "url": "https://www.moma.org/artists/5381" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ベン・シャーン（1898–1969）はリトアニア生まれのアメリカ人芸術家・写真家。画家として広く知られるが、1930年代のFSA期に行った写真の実践も、その社会的ビジョンを理解するうえで重要である*1*2。\n\nシャーンの写真の主題は、商店の看板・文字・路上の労働者・農村コミュニティの日常で、絵画から持ち込んだグラフィック的感覚が構図に反映されている。テキストや文字への強い関心は、公共空間における言語と権力の関係をドキュメントとして残そうとする意識に根ざしており、FSAの文脈のなかでも独自の位置を示している*2。写真は彼にとって絵画の参照素材であると同時に、社会的現実に直接向き合うための媒体でもあった。ロースタインやラッセル・リーと同じドキュメンタリーの場にいながら、より強い政治的コミットメントと絵画的構成感覚が作品を特徴づける*1*2。\n\nスミソニアンとMoMAは、シャーンの写真を絵画と同等の実践として再評価する立場をとる。絵画への注目によって写真が副次的に扱われることへの批判的見直しが続いており、社会的ドキュメンタリーとアメリカ近代主義の連続性として再文脈化されている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Smithsonian American Art Museum — Ben Shahn", "url": "https://americanart.si.edu/artist/ben-shahn-4330" },
+      { "num": 2, "name": "MoMA — Ben Shahn", "url": "https://www.moma.org/artists/5381" }
+    ]
   }
 },
 {
@@ -995,12 +1111,19 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "National Gallery of Art — Ansel Adams", "url": "https://www.nga.gov/artists/25-ansel-adams" },
+    { "label": "MoMA — Ansel Adams", "url": "https://www.moma.org/artists/53" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "アンセル・アダムス（1902–1984）はアメリカの写真家。アメリカ西部の大判風景写真と、写真教育・技術論への貢献でその名を残す*1。\n\nアダムスの写真は、ヨセミテを中心とする西部の荒野を、精緻なトーン制御のもとに提示する。代表作《Moonrise, Hernandez, New Mexico》（1941年）は広大な空と月、地上の墓地を単一の露光で収め、光の分布を極限まで制御した作品である*1*2。彼が開発した「ゾーン・システム」は、露出から暗室作業まで一貫してトーンを「予見」（previsualization）する方法論として、後世の写真家・教育者に広く普及した*3。Group f/64のメンバーとしてストレート写真を擁護し、絵画的な柔焦点への対抗軸を形成した*1。\n\nNGAやMoMAはアダムスをアメリカン・モダニズムの枠組みで論じつつ、環境保全運動との連携と写真教育の制度化における役割を強調する。技術的制御そのものが倫理的・美学的意味を帯びるという彼の立場は、ファイン・アート写真の文化的権威を確立するうえで重要な役割を果たした*1*2*3。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "National Gallery of Art — Ansel Adams", "url": "https://www.nga.gov/artists/25-ansel-adams" },
+      { "num": 2, "name": "MoMA — Ansel Adams", "url": "https://www.moma.org/artists/53" },
+      { "num": 3, "name": "MoMA Press Release — Ansel Adams", "url": "https://www.moma.org/documents/moma_press-release_327245.pdf" }
+    ]
   }
 },
 {
@@ -1014,12 +1137,18 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA — Minor White, the eye that shapes", "url": "https://www.moma.org/documents/moma_catalogue_2130_300062906.pdf" },
+    { "label": "Museum of Fine Arts, Houston — Minor White", "url": "https://emuseum.mfah.org/people/1108/minor-white" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "マイナー・ホワイト（1908–1976）はアメリカの写真家・批評家・編集者・教育者。写真の知覚理論とメディテーション的実践の発展に貢献し、雑誌「Aperture」の創刊（1952年）に関与したことでも知られる*1*2。\n\nホワイトの写真は、岩・植物・建物などの表面が単なる記録を超えて内的な共鳴を生む「等価物（Equivalence）」として機能するよう設計されている。アルフレッド・スティーグリッツの「等価」概念を引き継ぎながら、より明示的に知覚と内観の実践としての写真論を体系化した*1。精密なトーン制御・テクスチャーへの強い関心・シーケンス（連作）形式による意味の構築が手法上の特徴で、複数の写真が連続することで単体では得られない詩的・哲学的な読みを生むことを重視した*2。アンセル・アダムスのゾーン・システムを習得したうえで、技術的制御をあくまで表現的目的のための手段として位置づけた点が、アダムスとの違いとして論じられることがある*1。\n\nMoMAやミュージアム・オブ・ファイン・アーツ・ヒューストンはホワイトをアメリカ写真の主要な理論家かつ実践者として評価する。写真教育への貢献と「Aperture」を通じた批評的言説の形成は、戦後アメリカのファイン・アート写真の制度化において重要な役割を果たした*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "MoMA — Minor White, the eye that shapes", "url": "https://www.moma.org/documents/moma_catalogue_2130_300062906.pdf" },
+      { "num": 2, "name": "Museum of Fine Arts, Houston — Minor White", "url": "https://emuseum.mfah.org/people/1108/minor-white" }
+    ]
   }
 },
 {
@@ -1033,12 +1162,20 @@ PHOTOGRAPHERS.push(
   "era": "1930",
   "movements": [],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA — Helen Levitt", "url": "https://www.moma.org/artists/3520" },
+    { "label": "ICP — Helen Levitt", "url": "https://www.icp.org/browse/archive/constituents/helen-levitt" },
+    { "label": "Metropolitan Museum of Art — Helen Levitt New York", "url": "https://www.metmuseum.org/art/collection/search/265603" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ヘレン・レヴィット（1913–2009）はアメリカの写真家。ニューヨーク、とりわけブロンクスやハーレムなどの路上で子どもたちを中心に撮影した作品で知られる*1*2。\n\n小型カメラを使い、街路の人びと——とりわけ子どもの遊び・チョーク落書き・身体的なやりとり——を侵入感なく捉えることに徹した。ウォーカー・エヴァンスとの交流が彼女のストリート写真形成に影響したとされるが、エヴァンスの建築的・社会記録的な視点とは異なり、レヴィットは路上をひとつのパフォーマンス空間・集合的想像力の場として記録した*2*3。チョーク落書き連作は、一時的・匿名的な表現物を写真によって保存するという行為自体が、都市のエフェメラルな文化への関心を示している*1。後年には8mmフィルムや写真集の制作も行い、観察の積み重ねによる記録の方法を生涯通じて維持した*3。\n\nMoMAとICPの回顧展は、レヴィットを20世紀ストリート写真の中心的人物として反復的に位置づける。近い視点・非演出・リズムの精密さを特質として評価しながら、彼女の作品がニューヨーク都市文化の消えゆく形式を保存した歴史的記録でもあることを強調する*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "MoMA — Helen Levitt", "url": "https://www.moma.org/artists/3520" },
+      { "num": 2, "name": "ICP — Helen Levitt", "url": "https://www.icp.org/browse/archive/constituents/helen-levitt" },
+      { "num": 3, "name": "Metropolitan Museum of Art — Helen Levitt New York", "url": "https://www.metmuseum.org/art/collection/search/265603" }
+    ]
   }
 },
 {
@@ -1054,12 +1191,22 @@ PHOTOGRAPHERS.push(
     "日本写真"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "Web NDL Authorities — 影山光洋", "url": "https://id.ndl.go.jp/auth/ndlna/00024812" },
+    { "label": "東京都写真美術館 — プレス・カメラマン・ストーリー", "url": "https://topmuseum.jp/upload/4/199/press02.pdf" },
+    { "label": "森美術館 — ゴー・ビトゥイーンズ展", "url": "https://www.mori.art.museum/contents/go_betweens/info/index.html" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "影山光洋（1907–1981）は日本の写真家・フォトジャーナリスト。朝日新聞のカメラマンとして報道写真に従事する一方、家族・子どもの長期記録でも知られる*1*2。\n\n影山の活動は、報道（プレス）写真の現場と、長期的な私的観察という二重の構造をもつ。1931年に撮影した《映画館の婦人席》は初期の仕事として記録され、「芋っ子ヨッチャンの一生」は子どもの成長を長期にわたって追った連作として、日常観察を写真で継続した希有な例である*3*5。新聞社の記者として時事・戦争・戦後復興を記録する一方、家族や子どもを被写体とした長期観察作品は、報道写真が本来は担わない時間の厚みを与えている*2。昭和期を通じて、パブリックな事件記録とプライベートな生活記録が平行して存在したことが影山作品の歴史的な位置を形づくっている*2*3。\n\n現在の受容は批評的な蓄積よりもアーカイブと展覧会の活用が中心で、東京都写真美術館「プレス・カメラマン・ストーリー」や森美術館「ゴー・ビトゥイーンズ展」での再提示を通じて、子ども・家族・戦時という複数の文脈から再文脈化されている*3*5。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Web NDL Authorities — 影山光洋", "url": "https://id.ndl.go.jp/auth/ndlna/00024812" },
+      { "num": 2, "name": "CiNii Books — 写真昭和50年史", "url": "https://ci.nii.ac.jp/ncid/BN02930687" },
+      { "num": 3, "name": "東京都写真美術館 — プレス・カメラマン・ストーリー", "url": "https://topmuseum.jp/upload/4/199/press02.pdf" },
+      { "num": 4, "name": "お茶の水女子大学 — 1920〜30年代沖縄", "url": "https://www2.igs.ocha.ac.jp/wp-content/uploads/2006/04/journal09001.pdf" },
+      { "num": 5, "name": "森美術館 — ゴー・ビトゥイーンズ展", "url": "https://www.mori.art.museum/contents/go_betweens/info/index.html" }
+    ]
   }
 },
 {

@@ -113,12 +113,20 @@ const PHOTOGRAPHER_MANUAL_ADDITIONS = [
     era: '1930',
     movements: ['シュルレアリスム', '戦争写真'],
     thumbnail: '',
-    links: [],
+    links: [
+      { label: 'Imperial War Museums — Lee Miller', url: 'https://www.iwm.org.uk/history/lee-millers-second-world-war' },
+      { label: 'Lee Miller Archives', url: 'https://www.patreon.com/leemillerarchives/about' },
+      { label: 'LACMA — Surrealist Consolidated (Lee Miller)', url: 'https://www-images.lacma.org/s3fs-public/module-uploads/E4E_SurrealistConsolidated.pdf' },
+    ],
     amazon: '',
     context: {
-      text: '準備中。',
+      text: 'リー・ミラー（1907–1977）はアメリカの写真家。ヴォーグ誌のファッションモデルから写真家へと転じ、シュルレアリスム実験・ファッション写真・戦争報道という三つの位相を生涯通じて横断した*1*2。\n\nパリでのマン・レイとの協働（1929–1932年頃）でソラリゼーション技法の共同開発に関わり、身体と光の不安定な関係を探る実験的実践を展開した*2。1939年以降は「Vogue」誌の従軍写真家として第二次世界大戦のヨーロッパを撮影し、ノルマンディー上陸から解放されたパリ、そしてダッハウ・ブーヘンヴァルトなどの強制収容所解放を記録した*1。ヒトラーのミュンヘンのアパートの浴槽に入浴する自身を撮影した写真（1945年）は、個人の身体と歴史的暴力の場所の交差という点で、後の批評が繰り返し論じる作品となった*1*3。彼女の実践はファッション・シュルレアリスム・報道という分野を分断された職歴としてではなく、視覚的アイデンティティの不安定性を一貫して探る連続したものとして読まれている*1*2。\n\n近年の評価はマン・レイとの連関を超えて、リー・ミラーを自律した写真家として再定置する方向に向かっている。インペリアル・ウォー・ミュージアムとリー・ミラー・アーカイブは戦争写真の再文脈化を通じて受容の転換を牽引し、シュルレアリスト的な眼と戦争報道の連続性が議論の中心となっている*1*2。',
       textEn: 'Coming soon.',
-      citations: [],
+      citations: [
+        { num: 1, name: 'Imperial War Museums — Lee Miller', url: 'https://www.iwm.org.uk/history/lee-millers-second-world-war' },
+        { num: 2, name: 'Lee Miller Archives', url: 'https://www.patreon.com/leemillerarchives/about' },
+        { num: 3, name: 'LACMA — Surrealist Consolidated (Lee Miller)', url: 'https://www-images.lacma.org/s3fs-public/module-uploads/E4E_SurrealistConsolidated.pdf' },
+      ],
     },
   },
   {
@@ -132,12 +140,20 @@ const PHOTOGRAPHER_MANUAL_ADDITIONS = [
     era: '1930',
     movements: ['戦争写真', 'ドキュメンタリー'],
     thumbnail: '',
-    links: [],
+    links: [
+      { label: 'Magnum Photos — George Rodger', url: 'https://www.magnumphotos.com/photographer/george-rodger/' },
+      { label: 'Magnum — George Rodger: The Sahara', url: 'https://www.magnumphotos.com/arts-culture/travel/george-rodger-sahara/' },
+      { label: 'ICP — George Rodger', url: 'https://www.icp.org/search-results/George%20Rodger/all/all/relevant/0' },
+    ],
     amazon: '',
     context: {
-      text: '準備中。',
+      text: 'ジョージ・ロジャー（1908–1995）はイギリスの写真家。第二次世界大戦の従軍写真家として活動し、戦後はアフリカを中心に長期ドキュメント写真を展開した。マグナム・フォトスの創設メンバーのひとりである*1*2。\n\n代表的な転換点は1945年4月のベルゲン＝ベルゼン強制収容所の解放取材であった。山積みにされた遺体の前を歩きながら最良の構図を無意識に探している自分に気づいたロジャーは、その体験をきっかけに戦争写真への継続的従事に疑念を抱き、ヨーロッパを離れてアフリカへ向かうことを決意した*1*2。以後、アフリカ各地の農村・遊牧社会・伝統文化を長期にわたって記録し、とりわけスーダンのヌバ族の写真は視覚的密度と敬意ある距離感で国際的に注目された*3。戦場写真家としての訓練された視線と、被写体の生活世界に寄り添おうとする姿勢の共存が、アフリカ作品の特質を形づくっている*1。\n\nマグナムの公式的な位置づけは、ベルゲン＝ベルゼンがロジャーの実践に与えた倫理的転換を強調し続けている。戦争とアフリカという二つの軸を切り離すのではなく、証言の倫理的責任という一つのテーマとして把握する近年の批評的傾向がある*1*2。',
       textEn: 'Coming soon.',
-      citations: [],
+      citations: [
+        { num: 1, name: 'Magnum Photos — George Rodger', url: 'https://www.magnumphotos.com/photographer/george-rodger/' },
+        { num: 2, name: 'Magnum — George Rodger: The Sahara', url: 'https://www.magnumphotos.com/arts-culture/travel/george-rodger-sahara/' },
+        { num: 3, name: 'ICP — George Rodger', url: 'https://www.icp.org/search-results/George%20Rodger/all/all/relevant/0' },
+      ],
     },
   },
   {
@@ -151,12 +167,20 @@ const PHOTOGRAPHER_MANUAL_ADDITIONS = [
     era: '1930',
     movements: ['戦争写真', 'ドキュメンタリー'],
     thumbnail: '',
-    links: [],
+    links: [
+      { label: 'Princeton University Art Museum — William Vandivert', url: 'https://artmuseum.princeton.edu/art/collections/objects/137061' },
+      { label: 'MoMA Press Release 1942 — Vandivert', url: 'https://www.moma.org/docs/press_archives/788/releases/MOMA_1942_0030_1942-04-14_42414-26.pdf' },
+      { label: 'Georgia O\'Keeffe Museum — William Vandivert', url: 'https://data.okeeffemuseum.org/actor/1765/' },
+    ],
     amazon: '',
     context: {
-      text: '準備中。',
+      text: 'ウィリアム・ヴァンディヴァート（1912–1989）はアメリカの写真家。「Life」誌のスタッフ写真家として活動し、マグナム・フォトスの創設メンバーのひとりである*1*2。\n\n戦時中のヨーロッパを「Life」誌のカメラマンとして取材し、ベルゲン＝ベルゼンなどの強制収容所解放時の写真は「Life」誌の「残虐行為（Atrocities）」特集で大きく掲載された*2。雑誌の見開き・ページレイアウトという出版形態が写真の意味生成に不可分に組み込まれており、ヴァンディヴァートの実践はマス・メディアを通じた歴史的衝撃の構成という問題を体現している*1*3。同時代にキャパ・シーモア・ロジャーとともにマグナム創設に加わったことは、雑誌写真家が制度的自律性を求めた戦後の動きを示す*2。\n\n現在のヴァンディヴァートの受容は他のマグナム創設者に比べて相対的に限られているが、プリンストン大学美術館やジョージア・オキーフ美術館などの所蔵によって戦時報道写真家としての歴史的位置は確認できる。美術館的なカノンよりも、雑誌を媒体とした歴史的証言の実践者として評価されている*1*2。',
       textEn: 'Coming soon.',
-      citations: [],
+      citations: [
+        { num: 1, name: 'Princeton University Art Museum — William Vandivert', url: 'https://artmuseum.princeton.edu/art/collections/objects/137061' },
+        { num: 2, name: 'MoMA Press Release 1942 — Vandivert', url: 'https://www.moma.org/docs/press_archives/788/releases/MOMA_1942_0030_1942-04-14_42414-26.pdf' },
+        { num: 3, name: 'Georgia O\'Keeffe Museum — William Vandivert', url: 'https://data.okeeffemuseum.org/actor/1765/' },
+      ],
     },
   },
   {
