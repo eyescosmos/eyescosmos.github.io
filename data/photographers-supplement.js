@@ -429,19 +429,26 @@ PHOTOGRAPHERS.push(
   "nameJa": "福原信三",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1910s / 1910年代",
-  "gender": "",
+  "years": "1883–1948",
+  "gender": "男性",
   "era": "1910",
   "movements": [
-    "日本写真"
+    "日本写真",
+    "ピクトリアリズム"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "資生堂ギャラリー — プレスリリース", "url": "https://gallery.shiseido.com/wpss/wp-content/uploads/2018/09/wpss-1st2018-10-19-2018-12-26-2nd2019-1-16-2019-3-17-201809051.pdf" },
+    { "label": "北の大学資料 — 写真家としての福原信三（PDF）", "url": "https://kitanodaigagaku.music.coocan.jp/link/docs/20230308v4.pdf" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "福原信三（1883–1948）は東京生まれ。資生堂二代目社長として企業経営を担いながら、写真を芸術として位置づけるための制度的基盤の整備に尽力した写真家・文化組織者である。\n\n福原の写真は霧・水面の反射・抑制されたトーンによるパリや東京の大気的な都市・風景描写を特徴とする。被写体を地誌的な記録として提示するのではなく、光と雰囲気を通じて情感を持つ場として提示しようとする。この方法はピクトリアリズムや象徴主義的な美学と接点を持ちながら、それを日本の大正・昭和初期の文脈において翻案したものだ。福原の重要性は写真単体にとどまらない。1919年創設の資生堂ギャラリーを拠点とし、写真を絵画・デザイン・文学と並ぶ文化的実践として位置づけるための制度的な枠組みを構築した。写真誌への寄稿、写真団体への関与、そして「写真は芸術たりうる」という主張の実践的デモンストレーション——これらが福原の写真史上の位置を決定する*1。個々の写真作品はその主張の実例として機能すると同時に、より大きな制度的・言説的プロジェクトの一部をなしていた*2。\n\n後世の機関的評価は福原を日本近代写真美学の礎として捉え、個別作品よりもその制度的役割を重視する傾向がある。資生堂ギャラリーや展覧会文化との連携が、彼の重要性を純粋なオートゥール論を超えたところに位置づけている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "資生堂ギャラリー — プレスリリース（2018年）", "url": "https://gallery.shiseido.com/wpss/wp-content/uploads/2018/09/wpss-1st2018-10-19-2018-12-26-2nd2019-1-16-2019-3-17-201809051.pdf" },
+      { "num": 2, "name": "北の大学資料 — 個性と普遍性：写真家としての福原信三", "url": "https://kitanodaigagaku.music.coocan.jp/link/docs/20230308v4.pdf" }
+    ]
   }
 },
 {
@@ -450,76 +457,114 @@ PHOTOGRAPHERS.push(
   "nameJa": "野島康三",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1910s / 1910年代",
-  "gender": "",
+  "years": "1889–1964",
+  "gender": "男性",
   "era": "1910",
   "movements": [
-    "日本写真"
+    "日本写真",
+    "ピクトリアリズム",
+    "ポートレート"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "京都国立近代美術館 — 野島康三とその周辺", "url": "https://www.momak.go.jp/Japanese/exhibitionArchive/1991/226.html" },
+    { "label": "埼玉県立近代美術館 — 野島康三と斎藤与里", "url": "https://pref.spec.ed.jp/momas/2025nojima_yori" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "野島康三（1889–1964）は埼玉生まれ。写真家・スタジオ経営者・展覧会主催者として活動し、絵画的写真からより近代的な写真表現への移行期において、日本の写真史上重要な役割を果たした。\n\n野島の代表的な被写体は肖像と裸体であり、写真と絵画の関係性の問題を中心に据えた実践を展開した。初期から後期にかけての作品は、絵画的な柔らかさと人体・顔への直接的な集中が交差し、絵画の模倣に終わらず、写真固有の記述的・トーン的能力を探る方向へと向かっている。「兜屋」を拠点とした展覧会活動やアーティスト・ネットワークの形成は、野島の重要性を画像制作にとどまらない文化的メディエーターとして位置づける根拠となる*1。写真史的にはピクトリアリズムと「新興写真」の閾として論じられることが多く、その移行期的位置は、写真がその自律性・芸術的権威・身体表現を日本において交渉し直した歴史的な瞬間を照らし出す*2。京都国立近代美術館での回顧展は後にニューヨーク大学グレイ・アート・ギャラリーに巡回し、国際的な研究者の注目を集めた*3。\n\n京都・埼玉の回顧展はいずれも野島を日本近代写真史の主要人物として位置づけ、その重要性が画像制作にとどまらない展覧会実践と芸術世界への仲介にあることを強調する。受容は「芸術写真」の一部として単純化する見方から、日本的写真形式の再編における移行期的・構造的な重要人物として読む方向へと変化してきた*2*3。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "British Museum — Nojima Yasuzō photobook", "url": "https://www.britishmuseum.org/collection/object/A_2008-3035-156" },
+      { "num": 2, "name": "京都国立近代美術館 — 野島康三とその周辺（1991年）", "url": "https://www.momak.go.jp/Japanese/exhibitionArchive/1991/226.html" },
+      { "num": 3, "name": "埼玉県立近代美術館 — 野島康三と斎藤与里（2025–2026年）", "url": "https://pref.spec.ed.jp/momas/2025nojima_yori" }
+    ]
   }
 },
 {
   "id": "alexander-rodchenko",
   "name": "Alexander Rodchenko",
   "nameJa": "アレクサンドル・ロトチェンコ",
-  "nationality": "",
-  "flag": "",
-  "years": "1920s / 1920年代",
-  "gender": "",
+  "nationality": "RU",
+  "flag": "🇷🇺",
+  "years": "1891–1956",
+  "gender": "男性",
   "era": "1910",
-  "movements": [],
+  "movements": [
+    "モダニズム",
+    "新しいヴィジョン"
+  ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA — Alexander Rodchenko", "url": "https://www.moma.org/artists/5047" },
+    { "label": "Smarthistory — Alexander Rodchenko, At the Telephone", "url": "https://smarthistory.org/alexander-rodchenko-at-the-telephone/" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "アレクサンドル・ロトチェンコ（Alexander Rodchenko、1891–1956）はサンクトペテルブルク生まれのロシアの芸術家・デザイナー。絵画・彫刻・グラフィックデザインを経て、1920年代にロシア革命後のソヴィエト社会においてコンストラクティヴィズムの文脈から写真へと転じた。\n\nロトチェンコの写真は、視覚そのものの再編を目的としていた。社会主義社会にふさわしい新しい視覚意識の構築——それがコンストラクティヴィズムの要請であり、ロトチェンコはカメラをその道具として捉えた。《トランペットを持つ少年団員》（1930年）や都市の高所・低所から撮影した一連の写真は、正面からの自然主義的描写を退け、急角度の見下ろし・見上げ、激しい対角線、断片化、鋭いトーン対比によって構成される。こうした方法は形式的な実験にとどまらず、イデオロギー的な選択でもあった。見慣れた空間を見慣れない角度から提示することで、習慣的な知覚を解体し、社会主義的近代の「新しい眼」を訓練しようとする意図がある*1。写真は美術館の自律的な作品としてではなく、雑誌・展覧会・プロパガンダのデザイン回路に組み込まれた——この〈埋め込み〉こそがロトチェンコの写真の歴史的意味を決定する。ラースロー・モホイ＝ナジと並ぶ「新しい視覚（ニュー・ヴィジョン）」の担い手として論じられることが多いが、ロトチェンコの場合はソヴィエトの政治的文脈とプロダクティヴィズム的コミットメントが、より集団的・政治的な地平を作品に与えている*2。\n\n後世の写真史研究はロトチェンコを20世紀フォトモダニズムの基点として位置づける。カメラアングルと構図の体系的な再発明が評価される一方で、アヴァンギャルドの形式革新と国家的プロパガンダの不可分性が批評的に問われ続けている*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "Smarthistory — Alexander Rodchenko, At the Telephone", "url": "https://smarthistory.org/alexander-rodchenko-at-the-telephone/" },
+      { "num": 2, "name": "MoMA Press Release — Works by Rodchenko on View at The Museum of Modern Art", "url": "https://www.moma.org/documents/moma_press-release_326728.pdf" }
+    ]
   }
 },
 {
   "id": "andre-kertesz",
   "name": "André Kertész",
   "nameJa": "アンドレ・ケルテス",
-  "nationality": "",
-  "flag": "",
-  "years": "1920s / 1920年代",
-  "gender": "",
+  "nationality": "HU",
+  "flag": "🇭🇺",
+  "years": "1894–1985",
+  "gender": "男性",
   "era": "1910",
-  "movements": [],
+  "movements": [
+    "ストリート写真",
+    "ドキュメンタリー"
+  ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "ICP — André Kertész", "url": "https://www.icp.org/browse/archive/constituents/andr%C3%A9-kert%C3%A9sz" },
+    { "label": "MoMA — André Kertész", "url": "https://www.moma.org/artists/3217" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "アンドレ・ケルテス（André Kertész、1894–1985）はブダペスト生まれ。ハンガリーで撮影を始め、1920年代半ばにパリへ移住、1936年にニューヨークへ渡り後半生をアメリカで送った。\n\nケルテスの写真は、都市の日常のなかに潜む視覚的な偶然——光、影、反射、人と空間の一瞬の関係——を、静かな形式秩序として結晶させる試みだった。《風刺的ダンサー》（1926年）や《ムードン》（1928年）は、奇抜な演出を用いることなく、観察の精度と詩的な感受性によって場面を構成する。小型のライカカメラの採用は、路上での素早く目立たない撮影を可能にし、彼の視覚的感受性を技術的に支えた。パリ時代には『ヴュ』をはじめとするグラフ誌に写真を発表し、インターウォー期の国際的なアヴァンギャルドと印刷メディアの交差点で活動した*1。ニューヨーク移住後は商業誌の環境のなかで同じ視覚的知性が異なる制度的文脈に置かれることになった。彼の写真はスペクタクルに依存せず、日常の断片的な情景の中に潜在する視覚的対応関係を「発見」することで成立する。後の路上写真やポエティック・ドキュメンタリーの多くがケルテスの先例を参照したのは、記録と形式の均衡をこれほど繊細に保った写真家が少ないからだ*2。\n\nICPやMoMAはケルテスを、近代写真における感情的な抑制と形式的な精確さの両立を示した先駆者として位置づける。アメリカでの認知は遅れたが、1964年のMoMA個展以降に国際的評価が確立し、当時の記録にはすでに若い写真家たちが彼を重要な先人として挙げていたことが残っている*3。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "ICP — André Kertész", "url": "https://www.icp.org/browse/archive/constituents/andr%C3%A9-kert%C3%A9sz" },
+      { "num": 2, "name": "ICP — André Kertész exhibition", "url": "https://www.icp.org/exhibitions/andre-kertesz" },
+      { "num": 3, "name": "MoMA Press Release No. 85, 1964 — André Kertész", "url": "https://www.moma.org/docs/press_archives/3343/releases/MOMA_1964_0130_1964-11-24_85.pdf" }
+    ]
   }
 },
 {
   "id": "germaine-krull",
   "name": "Germaine Krull",
   "nameJa": "ジェルメーヌ・クリュル",
-  "nationality": "",
-  "flag": "",
-  "years": "1920s / 1920年代",
-  "gender": "",
+  "nationality": "DE",
+  "flag": "🇩🇪",
+  "years": "1897–1985",
+  "gender": "女性",
   "era": "1910",
-  "movements": [],
+  "movements": [
+    "モダニズム",
+    "フォトジャーナリズム"
+  ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "MoMA — Germaine Krull", "url": "https://www.moma.org/collection/artists/3268" },
+    { "label": "MoMA Object:Photo — Germaine Krull", "url": "https://www.moma.org/interactives/objectphoto/artists/3268.html" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "ジェルメーヌ・クリュル（Germaine Krull、1897–1985）はドイツ出身で、オランダ・フランスを中心に活動した写真家。ポートレート、産業写真、グラフ誌、フォトブック、フォトジャーナリズムなど複数の形式を横断し、単一の国民的伝統に収まらないキャリアを展開した。\n\nクリュルの写真は、鉄骨構造物・橋梁・機械といった産業的な被写体を、グラフィックな構図と強いトーン対比によって提示する。代表作『メタル（Métal）』（1928年）は橋・クレーン・エッフェル塔を斜めの切り取り・近接した画面に収め、産業形態を視覚的テクスチャーとして再提示したフォトブックの先駆的な仕事である*1。ポートレートにおいても——アンドレ・マルロー（1930年）など——同様の近代的圧縮が働いている*2。彼女の手法は単独プリントよりも雑誌や書籍における印刷・流通の論理と結びついており、「サロン・ド・レスカリエ」や「フィルム・ウント・フォト」（1929年）といった展覧会回路での活動も、作品の意味を文脈づける。インターウォー期のヨーロッパ写真において、クリュルはアヴァンギャルドとフォトジャーナリズム双方の回路を通じて、写真の媒体的可能性を書籍・雑誌・展覧会という複数の場で同時に展開した数少ない写真家のひとりだ*3。\n\nMoMAはクリュルをアヴァンギャルド・フォトジャーナリズム・フォトブック史が交差する場所に位置づける。特定の傑作への焦点化よりも形式の多様性と流通のネットワークを強調する近年の受容は、写真近代性を単線的な様式史として語ることへの批判的な視点を内包している*1。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "MoMA — Germaine Krull", "url": "https://www.moma.org/collection/artists/3268" },
+      { "num": 2, "name": "MoMA — Germaine Krull, André Malraux (1930)", "url": "https://www.moma.org/collection/works/180242" },
+      { "num": 3, "name": "MoMA Object:Photo — Métal", "url": "https://www.moma.org/interactives/objectphoto/publications/775.html" }
+    ]
   }
 },
 {
@@ -528,19 +573,26 @@ PHOTOGRAPHERS.push(
   "nameJa": "中山岩太",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1920s / 1920年代",
-  "gender": "",
+  "years": "1895–1949",
+  "gender": "男性",
   "era": "1910",
   "movements": [
-    "日本写真"
+    "日本写真",
+    "モダニズム"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "兵庫県立美術館 — 特集 中山岩太", "url": "https://www.artm.pref.hyogo.jp/exhibition/j_2504/nakayama.html" },
+    { "label": "東京藝術大学大学美術館 — 《写真》見えるもの／見えないもの", "url": "https://museum.geidai.ac.jp/exhibit/2007/05/photograph.html" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "中山岩太（1895–1949）は兵庫県生まれ。1918年からニューヨーク、のちパリで当時の国際的なアヴァンギャルドを直接吸収し、帰国後は関西を拠点に日本の近代写真の展開を先導した。\n\n中山の写真実践の核心は、写真をサロン的な模倣から切り離し、現代美術と等価な自律的な媒体として構想することにあった。1918年以降のニューヨーク・パリ滞在は、当時の国際アヴァンギャルドとの直接的な接触を可能にし、帰国後の実践に形式実験への視点を植え付けた。静物・モンタージュ・オブジェクトに向けた鋭い近代的なまなざしは、絵画的写真の語彙を超え、写真固有の形式論理を探る方向を示す*1。この姿勢——写真が「自律した芸術的思考を担える媒体」であるという確信——が日本の写真言語の拡張に果たした役割は大きい。兵庫県立美術館を中心とした近年の機関的評価は、彼を日本モダニスト写真の先駆として明確に位置づけている*1*2。\n\n近年の美術館展示は中山岩太を日本近代写真史の先駆者として積極的に評価し、海外経験が彼の形式的野心をいかに鋭化させたかを強調する。個別作品の詳細な批評よりも、後続世代が参照し得る写真的態度の確立者として描かれる傾向がある*1。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "兵庫県立美術館 — 特集 中山岩太", "url": "https://www.artm.pref.hyogo.jp/exhibition/j_2504/nakayama.html" },
+      { "num": 2, "name": "東京藝術大学大学美術館 — 《写真》見えるもの／見えないもの", "url": "https://museum.geidai.ac.jp/exhibit/2007/05/photograph.html" }
+    ]
   }
 },
 {
@@ -549,19 +601,56 @@ PHOTOGRAPHERS.push(
   "nameJa": "安井仲治",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1920s / 1920年代",
-  "gender": "",
+  "years": "1903–1942",
+  "gender": "男性",
   "era": "1910",
   "movements": [
-    "日本写真"
+    "日本写真",
+    "ピクトリアリズム",
+    "モダニズム"
   ],
   "thumbnail": "",
-  "links": [],
+  "links": [
+    { "label": "愛知県美術館 — 生誕120年 安井仲治", "url": "https://www-art.aac.pref.aichi.jp/exhibition/000409.html" }
+  ],
   "amazon": "",
   "context": {
-    "text": "準備中。",
+    "text": "安井仲治（1903–1942）は大阪生まれ。関西の写真文化と密接に結びつきながら、短い生涯の中で戦前日本写真史に最も重要な軌跡のひとつを残した写真家として、没後に高い評価を得ている。\n\n安井の写真実践はひとつの様式に収束しない。初期の作品にはピクトリアリズムの手工芸的な印画プロセスへの関心が見られるが、後年は都市・静物・日常のオブジェクトへ向けてより鋭く実験的な目線を持つ写真へと移行する。社会的な不安を帯びた場景、独自の観察、物体への集中——これらは単一の運動論理に帰属させるより、写真が何をなし得るかを問い続けた実践の軌跡として読まれるべきだ。愛知県美術館の生誕120年回顧展（2023年）は複数ジャンルにわたる全貌を提示し、ヴィンテージプリントの物質性を通じてその多様な手法の幅を示した*1。関西を拠点としたことも重要で、この地域が戦前日本における写真革新の最も活発な場のひとつであったことを安井の仕事は証言する*1*2。\n\n現在の機関的評価は安井を戦前日本を代表する写真家として位置づけるが、同時に彼の作品が単純化に抵抗することを強調する。その「多面性」は弱点ではなく、日本の写真的近代性が単線的な様式変遷では語れない複雑さをもつことの証拠として読める*1*2。",
     "textEn": "Coming soon.",
-    "citations": []
+    "citations": [
+      { "num": 1, "name": "愛知県美術館 — 生誕120年 安井仲治", "url": "https://www-art.aac.pref.aichi.jp/exhibition/000409.html" },
+      { "num": 2, "name": "愛知県美術館 — 安井仲治 プレスリリース（2023年）", "url": "https://www-art.aac.pref.aichi.jp/press/pdf/2023yasui_press.pdf" }
+    ]
+  }
+},
+{
+  "id": "charles-sheeler",
+  "name": "Charles Sheeler",
+  "nameJa": "チャールズ・シェラー",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1883–1965",
+  "gender": "男性",
+  "era": "1910",
+  "movements": [
+    "モダニズム",
+    "ストレート写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    { "label": "Whitney Museum of American Art — Charles Sheeler", "url": "https://whitney.org/artists/1209" },
+    { "label": "National Gallery of Art — Charles Sheeler", "url": "https://www.nga.gov/artists/2745-charles-sheeler" },
+    { "label": "Metropolitan Museum of Art — Charles Sheeler (1883–1965)", "url": "https://www.metmuseum.org/en/essays/charles-sheeler-1883-1965" }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "チャールズ・シェラー（Charles Sheeler、1883–1965）はフィラデルフィア生まれ。フィラデルフィアで絵画を学んだのち、商業写真を手がけながら、写真・絵画・映画の三媒体を横断する実践を展開した。\n\nシェラーの写真は、アメリカの産業・建築・農村構造を、記録の論理よりも幾何学的秩序の論理で提示する。初期の《バックス・カウンティの納屋》（Bucks County Barn、1916年）は農村建築の表面を面・辺・反復へと還元し、《アッパー・デッキ》（Upper Deck、1929年）やフォード・ルージュ工場の写真群では、同じ視覚的論理を産業近代へと拡張する*1。技法的には、鮮明なフォーカス、正面的あるいは慎重に安定させた視点、精密なトーン制御が特徴で、物語的な要素を抑制して平面・エッジ・量塊の知覚を前景化する。シェラーにとって写真は絵画の準備素材ではなく、同一の主題を複数の媒体で反復的に探究するための等価な思考ツールだった。ポール・ストランドと共同制作した映画《マンハッタ》（1921年）は、この横断的な方法論をフィルムへと拡張した試みである*2。プレシジョニズムという文脈で論じられることが多いが、シェラーの写真はドキュメントでも純粋抽象でもなく、産業アメリカを秩序ある形式体系として可視化する特有の視覚言語を確立した*3。\n\nホイットニー美術館やナショナル・ギャラリーは写真と絵画の継続性を強調しながらシェラーをアメリカン・モダニズムの中心的人物として位置づける。近年の研究では写真作品を絵画の補完としてではなく独立した主要業績として評価する傾向が強まっている*2。",
+    "textEn": "Coming soon.",
+    "citations": [
+      { "num": 1, "name": "Whitney Museum of American Art — Charles Sheeler", "url": "https://whitney.org/artists/1209" },
+      { "num": 2, "name": "National Gallery of Art — Charles Sheeler", "url": "https://www.nga.gov/artists/2745-charles-sheeler" },
+      { "num": 3, "name": "Metropolitan Museum of Art — Charles Sheeler (1883–1965)", "url": "https://www.metmuseum.org/en/essays/charles-sheeler-1883-1965" }
+    ]
   }
 },
 {
