@@ -222,8 +222,8 @@ PHOTOGRAPHERS.push(
     "text": "鹿島清兵衛（1866–1924）は、横浜・銀座を拠点とした明治の貿易商・写真愛好家で、「写真大尽（しゃしんだいじん）」の異名で知られる。銀座に「玄鹿館」スタジオを開設し、乾板製造への資金提供や写真協会の設立支援を通じて明治の写真文化形成に貢献した*1。彼の活動で最も注目されるのはX線撮影の公開実演と、マグネシウムフラッシュを用いた葬儀行列の夜間撮影など、当時の写真技術の限界を押し広げる試みである*2。鹿島は特定のスタイルを持つ写真作家というよりも、写真を技術実験と社会的展示の場として拡張させた人物として意義を持つ。乾板製造への投資と写真協会への支援を通じ、後の日本写真の技術的・制度的基盤を整備した点で、作品よりも環境を創り出した人物として写真史に位置づけられる*1*2。近年の展覧会は彼を「日本写真近代化の鍵となる人物」として再評価し、「写真大尽」という呼称そのものが、技術への情熱・資産・庇護・演劇的個性を混在させた明治写真文化の特異な形態を象徴するものとして論じられている*3。",
     "textEn": "Coming soon.",
     "citations": [
-      { "num": 1, "name": "フジフイルムスクエア「明治に生きた"写真大尽"鹿島清兵衛物語」", "url": "https://fujifilmsquare.jp/detail/19060104.html" },
-      { "num": 2, "name": "IMA ONLINE「日本写真界を発展させた"写真大尽"鹿島清兵衛の生涯と功績」", "url": "https://imaonline.jp/news/exhibition/20190329/" },
+      { "num": 1, "name": "フジフイルムスクエア「明治に生きた『写真大尽』鹿島清兵衛物語」", "url": "https://fujifilmsquare.jp/detail/19060104.html" },
+      { "num": 2, "name": "IMA ONLINE「日本写真界を発展させた『写真大尽』鹿島清兵衛の生涯と功績」", "url": "https://imaonline.jp/news/exhibition/20190329/" },
       { "num": 3, "name": "Maison de la culture du Japon à Paris「ル・ステュディオ：横浜写真IV 鹿島清兵衛」", "url": "https://www.mcjp.fr/ja/le-studio-rubrique-jp/lestudio-photographie-yokohama-shashin-iv-jp/lestudio-photographie-yokohama-shashin/lestudio-photographie-yokohama-shashin-ii/lestudio-photographie-yokohama-shashin-iv" }
     ]
   }
