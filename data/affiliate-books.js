@@ -324,3 +324,908 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.stieglitz = {
     }
   ]
 };
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.kasebier = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4cykwmL' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mmS5M3' }
+  },
+  books: [
+    {
+      titleJa: 'Gertrude Kasebier',
+      titleEn: 'Gertrude Kasebier',
+      noteJa: '女性肖像と母性表象からピクトリアリズムを見直せる。',
+      noteEn: 'Reconsiders pictorialism through female portraiture and images of motherhood.',
+      urlJa: 'https://amzn.to/4cykwmL',
+      urlEn: 'https://amzn.to/4mmS5M3'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.steichen = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4cd7hGH' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/47KiKwk' }
+  },
+  books: [
+    {
+      titleJa: 'Edward Steichen',
+      titleEn: 'Edward Steichen',
+      noteJa: '写真・モダニズム・ファッションを横断する巨人。',
+      noteEn: 'A major figure across photography, modernism, and fashion.',
+      urlJa: 'https://amzn.to/4cd7hGH',
+      urlEn: 'https://amzn.to/47KiKwk'
+    },
+    {
+      titleJa: 'Edward Steichen（別版）',
+      titleEn: 'Edward Steichen (Alternate Edition)',
+      urlJa: 'https://amzn.to/3Ovdsy6',
+      urlEn: 'https://amzn.to/4tBUKUC'
+    },
+    {
+      titleJa: 'Edward Steichen（別版 2）',
+      titleEn: 'Edward Steichen (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/3PQcEV5',
+      urlEn: 'https://amzn.to/4taKZNd'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.demachy = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4vgv7du' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/41Tz2iT' }
+  },
+  books: [
+    {
+      titleJa: 'Robert Demachy Photographe',
+      titleEn: 'Robert Demachy Photographe',
+      noteJa: '操作写真と芸術写真論の核を押さえる。',
+      noteEn: 'A key volume on manipulated photography and debates around art photography.',
+      urlJa: 'https://amzn.to/4vgv7du',
+      urlEn: 'https://amzn.to/41Tz2iT'
+    },
+    {
+      titleJa: 'Robert Demachy Photographe（別版）',
+      titleEn: 'Robert Demachy Photographe (Alternate Edition)',
+      urlJa: 'https://amzn.to/4cxpDDI'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.strand = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/41j44AD' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/47RcVNx' }
+  },
+  books: [
+    {
+      titleJa: 'Paul Strand',
+      titleEn: 'Paul Strand',
+      noteJa: 'モダニズムと社会的まなざしの接点。',
+      noteEn: 'A key junction between modernism and a socially attentive photographic gaze.',
+      urlJa: 'https://amzn.to/41j44AD',
+      urlEn: 'https://amzn.to/47RcVNx'
+    },
+    {
+      titleJa: 'Paul Strand（別版）',
+      titleEn: 'Paul Strand (Alternate Edition)',
+      urlJa: 'https://amzn.to/4cfgKxp',
+      urlEn: 'https://amzn.to/41Hiefb'
+    },
+    {
+      titleJa: 'Paul Strand（別版 2）',
+      titleEn: 'Paul Strand (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/41WUB20',
+      urlEn: 'https://amzn.to/4t0D317'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.coburn = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4bYV5L0' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4ecaI37' }
+  },
+  books: [
+    {
+      titleJa: 'Alvin Langdon Coburn',
+      titleEn: 'Alvin Langdon Coburn',
+      noteJa: '象徴主義から抽象へ向かう過渡期が見える。',
+      noteEn: 'Shows the transition from symbolism toward abstraction.',
+      urlJa: 'https://amzn.to/4bYV5L0',
+      urlEn: 'https://amzn.to/4ecaI37'
+    },
+    {
+      titleJa: 'Alvin Langdon Coburn（別版）',
+      titleEn: 'Alvin Langdon Coburn (Alternate Edition)',
+      urlJa: 'https://amzn.to/4tyWbCW',
+      urlEn: 'https://amzn.to/4ehbADw'
+    },
+    {
+      titleJa: 'Alvin Langdon Coburn（別版 2）',
+      titleEn: 'Alvin Langdon Coburn (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/3PX6BxW',
+      urlEn: 'https://amzn.to/48lD4Ek'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.manray = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4sliOda' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4dChW0e' }
+  },
+  books: [
+    {
+      titleJa: 'Man Ray Photographs',
+      titleEn: 'Man Ray Photographs',
+      noteJa: 'ダダ/シュルレアリスムの実験精神を代表。',
+      noteEn: 'A representative volume of Dada and Surrealist experimentation.',
+      urlJa: 'https://amzn.to/4sliOda',
+      urlEn: 'https://amzn.to/4dChW0e'
+    },
+    {
+      titleJa: 'Man Ray Photographs（別版）',
+      titleEn: 'Man Ray Photographs (Alternate Edition)',
+      urlJa: 'https://amzn.to/4dwqndo',
+      urlEn: 'https://amzn.to/41qITwv'
+    },
+    {
+      titleJa: 'Man Ray Photographs（別版 2）',
+      titleEn: 'Man Ray Photographs (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4ecaWat',
+      urlEn: 'https://amzn.to/4spfldJ'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.moholy = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4dVlg6T' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tbP03O' }
+  },
+  books: [
+    {
+      titleJa: 'Painting Photography Film',
+      titleEn: 'Painting Photography Film',
+      noteJa: 'バウハウス的視覚教育の必読書。',
+      noteEn: 'An essential Bauhaus text on visual education.',
+      urlJa: 'https://amzn.to/4dVlg6T',
+      urlEn: 'https://amzn.to/4tbP03O'
+    },
+    {
+      titleJa: 'Painting Photography Film（別版）',
+      titleEn: 'Painting Photography Film (Alternate Edition)',
+      urlJa: 'https://amzn.to/4snJIRM',
+      urlEn: 'https://amzn.to/4tBVCbQ'
+    },
+    {
+      titleJa: 'Painting Photography Film（別版 2）',
+      titleEn: 'Painting Photography Film (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4tzI5kX',
+      urlEn: 'https://amzn.to/47PayLh'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.sander = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4mtdZ07' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4dxBKll' }
+  },
+  books: [
+    {
+      titleJa: '20世紀の人間たち',
+      titleEn: 'People of the 20th Century',
+      noteJa: '類型と社会階層を可視化した20世紀肖像の柱。',
+      noteEn: 'A central work of twentieth-century portraiture that visualizes type and class.',
+      urlJa: 'https://amzn.to/4mtdZ07',
+      urlEn: 'https://amzn.to/4dxBKll'
+    },
+    {
+      titleJa: '20世紀の人間たち（別版）',
+      titleEn: 'People of the 20th Century (Alternate Edition)',
+      urlJa: 'https://amzn.to/3PUQcKs',
+      urlEn: 'https://amzn.to/4sH4GeJ'
+    },
+    {
+      titleJa: '20世紀の人間たち（別版 2）',
+      titleEn: 'People of the 20th Century (Alternate Edition 2)',
+      urlEn: 'https://amzn.to/3QtvQIf'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.renger = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/47PaJ9p' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4moW5f8' }
+  },
+  books: [
+    {
+      titleJa: 'The World Is Beautiful',
+      titleEn: 'The World Is Beautiful',
+      noteJa: '新即物主義の冷たい美学の決定版。',
+      noteEn: 'A definitive statement of New Objectivity\'s cool aesthetic.',
+      urlJa: 'https://amzn.to/47PaJ9p',
+      urlEn: 'https://amzn.to/4moW5f8'
+    },
+    {
+      titleJa: 'The World Is Beautiful（別版）',
+      titleEn: 'The World Is Beautiful (Alternate Edition)',
+      urlJa: 'https://amzn.to/41UIa6O',
+      urlEn: 'https://amzn.to/3QdYDk1'
+    },
+    {
+      titleJa: 'The World Is Beautiful（別版 2）',
+      titleEn: 'The World Is Beautiful (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/41pcSF7',
+      urlEn: 'https://amzn.to/4mgi1J0'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.lange = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3O3J1yZ' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cilna4' }
+  },
+  books: [
+    {
+      titleJa: 'Dorothea Lange: Words & Pictures',
+      titleEn: 'Dorothea Lange: Words & Pictures',
+      noteJa: 'FSAと社会記録の倫理を見渡しやすい。',
+      noteEn: 'An accessible entry into the ethics of FSA social documentary.',
+      urlJa: 'https://amzn.to/3O3J1yZ',
+      urlEn: 'https://amzn.to/4cilna4'
+    },
+    {
+      titleJa: 'Dorothea Lange: Words & Pictures（別版）',
+      titleEn: 'Dorothea Lange: Words & Pictures (Alternate Edition)',
+      urlJa: 'https://amzn.to/4dwEJuh',
+      urlEn: 'https://amzn.to/4mj59BS'
+    },
+    {
+      titleJa: 'Dorothea Lange: Words & Pictures（別版 2）',
+      titleEn: 'Dorothea Lange: Words & Pictures (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4cfIX7c',
+      urlEn: 'https://amzn.to/4c9bPy0'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.evans = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3Q8Zanh' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/48azPzN' }
+  },
+  books: [
+    {
+      titleJa: 'American Photographs',
+      titleEn: 'American Photographs',
+      noteJa: 'アメリカ・ドキュメンタリーの基準点。',
+      noteEn: 'A benchmark for American documentary photography.',
+      urlJa: 'https://amzn.to/3Q8Zanh',
+      urlEn: 'https://amzn.to/48azPzN'
+    },
+    {
+      titleJa: 'American Photographs（別版）',
+      titleEn: 'American Photographs (Alternate Edition)',
+      urlJa: 'https://amzn.to/4cxr1WW',
+      urlEn: 'https://amzn.to/4mlCADZ'
+    },
+    {
+      titleJa: 'American Photographs（別版 2）',
+      titleEn: 'American Photographs (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4dVm4Zt',
+      urlEn: 'https://amzn.to/47REer4'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.cartierbresson = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4ch0xrA' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4vk8Ewb' }
+  },
+  books: [
+    {
+      titleJa: '決定的瞬間',
+      titleEn: 'The Decisive Moment',
+      noteJa: '決定的瞬間の神話と実践を読む定番。',
+      noteEn: 'A classic for reading the myth and practice of the decisive moment.',
+      urlJa: 'https://amzn.to/4ch0xrA',
+      urlEn: 'https://amzn.to/4vk8Ewb'
+    },
+    {
+      titleJa: '決定的瞬間（別版）',
+      titleEn: 'The Decisive Moment (Alternate Edition)',
+      urlJa: 'https://amzn.to/48nUCQd',
+      urlEn: 'https://amzn.to/47LVpdB'
+    },
+    {
+      titleJa: '決定的瞬間（別版 2）',
+      titleEn: 'The Decisive Moment (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4vpvR0a',
+      urlEn: 'https://amzn.to/4vkav47'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.capa = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4cc1yRE' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mjMdTP' }
+  },
+  books: [
+    {
+      titleJa: 'Slightly Out of Focus',
+      titleEn: 'Slightly Out of Focus',
+      noteJa: '戦場写真の主体性と神話性を同時に読める。',
+      noteEn: 'Reads the agency and mythology of war photography together.',
+      urlJa: 'https://amzn.to/4cc1yRE',
+      urlEn: 'https://amzn.to/4mjMdTP'
+    },
+    {
+      titleJa: 'Slightly Out of Focus（別版）',
+      titleEn: 'Slightly Out of Focus (Alternate Edition)',
+      urlJa: 'https://amzn.to/4meFhXS',
+      urlEn: 'https://amzn.to/48iQfWE'
+    },
+    {
+      titleJa: 'Slightly Out of Focus（別版 2）',
+      titleEn: 'Slightly Out of Focus (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/41WWfAI',
+      urlEn: 'https://amzn.to/4tyovFD'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.domon = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3Q9VYry' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mtfhIv' }
+  },
+  books: [
+    {
+      titleJa: '土門拳 ヒロシマ',
+      titleEn: 'Ken Domon Hiroshima',
+      noteJa: '日本リアリズムの到達点として外せない。',
+      noteEn: 'An essential landmark of Japanese realism.',
+      urlJa: 'https://amzn.to/3Q9VYry',
+      urlEn: 'https://amzn.to/4mtfhIv'
+    },
+    {
+      titleJa: '土門拳 ヒロシマ（別版）',
+      titleEn: 'Ken Domon Hiroshima (Alternate Edition)',
+      urlJa: 'https://amzn.to/4t4frsm',
+      urlEn: 'https://amzn.to/4ehcZtM'
+    },
+    {
+      titleJa: '土門拳 ヒロシマ（別版 2）',
+      titleEn: 'Ken Domon Hiroshima (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4sWThIn',
+      urlEn: 'https://amzn.to/4bZV09R'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.eugenesmith = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3OwBTeB' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4t0EKM1' }
+  },
+  books: [
+    {
+      titleJa: 'MINAMATA',
+      titleEn: 'Minamata',
+      noteJa: 'ルポルタージュが人間の尊厳へ届く代表例。',
+      noteEn: 'A defining example of photojournalism reaching human dignity.',
+      urlJa: 'https://amzn.to/3OwBTeB',
+      urlEn: 'https://amzn.to/4t0EKM1'
+    },
+    {
+      titleJa: 'MINAMATA（別版）',
+      titleEn: 'Minamata (Alternate Edition)',
+      urlJa: 'https://amzn.to/4voDrIo',
+      urlEn: 'https://amzn.to/4twfywv'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.robertfrank = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3PQeKEr' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3PY9wGC' }
+  },
+  books: [
+    {
+      titleJa: 'アメリカ人',
+      titleEn: 'The Americans',
+      noteJa: '戦後アメリカ像を根底から更新した一冊。',
+      noteEn: 'A book that fundamentally reshaped postwar images of America.',
+      urlJa: 'https://amzn.to/3PQeKEr',
+      urlEn: 'https://amzn.to/3PY9wGC'
+    },
+    {
+      titleJa: 'アメリカ人（別版）',
+      titleEn: 'The Americans (Alternate Edition)',
+      urlJa: 'https://amzn.to/4miItC3'
+    },
+    {
+      titleJa: 'アメリカ人（別版 2）',
+      titleEn: 'The Americans (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/48nV5St',
+      urlEn: 'https://amzn.to/4tBrltp'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.williamklein = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4vf7Bh7' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4eaj7E7' }
+  },
+  books: [
+    {
+      titleJa: 'New York 1954.55',
+      titleEn: 'New York 1954.55',
+      noteJa: '都市のノイズを写真言語に変えた爆発点。',
+      noteEn: 'A breakthrough that turned urban noise into photographic language.',
+      urlJa: 'https://amzn.to/4vf7Bh7',
+      urlEn: 'https://amzn.to/4eaj7E7'
+    },
+    {
+      titleJa: 'New York 1954.55（別版）',
+      titleEn: 'New York 1954.55 (Alternate Edition)',
+      urlJa: 'https://amzn.to/4vl6xIn',
+      urlEn: 'https://amzn.to/4miIHZV'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.araki = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4eaNWbS' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3QrrAsK' }
+  },
+  books: [
+    {
+      titleJa: 'センチメンタルな旅 冬の旅',
+      titleEn: 'Sentimental Journey Winter Journey',
+      noteJa: '私写真の核を最も端的に掴める。',
+      noteEn: 'A concise entry into the core of the Japanese I-photograph tradition.',
+      urlJa: 'https://amzn.to/4eaNWbS',
+      urlEn: 'https://amzn.to/3QrrAsK'
+    },
+    {
+      titleJa: 'センチメンタルな旅 冬の旅（別版）',
+      titleEn: 'Sentimental Journey Winter Journey (Alternate Edition)',
+      urlJa: 'https://amzn.to/47TFkCK',
+      urlEn: 'https://amzn.to/47KkW72'
+    },
+    {
+      titleJa: 'センチメンタルな旅 冬の旅（別版 2）',
+      titleEn: 'Sentimental Journey Winter Journey (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4ce1GAe',
+      urlEn: 'https://amzn.to/4sjoHI1'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.tomatsu = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/47Q5xC8' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3PXT74Z' }
+  },
+  books: [
+    {
+      titleJa: 'Shomei Tomatsu: Chewing Gum and Chocolate',
+      titleEn: 'Shomei Tomatsu: Chewing Gum and Chocolate',
+      noteJa: '戦後日本の傷跡と消費社会の視覚化。',
+      noteEn: 'Visualizes the scars of postwar Japan and the rise of consumer society.',
+      urlJa: 'https://amzn.to/47Q5xC8',
+      urlEn: 'https://amzn.to/3PXT74Z'
+    },
+    {
+      titleJa: 'Shomei Tomatsu: Chewing Gum and Chocolate（別版）',
+      titleEn: 'Shomei Tomatsu: Chewing Gum and Chocolate (Alternate Edition)',
+      urlJa: 'https://amzn.to/41ntHAd',
+      urlEn: 'https://amzn.to/3QtxJoj'
+    },
+    {
+      titleJa: 'Shomei Tomatsu: Chewing Gum and Chocolate（別版 2）',
+      titleEn: 'Shomei Tomatsu: Chewing Gum and Chocolate (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/3OdJn5Z',
+      urlEn: 'https://amzn.to/41VcQoB'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.winogrand = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3QbQWe5' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tBwXnE' }
+  },
+  books: [
+    {
+      titleJa: 'The Man in the Crowd',
+      titleEn: 'The Man in the Crowd',
+      noteJa: '60〜70年代アメリカの視覚的過剰を読む。',
+      noteEn: 'A key to the visual excess of America in the 1960s and 1970s.',
+      urlJa: 'https://amzn.to/3QbQWe5',
+      urlEn: 'https://amzn.to/4tBwXnE'
+    },
+    {
+      titleJa: 'The Man in the Crowd（別版）',
+      titleEn: 'The Man in the Crowd (Alternate Edition)',
+      urlJa: 'https://amzn.to/48zZvFQ',
+      urlEn: 'https://amzn.to/47OBzhM'
+    },
+    {
+      titleJa: 'The Man in the Crowd（別版 2）',
+      titleEn: 'The Man in the Crowd (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4c9mMB3',
+      urlEn: 'https://amzn.to/4tjyQWx'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.friedlander = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4t01ADg' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3QtOIa0' }
+  },
+  books: [
+    {
+      titleJa: 'Self Portrait',
+      titleEn: 'Self Portrait',
+      noteJa: 'フレーム内の複雑さそのものを学べる。',
+      noteEn: 'A compact way to study complexity inside the frame itself.',
+      urlJa: 'https://amzn.to/4t01ADg',
+      urlEn: 'https://amzn.to/3QtOIa0'
+    },
+    {
+      titleJa: 'Self Portrait（別版）',
+      titleEn: 'Self Portrait (Alternate Edition)',
+      urlJa: 'https://amzn.to/4cyiVgQ',
+      urlEn: 'https://amzn.to/4vhfCBY'
+    },
+    {
+      titleJa: 'Self Portrait（別版 2）',
+      titleEn: 'Self Portrait (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4mgnC26',
+      urlEn: 'https://amzn.to/4c0j4tf'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.arbus = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3PPwtMh' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cjt4Nd' }
+  },
+  books: [
+    {
+      titleJa: 'ダイアン・アーバス',
+      titleEn: 'Diane Arbus: An Aperture Monograph',
+      noteJa: '周縁と親密さをめぐる戦後肖像の転換点。',
+      noteEn: 'A turning point in postwar portraiture around marginality and intimacy.',
+      urlJa: 'https://amzn.to/3PPwtMh',
+      urlEn: 'https://amzn.to/4cjt4Nd'
+    },
+    {
+      titleJa: 'ダイアン・アーバス（別版）',
+      titleEn: 'Diane Arbus: An Aperture Monograph (Alternate Edition)',
+      urlJa: 'https://amzn.to/4mm4Eaq',
+      urlEn: 'https://amzn.to/41j2qiq'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.moriyama = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4tAdzY4' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4ck9qkh' }
+  },
+  books: [
+    {
+      titleJa: 'Bye Bye Photography',
+      titleEn: 'Daido Moriyama: Bye Bye Photography',
+      noteJa: '粒子・ブレ・ボケ以後の写真史を象徴。',
+      noteEn: 'Emblematic of photographic history after grain, blur, and rough focus.',
+      urlJa: 'https://amzn.to/4tAdzY4',
+      urlEn: 'https://amzn.to/4ck9qkh'
+    },
+    {
+      titleJa: 'Bye Bye Photography（別版）',
+      titleEn: 'Daido Moriyama: Bye Bye Photography (Alternate Edition)',
+      urlJa: 'https://amzn.to/4meGtKQ'
+    },
+    {
+      titleJa: 'Bye Bye Photography（別版 2）',
+      titleEn: 'Daido Moriyama: Bye Bye Photography (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4vkNY7i',
+      urlEn: 'https://amzn.to/4mlKBJa'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.sherman = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4sjb4s7' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cxZMLZ' }
+  },
+  books: [
+    {
+      titleJa: 'アンタイトルド・フィルム・スティルズ',
+      titleEn: 'The Complete Untitled Film Stills',
+      noteJa: '写真とアイデンティティ演技の必修書。',
+      noteEn: 'A foundational work on photography and performed identity.',
+      urlJa: 'https://amzn.to/4sjb4s7',
+      urlEn: 'https://amzn.to/4cxZMLZ'
+    },
+    {
+      titleJa: 'アンタイトルド・フィルム・スティルズ（別版）',
+      titleEn: 'The Complete Untitled Film Stills (Alternate Edition)',
+      urlJa: 'https://amzn.to/4t4gJ6G',
+      urlEn: 'https://amzn.to/4e97ugK'
+    },
+    {
+      titleJa: 'アンタイトルド・フィルム・スティルズ（別版 2）',
+      titleEn: 'The Complete Untitled Film Stills (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4tDeEyt',
+      urlEn: 'https://amzn.to/4sZ1QCq'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.mapplethorpe = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4czkPO8' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4so0K22' }
+  },
+  books: [
+    {
+      titleJa: 'ロバート・メイプルソープ写真集',
+      titleEn: 'Robert Mapplethorpe',
+      noteJa: '美・欲望・検閲をめぐる80年代の焦点。',
+      noteEn: 'A focal point for debates around beauty, desire, and censorship in the 1980s.',
+      urlJa: 'https://amzn.to/4czkPO8',
+      urlEn: 'https://amzn.to/4so0K22'
+    },
+    {
+      titleJa: 'ロバート・メイプルソープ写真集（別版）',
+      titleEn: 'Robert Mapplethorpe (Alternate Edition)',
+      urlJa: 'https://amzn.to/4dVo7wD',
+      urlEn: 'https://amzn.to/4syjNag'
+    },
+    {
+      titleJa: 'ロバート・メイプルソープ写真集（別版 2）',
+      titleEn: 'Robert Mapplethorpe (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/41nxZrh',
+      urlEn: 'https://amzn.to/4taOxPx'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.kruger = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4t2nmqf' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3PYFPFt' }
+  },
+  books: [
+    {
+      titleJa: 'Thinking of You. I Mean Me. I Mean You.',
+      titleEn: 'Thinking of You. I Mean Me. I Mean You.',
+      noteJa: '写真と言葉の政治学を一冊で掴みやすい。',
+      noteEn: 'A strong single volume on the politics of image and text.',
+      urlJa: 'https://amzn.to/4t2nmqf',
+      urlEn: 'https://amzn.to/3PYFPFt'
+    },
+    {
+      titleJa: 'Thinking of You. I Mean Me. I Mean You.（別版）',
+      titleEn: 'Thinking of You. I Mean Me. I Mean You. (Alternate Edition)',
+      urlJa: 'https://amzn.to/4tGT8cd',
+      urlEn: 'https://amzn.to/3NVCNkJ'
+    },
+    {
+      titleJa: 'Thinking of You. I Mean Me. I Mean You.（別版 2）',
+      titleEn: 'Thinking of You. I Mean Me. I Mean You. (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/3QbSgxz',
+      urlEn: 'https://amzn.to/4vokpSo'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.eggleston = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/41jyR0f' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/48nZiFL' }
+  },
+  books: [
+    {
+      titleJa: 'ウィリアム・エグルストンズ・ガイド',
+      titleEn: 'William Eggleston\'s Guide',
+      noteJa: 'カラー写真を美術へ押し上げた基準点。',
+      noteEn: 'A benchmark for color photography\'s entry into art discourse.',
+      urlJa: 'https://amzn.to/41jyR0f',
+      urlEn: 'https://amzn.to/48nZiFL'
+    },
+    {
+      titleJa: 'ウィリアム・エグルストンズ・ガイド（別版）',
+      titleEn: 'William Eggleston\'s Guide (Alternate Edition)',
+      urlJa: 'https://amzn.to/4taRX4P',
+      urlEn: 'https://amzn.to/4tzM7tB'
+    },
+    {
+      titleJa: 'ウィリアム・エグルストンズ・ガイド（別版 2）',
+      titleEn: 'William Eggleston\'s Guide (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/47TI8zM',
+      urlEn: 'https://amzn.to/4mjT5QT'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.goldin = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4sq7eh8' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/47KniTq' }
+  },
+  books: [
+    {
+      titleJa: '性的依存のバラード',
+      titleEn: 'The Ballad of Sexual Dependency',
+      noteJa: '私的共同体と親密圏の写真史的転換。',
+      noteEn: 'A photographic-historical turning point for intimacy and chosen communities.',
+      urlJa: 'https://amzn.to/4sq7eh8',
+      urlEn: 'https://amzn.to/47KniTq'
+    },
+    {
+      titleJa: '性的依存のバラード（別版）',
+      titleEn: 'The Ballad of Sexual Dependency (Alternate Edition)',
+      urlJa: 'https://amzn.to/4tBu9Xt',
+      urlEn: 'https://amzn.to/4slw1CU'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.wall = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/41im2TT' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tB0UnI' }
+  },
+  books: [
+    {
+      titleJa: 'ジェフ・ウォール写真集',
+      titleEn: 'Jeff Wall',
+      noteJa: '演出写真と美術館展示の新基準。',
+      noteEn: 'A new standard for staged photography and museum-scale display.',
+      urlJa: 'https://amzn.to/41im2TT',
+      urlEn: 'https://amzn.to/4tB0UnI'
+    },
+    {
+      titleJa: 'ジェフ・ウォール写真集（別版）',
+      titleEn: 'Jeff Wall (Alternate Edition)',
+      urlJa: 'https://amzn.to/48l72s6',
+      urlEn: 'https://amzn.to/48DPgAr'
+    },
+    {
+      titleJa: 'ジェフ・ウォール写真集（別版 2）',
+      titleEn: 'Jeff Wall (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/3PXaUcA',
+      urlEn: 'https://amzn.to/4vkVyi4'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.gursky = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4cdcDSj' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4dCmHa6' }
+  },
+  books: [
+    {
+      titleJa: 'アンドレアス・グルスキー写真集',
+      titleEn: 'Andreas Gursky',
+      noteJa: '大判カラーとグローバル資本主義の視覚。',
+      noteEn: 'A vision of large-format color photography and global capitalism.',
+      urlJa: 'https://amzn.to/4cdcDSj',
+      urlEn: 'https://amzn.to/4dCmHa6'
+    },
+    {
+      titleJa: 'アンドレアス・グルスキー写真集（別版）',
+      titleEn: 'Andreas Gursky (Alternate Edition)',
+      urlJa: 'https://amzn.to/4vitXxZ',
+      urlEn: 'https://amzn.to/4sjs95r'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.salgado = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4dVq9gf' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/41ro6ca' }
+  },
+  books: [
+    {
+      titleJa: 'Workers',
+      titleEn: 'Workers',
+      noteJa: '労働と人間のスケールを壮大に捉える代表作。',
+      noteEn: 'A major work on labor and the human scale.',
+      urlJa: 'https://amzn.to/4dVq9gf',
+      urlEn: 'https://amzn.to/41ro6ca'
+    },
+    {
+      titleJa: 'Workers（別版）',
+      titleEn: 'Workers (Alternate Edition)',
+      urlJa: 'https://amzn.to/4cdgjn7',
+      urlEn: 'https://amzn.to/4t7bMKu'
+    },
+    {
+      titleJa: 'Workers（別版 2）',
+      titleEn: 'Workers (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/41ro2sW',
+      urlEn: 'https://amzn.to/4cn8Thw'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.parr = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4vk2I6m' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4voplGU' }
+  },
+  books: [
+    {
+      titleJa: 'The Last Resort',
+      titleEn: 'The Last Resort',
+      noteJa: '消費社会の色彩とアイロニーを読む鍵。',
+      noteEn: 'A key to reading color, irony, and consumer culture.',
+      urlJa: 'https://amzn.to/4vk2I6m',
+      urlEn: 'https://amzn.to/4voplGU'
+    },
+    {
+      titleJa: 'The Last Resort（別版）',
+      titleEn: 'The Last Resort (Alternate Edition)',
+      urlJa: 'https://amzn.to/4mlMHc0',
+      urlEn: 'https://amzn.to/4sH9CjL'
+    },
+    {
+      titleJa: 'The Last Resort（別版 2）',
+      titleEn: 'The Last Resort (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4tDigR3',
+      urlEn: 'https://amzn.to/4mhg1k1'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.becher = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/41roozM' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tbU884' }
+  },
+  books: [
+    {
+      titleJa: 'Anonymous Sculptures',
+      titleEn: 'Anonymous Sculptures: A Typology of Technical Constructions',
+      noteJa: '類型学とデュッセルドルフ派の出発点。',
+      noteEn: 'The starting point for typology and the Dusseldorf School.',
+      urlJa: 'https://amzn.to/41roozM',
+      urlEn: 'https://amzn.to/4tbU884'
+    },
+    {
+      titleJa: 'Anonymous Sculptures（別版）',
+      titleEn: 'Anonymous Sculptures: A Typology of Technical Constructions (Alternate Edition)',
+      urlJa: 'https://amzn.to/4tBMnby',
+      urlEn: 'https://amzn.to/4t0uxiz'
+    },
+    {
+      titleJa: 'Anonymous Sculptures（別版 2）',
+      titleEn: 'Anonymous Sculptures: A Typology of Technical Constructions (Alternate Edition 2)',
+      urlJa: 'https://amzn.to/4sZ3YtU',
+      urlEn: 'https://amzn.to/4mm7gFg'
+    }
+  ]
+};
