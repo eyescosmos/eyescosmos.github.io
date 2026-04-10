@@ -321,40 +321,154 @@ body.is-navigating #page-fade {
   color: rgba(235, 224, 204, 0.94);
 }
 
-@media (max-width: 720px) {
-  .hud,
-  .focus-card,
-  .page-links,
-  .zoom-controls {
-    left: 18px;
-    right: 18px;
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
-  .hud {
-    top: 18px;
-    width: min(24rem, calc(100vw - 36px));
+  .shell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    min-height: max(100svh, 980px);
+    padding: 18px 16px calc(136px + env(safe-area-inset-bottom));
+  }
+
+  #constellation-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100svh;
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .hud,
+  .focus-card,
+  .page-links {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
     max-width: none;
   }
 
+  .hud {
+    order: 1;
+    margin-top: 2px;
+  }
+
+  .hero-text {
+    width: min(100%, 32rem);
+    gap: 10px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+  }
+
+  .keywordline {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .title {
+    font-size: clamp(34px, 12vw, 54px);
+    letter-spacing: 0.12em;
+  }
+
+  .title-subcopy {
+    max-width: 34ch;
+    font-size: 15px;
+    line-height: 1.82;
+  }
+
+  .lede {
+    max-width: 34ch;
+    font-size: 13px;
+    line-height: 1.78;
+  }
+
+  .title-status {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    opacity: 0.78;
+  }
+
+  .title-note {
+    max-width: 34ch;
+    font-size: 10px;
+    line-height: 1.72;
+    opacity: 0.76;
+  }
+
   .page-links {
-    top: auto;
-    bottom: 18px;
-    left: auto;
-    right: 18px;
-    width: fit-content;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    order: 2;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: min(100%, 22rem);
+  }
+
+  .lang-toggle {
+    align-self: flex-start;
+    opacity: 0.9;
+  }
+
+  .lang-btn {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+
+  .page-link {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 12px;
   }
 
   .focus-card {
-    bottom: 68px;
-    width: auto;
+    order: 3;
+    margin-top: 18px;
+    width: min(100%, 22rem);
+    padding: 16px 18px;
+  }
+
+  .focus-label {
+    font-size: 14px;
+  }
+
+  .focus-meta,
+  .focus-hint {
+    font-size: 12px;
+    line-height: 1.66;
   }
 
   .zoom-controls {
+    position: fixed;
     left: auto;
-    right: 18px;
-    bottom: 18px;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    z-index: 3;
+  }
+
+  .site-footer {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    order: 4;
+    margin: 28px 0 0;
+    width: max-content;
+    max-width: 100%;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
   }
 }
 </style>
@@ -415,6 +529,11 @@ body.is-navigating #page-fade {
       const hero = document.querySelector('.hero-text');
       const titleText = document.getElementById('main-title');
       if (!hero || !titleText) return;
+      if (window.innerWidth <= 768) {
+        const mobileWidth = Math.max(280, Math.min(window.innerWidth - 32, 512));
+        hero.style.setProperty('--hero-copy-width', mobileWidth + 'px');
+        return;
+      }
       const viewportWidth = window.innerWidth - 64;
       const measured = Math.ceil(titleText.getBoundingClientRect().width);
       const width = Math.max(260, Math.min(measured, viewportWidth));
