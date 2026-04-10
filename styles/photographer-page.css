@@ -288,7 +288,7 @@ body { min-height: 100vh; }
   .book-thumb { width: 92px; }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .page-shell {
     width: min(100vw - 22px, 1040px);
     padding-top: calc(56px + env(safe-area-inset-top));
@@ -327,6 +327,7 @@ body { min-height: 100vh; }
     cursor: pointer;
   }
   .mobile-nav-toggle::-webkit-details-marker { display: none; }
+  .mobile-nav-toggle::marker { content: ""; }
   .mobile-nav-toggle span {
     display: block;
     width: 16px;
