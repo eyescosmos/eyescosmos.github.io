@@ -86,6 +86,204 @@ def truncate_text(text: str, length: int) -> str:
     return value[:cutoff].rstrip("、。,. ") + "…"
 
 
+def first_sentences(text: str, lang: str, limit: int = 2) -> list[str]:
+    plain = normalize_space(strip_tags(strip_cite_markers(text or "")))
+    if not plain:
+        return []
+    if lang == "en":
+        parts = re.split(r"(?<=[.!?])\s+", plain)
+    else:
+        parts = re.split(r"(?<=[。！？])\s*", plain)
+    return [part.strip() for part in parts if part.strip()][:limit]
+
+
+def parse_years(years_text: str) -> tuple[str, str]:
+    clean = normalize_space(years_text)
+    if not clean:
+        return "", ""
+    full_match = re.fullmatch(r"(\d{4})\s*[-–—]\s*(\d{4})", clean)
+    if full_match:
+        return full_match.group(1), full_match.group(2)
+    open_match = re.fullmatch(r"(\d{4})\s*[-–—]\s*", clean)
+    if open_match:
+        return open_match.group(1), ""
+    return "", ""
+
+
+def description_years(photographer: dict, lang: str) -> str:
+    birth, death = parse_years(photographer.get("years") or "")
+    if not birth:
+        return ""
+    dash = "–"
+    if death:
+        return f"{birth}{dash}{death}"
+    return f"{birth}{dash}"
+
+
+def strip_leading_identity(sentence: str, photographer: dict, lang: str) -> str:
+    value = normalize_space(sentence)
+    names = [
+        display_name(photographer, lang),
+        display_alt_name(photographer, lang),
+        display_name(photographer, "ja"),
+        display_name(photographer, "en"),
+        display_alt_name(photographer, "ja"),
+        display_alt_name(photographer, "en"),
+    ]
+    expanded_names = []
+    for name in names:
+        if not name:
+            continue
+        expanded_names.append(name)
+        expanded_names.extend(part for part in re.split(r"[・＝= ]+", name) if part)
+    names = expanded_names
+    names = [name for name in names if name]
+    alt = display_alt_name(photographer, lang)
+    for name in names:
+        combo_variants = [
+            f"{name}（{alt}）" if alt else "",
+            f"{name} ({alt})" if alt else "",
+            name,
+        ]
+        for variant in combo_variants:
+            if variant and value.startswith(variant):
+                value = value[len(variant):].lstrip(" 　,，、。")
+    if lang == "en":
+        value = re.sub(r"^(?:is|was)\s+", "", value, count=1)
+    else:
+        value = re.sub(r"^(?:は|が|を|の)[、，]?", "", value, count=1)
+    return value.strip()
+
+
+def descriptor_title_phrase(descriptor: str, lang: str) -> str:
+    desc = normalize_space(descriptor)
+    if not desc:
+        return "Photographer" if lang == "en" else "写真家"
+    if lang == "en":
+        lower = desc.lower()
+        if lower.endswith("photography"):
+            return f"Pioneer of {desc}"
+        if lower.endswith("culture"):
+            return f"photographer of {desc}"
+        if lower.endswith("documentary"):
+            return f"{desc} photographer"
+        return f"{desc} photographer"
+    if desc.endswith("写真"):
+        return f"{desc}の重要作家"
+    if desc.endswith("文化"):
+        return f"{desc}を記録した写真家"
+    if desc.endswith("派"):
+        return f"{desc}の中心作家"
+    if desc.endswith("主義"):
+        return f"{desc}の重要作家"
+    return f"{desc}の写真家"
+
+
+def extract_title_role(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
+    essay_text, _ = collect_text_and_citations(photographer, lang)
+    sentences = first_sentences(essay_text, lang, limit=2)
+
+    if lang == "en":
+        for sentence in sentences:
+            match = re.search(r"\b(?:is|was)\s+(an?\s+.+?photographer(?:\s+and\s+.+?)?)\b", sentence, re.I)
+            if match:
+                phrase = match.group(1)
+                phrase = re.split(r"\s+who\s+|\s+whose\s+|\s*,\s*", phrase, 1)[0]
+                return normalize_space(phrase)
+        descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
+        return descriptor_title_phrase(descriptor, lang)
+
+    for sentence in sentences:
+        stripped = strip_leading_identity(sentence, photographer, lang).rstrip("。")
+        for pattern in (
+            r"(.+?を記録した写真家)",
+            r"(.+?を撮り続けた写真家)",
+            r"(.+?を追った写真家)",
+            r"(.+?を築いた写真家)",
+            r"(.+?を代表する写真家)",
+            r"(.+?の写真家)",
+        ):
+            match = re.search(pattern, stripped)
+            if match:
+                phrase = normalize_space(match.group(1))
+                if len(phrase) <= 32:
+                    return phrase
+        if "写真家" in stripped and len(stripped) <= 36:
+            return normalize_space(stripped.replace("である", "").replace("です", ""))
+
+    descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
+    return descriptor_title_phrase(descriptor, lang)
+
+
+def build_meta_summary(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
+    essay_text, _ = collect_text_and_citations(photographer, lang)
+    placeholder = is_placeholder_text(essay_text, lang)
+    sentences = first_sentences(essay_text, lang, limit=2)
+    years = description_years(photographer, lang)
+    name = display_name(photographer, lang)
+    country_en = COUNTRY_META.get(photographer.get("nationality") or "", {}).get("en") or (photographer.get("nationality") or "")
+    descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
+    movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=2)
+    movement_phrase = join_list(movement_names, lang)
+
+    if lang == "en":
+        if not placeholder and sentences:
+            summary = " ".join(sentences)
+            if years and name not in summary:
+                stripped = strip_leading_identity(summary, photographer, lang)
+                summary = f"{name} ({years}): {stripped}"
+            return truncate_text(summary, 155)
+        parts = []
+        if years:
+            parts.append(f"{name} ({years})")
+        else:
+            parts.append(name)
+        if country_en:
+            parts.append(f"is a photographer associated with {country_en}")
+        else:
+            parts.append("is a photographer")
+        if descriptor:
+            parts.append(f"whose work is often discussed through {descriptor.lower()}")
+        elif movement_phrase:
+            parts.append(f"whose work is often discussed through {movement_phrase}")
+        period = era_period(photographer, era_lookup)
+        if period and period != "—":
+            parts.append(f"This page traces the photographer's place in the photographic context of {period}, together with related figures and sources.")
+        else:
+            parts.append("This page traces the photographer's historical context, related figures, and sources.")
+        return truncate_text(" ".join(parts), 155)
+
+    if not placeholder and sentences:
+        summary = "".join(sentences)
+        if years and name not in summary:
+            stripped = strip_leading_identity(summary, photographer, lang)
+            stripped = re.sub(r"^(?:は|が|を|の)[、，]?", "", stripped)
+            summary = f"{name}（{years}）は、{stripped}"
+        return truncate_text(summary, 145)
+
+    if years:
+        opening = f"{name}（{years}）"
+    else:
+        opening = name
+    period = era_period(photographer, era_lookup)
+    if descriptor:
+        if period and period != "—":
+            base = f"{opening}は{descriptor}を手がかりに読み解かれる写真家。{period}の時代背景や関連する作家、出典をこのページで順次たどる。"
+        else:
+            base = f"{opening}は{descriptor}を手がかりに読み解かれる写真家。関連する時代背景や作家、出典をこのページで順次たどる。"
+    elif movement_phrase:
+        if period and period != "—":
+            base = f"{opening}は{movement_phrase}の文脈から読み解かれる写真家。{period}の時代背景や関連する作家、出典をこのページで順次たどる。"
+        else:
+            base = f"{opening}は{movement_phrase}の文脈から読み解かれる写真家。関連する時代背景や作家、出典をこのページで順次たどる。"
+    else:
+        if period and period != "—":
+            base = f"{opening}は写真史の流れの中で位置づけをたどる写真家。{period}の時代背景や関連する作家、出典をこのページで順次整理する。"
+        else:
+            base = f"{opening}は写真史の流れの中で位置づけをたどる写真家。このページでは関連する時代背景や作家、出典を順次整理する。"
+    return truncate_text(base, 145)
+
+
 def movement_slug(name: str) -> str:
     return re.sub(r"[^A-Za-z\u3000-\u9fff]", "", name or "")
 
@@ -461,88 +659,45 @@ def build_intro(photographer: dict, lang: str, era_lookup: dict, movements_meta:
 
 
 def build_description(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
-    name_primary = display_name(photographer, lang)
-    period = era_period(photographer, era_lookup)
-    movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=5)
-    movement_phrase = join_list(movement_names[:2], lang)
-    essay_text, _ = collect_text_and_citations(photographer, lang)
-    placeholder = is_placeholder_text(essay_text, lang)
-    descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
-
-    if lang == "en":
-        if placeholder:
-            base = f"{name_primary} on Photo Coordinates, a history of photography site covering photographers, movements, and historical context."
-        elif movement_phrase:
-            base = f"{name_primary} in Photo Coordinates. Explore this photographer through {descriptor or movement_phrase}, {movement_phrase}, photography history, related artists, and sources."
-        else:
-            base = f"{name_primary} in Photo Coordinates. Explore this photographer through the history of photography, related artists, and sources."
-        return truncate_text(base, 155)
-
-    if placeholder:
-        base = f"{name_primary}の写真史ページ。写真の座標で、{period}の時代背景や関連作家、出典とともに順次解説を追加します。"
-    elif movement_phrase:
-        base = f"{name_primary}の写真史ページ。{descriptor or movement_phrase}、{movement_phrase}、{period}を手がかりに、写真の座標で位置づけ・関連作家・出典をたどれます。"
-    else:
-        base = f"{name_primary}の写真史ページ。{period}の流れの中で、写真の座標から関連作家・時代背景・出典をたどれます。"
-    return truncate_text(base, 110)
+    return build_meta_summary(photographer, lang, era_lookup, movements_meta, enrichments)
 
 
 def build_title(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
     name_primary = display_name(photographer, lang)
-    descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
-    if lang == "en":
-        return f"{name_primary} | History of Photography | {descriptor} | Photo Coordinates | Eyes Cosmos" if descriptor else f"{name_primary} | History of Photography | Photo Coordinates | Eyes Cosmos"
-    return f"{name_primary}｜写真史｜{descriptor}｜写真の座標｜Eyes Cosmos" if descriptor else f"{name_primary}｜写真史｜写真の座標｜Eyes Cosmos"
+    role = extract_title_role(photographer, lang, era_lookup, movements_meta, enrichments)
+    site = "Photo Coordinates" if lang == "en" else "写真の座標"
+    base = f"{name_primary} | {role} | {site}"
+    max_length = 60 if lang == "ja" else 70
+    if len(base) <= max_length:
+        return base
+    available = max(8, max_length - len(name_primary) - len(site) - 6)
+    role = truncate_text(role, available).rstrip("。")
+    return f"{name_primary} | {role} | {site}"
 
 
-def build_page_structured_data(photographer: dict, lang: str, title: str, description: str, canonical: str) -> str:
-    website_url = f"{SITE}/en/" if lang == "en" else f"{SITE}/"
-    website_name = "Photo Coordinates" if lang == "en" else "写真の座標"
-    archive_name = "Browse by Era" if lang == "en" else "年代順にみる"
-    archive_url = f"{SITE}/en/archive.html" if lang == "en" else f"{SITE}/archive.html"
-    page_name = display_name(photographer, lang)
-
+def build_page_structured_data(photographer: dict, lang: str, description: str, canonical: str) -> str:
+    birth_year, death_year = parse_years(photographer.get("years") or "")
     payload = {
         "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebPage",
-                "@id": canonical,
-                "url": canonical,
-                "name": title,
-                "description": description,
-                "inLanguage": "en" if lang == "en" else "ja",
-                "isPartOf": {
-                    "@type": "WebSite",
-                    "name": website_name,
-                    "url": website_url,
-                },
-            },
-            {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": website_name,
-                        "item": website_url,
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": archive_name,
-                        "item": archive_url,
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "name": page_name,
-                        "item": canonical,
-                    },
-                ],
-            },
-        ],
+        "@type": "Person",
+        "name": display_name(photographer, lang),
+        "description": description,
+        "url": canonical,
+        "jobTitle": "Photographer" if lang == "en" else "写真家",
     }
+    alternate_name = display_alt_name(photographer, lang)
+    if alternate_name:
+        payload["alternateName"] = alternate_name
+    if birth_year:
+        payload["birthDate"] = birth_year
+    if death_year:
+        payload["deathDate"] = death_year
+    country_name = COUNTRY_META.get(photographer.get("nationality") or "", {}).get("en")
+    if country_name:
+        payload["nationality"] = {
+            "@type": "Country",
+            "name": country_name,
+        }
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
@@ -810,7 +965,7 @@ def main() -> None:
             privacy_href = "/en/privacy-policy.html" if lang == "en" else "/privacy-policy.html"
             alt_name = display_alt_name(photographer, lang)
             page_path = photographer_page_path(photographer, lang)
-            structured_data = build_page_structured_data(photographer, lang, title, description, canonical)
+            structured_data = build_page_structured_data(photographer, lang, description, canonical)
             page = f"""<!DOCTYPE html>
 <html lang="{ 'en' if lang == 'en' else 'ja' }">
 <head>
@@ -828,10 +983,6 @@ def main() -> None:
 <meta property="og:description" content="{escape_html(description)}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:locale" content="{ 'en_US' if lang == 'en' else 'ja_JP' }">
-<meta property="og:locale:alternate" content="{ 'ja_JP' if lang == 'en' else 'en_US' }">
-<script type="application/ld+json">
-{structured_data}
-</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -920,6 +1071,9 @@ gtag('config', '{GA_ID}');
   </div>
   <script src="{affiliate_href}"></script>
   <script src="{script_href}"></script>
+  <script type="application/ld+json">
+{structured_data}
+  </script>
 </body>
 </html>
 """
