@@ -489,10 +489,13 @@
     const worldHeight = Math.max(1, state.world.maxY - state.world.minY);
     const fitX = (state.width * 0.54) / worldWidth;
     const fitY = (state.height * 0.5) / worldHeight;
+    const isMobileViewport = state.width <= 768;
     const baseScale = Math.max(1.02, Math.min(1.95, fitX * 8.0, fitY * 8.0));
-    state.defaultScale = baseScale;
-    state.minScale = Math.max(0.38, baseScale * 0.45);
-    state.maxScale = Math.max(3.6, baseScale * 3.8);
+    state.defaultScale = isMobileViewport ? baseScale * 0.9 : baseScale;
+    state.minScale = isMobileViewport
+      ? Math.max(0.24, baseScale * 0.3)
+      : Math.max(0.38, baseScale * 0.45);
+    state.maxScale = Math.max(isMobileViewport ? 3.2 : 3.6, state.defaultScale * (isMobileViewport ? 3.5 : 3.8));
 
     if (!state.scale || state.scale === 1) {
       state.scale = state.defaultScale;
@@ -1098,6 +1101,10 @@
     const initialNode = state.nodesById.get(state.initialNodeId) || nodes.find(node => node.type === 'photographer') || nodes[0];
     if (!initialNode) return;
 
+    state.pointerDown = false;
+    state.dragging = false;
+    state.dragPointerId = null;
+    state.pressedNodeId = '';
     state.focusedNodeId = '';
     state.hoveredNodeId = '';
     state.focusClusterCache = null;
@@ -1109,6 +1116,11 @@
     state.targetScale = state.minScale;
     state.targetCameraX = initialNode.homeX;
     state.targetCameraY = initialNode.homeY;
+    if (prefersCoarse || state.width <= 768) {
+      state.scale = state.targetScale;
+      state.cameraX = state.targetCameraX;
+      state.cameraY = state.targetCameraY;
+    }
     initialNode.glow = 1.2;
     clampCamera();
     updateFocusPanel();
@@ -1509,7 +1521,9 @@
       action();
     };
     button.addEventListener('click', handler);
+    button.addEventListener('pointerdown', handler);
     button.addEventListener('pointerup', handler);
+    button.addEventListener('touchstart', handler, { passive: false });
     button.addEventListener('touchend', handler, { passive: false });
   }
 
