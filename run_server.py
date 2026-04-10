@@ -4,7 +4,12 @@ import os
 
 # Resolve the project root (this file's directory)
 ROOT = os.path.dirname(os.path.abspath(__file__))
+VENV_PYTHON = os.path.join(ROOT, ".venv", "bin", "python")
 SITE_PKGS = os.path.join(ROOT, ".venv", "lib", "python3.9", "site-packages")
+
+# Re-exec with venv Python if not already running from it
+if os.path.exists(VENV_PYTHON) and os.path.abspath(sys.executable) != os.path.abspath(VENV_PYTHON):
+    os.execv(VENV_PYTHON, [VENV_PYTHON] + sys.argv)
 
 if SITE_PKGS not in sys.path:
     sys.path.insert(0, SITE_PKGS)

@@ -303,13 +303,14 @@
             <canvas id="diff-canvas"></canvas>
             <div style="margin-top:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
               <label style="font-size:11px;color:var(--text-dim)">フォントサイズ</label>
-              <input type="number" id="diff-font-size" min="1" max="30" value="6"
+              <input type="number" id="diff-font-size" min="1" max="100" value="6"
                 style="width:52px;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:2px 6px;border-radius:4px;font-size:11px">
               <label style="font-size:11px;color:var(--text-dim);margin-left:8px">均一度: <span id="flat-var-val">150</span></label>
               <input type="range" id="diff-flat-var" min="0" max="800" step="10" value="150"
                 style="width:100px;accent-color:var(--accent2)">
               <button id="diff-reload-btn" class="btn btn-sec" style="font-size:11px;padding:4px 10px">再描画</button>
               <button id="diff-download-btn" class="btn btn-sec" style="font-size:11px;padding:4px 10px">⬇ PNG保存</button>
+              <button id="diff-download-jpg-btn" class="btn btn-sec" style="font-size:11px;padding:4px 10px">⬇ JPG保存</button>
             </div>
             <div style="margin-top:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
               <label style="font-size:11px;color:var(--text-dim);white-space:nowrap">テキスト色</label>
@@ -417,6 +418,7 @@
                 <label class="method-chip"><input type="checkbox" value="blockshift">     🎨 色ズレ</label>
                 <label class="method-chip"><input type="checkbox" value="blockshift_orig"> 📦 ブロックシフト初期</label>
                 <label class="method-chip"><input type="checkbox" value="hshift">          ↔️ 左右ズレ</label>
+                <label class="method-chip"><input type="checkbox" value="hshift_binary">  ↔️ 横シフト(バイナリ)</label>
               </div>
             </div>
             <div class="ctrl-grp" style="margin-top:14px" id="blockshift-amount-grp" style="display:none">
@@ -776,8 +778,8 @@ document.querySelectorAll('.pos-btn').forEach(btn => {
 // show/hide tear-position / blockshift groups based on checked methods
 function updateMethodVisibility() {
   const checked = [...document.querySelectorAll('.methods-grid input:checked')].map(cb => cb.value);
-  const hasTear       = checked.includes('tear') || checked.includes('blockshift') || checked.includes('blockshift_orig') || checked.includes('hshift');
-  const hasBlockshift = checked.includes('blockshift') || checked.includes('blockshift_orig') || checked.includes('hshift');
+  const hasTear       = checked.includes('tear') || checked.includes('blockshift') || checked.includes('blockshift_orig') || checked.includes('hshift') || checked.includes('hshift_binary');
+  const hasBlockshift = checked.includes('blockshift') || checked.includes('blockshift_orig') || checked.includes('hshift') || checked.includes('hshift_binary');
   document.getElementById('tear-position-grp').style.display       = hasTear       ? '' : 'none';
   document.getElementById('blockshift-amount-grp').style.display   = hasBlockshift  ? '' : 'none';
 }
@@ -852,12 +854,12 @@ function getDiffTextColor() {
   return active ? active.dataset.color : '#00e650';
 }
 
-function buildDiffUrl(full = false) {
+function buildDiffUrl(full = false, fmt = 'png') {
   const fs = getDiffFontSize();
   const fv = getDiffFlatVar();
   const ct = getDiffCustomText();
   const tc = getDiffTextColor();
-  let url = `/diff-overlay/${fileId}?font_size=${fs}&flat_var=${fv}&text_color=${encodeURIComponent(tc)}`;
+  let url = `/diff-overlay/${fileId}?font_size=${fs}&flat_var=${fv}&text_color=${encodeURIComponent(tc)}&fmt=${fmt}`;
   if (full) url += '&full=true';
   if (ct) url += '&custom_text=' + encodeURIComponent(ct);
   return url;
@@ -915,8 +917,16 @@ document.getElementById('diff-custom-text')?.addEventListener('keydown', (e) => 
 document.getElementById('diff-download-btn')?.addEventListener('click', () => {
   if (!fileId) return;
   const a = document.createElement('a');
-  a.href = buildDiffUrl(true);
+  a.href = buildDiffUrl(true, 'png');
   a.download = 'diff_overlay.png';
+  a.click();
+});
+
+document.getElementById('diff-download-jpg-btn')?.addEventListener('click', () => {
+  if (!fileId) return;
+  const a = document.createElement('a');
+  a.href = buildDiffUrl(true, 'jpg');
+  a.download = 'diff_overlay.jpg';
   a.click();
 });
 

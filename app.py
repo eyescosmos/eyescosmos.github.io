@@ -40,6 +40,47 @@ RAW_EXTS = {"CR2", "CR3", "NEF", "ARW", "DNG", "RAF", "ORF", "RW2", "PEF", "RAW"
 
 # ── helpers ──────────────────────────────────────────────────────────────────
 
+def _extract_icc(data: bytes) -> Optional[bytes]:
+    """Extract ICC profile bytes from a JPEG (APP2 marker with ICC_PROFILE\x00 prefix)."""
+    i = 2  # skip SOI
+    icc_chunks: dict = {}
+    while i < len(data) - 3:
+        if data[i] != 0xFF:
+            break
+        marker = data[i + 1]
+        if marker == 0xDA:  # SOS — stop
+            break
+        seg_len = (data[i + 2] << 8) | data[i + 3]
+        seg_end = i + 2 + seg_len
+        if marker == 0xE2 and seg_len > 14:
+            hdr = data[i + 4: i + 4 + 12]
+            if hdr == b"ICC_PROFILE\x00":
+                seq  = data[i + 16]      # chunk index (1-based)
+                total = data[i + 17]     # total chunks
+                chunk_data = data[i + 18: seg_end]
+                icc_chunks[seq] = chunk_data
+        i = seg_end
+    if not icc_chunks:
+        return None
+    return b"".join(icc_chunks[k] for k in sorted(icc_chunks.keys()))
+
+
+def _inject_icc(jpeg_data: bytes, icc_bytes: bytes) -> bytes:
+    """Inject ICC profile into a JPEG right after the SOI marker."""
+    if not icc_bytes:
+        return jpeg_data
+    # Build APP2 segments (max 65519 bytes of ICC data per segment)
+    MAX_CHUNK = 65519
+    chunks = [icc_bytes[i:i + MAX_CHUNK] for i in range(0, len(icc_bytes), MAX_CHUNK)]
+    app2_blocks = bytearray()
+    for idx, chunk in enumerate(chunks):
+        seg_body = b"ICC_PROFILE\x00" + bytes([idx + 1, len(chunks)]) + chunk
+        seg_len = len(seg_body) + 2
+        app2_blocks += b"\xFF\xE2" + bytes([seg_len >> 8, seg_len & 0xFF]) + seg_body
+    # Insert after SOI (first 2 bytes)
+    return jpeg_data[:2] + bytes(app2_blocks) + jpeg_data[2:]
+
+
 def img_to_png_bytes(img: Image.Image) -> bytes:
     buf = io.BytesIO()
     img.save(buf, format="PNG")
@@ -400,13 +441,14 @@ def apply_destruction(data: bytes, byte_start: int, byte_end: int,
             import cv2 as _cv2
             # Re-encode without RST markers so Huffman decoding cascades
             # horizontally across MCU rows → vertical stripe glitch artifact.
+            _icc_bs = _extract_icc(data)
             arr = _cv2.imdecode(np.frombuffer(data, np.uint8), _cv2.IMREAD_COLOR)
             if arr is None:
                 return data
-            _ok, _enc = _cv2.imencode(".jpg", arr, [_cv2.IMWRITE_JPEG_QUALITY, 95])
+            _ok, _enc = _cv2.imencode(".jpg", arr, [_cv2.IMWRITE_JPEG_QUALITY, 100])
             if not _ok or len(_enc) == 0:
                 return data
-            no_rst = bytearray(_enc.tobytes())
+            no_rst = bytearray(_inject_icc(_enc.tobytes(), _icc_bs) if _icc_bs else _enc.tobytes())
 
             # Find SOS (0xFF 0xDA) marker to locate scan data start
             scan_data_start = None
@@ -456,6 +498,7 @@ def apply_destruction(data: bytes, byte_start: int, byte_end: int,
     if method == "blockshift_orig":
         try:
             import cv2 as _cv2
+            _icc_bo = _extract_icc(data)
             arr = _cv2.imdecode(np.frombuffer(data, np.uint8), _cv2.IMREAD_COLOR)
             if arr is not None:
                 h_img, w_img = arr.shape[:2]
@@ -470,9 +513,9 @@ def apply_destruction(data: bytes, byte_start: int, byte_end: int,
                     seg = arr[start_row:seg_end_row].copy()
                     arr[start_row:start_row + (seg_len - half)] = seg[half:]
                     arr[start_row + (seg_len - half):seg_end_row] = seg[:half]
-                _ok, _enc = _cv2.imencode(".jpg", arr, [_cv2.IMWRITE_JPEG_QUALITY, 95])
+                _ok, _enc = _cv2.imencode(".jpg", arr, [_cv2.IMWRITE_JPEG_QUALITY, 100])
                 if _ok and len(_enc) > 0:
-                    return _enc.tobytes()
+                    return _inject_icc(_enc.tobytes(), _icc_bo) if _icc_bo else _enc.tobytes()
         except Exception:
             pass
         return data
@@ -480,6 +523,7 @@ def apply_destruction(data: bytes, byte_start: int, byte_end: int,
     if method == "hshift":
         try:
             import cv2 as _cv2
+            _icc_hs = _extract_icc(data)
             arr = _cv2.imdecode(np.frombuffer(data, np.uint8), _cv2.IMREAD_COLOR)
             if arr is not None:
                 h_img, w_img = arr.shape[:2]
@@ -492,12 +536,124 @@ def apply_destruction(data: bytes, byte_start: int, byte_end: int,
                 if random.random() < 0.5:
                     shift_pixels = -shift_pixels
                 arr[start_row:end_row] = np.roll(arr[start_row:end_row], shift_pixels, axis=1)
-                _ok, _enc = _cv2.imencode(".jpg", arr, [_cv2.IMWRITE_JPEG_QUALITY, 95])
+                _ok, _enc = _cv2.imencode(".jpg", arr, [_cv2.IMWRITE_JPEG_QUALITY, 100])
                 if _ok and len(_enc) > 0:
-                    return _enc.tobytes()
+                    return _inject_icc(_enc.tobytes(), _icc_hs) if _icc_hs else _enc.tobytes()
         except Exception:
             pass
         return data
+
+    # ── hshift_binary: MCU-block horizontal shift via RST segment reordering ──
+    # Re-encodes with RST=1 (one MCU per restart) then shifts RST segments
+    # within a band of MCU rows laterally by N MCU columns.
+    # For large images: only the target band is RST=1 encoded to limit memory.
+    if method == "hshift_binary":
+        try:
+            import cv2 as _cv2
+            _icc_hb = _extract_icc(data)
+            arr = _cv2.imdecode(np.frombuffer(data, np.uint8), _cv2.IMREAD_COLOR)
+            if arr is None:
+                return data
+            h_img, w_img = arr.shape[:2]
+            mcu_cols = (w_img + 15) // 16
+            mcu_rows = (h_img + 15) // 16
+            rst_param = getattr(_cv2, "IMWRITE_JPEG_RST_INTERVAL", 4)
+
+            # ── determine band ──────────────────────────────────────────────
+            lo_row, hi_row = _pos_idx(tear_position, mcu_rows)
+            band_rows = max(1, int(mcu_rows * blockshift_amount * 2))
+            start_mcu_row = random.randint(lo_row, max(lo_row, hi_row - band_rows))
+            start_mcu_row = max(0, min(start_mcu_row, mcu_rows - band_rows - 1))
+            end_mcu_row   = min(start_mcu_row + band_rows, mcu_rows)
+            shift_mcus = max(1, int(mcu_cols * blockshift_amount))
+            if random.random() < 0.5:
+                shift_mcus = -shift_mcus
+
+            # pixel rows for the band (MCU rows → pixel rows, aligned to 16)
+            py0 = start_mcu_row * 16
+            py1 = min(end_mcu_row * 16, h_img)
+            band_arr = arr[py0:py1].copy()
+
+            # ── encode ONLY the band with RST=1 ────────────────────────────
+            _ok, _enc = _cv2.imencode(".jpg", band_arr,
+                                      [_cv2.IMWRITE_JPEG_QUALITY, 100, rst_param, 1])
+            if not _ok or len(_enc) == 0:
+                return data
+            jpeg = bytearray(_enc.tobytes())
+
+            # find SOS scan-data start
+            ss = None
+            i = 2
+            while i < len(jpeg) - 1:
+                if jpeg[i] == 0xFF and jpeg[i+1] == 0xDA:
+                    seg_len = (jpeg[i+2] << 8) | jpeg[i+3]
+                    ss = i + 2 + seg_len
+                    break
+                elif jpeg[i] == 0xFF and jpeg[i+1] not in (0x00, 0xFF):
+                    seg_len = (jpeg[i+2] << 8) | jpeg[i+3]
+                    i += 2 + seg_len
+                else:
+                    i += 1
+            if ss is None:
+                return data
+
+            # collect segments
+            segments = []
+            seg_start = ss
+            j = ss
+            while j < len(jpeg) - 1:
+                if jpeg[j] == 0xFF and (0xD0 <= jpeg[j+1] <= 0xD7 or jpeg[j+1] == 0xD9):
+                    segments.append((seg_start, j))
+                    if jpeg[j+1] == 0xD9:
+                        break
+                    seg_start = j + 2
+                    j += 2
+                else:
+                    j += 1
+            else:
+                if seg_start < len(jpeg):
+                    segments.append((seg_start, len(jpeg)))
+
+            band_mcu_rows = (py1 - py0 + 15) // 16
+            if len(segments) < mcu_cols:
+                return data
+
+            # ── reorder segments (shift columns) ───────────────────────────
+            new_scan = bytearray()
+            rst_idx  = 0
+            for seg_i, (seg_s, seg_e) in enumerate(segments):
+                row_i = seg_i // mcu_cols
+                col_i = seg_i % mcu_cols
+                shifted_col = (col_i - shift_mcus) % mcu_cols
+                src_i = row_i * mcu_cols + shifted_col
+                if src_i < len(segments):
+                    s2, e2 = segments[src_i]
+                    new_scan.extend(jpeg[s2:e2])
+                else:
+                    new_scan.extend(jpeg[seg_s:seg_e])
+                if seg_i < len(segments) - 1:
+                    new_scan.extend([0xFF, 0xD0 + (rst_idx % 8)])
+                    rst_idx += 1
+
+            shifted_band_bytes = bytes(bytearray(jpeg[:ss]) + new_scan + bytearray([0xFF, 0xD9]))
+
+            # ── decode shifted band and splice into full image ─────────────
+            import PIL.ImageFile as _pif
+            _pif.LOAD_TRUNCATED_IMAGES = True
+            shifted_band_img = Image.open(io.BytesIO(shifted_band_bytes)).convert("RGB")
+            shifted_band_img.load()
+            shifted_arr = np.array(shifted_band_img)
+            arr[py0:py0 + shifted_arr.shape[0]] = shifted_arr[:, :w_img]
+
+            # ── final encode at full quality ────────────────────────────────
+            _ok2, _enc2 = _cv2.imencode(".jpg", arr,
+                                        [_cv2.IMWRITE_JPEG_QUALITY, 100])
+            if not _ok2 or len(_enc2) == 0:
+                return data
+            out = bytes(_enc2)
+            return _inject_icc(out, _icc_hb) if _icc_hb else out
+        except Exception:
+            return data
 
     buf = bytearray(data)
     sz  = byte_end - byte_start
@@ -1123,6 +1279,7 @@ async def upload(file: UploadFile = File(...)):
     if fmt == "JPEG":
         try:
             import cv2 as _cv2
+            _icc = _extract_icc(raw)  # preserve ICC profile (e.g. Adobe RGB) before cv2 strips it
             _arr = _cv2.imdecode(np.frombuffer(raw, np.uint8), _cv2.IMREAD_COLOR)
             if _arr is not None:
                 _h, _w = _arr.shape[:2]
@@ -1132,10 +1289,11 @@ async def upload(file: UploadFile = File(...)):
                 _rst_param    = getattr(_cv2, "IMWRITE_JPEG_RST_INTERVAL", 4)
                 _ok, _enc = _cv2.imencode(
                     ".jpg", _arr,
-                    [_cv2.IMWRITE_JPEG_QUALITY, 95, _rst_param, _rst_interval],
+                    [_cv2.IMWRITE_JPEG_QUALITY, 100, _rst_param, _rst_interval],
                 )
                 if _ok and len(_enc) > 0:
-                    raw = _enc.tobytes()
+                    _new = _enc.tobytes()
+                    raw = _inject_icc(_new, _icc) if _icc else _new
         except Exception:
             pass  # keep original bytes if re-encoding fails
     fid = str(uuid.uuid4())
@@ -1167,9 +1325,10 @@ async def preview(file_id: str, which: str = "current"):
 
 
 @app.get("/diff-overlay/{file_id}")
-async def diff_overlay(file_id: str, full: bool = False, font_size: Optional[int] = None, flat_var: Optional[int] = None, custom_text: Optional[str] = None, text_color: Optional[str] = None):
+async def diff_overlay(file_id: str, full: bool = False, fmt: str = "png", font_size: Optional[int] = None, flat_var: Optional[int] = None, custom_text: Optional[str] = None, text_color: Optional[str] = None):
     """Return destroyed image with original RGB values (or custom text) overlaid on changed areas.
     full=True → process at full resolution (for download).
+    fmt → "png" (default) or "jpg" for JPEG output.
     custom_text → cycle through words of this text instead of RGB values.
     text_color → hex color string like #ff0000 for text fill (default green #00e650).
     """
@@ -1330,10 +1489,20 @@ async def diff_overlay(file_id: str, full: bool = False, font_size: Optional[int
                 draw.text((cx, cy),         label, fill=_text_rgb,   font=font)
 
         headers = {}
+        use_jpg = fmt.lower() in ("jpg", "jpeg")
+        if use_jpg:
+            buf_out = io.BytesIO()
+            overlay.convert("RGB").save(buf_out, format="JPEG", quality=100)
+            content = buf_out.getvalue()
+            media_type = "image/jpeg"
+            fname = "diff_overlay.jpg"
+        else:
+            content = img_to_png_bytes(overlay)
+            media_type = "image/png"
+            fname = "diff_overlay.png"
         if full:
-            headers["Content-Disposition"] = 'attachment; filename="diff_overlay.png"'
-        return Response(content=img_to_png_bytes(overlay), media_type="image/png",
-                        headers=headers)
+            headers["Content-Disposition"] = f'attachment; filename="{fname}"'
+        return Response(content=content, media_type=media_type, headers=headers)
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -1435,7 +1604,7 @@ def _apply_vertical_stripe(
             _rot_rgb = _rot[:, :, ::-1]  # BGR→RGB
             _pil_rot = Image.fromarray(_rot_rgb.astype(np.uint8))
             _buf = io.BytesIO()
-            _pil_rot.save(_buf, format="JPEG", quality=92)
+            _pil_rot.save(_buf, format="JPEG", quality=100)
             rotated_bytes = _buf.getvalue()
 
         # Step 3: Analyze structure of rotated JPEG, then apply destruction
@@ -1460,7 +1629,7 @@ def _apply_vertical_stripe(
 
         # Step 5: Re-encode as JPEG
         out_buf = io.BytesIO()
-        final.save(out_buf, format="JPEG", quality=92)
+        final.save(out_buf, format="JPEG", quality=100)
         return out_buf.getvalue()
 
     finally:
@@ -1628,7 +1797,7 @@ async def save_decoded(file_id: str, method: str = "pillow", fmt: str = "jpeg"):
     buf = io.BytesIO()
     fmt = (fmt or "jpeg").lower()
     if fmt == "jpeg":
-        img.save(buf, format="JPEG", quality=95)
+        img.save(buf, format="JPEG", quality=100)
         mime = "image/jpeg"
         dl_name = f"{stem}_destroyed.jpg"
     elif fmt == "tiff":
