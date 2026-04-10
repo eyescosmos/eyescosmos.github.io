@@ -491,9 +491,9 @@
     const fitY = (state.height * 0.5) / worldHeight;
     const isMobileViewport = state.width <= 768;
     const baseScale = Math.max(1.02, Math.min(1.95, fitX * 8.0, fitY * 8.0));
-    state.defaultScale = isMobileViewport ? baseScale * 0.9 : baseScale;
+    state.defaultScale = isMobileViewport ? baseScale * 0.82 : baseScale;
     state.minScale = isMobileViewport
-      ? Math.max(0.24, baseScale * 0.3)
+      ? Math.max(0.16, baseScale * 0.22)
       : Math.max(0.38, baseScale * 0.45);
     state.maxScale = Math.max(isMobileViewport ? 3.2 : 3.6, state.defaultScale * (isMobileViewport ? 3.5 : 3.8));
 
@@ -1528,7 +1528,7 @@
   }
 
   bindControlButton(zoomInButton, () => nudgeZoom(1.35));
-  bindControlButton(zoomOutButton, () => nudgeZoom(1 / 1.35));
+  bindControlButton(zoomOutButton, () => nudgeZoom(1 / 1.5));
   bindControlButton(resetViewButton, resetView);
 
   initializeLanguageControls();

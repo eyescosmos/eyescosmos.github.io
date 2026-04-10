@@ -864,6 +864,7 @@ COPY = {
         "archive": "年代順にみる",
         "coordinates": "座標で見る",
         "home": "トップへ戻る",
+        "menu": "メニュー",
         "essay": "解説",
         "movements": "関連する運動",
         "relatedPeople": "関連する写真家・人物",
@@ -890,6 +891,7 @@ COPY = {
         "archive": "Browse by Era",
         "coordinates": "View in Coordinates",
         "home": "Back to Home",
+        "menu": "Menu",
         "essay": "Essay",
         "movements": "Related movements",
         "relatedPeople": "Related photographers & figures",
@@ -1071,6 +1073,20 @@ gtag('config', '{GA_ID}');
         <a href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
       </div>
     </div>
+    <details class="mobile-nav-drawer">
+      <summary class="mobile-nav-toggle" aria-label="{copy['menu']}">
+        <span></span><span></span><span></span>
+      </summary>
+      <div class="mobile-nav-panel">
+        <div class="mobile-nav-links">
+          <a href="{home_href}">{copy['home']}</a>
+          <a href="{archive_href}">{copy['archive']}</a>
+          <a href="{coordinates_href}">{copy['coordinates']}</a>
+          {country_select}
+          {era_select}
+        </div>
+      </div>
+    </details>
     <div class="hero">
       <div class="top-links">
         <a href="{home_href}">{copy['home']}</a>
