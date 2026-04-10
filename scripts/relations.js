@@ -316,8 +316,13 @@
       ? performance.now()
       : Date.now();
     state.ambientMotionUntil = now + 1600;
+    const mobileDensityBoost = state.width <= 768 ? 1.4 : 1;
+    const starCount = Math.max(
+      state.width <= 768 ? 320 : 220,
+      Math.round((state.width * state.height) / 11000 * mobileDensityBoost)
+    );
     state.stars = Array.from(
-      { length: Math.max(220, Math.round((state.width * state.height) / 11000)) },
+      { length: starCount },
       () => {
         const bright = Math.random() > 0.78;
         return {
@@ -1489,9 +1494,28 @@
   canvas.addEventListener('pointerleave', handlePointerLeave);
   canvas.addEventListener('wheel', handleWheel, { passive: false });
   window.addEventListener('resize', resize);
-  zoomInButton.addEventListener('click', () => nudgeZoom(1.35));
-  zoomOutButton.addEventListener('click', () => nudgeZoom(1 / 1.35));
-  resetViewButton.addEventListener('click', resetView);
+
+  function bindControlButton(button, action) {
+    if (!button) return;
+    let lastTriggeredAt = 0;
+    const handler = event => {
+      const now = Date.now();
+      if (now - lastTriggeredAt < 220) return;
+      lastTriggeredAt = now;
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      action();
+    };
+    button.addEventListener('click', handler);
+    button.addEventListener('pointerup', handler);
+    button.addEventListener('touchend', handler, { passive: false });
+  }
+
+  bindControlButton(zoomInButton, () => nudgeZoom(1.35));
+  bindControlButton(zoomOutButton, () => nudgeZoom(1 / 1.35));
+  bindControlButton(resetViewButton, resetView);
 
   initializeLanguageControls();
   applyStaticTranslations();

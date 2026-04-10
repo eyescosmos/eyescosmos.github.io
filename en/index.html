@@ -407,6 +407,7 @@ body.is-navigating #page-fade {
     right: 16px;
     bottom: calc(16px + env(safe-area-inset-bottom));
     z-index: 3;
+    pointer-events: auto;
   }
 
   .zoom-btn {
@@ -414,6 +415,7 @@ body.is-navigating #page-fade {
     height: 40px;
     background: rgba(10, 12, 18, 0.48);
     backdrop-filter: blur(14px);
+    touch-action: manipulation;
   }
 
   .mobile-info-drawer {
