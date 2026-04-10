@@ -56,7 +56,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-横山松三郎",
-  "name": "横山松三郎",
+  "name": "Yokoyama Matsusaburo",
   "nameJa": "横山松三郎",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -88,7 +88,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-冨重利平",
-  "name": "冨重利平",
+  "name": "Tomishige Rihei",
   "nameJa": "冨重利平",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -150,7 +150,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-冨重徳次",
-  "name": "冨重徳次",
+  "name": "Tomishige Tokuji",
   "nameJa": "冨重徳次",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -204,7 +204,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-鹿島清兵衛",
-  "name": "鹿島清兵衛",
+  "name": "Kajima Seibei",
   "nameJa": "鹿島清兵衛",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -230,7 +230,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-亀井茲明",
-  "name": "亀井茲明",
+  "name": "Koreaki Kamei",
   "nameJa": "亀井茲明",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -373,7 +373,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-屋須弘平",
-  "name": "屋須弘平",
+  "name": "Kohei Yasu",
   "nameJa": "屋須弘平",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -399,7 +399,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-鳥居龍蔵",
-  "name": "鳥居龍蔵",
+  "name": "Ryuzo Torii",
   "nameJa": "鳥居龍蔵",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -425,7 +425,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-福原信三",
-  "name": "福原信三",
+  "name": "Shinzo Fukuhara",
   "nameJa": "福原信三",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -453,7 +453,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-野島康三",
-  "name": "野島康三",
+  "name": "Yasuzo Nojima",
   "nameJa": "野島康三",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -569,7 +569,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-中山岩太",
-  "name": "中山岩太",
+  "name": "Iwata Nakayama",
   "nameJa": "中山岩太",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -597,7 +597,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-安井仲治",
-  "name": "安井仲治",
+  "name": "Nakaji Yasui",
   "nameJa": "安井仲治",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -836,7 +836,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-植田正治",
-  "name": "植田正治",
+  "name": "Shoji Ueda",
   "nameJa": "植田正治",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -865,7 +865,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-金丸重嶺",
-  "name": "金丸重嶺",
+  "name": "Shigene Kanamaru",
   "nameJa": "金丸重嶺",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -892,7 +892,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-鈴木八郎",
-  "name": "鈴木八郎",
+  "name": "Hachiro Suzuki",
   "nameJa": "鈴木八郎",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -919,7 +919,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-長谷川伝次郎",
-  "name": "長谷川伝次郎",
+  "name": "Denjiro Hasegawa",
   "nameJa": "長谷川伝次郎",
   "nationality": "JP",
   "flag": "🇯🇵",
@@ -1180,7 +1180,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jp-影山光洋",
-  "name": "影山光洋",
+  "name": "Koyo Kageyama",
   "nameJa": "影山光洋",
   "nationality": "JP",
   "flag": "🇯🇵",

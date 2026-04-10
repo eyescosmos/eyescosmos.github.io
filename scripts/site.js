@@ -144,6 +144,15 @@ const COUNTRY_ROUTE_META = {
   CA: { ja: 'カナダ', en: 'Canada', slug: 'canada' }
 };
 
+const MOVEMENT_NAME_OVERRIDES_EN = {
+  'カロタイプ': 'Calotype',
+  '肖像写真': 'Portrait Photography',
+  'ヘリオグラフィー': 'Heliography',
+  '建築写真': 'Architectural Photography',
+  '写真石版': 'Photolithography',
+  '明治ドキュメンタリー': 'Meiji Documentary'
+};
+
 const GENDER_TEXT = {
   男性: { ja: '男性', en: 'Male' },
   女性: { ja: '女性', en: 'Female' }
@@ -466,8 +475,22 @@ function displayName(p) {
 }
 
 function displaySubName(p) {
+  if (currentLanguage === 'en') return '';
   if (!p.nameJa || !p.name) return '';
   return `<div class="card-name-sub">${currentLanguage === 'en' ? p.nameJa : p.name}</div>`;
+}
+
+function displayYears(p) {
+  const raw = String(p.years || '').trim();
+  if (!raw) return '';
+  if (currentLanguage === 'en') {
+    let value = raw;
+    if (value.includes(' / ')) value = value.split(' / ', 1)[0].trim();
+    value = value.replace('明治期', 'Meiji period');
+    value = value.replace(/年代/g, 's');
+    return value.replace(/-/g, '–');
+  }
+  return raw;
 }
 
 function displayMeta(p) {
@@ -484,7 +507,7 @@ function displayGender(value) {
 
 function displayMovementName(movementName) {
   if (currentLanguage === 'en') {
-    return MOVEMENTS_META[movementName]?.en || movementName;
+    return MOVEMENTS_META[movementName]?.en || MOVEMENT_NAME_OVERRIDES_EN[movementName] || movementName;
   }
   return movementName;
 }
@@ -503,7 +526,7 @@ function buildPhotographerKeywordLine(photographer) {
 
 function buildPhotographerIntro(photographer) {
   const namePrimary = displayName(photographer);
-  const altName = currentLanguage === 'en' ? (photographer.nameJa || '') : (photographer.name || '');
+  const altName = currentLanguage === 'en' ? '' : (photographer.name || '');
   const identity = altName ? (currentLanguage === 'en' ? `${namePrimary} (${altName})` : `${namePrimary}（${altName}）`) : namePrimary;
   const period = (ERAS.find(era => era.id === photographer.era)?.period) || photographer.years || '';
   const movementNames = expandedMovementNames(photographer, 5);
@@ -874,7 +897,7 @@ function renderCard(p, extraAttrs = '') {
       <div class="card-flag-nat">${displayMeta(p)}</div>
       <div class="card-name">${displayName(p)}</div>
       ${displaySubName(p)}
-      <div class="card-years">${p.years}</div>
+      <div class="card-years">${escapeHtml(displayYears(p))}</div>
       <div class="card-tags">${tags}</div>
       ${coordinateButton}
     </div>
@@ -1230,8 +1253,8 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     <div class="detail-panel" id="${panelId}">
       <div class="detail-header">
         <div>
-          <div class="detail-name">${displayName(p)}${p.gender ? `<span style="font-size:12px;color:var(--text-muted);font-weight:normal;margin-left:10px;vertical-align:middle;letter-spacing:0.05em">${displayGender(p.gender)}</span>` : ''}${p.nameJa && p.name ? `<span style="display:block;font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);font-weight:normal;margin-top:3px;letter-spacing:0.04em">${currentLanguage === 'en' ? p.nameJa : p.name}</span>` : ''}</div>
-          <div class="detail-meta">${[displayMeta(p), p.years].filter(Boolean).join(' &nbsp;/&nbsp; ')}</div>
+          <div class="detail-name">${displayName(p)}${p.gender ? `<span style="font-size:12px;color:var(--text-muted);font-weight:normal;margin-left:10px;vertical-align:middle;letter-spacing:0.05em">${displayGender(p.gender)}</span>` : ''}${currentLanguage !== 'en' && p.nameJa && p.name ? `<span style="display:block;font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);font-weight:normal;margin-top:3px;letter-spacing:0.04em">${p.name}</span>` : ''}</div>
+          <div class="detail-meta">${[displayMeta(p), displayYears(p)].filter(Boolean).join(' &nbsp;/&nbsp; ')}</div>
           <div class="detail-keywordline">${keywordLine}</div>
         </div>
         <button class="close-btn" onclick="${closeFn}">✕</button>

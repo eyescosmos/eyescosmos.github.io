@@ -12,7 +12,7 @@ from pathlib import Path
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260409e"
+ASSET_VERSION = "20260410c"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -41,6 +41,14 @@ COUNTRY_META = {
     "JP": {"slug": "japan", "ja": "日本", "en": "Japan"},
     "BR": {"slug": "brazil", "ja": "ブラジル", "en": "Brazil"},
     "CA": {"slug": "canada", "ja": "カナダ", "en": "Canada"},
+}
+MOVEMENT_NAME_OVERRIDES_EN = {
+    "カロタイプ": "Calotype",
+    "肖像写真": "Portrait Photography",
+    "ヘリオグラフィー": "Heliography",
+    "建築写真": "Architectural Photography",
+    "写真石版": "Photolithography",
+    "明治ドキュメンタリー": "Meiji Documentary",
 }
 
 
@@ -84,6 +92,11 @@ def truncate_text(text: str, length: int) -> str:
     if cutoff < max(20, length // 2):
         cutoff = length
     return value[:cutoff].rstrip("、。,. ") + "…"
+
+
+def english_movement_name(movement: str, movements_meta: dict) -> str:
+    meta = movements_meta.get(movement, {})
+    return meta.get("en") or MOVEMENT_NAME_OVERRIDES_EN.get(movement) or movement
 
 
 def first_sentences(text: str, lang: str, limit: int = 2) -> list[str]:
@@ -445,8 +458,18 @@ def display_name(photographer: dict, lang: str) -> str:
 
 def display_alt_name(photographer: dict, lang: str) -> str:
     if lang == "en":
-        return photographer.get("nameJa") or ""
+        return ""
     return photographer.get("name") or ""
+
+
+def display_years(photographer: dict, lang: str) -> str:
+    raw = normalize_space(photographer.get("years") or "—")
+    if lang == "en":
+        if " / " in raw:
+            raw = raw.split(" / ", 1)[0].strip()
+        raw = raw.replace("明治期", "Meiji period")
+        raw = raw.replace("年代", "s")
+    return raw.replace("-", "–")
 
 
 def display_country(photographer: dict, lang: str) -> str:
@@ -482,8 +505,7 @@ def expanded_movement_names(photographer: dict, lang: str, movements_meta: dict,
             items.append(movement)
     localized = []
     for movement in items:
-        meta = movements_meta.get(movement, {})
-        localized.append(meta.get("en", movement) if lang == "en" else movement)
+        localized.append(english_movement_name(movement, movements_meta) if lang == "en" else movement)
     return localized[:limit]
 
 
@@ -912,8 +934,7 @@ def main() -> None:
 
             movement_links = []
             for movement in (photographer.get("movements") or []) + (get_enrichment(enrichments, photographer).get("extraMovements") or []):
-                meta = movements_meta.get(movement, {})
-                movement_label = meta.get("en", movement) if lang == "en" else movement
+                movement_label = english_movement_name(movement, movements_meta) if lang == "en" else movement
                 tag = f'<a class="tag" href="{movement_page_path(movement, lang)}">{escape_html(movement_label)}</a>'
                 if tag not in movement_links:
                     movement_links.append(tag)
@@ -959,6 +980,7 @@ def main() -> None:
             canonical = SITE + photographer_page_path(photographer, lang)
             x_default = SITE + photographer_page_path(photographer, "ja")
             stylesheet_href = ("../../styles/photographer-page.css" if lang == "en" else "../styles/photographer-page.css") + f"?v={ASSET_VERSION}"
+            override_href = ("../../data/photographer-essay-overrides.js" if lang == "en" else "../data/photographer-essay-overrides.js") + f"?v={ASSET_VERSION}"
             affiliate_href = ("../../data/affiliate-books.js" if lang == "en" else "../data/affiliate-books.js") + f"?v={ASSET_VERSION}"
             script_href = ("../../scripts/photographer-page.js" if lang == "en" else "../scripts/photographer-page.js") + f"?v={ASSET_VERSION}"
             home_href = "/en/" if lang == "en" else "/"
@@ -1029,7 +1051,7 @@ gtag('config', '{GA_ID}');
             </div>
             <div class="fact-item">
               <span class="fact-label">{'Years' if lang == 'en' else '生没年'}</span>
-              <span class="fact-value">{escape_html((photographer.get('years') or '—').replace('-', '–'))}</span>
+              <span class="fact-value">{escape_html(display_years(photographer, lang))}</span>
             </div>
           </div>
         </div>
@@ -1069,6 +1091,7 @@ gtag('config', '{GA_ID}');
       <div class="footer-links"><a href="{privacy_href}">{copy['privacy']}</a></div>
     </footer>
   </div>
+  <script src="{override_href}"></script>
   <script src="{affiliate_href}"></script>
   <script src="{script_href}"></script>
   <script type="application/ld+json">
