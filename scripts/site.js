@@ -9,6 +9,7 @@ const languageApi = window.PhotoCoordinatesI18n;
 let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
 const AFFILIATE_BOOKS = window.PHOTOGRAPHER_AFFILIATE_BOOKS || {};
 const PHOTOGRAPHER_ENRICHMENTS_DATA = window.PHOTOGRAPHER_ENRICHMENTS || {};
+const PHOTOGRAPHER_ESSAY_OVERRIDES = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
 const PHOTOGRAPHER_LINK_ALIAS_MAP = window.PHOTOGRAPHER_LINK_ALIASES
   || (typeof PHOTOGRAPHER_LINK_ALIASES !== 'undefined' ? PHOTOGRAPHER_LINK_ALIASES : {});
 const NON_PHOTOGRAPHER_IDS = new Set([
@@ -186,6 +187,60 @@ function escapeRegExp(value) {
 function getPhotographerEnrichment(photographer) {
   const id = typeof photographer === 'string' ? photographer : photographer?.id;
   return PHOTOGRAPHER_ENRICHMENTS_DATA[id] || {};
+}
+
+function getPhotographerEssayOverride(photographer) {
+  const id = typeof photographer === 'string' ? photographer : photographer?.id;
+  return PHOTOGRAPHER_ESSAY_OVERRIDES[id] || null;
+}
+
+function localizedEssaySections(override) {
+  if (!override?.sections) return [];
+  if (!override) return [];
+  return (override.sections || []).map(section => ({
+    heading: localizeValue(section.headingJa, section.headingEn),
+    paragraphs: currentLanguage === 'en'
+      ? (section.paragraphsEn || section.paragraphsJa || [])
+      : (section.paragraphsJa || section.paragraphsEn || [])
+  }));
+}
+
+function flattenEssaySections(sections) {
+  return (sections || [])
+    .flatMap(section => [section.heading, ...(section.paragraphs || [])].filter(Boolean))
+    .join('\n\n')
+    .trim();
+}
+
+function getPhotographerLeadCopy(photographer) {
+  const override = getPhotographerEssayOverride(photographer);
+  if (override) {
+    return localizeValue(override.leadJa, override.leadEn) || buildPhotographerIntro(photographer);
+  }
+  return buildPhotographerIntro(photographer);
+}
+
+function getPhotographerEssayPayload(photographer) {
+  const override = getPhotographerEssayOverride(photographer);
+  if (override) {
+    const text = localizeValue(override.textJa, override.textEn);
+    const sections = text ? [] : localizedEssaySections(override);
+    return {
+      text: text || flattenEssaySections(sections),
+      citations: override.citations || [],
+      links: override.links || []
+    };
+  }
+
+  const expText = photographer.expression ? localizeValue(photographer.expression.text, photographer.expression.textEn) : '';
+  const ctxText = photographer.context ? localizeValue(photographer.context.text, photographer.context.textEn) : '';
+  const citations = photographer.context?.citations || null;
+  const links = photographer.links || [];
+  return {
+    text: citations ? ctxText : [expText, ctxText].filter(Boolean).join(' '),
+    citations,
+    links
+  };
 }
 
 function enrichmentValue(photographer, baseKey) {
@@ -1081,7 +1136,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const isMovement = idPrefix !== 'panel-';
   const panelId = `${idPrefix}${p.id}`;
   const closeFn = customCloseFn || (isMovement ? `closeMovementDetail('${p.id}')` : `closeDetail('${p.id}')`);
-  const intro = buildPhotographerIntro(p);
+  const intro = getPhotographerLeadCopy(p);
   const keywordLine = buildPhotographerKeywordLine(p);
   const tags = expandedMovementNames(p, 5)
     .map((movementLabel, index) => {
@@ -1089,7 +1144,8 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
       const slug = movementSlug(sourceMovement);
       return `<a class="detail-tag" href="#movement-${slug}" onclick="openRecommendedMovement(event,'${slug}')">${displayMovementName(sourceMovement)}</a>`;
     }).join('');
-  const linksHTML = p.links.map(l =>
+  const detailLinks = getPhotographerEssayPayload(p).links;
+  const linksHTML = detailLinks.map(l =>
     `<a class="detail-link" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`
   ).join('');
   const detailPageLink = `<a class="detail-link" href="${photographerPagePath(p)}">${detailPageLinkLabel(p)}</a>`;
@@ -1115,11 +1171,12 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   let contextHTML;
   let citationsHTML = '';
   let rawEssayText = '';
-  if (p.context && p.context.citations) {
+  const essayPayload = getPhotographerEssayPayload(p);
+  if (essayPayload.citations) {
     /* 新フォーマット：context.text に *1 *2 マーカー、context.citations に出典 */
-    rawEssayText = localizeValue(p.context.text, p.context.textEn);
-    const ctxText = renderCiteText(rawEssayText, p.context.citations, { excludeId: p.id, linkedIds: new Set() });
-    citationsHTML = p.context.citations.map(c =>
+    rawEssayText = essayPayload.text;
+    const ctxText = renderCiteText(rawEssayText, essayPayload.citations, { excludeId: p.id, linkedIds: new Set() });
+    citationsHTML = essayPayload.citations.map(c =>
       `<div class="cite-item"><span class="cite-num">*${c.num}</span><a href="${c.url}" target="_blank" rel="noopener">${c.name}</a></div>`
     ).join('');
     contextHTML = `
@@ -1466,6 +1523,7 @@ function initRandom() {
   document.getElementById('random-meta').textContent =
     `${displayMeta(p)}  /  ${p.years}  /  ${p.movements.map(displayMovementName).join(' · ')}`;
   const excerptSrc =
+    getPhotographerEssayPayload(p).text ||
     (p.context && localizeValue(p.context.text, p.context.textEn)) ||
     (p.expression && localizeValue(p.expression.text, p.expression.textEn)) ||
     '';
