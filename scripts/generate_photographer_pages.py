@@ -1078,13 +1078,7 @@ gtag('config', '{GA_ID}');
         <span></span><span></span><span></span>
       </summary>
       <div class="mobile-nav-panel">
-        <div class="mobile-nav-links">
-          <a href="{home_href}">{copy['home']}</a>
-          <a href="{archive_href}">{copy['archive']}</a>
-          <a href="{coordinates_href}">{copy['coordinates']}</a>
-          {country_select}
-          {era_select}
-        </div>
+        <div class="mobile-nav-content"></div>
       </div>
     </details>
     <div class="hero">

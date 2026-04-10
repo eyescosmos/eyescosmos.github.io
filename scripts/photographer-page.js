@@ -34,6 +34,45 @@
   const hero = document.querySelector('[data-amazon-hero]');
   const section = document.querySelector('[data-affiliate-section]');
   const list = document.querySelector('[data-affiliate-list]');
+  const mobileNavDrawer = document.querySelector('.mobile-nav-drawer');
+  const mobileNavContent = document.querySelector('.mobile-nav-content');
+  const topLineLangToggle = document.querySelector('.topline > .lang-toggle');
+  const heroTopLinks = document.querySelector('.hero > .top-links');
+
+  if (mobileNavDrawer && mobileNavContent && topLineLangToggle && heroTopLinks) {
+    const langPlaceholder = document.createComment('mobile-lang-toggle-placeholder');
+    const linksPlaceholder = document.createComment('mobile-top-links-placeholder');
+    topLineLangToggle.parentNode.insertBefore(langPlaceholder, topLineLangToggle);
+    heroTopLinks.parentNode.insertBefore(linksPlaceholder, heroTopLinks);
+
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+    const syncMobileNav = () => {
+      if (mobileQuery.matches) {
+        if (topLineLangToggle.parentNode !== mobileNavContent) {
+          mobileNavContent.appendChild(topLineLangToggle);
+        }
+        if (heroTopLinks.parentNode !== mobileNavContent) {
+          mobileNavContent.appendChild(heroTopLinks);
+        }
+      } else {
+        if (langPlaceholder.parentNode && topLineLangToggle.parentNode !== langPlaceholder.parentNode) {
+          langPlaceholder.parentNode.insertBefore(topLineLangToggle, langPlaceholder.nextSibling);
+        }
+        if (linksPlaceholder.parentNode && heroTopLinks.parentNode !== linksPlaceholder.parentNode) {
+          linksPlaceholder.parentNode.insertBefore(heroTopLinks, linksPlaceholder.nextSibling);
+        }
+        mobileNavDrawer.open = false;
+      }
+    };
+
+    syncMobileNav();
+    if (typeof mobileQuery.addEventListener === 'function') {
+      mobileQuery.addEventListener('change', syncMobileNav);
+    } else if (typeof mobileQuery.addListener === 'function') {
+      mobileQuery.addListener(syncMobileNav);
+    }
+  }
 
   function resolveByLanguage(record, jaKey, enKey, fallbackKey) {
     if (!record || typeof record !== 'object') return '';
