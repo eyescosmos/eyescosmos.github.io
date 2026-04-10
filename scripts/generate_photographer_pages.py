@@ -7,6 +7,7 @@ import re
 import subprocess
 import csv
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
@@ -49,6 +50,19 @@ MOVEMENT_NAME_OVERRIDES_EN = {
     "建築写真": "Architectural Photography",
     "写真石版": "Photolithography",
     "明治ドキュメンタリー": "Meiji Documentary",
+}
+JP_TEXT_RE = re.compile(r"[ぁ-んァ-ン一-龯]")
+EN_REFERENCE_REPLACEMENTS = {
+    "公式アーカイブ": "official archive",
+    "プレスリリース": "press release",
+    "写真の小さな歴史": "A Little History of Photography",
+    "マン・レイとのエピソードを含む": "including the Man Ray episode",
+    "ベレニス・アボットによるアーカイブ保存": "archive preserved by Berenice Abbott",
+    "ジョン・シャーコウスキーの評価": "John Szarkowski on Atget",
+    "写真美術館": "Photography Museum",
+    "美術館": "Museum",
+    "記念館": "Memorial Museum",
+    "文化庁": "Agency for Cultural Affairs",
 }
 
 
@@ -97,6 +111,36 @@ def truncate_text(text: str, length: int) -> str:
 def english_movement_name(movement: str, movements_meta: dict) -> str:
     meta = movements_meta.get(movement, {})
     return meta.get("en") or MOVEMENT_NAME_OVERRIDES_EN.get(movement) or movement
+
+
+def fallback_english_reference_label(url: str) -> str:
+    host = ""
+    try:
+        host = urlparse(url).hostname or ""
+    except Exception:
+        host = ""
+    host = re.sub(r"^www\.", "", host)
+    return f"Japanese source — {host}" if host else "Japanese source"
+
+
+def english_reference_label(label: str, url: str) -> str:
+    value = normalize_space(label)
+    if not value or not JP_TEXT_RE.search(value):
+        return value
+    for source, target in EN_REFERENCE_REPLACEMENTS.items():
+        value = value.replace(source, target)
+    if not JP_TEXT_RE.search(value):
+        return value
+    if " — " in value:
+        left, right = value.split(" — ", 1)
+        if not JP_TEXT_RE.search(left):
+            translated_right = right
+            for source, target in EN_REFERENCE_REPLACEMENTS.items():
+                translated_right = translated_right.replace(source, target)
+            translated_right = re.sub(r"（[^）]*）", "", translated_right).strip()
+            if not JP_TEXT_RE.search(translated_right) and translated_right:
+                return f"{left} — {translated_right}"
+    return fallback_english_reference_label(url)
 
 
 def first_sentences(text: str, lang: str, limit: int = 2) -> list[str]:
@@ -947,13 +991,13 @@ def main() -> None:
 
             links = photographer.get("links") or []
             links_html = "".join(
-                f'<a class="chip-link" href="{escape_html(link["url"])}" target="_blank" rel="noopener">{escape_html(link["label"])} ↗</a>'
+                f'<a class="chip-link" href="{escape_html(link["url"])}" target="_blank" rel="noopener">{escape_html(english_reference_label(link["label"], link["url"]) if lang == "en" else link["label"])} ↗</a>'
                 for link in links
             ) or f'<div class="note">{copy["linksPlaceholder"]}</div>'
 
             if citations:
                 citations_html = "".join(
-                    f'<div class="cite-item" id="cite-{cite.get("num", index + 1)}"><div class="cite-num">*{cite.get("num", index + 1)}</div><a href="{escape_html(cite.get("url", "#"))}" target="_blank" rel="noopener">{escape_html(cite.get("name", cite.get("text", cite.get("url", ""))))}</a></div>'
+                    f'<div class="cite-item" id="cite-{cite.get("num", index + 1)}"><div class="cite-num">*{cite.get("num", index + 1)}</div><a href="{escape_html(cite.get("url", "#"))}" target="_blank" rel="noopener">{escape_html(english_reference_label(cite.get("name", cite.get("text", cite.get("url", ""))), cite.get("url", "")) if lang == "en" else cite.get("name", cite.get("text", cite.get("url", ""))))}</a></div>'
                     for index, cite in enumerate(citations)
                 )
             else:

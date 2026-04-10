@@ -152,6 +152,19 @@ const MOVEMENT_NAME_OVERRIDES_EN = {
   '写真石版': 'Photolithography',
   '明治ドキュメンタリー': 'Meiji Documentary'
 };
+const JAPANESE_TEXT_RE = /[ぁ-んァ-ン一-龯]/;
+const EN_REFERENCE_REPLACEMENTS = {
+  '公式アーカイブ': 'official archive',
+  'プレスリリース': 'press release',
+  '写真の小さな歴史': 'A Little History of Photography',
+  'マン・レイとのエピソードを含む': 'including the Man Ray episode',
+  'ベレニス・アボットによるアーカイブ保存': 'archive preserved by Berenice Abbott',
+  'ジョン・シャーコウスキーの評価': 'John Szarkowski on Atget',
+  '写真美術館': 'Photography Museum',
+  '美術館': 'Museum',
+  '記念館': 'Memorial Museum',
+  '文化庁': 'Agency for Cultural Affairs'
+};
 
 const GENDER_TEXT = {
   男性: { ja: '男性', en: 'Male' },
@@ -510,6 +523,39 @@ function displayMovementName(movementName) {
     return MOVEMENTS_META[movementName]?.en || MOVEMENT_NAME_OVERRIDES_EN[movementName] || movementName;
   }
   return movementName;
+}
+
+function fallbackEnglishReferenceLabel(url) {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, '');
+    return host ? `Japanese source — ${host}` : 'Japanese source';
+  } catch {
+    return 'Japanese source';
+  }
+}
+
+function englishReferenceLabel(label, url = '') {
+  const raw = `${label || ''}`.trim();
+  if (!raw || !JAPANESE_TEXT_RE.test(raw)) return raw;
+  let value = raw;
+  Object.entries(EN_REFERENCE_REPLACEMENTS).forEach(([source, target]) => {
+    value = value.split(source).join(target);
+  });
+  if (!JAPANESE_TEXT_RE.test(value)) return value;
+  if (value.includes(' — ')) {
+    const [left, right] = value.split(' — ', 2);
+    if (!JAPANESE_TEXT_RE.test(left)) {
+      let translatedRight = right;
+      Object.entries(EN_REFERENCE_REPLACEMENTS).forEach(([source, target]) => {
+        translatedRight = translatedRight.split(source).join(target);
+      });
+      translatedRight = translatedRight.replace(/（[^）]*）/g, '').trim();
+      if (translatedRight && !JAPANESE_TEXT_RE.test(translatedRight)) {
+        return `${left} — ${translatedRight}`;
+      }
+    }
+  }
+  return fallbackEnglishReferenceLabel(url);
 }
 
 function displayEraTitle(era) {
@@ -1169,7 +1215,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     }).join('');
   const detailLinks = getPhotographerEssayPayload(p).links;
   const linksHTML = detailLinks.map(l =>
-    `<a class="detail-link" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`
+    `<a class="detail-link" href="${l.url}" target="_blank" rel="noopener">${currentLanguage === 'en' ? englishReferenceLabel(l.label, l.url) : l.label} ↗</a>`
   ).join('');
   const detailPageLink = `<a class="detail-link" href="${photographerPagePath(p)}">${detailPageLinkLabel(p)}</a>`;
   if (p.isPlaceholder) {
@@ -1200,7 +1246,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     rawEssayText = essayPayload.text;
     const ctxText = renderCiteText(rawEssayText, essayPayload.citations, { excludeId: p.id, linkedIds: new Set() });
     citationsHTML = essayPayload.citations.map(c =>
-      `<div class="cite-item"><span class="cite-num">*${c.num}</span><a href="${c.url}" target="_blank" rel="noopener">${c.name}</a></div>`
+      `<div class="cite-item"><span class="cite-num">*${c.num}</span><a href="${c.url}" target="_blank" rel="noopener">${currentLanguage === 'en' ? englishReferenceLabel(c.name, c.url) : c.name}</a></div>`
     ).join('');
     contextHTML = `
       <div class="detail-section">
@@ -1225,7 +1271,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
     const seen = new Set();
     const dedupSrc = allSrc.filter(s => { if (seen.has(s.url)) return false; seen.add(s.url); return true; });
     citationsHTML = dedupSrc.map((s, i) =>
-      `<div class="cite-item"><span class="cite-num">*${i+1}</span><a href="${s.url}" target="_blank" rel="noopener">${s.text}</a></div>`
+      `<div class="cite-item"><span class="cite-num">*${i+1}</span><a href="${s.url}" target="_blank" rel="noopener">${currentLanguage === 'en' ? englishReferenceLabel(s.text, s.url) : s.text}</a></div>`
     ).join('');
     contextHTML = `
       <div class="detail-section">
