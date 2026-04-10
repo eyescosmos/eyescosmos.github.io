@@ -323,19 +323,18 @@ body.is-navigating #page-fade {
   color: rgba(235, 224, 204, 0.94);
 }
 
+.mobile-info-drawer {
+  display: none;
+}
+
 @media (max-width: 768px) {
   body {
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
   }
 
   .shell {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    min-height: max(100svh, 980px);
-    padding: 18px 16px calc(136px + env(safe-area-inset-bottom));
+    min-height: 100svh;
+    padding: 0;
   }
 
   #constellation-canvas {
@@ -343,114 +342,65 @@ body.is-navigating #page-fade {
     inset: 0;
     width: 100%;
     height: 100svh;
-    touch-action: pan-y pinch-zoom;
+    touch-action: none;
   }
 
   .hud,
-  .focus-card,
   .page-links {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    width: 100%;
-    max-width: none;
+    position: fixed;
+    z-index: 4;
   }
 
   .hud {
-    order: 1;
-    margin-top: 2px;
+    top: calc(14px + env(safe-area-inset-top));
+    left: 16px;
+    right: 116px;
+    width: auto;
+    max-width: none;
   }
 
   .hero-text {
-    width: min(100%, 32rem);
-    gap: 10px;
-  }
-
-  .eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-  }
-
-  .keywordline {
-    font-size: 10px;
-    line-height: 1.6;
+    width: auto;
+    max-width: 100%;
+    gap: 0;
   }
 
   .title {
-    font-size: clamp(34px, 12vw, 54px);
-    letter-spacing: 0.12em;
-  }
-
-  .title-subcopy {
-    max-width: 34ch;
-    font-size: 15px;
-    line-height: 1.82;
-  }
-
-  .lede {
-    max-width: 34ch;
-    font-size: 13px;
-    line-height: 1.78;
-  }
-
-  .title-status {
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    opacity: 0.78;
-  }
-
-  .title-note {
-    max-width: 34ch;
-    font-size: 10px;
-    line-height: 1.72;
-    opacity: 0.76;
+    font-size: clamp(20px, 7vw, 30px);
+    letter-spacing: 0.08em;
+    line-height: 1;
   }
 
   .page-links {
-    order: 2;
-    margin-top: 18px;
+    top: calc(14px + env(safe-area-inset-top));
+    right: 16px;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
     gap: 8px;
-    width: min(100%, 22rem);
+    width: auto;
   }
 
   .lang-toggle {
-    align-self: flex-start;
-    opacity: 0.9;
+    background: rgba(10, 12, 18, 0.44);
+    backdrop-filter: blur(14px);
   }
 
   .lang-btn {
-    padding: 10px 12px;
+    padding: 8px 10px;
     font-size: 10px;
   }
 
-  .page-link {
-    display: block;
-    width: 100%;
-    padding: 14px 16px;
-    text-align: center;
-    font-size: 12px;
-  }
-
-  .focus-card {
-    order: 3;
-    margin-top: 18px;
-    width: min(100%, 22rem);
-    padding: 16px 18px;
-  }
-
-  .focus-label {
-    font-size: 14px;
-  }
-
-  .focus-meta,
-  .focus-hint {
-    font-size: 12px;
-    line-height: 1.66;
+  .page-link,
+  .focus-card,
+  .eyebrow,
+  .keywordline,
+  .title-subcopy,
+  .title-status,
+  .lede,
+  .title-note,
+  .site-footer {
+    display: none;
   }
 
   .zoom-controls {
@@ -461,17 +411,113 @@ body.is-navigating #page-fade {
     z-index: 3;
   }
 
-  .site-footer {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    transform: none;
-    order: 4;
-    margin: 28px auto 0;
-    width: max-content;
-    max-width: 100%;
-    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  .zoom-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(10, 12, 18, 0.48);
+    backdrop-filter: blur(14px);
+  }
+
+  .mobile-info-drawer {
+    display: block;
+    position: fixed;
+    left: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    z-index: 5;
+    width: min(calc(100vw - 32px), 24rem);
+  }
+
+  .mobile-info-summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(10, 12, 18, 0.52);
+    backdrop-filter: blur(14px);
+    color: var(--text);
+    font: 500 16px/1 'DM Mono', monospace;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .mobile-info-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-info-panel {
+    display: none;
+    margin-top: 10px;
+    padding: 16px 16px 18px;
+    border: 1px solid var(--border);
+    background: rgba(8, 10, 16, 0.86);
+    backdrop-filter: blur(18px);
+    max-height: min(62svh, 30rem);
+    overflow-y: auto;
+  }
+
+  .mobile-info-drawer[open] .mobile-info-panel {
+    display: block;
+  }
+
+  .mobile-info-sections {
+    display: grid;
+    gap: 14px;
+  }
+
+  .mobile-info-block {
+    display: grid;
+    gap: 6px;
+  }
+
+  .mobile-info-heading {
+    color: var(--accent);
+    font: 400 10px/1.4 'DM Mono', monospace;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .mobile-info-text {
+    color: var(--text-dim);
+    font-size: 13px;
+    line-height: 1.72;
+  }
+
+  .mobile-info-links {
+    display: grid;
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  .mobile-info-link {
+    display: block;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    text-decoration: none;
+    text-align: center;
+    font: 400 11px/1.2 'DM Mono', monospace;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .mobile-info-link:hover {
+    color: var(--text);
+    background: rgba(198, 170, 130, 0.06);
+  }
+
+  .mobile-info-footer {
+    margin-top: 4px;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .mobile-info-footer a {
+    color: rgba(213, 194, 156, 0.76);
+    text-decoration: none;
   }
 }
 </style>
@@ -515,6 +561,32 @@ body.is-navigating #page-fade {
   </div>
 </div>
 
+<details class="mobile-info-drawer">
+  <summary class="mobile-info-summary" aria-label="このサイトについて">i</summary>
+  <div class="mobile-info-panel">
+    <div class="mobile-info-sections">
+      <div class="mobile-info-block">
+        <div class="mobile-info-heading">このサイトについて</div>
+        <div class="mobile-info-text">写真の座標は、世界・日本・各国の写真家、歴史、運動、思想、時代背景の関係から写真史をたどるサイトです。</div>
+      </div>
+      <div class="mobile-info-block">
+        <div class="mobile-info-heading">使い方</div>
+        <div class="mobile-info-text">クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。</div>
+      </div>
+      <div class="mobile-info-block">
+        <div class="mobile-info-heading">補足</div>
+        <div class="mobile-info-text">随時更新中。</div>
+        <div class="mobile-info-text">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
+      </div>
+      <div class="mobile-info-links">
+        <a class="mobile-info-link" href="archive.html#tab-era">年代順にみる</a>
+        <a class="mobile-info-link" href="archive.html">表現から見る</a>
+      </div>
+      <div class="mobile-info-footer"><a href="privacy-policy.html">プライバシーポリシー</a></div>
+    </div>
+  </div>
+</details>
+
 <div id="page-fade" aria-hidden="true"></div>
 <footer class="site-footer">
   <a href="privacy-policy.html">プライバシーポリシー</a>
@@ -532,8 +604,7 @@ body.is-navigating #page-fade {
       const titleText = document.getElementById('main-title');
       if (!hero || !titleText) return;
       if (window.innerWidth <= 768) {
-        const mobileWidth = Math.max(280, Math.min(window.innerWidth - 32, 512));
-        hero.style.setProperty('--hero-copy-width', mobileWidth + 'px');
+        hero.style.setProperty('--hero-copy-width', 'auto');
         return;
       }
       const viewportWidth = window.innerWidth - 64;
