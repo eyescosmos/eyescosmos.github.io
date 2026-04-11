@@ -334,8 +334,8 @@ body { min-height: 100vh; }
   .mobile-nav-drawer {
     display: block !important;
     position: fixed !important;
-    top: calc(-6px + env(safe-area-inset-top)) !important;
-    right: calc(-10px + env(safe-area-inset-right)) !important;
+    top: calc(48px + env(safe-area-inset-top)) !important;
+    right: calc(11px + env(safe-area-inset-right)) !important;
     left: auto !important;
     bottom: auto !important;
     margin: 0 !important;
