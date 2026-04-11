@@ -345,14 +345,14 @@ body { min-height: 100vh; }
   .mobile-nav-toggle {
     display: grid !important;
     place-items: center;
-    gap: 0.3px;
-    width: 32px;
-    height: 32px;
+    gap: 0px;
+    width: 54px;
+    height: 54px;
     border: 1px solid rgba(215, 192, 156, 0.48);
     background: rgba(11, 14, 22, 0.78);
     backdrop-filter: blur(14px);
     border-radius: 999px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.28);
     list-style: none;
     cursor: pointer;
     appearance: none;
@@ -362,8 +362,8 @@ body { min-height: 100vh; }
   .mobile-nav-toggle::marker { content: ""; }
   .mobile-nav-toggle span {
     display: block;
-    width: 11px;
-    height: 0.85px;
+    width: 15px;
+    height: 1.1px;
     background: #e6d3af;
   }
   .mobile-nav-panel {
