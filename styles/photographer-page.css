@@ -345,11 +345,11 @@ body { min-height: 100vh; }
   .mobile-nav-toggle {
     display: grid !important;
     place-items: center;
-    width: 48px;
-    height: 48px;
+    width: 104px;
+    height: 104px;
     padding: 0;
     border: 0;
-    background: transparent url("../assets/mobile-nav-toggle.svg") center / 32px 32px no-repeat;
+    background: transparent url("../assets/mobile-nav-toggle.svg") center / 96px 96px no-repeat;
     backdrop-filter: none;
     border-radius: 0;
     box-shadow: none;
