@@ -65,6 +65,7 @@ const UI_TEXT = {
     explanation: '解説',
     externalLinks: '外部リンク',
     books: '写真集',
+    affiliateDisclosure: '※アフィリエイトリンクを含みます',
     sources: '出典',
     amazon: '写真集を Amazon で見る ↗',
     amazonPending: '写真集へのリンク（準備中）',
@@ -108,6 +109,7 @@ const UI_TEXT = {
     explanation: 'Essay',
     externalLinks: 'External Links',
     books: 'Photobooks',
+    affiliateDisclosure: 'Includes affiliate links',
     sources: 'Sources',
     amazon: 'View on Amazon ↗',
     amazonPending: 'Book link coming soon',
@@ -402,6 +404,7 @@ function renderArchiveAffiliateSection(photographer) {
         ${book.note ? `<div class="detail-book-note">${book.note}</div>` : ''}
         <div class="detail-book-actions">
           <a class="detail-link detail-link-amazon" href="${book.url}" target="_blank" rel="noopener sponsored">${ctaLabel}</a>
+          <span class="detail-affiliate-disclosure">${t('affiliateDisclosure')}</span>
         </div>
       </div>`;
   }).join('');

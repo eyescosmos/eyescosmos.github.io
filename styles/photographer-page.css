@@ -225,6 +225,12 @@ body { min-height: 100vh; }
 .book-title { font-size: 15px; font-weight: 500; color: var(--text); }
 .book-note { font-size: 13px; line-height: 1.7; color: var(--muted); }
 .book-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.affiliate-disclosure {
+  align-self: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 232, 196, 0.72);
+}
 .section[data-affiliate-section] {
   border-color: var(--amazon-border);
   background:

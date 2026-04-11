@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260411p"
+ASSET_VERSION = "20260411q"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -71,6 +71,21 @@ def eval_js(files: list[str], expression: str):
     for rel in files:
         source.append((REPO / rel).read_text(encoding="utf-8"))
     source.append(f"console.log(JSON.stringify({expression}));")
+    source.append("})();")
+    proc = subprocess.run(
+        ["osascript", "-l", "JavaScript"],
+        input="\n".join(source).encode("utf-8"),
+        capture_output=True,
+        check=True,
+    )
+    payload = proc.stderr.decode("utf-8") or proc.stdout.decode("utf-8")
+    return json.loads(payload)
+
+
+def load_affiliate_books() -> dict:
+    source = ["(function(){", "var window = {};"]
+    source.append((REPO / "data/affiliate-books.js").read_text(encoding="utf-8"))
+    source.append("console.log(JSON.stringify(window.PHOTOGRAPHER_AFFILIATE_BOOKS || {}));")
     source.append("})();")
     proc = subprocess.run(
         ["osascript", "-l", "JavaScript"],
@@ -141,6 +156,67 @@ def english_reference_label(label: str, url: str) -> str:
             if not JP_TEXT_RE.search(translated_right) and translated_right:
                 return f"{left} — {translated_right}"
     return fallback_english_reference_label(url)
+
+
+def localize_affiliate_value(record: dict, lang: str, ja_key: str, en_key: str, fallback_key: str = "") -> str:
+    if not isinstance(record, dict):
+        return ""
+    value = (record.get(en_key) or record.get(ja_key) or record.get(fallback_key or "") or "") if lang == "en" else (record.get(ja_key) or record.get(en_key) or record.get(fallback_key or "") or "")
+    return html.unescape(str(value or "")).strip()
+
+
+def build_affiliate_books_html(photographer: dict, lang: str, affiliate_books: dict, copy: dict) -> str:
+    entry = affiliate_books.get(photographer.get("id")) or {}
+    books = []
+    for book in entry.get("books") or []:
+        title = localize_affiliate_value(book, lang, "titleJa", "titleEn", "title")
+        note = localize_affiliate_value(book, lang, "noteJa", "noteEn", "note")
+        url = localize_affiliate_value(book, lang, "urlJa", "urlEn", "url")
+        image_url = localize_affiliate_value(book, lang, "imageUrlJa", "imageUrlEn", "imageUrl")
+        image_alt = localize_affiliate_value(book, lang, "imageAltJa", "imageAltEn", "imageAlt") or title
+        if title and url:
+            books.append({
+                "title": title,
+                "note": note,
+                "url": url,
+                "imageUrl": image_url,
+                "imageAlt": image_alt,
+            })
+    books = books[:3]
+
+    if not books:
+        return f"""<section class="section" data-affiliate-section>
+        <h2>{escape_html(books_heading(photographer, lang))}</h2>
+        <div class="book-grid">
+          <div class="note">{copy['booksPlaceholder']}</div>
+        </div>
+      </section>"""
+
+    cards = []
+    for book in books:
+        image_html = ""
+        if book["imageUrl"]:
+            image_html = f'<img class="book-thumb" src="{escape_html(book["imageUrl"])}" alt="{escape_html(book["imageAlt"])}" loading="lazy">'
+        cards.append(f"""<div class="book-card">
+          <div class="book-media">
+            {image_html}
+            <div class="book-copy">
+              <div class="book-title">{escape_html(book['title'])}</div>
+              {f'<div class="book-note">{escape_html(book["note"])}</div>' if book['note'] else ''}
+            </div>
+          </div>
+          <div class="book-actions">
+            <a class="chip-link amazon-cta" href="{escape_html(book['url'])}" target="_blank" rel="noopener sponsored">{copy['amazonCta']}</a>
+            <span class="affiliate-disclosure">{escape_html(copy['affiliateDisclosure'])}</span>
+          </div>
+        </div>""")
+
+    return f"""<section class="section" data-affiliate-section>
+        <h2>{escape_html(books_heading(photographer, lang))}</h2>
+        <div class="book-grid">
+          {''.join(cards)}
+        </div>
+      </section>"""
 
 
 def first_sentences(text: str, lang: str, limit: int = 2) -> list[str]:
@@ -871,6 +947,8 @@ COPY = {
         "relatedPeoplePlaceholder": "関連する写真家・人物は準備中です。",
         "links": "外部リンク",
         "books": "写真集",
+        "amazonCta": "写真集を Amazon で見る ↗",
+        "affiliateDisclosure": "※アフィリエイトリンクを含みます",
         "sources": "出典",
         "placeholder": "解説準備中。",
         "movementPlaceholder": "関連運動は準備中です。",
@@ -898,6 +976,8 @@ COPY = {
         "relatedPeoplePlaceholder": "Related photographers and figures coming soon.",
         "links": "External links",
         "books": "Photobooks",
+        "amazonCta": "View on Amazon ↗",
+        "affiliateDisclosure": "Includes affiliate links",
         "sources": "Sources",
         "placeholder": "Coming soon.",
         "movementPlaceholder": "Related movements coming soon.",
@@ -935,6 +1015,7 @@ def main() -> None:
     )
     movements_meta = eval_js(["data/movements.js"], "MOVEMENTS_META")
     enrichments = eval_js(["data/photographer-enrichments.js"], 'typeof PHOTOGRAPHER_ENRICHMENTS !== "undefined" ? PHOTOGRAPHER_ENRICHMENTS : {}')
+    affiliate_books = load_affiliate_books()
     eras = eval_js(
         [
             "data/eras.js",
@@ -977,6 +1058,7 @@ def main() -> None:
             intro = build_intro(photographer, lang, era_lookup, movements_meta, enrichments)
             keyword_line = build_keyword_line(photographer, lang, era_lookup, movements_meta, enrichments)
             keyword_line_html = build_keyword_line_html(photographer, lang, era_lookup, movements_meta, enrichments)
+            affiliate_section_html = build_affiliate_books_html(photographer, lang, affiliate_books, copy)
 
             movement_links = []
             for movement in (photographer.get("movements") or []) + (get_enrichment(enrichments, photographer).get("extraMovements") or []):
@@ -1027,7 +1109,6 @@ def main() -> None:
             x_default = SITE + photographer_page_path(photographer, "ja")
             stylesheet_href = ("../../styles/photographer-page.css" if lang == "en" else "../styles/photographer-page.css") + f"?v={ASSET_VERSION}"
             override_href = ("../../data/photographer-essay-overrides.js" if lang == "en" else "../data/photographer-essay-overrides.js") + f"?v={ASSET_VERSION}"
-            affiliate_href = ("../../data/affiliate-books.js" if lang == "en" else "../data/affiliate-books.js") + f"?v={ASSET_VERSION}"
             script_href = ("../../scripts/photographer-page.js" if lang == "en" else "../scripts/photographer-page.js") + f"?v={ASSET_VERSION}"
             home_href = "/en/" if lang == "en" else "/"
             privacy_href = "/en/privacy-policy.html" if lang == "en" else "/privacy-policy.html"
@@ -1124,12 +1205,7 @@ gtag('config', '{GA_ID}');
         <h2>{copy['essay']}</h2>
         <div class="essay">{rendered_body}</div>
       </section>
-      <section class="section" data-affiliate-section hidden>
-        <h2>{escape_html(books_heading(photographer, lang))}</h2>
-        <div class="book-grid" data-affiliate-list>
-          <div class="note">{copy['booksPlaceholder']}</div>
-        </div>
-      </section>
+      {affiliate_section_html}
       <section class="section">
         <h2>{copy['links']}</h2>
         <div class="links">{links_html}</div>
@@ -1146,7 +1222,6 @@ gtag('config', '{GA_ID}');
     </footer>
   </div>
   <script src="{override_href}"></script>
-  <script src="{affiliate_href}"></script>
   <script src="{script_href}"></script>
   <script type="application/ld+json">
 {structured_data}
