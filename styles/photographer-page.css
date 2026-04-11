@@ -345,14 +345,15 @@ body { min-height: 100vh; }
   .mobile-nav-toggle {
     display: grid !important;
     place-items: center;
-    gap: 0px;
-    width: 54px;
-    height: 54px;
-    border: 1px solid rgba(215, 192, 156, 0.48);
-    background: rgba(11, 14, 22, 0.78);
-    backdrop-filter: blur(14px);
-    border-radius: 999px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.28);
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    background: transparent url("../assets/mobile-nav-toggle.svg") center / 32px 32px no-repeat;
+    backdrop-filter: none;
+    border-radius: 0;
+    box-shadow: none;
+    filter: drop-shadow(1px 2px 6px rgba(0, 0, 0, 0.20));
     list-style: none;
     cursor: pointer;
     appearance: none;
@@ -361,10 +362,7 @@ body { min-height: 100vh; }
   .mobile-nav-toggle::-webkit-details-marker { display: none; }
   .mobile-nav-toggle::marker { content: ""; }
   .mobile-nav-toggle span {
-    display: block;
-    width: 15px;
-    height: 1.1px;
-    background: #e6d3af;
+    display: none;
   }
   .mobile-nav-panel {
     display: none;
