@@ -294,17 +294,20 @@ body { min-height: 100vh; }
     padding-top: calc(48px + env(safe-area-inset-top));
   }
   .topline {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
     margin-bottom: 12px;
-    padding-right: 44px;
+    padding-right: 46px;
   }
   .label-stack {
+    display: grid;
+    grid-template-columns: 1fr;
     width: 100%;
     min-width: 0;
-    gap: 4px;
+    gap: 3px;
     padding-right: 0;
   }
   .label {
@@ -318,7 +321,7 @@ body { min-height: 100vh; }
     letter-spacing: 0.06em;
   }
   .topline > .lang-toggle {
-    display: flex;
+    display: inline-flex;
     flex-wrap: nowrap;
     width: auto;
     align-self: flex-start;
@@ -329,31 +332,36 @@ body { min-height: 100vh; }
     padding: 6px 10px;
   }
   .mobile-nav-drawer {
-    display: block;
-    position: fixed;
-    top: calc(10px + env(safe-area-inset-top));
-    right: 10px;
-    z-index: 20;
+    display: block !important;
+    position: fixed !important;
+    top: calc(8px + env(safe-area-inset-top)) !important;
+    right: 8px !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    z-index: 40 !important;
     width: auto;
   }
   .mobile-nav-toggle {
-    display: grid;
+    display: grid !important;
     place-items: center;
-    gap: 2px;
-    width: 34px;
-    height: 34px;
+    gap: 1.5px;
+    width: 32px;
+    height: 32px;
     border: 1px solid rgba(215, 192, 156, 0.48);
     background: rgba(11, 14, 22, 0.78);
     backdrop-filter: blur(14px);
     list-style: none;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
   }
   .mobile-nav-toggle::-webkit-details-marker { display: none; }
   .mobile-nav-toggle::marker { content: ""; }
   .mobile-nav-toggle span {
     display: block;
-    width: 13px;
-    height: 0.9px;
+    width: 12px;
+    height: 0.85px;
     background: #e6d3af;
   }
   .mobile-nav-panel {
