@@ -334,8 +334,8 @@ body { min-height: 100vh; }
   .mobile-nav-drawer {
     display: block !important;
     position: fixed !important;
-    top: calc(8px + env(safe-area-inset-top)) !important;
-    right: 8px !important;
+    top: calc(2px + env(safe-area-inset-top)) !important;
+    right: 2px !important;
     left: auto !important;
     bottom: auto !important;
     margin: 0 !important;
@@ -345,11 +345,11 @@ body { min-height: 100vh; }
   .mobile-nav-toggle {
     display: grid !important;
     place-items: center;
-    width: 104px;
-    height: 104px;
+    width: 125px;
+    height: 125px;
     padding: 0;
     border: 0;
-    background: transparent url("../assets/mobile-nav-toggle.svg") center / 96px 96px no-repeat;
+    background: transparent url("../assets/mobile-nav-toggle.svg") center / 116px 116px no-repeat;
     backdrop-filter: none;
     border-radius: 0;
     box-shadow: none;
