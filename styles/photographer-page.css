@@ -334,8 +334,8 @@ body { min-height: 100vh; }
   .mobile-nav-drawer {
     display: block !important;
     position: fixed !important;
-    top: calc(env(safe-area-inset-top, 0px) - 10px) !important;
-    right: calc(env(safe-area-inset-right, 0px) - 18px) !important;
+    top: calc(env(safe-area-inset-top, 0px) - 14px) !important;
+    right: calc(env(safe-area-inset-right, 0px) - 24px) !important;
     left: auto !important;
     bottom: auto !important;
     margin: 0 !important;
@@ -368,7 +368,7 @@ body { min-height: 100vh; }
     display: none;
     position: absolute;
     top: calc(100% + 8px);
-    right: 0;
+    right: 28px;
     width: min(calc(100vw - 24px), 18rem);
     padding: 12px;
     border: 1px solid var(--border);
