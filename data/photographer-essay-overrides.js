@@ -2317,6 +2317,1667 @@ Recent museum retrospectives emphasize both the scale of Shinoyama's production 
         }
       ]
     },
+    'aglaia-konrad': {
+      leadJa: `1960年オーストリア・ザルツブルク生まれ、ベルギー・ブリュッセルを拠点に活動する写真家・アーティスト。建築・採石場・モダニズム構造物・都市空間をリサーチの対象とし、アーティストブック・インスタレーション・空間介入を通じて作品を発表する。写真を建築の記録にとどめず、展示空間・壁面・流通との物質的な交渉の場として扱う実践は、建築写真をリサーチベースの現代美術へと拡張した。`,
+      leadEn: `Austrian-born photographer and artist, born in 1960 in Salzburg and long based in Brussels.*1*2*3*4 Known for extensive photographic research on architecture, quarries, modernist structures, and urban intensities, often presented through books, installations, and spatial interventions.*1*2*3*4`,
+      textJa: `経歴
 
+1960年オーストリア・ザルツブルク生まれ、ベルギー・ブリュッセルを拠点に活動する。建築・採石場・モダニズム構造物・都市空間を対象に広範なフィールドリサーチを行い、アーティストブックや展示インスタレーションとして発表してきた。*1 M Leuvenでの回顧展、ジーゲン美術館でのアルミン・リンケとの二人展、USIの建築劇場での展示を経て、国際的な評価を確立している。*2
+
+表現解説
+
+コンラートの実践の核心は、35mmフィルムによる現地での徹底的な撮影リサーチと、蓄積した膨大なアーカイブを展示・書物・空間介入へと変換する方法にある。採石場をめぐるプロジェクト、『Japan Works』、展示《From A to K》《Umbau》はその代表的な作例であり、写真が建築を単純に描写するのではなく、アーカイブ・壁面・書物という複数の回路を通じてどのように循環し変換されるかを問うものとして組み立てられている。*1
+
+形式面では、拡大されたフォトコピーやシルクスクリーン、コラージュ、展示空間への物理的介入が特徴的である。アルゴスの《Elasticity》では、反復・反転・拡大・コラージュという操作が都市イメージに繰り返し適用されており、建築写真が変換の連鎖を通じてどのように生き続けるかが示された。この実践は、写真と展示の境界を意図的に解体する操作として機能する。*3
+
+USIの建築劇場での展示テキストは、コンラートの作品が「写真のドキュメンタリー機能と二次元的な画像としての地位」への問いを核としていると述べており、*4 写真は建物を記録する媒体にとどまらず、展示空間・壁面・流通との交渉において物質的に作用するものとして機能する。20世紀末の建築写真・都市リサーチへの関心の高まりとともに、コンラートはこうした実践をインスタレーション的次元へと拡張し、建築写真を静的な記録から動的なリサーチの素材へと転換した作家として際立った位置を占めている。
+
+批評と受容
+
+M Leuvenの回顧展文書は、コンラートの主題の長期的一貫性と、写真実践が展示制作・出版と不可分であることを強調する。*1 ジーゲン美術館でのアルミン・リンケとの比較展は、彼女のアーカイブ論理と、建築の複雑さを単に記録するのではなく「上演する」写真の能力に受容が集中してきたことを明確にしている。制度的な受容において、コンラートは建築写真の伝統を現代美術の空間実践へと橋渡しした作家として位置づけられている。*2`,
+      textEn: `Biography
+
+Austrian-born photographer and artist, born in 1960 in Salzburg and long based in Brussels.*1*2*3*4
+
+Known for extensive photographic research on architecture, quarries, modernist structures, and urban intensities, often presented through books, installations, and spatial interventions.*1*2*3*4
+
+Expression / method
+
+Main themes: architecture, urban expansion, extraction sites, modernism, built space, archival accumulation, and the relation between photography and exhibition space.*1*2*3
+
+Representative work examples: projects around quarries, *Japan Works*, and exhibitions such as *From A to K* and *Umbau* are central because they show how Konrad uses photography not simply to depict architecture but to think through how architecture circulates as image, archive, and spatial experience.*1*2*3
+
+Technique / formal traits: analogue 35mm photography, extensive on-site research, accumulation of large archives, blown-up photocopies or silkscreens, artist books, and installation strategies that make the photograph act physically within space. Argos’s *Elasticity* presentation is useful here because it specifically notes repetition, mirroring, enlargement, and collage as recurring transformations of urban imagery.*1*2*3
+
+Why this method was chosen: Konrad’s work depends on repetition, travel, and accumulation. Photography allows her to gather and reorganize built environments across locations while also testing how architecture changes once it is translated into walls, books, and display structures. The USI exhibition text is especially helpful because it frames this as a negotiation between subject and exhibition space rather than straightforward record.*1*2*4
+
+Historical context: her work emerges in the late twentieth century alongside growing interest in architecture photography, urban research, and postindustrial visual culture. Unlike more neutral documentarians, Konrad pushes photography toward installation and sculptural encounter.*1*2*3
+
+Relation to contemporaries or movements: she is often discussed with architectural photographers and image-archive artists, but differs by insisting on the exhibition space as part of the work. Her photographs do not simply record buildings; they negotiate with walls, surfaces, and circulation.*1*2*3
+
+Historical significance: Konrad matters because she widened architectural photography into a research-based and spatially adaptive practice, showing that photographs of buildings can become material operations within contemporary art rather than static depictions alone.*1*2*3*4
+
+Critical meaning: the work matters because it treats architecture as a moving field of extraction, planning, and display. Photography becomes a way to think with buildings and sites, not just about them.*1*2
+
+Where and how the work was used: Konrad’s work circulated through museums, architecture-related exhibitions, artist books, and site-specific installations. M Leuven’s retrospective dossier, Museum für Gegenwartskunst Siegen’s comparative exhibition with Armin Linke, and the USI/Teatro dell’architettura exhibition are especially useful because they connect her archive-based method to larger questions about the specificity, materiality, and exhibition choreography of photography.*1*2*4
+
+Criticism and reception
+
+M Leuven’s retrospective framing is useful because it emphasizes both the long-term consistency of Konrad’s subjects and the way her photographs are inseparable from exhibition-making and publication.*1
+
+Museum für Gegenwartskunst Siegen’s comparison with Armin Linke clarifies how strongly reception has focused on her archive logic and on photography’s ability to stage architectural complexity rather than merely register it.*2
+
+The USI exhibition text strengthens this reception by explicitly saying that the exhibition questions photography’s documentary function and its status as a two-dimensional image, which is central to how Konrad’s work has been understood institutionally.*4
+
+Later press materials repeatedly stress that she questions the two-dimensionality of photography itself, which is a key part of her historical significance.*2*3*4`,
+      links: [
+        {
+          url: `https://www.mgksiegen.de/en/ausstellungen/269/armin-linke-aglaia-konrad`,
+          label: `Museum für Gegenwartskunst Siegen — Aglaia Konrad, Armin Linke: concrete & samples`
+        },
+        {
+          url: `https://nadjavilenne.com/artistes/aglaia-konrad/`,
+          label: `Nadja Vilenne — Aglaia Konrad`
+        },
+        {
+          url: `https://www.arc.usi.ch/en/feeds/12890`,
+          label: `USI Academy of Architecture — WHAT MAD PURSUIT: Aglaia Konrad, Armin Linke, Bas Princen`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://cdn.uc.assets.prezly.com/1e3619dd-726a-4d32-a5a1-a350c63ee26c/-/inline/no/Persdossier_AglaiaKonrad_EN.pdf`,
+          name: `Aglaia Konrad press dossier — Museum M Leuven`
+        },
+        {
+          num: 2,
+          url: `https://www.mgksiegen.de/en/ausstellungen/269/armin-linke-aglaia-konrad`,
+          name: `Aglaia Konrad, Armin Linke – concrete & samples — Museum für Gegenwartskunst Siegen`
+        },
+        {
+          num: 3,
+          url: `https://nadjavilenne.com/artistes/aglaia-konrad/`,
+          name: `Aglaia Konrad — Nadja Vilenne`
+        },
+        {
+          num: 4,
+          url: `https://www.arc.usi.ch/en/feeds/12890`,
+          name: `WHAT MAD PURSUIT: Aglaia Konrad, Armin Linke, Bas Princen — USI Academy of Architecture`
+        }
+      ]
+    },
+    'ann-sofi-siden': {
+      leadJa: `1962年スウェーデン生まれ。映像・写真・彫刻・インスタレーション・テキストを横断する現代美術家。社会的排除・国境体制・セクシュアリティ・監視・心理的境界状態を、ドキュメンタリーとフィクションを融合させた形式で扱う。写真は独立した作品としてだけでなく、より大きな物語システムの一部として機能することが多い。`,
+      leadEn: `Swedish artist born in 1962, working across film, photography, sculpture, installation, and text.*1*2*3 Known for works addressing social behavior, exclusion, sexuality, surveillance, and psychological states, often through hybrid documentary-fictional forms.*1*2*3`,
+      textJa: `経歴
+
+1962年スウェーデン生まれ。映像・写真・彫刻・インスタレーション・テキストを横断する現代美術家として国際的に活動する。代表作《Warte Mal!》および関連する《QM Museum》シリーズでモデルナ美術館での個展を経て広く評価され、*1 ビルバオ美術館やベンヴェニスト・コンテンポラリーでも継続的に作品を発表している。*3
+
+表現解説
+
+シデンの実践は、社会的排除・国境体制・セクシュアリティ・監視・心理的境界状態を、ドキュメンタリーとフィクションが融合した形式で扱うことを特徴とする。《Warte Mal!》および関連する《QM Museum》、さらに《3 MPH》といった作品は、ドキュメンタリー的な外観を持ちながら、構築されたナラティブや心理的に帯電した状況が組み込まれており、証言と社会的可視性の限界を検証するものとして受容されてきた。*1
+
+技術的・形式的には、映像と写真の組み合わせ、ステージングとドキュメンタリーの要素の混在、大規模なマルチチャンネル・インスタレーション構造が特徴的であり、写真はより大きな物語システムの一部として機能することが多い。*2 この方法は、社会的排除や管理のメカニズムが単純な描写では捉えられないことへの応答である。ハイブリッドな映像形式は、報告・夢・証拠・心理的投影の間を移動することを可能にし、社会的暴力が制度だけでなく、夢想・幻想・内面化されたスクリプトを通じても作動することを示す。
+
+1990年代から2000年代にかけて、現代美術がドキュメンタリーの言語を用いながらその真実性を問い直していた時期に、シデンの実践は欧州の国境政治・人身売買・制度的ケア・社会的規制への応答として展開された。彼女の仕事は、社会システムを描写するのではなく「上演する」メディアとしての写真と映像の可能性を広げた事例として位置づけられる。*3
+
+批評と受容
+
+モデルナ美術館は展示フレーミングにおいて、排除と異質性をシデンの作品の中心的テーマとして特定し、ハイブリッドなドキュメンタリー・フィクション形式への依存を明確にした。*1 受容は大規模インスタレーションや映像プロジェクトに集中しがちだが、写真史における意義は、写真的証拠を社会的行動の上演と批判のための道具として使用した点にある。ロベール・フレックとの美術館内対話は、対話と解釈が作品理解に不可欠であることを示す受容史の一側面を示している。`,
+      textEn: `Biography
+
+Swedish artist born in 1962, working across film, photography, sculpture, installation, and text.*1*2*3
+
+Known for works addressing social behavior, exclusion, sexuality, surveillance, and psychological states, often through hybrid documentary-fictional forms.*1*2*3
+
+Expression / method
+
+Main themes: social exclusion, border regimes, sexuality, surveillance, institutional violence, fantasy, and the unstable line between documentary observation and fictional construction.*1*2*3
+
+Representative work examples: *Warte Mal!* and related works in the *QM Museum*, as well as *3 MPH*, are central because they show how Sidén combines documentary-looking material with constructed narrative and psychologically charged situations.*1*2*3
+
+Technique / formal traits: moving image and photography, staged and documentary elements interwoven, large installations, multi-channel structures, and an insistence that the work be encountered spatially as much as visually. Her photographs often function as part of wider narrative systems.*1*2*3
+
+Why this method was chosen: Sidén’s work is designed to map social mechanisms—especially exclusion and control—that are not easily visible in straightforward description. Hybrid image forms allow her to move between report, dream, evidence, and psychological projection.*1*2
+
+Historical context: her work emerges in the 1990s and 2000s when contemporary art was increasingly using documentary language while questioning its truth claims. Her work also responds to European border politics, trafficking, institutional care, and social regulation.*1*2*3
+
+Relation to contemporaries or movements: Sidén belongs near installation-based video and photo practices, but her work is historically relevant to photography because it uses documentary codes to test the limits of testimony and social visibility.*1*2*3
+
+Historical significance: she matters because she shows how photography and moving image can be used to stage social systems rather than only to depict them, expanding the field of documentary into a more unsettling and psychologically layered terrain.*1*2
+
+Critical meaning: the work matters because it reveals exclusion as both material and imaginary. Sidén’s use of hybrid forms makes clear that social violence operates not only through institutions, but also through dreams, fantasies, and internalized scripts.*1*2*3
+
+Where and how the work was used: her work circulated through museums, installations, catalogues, and artist conversations. Moderna Museet’s exhibition materials are especially useful because they tie together her concern with exoticism, exclusion, and the mechanisms of Western civilization while also preserving a conversation with the artist.*1
+
+Criticism and reception
+
+Moderna Museet’s framing is especially useful because it identifies exclusion and exoticism as central themes and makes clear that Sidén’s work depends on hybrid documentary-fictional forms.*1
+
+Reception often emphasizes her large installations and film projects, so final website copy should state clearly why she matters within photography-adjacent history: because photographic evidence is one of the tools she uses to stage and critique social behavior.*1*2*3
+
+The museum conversation with Robert Fleck is particularly relevant because it suggests a reception history in which dialogue and interpretation are integral to how the work is understood.*1`,
+      links: [
+        {
+          url: `https://www.modernamuseet.se/stockholm/en/exhibitions/ann-sofi-siden/`,
+          label: `Moderna Museet — Ann-Sofi Sidén 個展`
+        },
+        {
+          url: `https://www.benveniste.com/artists/annsofisiden`,
+          label: `Benveniste Contemporary — Ann-Sofi Sidén`
+        },
+        {
+          url: `https://bilbaomuseoa.eus/en/explore/artist/ann-sofi-siden/406ac5d8-6d1f-4e2e-b16d-dfe43d64d370`,
+          label: `Bilbao Museoa — Ann-Sofi Sidén`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.modernamuseet.se/stockholm/en/exhibitions/ann-sofi-siden/`,
+          name: `Ann-Sofi Sidén 個展 — Moderna Museet, Stockholm`
+        },
+        {
+          num: 2,
+          url: `https://www.benveniste.com/artists/annsofisiden`,
+          name: `Ann-Sofi Sidén — Benveniste Contemporary`
+        },
+        {
+          num: 3,
+          url: `https://bilbaomuseoa.eus/en/explore/artist/ann-sofi-siden/406ac5d8-6d1f-4e2e-b16d-dfe43d64d370`,
+          name: `Ann-Sofi Sidén — Bilbao Museoa`
+        }
+      ]
+    },
+    'annika-von-hausswolff': {
+      leadJa: `1967年スウェーデン・ヨーテボリ生まれ。大判カラー写真と彫刻・インスタレーションを通じて制作する現代美術家。女性の脆弱性・暴力・欲望・秘密性・犯罪的な示唆といった主題を、精巧に演出されたインテリアと身体的痕跡を通じて探求する。写真は明晰でありながら不確実性を生み出し、解決されない状態として提示される。`,
+      leadEn: `Swedish artist and photographer born in 1967 in Gothenburg.*1*2*3 Known for photography, later sculpture and installation, with recurring subjects that include vulnerability, violence, forensic suggestion, staged interiors, and the unstable boundary between image, secrecy, and evidence.*1*2*3`,
+      textJa: `経歴
+
+1967年スウェーデン・ヨーテボリ生まれ。1990年代から大判カラー写真を中心に活動を開始し、のちに彫刻・インスタレーションへと展開した。代表的な写真作品に《Hey Buster! What Do You Know About Desire》（1995）、《Back to Nature》（1993）、《Domestic Sculpture》（2002）、《Esoteric Forensic》（2007）などがある。*1 SFMOMAおよびシカゴ美術館のコレクションに収蔵されており、*2 2022年のモデルナ美術館での回顧展《Alternative Secrecy》を経て、スウェーデンを代表する現代美術家の一人として位置づけられている。
+
+表現解説
+
+フォン・ハウスヴォルフの写真は、女性の脆弱性・暴力・欲望・法医学的な示唆・秘密性を主題とし、演出されたインテリアと身体的痕跡を通じて探求する。大判カラー写真はプレキシガラス越しに提示されることが多く、カーテン・ブラインド・家具・身体的痕跡といった繰り返すモチーフが、日常空間と犯罪現場の不穏な重なりを作り出す。*2
+
+モデルナ美術館の展示解説は、作品の主題が犯罪的なイメージへの長年の関心と、写真が何を隠しえるかという持続的な探求に結びついていることを指摘している。この方法は中立的な記述ではなく、平凡な設定を心理的に帯電した証拠フィールドへと変換する操作である。*1 回顧展のカタログ素材においてフォン・ハウスヴォルフ自身は、自身のコレクションから選んだ作品群について「これらの写真は合わさって、自分自身の作品の不完全な地図を形成する」と述べており、不完全性と間接的なマッピングが実践の重要な側面であることを示している。
+
+1990年代、ステージド・フォトグラフィー・フェミニスト批評・ポストコンセプチュアルな映像実践がドキュメンタリーの真実と視線の政治を問い直していた時期に、フォン・ハウスヴォルフの作品はその潮流に属しながらも、犯罪的・法医学的・精神分析的な雰囲気への一貫した使用によって際立った。写真的な明晰さは不確実性を産み出すために用いられ、暴力をナラティブとして解決するのではなく、社会的・心理的構造が見えながらも完全には開示されない宙吊りの状態に視者を留める。*3
+
+批評と受容
+
+モデルナ美術館の展示フレーミングはフォン・ハウスヴォルフをスウェーデンの主要現代美術家の一人として位置づけ、異なるメディアを横断した主題の継続性を強調した。*1 機関的受容は、視覚的な誘惑と不安の関係を繰り返し強調してきた。作品は精巧な構成を持ちながら、その内容は脆弱性・隠蔽・解決されない脅威をめぐる。写真史における彼女の意義は、ステージド・フォトグラフィーをジェンダー化された暴力・秘密性・曖昧な証拠としての映像への持続的探求へと変換した点にある。「単純にヴァイオレンスの写真家」としてではなく、写真を「何かを隠すことのできる媒体」として探求した作家として評価されている。*2`,
+      textEn: `Biography
+
+Swedish artist and photographer born in 1967 in Gothenburg.*1*2*3
+
+Known for photography, later sculpture and installation, with recurring subjects that include vulnerability, violence, forensic suggestion, staged interiors, and the unstable boundary between image, secrecy, and evidence.*1*2*3
+
+Expression / method
+
+Main themes: women’s vulnerability, violence, desire, psychoanalytic tension, the crime image, secrecy, and the uneasy overlap between domestic space and forensic space.*1*2*3
+
+Representative work examples: *Hey Buster! What Do You Know About Desire* (1995), *Back to Nature* (1993), *Domestic Sculpture* (2002), *Esoteric Forensic* (2007), and later bodies gathered under *Alternative Secrecy* are useful because they show the continuity of her concerns across staged photographs and three-dimensional works.*1*2*3*4
+
+Technique / formal traits: large-scale, carefully composed color photographs often mounted behind plexiglas; staged or highly controlled settings; repeated props such as curtains, blinds, furniture, and bodily traces; and later objects and installations that extend photographic motifs into space.*2*3*4
+
+Why this method was chosen: Moderna Museet’s presentation is especially useful because it links the work’s subject matter to her long-standing fascination with crime imagery and to a sustained investigation of what a photograph can conceal as much as reveal. The method is not neutral description but a way of turning ordinary settings into psychologically charged evidence fields.*1*3
+
+Historical context: von Hausswolff emerges in the 1990s, when staged photography, feminist critique, and post-conceptual image practices were all rethinking documentary truth and the politics of looking. Her work belongs to that moment but is distinguished by the persistent use of criminal, forensic, and psychoanalytic atmospheres.*1*2*3
+
+Relation to contemporaries or movements: she is often legible beside post-conceptual and feminist photography, yet her pictures differ from straightforward identity critique by insisting on ambiguity, withholding, and the possibility that the image itself behaves like compromised evidence.*1*2
+
+Historical significance: she matters because she helped define a strand of late twentieth-century photography in which the staged image became a site for examining gendered violence, secrecy, and the instability of photographic truth.*1*2*3
+
+Critical meaning: the work matters because it uses photographic clarity to produce uncertainty. Rather than resolving violence into narrative, it keeps the viewer in a zone of suspended explanation where social and psychic structures remain visible but not fully disclosed.*1*2*3
+
+Where and how the work was used: Moderna Museet’s *Alternative Secrecy* is especially useful because it framed more than three decades of work together, showing how the early photographs, later objects, and collection dialogue were received within a major museum context. SFMOMA and the Art Institute of Chicago confirm institutional collection status for key works.*1*2*4
+
+Criticism and reception
+
+Moderna Museet’s exhibition framing places von Hausswolff among Sweden’s major contemporary artists and emphasizes the continuity of her subjects across different media rather than reducing her practice to isolated “crime-like” images.*1*3
+
+Institutional reception repeatedly stresses the relation between visual seduction and unease: the works are composed with precision, yet the content turns around vulnerability, concealment, and unresolved threat.*1*2*3
+
+Final website copy should avoid treating her simply as a “photographer of violence.” The stronger art-historical point is that she transformed staged photography into a sustained inquiry into secrecy, gendered exposure, and the image as ambiguous proof.*1*2*3`,
+      links: [
+        {
+          url: `https://www.modernamuseet.se/stockholm/en/exhibitions/annika-von-hausswolff/`,
+          label: `Moderna Museet — Annika Elisabeth von Hausswolff: Alternative Secrecy`
+        },
+        {
+          url: `https://www.sfmoma.org/artist/Annika_von_Hausswolff/`,
+          label: `SFMOMA — Annika von Hausswolff`
+        },
+        {
+          url: `https://www.artic.edu/artists/118928/annika-von-hausswolff`,
+          label: `The Art Institute of Chicago — Annika von Hausswolff`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.modernamuseet.se/stockholm/en/exhibitions/annika-von-hausswolff/`,
+          name: `Annika Elisabeth von Hausswolff: Alternative Secrecy — Moderna Museet, Stockholm`
+        },
+        {
+          num: 2,
+          url: `https://www.sfmoma.org/artist/Annika_von_Hausswolff/`,
+          name: `Annika von Hausswolff — San Francisco Museum of Modern Art (SFMOMA)`
+        },
+        {
+          num: 3,
+          url: `https://www.modernamuseet.se/stockholm/sv/utstallningar/annika-von-hausswolff/om-fotografi-en-varld-av-bilder/`,
+          name: `On photography in a world of images — Moderna Museet, Stockholm`
+        },
+        {
+          num: 4,
+          url: `https://www.artic.edu/artists/118928/annika-von-hausswolff`,
+          name: `Annika von Hausswolff — The Art Institute of Chicago`
+        }
+      ]
+    },
+    'beate-gutschow': {
+      leadJa: `1970年ドイツ・マインツ生まれ。複数の写真断片をデジタル合成して風景・都市景観を構築する手法で知られる写真家。完成した画像は実在しない場所でありながら、見る者に強い既視感を与える。写真が場所・記憶・絵画的慣習からいかに「場所の感覚」を借用するかを問い直す実践は、ポスト・デュッセルドルフ世代の重要な位置を占める。`,
+      leadEn: `German photographer born in 1970 in Mainz.*1*2 Known for large-scale constructed photographs of landscapes and cityscapes assembled from numerous image fragments into scenes that feel familiar yet refer to no actual place.*1*2`,
+      textJa: `経歴
+
+1970年ドイツ・マインツ生まれ。デジタル合成によって実在しない風景・都市景観を構築する大判写真の制作で知られる。*1 ハンブルガー美術館での《Lost Places》展をはじめ、ベルリーニッシェ・ガレリーやデイヒトーアハレン・ハンブルクなどの主要機関で作品を発表し、ポスト・デュッセルドルフ世代を代表する写真家の一人として位置づけられている。*2
+
+表現解説
+
+ギュチョウの制作の中心的な特徴は、複数の写真断片からデジタル合成によって「実在しない場所」を構築することにある。代表的なシリーズ《LS》のランドスケープ、建築物を主題とする《S》（《S #14》2005年など）、そして《Lost Places》としてまとめられたプロジェクトは、見慣れた眺めを思わせながら実際の地理的参照点を持たない映像を作り出す。ハンブルガー美術館のフレーミングが強調するのは、彼女の都市景観・ランドスケープが既知の場所を想起させながら、実際の参照先として安定することを拒む点である。*1
+
+この方法は、写真における「場所」の感覚がいかに慣習・記憶・構図的な期待によって成立するかを試験する操作として機能する。大判フォーマットと、歴史的な風景画・19世紀の眺望写真の絵画的秩序を参照した構成が、イメージに説得力と馴染み深さを与える一方で、いかなる実在の土地とも対応しない。ベルリーニッシェ・ガレリーのテキストは、ギュチョウの作品が「画像の歴史的な年代」——とくに風景画とモダン・ポストモダンの建築——との参照を含むことを示しており、*2 単なるデジタル操作の問題ではなく、絵画的記憶との対話として作品を位置づける。
+
+ギュチョウはデジタル合成によって写真の参照性が新たに不安定になった時代に登場し、その不安定さ自体を主題にした。トーマス・ルフ・トーマス・デマンド・アンドレアス・グルスキーらポスト・デュッセルドルフの作家と並べて論じられることが多いが、合成によって「実在するかのような風景」を生み出す点で独自の位置を占める。写真のドキュメンタリー的権威が、その像が捏造されていても持続するという逆説を、ランドスケープと都市景観の慣習を用いて露わにした作家である。Museum Angewandte Kunstでのインタビュー文脈は、彼女の実践が「想像された現実」についての広範な議論の中で受容されてきたことを示す。*3
+
+批評と受容
+
+ハンブルガー美術館のテキストは核心的な受容点を端的に示している——彼女の映像は既知の都市的・自然的環境を想起させながら、実際の参照先としての安定を拒む。*1 受容はしばしばデュッセルドルフ派の系譜に彼女を位置づけるが、重要なのはトポグラフィーの中立性ではなく、イメージの伝統が「場所の感覚」をいかに構築するかという問いに作品が向けられている点にある。ベルリーニッシェ・ガレリーのテキストは、特定の作品を歴史的なイメージ伝統と結びつけることでこの解釈を補強しており、*2 彼女の実践が「想像された現実」として制度的に位置づけられてきたことを示している。`,
+      textEn: `Biography
+
+German photographer born in 1970 in Mainz.*1*2
+
+Known for large-scale constructed photographs of landscapes and cityscapes assembled from numerous image fragments into scenes that feel familiar yet refer to no actual place.*1*2
+
+Expression / method
+
+Main themes: landscape conventions, urban memory, fictive place, historical pictorial genres, and the instability of photographic reference.*1*2
+
+Representative work examples: the *LS* landscapes and city-image constructions shown in projects such as *Lost Places* are central because they establish her method of building scenes that resemble recognizable views while refusing direct geographical identification.*1*2
+
+Representative work examples: the *LS* landscapes, the architectural *S* images such as *S #14* (2005), and projects grouped under *Lost Places* are central because they show how Gutschow builds scenes from fragments that seem legible as landscape or city but never stabilize as actual sites.*1*2*4
+
+Technique / formal traits: digital montage, construction from multiple source photographs, large formats, and a pictorial organization that recalls historical landscape painting and nineteenth-century view traditions while remaining decisively photographic in surface detail.*1*2
+
+Why this method was chosen: Hamburger Kunsthalle’s framing is useful here because it emphasizes that her cityscapes and landscapes are reminiscent of known places without allowing real referential anchoring. The method therefore tests how much of “place” in photography comes from convention, memory, and compositional expectation rather than indexical fact.*1*2
+
+Why this method was chosen: Hamburger Kunsthalle’s framing is useful here because it emphasizes that her cityscapes and landscapes are reminiscent of known places without allowing real referential anchoring. The method therefore tests how much of “place” in photography comes from convention, memory, and compositional expectation rather than indexical fact. Interview material from the Museum Angewandte Kunst context is also useful because it shows that the fabricated image is not a trick ending in deception, but part of a sustained inquiry into how reality is imagined and assembled photographically.*1*2*5
+
+Historical context: Gutschow belongs to a post-Düsseldorf generation working after the authority of straight documentary had already been questioned. Her work emerges in a moment when digital compositing made the photograph’s claim to reality newly unstable, and she makes that instability a central subject.*1*2
+
+Relation to contemporaries or movements: she is frequently discussed near the Düsseldorf School and artists such as Thomas Ruff, Thomas Demand, and Andreas Gursky, but her work differs by constructing synthetic scenes that hover between photographic document and imagined landscape.*1*2
+
+Historical significance: she matters because she sharpened one of the key issues of post-1990 photography: the photograph’s documentary authority persists even when the image is fabricated. Her work uses the conventions of landscape and city photography to expose that tension.*1*2
+
+Critical meaning: the pictures matter because they look believable without being locatable. They stage a crisis of reference in which the viewer recognizes typologies and pictorial codes but cannot stabilize them as real sites.*1*2
+
+Where and how the work was used: museum framing in *Lost Places* is especially useful because it placed Gutschow within a broader group of artists dealing with “space” and “place” under conditions of social and historical dislocation. Her work also circulated in exhibitions concerned with idyll, fiction, and landscape after documentary.*1*2*3
+
+Where and how the work was used: museum framing in *Lost Places* is especially useful because it placed Gutschow within a broader group of artists dealing with “space” and “place” under conditions of social and historical dislocation. Her work also circulated in exhibitions concerned with idyll, fiction, and landscape after documentary, and the Berlinische Galerie presentation is useful because it ties specific works to historical image traditions rather than only to digital manipulation.*1*2*3*4
+
+Criticism and reception
+
+Hamburger Kunsthalle’s English and German texts are especially useful because they summarize the core reception point succinctly: the images recall known urban or natural environments, yet refuse actual reference.*1*2
+
+Reception often places her in a lineage after the Düsseldorf School, but final website copy should clarify that her work is less about neutral topography than about how image traditions construct the feeling of place.*1*2
+
+Reception often places her in a lineage after the Düsseldorf School, but Berlinische Galerie’s text strengthens the point that her images also engage with the “historical ages” of pictures, especially landscape painting and modern/postmodern architecture.*1*2*4
+
+The Museum Angewandte Kunst interview context suggests that her work was also received within broader debates about “imagined reality,” not just digital fabrication. Final text should therefore stay close to the stronger point that Gutschow’s constructed photographs transform landscape and cityscape into tests of photographic credibility and pictorial memory.*1*2*4*5`,
+      links: [
+        {
+          url: `https://www.hamburger-kunsthalle.de/en/lost-places`,
+          label: `Hamburger Kunsthalle — LOST PLACES`
+        },
+        {
+          url: `https://berlinischegalerie.de/en/exhibition/beate-guetschow/`,
+          label: `Berlinische Galerie — Beate Gütschow`
+        },
+        {
+          url: `https://www.deichtorhallen.de/de/sammlung-falckenberg/idylle-traum-und-trugschluss/`,
+          label: `Deichtorhallen Hamburg / Sammlung Falckenberg — IDYLLE. Traum und Trugschluss`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.hamburger-kunsthalle.de/en/lost-places`,
+          name: `LOST PLACES — Hamburger Kunsthalle`
+        },
+        {
+          num: 2,
+          url: `https://berlinischegalerie.de/en/exhibition/beate-guetschow/`,
+          name: `Beate Gütschow — Berlinische Galerie`
+        },
+        {
+          num: 3,
+          url: `https://www.museumangewandtekunst.de/de/veranstaltungen/interview-beate-guetschow/`,
+          name: `Interview mit Beate Gütschow — Museum Angewandte Kunst / RAY 2015`
+        },
+        {
+          num: 4,
+          url: `https://www.deichtorhallen.de/de/sammlung-falckenberg/idylle-traum-und-trugschluss/`,
+          name: `IDYLLE. Traum und Trugschluss — Deichtorhallen Hamburg / Sammlung Falckenberg`
+        }
+      ]
+    },
+    'bruno-serralongue': {
+      leadJa: `1968年フランス生まれ。抗議運動・デモ・仮設的な占拠・周縁的な公的集会を大判カメラで撮影するドキュメンタリー写真家。プレス証明書を持たず、メディアの論理の外側から事件に立ち会う。報道写真の「決定的瞬間」ではなく、出来事の待機・持続・余白に焦点を当てることで、政治的映像の生産と流通そのものを問い直す。`,
+      leadEn: `French photographer born in 1968.*1*2 Known for photographing political gatherings, demonstrations, temporary occupations, and marginal public events, often working where mainstream press imagery either arrives too late or refuses to linger.*1*2`,
+      textJa: `経歴
+
+1968年フランス生まれ。抗議集会・デモ・仮設的な占拠・世界的なイベントの周縁を大判カメラで記録するドキュメンタリー写真家として活動する。国立現代美術センター（Cnap）の支援を受けた調査研究に参加し、*2 ガレリー・エア・ド・パリとフランチェスカ・ピア・ギャラリーを通じて国際的に発表する。*6 サンガット・カレー難民キャンプや2002年ヨハネスブルグ世界サミット、ノートル＝ダム＝デ＝ランドをめぐるプロジェクトを経て評価を確立した。
+
+表現解説
+
+セラロングの実践の核心は、報道記者と並んで大判カメラを据えながら、公式のプレス証明書や招待状を持たずに事件に立ち会うという自発的な制約にある。自身の言葉を借りれば「自前の手段で目的地に赴き、記者証もなく記者たちと並んでビューカメラで写真を撮る」という方法であり、*6 これはメディアへのアクセスを競うのではなく、情報映像がいかに生産され流通するかを問うことを可能にする。
+
+代表的な作例としては、《Federation of World Peace and Love, Sandton, Johannesburg, 26.08.2002》、《Sunday》シリーズ、カレー/サンガット・プロジェクト、ノートル＝ダム＝デ＝ランドをめぐる連作が挙げられる。いずれも、政治的に帯電した状況を視覚的には控えめな形で記録し、単一の象徴的な瞬間ではなく連作によって理解されることを前提として構成されている。*2 大判フォーマット・丁寧な構図・横断幕や周縁的な参加者・仮設構造への注目は、絶頂的な瞬間ではなく出来事の持続する時間性を記録する選択である。
+
+セラロングの仕事は、ドキュメンタリー写真ジャーナリズムの規範的な時代の後に登場し、アーティストたちが政治が映像へと参入する様相を再検討していた時期に展開した。カレー展はAFPの報道写真と元キャンプ居住者の証言をセラロングの作品と並置し、「映像の異なる機能・役割・地位」そのものを展示の論拠とした。*7
+
+批評と受容
+
+Cnapとポンピドゥーセンターはセラロングを政治的状況・ドキュメンタリー手法・公的可視性の問題を通じて継続的にフレームしてきた。*1 批評的な受容においては、彼の実践がジャーナリスティックなメディア論理への対抗として位置づけられる傾向があり、*5 出来事を報道的な即時性から展示・書物の遅い時間へと移行させることで、より市民的な証言の様式を問うものとして評価されている。`,
+      textEn: `Biography
+
+French photographer born in 1968.*1*2
+
+Known for photographing political gatherings, demonstrations, temporary occupations, and marginal public events, often working where mainstream press imagery either arrives too late or refuses to linger.*1*2
+
+Expression / method
+
+Main themes: protest, public assembly, media event, political visibility, the ordinary temporality of activism, and the gap between event and news image.*1*2
+
+Representative work examples: photographs such as *Federation of World Peace and Love, Sandton, Johannesburg, 26.08.2002*, the *Sunday* series, the Sangatte / Calais projects, and later works around Notre-Dame-des-Landes are useful because they show Serralongue’s attention to politically charged situations that remain visually understated and are understood through extended series rather than iconic single frames.*2*3*4*5*6
+
+Technique / formal traits: large-format, carefully composed color images; slow observation; attention to banners, peripheral actors, temporary structures, and the after-image of the event rather than the climactic instant associated with press photography.*2*3*4
+
+Why this method was chosen: the reviewed institutional material suggests that Serralongue deliberately adopts the position of an ordinary press user who goes to events without accreditation, arriving from the margins rather than from the reporters’ platform. That self-imposed limit matters because it lets him question how information images are produced and circulated instead of simply competing with journalistic access.*2*6
+
+Historical context: the work emerges after the canonical age of documentary photojournalism, in a period when artists were re-examining how politics enters images. Serralongue belongs to that turn toward critical documentary, in which the means and timing of representation become part of the subject. His projects are especially legible in relation to the 1990s–2000s rethinking of documentary around migration, protest, and media visibility.*2*4*6
+
+Relation to contemporaries or movements: he connects to documentary and conceptual photography but differs from heroic reportage by favoring situations of waiting, drift, and public staging. His images often feel less like news and more like analyses of how events become visible.*2*3
+
+Historical significance: Serralongue matters because he repositions documentary photography around duration, modesty, and political context rather than around the spectacular instant. This shift is historically important for contemporary documentary practice.*2*3*4
+
+Critical meaning: the work matters because it asks what a political photograph can be once certainty, climax, and decisive action are no longer taken as the privileged forms of truth. The images insist on context, latency, and the social surface of protest.*2*3*4
+
+Where and how the work was used: Cnap and Centre Pompidou records are useful because they show the work circulating in institutional and public-art contexts rather than only in photobook form. The Calais exhibitions are especially important because they placed Serralongue’s pictures in direct comparison with AFP press photographs and testimony from former camp residents, making the different functions and statuses of images into part of the exhibition’s argument.*2*3*4*7
+
+Criticism and reception
+
+The currently reviewed institutional sources are more archival and exhibition-based than interpretive, so final website copy should be careful not to overstate the critical consensus. Even so, the Francesca Pia text gives stronger language for the reception of his method as a counter to journalistic media logic, and the Cnap / Centre Pompidou materials consistently frame him through political situations, documentary procedures, and the problem of public visibility.*1*2*4*5*7
+
+Even so, the pattern of reception is clear: Serralongue is repeatedly framed through political situations, documentary procedures, and the rethinking of how a public event enters photographic form.*2*3*4
+
+Final text should emphasize that his significance lies in how he slows and reframes the documentary image, making the representation of political events less dramatic and more structurally attentive. The stronger phrasing now available is that his work transfers the event from journalistic immediacy into the slower time of exhibition and book form, often asking viewers to compare information imagery with slower, more civic modes of witnessing.*2*3*4*5*7`,
+      links: [
+        {
+          url: `https://www.cnap.fr/bruno-serralongue-4`,
+          label: `Cnap — Bruno Serralongue`
+        },
+        {
+          url: `https://www.airdeparis.com/artists/bruno-serralongue/brunoa.htm`,
+          label: `Air de Paris — Bruno Serralongue`
+        },
+        {
+          url: `https://www.centrepompidou.fr/en/program/calendar/event/c4EgAaA`,
+          label: `Centre Pompidou — Calais. Witnessing the 'Jungle'`
+        },
+        {
+          url: `https://www.francescapia.com/fileadmin/editors/Artists/Serralongue/Exhibitions/2022_GFP/Bruno_Serralongue_Francesca_Pia_2022_pour_la_vie_Press_Release.pdf`,
+          label: `Galerie Francesca Pia — Pour la vie プレスリリース`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.cnap.fr/bruno-serralongue-4`,
+          name: `Bruno Serralongue — Centre national des arts plastiques (Cnap)`
+        },
+        {
+          num: 2,
+          url: `https://www.cnap.fr/soutien-la-creation/photographes-documentaires/rapports-de-recherche/bruno-serralongue`,
+          name: `Bruno Serralongue — Photographes documentaires / Rapports de recherche, Cnap`
+        },
+        {
+          num: 5,
+          url: `https://www.francescapia.com/fileadmin/editors/Artists/Serralongue/Exhibitions/2022_GFP/Bruno_Serralongue_Francesca_Pia_2022_pour_la_vie_Press_Release.pdf`,
+          name: `Bruno Serralongue, Pour la vie — Galerie Francesca Pia プレスリリース`
+        },
+        {
+          num: 6,
+          url: `https://www.airdeparis.com/artists/bruno-serralongue/brunoa.htm`,
+          name: `Bruno Serralongue — Air de Paris`
+        },
+        {
+          num: 7,
+          url: `https://www.centrepompidou.fr/en/program/calendar/event/c4EgAaA`,
+          name: `Calais. Witnessing the 'Jungle' — Centre Pompidou`
+        }
+      ]
+    },
+    'clunie-reid': {
+      leadJa: `1971年生まれ、ロンドン拠点のブリティッシュ・アーティスト。再撮影・マーカー・ステッカーによる介入・テキストの衝突を通じてマスメディアの映像を改変し、セクシュアルな表象・消費文化・身体イメージの暴力性を露わにする。写真をすでに壊れ強迫的なものとして扱う実践は、ポスト・ピクチャーズ世代の映像批評の中でも特に手触り的かつ感情的な過剰さを持つ。`,
+      leadEn: `British artist born in 1971, based in London, working across print, digital media, collage, video, and text-based image practices.*1*2*3 Known for aggressive photo-collages and reworked media images that focus on sexual representation, violence in capitalist culture, and the unstable relation between image, text, and subjectivity.*1*2*3`,
+      textJa: `経歴
+
+1971年生まれ、ロンドンを拠点に活動するブリティッシュ・アーティスト。プリント・デジタルメディア・コラージュ・映像・テキストベースの映像実践を横断する。*1 テート・ブリテン、フォトグラファーズ・ギャラリー、ICA、ニュー・ミュージアム、サーチ・ギャラリーなどの主要機関で作品を発表し、映像批評と拡張的な写真実践の両面から評価されている。*3
+
+表現解説
+
+リードの実践は、Cプリントや銀塩インクジェットプリントに再撮影・マーカー・ステッカーによる介入を加え、雑誌・テレビ・ポルノグラフィー・セレブリティ映像の断片を描画・スローガン・写真表面の衝突的な相互作用によって再構成することを特徴とする。代表作《I Need You To Behave》（2007）、《She Likes The Way She Feels》（2009）、《Take No Photographs, Leave Only Ripples》などの連作は、マスメディアの映像を「汚染する」方法として写真を使う一貫した姿勢を示している。*2
+
+リード自身は「広告に興味がある。身体と物のイメージが、私たちの世界観の構成にどのような関係を持つかということに」と述べており、*2 改変された映像は、マスメディアの表象にすでに潜在しているものを俗化・露わにするための方法として機能する。ポスト・ピクチャーズ、ポスト・フェミニスト、メディア飽和という環境の中で、リードはコンセプチュアルな先行例より速度が速く、粗く、心理的に過負荷な密度を持つ実践として際立つ。*1
+
+写真史における彼女の意義は、写真的映像を純粋さではなく汚染の場として転換した点にある。写真がマスメディアを通過した後にいかに生き延びるかを、損傷・反復・俗化を通じて示した実践として位置づけられる。*3
+
+批評と受容
+
+ICAとリード自身のバイオグラフィーは、彼女を写真のみの狭いカテゴリではなくデジタル・プリントメディアを横断する実践者として位置づける。*3 サーチ・ギャラリーのプレゼンテーションは、テキスト・描画・写真映像が意味を安定させるのではなく衝突するよう意図されているという本人の説明を保存しており、受容を理解するうえで特に有用である。*2 批評的な議論において重要なのは、彼女の仕事が「エッジの効いた」メディア批評にとどまらず、性化され商品化された表象がいかにすでに壊れ、強迫的で、内面化されているかを示している点である。`,
+      textEn: `Biography
+
+British artist born in 1971, based in London, working across print, digital media, collage, video, and text-based image practices.*1*2*3
+
+Known for aggressive photo-collages and reworked media images that focus on sexual representation, violence in capitalist culture, and the unstable relation between image, text, and subjectivity.*1*2*3
+
+Expression / method
+
+Main themes: sexual representation, abjection, image critique, femininity, media saturation, absurdity, and the violent or awkward relation between bodies and consumer imagery.*1*2*3
+
+Representative work examples: works such as *I Need You To Behave* (2007), *She Likes The Way She Feels* (2009), and the broader grouping around *Take No Photographs, Leave Only Ripples* are central because they show Reid’s method of rephotographing, marking, stickering, and textually reanimating found or mass-media imagery.*2*3
+
+Technique / formal traits: rephotography, marker and sticker interventions on c-prints or silver inkjet prints, fragments from magazines, television, pornography, celebrity imagery, and a deliberately abrasive interplay of drawing, slogan, and photographic surface.*1*2*3
+
+Why this method was chosen: Reid’s own statements are especially useful because they make clear that she is interested in how bodies and objects structure our view of the world through advertising and popular imagery. The reworked image becomes a way to vulgarize or expose what is already implicit in mass-media representation.*1*2
+
+Historical context: Reid emerges in a post-pictures, post-feminist, media-saturated environment in which artists are no longer confronting mass imagery from outside it. Her work belongs to that moment of appropriation and image critique, but is more tactile, impulsive, and affectively messy than cooler conceptual precedents.*1*2*3
+
+Relation to contemporaries or movements: she can be placed near post-conceptual collage, feminist image critique, and appropriation-based photography, but differs through the speed, crudity, and psychically overloaded density of her interventions.*1*2*3
+
+Historical significance: Reid matters because she turns the photographic image into a site of contamination rather than purity. Her work is historically significant for showing how photography after mass media may survive only by passing through defacement, repetition, and vulgarization.*1*2*3
+
+Critical meaning: the work matters because it refuses the clean distance of critique. Reid’s pictures show that power, sexuality, and image-consumption are not simply observed but lived, repeated, and internally inhabited.*1*2*3
+
+Where and how the work was used: her work has circulated through institutions such as Tate Britain, the Photographers’ Gallery, ICA, New Museum, and Saatchi Gallery. Those contexts are useful because they frame the work as both image critique and expanded photographic practice rather than simple collage or fashion-adjacent provocation.*1*2*3
+
+Criticism and reception
+
+ICA and Reid’s own bio are useful because they place her within digital and print media rather than a narrow category of photography alone.*1*3
+
+Saatchi’s presentation is especially strong for understanding reception because it preserves her own explanation of how text, drawing, and photographic image are meant to collide rather than stabilize meaning.*2
+
+Final website copy should avoid reducing Reid to “edgy” media critique. The stronger point is that she uses photographic imagery to show how sexualized and commodified representation is already broken, compulsive, and difficult to inhabit.*1*2*3`,
+      links: [
+        {
+          url: `https://www.cluniereid.com/info.html`,
+          label: `Clunie Reid — 公式サイト`
+        },
+        {
+          url: `https://www.saatchigallery.com/artist/clunie_reid`,
+          label: `Saatchi Gallery — Clunie Reid`
+        },
+        {
+          url: `https://archive.ica.art/nought-sixty-artists-index/clunie-reid/index.html`,
+          label: `ICA archive — Clunie Reid`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.cluniereid.com/info.html`,
+          name: `Clunie Reid biography — 公式サイト`
+        },
+        {
+          num: 2,
+          url: `https://www.saatchigallery.com/artist/clunie_reid`,
+          name: `Clunie Reid — Saatchi Gallery`
+        },
+        {
+          num: 3,
+          url: `https://archive.ica.art/nought-sixty-artists-index/clunie-reid/index.html`,
+          name: `Clunie Reid — Institute of Contemporary Arts archive`
+        }
+      ]
+    },
+    'diana-scheunemann': {
+      leadJa: `スイス／ドイツ出身の写真家。チューリッヒ・パリ・ロンドン・ニューヨーク・ロサンゼルス・オースティンを拠点に活動し、エディトリアル・セレブリティポートレートと、1999年から継続する自画像日記プロジェクト《Behind My Face》で知られる。プロフェッショナルな肖像写真と自己上演的な自伝的記録を一体化した実践を展開する。`,
+      leadEn: `Swiss/German photographer who has lived and worked across Zürich, Paris, London, New York, Los Angeles, and Austin.*1*2 Known for editorial, celebrity, and autobiographical photography, especially the long-running self-portrait diary project *Behind My Face* begun in 1999.*1`,
+      textJa: `経歴
+
+スイス／ドイツ出身。チューリッヒ・パリ・ロンドン・ニューヨーク・ロサンゼルス・オースティンと複数の都市を拠点として活動する写真家・映像制作者。エディトリアルや著名人のポートレートを手がける一方、1999年から自画像日記プロジェクト《Behind My Face》を継続している。*1 長編ドキュメンタリー映画《Love American Skin》（2010）の制作も行った。
+
+表現解説
+
+ショイネマンの実践の特徴は、エディトリアル・ポートレートの職業的な視覚言語と、自身の日常・セクシュアリティ・ライフスタイルを主題とする自伝的な自画像日記を一つの実践の中に組み合わせる点にある。《Behind My Face》はスナップショットを拡張されたプロジェクト形式に発展させたもので、大判の高光沢エディトリアルポートレートと私的な記録の間にある境界を曖昧にする。*1
+
+彼女自身の言葉によれば、自伝的な作品は「エキゾチックで、時に極端なライフスタイル」と直接結びついており、写真を切り離された観察ではなく、生きられた経験と自己発明に近接したものとして保つ選択である。エディトリアルと自己上演の両面において、写真的なアイデンティティは、流通・スタイル・露出によって産み出されるものとして扱われる。*2
+
+批評と受容
+
+利用可能な資料は主として自己紹介的なものであり、広範な批評的合意を示すには限界がある。*1 入手可能な情報が示すのは、ショイネマンの意義がプロフェッショナルな肖像写真と自己上演の崩壊にある、という点である——表象としてのアイデンティティが、私的な文書と商業的な映像制作の両方を通じて構築されるという視点から。*2`,
+      textEn: `Biography
+
+Swiss/German photographer who has lived and worked across Zürich, Paris, London, New York, Los Angeles, and Austin.*1*2
+
+Known for editorial, celebrity, and autobiographical photography, especially the long-running self-portrait diary project *Behind My Face* begun in 1999.*1
+
+Expression / method
+
+Main themes: self-exposure, lifestyle performance, celebrity portraiture, eroticism, freedom, and the unstable overlap between private diary and public image culture.*1*2
+
+Representative work examples: the *Behind My Face* self-portrait diary, the feature-length documentary art film *Love American Skin* (2010), and her extensive portrait/editorial practice are central because they show how Scheunemann moves between commissioned image-making and autobiographical self-staging.*1*2
+
+Technique / formal traits: diaristic self-portraiture, intimate snapshots expanded into project form, high-gloss editorial portraiture, and a willingness to blur lifestyle photography, fashion image, and personal document.*1*2
+
+Why this method was chosen: Scheunemann’s own bio is especially useful here because it links the autobiographical work directly to her “exotic and, at times, extreme lifestyle.” The method seems chosen to keep photography close to lived experience and self-invention rather than to detached observation.*1
+
+Historical context: Scheunemann belongs to the turn-of-the-century moment when editorial photography, self-documentation, and autobiographical image culture were becoming increasingly intertwined. Her work sits at the edge of art, fashion, and media self-performance.*1*2
+
+Relation to contemporaries or movements: she can be connected to diaristic self-portraiture and fashion/editorial photography, but differs from more conceptually framed self-portrait work by foregrounding immediacy, sexuality, and lifestyle as unstable performance.*1*2
+
+Historical significance: Scheunemann matters insofar as she represents a strand of image practice in which the autobiographical self is constructed through the same visual economy as celebrity and fashion portraiture.*1*2
+
+Critical meaning: the work matters because it makes it difficult to separate document from persona. Her self-portraits and portraits both treat photographic identity as something produced through circulation, style, and exposure.*1*2
+
+Where and how the work was used: her photographs circulated widely through editorial commissions and portrait campaigns, while *Behind My Face* and *Love American Skin* extended that visual language into longer autobiographical form.*1*2
+
+Criticism and reception
+
+The reviewed sources are relatively thin and largely self-presentational, so final website copy should remain careful and avoid overclaiming a strong critical consensus.*1*2
+
+Even so, the available material supports the point that Scheunemann’s significance lies in collapsing professional portraiture and self-performance into a single ongoing image practice.*1*2
+
+Final text should therefore emphasize hybridity of mode rather than medium purity or institutional canonization.*1*2`,
+      links: [
+        {
+          url: `https://www.dianascheunemann.com/about-contact`,
+          label: `Diana Scheunemann — 公式サイト`
+        },
+        {
+          url: `https://www.sanmarcosrecord.com/article/26554%2Ctime-for-your-close-up`,
+          label: `San Marcos Record — Time for Your Close Up`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.dianascheunemann.com/about-contact`,
+          name: `About Diana — dianascheunemann.com（公式サイト）`
+        },
+        {
+          num: 2,
+          url: `https://www.sanmarcosrecord.com/article/26554%2Ctime-for-your-close-up`,
+          name: `Time for Your Close Up — San Marcos Record`
+        }
+      ]
+    },
+    'dirk-braeckman': {
+      leadJa: `1958年ベルギー・エークロ生まれ、ヘント在住。室内・カーテン・ホテルの一室・身体の断片を、暗く圧縮されたトーンで捉える大判モノクロ写真で知られる。写真のドキュメンタリー的な透明性を問い直し、映像を自律したオブジェクトとして差し出す実践は、ベルギー美術写真の中でも際立った位置を占める。`,
+      leadEn: `Belgian photographer born in 1958 in Eeklo, based in Ghent.*1*2 Known for dark, often black-and-white photographs of interiors, curtains, hotel rooms, bodies, and fragments of the immediate environment, later treated as autonomous images rather than straightforward documents.*1*2*3`,
+      textJa: `経歴
+
+1958年ベルギー・エークロ生まれ、ヘントを拠点に活動する写真家。室内・カーテン・ホテルの一室・壁・身体の断片を、暗い階調圧縮を施した大判白黒ゼラチンプリントで撮影する実践で知られる。*1 S.M.A.K.（ヘント現代美術館）が長年にわたり作品を収蔵・展示してきており、《z.Z(t).('94-'01)》などの展示を通じてベルギーの現代写真の主要作家として位置づけられている。*2
+
+表現解説
+
+ブレークマンの実践の核心は、撮影の瞬間から時間的・心理的な距離を置いてイメージを扱い、写真を即時の出来事の記録ではなく自律したオブジェクトへと変換することにある。S.M.A.K.のアーティストページが特に有用なのは、彼の実践を写真そのもの——とりわけその複製可能性と「現実への窓」としての地位——への持続的な探求として位置づけているためである。*1
+
+技術的には、黒白ゼラチン写真・大判フォーマット・暗い階調圧縮・ぼかしや省略された細部・暗号的なタイトル、そしてテクスチャと素材的表面への細かな注意が特徴的である。光・フォーカス・フレーミング・触覚性がS.M.A.K.によって繰り返し核心的なパラメータとして強調されている。《L.O.-N.Y.-'94》の作品テキストは、一見ドキュメンタリー的に見えながら「根底となる物語を含まず孤立して存在する」と記述しており、*3 この定式化は彼の受容理解において重要な鍵となる。
+
+ブレークマンは、写真がもはや透明な証拠として単純に扱われなくなったポスト・ドキュメンタリー、ポスト・コンセプチュアルの時代に登場した。親密な周囲の環境と結びついたまま、安定したナラティブを剥ぎ取るという彼のアプローチは、同時代のベルギー美術写真の中でも際立った位置を占める。*4
+
+批評と受容
+
+S.M.A.K.のテキストは一貫してブレークマンをベルギー美術写真の主要人物として記述し、写真の透明な複製可能性からより内省的で自律的な映像へという転換を強調する。*1 《L.O.-N.Y.-'94》の作品テキストが示す「物語なき孤立した映像」という定式化が、批評的な鍵として機能している。*3 彼の実践において重要なのは雰囲気だけではなく、雰囲気が写真を媒体・記憶・不確かな証拠として問う批評的探求と不可分である点にある。`,
+      textEn: `Biography
+
+Belgian photographer born in 1958 in Eeklo, based in Ghent.*1*2
+
+Known for dark, often black-and-white photographs of interiors, curtains, hotel rooms, bodies, and fragments of the immediate environment, later treated as autonomous images rather than straightforward documents.*1*2*3
+
+Expression / method
+
+Main themes: ambiguity, absence, interiority, non-places, the limits of photographic reference, and the unstable relation between personal experience and anonymous space.*1*2*3
+
+Representative work examples: works such as *L.O.-N.Y.-’94* and later image groups gathered in exhibitions like *z.Z(t).(’94-’01)* are central because they show how Braeckman turns rooms, walls, curtains, beds, and empty corners into near-abstract, psychologically charged images.*1*2*3
+
+Technique / formal traits: black-and-white gelatin photographs, large formats, dark tonal compression, blurred or withheld detail, coded titles, and close attention to texture and material surface. S.M.A.K. repeatedly emphasizes light, focus, framing, and tactility as key parameters.*1*2*3*4
+
+Why this method was chosen: S.M.A.K.’s artist page is especially helpful because it frames Braeckman’s practice as a sustained investigation of photography itself, especially its reproducibility and its status as a “window on reality.” The work uses delay, reworking, and distance from the moment of exposure to detach the image from immediate event and turn it into a more autonomous object.*1*4
+
+Historical context: Braeckman emerges in a post-documentary, post-conceptual moment in which photography is no longer treated simply as transparent evidence. His work belongs to the late twentieth-century reconsideration of medium, subjectivity, and the photograph’s claim to reveal the world.*1*2*4
+
+Relation to contemporaries or movements: he is often discussed in relation to contemporary art photography in Belgium, but he differs from overtly staged or typological practices by keeping the image tied to intimate surroundings while stripping it of stable narrative.*1*2*3
+
+Historical significance: Braeckman matters because he pushed art photography away from descriptive certainty and toward material, tonal, and psychological ambiguity. His photographs are historically significant not because they narrate events, but because they test what remains when narrative is removed.*1*2*3*4
+
+Critical meaning: the work matters because it treats the photograph as both evidence and refusal. The images appear to document real sites and moments, yet they resist story, identity, and explanation, forcing attention back onto surface, mood, and perception itself.*1*2*3*4
+
+Where and how the work was used: S.M.A.K.’s artist page and exhibition records are especially useful because they show long-term institutional framing around autonomy, materiality, and medium-reflection rather than reportage. This helps position Braeckman within museum-based discourse on contemporary photography rather than only within national career history.*1*2*3*4
+
+Criticism and reception
+
+S.M.A.K.’s texts consistently describe Braeckman as a major figure in Belgian art photography and emphasize his turn away from photography’s supposedly transparent reproducibility toward more imploded, autonomous images.*1*2
+
+The museum’s object text for *L.O.-N.Y.-’94* is especially useful because it states that, although the images seem documentary, they contain no underlying story and exist in isolation. That formulation captures an important critical key to his reception.*3
+
+Final website copy should avoid reducing him to atmosphere alone. The stronger point is that atmosphere in Braeckman is inseparable from a critical inquiry into photography as medium, memory, and uncertain evidence.*1*2*4`,
+      links: [
+        {
+          url: `https://smak.be/en/artists/dirk-braeckman`,
+          label: `S.M.A.K. — Dirk Braeckman`
+        },
+        {
+          url: `https://smak.be/en/exhibitions/z-zt-94-01`,
+          label: `S.M.A.K. — z.Z(t).('94-'01) 展覧会`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://smak.be/en/artists/dirk-braeckman`,
+          name: `Dirk Braeckman — S.M.A.K. (Stedelijk Museum voor Actuele Kunst, Ghent)`
+        },
+        {
+          num: 2,
+          url: `https://smak.be/en/exhibitions/z-zt-94-01`,
+          name: `z.Z(t).('94-'01) — S.M.A.K.`
+        },
+        {
+          num: 3,
+          url: `https://smak.be/nl/kunstwerken/l-o-n-y-94-3171`,
+          name: `L.O.-N.Y.-'94 — S.M.A.K.`
+        },
+        {
+          num: 4,
+          url: `https://smak.be/nl/kunstwerken/a-d-f-v-n-1-03-3177`,
+          name: `A.D.F.-V.N.1-03 — S.M.A.K.`
+        }
+      ]
+    },
+    'elina-brotherus': {
+      leadJa: `1972年フィンランド・ヘルシンキ生まれ。自画像・風景・コンセプチュアルな映像作品で知られる写真家・映像作家。初期の自伝的な自画像シリーズから、フルクサスのイベントスコアを参照したルールベースの実践へと展開した。自画像を告白から解放し、主体性が写真の中でいかに構築・上演・変容するかを問う実践として評価されている。`,
+      leadEn: `Finnish photographer and video artist born in 1972 in Helsinki.*1*2 Known for self-portraiture, landscape, and later conceptual performance-derived works that use the artist’s own body without reducing the work to autobiography.*1*2*3`,
+      textJa: `経歴
+
+1972年フィンランド・ヘルシンキ生まれ。自画像・風景・コンセプチュアルな映像作品で知られる写真家・映像作家として国際的に活動する。*1 初期の自伝的な自画像シリーズから、《The New Painting》など美術史的引用を含む作品群、さらにフルクサスのイベントスコアを参照したルールベースの実践へと展開した。*3 美術館・公共アート機関・アーティスト・イン・レジデンスや国際的なグループ展を通じて幅広く発表している。
+
+表現解説
+
+ブロテルスの実践の特徴は、自画像をたんなる自己告白ではなく、主体性が写真の中でいかに構築されるかを検証するための道具として用いることにある。初期の自画像と風景は、内的な経験を静かなカラー写真として外面化するものであり、心理的な自己刻印と形式的な抑制が同居している。*1
+
+《The New Painting》などのプロジェクトで実践はさらに拡張し、フルクサスのイベントスコアやパフォーマンスの指示書を出発点とする作品群へと移行した。この転換は、個人的なナラティブから、行為・映像・美術史との関係を探る、より開かれた実験へと実践を押し広げた。*3 カラー写真と映像の両方を用い、繰り返される自己の身体が、心理的に演出された状況からルールに基づくコンセプチュアルな演習まで、幅広い文脈で参照される。自画像における「自己」は固定されたアイデンティティではなく、写真的条件の変化に応じて可視化・上演・変容するものとして扱われる。*2
+
+批評と受容
+
+機関的な受容はブロテルスを現代自画像写真の主要人物として位置づけることが多いが、のちの展示はコンセプチュアルかつパフォーマティブな実践の拡張も強調している。*1 重要なのは、彼女の実践をたんなる「自画像作家」と還元しないことで、自伝的な出現からルールベースの歴史的に参照された実験への転換こそが写真史上の意義である。自己の身体を絵画的・歴史的・手続き的な問いを探る柔軟な道具として機能させた作家として評価されている。*3`,
+      textEn: `Biography
+
+Finnish photographer and video artist born in 1972 in Helsinki.*1*2
+
+Known for self-portraiture, landscape, and later conceptual performance-derived works that use the artist’s own body without reducing the work to autobiography.*1*2*3
+
+Expression / method
+
+Main themes: self-portraiture, artistic identity, landscape, repetition, play, art-historical citation, and the relation between instruction and lived presence.*1*2*3
+
+Representative work examples: early self-portraits and landscapes, later projects such as *The New Painting* and works derived from Fluxus event scores are central because they show her move from diaristic self-inscription toward a broader inquiry into performance, art history, and authorship.*1*2*3
+
+Technique / formal traits: color photography and video, repeated use of the artist’s own body, careful composition, and a method that can move from intimate psychological staging to deliberately rule-based conceptual exercises.*1*2*3
+
+Why this method was chosen: Brotherus uses self-representation not simply to confess but to test how subjectivity is constructed in photography. Her later embrace of scores and instructions suggests a move from personal narrative toward a more open and historically informed exploration of action and image.*1*2*3
+
+Historical context: her work emerges in the 1990s and 2000s, when self-portraiture, staged photography, and conceptual reenactment were central to contemporary art. She belongs to that field but is distinct in how she connects emotional directness with art-historical play.*1*2*3
+
+Relation to contemporaries or movements: Brotherus can be placed near self-portraiture, feminist photography, and conceptual performance documentation, though her work often resists fixed ideological reading by remaining formally restrained and quietly self-reflexive.*1*2
+
+Historical significance: she matters because she extended self-portraiture beyond the confessional mode, showing how the artist’s own body can serve as a flexible instrument for exploring pictorial, historical, and procedural questions.*1*2*3
+
+Critical meaning: the work matters because it keeps self-representation unstable. Even when the artist appears in the image, the photograph is not simply about identity; it is about the conditions under which identity becomes visible, staged, repeated, or transformed.*1*2
+
+Where and how the work was used: Brotherus’s work has circulated through museums, public art institutions, artist residencies, and international surveys. Institutional biographies and exhibition texts are useful because they show the continuity between her early self-portraits and later instruction-based work.*1*2*3
+
+Criticism and reception
+
+Institutional reception often emphasizes Brotherus as a major figure in contemporary self-portraiture, but later exhibitions also highlight the conceptual and performative expansion of her practice.*1*2*3
+
+Her own website is useful because it clarifies the breadth of the work across photography and video and shows how later projects remain continuous with earlier concerns rather than breaking from them.*2
+
+Final website copy should avoid reducing her to “self-portrait artist” alone and instead emphasize the shift from autobiographical appearance to rule-based, historically informed experimentation.*1*2*3`,
+      links: [
+        {
+          url: `https://www.elinabrotherus.com/work`,
+          label: `Elina Brotherus — 公式サイト（作品）`
+        },
+        {
+          url: `https://www.mkdw.de/en/museum/artist-in-residence/elina-brotherus`,
+          label: `Museum Kunst der Westküste — Elina Brotherus`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.mkdw.de/en/museum/artist-in-residence/elina-brotherus`,
+          name: `Elina Brotherus — Museum Kunst der Westküste, Artist-in-Residence`
+        },
+        {
+          num: 2,
+          url: `https://www.elinabrotherus.com/work`,
+          name: `Elina Brotherus — 公式サイト（作品）`
+        },
+        {
+          num: 3,
+          url: `https://www.photography-in.berlin/museum-fur-photographie-braunschweig-elina-brotherus-angelika-platen-doppelleben/`,
+          name: `Elina Brotherus / Doppelleben — Museum für Photographie Braunschweig`
+        }
+      ]
+    },
+    'florian-maier-aichen': {
+      leadJa: `1973年ドイツ・シュトゥットガルト生まれ、ロサンゼルスとケルンを拠点に活動する写真家。風景写真とデジタル操作を組み合わせ、描写的でありながら絵画的・人工的な映像を生み出す。写真を「完成品」として受け取るのではなく積極的に強化する姿勢から、写真と絵画の歴史的な結びつきを現代的な手法で再開させた作家として位置づけられる。`,
+      leadEn: `German photographer born in 1973 in Stuttgart, later based between Los Angeles and Cologne.*1*2*3 Known for landscape and urban photographs that combine traditional photographic capture with digital intervention, and for later camera-less “Lasso Paintings” that push photography toward abstraction.*1*2*3`,
+      textJa: `経歴
+
+1973年ドイツ・シュトゥットガルト生まれ、ロサンゼルスとケルンを拠点に活動する写真家。風景写真とデジタル操作を組み合わせた作品でブルム＆ポーやガゴシアンなど国際的なギャラリーで発表し、*1 のちにカメラを使わないデジタルマークメイキング「ラッソ・ペインティング」へと実践を拡張した。*4
+
+表現解説
+
+マイヤー＝アイヒェンの実践は、風景写真の記録的な慣習を出発点としながら、デジタル操作・変色・赤外線素材の使用などを通じてその表面を不安定にすることを特徴とする。ソルトン・シー周辺の風景写真群などがその代表例であり、見慣れたランドスケープのモチーフを不安定なハイブリッド映像へと変換する。*3
+
+インタビューでマイヤー＝アイヒェン自身は「このショーの全作品が少しずれているのは、完成品をそのまま受け取るのではなく、自分の好みに合うよう写真を強化しようとしているから」と述べており、*2 操作は効果としてではなく方法として意識的に選択されていることがわかる。この姿勢から、写真と絵画の歴史的な関係を、デジタルという現代的な手法を用いて再開させる実践として受容されてきた。後期の「ラッソ・ペインティング」では、カメラなしのデジタルマークメイキングを写真的素材の上に重ねることで、写真と絵画の境界をさらに曖昧にする。*4
+
+ポスト・デュッセルドルフ世代のランドスケープ写真との近さを持ちながら、絵画的・錬金術的な変換を明示的にする点で際立つ。写真がもはや絵画やデジタル修正から純粋性を守る必要がなく、それらの混合物こそが主題となるという転換を体現した作家として位置づけられる。
+
+批評と受容
+
+批評的なフレーミングは繰り返し、絵画的介入と写真的信頼性の間の緊張に立ち返る。マイヤー＝アイヒェンは、写真とペインティングを対立物として扱うのではなく、その歴史的な結びつきを現代のツールを用いて復活させるアーティストとして受容されてきた。*2 デジタル操作だけに還元しないことが重要であり、操作によって風景写真が古い絵画的野心といかに結びついているかを試験する点に彼の歴史的意義がある。*3`,
+      textEn: `Biography
+
+German photographer born in 1973 in Stuttgart, later based between Los Angeles and Cologne.*1*2*3
+
+Known for landscape and urban photographs that combine traditional photographic capture with digital intervention, and for later camera-less “Lasso Paintings” that push photography toward abstraction.*1*2*3
+
+Expression / method
+
+Main themes: landscape, artifice, image manipulation, modern ruin, and the ongoing relation between photography and painting.*1*2*3
+
+Representative work examples: landscapes such as the Salton Sea pictures, works discussed in *Estatic Truth*, and later exhibitions at Blum & Poe and Gagosian are central because they show how Maier-Aichen transforms familiar landscape motifs into unstable hybrid images.*1*2*3*4
+
+Technique / formal traits: photographic capture combined with digital manipulation, infrared material in some works, altered skies and surfaces, and an explicit interest in presentation format; later “Lasso Paintings” use camera-free digital mark-making layered over photographic substrates.*2*3*4
+
+Why this method was chosen: interview and gallery texts are useful because Maier-Aichen explicitly describes trying to “enhance” photography rather than accept a finished product as given. The method lets him keep one foot in photographic description and another in painterly intervention.*2*3*4
+
+Historical context: Maier-Aichen emerges in the post-Photoshop moment when digital manipulation becomes central to debates on landscape photography and photographic truth. His work belongs to a generation that re-opened the old relation between photography and painting using contemporary tools.*1*2*3
+
+Relation to contemporaries or movements: he can be placed near post-Düsseldorf landscape photography and digitally altered color work, but differs by making painterly and alchemical transformation unusually explicit.*1*2*3
+
+Historical significance: Maier-Aichen matters because he makes visible a crucial late twentieth-century shift: photography no longer needs to defend its purity from painting or digital revision. Instead, those contaminations become the subject.*1*2*3
+
+Critical meaning: the work matters because it refuses stable categories. The landscapes seem descriptive, but every intervention reminds the viewer that landscape photography is also a field of projection, enhancement, and historical memory.*1*2*3*4
+
+Where and how the work was used: exhibition material around Blum & Poe, gallery texts, and critical commentary in catalogues show that Maier-Aichen’s work has circulated as both photography and expanded image practice rather than as conventional landscape alone.*1*2*3*4
+
+Criticism and reception
+
+Critical framing often returns to the tension between painterly intervention and photographic credibility. Maier-Aichen is repeatedly received as an artist who revives historical links between the two rather than treating them as opposites.*1*2*3
+
+Final website copy should avoid reducing him to digital manipulation alone. The stronger point is that he uses manipulation to test how landscape photography remains tied to older pictorial ambitions.*1*2*3
+
+Because some of the best material is interview- or gallery-based rather than museum-essay based, final prose should remain close to the specific, well-supported argument about enhancement, artifice, and landscape.*2*3*4`,
+      links: [
+        {
+          url: `https://www.architecturaldigest.com/story/florian-maier-aichen-blum-poe`,
+          label: `Architectural Digest — Florian Maier-Aichen at Blum & Poe`
+        },
+        {
+          url: `https://www.ruzicska.com/florian-maieraichen-2021`,
+          label: `Galerie Nikolaus Ruzicska — Florian Maier-Aichen 2021`
+        },
+        {
+          url: `https://art21.org/wp-content/uploads/2017/03/art21-season-five-guide.pdf`,
+          label: `art:21 — Educators' Guide Season Five（Florian Maier-Aichen section）`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.architecturaldigest.com/story/florian-maier-aichen-blum-poe`,
+          name: `Florian Maier-Aichen's Photographs Go on Display at Blum & Poe — Architectural Digest`
+        },
+        {
+          num: 2,
+          url: `https://www.ruzicska.com/florian-maieraichen-2021`,
+          name: `Florian Maier-Aichen 2021 — Galerie Nikolaus Ruzicska`
+        },
+        {
+          num: 3,
+          url: `https://art21.org/wp-content/uploads/2017/03/art21-season-five-guide.pdf`,
+          name: `art:21 Educators' Guide to Season Five — Art21`
+        },
+        {
+          num: 4,
+          url: `https://gagosian.com/media/gallery/press/2013/4045387cbecc09968f45a3d7412c1926.pdf`,
+          name: `Florian Maier-Aichen — Gagosian press release`
+        }
+      ]
+    },
+    'frank-van-der-salm': {
+      leadJa: `1964年オランダ・デルフト生まれ、ロッテルダムを拠点に活動する写真家。都市景観・建築・グローバリゼーションが現代都市に及ぼす圧力を主題とする。ニュー・トポグラフィクスから出発し、「ますます映像で構成されるようになる複雑な現実」としてのメトロポリスを写真と映像で問い続ける。`,
+      leadEn: `Dutch photographer and artist born in 1964 in Delft, based in Rotterdam.*1*2 Known for photography and video focused on the urban landscape, especially the pressures of globalization, politics, economics, and architectural spectacle on the contemporary metropolis.*1*2`,
+      textJa: `経歴
+
+1964年オランダ・デルフト生まれ、ロッテルダムを拠点に活動する写真家・映像作家。都市景観・建築・グローバリゼーションが現代都市に及ぼす圧力を主題とする写真と映像で知られる。*1 MVRDV・ヘルツォーク＆ド・ムーロン・レム・コールハースらとの接点を持ち、ニュー・インスティトゥート（ロッテルダム）での「写真家の目を通じて」展など建築的文脈でも発表している。*2
+
+表現解説
+
+ファン・デル・サルムの実践は、都市景観をその物理的形態だけでなく「映像の場」として扱うことを特徴とする。自身のバイオグラフィーは、作品がニュー・トポグラフィクスの影響のもとに出発し、「ますます映像で構成されるようになる複雑な現実」としての現代都市メトロポリスへと発展したことを明示している。*1 この認識から、写真は都市形態の分析ツールであると同時に、都市の映像文化の産出者でもあるという二重の立場を取る。
+
+大判の都市的なビュー・意図的な被写体からの距離・慎重にバランスされた構図を特徴とし、建築や社会基盤は孤立した建物としてではなく、より広いメトロポリスの映像システムの要素として捉えられる。*2 ReVueでの《Spot》（2000）の考察は、一見シンプルな街頭の一場面が距離とフレーミングを通じて建築を見ることへの反省になる様相を示しており、*3 ファン・デル・サルムの実践が都市景観写真だけでなく、その媒介された・政治的な映像空間としてのメトロポリスを主題にしていることを示す。ニュー・トポグラフィクスとその後のグローバル都市写真を橋渡しする作家として、ドキュメンタリー的な都市映像がメトロポリスの映像飽和状態を批評的に反省しうることを示した。
+
+批評と受容
+
+自身のバイオグラフィーが受容の弧を端的に示す——初期のニュー・トポグラフィクスの影響からグローバルな都市映像文化へ。*1 ReVueの《Spot》考察はこれを補強し、一見単純な都市的光景でも距離とフレーミングを通じた建築的考察になることを示している。*3 単なる建築写真家ではなく、メトロポリスを媒介された・政治的な映像空間として撮影する写真家として、機関的・建築的文脈から評価されている。`,
+      textEn: `Biography
+
+Dutch photographer and artist born in 1964 in Delft, based in Rotterdam.*1*2
+
+Known for photography and video focused on the urban landscape, especially the pressures of globalization, politics, economics, and architectural spectacle on the contemporary metropolis.*1*2
+
+Expression / method
+
+Main themes: urban landscape, architecture, globalization, metropolitan spectacle, image culture, and the tension between built reality and photographic mediation.*1*2*3
+
+Representative work examples: early works such as *Spot* (2000), long-running urban landscape projects, and collaborations or intersections with architects such as MVRDV, Herzog & de Meuron, and Rem Koolhaas are central because they show how Van der Salm treats the city as both physical environment and image field.*1*2*3
+
+Technique / formal traits: large urban views, deliberate distance from the scene, carefully balanced composition, and a preference for architecture and infrastructure understood not as isolated buildings but as elements in broader metropolitan image systems.*1*2*3
+
+Why this method was chosen: his own biography is explicit that the work began under the influence of New Topographics but developed toward the contemporary metropolis and its “complex reality, which increasingly consists of images.” The method is therefore chosen to study not only urban form but the mediation of urban form.*1
+
+Historical context: Van der Salm belongs to the late twentieth-century expansion of urban landscape photography after New Topographics, when globalization and spectacle forced photographers to deal with cities as economic and imagistic systems rather than stable places.*1*2
+
+Relation to contemporaries or movements: he can be linked to topographic and architectural photography, but differs by foregrounding collaboration with architectural discourse and by stressing the dual position of photography as both analytical tool and producer of metropolitan image culture.*1*2*3
+
+Historical significance: Van der Salm matters because he helps bridge New Topographics and later global-city photography. His work demonstrates how documentary-looking city images can also reflect critically on the image-saturated condition of the metropolis.*1*2
+
+Critical meaning: the work matters because it treats architecture not simply as object but as a node inside political, economic, and representational pressures. Photography becomes a way to reveal how the city is both lived and continuously imaged.*1*2*3
+
+Where and how the work was used: his works circulated through galleries, museums, biennials, and architectural contexts. The Nieuwe Instituut event text is especially useful because it frames his practice through dialogue between photographer and architect, rather than through photography alone.*1*2
+
+Criticism and reception
+
+Van der Salm’s own biography is unusually useful because it succinctly states the arc of reception: from early New Topographics influence toward globalized urban image culture.*1
+
+ReVue’s discussion of *Spot* strengthens this by showing how even a seemingly simple street scene becomes a reflection on looking at architecture through distance and framing.*3
+
+Final website copy should emphasize that Van der Salm is important not merely as an architectural photographer, but as a photographer of the metropolis as mediated, political image-space.*1*2*3`,
+      links: [
+        {
+          url: `https://www.frankvandersalm.com/about`,
+          label: `Frank van der Salm — 公式サイト（About）`
+        },
+        {
+          url: `https://nieuweinstituut.nl/en/events/door-de-lens-van-de-fotograaf`,
+          label: `Nieuwe Instituut — Through the Photographer's Lens`
+        },
+        {
+          url: `https://www.re-vue.org/beitrag/theorie-frank-van-der-salm-fotografie-mit-architektur-fotografie-durch-architektur`,
+          label: `ReVue — Fotografie mit Architektur, Fotografie durch Architektur`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.frankvandersalm.com/about`,
+          name: `About — Frank van der Salm（公式サイト）`
+        },
+        {
+          num: 2,
+          url: `https://nieuweinstituut.nl/en/events/door-de-lens-van-de-fotograaf`,
+          name: `Through the Photographer's Lens — Nieuwe Instituut, Rotterdam`
+        },
+        {
+          num: 3,
+          url: `https://www.re-vue.org/beitrag/theorie-frank-van-der-salm-fotografie-mit-architektur-fotografie-durch-architektur`,
+          name: `Fotografie mit Architektur, Fotografie durch Architektur — ReVue`
+        }
+      ]
+    },
+    'gabor-osz': {
+      leadJa: `1962年ハンガリー生まれ、オランダ在住の写真家・アーティスト。写真・映像・インスタレーション・絵画の閾で作動し、映像の構造・光・建築・視覚の不安定性を探る。建築空間をカメラ・オブスキュラ的な光学装置として転換し、見ることを与えられたものではなく構築されたものとして問い直す。`,
+      leadEn: `Hungarian-born photographer and artist, born in 1962, living and working in the Netherlands.*1*2*3 Known for work that moves across photography, film, and installation while probing image structures, light, architecture, and the instability of vision.*1*2*3`,
+      textJa: `経歴
+
+1962年ハンガリー生まれ、オランダ在住の写真家・アーティスト。写真・映像・インスタレーション・絵画を横断し、映像の構造・光・建築・視覚の不安定性を探る作品を制作する。*1 ルートヴィヒ美術館（ブダペスト）での展示《Three by Three》や、ルーヴェンブルック（パリ）、ジャンヌ・ビュシェ＝ジェガー（パリ）での個展を通じて国際的に評価されている。*2
+
+表現解説
+
+エーシュの実践の核心は、写真・映像・インスタレーション・絵画という複数のイメージ制作技術の閾で作動することにある。ルートヴィヒ美術館のテキストは、彼の作品を「異なるイメージ制作技術の境界」に位置するものとして位置づけており、*1 写真を透明な記録ツールとして扱うのではなく、映像がいかに物質的・光学的に構築されるかを問う方法として選んでいることを示している。
+
+《The Window / Das Fenster》、バンカーや地平線をめぐるプロジェクト、カメラ・オブスキュラ的な構造体といった作品群は、建築空間を光学的な装置として転換し、見ることを与えられたものではなく構築されたものとして扱う。*2 絵画・映像・写真・インスタレーションのハイブリッドな使用、空間を通じた映像の投影と構成、オブジェクト・光・映像平面の間の緊張への注意が、エーシュの形式的な特徴として繰り返し指摘されている。*3
+
+1989年以後の中央・東欧美術において、建築・記憶・技術的メディアが歴史と風景の再検討にとって中心的になった時期に、エーシュはポスト・コンセプチュアルな環境に属しながらも媒体反省的な立場を強く保つ実践者として位置づけられる。写真史における彼の意義は、「写真」をより広い映像の条件——光学・建築・物質性——への問いへと拡張した点にある。空間そのものが写真的出来事の一部となり、視覚は所与のものではなく構築されたものとして扱われる。
+
+批評と受容
+
+機関的なフレーミングは、エーシュを絵画・映像・写真の閾で活動するアーティストとして一貫して位置づけている。*1 批評においては、映像構造と光学を主題として強調することが重要であり、建築写真家として還元しないことが肝要とされる。利用可能な資料は展示概要に基づくものが中心であるが、繰り返す関心事——光・境界・映像の物質性——を通じて実践の輪郭を描くことができる。*2`,
+      textEn: `Biography
+
+Hungarian-born photographer and artist, born in 1962, living and working in the Netherlands.*1*2*3
+
+Known for work that moves across photography, film, and installation while probing image structures, light, architecture, and the instability of vision.*1*2*3
+
+Expression / method
+
+Main themes: architecture, memory, borders, image construction, light, and the relation between technical image-making and historical space.*1*2*3
+
+Representative work examples: exhibitions such as *Three by Three*, works like *The Window / Das Fenster*, and projects related to bunkers, horizons, or camera obscura-like structures are central because they show how Ősz moves between photography, spatial intervention, and the mechanics of seeing.*1*2*3
+
+Technique / formal traits: hybrid use of painting, film, photography, and installation; camera-obscura logic; architectural structures turned into optical devices; and sustained attention to the tension between object, light, and image plane.*1*2*3
+
+Why this method was chosen: Ludwig Museum’s text is especially helpful because it explicitly places Ősz’s work on the border between different image-making techniques. His method seems chosen to test how an image is built materially and optically, rather than to treat photography as a transparent recording tool.*1
+
+Historical context: Ősz emerges in post-1989 Central/Eastern European art, where architecture, memory, and technical media become central to the reconsideration of history and landscape. His work belongs to that post-conceptual environment but remains strongly medium-reflexive.*1*2*3
+
+Relation to contemporaries or movements: he can be linked to conceptual photography and installation-based image practice, but differs through his strong investment in optics, architectural devices, and the physical conditions of projection and framing.*1*2
+
+Historical significance: Ősz matters because he expands photography into a broader inquiry into how images happen. His work is historically significant not simply as “photography,” but as a rethinking of photographic conditions through architecture and light.*1*2*3
+
+Critical meaning: the work matters because it refuses to isolate image from apparatus. Space itself becomes part of the photographic event, and vision is treated as something constructed rather than given.*1*2*3
+
+Where and how the work was used: the Ludwig Museum and exhibition press materials indicate that Ősz’s practice has circulated through contemporary art institutions as an expanded image practice bridging photography, film, and installation.*1*2*3
+
+Criticism and reception
+
+The institutional framing we have is concise but consistent: Ősz is repeatedly presented as an artist operating on the thresholds among painting, film, and photography.*1*2*3
+
+Final website copy should therefore emphasize image structure and optics rather than treat him as a straightforward architectural photographer.*1*2*3
+
+Because some current material is exhibition-summary based, it is safer to write in terms of recurring concerns rather than a fully stabilized critical school around his work.*1*2*3`,
+      links: [
+        {
+          url: `https://www.ludwigmuseum.hu/en/news/gabor-osz-three-three`,
+          label: `Ludwig Museum Budapest — Gábor Ősz: Three by Three`
+        },
+        {
+          url: `https://loevenbruck.com/upload/document/20180424060459_cp-gaborosz-loevenbruck-gb.pdf`,
+          label: `Loevenbruck — Gábor Ősz プレスリリース`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.ludwigmuseum.hu/en/news/gabor-osz-three-three`,
+          name: `Gábor Ősz – Three by Three — Ludwig Museum Budapest`
+        },
+        {
+          num: 2,
+          url: `https://loevenbruck.com/upload/document/20180424060459_cp-gaborosz-loevenbruck-gb.pdf`,
+          name: `Gábor Ősz press release — Loevenbruck, Paris`
+        },
+        {
+          num: 3,
+          url: `https://jeannebucherjaeger.com/wp-content/uploads/2018/03/PGWE_MediaKit.pdf`,
+          name: `Gábor Ősz exhibition references — Paris Gallery Weekend media kit / Jeanne Bucher Jaeger`
+        }
+      ]
+    },
+    'guadalupe-ruiz': {
+      leadJa: `メキシコにルーツを持ち、チューリッヒで学んでジュネーブを拠点に国際的に活動するアーティスト・写真家。写真・複製物・コピー・アーティストブックを通じて、文化的な技法・流通・異文化間の伝達を探求する。写真を唯一の原本としてではなく、コピーが循環する連鎖の中の一つのノードとして扱う。`,
+      leadEn: `Artist and photographer with Mexican background, trained in Zurich and later working in Geneva and internationally.*1*2*3 Known for working with photographs, replicas, copies, and artist books to examine cultural techniques, circulation, and intercultural transfer rather than photographic uniqueness.*1*2*3`,
+      textJa: `経歴
+
+メキシコにルーツを持ち、チューリッヒで学んでジュネーブを拠点に国際的に活動するアーティスト・写真家。写真・複製物・コピー・アーティストブックを通じて、文化的な技法・流通・異文化間の伝達を探求する。*2 アーティストブック流通や、der TANK（バーゼル）、Perimeter Distribution（ロンドン）などのギャラリー・出版文脈で発表している。*3
+
+表現解説
+
+ルイスの実践の核心は、写真をその唯一性・オリジナリティにおいて評価するのではなく、複製・コピー・伝達という過程の中の一つのノードとして扱うことにある。der TANKのテキストは、彼女が文化的技法と異文化間プロセスへの関心から意識的に写真・複製品・コピーを用いることを明示しており、*2 この動機が実践の論理を特に明確にしている。
+
+代表的な作例として、《NY Apples and Pears》および「プライム・オブジェクト」との関係で論じられるプロジェクトが挙げられ、写真・印刷物を用いてオリジナル・反復・コピーの文化的な生をめぐる問いを組み立てる。*3 アーティストブック・写真・コンセプト主導のイメージ作業、発見・複製された素材への注目、分類と連続性への関心、そして写真を単独のオリジナルではなくコピーを担う媒体として扱う姿勢が形式的な特徴である。ポスト・コンセプチュアルな環境において、アーティストたちがオリジナリティを問い、流通・出版・再使用を通じて作業していた時期に、ルイスは特に文化システム間の移動と伝達という面から写真の複製可能性に向き合う実践を展開した。*1
+
+批評と受容
+
+利用可能な資料は限定的だが、ルイスをコピー・複製・文化的伝達を通じた実践として一貫して特定している。*2 写真史における彼女の意義は、写真の複製可能性を技術的な所与としてではなく、社会的・異文化的なプロセスとして保ち続けることにある。価値をオリジナリティから移動・差異・連続的な変換へと転換し、写真を最終的なオブジェクトではなく連鎖の中の一つのノードとして扱う実践として評価されている。*3`,
+      textEn: `Biography
+
+Artist and photographer with Mexican background, trained in Zurich and later working in Geneva and internationally.*1*2*3
+
+Known for working with photographs, replicas, copies, and artist books to examine cultural techniques, circulation, and intercultural transfer rather than photographic uniqueness.*1*2*3
+
+Expression / method
+
+Main themes: copies, replicas, circulation, cultural translation, photographic reproduction, and the mobility of images across geographies and uses.*1*2*3
+
+Representative work examples: *NY Apples and Pears* and projects discussed in relation to “prime objects” are central because they show how Ruiz uses photographic and printed material to think about originals, repetitions, and the cultural life of copies.*2*3
+
+Technique / formal traits: artist books, photography, and concept-driven image work based on found or reproduced material; attention to classification and seriality; and an emphasis on the photograph as a copy-bearing medium rather than singular original.*1*2*3
+
+Why this method was chosen: der TANK’s summary is especially useful because it explicitly states that Ruiz consciously works with photographs, replicas, or copies due to her interest in cultural techniques and intercultural processes. This makes the logic of the method unusually clear.*2
+
+Historical context: Ruiz belongs to a post-conceptual moment in which artists increasingly questioned originality and worked through circulation, publication, and re-use. Her practice is part of that context, with particular emphasis on movement between cultural systems.*1*2
+
+Relation to contemporaries or movements: she can be aligned with conceptual photography and artist-book practices, but differs from appropriation art in a narrower sense by focusing less on critique of authorship alone and more on the cultural techniques that govern copying and transmission.*1*2*3
+
+Historical significance: Ruiz matters because she keeps attention on photography’s reproducibility not as a technical given but as a social and intercultural process. Her work helps place photography inside wider systems of copying and translation.*1*2*3
+
+Critical meaning: the work matters because it shifts value away from originality and toward movement, difference, and serial transformation. The photograph is treated as a node in a chain rather than a final object.*1*2*3
+
+Where and how the work was used: the reviewed materials suggest circulation through artist-book channels, gallery contexts, and discourse around object/copy relations rather than through major canonical museum framing. Final text should reflect that scale honestly.*1*2*3
+
+Criticism and reception
+
+The currently available material is limited, but it consistently identifies Ruiz through her use of copies, replicas, and cultural transfer rather than through medium-specific virtuosity.*1*2*3
+
+Final website copy should keep claims modest and emphasize the clearly supported point that her practice examines what happens when photographs function as copies within broader cultural systems.*1*2*3
+
+Because stronger institutional criticism is limited in the reviewed material, this note should be treated as a solid skeleton rather than a fully thick file.*1*2*3`,
+      links: [
+        {
+          url: `https://dertank.space/guadalupe-ruiz/`,
+          label: `der TANK — Guadalupe Ruiz`
+        },
+        {
+          url: `https://perimeterdistribution.com/products/guadalupe-ruiz-ny-apples-and-pears`,
+          label: `Perimeter Distribution — NY Apples and Pears`
+        },
+        {
+          url: `https://www.artspace.com/artists/guadalupe-ruiz`,
+          label: `Artspace — Guadalupe Ruiz`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.artspace.com/artists/guadalupe-ruiz`,
+          name: `Guadalupe Ruiz bio — Artspace`
+        },
+        {
+          num: 2,
+          url: `https://dertank.space/guadalupe-ruiz/`,
+          name: `Guadalupe Ruiz — der TANK, Basel`
+        },
+        {
+          num: 3,
+          url: `https://perimeterdistribution.com/products/guadalupe-ruiz-ny-apples-and-pears`,
+          name: `Guadalupe Ruiz – NY Apples and Pears — Perimeter Distribution`
+        }
+      ]
+    },
+    'heidi-specker': {
+      leadJa: `1962年ドイツ生まれ。建築・都市環境・肖像を主題に、写真を通じて抽象・権力関係・表象に埋め込まれた社会的コードを検証する写真家。建築ファサードの冷徹な抽象から、ポートレートにおける撮影者と被写体の権力関係の分析へと実践を展開した。`,
+      leadEn: `German photographer born in 1962.*1*2*3 Known for projects on architecture, the urban environment, and later portraiture, often using photography to test abstraction, power relations, and the social codes embedded in representation.*1*2*3`,
+      textJa: `経歴
+
+1962年ドイツ生まれ。建築ファサード・都市環境・肖像を主題に、写真を通じて抽象・権力関係・表象に埋め込まれた社会的コードを検証する写真家として活動する。*2 ベルリーニッシェ・ガレリーで《IN FRONT OF》（2016年）および《Faraway Focus》（2017年）展を発表し、現代ドイツ写真の重要な作家として位置づけられている。*1
+
+表現解説
+
+シュペッカーの実践は、早期の《Speckergruppen》でのファサード写真群、《IM GARTEN》（2003/04）での都市植生の観察、そして《IN FRONT OF》での肖像シリーズという流れで展開してきた。これらは別々のジャンルに見えながら、写真的構築がいかに現れるかを調べるという一貫した関心によってつながれている。*3
+
+ベルリーニッシェ・ガレリーの展示テキストは《IN FRONT OF》を、地位と自己投影に中心を置く従来のポートレート写真の拒絶として明確に位置づけている。写真は撮影セッション中に生み出される依存関係と非対称性を調べる方法となり、被写体は意図的にぎこちなく、解決されていない状態で提示される。*1 建築や都市植生を撮影する際と同様に、シュペッカーはポートレートにおいても、映像の中に何が現れるかを形づくる構造・慣習・依存関係を明らかにするための道具として写真を使う。1990年代初頭のデジタル転換は、彼女の実践における技術的な契機として機関的文書で繰り返し強調されている。*3
+
+批評と受容
+
+ベルリーニッシェ・ガレリーのテキストは《IN FRONT OF》の批評的な核を明示している——ポートレートは単に人物についてのものではなく、ポートレート制作そのものの条件と権力構造についてのものである。*2 機関的受容はシュペッカーを現代ドイツ写真の重要な人物として扱い、建築と肖像を従来の記述的機能から切り離したことを強調する。建築・都市植生・肖像という一見異なる主題を一つの実践として読むことで、写真的構築への問いという核が浮かび上がる。*1`,
+      textEn: `Biography
+
+German photographer born in 1962.*1*2*3
+
+Known for projects on architecture, the urban environment, and later portraiture, often using photography to test abstraction, power relations, and the social codes embedded in representation.*1*2*3
+
+Expression / method
+
+Main themes: architecture, the city, nature inside urban form, portraiture, self-presentation, and the conditions under which photographic images are made.*1*2*3
+
+Representative work examples: the early *Speckergruppen* of façades, *IM GARTEN* (2003/04), and *IN FRONT OF* are central because they show the movement from urban-architectural observation toward a more explicit analysis of portrait conventions and the power relation between sitter and photographer.*1*2*3
+
+Technique / formal traits: a cool, often abstracted treatment of façades and urban surfaces; close cropping; attention to parallels between natural and built structures; and later studio portraits that look deliberately casual or awkward rather than conventionally resolved.*1*2*3
+
+Why this method was chosen: Berlinische Galerie’s exhibition texts are unusually useful because they explicitly frame *IN FRONT OF* as a refusal of conventional portrait photography centered on status and self-projection. Photography becomes a way to examine the dependencies and asymmetries produced during the session itself.*1*2
+
+Historical context: Specker emerges with the generation that expanded contemporary German photography beyond straight documentary, using new technical possibilities, urban research, and later portraiture to question how visual identity is produced. The early-1990s digital shift is especially important in institutional accounts of her work.*1*3
+
+Relation to contemporaries or movements: she relates to architectural and urban photography in Germany, but differs from neutral documentarists by pushing toward abstraction and, later, by turning portraiture into an inquiry into photographic power rather than psychological revelation.*1*2*3
+
+Historical significance: Specker matters because she links two important late twentieth-century concerns: the city as a field of photographic abstraction and the portrait as a site of negotiated power rather than transparent selfhood.*1*2*3
+
+Critical meaning: the work matters because it resists photography as simple description. Whether photographing architecture or people, Specker uses the medium to reveal the structures, conventions, and dependencies that shape what can appear in an image.*1*2
+
+Where and how the work was used: Berlinische Galerie’s museum exhibition is especially useful because it presented *IN FRONT OF* and *IM GARTEN* together, clarifying the continuity between her urban work and her later portrait studies. The press-kit framing also highlights her early role in adapting new digital possibilities into a distinct visual idiom.*1*2*3
+
+Criticism and reception
+
+Institutional reception often treats Specker as one of the important figures of contemporary German photography, especially for the way she moved architecture and portraiture away from conventional descriptive functions.*1*2*3
+
+The Berlinische Galerie texts are especially useful because they make explicit the critical stakes of *IN FRONT OF*: the portraits are not simply of people, but of the conditions and power structures of portrait-making itself.*1*2
+
+Final website copy should emphasize continuity across the oeuvre: architecture, urban vegetation, and portraits all become ways of investigating photographic construction rather than separate genres.*1*2*3`,
+      links: [
+        {
+          url: `https://berlinischegalerie.de/en/exhibition/heidi-specker/`,
+          label: `Berlinische Galerie — Heidi Specker: IN FRONT OF`
+        },
+        {
+          url: `https://berlinischegalerie.de/assets/downloads/presse/Pressetexte/Pressearchiv/2016/Press-kit_Heidi-Specker_11.3.16_Berlinische-Galerie.pdf`,
+          label: `Berlinische Galerie — IN FRONT OF プレスキット`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://berlinischegalerie.de/assets/downloads/presse/Pressetexte/Pressearchiv/2016/Press-kit_Heidi-Specker_11.3.16_Berlinische-Galerie.pdf`,
+          name: `Heidi Specker – IN FRONT OF プレスキット — Berlinische Galerie`
+        },
+        {
+          num: 2,
+          url: `https://berlinischegalerie.de/en/exhibition/heidi-specker/`,
+          name: `Heidi Specker — Berlinische Galerie`
+        },
+        {
+          num: 3,
+          url: `https://berlinischegalerie.de/assets/downloads/presse/Pressetexte/Pressearchiv/2017/Press-kit_Faraway-Focus_15.6.17_Berlinische-Galerie.pdf`,
+          name: `Faraway Focus プレスキット — Berlinische Galerie`
+        }
+      ]
+    },
+    'iosif-kiraly': {
+      leadJa: `1957年ルーマニア・ティミショアラ生まれの写真家・建築家・アーティスト。subREALグループのメンバーであり、ブカレスト国立美術大学写真・映像・コンピュータ画像処理学科の共同創設者。記憶・時間・連続性をテーマに、写真を瞬間の固定ではなく時間の堆積と変容を記録する媒体として扱う。`,
+      leadEn: `Romanian artist, architect, and photographer born in 1957 in Timișoara.*1*2*3 A member of the subREAL group and co-founder of the Photo-Video and Computerized Image Processing Department at the National University of Arts Bucharest.*1*2`,
+      textJa: `経歴
+
+1957年ルーマニア・ティミショアラ生まれ。建築家・写真家・アーティストとしてブカレストを拠点に活動し、subREALグループのメンバーとして知られる。*1 ブカレスト国立美術大学では写真・映像・コンピュータ画像処理学科を共同創設し、ルーマニアにおける現代写真教育の基盤整備にも寄与した。*2
+
+表現解説
+
+キライの実践の核心は、写真を瞬間の固定ではなく、時間の堆積と変容を記録する媒体として扱うことにある。ARTMarginsのインタビューで彼自身が「アーティストとしての出発点は、自分が"パフォーマンス写真"と呼ぶものにある」と述べているように、*2 写真は行為を保存し移動させる媒体として選ばれた。
+
+代表的な連作《Reconstructions》では、関連する場面を時間をまたいで複数フレーミングし、記憶が固定されたイメージではなくプロセスとして現れることを示す。《Old Memories Are Getting More Persistent》では、コラージュ・連続配列・微細なフレーミングの差異を通じて、記憶の不安定さと反復的な再構築を視覚化する。*3 都市空間・建築・1989年以降のルーマニアの社会的文脈も繰り返し参照される主題であり、政治的抑圧の残滓と記憶の関係を問い続ける。*1 ドキュメンタリー的な手法を採りながら、単純な記録には還元できない時間的思考の媒体として写真を位置づける点に、歴史的な意義がある。
+
+批評と受容
+
+ArtEncounters・Fotofestiwal・ARTMarginsいずれも、キライをルーマニア写真において記憶・建築・時間を核にした重要な作家として提示する。*1 批評の焦点は、フレーミングのわずかなずれが記憶そのものをプロセスとして可視化するという点にあり、ポスト共産主義の文脈に限定されない、連続性と差異の写真論として評価されている。*2`,
+      textEn: `Biography
+
+Romanian artist, architect, and photographer born in 1957 in Timișoara.*1*2*3
+
+A member of the subREAL group and co-founder of the Photo-Video and Computerized Image Processing Department at the National University of Arts Bucharest.*1*2
+
+Expression / method
+
+Main themes: memory, time, seriality, urban space, post-1989 Romania, and the unstable relation between documentation and reconstruction.*1*2*3
+
+Representative work examples: the long-running *Reconstructions*, works shown in *Old Memories Are Getting More Persistent*, and earlier “performance photography” discussed in interview are central because they show Király’s persistent attempt to visualize memory as a process rather than a fixed image.*1*2*3
+
+Technique / formal traits: multiple framings of related scenes over time, collage and juxtaposition, serial arrangements, and an approach in which photography records not a single moment but the accumulation and slippage of temporal experience.*1*2*3
+
+Why this method was chosen: Király’s own interview is especially useful because he explicitly describes his beginnings as “performance photography” and explains that photography allowed actions to travel and endure. This makes clear that photography was chosen as a mobile and preservative medium capable of carrying memory beyond the live event.*2
+
+Historical context: Király’s work emerges from late socialist and post-socialist Romania, where questions of memory, public space, and the residue of political oppression became central after 1989. His work belongs to that broader Eastern European rethinking of documentary and historical representation.*1*2*3
+
+Relation to contemporaries or movements: he is connected to Romanian post-1989 conceptual and photographic art, but differs from straightforward documentary by emphasizing sequential memory, reconstruction, and the instability of recognition.*1*2*3
+
+Historical significance: Király matters because he makes photography into a medium for temporal thinking rather than instant capture. His work is historically significant in showing how post-communist photography can register memory as layered, unstable, and always in process.*1*2*3
+
+Critical meaning: the work matters because it resists the idea that a photograph simply preserves the past intact. Instead, it proposes that memory is reconstructed through repetition, difference, and fragile acts of framing.*1*2*3
+
+Where and how the work was used: ArtEncounters and Fotofestiwal are especially useful because they present Király’s practice through memory and reconstruction, while the ARTMargins interview provides rare first-person articulation of his method.*1*2*3
+
+Criticism and reception
+
+Institutional and interview framing consistently presents Király as a key figure in Romanian photography concerned with memory, architecture, and time rather than single-image documentary.*1*2*3
+
+The strongest reception point available is that subtle shifts in framing make memory itself visible as process. This is a better guide for final writing than broad generalizations about post-communist art.*1*2
+
+Final website copy should therefore emphasize reconstruction, seriality, and temporal instability as his core photographic contributions.*1*2*3`,
+      links: [
+        {
+          url: `https://artencounters.ro/en/artist/iosif-kiraly/`,
+          label: `ArtEncounters — Iosif Király`
+        },
+        {
+          url: `https://artmargins.com/subjective-interpretations-of-reality-produced-from-objective-fragments-ileana-pintilie-in-conversation-with-iosif-kiraly/`,
+          label: `ARTMargins — Interview with Iosif Király`
+        },
+        {
+          url: `https://fotofestiwal.com/2024/en/wystawy/iosif-kiraly-old-memories-are-getting-more-persistent/`,
+          label: `Fotofestiwal — Old Memories Are Getting More Persistent`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://artencounters.ro/en/artist/iosif-kiraly/`,
+          name: `Iosif Király — ArtEncounters`
+        },
+        {
+          num: 2,
+          url: `https://artmargins.com/subjective-interpretations-of-reality-produced-from-objective-fragments-ileana-pintilie-in-conversation-with-iosif-kiraly/`,
+          name: `Subjective Interpretations of Reality — ARTMargins Online`
+        },
+        {
+          num: 3,
+          url: `https://fotofestiwal.com/2024/en/wystawy/iosif-kiraly-old-memories-are-getting-more-persistent/`,
+          name: `Iosif Király – Old Memories Are Getting More Persistent — Fotofestiwal`
+        }
+      ]
+    },
+    'jean-luc-mylayne': {
+      leadJa: `1946年フランス生まれの写真家。ありふれた野鳥とその生息環境を主題に、数ヶ月単位の長期的な待機と観察を経て大判カラー写真を制作する。野生動物写真の慣習から離れ、空間・時間・存在の共在という問いを写真的な構造として探求した。`,
+      leadEn: `French photographer born in 1946, working closely with birds and their habitats over several decades.*1*2*3 Known for large-scale photographs in which commonplace birds appear within highly considered relations of space, waiting, and environment, producing images that are at once natural and metaphysical.*1*2*3`,
+      textJa: `経歴
+
+1946年フランス生まれ。数十年にわたり野鳥とその生息環境を主題とする大判カラー写真を制作し、パリッシュ・アート・ミュージアム（ニューヨーク）やMAC（リヨン）など国際的な美術機関で発表してきた。*1 ヒューストン美術館をはじめ主要機関が作品を所蔵する。*3
+
+表現解説
+
+ミレーヌの実践は、ありふれた野鳥——珍しくも劇的でもない種——を主題として選び、その鳥が特定の生息地に現れるまで数ヶ月単位で待機し続けることを方法論の基盤とする。MACリヨンの資料における「写真は私に検証することを可能にする」という言葉が示すように、*2 写真はトロフィーを集める手段ではなく、場所との関係性を時間をかけて試す道具として位置づけられている。
+
+《A Matter of Place》をはじめとする連作は、鳥・環境・フレームの縁の間に高度に構造化された関係を構築する。大判の画面は行為を停止させ、観察を瞑想的な構造へと変換する。*1 野生動物写真の科学的分類でも劇的な捕捉でもなく、異なる存在が空間をいかに共有するかという問いを写真的な問いとして提示する点に、彼の実践の特異性がある。20世紀末のアート写真において、自然は希少性・行動・征服の対象ではなく、時間・注意・共存の問いとして位置づけられた。*2
+
+批評と受容
+
+パリッシュ・アート・ミュージアムは、ミレーヌが鳥と生息地に対して「ほとんど形而上学的」なアプローチをとると評し、*1 MACリヨンの資料は彼の実践がドキュメンタリー的自然写真にも象徴主義的寓意にも還元できないことを明示する。*2 ありふれた鳥と忍耐強い待機を通じて、現代美術における場所をめぐる省察として評価されている。`,
+      textEn: `Biography
+
+French photographer born in 1946, working closely with birds and their habitats over several decades.*1*2*3
+
+Known for large-scale photographs in which commonplace birds appear within highly considered relations of space, waiting, and environment, producing images that are at once natural and metaphysical.*1*2*3
+
+Expression / method
+
+Main themes: coexistence between humans and nature, duration, waiting, attention, the singularity of place, and the relation between presence and disappearance.*1*2*3
+
+Representative work examples: the numbered bird photographs shown in *A Matter of Place*, works in the MAC Lyon catalogue, and images such as *No. B4* are central because they show that Mylayne’s practice is built through sustained pursuit of commonplace birds in highly specific habitats rather than through wildlife spectacle.*1*2*3
+
+Technique / formal traits: monumentally scaled color photographs, slow working process, concentration on ordinary birds, and highly structured relations between bird, environment, and the edge of the frame. The pictures are descriptive, but they also suspend action and turn observation into a meditative structure.*1*2*3
+
+Why this method was chosen: Mylayne’s own words in the MAC Lyon material are especially useful: \`Photography allows me to verify...\` This points to photography as an instrument of testing and waiting rather than immediate capture. The method is chosen to register a relation to place that cannot be hurried.*2
+
+Historical context: Mylayne’s work emerges against both wildlife photography and conceptual photography, but belongs fully to neither. In late twentieth-century art photography he becomes a singular figure for whom nature is not spectacle or ecology alone but a sustained question of time, attention, and coexistence.*1*2*3
+
+Relation to contemporaries or movements: he can be related to nature photography, but differs sharply from both scientific taxonomy and dramatic animal photography. His work instead treats birds as occasions for thinking about how beings share space.*1*2
+
+Historical significance: Mylayne matters because he redefined what a nature photograph could be inside contemporary art. He moved away from rarity, action, and conquest toward waiting, commonplace life, and the metaphysical charge of encounter.*1*2*3
+
+Critical meaning: the work matters because it transforms observation into a question of relation. The bird is never simply object; it is a counterpart through which the photograph measures distance, patience, and coexistence.*1*2*3
+
+Where and how the work was used: the Parrish Art Museum and MAC Lyon materials are especially useful because they frame the work through place, coexistence, and long pursuit rather than wildlife genre. The MFAH record confirms institutional acquisition of major works.*1*2*3
+
+Criticism and reception
+
+Parrish’s framing is especially strong because it emphasizes Mylayne’s “almost metaphysical” approach to birds and habitat.*1
+
+The MAC Lyon catalogue matters because it preserves a more reflective, artist-proximate articulation of method and clarifies that the work cannot be reduced to either documentary nature photography or symbolist allegory.*2
+
+Final website copy should emphasize that Mylayne’s significance lies in how he turns commonplace birds and patient waiting into a sustained contemporary meditation on place.*1*2*3`,
+      links: [
+        {
+          url: `https://parrishart.org/exhibitions/jean-luc-mylayne/`,
+          label: `Parrish Art Museum — Jean-Luc Mylayne: A Matter of Place`
+        },
+        {
+          url: `https://www.mac-lyon.com/sites/mac/files/2020-08/mylayne_en.pdf`,
+          label: `MAC Lyon — Jean-Luc Mylayne 展覧会カタログ`
+        },
+        {
+          url: `https://emuseum.mfah.org/objects/147187/no-b4-novembredecembre-2000-janvier-2001`,
+          label: `MFAH — No. B4, Novembre–Décembre 2000, Janvier 2001`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://parrishart.org/exhibitions/jean-luc-mylayne/`,
+          name: `Jean-Luc Mylayne: A Matter of Place — Parrish Art Museum`
+        },
+        {
+          num: 2,
+          url: `https://www.mac-lyon.com/sites/mac/files/2020-08/mylayne_en.pdf`,
+          name: `Jean-Luc Mylayne exhibition catalogue — MAC Lyon`
+        },
+        {
+          num: 3,
+          url: `https://emuseum.mfah.org/objects/147187/no-b4-novembredecembre-2000-janvier-2001`,
+          name: `No. B4, Novembre–Décembre 2000, Janvier 2001 — Museum of Fine Arts, Houston`
+        }
+      ]
+    },
+    'jean-pierre-khazem': {
+      leadJa: `1968年パリ生まれ。写真・映像・パフォーマンスを横断し、実際には起こらなかった歴史的場面を捏造してドキュメンタリー的権威を付与する実践で知られる。パフォーマンスを写真という静止した記録へと変換することで、映像が事実性と虚構の境界でいかに機能するかを問い続ける。`,
+      leadEn: `French artist born in Paris in 1968, working with photography, video, and performance.*1*2 Known for multi-layered works that stage situations which feel historical or documentary while remaining overtly artificial and performative.*1*2`,
+      textJa: `経歴
+
+1968年パリ生まれ。写真・映像・パフォーマンスを横断するアーティストとして、スペローネ・ウェストウォーター（ニューヨーク）やフェルグファブリーケン（ストックホルム）など国際的な文脈で発表してきた。*1 《Pause》（2002）、《Mona Lisa Live》（2003）など、パフォーマンスを写真へと変換した作品を展開している。*2
+
+表現解説
+
+カゼムの実践の核心は、パフォーマンスを写真という静止した記録形式へと変換することにある。スペローネ・ウェストウォーターのテキストが直接示すように、彼は虚構と現実の概念を操作し、「実際には起こらなかった歴史的瞬間」を創出する。*1 写真は忠実な記録ではなく、捏造された事象にドキュメンタリー的権威を付与する媒体として機能する。
+
+仮面・鏡像的な空間・演じられた身体を通じて、ライブアクションと写真記録の間の不安定な境界を舞台として示す。*2 1990年代後半から2000年代初頭の、パフォーマンス・インスタレーション・写真が重なり合う時代において、写真が持つ認証機能そのものを主題化した実践として位置づけられる。*3
+
+批評と受容
+
+展覧会テキストはいずれも、カゼムが虚構と現実の境界を操作する点を一貫して強調する。*1 写真的真正性が問い直されていた時代において、演出と記録の融合を通じて写真の証拠性を内側から批評する実践として評価されている。*2`,
+      textEn: `Biography
+
+French artist born in Paris in 1968, working with photography, video, and performance.*1*2
+
+Known for multi-layered works that stage situations which feel historical or documentary while remaining overtly artificial and performative.*1*2
+
+Expression / method
+
+Main themes: artifice, reality, performance, masking, staged history, and the unstable border between live action and photographic record.*1*2*3
+
+Representative work examples: *Pause* (2002), *Mona Lisa Live* (2003), and later masked-image collaborations are central because they show Khazem’s method of turning performance into photographs that behave like documents of events that never quite took place.*1*2*3
+
+Technique / formal traits: performance translated into photography, mirrored or abstract spaces, masks, staged bodies, and photographic aftermaths of live actions. The works move between installation, performance, and still image rather than staying within a single medium.*1*2*3
+
+Why this method was chosen: the Sperone Westwater text is especially useful because it states directly that Khazem plays with notions of artifice and reality and creates historical moments that never took place. Photography is chosen precisely because it can confer documentary-looking authority on the fabricated event.*1
+
+Historical context: Khazem belongs to the post-conceptual, staged-image environment of the late 1990s and early 2000s, when performance, installation, and photography increasingly overlapped and questions of truth-value became central to art photography.*1*2
+
+Relation to contemporaries or movements: he can be placed near staged photography and performance-based image practices, but differs through the strong role of masks, historical imposture, and the transformation of performance into still-document form.*1*2*3
+
+Historical significance: Khazem matters because he uses photography to expose how easily the image can authenticate fiction. His work belongs to a crucial historical moment when photographic truth was being rethought through staging and performance.*1*2
+
+Critical meaning: the work matters because it shows that the photograph’s power does not depend on faithful recording alone; it can also arise from carefully fabricated, temporally unstable events.*1*2*3
+
+Where and how the work was used: Sperone Westwater and Färgfabriken are useful because they show Khazem’s work circulating across gallery and exhibition settings as hybrid performance-photography rather than pure installation or pure still photography.*1*2
+
+Criticism and reception
+
+The reviewed sources are mostly exhibition texts, but they consistently emphasize Khazem’s manipulation of artifice and reality.*1*2
+
+Final website copy should therefore avoid over-expanding into unsupported biography and instead focus on the well-grounded point that his photographs depend on prior performance and staged unreality.*1*2*3
+
+The strongest critical angle available is that Khazem uses photography to fabricate documentary authority, not to negate it entirely.*1*2`,
+      links: [
+        {
+          url: `https://www.speronewestwater.com/exhibitions/jean-pierre-khazem`,
+          label: `Sperone Westwater — Jean-Pierre Khazem`
+        },
+        {
+          url: `https://fargfabriken.se/en/pa-gang/jean-pierre-khazem-andreas-angelidakis/`,
+          label: `Färgfabriken — Jean-Pierre Khazem & Andreas Angelidakis: Pause`
+        },
+        {
+          url: `https://www.anothermag.com/art-photography/10108/prepare-to-be-charmed-by-fashions-favourite-white-rabbit`,
+          label: `AnOther Magazine — Jean-Pierre Khazem and Misi Park`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.speronewestwater.com/exhibitions/jean-pierre-khazem`,
+          name: `Jean-Pierre Khazem — Sperone Westwater`
+        },
+        {
+          num: 2,
+          url: `https://fargfabriken.se/en/pa-gang/jean-pierre-khazem-andreas-angelidakis/`,
+          name: `Jean-Pierre Khazem & Andreas Angelidakis – Pause — Färgfabriken`
+        },
+        {
+          num: 3,
+          url: `https://www.anothermag.com/art-photography/10108/prepare-to-be-charmed-by-fashions-favourite-white-rabbit`,
+          name: `Jean-Pierre Khazem and Misi Park — AnOther Magazine`
+        }
+      ]
+    },
+    'jikei-sato': {
+      leadJa: `1957年生まれ、彫刻を出自とする写真家・教育者。長時間露光・光の軌跡・身体的な介入を通じて、日常的な環境を時間と行為が堆積するフィールドへと変換する。写真を瞬間の記録ではなく、光と時間と身体が交差する出来事として捉える実践で知られる。`,
+      leadEn: `Japanese photographer born in 1957, originally trained in sculpture and later active as a photographer and educator.*1*2*3 Known for photographs that register traces of light, time, and bodily action, as well as urban and environmental scenes made strange through long-exposure interventions and luminous drawing.*1*2*3`,
+      textJa: `経歴
+
+1957年生まれ。彫刻を学んだのちに写真家・教育者として活動し、長時間露光や光の軌跡を用いた作品で東京都写真美術館などの収蔵作家として知られる。*1 鶴岡アートフォーラムをはじめとする機関での個展や、今道子との二人展《覚醒する写真たち》などを通じて継続的に発表してきた。*3
+
+表現解説
+
+佐藤の実践の核心は、写真を瞬間の固定ではなく、光・時間・身体的行為が積み重なる場として扱うことにある。鶴岡アートフォーラムの資料は、彼の方法論を彫刻的な訓練と写真的プロセスへの関心とを結びつけるものとして提示する。*1 長時間露光の都市・環境風景、撮影者自身の動きによって画面に光の軌跡を描く作品群は、撮影現場そのものを一つの時間的な出来事として組織する。写真は場所を描写するのではなく、その場で起きた行為と時間の堆積として現れる。
+
+インタビューで言及される「時間軸を往来しながら『呼吸する』光景」という表現が示すように、場と時間の交差が彼の写真論を貫く主題である。*2 1980年代末以降、日本の現代美術において写真がコンセプチュアルな素材として扱われる傾向が強まる中、佐藤はプリントの質と映像の身体的な生成過程を重視する写真内在的な立場を保ち続けた。*3
+
+批評と受容
+
+2019年の《覚醒する写真たち》展のレポートは、同時代のアートにおける写真の使用法とは一線を画し、プリントの質そのものでも高く評価されてきたことを指摘する。*3 光・過程・写真的物質性を軸に、彫刻・行為・光の交差として実践を読む枠組みが定着している。*1`,
+      textEn: `Biography
+
+Japanese photographer born in 1957, originally trained in sculpture and later active as a photographer and educator.*1*2*3
+
+Known for photographs that register traces of light, time, and bodily action, as well as urban and environmental scenes made strange through long-exposure interventions and luminous drawing.*1*2*3
+
+Expression / method
+
+Main themes: light, time, bodily action, urban environment, photographic alchemy, and the transformation of ordinary scenes through process.*1*2*3
+
+Representative work examples: projects discussed in the *Awakening Photographs* exhibition, his long-exposure urban/environmental works, and collection pieces in the Tokyo Photographic Art Museum are central because they show how Sato treats the photograph as a field where action and light accumulate rather than a single instant.*1*2*3
+
+Technique / formal traits: long exposure, use of light traces, intervention into photographed scenes through bodily movement, and a printing sensibility that keeps the photograph materially present rather than merely documentary.*1*2*3
+
+Why this method was chosen: the Tsuruoka press release and interview material are especially useful because they connect Sato’s method to his sculptural training and to his interest in expressing physical process through the photographic image. Photography becomes a way to record duration and action together.*1*2
+
+Historical context: Sato emerges in the late 1980s, when photography in contemporary Japanese art was often treated as object or conceptual material. The exhibition report is useful because it explicitly places him among those who, while working in that moment, were also strongly valued from within photography itself for the quality of the print and image.*1*3
+
+Relation to contemporaries or movements: he relates to Japanese postwar and post-Provoke experimental image culture, but differs by emphasizing luminous intervention and bodily process rather than grainy snapshot aesthetics.*1*2*3
+
+Historical significance: Sato matters because he expands photography into a record of action, duration, and transformation. His work is historically significant for linking the sculptural body, the trace of light, and the urban scene within late twentieth-century Japanese photography.*1*2*3
+
+Critical meaning: the photographs matter because they turn ordinary environments into fields of temporal inscription. The work does not merely depict a place; it shows photography as an event that happens within the place.*1*2*3
+
+Where and how the work was used: the Tsuruoka Art Forum press materials, Top Museum collection records, and the 2019 exhibition report all help situate Sato as a photographer whose work moves between museum collection, historical survey, and sustained individual practice.*1*2*3
+
+Criticism and reception
+
+The strongest available framing stresses Sato’s relation to light, process, and photographic materiality rather than to pure conceptualism.*1*2*3
+
+The 2019 exhibition report is particularly useful because it distinguishes Sato from contemporaneous art uses of photography by noting that his work was also highly regarded within photography for the quality of the print itself.*3
+
+Final website copy should therefore emphasize process, light trace, and the photographic event, rather than reduce him to experimental technique alone.*1*2*3`,
+      links: [
+        {
+          url: `https://www.t-artforum.net/2015_h27nendo/host/gallery/tokihiro2015/press_tokihiro2015.pdf`,
+          label: `鶴岡アートフォーラム — 佐藤時啓 プレスリリース`
+        },
+        {
+          url: `https://www.shinichiuchida.com/2014/11/web-designing.html`,
+          label: `佐藤時啓インタビュー — Shinichi Uchida / Web Designing`
+        },
+        {
+          url: `https://dc.watch.impress.co.jp/docs/news/exhibitionreport/1205625.html`,
+          label: `「覚醒する写真たち」今道子＋佐藤時啓展レポート — デジカメ Watch`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.t-artforum.net/2015_h27nendo/host/gallery/tokihiro2015/press_tokihiro2015.pdf`,
+          name: `佐藤時啓 — 鶴岡アートフォーラム プレスリリース`
+        },
+        {
+          num: 2,
+          url: `https://www.shinichiuchida.com/2014/11/web-designing.html`,
+          name: `佐藤時啓インタビュー — Shinichi Uchida / Web Designing`
+        },
+        {
+          num: 3,
+          url: `https://dc.watch.impress.co.jp/docs/news/exhibitionreport/1205625.html`,
+          name: `「覚醒する写真たち」今道子＋佐藤時啓展レポート — デジカメ Watch`
+        }
+      ]
+    },
+    'jitka-hanzlova': {
+      leadJa: `1958年チェコスロバキア生まれ、1982年に西ドイツへ亡命しエッセンを拠点に活動する写真家。故郷・移住・帰属を主題に、ポートレートと風景を通じてアイデンティティと環境の関係を継続的に探求する。ノスタルジーに回収されない距離と親しさの緊張を写真的構造として保つ実践で知られる。`,
+      leadEn: `Czech-born photographer, born in 1958, who left Czechoslovakia in 1982 and later settled in Essen, Germany.*1*2*3 Known for series on Heimat, migration, portraiture, forests, and the relation between identity and environment.*1*2*3`,
+      textJa: `経歴
+
+1958年チェコスロバキア生まれ。1982年に西ドイツへ亡命し、エッセンを拠点に活動。代表的な連作《Rokytník》《Female》《Forest》を通じて、故郷・移住・帰属の関係を長年にわたり探求してきた。*1 スコットランド国立美術館・ヤンシー・リチャードソン（ニューヨーク）・アルベルティーナ美術館（ウィーン）など国際的な機関での発表と回顧展を経て広く評価が確立している。*3
+
+表現解説
+
+ハンツロヴァーの実践は、離郷と帰郷の経験を基盤とし、人物と場所を同一の探求フィールドとして扱う点に特徴がある。カラー写真・正面または正面に近いポートレート・場の大気を丁寧に捉えた光が継続する形式的特徴であり、描写的でありながら強い心理的・感情的な密度を持つ。*2
+
+スコットランド国立美術館のテキストは、亡命と再定住の経験が後の場所とアイデンティティをめぐる視覚言語へとどのようにつながるかを、伝記のみを解釈の鍵にすることなく提示する。*1 アルベルティーナの回顧展は、その受容が亡命の物語を超え、環境がいかに自己を形成するかという広い問いへと開かれていることを示す。*3 帰属とは単に回復されるものではなく、記憶・注意・亡命が生む距離を通じて絶えず交渉し直されるという視点が、ハンツロヴァーの写真論の核をなす。
+
+批評と受容
+
+機関的受容はいずれもハイマートとアイデンティティをめぐる実践として位置づけながら、作品が自伝に還元されない点も強調する。*1 20世紀末ヨーロッパ写真において、流浪と帰属の問いを最も持続的に追求した写真家の一人として評価されている。*3`,
+      textEn: `Biography
+
+Czech-born photographer, born in 1958, who left Czechoslovakia in 1982 and later settled in Essen, Germany.*1*2*3
+
+Known for series on Heimat, migration, portraiture, forests, and the relation between identity and environment.*1*2*3
+
+Expression / method
+
+Main themes: exile, belonging, homeland, estrangement, portraiture, rural and urban space, memory, and the shaping force of environment on identity.*1*2*3
+
+Representative work examples: *Rokytník*, *Female*, *Forest*, and later portrait series are central because they show how Hanzlová turns both people and place into meditations on proximity, displacement, and recollection.*1*2*3
+
+Technique / formal traits: color photography, calm frontal or near-frontal portraiture, restrained but sensuous light, and a sustained attention to the atmosphere of place. Her pictures are descriptive, but they carry a strong emotional and psychological charge.*1*2*3
+
+Why this method was chosen: Hanzlová’s work is repeatedly rooted in the experience of leaving and returning. Photography lets her rebuild relation to homeland and environment without collapsing into nostalgia, keeping familiarity and estrangement in tension.*1*2
+
+Historical context: her work emerges after migration from the Eastern Bloc to West Germany and develops through the late twentieth century, when questions of identity, territory, and belonging became central to European photography. The biographical fact of displacement is historically important but should not eclipse the formal rigor of the work.*1*2*3
+
+Relation to contemporaries or movements: Hanzlová can be placed near contemporary European portraiture and landscape photography, but differs by binding place and person into one field of identity. Her work is less typological than psychological, and less documentary than quietly reconstructive.*1*2*3
+
+Historical significance: she matters because she transformed the themes of Heimat and displacement into one of the most sustained photographic inquiries into identity and environment in late twentieth-century Europe.*1*2*3
+
+Critical meaning: the work matters because it refuses simple homecoming. Hanzlová’s photographs show that belonging is never merely recovered; it is renegotiated through memory, attention, and the distance produced by exile.*1*2
+
+Where and how the work was used: her work circulated through museum exhibitions, collection displays, and gallery surveys. National Galleries of Scotland, Yancey Richardson, and Albertina are useful together because they stress both the biographical stakes and the formal continuity of the work.*1*2*3
+
+Criticism and reception
+
+Institutional reception consistently emphasizes Hanzlová’s treatment of homeland and identity, but more nuanced accounts also stress that the work is never reducible to autobiography alone.*1*2*3
+
+National Galleries of Scotland’s artist text is especially useful because it connects the experience of defection and resettlement to the later visual language of place and identity without making biography the only interpretive key.*1
+
+Albertina’s retrospective framing suggests that her reception has broadened from a story of exile to a larger understanding of how environment shapes selfhood, which is important for final website copy.*3`,
+      links: [
+        {
+          url: `https://www.nationalgalleries.org/art-and-artists/artists/jitka-hanzlova`,
+          label: `National Galleries of Scotland — Jitka Hanzlová`
+        },
+        {
+          url: `https://www.yanceyrichardson.com/artists/jitka-hanzlova`,
+          label: `Yancey Richardson — Jitka Hanzlová`
+        },
+        {
+          url: `https://www.albertina.at/site/assets/files/22364/pm_jitkahanzlova_en.pdf`,
+          label: `Albertina — JITKA HANZLOVÁ: Identities プレスリリース`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://www.nationalgalleries.org/art-and-artists/artists/jitka-hanzlova`,
+          name: `Jitka Hanzlová — National Galleries of Scotland`
+        },
+        {
+          num: 2,
+          url: `https://www.yanceyrichardson.com/artists/jitka-hanzlova`,
+          name: `Jitka Hanzlová — Yancey Richardson`
+        },
+        {
+          num: 3,
+          url: `https://www.albertina.at/site/assets/files/22364/pm_jitkahanzlova_en.pdf`,
+          name: `JITKA HANZLOVÁ: Identities press release — Albertina Museum`
+        }
+      ]
+    },
+    'joachim-koester': {
+      leadJa: `1962年デンマーク生まれ。写真・映像・音・インスタレーションを通じて、オカルト・薬物・植民地主義・カウンターカルチャーなど証拠が不完全または汚染された歴史を探求するリサーチ主導型の実践で知られる。歴史を確認するためではなく、その残滓の不透明性を暴露するために映像を使う。`,
+      leadEn: `Danish artist born in 1962, working with photography, film, sound, and installation.*1*2*3 Known for research-driven projects on history, altered states, occult or marginal narratives, and the unstable line between document and fiction.*1*2*3`,
+      textJa: `経歴
+
+1962年デンマーク生まれ。写真・映像・音・インスタレーションを横断するアーティストとして、MoMA・メトロポリタン美術館・テート・ポンピドゥーなど主要機関に収蔵される。*3 スタルケ・ギャラリー（コペンハーゲン）での発表や、マルメ美術学校での教育活動を通じて国際的な評価を得ている。*1
+
+表現解説
+
+クスターの実践の核心は、証拠が不完全または汚染された歴史的・文学的エピソードを出発点とし、写真や映像によってそのドキュメント的な閉じ方に抵抗することにある。スタルケとマルメの資料はともに、クスターが「歴史・想像・知覚の境界」を探求するために芸術を用いることを強調する。*2
+
+《Tarantism》《Morning of the Magicians》《My Frontier Is an Endless Wall of Points》といった作品は、薬物・オカルト的実践・植民地的ルートを素材として、演じられた反復・再現・投機的な再構築を通じて映像化する。*1 アーカイブへの参照・旅・辺縁的な歴史を素材とするポスト・コンセプチュアルな潮流に属しながら、変性意識と身体に刻まれた歴史的残滓への一貫した関心によって独自の位置を占める。ドキュメンタリーの形式を採りながらその確実性を内側から揺さぶり、不完全にしか回収できない歴史に対して適切な映像形式を発明した作家として位置づけられる。*3
+
+批評と受容
+
+スタルケとマルメの資料はクスターを、リサーチと映像制作の混成的な実践を通じてドキュメンタリーとフィクションの境界で活動するアーティストとして一貫して提示する。*1 MoMAをはじめとする主要美術館による収蔵は、その方法が広く美術史的評価を受けたことを示している。*3`,
+      textEn: `Biography
+
+Danish artist born in 1962, working with photography, film, sound, and installation.*1*2*3
+
+Known for research-driven projects on history, altered states, occult or marginal narratives, and the unstable line between document and fiction.*1*2*3
+
+Expression / method
+
+Main themes: hidden histories, intoxicants, ritual, colonial and countercultural routes, memory, and the afterlives of events that survive only in fragments or traces.*1*2*3
+
+Representative work examples: projects such as *Tarantism*, *Morning of the Magicians*, and *My Frontier Is an Endless Wall of Points* are central because they show Koester’s recurring method: begin from a historical or literary episode, then unfold it through photographs or moving images that resist documentary closure.*1*2*3
+
+Technique / formal traits: series-based photography, film, sound, archival reference, and conceptual installation; a documentary appearance that is repeatedly unsettled by staged repetition, reenactment, or speculative reconstruction.*1*2*3
+
+Why this method was chosen: Stalke Galleri’s summary and Malmö Art Academy’s biography are useful because they emphasize that Koester uses art to explore the borders between history, imagination, and perception. The method is suited to subjects that cannot be straightforwardly documented because their evidence is already incomplete or contaminated.*1*2
+
+Historical context: Koester emerges in a post-conceptual environment where artists increasingly treated archives, travel, and marginal histories as material. His work belongs to that turn but remains distinctive in its sustained interest in altered consciousness and embodied historical residues.*1*2*3
+
+Relation to contemporaries or movements: he is often legible beside conceptual documentary practices, but his work differs from straightforward archival art by making uncertainty, hallucination, and reenactment integral to historical inquiry.*1*2*3
+
+Historical significance: Koester matters because he expands photographic and filmic research into zones where evidence is unstable. Rather than confirming history, the works test how history persists as atmosphere, rumor, repetition, and bodily trace.*1*2*3
+
+Critical meaning: the work matters because it demonstrates that documentary form can register opacity rather than resolve it. Koester’s photographs and films use research not to secure certainty but to expose how historical knowledge is mediated and incomplete.*1*2*3
+
+Where and how the work was used: museum and academy texts are useful because they show Koester’s work circulating across art institutions and being framed through research, altered states, and historical inquiry rather than only through medium categories.*1*2*3
+
+Criticism and reception
+
+Stalke Galleri and Malmö’s biography both stress Koester’s status as a research-based conceptual artist working on the edges of documentary and fiction.*1*2
+
+The recurring mention of collections such as MoMA, the Met, Tate, and Pompidou in secondary institutional summaries indicates that his hybrid mode of research and image-making has achieved strong museum reception.*3
+
+Final website copy should emphasize that Koester is important not because he illustrates obscure histories, but because he invents forms adequate to histories that cannot be cleanly recovered.*1*2*3`,
+      links: [
+        {
+          url: `https://stalke.dk/more-artist/joachim-koester.html`,
+          label: `Stalke Galleri — Joachim Koester`
+        },
+        {
+          url: `https://www.khm.lu.se/en/joachim-koester`,
+          label: `Malmö Art Academy — Joachim Koester`
+        },
+        {
+          url: `https://visit.gent.be/en/calendar/joachim-koester`,
+          label: `Visit Gent / Museum Dr. Guislain — Joachim Koester`
+        }
+      ],
+      citations: [
+        {
+          num: 1,
+          url: `https://stalke.dk/more-artist/joachim-koester.html`,
+          name: `Joachim Koester — Stalke Galleri`
+        },
+        {
+          num: 2,
+          url: `https://www.khm.lu.se/en/joachim-koester`,
+          name: `Joachim Koester — Malmö Art Academy`
+        },
+        {
+          num: 3,
+          url: `https://visit.gent.be/en/calendar/joachim-koester`,
+          name: `Joachim Koester — Visit Gent / Museum Dr. Guislain`
+        }
+      ]
+    },
   }
 );
