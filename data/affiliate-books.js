@@ -1363,3 +1363,652 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.becher = {
     }
   ]
 };
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['ansel-adams'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4sZuUtE' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cE4Oqk' }
+  },
+  books: [
+    {
+      titleJa: 'Ansel Adams: 400 Photographs',
+      titleEn: 'Ansel Adams: 400 Photographs',
+      noteJa: 'ゾーンシステムとアメリカ西部の風景を押さえる定番。',
+      noteEn: 'A standard volume for Adams\'s zone system and the landscapes of the American West.',
+      urlJa: 'https://amzn.to/4sZuUtE',
+      urlEn: 'https://amzn.to/4cE4Oqk'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4mpp8iA',
+      urlEn: 'https://amzn.to/4mm3eN4'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/3ObfBz1',
+      urlEn: 'https://amzn.to/4mz7h8T'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['arthur-rothstein'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/47Q3q1e' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4vfu5OS' }
+  },
+  books: [
+    {
+      titleJa: 'アーサー・ロススタイン 関連写真集',
+      titleEn: 'Arthur Rothstein related photobooks',
+      noteJa: '農村不況やFSAを写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for following Rothstein through the FSA and the visual history of the Depression.',
+      urlJa: 'https://amzn.to/47Q3q1e',
+      urlEn: 'https://amzn.to/4vfu5OS'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4vwDD8v',
+      urlEn: 'https://amzn.to/4muLUpo'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/4mm1fIu'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jack-delano'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/41pu5hN' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4vfupgy' }
+  },
+  books: [
+    {
+      titleJa: 'ジャック・デラーノ 関連写真集',
+      titleEn: 'Jack Delano related photobooks',
+      noteJa: 'FSAからプエルトリコまで、社会記録の広がりを見渡す入口になる一冊。',
+      noteEn: 'An entry point for following Delano from the FSA to Puerto Rico and wider documentary practice.',
+      urlJa: 'https://amzn.to/41pu5hN',
+      urlEn: 'https://amzn.to/4vfupgy'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4t2GtAf',
+      urlEn: 'https://amzn.to/4cgcAoT'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['john-vachon'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4cjLTzA' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4vEQEwO' }
+  },
+  books: [
+    {
+      titleJa: 'ジョン・ヴァション 関連写真集',
+      titleEn: 'John Vachon related photobooks',
+      noteJa: 'FSAと戦後アメリカの視線をつなぐ入口になる一冊。',
+      noteEn: 'An entry point into Vachon\'s bridge between FSA work and the postwar American gaze.',
+      urlJa: 'https://amzn.to/4cjLTzA',
+      urlEn: 'https://amzn.to/4vEQEwO'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/3OzIwwI',
+      urlEn: 'https://amzn.to/4vfuyk6'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['george-rodger'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4clsdvg' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cE44kX' }
+  },
+  books: [
+    {
+      titleJa: 'ジョージ・ロジャー 関連写真集',
+      titleEn: 'George Rodger related photobooks',
+      noteJa: '戦争報道からアフリカ取材まで、マグナム前史も見える一冊。',
+      noteEn: 'A useful entry point from war reporting to African assignments and the prehistory of Magnum.',
+      urlJa: 'https://amzn.to/4clsdvg',
+      urlEn: 'https://amzn.to/4cE44kX'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4stIvbK',
+      urlEn: 'https://amzn.to/4tL3Tdy'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['david-seymour'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/48ENsHm' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mpprdf' }
+  },
+  books: [
+    {
+      titleJa: 'デヴィッド・シーモア 関連写真集',
+      titleEn: 'David Seymour related photobooks',
+      noteJa: '戦争後の子どもたちや難民の視点をたどる入口になる一冊。',
+      noteEn: 'An entry point into Seymour\'s postwar work on children, refugees, and humanist documentary.',
+      urlJa: 'https://amzn.to/48ENsHm',
+      urlEn: 'https://amzn.to/4mpprdf'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4mlKOMl',
+      urlEn: 'https://amzn.to/4cjMelQ'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['bill-brandt'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4cmGwQq' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mppFkB' }
+  },
+  books: [
+    {
+      titleJa: 'ビル・ブラント 関連写真集',
+      titleEn: 'Bill Brandt related photobooks',
+      noteJa: '夜のロンドンや戦後イギリスをたどる関連写真集。',
+      noteEn: 'A related volume for following Brandt through night London and postwar Britain.',
+      urlJa: 'https://amzn.to/4cmGwQq',
+      urlEn: 'https://amzn.to/4mppFkB'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/4msA6nt',
+      urlEn: 'https://amzn.to/47VOGxO'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['francois-kollar'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/47RJhb1' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tHRfvR' }
+  },
+  books: [
+    {
+      titleJa: 'フランソワ・コラー 関連写真集',
+      titleEn: 'Francois Kollar related photobooks',
+      noteJa: '労働・産業・戦間期ヨーロッパをたどる入口になる一冊。',
+      noteEn: 'An entry point into labor, industry, and interwar Europe in Kollar\'s work.',
+      urlJa: 'https://amzn.to/47RJhb1',
+      urlEn: 'https://amzn.to/4tHRfvR'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4tMR2rj'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlEn: 'https://amzn.to/3QfUn3u'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS.brassai = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3Q1VJPn' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4c7EncA' }
+  },
+  books: [
+    {
+      titleJa: 'Paris by Night',
+      titleEn: 'Paris by Night',
+      noteJa: '夜のパリを決定づけた代表作への入口。',
+      noteEn: 'A classic entry point to Brassai\'s defining vision of Paris at night.',
+      urlJa: 'https://amzn.to/3Q1VJPn',
+      urlEn: 'https://amzn.to/4c7EncA'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4vowPtt',
+      urlEn: 'https://amzn.to/4sreSrm'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/4mppTYZ',
+      urlEn: 'https://amzn.to/4vpK1ya'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['helen-levitt'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4edUnef' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/41sR4bK' }
+  },
+  books: [
+    {
+      titleJa: 'Crosstown',
+      titleEn: 'Crosstown',
+      noteJa: '子どもたちの街路空間とニューヨークの感覚をつかむ一冊。',
+      noteEn: 'A strong volume for Levitt\'s street children and the texture of New York.',
+      urlJa: 'https://amzn.to/4edUnef',
+      urlEn: 'https://amzn.to/41sR4bK'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4ec7HQo',
+      urlEn: 'https://amzn.to/3QzJ9a4'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/3Oi7UXC',
+      urlEn: 'https://amzn.to/4clV9Uc'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['ben-shahn'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4dIDV5z' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4vqvS3C' }
+  },
+  books: [
+    {
+      titleJa: 'ベン・シャーン 関連写真集',
+      titleEn: 'Ben Shahn related photobooks',
+      noteJa: '写真と社会批評、ニューディール期の視線を見渡す入口になる一冊。',
+      noteEn: 'An entry point into Shahn\'s blend of photography, social criticism, and the New Deal era.',
+      urlJa: 'https://amzn.to/4dIDV5z',
+      urlEn: 'https://amzn.to/4vqvS3C'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4cpUQaZ',
+      urlEn: 'https://amzn.to/47Q4KkI'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/4t7cozu',
+      urlEn: 'https://amzn.to/3Q3V4gi'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['minor-white'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4clpwdc' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3Om5gjD' }
+  },
+  books: [
+    {
+      titleJa: 'マイナー・ホワイト 関連写真集',
+      titleEn: 'Minor White related photobooks',
+      noteJa: '写真を精神的経験として読むための入口になる一冊。',
+      noteEn: 'An entry point into reading White\'s photographs as spiritual and meditative experience.',
+      urlJa: 'https://amzn.to/4clpwdc',
+      urlEn: 'https://amzn.to/3Om5gjD'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4mkl0jG',
+      urlEn: 'https://amzn.to/4eh86RB'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['manuel-alvarez-bravo'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4sp2tEj' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/41XtcNw' }
+  },
+  books: [
+    {
+      titleJa: 'マヌエル・アルバレス・ブラボ 関連写真集',
+      titleEn: 'Manuel Alvarez Bravo related photobooks',
+      noteJa: 'メキシコ写真とモダニズムの交点をたどる入口になる一冊。',
+      noteEn: 'An entry point into the meeting point of Mexican photography and modernism.',
+      urlJa: 'https://amzn.to/4sp2tEj',
+      urlEn: 'https://amzn.to/41XtcNw'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4cfcvBW',
+      urlEn: 'https://amzn.to/3OvV9sG'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlEn: 'https://amzn.to/4stT12u'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['marcel-bovis'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4tLexB6' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cBF0eq' }
+  },
+  books: [
+    {
+      titleJa: 'マルセル・ボヴィス 関連写真集',
+      titleEn: 'Marcel Bovis related photobooks',
+      noteJa: '夜景・都市・パリの視覚文化をたどる入口になる一冊。',
+      noteEn: 'An entry point into night views, urban modernity, and Parisian visual culture.',
+      urlJa: 'https://amzn.to/4tLexB6',
+      urlEn: 'https://amzn.to/4cBF0eq'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/3NYS7x3',
+      urlEn: 'https://amzn.to/420iKET'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/4ciG7yt',
+      urlEn: 'https://amzn.to/4mrSMnt'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['margaret-bourke-white'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/41sOfrc' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4vqPl4l' }
+  },
+  books: [
+    {
+      titleJa: 'マーガレット・バーク＝ホワイト 関連写真集',
+      titleEn: 'Margaret Bourke-White related photobooks',
+      noteJa: '工業写真・戦争報道・Life誌の流れをつなぐ入口になる一冊。',
+      noteEn: 'An entry point linking industry, war reportage, and Bourke-White\'s work for Life.',
+      urlJa: 'https://amzn.to/41sOfrc',
+      urlEn: 'https://amzn.to/4vqPl4l'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4vmXoPw',
+      urlEn: 'https://amzn.to/3PZFoe5'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/3Q1Wwjj',
+      urlEn: 'https://amzn.to/4chGgSG'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['russell-lee'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4dIEr3v' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4dH1dcb' }
+  },
+  books: [
+    {
+      titleJa: 'ラッセル・リー 関連写真集',
+      titleEn: 'Russell Lee related photobooks',
+      noteJa: 'FSAの記録と日常生活の観察をたどる入口になる一冊。',
+      noteEn: 'An entry point into Russell Lee\'s FSA work and his attention to everyday life.',
+      urlJa: 'https://amzn.to/4dIEr3v',
+      urlEn: 'https://amzn.to/4dH1dcb'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/3Odj6Fa',
+      urlEn: 'https://amzn.to/41sRIGc'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['lee-miller'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4t1E7l7' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cFd612' }
+  },
+  books: [
+    {
+      titleJa: 'Lee Miller\'s War',
+      titleEn: 'Lee Miller\'s War',
+      noteJa: 'シュルレアリスムと戦争報道の両面を一冊でたどれる。',
+      noteEn: 'A strong volume for following both Miller\'s surrealist work and her war reporting.',
+      urlJa: 'https://amzn.to/4t1E7l7',
+      urlEn: 'https://amzn.to/4cFd612'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4voaDzx'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlEn: 'https://amzn.to/4mICBSV'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['robert-doisneau'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3Ok4Lqq' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/420VdDP' }
+  },
+  books: [
+    {
+      titleJa: 'ロベール・ドアノー 関連写真集',
+      titleEn: 'Robert Doisneau related photobooks',
+      noteJa: 'パリの日常とヒューマニズム写真の流れをたどる入口になる一冊。',
+      noteEn: 'An entry point into Doisneau\'s Paris and the broader current of humanist photography.',
+      urlJa: 'https://amzn.to/3Ok4Lqq',
+      urlEn: 'https://amzn.to/420VdDP'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or alternate listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4tElGCZ',
+      urlEn: 'https://amzn.to/4cfJpSV'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/4dIViDl',
+      urlEn: 'https://amzn.to/41Ztxzd'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-影山光洋'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4mm3jjI' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mm3jjI' }
+  },
+  books: [
+    {
+      titleJa: '影山光洋 関連写真集',
+      titleEn: 'Koyo Kageyama related photobooks',
+      noteJa: '日本写真の流れを地方の実践から見直す手がかり。',
+      noteEn: 'A way into Japanese photographic history through regional practice. Available on Amazon Japan.',
+      urlJa: 'https://amzn.to/4mm3jjI'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'Another related listing on Amazon Japan.',
+      urlJa: 'https://amzn.to/425Vm8Y'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/4vqwDcY'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-植田正治'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4voyhvV' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3QhKmml' }
+  },
+  books: [
+    {
+      titleJa: '植田正治 関連写真集',
+      titleEn: 'Shoji Ueda related photobooks',
+      noteJa: '演出写真と山陰の風景が結びつく代表的な入口。',
+      noteEn: 'A representative entry point into Ueda\'s staged photography and the Tottori landscape.',
+      urlJa: 'https://amzn.to/4voyhvV',
+      urlEn: 'https://amzn.to/3QhKmml'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'Another related listing on Amazon Japan.',
+      urlJa: 'https://amzn.to/3Q7S2rm'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い版を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby editions.',
+      urlJa: 'https://amzn.to/47RO4t8',
+      urlEn: 'https://amzn.to/4tBY5CY'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-金丸重嶺'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3Q6RnX8' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3Q6RnX8' }
+  },
+  books: [
+    {
+      titleJa: '関連論考（日本語）',
+      titleEn: 'Related Japanese criticism',
+      noteJa: '写真集ではなく、日本写真を考えるための関連論考。',
+      noteEn: 'Not a photobook but a related critical text for understanding Japanese photography.',
+      urlJa: 'https://amzn.to/3Q6RnX8'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-鈴木八郎'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4t8lU5C' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4t8lU5C' }
+  },
+  books: [
+    {
+      titleJa: '鈴木八郎 関連写真集',
+      titleEn: 'Hachiro Suzuki related photobooks',
+      noteJa: '写真集ではなく、写真文化史を補う関連書。',
+      noteEn: 'Not a photobook but a related book that helps frame the history of photographic culture.',
+      urlJa: 'https://amzn.to/4t8lU5C'
+    },
+    {
+      titleJa: 'カメラ文化史',
+      titleEn: 'A History of Camera Culture',
+      noteJa: '写真集ではなく、写真文化史を補う関連書。',
+      noteEn: 'Not a photobook but a related book on photographic culture.',
+      urlJa: 'https://www.amazon.co.jp/%E3%82%AB%E3%83%A1%E3%83%A9%E6%96%87%E5%8C%96%E5%8F%B2-1974%E5%B9%B4-%E9%88%B4%E6%9C%A8-%E5%85%AB%E9%83%8E/dp/B000J93CKC/ref=sr_1_4?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1RW9F0FS2WGMV&dib=eyJ2IjoiMSJ9._Iu3CwopSwhSG88cmTU_qjiSPytaMdOCf8F6OYnzhJ36PtczIsKNUOmCc-W-bUBl25U3vCsa6Dd8oWEZXnd7m0_i8fpBQZVUdG34kCD8ZSr6WoNgvhBaQs-2i0R7iLlEPN3h2Bk3vIMriT3nfiIRGhW1jMWttuTjsjsiv2EdJxFSvPSIEswD8xqIG7ayQP2Mqv21YZQOgOV0dUblu8mVLLFoYoruynO4N4_dl_sryr-d6aoaeB9kAlRvPkqrh4j9ZL-tJIdyW9J2pX1EpzFcOPetUMrKqakRkfgg1YepYPA.WEcpccyiyORfPxO_je_nF2bpZPgwPqQIpscHzvo-o6k&dib_tag=se&keywords=%E9%88%B4%E6%9C%A8%E5%85%AB%E9%83%8E&qid=1775977588&sprefix=%E9%88%B4%E6%9C%A8%E5%85%AB%E9%83%8E+%2Caps%2C222&sr=8-4'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-長谷川伝次郎'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4mqFmrM' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mqFmrM' }
+  },
+  books: [
+    {
+      titleJa: '長谷川伝次郎 関連写真集',
+      titleEn: 'Denjiro Hasegawa related photobooks',
+      noteJa: '日本写真を写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point into Japanese photography through the photographer\'s place in its broader history.',
+      urlJa: 'https://amzn.to/4mqFmrM'
+    }
+  ]
+};
