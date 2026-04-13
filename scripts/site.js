@@ -912,6 +912,7 @@ function renderEraTab() {
       </div>
       <div class="era-body">
         <div class="era-body-content">
+            <div class="mobile-era-sticky">${era.id}</div>
             <div class="era-info">
               <div class="context-block">
                 <div class="context-label">${t('worldEvents')}</div>
