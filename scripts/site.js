@@ -1764,6 +1764,16 @@ function syncCompactArchiveLayout() {
   }
 }
 
+function updateArchiveStickyOffset() {
+  if (!document.getElementById('era-main')) return;
+  const nav = document.querySelector('.tab-nav');
+  const root = document.documentElement;
+  if (!nav || !root) return;
+  const navHeight = nav.getBoundingClientRect().height || 0;
+  const offset = Math.ceil(navHeight + 4);
+  root.style.setProperty('--archive-era-sticky-top', `${offset}px`);
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    INIT
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -1771,10 +1781,12 @@ initializeLanguageControls();
 renderEraTab();
 renderMovementTab();
 syncCompactArchiveLayout();
+updateArchiveStickyOffset();
 initRandom();
 applyFilters(); // initialize count
 handleDeepLink();
 window.addEventListener('resize', syncCompactArchiveLayout);
+window.addEventListener('resize', updateArchiveStickyOffset);
 window.addEventListener('hashchange', () => {
   handleDeepLink();
   updateArchiveLanguageLinks();
