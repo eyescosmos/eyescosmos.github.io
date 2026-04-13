@@ -637,6 +637,12 @@ h1 em { font-style: normal; color: var(--accent); }
   gap: 4px;
   min-height: 18px;
 }
+.card-mobile-meta,
+.mobile-card-tags,
+.mobile-card-summary,
+.card-mobile-chevron {
+  display: none;
+}
 .card-tag {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
@@ -1112,22 +1118,192 @@ footer a:hover { color: var(--accent); }
   header { padding: 48px 20px 40px; }
   .header-top { flex-direction: column; align-items: flex-start; }
   .header-actions { justify-content: flex-start; }
-  .container, .tab-nav-inner { padding: 0 20px; }
-  .era-toggle { gap: 16px; padding: 28px 0; }
-  .era-date { font-size: 36px; }
-  .era-info { padding-left: 0; }
-  .photographers-grid, .photographers-label { margin-left: 0; }
-  .photographers-label { padding-left: 0; }
-  .detail-panel { margin-left: 0; padding: 24px 20px; }
+  .container, .tab-nav-inner { padding: 0 16px; }
+  .tab-nav-inner {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    align-items: flex-start;
+  }
+  .tab-nav-links {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  #tab-home-link {
+    display: none;
+  }
+  .tab-btn {
+    font-size: 11px;
+    padding: 14px 10px 12px;
+  }
+  .tab-nav-selects {
+    width: 100%;
+    padding: 4px 0 12px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .nav-select {
+    width: 100%;
+    min-width: 0;
+    font-size: 10px;
+    padding: 8px 28px 8px 10px;
+  }
+  .filter-bar {
+    padding: 10px 0 12px;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .filter-label,
+  .filter-reset,
+  .filter-count {
+    display: none;
+  }
+  .filter-input {
+    width: 100%;
+    min-width: 0;
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+  .era-toggle {
+    position: sticky;
+    top: calc(env(safe-area-inset-top, 0px) + 82px);
+    z-index: 6;
+    gap: 12px;
+    padding: 12px 0 10px;
+    background: rgba(8, 8, 8, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(200, 169, 110, 0.16);
+  }
+  .era-date {
+    font-size: 20px;
+    letter-spacing: 0.14em;
+  }
+  .era-date span,
+  .era-title,
+  .era-toggle-arrow,
+  .era-info,
+  .photographers-label {
+    display: none;
+  }
+  .photographers-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-left: 0;
+  }
+  .photographer-card {
+    padding: 12px 0;
+    border-width: 0 0 1px 0;
+    border-color: rgba(200, 169, 110, 0.14);
+    background: transparent;
+  }
+  .photographer-card::after,
+  .card-action,
+  .card-name-sub,
+  .card-years-desktop,
+  .card-tags,
+  .coordinate-link,
+  .detail-panel {
+    display: none !important;
+  }
+  .photographer-card:hover,
+  .photographer-card.active {
+    background: transparent;
+    border-color: rgba(200, 169, 110, 0.24);
+  }
+  .card-mobile-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .card-mobile-meta .card-flag-nat,
+  .card-mobile-meta .card-years {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+  .card-mobile-title-line {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: start;
+  }
+  .card-name {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+  .card-mobile-chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--text-muted);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  .photographer-card.active .card-mobile-chevron {
+    transform: rotate(45deg);
+    color: var(--accent);
+  }
+  .mobile-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    margin-top: 6px;
+    min-height: 0;
+  }
+  .mobile-card-tags .card-tag {
+    padding: 0;
+    border: none;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+    text-transform: none;
+  }
+  .mobile-card-tags .card-tag + .card-tag::before {
+    content: '/';
+    color: var(--text-muted);
+    margin: 0 6px 0 4px;
+  }
+  .mobile-card-summary {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(200, 169, 110, 0.12);
+  }
+  .photographer-card.active .mobile-card-summary {
+    display: block;
+  }
+  .mobile-card-summary-text {
+    margin: 0 0 10px;
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--text-dim);
+  }
+  .mobile-card-readmore {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .mobile-card-readmore:hover {
+    color: var(--text);
+  }
+  .era-body-content {
+    padding-bottom: 24px;
+  }
   #movement-main .detail-panel { margin-left: 0; }
   .movement-grid { margin-left: 0; }
   .detail-related-item { grid-template-columns: 1fr; gap: 6px; }
   .detail-related-value { gap: 8px 12px; }
-  .filter-bar { flex-direction: column; align-items: flex-start; }
-  .filter-count { margin-left: 0; }
-  .tab-btn { font-size: 11px; padding: 16px 16px; }
-  .tab-nav-selects { width: 100%; padding: 0 0 16px 0; }
-  .nav-select { width: 100%; }
   .random-box { max-width: 100%; }
 }
 </style>

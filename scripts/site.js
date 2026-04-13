@@ -184,6 +184,10 @@ const PHOTOGRAPHER_ALIAS_REGEX = PHOTOGRAPHER_ALIAS_TARGETS.length
   ? new RegExp(PHOTOGRAPHER_ALIAS_TARGETS.map(target => escapeRegExp(target.alias)).join('|'), 'g')
   : null;
 
+function isCompactArchiveMobile() {
+  return window.innerWidth <= 768;
+}
+
 function t(key, ...args) {
   const value = UI_TEXT[currentLanguage][key] ?? UI_TEXT.ja[key];
   return typeof value === 'function' ? value(...args) : value;
@@ -242,6 +246,17 @@ function getPhotographerLeadCopy(photographer) {
     return localizeValue(override.leadJa, override.leadEn) || buildPhotographerIntro(photographer);
   }
   return buildPhotographerIntro(photographer);
+}
+
+function compactPhotographerSummary(photographer) {
+  const plain = normalizePlainText(getPhotographerLeadCopy(photographer) || '')
+    .replace(/\*\d+/g, '')
+    .trim();
+  if (!plain) return currentLanguage === 'en' ? 'Essay coming soon.' : '解説は準備中です。';
+  if (plain.length <= 118) return plain;
+  const sentenceBreak = plain.search(/[。.!?](?=\s|$)/);
+  if (sentenceBreak > 0 && sentenceBreak <= 118) return plain.slice(0, sentenceBreak + 1);
+  return `${plain.slice(0, 116).trim()}…`;
 }
 
 function getPhotographerEssayPayload(photographer) {
@@ -930,24 +945,41 @@ function renderEraTab() {
 }
 
 function renderCard(p, extraAttrs = '') {
-  const tags = p.movements.length
-    ? p.movements.map(m => `<span class="card-tag">${displayMovementName(m)}</span>`).join('')
+  const movementNames = p.movements.map(displayMovementName);
+  const tags = movementNames.length
+    ? movementNames.map(m => `<span class="card-tag">${m}</span>`).join('')
+    : '';
+  const compactTags = movementNames.length
+    ? movementNames.slice(0, 2).map(m => `<span class="card-tag">${m}</span>`).join('') + (movementNames.length > 2 ? `<span class="card-tag card-tag-more">+${movementNames.length - 2}</span>` : '')
     : '';
   const searchIndex = buildSearchIndex(p);
   const coordinateButton = p.isPlaceholder
     ? ''
     : `<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer('${p.id}')">${t('coordinateButton')}</button>`;
+  const compactSummary = `
+      <div class="mobile-card-summary">
+        <p class="mobile-card-summary-text">${escapeHtml(compactPhotographerSummary(p))}</p>
+        <a class="mobile-card-readmore" href="${photographerPagePath(p)}" onclick="event.stopPropagation()">${currentLanguage === 'en' ? 'Read details' : '詳細を読む'}</a>
+      </div>`;
   return `
     <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" data-search="${searchIndex}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" ${extraAttrs}>
       <div class="card-action">
         <div class="card-action-label">${t('coordinateDetail')}</div>
         <div class="card-arrow">↗</div>
       </div>
-      <div class="card-flag-nat">${displayMeta(p)}</div>
-      <div class="card-name">${displayName(p)}</div>
+      <div class="card-mobile-meta">
+        <div class="card-flag-nat">${displayMeta(p)}</div>
+        <div class="card-years">${escapeHtml(displayYears(p))}</div>
+      </div>
+      <div class="card-mobile-title-line">
+        <div class="card-name">${displayName(p)}</div>
+        <div class="card-mobile-chevron" aria-hidden="true">+</div>
+      </div>
       ${displaySubName(p)}
-      <div class="card-years">${escapeHtml(displayYears(p))}</div>
+      <div class="card-years card-years-desktop">${escapeHtml(displayYears(p))}</div>
       <div class="card-tags">${tags}</div>
+      <div class="mobile-card-tags">${compactTags}</div>
+      ${compactSummary}
       ${coordinateButton}
     </div>
   `;
@@ -1323,6 +1355,20 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
    DETAIL PANEL TOGGLE
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function toggleDetail(pid, card) {
+  if (isCompactArchiveMobile()) {
+    const isActive = card.classList.contains('active');
+    document.querySelectorAll('.detail-panel.open').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.photographer-card.active').forEach(c => c.classList.remove('active'));
+    if (!isActive) {
+      card.classList.add('active');
+      setLocationHash(`photographer-${pid}`);
+      setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 40);
+    } else if (window.location.hash === `#photographer-${pid}`) {
+      setLocationHash('');
+    }
+    return;
+  }
+
   const era = card.closest('.era');
   const panelContainer = era.querySelector('[id^="panels-"]');
   const existingPanel = document.getElementById(`panel-${pid}`);
@@ -1472,6 +1518,20 @@ function renderMovementTab() {
 }
 
 function toggleMovementDetail(pid, mvId, card) {
+  if (isCompactArchiveMobile()) {
+    const isActive = card.classList.contains('active');
+    document.querySelectorAll('.detail-panel.open').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.photographer-card.active').forEach(c => c.classList.remove('active'));
+    if (!isActive) {
+      card.classList.add('active');
+      setLocationHash(`photographer-${pid}`);
+      setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 40);
+    } else if (window.location.hash === `#photographer-${pid}`) {
+      setLocationHash('');
+    }
+    return;
+  }
+
   const section = card.closest('.movement-section');
   const panelContainer = section.querySelector(`[id^="mvpanels-"]`);
   const panelId = `mvpanel-${mvId}-${pid}`;
@@ -1545,6 +1605,7 @@ function openMovement(mvId) {
    ERA ACCORDION
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function toggleEra(eraId) {
+  if (isCompactArchiveMobile()) return;
   const section = document.getElementById(`era-${eraId}`);
   if (!section) return;
   const body = section.querySelector('.era-body');
@@ -1564,8 +1625,14 @@ function toggleEra(eraId) {
 
 function openEra(eraId) {
   const section = document.getElementById(`era-${eraId}`);
-  if (!section || section.classList.contains('open')) return;
+  if (!section) return;
   const body = section.querySelector('.era-body');
+  if (isCompactArchiveMobile()) {
+    section.classList.add('open');
+    body.style.height = 'auto';
+    return;
+  }
+  if (section.classList.contains('open')) return;
   section.classList.add('open');
   body.style.height = body.scrollHeight + 'px';
   body.addEventListener('transitionend', () => {
@@ -1690,15 +1757,28 @@ function setupObserver(selector = '.era') {
   document.querySelectorAll(selector).forEach(el => observer.observe(el));
 }
 
+function syncCompactArchiveLayout() {
+  if (isCompactArchiveMobile()) {
+    document.querySelectorAll('#era-main .era').forEach(section => {
+      const body = section.querySelector('.era-body');
+      section.classList.add('open');
+      if (body) body.style.height = 'auto';
+    });
+    document.querySelectorAll('.detail-panel.open').forEach(panel => panel.classList.remove('open'));
+  }
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    INIT
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 initializeLanguageControls();
 renderEraTab();
 renderMovementTab();
+syncCompactArchiveLayout();
 initRandom();
 applyFilters(); // initialize count
 handleDeepLink();
+window.addEventListener('resize', syncCompactArchiveLayout);
 window.addEventListener('hashchange', () => {
   handleDeepLink();
   updateArchiveLanguageLinks();
