@@ -537,6 +537,9 @@ h1 em { font-style: normal; color: var(--accent); }
 .mobile-era-sticky {
   display: none;
 }
+.mobile-era-indicator {
+  display: none;
+}
 
 /* ── PHOTOGRAPHERS GRID ── */
 .photographers-label {
@@ -1183,12 +1186,16 @@ footer a:hover { color: var(--accent); }
     display: none;
   }
   .mobile-era-sticky {
+    display: none;
+  }
+  .mobile-era-indicator {
     display: block;
     position: sticky;
     top: var(--archive-era-sticky-top);
-    z-index: 14;
-    padding: 8px 0 7px;
-    margin: 0;
+    z-index: 24;
+    padding: 8px 16px 7px;
+    margin: 0 auto 8px;
+    width: min(100%, 1200px);
     font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
     font-size: 20px;
     line-height: 1;
@@ -1406,6 +1413,7 @@ footer a:hover { color: var(--accent); }
     </div>
     <div id="no-results" class="no-results">No photographers match the current filters.</div>
   </div>
+  <div class="mobile-era-indicator" id="mobile-era-indicator" aria-hidden="true"></div>
   <main id="era-main" class="container"></main>
 </div>
 

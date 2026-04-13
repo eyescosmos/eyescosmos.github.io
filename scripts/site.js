@@ -1448,6 +1448,7 @@ function applyFilters() {
   } else {
     countEl.textContent = t('totalCount', total);
   }
+  updateMobileEraIndicator();
 }
 
 function resetFilters() {
@@ -1458,6 +1459,7 @@ function resetFilters() {
   document.querySelectorAll('.era').forEach(e => e.classList.remove('hidden'));
   document.getElementById('no-results').classList.remove('visible');
   document.getElementById('filter-count').textContent = t('totalCount', realPhotographers().length);
+  updateMobileEraIndicator();
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1774,6 +1776,36 @@ function updateArchiveStickyOffset() {
   root.style.setProperty('--archive-era-sticky-top', `${offset}px`);
 }
 
+function updateMobileEraIndicator() {
+  const indicator = document.getElementById('mobile-era-indicator');
+  if (!indicator) return;
+
+  if (!isCompactArchiveMobile()) {
+    indicator.textContent = '';
+    return;
+  }
+
+  const eras = Array.from(document.querySelectorAll('#era-main .era:not(.hidden)'));
+  if (!eras.length) {
+    indicator.textContent = '';
+    return;
+  }
+
+  const stickyTopValue = getComputedStyle(document.documentElement).getPropertyValue('--archive-era-sticky-top');
+  const stickyTop = Number.parseFloat(stickyTopValue) || 0;
+  let currentEra = eras[0];
+
+  for (const era of eras) {
+    const rect = era.getBoundingClientRect();
+    if (rect.bottom <= stickyTop) continue;
+    currentEra = era;
+    if (rect.top <= stickyTop + 1) continue;
+    break;
+  }
+
+  indicator.textContent = currentEra.dataset.eraId || '';
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    INIT
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -1782,11 +1814,14 @@ renderEraTab();
 renderMovementTab();
 syncCompactArchiveLayout();
 updateArchiveStickyOffset();
+updateMobileEraIndicator();
 initRandom();
 applyFilters(); // initialize count
 handleDeepLink();
 window.addEventListener('resize', syncCompactArchiveLayout);
 window.addEventListener('resize', updateArchiveStickyOffset);
+window.addEventListener('resize', updateMobileEraIndicator);
+window.addEventListener('scroll', updateMobileEraIndicator, { passive: true });
 window.addEventListener('hashchange', () => {
   handleDeepLink();
   updateArchiveLanguageLinks();
