@@ -580,6 +580,30 @@ function displayEraTitle(era) {
   return currentLanguage === 'en' ? era.titleEn || era.title : era.title;
 }
 
+function compactEraPeriod(era) {
+  const period = String(era?.period || '').trim();
+  const match = period.match(/^(\d{4})\s*[—-]\s*(\d{4}|\d{4}s|\d{2,4}s)$/);
+  if (!match) return period.replace(/\s*[—-]\s*/g, '-');
+
+  const start = match[1];
+  let end = match[2];
+  if (/^\d{4}s$/.test(end)) {
+    end = `${end.slice(2)}`;
+  } else if (/^\d{4}$/.test(end)) {
+    end = end.slice(2);
+  }
+  return `${start}-${end}`;
+}
+
+function compactEraTitle(era) {
+  const raw = displayEraTitle(era) || '';
+  let value = raw.replace(/^.*?[：:]\s*/, '').trim();
+  if (!value) value = raw.trim();
+  const limit = currentLanguage === 'en' ? 42 : 18;
+  if (value.length <= limit) return value;
+  return `${value.slice(0, limit).trim()}…`;
+}
+
 function buildPhotographerKeywordLine(photographer) {
   const name = displayName(photographer);
   const descriptor = descriptorFor(photographer);
@@ -1803,7 +1827,13 @@ function updateMobileEraIndicator() {
     break;
   }
 
-  indicator.textContent = currentEra.dataset.eraId || '';
+  const eraMeta = ERAS.find(era => era.id === currentEra.dataset.eraId);
+  const compactPeriod = compactEraPeriod(eraMeta || { period: currentEra.dataset.eraId || '' });
+  const compactTitle = compactEraTitle(eraMeta || { title: '', titleEn: '' });
+  indicator.innerHTML = `
+    <span class="mobile-era-indicator-period">${escapeHtml(compactPeriod)}</span>
+    ${compactTitle ? `<span class="mobile-era-indicator-title">${escapeHtml(compactTitle)}</span>` : ''}
+  `;
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

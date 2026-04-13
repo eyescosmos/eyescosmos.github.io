@@ -1193,17 +1193,36 @@ footer a:hover { color: var(--accent); }
     position: sticky;
     top: var(--archive-era-sticky-top);
     z-index: 24;
-    padding: 8px 16px 7px;
+    padding: 9px 16px 8px;
     margin: 0 auto 8px;
     width: min(100%, 1200px);
-    font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
-    font-size: 20px;
-    line-height: 1;
-    letter-spacing: 0.14em;
-    color: var(--accent);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
     background: rgba(8, 8, 8, 0.96);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(200, 169, 110, 0.16);
+    overflow: hidden;
+  }
+  .mobile-era-indicator-period {
+    flex: 0 0 auto;
+    font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .mobile-era-indicator-title {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    text-transform: none;
   }
   .era-body-content {
     padding-top: 8px;
