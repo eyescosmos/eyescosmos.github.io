@@ -259,6 +259,22 @@ function compactPhotographerSummary(photographer) {
   return `${plain.slice(0, 116).trim()}…`;
 }
 
+function getBirthYearFromYears(years = '') {
+  const match = String(years).match(/\d{4}/);
+  return match ? Number(match[0]) : null;
+}
+
+function getDecadeBucketLabel(photographer) {
+  const birthYear = getBirthYearFromYears(photographer.years);
+  if (!birthYear) {
+    return currentLanguage === 'en'
+      ? photographer.era ? `${photographer.era}s` : 'Unknown'
+      : photographer.era ? `${photographer.era}年代` : '不明';
+  }
+  const decade = Math.floor(birthYear / 10) * 10;
+  return currentLanguage === 'en' ? `${decade}s` : `${decade}年代`;
+}
+
 function getPhotographerEssayPayload(photographer) {
   const override = getPhotographerEssayOverride(photographer);
   if (override) {
@@ -895,9 +911,17 @@ function renderEraTab() {
   main.innerHTML = '';
 
   ERAS.forEach(era => {
-    const photographers = realPhotographers().filter(p => p.era === era.id);
+    const photographers = realPhotographers()
+      .filter(p => p.era === era.id)
+      .slice()
+      .sort((a, b) => {
+        const yearA = getBirthYearFromYears(a.years) ?? 9999;
+        const yearB = getBirthYearFromYears(b.years) ?? 9999;
+        if (yearA !== yearB) return yearA - yearB;
+        return displayName(a).localeCompare(displayName(b), currentLanguage === 'en' ? 'en' : 'ja');
+      });
     const cardsHTML = photographers.length
-      ? photographers.map(p => renderCard(p)).join('')
+      ? renderEraCards(photographers)
       : renderEmptyPhotographerState();
 
     const section = document.createElement('section');
@@ -912,7 +936,6 @@ function renderEraTab() {
       </div>
       <div class="era-body">
         <div class="era-body-content">
-            <div class="mobile-era-sticky">${era.id}</div>
             <div class="era-info">
               <div class="context-block">
                 <div class="context-label">${t('worldEvents')}</div>
@@ -937,6 +960,36 @@ function renderEraTab() {
 
   populateFilters();
   setupObserver();
+}
+
+function renderEraCards(photographers) {
+  if (!photographers.length) return renderEmptyPhotographerState();
+
+  const groups = [];
+  let currentLabel = null;
+  let currentItems = [];
+
+  photographers.forEach(photographer => {
+    const label = getDecadeBucketLabel(photographer);
+    if (label !== currentLabel) {
+      if (currentItems.length) groups.push({ label: currentLabel, photographers: currentItems });
+      currentLabel = label;
+      currentItems = [photographer];
+    } else {
+      currentItems.push(photographer);
+    }
+  });
+
+  if (currentItems.length) groups.push({ label: currentLabel, photographers: currentItems });
+
+  return groups.map(group => `
+    <section class="mobile-decade-group" data-decade="${escapeHtml(group.label)}">
+      <div class="mobile-decade-sticky">${escapeHtml(group.label)}</div>
+      <div class="mobile-decade-cards">
+        ${group.photographers.map(photographer => renderCard(photographer)).join('')}
+      </div>
+    </section>
+  `).join('');
 }
 
 function renderCard(p, extraAttrs = '') {
