@@ -3979,5 +3979,599 @@ Final website copy should emphasize that Koester is important not because he ill
         }
       ]
     },
+    "luisa-lambri": {
+        "leadJa": "1969年イタリア・コモ生まれ。建築の内部から撮影するカラー写真で知られる。建物の全景を記録するのではなく、光・開口部・閾・コーナーといった部分的な知覚へと注意を向け、建築をドキュメントとしてではなく主観的な出会いとして提示する。",
+        "leadEn": "Italian artist born in 1969 in Como, working primarily with photography and occasionally film.*1*2*3 Known for photographing architecture from within, often focusing on light, thresholds, corners, and apertures rather than on full descriptive views of buildings.*1*2*3",
+        "textJa": "経歴\n\n1969年イタリア・コモ生まれ。シンドラー・ノイトラ・バラガン・ブロイヤーなどのモダニスト建築を被写体に、長期的なシリーズ制作を続けてきた。メニル・コレクション（ヒューストン）での個展《Locations》、メトロポリタン美術館ブロイヤー館での《Breuer Revisited》など主要機関での発表を通じて国際的評価を確立している。*1\n\n表現解説\n\nランブリの実践の核心は、建築を全景として記録するのではなく、その内部から光・開口部・閾・コーナーといった部分的な知覚へと注意を向けることにある。メニル・コレクションのテキストが明示するように、彼女が生産するのは空間の記録ではなく空間の「解釈」である。*1\n\n慎重にフレーミングされたカラー写真、窓・扉・反射光の孤立したクローズアップ、建築的な全景を意図的に拒む構成が継続する形式的特徴である。空間は測量されるのではなく、感じ取られるものとして現れる。*3 メット・ブロイヤーでの《Breuer Revisited》は、ランブリのアプローチがモダニスト建築の正典を改めて見直す現代的な議論の中心に位置することを示す。*2 建築写真と概念的写真実践の両方が問い直されていた1990年代末から2000年代において、全体的なドキュメントではなく身体化された現象学的なアプローチとして際立つ。\n\n批評と受容\n\nメニルのフレーミングは「空間の記録ではなく解釈」という表現でランブリの方法論を最も簡潔に示す。*1 建築写真の方法論的転換を体現した実践として評価されており、主観的な空間への出会いを写真の中心に置いたことで歴史的な位置を得ている。*2",
+        "textEn": "Biography\n\nItalian artist born in 1969 in Como, working primarily with photography and occasionally film.*1*2*3\n\nKnown for photographing architecture from within, often focusing on light, thresholds, corners, and apertures rather than on full descriptive views of buildings.*1*2*3\n\nExpression / method\n\nMain themes: architecture, interior perception, light, thresholds, modernist space, gendered looking, and the tension between objectivity and subjective presence.*1*2*3\n\nRepresentative work examples: the long-term architecture-focused projects represented in Locations, the Menil exhibition, and Breuer Revisited are central because they show how Lambri turns buildings by figures such as Schindler, Neutra, Barragán, and Breuer into intimate fields of perception rather than documentary wholes.*1*2*3\n\nTechnique / formal traits: carefully framed color photographs, partial views, cropped surfaces, attention to light and edge, and a refusal of architectural overview. Her pictures often isolate windows, doors, corners, or reflected light so that space is felt rather than surveyed.*1*2*3\n\nWhy this method was chosen: Lambri does not treat architecture as an object to catalogue. Institutional texts repeatedly stress that she seeks a balance between objectivity and subjectivity, producing interpretations of space rather than records of buildings.*1*2\n\nHistorical context: her work emerges in the late 1990s and 2000s, when architectural photography and conceptual photography were both being rethought. Rather than monumental documentation, Lambri offers an embodied, almost phenomenological approach to modernist space.*1*2*3\n\nRelation to contemporaries or movements: Lambri can be placed near architectural photography and conceptual photographic practice, but differs from typological and documentary traditions by emphasizing interior relation, perception, and partiality. Her work often reads as a feminist inflection of architectural seeing without reducing itself to a didactic program.*1*2*3\n\nHistorical significance: she matters because she redefined how architecture could be photographed in contemporary art, shifting attention from descriptive totality to the subjective encounter with structure, light, and material surface.*1*2*3\n\nCritical meaning: the work matters because it resists mastery. Lambri’s photographs do not “capture” buildings; they register how architecture is inhabited by light, movement, and looking, making the act of perception itself central to the work.*1*2\n\nWhere and how the work was used: her work circulated through museum exhibitions, artist books, and architectural dialogues. The Menil Collection’s Locations and the Met Breuer’s Breuer Revisited are especially useful because they show how her photographs have been framed as both architecture studies and autonomous contemporary artworks.*1*2\n\nCriticism and reception\n\nThe Menil’s framing is particularly useful because it explicitly says Lambri creates interpretations of spaces rather than documents of them, which remains one of the clearest summaries of her method.*1\n\nMet Breuer’s Breuer Revisited reception confirms that Lambri’s work is central to contemporary conversations about modernist architecture, photography, and re-seeing canonical spaces.*2\n\nFinal website copy should stress that Lambri’s significance lies in changing the terms of architectural photography, not in simply providing new examples of it.*1*2*3",
+        "links": [
+            {
+                "url": "https://www.e-flux.com/announcements/42732/at-the-menil-collection/",
+                "label": "The Menil Collection — Luisa Lambri: Locations"
+            },
+            {
+                "url": "https://www.metmuseum.org/exhibitions/listings/2017/breuer-revisited",
+                "label": "The Met Breuer — Breuer Revisited"
+            },
+            {
+                "url": "https://cac.lt/en/exhibition/luisa-lambri/",
+                "label": "CAC Vilnius — Luisa Lambri"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.e-flux.com/announcements/42732/at-the-menil-collection/",
+                "name": "Luisa Lambri: Locations — The Menil Collection / e-flux"
+            },
+            {
+                "num": 2,
+                "url": "https://www.metmuseum.org/exhibitions/listings/2017/breuer-revisited",
+                "name": "Breuer Revisited: New Photographs by Luisa Lambri and Bas Princen — The Met Breuer"
+            },
+            {
+                "num": 3,
+                "url": "https://cac.lt/en/exhibition/luisa-lambri/",
+                "name": "Luisa Lambri — Contemporary Art Centre (CAC), Vilnius"
+            }
+        ]
+    },
+    "marine-hugonnier": {
+        "leadJa": "1969年生まれのフランス・イギリス系アーティスト。映像・写真・インスタレーション・アーティストブックを横断し、政治的・軍事的・経済的システムの中でいかに映像が生産・媒介・流通するかを問う。ドキュメンタリーと虚構を意図的に交差させる実践で知られる。",
+        "leadEn": "French and British artist born in 1969, working across film, photography, installation, and artist books.*1*2*3 Known for projects that examine how images are produced inside political, military, economic, and display systems, often through a deliberate mixture of documentary and fiction.*1*2*3",
+        "textJa": "経歴\n\n1969年生まれ。フランスとイギリスを拠点に映像・写真・インスタレーション・アーティストブックを横断して活動する。アフガニスタンを舞台にした《Ariana》（2003）などの映像作品で知られ、ムダム（ルクセンブルク）・グッゲンハイム・ビルバオなど主要機関に収蔵されている。*1\n\n表現解説\n\nユゴニエの実践の核心は、ドキュメンタリー的な状況を出発点としながら、その中でいかに映像が政治的・制度的システムによって形成・流通するかを明らかにすることにある。ムダムの資料は彼女自身の言葉として「Tモーメント」——現実が感情的な荷電を帯び、奇妙に親しくかつ異質に感じられる瞬間——に言及しており、*1 ドキュメンタリーと虚構の混合がディスクレパンシーを生み出すことを示す。\n\n旅・フィールドワーク・偶発的な出来事・制度的な展示空間を素材として、映像が真実を透明に伝えるという前提を内側から揺さぶる。*2 冷戦後の地政学とイメージ流通が問い直された時代において、映像のドキュメンタリー性を中立な記録ではなく政治的に位置づけられた媒介として批評する実践として位置づけられる。*3\n\n批評と受容\n\n機関的受容は一貫して、視覚の政治性とドキュメンタリーとフィクションの不安定な境界をめぐるユゴニエの関心を強調する。*1 孤立したイメージよりもプロジェクト構造全体が評価され、媒介行為そのものを主題化した実践として位置づけられている。*2",
+        "textEn": "Biography\n\nFrench and British artist born in 1969, working across film, photography, installation, and artist books.*1*2*3\n\nKnown for projects that examine how images are produced inside political, military, economic, and display systems, often through a deliberate mixture of documentary and fiction.*1*2*3\n\nExpression / method\n\nMain themes: politics of vision, mediation, travel, state power, commodities, and the ways images are shaped by institutions and forms of circulation.*1*2*3\n\nRepresentative work examples: Ariana (2003), Apicula Enigma, and films around Afghanistan or simulated accident scenes such as Impact are central because they show how Hugonnier turns apparently documentary situations into studies of framing, spectacle, and ambiguity.*1*2*3\n\nTechnique / formal traits: medium-length films, photographic sequences, installation, and artist books; a recurring use of travel and field situations; and a method that often places found events, institutional settings, or staged situations under pressure until documentary certainty gives way to interpretive ambiguity.*1*2*3\n\nWhy this method was chosen: Mudam’s collection text is especially useful because it quotes Hugonnier on the “T moment,” when reality carries an emotive charge and becomes strangely familiar and unfamiliar at once. Her method uses documentary setups in order to show how easily reality and fiction interpenetrate in the image.*1\n\nHistorical context: Hugonnier emerges around the turn of the century, when artists were rethinking documentary not as neutral record but as a politically situated form of mediation. Her practice belongs to that shift, especially in relation to geopolitics and image circulation after the Cold War.*1*2*3\n\nRelation to contemporaries or movements: she intersects with post-documentary film and conceptual image practice, but differs from cooler conceptual detachment by keeping strong attention on contingency, emotion, and the concrete conditions under which images are made.*1*2\n\nHistorical significance: Hugonnier matters because she expands photography and film into a critical investigation of how political and everyday events are already staged, framed, and translated before the artist arrives.*1*2*3\n\nCritical meaning: the work matters because it makes the documentary image unstable without collapsing into relativism. Instead, it asks how truth is filtered through apparatuses, choreography, and historical position.*1*2*3\n\nWhere and how the work was used: Mudam’s collection framing and the Guggenheim Bilbao press release are especially useful because they show her work moving between museum installation, film presentation, and broader institutional discourse on image politics rather than remaining confined to one medium.*1*2\n\nCriticism and reception\n\nInstitutional reception consistently emphasizes Hugonnier’s concern with the politics of vision and the unstable border between documentary and fiction.*1*2*3\n\nThe reviewed texts suggest that her work is valued less for isolated images than for project-based structures in which the act of mediation itself becomes the subject.*1*2\n\nFinal website copy should therefore avoid treating her as simply a filmmaker or photographer; the stronger point is that she uses both to examine how images are historically and politically produced.*1*2*3",
+        "links": [
+            {
+                "url": "https://www.mudam.com/collection/marine-hugonnier",
+                "label": "Mudam Luxembourg — Marine Hugonnier"
+            },
+            {
+                "url": "https://cms.guggenheim-bilbao.eus/uploads/2023/10/PR_Marine-Hugonnier_EN.pdf",
+                "label": "Guggenheim Bilbao — Marine Hugonnier プレスリリース"
+            },
+            {
+                "url": "https://fdag.com.br/app/uploads/2016/11/marine-hugonnier-cv-6.pdf",
+                "label": "Marine Hugonnier CV — Fundação de Arte e Cultura"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.mudam.com/collection/marine-hugonnier",
+                "name": "Marine Hugonnier — Mudam Luxembourg"
+            },
+            {
+                "num": 2,
+                "url": "https://cms.guggenheim-bilbao.eus/uploads/2023/10/PR_Marine-Hugonnier_EN.pdf",
+                "name": "Marine Hugonnier press release — Guggenheim Bilbao"
+            },
+            {
+                "num": 3,
+                "url": "https://fdag.com.br/app/uploads/2016/11/marine-hugonnier-cv-6.pdf",
+                "name": "Marine Hugonnier CV — Fundação de Arte e Cultura"
+            }
+        ]
+    },
+    "marnix-goossens": {
+        "leadJa": "1967年オランダ・レーワルデン生まれの写真家。壁紙・ポスター・プラスチック木目など室内の代替的自然を主題に、高精細カラー写真で日常的な空間を観照的なイメージへと変換する。《Yonder》など廃れたインテリアを通じて、風景への欲望が日常に潜む様を提示する。",
+        "leadEn": "Dutch photographer born in 1967 in Leeuwarden.*1*2*3 Known for highly detailed color photographs of ordinary interiors, nature motifs, decorative substitutes for nature, and seemingly minor details transformed into strange, contemplative images.*1*2*3",
+        "textJa": "経歴\n\n1967年オランダ・レーワルデン生まれ。高精細カラー写真で室内のモチーフや代替的自然を撮影する写真家として、Foam（アムステルダム）・ライクスミュージアム・UMCユトレヒトなど公的機関・美術館に作品が収蔵されている。*2 《Yonder》《Deep Light》《Regarding Nature》など複数の連作を通じて継続的に発表してきた。*1\n\n表現解説\n\nホーセンスの実践の核心は、手つかずの自然ではなく壁紙・ポスター・プラスチック木目など室内における代替的・代理的な自然を主題として選ぶことにある。Foamの《Yonder》テキストは、ホーセンスが壮大なパノラマを避け、廃れたインテリアの「代理自然（surrogate nature）」を通じて働くことを明示し、*1 その方法が日常的な空間に潜む憧憬・投影・想像力を顕在化させる手段として機能することを示す。\n\n高精細なカラー写真・慎重な構図・制御された光によって、一見取るに足らない表面が奇妙に密度を持った観照の対象として現れる。スペクタクルではなく細部への忠実さを通じて、20世紀末の写真が日常的インテリアと静物をいかに批評的・観照的実践の場とし得るかを示した。*3\n\n批評と受容\n\nFoamのテキストはホーセンスの「代理自然」というモチーフと、閉塞的な室内から別の場所への投影という関係に対して最も正確な言語を与える。*1 後の収蔵テキストも「自然・ポートレート・静物」という枠組みでの継続的な評価を示し、日常的な細部を奇妙に豊かなイメージへと変換する能力が一貫して認められている。*3",
+        "textEn": "Biography\n\nDutch photographer born in 1967 in Leeuwarden.*1*2*3\n\nKnown for highly detailed color photographs of ordinary interiors, nature motifs, decorative substitutes for nature, and seemingly minor details transformed into strange, contemplative images.*1*2*3\n\nExpression / method\n\nMain themes: surrogate nature, interiors, banality, wonder, still life, and the transformation of everyday visual material into contemplative, slightly uncanny images.*1*2*3\n\nRepresentative work examples: Regarding Nature, Deep Light, and especially Yonder are central because they show Goossens repeatedly choosing ordinary or second-hand versions of nature—wallpaper, posters, plastic wood grain, windows—rather than untouched landscapes.*1*2*3\n\nTechnique / formal traits: highly detailed color photography, careful composition, technical camera use, controlled lighting, and an emphasis on ordinary motifs whose visual richness emerges only through patient, precise framing.*1*2*3\n\nWhy this method was chosen: Foam’s description of Yonder is especially useful because it makes clear that Goossens avoids spectacular panoramas and instead works through “surrogate nature” in run-down interiors. The method seems chosen to reveal longing, projection, and imagination within ordinary environments.*1\n\nHistorical context: Goossens belongs to a late twentieth-century photographic moment in which everyday interiors and modest environments become sites of careful formal and conceptual attention. His work turns away from dramatic landscape in favor of a quieter scrutiny of how nature is already mediated indoors.*1*2*3\n\nRelation to contemporaries or movements: he can be placed near still life, landscape, and post-documentary color photography, but differs from more detached conceptual approaches by preserving a strong sense of wonder toward minor details.*1*2*3\n\nHistorical significance: Goossens matters because he shows that late twentieth-century photography can produce estrangement not through spectacle but through fidelity to overlooked surfaces and decorative substitutions.*1*2*3\n\nCritical meaning: the work matters because it reveals how desire for landscape or elsewhere survives inside the most ordinary spaces. His photographs are not just of objects, but of longing lodged in surfaces.*1*2*3\n\nWhere and how the work was used: Foam’s exhibition framing, Rijksmuseum records, and UMC Utrecht collection text are useful because they show Goossens’s work moving between museum, photo institution, and public-art contexts while maintaining the same focus on carefully observed ordinary environments.*1*2*3\n\nCriticism and reception\n\nFoam’s text is the strongest current source because it gives precise language for Goossens’s surrogate-nature motif and for the relation between claustrophobic interior and projected elsewhere.*1\n\nLater collection texts continue to frame the work through “natuur, portretten en stillevens” and through the ability to make apparently unimportant details feel strange and charged.*3\n\nFinal website copy should emphasize that Goossens’s contribution lies in how he re-enchants ordinary environments without abandoning formal rigor or conceptual awareness.*1*2*3",
+        "links": [
+            {
+                "url": "https://www.foam.org/events/marnix-goossens",
+                "label": "Foam Amsterdam — Marnix Goossens: Yonder"
+            },
+            {
+                "url": "https://www.rijksmuseum.nl/en/collection/object/Fotograaf%2BMarnix%2BGoossens--99aaf1c0d1d35eedaef73648af8801c2",
+                "label": "Rijksmuseum — Fotograaf Marnix Goossens"
+            },
+            {
+                "url": "https://kunst.umcutrecht.nl/nl/kunstwerken/marnix-goossens",
+                "label": "Kunst in het UMC Utrecht — Marnix Goossens"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.foam.org/events/marnix-goossens",
+                "name": "Marnix Goossens – Yonder — Foam Amsterdam"
+            },
+            {
+                "num": 2,
+                "url": "https://www.rijksmuseum.nl/en/collection/object/Fotograaf%2BMarnix%2BGoossens--99aaf1c0d1d35eedaef73648af8801c2",
+                "name": "Fotograaf Marnix Goossens — Rijksmuseum"
+            },
+            {
+                "num": 3,
+                "url": "https://kunst.umcutrecht.nl/nl/kunstwerken/marnix-goossens",
+                "name": "zonder titel — Kunst in het UMC Utrecht"
+            }
+        ]
+    },
+    "michael-janiszewski": {
+        "leadJa": "ドイツの写真家。1990年代初頭から「写真演出（Fotoinszenierungen）」を一貫した方法論として展開してきた。自発的な記録ではなく、構築された状況の写真化を探求し、演出写真が盛んになった1990年代ヨーロッパの文脈に属する。",
+        "leadEn": "German photographer associated with staged photography since the early 1990s.*1*2*3 Known for photo-stagings and carefully constructed images rather than direct documentary capture.*1*2*3",
+        "textJa": "経歴\n\n1990年代初頭から写真演出（Fotoinszenierungen）を方法論とする作品を発表してきたドイツの写真家。ウィーンのフォトガレリー・ウィーンでの展示など、写真に特化した専門的な会場で作品を発表した。*1 2000年にCamera Austriaから《Fotoarbeiten 1990–1999》として1990年代の作品をまとめた。*3\n\n表現解説\n\nジャニシェフスキの実践の特徴は、「写真演出（Fotoinszenierungen）」を散発的な戦術としてではなく、一貫した長期的な方法論として位置づけた点にある。フォトガレリー・ウィーンの資料は彼を「1990年代初頭からの演出写真家」として明示しており、*1 即興的な記録への関心よりも構築された状況の写真化を一貫して優先してきたことを示す。\n\nクロモジェニック・プリントと演出されたシーンの組み合わせが形式的特徴であり、1990年代ヨーロッパにおける演出写真の広範な流れ——多くのアーティストが直接的ドキュメンタリーから離れ、構築されたシーンによって写真と虚構の関係を検証した傾向——に属する。*2\n\n批評と受容\n\n現時点の参照可能な資料は展示記録と刊行物の痕跡に限られており、厚い批評的受容を確認できる状況にはない。*1 確実に言えるのは、ジャニシェフスキが1990年代の演出写真の流れに参加した写真家であり、写真を観察的記録ではなく構築されたイメージ状況へと向けた実践であるということである。*3",
+        "textEn": "Biography\n\nGerman photographer associated with staged photography since the early 1990s.*1*2*3\n\nKnown for photo-stagings and carefully constructed images rather than direct documentary capture.*1*2*3\n\nExpression / method\n\nMain themes: staged situations, photographic construction, and the transformation of ordinary motifs into arranged visual tableaux.*1*2*3\n\nRepresentative work examples: the body of work gathered under Fotoarbeiten 1990–1999 and exhibition references to Fotoinszenierungen are central because they show that Janiszewski’s practice is defined by staged photography as a sustained method rather than an occasional tactic.*1*2*3\n\nTechnique / formal traits: staged scenes, chromogenic prints, and an emphasis on photographic construction over spontaneous capture. The available sources are thin, but they consistently identify him with “Fotoinszenierungen” and staged photographic production.*1*2*3\n\nWhy this method was chosen: the reviewed sources do not preserve a strong first-person explanation. What is well supported is that Janiszewski committed to staged photography from the early 1990s and presented it as a coherent, long-term practice.*1*2\n\nHistorical context: Janiszewski belongs to the broader European turn toward staged photography in the 1990s, when many artists moved away from straight documentary and used constructed scenes to test photography’s relation to fiction.*1*2*3\n\nRelation to contemporaries or movements: he can be placed near other German and Austrian staged photographers, but the current source base is too thin to define a precise critical lineage with confidence.*1*2*3\n\nHistorical significance: the note can safely claim that Janiszewski participates in the wider history of staged photography after 1990, though more detailed critical positioning still needs stronger sources.*1*2*3\n\nCritical meaning: the available material supports only a modest formulation: Janiszewski’s work shifts photography toward constructed image situations rather than observational recording.*1*2*3\n\nWhere and how the work was used: exhibitions at Fotogalerie Wien and Munich gallery contexts indicate that the work circulated in specialized photography venues, and the 2000 publication suggests a consolidated body of work rather than isolated pieces.*1*2*3\n\nCriticism and reception\n\nCurrent source material is limited and mostly consists of exhibition listings and publication traces.*1*2*3\n\nFinal website copy should therefore remain careful and avoid inventing a thick critical reception not yet supported by stronger sources.*1*2*3\n\nThe strongest grounded point is simply that Janiszewski belongs to the staged-photography turn of the 1990s.*1*2",
+        "links": [
+            {
+                "url": "https://www.fotogaleriewien.at/en/exhibition/provokation-i-3/",
+                "label": "Fotogalerie Wien — Michael Janiszewski"
+            },
+            {
+                "url": "https://photography-now.com/institution/exhibitions/autoren-galerie-1",
+                "label": "Photography-now — Michael Janiszewski exhibitions"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.fotogaleriewien.at/en/exhibition/provokation-i-3/",
+                "name": "Michael Janiszewski – staged photography since the early 90's — Fotogalerie Wien"
+            },
+            {
+                "num": 2,
+                "url": "https://photography-now.com/institution/exhibitions/autoren-galerie-1",
+                "name": "Michael Janiszewski exhibitions — Photography-now"
+            },
+            {
+                "num": 3,
+                "url": "https://www.iberlibro.com/9783900508302/Fotoarbeiten-1990-1999-Photography-3900508305/plp",
+                "name": "Michael Janiszewski: Fotoarbeiten 1990–1999 — Camera Austria"
+            }
+        ]
+    },
+    "michael-wesely": {
+        "leadJa": "1963年ドイツ生まれ。超長時間露光によって都市・建築・歴史変容を一枚のイメージに圧縮することで知られる。ポツダム広場の再開発やMoMAの改修工事を数か月から数年にわたる露光で記録し、写真が瞬間ではなく持続した時間を視覚化する媒体となりうることを示した。",
+        "leadEn": "German photographer born in 1963, known internationally for extremely long exposure photographs.*1*2*3 His work often records architecture, urban transformation, demonstrations, and institutional change through exposure times that can last from minutes to years.*1*2*3",
+        "textJa": "経歴\n\n1963年ドイツ生まれ。超長時間露光による写真でベルリン・ポツダム広場の再開発やニューヨーク近代美術館（MoMA）の改修工事などを記録し、国際的評価を確立した。ミュージアム・フォー・フォトグラフィー（ベルリン）での《Berlin, 1860–2023》展やミース・ファン・デル・ローエ財団でのプレゼンテーションなど、建築・都市史の文脈で継続的に発表してきた。*1 *2\n\n表現解説\n\nヴェゼリーの実践の核心は、露光時間を根本的に引き伸ばすことによって時間そのものを写真的主題にすることにある。数分から数年にわたる固定カメラの露光によって、人物や車のような移動体は消え去り、建築や工事の進行・撤去・再建といった構造的変化が一枚のイメージに積層される。*1 これは技術的好奇心ではなく、歴史的プロセスを単一フレームに凝縮するための方法論的選択である。\n\nポツダム広場シリーズは統一後のベルリンが急速に再開発された時期を対象とし、MoMA改修の記録は文化施設の変容に同じ方法論を適用した。ミース・ファン・デル・ローエ・パヴィリオンでの《1:100 Past and Present》は、建築物を二つの歴史的時点の重なりとして提示し、建築とその記憶を一枚の写真で同時に扱う可能性を示した。*2 都市の急激な再開発とデジタル写真の高速化が進んだ20世紀末に、アナログ的・持続的な方法論は速度主義への対位として際立っている。*3\n\nヴェゼリーの写真が問うのは「ある瞬間の都市」ではなく「時間として理解された都市」の姿である。長時間露光を技術的特殊性ではなく歴史的・政治的な見方として機能させた点が、この実践の核心的意義をなす。\n\n批評と受容\n\nミュージアム・フォー・フォトグラフィーによる《Berlin, 1860–2023》の枠組みは、ヴェゼリーの仕事をアーカイブ写真やフォトジャーナリズムの歴史像と対話する実践として位置づけた点で重要である。*1 ミース財団のテキストは、建築・都市史の言説との結びつきを明示している。*2 長時間露光という形式的特徴に還元されがちな評価に対し、持続という方法が歴史的・政治的な見方として機能することを強調することが今後も課題である。",
+        "textEn": "Biography\n\nGerman photographer born in 1963, known internationally for extremely long exposure photographs.*1*2*3\n\nHis work often records architecture, urban transformation, demonstrations, and institutional change through exposure times that can last from minutes to years.*1*2*3\n\nExpression / method\n\nMain themes: duration, urban change, architecture, memory, disappearance, trace, and the condensation of historical process into a single image.*1*2*3\n\nRepresentative work examples: the long exposures of the Museum of Modern Art reconstruction, the Potsdamer Platz cycle, 1:100 Past and Present, and the recent Berlin, 1860–2023 exhibition are central because they show how Wesely turns photographic duration into an active historical method.*1*2*3\n\nTechnique / formal traits: radically extended exposure times, fixed camera positions, superimposition of temporal layers, and images in which moving bodies often disappear while architecture and structural change accumulate. His photographs are at once documentary records and temporal composites.*1*2*3\n\nWhy this method was chosen: Wesely uses long exposure to make time itself visible. Rather than freezing an instant, he compresses duration, construction, demolition, and public movement into one image, allowing photography to register processes usually spread across months or years.*1*2\n\nHistorical context: his work emerges in the late twentieth century as cities undergo intense redevelopment and as photography increasingly confronts digital speed. Wesely’s analogue and camera-based durational method offers a counter-model in which slowness becomes a tool for understanding historical transformation.*1*2*3\n\nRelation to contemporaries or movements: Wesely can be placed near conceptual photography and architectural photography, but he differs from typological or documentary approaches by making duration itself the central formal subject. His work also anticipates later discussions of time-lapse and process imagery while remaining materially distinct from them.*1*2\n\nHistorical significance: he matters because he demonstrated that photography could register historical change not only through sequence but within a single frame, transforming long exposure from technical curiosity into a major contemporary artistic strategy.*1*2*3\n\nCritical meaning: the work matters because it renders architecture, protest, and urban memory as layered rather than punctual. Wesely’s images ask what a city looks like when it is understood as accumulated time instead of as a stable scene.*1*2*3\n\nWhere and how the work was used: his work circulated through museums, urban-history exhibitions, international galleries, and institutional commissions. The Museum für Fotografie exhibition and Mies van der Rohe Pavilion presentation are especially useful because they connect his method to Berlin’s layered urban history and to architectural discourse.*1*2\n\nCriticism and reception\n\nMuseum für Fotografie’s Berlin, 1860–2023 framing is especially valuable because it shows how Wesely’s recent work is read in dialogue with archival and photojournalistic images, not just as technical virtuosity.*1\n\nThe Mies van der Rohe Pavilion presentation clarifies how strongly his reception has become tied to architecture and urban development rather than to photography alone.*2\n\nFinal website copy should avoid reducing Wesely to “the long exposure photographer” and instead stress how duration functions as a historical and political way of seeing.*1*2*3",
+        "links": [
+            {
+                "url": "https://www.smb.museum/en/exhibitions/detail/michael-wesely/",
+                "label": "Museum für Fotografie — Michael Wesely: Berlin, 1860–2023"
+            },
+            {
+                "url": "https://miesbcn.com/wp-content/uploads/2019/09/ENG_MICHAEL-WESELY_2019.pdf",
+                "label": "Fundació Mies van der Rohe — 1:100 Past and Present"
+            },
+            {
+                "url": "https://www.icp.org/content/new-york-1995-vertical-michael-wesely",
+                "label": "ICP — New York 1995 vertical, Michael Wesely"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.smb.museum/en/exhibitions/detail/michael-wesely/",
+                "name": "Michael Wesely. Berlin, 1860–2023 — Staatliche Museen zu Berlin / Museum für Fotografie"
+            },
+            {
+                "num": 2,
+                "url": "https://miesbcn.com/wp-content/uploads/2019/09/ENG_MICHAEL-WESELY_2019.pdf",
+                "name": "1:100 Past and Present, Michael Wesely — Fundació Mies van der Rohe"
+            },
+            {
+                "num": 3,
+                "url": "https://www.icp.org/content/new-york-1995-vertical-michael-wesely",
+                "name": "New York 1995 vertical, Michael Wesely — International Center of Photography"
+            }
+        ]
+    },
+    "naoya-hatakeyama": {
+        "leadJa": "1958年岩手県陸前高田生まれ。採石場・爆破・地下水路・都市河川など産業的に変容した風景を大判カラーで長期にわたり記録してきた。2011年の東日本大震災で故郷の大半を失い、以後の実践は産業景観への問いを災害・喪失・場所の脆弱性という主題へと不可逆的に接続した。",
+        "leadEn": "Japanese photographer born in 1958 in Rikuzentakata, Iwate.*1*2*3 Known for long-term work on quarries, urban infrastructure, architecture, and landscapes in transition, later reshaped by the devastation of the 2011 earthquake and tsunami in his hometown.*1*2*3",
+        "textJa": "経歴\n\n1958年岩手県陸前高田生まれ。1980年代から採石場・爆破・地下水路・都市河川など産業的・工学的に変容した風景を大判カラーと白黒で撮影してきた。*3 主要連作《Lime Hills》《Blast》《Underground》《River Series》はSFMOMAや大英博物館など国際的機関に収蔵・評価されてきた。*2 2011年の東日本大震災によって故郷の大半が失われ、以後の実践は過去の産業景観への問いと災害・喪失という主題を不可逆的に接続した。*1\n\n表現解説\n\n畠山の実践の特徴は、人間の介入によって変容した風景を中立的記録としてではなく、変容・抽出・脆弱性をめぐる問いとして提示する点にある。採石場や爆破現場を撮影した初期連作では、石灰岩の採掘が山を削り取る過程——人間のインフラと地形の不可逆的な関係——に注意が向けられた。*2 都市の水路を追った《Underground》シリーズでは、地表に見えない流れが都市の下部構造として現れ、工学と自然の境界があいまいになる瞬間が切り取られる。\n\n場所への持続的な関与、構造的変化の観察、変容の前後・最中を捉える構成という方法論は、2011年以後に決定的な歴史的重みを帯びることになった。《Natural Stories》などの後期作品は、かつて産業的変容として読まれていた初期の景観を、震災が惹き起こした喪失の記憶として遡及的に意味づけた。*2 SFMOMAはこの文脈で、一つのキャリアが自然の力によって読み直される過程として畠山の仕事を提示した。\n\n日本の産業景観写真の系譜に属しながらも、中立的な類型論とは異なり、人間の介入と環境的な力の不安定な関係を一貫した主題とする点で際立っている。*1\n\n批評と受容\n\nSFMOMAによる受容は特に重要であり、2011年の震災が畠山の初期プロジェクトの読み方を根本的に変えたことを明示した——産業的変容への探究が、力と脆弱性の省察へと変貌したことを。*2 大英博物館やメトロポリタン美術館を通じた国際的評価も確認されるが、畠山への受容は単純なドキュメンタリー描写よりも、移行する風景という美術館的枠組みに強く依存している。*1 *3 産業景観の歴史的記録にとどまらず、災害が一つのキャリアの意味をいかに再編成するかという問いを提起した実践として評価される。",
+        "textEn": "Biography\n\nJapanese photographer born in 1958 in Rikuzentakata, Iwate.*1*2*3\n\nKnown for long-term work on quarries, urban infrastructure, architecture, and landscapes in transition, later reshaped by the devastation of the 2011 earthquake and tsunami in his hometown.*1*2*3\n\nExpression / method\n\nMain themes: landscape transformation, extraction, urbanization, architecture, nature and industry, disaster, and the unstable balance between human intervention and forces beyond human control.*1*2*3\n\nRepresentative work examples: Lime Hills, Blast, Underground, River Series, and the later works gathered in Natural Stories are central because they show how Hatakeyama moved from industrially altered terrain to a broader meditation on the fragility of place.*2*3\n\nTechnique / formal traits: large-scale color and black-and-white photography, serial attention to sites over time, clear compositional structure, and a tendency to photograph landscapes in moments of suspension—before, during, or after transformation.*1*2*3\n\nWhy this method was chosen: Hatakeyama’s work repeatedly asks how human beings inhabit and reshape the land. Photography allows him to register both the visible marks of labor and the sudden revelation that nature still exceeds human systems, especially after 2011.*1*2*3\n\nHistorical context: his practice emerges in the 1980s and 1990s in relation to industrial landscape photography and the postwar Japanese city, but it acquires a new historical weight after the tsunami. The later work retrospectively alters how the earlier images of extraction and transformation are understood.*1*2*3\n\nRelation to contemporaries or movements: Hatakeyama can be placed within contemporary Japanese landscape photography, but he differs from neutral industrial typology by sustaining a more unstable, historically charged relation between human intervention and environmental force.*1*2\n\nHistorical significance: he matters because he turned industrial and urban landscape into a meditation on temporality and vulnerability, making landscape photography newly central to contemporary Japanese photographic history.*1*2*3\n\nCritical meaning: the work matters because it refuses a simple opposition between nature and industry. Hatakeyama’s landscapes show transformation as both productive and destructive, and after 2011 they also become records of mourning and historical rupture.*1*2*3\n\nWhere and how the work was used: the work circulated through museum retrospectives, collection displays, and international exhibitions. SFMOMA’s Natural Stories is especially important because it reframed decades of landscape work through the aftermath of the tsunami.*2\n\nCriticism and reception\n\nSFMOMA’s reception is crucial because it makes explicit how the 2011 disaster changed the reading of Hatakeyama’s earlier projects, turning long-term landscape inquiry into a more urgent meditation on power and fragility.*2\n\nMet and other collection materials help situate Hatakeyama internationally, but his reception remains strongly tied to museum framings of landscape in transition rather than to simple documentary description.*1*2*3\n\nFinal website copy should note that his work is historically important not only for industrial landscape but also for how disaster retrospectively reorganized the meaning of an entire career.*2*3",
+        "links": [
+            {
+                "url": "https://www.metmuseum.org/zh/art/collection/search/913351",
+                "label": "The Metropolitan Museum of Art — Naoya Hatakeyama"
+            },
+            {
+                "url": "https://time.com/3790530/changing-landscapes-naoya-hatakeyama-natural-stories/",
+                "label": "Time / SFMOMA — Naoya Hatakeyama: Natural Stories"
+            },
+            {
+                "url": "https://www.britishmuseum.org/collection/object/A_2007-3007-55",
+                "label": "British Museum — Naoya Hatakeyama"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.metmuseum.org/zh/art/collection/search/913351",
+                "name": "Naoya Hatakeyama — The Metropolitan Museum of Art"
+            },
+            {
+                "num": 2,
+                "url": "https://time.com/3790530/changing-landscapes-naoya-hatakeyama-natural-stories/",
+                "name": "Naoya Hatakeyama: Natural Stories — Time / SFMOMA"
+            },
+            {
+                "num": 3,
+                "url": "https://www.britishmuseum.org/collection/object/A_2007-3007-55",
+                "name": "Naoya Hatakeyama — British Museum"
+            }
+        ]
+    },
+    "norihiko-matsumoto": {
+        "leadJa": "1936年生まれの写真家・批評家・編集者。舞台公演や人物の記録写真を撮影する傍ら、日本の美術館写真コレクションの形成に関する執筆・編集にも携わった。写真を作ることと写真の制度的歴史を記述することの双方を実践した、戦後日本写真の特異な存在である。",
+        "leadEn": "Japanese photographer, writer on photography, and editor born in 1936.*1*2 Also important as a historian, organizer, and editor of books on museum and photography collections, in addition to his own photographic work.*1*2*3",
+        "textJa": "経歴\n\n1936年生まれ。写真家・批評家・編集者として戦後日本写真の両面から活動してきた。東京都写真美術館（TOPMUSEUM）コレクションには日生劇場での舞台記録写真やヴェネツィア・シリーズが収蔵されており、*2 戦後日本写真史を扱う展覧会《SHOWA: Photography 1945–1989》にも参加した。*3 日本の美術館写真コレクションの形成に関する編著を通じて、写真の制度的歴史への関与も実践の柱をなす。*1\n\n表現解説\n\n松本の実践の特徴は、作品制作と写真の制度的・歴史的基盤の整備を同時に担ってきた点にある。TOPMUSEUMの収蔵記録が示す作品群は、舞台公演・人物記録から旅や場所に基づくシリーズへと展開する実践の二極を示している。*2 資料が現時点でより明確に示すのは個々の写真的形式よりも、松本が写真家・批評家・編集者という複数の役割を通じて写真文化の形成に関与してきたという事実である。*1\n\n《SHOWA: Photography 1945–1989》展への参加は、戦後日本写真の歴史的文脈のなかに松本が位置づけられることを示す。*3 日本の美術館の写真コレクションをテーマとする編著は、写真がいかに機関の記憶として組織・保存・提示されるかという問いに実践者が正面から向き合う姿勢を示している。単一のスタイル運動への帰属よりも、実践と記述・歴史化という複合的な関与によって写真文化に貢献した点が、松本の歴史的位置の核心にある。\n\n批評と受容\n\n現時点で参照可能な資料は、個々の写真への詳細な批評よりも、機関的存在と歴史的関与の証跡として松本を示す。*1 *3 APJの記述と収蔵記録が示すのは、松本が作品制作・執筆・編集という複数の場で戦後日本写真の記憶を形成した人物であるという点である。単一の視覚的スタイルに還元できないこの双面的実践こそが、松本の歴史的意義を理解する鍵となる。*2",
+        "textEn": "Biography\n\nJapanese photographer, writer on photography, and editor born in 1936.*1*2\n\nAlso important as a historian, organizer, and editor of books on museum and photography collections, in addition to his own photographic work.*1*2*3\n\nExpression / method\n\nMain themes: performance and stage portraiture, postwar Japanese cultural life, photographic historiography, and the relation between image-making and photography’s institutional memory.*1*2*3\n\nRepresentative work examples: collection records such as Fubuki Koshiji from Long Recital at Nissei Theater and the Venice series are central because they show the two poles of his practice currently most visible in institutional holdings: performance/cultural portraiture and later travel or place-based images.*2*3\n\nTechnique / formal traits: the currently visible institutional records suggest a refined black-and-white and later color photographic practice attentive to public appearance, theatricality, and scene construction, though the reviewed sources are still stronger on collection and historical framing than on close formal criticism.*1*2*3\n\nWhy this method was chosen: the strongest support currently available comes indirectly from Matsumoto’s wider activity as a writer and editor on photography collections. His practice appears closely tied to questions of how photographic culture is preserved, exhibited, and remembered, not just how images are captured.*1*2\n\nHistorical context: Matsumoto belongs to the generation that shaped postwar Japanese photography both through image-making and through the building of historical awareness around photography as a field. This dual role is historically important for situating him.*1*2*3\n\nRelation to contemporaries or movements: he belongs within postwar Japanese photography, but differs from more easily canonized “style” movements because his significance also lies in historiography and institutional reflection.*1*2\n\nHistorical significance: Matsumoto matters because he is both practitioner and mediator of photographic history. His role in shaping how photography collections and museum contexts are understood is itself historically significant.*1*2\n\nCritical meaning: the available material supports a careful conclusion that Matsumoto’s contribution cannot be reduced to a single visual style; instead, his practice sits at the intersection of making photographs, writing their histories, and structuring their institutional afterlife.*1*2*3\n\nWhere and how the work was used: Top Museum collection records, the APJ dictionary entry, and exhibition references are especially useful because they confirm both his presence in major institutional collections and his importance as a writer/editor within Japanese photography.*1*2*3\n\nCriticism and reception\n\nCurrent source material is stronger on institutional presence and historiographic role than on thick critical essays about individual pictures.*1*2*3\n\nFinal website copy should therefore emphasize Matsumoto’s dual identity as photographer and writer/editor, rather than forcing a fully developed formal reading not yet supported by strong sources.*1*2\n\nThis note should be treated as a solid foundation, but one that would benefit from additional Japanese-language criticism or catalogue essays later.*1*2*3",
+        "links": [
+            {
+                "url": "https://artplatform.go.jp/artists/A6551",
+                "label": "Art Platform Japan — 松本徳彦"
+            },
+            {
+                "url": "https://museumcollection.tokyo/en/works/6452413/",
+                "label": "TOPMUSEUM Collection — Norihiko Matsumoto, Venice"
+            },
+            {
+                "url": "https://topmuseum.jp/e/contents/exhibition/index-368.html",
+                "label": "TOPMUSEUM — Showa: Photography 1945–1989"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://artplatform.go.jp/artists/A6551",
+                "name": "MATSUMOTO Norihiko — Art Platform Japan"
+            },
+            {
+                "num": 2,
+                "url": "https://museumcollection.tokyo/en/works/6452413/",
+                "name": "MATSUMOTO Norihiko, Venice — Tokyo Museum Collection / TOPMUSEUM"
+            },
+            {
+                "num": 3,
+                "url": "https://topmuseum.jp/e/contents/exhibition/index-368.html",
+                "name": "Showa: Photography 1945–1989 — TOPMUSEUM"
+            }
+        ]
+    },
+    "olivo-barbieri": {
+        "leadJa": "1954年イタリア・カルピ生まれ。チルトシフトと選択的ピントによって実際の都市を縮尺模型のように見せる航空・高所写真で知られる。長期連作《site specific_》を通じて世界各地の都市を記録し、都市がいかにイメージ・計画・シミュレーションとして把握されるかを問い続けた。",
+        "leadEn": "Italian photographer and artist born in 1954 in Carpi.*1*2 Known for urban and aerial views that make cities appear miniature or model-like, and for sustained work on the relation between contemporary urban change, vision, and virtuality.*1*2",
+        "textJa": "経歴\n\n1954年イタリア・カルピ生まれ。1978年から都市と建築の写真を発表し、長期連作《site specific_》シリーズを通じてローマ・ラスベガス・上海・東京など世界各地の都市を記録してきた。*1 MAXXI（ローマ）での回顧展《Immagini 1978–2014》は、数十年にわたる都市研究の全容を提示した。*2\n\n表現解説\n\nバルビエリの実践の核心は、チルトシフトと選択的ピントによって実際の都市環境を縮尺模型のように見せる光学的変換にある。この効果は単なる視覚的遊戯ではない——実物大で存在する都市を模型的に見せることで、現代のビジュアル文化がすでに都市をイメージ・計画・ダイアグラムとして扱っていることを露わにする。*1 バルビエリは「写真ではなくイメージに関心があった」と述べており、*3 媒体そのものへの懐疑が都市への関心と不可分であることを示す。\n\n高所・航空視点、強度の都市的拡張への注意、意図的なぼかしによる構成が形式的特徴として一貫している。*2 これらの手法を通じて、都市は安定した場面としてではなく、視覚と認知の不安定な対象として現れる。《site specific_》シリーズはプロジェクトごとに都市を再訪し、グローバル化と技術的媒介のなかで都市のイメージがいかに変容するかを長期にわたって追跡した。\n\n都市の急速なグローバル化と分光化が進んだ20世紀末の文脈において、バルビエリの実践は中立的なドキュメンタリー伝統とは異なり、光学的疎外を都市批評の核心に置く点で際立っている。*1\n\n批評と受容\n\nMAXXIは繰り返しバルビエリを、現代空間の変容と現実・仮想性の関係を問う主要なイタリア写真家として評価してきた。*1 *2 受容においては縮尺模型効果への注目が先行するが、回顧展テキストはこの光学的効果が都市がいかに知覚・表象されるかの批評的問いに奉仕することを明示した。都市を幻想として提示するのではなく、実在の都市がすでに半分イメージである様を可視化する実践として評価が定着している。",
+        "textEn": "Biography\n\nItalian photographer and artist born in 1954 in Carpi.*1*2\n\nKnown for urban and aerial views that make cities appear miniature or model-like, and for sustained work on the relation between contemporary urban change, vision, and virtuality.*1*2\n\nExpression / method\n\nMain themes: urban transformation, metropolitan scale, architecture, simulation, virtuality, and the unstable relation between city and image.*1*2*3\n\nRepresentative work examples: the long-running site specific_ projects and survey exhibitions such as Immagini 1978–2014 are central because they show how Barbieri moved from early city photographs toward a more overt analysis of how contemporary cities are pictured, miniaturized, and abstracted.*1*2*3\n\nTechnique / formal traits: elevated viewpoints, tilt-shift and selective focus effects, intense attention to urban sprawl, and a use of blur that makes full-scale urban environments resemble scale models. This is not merely stylistic play; it alters how modern space is cognitively grasped.*1*2\n\nWhy this method was chosen: Barbieri uses optical transformation to question how cities are mediated and perceived. By making actual urban environments look model-like, he reveals how contemporary visual culture already treats the city as image, simulation, and planned diagram.*1*2\n\nHistorical context: his work emerges from late twentieth-century photography as cities become increasingly globalized, spectacularized, and technologically mediated. The work belongs to a moment when photography had to address not only urban reality but also its virtual and architectural representations.*1*2*3\n\nRelation to contemporaries or movements: Barbieri intersects with conceptual landscape and architectural photography, but he differs from neutral documentary traditions by making optical estrangement central to urban critique.*1*2\n\nHistorical significance: he matters because he developed one of the most recognizable late twentieth-century photographic responses to global urbanization, using technique not for virtuosity alone but to rethink how cities are visualized.*1*2*3\n\nCritical meaning: the photographs matter because they reveal that the contemporary city is already half-model, half-image. Barbieri’s work makes visible how planning, spectacle, and virtuality change the ontology of urban space itself.*1*2\n\nWhere and how the work was used: his work circulated through MAXXI, international exhibitions, biennials, and project-based commissions. MAXXI’s retrospective framing is especially useful because it presents the continuity of his urban research across decades rather than isolating the miniature effect as a signature trick.*1*2\n\nCriticism and reception\n\nMAXXI repeatedly frames Barbieri as a major Italian photographer whose work addresses the transformations of contemporary space and the relation between reality and virtuality.*1*2\n\nReception often focuses on the miniaturizing optical effect, but institutional texts are useful because they insist on the broader conceptual stakes: not illusion for its own sake, but a rethinking of how the metropolis is perceived and represented.*1*2\n\nFinal website copy should avoid reducing him to a “miniature city” style and instead emphasize his sustained inquiry into urban image culture.*1*2*3",
+        "links": [
+            {
+                "url": "https://www.maxxi.art/en/olivo-barbieri-immagini-1978-2014/",
+                "label": "MAXXI — Olivo Barbieri: Immagini 1978–2014"
+            },
+            {
+                "url": "https://www.maxxi.art/en/events/maxxiinweb-olivo-barbieri/",
+                "label": "MAXXI — MAXXIinWeb: Olivo Barbieri"
+            },
+            {
+                "url": "https://www.esteri.it/en/sala_stampa/archivionotizie/approfondimenti/2016/02/buenos-aires-le-immagini-di-olivo-2/",
+                "label": "Ministero degli Affari Esteri — Buenos Aires, Olivo Barbieri"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.maxxi.art/en/olivo-barbieri-immagini-1978-2014/",
+                "name": "Olivo Barbieri. Immagini 1978–2014 — MAXXI"
+            },
+            {
+                "num": 2,
+                "url": "https://www.maxxi.art/en/events/maxxiinweb-olivo-barbieri/",
+                "name": "MAXXIinWeb / Olivo Barbieri — MAXXI"
+            },
+            {
+                "num": 3,
+                "url": "https://www.esteri.it/en/sala_stampa/archivionotizie/approfondimenti/2016/02/buenos-aires-le-immagini-di-olivo-2/",
+                "name": "Buenos Aires – Olivo Barbieri — Ministero degli Affari Esteri e della Cooperazione Internazionale"
+            }
+        ]
+    },
+    "paul-graham": {
+        "leadJa": "1956年イギリス生まれ。カラー写真・連作・ブック形式を組み合わせ、ドキュメンタリー写真を内側から刷新した。《A1: The Great North Road》《Beyond Caring》《a shimmer of possibility》などの連作を通じて、社会的現実の断片性と不確かさを写真形式のなかに保ちながら歴史的真剣さを失わない実践を展開した。",
+        "leadEn": "British photographer born in 1956, later based in the United States.*1*2 Known for reshaping documentary photography through color, sequencing, and a sustained effort to dissolve the boundary between documentary observation and fine-art photographic form.*1*2*3",
+        "textJa": "経歴\n\n1956年イギリス生まれ、後にアメリカを拠点とする。1980年代初頭にカラー写真で社会的ドキュメンタリーの実践を開始し、《A1: The Great North Road》（1981–82）、《Beyond Caring》（1984–85）を経て、《American Night》（1998–2002）、《a shimmer of possibility》（2004–06）へと展開した。*1 *2 ホワイトチャペル・ギャラリーの回顧展《Photographs 1981–2006》は、四半世紀にわたる実践の全体像を提示した。*4\n\n表現解説\n\nグラハムの実践の特徴は、カラー写真・連作構成・ブック形式を組み合わせることで、ドキュメンタリー写真を内側から変革した点にある。初期作品が登場した1980年代イギリスはサッチャー政権下の階級再編と失業の時代であり、《Beyond Caring》は福祉事務所という公的空間の匿名的現実を淡いカラーで可視化した。*1 直接的な報道性ではなく、形式的な曖昧さと社会的観察の共存がこの実践の核をなす。\n\n《American Night》はMoMA PS1のテキストが明示したように、報道写真・ポートレート・風景という従来の境界を意図的に解体する試みであった。*2 過露出の白い画面と暗い細部が交互に現れる連作は、アメリカにおける人種と不可視性という主題を視覚形式として実現している。《a shimmer of possibility》は多枚組の連作で日常的な出来事の細部を提示することで、写真が瞬間ではなく持続した時間を登録しうることを示した。*3\n\nエヴァンス・フランク・ニュートポグラフィクス以後の美術写真が問い直されていた時期に、カラーと連作という形式的選択によって一つの新たなドキュメンタリー美学を確立した。*4 社会的現実は単一のイメージでは把握されないという確信が、すべての形式的選択の根拠となっている。\n\n批評と受容\n\nMoMAとホワイトチャペルはいずれもグラハムを、ドキュメンタリー写真の刷新において決定的な役割を果たした作家として評価している。*1 *4 MoMA PS1による《American Night》の枠組みは、彼の実践が報道・ポートレート・風景の従来の境界を越えることを明示し、*2 《a shimmer of possibility》は連作と持続という方法を現代写真の中心化した作品として繰り返し言及される。*3",
+        "textEn": "Biography\n\nBritish photographer born in 1956, later based in the United States.*1*2\n\nKnown for reshaping documentary photography through color, sequencing, and a sustained effort to dissolve the boundary between documentary observation and fine-art photographic form.*1*2*3\n\nExpression / method\n\nMain themes: everyday public life, class, race, British and American social space, duration, contingency, and the relation between fleeting experience and photographic form.*1*2*3*4\n\nRepresentative work examples: A1: The Great North Road (1981–82), Beyond Caring (1984–85), American Night (1998–2002), and a shimmer of possibility (2004–06) are central because they show his movement from social documentary to fragmented, open-ended observation.*1*2*3*4\n\nTechnique / formal traits: color photography from early in his career, serial and book-based construction, variable scale, and an emphasis on duration rather than the single decisive image. Later work uses sequence and near-empty intervals to create a sense of contingency and passing time.*1*2*3\n\nWhy this method was chosen: Graham’s photography repeatedly tries to show that reality is not exhausted by what is immediately visible. His sequences and open forms allow ordinary moments, partial perceptions, and social structures to coexist without collapsing into journalistic explanation.*2*3\n\nHistorical context: his work emerges in Britain in the Thatcher years, when documentary photography was confronting class restructuring, unemployment, and racial tension, and then expands into an American context in which color and art photography were being rethought after the legacies of Evans, Frank, and New Topographics.*1*2*3\n\nRelation to contemporaries or movements: Graham is often placed in documentary photography, yet his importance lies in changing documentary from within. Whitechapel’s survey is especially helpful because it presents him as reinventing traditional genres into a new visual language rather than abandoning documentary altogether.*4\n\nHistorical significance: he is significant because he made color, sequencing, and incomplete narrative central to a new documentary aesthetics, influencing how late twentieth-century photography could move beyond both classic reportage and autonomous formalism.*1*2*4\n\nCritical meaning: the work matters because it insists that social reality is fragmentary, unstable, and often only partially visible. Graham’s photographs do not just record events; they test how photographic form can acknowledge uncertainty without giving up historical seriousness.*2*3*4\n\nWhere and how the work was used: his work circulated through MoMA, PS1, Whitechapel, survey exhibitions, and influential photobooks. MoMA’s presentations of American Night and a shimmer of possibility are especially important because they helped institutionalize Graham’s expanded form of documentary.*1*2*3\n\nCriticism and reception\n\nMoMA and Whitechapel both frame Graham as a decisive figure in the reinvention of documentary photography, especially through color and serial form.*1*3*4\n\nAmerican Night is especially important to reception because PS1/MoMA explicitly described it as work that breaks traditional boundaries between reportage, portrait, and landscape.*2\n\nLater reception often treats a shimmer of possibility as a landmark because it brought sequence and duration to the center of contemporary photographic thinking, turning small everyday incidents into a major statement about how photography can register lived time.*1*3",
+        "links": [
+            {
+                "url": "https://www.moma.org/artists/2286-paul-graham",
+                "label": "MoMA — Paul Graham"
+            },
+            {
+                "url": "https://www.moma.org/calendar/exhibitions/4791",
+                "label": "MoMA PS1 — Paul Graham: American Night"
+            },
+            {
+                "url": "https://www.moma.org/calendar/exhibitions/321",
+                "label": "MoMA — a shimmer of possibility"
+            },
+            {
+                "url": "https://www.whitechapelgallery.org/exhibitions/paul-graham-photographs-1981-2006/",
+                "label": "Whitechapel Gallery — Paul Graham: Photographs 1981–2006"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.moma.org/artists/2286-paul-graham",
+                "name": "Paul Graham — MoMA"
+            },
+            {
+                "num": 2,
+                "url": "https://www.moma.org/calendar/exhibitions/4791",
+                "name": "Paul Graham: American Night — MoMA PS1"
+            },
+            {
+                "num": 3,
+                "url": "https://www.moma.org/calendar/exhibitions/321",
+                "name": "a shimmer of possibility. Photographs by Paul Graham — MoMA"
+            },
+            {
+                "num": 4,
+                "url": "https://www.whitechapelgallery.org/exhibitions/paul-graham-photographs-1981-2006/",
+                "name": "Paul Graham: Photographs 1981–2006 — Whitechapel Gallery"
+            }
+        ]
+    },
+    "pertti-kekarainen": {
+        "leadJa": "1965年フィンランド生まれ。建築空間に影・色面・薄布状の遮蔽物を重ね、視覚的な読み取りを複雑化する大判カラー写真で知られる。《TILA》シリーズを通じて、写真における空間は単に与えられるのではなく、知覚・遮断・投影によって観者の内側に生成されるという問いを探求した。",
+        "leadEn": "Finnish photographer born in 1965, associated with the Helsinki School.*1*2*3 Known for photographs of architectural spaces altered by occlusions, shadows, veils, and color fields that complicate perception and spatial reading.*1*2*3",
+        "textJa": "経歴\n\n1965年フィンランド生まれ。ヘルシンキ・スクールに連なる写真家として国際的に発表し、主要連作《TILA》は大判クロモジェニック・プリントにより建築空間と知覚の問いを探求する。*1 メトロポリタン美術館に《TILA (Passage I)》が収蔵されており、*1 ガレリア・アンハヴァやポリ美術館を通じた発表でも知られる。*2 *3\n\n表現解説\n\nケカライネンの実践の核心は、建築的空間の視覚的読解に干渉することを通じて、知覚そのものを主題にすることにある。部屋・扉・階段・窓といった建築的要素を撮影しながら、浮かぶ色面・影・薄布状の遮蔽物を画面上に導入することで、奥行きの錯覚と写真の平面性の緊張が前景化される。メトロポリタン美術館のテキストはこの方法を「見ることを複雑にし、写真の平面性と奥行きの幻想への意識を高める」と明示しており、*1 知覚的干渉が技術的付加物ではなく方法論の中心にあることを示す。\n\n《TILA》シリーズのタイトルはフィンランド語で「空間」「状態」「間」を意味し、建築的な空間と精神的な状態の重なりを示唆する。ガレリア・アンハヴァのテキストは、これらの作品が空間の詩的な曖昧さに接近し、絵画的幻想性と写真の代理表象の境界を問う点を強調する。*2 建築写真がドキュメント的機能を超えて現象学的・媒体反射的な実践へと展開していた時代に、空間は写真に「映る」のではなく、見る行為と干渉によって観者の内側に生成されるという問いを明確に提示した。*3\n\n批評と受容\n\nメトロポリタン美術館の収蔵とテキストは、《TILA》作品を知覚的曖昧さと写真の平面性についての批評的問いとして最も明確に位置づけた。*1 ガレリア・アンハヴァのテキストはこれを補強し、作品が絵画的幻想性に接近しながら写真的手法に留まる独自性を強調する。*2 フィンランド現代写真の重要な一例として国際的に評価され、単に建築を主題とする写真ではなく、知覚と空間の問いを写真形式で実現した実践として受容されている。*3",
+        "textEn": "Biography\n\nFinnish photographer born in 1965, associated with the Helsinki School.*1*2*3\n\nKnown for photographs of architectural spaces altered by occlusions, shadows, veils, and color fields that complicate perception and spatial reading.*1*2*3\n\nExpression / method\n\nMain themes: space, ambiguity, perception, architecture, mental state, and the unstable relation between flat surface and spatial illusion.*1*2*3\n\nRepresentative work examples: the TILA series, especially works such as TILA (Passage I) and TILA (dark red), are central because they establish Kekarainen’s core method of interfering with the visual legibility of architectural space.*1*2\n\nTechnique / formal traits: chromogenic prints of rooms, doorways, stairs, and windows, overlaid with added shadows, floating color fields, veils, or scrims; a visual atmosphere that approaches painting while remaining tied to photographic representation.*1*2\n\nWhy this method was chosen: the Met’s collection text is especially useful because it explicitly states that these interruptions complicate seeing and heighten awareness of the photograph’s flatness versus the illusion of depth. The method is therefore chosen to make perception itself the subject.*1\n\nHistorical context: Kekarainen belongs to a generation of Finnish photographers who brought conceptual and painterly concerns into large-scale color photography. His work emerges when architectural photography is no longer only documentary but also phenomenological and medium-reflexive.*1*2*3\n\nRelation to contemporaries or movements: he relates to the Helsinki School and contemporary architectural photography, but differs by making visual interruption and mental/spatial ambiguity central to the work.*1*2*3\n\nHistorical significance: Kekarainen matters because he turns architecture into a site for examining how photography produces space in the mind of the viewer. His work helps expand contemporary photography toward perceptual and phenomenological inquiry.*1*2*3\n\nCritical meaning: the photographs matter because they insist that space in photography is never simply given. It is completed through seeing, interruption, and projection.*1*2\n\nWhere and how the work was used: the Met collection text, Anhava exhibition material, and Finnish museum contexts show that Kekarainen’s work has been received as a key example of Finnish contemporary photography with strong international visibility.*1*2*3\n\nCriticism and reception\n\nThe Met provides the clearest critical formulation, framing the TILA works around heightened awareness of flatness and depth.*1\n\nAnhava’s text strengthens this by emphasizing the poetic ambiguity of space and the way the works approach painting’s illusionism.*2\n\nFinal website copy should therefore stress perception and ambiguity, not only architectural motif.*1*2*3",
+        "links": [
+            {
+                "url": "https://www.metmuseum.org/art/collection/search/291496",
+                "label": "The Metropolitan Museum of Art — TILA (Passage I)"
+            },
+            {
+                "url": "https://artmap.com/anhava/exhibition/pertti-kekarainen-2008",
+                "label": "Galerie Anhava — Pertti Kekarainen: TILA"
+            },
+            {
+                "url": "https://www.poriartmuseum.fi/en/exhibition-archive/intersection-between-past-and-future-2/",
+                "label": "Pori Art Museum — Intersection: Between Past and Future"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.metmuseum.org/art/collection/search/291496",
+                "name": "TILA (Passage I) — The Metropolitan Museum of Art"
+            },
+            {
+                "num": 2,
+                "url": "https://artmap.com/anhava/exhibition/pertti-kekarainen-2008",
+                "name": "Pertti Kekarainen – TILA series — Galerie Anhava / Artmap"
+            },
+            {
+                "num": 3,
+                "url": "https://www.poriartmuseum.fi/en/exhibition-archive/intersection-between-past-and-future-2/",
+                "name": "Intersection – Between Past and Future — Pori Art Museum"
+            }
+        ]
+    },
+    "peter-piller": {
+        "leadJa": "1968年ドイツ生まれ。地方新聞の報道写真やアマチュア撮影のヴァナキュラー画像を収集・分類・再配置することで新たな意味を生み出す。写真の意味は作者の意図ではなく分類と流通によって生産されるという命題を、アーカイブ的な作品構造そのものによって実証した。",
+        "leadEn": "German artist born in 1968, working with photography, found images, artist books, and archival systems.*1*2 Best known for collecting, classifying, and repurposing vernacular images—especially press photographs and amateur material—into new conceptual arrangements.*1*2*3",
+        "textJa": "経歴\n\n1968年ドイツ生まれ。地方新聞の報道写真を中心に、意図されなかった写真的意味を帯びるヴァナキュラー画像を大量に収集・分類した《Archiv Peter Piller》などの実践で知られる。*1 MACBA（バルセロナ）をはじめ国際的な美術館・展覧会を通じて発表し、*1 Capitain Petzel（ベルリン）が代表ギャラリーを務める。*2\n\n表現解説\n\nピラーの実践の核心は、美的意図なしに制作された写真——主に地方新聞の報道写真やアマチュア撮影物——を収集・類型化することで、これらの画像が共通して担っている社会的視覚の構造を露わにすることにある。個々の写真は平凡で見過ごされがちだが、類似した主題・構図・文脈を持つ画像を大量に並置することで、見る習慣・編集上の選択・日常のイデオロギーが浮かび上がる。*1\n\n《Vorzüge der Absichtslosigkeit（無意図性の利点）》などの連作タイトルは方法論の核を端的に示す——無意図で制作された画像ほど、意図せずして社会的視覚の慣習を映し出す。*2 アーティスト・ブック・壁面配列・アーカイブ展示という提示形式は、個別の画像よりも分類システムそのものに焦点を当て、観者に写真の「読み方」の恣意性を意識させる。マス・メディアの象徴的画像ではなく、ローカルで消耗品的な画像に向かう選択が、彼の実践をアプロプリエーション・アートの隣接領域から区別する点でもある。*3\n\n1990年代から2000年代にかけてアーカイブが現代アートの中心的関心となった時期に、ピラーの実践は写真の複製性・管理的用途・集合的産出という問いに独自の回答を与えた。写真の意味が作者の意図ではなく、分類・流通・制度的選択という集合的プロセスによって生産されるという命題を、作品の構造そのものによって実証した点がピラーの歴史的意義の中心にある。*1\n\n批評と受容\n\nMACBAはピラーをヴァナキュラー画像システムとアーカイブの政治という文脈に置き、収集と分類という行為を奇抜な趣味ではなく概念的実践として位置づけた。*1 Capitain Petzelの資料もアーカイブ・写真史・視覚的バナリティとの関係においてピラーの実践を理解する視点を提供する。*2 写真文化を行政的・集合的プロセスとして暴く実践者として評価が定着しており、アーカイブを主題とする写真・現代アートの展開に貢献した作家として位置づけられている。",
+        "textEn": "Biography\n\nGerman artist born in 1968, working with photography, found images, artist books, and archival systems.*1*2\n\nBest known for collecting, classifying, and repurposing vernacular images—especially press photographs and amateur material—into new conceptual arrangements.*1*2*3\n\nExpression / method\n\nMain themes: archive, classification, vernacular photography, institutional vision, repetition, absurdity, and the social life of overlooked images.*1*2*3\n\nRepresentative work examples: Archiv Peter Piller, Vorzüge der Absichtslosigkeit and related classifications of regional newspaper photography are central because they show how Piller’s practice depends on collecting and reordering images that were never intended for aesthetic significance.*1*2*3\n\nTechnique / formal traits: appropriation of found photographs, taxonomic grouping, artist books, wall-based arrays, and a cool conceptual presentation that derives meaning from repetition and category rather than from singular images.*1*2*3\n\nWhy this method was chosen: Piller’s work begins from the intuition that overlooked pictures already contain structures of social vision. By reorganizing them, he reveals habits of seeing, editorial selection, and everyday ideology that would remain invisible if the images were viewed one by one.*1*2\n\nHistorical context: his work emerges in the 1990s and 2000s, when the archive became central to contemporary art and when photography’s reproducibility and administrative uses were being reconsidered. Piller’s practice belongs to that postconceptual turn while staying tied to vernacular print culture.*1*2*3\n\nRelation to contemporaries or movements: he can be placed near archival conceptual art and appropriation-based photography, but differs from artists focused on iconic mass-media imagery by concentrating on minor, local, and almost disposable pictures. This gives his work a distinct relation to banality and bureaucracy.*1*2*3\n\nHistorical significance: he matters because he transformed neglected vernacular images into a major field of artistic inquiry, helping photography history shift toward archives, systems, and the social organization of images rather than only authors and masterpieces.*1*2\n\nCritical meaning: the work matters because it demonstrates that photography’s meaning is often produced by classification and circulation rather than by intention. Piller’s art exposes visual culture as an administrative and collective process.*1*2*3\n\nWhere and how the work was used: his work circulated through museums, artist books, archive-focused exhibitions, and gallery presentations. MACBA and gallery biography materials are useful because they frame him not just as a collector of odd pictures, but as an artist of systems, ordering, and the politics of the minor image.*1*2\n\nCriticism and reception\n\nInstitutional reception consistently emphasizes the importance of the archive and of vernacular image systems in Piller’s work.*1*2\n\nMACBA is particularly useful because it places Piller inside a broader contemporary-art history of collecting and reclassification, clarifying the conceptual stakes beyond humor or eccentricity.*1\n\nFinal website copy should stress that Piller’s work is historically important because it changed what kinds of photographs could matter in art discourse.*1*2*3",
+        "links": [
+            {
+                "url": "https://www.macba.cat/en/actor/peter-piller/",
+                "label": "MACBA — Peter Piller"
+            },
+            {
+                "url": "https://www.capitainpetzel.de/artists/peter-piller/",
+                "label": "Capitain Petzel — Peter Piller"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.macba.cat/en/actor/peter-piller/",
+                "name": "Peter Piller — MACBA"
+            },
+            {
+                "num": 2,
+                "url": "https://www.capitainpetzel.de/artists/peter-piller/",
+                "name": "Peter Piller — Capitain Petzel"
+            },
+            {
+                "num": 3,
+                "url": "https://www.capitainpetzel.de/usr/library/documents/main/artists/50/piller_bio.pdf",
+                "name": "Peter Piller biography — Capitain Petzel"
+            }
+        ]
+    },
+    "philip-lorca-dicorcia": {
+        "leadJa": "1951年アメリカ・ハートフォード生まれ。精密に制御された照明と半演出による場面構成を通じて、ドキュメンタリーの事実性と映画的フィクションの間に存在する写真を制作した。《Hustlers》をはじめとする連作は、写真のリアリティへの主張を内側から問い直しながら、社会的周縁性と日常的なパフォーマンスを探求した。",
+        "leadEn": "American photographer born in 1951 in Hartford, Connecticut.*1*2*3 Known for photographs that occupy the space between documentary fact and cinematic staging, especially through series such as Hustlers, Streetwork, and later street portraits.*1*2*3",
+        "textJa": "経歴\n\n1951年コネティカット州ハートフォード生まれ。1990年代初頭の《Hustlers》（1990–92）で国際的評価を確立し、《Streetwork》《Heads》など複数の連作を通じて作品を展開してきた。*3 2014–15年のMoMA大規模個展《Photographs 1975–2013》は、四十年近い実践の全体像を提示した。*1 ミュージアム・デ・ポント（ティルブルフ）など国際的機関にも収蔵されている。*3\n\n表現解説\n\nディコルシアの実践の特徴は、観察と構築の間隙で機能する写真を制作することにある。高度に制御された照明、慎重な半演出、大判プリント、映画的だが抑制されたドラマ——これらの形式的要素が組み合わさり、一見カンディッドでありながら演劇的でもある画像が生まれる。*2 観者は写真の真実性を確認することも完全に否定することもできず、その不確かさこそが作品の中心的な力をなす。\n\n《Hustlers》（1990–92）はMoMAとICA Bostonの評価において特に重視される。男性売春を生業とする人物を被写体に、支払われた金額と演技的なポーズが共存する場面は、社会的周縁性・パフォーマンス・金銭的交換を視覚言語として結びつけ、映画とドキュメンタリーの双方に由来する語法を一枚の画像に収めた。*1 《Streetwork》など路上での作品では、隠したフラッシュによってニューヨークの通行人が照らし出されるが、人物は撮影を意識せず、意図的な構成と偶然性が共存する。*2\n\nポスト戦後の街頭写真とドキュメンタリー的真実への概念的批評が浸透しつつあった時代に、ドキュメンタリーの事実性と構築されたフィクションを対立ではなく緊張として共存させる実践は、以後の写真家に強い影響を与えた。*3\n\n批評と受容\n\nICA Bostonはディコルシアを過去三十年で最も影響力のある写真家の一人と位置づけ、誠実さと操作の間を往来する作品の力を強調した。*2 MoMAの大規模個展は、ポートレート写真家・演出写真家という個別のカテゴリーではなく、写真的ナラティブの条件そのものを変えた作家として彼を制度的に確立した。*1 《Hustlers》は社会的主題の重要性と形式的革新の両面において写真史の重要な転換点として繰り返し言及されている。",
+        "textEn": "Biography\n\nAmerican photographer born in 1951 in Hartford, Connecticut.*1*2*3\n\nKnown for photographs that occupy the space between documentary fact and cinematic staging, especially through series such as Hustlers, Streetwork, and later street portraits.*1*2*3\n\nExpression / method\n\nMain themes: performance in everyday life, urban anonymity, masculinity, vulnerability, staged encounter, chance, and the unstable relation between documentary description and fiction.*1*2*3\n\nRepresentative work examples: Hustlers (1990–92), later street portraits, and works shown in Photographs 1975–2013 are central because they show how diCorcia constructs scenes that appear simultaneously candid and theatrical.*1*2*3\n\nTechnique / formal traits: highly controlled lighting, careful staging or semi-staging, large prints, dramatic but understated color, and an open-ended narrative quality that often resembles cinema while borrowing subjects from street photography and portraiture.*1*2*3\n\nWhy this method was chosen: diCorcia repeatedly works in the gap between observation and construction. By directing some aspects of the scene while preserving the contingency of others, he tests photography’s claim to truth without abandoning the real world.*1*2\n\nHistorical context: his work emerges after postwar street photography and after conceptual critique of documentary truth, at a moment when photography in museums was increasingly open to cinematic narrative and staged reality.*1*2*3\n\nRelation to contemporaries or movements: he is often discussed in relation to staged photography, cinematic tableau, and street practice, yet his work remains distinctive because it does not fully settle into any one of those categories. The photographs depend on the tension between preparation and chance.*1*2\n\nHistorical significance: he matters because he helped redefine late twentieth-century art photography by showing that documentary fact and constructed fiction need not be opposites. His practice strongly influenced how later photographers approached portraiture, street photography, and narrative ambiguity.*1*2*3\n\nCritical meaning: the work matters because it destabilizes the ethics and ontology of the image. The viewer is never allowed to rest in either documentary authenticity or pure fabrication; that uncertainty is the work’s central historical force.*1*2*3\n\nWhere and how the work was used: his photographs circulated through MoMA, ICA Boston, international survey exhibitions, and later collection displays. The 2014–15 MoMA survey is especially useful because it organized nearly four decades of work and made clear the continuity of his hybrid method.*1*2\n\nCriticism and reception\n\nICA Boston’s framing presents diCorcia as one of the most influential photographers of the previous three decades, stressing how the work moves between honesty and manipulation.*2\n\nMoMA’s survey materials are useful because they show how museums have canonized him not simply as a portraitist or staged photographer, but as an artist who changed the terms on which photographic narrative is understood.*1\n\nReception often emphasizes Hustlers as a key turning point because it joined social marginality, performance, and financial transaction to a visual language derived from both cinema and documentary.*1*2*3",
+        "links": [
+            {
+                "url": "https://www.moma.org/documents/moma_press-release_327654.pdf",
+                "label": "MoMA — Philip-Lorca diCorcia: Photographs 1975–2013 (press release)"
+            },
+            {
+                "url": "https://www.icaboston.org/exhibitions/philip-lorca-dicorcia/",
+                "label": "ICA Boston — Philip-Lorca diCorcia"
+            },
+            {
+                "url": "https://depont.nl/en/collection/more-information/philip-lorca-dicorcia",
+                "label": "Museum De Pont — Philip-Lorca diCorcia"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://www.moma.org/documents/moma_press-release_327654.pdf",
+                "name": "Philip-Lorca diCorcia: Photographs 1975–2013 press release — MoMA"
+            },
+            {
+                "num": 2,
+                "url": "https://www.icaboston.org/exhibitions/philip-lorca-dicorcia/",
+                "name": "Philip-Lorca diCorcia — Institute of Contemporary Art / Boston"
+            },
+            {
+                "num": 3,
+                "url": "https://depont.nl/en/collection/more-information/philip-lorca-dicorcia",
+                "name": "Philip-Lorca diCorcia — Museum De Pont"
+            }
+        ]
+    },
+    "ricarda-roggan": {
+        "leadJa": "1972年ドレスデン生まれ。廃棄された車両・家具・工業的残滓・空白の室内を主題にしながら、実際には被写体を見て・変形し・再演出した上で撮影するという方法を特徴とする。写真を歴史的痕跡の透明な記録ではなく、放棄された物や場所に新たな視覚的秩序を与える構築的行為として実践した。",
+        "leadEn": "German photographer born in 1972 in Dresden.*1*2 Known for analog photographs of abandoned objects, interiors, industrial remnants, and staged spatial situations that hover between still life, landscape, and archaeology of the recent past.*1*2",
+        "textJa": "経歴\n\n1972年ドレスデン生まれ。ライプツィヒ写真の文脈に位置づけられながら、廃棄された車両・家具・工業的残滓・空白の室内を主題にした作品で知られる。《Garage》《Reset》《Set》《1971》などの連作を経て、ライプツィヒ造形芸術美術館（MdbK）での個展《Der dunkle Wunsch der Dinge》が実践の全体像を提示した。*1 Zabludowicz Collectionなど国際的コレクションにも収蔵されている。*2\n\n表現解説\n\nロガンの実践の特徴は、ドキュメンタリーのように見えながら実際には対象を見て・変形し・再演出した上で撮影するという構築的方法にある。MdbKの展覧会テキストはこの方法を明確に示しており、*1 アナログ写真が透明な記録ではなく、放棄の痕跡を帯びた物や場所に新たな視覚的秩序を与えるために使われていることを明示する。前景に置かれた静物・空の部屋・廃車・放棄されたインテリアは、静物・建築・インスタレーションの境界に位置する曖昧な対象として現れる。*2\n\n東ドイツ崩壊後の廃墟・工業的残滓・時代遅れのインテリアが記憶と政治的残響の媒体として注目された歴史的文脈において、ロガンの実践は単純な廃墟写真とは異なる独自の立場を示す。*3 再演出という行為がドキュメンタリー的な外観を保ちながらも歴史的痕跡に人工的な秩序を与える——この二重性が作品の中心的な問いをなす。物と場所は社会的システムの残滓として現れるが、その読み方はアナログ写真の物質性と配置の人工性によって意図的に開かれたままにされる。\n\n批評と受容\n\nMdbKの枠組みは最も強い批評的視点を提供し、ロガンを痕跡の「探索者」と「考古学者」として示しながらも、演出と再演出の重要性を強調する。*1 Zabludowicz Collectionのテキストは《Garage》などの作品を東ドイツの物質文化の残響と非ナラティブな画像の力として位置づける。*2 単純なドキュメント的廃墟写真への還元を拒み、歴史的残滓に構築的な視覚秩序を与える実践として一貫して評価されている。",
+        "textEn": "Biography\n\nGerman photographer born in 1972 in Dresden.*1*2\n\nKnown for analog photographs of abandoned objects, interiors, industrial remnants, and staged spatial situations that hover between still life, landscape, and archaeology of the recent past.*1*2\n\nExpression / method\n\nMain themes: abandonment, memory, post-industrial space, material remains, staging, and the afterlife of places and objects once linked to East German and post-industrial histories.*1*2*3\n\nRepresentative work examples: Garage, Reset, Set, 1971, and later museum presentations such as Der dunkle Wunsch der Dinge are central because they show Roggan’s sustained attention to things and sites that appear documentary but are actually transformed, re-staged, and re-sequenced.*1*2*3\n\nTechnique / formal traits: analog photography, frontal or compressed spatial views, carefully lit objects, empty rooms, car wrecks, furniture, and abandoned sites; repeated staging or rearrangement before exposure; and a preference for ambiguity between still life, architecture, and installation.*1*2*3\n\nWhy this method was chosen: the MdbK exhibition text is especially useful because it explicitly states that Roggan views, transforms, restages, and then photographs sites and objects. Her method uses analog photography not for transparency but to give new temporal and spatial order to things already marked by abandonment.*1\n\nHistorical context: Roggan belongs to a generation after German reunification for whom ruins, industrial remains, and obsolete interiors became key materials for thinking about memory and political afterlife. Her work extends that context into a broader inquiry into how objects survive social systems.*1*2*3\n\nRelation to contemporaries or movements: she is related to Leipzig photography and post-documentary still life, but differs from neutral ruin photography by actively staging and re-staging the scene before photographing it.*1*2\n\nHistorical significance: Roggan matters because she complicates the relation between document and mise-en-scène in post-industrial photography. Her images preserve traces of history while making clear that photographic order is itself constructed.*1*2*3\n\nCritical meaning: the work matters because it treats objects and spaces as carriers of social memory without reducing them to illustration. The photographs remain open, but their openness is produced through deliberate acts of arrangement and temporal displacement.*1*2\n\nWhere and how the work was used: museum and collection texts are useful because they place Roggan in conversations about Leipzig photography, conceptual still life, and material memory. MdbK’s retrospective framing is particularly helpful for linking older works and newer restagings.*1*2*3\n\nCriticism and reception\n\nMdbK’s exhibition framing is especially strong because it describes Roggan as a searcher and archaeologist of traces, while also insisting on the importance of staging and restaging.*1\n\nZabludowicz’s collection text is useful because it ties works such as Garage to the afterlife of East German material culture and to the suggestive, non-narrative charge of the image.*2\n\nFinal website copy should therefore avoid describing Roggan as a simple documentarian of abandoned space. The stronger point is that she uses analog photography to build new visual orders out of historical remains.*1*2*3",
+        "links": [
+            {
+                "url": "https://mdbk.de/en/exhibitions/ricarda-roggan-der-dunkle-wunsch-der-dinge/",
+                "label": "MdbK Leipzig — Ricarda Roggan: Der dunkle Wunsch der Dinge"
+            },
+            {
+                "url": "https://www.zabludowiczcollection.com/collection/artists/view/ricarda-roggan",
+                "label": "Zabludowicz Collection — Ricarda Roggan"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://mdbk.de/en/exhibitions/ricarda-roggan-der-dunkle-wunsch-der-dinge/",
+                "name": "Ricarda Roggan: Der dunkle Wunsch der Dinge — Museum der bildenden Künste Leipzig"
+            },
+            {
+                "num": 2,
+                "url": "https://www.zabludowiczcollection.com/collection/artists/view/ricarda-roggan",
+                "name": "Ricarda Roggan — Zabludowicz Collection"
+            },
+            {
+                "num": 3,
+                "url": "https://www.smb.museum/fileadmin/website/Presse/Pressematerial/2024/09/04_HBF_MuseuminBewegung_Ausstellungstexte_en.pdf",
+                "name": "Museum in Bewegung exhibition texts — Staatliche Museen zu Berlin"
+            }
+        ]
+    },
+    "rinko-kawauchi": {
+        "leadJa": "1972年滋賀県生まれ。2001年の写真集デビューから《うたたね》《花火》《Illuminance》《Ametsuchi》など連続する書物形式を通じて、日常の細部・光・生死の瞬間を連ね、小さな知覚が生と時間の巡環を示唆する写真実践を確立した。現代日本写真における写真集文化の重要な担い手のひとり。",
+        "leadEn": "Japanese photographer born in 1972 in Shiga Prefecture.*1*2*3 Became widely known in the early 2000s through photobooks such as Utatane, Hanabi, and Hanako, and has remained a key figure in contemporary Japanese photography.*2*3",
+        "textJa": "経歴\n\n1972年滋賀県生まれ。2001年の写真集『うたたね』『花火』『花子』で国際的に注目を集め、*3 以後《Illuminance》（2011）《Ametsuchi》（2013）など継続的に写真集と展覧会を通じて発表してきた。*2 ミネアポリス美術館での個展《New Pictures 9: Rinko Kawauchi》など国際的な美術館での発表も重ねてきた。*1\n\n表現解説\n\n川内の実践の特徴は、日常のごく小さな細部——光・虫・食・火・水——を連続する書物形式で提示することで、それぞれの写真が個々の瞬間の記録であると同時に生と死、微小と宇宙の往還を示唆するという点にある。*1 個々の画像は単純に見えるが、リズムと並置によって感情的・哲学的な共鳴が生まれ、これが川内の実践においてブック形式が不可欠な要素である所以である。*2\n\nミネアポリス美術館のフレーミングは、川内の作品を私的な叙情性としてではなく、生の脆弱さと相互連関についての広い省察として提示した。*1 ありふれた対象が繊細な光の扱いと丁寧な連続構成によって存在の閾にある対象として現れる——この転換がICPをはじめ国際的な機関における受容の核をなす。*3 2000年代初頭、戦後の荒・ブレ・ボケの歴史的文脈とは異なる方向で日本写真が国際的に読まれ始めた時代に、川内はカラー・叙情的連作・日常性という独自の経路を示した。\n\n批評と受容\n\n初期写真集の国際的影響は一貫して評価の中核にあり、ICPの言及は川内が早期に重要な現代日本写真家として認識されたことを示す。*3 ミネアポリス美術館の展示は、書物形式での受容に慣れた観客に向けて川内の実践を美術館フレームで提示した重要な例である。*1 川内の歴史的意義は単独イメージよりも、連続する書物形式と感情的なリズムが相まって生の形而上学的な問いを提示することへの評価に支えられている。*2",
+        "textEn": "Biography\n\nJapanese photographer born in 1972 in Shiga Prefecture.*1*2*3\n\nBecame widely known in the early 2000s through photobooks such as Utatane, Hanabi, and Hanako, and has remained a key figure in contemporary Japanese photography.*2*3\n\nExpression / method\n\nMain themes: everyday life, fragility, birth and death, memory, spirituality, seasonal change, and the quiet relation between ordinary detail and larger cycles of existence.*1*2*3\n\nRepresentative work examples: Utatane, Hanabi, Hanako, and later projects such as Illuminance and Ametsuchi are central because they show how Kawauchi transforms ordinary moments into linked emotional and metaphysical sequences.*1*2*3\n\nTechnique / formal traits: color photography with luminous light, close attention to small details, sequencing across books, and a sensitivity to soft transitions between the intimate and the cosmic. Her images often appear simple, but depend heavily on rhythm and juxtaposition.*1*2*3\n\nWhy this method was chosen: Kawauchi’s work uses photography to register moments that are easily overlooked but emotionally resonant. The image becomes a way of holding together transience, wonder, and embodied everyday experience without forcing explicit narrative.*1*2\n\nHistorical context: her rise in the early 2000s belongs to a moment when Japanese photography was being read internationally beyond postwar are-bure-boke histories. Kawauchi offered a different path: color, lyric sequencing, and an attention to the ordinary that nevertheless carried existential and spiritual weight.*1*2*3\n\nRelation to contemporaries or movements: she is often placed within contemporary Japanese photography, but her work differs from street-derived documentary or overt conceptualism by foregrounding atmosphere, sequence, and the poetics of the everyday. Her books are especially important to how the work is historically understood.*2*3\n\nHistorical significance: she matters because she helped redefine the contemporary Japanese photobook and because she demonstrated that photographic intimacy and small-scale perception could carry major historical and artistic force in the global art-photography field.*1*2*3\n\nCritical meaning: the work matters because it makes the ordinary newly perceptible. Kawauchi’s images are not simply “beautiful”; they test how photography can hold vulnerability, temporality, and continuity without dramatic event or obvious symbolism.*1*2*3\n\nWhere and how the work was used: her work circulated through photobooks, international museum exhibitions, and collection displays. ICP, the artist’s own biography, and museums like Mia are useful together because they show both her rapid early reception and the longer continuity of her practice.*1*2*3\n\nCriticism and reception\n\nInstitutional and photobook reception consistently treats Kawauchi as a major figure in contemporary Japanese photography, especially because of the impact of her early books.*1*2*3\n\nArtsMIA’s exhibition framing is useful because it shows how her work has been translated for museum audiences: not as private lyricism alone, but as a broader meditation on life’s fragility and interconnection.*1\n\nFinal website copy should emphasize sequence and book form as crucial to reception; single images matter, but much of Kawauchi’s historical significance lies in how groups of images create emotional and conceptual resonance.*2*3",
+        "links": [
+            {
+                "url": "https://new.artsmia.org/exhibition/new-pictures-9-rinko-kawauchi/",
+                "label": "Minneapolis Institute of Art — New Pictures 9: Rinko Kawauchi"
+            },
+            {
+                "url": "https://rinkokawauchi.com/en/biography/",
+                "label": "Rinko Kawauchi — Official biography"
+            },
+            {
+                "url": "https://www.icp.org/content/rinko-kawauchi",
+                "label": "ICP — Rinko Kawauchi"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://new.artsmia.org/exhibition/new-pictures-9-rinko-kawauchi/",
+                "name": "New Pictures 9: Rinko Kawauchi — Minneapolis Institute of Art"
+            },
+            {
+                "num": 2,
+                "url": "https://rinkokawauchi.com/en/biography/",
+                "name": "Rinko Kawauchi Biography — rinkokawauchi.com"
+            },
+            {
+                "num": 3,
+                "url": "https://www.icp.org/content/rinko-kawauchi",
+                "name": "Rinko Kawauchi — International Center of Photography"
+            }
+        ]
+    },
+    "rosangela-renno": {
+        "leadJa": "1962年ブラジル生まれ。廃棄・放置された写真的材料——旧聞のアーカイブ・アルバム・ネガ・新聞記事——を収集・再配置・再活性化することで、写真が記憶の生産と喪失の場として機能する様を問う。アーカイブの再利用を通じて社会的忘却と制度的暴力の痕跡を可視化した、ラテンアメリカ写真の重要な実践家。",
+        "leadEn": "Brazilian artist born in 1962, working with photography, found images, archives, books, and installation.*1*2*3 Known for archive-based works that recover, reorganize, or reactivate discarded photographic materials and textual traces, treating photography as a site of memory and recontextualization rather than direct capture.*1*2*3",
+        "textJa": "経歴\n\n1962年生まれ。1980年代後半からアーカイブに基づく写真実践を展開し、《United States / Estados Unidos》（1997）《Bibliotheca》《Wedding Landscape》（1996）《Universal Archive》などの連作・インスタレーションで知られる。*1 Galeria Vermelho（サンパウロ）を通じた発表に加え、*3 国際的なビエンナーレや美術館を通じて広く評価されてきた。\n\n表現解説\n\nレノーの実践の核心は、写真を直接的な捕捉のためではなく「批評的再文脈化」のための作業場（workplace）として扱うことにある。*2 捨てられた写真・ネガ・新聞の切り抜き・古いアルバム——これらの廃棄されたか忘却の危機にある写真的材料を収集し、インスタレーションや写真集として再配置することで、画像が担っていた社会的記憶と制度的暴力の痕跡を可視化する。*1\n\n1980–90年代のラテンアメリカが独裁・行方不明者・記憶の政治という主題に直面していた歴史的文脈において、レノーの実践は写真アーカイブそのものが権力の道具・記憶の抑圧・社会的忘却の場として機能しうることを批評的に示した。*3 アプロプリエーション・アートの文脈に近接しながらも、象徴的なマス・メディア画像ではなく、放棄・消耗・行政的に見過ごされた画像に向かう選択が彼女の実践を区別する。写真のアフターライフ——露光の瞬間ではなく保存・喪失・再活性化という過程——が芸術的探究の核をなすことを示した先駆的な実践として、アーカイブ的写真の歴史において特異な位置を占める。*2\n\n批評と受容\n\nアパーチャーはレノーを英語圏の写真史において過小評価されてきた重要な国際的作家として位置づけ、*4 自身のサイトとGaleria Vermelhoの資料はアーカイブの再活性化・記憶闘争・制度批評としての実践を一貫して強調する。*1 *3 写真の意味が露光の瞬間ではなく保存・流通・再使用のプロセスによって生産されるという問いにおいて、レノーはアーカイブ的写真実践の中核に位置する作家として評価が定着している。",
+        "textEn": "Biography\n\nBrazilian artist born in 1962, working with photography, found images, archives, books, and installation.*1*2*3\n\nKnown for archive-based works that recover, reorganize, or reactivate discarded photographic materials and textual traces, treating photography as a site of memory and recontextualization rather than direct capture.*1*2*3\n\nExpression / method\n\nMain themes: archive, memory, disappearance, found photographs, colonial history, amnesia, and the social afterlife of abandoned images.*1*2*3\n\nRepresentative work examples: United States / Estados Unidos (1997), Espelho diário, Bibliotheca, Wedding Landscape (1996), and the long-running Universal Archive are central because they show how Rennó turns archival fragments and textual residues into new systems of relation.*1*2*3*4\n\nTechnique / formal traits: appropriation of found photographs, negatives, news items, albums, and obsolete devices; reformatting images as installations and artist books; layering texts and visual remnants; and treating the archive as an active field of artistic operation.*1*2*3\n\nWhy this method was chosen: the artist’s own archival essays are especially useful because they describe photography as a “workplace” of critical recontextualization and anamnesiac experimentation. This clarifies that Rennó is not simply collecting found images; she is testing how archives produce and fail memory.*2\n\nHistorical context: Rennó emerges in the 1980s and 1990s amid Latin American debates on memory, dictatorship, disappearance, and the political life of archives. Her work belongs to that context while also speaking to broader post-conceptual concerns with the found image and institutional memory.*1*2*3\n\nRelation to contemporaries or movements: she can be linked to conceptual photography and archive art, but differs by persistently using found photography to expose social forgetting, bureaucratic violence, and the instability of historical record.*1*2*3\n\nHistorical significance: Rennó matters because she made archival reuse one of the most powerful strategies in contemporary photography. Her work is historically significant for showing that the photograph’s afterlife—its storage, loss, and reactivation—can be as important as the moment of exposure.*1*2*3\n\nCritical meaning: the work matters because it treats archives as both necessary and damaged. Rennó’s works insist that images survive through systems that also distort, erase, and aestheticize them.*1*2*3\n\nWhere and how the work was used: her work circulated internationally through institutions such as the Photographers’ Gallery, MoMA-related collection contexts, and biennials. The reviewed materials are especially useful because they frame her not simply as an appropriator but as an artist of archival action.*1*2*3*4\n\nCriticism and reception\n\nAperture’s essay is especially valuable because it situates Rennó as an artist whose photographic practice has often been under-registered in Anglophone histories despite strong international importance.*4\n\nHer own site and gallery materials consistently emphasize the archive as a site of reactivation, memory struggle, and institutional critique.*1*2*3\n\nFinal website copy should therefore center archive, memory, and recontextualization rather than simply “found photography.” Rennó’s importance lies in how she transforms abandoned or indirect photographic material into historical argument.*1*2*3*4",
+        "links": [
+            {
+                "url": "https://rosangelarenno.com/archive",
+                "label": "Rosângela Rennó — Archive"
+            },
+            {
+                "url": "https://galeriavermelho.com.br/en/artistas/rosangela-renno/",
+                "label": "Galeria Vermelho — Rosângela Rennó"
+            },
+            {
+                "url": "https://archive.aperture.org/article/2013/4/4/rosangela-renno",
+                "label": "Aperture — Rosângela Rennó"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://rosangelarenno.com/archive",
+                "name": "Archive — Rosângela Rennó"
+            },
+            {
+                "num": 2,
+                "url": "https://rosangelarenno.com/ros%C3%A2ngela-renn%C3%B3%27s-archival-disseminations",
+                "name": "Rosângela Rennó's Archival Disseminations — rosangelarenno.com"
+            },
+            {
+                "num": 3,
+                "url": "https://galeriavermelho.com.br/en/artistas/rosangela-renno/",
+                "name": "Rosângela Rennó — Galeria Vermelho"
+            },
+            {
+                "num": 4,
+                "url": "https://archive.aperture.org/article/2013/4/4/rosangela-renno",
+                "name": "Rosângela Rennó — Aperture"
+            }
+        ]
+    },
+    "rut-blees-luxemburg": {
+        "leadJa": "1967年ドイツ生まれ、ロンドン拠点。夜の都市——再開発の残滓・不完全な構造・見過ごされた表面——を長時間露光の大判カラー写真で記録した。《London Dust》などの作品を通じて、夜の光と都市の表面が都市開発の欲望・失敗・イデオロギーを読み解く批評的道具となることを示した。",
+        "leadEn": "German-born, London-based photographer born in 1967.*1*2 Known for large-scale nocturnal photographs of cities, especially London, and for later public works that connect photography, architecture, and urban thought.*1*2",
+        "textJa": "経歴\n\n1967年ドイツ生まれ、ロンドン在住。夜の都市景観の大判カラー写真で知られ、《London Dust》はフォトグラファーズ・ギャラリー（ロンドン）のテキストを通じて重要な作品として評価されてきた。*1 《Silver Forest》などの公共委嘱作品や、MoMAの《Uneven Growth: Tactical Urbanisms for Expanding Megacities》展への参加など、建築・都市論の文脈でも発表してきた。*3\n\n表現解説\n\nルクセンブルクの実践の核心は、夜の都市と長時間露光を組み合わせることで、都市の表面が日常的な実用性から切り離され、イデオロギー的・思索的・未完成の構造として現れるようにすることにある。*1 反射する水面・剥き出しのコンクリート・工事中の骨組み・見過ごされた通路——これらは写真の中で視覚的な誘惑と構造的な失敗が同時に存在する対象となる。《London Dust》の中心的サイトは「未完の夢の失敗した対象」として読み取ることができ、*2 投機的な都市開発の美学と崩壊を一枚の画像に凝縮している。\n\n高所・斜め視点からの撮影、高精細なカラー印刷、夜景特有のディテールへの注意が形式的特徴として一貫している。*1 都市は安定した事実としてではなく、未完成のイデオロギー的表面として現れる——再開発・民営化・投機的建設が進んだ20世紀末の都市において、都市写真が中立的なサーベイではなく権力の批評的読解として機能しうることを示した実践として際立っている。ギャラリー写真と都市論の双方に参加したMoMAの戦術的アーバニズム展への参加もその越境性を示す。*3\n\n批評と受容\n\nフォトグラファーズ・ギャラリーのテキストは、ルクセンブルクを単なる夜景写真家ではなく都市美学と公共空間の思想家として枠組んだ点で重要である。*1 都市の表面が投機・欲望・失敗を記録する場であることを示した点が評価され、*2 夜・光・廃墟が晩期近代都市のイデオロギー的・経済的構造を露わにするものとして使われているという評価が定着している。*3",
+        "textEn": "Biography\n\nGerman-born, London-based photographer born in 1967.*1*2\n\nKnown for large-scale nocturnal photographs of cities, especially London, and for later public works that connect photography, architecture, and urban thought.*1*2\n\nExpression / method\n\nMain themes: the nocturnal city, urban residue, development, failed architecture, marginal space, and the relation between photography and urban aesthetics.*1*2\n\nRepresentative work examples: London Dust, later public work such as Silver Forest, and urban photographs used in architectural and urbanism contexts are central because they show how Luxemburg moves between gallery image, public commission, and critical urban discourse.*1*2\n\nTechnique / formal traits: long exposures at night, elevated or oblique urban viewpoints, highly detailed color printing, and a preference for overlooked sites, reflective surfaces, incomplete structures, and industrial textures.*1*2\n\nWhy this method was chosen: The Photographers’ Gallery’s framing is especially useful because it treats the work as urban aesthetics rather than simply city photography. Darkness and artificial light allow Luxemburg to detach sites from everyday utility and show them as ideological, speculative, or failed constructions.*1*2\n\nHistorical context: her work emerges in the late twentieth-century city, shaped by redevelopment, privatization, and speculative construction. Photography here is not a neutral city survey; it becomes a critical tool for reading how urban power is inscribed in surfaces and unfinished structures.*1*2\n\nRelation to contemporaries or movements: she can be placed near architectural and urban landscape photography, but differs from detached typology by making mood, night, and infrastructural residue central to urban critique.*1*2\n\nHistorical significance: Luxemburg matters because she turned city photography into a mode of urban criticism attentive to both visual seduction and structural failure. Her photographs insist that the built environment must be read politically as well as formally.*1*2\n\nCritical meaning: the images matter because they transform apparently secondary sites into concentrated readings of metropolitan desire, abandonment, and projection. The city appears not as stable fact but as an unfinished ideological surface.*1*2\n\nWhere and how the work was used: her work circulated not only in photography contexts but also through architecture and urbanism discourse. The Photographers’ Gallery and MoMA’s Uneven Growth materials are useful here because they show how her photography entered debates about redevelopment, tactical urbanism, and the afterlives of incomplete planning.*1*2*3\n\nCriticism and reception\n\nThe Photographers’ Gallery’s writing is especially helpful because it frames Luxemburg not simply as a night photographer but as a thinker of urban aesthetics and public space.*1\n\nThe description of the central site in London Dust as a failed object of an incomplete dream is particularly useful for final writing because it condenses the work’s treatment of speculative urbanism.*2\n\nFinal website copy should therefore avoid reducing the work to atmosphere alone. The stronger critical point is that night, light, and ruin are used to reveal the ideological and economic structures of the late-modern city.*1*2*3",
+        "links": [
+            {
+                "url": "https://thephotographersgallery.org.uk/photography-culture/rut-blees-luxemburg-london-dust",
+                "label": "The Photographers' Gallery — Rut Blees Luxemburg: London Dust"
+            },
+            {
+                "url": "https://thephotographersgallery.org.uk/photography-culture/built-worlds-photography-landscape-and-different-natures",
+                "label": "The Photographers' Gallery — Built Worlds"
+            },
+            {
+                "url": "https://www.moma.org/d/pdfs/W1siZiIsIjIwMTgvMDYvMTMvM2xtcW9wNWViMl9Nb01BX1VuZXZlbkdyb3d0aF9QUkVWSUVXLnBkZiJdXQ/MoMA_UnevenGrowth_PREVIEW.pdf?sha=09af930d69ea9d9e",
+                "label": "MoMA — Uneven Growth: Tactical Urbanisms"
+            }
+        ],
+        "citations": [
+            {
+                "num": 1,
+                "url": "https://thephotographersgallery.org.uk/photography-culture/rut-blees-luxemburg-london-dust",
+                "name": "Rut Blees Luxemburg: London Dust — The Photographers' Gallery"
+            },
+            {
+                "num": 2,
+                "url": "https://thephotographersgallery.org.uk/photography-culture/built-worlds-photography-landscape-and-different-natures",
+                "name": "Built Worlds: Photography, landscape and different natures — The Photographers' Gallery"
+            },
+            {
+                "num": 3,
+                "url": "https://www.moma.org/d/pdfs/W1siZiIsIjIwMTgvMDYvMTMvM2xtcW9wNWViMl9Nb01BX1VuZXZlbkdyb3d0aF9QUkVWSUVXLnBkZiJdXQ/MoMA_UnevenGrowth_PREVIEW.pdf?sha=09af930d69ea9d9e",
+                "name": "Uneven Growth: Tactical Urbanisms for Expanding Megacities — MoMA"
+            }
+        ]
+    },
   }
 );
