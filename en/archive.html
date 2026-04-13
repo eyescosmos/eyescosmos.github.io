@@ -1166,8 +1166,8 @@ footer a:hover { color: var(--accent); }
   }
   .era-toggle {
     position: sticky;
-    top: calc(env(safe-area-inset-top, 0px) + 8px);
-    z-index: 6;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 12;
     gap: 12px;
     padding: 12px 0 10px;
     background: rgba(8, 8, 8, 0.95);
@@ -1287,12 +1287,15 @@ footer a:hover { color: var(--accent); }
     color: var(--text-dim);
   }
   .mobile-card-readmore {
+    display: inline-flex;
+    align-items: center;
     color: var(--accent);
     text-decoration: none;
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    padding: 2px 0;
   }
   .mobile-card-readmore:hover {
     color: var(--text);

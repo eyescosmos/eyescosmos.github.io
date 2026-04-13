@@ -1358,8 +1358,8 @@ function toggleDetail(pid, card) {
       card.classList.add('active');
       setLocationHash(`photographer-${pid}`);
       setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 40);
-    } else {
-      window.location.href = photographerPagePath(PHOTOGRAPHER_LOOKUP.get(pid) || { id: pid });
+    } else if (window.location.hash === `#photographer-${pid}`) {
+      setLocationHash('');
     }
     return;
   }
