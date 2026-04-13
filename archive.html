@@ -1127,6 +1127,7 @@ footer a:hover { color: var(--accent); }
     opacity: 1;
     transform: none;
     transition: none;
+    overflow: visible;
   }
   .era-body {
     height: auto !important;
@@ -1186,7 +1187,7 @@ footer a:hover { color: var(--accent); }
     top: calc(env(safe-area-inset-top, 0px) + 8px);
     z-index: 14;
     padding: 8px 0 7px;
-    margin: 0 0 8px;
+    margin: 0;
     font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
     font-size: 20px;
     line-height: 1;
@@ -1195,6 +1196,9 @@ footer a:hover { color: var(--accent); }
     background: rgba(8, 8, 8, 0.96);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(200, 169, 110, 0.16);
+  }
+  .era-body-content {
+    padding-top: 8px;
   }
   .era-date {
     font-size: 20px;
