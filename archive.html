@@ -1128,6 +1128,10 @@ footer a:hover { color: var(--accent); }
     transform: none;
     transition: none;
   }
+  .era-body {
+    height: auto !important;
+    overflow: visible;
+  }
   .tab-nav-inner {
     flex-wrap: wrap;
     gap: 8px 10px;
@@ -1179,7 +1183,7 @@ footer a:hover { color: var(--accent); }
   .mobile-era-sticky {
     display: block;
     position: sticky;
-    top: env(safe-area-inset-top, 0px);
+    top: calc(env(safe-area-inset-top, 0px) + 8px);
     z-index: 14;
     padding: 8px 0 7px;
     margin: 0 0 8px;
