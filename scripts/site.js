@@ -934,12 +934,6 @@ function renderEraTab() {
     main.appendChild(section);
   });
 
-  // Attach detail-panel click handlers
-  document.querySelectorAll('.photographer-card').forEach(card => {
-    const pid = card.dataset.pid;
-    card.addEventListener('click', () => toggleDetail(pid, card));
-  });
-
   populateFilters();
   setupObserver();
 }
@@ -956,13 +950,14 @@ function renderCard(p, extraAttrs = '') {
   const coordinateButton = p.isPlaceholder
     ? ''
     : `<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer('${p.id}')">${t('coordinateButton')}</button>`;
+  const interactionAttrs = extraAttrs || `onclick="toggleDetail('${p.id}', this)"`;
   const compactSummary = `
       <div class="mobile-card-summary">
         <p class="mobile-card-summary-text">${escapeHtml(compactPhotographerSummary(p))}</p>
         <a class="mobile-card-readmore" href="${photographerPagePath(p)}" onclick="event.stopPropagation()">${currentLanguage === 'en' ? 'Read details' : '詳細を読む'}</a>
       </div>`;
   return `
-    <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" data-search="${searchIndex}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" ${extraAttrs}>
+    <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" data-search="${searchIndex}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" role="button" tabindex="0" ${interactionAttrs}>
       <div class="card-action">
         <div class="card-action-label">${t('coordinateDetail')}</div>
         <div class="card-arrow">↗</div>
@@ -1363,8 +1358,8 @@ function toggleDetail(pid, card) {
       card.classList.add('active');
       setLocationHash(`photographer-${pid}`);
       setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 40);
-    } else if (window.location.hash === `#photographer-${pid}`) {
-      setLocationHash('');
+    } else {
+      window.location.href = photographerPagePath(PHOTOGRAPHER_LOOKUP.get(pid) || { id: pid });
     }
     return;
   }
