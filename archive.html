@@ -533,11 +533,7 @@ h1 em { font-style: normal; color: var(--accent); }
   border: 1px dashed rgba(200, 169, 110, 0.18);
   background: rgba(200, 169, 110, 0.03);
 }
-.mobile-decade-group,
-.mobile-decade-cards {
-  display: contents;
-}
-.mobile-decade-sticky {
+.mobile-era-sticky {
   display: none;
 }
 
@@ -1132,10 +1128,6 @@ footer a:hover { color: var(--accent); }
     transform: none;
     transition: none;
   }
-  .era-body {
-    height: auto !important;
-    overflow: visible;
-  }
   .tab-nav-inner {
     flex-wrap: wrap;
     gap: 8px 10px;
@@ -1184,14 +1176,7 @@ footer a:hover { color: var(--accent); }
   .era-toggle {
     display: none;
   }
-  .mobile-decade-group {
-    display: block;
-  }
-  .mobile-decade-cards {
-    display: flex;
-    flex-direction: column;
-  }
-  .mobile-decade-sticky {
+  .mobile-era-sticky {
     display: block;
     position: sticky;
     top: env(safe-area-inset-top, 0px);
