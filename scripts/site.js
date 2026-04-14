@@ -1916,9 +1916,13 @@ function updateMobileEraIndicator() {
 
   for (const era of eras) {
     const rect = era.getBoundingClientRect();
-    if (rect.bottom <= stickyTop) continue;
-    currentEra = era;
-    if (rect.top <= stickyTop + 1) continue;
+    if (rect.bottom <= stickyTop) {
+      continue;
+    }
+    if (rect.top <= stickyTop + 1) {
+      currentEra = era;
+      continue;
+    }
     break;
   }
 
