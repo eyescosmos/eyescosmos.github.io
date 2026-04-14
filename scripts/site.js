@@ -36,7 +36,7 @@ const UI_TEXT = {
     wip: '随時更新中',
     archiveHeaderLabel: 'Photo Coordinates / Archive',
     archiveSubtitle: '年代順にたどる写真史',
-    archiveLead: '1839年から現代までの写真史を、各時代の写真家、表現、世界情勢、技術、時代背景の関係とともにたどります。',
+    archiveLead: '写真の座標は、世界の写真家を一覧・整理した写真史サイトです。歴史、国、運動から写真史をたどれます。',
     archiveDisclaimer: '※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、曖昧さや誤りが含まれる可能性があります。気になった作家・表現・時代については、ぜひご自身でも確認してください。',
     randomLabel: '今日のランダム写真家',
     randomHint: '→ クリックして詳細を見る',
@@ -80,7 +80,7 @@ const UI_TEXT = {
     wip: 'Updating',
     archiveHeaderLabel: 'Photo Coordinates / Archive',
     archiveSubtitle: 'History of Photography by Era',
-    archiveLead: 'Browse the history of photography from 1839 to the present through photographers, artistic movements, world events, technology, and visual culture.',
+    archiveLead: 'Photo Coordinates is a photography-history website that organizes photographers from around the world. Browse by history, country, and movement.',
     archiveDisclaimer: 'This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but ambiguity, errors, or outdated details may remain. Please verify topics that matter to you.',
     randomLabel: 'Photographer of the Day',
     randomHint: '→ Click to open the detail panel',
@@ -130,7 +130,30 @@ const COUNTRY_TEXT = {
   DE: { ja: 'DE', en: 'Germany' },
   JP: { ja: 'JP', en: 'Japan' },
   BR: { ja: 'BR', en: 'Brazil' },
-  CA: { ja: 'CA', en: 'Canada' }
+  CA: { ja: 'CA', en: 'Canada' },
+  CH: { ja: 'CH', en: 'Switzerland' },
+  HU: { ja: 'HU', en: 'Hungary' },
+  RU: { ja: 'RU', en: 'Russia' },
+  'LU / US': { ja: 'LU / US', en: 'Luxembourg / United States' },
+  'US / GB': { ja: 'US / GB', en: 'United States / United Kingdom' },
+  'US / FR': { ja: 'US / FR', en: 'United States / France' },
+  'HU / DE': { ja: 'HU / DE', en: 'Hungary / Germany' }
+};
+
+const COUNTRY_FLAG_TEXT = {
+  FR: '🇫🇷',
+  GB: '🇬🇧',
+  US: '🇺🇸',
+  IT: '🇮🇹',
+  DK: '🇩🇰',
+  DE: '🇩🇪',
+  JP: '🇯🇵',
+  BR: '🇧🇷',
+  CA: '🇨🇦',
+  CH: '🇨🇭',
+  HU: '🇭🇺',
+  RU: '🇷🇺',
+  LU: '🇱🇺'
 };
 
 const COUNTRY_ROUTE_META = {
@@ -143,7 +166,14 @@ const COUNTRY_ROUTE_META = {
   DE: { ja: 'ドイツ', en: 'Germany', slug: 'germany' },
   JP: { ja: '日本', en: 'Japan', slug: 'japan' },
   BR: { ja: 'ブラジル', en: 'Brazil', slug: 'brazil' },
-  CA: { ja: 'カナダ', en: 'Canada', slug: 'canada' }
+  CA: { ja: 'カナダ', en: 'Canada', slug: 'canada' },
+  CH: { ja: 'スイス', en: 'Switzerland', slug: 'switzerland' },
+  HU: { ja: 'ハンガリー', en: 'Hungary', slug: 'hungary' },
+  RU: { ja: 'ロシア', en: 'Russia', slug: 'russia' },
+  'LU / US': { ja: 'ルクセンブルク / アメリカ', en: 'Luxembourg / United States', slug: 'luxembourg-united-states' },
+  'US / GB': { ja: 'アメリカ / イギリス', en: 'United States / United Kingdom', slug: 'united-states-united-kingdom' },
+  'US / FR': { ja: 'アメリカ / フランス', en: 'United States / France', slug: 'united-states-france' },
+  'HU / DE': { ja: 'ハンガリー / ドイツ', en: 'Hungary / Germany', slug: 'hungary-germany' }
 };
 
 const MOVEMENT_NAME_OVERRIDES_EN = {
@@ -240,23 +270,83 @@ function flattenEssaySections(sections) {
     .trim();
 }
 
+function firstEssayParagraph(text) {
+  const blocks = String(text || '')
+    .split(/\n\s*\n/)
+    .map(block => block.trim())
+    .filter(Boolean);
+  const headingSet = new Set([
+    '経歴',
+    '表現解説',
+    '批評と受容',
+    'Biography',
+    'Expression / method',
+    'Criticism and reception'
+  ]);
+  return blocks.find(block => !headingSet.has(block)) || '';
+}
+
 function getPhotographerLeadCopy(photographer) {
   const override = getPhotographerEssayOverride(photographer);
   if (override) {
-    return localizeValue(override.leadJa, override.leadEn) || buildPhotographerIntro(photographer);
+    return localizeValue(override.leadJa, override.leadEn)
+      || firstEssayParagraph(localizeValue(override.textJa, override.textEn))
+      || buildPhotographerIntro(photographer);
   }
+  const essayPayload = getPhotographerEssayPayload(photographer);
+  const essayFirstParagraph = firstEssayParagraph(essayPayload.text);
+  if (essayFirstParagraph) return essayFirstParagraph;
   return buildPhotographerIntro(photographer);
 }
 
-function compactPhotographerSummary(photographer) {
-  const plain = normalizePlainText(getPhotographerLeadCopy(photographer) || '')
-    .replace(/\*\d+/g, '')
-    .trim();
+function shortenLeadCopy(text, maxLength = 115) {
+  const plain = normalizePlainText(text || '').replace(/\*\d+/g, '').trim();
   if (!plain) return currentLanguage === 'en' ? 'Essay coming soon.' : '解説は準備中です。';
-  if (plain.length <= 118) return plain;
-  const sentenceBreak = plain.search(/[。.!?](?=\s|$)/);
-  if (sentenceBreak > 0 && sentenceBreak <= 118) return plain.slice(0, sentenceBreak + 1);
-  return `${plain.slice(0, 116).trim()}…`;
+  if (plain.length <= maxLength) return plain;
+
+  const sentences = plain.split(/(?<=[。.!?])/).map(sentence => sentence.trim()).filter(Boolean);
+  const joiner = currentLanguage === 'en' ? ' ' : '';
+  const collected = [];
+  for (const sentence of sentences) {
+    const next = [...collected, sentence].join(joiner);
+    if (next.length > maxLength) break;
+    collected.push(sentence);
+  }
+  if (collected.length) return collected.join(joiner);
+
+  return `${plain.slice(0, Math.max(1, maxLength - 1)).trim()}…`;
+}
+
+function getPhotographerShortLeadCopy(photographer, maxLength = 115) {
+  return shortenLeadCopy(getPhotographerLeadCopy(photographer), maxLength);
+}
+
+function compactPhotographerSummary(photographer) {
+  return getPhotographerShortLeadCopy(photographer, 115);
+}
+
+function photographerCountryMeta(photographer) {
+  const enrichment = getPhotographerEnrichment(photographer);
+  const nationality = enrichment.countryCode || enrichment.nationality || photographer.nationality || '';
+  const compositeFlag = fallbackCountryFlag(nationality);
+  const flag = nationality.includes('/')
+    ? (compositeFlag || enrichment.flag || photographer.flag || '')
+    : (enrichment.flag || photographer.flag || compositeFlag);
+  const text = COUNTRY_TEXT[nationality];
+  const label = text ? text[currentLanguage] : nationality;
+  return { nationality, flag, label };
+}
+
+function fallbackCountryFlag(nationality) {
+  const parts = String(nationality || '')
+    .split('/')
+    .map(part => part.trim())
+    .filter(Boolean);
+  if (!parts.length) return '';
+  const flags = parts
+    .map(part => COUNTRY_FLAG_TEXT[part] || '')
+    .filter(Boolean);
+  return flags.join(' ');
 }
 
 function getPhotographerEssayPayload(photographer) {
@@ -525,9 +615,8 @@ function displayYears(p) {
 }
 
 function displayMeta(p) {
-  const country = COUNTRY_TEXT[p.nationality];
-  const label = country ? country[currentLanguage] : p.nationality;
-  return [p.flag, label].filter(Boolean).join(' ').trim();
+  const meta = photographerCountryMeta(p);
+  return [meta.flag, meta.label].filter(Boolean).join(' ').trim();
 }
 
 function displayGender(value) {
@@ -860,9 +949,7 @@ function populateArchiveNavigation() {
     ERAS.forEach(era => {
       const option = document.createElement('option');
       option.value = eraPagePath(era.id);
-      option.textContent = currentLanguage === 'en'
-        ? (era.titleEn || era.title)
-        : era.title;
+      option.textContent = compactEraPeriod(era);
       eraSelect.appendChild(option);
     });
   }
@@ -923,6 +1010,8 @@ function renderEraTab() {
     const cardsHTML = photographers.length
       ? photographers.map(p => renderCard(p)).join('')
       : renderEmptyPhotographerState();
+    const compactPeriod = compactEraPeriod(era);
+    const compactTitle = compactEraTitle(era);
 
     const section = document.createElement('section');
     section.className = 'era';
@@ -937,6 +1026,10 @@ function renderEraTab() {
       <div class="mobile-era-sticky">${era.id}</div>
       <div class="era-body">
         <div class="era-body-content">
+            <div class="mobile-era-inline" aria-hidden="true">
+              <span class="mobile-era-inline-period">${escapeHtml(compactPeriod)}</span>
+              ${compactTitle ? `<span class="mobile-era-inline-title">${escapeHtml(compactTitle)}</span>` : ''}
+            </div>
             <div class="era-info">
               <div class="context-block">
                 <div class="context-label">${t('worldEvents')}</div>
@@ -964,6 +1057,7 @@ function renderEraTab() {
 }
 
 function renderCard(p, extraAttrs = '') {
+  const countryMeta = photographerCountryMeta(p);
   const movementNames = p.movements.map(displayMovementName);
   const tags = movementNames.length
     ? movementNames.map(m => `<span class="card-tag">${m}</span>`).join('')
@@ -982,11 +1076,12 @@ function renderCard(p, extraAttrs = '') {
         <a class="mobile-card-readmore" href="${photographerPagePath(p)}" onclick="event.stopPropagation()">${currentLanguage === 'en' ? 'Read details' : '詳細を読む'}</a>
       </div>`;
   return `
-    <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${p.nationality}" data-movements="${p.movements.join(',')}" data-search="${searchIndex}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" role="button" tabindex="0" ${interactionAttrs}>
+    <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${countryMeta.nationality}" data-movements="${p.movements.join(',')}" data-search="${searchIndex}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" role="button" tabindex="0" ${interactionAttrs}>
       <div class="card-action">
         <div class="card-action-label">${t('coordinateDetail')}</div>
         <div class="card-arrow">↗</div>
       </div>
+      <div class="card-flag-nat card-flag-nat-desktop">${displayMeta(p)}</div>
       <div class="card-mobile-meta">
         <div class="card-flag-nat">${displayMeta(p)}</div>
         <div class="card-years">${escapeHtml(displayYears(p))}</div>
@@ -1260,7 +1355,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const isMovement = idPrefix !== 'panel-';
   const panelId = `${idPrefix}${p.id}`;
   const closeFn = customCloseFn || (isMovement ? `closeMovementDetail('${p.id}')` : `closeDetail('${p.id}')`);
-  const intro = getPhotographerLeadCopy(p);
+  const intro = getPhotographerShortLeadCopy(p, 115);
   const keywordLine = buildPhotographerKeywordLine(p);
   const tags = expandedMovementNames(p, 5)
     .map((movementLabel, index) => {

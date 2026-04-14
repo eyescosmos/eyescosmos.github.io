@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-fixed-lang="true" data-page-title-ja="写真の座標 | 写真史をたどる写真家・運動・思想のサイト" data-page-title-en="Photo Coordinates | History of Photography, Photographers, and Visual Culture">
+<html lang="en" data-fixed-lang="true" data-page-title-ja="写真の座標 | 写真史をたどる写真家・運動・思想のサイト" data-page-title-en="Photo Coordinates | Photographers and the History of Photography">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Photo Coordinates | History of Photography, Photographers, and Visual Culture</title>
-<meta name="description" content="Photo Coordinates explores the history of photography through photographers, artistic movements, visual culture, historical context, and Japanese photography.">
+<title>Photo Coordinates | Photographers and the History of Photography</title>
+<meta name="description" content="Photo Coordinates is a photography-history website that organizes photographers from around the world. Browse by history, country, and movement.">
 <link rel="canonical" href="https://eyescosmos.github.io/en/">
 <link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/">
 <link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/">
 <link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Photo Coordinates">
-<meta property="og:title" content="Photo Coordinates | History of Photography, Photographers, and Visual Culture">
-<meta property="og:description" content="Photo Coordinates explores the history of photography through photographers, artistic movements, visual culture, historical context, and Japanese photography.">
+<meta property="og:title" content="Photo Coordinates | Photographers and the History of Photography">
+<meta property="og:description" content="Photo Coordinates is a photography-history website that organizes photographers from around the world. Browse by history, country, and movement.">
 <meta property="og:url" content="https://eyescosmos.github.io/en/">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
@@ -23,7 +23,7 @@
   "name": "Photo Coordinates",
   "alternateName": "写真の座標",
   "url": "https://eyescosmos.github.io/en/",
-  "description": "Photo Coordinates explores the history of photography through photographers, artistic movements, visual culture, historical context, and Japanese photography.",
+  "description": "Photo Coordinates is a photography-history website that organizes photographers from around the world. Browse by history, country, and movement.",
   "inLanguage": "en"
 }
 </script>
@@ -269,6 +269,36 @@ body.is-navigating #page-fade {
   background: rgba(198, 170, 130, 0.06);
 }
 
+.page-select-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.page-select {
+  min-height: 36px;
+  padding: 10px 34px 10px 14px;
+  border: 1px solid var(--border);
+  background: rgba(10, 12, 18, 0.62);
+  color: var(--text-dim);
+  font: 400 11px/1 'DM Mono', monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  appearance: none;
+  cursor: pointer;
+  backdrop-filter: blur(18px);
+}
+
+.page-select-wrap::after {
+  content: '▼';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font: 400 9px/1 'DM Mono', monospace;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
 .zoom-controls {
   right: 32px;
   bottom: 32px;
@@ -390,6 +420,8 @@ body.is-navigating #page-fade {
   }
 
   .page-link,
+  .page-select-wrap,
+  .page-select,
   .focus-card,
   .eyebrow,
   .keywordline,
@@ -504,6 +536,35 @@ body.is-navigating #page-fade {
     text-transform: uppercase;
   }
 
+  .mobile-info-select-wrap {
+    position: relative;
+    display: block;
+  }
+
+  .mobile-info-select {
+    width: 100%;
+    min-height: 42px;
+    padding: 12px 36px 12px 14px;
+    border: 1px solid var(--border);
+    background: rgba(10, 12, 18, 0.62);
+    color: var(--text-dim);
+    font: 400 11px/1.2 'DM Mono', monospace;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    appearance: none;
+  }
+
+  .mobile-info-select-wrap::after {
+    content: '▼';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font: 400 9px/1 'DM Mono', monospace;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
   .mobile-info-link:hover {
     color: var(--text);
     background: rgba(198, 170, 130, 0.06);
@@ -552,7 +613,34 @@ body.is-navigating #page-fade {
       <a class="lang-btn" data-lang="ja" href="/">Japanese</a>
       <a class="lang-btn" data-lang="en" href="/en/">English</a>
     </div>
-    <a class="page-link" id="page-link-era" href="archive.html#tab-era">Browse by Era</a>
+    <span class="page-select-wrap">
+      <select class="page-select" id="page-link-era-select" aria-label="Browse by Era" onchange="if(this.value) window.location.href=this.value">
+        <option value="">Browse by Era</option>
+        <option value="archive.html#era-1839">1839–1860s</option>
+        <option value="archive.html#era-1870">1870–1890s</option>
+        <option value="archive.html#era-1890">1890–1910s</option>
+        <option value="archive.html#era-1910">1910–1920s</option>
+        <option value="archive.html#era-1930">1930–1940s</option>
+        <option value="archive.html#era-1950">1950–1960s</option>
+        <option value="archive.html#era-1970">1970–1980s</option>
+        <option value="archive.html#era-1980">1980–1990s</option>
+        <option value="archive.html#era-1990">1990–2000s</option>
+        <option value="archive.html#era-2000">2000–2010s</option>
+        <option value="archive.html#era-2010">2010–2020s</option>
+      </select>
+    </span>
+    <span class="page-select-wrap">
+      <select class="page-select" id="page-link-country-select" aria-label="Browse countries" onchange="if(this.value) window.location.href=this.value">
+        <option value="">Browse countries</option>
+        <option value="countries/united-states.html">United States</option>
+        <option value="countries/united-kingdom.html">United Kingdom</option>
+        <option value="countries/france.html">France</option>
+        <option value="countries/germany.html">Germany</option>
+        <option value="countries/japan.html">Japan</option>
+        <option value="countries/brazil.html">Brazil</option>
+        <option value="countries/canada.html">Canada</option>
+      </select>
+    </span>
     <a class="page-link" id="page-link-movement" href="archive.html">Browse by Movement</a>
   </div>
   <div class="zoom-controls" aria-label="Zoom controls">
@@ -580,7 +668,34 @@ body.is-navigating #page-fade {
         <div class="mobile-info-text">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.</div>
       </div>
       <div class="mobile-info-links">
-        <a class="mobile-info-link" href="archive.html#tab-era">Browse by Era</a>
+        <span class="mobile-info-select-wrap">
+          <select class="mobile-info-select" aria-label="Browse by Era" onchange="if(this.value) window.location.href=this.value">
+            <option value="">Browse by Era</option>
+            <option value="archive.html#era-1839">1839–1860s</option>
+            <option value="archive.html#era-1870">1870–1890s</option>
+            <option value="archive.html#era-1890">1890–1910s</option>
+            <option value="archive.html#era-1910">1910–1920s</option>
+            <option value="archive.html#era-1930">1930–1940s</option>
+            <option value="archive.html#era-1950">1950–1960s</option>
+            <option value="archive.html#era-1970">1970–1980s</option>
+            <option value="archive.html#era-1980">1980–1990s</option>
+            <option value="archive.html#era-1990">1990–2000s</option>
+            <option value="archive.html#era-2000">2000–2010s</option>
+            <option value="archive.html#era-2010">2010–2020s</option>
+          </select>
+        </span>
+        <span class="mobile-info-select-wrap">
+          <select class="mobile-info-select" aria-label="Browse countries" onchange="if(this.value) window.location.href=this.value">
+            <option value="">Browse countries</option>
+            <option value="countries/united-states.html">United States</option>
+            <option value="countries/united-kingdom.html">United Kingdom</option>
+            <option value="countries/france.html">France</option>
+            <option value="countries/germany.html">Germany</option>
+            <option value="countries/japan.html">Japan</option>
+            <option value="countries/brazil.html">Brazil</option>
+            <option value="countries/canada.html">Canada</option>
+          </select>
+        </span>
         <a class="mobile-info-link" href="archive.html">Browse by Movement</a>
       </div>
       <div class="mobile-info-footer"><a href="privacy-policy.html">Privacy Policy</a></div>
@@ -621,6 +736,6 @@ body.is-navigating #page-fade {
   })();
 </script>
 <script src="../scripts/language.js?v=20260403e"></script>
-<script src="../scripts/relations.js?v=20260408copyfix"></script>
+<script src="../scripts/relations.js?v=20260413a"></script>
 </body>
 </html>

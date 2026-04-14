@@ -205,6 +205,12 @@ h1 em { font-style: normal; color: var(--accent); }
   max-width: 520px;
   line-height: 1.9;
 }
+.header-keywordline {
+  margin-top: 14px;
+  color: rgba(198, 170, 130, 0.82);
+  font: 400 10px/1.7 'DM Mono', monospace;
+  letter-spacing: 0.08em;
+}
 .ai-disclaimer {
   margin-top: 20px;
   padding: 12px 16px;
@@ -537,6 +543,9 @@ h1 em { font-style: normal; color: var(--accent); }
 .mobile-era-sticky {
   display: none;
 }
+.mobile-era-inline {
+  display: none;
+}
 .mobile-era-indicator {
   display: none;
 }
@@ -608,7 +617,7 @@ h1 em { font-style: normal; color: var(--accent); }
 }
 
 .card-flag-nat {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'DM Mono', monospace;
   font-size: 11px;
   color: var(--accent);
   letter-spacing: 0.12em;
@@ -649,6 +658,9 @@ h1 em { font-style: normal; color: var(--accent); }
 .mobile-card-summary,
 .card-mobile-chevron {
   display: none;
+}
+.card-flag-nat-desktop {
+  display: flex;
 }
 .card-tag {
   font-family: 'DM Mono', monospace;
@@ -1224,6 +1236,33 @@ footer a:hover { color: var(--accent); }
     color: var(--text-dim);
     text-transform: none;
   }
+  .mobile-era-inline {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 10px;
+    padding: 0 0 8px;
+    border-bottom: 1px solid rgba(200, 169, 110, 0.12);
+  }
+  .mobile-era-inline-period {
+    flex: 0 0 auto;
+    font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .mobile-era-inline-title {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+  }
   .era-body-content {
     padding-top: 8px;
   }
@@ -1252,6 +1291,7 @@ footer a:hover { color: var(--accent); }
   }
   .photographer-card::after,
   .card-action,
+  .card-flag-nat-desktop,
   .card-name-sub,
   .card-years-desktop,
   .card-tags,
@@ -1383,8 +1423,9 @@ footer a:hover { color: var(--accent); }
     <h1 id="archive-main-title"><em>Photo Coordinates</em></h1>
     <span class="wip-badge" id="archive-wip-badge">Updating</span>
   </div>
+  <p class="header-keywordline">Contemporary Photography | History | Context | Art | Essays |</p>
   <p class="header-subtitle" id="archive-header-subtitle">History of Photography by Era</p>
-  <p class="header-sub" id="archive-header-sub">Browse the history of photography from 1839 to the present through photographers, artistic movements, world events, technology, and visual culture.</p>
+  <p class="header-sub" id="archive-header-sub">Photo Coordinates is a photography-history website that organizes photographers from around the world. Browse by history, country, and movement.</p>
   <div class="ai-disclaimer" id="archive-ai-disclaimer">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but ambiguity, errors, or outdated details may remain. Please verify topics that matter to you.</div>
 
 </div>
@@ -1462,6 +1503,6 @@ footer a:hover { color: var(--accent); }
 <script src="../data/affiliate-books.js?v=20260412d"></script>
 <script src="../data/photographer-enrichments.js?v=20260406a"></script>
 <script src="../scripts/language.js?v=20260403e"></script>
-<script src="../scripts/site.js?v=20260413a"></script>
+<script src="../scripts/site.js?v=20260414a"></script>
 </body>
 </html>

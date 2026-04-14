@@ -10,7 +10,7 @@
   const essayEntry = essayRegistry[photographerId] || null;
   const mobileNavDrawer = document.querySelector('.mobile-nav-drawer');
   const mobileNavContent = document.querySelector('.mobile-nav-content');
-  const heroTopLinks = document.querySelector('.hero > .top-links');
+  const heroTopLinks = document.querySelector('.page-top-links, .hero > .top-links');
 
   if (mobileNavDrawer && mobileNavContent && heroTopLinks) {
     const linksPlaceholder = document.createComment('mobile-top-links-placeholder');

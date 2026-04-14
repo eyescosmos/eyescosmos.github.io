@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260413a"
+ASSET_VERSION = "20260414b"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -450,7 +450,16 @@ def render_tax_select(options: list[tuple[str, str, bool]], label: str) -> str:
     rendered = []
     for value, text, selected in options:
         rendered.append(f'<option value="{escape_html(value)}"{ " selected" if selected else "" }>{escape_html(text)}</option>')
-    return f'<span class="select-wrap"><select class="tax-select" aria-label="{escape_html(label)}" onchange="if(this.value) window.location.href=this.value">{"".join(rendered)}</select></span>'
+    return f'<span class="select-wrap"><select class="tax-select filter-select nav-select" aria-label="{escape_html(label)}" onchange="if(this.value) window.location.href=this.value">{"".join(rendered)}</select></span>'
+
+
+def render_optional_tax_select(options: list[tuple[str, str]], label: str, placeholder: str) -> str:
+    if not options:
+        return ""
+    rendered = [f'<option value="" selected>{escape_html(placeholder)}</option>']
+    for value, text in options:
+        rendered.append(f'<option value="{escape_html(value)}">{escape_html(text)}</option>')
+    return f'<span class="select-wrap"><select class="tax-select filter-select nav-select" aria-label="{escape_html(label)}" onchange="if(this.value) window.location.href=this.value">{"".join(rendered)}</select></span>'
 
 
 def localize_value(record: dict, ja_key: str, en_key: str) -> str:
@@ -769,6 +778,11 @@ def build_intro(photographer: dict, lang: str, era_lookup: dict, movements_meta:
     placeholder = is_placeholder_text(essay_text, lang)
     focus_phrase = build_focus_phrase(photographer, lang, movements_meta, enrichments)
 
+    if photographer.get("id") == "stieglitz":
+        if lang == "en":
+            return "A central figure in the shift from Pictorialism to modern photography, traced through 291, Photo-Secession, and Equivalents."
+        return "291と写真分離派、《エクイヴァレンツ》を手がかりに、ピクトリアリズムから近代写真への転換をたどる重要作家。"
+
     if lang == "en":
         identity = name_primary if not name_secondary else f"{name_primary} ({name_secondary})"
         if placeholder:
@@ -1061,17 +1075,28 @@ def main() -> None:
             affiliate_section_html = build_affiliate_books_html(photographer, lang, affiliate_books, copy)
 
             movement_links = []
+            movement_select_options = []
             for movement in (photographer.get("movements") or []) + (get_enrichment(enrichments, photographer).get("extraMovements") or []):
                 movement_label = english_movement_name(movement, movements_meta) if lang == "en" else movement
+                movement_target = movement_page_path(movement, lang)
                 tag = f'<a class="tag" href="{movement_page_path(movement, lang)}">{escape_html(movement_label)}</a>'
                 if tag not in movement_links:
                     movement_links.append(tag)
+                option_tuple = (movement_target, movement_label)
+                if movement_target and option_tuple not in movement_select_options:
+                    movement_select_options.append(option_tuple)
                 if len(movement_links) >= 5:
                     break
             movement_html = "".join(movement_links) or f'<div class="note">{copy["movementPlaceholder"]}</div>'
 
             related_people = build_related_people_items(photographer, lang, enrichments, photographers, era_index, photographer_index, body_text)
             related_people_html = render_related_people_html(related_people, copy["relatedPeoplePlaceholder"])
+            related_people_select_options = []
+            for person in related_people:
+                if person.get("url") and person.get("label"):
+                    option_tuple = (person["url"], person["label"])
+                    if option_tuple not in related_people_select_options:
+                        related_people_select_options.append(option_tuple)
 
             links = photographer.get("links") or []
             links_html = "".join(
@@ -1115,6 +1140,25 @@ def main() -> None:
             alt_name = display_alt_name(photographer, lang)
             page_path = photographer_page_path(photographer, lang)
             structured_data = build_page_structured_data(photographer, lang, description, canonical)
+            movement_select = render_optional_tax_select(
+                movement_select_options,
+                copy["movements"],
+                copy["movements"],
+            )
+            related_people_select = render_optional_tax_select(
+                related_people_select_options,
+                copy["relatedPeople"],
+                copy["relatedPeople"],
+            )
+            extra_selects = f"{country_select}{era_select}{movement_select}{related_people_select}"
+            page_top_links = f"""
+      <div class="page-top-links top-links">
+        <a class="nav-active-link" href="{archive_href}">{copy['archive']}</a>
+        <a class="nav-secondary-link" href="{coordinates_href}">{copy['coordinates']}</a>
+        <div class="tab-nav-selects">
+          {extra_selects}
+        </div>
+      </div>"""
             page = f"""<!DOCTYPE html>
 <html lang="{ 'en' if lang == 'en' else 'ja' }">
 <head>
@@ -1143,33 +1187,37 @@ gtag('config', '{GA_ID}');
 <link rel="stylesheet" href="{stylesheet_href}">
 </head>
 <body data-photographer-id="{escape_html(photographer['id'])}" data-page-lang="{lang}">
-  <div class="page-shell">
-    <div class="topline">
-      <div class="label-stack">
-        <div class="label">{copy['label']}</div>
-        <div class="keywordline">{keyword_line_html}</div>
+  <header class="page-header">
+    <div class="container">
+      <div class="header-top">
+        <div class="header-label">{copy['label']}</div>
+        <div class="lang-toggle header-mobile-lang" aria-label="Language switch">
+          <a class="lang-btn{' active' if lang == 'ja' else ''}" href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
+          <a class="lang-btn{' active' if lang == 'en' else ''}" href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
+        </div>
       </div>
-      <div class="lang-toggle" aria-label="Language switch">
-        <a href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
-        <a href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
+      <p class="header-keywordline">{keyword_line_html}</p>
+    </div>
+  </header>
+  <nav class="tab-nav">
+    <div class="tab-nav-inner">
+{page_top_links}
+      <div class="lang-toggle tab-lang-toggle" aria-label="Language switch">
+        <a class="lang-btn{' active' if lang == 'ja' else ''}" href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
+        <a class="lang-btn{' active' if lang == 'en' else ''}" href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
       </div>
     </div>
-    <details class="mobile-nav-drawer">
-      <summary class="mobile-nav-toggle" aria-label="{copy['menu']}">
-        <span></span><span></span><span></span>
-      </summary>
-      <div class="mobile-nav-panel">
-        <div class="mobile-nav-content"></div>
-      </div>
-    </details>
+  </nav>
+  <details class="mobile-nav-drawer">
+    <summary class="mobile-nav-toggle" aria-label="{copy['menu']}">
+      <span></span><span></span><span></span>
+    </summary>
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-content"></div>
+    </div>
+  </details>
+  <div class="page-shell">
     <div class="hero">
-      <div class="top-links">
-        <a href="{home_href}">{copy['home']}</a>
-        <a href="{archive_href}">{copy['archive']}</a>
-        <a href="{coordinates_href}">{copy['coordinates']}</a>
-        {country_select}
-        {era_select}
-      </div>
       <h1 class="title">{escape_html(display_name(photographer, lang))}{f'<span class="alt">{escape_html(alt_name)}</span>' if alt_name else ''}</h1>
       <p class="lead">{escape_html(intro)}</p>
       <div class="hero-info-groups">
@@ -1189,14 +1237,6 @@ gtag('config', '{GA_ID}');
               <span class="fact-value">{escape_html(display_years(photographer, lang))}</span>
             </div>
           </div>
-        </div>
-        <div class="info-group">
-          <div class="group-label">{copy['movements']}</div>
-          <div class="tags tags-flow">{movement_html}</div>
-        </div>
-        <div class="info-group">
-          <div class="group-label">{copy['relatedPeople']}</div>
-          <div class="related-grid related-grid-flow">{related_people_html}</div>
         </div>
       </div>
     </div>
