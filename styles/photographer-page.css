@@ -164,8 +164,13 @@ body::after {
   align-items: center;
   padding-left: 20px;
 }
-.tab-lang-toggle {
+.tab-nav-mobile-grid {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-left: auto;
+}
+.tab-lang-toggle {
   flex-shrink: 0;
 }
 .filter-select,
@@ -452,13 +457,18 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
     font-size: 11px;
     padding: 14px 10px 12px;
   }
-  .tab-nav-selects {
+  .tab-nav-mobile-grid {
     width: 100%;
-    padding: 4px 0 12px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-    padding-left: 0;
+    margin-left: 0;
+    align-items: stretch;
+  }
+  .tab-nav-selects {
+    width: auto;
+    padding: 4px 0 12px;
+    display: contents;
   }
   .nav-select {
     width: 100%;
@@ -467,7 +477,14 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
     padding: 8px 28px 8px 10px;
   }
   .tab-lang-toggle {
-    margin-left: auto;
+    grid-column: 2 / 4;
+    justify-self: stretch;
+    margin-left: 0;
+    align-self: start;
+  }
+  .tab-lang-toggle .lang-btn,
+  .tab-lang-toggle a {
+    flex: 1 1 50%;
   }
   .page-shell {
     width: min(100vw - 22px, 1040px);

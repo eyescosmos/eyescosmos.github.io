@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260414d"
+ASSET_VERSION = "20260414e"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -446,10 +446,17 @@ def movement_page_path(movement: str, lang: str = "ja") -> str:
     return f"/{base}/{movement_slug(movement)}.html"
 
 
-def render_tax_select(options: list[tuple[str, str, bool]], label: str) -> str:
+def render_tax_select(
+    options: list[tuple[str, str, bool]],
+    label: str,
+    placeholder: str | None = None,
+) -> str:
     rendered = []
+    if placeholder:
+        rendered.append(f'<option value="" selected>{escape_html(placeholder)}</option>')
     for value, text, selected in options:
-        rendered.append(f'<option value="{escape_html(value)}"{ " selected" if selected else "" }>{escape_html(text)}</option>')
+        is_selected = selected and not placeholder
+        rendered.append(f'<option value="{escape_html(value)}"{ " selected" if is_selected else "" }>{escape_html(text)}</option>')
     return f'<span class="select-wrap"><select class="tax-select filter-select nav-select" aria-label="{escape_html(label)}" onchange="if(this.value) window.location.href=this.value">{"".join(rendered)}</select></span>'
 
 
@@ -1122,6 +1129,7 @@ def main() -> None:
                     for era in eras
                 ],
                 "Browse by Era" if lang == "en" else "年代順にみる",
+                "Browse eras" if lang == "en" else "年代別で見る",
             ) if photographer.get("era") else ""
             country_select = render_tax_select(
                 [
@@ -1129,6 +1137,7 @@ def main() -> None:
                     for nationality in all_nationalities
                 ],
                 "Browse countries" if lang == "en" else "国別でみる",
+                "Browse countries" if lang == "en" else "国別で見る",
             ) if photographer.get("nationality") else ""
             canonical = SITE + photographer_page_path(photographer, lang)
             x_default = SITE + photographer_page_path(photographer, "ja")
@@ -1151,12 +1160,20 @@ def main() -> None:
                 copy["relatedPeople"],
             )
             extra_selects = f"{country_select}{era_select}{movement_select}{related_people_select}"
+            language_toggle = f"""
+      <div class="lang-toggle tab-lang-toggle" aria-label="Language switch">
+        <a class="lang-btn{' active' if lang == 'ja' else ''}" href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
+        <a class="lang-btn{' active' if lang == 'en' else ''}" href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
+      </div>"""
             page_top_links = f"""
       <div class="page-top-links top-links">
         <a class="nav-active-link" href="{archive_href}">{copy['archive']}</a>
         <a class="nav-secondary-link" href="{coordinates_href}">{copy['coordinates']}</a>
-        <div class="tab-nav-selects">
-          {extra_selects}
+        <div class="tab-nav-mobile-grid">
+          <div class="tab-nav-selects">
+            {extra_selects}
+          </div>
+          {language_toggle}
         </div>
       </div>"""
             page = f"""<!DOCTYPE html>
@@ -1198,10 +1215,6 @@ gtag('config', '{GA_ID}');
   <nav class="tab-nav">
     <div class="tab-nav-inner">
 {page_top_links}
-      <div class="lang-toggle tab-lang-toggle" aria-label="Language switch">
-        <a class="lang-btn{' active' if lang == 'ja' else ''}" href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
-        <a class="lang-btn{' active' if lang == 'en' else ''}" href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
-      </div>
     </div>
   </nav>
   <div class="page-shell">
