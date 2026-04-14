@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260414b"
+ASSET_VERSION = "20260414d"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -1191,10 +1191,6 @@ gtag('config', '{GA_ID}');
     <div class="container">
       <div class="header-top">
         <div class="header-label">{copy['label']}</div>
-        <div class="lang-toggle header-mobile-lang" aria-label="Language switch">
-          <a class="lang-btn{' active' if lang == 'ja' else ''}" href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
-          <a class="lang-btn{' active' if lang == 'en' else ''}" href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
-        </div>
       </div>
       <p class="header-keywordline">{keyword_line_html}</p>
     </div>
@@ -1208,14 +1204,6 @@ gtag('config', '{GA_ID}');
       </div>
     </div>
   </nav>
-  <details class="mobile-nav-drawer">
-    <summary class="mobile-nav-toggle" aria-label="{copy['menu']}">
-      <span></span><span></span><span></span>
-    </summary>
-    <div class="mobile-nav-panel">
-      <div class="mobile-nav-content"></div>
-    </div>
-  </details>
   <div class="page-shell">
     <div class="hero">
       <h1 class="title">{escape_html(display_name(photographer, lang))}{f'<span class="alt">{escape_html(alt_name)}</span>' if alt_name else ''}</h1>

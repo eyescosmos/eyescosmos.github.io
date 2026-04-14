@@ -8,37 +8,6 @@
 
   const essayRegistry = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
   const essayEntry = essayRegistry[photographerId] || null;
-  const mobileNavDrawer = document.querySelector('.mobile-nav-drawer');
-  const mobileNavContent = document.querySelector('.mobile-nav-content');
-  const heroTopLinks = document.querySelector('.page-top-links, .hero > .top-links');
-
-  if (mobileNavDrawer && mobileNavContent && heroTopLinks) {
-    const linksPlaceholder = document.createComment('mobile-top-links-placeholder');
-    heroTopLinks.parentNode.insertBefore(linksPlaceholder, heroTopLinks);
-
-    const mobileQuery = window.matchMedia('(max-width: 768px)');
-
-    const syncMobileNav = () => {
-      if (mobileQuery.matches) {
-        if (heroTopLinks.parentNode !== mobileNavContent) {
-          mobileNavContent.appendChild(heroTopLinks);
-        }
-      } else {
-        if (linksPlaceholder.parentNode && heroTopLinks.parentNode !== linksPlaceholder.parentNode) {
-          linksPlaceholder.parentNode.insertBefore(heroTopLinks, linksPlaceholder.nextSibling);
-        }
-        mobileNavDrawer.open = false;
-      }
-    };
-
-    syncMobileNav();
-    if (typeof mobileQuery.addEventListener === 'function') {
-      mobileQuery.addEventListener('change', syncMobileNav);
-    } else if (typeof mobileQuery.addListener === 'function') {
-      mobileQuery.addListener(syncMobileNav);
-    }
-  }
-
   function renderEssayRefs(text, citations) {
     return String(text || '')
       .replace(/[&<>"]/g, (char) => ({
