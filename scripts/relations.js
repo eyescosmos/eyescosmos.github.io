@@ -43,7 +43,7 @@
   const uiText = {
     ja: {
       title: '写真の座標',
-      status: '随時更新中',
+      status: '',
       subcopy: '写真の座標は、世界の写真家を一覧・整理した写真史サイトです。歴史、国、運動から写真史をたどれます。',
       note: '※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。',
       lede: 'クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。',
@@ -61,7 +61,7 @@
     },
     en: {
       title: 'Photo Coordinates',
-      status: 'Updating',
+      status: '',
       subcopy: 'Photo Coordinates is a photography-history website that organizes photographers from around the world. Browse by history, country, and movement.',
       note: 'This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.',
       lede: 'Use this map to follow how photographers, artistic movements, visual culture, and historical context connect across the history of photography.<br>Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.',

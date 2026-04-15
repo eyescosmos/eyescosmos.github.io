@@ -411,6 +411,37 @@ body::after {
   font-size: 13px;
   line-height: 1.8;
 }
+.site-directory-links {
+  margin-top: 22px;
+  padding: 18px 0 4px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 14px;
+}
+.site-directory-group {
+  display: grid;
+  gap: 8px;
+}
+.site-directory-label {
+  color: var(--accent);
+  font: 400 10px/1.4 'DM Mono', monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.site-directory-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+.site-directory-items a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.site-directory-items a:hover {
+  color: var(--text);
+}
 .footer-secondary { margin-top: 4px; }
 .footer-links { margin-top: 12px; }
 .footer-links a {
@@ -489,6 +520,16 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
   .page-shell {
     width: min(100vw - 22px, 1040px);
     padding-top: 20px;
+  }
+  .site-directory-links {
+    gap: 12px;
+  }
+  .site-directory-items {
+    gap: 6px 10px;
+  }
+  .site-directory-items a {
+    font-size: 11px;
+    line-height: 1.6;
   }
   .mobile-nav-drawer,
   .mobile-nav-toggle,

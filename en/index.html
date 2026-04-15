@@ -342,6 +342,38 @@ body.is-navigating #page-fade {
   line-height: 1.7;
 }
 
+.site-directory-links {
+  position: fixed;
+  left: 28px;
+  right: 28px;
+  bottom: 54px;
+  z-index: 4;
+  display: grid;
+  gap: 8px;
+}
+
+.site-directory-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  color: var(--text-muted);
+  font: 400 10px/1.6 'DM Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.site-directory-label {
+  color: rgba(213, 194, 156, 0.74);
+}
+
+.site-directory-group a {
+  color: rgba(213, 194, 156, 0.64);
+  text-decoration: none;
+}
+
+.site-directory-group a:hover {
+  color: rgba(235, 224, 204, 0.92);
+}
+
 .site-footer a {
   color: rgba(213, 194, 156, 0.76);
   text-decoration: none;
@@ -429,6 +461,7 @@ body.is-navigating #page-fade {
   .title-status,
   .lede,
   .title-note,
+  .site-directory-links,
   .site-footer {
     display: none;
   }
@@ -589,10 +622,10 @@ body.is-navigating #page-fade {
 
   <div class="hud">
     <div class="hero-text">
-      <div class="eyebrow">Prototype / Photo Coordinates</div>
+      <div class="eyebrow">Photo Coordinates</div>
       <div class="keywordline">Contemporary Photography | History | Context | Art | Essays |</div>
       <h1 class="title"><em id="main-title">Photo Coordinates</em></h1>
-      <div class="title-status" id="title-status">Updating</div>
+      <div class="title-status" id="title-status"></div>
       <div class="lede" id="title-lede">
         Use this map to trace how photographers, movements, visual culture, and historical context connect across the history of photography.
         Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.
@@ -664,7 +697,6 @@ body.is-navigating #page-fade {
       </div>
       <div class="mobile-info-block">
         <div class="mobile-info-heading">Notes</div>
-        <div class="mobile-info-text">Updating.</div>
         <div class="mobile-info-text">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.</div>
       </div>
       <div class="mobile-info-links">
@@ -704,6 +736,11 @@ body.is-navigating #page-fade {
 </details>
 
 <div id="page-fade" aria-hidden="true"></div>
+<nav class="site-directory-links" aria-label="Site links">
+  <div class="site-directory-group"><span class="site-directory-label">Era index</span><a href="eras/1839.html">1839–1860s</a><a href="eras/1870.html">1870–1890s</a><a href="eras/1890.html">1890–1910s</a><a href="eras/1910.html">1910–1920s</a><a href="eras/1930.html">1930–1940s</a></div>
+  <div class="site-directory-group"><span class="site-directory-label">Country index</span><a href="countries/united-states.html">United States</a><a href="countries/united-kingdom.html">United Kingdom</a><a href="countries/france.html">France</a><a href="countries/germany.html">Germany</a><a href="countries/japan.html">Japan</a></div>
+  <div class="site-directory-group"><span class="site-directory-label">Featured photographers</span><a href="photographers/daguerre.html">Louis Daguerre</a><a href="photographers/fenton.html">Roger Fenton</a><a href="photographers/beato.html">Felice Beato</a><a href="photographers/nadar.html">Nadar</a><a href="photographers/stieglitz.html">Alfred Stieglitz</a><a href="photographers/strand.html">Paul Strand</a></div>
+</nav>
 <footer class="site-footer">
   <a href="privacy-policy.html">Privacy Policy</a>
 </footer>

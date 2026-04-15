@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260414e"
+ASSET_VERSION = "20260414f"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -43,6 +43,16 @@ COUNTRY_META = {
     "BR": {"slug": "brazil", "ja": "ブラジル", "en": "Brazil"},
     "CA": {"slug": "canada", "ja": "カナダ", "en": "Canada"},
 }
+FEATURED_PHOTOGRAPHER_IDS = [
+    "daguerre",
+    "fenton",
+    "beato",
+    "nadar",
+    "stieglitz",
+    "strand",
+    "cartierbresson",
+    "hiroshi-sugimoto",
+]
 MOVEMENT_NAME_OVERRIDES_EN = {
     "カロタイプ": "Calotype",
     "肖像写真": "Portrait Photography",
@@ -444,6 +454,59 @@ def country_page_path(photographer: dict, lang: str = "ja") -> str:
 def movement_page_path(movement: str, lang: str = "ja") -> str:
     base = "en/movements" if lang == "en" else "movements"
     return f"/{base}/{movement_slug(movement)}.html"
+
+
+def render_site_directory_nav(
+    photographers: list[dict],
+    eras: list[dict],
+    all_nationalities: list[str],
+    lang: str,
+) -> str:
+    labels = {
+        "ja": {
+            "nav": "サイト内リンク",
+            "eras": "年代一覧",
+            "countries": "国一覧",
+            "photographers": "代表写真家一覧",
+        },
+        "en": {
+            "nav": "Site links",
+            "eras": "Era index",
+            "countries": "Country index",
+            "photographers": "Featured photographers",
+        },
+    }[lang]
+    photographer_lookup = {photographer["id"]: photographer for photographer in photographers}
+    featured_links = []
+    for photographer_id in FEATURED_PHOTOGRAPHER_IDS:
+        photographer = photographer_lookup.get(photographer_id)
+        if photographer:
+            featured_links.append(
+                f'<a href="{photographer_page_path(photographer, lang)}">{escape_html(display_name(photographer, lang))}</a>'
+            )
+    era_links = [
+        f'<a href="{era_page_path({"era": era["id"]}, lang)}">{escape_html((era.get("period") or "").replace(" — ", "–"))}</a>'
+        for era in eras
+    ]
+    country_links = [
+        f'<a href="/{"en/" if lang == "en" else ""}countries/{COUNTRY_META[nationality]["slug"]}.html">{escape_html(COUNTRY_META[nationality]["en" if lang == "en" else "ja"])}</a>'
+        for nationality in all_nationalities
+    ]
+    return f"""
+      <nav class="site-directory-links" aria-label="{escape_html(labels['nav'])}">
+        <div class="site-directory-group">
+          <div class="site-directory-label">{escape_html(labels['eras'])}</div>
+          <div class="site-directory-items">{''.join(era_links)}</div>
+        </div>
+        <div class="site-directory-group">
+          <div class="site-directory-label">{escape_html(labels['countries'])}</div>
+          <div class="site-directory-items">{''.join(country_links)}</div>
+        </div>
+        <div class="site-directory-group">
+          <div class="site-directory-label">{escape_html(labels['photographers'])}</div>
+          <div class="site-directory-items">{''.join(featured_links)}</div>
+        </div>
+      </nav>"""
 
 
 def render_tax_select(
@@ -1165,6 +1228,7 @@ def main() -> None:
         <a class="lang-btn{' active' if lang == 'ja' else ''}" href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
         <a class="lang-btn{' active' if lang == 'en' else ''}" href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
       </div>"""
+            directory_nav = render_site_directory_nav(photographers, eras, all_nationalities, lang)
             page_top_links = f"""
       <div class="page-top-links top-links">
         <a class="nav-active-link" href="{archive_href}">{copy['archive']}</a>
@@ -1256,6 +1320,7 @@ gtag('config', '{GA_ID}');
         <div class="sources">{citations_html}</div>
       </section>
     </div>
+    {directory_nav}
     <footer class="site-footer">
       <div>{copy['footerLine1']}</div>
       <div class="footer-secondary">{copy['footerLine2']}</div>

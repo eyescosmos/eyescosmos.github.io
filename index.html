@@ -354,6 +354,41 @@ body.is-navigating #page-fade {
   text-align: center;
 }
 
+.site-directory-links {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 54px;
+  z-index: 4;
+  width: min(720px, calc(100vw - 64px));
+  display: grid;
+  gap: 8px;
+  text-align: center;
+}
+
+.site-directory-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 10px;
+  color: var(--text-muted);
+  font: 400 10px/1.6 'DM Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.site-directory-label {
+  color: rgba(213, 194, 156, 0.74);
+}
+
+.site-directory-group a {
+  color: rgba(213, 194, 156, 0.64);
+  text-decoration: none;
+}
+
+.site-directory-group a:hover {
+  color: rgba(235, 224, 204, 0.92);
+}
+
 .site-footer a {
   color: rgba(213, 194, 156, 0.76);
   text-decoration: none;
@@ -447,6 +482,7 @@ body.is-navigating #page-fade {
   .title-status,
   .lede,
   .title-note,
+  .site-directory-links,
   .site-footer {
     display: none;
   }
@@ -607,12 +643,12 @@ body.is-navigating #page-fade {
 
   <div class="hud">
     <div class="hero-text">
-      <div class="eyebrow">Prototype / Photo Coordinates</div>
+      <div class="eyebrow">Photo Coordinates</div>
       <div class="keywordline">現代写真｜歴史｜文脈｜アート｜解説｜</div>
       <h1 class="title"><em id="main-title">写真の座標</em></h1>
       <div class="title-english">Photo Coordinates</div>
       <div class="title-subcopy" id="title-subcopy">写真の座標は、世界の写真家を一覧・整理した写真史サイトです。歴史、国、運動から写真史をたどれます。</div>
-      <div class="title-status" id="title-status">随時更新中</div>
+      <div class="title-status" id="title-status"></div>
       <div class="lede" id="title-lede">
         クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。
       </div>
@@ -682,7 +718,6 @@ body.is-navigating #page-fade {
       </div>
       <div class="mobile-info-block">
         <div class="mobile-info-heading">補足</div>
-        <div class="mobile-info-text">随時更新中。</div>
         <div class="mobile-info-text">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
       </div>
       <div class="mobile-info-links">
@@ -722,6 +757,11 @@ body.is-navigating #page-fade {
 </details>
 
 <div id="page-fade" aria-hidden="true"></div>
+<nav class="site-directory-links" aria-label="サイト内リンク">
+  <div class="site-directory-group"><span class="site-directory-label">年代一覧</span><a href="eras/1839.html">1839–1860s</a><a href="eras/1870.html">1870–1890s</a><a href="eras/1890.html">1890–1910s</a><a href="eras/1910.html">1910–1920s</a><a href="eras/1930.html">1930–1940s</a></div>
+  <div class="site-directory-group"><span class="site-directory-label">国一覧</span><a href="countries/united-states.html">アメリカ</a><a href="countries/united-kingdom.html">イギリス</a><a href="countries/france.html">フランス</a><a href="countries/germany.html">ドイツ</a><a href="countries/japan.html">日本</a></div>
+  <div class="site-directory-group"><span class="site-directory-label">代表写真家一覧</span><a href="photographers/daguerre.html">ルイ・ダゲール</a><a href="photographers/fenton.html">ロジャー・フェントン</a><a href="photographers/beato.html">フェリーチェ・ベアト</a><a href="photographers/nadar.html">ナダール</a><a href="photographers/stieglitz.html">アルフレッド・スティーグリッツ</a><a href="photographers/strand.html">ポール・ストランド</a></div>
+</nav>
 <footer class="site-footer">
   <a href="privacy-policy.html">プライバシーポリシー</a>
 </footer>

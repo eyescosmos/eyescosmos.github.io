@@ -11,7 +11,7 @@ import re
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260414d"
+ASSET_VERSION = "20260414f"
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
     "ana-torfs",
@@ -48,6 +48,16 @@ COUNTRY_META = {
     "US / FR": {"ja_code": "US / FR", "ja_name": "アメリカ / フランス", "en_name": "United States / France", "slug": "united-states-france", "flag": "🇺🇸 🇫🇷"},
     "HU / DE": {"ja_code": "HU / DE", "ja_name": "ハンガリー / ドイツ", "en_name": "Hungary / Germany", "slug": "hungary-germany", "flag": "🇭🇺 🇩🇪"},
 }
+FEATURED_PHOTOGRAPHER_IDS = [
+    "daguerre",
+    "fenton",
+    "beato",
+    "nadar",
+    "stieglitz",
+    "strand",
+    "cartierbresson",
+    "hiroshi-sugimoto",
+]
 
 JAPANESE_READING_OVERRIDES = {
     "domon": "どもんけん",
@@ -574,7 +584,7 @@ def era_context_html(era: dict, lang: str) -> str:
       </section>'''
 
 
-def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, archive_href: str, back_label: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str) -> str:
+def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, archive_href: str, back_label: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str) -> str:
     kind_label = "Movement" if page_kind == "movement" else ("Country" if page_kind == "country" else "Era")
     label = f"Photo Coordinates / {kind_label}"
     structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip())
@@ -648,6 +658,7 @@ gtag('config', '{GA_ID}');
         <div class="archive-list-shell">{list_html}</div>
       </section>
     </div>
+    {directory_nav_html}
     <footer class="site-footer">
       <div>{esc(footer_line1)}</div>
       <div class="footer-secondary">{esc(footer_line2)}</div>
@@ -761,6 +772,59 @@ def render_movement_select(movements: list[str], current: str | None, movements_
     return f'<span class="select-wrap"><select class="tax-select filter-select nav-select" aria-label="{label}" onchange="if(this.value) window.location.href=this.value">{ "".join(options) }</select></span>'
 
 
+def render_site_directory_nav(
+    photographers: list[dict],
+    eras: list[dict],
+    all_nationalities: list[str],
+    lang: str,
+) -> str:
+    labels = {
+        "ja": {
+            "nav": "サイト内リンク",
+            "eras": "年代一覧",
+            "countries": "国一覧",
+            "photographers": "代表写真家一覧",
+        },
+        "en": {
+            "nav": "Site links",
+            "eras": "Era index",
+            "countries": "Country index",
+            "photographers": "Featured photographers",
+        },
+    }[lang]
+    photographer_lookup = {photographer["id"]: photographer for photographer in photographers}
+    featured_links = []
+    for photographer_id in FEATURED_PHOTOGRAPHER_IDS:
+        photographer = photographer_lookup.get(photographer_id)
+        if photographer:
+            featured_links.append(
+                f'<a href="{photographer_path(photographer, lang)}">{esc(display_name(photographer, lang))}</a>'
+            )
+    era_links = [
+        f'<a href="{era_path(era["id"], lang)}">{esc(era_short_label(era, lang))}</a>'
+        for era in eras
+    ]
+    country_links = [
+        f'<a href="{country_path(nationality, lang)}">{esc(country_label(nationality, lang))}</a>'
+        for nationality in all_nationalities
+    ]
+    return f"""
+      <nav class="site-directory-links" aria-label="{esc(labels['nav'])}">
+        <div class="site-directory-group">
+          <div class="site-directory-label">{esc(labels['eras'])}</div>
+          <div class="site-directory-items">{''.join(era_links)}</div>
+        </div>
+        <div class="site-directory-group">
+          <div class="site-directory-label">{esc(labels['countries'])}</div>
+          <div class="site-directory-items">{''.join(country_links)}</div>
+        </div>
+        <div class="site-directory-group">
+          <div class="site-directory-label">{esc(labels['photographers'])}</div>
+          <div class="site-directory-items">{''.join(featured_links)}</div>
+        </div>
+      </nav>"""
+
+
 def main():
     photographers = eval_js([
         "data/photographers.js",
@@ -849,6 +913,7 @@ def main():
                 context_html=context_html,
                 list_title="Photographers" if lang == "en" else "写真家一覧",
                 list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, essay_overrides),
+                directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
             )
             (eras_en_dir if lang == "en" else eras_dir).joinpath(f"{era_id}.html").write_text(page, encoding="utf-8")
 
@@ -890,6 +955,7 @@ def main():
                 context_html="",
                 list_title="Photographers" if lang == "en" else "写真家一覧",
                 list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, essay_overrides),
+                directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
             )
             (countries_en_dir if lang == "en" else countries_dir).joinpath(f"{COUNTRY_META[nationality]['slug']}.html").write_text(page, encoding="utf-8")
 
@@ -942,6 +1008,7 @@ def main():
                 context_html=context_html,
                 list_title="Photographers" if lang == "en" else "写真家一覧",
                 list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, essay_overrides),
+                directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
             )
             (movements_en_dir if lang == "en" else movements_dir).joinpath(f"{movement_slug(movement)}.html").write_text(page, encoding="utf-8")
 
