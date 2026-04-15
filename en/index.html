@@ -276,6 +276,7 @@ body.is-navigating #page-fade {
 
 .page-select {
   min-height: 36px;
+  min-width: 148px;
   padding: 10px 34px 10px 14px;
   border: 1px solid var(--border);
   background: rgba(10, 12, 18, 0.62);
@@ -647,8 +648,9 @@ body.is-navigating #page-fade {
       <a class="lang-btn" data-lang="en" href="/en/">English</a>
     </div>
     <span class="page-select-wrap">
-      <select class="page-select" id="page-link-era-select" aria-label="Browse by Era" onchange="if(this.value) window.location.href=this.value">
-        <option value="">Browse by Era</option>
+      <select class="page-select" id="page-link-era-select" aria-label="Browse eras" onchange="if(this.value) window.location.href=this.value">
+        <option value="">Browse eras</option>
+        <option value="archive.html#tab-era">Browse by Era</option>
         <option value="archive.html#era-1839">1839–1860s</option>
         <option value="archive.html#era-1870">1870–1890s</option>
         <option value="archive.html#era-1890">1890–1910s</option>
@@ -701,8 +703,9 @@ body.is-navigating #page-fade {
       </div>
       <div class="mobile-info-links">
         <span class="mobile-info-select-wrap">
-          <select class="mobile-info-select" aria-label="Browse by Era" onchange="if(this.value) window.location.href=this.value">
-            <option value="">Browse by Era</option>
+          <select class="mobile-info-select" aria-label="Browse eras" onchange="if(this.value) window.location.href=this.value">
+            <option value="">Browse eras</option>
+            <option value="archive.html#tab-era">Browse by Era</option>
             <option value="archive.html#era-1839">1839–1860s</option>
             <option value="archive.html#era-1870">1870–1890s</option>
             <option value="archive.html#era-1890">1890–1910s</option>

@@ -133,6 +133,13 @@ header::before {
   color: var(--text);
   background: rgba(200,169,110,0.06);
 }
+.archive-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+.archive-title-link:hover {
+  color: var(--accent);
+}
 .lang-toggle {
   display: inline-flex;
   border: 1px solid var(--border);
@@ -1425,16 +1432,9 @@ footer a:hover { color: var(--accent); }
 <div class="container">
   <div class="header-top">
     <div class="header-label" id="archive-header-label">Photo Coordinates / Archive</div>
-    <div class="header-actions">
-      <div class="lang-toggle" aria-label="Language switch">
-        <a class="lang-btn" data-lang="ja" href="/archive.html">Japanese</a>
-        <a class="lang-btn" data-lang="en" href="/en/archive.html">English</a>
-      </div>
-      <a class="header-link" id="archive-back-link" href="index.html">写真の座標へ戻る</a>
-    </div>
   </div>
   <div class="title-row">
-    <h1 id="archive-main-title"><em>写真の座標</em></h1>
+    <h1 id="archive-main-title"><a class="archive-title-link" href="/"><em>写真の座標</em></a></h1>
   </div>
   <p class="header-keywordline">現代写真｜歴史｜文脈｜アート｜解説｜</p>
   <p class="header-subtitle" id="archive-header-subtitle">年代順にたどる写真史</p>
@@ -1448,11 +1448,10 @@ footer a:hover { color: var(--accent); }
 <nav class="tab-nav">
   <div class="tab-nav-inner">
     <div class="tab-nav-links">
-      <button class="tab-btn active" data-tab="era" onclick="switchTab('era')" id="tab-era-button">年代順にみる</button>
-      <a class="tab-link" href="index.html" id="tab-home-link">写真の座標</a>
       <div class="tab-nav-selects">
         <select class="filter-select nav-select" id="nav-era-select" onchange="navigateArchiveTaxonomy(this.value)">
-          <option value="">年代順にみる</option>
+          <option value="">年代別でみる</option>
+          <option value="/archive.html#tab-era">年代順で見る</option>
         </select>
         <select class="filter-select nav-select" id="nav-country-select" onchange="navigateArchiveTaxonomy(this.value)">
           <option value="">国別でみる</option>
@@ -1463,8 +1462,8 @@ footer a:hover { color: var(--accent); }
       </div>
     </div>
     <div class="lang-toggle tab-lang-toggle" aria-label="Language switch">
-      <a class="lang-btn" data-lang="ja" href="/archive.html#tab-era">Japanese</a>
-      <a class="lang-btn" data-lang="en" href="/en/archive.html#tab-era">English</a>
+      <a class="lang-btn" data-lang="ja" href="/archive.html#tab-era">JP</a>
+      <a class="lang-btn" data-lang="en" href="/en/archive.html#tab-era">EN</a>
     </div>
   </div>
 </nav>
@@ -1530,6 +1529,6 @@ footer a:hover { color: var(--accent); }
 <script src="data/affiliate-books.js?v=20260412d"></script>
 <script src="data/photographer-enrichments.js?v=20260406a"></script>
 <script src="scripts/language.js?v=20260403e"></script>
-<script src="scripts/site.js?v=20260414b"></script>
+<script src="scripts/site.js?v=20260415a"></script>
 </body>
 </html>

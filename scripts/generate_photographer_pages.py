@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260414f"
+ASSET_VERSION = "20260415a"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -1021,7 +1021,7 @@ COPY = {
     "ja": {
         "site": "写真の座標",
         "label": "Photo Coordinates / Photographer",
-        "archive": "年代順にみる",
+        "archive": "年代順で見る",
         "coordinates": "座標で見る",
         "home": "トップへ戻る",
         "menu": "メニュー",
@@ -1182,16 +1182,18 @@ def main() -> None:
             else:
                 citations_html = f'<div class="note">{copy["sourcesPlaceholder"]}</div>'
 
-            archive_href = ("/en/archive.html" if lang == "en" else "/archive.html") + f'#photographer-{photographer["id"]}'
             coordinates_href = ("/en/index.html" if lang == "en" else "/index.html") + f'?focus=photographer:{photographer["id"]}'
             era_href = era_page_path(photographer, lang)
             country_href = country_page_path(photographer, lang)
+            era_select_options = [
+                ((("/en" if lang == "en" else "") + "/archive.html#tab-era"), copy["archive"], False)
+            ] + [
+                (era_page_path({"era": era["id"]}, lang), (era.get("period") or "").replace(" — ", "–"), era["id"] == photographer.get("era"))
+                for era in eras
+            ]
             era_select = render_tax_select(
-                [
-                    (era_page_path({"era": era["id"]}, lang), (era.get("period") or "").replace(" — ", "–"), era["id"] == photographer.get("era"))
-                    for era in eras
-                ],
-                "Browse by Era" if lang == "en" else "年代順にみる",
+                era_select_options,
+                "Browse eras" if lang == "en" else "年代別で見る",
                 "Browse eras" if lang == "en" else "年代別で見る",
             ) if photographer.get("era") else ""
             country_select = render_tax_select(
@@ -1231,8 +1233,7 @@ def main() -> None:
             directory_nav = render_site_directory_nav(photographers, eras, all_nationalities, lang)
             page_top_links = f"""
       <div class="page-top-links top-links">
-        <a class="nav-active-link" href="{archive_href}">{copy['archive']}</a>
-        <a class="nav-secondary-link" href="{coordinates_href}">{copy['coordinates']}</a>
+        <a class="nav-secondary-link site-title-link" href="{home_href}">{copy['site']}</a>
         <div class="tab-nav-mobile-grid">
           <div class="tab-nav-selects">
             {extra_selects}

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>写真の座標｜世界の写真家一覧と写真史</title>
-<meta name="description" content="写真の座標は、世界の写真家を一覧・整理した写真史サイトです。歴史、国、運動から写真史をたどれます。世界・日本・各国の写真家を調べる入口として使えます。">
+<meta name="description" content="写真の座標は、世界の写真家を一覧・整理した写真史サイトです。歴史、国、運動から写真史をたどれます。">
 <link rel="canonical" href="https://eyescosmos.github.io/">
 <link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/">
 <link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/">
@@ -12,13 +12,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="写真の座標">
 <meta property="og:title" content="写真の座標｜世界の写真家一覧と写真史">
-<meta property="og:description" content="写真の座標は、世界の写真家を一覧・整理した写真史サイトです。歴史、国、運動から写真史をたどれます。世界・日本・各国の写真家を調べる入口として使えます。">
+<meta property="og:description" content="写真の座標は、世界の写真家を一覧・整理した写真史サイトです。歴史、国、運動から写真史をたどれます。">
 <meta property="og:url" content="https://eyescosmos.github.io/">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="写真の座標｜世界の写真家一覧と写真史">
-<meta name="twitter:description" content="写真の座標は、世界の写真家を一覧・整理した写真史サイトです。歴史、国、運動から写真史をたどれます。世界・日本・各国の写真家を調べる入口として使えます。">
+<meta name="twitter:description" content="写真の座標は、世界の写真家を一覧・整理した写真史サイトです。歴史、国、運動から写真史をたどれます。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -286,6 +286,7 @@ body.is-navigating #page-fade {
 
 .page-select {
   min-height: 36px;
+  min-width: 148px;
   padding: 10px 34px 10px 14px;
   border: 1px solid var(--border);
   background: rgba(10, 12, 18, 0.62);
@@ -668,8 +669,9 @@ body.is-navigating #page-fade {
       <a class="lang-btn" data-lang="en" href="/en/">English</a>
     </div>
     <span class="page-select-wrap">
-      <select class="page-select" id="page-link-era-select" aria-label="年代順で見る" onchange="if(this.value) window.location.href=this.value">
-        <option value="">年代順で見る</option>
+      <select class="page-select" id="page-link-era-select" aria-label="年代別でみる" onchange="if(this.value) window.location.href=this.value">
+        <option value="">年代別でみる</option>
+        <option value="archive.html#tab-era">年代順で見る</option>
         <option value="archive.html#era-1839">1839–1860s</option>
         <option value="archive.html#era-1870">1870–1890s</option>
         <option value="archive.html#era-1890">1890–1910s</option>
@@ -722,8 +724,9 @@ body.is-navigating #page-fade {
       </div>
       <div class="mobile-info-links">
         <span class="mobile-info-select-wrap">
-          <select class="mobile-info-select" aria-label="年代順で見る" onchange="if(this.value) window.location.href=this.value">
-            <option value="">年代順で見る</option>
+          <select class="mobile-info-select" aria-label="年代別でみる" onchange="if(this.value) window.location.href=this.value">
+            <option value="">年代別でみる</option>
+            <option value="archive.html#tab-era">年代順で見る</option>
             <option value="archive.html#era-1839">1839–1860s</option>
             <option value="archive.html#era-1870">1870–1890s</option>
             <option value="archive.html#era-1890">1890–1910s</option>

@@ -42,7 +42,7 @@ const UI_TEXT = {
     randomHint: '→ クリックして詳細を見る',
     coordinateButton: '座標で見る',
     coordinateDetail: '解説',
-    eraTab: '年代順にみる',
+    eraTab: '年代別でみる',
     movementTab: '表現から見る',
     filterLabel: '絞り込み',
     filterSearchPlaceholder: '写真家名で検索',
@@ -946,6 +946,10 @@ function populateArchiveNavigation() {
     defaultOption.value = '';
     defaultOption.textContent = t('eraTab');
     eraSelect.appendChild(defaultOption);
+    const archiveOption = document.createElement('option');
+    archiveOption.value = currentLanguage === 'en' ? '/en/archive.html#tab-era' : '/archive.html#tab-era';
+    archiveOption.textContent = currentLanguage === 'en' ? 'Browse by Era' : '年代順で見る';
+    eraSelect.appendChild(archiveOption);
     ERAS.forEach(era => {
       const option = document.createElement('option');
       option.value = eraPagePath(era.id);

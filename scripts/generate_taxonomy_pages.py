@@ -11,7 +11,7 @@ import re
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260414f"
+ASSET_VERSION = "20260415a"
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
     "ana-torfs",
@@ -584,7 +584,7 @@ def era_context_html(era: dict, lang: str) -> str:
       </section>'''
 
 
-def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, archive_href: str, back_label: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str) -> str:
+def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str) -> str:
     kind_label = "Movement" if page_kind == "movement" else ("Country" if page_kind == "country" else "Era")
     label = f"Photo Coordinates / {kind_label}"
     structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip())
@@ -626,7 +626,7 @@ gtag('config', '{GA_ID}');
   <header class="page-header">
     <div class="container">
       <div class="header-top">
-        <div class="header-label">{label}</div>
+        <div class="header-label"><a class="site-title-link" href="{home_href}">{'Photo Coordinates' if lang == 'en' else '写真の座標'}</a></div>
       </div>
       <p class="header-keywordline">{keywordline}</p>
     </div>
@@ -634,7 +634,6 @@ gtag('config', '{GA_ID}');
   <nav class="tab-nav">
     <div class="tab-nav-inner">
       <div class="page-top-links top-links">
-        <a class="nav-active-link" href="{archive_href}">{back_label}</a>
         <div class="tab-nav-selects">
           {controls_html}
         </div>
@@ -750,10 +749,13 @@ def render_country_select(all_nationalities: list[str], current: str | None, lan
 
 
 def render_era_select(eras: list[dict], current_id: str | None, lang: str, placeholder_label: str | None = None) -> str:
-    label = "Browse eras" if lang == "en" else "年代順にみる"
+    label = "Browse eras" if lang == "en" else "年代別で見る"
     options = []
     if placeholder_label:
         options.append(f'<option value="" selected>{esc(placeholder_label)}</option>')
+    archive_href = "/en/archive.html#tab-era" if lang == "en" else "/archive.html#tab-era"
+    archive_label = "Browse by Era" if lang == "en" else "年代順で見る"
+    options.append(f'<option value="{archive_href}">{esc(archive_label)}</option>')
     for era in eras:
         selected = ' selected' if placeholder_label is None and era["id"] == current_id else ''
         options.append(f'<option value="{era_path(era["id"], lang)}"{selected}>{esc(era_short_label(era, lang))}</option>')
@@ -891,7 +893,6 @@ def main():
             context_html = era_context_html(era, lang)
             hero_groups = (
                 f'<div class="meta-group"><div class="group-label">{"Basic facts" if lang == "en" else "基本情報"}</div><div class="mini-card-grid"><div class="mini-card"><span class="mini-card-label">{"Era" if lang == "en" else "年代"}</span><span class="mini-card-value">{esc(short)}</span></div><div class="mini-card"><span class="mini-card-label">{"Photographers" if lang == "en" else "写真家数"}</span><span class="mini-card-value">{len(people)}</span></div></div></div>'
-                f'<div class="meta-group"><div class="group-label">{"Related movements" if lang == "en" else "関連する運動"}</div><div class="tag-grid">{render_movement_cards(people, movements_meta, lang)}</div></div>'
             )
             page = render_taxonomy_page(
                 lang=lang,
@@ -902,12 +903,11 @@ def main():
                 description=description,
                 lead=lead,
                 home_href="/en/" if lang == "en" else "/",
-                archive_href="/en/archive.html" if lang == "en" else "/archive.html",
-                back_label="Browse by Era" if lang == "en" else "年代順にみる",
                 controls_html=(
-                    render_era_select(eras, era_id, lang)
+                    render_era_select(eras, era_id, lang, "Browse eras" if lang == "en" else "年代別で見る")
                     + render_country_select(all_nationalities, None, lang, "Browse countries" if lang == "en" else "国別で見る")
                     + render_movement_select(all_movements, None, movements_meta, lang, "Browse by Movement" if lang == "en" else "表現から見る")
+                    + render_related_movement_dropdown(people, movements_meta, lang).replace('class="tax-select"', 'class="tax-select filter-select nav-select"').replace('taxonomy-inline-select', '')
                 ),
                 hero_groups_html=hero_groups,
                 context_html=context_html,
@@ -936,7 +936,7 @@ def main():
             )
             controls_html = (
                 render_country_select(all_nationalities, None, lang, "Browse countries" if lang == "en" else "国別で見る")
-                + render_era_select(eras, None, lang, "Browse by Era" if lang == "en" else "年代順にみる")
+                + render_era_select(eras, None, lang, "Browse eras" if lang == "en" else "年代別で見る")
                 + render_related_movement_dropdown(people, movements_meta, lang).replace('class="tax-select"', 'class="tax-select filter-select nav-select"').replace('taxonomy-inline-select', '')
             )
             page = render_taxonomy_page(
@@ -948,8 +948,6 @@ def main():
                 description=description,
                 lead=lead,
                 home_href="/en/" if lang == "en" else "/",
-                archive_href="/en/archive.html" if lang == "en" else "/archive.html",
-                back_label="Browse by Era" if lang == "en" else "年代順にみる",
                 controls_html=controls_html,
                 hero_groups_html=hero_groups,
                 context_html="",
@@ -988,7 +986,7 @@ def main():
                 f'<div class="meta-group"><div class="group-label">{"Basic facts" if lang == "en" else "基本情報"}</div><div class="mini-card-grid"><div class="mini-card"><span class="mini-card-label">{"Movement" if lang == "en" else "表現"}</span><span class="mini-card-value">{esc(movement_label)}</span></div><div class="mini-card"><span class="mini-card-label">{"Photographers" if lang == "en" else "写真家数"}</span><span class="mini-card-value">{len(people)}</span></div></div></div>'
             )
             controls_html = (
-                render_era_select(eras, None, lang, "Browse by Era" if lang == "en" else "年代順にみる")
+                render_era_select(eras, None, lang, "Browse eras" if lang == "en" else "年代別で見る")
                 + render_country_select(all_nationalities, None, lang, "Browse countries" if lang == "en" else "国別で見る")
                 + render_movement_select(all_movements, None, movements_meta, lang, "Browse by Movement" if lang == "en" else "表現から見る")
             )
@@ -1001,8 +999,6 @@ def main():
                 description=description,
                 lead=lead,
                 home_href="/en/" if lang == "en" else "/",
-                archive_href="/en/archive.html" if lang == "en" else "/archive.html",
-                back_label="Browse by Era" if lang == "en" else "年代順にみる",
                 controls_html=controls_html,
                 hero_groups_html=hero_groups,
                 context_html=context_html,
