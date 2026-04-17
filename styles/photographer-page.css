@@ -193,6 +193,12 @@ body::after {
 .tab-lang-toggle {
   flex-shrink: 0;
 }
+.tab-lang-toggle .lang-btn,
+.tab-lang-toggle a {
+  padding: 8px 10px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
 .site-title-link {
   color: var(--accent) !important;
 }
