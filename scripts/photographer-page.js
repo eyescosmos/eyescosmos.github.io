@@ -83,10 +83,11 @@
     )).join('');
   }
 
-  if (essayEntry && lang === 'en') {
+  if (essayEntry) {
     const lead = document.querySelector('.lead');
-    if (lead && essayEntry.leadEn) {
-      lead.innerHTML = renderEssayRefs(essayEntry.leadEn, essayEntry.citations || []);
+    const leadText = localizeEssayValue(essayEntry, 'leadJa', 'leadEn');
+    if (lead && leadText) {
+      lead.innerHTML = renderEssayRefs(leadText, essayEntry.citations || []);
     }
 
     const essay = document.querySelector('.essay');

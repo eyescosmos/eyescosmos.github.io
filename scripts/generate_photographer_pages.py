@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260415a"
+ASSET_VERSION = "20260417a"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -96,6 +96,21 @@ def load_affiliate_books() -> dict:
     source = ["(function(){", "var window = {};"]
     source.append((REPO / "data/affiliate-books.js").read_text(encoding="utf-8"))
     source.append("console.log(JSON.stringify(window.PHOTOGRAPHER_AFFILIATE_BOOKS || {}));")
+    source.append("})();")
+    proc = subprocess.run(
+        ["osascript", "-l", "JavaScript"],
+        input="\n".join(source).encode("utf-8"),
+        capture_output=True,
+        check=True,
+    )
+    payload = proc.stderr.decode("utf-8") or proc.stdout.decode("utf-8")
+    return json.loads(payload)
+
+
+def load_essay_overrides() -> dict:
+    source = ["(function(){", "var window = {};"]
+    source.append((REPO / "data/photographer-essay-overrides.js").read_text(encoding="utf-8"))
+    source.append("console.log(JSON.stringify(window.PHOTOGRAPHER_ESSAY_OVERRIDES || {}));")
     source.append("})();")
     proc = subprocess.run(
         ["osascript", "-l", "JavaScript"],
@@ -649,6 +664,40 @@ def collect_text_and_citations(photographer: dict, lang: str):
     return combined, sources
 
 
+def override_text_and_citations(override, lang: str):
+    if not isinstance(override, dict):
+        return "", None
+    text_key = "textEn" if lang == "en" else "textJa"
+    fallback_key = "textJa" if lang == "en" else "textEn"
+    text = override.get(text_key) or override.get(fallback_key) or ""
+    if not text and isinstance(override.get("sections"), list):
+        parts = []
+        heading_key = "headingEn" if lang == "en" else "headingJa"
+        heading_fallback_key = "headingJa" if lang == "en" else "headingEn"
+        paragraphs_key = "paragraphsEn" if lang == "en" else "paragraphsJa"
+        paragraphs_fallback_key = "paragraphsJa" if lang == "en" else "paragraphsEn"
+        for section in override.get("sections") or []:
+            if not isinstance(section, dict):
+                continue
+            heading = section.get(heading_key) or section.get(heading_fallback_key)
+            paragraphs = section.get(paragraphs_key) or section.get(paragraphs_fallback_key) or []
+            if heading:
+                parts.append(heading)
+            parts.extend(paragraph for paragraph in paragraphs if paragraph)
+        text = "\n\n".join(parts)
+    citations = override.get("citations") if isinstance(override.get("citations"), list) else None
+    return text, citations
+
+
+def override_lead(override, lang: str) -> str:
+    if not isinstance(override, dict):
+        return ""
+    lead_key = "leadEn" if lang == "en" else "leadJa"
+    fallback_key = "leadJa" if lang == "en" else "leadEn"
+    lead = override.get(lead_key) or override.get(fallback_key) or ""
+    return normalize_space(re.sub(r"\*\d+", "", lead))
+
+
 def display_name(photographer: dict, lang: str) -> str:
     if lang == "en":
         return photographer.get("name") or photographer.get("nameJa") or ""
@@ -1100,6 +1149,7 @@ def main() -> None:
     movements_meta = eval_js(["data/movements.js"], "MOVEMENTS_META")
     enrichments = eval_js(["data/photographer-enrichments.js"], 'typeof PHOTOGRAPHER_ENRICHMENTS !== "undefined" ? PHOTOGRAPHER_ENRICHMENTS : {}')
     affiliate_books = load_affiliate_books()
+    essay_overrides = load_essay_overrides()
     eras = eval_js(
         [
             "data/eras.js",
@@ -1135,11 +1185,17 @@ def main() -> None:
         copy = COPY[lang]
 
         for photographer in photographers:
+            override_entry = essay_overrides.get(photographer["id"])
+            override_body_text, override_citations = override_text_and_citations(override_entry, lang)
             body_text, citations = collect_text_and_citations(photographer, lang)
+            if override_body_text:
+                body_text = override_body_text
+                citations = override_citations or citations
             rendered_body = render_cited_text(body_text or copy["placeholder"], lang, alias_lookup, alias_regex, photographer["id"])
             description = build_description(photographer, lang, era_lookup, movements_meta, enrichments)
             title = build_title(photographer, lang, era_lookup, movements_meta, enrichments)
             intro = build_intro(photographer, lang, era_lookup, movements_meta, enrichments)
+            intro = override_lead(override_entry, lang) or intro
             keyword_line = build_keyword_line(photographer, lang, era_lookup, movements_meta, enrichments)
             keyword_line_html = build_keyword_line_html(photographer, lang, era_lookup, movements_meta, enrichments)
             affiliate_section_html = build_affiliate_books_html(photographer, lang, affiliate_books, copy)
@@ -1168,7 +1224,7 @@ def main() -> None:
                     if option_tuple not in related_people_select_options:
                         related_people_select_options.append(option_tuple)
 
-            links = photographer.get("links") or []
+            links = (override_entry.get("links") if isinstance(override_entry, dict) and override_entry.get("links") else None) or photographer.get("links") or []
             links_html = "".join(
                 f'<a class="chip-link" href="{escape_html(link["url"])}" target="_blank" rel="noopener">{escape_html(english_reference_label(link["label"], link["url"]) if lang == "en" else link["label"])} ↗</a>'
                 for link in links
