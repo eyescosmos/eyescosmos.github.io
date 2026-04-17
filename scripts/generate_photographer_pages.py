@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260417c"
+ASSET_VERSION = "20260417d"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
