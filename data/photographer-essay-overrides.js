@@ -4573,5 +4573,770 @@ Final website copy should emphasize that Koester is important not because he ill
             }
         ]
     },
+    "john-riddy": {
+      "leadJa": "1959年イギリス生まれ。建築・都市空間・空などを主題に、出来事の記録ではなく持続的な観察と連作による記述を方法論とする大判カラー写真を制作してきた。描写そのものを反省的・歴史意識的な実践として位置づけ、速報性でも社会告発でもない「見ること」への忍耐の写真家として評価される。",
+      "leadEn": "British photographer born in 1959.*1*2*3 Known for serial color photographs of architecture, urban environments, skies, and built landscapes, often made through deliberate, sustained looking rather than event-driven documentary.*1*2*3",
+      "textJa": "経歴\n\n1959年イギリス生まれ。フリス・ストリート・ギャラリーでの個展（1994年、2000年等）を通じて評価を確立し、Steidlから作品集を刊行している。*2 コンテンポラリー・アート・ソサエティのコレクションに《Sky 14 (Camberwell)》が収蔵されており、イギリス現代写真の文脈で継続的に活動を展開してきた。*1\n\n表現解説\n\nリディの実践の核心は、描写（description）を批評的な写真的行為として維持することにある。速報性・社会的告発・スペクタクルではなく、場所を「ゆっくりと知ること」のための反復的・連作的な実践として写真を位置づけてきた。建築・都市環境・空を主題とした連作は、単一の決定的瞬間ではなく複数の視点の比較と持続的な観察に依拠する。*1\n\n《Sky 14 (Camberwell)》に代表される空のシリーズ、《Low Relief》のロンドン建築写真、《Normandy》《Garbatella 2》などの建築連作は、いずれも静止・トーン・測定的な記述を通じてスペクタクルを拒否する姿勢を示す。マイケル・フリードのエッセイが指摘するように、リディの写真は比較・遅さ・建築的意識を通じて機能し、その記述的な力は連作性によってのみ生まれる。*3 1994年のフリス・ストリート展示テキストはこの実践を、19世紀フランス写真・20世紀アメリカ写真・絵画・彫刻との対話として提示し、2000年の《Ideal World》展では近代建築の理想・風化・時間の経過という問いを前景化させた。*2\n\n描写を通じて場所の歴史的・文化的な厚みを圧縮するというリディの実践は、20世紀末のイギリス写真においてストリートルポやドキュメンタリーとは異なる経路として位置づけられる。トポグラフィック写真や建築写真と参照関係を持ちながらも、中立的な調査よりも写真的記述と絵画史的な記憶の関係を重視する点で独自の位置を占める。\n\n批評と受容\n\nフリード、フリス・ストリート・ギャラリー、コンテンポラリー・アート・ソサエティいずれも、連作性・場所・建築的注意というフレームでリディを位置づけてきた。*3 フリードのテキストはとりわけ、写真を比較と遅さを通じて機能させるという記述的序列の批評として重要な位置を占める。1990年代中頃からすでに写真史・絵画史との対話として実践が公に提示されていたことが、フリス・ストリートの初期テキストで確認できる。*2 描写的写真をスペクタクルでもコンセプチュアルな批評でもなく、反省的・歴史意識的な方法として維持した実践として評価される。",
+      "textEn": "Biography\n\nBritish photographer born in 1959.*1*2*3\n\nKnown for serial color photographs of architecture, urban environments, skies, and built landscapes, often made through deliberate, sustained looking rather than event-driven documentary.*1*2*3\n\nExpression / method\n\nMain themes: architecture, the particularity of place, urban space, and the relation between photography and the histories of painting and architectural representation.*1*2\n\nRepresentative work examples: the Sky photographs such as Sky 14 (Camberwell), the London-focused series gathered in Low Relief, architectural works such as Normandy and Garbatella 2, and later bodies such as Half-light or Palermo are central because they show his investment in description as a slow, sustained practice rather than a decisive moment.*1*2*3*4*5\n\nTechnique / formal traits: serial working method, large color prints, careful vantage points, and a visual discipline that privileges stillness, tonality, and measured description over spectacle.*1*2\n\nWhy this method was chosen: collection summaries emphasize that Riddy has consistently worked in series and that his starting points often lie in architecture and the history of representation. Michael Fried’s notes are especially useful here because they show how Riddy’s photographs ask for sustained, comparative looking and how their descriptive force depends on seriality rather than singular spectacle. The early Frith Street texts make this more concrete by stressing that his pictures compress time, atmosphere, and cultural history into a quiet but exacting view of place.*1*2*3*5*6\n\nHistorical context: Riddy belongs to late twentieth-century British photography after street reportage and classic documentary, when artists increasingly turned to architecture, urban transformation, and the slower temporalities of serial observation. His work is also part of a broader late-twentieth-century return to the descriptive image, but one inflected by art-historical memory rather than by neutral survey alone.*1*2*5*6\n\nRelation to contemporaries or movements: he can be linked to topographic and architectural photography, but differs from neutral survey work by stressing the relationship between photographic description and older pictorial traditions.*1*2\n\nHistorical significance: Riddy matters because he keeps descriptive photography alive as a reflective and historically conscious practice at a moment when photography was often polarized between spectacle and conceptual critique.*1*2\n\nCritical meaning: the work matters because it asks how much place can be known through patience, distance, and repetition. The photographs are not empty of affect, but their affect is produced through duration, compositional restraint, and the tension between straightforward description and subtle illusion or artifice.*1*2*5\n\nWhere and how the work was used: the Contemporary Art Society record situates Sky 14 (Camberwell) in a collecting context, while Frith Street Gallery’s 1994 and 2000 exhibition texts show how particular series were framed publicly through architecture, modernism, Ruskin, and the ideal form. Fried’s essay and Steidl’s publication material are important because they extend that reception into a fuller critical account of descriptive seriality.*1*3*4*5*6\n\nCriticism and reception\n\nThe available institutional material is concise, but it consistently frames Riddy through seriality, place, and architectural attention rather than through event photography. Michael Fried’s essay is especially valuable because it gives a fuller critical account of how Riddy’s photographs operate through comparison, slowness, and architectural consciousness.*1*2*3\n\nThe early Frith Street texts also make the historical reception more concrete: by the mid-1990s his work was already being presented as a dialogue with nineteenth-century French photography, twentieth-century American photography, painting, and sculpture, and by 2000 it was explicitly tied to questions of modernist utopia, weathering, and the pathos of architectural ideals.*5*6",
+      "links": [
+            {
+                  "url": "https://contemporaryartsociety.org/objects/sky-14-camberwell-2003",
+                  "label": "Contemporary Art Society — Sky 14"
+            },
+            {
+                  "url": "https://www.frithstreetgallery.com/artists/john-riddy",
+                  "label": "Frith Street Gallery"
+            },
+            {
+                  "url": "https://www.johnriddy.net/assets/michael-fried-notes-on-john-riddy-s-photographs-michael-fried-2019-sized.pdf",
+                  "label": "Michael Fried — Notes on John Riddy's Photographs"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://contemporaryartsociety.org/objects/sky-14-camberwell-2003",
+                  "name": "Sky 14 (Camberwell) — Contemporary Art Society"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.frithstreetgallery.com/artists/john-riddy",
+                  "name": "John Riddy — Frith Street Gallery"
+            },
+            {
+                  "num": 3,
+                  "url": "https://www.johnriddy.net/assets/michael-fried-notes-on-john-riddy-s-photographs-michael-fried-2019-sized.pdf",
+                  "name": "Notes on John Riddy's Photographs — Michael Fried"
+            },
+            {
+                  "num": 4,
+                  "url": "https://steidl.de/assets/mime/-UTQ3ZXDMcn%2C7cBxtW2c4dCQZ2XvBx6DERPP%2CMsOpsAOiHdce/Steidl_WWP_SS19.pdf",
+                  "name": "Steidl Spring/Summer 2019 catalogue — John Riddy"
+            },
+            {
+                  "num": 5,
+                  "url": "https://www.frithstreetgallery.com/exhibitions/167-john-riddy/",
+                  "name": "John Riddy exhibition text (1994) — Frith Street Gallery"
+            },
+            {
+                  "num": 6,
+                  "url": "https://www.frithstreetgallery.com/exhibitions/130-john-riddy-ideal-world/",
+                  "name": "John Riddy: Ideal World — Frith Street Gallery"
+            }
+      ]
+},
+    "justine-kurland": {
+      "leadJa": "1969年アメリカ・ニューヨーク州生まれ。1990年代末から少女・道路文化・アメリカの風景を大判カラーで演出・記録し、男性的な移動神話に女性の集団的自由という対抗神話を対置してきた。後期にはコラージュ・アプロプリエーションへと実践を拡張し、写真表現の規範そのものへの批評を深めた。",
+      "leadEn": "American photographer born in 1969 in Warsaw, New York.*1*2*3 Known for staged and semi-staged photographs of girls, road culture, motherhood, landscape, and American mythologies, later extending into collage and overtly feminist critique.*1*2*3",
+      "textJa": "経歴\n\n1969年アメリカ・ニューヨーク州ワルソー生まれ。《Girl Pictures》（1997〜2002年）でウォズワース・アセニアムをはじめ国際的な評価を得た。*1 その後《Highway Kind》《This Train》（2005〜2011年）など道路文化・移動・女性の集団的経験を主題とした連作を展開し、ナショナル・ギャラリー・オブ・アートのコレクションにも収蔵されている。*2\n\n表現解説\n\nカーランドの実践の出発点は、アメリカ写真に埋め込まれた神話——移動・自由・フロンティア——が男性的なコードとして機能してきたことへの批評的介入にある。《Girl Pictures》では少女たちが荒野・牧草地・廃墟といったアメリカ的な風景のなかで集団的な自由を体現するユートピア的な場面を演出・記録し、ウォズワース・アセニアムはこれを「10代女性の経験を写真で提示・再想像した」決定的な連作として評価した。*1\n\n大判カラー写真を用いた演出的なミザンセーヌは、ドキュメンタリーの外観を持ちながら社会的に拒まれた生の形式や集団性を想像するための舞台として機能する。場所はアメリカ的な運命の背景ではなく、対抗神話と社会的想像力のフィールドとして扱われる。後期の《This Train》では、道路文化・移動・旅という同じ主題をより批評的・自伝的な文脈で再訪し、コラージュやアプロプリエーションをも取り込むことで、写真的表現の歴史そのものへの問いを深めている。*3\n\n1990年代末から2000年代にかけての現代アメリカ写真がアメリカの道・西部・アイデンティティを再訪していた文脈のなかで、カーランドの実践はその場に女性的な集団性と幻想を持ち込むことで、写真における「誰が移動・欲望・神話を許されるか」という問いを可視化した。\n\n批評と受容\n\nウォズワース・アセニアムによる《Girl Pictures》展示はカーランドの最初の主要な位置づけとなり、同連作をアメリカの風景・青春・ジェンダーを像にする方法の決定的な介入として確定した。*1 NGA所蔵は制度的な評価の確立を示しており、*2 後の批評は初期のユートピア的演出から継続するフェミニスト的批評への展開を、断絶ではなく実践の深化として読む傾向にある。写真における「誰が移動・欲望・神話を許されるか」という問いを集団的な再想像として提示した実践として評価される。",
+      "textEn": "Biography\n\nAmerican photographer born in 1969 in Warsaw, New York.*1*2*3\n\nKnown for staged and semi-staged photographs of girls, road culture, motherhood, landscape, and American mythologies, later extending into collage and overtly feminist critique.*1*2*3\n\nExpression / method\n\nMain themes: female adolescence, freedom and fantasy, road culture, the American landscape, feminist revision, motherhood, and the politics of photographic mythmaking.*1*2*3\n\nRepresentative work examples: Girl Pictures (1997–2002), Highway Kind, and later projects connected to motherhood and feminist collage are central because they show how Kurland moved from utopian girl communities toward a deeper critique of photographic and social narratives.*1*2*3\n\nTechnique / formal traits: large-format color photography, staged or collaborative mise-en-scène, use of landscape as psychological and political stage, and later a turn toward collage and appropriation. Even her documentary-looking pictures often rely on constructed or carefully negotiated situations.*1*2*3\n\nWhy this method was chosen: Kurland uses staging to imagine forms of life and collectivity excluded from dominant American narratives. Her photographs do not just record teenage girls or road culture; they propose alternative worlds and later question the histories of representation from which those worlds emerged.*1*2\n\nHistorical context: her work emerges in the late 1990s and early 2000s, when contemporary photography was revisiting the American road, the West, and identity, but often through male-coded traditions. Kurland’s work intervenes in that history by replacing masculine mobility with female collectivity and fantasy.*1*2*3\n\nRelation to contemporaries or movements: Kurland can be placed near staged photography, feminist art, and reworkings of the American landscape. She differs from classic road or landscape photography by treating place as a field for counter-myth and social imagination rather than national destiny.*1*2*3\n\nHistorical significance: she matters because Girl Pictures became a major intervention in how American landscape, adolescence, and gender could be pictured, and because her later work extends that intervention into broader feminist critique.*1*2*3\n\nCritical meaning: the work matters because it rewrites photographic freedom. Kurland’s photographs ask who is allowed mobility, desire, and myth in American image culture, and how those permissions might be collectively reimagined.*1*2*3\n\nWhere and how the work was used: her work circulated through museums, artist talks, collection displays, and later publications. The Wadsworth’s Girl Pictures exhibition is especially important because it framed the early series as a defining body of work and made explicit its relation to teenage experience and American myth.*1\n\nCriticism and reception\n\nThe Wadsworth’s exhibition framing is particularly useful because it identifies Girl Pictures as the most celebrated series in Kurland’s oeuvre and connects it directly to adolescent female experience as represented and reimagined through photography.*1\n\nNational Gallery of Art collection materials help situate Kurland within a broader institutional history of contemporary American photography rather than treating her work as marginal or subcultural.*2",
+      "links": [
+            {
+                  "url": "https://www.thewadsworth.org/justine-kurland-girl-pictures/",
+                  "label": "Wadsworth Atheneum — Girl Pictures"
+            },
+            {
+                  "url": "https://www.nga.gov/artists/34792-justine-kurland",
+                  "label": "National Gallery of Art"
+            },
+            {
+                  "url": "https://higherpictures.com/wp-content/uploads/2024/01/JK_This-Train_PressRelease_Final.pdf",
+                  "label": "Higher Pictures — This Train"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.thewadsworth.org/justine-kurland-girl-pictures/",
+                  "name": "Justine Kurland: Girl Pictures — Wadsworth Atheneum"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.nga.gov/artists/34792-justine-kurland",
+                  "name": "Justine Kurland — National Gallery of Art"
+            },
+            {
+                  "num": 3,
+                  "url": "https://higherpictures.com/wp-content/uploads/2024/01/JK_This-Train_PressRelease_Final.pdf",
+                  "name": "Justine Kurland: This Train — Higher Pictures"
+            }
+      ]
+},
+    "juul-hondius": {
+      "leadJa": "1970年オランダ生まれ、アムステルダム拠点。写真・映像・ポートレートを通じて、政治的・軍事的な公的イメージがいかに演出・構築されるかを問い続けてきた。意図的にドキュメンタリーを「演じる」ことで、ドキュメンタリーの権威そのものを可視化する実践者。",
+      "leadEn": "Dutch artist and photographer born in 1970, based in Amsterdam.*1*2*3 Known for staged documentary images and later projects around conflict, NATO, and political visibility, often testing how documentary authority is produced rather than simply inherited.*1*2*3",
+      "textJa": "経歴\n\n1970年オランダ生まれ、アムステルダム拠点。ステデリック・ミュージアムのIDFAコラボレーション展「paradocs ii」（ドキュメンタリーのステージングを主題とする展覧会）への参加など、美術と政治の交差する場で継続的に活動してきた。*2 NATO・平和・紛争を主題とした作品を公式サイトで発表し、CNAPにも作家として登録されている。*3\n\n表現解説\n\nホンディウスの実践の核心は、ステデリックが明示したとおり「意図的にドキュメンタリーのイメージをステージングすること」にある。この方法論は、ドキュメンタリー写真・映像の形式を信頼するのではなく批評的に試験台に載せるという立場を示している。*2\n\n《To Unveil a Star》（2021年）をはじめとする作品群では、公的な記念碑・軍事的な存在・政治的な可視性の演出という主題を扱う。半演出的または完全に演出されたドキュメンタリーの外観を持つ写真・映像・ポートレートを通じて、公的なイメージが「事実の記録」ではなく常に何らかの振り付けのもとに置かれていることを明示する。*1 軍事・政治・NATOという主題は、公的イメージの生産と流通が特に高度に管理・演出されている領域として選ばれており、ジャーナリズムではなく美術という場で発表されることで批評的な文脈が付与される。\n\nポスト・ドキュメンタリーの転換期において、ホンディウスはドキュメンタリーを放棄するのではなく、その形式を内部から問うという方法を選んだ。公的イメージが証言しようとするとき、すべてのイメージがすでに媒介・演出されているという事実を、ドキュメンタリー形式そのものを使って可視化する実践として位置づけられる。\n\n批評と受容\n\nステデリックのフレーミングがもっとも明確な批評的鍵を提供する——ホンディウスはドキュメンタリーのイメージを意図的にステージングすることで重要な位置を得ている。*2 より近年の実践では「公正な平和」「NATO」といった言語が伴っており、純粋な形式実験ではなく政治的な受容として読まれ続けている。*1 CNAPによる作家認定も、この実践が政治的実験のみならず美術的実践として評価されていることを示す。*3",
+      "textEn": "Biography\n\nDutch artist and photographer born in 1970, based in Amsterdam.*1*2*3\n\nKnown for staged documentary images and later projects around conflict, NATO, and political visibility, often testing how documentary authority is produced rather than simply inherited.*1*2*3\n\nExpression / method\n\nMain themes: documentary staging, conflict, public monuments, military presence, and the unstable boundary between factual image and fiction-documentary construction.*1*2*3\n\nRepresentative work examples: To Unveil a Star (2021), earlier staged documentary images discussed in Stedelijk’s paradocs ii, and later NATO-related projects are central because they show the continuity of Hondius’s interest in documents that are partly constructed and partly observed.*1*2*3\n\nTechnique / formal traits: staged or semi-staged documentary photographs, film, portraits connected to political sites, and a willingness to inhabit documentary form while undermining its claims to straightforward capture.*1*2*3\n\nWhy this method was chosen: Stedelijk’s paradocs ii summary is especially useful because it explicitly states that Hondius “deliberately stages his documentary images.” The method therefore treats documentary form as something to be tested, not trusted automatically.*2\n\nHistorical context: Hondius emerges in the period when documentary photography and film are increasingly reflexive about their own construction. His work belongs to that post-documentary turn, especially as it intersects with militarized politics and public monumentality.*1*2*3\n\nRelation to contemporaries or movements: he connects to documentary and political image practices, but differs from classical reportage by building fiction into documentary procedures themselves.*1*2*3\n\nHistorical significance: Hondius matters because he demonstrates that contemporary political photography often has to work through constructed scenes in order to expose how public truth is staged.*1*2*3\n\nCritical meaning: the work matters because it places doubt inside the documentary image without abandoning political stakes. His photographs ask what it means to testify when all public images are already mediated and choreographed.*1*2*3\n\nWhere and how the work was used: official site material and institutional summaries indicate that Hondius’s work circulates through art contexts attentive to politics, just peace, and NATO history rather than through journalism alone.*1*2*3\n\nCriticism and reception\n\nStedelijk’s framing provides the clearest critical key: Hondius is important for deliberately staging documentary images.*2\n\nMore recent official-site language around NATO and “just peace” shows how his practice continues to be received politically rather than as a purely formal experiment.*1",
+      "links": [
+            {
+                  "url": "https://www.juulhondius.com/",
+                  "label": "Official Website"
+            },
+            {
+                  "url": "https://www.stedelijk.nl/en/exhibitions/idfa-paradocs-ii-the-reality-in-scenes",
+                  "label": "Stedelijk — paradocs ii"
+            },
+            {
+                  "url": "https://www.cnap.fr/juul-hondius",
+                  "label": "Cnap"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.juulhondius.com/",
+                  "name": "Juul Hondius — Official Website"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.stedelijk.nl/en/exhibitions/idfa-paradocs-ii-the-reality-in-scenes",
+                  "name": "paradocs ii, the reality in scenes — Stedelijk Museum"
+            },
+            {
+                  "num": 3,
+                  "url": "https://www.cnap.fr/juul-hondius",
+                  "name": "Juul Hondius — Cnap"
+            }
+      ]
+},
+    "kaoru-izima": {
+      "leadJa": "1965年日本生まれ。モデル・女優が自らの「架空の死のシナリオ」を発案し、写真家がそれを精密にステージングするという協働的方法論で知られる。ファッション写真の精度と死という主題を結びつけ、ポートレートを美・脆弱性・イメージ文化をめぐる思索的な舞台へと転換した。",
+      "leadEn": "Japanese photographer born in 1965.*1*2*3 Known for elaborately staged photographic series in which models and actresses invent fictional circumstances of their own deaths, presented in a manner that combines fashion photography, cinematic narrative, and memento mori.*1*2*3",
+      "textJa": "経歴\n\n1965年日本生まれ。長期連作《Landscapes with a Corpse》をはじめとする死のタブローで国際的な評価を確立し、アート・プラットフォーム・ジャパンのパブリック・コレクションに収蔵されている。*1 ファン・デア・グリンテン・ギャラリー（ドイツ）やスタジオ・ラ・チッタ（イタリア）など欧州の画廊でも継続的に発表してきた。*2\n\n表現解説\n\nイジマの実践の核心は、撮影対象——モデル・女優——が自らの「架空の死のシナリオ」を発案し、写真家がそれを精密に演出するという協働的な制作方法にある。ファン・デア・グリンテン・ギャラリーの作家解説が示すように、この方法論は被写体を受動的な表象の客体から、自らの表象に関与する創造的な主体へと転換する点に特徴がある。*2\n\n代表作《Landscapes with a Corpse》では、各回ごとに異なるシナリオが演出される。高精細の大判カラー、ファッション写真由来のコスチュームと姿勢への細密な注意、映画的なナラティブの静止という形式的特徴が、美と死を同一の視覚的表面に共存させる。このとき死は衝撃や告発のためではなく、美・セレブリティ・モルタリティがイメージ文化のなかでいかに共同演出されるかを問うための装置として機能する。*3\n\n20世紀末において、ファッション写真・ステージド写真・映画的イメージが美術のコンテクストに流入してきた局面で、イジマは「ファッション写真の精度を使いながら、ファッションが忌避する死という主題を持ち込む」という倒錯的な実践を展開した。これにより通常グラマーやショックに収束しがちな美と死の組み合わせが、美術史的・演劇的な思索の対象として提示される。\n\n批評と受容\n\nギャラリー・コレクションの資料は一貫して、イジマを「撮影者が被写体と協働して死の物語を作り上げる」というユニークな前提のもとに提示してきた。*2 批評的受容は優雅さ・メランコリー・物語的な宙吊りの混合を強調する傾向があり、ドキュメンタリー信頼性よりも死のシアターという思索的な次元への関心が中心にある。*1 ポートレートを人物の記録から協働的な死の舞台へと転換した実践として、20世紀末の日本のステージド写真における固有の位置が評価されている。*3",
+      "textEn": "Biography\n\nJapanese photographer born in 1965.*1*2*3\n\nKnown for elaborately staged photographic series in which models and actresses invent fictional circumstances of their own deaths, presented in a manner that combines fashion photography, cinematic narrative, and memento mori.*1*2*3\n\nExpression / method\n\nMain themes: death, beauty, performance, fashion, fiction, and the transformation of the portrait into a speculative narrative tableau.*1*2*3\n\nRepresentative work examples: the long-running Landscape with a Corpse / death-portrait series and works such as (Glass and petal) are central because they establish Izima’s signature strategy: ask the sitter to imagine a death story, then translate it into a meticulously staged photograph.*1*2*3\n\nTechnique / formal traits: large-scale color photography, carefully directed mise-en-scène, collaboration with fashion models and actresses, strong attention to costume and pose, and a visual language that draws on both contemporary fashion imagery and older pictorial traditions of death and theatrical stillness.*1*2*3\n\nWhy this method was chosen: Van der Grinten’s summary is especially useful because it makes clear that the model is asked to invent her own fictional death, which turns the portrait from passive representation into collaborative projection. The method allows beauty and mortality to appear together without collapsing into simple glamour or shock.*2\n\nHistorical context: Izima emerges in the late twentieth century when fashion photography, staged photography, and cinematic image culture were increasingly crossing into art contexts. His work belongs to that moment, but distinguishes itself by making mortality the central narrative engine.*1*2*3\n\nRelation to contemporaries or movements: he can be placed near staged photography and fashion-derived art photography, but differs by making the sitters’ imagined deaths the structuring device of the image rather than merely borrowing style from fashion media.*1*2\n\nHistorical significance: Izima matters because he fused fashion photography’s visual precision with a reflective, theatrical meditation on death and image-making. His work widened the range of what late twentieth-century Japanese staged photography could do.*1*2*3\n\nCritical meaning: the photographs matter because they turn glamour into a site of vulnerability. Rather than simply aestheticizing death, they examine how fantasy, celebrity, beauty, and mortality are jointly staged within image culture.*1*2*3\n\nWhere and how the work was used: APJ’s collection entry and gallery materials are useful because they show Izima’s work circulating through both museum and gallery contexts, and because they repeatedly foreground the serial logic of the death tableaux rather than any single isolated image.*1*2*3\n\nCriticism and reception\n\nGallery and collection materials consistently foreground the distinctive premise of Izima’s work: each sitter imagines her own death and collaborates in its photographic staging.*1*2\n\nReception has tended to emphasize the mixture of elegance, melancholy, and narrative suspension rather than documentary credibility or portrait psychology.*2*3",
+      "links": [
+            {
+                  "url": "https://artplatform.go.jp/collections/W946429",
+                  "label": "Art Platform Japan"
+            },
+            {
+                  "url": "https://vandergrintengalerie.com/artists/izima-kaoru/",
+                  "label": "Van der Grinten Galerie"
+            },
+            {
+                  "url": "https://studiolacitta.it/en/product/izima-kaoru/",
+                  "label": "Studio la Città"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://artplatform.go.jp/collections/W946429",
+                  "name": "IZIMA Kaoru, (Glass and petal) — Art Platform Japan"
+            },
+            {
+                  "num": 2,
+                  "url": "https://vandergrintengalerie.com/artists/izima-kaoru/",
+                  "name": "Izima Kaoru — Van der Grinten Galerie"
+            },
+            {
+                  "num": 3,
+                  "url": "https://studiolacitta.it/en/product/izima-kaoru/",
+                  "name": "IZIMA KAORU — Studio la Città"
+            }
+      ]
+},
+    "sanna-kannisto": {
+      "leadJa": "1974年フィンランド生まれ。熱帯雨林の研究ステーションに赴き、科学者と協働しながら鳥や動物のポートレートを携帯スタジオで制作してきた。自然写真の背後にある分類・観察・ステージングという手続きを可視化することで、「自然を知ること」が文化的・写真的に構築された行為であることを問い続けてきた実践者。",
+      "leadEn": "Finnish photographer born in 1974.*1*2*3 Known for photographs made in collaboration with scientists at rainforest field stations and later for studio-like portraits of birds and other animals that expose the methods of nature photography.*1*2*3",
+      "textJa": "経歴\n\n1974年フィンランド生まれ。フィンランド写真美術館での回顧展「Sense of Wonder」をはじめ、国際的な機関で発表を重ねてきた。*1 熱帯雨林のフィールドステーションに繰り返し赴き、科学者と協働しながら鳥や動物の写真を制作するという独自の方法論を長期にわたり展開してきた。*3\n\n表現解説\n\nカンニストの実践の核心は、自然写真の背後にある手続き——分類・観察・標本的なディスプレイ——を可視化することにある。自ら述べるように「写真を自然を理解し、組織化し、接近するための道具として考えてきた」という姿勢が、作品を単なる自然の賛美から区別する。*2\n\n《Fieldwork》をはじめとする連作では、フィールドに携帯スタジオを持ち込み、慎重に照明を当てた鳥や小動物のポートレートを制作する。支持具や科学的な小道具を画面に留めることで、イメージが「発見された」のではなく「演出された」ことを明示する。フィンランド写真美術館は、カンニストを「科学者‐アーティスト」として位置づけ、その実践が情報の生産と視覚的な驚きの双方に関与するものとして評価している。*1 TIMEによる《Field Work》の論評が強調するように、カンニストは自然写真の手続きをシームレスな幻想の背後に隠すのではなく、それを露わにすることで観察そのものを文化的な形式として問い直す。*2\n\n生態学的な問題意識が高まった20世紀末から21世紀初頭の文脈において、カンニストは「手つかずの自然を見せる」という自然写真の約束を問い直した。ヘルシンキ・スクールと連動しながらも、崇高な風景の伝統よりも調査装置・研究者との協働・標本的なディスプレイに内在するステージングを前景化する点で独自の位置を占める。\n\n批評と受容\n\nフィンランド写真美術館による「Sense of Wonder」展は、長期的な機関的受容の証拠として重要であり、熱帯雨林の仕事から後の北方の鳥のプロジェクトへの継続性を確認している。*1 批評は一貫して、作品が自然史と視覚的な驚きの双方に属しながら、その本当の重要性が観察という行為を文化的形式として可視化した点にあると評価する。*2",
+      "textEn": "Biography\n\nFinnish photographer born in 1974.*1*2*3\n\nKnown for photographs made in collaboration with scientists at rainforest field stations and later for studio-like portraits of birds and other animals that expose the methods of nature photography.*1*2*3\n\nExpression / method\n\nMain themes: nature, taxonomy, collecting, scientific observation, the history of natural history display, and the uneasy relation between wonder and control.*1*2*3\n\nRepresentative work examples: the Fieldwork series, rainforest photographs made at scientific stations, and later bird portraits are central because they show how Kannisto turns nature photography into a reflection on classification, staging, and knowledge production.*1*2*3\n\nTechnique / formal traits: portable studio structures in the field, carefully lit portraits of birds and small animals, visible supports and scientific props, and a visual language that combines still life, specimen display, and documentary fieldwork.*1*2*3\n\nWhy this method was chosen: Kannisto’s own interview language is especially useful here. She describes photography as \"a tool of understanding, organizing and approaching nature\", which clarifies why the images do not simply celebrate wilderness but expose the procedures through which nature becomes image and knowledge.*2\n\nHistorical context: Kannisto belongs to a late twentieth- and early twenty-first-century reconsideration of nature photography under ecological pressure. Rather than pretending to show untouched nature, her work makes visible the scientific and pictorial frameworks through which nature is encountered.*1*2*3\n\nRelation to contemporaries or movements: she can be linked to the Helsinki School and to conceptual nature photography, but differs from sublime landscape traditions by foregrounding field apparatus, collaboration with researchers, and the staging implicit in specimen-like display.*1*2*3\n\nHistorical significance: Kannisto matters because she reworked nature photography from inside, preserving wonder while exposing how observation, collecting, and framing organize the natural world visually.*1*2*3\n\nCritical meaning: the work matters because it balances enchantment and analysis. The photographs are beautiful, but they also ask how scientific and photographic systems turn living beings into classified images.*1*2*3\n\nWhere and how the work was used: the Finnish Museum of Photography’s retrospective and Kannisto’s own CV are especially useful because they show long-term institutional reception and the continuity between rainforest work and later northern bird projects.*1*3\n\nCriticism and reception\n\nThe Finnish Museum of Photography’s framing is especially helpful because it describes Kannisto as a \"scientist-artist\" and connects the work to information production as much as to visual wonder.*1\n\nTIME’s discussion of Field Work is useful because it emphasizes that Kannisto exposes the procedures of nature photography rather than hiding them behind seamless illusion.*2",
+      "links": [
+            {
+                  "url": "https://www.valokuvataiteenmuseo.fi/en/exhibitions/sense-wonder",
+                  "label": "Finnish Museum of Photography — Sense of Wonder"
+            },
+            {
+                  "url": "https://museemagazine.com/culture/2021/2/1/triggered-sanna-kannisto",
+                  "label": "Musée Magazine — Triggered"
+            },
+            {
+                  "url": "https://www.sannakannisto.com/cv/",
+                  "label": "Sanna Kannisto CV"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.valokuvataiteenmuseo.fi/en/exhibitions/sense-wonder",
+                  "name": "Sanna Kannisto: Sense of Wonder — Finnish Museum of Photography"
+            },
+            {
+                  "num": 2,
+                  "url": "https://museemagazine.com/culture/2021/2/1/triggered-sanna-kannisto",
+                  "name": "Triggered: Sanna Kannisto — Musée Magazine"
+            },
+            {
+                  "num": 3,
+                  "url": "https://www.sannakannisto.com/cv/",
+                  "name": "Sanna Kannisto CV"
+            }
+      ]
+},
+    "sherrie-levine": {
+      "leadJa": "1947年アメリカ生まれ。既存の図像——ウォーカー・エヴァンスらの正典的な写真——を再撮影した《After Walker Evans》（1981年）で知られる。写真の複製可能性を使って作者性・独自性・所有権という概念そのものを問い直し、ピクチャーズ世代における写真的アプロプリエーションの中心的実践者として位置づけられる。",
+      "leadEn": "American artist born in 1947, working in photography, sculpture, painting, and appropriation-based conceptual practice.*1*2 Best known photographically for rephotographing already canonical images, especially in After Walker Evans, and for challenging originality, authorship, and the gendered mythology of artistic genius.*1*2",
+      "textJa": "経歴\n\n1947年アメリカ生まれ。写真・彫刻・絵画にわたるアプロプリエーション基盤のコンセプチュアル実践で知られる。《After Walker Evans》（1981年）でピクチャーズ世代の中心的人物として位置づけられ、ホイットニー美術館での大規模回顧展《Mayhem》によって写真・彫刻・絵画にまたがる一貫した批評的実践が体系的に評価された。*1\n\n表現解説\n\nレヴィーンの実践の核心は、既存の正典的なイメージ——ウォーカー・エヴァンス、エドワード・ウェストンらの代表的写真——を再撮影するという方法にある。見た目の変更を加えない正確な反復という形式的な抑制が重要であり、概念的な転位はコンテクスト・タイトル・制度的なフレーミングを通じて生じる。*2\n\nこのアプロプリエーションの方法は、意味が単独の制作者に帰属するという考えを問い直すためのものである。すでに有名なイメージを再使用することで、レヴィーンは権威・所有権・芸術的価値がいかに社会的に構築されるかを露わにする。《After Walker Evans》は特に、独自性・複製・ジェンダーをめぐる問いを読みやすい写真的戦略に凝縮した点で転換点として評価される。*1 ホイットニーの《Mayhem》は、写真的アプロプリエーションを後期の彫刻・絵画と並置することで、媒体を横断する批評の一貫性を明示した。*2\n\n1970年代末から80年代のピクチャーズ世代論・ポストモダニズム・フェミニスト的作者性批評という文脈のなかで、レヴィーンの実践は写真の複製可能性をこれらの議論の決定的な道具として位置づけた。写真史においての意義は新たな主題や視覚スタイルにあるのではなく、作者性そのものが写真の問題になるという概念的な転換にある。\n\n批評と受容\n\nホイットニー美術館はアプロプリエーション・アートおよびポストモダン的イメージ批評の基礎的人物としてレヴィーンを一貫して位置づけてきた。*1 《After Walker Evans》は独自性・複製・ジェンダーをめぐる問いを凝縮し、後のコンセプチュアル・アートに影響を与えた分水嶺として繰り返し評価される。写真的独自性を価値ではなく問いとして再定義し、複製それ自体を当代芸術における批評的方法として確立した実践として評価されている。*2",
+      "textEn": "Biography\n\nAmerican artist born in 1947, working in photography, sculpture, painting, and appropriation-based conceptual practice.*1*2\n\nBest known photographically for rephotographing already canonical images, especially in After Walker Evans, and for challenging originality, authorship, and the gendered mythology of artistic genius.*1*2\n\nExpression / method\n\nMain themes: appropriation, authorship, originality, reproduction, gender, canon formation, and the instability of artistic ownership.*1*2\n\nRepresentative work examples: After Walker Evans (1981), After Edward Weston, and the wider body surveyed in Mayhem are central because they show how Levine’s photography works by repeating prior images in order to transform their meaning.*1*2\n\nTechnique / formal traits: rephotography, serial citation of canonical images, cool presentation, and a strategy of exacting repetition rather than visible alteration. The formal restraint is crucial because the conceptual displacement happens through context, title, and institutional framing.*1*2\n\nWhy this method was chosen: Levine uses appropriation to question the idea that meaning belongs to an original maker alone. By reusing already famous images, she reveals how authority, ownership, and artistic value are socially constructed rather than self-evident.*1*2\n\nHistorical context: her work emerges in the late 1970s and 1980s in the context of Pictures Generation debates, postmodernism, and feminist critiques of authorship. Photography’s reproducibility became a crucial tool in these debates, and Levine’s work made that condition explicit.*1*2\n\nRelation to contemporaries or movements: Levine is closely aligned with appropriation art and the Pictures Generation, though her work differs from narrative image critique by focusing on direct repetition of art-historical images. She is central to discussions of postmodern photography’s relation to the archive.*1*2\n\nHistorical significance: she matters because she redefined photographic originality as a problem rather than a value, making reproduction itself a critical method within contemporary art.*1*2\n\nCritical meaning: the work matters because it exposes the canon as a constructed system of inheritance. Levine’s photographs are not copies in a neutral sense; they are interventions into who gets to own cultural memory and how the “masterpiece” continues to function.*1*2\n\nWhere and how the work was used: the work circulated through museums, conceptual-art exhibitions, and survey shows. Whitney’s Mayhem is especially important because it retrospectively framed Levine’s photographic appropriations together with her later sculpture and painting, clarifying the consistency of her critique across media.*1*2\n\nCriticism and reception\n\nWhitney’s artist and exhibition framing consistently positions Levine as a foundational figure in appropriation art and postmodern image critique.*1*2\n\nReception often emphasizes After Walker Evans as a watershed because it condensed questions of originality, reproduction, and gender into a legible photographic strategy that influenced later conceptual art.*1*2",
+      "links": [
+            {
+                  "url": "https://whitney.org/artists/2978",
+                  "label": "Whitney Museum — Sherrie Levine"
+            },
+            {
+                  "url": "https://whitney.org/exhibitions/sherrie-levine/art",
+                  "label": "Whitney — Sherrie Levine: Mayhem"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://whitney.org/artists/2978",
+                  "name": "Sherrie Levine — Whitney Museum of American Art"
+            },
+            {
+                  "num": 2,
+                  "url": "https://whitney.org/exhibitions/sherrie-levine/art",
+                  "name": "Sherrie Levine: Mayhem — Whitney Museum of American Art"
+            }
+      ]
+},
+    "shirana-shahbazi": {
+      "leadJa": "1974年テヘラン生まれ、チューリッヒ拠点。ポートレイト・静物・風景・抽象という写真の既存ジャンルを出発点とし、それらを拡大・反復・他メディアへの翻訳を通じて変容させることで、写真的意味がいかに流通・変化するかを問う。デジタル介入を用いずアナログ手法を守りながら、現代的なイメージ問題を扱う実践者。",
+      "leadEn": "Iranian-born artist and photographer born in 1974 in Tehran, later based in Zurich.*1*2*3 Known for color photographs, abstractions, and installations that move between documentary subjects and formally constructed image systems.*1*2*3",
+      "textJa": "経歴\n\n1974年テヘラン生まれ、チューリッヒ拠点。ハマー美術館（2008年）、ニュー・ミュージアム、ハンブルク写真トリエンナーレ（2018年）をはじめ、国際的な機関での発表を重ねてきた。*1 アナログ写真を基盤とし、デジタル介入を用いない制作方法を一貫して守っている。*3\n\n表現解説\n\nシャーバジの実践は、ポートレイト・静物・風景・抽象という写真の既存ジャンルを出発点とし、それらが拡大・反復・他メディアへの翻訳を通じてどのように変容するかを試験することにある。ハマー美術館の展示テキストが明示するように、シャーバジは「通常の条件下での写真に注意を促す」——媒体それ自体を中心的な主題のひとつとして扱う。*1\n\n代表作《Goftare Nik / Good Words》などでは、カラー写真・ポートレイト・アブストラクトな色面構成を並置したインスタレーションが展開される。写真はカーペットへの翻訳や絵画的な変換を通じて再登場し、イメージの意味が撮影の瞬間に固定されるのではなく、流通・反復・変容の過程で生まれることを示す。*2 ハンブルク写真トリエンナーレが指摘するように、デジタル介入なしにアナログ手法を守りながら現代的なイメージ問題を扱うという姿勢が、シャーバジの独自の位置を形成している。*3\n\n1990年代末から2000年代にかけて、イメージの飽和・クロスメディア的な流通・ドキュメンタリー的真実の不安定性が現代美術における写真の主要な問いとなっていた文脈のなかで、シャーバジはドキュメンタリー的モチーフと抽象的なフォルマリズムの間を流動しながら、その双方を特権化しない独自の立場を確立した。\n\n批評と受容\n\nハマーの展示テキストは「通常の条件下での写真に注意を促す」という批評的な核を明示している。*1 ニュー・ミュージアムのアーカイブはイメージが媒体・コンテクストを越えて変容・流通するというシャーバジの関心をより広く位置づけ、*2 ハンブルク・トリエンナーレのテキストはデジタルを避けながらも非常に現代的な写真的美学を生み出す独自の立場を的確に要約している。*3",
+      "textEn": "Biography\n\nIranian-born artist and photographer born in 1974 in Tehran, later based in Zurich.*1*2*3\n\nKnown for color photographs, abstractions, and installations that move between documentary subjects and formally constructed image systems.*1*2*3\n\nExpression / method\n\nMain themes: genre transformation, circulation of images, the relation between abstraction and representation, cross-media translation, and the instability of photographic truth.*1*2*3\n\nRepresentative work examples: Goftare Nik / Good Words, the work in Hammer Projects, and later installations combining photographs with carpets, painted translations, or abstract color compositions are central because they show how Shahbazi treats photography as both document and endlessly transformable image.*1*2*3\n\nTechnique / formal traits: color photography, use of portraiture, still life, landscape, and abstraction; analogue methods without digital intervention; and installations in which photographs may be enlarged, repeated, translated into other media, or set into new visual relations.*1*2*3\n\nWhy this method was chosen: Shahbazi uses recognizable photographic genres as starting points in order to test how they change once they are circulated, repeated, or translated into new media. Her work insists that photographic meaning is never fixed at the moment of capture.*1*2\n\nHistorical context: her work emerges in the late 1990s and 2000s, when photography in contemporary art was increasingly concerned with image saturation, cross-media circulation, and the instability of documentary truth. Shahbazi belongs to this field while retaining a strong commitment to analogue production.*1*2*3\n\nRelation to contemporaries or movements: Shahbazi can be placed near conceptual photography and image-based installation, but differs by moving fluidly between documentary motifs and abstract formalism rather than privileging one over the other.*1*2*3\n\nHistorical significance: she matters because she shows how photography can remain materially and formally specific while still opening into other media and into a broader reflection on image systems.*1*2*3\n\nCritical meaning: the work matters because it dismantles the boundary between representation and abstraction. Shahbazi’s photographs are historically important not only for what they show, but for how they circulate, mutate, and reappear in new forms.*1*2*3\n\nWhere and how the work was used: her work circulated through museum projects, gallery exhibitions, triennials, and artist residencies. Hammer, New Museum, and the Hamburg Triennial materials are especially useful because they show how institutional reception has focused on her methodological engagement with documentary and with photography’s own conditions.*1*2*3\n\nCriticism and reception\n\nHammer’s exhibition text is especially useful because it says Shahbazi “draw[s] attention to photography under normal conditions,” making explicit that the medium itself is one of her central subjects.*1\n\nNew Museum’s archive material broadens this by emphasizing her interest in how images are transformed and circulated across media and contexts.*2\n\nThe Hamburg Triennial press material is valuable because it notes her avoidance of digital intervention while still producing a very contemporary photographic aesthetic, a useful summary of her distinct position.*3",
+      "links": [
+            {
+                  "url": "https://hammer.ucla.edu/exhibitions/2008/hammer-projects-shirana-shahbazi",
+                  "label": "Hammer Museum — Hammer Projects"
+            },
+            {
+                  "url": "https://archive.newmuseum.org/exhibitions/1359",
+                  "label": "New Museum Digital Archive"
+            },
+            {
+                  "url": "https://2018.phototriennale.de/en/exhibitions/shirana-shahbazi/",
+                  "label": "Triennial of Photography Hamburg"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://hammer.ucla.edu/exhibitions/2008/hammer-projects-shirana-shahbazi",
+                  "name": "Hammer Projects: Shirana Shahbazi — Hammer Museum"
+            },
+            {
+                  "num": 2,
+                  "url": "https://archive.newmuseum.org/exhibitions/1359",
+                  "name": "Shirana Shahbazi — New Museum Digital Archive"
+            },
+            {
+                  "num": 3,
+                  "url": "https://2018.phototriennale.de/en/exhibitions/shirana-shahbazi/",
+                  "name": "Shirana Shahbazi — Triennial of Photography Hamburg"
+            }
+      ]
+},
+    "simon-norfolk": {
+      "leadJa": "1963年ナイジェリア生まれのイギリス人写真家。自らのキャリアを「〈戦場〉という語の意味を探索し拡張すること」と定義し、戦闘の瞬間よりも戦場の風景・廃墟・軍事インフラを大判カラーで記録してきた。《Afghanistan: Chronotopia》《Burke + Norfolk》などで、場所と建築を帝国主義と暴力の歴史的証拠として読む紛争写真の地平を更新した。",
+      "leadEn": "Nigerian-born British photographer born in 1963; his own CV lists him as living in Hove and Kabul and identifies him as a landscape photographer concerned with expanding the meaning of the “battlefield.”*1*2*3*4 Known for photographing war zones, military landscapes, archaeological sites, and the traces of violence and empire in architecture and terrain.*1*2*3",
+      "textJa": "経歴\n\n1963年ナイジェリア生まれのイギリス人写真家。《For Most of It I Have No Words》（1998年）でジェノサイドの景観写真家として注目され、《Afghanistan: Chronotopia》（2002年）はフォトグラファーズ・ギャラリー・レンコントル・ダルルなど主要会場で発表された。*1 2011年には《Burke + Norfolk》がテート・モダンで個展として提示されている。*2\n\n表現解説\n\nノーフォークの実践の核心は、自らのキャリアを「〈戦場〉という語の意味をあらゆる形で探索し拡張すること」と定義していることに示される。*1 この定義が示すように、彼の写真は戦闘の瞬間や人物ではなく、ミサイル基地・難民地帯・廃墟・軍事インフラ・遺跡といった場所と構造物に向かう。大判カラー写真、正面性あるいは高所からの視点、遺構や損傷した建築への細密な注意が一貫した形式的特徴であり、ドキュメンタリーの事実性と美術史的・考古学的な参照系を組み合わせる方法が際立つ。\n\n《Afghanistan: Chronotopia》では廃墟・宮殿・遺跡が時代を超えた文明の堆積として提示され、現在の戦争が歴史の反復であることを空間的に示した。《Burke + Norfolk》は19世紀の英国軍従軍写真家ジョン・バークと同一の場所を並置し、植民地主義の視線の継続を問うた。*3 ファンダシオン・マプフレの資料が示すように、ノーフォークの実践はアーカイブ的・考古学的な観点との結びつきで一貫して評価されており、単純な廃墟写真や速報的な戦争記録への還元を拒む批評的枠組みが定着している。*4\n\n古典的な戦争報道写真の権威が揺らぎ、冷戦後の軍事介入と帝国史の再検証が同時に進んだ歴史的文脈において、ノーフォークの実践は速報性ではなく持続的な景観の読解を紛争写真の一形式として定位した。場所と建築物を歴史的・政治的テキストとして扱う実践は、風景と廃墟が暴力と帝国主義の証拠として機能しうることを示した。\n\n批評と受容\n\n受容は一貫してドキュメンタリーと歴史的景観の統合という点を強調する。*1 テート・モダン展示・主要美術館収蔵・国際的な賞が確認されており、歴史的層を持つ紛争景観写真が制度的に正典化されたことを示している。*2 「戦場の意味を拡張する」という自己定義が、速報的な戦争写真でも純粋な風景写真でもない独自の実践を写真史上に刻んだ作家として評価される。*4",
+      "textEn": "Biography\n\nNigerian-born British photographer born in 1963; his own CV lists him as living in Hove and Kabul and identifies him as a landscape photographer concerned with expanding the meaning of the “battlefield.”*1*2*3*4\n\nKnown for photographing war zones, military landscapes, archaeological sites, and the traces of violence and empire in architecture and terrain.*1*2*3\n\nExpression / method\n\nMain themes: war, aftermath, imperial history, landscape as evidence, architecture of conflict, memory, and the long temporal layers of destruction.*1*2*3\n\nRepresentative work examples: For Most of It I Have No Words (1998), Afghanistan: Chronotopia (2002), Burke + Norfolk (2011), and later border and military-landscape photographs such as Fantasma en la Ciudad, Nogales, Arizona/Nogales, Sonora, Mexico (2006) are central because they show how Norfolk moves away from immediate reportage toward a slower, historically layered account of conflict.*1*2*3*4\n\nTechnique / formal traits: large-format or carefully detailed color photography, frontal or elevated landscape views, attention to ruins, military infrastructures, and damaged sites, and a method that combines documentary fact with historical and art-historical reference.*1*2*3\n\nWhy this method was chosen: Norfolk’s own CV is unusually explicit here: he describes his career as a “probing and stretching” of the word “battlefield,” which helps explain why he photographs missile sites, refugee zones, ruins, and military infrastructures alongside more recognizably war-torn sites.*1*2\n\nHistorical context: his work emerges after the decline of classic war photojournalism’s authority and in the context of post-Cold War conflict, U.S.- and U.K.-led military intervention, and renewed attention to imperial history. His landscapes belong to a period when documentary photography had to address both current violence and historical depth.*1*2*3\n\nRelation to contemporaries or movements: Norfolk intersects with war photography, evidential photography, and contemporary landscape, but he differs from spot-news photojournalism by slowing conflict down into archaeological and architectural duration.*1*2*3\n\nHistorical significance: he matters because he expanded conflict photography beyond combat event and human drama, making landscape and built form central vehicles for historical understanding.*1*2\n\nCritical meaning: the work matters because it treats land as an archive of violence. Norfolk’s photographs ask viewers to read ruins, terrain, and military remnants as political and historical texts rather than as scenery.*1*2*3\n\nWhere and how the work was used: his work circulated through photobooks, exhibitions, workshops, and museum presentations. His own CV is especially useful because it documents exhibitions of Afghanistan: Chronotopia across The Photographers’ Gallery, Les Rencontres d’Arles, FotoFest, and many other venues, and also records a 2011 solo presentation of Burke + Norfolk at Tate Modern. The Imperial War Museum showing of For Most of It I Have No Words is also important because it confirms that the genocide-landscape work entered war-memory institutions, not just photography venues.*1*2*4\n\nCriticism and reception\n\nNorfolk’s reception often emphasizes the merge between documentary and historical landscape, treating him as a photographer who made war legible through place rather than only through action.*1*2*3\n\nNorfolk’s own CV strengthens the reception history by documenting major prizes, broad museum holdings, and the Tate Modern exhibition of Burke + Norfolk, which together show that his historically layered conflict landscapes were institutionally canonized rather than remaining peripheral to war photography.*1",
+      "links": [
+            {
+                  "url": "https://www.simonnorfolk.com/cv",
+                  "label": "Simon Norfolk — CV"
+            },
+            {
+                  "url": "https://phmuseum.com/u/simon-norfolk",
+                  "label": "PhMuseum"
+            },
+            {
+                  "url": "https://kbr.fundacionmapfre.org/en/workshops/simon-norfolk/",
+                  "label": "Fundación MAPFRE"
+            },
+            {
+                  "url": "https://www.cartermuseum.org/collection/fantasma-en-la-ciudad-nogales-arizonanogales-sonora-mexico-2006-p200717",
+                  "label": "Amon Carter Museum"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.simonnorfolk.com/cv",
+                  "name": "CV — Simon Norfolk"
+            },
+            {
+                  "num": 2,
+                  "url": "https://phmuseum.com/u/simon-norfolk",
+                  "name": "Simon Norfolk — PhMuseum"
+            },
+            {
+                  "num": 3,
+                  "url": "https://kbr.fundacionmapfre.org/en/workshops/simon-norfolk/",
+                  "name": "Photography Workshop with Simon Norfolk — Fundación MAPFRE"
+            },
+            {
+                  "num": 4,
+                  "url": "https://www.cartermuseum.org/collection/fantasma-en-la-ciudad-nogales-arizonanogales-sonora-mexico-2006-p200717",
+                  "name": "Fantasma en la Ciudad — Amon Carter Museum"
+            }
+      ]
+},
+    "sophie-calle": {
+      "leadJa": "1953年フランス生まれ。見知らぬ他者を尾行し、他人の日常を記録し、儀式的な行為を手続きへと変換するという行為主義的な方法論で知られる。《Suite Vénitienne》《The Address Book》など、イメージと叙述が不可分に絡み合う作品は、写真の役割をドキュメントから詐術・誘惑・開示の道具へと転換した。",
+      "leadEn": "French artist born in 1953, working across photography, text, installation, and performative investigation.*1*2 Her practice is often discussed in relation to conceptual art and photography, but it is inseparable from writing, narrative framing, surveillance, and autobiographical fiction.*1*2",
+      "textJa": "経歴\n\n1953年フランス生まれ。写真・テキスト・インスタレーションを横断するコンセプチュアル実践で知られる。ICPはカルを写真・テキスト・コンセプチュアル手続きの交差点に位置づけ、*1 MOCAとMOCPはともに、フォト＝テキストおよび自伝的コンセプチュアルアートの主要参照点として評価している。*2\n\n表現解説\n\nカルの実践の核心は、ルール・行為・手続きから出発するアートワークにある。見知らぬ人物を尾行する（《Suite Vénitienne》1980年）、他者の住所録を再構成する（《The Address Book》1983年）、誕生日の儀式を記録するという方法が、写真・テキスト・ドキュメント的な痕跡を通じて展開される。*1 カルの写真はそれ単独では意味を完結させない——叙述・省略・反復を通じた語りの行為こそが意味を生成する。デッドパンな提示と「事実」らしさの演出が、現実はいかに物語化可能になるかという問いを形式そのものに埋め込む。*2\n\n1970年代末から1980年代にかけて、コンセプチュアルアート・フェミニスト実践・ポストモダン写真が作者性・ドキュメンタリーの真実・個人的な語りを問い直していた文脈で、カルは調査と自伝を融合させることで独自の立場を占めた。監視・親密さ・欲望・プライバシーの倫理を、覗き見る行為そのものを芸術形式とすることで探求し、写真的イメージが意味をもつ条件を語りを通じて問い直した。*3\n\n批評と受容\n\nICP・MOCA・MOCPは一貫して、カルをフォト＝テキスト実践および自伝的コンセプチュアルアートの主要な参照点として位置づける。*1*2 受容は、作品の倫理的・覗き見的な緊張——何が描かれるかよりも、見ること・追うこと・開示することという行為がいかに芸術形式となるか——を繰り返し強調する。*3",
+      "textEn": "Biography\n\nFrench artist born in 1953, working across photography, text, installation, and performative investigation.*1*2\n\nHer practice is often discussed in relation to conceptual art and photography, but it is inseparable from writing, narrative framing, surveillance, and autobiographical fiction.*1*2\n\nExpression / method\n\nMain themes: surveillance, intimacy, absence, memory, autobiography, following, address, ritual, and the conversion of everyday behavior into staged inquiry.*1*2*3\n\nRepresentative work examples: Suite Vénitienne (1980), The Address Book (1983), and The Birthday Ceremony are central because they establish the logic of Calle’s practice: the artwork begins with a rule or action and unfolds through photographs, texts, and documentary-looking traces.*1*3\n\nTechnique / formal traits: paired use of photographs and text, procedural structures, diaristic sequencing, deadpan presentation, and a deliberate blurring of fact and fiction. The photograph in Calle’s work rarely stands alone; it gains meaning through narration, withholding, and repetition.*1*2*3\n\nWhy this method was chosen: Calle uses photography not to stabilize reality but to test how reality becomes narratable. Following strangers, reconstructing lives through objects, or staging rituals allows her to examine desire, privacy, and the ethics of looking.*1*2\n\nHistorical context: her work emerges in the late 1970s and 1980s, when conceptual art, feminist practice, and postmodern photography were all rethinking authorship, documentary truth, and personal narrative. Calle belongs to that moment but remains singular in the way she fuses investigation and autobiography.*1*2*3\n\nRelation to contemporaries or movements: Calle is often linked to conceptual photography and feminist art, yet her work differs from straight appropriation or documentary critique by making the narrative act itself the artwork’s main engine. Photography becomes evidence, bait, and misdirection at once.*1*2\n\nHistorical significance: she is significant because she expanded what a photographic work could be, moving it toward hybrid forms in which image, text, action, and social relation are inseparable.*1*2\n\nCritical meaning: the work matters because it turns private life into an unstable public form without resolving the ethical tension this creates. Calle’s photographs do not simply show intimacy; they test how intimacy is constructed, narrated, and exposed.*1*2*3\n\nWhere and how the work was used: her projects have circulated through museums, artist books, and installations, and have been repeatedly reframed as landmark examples of photo-text practice. MOCP’s presentation is especially useful because it foregrounds the autobiographical and ritual structures that give the work coherence beyond isolated images.*3\n\nCriticism and reception\n\nICP’s framing is useful because it situates Calle at the intersection of photography, text, and conceptual procedure rather than as a photographer in a narrow medium-specific sense.*1\n\nMOCA’s artist page and MOCP’s exhibition framing both stress how her work has become a key reference point for photo-text and autobiographical conceptual art.*2*3\n\nReception often emphasizes the ethical and voyeuristic tension of her methods: the work is frequently discussed not only for what it depicts, but for how it mobilizes watching, following, and disclosure as artistic form.*1*2",
+      "links": [
+            {
+                  "url": "https://www.icp.org/content/sophie-calle-0",
+                  "label": "ICP — Sophie Calle"
+            },
+            {
+                  "url": "https://www.moca.org/artist/sophie-calle",
+                  "label": "MOCA — Sophie Calle"
+            },
+            {
+                  "url": "https://www.mocp.org/exhibition/sophie-calle/",
+                  "label": "Museum of Contemporary Photography"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.icp.org/content/sophie-calle-0",
+                  "name": "Sophie Calle — International Center of Photography"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.moca.org/artist/sophie-calle",
+                  "name": "Sophie Calle — Museum of Contemporary Art Los Angeles"
+            },
+            {
+                  "num": 3,
+                  "url": "https://www.mocp.org/exhibition/sophie-calle/",
+                  "name": "Sophie Calle: The Birthday Ceremony — Museum of Contemporary Photography"
+            }
+      ]
+},
+    "tacita-dean": {
+      "leadJa": "1965年イギリス生まれ。16mmフィルムを中心としながら写真・ドローイング・テキストを横断する現代アーティスト。時間・消失・歴史的残滓・アナログ媒体の物質性を主題とし、《Disappearance at Sea II》《Crowhurst》など静止と運動の境界をひらく作品で知られる。デジタル化が進む時代においてアナログ的な画像制作の歴史的意味を問い続けた実践者。",
+      "leadEn": "British artist born in 1965, working across film, photography, drawing, and writing.*1*2 Best known for 16mm film, but photography is a sustained part of her practice, especially where time, disappearance, historical residue, and the materiality of image-making are concerned.*1*2*3",
+      "textJa": "経歴\n\n1965年イギリス生まれ。16mmフィルム・写真・フォトグラビュール・ドローイングにわたる実践で知られ、シカゴ美術館・MoMAをはじめとする主要コレクションに収蔵されている。*1*2 《Disappearance at Sea II》（1997年）などが代表的な静止画作品として評価されてきた。*1\n\n表現解説\n\nディーンの実践は、時間・消失・歴史的残滓・光の物理的な基盤を問うことを中心に据える。写真作品においても、フォトグラビュールや特定のアナログ手法が選択され、偶発性・遅延・物質的な出会いを制作過程に保持することが意図される。デジタル技術が普及した1990年代以降、ディーンはアナログ的な画像制作——その遅さ・不確かさ・支持体への依存——を歴史的問いとして維持してきた。*2\n\n静止作品においても、光の投影・時間的な宙吊り・場所の喪失という感覚が画面の外部にある時間軸を呼び込む。《Crowhurst》は海難者の痕跡を通じて、記録とは何を保存し何を永遠に失うかという問いを提示した。*3 デジタルへの移行が進んだ文脈で、ディーンは写真とフィルムを時間・喪失・歴史的残滓という問いの媒体として使い続けた。写真史における意義は、アナログ的な画像制作が歴史的問いとして機能しうることを示した点にある。*1\n\n批評と受容\n\nAICは光と時間とフィルムの関係という大きな問いの中にディーンの静止作品を位置づけ、*1 MoMAのコレクション・フレーミングは写真とフィルムの作品を同一の思索として提示する。*2 受容は一貫して、作品がデジタル時代に媒体の歴史的問題を生きたものとして維持した点を評価する。*3",
+      "textEn": "Biography\n\nBritish artist born in 1965, working across film, photography, drawing, and writing.*1*2\n\nBest known for 16mm film, but photography is a sustained part of her practice, especially where time, disappearance, historical residue, and the materiality of image-making are concerned.*1*2*3\n\nExpression / method\n\nMain themes: time, disappearance, chance, historical residue, light, projection, analogue media, and the fragile survival of places, stories, and images.*1*2*3\n\nRepresentative work examples: Disappearance at Sea II (1997), Crowhurst (2006), and projects around FILM and The Green Ray are central because they show how Dean uses photographic and filmic images to think about duration, projection, and vanishing historical subjects.*1*2*3\n\nTechnique / formal traits: use of analogue processes, fixed or restrained viewpoints, photogravure and photograph-based works, and a strong concern with the physical basis of projection and image support. Even still works often retain a sense of temporal suspension.*1*2*3\n\nWhy this method was chosen: Dean repeatedly defends analogue image-making because it preserves contingency, delay, and material encounter. Her photographic works are therefore less about instant capture than about what images carry over time and what disappears from them.*1*2\n\nHistorical context: her work emerges in the 1990s and 2000s, when digital media increasingly displaced analogue image culture. Dean’s photography and film practice belongs to a broader revaluation of medium materiality, but it remains singular in how strongly it ties that question to history and disappearance.*1*2*3\n\nRelation to contemporaries or movements: Dean is often linked to moving-image art and contemporary installation more than to photography history alone, but her work is crucial for understanding how photography, photogravure, and film remained active sites of reflection in the post-digital era.*1*2\n\nHistorical significance: she matters because she kept analogue image-making historically alive inside contemporary art while showing that photography and film could still address time, loss, and historical residue without nostalgia.*1*2*3\n\nCritical meaning: the work matters because it treats images as temporal events rather than transparent records. Dean’s photographic works often ask what an image can preserve and what it can never fully hold, making medium itself a historical question.*1*2*3\n\nWhere and how the work was used: her work circulated through museums, artist books, major exhibitions, and collection displays. AIC and MoMA are especially useful because they frame photography and film together, showing how her still and moving-image works belong to one larger inquiry into time and projection.*1*2*3\n\nCriticism and reception\n\nArt Institute materials emphasize Dean’s broader concern with film’s relation to light and time, which is equally important for understanding the still-image work.*1\n\nMoMA’s collection framing is useful because it places her photographs and film-related works within the larger history of contemporary image practice rather than isolating them as medium-specific anomalies.*2*3",
+      "links": [
+            {
+                  "url": "https://www.artic.edu/artworks/154482/disappearance-at-sea-ii",
+                  "label": "Art Institute of Chicago"
+            },
+            {
+                  "url": "https://www.moma.org/collection/artists/22983",
+                  "label": "MoMA Collection"
+            },
+            {
+                  "url": "https://www.moma.org/slideshows/35/661",
+                  "label": "MoMA — Crowhurst"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.artic.edu/artworks/154482/disappearance-at-sea-ii",
+                  "name": "Disappearance at Sea II — The Art Institute of Chicago"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.moma.org/collection/artists/22983",
+                  "name": "Tacita Dean — MoMA Collection"
+            },
+            {
+                  "num": 3,
+                  "url": "https://www.moma.org/slideshows/35/661",
+                  "name": "Tacita Dean, Crowhurst — MoMA"
+            }
+      ]
+},
+    "takashi-homma": {
+      "leadJa": "1962年東京生まれ。《Tokyo Suburbia》で木村伊兵衛賞を受賞し、日本の郊外・消費空間・家族という主題を冷静で繊細な観察で記録してきた。後年はカメラ・オブスキュラや写真装置そのものへの反省的関心を深め、観察的な郊外写真からプロセス基盤の実験へと実践を拡張した。",
+      "leadEn": "Japanese photographer born in 1962 in Tokyo.*1*2*3 Known for work on suburbs, contemporary urban life, family and domesticity, and later experiments with camera obscura and photographic process.*1*2*3",
+      "textJa": "経歴\n\n1962年東京生まれ。《Tokyo Suburbia》（木村伊兵衛賞受賞）で国際的な評価を確立し、MUハイブリッドアートハウスでの《Homma Camera》展（2002年）など欧州でも継続的に発表してきた。*1 後年は《Mushrooms from the Forest 2011》《Revolution 9: Camera Obscura Studies》などプロセス指向の実験に実践を拡張した。*3\n\n表現解説\n\nホンマの実践は、郊外・日常的な都市空間・家族という主題への冷静な観察と、後年における写真装置そのものへの反省的関心という二つの軸で把握される。《Tokyo Suburbia》では、都市計画・メディア・視覚習慣によって形成された平凡な郊外が、カラー写真の細部の中に静かに照らし出される。この観察的手法は、主題を空虚な中立としてではなく、視覚文化が重なり合う場として提示する。*2\n\n東京フォトグラフィックアートミュージアムが指摘するように、後のカメラ・オブスキュラ研究は写真機械装置を制作の主題へと引き上げることで、世界を見ることがつねに媒介された行為であることを明示する。*3 1990年代から2000年代にかけて日本の郊外・消費空間・家族が現代経験の中心的な場となっていた文脈で、ホンマは戦後ドキュメンタリー写真でも抒情的な日常写真でもない独自の位置を確立した。*1\n\n批評と受容\n\nMU《Homma Camera》展はすでに日本の現代写真とイメージ問題の広い問いを国際的な文脈で結びつけていた。*1 Nonaka-Hillの伝記資料は《Tokyo Suburbia》から《Revolution 9》への連続性を明示し、*2 東京都写真美術館のプレスリリースはプロセス研究をより大きな写真探求の延長として評価する。*3",
+      "textEn": "Biography\n\nJapanese photographer born in 1962 in Tokyo.*1*2*3\n\nKnown for work on suburbs, contemporary urban life, family and domesticity, and later experiments with camera obscura and photographic process.*1*2*3\n\nExpression / method\n\nMain themes: suburbia, everyday urban life, domestic space, childhood, contemporary Japan, photographic process, and the relation between banality and constructed image culture.*1*2*3\n\nRepresentative work examples: Tokyo Suburbia (which received the Kimura Ihei Award), Mushrooms from the Forest 2011, and later projects such as Revolution 9 / Camera Obscura Studies are central because they show how Homma moves between observational description and a reflexive interest in the apparatus of image-making.*2*3\n\nTechnique / formal traits: color photography, detached yet attentive observation, interest in suburban and domestic ordinariness, and later experiments with camera obscura and other process-based image transformations.*1*2*3\n\nWhy this method was chosen: Homma’s work repeatedly turns to places and subjects that appear neutral or everyday, using photography to reveal how ordinary urban and domestic environments are shaped by planning, media, and visual habit. The later process studies deepen this by making the photographic mechanism itself part of the subject.*1*2*3\n\nHistorical context: his work emerges in the 1990s and 2000s, when Japanese photography was expanding beyond postwar documentary and when suburban life, consumer space, and the image economy had become central to contemporary experience. His later process-based work also belongs to a renewed interest in photographic apparatus after the digital turn.*1*2*3\n\nRelation to contemporaries or movements: Homma can be placed within contemporary Japanese photography, but he differs from both street photography and more lyrical everyday photography by combining detached observation with a cool awareness of image systems and photographic mediation.*1*2*3\n\nHistorical significance: he matters because he made the Japanese suburb and other seemingly low-intensity spaces into major photographic subjects, and because he later connected that social observation to a deeper reflection on photographic process itself.*1*2*3\n\nCritical meaning: the work matters because it reframes the ordinary not as empty neutrality but as a field where visual culture, planning, and everyday life overlap. His later camera-obscura works make explicit that seeing the world always involves mediation.*2*3\n\nWhere and how the work was used: Homma’s work circulated through photobooks, museum exhibitions in Japan and abroad, and gallery contexts. TOP Museum’s recent presentation is particularly helpful because it frames the later work as process-oriented without severing it from the earlier observational career.*2*3\n\nCriticism and reception\n\nNonaka-Hill’s biography is useful because it provides a concise institutional summary of Homma’s range, from Tokyo Suburbia to camera-obscura studies.*2\n\nMU’s early Homma Camera framing clarifies that his international reception already linked Japanese contemporary photography to broader questions of image and exhibition.*1",
+      "links": [
+            {
+                  "url": "https://old.mu.nl/en/exhibitions/homma-camera",
+                  "label": "MU — Homma Camera"
+            },
+            {
+                  "url": "https://www.nonaka-hill.com/usr/library/documents/main/artists/162/takashi-homma_biography-1-.pdf",
+                  "label": "Nonaka-Hill Biography"
+            },
+            {
+                  "url": "https://topmuseum.jp/upload/2/4713/pressrelease_HOMMA_1005.pdf",
+                  "label": "Tokyo Photographic Art Museum"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://old.mu.nl/en/exhibitions/homma-camera",
+                  "name": "Homma Camera — MU Hybrid Art House"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.nonaka-hill.com/usr/library/documents/main/artists/162/takashi-homma_biography-1-.pdf",
+                  "name": "Takashi Homma Biography — Nonaka-Hill"
+            },
+            {
+                  "num": 3,
+                  "url": "https://topmuseum.jp/upload/2/4713/pressrelease_HOMMA_1005.pdf",
+                  "name": "Revolution 9: Homma Takashi — Tokyo Photographic Art Museum"
+            }
+      ]
+},
+    "takashi-yasumura": {
+      "leadJa": "1972年滋賀生まれ、東京拠点。日用品や家庭的な空間を精密にステージングし、スケール・配置・フレーミングによって対象の大きさや実在性への確信を揺るがす写真で知られる。知覚の不安定さを最小限の手続きで露わにすることで、写真的リアリズムが依存する前提そのものを問い直した。",
+      "leadEn": "Japanese photographer born in 1972 in Shiga and based in Tokyo.*1*2*3 Known for photographs of domestic objects and landscapes that use scale, arrangement, and framing to complicate the distinction between miniature, model, and real scene.*1*2*3",
+      "textJa": "経歴\n\n1972年滋賀生まれ、東京拠点。《Japanese Oranges》など日常物体のスケールと知覚を問う作品が東京都写真美術館コレクションに収蔵されている。*1 MISAKO & ROSENとYossi Miloギャラリーで長期にわたり継続的な発表を続けてきた。*2\n\n表現解説\n\n安村の実践の核心は、写真が「実際のサイズ」への信頼を通じてリアリズムを生成するという前提を、最小限の介入で試験することにある。卓上や家庭内の状況を正確にステージングし、中立的な照明と正面または俯瞰からの視点で撮影された作品は、しばしば観覧者に対象が模型か実物かを一瞬判別させない。*2\n\nYossi Miloのプレスリリースが指摘するように、安村は日常の物体と状況を通じた知覚の不確実性への関心を一貫して保持しており、その力はスペクタクルではなく認識の揺らぎという静かな形式から来る。*3 1990年代後半から2000年代にかけて日本の現代写真がイメージ構成への反省的関心を深めていた文脈で、安村は演劇的タブローによる大規模な操作ではなく、日常物体と微細なスケール操作という謙虚な手段でコンセプチュアルな攪乱を生み出した。*1\n\n批評と受容\n\n東京都写真美術館の収蔵は制度的な評価の証拠であり、MISAKO & ROSENの記録はこうした展示歴の長期的な一貫性を確認する。*1*2 批評は一貫して、安村の作品が視覚的なトリックではなく写真のリアリズムが依存する前提を問うという点を強調してきた。*3",
+      "textEn": "Biography\n\nJapanese photographer born in 1972 in Shiga and based in Tokyo.*1*2*3\n\nKnown for photographs of domestic objects and landscapes that use scale, arrangement, and framing to complicate the distinction between miniature, model, and real scene.*1*2*3\n\nExpression / method\n\nMain themes: scale, domesticity, still life, model-making, ambiguity between real and artificial, and the visual instability of everyday objects.*1*2*3\n\nRepresentative work examples: works such as Japanese Oranges and exhibitions such as Nature Tracing and The Earthly Paradise are central because they show how Yasumura turns ordinary tabletop or household situations into conceptual tests of perception.*1*2*3\n\nTechnique / formal traits: carefully staged color photography, frontal or slightly elevated views, neutral lighting, and compositions that make small things appear monumental or real spaces seem toy-like. His work often depends on a moment of perceptual uncertainty.*1*2*3\n\nWhy this method was chosen: Yasumura uses photography to probe how scale and context shape belief. By presenting ordinary things with deadpan precision, he reveals how easily the camera can destabilize the viewer’s confidence in what is being seen.*1*2\n\nHistorical context: his work emerges in the late 1990s and 2000s when contemporary photography was increasingly self-reflexive about image construction and everyday visual culture. His small-scale conceptualism also belongs to a Japanese context attentive to domestic materiality and perceptual nuance.*1*2*3\n\nRelation to contemporaries or movements: Yasumura can be placed near conceptual still life and staged photography, but he differs from theatrical tableau by keeping the scale of intervention minimal. The conceptual force comes from slight shifts in size, setting, and recognition.*1*2*3\n\nHistorical significance: he matters because he shows how contemporary photography can produce conceptual disturbance through modest means, using domestic objects and subtle manipulations instead of spectacle.*1*2\n\nCritical meaning: the work matters because it turns perception itself into the subject. Yasumura’s photographs are not merely clever visual tricks; they expose how photographic realism is sustained by assumptions about size, use, and environment.*1*2*3\n\nWhere and how the work was used: his work circulated through gallery exhibitions in Japan and abroad, museum collections such as the Tokyo Photographic Art Museum, and press materials emphasizing his sustained attention to the uncanny within ordinary objects.*1*2*3\n\nCriticism and reception\n\nToMuCo’s collection entry for Japanese Oranges is useful because it anchors Yasumura’s practice in a museum collection and gives a concrete example of how his work transforms familiar objects.*1\n\nMISAKO & ROSEN’s biography is helpful for tracking the continuity of his exhibition history and for confirming the long-term consistency of his concerns.*2",
+      "links": [
+            {
+                  "url": "https://museumcollection.tokyo/en/works/107150/",
+                  "label": "Tokyo Museum Collection"
+            },
+            {
+                  "url": "https://misakoandrosen.jp/en/artists/takashiyasumura/",
+                  "label": "MISAKO & ROSEN"
+            },
+            {
+                  "url": "https://yossimilo.com/usr/documents/exhibitions/press_release_url/140/takashi-yasumura-press-release-2007.pdf",
+                  "label": "Yossi Milo — Press Release"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://museumcollection.tokyo/en/works/107150/",
+                  "name": "Japanese Oranges — Tokyo Photographic Art Museum Collection"
+            },
+            {
+                  "num": 2,
+                  "url": "https://misakoandrosen.jp/en/artists/takashiyasumura/",
+                  "name": "Takashi Yasumura — MISAKO & ROSEN"
+            },
+            {
+                  "num": 3,
+                  "url": "https://yossimilo.com/usr/documents/exhibitions/press_release_url/140/takashi-yasumura-press-release-2007.pdf",
+                  "name": "Takashi Yasumura — Yossi Milo Gallery"
+            }
+      ]
+},
+    "thomas-ruff": {
+      "leadJa": "1958年ドイツ生まれ。ベルント・ヒラ・ベッヒャーに師事し、デュッセルドルフ派から出発した写真家。大判ポートレート連作《Porträts》から天文写真・インターネット素材のデジタル操作まで、写真が信頼性を生産するしくみを体系的に問い続けてきた。MAMC+が「メタ写真」と呼ぶ実践を通じて、写真を描写の媒体から自己分析の媒体へと転換した。",
+      "leadEn": "German photographer born in 1958, associated with the Düsseldorf school and a former student of Bernd and Hilla Becher.*1*2 Known for large-scale portraiture and later for systematically reworking found, scientific, digital, and internet-based imagery into a broad inquiry into the photographic medium itself.*1*2",
+      "textJa": "経歴\n\n1958年ドイツ生まれ。ベルント・ヒラ・ベッヒャーのもとで学び、デュッセルドルフ派の中心的作家として国際的なキャリアを確立した。ホワイトチャペルギャラリーの回顧展、MAMC+の個展、MCA・シカゴの展示など主要美術機関で広く発表されている。*1*2\n\n表現解説\n\nルフの実践を貫く問いは、写真はいかにして信頼性を産出するか、である。初期の《Porträts》では大判の正面ポートレートが類型的・分析的な形式として機能し、《Sterne》では天文写真データが写真的事実性の問いへと転用された。後年の《nudes》やデジタル操作連作は、発見された・科学的・インターネット上のイメージを素材として使用し、技術的・経済的条件がイメージをいかに成形するかを問う。*1\n\nMAMC+がこの実践を「メタ写真」と命名するように、ルフの作品は主題を描写するのではなく、写真という媒体がいかに機能するかを媒体そのものを使って分析する。*2 ベッヒャー以後のドイツ写真が現代美術の中心へと台頭し、やがてデジタル転換がイメージの存在論を再定義する流れの中で、ルフはタイポロジー的な客観性からデジタル・ネットワーク的なイメージ条件へと実践を拡張し続けた。*3\n\n批評と受容\n\nホワイトチャペルとMAMC+はともに、ルフを特定のスタイルに留まらず写真の限界を繰り返し試験する作家として位置づける。*1*2 「メタ写真」という批評的命名が示すように、写真を描写の道具から自己分析の対象へと転換したことが、ポスト・ベッヒャー世代のなかで最も重要な貢献として評価されている。*3",
+      "textEn": "Biography\n\nGerman photographer born in 1958, associated with the Düsseldorf school and a former student of Bernd and Hilla Becher.*1*2\n\nKnown for large-scale portraiture and later for systematically reworking found, scientific, digital, and internet-based imagery into a broad inquiry into the photographic medium itself.*1*2\n\nExpression / method\n\nMain themes: photographic truth, typology, digital mediation, astronomy, surveillance, pornography, and the changing status of the image in technological culture.*1*2*3\n\nRepresentative work examples: the Porträts series, Sterne, nudes, and later digitally manipulated series are central because they show Ruff’s shift from typological description toward what museums have called a “meta-photography.”*1*2\n\nTechnique / formal traits: very large-scale prints, frontal serial portraiture in the early work, later digital manipulation and reuse of found imagery, and a consistently cool, analytic relation to photographic appearance.*1*2*3\n\nWhy this method was chosen: Ruff repeatedly tests how photographs produce credibility. His work begins with documentary-looking neutrality and then expands into manipulated and technologically mediated image systems, making the viewer confront the conditions under which photographs are trusted.*1*2\n\nHistorical context: Ruff’s career emerges from the post-Becher moment in Germany, when photography was becoming central to contemporary art. Later series belong to the digital turn, when image circulation and computer processing reshaped the ontology of photography.*1*2\n\nRelation to contemporaries or movements: he belongs to the Düsseldorf school, yet differs from peers by pushing beyond typology toward a medium-critical analysis of photography itself. In that sense he links Becher-derived objectivity to the digital and post-photographic condition.*1*2\n\nHistorical significance: he is significant because he helped shift photography from a medium of depiction toward a medium of self-analysis. His work demonstrates how contemporary photography can investigate not only subjects but also the conditions of image production and circulation.*1*2\n\nCritical meaning: the work matters because it asks what remains of photographic truth once the image is known to be manipulable, serial, and technologically conditioned. Ruff does not simply document a changing world; he studies the changed status of images themselves.*1*2*3\n\nWhere and how the work was used: the work circulated through large museum retrospectives, photography surveys, and art-historical discussions of the Düsseldorf school and digital image culture. MCA Chicago and MAMC+ are especially useful because they both stress the breadth of the career and the medium-reflexive logic of the work.*2*3\n\nCriticism and reception\n\nWhitechapel and MAMC+ frame Ruff as a photographer who continually tests the limits of the medium rather than staying within one recognizable style.*1*2\n\nMAMC+’s description of Ruff’s practice as “meta-photography” is especially useful because it names what many critics identify as his central contribution: the conversion of photography into a reflection on its own operations.*2\n\nReception consistently treats Ruff as one of the most important post-Becher artists because he links large-scale art photography to digital and networked image culture without abandoning the legacy of typological rigor.*1*2*3",
+      "links": [
+            {
+                  "url": "https://www.whitechapelgallery.org/exhibitions/thomas-ruff/",
+                  "label": "Whitechapel Gallery"
+            },
+            {
+                  "url": "https://mamc.saint-etienne.fr/en/expositions/thomas-ruff",
+                  "label": "MAMC+"
+            },
+            {
+                  "url": "https://mcachicago.org/exhibitions/2011/thomas-ruff",
+                  "label": "MCA Chicago"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.whitechapelgallery.org/exhibitions/thomas-ruff/",
+                  "name": "Thomas Ruff — Whitechapel Gallery"
+            },
+            {
+                  "num": 2,
+                  "url": "https://mamc.saint-etienne.fr/en/expositions/thomas-ruff",
+                  "name": "Thomas Ruff — MAMC+"
+            },
+            {
+                  "num": 3,
+                  "url": "https://mcachicago.org/exhibitions/2011/thomas-ruff",
+                  "name": "MCA DNA: Thomas Ruff — Museum of Contemporary Art Chicago"
+            }
+      ]
+},
+    "torbjrn-rdland": {
+      "leadJa": "1970年ノルウェー生まれ。商業写真の精緻な仕上がり、身体への近さ、奇妙な象徴性、親密さと不安が交錯するイメージで知られる。ファッション・広告・スティルライフ・奉献的イメージといった視覚言語を横断しながら、欲望と不快感が共存する独特の情動的空間を創出する。「写真はしばしば観察から始まるが、私の夢はより深い関与だ」という言葉が示すように、冷静なコンセプチュアル写真とは異なる親密さを追求してきた。",
+      "leadEn": "Norwegian photographer born in 1970.*1*2 Known for color photographs that combine commercial polish, bodily closeness, awkward symbolism, and an atmosphere of tenderness mixed with unease.*1*2",
+      "textJa": "経歴\n\n1970年ノルウェー生まれ。フォンダシオン・ルイ・ヴィトンのコレクションをはじめ、モデルナ・ムセット・ストックホルム、ボンニエールス・コンストハル等の主要美術機関で発表されてきた。*1*2 アナログ・プロセスへの執着と写真の物質的な現実に対するこだわりを一貫して保持している。*3\n\n表現解説\n\nロドランドの実践は、磨き上げられたカラー写真の視覚的な誘惑を利用しながら、その表面の下で観覧者を不安定にする情動的・象徴的な次元を作動させる。ファッション・広告・スティルライフ・奉献的イメージといった複数の視覚伝統から借用しながら、そのどれにも落ち着かない。*1 ボンニエールスの対話で語られるように「写真はしばしば観察から始まるが、私の夢はより深い関与だ」——その言葉は、1980年代のステージド写真が自らをあからさまに演出と告知するのに対し、ロドランドが欲求・ためらい・過剰な象徴性を写真的真実との不安定な関係の中に留めようとすることを示す。*3\n\n1980年代以降の広告・編集写真が飽和した視覚文化のなかで、ロドランドは視覚的な誘惑そのものを批評的かつ情動的な道具として使用した。写真表面の完成度が高いほど、そこに宿る親密さ・奇妙さ・象徴的過剰との落差が増大するという逆説がこの実践の核心にある。*4\n\n批評と受容\n\nモデルナ・ムセットによる受容はロドランドのモチーフをロマン主義的な絵画とキッチュ・大衆写真の双方に結びつけ、その美術史的位置を明確にしている。*2 受容は一貫して、作品が純粋な批評にも純粋な誘惑にも還元されないという点——欲望・恥・優しさ・象徴的過剰決定が共存する情動的な複雑さ——を強調する。*1*3",
+      "textEn": "Biography\n\nNorwegian photographer born in 1970.*1*2\n\nKnown for color photographs that combine commercial polish, bodily closeness, awkward symbolism, and an atmosphere of tenderness mixed with unease.*1*2\n\nExpression / method\n\nMain themes: desire, the body, touch, everyday objects, devotional or symbolic imagery, and the strange emotional charge of seemingly familiar scenes.*1*2\n\nRepresentative work examples: projects such as Fifth Honeymoon and recurring portraits, object studies, and staged scenes are central because they show how Rødland builds photographs that are sensuous, deliberate, and slightly disorienting at once.*1*2\n\nTechnique / formal traits: highly controlled color printing, sharp surfaces, often close framing, staged or semi-staged scenes, and a visual language that borrows from fashion, advertising, still life, and devotional image traditions without settling into any one of them.*1*2\n\nTechnique / formal traits: highly controlled color printing, sharp surfaces, often close framing, staged or semi-staged scenes, and a visual language that borrows from fashion, advertising, still life, and devotional image traditions without settling into any one of them. Interview material also stresses his attachment to analog process and to the bodily, “wet” materiality of photography rather than a neutral image surface.*1*2*3*4\n\nWhy this method was chosen: institutional framing around Rødland repeatedly stresses the tension between attraction and unease. The polished image is part of the method: it draws the viewer in, then destabilizes habitual reading through odd pairings, emotional ambiguity, and tactile over-insistence. His own interviews are useful here, because he distances himself from 1980s staged photography that too clearly announced itself as staged and instead seeks a more unstable relation to photographic truth.*1*2*3*4\n\nHistorical context: Rødland emerges in a post-1980s image culture saturated by advertising, editorial photography, and staged color work. His practice belongs to the moment when artists re-used visual seduction itself as a critical and affective tool rather than rejecting it outright.*1*2\n\nRelation to contemporaries or movements: he can be placed alongside staged color photography and post-conceptual image practices, but differs from cooler conceptual detachment by insisting on intimacy, bodily awkwardness, and a stubborn emotional charge.*1*2\n\nHistorical significance: Rødland matters because he helped shape a strand of contemporary photography in which beauty, fetish, discomfort, and symbolic excess are inseparable. His work expands what staged photography can do affectively.*1*2\n\nCritical meaning: the photographs matter because they refuse to stabilize into either pure critique or pure seduction. They hold the viewer in a zone where desire, embarrassment, tenderness, and symbolic overdetermination coexist.*1*2\n\nWhere and how the work was used: Fondation Louis Vuitton’s collection framing and broader museum holdings indicate that Rødland’s photographs have circulated through major contemporary art institutions, helping establish his work beyond a narrow photography context.*1*2\n\nWhere and how the work was used: Fondation Louis Vuitton’s collection framing and broader museum holdings indicate that Rødland’s photographs have circulated through major contemporary art institutions, helping establish his work beyond a narrow photography context. Bonniers Konsthall and interview contexts are useful because they show that reception also turns on his own reflections about observation, popular photography, and deeper engagement, not only on collection status.*1*2*3*4\n\nCriticism and reception\n\nInstitutional reception often emphasizes the singularity of Rødland’s image world: the works are consistently described through tension, ambiguity, and a complicated relation between attraction and discomfort.*1*2\n\nInstitutional reception often emphasizes the singularity of Rødland’s image world: the works are consistently described through tension, ambiguity, and a complicated relation between attraction and discomfort. Moderna Museet’s summary is especially useful because it links his motifs both to Romantic painting and to kitsch/popular photography, which sharpens his art-historical position.*1*2",
+      "links": [
+            {
+                  "url": "https://www.fondationlouisvuitton.fr/en/collection/artists/torbjorn-rodland",
+                  "label": "Fondation Louis Vuitton"
+            },
+            {
+                  "url": "https://www.modernamuseet.se/stockholm/en/exhibitions/organising-freedom/interviews/",
+                  "label": "Moderna Museet"
+            },
+            {
+                  "url": "https://bonnierskonsthall.se/en/utstallning/34238-2/a-conversation-with-torbjorn-rodland/",
+                  "label": "Bonniers Konsthall"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.fondationlouisvuitton.fr/en/collection/artists/torbjorn-rodland",
+                  "name": "Torbjørn Rødland — Fondation Louis Vuitton"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.modernamuseet.se/stockholm/en/exhibitions/organising-freedom/interviews/",
+                  "name": "Interviews — Moderna Museet"
+            },
+            {
+                  "num": 3,
+                  "url": "https://bonnierskonsthall.se/en/utstallning/34238-2/a-conversation-with-torbjorn-rodland/",
+                  "name": "A Conversation with Torbjørn Rødland — Bonniers Konsthall"
+            },
+            {
+                  "num": 4,
+                  "url": "https://news.artnet.com/art-world/torbjorn-rodland-interview-1943038",
+                  "name": "Torbjørn Rødland Interview — Artnet"
+            }
+      ]
+},
+    "wang-qingsong": {
+      "leadJa": "1966年中国生まれ、もともと絵画を学んだ。1990年代から巨大なステージド写真の制作に転じ、消費主義・国家イデオロギー・グローバル化の矛盾を社会主義リアリズムのエコーと商業イメージの混合として可視化してきた。タブロー写真に寓意と歴史的引用の重荷を負わせることで、かつて絵画が担っていた批評的役割を写真に移植した。",
+      "leadEn": "Chinese artist born in 1966, originally trained as a painter and later becoming widely known for staged large-scale photography.*1*2*3 Photography is the central medium of his mature practice, often combining theatrical construction, crowds, satire, and references to both Chinese visual culture and Western art history.*1*2*3",
+      "textJa": "経歴\n\n1966年中国生まれ。1990年代に絵画から写真へ転換し、《Follow Him》《Night Revels of Lao Li》《The Bloodstained Shirt》などで国際的評価を確立した。ミシガン大学美術館、サンディエゴ美術館、ICPなど国際的な機関で発表されている。*1*2\n\n表現解説\n\n王慶松の実践は、巨大なステージング・群衆・精巧なセットによる写真タブローを通じて、急激な市場化・都市化・イデオロギー変容が進んだ中国社会の矛盾を提示する。写真は社会主義リアリストの壁画・広告・歴史絵画に似た外観をもちながら、その形式を内側から転覆する。*2\n\nICPのプレスリリースが明示するように、絵画から写真への転換は1990年代の中国現代美術においてステージド写真が批評的な主要形式となる流れと一致している。*3 王の写真において、参加者は社会的変容の俳優であると同時に小道具でもある——社会的矛盾を描写するのではなく演出するという実践の核心がここにある。1990年代から2000年代にかけて中国が急速な変容を遂げた文脈で、王慶松はタブロー写真に寓意・歴史的引用・社会批評という重荷を負わせることで、かつて絵画が担っていた役割を写真に移植した。*1\n\n批評と受容\n\nICPの資料は王の転換を中国現代アートにおける絵画から写真へのシフトという大きな文脈に位置づけ、*3 SDMAの《Social Mobility》は現代中国の矛盾に根ざした社会批評としての受容を示す。*2 批評は一貫して、スペクタクルではなく寓意的・歴史的な重層性という視点でこの写真群を評価する。*1",
+      "textEn": "Biography\n\nChinese artist born in 1966, originally trained as a painter and later becoming widely known for staged large-scale photography.*1*2*3\n\nPhotography is the central medium of his mature practice, often combining theatrical construction, crowds, satire, and references to both Chinese visual culture and Western art history.*1*2*3\n\nExpression / method\n\nMain themes: consumerism, education, state ideology, globalization, social aspiration, spectacle, and the contradictions of rapid transformation in contemporary China.*1*2*3\n\nRepresentative work examples: Follow Him, Night Revels of Lao Li, The Bloodstained Shirt, and works shown in Social Mobility are central because they show his use of large staged tableaux to compress social critique, historical citation, and theatrical excess into one frame.*1*2*3\n\nTechnique / formal traits: monumental staged photographs, large groups of participants, elaborate sets, digitally composed or carefully choreographed scenes, and a deliberately excessive pictorial density. The photographs often resemble propaganda, advertising, or history painting only to turn those forms against themselves.*1*2*3\n\nWhy this method was chosen: Wang uses theatrical scale and crowded composition to match the magnitude of social change he addresses. Photography allows him to bring painting, performance, and satire together while preserving the visual force of a completed tableau.*1*2\n\nHistorical context: his work emerges in the 1990s and 2000s as China undergoes rapid marketization, urbanization, and ideological transformation. His move from painting to photography is historically important because staged photography became a major vehicle for critical contemporary Chinese art in this period.*1*2*3\n\nRelation to contemporaries or movements: Wang can be placed near contemporary Chinese staged photography and post-socialist critique, but his work is distinct in the scale and density with which it combines socialist-realist echoes, commercial imagery, and collective performance.*1*2*3\n\nHistorical significance: he matters because he helped make tableau photography a major form of social commentary in contemporary Chinese art, showing that photography could synthesize painting, installation, and political critique.*1*2*3\n\nCritical meaning: the work matters because it stages social contradiction rather than merely depicting it. Wang’s photographs are excessive on purpose: they reveal how ideology and consumption become theatrical environments in which people are both participants and props.*1*2*3\n\nWhere and how the work was used: his work circulated through ICP, university museums, Chinese and international museums, and biennials. ICP and SDMA are especially useful because they frame the pictures as social commentary and historical restaging rather than as spectacle alone.*1*2\n\nCriticism and reception\n\nICP’s press material is especially useful because it links Wang’s emergence to the broader shift from painting to photography in Chinese contemporary art and situates his work within the rise of staged image-making in the 1990s.*3\n\nSDMA’s Social Mobility framing clarifies how museum reception has emphasized the photographs as social critique rooted in the contradictions of contemporary China.*2",
+      "links": [
+            {
+                  "url": "https://umma.umich.edu/exhibitions/wang-qingsong-detroit-beijing/",
+                  "label": "University of Michigan Museum of Art"
+            },
+            {
+                  "url": "https://www.sdmart.org/exhibition/wang-qingsong-social-mobility/",
+                  "label": "San Diego Museum of Art"
+            },
+            {
+                  "url": "https://www.icp.org/sites/default/files/exhibition/credits/sites/default/files/exhibition_pdfs/icp_wang_qingsong_press.pdf",
+                  "label": "ICP Press Release"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://umma.umich.edu/exhibitions/wang-qingsong-detroit-beijing/",
+                  "name": "Wang Qingsong / Detroit / Beijing — University of Michigan Museum of Art"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.sdmart.org/exhibition/wang-qingsong-social-mobility/",
+                  "name": "Wang Qingsong: Social Mobility — San Diego Museum of Art"
+            },
+            {
+                  "num": 3,
+                  "url": "https://www.icp.org/sites/default/files/exhibition/credits/sites/default/files/exhibition_pdfs/icp_wang_qingsong_press.pdf",
+                  "name": "Wang Qingsong Press Release — International Center of Photography"
+            }
+      ]
+},
+    "xavier-ribas": {
+      "leadJa": "1960年バルセロナ生まれ。社会人類学と写真ドキュメンタリーを基盤に、都市周縁部・政治的記憶を宿した景観・争われた場所の長期調査を実践してきた。《Sanctuary》《Nitrate》など、写真・アーカイブ文書・テキストを組み合わせた実践は、景観を歴史的証拠として再構成するというポストドキュメンタリーの方向を示した。",
+      "leadEn": "Spanish photographer born in Barcelona in 1960, with studies in social anthropology and documentary photography.*1*2 Known for long-term research-based photographic projects dealing with urban peripheries, landscapes marked by political history, and the social life of contested sites.*1*2",
+      "textJa": "経歴\n\n1960年バルセロナ生まれ。社会人類学と写真ドキュメンタリーを学んだのち、都市周縁部・歴史的景観を主題とする長期プロジェクトを継続的に展開してきた。エスパイビゾールでの個展、バンコ・デ・エスパーニャ・コレクションへの収蔵、ビルバオ・ムゼオアの書誌資料など機関的評価が確立されている。*1*2\n\n表現解説\n\nリバスの実践の核心は、写真を単独の証拠として完結させず、アーカイブ資料・テキスト・インスタレーションと結合することで場所の歴史的・政治的条件を再構成することにある。バンコ・デ・エスパーニャの機関テキストが明示するように、ドキュメンタリー写真と社会人類学がリバスの方法論の基盤であり、景観は歴史的暴力・立ち退き・制度的権力が引き続き読み取れる場として扱われる。*2\n\n《Sanctuary》は争われた都市空間を主題とし、《Nitrate》は硝酸塩採掘の歴史を通じて労働・植民地主義・景観の重なりを提示した。*3 1990年代から2000年代にかけてドキュメンタリー写真が現代美術の文脈で問い直された時期に、リバスは単独のイメージへの依存を退け、調査の組立体として写真を機能させるというポストドキュメンタリーの立場を確立した。*1\n\n批評と受容\n\nバンコ・デ・エスパーニャによるフレーミングは、ドキュメンタリーと人類学的調査という二重の基盤を明示的に評価し、*2 ビルバオ・ムゼオアの書誌資料は《Sanctuary》周辺の批評的受容を確認する。*3 一貫して、リバスの重要性はアイコニックなイメージの創出にではなく、歴史的な不在と制度的暴力を場所を通じて思考可能にすることにあるとされる。*1",
+      "textEn": "Biography\n\nSpanish photographer born in Barcelona in 1960, with studies in social anthropology and documentary photography.*1*2\n\nKnown for long-term research-based photographic projects dealing with urban peripheries, landscapes marked by political history, and the social life of contested sites.*1*2\n\nExpression / method\n\nMain themes: urban margins, political memory, displacement, land use, documentary research, archives, and the afterlives of historical conflict in landscape.*1*2*3\n\nRepresentative work examples: projects such as Sanctuary, Nitrate, and A Unique and Inevitable Voice are central because they show how Ribas combines photographs with archival and textual material to reconstruct historical and political conditions embedded in specific sites.*1*2*3\n\nTechnique / formal traits: documentary photography combined with research, archival documents, text, and installation; calm descriptive views of apparently ordinary places; and an insistence that the image alone is insufficient without historical investigation.*1*2\n\nWhy this method was chosen: Ribas uses photography as both a documentary method and a final form through which research becomes visible. The landscape is not a neutral background in his work; it is a site where traces of political struggle, displacement, and institutional power remain legible.*1*2\n\nHistorical context: his work emerges in the 1990s and 2000s, when documentary photography was being rethought inside contemporary art and when landscape became a way to address memory, state violence, and economic transformation. Ribas belongs to that postdocumentary field.*1*2*3\n\nRelation to contemporaries or movements: Ribas is close to research-driven documentary and conceptual landscape, but differs from photographers who treat landscape primarily as formal field. His work depends on historical reconstruction and on the collision of image, archive, and text.*1*2*3\n\nHistorical significance: he matters because he helped consolidate a mode of politically informed landscape photography in which the photograph functions as part of a larger research assemblage rather than as autonomous evidence.*1*2\n\nCritical meaning: the work matters because it reveals that apparently empty or ordinary sites can be saturated with political histories. Ribas’s pictures are valuable less for visual drama than for the way they make historical absence and institutional violence thinkable through place.*1*2*3\n\nWhere and how the work was used: his work circulated through museums, research exhibitions, publications, and archives. Banco de España’s collection text is especially useful because it explicitly states that documentary photography and social anthropology are the foundations of his method.*2\n\nCriticism and reception\n\nBanco de España’s institutional text is particularly useful because it frames Ribas’s work as photography enlarged by documentary and anthropological research, which is central to his historical significance.*2\n\nExhibition texts around A Unique and Inevitable Voice show how reception often focuses on the political and archival density of his landscapes rather than on singular iconic images.*3",
+      "links": [
+            {
+                  "url": "https://espaivisor.com/exposicion/it-would-never-be-quite-the-same-again/",
+                  "label": "Espaivisor"
+            },
+            {
+                  "url": "https://coleccion.bde.es/wca/en/secciones/coleccion/artistas/xavier-ribas-1613.html",
+                  "label": "Colección Banco de España"
+            },
+            {
+                  "url": "https://bilbaomuseoa.eus/en/explore/bibliographical-reference/xavier-ribas-santuario-sanctuary/74f2d524-88e7-4469-bed0-97b3d7f581f3",
+                  "label": "Bilbao Museoa"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://espaivisor.com/exposicion/it-would-never-be-quite-the-same-again/",
+                  "name": "Xavier Ribas — Espaivisor"
+            },
+            {
+                  "num": 2,
+                  "url": "https://coleccion.bde.es/wca/en/secciones/coleccion/artistas/xavier-ribas-1613.html",
+                  "name": "Xavier Ribas — Colección Banco de España"
+            },
+            {
+                  "num": 3,
+                  "url": "https://bilbaomuseoa.eus/en/explore/bibliographical-reference/xavier-ribas-santuario-sanctuary/74f2d524-88e7-4469-bed0-97b3d7f581f3",
+                  "name": "Xavier Ribas: Santuario = Sanctuary — Bilbao Museoa"
+            }
+      ]
+},
+    "yang-fudong": {
+      "leadJa": "1971年中国生まれ。映像・写真・絵画を横断するアーティスト。現代中国における疎外・都市生活・歴史的変容を映画的かつ絵画的なミザンセーヌで提示し、《Estranged Paradise》などのステージド写真・映像作品でドクメンタ11以降の国際的評価を確立した。変化が疎外感・浮遊・不確かな自己定位として経験される様相を詩的形式に変換してきた。",
+      "leadEn": "Chinese artist born in 1971, working across film, video, photography, installation, and painting.*1*2*3 Better known internationally for film and moving image, but staged photography is an important part of his practice and of his relation to contemporary Chinese image culture.*1*2*3",
+      "textJa": "経歴\n\n1971年中国生まれ。映像・写真・インスタレーション・絵画にわたる実践で知られ、ドクメンタ11（2002年）への参加後に国際的評価を確立した。ムゼオ・エステバン・ビセンテ、マリアン・グッドマン・ギャラリー、原美術館ARCなど国内外の機関で継続的に発表されている。*1*2\n\n表現解説\n\n楊福東の静止・動画イメージは、ステージングされた人物・映画的な構図・白黒を基調とした空気感を通じて、急速な変化を遂げる中国社会における知識人の孤独とアイデンティティの揺らぎを提示する。単なる社会的観察ではなく、変化を経験する様相——疎外感・浮遊・宙吊り——を詩的・哲学的な形式として結晶化するところに独自性がある。*1\n\nマリアン・グッドマンの伝記資料が示すように、《Estranged Paradise》などの作品は映画と絵画と写真の間に位置し、いずれの単一ジャンルにも還元されない視覚言語を構築した。*2 1990年代末から2000年代にかけて中国現代美術が国際的な視認性を獲得し、写真・映像が批評的な主要形式として台頭した文脈で、楊福東は社会リアリズムを退け、歴史的変容を「雰囲気」「フィクション」「哲学的距離」として形式化する方向を示した。*3\n\n批評と受容\n\nムゼオ・エステバン・ビセンテの展示テキストはドクメンタ11を楊福東の国際的転換点として明示し、知識人的アイデンティティと変容しつつある中国社会という主題的核を強調する。*1 受容は一貫して、ステージングされた静止・動画の作品が一つの問い——歴史的変容は個人においていかに生きられるか——を構成することを評価する。*2*3",
+      "textEn": "Biography\n\nChinese artist born in 1971, working across film, video, photography, installation, and painting.*1*2*3\n\nBetter known internationally for film and moving image, but staged photography is an important part of his practice and of his relation to contemporary Chinese image culture.*1*2*3\n\nExpression / method\n\nMain themes: modernity, alienation, urban life, intellectual identity, historical transition, dreamlike temporality, and the fragile relation between private desire and collective transformation.*1*2*3\n\nRepresentative work examples: early photographic series and the visual worlds around projects such as Estranged Paradise and The General’s Smile are central because they show how Yang constructs stylized, often black-and-white environments where modern Chinese life appears both cinematic and estranged.*1*2*3\n\nTechnique / formal traits: staged mise-en-scène, strong reference to cinema and painting, carefully choreographed figures, and a tendency toward atmospheric black-and-white imagery. Even in still photographs, the image feels suspended inside a longer temporal sequence.*1*2*3\n\nWhy this method was chosen: Yang’s practice often uses staged images to examine how subjectivity is shaped inside rapidly changing social systems. Photography and film let him construct worlds where atmosphere and rhythm become historical arguments rather than mere style.*1*2\n\nHistorical context: his work emerges in the late 1990s and 2000s, when Chinese contemporary art was gaining international visibility and when artists were grappling with modernization, market transformation, and new visual regimes. Yang’s use of staged imagery belongs to that context while resisting straightforward social realism.*1*2*3\n\nRelation to contemporaries or movements: Yang can be placed alongside contemporary Chinese video and photography, but his practice is distinctive in the way it merges painterly composition, cinematic duration, and photographic staging. He is less a documentary observer than a constructor of historical mood.*1*2*3\n\nHistorical significance: he matters because he helped define a generation of Chinese artists for whom photography and film became means of rethinking modernity not as documentation alone but as atmosphere, fiction, and philosophical distance.*1*2*3\n\nCritical meaning: the work matters because it gives historical transition a dreamlike form. Yang’s images do not explain modern China directly; they show how change is lived as estrangement, suspension, and uncertain self-positioning.*1*2*3\n\nWhere and how the work was used: his work circulated through museum surveys, biennials, and exhibitions in Europe, Asia, and the United States. Museo Esteban Vicente and other institutional biographies are useful because they connect his still and moving-image work to international reception after Documenta 11.*1*3\n\nCriticism and reception\n\nMuseo Esteban Vicente’s exhibition text is especially useful because it explicitly connects Yang’s international breakthrough to Documenta 11 and frames his image world in relation to intellectual identity and changing Chinese society.*1\n\nHis historical importance in photography-related terms lies in showing how staged still image and moving image could work together as part of a larger post-socialist visual language.*1*2",
+      "links": [
+            {
+                  "url": "https://www.museoestebanvicente.es/en/yang-fudong-2/",
+                  "label": "Museo Esteban Vicente"
+            },
+            {
+                  "url": "https://www.mariangoodman.com/usr/library/documents/main/artists/73/yangbiography.pdf",
+                  "label": "Marian Goodman Gallery — Biography"
+            },
+            {
+                  "url": "https://www.art-it.asia/en/u/admin_exrec_e/mxuqigfku9cjd6bwhn5w/",
+                  "label": "ART iT — Hara Museum"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.museoestebanvicente.es/en/yang-fudong-2/",
+                  "name": "Yang Fudong — Museo de Arte Contemporáneo Esteban Vicente"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.mariangoodman.com/usr/library/documents/main/artists/73/yangbiography.pdf",
+                  "name": "Yang Fudong Biography — Marian Goodman Gallery"
+            },
+            {
+                  "num": 3,
+                  "url": "https://www.art-it.asia/en/u/admin_exrec_e/mxuqigfku9cjd6bwhn5w/",
+                  "name": "Yang Fudong at Hara Museum — ART iT"
+            }
+      ]
+},
+    "yasumasa-morimura": {
+      "leadJa": "1951年大阪生まれ。西洋美術史の正典的なイメージ——ヴェラスケス、マネ、フリーダ・カーロなど——に自らの身体を挿入することで知られる。写真を美術史の舞台へと変換し、人種・ジェンダー・国民的アイデンティティがイメージのなかでいかに構築されるかを問い続けてきた。アプロプリエーション・アートの展開において、身体的な体現と文化的翻訳を組み合わせる独自の立場を確立した。",
+      "leadEn": "Japanese artist born in 1951 in Osaka, working across photography, self-portraiture, performance, and appropriation-based installation.*1*2 Best known for inserting his own body into iconic artworks, film stills, and historical images, making photography central to his re-staging of art history, gender, and cultural identity.*1*2*3",
+      "textJa": "経歴\n\n1951年大阪生まれ。精巧なメイクアップ・コスチュームと写真の大判プリントを使い、西洋の正典的な作品やセレブリティのイメージに自らを挿入した連作でMoMA・NGV等の主要コレクションに収蔵されている。*1*2 1988年の《Art History Daughters》から始まるアプロプリエーション連作で国際的に評価され、原美術館ARCでも紹介されてきた。*3\n\n表現解説\n\n森村の実践の核心は、西洋美術史の正典的なイメージを再演する際に、「正確な類似」に常に「可視的な異化」を混在させるという方法にある。完璧に似せようとしながら、日本人男性の存在を通じて類似が達成不能であることが露わになる——この落差こそが作品の批評的動力である。*1\n\nMoMAの収蔵記録が示すように、森村は写真を美術史の権威・所有権・文化的アイデンティティがいかに社会的に構築されるかを問う舞台として使用した。*1 1980年代のアプロプリエーション・アート・ポストモダニズム・フェミニスト的作者性批評が交差した文脈で、森村は西洋美術史の正典に日本人の身体をもって介入し、美術史的権威がジェンダー・人種・国民性によって分節されていることを示した。*2\n\n批評と受容\n\nMoMAはアプロプリエーション・アーティストかつ自己変容を通じて西洋のアイコニック・イメージを再活性化する写真家として一貫して位置づける。*1 NGVのコレクション資料は主要な個別作品を機関的文脈に定着させ、*2 受容は一貫して、森村のセルフ・ポートレートによる置換が単なる機知や演劇性ではなく、誰が美術史に登場しどのような条件のもとで登場するかという歴史的介入であることを強調する。*3",
+      "textEn": "Biography\n\nJapanese artist born in 1951 in Osaka, working across photography, self-portraiture, performance, and appropriation-based installation.*1*2\n\nBest known for inserting his own body into iconic artworks, film stills, and historical images, making photography central to his re-staging of art history, gender, and cultural identity.*1*2*3\n\nExpression / method\n\nMain themes: self-fashioning, appropriation, art history, gender, East–West identity, performance, masquerade, and the politics of representation.*1*2*3\n\nRepresentative work examples: works such as An Inner Dialogue with Frida Kahlo (Flower Wreath and Tears) and the wider series of self-insertions into Western masterpieces and celebrity images are central because they show how Morimura turns photography into a stage for art-historical and cultural dislocation.*1*2*3\n\nTechnique / formal traits: staged self-portraiture, elaborate makeup and costume, reconstruction of iconic source images, large-scale photographic prints, and a method in which resemblance is always mixed with visible estrangement.*1*2*3\n\nWhy this method was chosen: Morimura uses his own body to enter images that have shaped cultural memory and authority. This strategy allows him to test how race, gender, and national identity are produced inside art-historical canons rather than merely represented by them.*1*2\n\nHistorical context: his work emerges in the 1980s at the intersection of appropriation art, postmodernism, and Japanese contemporary art’s dialogue with Western art history. Photography becomes the key medium through which those histories are replayed and unsettled.*1*2*3\n\nRelation to contemporaries or movements: Morimura is often aligned with appropriation art, but his work differs from cooler rephotographic strategies because it uses theatrical embodiment and cultural translation rather than mere citation. His practice also intersects with performance and queer readings of the body.*1*2*3\n\nHistorical significance: he is significant because he transformed staged photography into a site for rewriting art history from a Japanese perspective, while also questioning fixed identity categories through role-play and substitution.*1*2\n\nCritical meaning: the work matters because it turns the canon into a contested space. Morimura’s photographs do not simply parody masterpieces; they reveal that identity, authorship, and historical authority are themselves staged constructs.*1*2*3\n\nWhere and how the work was used: his work circulated through museum exhibitions, collection displays, and artist talks. MoMA and NGV materials are useful because they show how the work has been institutionally framed both as appropriation and as a broader exploration of identity and art history.*1*2*3\n\nCriticism and reception\n\nMoMA’s collection framing consistently identifies Morimura as a Japanese photographer and appropriation artist whose work reanimates iconic Western images through self-transformation.*1\n\nNGV’s collection materials are useful because they anchor specific works within the museum context while showing how Morimura’s practice entered major international collections as part of broader debates on identity and representation.*2\n\nReception often emphasizes that Morimura’s self-portrait substitutions are not only witty or theatrical; they are historical interventions into who may appear within art history and on what terms.*1*3",
+      "links": [
+            {
+                  "url": "https://www.moma.org/artists/7631-yasumasa-morimura",
+                  "label": "MoMA — Yasumasa Morimura"
+            },
+            {
+                  "url": "https://www.ngv.vic.gov.au/explore/collection/artist/9992/",
+                  "label": "National Gallery of Victoria"
+            },
+            {
+                  "url": "https://www.haramuseum.or.jp/en/arc/event/1192/",
+                  "label": "Hara Museum ARC"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.moma.org/artists/7631-yasumasa-morimura",
+                  "name": "Yasumasa Morimura — MoMA"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.ngv.vic.gov.au/explore/collection/artist/9992/",
+                  "name": "Yasumasa Morimura — National Gallery of Victoria"
+            },
+            {
+                  "num": 3,
+                  "url": "https://www.haramuseum.or.jp/en/arc/event/1192/",
+                  "name": "Meet the Artist: Yasumasa Morimura — Hara Museum ARC"
+            }
+      ]
+},
+    "zbigniew-libera": {
+      "leadJa": "1959年ポーランド生まれ。後期社会主義・ポスト社会主義ポーランドのクリティカルアートの中心的人物。日用品・玩具・制度的装置を素材に、イデオロギーが日常的な物体を通じて生産されるしくみを批評的に可視化してきた。《Lego. Concentration Camp》（1996年）は、ホロコースト表象の商品化をめぐる議論を引き起こしながら、記憶の包装・消費という問いを正面から提起した。",
+      "leadEn": "Polish artist born in 1959, working across photography, film, installation, and objects.*1*2*3 Associated with Polish critical art and known for works that test the limits of representation, ideology, pedagogy, and historical memory.*1*2*3",
+      "textJa": "経歴\n\n1959年ポーランド生まれ。《Mystical Perseverance》（1984–1990年）などビデオ基盤の初期作品からポスト社会主義批評の文脈で注目され、ワルシャワ近代美術館のアーカイブに収蔵されている。*2 《Lego. Concentration Camp》（1996年）が国際的論争を引き起こし、ユダヤ博物館《Mirroring Evil》展で重要な参照点となった。*3\n\n表現解説\n\nリベラの実践の核心は、社会的・イデオロギー的なシステムが日常的な物体——玩具・教育用具・家庭的装置——を通じていかに内面化されるかを批評的に可視化することにある。ワルシャワ近代美術館の資料が示すように、後期社会主義および1989年以降の文脈において、リベラは検閲・制度的崩壊・歴史的トラウマ・新たな商品化されたイメージ圏と格闘してきた。*2\n\n《Lego. Concentration Camp》は、親しみある消費財の形式とホロコーストの歴史という対比によって、記憶がいかに包装・フォーマット・消費されるかという問いを提起する。この論争的な作品が批評的アートの文脈で繰り返し評価されるのは、スキャンダルを演出するためではなく、記憶の商品化という問いに正面から形を与えているためである。*3 1989年以降のポーランドで、クリティカルアートが検閲の終焉・資本主義への移行・歴史的暴力の再評価という重層的な課題に直面していた文脈で、リベラは写真・オブジェ・パッケージングを組み合わせることで、権力・規律・記憶を批評する独自の立場を確立した。*1\n\n批評と受容\n\nリベラの受容は《Lego. Concentration Camp》をめぐる論争と不可分であるが、機関的なテキストは一貫して、より広い持続的な実践——身体・規律・イデオロギーをめぐる初期ビデオから後期のアーカイブ・プロジェクトまで——の中にこの作品を位置づける。*1*2 批評の核心は、記憶が視覚的・消費的に格式化されるプロセスを親しみある形式を通じて可視化したことにある。*3",
+      "textEn": "Biography\n\nPolish artist born in 1959, working across photography, film, installation, and objects.*1*2*3\n\nAssociated with Polish critical art and known for works that test the limits of representation, ideology, pedagogy, and historical memory.*1*2*3\n\nExpression / method\n\nMain themes: ideology, education, power, historical trauma, media representation, and the manufacture of social norms through objects and images.*1*2*3\n\nRepresentative work examples: Lego. Concentration Camp (1996), earlier video-based works such as Mystical Perseverance (1984–1990), and later archival projects are central because they show Libera’s movement from bodily and domestic critique toward broader historical and political structures.*1*2*3\n\nTechnique / formal traits: appropriation of familiar objects, staged or reframed photographic imagery, use of packaging and serial display, and conceptual installations that rely on collision between ordinary form and charged historical meaning.*1*2*3\n\nWhy this method was chosen: Museum texts around Libera emphasize his interest in how social and ideological systems enter everyday objects. By reworking familiar forms such as toys or domestic apparatuses, he makes ideology visible at the level of ordinary visual culture rather than abstract discourse.*1*2\n\nHistorical context: Libera emerges in late socialist and post-socialist Poland, in a moment when artists were confronting censorship, institutional collapse, historical trauma, and the newly commodified image sphere after 1989. His work belongs directly to that context of critical art.*2*3\n\nRelation to contemporaries or movements: he is one of the central figures of Polish critical art, but his use of objects and photographic framing differs from purely documentary responses by insisting on conceptual and symbolic collision.*2*3\n\nHistorical significance: Libera matters because he made photography and object-based art into instruments for thinking through power, memory, and the representability of violence. His work became a touchstone in debates on post-communist art and Holocaust representation.*1*2*3\n\nCritical meaning: the work matters because it does not allow politically charged imagery to settle into reverence or neutrality. Instead it exposes how memory is formatted, packaged, and consumed.*2*3\n\nWhere and how the work was used: the Museum of Modern Art in Warsaw archive and other institutional texts are especially useful because they place Libera inside concrete debates around critical art, controversy, and the circulation of Lego. Concentration Camp through exhibitions such as the Jewish Museum’s Mirroring Evil.*2*3\n\nCriticism and reception\n\nLibera’s reception is inseparable from controversy. Institutional summaries repeatedly point to the debate around Lego. Concentration Camp, especially concerning the limits of representing the Holocaust through commodity form.*2*3",
+      "links": [
+            {
+                  "url": "https://www.ludwigmuseum.hu/en/work/mystical-perseverance",
+                  "label": "Ludwig Museum — Mystical Perseverance"
+            },
+            {
+                  "url": "https://archiwum.artmuseum.pl/en/archiwum/archiwum-zbigniewa-libery/1951",
+                  "label": "Museum of Modern Art Warsaw — Archive"
+            },
+            {
+                  "url": "https://niepodlegle.artmuseum.pl/en/artysta/191",
+                  "label": "Niepodlegle / MoMA Warsaw"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.ludwigmuseum.hu/en/work/mystical-perseverance",
+                  "name": "Mystical Perseverance (1984–1990) — Ludwig Museum"
+            },
+            {
+                  "num": 2,
+                  "url": "https://archiwum.artmuseum.pl/en/archiwum/archiwum-zbigniewa-libery/1951",
+                  "name": "Zbigniew Libera Archive — Museum of Modern Art in Warsaw"
+            },
+            {
+                  "num": 3,
+                  "url": "https://niepodlegle.artmuseum.pl/en/artysta/191",
+                  "name": "Zbigniew Libera — Niepodlegle / Museum of Modern Art in Warsaw"
+            }
+      ]
+},
+    "zwelethu-mthethwa": {
+      "leadJa": "1960年ダーバン生まれの南アフリカ人写真家。アパルトヘイト終焉期から移行期にかけて、タウンシップ・非公式居住地・職場の人々を大判カラーで記録した。「私の目的は、撮影する人々の誇りを示すことだ」という言葉が示すように、報道的な被害者化を退け、身体・空間・視線を通じて主体の尊厳を提示するポートレート写真の方向を示した。",
+      "leadEn": "South African photographer and painter born in 1960 in Durban.*1*2*3 Known for large-format color portraits of people in townships, informal settlements, workplaces, and interior spaces during and after the transition from apartheid.*1*2*3",
+      "textJa": "経歴\n\n1960年ダーバン生まれ。《Interior Series》をはじめとするタウンシップのポートレートで現代写真美術館・メトロポリタン美術館・スミソニアンなど主要機関での発表と収蔵を重ねてきた。*1*2 後年は《Sugar Cane》など農業労働者を主題とする連作も展開した。*3\n\n表現解説\n\nムテスワの実践の核心は、タウンシップ・非公式居住地・職場という周縁化された空間の住人を、正面から向き合い完全な存在として画面に定着させることにある。大判カラー・正面的なポートレート・丁寧な構図が、被写体が占める空間——内装の細部・色・物的な配置——を背景としてではなく主題の一部として扱う。*2\n\nスミソニアンの展示資料が伝えるように、「私の目的は、撮影する人々の誇りを示すことだ」——この言葉がアパルトヘイト以後の南アフリカにおける報道写真と大判カラー・ポートレートの分岐を端的に示している。*4 アパルトヘイトからの移行という政治的変容と急速な都市化が進む文脈で、ムテスワは国家的なタイポロジーとも活動家的な報道写真とも異なる方向から、黒人の生の視覚的可視性を再定義した。*1\n\n批評と受容\n\n現代写真美術館の展示テキストはポートレートを単独のイメージではなく社会変容の証拠として位置づけ、*1 メトロポリタン美術館の収蔵は住居空間が主体性の一部であるという読みを確認する。*2 スミソニアンの資料は、作家自身の言葉によって尊厳・自己呈示という倫理的方向性を明示する。*4",
+      "textEn": "Biography\n\nSouth African photographer and painter born in 1960 in Durban.*1*2*3\n\nKnown for large-format color portraits of people in townships, informal settlements, workplaces, and interior spaces during and after the transition from apartheid.*1*2*3\n\nExpression / method\n\nMain themes: dignity, labor, housing, township life, post-apartheid transition, and the visual politics of portraiture in conditions of social inequality.*1*2*3\n\nRepresentative work examples: the Interior Series, portraits of migrant and township residents, and later projects such as Sugar Cane are central because they show how Mthethwa’s portrait method joins bodily presence to built environment and social transformation.*1*2*3\n\nTechnique / formal traits: large-format color photography, frontal portraiture, full-body or near full-body figures placed within domestic or working environments, and a controlled color palette that treats interior detail as part of the subject rather than background.*1*2*3\n\nWhy this method was chosen: the Smithsonian material is especially useful because it records Mthethwa’s own aim: \"My aim is to show the pride of the people I photograph.\" This helps explain why the portraits avoid journalistic victimhood and instead emphasize self-presentation, spatial agency, and psychological presence.*4\n\nHistorical context: Mthethwa’s work emerges during the late apartheid and post-apartheid period, when photographers were rethinking how Black life in South Africa could be represented beyond both state typologies and activist news imagery. His portraits belong to that shift toward large-scale, color, and collaborative presence.*1*2*4\n\nRelation to contemporaries or movements: he intersects with documentary portraiture, but differs from classic social documentary by giving extraordinary formal authority to his subjects through scale, color, and compositional stillness.*1*2*4\n\nHistorical significance: Mthethwa matters because he helped redefine South African documentary and portrait photography at the moment of political transition, making domestic and working interiors into spaces of historical visibility rather than mere background.*1*2*4\n\nCritical meaning: the work matters because it resists reducing township life to deprivation alone. The portraits register poverty and transition, but also dignity, style, and the subject’s active relation to space.*1*2*4\n\nWhere and how the work was used: MoCP’s exhibition text and the Met object record are useful because they confirm museum framing around political transition and interior space. Smithsonian material adds a strong interpretive layer about dignity and self-representation.*1*2*4\n\nCriticism and reception\n\nMoCP’s exhibition framing is especially useful because it situates the portraits in a moment of social change and rapid urbanization rather than isolating them as generic “African” images.*1\n\nInstitutional texts repeatedly stress Mthethwa’s large-format color strategy, which gave unusual visual weight to subjects often marginalized in media representation.*1*2*4",
+      "links": [
+            {
+                  "url": "https://www.mocp.org/exhibition/zwelethu-mthethwa/",
+                  "label": "Museum of Contemporary Photography"
+            },
+            {
+                  "url": "https://www.metmuseum.org/art/collection/search/302118",
+                  "label": "Metropolitan Museum of Art"
+            },
+            {
+                  "url": "https://africa.si.edu/exhibits/insights/insights.pdf",
+                  "label": "Smithsonian — Insights"
+            }
+      ],
+      "citations": [
+            {
+                  "num": 1,
+                  "url": "https://www.mocp.org/exhibition/zwelethu-mthethwa/",
+                  "name": "Zwelethu Mthethwa — Museum of Contemporary Photography"
+            },
+            {
+                  "num": 2,
+                  "url": "https://www.metmuseum.org/art/collection/search/302118",
+                  "name": "Zwelethu Mthethwa, Untitled (Interior Series) — The Metropolitan Museum of Art"
+            },
+            {
+                  "num": 3,
+                  "url": "https://www.africa-tamuseum.org.il/artist/zwelethu-mthethwa/",
+                  "name": "Zwelethu Mthethwa — Tel Aviv Museum of Art"
+            },
+            {
+                  "num": 4,
+                  "url": "https://africa.si.edu/exhibits/insights/insights.pdf",
+                  "name": "Insights Exhibition — National Museum of African Art, Smithsonian"
+            }
+      ]
+}
   }
 );
