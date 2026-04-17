@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260417a"
+ASSET_VERSION = "20260417b"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
@@ -1289,7 +1289,6 @@ def main() -> None:
             directory_nav = render_site_directory_nav(photographers, eras, all_nationalities, lang)
             page_top_links = f"""
       <div class="page-top-links top-links">
-        <a class="nav-secondary-link site-title-link" href="{home_href}">{copy['site']}</a>
         <div class="tab-nav-mobile-grid">
           <div class="tab-nav-selects">
             {extra_selects}
@@ -1330,6 +1329,7 @@ gtag('config', '{GA_ID}');
       <div class="header-top">
         <div class="header-label">{copy['label']}</div>
       </div>
+      <div class="site-brand-title"><a class="site-brand-title-link" href="{home_href}"><em>{copy['site']}</em></a></div>
       <p class="header-keywordline">{keyword_line_html}</p>
     </div>
   </header>

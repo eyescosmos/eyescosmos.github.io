@@ -125,6 +125,15 @@ body.is-navigating #page-fade {
   color: var(--accent);
 }
 
+.title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.title-link:hover em {
+  color: var(--accent);
+}
+
 .title-status {
   color: var(--text-muted);
   font: 400 12px/1.2 'DM Mono', monospace;
@@ -348,7 +357,7 @@ body.is-navigating #page-fade {
 
   <div class="hud">
     <div class="eyebrow">Prototype / Photo Coordinates</div>
-    <h1 class="title"><em id="main-title">Photo Coordinates</em><span class="title-status" id="title-status">Updating</span></h1>
+    <h1 class="title"><a class="title-link" href="/en/"><em id="main-title">Photo Coordinates</em></a><span class="title-status" id="title-status">Updating</span></h1>
     <div class="title-subcopy" id="title-subcopy">Photo Coordinates is a website exploring the history of photography through photographers, artistic movements, visual culture, and historical context.</div>
     <div class="title-note" id="title-note">This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.</div>
     <div class="lede" id="title-lede">

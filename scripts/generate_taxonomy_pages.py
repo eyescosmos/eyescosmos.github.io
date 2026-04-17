@@ -11,7 +11,7 @@ import re
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260415a"
+ASSET_VERSION = "20260417b"
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
     "ana-torfs",
@@ -626,8 +626,9 @@ gtag('config', '{GA_ID}');
   <header class="page-header">
     <div class="container">
       <div class="header-top">
-        <div class="header-label"><a class="site-title-link" href="{home_href}">{'Photo Coordinates' if lang == 'en' else '写真の座標'}</a></div>
+        <div class="header-label">{label}</div>
       </div>
+      <div class="site-brand-title"><a class="site-brand-title-link" href="{home_href}"><em>{'Photo Coordinates' if lang == 'en' else '写真の座標'}</em></a></div>
       <p class="header-keywordline">{keywordline}</p>
     </div>
   </header>

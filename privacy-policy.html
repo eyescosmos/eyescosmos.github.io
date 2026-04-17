@@ -85,6 +85,26 @@ body {
   color: var(--accent);
   margin-bottom: 18px;
 }
+.site-brand-title {
+  margin: 16px 0 0;
+  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
+  font-size: clamp(28px, 4.5vw, 58px);
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: 0.18em;
+  max-width: 800px;
+}
+.site-brand-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+.site-brand-title-link:hover {
+  color: var(--accent);
+}
+.site-brand-title em {
+  color: var(--accent);
+  font-style: normal;
+}
 h1 {
   margin: 0;
   font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
@@ -146,6 +166,7 @@ footer {
     </div>
 
     <div class="eyebrow">Photo Coordinates / Privacy Policy</div>
+    <div class="site-brand-title"><a class="site-brand-title-link" href="/"><em>写真の座標</em></a></div>
     <h1><em>写真の座標</em> プライバシーポリシー</h1>
     <p class="lead">このページでは、写真の座標で取得または利用する情報、その目的、広告・アクセス解析に関する取り扱いについて、個人運営サイトとしての基本方針をまとめています。</p>
     <div class="updated">最終更新日: 2026-04-04</div>

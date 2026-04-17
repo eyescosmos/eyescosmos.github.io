@@ -125,6 +125,15 @@ body.is-navigating #page-fade {
   color: var(--accent);
 }
 
+.title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.title-link:hover em {
+  color: var(--accent);
+}
+
 .title-status {
   color: var(--text-muted);
   font: 400 12px/1.2 'DM Mono', monospace;
@@ -348,7 +357,7 @@ body.is-navigating #page-fade {
 
   <div class="hud">
     <div class="eyebrow">Prototype / Photo Coordinates</div>
-    <h1 class="title"><em id="main-title">写真の座標</em><span class="title-status" id="title-status">随時更新中</span></h1>
+    <h1 class="title"><a class="title-link" href="/"><em id="main-title">写真の座標</em></a><span class="title-status" id="title-status">随時更新中</span></h1>
     <div class="title-subcopy" id="title-subcopy">写真家・運動・思想のつながりから、写真史と時代背景をたどる地図です。</div>
     <div class="title-note" id="title-note">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
     <div class="lede" id="title-lede">
