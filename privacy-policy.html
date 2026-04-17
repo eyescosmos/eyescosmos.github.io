@@ -149,6 +149,19 @@ footer {
 @media (max-width: 640px) {
   .wrap { padding: 28px 18px 56px; }
   main { padding: 24px 18px; }
+  .lang-toggle .chip {
+    font-size: 0;
+  }
+  .lang-toggle .chip::after {
+    font-size: 11px;
+    line-height: 1;
+  }
+  .lang-toggle .chip:first-child::after {
+    content: "JP";
+  }
+  .lang-toggle .chip:nth-child(2)::after {
+    content: "EN";
+  }
 }
 </style>
 </head>

@@ -567,6 +567,23 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
     padding: 10px 12px;
     font-size: 10px;
   }
+  .lang-toggle .lang-btn,
+  .lang-toggle a {
+    font-size: 0;
+  }
+  .lang-toggle .lang-btn::after,
+  .lang-toggle a::after {
+    font-size: 10px;
+    line-height: 1;
+  }
+  .lang-toggle .lang-btn:first-child::after,
+  .lang-toggle a:first-child::after {
+    content: "JP";
+  }
+  .lang-toggle .lang-btn:nth-child(2)::after,
+  .lang-toggle a:nth-child(2)::after {
+    content: "EN";
+  }
   .page-shell {
     width: min(100vw - 22px, 1040px);
     padding-top: 20px;

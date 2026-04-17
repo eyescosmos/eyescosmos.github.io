@@ -521,6 +521,23 @@ body::after {
   .tab-lang-toggle {
     margin-left: auto;
   }
+  .lang-toggle .lang-btn,
+  .lang-toggle a {
+    font-size: 0;
+  }
+  .lang-toggle .lang-btn::after,
+  .lang-toggle a::after {
+    font-size: 10px;
+    line-height: 1;
+  }
+  .lang-toggle .lang-btn:first-child::after,
+  .lang-toggle a:first-child::after {
+    content: "JP";
+  }
+  .lang-toggle .lang-btn:nth-child(2)::after,
+  .lang-toggle a:nth-child(2)::after {
+    content: "EN";
+  }
   .site-directory-links {
     gap: 12px;
   }

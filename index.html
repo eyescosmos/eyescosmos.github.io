@@ -473,6 +473,23 @@ body.is-navigating #page-fade {
     font-size: 10px;
   }
 
+  .lang-toggle .lang-btn {
+    font-size: 0;
+  }
+
+  .lang-toggle .lang-btn::after {
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  .lang-toggle .lang-btn:first-child::after {
+    content: "JP";
+  }
+
+  .lang-toggle .lang-btn:nth-child(2)::after {
+    content: "EN";
+  }
+
   .page-link,
   .page-select-wrap,
   .page-select,
