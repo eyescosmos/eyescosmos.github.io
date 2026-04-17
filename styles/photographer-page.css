@@ -554,19 +554,6 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
   .tab-lang-toggle a {
     flex: 1 1 50%;
   }
-  .tab-nav-mobile-grid {
-    width: 100%;
-  }
-  .tab-nav-selects {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    width: 100%;
-  }
-  .tab-lang-toggle {
-    grid-column: 2;
-    width: 100%;
-  }
   .tab-lang-toggle .lang-btn,
   .tab-lang-toggle a {
     min-width: 0;

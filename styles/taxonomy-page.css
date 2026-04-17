@@ -491,25 +491,22 @@ body::after {
     padding: 0 16px;
   }
   .tab-nav-inner {
-    flex-wrap: wrap;
-    gap: 8px 10px;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    align-items: stretch;
   }
   .page-top-links {
-    width: 100%;
-    flex: 1 1 100%;
-    min-width: 0;
+    display: contents;
   }
   .page-top-links a {
     font-size: 11px;
     padding: 14px 10px 12px;
   }
   .tab-nav-selects {
-    width: 100%;
+    width: auto;
     padding: 4px 0 12px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    display: contents;
     padding-left: 0;
   }
   .nav-select {
@@ -519,7 +516,18 @@ body::after {
     padding: 8px 28px 8px 10px;
   }
   .tab-lang-toggle {
-    margin-left: auto;
+    grid-column: 2 / 4;
+    justify-self: stretch;
+    margin-left: 0;
+    align-self: start;
+    width: 100%;
+  }
+  .tab-lang-toggle .lang-btn,
+  .tab-lang-toggle a {
+    flex: 1 1 50%;
+    min-width: 0;
+    padding: 10px 12px;
+    font-size: 10px;
   }
   .lang-toggle .lang-btn,
   .lang-toggle a {
