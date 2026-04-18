@@ -1,15 +1,18 @@
-function createEraStub({ id, period, title }) {
+function createEraStub({ id, period, title, titleEn = '', worldEvents = {}, photoContext = {} }) {
   return {
     id,
     period,
     title,
+    titleEn,
     worldEvents: {
-      text: '',
-      sources: [],
+      text: worldEvents.text || '',
+      textEn: worldEvents.textEn || '',
+      sources: worldEvents.sources || [],
     },
     photoContext: {
-      text: '',
-      sources: [],
+      text: photoContext.text || '',
+      textEn: photoContext.textEn || '',
+      sources: photoContext.sources || [],
     },
   };
 }
