@@ -682,6 +682,7 @@ gtag('config', '{GA_ID}');
       <div class="footer-links"><a href="{privacy_href}">{privacy_label}</a></div>
     </footer>
   </div>
+  <script src="{'../../scripts/global-search.js' if lang == 'en' else '../scripts/global-search.js'}?v=20260418c"></script>
 </body>
 </html>
 """
