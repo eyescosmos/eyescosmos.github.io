@@ -1253,9 +1253,12 @@ function renderEraTab() {
       <div class="mobile-era-sticky">${era.id}</div>
       <div class="era-body">
         <div class="era-body-content">
-            <div class="mobile-era-inline" aria-hidden="true">
-              <span class="mobile-era-inline-period">${escapeHtml(compactPeriod)}</span>
-              ${compactTitle ? `<span class="mobile-era-inline-title">${escapeHtml(compactTitle)}</span>` : ''}
+            <div class="mobile-era-inline">
+              <button class="mobile-era-inline-button" type="button" onclick="toggleMobileEraContext(event,'${era.id}')" aria-label="${currentLanguage === 'en' ? 'Read this era context' : 'この時代の背景を読む'}">
+                <span class="mobile-era-inline-period">${escapeHtml(compactPeriod)}</span>
+                ${compactTitle ? `<span class="mobile-era-inline-title">${escapeHtml(compactTitle)}</span>` : ''}
+                <span class="mobile-era-info-mark" aria-hidden="true">i</span>
+              </button>
             </div>
             <div class="era-info">
               <div class="context-block">
@@ -2122,12 +2125,69 @@ function updateArchiveStickyOffset() {
   root.style.setProperty('--archive-era-sticky-top', `${offset}px`);
 }
 
+function renderMobileEraContextBlock(label, text) {
+  const body = text && text.trim()
+    ? renderOptionalText(text)
+    : escapeHtml(currentLanguage === 'en' ? 'Coming soon.' : '準備中。');
+  return `
+    <div class="mobile-era-context-block">
+      <div class="mobile-era-context-label">${escapeHtml(label)}</div>
+      <div class="mobile-era-context-text">${body}</div>
+    </div>
+  `;
+}
+
+function renderMobileEraContextContent(era) {
+  if (!era) return '';
+  const worldEventsText = displayBlockText(era.worldEvents || {});
+  const photoContextText = displayBlockText(era.photoContext || {});
+  const blocks = [
+    renderMobileEraContextBlock(t('worldEvents'), worldEventsText),
+    renderMobileEraContextBlock(t('photoContext'), photoContextText),
+  ].join('');
+  return blocks;
+}
+
+function openMobileEraContext(eraId) {
+  const popover = document.getElementById('mobile-era-context-popover');
+  const title = document.getElementById('mobile-era-context-title');
+  const body = document.getElementById('mobile-era-context-body');
+  const era = ERAS.find(item => item.id === eraId);
+  if (!popover || !title || !body || !era) return;
+
+  title.textContent = compactEraPeriod(era);
+  body.innerHTML = renderMobileEraContextContent(era);
+  popover.hidden = false;
+  popover.dataset.eraId = eraId;
+}
+
+function closeMobileEraContext() {
+  const popover = document.getElementById('mobile-era-context-popover');
+  if (!popover) return;
+  popover.hidden = true;
+  popover.dataset.eraId = '';
+}
+
+function toggleMobileEraContext(event, eraId) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  const popover = document.getElementById('mobile-era-context-popover');
+  if (!popover || popover.hidden || popover.dataset.eraId !== eraId) {
+    openMobileEraContext(eraId);
+    return;
+  }
+  closeMobileEraContext();
+}
+
 function updateMobileEraIndicator() {
   const indicator = document.getElementById('mobile-era-indicator');
   if (!indicator) return;
 
   if (!isCompactArchiveMobile()) {
     indicator.textContent = '';
+    closeMobileEraContext();
     return;
   }
 
@@ -2156,9 +2216,13 @@ function updateMobileEraIndicator() {
   const eraMeta = ERAS.find(era => era.id === currentEra.dataset.eraId);
   const compactPeriod = compactEraPeriod(eraMeta || { period: currentEra.dataset.eraId || '' });
   const compactTitle = compactEraTitle(eraMeta || { title: '', titleEn: '' });
+  const eraId = eraMeta?.id || currentEra.dataset.eraId || '';
   indicator.innerHTML = `
-    <span class="mobile-era-indicator-period">${escapeHtml(compactPeriod)}</span>
-    ${compactTitle ? `<span class="mobile-era-indicator-title">${escapeHtml(compactTitle)}</span>` : ''}
+    <button class="mobile-era-indicator-button" type="button" onclick="toggleMobileEraContext(event,'${eraId}')" aria-label="${currentLanguage === 'en' ? 'Read this era context' : 'この時代の背景を読む'}">
+      <span class="mobile-era-indicator-period">${escapeHtml(compactPeriod)}</span>
+      ${compactTitle ? `<span class="mobile-era-indicator-title">${escapeHtml(compactTitle)}</span>` : ''}
+      <span class="mobile-era-info-mark" aria-hidden="true">i</span>
+    </button>
   `;
 }
 
