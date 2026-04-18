@@ -534,6 +534,9 @@ body::after {
   body.era-context-modal-open {
     overflow: hidden;
   }
+  body.era-context-modal-open .page-shell {
+    z-index: 360;
+  }
   .page-header { padding: 48px 0 40px; }
   .header-top { flex-direction: column; align-items: flex-start; }
   .container,
@@ -626,8 +629,8 @@ body::after {
   .hero.is-context-open .era-context-inline {
     display: block;
     position: fixed;
-    inset: calc(env(safe-area-inset-top) + 76px) 16px calc(env(safe-area-inset-bottom) + 18px);
-    z-index: 240;
+    inset: calc(env(safe-area-inset-top, 0px) + 16px) 16px calc(env(safe-area-inset-bottom, 0px) + 18px);
+    z-index: 420;
     margin: 0;
     overflow-y: auto;
     padding: 18px;
@@ -639,7 +642,7 @@ body::after {
     content: '';
     position: fixed;
     inset: 0;
-    z-index: 239;
+    z-index: 419;
     background: rgba(0, 0, 0, 0.42);
     backdrop-filter: blur(4px);
   }
@@ -704,6 +707,15 @@ body::after {
   .archive-list-link,
   .archive-list-tag {
     font-size: 10px;
+  }
+  .archive-list-overline {
+    display: block;
+    max-width: calc(100vw - 56px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+    letter-spacing: 0.04em;
   }
   .archive-list-lead {
     font-size: 12px;
