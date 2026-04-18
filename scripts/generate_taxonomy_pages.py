@@ -11,7 +11,7 @@ import re
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260417g"
+ASSET_VERSION = "20260418c"
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
     "ana-torfs",
@@ -477,6 +477,22 @@ def display_years(photographer: dict, lang: str) -> str:
     return raw
 
 
+def archive_list_overline_html(country_meta: dict, years: str) -> str:
+    flag = country_meta.get("flag", "")
+    code = country_meta.get("code", "")
+    country_parts = []
+    if flag:
+        country_parts.append(f'<span class="archive-list-flag">{esc(flag)}</span>')
+    if code:
+        country_parts.append(f'<span class="archive-list-country-code">{esc(code)}</span>')
+    country_html = (
+        f'<span class="archive-list-country">{"".join(country_parts)}</span>'
+        if country_parts else ""
+    )
+    years_html = f'<span class="archive-list-years">{esc(years)}</span>' if years else ""
+    return f'<div class="archive-list-overline">{country_html}{years_html}</div>'
+
+
 def movement_labels_for_text(photographers: list[dict], movements_meta: dict, lang: str, limit: int = 3) -> list[str]:
     return [label for label, _movement in top_movements(photographers, movements_meta, lang, limit)]
 
@@ -687,8 +703,7 @@ def render_archive_like_list(
         lead = photographer_short_lead(photographer, essay_overrides, movements_meta, enrichments, era_lookup, lang, 115)
         descriptor = photographer_short_descriptor(photographer, movements_meta, enrichments, era_lookup, lang)
         years = display_years(photographer, lang)
-        overline_parts = [country_meta["flag"], country_meta["code"], years]
-        overline = " / ".join([part for part in overline_parts if part]).strip()
+        overline_html = archive_list_overline_html(country_meta, years)
         tags_html = "".join(f'<span class="archive-list-tag">{esc(tag)}</span>' for tag in tags)
         if more_count:
             tags_html += f'<span class="archive-list-tag archive-list-tag-more">+{more_count}</span>'
@@ -699,7 +714,7 @@ def render_archive_like_list(
         items.append(
             f'''<details class="archive-list-card">
   <summary class="archive-list-summary">
-    <div class="archive-list-overline">{esc(overline)}</div>
+    {overline_html}
     <div class="archive-list-heading">
       <div class="archive-list-name-wrap">
         <div class="archive-list-name">{esc(display_name(photographer, lang))}</div>
