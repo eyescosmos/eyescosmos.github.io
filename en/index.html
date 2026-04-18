@@ -623,6 +623,19 @@ body.is-navigating #page-fade {
     touch-action: manipulation;
   }
 
+  .map-info-panel {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: calc(68px + env(safe-area-inset-bottom));
+    width: auto;
+    max-height: calc(100svh - 104px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    padding: 16px 16px 18px;
+    z-index: 9;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .mobile-info-drawer {
     display: block;
     position: fixed;
