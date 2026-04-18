@@ -1094,7 +1094,9 @@ function applyStaticTranslations() {
 
   const titleEl = document.getElementById('archive-main-title');
   if (titleEl) {
-    titleEl.innerHTML = currentLanguage === 'en' ? '<em>Photo Coordinates</em>' : '<em>写真の座標</em>';
+    titleEl.innerHTML = currentLanguage === 'en'
+      ? '<a class="archive-title-link" href="/en/"><em>Photo Coordinates</em></a>'
+      : '<a class="archive-title-link" href="/"><em>写真の座標</em></a>';
   }
 
   const headerLabel = document.getElementById('archive-header-label');
