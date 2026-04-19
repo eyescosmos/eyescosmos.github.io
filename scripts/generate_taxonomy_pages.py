@@ -11,22 +11,11 @@ import re
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260419b"
+ASSET_VERSION = "20260419c"
 NON_PHOTOGRAPHER_IDS = {
-    "anri-sala",
-    "ana-torfs",
     "charles-wirgman",
-    "claude-closky",
-    "collectif-fact",
-    "eve-sussman",
     "fabian-marti",
-    "g-r-a-m",
     "gabriel-orozco",
-    "multiplicity",
-    "ohio",
-    "the-atlas-group-walid-raad",
-    "useful-photography",
-    "wangechi-mutu",
 }
 
 COUNTRY_META = {

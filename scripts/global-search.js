@@ -1,5 +1,5 @@
 (function () {
-  const SCRIPT_VERSION = '20260419b';
+  const SCRIPT_VERSION = '20260419c';
   const DATA_FILES = [
     'data/movements.js?v=20260403d',
     'data/eras.js?v=20260403c',
@@ -17,20 +17,9 @@
     'data/photographer-essay-overrides.js?v=20260418d',
   ];
   const NON_PHOTOGRAPHER_IDS = new Set([
-    'anri-sala',
-    'ana-torfs',
     'charles-wirgman',
-    'claude-closky',
-    'collectif-fact',
-    'eve-sussman',
     'fabian-marti',
-    'g-r-a-m',
     'gabriel-orozco',
-    'multiplicity',
-    'ohio',
-    'the-atlas-group-walid-raad',
-    'useful-photography',
-    'wangechi-mutu',
   ]);
   const COUNTRY_META = {
     FR: { ja: 'フランス', en: 'France', slug: 'france', flag: '🇫🇷' },

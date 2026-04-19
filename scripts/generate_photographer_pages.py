@@ -13,23 +13,12 @@ from urllib.parse import urlparse
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260419b"
+ASSET_VERSION = "20260419c"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
-    "anri-sala",
-    "ana-torfs",
     "charles-wirgman",
-    "claude-closky",
-    "collectif-fact",
-    "eve-sussman",
     "fabian-marti",
-    "g-r-a-m",
     "gabriel-orozco",
-    "multiplicity",
-    "ohio",
-    "the-atlas-group-walid-raad",
-    "useful-photography",
-    "wangechi-mutu",
 }
 COUNTRY_META = {
     "FR": {"slug": "france", "ja": "フランス", "en": "France"},
@@ -725,9 +714,17 @@ def display_country(photographer: dict, lang: str) -> str:
         "FR": {"ja": "FR", "en": "France"},
         "GB": {"ja": "GB", "en": "United Kingdom"},
         "US": {"ja": "US", "en": "United States"},
+        "AL": {"ja": "AL", "en": "Albania"},
+        "AT": {"ja": "AT", "en": "Austria"},
+        "BE": {"ja": "BE", "en": "Belgium"},
+        "CH": {"ja": "CH", "en": "Switzerland"},
+        "IT": {"ja": "IT", "en": "Italy"},
         "IT / GB": {"ja": "IT / GB", "en": "Italy / United Kingdom"},
         "GB / US": {"ja": "GB / US", "en": "United Kingdom / United States"},
         "DK / US": {"ja": "DK / US", "en": "Denmark / United States"},
+        "KE / US": {"ja": "KE / US", "en": "Kenya / United States"},
+        "LB / US": {"ja": "LB / US", "en": "Lebanon / United States"},
+        "NL": {"ja": "NL", "en": "Netherlands"},
         "DE": {"ja": "DE", "en": "Germany"},
         "JP": {"ja": "JP", "en": "Japan"},
         "BR": {"ja": "BR", "en": "Brazil"},
@@ -1265,6 +1262,7 @@ def main() -> None:
             stylesheet_href = ("../../styles/photographer-page.css" if lang == "en" else "../styles/photographer-page.css") + f"?v={ASSET_VERSION}"
             override_href = ("../../data/photographer-essay-overrides.js" if lang == "en" else "../data/photographer-essay-overrides.js") + f"?v={ASSET_VERSION}"
             script_href = ("../../scripts/photographer-page.js" if lang == "en" else "../scripts/photographer-page.js") + f"?v={ASSET_VERSION}"
+            search_href = ("../../scripts/global-search.js" if lang == "en" else "../scripts/global-search.js") + f"?v={ASSET_VERSION}"
             home_href = "/en/" if lang == "en" else "/"
             privacy_href = "/en/privacy-policy.html" if lang == "en" else "/privacy-policy.html"
             alt_name = display_alt_name(photographer, lang)
@@ -1386,6 +1384,7 @@ gtag('config', '{GA_ID}');
   </div>
   <script src="{override_href}"></script>
   <script src="{script_href}"></script>
+  <script src="{search_href}"></script>
   <script type="application/ld+json">
 {structured_data}
   </script>

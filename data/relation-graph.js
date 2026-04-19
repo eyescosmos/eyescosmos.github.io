@@ -8,20 +8,9 @@
       ? MOVEMENTS_META
       : (window.MOVEMENTS_META || {});
   const nonPhotographerIds = new Set([
-    'anri-sala',
-    'ana-torfs',
     'charles-wirgman',
-    'claude-closky',
-    'collectif-fact',
-    'eve-sussman',
     'fabian-marti',
-    'g-r-a-m',
-    'gabriel-orozco',
-    'multiplicity',
-    'ohio',
-    'the-atlas-group-walid-raad',
-    'useful-photography',
-    'wangechi-mutu'
+    'gabriel-orozco'
   ]);
 
   const photographers = photographersSource.filter(p => !p.isPlaceholder && !nonPhotographerIds.has(p.id));

@@ -13,20 +13,9 @@ const PHOTOGRAPHER_ESSAY_OVERRIDES = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
 const PHOTOGRAPHER_LINK_ALIAS_MAP = window.PHOTOGRAPHER_LINK_ALIASES
   || (typeof PHOTOGRAPHER_LINK_ALIASES !== 'undefined' ? PHOTOGRAPHER_LINK_ALIASES : {});
 const NON_PHOTOGRAPHER_IDS = new Set([
-  'anri-sala',
-  'ana-torfs',
   'charles-wirgman',
-  'claude-closky',
-  'collectif-fact',
-  'eve-sussman',
   'fabian-marti',
-  'g-r-a-m',
-  'gabriel-orozco',
-  'multiplicity',
-  'ohio',
-  'the-atlas-group-walid-raad',
-  'useful-photography',
-  'wangechi-mutu'
+  'gabriel-orozco'
 ]);
 
 const UI_TEXT = {
@@ -151,9 +140,15 @@ const COUNTRY_TEXT = {
   VE: { ja: 'VE', en: 'Venezuela' },
   MK: { ja: 'MK', en: 'North Macedonia' },
   AR: { ja: 'AR', en: 'Argentina' },
+  AL: { ja: 'AL', en: 'Albania' },
+  IT: { ja: 'IT', en: 'Italy' },
+  KE: { ja: 'KE', en: 'Kenya' },
+  LB: { ja: 'LB', en: 'Lebanon' },
   'IT / GB': { ja: 'IT / GB', en: 'Italy / United Kingdom' },
   'GB / US': { ja: 'GB / US', en: 'United Kingdom / United States' },
   'DK / US': { ja: 'DK / US', en: 'Denmark / United States' },
+  'KE / US': { ja: 'KE / US', en: 'Kenya / United States' },
+  'LB / US': { ja: 'LB / US', en: 'Lebanon / United States' },
   DE: { ja: 'DE', en: 'Germany' },
   JP: { ja: 'JP', en: 'Japan' },
   BR: { ja: 'BR', en: 'Brazil' },
@@ -198,7 +193,10 @@ const COUNTRY_FLAG_TEXT = {
   VE: '🇻🇪',
   MK: '🇲🇰',
   AR: '🇦🇷',
+  AL: '🇦🇱',
   IT: '🇮🇹',
+  KE: '🇰🇪',
+  LB: '🇱🇧',
   DK: '🇩🇰',
   DE: '🇩🇪',
   JP: '🇯🇵',
