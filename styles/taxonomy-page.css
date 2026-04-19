@@ -224,6 +224,44 @@ body::after {
   display: inline-flex;
   width: fit-content;
 }
+@media (min-width: 769px) {
+  .tab-nav-inner {
+    flex-wrap: nowrap;
+  }
+  .page-top-links {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+  .tab-nav-selects {
+    flex-wrap: nowrap;
+    min-width: 0;
+    padding-left: 20px;
+  }
+  .tab-nav-selects .select-wrap {
+    flex: 0 1 176px;
+    min-width: 0;
+  }
+  .nav-select {
+    width: 100%;
+    min-width: 0;
+  }
+  .tab-nav-selects .select-wrap:has(select[aria-label*="年代"]),
+  .tab-nav-selects .select-wrap:has(select[aria-label*="eras"]) {
+    order: 1;
+  }
+  .tab-nav-selects .select-wrap:has(select[aria-label*="国別"]),
+  .tab-nav-selects .select-wrap:has(select[aria-label*="countries"]) {
+    order: 2;
+  }
+  .tab-nav-selects .select-wrap:has(select[aria-label*="表現"]),
+  .tab-nav-selects .select-wrap:has(select[aria-label*="movements"]) {
+    order: 3;
+  }
+  .tab-nav-selects .select-wrap:has(select[aria-label*="関連する運動"]),
+  .tab-nav-selects .select-wrap:has(select[aria-label*="Related movements"]) {
+    order: 4;
+  }
+}
 .page-shell { width: min(1040px, calc(100vw - 48px)); margin: 0 auto; padding: 36px 0 80px; position: relative; z-index: 1; }
 .hero {
   border: 1px solid var(--border);

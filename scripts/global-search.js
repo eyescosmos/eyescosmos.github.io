@@ -1,5 +1,5 @@
 (function () {
-  const SCRIPT_VERSION = '20260419a';
+  const SCRIPT_VERSION = '20260419b';
   const DATA_FILES = [
     'data/movements.js?v=20260403d',
     'data/eras.js?v=20260403c',
@@ -816,10 +816,15 @@
     if (navInner && !navInner.querySelector('.global-search-nav')) {
       const root = createSearchRoot();
       const langToggle = navInner.querySelector('.lang-toggle');
-      const directAnchor = langToggle
-        ? Array.from(navInner.children).find((child) => child === langToggle || child.contains(langToggle))
-        : null;
-      navInner.insertBefore(root, directAnchor || null);
+      const nestedControlRow = langToggle?.closest('.tab-nav-mobile-grid');
+      if (nestedControlRow && navInner.contains(nestedControlRow)) {
+        nestedControlRow.insertBefore(root, langToggle);
+      } else {
+        const directAnchor = langToggle
+          ? Array.from(navInner.children).find((child) => child === langToggle || child.contains(langToggle))
+          : null;
+        navInner.insertBefore(root, directAnchor || null);
+      }
     }
     if (!document.querySelector('.global-search-mobile-shell')) {
       document.body.appendChild(createSearchRoot({ mobileOnly: true }));
