@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import html
+import argparse
 import json
 import re
 import subprocess
@@ -1125,7 +1126,21 @@ COPY = {
 }
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Generate photographer detail pages.")
+    parser.add_argument(
+        "--only",
+        nargs="+",
+        default=[],
+        metavar="PHOTOGRAPHER_ID",
+        help="Generate only the listed photographer IDs without rewriting every detail page.",
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
+    only_ids = set(args.only)
     all_photographers = eval_js(
         [
             "data/photographers.js",
@@ -1135,6 +1150,14 @@ def main() -> None:
         "PHOTOGRAPHERS",
     )
     photographers = [p for p in all_photographers if p["id"] not in NON_PHOTOGRAPHER_IDS]
+    if only_ids:
+        available_ids = {p["id"] for p in photographers}
+        missing_ids = sorted(only_ids - available_ids)
+        if missing_ids:
+            raise SystemExit(f"Unknown or excluded photographer ID(s): {', '.join(missing_ids)}")
+        target_photographers = [p for p in photographers if p["id"] in only_ids]
+    else:
+        target_photographers = photographers
     alias_map = eval_js(
         [
             "data/photographers.js",
@@ -1175,13 +1198,14 @@ def main() -> None:
     for lang in ("ja", "en"):
         out_dir = REPO / ("en/photographers" if lang == "en" else "photographers")
         out_dir.mkdir(parents=True, exist_ok=True)
-        for excluded_id in NON_PHOTOGRAPHER_IDS:
-            excluded_file = out_dir / f"{excluded_id}.html"
-            if excluded_file.exists():
-                excluded_file.unlink()
+        if not only_ids:
+            for excluded_id in NON_PHOTOGRAPHER_IDS:
+                excluded_file = out_dir / f"{excluded_id}.html"
+                if excluded_file.exists():
+                    excluded_file.unlink()
         copy = COPY[lang]
 
-        for photographer in photographers:
+        for photographer in target_photographers:
             override_entry = essay_overrides.get(photographer["id"])
             override_body_text, override_citations = override_text_and_citations(override_entry, lang)
             body_text, citations = collect_text_and_citations(photographer, lang)
@@ -1399,13 +1423,14 @@ gtag('config', '{GA_ID}');
                 "description": description,
             })
 
-    report_dir = REPO / "reports"
-    report_dir.mkdir(exist_ok=True)
-    report_path = report_dir / "photographer-seo-report.csv"
-    with report_path.open("w", encoding="utf-8", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=["lang", "path", "title", "description"])
-        writer.writeheader()
-        writer.writerows(report_rows)
+    if not only_ids:
+        report_dir = REPO / "reports"
+        report_dir.mkdir(exist_ok=True)
+        report_path = report_dir / "photographer-seo-report.csv"
+        with report_path.open("w", encoding="utf-8", newline="") as fh:
+            writer = csv.DictWriter(fh, fieldnames=["lang", "path", "title", "description"])
+            writer.writeheader()
+            writer.writerows(report_rows)
 
 
 if __name__ == "__main__":
