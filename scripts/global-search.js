@@ -1,5 +1,5 @@
 (function () {
-  const SCRIPT_VERSION = '20260418c';
+  const SCRIPT_VERSION = '20260419a';
   const DATA_FILES = [
     'data/movements.js?v=20260403d',
     'data/eras.js?v=20260403c',
@@ -816,7 +816,10 @@
     if (navInner && !navInner.querySelector('.global-search-nav')) {
       const root = createSearchRoot();
       const langToggle = navInner.querySelector('.lang-toggle');
-      navInner.insertBefore(root, langToggle || null);
+      const directAnchor = langToggle
+        ? Array.from(navInner.children).find((child) => child === langToggle || child.contains(langToggle))
+        : null;
+      navInner.insertBefore(root, directAnchor || null);
     }
     if (!document.querySelector('.global-search-mobile-shell')) {
       document.body.appendChild(createSearchRoot({ mobileOnly: true }));

@@ -1338,13 +1338,21 @@ footer a:hover { color: var(--accent); }
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
     padding: 18px 18px 20px;
     pointer-events: auto;
+    overscroll-behavior: contain;
   }
   .mobile-era-context-header {
+    position: sticky;
+    top: -18px;
+    z-index: 2;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 14px;
+    margin: -18px -18px 14px;
+    padding: 18px;
+    border-bottom: 1px solid rgba(200, 169, 110, 0.13);
+    background: rgba(12, 10, 8, 0.97);
+    backdrop-filter: blur(14px);
   }
   .mobile-era-context-title {
     color: var(--accent);
@@ -1665,6 +1673,6 @@ footer a:hover { color: var(--accent); }
 <script src="data/photographer-enrichments.js?v=20260406a"></script>
 <script src="scripts/language.js?v=20260403e"></script>
 <script src="scripts/site.js?v=20260418c"></script>
-  <script src="./scripts/global-search.js?v=20260418c"></script>
+  <script src="./scripts/global-search.js?v=20260419a"></script>
 </body>
 </html>

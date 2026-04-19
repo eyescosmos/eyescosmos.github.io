@@ -11,7 +11,7 @@ import re
 REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260418c"
+ASSET_VERSION = "20260419a"
 NON_PHOTOGRAPHER_IDS = {
     "anri-sala",
     "ana-torfs",
@@ -682,7 +682,7 @@ gtag('config', '{GA_ID}');
       <div class="footer-links"><a href="{privacy_href}">{privacy_label}</a></div>
     </footer>
   </div>
-  <script src="{'../../scripts/global-search.js' if lang == 'en' else '../scripts/global-search.js'}?v=20260418c"></script>
+  <script src="{'../../scripts/global-search.js' if lang == 'en' else '../scripts/global-search.js'}?v=20260419a"></script>
 </body>
 </html>
 """
