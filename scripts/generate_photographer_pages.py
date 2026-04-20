@@ -1276,8 +1276,10 @@ def main() -> None:
                 rendered_body = render_override_sections_html(override_sections, lang, alias_lookup, alias_regex, photographer["id"])
             elif override_body_text:
                 rendered_body = render_override_essay_html(override_body_text, lang, alias_lookup, alias_regex, photographer["id"])
+            elif body_text:
+                rendered_body = render_override_essay_html(body_text, lang, alias_lookup, alias_regex, photographer["id"])
             else:
-                rendered_body = render_cited_text(body_text or copy["placeholder"], lang, alias_lookup, alias_regex, photographer["id"])
+                rendered_body = f"<p>{escape_html(copy['placeholder'])}</p>"
             description = build_description(photographer, lang, era_lookup, movements_meta, enrichments)
             title = build_title(photographer, lang, era_lookup, movements_meta, enrichments)
             intro = build_intro(photographer, lang, era_lookup, movements_meta, enrichments)
