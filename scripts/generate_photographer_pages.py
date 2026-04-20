@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 
-REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
+REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260419c"
@@ -620,8 +620,7 @@ def render_linked_text(
     return "".join(parts).replace("\n", "<br>")
 
 
-def render_cited_text(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str) -> str:
-    linked_ids: set[str] = set()
+def _render_cited_segment(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, linked_ids: set[str]) -> str:
     chunks: list[str] = []
     for part in re.split(r"(\*\d+)", text or ""):
         cite = re.fullmatch(r"\*(\d+)", part or "")
@@ -631,6 +630,57 @@ def render_cited_text(text: str, lang: str, alias_lookup: dict[str, dict], regex
         else:
             chunks.append(render_linked_text(part, lang, alias_lookup, regex, exclude_id=exclude_id, linked_ids=linked_ids))
     return "".join(chunks)
+
+
+def render_cited_text(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str) -> str:
+    return _render_cited_segment(text, lang, alias_lookup, regex, exclude_id, set())
+
+
+ESSAY_HEADING_SET = {
+    '経歴',
+    '表現解説',
+    '批評と受容',
+    'Biography',
+    'Expression / method',
+    'Criticism and reception',
+}
+
+
+def render_override_essay_html(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str) -> str:
+    if not text:
+        return ""
+    blocks = [block.strip() for block in re.split(r"\n\s*\n", text) if block.strip()]
+    linked_ids: set[str] = set()
+    parts: list[str] = []
+    for block in blocks:
+        if block in ESSAY_HEADING_SET:
+            parts.append(f"<h3>{escape_html(block)}</h3>")
+        else:
+            parts.append(f"<p>{_render_cited_segment(block, lang, alias_lookup, regex, exclude_id, linked_ids)}</p>")
+    return "".join(parts)
+
+
+def render_override_sections_html(sections, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str) -> str:
+    if not isinstance(sections, list):
+        return ""
+    heading_key = "headingEn" if lang == "en" else "headingJa"
+    heading_fallback_key = "headingJa" if lang == "en" else "headingEn"
+    paragraphs_key = "paragraphsEn" if lang == "en" else "paragraphsJa"
+    paragraphs_fallback_key = "paragraphsJa" if lang == "en" else "paragraphsEn"
+    linked_ids: set[str] = set()
+    parts: list[str] = []
+    for section in sections:
+        if not isinstance(section, dict):
+            continue
+        heading = section.get(heading_key) or section.get(heading_fallback_key) or ""
+        paragraphs = section.get(paragraphs_key) or section.get(paragraphs_fallback_key) or []
+        if heading:
+            parts.append(f"<h3>{escape_html(heading)}</h3>")
+        for paragraph in paragraphs:
+            if not paragraph:
+                continue
+            parts.append(f"<p>{_render_cited_segment(paragraph, lang, alias_lookup, regex, exclude_id, linked_ids)}</p>")
+    return "".join(parts)
 
 
 def collect_text_and_citations(photographer: dict, lang: str):
@@ -686,6 +736,15 @@ def override_lead(override, lang: str) -> str:
     fallback_key = "leadJa" if lang == "en" else "leadEn"
     lead = override.get(lead_key) or override.get(fallback_key) or ""
     return normalize_space(re.sub(r"\*\d+", "", lead))
+
+
+def override_lead_raw(override, lang: str) -> str:
+    if not isinstance(override, dict):
+        return ""
+    lead_key = "leadEn" if lang == "en" else "leadJa"
+    fallback_key = "leadJa" if lang == "en" else "leadEn"
+    lead = override.get(lead_key) or override.get(fallback_key) or ""
+    return normalize_space(lead)
 
 
 def display_name(photographer: dict, lang: str) -> str:
@@ -1209,14 +1268,25 @@ def main() -> None:
             override_entry = essay_overrides.get(photographer["id"])
             override_body_text, override_citations = override_text_and_citations(override_entry, lang)
             body_text, citations = collect_text_and_citations(photographer, lang)
+            override_sections = override_entry.get("sections") if isinstance(override_entry, dict) else None
             if override_body_text:
                 body_text = override_body_text
                 citations = override_citations or citations
-            rendered_body = render_cited_text(body_text or copy["placeholder"], lang, alias_lookup, alias_regex, photographer["id"])
+            if isinstance(override_sections, list) and override_sections:
+                rendered_body = render_override_sections_html(override_sections, lang, alias_lookup, alias_regex, photographer["id"])
+            elif override_body_text:
+                rendered_body = render_override_essay_html(override_body_text, lang, alias_lookup, alias_regex, photographer["id"])
+            else:
+                rendered_body = render_cited_text(body_text or copy["placeholder"], lang, alias_lookup, alias_regex, photographer["id"])
             description = build_description(photographer, lang, era_lookup, movements_meta, enrichments)
             title = build_title(photographer, lang, era_lookup, movements_meta, enrichments)
             intro = build_intro(photographer, lang, era_lookup, movements_meta, enrichments)
             intro = override_lead(override_entry, lang) or intro
+            lead_raw = override_lead_raw(override_entry, lang)
+            if lead_raw:
+                lead_html = _render_cited_segment(lead_raw, lang, alias_lookup, alias_regex, photographer["id"], set())
+            else:
+                lead_html = escape_html(intro)
             keyword_line = build_keyword_line(photographer, lang, era_lookup, movements_meta, enrichments)
             keyword_line_html = build_keyword_line_html(photographer, lang, era_lookup, movements_meta, enrichments)
             affiliate_section_html = build_affiliate_books_html(photographer, lang, affiliate_books, copy)
@@ -1284,8 +1354,6 @@ def main() -> None:
             canonical = SITE + photographer_page_path(photographer, lang)
             x_default = SITE + photographer_page_path(photographer, "ja")
             stylesheet_href = ("../../styles/photographer-page.css" if lang == "en" else "../styles/photographer-page.css") + f"?v={ASSET_VERSION}"
-            override_href = ("../../data/photographer-essay-overrides.js" if lang == "en" else "../data/photographer-essay-overrides.js") + f"?v={ASSET_VERSION}"
-            script_href = ("../../scripts/photographer-page.js" if lang == "en" else "../scripts/photographer-page.js") + f"?v={ASSET_VERSION}"
             search_href = ("../../scripts/global-search.js" if lang == "en" else "../scripts/global-search.js") + f"?v={ASSET_VERSION}"
             home_href = "/en/" if lang == "en" else "/"
             privacy_href = "/en/privacy-policy.html" if lang == "en" else "/privacy-policy.html"
@@ -1363,7 +1431,7 @@ gtag('config', '{GA_ID}');
   <div class="page-shell">
     <div class="hero">
       <h1 class="title">{escape_html(display_name(photographer, lang))}{f'<span class="alt">{escape_html(alt_name)}</span>' if alt_name else ''}</h1>
-      <p class="lead">{escape_html(intro)}</p>
+      <p class="lead">{lead_html}</p>
       <div class="hero-info-groups">
         <div class="info-group">
           <div class="group-label">{'Basic facts' if lang == 'en' else '基本情報'}</div>
@@ -1406,8 +1474,6 @@ gtag('config', '{GA_ID}');
       <div class="footer-links"><a href="{privacy_href}">{copy['privacy']}</a></div>
     </footer>
   </div>
-  <script src="{override_href}"></script>
-  <script src="{script_href}"></script>
   <script src="{search_href}"></script>
   <script type="application/ld+json">
 {structured_data}
