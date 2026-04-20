@@ -37,6 +37,52 @@ COUNTRY_META = {
     "US / FR": {"ja_code": "US / FR", "ja_name": "アメリカ / フランス", "en_name": "United States / France", "slug": "united-states-france", "flag": "🇺🇸 🇫🇷"},
     "HU / DE": {"ja_code": "HU / DE", "ja_name": "ハンガリー / ドイツ", "en_name": "Hungary / Germany", "slug": "hungary-germany", "flag": "🇭🇺 🇩🇪"},
 }
+
+COUNTRY_BASE_META = {
+    "AL": {"ja_name": "アルバニア", "en_name": "Albania", "slug": "albania", "flag": "🇦🇱"},
+    "AR": {"ja_name": "アルゼンチン", "en_name": "Argentina", "slug": "argentina", "flag": "🇦🇷"},
+    "AT": {"ja_name": "オーストリア", "en_name": "Austria", "slug": "austria", "flag": "🇦🇹"},
+    "AU": {"ja_name": "オーストラリア", "en_name": "Australia", "slug": "australia", "flag": "🇦🇺"},
+    "BE": {"ja_name": "ベルギー", "en_name": "Belgium", "slug": "belgium", "flag": "🇧🇪"},
+    "BR": {"ja_name": "ブラジル", "en_name": "Brazil", "slug": "brazil", "flag": "🇧🇷"},
+    "CA": {"ja_name": "カナダ", "en_name": "Canada", "slug": "canada", "flag": "🇨🇦"},
+    "CH": {"ja_name": "スイス", "en_name": "Switzerland", "slug": "switzerland", "flag": "🇨🇭"},
+    "CN": {"ja_name": "中国", "en_name": "China", "slug": "china", "flag": "🇨🇳"},
+    "CZ": {"ja_name": "チェコ", "en_name": "Czech Republic", "slug": "czech-republic", "flag": "🇨🇿"},
+    "DE": {"ja_name": "ドイツ", "en_name": "Germany", "slug": "germany", "flag": "🇩🇪"},
+    "DK": {"ja_name": "デンマーク", "en_name": "Denmark", "slug": "denmark", "flag": "🇩🇰"},
+    "ES": {"ja_name": "スペイン", "en_name": "Spain", "slug": "spain", "flag": "🇪🇸"},
+    "FI": {"ja_name": "フィンランド", "en_name": "Finland", "slug": "finland", "flag": "🇫🇮"},
+    "FR": {"ja_name": "フランス", "en_name": "France", "slug": "france", "flag": "🇫🇷"},
+    "GB": {"ja_name": "イギリス", "en_name": "United Kingdom", "slug": "united-kingdom", "flag": "🇬🇧"},
+    "HU": {"ja_name": "ハンガリー", "en_name": "Hungary", "slug": "hungary", "flag": "🇭🇺"},
+    "IE": {"ja_name": "アイルランド", "en_name": "Ireland", "slug": "ireland", "flag": "🇮🇪"},
+    "IR": {"ja_name": "イラン", "en_name": "Iran", "slug": "iran", "flag": "🇮🇷"},
+    "IT": {"ja_name": "イタリア", "en_name": "Italy", "slug": "italy", "flag": "🇮🇹"},
+    "JP": {"ja_name": "日本", "en_name": "Japan", "slug": "japan", "flag": "🇯🇵"},
+    "KE": {"ja_name": "ケニア", "en_name": "Kenya", "slug": "kenya", "flag": "🇰🇪"},
+    "KR": {"ja_name": "韓国", "en_name": "South Korea", "slug": "south-korea", "flag": "🇰🇷"},
+    "LB": {"ja_name": "レバノン", "en_name": "Lebanon", "slug": "lebanon", "flag": "🇱🇧"},
+    "LT": {"ja_name": "リトアニア", "en_name": "Lithuania", "slug": "lithuania", "flag": "🇱🇹"},
+    "LU": {"ja_name": "ルクセンブルク", "en_name": "Luxembourg", "slug": "luxembourg", "flag": "🇱🇺"},
+    "MA": {"ja_name": "モロッコ", "en_name": "Morocco", "slug": "morocco", "flag": "🇲🇦"},
+    "MK": {"ja_name": "北マケドニア", "en_name": "North Macedonia", "slug": "north-macedonia", "flag": "🇲🇰"},
+    "ML": {"ja_name": "マリ", "en_name": "Mali", "slug": "mali", "flag": "🇲🇱"},
+    "MX": {"ja_name": "メキシコ", "en_name": "Mexico", "slug": "mexico", "flag": "🇲🇽"},
+    "NG": {"ja_name": "ナイジェリア", "en_name": "Nigeria", "slug": "nigeria", "flag": "🇳🇬"},
+    "NL": {"ja_name": "オランダ", "en_name": "Netherlands", "slug": "netherlands", "flag": "🇳🇱"},
+    "NO": {"ja_name": "ノルウェー", "en_name": "Norway", "slug": "norway", "flag": "🇳🇴"},
+    "PL": {"ja_name": "ポーランド", "en_name": "Poland", "slug": "poland", "flag": "🇵🇱"},
+    "RO": {"ja_name": "ルーマニア", "en_name": "Romania", "slug": "romania", "flag": "🇷🇴"},
+    "RU": {"ja_name": "ロシア", "en_name": "Russia", "slug": "russia", "flag": "🇷🇺"},
+    "SE": {"ja_name": "スウェーデン", "en_name": "Sweden", "slug": "sweden", "flag": "🇸🇪"},
+    "SK": {"ja_name": "スロバキア", "en_name": "Slovakia", "slug": "slovakia", "flag": "🇸🇰"},
+    "UA": {"ja_name": "ウクライナ", "en_name": "Ukraine", "slug": "ukraine", "flag": "🇺🇦"},
+    "US": {"ja_name": "アメリカ", "en_name": "United States", "slug": "united-states", "flag": "🇺🇸"},
+    "VE": {"ja_name": "ベネズエラ", "en_name": "Venezuela", "slug": "venezuela", "flag": "🇻🇪"},
+    "VN": {"ja_name": "ベトナム", "en_name": "Vietnam", "slug": "vietnam", "flag": "🇻🇳"},
+    "ZA": {"ja_name": "南アフリカ", "en_name": "South Africa", "slug": "south-africa", "flag": "🇿🇦"},
+}
 FEATURED_PHOTOGRAPHER_IDS = [
     "daguerre",
     "fenton",
@@ -131,6 +177,57 @@ def eval_js(files: list[str], expression: str):
     return json.loads(payload)
 
 
+def eval_site_js_object(object_name: str):
+    source = (REPO / "scripts/site.js").read_text(encoding="utf-8")
+    match = re.search(rf"const {re.escape(object_name)} = (\{{.*?\n\}});", source, re.S)
+    if not match:
+        return {}
+    proc = subprocess.run(
+        ["osascript", "-l", "JavaScript"],
+        input=f"const {object_name} = {match.group(1)};\nconsole.log(JSON.stringify({object_name}));".encode("utf-8"),
+        capture_output=True,
+        check=True,
+    )
+    payload = proc.stderr.decode("utf-8") or proc.stdout.decode("utf-8")
+    return json.loads(payload)
+
+
+def ensure_country_meta(nationality: str) -> dict | None:
+    code = (nationality or "").strip()
+    if not code:
+        return None
+    if code in COUNTRY_META:
+        return COUNTRY_META[code]
+    parts = [part.strip() for part in code.split("/") if part.strip()]
+    if not parts:
+        return None
+    part_meta = [COUNTRY_BASE_META.get(part) for part in parts]
+    if any(meta is None for meta in part_meta):
+        return None
+    meta = {
+        "ja_code": code,
+        "ja_name": " / ".join(meta["ja_name"] for meta in part_meta if meta),
+        "en_name": " / ".join(meta["en_name"] for meta in part_meta if meta),
+        "slug": "-".join(meta["slug"] for meta in part_meta if meta),
+        "flag": " ".join(meta["flag"] for meta in part_meta if meta),
+    }
+    COUNTRY_META[code] = meta
+    return meta
+
+
+def photographer_country_code(photographer: dict, enrichments: dict, country_overrides: dict) -> str:
+    enrichment = enrichments.get(photographer.get("id"), {})
+    country_override = country_overrides.get(photographer.get("id"), {})
+    return (
+        enrichment.get("countryCode")
+        or enrichment.get("nationality")
+        or country_override.get("countryCode")
+        or country_override.get("nationality")
+        or photographer.get("nationality")
+        or ""
+    )
+
+
 def esc(text: str) -> str:
     return html.escape(text or "")
 
@@ -149,7 +246,8 @@ def era_path(era_id: str, lang: str) -> str:
 
 
 def country_path(nationality: str, lang: str) -> str:
-    slug = COUNTRY_META.get(nationality, {}).get("slug", "unknown")
+    meta = ensure_country_meta(nationality) or {}
+    slug = meta.get("slug", "unknown")
     return f"/{'en/' if lang == 'en' else ''}countries/{slug}.html"
 
 
@@ -220,16 +318,17 @@ def japanese_sort_key(photographer: dict) -> str:
 
 def display_country_code(photographer: dict) -> str:
     nationality = photographer.get("nationality") or ""
-    return COUNTRY_META.get(nationality, {}).get("ja_code") or nationality or "—"
+    meta = ensure_country_meta(nationality) or {}
+    return meta.get("ja_code") or nationality or "—"
 
 
 def country_label(nationality: str, lang: str) -> str:
-    meta = COUNTRY_META.get(nationality, {})
+    meta = ensure_country_meta(nationality) or {}
     return meta.get("en_name") if lang == "en" else meta.get("ja_name") or nationality
 
 
 def country_flag(nationality: str) -> str:
-    return COUNTRY_META.get(nationality, {}).get("flag", "")
+    return (ensure_country_meta(nationality) or {}).get("flag", "")
 
 
 def era_short_label(era: dict, lang: str) -> str:
@@ -347,14 +446,15 @@ def strip_citation_markers(text: str) -> str:
     return re.sub(r"\*\d+", "", clean_inline_text(text or "")).strip()
 
 
-def photographer_country_meta(photographer: dict, enrichments: dict, lang: str) -> dict:
+def photographer_country_meta(photographer: dict, enrichments: dict, country_overrides: dict, lang: str) -> dict:
     enrichment = enrichments.get(photographer.get("id"), {})
-    nationality = enrichment.get("countryCode") or enrichment.get("nationality") or photographer.get("nationality") or ""
+    nationality = photographer_country_code(photographer, enrichments, country_overrides)
+    meta = ensure_country_meta(nationality) or {}
     return {
         "nationality": nationality,
-        "flag": enrichment.get("flag") or country_flag(nationality),
+        "flag": enrichment.get("flag") or meta.get("flag") or country_flag(nationality),
         "label": country_label(nationality, lang) if nationality else ("Unknown" if lang == "en" else "不明"),
-        "code": COUNTRY_META.get(nationality, {}).get("ja_code") or nationality or ("—" if lang == "ja" else "—"),
+        "code": meta.get("ja_code") or nationality or ("—" if lang == "ja" else "—"),
     }
 
 
@@ -681,6 +781,7 @@ def render_archive_like_list(
     era_lookup: dict,
     movements_meta: dict,
     enrichments: dict,
+    country_overrides: dict,
     essay_overrides: dict,
 ) -> str:
     if not photographers:
@@ -688,7 +789,7 @@ def render_archive_like_list(
 
     items = []
     for photographer in photographers:
-        country_meta = photographer_country_meta(photographer, enrichments, lang)
+        country_meta = photographer_country_meta(photographer, enrichments, country_overrides, lang)
         tags, more_count = photographer_tag_labels(photographer, movements_meta, enrichments, lang, 2)
         lead = photographer_short_lead(photographer, essay_overrides, movements_meta, enrichments, era_lookup, lang, 115)
         descriptor = photographer_short_descriptor(photographer, movements_meta, enrichments, era_lookup, lang)
@@ -842,6 +943,7 @@ def main():
     photographers = [p for p in photographers if p["id"] not in NON_PHOTOGRAPHER_IDS]
     movements_meta = eval_js(["data/movements.js"], "MOVEMENTS_META")
     enrichments = eval_js(["data/photographer-enrichments.js"], "window.PHOTOGRAPHER_ENRICHMENTS || PHOTOGRAPHER_ENRICHMENTS || {}")
+    country_overrides = eval_site_js_object("PHOTOGRAPHER_COUNTRY_OVERRIDES")
     essay_overrides = eval_js(["data/photographer-essay-overrides.js"], "window.PHOTOGRAPHER_ESSAY_OVERRIDES || {}")
     eras = eval_js([
         "data/eras.js",
@@ -866,7 +968,10 @@ def main():
     photographers_by_movement = defaultdict(list)
     for photographer in photographers:
         photographers_by_era[photographer.get("era")].append(photographer)
-        photographers_by_country[photographer.get("nationality")].append(photographer)
+        country_code = photographer_country_code(photographer, enrichments, country_overrides)
+        if country_code:
+            ensure_country_meta(country_code)
+            photographers_by_country[country_code].append(photographer)
         movement_values = []
         for movement in photographer.get("movements") or []:
             if movement and movement not in movement_values:
@@ -874,7 +979,7 @@ def main():
         for movement in movement_values:
             photographers_by_movement[movement].append(photographer)
 
-    all_nationalities = sorted([n for n in photographers_by_country.keys() if n in COUNTRY_META], key=lambda n: country_label(n, "ja"))
+    all_nationalities = sorted([n for n in photographers_by_country.keys() if ensure_country_meta(n)], key=lambda n: country_label(n, "ja"))
     all_movements = sorted(
         [movement for movement, items in photographers_by_movement.items() if items],
         key=lambda movement: movements_meta.get(movement, {}).get("en", movement).lower(),
@@ -918,19 +1023,20 @@ def main():
                 hero_groups_html=hero_groups,
                 context_html=context_html,
                 list_title="Photographers" if lang == "en" else "写真家一覧",
-                list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, essay_overrides),
+                list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, country_overrides, essay_overrides),
                 directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
             )
             (eras_en_dir if lang == "en" else eras_dir).joinpath(f"{era_id}.html").write_text(page, encoding="utf-8")
 
         # Country pages
         for nationality in all_nationalities:
+            country_meta = ensure_country_meta(nationality) or {}
             label = country_label(nationality, lang)
             short = label
             title = f"{short} | Photographers | History of Photography | Photo Coordinates | Eyes Cosmos" if lang == "en" else f"{short}｜写真家｜写真史｜写真の座標｜Eyes Cosmos"
             keyword = f"{short} | Photographers | History of Photography | Photo Coordinates |" if lang == "en" else f"{short}｜写真家｜写真史｜<a href=\"/\">写真の座標</a>｜"
             people = sort_photographers(photographers_by_country.get(nationality, []), lang)
-            canonical = f"{SITE}/{'en/' if lang == 'en' else ''}countries/{COUNTRY_META[nationality]['slug']}.html"
+            canonical = f"{SITE}/{'en/' if lang == 'en' else ''}countries/{country_meta['slug']}.html"
             lead = country_lead_text(short, people, movements_meta, lang)
             description = (
                 f"A country guide to photographers linked to {short} on Photo Coordinates. Explore photography history, related movements, and key figures."
@@ -958,10 +1064,10 @@ def main():
                 hero_groups_html=hero_groups,
                 context_html="",
                 list_title="Photographers" if lang == "en" else "写真家一覧",
-                list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, essay_overrides),
+                list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, country_overrides, essay_overrides),
                 directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
             )
-            (countries_en_dir if lang == "en" else countries_dir).joinpath(f"{COUNTRY_META[nationality]['slug']}.html").write_text(page, encoding="utf-8")
+            (countries_en_dir if lang == "en" else countries_dir).joinpath(f"{country_meta['slug']}.html").write_text(page, encoding="utf-8")
 
         # Movement pages
         for movement in all_movements:
@@ -1009,7 +1115,7 @@ def main():
                 hero_groups_html=hero_groups,
                 context_html=context_html,
                 list_title="Photographers" if lang == "en" else "写真家一覧",
-                list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, essay_overrides),
+                list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, country_overrides, essay_overrides),
                 directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
             )
             (movements_en_dir if lang == "en" else movements_dir).joinpath(f"{movement_slug(movement)}.html").write_text(page, encoding="utf-8")

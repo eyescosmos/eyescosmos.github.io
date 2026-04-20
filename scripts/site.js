@@ -383,6 +383,52 @@ const COUNTRY_ROUTE_META = {
   'HU / DE': { ja: 'ハンガリー / ドイツ', en: 'Hungary / Germany', slug: 'hungary-germany' }
 };
 
+const COUNTRY_ROUTE_FALLBACK_META = {
+  AL: { ja: 'アルバニア', en: 'Albania', slug: 'albania' },
+  AR: { ja: 'アルゼンチン', en: 'Argentina', slug: 'argentina' },
+  AT: { ja: 'オーストリア', en: 'Austria', slug: 'austria' },
+  AU: { ja: 'オーストラリア', en: 'Australia', slug: 'australia' },
+  BE: { ja: 'ベルギー', en: 'Belgium', slug: 'belgium' },
+  BR: { ja: 'ブラジル', en: 'Brazil', slug: 'brazil' },
+  CA: { ja: 'カナダ', en: 'Canada', slug: 'canada' },
+  CH: { ja: 'スイス', en: 'Switzerland', slug: 'switzerland' },
+  CN: { ja: '中国', en: 'China', slug: 'china' },
+  CZ: { ja: 'チェコ', en: 'Czech Republic', slug: 'czech-republic' },
+  DE: { ja: 'ドイツ', en: 'Germany', slug: 'germany' },
+  DK: { ja: 'デンマーク', en: 'Denmark', slug: 'denmark' },
+  ES: { ja: 'スペイン', en: 'Spain', slug: 'spain' },
+  FI: { ja: 'フィンランド', en: 'Finland', slug: 'finland' },
+  FR: { ja: 'フランス', en: 'France', slug: 'france' },
+  GB: { ja: 'イギリス', en: 'United Kingdom', slug: 'united-kingdom' },
+  HU: { ja: 'ハンガリー', en: 'Hungary', slug: 'hungary' },
+  IE: { ja: 'アイルランド', en: 'Ireland', slug: 'ireland' },
+  IR: { ja: 'イラン', en: 'Iran', slug: 'iran' },
+  IT: { ja: 'イタリア', en: 'Italy', slug: 'italy' },
+  JP: { ja: '日本', en: 'Japan', slug: 'japan' },
+  KE: { ja: 'ケニア', en: 'Kenya', slug: 'kenya' },
+  KR: { ja: '韓国', en: 'South Korea', slug: 'south-korea' },
+  LB: { ja: 'レバノン', en: 'Lebanon', slug: 'lebanon' },
+  LT: { ja: 'リトアニア', en: 'Lithuania', slug: 'lithuania' },
+  LU: { ja: 'ルクセンブルク', en: 'Luxembourg', slug: 'luxembourg' },
+  MA: { ja: 'モロッコ', en: 'Morocco', slug: 'morocco' },
+  MK: { ja: '北マケドニア', en: 'North Macedonia', slug: 'north-macedonia' },
+  ML: { ja: 'マリ', en: 'Mali', slug: 'mali' },
+  MX: { ja: 'メキシコ', en: 'Mexico', slug: 'mexico' },
+  NG: { ja: 'ナイジェリア', en: 'Nigeria', slug: 'nigeria' },
+  NL: { ja: 'オランダ', en: 'Netherlands', slug: 'netherlands' },
+  NO: { ja: 'ノルウェー', en: 'Norway', slug: 'norway' },
+  PL: { ja: 'ポーランド', en: 'Poland', slug: 'poland' },
+  RO: { ja: 'ルーマニア', en: 'Romania', slug: 'romania' },
+  RU: { ja: 'ロシア', en: 'Russia', slug: 'russia' },
+  SE: { ja: 'スウェーデン', en: 'Sweden', slug: 'sweden' },
+  SK: { ja: 'スロバキア', en: 'Slovakia', slug: 'slovakia' },
+  UA: { ja: 'ウクライナ', en: 'Ukraine', slug: 'ukraine' },
+  US: { ja: 'アメリカ', en: 'United States', slug: 'united-states' },
+  VE: { ja: 'ベネズエラ', en: 'Venezuela', slug: 'venezuela' },
+  VN: { ja: 'ベトナム', en: 'Vietnam', slug: 'vietnam' },
+  ZA: { ja: '南アフリカ', en: 'South Africa', slug: 'south-africa' }
+};
+
 const MOVEMENT_NAME_OVERRIDES_EN = {
   'カロタイプ': 'Calotype',
   '肖像写真': 'Portrait Photography',
@@ -1142,8 +1188,23 @@ function eraPagePath(eraId) {
   return `${currentLanguage === 'en' ? '/en' : ''}/eras/${eraId}.html`;
 }
 
+function countryRouteMeta(nationality) {
+  const code = String(nationality || '').trim();
+  if (!code) return null;
+  if (COUNTRY_ROUTE_META[code]) return COUNTRY_ROUTE_META[code];
+  const parts = code.split('/').map(part => part.trim()).filter(Boolean);
+  if (!parts.length) return null;
+  const partMeta = parts.map(part => COUNTRY_ROUTE_FALLBACK_META[part]).filter(Boolean);
+  if (partMeta.length !== parts.length) return null;
+  return {
+    ja: partMeta.map(meta => meta.ja).join(' / '),
+    en: partMeta.map(meta => meta.en).join(' / '),
+    slug: partMeta.map(meta => meta.slug).join('-')
+  };
+}
+
 function countryPagePath(nationality) {
-  const meta = COUNTRY_ROUTE_META[nationality];
+  const meta = countryRouteMeta(nationality);
   const slug = meta?.slug || 'unknown';
   return `${currentLanguage === 'en' ? '/en' : ''}/countries/${slug}.html`;
 }
@@ -1187,12 +1248,13 @@ function populateArchiveNavigation() {
     defaultOption.value = '';
     defaultOption.textContent = currentLanguage === 'en' ? 'Browse countries' : '国別でみる';
     countrySelect.appendChild(defaultOption);
-    [...new Set(photographers.map(p => p.nationality).filter(n => COUNTRY_ROUTE_META[n]))]
-      .sort((a, b) => (COUNTRY_ROUTE_META[a]?.[currentLanguage] || a).localeCompare(COUNTRY_ROUTE_META[b]?.[currentLanguage] || b, currentLanguage === 'en' ? 'en' : 'ja'))
+    [...new Set(photographers.map(p => photographerCountryMeta(p).nationality).filter(n => countryRouteMeta(n)))]
+      .sort((a, b) => (countryRouteMeta(a)?.[currentLanguage] || a).localeCompare(countryRouteMeta(b)?.[currentLanguage] || b, currentLanguage === 'en' ? 'en' : 'ja'))
       .forEach(nationality => {
+        const meta = countryRouteMeta(nationality);
         const option = document.createElement('option');
         option.value = countryPagePath(nationality);
-        option.textContent = COUNTRY_ROUTE_META[nationality][currentLanguage];
+        option.textContent = meta[currentLanguage];
         countrySelect.appendChild(option);
       });
   }
