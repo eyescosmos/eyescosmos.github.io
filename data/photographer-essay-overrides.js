@@ -7396,3 +7396,651 @@ A strong and usable formulation is that Bratkov makes photographs that behave li
       ]
     }
 });
+/* 2026-04-19 English reflection overrides start */
+Object.assign(window.PHOTOGRAPHER_ESSAY_OVERRIDES, {
+  "ana-torfs": {
+    "leadJa": "アナ・トルフス（1963年ベルギー生まれ）は、写真・テキスト・プロジェクション・インスタレーションを使い、証言・翻訳・記憶・ドキュメンタリーの権威の不安定さを探るアーティスト。イメージを証拠としてではなく、解釈と不確かさの場として提示する。",
+    "leadEn": "Belgian artist born in 1963, working across photography, text, projection, installation, and moving image. In a photography-history context, Torfs is important for using staged and archival images to examine testimony, translation, memory, and the instability of documentary authority.",
+    "textJa": "経歴\n\n1963年ベルギー生まれ。写真・テキスト・プロジェクション・インスタレーション・映像にわたる実践を展開するアーティスト。アーカイブ・法的文書・語り的インスタレーションが現代美術に増加していた1990年代に登場し、MACBAなど国際的な機関で展示されてきた。*1\n\n表現解説\n\n主要なテーマは、証言、言語、歴史的記憶、アーカイブ、再演、イメージ・発話・証拠の間の隙間である。注意深く演出された写真・スライドを用いたインスタレーション、書かれた・語られたテキスト、映画的な静けさ、意味が即時的な視覚的透明性ではなく並置・遅延・反復を通じて立ち現れる連作的なイメージ配置が特徴的な手法である。*2 『Du mentir-faux』などの作品は、トルフスがイメージを自己充足的な証人としてではなく語りの枠組み・翻訳・留保に依存するものとして繰り返し扱う様子を示す。機関的・批評的資料は、トルフスがイメージを瞬時の啓示としてではなく、読み・比較・不信の労働への誘いとして扱っていることを示す。*3 アーカイブへの回帰・法的文書・語り的インスタレーションが現代美術において増加していた1990年代に登場した作家として、フォトグラフィック文書を証明から解釈と不確かさの場へと転換した点に歴史的意義がある。*1\n\n批評と受容\n\n受容は一貫して、トルフスのイメージ実践の分析的・語り的複雑さを強調し、演出写真・プロジェクション・アーカイブ的参照が重なる点を中心に置く。インスタレーションを使うからといって写真の外に置くことは避けるべきであり、彼女の意義はまさに写真的証拠を確かなものではなく問いとして変換する点にある。写真的文書が読み・誤訳・延期された真実の場面として可読化される点が最も有効な批評的定式化である。*2",
+    "textEn": "Biography\n\nBelgian artist born in 1963, working across photography, text, projection, installation, and moving image.*1*2. In a photography-history context, Torfs is important for using staged and archival images to examine testimony, translation, memory, and the instability of documentary authority.*1*2*3.\n\nExpression / method\n\nThe work is organized around testimony, language, historical memory, archive, reenactment, and the gaps between image, speech, and evidence.*1*2*3. Its formal traits include carefully staged photographic and slide-based installations, written and spoken text, cinematic stillness, and serial image arrangements in which meaning emerges through juxtaposition, delay, and reiteration rather than immediate visual transparency.*1*2*3. Key examples include works such as Du mentir-faux and later archive-related installations are important because they show Torfs repeatedly returning to the status of images as witnesses that are never self-sufficient. The image remains precise, but its meaning depends on narrative framing, translation, and withholding.*1*2*3.\n\nInstitutional and critical materials suggest that Torfs is less interested in image as instant revelation than in the labor of reading, comparing, and mistrusting it. Photography becomes valuable precisely because it appears evidentiary while remaining open to narrative displacement.*1*2*3. Torfs emerges in the 1990s when artists increasingly returned to archives, legal documents, and narrative installation. Her use of photographic structures matters because it transforms the document from proof into a field of interpretation and uncertainty.*1*2*3. She can be placed in relation to archival art, installation photography, and post-documentary practice, but her particular contribution lies in the way the image is always bound to voice, script, and testimony.*1*2*3.\n\nTorfs matters because she shows how photography continues to carry documentary authority even when that authority is fractured by translation, mediation, and narrative framing.*1*2*3. Her work is important because it keeps viewers inside the process of interpretive labor. The image does not settle what happened; it compels a sustained reading of how evidence is produced and contested.*1*2*3. Museum and critical contexts consistently present Torfs through image-text installations and archive-based works, supporting her place in the expanded history of photography after the documentary turn.*1*2*3.\n\nCriticism and reception\n\nReception consistently stresses the analytic and narrative complexity of Torfs’s image practice, especially where staged photographs, projected images, and archival references overlap.*1*2*3. Final website prose should avoid placing her outside photography simply because she uses installation. Her relevance lies exactly in how she turns photographic evidence into a question rather than a certainty.*1*2. A useful critical line is that Torfs makes photographic documents legible as scenes of reading, mistranslation, and deferred truth.*1*2*3.",
+    "links": [
+      {
+        "url": "https://www.macba.cat/en/actor/ana-torfs/",
+        "label": "Ana Torfs. MACBA."
+      },
+      {
+        "url": "https://www.frieze.com/event/ana-torfs",
+        "label": "Ana Torfs. Frieze / Pori Art Museum."
+      },
+      {
+        "url": "https://www.buffalo.edu/content/dam/www/art-galleries/images/2022-23/i-don%27t-know-you-like-that/I-Dont-Know-You-Like-That_WEB.pdf",
+        "label": "I Don’t Know You Like That (gallery guide, includes Ana Torfs). University at Buffalo Art Galleries PDF."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Ana Torfs. MACBA.",
+        "url": "https://www.macba.cat/en/actor/ana-torfs/"
+      },
+      {
+        "num": 2,
+        "name": "Ana Torfs. Frieze / Pori Art Museum.",
+        "url": "https://www.frieze.com/event/ana-torfs"
+      },
+      {
+        "num": 3,
+        "name": "I Don’t Know You Like That (gallery guide, includes Ana Torfs). University at Buffalo Art Galleries PDF.",
+        "url": "https://www.buffalo.edu/content/dam/www/art-galleries/images/2022-23/i-don%27t-know-you-like-that/I-Dont-Know-You-Like-That_WEB.pdf"
+      }
+    ]
+  },
+  "anri-sala": {
+    "leadJa": "アンリ・サラ（1974年アルバニア生まれ）は、映像・音・インスタレーションを通じて記憶・政治的転換・歴史的語りの不安定さを探るアーティスト。ポスト社会主義的な文脈のなかで、アーカイブ映像をそのまま「証拠」ではなく遅延と再構成を通じて意味を帯びる断片として扱う。",
+    "leadEn": "Albanian artist born in 1974, working across video, sound, installation, and photography-related image practices. For a photography-history context, Sala is relevant where still and moving images intersect around memory, political speech, and the instability of representation after late socialism.",
+    "textJa": "経歴\n\n1974年アルバニア生まれ。映像・音・インスタレーションを主軸とするアーティスト。ポスト社会主義のアルバニアと1989年以降のアーカイブ・言説・権威の再考という広い文脈のなかで登場した。ブルックリン・レール、ダラス美術館、バーバラ・ロンドンなど国際的な文脈で評価されてきた。*1\n\n表現解説\n\n主要なテーマは、記憶、失敗した言語行為、政治的転換、公的・私的な音、歴史的語りの不安定さである。映像インスタレーション的な使用、見つけられたあるいは演出された状況、音とイメージの注意深い同期化、記録されたイメージが歴史的経験を透明に保存するのではなく媒介する仕方への繰り返しの注目が特徴的な手法である。*3 写真史との関係において中心的な作品は、共産主義アルバニアで母親が語っている無声のアーカイブ映像を再活性化し失われた言語を再構成しようとする『Intervista（Finding the Words）』である。この作品は視覚的文書を回復された真実の場ではなく歴史的不確かさの場として変換し、アーカイブ映像の記録・回想・再構成が不可分であることを示す。*3 ポスト社会主義のアルバニアという早期の文脈と1989年以降のアーカイブ・言説・権威の再考というより広い文脈から登場した作家として、視覚的文書がイデオロギー的崩壊の条件下でいかに証拠としての権威を失うかを示した点に歴史的意義がある。*1\n\n批評と受容\n\n批評的受容は一貫して『Intervista』をサラのより長期的な歴史・権威・媒介への関心を凝縮した初期の基礎的作品として扱う。映像アーティストとしてだけに還元することは避けるべきであり、写真史におけるその意義はアーカイブ的断片と不完全な証人としてのイメージの扱いにある。最も強い批評的定式は、サラの作品が遅延した・再構成された現実性を生産するという点にある。*2",
+    "textEn": "Biography\n\nAlbanian artist born in 1974, working across video, sound, installation, and photography-related image practices.*1*2. For a photography-history context, Sala is relevant where still and moving images intersect around memory, political speech, and the instability of representation after late socialism.*1*2*3.\n\nExpression / method\n\nThe work is organized around memory, failed speech, political transition, public and private sound, and the instability of historical narration.*1*2*3. Its formal traits include installation-based use of moving image, found or staged situations, careful synchronization of sound and image, and recurring attention to how recorded images mediate historical experience rather than transparently preserve it.*1*2*3. Key examples include Intervista (Finding the Words) is the key work for understanding Sala’s relation to image history. By reactivating a silent archival film of his mother speaking in communist Albania and trying to reconstruct the missing speech, Sala turns the visual document into a site of historical uncertainty rather than recovered truth.*1*3.\n\nThe available interviews suggest that Sala is less interested in photography or film as stable categories than in image situations where language, image, and history no longer align cleanly. He uses the moving image to show how political memory survives in fragments, mistranslations, and gaps.*1*2*3. Sala’s early work emerges from post-socialist Albania and the broader post-1989 rethinking of archives, speech, and authority. In this context, his image practice matters because it treats visual documents not as transparent access to history but as unstable remains that need reactivation.*1*3. Sala belongs more to installation and moving-image art than to straight photography, but his work is relevant to photography history because it pushes documentary images toward a reflexive condition where recording, recollection, and reconstruction are inseparable.*1*2*3.\n\nSala is important because he shows how the evidentiary authority of the image breaks down under conditions of political rupture and memory work. His early pieces are especially useful for thinking about how the documentary image functions after ideological collapse.*1*3. The work matters not because it restores historical truth, but because it dramatizes the difficulty of doing so. Visual documents remain charged, but incomplete; their meaning depends on belated listening, reenactment, and contextual framing.*1*2*3. Museum lectures, catalog framing, and critical writing repeatedly present Sala in contemporary-art contexts where sound and moving image are central, yet Intervista remains a foundational work because it turns archival image material into a problem of historical reading.*1*2*3.\n\nCriticism and reception\n\nCritical reception consistently treats Intervista as a foundational early work because it condenses Sala’s longer concerns with history, authority, and mediation.*1*3. Final website text should avoid reducing Sala to a video artist alone. His relevance for photography history lies in how he handles the image as archival fragment and as incomplete witness.*1*2. The strongest critical formulation available in the sources is that Sala’s work produces a belated or reconstructed actuality: the image is never simply present, but comes to meaning through delay and reconstruction.*1.",
+    "links": [
+      {
+        "url": "https://brooklynrail.org/2016/03/artseen/anechoic-mirror",
+        "label": "ANECHOIC* MIRROR: Anri Sala, Answer Me. The Brooklyn Rail."
+      },
+      {
+        "url": "https://www.barbaralondon.net/anri-sala/",
+        "label": "1.01 | Anri Sala. Barbara London."
+      },
+      {
+        "url": "https://files.dma.org/cms/production/recordings/transcripts/anrisala01.pdf",
+        "label": "Concentrations 41: Anri Sala, Opening Lecture. Dallas Museum of Art transcript PDF."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "ANECHOIC* MIRROR: Anri Sala, Answer Me. The Brooklyn Rail.",
+        "url": "https://brooklynrail.org/2016/03/artseen/anechoic-mirror"
+      },
+      {
+        "num": 2,
+        "name": "1.01 | Anri Sala. Barbara London.",
+        "url": "https://www.barbaralondon.net/anri-sala/"
+      },
+      {
+        "num": 3,
+        "name": "Concentrations 41: Anri Sala, Opening Lecture. Dallas Museum of Art transcript PDF.",
+        "url": "https://files.dma.org/cms/production/recordings/transcripts/anrisala01.pdf"
+      }
+    ]
+  },
+  "claude-closky": {
+    "leadJa": "クロード・クロスキー（1963年フランス生まれ）は、ウェブサイト・出版・写真・映像・コラージュを横断し、情報の反復・消費文化・日常的視覚言語の不条理を分析するアーティスト。写真を自律的イメージとしてではなく、メディアシステム内の記号単位として扱う。",
+    "leadEn": "French artist born in 1963, active across websites, publishing, drawing, collage, photography, installation, and video. For photography history, Closky matters less as a straight photographer than as a conceptual artist who uses photographic and media formats to analyze information, repetition, consumption, and the absurdity of everyday visual language.",
+    "textJa": "経歴\n\n1963年フランス生まれ。ウェブサイト・出版・ドローイング・コラージュ・写真・インスタレーション・映像にわたる実践を展開するアーティスト。概念芸術がインターフェース・データベース・後期資本主義的な視覚過負荷をますます扱うようになった1990年代に登場した。ムダム・ルクセンブルクなど欧州の機関を中心に活動してきた。*1\n\n表現解説\n\n主要なテーマは、メディア言語、商品文化、リスト、反復、自己表示、定量化、日常的な情報システムの批評である。写真フォーマットの概念的な再利用、連作的なセルフポートレート、出版構造、イメージとテキストの並置、視覚的素材の意図的に冷淡でリスト的な扱いが特徴的な手法である。彼の作品において写真はしばしば単独のイメージ制作としてではなく、より広い表象システムの一モジュールとして現れる。*2 『Autoportrait sans tête』のような写真作品はクロスキーが自己イメージを表現の場ではなく概念的単位として使う様子を示す。1990年代を通じて繰り返しイメージ・テキスト・インターフェースを情報と散漫さの等価な担い手へと変換してきた。ペルノ・リカール財団のインタビュー枠組みはクロスキーの実践をメディアシステムの複製と誇張として説明しており、写真が彼にとって特権的な媒体ではなく広告・コミュニケーション・自己表示のロジックが試されうる一つのフォーマットであることを示す。*2 コンセプチュアル・アートがインターフェース・データベース・後期資本主義的な日常的生活の陳腐な視覚過負荷に向かいつつあった1990年代に登場した作家として、写真をフォーマットとして意識したイメージ文化の文脈に位置づけられる。*3\n\n批評と受容\n\n最も強い受容の糸口は、クロスキーの作品がユーモア・トートロジー・反復を使ってメディア言語の不条理を露出しながら同時にそれらのシステムを離れない点を遊び心があり辛辣なものとして一貫して受容していることにある。写真を狭義の意味での「写真家」として過大評価することは避けるべきであり、その意義はより広い概念的イメージ文化の中で写真を一フォーマットとして扱った点にある。*2",
+    "textEn": "Biography\n\nFrench artist born in 1963, active across websites, publishing, drawing, collage, photography, installation, and video.*1*2*3. For photography history, Closky matters less as a straight photographer than as a conceptual artist who uses photographic and media formats to analyze information, repetition, consumption, and the absurdity of everyday visual language.*1*2*3.\n\nExpression / method\n\nThe work is organized around media language, commodity culture, lists, repetition, self-display, quantification, and the critique of everyday systems of information.*1*2*3. Its formal traits include conceptual reuse of photographic formats, serial self-portraits, publication structures, image-text juxtapositions, and a deliberately cool, list-like treatment of visual material. Photography in his work often appears not as singular image-making but as one module within a broader system of representation.*1*2*3. Key examples include photographic works such as Autoportrait sans tête are useful because they show how Closky uses the self-image as a conceptual unit rather than a site of expression. Across the 1990s and after, he repeatedly turns image, text, and interface into equivalent carriers of information and distraction.*1*2.\n\nThe Pernod Ricard interview framing is especially useful because it describes Closky’s practice as a replication and exaggeration of media systems. This suggests that photography matters to him less as a privileged medium than as one more format through which the logics of advertising, communication, and self-display can be tested.*2*3. Closky emerges in the 1990s, when conceptual art increasingly addressed interfaces, databases, communication systems, and the banal visual overload of late-capitalist life. His use of photography belongs to that context of demystified, format-conscious image production.*1*2*3. He can be placed within conceptual and post-internet-adjacent tendencies before the full consolidation of network culture, though his 1990s work remains rooted in print, lists, and minimalist image strategies as much as in digital forms.*2*3.\n\nClosky matters because he helps shift attention from the photograph as autonomous object toward the photograph as circulating sign, interface, or unit inside larger economies of information.*1*2*3. His work is important because it empties visual culture of depth only to reveal how much power resides in trivial systems of display, repetition, and choice. Photography becomes one of the grammars through which that everyday coercion is made visible.*1*2*3. Museum and foundation sources consistently present Closky through conceptual-art discourse, but the recurrence of photographic works in collections and exhibitions shows that image-based formats remain central to his critique of visual and informational systems.*1*2*3.\n\nCriticism and reception\n\nThe strongest reception thread is that Closky’s work is at once playful and acerbic, using humor, tautology, and repetition to expose the absurdity of media language.*2*3. Final website prose should avoid overstating him as a “photographer” in a narrow sense. His relevance lies in how he treats photography as one format among many within conceptual image culture.*1*2. A useful critical formulation is that Closky pushes systems of information until they become visibly ridiculous, without leaving those systems behind.*2*3.",
+    "links": [
+      {
+        "url": "https://www.mudam.com/fr/collection/claude-closky",
+        "label": "Claude Closky. Mudam collection."
+      },
+      {
+        "url": "https://www.fondation-pernod-ricard.com/en/event/interview-art-claude-closky",
+        "label": "Interview on Art with Claude Closky. Fondation d’entreprise Pernod Ricard."
+      },
+      {
+        "url": "https://flash---art.com/article/claude-closky/",
+        "label": "Claude Closky. Flash Art."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Claude Closky. Mudam collection.",
+        "url": "https://www.mudam.com/fr/collection/claude-closky"
+      },
+      {
+        "num": 2,
+        "name": "Interview on Art with Claude Closky. Fondation d’entreprise Pernod Ricard.",
+        "url": "https://www.fondation-pernod-ricard.com/en/event/interview-art-claude-closky"
+      },
+      {
+        "num": 3,
+        "name": "Claude Closky. Flash Art.",
+        "url": "https://flash---art.com/article/claude-closky/"
+      }
+    ]
+  },
+  "seung-woo-back": {
+    "leadJa": "ソン・ウー・ベク（1973年韓国生まれ）は、シミュレーション・イデオロギー・表象の政治を主題に、写真そのものを疑わしい媒体として扱う写真家・アーティスト。ミニチュア都市や再構成された観光地を冷静なドキュメンタリー的手法で撮影し、現実がすでにイメージとして建設されていることを露出する。",
+    "leadEn": "South Korean artist born in 1973, known for photographic series that examine simulation, ideology, and the politics of representation. His work often treats photography itself as a suspect medium, especially in relation to national imagery and constructed reality.",
+    "textJa": "経歴\n\n1973年韓国生まれ。写真・映像・インスタレーションにわたる実践で知られるアーティスト。ポスト冷戦の韓国における都市的スペクタクル、媒介されたナショナリズム、イメージのグローバル流通を背景に、シミュレーション・イデオロギー・表象の政治を主題とした活動を展開してきた。*2\n\n表現解説\n\n主要なテーマは、シミュレーション、国家性、イデオロギー、南北朝鮮の表象、観光的視線、ドキュメンタリーと捏造の間の不安定さである。冷静で距離を置いた写真的描写、大判カラー写真、連作形式、テーマパーク・再建設された建物・再媒介された公式イメージのような、すでに人工的な環境の繰り返しの使用が特徴的な手法である。*1 代表作は『Real World』シリーズで、韓国の縮尺模型や模擬的なグローバル建築を写真に収めることで、現実がすでにイメージとして建設されている状態を明らかにする。ヒューストン美術館の所蔵記録が指摘するように、観る者は最初その場面を実際の都市として読み取ってから、それが模型であることを認識する。*1 ベク自身は「私の作品は現実と非現実の間に立っているように見える」と語っており、ドキュメンタリー的な外見を意識的に保つことで観る者を不確かさの内側に留め置く設計になっている。*2 ソウル市立美術館の論考が指摘するように、ベクの写真には素朴な意味での「オリジナル」はなく、イメージがすでにいかに媒介されイデオロギー的に荷重されているかについての作品である。*2\n\n批評と受容\n\n美術館・ビエンナーレ・アーティストトークを通じて国際的に流通し、ポスト・ドキュメンタリー写真への韓国からの重要な貢献として位置づけられてきた。批評的に最も有効な軸は、現実そのものの中に演出された現実を発見する点にある。デジタル操作ではなく、シャッターが切られる前の世界にすでに存在する不現実性を写真が登録するという方法で、写真のドキュメンタリー的な主張を問い直している。*3",
+    "textEn": "Biography\n\nSouth Korean artist born in 1973, known for photographic series that examine simulation, ideology, and the politics of representation.*1*2*3. His work often treats photography itself as a suspect medium, especially in relation to national imagery and constructed reality.*1*2*3.\n\nExpression / method\n\nThe work is organized around simulation, nationhood, ideology, North/South Korean representation, tourist vision, and the instability between documentation and fabrication.*1*2*3. Its formal traits include cool, dispassionate photographic description; large-scale color images; serial projects; and recurring use of already artificial environments such as theme parks, reconstructions, or re-mediated official imagery.*1*2*3. Key examples include the Real World series, with its photographs of miniature or simulated global architecture in Korea, and later series such as Utopia and Blow Up, which are central because they show Back using photography to expose realities already built as images. The MFAH collection note is especially helpful because it explains how the viewer at first reads the scene as a real city view before recognizing the model status of the image.*1*2*4*5.\n\nMuseum and interview material indicates that Back is concerned less with direct representation than with the conditions under which images become believable. He often chooses sites where ideology has already taken visual form, then photographs them with documentary restraint in order to make that visual construction newly visible.*1*2*4. Back emerges in a post–Cold War Korean context shaped by urban spectacle, mediated nationalism, and the global circulation of images. His work is historically important because it addresses these conditions through photography at the moment when the medium’s own documentary claims were being tested.*1*2*3. He can be related to conceptual and post-photographic practices, but differs from overt digital manipulation by locating unreality in the world before the shutter is released. This is one of the strongest ways to describe his place in photographic history.*1*2*4.\n\nBack matters because he uses photography to reveal that the real is often already staged, ideological, or touristic. His work helps define a contemporary documentary mode in which fiction is found rather than invented.*1*2*4. The work asks what photography records when reality itself has been rebuilt as spectacle or political image. This makes his photography especially important for discussions of simulation and nationhood in contemporary East Asian art.*1*2*4. Museum collections, biennial presentations, and artist talks show that Back’s work has circulated through international contemporary-art contexts as a key South Korean contribution to post-documentary photography. ICP library holdings, SFMOMA’s collection framing, and the Seoul Museum of Art materials are useful together because they show the work moving across Korean and international institutional contexts rather than remaining legible only inside Korean discourse.*1*2*3*4*5.\n\nCriticism and reception\n\nMFAH’s object text is particularly useful because it gives a precise example of how Real World produces confusion before the viewer recognizes that the scene is a model, not an actual city.*1. The Seoul Museum of Art essay framing is valuable because it explicitly argues that there is nothing original in Back’s photography in a naive sense; instead, the work is about how images are already mediated and ideologically loaded.*4. Final website copy should emphasize that Back’s significance lies in finding staged reality within the world itself, not in merely denouncing illusion.*1*2*4. The SeMA interview also sharpens the conceptual stakes because Back explicitly describes his work as positioned between the real and the unreal. That supports a stronger final paragraph about why his documentary-looking method matters: it is designed to keep viewers inside uncertainty rather than to resolve it.*4*6.",
+    "links": [
+      {
+        "url": "https://emuseum.mfah.org/objects/91681/0101",
+        "label": "Seung Woo Back, *01-01* from the series *Real World*. Museum of Fine Arts, Houston."
+      },
+      {
+        "url": "https://www.sfmoma.org/artist/Seung_Woo_Back/",
+        "label": "Seung Woo Back. SFMOMA collection record."
+      },
+      {
+        "url": "https://www.tokyoartbeat.com/en/events/-/2017%2F163F",
+        "label": "Seung woo Back “I’m a Picture-Grapher: Photographs of this era”. Tokyo Art Beat."
+      },
+      {
+        "url": "https://sema.seoul.go.kr/semaaa/data/upload/attach/10000/17141/20210917145429939.pdf",
+        "label": "Seung Woo Back “Real World”. Seoul Museum of Art essay PDF."
+      },
+      {
+        "url": "https://www.icp.org/content/seung-woo-back",
+        "label": "Seung Woo Back. International Center of Photography library record."
+      },
+      {
+        "url": "https://sema.seoul.go.kr/semaaa/data/upload/attach/10000/17132/20210917145143731.pdf",
+        "label": "Seung Woo Back interview PDF. Seoul Museum of Art."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Seung Woo Back, *01-01* from the series *Real World*. Museum of Fine Arts, Houston.",
+        "url": "https://emuseum.mfah.org/objects/91681/0101"
+      },
+      {
+        "num": 2,
+        "name": "Seung Woo Back. SFMOMA collection record.",
+        "url": "https://www.sfmoma.org/artist/Seung_Woo_Back/"
+      },
+      {
+        "num": 3,
+        "name": "Seung woo Back “I’m a Picture-Grapher: Photographs of this era”. Tokyo Art Beat.",
+        "url": "https://www.tokyoartbeat.com/en/events/-/2017%2F163F"
+      },
+      {
+        "num": 4,
+        "name": "Seung Woo Back “Real World”. Seoul Museum of Art essay PDF.",
+        "url": "https://sema.seoul.go.kr/semaaa/data/upload/attach/10000/17141/20210917145429939.pdf"
+      },
+      {
+        "num": 5,
+        "name": "Seung Woo Back. International Center of Photography library record.",
+        "url": "https://www.icp.org/content/seung-woo-back"
+      },
+      {
+        "num": 6,
+        "name": "Seung Woo Back interview PDF. Seoul Museum of Art.",
+        "url": "https://sema.seoul.go.kr/semaaa/data/upload/attach/10000/17132/20210917145143731.pdf"
+      }
+    ]
+  },
+  "sharon-lockhart": {
+    "leadJa": "シャロン・ロックハート（1964年アメリカ生まれ）は、写真と映画の両方を使い、労働・共同体・持続を主題に長期にわたる協働的プロジェクトを展開するアーティスト。静的なカメラ位置と長い持続時間を通じて、集団的生活を倫理的かつ形式的に厳密に描写する。",
+    "leadEn": "American artist born in 1964 whose practice moves between photography and film. Known for long-term collaborative projects with communities, and for a formal rigor that slows down both cinematic and photographic viewing.",
+    "textJa": "経歴\n\n1964年アメリカ生まれ。写真と映画を横断する実践で知られるアーティスト。1990年代後半から美術館・映画祭の両方の文脈で活動し、コミュニティとの長期的な協働プロジェクトを中心とした実践を展開してきた。*1\n\n表現解説\n\n主要なテーマは、労働、共同体、持続、集団的生活、観察の倫理、表象の政治である。静的なカメラ位置、長い持続時間、正面的または高度に制御されたポートレート形式、連作構造、写真と映像の並行的な展開が特徴的な手法である。作品はしばしば厳格に見えるが、その厳格さは長期的な注意と協働とつながっている。*2 代表作は『Goshogaoka』（1997年）・『Teatro Amazonas』（1999年）・『Pine Flat』（2005年）・『Lunch Break』で、それぞれ静止画と動画を往来しながら、日常的な集団的行為を注意深く構造化された作品へと変換する。ハマー美術館とMCAの論考はロックハートが形式的な規律を特定のグループ・場所への持続した関与と結びつけている点を指摘し、出来事主導のドキュメンタリーではなく被写体とともに過ごす時間を中心に置く方法論が社会的研究と振り付けに近いことを示す。*1 ドキュメンタリー・民族誌・観察の政治が問い直されていた1990年代に登場し、即時的な情報把握を拒否し特定のコミュニティへの持続した投資を選ぶことで形式主義を社会的プロセスと結びつけた点に歴史的意義がある。*2\n\n批評と受容\n\nMCAは2001年の回顧展を米国の美術館における最も重要な個展として位置づけ、形式的制御と社会的観察の関係をめぐる受容が当時すでに定着していたことを示している。写真と映画の両方の文脈で活動しながら、観客が遅さを責任の形式として経験するよう促す点に最も強い批評的意義がある。*3",
+    "textEn": "Biography\n\nAmerican artist born in 1964 whose practice moves between photography and film.*1*2*3. Known for long-term collaborative projects with communities, and for a formal rigor that slows down both cinematic and photographic viewing.*1*2*3.\n\nExpression / method\n\nThe work is organized around labor, community, duration, collective life, observation, and the ethics of representation.*1*2*3. Its formal traits include static camera positions, long durations, frontal or highly controlled portrait formats, serial structures, and parallel development of films and photographic series. The work often looks austere, but that austerity is linked to long-term attention and collaboration.*1*2*3. Key examples include Goshogaoka (1997), Teatro Amazonas (1999), Pine Flat (2005), and Lunch Break are useful because they show how Lockhart moves between still and moving image while turning ordinary collective actions into carefully structured works.*1*2*3.\n\nThe Hammer and MCA texts make clear that Lockhart joins formal discipline with sustained attention to specific groups and places. Her method resists event-driven documentary in favor of time spent with subjects, often producing works that feel closer to social study and choreography than to conventional reportage.*1*2*3. Lockhart emerged in the 1990s, when artists were reconsidering documentary, ethnography, and the politics of observation. Her work belongs to that moment, but is distinguished by a refusal of quick informational capture and by a sustained investment in collaboration.*1*2. She can be placed near conceptual photography, structural film legacies, and documentary art, but her work differs from detached survey approaches because it is grounded in specific communities over time. This matters historically because it binds formalism to social process.*1*2*3.\n\nLockhart is important because she demonstrated that still photography and film could be used to create durational, ethically attentive portraits of collective life without reverting to journalistic narrative.*1*2*3. Her photographs and films ask viewers to experience slowness as a form of responsibility. Rather than extracting information from subjects, they make time itself part of the image’s ethics.*1*2*3. Museum surveys and project-specific exhibitions show that her work has circulated as both photographic and cinematic practice, often with catalogs and installations that underscore the inseparability of medium, place, and social relation.*1*2*3.\n\nCriticism and reception\n\nMCA described the 2001 survey as the most significant American museum presentation of her work to date, confirming that her reception had already consolidated around the relation between formal control and social observation.*2. The Hammer and Harvard materials are useful because they show how specific projects such as Pine Flat were received through ideas of portraiture, album structure, and rural or marginal community, not just through experimental film discourse.*1*3. Final website copy should emphasize that Lockhart’s importance lies in making duration and collaboration central photographic values, rather than treating them as secondary to subject matter.*1*2.",
+    "links": [],
+    "citations": []
+  },
+  "sonja-braas": {
+    "leadJa": "ソニア・ブラス（1968年ドイツ生まれ）は、ジオラマ・動物園・スタジオ効果を用いた大判カラー写真で、自然の見た目を持つ作り物の場面を撮影するアーティスト。写真的リアリズムの約束を逆用し、観る者がイメージを信じようとする欲望そのものを問題化する。",
+    "leadEn": "German artist born in 1968, working with staged or fabricated photographic environments. Her work is relevant to photographic history because it turns apparently documentary landscape imagery into a study of simulation, artifice, and the unstable contract of photographic realism.",
+    "textJa": "経歴\n\n1968年ドイツ生まれ。ジオラマ・動物園の生息環境・スタジオ効果を用いた大判カラー写真で知られるアーティスト。写真のドキュメンタリー的な真実主張が問い直されるようになった時期に、構築された物理的な場面を通じてその問題を探求してきた。*1\n\n表現解説\n\n主要なテーマは、イメージとしての自然、人工的な景観、幻想、災害、写真的真実主張の不安定さである。作り物の場面・ジオラマ・動物園の環境・演出された自然現象の大判カラー写真が特徴的な手法で、最初の一見ではドキュメンタリーに見えるが、構築された模型・スタジオ効果・混合的状況によってイメージの真実性を揺るがす。*2 代表作『You are Here』は、動物園の生息環境・美術館のジオラマ・「本物」の景観を織り交ぜることで、観る者が自然とシミュレーションをどう区別するかを試す。アーティスト自身のウェブサイトのテキストと機関の解説は、ブラスがドキュメンタリー的忠実さという媒体の約束そのものに関心を向けていることを示し、その約束がすでに損なわれている場合でも写真の誘惑を使って作り込まれた場面への信念を強調する。*3 デジタル操作・シミュレーション・ポスト・ドキュメンタリー実践において写真がますます自らの真実主張を反省的に扱うようになった時期に登場した作家として、その問題を明白なデジタルトリックではなく構築された物理的な場面を通じて探求した点に意義がある。*2\n\n批評と受容\n\n批評的に最も強い指摘は、ブラスの作品が単なる「偽の自然」ではなく、観る者がすでに作り物だと知っていても写真を信じ続けようとする心理への持続的な問いである点にある。写真的リアリズムをそれ自体の約束に反用する実践として、ポスト・ドキュメンタリー的な景観写真と構築された自然写真の重要な事例をなす。*3",
+    "textEn": "Biography\n\nGerman artist born in 1968, working with staged or fabricated photographic environments.*1*2. Her work is relevant to photographic history because it turns apparently documentary landscape imagery into a study of simulation, artifice, and the unstable contract of photographic realism.*1*2*3.\n\nExpression / method\n\nThe work is organized around nature as image, artificial landscape, illusion, disaster, and the instability of photographic truth claims.*1*2*3. Its formal traits include large-scale color photographs of fabricated scenes, dioramas, zoological environments, and staged natural events. The work often looks documentary at first glance, but depends on constructed models, studio effects, or hybrid situations that unsettle the truth-status of the image.*1*2*3. Key examples include You are Here, which is especially important because it interweaves zoo habitats, museum dioramas, and real landscapes in a way that tests how viewers distinguish the natural from the simulated. Later disaster or elemental series continue this tension between belief and fabrication.*2*3.\n\nThe artist’s own website texts and institutional commentary make clear that Braas is interested in the medium’s promise of documentary fidelity even when that promise is already compromised. She uses photographic seduction to draw viewers into scenes that are carefully designed to expose their own desire to believe.*2*3. Braas emerges in a period when photography increasingly reflects on its own truth claims, especially in relation to digital manipulation, simulation, and post-documentary practice. Her work matters because it explores this issue through constructed physical scenes rather than through obvious digital trick effects.*1*2*3. She can be linked to staged photography and post-photographic skepticism, but her work retains a specifically photographic tension because it still depends on the viewer’s residual faith in the camera as witness.*1*2*3.\n\nBraas is important because she demonstrates that photographic realism can be undermined from within the scene itself. The problem is not simply manipulation after the fact; it is that the visible world may already be built as simulation.*2*3. Her work stages ambivalence rather than revelation. Even once the viewer understands that the scene is artificial, the image continues to operate with the force of photographic conviction.*2*3. Library, museum, and artist-site texts consistently discuss Braas in relation to image theory and representational ambivalence, which supports reading her as a key figure in post-documentary landscape and constructed nature photography.*1*2*3.\n\nCriticism and reception\n\nThe strongest critical thread is that Braas’s work is not simply fake nature but a sustained inquiry into why viewers continue to trust photographs even when they know better.*2*3. Final website copy should emphasize that her importance lies in using staged landscape to reveal the psychology of photographic belief.*2*3. Her work is best described as post-documentary not because it abandons realism, but because it weaponizes realism’s promise against itself.*2*3.",
+    "links": [
+      {
+        "url": "https://www.icp.org/content/sonja-braas",
+        "label": "Sonja Braas. International Center of Photography library record."
+      },
+      {
+        "url": "https://www.sonjabraas.com/texts",
+        "label": "Sonja Braas texts. Artist website."
+      },
+      {
+        "url": "https://www.fotomuseum.ch/en/collection-post/forces-23-2/",
+        "label": "Forces #23. Fotomuseum Winterthur."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Sonja Braas. International Center of Photography library record.",
+        "url": "https://www.icp.org/content/sonja-braas"
+      },
+      {
+        "num": 2,
+        "name": "Sonja Braas texts. Artist website.",
+        "url": "https://www.sonjabraas.com/texts"
+      },
+      {
+        "num": 3,
+        "name": "Forces #23. Fotomuseum Winterthur.",
+        "url": "https://www.fotomuseum.ch/en/collection-post/forces-23-2/"
+      }
+    ]
+  },
+  "stefan-burger": {
+    "leadJa": "シュテファン・ブルガー（1977年生まれ、スイス在住）は、写真・彫刻・インスタレーション・アクションにわたる実践で、イリュージョン・展示・観客の期待をめぐる問いを展開するアーティスト。写真の錯視性を空間的・概念的に変換し、イメージを経験の場として作り直す。",
+    "leadEn": "German-born Swiss-based artist born in 1977, trained in photography in Zurich and active across photography, sculpture, installation, and action. In a photography-history context, Burger is relevant for using photographic illusion as a starting point for sculptural and conceptual investigations into representation, display, and audience expectation.",
+    "textJa": "経歴\n\n1977年生まれ、スイス在住。チューリヒで写真を学んだ後、写真・彫刻・インスタレーション・アクションにわたる実践を展開するアーティスト。写真をイリュージョンの問題として空間的・概念的に変換する実験的な展示形式によって機関の注目を集めてきた。*1\n\n表現解説\n\n主要なテーマは、イリュージョン、展示、アイロニー、制度的な枠組み、顛覆的なウィット、イメージ・物・観客の間の不安定な関係である。写真を基盤としながらインスタレーション・壁面介入・彫刻的構築へと展開する作品群、媒体のイリュージョン能力への繰り返しの注目、イメージが出会われる演劇的な条件への意識が特徴的な手法である。*2 クンストムゼウム・シュトゥットガルトでの展示はブルガーの大規模な壁面インスタレーションを前景化し、その位置を明示的に写真的としながら、写真が彼の実践においてしばしば空間的・概念的変換の基盤となることを示す。展示テキストは、ブルガーが写真はイリュージョンのために作られているという事実に関心を向けており、そのイリュージョンを透明な視覚として受け入れるのではなく、アーティスト・作品・観客の関係が新たに可視化される不測の状況へと押し込むことを示している。*1 多くのアーティストが写真とインスタレーションの境界を試していた時代に登場し、その移行をなめらかな媒体拡張としてではなく、トリック・展示・制度的期待の問題として接近した点に歴史的意義がある。*3\n\n批評と受容\n\n機関の受容は一貫して、写真のイリュージョン媒体としての可能性への微妙なアイロニーと挑戦を強調する。最も強い批評的ラインは、ブルガーが写真的イリュージョンを観客性の出来事へと変換する点にあり、観る者自身の期待が作品の一部となる。写真は安定したオブジェクトとしてではなく、問題として扱われる。*2",
+    "textEn": "Biography\n\nGerman-born Swiss-based artist born in 1977, trained in photography in Zurich and active across photography, sculpture, installation, and action.*1*2*3. In a photography-history context, Burger is relevant for using photographic illusion as a starting point for sculptural and conceptual investigations into representation, display, and audience expectation.*1*2*3.\n\nExpression / method\n\nThe work is organized around illusion, display, irony, institutional framing, subversive wit, and the unstable relation between image, object, and spectator.*1*2*3. Photography-based works that spill into installation, wall-scale intervention, and sculptural construction; recurring attention to the medium’s capacity for illusion and to the theatrical conditions under which images are encountered.*1*2*3. Key examples include the Kunstmuseum Stuttgart “Frischzelle” presentation is especially useful because it foregrounds Burger’s large wall-based intervention and frames his position explicitly as photographic while also making clear that photography in his practice often becomes the basis for spatial and conceptual transformation.*1.\n\nExhibition texts suggest that Burger is interested in the fact that photography is built for illusion. Rather than accepting that illusion as transparent seeing, he pushes it into awkward or humorous situations where the relation between artist, work, and viewer becomes newly visible.*1*2*3. Burger emerges in a period when many artists were testing the boundary between photography and installation. His work matters because it approaches this not as a smooth expansion of media, but as a problem of trick, display, and institutional expectation.*1*2*3. He can be related to conceptual photography and installation-based post-photographic practice, but his work is distinctive in the degree to which irony and material disruption accompany the photographic image.*1*2*3.\n\nBurger matters because he shows that contemporary photography can no longer be understood only as flat image production; it is also a set of illusions that can be spatialized, mocked, and materially displaced.*1*2. His work is important because it denies the viewer passive consumption of the image. The photographic field becomes a site where humor, deception, and institutional framing all operate together.*1*2*3. Museum and foundation texts consistently present Burger through experimental exhibition formats that stress his movement between photography and other forms, which is exactly what makes him relevant for a broader history of the medium.*1*2*3.\n\nCriticism and reception\n\nInstitutional reception repeatedly highlights Burger’s subtle irony and his challenge to the possibilities of photography as a medium of illusion.*1*3. Final website prose should emphasize that Burger’s importance lies in how he uses photography as a problem rather than as a stable object.*1*2. A strong critical line is that Burger turns photographic illusion into an event of spectatorship, where the viewer’s own expectations become part of the work.*1*2*3.",
+    "links": [
+      {
+        "url": "https://www.kunstmuseum-stuttgart.de/en/exhibitions/frischzelle10-stefan-burger",
+        "label": "Frischzelle_10: Stefan Burger. Kunstmuseum Stuttgart."
+      },
+      {
+        "url": "https://www.muzeumsusch.ch/en/1374/Stefan-Burger",
+        "label": "Stefan Burger. Muzeum Susch."
+      },
+      {
+        "url": "https://zf-kunststiftung.com/stipendiaten/stefan-burger/",
+        "label": "Stefan Burger – Stipendiat 2011. ZF Kunststiftung."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Frischzelle_10: Stefan Burger. Kunstmuseum Stuttgart.",
+        "url": "https://www.kunstmuseum-stuttgart.de/en/exhibitions/frischzelle10-stefan-burger"
+      },
+      {
+        "num": 2,
+        "name": "Stefan Burger. Muzeum Susch.",
+        "url": "https://www.muzeumsusch.ch/en/1374/Stefan-Burger"
+      },
+      {
+        "num": 3,
+        "name": "Stefan Burger – Stipendiat 2011. ZF Kunststiftung.",
+        "url": "https://zf-kunststiftung.com/stipendiaten/stefan-burger/"
+      }
+    ]
+  },
+  "stephen-gill": {
+    "leadJa": "スティーヴン・ギル（1971年イギリス生まれ）は、フォトブックを主要な発表形態として、ドキュメンタリー写真を素材実験によって根本から問い直すアーティスト。カメラの中に植物や昆虫を入れたり、プリントを土の中に埋めたりすることで、場所の環境そのものをイメージの生成に参加させる。",
+    "leadEn": "British photographer born in 1971, known for books and series that reinvent documentary photography through material experiment. His work ranges from early urban and social observation to later projects in which the environment physically enters the image-making process.",
+    "textJa": "経歴\n\n1971年イギリス生まれ。ドキュメンタリー写真と素材実験を組み合わせた実践と、フォトブックを主要な発表形式とする姿勢で知られる写真家。初期の都市的・社会的観察から、環境そのものをイメージ生成に参加させる実験的なプロジェクトへと移行してきた。*1\n\n表現解説\n\n主要なテーマは、場所、記憶、都市変容、自然、偶然、残渣、そして写真が単純な描写を超えて環境を登録する能力である。フォトブック中心の連作、実験的なカメラと廉価なレンズ、プリントを土に埋めたり風雨にさらしたりすること、カメラの中に物体や昆虫を入れること、撮影場所が文字通りの痕跡を最終イメージに残すことが特徴的な手法である。*2 代表作は『Hackney Wick』『Hackney Flowers』『Outside In』『Coexistence』で、注意深い社会的観察から周囲環境が写真の形式に積極的に参加するようになる媒体のより根本的な開放へという展開を示す。インタビューでギルは「写真の慣習を遊び心を持って解体し、学びほぐし、取り除いてきた」と語っており、ドキュメンタリーの真実が透明な光学的記録だけに依存するという考えを拒否している。*1 古典的なイギリス・ドキュメンタリーとベッヒャー夫妻の冷静なタイポロジーの後、写真家たちがフォトブック・素材実験・主観的な場所ベースの探求へと向かいつつあった時代に登場した。写真家がドキュメンタリーたりうる条件として偶然性と物理的な汚染を含めることができるかを問うという点で、現代のブック・ベース写真に影響を与えてきた。*3\n\n批評と受容\n\n1854とElephantの評論はともに、ギルが写真の慣習を何十年もかけて解体・再考してきた写真家として受容していることを示す。TIMEによる『Coexistence』評は批評家がギルの実験的方法を装飾的な新奇さとしてではなく、イメージそのものに場所固有の環境的歴史を可視化する方法として理解していることを示す。ドキュメンタリーの過程をカメラ・制作者・場所の接触の記録として機能させた点が歴史的意義の核心である。*2",
+    "textEn": "Biography\n\nBritish photographer born in 1971, known for books and series that reinvent documentary photography through material experiment.*1*2*3. His work ranges from early urban and social observation to later projects in which the environment physically enters the image-making process.*1*2*3.\n\nExpression / method\n\nThe work is organized around place, memory, urban change, nature, chance, residue, and the ability of photography to register environments beyond straightforward description.*1*2*3. Its formal traits include photobook-centered series, experimental cameras and cheap lenses, burying or weathering prints, placing objects or insects inside the camera, and allowing the photographed location to leave literal marks on the final image.*1*2*3. Key examples include Hackney Wick, Hackney Flowers, Outside In, and Coexistence, which are central because they show the arc from attentive social observation to a more radical opening of the medium, in which surroundings become active participants in the photograph’s form.*1*2*3.\n\nInterviews stress Gill’s desire to unlearn photographic convention and to keep the medium open to accident, touch, and environmental imprint. This matters because the work refuses the idea that documentary truth depends only on clear optical recording.*1*2*3. Gill emerges after classic British documentary and after the Bechers’ cool typological influence, in a period when photographers increasingly turned to the photobook, material experiment, and subjective forms of place-based inquiry. His work belongs to that broader shift while remaining unusually tactile.*1*2*3. He can be linked to documentary photography, but differs from reportage by making process itself part of meaning. His work also belongs to a photobook culture in which sequencing, printing, and object-form are historically significant.*1*2*3.\n\nGill matters because he redefined what documentary photography could be. Instead of merely depicting a place, he allows the conditions of that place—plants, dust, insects, weather, time—to become part of the picture’s making.*1*2*3. The work asks whether documentary can include contingency and physical contamination without ceasing to be documentary. That is one reason his projects have become so influential within contemporary book-based photography.*1*2*3. Interviews and institutional summaries show that Gill’s work has circulated through museum exhibitions and especially through photobook culture, where the serial and object-based dimensions of his practice are most legible.*1*2*3.\n\nCriticism and reception\n\n1854 and Elephant both frame Gill as a photographer who has spent decades dismantling and rethinking photographic conventions, which is a useful reception pattern for final website writing.*1*2. Time’s discussion of Coexistence is important because it shows that critics understand Gill’s experimental method not as decorative novelty but as a way of making site-specific environmental history visible in the image itself.*3. Final website copy should stress that Gill’s significance lies in turning documentary process into a record of contact between camera, maker, and place.*1*2*3.",
+    "links": [
+      {
+        "url": "https://www.1854.photography/2022/01/stephen-gill-bristol-arnolfini-retrospective-interview/",
+        "label": "Stephen Gill on memory, nature and home. 1854 Photography."
+      },
+      {
+        "url": "https://elephant.art/stephen-gill-im-still-amazed-i-turned-photography-into-something-i-do-for-a-living-10112021/",
+        "label": "Stephen Gill: “I’m Still Amazed I Turned Photography into Something I Do for a Living”. Elephant."
+      },
+      {
+        "url": "https://time.com/62087/coexistence-by-stephen-gill/",
+        "label": "Coexistence by Stephen Gill. TIME."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Stephen Gill on memory, nature and home. 1854 Photography.",
+        "url": "https://www.1854.photography/2022/01/stephen-gill-bristol-arnolfini-retrospective-interview/"
+      },
+      {
+        "num": 2,
+        "name": "Stephen Gill: “I’m Still Amazed I Turned Photography into Something I Do for a Living”. Elephant.",
+        "url": "https://elephant.art/stephen-gill-im-still-amazed-i-turned-photography-into-something-i-do-for-a-living-10112021/"
+      },
+      {
+        "num": 3,
+        "name": "Coexistence by Stephen Gill. TIME.",
+        "url": "https://time.com/62087/coexistence-by-stephen-gill/"
+      }
+    ]
+  },
+  "sze-tsung-leong": {
+    "leadJa": "スゼ・ツン・レオン（1970年生まれ）は、地平線・領域・都市形態を主題に、大判カラー写真の連作でグローバル化と都市景観を探求するアーティスト。高所からのパノラマ的視点と体系的な構図によって、都市と地形を視覚的システムとして問い直す。",
+    "leadEn": "Artist and photographer born in 1970, working with landscape, horizon, and urban form at large scale. His photography is central to late-1990s and 2000s discussions of globalization, territory, and the visual abstraction of cities and horizons.",
+    "textJa": "経歴\n\n1970年生まれ。景観・地平線・都市形態を主題に大判カラー写真で活動するアーティスト。1990年代後半から2000年代にかけてグローバル化・領域・都市の視覚的抽象をめぐる議論の中で重要な位置を占めてきた。*1\n\n表現解説\n\n主要なテーマは、地平線、領域、グローバルな都市化、文明のスケール、場所固有の細部と抽象的構造の間の緊張である。大判カラー写真、連作形式、高所やパノラマ的な視点、都市と景観を分割・測定・空間的比較の場として変換する構図システムが特徴的な手法である。*2 代表作は『Horizons』と『Cities』。『Horizons』はイメージを繰り返し二分割することで観る者が具体的なものと視界の外にあるものの間の閾を直視するよう促し、『Cities』は高視点と連続的な比較を使って建造環境をグローバルなパターンとして研究する。展示テキストは、レオンが反復と構造化された視点を使って景観と都市がシステムとして読み解かれる仕方を検討していること、イメージが単一の出来事を劇化するのではなく世界がいかに視覚的・政治的に組織されているかを問うものであることを示す。*3 写真がグローバル化・都市開発・惑星的スケールを扱う方向へ拡張されていた時代に登場した作家として、こうした拡大した地理的視野を報道的な即時性ではなく厳密な構図システムと結びつけた点に歴史的意義がある。*1\n\n批評と受容\n\n機関の枠組みは一貫して、レオンが抽象と特殊性の間を移動する能力を強調する。各イメージは場所として読めると同時に、構造・縁・スケールの研究としても読める。批評的に最も強い軸は、レオンが景域写真家としてだけでなく「閾」の写真家として、つまり大地と空、集落と抽象、ローカルな場所とグローバルな形式の間に立つ写真家として位置づけられる点にある。*2",
+    "textEn": "Biography\n\nArtist and photographer born in 1970, working with landscape, horizon, and urban form at large scale.*1*2. His photography is central to late-1990s and 2000s discussions of globalization, territory, and the visual abstraction of cities and horizons.*1*2*3.\n\nExpression / method\n\nThe work is organized around horizon, territory, global urbanization, the scale of civilization, and the tension between place-specific detail and abstract structure.*1*2*3. Its formal traits include large-format color photography, serial projects, elevated or panoramic viewpoints, and compositional systems that turn cities and landscapes into fields of division, measure, and spatial comparison.*1*2*3. Key examples include Horizons and Cities are the key projects. Horizons repeatedly bisects the image so that the viewer confronts a threshold between the concrete and what lies beyond sight, while Cities uses high viewpoints and serial comparison to study the built environment as a global pattern.*1*2*3.\n\nThe available exhibition texts suggest that Leong uses repetition and structured vantage points to examine how landscapes and cities become legible as systems. His photographs do not dramatize singular events; they ask how the world is organized visually and politically.*1*2*3. Leong emerges at a moment when photography increasingly addressed globalization, urban development, and planetary scale. His work matters because it connects this expanded geographic view to rigorous compositional systems rather than journalistic immediacy.*1*2*3. His work can be related to post-New Topographics landscape photography and to conceptual serial practice, but it is distinguished by the way it abstracts cities and territories without erasing their social and historical specificity.*1*2*3.\n\nLeong is important because he extends landscape and city photography into an inquiry about the visual logic of world-making. His photographs are not simply records of place; they are instruments for thinking about scale, settlement, and the border between image and knowledge.*1*2*3. The horizon in Leong is not only a motif but a conceptual device. It marks the limit of certainty, dividing what can be mapped from what exceeds observation.*1*2. Museum and gallery texts repeatedly present Leong through major serial bodies rather than isolated masterpieces, which is useful for final prose because the work’s meaning depends on comparison, accumulation, and systematic variation.*1*2*3.\n\nCriticism and reception\n\nInstitutional framing consistently stresses Leong’s capacity to move between abstraction and specificity: each image can be read as a place, but also as a study of structure, edge, and scale.*1*2*3. Final website prose should emphasize that Leong belongs to a history of photography concerned with how landscapes and cities are visually organized, not merely depicted.*1*2. His significance is strongest when described as a photographer of thresholds: between earth and sky, settlement and abstraction, local site and global form.*1*2*3.",
+    "links": [
+      {
+        "url": "https://www.herzliyamuseum.co.il/en/exhibition/sze-tsung-leong/",
+        "label": "Sze Tsung Leong. Herzliya Museum of Contemporary Art."
+      },
+      {
+        "url": "https://www.polkagalerie.com/en/exhibition-horizons-sze-tsung-nicolas-leong.htm",
+        "label": "“Horizons” Sze Tsung Nicolas Leong. Polka Galerie."
+      },
+      {
+        "url": "https://time.com/53/sze-tsung-leongs-cities/",
+        "label": "Sze Tsung Leong’s Cities. Time."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Sze Tsung Leong. Herzliya Museum of Contemporary Art.",
+        "url": "https://www.herzliyamuseum.co.il/en/exhibition/sze-tsung-leong/"
+      },
+      {
+        "num": 2,
+        "name": "“Horizons” Sze Tsung Nicolas Leong. Polka Galerie.",
+        "url": "https://www.polkagalerie.com/en/exhibition-horizons-sze-tsung-nicolas-leong.htm"
+      },
+      {
+        "num": 3,
+        "name": "Sze Tsung Leong’s Cities. Time.",
+        "url": "https://time.com/53/sze-tsung-leongs-cities/"
+      }
+    ]
+  },
+  "thomas-demand": {
+    "leadJa": "トーマス・デマンド（1964年ドイツ生まれ）は、既存の報道写真や記録写真を原寸大の紙とボール紙で再構築し、そのモデルを撮影して作品とする写真家・アーティスト。「現実の構築」を主題に、写真のドキュメンタリー的権威がいかに機能するかを問い直す。",
+    "leadEn": "German artist born in 1964, trained first as a sculptor before turning to photography in the 1990s. Best known for building life-size paper reconstructions of already-circulating images and photographing those constructions as finished works.",
+    "textJa": "経歴\n\n1964年ドイツ生まれ。彫刻家として訓練を受けた後、1990年代に写真へ移行したアーティスト。既存の写真（多くはニュースやアーカイブから）を原寸大の紙とボール紙で再建し、そのモデルを撮影した後に破壊するという方法論で知られる。*1\n\n表現解説\n\n主要なテーマは、媒介、再構築、公共の記憶、ドキュメンタリー的真実の不安定さ、マス・サーキュレーションするイメージが歴史的意識をいかに形成するかである。既存の写真を出発点に、描写された場所を紙とボール紙で再建し、イメージを日常的な使用に固定する細部を取り除いてからモデルを撮影し破壊するという一連の工程が特徴的な手法である。*2 代表作は2000年米大統領選挙の開票所を基にした『Poll』（2001年）、『Control Room』（2011年）、『Daily』シリーズで、出来事のイメージをそれでもドキュメンタリー的参照を保ちながら冷静で不気味な構築物へと変換する様子を示す。ルイジアナのインタビューでデマンドは、彫刻からアプローチしながら写真が「構築された現実」を思考するための手段として興味深かったと語り、紙のモデルが撮影されるために一時的に存在する構造物となっていることを示す。*2 写真・インスタレーション・コンセプチュアル実践がますます絡み合い、プレスイメージへの透明な証拠としての信頼がテレビとマスメディアの飽和によって圧力を受けていた1990年代に登場した。この作品は写真のドキュメンタリーの力をリアリズムを放棄することではなくそれを再建することで試した点で、批評的意義を持つ。*3\n\n批評と受容\n\nMoMAとルイジアナの受容はともに「構築された現実」という軸で一貫しており、批評家がその作品を幻想的な職人技だけでなく、写真が本来の出来事がすでに媒介されたものとなった後に機能するあり方についての持続的な問いとして受け取っていることを示す。「これは本物か」という問いから「現実はそれに触れる前からすでにいかに構築されているか」へという転換が最も強い批評的ラインである。*1",
+    "textEn": "Biography\n\nGerman artist born in 1964, trained first as a sculptor before turning to photography in the 1990s.*1*2. Best known for building life-size paper reconstructions of already-circulating images and photographing those constructions as finished works.*1*2*3.\n\nExpression / method\n\nThe work is organized around mediation, reconstruction, public memory, the instability of documentary truth, and the way mass-circulated images shape historical consciousness.*1*2*3. Demand typically begins from an existing photograph, often from news, archives, or everyday media circulation, rebuilds the depicted site in paper and cardboard, removes small details that would anchor the image in ordinary use, then photographs the model and destroys it.*1*2*3. Key examples include Poll (2001), based on the Palm Beach County recount office in the 2000 US election; Control Room (2011); and the Daily series are useful because they show how he turns event images into cool, uncanny constructions that still retain documentary reference.*1*2*4.\n\nDemand’s own interviews are clear that photography interested him as a way to distance himself from the sculpture-object while still preserving its image. The paper model becomes a temporary structure that exists in order to be photographed, which lets him think through “constructed reality” rather than direct record.*1*2*3. His work emerged when photography, installation, and conceptual practice were increasingly intertwined, and when confidence in press imagery as transparent evidence was under pressure. The work belongs to post-conceptual photography but also to a broader 1990s rethinking of image credibility after television and mass-media saturation.*1*2*3. Demand is often discussed beside artists who stage or construct photographs, but his practice differs from tableau photography because the subject is not performed by actors in front of the camera; instead, the image is rebuilt from an already mediated source. This places him between sculpture, conceptual photography, and image criticism.*1*2.\n\nDemand matters because he showed that the documentary force of a photograph could be tested not by abandoning realism, but by rebuilding it. His images ask viewers to recognize the authority of photographic appearance while simultaneously sensing its fabrication.*1*2*3. The work is historically important because it shifts the debate from “is this real?” to “how is reality already constructed before the artist touches it?” His photographs are not pure fictions; they are meditations on the second life of images in public culture.*1*2*4. Museum survey texts and MoMA audio materials confirm that Demand’s photographs circulated through major museum exhibitions as examples of contemporary photography’s dialogue with sculpture, architecture, and the politics of media images.*1*3*4.\n\nCriticism and reception\n\nMoMA’s survey framing emphasizes Demand as an artist of “constructed reality,” and the Louisiana interview makes clear that critics receive his work less as illusionistic craft alone than as a sustained inquiry into the status of photographs after their original event has already become mediated.*1*2*3. Reception consistently returns to the tension between factual reference and palpable artifice. Final website copy should stress that the work does not simply fake documents; it studies how documents already function as images.*1*2*4. His significance in photo history is strongest when described in relation to post-conceptual photography and the critique of public images, rather than as a virtuoso maker of trompe-l’oeil.*1*2.",
+    "links": [
+      {
+        "url": "https://www.moma.org/audio/playlist/230",
+        "label": "Thomas Demand. MoMA Audio Playlist. Museum of Modern Art."
+      },
+      {
+        "url": "https://channel.louisiana.dk/video/thomas-demand-constructing-authentic",
+        "label": "Thomas Demand: Constructing the Authentic. Louisiana Channel / Louisiana Museum of Modern Art."
+      },
+      {
+        "url": "https://museemagazine.com/features/art-2/features/interview-with-thomas-demand-demannds-way",
+        "label": "Interview with Thomas Demand: Demannd’s Way. Musée Magazine."
+      },
+      {
+        "url": "https://www.moma.org/documents/moma_press-release_387092.pdf",
+        "label": "The Museum of Modern Art Presents the First Comprehensive Survey in the United States of the Work of Thomas Demand. MoMA press release."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Thomas Demand. MoMA Audio Playlist. Museum of Modern Art.",
+        "url": "https://www.moma.org/audio/playlist/230"
+      },
+      {
+        "num": 2,
+        "name": "Thomas Demand: Constructing the Authentic. Louisiana Channel / Louisiana Museum of Modern Art.",
+        "url": "https://channel.louisiana.dk/video/thomas-demand-constructing-authentic"
+      },
+      {
+        "num": 3,
+        "name": "Interview with Thomas Demand: Demannd’s Way. Musée Magazine.",
+        "url": "https://museemagazine.com/features/art-2/features/interview-with-thomas-demand-demannds-way"
+      },
+      {
+        "num": 4,
+        "name": "The Museum of Modern Art Presents the First Comprehensive Survey in the United States of the Work of Thomas Demand. MoMA press release.",
+        "url": "https://www.moma.org/documents/moma_press-release_387092.pdf"
+      }
+    ]
+  },
+  "tracey-moffatt": {
+    "leadJa": "トレイシー・モファット（1960年オーストラリア生まれ）は、写真・映像・モンタージュを横断し、人種・欲望・記憶・植民地的歴史を映画的な演出と大衆的イメージの流用を通じて問うアーティスト。ステージドシーンとモンタージュを使い、個人的・歴史的な神話が視覚的に書き込まれたイメージを作る。",
+    "leadEn": "Australian artist born in 1960 whose practice spans photography, film, montage, and staged image-making. One of the key figures in late twentieth-century photography and moving-image art, especially in relation to race, desire, memory, and cinematic fiction.",
+    "textJa": "経歴\n\n1960年オーストラリア生まれ。写真・映画・モンタージュにわたる実践を展開するアーティスト。ポストモダン写真・フェミニスト批評・人種と表象をめぐる議論が現代美術を再形成していた時代に登場し、MoMA・ホイットニー・マシュー・マークス・ギャラリーなど国際的な美術館・ギャラリーで広く展示されてきた。*1\n\n表現解説\n\n主要なテーマは、ファンタジー、トラウマ、人種、植民地的記憶、映画、欲望、視覚文化を通じたステレオタイプの流通である。高度に構築されたシーン、モンタージュ、映画と大衆的イメージからの流用、連作カラー写真、メロドラマと夢と批評の間を揺れ動く映像作品が特徴的な手法である。*3 代表作は『Something More』『Scarred for Life』と、『Lip』『Love』などモンタージュ映像作品で、写真シーケンスと映画的断片を同時に使う能力を示す。美術館資料とインタビューは、モファットが直接的なリアリズムが扱おうとする心的・歴史的素材には不十分だとして演出とモンタージュ形式に向かっていること、ファンタジー・記憶・文化的ステレオタイプそのものがすでに構築されたイメージであるという認識に実践が依拠していることを示す。*4 ポストモダン写真・フェミニスト批評・人種と表象をめぐる議論が現代美術を再形成していた時代に登場した作家として、これらの問題を映画的形式と大衆的イメージの記憶から切り離せないものとした点に歴史的意義がある。*2\n\n批評と受容\n\nMoMAの受容はモファットの写真が映画とモンタージュが決定的な役割を果たすより大きなイメージ実践に属するものとして捉えている。ホイットニーの『Montages』をめぐるプログラムは、流用と感情のその批評的言語において映像コンパイルが写真に劣らず重要であることを示す。欲望・恐怖・人種的ファンタジーがいかに視覚的に書き込まれているかに観る者を直面させる点が、歴史的に最も意義深い批評的貢献である。*1",
+    "textEn": "Biography\n\nAustralian artist born in 1960 whose practice spans photography, film, montage, and staged image-making.*1*2*3. One of the key figures in late twentieth-century photography and moving-image art, especially in relation to race, desire, memory, and cinematic fiction.*1*2*3.\n\nExpression / method\n\nThe work is organized around fantasy, trauma, race, colonial memory, cinema, desire, and the circulation of stereotypes through visual culture.*1*2*3. Its formal traits include highly constructed scenes, montage, appropriation from cinema and popular imagery, serial color photographs, and moving-image works that oscillate between melodrama, dream, and critique.*1*2*3. Key examples include Something More, Scarred for Life, the montage videos such as Lip and Love, and later exhibition projects, which are central because they show Moffatt’s ability to work through photographic sequence and cinematic fragments at once.*2*3*4.\n\nInterviews and museum materials suggest that Moffatt turns to staged and montaged form because direct realism is not enough for the psychic and historical material she wants to address. Her work relies on the fact that fantasy, memory, and cultural stereotype are themselves already constructed images.*1*3*4. Moffatt emerged when postmodern photography, feminist critique, and debates around race and representation were reshaping contemporary art. Her importance lies in making these issues inseparable from cinematic form and popular-image memory.*1*2*3. She is connected to postmodern staged photography and moving-image installation, but her practice is distinct in the way it fuses autobiography, Indigenous and colonial histories, and mass-cultural visual codes.*1*2.\n\nMoffatt matters because she expanded photography beyond straight description and beyond identity illustration. Her work shows how photographic and cinematic images can function as condensed historical and psychological scenes.*1*2*3. The work is historically significant because it forces viewers to confront how desire, fear, and racial fantasy are already scripted visually. The photograph becomes less a document than a charged site where personal and historical myths collide.*1*3*4. MoMA, Whitney, and gallery materials confirm that Moffatt’s work has circulated through museum, film, and installation contexts, which is crucial for understanding her as an artist working across still and moving image rather than as a conventional photographer alone.*1*2*4.\n\nCriticism and reception\n\nMoMA’s framing is concise but useful: Moffatt is received as an artist whose photography belongs to a larger image practice in which cinema and montage are decisive.*1. Whitney’s program around Montages is important because it shows that her moving-image compilations are not secondary to the photographs; they are part of the same critical language of appropriation and affect.*2. Final website copy should emphasize that her importance in photographic history lies in how she turns constructed image sequences into a way of thinking through race, memory, and fantasy.*1*2*3.",
+    "links": [
+      {
+        "url": "https://www.moma.org/artists/8041-tracey-moffatt",
+        "label": "Tracey Moffatt. MoMA."
+      },
+      {
+        "url": "https://whitney.org/events/2016-curatorial-program-tracey-moffatt",
+        "label": "Tracey Moffatt: Montages. Whitney Museum of American Art."
+      },
+      {
+        "url": "https://matthewmarks.com/exhibitions/tracey-moffatt-03-2000",
+        "label": "TRACEY MOFFATT Invocations. Matthew Marks Gallery."
+      },
+      {
+        "url": "https://www.theguardian.com/artanddesign/2017/mar/24/tracey-moffatt-if-it-becomes-a-little-terrifying-then-im-interested",
+        "label": "Tracey Moffatt: “If it becomes a little terrifying then I’m interested”. The Guardian."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Tracey Moffatt. MoMA.",
+        "url": "https://www.moma.org/artists/8041-tracey-moffatt"
+      },
+      {
+        "num": 2,
+        "name": "Tracey Moffatt: Montages. Whitney Museum of American Art.",
+        "url": "https://whitney.org/events/2016-curatorial-program-tracey-moffatt"
+      },
+      {
+        "num": 3,
+        "name": "TRACEY MOFFATT Invocations. Matthew Marks Gallery.",
+        "url": "https://matthewmarks.com/exhibitions/tracey-moffatt-03-2000"
+      },
+      {
+        "num": 4,
+        "name": "Tracey Moffatt: “If it becomes a little terrifying then I’m interested”. The Guardian.",
+        "url": "https://www.theguardian.com/artanddesign/2017/mar/24/tracey-moffatt-if-it-becomes-a-little-terrifying-then-im-interested"
+      }
+    ]
+  },
+  "valerie-belin": {
+    "leadJa": "ヴァレリー・ベラン（1964年フランス生まれ）は、ポートレート・スティルライフ・ボディ・商品など多様な被写体を通じて、超精細な描写と人工性の間の不安定な関係を探る写真家。記述の正確さをそれ自体として追求することで、被写体の存在論的地位を宙吊りにする。",
+    "leadEn": "French artist born in 1964, known for photography that stages encounters between hyperreal description and artifice. Her practice moves across portrait, still life, body, luxury goods, mannequins, flowers, and digitally inflected image construction.",
+    "textJa": "経歴\n\n1964年フランス生まれ。ポートレート・スティルライフ・ボディ・マネキン・花・デジタル操作を組み合わせた写真実践で知られるアーティスト。写真がポスト・フォトグラフィック的・デジタル的な領域へ移行しつつあった時代に、ポートレートやスティルライフというより古典的なジャンルの内側からその問いを立てた点で独自の位置を占める。*1\n\n表現解説\n\n主要なテーマは、外見、人工性、身体の物体性、高級品、大量生産された表面、現実と作り物の間の不安定な境界である。正面的でしばしば連作的な提示、強烈な表面の細部描写、強い調子・色彩的制御、身体と物体を同等のイメージ物として扱う手法が特徴である。*2 代表作は『Bodybuilders』『Black Eyed Susan』、『Reflection』シリーズで、ドキュメンタリー的に見える正面描写から被写体・物体・シミュラクルが重なり合う不安定なイメージへの移行を示す。ベラン自身は「ストレート写真の精神で、ありのままに撮影することを目指してきた」と語るが、その見かけの直接性は戦略的なものであり、描写を不気味さの手前まで押し上げることで現実がすでにいかに美化・商品化されているかを問う。*1 V&Aのための『Reflection』シリーズなど後期の作品はデジタル操作とファッション・商業展示との対話を強め、アナログ期からデジタル期への連続性を示す。*4\n\n批評と受容\n\nベランはストレート写真と幻想の緊張を軸に受容されており、リアリストとしてもデジタル・ファンタジストとしても単純に還元されない位置に置かれている。批評的に最も強い軸は、写真が同時に誘惑的かつ疑わしいものとして機能する点にある。描写の鋭さが増すほど被写体の存在論的地位が不確かになるというこの逆説が、ポスト写真・商品の美学化をめぐる議論における彼女の重要性の核心である。*2",
+    "textEn": "Biography\n\nFrench artist born in 1964, known for photography that stages encounters between hyperreal description and artifice.*1*2*3. Her practice moves across portrait, still life, body, luxury goods, mannequins, flowers, and digitally inflected image construction.*1*2*3.\n\nExpression / method\n\nThe work is organized around appearance, artifice, the objecthood of bodies, luxury, mass-produced surfaces, and the unstable border between the real and the fabricated.*1*2*3. Frontal and often serial presentation, intense surface detail, strong tonal or chromatic control, and a treatment of bodies and objects that equalizes them as image-things. Later works intensify this through layering, digital manipulation, and a dialogue with fashion and commercial display.*1*2*3. Key examples include Bodybuilders, Black Eyed Susan, the Reflection series, and later portrait works, which are central because they show how Belin moves from documentary-seeming frontal description toward increasingly unstable images in which model, object, and simulacrum overlap.*1*2*4.\n\nBelin repeatedly states that she photographs things “as they are,” but that apparent straightness is strategic. By pushing description to the point where surfaces become uncanny, she uses photography to question how reality is already aestheticized and commodified.*1*2*3. Her work emerges when photography is moving into post-photographic and digitally inflected territory, but Belin’s importance lies in showing that these questions could be posed from within older genres such as portraiture and still life. Her work also speaks to late twentieth-century visual culture shaped by fashion, advertising, and synthetic materials.*1*2*3. Belin can be linked to post-photographic debates, but her work differs from overt appropriation because she starts with the camera’s descriptive force and then strains it toward artifice. This gives her a distinctive place between straight photography and image simulation.*1*2.\n\nBelin matters because she demonstrates how contemporary photography can turn descriptive exactitude against itself. The more sharply things appear, the more uncertain their ontological status becomes.*1*2*3. The work asks what happens when portrait and still life no longer secure the difference between living subject and manufactured surface. This is one reason her photography has become important for discussions of post-photography and the aestheticization of commodities.*1*2*4. Interview, artist-site, and V&A materials show that Belin’s work has circulated in museums and publications as a key example of photography’s negotiation with digital culture, luxury image-making, and the history of genre.*1*2*4.\n\nCriticism and reception\n\nBelin is consistently received through the tension between straight photography and illusion, which makes it important not to describe her too simply as either realist or digital fantasist.*1*2*3. Her own and curatorial texts emphasize the continuity between analog and digital phases of the work, suggesting that the real issue is not technological novelty but how photography creates belief in surfaces.*1*2*4. Final website copy should stress that Belin’s significance lies in making the photograph both seductive and suspicious at once.*1*2.",
+    "links": [
+      {
+        "url": "https://museemagazine.com/features/2022/3/3/from-our-archives-valrie-belin-puppet-master",
+        "label": "From Our Archives: Valérie Belin: Puppet Master. Musée Magazine."
+      },
+      {
+        "url": "https://loeildelaphotographie.com/en/les-franciscaines-an-interview-with-valerie-belin/",
+        "label": "Les Franciscaines: An Interview With Valérie Belin. L’Oeil de la Photographie."
+      },
+      {
+        "url": "https://valeriebelin.com/about",
+        "label": "About. Valérie Belin official site."
+      },
+      {
+        "url": "https://www.vam.ac.uk/articles/val%C3%A9rie-belins-reflection-series-for-the-va",
+        "label": "Valérie Belin’s Reflection series for the V&A. Victoria and Albert Museum."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "From Our Archives: Valérie Belin: Puppet Master. Musée Magazine.",
+        "url": "https://museemagazine.com/features/2022/3/3/from-our-archives-valrie-belin-puppet-master"
+      },
+      {
+        "num": 2,
+        "name": "Les Franciscaines: An Interview With Valérie Belin. L’Oeil de la Photographie.",
+        "url": "https://loeildelaphotographie.com/en/les-franciscaines-an-interview-with-valerie-belin/"
+      },
+      {
+        "num": 3,
+        "name": "About. Valérie Belin official site.",
+        "url": "https://valeriebelin.com/about"
+      },
+      {
+        "num": 4,
+        "name": "Valérie Belin’s Reflection series for the V&A. Victoria and Albert Museum.",
+        "url": "https://www.vam.ac.uk/articles/val%C3%A9rie-belins-reflection-series-for-the-va"
+      }
+    ]
+  },
+  "wolfgang-tillmans": {
+    "leadJa": "ヴォルフガング・ティルマンス（1968年ドイツ生まれ）は、日常・クィアな社会性・抽象・政治的イメージを横断する写真・インスタレーション・出版を展開するアーティスト。ターナー賞を受賞した初めての写真家であり、インスタレーション形式を写真的意味の一部とした先駆的実践で知られる。",
+    "leadEn": "German artist born in 1968 whose work spans photography, installation, publishing, and political image-making. First photographer to receive the Turner Prize, and a central figure in late twentieth-century contemporary photography.",
+    "textJa": "経歴\n\n1968年ドイツ生まれ。写真・インスタレーション・出版・政治的イメージ制作にわたる実践を展開するアーティスト。1990年代にクィアな可視性・雑誌文化・レイヴとクラブシーンを背景に登場し、ターナー賞を受賞した初めての写真家となった。*1\n\n表現解説\n\n主要なテーマは、日常生活、クィアな社会性、ユース・カルチャー、抽象、イメージの流通、政治的表明、私的観察と公的イメージの不安定さである。ポートレート・スティルライフ・クラブシーン・景観・ペーパードロップ抽象・フォトコピー的イメージ実験と、被写体やスケールの単一階層を意図的に拒否するインスタレーション形式にわたって活動する。*2 1990年代初期の雑誌・クラブ写真から、後の『Freischwimmer』などの抽象作品、インスタレーション的なプリントの星座まで、ユース・カルチャーの観察から写真的実践が何を含みうるかのより広い再定義へと移行してきた。ティルマンスは「自分自身の個人的なストーリーを通じて普遍的な物語を語りたい」と語っており、自伝的なものと社会史がいかに結びついているかを示す。*2 MoMAの展覧会「To look without fear」（2022年）はその批評的な受容を明確に示し、彼の実践が署名的スタイルではなく根本的な注意の術として位置づけられることを確認した。*1\n\n批評と受容\n\nポンピドゥーとMoMAの双方が実践の広さを一貫して強調しており、クラブ文化または抽象だけへの還元を避けることが批評的に重要である。歴史的には、インスタレーション・出版・クィア政治・媒体の再帰性が彼の事例では不可分に絡み合う。親密さと構造を結びつけ、友人・クラブ・抗議・紙・空・コピー機の粉塵がひとつの視覚世界の部分として扱われる点で、写真的注意そのものが政治的・倫理的方法となる。*3",
+    "textEn": "Biography\n\nGerman artist born in 1968 whose work spans photography, installation, publishing, and political image-making.*1*2. First photographer to receive the Turner Prize, and a central figure in late twentieth-century contemporary photography.*2*3.\n\nExpression / method\n\nThe work is organized around everyday life, queer sociality, youth culture, abstraction, circulation, political address, and the instability between private observation and public image.*1*2*3. Tillmans works across portraits, still lifes, club scenes, landscapes, paper-drop abstractions, photocopy-like image experiments, and installation formats that deliberately refuse a single hierarchy of subject or scale.*1*2. Key examples include early magazine and club photographs from the 1990s, later abstractions such as the Freischwimmer works, and installation-based constellations of prints, which are central because they show how he moved from youth-culture observation to a broader redefinition of what photographic practice can include.*1*2*4.\n\nInterviews and curatorial texts stress that Tillmans wants to look without fear and without inherited genre boundaries. The openness of his installation method is tied to a refusal to divide the world into major and minor subjects; private, political, and formal images share the same field.*1*2*3. Tillmans emerged in the 1990s amid queer visibility, magazine culture, rave and club scenes, and post-Cold War European circulation. His work belongs to a moment when photography became a key medium for articulating identity and social atmosphere without submitting to fixed documentary categories.*1*2*3. He is linked to post-conceptual photography, but unlike more detached image strategies of the same period, his work preserves direct involvement with lived communities. This matters historically because he combines diaristic proximity with a sophisticated understanding of installation, printing, and media circulation.*1*2.\n\nTillmans changed expectations about what a photographic artist could be. He helped make installation itself part of photographic meaning, and he expanded the medium beyond the single framed print toward a broader ecology of images and publics.*1*2*4. His work matters because it joins intimacy to structure. Images of friends, clubs, protests, paper, sky, or photocopier dust are all treated as parts of one visual world, making photographic attention itself into a political and ethical method.*1*2*3. Major exhibitions at Tate and MoMA, together with the artist’s own publishing and interview record, confirm that his work has circulated not only as museum photography but as a model for how images inhabit magazines, walls, books, and activist discourse.*1*2*4.\n\nCriticism and reception\n\nMoMA frames Tillmans through the exhibition title To look without fear, which is also a useful critical shorthand for how his work has been received: as an art of radical attention rather than a narrow signature style.*1*4. Centre Pompidou and MoMA materials both emphasize the breadth of the practice, which means final website copy should avoid reducing him either to club culture or to abstraction alone. His significance lies in the way these strands remain connected.*1*2*4. Historically, his reception is bound up with photography’s expanded field in the 1990s and 2000s: installation, publishing, queer politics, and medium reflexivity all become inseparable in his case.*1*2*3.",
+    "links": [
+      {
+        "url": "https://www.moma.org/artists/8044-wolfgang-tillmans",
+        "label": "Wolfgang Tillmans. MoMA."
+      },
+      {
+        "url": "https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/wolfgang-tillmans-i-would-like-to-tell-a-universal-tale-through-my-own-personal-story",
+        "label": "Wolfgang Tillmans: “I would like to tell a universal tale through my own personal story.” Centre Pompidou interview."
+      },
+      {
+        "url": "https://www.showstudio.com/projects/in_camera/wolfgang_tillmans",
+        "label": "Interview: Wolfgang Tillmans. SHOWstudio."
+      },
+      {
+        "url": "https://press.moma.org/wp-content/uploads/2021/02/MoMA_Tillmans_Press-Release_FINAL-2.pdf",
+        "label": "MoMA to Present New York’s First Comprehensive Museum Survey of Wolfgang Tillmans. MoMA press release."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Wolfgang Tillmans. MoMA.",
+        "url": "https://www.moma.org/artists/8044-wolfgang-tillmans"
+      },
+      {
+        "num": 2,
+        "name": "Wolfgang Tillmans: “I would like to tell a universal tale through my own personal story.” Centre Pompidou interview.",
+        "url": "https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/wolfgang-tillmans-i-would-like-to-tell-a-universal-tale-through-my-own-personal-story"
+      },
+      {
+        "num": 3,
+        "name": "Interview: Wolfgang Tillmans. SHOWstudio.",
+        "url": "https://www.showstudio.com/projects/in_camera/wolfgang_tillmans"
+      },
+      {
+        "num": 4,
+        "name": "MoMA to Present New York’s First Comprehensive Museum Survey of Wolfgang Tillmans. MoMA press release.",
+        "url": "https://press.moma.org/wp-content/uploads/2021/02/MoMA_Tillmans_Press-Release_FINAL-2.pdf"
+      }
+    ]
+  },
+  "yto-barrada": {
+    "leadJa": "イト・バラダ（1971年生まれ、フランス・モロッコ）は、写真・映像・インスタレーション・アーカイブにわたる実践で、タンジェを拠点に国境・都市変容・移動の政治を探るアーティスト。地政学的問題を壮大なイメージではなく、街路・建物・日常的な物体の微細な変化を通じて可視化する。",
+    "leadEn": "French-Moroccan artist born in 1971 whose work spans photography, film, installation, publishing, and archival practice. Best known in early photographic terms for projects around Tangier, urban change, and the politics of visibility at the edge of Europe and North Africa.",
+    "textJa": "経歴\n\n1971年生まれ、フランス・モロッコ籍。写真・映像・インスタレーション・出版・アーカイブ実践にわたる活動を展開するアーティスト。タンジェを主な活動拠点とし、移住・ポストコロニアル的地理・都市変容をめぐる議論において重要な位置を占める。タンジェ・シネマテークの設立など、文化機関の構築も実践の一部をなす。*1\n\n表現解説\n\n主要なテーマは、国境、都市変容、ポストコロニアル空間、移動、遊び、アーカイブ、日常的な形式の政治である。特定の都市的・社会的文脈と結びついた写真、建築・表面・待つこと・変化の非公式なサインへの注目、後のインスタレーションや素材実験への展開が特徴的であり、写真的観察から離れることはない。*2 タンジェを主題とした初期の連作、後の美術館委嘱作品『Le Grand Soir』、映画と都市記憶をめぐるアーカイブ関連作品が代表作で、ローカルな状況を国境政治と想像力の形式をめぐる反省へと転換する様子を示す。インタビューと展示テキストは、バラダが抽象的な地政学的言明ではなく生きられた文脈から出発することを志向しており、政治的条件が通常の街路・物体・市民空間においていかに読み解かれるかを登録するために写真を使うことを示す。*3 移住・ポストコロニアル的地理・近代都市計画の後日談がアーティストたちの関心を集めていた1990〜2000年代に登場した作家として、写真が壮大な国境イメージだけでなく日常的な質感・都市変化・文化的インフラを通じて地政学的問題に間接的に接近できることを示した点に歴史的意義がある。*1\n\n批評と受容\n\n機関の受容は政治と遊びの重なりを一貫して強調しており、純粋なドキュメンタリー写真家としての還元を避けることが重要である。政治を見出しとなる事件ではなく、街路・建物・素材・小さな市民的仕草に堆積したものとして扱う点に批評的な意義の核心がある。*4",
+    "textEn": "Biography\n\nFrench-Moroccan artist born in 1971 whose work spans photography, film, installation, publishing, and archival practice.*1*2*3. Best known in early photographic terms for projects around Tangier, urban change, and the politics of visibility at the edge of Europe and North Africa.*1*2*3.\n\nExpression / method\n\nThe work is organized around borders, urban transformation, postcolonial space, migration, play, archives, and the politics of everyday forms.*1*2*3. Its formal traits include photography tied to specific urban and social contexts; attention to architecture, surfaces, waiting, and unofficial signs of change; later expansion into installation and material experimentation without abandoning photographic observation.*1*2*3. Key examples include the Tangier-based projects, later museum commissions such as Le Grand Soir, and archive-related works around cinema and urban memory, which are central because they show how Barrada turns local situations into reflections on border politics and forms of imagination.*1*2*3.\n\nInterviews and exhibition texts stress Barrada’s wish to work from lived context rather than abstract geopolitical statement. Photography allows her to register how political conditions become legible in ordinary streets, objects, and civic spaces.*1*2*3. Barrada’s early work belongs to the 1990s–2000s moment when artists increasingly addressed migration, postcolonial geography, and the afterlives of modernist urban planning. Tangier becomes, in her case, not just a location but a lens on suspended mobility and uneven globalization.*1*2*3. She connects to documentary and conceptual photography, but her work differs from neutral survey by insisting on play, craft, education, and local institutional work such as the Cinémathèque de Tanger. This broader ecology of practice matters historically.*1*2*3.\n\nBarrada matters because she showed how photography could approach geopolitical issues obliquely, through everyday textures, urban change, and cultural infrastructure rather than through spectacular border imagery alone.*1*2*3. The work is important because it treats politics not as headline event but as something sedimented in streets, buildings, materials, and minor civic gestures. Photography becomes a way of noticing structural conditions without reducing them to illustration.*1*2*4. MoMA PS1 and MASS MoCA materials show that Barrada’s work has circulated through contemporary-art institutions as an expanded practice in which photography remains foundational to later installations, films, and educational projects.*1*2*3.\n\nCriticism and reception\n\nInstitutional reception consistently frames Barrada through the overlap of politics and play. This is useful because it prevents final website text from treating her as a purely documentary artist.*1*2*4. The work’s historical importance is strongest when tied to Tangier, the circulation of goods and people, and the artist’s efforts to build cultural institutions as part of her practice.*1*2*3. Final website copy should emphasize that Barrada’s photography works through indirectness: she makes broad political conditions visible by photographing their modest and often overlooked material forms.*1*2*4.",
+    "links": [
+      {
+        "url": "https://press.moma.org/exhibition/yto-barrada-le-grand-soir/",
+        "label": "Yto Barrada: Le Grand Soir. MoMA PS1 press materials."
+      },
+      {
+        "url": "https://massmoca.org/wp-content/uploads/2022/03/YtoBarrada_GalleryGuide_MECH.pdf",
+        "label": "Yto Barrada: Ways to Baffle the Wind. MASS MoCA gallery guide."
+      },
+      {
+        "url": "https://www.vogue.com/article/yto-barrada-moma-ps1-icp-interview",
+        "label": "In Two Shows in New York, Yto Barrada Mingles Politics and Play. Vogue."
+      },
+      {
+        "url": "https://sculpturemagazine.art/object-lessons-yto-barrada/",
+        "label": "Object Lessons: Yto Barrada. Sculpture Magazine."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Yto Barrada: Le Grand Soir. MoMA PS1 press materials.",
+        "url": "https://press.moma.org/exhibition/yto-barrada-le-grand-soir/"
+      },
+      {
+        "num": 2,
+        "name": "Yto Barrada: Ways to Baffle the Wind. MASS MoCA gallery guide.",
+        "url": "https://massmoca.org/wp-content/uploads/2022/03/YtoBarrada_GalleryGuide_MECH.pdf"
+      },
+      {
+        "num": 3,
+        "name": "In Two Shows in New York, Yto Barrada Mingles Politics and Play. Vogue.",
+        "url": "https://www.vogue.com/article/yto-barrada-moma-ps1-icp-interview"
+      },
+      {
+        "num": 4,
+        "name": "Object Lessons: Yto Barrada. Sculpture Magazine.",
+        "url": "https://sculpturemagazine.art/object-lessons-yto-barrada/"
+      }
+    ]
+  },
+  "yuki-onodera": {
+    "leadJa": "オノデラユキ（1962年生まれ）は、ルール駆動の連作・暗室実験・大判手製プリントを特徴とし、写真過程を概念的な問いの生成装置として扱う写真家。「新宇宙の写真」賞を受賞し、コンセプチュアルな手続きと視覚的な驚異を結びつける実践を展開してきた。",
+    "leadEn": "Japanese photographer born in 1962, based for long periods in France, known for conceptually structured photographic series and experimental darkroom processes. Received the first New Cosmos of Photography award and became one of the key Japanese artists linking conceptual procedure with photographic imagination in the 1990s.",
+    "textJa": "経歴\n\n1962年生まれ。長期にわたりフランスを拠点に活動する日本の写真家。「キヤノン新宇宙の写真」賞の初代受賞者であり、ICP・大阪国立国際美術館・東京都写真美術館など国際的な機関で展示されてきた。*1\n\n表現解説\n\n主要なテーマは、偶然性、匿名性、光学的な遊び、自己課題的な手続き、脱領域化、通常の空間を概念的フィクションへと変換する写真の能力である。ルール駆動の連作、暗室への介入、大判手製プリント、鏡像的または変容されたイメージ、単純な概念的指示から始まって予期しない視覚的結果を生む作品が特徴的な手法である。*2 早期の自己構造化連作から後の『Camera』などのシリーズまで、東京都写真美術館での回顧展『Into the Labyrinth of Photography』はオノデラが写真を単純な描写ではなく実験の媒体として扱うことを明示的に枠組みした。キヤノンのインタビューは、彼女のハンドメイドな方法と独自の暗室プロセスへの関心が場面と写真家の間の直接的な連続性を手続き・物語・規則を通じて断ち切るという姿勢から来ていることを示す。*4 日本写真が戦後の主要なドキュメンタリーとProvoke系譜を超えてより概念的・越境的・媒体反省的な実践へと向かいつつあった1990年代に登場した作家として、厳密な手続きと遊び心ある光学的発明が共存できることを示した点に歴史的意義がある。*1\n\n批評と受容\n\n東京都写真美術館の回顧展資料は、オノデラを迷宮的な手続きと光学的不確かさの写真家として枠組みしており、歴史的な記述において有効な指針となる。写真の見かけのインデックス的な世界との結びつきをそれを放棄することなく緩めることができるかを問う点が、批評的に最も意義深いラインである。手続きが写真の予測不可能性をより可視的にすることで、写真そのものを問い直す。*4",
+    "textEn": "Biography\n\nJapanese photographer born in 1962, based for long periods in France, known for conceptually structured photographic series and experimental darkroom processes.*1*2*3. Received the first New Cosmos of Photography award and became one of the key Japanese artists linking conceptual procedure with photographic imagination in the 1990s.*1*2.\n\nExpression / method\n\nThe work is organized around chance, anonymity, optical play, self-imposed procedure, displacement, and photography’s ability to transform ordinary space into conceptual fiction.*1*2*3. Its formal traits include rule-based series, darkroom intervention, large handmade prints, mirrored or transformed imagery, and projects that often begin with a simple conceptual instruction that then generates unexpected visual outcomes.*1*2*3. Key examples include early self-structured series recognized at the New Cosmos award, later bodies such as Camera and the works surveyed in Into the Labyrinth of Photography, which are central because they show Onodera turning photography into a medium of experiment rather than simple depiction.*1*2*4.\n\nMuseum and interview materials suggest that Onodera is interested in severing direct continuity between scene and photographer through rules, stories, and procedures. That matters because it shifts emphasis from expression of a single moment to the unfolding of a conceptual system inside photographic making.*2*4. Onodera emerges in the 1990s when Japanese photography was moving beyond the major postwar documentary and Provoke lineages toward more conceptual, transnational, and medium-reflexive practices. Her work is important in that transition.*1*2*3. She can be placed alongside post-conceptual photographers who use the camera experimentally, but her work remains distinct in the way it joins hand-made print processes to game-like rules and visual mystery.*1*2*3.\n\nOnodera matters because she broadened the field of Japanese contemporary photography beyond documentary immediacy and diaristic subjectivity, showing how rigorous procedure and playful optical invention could coexist.*1*2*4. The work asks whether photography’s apparent indexical bond to the world can be loosened without being abandoned. Rather than denying photography, her procedures make its unpredictability more visible.*1*2*4. ICP, Osaka, and Tokyo museum materials show that Onodera’s work has circulated institutionally as a major conceptual-experimental photography practice rather than as a marginal or purely local one.*1*2*4.\n\nCriticism and reception\n\nThe Tokyo Photographic Art Museum retrospective material is especially useful because it frames Onodera as a photographer of labyrinthine procedure and optical uncertainty, which is a strong way to write about her historically.*4. Canon’s interview material helps show that her methods are discussed not only as effects but as deliberate ways of thinking through what an image can be.*2. Final website copy should emphasize that Onodera’s importance lies in transforming photographic process into a generator of conceptual and perceptual surprise.*1*2*4.",
+    "links": [
+      {
+        "url": "https://www.icp.org/content/yuki-onodera-1",
+        "label": "Yuki Onodera. International Center of Photography."
+      },
+      {
+        "url": "https://global.canon/en/newcosmos/interview/yuki-onodera/index.html",
+        "label": "CLOSE UP | Interview Yuki Onodera. Canon New Cosmos of Photography."
+      },
+      {
+        "url": "https://www.nmao.go.jp/archive/en/exhibition/2004/yuki_onodera.html",
+        "label": "Yuki Onodera 2004 exhibition. The National Museum of Art, Osaka."
+      },
+      {
+        "url": "https://topmuseum.jp/upload/2/1202/onodera.pdf",
+        "label": "Onodera Yuki: Into the Labyrinth of Photography. Tokyo Photographic Art Museum PDF."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Yuki Onodera. International Center of Photography.",
+        "url": "https://www.icp.org/content/yuki-onodera-1"
+      },
+      {
+        "num": 2,
+        "name": "CLOSE UP | Interview Yuki Onodera. Canon New Cosmos of Photography.",
+        "url": "https://global.canon/en/newcosmos/interview/yuki-onodera/index.html"
+      },
+      {
+        "num": 3,
+        "name": "Yuki Onodera 2004 exhibition. The National Museum of Art, Osaka.",
+        "url": "https://www.nmao.go.jp/archive/en/exhibition/2004/yuki_onodera.html"
+      },
+      {
+        "num": 4,
+        "name": "Onodera Yuki: Into the Labyrinth of Photography. Tokyo Photographic Art Museum PDF.",
+        "url": "https://topmuseum.jp/upload/2/1202/onodera.pdf"
+      }
+    ]
+  },
+  "yurie-nagashima": {
+    "leadJa": "長島有里枝（1973年生まれ）は、セルフポートレートと家族写真を通じて女性の身体的自律・ジェンダー・表象の政治を問う写真家・作家。1990年代の日本に登場し、写真家としての実践とフェミニスト批評の言説の両方からいわゆる「女の子写真」の枠組みに異議を唱えてきた。",
+    "leadEn": "Japanese photographer and writer born in 1973, known from the 1990s onward for self-portraiture, family nudity, feminist critique, and later writing on photography and gender. Rose to public attention in Japan in the 1990s through works that placed her own body and family into direct confrontation with social expectations around femininity and representation.",
+    "textJa": "経歴\n\n1973年生まれ。1990年代から日本写真のフェミニスト的実践において中心的な位置を占めてきた写真家・作家。セルフポートレートと家族写真を通じた作品と並行して、写真とジェンダーをめぐる批評的言説の形成にも関与してきた。*1\n\n表現解説\n\n主要なテーマは、セルフポートレート、女性の身体的自律、家族、ジェンダー化された視線、親密さ、アイロニー、日本写真における作者性の政治である。直接的なセルフポートレート、家族の肖像、アーティスト自身の身体の感情的に開かれた使用、後の写真・文章・批評的言説への展開が特徴的な手法であり、作品はしばしばスナップショット的な率直さを保ちながら強い概念的意図を持って機能する。*2 初期のヌードの家族・セルフポートレート作品から、妊娠・家庭生活をめぐる後のセルフポートレート、『not six』などのプロジェクトまで、長島が個人的生活をフェミニスト的・写真的論証の場へと転換する様子を示す。自己の使用は狭義の告白的なものではなく、身体と家族関係が日本社会においていかにイメージとなるかを試す方法である。長島自身は「言い返したかった」と語っており、実践の動機がフェミニスト的であると同時に言説的であることを示す。*1 いわゆる「女の子写真」の言説と格闘していた1990年代の日本写真に登場した作家として、長島はその言説に単純に収まることなく、執筆においても批評的に分析・異議申し立てを行った点で歴史的に重要である。*3\n\n批評と受容\n\nアパーチャーのインタビューは、長島をマレーゲイズへのフェミニスト的問いの文脈に置きながら日本的な文脈の特殊性を保持している。作品が挑発的なイメージを作るだけでなく、それらのイメージが理解されるための言説を再形成した点に最大の歴史的意義がある。アーティストと作家の二重の役割がその受容と結びついており、批評的な記述においても保持すべき点である。*1",
+    "textEn": "Biography\n\nJapanese photographer and writer born in 1973, known from the 1990s onward for self-portraiture, family nudity, feminist critique, and later writing on photography and gender.*1*2*3. Rose to public attention in Japan in the 1990s through works that placed her own body and family into direct confrontation with social expectations around femininity and representation.*1*2*3.\n\nExpression / method\n\nThe work is organized around self-portraiture, female bodily autonomy, family, gendered looking, intimacy, irony, and the politics of authorship in Japanese photography.*1*2*3. Its formal traits include direct self-portraiture, family portraits, staged but emotionally open use of the artist’s own body, and later a movement between photography, writing, and critical discourse. The work often retains the frankness of snapshot photography while operating with strong conceptual intent.*1*2*3. Key examples include the early nude family and self-portrait works, later self-portraits around pregnancy and domestic life, and interview-discussed projects such as not six, which are central because they show how Nagashima turns personal life into a site of feminist and photographic argument.*1*2*3.\n\nNagashima’s interviews make clear that photography became a means to argue back against inherited representations of women and against simplistic readings of intimacy. The use of the self is not confessional in a narrow sense; it is a method for testing how bodies and family relations become images in Japanese society.*1*2*3. Her work emerges in the 1990s, when Japanese photography was grappling with gender, private life, and the so-called “girly photo” discourse. Nagashima is historically important because she did not simply fit that discourse; she also critically analyzed and contested it in her writing.*1*2*3. She can be linked to feminist self-portraiture internationally, but her work also belongs to a specifically Japanese debate about female photographers, domesticity, and the critical language surrounding them. This gives the practice a double art-historical significance.*1*2*3.\n\nNagashima matters because she brought self-portraiture, family, and female desire into Japanese photographic discourse in a way that was simultaneously image-based and theoretically self-aware.*1*2*3. The work asks who gets to authorize intimate images and who controls the language used to categorize women’s photographic practices. Its significance lies in making representation itself part of the argument.*1*2*3. Interviews and gallery texts show that Nagashima’s practice has circulated not only as photographic artwork but as a feminist intervention within Japanese photography discourse more broadly.*1*2*3.\n\nCriticism and reception\n\nAperture’s interview framing is especially useful because it places Nagashima within feminist questions around the male gaze while still preserving the specificity of the Japanese context.*1. Tokyo Art Beat and Conscientious materials help show that the work’s reception is bound to her dual role as artist and writer, which should be retained in final website prose.*2*3. Final website copy should emphasize that Nagashima is important not only for making provocative images, but for helping reshape the discourse through which those images are understood.*1*2*3.",
+    "links": [
+      {
+        "url": "https://aperture.org/interviews/how-yurie-nagashimas-self-portraits-male-gaze/",
+        "label": "How Yurie Nagashima’s Self Portraits Interrogate the Male Gaze. Aperture."
+      },
+      {
+        "url": "https://www.tokyoartbeat.com/en/articles/-/yurie-nagashimas-and-a-pinch-of-irony-with-a-hint-of-love",
+        "label": "Yurie Nagashima: And a Pinch of Irony with a Hint of Love. Tokyo Art Beat."
+      },
+      {
+        "url": "https://cphmag.com/conv-yurie-nagashima/",
+        "label": "A Conversation with Yurie Nagashima. Conscientious Photography Magazine."
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "How Yurie Nagashima’s Self Portraits Interrogate the Male Gaze. Aperture.",
+        "url": "https://aperture.org/interviews/how-yurie-nagashimas-self-portraits-male-gaze/"
+      },
+      {
+        "num": 2,
+        "name": "Yurie Nagashima: And a Pinch of Irony with a Hint of Love. Tokyo Art Beat.",
+        "url": "https://www.tokyoartbeat.com/en/articles/-/yurie-nagashimas-and-a-pinch-of-irony-with-a-hint-of-love"
+      },
+      {
+        "num": 3,
+        "name": "A Conversation with Yurie Nagashima. Conscientious Photography Magazine.",
+        "url": "https://cphmag.com/conv-yurie-nagashima/"
+      }
+    ]
+  }
+});
+/* 2026-04-19 English reflection overrides end */
