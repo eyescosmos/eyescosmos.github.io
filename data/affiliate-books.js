@@ -417,6 +417,138 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.demachy = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['eugene-atget'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4sM8QC0' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mGTbSZ' }
+  },
+  books: [
+    {
+      titleJa: 'Atget',
+      titleEn: 'Atget',
+      noteJa: 'ドキュメンタリーと都市記録を写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for documentary photography and the urban record in photographic history.',
+      urlJa: 'https://amzn.to/4sM8QC0',
+      urlEn: 'https://amzn.to/4mGTbSZ'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/3QdArOW',
+      urlEn: 'https://amzn.to/4cxGSUh'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jacques-henri-lartigue'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4tjEEPv' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4sQhrnh' }
+  },
+  books: [
+    {
+      titleJa: 'Diary of a Century',
+      titleEn: 'Diary of a Century',
+      noteJa: 'プライベート写真を写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for tracing private photography within the history of photography.',
+      urlJa: 'https://amzn.to/4tjEEPv',
+      urlEn: 'https://amzn.to/4sQhrnh'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/41Q21US',
+      urlEn: 'https://amzn.to/4mHGU0E'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['paul-geniaux'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4mDIKiY' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cD2vCL' }
+  },
+  books: [
+    {
+      titleJa: 'ポール・ジェニオー 関連写真集',
+      titleEn: 'Paul Géniaux Related Photobooks',
+      noteJa: 'ドキュメンタリーと社会ドキュメンタリーを写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for documentary and social documentary photography in photographic history.',
+      urlJa: 'https://amzn.to/4mDIKiY',
+      urlEn: 'https://amzn.to/4cD2vCL'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['lewis-hine'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4sHniuR' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3QCmzxH' }
+  },
+  books: [
+    {
+      titleJa: 'Men at Work',
+      titleEn: 'Men at Work',
+      noteJa: '社会ドキュメンタリーとドキュメンタリーを写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for social documentary and documentary photography in photographic history.',
+      urlJa: 'https://amzn.to/4sHniuR',
+      urlEn: 'https://amzn.to/3QCmzxH'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/3OCH3Wz',
+      urlEn: 'https://amzn.to/3OxjEG0'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い掲載を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby listings.',
+      urlJa: 'https://amzn.to/4sK6J1e',
+      urlEn: 'https://amzn.to/4tn0z8q'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-屋須弘平'] = {
+  featured: {
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3OfBuNJ' }
+  },
+  books: [
+    {
+      titleJa: '屋須弘平 関連写真集',
+      titleEn: 'Kohei Yasu Related Photobooks',
+      noteJa: '日本写真を写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for tracing Japanese photography within photographic history.',
+      urlEn: 'https://amzn.to/3OfBuNJ'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-鳥居龍蔵'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4sHR2YJ' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mKxH7N' }
+  },
+  books: [
+    {
+      titleJa: '鳥居龍蔵 関連写真集',
+      titleEn: 'Ryuzo Torii Related Photobooks',
+      noteJa: '日本写真とドキュメンタリーを写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for Japanese photography and documentary practice in photographic history.',
+      urlJa: 'https://amzn.to/4sHR2YJ',
+      urlEn: 'https://amzn.to/4mKxH7N'
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.strand = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/41j44AD' },
@@ -446,6 +578,234 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.strand = {
       noteEn: 'A search link for related photobooks and other available editions.',
       urlJa: 'https://amzn.to/41WUB20',
       urlEn: 'https://amzn.to/4t0D317'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['alexander-rodchenko'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4u0qsen' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3OfBU6L' }
+  },
+  books: [
+    {
+      titleJa: 'Photography 1924-1954',
+      titleEn: 'Photography 1924-1954',
+      noteJa: 'モダニズムと新しいヴィジョンを写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for modernism and the New Vision in photographic history.',
+      urlJa: 'https://amzn.to/4u0qsen',
+      urlEn: 'https://amzn.to/3OfBU6L'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4tpA2aA',
+      urlEn: 'https://amzn.to/3OShReH'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い掲載を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby listings.',
+      urlJa: 'https://amzn.to/4u06oZE',
+      urlEn: 'https://amzn.to/41Li8TM'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['andre-kertesz'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3OCfWee' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4to7230' }
+  },
+  books: [
+    {
+      titleJa: 'アンドレ・ケルテス 関連写真集',
+      titleEn: 'André Kertész Related Photobooks',
+      noteJa: 'ストリート写真とドキュメンタリーを写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for street photography and documentary practice in photographic history.',
+      urlJa: 'https://amzn.to/3OCfWee',
+      urlEn: 'https://amzn.to/4to7230'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4ezjng8',
+      urlEn: 'https://amzn.to/4vOQLGb'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い掲載を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby listings.',
+      urlJa: 'https://amzn.to/4vEf7SM'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['germaine-krull'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4mHoFZf' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4mHoFZf' }
+  },
+  books: [
+    {
+      titleJa: 'Métal',
+      titleEn: 'Métal',
+      noteJa: 'モダニズムとフォトジャーナリズムを写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for modernism and photojournalism in photographic history.',
+      urlJa: 'https://amzn.to/4mHoFZf',
+      urlEn: 'https://amzn.to/4mHoFZf'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4tyR3zh',
+      urlEn: 'https://amzn.to/4tyR3zh'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['charles-sheeler'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4cD3uTt' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4vIK5ZQ' }
+  },
+  books: [
+    {
+      titleJa: 'チャールズ・シェラー 関連写真集',
+      titleEn: 'Charles Sheeler Related Photobooks',
+      noteJa: 'モダニズムとストレート写真を写真史の流れとともにたどる入口になる一冊。',
+      noteEn: 'An entry point for modernism and straight photography in photographic history.',
+      urlJa: 'https://amzn.to/4cD3uTt',
+      urlEn: 'https://amzn.to/4vIK5ZQ'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlEn: 'https://amzn.to/4sKIz6Q'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-中山岩太'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4mPkZ7S' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3OtCuxN' }
+  },
+  books: [
+    {
+      titleJa: '中山岩太 関連写真集',
+      titleEn: 'Iwata Nakayama Related Photobooks',
+      noteJa: '日本モダニズム写真の出発点をたどる入口になる一冊。',
+      noteEn: 'An entry point for the beginnings of Japanese modernist photography.',
+      urlJa: 'https://amzn.to/4mPkZ7S',
+      urlEn: 'https://amzn.to/3OtCuxN'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4tkIV5h',
+      urlEn: 'https://amzn.to/4tjBBa9'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い掲載を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby listings.',
+      urlJa: 'https://amzn.to/4tjBxXX'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-安井仲治'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4vILMGU' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4eAzQAJ' }
+  },
+  books: [
+    {
+      titleJa: '安井仲治 関連写真集',
+      titleEn: 'Nakaji Yasui Related Photobooks',
+      noteJa: '戦前日本写真の多面性を見渡す入口になる一冊。',
+      noteEn: 'An entry point for the many-sided character of prewar Japanese photography.',
+      urlJa: 'https://amzn.to/4vILMGU',
+      urlEn: 'https://amzn.to/4eAzQAJ'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/3Ql41ly',
+      urlEn: 'https://amzn.to/48GM1Z6'
+    },
+    {
+      titleJa: 'Amazon検索結果',
+      titleEn: 'Amazon Search Results',
+      noteJa: '関連写真集や近い掲載を探すための検索リンク。',
+      noteEn: 'A search link for related photobooks and nearby listings.',
+      urlJa: 'https://amzn.to/4thx5sG'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-福原信三'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/41LlaY8' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cD533N' }
+  },
+  books: [
+    {
+      titleJa: '福原信三 関連写真集',
+      titleEn: 'Shinzo Fukuhara Related Photobooks',
+      noteJa: '日本近代写真の制度と美学をたどる入口になる一冊。',
+      noteEn: 'An entry point for the institutions and aesthetics of modern Japanese photography.',
+      urlJa: 'https://amzn.to/41LlaY8',
+      urlEn: 'https://amzn.to/4cD533N'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/3OdiGPa',
+      urlEn: 'https://amzn.to/4dZXxT4'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-野島康三'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4cAPb1x' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tZIPzR' }
+  },
+  books: [
+    {
+      titleJa: '野島康三 関連写真集',
+      titleEn: 'Yasuzo Nojima Related Photobooks',
+      noteJa: '肖像と近代写真の移行を見渡す手がかりになる一冊。',
+      noteEn: 'A guide to portraiture and the transition into modern Japanese photography.',
+      urlJa: 'https://amzn.to/4cAPb1x',
+      urlEn: 'https://amzn.to/4tZIPzR'
+    },
+    {
+      titleJa: '関連写真集',
+      titleEn: 'Related photobook',
+      noteJa: '同じ写真家を別の本や別の掲載でたどるための関連リンク。',
+      noteEn: 'A related photobook or listing that broadens the same photographer\'s context.',
+      urlJa: 'https://amzn.to/4vINLuH',
+      urlEn: 'https://amzn.to/4sL8M5m'
     }
   ]
 };
