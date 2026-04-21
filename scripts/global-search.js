@@ -1,5 +1,5 @@
 (function () {
-  const SCRIPT_VERSION = '20260421a';
+  const SCRIPT_VERSION = '20260421b';
   const DATA_FILES = [
     'data/movements.js?v=20260403d',
     'data/eras.js?v=20260403c',
@@ -482,7 +482,9 @@
         gap: 8px;
       }
       .global-search-card {
-        display: grid;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
         gap: 5px;
         padding: 12px 12px 11px;
         border: 1px solid rgba(198, 170, 130, 0.12);
@@ -490,24 +492,33 @@
         text-decoration: none;
         color: inherit;
         min-width: 0;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
       }
       .global-search-card:hover {
         border-color: rgba(198, 170, 130, 0.32);
         background: rgba(198, 170, 130, 0.07);
       }
       .global-search-card-top {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
         gap: 12px;
         align-items: baseline;
+        width: 100%;
+        min-width: 0;
+        writing-mode: horizontal-tb !important;
       }
       .global-search-title {
         color: var(--text, #eee6d8);
         font: 700 14px/1.35 'Noto Sans JP', sans-serif;
         letter-spacing: 0.03em;
         min-width: 0;
-        word-break: keep-all;
-        overflow-wrap: anywhere;
+        flex: 1 1 auto;
+        word-break: normal;
+        overflow-wrap: break-word;
+        white-space: normal;
+        writing-mode: horizontal-tb !important;
       }
       .global-search-kind {
         flex: 0 0 auto;
@@ -515,6 +526,8 @@
         font: 400 10px/1 'DM Mono', monospace;
         letter-spacing: 0.12em;
         text-transform: uppercase;
+        white-space: nowrap;
+        writing-mode: horizontal-tb !important;
       }
       .global-search-meta,
       .global-search-text,
@@ -523,8 +536,11 @@
         font: 400 11px/1.55 'DM Mono', 'Noto Sans JP', monospace;
         letter-spacing: 0.04em;
         min-width: 0;
-        word-break: keep-all;
-        overflow-wrap: anywhere;
+        width: 100%;
+        word-break: normal;
+        overflow-wrap: break-word;
+        white-space: normal;
+        writing-mode: horizontal-tb !important;
       }
       .global-search-tags {
         color: var(--accent, #c6aa82);

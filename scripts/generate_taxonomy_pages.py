@@ -12,7 +12,7 @@ REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260419c"
-GLOBAL_SEARCH_VERSION = "20260421a"
+GLOBAL_SEARCH_VERSION = "20260421b"
 NON_PHOTOGRAPHER_IDS = {
     "charles-wirgman",
     "fabian-marti",

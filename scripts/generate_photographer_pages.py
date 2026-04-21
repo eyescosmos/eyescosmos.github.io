@@ -17,7 +17,7 @@ REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260419c"
-GLOBAL_SEARCH_VERSION = "20260421a"
+GLOBAL_SEARCH_VERSION = "20260421b"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "charles-wirgman",
