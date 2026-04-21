@@ -36,6 +36,16 @@ COUNTRY_META = {
     "BR": {"slug": "brazil", "ja": "ブラジル", "en": "Brazil"},
     "CA": {"slug": "canada", "ja": "カナダ", "en": "Canada"},
 }
+COUNTRY_ADJECTIVES_EN = {
+    "France": "French",
+    "United Kingdom": "British",
+    "United States": "American",
+    "Italy": "Italian",
+    "Germany": "German",
+    "Japan": "Japanese",
+    "Brazil": "Brazilian",
+    "Canada": "Canadian",
+}
 FEATURED_PHOTOGRAPHER_IDS = [
     "daguerre",
     "fenton",
@@ -166,6 +176,16 @@ def truncate_text(text: str, length: int) -> str:
     return value[:cutoff].rstrip("、。,. ") + "…"
 
 
+def clip_at_word(text: str, length: int) -> str:
+    value = normalize_space(text)
+    if len(value) <= length:
+        return value
+    cutoff = value.rfind(" ", 0, length)
+    if cutoff < max(20, length // 2):
+        cutoff = length
+    return value[:cutoff].rstrip("、。,. ")
+
+
 def english_movement_name(movement: str, movements_meta: dict) -> str:
     meta = movements_meta.get(movement, {})
     return meta.get("en") or MOVEMENT_NAME_OVERRIDES_EN.get(movement) or movement
@@ -183,6 +203,14 @@ def fallback_english_reference_label(url: str) -> str:
 
 def english_reference_label(label: str, url: str) -> str:
     value = normalize_space(label)
+    if value in {"Wikipedia (JA)", "Wikipedia JA"}:
+        return "Japanese Wikipedia"
+    if value in {"Wikipedia (EN)", "Wikipedia EN"}:
+        return "Wikipedia"
+    if "Wikipedia (JA)" in value:
+        value = value.replace("Wikipedia (JA)", "Japanese Wikipedia")
+    if "Wikipedia (EN)" in value:
+        value = value.replace("Wikipedia (EN)", "Wikipedia")
     if not value or not JP_TEXT_RE.search(value):
         return value
     for source, target in EN_REFERENCE_REPLACEMENTS.items():
@@ -455,29 +483,35 @@ def build_meta_summary(photographer: dict, lang: str, era_lookup: dict, movement
     if lang == "en":
         if not placeholder and sentences:
             summary = " ".join(sentences)
-            if years and name not in summary:
+            if len(summary) <= 155 and years and name not in summary:
                 stripped = strip_leading_identity(summary, photographer, lang)
                 summary = f"{name} ({years}): {stripped}"
-            return truncate_text(summary, 155)
+            if len(summary) <= 155:
+                return summary
         parts = []
         if years:
             parts.append(f"{name} ({years})")
         else:
             parts.append(name)
         if country_en:
-            parts.append(f"is a photographer associated with {country_en}")
+            country_word = COUNTRY_ADJECTIVES_EN.get(country_en, country_en)
+            article = "an" if country_word[:1].lower() in {"a", "e", "i", "o", "u"} else "a"
+            parts.append(f"is {article} {country_word} photographer")
         else:
             parts.append("is a photographer")
         if descriptor:
-            parts.append(f"whose work is often discussed through {descriptor.lower()}")
+            parts.append(f"associated with {clip_at_word(descriptor.lower(), 52)}")
         elif movement_phrase:
-            parts.append(f"whose work is often discussed through {movement_phrase}")
+            parts.append(f"associated with {clip_at_word(movement_phrase, 52)}")
         period = era_period(photographer, era_lookup)
+        opening = " ".join(parts).rstrip(".") + "."
         if period and period != "—":
-            parts.append(f"This page traces the photographer's place in the photographic context of {period}, together with related figures and sources.")
+            closing = "Trace related eras, movements, figures, and sources."
         else:
-            parts.append("This page traces the photographer's historical context, related figures, and sources.")
-        return truncate_text(" ".join(parts), 155)
+            closing = "Trace related eras, movements, figures, and sources."
+        summary = f"{opening} {closing}"
+        clipped = clip_at_word(summary, 155).rstrip(".")
+        return f"{clipped}."
 
     if not placeholder and sentences:
         summary = "".join(sentences)
@@ -1091,10 +1125,32 @@ def build_description(photographer: dict, lang: str, era_lookup: dict, movements
 
 def build_title(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
     name_primary = display_name(photographer, lang)
-    role = extract_title_role(photographer, lang, era_lookup, movements_meta, enrichments)
     site = "Photo Coordinates" if lang == "en" else "写真の座標"
+    if lang == "en":
+        movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=1)
+        movement = movement_names[0] if movement_names else ""
+        country = country_entry(photographer.get("nationality") or "").get("en") or ""
+        country_adj = COUNTRY_ADJECTIVES_EN.get(country, country)
+        candidates = []
+        if movement and country_adj:
+            candidates.append(f"{name_primary}: {movement} and {country_adj} Photography | {site}")
+            candidates.append(f"{name_primary}: {movement} in {country} | {site}")
+        if movement:
+            candidates.append(f"{name_primary}: {movement} in Photography History | {site}")
+            candidates.append(f"{name_primary}: {movement} | {site}")
+        if country_adj:
+            candidates.append(f"{name_primary} and {country_adj} Photography | {site}")
+        role = extract_title_role(photographer, lang, era_lookup, movements_meta, enrichments)
+        candidates.append(f"{name_primary}: {role} | {site}")
+        for candidate in candidates:
+            if len(candidate) <= 78:
+                return candidate
+        shorter = candidates[-2] if len(candidates) > 1 else candidates[-1]
+        return shorter if len(shorter) <= 90 else f"{name_primary} | {site}"
+
+    role = extract_title_role(photographer, lang, era_lookup, movements_meta, enrichments)
     base = f"{name_primary} | {role} | {site}"
-    max_length = 60 if lang == "ja" else 70
+    max_length = 60
     if len(base) <= max_length:
         return base
     available = max(8, max_length - len(name_primary) - len(site) - 6)
@@ -1567,6 +1623,9 @@ def main() -> None:
 <meta property="og:description" content="{escape_html(description)}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:locale" content="{ 'en_US' if lang == 'en' else 'ja_JP' }">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{escape_html(title)}">
+<meta name="twitter:description" content="{escape_html(description)}">
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>
 window.dataLayer = window.dataLayer || [];

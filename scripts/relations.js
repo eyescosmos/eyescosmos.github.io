@@ -62,7 +62,7 @@
     en: {
       title: 'Photo Coordinates',
       status: '',
-      subcopy: 'Photo Coordinates is a photography-history website that organizes photographers from around the world. Browse by history, country, and movement.',
+      subcopy: 'Photo Coordinates is a photography-history site for tracing photographers, movements, countries, and historical context across world photography.',
       note: 'This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but errors or outdated details may remain.',
       lede: 'Use this map to follow how photographers, artistic movements, visual culture, and historical context connect across the history of photography.<br>Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.',
       eraLink: 'Browse by Era',

@@ -820,7 +820,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.robertfrank = {
     },
     {
       titleJa: 'ロバート・フランク 写真の歴史シリーズ',
-      titleEn: 'ロバート・フランク 写真の歴史シリーズ',
+      titleEn: 'Robert Frank: History of Photography Series',
       noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
       noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
       urlJa: 'https://amzn.to/4miItC3'

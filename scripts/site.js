@@ -70,7 +70,7 @@ const UI_TEXT = {
     wip: 'Updating',
     archiveHeaderLabel: 'Photo Coordinates / Archive',
     archiveSubtitle: 'History of Photography by Era',
-    archiveLead: 'Photo Coordinates is a photography-history website that organizes photographers from around the world. Browse by history, country, and movement.',
+    archiveLead: 'Photo Coordinates is a photography-history site for tracing photographers, movements, countries, and historical context across world photography.',
     archiveDisclaimer: 'This site gathers and organizes information from publicly available web sources with AI assistance. Sources are listed, but ambiguity, errors, or outdated details may remain. Please verify topics that matter to you.',
     randomLabel: 'Photographer of the Day',
     randomHint: '→ Click to open the detail panel',

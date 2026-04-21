@@ -99,7 +99,7 @@ def render_card(
     years = tax.display_years(photographer, lang)
     name = tax.esc(tax.display_name(photographer, lang))
     alt = tax.display_alt_name(photographer, lang)
-    alt_html = f'<div class="card-name-en">{tax.esc(alt)}</div>' if alt else ""
+    alt_html = f'<div class="card-name-en">{tax.esc(alt)}</div>' if lang == "ja" and alt else ""
     summary = tax.photographer_short_lead(photographer, essay_overrides, movements_meta, enrichments, era_lookup, lang, 115)
     readmore = "Read details" if lang == "en" else "詳細を読む"
     coordinate_detail = "Details" if lang == "en" else "詳細"

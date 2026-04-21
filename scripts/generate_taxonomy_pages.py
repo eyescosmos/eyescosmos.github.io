@@ -650,8 +650,8 @@ def era_lead_text(era: dict, short: str, people: list[dict], movements_meta: dic
     movement_text = join_labels(movement_labels_for_text(people, movements_meta, lang, 3), lang)
     if lang == "en":
         if movement_text:
-            return f"{short} was shaped by {title}, a context in which photographic institutions and expression changed significantly. This page follows photographers from the era through {movement_text}, world events, and shifts in photographic expression."
-        return f"{short} was shaped by {title}, a context in which photographic institutions and expression changed significantly. This page follows the photographers of the era through world events and shifts in photographic expression."
+            return f"{short} was shaped by {title}, a context in which photographic institutions and expression changed significantly. This era page organizes photographers, movements, and historical background so readers can trace how {movement_text} emerged within a wider history of photography. Use it as a chronological entry point from individual photographers to related countries, visual languages, and source-backed historical context."
+        return f"{short} was shaped by {title}, a context in which photographic institutions and expression changed significantly. This era page organizes photographers and historical background so readers can trace how photographic practices changed over time. Use it as a chronological entry point from individual photographers to related countries, movements, and source-backed historical context."
     if movement_text:
         return f"{short}は、{title}を背景に、写真の制度や表現が大きく動いた時代です。このページでは、{movement_text}などの表現を手がかりに、この時代の写真家と写真史の流れをたどります。"
     return f"{short}は、{title}を背景に、写真の制度や表現が大きく動いた時代です。このページでは、この時代の写真家を時代背景や写真表現の変化とあわせてたどります。"
@@ -668,8 +668,8 @@ def country_lead_text(country: str, people: list[dict], movements_meta: dict, la
     if lang == "en":
         country_text = english_country_phrase(country)
         if movement_text:
-            return f"This page gathers photographers connected to {country_text} and traces how they relate to {movement_text} within the history of photography. It is a country-based entry point for following photographers, eras, and movements in Photo Coordinates."
-        return f"This page gathers photographers connected to {country_text} and places them within the wider history of photography. It is a country-based entry point for following photographers, eras, and movements in Photo Coordinates."
+            return f"This country page gathers photographers connected to {country_text} and traces how their work relates to {movement_text} within the history of photography. It is designed as a country-based entry point, linking individual photographers to eras, movements, and nearby figures rather than treating national photography as a closed category."
+        return f"This country page gathers photographers connected to {country_text} and places them within the wider history of photography. It is designed as a country-based entry point, linking individual photographers to eras, movements, and nearby figures rather than treating national photography as a closed category."
     if movement_text:
         return f"{country}に関わる写真家を、{movement_text}などの表現とともにたどるページです。写真史の流れの中で、各作家がどの時代や運動と結びつくのかを見渡せます。"
     return f"{country}に関わる写真家を、写真史の流れの中でたどるページです。各作家がどの時代や運動と結びつくのかを見渡せます。"
@@ -690,8 +690,8 @@ def movement_lead_text(movement_label: str, movement_desc: str, lang: str) -> st
                 context = f"It can be understood as {summary_body}."
             else:
                 context = summary.rstrip(".!?") + "."
-            return f"{movement_label} is an important thread within the history of photography. {context} This page follows the photographers, eras, and related contexts connected to it."
-        return f"{movement_label} is an important thread within the history of photography. This page follows the photographers, eras, and related contexts connected to it."
+            return f"{movement_label} is an important thread within the history of photography. {context} This movement page brings together photographers, eras, and related contexts so readers can see how the approach developed, where it circulated, and which artists help define its historical position."
+        return f"{movement_label} is an important thread within the history of photography. This movement page brings together photographers, eras, and related contexts so readers can see how the approach developed, where it circulated, and which artists help define its historical position."
     if summary:
         summary_body = summary if summary.endswith("。") else f"{summary.rstrip('。')}。"
         return f"{movement_label}は、写真史の流れを考えるうえで重要な表現のひとつです。{summary_body}このページでは、関係する写真家や時代の流れをたどります。"
@@ -707,6 +707,30 @@ def clean_context_intro(text: str, lang: str) -> str:
         value = re.sub(r"^表現\s*[:：\-]\s*", "", value)
         value = re.sub(r"^表現\s+", "", value)
     return value.strip()
+
+
+def taxonomy_page_title(page_kind: str, label: str, lang: str, era_title: str = "") -> str:
+    if lang != "en":
+        if page_kind == "movement":
+            return f"{label}｜表現｜写真史｜写真の座標｜Eyes Cosmos"
+        return f"{label}｜写真家｜写真史｜写真の座標｜Eyes Cosmos"
+    if page_kind == "era":
+        return f"{label}: {era_title or 'Photography History'} | Photo Coordinates"
+    if page_kind == "country":
+        return f"{label} Photography and Photographers | Photo Coordinates"
+    return f"{label} in Photography History | Photo Coordinates"
+
+
+def taxonomy_meta_description(page_kind: str, label: str, lang: str, era_title: str = "") -> str:
+    if lang != "en":
+        if page_kind == "movement":
+            return f"{label}を写真史の中でたどるためのページです。写真の座標で、この表現に関わる写真家や時代背景、関連する運動を一覧できます。"
+        return f"{label}の写真家を一覧できる写真史ページです。写真の座標で、写真家、関連運動、時代の流れをまとめてたどれます。"
+    if page_kind == "era":
+        return f"Explore {label} in photography history through photographers, movements, world events, and visual context on Photo Coordinates."
+    if page_kind == "country":
+        return f"Browse photographers connected to {label}, with related eras, movements, and historical context in the history of photography."
+    return f"Explore {label} through photographers, related eras, and historical context in the history of photography."
 
 
 def era_context_html(era: dict, lang: str) -> str:
@@ -763,6 +787,9 @@ def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: 
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{canonical}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{esc(title)}">
+<meta name="twitter:description" content="{esc(description)}">
 <script type="application/ld+json">
 {structured}
 </script>
@@ -1040,15 +1067,11 @@ def main():
             era_id = era["id"]
             era_title = era.get("titleEn") if lang == "en" else era.get("title")
             short = era_short_label(era, lang)
-            title = f"{short} | Photographers | History of Photography | Photo Coordinates | Eyes Cosmos" if lang == "en" else f"{short}｜写真家｜写真史｜写真の座標｜Eyes Cosmos"
+            title = taxonomy_page_title("era", short, lang, era_title or "")
             keyword = f"{short} | Photographers | History of Photography | Photo Coordinates |" if lang == "en" else f"{short}｜写真家｜写真史｜<a href=\"/\">写真の座標</a>｜"
             people = sort_photographers(photographers_by_era.get(era_id, []), lang)
             canonical = f"{SITE}/{'en/' if lang == 'en' else ''}eras/{era_id}.html"
-            description = (
-                f"Explore photographers from {short} in Photo Coordinates, with the history of photography, related movements, and visual context."
-                if lang == "en"
-                else f"{short}の写真家を一覧できる写真史ページです。写真の座標で、この時代の写真家、関連運動、写真史の流れをたどれます。"
-            )
+            description = taxonomy_meta_description("era", short, lang, era_title or "")
             lead = era_lead_text(era, short, people, movements_meta, lang)
             context_html = era_context_html(era, lang)
             hero_groups = (
@@ -1082,16 +1105,12 @@ def main():
             country_meta = ensure_country_meta(nationality) or {}
             label = country_label(nationality, lang)
             short = label
-            title = f"{short} | Photographers | History of Photography | Photo Coordinates | Eyes Cosmos" if lang == "en" else f"{short}｜写真家｜写真史｜写真の座標｜Eyes Cosmos"
+            title = taxonomy_page_title("country", short, lang)
             keyword = f"{short} | Photographers | History of Photography | Photo Coordinates |" if lang == "en" else f"{short}｜写真家｜写真史｜<a href=\"/\">写真の座標</a>｜"
             people = sort_photographers(photographers_by_country.get(nationality, []), lang)
             canonical = f"{SITE}/{'en/' if lang == 'en' else ''}countries/{country_meta['slug']}.html"
             lead = country_lead_text(short, people, movements_meta, lang)
-            description = (
-                f"A country guide to photographers linked to {short} on Photo Coordinates. Explore photography history, related movements, and key figures."
-                if lang == "en"
-                else f"{short}の写真家を一覧できる写真史ページです。写真の座標で、写真家、関連運動、時代の流れをまとめてたどれます。"
-            )
+            description = taxonomy_meta_description("country", short, lang)
             hero_groups = (
                 f'<div class="meta-group"><div class="group-label">{"Basic facts" if lang == "en" else "基本情報"}</div><div class="mini-card-grid"><div class="mini-card"><span class="mini-card-label">{"Country" if lang == "en" else "国"}</span><span class="mini-card-value">{esc(short)}</span></div><div class="mini-card"><span class="mini-card-label">{"Photographers" if lang == "en" else "写真家数"}</span><span class="mini-card-value">{len(people)}</span></div></div></div>'
             )
@@ -1122,14 +1141,10 @@ def main():
         for movement in all_movements:
             people = sort_photographers(photographers_by_movement.get(movement, []), lang)
             movement_label = localized_movement_name(movement, movements_meta, lang)
-            title = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates | Eyes Cosmos" if lang == "en" else f"{movement_label}｜表現｜写真史｜写真の座標｜Eyes Cosmos"
+            title = taxonomy_page_title("movement", movement_label, lang)
             keyword = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates |" if lang == "en" else f"{movement_label}｜表現｜写真史｜<a href=\"/\">写真の座標</a>｜"
             canonical = f"{SITE}/{'en/' if lang == 'en' else ''}movements/{movement_slug(movement)}.html"
-            description = (
-                f"Explore {movement_label} on Photo Coordinates through photographers, related eras, and the wider history of photography."
-                if lang == "en"
-                else f"{movement_label}を写真史の中でたどるためのページです。写真の座標で、この表現に関わる写真家や時代背景、関連する運動を一覧できます。"
-            )
+            description = taxonomy_meta_description("movement", movement_label, lang)
             movement_desc = movements_meta.get(movement, {}).get("descEn" if lang == "en" else "desc") or movements_meta.get(movement, {}).get("desc") or ""
             movement_desc = clean_context_intro(movement_desc, lang)
             lead = movement_lead_text(movement_label, movement_desc, lang)
