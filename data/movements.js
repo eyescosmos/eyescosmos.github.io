@@ -46,4 +46,10 @@ const MOVEMENTS_META = {
   '大判カラー写真': { en: 'Large-Format Color', desc: '大判カメラと色彩を通じて現代社会の構造やスケール感を描く実践。', descEn: 'A practice that uses the large-format camera and color to depict the structure and scale of contemporary society.' },
   '環境写真': { en: 'Environmental Photography', desc: '自然環境や労働環境の変容を、社会的・地球規模の問題として捉える写真。', descEn: 'Photography that approaches changes in natural or labor environments as social and planetary issues.' },
   '社会的写真': { en: 'Social Photography', desc: '社会構造や格差、共同体の問題を批評的に可視化する写真実践。', descEn: 'Photography that makes social structures, inequality, and communal issues visible in a critical way.' },
+  'カロタイプ': { en: 'Calotype', desc: 'タルボットが発明した紙ネガ方式を中心とする初期写真技術。', descEn: 'An early photographic process centered on Talbot’s paper-negative method.' },
+  'ヘリオグラフィー': { en: 'Heliography', desc: 'ニエプスによる初期の写真・光化学的画像生成技術。', descEn: 'An early photographic and photochemical image-making process associated with Niépce.' },
+  '写真石版': { en: 'Photolithography', desc: '写真画像を印刷・複製技術へ接続する初期の実践。', descEn: 'Early practices connecting photographic images to printing and reproduction technologies.' },
+  '建築写真': { en: 'Architectural Photography', desc: '建築物や都市空間を記録・分析する写真表現。', descEn: 'Photography that records and analyzes buildings and urban space.' },
+  '明治ドキュメンタリー': { en: 'Meiji Documentary', desc: '明治期の社会、人物、風俗、近代化を記録する写真実践。', descEn: 'Photography documenting people, customs, society, and modernization in Meiji-period Japan.' },
+  '肖像写真': { en: 'Portrait Photography', desc: '人物像を通じて個人、社会的役割、時代の表象を扱う写真表現。', descEn: 'Photography that represents individuals, social roles, and historical moments through portraiture.' },
 };

@@ -19,6 +19,7 @@ class Page:
     rel: str
     url: str
     lastmod: str
+    alternates: dict[str, str]
 
 
 def html_files() -> list[Path]:
@@ -28,6 +29,9 @@ def html_files() -> list[Path]:
         if rel.startswith("templates/"):
             continue
         if re.fullmatch(r"google[0-9a-f]+\.html", path.name):
+            continue
+        content = path.read_text(encoding="utf-8", errors="ignore")
+        if re.search(r'<meta\s+name=["\']robots["\']\s+content=["\'][^"\']*noindex', content, re.I):
             continue
         files.append(path)
     return files
@@ -57,23 +61,69 @@ def to_lastmod(path: Path) -> str:
     return mtime.date().isoformat()
 
 
+def counterpart_rel(rel: str) -> tuple[str, str] | None:
+    pairs = (
+        ("photographers/", "en/photographers/"),
+        ("eras/", "en/eras/"),
+        ("countries/", "en/countries/"),
+        ("movements/", "en/movements/"),
+    )
+    if rel == "index.html":
+        return "index.html", "en/index.html"
+    if rel == "en/index.html":
+        return "index.html", "en/index.html"
+    if rel == "archive.html":
+        return "archive.html", "en/archive.html"
+    if rel == "en/archive.html":
+        return "archive.html", "en/archive.html"
+    for ja_prefix, en_prefix in pairs:
+        if rel.startswith(ja_prefix):
+            return rel, en_prefix + rel[len(ja_prefix):]
+        if rel.startswith(en_prefix):
+            return ja_prefix + rel[len(en_prefix):], rel
+    return None
+
+
+def alternate_urls(rel: str, existing: set[str]) -> dict[str, str]:
+    pair = counterpart_rel(rel)
+    if not pair:
+        return {}
+    ja_rel, en_rel = pair
+    if ja_rel not in existing or en_rel not in existing:
+        return {}
+    return {
+        "ja": to_url(ja_rel),
+        "en": to_url(en_rel),
+        "x-default": to_url(ja_rel),
+    }
+
+
 def pages() -> list[Page]:
+    file_list = html_files()
+    existing = {path.relative_to(REPO_ROOT).as_posix() for path in file_list}
     return [
         Page(
             rel=path.relative_to(REPO_ROOT).as_posix(),
             url=to_url(path.relative_to(REPO_ROOT).as_posix()),
             lastmod=to_lastmod(path),
+            alternates=alternate_urls(path.relative_to(REPO_ROOT).as_posix(), existing),
         )
-        for path in html_files()
+        for path in file_list
     ]
 
 
 def render_urlset(page_list: list[Page]) -> str:
-    lines = ['<?xml version="1.0" encoding="UTF-8"?>', f'<urlset xmlns="{SITEMAP_NS}">']
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        f'<urlset xmlns="{SITEMAP_NS}"',
+        '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    ]
     for page in page_list:
         lines.append("  <url>")
         lines.append(f"    <loc>{xml_escape(page.url)}</loc>")
         lines.append(f"    <lastmod>{page.lastmod}</lastmod>")
+        for hreflang, href in page.alternates.items():
+            lines.append(f'    <xhtml:link rel="alternate" hreflang="{hreflang}" href="{xml_escape(href)}"/>')
         lines.append("  </url>")
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"

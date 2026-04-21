@@ -10,6 +10,8 @@ import csv
 from pathlib import Path
 from urllib.parse import urlparse
 
+import generate_taxonomy_pages as taxonomy_meta
+
 
 REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
@@ -50,6 +52,31 @@ MOVEMENT_NAME_OVERRIDES_EN = {
     "建築写真": "Architectural Photography",
     "写真石版": "Photolithography",
     "明治ドキュメンタリー": "Meiji Documentary",
+}
+YEAR_OVERRIDES = {
+    # These entries correct legacy activity-period values in the source data.
+    # They are limited to dates already present in local research notes or static copy.
+    "ansel-adams": "1902-1984",
+    "arthur-rothstein": "1915-1985",
+    "ben-shahn": "1898-1969",
+    "bill-brandt": "1904-1983",
+    "brassai": "1899-1984",
+    "david-seymour": "1911-1956",
+    "francois-kollar": "1904-1979",
+    "helen-levitt": "1913-2009",
+    "jack-delano": "1914-1997",
+    "john-vachon": "1914-1975",
+    "jp-影山光洋": "1907-1981",
+    "jp-植田正治": "1913-2000",
+    "jp-金丸重嶺": "1900-1977",
+    "jp-鈴木八郎": "1900-1985",
+    "jp-長谷川伝次郎": "1894-1976",
+    "manuel-alvarez-bravo": "1902-2002",
+    "marcel-bovis": "1904-1997",
+    "margaret-bourke-white": "1904-1971",
+    "minor-white": "1908-1976",
+    "robert-doisneau": "1912-1994",
+    "russell-lee": "1903-1986",
 }
 JP_TEXT_RE = re.compile(r"[ぁ-んァ-ン一-龯]")
 EN_REFERENCE_REPLACEMENTS = {
@@ -258,6 +285,56 @@ def parse_years(years_text: str) -> tuple[str, str]:
     return "", ""
 
 
+def country_entry(nationality: str) -> dict:
+    meta = taxonomy_meta.ensure_country_meta(nationality) if nationality else None
+    if meta:
+        return {
+            "slug": meta.get("slug", ""),
+            "ja": meta.get("ja_name", nationality),
+            "en": meta.get("en_name", nationality),
+        }
+    return COUNTRY_META.get(nationality or "", {})
+
+
+def raw_years_is_activity_period(years_text: str) -> bool:
+    value = normalize_space(years_text)
+    return bool(
+        re.fullmatch(
+            r"\d{3,4}s(?:–|-)?(?:\s*/\s*\d{3,4}年代)?",
+            value or "",
+        )
+    )
+
+
+def infer_years_from_text(text: str) -> str:
+    value = normalize_space(strip_cite_markers(text or ""))
+    if not value:
+        return ""
+    birth_patterns = [
+        r"\bborn\b(?:[^0-9]{0,80})\b(1[789]\d{2}|20\d{2})\b",
+        r"\b(1[789]\d{2}|20\d{2})\s*年生まれ",
+    ]
+    death_patterns = [
+        r"\bdied\b(?:[^0-9]{0,80})\b(1[789]\d{2}|20\d{2})\b",
+        r"\b(1[789]\d{2}|20\d{2})\s*年没",
+    ]
+    birth = ""
+    death = ""
+    for pattern in birth_patterns:
+        match = re.search(pattern, value, re.I)
+        if match:
+            birth = match.group(1)
+            break
+    for pattern in death_patterns:
+        match = re.search(pattern, value, re.I)
+        if match:
+            death = match.group(1)
+            break
+    if not birth:
+        return ""
+    return f"{birth}-{death}" if death else f"{birth}-"
+
+
 def description_years(photographer: dict, lang: str) -> str:
     birth, death = parse_years(photographer.get("years") or "")
     if not birth:
@@ -369,7 +446,7 @@ def build_meta_summary(photographer: dict, lang: str, era_lookup: dict, movement
     sentences = first_sentences(essay_text, lang, limit=2)
     years = description_years(photographer, lang)
     name = display_name(photographer, lang)
-    country_en = COUNTRY_META.get(photographer.get("nationality") or "", {}).get("en") or (photographer.get("nationality") or "")
+    country_en = country_entry(photographer.get("nationality") or "").get("en") or (photographer.get("nationality") or "")
     descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
     movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=2)
     movement_phrase = join_list(movement_names, lang)
@@ -449,7 +526,7 @@ def era_page_path(photographer: dict, lang: str = "ja") -> str:
 
 def country_page_path(photographer: dict, lang: str = "ja") -> str:
     nationality = photographer.get("nationality") or ""
-    slug = COUNTRY_META.get(nationality, {}).get("slug")
+    slug = country_entry(nationality).get("slug")
     if not slug:
         return ""
     base = "en/countries" if lang == "en" else "countries"
@@ -494,7 +571,7 @@ def render_site_directory_nav(
         for era in eras
     ]
     country_links = [
-        f'<a href="/{"en/" if lang == "en" else ""}countries/{COUNTRY_META[nationality]["slug"]}.html">{escape_html(COUNTRY_META[nationality]["en" if lang == "en" else "ja"])}</a>'
+        f'<a href="/{"en/" if lang == "en" else ""}countries/{country_entry(nationality)["slug"]}.html">{escape_html(country_entry(nationality)["en" if lang == "en" else "ja"])}</a>'
         for nationality in all_nationalities
     ]
     return f"""
@@ -770,28 +847,8 @@ def display_years(photographer: dict, lang: str) -> str:
 
 
 def display_country(photographer: dict, lang: str) -> str:
-    country_map = {
-        "FR": {"ja": "FR", "en": "France"},
-        "GB": {"ja": "GB", "en": "United Kingdom"},
-        "US": {"ja": "US", "en": "United States"},
-        "AL": {"ja": "AL", "en": "Albania"},
-        "AT": {"ja": "AT", "en": "Austria"},
-        "BE": {"ja": "BE", "en": "Belgium"},
-        "CH": {"ja": "CH", "en": "Switzerland"},
-        "IT": {"ja": "IT", "en": "Italy"},
-        "IT / GB": {"ja": "IT / GB", "en": "Italy / United Kingdom"},
-        "GB / US": {"ja": "GB / US", "en": "United Kingdom / United States"},
-        "DK / US": {"ja": "DK / US", "en": "Denmark / United States"},
-        "KE / US": {"ja": "KE / US", "en": "Kenya / United States"},
-        "LB / US": {"ja": "LB / US", "en": "Lebanon / United States"},
-        "NL": {"ja": "NL", "en": "Netherlands"},
-        "DE": {"ja": "DE", "en": "Germany"},
-        "JP": {"ja": "JP", "en": "Japan"},
-        "BR": {"ja": "BR", "en": "Brazil"},
-        "CA": {"ja": "CA", "en": "Canada"},
-    }
     nationality = photographer.get("nationality") or ""
-    return country_map.get(nationality, {}).get(lang) or nationality or "—"
+    return country_entry(nationality).get(lang) or nationality or "—"
 
 
 def localized_movement_names(photographer: dict, lang: str, movements_meta: dict) -> list[str]:
@@ -1024,7 +1081,7 @@ def build_page_structured_data(photographer: dict, lang: str, description: str, 
         payload["birthDate"] = birth_year
     if death_year:
         payload["deathDate"] = death_year
-    country_name = COUNTRY_META.get(photographer.get("nationality") or "", {}).get("en")
+    country_name = country_entry(photographer.get("nationality") or "").get("en")
     if country_name:
         payload["nationality"] = {
             "@type": "Country",
@@ -1105,6 +1162,50 @@ def build_related_people_items(photographer: dict, lang: str, enrichments: dict,
             break
 
     return items[:5]
+
+
+def normalized_photographer(
+    photographer: dict,
+    *,
+    enrichments: dict,
+    country_overrides: dict,
+    essay_overrides: dict,
+) -> dict:
+    item = dict(photographer)
+    enrichment = get_enrichment(enrichments, photographer)
+    country_override = country_overrides.get(photographer.get("id"), {}) if country_overrides else {}
+    country_code = (
+        enrichment.get("countryCode")
+        or enrichment.get("nationality")
+        or country_override.get("countryCode")
+        or country_override.get("nationality")
+        or item.get("nationality")
+        or ""
+    )
+    if country_code:
+        item["nationality"] = country_code
+    item_id = item.get("id") or ""
+    has_activity_years = raw_years_is_activity_period(item.get("years") or "")
+    if item_id in YEAR_OVERRIDES:
+        item["years"] = YEAR_OVERRIDES[item_id]
+    elif has_activity_years or not parse_years(item.get("years") or "")[0]:
+        override = essay_overrides.get(item.get("id"), {}) if essay_overrides else {}
+        candidate_text = "\n".join(
+            str(value or "")
+            for value in (
+                override.get("leadJa"),
+                override.get("leadEn"),
+                override.get("textJa"),
+                override.get("textEn"),
+            )
+            if value
+        )
+        inferred = infer_years_from_text(candidate_text)
+        if inferred:
+            item["years"] = inferred
+        elif has_activity_years:
+            item["years"] = ""
+    return item
 
 
 def render_related_people_html(items: list[dict], placeholder: str) -> str:
@@ -1229,6 +1330,20 @@ def main() -> None:
     enrichments = eval_js(["data/photographer-enrichments.js"], 'typeof PHOTOGRAPHER_ENRICHMENTS !== "undefined" ? PHOTOGRAPHER_ENRICHMENTS : {}')
     affiliate_books = load_affiliate_books()
     essay_overrides = load_essay_overrides()
+    country_overrides = taxonomy_meta.eval_site_js_object("PHOTOGRAPHER_COUNTRY_OVERRIDES")
+    photographers = [
+        normalized_photographer(
+            photographer,
+            enrichments=enrichments,
+            country_overrides=country_overrides,
+            essay_overrides=essay_overrides,
+        )
+        for photographer in photographers
+    ]
+    if only_ids:
+        target_photographers = [p for p in photographers if p["id"] in only_ids]
+    else:
+        target_photographers = photographers
     eras = eval_js(
         [
             "data/eras.js",
@@ -1244,12 +1359,12 @@ def main() -> None:
     photographer_index = {p["id"]: idx for idx, p in enumerate(photographers)}
     alias_lookup, alias_regex = build_alias_targets(photographers, alias_map)
     all_nationalities = sorted(
-        [nationality for nationality in {p.get("nationality") for p in photographers if p.get("nationality")} if nationality in COUNTRY_META],
-        key=lambda nationality: COUNTRY_META[nationality]["ja"],
+        [nationality for nationality in {p.get("nationality") for p in photographers if p.get("nationality")} if country_entry(nationality).get("slug")],
+        key=lambda nationality: country_entry(nationality).get("ja", nationality),
     )
     all_movements = sorted(
         {movement for photographer in photographers for movement in (photographer.get("movements") or []) if movement},
-        key=lambda movement: (movements_meta.get(movement, {}).get("en", movement) or movement).lower(),
+        key=lambda movement: english_movement_name(movement, movements_meta).lower(),
     )
 
     report_rows = []
@@ -1280,6 +1395,7 @@ def main() -> None:
                 rendered_body = render_override_essay_html(body_text, lang, alias_lookup, alias_regex, photographer["id"])
             else:
                 rendered_body = f"<p>{escape_html(copy['placeholder'])}</p>"
+            is_placeholder_page = is_placeholder_text(body_text, lang)
             description = build_description(photographer, lang, era_lookup, movements_meta, enrichments)
             title = build_title(photographer, lang, era_lookup, movements_meta, enrichments)
             intro = build_intro(photographer, lang, era_lookup, movements_meta, enrichments)
@@ -1347,7 +1463,7 @@ def main() -> None:
             ) if photographer.get("era") else ""
             country_select = render_tax_select(
                 [
-                    (f"/{'en/' if lang == 'en' else ''}countries/{COUNTRY_META[nationality]['slug']}.html", COUNTRY_META[nationality]["en" if lang == "en" else "ja"], nationality == photographer.get("nationality"))
+                    (f"/{'en/' if lang == 'en' else ''}countries/{country_entry(nationality)['slug']}.html", country_entry(nationality)["en" if lang == "en" else "ja"], nationality == photographer.get("nationality"))
                     for nationality in all_nationalities
                 ],
                 "Browse countries" if lang == "en" else "国別でみる",
@@ -1395,6 +1511,7 @@ def main() -> None:
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{escape_html(title)}</title>
 <meta name="description" content="{escape_html(description)}">
+{('<meta name="robots" content="noindex, follow">' if is_placeholder_page else '')}
 <link rel="canonical" href="{canonical}">
 <link rel="alternate" hreflang="ja" href="{SITE + photographer_page_path(photographer, 'ja')}">
 <link rel="alternate" hreflang="en" href="{SITE + photographer_page_path(photographer, 'en')}">

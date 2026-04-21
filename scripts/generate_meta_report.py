@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 
-REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
+REPO = Path(__file__).resolve().parent.parent
 REPORT = REPO / "reports" / "seo-meta-report.csv"
 
 

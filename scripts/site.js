@@ -7,6 +7,7 @@ let activeFilters = { search: '', country: '', movement: '' };
 const EMPTY_BLOCK = '<div class="empty-copy" aria-hidden="true"></div>';
 const languageApi = window.PhotoCoordinatesI18n;
 let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
+document.documentElement.classList.add('js-enabled');
 const AFFILIATE_BOOKS = window.PHOTOGRAPHER_AFFILIATE_BOOKS || {};
 const PHOTOGRAPHER_ENRICHMENTS_DATA = window.PHOTOGRAPHER_ENRICHMENTS || {};
 const PHOTOGRAPHER_ESSAY_OVERRIDES = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
@@ -1292,6 +1293,12 @@ function openCoordinatesForPhotographer(pid) {
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function renderEraTab() {
   const main = document.getElementById('era-main');
+  if (main?.querySelector('.era')) {
+    populateFilters();
+    setupObserver();
+    updateMobileEraIndicator();
+    return;
+  }
   main.innerHTML = '';
 
   ERAS.forEach(era => {

@@ -8,7 +8,7 @@ from pathlib import Path
 import html
 import re
 
-REPO = Path("/Users/aiharadaisuke/Documents/New project/repo")
+REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260419c"
@@ -37,6 +37,39 @@ COUNTRY_META = {
     "US / FR": {"ja_code": "US / FR", "ja_name": "アメリカ / フランス", "en_name": "United States / France", "slug": "united-states-france", "flag": "🇺🇸 🇫🇷"},
     "HU / DE": {"ja_code": "HU / DE", "ja_name": "ハンガリー / ドイツ", "en_name": "Hungary / Germany", "slug": "hungary-germany", "flag": "🇭🇺 🇩🇪"},
 }
+
+MOVEMENT_NAME_OVERRIDES_EN = {
+    "カロタイプ": "Calotype",
+    "ヘリオグラフィー": "Heliography",
+    "写真石版": "Photolithography",
+    "建築写真": "Architectural Photography",
+    "明治ドキュメンタリー": "Meiji Documentary",
+    "肖像写真": "Portrait Photography",
+}
+YEAR_OVERRIDES = {
+    "ansel-adams": "1902-1984",
+    "arthur-rothstein": "1915-1985",
+    "ben-shahn": "1898-1969",
+    "bill-brandt": "1904-1983",
+    "brassai": "1899-1984",
+    "david-seymour": "1911-1956",
+    "francois-kollar": "1904-1979",
+    "helen-levitt": "1913-2009",
+    "jack-delano": "1914-1997",
+    "john-vachon": "1914-1975",
+    "jp-影山光洋": "1907-1981",
+    "jp-植田正治": "1913-2000",
+    "jp-金丸重嶺": "1900-1977",
+    "jp-鈴木八郎": "1900-1985",
+    "jp-長谷川伝次郎": "1894-1976",
+    "manuel-alvarez-bravo": "1902-2002",
+    "marcel-bovis": "1904-1997",
+    "margaret-bourke-white": "1904-1971",
+    "minor-white": "1908-1976",
+    "robert-doisneau": "1912-1994",
+    "russell-lee": "1903-1986",
+}
+ACTIVITY_YEAR_RE = re.compile(r"\d{3,4}s(?:–|-)?(?:\s*/\s*\d{3,4}年代)?")
 
 COUNTRY_BASE_META = {
     "AL": {"ja_name": "アルバニア", "en_name": "Albania", "slug": "albania", "flag": "🇦🇱"},
@@ -365,7 +398,7 @@ def top_movements(photographers: list[dict], movements_meta: dict, lang: str, li
             counts[movement] += 1
     items = []
     for movement, _count in counts.most_common(limit):
-        label = movements_meta.get(movement, {}).get("en", movement) if lang == "en" else movement
+        label = localized_movement_name(movement, movements_meta, lang)
         items.append((label, movement))
     return items
 
@@ -397,6 +430,18 @@ def page_structured_data(title: str, description: str, canonical: str, lang: str
         ],
     }
     return json.dumps(payload, ensure_ascii=False, indent=2)
+
+
+def alternate_links_html(canonical: str, lang: str) -> str:
+    ja_href = canonical.replace("/en/", "/") if lang == "en" else canonical
+    en_href = canonical if lang == "en" else canonical.replace(f"{SITE}/", f"{SITE}/en/", 1)
+    return "\n".join(
+        [
+            f'<link rel="alternate" hreflang="ja" href="{ja_href}">',
+            f'<link rel="alternate" hreflang="en" href="{en_href}">',
+            f'<link rel="alternate" hreflang="x-default" href="{ja_href}">',
+        ]
+    )
 
 
 def clean_inline_text(text: str) -> str:
@@ -467,7 +512,7 @@ def localized_enrichment_value(photographer: dict, enrichments: dict, base_key: 
 
 def localized_movement_name(movement: str, movements_meta: dict, lang: str) -> str:
     if lang == "en":
-        return movements_meta.get(movement, {}).get("en", movement)
+        return movements_meta.get(movement, {}).get("en") or MOVEMENT_NAME_OVERRIDES_EN.get(movement) or movement
     return movement
 
 
@@ -555,8 +600,10 @@ def photographer_short_lead(
 
 
 def display_years(photographer: dict, lang: str) -> str:
-    raw = (photographer.get("years") or "").strip()
+    raw = YEAR_OVERRIDES.get(photographer.get("id") or "", photographer.get("years") or "").strip()
     if not raw:
+        return ""
+    if ACTIVITY_YEAR_RE.fullmatch(raw):
         return ""
     if lang == "en":
         value = raw.split(" / ", 1)[0].strip()
@@ -709,6 +756,7 @@ def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: 
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{canonical}">
+{alternate_links_html(canonical, lang)}
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="{'Photo Coordinates' if lang == 'en' else '写真の座標'}">
 <meta property="og:title" content="{esc(title)}">
@@ -875,7 +923,7 @@ def render_movement_select(movements: list[str], current: str | None, movements_
     if placeholder_label:
         options.append(f'<option value="" selected>{esc(placeholder_label)}</option>')
     for movement in movements:
-        movement_label = movements_meta.get(movement, {}).get("en", movement) if lang == "en" else movement
+        movement_label = localized_movement_name(movement, movements_meta, lang)
         selected = ' selected' if placeholder_label is None and movement == current else ''
         options.append(f'<option value="{movement_path(movement, lang)}"{selected}>{esc(movement_label)}</option>')
     return f'<span class="select-wrap"><select class="tax-select filter-select nav-select" aria-label="{label}" onchange="if(this.value) window.location.href=this.value">{ "".join(options) }</select></span>'
@@ -982,7 +1030,7 @@ def main():
     all_nationalities = sorted([n for n in photographers_by_country.keys() if ensure_country_meta(n)], key=lambda n: country_label(n, "ja"))
     all_movements = sorted(
         [movement for movement, items in photographers_by_movement.items() if items],
-        key=lambda movement: movements_meta.get(movement, {}).get("en", movement).lower(),
+        key=lambda movement: localized_movement_name(movement, movements_meta, "en").lower(),
     )
 
     for lang in ("ja", "en"):
@@ -1072,7 +1120,7 @@ def main():
         # Movement pages
         for movement in all_movements:
             people = sort_photographers(photographers_by_movement.get(movement, []), lang)
-            movement_label = movements_meta.get(movement, {}).get("en", movement) if lang == "en" else movement
+            movement_label = localized_movement_name(movement, movements_meta, lang)
             title = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates | Eyes Cosmos" if lang == "en" else f"{movement_label}｜表現｜写真史｜写真の座標｜Eyes Cosmos"
             keyword = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates |" if lang == "en" else f"{movement_label}｜表現｜写真史｜<a href=\"/\">写真の座標</a>｜"
             canonical = f"{SITE}/{'en/' if lang == 'en' else ''}movements/{movement_slug(movement)}.html"
