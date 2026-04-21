@@ -507,13 +507,14 @@ body::after {
   border-top: 1px solid var(--border);
   display: grid;
   gap: 14px;
+  opacity: 0.72;
 }
 .site-directory-group {
   display: grid;
   gap: 8px;
 }
 .site-directory-label {
-  color: var(--accent);
+  color: rgba(196, 176, 130, 0.58);
   font: 400 10px/1.4 'DM Mono', monospace;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -524,13 +525,13 @@ body::after {
   gap: 8px 12px;
 }
 .site-directory-items a {
-  color: var(--text-dim);
+  color: rgba(166, 158, 145, 0.62);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.7;
 }
 .site-directory-items a:hover {
-  color: var(--text);
+  color: rgba(218, 207, 184, 0.9);
 }
 .footer-secondary { margin-top: 4px; }
 .footer-links { margin-top: 12px; }

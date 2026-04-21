@@ -543,51 +543,88 @@ def render_site_directory_nav(
     eras: list[dict],
     all_nationalities: list[str],
     lang: str,
+    related_movements: list[tuple[str, str]] | None = None,
+    related_people: list[tuple[str, str]] | None = None,
 ) -> str:
     labels = {
         "ja": {
             "nav": "サイト内リンク",
+            "relatedPeople": "関連する人物・写真家",
+            "relatedMovements": "関連する運動",
             "eras": "年代一覧",
             "countries": "国一覧",
             "photographers": "代表写真家一覧",
         },
         "en": {
             "nav": "Site links",
+            "relatedPeople": "Related people & photographers",
+            "relatedMovements": "Related movements",
             "eras": "Era index",
             "countries": "Country index",
             "photographers": "Featured photographers",
         },
     }[lang]
+    def render_directory_link(url: str, label: str) -> str:
+        extra_attrs = ' target="_blank" rel="noopener"' if url.startswith("http") else ""
+        return f'<a href="{escape_html(url)}"{extra_attrs}>{escape_html(label)}</a>'
+
+    def render_unique_links(items: list[tuple[str, str]] | None) -> str:
+        rendered = []
+        seen = set()
+        for url, label in items or []:
+            if not url or not label:
+                continue
+            key = (url, label)
+            if key in seen:
+                continue
+            seen.add(key)
+            rendered.append(render_directory_link(url, label))
+        return "".join(rendered)
+
     photographer_lookup = {photographer["id"]: photographer for photographer in photographers}
     featured_links = []
     for photographer_id in FEATURED_PHOTOGRAPHER_IDS:
         photographer = photographer_lookup.get(photographer_id)
         if photographer:
             featured_links.append(
-                f'<a href="{photographer_page_path(photographer, lang)}">{escape_html(display_name(photographer, lang))}</a>'
+                render_directory_link(photographer_page_path(photographer, lang), display_name(photographer, lang))
             )
     era_links = [
-        f'<a href="{era_page_path({"era": era["id"]}, lang)}">{escape_html((era.get("period") or "").replace(" — ", "–"))}</a>'
+        render_directory_link(era_page_path({"era": era["id"]}, lang), (era.get("period") or "").replace(" — ", "–"))
         for era in eras
     ]
     country_links = [
-        f'<a href="/{"en/" if lang == "en" else ""}countries/{country_entry(nationality)["slug"]}.html">{escape_html(country_entry(nationality)["en" if lang == "en" else "ja"])}</a>'
+        render_directory_link(
+            f"/{'en/' if lang == 'en' else ''}countries/{country_entry(nationality)['slug']}.html",
+            country_entry(nationality)["en" if lang == "en" else "ja"],
+        )
         for nationality in all_nationalities
     ]
+    def render_group(label: str, links: str, contextual: bool = False) -> str:
+        context_class = " site-directory-group-contextual" if contextual else ""
+        return f"""        <div class="site-directory-group{context_class}">
+          <div class="site-directory-label">{escape_html(label)}</div>
+          <div class="site-directory-items">{links}</div>
+        </div>"""
+
+    groups = []
+    related_people_links = render_unique_links(related_people)
+    related_movement_links = render_unique_links(related_movements)
+    if related_people_links:
+        groups.append(render_group(labels["relatedPeople"], related_people_links, contextual=True))
+    if related_movement_links:
+        groups.append(render_group(labels["relatedMovements"], related_movement_links, contextual=True))
+    groups.extend(
+        [
+            render_group(labels["eras"], "".join(era_links)),
+            render_group(labels["countries"], "".join(country_links)),
+            render_group(labels["photographers"], "".join(featured_links)),
+        ]
+    )
+    directory_groups = "\n".join(groups)
     return f"""
       <nav class="site-directory-links" aria-label="{escape_html(labels['nav'])}">
-        <div class="site-directory-group">
-          <div class="site-directory-label">{escape_html(labels['eras'])}</div>
-          <div class="site-directory-items">{''.join(era_links)}</div>
-        </div>
-        <div class="site-directory-group">
-          <div class="site-directory-label">{escape_html(labels['countries'])}</div>
-          <div class="site-directory-items">{''.join(country_links)}</div>
-        </div>
-        <div class="site-directory-group">
-          <div class="site-directory-label">{escape_html(labels['photographers'])}</div>
-          <div class="site-directory-items">{''.join(featured_links)}</div>
-        </div>
+{directory_groups}
       </nav>"""
 
 
@@ -1494,7 +1531,14 @@ def main() -> None:
         <a class="lang-btn{' active' if lang == 'ja' else ''}" href="{photographer_page_path(photographer, 'ja')}">{copy['langJa']}</a>
         <a class="lang-btn{' active' if lang == 'en' else ''}" href="{photographer_page_path(photographer, 'en')}">{copy['langEn']}</a>
       </div>"""
-            directory_nav = render_site_directory_nav(photographers, eras, all_nationalities, lang)
+            directory_nav = render_site_directory_nav(
+                photographers,
+                eras,
+                all_nationalities,
+                lang,
+                related_movements=movement_select_options,
+                related_people=related_people_select_options,
+            )
             page_top_links = f"""
       <div class="page-top-links top-links">
         <div class="tab-nav-mobile-grid">
@@ -1613,7 +1657,7 @@ gtag('config', '{GA_ID}');
         report_dir.mkdir(exist_ok=True)
         report_path = report_dir / "photographer-seo-report.csv"
         with report_path.open("w", encoding="utf-8", newline="") as fh:
-            writer = csv.DictWriter(fh, fieldnames=["lang", "path", "title", "description"])
+            writer = csv.DictWriter(fh, fieldnames=["lang", "path", "title", "description"], lineterminator="\n")
             writer.writeheader()
             writer.writerows(report_rows)
 
