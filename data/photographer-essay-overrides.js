@@ -8041,6 +8041,712 @@ Object.assign(window.PHOTOGRAPHER_ESSAY_OVERRIDES, {
         "url": "https://cphmag.com/conv-yurie-nagashima/"
       }
     ]
+  },
+
+  "artie-vierkant": {
+    "leadJa": "アーティ・ヴィアカント（1986年生まれ）は、写真・彫刻・デジタルファイル・オンライン流通を横断するアメリカのアーティスト。2011年開始の「Image Objects」シリーズで、展覧会ドキュメント画像をアーティスト自身が加工して独立した作品とし、物理的オブジェクトとその複製・流通の境界を問う。",
+    "leadEn": "Artie Vierkant (born 1986) is an American artist working across photography, sculpture, digital files, and online circulation. His Image Objects series treats exhibition documentation as mutable artwork, questioning the boundary between physical objects and their copies.",
+    "textJa": "経歴\n\n1986年生まれ、アメリカ拠点のアーティスト。2009年にペンシルバニア大学で写真を、2011年にカリフォルニア大学サンディエゴ校でMFAを修了。「Image Objects」シリーズを2011年に開始し、同年のReference Gallery、2012年のHigher Picturesでのニューヨーク初個展などで国際的に紹介されてきた。*1\n\n表現解説\n\n主要なテーマは、写真的オブジェクトの不安定性、ギャラリー空間とネットワーク流通の間でのイメージの移動、デジタル複製後の作者性、そしてドキュメントが作品としての地位を持つことである。「Image Objects」はデジタルファイルとして始まり、SintraやアルミニウムコンポジットにUVプリントされた機械切断パネルとして製作され、平面的な写真表面が彫刻的な奥行きを持つかのように見える。*2 ヴィアカントはドキュメント画像を中立的な記録としてではなく新たな作品として扱い、公式インスタレーション写真をアーティスト自身がデジタルに加工する。各ドキュメント画像は安定したオブジェクトの二次的コピーではなく独自のヴァージョンとなりうる。「何も固定した状態にない」というヴィアカント自身の言葉は、プロジェクト全体の方法論を端的に示している。*2 展覧会がギャラリーでの物理的体験よりもブログ・SNS・オンラインドキュメントを通じて経験されるようになっていた2010年代初頭の文脈に属し、物理的アートワークとそのオンライン上のイメージの境界崩壊を作品の構造に組み込んだ点に歴史的意義がある。*2\n\n批評と受容\n\nRhizomeのNet Art Anthologyはこのプロジェクトをポストインターネットアートをめぐる議論の形成に貢献した作品として位置づけ、物理的オブジェクトとメディア化されたイメージの間にある彫刻的作品群として提示する。Higher PicturesはニューヨークInitial個展を「新しい視覚芸術の形式の最前線」と紹介した。写真史的には、写真プリントをデジタルファイル・オブジェクト・インスタレーション画像・加工ドキュメント・オンライン派生物という連鎖の中の一状態として再定義した点に意義がある。*1",
+    "textEn": "Biography\n\nBorn in 1986, Artie Vierkant is an American artist based in the United States. He studied photography at the University of Pennsylvania in 2009 and received an MFA from the University of California, San Diego in 2011. He began the Image Objects series in 2011, and the work was introduced internationally through exhibitions including Reference Gallery that year and his first New York solo show at Higher Pictures in 2012.*1\n\nExpression / method\n\nVierkant’s central concerns are the instability of the photographic object, the movement of images between gallery space and network circulation, authorship after digital reproduction, and the point at which documentation becomes a work in its own right. Image Objects begins as a digital file and is produced as machine-cut UV prints on Sintra or aluminum composite panels, so that a flat photographic surface appears to possess sculptural depth.*2 Vierkant treats documentation images not as neutral records but as new works, digitally altering official installation photographs himself. Each documentation image can become a version rather than a secondary copy of a stable object. His statement that nothing is in a fixed state gives a concise account of the project’s method.*2 The work belongs to the early 2010s, when exhibitions were increasingly encountered through blogs, social media, and online documentation rather than only through physical gallery experience. Its historical significance lies in making the collapse between physical artwork and online image part of the structure of the work itself.*2\n\nCriticism and reception\n\nRhizome’s Net Art Anthology positions Image Objects as a project that helped shape discussion around post-internet art, presenting the works as sculptural objects between physical form and mediated image. Higher Pictures introduced Vierkant’s New York exhibition Initial as being at the forefront of a new form of visual art. In photographic history, the work matters because it redefines the photographic print as only one state within a chain of digital file, object, installation image, altered documentation, and online derivative.*1",
+    "links": [
+      {
+        "url": "https://anthology.rhizome.org/image-objects",
+        "label": "Rhizome Net Art Anthology — Image Objects"
+      },
+      {
+        "url": "https://higherpictures.com/press/artie-vierkant/",
+        "label": "Higher Pictures — Artie Vierkant"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Artie Vierkant — Higher Pictures",
+        "url": "https://higherpictures.com/press/artie-vierkant/"
+      },
+      {
+        "num": 2,
+        "name": "Image Objects — Rhizome Net Art Anthology",
+        "url": "https://anthology.rhizome.org/image-objects"
+      },
+      {
+        "num": 3,
+        "name": "Artie Vierkant's Image Objects — ARTUNER",
+        "url": "https://www.artuner.com/insight/artie-vierkants-image-objects-brief-history/"
+      }
+    ]
+  },
+  "eileen-quinlan": {
+    "leadJa": "アイリーン・クインラン（1972年生まれ）は、スモーク・鏡・マイラー・偏光ゲル・期限切れフィルムといった素材を使ったスタジオ実験でフェミニスト的写真抽象を展開するアメリカの写真家。MoMA「New Photography 2013」参加。写真の錯覚性と物質性を、身体・ジェンダーの歴史と結びつける。",
+    "leadEn": "Eileen Quinlan (born 1972) is an American photographer whose studio experiments with smoke, mirrors, Mylar, gels, expired film, and scanning develop a feminist form of photographic abstraction. Her work links optical illusion and material process to histories of the body and gender.",
+    "textJa": "経歴\n\n1972年生まれのアメリカの写真家。MoMA「New Photography 2013」に参加し、シカゴ美術館・ホイットニー美術館にも作品が収蔵されている。中判・大判カメラを使ったスタジオ実践で知られ、ミゲル・アブレウ・ギャラリーほか国際的な機関で発表されてきた。*1\n\n表現解説\n\n主要なテーマは、写真的抽象、錯覚、フェミニスト的物質文化、母性、身体、表面、そして写真的証拠の不安定性である。中判・大判カメラとスタジオのスティルライフ、鏡・スモーク・マイラー・ゲル・フラッシュ・期限切れフィルム・ポラロイド素材・スキャン・デジタル着色を組み合わせた手法が特徴である。*1 「Smoke and Mirrors」では反射したスモークと割れた鏡がイメージ自身の構築性を開示しながら雰囲気的抽象を生み出す。MoMAの「New Photography 2013」では折り畳んだヨガマット・期限切れの白黒フィルム・スキャン・デジタル着色を使った「Sophia」「Laura」が、フェミニズムの歴史・物質文化・ジュディ・シカゴといった参照文脈とともに提示された。*2 デジタルイメージが氾濫した時代にアナログとハイブリッドなプロセスを使うことで、写真的抽象が現実の外側にあるのではなく、演出された物質的接触・失敗・化学的不安定性を通じて生産されることを示す。2000〜2010年代の実験的写真の再興、写真がいまだ指標的・彫刻的・パフォーマティブ・絵画的であるかが問われた時代に属する。*3\n\n批評と受容\n\nMoMAはクインランの抽象写真をフェミニスト史と物質文化に根ざしたものとして枠組みし、この制度的読解がその後の解釈の基盤となっている。シカゴ美術館の「Broken Figure」解説は母性・ポラロイドへの操作・観者の視線の妨害を作品の意義として強調する。抽象を純粋なフォーマリズムとして提示するのではなく、彼女の写真は抽象がオブジェクトと写真素材に埋め込まれた社会的・身体的・フェミニスト的歴史を担うことを示す。*1",
+    "textEn": "Biography\n\nEileen Quinlan is an American photographer born in 1972. She participated in MoMA’s New Photography 2013, and her work is held by institutions including the Art Institute of Chicago and the Whitney Museum. Known for studio practice with medium- and large-format cameras, she has shown internationally through institutions and galleries including Miguel Abreu Gallery.*1\n\nExpression / method\n\nQuinlan’s themes include photographic abstraction, illusion, feminist material culture, motherhood, the body, surface, and the instability of photographic evidence. Her methods combine medium- and large-format cameras with studio still life, mirrors, smoke, Mylar, gels, flash, expired film, Polaroid materials, scanning, and digital coloring.*1 In Smoke and Mirrors, reflected smoke and broken mirrors disclose the constructed nature of the image while producing atmospheric abstraction. In MoMA’s New Photography 2013, works such as Sophia and Laura used folded yoga mats, expired black-and-white film, scanning, and digital color in relation to feminism, material culture, and references including Judy Chicago.*2 By using analog and hybrid processes in an age of proliferating digital images, Quinlan shows that photographic abstraction is not outside reality but produced through staged material contact, failure, and chemical instability. Her practice belongs to a 2000s and 2010s resurgence of experimental photography, when photography’s indexical, sculptural, performative, and painterly status was being actively reconsidered.*3\n\nCriticism and reception\n\nMoMA frames Quinlan’s abstraction through feminist history and material culture, a reading that has shaped later interpretation. The Art Institute of Chicago’s account of Broken Figure emphasizes motherhood, the manipulation of Polaroid, and the obstruction of the viewer’s gaze. Rather than presenting abstraction as pure formalism, Quinlan’s photographs show how abstract images can carry social, bodily, and feminist histories embedded in objects and photographic materials.*1",
+    "links": [
+      {
+        "url": "https://www.moma.org/interactives/exhibitions/2013/newphotography/eileen-quinlan/index.html",
+        "label": "MoMA — New Photography 2013: Eileen Quinlan"
+      },
+      {
+        "url": "https://www.icaboston.org/exhibitions/momentum-13-eileen-quinlan-my-eyes-can-only-look-you/",
+        "label": "ICA Boston — Momentum 13: Eileen Quinlan"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "New Photography 2013: Eileen Quinlan — MoMA",
+        "url": "https://www.moma.org/interactives/exhibitions/2013/newphotography/eileen-quinlan/index.html"
+      },
+      {
+        "num": 2,
+        "name": "Momentum 13: Eileen Quinlan — ICA Boston",
+        "url": "https://www.icaboston.org/exhibitions/momentum-13-eileen-quinlan-my-eyes-can-only-look-you/"
+      },
+      {
+        "num": 3,
+        "name": "Broken Figure — Art Institute of Chicago",
+        "url": "https://www.artic.edu/artworks/261710/broken-figure"
+      }
+    ]
+  },
+  "jessica-eaton": {
+    "leadJa": "ジェシカ・イートン（1977年カナダ生まれ）は、RGBフィルターと多重露光を用いたカメラ内加算色分離によって抽象的な色彩構造を生成するカナダの写真家。代表作「cfaal（Cubes for Albers and LeWitt）」は、ポスト制作によらず光学的プロセスのみで視覚的に飽和した色彩を作り出す。",
+    "leadEn": "Jessica Eaton (born 1977 in Canada) uses RGB filters and multiple exposures to generate abstract color structures inside the camera. Her cfaal series creates saturated optical color through photographic process rather than post-production.",
+    "textJa": "経歴\n\n1977年カナダ・レジャイナ生まれ。エミリー・カー大学で写真を学び、Higher Pictures Generation・M+B・Bradley Ertaskiranなどのギャラリーで代表される。2012年にイエール国際ファッション・写真フェスティバルで受賞し、MoMAの「New Photography 2015（Ocean of Images）」にも参加している。*2\n\n表現解説\n\n主要なテーマは、写真的事象としての色彩、知覚、可視性の限界、カメラ内で生成される抽象、そしてモダニズム色彩理論と写真の関係である。大判カメラでシンプルなスタジオ形態を撮影し、RGBカラーフィルターと反復露光を用いる。「cfaal」シリーズではグレーのキューブがポスト制作の着色ではなく加算RGB露光によって飽和した色彩構造へと変換される。*4 このプロセスは高度に記録・反復的なものであり、イートン自身がノートと事前計画された露光システムで作業し、同一アングルに繰り返し戻ることで色彩生成に集中する。「写真とは可視世界に縛られているという考えを否定したかった」というイートンの言葉は、カメラが通常の知覚の外にある現象——光によって生成された色彩、紫外線パターン——を可視化できることへの関心を端的に示す。*4 デジタル加工が一般化した時代にアナログ露光システムを使い、写真の抽象的・人工的な色彩生成能力がカメラの物質的装置の内側に元々存在していたことを示した点に歴史的意義がある。*2\n\n批評と受容\n\nCanadian Artは「cfaal」を、技術的プロセスと知覚・写真の哲学的問いを結びつける作品として評した。The New Yorkerはキューブ連作から後期の花のスティルライフへの変化を論じ、反復的色彩プロセスが写真的リアリズムをどのように覆すかを強調している。イートンの写真は、カメラが可視世界に縛られているという前提を否定し、光・露光・フィルム・知覚の解釈として写真的真実を再定義する。*3",
+    "textEn": "Biography\n\nJessica Eaton was born in Regina, Canada, in 1977. She studied photography at Emily Carr University and has been represented by galleries including Higher Pictures Generation, M+B, and Bradley Ertaskiran. In 2012 she received a prize at the Hyeres International Festival of Fashion and Photography, and she participated in MoMA’s New Photography 2015: Ocean of Images.*2\n\nExpression / method\n\nEaton’s work centers on color as a photographic event, perception, the limits of visibility, abstraction generated inside the camera, and the relation between modernist color theory and photography. Using a large-format camera, simple studio forms, RGB color filters, and repeated exposures, she turns gray cubes in the cfaal series into saturated color structures through additive exposure rather than post-production coloring.*4 Her process is highly planned and repeatable: she works from notes and predesigned exposure systems, returning to the same angle to focus on the generation of color. Eaton’s statement that she wanted to reject the idea that photography is bound to the visible world points to her interest in how the camera can make visible phenomena beyond ordinary perception, including color generated by light and ultraviolet patterns.*4 At a time when digital manipulation had become ordinary, her analog exposure systems showed that photography’s abstract and artificial color-making capacities already existed inside the material apparatus of the camera.*2\n\nCriticism and reception\n\nCanadian Art has read cfaal as a body of work connecting technical process to philosophical questions about perception and photography. The New Yorker discussed the movement from the cube series to later floral still lifes, emphasizing how repeated color processes overturn photographic realism. Eaton’s work rejects the assumption that the camera is tied to the visible world and redefines photographic truth as an interpretation of light, exposure, film, and perception.*3",
+    "links": [
+      {
+        "url": "https://higherpictures.com/news/jessica-eaton-5/",
+        "label": "Higher Pictures / FOAM — Jessica Eaton"
+      },
+      {
+        "url": "https://time.com/3788545/jessica-eaton/",
+        "label": "TIME — Jessica Eaton: Cube, Color, Cosmos"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Jessica Eaton — Higher Pictures",
+        "url": "https://higherpictures.com/news/jessica-eaton-13/"
+      },
+      {
+        "num": 2,
+        "name": "Jessica Eaton: Cube, Color, Cosmos — TIME",
+        "url": "https://time.com/3788545/jessica-eaton/"
+      },
+      {
+        "num": 3,
+        "name": "Jessica Eaton — The New Yorker",
+        "url": "https://www.newyorker.com/goings-on-about-town/art/jessica-eaton-2"
+      },
+      {
+        "num": 4,
+        "name": "Jessica Eaton / FOAM interview — Higher Pictures",
+        "url": "https://higherpictures.com/news/jessica-eaton-5/"
+      }
+    ]
+  },
+  "kate-steciw": {
+    "leadJa": "ケイト・ステシウ（1978年生まれ）は、インターネットやストックイメージ・データベースから画像を採取し、デジタル加工・プレキシグラス・コラージュと組み合わせた写真的構造物を制作するアメリカのアーティスト。商業的画像経済と写真のオブジェクト性をめぐるポストインターネット的実践を展開する。",
+    "leadEn": "Kate Steciw (born 1978) is an American artist who draws images from the internet and stock-image databases, combining digital manipulation, Plexiglas, collage, and print structures. Her work examines commercial image economies and the objecthood of photography after the internet.",
+    "textJa": "経歴\n\n1978年ペンシルバニア州ベスレヘム生まれ、アメリカ拠点のアーティスト。シカゴ美術館附属学校でMFAを取得。商業写真のレタッチャーとしての実務経験を持ち、その後写真・彫刻・コラージュ・映像・イメージ操作を横断する実践を展開。Higher Picturesなどのギャラリーで発表されてきた。*1\n\n表現解説\n\n主要なテーマは、ストックイメージの流通、写真のオブジェクト性、Web 2.0的なイメージ消費、商業的イメージ・データベース、そしてデジタルの断片を彫刻的なプリントへと変換するプロセスである。インターネットやストック・イメージ・データベースから画像を採取し、デジタルで切断・重層化・加工した後、フレーム・着色プレキシグラス・コラージュ要素などの物理的支持体を組み合わせた印刷・彫刻構造物として制作する。*4 タイトルに検索用語やデータベース的テキストの痕跡を保持することで、イメージ取得の経路を作品構造の一部とするのも特徴的な手法である。商業的写真レタッチャーとしての背景が作品の出発点となっており、オンライン商業・広告・検索の洗練されたイメージ経済への直接的な経験から生まれている。*5 インターネットを単なる配信チャンネルとしてではなく、イメージが発見・消費・加工・オブジェクト化される日常的な条件として扱う2010年代の転換期に属し、ストック・イメージ経済が写真的素材・作者性・構図として何を意味するかを変えた点に歴史的意義がある。*4\n\n批評と受容\n\nThe New Yorkerはステシウを写真に対して自由な態度を取る新世代として位置づけ、インターネット画像を重層的な構造物へと変換することを強調した。Hyperallergicはインターネット・データバンクと商業的イメージ流通のシステムを通じて作品を読み解き、日常的なオンライン消費の視覚的論理との接続を示した。デジタル画像を透明なコンテンツとしてではなく、切断・印刷・フレーム化・遮断によって新たな意味を帯びた不安定で触覚的かつ抽象的な構造物として扱う点が批評上の核心である。*2",
+    "textEn": "Biography\n\nKate Steciw was born in Bethlehem, Pennsylvania, in 1978 and is based in the United States. She received an MFA from the School of the Art Institute of Chicago. Her background as a commercial photo retoucher informs a practice that crosses photography, sculpture, collage, video, and image manipulation. She has exhibited with galleries including Higher Pictures.*1\n\nExpression / method\n\nSteciw’s themes include the circulation of stock images, photographic objecthood, Web 2.0 image consumption, commercial image databases, and the transformation of digital fragments into sculptural prints. She gathers images from the internet and stock-image databases, cuts, layers, and alters them digitally, then produces printed sculptural structures that incorporate frames, colored Plexiglas, and collage elements.*4 Her titles often preserve traces of search terms or database language, making the path through which an image was found part of the work’s structure. Her commercial retouching background is crucial: the work emerges from direct experience of online commerce, advertising, search, and polished image economies.*5 Historically, the work belongs to a 2010s moment in which the internet was not simply a distribution channel but the ordinary condition through which images were found, consumed, altered, and objectified. Steciw’s practice matters because it asks what stock-image culture does to photographic material, authorship, and composition.*4\n\nCriticism and reception\n\nThe New Yorker positioned Steciw within a generation taking a liberated approach to photography, emphasizing the conversion of internet images into layered structures. Hyperallergic read the work through data banks and commercial image circulation, linking it to the visual logic of everyday online consumption. The critical point is that Steciw treats digital images not as transparent content but as unstable, tactile, and abstract structures made meaningful through cutting, printing, framing, and obstruction.*2",
+    "links": [
+      {
+        "url": "https://higherpictures.com/exhibitions/kate-steciw/",
+        "label": "Higher Pictures — Kate Steciw"
+      },
+      {
+        "url": "https://hyperallergic.com/kate-steciw-boundless-hyper-toomer-labzda-gallery/",
+        "label": "Hyperallergic — Kate Steciw"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Kate Steciw — Higher Pictures",
+        "url": "https://higherpictures.com/exhibitions/kate-steciw/"
+      },
+      {
+        "num": 2,
+        "name": "Kate Steciw — The New Yorker",
+        "url": "https://www.newyorker.com/goings-on-about-town/art/kate-steciw"
+      },
+      {
+        "num": 3,
+        "name": "Ocean of Images: New Photography 2015 — MoMA",
+        "url": "https://www.moma.org/calendar/exhibitions/1539"
+      },
+      {
+        "num": 4,
+        "name": "Kate Steciw — Artspace",
+        "url": "https://www.artspace.com/artists/kate_steciw"
+      },
+      {
+        "num": 5,
+        "name": "A Still Life of a World that Is Never Still — Hyperallergic",
+        "url": "https://hyperallergic.com/kate-steciw-boundless-hyper-toomer-labzda-gallery/"
+      }
+    ]
+  },
+  "kelli-connell": {
+    "leadJa": "ケリー・コネル（1974年生まれ）は、一人のモデルを複数の役割で撮影しデジタル合成した「Double Life」シリーズで知られるアメリカの写真家。架空の二人の関係として提示されるその光景は、アイデンティティ・ジェンダー・親密性をめぐる内的葛藤を、ドキュメントの形式を借りて外在化する。",
+    "leadEn": "Kelli Connell (born 1974) is an American photographer known for Double Life, in which one model is photographed in multiple roles and digitally composited as two figures. The work externalizes questions of identity, gender, intimacy, and internal conflict through a documentary-like form.",
+    "textJa": "経歴\n\n1974年オクラホマシティ生まれ、シカゴ拠点のアメリカの写真家。1997年ノーステキサス大学でBFA、2003年テキサスウーマンズ大学でMFAを取得。「Double Life」プロジェクトを2000年代初頭に開始し、のちに「Double Life, 20 Years」として改めて提示。メトロポリタン美術館が作品を収蔵し、国際的な機関で展示されてきた。*1\n\n表現解説\n\n主要なテーマは、自己の二重性、親密な関係、セクシュアリティ、ジェンダーの役割、内的葛藤、写真的ドキュメントと構築された現実の差異である。一人のモデルを複数の役割で撮影し、ネガまたは画像ファイルをデジタルで縫い合わせ、二人の女性が共にいるように見えるシームレスな場面を制作する。*2 制御された照明・ボディランゲージ・衣服・日常的な設定が、観者が最初はドキュメントとして読んでしまうほど自然な光景を作り出す——そこで二重の演技に気づいたとき、フィクションと真実の緊張が生まれる。「写真はドキュメントとしては嘘をつくが、イメージとしては真実を語ることができる」というコネル自身の言葉は、この方法論の核心を示す。*1 デジタル合成が写真において一般化していた時代に、その技術を加工のスペクタクルとしてではなく、ドキュメンタリー的信念とクィアな自己表象を静かに試す方法として使った点に歴史的意義がある。*4\n\n批評と受容\n\nメトロポリタン美術館はコネルの「Carnival」を、一人のモデルの複数イメージから合成された10年にわたるプロジェクトの一部として説明する。現代写真美術館はコネルの関心をアイデンティティと社会的構築の問い直しに置く。ローンデール・アート・センターの2004年展覧会テキストはコネルの作品をデジタル時代の写真・シュルレアリスト的な二重性・シンディ・シャーマンのロールプレイとジェンダー政治に位置づけており、後の解釈の文脈を提供する。*4",
+    "textEn": "Biography\n\nKelli Connell was born in Oklahoma City in 1974 and is based in Chicago. She received a BFA from the University of North Texas in 1997 and an MFA from Texas Woman’s University in 2003. She began the Double Life project in the early 2000s, later revisiting it as Double Life, 20 Years. The Metropolitan Museum of Art holds her work, and she has exhibited internationally.*1\n\nExpression / method\n\nConnell’s central themes are doubleness of self, intimate relationships, sexuality, gender roles, internal conflict, and the difference between photographic document and constructed reality. She photographs one model in multiple roles and digitally joins negatives or image files so that two women appear to share a scene.*2 Controlled lighting, body language, clothing, and ordinary settings produce scenes that viewers may first read as documentary; once the double performance is recognized, the tension between fiction and truth becomes active. Connell’s statement that photography lies as a document but can tell the truth as an image defines the core of this method.*1 In an era when digital compositing became increasingly common, she used the technology not as spectacle but as a quiet way to test documentary belief and queer self-representation.*4\n\nCriticism and reception\n\nThe Metropolitan Museum of Art describes Carnival as part of a decade-long project built from multiple images of one model. The Museum of Contemporary Photography places Connell’s work within questions of identity and social construction. Lawndale Art Center’s 2004 text linked the work to photography in the digital age, surreal doubling, Cindy Sherman’s role play, and gender politics. Connell’s importance lies in using digital construction to make visible the emotional and social conditions that documentary photography alone cannot guarantee.*4",
+    "links": [
+      {
+        "url": "https://www.metmuseum.org/art/collection/search/302230",
+        "label": "The Metropolitan Museum of Art — Carnival"
+      },
+      {
+        "url": "https://aliceausten.org/kelli-connell-double-life-20-years/",
+        "label": "Alice Austen House — Double Life, 20 Years"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Kelli Connell – Carnival — The Metropolitan Museum of Art",
+        "url": "https://www.metmuseum.org/art/collection/search/302230"
+      },
+      {
+        "num": 2,
+        "name": "Kelli Connell — Museum of Contemporary Photography",
+        "url": "https://collections.mocp.org/mpp/connell_kelli.php"
+      },
+      {
+        "num": 3,
+        "name": "Kelli Connell: Double Life, 20 Years — Alice Austen House",
+        "url": "https://aliceausten.org/kelli-connell-double-life-20-years/"
+      },
+      {
+        "num": 4,
+        "name": "Kelli Connell Double Life — Lawndale Art Center",
+        "url": "https://lawndaleartcenter.org/exhibition/kelli-connell/"
+      }
+    ]
+  },
+  "lieko-shiga": {
+    "leadJa": "志賀理江子（1980年愛知生まれ）は、宮城県北釜に長期滞在し地域住民と協働で撮影を続けた写真家。2011年の東日本大震災で拠点と多くの住民を失いながら活動を継続した「螺旋海岸」は、コミュニティの記憶・喪失・神話的時間を演出・フラッシュ・アーカイブ回収を通じて可視化する。",
+    "leadEn": "Lieko Shiga (born 1980 in Aichi) is a Japanese photographer whose Rasen Kaigan project grew from long-term collaboration with residents of Kitakama, Miyagi. After the 2011 tsunami destroyed her base and killed many residents, the work continued as a meditation on memory, loss, mythic time, and community archives.",
+    "textJa": "経歴\n\n1980年愛知県岡崎市生まれ、宮城県在住。主要プロジェクト「螺旋海岸（RASEN KAIGAN）」は仙台近郊の沿岸集落・北釜を舞台とし、2011年の東日本大震災・津波の前後にわたって展開された。MoMAの「Ocean of Images: New Photography 2015」参加、同館に「螺旋海岸」シリーズの複数作品が収蔵されている。*1\n\n表現解説\n\n主要なテーマは、共同体の記憶、災害、口承、地域の祭礼、写真的時間の不安定性、喪、神話、そしてアーカイブと生きられた場所の関係である。演出・協働・フラッシュ照明が施された超現実的ないし演劇的なイメージが、北釜の具体的な人物・場所・出来事に根ざした形で組み合わされる手法が特徴である。*2 2008年から北釜に移住して地域住民・地元カメラマンと協働で撮影を重ねていた志賀は、津波で自宅とスタジオを失い多くの住民を亡くした後も活動を継続し、瓦礫から発見された匿名の写真を清掃・デジタル化する作業にも取り組んだ。「螺旋海岸」という言葉が「過去・現在・未来がない」という時間の渦を意味することは、志賀自身の言葉として記録されている。*3 震災後の日本写真においてドキュメンタリー報道への還元を拒み、演出・パフォーマンス・アーカイブ回収・神話的イメージを結びつけて断裂した地域史に応答した点に歴史的意義がある。*2\n\n批評と受容\n\nSFMOMAは「螺旋海岸」を深く個人的かつ協働的なプロジェクトとして説明し、志賀が作品を災害だけで定義されることを望んでいない点を記している。ゲッティ・アイリスは志賀を津波後のコミュニティ・アーキビストとして描き、せんだいメディアテークのrecorder311との文脈でプロジェクトを位置づける。写真が瓦礫から喪の対象・祈り・歴史的証言へと意味を変える過程が、批評的に最も有効な記述の軸となる。*3",
+    "textEn": "Biography\n\nLieko Shiga was born in Okazaki, Aichi, in 1980 and lives in Miyagi. Her major project Rasen Kaigan was made in Kitakama, a coastal community near Sendai, and unfolded before and after the 2011 Great East Japan Earthquake and tsunami. She participated in MoMA’s Ocean of Images: New Photography 2015, and MoMA holds several works from the Rasen Kaigan series.*1\n\nExpression / method\n\nShiga’s themes include communal memory, disaster, oral history, local ritual, unstable photographic time, mourning, myth, and the relation between archive and lived place. Her images combine staging, collaboration, and flash-lit surreal or theatrical scenes rooted in specific people, places, and events in Kitakama.*2 Beginning in 2008 she lived in Kitakama and worked with residents and local photographers. After the tsunami destroyed her home and studio and killed many residents, she continued the project and also helped clean and digitize anonymous photographs recovered from debris. Shiga’s own explanation that Rasen Kaigan means a vortex of time without past, present, or future is central to the project.*3 In post-2011 Japanese photography, the work is historically important because it refuses reduction to disaster reportage and instead joins staging, performance, archive recovery, and mythic imagery to respond to a ruptured local history.*2\n\nCriticism and reception\n\nSFMOMA describes Rasen Kaigan as deeply personal and collaborative, while noting Shiga’s wish that the work not be defined only by disaster. Getty Iris presents her as a community archivist after the tsunami, in relation to the recorder311 project at Sendai Mediatheque. The strongest critical axis is the way photographs move from debris to objects of mourning, prayer, and historical testimony.*3",
+    "links": [
+      {
+        "url": "https://www.moma.org/artists/47214-lieko-shiga",
+        "label": "MoMA — Lieko Shiga"
+      },
+      {
+        "url": "https://blogs.getty.edu/iris/photography-and-memory-in-the-wake-of-a-tsunami/",
+        "label": "Getty Iris — Photography and Memory in the Wake of a Tsunami"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Lieko Shiga — MoMA",
+        "url": "https://www.moma.org/artists/47214-lieko-shiga"
+      },
+      {
+        "num": 2,
+        "name": "Lieko Shiga — SFMOMA",
+        "url": "https://www.sfmoma.org/artist/lieko_shiga/"
+      },
+      {
+        "num": 3,
+        "name": "Photography and Memory in the Wake of a Tsunami — Getty Iris",
+        "url": "https://blogs.getty.edu/iris/photography-and-memory-in-the-wake-of-a-tsunami/"
+      }
+    ]
+  },
+  "lucas-blalock": {
+    "leadJa": "ルーカス・ブレイロック（1978年生まれ）は、消しゴムや靴などの日常物を大判カメラで撮影し、Photoshopの加工痕をあえて残すアメリカの写真家。デジタル操作の「隠蔽」という慣習を逆転させ、加工の労働それ自体を写真の構造として可視化する。MoMA「New Photography 2015」参加。",
+    "leadEn": "Lucas Blalock (born 1978) is an American photographer who photographs ordinary objects with a large-format camera and leaves visible traces of Photoshop manipulation. His work reverses the convention that digital editing should disappear, making the labor of alteration part of the photograph’s structure.",
+    "textJa": "経歴\n\n1978年生まれ、アメリカのアーティスト。MoMAの「Ocean of Images: New Photography 2015」に参加し、2019年のホイットニー・ビエンナーレにも選出されている。「xyz」（Ramiken Crucible、2011年）以来、国際的なギャラリーや美術館で発表を続けてきた。*3\n\n表現解説\n\n主要なテーマは、写真の構築性、ソフトウェアを可視的な描画ツールとして使うこと、デジタル文化以降のスティルライフ、ユーモア、ぎこちなさ、そしてイメージの流通と再利用である。消しゴム・布・グラス・イチゴ・靴・バッグなど日常的なオブジェクトを大判カメラで撮影した後にPhotoshopで加工するが、その加工痕をあえて隠さない。部分の複製・重層化・消去・再描写を可視的にぎこちなく行い、イメージが自身のデジタル的な制作過程を開示する。*2 ブレイロックはデジタルツールを写真を完成させるためでなく、加工の労働を可視化するために使う。これはソフトウェアがシームレスなリアリズムへと消えていくべきだという期待への批判的な応答である。スマートフォン・スクリーン・ソフトウェア・オンライン流通、そしてスワイプ・ピンチ・レタッチをめぐる新しい視覚的リテラシーが日常化した2000年代以降の文脈に属し、デジタル操作を隠れた欠陥や制作上の秘密としてではなく明白・喜劇的・批評的な写真的見ることの一部として提示した点に歴史的意義がある。*5\n\n批評と受容\n\nApertureはブレイロックをMichele AbelesやMargaret Leeとともに、写真の伝統に精通しながらイメージ流通とオブジェクトとイメージの境界崩壊に敏感な作家として位置づける。MoMAの「Inside/Out」テキストは、ブレイロックが意図的に明白またはぎこちない編集を前景化し写真的純粋性の観念に挑戦することを指摘する。写真はオブジェクト・写真・ソフトウェアの痕跡という不安定な関係を生み出し、そのユーモアがより深い批評的論点——すべての写真は構築されており、デジタル時代にその構築性が新たに可視化された——を可能にする。*2",
+    "textEn": "Biography\n\nLucas Blalock was born in 1978 and works in the United States. He participated in MoMA’s Ocean of Images: New Photography 2015 and was included in the 2019 Whitney Biennial. Since xyz at Ramiken Crucible in 2011, he has shown widely in galleries and museums.*3\n\nExpression / method\n\nBlalock’s themes include the constructed nature of photographs, software as visible drawing tool, still life after digital culture, humor, awkwardness, and the circulation and reuse of images. He photographs ordinary objects such as erasers, cloth, glasses, strawberries, shoes, and bags with a large-format camera, then manipulates them in Photoshop while refusing to hide the edits. Duplication, layering, erasure, and redrawing are deliberately awkward and visible, so the image discloses its digital making.*2 Blalock uses digital tools not to complete the photograph seamlessly but to make the labor of alteration visible. This responds critically to the expectation that software should vanish into realism. His work belongs to a post-2000 context of smartphones, screens, software, online circulation, and the new visual literacy of swiping, pinching, and retouching. It matters because it makes digital manipulation an obvious, comic, and critical part of photographic seeing rather than a hidden flaw or production secret.*5\n\nCriticism and reception\n\nAperture places Blalock with artists such as Michele Abeles and Margaret Lee, noting their knowledge of photographic tradition and sensitivity to image circulation and the collapse between object and image. MoMA’s Inside/Out text emphasizes his deliberately obvious or awkward edits as a challenge to ideas of photographic purity. The humor of his work opens onto a deeper claim: all photographs are constructed, and digital culture has made that construction newly visible.*2",
+    "links": [
+      {
+        "url": "https://aperture.org/editorial/swiping-at-pictures/",
+        "label": "Aperture — Swiping at Pictures"
+      },
+      {
+        "url": "https://www.moma.org/calendar/exhibitions/1539",
+        "label": "MoMA — Ocean of Images: New Photography 2015"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Ocean of Images — MoMA",
+        "url": "https://www.moma.org/calendar/exhibitions/1539/installation_images/11609"
+      },
+      {
+        "num": 2,
+        "name": "Swiping at Pictures — Aperture",
+        "url": "https://aperture.org/editorial/swiping-at-pictures/"
+      },
+      {
+        "num": 3,
+        "name": "Ocean of Images: New Photography 2015 — MoMA",
+        "url": "https://www.moma.org/calendar/exhibitions/1539"
+      },
+      {
+        "num": 4,
+        "name": "The 2019 Whitney Biennial in Six Works — TIME",
+        "url": "https://time.com/5590616/2019-whitney-biennial-compelling-works/"
+      },
+      {
+        "num": 5,
+        "name": "New Photography and MoMA's Collection, Part 1 — MoMA Inside/Out",
+        "url": "https://www.moma.org/explore/inside_out/2016/01/08/new-photography-and-momas-collection-part-1/"
+      }
+    ]
+  },
+  "mika-ninagawa": {
+    "leadJa": "蜷川実花（1972年東京生まれ）は、高彩度の色彩・花・金魚・ポートレートを軸に写真・映像・空間インスタレーションを展開する写真家・映画監督。2001年度木村伊兵衛写真賞受賞。120冊超の写真集と150回超の個展を持ち、アート・ファッション・映画・広告を横断する実践で知られる。",
+    "leadEn": "Mika Ninagawa (born 1972 in Tokyo) is a photographer and film director whose work crosses photography, cinema, and installation through saturated color, flowers, goldfish, and portraiture. Winner of the 2001 Kimura Ihei Award, she is known for moving between art, fashion, film, and advertising.",
+    "textJa": "経歴\n\n1972年東京生まれ。写真家・映像作家・多角的アーティストとして写真・映像・映画・空間インスタレーションにわたる実践を展開する。2001年度木村伊兵衛写真賞受賞。公式バイオグラフィーによると120冊超の写真集を出版し、150回超の個展・130回超のグループ展に参加。映画『さくらん』（2007年）・『ヘルタースケルター』（2012年）・『FOLLOWERS』（2020年）など映画監督としても知られる。*1\n\n表現解説\n\n主要なテーマは、鮮やかな色彩、花、金魚、ポートレート、自己像、女性のアイデンティティ、欲望、スペクタクル、無常、生死のサイクル、そして美と暗さの緊張関係である。高彩度色・密度の高い装飾的な表面・花と水中のモティーフ・演劇的な照明を使い、ファインアート・ファッション・広告・ミュージックビデオ・映画を横断する視覚言語が特徴的な手法である。*4 強烈な色彩と表面的な美を単なる装飾としてではなく、日常的な瞬間を高揚させ欲望を露わにし、視覚的過剰を通じて脆さや死を可視化する方法として扱う点が批評上の核心にある。1990年代後半の日本の視覚文化から登場しながら、その後の実践は美術館展示・商業イメージ文化・映画監督へと拡張した。*2 写真・映像・インスタレーションにわたる実践でアート写真と大衆的視覚文化の境界を揺さぶった点、認識可能な写真的パレットを書籍・展覧会・ファッション・映画・インスタレーションへと翻訳した点に歴史的意義がある。*1\n\n批評と受容\n\n原美術館の「Self-image」展は蜷川を国際的に活躍する写真家として位置づけ、多くの観客を集めた巡回美術館展覧会との連続性の中で示した。APインタビューでは近年のインスタレーション作品を日常の驚き・儚さ・過ぎ行く瞬間を保存したいという欲求と結びつけて論じる。作品を「カラフルな」スタイルに還元せず、美・残酷性・無常・死の共存という緊張関係を中心に解釈することが批評的に重要である。*5",
+    "textEn": "Biography\n\nMika Ninagawa was born in Tokyo in 1972. She works across photography, moving image, film, and spatial installation. She received the Kimura Ihei Award in 2001, and her official biography records more than 120 photobooks, over 150 solo exhibitions, and more than 130 group exhibitions. She is also known as the director of films including Sakuran (2007), Helter Skelter (2012), and Followers (2020).*1\n\nExpression / method\n\nNinagawa’s themes include vivid color, flowers, goldfish, portraiture, self-image, female identity, desire, spectacle, transience, cycles of life and death, and the tension between beauty and darkness. Her method is marked by high saturation, dense decorative surfaces, floral and aquatic motifs, theatrical lighting, and a visual language that crosses fine art, fashion, advertising, music video, and cinema.*4 The critical point is that her intense color and surface beauty are not mere decoration. They heighten everyday moments, expose desire, and use visual excess to make fragility and death visible. Emerging from Japanese visual culture in the late 1990s, her later practice expanded into museum exhibitions, commercial image culture, and film direction.*2 Her historical significance lies in unsettling the boundary between art photography and popular visual culture and in translating a recognizable photographic palette into books, exhibitions, fashion, film, and installation.*1\n\nCriticism and reception\n\nThe Hara Museum’s Self-image exhibition positioned Ninagawa as an internationally active photographer and connected her work to major touring museum presentations that drew large audiences. An AP interview links her recent installations to wonder in everyday life, ephemerality, and the desire to preserve passing moments. Critically, her work should not be reduced to being colorful; its force lies in the coexistence of beauty, cruelty, impermanence, and death.*5",
+    "links": [
+      {
+        "url": "https://www.haramuseum.or.jp/en/hara/exhibition/288/",
+        "label": "原美術館 — Mika Ninagawa: Self-image"
+      },
+      {
+        "url": "https://apnews.com/article/7d2a61569d0b8607667e65a2de1871e0",
+        "label": "AP — With Eternity in a Moment"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Biography — Mika Ninagawa official website",
+        "url": "https://www.mikaninagawa.com/html/biography/"
+      },
+      {
+        "num": 2,
+        "name": "Mika Ninagawa: Self-image — 原美術館",
+        "url": "https://www.haramuseum.or.jp/en/hara/exhibition/288/"
+      },
+      {
+        "num": 3,
+        "name": "Special Interview: Mika Ninagawa — Tokyo Metropolitan Foundation",
+        "url": "https://www.rekibun.or.jp/en/art/artnewstokyo/interview/ninagawa/"
+      },
+      {
+        "num": 4,
+        "name": "Mika Ninagawa: Expressions of vivid transience — Sustainable Japan / Japan Times",
+        "url": "https://sustainable.japantimes.com/magazine/vol17/17-01"
+      },
+      {
+        "num": 5,
+        "name": "With Eternity in a Moment — Associated Press",
+        "url": "https://apnews.com/article/7d2a61569d0b8607667e65a2de1871e0"
+      }
+    ]
+  },
+  "natalie-czech": {
+    "leadJa": "ナタリー・チェコ（1976年生まれ、ベルリン拠点）は、雑誌・新聞・商品パッケージなどの印刷物の中に既存の詩を「発見」し、文字をマーキングして写真に撮る「Hidden Poems」シリーズで知られるドイツのコンセプチュアル写真家。カメラを読書の装置として使い、見ることと読むことの重なりを問う。",
+    "leadEn": "Natalie Czech (born 1976, based in Berlin) is a German conceptual photographer known for Hidden Poems, in which she finds existing poems within magazines, newspapers, packaging, and other printed matter, marking words and photographing the page as a field where reading and seeing overlap.",
+    "textJa": "経歴\n\n1976年ドイツ・ノイス生まれ、ベルリン拠点のアーティスト。「Hidden Poems」シリーズを2010年頃から開始し、同年アルフリード・クルップ・フォン・ボーレン・ウント・ハルバッハ現代写真賞を受賞。フリーズ・MAMCOほか国際的な機関で発表されてきた。*4\n\n表現解説\n\n主要なテーマは、写真と詩の関係、読むことと見ること、隠されたテキスト、作者性、引用、ファウンド素材、そして印刷されたページの写真的変換である。雑誌記事・新聞・商品パッケージ・アルバムカバー・レビューなどの印刷物の中にロバート・クリーリー、ロルフ・ディーター・ブリンクマン、e.e.カミングス、ジャック・ケルアック、フランク・オハラら既存の詩人の詩を「発見」し、ハイライター・ペン・消去などの介入で個々の文字や単語をマーキングし、そのマーキングされたページを写真として撮影する。*1 写真はページの単なる再現ではなく、言語的な意味・物質的な表面・縮尺・注意が再編成されたフィールドとなる。隠された関係は秘密のメッセージではなく、日常の散文に詩的な構造を見出す異なる読み方の形式であるとチェコ自身は語っている。*2 アーカイブ・複製・テキストとイメージの関係・印刷された文化的記憶を扱うコンセプチュアル写真が増加していた2010年代の文脈に属し、カメラを読書の装置として扱い読むことと見ることの行為を重ね合わせた点に歴史的意義がある。*3\n\n批評と受容\n\nFriezeの2011年レビューはチェコの方法を詩と写真の対等なパートナーシップとして説明し、2013年の特集記事では「隠れた関係は秘密のメッセージではなく普通の散文に詩的な構造を見出す方法」と解説する。MAMCOは彼女の実践をコンクリート詩と流用的写真の合流点として位置づけ、テキストもイメージも何を見せ何を語れるかを問う二つの歴史が交差する場として提示する。*3",
+    "textEn": "Biography\n\nNatalie Czech was born in Neuss, Germany, in 1976 and is based in Berlin. She began the Hidden Poems series around 2010 and received the Alfried Krupp von Bohlen und Halbach Foundation Prize for Contemporary Photography that year. Her work has been shown internationally at institutions including Frieze and MAMCO.*4\n\nExpression / method\n\nCzech’s themes include the relation between photography and poetry, reading and seeing, hidden text, authorship, quotation, found material, and the photographic transformation of the printed page. She locates poems by writers such as Robert Creeley, Rolf Dieter Brinkmann, e.e. cummings, Jack Kerouac, and Frank O’Hara within magazine articles, newspapers, packaging, album covers, and reviews. She then marks letters or words with highlighter, pen, or erasure and photographs the marked page.*1 The photograph is not simply a reproduction of the page; it becomes a field in which linguistic meaning, material surface, scale, and attention are reorganized. Czech has said that the hidden relation is not a secret message but another way of reading, one that finds poetic structures in ordinary prose.*2 Her practice belongs to a 2010s context in which conceptual photography increasingly addressed archives, reproduction, text-image relations, and printed cultural memory. Its importance lies in treating the camera as an instrument of reading and overlaying acts of seeing and reading.*3\n\nCriticism and reception\n\nFrieze’s 2011 review described Czech’s method as an equal partnership between poetry and photography, while a 2013 feature emphasized that hidden relations are not secret messages but a way of finding poetic structure in ordinary prose. MAMCO positions her practice at the intersection of concrete poetry and appropriative photography, where two histories meet: what text can show and what images can say.*3",
+    "links": [
+      {
+        "url": "https://www.frieze.com/article/natalie-czech-de",
+        "label": "Frieze — Natalie Czech: Filling in the Blanks"
+      },
+      {
+        "url": "https://www.mamco.ch/en/1780/Natalie-Czech",
+        "label": "MAMCO Genève — Natalie Czech"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Natalie Czech — Frieze",
+        "url": "https://www.frieze.com/article/natalie-czech"
+      },
+      {
+        "num": 2,
+        "name": "Natalie Czech: Filling in the Blanks — Frieze",
+        "url": "https://www.frieze.com/article/natalie-czech-de"
+      },
+      {
+        "num": 3,
+        "name": "Natalie Czech — MAMCO Genève",
+        "url": "https://www.mamco.ch/en/1780/Natalie-Czech"
+      },
+      {
+        "num": 4,
+        "name": "Natalie Czech's Hidden Poems — e-flux",
+        "url": "https://www.e-flux.com/announcements/35161/natalie-czech-s-hidden-poems/"
+      }
+    ]
+  },
+  "noriko-hayashi": {
+    "leadJa": "林典子（1983年生まれ）は、キルギスの花嫁誘拐・ヤジディ教徒の祈りなど国際社会で報道されにくい問題を長期取材するドキュメンタリー写真家。2013年にVisaポール・イマージュのVisa d'Or受賞（日本人初）。個人の物語を通じて強制・ジェンダー・信仰の構造を可視化する。",
+    "leadEn": "Noriko Hayashi (born 1983) is a documentary photographer who works on underreported social issues, including bride kidnapping in Kyrgyzstan and Yazidi prayer. Winner of the 2013 Visa d’Or at Visa pour l’Image, she uses individual stories to make structures of coercion, gender, and faith visible.",
+    "textJa": "経歴\n\n1983年生まれ、東京拠点のドキュメンタリー写真家。大学で国際関係を学びながらガンビアの地方新聞で撮影を始めた。主要プロジェクトに「Unholy Matrimony——キルギスの花嫁誘拐」「Alaka-chuu」「ヤジディ教徒の祈り」がある。2013年にフランスのVisa pour l'ImageでVisa d'Or受賞（日本人初の受賞）。ワールドプレスフォトのフープ・スワルト・マスタークラス2015年選出者。NPPAフォトジャーナリズム賞・デイズジャパン国際フォトジャーナリズム賞・アレクシア財団・アムネスティ・メディア賞でも受賞実績を持つ。*1\n\n表現解説\n\n主要なテーマは、報道されにくい社会問題、ジェンダーに基づく暴力、強制婚、難民と移住、宗教的少数者、主流ニュースメディアでは代表されにくい地域の日常生活である。ドキュメンタリー・フォトジャーナリズムの形式で、密着取材・キャプション・コミュニティへの長期滞在を通じて個人の物語から特定の社会的慣行を示す。*3 「Unholy Matrimony——キルギスの花嫁誘拐」（2012年）では農村部のキルギス社会を5か月かけて取材し、アラ・カチュー（花嫁誘拐）の慣行を撮影した。1994年から法律上は違法とされながらも地域社会での慣行が続いていたこの問題に対し、女性が結婚を受け入れるまでの説得の場面や白いスカーフという婚姻の象徴を通じて、強制の構造を個人の身体・儀礼・家族交渉の場として記録する。*4 国際関係の学知背景と初期のガンビア取材経験が、国際ニュースのアジェンダに載りにくい問題に焦点を当てる実践を形成した。2000〜2010年代のドキュメンタリー写真家が長期視覚的ストーリーテリングで人権問題を個人的細部と結びつけていた文脈に属する。*1\n\n批評と受容\n\nビザ・プール・リマージュでのVisa d'Or受賞（同賞25年の歴史で初の日本人受賞）が最大の批評的評価となっている。Panos Picturesは林の仕事を報道されにくい問題と現実を対象とするものとして一貫して位置づける。写真の批評的な力は、強制の構造を抽象的な統計によってではなく、特定の女性・儀礼・部屋・身振り・家族の交渉によって示すことにある。*1",
+    "textEn": "Biography\n\nNoriko Hayashi was born in 1983 and is based in Tokyo. She began photographing for a local newspaper in Gambia while studying international relations at university. Major projects include Unholy Matrimony: Bride Kidnapping in Kyrgyzstan, Alaka-chuu, and The Prayer of the Yazidis. In 2013 she received the Visa d’Or at Visa pour l’Image in France, the first Japanese photographer to do so. She was selected for the 2015 World Press Photo Joop Swart Masterclass and has received awards from NPPA, Days Japan, the Alexia Foundation, and Amnesty Media.*1\n\nExpression / method\n\nHayashi’s themes include underreported social issues, gender-based violence, forced marriage, refugees and migration, religious minorities, and daily life in places rarely represented by mainstream news media. Working within documentary photography and photojournalism, she uses close reporting, captions, and long-term stays in communities to show social practices through individual stories.*3 In Unholy Matrimony, made over five months in rural Kyrgyzstan in 2012, she photographed the practice of ala kachuu, or bride kidnapping. Although illegal since 1994, the practice continued socially, and Hayashi documented persuasion scenes, family negotiation, and symbols such as the white scarf that marks marriage.*4 Her background in international relations and early work in Gambia shaped a practice focused on subjects that often fail to enter the international news agenda. The work belongs to a 2000s and 2010s documentary context in which long-form visual storytelling connected human rights issues with personal detail.*1\n\nCriticism and reception\n\nThe Visa d’Or at Visa pour l’Image, awarded in the prize’s twenty-fifth year, is the strongest marker of Hayashi’s critical recognition. Panos Pictures consistently frames her work around underreported issues and realities. The critical force of her photography lies in showing structures of coercion not through abstract statistics but through particular women, rituals, rooms, gestures, and family negotiations.*1",
+    "links": [
+      {
+        "url": "https://www.panos.co.uk/portfolio/noriko-hayashi/",
+        "label": "Panos Pictures — Noriko Hayashi"
+      },
+      {
+        "url": "https://norikohayashi.com/unholy-matrimony",
+        "label": "Noriko Hayashi — Unholy Matrimony"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Noriko Hayashi — Panos Pictures",
+        "url": "https://www.panos.co.uk/portfolio/noriko-hayashi/"
+      },
+      {
+        "num": 2,
+        "name": "Joop Swart Masterclass alumni — World Press Photo",
+        "url": "https://www.worldpressphoto.org/education/programs/joop-swart-masterclass/alumni"
+      },
+      {
+        "num": 3,
+        "name": "Unholy Matrimony — Noriko Hayashi",
+        "url": "https://norikohayashi.com/unholy-matrimony"
+      },
+      {
+        "num": 4,
+        "name": "Noriko Hayashi — Verve Photo",
+        "url": "https://vervephoto.wordpress.com/2014/02/10/noriko-hayashi/"
+      }
+    ]
+  },
+  "rashid-johnson": {
+    "leadJa": "ラシード・ジョンソン（1977年シカゴ生まれ）は、ヴァン・ダイク・ブラウン印画などの歴史的写真プロセスと演出的なポートレートを通じ、黒人のアイデンティティ・二重意識・表象の政治を問うアメリカのアーティスト。スタジオ美術館ハーレム「Freestyle」（2001年）に参加しポストブラック芸術の文脈で登場した。",
+    "leadEn": "Rashid Johnson (born 1977 in Chicago) is an American artist whose early photographs used historical processes such as Van Dyke brown printing and staged portraiture to examine Black identity, double consciousness, and the politics of representation. He emerged through Freestyle at the Studio Museum in Harlem in 2001.",
+    "textJa": "経歴\n\n1977年シカゴ生まれのアメリカのアーティスト。コロンビア・カレッジ・シカゴで写真を専攻し、シカゴ美術館附属学校でも学んだ。初期の写真連作「Seeing in the Dark」「The New Negro Escapist Social and Athletic Club」がその出発点となる。スタジオ美術館ハーレムの「Freestyle」（2001年）への参加を機に注目を集め、MCAシカゴでの初の主要個展「Message to Our Folks」（2012年）は活動初期14年を回顧した。作品はメトロポリタン美術館・ナショナル・ギャラリー（ワシントンDC）・スミソニアン協会などに収蔵されている。*2\n\n表現解説\n\n主要なテーマは、黒人のアイデンティティ、文化的記憶、二重意識、アフロセントリックなオブジェクト、美術史、階級、男性性、不安、そして公的・私的な自己の構築である。初期の写真ではヴァン・ダイク・ブラウン印画などの歴史的プロセスと演出的なポートレートを使用。「Seeing in the Dark」ではシカゴでホームレス状態にある黒人男性を19世紀の写真プロセスで撮影し、現代の被写体と写真的ポートレートおよび人種的表象の歴史を結びつけた。*5 「The New Negro Escapist Social and Athletic Club」では架空の黒人知識人の秘密結社を構築し、時代的なスタイリング・二重化された人物・フォーマルなポーズ・黒人の歴史と理論を参照するタイトルを用いた。写真的歴史主義と演出的フィクションを使うことで、ジョンソンは表象の負荷を批評する——透明なドキュメンタリーイメージを提供するのではなく、アイデンティティが歴史・アーカイブ・階級への上昇・パフォーマンス・コード化された素材によって媒介されることを示す。*4 スタジオ美術館ハーレムの「Freestyle」（2001年）との関連で、21世紀初頭に黒人の可視性の政治を複雑化させた点に歴史的意義がある。*2\n\n批評と受容\n\nMCAシカゴは「Message to Our Folks」でジョンソンの日常的な素材の使い方を「ドメスティックなものをハイジャックする」過程として説明する。ボードイン大学の「Larry」オブジェクトテキストは「Seeing in the Dark」をシェリー・ライスの「写真を社会的な場」として読む解釈と結びつける。人種的アイデンティティをドキュメンタリー的証拠によって安定化できるという考えへの挑戦——ジョンソンのポートレートは黒人主観性が歴史・フィクション・視覚的コードを通じて形成されることを示す意図的なパフォーマンスである——が批評的な核心となっている。*5",
+    "textEn": "Biography\n\nRashid Johnson was born in Chicago in 1977. He studied photography at Columbia College Chicago and also attended the School of the Art Institute of Chicago. Early photographic series such as Seeing in the Dark and The New Negro Escapist Social and Athletic Club formed the basis of his practice. His participation in Freestyle at the Studio Museum in Harlem in 2001 brought wider attention, and MCA Chicago’s Message to Our Folks in 2012 surveyed the first fourteen years of his work. His work is held by institutions including the Metropolitan Museum of Art, the National Gallery of Art in Washington, D.C., and the Smithsonian.*2\n\nExpression / method\n\nJohnson’s themes include Black identity, cultural memory, double consciousness, Afrocentric objects, art history, class, masculinity, anxiety, and the construction of public and private selves. His early photographs used historical processes such as Van Dyke brown printing and staged portraiture. In Seeing in the Dark, he photographed Black men experiencing homelessness in Chicago through a nineteenth-century process, linking contemporary subjects to histories of photographic portraiture and racial representation.*5 In The New Negro Escapist Social and Athletic Club, he invented a fictional secret society of Black intellectuals, using period styling, doubled figures, formal poses, and titles that refer to Black history and theory. Through photographic historicism and staged fiction, Johnson critiques the burden of representation: rather than offering transparent documentary images, he shows identity as mediated by history, archive, class aspiration, performance, and coded material.*4 His historical importance lies in complicating the politics of Black visibility at the beginning of the twenty-first century, especially in relation to the Studio Museum’s Freestyle exhibition.*2\n\nCriticism and reception\n\nMCA Chicago’s Message to Our Folks described Johnson’s use of everyday materials as a process of hijacking the domestic. Bowdoin College’s text on Larry connects Seeing in the Dark to Shelley Rice’s reading of photography as a social site. The critical core is Johnson’s challenge to the idea that racial identity can be stabilized by documentary evidence. His portraits are deliberate performances showing that Black subjectivity is formed through history, fiction, and visual codes.*5",
+    "links": [
+      {
+        "url": "https://mcachicago.org/exhibitions/2012/rashid-johnson-message-to-our-folks",
+        "label": "MCA Chicago — Rashid Johnson: Message to Our Folks"
+      },
+      {
+        "url": "https://www.nga.gov/artworks/221714-new-negro-escapist-social-and-athletic-club-emmett",
+        "label": "National Gallery of Art — The New Negro Escapist Social and Athletic Club"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Rashid Johnson — Hauser & Wirth",
+        "url": "https://www.hauserwirth.com/artists/2830-rashid-johnson"
+      },
+      {
+        "num": 2,
+        "name": "Rashid Johnson: Message to Our Folks — MCA Chicago",
+        "url": "https://mcachicago.org/exhibitions/2012/rashid-johnson-message-to-our-folks"
+      },
+      {
+        "num": 3,
+        "name": "Rashid Johnson — MoMA",
+        "url": "https://www.moma.org/collection/artists/42465"
+      },
+      {
+        "num": 4,
+        "name": "The New Negro Escapist Social and Athletic Club — TBA21",
+        "url": "https://tba21.org/Negro_escapist"
+      },
+      {
+        "num": 5,
+        "name": "Object of the Month: Larry by Rashid Johnson — Bowdoin College Museum of Art",
+        "url": "https://www.bowdoin.edu/art-museum/news/2023/larry-rashid-johnson.html"
+      }
+    ]
+  },
+  "ryan-mcginley": {
+    "leadJa": "ライアン・マッギンレー（1977年生まれ）は、ニューヨークのダウンタウン・ユース・サブカルチャーを身近な距離から撮影し、後に屋外での演出的な裸体ロードトリップへと展開したアメリカの写真家。24歳でホイットニー美術館初の個展を開いた最年少作家として知られる。",
+    "leadEn": "Ryan McGinley (born 1977) is an American photographer who first photographed New York downtown youth subcultures at close range and later staged outdoor nude road-trip images. He is known as the youngest artist to receive a solo exhibition at the Whitney Museum at age twenty-four.",
+    "textJa": "経歴\n\n1977年ニュージャージー州ラムジー生まれ。ICPより2007年度インフィニティ賞（若手写真家部門）を受賞。MoMA PS1で2004年に個展、「Greater New York 2005」および「Into Me/Out of Me」にも参加。自費出版「The Kids Are Alright」（1999年）が初期の評価につながり、24歳でホイットニー美術館での個展（当時同館最年少）に至った。*1\n\n表現解説\n\n主要なテーマは、若さ、友情、パフォーマンス、クィア／ダウンタウンのサブカルチャー、自由、リスク、親密性、演出された自発性、そして都市から自然への逃避の神話である。初期の仕事では友人・グラフィティライター・スケーターボーダー・ミュージシャン・クィアの若者たちを親密なカラー写真で撮影。後期作品では裸体または半裸の身体を屋外でロードトリップの形式で演出し、即興的に見えながら念入りに組み立てられたイメージを作る。*3 マッギンレーは自分の社会的世界の内側から作業し、被写体を距離を置いたドキュメンタリーの対象ではなく協働者としていた。後期の屋外での演出は、ダウンタウン・ユース文化のエネルギーを神話的なアメリカの風景へと移植した。2000年代初頭の受容は、ユース・サブカルチャー・クィアの可視性・DIY出版・スケートボード/グラフィティ場面、そして日記的写真と演出的アート写真の境界への関心と重なる。*1 ICPはマッギンレーをナン・ゴールディンやヴォルフガング・ティルマンスと結びつける告白的な系譜に位置づけており、ロードトリップ作品もアメリカの道路写真・風景の中の裸体・対抗文化的神話との対話を持つ。*1\n\n批評と受容\n\nICPはマッギンレーの肖像を「正直で告白的な目でユース・サブカルチャーを明らかにするもの」と評し、ホイットニー最年少個展として紹介した。写真の批評的な意味は、自発性と演出の緊張にある——写真は自然発生的に見えるが、その意味は被写体がカメラを意識し若さをイメージとして能動的に構築することへの参加にある。*3",
+    "textEn": "Biography\n\nRyan McGinley was born in Ramsey, New Jersey, in 1977. He received ICP’s 2007 Infinity Award for Young Photographer. He had a solo exhibition at MoMA PS1 in 2004 and participated in Greater New York 2005 and Into Me/Out of Me. His self-published book The Kids Are Alright (1999) helped establish his early reputation, leading to a Whitney Museum solo exhibition when he was twenty-four, then the youngest artist to receive one there.*1\n\nExpression / method\n\nMcGinley’s themes include youth, friendship, performance, queer and downtown subculture, freedom, risk, intimacy, staged spontaneity, and the myth of escape from the city into nature. His early work photographed friends, graffiti writers, skateboarders, musicians, and queer young people in intimate color images. Later he staged nude or semi-nude bodies outdoors in the form of road trips, producing images that appear spontaneous but are carefully organized.*3 He worked from within his own social world, treating subjects not as distant documentary objects but as collaborators. The later outdoor works transfer the energy of downtown youth culture into a mythic American landscape. His early 2000s reception overlaps with interest in youth subculture, queer visibility, DIY publishing, skate and graffiti scenes, and the boundary between diary-like photography and staged art photography.*1 ICP links him to a confessional lineage including Nan Goldin and Wolfgang Tillmans, while the road-trip works also converse with American road photography, the nude in landscape, and countercultural myth.*1\n\nCriticism and reception\n\nICP described McGinley’s portraits as revealing youth subculture through an honest, confessional eye and noted his status as the youngest artist to receive a Whitney solo show. The critical meaning of the work lies in the tension between spontaneity and staging. The photographs appear to happen naturally, but their meaning depends on subjects actively participating in the construction of youth as an image.*3",
+    "links": [
+      {
+        "url": "https://www.icp.org/infinity-awards/ryan-mcginley",
+        "label": "ICP — 2007 Infinity Award: Ryan McGinley"
+      },
+      {
+        "url": "https://www.guggenheim.org/artwork/20711",
+        "label": "Guggenheim — Tree #1"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "2007 Infinity Award: Young Photographer — ICP",
+        "url": "https://www.icp.org/infinity-awards/ryan-mcginley"
+      },
+      {
+        "num": 2,
+        "name": "Ryan McGinley — MoMA",
+        "url": "https://www.moma.org/artists/72358"
+      },
+      {
+        "num": 3,
+        "name": "Ryan McGinley — Klat Magazine",
+        "url": "https://www.klatmagazine.com/en/art-en/ryan-mcginley/44933"
+      },
+      {
+        "num": 4,
+        "name": "Tree #1 — Guggenheim Museum",
+        "url": "https://www.guggenheim.org/artwork/20711"
+      }
+    ]
+  },
+  "sara-vanderbeek": {
+    "leadJa": "サラ・ヴァンダービーク（1976年生まれ）は、美術史・アーカイブ・都市の断片を一時的な彫刻として組み上げ写真に収め、その後解体するアメリカのアーティスト。写真はオブジェクトの唯一の痕跡として残り、記憶・時間・場所・集合的歴史の問いを担う。MoMA「New Photography 2009」参加。",
+    "leadEn": "Sara VanDerBeek (born 1976) is an American artist who assembles art-historical, archival, and urban fragments into temporary sculptures, photographs them, and then dismantles them. The photograph remains as the trace of the object and carries questions of memory, time, place, and collective history.",
+    "textJa": "経歴\n\n1976年生まれ、アメリカのアーティスト。MoMAの「New Photography 2009」に参加し、2010年にホイットニー美術館で初の美術館個展「Sara VanDerBeek: To Think of Time」を開催した。写真・彫刻・ファウンドイメージ・スタジオ構築物・インスタレーションを組み合わせた実践を展開する。*1\n\n表現解説\n\n主要なテーマは、記憶、時間、場所、縮尺、彫刻、建築的断片、美術史的イメージ、集合的な歴史、そして一時的な構築物の痕跡としての写真である。美術史の書籍・アーカイブ・雑誌・新聞などからイメージを集め、それらを一時的な彫刻やスタジオのアレンジメントに組み込んで撮影し、その後解体する。写真はイメージであると同時に残滓でもある——カメラのために作られた彫刻的オブジェクトの唯一の残存証拠となりうる。*1 「To Think of Time」展でホイットニーが指摘するように、彼女はスタジオの外でも作業し、時間を個人的なものと集合的なものとして同時に瞑想する。写真が縮尺・時間・場所の読みを変える力を持つことへの関心、そして写真が直接的な観察と同様にほとんど知覚されていない経験の側面を明らかにするという問いが実践を支えている。*2 芸術家が写真の21世紀的な意味を探るなかで写真が彫刻やインスタレーションへと拡張していた2000年代以降の文脈に属し、写真を記憶と集合的歴史が組み立てられ脱安定化される場として位置づけた点に歴史的意義がある。*4\n\n批評と受容\n\nホイットニーは静かでセミ抽象的な写真が彫刻的形態に基づき、撮影のために作られたオブジェクトの一時的な性格を強調すると評した。MoMAの「New Photography 2009」プレスリリースは「A Composition for Detroit」を1967年のデトロイト暴動からウォーカー・エヴァンスにいたる参照を取り込み脱工業化都市に応答するものとして説明する。The New Yorkerは同展に参加したヴァンダービークと関連作家を、個人的・政治的・美術史的な参照が詰め込まれた儚いアレンジメントを撮影する作家たちとして論じた。*3",
+    "textEn": "Biography\n\nSara VanDerBeek was born in 1976 and works in the United States. She participated in MoMA’s New Photography 2009, and in 2010 the Whitney Museum presented her first museum solo exhibition, Sara VanDerBeek: To Think of Time. Her practice combines photography, sculpture, found images, studio constructions, and installation.*1\n\nExpression / method\n\nVanDerBeek’s themes include memory, time, place, scale, sculpture, architectural fragments, art-historical images, collective history, and photography as the trace of temporary constructions. She collects images from art-history books, archives, magazines, newspapers, and other sources, incorporates them into temporary sculptures or studio arrangements, photographs them, and then dismantles them. The photograph is both image and residue; it may be the only surviving evidence of the sculptural object made for the camera.*1 As the Whitney noted in To Think of Time, she also works outside the studio and meditates on time as both personal and collective. Her practice rests on the question of photography’s power to change how we read scale, time, and place, and on its ability to reveal aspects of experience that are barely perceived.*2 In a 2000s context where artists were testing photography’s twenty-first-century meaning through sculpture and installation, VanDerBeek’s importance lies in treating photography as a site where memory and collective history are assembled and destabilized.*4\n\nCriticism and reception\n\nThe Whitney described her quiet, semi-abstract photographs as based on sculptural forms and emphasized the temporary nature of objects built for the camera. MoMA’s New Photography 2009 press release described A Composition for Detroit as responding to a deindustrialized city through references ranging from the 1967 Detroit uprising to Walker Evans. The New Yorker discussed VanDerBeek and related artists as photographing fragile arrangements dense with personal, political, and art-historical references.*3",
+    "links": [
+      {
+        "url": "https://whitney.org/exhibitions/sara-van-der-beek",
+        "label": "Whitney Museum — Sara VanDerBeek: To Think of Time"
+      },
+      {
+        "url": "https://aperture.org/blog/interview-with-sara-vanderbeek/",
+        "label": "Aperture — Interview with Sara VanDerBeek"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Sara VanDerBeek: To Think of Time — Whitney Museum",
+        "url": "https://whitney.org/exhibitions/sara-van-der-beek"
+      },
+      {
+        "num": 2,
+        "name": "Interview with Sara VanDerBeek — Aperture",
+        "url": "https://aperture.org/blog/interview-with-sara-vanderbeek/"
+      },
+      {
+        "num": 3,
+        "name": "Big Picture — The New Yorker",
+        "url": "https://www.newyorker.com/magazine/2009/11/02/big-picture-2"
+      },
+      {
+        "num": 4,
+        "name": "New Photography 2009 press release — MoMA",
+        "url": "https://www.moma.org/documents/moma_press-release_387191.pdf"
+      }
+    ]
+  },
+  "shannon-ebner": {
+    "leadJa": "シャノン・エブナー（1971年生まれ、ロサンゼルス拠点）は、段ボール・木材・コンクリートブロックで文字や語句を構築して写真に撮り、言語を視覚的構造として問うアメリカのアーティスト。「The Electric Comma」など詩と写真を横断するプロジェクトで知られ、MoMAに複数作品が収蔵されている。",
+    "leadEn": "Shannon Ebner (born 1971, based in Los Angeles) is an American artist who builds letters and words from cardboard, wood, and concrete blocks, then photographs them as visual structures. Projects such as The Electric Comma move between poetry and photography.",
+    "textJa": "経歴\n\n1971年生まれ、ロサンゼルス拠点のアメリカのアーティスト。MoMAに「USA」（2003年）・「ETC」（2010年）・「PHOTORAMA」（2017年）などが収蔵され、「Ecstatic Alphabets/Heaps of Language」展にも参加。主要プロジェクト「The Electric Comma」はハマー美術館・LAXART・第54回ヴェネツィア・ビエンナーレの文脈で2011年に展示された。LACMAの出版部門が最初のアーティスト・ブックとして「The Sun as Error」（2009年）を刊行した。*1\n\n表現解説\n\n主要なテーマは、写真と言語、アルファベット体系、政治的言説、詩、遅延、余白、信号、判読不能性、そして意味の不安定性である。段ボール・木材・コンクリートブロックなど日常的な素材で文字や語句を組み立て、スタジオや風景の中で撮影する。作品はしばしば文字を記号・アスタリスク・バックスラッシュ・空白に置き換え、可読性を断ち切り、言語を視覚的構造として経験させる。*1 「The Electric Comma」は写真の静的な性格と過去との関係を含む写真の条件についての詩として始まり、エブナーはこれを「写真的な文」と呼ぶ。写真は言語をその通常の機能の外に押し出すための方法であり、言葉が意味を演じ・遅延し・断片化し・異なる形で伝達しうるかを試すイメージとなる。コンセプチュアルアート・具体詩・エド・ルシャ的なワード/イメージの作業・1960〜70年代の言語ベースアートを2000年代の写真的文脈に引き継いだ点に歴史的意義がある。*5\n\n批評と受容\n\nハマー美術館のテキストは「The Electric Comma」を写真・詩・情報理論・コミュニケーションとの関係において論じる主要な批評資料となっている。Art in Americaのレビューは文型写真的論理を通じて言語を物質化する作家としてエブナーを評し、FriezeはDead Democracy Lettersの初期レビューで彼女の仕事を政治的言説・コンセプチュアル写真・エド・ルシャ・ブルース・ナウマン・ロバート・スミスソンと結びつけた。写真が言語を挿絵化するのではなく、言語を構築・断絶・空間化するシステムとして機能するという点が批評的核心をなす。*4",
+    "textEn": "Biography\n\nShannon Ebner was born in 1971 and is based in Los Angeles. MoMA holds works including USA (2003), ETC (2010), and PHOTORAMA (2017), and she participated in Ecstatic Alphabets/Heaps of Language. Her major project The Electric Comma was shown in 2011 in contexts including the Hammer Museum, LAXART, and the 54th Venice Biennale. LACMA published The Sun as Error (2009) as its first artist book.*1\n\nExpression / method\n\nEbner’s themes include photography and language, alphabet systems, political speech, poetry, delay, gaps, signals, illegibility, and the instability of meaning. She builds letters and phrases from everyday materials such as cardboard, wood, and concrete blocks, then photographs them in studio or landscape settings. The works often replace letters with signs, asterisks, backslashes, or blanks, interrupting legibility and making language experienced as visual structure.*1 The Electric Comma began as a poem about the condition of photography, including its static character and relation to the past; Ebner has called it a photographic sentence. Photography becomes a way to push language outside its usual function, testing how words can perform, delay, fragment, and communicate differently. Her significance lies in carrying conceptual art, concrete poetry, Ed Ruscha-like word-image practices, and the language-based art of the 1960s and 1970s into a 2000s photographic context.*5\n\nCriticism and reception\n\nThe Hammer Museum’s text on The Electric Comma is a key critical source because it frames the work through photography, poetry, information theory, and communication. Art in America reviewed Ebner as an artist who materializes language through a sentence-like photographic logic, while Frieze’s early review of Dead Democracy Letters connected her to political speech, conceptual photography, Ed Ruscha, Bruce Nauman, and Robert Smithson. The critical core is that photography does not illustrate language; it builds, interrupts, and spatializes it.*4",
+    "links": [
+      {
+        "url": "https://hammer.ucla.edu/exhibitions/2011/hammer-projects-shannon-ebner",
+        "label": "Hammer Museum — Shannon Ebner: The Electric Comma"
+      },
+      {
+        "url": "https://www.moma.org/artists/35212",
+        "label": "MoMA — Shannon Ebner"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Hammer Projects: Shannon Ebner — Hammer Museum",
+        "url": "https://hammer.ucla.edu/exhibitions/2011/hammer-projects-shannon-ebner"
+      },
+      {
+        "num": 2,
+        "name": "Shannon Ebner — MoMA",
+        "url": "https://www.moma.org/artists/35212"
+      },
+      {
+        "num": 3,
+        "name": "LACMA Book Launch — LACMA Unframed",
+        "url": "https://unframed.lacma.org/2009/03/09/lacma-book-launch-in-nyc"
+      },
+      {
+        "num": 4,
+        "name": "Shannon Ebner — Art in America",
+        "url": "https://altmansiegel.com/usr/documents/press/download_url/65/2011_se_aia_hammer.pdf"
+      },
+      {
+        "num": 5,
+        "name": "Shannon Ebner — Frieze",
+        "url": "https://www.frieze.com/article/shannon-ebner"
+      }
+    ]
+  },
+  "taiji-matsue": {
+    "leadJa": "松江泰治（1963年東京生まれ）は、地平線と空を排し正面光で影を消し去った「地表面」の写真を撮り続ける日本の写真家。東京大学で地理学を学んだ背景を持ち、写真を景色の窓ではなく地理情報・密度・縮尺の場として扱う。SFMOMAをはじめ国際的な美術館に収蔵されている。",
+    "leadEn": "Taiji Matsue (born 1963 in Tokyo) is a Japanese photographer who photographs the earth’s surface while excluding the horizon and sky and using frontal light to suppress shadow. Trained in geography at the University of Tokyo, he treats photography as a field of geographic information, density, and scale.",
+    "textJa": "経歴\n\n1963年東京生まれの日本の写真家。東京大学で地理学を学んだ後に写真家となり、その学的背景が方法論に直接反映されている。主要シリーズに「TRANSIT」「CC」「JP」「LIM」「jp0205」「gazetteer」がある。SFMOMAが複数作品を収蔵し、広島市現代美術館での「gazetteer」展は初の本格的な回顧展となった。*1\n\n表現解説\n\n主要なテーマは、地表面、地理、地図化、都市的テクスチャー、反ピクチャレスク的記述、縮尺、平坦性、そして写真に固有の光学的可能性である。高所または正面からの視点で撮影し、地平線と空を画面から排除し、影をなくすための正面光を使う。結果として得られるのは深度を持たない密度の高い平坦なフィールドで、景色的な奥行きへの抵抗が特徴的である。*5 地平線と空を含まず影を消す正面光——これらのルールが写真の平坦性を作り出し写真の本質を問うものとして機能する、とTokyo Art Beatの「makietaCC」についてのテキストは説明する。地理学的な訓練と地表面への関心が、表現的な風景から離れ体系的な視覚的記述へと向かわせている。写真を景色への窓としてではなく情報のフィールドとして扱い、場の物理的な特異性を保ちながら風景写真が地図・データフィールド・視覚的アーカイブとして機能するようにした点に歴史的意義がある。*3\n\n批評と受容\n\nArtscape Japanは松江の「放浪するカメラ」として、地理学的な関心と写真的記述の系統的な側面を両立させた実践として論じる。Tokyo Art Beatは「makietaCC」について、形式的なルールと写真における平坦性の効果を精確に説明する。作品の中立性は意味の不在ではなく、ドラマ的な視点を拒否し代わりに蓄積された細部・表面・反復を通じて場の構造を開示する方法である。*5",
+    "textEn": "Biography\n\nTaiji Matsue was born in Tokyo in 1963. After studying geography at the University of Tokyo, he became a photographer, and that academic background directly informs his method. Major series include TRANSIT, CC, JP, LIM, jp0205, and gazetteer. SFMOMA holds multiple works, and the exhibition gazetteer at the Hiroshima City Museum of Contemporary Art was his first full-scale retrospective.*1\n\nExpression / method\n\nMatsue’s themes include the surface of the earth, geography, mapping, urban texture, anti-picturesque description, scale, flatness, and the optical possibilities specific to photography. He photographs from elevated or frontal viewpoints, excludes horizon and sky, and uses frontal light to suppress shadows. The result is a dense, flat field with little spatial depth, resisting scenic recession.*5 Tokyo Art Beat’s text on makietaCC explains that the rules of no horizon, no sky, and frontal light without shadows produce photographic flatness and ask what the essence of photography is. Matsue’s training in geography and interest in the earth’s surface move his work away from expressive landscape and toward systematic visual description. His historical significance lies in treating photography not as a window onto scenery but as a field of information, preserving the specificity of place while letting landscape function as map, data field, and visual archive.*3\n\nCriticism and reception\n\nArtscape Japan describes Matsue’s roaming camera as a practice that joins geographic interest to systematic photographic description. Tokyo Art Beat precisely explains the formal rules of makietaCC and their effect of flatness. The apparent neutrality of the images is not an absence of meaning; it is a refusal of dramatic viewpoint in favor of accumulated detail, surface, and repetition that reveal the structure of place.*5",
+    "links": [
+      {
+        "url": "https://artscape.jp/artscape/eng/focus/1902_02.html",
+        "label": "artscape Japan — The Wanderer: Taiji Matsue's Roaming Camera"
+      },
+      {
+        "url": "https://www.sfmoma.org/artist/Taiji_Matsue/",
+        "label": "SFMOMA — Taiji Matsue"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Taiji Matsue — SFMOMA",
+        "url": "https://www.sfmoma.org/artist/Taiji_Matsue/"
+      },
+      {
+        "num": 2,
+        "name": "Taiji Matsue — TARO NASU",
+        "url": "https://www.taronasugallery.com/en/artists/taiji-matsue/"
+      },
+      {
+        "num": 3,
+        "name": "The Wanderer: Taiji Matsue's Roaming Camera — artscape Japan",
+        "url": "https://artscape.jp/artscape/eng/focus/1902_02.html"
+      },
+      {
+        "num": 4,
+        "name": "TAIJI MATSUE gazetteer — ART iT",
+        "url": "https://www.art-it.asia/en/partners_e/museum_e/hmoca_e/194364/"
+      },
+      {
+        "num": 5,
+        "name": "Matsue Taiji: makietaCC — Tokyo Art Beat",
+        "url": "https://www.tokyoartbeat.com/en/events/-/2021/F98D"
+      }
+    ]
+  },
+  "viviane-sassen": {
+    "leadJa": "ヴィヴィアン・サッセン（1972年アムステルダム生まれ）は、飽和した色彩・深い影・断片化された身体・隠蔽された顔を特徴とするファインアートと写真ファッションを横断するオランダの写真家。幼少期をケニアで過ごした経験が記憶・置換・夢想の主題に通底し、MoMA「New Photography 2011」参加。",
+    "leadEn": "Viviane Sassen (born 1972 in Amsterdam) is a Dutch photographer whose work crosses fine art and fashion through saturated color, deep shadow, fragmented bodies, and concealed faces. Her childhood in Kenya informs themes of memory, displacement, and dreamlike projection.",
+    "textJa": "経歴\n\n1972年アムステルダム生まれのオランダの写真家・アーティスト。ファッション・写真・ファインアートを学び1997年にアーネム王立美術アカデミーを卒業。2007年のプリ・ド・ローム受賞、2011年のICP・インフィニティ賞（広告/ファッション/応用写真部門）受賞。MoMAの「New Photography 2011」に参加。Foam「PHOSPHOR: Art & Fashion」（2023年）は30年超に及ぶキャリアの回顧展となった。*1\n\n表現解説\n\n主要なテーマは、身体、影、色彩、記憶、アフリカとヨーロッパ、置換、親密性、ファッション、欲望、セクシュアリティ、死、そして誘惑と不穏の緊張関係である。飽和した色彩・深い影・独特の視点・断片化された身体・隠された・または覆われた顔・強い幾何学性・絵画的またはコラージュ的な介入が特徴的な手法である。*2 ケニアでの幼少期と後の再訪がアフリカを舞台とする作品に通底する記憶・置換・夢想の感覚を形成している。MoMAは「Parasomnia」を記憶の神秘的な残滓と意図的に特定されないアフリカの国々を舞台とする匿名の被写体と結びつける。自分がヨーロッパに属しているとも感じず、アフリカにいるときは外国人であるという感覚——サッセン自身のこの言葉は「Parasomnia」の文脈において置換を解釈する上で重要な視点を提供する。*3 2000年代のファッション写真・ファインアート写真・ポストコロニアルな視線と記憶の問い・写真実践のハイブリッド性への美術館的承認が交差する地点に実践が発展した点に歴史的意義がある。*1\n\n批評と受容\n\nICPのインフィニティ賞プロフィールはサッセンのアートとファッションの仕事の往還、国際的な展覧会歴、アフリカでの写真活動を記録する。Foamの「PHOSPHOR」展は彼女のキャリアをアートとファッションにまたがるものとして位置づけ、新しい写真的形式への探求を強調する。TIMEは影・色彩・場所・身体を彫刻として使うことを論じ、美しさと不穏さを共存させたいというアーティスト自身の意図を伝える。顔を隠し身体を断片化し影を使うことで安定したアイデンティティを保留するこの方法が、観者をポートレートとしてではなく投影・幻想・原型としてイメージに向き合わせる。*4",
+    "textEn": "Biography\n\nViviane Sassen was born in Amsterdam in 1972. She studied fashion, photography, and fine art and graduated from the Royal Academy of Art in Arnhem in 1997. She received the Prix de Rome in 2007 and ICP’s 2011 Infinity Award for Applied/Fashion/Advertising Photography. She participated in MoMA’s New Photography 2011. Foam’s PHOSPHOR: Art & Fashion (2023) surveyed more than thirty years of her career.*1\n\nExpression / method\n\nSassen’s themes include the body, shadow, color, memory, Africa and Europe, displacement, intimacy, fashion, desire, sexuality, death, and the tension between seduction and unease. Her formal traits include saturated color, deep shadow, unusual viewpoints, fragmented bodies, hidden or covered faces, strong geometry, and painterly or collage-like interventions.*2 Her childhood in Kenya and later returns shaped the sense of memory, displacement, and dreamlike projection in works set in African countries. MoMA connects Parasomnia to mysterious residues of memory and anonymous subjects in intentionally unspecified African locations. Sassen’s own statement that she does not feel fully European, while in Africa she feels foreign, is important for interpreting displacement in Parasomnia.*3 Her practice developed at the intersection of fashion photography, fine-art photography, postcolonial questions of gaze and memory, and the museum recognition of hybrid photographic practice in the 2000s.*1\n\nCriticism and reception\n\nICP’s Infinity Award profile records the movement between art and fashion in Sassen’s work, her international exhibition history, and her photographic work in Africa. Foam’s PHOSPHOR exhibition positions her career across art and fashion and emphasizes the search for new photographic forms. TIME discusses her use of shadow, color, place, and bodies as sculptural elements and cites her wish to hold beauty and unease together. By hiding faces, fragmenting bodies, and using shadow, Sassen suspends stable identity and asks viewers to encounter images as projection, fantasy, and archetype rather than straightforward portraiture.*4",
+    "links": [
+      {
+        "url": "https://www.moma.org/interactives/exhibitions/2011/newphotography/viviane-sassen/",
+        "label": "MoMA — New Photography 2011: Viviane Sassen"
+      },
+      {
+        "url": "https://www.foam.org/events/viviane-sassen",
+        "label": "Foam — PHOSPHOR: Art & Fashion"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "2011 Infinity Award — ICP",
+        "url": "https://www.icp.org/infinity-awards/viviane-sassen"
+      },
+      {
+        "num": 2,
+        "name": "Viviane Sassen – PHOSPHOR: Art & Fashion — Foam",
+        "url": "https://www.foam.org/events/viviane-sassen"
+      },
+      {
+        "num": 3,
+        "name": "New Photography 2011: Viviane Sassen — MoMA",
+        "url": "https://www.moma.org/interactives/exhibitions/2011/newphotography/viviane-sassen/"
+      },
+      {
+        "num": 4,
+        "name": "In the Shadow of Viviane Sassen — TIME",
+        "url": "https://time.com/3777044/in-the-shadow-of-viviane-sassen/"
+      }
+    ]
+  },
+  "amalia-ulman": {
+    "leadJa": "アマリア・ウルマン（1989年アルゼンチン生まれ）は、2014年にInstagramとFacebookで「Excellences & Perfections」を実施したアルゼンチン＝スペインのアーティスト。脚本化された架空の自己像をSNSに投稿し続け、プラットフォームが前提とする真正性・自己ブランディング・女性性の規範そのものを作品の素材とした。",
+    "leadEn": "Amalia Ulman (born 1989 in Argentina) is an Argentine-Spanish artist who staged Excellences & Perfections on Instagram and Facebook in 2014. By posting a scripted fictional self, she made platform authenticity, self-branding, and norms of femininity into the material of the work.",
+    "textJa": "経歴\n\n1989年アルゼンチン生まれ、アルゼンチン＝スペインのアーティスト。パフォーマンス・写真・インスタレーション・映像・ソーシャルメディア・デジタルイメージ流通を横断する実践を展開する。「Excellences & Perfections」（2014年）はRhizome／ニューミュージアムの「First Look」で紹介・アーカイブされ、テート・モダンの「Performing for the Camera」（2016年）にも参加。映画監督としての作品に「El Planeta」（2021年）がある。*2\n\n表現解説\n\n主要なテーマは、オンラインでの自己形成、パフォーマンスとしての女性性、階級的上昇志向、消費者趣味、真正性、ソーシャルメディア写真の演出性、そしてプラットフォームが認識可能なアイデンティティを強化する仕組みである。「Excellences & Perfections」は従来の写真連作ではなくSNS投稿の連続として展開された。セルフィー・ホテルやレストランの設定・インテリア・美容イメージ・キャプション・ハッシュタグ・タイミング・オーディエンスの反応を使い、Instagramの日常的な文法の内側に信じさせる架空のペルソナを構築した。*2 Rhizomeはこの作品が脚本化されており、Instagram部分はソーシャルメディア・アーカイブツールで保存されたと指摘する——保存・インターフェース・プラットフォームの文脈が作品の後生の一部となっている。観客の架空への怒りは、人々がいかに強くオンラインの自己提示に真実性を期待しているかを露わにした、というウルマン自身の発言がこの手法の核心を示す。*4 スマートフォン写真とSNSが日常的なアイデンティティ管理の場となっていた2010年代に、プラットフォームの内側からその条件を可視化した点に歴史的意義がある。*2\n\n批評と受容\n\nRhizomeとニューミュージアムはInstagramアーカイブを保存することでネットアートと保存言説の文脈内に初期の制度的な枠組みを与えた。テート・モダンの「Performing for the Camera」（2016年）への参加は、ウルマンの実践をカメラのためのパフォーマンスという長い写真史の中に位置づける。SNS写真における真正性への信念・オーディエンスの参加・自己ブランディングをそのまま作品の素材とした点、そして観客の反応をただの受容ではなくパフォーマンスの運用の一部とした点が批評的な核心をなす。*1",
+    "textEn": "Biography\n\nAmalia Ulman was born in Argentina in 1989 and is an Argentine-Spanish artist working across performance, photography, installation, video, social media, and digital image circulation. Excellences & Perfections (2014) was presented and archived through Rhizome and the New Museum’s First Look and appeared in Tate Modern’s Performing for the Camera (2016). Her later work includes the feature film El Planeta (2021).*2\n\nExpression / method\n\nUlman’s themes include online self-fashioning, femininity as performance, class aspiration, consumer taste, authenticity, the staging of social-media photography, and the ways platforms reinforce recognizable identities. Excellences & Perfections unfolded not as a conventional photographic series but as a sequence of social-media posts. Using selfies, hotel and restaurant settings, interiors, beauty images, captions, hashtags, timing, and audience reaction, Ulman built a believable fictional persona inside the everyday grammar of Instagram.*2 Rhizome notes that the work was scripted and that the Instagram component was preserved through a social-media archive tool, making preservation, interface, and platform context part of the work’s afterlife. Ulman’s statement that audience anger at the fiction revealed how strongly people expect truth from online self-presentation is central to the method.*4 In the 2010s, when smartphone photography and social media became everyday sites of identity management, the work made those conditions visible from inside the platform itself.*2\n\nCriticism and reception\n\nRhizome and the New Museum gave the work an early institutional framework within net art and preservation discourse by archiving the Instagram performance. Its inclusion in Tate Modern’s Performing for the Camera placed Ulman’s practice within a longer history of performance for the camera. The critical core lies in making belief in social-media authenticity, audience participation, and self-branding the material of the artwork, and in treating audience reaction not merely as reception but as part of the performance’s operation.*1",
+    "links": [
+      {
+        "url": "https://rhizome.org/editorial/2014/oct/20/first-look-amalia-ulmanexcellences-perfections/",
+        "label": "Rhizome — First Look: Excellences & Perfections"
+      },
+      {
+        "url": "https://www.zabludowiczcollection.com/collection/artists/view/amalia-ulman",
+        "label": "Zabludowicz Collection — Amalia Ulman"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "Amalia Ulman — Zabludowicz Collection",
+        "url": "https://www.zabludowiczcollection.com/collection/artists/view/amalia-ulman"
+      },
+      {
+        "num": 2,
+        "name": "First Look: Amalia Ulman — Excellences & Perfections — Rhizome",
+        "url": "https://rhizome.org/editorial/2014/oct/20/first-look-amalia-ulmanexcellences-perfections/"
+      },
+      {
+        "num": 3,
+        "name": "Excellences and Perfections — New Museum Digital Archive",
+        "url": "https://archive.newmuseum.org/images/14987"
+      },
+      {
+        "num": 4,
+        "name": "Amalia Ulman — Interview Magazine",
+        "url": "https://www.interviewmagazine.com/art/amalia-ulman/"
+      }
+    ]
+  },
+  "daisuke-yokota": {
+    "leadJa": "横田大輔（1983年埼玉生まれ）は、フィルムを反復的に現像・スキャン・再撮影・焼損・折りたたむなど物理的・化学的・デジタルなプロセスを連鎖させ、写真の物質性そのものを主題とする写真家。第45回木村伊兵衛写真賞受賞（2019年）。Foam Paul Huf Award（2016年）受賞。",
+    "leadEn": "Daisuke Yokota (born 1983 in Saitama) is a Japanese photographer who repeatedly develops, scans, rephotographs, burns, folds, and damages film and prints, making the materiality of photography itself the subject. He received the Foam Paul Huf Award in 2016 and the Kimura Ihei Award in 2019.",
+    "textJa": "経歴\n\n1983年埼玉生まれの日本の写真家。日本写真芸術専門学校卒業。2008年キヤノン写真新世紀優秀賞、2010年第2回1_WALL写真グランプリ受賞。2016年Foam Paul Huf Award受賞、2019年第45回木村伊兵衛写真賞受賞。主要プロジェクト・出版物に「Back Yard」「Site」「Site / Cloud」「VERTIGO」「Tarachine」「Matter」「MATTER / BURN OUT」「Matter / Vomit」「Photographs」がある。*1\n\n表現解説\n\n主要なテーマは、写真の物質性、記憶、時間、劣化、反復、化学的な偶発性、イメージとオブジェクトの境界、そして現代の情報社会におけるイメージの氾濫である。写真を繰り返し撮影・スキャン・プリント・再撮影・傷つけ・現像し・焼き・ワックスをかけ・折りたたみ・再プリントする。手法はお湯現像・未露光フィルムの直接現像・暗室実験・デジタル操作・カメラレス抽象・インスタレーション規模の紙ロール・写真集のシークエンスにわたる。*2 失敗したまたは損傷したフィルムへの関心が「MATTER」へとつながり、コピーと触覚という手づくりの行為への注意がジン制作を通じて培われた——キヤノンのインタビューでの横田自身の説明はこの出発点を示す。メトロポリタン美術館の収蔵作品テキストはその実践をパフォーマンス的でカメラレス的なものとして説明し、マン・レイやモホイ＝ナジとの連続性を示す。*5 デジタルイメージ流通・ジン文化・写真集フェスティバルが日本人写真家に旧来の雑誌・ギャラリー系統を超えた新たな経路を開いていた2010年代に登場し、イメージが摩擦のないデータとして扱われる時代に写真的オブジェクトの物質的な頑固さを維持した点に歴史的意義がある。*2\n\n批評と受容\n\nFoamはPaul Huf Award選出にあたり「Matter」を、各空間で写真の異なる経験を与える部屋いっぱいのインスタレーションとして評した。批評家の飯沢耕太郎は「MATTER /」のレビューで、横田の作品は軽量なポストデジタル的イメージ操作とは異なり、写真的イメージにおける身体的・物質的な限界への過剰な関心を持つと論じた。反復的な損傷とイメージの再利用は単なる抽象を生み出すのではなく、記憶・時間・写真的証拠が過剰な複製・劣化・再処理を経ても生き残りうるかを問うものとなっている。*4",
+    "textEn": "Biography\n\nDaisuke Yokota was born in Saitama in 1983. He graduated from Nippon Photography Institute and received the Canon New Cosmos of Photography Excellence Award in 2008 and the 2nd 1_WALL Photography Grand Prix in 2010. He won the Foam Paul Huf Award in 2016 and the 45th Kimura Ihei Award in 2019. Major projects and publications include Back Yard, Site, Site / Cloud, VERTIGO, Tarachine, Matter, MATTER / BURN OUT, Matter / Vomit, and Photographs.*1\n\nExpression / method\n\nYokota’s themes include the materiality of photography, memory, time, deterioration, repetition, chemical chance, the boundary between image and object, and the flood of images in contemporary information society. He repeatedly photographs, scans, prints, rephotographs, damages, develops, burns, waxes, folds, and reprints images. His methods range from hot-water development, direct development of unexposed film, darkroom experimentation, digital manipulation, camera-less abstraction, installation-scale paper rolls, and photobook sequencing.*2 His interest in failed or damaged film led toward Matter, while attention to copying and handmade tactility was shaped through zine production, as he explains in a Canon interview. The Metropolitan Museum of Art describes his practice as performative and camera-less, connecting it to Man Ray and Moholy-Nagy.*5 Emerging in the 2010s, when digital circulation, zine culture, and photobook festivals opened new routes for Japanese photographers beyond older magazine and gallery systems, Yokota’s work matters because it insists on the stubborn materiality of photographic objects in an era that often treats images as frictionless data.*2\n\nCriticism and reception\n\nFoam described Matter, when selecting Yokota for the Paul Huf Award, as a room-filling installation in which each space produced a different experience of photography. Critic Kotaro Iizawa’s review of MATTER / argued that Yokota’s work differs from lightweight post-digital image manipulation because it is intensely concerned with the bodily and material limits of photographic images. The repeated damage and reuse of images do not produce abstraction alone; they ask whether memory, time, and photographic evidence can survive excessive copying, degradation, and reprocessing.*4",
+    "links": [
+      {
+        "url": "https://global.canon/en/newcosmos/interview/daisuke-yokota/index.html",
+        "label": "Canon New Cosmos — Interview: Daisuke Yokota"
+      },
+      {
+        "url": "https://www.foam.org/events/daisuke-yokota",
+        "label": "Foam — Paul Huf Award 2016: Daisuke Yokota"
+      }
+    ],
+    "citations": [
+      {
+        "num": 1,
+        "name": "CLOSE UP | INTERVIEW Daisuke Yokota — Canon New Cosmos of Photography",
+        "url": "https://global.canon/en/newcosmos/interview/daisuke-yokota/index.html"
+      },
+      {
+        "num": 2,
+        "name": "Foam Paul Huf Award 2016: Daisuke Yokota – Matter — Foam",
+        "url": "https://www.foam.org/events/daisuke-yokota"
+      },
+      {
+        "num": 3,
+        "name": "Daisuke Yokota, Cloud — Phillips",
+        "url": "https://www.phillips.com/detail/daisuke-yokota/88658"
+      },
+      {
+        "num": 4,
+        "name": "Daisuke Yokota: MATTER / — artscape",
+        "url": "https://artscape.jp/report/review/10128482_1735.html"
+      },
+      {
+        "num": 5,
+        "name": "Untitled — The Metropolitan Museum of Art",
+        "url": "https://www.metmuseum.org/art/collection/search/818005"
+      }
+    ]
   }
+
 });
 /* 2026-04-19 English reflection overrides end */
