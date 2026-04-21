@@ -12,6 +12,7 @@ REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260419c"
+GLOBAL_SEARCH_VERSION = "20260421a"
 NON_PHOTOGRAPHER_IDS = {
     "charles-wirgman",
     "fabian-marti",
@@ -819,7 +820,7 @@ gtag('config', '{GA_ID}');
       <div class="footer-links"><a href="{privacy_href}">{privacy_label}</a></div>
     </footer>
   </div>
-  <script src="{'../../scripts/global-search.js' if lang == 'en' else '../scripts/global-search.js'}?v=20260419b"></script>
+  <script src="{'../../scripts/global-search.js' if lang == 'en' else '../scripts/global-search.js'}?v={GLOBAL_SEARCH_VERSION}"></script>
 </body>
 </html>
 """

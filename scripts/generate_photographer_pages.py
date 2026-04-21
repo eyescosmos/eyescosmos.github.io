@@ -17,6 +17,7 @@ REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260419c"
+GLOBAL_SEARCH_VERSION = "20260421a"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "charles-wirgman",
@@ -1509,7 +1510,7 @@ def main() -> None:
             canonical = SITE + photographer_page_path(photographer, lang)
             x_default = SITE + photographer_page_path(photographer, "ja")
             stylesheet_href = ("../../styles/photographer-page.css" if lang == "en" else "../styles/photographer-page.css") + f"?v={ASSET_VERSION}"
-            search_href = ("../../scripts/global-search.js" if lang == "en" else "../scripts/global-search.js") + f"?v={ASSET_VERSION}"
+            search_href = ("../../scripts/global-search.js" if lang == "en" else "../scripts/global-search.js") + f"?v={GLOBAL_SEARCH_VERSION}"
             home_href = "/en/" if lang == "en" else "/"
             privacy_href = "/en/privacy-policy.html" if lang == "en" else "/privacy-policy.html"
             alt_name = display_alt_name(photographer, lang)
