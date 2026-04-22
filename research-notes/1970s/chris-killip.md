@@ -1,36 +1,83 @@
-# Chris Killip
+# クリス・キリップ / Chris Killip
 
-## 1. Basic facts
-- British / Manx photographer, born in 1946 and died in 2020.[S1][S2]
-- Began in commercial photography, then turned in the 1970s toward sustained independent work in the North East of England and later taught at Harvard University.[S1][S2][S4]
+> 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `chris-killip`. Formal source candidates and research routes in this note: 12.
 
-## 2. Expression / method
-- Main themes: deindustrialization, working-class life, unemployment, labor, youth culture, fragile local communities, and the social aftermath of economic restructuring in late twentieth-century Britain.[S1][S2][S3][S4]
-- Representative work examples: *Youth on a Wall, Jarrow, Tyneside* (1976), *Baked Beans, North Shields* (1981), the *Seacoal* series, and the book *In Flagrante* (1988) are central because they condense Killip’s long-term engagement with the North East into images of suspended labor, damaged public space, and social endurance.[S2][S3][S4]
-- Technique / formal traits: black-and-white documentary photography, close physical proximity, dense social detail, and an approach built on repeated return rather than quick extraction. The pictures often feel slow, specific, and embedded in place, with a compositional gravity that keeps them from reading as spot-news images.[S2][S3][S4]
-- Why this method was chosen: Killip’s own statements stress that he photographed people because he valued their lives and wanted them to be remembered. This helps explain why the work depends on duration, trust, and local embeddedness rather than spectacular event coverage.[S1][S3]
-- Historical context: the work belongs to the 1970s and 1980s in Britain, especially the period of deindustrialization and the erosion of mining, shipbuilding, and heavy industry in the North East. His photographs should be understood in relation to economic change, class politics, and the shrinking of industrial labor, not only within art-photography history.[S2][S3][S4]
-- Relation to contemporaries or movements: Killip is often placed within British documentary photography, but the work is not straightforward reportage. Institutional framing at MoMA and Reina Sofía emphasizes his decisive use of the camera as a political tool, while later discussions around *In Flagrante* link him to a socially committed strand of documentary that differs from magazine photojournalism by its duration, locality, and moral proximity.[S2][S3][S4]
-- Historical significance: he is important because he made one of the clearest photographic records of life inside British deindustrialization. *In Flagrante* in particular has become a key reference point for how photography can register structural economic change through ordinary people, streets, labor sites, and damaged civic environments.[S2][S3][S4]
-- Critical meaning: the photographs matter not simply because they depict poverty or industrial decline, but because they resist treating people as symbols. The work is often read as a form of people’s history, insisting that those most affected by historical transformation remain visible within the image rather than being absorbed into abstract policy narratives.[S1][S3]
-- Where and how the work was used: Killip’s images circulated in photobooks, gallery and museum exhibitions, and later retrospectives and interviews. *In Flagrante* became the main vehicle through which the work entered the history of the photobook, while retrospectives and museum framing expanded the reception beyond Britain and recast the work as a major contribution to documentary photography more broadly.[S2][S3][S4]
-- Critical reception became more explicit over time: later institutional and critical writing repeatedly returned to the work as both aesthetic achievement and political record, especially once the long-term consequences of Thatcher-era restructuring were read back through the images.[S3][S4]
+## 1. 経歴・背景 / Basic facts and context
+クリス・キリップ（Chris Killip）は、1970–1980年代の写真史で British documentary photography、social documentary、photobook documentary と結びつけて考えたい作家である。活動地域は United Kingdom を中心に広がり、主要な発表・参照軸として In Flagrante, Seacoal, Martin Parr Foundation が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、industrial decline、working class communities、shipbuilding、coastal labor といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
 
-## 3. Criticism and reception
-- MoMA collection framing and later retrospective materials treat Killip as a central figure in postwar British documentary photography, with particular emphasis on the North East work made between the mid-1970s and late 1980s.[S2][S4]
-- Magnum’s retrospective text is especially useful because it explains how *In Flagrante* came to stand for more than a regional project: it was received as a people’s history of lives marked by deindustrialization and neglect, while still leaving room for later rediscovery of less-circulated bodies of work.[S3]
-- Reina Sofía’s framing stresses that Killip took up the camera as a political tool, which supports a reading of the work as socially and historically interventionist rather than merely descriptive.[S4]
-- The reception history should therefore distinguish two levels: contemporaneously, the work arose inside local and national crisis; later, it was canonized through photobook culture and museum retrospectives as a landmark of socially committed documentary.[S3][S4]
+## 2. 表現解説 / Expression, method, historical context
+この作家の表現は、large-format documentary、long-term engagement、black-and-white social landscape を通じて、deindustrialization、class、community、documentary ethics を可視化する点にある。[S1] 1970–1980年代は、古典的なドキュメンタリー、決定的瞬間、モダニズム的な形式美だけでは写真を説明しきれなくなった時期である。カラー写真、コンセプチュアル・アート、写真集、フェミニズム、ポスト・プロヴォーク、ニュー・トポグラフィックス、ポストドキュメンタリーが並行し、写真は出来事を「記録する」だけでなく、制度、身体、メディア、記憶、風景の読み方を問い直す媒体になった。[S3]
 
-## 4. Artist statement / artist's own words
-- Killip said: `I wanted to record people's lives because I valued them. I wanted them to be remembered.` The statement is reproduced on the Chris Killip Photography Trust site and is useful as a concise account of motive.[S1]
+クリス・キリップの場合、代表的な論点は In Flagrante, Seacoal, Martin Parr Foundation に集約される。ここでは作品名を単に並べるのではなく、被写体との距離、画面の組み立て、発表媒体、写真集・展覧会・批評の文脈を一体で扱うとよい。英国北東部の産業衰退と労働者共同体を長期的に撮影し、社会記録と写真集表現の緊張を高密度に示した作家。 この点を、同時代の Martin Parr、Graham Smith、Paul Graham、John Davies との比較で書くと、浅い分類ではなく写真史上の位置が見えやすくなる。[S4]
+
+### 2補. 本文化で強める論点
+本文では「何を撮ったか」よりも、「なぜその方法がその時代に必要だったか」を優先する。クリス・キリップは、industrial decline、working class communities、shipbuilding、coastal labor を扱うことで、写真が社会・制度・記憶・身体・風景のどこに介入できるのかを示した。後で本文化する際は、代表作、発表媒体、同時代の批評、後年の美術館での再評価をつなぎ、写真史の中で何を更新したのかを明確にする。
+
+## 3. 評価・批評・歴史的意義 / Reception and significance
+受容史では、British documentary photography、social documentary、photobook documentary の枠で語られることが多いが、単一の運動名に閉じると射程が狭くなる。重要なのは、クリス・キリップの写真が、同時代の視覚文化や展示制度の中でどのように読まれ、後年の写真史でどの論点を開いたかである。[S5] 美術館・ギャラリー・出版社・研究資料を併用し、作品の形式、社会的背景、批評的意味を分けて整理したい。[S6]
+
+## 4. 座標用補助メモ（本文には直接反映しない内部用）
+```yaml
+id: chris-killip
+name_ja: "クリス・キリップ"
+name_en: "Chris Killip"
+birth_year: 1946
+death_year: 2020
+active_eras: ["1970s", "1980s"]
+countries: ['United Kingdom']
+movements: ['British documentary photography', 'social documentary', 'photobook documentary']
+platforms: ['In Flagrante', 'Seacoal', 'Martin Parr Foundation', 'MoMA retrospective']
+subjects: ['industrial decline', 'working class communities', 'shipbuilding', 'coastal labor']
+methods: ['large-format documentary', 'long-term engagement', 'black-and-white social landscape']
+concepts: ['deindustrialization', 'class', 'community', 'documentary ethics']
+influenced_by: ['Martin Parr', 'Graham Smith', 'Paul Graham']
+related_figures: ['Martin Parr', 'Graham Smith', 'Paul Graham', 'John Davies']
+description_short: "英国北東部の産業衰退と労働者共同体を長期的に撮影し、社会記録と写真集表現の緊張を高密度に示した作家。"
+confidence: 0.76
+source_basis: ["ChatGPT source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
+axes:
+  documentary: 5
+  staged: 1
+  subjective: 3
+  objective: 3
+  social: 5
+  formal_experiment: 2
+  catalog_impulse: 2
+  criticality: 5
+  personal_intimacy: 3
+  historical_awareness: 5
+  body_focus: 2
+  urban_focus: 3
+  memory_focus: 4
+  aesthetic_intensity: 4
+  materiality: 3
+surface_connections: ["British documentary photography、social documentary、photobook documentary", "United Kingdom / 1970–1980s"]
+deep_connections: ["英国北東部の産業衰退と労働者共同体を長期的に撮影し、社会記録と写真集表現の緊張を高密度に示した作家。", "large-format documentary、long-term engagement、black-and-white social landscape という方法を通じて、deindustrialization、class、community、documentary ethics を写真史的な問題として扱う。"]
+comparison_targets: ['Martin Parr', 'Graham Smith', 'Paul Graham', 'John Davies']
+one_sentence_connection: "英国北東部の産業衰退と労働者共同体を長期的に撮影し、社会記録と写真集表現の緊張を高密度に示した作家。"
+tags: ['deindustrialization', 'class', 'community', 'documentary ethics']
+```
 
 ## 5. Quote candidates
-- `I wanted to record people's lives because I valued them. I wanted them to be remembered.` [S1]
-- `It’s like a people’s history – the people who history happened to.` [S3]
+- 館・アーカイブ・出版社の解説文から、代表作、方法論、受容史を端的に示す短い引用候補を抽出する。引用は原文確認後、1文につき1注記までに抑える。
+- 本人インタビュー、作家ステートメント、写真集序文が確認できる場合は、作家自身の言葉として独立して扱う。確認できない場合は無理に作らない。
+- 同時代批評や後年の図録テキストは、本文では長く引用せず、表現史・受容史を支える根拠として使う。
 
 ## 6. Sources
-- [S1] Chris Killip Photography Trust. Chris Killip / Biography. https://www.chriskillip.com/
-- [S2] Chris Killip. Museum of Modern Art (MoMA). https://www.moma.org/collection/artists/3094
-- [S3] “History is what’s written, my pictures are what happened” / Chris Killip retrospective. Magnum Photos. https://www.magnumphotos.com/events/exhibitions/chris-killip-retrospective/
-- [S4] Encounter Chris Killip. Museo Reina Sofía. https://www.museoreinasofia.es/en/activity/encounter-chris-killip/
+- [S1] Chris Killip estate. Chris Killip Archive. https://www.chriskillip.com/
+- [S2] Chris Killip search. MoMA. https://www.moma.org/search/?query=Chris+Killip
+- [S3] Chris Killip. Tate. https://www.tate.org.uk/art/artists/chris-killip-23678
+- [S4] Chris Killip. Martin Parr Foundation. https://www.martinparrfoundation.org/collection/chris-killip/
+- [S5] Chris Killip search. The Photographers Gallery. https://thephotographersgallery.org.uk/search?keys=Chris%20Killip
+- [S6] Chris Killip route. ICP. https://www.icp.org/search-results/Chris+Killip
+- [S7] Chris Killip bibliography. WorldCat. https://search.worldcat.org/search?q=Chris+Killip+In+Flagrante
+- [S8] Chris Killip route. Steidl. https://steidl.de/Artists/Chris-Killip-0506084049.html
+- [S9] Chris Killip search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Chris+Killip
+- [S10] Chris Killip scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Chris+Killip+In+Flagrante+deindustrialization
+- [S11] Chris Killip route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Chris+Killip
+- [S12] Chris Killip route. Aperture. https://aperture.org/?s=Chris+Killip
+
+## 7. 出典探索メモ / Source exploration memo
+出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。

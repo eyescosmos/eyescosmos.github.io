@@ -1,28 +1,82 @@
-# Miyako Ishiuchi
+# 石内都 / Miyako Ishiuchi
 
-## 1. Basic facts
-- Japanese photographer, born in 1947 in Gunma and raised in Yokosuka.[S1][S2]
-- One of the most important photographers to emerge from postwar Japan in the 1970s, known for work on Yokosuka, women’s bodies, scars, clothing, memory, and the material remains of history.[S1][S2]
+> 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `miyako-ishiuchi`. Formal source candidates and research routes in this note: 11.
 
-## 2. Expression / method
-- Main themes: the body, gendered experience, Yokosuka and the American military presence, scars and skin, clothing as residue, memory, and the afterlife of war and modernity in personal objects.[S1][S2]
-- Representative work examples: the *Yokosuka Story* series, the `1·9·4·7` body and scar photographs, and later projects involving clothing and Hiroshima are central because they show how Ishiuchi turns intimate surfaces into historical evidence.[S1][S2]
-- Technique / formal traits: close views, tactile attention to surfaces, often stark tonal range, and an approach that treats the photograph as an encounter with traces rather than with stable identity. Her work frequently isolates fragments — of skin, cloth, interiors, or urban material — so that history appears through texture and damage.[S1][S2]
-- Why this method was chosen: Ishiuchi repeatedly works through what has touched the body or what the body has touched. Her method avoids grand public monumentality and instead locates history in personal remains, vulnerable surfaces, and objects saturated by use.[S1][S2]
-- Historical context: her early work belongs to the 1970s generation of Japanese photographers who redefined postwar photography after *Provoke*, but her trajectory is distinct in foregrounding women’s experience, bodily memory, and the lingering violence of occupation and war.[S1][S2]
-- Relation to contemporaries or movements: Ishiuchi stands alongside major postwar Japanese photographers, yet her work is not reducible to street intensity or grainy urban critique. She redirected attention toward intimate material traces, making memory and the body central to photographic history in Japan.[S1][S2]
-- Historical significance: she is significant because she broadened postwar Japanese photography beyond masculine urban confrontation and made the body, clothing, and domestic residue into serious historical subjects.[S1][S2]
-- Critical meaning: the photographs matter because they show that history is not only visible in monuments or events but also in scars, fabric, skin, and ordinary objects. Her work turns the photograph into a site where public history and private trace become inseparable.[S1][S2]
-- Where and how the work was used: Ishiuchi’s photographs circulated through books, major museum exhibitions, and later retrospectives in Japan, Europe, and the United States. Institutional reception has been crucial in framing her as a key figure in both Japanese photography and feminist photographic history.[S1][S2]
+## 1. 経歴・背景 / Basic facts and context
+石内都（Miyako Ishiuchi）は、1970–1980年代の写真史で postwar Japanese photography、memory photography、personal documentary と結びつけて考えたい作家である。活動地域は Japan を中心に広がり、主要な発表・参照軸として Yokosuka Story, Mother's, Hiroshima が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、memory、body、scars、clothing、postwar place といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
 
-## 3. Criticism and reception
-- SFMOMA and Tate both frame Ishiuchi as a major figure in contemporary Japanese photography, especially in relation to Yokosuka, bodily trace, and material memory.[S1][S2]
-- Reception frequently emphasizes how her work joins personal experience to larger histories of occupation, gender, and postwar Japan without flattening either level into simple illustration.[S1][S2]
-- Later critical framing has also made clear that her importance lies not only in subject matter but in method: she transformed surface, intimacy, and residue into a durable photographic language.[S1][S2]
+## 2. 表現解説 / Expression, method, historical context
+この作家の表現は、close-up detail、black-and-white grain、object archive、serial intimacy を通じて、memory、body trace、materiality、postwar trauma を可視化する点にある。[S1] 1970–1980年代は、古典的なドキュメンタリー、決定的瞬間、モダニズム的な形式美だけでは写真を説明しきれなくなった時期である。カラー写真、コンセプチュアル・アート、写真集、フェミニズム、ポスト・プロヴォーク、ニュー・トポグラフィックス、ポストドキュメンタリーが並行し、写真は出来事を「記録する」だけでなく、制度、身体、メディア、記憶、風景の読み方を問い直す媒体になった。[S3]
 
-## 4. Quote candidates
-- No short, fully verified quotation was extracted from the reviewed institutional sources.
+石内都の場合、代表的な論点は Yokosuka Story, Mother's, Hiroshima に集約される。ここでは作品名を単に並べるのではなく、被写体との距離、画面の組み立て、発表媒体、写真集・展覧会・批評の文脈を一体で扱うとよい。身体や衣服、傷跡、街の記憶を物質的な痕跡として撮り、戦後日本の記憶を私的かつ歴史的に接続した作家。 この点を、同時代の Daido Moriyama、Shomei Tomatsu、Hiromi Tsuchida との比較で書くと、浅い分類ではなく写真史上の位置が見えやすくなる。[S4]
 
-## 5. Sources
-- [S1] Miyako Ishiuchi. SFMOMA. https://www.sfmoma.org/artist/Miyako_Ishiuchi
-- [S2] Miyako Ishiuchi at Tate Modern. ArtMap / Tate exhibition context. https://artmap.com/tatemodern/exhibition/miyako-ishiuchi-2013
+### 2補. 本文化で強める論点
+本文では「何を撮ったか」よりも、「なぜその方法がその時代に必要だったか」を優先する。石内都は、memory、body、scars、clothing、postwar place を扱うことで、写真が社会・制度・記憶・身体・風景のどこに介入できるのかを示した。後で本文化する際は、代表作、発表媒体、同時代の批評、後年の美術館での再評価をつなぎ、写真史の中で何を更新したのかを明確にする。
+
+## 3. 評価・批評・歴史的意義 / Reception and significance
+受容史では、postwar Japanese photography、memory photography、personal documentary の枠で語られることが多いが、単一の運動名に閉じると射程が狭くなる。重要なのは、石内都の写真が、同時代の視覚文化や展示制度の中でどのように読まれ、後年の写真史でどの論点を開いたかである。[S5] 美術館・ギャラリー・出版社・研究資料を併用し、作品の形式、社会的背景、批評的意味を分けて整理したい。[S6]
+
+## 4. 座標用補助メモ（本文には直接反映しない内部用）
+```yaml
+id: miyako-ishiuchi
+name_ja: "石内都"
+name_en: "Miyako Ishiuchi"
+birth_year: 1947
+death_year: 
+active_eras: ["1970s", "1980s"]
+countries: ['Japan']
+movements: ['postwar Japanese photography', 'memory photography', 'personal documentary']
+platforms: ['Yokosuka Story', "Mother's", 'Hiroshima', 'Frida']
+subjects: ['memory', 'body', 'scars', 'clothing', 'postwar place']
+methods: ['close-up detail', 'black-and-white grain', 'object archive', 'serial intimacy']
+concepts: ['memory', 'body trace', 'materiality', 'postwar trauma']
+influenced_by: ['Daido Moriyama', 'Shomei Tomatsu', 'Hiromi Tsuchida']
+related_figures: ['Daido Moriyama', 'Shomei Tomatsu', 'Hiromi Tsuchida']
+description_short: "身体や衣服、傷跡、街の記憶を物質的な痕跡として撮り、戦後日本の記憶を私的かつ歴史的に接続した作家。"
+confidence: 0.76
+source_basis: ["ChatGPT source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
+axes:
+  documentary: 4
+  staged: 1
+  subjective: 5
+  objective: 3
+  social: 5
+  formal_experiment: 3
+  catalog_impulse: 5
+  criticality: 5
+  personal_intimacy: 5
+  historical_awareness: 5
+  body_focus: 5
+  urban_focus: 3
+  memory_focus: 5
+  aesthetic_intensity: 5
+  materiality: 5
+surface_connections: ["postwar Japanese photography、memory photography、personal documentary", "Japan / 1970–1980s"]
+deep_connections: ["身体や衣服、傷跡、街の記憶を物質的な痕跡として撮り、戦後日本の記憶を私的かつ歴史的に接続した作家。", "close-up detail、black-and-white grain、object archive、serial intimacy という方法を通じて、memory、body trace、materiality、postwar trauma を写真史的な問題として扱う。"]
+comparison_targets: ['Daido Moriyama', 'Shomei Tomatsu', 'Hiromi Tsuchida']
+one_sentence_connection: "身体や衣服、傷跡、街の記憶を物質的な痕跡として撮り、戦後日本の記憶を私的かつ歴史的に接続した作家。"
+tags: ['memory', 'body trace', 'materiality', 'postwar trauma']
+```
+
+## 5. Quote candidates
+- 館・アーカイブ・出版社の解説文から、代表作、方法論、受容史を端的に示す短い引用候補を抽出する。引用は原文確認後、1文につき1注記までに抑える。
+- 本人インタビュー、作家ステートメント、写真集序文が確認できる場合は、作家自身の言葉として独立して扱う。確認できない場合は無理に作らない。
+- 同時代批評や後年の図録テキストは、本文では長く引用せず、表現史・受容史を支える根拠として使う。
+
+## 6. Sources
+- [S1] Miyako Ishiuchi route. Yokohama Museum of Art. https://www.google.com/search?q=Yokohama+Museum+of+Art+Miyako+Ishiuchi+photography
+- [S2] Miyako Ishiuchi route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S3] Miyako Ishiuchi search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Miyako+Ishiuchi
+- [S4] Miyako Ishiuchi search. MoMA. https://www.moma.org/search/?query=Miyako+Ishiuchi
+- [S5] Miyako Ishiuchi search. Tate. https://www.tate.org.uk/search?q=Miyako+Ishiuchi
+- [S6] Miyako Ishiuchi route. The Hasselblad Foundation. https://www.google.com/search?q=The+Hasselblad+Foundation+Miyako+Ishiuchi+photography
+- [S7] Miyako Ishiuchi bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Miyako+Ishiuchi
+- [S8] Miyako Ishiuchi research route. CiNii Research. https://cir.nii.ac.jp/all?q=Miyako+Ishiuchi
+- [S9] Miyako Ishiuchi bibliography. WorldCat. https://search.worldcat.org/search?q=Miyako+Ishiuchi
+- [S10] Miyako Ishiuchi scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Miyako+Ishiuchi+photography
+- [S11] Miyako Ishiuchi route. Japan Society. https://www.google.com/search?q=Japan+Society+Miyako+Ishiuchi+photography
+
+## 7. 出典探索メモ / Source exploration memo
+出典候補は11件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。

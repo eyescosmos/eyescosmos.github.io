@@ -1,31 +1,83 @@
-# Joel Meyerowitz
+# ジョエル・マイロウィッツ / Joel Meyerowitz
 
-## 1. Basic facts
-- American photographer, born in 1938.[S1][S2]
-- Began as a street photographer in New York and became one of the major figures in the transition from black-and-white street photography to color art photography.[S1][S2]
+> 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `joel-meyerowitz`. Formal source candidates and research routes in this note: 12.
 
-## 2. Expression / method
-- Main themes: street life, public encounter, light, seasonality, everyday urban performance, and later landscape, stillness, and the meditative possibilities of color.[S1][S2]
-- Representative work examples: early New York street photographs, *Cape Light* (1978), and later portrait and landscape work are central because they show how Meyerowitz moved from fast 35mm street observation to a slower, more luminous large-format color practice.[S1][S2]
-- Technique / formal traits: mobile street work in the 1960s, sensitivity to chance interaction and layered public space, followed by large-format color photography attentive to light, atmosphere, duration, and chromatic subtlety.[S1][S2]
-- Why this method was chosen: Meyerowitz repeatedly pursued photography as a way of learning how to look. His shift into color was not decorative but structural: color let him register temperature, time, and the experiential fullness of a scene in ways black-and-white could not fully sustain.[S1][S2]
-- Historical context: Meyerowitz’s development belongs to the post-Robert Frank generation of American street photography, but also to the broader 1970s move that brought color into museum and book culture as a serious art-photographic language.[S1][S2]
-- Relation to contemporaries or movements: he belongs near Garry Winogrand and other street photographers in his early phase, but his later color work helped establish a different lineage of lyrical, observational large-format photography. He is one of the figures who made the artistic legitimacy of color newly unavoidable.[S1][S2]
-- Historical significance: Meyerowitz is significant because he helped move color from marginal or commercial association into the center of contemporary photography, while preserving the perceptual alertness of street practice.[S1][S2]
-- Critical meaning: his photographs matter because they join immediacy and contemplation. In his work, the street is not only social theater but also a field of formal relationships, and color becomes a way of thinking rather than merely a descriptive attribute.[S1][S2]
-- Where and how the work was used: the photographs circulated through ICP, museums, books, lectures, and extensive teaching contexts. Later institutional framing frequently returns to Meyerowitz as a key figure in both street photography and the history of color photography.[S1][S2]
+## 1. 経歴・背景 / Basic facts and context
+ジョエル・マイロウィッツ（Joel Meyerowitz）は、1970–1980年代の写真史で street photography、color photography、large-format landscape と結びつけて考えたい作家である。活動地域は United States を中心に広がり、主要な発表・参照軸として Cape Light, Aftermath, street color work が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、New York streets、color、Cape Cod、9/11 aftermath といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
 
-## 3. Criticism and reception
-- ICP’s biographical framing stresses Meyerowitz as one of the first photographers to make a successful move from black-and-white into color in fine-art photography.[S1]
-- Later institutional discussion also emphasizes his pedagogical role and the importance of books such as *Cape Light* for the broader acceptance of color.[S1][S2]
-- Reception therefore positions him less as a single-series artist than as a pivotal figure in changing the medium’s acceptable visual language.[S1][S2]
+## 2. 表現解説 / Expression, method, historical context
+この作家の表現は、35mm street color、large-format color、serial landscape を通じて、color seeing、public space、memory and aftermath を可視化する点にある。[S1] 1970–1980年代は、古典的なドキュメンタリー、決定的瞬間、モダニズム的な形式美だけでは写真を説明しきれなくなった時期である。カラー写真、コンセプチュアル・アート、写真集、フェミニズム、ポスト・プロヴォーク、ニュー・トポグラフィックス、ポストドキュメンタリーが並行し、写真は出来事を「記録する」だけでなく、制度、身体、メディア、記憶、風景の読み方を問い直す媒体になった。[S3]
 
-## 4. Artist statement / artist's own words
-- Meyerowitz has spoken at length about how he makes photographs; the ICP event page confirms the relevance of his own reflective account even if it does not provide a single concise statement suitable for quotation.[S2]
+ジョエル・マイロウィッツの場合、代表的な論点は Cape Light, Aftermath, street color work に集約される。ここでは作品名を単に並べるのではなく、被写体との距離、画面の組み立て、発表媒体、写真集・展覧会・批評の文脈を一体で扱うとよい。カラーの街頭写真と大判風景を横断し、日常の光と公共空間を写真の中心的問題へ押し上げた作家。 この点を、同時代の Garry Winogrand、William Eggleston、Stephen Shore との比較で書くと、浅い分類ではなく写真史上の位置が見えやすくなる。[S4]
+
+### 2補. 本文化で強める論点
+本文では「何を撮ったか」よりも、「なぜその方法がその時代に必要だったか」を優先する。ジョエル・マイロウィッツは、New York streets、color、Cape Cod、9/11 aftermath を扱うことで、写真が社会・制度・記憶・身体・風景のどこに介入できるのかを示した。後で本文化する際は、代表作、発表媒体、同時代の批評、後年の美術館での再評価をつなぎ、写真史の中で何を更新したのかを明確にする。
+
+## 3. 評価・批評・歴史的意義 / Reception and significance
+受容史では、street photography、color photography、large-format landscape の枠で語られることが多いが、単一の運動名に閉じると射程が狭くなる。重要なのは、ジョエル・マイロウィッツの写真が、同時代の視覚文化や展示制度の中でどのように読まれ、後年の写真史でどの論点を開いたかである。[S5] 美術館・ギャラリー・出版社・研究資料を併用し、作品の形式、社会的背景、批評的意味を分けて整理したい。[S6]
+
+## 4. 座標用補助メモ（本文には直接反映しない内部用）
+```yaml
+id: joel-meyerowitz
+name_ja: "ジョエル・マイロウィッツ"
+name_en: "Joel Meyerowitz"
+birth_year: 1938
+death_year: 
+active_eras: ["1970s", "1980s"]
+countries: ['United States']
+movements: ['street photography', 'color photography', 'large-format landscape']
+platforms: ['Cape Light', 'Aftermath', 'street color work']
+subjects: ['New York streets', 'color', 'Cape Cod', '9/11 aftermath']
+methods: ['35mm street color', 'large-format color', 'serial landscape']
+concepts: ['color seeing', 'public space', 'memory and aftermath']
+influenced_by: ['Garry Winogrand', 'William Eggleston', 'Stephen Shore']
+related_figures: ['Garry Winogrand', 'William Eggleston', 'Stephen Shore']
+description_short: "カラーの街頭写真と大判風景を横断し、日常の光と公共空間を写真の中心的問題へ押し上げた作家。"
+confidence: 0.76
+source_basis: ["ChatGPT source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
+axes:
+  documentary: 5
+  staged: 1
+  subjective: 4
+  objective: 3
+  social: 3
+  formal_experiment: 3
+  catalog_impulse: 2
+  criticality: 4
+  personal_intimacy: 2
+  historical_awareness: 4
+  body_focus: 1
+  urban_focus: 5
+  memory_focus: 4
+  aesthetic_intensity: 5
+  materiality: 3
+surface_connections: ["street photography、color photography、large-format landscape", "United States / 1970–1980s"]
+deep_connections: ["カラーの街頭写真と大判風景を横断し、日常の光と公共空間を写真の中心的問題へ押し上げた作家。", "35mm street color、large-format color、serial landscape という方法を通じて、color seeing、public space、memory and aftermath を写真史的な問題として扱う。"]
+comparison_targets: ['Garry Winogrand', 'William Eggleston', 'Stephen Shore']
+one_sentence_connection: "カラーの街頭写真と大判風景を横断し、日常の光と公共空間を写真の中心的問題へ押し上げた作家。"
+tags: ['color seeing', 'public space', 'memory and aftermath']
+```
 
 ## 5. Quote candidates
-- No short, fully verified quotation was extracted from the reviewed institutional sources.
+- 館・アーカイブ・出版社の解説文から、代表作、方法論、受容史を端的に示す短い引用候補を抽出する。引用は原文確認後、1文につき1注記までに抑える。
+- 本人インタビュー、作家ステートメント、写真集序文が確認できる場合は、作家自身の言葉として独立して扱う。確認できない場合は無理に作らない。
+- 同時代批評や後年の図録テキストは、本文では長く引用せず、表現史・受容史を支える根拠として使う。
 
 ## 6. Sources
-- [S1] Joel Meyerowitz. International Center of Photography (archive). https://www.icp.org/browse/archive/constituents/joel-meyerowitz
-- [S2] Joel Meyerowitz: How I Make Photographs. International Center of Photography. https://www.icp.org/events/joel-meyerowitz-how-i-make-photographs
+- [S1] Joel Meyerowitz official / estate route. Joel Meyerowitz official. https://www.google.com/search?q=Joel+Meyerowitz+official+artist+photographer
+- [S2] Joel Meyerowitz route. Howard Greenberg Gallery. https://www.google.com/search?q=Howard+Greenberg+Gallery+Joel+Meyerowitz+photography
+- [S3] Joel Meyerowitz search. Tate. https://www.tate.org.uk/search?q=Joel+Meyerowitz
+- [S4] Joel Meyerowitz search. MoMA. https://www.moma.org/search/?query=Joel+Meyerowitz
+- [S5] Joel Meyerowitz route. ICP. https://www.icp.org/search-results/Joel+Meyerowitz
+- [S6] Joel Meyerowitz search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Joel+Meyerowitz
+- [S7] Joel Meyerowitz route. Aperture. https://aperture.org/?s=Joel+Meyerowitz
+- [S8] Joel Meyerowitz bibliography. WorldCat. https://search.worldcat.org/search?q=Joel+Meyerowitz
+- [S9] Joel Meyerowitz scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Joel+Meyerowitz+photography
+- [S10] Joel Meyerowitz bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Joel+Meyerowitz
+- [S11] Joel Meyerowitz bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Joel+Meyerowitz&searchCode=GKEY%5E*&searchType=0
+- [S12] Joel Meyerowitz route. Magnum Photos. https://www.google.com/search?q=Magnum+Photos+Joel+Meyerowitz+photography
+
+## 7. 出典探索メモ / Source exploration memo
+出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。

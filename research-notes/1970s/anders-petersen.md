@@ -1,33 +1,83 @@
-# Anders Petersen
+# アンデルス・ペーターセン / Anders Petersen
 
-## 1. Basic facts
-- Swedish photographer, born in 1944.[S1][S2]
-- Studied in the orbit of Christer Strömholm and became known above all for *Café Lehmitz* (1978), one of the defining photobooks of late twentieth-century European documentary photography.[S2][S3]
+> 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `anders-petersen`. Formal source candidates and research routes in this note: 12.
 
-## 2. Expression / method
-- Main themes: intimacy, marginal lives, bars and streets, institutions, loneliness, desire, belonging, and the unstable boundary between tenderness and social precarity.[S1][S2][S3]
-- Representative work examples: *Café Lehmitz* (photographed 1967–70, published 1978), later series in prisons, psychiatric institutions, and city diaries are central because they show how Petersen built a documentary language from proximity, repetition, and emotional exchange rather than detached observation.[S1][S2][S3]
-- Technique / formal traits: raw black-and-white, close range, strong flash or available-light intimacy, frequent physical nearness to subjects, and a sequencing practice in which individual pictures gain force through their relation to one another in books.[S1][S2][S3]
-- Why this method was chosen: Petersen has repeatedly framed photography as a way to reach what lies behind surface and to look for what people share rather than what separates them. This helps explain the emotional and relational quality of the work, which depends on trust and long immersion rather than on event-driven reportage.[S2][S3]
-- Historical context: his work belongs to postwar European documentary photography, especially the period when personal photobooks and long-form social engagement were becoming decisive alternatives to magazine photojournalism. In that setting, Petersen’s work helped define an intimate documentary mode distinct from both classic humanism and objective reportage.[S1][S2][S3]
-- Relation to contemporaries or movements: the influence of Strömholm is central, but Petersen developed a more diaristic, emotionally exposed documentary method. His work also became a landmark reference for later European photobook practice and for photographers interested in closeness rather than neutrality.[S1][S2][S3]
-- Historical significance: Petersen is significant because *Café Lehmitz* became one of the decisive books in late twentieth-century documentary photography, demonstrating how a sustained, relational project could reshape the ethics and form of social photography.[S1][S2][S3]
-- Critical meaning: the photographs matter because they do not treat marginal lives as sociological specimens. Their force lies in how they combine vulnerability, desire, roughness, and mutual recognition, making intimacy itself a historical and ethical photographic problem.[S1][S2][S3]
-- Where and how the work was used: the work circulated through photobooks, retrospectives, gallery and museum exhibitions, and later interviews that helped frame Petersen’s practice as one of the key European alternatives to detached documentary description.[S1][S2][S3]
+## 1. 経歴・背景 / Basic facts and context
+アンデルス・ペーターセン（Anders Petersen）は、1970–1980年代の写真史で European documentary、intimate documentary、photobook と結びつけて考えたい作家である。活動地域は Sweden を中心に広がり、主要な発表・参照軸として Café Lehmitz, Soho, Steidl photobooks が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、bars、marginal communities、intimacy、nightlife といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
 
-## 3. Criticism and reception
-- ICP’s monograph note is useful because it frames Petersen’s whole career through the intimacy, method, and thinking that made his books and diary-like projects internationally influential.[S1]
-- The 1854 interview is especially valuable for reception because it shows how *Café Lehmitz* came to be understood not just as social record but as one of the most revered photobooks in European photography.[S2]
-- Later gallery and publisher framing continues to treat Petersen as a crucial figure in the history of the photobook and of emotionally involved documentary photography.[S1][S2][S3]
+## 2. 表現解説 / Expression, method, historical context
+この作家の表現は、close-range black-and-white、long-term immersion、photobook sequence を通じて、intimacy、outsider community、documentary subjectivity を可視化する点にある。[S1] 1970–1980年代は、古典的なドキュメンタリー、決定的瞬間、モダニズム的な形式美だけでは写真を説明しきれなくなった時期である。カラー写真、コンセプチュアル・アート、写真集、フェミニズム、ポスト・プロヴォーク、ニュー・トポグラフィックス、ポストドキュメンタリーが並行し、写真は出来事を「記録する」だけでなく、制度、身体、メディア、記憶、風景の読み方を問い直す媒体になった。[S3]
 
-## 4. Artist statement / artist's own words
-- Petersen said, `I am interested in what is behind` and later, `I do not photograph what I see; I photograph what I feel.` These statements, preserved in the 1854 interview, are useful because they clarify his turn away from surface description toward emotional and relational encounter.[S2]
+アンデルス・ペーターセンの場合、代表的な論点は Café Lehmitz, Soho, Steidl photobooks に集約される。ここでは作品名を単に並べるのではなく、被写体との距離、画面の組み立て、発表媒体、写真集・展覧会・批評の文脈を一体で扱うとよい。バーや共同体の内側から親密さ、孤独、身体性を写し、ヨーロッパの私的ドキュメンタリーを写真集表現へ押し広げた作家。 この点を、同時代の Christer Strömholm、Ed van der Elsken、Nan Goldin との比較で書くと、浅い分類ではなく写真史上の位置が見えやすくなる。[S4]
+
+### 2補. 本文化で強める論点
+本文では「何を撮ったか」よりも、「なぜその方法がその時代に必要だったか」を優先する。アンデルス・ペーターセンは、bars、marginal communities、intimacy、nightlife を扱うことで、写真が社会・制度・記憶・身体・風景のどこに介入できるのかを示した。後で本文化する際は、代表作、発表媒体、同時代の批評、後年の美術館での再評価をつなぎ、写真史の中で何を更新したのかを明確にする。
+
+## 3. 評価・批評・歴史的意義 / Reception and significance
+受容史では、European documentary、intimate documentary、photobook の枠で語られることが多いが、単一の運動名に閉じると射程が狭くなる。重要なのは、アンデルス・ペーターセンの写真が、同時代の視覚文化や展示制度の中でどのように読まれ、後年の写真史でどの論点を開いたかである。[S5] 美術館・ギャラリー・出版社・研究資料を併用し、作品の形式、社会的背景、批評的意味を分けて整理したい。[S6]
+
+## 4. 座標用補助メモ（本文には直接反映しない内部用）
+```yaml
+id: anders-petersen
+name_ja: "アンデルス・ペーターセン"
+name_en: "Anders Petersen"
+birth_year: 1944
+death_year: 
+active_eras: ["1970s", "1980s"]
+countries: ['Sweden']
+movements: ['European documentary', 'intimate documentary', 'photobook']
+platforms: ['Café Lehmitz', 'Soho', 'Steidl photobooks']
+subjects: ['bars', 'marginal communities', 'intimacy', 'nightlife']
+methods: ['close-range black-and-white', 'long-term immersion', 'photobook sequence']
+concepts: ['intimacy', 'outsider community', 'documentary subjectivity']
+influenced_by: ['Christer Strömholm', 'Ed van der Elsken', 'Nan Goldin']
+related_figures: ['Christer Strömholm', 'Ed van der Elsken', 'Nan Goldin']
+description_short: "バーや共同体の内側から親密さ、孤独、身体性を写し、ヨーロッパの私的ドキュメンタリーを写真集表現へ押し広げた作家。"
+confidence: 0.76
+source_basis: ["ChatGPT source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
+axes:
+  documentary: 5
+  staged: 1
+  subjective: 5
+  objective: 1
+  social: 4
+  formal_experiment: 3
+  catalog_impulse: 2
+  criticality: 4
+  personal_intimacy: 5
+  historical_awareness: 3
+  body_focus: 5
+  urban_focus: 4
+  memory_focus: 4
+  aesthetic_intensity: 5
+  materiality: 3
+surface_connections: ["European documentary、intimate documentary、photobook", "Sweden / 1970–1980s"]
+deep_connections: ["バーや共同体の内側から親密さ、孤独、身体性を写し、ヨーロッパの私的ドキュメンタリーを写真集表現へ押し広げた作家。", "close-range black-and-white、long-term immersion、photobook sequence という方法を通じて、intimacy、outsider community、documentary subjectivity を写真史的な問題として扱う。"]
+comparison_targets: ['Christer Strömholm', 'Ed van der Elsken', 'Nan Goldin']
+one_sentence_connection: "バーや共同体の内側から親密さ、孤独、身体性を写し、ヨーロッパの私的ドキュメンタリーを写真集表現へ押し広げた作家。"
+tags: ['intimacy', 'outsider community', 'documentary subjectivity']
+```
 
 ## 5. Quote candidates
-- `I am interested in what is behind.` [S2]
-- `I do not photograph what I see; I photograph what I feel.` [S2]
+- 館・アーカイブ・出版社の解説文から、代表作、方法論、受容史を端的に示す短い引用候補を抽出する。引用は原文確認後、1文につき1注記までに抑える。
+- 本人インタビュー、作家ステートメント、写真集序文が確認できる場合は、作家自身の言葉として独立して扱う。確認できない場合は無理に作らない。
+- 同時代批評や後年の図録テキストは、本文では長く引用せず、表現史・受容史を支える根拠として使う。
 
 ## 6. Sources
-- [S1] Anders Petersen. International Center of Photography. https://www.icp.org/content/anders-petersen-1
-- [S2] Anders Petersen on Soho, Cafe Lehmitz, and intention. 1854 Photography. https://www.1854.photography/2019/10/anders-petersen-soho/
-- [S3] Anders Petersen. Spot Home Gallery. https://www.spothomegallery.com/en/artist/anders-petersen/
+- [S1] Anders Petersen official / estate route. Anders Petersen official. https://www.google.com/search?q=Anders+Petersen+official+artist+photographer
+- [S2] Anders Petersen route. Fotografiska. https://www.google.com/search?q=Fotografiska+Anders+Petersen+photography
+- [S3] Anders Petersen search. Tate. https://www.tate.org.uk/search?q=Anders+Petersen
+- [S4] Anders Petersen route. The Photographers Gallery. https://www.google.com/search?q=The+Photographers+Gallery+Anders+Petersen+photography
+- [S5] Anders Petersen route. Steidl. https://www.google.com/search?q=Steidl+Anders+Petersen+photography
+- [S6] Anders Petersen route. Galerie Vu. https://www.google.com/search?q=Galerie+Vu+Anders+Petersen+photography
+- [S7] Anders Petersen route. Hasselblad Foundation. https://www.google.com/search?q=Hasselblad+Foundation+Anders+Petersen+photography
+- [S8] Anders Petersen route. Aperture. https://aperture.org/?s=Anders+Petersen
+- [S9] Anders Petersen bibliography. WorldCat. https://search.worldcat.org/search?q=Anders+Petersen
+- [S10] Anders Petersen scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Anders+Petersen+photography
+- [S11] Anders Petersen bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Anders+Petersen
+- [S12] Anders Petersen route. MACK. https://www.google.com/search?q=MACK+Anders+Petersen+photography
+
+## 7. 出典探索メモ / Source exploration memo
+出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。

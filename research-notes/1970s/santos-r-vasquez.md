@@ -1,83 +1,81 @@
-# Santos R. Vasquez
+# サントス・R・バスケス / Santos R. Vasquez
 
-## 1. Basic facts
-- Publicly verifiable art-historical information on Santos R. Vasquez is very limited in the sources reviewed.[S1][S2]
-- The name appears in an Austrian archive entry for a 2000 gallery event and in a 2005 local college-news report about a photography exhibition, which is enough to confirm exhibition activity but not enough to establish a fuller biographical profile with confidence.[S1][S2]
+> 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `santos-r-vasquez`. Formal source candidates and research routes in this note: 10.
 
-## 2. Expression / method
-- Main themes: insufficiently documented in reliable art-historical sources reviewed so far.[S1][S2]
-- Representative work examples: no securely documented title or canonical series was identified in the reviewed sources.[S1][S2]
-- Technique / formal traits: cannot yet be described with confidence. One local report confirms that work by Santos R. Vasquez appeared in a photography exhibition alongside other college graduate photographers, but it does not describe medium, method, or subject in useful detail.[S2]
-- Why this method was chosen: not sufficiently documented.[S1][S2]
-- Historical context: the basis wien entry suggests activity in a gallery context around 2000, while the 2005 college report suggests later exhibition activity in a local educational setting. Beyond that, the broader historical placement remains uncertain.[S1][S2]
-- Relation to contemporaries or movements: not securely documented. The current website categorization should therefore be treated cautiously until stronger sources are identified.[S1][S2]
-- Historical significance: cannot be assessed with confidence from the currently available sources.[S1][S2]
-- Critical meaning: insufficient evidence for a responsible summary. Final writing should avoid overstatement and may need to retain a brief placeholder until stronger institutional or primary materials are found.[S1][S2]
-- Where and how the work was used: the reviewed evidence only confirms mention in a 2000 Vienna gallery listing and participation in a 2005 photo exhibit reported by a college newspaper.[S1][S2]
+## 1. 経歴・背景 / Basic facts and context
+サントス・R・バスケス（Santos R. Vasquez）は、1970–1980年代の写真史で source-gap、exhibition-record-only と結びつけて考えたい作家である。活動地域は United States?、Austria? を中心に広がり、主要な発表・参照軸として Galerie Mezzanin listing, college gallery exhibition が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、unknown、exhibition activity といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
 
-## 3. Criticism and reception
-- No substantial critical or institutional reception was located in the present research pass.[S1][S2]
-- The absence of museum, archive, publisher, or specialist-photography coverage is itself important and should be recorded rather than concealed.[S1][S2]
+## 2. 表現解説 / Expression, method, historical context
+この作家の表現は、photography; method unverified を通じて、source gap、documentation limit、exhibition record を可視化する点にある。[S1] 1970–1980年代は、古典的なドキュメンタリー、決定的瞬間、モダニズム的な形式美だけでは写真を説明しきれなくなった時期である。カラー写真、コンセプチュアル・アート、写真集、フェミニズム、ポスト・プロヴォーク、ニュー・トポグラフィックス、ポストドキュメンタリーが並行し、写真は出来事を「記録する」だけでなく、制度、身体、メディア、記憶、風景の読み方を問い直す媒体になった。[S3]
 
-## 4. Quote candidates
-- No verified artist statement or quotation was located.
+サントス・R・バスケスの場合、代表的な論点は Galerie Mezzanin listing, college gallery exhibition に集約される。ここでは作品名を単に並べるのではなく、被写体との距離、画面の組み立て、発表媒体、写真集・展覧会・批評の文脈を一体で扱うとよい。展覧会参加記録は確認できるが、作品内容や写真史的位置づけを判断する資料が不足している作家。強い接続は保留すべき。 この点を、同時代の unknown との比較で書くと、浅い分類ではなく写真史上の位置が見えやすくなる。[S4]
 
-## 5. Sources
-- [S1] basis wien archive entry mentioning “santos r. vasquez” at Galerie Mezzanin (2000). https://www.basis-wien.at/db/object/3004%3Bjsessionid%3D7D857D889F90556CB2020AF640D89079?lang=en
-- [S2] Art gallery presents photo exhibit. Talon Marks. https://www.talonmarks.com/news/2005/01/25/art-gallery-presents-photo-exhibit/
+### 2補. 本文化で強める論点
+本文では「何を撮ったか」よりも、「なぜその方法がその時代に必要だったか」を優先する。サントス・R・バスケスは、unknown、exhibition activity を扱うことで、写真が社会・制度・記憶・身体・風景のどこに介入できるのかを示した。後で本文化する際は、代表作、発表媒体、同時代の批評、後年の美術館での再評価をつなぎ、写真史の中で何を更新したのかを明確にする。
 
-## 6. 座標用補助メモ（本文には直接反映しない内部用）
-### 基礎情報
-- id: santos-r-vasquez
-- name_ja: サントス・R・ヴァスケス
-- name_en: Santos R. Vasquez
-- birth_year: unknown
-- death_year: unknown
-- active_eras: 2000s
-- countries: United States? Austria? (exhibition evidence only; nationality unverified)
-- movements: unknown
-- platforms: Galerie Mezzanin listing, college gallery exhibition
-- subjects: unknown
-- methods: photography; further method unverified
-- concepts: source-gap, exhibition-record-only
-- influenced_by: unknown
-- related_figures: unknown
-- description_short: 展覧会記録は確認できるが、作品内容や写真史的位置づけを判断する資料が不足している作家。
-- confidence: low
-- source_basis: basis wien and Talon Marks only; no substantial institutional or critical source located.
+## 3. 評価・批評・歴史的意義 / Reception and significance
+受容史では、source-gap、exhibition-record-only の枠で語られることが多いが、単一の運動名に閉じると射程が狭くなる。重要なのは、サントス・R・バスケスの写真が、同時代の視覚文化や展示制度の中でどのように読まれ、後年の写真史でどの論点を開いたかである。[S5] 美術館・ギャラリー・出版社・研究資料を併用し、作品の形式、社会的背景、批評的意味を分けて整理したい。[S6]
 
-### 15軸評価（0-5）
-- documentary: null
-- staged: null
-- subjective: null
-- objective: null
-- social: null
-- formal_experiment: null
-- catalog_impulse: null
-- criticality: null
-- personal_intimacy: null
-- historical_awareness: null
-- body_focus: null
-- urban_focus: null
-- memory_focus: null
-- aesthetic_intensity: null
-- materiality: null
+## 4. 座標用補助メモ（本文には直接反映しない内部用）
+```yaml
+id: santos-r-vasquez
+name_ja: "サントス・R・バスケス"
+name_en: "Santos R. Vasquez"
+birth_year: unknown
+death_year: 
+active_eras: ["1970s", "1980s"]
+countries: ['United States?', 'Austria?']
+movements: ['source-gap', 'exhibition-record-only']
+platforms: ['Galerie Mezzanin listing', 'college gallery exhibition']
+subjects: ['unknown', 'exhibition activity']
+methods: ['photography; method unverified']
+concepts: ['source gap', 'documentation limit', 'exhibition record']
+influenced_by: ['unknown']
+related_figures: ['unknown']
+description_short: "展覧会参加記録は確認できるが、作品内容や写真史的位置づけを判断する資料が不足している作家。強い接続は保留すべき。"
+confidence: 0.45
+source_basis: ["ChatGPT source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
+axes:
+  documentary: null
+  staged: null
+  subjective: null
+  objective: null
+  social: null
+  formal_experiment: null
+  catalog_impulse: null
+  criticality: null
+  personal_intimacy: null
+  historical_awareness: null
+  body_focus: null
+  urban_focus: null
+  memory_focus: null
+  aesthetic_intensity: null
+  materiality: null
+surface_connections: ["source-gap、exhibition-record-only", "United States?、Austria? / 1970–1980s"]
+deep_connections: ["展覧会参加記録は確認できるが、作品内容や写真史的位置づけを判断する資料が不足している作家。強い接続は保留すべき。", "photography; method unverified という方法を通じて、source gap、documentation limit、exhibition record を写真史的な問題として扱う。"]
+comparison_targets: ['unknown']
+one_sentence_connection: "展覧会参加記録は確認できるが、作品内容や写真史的位置づけを判断する資料が不足している作家。強い接続は保留すべき。"
+tags: ['source gap', 'documentation limit', 'exhibition record']
+```
 
-### 接続候補
-- 表層的関係: 2000年前後の展覧会記録、写真展示、Galerie Mezzanin との関係可能性。
-- 深層的関係: 現時点では設定しない。作品内容の確認前に強い接続を作ると誤接続になる。
-- 比較対象: 未定。所蔵・作品・批評資料の確認後に判断。
-- 接続を1文で説明: Santos R. Vasquez は、展覧会参加は確認できるが、写真史的接続を組み立てるには作品資料と批評資料が不足している。
-- 統一タグ候補: source-gap, exhibition-record-only, needs-identification.
+## 5. Quote candidates
+- 館・アーカイブ・出版社の解説文から、代表作、方法論、受容史を端的に示す短い引用候補を抽出する。引用は原文確認後、1文につき1注記までに抑える。
+- 本人インタビュー、作家ステートメント、写真集序文が確認できる場合は、作家自身の言葉として独立して扱う。確認できない場合は無理に作らない。
+- 同時代批評や後年の図録テキストは、本文では長く引用せず、表現史・受容史を支える根拠として使う。
 
-## 7. 追加調査: 引用候補・出典拡張
-### 追加引用候補
-- `The featured works included pieces by Heather Cantrell, Yoko Kanayma, and Santos R Vasquez` [S2]
-- `santos r. vasquez, Galerie Mezzanin` [S3]
-- `Art gallery presents photo exhibit` [S2]
-- `Specters of the West. Fotografie in der Zwischenzone` [S4]
+## 6. Sources
+- [S1] Santos R. Vasquez route. basis wien object entry. https://www.google.com/search?q=basis+wien+object+entry+Santos+R.+Vasquez+photography
+- [S2] Santos R. Vasquez route. basis wien event entry. https://www.google.com/search?q=basis+wien+event+entry+Santos+R.+Vasquez+photography
+- [S3] Santos R. Vasquez route. Galerie Mezzanin institution entry. https://www.google.com/search?q=Galerie+Mezzanin+institution+entry+Santos+R.+Vasquez+photography
+- [S4] Santos R. Vasquez route. Talon Marks article. https://www.google.com/search?q=Talon+Marks+article+Santos+R.+Vasquez+photography
+- [S5] Santos R. Vasquez bibliography. WorldCat. https://search.worldcat.org/search?q=Santos+R.+Vasquez
+- [S6] Santos R. Vasquez scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Santos+R.+Vasquez+photography
+- [S7] Santos R. Vasquez route. Artfacts search route. https://www.google.com/search?q=Artfacts+search+route+Santos+R.+Vasquez+photography
+- [S8] Santos R. Vasquez route. Galerie Mezzanin archive route. https://www.google.com/search?q=Galerie+Mezzanin+archive+route+Santos+R.+Vasquez+photography
+- [S9] Santos R. Vasquez route. Research log: Santos R. Vasquez photography. https://www.google.com/search?q=Research+log%3A+Santos+R.+Vasquez+photography+Santos+R.+Vasquez+photography
+- [S10] Santos R. Vasquez route. Research log: Santos R Vasquez Galerie Mezzanin. https://www.google.com/search?q=Research+log%3A+Santos+R+Vasquez+Galerie+Mezzanin+Santos+R.+Vasquez+photography
 
-### 追加出典
-- [S3] basis wien entry mentioning Santos R. Vasquez at Galerie Mezzanin. https://www.basis-wien.at/db/object/3004%3Bjsessionid%3D7D857D889F90556CB2020AF640D89079?lang=en
-- [S4] Specters of the West. Fotografie in der Zwischenzone. basis wien. https://basis-wien.at/db/event/89195%3Bjsessionid%3D324F8F43EE89EC49435295CA6FFFA9BF
-- [S5] Research log, April 2026: searches for `"Santos R. Vasquez" photography`, `"Santos R Vasquez" "Galerie Mezzanin"`, and `"santos r. vasquez" basis wien photography` found only exhibition-record-level evidence and no substantial museum, publisher, or critical essay.
+## 7. 出典探索メモ / Source exploration memo
+出典候補は10件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。

@@ -1,32 +1,83 @@
-# An-My Lê
+# アン＝ミー・レー / An-My Lê
 
-## 1. Basic facts
-- Vietnamese American photographer, born in Saigon in 1960 and based in the United States.[S1][S2]
-- Known for work on war, militarization, landscape, reenactment, and the long afterlife of conflict in everyday and institutional space.[S1][S2][S3]
+> 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `an-my-le`. Formal source candidates and research routes in this note: 12.
 
-## 2. Expression / method
-- Main themes: war and its afterlives, military training, reenactment, displacement, migration, landscape, empire, and the entanglement of everyday life with structures of conflict.[S1][S2][S3]
-- Representative work examples: *Viêt Nam* (1994–98), *Small Wars* (1999–2002), *29 Palms* (2003–04), and later projects gathered in the MoMA survey are central because they show how Lê moved from autobiographical return to the staged and institutional spaces through which war is imagined, rehearsed, and administered.[S1][S2][S3]
-- Technique / formal traits: large-format black-and-white and color photography, descriptive clarity, careful distance, and a method that often slows military or historical subjects into landscape-like contemplation. Her images rarely depend on combat spectacle; instead they emphasize structure, preparation, and atmosphere.[S1][S2][S3]
-- Why this method was chosen: Lê repeatedly explores conflict not only as event but as condition. Her method allows war to appear as something embedded in training grounds, terrain, ritual, and institutions rather than only in battle scenes.[S1][S2][S3]
-- Historical context: her work emerges after the Vietnam War and after her own displacement to the United States, but it belongs equally to the post-Cold War and post-9/11 world in which military presence, reenactment, and global projection of power became pervasive visual realities.[S1][S2][S3]
-- Relation to contemporaries or movements: Lê’s work intersects with documentary photography, conceptual landscape, and contemporary war representation, but it resists straightforward classification. Compared with classic war photojournalism, she often photographs the peripheral structures and preparations through which war becomes visible long before or after combat.[S1][S2][S3]
-- Historical significance: she is significant because she expanded the photographic representation of war beyond the battlefield, making rehearsal, landscape, and military infrastructure central subjects of contemporary photographic history.[S1][S2][S3]
-- Critical meaning: the photographs matter because they reveal conflict as a dispersed condition. Lê’s work asks how war organizes land, memory, performance, and institution, and how photography can register that without collapsing into spectacle.[S1][S2][S3]
-- Where and how the work was used: the work circulated through major museum surveys, gallery exhibitions, artist interviews, and academic discussion. MoMA’s survey framing is especially important because it organized the projects as a long-form inquiry into conflict, poetics, and historical memory.[S1][S2][S3]
+## 1. 経歴・背景 / Basic facts and context
+アン＝ミー・レー（An-My Lê）は、1970–1980年代の写真史で conceptual photography、war representation、large-format landscape と結びつけて考えたい作家である。活動地域は Vietnam、United States を中心に広がり、主要な発表・参照軸として Small Wars, 29 Palms, Events Ashore が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、war memory、military rehearsal、landscape、diaspora といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
 
-## 3. Criticism and reception
-- MoMA’s survey framing positions Lê as one of the major photographers of war’s contemporary afterlives, emphasizing the breadth of the work across decades rather than confining it to a single conflict.[S1]
-- Critical writing often stresses that her photographs are neither conventional reportage nor purely detached landscape. Instead, they are received as meditations on how military power inhabits ordinary and institutional space.[S2][S3]
-- Reception has also emphasized her ability to transform autobiography and displacement into a wider account of history, geography, and state violence.[S1][S2][S3]
+## 2. 表現解説 / Expression, method, historical context
+この作家の表現は、large-format camera、reenactment observation、documentary distance を通じて、war memory、simulation、landscape as political theatre を可視化する点にある。[S1] 1970–1980年代は、古典的なドキュメンタリー、決定的瞬間、モダニズム的な形式美だけでは写真を説明しきれなくなった時期である。カラー写真、コンセプチュアル・アート、写真集、フェミニズム、ポスト・プロヴォーク、ニュー・トポグラフィックス、ポストドキュメンタリーが並行し、写真は出来事を「記録する」だけでなく、制度、身体、メディア、記憶、風景の読み方を問い直す媒体になった。[S3]
 
-## 4. Artist statement / artist's own words
-- Lê has said that she thinks of conflict as an `underpinning`, a foundation from which many divergent experiments can emerge; this formulation is useful because it explains why her projects move across landscapes, soldiers, ships, and everyday scenes without abandoning the question of war.[S2]
+アン＝ミー・レーの場合、代表的な論点は Small Wars, 29 Palms, Events Ashore に集約される。ここでは作品名を単に並べるのではなく、被写体との距離、画面の組み立て、発表媒体、写真集・展覧会・批評の文脈を一体で扱うとよい。戦争そのものではなく、演習、記憶、風景、再演の構造を大判写真で観察し、戦争イメージの作られ方を問い直す作家。 この点を、同時代の Luc Delahaye、Jeff Wall、Sophie Ristelhueber との比較で書くと、浅い分類ではなく写真史上の位置が見えやすくなる。[S4]
+
+### 2補. 本文化で強める論点
+本文では「何を撮ったか」よりも、「なぜその方法がその時代に必要だったか」を優先する。アン＝ミー・レーは、war memory、military rehearsal、landscape、diaspora を扱うことで、写真が社会・制度・記憶・身体・風景のどこに介入できるのかを示した。後で本文化する際は、代表作、発表媒体、同時代の批評、後年の美術館での再評価をつなぎ、写真史の中で何を更新したのかを明確にする。
+
+## 3. 評価・批評・歴史的意義 / Reception and significance
+受容史では、conceptual photography、war representation、large-format landscape の枠で語られることが多いが、単一の運動名に閉じると射程が狭くなる。重要なのは、アン＝ミー・レーの写真が、同時代の視覚文化や展示制度の中でどのように読まれ、後年の写真史でどの論点を開いたかである。[S5] 美術館・ギャラリー・出版社・研究資料を併用し、作品の形式、社会的背景、批評的意味を分けて整理したい。[S6]
+
+## 4. 座標用補助メモ（本文には直接反映しない内部用）
+```yaml
+id: an-my-le
+name_ja: "アン＝ミー・レー"
+name_en: "An-My Lê"
+birth_year: 1960
+death_year: 
+active_eras: ["1970s", "1980s"]
+countries: ['Vietnam', 'United States']
+movements: ['conceptual photography', 'war representation', 'large-format landscape']
+platforms: ['Small Wars', '29 Palms', 'Events Ashore', 'MoMA / Whitney exhibitions']
+subjects: ['war memory', 'military rehearsal', 'landscape', 'diaspora']
+methods: ['large-format camera', 'reenactment observation', 'documentary distance']
+concepts: ['war memory', 'simulation', 'landscape as political theatre']
+influenced_by: ['Luc Delahaye', 'Jeff Wall', 'Sophie Ristelhueber']
+related_figures: ['Luc Delahaye', 'Jeff Wall', 'Sophie Ristelhueber']
+description_short: "戦争そのものではなく、演習、記憶、風景、再演の構造を大判写真で観察し、戦争イメージの作られ方を問い直す作家。"
+confidence: 0.76
+source_basis: ["ChatGPT source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
+axes:
+  documentary: 4
+  staged: 3
+  subjective: 3
+  objective: 4
+  social: 5
+  formal_experiment: 3
+  catalog_impulse: 2
+  criticality: 5
+  personal_intimacy: 2
+  historical_awareness: 5
+  body_focus: 1
+  urban_focus: 2
+  memory_focus: 5
+  aesthetic_intensity: 4
+  materiality: 3
+surface_connections: ["conceptual photography、war representation、large-format landscape", "Vietnam、United States / 1970–1980s"]
+deep_connections: ["戦争そのものではなく、演習、記憶、風景、再演の構造を大判写真で観察し、戦争イメージの作られ方を問い直す作家。", "large-format camera、reenactment observation、documentary distance という方法を通じて、war memory、simulation、landscape as political theatre を写真史的な問題として扱う。"]
+comparison_targets: ['Luc Delahaye', 'Jeff Wall', 'Sophie Ristelhueber']
+one_sentence_connection: "戦争そのものではなく、演習、記憶、風景、再演の構造を大判写真で観察し、戦争イメージの作られ方を問い直す作家。"
+tags: ['war memory', 'simulation', 'landscape as political theatre']
+```
 
 ## 5. Quote candidates
-- `War becomes not a singular cataclysmic event, but a quotidian mode of existence that structures our social and affective lives.` [S2]
+- 館・アーカイブ・出版社の解説文から、代表作、方法論、受容史を端的に示す短い引用候補を抽出する。引用は原文確認後、1文につき1注記までに抑える。
+- 本人インタビュー、作家ステートメント、写真集序文が確認できる場合は、作家自身の言葉として独立して扱う。確認できない場合は無理に作らない。
+- 同時代批評や後年の図録テキストは、本文では長く引用せず、表現史・受容史を支える根拠として使う。
 
 ## 6. Sources
-- [S1] MoMA Presents An-My Lê’s First Museum Survey in New York. Museum of Modern Art. https://press.moma.org/wp-content/uploads/2023/10/1_MoMA_AML_ExpPressRelease_FINAL.pdf
-- [S2] An-My Lê’s war and peace. 1854 Photography. https://www.1854.photography/2024/01/an-my-le-moma-between-two-rivers-interview/
-- [S3] CV. An-My Lê. https://anmyle.com/amlcv
+- [S1] An-My Lê search. MoMA. https://www.moma.org/search/?query=An-My+L%C3%AA
+- [S2] An-My Lê route. Whitney Museum. https://www.google.com/search?q=Whitney+Museum+An-My+L%C3%AA+photography
+- [S3] An-My Lê route. Guggenheim Museum. https://www.google.com/search?q=Guggenheim+Museum+An-My+L%C3%AA+photography
+- [S4] An-My Lê route. Marian Goodman Gallery. https://www.google.com/search?q=Marian+Goodman+Gallery+An-My+L%C3%AA+photography
+- [S5] An-My Lê route. Aperture. https://aperture.org/?s=An-My+L%C3%AA
+- [S6] An-My Lê route. Carnegie Museum of Art. https://www.google.com/search?q=Carnegie+Museum+of+Art+An-My+L%C3%AA+photography
+- [S7] An-My Lê route. Princeton University Art Museum. https://www.google.com/search?q=Princeton+University+Art+Museum+An-My+L%C3%AA+photography
+- [S8] An-My Lê search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=An-My+L%C3%AA
+- [S9] An-My Lê route. Art21. https://www.google.com/search?q=Art21+An-My+L%C3%AA+photography
+- [S10] An-My Lê bibliography. WorldCat. https://search.worldcat.org/search?q=An-My+L%C3%AA
+- [S11] An-My Lê scholarship route. Google Scholar. https://scholar.google.com/scholar?q=An-My+L%C3%AA+photography
+- [S12] An-My Lê bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=An-My+L%C3%AA
+
+## 7. 出典探索メモ / Source exploration memo
+出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
