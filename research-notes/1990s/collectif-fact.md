@@ -31,3 +31,64 @@
 - [S3] Repères | collectif_fact. DDA Genève. https://dda-geneve.ch/fr/artistes/collectif-fact/reperes
 - [S4] Entretien avec le collectif_fact. DDA Genève. https://dda-geneve.ch/fr/artistes/collectif-fact/reperes/textes/entretien-avec-le-collectif-fact
 - [S5] Suspension of Disbelief. Tenderpixel. https://tenderpixel.com/exhibitions/suspension-of-disbelief/
+
+## 7. 座標用補助メモ（本文には直接反映しない内部用）
+### 基礎情報
+- id: collectif-fact
+- name_ja: コレクティフ・ファクト
+- name_en: collectif_fact
+- birth_year: null
+- death_year: null
+- active_eras: 2000s, 2010s
+- countries: Switzerland
+- movements: Conceptual Photography, Media Critique, Contemporary Art
+- platforms: Centre d'Art Contemporain Genève, DDA Genève, CNAP, exhibition installation, moving image
+- subjects: urban space, architecture, media images, speculative futures, cinematic codes
+- methods: photography, video, 3D scan, digital modeling, montage, fictional narration
+- concepts: media-critique, staged-image, city, simulation, image-circulation, speculative-documentary
+- influenced_by: cinematic grammar, urban visual culture, post-conceptual image practice
+- related_figures: Claude Piguet, Annelore Schneider, Swann Thommen
+- description_short: 写真、映像、3Dモデリングを組み合わせ、都市とメディアの知覚条件をフィクションとして検証する集団。
+- confidence: high
+- source_basis: Centre d'Art Contemporain Genève, CNAP, DDA Genève, Tenderpixel.
+
+### 15軸評価（0-5）
+- documentary: 2
+- staged: 4
+- subjective: 2
+- objective: 2
+- social: 3
+- formal_experiment: 4
+- catalog_impulse: 2
+- criticality: 4
+- personal_intimacy: 1
+- historical_awareness: 3
+- body_focus: 1
+- urban_focus: 5
+- memory_focus: 2
+- aesthetic_intensity: 3
+- materiality: 2
+
+### 接続候補
+- 表層的関係: 2000年代以降のヨーロッパ、都市空間、映像インスタレーション、ポストコンセプチュアル写真。
+- 深層的関係: 写真を単独の証拠ではなく、都市、映画、デジタル生成画像の間で知覚を組み立てる装置として扱う点で、Multiplicity や The Atlas Group / Walid Raad と接続できる。
+- 比較対象: Multiplicity, Bruno Serralongue, The Atlas Group / Walid Raad, Beate Gütschow.
+- 接続を1文で説明: collectif_fact は、都市を見ること自体がメディアとフィクションによって条件づけられていることを、写真と映像の複合形式で可視化する。
+- 統一タグ候補: media-critique, staged-image, city, simulation, conceptual-photography, architecture, image-circulation.
+
+## 8. 追加調査: 引用候補・出典拡張
+### 追加引用候補
+- `se laisser un peu berner` [S4]
+- `cela fait vingt ans que nous travaillons ensemble` [S4]
+- `un jeu de ping-pong` [S4]
+- `From 2002, collectif_fact participated in numerous video festivals` [S6]
+- `rythmiques, urbaines et futuristes` [S7]
+- `les faits de fact sont collectivement des fictions` [S7]
+- `Worldmaking` [S1]
+- `No Picture, No Glory or the Triumph of Apophenia` [S2]
+
+### 追加出典
+- [S6] collectif_fact dossier PDF. Centre d'Art Contemporain Genève. https://centre.ch/wp-content/uploads/2018/07/dp-collectif-fact-eng.pdf
+- [S7] Ville de Genève atelier document mentioning collectif_fact, 2003-2004. Ville de Genève PDF. https://www.geneve.ch/sites/default/files/fileadmin/public/Departement_3/Documents_de_demarches/ateliers_hebergement/Beneficiaires-ateliers-plasticiens-Grutli-2003-2004-ville-geneve.pdf
+- [S8] Five Years, Stuck on My Eyes. Visarte Genève / DDA Genève context. https://www.visarte-geneve.ch/expo/five-years-stuck-my-eyes-0
+- [S9] DDA network context. Réseau Documents d'Artistes. https://reseau-dda.org/en/about/our-regions

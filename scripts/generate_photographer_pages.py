@@ -616,25 +616,6 @@ def render_site_directory_nav(
             rendered.append(render_directory_link(url, label))
         return "".join(rendered)
 
-    photographer_lookup = {photographer["id"]: photographer for photographer in photographers}
-    featured_links = []
-    for photographer_id in FEATURED_PHOTOGRAPHER_IDS:
-        photographer = photographer_lookup.get(photographer_id)
-        if photographer:
-            featured_links.append(
-                render_directory_link(photographer_page_path(photographer, lang), display_name(photographer, lang))
-            )
-    era_links = [
-        render_directory_link(era_page_path({"era": era["id"]}, lang), (era.get("period") or "").replace(" — ", "–"))
-        for era in eras
-    ]
-    country_links = [
-        render_directory_link(
-            f"/{'en/' if lang == 'en' else ''}countries/{country_entry(nationality)['slug']}.html",
-            country_entry(nationality)["en" if lang == "en" else "ja"],
-        )
-        for nationality in all_nationalities
-    ]
     def render_group(label: str, links: str, contextual: bool = False) -> str:
         context_class = " site-directory-group-contextual" if contextual else ""
         return f"""        <div class="site-directory-group{context_class}">
@@ -649,13 +630,8 @@ def render_site_directory_nav(
         groups.append(render_group(labels["relatedPeople"], related_people_links, contextual=True))
     if related_movement_links:
         groups.append(render_group(labels["relatedMovements"], related_movement_links, contextual=True))
-    groups.extend(
-        [
-            render_group(labels["eras"], "".join(era_links)),
-            render_group(labels["countries"], "".join(country_links)),
-            render_group(labels["photographers"], "".join(featured_links)),
-        ]
-    )
+    if not groups:
+        return ""
     directory_groups = "\n".join(groups)
     return f"""
       <nav class="site-directory-links" aria-label="{escape_html(labels['nav'])}">

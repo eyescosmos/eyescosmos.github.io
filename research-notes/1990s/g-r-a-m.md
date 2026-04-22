@@ -32,3 +32,67 @@
 - [S3] G.R.A.M. Christine König Galerie. https://christinekoeniggalerie.com/artists/g-r-a-m-1255307f/
 - [S4] G.R.A.M.: NixCheckCashing, 2012. Camera Austria. https://camera-austria.at/en/edition/g-r-a-m-nixcheckcashing-2012/
 - [S5] G.R.A.M. imaginiert Kopftuch-Basar in die Grazer Kunsthalle. Tiroler Tageszeitung. https://www.tt.com/artikel/13124127/g-r-a-m-imaginiert-kopftuch-basar-in-die-grazer-kunsthalle
+
+## 7. 座標用補助メモ（本文には直接反映しない内部用）
+### 基礎情報
+- id: g-r-a-m
+- name_ja: G.R.A.M.
+- name_en: G.R.A.M.
+- birth_year: null
+- death_year: null
+- active_eras: 1980s, 1990s, 2000s, 2010s
+- countries: Austria
+- movements: Conceptual Photography, Media Critique, Appropriation, Reenactment
+- platforms: Camera Austria, galleries, artist books, installation, press-image circulation
+- subjects: mass media, public images, politics, memory, spectacle, reenactment
+- methods: photographic reenactment, appropriation, performance, installation, newspaper format, video
+- concepts: media-critique, reenactment, archive, representation-crisis, public-memory, appropriation
+- influenced_by: press photography, Viennese Actionism, political media imagery, conceptual art
+- related_figures: Martin Behr, Günther Holler-Schuster, Armin Ranner, Ronald Walter
+- description_short: 公共イメージや報道写真を再演し、メディアが記憶と政治的現実を構成する仕組みを批評する集団。
+- confidence: high
+- source_basis: Camera Austria, official project archive, Christine König Galerie, press interview.
+
+### 15軸評価（0-5）
+- documentary: 2
+- staged: 5
+- subjective: 2
+- objective: 1
+- social: 4
+- formal_experiment: 4
+- catalog_impulse: 2
+- criticality: 5
+- personal_intimacy: 1
+- historical_awareness: 4
+- body_focus: 2
+- urban_focus: 3
+- memory_focus: 4
+- aesthetic_intensity: 3
+- materiality: 3
+
+### 接続候補
+- 表層的関係: オーストリア、再演、メディア批評、報道写真、ポストコンセプチュアル写真。
+- 深層的関係: 写真を「出来事の記録」ではなく、記憶と政治を作るメディア装置として再演する点で、The Atlas Group / Walid Raad や Sherrie Levine と接続できる。
+- 比較対象: The Atlas Group / Walid Raad, Sherrie Levine, Barbara Kruger, Cindy Sherman.
+- 接続を1文で説明: G.R.A.M. は、すでに流通した公共イメージを再演することで、写真が現実を伝えるだけでなく現実を構成する制度であることを示す。
+- 統一タグ候補: media-critique, reenactment, appropriation, public-memory, representation-crisis, staged-image.
+
+## 8. 追加調査: 引用候補・出典拡張
+### 追加引用候補
+- `re-enactment of images circulated by the mass media` [S6]
+- `re-constructs image politics` [S6]
+- `determine both memory and history` [S6]
+- `re-enactments of iconic press images` [S6]
+- `founded 1987 in Graz` [S7]
+- `working in various fields: photography, film, video, performance` [S8]
+- `not photography, or video, or performance... but gesture` [S9]
+- `political images... entered collective memory` [S9]
+- `the artist collective has been active as an artist duo` [S10]
+
+### 追加出典
+- [S6] G.R.A.M.: NixCheckCashing, 2012. Camera Austria. https://camera-austria.at/en/edition/g-r-a-m-nixcheckcashing-2012/
+- [S7] G.R.A.M. Christine König Galerie. https://christinekoeniggalerie.com/artists/g-r-a-m-1255307f/
+- [S8] Beyond Myself catalogue. Gallery Photon. https://www.evelinstermitz.net/archive/catalogue_Beyond_Myself_Photon_2018.pdf
+- [S9] Camera Austria International 119 / 2012. Camera Austria. https://camera-austria.at/en/zeitschrift/119-2012-2/
+- [S10] Art Is Concrete / G.R.A.M. biography PDF. Camera Austria. https://camera-austria.at/wp-content/uploads/2012/12/GRAM_bio_dt_e.pdf
+- [S11] G.R.A.M.: Reenactments 1998-2011. D.A.P. / distribution record. https://utpdistribution.com/9788434312944/g-r-a-m-reenactments-1998-2011/
