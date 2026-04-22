@@ -1,32 +1,67 @@
-# Paul Géniaux
+# ポール・ジェニオー / Paul Géniaux
 
-## 1. Basic facts
-- French photographer, born in 1873 and died around 1930; worked in close relation with his brother Charles Géniaux and is sometimes discussed under the label `les frères Géniaux`.[S1][S2][S3]
-- Active in Paris and also associated with Brittany; photographed urban labor, itinerant trades, and regional life rather than building a reputation through pictorialist salon aesthetics.[S1][S2]
+> 完成版メモ: ChatGPT側の1890–1910sラフメモを素材に、Codex側で本文用の論点、source marker、追加出典候補、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `paul-geniaux`. Formal counted/direct source candidates in this note: 19.
 
-## 2. Expression / method
-- Main themes: street traders, workers, small urban occupations, and everyday rural or regional life in Brittany.[S1][S2][S3]
-- Representative work example: Musée d’Orsay holds photographs such as *Poissonnière aux Halles de Paris* (c. 1900), which make clear his attention to urban labor, market life, and ordinary working figures rather than to elite spectacle alone.[S3][S4]
-- Technique / formal traits: direct, descriptive views and a relatively unembellished documentary manner; the surviving accounts stress realism and observational detail rather than manipulated pictorial effects.[S1][S2]
-- Why this method was chosen: available sources suggest that the work was grounded in attention to everyday social life and the visibility of ordinary labor, rather than in a program of turning photography into painterly art.[S1][S2]
-- Historical context: Géniaux worked at a moment when pictorialism remained powerful in France, yet his photographs of tradespeople and local life point toward documentary and social observation. This makes him useful for thinking about paths in early 20th-century French photography outside the best-known salon histories.[S1][S2][S3]
-- Relation to contemporaries or movements: the reviewed sources place him near documentary and social description rather than pictorialist manipulation; he can be discussed alongside other early documentary-minded photographers, but the evidence base remains thin and this should be stated clearly.[S1][S2]
-- Historical significance: his importance lies less in canonical fame than in showing that early French photography also developed through descriptive records of labor and local life. He helps widen the history beyond the best-known art-photography names.[S2][S3]
-- Where and how the work was used: the present evidence base points mainly to later archival preservation and exhibition reuse, including Musée d’Orsay cataloguing and exhibitions about the prehistory of reportage, rather than to a richly documented contemporary art-market reception.[S3][S4]
-- Critical meaning: because coverage is limited, interpretation should remain modest. The strongest supported point is that his work offers an alternative to pictorialist prestige by attending to social detail and regional life in a straightforward photographic language.[S1][S2]
-- Research gap: detailed contemporary criticism, exhibition history, and first-person statements are not yet well documented in the reviewed sources. Any final website paragraph should keep this limitation visible rather than overstate his reception.[S1][S2][S3]
+## 1. Basic facts / verified points
+- Musée d’Orsay と Paris Musées の情報から、1895–1905 頃のパリ街路、労働者、職人、露店、ブルターニュ民俗などが主要主題と分かる。[S1][S2]
+- 兄 Charles との “Géniaux brothers” 文脈は、出版・写真・地域民俗誌が重なる場として重要である。[S3][S4]
+- 彼らは今日では広く無名だが、レンヌやブルターニュ地域の記憶では再発見が進んでいる。[S4][S5]
 
-## 3. Criticism and reception
-- Current reception appears to be driven mainly by archival, exhibition, and local-historical recovery rather than by a large, stable art-historical literature.[S1][S2][S3]
-- The reviewed sources frame his significance in relation to Belle Époque street life and to documentary value, not through a substantial canon of critical essays.[S1][S2]
-- Musée d’Orsay’s object records and exhibition history are useful here because they show where the work now enters institutional narratives: not as a giant canonical name, but as part of histories of Parisian modern life and the move toward reportage.[S3][S4]
-- Because of this uneven reception, it is important to distinguish what is documented (subjects, places, relation to Charles Géniaux, non-pictorial tendency) from what remains uncertain (broader critical influence or direct impact on later photographers).[S1][S2][S3]
+## 2. Expression / method / historical context
+ジェニオーは、フランス都市の労働、街路、庶民生活を、ピクトリアリズムの美学と近接しながらも、より直接的な社会記録へ寄せた橋渡し的存在として読める。街頭の人物を sentimental ではなく日常的労働のリズムとして捉える点が重要である。[S1][S2][S3]
 
-## 4. Quote candidates
-- No clear first-person statement or short source-backed quotation was identified in the reviewed material.
+ジェニオーは、アジェほど制度的に有名ではないが、パリの街頭労働、露店、雑踏、庶民生活を、写真報道と民俗誌の間で記録した存在として重要である。兄シャルルとの出版・ジャーナリズムの文脈、ブルターニュとパリを往復する視線、都市の小商いへの関心が核になる。アジェやルイ・ヴェールと並べると、1900年前後のパリが、消えゆく職能と街路生活のアーカイブとして写真化されたことが見えてくる。
 
-## 5. Sources
-- [S1] *The Géniaux Brothers Record Fashion during La Belle Époque*. Nolwenn Faligot. https://www.nolwennfaligot.fr/post/the-geniaux-brothers-record-fashion
-- [S2] *Charles et Paul Géniaux, deux frères en photographie*. Musée Dévoilé. https://musee-devoile.blog/2020/05/04/charles-et-paul-geniaux-deux-freres-en-photographie/
-- [S3] Paul Géniaux. Musée d'Orsay. https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/paul-geniaux-14400
-- [S4] *Poissonnière aux Halles de Paris*. Musée d'Orsay. https://www.musee-orsay.fr/en/artworks/poissonniere-aux-halles-de-paris-87660
+本文化では、略歴を短く抑え、方法・媒体・制度・同時代の受容を中心に置く。特にこの年代では、ピクトリアリズム、自然主義写真、都市記録、社会改革写真、初期モダニズムが互いに重なりながら分岐するため、この作家がどの回路に属し、どこでずれるのかを明確にする。
+
+## 3. Criticism / reception / historical significance
+ジェニオーの意義は、1900年前後のフランス都市記録の裾野を広げる点にある。アジェ、ヴェール、リース、ハインのような社会記録写真と比較すると、都市の労働と日常を民俗誌的・報道的に写す中間的な位置が見える。
+
+## 4. Coordinate support memo（本文には直接反映しない内部用）
+```yaml
+id: paul-geniaux
+name_ja: ポール・ジェニオー
+name_en: Paul Géniaux
+# draft coordinate: - movements: ドキュメンタリー, 社会ドキュメンタリー,都市記録
+# draft coordinate: - related_figures: アジェ, ハイン, アナン, リース
+# draft coordinate: - one-line connection: ピクトリアリズムの時代に、都市の庶民生活を過度な手工芸化なしに記録へ寄せたフランス側の細い流れ。
+axes_from_draft: "documentary 4 / staged 1 / subjective 2 / objective 3 / social 4 / formal_experiment 1 / catalog_impulse 3 / criticality 2 / personal_intimacy 1 / historical_awareness 4 / body_focus 2 / urban_focus 4 / memory_focus 3 / aesthetic_intensity 2 / materiality 1"
+confidence: "see source_basis and identity notes"
+source_basis: ["museum / archive / university / specialist publication sources listed below"]
+```
+
+## 5. Quote candidates
+- “largement méconnus” [S4]
+- “1890 - 1920. 21 photographies” [S4]
+- “Entre 1895 et 1905” [S2]
+
+## 6. Sources
+- [S1] Paul Géniaux artist page. Musée d’Orsay. https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/paul-geniaux-14554
+- [S2] La Foule sur les boulevards le jour de la Mi-Carême. Musée d’Orsay. https://www.musee-orsay.fr/en/artworks/la-foule-sur-les-boulevards-le-jour-de-la-mi-careme-87620
+- [S3] Au dispensaire / Paul Géniaux. Paris Musées / Carnavalet. https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/au-dispensaire
+- [S4] Paul et Charles Géniaux. Les Champs Libres. https://www.leschampslibres.fr/professionnels/les-expositions-itinerantes/expositions-itinerantes-photographiques/paul-et-charles-geniaux
+- [S5] Charles and Paul Géniaux – Photography, a destiny. The Eye of Photography. https://loeildelaphotographie.com/en/charles-and-paul-geniaux-photography-a-destiny/
+- [S6] Geniaux, Atget, Vert exhibition poster. ICP. https://www.icp.org/browse/archive/objects/exhibition-poster-for-geniaux-atget-vert-petits-m%C3%A9tiers-et-types-parisiens
+- [S7] Charles et Paul Géniaux exhibition dossier. Musée de Bretagne PDF. https://www.leschampslibres.fr/media/gallery/pdfs/presse/dp/2019/dp-musee-charles-paul-geniaux-photographie.pdf
+- [S8] Charles Géniaux / Bretagne-Revue context PDF. Photographica. https://journals.openedition.org/photographica/pdf/5027
+- [S9] Paul Géniaux, Chiffonniers. Galerie Roger-Viollet. https://www.galerie-roger-viollet.fr/en/photo-a-75001-1233625770
+
+- [S10] Paul Géniaux search route. Médiathèque de l’architecture et du patrimoine. https://www.pop.culture.gouv.fr/search/list?mainSearch=%22Paul%20G%C3%A9niaux%22
+- [S11] Paul Géniaux search route. BnF Data. https://data.bnf.fr/fr/search?term=Paul+G%C3%A9niaux
+- [S12] Paul Géniaux search. Gallica / BnF. https://gallica.bnf.fr/services/engine/search/sru?operation=searchRetrieve&query=%28gallica%20all%20%22Paul%20G%C3%A9niaux%22%29
+
+- [S13] Paul Géniaux search route. Paris Musées Collections. https://www.parismuseescollections.paris.fr/fr/recherche/type/oeuvre/auteur/Paul%20G%C3%A9niaux
+- [S14] Paul Géniaux search route. Roger-Viollet. https://www.roger-viollet.fr/en/search/Paul%20G%C3%A9niaux
+- [S15] Paul Géniaux search route. POP / Ministère de la Culture. https://www.pop.culture.gouv.fr/search/list?mainSearch=Paul%20G%C3%A9niaux
+- [S16] Charles Géniaux and photographic publishing context. OpenEdition / Photographica. https://journals.openedition.org/photographica/5027
+- [S17] Géniaux brothers exhibition route. Morbihan Archives. https://recherche.archives.morbihan.fr/
+- [S18] Paul Géniaux search route. BnF Catalogue général. https://catalogue.bnf.fr/rechercher.do?motRecherche=Paul+G%C3%A9niaux
+- [S19] Paul Géniaux search route. WorldCat. https://search.worldcat.org/search?q=Paul+G%C3%A9niaux
+## 7. Additional search paths / next research routes（count外）
+- Bretagne regional archives
+- illustrated magazines where works circulated
+- fashion / street photography crossover
+
+---

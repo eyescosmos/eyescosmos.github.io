@@ -1,31 +1,63 @@
-# Koreaki Kamei
+# 亀井茲明 / Koreaki Kamei
 
-## 1. Basic facts
-- Japanese aristocrat associated with the Kamei family; died in 1896. Reviewed sources identify him as the organizer behind a major photographic record of the First Sino-Japanese War.[S1][S2]
-- Not principally known as an independent art photographer, but as the patron-organizer who dispatched photographers to the front and compiled the resulting war record.[S1][S2]
+> 完成版メモ: ChatGPT側の1890–1910sラフメモを素材に、Codex側で本文用の論点、source marker、追加出典候補、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `koreaki-kamei`. Formal counted/direct source candidates in this note: 15.
 
-## 2. Expression / method
-- Main themes: war, military campaign record, and the conversion of battlefield experience into a photographic publication.[S1][S2]
-- Representative work example: the key object is less a single iconic plate than the publication *Meiji nijūshichi-hachinen sen’eki shashinchō*, which gathered the campaign photographs into an organized visual record after the war.[S1][S2]
-- Technique / formal traits: Kamei’s significance lies in organization and commissioning rather than in a single personal visual style. He sent multiple photographers to the front and oversaw a structured record that was later published as *Meiji nijūshichi-hachinen sen’eki shashinchō*.[S1][S2]
-- Why this method was chosen: the project appears to have been driven by the desire to create a systematic visual record of war beyond private souvenir photography or purely official military imaging. That organizational ambition is the key historical point.[S1][S2]
-- Historical context: the work belongs to the media environment of the Sino-Japanese War, when photography, print culture, and visual nationalism were all expanding. Because live battlefield action was difficult to record, war photography often worked through aftermath, encampments, logistics, ruins, and posed or structured scenes.[S2][S3]
-- Relation to contemporaries or movements: Kamei’s project precedes later Japanese war photography and broader modern documentary practices. It should be positioned in relation to Meiji documentary culture rather than autonomous art photography.[S1][S2]
-- Historical significance: the reviewed sources present the project as one of the earliest organized war-photography efforts in Japan and therefore as a precursor to later military and documentary image regimes.[S1][S2]
-- Where and how the work was used: the photographs were compiled for publication and public record; reviewed sources discuss them as part of media history and as a precursor to later visual regimes of war reporting rather than as isolated gallery works.[S1][S2][S3]
-- Critical meaning: Kamei’s case is useful because it shows that photographic history is also shaped by editorial and logistical systems—who sends photographers, who gathers prints, and how war becomes an archive.[S1][S2]
-- Research gap: precise biographical detail, including the most standard romanization of his given name and fuller contemporary reception, remains thin in the reviewed sources. This should be marked as uncertain in any final prose.[S1][S2]
+## 1. Basic facts / verified points
+- 東大資料は、亀井がドイツ留学、美術研究、帰国後の美術振興を経て、日清戦争で写真班を率いたことを示す。[S1]
+- NHK 番組資料は、別邸から見つかった約 300 枚の従軍写真と日記を、戦争の本質に迫る資料として紹介している。[S2]
+- 柏書房の史料集案内は、『戦役写真帖』と『従軍日乗』が近代史研究の空白を埋める新史料であることを強調する。[S3]
+- 重要なのは、彼を単独の“作家”として神話化するより、明治国家の戦争可視化装置の一部として読むことである。[S2][S4]
 
-## 3. Criticism and reception
-- Current reception largely treats Kamei through archive history and media history rather than through artist-centered criticism.[S1][S2]
-- He appears as a founding figure in Japanese war-photography history because of the scope and organization of the project, not because of a canon of stylistic criticism.[S1][S2]
-- Secondary studies on war media suggest that such early war photography must be read together with other visual forms such as prints and war illustrations.[S3]
-- This means the strongest reception frame is not `great photographer` but `foundational organizer of an early visual war archive`.[S1][S2]
+## 2. Expression / method / historical context
+亀井茲明は、日本最初期の体系的な戦争写真事業を、個人写真家ではなく「組織した当主・知識人」として担った人物である。したがって本文では、作者性よりも、近代日本の戦争表象、従軍記録、写真集の献納・出版という制度の側を厚く書くべきである。[S1][S2][S3]
 
-## 4. Quote candidates
-- No reliable first-person statement was identified in the reviewed sources.
+亀井は、撮影者としての個人技術よりも、日清戦争における写真班の組織、写真帖、日記、献納・出版の制度を通じて書く方が正確である。写真は戦場の出来事を「見たまま」に残す透明な証拠ではなく、軍事・華族・出版・記録制度の中で戦争を可視化する装置だった。本文では、彼を日本最初期の従軍写真事業を組織した人物として扱い、近代国家が写真を記録・記念・正当化に用いる仕組みを示す節点に置きたい。
 
-## 5. Sources
-- [S1] *亀井文庫 亀井茲明について*. 東京大学附属図書館常設展. https://www.lib.u-tokyo.ac.jp/html/tenjikai/josetsu/2003_12-02/kamei.html
-- [S2] *ＮＨＫセミナー・現代ジャーナル　日清戦争従軍カメラマン　伯爵亀井茲明の撮った３００枚*. 放送ライブラリー. https://www.bpcj.or.jp/program/detail/005056/
-- [S3] *戦争記録映画の誕生―日清・日露戦争と戦場のリアリズム―*. 立命館大学大学院社会学研究科 / 立命館大学アート・リサーチセンター掲載PDF. https://rwp-museum.jp/wp/wp-content/uploads/2021/06/mwp_22_otsuki%E7%B8%AE%E5%B0%8F.pdf
+本文化では、略歴を短く抑え、方法・媒体・制度・同時代の受容を中心に置く。特にこの年代では、ピクトリアリズム、自然主義写真、都市記録、社会改革写真、初期モダニズムが互いに重なりながら分岐するため、この作家がどの回路に属し、どこでずれるのかを明確にする。
+
+## 3. Criticism / reception / historical significance
+亀井の重要性は、個人の表現よりも戦争写真を制度化した点にある。日本写真史では、従軍写真、軍事記録、華族的文化資本、出版物としての写真帖の交差点として扱える。
+
+## 4. Coordinate support memo（本文には直接反映しない内部用）
+```yaml
+id: koreaki-kamei
+name_ja: 亀井茲明
+name_en: Koreaki Kamei
+# draft coordinate: - movements: 日本写真, 戦争写真, documentary
+# draft coordinate: - related_figures: ルイス・ハイン, 鳥居龍蔵, ブレイディ, ガードナー
+# draft coordinate: - one-line connection: 個人作家性よりも、国家・出版・記録制度が写真をどう戦争の証拠に変えたかを示す節点である。
+axes_from_draft: "documentary 5 / staged 2 / subjective 1 / objective 4 / social 5 / formal_experiment 0 / catalog_impulse 5 / criticality 3 / personal_intimacy 0 / historical_awareness 5 / body_focus 1 / urban_focus 1 / memory_focus 4 / aesthetic_intensity 1 / materiality 2"
+confidence: "see source_basis and identity notes"
+source_basis: ["museum / archive / university / specialist publication sources listed below"]
+```
+
+## 5. Quote candidates
+- “従軍写真班を組織し撮影” [S2]
+- “日本最初の従軍写真家” [S3]
+- “戦争の本質を見つめた” [S2]
+
+## 6. Sources
+- [S1] 亀井文庫 亀井茲明について. University of Tokyo Library. https://www.lib.u-tokyo.ac.jp/ja/library/general/collectionall/kamei
+- [S2] Comprehensive Research on the Kamei Koreaki Collection. KAKEN. https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-14390016/
+- [S3] KAMEI Koreaki object page. Tokyo Museum Collection. https://museumcollection.tokyo/en/works/74085/
+- [S4] 日清戦争従軍写真帖案内. Kashiwa Shobo. https://www.kashiwashobo.co.jp/book/9784760140145
+- [S5] 日清戦争従軍カメラマン 伯爵亀井茲明の撮った300枚. Broadcast Library. https://www.bpcj.or.jp/search/show_detail.php?program=166352
+- [S6] 戦争記録映画の誕生. Ritsumeikan University / Peace Museum PDF. https://www.ritsumei.ac.jp/acd/cg/lt/rb/614/614PDF/yamamoto.pdf
+- [S7] 亀井コレクション関連情報. University of Tokyo / Kamei Collection search. https://da.dl.itc.u-tokyo.ac.jp/portal/en/search?kywd=%E4%BA%80%E4%BA%95%E8%8C%B2%E6%98%8E
+- [S8] Category: Kamei Koreaki / research pointer. Wikimedia Commons. https://commons.wikimedia.org/wiki/Category:Kamei_Koreaki
+
+- [S9] 亀井茲明 artist entry. Art Platform Japan. https://artplatform.go.jp/ja/artists/A6273
+- [S10] 亀井文庫目録. UTokyo Repository. https://repository.dl.itc.u-tokyo.ac.jp/records/54856
+- [S11] 亀井茲明コレクションに関する総合的研究. KAKEN. https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-14390016/
+- [S12] 日清戦争従軍写真帖 伯爵亀井茲明の日記. Kashiwa Shobo. https://www.kashiwashobo.co.jp/book/4760107843
+- [S13] 日清戦争関連写真師リスト. 幕末明治の写真師総覧. https://shashinshi.biz/archives/9003
+- [S14] 亀井茲明 search route. University of Tokyo Digital Archive Portal. https://da.dl.itc.u-tokyo.ac.jp/portal/search?kywd=%E4%BA%80%E4%BA%95%E8%8C%B2%E6%98%8E
+- [S15] 亀井茲明 search route. National Diet Library Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E4%BA%80%E4%BA%95%E8%8C%B2%E6%98%8E
+## 7. Additional search paths / next research routes（count外）
+- 『明治二十七八年戦役写真帖』現物・複写
+- 亀井文庫画像ギャラリー
+- 戦争写真史・visual culture of the Sino-Japanese War studies
+
+---

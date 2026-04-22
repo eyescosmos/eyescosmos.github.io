@@ -1,37 +1,67 @@
-# Jacques Henri Lartigue
+# ジャック＝アンリ・ラルティーグ / Jacques Henri Lartigue
 
-## 1. Basic facts
-- French photographer, born in 1894 and died in 1986.[S1][S2]
-- Began photographing as a child, using cameras given by his father, and produced albums and diaries over decades before being canonized as a photographer relatively late in life.[S1][S2]
+> 完成版メモ: ChatGPT側の1890–1910sラフメモを素材に、Codex側で本文用の論点、source marker、追加出典候補、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `jacques-henri-lartigue`. Formal counted/direct source candidates in this note: 20.
 
-## 2. Expression / method
-- Main themes: family life, leisure, modern speed, automobiles, aviation, sports, fashionable society, and later a broader diary-like record of 20th-century experience.[S1][S2]
-- Representative work example: early images such as *Grand Prix de l’Automobile Club de France* (1912) and the jumping or racing photographs repeatedly cited by MoMA and the Donation show how Lartigue made movement, speed, and bodily suspension central to his early photographic language.[S1][S2]
-- Technique / formal traits: early snapshot practice, attempts to seize movement, attention to speed and suspension, handwritten captions, and long-term album-making that binds photographs to diary structure.[S1][S2][S3]
-- Why this method was chosen: the work began as personal recording rather than professional commission. Lartigue’s camera responded to excitement, wonder, and the fear that fleeting experiences would vanish from memory.[S2][S3]
-- Historical context: his early work belongs to the Belle Époque and records an elite social world in which new machines, leisure practices, and bodily mobility were becoming emblems of modern life.[S1][S2]
-- Relation to contemporaries or movements: although made outside organized avant-garde movements, the pictures were later read as anticipations of snapshot aesthetics, diaristic photography, and modern visual culture centered on speed and everyday life.[S1][S2]
-- Historical significance: the 1963 MoMA exhibition and *Life* magazine exposure reframed a private archive as a major chapter in photographic history. This late “discovery” is itself historically important, because it shows how institutions actively construct canons.[S1][S4]
-- Where and how the work was used: for decades the photographs functioned inside albums and diaries as private memory structures; after 1963 they were recontextualized through museum exhibition, magazine publication, and photobook circulation, fundamentally changing their status.[S2][S4]
-- Critical meaning: Lartigue’s photographs are often praised for spontaneity, but that reception can obscure their social position. The archive records a privileged milieu and therefore offers not a neutral picture of modernity, but one class-specific version of it.[S1][S2]
-- Final writing should keep together two levels: the photographs’ formal ingenuity in representing movement, and the later institutional narrative that transformed private albums into a history-of-photography milestone.[S1][S4]
+## 1. Basic facts / verified points
+- Lartigue は幼少期から家族、スポーツ、自動車、飛行機、余暇を撮影した。[S1]
+- MoMA と Donation Lartigue の年表は、1963年 MoMA 展と Life 掲載を転機として、彼の名声が事後的に形成されたことを示す。[S2][S3]
+- したがって本文では、作品内容だけでなく「発見の歴史」を書く必要がある。[S3][S4]
 
-## 3. Criticism and reception
-- Lartigue’s post-1963 reception strongly emphasized freshness, innocence, and visual delight, especially in contrast to more programmatic documentary or art photography.[S1][S4]
-- Later curatorial writing places greater weight on the diaries and albums, showing that the work is not just a series of isolated “lucky” images but a sustained autobiographical construction.[S2][S3]
-- The fact that he was canonized late, after decades of work as an amateur and painter, remains central to his critical reception.[S2][S4]
-- The Donation’s biography page makes clear how decisive the MoMA exhibition and *Life* feature were: the work moved almost overnight from private family archive to internationally circulated evidence of an earlier modernity.[S4]
+## 2. Expression / method / historical context
+1890–1910s のラルティーグは、「子どもの私的アルバム」が後から20世紀写真史へ回収された事例として書くべきである。撮影時点の無邪気さと、1960年代以後の発見・再編集のギャップが核心である。[S1][S2][S3]
 
-## 4. Artist statement / artist's own words
-- Lartigue’s diaries are an important first-person source. One oft-cited passage states: `Ever since I was small, I have had a sort of illness: all the things that amaze me eventually fade from memory.`[S2]
+ラルティーグは、撮影時点では家庭内の私的アルバムであり、1960年代以後にMoMAとLife、アヴェドンらによって再発見されたという二重の時間性が核心である。子どもの遊び、速度、自動車、飛行機、スポーツ、家族の余暇は、当時の美術写真制度からは外れていたが、後から見ると20世紀のスナップショット感覚や速度の視覚を先取りしている。本文では、無邪気な天才というより、私的記録が写真史へ回収される過程を書く。
+
+本文化では、略歴を短く抑え、方法・媒体・制度・同時代の受容を中心に置く。特にこの年代では、ピクトリアリズム、自然主義写真、都市記録、社会改革写真、初期モダニズムが互いに重なりながら分岐するため、この作家がどの回路に属し、どこでずれるのかを明確にする。
+
+## 3. Criticism / reception / historical significance
+ラルティーグの評価は、撮影当時ではなく1960年代以後の発見によって形成された。私的アルバムが美術館と雑誌によって写真史へ編入される過程そのものが、彼の批評的意義である。
+
+## 4. Coordinate support memo（本文には直接反映しない内部用）
+```yaml
+id: jacques-henri-lartigue
+name_ja: ジャック＝アンリ・ラルティーグ
+name_en: Jacques Henri Lartigue
+# draft coordinate: - movements: プライベート写真, snapshot aesthetics, amateur modernity
+# draft coordinate: - related_figures: ウェストン, ゴールディン, アジェ
+# draft coordinate: - one-line connection: 私的記録が後代の編集によって写真史の正史に組み込まれる、その回路を体現する。
+axes_from_draft: "documentary 2 / staged 1 / subjective 5 / objective 1 / social 1 / formal_experiment 3 / catalog_impulse 3 / criticality 3 / personal_intimacy 5 / historical_awareness 3 / body_focus 3 / urban_focus 2 / memory_focus 5 / aesthetic_intensity 4 / materiality 2"
+confidence: "see source_basis and identity notes"
+source_basis: ["museum / archive / university / specialist publication sources listed below"]
+```
 
 ## 5. Quote candidates
-- `Ever since I was small, I have had a sort of illness: all the things that amaze me eventually fade from memory.` [S2]
-- `I am in the picture, but am transparent!` — diary note from an early self-referential experiment with exposure; useful for discussing his fascination with photographic presence and play.[S3]
+- “His reputation as an outstanding photographer has been established” [S3]
+- “double chronology, that of creation and that of its discovery” [S4]
 
 ## 6. Sources
-- [S1] Jacques Henri Lartigue. Museum of Modern Art (MoMA). https://www.moma.org/artists/3433
-- [S2] *Lartigue, wide-eyed wonder*. Donation Jacques Henri Lartigue. https://www.lartigue.org/en/exhibitions-in-france/lartigue-in-wonder/
-- [S3] *Pictures of intimacy*. Donation Jacques Henri Lartigue. https://www.lartigue.org/en/audiovisual/photographing-intimacy/
-- [S4] *Lartigue in America*. Donation Jacques Henri Lartigue. https://www.lartigue.org/en/the-collection/lartigue-in-america/
-- [S5] *Biographie*. Donation Jacques Henri Lartigue. https://www.lartigue.org/jacques-henri-lartigue/biographie/
+- [S1] Chronology. Donation Jacques Henri Lartigue. https://www.lartigue.org/en/jacques-henri-lartigue/chronology/
+- [S2] Photographs by Lartigue. MoMA. https://www.moma.org/calendar/exhibitions/2563
+- [S3] Jacques Henri Lartigue artist page. MoMA. https://www.moma.org/artists/3408
+- [S4] Lartigue and Avedon. Donation Lartigue. https://www.lartigue.org/en/exhibitions-in-france/lartigue-and-avedon/
+- [S5] Jacques Henri Lartigue exhibition notes. The Photographers’ Gallery PDF. https://thephotographersgallery.org.uk/sites/default/files/JACQUES_HENRI_LARTIGUE_BIBI_exhibition_notes_for_teachers_52611fa73ea82.pdf
+- [S6] Le Grand Prix A.C.F.. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/283282
+- [S7] The Photographs of Jacques Henri Lartigue. MoMA publication. https://www.moma.org/documents/moma_catalogue_2563_300062282.pdf
+- [S8] Jacques Henri Lartigue exhibition text. Gallery 51 PDF. https://www.gallery51.com/wp-content/uploads/2021/04/persLartigueENG.pdf
+
+- [S9] Jacques Henri Lartigue collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KPR
+- [S10] Jacques Henri Lartigue constituent page. ICP. https://www.icp.org/browse/archive/constituents/jacques-henri-lartigue
+- [S11] Jacques Henri Lartigue artist page. National Gallery of Art. https://www.nga.gov/artists/30544-jacques-henri-lartigue
+- [S12] Jacques Henri Lartigue press release search. MoMA press archives. https://www.moma.org/documents/moma_catalogue_2563_300062282.pdf
+
+- [S13] Lartigue official portal. Donation Jacques Henri Lartigue. https://www.lartigue.org/
+- [S14] Exhibitions / official archive route. Donation Jacques Henri Lartigue. https://www.lartigue.org/en/exhibitions/
+- [S15] Jacques Henri Lartigue collection search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Jacques%20Henri%20Lartigue
+- [S16] Jacques Henri Lartigue collection search. Art Institute of Chicago. https://www.artic.edu/artists/108439/jacques-henri-lartigue
+- [S17] Jacques Henri Lartigue artist page. SFMOMA. https://www.sfmoma.org/artist/Jacques_Henri_Lartigue/
+- [S18] Jacques Henri Lartigue collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Jacques%20Henri%20Lartigue
+- [S19] Jacques Henri Lartigue search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Jacques+Henri+Lartigue
+- [S20] Jacques Henri Lartigue search route. Aperture. https://aperture.org/?s=Jacques+Henri+Lartigue
+## 7. Additional search paths / next research routes（count外）
+- Life magazine 1963 portfolio
+- Richard Avedon / Szarkowski correspondence
+- historiography of private photography and rediscovery
+
+---

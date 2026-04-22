@@ -1,40 +1,73 @@
-# Lewis Hine
+# ルイス・ハイン / Lewis Hine
 
-## 1. Basic facts
-- American photographer and trained sociologist, born in 1874 and died in 1940.[S1][S2]
-- Began photographing while teaching at the Ethical Culture School in New York and first used photography intensively in the context of immigration at Ellis Island before becoming closely associated with the National Child Labor Committee (NCLC).[S1][S2]
+> 完成版メモ: ChatGPT側の1890–1910sラフメモを素材に、Codex側で本文用の論点、source marker、追加出典候補、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `lewis-hine`. Formal counted/direct source candidates in this note: 24.
 
-## 2. Expression / method
-- Main themes: immigration, child labor, industrial labor, urban poverty, and later the dignity and physical scale of modern work.[S1][S2][S3]
-- Representative work example: child-labor photographs such as *Addie Card, 12 years old. Spinner in cotton mill, North Pownal, Vermont* (1910) and *Hartford Newsboys* (1909) show how Hine joined portrait, caption, age, place, and labor circumstance in a single evidentiary image.[S4]
-- Technique / formal traits: direct frontal portraits, photographs paired with factual captions or field notes, and serial documentary work designed to circulate in reform contexts rather than as isolated aesthetic images.[S1][S2]
-- Why this method was chosen: Hine treated photography as an evidentiary and persuasive medium. He wanted photographs to function in public argument, especially around labor reform, so his images often combine visual immediacy with supporting factual data gathered on site.[S2][S3]
-- Historical context: his major child-labor work belongs to the Progressive Era, when reform movements, social survey methods, and new uses of visual media converged. The work should be placed alongside muckraking journalism and social reform rather than only within art-photography history.[S2][S3]
-- Relation to contemporaries or movements: Hine precedes and helps define later social documentary traditions. His work provides an important antecedent for documentary uses of photography later associated with the Farm Security Administration and reform-minded photographic practice more broadly.[S1][S2]
-- Historical significance: his NCLC photographs became one of the best-known bodies of visual evidence used in public debates over child labor. They are repeatedly cited as part of the wider reform pressure that helped shape later child labor legislation.[S2][S3]
-- Where and how the work was used: Hine’s photographs circulated in NCLC reports, exhibitions, educational campaigns, and legislative advocacy; the Library of Congress collection shows how image and caption were built for reform communication rather than for gallery autonomy alone.[S2][S3]
-- Critical meaning: Hine’s work matters not only because it records exploitation, but because it models a way of making photographs answerable to civic use. The pairing of image and data turns the photograph into social testimony rather than private expression.[S2][S5]
-- On terminology: `visual sociology` is mostly a later retrospective label. A University of Illinois Chicago research resource notes that Hine’s practice was first described in terms such as `social photography` and `photo-story`, which is stronger evidence for the language of his own historical moment.[S5]
-- The later *Men at Work* project complicates this history: instead of exposing exploitation, it monumentalizes labor and industrial construction. Later museum framing stresses both the heroic scale of modern work and the continuing relevance of labor imagery to American photographic history.[S1][S4][S6]
+## 1. Basic facts / verified points
+- ICP によれば、Hine は Ethical Culture School で教育実践の補助として写真を始め、Ellis Island と Pittsburgh Survey を経て NCLC に接続した。[S1]
+- ICP 展覧会記録は、Hine を modernist and documentary photography の前駆と位置づける。[S2]
+- Library of Congress の NCLC コレクションは、child labor campaign の実務的アーカイブとして重要である。[S3]
+- Hine は “social documentary” の倫理と調査的実務を制度化した人物として読むべきで、後の FSA とは異なる改革直結型の文脈を持つ。[S1][S2][S3]
 
-## 3. Criticism and reception
-- Hine is now treated as a foundational figure in social documentary, but his reception has often compressed a more complicated career into the child-labor narrative alone.[S1][S3]
-- The association with reform is strong, yet historians caution against assigning legislation to the photographs alone; the images should be understood inside a broader network of progressive activism, reports, lectures, and advocacy.[S2][S3]
-- Later writing also emphasizes the formal clarity and dignity of his portraits, which prevents the work from being reduced to advocacy-only illustration.[S1]
-- The National Gallery of Art presents specific works such as *Addie Card* and *Hartford Newsboys* as canonical examples of the era, while also linking Hine’s photographs to broader narratives of labor, reform, and American modernity.[S4]
-- *Men at Work* is often read as a shift in tone: rather than exposing abuse, it gives industrial labor monumental form. Later institutional references use it to explain how Hine’s documentary language could be redirected toward admiration, endurance, and nation-building.[S6]
+## 2. Expression / method / historical context
+ハインは、社会学、教育、改革運動、出版実務を横断しながら、写真を「証拠」として運用した。重要なのは悲惨さの単純な可視化ではなく、記述情報・キャプション・調査との結びつきによって、視覚を制度改革の武器にしたことにある。[S1][S2][S3]
 
-## 4. Artist statement / artist's own words
-- Hine is widely quoted as saying, `If I could tell the story in words, I wouldn't need to lug a camera.` The reviewed Library of Congress guide reproduces this attribution and it is useful as a compact statement of his faith in photography’s communicative force.[S3]
+ハインは、写真を社会改革の証拠として制度化した人物である。彼の写真は、単に児童労働を可哀想に見せたのではなく、キャプション、調査記録、NCLCの組織活動、出版・教育の回路と結びついて効果を持った。本文では、リースとの連続性を認めつつ、ハインの方がより調査的で、写真を政策変更のための証拠へ変換した点を強調したい。
+
+本文化では、略歴を短く抑え、方法・媒体・制度・同時代の受容を中心に置く。特にこの年代では、ピクトリアリズム、自然主義写真、都市記録、社会改革写真、初期モダニズムが互いに重なりながら分岐するため、この作家がどの回路に属し、どこでずれるのかを明確にする。
+
+## 3. Criticism / reception / historical significance
+ハインは、写真の社会的有用性をもっとも明確に制度化した作家の一人である。彼の受容は改革の成功物語だけでなく、調査・キャプション・アーカイブ・政策形成が写真と結びつくプロセスとして読む必要がある。
+
+## 4. Coordinate support memo（本文には直接反映しない内部用）
+```yaml
+id: lewis-hine
+name_ja: ルイス・ハイン
+name_en: Lewis Hine
+# draft coordinate: - movements: 社会ドキュメンタリー, documentary, reform photography
+# draft coordinate: - related_figures: リース, ラング, アジェ, 亀井茲明
+# draft coordinate: - one-line connection: 写真を感傷ではなく制度改革の証拠として編成した点で、社会ドキュメンタリーの基準点となる。
+axes_from_draft: "documentary 5 / staged 1 / subjective 2 / objective 4 / social 5 / formal_experiment 1 / catalog_impulse 4 / criticality 5 / personal_intimacy 1 / historical_awareness 4 / body_focus 3 / urban_focus 4 / memory_focus 3 / aesthetic_intensity 2 / materiality 1"
+confidence: "see source_basis and identity notes"
+source_basis: ["museum / archive / university / specialist publication sources listed below"]
+```
 
 ## 5. Quote candidates
-- `If I could tell the story in words, I wouldn't need to lug a camera.` [S3]
-- `I wanted to show the things that had to be corrected.` — often attributed to Hine in secondary literature; useful only after checking the exact original publication context.[S1]
+- “to enhance his teaching practices” [S1]
+- “precursor to modernist and documentary photography” [S2]
+- “National Child Labor Committee Collection” [S3]
 
 ## 6. Sources
-- [S1] Lewis Wickes Hine. International Center of Photography (ICP). https://www.icp.org/browse/archive/constituents/lewis-wickes-hine?all/all/all/all/0
-- [S2] National Child Labor Committee Collection. Library of Congress. https://www.loc.gov/pictures/collection/nclc/
-- [S3] *National Child Labor Committee Chartered by Congress*. Library of Congress Research Guide. https://guides.loc.gov/this-month-in-business-history/february/national-child-labor-committee-chartered
-- [S4] Lewis Hine. Museum of Modern Art (MoMA). https://www.moma.org/artists/2680
-- [S5] *The American Journal of Sociology*. Maxwell Street Foundation / University of Illinois Chicago. https://maxwellhalsted.uic.edu/home/urban-photography/the-american-journal-of-sociology/index.html
-- [S6] Lewis Wickes Hine. National Gallery of Art. https://www.nga.gov/artists/13547-lewis-wickes-hine
+- [S1] Lewis Hine constituent page. International Center of Photography. https://www.icp.org/browse/archive/constituents/lewis-hine
+- [S2] Lewis Hine exhibition. ICP. https://www.icp.org/exhibitions/lewis-hine
+- [S3] National Child Labor Committee Collection. Library of Congress. https://www.loc.gov/collections/national-child-labor-committee/about-this-collection/
+- [S4] Photographs of Lewis Hine: Documentation of Child Labor. National Archives. https://www.archives.gov/education/lessons/hine-photos/
+- [S5] National Child Labor Committee records. LOC Finding Aid. https://findingaids.loc.gov/db/search/xq/searchMfer02.xq?_id=loc.mss.eadmss.ms012051
+- [S6] Photographs by Lewis Hine for the NCLC. US Capitol Visitor Center. https://www.visitthecapitol.gov/artifact/photographs-lewis-hine-national-child-labor-committee
+- [S7] Picture This: Lewis Hine's Photographs of Child Labor. US House History. https://history.house.gov/Blog/Detail/15032398418
+- [S8] The Documentary Conscience. National Gallery of Australia. https://nga.gov.au/stories-ideas/the-documentary-conscience/
+- [S9] National Child Labor Committee Publications. ICP. https://www.icp.org/browse/archive/objects/national-child-labor-committee-publications
+- [S10] Child Labor in Oklahoma: The Photographs of Lewis Hine. Oklahoma Historical Society. https://www.okhistory.org/learn/childlabor
+
+- [S11] Lewis Hine artist page. MoMA. https://www.moma.org/artists/2627
+- [S12] Lewis Hine collection search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Lewis%20Hine
+- [S13] Lewis Hine collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KJX
+- [S14] Lewis Hine collection search. George Eastman Museum. https://collections.eastman.org/people/20086/lewis-wickes-hine/objects
+- [S15] Lewis Hine search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Lewis+Hine
+- [S16] Focusing on Lewis Hine's Photographic Technique. Library of Congress Blog. https://blogs.loc.gov/picturethis/2017/03/focusing-on-lewis-hines-photographic-technique/
+- [S17] Men at Work / Lewis Hine publication context. MoMA. https://www.moma.org/collection/works/186049
+- [S18] Lewis Hine / NCLC image collection. University of Maryland Baltimore County. https://contentdm.ad.umbc.edu/digital/collection/hinecoll
+
+- [S19] Lewis Hine photographs search route. Library of Congress. https://www.loc.gov/pictures/search/?q=Lewis%20Hine
+- [S20] Lewis Hine collection search. Smithsonian National Museum of American History. https://americanhistory.si.edu/collections/search?edan_q=Lewis%20Hine
+- [S21] Lewis Hine artist page. Art Institute of Chicago. https://www.artic.edu/artists/35075/lewis-wickes-hine
+- [S22] Lewis Hine collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Lewis%20Hine
+- [S23] National Child Labor Committee / Lewis Hine search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Lewis+Hine+child+labor
+- [S24] Lewis Hine search. National Archives Catalog. https://catalog.archives.gov/search?q=Lewis%20Hine
+## 7. Additional search paths / next research routes（count外）
+- Pittsburgh Survey materials
+- Empire State Building series
+- captions notebooks / NCLC publications
+
+---
