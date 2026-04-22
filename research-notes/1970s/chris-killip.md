@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `chris-killip`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `chris-killip`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 クリス・キリップ（Chris Killip）は、1970–1980年代の写真史で British documentary photography、social documentary、photobook documentary と結びつけて考えたい作家である。活動地域は United Kingdom を中心に広がり、主要な発表・参照軸として In Flagrante, Seacoal, Martin Parr Foundation が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、industrial decline、working class communities、shipbuilding、coastal labor といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['deindustrialization', 'class', 'community', 'documentary ethics']
 - [S11] Chris Killip route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Chris+Killip
 - [S12] Chris Killip route. Aperture. https://aperture.org/?s=Chris+Killip
 
+- [S13] Chris Killip. Getty publications route. https://shop.getty.edu/products/chris-killip-978-1942884863
+- [S14] Chris Killip collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Chris+Killip
+- [S15] Chris Killip search. Tate. https://www.tate.org.uk/search?q=Chris+Killip
+- [S16] Chris Killip search. Art Institute of Chicago. https://www.artic.edu/search?q=Chris+Killip
+- [S17] Chris Killip search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Chris+Killip
+- [S18] Chris Killip search. SFMOMA. https://www.sfmoma.org/search/?q=Chris+Killip
+- [S19] Chris Killip search. Whitney Museum. https://whitney.org/search?q=Chris+Killip
+- [S20] Chris Killip search. Guggenheim Museum. https://www.guggenheim.org/?s=Chris+Killip
+- [S21] Chris Killip search. Smithsonian Institution. https://www.si.edu/search?query=Chris+Killip
+- [S22] Chris Killip bibliography. WorldCat. https://search.worldcat.org/search?q=Chris+Killip
+- [S23] Chris Killip bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Chris+Killip&searchCode=GKEY%5E*&searchType=0
+- [S24] Chris Killip scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Chris+Killip+photography
+- [S25] Chris Killip journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Chris+Killip+photography
+- [S26] Chris Killip criticism route. Artforum. https://www.artforum.com/search/Chris+Killip/
+- [S27] Chris Killip criticism route. e-flux. https://www.e-flux.com/search/?q=Chris+Killip
+- [S28] Chris Killip library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Chris+Killip
+- [S29] Chris Killip archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Chris+Killip
+- [S30] Chris Killip research route. CiNii Research. https://cir.nii.ac.jp/all?q=Chris+Killip
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

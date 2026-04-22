@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `lidwien-van-de-ven`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `lidwien-van-de-ven`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 リドウィエン・ファン・デ・フェン（Lidwien van de Ven）は、1970–1980年代の写真史で postdocumentary、political conceptual photography、installation と結びつけて考えたい作家である。活動地域は Netherlands を中心に広がり、主要な発表・参照軸として The Reality Effect, Freedom of Expression, Documenta-related exhibitions が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、politics、religion、migration、nationalism、media images といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['ideology', 'perception', 'public conflict', 'image politics']
 - [S11] Lidwien van de Ven route. Framer Framed. https://www.google.com/search?q=Framer+Framed+Lidwien+van+de+Ven+photography
 - [S12] Lidwien van de Ven route. Museum Arnhem. https://www.google.com/search?q=Museum+Arnhem+Lidwien+van+de+Ven+photography
 
+- [S13] The Reality Effect. Anne Mosseri-Marlio Galerie PDF. https://file.artbutler.com/abx/prod/85f9733f-60b6-43d5-8f3c-1c5b27730386/8936d3e5-3f40-4a45-ba21-68d01afe4827/562804260e3240b6.pdf
+- [S14] Lidwien van de Ven. Framer Framed. https://framerframed.nl/en/mensen/lidwien-van-de-ven/
+- [S15] Lidwien van de Ven. Museum Arnhem search. https://www.museumarnhem.nl/en/search?query=Lidwien%20van%20de%20Ven
+- [S16] Lidwien van de Ven. Van Abbemuseum search. https://vanabbemuseum.nl/en/search?q=Lidwien%20van%20de%20Ven
+- [S17] Lidwien van de Ven. Reina Sofia search. https://www.museoreinasofia.es/en/buscar?bundle=&keyword=Lidwien%20van%20de%20Ven
+- [S18] Lidwien van de Ven collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Lidwien+van+de+Ven
+- [S19] Lidwien van de Ven search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Lidwien+van+de+Ven
+- [S20] Lidwien van de Ven search. Art Institute of Chicago. https://www.artic.edu/search?q=Lidwien+van+de+Ven
+- [S21] Lidwien van de Ven search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Lidwien+van+de+Ven
+- [S22] Lidwien van de Ven search. SFMOMA. https://www.sfmoma.org/search/?q=Lidwien+van+de+Ven
+- [S23] Lidwien van de Ven archive search. ICP. https://www.icp.org/search-results/Lidwien+van+de+Ven
+- [S24] Lidwien van de Ven route. Aperture. https://aperture.org/?s=Lidwien+van+de+Ven
+- [S25] Lidwien van de Ven search. Whitney Museum. https://whitney.org/search?q=Lidwien+van+de+Ven
+- [S26] Lidwien van de Ven search. Guggenheim Museum. https://www.guggenheim.org/?s=Lidwien+van+de+Ven
+- [S27] Lidwien van de Ven search. Smithsonian Institution. https://www.si.edu/search?query=Lidwien+van+de+Ven
+- [S28] Lidwien van de Ven bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Lidwien+van+de+Ven&searchCode=GKEY%5E*&searchType=0
+- [S29] Lidwien van de Ven journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Lidwien+van+de+Ven+photography
+- [S30] Lidwien van de Ven criticism route. Artforum. https://www.artforum.com/search/Lidwien+van+de+Ven/
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

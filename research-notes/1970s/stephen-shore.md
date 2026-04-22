@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `stephen-shore`. Formal source candidates and research routes in this note: 11.
+> Site id / slug reference: `stephen-shore`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 スティーヴン・ショア（Stephen Shore）は、1970–1980年代の写真史で New Color、New Topographics、vernacular landscape と結びつけて考えたい作家である。活動地域は United States を中心に広がり、主要な発表・参照軸として American Surfaces, Uncommon Places, MoMA exhibitions が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、road travel、American vernacular、motels、streets、color といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -78,5 +78,25 @@ tags: ['color seeing', 'ordinary America', 'serial travel', 'banal modernity']
 - [S10] Stephen Shore bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Stephen+Shore
 - [S11] Stephen Shore route. MACK. https://www.google.com/search?q=MACK+Stephen+Shore+photography
 
+- [S12] Stephen Shore official. Stephen Shore. https://stephenshore.net/
+- [S13] Stephen Shore. MoMA. https://www.moma.org/artists/5392
+- [S14] Stephen Shore. 303 Gallery. https://www.303gallery.com/artists/stephen-shore
+- [S15] Stephen Shore. Aperture. https://aperture.org/books/stephen-shore-uncommon-places/
+- [S16] Stephen Shore. MACK. https://mackbooks.us/products/modern-instances-br-stephen-shore
+- [S17] Stephen Shore search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Stephen+Shore
+- [S18] Stephen Shore search. Art Institute of Chicago. https://www.artic.edu/search?q=Stephen+Shore
+- [S19] Stephen Shore search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Stephen+Shore
+- [S20] Stephen Shore search. SFMOMA. https://www.sfmoma.org/search/?q=Stephen+Shore
+- [S21] Stephen Shore search. Whitney Museum. https://whitney.org/search?q=Stephen+Shore
+- [S22] Stephen Shore search. Guggenheim Museum. https://www.guggenheim.org/?s=Stephen+Shore
+- [S23] Stephen Shore search. Smithsonian Institution. https://www.si.edu/search?query=Stephen+Shore
+- [S24] Stephen Shore bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Stephen+Shore&searchCode=GKEY%5E*&searchType=0
+- [S25] Stephen Shore journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Stephen+Shore+photography
+- [S26] Stephen Shore criticism route. Artforum. https://www.artforum.com/search/Stephen+Shore/
+- [S27] Stephen Shore criticism route. e-flux. https://www.e-flux.com/search/?q=Stephen+Shore
+- [S28] Stephen Shore library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Stephen+Shore
+- [S29] Stephen Shore archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Stephen+Shore
+- [S30] Stephen Shore research route. CiNii Research. https://cir.nii.ac.jp/all?q=Stephen+Shore
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は11件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

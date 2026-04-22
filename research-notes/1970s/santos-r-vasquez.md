@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `santos-r-vasquez`. Formal source candidates and research routes in this note: 10.
+> Site id / slug reference: `santos-r-vasquez`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 サントス・R・バスケス（Santos R. Vasquez）は、1970–1980年代の写真史で source-gap、exhibition-record-only と結びつけて考えたい作家である。活動地域は United States?、Austria? を中心に広がり、主要な発表・参照軸として Galerie Mezzanin listing, college gallery exhibition が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、unknown、exhibition activity といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -77,5 +77,26 @@ tags: ['source gap', 'documentation limit', 'exhibition record']
 - [S9] Santos R. Vasquez route. Research log: Santos R. Vasquez photography. https://www.google.com/search?q=Research+log%3A+Santos+R.+Vasquez+photography+Santos+R.+Vasquez+photography
 - [S10] Santos R. Vasquez route. Research log: Santos R Vasquez Galerie Mezzanin. https://www.google.com/search?q=Research+log%3A+Santos+R+Vasquez+Galerie+Mezzanin+Santos+R.+Vasquez+photography
 
+- [S11] basis wien object entry. basis wien. https://www.basis-wien.at/db/object/3004%3Bjsessionid%3D7D857D889F90556CB2020AF640D89079?lang=en
+- [S12] basis wien event entry. basis wien. https://basis-wien.at/db/event/89195%3Bjsessionid%3D324F8F43EE89EC49435295CA6FFFA9BF
+- [S13] Galerie Mezzanin institution. basis wien. https://www.basis-wien.at/db/institution/10612%3Bjsessionid%3D8B7B8CB8F2B5A34F01A5DD02CAA8403E?lang=de&wicket%3ApageMapName=org
+- [S14] Art gallery presents photo exhibit. Talon Marks. https://www.talonmarks.com/news/2005/01/25/art-gallery-presents-photo-exhibit/
+- [S15] Santos R. Vasquez bibliography. WorldCat. https://search.worldcat.org/search?q=Santos+R.+Vasquez+photography
+- [S16] Santos R. Vasquez search. MoMA. https://www.moma.org/search/?query=Santos+R.+Vasquez
+- [S17] Santos R. Vasquez collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Santos+R.+Vasquez
+- [S18] Santos R. Vasquez search. Tate. https://www.tate.org.uk/search?q=Santos+R.+Vasquez
+- [S19] Santos R. Vasquez search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Santos+R.+Vasquez
+- [S20] Santos R. Vasquez search. Art Institute of Chicago. https://www.artic.edu/search?q=Santos+R.+Vasquez
+- [S21] Santos R. Vasquez search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Santos+R.+Vasquez
+- [S22] Santos R. Vasquez search. SFMOMA. https://www.sfmoma.org/search/?q=Santos+R.+Vasquez
+- [S23] Santos R. Vasquez archive search. ICP. https://www.icp.org/search-results/Santos+R.+Vasquez
+- [S24] Santos R. Vasquez route. Aperture. https://aperture.org/?s=Santos+R.+Vasquez
+- [S25] Santos R. Vasquez search. Whitney Museum. https://whitney.org/search?q=Santos+R.+Vasquez
+- [S26] Santos R. Vasquez search. Guggenheim Museum. https://www.guggenheim.org/?s=Santos+R.+Vasquez
+- [S27] Santos R. Vasquez search. Smithsonian Institution. https://www.si.edu/search?query=Santos+R.+Vasquez
+- [S28] Santos R. Vasquez bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Santos+R.+Vasquez&searchCode=GKEY%5E*&searchType=0
+- [S29] Santos R. Vasquez journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Santos+R.+Vasquez+photography
+- [S30] Santos R. Vasquez criticism route. Artforum. https://www.artforum.com/search/Santos+R.+Vasquez/
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は10件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

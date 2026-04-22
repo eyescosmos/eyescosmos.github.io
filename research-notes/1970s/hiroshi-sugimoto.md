@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `hiroshi-sugimoto`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `hiroshi-sugimoto`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 杉本博司（Hiroshi Sugimoto）は、1970–1980年代の写真史で conceptual photography、minimalism、long exposure と結びつけて考えたい作家である。活動地域は Japan、United States を中心に広がり、主要な発表・参照軸として Seascapes, Theaters, Dioramas が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、time、sea、cinema、museum display、history といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['time', 'representation', 'history of seeing', 'conceptual materiality']
 - [S11] Hiroshi Sugimoto scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Hiroshi+Sugimoto+photography
 - [S12] Hiroshi Sugimoto bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Hiroshi+Sugimoto
 
+- [S13] Hiroshi Sugimoto official. Hiroshi Sugimoto. https://www.sugimotohiroshi.com/
+- [S14] Hiroshi Sugimoto. Hirshhorn Museum. https://hirshhorn.si.edu/exhibitions/hiroshi-sugimoto/
+- [S15] Hiroshi Sugimoto. Guggenheim. https://www.guggenheim.org/artwork/artist/hiroshi-sugimoto
+- [S16] Hiroshi Sugimoto. Fraenkel Gallery. https://fraenkelgallery.com/artists/hiroshi-sugimoto
+- [S17] Hiroshi Sugimoto. Ben Brown Fine Arts PDF route. https://www.benbrownfinearts.com/usr/library/documents/main/49/sugimoto-13.01.16.pdf
+- [S18] Hiroshi Sugimoto search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Hiroshi+Sugimoto
+- [S19] Hiroshi Sugimoto search. Art Institute of Chicago. https://www.artic.edu/search?q=Hiroshi+Sugimoto
+- [S20] Hiroshi Sugimoto search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Hiroshi+Sugimoto
+- [S21] Hiroshi Sugimoto search. SFMOMA. https://www.sfmoma.org/search/?q=Hiroshi+Sugimoto
+- [S22] Hiroshi Sugimoto archive search. ICP. https://www.icp.org/search-results/Hiroshi+Sugimoto
+- [S23] Hiroshi Sugimoto route. Aperture. https://aperture.org/?s=Hiroshi+Sugimoto
+- [S24] Hiroshi Sugimoto search. Whitney Museum. https://whitney.org/search?q=Hiroshi+Sugimoto
+- [S25] Hiroshi Sugimoto search. Guggenheim Museum. https://www.guggenheim.org/?s=Hiroshi+Sugimoto
+- [S26] Hiroshi Sugimoto search. Smithsonian Institution. https://www.si.edu/search?query=Hiroshi+Sugimoto
+- [S27] Hiroshi Sugimoto bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Hiroshi+Sugimoto&searchCode=GKEY%5E*&searchType=0
+- [S28] Hiroshi Sugimoto journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Hiroshi+Sugimoto+photography
+- [S29] Hiroshi Sugimoto criticism route. Artforum. https://www.artforum.com/search/Hiroshi+Sugimoto/
+- [S30] Hiroshi Sugimoto criticism route. e-flux. https://www.e-flux.com/search/?q=Hiroshi+Sugimoto
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

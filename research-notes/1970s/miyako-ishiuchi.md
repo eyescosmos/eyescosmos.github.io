@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `miyako-ishiuchi`. Formal source candidates and research routes in this note: 11.
+> Site id / slug reference: `miyako-ishiuchi`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 石内都（Miyako Ishiuchi）は、1970–1980年代の写真史で postwar Japanese photography、memory photography、personal documentary と結びつけて考えたい作家である。活動地域は Japan を中心に広がり、主要な発表・参照軸として Yokosuka Story, Mother's, Hiroshima が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、memory、body、scars、clothing、postwar place といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -78,5 +78,25 @@ tags: ['memory', 'body trace', 'materiality', 'postwar trauma']
 - [S10] Miyako Ishiuchi scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Miyako+Ishiuchi+photography
 - [S11] Miyako Ishiuchi route. Japan Society. https://www.google.com/search?q=Japan+Society+Miyako+Ishiuchi+photography
 
+- [S12] Miyako Ishiuchi. Getty Museum. https://www.getty.edu/art/collection/person/103KWS
+- [S13] Miyako Ishiuchi. MoMA. https://www.moma.org/artists/7624
+- [S14] Miyako Ishiuchi. Tate. https://www.tate.org.uk/art/artists/miyako-ishiuchi-17763
+- [S15] Miyako Ishiuchi. Hasselblad Foundation. https://www.hasselbladfoundation.org/wp/portfolio_page/miyako-ishiuchi/
+- [S16] 石内都. Yokohama Museum of Art search. https://inventory.yokohama.art.museum/eng/artist/57
+- [S17] Miyako Ishiuchi collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Miyako+Ishiuchi
+- [S18] Miyako Ishiuchi search. Art Institute of Chicago. https://www.artic.edu/search?q=Miyako+Ishiuchi
+- [S19] Miyako Ishiuchi search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Miyako+Ishiuchi
+- [S20] Miyako Ishiuchi search. SFMOMA. https://www.sfmoma.org/search/?q=Miyako+Ishiuchi
+- [S21] Miyako Ishiuchi archive search. ICP. https://www.icp.org/search-results/Miyako+Ishiuchi
+- [S22] Miyako Ishiuchi route. Aperture. https://aperture.org/?s=Miyako+Ishiuchi
+- [S23] Miyako Ishiuchi search. Whitney Museum. https://whitney.org/search?q=Miyako+Ishiuchi
+- [S24] Miyako Ishiuchi search. Guggenheim Museum. https://www.guggenheim.org/?s=Miyako+Ishiuchi
+- [S25] Miyako Ishiuchi search. Smithsonian Institution. https://www.si.edu/search?query=Miyako+Ishiuchi
+- [S26] Miyako Ishiuchi bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Miyako+Ishiuchi&searchCode=GKEY%5E*&searchType=0
+- [S27] Miyako Ishiuchi journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Miyako+Ishiuchi+photography
+- [S28] Miyako Ishiuchi criticism route. Artforum. https://www.artforum.com/search/Miyako+Ishiuchi/
+- [S29] Miyako Ishiuchi criticism route. e-flux. https://www.e-flux.com/search/?q=Miyako+Ishiuchi
+- [S30] Miyako Ishiuchi library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Miyako+Ishiuchi
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は11件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

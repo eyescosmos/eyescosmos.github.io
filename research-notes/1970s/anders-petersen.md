@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `anders-petersen`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `anders-petersen`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 アンデルス・ペーターセン（Anders Petersen）は、1970–1980年代の写真史で European documentary、intimate documentary、photobook と結びつけて考えたい作家である。活動地域は Sweden を中心に広がり、主要な発表・参照軸として Café Lehmitz, Soho, Steidl photobooks が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、bars、marginal communities、intimacy、nightlife といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['intimacy', 'outsider community', 'documentary subjectivity']
 - [S11] Anders Petersen bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Anders+Petersen
 - [S12] Anders Petersen route. MACK. https://www.google.com/search?q=MACK+Anders+Petersen+photography
 
+- [S13] Anders Petersen official. Anders Petersen. https://anderspetersen.se/
+- [S14] Anders Petersen. Galerie VU. https://www.galerievu.com/artists/anders-petersen/
+- [S15] Anders Petersen. Steidl. https://steidl.de/Artists/Anders-Petersen-0506084659.html
+- [S16] Anders Petersen. Hasselblad Foundation. https://www.hasselbladfoundation.org/wp/portfolio_page/anders-petersen/
+- [S17] Anders Petersen. Fotografiska search. https://www.fotografiska.com/?s=Anders+Petersen
+- [S18] Anders Petersen search. MoMA. https://www.moma.org/search/?query=Anders+Petersen
+- [S19] Anders Petersen collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Anders+Petersen
+- [S20] Anders Petersen search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Anders+Petersen
+- [S21] Anders Petersen search. Art Institute of Chicago. https://www.artic.edu/search?q=Anders+Petersen
+- [S22] Anders Petersen search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Anders+Petersen
+- [S23] Anders Petersen search. SFMOMA. https://www.sfmoma.org/search/?q=Anders+Petersen
+- [S24] Anders Petersen archive search. ICP. https://www.icp.org/search-results/Anders+Petersen
+- [S25] Anders Petersen search. Whitney Museum. https://whitney.org/search?q=Anders+Petersen
+- [S26] Anders Petersen search. Guggenheim Museum. https://www.guggenheim.org/?s=Anders+Petersen
+- [S27] Anders Petersen search. Smithsonian Institution. https://www.si.edu/search?query=Anders+Petersen
+- [S28] Anders Petersen bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Anders+Petersen&searchCode=GKEY%5E*&searchType=0
+- [S29] Anders Petersen journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Anders+Petersen+photography
+- [S30] Anders Petersen criticism route. Artforum. https://www.artforum.com/search/Anders+Petersen/
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `simone-nieweg`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `simone-nieweg`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 シモーヌ・ニーヴェフ（Simone Nieweg）は、1970–1980年代の写真史で Düsseldorf School、landscape photography、garden photography と結びつけて考えたい作家である。活動地域は Germany を中心に広がり、主要な発表・参照軸として gardens, fields, rural edges が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、gardens、agriculture、suburban edge、cultivated land といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['cultivation', 'everyday landscape', 'postindustrial nature']
 - [S11] Simone Nieweg search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Simone+Nieweg
 - [S12] Simone Nieweg route. Aperture. https://aperture.org/?s=Simone+Nieweg
 
+- [S13] Simone Nieweg. Galerie m Bochum. https://galerie-m.com/artists/simone-nieweg/
+- [S14] Simone Nieweg. MACK. https://mackbooks.us/products/nature-man-br-simone-nieweg
+- [S15] Simone Nieweg. Tate. https://www.tate.org.uk/search?q=Simone%20Nieweg
+- [S16] Simone Nieweg. Museum Kunstpalast search. https://www.kunstpalast.de/en/?s=Simone+Nieweg
+- [S17] Simone Nieweg. MoMA search. https://www.moma.org/search/?query=Simone%20Nieweg
+- [S18] Simone Nieweg collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Simone+Nieweg
+- [S19] Simone Nieweg search. Art Institute of Chicago. https://www.artic.edu/search?q=Simone+Nieweg
+- [S20] Simone Nieweg search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Simone+Nieweg
+- [S21] Simone Nieweg search. SFMOMA. https://www.sfmoma.org/search/?q=Simone+Nieweg
+- [S22] Simone Nieweg archive search. ICP. https://www.icp.org/search-results/Simone+Nieweg
+- [S23] Simone Nieweg search. Whitney Museum. https://whitney.org/search?q=Simone+Nieweg
+- [S24] Simone Nieweg search. Guggenheim Museum. https://www.guggenheim.org/?s=Simone+Nieweg
+- [S25] Simone Nieweg search. Smithsonian Institution. https://www.si.edu/search?query=Simone+Nieweg
+- [S26] Simone Nieweg bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Simone+Nieweg&searchCode=GKEY%5E*&searchType=0
+- [S27] Simone Nieweg journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Simone+Nieweg+photography
+- [S28] Simone Nieweg criticism route. Artforum. https://www.artforum.com/search/Simone+Nieweg/
+- [S29] Simone Nieweg criticism route. e-flux. https://www.e-flux.com/search/?q=Simone+Nieweg
+- [S30] Simone Nieweg library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Simone+Nieweg
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

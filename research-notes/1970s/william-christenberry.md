@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `william-christenberry`. Formal source candidates and research routes in this note: 11.
+> Site id / slug reference: `william-christenberry`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 ウィリアム・クリステンベリー（William Christenberry）は、1970–1980年代の写真史で Southern photography、vernacular landscape、memory photography と結びつけて考えたい作家である。活動地域は United States を中心に広がり、主要な発表・参照軸として Hale County, vernacular architecture, Klan Room が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、American South、signs、buildings、memory、racial history といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -78,5 +78,25 @@ tags: ['place memory', 'vernacular architecture', 'racial violence', 'return']
 - [S10] William Christenberry bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=William+Christenberry&searchCode=GKEY%5E*&searchType=0
 - [S11] William Christenberry search. Getty Museum. https://www.getty.edu/art/collection/search/?q=William+Christenberry
 
+- [S12] William Christenberry estate. William Christenberry. https://williamchristenberry.com/
+- [S13] William Christenberry. Smithsonian American Art Museum. https://americanart.si.edu/artist/william-christenberry-875
+- [S14] William Christenberry. SFMOMA. https://www.sfmoma.org/artist/William_Christenberry/
+- [S15] William Christenberry. Pace Gallery. https://www.pacegallery.com/artists/william-christenberry/
+- [S16] William Christenberry. High Museum of Art search. https://high.org/?s=William+Christenberry
+- [S17] William Christenberry collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=William+Christenberry
+- [S18] William Christenberry search. Art Institute of Chicago. https://www.artic.edu/search?q=William+Christenberry
+- [S19] William Christenberry search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=William+Christenberry
+- [S20] William Christenberry search. SFMOMA. https://www.sfmoma.org/search/?q=William+Christenberry
+- [S21] William Christenberry archive search. ICP. https://www.icp.org/search-results/William+Christenberry
+- [S22] William Christenberry search. Whitney Museum. https://whitney.org/search?q=William+Christenberry
+- [S23] William Christenberry search. Guggenheim Museum. https://www.guggenheim.org/?s=William+Christenberry
+- [S24] William Christenberry search. Smithsonian Institution. https://www.si.edu/search?query=William+Christenberry
+- [S25] William Christenberry journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=William+Christenberry+photography
+- [S26] William Christenberry criticism route. Artforum. https://www.artforum.com/search/William+Christenberry/
+- [S27] William Christenberry criticism route. e-flux. https://www.e-flux.com/search/?q=William+Christenberry
+- [S28] William Christenberry library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=William+Christenberry
+- [S29] William Christenberry archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=William+Christenberry
+- [S30] William Christenberry research route. CiNii Research. https://cir.nii.ac.jp/all?q=William+Christenberry
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は11件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

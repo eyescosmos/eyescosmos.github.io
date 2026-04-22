@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `diane-arbus`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `diane-arbus`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 ダイアン・アーバス（Diane Arbus）は、1970–1980年代の写真史で documentary portraiture、New Documents、postwar portrait photography と結びつけて考えたい作家である。活動地域は United States を中心に広がり、主要な発表・参照軸として New Documents, Aperture monograph, Diane Arbus Archive が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、social outsiders、identity、public appearance、portrait encounter といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['difference', 'performance of self', 'ethics of looking', 'portrait as en
 - [S11] Diane Arbus Japanese exhibition / book route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
 - [S12] Diane Arbus scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Diane+Arbus+photography+ethics+portrait
 
+- [S13] Diane Arbus. The Art Story. https://www.theartstory.org/artist/arbus-diane/
+- [S14] Diane Arbus Revelations route. Aperture. https://aperture.org/books/diane-arbus-revelations/
+- [S15] Diane Arbus Documents route. Aperture. https://aperture.org/books/diane-arbus-documents/
+- [S16] Diane Arbus exhibition route. The Met. https://www.metmuseum.org/exhibitions/listings/2016/diane-arbus
+- [S17] Diane Arbus search. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Diane+Arbus&searchCode=GKEY%5E*&searchType=0
+- [S18] Diane Arbus search. Tate. https://www.tate.org.uk/search?q=Diane+Arbus
+- [S19] Diane Arbus search. SFMOMA. https://www.sfmoma.org/search/?q=Diane+Arbus
+- [S20] Diane Arbus archive search. ICP. https://www.icp.org/search-results/Diane+Arbus
+- [S21] Diane Arbus search. Whitney Museum. https://whitney.org/search?q=Diane+Arbus
+- [S22] Diane Arbus search. Guggenheim Museum. https://www.guggenheim.org/?s=Diane+Arbus
+- [S23] Diane Arbus search. Smithsonian Institution. https://www.si.edu/search?query=Diane+Arbus
+- [S24] Diane Arbus scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Diane+Arbus+photography
+- [S25] Diane Arbus journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Diane+Arbus+photography
+- [S26] Diane Arbus criticism route. Artforum. https://www.artforum.com/search/Diane+Arbus/
+- [S27] Diane Arbus criticism route. e-flux. https://www.e-flux.com/search/?q=Diane+Arbus
+- [S28] Diane Arbus library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Diane+Arbus
+- [S29] Diane Arbus archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Diane+Arbus
+- [S30] Diane Arbus bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Diane+Arbus
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `robert-mapplethorpe`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `robert-mapplethorpe`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 ロバート・メイプルソープ（Robert Mapplethorpe）は、1970–1980年代の写真史で conceptual portraiture、queer photography、studio photography と結びつけて考えたい作家である。活動地域は United States を中心に広がり、主要な発表・参照軸として Robert Mapplethorpe Foundation, The Perfect Moment, Getty / LACMA archive が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、body、sexuality、flowers、portraits、subculture といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['queer visibility', 'classical form and taboo', 'censorship', 'museum con
 - [S11] Robert Mapplethorpe scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Robert+Mapplethorpe+NEA+controversy+queer+photography
 - [S12] Robert Mapplethorpe search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Robert+Mapplethorpe
 
+- [S13] Robert Mapplethorpe archive. Getty Research Institute. https://www.getty.edu/research/special_collections/notable/mapplethorpe.html
+- [S14] Robert Mapplethorpe. SFMOMA. https://www.sfmoma.org/artist/Robert_Mapplethorpe/
+- [S15] Robert Mapplethorpe search. SFMOMA. https://www.sfmoma.org/search/?q=Robert+Mapplethorpe
+- [S16] Robert Mapplethorpe archive search. ICP. https://www.icp.org/search-results/Robert+Mapplethorpe
+- [S17] Robert Mapplethorpe search. Whitney Museum. https://whitney.org/search?q=Robert+Mapplethorpe
+- [S18] Robert Mapplethorpe search. Guggenheim Museum. https://www.guggenheim.org/?s=Robert+Mapplethorpe
+- [S19] Robert Mapplethorpe search. Smithsonian Institution. https://www.si.edu/search?query=Robert+Mapplethorpe
+- [S20] Robert Mapplethorpe bibliography. WorldCat. https://search.worldcat.org/search?q=Robert+Mapplethorpe
+- [S21] Robert Mapplethorpe bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Robert+Mapplethorpe&searchCode=GKEY%5E*&searchType=0
+- [S22] Robert Mapplethorpe scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Robert+Mapplethorpe+photography
+- [S23] Robert Mapplethorpe journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Robert+Mapplethorpe+photography
+- [S24] Robert Mapplethorpe criticism route. Artforum. https://www.artforum.com/search/Robert+Mapplethorpe/
+- [S25] Robert Mapplethorpe criticism route. e-flux. https://www.e-flux.com/search/?q=Robert+Mapplethorpe
+- [S26] Robert Mapplethorpe library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Robert+Mapplethorpe
+- [S27] Robert Mapplethorpe archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Robert+Mapplethorpe
+- [S28] Robert Mapplethorpe bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Robert+Mapplethorpe
+- [S29] Robert Mapplethorpe research route. CiNii Research. https://cir.nii.ac.jp/all?q=Robert+Mapplethorpe
+- [S30] Robert Mapplethorpe Japanese collection route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

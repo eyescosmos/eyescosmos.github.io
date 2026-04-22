@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `daido-moriyama`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `daido-moriyama`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 森山大道（Daido Moriyama）は、1970–1980年代の写真史で post-Provoke、Japanese street photography、are-bure-boke と結びつけて考えたい作家である。活動地域は Japan を中心に広がり、主要な発表・参照軸として Provoke aftermath, Shashin yo Sayonara, Record が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、Tokyo、street、mass media、memory、copy and reproduction といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['anti-aesthetic', 'city as image-flow', 'media saturation', 'photographic
 - [S11] 森山大道 route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
 - [S12] Daido Moriyama scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Daido+Moriyama+Provoke+are+bure+boke
 
+- [S13] 森山大道 official Japanese. 森山大道写真財団. https://www.moriyamadaido.com/
+- [S14] Daido Moriyama collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Daido+Moriyama
+- [S15] Daido Moriyama search. Tate. https://www.tate.org.uk/search?q=Daido+Moriyama
+- [S16] Daido Moriyama search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Daido+Moriyama
+- [S17] Daido Moriyama search. Art Institute of Chicago. https://www.artic.edu/search?q=Daido+Moriyama
+- [S18] Daido Moriyama search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Daido+Moriyama
+- [S19] Daido Moriyama search. SFMOMA. https://www.sfmoma.org/search/?q=Daido+Moriyama
+- [S20] Daido Moriyama search. Whitney Museum. https://whitney.org/search?q=Daido+Moriyama
+- [S21] Daido Moriyama search. Guggenheim Museum. https://www.guggenheim.org/?s=Daido+Moriyama
+- [S22] Daido Moriyama search. Smithsonian Institution. https://www.si.edu/search?query=Daido+Moriyama
+- [S23] Daido Moriyama bibliography. WorldCat. https://search.worldcat.org/search?q=Daido+Moriyama
+- [S24] Daido Moriyama bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Daido+Moriyama&searchCode=GKEY%5E*&searchType=0
+- [S25] Daido Moriyama scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Daido+Moriyama+photography
+- [S26] Daido Moriyama journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Daido+Moriyama+photography
+- [S27] Daido Moriyama criticism route. Artforum. https://www.artforum.com/search/Daido+Moriyama/
+- [S28] Daido Moriyama criticism route. e-flux. https://www.e-flux.com/search/?q=Daido+Moriyama
+- [S29] Daido Moriyama library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Daido+Moriyama
+- [S30] Daido Moriyama archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Daido+Moriyama
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

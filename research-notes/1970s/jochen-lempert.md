@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `jochen-lempert`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `jochen-lempert`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 ヨッヘン・レンペルト（Jochen Lempert）は、1970–1980年代の写真史で conceptual photography、nature photography、artist-scientist practice と結びつけて考えたい作家である。活動地域は Germany を中心に広がり、主要な発表・参照軸として natural-history photographic installations, Hamburger Kunsthalle / Sprüth Magers が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、animals、plants、observation、natural history、classification といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['taxonomy', 'attention', 'nonhuman life', 'archive']
 - [S11] Jochen Lempert route. Frac Lorraine. https://www.google.com/search?q=Frac+Lorraine+Jochen+Lempert+photography
 - [S12] Jochen Lempert route. Artforum. https://www.google.com/search?q=Artforum+Jochen+Lempert+photography
 
+- [S13] Jochen Lempert. Sprüth Magers. https://spruethmagers.com/artists/jochen-lempert/
+- [S14] Jochen Lempert. Buchholz Gallery. https://www.galeriebuchholz.de/artists/jochen-lempert
+- [S15] Jochen Lempert. Tate. https://www.tate.org.uk/search?q=Jochen%20Lempert
+- [S16] Jochen Lempert. MoMA. https://www.moma.org/search/?query=Jochen%20Lempert
+- [S17] Jochen Lempert. Artforum search. https://www.artforum.com/search/Jochen%20Lempert/
+- [S18] Jochen Lempert collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Jochen+Lempert
+- [S19] Jochen Lempert search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Jochen+Lempert
+- [S20] Jochen Lempert search. Art Institute of Chicago. https://www.artic.edu/search?q=Jochen+Lempert
+- [S21] Jochen Lempert search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Jochen+Lempert
+- [S22] Jochen Lempert search. SFMOMA. https://www.sfmoma.org/search/?q=Jochen+Lempert
+- [S23] Jochen Lempert archive search. ICP. https://www.icp.org/search-results/Jochen+Lempert
+- [S24] Jochen Lempert search. Whitney Museum. https://whitney.org/search?q=Jochen+Lempert
+- [S25] Jochen Lempert search. Guggenheim Museum. https://www.guggenheim.org/?s=Jochen+Lempert
+- [S26] Jochen Lempert search. Smithsonian Institution. https://www.si.edu/search?query=Jochen+Lempert
+- [S27] Jochen Lempert bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Jochen+Lempert&searchCode=GKEY%5E*&searchType=0
+- [S28] Jochen Lempert journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Jochen+Lempert+photography
+- [S29] Jochen Lempert criticism route. Artforum. https://www.artforum.com/search/Jochen+Lempert/
+- [S30] Jochen Lempert criticism route. e-flux. https://www.e-flux.com/search/?q=Jochen+Lempert
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

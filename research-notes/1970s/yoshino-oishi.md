@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `yoshino-oishi`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `yoshino-oishi`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 大石芳野（Yoshino Oishi）は、1970–1980年代の写真史で photojournalism、war memory、documentary と結びつけて考えたい作家である。活動地域は Japan を中心に広がり、主要な発表・参照軸として Vietnam, Cambodia, Hiroshima / war aftermath projects が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、war survivors、women、children、memory、Asia といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['witness', 'postwar memory', 'human rights', 'gendered suffering']
 - [S11] Yoshino Oishi route. Tokyo Art Beat. https://www.google.com/search?q=Tokyo+Art+Beat+Yoshino+Oishi+photography
 - [S12] Yoshino Oishi route. Art Platform Japan. https://www.google.com/search?q=Art+Platform+Japan+Yoshino+Oishi+photography
 
+- [S13] Yoshino Oishi official. Yoshino Oishi. https://www.yoshino-oishi.com/
+- [S14] 大石芳野. Canon Gallery search. https://personal.canon.jp/event/photographyexhibition/gallery
+- [S15] 大石芳野. Japan Professional Photographers Society search. https://www.jps.gr.jp/?s=%E5%A4%A7%E7%9F%B3%E8%8A%B3%E9%87%8E
+- [S16] 大石芳野. Tokyo Art Beat search. https://www.tokyoartbeat.com/search?q=%E5%A4%A7%E7%9F%B3%E8%8A%B3%E9%87%8E
+- [S17] Yoshino Oishi humanitarian route. UNICEF search. https://www.unicef.org/search?force=0&query=Yoshino%20Oishi
+- [S18] Yoshino Oishi search. MoMA. https://www.moma.org/search/?query=Yoshino+Oishi
+- [S19] Yoshino Oishi collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Yoshino+Oishi
+- [S20] Yoshino Oishi search. Tate. https://www.tate.org.uk/search?q=Yoshino+Oishi
+- [S21] Yoshino Oishi search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Yoshino+Oishi
+- [S22] Yoshino Oishi search. Art Institute of Chicago. https://www.artic.edu/search?q=Yoshino+Oishi
+- [S23] Yoshino Oishi search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Yoshino+Oishi
+- [S24] Yoshino Oishi search. SFMOMA. https://www.sfmoma.org/search/?q=Yoshino+Oishi
+- [S25] Yoshino Oishi archive search. ICP. https://www.icp.org/search-results/Yoshino+Oishi
+- [S26] Yoshino Oishi route. Aperture. https://aperture.org/?s=Yoshino+Oishi
+- [S27] Yoshino Oishi search. Whitney Museum. https://whitney.org/search?q=Yoshino+Oishi
+- [S28] Yoshino Oishi search. Guggenheim Museum. https://www.guggenheim.org/?s=Yoshino+Oishi
+- [S29] Yoshino Oishi search. Smithsonian Institution. https://www.si.edu/search?query=Yoshino+Oishi
+- [S30] Yoshino Oishi bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Yoshino+Oishi&searchCode=GKEY%5E*&searchType=0
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

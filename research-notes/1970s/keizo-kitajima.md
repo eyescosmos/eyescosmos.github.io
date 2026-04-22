@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `keizo-kitajima`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `keizo-kitajima`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 北島敬三（Keizo Kitajima）は、1970–1980年代の写真史で post-Provoke、Japanese street photography、Photo Express と結びつけて考えたい作家である。活動地域は Japan を中心に広がり、主要な発表・参照軸として Photo Express Tokyo, New York, USSR が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、city、nightlife、political transition、street、identity といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['post-Provoke speed', 'urban spectacle', 'political transition']
 - [S11] Keizo Kitajima route. Steidl. https://www.google.com/search?q=Steidl+Keizo+Kitajima+photography
 - [S12] Keizo Kitajima route. Zen Foto Gallery. https://www.google.com/search?q=Zen+Foto+Gallery+Keizo+Kitajima+photography
 
+- [S13] Keizo Kitajima. Zen Foto Gallery. https://zen-foto.jp/artists/keizo-kitajima/
+- [S14] Keizo Kitajima. Steidl. https://steidl.de/Artists/Keizo-Kitajima-0506084903.html
+- [S15] 北島敬三. Tokyo Art Beat search. https://www.tokyoartbeat.com/search?q=%E5%8C%97%E5%B3%B6%E6%95%AC%E4%B8%89
+- [S16] Keizo Kitajima. The Photographers Gallery route. https://thephotographersgallery.org.uk/search?keys=Keizo%20Kitajima
+- [S17] 北島敬三. Case Publishing route. https://www.case-publishing.jp/?s=%E5%8C%97%E5%B3%B6%E6%95%AC%E4%B8%89
+- [S18] Keizo Kitajima collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Keizo+Kitajima
+- [S19] Keizo Kitajima search. Tate. https://www.tate.org.uk/search?q=Keizo+Kitajima
+- [S20] Keizo Kitajima search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Keizo+Kitajima
+- [S21] Keizo Kitajima search. Art Institute of Chicago. https://www.artic.edu/search?q=Keizo+Kitajima
+- [S22] Keizo Kitajima search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Keizo+Kitajima
+- [S23] Keizo Kitajima search. SFMOMA. https://www.sfmoma.org/search/?q=Keizo+Kitajima
+- [S24] Keizo Kitajima archive search. ICP. https://www.icp.org/search-results/Keizo+Kitajima
+- [S25] Keizo Kitajima search. Whitney Museum. https://whitney.org/search?q=Keizo+Kitajima
+- [S26] Keizo Kitajima search. Guggenheim Museum. https://www.guggenheim.org/?s=Keizo+Kitajima
+- [S27] Keizo Kitajima search. Smithsonian Institution. https://www.si.edu/search?query=Keizo+Kitajima
+- [S28] Keizo Kitajima bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Keizo+Kitajima&searchCode=GKEY%5E*&searchType=0
+- [S29] Keizo Kitajima journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Keizo+Kitajima+photography
+- [S30] Keizo Kitajima criticism route. Artforum. https://www.artforum.com/search/Keizo+Kitajima/
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

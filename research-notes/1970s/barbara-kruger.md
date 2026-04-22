@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `barbara-kruger`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `barbara-kruger`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 バーバラ・クルーガー（Barbara Kruger）は、1970–1980年代の写真史で Pictures Generation、conceptual art、feminist media critique と結びつけて考えたい作家である。活動地域は United States を中心に広がり、主要な発表・参照軸として magazine design, large-scale installations, museum text-image works が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、consumer culture、gender、power、advertising language、spectatorship といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['media critique', 'representation', 'power language', 'feminist critique'
 - [S11] Barbara Kruger scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Barbara+Kruger+Pictures+Generation+feminist+media+critique
 - [S12] Barbara Kruger Japanese route. Mori Art Museum search. https://www.mori.art.museum/en/search/?q=Barbara%20Kruger
 
+- [S13] Barbara Kruger. UChicago Arts Smart Museum route. https://smartmuseum.uchicago.edu/search/?q=Barbara+Kruger
+- [S14] Barbara Kruger collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Barbara+Kruger
+- [S15] Barbara Kruger search. Tate. https://www.tate.org.uk/search?q=Barbara+Kruger
+- [S16] Barbara Kruger search. SFMOMA. https://www.sfmoma.org/search/?q=Barbara+Kruger
+- [S17] Barbara Kruger archive search. ICP. https://www.icp.org/search-results/Barbara+Kruger
+- [S18] Barbara Kruger route. Aperture. https://aperture.org/?s=Barbara+Kruger
+- [S19] Barbara Kruger search. Whitney Museum. https://whitney.org/search?q=Barbara+Kruger
+- [S20] Barbara Kruger search. Guggenheim Museum. https://www.guggenheim.org/?s=Barbara+Kruger
+- [S21] Barbara Kruger search. Smithsonian Institution. https://www.si.edu/search?query=Barbara+Kruger
+- [S22] Barbara Kruger bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Barbara+Kruger&searchCode=GKEY%5E*&searchType=0
+- [S23] Barbara Kruger scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Barbara+Kruger+photography
+- [S24] Barbara Kruger journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Barbara+Kruger+photography
+- [S25] Barbara Kruger criticism route. Artforum. https://www.artforum.com/search/Barbara+Kruger/
+- [S26] Barbara Kruger criticism route. e-flux. https://www.e-flux.com/search/?q=Barbara+Kruger
+- [S27] Barbara Kruger library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Barbara+Kruger
+- [S28] Barbara Kruger archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Barbara+Kruger
+- [S29] Barbara Kruger bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Barbara+Kruger
+- [S30] Barbara Kruger research route. CiNii Research. https://cir.nii.ac.jp/all?q=Barbara+Kruger
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

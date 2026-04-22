@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `jean-luc-moulene`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `jean-luc-moulene`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 ジャン＝リュック・ムレーヌ（Jean-Luc Moulène）は、1970–1980年代の写真史で conceptual art、object photography、postdocumentary と結びつけて考えたい作家である。活動地域は France を中心に広がり、主要な発表・参照軸として Documents, Opus, Centre Pompidou / Dia exhibitions が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、objects、industry、politics、commodity、public image といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['document', 'commodity', 'political form', 'objecthood']
 - [S11] Jean-Luc Moulène route. Artforum. https://www.google.com/search?q=Artforum+Jean-Luc+Moul%C3%A8ne+photography
 - [S12] Jean-Luc Moulène route. e-flux. https://www.google.com/search?q=e-flux+Jean-Luc+Moul%C3%A8ne+photography
 
+- [S13] Jean-Luc Moulène. Centre Pompidou. https://www.centrepompidou.fr/en/ressources/personne/cbG8Gg
+- [S14] Jean-Luc Moulène. Dia Art Foundation. https://www.diaart.org/exhibition/exhibitions-projects/jean-luc-moulene-opus-object-and-image-exhibition
+- [S15] Jean-Luc Moulène. Galerie Chantal Crousel. https://www.crousel.com/en/artist/jean-luc-moulene/
+- [S16] Jean-Luc Moulène. Secession. https://www.secession.at/en/exhibition/jean-luc-moulene/
+- [S17] Jean-Luc Moulène. MoMA search. https://www.moma.org/search/?query=Jean-Luc%20Moul%C3%A8ne
+- [S18] Jean-Luc Moulène collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Jean-Luc+Moul%C3%A8ne
+- [S19] Jean-Luc Moulène search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Jean-Luc+Moul%C3%A8ne
+- [S20] Jean-Luc Moulène search. Art Institute of Chicago. https://www.artic.edu/search?q=Jean-Luc+Moul%C3%A8ne
+- [S21] Jean-Luc Moulène search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Jean-Luc+Moul%C3%A8ne
+- [S22] Jean-Luc Moulène search. SFMOMA. https://www.sfmoma.org/search/?q=Jean-Luc+Moul%C3%A8ne
+- [S23] Jean-Luc Moulène archive search. ICP. https://www.icp.org/search-results/Jean-Luc+Moul%C3%A8ne
+- [S24] Jean-Luc Moulène route. Aperture. https://aperture.org/?s=Jean-Luc+Moul%C3%A8ne
+- [S25] Jean-Luc Moulène search. Whitney Museum. https://whitney.org/search?q=Jean-Luc+Moul%C3%A8ne
+- [S26] Jean-Luc Moulène search. Guggenheim Museum. https://www.guggenheim.org/?s=Jean-Luc+Moul%C3%A8ne
+- [S27] Jean-Luc Moulène search. Smithsonian Institution. https://www.si.edu/search?query=Jean-Luc+Moul%C3%A8ne
+- [S28] Jean-Luc Moulène bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Jean-Luc+Moul%C3%A8ne&searchCode=GKEY%5E*&searchType=0
+- [S29] Jean-Luc Moulène journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Jean-Luc+Moul%C3%A8ne+photography
+- [S30] Jean-Luc Moulène criticism route. Artforum. https://www.artforum.com/search/Jean-Luc+Moul%C3%A8ne/
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

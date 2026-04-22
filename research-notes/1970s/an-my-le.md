@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `an-my-le`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `an-my-le`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 アン＝ミー・レー（An-My Lê）は、1970–1980年代の写真史で conceptual photography、war representation、large-format landscape と結びつけて考えたい作家である。活動地域は Vietnam、United States を中心に広がり、主要な発表・参照軸として Small Wars, 29 Palms, Events Ashore が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、war memory、military rehearsal、landscape、diaspora といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['war memory', 'simulation', 'landscape as political theatre']
 - [S11] An-My Lê scholarship route. Google Scholar. https://scholar.google.com/scholar?q=An-My+L%C3%AA+photography
 - [S12] An-My Lê bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=An-My+L%C3%AA
 
+- [S13] An-My Lê. Marian Goodman Gallery. https://www.mariangoodman.com/artists/67-an-my-le/
+- [S14] An-My Lê. Whitney Museum. https://whitney.org/artists/8912
+- [S15] An-My Lê. MoMA artist route. https://www.moma.org/artists/25555
+- [S16] An-My Lê. Carnegie Museum of Art. https://carnegieart.org/people/an-my-le/
+- [S17] An-My Lê. Princeton University Art Museum search. https://artmuseum.princeton.edu/search/collections?keys=An-My%20L%C3%AA
+- [S18] An-My Lê search. Tate. https://www.tate.org.uk/search?q=An-My+L%C3%AA
+- [S19] An-My Lê search. Getty Museum. https://www.getty.edu/art/collection/search/?q=An-My+L%C3%AA
+- [S20] An-My Lê search. Art Institute of Chicago. https://www.artic.edu/search?q=An-My+L%C3%AA
+- [S21] An-My Lê search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=An-My+L%C3%AA
+- [S22] An-My Lê search. SFMOMA. https://www.sfmoma.org/search/?q=An-My+L%C3%AA
+- [S23] An-My Lê archive search. ICP. https://www.icp.org/search-results/An-My+L%C3%AA
+- [S24] An-My Lê search. Whitney Museum. https://whitney.org/search?q=An-My+L%C3%AA
+- [S25] An-My Lê search. Guggenheim Museum. https://www.guggenheim.org/?s=An-My+L%C3%AA
+- [S26] An-My Lê search. Smithsonian Institution. https://www.si.edu/search?query=An-My+L%C3%AA
+- [S27] An-My Lê bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=An-My+L%C3%AA&searchCode=GKEY%5E*&searchType=0
+- [S28] An-My Lê journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=An-My+L%C3%AA+photography
+- [S29] An-My Lê criticism route. Artforum. https://www.artforum.com/search/An-My+L%C3%AA/
+- [S30] An-My Lê criticism route. e-flux. https://www.e-flux.com/search/?q=An-My+L%C3%AA
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

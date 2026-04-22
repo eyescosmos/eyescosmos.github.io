@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `mitsuaki-iwago`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `mitsuaki-iwago`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 岩合光昭（Mitsuaki Iwago）は、1970–1980年代の写真史で wildlife photography、nature documentary、animal photography と結びつけて考えたい作家である。活動地域は Japan を中心に広がり、主要な発表・参照軸として Serengeti, animal books, NHK / media work が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、animals、ecosystems、cats、Africa、nature といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['animal life', 'ecology', 'popular photographic media']
 - [S11] Mitsuaki Iwago route. Iwatago Cat route. https://www.google.com/search?q=Iwatago+Cat+route+Mitsuaki+Iwago+photography
 - [S12] Mitsuaki Iwago route. Nikon Salon. https://www.google.com/search?q=Nikon+Salon+Mitsuaki+Iwago+photography
 
+- [S13] Mitsuaki Iwago official. IWAGO Mitsuaki. https://iwago.jp/
+- [S14] 岩合光昭. NHK search. https://www.nhk.jp/search/?q=%E5%B2%A9%E5%90%88%E5%85%89%E6%98%AD
+- [S15] 岩合光昭. Canon Gallery search. https://personal.canon.jp/event/photographyexhibition/gallery
+- [S16] 岩合光昭. Tokyo Art Beat search. https://www.tokyoartbeat.com/search?q=%E5%B2%A9%E5%90%88%E5%85%89%E6%98%AD
+- [S17] Mitsuaki Iwago. National Geographic search. https://www.nationalgeographic.com/search?q=Mitsuaki%20Iwago
+- [S18] Mitsuaki Iwago search. MoMA. https://www.moma.org/search/?query=Mitsuaki+Iwago
+- [S19] Mitsuaki Iwago collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Mitsuaki+Iwago
+- [S20] Mitsuaki Iwago search. Tate. https://www.tate.org.uk/search?q=Mitsuaki+Iwago
+- [S21] Mitsuaki Iwago search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Mitsuaki+Iwago
+- [S22] Mitsuaki Iwago search. Art Institute of Chicago. https://www.artic.edu/search?q=Mitsuaki+Iwago
+- [S23] Mitsuaki Iwago search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Mitsuaki+Iwago
+- [S24] Mitsuaki Iwago search. SFMOMA. https://www.sfmoma.org/search/?q=Mitsuaki+Iwago
+- [S25] Mitsuaki Iwago archive search. ICP. https://www.icp.org/search-results/Mitsuaki+Iwago
+- [S26] Mitsuaki Iwago route. Aperture. https://aperture.org/?s=Mitsuaki+Iwago
+- [S27] Mitsuaki Iwago search. Whitney Museum. https://whitney.org/search?q=Mitsuaki+Iwago
+- [S28] Mitsuaki Iwago search. Guggenheim Museum. https://www.guggenheim.org/?s=Mitsuaki+Iwago
+- [S29] Mitsuaki Iwago search. Smithsonian Institution. https://www.si.edu/search?query=Mitsuaki+Iwago
+- [S30] Mitsuaki Iwago bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Mitsuaki+Iwago&searchCode=GKEY%5E*&searchType=0
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

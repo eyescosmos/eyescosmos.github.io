@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `santiago-sierra`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `santiago-sierra`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 サンティアゴ・シエラ（Santiago Sierra）は、1970–1980年代の写真史で conceptual art、social critique、performance documentation と結びつけて考えたい作家である。活動地域は Spain、Mexico を中心に広がり、主要な発表・参照軸として paid labor actions, Spanish Pavilion, documented performances が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、labor、exploitation、migration、institution、body といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['labor critique', 'institutional violence', 'ethical discomfort']
 - [S11] Santiago Sierra route. Artforum. https://www.google.com/search?q=Artforum+Santiago+Sierra+photography
 - [S12] Santiago Sierra route. Venice Biennale route. https://www.google.com/search?q=Venice+Biennale+route+Santiago+Sierra+photography
 
+- [S13] Santiago Sierra official. Santiago Sierra. https://www.santiago-sierra.com/
+- [S14] Santiago Sierra. Tate. https://www.tate.org.uk/art/artists/santiago-sierra-7682
+- [S15] Santiago Sierra. Lisson Gallery. https://www.lissongallery.com/artists/santiago-sierra
+- [S16] Santiago Sierra. KOW Berlin. https://kow-berlin.com/artists/santiago-sierra
+- [S17] Santiago Sierra. Museo Reina Sofia. https://www.museoreinasofia.es/en/collection/author/sierra-santiago
+- [S18] Santiago Sierra collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Santiago+Sierra
+- [S19] Santiago Sierra search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Santiago+Sierra
+- [S20] Santiago Sierra search. Art Institute of Chicago. https://www.artic.edu/search?q=Santiago+Sierra
+- [S21] Santiago Sierra search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Santiago+Sierra
+- [S22] Santiago Sierra search. SFMOMA. https://www.sfmoma.org/search/?q=Santiago+Sierra
+- [S23] Santiago Sierra archive search. ICP. https://www.icp.org/search-results/Santiago+Sierra
+- [S24] Santiago Sierra route. Aperture. https://aperture.org/?s=Santiago+Sierra
+- [S25] Santiago Sierra search. Whitney Museum. https://whitney.org/search?q=Santiago+Sierra
+- [S26] Santiago Sierra search. Guggenheim Museum. https://www.guggenheim.org/?s=Santiago+Sierra
+- [S27] Santiago Sierra search. Smithsonian Institution. https://www.si.edu/search?query=Santiago+Sierra
+- [S28] Santiago Sierra bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Santiago+Sierra&searchCode=GKEY%5E*&searchType=0
+- [S29] Santiago Sierra journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Santiago+Sierra+photography
+- [S30] Santiago Sierra criticism route. Artforum. https://www.artforum.com/search/Santiago+Sierra/
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

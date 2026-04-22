@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `lewis-baltz`. Formal source candidates and research routes in this note: 11.
+> Site id / slug reference: `lewis-baltz`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 ルイス・ボルツ（Lewis Baltz）は、1970–1980年代の写真史で New Topographics、conceptual landscape、postindustrial photography と結びつけて考えたい作家である。活動地域は United States を中心に広がり、主要な発表・参照軸として The New Industrial Parks, New Topographics, Prototypes が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、industrial parks、suburbs、empty lots、walls、technological systems といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -78,5 +78,25 @@ tags: ['man-altered landscape', 'alienation', 'development critique', 'systemic 
 - [S10] Lewis Baltz bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Lewis+Baltz
 - [S11] Lewis Baltz route. Steidl. https://www.google.com/search?q=Steidl+Lewis+Baltz+photography
 
+- [S12] Lewis Baltz Prototypes. National Gallery of Art. https://www.nga.gov/exhibitions/lewis-baltz-prototypesronde-de-nuit
+- [S13] Lewis Baltz. LE BAL. https://www.le-bal.fr/en/node/220
+- [S14] Lewis Baltz archive. Getty Research Institute. https://www.getty.edu/news/getty-research-institute-acquires-lewis-baltz-archive
+- [S15] New Topographics. Seattle Art Museum. https://seattleartmuseum.org/whats-on/exhibitions/new-topographics
+- [S16] Lewis Baltz. Tate. https://www.tate.org.uk/search?q=Lewis%20Baltz
+- [S17] Lewis Baltz collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Lewis+Baltz
+- [S18] Lewis Baltz search. Art Institute of Chicago. https://www.artic.edu/search?q=Lewis+Baltz
+- [S19] Lewis Baltz search. SFMOMA. https://www.sfmoma.org/search/?q=Lewis+Baltz
+- [S20] Lewis Baltz archive search. ICP. https://www.icp.org/search-results/Lewis+Baltz
+- [S21] Lewis Baltz search. Whitney Museum. https://whitney.org/search?q=Lewis+Baltz
+- [S22] Lewis Baltz search. Guggenheim Museum. https://www.guggenheim.org/?s=Lewis+Baltz
+- [S23] Lewis Baltz search. Smithsonian Institution. https://www.si.edu/search?query=Lewis+Baltz
+- [S24] Lewis Baltz bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Lewis+Baltz&searchCode=GKEY%5E*&searchType=0
+- [S25] Lewis Baltz journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Lewis+Baltz+photography
+- [S26] Lewis Baltz criticism route. Artforum. https://www.artforum.com/search/Lewis+Baltz/
+- [S27] Lewis Baltz criticism route. e-flux. https://www.e-flux.com/search/?q=Lewis+Baltz
+- [S28] Lewis Baltz library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Lewis+Baltz
+- [S29] Lewis Baltz archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Lewis+Baltz
+- [S30] Lewis Baltz research route. CiNii Research. https://cir.nii.ac.jp/all?q=Lewis+Baltz
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は11件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

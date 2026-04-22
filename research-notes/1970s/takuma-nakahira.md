@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `takuma-nakahira`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `takuma-nakahira`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 中平卓馬（Takuma Nakahira）は、1970–1980年代の写真史で Provoke、post-Provoke、Japanese photography theory と結びつけて考えたい作家である。活動地域は Japan を中心に広がり、主要な発表・参照軸として Provoke, For a Language to Come, Circulation: Date, Place, Events が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、city、media、language、event、reproduction といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['language crisis', 'image circulation', 'anti-aesthetic', 'media critique
 - [S11] Takuma Nakahira route. The Photographers Gallery. https://www.google.com/search?q=The+Photographers+Gallery+Takuma+Nakahira+photography
 - [S12] Takuma Nakahira route. Case Publishing. https://www.google.com/search?q=Case+Publishing+Takuma+Nakahira+photography
 
+- [S13] Takuma Nakahira. MACK. https://mackbooks.us/products/for-a-language-to-come-br-takuma-nakahira
+- [S14] Takuma Nakahira. Tate. https://www.tate.org.uk/search?q=Takuma%20Nakahira
+- [S15] 中平卓馬. Case Publishing search. https://www.case-publishing.jp/?s=%E4%B8%AD%E5%B9%B3%E5%8D%93%E9%A6%AC
+- [S16] Takuma Nakahira. The Photographers Gallery route. https://thephotographersgallery.org.uk/search?keys=Takuma%20Nakahira
+- [S17] Takuma Nakahira collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Takuma+Nakahira
+- [S18] Takuma Nakahira search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Takuma+Nakahira
+- [S19] Takuma Nakahira search. Art Institute of Chicago. https://www.artic.edu/search?q=Takuma+Nakahira
+- [S20] Takuma Nakahira search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Takuma+Nakahira
+- [S21] Takuma Nakahira search. SFMOMA. https://www.sfmoma.org/search/?q=Takuma+Nakahira
+- [S22] Takuma Nakahira archive search. ICP. https://www.icp.org/search-results/Takuma+Nakahira
+- [S23] Takuma Nakahira search. Whitney Museum. https://whitney.org/search?q=Takuma+Nakahira
+- [S24] Takuma Nakahira search. Guggenheim Museum. https://www.guggenheim.org/?s=Takuma+Nakahira
+- [S25] Takuma Nakahira search. Smithsonian Institution. https://www.si.edu/search?query=Takuma+Nakahira
+- [S26] Takuma Nakahira bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Takuma+Nakahira&searchCode=GKEY%5E*&searchType=0
+- [S27] Takuma Nakahira journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Takuma+Nakahira+photography
+- [S28] Takuma Nakahira criticism route. Artforum. https://www.artforum.com/search/Takuma+Nakahira/
+- [S29] Takuma Nakahira criticism route. e-flux. https://www.e-flux.com/search/?q=Takuma+Nakahira
+- [S30] Takuma Nakahira library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Takuma+Nakahira
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

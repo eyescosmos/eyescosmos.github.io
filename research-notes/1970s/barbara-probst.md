@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1970–1980sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `barbara-probst`. Formal source candidates and research routes in this note: 12.
+> Site id / slug reference: `barbara-probst`. Formal source candidates and research routes in this note: 30.
 
 ## 1. 経歴・背景 / Basic facts and context
 バーバラ・プロブスト（Barbara Probst）は、1970–1980年代の写真史で conceptual photography、postdocumentary、multi-view photography と結びつけて考えたい作家である。活動地域は Germany を中心に広がり、主要な発表・参照軸として Exposures, MoMA collection, Le BAL exhibitions が重要になる。[S1] 略歴だけで整理すると、この作家の重要性は見えにくい。むしろ、viewpoint、simultaneity、photographic truth、perception といった対象を、どのような方法で写真の問題へ変えたのかを中心に見る必要がある。[S2]
@@ -79,5 +79,24 @@ tags: ['photographic truth', 'perspective', 'constructed evidence']
 - [S11] Barbara Probst bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Barbara+Probst
 - [S12] Barbara Probst route. Jeu de Paume. https://www.google.com/search?q=Jeu+de+Paume+Barbara+Probst+photography
 
+- [S13] Barbara Probst official. Barbara Probst. https://www.barbaraprobst.net/
+- [S14] Barbara Probst. Kuckei + Kuckei. https://kuckei-kuckei.de/artists/barbara-probst/
+- [S15] Barbara Probst. Galerie Rudolfinum. https://www.galerierudolfinum.cz/en/exhibitions/barbara-probst/
+- [S16] Barbara Probst. Le BAL route. https://www.le-bal.fr/en/search/node/Barbara%20Probst
+- [S17] Barbara Probst. MoMA artist route. https://www.moma.org/artists/33083
+- [S18] Barbara Probst collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Barbara+Probst
+- [S19] Barbara Probst search. Tate. https://www.tate.org.uk/search?q=Barbara+Probst
+- [S20] Barbara Probst search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Barbara+Probst
+- [S21] Barbara Probst search. Art Institute of Chicago. https://www.artic.edu/search?q=Barbara+Probst
+- [S22] Barbara Probst search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Barbara+Probst
+- [S23] Barbara Probst search. SFMOMA. https://www.sfmoma.org/search/?q=Barbara+Probst
+- [S24] Barbara Probst search. Whitney Museum. https://whitney.org/search?q=Barbara+Probst
+- [S25] Barbara Probst search. Guggenheim Museum. https://www.guggenheim.org/?s=Barbara+Probst
+- [S26] Barbara Probst search. Smithsonian Institution. https://www.si.edu/search?query=Barbara+Probst
+- [S27] Barbara Probst bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Barbara+Probst&searchCode=GKEY%5E*&searchType=0
+- [S28] Barbara Probst journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Barbara+Probst+photography
+- [S29] Barbara Probst criticism route. Artforum. https://www.artforum.com/search/Barbara+Probst/
+- [S30] Barbara Probst criticism route. e-flux. https://www.e-flux.com/search/?q=Barbara+Probst
+
 ## 7. 出典探索メモ / Source exploration memo
-出典候補は12件。美術館・所蔵館、出版社、ギャラリー、図書館、研究検索をまたぐように整理した。まだ不足しやすいのは、同時代批評、初出媒体、本人インタビュー、日本語圏での受容、第三言語資料である。今後は、写真集の序文、展覧会図録、大学論文、専門誌レビューを追加確認すると、本文の批評的厚みをさらに増やせる。
+出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。
