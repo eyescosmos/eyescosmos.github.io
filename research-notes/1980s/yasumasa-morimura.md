@@ -27,3 +27,105 @@
 - [S1] Yasumasa Morimura. MoMA. https://www.moma.org/artists/7631-yasumasa-morimura
 - [S2] Yasumasa MORIMURA. National Gallery of Victoria. https://www.ngv.vic.gov.au/explore/collection/artist/9992/
 - [S3] Meet the Artist: Yasumasa Morimura. Hara Museum ARC. https://www.haramuseum.or.jp/en/arc/event/1192/
+
+## 8. Codex完成版補強メモ / 1980–1990s research expansion
+
+> 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
+>
+> Site id / slug reference: `yasumasa-morimura`. Formal source candidates and research routes in this addendum: 30.
+
+### 8.1 本文改訂で強める論点
+森村泰昌（Yasumasa Morimura）は、1980–1990年代の写真史で appropriation, self-portraiture, postmodern photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Japan を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、art history, gender, national identity, celebrity を、self-staging, costume, re-enactment, photographic tableau によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
+
+表現解説では、identity performance, appropriation, Orientalism critique を中心語にしつつ、作品を単なる代表作紹介で終わらせないことが重要である。とくに、なぜこの方法が1980–1990年代の美術館制度、写真集文化、ポストモダン以後のイメージ批評、グローバル化する都市・身体・社会の文脈で意味を持ったのかを説明したい。比較対象としては Cindy Sherman, Sherrie Levine, Kaoru Izima を優先し、浅い類似ではなく、写真観、方法、対象の捉え方、受容史の差異を整理する。
+
+評価・批評では、同時代の展覧会、写真集、ギャラリーでの流通、後年の美術館・研究機関による再評価を分けて扱う。森村泰昌は1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。 この一文を起点に、本文では「何を撮ったか」よりも「その方法が何を変えたか」を中心に組み立てる。
+
+### 8.2 座標用補助メモ（本文には直接反映しない内部用）
+```yaml
+id: yasumasa-morimura
+name_ja: "森村泰昌"
+name_en: "Yasumasa Morimura"
+birth_year: ""
+death_year: ""
+active_eras: ["1980s", "1990s"]
+countries: ["Japan"]
+movements: ["appropriation", "self-portraiture", "postmodern photography"]
+platforms: ["museum exhibitions", "photobooks / monographs", "gallery and archive circulation", "critical journals"]
+subjects: ["art history", "gender", "national identity", "celebrity"]
+methods: ["self-staging", "costume", "re-enactment", "photographic tableau"]
+concepts: ["identity performance", "appropriation", "Orientalism critique"]
+influenced_by: ["Cindy Sherman", "Sherrie Levine", "Kaoru Izima"]
+related_figures: ["Cindy Sherman", "Sherrie Levine", "Kaoru Izima"]
+description_short: "森村泰昌は1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。"
+confidence: 0.72
+source_basis: ["ChatGPT 1980s source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
+axes:
+  documentary: 3
+  staged: 5
+  subjective: 3
+  objective: 2
+  social: 3
+  formal_experiment: 5
+  catalog_impulse: 2
+  criticality: 5
+  personal_intimacy: 2
+  historical_awareness: 5
+  body_focus: 5
+  urban_focus: 2
+  memory_focus: 5
+  aesthetic_intensity: 4
+  materiality: 3
+surface_connections: ["appropriation, self-portraiture, postmodern photography", "Japan / 1980–1990s"]
+deep_connections: ["森村泰昌は1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。", "self-staging, costume, re-enactment, photographic tableauという方法を通じて、identity performance, appropriation, Orientalism critiqueを写真史的な問題として扱う。"]
+comparison_targets: ["Cindy Sherman", "Sherrie Levine", "Kaoru Izima"]
+one_sentence_connection: "森村泰昌は1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。"
+tags: ["identity performance", "appropriation", "Orientalism critique"]
+```
+
+### 8.3 Quote candidates
+- 本人インタビュー、作家ステートメント、写真集序文、展覧会カタログから、方法論を直接説明する短い引用候補を優先して抽出する。
+- 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
+- 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
+
+### 8.4 Sources and research routes
+- [S1] Yasumasa Morimura official / estate / gallery route. https://www.google.com/search?q=Yasumasa+Morimura+photography+official+artist+gallery
+- [S2] Yasumasa Morimura search. MoMA. https://www.moma.org/search/?query=Yasumasa+Morimura
+- [S3] Yasumasa Morimura search. Tate. https://www.tate.org.uk/search?q=Yasumasa+Morimura
+- [S4] Yasumasa Morimura collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Yasumasa+Morimura
+- [S5] Yasumasa Morimura search. Guggenheim Museum. https://www.guggenheim.org/?s=Yasumasa+Morimura
+- [S6] Yasumasa Morimura search. Art Institute of Chicago. https://www.artic.edu/search?q=Yasumasa+Morimura
+- [S7] Yasumasa Morimura search. SFMOMA. https://www.sfmoma.org/search/?q=Yasumasa+Morimura
+- [S8] Yasumasa Morimura search. Whitney Museum. https://whitney.org/search?q=Yasumasa+Morimura
+- [S9] Yasumasa Morimura search. International Center of Photography. https://www.icp.org/search-results/Yasumasa%20Morimura
+- [S10] Yasumasa Morimura search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Yasumasa+Morimura
+- [S11] Yasumasa Morimura search. Getty. https://www.getty.edu/art/collection/search/?q=Yasumasa+Morimura
+- [S12] Yasumasa Morimura route. Aperture. https://aperture.org/?s=Yasumasa+Morimura
+- [S13] Yasumasa Morimura route. Magnum Photos. https://www.magnumphotos.com/?s=Yasumasa+Morimura
+- [S14] Yasumasa Morimura criticism route. Artforum. https://www.artforum.com/search/Yasumasa%20Morimura/
+- [S15] Yasumasa Morimura criticism route. e-flux. https://www.e-flux.com/search/?q=Yasumasa+Morimura
+- [S16] Yasumasa Morimura criticism route. Frieze. https://www.frieze.com/search?keys=Yasumasa+Morimura
+- [S17] Yasumasa Morimura monograph / publisher route. https://www.google.com/search?q=Yasumasa+Morimura+photography+monograph+publisher
+- [S18] Yasumasa Morimura bibliography. WorldCat. https://search.worldcat.org/search?q=Yasumasa+Morimura+photography
+- [S19] Yasumasa Morimura bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Yasumasa+Morimura&searchCode=GKEY%5E*&searchType=0
+- [S20] 森村泰昌 bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E6%A3%AE%E6%9D%91%E6%B3%B0%E6%98%8C
+- [S21] 森村泰昌 / Yasumasa Morimura research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E6%A3%AE%E6%9D%91%E6%B3%B0%E6%98%8C+Yasumasa+Morimura
+- [S22] Yasumasa Morimura scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Yasumasa+Morimura+photography
+- [S23] Yasumasa Morimura journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Yasumasa+Morimura+photography
+- [S24] Yasumasa Morimura library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Yasumasa+Morimura
+- [S25] Yasumasa Morimura archive route. Smithsonian Institution. https://www.si.edu/search?query=Yasumasa+Morimura
+- [S26] Yasumasa Morimura archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Yasumasa+Morimura
+- [S27] Yasumasa Morimura exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Yasumasa+Morimura
+- [S28] Yasumasa Morimura Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S29] Yasumasa Morimura third-language / local institution route. https://www.google.com/search?q=Yasumasa+Morimura+photography+museum+exhibition+catalogue
+- [S30] Yasumasa Morimura primary interview / statement route. https://www.google.com/search?q=Yasumasa+Morimura+photographer+interview+artist+statement
+
+### 8.5 出典探索メモ / Source exploration memo
+出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+
+## 9. 追加探索先 / Additional exploration routes
+> 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
+- 美術史引用、セルフポートレート、ジェンダー、人種表象に関する日本語・英語論文
+- 西洋名画・映画スターの再演とポストモダン日本美術の資料
+- 森村本人のステートメント、展覧会図録、インタビュー
+- Cindy Sherman、Sherrie Levine、Kaoru Izimaとの比較資料

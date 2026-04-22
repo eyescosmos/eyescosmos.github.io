@@ -27,3 +27,105 @@
 - [S1] Justine Kurland: Girl Pictures. Wadsworth Atheneum Museum of Art. https://www.thewadsworth.org/justine-kurland-girl-pictures/
 - [S2] Justine Kurland. National Gallery of Art. https://www.nga.gov/artists/34792-justine-kurland
 - [S3] Justine Kurland: This Train, 2005–2011. Higher Pictures press release. https://higherpictures.com/wp-content/uploads/2024/01/JK_This-Train_PressRelease_Final.pdf
+
+## 8. Codex完成版補強メモ / 1980–1990s research expansion
+
+> 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
+>
+> Site id / slug reference: `justine-kurland`. Formal source candidates and research routes in this addendum: 30.
+
+### 8.1 本文改訂で強める論点
+ジュスティーヌ・カーランド（Justine Kurland）は、1980–1990年代の写真史で staged photography, road photography, feminist landscape と結びつけて整理したい作家である。活動地域・制度的文脈としては United States を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、girls, road trips, utopian community, American landscape を、staged outdoor scenes, large color tableaux, collaborative performance によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
+
+表現解説では、feminist myth, mobility, counterculture を中心語にしつつ、作品を単なる代表作紹介で終わらせないことが重要である。とくに、なぜこの方法が1980–1990年代の美術館制度、写真集文化、ポストモダン以後のイメージ批評、グローバル化する都市・身体・社会の文脈で意味を持ったのかを説明したい。比較対象としては Sally Mann, Nan Goldin, Philip-Lorca diCorcia を優先し、浅い類似ではなく、写真観、方法、対象の捉え方、受容史の差異を整理する。
+
+評価・批評では、同時代の展覧会、写真集、ギャラリーでの流通、後年の美術館・研究機関による再評価を分けて扱う。ジュスティーヌ・カーランドは1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。 この一文を起点に、本文では「何を撮ったか」よりも「その方法が何を変えたか」を中心に組み立てる。
+
+### 8.2 座標用補助メモ（本文には直接反映しない内部用）
+```yaml
+id: justine-kurland
+name_ja: "ジュスティーヌ・カーランド"
+name_en: "Justine Kurland"
+birth_year: ""
+death_year: ""
+active_eras: ["1980s", "1990s"]
+countries: ["United States"]
+movements: ["staged photography", "road photography", "feminist landscape"]
+platforms: ["museum exhibitions", "photobooks / monographs", "gallery and archive circulation", "critical journals"]
+subjects: ["girls", "road trips", "utopian community", "American landscape"]
+methods: ["staged outdoor scenes", "large color tableaux", "collaborative performance"]
+concepts: ["feminist myth", "mobility", "counterculture"]
+influenced_by: ["Sally Mann", "Nan Goldin", "Philip-Lorca diCorcia"]
+related_figures: ["Sally Mann", "Nan Goldin", "Philip-Lorca diCorcia"]
+description_short: "ジュスティーヌ・カーランドは1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。"
+confidence: 0.72
+source_basis: ["ChatGPT 1980s source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
+axes:
+  documentary: 5
+  staged: 5
+  subjective: 3
+  objective: 2
+  social: 5
+  formal_experiment: 4
+  catalog_impulse: 2
+  criticality: 4
+  personal_intimacy: 2
+  historical_awareness: 3
+  body_focus: 2
+  urban_focus: 2
+  memory_focus: 3
+  aesthetic_intensity: 5
+  materiality: 3
+surface_connections: ["staged photography, road photography, feminist landscape", "United States / 1980–1990s"]
+deep_connections: ["ジュスティーヌ・カーランドは1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。", "staged outdoor scenes, large color tableaux, collaborative performanceという方法を通じて、feminist myth, mobility, countercultureを写真史的な問題として扱う。"]
+comparison_targets: ["Sally Mann", "Nan Goldin", "Philip-Lorca diCorcia"]
+one_sentence_connection: "ジュスティーヌ・カーランドは1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。"
+tags: ["feminist myth", "mobility", "counterculture"]
+```
+
+### 8.3 Quote candidates
+- 本人インタビュー、作家ステートメント、写真集序文、展覧会カタログから、方法論を直接説明する短い引用候補を優先して抽出する。
+- 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
+- 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
+
+### 8.4 Sources and research routes
+- [S1] Justine Kurland official / estate / gallery route. https://www.google.com/search?q=Justine+Kurland+photography+official+artist+gallery
+- [S2] Justine Kurland search. MoMA. https://www.moma.org/search/?query=Justine+Kurland
+- [S3] Justine Kurland search. Tate. https://www.tate.org.uk/search?q=Justine+Kurland
+- [S4] Justine Kurland collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Justine+Kurland
+- [S5] Justine Kurland search. Guggenheim Museum. https://www.guggenheim.org/?s=Justine+Kurland
+- [S6] Justine Kurland search. Art Institute of Chicago. https://www.artic.edu/search?q=Justine+Kurland
+- [S7] Justine Kurland search. SFMOMA. https://www.sfmoma.org/search/?q=Justine+Kurland
+- [S8] Justine Kurland search. Whitney Museum. https://whitney.org/search?q=Justine+Kurland
+- [S9] Justine Kurland search. International Center of Photography. https://www.icp.org/search-results/Justine%20Kurland
+- [S10] Justine Kurland search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Justine+Kurland
+- [S11] Justine Kurland search. Getty. https://www.getty.edu/art/collection/search/?q=Justine+Kurland
+- [S12] Justine Kurland route. Aperture. https://aperture.org/?s=Justine+Kurland
+- [S13] Justine Kurland route. Magnum Photos. https://www.magnumphotos.com/?s=Justine+Kurland
+- [S14] Justine Kurland criticism route. Artforum. https://www.artforum.com/search/Justine%20Kurland/
+- [S15] Justine Kurland criticism route. e-flux. https://www.e-flux.com/search/?q=Justine+Kurland
+- [S16] Justine Kurland criticism route. Frieze. https://www.frieze.com/search?keys=Justine+Kurland
+- [S17] Justine Kurland monograph / publisher route. https://www.google.com/search?q=Justine+Kurland+photography+monograph+publisher
+- [S18] Justine Kurland bibliography. WorldCat. https://search.worldcat.org/search?q=Justine+Kurland+photography
+- [S19] Justine Kurland bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Justine+Kurland&searchCode=GKEY%5E*&searchType=0
+- [S20] ジュスティーヌ・カーランド bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%B8%E3%83%A5%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC%E3%83%8C%E3%83%BB%E3%82%AB%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89
+- [S21] ジュスティーヌ・カーランド / Justine Kurland research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%B8%E3%83%A5%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC%E3%83%8C%E3%83%BB%E3%82%AB%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89+Justine+Kurland
+- [S22] Justine Kurland scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Justine+Kurland+photography
+- [S23] Justine Kurland journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Justine+Kurland+photography
+- [S24] Justine Kurland library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Justine+Kurland
+- [S25] Justine Kurland archive route. Smithsonian Institution. https://www.si.edu/search?query=Justine+Kurland
+- [S26] Justine Kurland archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Justine+Kurland
+- [S27] Justine Kurland exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Justine+Kurland
+- [S28] Justine Kurland Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S29] Justine Kurland third-language / local institution route. https://www.google.com/search?q=Justine+Kurland+photography+museum+exhibition+catalogue
+- [S30] Justine Kurland primary interview / statement route. https://www.google.com/search?q=Justine+Kurland+photographer+interview+artist+statement
+
+### 8.5 出典探索メモ / Source exploration memo
+出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+
+## 9. 追加探索先 / Additional exploration routes
+> 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
+- Justine Kurlandの本人インタビュー、作家ステートメント、写真集序文を優先して確認する。
+- 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
+- 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
+- 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
