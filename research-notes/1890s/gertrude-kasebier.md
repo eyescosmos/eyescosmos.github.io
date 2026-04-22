@@ -28,16 +28,46 @@
 id: gertrude-kasebier
 name_ja: ガートルード・ケーゼビア
 name_en: Gertrude Käsebier
-# draft coordinate: - movements: ピクトリアリズム, 写真分離派, ポートレート
-# draft coordinate: - methods: platinum print, gum bichromate, allegorical portrait, studio staging
-# draft coordinate: - concepts: motherhood, feminine interiority, artistic labor, Native representation
-# draft coordinate: - related_figures: スタイケン, スティーグリッツ, クラレンス・H・ホワイト, キャメロン
-# draft coordinate: - one-line connection: キャメロンの心理的肖像を、近代商業スタジオと女性の自立という制度的条件の中で更新した。
-axes_from_draft: "documentary 2 / staged 4 / subjective 4 / objective 1 / social 2 / formal_experiment 3 / catalog_impulse 1 / criticality 3 / personal_intimacy 4 / historical_awareness 2 / body_focus 3 / urban_focus 1 / memory_focus 3 / aesthetic_intensity 5 / materiality 3"
-confidence: "see source_basis and identity notes"
+birth_year: 1852
+death_year: 1934
+active_eras: ["1890s", "1900s", "1910s"]
+countries: ["United States"]
+movements: ["Pictorialism", "Photo-Secession", "portrait photography", "women in photography"]
+platforms: ["New York studio", "Camera Work", "Photo-Secession", "museum collections"]
+subjects: ["motherhood", "women", "children", "Native American portraits", "artists and sitters"]
+methods: ["platinum print", "gum bichromate", "studio staging", "soft-focus portraiture"]
+concepts: ["motherhood", "feminine interiority", "artistic labor", "Native representation", "professional autonomy"]
+influenced_by: ["Julia Margaret Cameron", "Pictorialism", "commercial portrait studios"]
+related_figures: ["Alfred Stieglitz", "Edward Steichen", "Clarence H. White", "Julia Margaret Cameron"]
+description_short: "母性、肖像、女性の職業実践を通じて、ピクトリアリズムを心理的・制度的に押し広げた写真家。"
+confidence: 0.88
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 2
+  staged: 4
+  subjective: 4
+  objective: 1
+  social: 2
+  formal_experiment: 3
+  catalog_impulse: 1
+  criticality: 3
+  personal_intimacy: 4
+  historical_awareness: 2
+  body_focus: 3
+  urban_focus: 1
+  memory_focus: 3
+  aesthetic_intensity: 5
+  materiality: 3
+surface_connections:
+  - "Photo-Secession、Camera Work、女性写真家史を通じてスティーグリッツやスタイケンに接続"
+  - "母性と肖像の主題でキャメロンやクラレンス・ホワイトに接続"
+deep_connections:
+  - "商業スタジオ内で女性の芸術的主体性を構築した"
+  - "心理的肖像と演出された母性像を通じて、写真の親密性と制度性を重ねた"
+comparison_targets: ["Julia Margaret Cameron", "Alfred Stieglitz", "Edward Steichen"]
+one_sentence_connection: "ケーゼビアは、女性の職業写真家として、肖像を心理・母性・芸術的主体性の場へ変えた。"
+tags: ["pictorialism", "portrait", "motherhood", "women-photographers", "studio-system", "personal-intimacy"]
 ```
-
 ## 5. Quote candidates
 - “helped to found the Photo-Secession in 1902” [S2]
 - “Victorian ideals of motherhood and femininity” [S3]

@@ -25,14 +25,46 @@
 id: eugene-atget
 name_ja: ウジェーヌ・アジェ
 name_en: Eugène Atget
-# draft coordinate: - movements: ドキュメンタリー, 都市記録, archive impulse
-# draft coordinate: - related_figures: マルヴィル, ジェニオー, アボット, エヴァンズ
-# draft coordinate: - one-line connection: 都市の消えゆく表面を系統的に蓄積しながら、その記録行為自体を近代の詩的形式へ変えた。
-axes_from_draft: "documentary 5 / staged 0 / subjective 2 / objective 5 / social 3 / formal_experiment 2 / catalog_impulse 5 / criticality 4 / personal_intimacy 0 / historical_awareness 5 / body_focus 1 / urban_focus 5 / memory_focus 5 / aesthetic_intensity 3 / materiality 2"
-confidence: "see source_basis and identity notes"
+birth_year: 1857
+death_year: 1927
+active_eras: ["1890s", "1900s", "1910s", "1920s"]
+countries: ["France"]
+movements: ["urban documentary", "archive impulse", "modernist precursor", "surrealist reception"]
+platforms: ["documents for artists", "Paris archive", "MoMA reception", "Abbott archive"]
+subjects: ["Paris", "shopfronts", "streets", "parks", "courtyards", "old buildings"]
+methods: ["large-format camera", "albumen prints", "serial documentation", "frontal urban views"]
+concepts: ["archive", "urban memory", "modernity", "absence", "surrealist city"]
+influenced_by: ["Charles Marville", "commercial documentary photography", "Paris modernization"]
+related_figures: ["Charles Marville", "Berenice Abbott", "Man Ray", "Paul Géniaux"]
+description_short: "旧パリの表面を系統的に蓄積し、後年に近代写真の都市アーカイブとして再評価された写真家。"
+confidence: 0.92
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 5
+  staged: 0
+  subjective: 2
+  objective: 5
+  social: 3
+  formal_experiment: 2
+  catalog_impulse: 5
+  criticality: 4
+  personal_intimacy: 0
+  historical_awareness: 5
+  body_focus: 1
+  urban_focus: 5
+  memory_focus: 5
+  aesthetic_intensity: 3
+  materiality: 2
+surface_connections:
+  - "パリ都市記録の系譜でマルヴィル、ジェニオー、ルイ・ヴェールに接続"
+  - "シュルレアリスム受容とアボットによる保存で近代写真史に接続"
+deep_connections:
+  - "資料写真として作られた都市記録が、後年に都市の無意識や近代の空虚を示す像として再解釈された"
+  - "都市の細部を系列化し、写真を記憶と分類のアーカイブ装置にした"
+comparison_targets: ["Charles Marville", "Paul Géniaux", "Berenice Abbott"]
+one_sentence_connection: "アジェは、都市の消えゆく表面を蓄積することで、記録写真を近代都市の詩的アーカイブへ変えた。"
+tags: ["city", "archive", "modernity", "urban-anonymity", "documentary", "surrealism"]
 ```
-
 ## 5. Quote candidates
 - “Documents pour artistes” [S1]
 - “Archivist of Paris” [S2]

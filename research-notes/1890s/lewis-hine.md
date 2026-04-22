@@ -25,14 +25,46 @@
 id: lewis-hine
 name_ja: ルイス・ハイン
 name_en: Lewis Hine
-# draft coordinate: - movements: 社会ドキュメンタリー, documentary, reform photography
-# draft coordinate: - related_figures: リース, ラング, アジェ, 亀井茲明
-# draft coordinate: - one-line connection: 写真を感傷ではなく制度改革の証拠として編成した点で、社会ドキュメンタリーの基準点となる。
-axes_from_draft: "documentary 5 / staged 1 / subjective 2 / objective 4 / social 5 / formal_experiment 1 / catalog_impulse 4 / criticality 5 / personal_intimacy 1 / historical_awareness 4 / body_focus 3 / urban_focus 4 / memory_focus 3 / aesthetic_intensity 2 / materiality 1"
-confidence: "see source_basis and identity notes"
+birth_year: 1874
+death_year: 1940
+active_eras: ["1900s", "1910s", "1920s", "1930s"]
+countries: ["United States"]
+movements: ["social documentary", "reform photography", "visual sociology", "documentary"]
+platforms: ["National Child Labor Committee", "Pittsburgh Survey", "Ellis Island", "Men at Work", "schools and lectures"]
+subjects: ["child labor", "immigration", "workers", "industry", "urban poverty", "Empire State Building"]
+methods: ["captioned documentary", "field investigation", "flash and available light", "survey photography"]
+concepts: ["evidence", "reform", "labor", "social justice", "visual sociology", "human dignity"]
+influenced_by: ["Ethical Culture School", "progressive reform", "Jacob Riis"]
+related_figures: ["Jacob Riis", "Dorothea Lange", "Walker Evans", "Koreaki Kamei"]
+description_short: "写真を調査・キャプション・改革運動と結びつけ、社会変革の証拠として運用した写真家。"
+confidence: 0.92
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 5
+  staged: 1
+  subjective: 2
+  objective: 4
+  social: 5
+  formal_experiment: 1
+  catalog_impulse: 4
+  criticality: 5
+  personal_intimacy: 1
+  historical_awareness: 4
+  body_focus: 3
+  urban_focus: 4
+  memory_focus: 3
+  aesthetic_intensity: 2
+  materiality: 1
+surface_connections:
+  - "児童労働改革と社会ドキュメンタリーでリース、ラング、FSAに接続"
+  - "調査写真と制度改革の文脈で亀井や鳥居の記録制度とも比較可能"
+deep_connections:
+  - "写真を感傷的な告発ではなく、調査・キャプション・制度改革の証拠へ変換した"
+  - "被写体の尊厳を保ちながら社会問題を可視化しようとした"
+comparison_targets: ["Jacob Riis", "Dorothea Lange", "Walker Evans"]
+one_sentence_connection: "ハインは、写真を社会改革のための証拠とし、視覚を政策・教育・調査へ接続した。"
+tags: ["social-document", "labor", "child-labor", "visual-sociology", "evidence", "reform"]
 ```
-
 ## 5. Quote candidates
 - “to enhance his teaching practices” [S1]
 - “precursor to modernist and documentary photography” [S2]

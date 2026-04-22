@@ -25,14 +25,46 @@
 id: ryuzo-torii
 name_ja: 鳥居龍蔵
 name_en: Ryuzo Torii
-# draft coordinate: - movements: 日本写真, ethnographic photography, scientific / documentary photography
-# draft coordinate: - related_figures: 亀井茲明, 冨重徳次, ハイン, マレー
-# draft coordinate: - one-line connection: 写真を作品ではなく、比較と分類のための装置として徹底運用した点で科学写真・民族誌写真と接続する。
-axes_from_draft: "documentary 5 / staged 1 / subjective 0 / objective 5 / social 5 / formal_experiment 0 / catalog_impulse 5 / criticality 4 / personal_intimacy 0 / historical_awareness 5 / body_focus 2 / urban_focus 1 / memory_focus 4 / aesthetic_intensity 0 / materiality 2"
-confidence: "see source_basis and identity notes"
+birth_year: 1870
+death_year: 1953
+active_eras: ["1890s", "1900s", "1910s"]
+countries: ["Japan", "Taiwan", "China", "Korea"]
+movements: ["ethnographic photography", "scientific photography", "Japanese anthropology"]
+platforms: ["fieldwork", "University of Tokyo anthropology", "glass plate archive", "museum database"]
+subjects: ["Taiwan aborigines", "East Asia", "archaeology", "ethnography", "field sites"]
+methods: ["field photography", "glass plates", "anthropometric documentation", "classification"]
+concepts: ["ethnography", "imperial knowledge", "classification", "archive", "fieldwork"]
+influenced_by: ["Japanese anthropology", "colonial fieldwork", "archaeology"]
+related_figures: ["Koreaki Kamei", "Étienne-Jules Marey", "Lewis Hine"]
+description_short: "写真を作品ではなく、民族学・考古学・帝国的フィールドワークの記録装置として使った研究者。"
+confidence: 0.78
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 5
+  staged: 1
+  subjective: 0
+  objective: 5
+  social: 5
+  formal_experiment: 0
+  catalog_impulse: 5
+  criticality: 4
+  personal_intimacy: 0
+  historical_awareness: 5
+  body_focus: 2
+  urban_focus: 1
+  memory_focus: 4
+  aesthetic_intensity: 0
+  materiality: 2
+surface_connections:
+  - "科学写真・分類・フィールドワークの文脈でマレー、亀井、ハインに接続"
+  - "日本の人類学と帝国的調査の写真アーカイブに接続"
+deep_connections:
+  - "写真を美的表現ではなく、比較・分類・保存のための知識装置として運用した"
+  - "資料価値と帝国的視線の権力性が同時に存在する"
+comparison_targets: ["Koreaki Kamei", "Étienne-Jules Marey", "Lewis Hine"]
+one_sentence_connection: "鳥居龍蔵は、写真をフィールドワークの分類装置として使い、近代日本の人類学的視線を可視化した。"
+tags: ["ethnography", "scientific-photography", "archive", "classification", "imperial-knowledge", "fieldwork"]
 ```
-
 ## 5. Quote candidates
 - “カメラを取り入れました” [S1]
 - “約2500点のコレクション全体” [S2]

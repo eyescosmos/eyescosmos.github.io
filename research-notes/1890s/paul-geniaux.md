@@ -24,14 +24,46 @@
 id: paul-geniaux
 name_ja: ポール・ジェニオー
 name_en: Paul Géniaux
-# draft coordinate: - movements: ドキュメンタリー, 社会ドキュメンタリー,都市記録
-# draft coordinate: - related_figures: アジェ, ハイン, アナン, リース
-# draft coordinate: - one-line connection: ピクトリアリズムの時代に、都市の庶民生活を過度な手工芸化なしに記録へ寄せたフランス側の細い流れ。
-axes_from_draft: "documentary 4 / staged 1 / subjective 2 / objective 3 / social 4 / formal_experiment 1 / catalog_impulse 3 / criticality 2 / personal_intimacy 1 / historical_awareness 4 / body_focus 2 / urban_focus 4 / memory_focus 3 / aesthetic_intensity 2 / materiality 1"
-confidence: "see source_basis and identity notes"
+birth_year: 1873
+death_year: 1929
+active_eras: ["1890s", "1900s", "1910s"]
+countries: ["France"]
+movements: ["urban documentary", "social documentary", "street photography precursor"]
+platforms: ["illustrated press", "regional archives", "Carnavalet / Orsay collections"]
+subjects: ["Paris streets", "workers", "small trades", "crowds", "Brittany folk life"]
+methods: ["street documentation", "press photography", "ethnographic urban observation"]
+concepts: ["everyday labor", "street life", "urban memory", "folk culture", "Belle Époque"]
+influenced_by: ["illustrated press", "French urban documentary", "regional ethnography"]
+related_figures: ["Eugène Atget", "Louis Vert", "Lewis Hine", "Charles Géniaux"]
+description_short: "パリの労働・街頭生活・庶民文化を、報道と民俗誌の間で記録したフランスの写真家。"
+confidence: 0.73
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 4
+  staged: 1
+  subjective: 2
+  objective: 3
+  social: 4
+  formal_experiment: 1
+  catalog_impulse: 3
+  criticality: 2
+  personal_intimacy: 1
+  historical_awareness: 4
+  body_focus: 2
+  urban_focus: 4
+  memory_focus: 3
+  aesthetic_intensity: 2
+  materiality: 1
+surface_connections:
+  - "パリの街頭職能と都市記録でアジェ、ルイ・ヴェールに接続"
+  - "社会的主題と労働者表象でハイン、リースに接続"
+deep_connections:
+  - "都市の日常的労働を、絵画的演出よりも民俗誌的・報道的な記録として扱った"
+  - "近代都市の小さな職能と街路生活を記憶化した"
+comparison_targets: ["Eugène Atget", "Louis Vert", "Lewis Hine"]
+one_sentence_connection: "ジェニオーは、ベル・エポックの都市労働と街路生活を、報道と民俗誌のあいだで記録した。"
+tags: ["city", "labor", "everyday-life", "urban-documentary", "print-culture", "social-document"]
 ```
-
 ## 5. Quote candidates
 - “largement méconnus” [S4]
 - “1890 - 1920. 21 photographies” [S4]

@@ -26,14 +26,46 @@
 id: edward-weston
 name_ja: エドワード・ウェストン
 name_en: Edward Weston
-# draft coordinate: - movements: 初期ピクトリアリズム, proto-straight photography
-# draft coordinate: - related_figures: スティーグリッツ, ストランド, スタイケン
-# draft coordinate: - one-line connection: ピクトリアリズム内部で技術と商業成功を得たのち、その論理を自ら更新してストレート写真へ向かう節目。
-axes_from_draft: "documentary 1 / staged 2 / subjective 3 / objective 2 / social 1 / formal_experiment 4 / catalog_impulse 2 / criticality 4 / personal_intimacy 2 / historical_awareness 3 / body_focus 3 / urban_focus 1 / memory_focus 2 / aesthetic_intensity 5 / materiality 4"
-confidence: "see source_basis and identity notes"
+birth_year: 1886
+death_year: 1958
+active_eras: ["1900s", "1910s", "1920s", "1930s", "1940s"]
+countries: ["United States", "Mexico"]
+movements: ["early Pictorialism", "Straight Photography", "Group f/64", "West Coast Modernism"]
+platforms: ["Tropico studio", "Daybooks", "Group f/64 exhibitions", "MoMA retrospectives"]
+subjects: ["portraits", "nudes", "shells", "vegetables", "dunes", "Point Lobos"]
+methods: ["large-format camera", "contact print", "sharp focus", "close framing", "tonal control"]
+concepts: ["straight photography", "objectivity", "formal equivalence", "material form", "photographic seeing"]
+influenced_by: ["Pictorialism", "Alfred Stieglitz", "Paul Strand", "Mexican artistic milieu", "Tina Modotti"]
+related_figures: ["Tina Modotti", "Ansel Adams", "Imogen Cunningham", "Paul Strand"]
+description_short: "初期ピクトリアリズムから離れ、物・身体・風景を精密な写真的形態へ変換した写真家。"
+confidence: 0.9
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 1
+  staged: 2
+  subjective: 3
+  objective: 2
+  social: 1
+  formal_experiment: 4
+  catalog_impulse: 2
+  criticality: 4
+  personal_intimacy: 2
+  historical_awareness: 3
+  body_focus: 3
+  urban_focus: 1
+  memory_focus: 2
+  aesthetic_intensity: 5
+  materiality: 4
+surface_connections:
+  - "ストレート写真とGroup f/64でストランド、アダムス、カニンガムに接続"
+  - "初期はピクトリアリズムと商業スタジオに接続"
+deep_connections:
+  - "写真の明晰さを、冷たい記録ではなく対象の形態を再発見する方法として使った"
+  - "この年代では後年の完成形ではなく、ピクトリアリズムからの離脱前夜として位置づく"
+comparison_targets: ["Paul Strand", "Ansel Adams", "Imogen Cunningham"]
+one_sentence_connection: "ウェストンは、写真の精密さを通じて日常物や身体を近代的な形態へ変換した。"
+tags: ["straight-photography", "objectivity", "formalism", "materiality", "body", "west-coast-modernism"]
 ```
-
 ## 5. Quote candidates
 - “The Pictorialist style … earned him commercial and critical success” [S1]
 - “first camera … in 1902” [S1]

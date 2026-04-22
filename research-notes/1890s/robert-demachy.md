@@ -24,14 +24,46 @@
 id: robert-demachy
 name_ja: ロベール・ドマシー
 name_en: Robert Demachy
-# draft coordinate: - movements: ピクトリアリズム, manipulated print, gum bichromate
-# draft coordinate: - related_figures: ケーゼビア, スタイケン, スティーグリッツ
-# draft coordinate: - one-line connection: 写真を「撮る」よりも「作る」行為として再定義した、ピクトリアリズムの最もラディカルな理論家の一人。
-axes_from_draft: "documentary 1 / staged 3 / subjective 5 / objective 0 / social 1 / formal_experiment 5 / catalog_impulse 1 / criticality 4 / personal_intimacy 1 / historical_awareness 2 / body_focus 2 / urban_focus 1 / memory_focus 2 / aesthetic_intensity 5 / materiality 5"
-confidence: "see source_basis and identity notes"
+birth_year: 1859
+death_year: 1936
+active_eras: ["1890s", "1900s", "1910s"]
+countries: ["France"]
+movements: ["Pictorialism", "gum bichromate", "manipulated print"]
+platforms: ["Photo-Club de Paris", "Camera Work", "salon exhibitions", "gum print publications"]
+subjects: ["figures", "dance", "urban views", "decorative compositions"]
+methods: ["gum bichromate", "scraping", "brushing", "tonal manipulation", "print intervention"]
+concepts: ["artist intervention", "handwork", "anti-mechanical art", "materiality", "painterly photography"]
+influenced_by: ["symbolism", "printmaking", "French pictorialism"]
+related_figures: ["Alfred Stieglitz", "Edward Steichen", "Gertrude Käsebier", "Clarence H. White"]
+description_short: "ガム印画と手仕事によって、写真を撮影後の制作物へ変えたピクトリアリズムの中心作家。"
+confidence: 0.84
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 1
+  staged: 3
+  subjective: 5
+  objective: 0
+  social: 1
+  formal_experiment: 5
+  catalog_impulse: 1
+  criticality: 4
+  personal_intimacy: 1
+  historical_awareness: 2
+  body_focus: 2
+  urban_focus: 1
+  memory_focus: 2
+  aesthetic_intensity: 5
+  materiality: 5
+surface_connections:
+  - "ガム印画とCamera Workを通じてPhoto-Secessionと接続"
+  - "ピクトリアリズムの印画操作でケーゼビア、スタイケンに接続"
+deep_connections:
+  - "写真の芸術性を、撮影ではなく印画面への介入と物質的手仕事に置いた"
+  - "ストレート写真が反発する「操作された写真」の理論的極点を示す"
+comparison_targets: ["Edward Steichen", "Gertrude Käsebier", "Alfred Stieglitz"]
+one_sentence_connection: "ドマシーは、写真を機械的記録から手仕事の介入による制作物へ変えようとした。"
+tags: ["pictorialism", "gum-bichromate", "materiality", "handwork", "formal-experiment", "anti-mechanical"]
 ```
-
 ## 5. Quote candidates
 - “the artist’s intervention” [S2]
 - “apostle of the gum bichromate process” [S4]

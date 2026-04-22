@@ -24,14 +24,46 @@
 id: jacques-henri-lartigue
 name_ja: ジャック＝アンリ・ラルティーグ
 name_en: Jacques Henri Lartigue
-# draft coordinate: - movements: プライベート写真, snapshot aesthetics, amateur modernity
-# draft coordinate: - related_figures: ウェストン, ゴールディン, アジェ
-# draft coordinate: - one-line connection: 私的記録が後代の編集によって写真史の正史に組み込まれる、その回路を体現する。
-axes_from_draft: "documentary 2 / staged 1 / subjective 5 / objective 1 / social 1 / formal_experiment 3 / catalog_impulse 3 / criticality 3 / personal_intimacy 5 / historical_awareness 3 / body_focus 3 / urban_focus 2 / memory_focus 5 / aesthetic_intensity 4 / materiality 2"
-confidence: "see source_basis and identity notes"
+birth_year: 1894
+death_year: 1986
+active_eras: ["1900s", "1910s", "1920s", "1960s reception"]
+countries: ["France"]
+movements: ["private photography", "snapshot aesthetics", "amateur modernity"]
+platforms: ["family albums", "MoMA exhibition", "Life magazine", "Donation Lartigue"]
+subjects: ["family", "sports", "cars", "aviation", "leisure", "speed"]
+methods: ["amateur album photography", "snapshot", "cropping", "serial family archive"]
+concepts: ["private memory", "speed", "modern leisure", "rediscovery", "album-to-museum transition"]
+influenced_by: ["family culture", "Belle Époque technology", "amateur cameras"]
+related_figures: ["Richard Avedon", "John Szarkowski", "Nan Goldin", "Eugène Atget"]
+description_short: "私的アルバムの遊びと速度感が、後年に近代写真史へ回収された写真家。"
+confidence: 0.86
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 2
+  staged: 1
+  subjective: 5
+  objective: 1
+  social: 1
+  formal_experiment: 3
+  catalog_impulse: 3
+  criticality: 3
+  personal_intimacy: 5
+  historical_awareness: 3
+  body_focus: 3
+  urban_focus: 2
+  memory_focus: 5
+  aesthetic_intensity: 4
+  materiality: 2
+surface_connections:
+  - "私的アルバム、MoMA再発見、Life掲載を通じてスナップショット美学に接続"
+  - "速度・余暇・家族写真の主題で近代生活の視覚史に接続"
+deep_connections:
+  - "撮影時点の私的実践が、後年の編集と制度によって写真史へ編入された"
+  - "近代の速度と遊びを、制度外の家庭内視覚として保存した"
+comparison_targets: ["Nan Goldin", "Richard Avedon", "Eugène Atget"]
+one_sentence_connection: "ラルティーグは、私的な遊びの写真が後年の編集によって近代写真史へ組み込まれる過程を体現する。"
+tags: ["snapshot", "private-photography", "memory", "speed", "leisure", "rediscovery"]
 ```
-
 ## 5. Quote candidates
 - “His reputation as an outstanding photographer has been established” [S3]
 - “double chronology, that of creation and that of its discovery” [S4]

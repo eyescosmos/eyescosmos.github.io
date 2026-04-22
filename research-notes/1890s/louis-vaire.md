@@ -24,12 +24,46 @@ Louis Vaireとしての批評史は現時点で確認できない。もしLouis 
 id: louis-vaire
 name_ja: ルイ・ヴェール（要同定）
 name_en: Louis Vaire / probably Louis Vert
-# draft coordinate: - one-line connection: 名前同定が先。現段階では接続ロジックに入れない。
-axes_from_draft: "confidence low / scores pending"
-confidence: "see source_basis and identity notes"
+birth_year: unknown
+death_year: unknown
+active_eras: ["1900s"]
+countries: ["France"]
+movements: ["identity audit required", "urban documentary if Louis Vert"]
+platforms: ["Musée d’Orsay / ICP / Carnavalet routes if Louis Vert"]
+subjects: ["unknown for Vaire", "Paris small trades if Louis Vert"]
+methods: ["unknown for Vaire", "street documentation if Louis Vert"]
+concepts: ["source gap", "name correction", "urban memory if Louis Vert"]
+influenced_by: ["unknown"]
+related_figures: ["Eugène Atget", "Paul Géniaux", "Louis Vert"]
+description_short: "Louis Vaireとしては未同定。Louis Vert誤記の可能性が高く、公開本文化前に人物名監査が必要。"
+confidence: 0.35
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: null
+  staged: null
+  subjective: null
+  objective: null
+  social: null
+  formal_experiment: null
+  catalog_impulse: null
+  criticality: null
+  personal_intimacy: null
+  historical_awareness: null
+  body_focus: null
+  urban_focus: null
+  memory_focus: null
+  aesthetic_intensity: null
+  materiality: null
+surface_connections:
+  - "現状ではVaireとしての表層接続は置かない"
+  - "Louis Vertならアジェ、ジェニオーとパリ小商いの都市記録で接続"
+deep_connections:
+  - "同定が済むまで深層接続は設定しない"
+  - "Louis Vertなら都市の小職能をアマチュア的・資料的に記録する文脈で接続可能"
+comparison_targets: ["Eugène Atget", "Paul Géniaux", "Louis Vert"]
+one_sentence_connection: "Louis Vaireは、現時点では座標上で仮登録・確認待ちとして扱い、Louis Vertとの同定監査を優先する。"
+tags: ["source-gap", "identity-audit", "urban-documentary-if-vert"]
 ```
-
 ## 5. Quote candidates
 - No verified quote candidate yet; do not invent artist statement.
 - Note: quote candidates should use Louis Vert only after site identity is corrected or explicitly footnoted.

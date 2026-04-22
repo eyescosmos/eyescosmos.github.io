@@ -25,14 +25,46 @@
 id: seibei-kajima
 name_ja: 鹿島清兵衛
 name_en: Kajima Seibei
-# draft coordinate: - movements: 日本写真, pictorial tendencies, photographic infrastructure
-# draft coordinate: - related_figures: 小川一真, 屋須弘平, 亀井茲明, 野島康三
-# draft coordinate: - one-line connection: 明治日本で写真を作品だけでなく産業・サロン・展示空間として成立させた制度的ハブ。
-axes_from_draft: "documentary 2 / staged 3 / subjective 3 / objective 2 / social 3 / formal_experiment 4 / catalog_impulse 2 / criticality 3 / personal_intimacy 1 / historical_awareness 4 / body_focus 2 / urban_focus 2 / memory_focus 2 / aesthetic_intensity 4 / materiality 4"
-confidence: "see source_basis and identity notes"
+birth_year: 1866
+death_year: 1924
+active_eras: ["1890s", "1900s"]
+countries: ["Japan"]
+movements: ["Japanese photography", "photographic infrastructure", "Pictorial tendencies"]
+platforms: ["Tsukiji dry plate works", "Japan Photographic Society", "Genrokukan", "photographic exhibitions"]
+subjects: ["portraits", "Mount Fuji", "large prints", "Japanese modern photography"]
+methods: ["large-format printing", "night photography", "dry plate production", "studio patronage"]
+concepts: ["infrastructure", "patronage", "technical experiment", "Meiji photography", "amateur-professional boundary"]
+influenced_by: ["Yokohama photography", "Meiji modernization", "photographic societies"]
+related_figures: ["Kazumasa Ogawa", "Kohei Yasu", "Rokusaburo Kajima", "Seiichi Kurokawa"]
+description_short: "資本・技術・展示・写真会を通じて、明治日本写真界のインフラを動かした「写真大尽」。"
+confidence: 0.72
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 2
+  staged: 3
+  subjective: 3
+  objective: 2
+  social: 3
+  formal_experiment: 4
+  catalog_impulse: 2
+  criticality: 3
+  personal_intimacy: 1
+  historical_awareness: 4
+  body_focus: 2
+  urban_focus: 2
+  memory_focus: 2
+  aesthetic_intensity: 4
+  materiality: 4
+surface_connections:
+  - "日本写真会、乾板製造、玄鹿館を通じて小川一真や明治写真界に接続"
+  - "巨大プリントや富士山写真で明治の展示・献納文化に接続"
+deep_connections:
+  - "写真を作品だけでなく、産業・サロン・展示・技術国産化のインフラとして成立させた"
+  - "アマチュアと実業、趣味と制度の境界を動かした"
+comparison_targets: ["Kazumasa Ogawa", "Kohei Yasu", "Yokohama photography studios"]
+one_sentence_connection: "鹿島清兵衛は、写真を撮るだけでなく、作り、見せ、競わせ、産業化する制度を動かした。"
+tags: ["japanese-photography", "infrastructure", "patronage", "materiality", "exhibition", "meiji-modernity"]
 ```
-
 ## 5. Quote candidates
 - “写真大尽” [S1]
 - “most commercially successful studio in Tokyo” [S5]

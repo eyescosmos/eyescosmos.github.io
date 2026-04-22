@@ -25,14 +25,46 @@
 id: koreaki-kamei
 name_ja: 亀井茲明
 name_en: Koreaki Kamei
-# draft coordinate: - movements: 日本写真, 戦争写真, documentary
-# draft coordinate: - related_figures: ルイス・ハイン, 鳥居龍蔵, ブレイディ, ガードナー
-# draft coordinate: - one-line connection: 個人作家性よりも、国家・出版・記録制度が写真をどう戦争の証拠に変えたかを示す節点である。
-axes_from_draft: "documentary 5 / staged 2 / subjective 1 / objective 4 / social 5 / formal_experiment 0 / catalog_impulse 5 / criticality 3 / personal_intimacy 0 / historical_awareness 5 / body_focus 1 / urban_focus 1 / memory_focus 4 / aesthetic_intensity 1 / materiality 2"
-confidence: "see source_basis and identity notes"
+birth_year: 1861
+death_year: 1896
+active_eras: ["1890s"]
+countries: ["Japan"]
+movements: ["war photography", "Japanese photography", "documentary"]
+platforms: ["Sino-Japanese War photo album", "Kamei Bunko", "military photography team"]
+subjects: ["Sino-Japanese War", "military campaign", "China", "battlefields", "war records"]
+methods: ["organized photo team", "album compilation", "diary and photographic record"]
+concepts: ["war visualization", "state record", "military archive", "modern nation-state"]
+influenced_by: ["Meiji modernization", "European study", "military documentation"]
+related_figures: ["Lewis Hine", "Ryuzo Torii", "Mathew Brady", "Alexander Gardner"]
+description_short: "日清戦争における従軍写真事業を組織し、近代日本の戦争可視化を担った人物。"
+confidence: 0.74
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 5
+  staged: 2
+  subjective: 1
+  objective: 4
+  social: 5
+  formal_experiment: 0
+  catalog_impulse: 5
+  criticality: 3
+  personal_intimacy: 0
+  historical_awareness: 5
+  body_focus: 1
+  urban_focus: 1
+  memory_focus: 4
+  aesthetic_intensity: 1
+  materiality: 2
+surface_connections:
+  - "戦争写真・国家記録の文脈でブレイディ、ガードナー、鳥居龍蔵に接続"
+  - "写真帖・日記・献納という出版制度で日本近代史料に接続"
+deep_connections:
+  - "写真を個人表現ではなく、国家的戦争記録の制度として組織した"
+  - "戦争を可視化し、記念化し、資料化する近代国家の写真利用を示す"
+comparison_targets: ["Mathew Brady", "Alexander Gardner", "Ryuzo Torii"]
+one_sentence_connection: "亀井茲明は、写真を戦争の証拠・記念・出版物へ変える近代日本の制度的節点である。"
+tags: ["war-photography", "state-archive", "documentary", "historical-awareness", "publication", "military-visuality"]
 ```
-
 ## 5. Quote candidates
 - “従軍写真班を組織し撮影” [S2]
 - “日本最初の従軍写真家” [S3]

@@ -28,17 +28,46 @@
 id: kohei-yasu
 name_ja: 屋須弘平
 name_en: Kohei Yasu / Juan José de Jesús Yas
-# draft coordinate: - movements: 日本写真, 都市記録, 移民写真, スタジオ写真
-# draft coordinate: - methods: studio portrait, urban documentation, religious procession record
-# draft coordinate: - concepts: migration, transcultural visuality, Catholic modernity, urban memory
-# draft coordinate: - influenced_by: studio practice, colonial/missionary visual culture, commercial portraiture
-# draft coordinate: - related_figures: 鳥居龍蔵, 鹿島清兵衛, ポール・ジェニオー, ウジェーヌ・アジェ
-# draft coordinate: - one-line connection: 都市と儀礼を「外来者であり地域内部の実務者でもある」視点から記録した点で、アジェや地方都市記録写真と深い接点がある。
-axes_from_draft: "documentary 4 / staged 2 / subjective 2 / objective 3 / social 3 / formal_experiment 1 / catalog_impulse 4 / criticality 2 / personal_intimacy 2 / historical_awareness 4 / body_focus 2 / urban_focus 4 / memory_focus 4 / aesthetic_intensity 2 / materiality 2"
-confidence: "see source_basis and identity notes"
+birth_year: 1846
+death_year: 1917
+active_eras: ["1890s", "1900s", "1910s"]
+countries: ["Japan", "Guatemala"]
+movements: ["Japanese photography", "migrant photography", "studio photography", "urban documentary"]
+platforms: ["studio practice", "CIRMA archive", "Guatemala exhibitions", "religious/processional imagery"]
+subjects: ["Antigua Guatemala", "religious processions", "studio portraits", "families", "urban memory"]
+methods: ["studio portraiture", "urban documentation", "religious procession record", "glass negatives"]
+concepts: ["migration", "transcultural visuality", "Catholic modernity", "regional memory", "diaspora"]
+influenced_by: ["commercial studio practice", "missionary/colonial visual culture", "Japanese emigration"]
+related_figures: ["Ryuzo Torii", "Seibei Kajima", "Paul Géniaux", "Eugène Atget"]
+description_short: "日本からグアテマラへ渡り、都市・信仰・家族の記憶を写真館実務として残した越境的写真家。"
+confidence: 0.78
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 4
+  staged: 2
+  subjective: 2
+  objective: 3
+  social: 3
+  formal_experiment: 1
+  catalog_impulse: 4
+  criticality: 2
+  personal_intimacy: 2
+  historical_awareness: 4
+  body_focus: 2
+  urban_focus: 4
+  memory_focus: 4
+  aesthetic_intensity: 2
+  materiality: 2
+surface_connections:
+  - "グアテマラ移民史、宗教行列、スタジオ肖像という文脈で地域写真館史に接続"
+  - "都市と儀礼の記録という点でアジェ、ジェニオー、鳥居龍蔵に接続"
+deep_connections:
+  - "外来者であり地域内部の実務者でもある視点から、都市の公共的記憶を形成した"
+  - "写真館を家族・信仰・都市近代の記憶装置として機能させた"
+comparison_targets: ["Eugène Atget", "Paul Géniaux", "Ryuzo Torii"]
+one_sentence_connection: "屋須弘平は、移民写真家としての外部性と地域写真館主としての内部性を重ね、グアテマラの都市記憶を視覚化した。"
+tags: ["migration", "studio-system", "city", "religion", "archive", "transcultural-visuality"]
 ```
-
 ## 5. Quote candidates
 - “one of the earliest Japanese migrants to Latin America” [S2]
 - “a studio photographer and a devout Catholic” [S2]

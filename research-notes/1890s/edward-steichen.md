@@ -24,14 +24,46 @@
 id: edward-steichen
 name_ja: エドワード・スタイケン
 name_en: Edward Steichen
-# draft coordinate: - movements: ピクトリアリズム, 写真分離派, proto-modernism
-# draft coordinate: - related_figures: スティーグリッツ, ケーゼビア, ドマシー
-# draft coordinate: - one-line connection: 写真を欧州前衛とアメリカ写真制度の間で翻訳したキープレイヤー。
-axes_from_draft: "documentary 1 / staged 2 / subjective 4 / objective 1 / social 2 / formal_experiment 4 / catalog_impulse 2 / criticality 4 / personal_intimacy 2 / historical_awareness 4 / body_focus 2 / urban_focus 3 / memory_focus 2 / aesthetic_intensity 5 / materiality 4"
-confidence: "see source_basis and identity notes"
+birth_year: 1879
+death_year: 1973
+active_eras: ["1890s", "1900s", "1910s", "1920s", "1930s", "1950s"]
+countries: ["United States", "Luxembourg", "France"]
+movements: ["Pictorialism", "Photo-Secession", "Modernism", "fashion photography"]
+platforms: ["Camera Work", "291", "Paris networks", "MoMA photography department"]
+subjects: ["urban night", "portraits", "artists", "fashion", "modern art"]
+methods: ["gum bichromate", "tonal manipulation", "soft focus", "curation", "fashion studio lighting"]
+concepts: ["translation of modernism", "pictorial mood", "international mediation", "photography as art"]
+influenced_by: ["Rodin", "European symbolism", "Alfred Stieglitz", "Pictorialism"]
+related_figures: ["Alfred Stieglitz", "Gertrude Käsebier", "Robert Demachy", "Rodin"]
+description_short: "ピクトリアリズムとヨーロッパ前衛をアメリカ写真制度へ媒介した、若きPhoto-Secessionの中心人物。"
+confidence: 0.89
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 1
+  staged: 2
+  subjective: 4
+  objective: 1
+  social: 2
+  formal_experiment: 4
+  catalog_impulse: 2
+  criticality: 4
+  personal_intimacy: 2
+  historical_awareness: 4
+  body_focus: 2
+  urban_focus: 3
+  memory_focus: 2
+  aesthetic_intensity: 5
+  materiality: 4
+surface_connections:
+  - "Photo-SecessionとCamera Workでスティーグリッツ、ケーゼビア、ドマシーに接続"
+  - "パリと291を媒介し、ヨーロッパ前衛をアメリカ写真へつないだ"
+deep_connections:
+  - "写真・絵画・彫刻・デザインの境界を横断し、写真を国際的な近代芸術制度へ翻訳した"
+  - "ピクトリアリズムの気分とモダニズム受容を同時に担った"
+comparison_targets: ["Alfred Stieglitz", "Robert Demachy", "Gertrude Käsebier"]
+one_sentence_connection: "スタイケンは、ピクトリアリズムの美学を国際的な近代芸術ネットワークへ接続した。"
+tags: ["photo-secession", "pictorialism", "modernism", "291", "fashion", "international-network"]
 ```
-
 ## 5. Quote candidates
 - “The Photo-Secession Years” [S1]
 - “The Flatiron” [S2]

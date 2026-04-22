@@ -26,14 +26,46 @@
 id: alfred-stieglitz
 name_ja: アルフレッド・スティーグリッツ
 name_en: Alfred Stieglitz
-# draft coordinate: - movements: ピクトリアリズム, 写真分離派, モダニズム, ストレート写真
-# draft coordinate: - related_figures: スタイケン, ケーゼビア, ストランド, オキーフ
-# draft coordinate: - one-line connection: 写真の制度そのものを作り変え、ピクトリアリズムからモダニズムへの橋を個人とメディアの両方で架けた。
-axes_from_draft: "documentary 3 / staged 1 / subjective 5 / objective 2 / social 3 / formal_experiment 4 / catalog_impulse 3 / criticality 5 / personal_intimacy 4 / historical_awareness 5 / body_focus 3 / urban_focus 4 / memory_focus 4 / aesthetic_intensity 5 / materiality 3"
-confidence: "see source_basis and identity notes"
+birth_year: 1864
+death_year: 1946
+active_eras: ["1890s", "1900s", "1910s", "1920s", "1930s"]
+countries: ["United States"]
+movements: ["Pictorialism", "Photo-Secession", "Modernism", "Straight Photography"]
+platforms: ["Camera Work", "291", "Photo-Secession", "Key Set", "Little Galleries"]
+subjects: ["New York", "urban modernity", "clouds", "portraits", "artists", "immigration"]
+methods: ["photogravure publishing", "curation", "gallery organization", "straight photography", "serial cloud studies"]
+concepts: ["photographic modernism", "institution-building", "equivalence", "art status of photography", "editorial power"]
+influenced_by: ["European pictorialism", "German photographic study", "modern art networks"]
+related_figures: ["Edward Steichen", "Gertrude Käsebier", "Paul Strand", "Georgia O’Keeffe"]
+description_short: "写真を近代芸術として成立させる制度を、雑誌・ギャラリー・グループで作り変えた写真家。"
+confidence: 0.95
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 3
+  staged: 1
+  subjective: 5
+  objective: 2
+  social: 3
+  formal_experiment: 4
+  catalog_impulse: 3
+  criticality: 5
+  personal_intimacy: 4
+  historical_awareness: 5
+  body_focus: 3
+  urban_focus: 4
+  memory_focus: 4
+  aesthetic_intensity: 5
+  materiality: 3
+surface_connections:
+  - "Photo-Secession、Camera Work、291を通じてケーゼビア、スタイケン、ストランドに接続"
+  - "アメリカ近代写真制度とヨーロッパ前衛受容の中心に位置する"
+deep_connections:
+  - "写真作品だけでなく、展示・出版・収集・批評の制度を同時に設計した"
+  - "ピクトリアリズムからストレート写真、さらに抽象的なEquivalentへ向かう橋を架けた"
+comparison_targets: ["Edward Steichen", "Paul Strand", "Gertrude Käsebier"]
+one_sentence_connection: "スティーグリッツは、写真を作品だけでなく制度として近代芸術へ押し上げた。"
+tags: ["photo-secession", "modernism", "institution-building", "camera-work", "291", "equivalence"]
 ```
-
 ## 5. Quote candidates
 - “determined to prove that photography was a medium as capable of artistic expression as painting or sculpture” [S1]
 - “first ‘modernist’ photograph” [S5]

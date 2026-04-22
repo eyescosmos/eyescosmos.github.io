@@ -25,14 +25,46 @@
 id: peter-henry-emerson
 name_ja: ピーター・ヘンリー・エマーソン
 name_en: Peter Henry Emerson
-# draft coordinate: - movements: 自然主義写真, proto-straight photography, documentary
-# draft coordinate: - related_figures: アナン, アジェ, ストランド, ウェストン
-# draft coordinate: - one-line connection: 写真の固有性を絵画模倣ではなく視覚理論から擁護した点で、後のストレート写真の理論的前史になる。
-axes_from_draft: "documentary 4 / staged 1 / subjective 2 / objective 4 / social 3 / formal_experiment 2 / catalog_impulse 4 / criticality 4 / personal_intimacy 1 / historical_awareness 4 / body_focus 1 / urban_focus 1 / memory_focus 2 / aesthetic_intensity 3 / materiality 2"
-confidence: "see source_basis and identity notes"
+birth_year: 1856
+death_year: 1936
+active_eras: ["1880s", "1890s"]
+countries: ["United Kingdom"]
+movements: ["Naturalistic Photography", "proto-straight photography", "documentary"]
+platforms: ["photobooks", "theoretical writing", "photogravure publications"]
+subjects: ["East Anglia", "Norfolk Broads", "rural labor", "marshland", "fishermen"]
+methods: ["single negative", "photogravure", "naturalistic focus", "book sequencing"]
+concepts: ["human vision", "naturalism", "anti-manipulation", "photographic specificity", "rural modernity"]
+influenced_by: ["vision science", "naturalism", "rural documentary traditions"]
+related_figures: ["Alfred Stieglitz", "Edward Weston", "Paul Strand", "Thomas Annan"]
+description_short: "視覚生理学と単一ネガの理論から、写真固有の自然主義を主張した理論家・写真家。"
+confidence: 0.86
 source_basis: ["museum / archive / university / specialist publication sources listed below"]
+axes:
+  documentary: 4
+  staged: 1
+  subjective: 2
+  objective: 4
+  social: 3
+  formal_experiment: 2
+  catalog_impulse: 4
+  criticality: 4
+  personal_intimacy: 1
+  historical_awareness: 4
+  body_focus: 1
+  urban_focus: 1
+  memory_focus: 2
+  aesthetic_intensity: 3
+  materiality: 2
+surface_connections:
+  - "自然主義写真と写真理論でストレート写真の前史に接続"
+  - "農村・湿地の記録という点でアナンやドキュメンタリー写真に接続"
+deep_connections:
+  - "写真の芸術性を絵画的加工ではなく、人間の視覚経験と写真の固有性に置こうとした"
+  - "撤回を含む理論的矛盾が、写真芸術論の重要な転換点になる"
+comparison_targets: ["Paul Strand", "Edward Weston", "Thomas Annan"]
+one_sentence_connection: "エマーソンは、写真の芸術性を絵画模倣ではなく、視覚経験と写真固有性から説明しようとした。"
+tags: ["naturalism", "straight-photography", "vision", "anti-manipulation", "photobook", "rural-life"]
 ```
-
 ## 5. Quote candidates
 - “The Death of Naturalistic Photography” [S5]
 - “single negative” / “single exposure” [S1]
