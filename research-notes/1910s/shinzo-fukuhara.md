@@ -1,29 +1,87 @@
-# Shinzo Fukuhara
+# 福原信三 / Shinzo Fukuhara
 
-## 1. Basic facts
-- Japanese photographer, entrepreneur, and cultural organizer, born in 1883 and died in 1948.[S1][S2]
-- Known both for his role in Shiseido and for helping shape modern Japanese photographic culture through writing, exhibitions, and the institutional support of photography as art.[S1][S2][S3]
+> 完成版メモ: ChatGPT側の1910–1920sラフメモを素材に、Codex側で本文用の論点、source marker、追加出典候補、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `shinzo-fukuhara`. Formal counted/direct source candidates in this note: 11.
 
-## 2. Expression / method
-- Main themes: poetic urban and landscape photography, atmosphere, light, travel, and the pursuit of photography as an autonomous art rather than a purely technical craft or commercial record.[S2][S3]
-- Representative work example: Fukuhara is repeatedly associated with works and portfolios centered on Paris, Tokyo, and travel imagery, where mist, reflections, and tonal delicacy turn the city into an atmospheric field rather than a topographical record.[S2][S3]
-- Technique / formal traits: soft tonal transitions, attention to mood, restrained composition, and an emphasis on lyrical atmosphere rather than brute descriptive detail. His photographs are often discussed in relation to pictorial and symbolist tendencies, but his importance lies equally in how he translated those tendencies into a Japanese modern context.[S2][S3]
-- Why this method was chosen: Fukuhara argued for photography as art and built an environment in which photography could be discussed alongside painting, design, and literature. His own pictures therefore function not simply as images but as demonstrations of a broader aesthetic claim about the status of the medium.[S1][S2]
-- Historical context: his work belongs to the formation of modern photographic culture in Japan in the Taishō and early Shōwa periods, when photographic societies, journals, salons, and commercial culture were redefining what counted as serious photographic practice.[S1][S2][S3]
-- Relation to contemporaries or movements: Fukuhara stands close to Japanese pictorialism, but he also matters as an organizer who helped prepare the ground on which later Japanese modernist photography could emerge. His founding role in the Shiseido Gallery and his influence on photographic circles connect him to broader modern art networks rather than to photography alone.[S1][S2]
-- Historical significance: he is significant not only for the photographs themselves but for the institutional and discursive framework he helped create. In Japanese photo history, Fukuhara often appears as a figure who linked aesthetic theory, exhibition culture, publishing, and photographic practice.[S1][S2][S3]
-- Critical meaning: the photographs can be read as part of a larger effort to legitimize photography culturally. Their lyrical quality was not simply a matter of style; it also served a historical argument that photography could sustain mood, form, and refinement at the level expected of the fine arts.[S2][S3]
-- Where and how the work was used: his photographs circulated through exhibitions, publications, and the cultural infrastructure surrounding Shiseido and the Shiseido Gallery. His role as a cultural mediator is therefore part of the meaning of the work itself.[S1][S2]
+## 1. Basic facts / verified points
+- 資生堂初代社長、資生堂ギャラリー創設者であり、日本近代写真の芸術制度形成に深く関わった写真家。[S1][S2]
+- 1921年に写真芸術社を組織し、1923年に写真理論として重要な「光と其諧調」を発表したとGrey Art Museumは整理している。[S3]
+- 個人作品だけでなく、出版、展覧会、企業文化、ギャラリー運営を通じ、日本で写真を芸術として受け止める場を作った。[S1][S3]
 
-## 3. Criticism and reception
-- Later institutional writing tends to frame Fukuhara as a foundational figure in modern Japanese photographic aesthetics, not only because of individual images but because of the system of artistic support he helped assemble.[S1][S2]
-- Recent exhibitions emphasize that his importance lies in the intersection of photography, design, and exhibition culture. This reception is more infrastructural than purely auteurist, which is useful for final writing.[S1][S2]
-- The available sources support a strong case for his importance within Japanese photographic modernity, but detailed English-language critical discussions of specific prints remain limited.[S1][S2][S3]
+## 2. Expression / method / historical context
+福原信三の表現を考えるとき、写真作品の柔らかな調子だけでなく、制度形成者としての役割を同時に扱う必要がある。彼は欧米滞在と資生堂の企業文化を背景に、写真を単なる記録や趣味から、近代的な美意識を担う媒体へ押し上げようとした。ここでいう芸術写真はピクトリアリズムの模倣にとどまらず、光、調子、印刷、展示空間、雑誌文化を含む総合的な視覚文化の構想である。[S1][S3]
 
-## 4. Quote candidates
-- No verified first-person statement suitable for direct quotation was confirmed in the sources reviewed.
+福原の重要性は、作家個人の画面だけではなく、写真を受け取る制度を作った点にある。資生堂ギャラリーは商業企業の場でありながら、美術、デザイン、写真、広告を接続する近代日本の文化装置になった。写真芸術社の活動や理論的文章は、野島康三、中山岩太、安井仲治らが活動するための環境とも接続する。[S1][S8]
 
-## 5. Sources
-- [S1] PRESS RELEASE. Shiseido Gallery. https://gallery.shiseido.com/wpss/wp-content/uploads/2018/09/wpss-1st2018-10-19-2018-12-26-2nd2019-1-16-2019-3-17-201809051.pdf
-- [S2] 当館について. SHISEIDO GALLERY. https://gallery.shiseido.com/jp/access/
-- [S3] 個性と普遍性：写真家としての福原信三. 北の大学資料 PDF. https://kitanodaigagaku.music.coocan.jp/link/docs/20230308v4.pdf
+本文では、福原を「資生堂の経営者で写真も撮った人」としないことが重要である。むしろ、企業、出版、ギャラリー、写真理論を通じて、写真を近代日本の芸術制度へ組み込んだ人物として整理する。作品の柔らかな叙情性は、単なる個人趣味ではなく、近代都市の消費文化と芸術写真の間で生まれた美学として読むことができる。[S2][S3]
+
+## 3. Criticism / reception / historical significance
+福原は海外館での個別研究が多い作家ではないが、日本写真史では制度形成者として重要である。資生堂ギャラリー100周年関連の展示は、彼を企業経営を超えた社会創造的な芸術家として再検討している。[S1][S2] 今後の本文では、作品評価と制度史を分けず、写真文化を支える場を作ったこと自体を批評的意義として書くとよい。
+
+## 4. Coordinate support memo（本文には直接反映しない内部用）
+```yaml
+id: shinzo-fukuhara
+name_ja: 福原信三
+name_en: Shinzo Fukuhara
+birth_year: 1883
+death_year: 1948
+active_eras: ["1910s", "1920s", "1930s"]
+countries: ["Japan"]
+movements: ["Japanese pictorialism", "Japanese modern photography", "institution building"]
+platforms: ["Shiseido Gallery", "Shashin Geijutsu-sha", "photographic essays"]
+subjects: ["light", "landscape", "urban atmosphere"]
+methods: ["tonal photography", "pictorial composition", "gallery organization"]
+concepts: ["photographic art", "institution", "beauty"]
+influenced_by: ["European art photography", "Shiseido design culture"]
+related_figures: ["Yasuzo Nojima", "Iwata Nakayama", "Nakaji Yasui", "Roso Fukuhara"]
+description_short: "写真作品と制度形成の両面から、日本で写真を近代的な芸術文化へ接続した作家。"
+confidence: 0.85
+source_basis: ["museum", "archive", "exhibition", "specialist publication", "Japanese/English sources"]
+axes:
+  documentary: 3
+  staged: 1
+  subjective: 3
+  objective: 4
+  social: 3
+  formal_experiment: 3
+  catalog_impulse: 2
+  criticality: 3
+  personal_intimacy: 1
+  historical_awareness: 4
+  body_focus: 1
+  urban_focus: 3
+  memory_focus: 2
+  aesthetic_intensity: 4
+  materiality: 3
+surface_connections:
+  - "Japanese pictorialism、Japan、1910–1920年代の近接文脈で接続"
+  - "主要媒体 Shiseido Gallery を通じて同時代の写真流通と接続"
+deep_connections:
+  - "photographic artを写真の方法論として展開した"
+  - "写真作品と制度形成の両面から、日本で写真を近代的な芸術文化へ接続した作家。"
+comparison_targets: ["Yasuzo Nojima", "Iwata Nakayama", "Nakaji Yasui", "Roso Fukuhara"]
+one_sentence_connection: "写真作品と制度形成の両面から、日本で写真を近代的な芸術文化へ接続した作家。"
+tags: ["photographic-art", "institution", "beauty", "japanese-pictorialism", "japanese-modern-photography"]
+```
+
+## 5. Quote candidates
+- 福原信三の方法を端的に示す館解説文。
+- Shiseido Galleryに関する展覧会・所蔵館資料。
+- 本人発言または同時代批評は原典確認後に引用候補化する。
+
+## 6. Sources
+- [S1] 福原信三の美学. SHISEIDO GALLERY. https://gallery.shiseido.com/jp/exhibition/704/
+- [S2] Shinzo Fukuhara press release PDF. SHISEIDO GALLERY. https://gallery.shiseido.com/wpss/wp-content/uploads/2018/09/wpss-1st2018-10-19-2018-12-26-2nd2019-1-16-2019-3-17-201809051.pdf
+- [S3] Face to Face: Shiseido and the Manufacture of Beauty. Grey Art Museum / NYU. https://greyartmuseum.nyu.edu/exhibition/shiseido-091500-102800/
+- [S4] 福原信三と美術と資生堂展. Art Platform Japan. https://artplatform.go.jp/ja/artists/A1500
+- [S5] 福原信三 search. ToMuCo. https://museumcollection.tokyo/works/?q=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89
+- [S6] Shinzo Fukuhara search. ICP. https://www.icp.org/search-results/Shinzo%20Fukuhara
+- [S7] 福原信三 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89
+- [S8] 福原信三 search. CiNii Research. https://cir.nii.ac.jp/all?q=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89
+- [S9] Shinzo Fukuhara search. British Museum. https://www.britishmuseum.org/collection/search?keyword=Shinzo%20Fukuhara
+- [S10] 福原信三 search. CiNii Research. https://cir.nii.ac.jp/all?q=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89
+- [S11] Société photographique japonaise bibliography route. French Wikipedia bibliographic source route. https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_photographique_japonaise_%281924-%29
+
+## 7. Source exploration memo / next research routes
+出典数は11件。今回の範囲では信頼できる館・専門機関・日本語資料を優先した。情報量が多い作家は20〜30件まで増やせる余地がある。情報が薄い日本作家は図録、地域資料、写真雑誌、CiNii/NDLから追加探索する。

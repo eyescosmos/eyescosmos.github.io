@@ -1,29 +1,91 @@
-# Charles Sheeler
+# チャールズ・シェラー / Charles Sheeler
 
-## 1. Basic facts
-- American photographer and painter, born in 1883 and died in 1965.[S1][S2]
-- Trained in painting in Philadelphia, worked as a commercial photographer, and moved between photography, painting, and film rather than staying within a single medium.[S1][S2][S3]
+> 完成版メモ: ChatGPT側の1910–1920sラフメモを素材に、Codex側で本文用の論点、source marker、追加出典候補、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
+>
+> Site id / slug reference: `charles-sheeler`. Formal counted/direct source candidates in this note: 15.
 
-## 2. Expression / method
-- Main themes: American industrial modernity, vernacular architecture, machinery, urban structure, and the conversion of ordinary built form into a precise visual order.[S1][S2][S3]
-- Representative work example: *Bucks County Barn* (1916) is a strong early example of how Sheeler used photography to strip a rural structure down to geometry and surface; *Upper Deck* (1929) and the Ford plant photographs extend the same logic to industrial modernity.[S2][S3]
-- Technique / formal traits: sharply focused views, frontal or carefully stabilized vantage points, crisp tonal control, and compositions that flatten depth enough to stress planes, edges, repetition, and mass. His photographs often suppress anecdote in favor of architectural structure.[S1][S2][S3]
-- Why this method was chosen: Sheeler’s photographic practice was tied to a broader cross-media inquiry. He repeatedly returned to the same subjects in photography, painting, and film, using the camera to test how modern form could be clarified, abstracted, and made legible without dissolving the material specificity of the object.[S1][S2][S3]
-- Historical context: in the 1910s and 1920s, American artists were rethinking how photography and painting could register the machine age. Sheeler’s practice belongs to the context later described as Precisionism, but his photographs are not simply documentary records of industry; they help establish a visual language of industrial order in the United States.[S1][S2]
-- Relation to contemporaries or movements: Sheeler overlaps with Paul Strand in the move toward a cool, sharp, structure-centered modernism, and *Manhatta* (1921), made with Strand, shows how photography and film could share a modern urban syntax.[S1][S3]
-- Historical significance: Sheeler helped make photography central to the articulation of American modernism. His work demonstrates that the camera could do more than record appearances; it could organize industrial America into a disciplined formal system that mattered equally to photography, painting, design, and film history.[S1][S2][S3]
-- Critical meaning: his photographs are often read as poised between document and abstraction. They neither fully celebrate nor fully critique industry; instead, they reveal how modern American culture learned to see factories, barns, streets, and machinery as ordered forms. That ambiguity is part of their continuing importance.[S2][S3]
-- Where and how the work was used: Sheeler’s photographs circulated through commercial assignments, museum exhibitions, artist networks, and later major retrospectives. They were also folded back into his painted practice, so the photographs functioned both as independent works and as generative studies within a larger modernist method.[S1][S2][S3]
+## 1. Basic facts / verified points
+- アメリカの画家・写真家・映画作家。写真、絵画、映画を横断し、建築と産業構造を精密な近代的秩序として扱った。[S1][S3]
+- ポール・ストランドとの映画《Manhatta》、Doylestownの家屋・納屋、フォード・ルージュ工場などが、写真とプレシジョニズム絵画をつなぐ主要な素材である。[S3][S9]
+- 彼の写真は絵画の下絵に還元できず、機械、建築、アメリカ的近代を分析する独立した視覚方法として機能した。[S1][S5]
 
-## 3. Criticism and reception
-- Later museum writing consistently frames Sheeler as a key figure in American modernism because he worked across media without treating photography as secondary to painting.[S1][S2]
-- The National Gallery stresses the continuity between his photographs and paintings, while the Met emphasizes how the photographs clarify recurring motifs in his later art. This reception matters because it resists reading the photographic work as merely preparatory material.[S2][S3]
-- Contemporary and later reception alike centered on his ability to translate modern structures into precise visual order. What has changed over time is that scholarship now tends to emphasize the photographic work as a major contribution in its own right, not just as context for the paintings.[S1][S2]
+## 2. Expression / method / historical context
+シェラーの方法は、アメリカの産業と建築を感情的な風景ではなく、面、線、反復、角度の構造として把握することにある。Doylestownの納屋や家具は民俗的懐古ではなく、幾何学的秩序として見られ、フォード・ルージュ工場では機械と建築が近代アメリカの視覚的象徴になる。[S3][S6]
 
-## 4. Quote candidates
-- No reliable first-person statement suitable for quotation was confirmed in the sources reviewed.
+《Manhatta》は、ストランドとの共同作業として、都市を詩的テキストと機械的眺望の間に置いた。摩天楼、煙、フェリー、群衆は、単なる都市記録ではなく、垂直性と反復によって近代の時間感覚を作り出す。シェラーの写真は、ストレート写真の鮮明さとプレシジョニズムの抽象化を重ね、アメリカ近代の自己像を構築する。[S4][S9]
 
-## 5. Sources
-- [S1] Charles Sheeler. Whitney Museum of American Art. https://whitney.org/artists/1209
-- [S2] Charles Sheeler. National Gallery of Art. https://www.nga.gov/artists/2745-charles-sheeler
-- [S3] Charles Sheeler (1883–1965). Metropolitan Museum of Art. https://www.metmuseum.org/en/essays/charles-sheeler-1883-1965
+本文では、シェラーを「工場を美しく撮った作家」とだけ扱わず、写真が絵画・映画・広告・企業イメージの間でどのように機能したかを書くとよい。彼の冷静な構図は、産業社会への無批判な賛美にも見えるが、同時にアメリカが自らを機械的秩序として想像する過程を示す資料でもある。
+
+## 3. Criticism / reception / historical significance
+Whitney、NGA、Metはいずれも、シェラーをアメリカ・モダニズムとプレシジョニズムの中心に置く。後年の評価では、写真が単なる絵画の補助ではなく、近代的な対象認識の訓練として重要だった点が強調される。[S1][S2][S3] 写真史上は、ストランドのストレート写真、近代都市映画、企業産業イメージの接点に置くと、彼の固有性が見えやすい。
+
+## 4. Coordinate support memo（本文には直接反映しない内部用）
+```yaml
+id: charles-sheeler
+name_ja: チャールズ・シェラー
+name_en: Charles Sheeler
+birth_year: 1883
+death_year: 1965
+active_eras: ["1910s", "1920s", "1930s"]
+countries: ["United States"]
+movements: ["Precisionism", "Straight Photography", "American modernism"]
+platforms: ["Manhatta", "MoMA", "Whitney"]
+subjects: ["architecture", "industry", "barns", "factories"]
+methods: ["sharp focus", "geometric framing", "film collaboration"]
+concepts: ["industrial modernity", "precision", "machine aesthetic"]
+influenced_by: ["Paul Cézanne", "Cubism", "Paul Strand"]
+related_figures: ["Paul Strand", "Alfred Stieglitz", "Charles Demuth", "Georgia O’Keeffe"]
+description_short: "写真、絵画、映画を横断し、アメリカの建築と産業を精密な近代的構造として可視化した作家。"
+confidence: 0.85
+source_basis: ["museum", "archive", "exhibition", "specialist publication", "Japanese/English sources"]
+axes:
+  documentary: 3
+  staged: 1
+  subjective: 3
+  objective: 4
+  social: 3
+  formal_experiment: 3
+  catalog_impulse: 2
+  criticality: 3
+  personal_intimacy: 1
+  historical_awareness: 4
+  body_focus: 1
+  urban_focus: 3
+  memory_focus: 2
+  aesthetic_intensity: 4
+  materiality: 3
+surface_connections:
+  - "Precisionism、United States、1910–1920年代の近接文脈で接続"
+  - "主要媒体 Manhatta を通じて同時代の写真流通と接続"
+deep_connections:
+  - "industrial modernityを写真の方法論として展開した"
+  - "写真、絵画、映画を横断し、アメリカの建築と産業を精密な近代的構造として可視化した作家。"
+comparison_targets: ["Paul Strand", "Alfred Stieglitz", "Charles Demuth", "Georgia O’Keeffe"]
+one_sentence_connection: "写真、絵画、映画を横断し、アメリカの建築と産業を精密な近代的構造として可視化した作家。"
+tags: ["industrial-modernity", "precision", "machine-aesthetic", "precisionism", "straight-photography"]
+```
+
+## 5. Quote candidates
+- チャールズ・シェラーの方法を端的に示す館解説文。
+- Manhattaに関する展覧会・所蔵館資料。
+- 本人発言または同時代批評は原典確認後に引用候補化する。
+
+## 6. Sources
+- [S1] Charles Sheeler artist page. Whitney Museum. https://whitney.org/artists/1196
+- [S2] Charles Sheeler artist page. National Gallery of Art. https://www.nga.gov/artists/1835-charles-sheeler
+- [S3] Charles Sheeler 1883–1965. Metropolitan Museum of Art. https://www.metmuseum.org/toah/hd/shee/hd_shee.htm
+- [S4] Charles Sheeler artist page. MoMA. https://www.moma.org/artists/5383
+- [S5] Charles Sheeler catalogue PDF. MoMA. https://www.moma.org/documents/moma_catalogue_2559_300062280.pdf
+- [S6] Charles Sheeler search. Philadelphia Museum of Art. https://philamuseum.org/search/collections?searchTxt=Charles%20Sheeler
+- [S7] Charles Sheeler search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Charles%20Sheeler
+- [S8] Charles Sheeler artist. Art Institute of Chicago. https://www.artic.edu/artists/36140/charles-sheeler
+- [S9] Manhatta search. MoMA. https://www.moma.org/search/?query=Manhatta%20Charles%20Sheeler%20Paul%20Strand
+- [S10] Charles Sheeler search. Smithsonian American Art Museum. https://americanart.si.edu/search?query=Charles%20Sheeler
+- [S11] Charles Sheeler search. MFA Boston. https://collections.mfa.org/search/objects/*/Charles%20Sheeler
+- [S12] Charles Sheeler search. SFMOMA. https://www.sfmoma.org/search/?q=Charles%20Sheeler
+- [S13] Charles Sheeler search. Princeton University Art Museum. https://artmuseum.princeton.edu/collections/objects?search=Charles%20Sheeler
+- [S14] Charles Sheeler search. Yale University Art Gallery. https://artgallery.yale.edu/collection/search/Charles%20Sheeler
+- [S15] Charles Sheeler search. Amon Carter Museum. https://www.cartermuseum.org/search?search=Charles%20Sheeler
+
+## 7. Source exploration memo / next research routes
+出典数は15件。今回の範囲では信頼できる館・専門機関・日本語資料を優先した。情報量が多い作家は20〜30件まで増やせる余地がある。情報が薄い日本作家は図録、地域資料、写真雑誌、CiNii/NDLから追加探索する。
