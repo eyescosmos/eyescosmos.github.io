@@ -100,3 +100,9 @@ tags: ['anti-aesthetic', 'city as image-flow', 'media saturation', 'photographic
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。
+
+## 8. 追加探索先 / Additional exploration routes
+- 『写真よさようなら』『狩人』『記録』各巻の序文・あとがき・再刊解説
+- 森山大道写真財団の年譜・展覧会情報・本人発言
+- 中平卓馬、滝口修造、荒木経惟、横尾忠則との関係を扱う日本語論考
+- Tate、Photographers’ Gallery、Fondation Cartierの回顧展図録・インタビュー

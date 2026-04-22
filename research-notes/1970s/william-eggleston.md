@@ -100,3 +100,9 @@ tags: ['color as serious art', 'everyday modernity', 'banal subject matter', 'de
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。
+
+## 8. 追加探索先 / Additional exploration routes
+- MoMA 1976年展『William Eggleston’s Guide』の初期レビューとSzarkowskiテキスト
+- Eggleston Artistic Trustの作品解説、展覧会年譜、プリント技法資料
+- David Zwirner/Gagosian系の図録テキストとカラー写真制度史
+- 南部文化、ヴァナキュラー、New Colorに関する大学論文

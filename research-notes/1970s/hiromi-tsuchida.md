@@ -100,3 +100,9 @@ tags: ['memory', 'atomic bombing', 'archive', 'postwar modernization']
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。
+
+## 8. 追加探索先 / Additional exploration routes
+- 『ヒロシマ三部作』『Hiroshima Collection』の展覧会図録と本人発言
+- Carnegie International、TOP Museum、広島平和記念資料館関連資料
+- 高度経済成長期日本の都市記録、俗神、砂を数えるなどシリーズ別資料
+- 原爆記憶、遺品アーカイブ、タイポロジー的記録に関する論文

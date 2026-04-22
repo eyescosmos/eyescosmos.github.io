@@ -100,3 +100,9 @@ tags: ['media critique', 'representation', 'power language', 'feminist critique'
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。
+
+## 8. 追加探索先 / Additional exploration routes
+- Pictures Generation関連のOctober、Artforum、Afterimage論考
+- 作家インタビュー、広告・雑誌デザイン時代に関する一次発言
+- The Broad、MoMA、LACMA、Sprüth Magersの大型インスタレーション解説
+- フェミニズム、メディア批評、公共空間におけるテキスト作品の研究

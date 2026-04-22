@@ -100,3 +100,9 @@ tags: ['color seeing', 'ordinary America', 'serial travel', 'banal modernity']
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。
+
+## 8. 追加探索先 / Additional exploration routes
+- 『American Surfaces』『Uncommon Places』のAperture/MACK版テキスト
+- MoMA、303 Gallery、ICPの回顧展資料と本人インタビュー
+- カラー写真、ロードトリップ、スナップショット美学に関する論文
+- Warhol’s Factory、序列化された日常記録、Instagram以後の再評価

@@ -100,3 +100,9 @@ tags: ['difference', 'performance of self', 'ethics of looking', 'portrait as en
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。
+
+## 8. 追加探索先 / Additional exploration routes
+- Aperture版『Diane Arbus Revelations』『Documents』の図版解説・年譜・Marvin Israel関連記述
+- 1967年New Documents展のMoMAアーカイブ、Szarkowskiの展覧会テキスト
+- Susan Sontag以後の受容史、倫理批評、portrait encounterに関する大学論文
+- Fraenkel Gallery/Diane Arbus Archiveの展示資料と関連インタビュー

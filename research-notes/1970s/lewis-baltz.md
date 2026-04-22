@@ -100,3 +100,9 @@ tags: ['man-altered landscape', 'alienation', 'development critique', 'systemic 
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。
+
+## 8. 追加探索先 / Additional exploration routes
+- Getty Research InstituteのLewis Baltz Archive詳細資料
+- New Topographics展の図録・再展示資料・同時代レビュー
+- 『The New Industrial Parks』『Candlestick Point』『Park City』各写真集解説
+- LE BAL、NGA、Steidlの回顧展テキストとコンセプチュアルアート比較

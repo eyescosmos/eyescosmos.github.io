@@ -100,3 +100,9 @@ tags: ['queer visibility', 'classical form and taboo', 'censorship', 'museum con
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。
+
+## 8. 追加探索先 / Additional exploration routes
+- Mapplethorpe Foundation、Getty/LACMA共同アーカイブの詳細資料
+- The Perfect Moment展、NEA論争、検閲史の一次資料・新聞レビュー
+- Patti Smith、Sam Wagstaff、S&Mサブカルチャー、クィア写真史の文献
+- 花、身体、古典主義、ポートレートを分けて論じる展覧会図録
