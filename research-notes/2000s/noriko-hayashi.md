@@ -30,12 +30,77 @@
 - "I spent five months visiting villages" [S4].
 - "a white scarf is a symbol of marriage" [S3].
 
-## 6. Sources
+## 6. Sources (direct pages only)
 - [S1] `Noriko Hayashi`, Panos Pictures, https://www.panos.co.uk/portfolio/noriko-hayashi/
 - [S2] `Joop Swart Masterclass alumni`, World Press Photo, https://www.worldpressphoto.org/education/programs/joop-swart-masterclass/alumni
-- [S3] `Unholy Matrimony - Bride Kidnapping in Kyrgyzstan`, Noriko Hayashi official site, https://norikohayashi.com/unholy-matrimony
+- [S3] `Unholy Matrimony`, Noriko Hayashi official site, https://norikohayashi.com/unholy-matrimony
 - [S4] `Noriko Hayashi`, Verve Photo, https://vervephoto.wordpress.com/2014/02/10/noriko-hayashi/
-- [S5] `Kyrgyzstan - The Kidnapped Bride`, PBS Frontline/World, https://www.pbs.org/frontlineworld/stories/kyrgyzstan/thestory.html
-- [S6] `Noriko Hayashi`, Highlighting Japan, https://www.gov-online.go.jp/eng/publicity/book/hlj/html/201401/201401_10_en.html
-- [S7] `Visa d'Or awards 2013`, Visa pour l'Image press release PDF, https://www.bepub.com/sources/press_releases/communique--visa-or-awards-visa-pourimage-perpignan-2013_2013-09-23_162025.pdf
+- [S5] `The Story`, PBS FRONTLINE/World, https://www.pbs.org/frontlineworld/stories/kyrgyzstan/thestory.html
+- [S6] `Power of Photography`, Highlighting Japan, https://www.gov-online.go.jp/eng/publicity/book/hlj/html/201401/201401_10_en.html
+- [S7] `Visa pour l’Image awards press release`, Bepub PDF, https://www.bepub.com/sources/press_releases/communique--visa-or-awards-visa-pourimage-perpignan-2013_2013-09-23_162025.pdf
+- [S8] `Noriko Hayashi image library`, Panos Pictures Library, https://library.panos.co.uk/portfolios/portfolios/noriko-hayashi.html?page=1
+- [S9] `Noriko Hayashi`, Women Photograph, https://www.womenphotograph.com/photographers/noriko-hayashi
+- [S10] `Visa pour l’Image 2013 awards`, Visa pour l’Image, https://www.visapourlimage.com/en/festival/awards/visa-d-or-news/2013
+- [S11] `Celebrating 30 years of photojournalism at Visa pour l’Image`, Washington Post, https://www.washingtonpost.com/news/in-sight/wp/2018/09/04/celebrating-30-years-of-photojournalism-at-visa-pour-limage/
 
+## 7. Codex completion notes for later rewriting
+
+### 7.1 Material to strengthen in final prose
+- 林典子の重要性は、2000年代以降の日本の写真家が、国内写真史の枠を越えて、中央アジア、紛争後社会、ジェンダー暴力を国際報道の回路で扱う事例として位置づけられる点にある。
+- `Unholy Matrimony`は、キルギスの誘拐婚を被害者の証言と日常の場面から追い、写真を社会制度と個人の選択の狭間を見せる報道媒体として使う。
+- 美術館的な受容は多くないが、Panos、Visa pour l’Image、World Press Photo、PBS FRONTLINEといった報道・教育機関の導線が、同時代的受容の中心になる。
+
+### 7.2 Coordinate-support memo (internal; do not paste directly into public prose)
+```yaml
+id: noriko-hayashi
+name_ja: 林典子
+name_en: Noriko Hayashi
+birth_year: 1983
+death_year: null
+active_eras: [2000-2010s]
+countries: [Japan]
+movements: [Japanese documentary photography; photojournalism; human-rights documentary]
+platforms: [Panos Pictures; World Press Photo education; Visa pour l’Image; FRONTLINE/World; DAYS Japan]
+subjects: [bride kidnapping; conflict aftermath; women; forced marriage; human rights; Central Asia]
+methods: [long-form documentary; field reporting; portrait/reportage sequence; NGO/journalistic distribution]
+concepts: [human-rights documentary, gendered violence, photojournalism, testimony, transnational reporting]
+influenced_by: []
+related_figures: [Yumi Goto; Ami Vitale; Stephanie Sinclair; Alexandra Boulat; James Nachtwey]
+description_short: 中央アジアや紛争後地域の女性、人権、社会制度を、長期取材型の写真報道として可視化する。
+confidence: medium
+source_basis: Sources emphasize direct museum/gallery/artist/interview pages; search-result pages are excluded from counted Sources.
+axes:
+    documentary: 5
+    staged: 0
+    subjective: 2
+    objective: 4
+    social: 5
+    formal_experiment: 1
+    catalog_impulse: 1
+    criticality: 4
+    personal_intimacy: 3
+    historical_awareness: 4
+    body_focus: 3
+    urban_focus: 1
+    memory_focus: 3
+    aesthetic_intensity: 2
+    materiality: 1
+connection_material:
+  surface_relations: Panos Pictures、Visa pour l’Image、World Press Photo、PBS FRONTLINE、DAYS Japan。
+  deep_relations: 写真を証言と社会制度の可視化に使う点で、Stephanie SinclairやAlexandra Boulatと比較できる。
+  comparison_candidates: Stephanie Sinclair, Alexandra Boulat, Ami Vitale, James Nachtwey
+  one_sentence_connection: 林とSinclairは、女性と制度的暴力を長期取材によって可視化し、写真を人権問題の証言として機能させる。
+  reusable_tags: [photojournalism, human-rights, gender, social-document, testimony, Central-Asia, documentary]
+```
+
+## 8. Additional exploration routes / 追加探索先
+- Japanese-language DAYS Japan award archives and interviews around Central Asia reporting
+- Visa pour l’Image exhibition catalogues and French press around 2013 Visa d’Or feature award
+- Canon / Nikon / photography-school interview routes in Japanese
+- Academic routes around bride kidnapping in Kyrgyzstan, using Hayashi as photographic witness where explicitly cited
+- NHK World / broadcast archive routes for the photojournalist profile, if an official or stable archive page can be located
+
+## 9. Source exploration memo
+- Direct source pages currently retained in `Sources`: 11.
+- Search-result pages, generic catalogue searches, and broad database queries were intentionally excluded from `Sources` and kept as exploration routes.
+- The strongest next step is to deepen catalogue texts, archived reviews, and artist-talk transcripts where available, rather than increasing source count with weak or duplicative biographical pages.

@@ -32,12 +32,82 @@
 - "identity as something that is very fluid" [S6].
 - "constructed realities" [S3].
 
-## 6. Sources
-- [S1] `Kelli Connell - Carnival`, Metropolitan Museum of Art, https://www.metmuseum.org/art/collection/search/302230
+## 6. Sources (direct pages only)
+- [S1] `The Valley`, Metropolitan Museum of Art, https://www.metmuseum.org/art/collection/search/302230
 - [S2] `Kelli Connell`, Museum of Contemporary Photography, https://collections.mocp.org/mpp/connell_kelli.php
-- [S3] `Kelli Connell: Double Life, 20 Years`, Alice Austen House Museum, https://aliceausten.org/kelli-connell-double-life-20-years/
-- [S4] `Kelli Connell Double Life`, Lawndale Art Center, https://lawndaleartcenter.org/exhibition/kelli-connell/
-- [S5] `Kelli Connell: Pictures for Charis`, High Museum of Art, https://high.org/exhibition/kelli-connell/
+- [S3] `Kelli Connell: Double Life, 20 Years`, Alice Austen House, https://aliceausten.org/kelli-connell-double-life-20-years/
+- [S4] `Kelli Connell`, Lawndale Art Center, https://lawndaleartcenter.org/exhibition/kelli-connell/
+- [S5] `Kelli Connell`, High Museum of Art, https://high.org/exhibition/kelli-connell/
 - [S6] `Kelli Connell: Double Life`, Catherine Edelman Gallery, https://www.edelmangallery.com/exhibitions-and-projects/exhibition-pages/2011/kelli-connell-double-life.html
-- [S7] `Kelli Connell: Floating, 2005`, Aperture, https://store.aperture.org/products/floating-2005
+- [S7] `Floating, 2005`, Aperture, https://store.aperture.org/products/floating-2005
+- [S8] `Kelli Connell`, PhotoWork Foundation, https://photowork.foundation/kelli-connell/
+- [S9] `Publications`, Kelli Connell official site, https://www.kelliconnell.com/publications
+- [S10] `Kelli Connell: Double Life`, Kelli Connell official site, https://www.kelliconnell.com/double-life
+- [S11] `Kelli Connell`, Lenscratch, https://lenscratch.com/2011/10/kelli-connell/
+- [S12] `Kelli Connell: Pictures for Charis`, Aperture, https://aperture.org/books/kelli-connell-pictures-for-charis/
+- [S13] `Kelli Connell`, Cleveland Museum of Art, https://www.clevelandart.org/art/2022.70
+- [S14] `Aperture Releases Kelli Connell: Pictures for Charis`, Aperture press release, https://aperture.org/press-release/aperture-releases-kelli-connell-pictures-for-charis/
+- [S15] `Pictures for Charis press release`, Aperture PDF, https://aperture.org/wp-content/uploads/2024/05/Aperture_KelliConnell_PR.pdf
+- [S16] `Pictures for Charis exhibition`, Cleveland Museum of Art, https://www.clevelandart.org/about/press/new-photography-exhibition-kelli-connell-pictures-charis-juxtaposes-love-and-landscape
+
+## 7. Codex completion notes for later rewriting
+
+### 7.1 Material to strengthen in final prose
+- `Double Life`は、同一人物を合成して恋人同士や自己の分身のように見せることで、写真が「関係」を証明する媒体だという前提を揺さぶる。
+- Connellの方法は、デジタル合成でありながら過度な視覚効果を抑え、日常的な親密さの自然さを装うため、観客は写真の構成性と感情的な説得力のあいだに置かれる。
+- 近年の`Pictures for Charis`では、Edward WestonとCharis Wilsonの歴史を参照し、写真史の男性中心的な視線を、クィアな共同性と再演によって読み替える。
+
+### 7.2 Coordinate-support memo (internal; do not paste directly into public prose)
+```yaml
+id: kelli-connell
+name_ja: ケリー・コネル
+name_en: Kelli Connell
+birth_year: 1974
+death_year: null
+active_eras: [2000-2010s]
+countries: [United States]
+movements: [Conceptual photography; staged self/identity; queer portraiture]
+platforms: [MoCP; Aperture; Light Work; Alice Austen House; High Museum; university collections]
+subjects: [identity; gender; intimacy; doubled self; queer relationship; Charis Wilson / Edward Weston dialogue]
+methods: [digital compositing; repeated model; staged everyday scenes; self/other doubling]
+concepts: [constructed identity, queer representation, double life, relational self, staged documentary ambiguity]
+influenced_by: []
+related_figures: [Cindy Sherman; Claude Cahun; Francesca Woodman; Roni Horn; Charis Wilson; Edward Weston]
+description_short: 同一モデルをデジタル合成で二人に見せ、親密性、ジェンダー、自己と他者の境界を staged photography として問い直す。
+confidence: medium-high
+source_basis: Sources emphasize direct museum/gallery/artist/interview pages; search-result pages are excluded from counted Sources.
+axes:
+    documentary: 2
+    staged: 5
+    subjective: 4
+    objective: 1
+    social: 4
+    formal_experiment: 3
+    catalog_impulse: 0
+    criticality: 4
+    personal_intimacy: 5
+    historical_awareness: 3
+    body_focus: 4
+    urban_focus: 0
+    memory_focus: 3
+    aesthetic_intensity: 3
+    materiality: 2
+connection_material:
+  surface_relations: MoCP、Aperture、Alice Austen House、High Museum、Light Work、Center for Creative Photography周辺。
+  deep_relations: 自己と他者の境界を演出する方法で、Claude CahunやCindy Shermanと接続するが、Connellでは関係性とクィアな親密さが中心になる。
+  comparison_candidates: Claude Cahun, Cindy Sherman, Francesca Woodman, Roni Horn, Charis Wilson
+  one_sentence_connection: ConnellとCahunは、写真の自己像を固定された肖像ではなく、演技、分身、関係性によって変形する場として扱う。
+  reusable_tags: [staged-image, queer-portraiture, identity, intimate-life, doubling, digital-compositing, gender]
+```
+
+## 8. Additional exploration routes / 追加探索先
+- Center for Creative Photography exhibition / archive pages for `Pictures for Charis` context
+- University artist-talk pages around Columbia College Chicago and Texas Woman’s University
+- Decode Books route for `Double Life` publication reception
+- Queer photography scholarship routes linking Connell to Cahun, Sherman, and constructed identity
+
+## 9. Source exploration memo
+- Direct source pages currently retained in `Sources`: 16.
+- Search-result pages, generic catalogue searches, and broad database queries were intentionally excluded from `Sources` and kept as exploration routes.
+- The strongest next step is to deepen catalogue texts, archived reviews, and artist-talk transcripts where available, rather than increasing source count with weak or duplicative biographical pages.
 

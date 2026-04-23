@@ -31,12 +31,81 @@
 - "photography is radiation sensitive material" [S4].
 - "focus entirely on creating color" [S3].
 
-## 6. Sources
-- [S1] `Jessica Eaton`, official artist website, https://www.jessicaeaton.com/
+## 6. Sources (direct pages only)
+- [S1] `Jessica Eaton official site`, artist site, https://www.jessicaeaton.com/
 - [S2] `Jessica Eaton: Cube, Color, Cosmos`, TIME, https://time.com/3788545/jessica-eaton/
-- [S3] `Jessica Eaton`, Higher Pictures, https://higherpictures.com/news/jessica-eaton-13/
-- [S4] `Jessica Eaton`, Higher Pictures / FOAM interview, https://higherpictures.com/news/jessica-eaton-5/
-- [S5] `Jessica Eaton`, MONTECRISTO, https://montecristomagazine.com/arts/jessica-eaton
+- [S3] `Jessica Eaton news`, Higher Pictures, https://higherpictures.com/news/jessica-eaton-13/
+- [S4] `Jessica Eaton / FOAM`, Higher Pictures, https://higherpictures.com/news/jessica-eaton-5/
+- [S5] `Jessica Eaton`, MONTECRISTO Magazine, https://montecristomagazine.com/arts/jessica-eaton
 - [S6] `Jessica Eaton`, The New Yorker, https://www.newyorker.com/goings-on-about-town/art/jessica-eaton-2
 - [S7] `Ocean of Images: New Photography 2015`, Museum of Modern Art, https://www.moma.org/calendar/exhibitions/1539
+- [S8] `Jessica Eaton: from 50 shades of grey to the hottest photography around`, The Guardian, https://www.theguardian.com/artanddesign/2014/jan/24/jessica-eaton-photography-colour-cubes
+- [S9] `Jessica Eaton`, Stephen Bulger Gallery, https://www.bulgergallery.com/artists/34-jessica-eaton/
+- [S10] `Jessica Eaton`, M+B Gallery, https://www.mbart.com/artists/139-jessica-eaton/
+- [S11] `New Acquisition: Jessica Eaton`, National Gallery of Canada Magazine, https://www.gallery.ca/magazine/your-collection/new-acquisition-jessica-eaton
+- [S12] `Jessica Eaton`, Canada Council for the Arts / Governor General Awards context, https://ggavma.canadacouncil.ca/archive/2019/winners/jessica-eaton
+- [S13] `Lenscraft: Jessica Eaton Asks Us to Think About What We See`, Canadian Art, https://canadianart.ca/features/jessica-eaton/
+- [S14] `Jessica Eaton Awarded 2019 Guggenheim Fellowship`, M+B Gallery PDF, https://www.mbart.com/usr/documents/press/download_url/877/jessica-eaton-2019-04-10-guggenheim.pdf
+- [S15] `Collectors Symposium 2015`, National Gallery of Canada PDF, https://www.gallery.ca/sites/default/files/upload/annual_report_2015-16.pdf
+
+## 7. Codex completion notes for later rewriting
+
+### 7.1 Material to strengthen in final prose
+- Eatonの作品は、写真の色を後処理の効果としてではなく、カメラ、フィルター、露光、対象物の配置によって生成される構造として扱う。
+- `Cubes for Albers and LeWitt`は、モダニズム絵画やミニマリズムの系譜を写真装置内部に引き込み、写真が色彩理論を実験できる媒体であることを示した。
+- デジタル時代の作家でありながら、方法はアナログカメラ内の操作に強く依存しており、ポストデジタルな感覚と写真の光学的基礎を接続する点が重要。
+
+### 7.2 Coordinate-support memo (internal; do not paste directly into public prose)
+```yaml
+id: jessica-eaton
+name_ja: ジェシカ・イートン
+name_en: Jessica Eaton
+birth_year: 1977
+death_year: null
+active_eras: [2000-2010s]
+countries: [Canada]
+movements: [Conceptual photography; color abstraction; camera-based formal experiment]
+platforms: [official archive; Canadian institutions; MoMA Ocean of Images; Stephen Bulger; M+B]
+subjects: [color perception; camera optics; studio objects; modernist abstraction]
+methods: [multiple exposure; color-filter separation; analog camera procedures; studio construction]
+concepts: [RGB, perception, Albers, LeWitt, camera as generative apparatus, optical construction]
+influenced_by: []
+related_figures: [Barbara Kasten; Liz Deschenes; Eileen Quinlan; Walead Beshty; Sol LeWitt; Josef Albers]
+description_short: カメラ内の多重露光と色分解を用い、写真を外界の記録ではなく、色と知覚を生成する装置として扱う。
+confidence: medium-high
+source_basis: Sources emphasize direct museum/gallery/artist/interview pages; search-result pages are excluded from counted Sources.
+axes:
+    documentary: 0
+    staged: 4
+    subjective: 2
+    objective: 4
+    social: 1
+    formal_experiment: 5
+    catalog_impulse: 2
+    criticality: 3
+    personal_intimacy: 0
+    historical_awareness: 4
+    body_focus: 0
+    urban_focus: 0
+    memory_focus: 0
+    aesthetic_intensity: 5
+    materiality: 4
+connection_material:
+  surface_relations: MoMA `Ocean of Images`、カナダ美術制度、Stephen Bulger Gallery、M+B、色彩抽象の国際的受容。
+  deep_relations: カメラを記録装置ではなく生成装置として使う点で、Barbara KastenやLiz Deschenes、Eileen Quinlanと接続する。
+  comparison_candidates: Barbara Kasten, Liz Deschenes, Eileen Quinlan, Walead Beshty
+  one_sentence_connection: EatonとKastenは、写真を対象の写しではなく、光、色、構造物、装置が作る視覚実験として扱う。
+  reusable_tags: [color, abstraction, camera-apparatus, formal-experiment, perception, modernism, materiality]
+```
+
+## 8. Additional exploration routes / 追加探索先
+- Canadian Art / Momus archive routes for Canadian reception and criticism
+- Hyères festival archive route for 2012 photography prize material
+- Guggenheim Fellowship 2019 records for institutional recognition
+- Academic routes around Albers, LeWitt, color theory, and camera-based abstraction
+
+## 9. Source exploration memo
+- Direct source pages currently retained in `Sources`: 15.
+- Search-result pages, generic catalogue searches, and broad database queries were intentionally excluded from `Sources` and kept as exploration routes.
+- The strongest next step is to deepen catalogue texts, archived reviews, and artist-talk transcripts where available, rather than increasing source count with weak or duplicative biographical pages.
 

@@ -32,13 +32,86 @@
 - "leave something disturbing" [S4].
 - "new photographic forms" [S2].
 
-## 6. Sources
+## 6. Sources (direct pages only)
 - [S1] `2011 Infinity Award: Applied/Fashion/Advertising`, International Center of Photography, https://www.icp.org/infinity-awards/viviane-sassen
 - [S2] `Viviane Sassen - PHOSPHOR: Art & Fashion`, Foam, https://www.foam.org/events/viviane-sassen
-- [S3] `MoMA | New Photography 2011 | Viviane Sassen`, Museum of Modern Art, https://www.moma.org/interactives/exhibitions/2011/newphotography/viviane-sassen/
+- [S3] `MoMA New Photography 2011: Viviane Sassen`, Museum of Modern Art, https://www.moma.org/interactives/exhibitions/2011/newphotography/viviane-sassen/
 - [S4] `In the Shadow of Viviane Sassen`, TIME, https://time.com/3777044/in-the-shadow-of-viviane-sassen/
 - [S5] `Viviane Sassen`, National Galleries of Scotland, https://www.nationalgalleries.org/art-and-artists/artists/viviane-sassen
 - [S6] `New Photography 2011`, Museum of Modern Art, https://www.moma.org/calendar/exhibitions/1182
 - [S7] `Viviane Sassen exhibitions`, Stevenson, https://www.stevenson.info/artist/viviane-sassen/exhibitions
 - [S8] `Viviane Sassen - Roxane II`, Stevenson, https://www.stevenson.info/exhibition/2559
+- [S9] `PHOSPHOR press release`, Foam, https://www.foam.org/press/viviane-sassen
+- [S10] `Viviane Sassen`, Huis Marseille, https://huismarseille.nl/vivianesassen/
+- [S11] `Viviane Sassen`, Tate, https://www.tate.org.uk/art/artists/viviane-sassen-19169
+- [S12] `Viviane Sassen`, Stedelijk Museum Amsterdam, https://www.stedelijk.nl/en/exhibitions/viviane-sassen
+- [S13] `Viviane Sassen`, Aperture, https://aperture.org/editorial/viviane-sassen/
+- [S14] `Viviane Sassen interview`, AnOther Magazine, https://www.anothermag.com/art-photography/14282/viviane-sassen-phosphor-interview
+- [S15] `Viviane Sassen: PHOSPHOR`, The Hepworth Wakefield, https://hepworthwakefield.org/whats-on/viviane-sassen-phosphor/
+- [S16] `Viviane Sassen`, The Ravestijn Gallery, https://www.theravestijngallery.com/artists/39-viviane-sassen/
+- [S17] `Viviane Sassen on creativity and experimentation`, 1854 Photography, https://www.1854.photography/2018/07/viviane-sassen-on-creativity-and-experimentation/
+- [S18] `For Viviane Sassen, art is a canvas for hopes, wishes, and uncertainties`, Document Journal, https://www.documentjournal.com/2023/10/viviane-sassen-phosphor-art-and-fashion-retrospective-maison-europeenne-photography/
+- [S19] `Viviane Sassen texts: Interview`, Viviane Sassen official site, https://www.vivianesassen.com/texts/interview/
+- [S20] `Viviane Sassen: Phosphor sample`, Prestel Publishing PDF, https://prestelpublishing.penguinrandomhouse.de/leseprobe/Viviane-Sassen-Phosphor/leseprobe_9783791389783.pdf
+
+## 7. Codex completion notes for later rewriting
+
+### 7.1 Material to strengthen in final prose
+- Sassenは、ファッション写真の視覚的魅惑を美術写真へ持ち込みながら、顔を隠し、身体を断片化し、影を彫刻的な要素として扱う。
+- ケニアでの幼少期とヨーロッパへの帰属感の不安定さは、`Parasomnia`や`Flamboya`における夢、記憶、異郷性の感覚を理解する鍵になる。
+- MoMA、ICP、Foam、Huis Marseilleなどの受容は、彼女が商業/ファッションと美術館制度の境界を横断した重要作家であることを示す。
+
+### 7.2 Coordinate-support memo (internal; do not paste directly into public prose)
+```yaml
+id: viviane-sassen
+name_ja: ヴィヴィアン・サッセン
+name_en: Viviane Sassen
+birth_year: 1972
+death_year: null
+active_eras: [2000-2010s]
+countries: [Netherlands]
+movements: [Fashion / art photography; color and shadow; postcolonial memory]
+platforms: [ICP; Foam; MoMA; Tate; Huis Marseille; Stedelijk; Stevenson]
+subjects: [body; shadow; color; Africa/Europe; fashion; memory; desire; obscured identity]
+methods: [saturated color; deep shadow; fragmented bodies; fashion staging; collage/painting interventions; video]
+concepts: [shadow, displacement, fashion/art boundary, archetype, postcolonial gaze, body as sculpture]
+influenced_by: []
+related_figures: [Mika Ninagawa; Wolfgang Tillmans; Malick Sidibé; Seydou Keïta; Deana Lawson; Zanele Muholi]
+description_short: ファッションと美術写真を横断し、影、身体、色彩、記憶を用いて、魅惑と不安が同居するイメージを作る。
+confidence: high
+source_basis: Sources emphasize direct museum/gallery/artist/interview pages; search-result pages are excluded from counted Sources.
+axes:
+    documentary: 2
+    staged: 4
+    subjective: 5
+    objective: 1
+    social: 3
+    formal_experiment: 4
+    catalog_impulse: 1
+    criticality: 4
+    personal_intimacy: 4
+    historical_awareness: 4
+    body_focus: 5
+    urban_focus: 1
+    memory_focus: 4
+    aesthetic_intensity: 5
+    materiality: 4
+connection_material:
+  surface_relations: ICP Infinity Award、MoMA New Photography、Foam retrospective、Tate、Huis Marseille、Stedelijk。
+  deep_relations: 身体を個人の肖像から切り離し、色彩、影、記憶、欲望のアーキタイプへ変換する点で、Mika NinagawaやDeana Lawsonと比較できる。
+  comparison_candidates: Mika Ninagawa, Deana Lawson, Zanele Muholi, Wolfgang Tillmans
+  one_sentence_connection: Sassenと蜷川は、ファッション的な表面の強度を使いながら、色彩、身体、欲望を美術写真の批評的な問いへ変換する。
+  reusable_tags: [fashion, color, shadow, body, memory, postcolonial, surface, staged-image, aesthetic-intensity]
+```
+
+## 8. Additional exploration routes / 追加探索先
+- Dutch-language reviews of `Phosphor`, `Venus & Mercury`, and `In and Out of Fashion`
+- Fashion magazine archive routes: i-D, Dazed, Numéro, POP, New York Times Magazine
+- Postcolonial photography scholarship around Africa/Europe memory and fashion image
+- Japanese reception routes around Sassen exhibitions and fashion-photo criticism
+
+## 9. Source exploration memo
+- Direct source pages currently retained in `Sources`: 20.
+- Search-result pages, generic catalogue searches, and broad database queries were intentionally excluded from `Sources` and kept as exploration routes.
+- The strongest next step is to deepen catalogue texts, archived reviews, and artist-talk transcripts where available, rather than increasing source count with weak or duplicative biographical pages.
 

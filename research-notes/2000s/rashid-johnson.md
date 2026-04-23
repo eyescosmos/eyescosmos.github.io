@@ -33,13 +33,90 @@
 - "double consciousness" [S4].
 - "felt old while... very new" [S6].
 
-## 6. Sources
+## 6. Sources (direct pages only)
 - [S1] `Rashid Johnson`, Hauser & Wirth, https://www.hauserwirth.com/artists/2830-rashid-johnson
 - [S2] `Rashid Johnson: Message to Our Folks`, Museum of Contemporary Art Chicago, https://mcachicago.org/exhibitions/2012/rashid-johnson-message-to-our-folks
-- [S3] `Rashid Johnson`, MoMA, https://www.moma.org/collection/artists/42465
-- [S4] `The New Negro Escapist Social and Athletic Club (Kiss)`, TBA21, https://tba21.org/Negro_escapist
-- [S5] `Object of the Month: Larry by Rashid Johnson`, Bowdoin College Museum of Art, https://www.bowdoin.edu/art-museum/news/2023/larry-rashid-johnson.html
-- [S6] `Rashid Johnson and the Fine Art of Anxiety`, TIME, https://time.com/7272211/rashid-johnson-guggenheim-interview/
+- [S3] `Rashid Johnson`, Museum of Modern Art, https://www.moma.org/collection/artists/42465
+- [S4] `The New Negro Escapist Social and Athletic Club`, TBA21, https://tba21.org/Negro_escapist
+- [S5] `Larry: Rashid Johnson`, Bowdoin College Museum of Art, https://www.bowdoin.edu/art-museum/news/2023/larry-rashid-johnson.html
+- [S6] `Rashid Johnson Guggenheim interview`, TIME, https://time.com/7272211/rashid-johnson-guggenheim-interview/
 - [S7] `The New Negro Escapist Social and Athletic Club (Emmett)`, National Gallery of Art, https://www.nga.gov/artworks/221714-new-negro-escapist-social-and-athletic-club-emmett
 - [S8] `Calvin`, Smithsonian National Museum of African American History and Culture, https://www.si.edu/object/calvin%3Anmaahc_2015.184
+- [S9] `Rashid Johnson: Anima`, Hauser & Wirth, https://www.hauserwirth.com/hauser-wirth-exhibitions/rashid-johnson/
+- [S10] `Rashid Johnson: A Poem for Deep Thinkers press release`, Guggenheim Museum PDF, https://www.guggenheim.org/wp-content/uploads/2024/08/press-release-rashid-johnson-a-poem-for-deep-thinkers-12202024.pdf
+- [S11] `Rashid Johnson research guide`, Jordan Schnitzer Museum of Art PDF, https://jsma.uoregon.edu/sites/default/files/2025-03/jsma-research-guide-rashid-johnson.pdf
+- [S12] `Rashid Johnson`, Art Institute of Chicago, https://www.artic.edu/artists/112436/rashid-johnson
+- [S13] `Rashid Johnson`, SFMOMA, https://www.sfmoma.org/artist/rashid_johnson/
+- [S14] `Rashid Johnson`, Whitney Museum of American Art, https://whitney.org/artists/11319
+- [S15] `Rashid Johnson`, David Kordansky Gallery, https://www.davidkordanskygallery.com/artist/rashid-johnson
+- [S16] `Rashid Johnson: Fly Away`, Art Observed, https://artobserved.com/2016/09/new-york-rashid-johnson-fly-away-at-hauser-and-wirth-through-october-22nd-2016/
+- [S17] `Freestyle`, Studio Museum in Harlem, https://www.studiomuseum.org/exhibitions/freestyle
+- [S18] `Rashid Johnson Makes Things to Put Things On`, Art21, https://art21.org/watch/new-york-close-up/rashid-johnson-makes-things-to-put-things-on/
+- [S19] `Studio Visit: Rashid Johnson on Wifredo Lam`, MoMA Magazine, https://www.moma.org/magazine/articles/1379
+- [S20] `Rashid Johnson: New Poetry`, Whitney Museum of American Art, https://whitney.org/exhibitions/rashid-johnson-new-poetry
+- [S21] `In His New Show, Rashid Johnson Explores Black Escapism`, Artsy, https://www.artsy.net/article/artsy-editorial-in-his-new-show-rashid-johnson-explores-black-escapism
+- [S22] `Freestyle at the Studio Museum`, Haber’s Art Reviews, https://www.haberarts.com/freestyl.htm
+- [S23] `Rashid Johnson`, Metal Magazine, https://metalmagazine.eu/en/post/rashid-johnson
+- [S24] `Rashid Johnson CV`, moniquemeloche PDF, https://www.moniquemeloche.com/usr/library/documents/main/artists/42/rj21-cv-3-.pdf
+
+## 7. Codex completion notes for later rewriting
+
+### 7.1 Material to strengthen in final prose
+- Johnsonは写真教育を受けた作家だが、2000年代以降、写真、シェイバター、黒い石鹸、鏡、植物、棚、映画を組み合わせ、黒人性と個人的記憶を物質的なインスタレーションへ拡張した。
+- `The New Negro Escapist Social and Athletic Club`は、肖像写真、クラブ、逃避、社交性、歴史的表象を結び、ポスト・ブラック世代の写真表現として特に重要。
+- MCA Chicagoの`Message to Our Folks`やGuggenheimの大規模回顧は、Johnsonを写真家という狭い分類ではなく、写真を起点にした現代美術の制度的中心へ位置づける。
+
+### 7.2 Coordinate-support memo (internal; do not paste directly into public prose)
+```yaml
+id: rashid-johnson
+name_ja: ラシード・ジョンソン
+name_en: Rashid Johnson
+birth_year: 1977
+death_year: null
+active_eras: [2000-2010s]
+countries: [United States]
+movements: [Post-Black art; conceptual photography; multidisciplinary contemporary art]
+platforms: [Hauser & Wirth; MCA Chicago; MoMA; Guggenheim; NGA; Smithsonian; TBA21]
+subjects: [Black identity; domestic objects; literature; material symbolism; escape; interiority; anxiety; history]
+methods: [photography; sculpture; installation; black soap; shea butter; mirror; tile; plants; film]
+concepts: [Post-Black, identity, material culture, interiority, escape, social history, domestic hijacking]
+influenced_by: []
+related_figures: [Thelma Golden; Glenn Ligon; Lorna Simpson; David Hammons; Arthur Jafa; Carrie Mae Weems]
+description_short: 写真から出発し、黒人性、物質、家庭的記憶、文学を横断するインスタレーションへ展開したポスト・ブラック世代の中心作家。
+confidence: high
+source_basis: Sources emphasize direct museum/gallery/artist/interview pages; search-result pages are excluded from counted Sources.
+axes:
+    documentary: 2
+    staged: 4
+    subjective: 4
+    objective: 1
+    social: 5
+    formal_experiment: 4
+    catalog_impulse: 2
+    criticality: 5
+    personal_intimacy: 4
+    historical_awareness: 5
+    body_focus: 3
+    urban_focus: 2
+    memory_focus: 4
+    aesthetic_intensity: 5
+    materiality: 5
+connection_material:
+  surface_relations: Thelma GoldenのPost-Black文脈、MCA Chicago、Hauser & Wirth、Guggenheim、MoMA、NGA、Smithsonian。
+  deep_relations: 写真の肖像性を、物質、文学、歴史、自己像の問題へ拡張する点で、Lorna SimpsonやGlenn Ligonと接続する。
+  comparison_candidates: Lorna Simpson, Glenn Ligon, Carrie Mae Weems, Arthur Jafa, David Hammons
+  one_sentence_connection: JohnsonとSimpsonは、黒人の身体や肖像を単なる表象ではなく、歴史、言語、物質が交差する批評的な場として扱う。
+  reusable_tags: [Post-Black, identity, materiality, social-history, domestic-object, conceptual-photography, criticality]
+```
+
+## 8. Additional exploration routes / 追加探索先
+- Studio Museum Harlem / Freestyle / Post-Black primary exhibition-history routes
+- BOMB and Art21 interview routes for direct artist statements
+- Thelma Golden, Huey Copeland, Darby English criticism routes around Post-Black art
+- Auction-market sources are not useful as core evidence unless tied to institutional reception
+
+## 9. Source exploration memo
+- Direct source pages currently retained in `Sources`: 24.
+- Search-result pages, generic catalogue searches, and broad database queries were intentionally excluded from `Sources` and kept as exploration routes.
+- The strongest next step is to deepen catalogue texts, archived reviews, and artist-talk transcripts where available, rather than increasing source count with weak or duplicative biographical pages.
 

@@ -31,11 +31,84 @@
 - "the documentation becomes a separate work in itself" [S5].
 - "lack of fixity in representational strategy" [S4].
 
-## 6. Sources
+## 6. Sources (direct pages only)
 - [S1] `Artie Vierkant`, Higher Pictures, https://higherpictures.com/press/artie-vierkant/
 - [S2] `Image Objects`, Rhizome Net Art Anthology, https://anthology.rhizome.org/image-objects
 - [S3] `The Image Object Post-Internet`, Artie Vierkant / JstChillin PDF, https://jstchillin.org/artie/pdf/The_Image_Object_Post-Internet_us.pdf
 - [S4] `Artie Vierkant's Image Objects: A Brief History`, ARTUNER, https://www.artuner.com/insight/artie-vierkants-image-objects-brief-history/
 - [S5] `What Is a Photograph?`, Higher Pictures / ICP-related report, https://higherpictures.com/news/what-is-a-photograph-4/
 - [S6] `Artie Vierkant CV`, artist archive, https://artievierkant.com/cv.php
+- [S7] `Artists at Work: Artie Vierkant`, Interview Magazine, https://www.interviewmagazine.com/art/artists-at-work-artie-vierkant
+- [S8] `Image Objects`, The New Yorker, https://www.newyorker.com/goings-on-about-town/art/image-objects
+- [S9] `Artie Vierkant`, Frieze, https://www.frieze.com/article/artie-vierkant
+- [S10] `Photo Op, Brian Droitcour on Artie Vierkant`, artist archive / Artforum scan, https://artievierkant.com/artforum.php
+- [S11] `Artie Vierkant interview`, Out of Order PDF / artist archive, https://artievierkant.com/pdfs/OutOfOrder_Vierkant.pdf
+- [S12] `Image Objects project archive`, artist archive, https://artievierkant.com/imageobjects.php
+- [S13] `Image Objects 2012 project archive`, artist archive, https://artievierkant.com/imageobjects2012.php
+- [S14] `Rooms Greet People By Name`, Perrotin, https://www.perrotin.com/exhibitions/artie_vierkant-rooms-greet-people-by-name/6417
+- [S15] `Rooms Greet People By Name press release`, Perrotin PDF, https://static.perrotin.com/presse_expo/press_release_6417_0.pdf?v=1519837028
+- [S16] `Image Objects publication`, Perrotin Store New York, https://storeny.perrotin.com/products/artie-vierkant-image-objects
+- [S17] `Artie Vierkant CV, extended`, artist archive, https://artievierkant.com/cv1.php
+- [S18] `Artie Vierkant CV`, New Galerie PDF, https://www.newgalerie.com/artists/14/pdf/Artie_Vierkant_CV_New_Galerie_September_2017.pdf
+
+## 7. Codex completion notes for later rewriting
+
+### 7.1 Material to strengthen in final prose
+- `Image Objects`は、写真を「対象の記録」から、ファイル、物体、展示記録、オンライン再流通のあいだを移動する可変的な状態へ置き直す実践として読める。
+- 作品の一次性を一点に固定せず、展示記録そのものを改変可能な作品状態として扱うため、写真史上の「オリジナル」「複製」「展示写真」の区別を2000年代以降のネットワーク環境に合わせて揺さぶる。
+- Vierkant自身の理論文は、作品理解の一次言説として特に重要で、ポストインターネット的な条件を、技術テーマではなく流通と認識の条件として扱っている。
+
+### 7.2 Coordinate-support memo (internal; do not paste directly into public prose)
+```yaml
+id: artie-vierkant
+name_ja: アーティ・ヴィアカント
+name_en: Artie Vierkant
+birth_year: 1986
+death_year: null
+active_eras: [2000-2010s]
+countries: [United States]
+movements: [Post-internet art; conceptual photography; image-object practice]
+platforms: [gallery installation; artist essay; online documentation; public art; network circulation]
+subjects: [image circulation; authorship; documentation; digital-object instability]
+methods: [UV prints on cut panels; altered installation documentation; file-object-document chains]
+concepts: [post-internet; image object; mutability; distributed authorship; representation without stable original]
+influenced_by: []
+related_figures: [Jon Rafman; Petra Cortright; Michael Staniak; Timur Si-Qin; Hito Steyerl]
+description_short: デジタル画像、展示物、記録写真を同じ連鎖の中で扱い、写真のオブジェクト性とネットワーク流通を再定義する。
+confidence: medium-high
+source_basis: Sources emphasize direct museum/gallery/artist/interview pages; search-result pages are excluded from counted Sources.
+axes:
+    documentary: 1
+    staged: 2
+    subjective: 2
+    objective: 2
+    social: 2
+    formal_experiment: 5
+    catalog_impulse: 2
+    criticality: 5
+    personal_intimacy: 1
+    historical_awareness: 3
+    body_focus: 0
+    urban_focus: 1
+    memory_focus: 1
+    aesthetic_intensity: 3
+    materiality: 5
+connection_material:
+  surface_relations: 同時代のポストインターネット作家、Rhizome周辺、オンライン展示記録文化、Public Art Fundの屋外展示。
+  deep_relations: 「写真は固定された証拠ではなく、複数の実体化をもつ可変的なイメージ状態である」という写真観で、Hito SteyerlやLucas Blalockと比較しやすい。
+  comparison_candidates: Lucas Blalock, Kate Steciw, Hito Steyerl, Jon Rafman
+  one_sentence_connection: VierkantとBlalockは、デジタル処理後の写真を透明な再現ではなく、処理痕と流通条件を露呈する思考装置として扱う点で接続できる。
+  reusable_tags: [post-internet, image-object, media-critique, materiality, circulation, authorship, representation-crisis]
+```
+
+## 8. Additional exploration routes / 追加探索先
+- Mousse Magazine archives for Artie Vierkant and post-internet image-object criticism
+- Artforum archive review routes via artist CV entries: Daniel Quiles, Brian Droitcour, Alex Greenberger
+- University lecture pages for Vierkant after 2015, especially Penn, UCSD, SAIC, Parsons
+- WorldCat routes for catalogues connected to `Image Objects`, `Exploits`, and post-internet survey exhibitions
+
+## 9. Source exploration memo
+- Direct source pages currently retained in `Sources`: 18.
+- Search-result pages, generic catalogue searches, and broad database queries were intentionally excluded from `Sources` and kept as exploration routes.
+- The strongest next step is to deepen catalogue texts, archived reviews, and artist-talk transcripts where available, rather than increasing source count with weak or duplicative biographical pages.
 

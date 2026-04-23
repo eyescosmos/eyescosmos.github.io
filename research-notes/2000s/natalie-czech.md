@@ -31,12 +31,80 @@
 - "poetry can exist anywhere" [S2].
 - "confluence of Concrete poetry and appropriationist photography" [S3].
 
-## 6. Sources
-- [S1] `Natalie Czech`, Frieze review, https://www.frieze.com/article/natalie-czech
-- [S2] `Natalie Czech: Filling in the Blanks`, Frieze, https://www.frieze.com/article/natalie-czech-de
-- [S3] `Natalie Czech`, MAMCO Geneve, https://www.mamco.ch/en/1780/Natalie-Czech
+## 6. Sources (direct pages only)
+- [S1] `Natalie Czech`, Frieze, https://www.frieze.com/article/natalie-czech
+- [S2] `Natalie Czech`, Frieze DE, https://www.frieze.com/article/natalie-czech-de
+- [S3] `Natalie Czech`, MAMCO, https://www.mamco.ch/en/1780/Natalie-Czech
 - [S4] `Natalie Czech's Hidden Poems`, e-flux, https://www.e-flux.com/announcements/35161/natalie-czech-s-hidden-poems/
 - [S5] `Natalie Czech`, Zabludowicz Collection, https://www.zabludowiczcollection.com/collection/artists/view/natalie-czech
 - [S6] `Natalie Czech`, Frieze review, https://www.frieze.com/article/natalie-czech-0
-- [S7] `Natalie Czech at Capitain Petzel`, Artmap, https://artmap.com/capitainpetzel/exhibition/natalie-czech-2017
+- [S7] `Natalie Czech`, Artmap, https://artmap.com/capitainpetzel/exhibition/natalie-czech-2017
+- [S8] `Natalie Czech`, Kadel Willborn, https://www.kadel-willborn.de/en/data/artists/111/natalie-czech.html
+- [S9] `Fiction Mood`, Kadel Willborn viewing room, https://www.kadel-willborn.de/viewingroom/en/home/natalie-czech-fiction-mood
+- [S10] `Natalie Czech at Kadel Willborn`, Contemporary Art Library, https://www.contemporaryartlibrary.org/project/natalie-czech-at-kadel-willborn-dusseldorf-54704
+- [S11] `Natalie Czech official site`, artist site, https://www.natalieczech.com/
+- [S12] `Natalie Czech`, Capitain Petzel, https://www.capitainpetzel.de/artists/natalie-czech/
+- [S13] `Natalie Czech at Capitain Petzel`, ARTatBerlin, https://www.artatberlin.com/en/exhibitions-berlin-galleries-natalie-czech-capitain-petzel-artatberlin/
+- [S14] `Natalie Czech press material`, Contemporary Art Library PDF, https://cdn.contemporaryartlibrary.org/store/doc/58223/docfile/df893607eb302b33669ef74812599978.pdf
+
+## 7. Codex completion notes for later rewriting
+
+### 7.1 Material to strengthen in final prose
+- Czechの作品は、写真を視覚的な像の媒体としてだけでなく、既存の印刷物を読む行為、テキストを発見する行為、詩を再配置する行為として扱う。
+- 彼女の「隠れた詩」は、コンセプチュアル・アートの言語実験を、雑誌、レコードジャケット、商品パッケージなどの大衆的印刷物へ接続する。
+- 写真史上は、Shannon Ebnerの言語写真やEd Ruscha以後のテキスト/イメージ実践と比較できるが、Czechでは引用された詩の読解と写真の平面化が中心になる。
+
+### 7.2 Coordinate-support memo (internal; do not paste directly into public prose)
+```yaml
+id: natalie-czech
+name_ja: ナタリー・チェコ
+name_en: Natalie Czech
+birth_year: 1976
+death_year: null
+active_eras: [2000-2010s]
+countries: [Germany]
+movements: [Conceptual photography; text-image practice; found poetry]
+platforms: [Frieze; MAMCO; Kadel Willborn; Zabludowicz; e-flux; Contemporary Art Library]
+subjects: [poetry; magazine pages; album covers; found text; reading; image/text shift]
+methods: [highlighting hidden poems; photographing printed matter; appropriated media; conceptual seriality]
+concepts: [found poetry, image-text, appropriation, reading-as-looking, conceptual photography, palimpsest]
+influenced_by: []
+related_figures: [Ed Ruscha; John Baldessari; Barbara Kruger; Christopher Williams; Shannon Ebner]
+description_short: 既存の雑誌や印刷物の中に潜む詩を見つけ、強調して撮影することで、読むことと見ることの境界を扱う。
+confidence: medium-high
+source_basis: Sources emphasize direct museum/gallery/artist/interview pages; search-result pages are excluded from counted Sources.
+axes:
+    documentary: 1
+    staged: 2
+    subjective: 3
+    objective: 3
+    social: 2
+    formal_experiment: 4
+    catalog_impulse: 3
+    criticality: 4
+    personal_intimacy: 1
+    historical_awareness: 4
+    body_focus: 0
+    urban_focus: 0
+    memory_focus: 2
+    aesthetic_intensity: 3
+    materiality: 4
+connection_material:
+  surface_relations: Kadel Willborn、MAMCO、Frieze、Zabludowicz、e-flux、Contemporary Art Library。
+  deep_relations: 写真を読む行為として扱う点で、Shannon EbnerやEd Ruscha以後の言語写真と強く接続する。
+  comparison_candidates: Shannon Ebner, Ed Ruscha, John Baldessari, Barbara Kruger
+  one_sentence_connection: CzechとEbnerは、写真の中で文字を単なる情報ではなく、見ることと読むことをずらす視覚的構造として扱う。
+  reusable_tags: [text-image, conceptual-photography, found-poetry, appropriation, print-culture, language, media-critique]
+```
+
+## 8. Additional exploration routes / 追加探索先
+- C/O Berlin and Photographers’ Gallery archive routes for exhibition texts
+- Poetry and literary-magazine routes for writers referenced in `Hidden Poems` series
+- German-language catalogue routes through Kunstverein and Hochschule für Bildende Künste Braunschweig
+- Artforum archive routes by exhibition title and gallery name
+
+## 9. Source exploration memo
+- Direct source pages currently retained in `Sources`: 14.
+- Search-result pages, generic catalogue searches, and broad database queries were intentionally excluded from `Sources` and kept as exploration routes.
+- The strongest next step is to deepen catalogue texts, archived reviews, and artist-talk transcripts where available, rather than increasing source count with weak or duplicative biographical pages.
 
