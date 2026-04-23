@@ -109,6 +109,20 @@ URL: https://www.getty.edu/art/collection/person/103KDR
 - [S18] Art Institute of Chicago, Rue Chartiere (impasse Chartiere) de la rue de Reims (museum object page)  URL: https://www.artic.edu/artworks/181557/rue-chartiere-impasse-chartiere-de-la-rue-de-reims
 - [S19] Art Institute of Chicago Museum Studies, Notable Acquisitions including Marville (museum publication PDF)  URL: https://www.artic.edu/files/64b94465-907f-4e3b-a4b8-7743198e039f/AIC_MuseumStudies_32-1_UPDF.pdf
 
+### Codex direct-source expansion (2026-04-23)
+- [S20] Paris Musées / Musée Carnavalet, Palais Royal by Charles Marville (museum object page)  URL: https://www.parismuseescollections.paris.fr/en/node/171983
+- [S21] National Gallery of Art, Cloud Study, Paris (museum object page)  URL: https://www.nga.gov/artworks/155901-cloud-study-paris
+- [S22] Städel Museum, Charles Marville digital collection profile (museum artist page)  URL: https://sammlung.staedelmuseum.de/en/person/marville-charles
+- [S23] Princeton University Art Museum, A Gallery of French Sculpture in the Louvre (university museum object page)  URL: https://artmuseum.princeton.edu/art/collections/objects/18981
+- [S24] National Gallery of Art, Charles Marville exhibition checklist (museum checklist PDF)  URL: https://www.nga.gov/content/dam/ngaweb/press/exh/3209/3209-list.pdf
+- [S25] National Gallery of Art, Picturing France teaching packet (museum education PDF)  URL: https://www.nga.gov/sites/default/files/migrate_images/content/dam/ngaweb/education/learning-resources/teaching-packets/pdfs/picturing_france.pdf
+- [S26] Getty Virtual Library, Masterpieces with Marville context (museum publication PDF)  URL: https://www.getty.edu/publications/resources/virtuallibrary/089236517X.pdf
+- [S27] Metropolitan Museum of Art Bulletin, Recent Acquisitions 2006–2007 (museum publication PDF)  URL: https://resources.metmuseum.org/resources/metpublications/pdf/Recent_Acquisitions_A_Selection_2006_2007_The_Metropolitan_Museum_of_Art_Bulletin_v_65_no_2_Fall_2007.pdf
+- [S28] Washington Post, Charles Marville: Photographer of Paris review (newspaper exhibition review)  URL: https://www.washingtonpost.com/goingoutguide/museums/charles-marville-photographer-of-paris-art-review/2013/10/24/a6ce12fc-27ab-11e3-b75d-5b7f66349852_story.html
+
+### Codex direct-source expansion (additional, 2026-04-23)
+- [S29] Paris Musées, Charles Marville collection results (museum collection route / artist holdings)  URL: https://www.parismuseescollections.paris.fr/en/recherche/type/oeuvre/ET/auteur/Marville%2C%20Charles%20%28Charles-Fran%C3%A7ois%20Bossu%2C%20dit%29?page=1
+
 ### URL completion / verification notes
 - S5: draft entry did not include a stable URL; candidate URL for verification: https://www.loc.gov/pictures/item/2002717334/
 - S6: draft entry did not include a stable URL; candidate URL for verification: https://www.loc.gov/pictures/item/2002717357/
@@ -116,6 +130,10 @@ URL: https://www.getty.edu/art/collection/person/103KDR
 - S9: draft entry did not include a stable URL; candidate URL for verification: https://archive.org/search?query=%22Charles+Marville%3A+Photographer+of+Paris%22
 - S10: draft entry did not include a stable URL; candidate URL for verification: https://archive.org/search?query=Charles+Marville+Paris
 - S11: draft entry did not include a stable URL; candidate URL for verification: https://catalog.hathitrust.org/Search/Home?lookfor=%22Charles+Marville%22&searchtype=all&ft=
+
+
+### Codex direct-source top-up (2026-04-23)
+- [S30] Metropolitan Museum of Art, Charles Marville: Photographer of Paris (museum exhibition page)  URL: https://www.metmuseum.org/en/exhibitions/listings/2014/charles-marville
 
 ## 6. Quote candidates
 - “commissioned by the city of Paris to document both the picturesque, medieval streets of old Paris and the broad boulevards and grand public structures…” [S1]

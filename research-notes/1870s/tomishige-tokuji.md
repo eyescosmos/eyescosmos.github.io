@@ -86,6 +86,17 @@ tags: ["portrait", "studio-system", "archive", "historical-awareness", "everyday
 - [S9] 熊本市, 冨重写真所（国登録有形文化財） (municipal heritage page / studio context)  URL: https://www.city.kumamoto.jp/kiji00363798/index.html
 - [S10] 幕末明治の写真師総覧, 冨重徳次 (specialist database; use cautiously)  URL: https://shashinshi.biz/archives/2026
 
+### Codex direct-source expansion (2026-04-23)
+- [S11] 全国文化財総覧, 冨重写真所資料調査報告書 (archival report record)  URL: https://sitereports.nabunken.go.jp/99366
+- [S12] J-STAGE, 日本の近代化を記録した写真 (scholarly article)  URL: https://www.jstage.jst.go.jp/article/photogrst1964/65/2/65_2_111/_article/-char/ja/
+- [S13] 熊本大学, 写真展 冨重写真所と熊本の近代化 (university exhibition page)  URL: https://www.kumamoto-u.ac.jp/kenkyuu_sangakurenkei/sangakurenkei/chiikirenkei/news/20140227-0331
+- [S14] 熊本大学, 冨重写真所と熊本の近代化 poster PDF (university exhibition PDF)  URL: https://www.kumamoto-u.ac.jp/kenkyuu_sangakurenkei/sangakurenkei/chiikirenkei/news/news-file/20140227-0331.pdf
+- [S15] 國學院大學, 熊本城と城下町の変遷を古写真に探る (university symposium text)  URL: https://www2.kokugakuin.ac.jp/frontier/publication/sympo00/tomita.html
+- [S16] 熊本大学五高記念館, 五高の歴史 建築 (university museum context page)  URL: https://www.goko.kumamoto-u.ac.jp/history/history2.php
+- [S17] 熊本大学五高記念館, 館報 PDF (university museum bulletin PDF)  URL: https://www.goko.kumamoto-u.ac.jp/img/about/books/kanpo2.pdf
+- [S18] 10+1 Photo Archives, 熊本 / 冨重写真所旧スタジオ (architecture / photo archive page)  URL: https://www.10plus1.jp/photo-archives/82/album.php?c=12&i=0
+- [S19] 文春オンライン, 冨重徳次撮影の二本木遊廓写真解説 (specialist feature article)  URL: https://bunshun.jp/articles/-/85330?page=2
+
 ## 6. Quote candidates
 - “冨重徳次履歴書” [S1]
 - “肖像のモダンエイジ” [S3]

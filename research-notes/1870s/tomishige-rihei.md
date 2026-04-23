@@ -89,6 +89,17 @@ tags: ["portrait", "studio-system", "archive", "everyday-life", "historical-awar
 - [S10] Kotobank, 冨重利平 (reference gateway / biography; verify against primary sources)  URL: https://kotobank.jp/word/%E5%86%A8%E9%87%8D%20%E5%88%A9%E5%B9%B3-1650454
 - [S11] 幕末明治の写真師総覧, 冨重利平 (specialist database; use cautiously)  URL: https://shashinshi.biz/archives/1993
 
+### Codex direct-source expansion (2026-04-23)
+- [S12] 全国文化財総覧, 冨重写真所資料調査報告書 (archival report record)  URL: https://sitereports.nabunken.go.jp/99366
+- [S13] J-STAGE, 営業写真師に関する資料調査と情報化に関する基本指針の提案 (scholarly article)  URL: https://www.jstage.jst.go.jp/article/jads/24/0/24_15/_article/-char/ja/
+- [S14] J-STAGE PDF, 営業写真師に関する資料調査と情報化に関する基本指針の提案 (scholarly article PDF)  URL: https://www.jstage.jst.go.jp/article/jads/24/0/24_15/_pdf/-char/ja
+- [S15] J-STAGE, 日本の近代化を記録した写真 (scholarly article)  URL: https://www.jstage.jst.go.jp/article/photogrst1964/65/2/65_2_111/_article/-char/ja/
+- [S16] 熊本大学, 写真展 冨重写真所と熊本の近代化 (university exhibition page)  URL: https://www.kumamoto-u.ac.jp/kenkyuu_sangakurenkei/sangakurenkei/chiikirenkei/news/20140227-0331
+- [S17] 熊本大学, 冨重写真所と熊本の近代化 poster PDF (university exhibition PDF)  URL: https://www.kumamoto-u.ac.jp/kenkyuu_sangakurenkei/sangakurenkei/chiikirenkei/news/news-file/20140227-0331.pdf
+- [S18] 國學院大學, 熊本城と城下町の変遷を古写真に探る (university symposium text)  URL: https://www2.kokugakuin.ac.jp/frontier/publication/sympo00/tomita.html
+- [S19] 熊本市, 新町・古町界隈 PDF (municipal cultural heritage PDF)  URL: https://www.city.kumamoto.jp/kiji0035911/5_5911_187692_up_WZGRRQ3H.pdf
+- [S20] 日本写真保存センター, 文化関係資料のアーカイブ構築報告書 (institutional report PDF)  URL: https://www.jps.gr.jp/wp-content/uploads/H25center.pdf
+
 ## 6. Quote candidates
 - “営業写真師に関する資料調査” [S1]
 - “日本の近代化を記録した写真” [S6]

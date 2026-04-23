@@ -107,6 +107,25 @@ URL: https://www.moma.org/collection/artists/1774
 - [S22] National Museum of American History, Photographic History Collection: Frederick Evans (museum collection record)  URL: https://americanhistory.si.edu/collections/nmah_1379860
 - [S23] British Art Studies, Varieties of Photographic Experience: Frederick H. Evans and the Lantern Slide (scholarly article PDF)  URL: https://britishartstudies.ac.uk/issues/01/_assets/downloads/publication-lantern-slide.pdf
 
+### Codex direct-source expansion (2026-04-23)
+- [S24] Metropolitan Museum of Art, Frederick H. Evans by Edward Steichen (museum object page)  URL: https://www.metmuseum.org/art/collection/search/271407
+- [S25] Art Institute of Chicago, Frederick H. Evans collection results (museum collection artist page)  URL: https://www.artic.edu/collection?artist_ids=Frederick+H.+Evans&page=1
+- [S26] Getty Museum Collection, Frederick H. Evans person page (museum collection artist page)  URL: https://www.getty.edu/art/collection/person/103KGM
+- [S27] Saint Louis Art Museum, Frederick H. Evans constituent page (museum artist page)  URL: https://www.slam.org/collection/constituents/881/
+- [S28] Metropolitan Museum of Art, In the Attics (museum object page)  URL: https://www.metmuseum.org/art/collection/search/675552
+- [S29] George Eastman Museum, Frederick H. Evans works (photography museum collection page)  URL: https://collections.eastman.org/people/20017/frederick-h-evans/objects
+- [S30] Metropolitan Museum of Art, Bartholomew the Great, Smithfield, London (museum object page)  URL: https://www.metmuseum.org/art/collection/search/260986
+- [S31] Philadelphia Museum of Art, Westminster Abbey: South Ambulatory (museum object page)  URL: https://www.philamuseum.org/collection/object/141064
+- [S32] Metropolitan Museum of Art Bulletin, Photographs in the Metropolitan (museum publication PDF)  URL: https://resources.metmuseum.org/resources/metpublications/pdf/Photographs_in_the_Metropolitan_The_Metropolitan_Museum_of_Art_Bulletin_v_27_no_7_March_1969.pdf
+- [S33] Kalamazoo Institute of Arts, Collection Highlights including Frederick Henry Evans (museum publication PDF)  URL: https://kiarts.org/wp-content/uploads/2021/05/Collection-Highlights-5.pdf
+
+
+### Codex direct-source top-up (2026-04-23)
+- [S34] Getty Museum, A Record of Emotion: The Photographs of Frederick H. Evans (museum exhibition page)  URL: https://www.getty.edu/art/exhibitions/frederick_evans/
+- [S35] Princeton University Art Museum, Ely Cathedral: Across Nave and Octagon (university museum object page)  URL: https://artmuseum.princeton.edu/art/collections/objects/129225
+- [S36] Philadelphia Museum of Art, Ely Cathedral: A Memory of the Normans (museum object page)  URL: https://www.philamuseum.org/collection/object/140245
+- [S37] University of Michigan Museum of Art, Canterbury Cathedral (university museum object page)  URL: https://umma.umich.edu/objects/canterbury-cathedral-1971-2-124/
+
 ## 6. Quote candidates
 - “A Record of Emotion” [S1][S3]
 - “spirituality and symbolism” [S3]

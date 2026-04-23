@@ -117,11 +117,31 @@ URL: https://blogs.loc.gov/picturethis/2014/04/eadweard-muybridge-birth-of-a-pho
 - [S24] National Museum of American History, Animal Locomotion Plate 615 (museum object page)  URL: https://americanhistory.si.edu/collections/nmah_1892099
 - [S25] NYU Special Collections, Eadweard Muybridge photograph collection (archive finding aid)  URL: https://findingaids.library.nyu.edu/nyhs/pr205_muybridge/
 
+### Codex direct-source expansion (2026-04-23)
+- [S26] The Metropolitan Museum of Art, Animal Locomotion, Volume IX, Horses (museum object page)  URL: https://www.metmuseum.org/art/collection/search/266439
+- [S27] Pennsylvania Academy of the Fine Arts, Animal Locomotion, Plate 755 (museum object page)  URL: https://www.pafa.org/museum/collection/item/animal-locomotion-volume-xii-miscellaneous-plate-755
+- [S28] Muybridge: Image & Context, Animal in Motion (institutional collection project)  URL: https://www.eadweardmuybridge.co.uk/muybridge_image_and_context/animal_in_motion
+- [S29] Getty Museum, In Focus: Animalia (museum exhibition / collection context)  URL: https://www.getty.edu/visit/cal/events/ev_249.html
+- [S30] Spencer Museum of Art, Eadweard Muybridge artist record (museum collection artist page)  URL: https://spencerart.ku.edu/art/collections-online/artist/18776
+- [S31] Seattle Art Museum, Animal Locomotion (museum object page)  URL: https://art.seattleartmuseum.org/objects/10556/animal-locomotion
+- [S32] Stanford Cantor Arts Center, Framing in Time (university museum exhibition context)  URL: https://museum.stanford.edu/exhibitions/framing-time-photographs-cantor-arts-center-reimagined
+- [S33] Museum Crush / Wellcome Collection, Animal Locomotion feature (curatorial collection feature)  URL: https://museumcrush.org/celebrating-eadweard-muybridges-animal-locomotion-at-the-wellcome-collection/
+- [S34] Cultural Heritage, The Muybridge / Animal Locomotion Collection at NMAH (conservation / museum collection article)  URL: https://resources.culturalheritage.org/pmgtopics/1999-volume-eight/08_01_Long.pdf
+- [S35] MoMA press archive, Photography exhibition including Muybridge and Marey (museum archive PDF)  URL: https://www.moma.org/momaorg/shared/pdfs/docs/press_archives/896/releases/MOMA_1943_0048_1943-08-13_43813-45.pdf
+- [S36] Stanley Picker Gallery, Moving Muybridge: Transatlantic Dialogues (university gallery programme PDF)  URL: https://www.stanleypickergallery.org/wp-content/uploads/sites/38/2023/03/Moving-Muybridge-Transatlantic-Dialogues-Programme.pdf
+
 ### URL completion / verification notes
 - S5: draft entry did not include a stable URL; candidate URL for verification: https://muybridgeinkingston.co.uk/eadweard-muybridge-biography/
 - S6: draft entry did not include a stable URL; candidate URL for verification: https://archive.org/search?query=%22Animal+Locomotion%22+Muybridge
 - S7: draft entry did not include a stable URL; candidate URL for verification: https://archive.org/search?query=%22Descriptive+Zoopraxography%22
 - S13: draft entry did not include a stable URL; candidate URL for verification: https://www.loc.gov/search/?in=all&q=%22Muybridge%27s+Complete+human+and+animal+locomotion%22
+
+
+### Codex direct-source top-up (2026-04-23)
+- [S37] University of Pennsylvania Archives, Muybridge's Animal Locomotion Study (university exhibition essay)  URL: https://archives.upenn.edu/exhibits/penn-history/muybridge/
+- [S38] Pennsylvania Academy of the Fine Arts, Animal Locomotion, Plate 469 (museum object page)  URL: https://www.pafa.org/museum/collection/item/animal-locomotion-volume-xii-miscellaneous-plate-469
+- [S39] Detroit Institute of Arts, Plate 646 from Animal Locomotion (museum object page)  URL: https://dia.org/collection/plate-646-animal-locomotion-87302
+- [S40] FUJIFILM SQUARE Photo History Museum, Animal Locomotion exhibition (Japanese photography museum exhibition)  URL: https://fujifilmsquare.jp/en/exhibition/251001_05.html
 
 ## 6. Quote candidates
 - “What the human eye could not capture… Muybridge’s series of cameras… could.” [S4]

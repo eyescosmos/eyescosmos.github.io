@@ -82,10 +82,10 @@ tags: ["pictorialism", "gum-bichromate", "materiality", "handwork", "formal-expe
 - [S11] Panel, Robert Demachy. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267853
 
 - [S12] Robert Demachy artist page. MoMA. https://www.moma.org/artists/1460
-- [S13] Robert Demachy collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Robert%20Demachy
+- Search route (count外): Robert Demachy collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Robert%20Demachy
 - [S14] Robert Demachy collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KFG
 - [S15] Robert Demachy collection search. George Eastman Museum. https://collections.eastman.org/people/19467/robert-demachy/objects
-- [S16] Robert Demachy collection search. Victoria and Albert Museum. https://collections.vam.ac.uk/search/?q=Robert%20Demachy
+- Search route (count外): Robert Demachy collection search. Victoria and Albert Museum. https://collections.vam.ac.uk/search/?q=Robert%20Demachy
 
 - [S17] Robert Demachy search. National Portrait Gallery / Smithsonian. https://npg.si.edu/search-results/Robert%20Demachy
 - [S18] Robert Demachy collection search. Yale University Art Gallery. https://artgallery.yale.edu/collection/search/Robert%20Demachy

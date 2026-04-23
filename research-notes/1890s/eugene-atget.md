@@ -85,7 +85,7 @@ tags: ["city", "archive", "modernity", "urban-anonymity", "documentary", "surrea
 - [S11] Eugène Atget artist page. National Gallery of Art. https://www.nga.gov/artists/16475-eugene-atget
 - [S12] Eugène Atget collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KDA
 - [S13] Eugène Atget collection search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Eug%C3%A8ne%20Atget
-- [S14] Eugène Atget collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Eug%C3%A8ne%20Atget
+- Search route (count外): Eugène Atget collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Eug%C3%A8ne%20Atget
 - [S15] Eugène Atget artist page. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Eug%C3%A8ne%20Atget
 - [S16] Eugène Atget collection search. Princeton University Art Museum. https://artmuseum.princeton.edu/collections/objects?search=Eug%C3%A8ne%20Atget
 - [S17] Atget search results / primary French archive route. Gallica / BnF. https://gallica.bnf.fr/services/engine/search/sru?operation=searchRetrieve&query=dc.creator%20all%20%22Atget%22

@@ -82,19 +82,34 @@ tags: ["photo-secession", "pictorialism", "modernism", "291", "fashion", "intern
 
 - [S11] Edward Steichen artist page. National Gallery of Art. https://www.nga.gov/artists/1919-edward-steichen
 - [S12] Edward Steichen artist page. Art Institute of Chicago. https://www.artic.edu/artists/36331/edward-j-steichen
-- [S13] Edward Steichen collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Edward%20Steichen
+- Search route (count外): Edward Steichen collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Edward%20Steichen
 - [S14] The Pond - Moonlight. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267840
-- [S15] Edward Steichen collection search. V&A. https://collections.vam.ac.uk/search/?q=Edward%20Steichen
+- Search route (count外): Edward Steichen collection search. V&A. https://collections.vam.ac.uk/search/?q=Edward%20Steichen
 - [S16] Steichen / Photo-Secession related collection search. National Gallery of Art. https://www.nga.gov/collection/artist-info.1919.html
 
 - [S17] Edward Steichen collection person page. J. Paul Getty Museum. https://www.getty.edu/art/collection/person/103KMS
 - [S18] Edward Steichen collection search. George Eastman Museum. https://collections.eastman.org/people/20225/edward-j-steichen/objects
-- [S19] Edward Steichen search. Library of Congress. https://www.loc.gov/search/?fa=contributor:steichen,+edward
-- [S20] Edward Steichen search. National Portrait Gallery / Smithsonian. https://npg.si.edu/search-results/Edward%20Steichen
-- [S21] Edward Steichen collection search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Edward%20Steichen
+- Search route (count外): Edward Steichen search. Library of Congress. https://www.loc.gov/search/?fa=contributor:steichen,+edward
+- Search route (count外): Edward Steichen search. National Portrait Gallery / Smithsonian. https://npg.si.edu/search-results/Edward%20Steichen
+- Search route (count外): Edward Steichen collection search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Edward%20Steichen
 - [S22] The Family of Man exhibition archive / Steichen context. MoMA. https://www.moma.org/calendar/exhibitions/2429
-- [S23] Edward Steichen collection search. Princeton University Art Museum. https://artmuseum.princeton.edu/collections/objects?search=Edward%20Steichen
-- [S24] Edward Steichen search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Edward+Steichen
+- Search route (count外): Edward Steichen collection search. Princeton University Art Museum. https://artmuseum.princeton.edu/collections/objects?search=Edward%20Steichen
+- Search route (count外): Edward Steichen search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Edward+Steichen
+
+### Codex direct-source expansion (2026-04-23, multilingual top-up)
+- [S23] MOMAK Kyoto, Collection Gallery including Edward Steichen / Gilbert Collection (Japanese museum collection context)  URL: https://www.momak.go.jp/English/collectiongalleryarchive/2025/collectiongallery2025no03.html
+- [S24] Frick Collection, Archives Directory: Edward Steichen Archive (research archive description)  URL: https://research.frick.org/directory/viewItem/1400
+- [S25] Nationalmusée Luxembourg, Edward Steichen: Life and Legacy (museum exhibition page)  URL: https://www.nationalmusee.lu/en/exhibitions/edward-steichen-1879-1973-life-and-legacy
+- [S26] Steichen Collections Luxembourg (institutional collection portal)  URL: https://steichencollections.lu/en
+- [S27] Nationalmusée Luxembourg, Edward Steichen: The Luxembourg Bequest (museum publication page)  URL: https://www.nationalmusee.lu/en/publications/edward-steichen-the-luxembourg-bequest
+- [S28] Museum of Modern Art Archives, Edward Steichen Archive finding aid (museum archive finding aid)  URL: https://www.moma.org/research/archives/finding-aids/steichenb.html
+- [S29] MOMAK Kyoto, Collection Gallery 2013 work list including Steichen (Japanese museum work list)  URL: https://www.momak.go.jp/English/collectionGalleryArchive/2013/collectionGallery2013No04table.html
+- [S30] Metropolitan Museum of Art, Stieglitz, Steichen, Strand press release (museum exhibition context)  URL: https://www.metmuseum.org/press-releases/three-masters-of-20thcentury-photography-featured-in-stieglitz-steichen-strand-at-metropolitan-museum-2010-exhibitions
+- [S31] Villa Vauban Luxembourg, Time Space Continuum (Luxembourg exhibition page)  URL: https://villavauban.lu/en/exhibition/time-space-continuum/
+- [S32] Metropolitan Museum of Art, Edward J. Steichen, Photo-Secession (museum object page)  URL: https://www.metmuseum.org/art/collection/search/269938
+- [S33] Museum of Modern Art, 1950 Steichen exhibition press release (museum archive PDF)  URL: https://www.moma.org/docs/press_archives/1426/releases/MOMA_1950_0035_1950-04-20_500420-30.pdf
+- [S34] Museum of Modern Art, 1946 Photo-Secession / 291 press release (museum archive PDF)  URL: https://www.moma.org/docs/press_archives/1024/releases/MOMA_1946-1947_0007_1946-05-14_46514-25.pdf
+
 ## 7. Additional search paths / next research routes（count外）
 - Camera Work contributions
 - Steichen’s letters from Paris

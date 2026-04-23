@@ -78,6 +78,28 @@ tags: ["source-gap", "identity-audit", "urban-documentary-if-vert"]
 - [S7] République des amateurs / Louis Vert mention. SFP dossier enseignants. https://sfp.asso.fr/collection/pdfs/dossierenseignants_republiquedesamateurs.pdf
 - [S8] Louis Vert / SFP context. Photographica PDF. https://journals.openedition.org/photographica/pdf/398
 
+### Codex direct-source expansion (2026-04-23)
+- [S9] Paris Musées / Musée Carnavalet, Etameur by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/etameur
+- [S10] Galerie Roger-Viollet, Itinerant photographer by Louis Vert (photo agency / museum-linked object page)  URL: https://www.galerie-roger-viollet.fr/en/photo-itinerant-photographer-paris-about-1900-124094-1875128640
+- [S11] Museum Barberini, A New Art exhibition context mentioning Louis Vert (museum exhibition context)  URL: https://prolog.museum-barberini.de/en/7270/a-new-art
+- [S12] Squal Photographie, Louis Vert flower seller object page (specialist photography page)  URL: https://www.squal-photographie.com/portfolio-photographes/louis-vert-vendeuse-de-fleurs-paris-1900-1906
+
+
+### Codex direct-source expansion (2026-04-23, multilingual top-up)
+- [S13] MIT DOME, Atget, Géniaux, Vert: petits métiers et types parisiens vers 1900 (exhibition catalogue record)  URL: https://dome.mit.edu/handle/1721.3/24376
+- [S14] Paris Musées / Musée Carnavalet, Balayeuse, place de l’Hôtel-de-Ville by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/balayeuse-place-de-l-hotel-de-ville
+- [S15] Paris Musées / Musée Carnavalet, Afficheur by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/afficheur
+- [S16] Paris Musées / Musée Carnavalet, Portefaix by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/portefaix-1
+- [S17] Paris Musées / Musée Carnavalet, Marchande de café au lait aux Halles by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/de/node/170646
+- [S18] Paris Musées / Musée Carnavalet, Bateliers by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/bateliers
+- [S19] Paris Musées / Musée Carnavalet, Vannier by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/de/node/458013
+- [S20] Paris Musées / Musée Carnavalet, Chiffonnier by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/chiffonnier-7
+- [S21] Paris Musées / Musée Carnavalet, Loueur de bateaux aux Tuileries by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/en/node/170686
+- [S22] Paris Musées / Musée Carnavalet, Marchand de marrons, boulevard du Palais by Louis Vert (museum object page)  URL: https://www.parismuseescollections.paris.fr/en/node/170647
+- [S23] Histoire par l’image, Les Petits métiers de Paris dans les albums d’Eugène Atget (French contextual essay)  URL: https://histoire-image.org/oeuvres/fleuriste
+- [S24] BnF, Eugène Atget / petits métiers contextual essay (French institutional exhibition essay)  URL: https://expositions.bnf.fr/atget/arret/26.htm
+- [S25] Musée des Beaux-Arts de Rouen / In Fine, Le spectacle de la marchandise press dossier mentioning Louis Vert (French exhibition PDF)  URL: https://infine-editions.fr/wp-content/uploads/2023/12/dossier-presse-spectacle-de-la-marchandise-mba-fevrier-24-version-numerique.pdf
+
 ## 7. Additional search paths / next research routes（count外）
 - BnF data / Gallica の exact-name 検索
 - Paris Musées, Joconde, Musée Carnavalet exact-name search

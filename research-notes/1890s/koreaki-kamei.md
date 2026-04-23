@@ -85,8 +85,15 @@ tags: ["war-photography", "state-archive", "documentary", "historical-awareness"
 - [S11] 亀井茲明コレクションに関する総合的研究. KAKEN. https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-14390016/
 - [S12] 日清戦争従軍写真帖 伯爵亀井茲明の日記. Kashiwa Shobo. https://www.kashiwashobo.co.jp/book/4760107843
 - [S13] 日清戦争関連写真師リスト. 幕末明治の写真師総覧. https://shashinshi.biz/archives/9003
-- [S14] 亀井茲明 search route. University of Tokyo Digital Archive Portal. https://da.dl.itc.u-tokyo.ac.jp/portal/search?kywd=%E4%BA%80%E4%BA%95%E8%8C%B2%E6%98%8E
-- [S15] 亀井茲明 search route. National Diet Library Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E4%BA%80%E4%BA%95%E8%8C%B2%E6%98%8E
+- Search route (count外): 亀井茲明. University of Tokyo Digital Archive Portal. https://da.dl.itc.u-tokyo.ac.jp/portal/search?kywd=%E4%BA%80%E4%BA%95%E8%8C%B2%E6%98%8E
+- Search route (count外): 亀井茲明. National Diet Library Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E4%BA%80%E4%BA%95%E8%8C%B2%E6%98%8E
+### Codex direct-source expansion (2026-04-23)
+- [S16] 東京大学総合研究博物館, 亀井文庫 西洋古写真コレクション (university museum digital collection essay)  URL: https://umdb.um.u-tokyo.ac.jp/dbijutus/Kamei/kamei.html
+- [S17] 放送ライブラリー, 日清戦争従軍カメラマン 伯爵亀井茲明の撮った300枚 (broadcast archive page)  URL: https://www.bpcj.or.jp/program/detail/005056/
+- [S18] 山陰中央新報, 島根県立美術館写真コレクションの30年 (regional museum/exhibition article)  URL: https://www.sanin-chuo.co.jp/articles/-/713432
+- [S19] CiNii Books, 日本写真史を歩く (bibliographic record with Kamei chapter)  URL: https://ci.nii.ac.jp/ncid/BN08249493?l=en
+- [S20] JPS, 日本写真史1840–1945 (photography association publication page)  URL: https://www.jps.gr.jp/184519451971/
+
 ## 7. Additional search paths / next research routes（count外）
 - 『明治二十七八年戦役写真帖』現物・複写
 - 亀井文庫画像ギャラリー

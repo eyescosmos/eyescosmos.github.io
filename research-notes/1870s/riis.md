@@ -103,12 +103,31 @@ URL: https://www.moma.org/collection/works/51022
 - [S18] Jacob A. Riis Museum, Permanent exhibition (museum exhibition)  URL: https://jacobariismuseum.dk/en/permanent-exhibition/
 - [S19] International Center of Photography, The Complete Photographic Work of Jacob A. Riis (library/catalogue record)  URL: https://www.icp.org/content/complete-photographic-work-of-jacob-a-riis
 
+### Codex direct-source expansion (2026-04-23)
+- [S20] SFMOMA, Lodgers in a Crowded Bayard Street Tenement (museum object page)  URL: https://www.sfmoma.org/artwork/98.129/
+- [S21] MoMA, Lodgers in Bayard Street Tenement, Five Cents a Spot (museum object page)  URL: https://www.moma.org/collection/works/51194
+- [S22] Project Gutenberg, How the Other Half Lives (digitized primary publication)  URL: https://www.gutenberg.org/files/45502/45502-h/45502-h.htm
+- [S23] Lehigh University Library Exhibits, How the Other Half Lives (university library exhibition page)  URL: https://exhibits.lib.lehigh.edu/exhibits/show/barcan/rare_books/other_half
+- [S24] Museum of the City of New York, Prints & Photographs collection overview (museum collection overview)  URL: https://www.mcny.org/collections/prints-photographs
+- [S25] Library of Congress, Views of New York City (library collection record)  URL: https://www.loc.gov/item/2005682749/
+- [S26] Jacob A. Riis / Theodore Roosevelt Digital Archive, Tenement House Exhibition model (digital archive object page)  URL: https://progressive50.omeka.net/items/show/43
+- [S27] Museum of the City of New York / Activist New York, settlement lesson plan with Riis photographs (museum education PDF)  URL: https://activistnewyork.mcny.org/sites/default/files/SettlementLessonPlan.pdf
+
+### Codex direct-source expansion (additional, 2026-04-23)
+- [S28] MIT Press Bookstore, How the Other Half Lives edition page (publisher / primary-publication context)  URL: https://mitpressbookstore.mit.edu/book/9781956527360
+- [S29] Hunger Museum, How the Other Half Lives artifact page (institutional interpretive page)  URL: https://hungermuseum.org/artifacts/how-the-other-half-lives/
+
 ### URL completion / verification notes
 - S2: draft entry did not include a stable URL; candidate URL for verification: https://www.loc.gov/exhibits/jacob-riis/index.html
 - S3: draft entry did not include a stable URL; candidate URL for verification: https://findingaids.loc.gov/db/search/xq/searchMfer02.xq?_id=loc.mss/eadmss.ms009053&_faSection=overview&_faSubsection=did&_dmdid=
 - S4: draft entry did not include a stable URL; candidate URL for verification: https://www.theodorerooseveltcenter.org/Research/Digital-Library
 - S7: draft entry did not include a stable URL; candidate URL for verification: https://www.mcny.org/exhibition/jacob-riis
 - S9: draft entry did not include a stable URL; candidate URL for verification: https://www.loc.gov/exhibits/jacob-riis/exhibition-items.html
+
+
+### Codex direct-source top-up (2026-04-23)
+- [S30] Library of Congress, Jacob Riis exhibition overview (exhibition essay)  URL: https://www.loc.gov/exhibits/jacob-riis/overview.html
+- [S31] Library of Congress, Jacob Riis biography section (exhibition biography)  URL: https://www.loc.gov/exhibits/jacob-riis/biography.html
 
 ## 6. Quote candidates
 - “Riis was well aware of the power of photographs but did not consider himself a photographer.” [S1]

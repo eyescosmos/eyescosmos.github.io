@@ -83,22 +83,33 @@ tags: ["naturalism", "straight-photography", "vision", "anti-manipulation", "pho
 - [S10] The English Emersons. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267044
 - [S11] Peter Henry Emerson’s Platinum Prints and Photogravures PDF. Cultural Heritage. https://www.culturalheritage.org/docs/default-source/publications/books/platinum-and-palladium-photographs/290-301_wrighttaylor_phemerson.pdf?Status=Master&sfvrsn=10df1020_3
 
-- [S12] Peter Henry Emerson search. Victoria and Albert Museum. https://collections.vam.ac.uk/search/?q=Peter%20Henry%20Emerson
-- [S13] Peter Henry Emerson collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Peter%20Henry%20Emerson
+- Search route (count外): Peter Henry Emerson. Victoria and Albert Museum. https://collections.vam.ac.uk/search/?q=Peter%20Henry%20Emerson
+- Search route (count外): Peter Henry Emerson. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Peter%20Henry%20Emerson
 - [S14] Peter Henry Emerson artist page. MoMA. https://www.moma.org/artists/1722
 - [S15] Peter Henry Emerson collection search. George Eastman Museum. https://collections.eastman.org/people/19964/peter-henry-emerson/objects
-- [S16] Peter Henry Emerson collection search. Princeton University Art Museum. https://artmuseum.princeton.edu/collections/objects?search=Peter%20Henry%20Emerson
-- [S17] Peter Henry Emerson collection search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Peter%20Henry%20Emerson
-- [S18] Peter Henry Emerson search. Library of Congress. https://www.loc.gov/search/?fa=contributor:emerson,+p.+h.
+- Search route (count外): Peter Henry Emerson. Princeton University Art Museum. https://artmuseum.princeton.edu/collections/objects?search=Peter%20Henry%20Emerson
+- Search route (count外): Peter Henry Emerson. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Peter%20Henry%20Emerson
+- Search route (count外): Peter Henry Emerson. Library of Congress. https://www.loc.gov/search/?fa=contributor:emerson,+p.+h.
 
-- [S19] Peter Henry Emerson search route. National Galleries of Scotland. https://www.nationalgalleries.org/search?search=Peter%20Henry%20Emerson
-- [S20] Peter Henry Emerson search route. Yale Center for British Art. https://collections.britishart.yale.edu/?search_field=all_fields&q=Peter+Henry+Emerson
-- [S21] Peter Henry Emerson publication search. Getty Research Portal. https://portal.getty.edu/search?query=Peter%20Henry%20Emerson
-- [S22] Peter Henry Emerson publication search. HathiTrust. https://catalog.hathitrust.org/Search/Home?lookfor=Peter%20Henry%20Emerson&searchtype=all&ft=
-- [S23] Life and Landscape on the Norfolk Broads. Internet Archive. https://archive.org/search?query=%22Life+and+Landscape+on+the+Norfolk+Broads%22
-- [S24] Pictures of East Anglian Life. Internet Archive. https://archive.org/search?query=%22Pictures+of+East+Anglian+Life%22+Emerson
-- [S25] Peter Henry Emerson publication search route. WorldCat. https://search.worldcat.org/search?q=Peter+Henry+Emerson
-- [S26] Peter Henry Emerson catalogue search. British Library. https://search.bl.uk/primo-explore/search?query=any,contains,Peter%20Henry%20Emerson
+- Search route (count外): Peter Henry Emerson. National Galleries of Scotland. https://www.nationalgalleries.org/search?search=Peter%20Henry%20Emerson
+- Search route (count外): Peter Henry Emerson. Yale Center for British Art. https://collections.britishart.yale.edu/?search_field=all_fields&q=Peter+Henry+Emerson
+- Search route (count外): Peter Henry Emerson. Getty Research Portal. https://portal.getty.edu/search?query=Peter%20Henry%20Emerson
+- Search route (count外): Peter Henry Emerson. HathiTrust. https://catalog.hathitrust.org/Search/Home?lookfor=Peter%20Henry%20Emerson&searchtype=all&ft=
+- Search route (count外): Life and Landscape on the Norfolk Broads. Internet Archive. https://archive.org/search?query=%22Life+and+Landscape+on+the+Norfolk+Broads%22
+- Search route (count外): Pictures of East Anglian Life. Internet Archive. https://archive.org/search?query=%22Pictures+of+East+Anglian+Life%22+Emerson
+- Search route (count外): Peter Henry Emerson. WorldCat. https://search.worldcat.org/search?q=Peter+Henry+Emerson
+- Search route (count外): Peter Henry Emerson. British Library. https://search.bl.uk/primo-explore/search?query=any,contains,Peter%20Henry%20Emerson
+
+### Codex direct-source expansion (2026-04-23, multilingual top-up)
+- [S16] Metropolitan Museum of Art, Life and Landscape on the Norfolk Broads (museum object page)  URL: https://www.metmuseum.org/art/collection/search/290484
+- [S17] Art Institute of Chicago, Life and Landscape on the Norfolk Broads (museum object page)  URL: https://www.artic.edu/artworks/229702/life-and-landscape-on-the-norfolk-broads
+- [S18] International Center of Photography, Naturalistic Photography for Students of the Art (library record)  URL: https://www.icp.org/content/naturalistic-photography-for-students-of-the-art
+- [S19] Aperture, Nancy Newhall, Image in the Ground Glass (specialist photography article)  URL: https://issues.aperture.org/article/19750101005
+- [S20] Brooklyn Museum, Mouth of the Old River Stort (museum object page)  URL: https://www.brooklynmuseum.org/objects/153870
+- [S21] University of Leicester Special Collections, A photographic revolutionary (university special collections essay)  URL: https://staffblogs.le.ac.uk/specialcollections/2014/11/21/a-photographic-revolutionary/
+- [S22] Musée d’Orsay, Photography Not Art: Naturalism according to P.H. Emerson (French museum exhibition page)  URL: https://www.musee-orsay.fr/en/program/whats-on/exhibitions/photography-not-artnaturalism-according-ph-emerson-1886-1895
+- [S23] University of Cincinnati thesis, Peter Henry Emerson and naturalistic photography (academic PDF)  URL: https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=ucin1179276007&disposition=inline
+
 ## 7. Additional search paths / next research routes（count外）
 - V&A / Royal Photographic Society holdings
 - original volumes of *Life and Landscape on the Norfolk Broads*

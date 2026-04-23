@@ -89,10 +89,10 @@ tags: ["pictorialism", "portrait", "motherhood", "women-photographers", "studio-
 
 - [S13] The Sketch. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/283117
 - [S14] The Road to Rome. MoMA. https://www.moma.org/collection/works/52913
-- [S15] Gertrude Käsebier collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Gertrude%20K%C3%A4sebier
+- Search route (count外): Gertrude Käsebier collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Gertrude%20K%C3%A4sebier
 - [S16] Gertrude Käsebier artist page. National Gallery of Art. https://www.nga.gov/artists/30534-gertrude-kasebier
 - [S17] Gertrude Käsebier artist page. Art Institute of Chicago. https://www.artic.edu/artists/34389/gertrude-kasebier
-- [S18] Gertrude Käsebier search. Library of Congress. https://www.loc.gov/search/?fa=contributor:kasebier,+gertrude
+- Search route (count外): Gertrude Käsebier search. Library of Congress. https://www.loc.gov/search/?fa=contributor:kasebier,+gertrude
 
 - [S19] Gertrude Käsebier collection person page. Getty Museum. https://www.getty.edu/art/collection/person/103KNE
 - [S20] Gertrude Käsebier collection search. Amon Carter Museum. https://www.cartermuseum.org/search?search=Gertrude%20Kasebier

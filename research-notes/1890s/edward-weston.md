@@ -82,19 +82,36 @@ tags: ["straight-photography", "objectivity", "formalism", "materiality", "body"
 - [S9] Edward Weston. National Portrait Gallery. https://www.npg.org.uk/collections/search/person/mp68189/edward-weston
 - [S10] Edward Weston: A Vision Conserved. Center for Creative Photography / TFAO. https://www.tfaoi.org/aa/3aa/3aa603.htm
 
-- [S11] Edward Weston papers / archive search. Getty Research Institute. https://primo.getty.edu/primo-explore/search?query=any,contains,Edward%20Weston&tab=gri&search_scope=GRI&vid=GRI
+- Search route (count外): Edward Weston papers / archive search. Getty Research Institute. https://primo.getty.edu/primo-explore/search?query=any,contains,Edward%20Weston&tab=gri&search_scope=GRI&vid=GRI
 - [S12] Edward Weston Archive. Center for Creative Photography. https://ccp.arizona.edu/artists/edward-weston
-- [S13] Edward Weston search. Library of Congress. https://www.loc.gov/search/?fa=contributor:weston,+edward
+- Search route (count外): Edward Weston search. Library of Congress. https://www.loc.gov/search/?fa=contributor:weston,+edward
 - [S14] Edward Weston collection search. Amon Carter Museum. https://www.cartermuseum.org/artists/edward-weston
-- [S15] Edward Weston collection search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Edward%20Weston
+- Search route (count外): Edward Weston collection search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Edward%20Weston
 
 - [S16] Nude in Dunes. MoMA. https://www.moma.org/collection/works/53260
-- [S17] Pepper No. 30 search route. MoMA. https://www.moma.org/search?query=Pepper%20No.%2030%20Edward%20Weston
-- [S18] Edward Weston publications / exhibition search. National Gallery of Art. https://www.nga.gov/search.html?searchterm=Edward%20Weston
+- Search route (count外): Pepper No. 30 search route. MoMA. https://www.moma.org/search?query=Pepper%20No.%2030%20Edward%20Weston
+- Search route (count外): Edward Weston publications / exhibition search. National Gallery of Art. https://www.nga.gov/search.html?searchterm=Edward%20Weston
 - [S19] Edward Weston collection search. George Eastman Museum. https://collections.eastman.org/people/20452/edward-weston/objects
-- [S20] Edward Weston collection search. Yale University Art Gallery. https://artgallery.yale.edu/collection/search/Edward%20Weston
-- [S21] Edward Weston collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Edward%20Weston
-- [S22] Edward Weston collection search. Philadelphia Museum of Art. https://philamuseum.org/search/collections?searchTxt=Edward%20Weston
+- Search route (count外): Edward Weston collection search. Yale University Art Gallery. https://artgallery.yale.edu/collection/search/Edward%20Weston
+- Search route (count外): Edward Weston collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Edward%20Weston
+- Search route (count外): Edward Weston collection search. Philadelphia Museum of Art. https://philamuseum.org/search/collections?searchTxt=Edward%20Weston
+
+### Codex direct-source expansion (2026-04-23, multilingual top-up)
+- [S20] Smithsonian American Art Museum, Pepper no. 30 (museum object page)  URL: https://americanart.si.edu/artwork/pepper-no-30-27566
+- [S21] SFMOMA, Mexico as Muse: Tina Modotti and Edward Weston (museum exhibition page)  URL: https://www.sfmoma.org/exhibition/mexico-as-muse/
+- [S22] SFMOMA, Mexico as Muse press release (museum press release)  URL: https://www.sfmoma.org/press-release/sfmoma-presents-mexico-as-muse-tina-modotti-and-e/
+- [S23] Museum of Fine Arts, Houston, Pepper No. 30 (museum object page)  URL: https://emuseum.mfah.org/objects/61439/pepper-no-30?idx=15
+- [S24] Metropolitan Museum of Art, Pepper #30 (museum object page)  URL: https://www.metmuseum.org/art/collection/search/269902
+- [S25] Art Institute of Chicago, Pepper (museum object page)  URL: https://www.artic.edu/artworks/120846/pepper
+- [S26] The Ringling, Pepper No. 30 (museum object page)  URL: https://emuseum.ringling.org/objects/40110/pepper-no-30
+- [S27] MoMA, Pepper No. 30 (museum object page)  URL: https://www.moma.org/collection/works/58496
+- [S28] Monterey Museum of Art, Pepper No. 30 (museum object page)  URL: https://collections.montereyart.org/objects-1/info/1372?sort=0
+- [S29] Fundación MAPFRE, Edward Weston: The Matter of Forms (Spanish exhibition page)  URL: https://www.fundacionmapfre.org/en/art-and-culture/exhibitions/kbr-photography-center/edward-weston-the-matter-of-shapes/
+- [S30] Fundación MAPFRE, Edward Weston press dossier PDF (Spanish exhibition dossier)  URL: https://www.fundacionmapfre.org/media/sala-de-prensa/DOSSIER-DE-PRENSA-WESTON.pdf
+- [S31] CAMERA Torino, Edward Weston: The Matter of Forms (Italian exhibition page)  URL: https://camera.to/en/mostre/edward-weston-the-matter-of-forms/
+- [S32] Center for Creative Photography, Projects of Note / Edward Weston daybooks digitization (archive project page)  URL: https://ccp.arizona.edu/about/digital-imaging-unit/projects-of-note/
+- [S33] Aperture, The Daybooks of Edward Weston review (specialist photography publication)  URL: https://archive.aperture.org/article/1962/1/1/the-daybooks-of-edward-weston
+
 ## 7. Additional search paths / next research routes（count外）
 - daybooks / early studio ads
 - California camera club magazines

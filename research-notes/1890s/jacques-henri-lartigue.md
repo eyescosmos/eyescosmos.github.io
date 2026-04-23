@@ -88,8 +88,8 @@ tags: ["snapshot", "private-photography", "memory", "speed", "leisure", "redisco
 - [S15] Jacques Henri Lartigue collection search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Jacques%20Henri%20Lartigue
 - [S16] Jacques Henri Lartigue collection search. Art Institute of Chicago. https://www.artic.edu/artists/108439/jacques-henri-lartigue
 - [S17] Jacques Henri Lartigue artist page. SFMOMA. https://www.sfmoma.org/artist/Jacques_Henri_Lartigue/
-- [S18] Jacques Henri Lartigue collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Jacques%20Henri%20Lartigue
-- [S19] Jacques Henri Lartigue search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Jacques+Henri+Lartigue
+- Search route (count外): Jacques Henri Lartigue collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Jacques%20Henri%20Lartigue
+- Search route (count外): Jacques Henri Lartigue search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Jacques+Henri+Lartigue
 - [S20] Jacques Henri Lartigue search route. Aperture. https://aperture.org/?s=Jacques+Henri+Lartigue
 ## 7. Additional search paths / next research routes（count外）
 - Life magazine 1963 portfolio

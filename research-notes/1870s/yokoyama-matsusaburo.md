@@ -94,6 +94,22 @@ tags: ["archive", "materiality", "historical-awareness", "print-culture", "moder
 - [S13] 東京国立博物館, 壬申検査について (museum history / survey context)  URL: https://www.tnm.jp/modules/r_free_page/index.php?id=147
 - [S14] 文化庁 文化遺産データベース, 横山松三郎関係資料 (official cultural heritage database)  URL: https://online.bunka.go.jp/db/heritages/detail/564575
 
+### Codex direct-source expansion (2026-04-23)
+- [S15] 文化遺産オンライン, 日光名勝写真 (cultural heritage object page)  URL: https://bunka.nii.ac.jp/heritages/detail/438635
+- [S16] 江戸東京博物館, The Man Who Captured the Turbulence (museum exhibition page)  URL: https://www.edo-tokyo-museum.or.jp/en/s-exhibition/yokoyama-matsusaburo/
+- [S17] 東京文化財研究所, 横山松三郎の写真原板発見 (research institute archive page)  URL: https://www.tobunken.go.jp/materials/nenshi/7075.html
+- [S18] Tokyo Museum Collection, Yokoyama Matsusaburo work record (museum collection object page)  URL: https://museumcollection.tokyo/works/6242314/
+- [S19] CiNii Research, 横山松三郎と日光山写真 (scholarly article record)  URL: https://cir.nii.ac.jp/crid/1520010379858053760
+- [S20] 東京国立博物館画像検索, 旧江戸城写真帖 (museum image database page)  URL: https://webarchives.tnm.jp/imgsearch/show/C0033295
+- [S21] DNPイメージアーカイブ, 墺国維府博覧会出品撮影 (museum image archive object page)  URL: https://images.dnpartcom.jp/ia/workDetail?id=E0068123
+- [S22] 文化庁, 文化審議会報道発表 PDF including Yokoyama materials (government cultural-property PDF)  URL: https://www.bunka.go.jp/koho_hodo_oshirase/hodohappyo/pdf/93793501_01.pdf
+- [S23] 京都国立博物館学叢, 蜷川式胤と古美術写真家横山松三郎の業績 (museum bulletin PDF)  URL: https://www.kyohaku.go.jp/jp/learn/assets/publications/knm-bulletin/11/011_ronbun_e.pdf
+- [S24] J-STAGE, 写真油絵研究論文 PDF (scholarly article PDF)  URL: https://www.jstage.jst.go.jp/article/photogrst/89/1/89_41/_pdf/-char/en
+
+
+### Codex direct-source top-up (2026-04-23)
+- [S25] Tokyo Museum Collection, Shosoin by Yokoyama Matsusaburo (museum object page)  URL: https://museumcollection.tokyo/en/works/6242181/
+
 ## 6. Quote candidates
 - “Japanese Da Vinci” [S2]
 - “写真と油絵を融合させた技法” [S2]

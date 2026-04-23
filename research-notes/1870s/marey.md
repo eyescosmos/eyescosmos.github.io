@@ -106,6 +106,23 @@ URL: https://www.metmuseum.org/art/collection/search/265094
 - [S19] ACMI, Chronophotographic prints (museum / screen culture collection)  URL: https://www.acmi.net.au/works/112095--chronophotographic-prints/
 - [S20] National Gallery of Canada, Study in Motion by Chronophotography (museum object page)  URL: https://www.gallery.ca/collection/artwork/study-in-motion-by-chronophotography
 
+### Codex direct-source expansion (2026-04-23)
+- [S21] Musée d’Orsay, Etienne Jules Marey artist/personality page (museum artist page)  URL: https://www.musee-orsay.fr/en/ressources/repertoire-artistes-personnalites/22784
+- [S22] Musée d’Orsay, Movements of Air: Marey Photographer of Fluids (museum exhibition text)  URL: https://www.musee-orsay.fr/en/whats-on/exhibitions/presentation/movements-air-etienne-jules-marey-1830-1904-photographer-fluids
+- [S23] Science Museum Group, Chronophotographic Films made by Étienne-Jules Marey (museum object page)  URL: https://collection.sciencemuseumgroup.org.uk/objects/co18361/chronophotographic-films-made-by-etienne-jules-marey
+- [S24] OpenEdition / CNRS Éditions, Retour sur Marey (scholarly chapter)  URL: https://books.openedition.org/editionscnrs/2753?lang=en
+- [S25] Universalis, Capter le mouvement: Étienne-Jules Marey (specialist encyclopedia / media history article)  URL: https://www.universalis.fr/encyclopedie/image-animee/4-capter-le-mouvement-etienne-jules-marey/
+- [S26] Photo12, Chronophotographic gun images by Marey (specialist image archive object page)  URL: https://www.photo12.com/en/image/inv00002_004marey
+- [S27] National Gallery of Art, Intersections wall text with Marey (museum wall text PDF)  URL: https://www.nga.gov/sites/default/files/migrate_images/content/dam/ngaweb/press/exh/4745/intersections-walltext.pdf
+- [S28] Science and Media Museum, Innovation gallery large-print guide (museum interpretive PDF)  URL: https://www.scienceandmediamuseum.org.uk/sites/default/files/2025-07/LargePrint_Online_Pt1_L3_Innovation_FINAL.pdf
+- [S29] Musée Bourdelle, Dans l’atelier du photographe dossier de presse (museum press dossier PDF)  URL: https://www.bourdelle.paris.fr/sites/default/files/2024-06/dp_dans_latelier_du_photographe_2.pdf
+- [S30] LOC hosted Film Theory PDF with Marey figure/context (library-hosted scholarly PDF)  URL: https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/71/92/48/2020719248/2020719248.pdf
+
+### Codex direct-source expansion (additional, 2026-04-23)
+- [S31] Fabula, Étienne-Jules Marey, La Chronophotographie (specialist publication notice)  URL: https://www.fabula.org/actualites/131961/etienne-jules-marey-la-chronophotographie.html
+- [S32] Atelier de l’île, Etienne-Jules Marey Musée d’Orsay exhibition scenography (museum exhibition documentation)  URL: https://www.atile.fr/architecture/scenographies/etienne-jules-marey-musee-d-orsay-75.php
+- [S33] De Gruyter / Edinburgh University Press sample chapter with Marey figure (scholarly book PDF)  URL: https://www.degruyterbrill.com/document/doi/10.1515/9781399545457-001/pdf?licenseType=free
+
 ### URL completion / verification notes
 - S3: draft entry did not include a stable URL; candidate URL for verification: https://archive.org/search?query=%22La+chronophotographie%22+Marey
 - S4: draft entry did not include a stable URL; candidate URL for verification: https://www.europeanfilmgateway.eu/

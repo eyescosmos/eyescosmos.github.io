@@ -111,12 +111,28 @@ URL: https://www.nationalgalleries.org/art-and-artists/features/thomas-annan
 - [S23] LACMA, Thomas J. Annan Old Closes And Streets Of Glasgow (museum collection record)  URL: https://collections.lacma.org/node/219407
 - [S24] Glasgow Libraries, Annan Collection Bound Volumes (archive catalogue)  URL: https://libcat.csglasgow.org/documents/836643/988153/Annan%2BCollection%2Bof%2BBound%2BVolumes/a76a121c-228c-41fd-8656-180e94c49e2f
 
+### Codex direct-source expansion (2026-04-23)
+- [S25] Getty Museum, Thomas Annan collection exhibition page (museum exhibition page)  URL: https://www.getty.edu/art/collection/exhibition/103Q44
+- [S26] Getty Museum Store, Thomas Annan: Photographer of Glasgow publication (museum publication page)  URL: https://shop.getty.edu/collections/non-sale-getty-publications/products/thomas-annan-photographer-of-glasgow-978-1606065235
+- [S27] Getty Museum, Thomas Annan exhibition checklist (museum checklist PDF)  URL: https://www.getty.edu/art/exhibitions/thomas_annan/thomas_annan_checklist.pdf
+
+### Codex direct-source expansion (additional, 2026-04-23)
+- [S28] Art Institute of Chicago, The Old Closes & Streets of Glasgow (museum object page)  URL: https://www.artic.edu/artworks/47082/the-old-closes-streets-of-glasgow
+- [S29] University of Glasgow Library, The Old Closes and Streets of Glasgow (university library exhibition page)  URL: https://www.gla.ac.uk/myglasgow/library/files/special/exhibns/month/Mar2006.html
+- [S30] National Gallery of Art, Old Vennel, off High Street (museum object page)  URL: https://www.nga.gov/artworks/92283-old-vennel-high-street
+- [S31] Rijksmuseum Bulletin, Thomas Annan / Old Closes discussion (museum journal PDF)  URL: https://bulletin.rijksmuseum.nl/article/download/9890/10383/16340
+- [S32] National Galleries of Scotland, Biennial Review including Annan acquisition (museum publication PDF)  URL: https://www.nationalgalleries.org/sites/default/files/2026-02/NGS%20Biennial%20Review%20202325.pdf
+
 ### URL completion / verification notes
 - S3: draft entry did not include a stable URL; candidate URL for verification: https://philamuseum.org/collection/object/103387
 - S4: draft entry did not include a stable URL; candidate URL for verification: https://collection.sciencemuseumgroup.org.uk/people/ap28693/thomas-annan
 - S5: draft entry did not include a stable URL; candidate URL for verification: https://harvardartmuseums.org/collections/object/229961
 - S9: draft entry did not include a stable URL; candidate URL for verification: https://directory.doabooks.org/handle/20.500.12854/28928
 - S10: draft entry did not include a stable URL; candidate URL for verification: https://libcat.csglasgow.org/web/arena/search#/entity/glasgow_collection%2F92006690
+
+
+### Codex direct-source top-up (2026-04-23)
+- [S33] Saint Louis Art Museum, Close, No. 75 High Street (Glasgow) (museum object page)  URL: https://www.slam.org/collection/objects/65090
 
 ## 6. Quote candidates
 - “often considered precursors of the documentary tradition in photography” [S1]

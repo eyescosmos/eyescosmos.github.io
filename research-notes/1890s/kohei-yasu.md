@@ -74,7 +74,7 @@ tags: ["migration", "studio-system", "city", "religion", "archive", "transcultur
 - “CIRMA … acquired … numerous photographs and negatives” [S4]
 
 ## 6. Sources
-- [S1] Cyclical Universes: Guatemala Through the Eyes of Japan. La Nueva Fábrica. https://lanuevafabrica.org/alpha/wp-content/uploads/2025/06/Universos-Ciclicos-PR-ESP.pdf
+- Search route (count外): Cyclical Universes: Guatemala Through the Eyes of Japan. La Nueva Fábrica. https://lanuevafabrica.org/alpha/wp-content/uploads/2025/06/Universos-Ciclicos-PR-ESP.pdf
 - [S2] Fotografía Japonesa in Guatemala: Transcultural Visuality and the Migrant Biography of Yasu Kōhei. Heidelberg University / heiDOK. https://archiv.ub.uni-heidelberg.de/volltextserver/36910/
 - [S3] Chen, Fotografía Japonesa in Guatemala. Heidelberg University / PDF. https://archiv.ub.uni-heidelberg.de/volltextserver/36910/1/Chen-Fotografia_Japonesa_in_Guatemala.pdf
 - [S4] CIRMA exhibition on Kohei Yasu / J. J. Yas. Embassy of Japan in Guatemala. https://www.gt.emb-japan.go.jp/itpr_es/CIRMAES.html
@@ -86,13 +86,13 @@ tags: ["migration", "studio-system", "city", "religion", "archive", "transcultur
 - [S10] Meet Photographer Juan José de Jesús Yas. Antigua Daily Photo. https://antiguadailyphoto.com/2014/02/22/meet-photographer-juan-jose-de-jesus-yas/
 
 - [S11] Archivo Fotográfico / Juan José de Jesús Yas search route. CIRMA. https://cirma.org.gt/
-- [S12] Juan José de Jesús Yas search route. Digital Public Library of America. https://dp.la/search?q=Juan%20Jos%C3%A9%20de%20Jes%C3%BAs%20Yas
-- [S13] Kohei Yasu search route. WorldCat. https://search.worldcat.org/search?q=Kohei+Yasu
-- [S14] Juan José de Jesús Yas search route. WorldCat. https://search.worldcat.org/search?q=Juan+Jos%C3%A9+de+Jes%C3%BAs+Yas
-- [S15] Vistas Gallery / Juan Yas search route. Fordham University. https://vistasgallery.ace.fordham.edu/
-- [S16] CIRMA Collection / Juan Yas exhibit route. Tulane University. https://exhibits.tulane.edu/
-- [S17] Exhibitions route / Yasu context. La Nueva Fábrica. https://lanuevafabrica.org/
-- [S18] Latin America Japanese migration search route. JICA. https://www.jica.go.jp/
+- Search route (count外): Juan José de Jesús Yas search route. Digital Public Library of America. https://dp.la/search?q=Juan%20Jos%C3%A9%20de%20Jes%C3%BAs%20Yas
+- Search route (count外): Kohei Yasu search route. WorldCat. https://search.worldcat.org/search?q=Kohei+Yasu
+- Search route (count外): Juan José de Jesús Yas search route. WorldCat. https://search.worldcat.org/search?q=Juan+Jos%C3%A9+de+Jes%C3%BAs+Yas
+- Search route (count外): Vistas Gallery / Juan Yas search route. Fordham University. https://vistasgallery.ace.fordham.edu/
+- Search route (count外): CIRMA Collection / Juan Yas exhibit route. Tulane University. https://exhibits.tulane.edu/
+- Search route (count外): Exhibitions route / Yasu context. La Nueva Fábrica. https://lanuevafabrica.org/
+- Search route (count外): Latin America Japanese migration search route. JICA. https://www.jica.go.jp/
 ## 7. Additional search paths / next research routes（count外）
 - CIRMA 本体のアーカイブ目録
 - exhibition catalog “Juan José de Jesús Yas” curated by Toshio Fujiwara

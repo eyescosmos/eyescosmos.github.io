@@ -86,7 +86,7 @@ tags: ["social-document", "labor", "child-labor", "visual-sociology", "evidence"
 - [S12] Lewis Hine collection search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Lewis%20Hine
 - [S13] Lewis Hine collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KJX
 - [S14] Lewis Hine collection search. George Eastman Museum. https://collections.eastman.org/people/20086/lewis-wickes-hine/objects
-- [S15] Lewis Hine search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Lewis+Hine
+- Search route (count外): Lewis Hine search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Lewis+Hine
 - [S16] Focusing on Lewis Hine's Photographic Technique. Library of Congress Blog. https://blogs.loc.gov/picturethis/2017/03/focusing-on-lewis-hines-photographic-technique/
 - [S17] Men at Work / Lewis Hine publication context. MoMA. https://www.moma.org/collection/works/186049
 - [S18] Lewis Hine / NCLC image collection. University of Maryland Baltimore County. https://contentdm.ad.umbc.edu/digital/collection/hinecoll
@@ -94,8 +94,8 @@ tags: ["social-document", "labor", "child-labor", "visual-sociology", "evidence"
 - [S19] Lewis Hine photographs search route. Library of Congress. https://www.loc.gov/pictures/search/?q=Lewis%20Hine
 - [S20] Lewis Hine collection search. Smithsonian National Museum of American History. https://americanhistory.si.edu/collections/search?edan_q=Lewis%20Hine
 - [S21] Lewis Hine artist page. Art Institute of Chicago. https://www.artic.edu/artists/35075/lewis-wickes-hine
-- [S22] Lewis Hine collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Lewis%20Hine
-- [S23] National Child Labor Committee / Lewis Hine search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Lewis+Hine+child+labor
+- Search route (count外): Lewis Hine collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Lewis%20Hine
+- Search route (count外): National Child Labor Committee / Lewis Hine search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Lewis+Hine+child+labor
 - [S24] Lewis Hine search. National Archives Catalog. https://catalog.archives.gov/search?q=Lewis%20Hine
 ## 7. Additional search paths / next research routes（count外）
 - Pittsburgh Survey materials

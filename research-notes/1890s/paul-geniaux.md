@@ -90,7 +90,7 @@ tags: ["city", "labor", "everyday-life", "urban-documentary", "print-culture", "
 - [S16] Charles Géniaux and photographic publishing context. OpenEdition / Photographica. https://journals.openedition.org/photographica/5027
 - [S17] Géniaux brothers exhibition route. Morbihan Archives. https://recherche.archives.morbihan.fr/
 - [S18] Paul Géniaux search route. BnF Catalogue général. https://catalogue.bnf.fr/rechercher.do?motRecherche=Paul+G%C3%A9niaux
-- [S19] Paul Géniaux search route. WorldCat. https://search.worldcat.org/search?q=Paul+G%C3%A9niaux
+- Search route (count外): Paul Géniaux search route. WorldCat. https://search.worldcat.org/search?q=Paul+G%C3%A9niaux
 ## 7. Additional search paths / next research routes（count外）
 - Bretagne regional archives
 - illustrated magazines where works circulated

@@ -88,20 +88,34 @@ tags: ["photo-secession", "modernism", "institution-building", "camera-work", "2
 - [S14] Equivalent. Phillips Collection. https://www.phillipscollection.org/collection/equivalent-6
 
 - [S15] Camera Work No. 1. Princeton University Art Museum. https://artmuseum.princeton.edu/art/collections/objects/59675
-- [S16] Camera Work / Alfred Stieglitz search. Library of Congress. https://www.loc.gov/search/?fa=contributor:stieglitz,+alfred
-- [S17] Alfred Stieglitz collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Alfred%20Stieglitz
+- Search route (count外): Camera Work / Alfred Stieglitz search. Library of Congress. https://www.loc.gov/search/?fa=contributor:stieglitz,+alfred
+- Search route (count外): Alfred Stieglitz collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Alfred%20Stieglitz
 - [S18] Alfred Stieglitz collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KHT
 - [S19] Georgia O’Keeffe: A Portrait. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267827
 - [S20] Alfred Stieglitz and 291 / archive search. MoMA. https://www.moma.org/artists/5664
 
 - [S21] Alfred Stieglitz artist page. National Gallery of Art. https://www.nga.gov/artists/1918-alfred-stieglitz
 - [S22] Alfred Stieglitz collection search. George Eastman Museum. https://collections.eastman.org/people/19655/alfred-stieglitz/objects
-- [S23] Alfred Stieglitz collection search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Alfred%20Stieglitz
-- [S24] Alfred Stieglitz / Camera Work search route. Princeton University Library. https://catalog.princeton.edu/catalog?search_field=all_fields&q=Alfred+Stieglitz+Camera+Work
-- [S25] Alfred Stieglitz digital collections search. New York Public Library. https://digitalcollections.nypl.org/search/index?keywords=Alfred+Stieglitz
-- [S26] Alfred Stieglitz papers search route. Smithsonian Archives of American Art. https://www.aaa.si.edu/search/collections?edan_q=Alfred%20Stieglitz
-- [S27] Alfred Stieglitz collection search. The Phillips Collection. https://www.phillipscollection.org/search?search=Alfred%20Stieglitz
-- [S28] Stieglitz archive search route. Yale Beinecke / Archives at Yale. https://archives.yale.edu/search?utf8=%E2%9C%93&op%5B%5D=&q%5B%5D=Alfred+Stieglitz
+- Search route (count外): Alfred Stieglitz collection search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Alfred%20Stieglitz
+- Search route (count外): Alfred Stieglitz / Camera Work search route. Princeton University Library. https://catalog.princeton.edu/catalog?search_field=all_fields&q=Alfred+Stieglitz+Camera+Work
+- Search route (count外): Alfred Stieglitz digital collections search. New York Public Library. https://digitalcollections.nypl.org/search/index?keywords=Alfred+Stieglitz
+- Search route (count外): Alfred Stieglitz papers search route. Smithsonian Archives of American Art. https://www.aaa.si.edu/search/collections?edan_q=Alfred%20Stieglitz
+- Search route (count外): Alfred Stieglitz collection search. The Phillips Collection. https://www.phillipscollection.org/search?search=Alfred%20Stieglitz
+- Search route (count外): Stieglitz archive search route. Yale Beinecke / Archives at Yale. https://archives.yale.edu/search?utf8=%E2%9C%93&op%5B%5D=&q%5B%5D=Alfred+Stieglitz
+
+### Codex direct-source expansion (2026-04-23, multilingual top-up)
+- [S23] Art Institute of Chicago, The Photo-Secession (museum archive essay)  URL: https://archive.artic.edu/stieglitz/the-photo-secession/
+- [S24] Buffalo AKG Art Museum, International Exhibition of Pictorial Photography (museum exhibition history)  URL: https://buffaloakg.org/art/exhibitions/international-exhibition-pictorial-photography
+- [S25] Princeton University Art Museum, Camera Work: A Photographic Quarterly (museum object page)  URL: https://artmuseum.princeton.edu/art/collections/objects/59717
+- [S26] National Gallery of Art, Camera Work No. 47: What is 291? (museum object page)  URL: https://www.nga.gov/artworks/36434-camera-work-number-47-what-291
+- [S27] Metropolitan Museum of Art, 291 (museum object page)  URL: https://www.metmuseum.org/art/collection/search/363751
+- [S28] Princeton Graphic Arts, 291 (university library collection essay)  URL: https://graphicarts.princeton.edu/2016/01/07/291/
+- [S29] FUJIFILM SQUARE, Pictorialism - Prelude to Modern Photography (Japanese photography museum exhibition)  URL: https://fujifilmsquare.jp/en/detail/15020304.html
+- [S30] FUJIFILM SQUARE, Treasures of American Modern Photography: The Gilbert Collection (Japanese photography museum exhibition)  URL: https://fujifilmsquare.jp/en/detail/1811090123.html
+- [S31] Metropolitan Museum of Art, Camera Work No. 48 (museum object page)  URL: https://www.metmuseum.org/art/collection/search/321067
+- [S32] Metropolitan Museum of Art Bulletin, The Art of Seeing: Photographs from the Alfred Stieglitz Collection (museum publication PDF)  URL: https://resources.metmuseum.org/resources/metpublications/pdf/The_Art_of_Seeing_Photographs_from_the_Alfred_Stieglitz_Collection_The_Metropolitan_Museum_of_Bulletin_v_35_no_4_Spring_1978.pdf
+- [S33] Museum of Modern Art, 1948 Stieglitz memorial exhibition press release (museum archive PDF)  URL: https://www.moma.org/docs/press_archives/1272/releases/MOMA_1946-1948_0147_1948-09-24_48924-37.pdf
+
 ## 7. Additional search paths / next research routes（count外）
 - Greenough, *The Key Set*
 - Camera Work issues

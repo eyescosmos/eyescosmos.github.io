@@ -84,7 +84,14 @@ tags: ["japanese-photography", "infrastructure", "patronage", "materiality", "ex
 - [S10] 2019 activity report including Kajima exhibition. FUJIFILM SQUARE. https://fujifilmsquare.jp/activityreport/pack/pdf/activity_report_2019.pdf
 - [S11] FUJIFILM Collection exhibition listing Kajima Seibei. CONTACT / Kitakyushu Museum. https://www.contact-tokyo.com/information/fujifilmphotocollection/
 - [S12] 鹿島清兵衛 related historical note. 幕末明治の写真師総覧. https://shashinshi.biz/archives/11947
-- [S13] Photography historical gallery / Kajima search route. Japan Search. https://jpsearch.go.jp/search?keyword=%E9%B9%BF%E5%B3%B6%E6%B8%85%E5%85%B5%E8%A1%9B
+- Search route (count外): Photography historical gallery / Kajima. Japan Search. https://jpsearch.go.jp/search?keyword=%E9%B9%BF%E5%B3%B6%E6%B8%85%E5%85%B5%E8%A1%9B
+### Codex direct-source expansion (2026-04-23)
+- [S14] FUJIFILM Square, 鹿島清兵衛 profile (photo museum profile page)  URL: https://fujifilmsquare.jp/profile/seibei_kajima.html
+- [S15] Kyodo PR Wire / FUJIFILM Square, 鹿島清兵衛展 news release PDF (exhibition press PDF)  URL: https://cdn.kyodonewsprwire.jp/prwfile/release/M101989/201903013743/_prw_OR1fl_UobNKBsk.pdf
+- [S16] Meiji University repository, 演劇写真の誕生と展開 summary PDF (university repository PDF)  URL: https://meiji.repo.nii.ac.jp/record/17255/files/557_sum.pdf
+- [S17] Seijo CGS Working Paper, 写真と近代日本の制度的文脈 (university working paper PDF)  URL: https://seijo.repo.nii.ac.jp/record/5747/files/cgs_wp_15_02.pdf
+- [S18] Nichibunken repository, 古写真の研究と保存 (research institute PDF)  URL: https://nichibun.repo.nii.ac.jp/record/5560/files/tosh_013__11__5_15__11_21.pdf
+
 ## 7. Additional search paths / next research routes（count外）
 - Kurokawa Collection / Dobson research
 - 日本写真会史料
