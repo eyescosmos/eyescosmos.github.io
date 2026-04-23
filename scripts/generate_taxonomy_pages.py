@@ -13,6 +13,7 @@ SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260419c"
 GLOBAL_SEARCH_VERSION = "20260421b"
+OGP_IMAGE_URL = f"{SITE}/assets/ogp-default.png"
 NON_PHOTOGRAPHER_IDS = {
     "charles-wirgman",
     "fabian-marti",
@@ -787,7 +788,12 @@ def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: 
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{canonical}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{OGP_IMAGE_URL}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{'Photo Coordinates' if lang == 'en' else '写真の座標'}">
+<meta name="twitter:image" content="{OGP_IMAGE_URL}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(description)}">
 <script type="application/ld+json">
@@ -804,7 +810,7 @@ gtag('config', '{GA_ID}');
 <link rel="stylesheet" href="{'../../styles/taxonomy-page.css' if lang == 'en' else '../styles/taxonomy-page.css'}?v={ASSET_VERSION}">
 </head>
 <body>
-  <header class="page-header">
+  <header class="page-header" data-nosnippet>
     <div class="container">
       <div class="header-top">
         <div class="header-label">{label}</div>
@@ -813,7 +819,7 @@ gtag('config', '{GA_ID}');
       <p class="header-keywordline">{keywordline}</p>
     </div>
   </header>
-  <nav class="tab-nav">
+  <nav class="tab-nav" data-nosnippet>
     <div class="tab-nav-inner">
       <div class="page-top-links top-links">
         <div class="tab-nav-selects">
@@ -840,7 +846,7 @@ gtag('config', '{GA_ID}');
       </section>
     </div>
     {directory_nav_html}
-    <footer class="site-footer">
+    <footer class="site-footer" data-nosnippet>
       <div>{esc(footer_line1)}</div>
       <div class="footer-secondary">{esc(footer_line2)}</div>
       {footer_extra}
@@ -994,7 +1000,7 @@ def render_site_directory_nav(
         for nationality in all_nationalities
     ]
     return f"""
-      <nav class="site-directory-links" aria-label="{esc(labels['nav'])}">
+      <nav class="site-directory-links" aria-label="{esc(labels['nav'])}" data-nosnippet>
         <div class="site-directory-group">
           <div class="site-directory-label">{esc(labels['eras'])}</div>
           <div class="site-directory-items">{''.join(era_links)}</div>

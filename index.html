@@ -810,13 +810,13 @@ body.is-navigating #page-fade {
     </div>
   </div>
 
-  <div class="focus-card">
+  <div class="focus-card" data-nosnippet>
     <div class="focus-label" id="focus-label">写真の座標</div>
     <div class="focus-meta" id="focus-meta">点ではなく名前そのものをたどりながら、関係の地図を横断します。</div>
     <div class="focus-hint" id="focus-hint">クリックで中心化、同じ名前をもう一度クリックで詳細へ。</div>
   </div>
 
-  <div class="page-links" aria-label="一覧ページへの移動">
+  <div class="page-links" aria-label="一覧ページへの移動" data-nosnippet>
     <div class="lang-toggle" aria-label="Language switch">
       <a class="lang-btn" data-lang="ja" href="/">Japanese</a>
       <a class="lang-btn" data-lang="en" href="/en/">English</a>
@@ -909,7 +909,7 @@ body.is-navigating #page-fade {
       </select>
     </span>
   </div>
-  <div class="zoom-controls" aria-label="ズーム操作">
+  <div class="zoom-controls" aria-label="ズーム操作" data-nosnippet>
     <button class="zoom-btn" id="reset-view" type="button" aria-label="初期表示に戻る">◎</button>
     <details class="map-info-control">
       <summary class="zoom-btn map-info-summary" aria-label="操作説明と注意書き">i</summary>
@@ -924,8 +924,8 @@ body.is-navigating #page-fade {
             <div class="map-info-text">クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。</div>
           </div>
           <div class="map-info-block">
-            <div class="map-info-heading">補足</div>
-            <div class="map-info-text">※ 本サイトの情報はAIがウェブ上の公開資料をもとに収集・整理したものです。出典を明記していますが、誤りや更新差が含まれる可能性があります。</div>
+            <div class="map-info-heading">編集方針</div>
+            <div class="map-info-text">本サイトは公開資料をもとに、写真家・運動・時代背景の関係を編集・整理する写真史プロジェクトです。資料収集と整理にはAIも補助的に用い、出典を確認しながら更新しています。</div>
           </div>
           <div class="map-info-links">
             <span class="map-info-select-wrap">
@@ -1026,7 +1026,7 @@ body.is-navigating #page-fade {
 </div>
 
 <div id="page-fade" aria-hidden="true"></div>
-<footer class="site-footer">
+<footer class="site-footer" data-nosnippet>
   <a href="privacy-policy.html">プライバシーポリシー</a>
 </footer>
 

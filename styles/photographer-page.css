@@ -136,6 +136,15 @@ body::after {
   top: 0;
   z-index: 100;
 }
+.page-shell > .tab-nav {
+  margin-top: 22px;
+  border: 1px solid var(--border);
+  background: rgba(14, 12, 10, 0.96);
+}
+.page-shell > .tab-nav .tab-nav-inner {
+  max-width: none;
+  padding: 0 16px;
+}
 .tab-nav-inner {
   max-width: 1200px;
   margin: 0 auto;

@@ -18,6 +18,7 @@ SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260419c"
 GLOBAL_SEARCH_VERSION = "20260421b"
+OGP_IMAGE_URL = f"{SITE}/assets/ogp-default.png"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
     "charles-wirgman",
@@ -88,6 +89,47 @@ YEAR_OVERRIDES = {
     "minor-white": "1908-1976",
     "robert-doisneau": "1912-1994",
     "russell-lee": "1903-1986",
+}
+SEO_TEXT_OVERRIDES = {
+    "stieglitz": {
+        "ja": {
+            "title": "アルフレッド・スティーグリッツ | 291ギャラリーとエクイヴァレンツ | 写真の座標",
+            "description": "291ギャラリーと写真誌『カメラ・ワーク』を主宰し、写真を絵画と並ぶ芸術として美術館に送り込んだアメリカ近代写真の中核。「エクイヴァレンツ」では被写体ではなく形式そのものが内面を語ると主張し、抽象写真の理論的基盤を築いた。",
+            "lead": "291ギャラリーと写真誌『カメラ・ワーク』を主宰し、写真を絵画と並ぶ芸術として美術館に送り込んだアメリカ近代写真の中核。「エクイヴァレンツ」では被写体ではなく形式そのものが内面を語ると主張し、抽象写真の理論的基盤を築いた。",
+        },
+        "en": {
+            "title": "Alfred Stieglitz: Pictorialism and American Photography | Photo Coordinates",
+            "description": "Alfred Stieglitz connected Pictorialism, Photo-Secession, 291, Camera Work, and Equivalents to the institutional rise of modern photography in the United States.",
+            "lead": "Alfred Stieglitz connected Pictorialism, Photo-Secession, 291, Camera Work, and Equivalents to the institutional rise of modern photography in the United States.",
+        },
+    },
+    "cameron": {
+        "ja": {
+            "title": "ジュリア・マーガレット・キャメロン | ピクトリアリズムの写真家 | 写真の座標",
+            "description": "48歳でカメラを持ち12年間に約900点を残したイギリスのヴィクトリア朝写真家。意図的なソフトフォーカスで被写体の内面を表出させ、写真を芸術として確立した先駆者として知られる。姪孫にヴァージニア・ウルフを持つ。",
+            "lead": "48歳でカメラを持ち12年間に約900点を残したイギリスのヴィクトリア朝写真家。意図的なソフトフォーカスで被写体の内面を表出させ、写真を芸術として確立した先駆者として知られる。姪孫にヴァージニア・ウルフを持つ。",
+        },
+        "en": {
+            "title": "Julia Margaret Cameron | Victorian Photography Pioneer | Photo Coordinates",
+            "description": "A Victorian British photographer who picked up a camera at forty-eight and produced around 900 works over twelve years. A pioneer who used intentional soft focus to evoke the inner life of her subjects, establishing photography as a fine art. Virginia Woolf was her great-niece.",
+            "lead": "A Victorian British photographer who picked up a camera at forty-eight and produced around 900 works over twelve years. A pioneer who used intentional soft focus to evoke the inner life of her subjects, establishing photography as a fine art. Virginia Woolf was her great-niece.",
+        },
+    },
+}
+SAME_AS_OVERRIDES = {
+    "stieglitz": [
+        "https://en.wikipedia.org/wiki/Alfred_Stieglitz",
+        "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%95%E3%83%AC%E3%83%83%E3%83%89%E3%83%BB%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC%E3%82%B0%E3%83%AA%E3%83%83%E3%83%84",
+        "https://www.wikidata.org/wiki/Q313055",
+        "https://viaf.org/viaf/49231990",
+        "https://www.getty.edu/art/collection/person/103KH0",
+    ],
+    "cameron": [
+        "https://en.wikipedia.org/wiki/Julia_Margaret_Cameron",
+        "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A5%E3%83%AA%E3%82%A2%E3%83%BB%E3%83%9E%E3%83%BC%E3%82%AC%E3%83%AC%E3%83%83%E3%83%88%E3%83%BB%E3%82%AD%E3%83%A3%E3%83%A1%E3%83%AD%E3%83%B3",
+        "https://www.wikidata.org/wiki/Q230120",
+        "https://viaf.org/viaf/61616074",
+    ],
 }
 JP_TEXT_RE = re.compile(r"[ぁ-んァ-ン一-龯]")
 EN_REFERENCE_REPLACEMENTS = {
@@ -256,7 +298,7 @@ def build_affiliate_books_html(photographer: dict, lang: str, affiliate_books: d
     books = books[:3]
 
     if not books:
-        return f"""<section class="section" data-affiliate-section>
+        return f"""<section class="section" data-affiliate-section data-nosnippet>
         <h2>{escape_html(books_heading(photographer, lang))}</h2>
         <div class="book-grid">
           <div class="note">{copy['booksPlaceholder']}</div>
@@ -282,7 +324,7 @@ def build_affiliate_books_html(photographer: dict, lang: str, affiliate_books: d
           </div>
         </div>""")
 
-    return f"""<section class="section" data-affiliate-section>
+    return f"""<section class="section" data-affiliate-section data-nosnippet>
         <h2>{escape_html(books_heading(photographer, lang))}</h2>
         <div class="book-grid">
           {''.join(cards)}
@@ -634,7 +676,7 @@ def render_site_directory_nav(
         return ""
     directory_groups = "\n".join(groups)
     return f"""
-      <nav class="site-directory-links" aria-label="{escape_html(labels['nav'])}">
+      <nav class="site-directory-links" aria-label="{escape_html(labels['nav'])}" data-nosnippet>
 {directory_groups}
       </nav>"""
 
@@ -806,6 +848,98 @@ def render_override_sections_html(sections, lang: str, alias_lookup: dict[str, d
                 continue
             parts.append(f"<p>{_render_cited_segment(paragraph, lang, alias_lookup, regex, exclude_id, linked_ids)}</p>")
     return "".join(parts)
+
+
+def render_manual_sectioned_essay_html(
+    photographer_id: str,
+    text: str,
+    lang: str,
+    alias_lookup: dict[str, dict],
+    regex: re.Pattern | None,
+) -> str:
+    """Preserve curated h2-level structure for legacy one-block essays."""
+    rules = {
+        ("stieglitz", "ja"): [
+            ("表現解説", None, "写真が純粋に抽象的"),
+            ("批評と受容", "写真が純粋に抽象的", None),
+        ],
+        ("stieglitz", "en"): [
+            ("Expression / method", None, "These pictures were among"),
+            ("Criticism and reception", "These pictures were among", None),
+        ],
+        ("cameron", "ja"): [
+            ("経歴", None, "その手段として"),
+            ("表現解説", "その手段として", None),
+        ],
+        ("cameron", "en"): [
+            ("Biography", None, "Instead of sharp definition"),
+            ("Expression / method", "Instead of sharp definition", None),
+        ],
+    }
+    section_rules = rules.get((photographer_id, lang))
+    if not section_rules or not text:
+        return ""
+
+    linked_ids: set[str] = set()
+    parts: list[str] = []
+    for heading, start_marker, end_marker in section_rules:
+        start = text.find(start_marker) if start_marker else 0
+        if start < 0:
+            return ""
+        end = text.find(end_marker, start) if end_marker else len(text)
+        if end < 0:
+            return ""
+        segment = text[start:end].strip()
+        if not segment:
+            continue
+        paragraphs = [block.strip() for block in re.split(r"\n\s*\n", segment) if block.strip()]
+        parts.append(f"<h3>{escape_html(heading)}</h3>")
+        for paragraph in paragraphs:
+            parts.append(f"<p>{_render_cited_segment(paragraph, lang, alias_lookup, regex, photographer_id, linked_ids)}</p>")
+    return "".join(parts)
+
+
+def split_essay_into_sections(rendered_body: str, default_heading: str) -> str:
+    if not rendered_body:
+        return f"""      <section class="section">
+        <h2>{escape_html(default_heading)}</h2>
+        <div class="essay"></div>
+      </section>"""
+
+    tokens = re.split(r"(<h3>.*?</h3>)", rendered_body)
+    sections: list[tuple[str, list[str]]] = []
+    current_heading = default_heading
+    current_parts: list[str] = []
+    saw_heading = False
+
+    for token in tokens:
+        if not token:
+            continue
+        heading_match = re.fullmatch(r"<h3>(.*?)</h3>", token)
+        if heading_match:
+            if current_parts or not saw_heading:
+                if current_parts:
+                    sections.append((current_heading, current_parts))
+            current_heading = strip_tags(heading_match.group(1))
+            current_parts = []
+            saw_heading = True
+            continue
+        current_parts.append(token)
+
+    if current_parts:
+        sections.append((current_heading, current_parts))
+
+    if not saw_heading:
+        sections = [(default_heading, [rendered_body])]
+
+    rendered_sections = []
+    for heading, parts in sections:
+        body = "".join(parts)
+        rendered_sections.append(f"""      <section class="section">
+        <h2>{escape_html(heading)}</h2>
+        <div class="essay">{body}</div>
+      </section>""")
+    return "\n".join(rendered_sections)
 
 
 def collect_text_and_citations(photographer: dict, lang: str):
@@ -1157,6 +1291,46 @@ def build_page_structured_data(photographer: dict, lang: str, description: str, 
             "@type": "Country",
             "name": country_name,
         }
+    same_as = SAME_AS_OVERRIDES.get(photographer.get("id"))
+    if same_as:
+        payload["sameAs"] = same_as
+    return json.dumps(payload, ensure_ascii=False, indent=2)
+
+
+def build_breadcrumb_structured_data(photographer: dict, lang: str) -> str:
+    if lang == "en":
+        home_name = "Photo Coordinates"
+        archive_name = "Photographers"
+        home_url = f"{SITE}/en/"
+        archive_url = f"{SITE}/en/archive.html"
+    else:
+        home_name = "写真の座標"
+        archive_name = "写真家一覧"
+        home_url = f"{SITE}/"
+        archive_url = f"{SITE}/archive.html"
+    payload = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": home_name,
+                "item": home_url,
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": archive_name,
+                "item": archive_url,
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": display_name(photographer, lang),
+            },
+        ],
+    }
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
@@ -1320,8 +1494,8 @@ COPY = {
         "era": "年代",
         "langJa": "Japanese",
         "langEn": "English",
-        "footerLine1": "本サイトの情報はAIによってウェブ上の資料から収集・整理されたものです。",
-        "footerLine2": "各記述には出典を明記していますが、誤りが含まれる可能性があります。",
+        "footerLine1": "本サイトは公開資料をもとに、写真家・運動・時代背景の関係を編集・整理する写真史プロジェクトです。",
+        "footerLine2": "資料収集と整理にはAIも補助的に用い、出典を確認しながら更新しています。",
         "privacy": "プライバシーポリシー",
     },
     "en": {
@@ -1349,8 +1523,8 @@ COPY = {
         "era": "Era",
         "langJa": "Japanese",
         "langEn": "English",
-        "footerLine1": "This site gathers and organizes information from publicly available web sources with AI assistance.",
-        "footerLine2": "Sources are listed where possible, but errors or outdated details may remain.",
+        "footerLine1": "This site is an editorial photography-history project that organizes photographers, movements, and historical context from public sources.",
+        "footerLine2": "AI is used as an assistance tool for collecting and arranging sources, while citations are checked and updated over time.",
         "privacy": "Privacy Policy",
     },
 }
@@ -1461,6 +1635,8 @@ def main() -> None:
                 rendered_body = render_override_sections_html(override_sections, lang, alias_lookup, alias_regex, photographer["id"])
             elif override_body_text:
                 rendered_body = render_override_essay_html(override_body_text, lang, alias_lookup, alias_regex, photographer["id"])
+            elif body_text and photographer["id"] in {"stieglitz", "cameron"}:
+                rendered_body = render_manual_sectioned_essay_html(photographer["id"], body_text, lang, alias_lookup, alias_regex) or render_override_essay_html(body_text, lang, alias_lookup, alias_regex, photographer["id"])
             elif body_text:
                 rendered_body = render_override_essay_html(body_text, lang, alias_lookup, alias_regex, photographer["id"])
             else:
@@ -1469,6 +1645,11 @@ def main() -> None:
             description = build_description(photographer, lang, era_lookup, movements_meta, enrichments)
             title = build_title(photographer, lang, era_lookup, movements_meta, enrichments)
             intro = build_intro(photographer, lang, era_lookup, movements_meta, enrichments)
+            seo_override = SEO_TEXT_OVERRIDES.get(photographer["id"], {}).get(lang, {})
+            if seo_override:
+                description = seo_override.get("description") or description
+                title = seo_override.get("title") or title
+                intro = seo_override.get("lead") or intro
             intro = override_lead(override_entry, lang) or intro
             lead_raw = override_lead_raw(override_entry, lang)
             if lead_raw:
@@ -1548,6 +1729,8 @@ def main() -> None:
             alt_name = display_alt_name(photographer, lang)
             page_path = photographer_page_path(photographer, lang)
             structured_data = build_page_structured_data(photographer, lang, description, canonical)
+            breadcrumb_structured_data = build_breadcrumb_structured_data(photographer, lang)
+            essay_sections_html = split_essay_into_sections(rendered_body, copy["essay"])
             movement_select = render_optional_tax_select(
                 movement_select_options,
                 copy["movements"],
@@ -1599,7 +1782,12 @@ def main() -> None:
 <meta property="og:description" content="{escape_html(description)}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:locale" content="{ 'en_US' if lang == 'en' else 'ja_JP' }">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{OGP_IMAGE_URL}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{escape_html(copy['site'])}">
+<meta name="twitter:image" content="{OGP_IMAGE_URL}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{escape_html(title)}">
 <meta name="twitter:description" content="{escape_html(description)}">
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
@@ -1613,7 +1801,7 @@ gtag('config', '{GA_ID}');
 <link rel="stylesheet" href="{stylesheet_href}">
 </head>
 <body data-photographer-id="{escape_html(photographer['id'])}" data-page-lang="{lang}">
-  <header class="page-header">
+  <header class="page-header" data-nosnippet>
     <div class="container">
       <div class="header-top">
         <div class="header-label">{copy['label']}</div>
@@ -1622,11 +1810,6 @@ gtag('config', '{GA_ID}');
       <p class="header-keywordline">{keyword_line_html}</p>
     </div>
   </header>
-  <nav class="tab-nav">
-    <div class="tab-nav-inner">
-{page_top_links}
-    </div>
-  </nav>
   <div class="page-shell">
     <div class="hero">
       <h1 class="title">{escape_html(display_name(photographer, lang))}{f'<span class="alt">{escape_html(alt_name)}</span>' if alt_name else ''}</h1>
@@ -1651,23 +1834,25 @@ gtag('config', '{GA_ID}');
         </div>
       </div>
     </div>
+    <nav class="tab-nav" data-nosnippet>
+      <div class="tab-nav-inner">
+{page_top_links}
+      </div>
+    </nav>
     <div class="section-grid">
-      <section class="section">
-        <h2>{copy['essay']}</h2>
-        <div class="essay">{rendered_body}</div>
-      </section>
+{essay_sections_html}
       {affiliate_section_html}
-      <section class="section">
+      <section class="section" data-nosnippet>
         <h2>{copy['links']}</h2>
         <div class="links">{links_html}</div>
       </section>
-      <section class="section">
+      <section class="section" data-nosnippet>
         <h2>{copy['sources']}</h2>
         <div class="sources">{citations_html}</div>
       </section>
     </div>
     {directory_nav}
-    <footer class="site-footer">
+    <footer class="site-footer" data-nosnippet>
       <div>{copy['footerLine1']}</div>
       <div class="footer-secondary">{copy['footerLine2']}</div>
       <div class="footer-links"><a href="{privacy_href}">{copy['privacy']}</a></div>
@@ -1676,6 +1861,9 @@ gtag('config', '{GA_ID}');
   <script src="{search_href}"></script>
   <script type="application/ld+json">
 {structured_data}
+  </script>
+  <script type="application/ld+json">
+{breadcrumb_structured_data}
   </script>
 </body>
 </html>
