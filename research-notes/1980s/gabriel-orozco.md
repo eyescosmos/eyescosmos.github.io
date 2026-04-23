@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `gabriel-orozco`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `gabriel-orozco`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ガブリエル・オロスコ（Gabriel Orozco）は、1980–1990年代の写真史で conceptual art, everyday-life photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Mexico を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、objects, games, urban traces, chance を、snapshot documentation, object intervention, serial observation によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["everyday-life", "mobility", "sculptural thinking"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Gabriel Orozco official / estate / gallery route. https://www.google.com/search?q=Gabriel+Orozco+photography+official+artist+gallery
-- [S2] Gabriel Orozco search. MoMA. https://www.moma.org/search/?query=Gabriel+Orozco
-- [S3] Gabriel Orozco search. Tate. https://www.tate.org.uk/search?q=Gabriel+Orozco
-- [S4] Gabriel Orozco collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Gabriel+Orozco
-- [S5] Gabriel Orozco search. Guggenheim Museum. https://www.guggenheim.org/?s=Gabriel+Orozco
-- [S6] Gabriel Orozco search. Art Institute of Chicago. https://www.artic.edu/search?q=Gabriel+Orozco
-- [S7] Gabriel Orozco search. SFMOMA. https://www.sfmoma.org/search/?q=Gabriel+Orozco
-- [S8] Gabriel Orozco search. Whitney Museum. https://whitney.org/search?q=Gabriel+Orozco
-- [S9] Gabriel Orozco search. International Center of Photography. https://www.icp.org/search-results/Gabriel%20Orozco
-- [S10] Gabriel Orozco search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Gabriel+Orozco
-- [S11] Gabriel Orozco search. Getty. https://www.getty.edu/art/collection/search/?q=Gabriel+Orozco
-- [S12] Gabriel Orozco route. Aperture. https://aperture.org/?s=Gabriel+Orozco
-- [S13] Gabriel Orozco route. Magnum Photos. https://www.magnumphotos.com/?s=Gabriel+Orozco
-- [S14] Gabriel Orozco criticism route. Artforum. https://www.artforum.com/search/Gabriel%20Orozco/
-- [S15] Gabriel Orozco criticism route. e-flux. https://www.e-flux.com/search/?q=Gabriel+Orozco
-- [S16] Gabriel Orozco criticism route. Frieze. https://www.frieze.com/search?keys=Gabriel+Orozco
-- [S17] Gabriel Orozco monograph / publisher route. https://www.google.com/search?q=Gabriel+Orozco+photography+monograph+publisher
-- [S18] Gabriel Orozco bibliography. WorldCat. https://search.worldcat.org/search?q=Gabriel+Orozco+photography
-- [S19] Gabriel Orozco bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Gabriel+Orozco&searchCode=GKEY%5E*&searchType=0
-- [S20] ガブリエル・オロスコ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%AC%E3%83%96%E3%83%AA%E3%82%A8%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%AD%E3%82%B9%E3%82%B3
-- [S21] ガブリエル・オロスコ / Gabriel Orozco research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%AC%E3%83%96%E3%83%AA%E3%82%A8%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%AD%E3%82%B9%E3%82%B3+Gabriel+Orozco
-- [S22] Gabriel Orozco scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Gabriel+Orozco+photography
-- [S23] Gabriel Orozco journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Gabriel+Orozco+photography
-- [S24] Gabriel Orozco library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Gabriel+Orozco
-- [S25] Gabriel Orozco archive route. Smithsonian Institution. https://www.si.edu/search?query=Gabriel+Orozco
-- [S26] Gabriel Orozco archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Gabriel+Orozco
-- [S27] Gabriel Orozco exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Gabriel+Orozco
-- [S28] Gabriel Orozco Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Gabriel Orozco third-language / local institution route. https://www.google.com/search?q=Gabriel+Orozco+photography+museum+exhibition+catalogue
-- [S30] Gabriel Orozco primary interview / statement route. https://www.google.com/search?q=Gabriel+Orozco+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Gabriel Orozco. Whitney Museum of American Art. https://whitney.org/artists/4800
+- [S2] Gabriel Orozco Photogravity. Philadelphia Museum of Art. https://www.visitpham.org/learn/publications/gabriel-orozco-photogravity
+- [S3] The Museum of Modern Art Organizes the First Major Museum Retrospective of Contemporary Artist Gabriel Orozco. MoMA press release. https://www.moma.org/documents/moma_press-release_387211.pdf
+- [S4] Gabriel Orozco: On Photography — Art21. https://art21.org/watch/extended-play/gabriel-orozco-on-photography-short/ — Artist interview/video on photography as tool and relation to sculpture/documentary seeing.
+- [S5] Introduction to Gabriel Orozco — MoMA Audio. https://www.moma.org/audio/playlist/240/3100 — MoMA audio/artist statement context on sculpture, photography, and altered seeing.
+- [S6] Gabriel Orozco artist page — Photography Now. https://photography-now.com/artist/gabriel-orozco — Exhibition directory with Guggenheim context.
+- [S7] Gabriel Orozco publication preview — MoMA. https://www.moma.org/momaorg/shared/pdfs/docs/explore/MoMABooks_2009fall.pdf — MoMA publication preview connected to drawing, photography, sculpture, and installation.
+- [S8] Gabriel Orozco: thinking in circles — Marian Goodman Gallery. https://www.mariangoodman.com/exhibitions/93-gabriel-orozco-thinking-in-circles/ — Gallery exhibition text on Orozco’s working methods and retrospective context.
+- [S9] Gabriel Orozco — Marian Goodman Gallery. https://www.mariangoodman.com/exhibitions/gabriel-orozco-2023-new-york/ — Exhibition text on Spacetime, traces of action, and environmental relation.
+- [S10] One Printed Page 1: Gabriel Orozco — MoMA. https://www.moma.org/research/library/library-council-orozco — MoMA Library Council text with artist background and print/photographic collection context.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["everyday-life", "mobility", "sculptural thinking"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Gabriel Orozco official / estate / gallery route. https://www.google.com/search?q=Gabriel+Orozco+photography+official+artist+gallery
+- [route] Gabriel Orozco search. MoMA. https://www.moma.org/search/?query=Gabriel+Orozco
+- [route] Gabriel Orozco search. Tate. https://www.tate.org.uk/search?q=Gabriel+Orozco
+- [route] Gabriel Orozco collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Gabriel+Orozco
+- [route] Gabriel Orozco search. Guggenheim Museum. https://www.guggenheim.org/?s=Gabriel+Orozco
+- [route] Gabriel Orozco search. Art Institute of Chicago. https://www.artic.edu/search?q=Gabriel+Orozco
+- [route] Gabriel Orozco search. SFMOMA. https://www.sfmoma.org/search/?q=Gabriel+Orozco
+- [route] Gabriel Orozco search. Whitney Museum. https://whitney.org/search?q=Gabriel+Orozco
+- [route] Gabriel Orozco search. International Center of Photography. https://www.icp.org/search-results/Gabriel%20Orozco
+- [route] Gabriel Orozco search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Gabriel+Orozco
+- [route] Gabriel Orozco search. Getty. https://www.getty.edu/art/collection/search/?q=Gabriel+Orozco
+- [route] Gabriel Orozco route. Aperture. https://aperture.org/?s=Gabriel+Orozco
+- [route] Gabriel Orozco route. Magnum Photos. https://www.magnumphotos.com/?s=Gabriel+Orozco
+- [route] Gabriel Orozco criticism route. Artforum. https://www.artforum.com/search/Gabriel%20Orozco/
+- [route] Gabriel Orozco criticism route. e-flux. https://www.e-flux.com/search/?q=Gabriel+Orozco
+- [route] Gabriel Orozco criticism route. Frieze. https://www.frieze.com/search?keys=Gabriel+Orozco
+- [route] Gabriel Orozco monograph / publisher route. https://www.google.com/search?q=Gabriel+Orozco+photography+monograph+publisher
+- [route] Gabriel Orozco bibliography. WorldCat. https://search.worldcat.org/search?q=Gabriel+Orozco+photography
+- [route] Gabriel Orozco bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Gabriel+Orozco&searchCode=GKEY%5E*&searchType=0
+- [route] ガブリエル・オロスコ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%AC%E3%83%96%E3%83%AA%E3%82%A8%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%AD%E3%82%B9%E3%82%B3
+- [route] ガブリエル・オロスコ / Gabriel Orozco research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%AC%E3%83%96%E3%83%AA%E3%82%A8%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%AD%E3%82%B9%E3%82%B3+Gabriel+Orozco
+- [route] Gabriel Orozco scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Gabriel+Orozco+photography
+- [route] Gabriel Orozco journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Gabriel+Orozco+photography
+- [route] Gabriel Orozco library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Gabriel+Orozco
+- [route] Gabriel Orozco archive route. Smithsonian Institution. https://www.si.edu/search?query=Gabriel+Orozco
+- [route] Gabriel Orozco archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Gabriel+Orozco
+- [route] Gabriel Orozco exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Gabriel+Orozco
+- [route] Gabriel Orozco Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Gabriel Orozco third-language / local institution route. https://www.google.com/search?q=Gabriel+Orozco+photography+museum+exhibition+catalogue
+- [route] Gabriel Orozco primary interview / statement route. https://www.google.com/search?q=Gabriel+Orozco+photographer+interview+artist+statement

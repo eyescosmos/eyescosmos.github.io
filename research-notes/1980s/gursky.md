@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `gursky`. Formal source candidates and research routes in this note: 30.
+> Site id / slug reference: `gursky`. Direct source pages retained in Sources: 23. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ## 1. 経歴・背景 / Basic facts and context
 アンドレアス・グルスキー（Andreas Gursky）は、1980–1990年代の写真史で Dusseldorf School, large-scale color photography, conceptual photography と結びつけて考えたい作家である。活動地域は Germany を中心に広がり、作品は美術館、写真集、ギャラリー、批評誌、アーカイブを通じて受容された。略歴は必要最小限にとどめ、global capitalism, stock exchanges, logistics, retail interiors, crowds を扱う方法が、当時の写真表現、美術制度、社会的文脈とどう結びついていたのかを中心に調べる。
@@ -63,40 +63,33 @@ tags: ["systems vision", "globalization", "scale", "post-photographic constructi
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-## 6. Sources and research routes
+## 6. Sources (direct pages only)
 - [S1] Andreas Gursky. Tate. https://www.tate.org.uk/art/artists/andreas-gursky-2508
 - [S2] Andreas Gursky. Guggenheim Museum. https://www.guggenheim.org/artwork/artist/andreas-gursky
 - [S3] Andreas Gursky. Gagosian. https://gagosian.com/artists/andreas-gursky/
 - [S4] Andreas Gursky: redefining photography. Sotheby’s / Hayward. https://www.sothebys.com/en/videos/redefining-photography-andreas-gursky
-- [S5] Andreas Gursky search. MoMA. https://www.moma.org/search/?query=Andreas+Gursky
-- [S6] Andreas Gursky official / estate / gallery route. https://www.google.com/search?q=Andreas+Gursky+photography+official+artist+gallery
-- [S7] Andreas Gursky search. Tate. https://www.tate.org.uk/search?q=Andreas+Gursky
-- [S8] Andreas Gursky collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Andreas+Gursky
-- [S9] Andreas Gursky search. Guggenheim Museum. https://www.guggenheim.org/?s=Andreas+Gursky
-- [S10] Andreas Gursky search. Art Institute of Chicago. https://www.artic.edu/search?q=Andreas+Gursky
-- [S11] Andreas Gursky search. SFMOMA. https://www.sfmoma.org/search/?q=Andreas+Gursky
-- [S12] Andreas Gursky search. Whitney Museum. https://whitney.org/search?q=Andreas+Gursky
-- [S13] Andreas Gursky search. International Center of Photography. https://www.icp.org/search-results/Andreas%20Gursky
-- [S14] Andreas Gursky search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Andreas+Gursky
-- [S15] Andreas Gursky search. Getty. https://www.getty.edu/art/collection/search/?q=Andreas+Gursky
-- [S16] Andreas Gursky route. Aperture. https://aperture.org/?s=Andreas+Gursky
-- [S17] Andreas Gursky route. Magnum Photos. https://www.magnumphotos.com/?s=Andreas+Gursky
-- [S18] Andreas Gursky criticism route. Artforum. https://www.artforum.com/search/Andreas%20Gursky/
-- [S19] Andreas Gursky criticism route. e-flux. https://www.e-flux.com/search/?q=Andreas+Gursky
-- [S20] Andreas Gursky criticism route. Frieze. https://www.frieze.com/search?keys=Andreas+Gursky
-- [S21] Andreas Gursky monograph / publisher route. https://www.google.com/search?q=Andreas+Gursky+photography+monograph+publisher
-- [S22] Andreas Gursky bibliography. WorldCat. https://search.worldcat.org/search?q=Andreas+Gursky+photography
-- [S23] Andreas Gursky bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Andreas+Gursky&searchCode=GKEY%5E*&searchType=0
-- [S24] アンドレアス・グルスキー bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%A2%E3%83%B3%E3%83%89%E3%83%AC%E3%82%A2%E3%82%B9%E3%83%BB%E3%82%B0%E3%83%AB%E3%82%B9%E3%82%AD%E3%83%BC
-- [S25] アンドレアス・グルスキー / Andreas Gursky research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%A2%E3%83%B3%E3%83%89%E3%83%AC%E3%82%A2%E3%82%B9%E3%83%BB%E3%82%B0%E3%83%AB%E3%82%B9%E3%82%AD%E3%83%BC+Andreas+Gursky
-- [S26] Andreas Gursky scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Andreas+Gursky+photography
-- [S27] Andreas Gursky journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Andreas+Gursky+photography
-- [S28] Andreas Gursky library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Andreas+Gursky
-- [S29] Andreas Gursky archive route. Smithsonian Institution. https://www.si.edu/search?query=Andreas+Gursky
-- [S30] Andreas Gursky archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Andreas+Gursky
+- [S5] Andreas Gursky. MoMA. https://www.moma.org/collection/artists/7806
+- [S6] Andreas Gursky. Gagosian Quarterly. https://gagosian.com/quarterly/2016/12/02/conversation-andreas-gursky/
+- [S7] Andreas Gursky interview. Gagosian Quarterly. https://gagosian.com/quarterly/2022/05/05/interview-andreas-gursky-max-dax/
+- [S8] Andreas Gursky Hayward Gallery press release PDF. https://m.andreasgursky.com/media/pages/downloads/2017/press-release-hayward-gallery/f24ec43036-1762792551/prandreasgursky.pdf
+- [S9] Andreas Gursky, Hayward Gallery. Andreas Gursky official site. https://www.andreasgursky.com/en/exhibitions/solo-exhibitions/2017/andreas-gursky-at-hayward-gallery
+- [S10] Andreas Gursky’s monumental photos. DW. https://www.dw.com/en/andreas-gurskys-monumental-photos-celebrated-in-new-london-exhibit/a-42316460
+- [S11] Andreas Gursky: Visual Spaces of Today. 1000 Words. https://1000wordsmag.com/andreas-gursky/
+- [S12] Andreas Gursky. Museum of Contemporary Art Chicago. https://mcachicago.org/about/who-we-are/people/andreas-gursky
+- [S13] Andreas Gursky exhibition catalogue PDF. MoMA. https://www.moma.org/documents/moma_catalogue_170_300133854.pdf
+- [S14] Andreas Gursky exhibition press release PDF. MoMA. https://assets.moma.org/documents/moma_press-release_387045.pdf
+- [S15] Andreas Gursky. Centre Pompidou. https://www.centrepompidou.fr/en/ressources/personne/cqppEqk
+- [S16] Centre Georges Pompidou, 1995. Art Gallery of NSW. https://www.artgallery.nsw.gov.au/collection/works/357.2011/
+- [S17] Andreas Gursky: Centre Pompidou. Official selected works. https://www.andreasgursky.com/en/works/1995/centre-pompidoi
+- [S18] Andreas Gursky: Centre Pompidou. Sotheby’s lot essay. https://www.sothebys.com/buy/7745397a-7020-4a10-8a54-48d6a806cf51/lots/1caf429b-285d-4f22-97ba-ecac722a055e
+- [S19] Andreas Gursky: Paris, Centre Pompidou. Phillips. https://www.phillips.com/detail/andreas-gursky/79415
+- [S20] Andreas Gursky solo exhibitions. Official site. https://www.andreasgursky.com/en/exhibitions
+- [S21] Andreas Gursky MKM press release PDF. Official site. https://www.andreasgursky.com/media/pages/downloads/2021/mkm/69bc0ae85a-1666644774/2021_mkm_pm_en.pdf
+- [S22] Andreas Gursky White Cube press text PDF. Official site. https://m.andreasgursky.com/media/pages/downloads/2022/wc/a24af48511-1666644608/2022_pressetext_wc.pdf
+- [S23] Andreas Gursky press release. Official site. https://m.andreasgursky.com/media/pages/downloads/2020/press-release-mspm-berlin/96b7fb7a14-1762792558/agu_press-release_2020.pdf
 
 ## 7. 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で23件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -104,3 +97,7 @@ tags: ["systems vision", "globalization", "scale", "post-photographic constructi
 - 巨大プリント、edition、写真市場、現代美術市場に関する批評論文
 - デジタル合成とDüsseldorf Schoolの関係を扱う研究資料
 - Hayward、MoMA、Gagosian以外のドイツ語圏・英語圏レビュー
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 23. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- No search/catalog routes were moved.

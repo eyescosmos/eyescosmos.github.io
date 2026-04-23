@@ -92,3 +92,91 @@
 - [S8] OHIO. Zeitschrift für Photographie. Antiquariat Querido record. https://antiquarisch.de/giaq/article/46783809-feldmann-hans-peter-stefan-schneider-ohio-zeitschrift-fr-photographie
 - [S9] Found photography / Found, Shared exhibition context. Digital Photography Blog. https://digitalphotographyblog.wordpress.com/2007/04/23/found-photography/
 - [S10] Ohio #1. edcat. https://edcat.net/item/ohio-1/
+
+## 8. Codex完成版補強メモ / 1990–2000s research expansion
+
+> 追加方針: ChatGPT側の1990–2000sソース・パケットを素材に、Codex側で本文用の直接導線をできるだけ30件へ近づけ、本文改訂用の論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には、美術館・専門機関・出版社・図書館・学術検索の直接導線を優先して入れた。情報が少ない作家の検索ルートは、本文用Sourcesではなく「追加探索先」に回す運用を前提にする。
+>
+> Site id / slug reference: `ohio`. Direct source pages retained in Sources: 0. Search, catalog, and database routes are separated under Additional exploration routes.
+
+### 8.1 本文改訂で強める論点
+オハイオ（Ohio）は、1990–2000年代の写真史で artist collective, archive and publication, conceptual photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Netherlands を軸に、美術館、写真集、映像・インスタレーション、ギャラリー、批評誌、オンライン・アーカイブを通じて作品が流通した点を確認する必要がある。略歴だけではなく、found images, public culture, image circulation を、publication project, image collection, collective editing によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
+
+表現解説では、archive, vernacular image, media circulation を中心語にしつつ、作品を単なる代表作紹介で終わらせないことが重要である。1990–2000年代は、写真が紙のプリントだけでなく、映像、インスタレーション、出版、アーカイブ、ウェブ、ギャラリー制度、グローバル・ビエンナーレの中で再編された時期である。比較対象としては Useful Photography, Peter Piller を優先し、浅い類似ではなく、写真観、方法、対象の捉え方、受容史の差異を整理する。
+
+評価・批評では、同時代の展覧会、写真集、ギャラリーでの流通、後年の美術館・研究機関による再評価を分けて扱う。収集・編集・出版を通じて、匿名的な写真や視覚文化の流通を扱う集団的プロジェクト。 この一文を起点に、本文では「何を撮ったか」よりも「その方法が何を変えたか」を中心に組み立てる。
+
+### 8.2 座標用補助メモ（本文には直接反映しない内部用）
+```yaml
+id: ohio
+name_ja: "オハイオ"
+name_en: "Ohio"
+birth_year: ""
+death_year: ""
+active_eras: ["1990s", "2000s"]
+countries: ["Netherlands"]
+movements: ["artist collective", "archive and publication", "conceptual photography"]
+platforms: ["museum exhibitions", "photobooks / monographs", "gallery circulation", "archives and online image culture", "critical journals"]
+subjects: ["found images", "public culture", "image circulation"]
+methods: ["publication project", "image collection", "collective editing"]
+concepts: ["archive", "vernacular image", "media circulation"]
+influenced_by: ["Useful Photography", "Peter Piller"]
+related_figures: ["Useful Photography", "Peter Piller"]
+description_short: "収集・編集・出版を通じて、匿名的な写真や視覚文化の流通を扱う集団的プロジェクト。"
+confidence: 0.72
+source_basis: ["ChatGPT 1990s source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
+axes:
+  documentary: 3
+  staged: 2
+  subjective: 3
+  objective: 2
+  social: 3
+  formal_experiment: 4
+  catalog_impulse: 5
+  criticality: 5
+  personal_intimacy: 2
+  historical_awareness: 5
+  body_focus: 2
+  urban_focus: 2
+  memory_focus: 5
+  aesthetic_intensity: 4
+  materiality: 3
+surface_connections: ["artist collective, archive and publication, conceptual photography", "Netherlands / 1990–2000s"]
+deep_connections: ["収集・編集・出版を通じて、匿名的な写真や視覚文化の流通を扱う集団的プロジェクト。", "publication project, image collection, collective editingという方法を通じて、archive, vernacular image, media circulationを写真史的な問題として扱う。"]
+comparison_targets: ["Useful Photography", "Peter Piller"]
+one_sentence_connection: "収集・編集・出版を通じて、匿名的な写真や視覚文化の流通を扱う集団的プロジェクト。"
+tags: ["archive", "vernacular image", "media circulation"]
+```
+
+### 8.3 Quote candidates
+- 本人インタビュー、作家ステートメント、写真集序文、展覧会カタログから、方法論を直接説明する短い引用候補を優先して抽出する。
+- 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
+- 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
+
+### 8.4 Sources (direct pages only)
+- [S1] OHIO: Zeitschrift für Photographie. antiquarisch.de / bibliographic note. https://antiquarisch.de/giaq/article/46783809-feldmann-hans-peter-stefan-schneider-ohio-zeitschrift-fr-photographie
+- [S2] Ohio Photomagazine. Input Party. https://inputparty.nl/ohio-photomagazine/
+- [S3] arthistoricum.net: Zeitschriften / OHIO. https://www.arthistoricum.net/themen/portale/photographie/literatur/zeitschriften
+- [S4] Ohio, ein Photomagazin Nr. 1-6. Stedelijk Museum Amsterdam collection. https://www.stedelijk.nl/en/collection/1765-hans-peter-feldmann-uschi-huber-stefan-schneider-ohio-ein-photomagazin-nr.-1-6
+- [S5] Hans-Peter Feldmann - Ohio #1 1995. Saint-Martin Bookshop. https://saint-martin-bookshop.com/products/hans-peter-feldmann-ohio-1-1995
+- [S6] Hans-Peter Feldmann portfolio, Ohio description. Galerie Barbara Wien PDF. https://www.barbarawien.de/downloads/artists/hpf_portfolio_op_17-05-2024_m.pdf
+- [S7] Hans-Peter Feldmann: profil without words. Ciel variable. https://cielvariable.ca/en/issues/ciel-variable-83-medium-magazines/hans-peter-feldmann-profil-without-words/
+- [S8] Found photography / Found, Shared exhibition context. Digital Photography Blog. https://digitalphotographyblog.wordpress.com/2007/04/23/found-photography/
+- [S9] Ohio #1. edcat. https://edcat.net/item/ohio-1/
+- [S10] Ohio library record — Van Abbemuseum. https://vanabbemuseum.nl/en/collection-research/library/publications/ohio-1 — Library record describing Ohio as a periodical of appropriated photographs with no text.
+
+### 8.5 出典探索メモ / Source exploration memo
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で9件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
+
+
+## 9. 追加探索先 / Additional exploration routes
+> 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
+- Ohioの本人インタビュー、作家ステートメント、写真集序文を優先して確認する。
+- 本文用Sourcesは30件前後に保ち、検索導線は必要な場合だけ実読後にSourcesへ昇格する。
+- 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
+- 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+- Google advanced route: `Ohio` + official site / monograph / museum catalogue / artist interview / review を組み合わせ、本文に使える一次資料・カタログ・批評だけをSourcesへ昇格する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 9. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- No search/catalog routes were moved.

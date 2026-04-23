@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `yasumasa-morimura`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `yasumasa-morimura`. Direct source pages retained in Sources: 15. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 森村泰昌（Yasumasa Morimura）は、1980–1990年代の写真史で appropriation, self-portraiture, postmodern photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Japan を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、art history, gender, national identity, celebrity を、self-staging, costume, re-enactment, photographic tableau によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,25 @@ tags: ["identity performance", "appropriation", "Orientalism critique"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Yasumasa Morimura official / estate / gallery route. https://www.google.com/search?q=Yasumasa+Morimura+photography+official+artist+gallery
-- [S2] Yasumasa Morimura search. MoMA. https://www.moma.org/search/?query=Yasumasa+Morimura
-- [S3] Yasumasa Morimura search. Tate. https://www.tate.org.uk/search?q=Yasumasa+Morimura
-- [S4] Yasumasa Morimura collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Yasumasa+Morimura
-- [S5] Yasumasa Morimura search. Guggenheim Museum. https://www.guggenheim.org/?s=Yasumasa+Morimura
-- [S6] Yasumasa Morimura search. Art Institute of Chicago. https://www.artic.edu/search?q=Yasumasa+Morimura
-- [S7] Yasumasa Morimura search. SFMOMA. https://www.sfmoma.org/search/?q=Yasumasa+Morimura
-- [S8] Yasumasa Morimura search. Whitney Museum. https://whitney.org/search?q=Yasumasa+Morimura
-- [S9] Yasumasa Morimura search. International Center of Photography. https://www.icp.org/search-results/Yasumasa%20Morimura
-- [S10] Yasumasa Morimura search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Yasumasa+Morimura
-- [S11] Yasumasa Morimura search. Getty. https://www.getty.edu/art/collection/search/?q=Yasumasa+Morimura
-- [S12] Yasumasa Morimura route. Aperture. https://aperture.org/?s=Yasumasa+Morimura
-- [S13] Yasumasa Morimura route. Magnum Photos. https://www.magnumphotos.com/?s=Yasumasa+Morimura
-- [S14] Yasumasa Morimura criticism route. Artforum. https://www.artforum.com/search/Yasumasa%20Morimura/
-- [S15] Yasumasa Morimura criticism route. e-flux. https://www.e-flux.com/search/?q=Yasumasa+Morimura
-- [S16] Yasumasa Morimura criticism route. Frieze. https://www.frieze.com/search?keys=Yasumasa+Morimura
-- [S17] Yasumasa Morimura monograph / publisher route. https://www.google.com/search?q=Yasumasa+Morimura+photography+monograph+publisher
-- [S18] Yasumasa Morimura bibliography. WorldCat. https://search.worldcat.org/search?q=Yasumasa+Morimura+photography
-- [S19] Yasumasa Morimura bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Yasumasa+Morimura&searchCode=GKEY%5E*&searchType=0
-- [S20] 森村泰昌 bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E6%A3%AE%E6%9D%91%E6%B3%B0%E6%98%8C
-- [S21] 森村泰昌 / Yasumasa Morimura research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E6%A3%AE%E6%9D%91%E6%B3%B0%E6%98%8C+Yasumasa+Morimura
-- [S22] Yasumasa Morimura scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Yasumasa+Morimura+photography
-- [S23] Yasumasa Morimura journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Yasumasa+Morimura+photography
-- [S24] Yasumasa Morimura library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Yasumasa+Morimura
-- [S25] Yasumasa Morimura archive route. Smithsonian Institution. https://www.si.edu/search?query=Yasumasa+Morimura
-- [S26] Yasumasa Morimura archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Yasumasa+Morimura
-- [S27] Yasumasa Morimura exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Yasumasa+Morimura
-- [S28] Yasumasa Morimura Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Yasumasa Morimura third-language / local institution route. https://www.google.com/search?q=Yasumasa+Morimura+photography+museum+exhibition+catalogue
-- [S30] Yasumasa Morimura primary interview / statement route. https://www.google.com/search?q=Yasumasa+Morimura+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Yasumasa Morimura. MoMA. https://www.moma.org/artists/7631-yasumasa-morimura
+- [S2] Yasumasa MORIMURA. National Gallery of Victoria. https://www.ngv.vic.gov.au/explore/collection/artist/9992/
+- [S3] Meet the Artist: Yasumasa Morimura. Hara Museum ARC. https://www.haramuseum.or.jp/en/arc/event/1192/
+- [S4] MORIMURA Yasumasa Interview, 2018. Ocula. https://ocula.com/magazine/video-audio/2020/4/morimura-yasumasa-interview-2018/
+- [S5] Where Do We Stand? exhibition work list. The National Museum of Modern Art, Kyoto PDF. https://www.momak.go.jp/English/wp-content/uploads/sites/2/2026/02/%E3%82%BB%E3%82%AB%E3%82%B3%E3%83%88_%E4%BD%9C%E5%93%81%E3%83%AA%E3%82%B9%E3%83%88_1223_%E8%8B%B1_final.pdf
+- [S6] Interview with Morimura Yasumasa, 9 December 1990 — Asia Art Archive. https://aaa.org.hk/collections/search/archive/john-clark-archive-volume-iii-japan-interviews/object/interview-with-morimura-yasumasa-9-december-1990 — Primary/interview archive for Morimura’s early reception and self-positioning.
+- [S7] Morimura Yasumasa interview — Universes in Universe / Yokohama Triennale. https://universes.art/en/yokohama-triennale/2014/morimura-interview — Interview on curatorial thinking, contemporary art, and oblivion.
+- [S8] Yasumasa Morimura CV — Luhring Augustine. https://www.luhringaugustine.com/attachment/en/556d89b2cfaf3421548b4568/TextOneColumnWithFile/5ff8af530cb4d3558713ef83 — Gallery CV with exhibition and collection context.
+- [S9] Photo Reenactment gallery text — J. Paul Getty Museum. https://www.getty.edu/art/exhibitions/photo_reenactment/downloads/reenactment_gallery_text.pdf — Getty wall text on reenactment and Morimura’s relation to Western art history.
+- [S10] Encore: Reenactment in Contemporary Photography — J. Paul Getty Museum. https://www.getty.edu/visit/cal/events/ev_2398.html — Exhibition framing Morimura in photographic reenactment and art-historical restaging.
+- [S11] Getty Museum Presents Encore: Reenactment in Contemporary Photography — J. Paul Getty Museum. https://www.getty.edu/news/getty-presents-encore-reenactment-in-contemporary-photography/ — Press text contextualizing Morimura among artists using reenactment to revisit art history and identity.
+- [S12] Jam Session: The Ishibashi Foundation Collection x Morimura Yasumasa — Artizon Museum. https://www.artizon.museum/en/exhibition/detail/73 — Museum exhibition text on Morimura’s self-portrait method and dialogue with Japanese art history.
+- [S13] Yasumasa Morimura: 9 visages — Fondation Cartier pour l’art contemporain. https://www.fondationcartier.com/en/programme/exhibition/yasumasa-morimura — French institutional exhibition text on Morimura’s photomontage, disguise, and identity questions.
+- [S14] Barco Negro on a Table: Yasumasa Morimura — MEM. https://mem-inc.jp/2003/03/01/morimura-2_e/ — Gallery text on early photographic works and Morimura’s training context.
+- [S15] Interviews: Yasumasa Morimura — Luhring Augustine / Artforum. https://www.luhringaugustine.com/press/interviews-yasumasa-morimura — Interview source for Morimura’s own phrasing around appropriation, canon, and selfhood.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で15件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +114,36 @@ tags: ["identity performance", "appropriation", "Orientalism critique"]
 - 西洋名画・映画スターの再演とポストモダン日本美術の資料
 - 森村本人のステートメント、展覧会図録、インタビュー
 - Cindy Sherman、Sherrie Levine、Kaoru Izimaとの比較資料
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 15. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Yasumasa Morimura official / estate / gallery route. https://www.google.com/search?q=Yasumasa+Morimura+photography+official+artist+gallery
+- [route] Yasumasa Morimura search. MoMA. https://www.moma.org/search/?query=Yasumasa+Morimura
+- [route] Yasumasa Morimura search. Tate. https://www.tate.org.uk/search?q=Yasumasa+Morimura
+- [route] Yasumasa Morimura collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Yasumasa+Morimura
+- [route] Yasumasa Morimura search. Guggenheim Museum. https://www.guggenheim.org/?s=Yasumasa+Morimura
+- [route] Yasumasa Morimura search. Art Institute of Chicago. https://www.artic.edu/search?q=Yasumasa+Morimura
+- [route] Yasumasa Morimura search. SFMOMA. https://www.sfmoma.org/search/?q=Yasumasa+Morimura
+- [route] Yasumasa Morimura search. Whitney Museum. https://whitney.org/search?q=Yasumasa+Morimura
+- [route] Yasumasa Morimura search. International Center of Photography. https://www.icp.org/search-results/Yasumasa%20Morimura
+- [route] Yasumasa Morimura search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Yasumasa+Morimura
+- [route] Yasumasa Morimura search. Getty. https://www.getty.edu/art/collection/search/?q=Yasumasa+Morimura
+- [route] Yasumasa Morimura route. Aperture. https://aperture.org/?s=Yasumasa+Morimura
+- [route] Yasumasa Morimura route. Magnum Photos. https://www.magnumphotos.com/?s=Yasumasa+Morimura
+- [route] Yasumasa Morimura criticism route. Artforum. https://www.artforum.com/search/Yasumasa%20Morimura/
+- [route] Yasumasa Morimura criticism route. e-flux. https://www.e-flux.com/search/?q=Yasumasa+Morimura
+- [route] Yasumasa Morimura criticism route. Frieze. https://www.frieze.com/search?keys=Yasumasa+Morimura
+- [route] Yasumasa Morimura monograph / publisher route. https://www.google.com/search?q=Yasumasa+Morimura+photography+monograph+publisher
+- [route] Yasumasa Morimura bibliography. WorldCat. https://search.worldcat.org/search?q=Yasumasa+Morimura+photography
+- [route] Yasumasa Morimura bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Yasumasa+Morimura&searchCode=GKEY%5E*&searchType=0
+- [route] 森村泰昌 bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E6%A3%AE%E6%9D%91%E6%B3%B0%E6%98%8C
+- [route] 森村泰昌 / Yasumasa Morimura research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E6%A3%AE%E6%9D%91%E6%B3%B0%E6%98%8C+Yasumasa+Morimura
+- [route] Yasumasa Morimura scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Yasumasa+Morimura+photography
+- [route] Yasumasa Morimura journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Yasumasa+Morimura+photography
+- [route] Yasumasa Morimura library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Yasumasa+Morimura
+- [route] Yasumasa Morimura archive route. Smithsonian Institution. https://www.si.edu/search?query=Yasumasa+Morimura
+- [route] Yasumasa Morimura archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Yasumasa+Morimura
+- [route] Yasumasa Morimura exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Yasumasa+Morimura
+- [route] Yasumasa Morimura Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Yasumasa Morimura third-language / local institution route. https://www.google.com/search?q=Yasumasa+Morimura+photography+museum+exhibition+catalogue
+- [route] Yasumasa Morimura primary interview / statement route. https://www.google.com/search?q=Yasumasa+Morimura+photographer+interview+artist+statement

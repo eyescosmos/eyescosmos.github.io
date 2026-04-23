@@ -37,7 +37,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `simon-norfolk`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `simon-norfolk`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 サイモン・ノーフォーク（Simon Norfolk）は、1980–1990年代の写真史で conflict landscape, aftermath photography と結びつけて整理したい作家である。活動地域・制度的文脈としては United Kingdom / Nigeria を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、battlefields, ruins, military infrastructure, empire を、large-format color, historical landscape, slow documentary によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -93,40 +93,20 @@ tags: ["battlefield expanded", "land as archive", "imperial memory"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Simon Norfolk official / estate / gallery route. https://www.google.com/search?q=Simon+Norfolk+photography+official+artist+gallery
-- [S2] Simon Norfolk search. MoMA. https://www.moma.org/search/?query=Simon+Norfolk
-- [S3] Simon Norfolk search. Tate. https://www.tate.org.uk/search?q=Simon+Norfolk
-- [S4] Simon Norfolk collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Simon+Norfolk
-- [S5] Simon Norfolk search. Guggenheim Museum. https://www.guggenheim.org/?s=Simon+Norfolk
-- [S6] Simon Norfolk search. Art Institute of Chicago. https://www.artic.edu/search?q=Simon+Norfolk
-- [S7] Simon Norfolk search. SFMOMA. https://www.sfmoma.org/search/?q=Simon+Norfolk
-- [S8] Simon Norfolk search. Whitney Museum. https://whitney.org/search?q=Simon+Norfolk
-- [S9] Simon Norfolk search. International Center of Photography. https://www.icp.org/search-results/Simon%20Norfolk
-- [S10] Simon Norfolk search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Simon+Norfolk
-- [S11] Simon Norfolk search. Getty. https://www.getty.edu/art/collection/search/?q=Simon+Norfolk
-- [S12] Simon Norfolk route. Aperture. https://aperture.org/?s=Simon+Norfolk
-- [S13] Simon Norfolk route. Magnum Photos. https://www.magnumphotos.com/?s=Simon+Norfolk
-- [S14] Simon Norfolk criticism route. Artforum. https://www.artforum.com/search/Simon%20Norfolk/
-- [S15] Simon Norfolk criticism route. e-flux. https://www.e-flux.com/search/?q=Simon+Norfolk
-- [S16] Simon Norfolk criticism route. Frieze. https://www.frieze.com/search?keys=Simon+Norfolk
-- [S17] Simon Norfolk monograph / publisher route. https://www.google.com/search?q=Simon+Norfolk+photography+monograph+publisher
-- [S18] Simon Norfolk bibliography. WorldCat. https://search.worldcat.org/search?q=Simon+Norfolk+photography
-- [S19] Simon Norfolk bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Simon+Norfolk&searchCode=GKEY%5E*&searchType=0
-- [S20] サイモン・ノーフォーク bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%B5%E3%82%A4%E3%83%A2%E3%83%B3%E3%83%BB%E3%83%8E%E3%83%BC%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AF
-- [S21] サイモン・ノーフォーク / Simon Norfolk research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%B5%E3%82%A4%E3%83%A2%E3%83%B3%E3%83%BB%E3%83%8E%E3%83%BC%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AF+Simon+Norfolk
-- [S22] Simon Norfolk scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Simon+Norfolk+photography
-- [S23] Simon Norfolk journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Simon+Norfolk+photography
-- [S24] Simon Norfolk library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Simon+Norfolk
-- [S25] Simon Norfolk archive route. Smithsonian Institution. https://www.si.edu/search?query=Simon+Norfolk
-- [S26] Simon Norfolk archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Simon+Norfolk
-- [S27] Simon Norfolk exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Simon+Norfolk
-- [S28] Simon Norfolk Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Simon Norfolk third-language / local institution route. https://www.google.com/search?q=Simon+Norfolk+photography+museum+exhibition+catalogue
-- [S30] Simon Norfolk primary interview / statement route. https://www.google.com/search?q=Simon+Norfolk+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] CV: Simon Norfolk. Official website. https://www.simonnorfolk.com/cv
+- [S2] Simon Norfolk. PhMuseum. https://phmuseum.com/u/simon-norfolk
+- [S3] Photography Workshop with Simon Norfolk. Fundación MAPFRE. https://kbr.fundacionmapfre.org/en/workshops/simon-norfolk/
+- [S4] Fantasma en la Ciudad, Nogales, Arizona/Nogales, Sonora, Mexico, 2006. Amon Carter Museum of American Art. https://www.cartermuseum.org/collection/fantasma-en-la-ciudad-nogales-arizonanogales-sonora-mexico-2006-p200717
+- [S5] War/Photography: An Interview with Simon Norfolk. BLDGBLOG. https://www.bldgblog.com/2006/12/warphotography-an-interview-with-simon-norfolk/
+- [S6] Burke + Norfolk — FOTODOKS. https://fotodoks.de/simon-norfolk-en/ — Exhibition/project text on Norfolk’s rephotographic dialogue with John Burke and Afghanistan.
+- [S7] Afghanistan — Irish Museum of Modern Art. https://imma.ie/collection/afghanistan/ — Collection object page for Norfolk’s Afghanistan work.
+- [S8] For most of it I have no words — The Hyman Collection. https://hymancollection.org/artworks/categories/23/664-simon-norfolk-for-most-of-it-i-have-no-words-1998/ — Collection text on Norfolk’s landscapes of genocide.
+- [S9] Nothing to See? The Future of War Photography symposium review — Teesside University Research Portal. https://research.tees.ac.uk/en/publications/nothing-to-see-the-future-of-war-photography-symposium-review-imp/ — Peer-reviewed symposium review placing Norfolk in war-photography debates.
+- [S10] Discover an Enduring Afghanistan Through Its Landscape — TIME. https://time.com/3961653/afghanistan-landscape-simon-norfolk/ — Article/interview context on Norfolk’s Afghanistan landscape work and relation to John Burke.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -134,3 +114,36 @@ tags: ["battlefield expanded", "land as archive", "imperial memory"]
 - war photographyからaftermath landscapeへ移行する理論資料
 - Imperial War Museum、Tate、MAPFRE以外の館蔵・展示資料
 - Roger Fenton、Don McCullin、Xavier Ribasとの比較資料
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Simon Norfolk official / estate / gallery route. https://www.google.com/search?q=Simon+Norfolk+photography+official+artist+gallery
+- [route] Simon Norfolk search. MoMA. https://www.moma.org/search/?query=Simon+Norfolk
+- [route] Simon Norfolk search. Tate. https://www.tate.org.uk/search?q=Simon+Norfolk
+- [route] Simon Norfolk collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Simon+Norfolk
+- [route] Simon Norfolk search. Guggenheim Museum. https://www.guggenheim.org/?s=Simon+Norfolk
+- [route] Simon Norfolk search. Art Institute of Chicago. https://www.artic.edu/search?q=Simon+Norfolk
+- [route] Simon Norfolk search. SFMOMA. https://www.sfmoma.org/search/?q=Simon+Norfolk
+- [route] Simon Norfolk search. Whitney Museum. https://whitney.org/search?q=Simon+Norfolk
+- [route] Simon Norfolk search. International Center of Photography. https://www.icp.org/search-results/Simon%20Norfolk
+- [route] Simon Norfolk search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Simon+Norfolk
+- [route] Simon Norfolk search. Getty. https://www.getty.edu/art/collection/search/?q=Simon+Norfolk
+- [route] Simon Norfolk route. Aperture. https://aperture.org/?s=Simon+Norfolk
+- [route] Simon Norfolk route. Magnum Photos. https://www.magnumphotos.com/?s=Simon+Norfolk
+- [route] Simon Norfolk criticism route. Artforum. https://www.artforum.com/search/Simon%20Norfolk/
+- [route] Simon Norfolk criticism route. e-flux. https://www.e-flux.com/search/?q=Simon+Norfolk
+- [route] Simon Norfolk criticism route. Frieze. https://www.frieze.com/search?keys=Simon+Norfolk
+- [route] Simon Norfolk monograph / publisher route. https://www.google.com/search?q=Simon+Norfolk+photography+monograph+publisher
+- [route] Simon Norfolk bibliography. WorldCat. https://search.worldcat.org/search?q=Simon+Norfolk+photography
+- [route] Simon Norfolk bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Simon+Norfolk&searchCode=GKEY%5E*&searchType=0
+- [route] サイモン・ノーフォーク bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%B5%E3%82%A4%E3%83%A2%E3%83%B3%E3%83%BB%E3%83%8E%E3%83%BC%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AF
+- [route] サイモン・ノーフォーク / Simon Norfolk research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%B5%E3%82%A4%E3%83%A2%E3%83%B3%E3%83%BB%E3%83%8E%E3%83%BC%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AF+Simon+Norfolk
+- [route] Simon Norfolk scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Simon+Norfolk+photography
+- [route] Simon Norfolk journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Simon+Norfolk+photography
+- [route] Simon Norfolk library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Simon+Norfolk
+- [route] Simon Norfolk archive route. Smithsonian Institution. https://www.si.edu/search?query=Simon+Norfolk
+- [route] Simon Norfolk archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Simon+Norfolk
+- [route] Simon Norfolk exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Simon+Norfolk
+- [route] Simon Norfolk Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Simon Norfolk third-language / local institution route. https://www.google.com/search?q=Simon+Norfolk+photography+museum+exhibition+catalogue
+- [route] Simon Norfolk primary interview / statement route. https://www.google.com/search?q=Simon+Norfolk+photographer+interview+artist+statement

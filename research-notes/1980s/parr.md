@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `parr`. Formal source candidates and research routes in this note: 30.
+> Site id / slug reference: `parr`. Direct source pages retained in Sources: 17. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ## 1. 経歴・背景 / Basic facts and context
 マーティン・パー（Martin Parr）は、1980–1990年代の写真史で British documentary, New Color, photobook culture と結びつけて考えたい作家である。活動地域は United Kingdom を中心に広がり、作品は美術館、写真集、ギャラリー、批評誌、アーカイブを通じて受容された。略歴は必要最小限にとどめ、leisure, tourism, consumer culture, British class を扱う方法が、当時の写真表現、美術制度、社会的文脈とどう結びついていたのかを中心に調べる。
@@ -63,40 +63,34 @@ tags: ["satire", "vernacular culture", "consumerism", "anti-humanist documentary
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-## 6. Sources and research routes
+## 6. Sources (direct pages only)
 - [S1] Martin Parr x Henri Cartier-Bresson. Magnum Photos. https://www.magnumphotos.com/events/exhibitions/martin-parr-x-henri-cartier-bresson/
 - [S2] Martin Parr Foundation. https://martinparrfoundation.org/
 - [S3] Martin Parr. Magnum Photos. https://www.magnumphotos.com/photographer/martin-parr/
-- [S4] Martin Parr. Tate search. https://www.tate.org.uk/search?q=Martin+Parr
-- [S5] Martin Parr interview. The Guardian. https://www.theguardian.com/artanddesign/2025/feb/23/photography-is-therapy-for-me-martin-parr-on-humour-holidaying-and-life-behind-the-lens
-- [S6] Martin Parr official / estate / gallery route. https://www.google.com/search?q=Martin+Parr+photography+official+artist+gallery
-- [S7] Martin Parr search. MoMA. https://www.moma.org/search/?query=Martin+Parr
-- [S8] Martin Parr collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Martin+Parr
-- [S9] Martin Parr search. Guggenheim Museum. https://www.guggenheim.org/?s=Martin+Parr
-- [S10] Martin Parr search. Art Institute of Chicago. https://www.artic.edu/search?q=Martin+Parr
-- [S11] Martin Parr search. SFMOMA. https://www.sfmoma.org/search/?q=Martin+Parr
-- [S12] Martin Parr search. Whitney Museum. https://whitney.org/search?q=Martin+Parr
-- [S13] Martin Parr search. International Center of Photography. https://www.icp.org/search-results/Martin%20Parr
-- [S14] Martin Parr search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Martin+Parr
-- [S15] Martin Parr search. Getty. https://www.getty.edu/art/collection/search/?q=Martin+Parr
-- [S16] Martin Parr route. Aperture. https://aperture.org/?s=Martin+Parr
-- [S17] Martin Parr route. Magnum Photos. https://www.magnumphotos.com/?s=Martin+Parr
-- [S18] Martin Parr criticism route. Artforum. https://www.artforum.com/search/Martin%20Parr/
-- [S19] Martin Parr criticism route. e-flux. https://www.e-flux.com/search/?q=Martin+Parr
-- [S20] Martin Parr criticism route. Frieze. https://www.frieze.com/search?keys=Martin+Parr
-- [S21] Martin Parr monograph / publisher route. https://www.google.com/search?q=Martin+Parr+photography+monograph+publisher
-- [S22] Martin Parr bibliography. WorldCat. https://search.worldcat.org/search?q=Martin+Parr+photography
-- [S23] Martin Parr bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Martin+Parr&searchCode=GKEY%5E*&searchType=0
-- [S24] マーティン・パー bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%9E%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%83%BB%E3%83%91%E3%83%BC
-- [S25] マーティン・パー / Martin Parr research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%9E%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%83%BB%E3%83%91%E3%83%BC+Martin+Parr
-- [S26] Martin Parr scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Martin+Parr+photography
-- [S27] Martin Parr journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Martin+Parr+photography
-- [S28] Martin Parr library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Martin+Parr
-- [S29] Martin Parr archive route. Smithsonian Institution. https://www.si.edu/search?query=Martin+Parr
-- [S30] Martin Parr archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Martin+Parr
+- [S4] Martin Parr interview. The Guardian. https://www.theguardian.com/artanddesign/2025/feb/23/photography-is-therapy-for-me-martin-parr-on-humour-holidaying-and-life-behind-the-lens
+- [S5] Martin Parr Led a Global Movement for Photography. Aperture. https://aperture.org/martin-parr-led-a-global-movement-for-photography/
+- [S6] The World Is Martin Parr’s Runway. Aperture. https://aperture.org/editorial/the-world-is-martin-parrs-runway/
+- [S7] Martin Parr, Works 1971-2001. Aperture archive. https://archive.aperture.org/article/2006/1/1/martin-parr-works-1971-2001
+- [S8] Making Photobooks: Martin Parr and Lesley A. Martin in Conversation. Magnum Foundation. https://www.magnumfoundation.org/events/photobooks-martin-parr-and-lesley-martin
+- [S9] Interview with Martin Parr. Contemporary Lynx. https://contemporarylynx.co.uk/interview-with-martin-parr
+- [S10] Martin Parr: An Exclusive Interview. Lens Magazine. https://lensmagazine.net/exclusive-interview-with-martin-parr/
+- [S11] Martin Parr official site. https://martinparr.com/
+- [S12] Martin Parr Foundation. https://www.martinparrfoundation.org/
+- [S13] Martin Parr Foundation CBE page. https://www.martinparrfoundation.org/about/cbe/
+- [S14] Martin Parr. The Phillips Collection. https://www.phillipscollection.org/martin-parr
+- [S15] On Shoot with Martin Parr. Magnum Photos. https://www.magnumphotos.com/theory-and-practice/on-shoot-with-martin-parr/
+- [S16] Martin Parr and Eric Miles on The Chinese Photobook. Aperture. https://aperture.org/event/martin-parr-and-eric-miles-on-the-chinese-photobook/
+- [S17] Martin Parr: Recent Works press release. Photo London PDF. https://photolondon.org/wp-content/uploads/2023/04/Martin-Parr_-Recent-Works_Photo-London-Master-of-Photography-2023_press-release.pdf
+- [S18] Martin Parr profile — Magnum Creative. https://creative.magnumphotos.com/photographers/martin-parr/ — Career and institutional summary.
+- [S19] I Am Martin Parr — Magnum Photos. https://www.magnumphotos.com/theory-and-practice/i-am-martin-parr/ — Film-related retrospective framing and controversy/reception context.
+- [S20] Martin Parr Goes Paris — Magnum Photos. https://www.magnumphotos.com/events/exhibitions/martin-parr-goes-paris/ — Exhibition text connecting Parr to collecting, archives, and Magnum history.
+- [S21] Martin Parr — The Talks interview — The Talks. https://the-talks.com/interview/martin-parr/ — Artist interview on photography, books, museums, and circulation.
+- [S22] Martin Parr: we don’t appreciate British photography enough — Dazed. https://www.dazeddigital.com/art-photography/article/37413/1/martin-parr-we-dont-appreciate-british-photography-enough — Interview/context for the Martin Parr Foundation and British photography.
+- [S23] Photography Is the Only Art Form That We All Do: Interview with Martin Parr — Membrana. https://www.membrana.org/interview/photography-is-the-only-art-form-that-we-all-do-interview-with-martin-parr/ — Interview source on democratic photography and documentary practice.
+- [S24] Martin Parr CV/interview PDF — Martin Parr official site. https://www.martinparr.com/wp-content/uploads/2012/09/MartinParrCV.pdf — Official career document and interview material.
 
 ## 7. 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で17件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -104,3 +98,7 @@ tags: ["satire", "vernacular culture", "consumerism", "anti-humanist documentary
 - Magnum加入時の議論、人道主義的ドキュメンタリーとの対立に関する資料
 - British documentary、Tony Ray-Jones、Chris Killipとの比較論
 - Martin Parr Foundationのアーカイブ、photobook culture関連資料
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 17. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- No search/catalog routes were moved.

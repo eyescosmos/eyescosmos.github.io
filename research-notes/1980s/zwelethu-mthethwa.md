@@ -36,7 +36,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `zwelethu-mthethwa`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `zwelethu-mthethwa`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ズウェレトゥ・ムテスワ（Zwelethu Mthethwa）は、1980–1990年代の写真史で post-apartheid portraiture, social documentary と結びつけて整理したい作家である。活動地域・制度的文脈としては South Africa を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、domestic interiors, workers, identity, township life を、large color portrait, environmental portrait, collaborative pose によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -92,40 +92,20 @@ tags: ["post-apartheid visibility", "dignity and critique", "social space"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Zwelethu Mthethwa official / estate / gallery route. https://www.google.com/search?q=Zwelethu+Mthethwa+photography+official+artist+gallery
-- [S2] Zwelethu Mthethwa search. MoMA. https://www.moma.org/search/?query=Zwelethu+Mthethwa
-- [S3] Zwelethu Mthethwa search. Tate. https://www.tate.org.uk/search?q=Zwelethu+Mthethwa
-- [S4] Zwelethu Mthethwa collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Zwelethu+Mthethwa
-- [S5] Zwelethu Mthethwa search. Guggenheim Museum. https://www.guggenheim.org/?s=Zwelethu+Mthethwa
-- [S6] Zwelethu Mthethwa search. Art Institute of Chicago. https://www.artic.edu/search?q=Zwelethu+Mthethwa
-- [S7] Zwelethu Mthethwa search. SFMOMA. https://www.sfmoma.org/search/?q=Zwelethu+Mthethwa
-- [S8] Zwelethu Mthethwa search. Whitney Museum. https://whitney.org/search?q=Zwelethu+Mthethwa
-- [S9] Zwelethu Mthethwa search. International Center of Photography. https://www.icp.org/search-results/Zwelethu%20Mthethwa
-- [S10] Zwelethu Mthethwa search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Zwelethu+Mthethwa
-- [S11] Zwelethu Mthethwa search. Getty. https://www.getty.edu/art/collection/search/?q=Zwelethu+Mthethwa
-- [S12] Zwelethu Mthethwa route. Aperture. https://aperture.org/?s=Zwelethu+Mthethwa
-- [S13] Zwelethu Mthethwa route. Magnum Photos. https://www.magnumphotos.com/?s=Zwelethu+Mthethwa
-- [S14] Zwelethu Mthethwa criticism route. Artforum. https://www.artforum.com/search/Zwelethu%20Mthethwa/
-- [S15] Zwelethu Mthethwa criticism route. e-flux. https://www.e-flux.com/search/?q=Zwelethu+Mthethwa
-- [S16] Zwelethu Mthethwa criticism route. Frieze. https://www.frieze.com/search?keys=Zwelethu+Mthethwa
-- [S17] Zwelethu Mthethwa monograph / publisher route. https://www.google.com/search?q=Zwelethu+Mthethwa+photography+monograph+publisher
-- [S18] Zwelethu Mthethwa bibliography. WorldCat. https://search.worldcat.org/search?q=Zwelethu+Mthethwa+photography
-- [S19] Zwelethu Mthethwa bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Zwelethu+Mthethwa&searchCode=GKEY%5E*&searchType=0
-- [S20] ズウェレトゥ・ムテスワ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%BA%E3%82%A6%E3%82%A7%E3%83%AC%E3%83%88%E3%82%A5%E3%83%BB%E3%83%A0%E3%83%86%E3%82%B9%E3%83%AF
-- [S21] ズウェレトゥ・ムテスワ / Zwelethu Mthethwa research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%BA%E3%82%A6%E3%82%A7%E3%83%AC%E3%83%88%E3%82%A5%E3%83%BB%E3%83%A0%E3%83%86%E3%82%B9%E3%83%AF+Zwelethu+Mthethwa
-- [S22] Zwelethu Mthethwa scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Zwelethu+Mthethwa+photography
-- [S23] Zwelethu Mthethwa journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Zwelethu+Mthethwa+photography
-- [S24] Zwelethu Mthethwa library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Zwelethu+Mthethwa
-- [S25] Zwelethu Mthethwa archive route. Smithsonian Institution. https://www.si.edu/search?query=Zwelethu+Mthethwa
-- [S26] Zwelethu Mthethwa archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Zwelethu+Mthethwa
-- [S27] Zwelethu Mthethwa exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Zwelethu+Mthethwa
-- [S28] Zwelethu Mthethwa Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Zwelethu Mthethwa third-language / local institution route. https://www.google.com/search?q=Zwelethu+Mthethwa+photography+museum+exhibition+catalogue
-- [S30] Zwelethu Mthethwa primary interview / statement route. https://www.google.com/search?q=Zwelethu+Mthethwa+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Zwelethu Mthethwa. Museum of Contemporary Photography. https://www.mocp.org/exhibition/zwelethu-mthethwa/
+- [S2] Zwelethu Mthethwa. Regarding Africa / Tel Aviv Museum of Art. https://www.africa-tamuseum.org.il/artist/zwelethu-mthethwa/
+- [S3] Insights exhibition PDF. National Museum of African Art, Smithsonian. https://africa.si.edu/exhibits/insights/insights.pdf
+- [S4] Zwelethu Mthethwa — Museum of Modern Art. https://www.moma.org/collection/artists/27203 — MoMA artist page and collection/exhibition context
+- [S5] Zwelethu Mthethwa — The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/302118 — Met object page for Interior Series
+- [S6] Zwelethu Mthethwa — National Galleries of Scotland. https://www.nationalgalleries.org/art-and-artists/artists/zwelethu-mthethwa — collection artist profile
+- [S7] Zwelethu Mthethwa — SABC Art Collection. https://www.sabcart.co.za/zwelethu-mthethwa/ — collection text on post-apartheid portraiture and masculinity
+- [S8] Off the Shelf: Zwelethu Mthethwa — The New Yorker. https://www.newyorker.com/culture/photo-booth/off-the-shelf-zwelethu-mthethwa — photobook/reception text on large-format portraits and documentary/fine-art tension
+- [S9] Zwelethu Mthethwa — Galería Oliva Arauna. https://www.olivarauna.com/artist/zwelethu_mthethwa.html — gallery profile and exhibition history
+- [S10] Zwelethu Mthethwa: Inner Views — The Studio Museum in Harlem. https://www.studiomuseum.org/exhibition/zwelethu-mthethwa-inner-views — solo exhibition context for Inner Views and reception in New York
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -133,3 +113,37 @@ tags: ["post-apartheid visibility", "dignity and critique", "social space"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Zwelethu Mthethwa, Untitled (Interior Series). The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/302118
+- [route] Zwelethu Mthethwa official / estate / gallery route. https://www.google.com/search?q=Zwelethu+Mthethwa+photography+official+artist+gallery
+- [route] Zwelethu Mthethwa search. MoMA. https://www.moma.org/search/?query=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa search. Tate. https://www.tate.org.uk/search?q=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa search. Guggenheim Museum. https://www.guggenheim.org/?s=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa search. Art Institute of Chicago. https://www.artic.edu/search?q=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa search. SFMOMA. https://www.sfmoma.org/search/?q=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa search. Whitney Museum. https://whitney.org/search?q=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa search. International Center of Photography. https://www.icp.org/search-results/Zwelethu%20Mthethwa
+- [route] Zwelethu Mthethwa search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa search. Getty. https://www.getty.edu/art/collection/search/?q=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa route. Aperture. https://aperture.org/?s=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa route. Magnum Photos. https://www.magnumphotos.com/?s=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa criticism route. Artforum. https://www.artforum.com/search/Zwelethu%20Mthethwa/
+- [route] Zwelethu Mthethwa criticism route. e-flux. https://www.e-flux.com/search/?q=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa criticism route. Frieze. https://www.frieze.com/search?keys=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa monograph / publisher route. https://www.google.com/search?q=Zwelethu+Mthethwa+photography+monograph+publisher
+- [route] Zwelethu Mthethwa bibliography. WorldCat. https://search.worldcat.org/search?q=Zwelethu+Mthethwa+photography
+- [route] Zwelethu Mthethwa bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Zwelethu+Mthethwa&searchCode=GKEY%5E*&searchType=0
+- [route] ズウェレトゥ・ムテスワ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%BA%E3%82%A6%E3%82%A7%E3%83%AC%E3%83%88%E3%82%A5%E3%83%BB%E3%83%A0%E3%83%86%E3%82%B9%E3%83%AF
+- [route] ズウェレトゥ・ムテスワ / Zwelethu Mthethwa research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%BA%E3%82%A6%E3%82%A7%E3%83%AC%E3%83%88%E3%82%A5%E3%83%BB%E3%83%A0%E3%83%86%E3%82%B9%E3%83%AF+Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Zwelethu+Mthethwa+photography
+- [route] Zwelethu Mthethwa journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Zwelethu+Mthethwa+photography
+- [route] Zwelethu Mthethwa library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa archive route. Smithsonian Institution. https://www.si.edu/search?query=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Zwelethu Mthethwa third-language / local institution route. https://www.google.com/search?q=Zwelethu+Mthethwa+photography+museum+exhibition+catalogue
+- [route] Zwelethu Mthethwa primary interview / statement route. https://www.google.com/search?q=Zwelethu+Mthethwa+photographer+interview+artist+statement

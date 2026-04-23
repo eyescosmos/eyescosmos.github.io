@@ -36,7 +36,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `florian-maier-aichen`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `florian-maier-aichen`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 フロリアン・マイヤー＝アイヒェン（Florian Maier-Aichen）は、1980–1990年代の写真史で constructed landscape, digital photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Germany / United States を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、landscape, mapping, aerial view, California を、digital manipulation, large-format landscape, color intervention によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -92,40 +92,20 @@ tags: ["fictional geography", "post-photographic landscape", "sublime"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Florian Maier-Aichen official / estate / gallery route. https://www.google.com/search?q=Florian+Maier-Aichen+photography+official+artist+gallery
-- [S2] Florian Maier-Aichen search. MoMA. https://www.moma.org/search/?query=Florian+Maier-Aichen
-- [S3] Florian Maier-Aichen search. Tate. https://www.tate.org.uk/search?q=Florian+Maier-Aichen
-- [S4] Florian Maier-Aichen collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Florian+Maier-Aichen
-- [S5] Florian Maier-Aichen search. Guggenheim Museum. https://www.guggenheim.org/?s=Florian+Maier-Aichen
-- [S6] Florian Maier-Aichen search. Art Institute of Chicago. https://www.artic.edu/search?q=Florian+Maier-Aichen
-- [S7] Florian Maier-Aichen search. SFMOMA. https://www.sfmoma.org/search/?q=Florian+Maier-Aichen
-- [S8] Florian Maier-Aichen search. Whitney Museum. https://whitney.org/search?q=Florian+Maier-Aichen
-- [S9] Florian Maier-Aichen search. International Center of Photography. https://www.icp.org/search-results/Florian%20Maier-Aichen
-- [S10] Florian Maier-Aichen search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Florian+Maier-Aichen
-- [S11] Florian Maier-Aichen search. Getty. https://www.getty.edu/art/collection/search/?q=Florian+Maier-Aichen
-- [S12] Florian Maier-Aichen route. Aperture. https://aperture.org/?s=Florian+Maier-Aichen
-- [S13] Florian Maier-Aichen route. Magnum Photos. https://www.magnumphotos.com/?s=Florian+Maier-Aichen
-- [S14] Florian Maier-Aichen criticism route. Artforum. https://www.artforum.com/search/Florian%20Maier-Aichen/
-- [S15] Florian Maier-Aichen criticism route. e-flux. https://www.e-flux.com/search/?q=Florian+Maier-Aichen
-- [S16] Florian Maier-Aichen criticism route. Frieze. https://www.frieze.com/search?keys=Florian+Maier-Aichen
-- [S17] Florian Maier-Aichen monograph / publisher route. https://www.google.com/search?q=Florian+Maier-Aichen+photography+monograph+publisher
-- [S18] Florian Maier-Aichen bibliography. WorldCat. https://search.worldcat.org/search?q=Florian+Maier-Aichen+photography
-- [S19] Florian Maier-Aichen bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Florian+Maier-Aichen&searchCode=GKEY%5E*&searchType=0
-- [S20] フロリアン・マイヤー＝アイヒェン bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%95%E3%83%AD%E3%83%AA%E3%82%A2%E3%83%B3%E3%83%BB%E3%83%9E%E3%82%A4%E3%83%A4%E3%83%BC%EF%BC%9D%E3%82%A2%E3%82%A4%E3%83%92%E3%82%A7%E3%83%B3
-- [S21] フロリアン・マイヤー＝アイヒェン / Florian Maier-Aichen research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%95%E3%83%AD%E3%83%AA%E3%82%A2%E3%83%B3%E3%83%BB%E3%83%9E%E3%82%A4%E3%83%A4%E3%83%BC%EF%BC%9D%E3%82%A2%E3%82%A4%E3%83%92%E3%82%A7%E3%83%B3+Florian+Maier-Aichen
-- [S22] Florian Maier-Aichen scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Florian+Maier-Aichen+photography
-- [S23] Florian Maier-Aichen journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Florian+Maier-Aichen+photography
-- [S24] Florian Maier-Aichen library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Florian+Maier-Aichen
-- [S25] Florian Maier-Aichen archive route. Smithsonian Institution. https://www.si.edu/search?query=Florian+Maier-Aichen
-- [S26] Florian Maier-Aichen archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Florian+Maier-Aichen
-- [S27] Florian Maier-Aichen exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Florian+Maier-Aichen
-- [S28] Florian Maier-Aichen Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Florian Maier-Aichen third-language / local institution route. https://www.google.com/search?q=Florian+Maier-Aichen+photography+museum+exhibition+catalogue
-- [S30] Florian Maier-Aichen primary interview / statement route. https://www.google.com/search?q=Florian+Maier-Aichen+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Florian Maier-Aichen’s Photographs Go on Display at Blum & Poe. Architectural Digest. https://www.architecturaldigest.com/story/florian-maier-aichen-blum-poe
+- [S2] Florian Maier-Aichen 2021. Galerie Nikolaus Ruzicska. https://www.ruzicska.com/florian-maieraichen-2021
+- [S3] art:21 Educators’ Guide to Season Five (Florian Maier-Aichen section). https://art21.org/wp-content/uploads/2017/03/art21-season-five-guide.pdf
+- [S4] South China Morning Post / Gagosian press PDF. https://gagosian.com/media/gallery/press/2013/4045387cbecc09968f45a3d7412c1926.pdf
+- [S5] Florian Maier-Aichen — 303 Gallery. https://www.303gallery.com/artists/florian-maier-aichen — gallery artist page for manipulated landscape practice and exhibitions
+- [S6] Florian Maier-Aichen viewing room — 303 Gallery. https://www.303gallery.com/viewing-room/florian-maier-aichen — biographical and collection context
+- [S7] Florian Maier-Aichen — Museum of Contemporary Art Los Angeles. https://www.moca.org/exhibition/florian-maier-aichen — solo museum exhibition context
+- [S8] Florian Maier-Aichen — Art21. https://art21.org/artist/florian-maier-aichen/ — artist profile and educational context for digitally altered landscape
+- [S9] Florian Maier-Aichen: LA Museum of Contemporary Art, 2007 — Gil Blank. https://gilblank.com/essay/florian-maier-aichen/ — critical essay on Western landscape, kitsch, and photographic manipulation
+- [S10] Florian Maier-Aichen — Blum & Poe. https://www.blumandpoe.com/artists/florian-maier-aichen — gallery artist profile
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -133,3 +113,36 @@ tags: ["fictional geography", "post-photographic landscape", "sublime"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Florian Maier-Aichen official / estate / gallery route. https://www.google.com/search?q=Florian+Maier-Aichen+photography+official+artist+gallery
+- [route] Florian Maier-Aichen search. MoMA. https://www.moma.org/search/?query=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen search. Tate. https://www.tate.org.uk/search?q=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen search. Guggenheim Museum. https://www.guggenheim.org/?s=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen search. Art Institute of Chicago. https://www.artic.edu/search?q=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen search. SFMOMA. https://www.sfmoma.org/search/?q=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen search. Whitney Museum. https://whitney.org/search?q=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen search. International Center of Photography. https://www.icp.org/search-results/Florian%20Maier-Aichen
+- [route] Florian Maier-Aichen search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen search. Getty. https://www.getty.edu/art/collection/search/?q=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen route. Aperture. https://aperture.org/?s=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen route. Magnum Photos. https://www.magnumphotos.com/?s=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen criticism route. Artforum. https://www.artforum.com/search/Florian%20Maier-Aichen/
+- [route] Florian Maier-Aichen criticism route. e-flux. https://www.e-flux.com/search/?q=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen criticism route. Frieze. https://www.frieze.com/search?keys=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen monograph / publisher route. https://www.google.com/search?q=Florian+Maier-Aichen+photography+monograph+publisher
+- [route] Florian Maier-Aichen bibliography. WorldCat. https://search.worldcat.org/search?q=Florian+Maier-Aichen+photography
+- [route] Florian Maier-Aichen bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Florian+Maier-Aichen&searchCode=GKEY%5E*&searchType=0
+- [route] フロリアン・マイヤー＝アイヒェン bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%95%E3%83%AD%E3%83%AA%E3%82%A2%E3%83%B3%E3%83%BB%E3%83%9E%E3%82%A4%E3%83%A4%E3%83%BC%EF%BC%9D%E3%82%A2%E3%82%A4%E3%83%92%E3%82%A7%E3%83%B3
+- [route] フロリアン・マイヤー＝アイヒェン / Florian Maier-Aichen research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%95%E3%83%AD%E3%83%AA%E3%82%A2%E3%83%B3%E3%83%BB%E3%83%9E%E3%82%A4%E3%83%A4%E3%83%BC%EF%BC%9D%E3%82%A2%E3%82%A4%E3%83%92%E3%82%A7%E3%83%B3+Florian+Maier-Aichen
+- [route] Florian Maier-Aichen scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Florian+Maier-Aichen+photography
+- [route] Florian Maier-Aichen journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Florian+Maier-Aichen+photography
+- [route] Florian Maier-Aichen library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen archive route. Smithsonian Institution. https://www.si.edu/search?query=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Florian Maier-Aichen third-language / local institution route. https://www.google.com/search?q=Florian+Maier-Aichen+photography+museum+exhibition+catalogue
+- [route] Florian Maier-Aichen primary interview / statement route. https://www.google.com/search?q=Florian+Maier-Aichen+photographer+interview+artist+statement

@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `thomas-ruff`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `thomas-ruff`. Direct source pages retained in Sources: 16. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 トーマス・ルフ（Thomas Ruff）は、1980–1990年代の写真史で Dusseldorf School, meta-photography, digital photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Germany を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、portraits, stars, nudes, internet images, surveillance を、large prints, appropriated imagery, digital processing によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,32 @@ tags: ["photographic truth", "image system", "post-photography"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Thomas Ruff official / estate / gallery route. https://www.google.com/search?q=Thomas+Ruff+photography+official+artist+gallery
-- [S2] Thomas Ruff search. MoMA. https://www.moma.org/search/?query=Thomas+Ruff
-- [S3] Thomas Ruff search. Tate. https://www.tate.org.uk/search?q=Thomas+Ruff
-- [S4] Thomas Ruff collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Thomas+Ruff
-- [S5] Thomas Ruff search. Guggenheim Museum. https://www.guggenheim.org/?s=Thomas+Ruff
-- [S6] Thomas Ruff search. Art Institute of Chicago. https://www.artic.edu/search?q=Thomas+Ruff
-- [S7] Thomas Ruff search. SFMOMA. https://www.sfmoma.org/search/?q=Thomas+Ruff
-- [S8] Thomas Ruff search. Whitney Museum. https://whitney.org/search?q=Thomas+Ruff
-- [S9] Thomas Ruff search. International Center of Photography. https://www.icp.org/search-results/Thomas%20Ruff
-- [S10] Thomas Ruff search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Thomas+Ruff
-- [S11] Thomas Ruff search. Getty. https://www.getty.edu/art/collection/search/?q=Thomas+Ruff
-- [S12] Thomas Ruff route. Aperture. https://aperture.org/?s=Thomas+Ruff
-- [S13] Thomas Ruff route. Magnum Photos. https://www.magnumphotos.com/?s=Thomas+Ruff
-- [S14] Thomas Ruff criticism route. Artforum. https://www.artforum.com/search/Thomas%20Ruff/
-- [S15] Thomas Ruff criticism route. e-flux. https://www.e-flux.com/search/?q=Thomas+Ruff
-- [S16] Thomas Ruff criticism route. Frieze. https://www.frieze.com/search?keys=Thomas+Ruff
-- [S17] Thomas Ruff monograph / publisher route. https://www.google.com/search?q=Thomas+Ruff+photography+monograph+publisher
-- [S18] Thomas Ruff bibliography. WorldCat. https://search.worldcat.org/search?q=Thomas+Ruff+photography
-- [S19] Thomas Ruff bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Thomas+Ruff&searchCode=GKEY%5E*&searchType=0
-- [S20] トーマス・ルフ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%88%E3%83%BC%E3%83%9E%E3%82%B9%E3%83%BB%E3%83%AB%E3%83%95
-- [S21] トーマス・ルフ / Thomas Ruff research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%88%E3%83%BC%E3%83%9E%E3%82%B9%E3%83%BB%E3%83%AB%E3%83%95+Thomas+Ruff
-- [S22] Thomas Ruff scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Thomas+Ruff+photography
-- [S23] Thomas Ruff journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Thomas+Ruff+photography
-- [S24] Thomas Ruff library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Thomas+Ruff
-- [S25] Thomas Ruff archive route. Smithsonian Institution. https://www.si.edu/search?query=Thomas+Ruff
-- [S26] Thomas Ruff archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Thomas+Ruff
-- [S27] Thomas Ruff exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Thomas+Ruff
-- [S28] Thomas Ruff Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Thomas Ruff third-language / local institution route. https://www.google.com/search?q=Thomas+Ruff+photography+museum+exhibition+catalogue
-- [S30] Thomas Ruff primary interview / statement route. https://www.google.com/search?q=Thomas+Ruff+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Thomas Ruff. Whitechapel Gallery. https://www.whitechapelgallery.org/exhibitions/thomas-ruff/
+- [S2] Thomas Ruff. MAMC+, Musée d'art moderne et contemporain Saint-Étienne Métropole. https://mamc.saint-etienne.fr/en/expositions/thomas-ruff
+- [S3] MCA DNA: Thomas Ruff. Museum of Contemporary Art Chicago. https://mcachicago.org/exhibitions/2011/thomas-ruff
+- [S4] Thomas Ruff. David Zwirner. https://www.davidzwirner.com/news/2024/thomas-ruff
+- [S5] Studio: Thomas Ruff. David Zwirner. https://www.davidzwirner.com/exhibitions/2021/studio-thomas-ruff
+- [S6] Photographer Thomas Ruff’s space odyssey. Wallpaper. https://www.wallpaper.com/art/thomas-ruff-heads-to-the-moon-with-new-work-at-david-zwirner
+- [S7] Thomas Ruff. MoMA. https://www.moma.org/collection/artists/6982
+- [S8] Inbox: Thomas Ruff. MoMA. https://www.moma.org/calendar/exhibitions/3688
+- [S9] An interview with the artist Thomas Ruff. David Zwirner. https://www.davidzwirner.com/news/2017/an-interview-with-the-artist-thomas-ruff
+- [S10] Thomas Ruff: Portrait (O. Cieslik). Centre Pompidou. https://www.centrepompidou.fr/en/ressources/oeuvre/cGEXLx5
+- [S11] Thomas Ruff. Kunstsammlung Nordrhein-Westfalen. https://www.kunstsammlung.de/en/ruff
+- [S12] Thomas Ruff official galleries page. https://www.thomasruff.com/en/galleries/
+- [S13] Thomas Ruff. Haus der Kunst Munich. https://www.hausderkunst.de/en/eintauchen/thomas-ruff
+- [S14] Thomas Ruff. Centre Pompidou artist page. https://www.centrepompidou.fr/en/ressources/personne/cxAAb6k
+- [S15] Thomas Ruff: jpegs. Aperture. https://aperture.org/thomas-ruff-jpegs/
+- [S16] Thomas Ruff: Two of Each press release. Gallery Koyanagi PDF. https://gallerykoyanagi.com/wp/wp-content/uploads/2025/09/20251008ruff_pr_en.pdf
+- [S17] Thomas Ruff press release — David Zwirner. https://static.frieze.com/files/event/press/Thomas%20Ruff%20David%20Zwirner%20London%20Press%20Release.pdf?VersionId=9tgm3J1CN5myozyqOC32ydLyYEAhdChQ — Gallery press release with critical and exhibition context.
+- [S18] Thomas Ruff Portraits — National Portrait Gallery. https://www.npg.org.uk/whatson/display/2017/thomas-ruff-portraits — Institutional text on the portrait series, scale, and refusal of psychological disclosure.
+- [S19] Thomas Ruff artist page — SFMOMA. https://www.sfmoma.org/artist/Thomas_Ruff/ — Collection works, especially Nacht and Porträt series.
+- [S20] Interview: Thomas Ruff — Granta. https://granta.com/interview-thomas-ruff/ — Artist interview on technology, photography history, photograms, AI, and image reality.
+- [S21] Thomas Ruff in Time and Space — Interview Magazine. https://www.interviewmagazine.com/art/thomas-ruff-press — Interview context for press++ and space/astronomy-related image sources.
+- [S22] Thomas Ruff: Photographs 1979–2017 — Photomonitor. https://photomonitor.co.uk/exhibition/thomas-ruff-photographs-1979-2017/ — Critical review of Whitechapel survey and technology/history framing.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で16件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +121,36 @@ tags: ["photographic truth", "image system", "post-photography"]
 - meta-photography、post-photography、digital image cultureに関する論文
 - Düsseldorf School内でのGursky、Struth、Becherとの比較
 - Ruff本人のインタビュー、MAMC+、Whitechapel以外の回顧展資料
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 16. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Thomas Ruff official / estate / gallery route. https://www.google.com/search?q=Thomas+Ruff+photography+official+artist+gallery
+- [route] Thomas Ruff search. MoMA. https://www.moma.org/search/?query=Thomas+Ruff
+- [route] Thomas Ruff search. Tate. https://www.tate.org.uk/search?q=Thomas+Ruff
+- [route] Thomas Ruff collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Thomas+Ruff
+- [route] Thomas Ruff search. Guggenheim Museum. https://www.guggenheim.org/?s=Thomas+Ruff
+- [route] Thomas Ruff search. Art Institute of Chicago. https://www.artic.edu/search?q=Thomas+Ruff
+- [route] Thomas Ruff search. SFMOMA. https://www.sfmoma.org/search/?q=Thomas+Ruff
+- [route] Thomas Ruff search. Whitney Museum. https://whitney.org/search?q=Thomas+Ruff
+- [route] Thomas Ruff search. International Center of Photography. https://www.icp.org/search-results/Thomas%20Ruff
+- [route] Thomas Ruff search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Thomas+Ruff
+- [route] Thomas Ruff search. Getty. https://www.getty.edu/art/collection/search/?q=Thomas+Ruff
+- [route] Thomas Ruff route. Aperture. https://aperture.org/?s=Thomas+Ruff
+- [route] Thomas Ruff route. Magnum Photos. https://www.magnumphotos.com/?s=Thomas+Ruff
+- [route] Thomas Ruff criticism route. Artforum. https://www.artforum.com/search/Thomas%20Ruff/
+- [route] Thomas Ruff criticism route. e-flux. https://www.e-flux.com/search/?q=Thomas+Ruff
+- [route] Thomas Ruff criticism route. Frieze. https://www.frieze.com/search?keys=Thomas+Ruff
+- [route] Thomas Ruff monograph / publisher route. https://www.google.com/search?q=Thomas+Ruff+photography+monograph+publisher
+- [route] Thomas Ruff bibliography. WorldCat. https://search.worldcat.org/search?q=Thomas+Ruff+photography
+- [route] Thomas Ruff bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Thomas+Ruff&searchCode=GKEY%5E*&searchType=0
+- [route] トーマス・ルフ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%88%E3%83%BC%E3%83%9E%E3%82%B9%E3%83%BB%E3%83%AB%E3%83%95
+- [route] トーマス・ルフ / Thomas Ruff research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%88%E3%83%BC%E3%83%9E%E3%82%B9%E3%83%BB%E3%83%AB%E3%83%95+Thomas+Ruff
+- [route] Thomas Ruff scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Thomas+Ruff+photography
+- [route] Thomas Ruff journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Thomas+Ruff+photography
+- [route] Thomas Ruff library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Thomas+Ruff
+- [route] Thomas Ruff archive route. Smithsonian Institution. https://www.si.edu/search?query=Thomas+Ruff
+- [route] Thomas Ruff archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Thomas+Ruff
+- [route] Thomas Ruff exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Thomas+Ruff
+- [route] Thomas Ruff Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Thomas Ruff third-language / local institution route. https://www.google.com/search?q=Thomas+Ruff+photography+museum+exhibition+catalogue
+- [route] Thomas Ruff primary interview / statement route. https://www.google.com/search?q=Thomas+Ruff+photographer+interview+artist+statement

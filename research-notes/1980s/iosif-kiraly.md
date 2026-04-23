@@ -35,7 +35,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `iosif-kiraly`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `iosif-kiraly`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ヨーシフ・キライ（Iosif Király）は、1980–1990年代の写真史で conceptual photography, memory and archive と結びつけて整理したい作家である。活動地域・制度的文脈としては Romania を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、post-communist memory, family archive, urban change を、photo-sequence, reconstruction, montage によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -91,40 +91,20 @@ tags: ["memory", "transition", "archive"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Iosif Király official / estate / gallery route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photography+official+artist+gallery
-- [S2] Iosif Király search. MoMA. https://www.moma.org/search/?query=Iosif+Kir%C3%A1ly
-- [S3] Iosif Király search. Tate. https://www.tate.org.uk/search?q=Iosif+Kir%C3%A1ly
-- [S4] Iosif Király collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Iosif+Kir%C3%A1ly
-- [S5] Iosif Király search. Guggenheim Museum. https://www.guggenheim.org/?s=Iosif+Kir%C3%A1ly
-- [S6] Iosif Király search. Art Institute of Chicago. https://www.artic.edu/search?q=Iosif+Kir%C3%A1ly
-- [S7] Iosif Király search. SFMOMA. https://www.sfmoma.org/search/?q=Iosif+Kir%C3%A1ly
-- [S8] Iosif Király search. Whitney Museum. https://whitney.org/search?q=Iosif+Kir%C3%A1ly
-- [S9] Iosif Király search. International Center of Photography. https://www.icp.org/search-results/Iosif%20Kir%C3%A1ly
-- [S10] Iosif Király search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Iosif+Kir%C3%A1ly
-- [S11] Iosif Király search. Getty. https://www.getty.edu/art/collection/search/?q=Iosif+Kir%C3%A1ly
-- [S12] Iosif Király route. Aperture. https://aperture.org/?s=Iosif+Kir%C3%A1ly
-- [S13] Iosif Király route. Magnum Photos. https://www.magnumphotos.com/?s=Iosif+Kir%C3%A1ly
-- [S14] Iosif Király criticism route. Artforum. https://www.artforum.com/search/Iosif%20Kir%C3%A1ly/
-- [S15] Iosif Király criticism route. e-flux. https://www.e-flux.com/search/?q=Iosif+Kir%C3%A1ly
-- [S16] Iosif Király criticism route. Frieze. https://www.frieze.com/search?keys=Iosif+Kir%C3%A1ly
-- [S17] Iosif Király monograph / publisher route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photography+monograph+publisher
-- [S18] Iosif Király bibliography. WorldCat. https://search.worldcat.org/search?q=Iosif+Kir%C3%A1ly+photography
-- [S19] Iosif Király bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Iosif+Kir%C3%A1ly&searchCode=GKEY%5E*&searchType=0
-- [S20] ヨーシフ・キライ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%A8%E3%83%BC%E3%82%B7%E3%83%95%E3%83%BB%E3%82%AD%E3%83%A9%E3%82%A4
-- [S21] ヨーシフ・キライ / Iosif Király research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%A8%E3%83%BC%E3%82%B7%E3%83%95%E3%83%BB%E3%82%AD%E3%83%A9%E3%82%A4+Iosif+Kir%C3%A1ly
-- [S22] Iosif Király scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Iosif+Kir%C3%A1ly+photography
-- [S23] Iosif Király journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Iosif+Kir%C3%A1ly+photography
-- [S24] Iosif Király library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Iosif+Kir%C3%A1ly
-- [S25] Iosif Király archive route. Smithsonian Institution. https://www.si.edu/search?query=Iosif+Kir%C3%A1ly
-- [S26] Iosif Király archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Iosif+Kir%C3%A1ly
-- [S27] Iosif Király exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Iosif+Kir%C3%A1ly
-- [S28] Iosif Király Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Iosif Király third-language / local institution route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photography+museum+exhibition+catalogue
-- [S30] Iosif Király primary interview / statement route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Iosif Király. ArtEncounters. https://artencounters.ro/en/artist/iosif-kiraly/
+- [S2] Interview with Iosif Király. ARTMargins Online. https://artmargins.com/subjective-interpretations-of-reality-produced-from-objective-fragments-ileana-pintilie-in-conversation-with-iosif-kiraly/
+- [S3] Iosif Király – Old Memories Are Getting More Persistent. Fotofestiwal. https://fotofestiwal.com/2024/en/wystawy/iosif-kiraly-old-memories-are-getting-more-persistent/
+- [S4] Iosif Kiraly — Jecza Gallery. https://jeczagallery.com/artists/39-iosif-kiraly/ — Gallery profile with interdisciplinary photography, architecture, and conceptual art context.
+- [S5] Paris Photo: Constantin Flondor, Iosif Király — Jecza Gallery. https://jeczagallery.com/events/19-paris-photo-constantin-flondor-iosif-kiraly/ — Paris Photo presentation positioning Király as historical figure.
+- [S6] Iosif Király — MoMA. https://www.moma.org/artists/138785-iosif-kiraly — MoMA artist page documenting works in collection.
+- [S7] What About Y[Our] Memory — Artmap / MNAC Bucharest. https://artmap.com/mnac/exhibition/what-about-y-our-memory-2014 — Exhibition text on photography/moving image department founded by Király.
+- [S8] subREAL Retrospect — Museum Publicity / MNAC Bucharest. https://museumpublicity.com/2012/06/23/national-museum-of-contemporary-art-mnac-bucharest-presents-subreal-retrospect/ — Exhibition text on subREAL after 1989 and Király’s role.
+- [S9] Iosif Király — Artsy. https://www.artsy.net/artist/iosif-kiraly — Gallery-submitted profile on memory, time, perception, urban transformation, and MoMA collection.
+- [S10] MoMA acquires works by Iosif Király — Ziare.com. https://ziare.com/artist/lucrari-iosif-kiraly-romania-patrimoniu-museum-of-modern-art-new-york-1926662 — Romanian report on MoMA acquisition of 1986–1990 photographic collages.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -132,3 +112,36 @@ tags: ["memory", "transition", "archive"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Iosif Király official / estate / gallery route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photography+official+artist+gallery
+- [route] Iosif Király search. MoMA. https://www.moma.org/search/?query=Iosif+Kir%C3%A1ly
+- [route] Iosif Király search. Tate. https://www.tate.org.uk/search?q=Iosif+Kir%C3%A1ly
+- [route] Iosif Király collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Iosif+Kir%C3%A1ly
+- [route] Iosif Király search. Guggenheim Museum. https://www.guggenheim.org/?s=Iosif+Kir%C3%A1ly
+- [route] Iosif Király search. Art Institute of Chicago. https://www.artic.edu/search?q=Iosif+Kir%C3%A1ly
+- [route] Iosif Király search. SFMOMA. https://www.sfmoma.org/search/?q=Iosif+Kir%C3%A1ly
+- [route] Iosif Király search. Whitney Museum. https://whitney.org/search?q=Iosif+Kir%C3%A1ly
+- [route] Iosif Király search. International Center of Photography. https://www.icp.org/search-results/Iosif%20Kir%C3%A1ly
+- [route] Iosif Király search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Iosif+Kir%C3%A1ly
+- [route] Iosif Király search. Getty. https://www.getty.edu/art/collection/search/?q=Iosif+Kir%C3%A1ly
+- [route] Iosif Király route. Aperture. https://aperture.org/?s=Iosif+Kir%C3%A1ly
+- [route] Iosif Király route. Magnum Photos. https://www.magnumphotos.com/?s=Iosif+Kir%C3%A1ly
+- [route] Iosif Király criticism route. Artforum. https://www.artforum.com/search/Iosif%20Kir%C3%A1ly/
+- [route] Iosif Király criticism route. e-flux. https://www.e-flux.com/search/?q=Iosif+Kir%C3%A1ly
+- [route] Iosif Király criticism route. Frieze. https://www.frieze.com/search?keys=Iosif+Kir%C3%A1ly
+- [route] Iosif Király monograph / publisher route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photography+monograph+publisher
+- [route] Iosif Király bibliography. WorldCat. https://search.worldcat.org/search?q=Iosif+Kir%C3%A1ly+photography
+- [route] Iosif Király bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Iosif+Kir%C3%A1ly&searchCode=GKEY%5E*&searchType=0
+- [route] ヨーシフ・キライ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%A8%E3%83%BC%E3%82%B7%E3%83%95%E3%83%BB%E3%82%AD%E3%83%A9%E3%82%A4
+- [route] ヨーシフ・キライ / Iosif Király research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%A8%E3%83%BC%E3%82%B7%E3%83%95%E3%83%BB%E3%82%AD%E3%83%A9%E3%82%A4+Iosif+Kir%C3%A1ly
+- [route] Iosif Király scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Iosif+Kir%C3%A1ly+photography
+- [route] Iosif Király journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Iosif+Kir%C3%A1ly+photography
+- [route] Iosif Király library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Iosif+Kir%C3%A1ly
+- [route] Iosif Király archive route. Smithsonian Institution. https://www.si.edu/search?query=Iosif+Kir%C3%A1ly
+- [route] Iosif Király archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Iosif+Kir%C3%A1ly
+- [route] Iosif Király exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Iosif+Kir%C3%A1ly
+- [route] Iosif Király Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Iosif Király third-language / local institution route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photography+museum+exhibition+catalogue
+- [route] Iosif Király primary interview / statement route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photographer+interview+artist+statement

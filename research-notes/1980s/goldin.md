@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `goldin`. Formal source candidates and research routes in this note: 30.
+> Site id / slug reference: `goldin`. Direct source pages retained in Sources: 24. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ## 1. 経歴・背景 / Basic facts and context
 ナン・ゴールディン（Nan Goldin）は、1980–1990年代の写真史で intimate documentary, diary photography, LGBTQ+ visual culture と結びつけて考えたい作家である。活動地域は United States を中心に広がり、作品は美術館、写真集、ギャラリー、批評誌、アーカイブを通じて受容された。略歴は必要最小限にとどめ、chosen family, sexuality, addiction, AIDS crisis, downtown subculture を扱う方法が、当時の写真表現、美術制度、社会的文脈とどう結びついていたのかを中心に調べる。
@@ -63,40 +63,34 @@ tags: ["intimacy", "self-implicated witness", "memory", "community mourning"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-## 6. Sources and research routes
+## 6. Sources (direct pages only)
 - [S1] Nan Goldin: The Ballad of Sexual Dependency. MoMA. https://www.moma.org/calendar/exhibitions/1651
 - [S2] Nan Goldin, The Ballad of Sexual Dependency. Aperture. https://aperture.org/nan-goldin-book-and-print-set/
 - [S3] The Ballad Of Nan Goldin. Aperture. https://issues.aperture.org/article/2020/2/2/the-ballad-of-nan-goldin
 - [S4] Nan Goldin’s Ballad Of Sexual Dependency. Aperture 1986. https://issues.aperture.org/article/1986/02/02/nan-goldins-ballad-of-sexual-dependency
 - [S5] Inside Story of How Nan Goldin Edited The Ballad. Aperture. https://aperture.org/interviews/inside-story-of-how-nan-goldin-edited-the-ballad/
-- [S6] Nan Goldin official / estate / gallery route. https://www.google.com/search?q=Nan+Goldin+photography+official+artist+gallery
-- [S7] Nan Goldin search. MoMA. https://www.moma.org/search/?query=Nan+Goldin
-- [S8] Nan Goldin search. Tate. https://www.tate.org.uk/search?q=Nan+Goldin
-- [S9] Nan Goldin collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Nan+Goldin
-- [S10] Nan Goldin search. Guggenheim Museum. https://www.guggenheim.org/?s=Nan+Goldin
-- [S11] Nan Goldin search. Art Institute of Chicago. https://www.artic.edu/search?q=Nan+Goldin
-- [S12] Nan Goldin search. SFMOMA. https://www.sfmoma.org/search/?q=Nan+Goldin
-- [S13] Nan Goldin search. Whitney Museum. https://whitney.org/search?q=Nan+Goldin
-- [S14] Nan Goldin search. International Center of Photography. https://www.icp.org/search-results/Nan%20Goldin
-- [S15] Nan Goldin search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Nan+Goldin
-- [S16] Nan Goldin search. Getty. https://www.getty.edu/art/collection/search/?q=Nan+Goldin
-- [S17] Nan Goldin route. Aperture. https://aperture.org/?s=Nan+Goldin
-- [S18] Nan Goldin route. Magnum Photos. https://www.magnumphotos.com/?s=Nan+Goldin
-- [S19] Nan Goldin criticism route. Artforum. https://www.artforum.com/search/Nan%20Goldin/
-- [S20] Nan Goldin criticism route. e-flux. https://www.e-flux.com/search/?q=Nan+Goldin
-- [S21] Nan Goldin criticism route. Frieze. https://www.frieze.com/search?keys=Nan+Goldin
-- [S22] Nan Goldin monograph / publisher route. https://www.google.com/search?q=Nan+Goldin+photography+monograph+publisher
-- [S23] Nan Goldin bibliography. WorldCat. https://search.worldcat.org/search?q=Nan+Goldin+photography
-- [S24] Nan Goldin bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Nan+Goldin&searchCode=GKEY%5E*&searchType=0
-- [S25] ナン・ゴールディン bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%8A%E3%83%B3%E3%83%BB%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3
-- [S26] ナン・ゴールディン / Nan Goldin research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%8A%E3%83%B3%E3%83%BB%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3+Nan+Goldin
-- [S27] Nan Goldin scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Nan+Goldin+photography
-- [S28] Nan Goldin journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Nan+Goldin+photography
-- [S29] Nan Goldin library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Nan+Goldin
-- [S30] Nan Goldin archive route. Smithsonian Institution. https://www.si.edu/search?query=Nan+Goldin
+- [S6] Interview with Nan Goldin. Whitney Museum of American Art. https://whitney.org/nan-goldin-interview
+- [S7] David Wojnarowicz and Nan Goldin. Aperture. https://aperture.org/editorial/david-wojnarowicz-and-nan-goldin/
+- [S8] Nan Goldin interview. American Masters / PBS. https://www.pbs.org/wnet/americanmasters/archive/interview/nan-goldin/
+- [S9] Oral history interview with Nan Goldin. Archives of American Art / Smithsonian PDF. https://sirismm.si.edu/EADpdfs/AAA.goldin17.pdf
+- [S10] Nan Goldin. Gagosian. https://gagosian.com/artists/nan-goldin/
+- [S11] Nan Goldin: Another Word for Love. Gagosian Quarterly. https://gagosian.com/quarterly/2026/02/06/essay-nan-goldin-another-word-for-love/
+- [S12] Nan Goldin’s cracked mirror at the Whitney. The Washington Post. https://www.washingtonpost.com/archive/lifestyle/style/1996/10/27/nan-goldins-cracked-mirror-at-the-whitney-a-photographers-raw-retrospective/c1fd213c-3ab0-41b7-ae41-83e51ff0103c/
+- [S13] Your ultimate guide to Nan Goldin. Dazed. https://www.dazeddigital.com/photography/article/34062/1/your-ultimate-guide-to-nan-goldin
+- [S14] Nan Goldin inspired a generation of photographers. Dazed. https://www.dazeddigital.com/art-photography/article/55751/1/real-raw-honest-how-nan-goldin-inspired-a-generation-of-photographers
+- [S15] Nan Goldin: Berlin Work. Berlinische Galerie. https://berlinischegalerie.de/en/exhibition/nan-goldin/
+- [S16] Nan Goldin. Fraenkel Gallery, 1994. https://fraenkelgallery.com/exhibitions/nan-goldin
+- [S17] Nan Goldin. Palais de Tokyo. https://palaisdetokyo.com/en/personne/nan-goldin/
+- [S18] Nan Goldin visitor record. Neue Nationalgalerie / Staatliche Museen zu Berlin. https://www.smb.museum/en/whats-new/detail/225000-visitors-for-nan-goldins-exhibition-at-neue-nationalgalerie/
+- [S19] Nan Goldin. Urs Stahel / Fotomuseum Winterthur note. https://ursstahel.ch/nan-goldin
+- [S20] Nan Goldin. Museumsportal Berlin. https://www.museumsportal-berlin.de/en/exhibitions/nan-goldin/
+- [S21] Nan Goldin: Deep Dive. Fraenkel Gallery. https://fraenkelgallery.com/exhibitions/deep-dive-nan-goldin
+- [S22] Nan Goldin: This Will Not End Well texts. Neue Nationalgalerie PDF. https://www.smb.museum/fileadmin/website/Presse/Pressematerial/2024/11/04_NNG_241122_NanGoldin_Texts_en.pdf
+- [S23] Nan Goldin Berlinische Galerie press release PDF. https://berlinischegalerie.de/assets/downloads/presse/Pressetexte/Pressearchiv/2010/Press-release_Nan-Goldin_18.11.10_Berlinische-Galerie.pdf
+- [S24] Nan Goldin: Works at the Grand Palais. Grand Palais. https://www.grandpalais.fr/en/magazine/works-youll-see-nan-goldin-exhibition-grand-palais
 
 ## 7. 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で24件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -104,3 +98,7 @@ tags: ["intimacy", "self-implicated witness", "memory", "community mourning"]
 - AIDS crisis、downtown New York、queer visual cultureに関する批評・展覧会資料
 - P.A.I.N.以前と以後の制度批判、ミュージアム受容の変化
 - 本人インタビュー、友人・被写体の証言、Aperture/Whitney/MoMA図録
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 24. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- No search/catalog routes were moved.

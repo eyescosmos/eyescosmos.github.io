@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `shirana-shahbazi`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `shirana-shahbazi`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 シラナ・シャーバジ（Shirana Shahbazi）は、1980–1990年代の写真史で contemporary color photography, still life and abstraction と結びつけて整理したい作家である。活動地域・制度的文脈としては Iran / Switzerland を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、portrait, still life, landscape, color planes を、large color print, translation into painting/poster, studio composition によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["representation", "translation", "color surface"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Shirana Shahbazi official / estate / gallery route. https://www.google.com/search?q=Shirana+Shahbazi+photography+official+artist+gallery
-- [S2] Shirana Shahbazi search. MoMA. https://www.moma.org/search/?query=Shirana+Shahbazi
-- [S3] Shirana Shahbazi search. Tate. https://www.tate.org.uk/search?q=Shirana+Shahbazi
-- [S4] Shirana Shahbazi collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Shirana+Shahbazi
-- [S5] Shirana Shahbazi search. Guggenheim Museum. https://www.guggenheim.org/?s=Shirana+Shahbazi
-- [S6] Shirana Shahbazi search. Art Institute of Chicago. https://www.artic.edu/search?q=Shirana+Shahbazi
-- [S7] Shirana Shahbazi search. SFMOMA. https://www.sfmoma.org/search/?q=Shirana+Shahbazi
-- [S8] Shirana Shahbazi search. Whitney Museum. https://whitney.org/search?q=Shirana+Shahbazi
-- [S9] Shirana Shahbazi search. International Center of Photography. https://www.icp.org/search-results/Shirana%20Shahbazi
-- [S10] Shirana Shahbazi search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Shirana+Shahbazi
-- [S11] Shirana Shahbazi search. Getty. https://www.getty.edu/art/collection/search/?q=Shirana+Shahbazi
-- [S12] Shirana Shahbazi route. Aperture. https://aperture.org/?s=Shirana+Shahbazi
-- [S13] Shirana Shahbazi route. Magnum Photos. https://www.magnumphotos.com/?s=Shirana+Shahbazi
-- [S14] Shirana Shahbazi criticism route. Artforum. https://www.artforum.com/search/Shirana%20Shahbazi/
-- [S15] Shirana Shahbazi criticism route. e-flux. https://www.e-flux.com/search/?q=Shirana+Shahbazi
-- [S16] Shirana Shahbazi criticism route. Frieze. https://www.frieze.com/search?keys=Shirana+Shahbazi
-- [S17] Shirana Shahbazi monograph / publisher route. https://www.google.com/search?q=Shirana+Shahbazi+photography+monograph+publisher
-- [S18] Shirana Shahbazi bibliography. WorldCat. https://search.worldcat.org/search?q=Shirana+Shahbazi+photography
-- [S19] Shirana Shahbazi bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Shirana+Shahbazi&searchCode=GKEY%5E*&searchType=0
-- [S20] シラナ・シャーバジ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%B7%E3%83%A9%E3%83%8A%E3%83%BB%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%90%E3%82%B8
-- [S21] シラナ・シャーバジ / Shirana Shahbazi research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%B7%E3%83%A9%E3%83%8A%E3%83%BB%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%90%E3%82%B8+Shirana+Shahbazi
-- [S22] Shirana Shahbazi scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Shirana+Shahbazi+photography
-- [S23] Shirana Shahbazi journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Shirana+Shahbazi+photography
-- [S24] Shirana Shahbazi library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Shirana+Shahbazi
-- [S25] Shirana Shahbazi archive route. Smithsonian Institution. https://www.si.edu/search?query=Shirana+Shahbazi
-- [S26] Shirana Shahbazi archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Shirana+Shahbazi
-- [S27] Shirana Shahbazi exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Shirana+Shahbazi
-- [S28] Shirana Shahbazi Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Shirana Shahbazi third-language / local institution route. https://www.google.com/search?q=Shirana+Shahbazi+photography+museum+exhibition+catalogue
-- [S30] Shirana Shahbazi primary interview / statement route. https://www.google.com/search?q=Shirana+Shahbazi+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Hammer Projects: Shirana Shahbazi. Hammer Museum. https://hammer.ucla.edu/exhibitions/2008/hammer-projects-shirana-shahbazi
+- [S2] Exhibitions – Shirana Shahbazi. New Museum Digital Archive. https://archive.newmuseum.org/exhibitions/1359
+- [S3] Triennial of Photography Hamburg: Shirana Shahbazi. https://2018.phototriennale.de/en/exhibitions/shirana-shahbazi/
+- [S4] Shirana Shahbazi: Picture the Scene — Galerie Peter Kilchmann. https://www.peterkilchmann.com/exhibitions/216-shirana-shahbazi-picture-the-scenegalerie-peter-kilchmann-ramistrasse-zurich/ — gallery exhibition text on analog cameras, lithography, silver gelatin, and spatial superimposition
+- [S5] Shirana Shahbazi press release — Galerie Peter Kilchmann. https://www.peterkilchmann.com/usr/documents/exhibitions/press_release_url/216/sh23_gpk_press_en.pdf — press release with collections, techniques, and exhibition context
+- [S6] Shirana Shahbazi Flash Art PDF — Galerie Peter Kilchmann. https://www.peterkilchmann.com/usr/documents/press/download_url/86/sh20_flashart.pdf — critical/review text on color-blocked installations
+- [S7] Shirana Shahbazi — edcat. https://edcat.net/item/shirana-shahbazi/ — photobook/publisher record
+- [S8] Shirana Shahbazi — Kunsthaus Zürich. https://www.kunsthaus.ch/en/sammlung/kunstwerke-von-a-z/?kuenstler=shirana-shahbazi — collection context
+- [S9] Shirana Shahbazi — MACK. https://mackbooks.co.uk/products/shirana-shahbazi-br-shirana-shahbazi — publisher page for photobook context
+- [S10] Shirana Shahbazi — Prix Meret Oppenheim / Swiss Art Awards. https://swissartawards.ch/prix-meret-oppenheim/shirana-shahbazi/ — award/institutional profile
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["representation", "translation", "color surface"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Shirana Shahbazi official / estate / gallery route. https://www.google.com/search?q=Shirana+Shahbazi+photography+official+artist+gallery
+- [route] Shirana Shahbazi search. MoMA. https://www.moma.org/search/?query=Shirana+Shahbazi
+- [route] Shirana Shahbazi search. Tate. https://www.tate.org.uk/search?q=Shirana+Shahbazi
+- [route] Shirana Shahbazi collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Shirana+Shahbazi
+- [route] Shirana Shahbazi search. Guggenheim Museum. https://www.guggenheim.org/?s=Shirana+Shahbazi
+- [route] Shirana Shahbazi search. Art Institute of Chicago. https://www.artic.edu/search?q=Shirana+Shahbazi
+- [route] Shirana Shahbazi search. SFMOMA. https://www.sfmoma.org/search/?q=Shirana+Shahbazi
+- [route] Shirana Shahbazi search. Whitney Museum. https://whitney.org/search?q=Shirana+Shahbazi
+- [route] Shirana Shahbazi search. International Center of Photography. https://www.icp.org/search-results/Shirana%20Shahbazi
+- [route] Shirana Shahbazi search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Shirana+Shahbazi
+- [route] Shirana Shahbazi search. Getty. https://www.getty.edu/art/collection/search/?q=Shirana+Shahbazi
+- [route] Shirana Shahbazi route. Aperture. https://aperture.org/?s=Shirana+Shahbazi
+- [route] Shirana Shahbazi route. Magnum Photos. https://www.magnumphotos.com/?s=Shirana+Shahbazi
+- [route] Shirana Shahbazi criticism route. Artforum. https://www.artforum.com/search/Shirana%20Shahbazi/
+- [route] Shirana Shahbazi criticism route. e-flux. https://www.e-flux.com/search/?q=Shirana+Shahbazi
+- [route] Shirana Shahbazi criticism route. Frieze. https://www.frieze.com/search?keys=Shirana+Shahbazi
+- [route] Shirana Shahbazi monograph / publisher route. https://www.google.com/search?q=Shirana+Shahbazi+photography+monograph+publisher
+- [route] Shirana Shahbazi bibliography. WorldCat. https://search.worldcat.org/search?q=Shirana+Shahbazi+photography
+- [route] Shirana Shahbazi bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Shirana+Shahbazi&searchCode=GKEY%5E*&searchType=0
+- [route] シラナ・シャーバジ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%B7%E3%83%A9%E3%83%8A%E3%83%BB%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%90%E3%82%B8
+- [route] シラナ・シャーバジ / Shirana Shahbazi research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%B7%E3%83%A9%E3%83%8A%E3%83%BB%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%90%E3%82%B8+Shirana+Shahbazi
+- [route] Shirana Shahbazi scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Shirana+Shahbazi+photography
+- [route] Shirana Shahbazi journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Shirana+Shahbazi+photography
+- [route] Shirana Shahbazi library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Shirana+Shahbazi
+- [route] Shirana Shahbazi archive route. Smithsonian Institution. https://www.si.edu/search?query=Shirana+Shahbazi
+- [route] Shirana Shahbazi archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Shirana+Shahbazi
+- [route] Shirana Shahbazi exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Shirana+Shahbazi
+- [route] Shirana Shahbazi Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Shirana Shahbazi third-language / local institution route. https://www.google.com/search?q=Shirana+Shahbazi+photography+museum+exhibition+catalogue
+- [route] Shirana Shahbazi primary interview / statement route. https://www.google.com/search?q=Shirana+Shahbazi+photographer+interview+artist+statement

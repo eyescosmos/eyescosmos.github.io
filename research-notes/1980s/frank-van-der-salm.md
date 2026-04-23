@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `frank-van-der-salm`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `frank-van-der-salm`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 フランク・ファン・デル・サルム（Frank van der Salm）は、1980–1990年代の写真史で architecture photography, urban landscape と結びつけて整理したい作家である。活動地域・制度的文脈としては Netherlands を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、city at night, architecture, global urbanism を、large color prints, night photography, cool observation によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["non-place", "urban anonymity", "global architecture"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Frank van der Salm official / estate / gallery route. https://www.google.com/search?q=Frank+van+der+Salm+photography+official+artist+gallery
-- [S2] Frank van der Salm search. MoMA. https://www.moma.org/search/?query=Frank+van+der+Salm
-- [S3] Frank van der Salm search. Tate. https://www.tate.org.uk/search?q=Frank+van+der+Salm
-- [S4] Frank van der Salm collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Frank+van+der+Salm
-- [S5] Frank van der Salm search. Guggenheim Museum. https://www.guggenheim.org/?s=Frank+van+der+Salm
-- [S6] Frank van der Salm search. Art Institute of Chicago. https://www.artic.edu/search?q=Frank+van+der+Salm
-- [S7] Frank van der Salm search. SFMOMA. https://www.sfmoma.org/search/?q=Frank+van+der+Salm
-- [S8] Frank van der Salm search. Whitney Museum. https://whitney.org/search?q=Frank+van+der+Salm
-- [S9] Frank van der Salm search. International Center of Photography. https://www.icp.org/search-results/Frank%20van%20der%20Salm
-- [S10] Frank van der Salm search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Frank+van+der+Salm
-- [S11] Frank van der Salm search. Getty. https://www.getty.edu/art/collection/search/?q=Frank+van+der+Salm
-- [S12] Frank van der Salm route. Aperture. https://aperture.org/?s=Frank+van+der+Salm
-- [S13] Frank van der Salm route. Magnum Photos. https://www.magnumphotos.com/?s=Frank+van+der+Salm
-- [S14] Frank van der Salm criticism route. Artforum. https://www.artforum.com/search/Frank%20van%20der%20Salm/
-- [S15] Frank van der Salm criticism route. e-flux. https://www.e-flux.com/search/?q=Frank+van+der+Salm
-- [S16] Frank van der Salm criticism route. Frieze. https://www.frieze.com/search?keys=Frank+van+der+Salm
-- [S17] Frank van der Salm monograph / publisher route. https://www.google.com/search?q=Frank+van+der+Salm+photography+monograph+publisher
-- [S18] Frank van der Salm bibliography. WorldCat. https://search.worldcat.org/search?q=Frank+van+der+Salm+photography
-- [S19] Frank van der Salm bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Frank+van+der+Salm&searchCode=GKEY%5E*&searchType=0
-- [S20] フランク・ファン・デル・サルム bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%95%E3%83%A9%E3%83%B3%E3%82%AF%E3%83%BB%E3%83%95%E3%82%A1%E3%83%B3%E3%83%BB%E3%83%87%E3%83%AB%E3%83%BB%E3%82%B5%E3%83%AB%E3%83%A0
-- [S21] フランク・ファン・デル・サルム / Frank van der Salm research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%95%E3%83%A9%E3%83%B3%E3%82%AF%E3%83%BB%E3%83%95%E3%82%A1%E3%83%B3%E3%83%BB%E3%83%87%E3%83%AB%E3%83%BB%E3%82%B5%E3%83%AB%E3%83%A0+Frank+van+der+Salm
-- [S22] Frank van der Salm scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Frank+van+der+Salm+photography
-- [S23] Frank van der Salm journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Frank+van+der+Salm+photography
-- [S24] Frank van der Salm library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Frank+van+der+Salm
-- [S25] Frank van der Salm archive route. Smithsonian Institution. https://www.si.edu/search?query=Frank+van+der+Salm
-- [S26] Frank van der Salm archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Frank+van+der+Salm
-- [S27] Frank van der Salm exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Frank+van+der+Salm
-- [S28] Frank van der Salm Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Frank van der Salm third-language / local institution route. https://www.google.com/search?q=Frank+van+der+Salm+photography+museum+exhibition+catalogue
-- [S30] Frank van der Salm primary interview / statement route. https://www.google.com/search?q=Frank+van+der+Salm+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] About — Frank van der Salm. https://www.frankvandersalm.com/about
+- [S2] Through the Photographer’s Lens. Nieuwe Instituut. https://nieuweinstituut.nl/en/events/door-de-lens-van-de-fotograaf
+- [S3] Fotografie mit Architektur, Fotografie durch Architektur. ReVue. https://www.re-vue.org/beitrag/theorie-frank-van-der-salm-fotografie-mit-architektur-fotografie-durch-architektur
+- [S4] Frank van der Salm — Rijksmuseum. https://www.rijksmuseum.nl/en/collection/node/Frank%2Bvan%2Bder%2BSalm--65c98bff38c681e76dded25193da3160 — collection page with works and museum context
+- [S5] Tour — Rijksmuseum. https://www.rijksmuseum.nl/en/collection/object/Tour--628a70d7342173c1355f5a118cff8247 — object page discussing realism/abstraction and HSL urban change
+- [S6] Fotografen in Nederland — Frank van der Salm official bibliography. https://www.frankvandersalm.com/bibliography-catalogues/blog-post-title-one-xfkke-m8cjg-nysf2-wt5z5 — bibliographic/context page for Dutch photography history
+- [S7] Frank van der Salm CV — Frank van der Salm official website. https://www.frankvandersalm.com/s/FrankvanderSalm_CV.pdf — CV with exhibition and publication record
+- [S8] Frank van der Salm — Jan Kesner Gallery. https://jankesnergallery.com/jkgartists/van-der-salm-frank.html — gallery profile for fine-art photography context
+- [S9] Frank van der Salm — Roof-A Gallery. https://roof-a.com/artists/frank-van-der-salm/ — gallery profile and current representation
+- [S10] Frank van der Salm: Now and Then — Nederlands Fotomuseum. https://nederlandsfotomuseum.nl/en/exhibition/frank-van-der-salm-now-and-then/ — museum solo exhibition page on urban photographic practice
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["non-place", "urban anonymity", "global architecture"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Frank van der Salm official / estate / gallery route. https://www.google.com/search?q=Frank+van+der+Salm+photography+official+artist+gallery
+- [route] Frank van der Salm search. MoMA. https://www.moma.org/search/?query=Frank+van+der+Salm
+- [route] Frank van der Salm search. Tate. https://www.tate.org.uk/search?q=Frank+van+der+Salm
+- [route] Frank van der Salm collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Frank+van+der+Salm
+- [route] Frank van der Salm search. Guggenheim Museum. https://www.guggenheim.org/?s=Frank+van+der+Salm
+- [route] Frank van der Salm search. Art Institute of Chicago. https://www.artic.edu/search?q=Frank+van+der+Salm
+- [route] Frank van der Salm search. SFMOMA. https://www.sfmoma.org/search/?q=Frank+van+der+Salm
+- [route] Frank van der Salm search. Whitney Museum. https://whitney.org/search?q=Frank+van+der+Salm
+- [route] Frank van der Salm search. International Center of Photography. https://www.icp.org/search-results/Frank%20van%20der%20Salm
+- [route] Frank van der Salm search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Frank+van+der+Salm
+- [route] Frank van der Salm search. Getty. https://www.getty.edu/art/collection/search/?q=Frank+van+der+Salm
+- [route] Frank van der Salm route. Aperture. https://aperture.org/?s=Frank+van+der+Salm
+- [route] Frank van der Salm route. Magnum Photos. https://www.magnumphotos.com/?s=Frank+van+der+Salm
+- [route] Frank van der Salm criticism route. Artforum. https://www.artforum.com/search/Frank%20van%20der%20Salm/
+- [route] Frank van der Salm criticism route. e-flux. https://www.e-flux.com/search/?q=Frank+van+der+Salm
+- [route] Frank van der Salm criticism route. Frieze. https://www.frieze.com/search?keys=Frank+van+der+Salm
+- [route] Frank van der Salm monograph / publisher route. https://www.google.com/search?q=Frank+van+der+Salm+photography+monograph+publisher
+- [route] Frank van der Salm bibliography. WorldCat. https://search.worldcat.org/search?q=Frank+van+der+Salm+photography
+- [route] Frank van der Salm bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Frank+van+der+Salm&searchCode=GKEY%5E*&searchType=0
+- [route] フランク・ファン・デル・サルム bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%95%E3%83%A9%E3%83%B3%E3%82%AF%E3%83%BB%E3%83%95%E3%82%A1%E3%83%B3%E3%83%BB%E3%83%87%E3%83%AB%E3%83%BB%E3%82%B5%E3%83%AB%E3%83%A0
+- [route] フランク・ファン・デル・サルム / Frank van der Salm research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%95%E3%83%A9%E3%83%B3%E3%82%AF%E3%83%BB%E3%83%95%E3%82%A1%E3%83%B3%E3%83%BB%E3%83%87%E3%83%AB%E3%83%BB%E3%82%B5%E3%83%AB%E3%83%A0+Frank+van+der+Salm
+- [route] Frank van der Salm scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Frank+van+der+Salm+photography
+- [route] Frank van der Salm journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Frank+van+der+Salm+photography
+- [route] Frank van der Salm library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Frank+van+der+Salm
+- [route] Frank van der Salm archive route. Smithsonian Institution. https://www.si.edu/search?query=Frank+van+der+Salm
+- [route] Frank van der Salm archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Frank+van+der+Salm
+- [route] Frank van der Salm exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Frank+van+der+Salm
+- [route] Frank van der Salm Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Frank van der Salm third-language / local institution route. https://www.google.com/search?q=Frank+van+der+Salm+photography+museum+exhibition+catalogue
+- [route] Frank van der Salm primary interview / statement route. https://www.google.com/search?q=Frank+van+der+Salm+photographer+interview+artist+statement

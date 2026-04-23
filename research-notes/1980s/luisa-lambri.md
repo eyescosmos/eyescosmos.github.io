@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `luisa-lambri`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `luisa-lambri`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ルイーザ・ランブリ（Luisa Lambri）は、1980–1990年代の写真史で architecture photography, minimal interior と結びつけて整理したい作家である。活動地域・制度的文脈としては Italy を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、modernist architecture, light, windows, interiors を、cropping, soft light, near-abstract detail によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["perception", "architectural intimacy", "surface"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Luisa Lambri official / estate / gallery route. https://www.google.com/search?q=Luisa+Lambri+photography+official+artist+gallery
-- [S2] Luisa Lambri search. MoMA. https://www.moma.org/search/?query=Luisa+Lambri
-- [S3] Luisa Lambri search. Tate. https://www.tate.org.uk/search?q=Luisa+Lambri
-- [S4] Luisa Lambri collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Luisa+Lambri
-- [S5] Luisa Lambri search. Guggenheim Museum. https://www.guggenheim.org/?s=Luisa+Lambri
-- [S6] Luisa Lambri search. Art Institute of Chicago. https://www.artic.edu/search?q=Luisa+Lambri
-- [S7] Luisa Lambri search. SFMOMA. https://www.sfmoma.org/search/?q=Luisa+Lambri
-- [S8] Luisa Lambri search. Whitney Museum. https://whitney.org/search?q=Luisa+Lambri
-- [S9] Luisa Lambri search. International Center of Photography. https://www.icp.org/search-results/Luisa%20Lambri
-- [S10] Luisa Lambri search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Luisa+Lambri
-- [S11] Luisa Lambri search. Getty. https://www.getty.edu/art/collection/search/?q=Luisa+Lambri
-- [S12] Luisa Lambri route. Aperture. https://aperture.org/?s=Luisa+Lambri
-- [S13] Luisa Lambri route. Magnum Photos. https://www.magnumphotos.com/?s=Luisa+Lambri
-- [S14] Luisa Lambri criticism route. Artforum. https://www.artforum.com/search/Luisa%20Lambri/
-- [S15] Luisa Lambri criticism route. e-flux. https://www.e-flux.com/search/?q=Luisa+Lambri
-- [S16] Luisa Lambri criticism route. Frieze. https://www.frieze.com/search?keys=Luisa+Lambri
-- [S17] Luisa Lambri monograph / publisher route. https://www.google.com/search?q=Luisa+Lambri+photography+monograph+publisher
-- [S18] Luisa Lambri bibliography. WorldCat. https://search.worldcat.org/search?q=Luisa+Lambri+photography
-- [S19] Luisa Lambri bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Luisa+Lambri&searchCode=GKEY%5E*&searchType=0
-- [S20] ルイーザ・ランブリ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%AB%E3%82%A4%E3%83%BC%E3%82%B6%E3%83%BB%E3%83%A9%E3%83%B3%E3%83%96%E3%83%AA
-- [S21] ルイーザ・ランブリ / Luisa Lambri research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%AB%E3%82%A4%E3%83%BC%E3%82%B6%E3%83%BB%E3%83%A9%E3%83%B3%E3%83%96%E3%83%AA+Luisa+Lambri
-- [S22] Luisa Lambri scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Luisa+Lambri+photography
-- [S23] Luisa Lambri journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Luisa+Lambri+photography
-- [S24] Luisa Lambri library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Luisa+Lambri
-- [S25] Luisa Lambri archive route. Smithsonian Institution. https://www.si.edu/search?query=Luisa+Lambri
-- [S26] Luisa Lambri archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Luisa+Lambri
-- [S27] Luisa Lambri exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Luisa+Lambri
-- [S28] Luisa Lambri Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Luisa Lambri third-language / local institution route. https://www.google.com/search?q=Luisa+Lambri+photography+museum+exhibition+catalogue
-- [S30] Luisa Lambri primary interview / statement route. https://www.google.com/search?q=Luisa+Lambri+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Luisa Lambri: Locations. The Menil Collection / e-flux announcement. https://www.e-flux.com/announcements/42732/at-the-menil-collection/
+- [S2] Breuer Revisited: New Photographs by Luisa Lambri and Bas Princen. The Met Breuer. https://www.metmuseum.org/exhibitions/listings/2017/breuer-revisited
+- [S3] Luisa Lambri. Contemporary Art Centre (CAC), Vilnius. https://cac.lt/en/exhibition/luisa-lambri/
+- [S4] Breuer Revisited interview PDF — The Met / Natalia Torija archive. https://nataliatorija.com/wp-content/uploads/2017/11/breuer_revisited.pdf — Interview with Lambri on photographing architecture and process.
+- [S5] Autoritratto — PAC Milano. https://www.pacmilano.it/en/exhibitions/luisa-lambri-2/ — Museum text on space, representation, modernism, feminism, identity, and memory.
+- [S6] Luisa Lambri: Photographs — Luhring Augustine. https://www.luhringaugustine.com/exhibitions/luisa-lambri — Gallery exhibition text on interiors, modernist architecture, and abstraction.
+- [S7] Luisa Lambri — Isabella Stewart Gardner Museum. https://www.gardnermuseum.org/experience/contemporary-art/artists/lambri-luisa — Artist-in-residence page on Lambri’s subjective engagement with museum space and light.
+- [S8] Luisa Lambri with OFFICE Kersten Geers David Van Severen — Thomas Dane Gallery. https://www.thomasdanegallery.com/exhibitions/121/overview/ — Gallery text on Lambri’s photographs of modernist sculpture, architecture, and phenomenology.
+- [S9] Untitled (Cleveland Museum of Art, #6) — Cleveland Museum of Art. https://www.clevelandart.org/print/art/2018.1050 — Collection object page describing Lambri’s treatment of Breuer’s museum architecture.
+- [S10] Luisa Lambri — Hammer Museum. https://hammer.ucla.edu/programs-events/2010/03/luisa-lambri — Museum program page tied to Being There and curatorial context.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["perception", "architectural intimacy", "surface"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Luisa Lambri official / estate / gallery route. https://www.google.com/search?q=Luisa+Lambri+photography+official+artist+gallery
+- [route] Luisa Lambri search. MoMA. https://www.moma.org/search/?query=Luisa+Lambri
+- [route] Luisa Lambri search. Tate. https://www.tate.org.uk/search?q=Luisa+Lambri
+- [route] Luisa Lambri collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Luisa+Lambri
+- [route] Luisa Lambri search. Guggenheim Museum. https://www.guggenheim.org/?s=Luisa+Lambri
+- [route] Luisa Lambri search. Art Institute of Chicago. https://www.artic.edu/search?q=Luisa+Lambri
+- [route] Luisa Lambri search. SFMOMA. https://www.sfmoma.org/search/?q=Luisa+Lambri
+- [route] Luisa Lambri search. Whitney Museum. https://whitney.org/search?q=Luisa+Lambri
+- [route] Luisa Lambri search. International Center of Photography. https://www.icp.org/search-results/Luisa%20Lambri
+- [route] Luisa Lambri search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Luisa+Lambri
+- [route] Luisa Lambri search. Getty. https://www.getty.edu/art/collection/search/?q=Luisa+Lambri
+- [route] Luisa Lambri route. Aperture. https://aperture.org/?s=Luisa+Lambri
+- [route] Luisa Lambri route. Magnum Photos. https://www.magnumphotos.com/?s=Luisa+Lambri
+- [route] Luisa Lambri criticism route. Artforum. https://www.artforum.com/search/Luisa%20Lambri/
+- [route] Luisa Lambri criticism route. e-flux. https://www.e-flux.com/search/?q=Luisa+Lambri
+- [route] Luisa Lambri criticism route. Frieze. https://www.frieze.com/search?keys=Luisa+Lambri
+- [route] Luisa Lambri monograph / publisher route. https://www.google.com/search?q=Luisa+Lambri+photography+monograph+publisher
+- [route] Luisa Lambri bibliography. WorldCat. https://search.worldcat.org/search?q=Luisa+Lambri+photography
+- [route] Luisa Lambri bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Luisa+Lambri&searchCode=GKEY%5E*&searchType=0
+- [route] ルイーザ・ランブリ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%AB%E3%82%A4%E3%83%BC%E3%82%B6%E3%83%BB%E3%83%A9%E3%83%B3%E3%83%96%E3%83%AA
+- [route] ルイーザ・ランブリ / Luisa Lambri research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%AB%E3%82%A4%E3%83%BC%E3%82%B6%E3%83%BB%E3%83%A9%E3%83%B3%E3%83%96%E3%83%AA+Luisa+Lambri
+- [route] Luisa Lambri scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Luisa+Lambri+photography
+- [route] Luisa Lambri journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Luisa+Lambri+photography
+- [route] Luisa Lambri library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Luisa+Lambri
+- [route] Luisa Lambri archive route. Smithsonian Institution. https://www.si.edu/search?query=Luisa+Lambri
+- [route] Luisa Lambri archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Luisa+Lambri
+- [route] Luisa Lambri exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Luisa+Lambri
+- [route] Luisa Lambri Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Luisa Lambri third-language / local institution route. https://www.google.com/search?q=Luisa+Lambri+photography+museum+exhibition+catalogue
+- [route] Luisa Lambri primary interview / statement route. https://www.google.com/search?q=Luisa+Lambri+photographer+interview+artist+statement

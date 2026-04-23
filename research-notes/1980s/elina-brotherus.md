@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `elina-brotherus`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `elina-brotherus`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 エリナ・ブロテルス（Elina Brotherus）は、1980–1990年代の写真史で self-portraiture, autobiographical photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Finland を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、body, landscape, art history, mourning を、self-portrait staging, landscape tableau, serial works によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["personal intimacy", "art-historical quotation", "presence and distance"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Elina Brotherus official / estate / gallery route. https://www.google.com/search?q=Elina+Brotherus+photography+official+artist+gallery
-- [S2] Elina Brotherus search. MoMA. https://www.moma.org/search/?query=Elina+Brotherus
-- [S3] Elina Brotherus search. Tate. https://www.tate.org.uk/search?q=Elina+Brotherus
-- [S4] Elina Brotherus collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Elina+Brotherus
-- [S5] Elina Brotherus search. Guggenheim Museum. https://www.guggenheim.org/?s=Elina+Brotherus
-- [S6] Elina Brotherus search. Art Institute of Chicago. https://www.artic.edu/search?q=Elina+Brotherus
-- [S7] Elina Brotherus search. SFMOMA. https://www.sfmoma.org/search/?q=Elina+Brotherus
-- [S8] Elina Brotherus search. Whitney Museum. https://whitney.org/search?q=Elina+Brotherus
-- [S9] Elina Brotherus search. International Center of Photography. https://www.icp.org/search-results/Elina%20Brotherus
-- [S10] Elina Brotherus search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Elina+Brotherus
-- [S11] Elina Brotherus search. Getty. https://www.getty.edu/art/collection/search/?q=Elina+Brotherus
-- [S12] Elina Brotherus route. Aperture. https://aperture.org/?s=Elina+Brotherus
-- [S13] Elina Brotherus route. Magnum Photos. https://www.magnumphotos.com/?s=Elina+Brotherus
-- [S14] Elina Brotherus criticism route. Artforum. https://www.artforum.com/search/Elina%20Brotherus/
-- [S15] Elina Brotherus criticism route. e-flux. https://www.e-flux.com/search/?q=Elina+Brotherus
-- [S16] Elina Brotherus criticism route. Frieze. https://www.frieze.com/search?keys=Elina+Brotherus
-- [S17] Elina Brotherus monograph / publisher route. https://www.google.com/search?q=Elina+Brotherus+photography+monograph+publisher
-- [S18] Elina Brotherus bibliography. WorldCat. https://search.worldcat.org/search?q=Elina+Brotherus+photography
-- [S19] Elina Brotherus bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Elina+Brotherus&searchCode=GKEY%5E*&searchType=0
-- [S20] エリナ・ブロテルス bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%A8%E3%83%AA%E3%83%8A%E3%83%BB%E3%83%96%E3%83%AD%E3%83%86%E3%83%AB%E3%82%B9
-- [S21] エリナ・ブロテルス / Elina Brotherus research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%A8%E3%83%AA%E3%83%8A%E3%83%BB%E3%83%96%E3%83%AD%E3%83%86%E3%83%AB%E3%82%B9+Elina+Brotherus
-- [S22] Elina Brotherus scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Elina+Brotherus+photography
-- [S23] Elina Brotherus journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Elina+Brotherus+photography
-- [S24] Elina Brotherus library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Elina+Brotherus
-- [S25] Elina Brotherus archive route. Smithsonian Institution. https://www.si.edu/search?query=Elina+Brotherus
-- [S26] Elina Brotherus archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Elina+Brotherus
-- [S27] Elina Brotherus exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Elina+Brotherus
-- [S28] Elina Brotherus Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Elina Brotherus third-language / local institution route. https://www.google.com/search?q=Elina+Brotherus+photography+museum+exhibition+catalogue
-- [S30] Elina Brotherus primary interview / statement route. https://www.google.com/search?q=Elina+Brotherus+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Elina Brotherus. Museum Kunst der Westküste. https://www.mkdw.de/en/museum/artist-in-residence/elina-brotherus
+- [S2] Elina Brotherus. Official website / work. https://www.elinabrotherus.com/work
+- [S3] Elina Brotherus / Doppelleben. Museum für Photographie Braunschweig context. https://www.photography-in.berlin/museum-fur-photographie-braunschweig-elina-brotherus-angelika-platen-doppelleben/
+- [S4] Elina Brotherus — Marian Goodman Gallery. https://www.mariangoodman.com/artists/183-elina-brotherus/ — gallery biography and exhibition context for photography/video practice
+- [S5] Elina Brotherus — gb agency. https://www.gb-agency.fr/artists/49-elina-brotherus/ — gallery artist page for series, exhibitions, and conceptual self-portrait practice
+- [S6] Elina Brotherus — Centre Pompidou. https://www.centrepompidou.fr/en/ressources/personne/cgygp4e — institutional artist record for French museum context
+- [S7] Elina Brotherus — Galerie Anne Barrault. https://www.galerieannebarrault.com/en/artist/elina-brotherus/ — gallery profile and exhibition record
+- [S8] Elina Brotherus: Seabound — Weserburg Museum für moderne Kunst. https://weserburg.de/en/exhibition/elina-brotherus-seabound/ — museum exhibition page useful for landscape, body, and time
+- [S9] Elina Brotherus: Artist Profile — Taka Ishii Gallery. https://www.takaishiigallery.com/en/archives/artist/elina-brotherus/ — Japanese gallery context and exhibition history
+- [S10] Elina Brotherus — The Finnish Museum of Photography. https://www.valokuvataiteenmuseo.fi/en/artists/elina-brotherus — Finnish photography museum artist context
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["personal intimacy", "art-historical quotation", "presence and distance"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Elina Brotherus official / estate / gallery route. https://www.google.com/search?q=Elina+Brotherus+photography+official+artist+gallery
+- [route] Elina Brotherus search. MoMA. https://www.moma.org/search/?query=Elina+Brotherus
+- [route] Elina Brotherus search. Tate. https://www.tate.org.uk/search?q=Elina+Brotherus
+- [route] Elina Brotherus collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Elina+Brotherus
+- [route] Elina Brotherus search. Guggenheim Museum. https://www.guggenheim.org/?s=Elina+Brotherus
+- [route] Elina Brotherus search. Art Institute of Chicago. https://www.artic.edu/search?q=Elina+Brotherus
+- [route] Elina Brotherus search. SFMOMA. https://www.sfmoma.org/search/?q=Elina+Brotherus
+- [route] Elina Brotherus search. Whitney Museum. https://whitney.org/search?q=Elina+Brotherus
+- [route] Elina Brotherus search. International Center of Photography. https://www.icp.org/search-results/Elina%20Brotherus
+- [route] Elina Brotherus search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Elina+Brotherus
+- [route] Elina Brotherus search. Getty. https://www.getty.edu/art/collection/search/?q=Elina+Brotherus
+- [route] Elina Brotherus route. Aperture. https://aperture.org/?s=Elina+Brotherus
+- [route] Elina Brotherus route. Magnum Photos. https://www.magnumphotos.com/?s=Elina+Brotherus
+- [route] Elina Brotherus criticism route. Artforum. https://www.artforum.com/search/Elina%20Brotherus/
+- [route] Elina Brotherus criticism route. e-flux. https://www.e-flux.com/search/?q=Elina+Brotherus
+- [route] Elina Brotherus criticism route. Frieze. https://www.frieze.com/search?keys=Elina+Brotherus
+- [route] Elina Brotherus monograph / publisher route. https://www.google.com/search?q=Elina+Brotherus+photography+monograph+publisher
+- [route] Elina Brotherus bibliography. WorldCat. https://search.worldcat.org/search?q=Elina+Brotherus+photography
+- [route] Elina Brotherus bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Elina+Brotherus&searchCode=GKEY%5E*&searchType=0
+- [route] エリナ・ブロテルス bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%A8%E3%83%AA%E3%83%8A%E3%83%BB%E3%83%96%E3%83%AD%E3%83%86%E3%83%AB%E3%82%B9
+- [route] エリナ・ブロテルス / Elina Brotherus research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%A8%E3%83%AA%E3%83%8A%E3%83%BB%E3%83%96%E3%83%AD%E3%83%86%E3%83%AB%E3%82%B9+Elina+Brotherus
+- [route] Elina Brotherus scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Elina+Brotherus+photography
+- [route] Elina Brotherus journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Elina+Brotherus+photography
+- [route] Elina Brotherus library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Elina+Brotherus
+- [route] Elina Brotherus archive route. Smithsonian Institution. https://www.si.edu/search?query=Elina+Brotherus
+- [route] Elina Brotherus archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Elina+Brotherus
+- [route] Elina Brotherus exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Elina+Brotherus
+- [route] Elina Brotherus Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Elina Brotherus third-language / local institution route. https://www.google.com/search?q=Elina+Brotherus+photography+museum+exhibition+catalogue
+- [route] Elina Brotherus primary interview / statement route. https://www.google.com/search?q=Elina+Brotherus+photographer+interview+artist+statement

@@ -35,7 +35,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `sanna-kannisto`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `sanna-kannisto`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 サンナ・カンニスト（Sanna Kannisto）は、1980–1990年代の写真史で staged nature photography, science and photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Finland を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、birds, rainforest, field laboratory, nature を、temporary studio in field, large color prints, scientific display によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -91,40 +91,20 @@ tags: ["nature as stage", "taxonomy", "human-nonhuman gaze"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Sanna Kannisto official / estate / gallery route. https://www.google.com/search?q=Sanna+Kannisto+photography+official+artist+gallery
-- [S2] Sanna Kannisto search. MoMA. https://www.moma.org/search/?query=Sanna+Kannisto
-- [S3] Sanna Kannisto search. Tate. https://www.tate.org.uk/search?q=Sanna+Kannisto
-- [S4] Sanna Kannisto collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Sanna+Kannisto
-- [S5] Sanna Kannisto search. Guggenheim Museum. https://www.guggenheim.org/?s=Sanna+Kannisto
-- [S6] Sanna Kannisto search. Art Institute of Chicago. https://www.artic.edu/search?q=Sanna+Kannisto
-- [S7] Sanna Kannisto search. SFMOMA. https://www.sfmoma.org/search/?q=Sanna+Kannisto
-- [S8] Sanna Kannisto search. Whitney Museum. https://whitney.org/search?q=Sanna+Kannisto
-- [S9] Sanna Kannisto search. International Center of Photography. https://www.icp.org/search-results/Sanna%20Kannisto
-- [S10] Sanna Kannisto search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Sanna+Kannisto
-- [S11] Sanna Kannisto search. Getty. https://www.getty.edu/art/collection/search/?q=Sanna+Kannisto
-- [S12] Sanna Kannisto route. Aperture. https://aperture.org/?s=Sanna+Kannisto
-- [S13] Sanna Kannisto route. Magnum Photos. https://www.magnumphotos.com/?s=Sanna+Kannisto
-- [S14] Sanna Kannisto criticism route. Artforum. https://www.artforum.com/search/Sanna%20Kannisto/
-- [S15] Sanna Kannisto criticism route. e-flux. https://www.e-flux.com/search/?q=Sanna+Kannisto
-- [S16] Sanna Kannisto criticism route. Frieze. https://www.frieze.com/search?keys=Sanna+Kannisto
-- [S17] Sanna Kannisto monograph / publisher route. https://www.google.com/search?q=Sanna+Kannisto+photography+monograph+publisher
-- [S18] Sanna Kannisto bibliography. WorldCat. https://search.worldcat.org/search?q=Sanna+Kannisto+photography
-- [S19] Sanna Kannisto bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Sanna+Kannisto&searchCode=GKEY%5E*&searchType=0
-- [S20] サンナ・カンニスト bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%B5%E3%83%B3%E3%83%8A%E3%83%BB%E3%82%AB%E3%83%B3%E3%83%8B%E3%82%B9%E3%83%88
-- [S21] サンナ・カンニスト / Sanna Kannisto research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%B5%E3%83%B3%E3%83%8A%E3%83%BB%E3%82%AB%E3%83%B3%E3%83%8B%E3%82%B9%E3%83%88+Sanna+Kannisto
-- [S22] Sanna Kannisto scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Sanna+Kannisto+photography
-- [S23] Sanna Kannisto journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Sanna+Kannisto+photography
-- [S24] Sanna Kannisto library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Sanna+Kannisto
-- [S25] Sanna Kannisto archive route. Smithsonian Institution. https://www.si.edu/search?query=Sanna+Kannisto
-- [S26] Sanna Kannisto archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Sanna+Kannisto
-- [S27] Sanna Kannisto exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Sanna+Kannisto
-- [S28] Sanna Kannisto Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Sanna Kannisto third-language / local institution route. https://www.google.com/search?q=Sanna+Kannisto+photography+museum+exhibition+catalogue
-- [S30] Sanna Kannisto primary interview / statement route. https://www.google.com/search?q=Sanna+Kannisto+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Sanna Kannisto: Sense of Wonder. Finnish Museum of Photography. https://www.valokuvataiteenmuseo.fi/en/exhibitions/sense-wonder
+- [S2] Triggered: Sanna Kannisto. Musée Magazine. https://museemagazine.com/culture/2021/2/1/triggered-sanna-kannisto
+- [S3] Sanna Kannisto CV. https://www.sannakannisto.com/cv/
+- [S4] Sanna Kannisto: Fieldwork — Aperture. https://aperture.org/exhibition/sanna-kannisto-fieldwork/ — exhibition text on fieldwork, staging, science, and truth in photography
+- [S5] Sanna Kannisto: Observing Eye — Helsinki Contemporary. https://helsinkicontemporary.com/exhibition/observing-eye — gallery text on scientific illustration, still life, and staged photography
+- [S6] Sanna Kannisto: Close Observer — Helsinki School. https://www.helsinkischool.fi/exhibitions/sanna-kannisto--close-observer — Helsinki School exhibition text on staged/scientific truth
+- [S7] Fieldwork press release — Sanna Kannisto official / Aperture. https://www.sannakannisto.com/wp-content/uploads/2025/10/Fieldwork_PressRelease.pdf — publisher/exhibition press release on Fieldwork
+- [S8] Sanna Kannisto — Finnish Museum of Photography. https://www.valokuvataiteenmuseo.fi/en/artists/sanna-kannisto — Finnish museum artist context
+- [S9] Sanna Kannisto — Galerie La Ferronnerie. https://www.galerielaferronnerie.fr/artistes/sanna-kannisto/ — gallery profile and French exhibition context
+- [S10] Sanna Kannisto: Sense of Wonder — Finnish Museum of Photography. https://www.valokuvataiteenmuseo.fi/en/exhibitions/sense-wonder-sanna-kannisto — museum exhibition text on science, wonder, and nature representation
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -132,3 +112,36 @@ tags: ["nature as stage", "taxonomy", "human-nonhuman gaze"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Sanna Kannisto official / estate / gallery route. https://www.google.com/search?q=Sanna+Kannisto+photography+official+artist+gallery
+- [route] Sanna Kannisto search. MoMA. https://www.moma.org/search/?query=Sanna+Kannisto
+- [route] Sanna Kannisto search. Tate. https://www.tate.org.uk/search?q=Sanna+Kannisto
+- [route] Sanna Kannisto collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Sanna+Kannisto
+- [route] Sanna Kannisto search. Guggenheim Museum. https://www.guggenheim.org/?s=Sanna+Kannisto
+- [route] Sanna Kannisto search. Art Institute of Chicago. https://www.artic.edu/search?q=Sanna+Kannisto
+- [route] Sanna Kannisto search. SFMOMA. https://www.sfmoma.org/search/?q=Sanna+Kannisto
+- [route] Sanna Kannisto search. Whitney Museum. https://whitney.org/search?q=Sanna+Kannisto
+- [route] Sanna Kannisto search. International Center of Photography. https://www.icp.org/search-results/Sanna%20Kannisto
+- [route] Sanna Kannisto search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Sanna+Kannisto
+- [route] Sanna Kannisto search. Getty. https://www.getty.edu/art/collection/search/?q=Sanna+Kannisto
+- [route] Sanna Kannisto route. Aperture. https://aperture.org/?s=Sanna+Kannisto
+- [route] Sanna Kannisto route. Magnum Photos. https://www.magnumphotos.com/?s=Sanna+Kannisto
+- [route] Sanna Kannisto criticism route. Artforum. https://www.artforum.com/search/Sanna%20Kannisto/
+- [route] Sanna Kannisto criticism route. e-flux. https://www.e-flux.com/search/?q=Sanna+Kannisto
+- [route] Sanna Kannisto criticism route. Frieze. https://www.frieze.com/search?keys=Sanna+Kannisto
+- [route] Sanna Kannisto monograph / publisher route. https://www.google.com/search?q=Sanna+Kannisto+photography+monograph+publisher
+- [route] Sanna Kannisto bibliography. WorldCat. https://search.worldcat.org/search?q=Sanna+Kannisto+photography
+- [route] Sanna Kannisto bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Sanna+Kannisto&searchCode=GKEY%5E*&searchType=0
+- [route] サンナ・カンニスト bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%B5%E3%83%B3%E3%83%8A%E3%83%BB%E3%82%AB%E3%83%B3%E3%83%8B%E3%82%B9%E3%83%88
+- [route] サンナ・カンニスト / Sanna Kannisto research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%B5%E3%83%B3%E3%83%8A%E3%83%BB%E3%82%AB%E3%83%B3%E3%83%8B%E3%82%B9%E3%83%88+Sanna+Kannisto
+- [route] Sanna Kannisto scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Sanna+Kannisto+photography
+- [route] Sanna Kannisto journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Sanna+Kannisto+photography
+- [route] Sanna Kannisto library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Sanna+Kannisto
+- [route] Sanna Kannisto archive route. Smithsonian Institution. https://www.si.edu/search?query=Sanna+Kannisto
+- [route] Sanna Kannisto archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Sanna+Kannisto
+- [route] Sanna Kannisto exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Sanna+Kannisto
+- [route] Sanna Kannisto Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Sanna Kannisto third-language / local institution route. https://www.google.com/search?q=Sanna+Kannisto+photography+museum+exhibition+catalogue
+- [route] Sanna Kannisto primary interview / statement route. https://www.google.com/search?q=Sanna+Kannisto+photographer+interview+artist+statement

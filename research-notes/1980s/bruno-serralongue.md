@@ -40,7 +40,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `bruno-serralongue`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `bruno-serralongue`. Direct source pages retained in Sources: 9. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ブルーノ・セラロング（Bruno Serralongue）は、1980–1990年代の写真史で post-documentary, conceptual documentary と結びつけて整理したい作家である。活動地域・制度的文脈としては France を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、news events, global summits, migration, media access を、slow news photography, large-format documentary, anti-spectacular viewpoint によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -96,40 +96,22 @@ tags: ["media critique", "witness without event", "politics of representation"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Bruno Serralongue official / estate / gallery route. https://www.google.com/search?q=Bruno+Serralongue+photography+official+artist+gallery
-- [S2] Bruno Serralongue search. MoMA. https://www.moma.org/search/?query=Bruno+Serralongue
-- [S3] Bruno Serralongue search. Tate. https://www.tate.org.uk/search?q=Bruno+Serralongue
-- [S4] Bruno Serralongue collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Bruno+Serralongue
-- [S5] Bruno Serralongue search. Guggenheim Museum. https://www.guggenheim.org/?s=Bruno+Serralongue
-- [S6] Bruno Serralongue search. Art Institute of Chicago. https://www.artic.edu/search?q=Bruno+Serralongue
-- [S7] Bruno Serralongue search. SFMOMA. https://www.sfmoma.org/search/?q=Bruno+Serralongue
-- [S8] Bruno Serralongue search. Whitney Museum. https://whitney.org/search?q=Bruno+Serralongue
-- [S9] Bruno Serralongue search. International Center of Photography. https://www.icp.org/search-results/Bruno%20Serralongue
-- [S10] Bruno Serralongue search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Bruno+Serralongue
-- [S11] Bruno Serralongue search. Getty. https://www.getty.edu/art/collection/search/?q=Bruno+Serralongue
-- [S12] Bruno Serralongue route. Aperture. https://aperture.org/?s=Bruno+Serralongue
-- [S13] Bruno Serralongue route. Magnum Photos. https://www.magnumphotos.com/?s=Bruno+Serralongue
-- [S14] Bruno Serralongue criticism route. Artforum. https://www.artforum.com/search/Bruno%20Serralongue/
-- [S15] Bruno Serralongue criticism route. e-flux. https://www.e-flux.com/search/?q=Bruno+Serralongue
-- [S16] Bruno Serralongue criticism route. Frieze. https://www.frieze.com/search?keys=Bruno+Serralongue
-- [S17] Bruno Serralongue monograph / publisher route. https://www.google.com/search?q=Bruno+Serralongue+photography+monograph+publisher
-- [S18] Bruno Serralongue bibliography. WorldCat. https://search.worldcat.org/search?q=Bruno+Serralongue+photography
-- [S19] Bruno Serralongue bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Bruno+Serralongue&searchCode=GKEY%5E*&searchType=0
-- [S20] ブルーノ・セラロング bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%96%E3%83%AB%E3%83%BC%E3%83%8E%E3%83%BB%E3%82%BB%E3%83%A9%E3%83%AD%E3%83%B3%E3%82%B0
-- [S21] ブルーノ・セラロング / Bruno Serralongue research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%96%E3%83%AB%E3%83%BC%E3%83%8E%E3%83%BB%E3%82%BB%E3%83%A9%E3%83%AD%E3%83%B3%E3%82%B0+Bruno+Serralongue
-- [S22] Bruno Serralongue scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Bruno+Serralongue+photography
-- [S23] Bruno Serralongue journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Bruno+Serralongue+photography
-- [S24] Bruno Serralongue library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Bruno+Serralongue
-- [S25] Bruno Serralongue archive route. Smithsonian Institution. https://www.si.edu/search?query=Bruno+Serralongue
-- [S26] Bruno Serralongue archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Bruno+Serralongue
-- [S27] Bruno Serralongue exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Bruno+Serralongue
-- [S28] Bruno Serralongue Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Bruno Serralongue third-language / local institution route. https://www.google.com/search?q=Bruno+Serralongue+photography+museum+exhibition+catalogue
-- [S30] Bruno Serralongue primary interview / statement route. https://www.google.com/search?q=Bruno+Serralongue+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Bruno Serralongue. Cnap. https://www.cnap.fr/bruno-serralongue-4
+- [S2] Bruno Serralongue. Cnap, documentary photographers / research reports. https://www.cnap.fr/soutien-la-creation/photographes-documentaires/rapports-de-recherche/bruno-serralongue
+- [S3] Les samedis du taxi tram. Cnap. https://www.cnap.fr/les-samedis-du-taxi-tram
+- [S4] Round #7: En quête d'écritures. Cnap. https://www.cnap.fr/round-7-en-quete-decritures
+- [S5] Bruno Serralongue, Pour la vie. Galerie Francesca Pia press release. https://www.francescapia.com/fileadmin/editors/Artists/Serralongue/Exhibitions/2022_GFP/Bruno_Serralongue_Francesca_Pia_2022_pour_la_vie_Press_Release.pdf
+- [S6] Bruno Serralongue. Air de Paris. https://www.airdeparis.com/artists/bruno-serralongue/brunoa.htm
+- [S7] Calais. Witnessing the ‘Jungle’. Centre Pompidou. https://www.centrepompidou.fr/en/program/calendar/event/c4EgAaA
+- [S8] Bruno Serralongue. Jeu de Paume. https://jeudepaume.org/mediateque/bruno-serralongue/
+- [S9] Bruno Serralongue portfolio. Air de Paris PDF. https://airdeparis.com/portfolio/25_BrunoSerralongue_Portfolio_FR_Presse.pdf
+- [S10] Bruno Serralongue feature PDF — Air de Paris. https://www.airdeparis.com/1/2.pdf — Biography, exhibitions, and practice context.
+- [S11] États de fête press dossier — Les Arts au Mur / FRAC. https://www.lesartsaumur.com/wp-content/uploads/2025/09/25-0717_dossier-de-presse-ETATS-DE-FE%CC%82TE-13-sept-au-7-de%CC%81c_HD.pdf — French institutional dossier with recent project and commission context.
+- [S12] Horsd’œuvre issue with Bruno Serralongue — Interface / Horsd’œuvre. https://www.interface-horsdoeuvre.com/wp-content/uploads/HDO_25.pdf — French magazine/exhibition context including Jeu de Paume and statements on photo-reportage conditions.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で9件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -137,3 +119,36 @@ tags: ["media critique", "witness without event", "politics of representation"]
 - Centre Pompidou、MAMCO、FRAC、ギャラリー資料、本人インタビュー
 - Allan Sekula、Martha Rosler、Xavier Ribasとの比較資料
 - グローバルサミット、移民、政治集会をめぐる写真とメディア論
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 9. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Bruno Serralongue official / estate / gallery route. https://www.google.com/search?q=Bruno+Serralongue+photography+official+artist+gallery
+- [route] Bruno Serralongue search. MoMA. https://www.moma.org/search/?query=Bruno+Serralongue
+- [route] Bruno Serralongue search. Tate. https://www.tate.org.uk/search?q=Bruno+Serralongue
+- [route] Bruno Serralongue collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Bruno+Serralongue
+- [route] Bruno Serralongue search. Guggenheim Museum. https://www.guggenheim.org/?s=Bruno+Serralongue
+- [route] Bruno Serralongue search. Art Institute of Chicago. https://www.artic.edu/search?q=Bruno+Serralongue
+- [route] Bruno Serralongue search. SFMOMA. https://www.sfmoma.org/search/?q=Bruno+Serralongue
+- [route] Bruno Serralongue search. Whitney Museum. https://whitney.org/search?q=Bruno+Serralongue
+- [route] Bruno Serralongue search. International Center of Photography. https://www.icp.org/search-results/Bruno%20Serralongue
+- [route] Bruno Serralongue search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Bruno+Serralongue
+- [route] Bruno Serralongue search. Getty. https://www.getty.edu/art/collection/search/?q=Bruno+Serralongue
+- [route] Bruno Serralongue route. Aperture. https://aperture.org/?s=Bruno+Serralongue
+- [route] Bruno Serralongue route. Magnum Photos. https://www.magnumphotos.com/?s=Bruno+Serralongue
+- [route] Bruno Serralongue criticism route. Artforum. https://www.artforum.com/search/Bruno%20Serralongue/
+- [route] Bruno Serralongue criticism route. e-flux. https://www.e-flux.com/search/?q=Bruno+Serralongue
+- [route] Bruno Serralongue criticism route. Frieze. https://www.frieze.com/search?keys=Bruno+Serralongue
+- [route] Bruno Serralongue monograph / publisher route. https://www.google.com/search?q=Bruno+Serralongue+photography+monograph+publisher
+- [route] Bruno Serralongue bibliography. WorldCat. https://search.worldcat.org/search?q=Bruno+Serralongue+photography
+- [route] Bruno Serralongue bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Bruno+Serralongue&searchCode=GKEY%5E*&searchType=0
+- [route] ブルーノ・セラロング bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%96%E3%83%AB%E3%83%BC%E3%83%8E%E3%83%BB%E3%82%BB%E3%83%A9%E3%83%AD%E3%83%B3%E3%82%B0
+- [route] ブルーノ・セラロング / Bruno Serralongue research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%96%E3%83%AB%E3%83%BC%E3%83%8E%E3%83%BB%E3%82%BB%E3%83%A9%E3%83%AD%E3%83%B3%E3%82%B0+Bruno+Serralongue
+- [route] Bruno Serralongue scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Bruno+Serralongue+photography
+- [route] Bruno Serralongue journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Bruno+Serralongue+photography
+- [route] Bruno Serralongue library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Bruno+Serralongue
+- [route] Bruno Serralongue archive route. Smithsonian Institution. https://www.si.edu/search?query=Bruno+Serralongue
+- [route] Bruno Serralongue archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Bruno+Serralongue
+- [route] Bruno Serralongue exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Bruno+Serralongue
+- [route] Bruno Serralongue Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Bruno Serralongue third-language / local institution route. https://www.google.com/search?q=Bruno+Serralongue+photography+museum+exhibition+catalogue
+- [route] Bruno Serralongue primary interview / statement route. https://www.google.com/search?q=Bruno+Serralongue+photographer+interview+artist+statement

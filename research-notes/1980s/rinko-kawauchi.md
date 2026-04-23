@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `rinko-kawauchi`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `rinko-kawauchi`. Direct source pages retained in Sources: 30. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 川内倫子（Rinko Kawauchi）は、1980–1990年代の写真史で photobook photography, everyday-life photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Japan を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、light, family, nature, small events を、square-format color, sequence, photobook rhythm によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,40 @@ tags: ["everyday-life", "ephemerality", "memory", "intimacy"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Rinko Kawauchi official / estate / gallery route. https://www.google.com/search?q=Rinko+Kawauchi+photography+official+artist+gallery
-- [S2] Rinko Kawauchi search. MoMA. https://www.moma.org/search/?query=Rinko+Kawauchi
-- [S3] Rinko Kawauchi search. Tate. https://www.tate.org.uk/search?q=Rinko+Kawauchi
-- [S4] Rinko Kawauchi collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Rinko+Kawauchi
-- [S5] Rinko Kawauchi search. Guggenheim Museum. https://www.guggenheim.org/?s=Rinko+Kawauchi
-- [S6] Rinko Kawauchi search. Art Institute of Chicago. https://www.artic.edu/search?q=Rinko+Kawauchi
-- [S7] Rinko Kawauchi search. SFMOMA. https://www.sfmoma.org/search/?q=Rinko+Kawauchi
-- [S8] Rinko Kawauchi search. Whitney Museum. https://whitney.org/search?q=Rinko+Kawauchi
-- [S9] Rinko Kawauchi search. International Center of Photography. https://www.icp.org/search-results/Rinko%20Kawauchi
-- [S10] Rinko Kawauchi search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Rinko+Kawauchi
-- [S11] Rinko Kawauchi search. Getty. https://www.getty.edu/art/collection/search/?q=Rinko+Kawauchi
-- [S12] Rinko Kawauchi route. Aperture. https://aperture.org/?s=Rinko+Kawauchi
-- [S13] Rinko Kawauchi route. Magnum Photos. https://www.magnumphotos.com/?s=Rinko+Kawauchi
-- [S14] Rinko Kawauchi criticism route. Artforum. https://www.artforum.com/search/Rinko%20Kawauchi/
-- [S15] Rinko Kawauchi criticism route. e-flux. https://www.e-flux.com/search/?q=Rinko+Kawauchi
-- [S16] Rinko Kawauchi criticism route. Frieze. https://www.frieze.com/search?keys=Rinko+Kawauchi
-- [S17] Rinko Kawauchi monograph / publisher route. https://www.google.com/search?q=Rinko+Kawauchi+photography+monograph+publisher
-- [S18] Rinko Kawauchi bibliography. WorldCat. https://search.worldcat.org/search?q=Rinko+Kawauchi+photography
-- [S19] Rinko Kawauchi bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Rinko+Kawauchi&searchCode=GKEY%5E*&searchType=0
-- [S20] 川内倫子 bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E5%B7%9D%E5%86%85%E5%80%AB%E5%AD%90
-- [S21] 川内倫子 / Rinko Kawauchi research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E5%B7%9D%E5%86%85%E5%80%AB%E5%AD%90+Rinko+Kawauchi
-- [S22] Rinko Kawauchi scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Rinko+Kawauchi+photography
-- [S23] Rinko Kawauchi journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Rinko+Kawauchi+photography
-- [S24] Rinko Kawauchi library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Rinko+Kawauchi
-- [S25] Rinko Kawauchi archive route. Smithsonian Institution. https://www.si.edu/search?query=Rinko+Kawauchi
-- [S26] Rinko Kawauchi archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Rinko+Kawauchi
-- [S27] Rinko Kawauchi exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Rinko+Kawauchi
-- [S28] Rinko Kawauchi Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Rinko Kawauchi third-language / local institution route. https://www.google.com/search?q=Rinko+Kawauchi+photography+museum+exhibition+catalogue
-- [S30] Rinko Kawauchi primary interview / statement route. https://www.google.com/search?q=Rinko+Kawauchi+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] New Pictures 9: Rinko Kawauchi. Minneapolis Institute of Art. https://new.artsmia.org/exhibition/new-pictures-9-rinko-kawauchi/
+- [S2] Rinko Kawauchi Biography. https://rinkokawauchi.com/en/biography/
+- [S3] Rinko Kawauchi. International Center of Photography. https://www.icp.org/content/rinko-kawauchi
+- [S4] The Luminous Openness of Rinko Kawauchi’s Photographs. Aperture. https://aperture.org/editorial/the-luminous-openness-of-rinko-kawauchi-photographs/
+- [S5] Rinko Kawauchi. Aperture archive. https://archive.aperture.org/article/2022/1/1/rinko-kawauchi-2
+- [S6] Contemporary Women Artists of Japan: Six Stories large print guide. British Museum PDF. https://www.britishmuseum.org/sites/default/files/2021-12/Contemporary_women_artists_of_Japan_six_stories_large_print_guide.pdf
+- [S7] Aperture On Sight lesson 17: Rinko Kawauchi PDF. https://aperture.org/wp-content/uploads/2025/09/Aperture-On-Sight_Lesson-17.pdf
+- [S8] Rinko Kawauchi — Fondation Cartier pour l’art contemporain. https://www.fondationcartier.com/en/programme/exhibition/rinko-kawauchi — French institution page for Kawauchi’s first European solo exhibition.
+- [S9] Rinko Kawauchi: M/E On this sphere Endlessly interlinking — Tokyo Opera City Art Gallery. https://www.operacity.jp/ag/exh255/e/exh.php — Japanese museum exhibition page in English for Kawauchi’s largest Japanese museum show.
+- [S10] 川内倫子：M/E 球体の上 無限の連なり — 滋賀県立美術館. https://www.shigamuseum.jp/exhibitions/4045/ — Japanese museum page on M/E, Shiga, recent work, video, installation, and international reception.
+- [S11] special exhibition Rinko Kawauchi and Shiga — Shiga Museum of Art. https://www.shigamuseum.jp/en/exhibitions/6923/ — English museum page on Kawauchi’s Shiga-related work, soft light, life cycles, and Lake Biwa context.
+- [S12] Artworks: M/E On this sphere Endlessly interlinking — Rinko Kawauchi M/E official exhibition site. https://rinkokawauchi-me.exhibit.jp/en/works/ — Official exhibition site describing the M/E exhibition structure, photographic/video media, and book-like spatial rhythm.
+- [S13] Untitled — ToMuCo / Tokyo Museum Collection. https://museumcollection.tokyo/en/works/107970/ — Tokyo Photographic Art Museum collection object page for Kawauchi work.
+- [S14] In the light of Rinko Kawauchi — The Japan Times. https://www.japantimes.co.jp/culture/2012/06/14/arts/in-the-light-of-rinko-kawauchi/ — English-language Japanese reception/review of Illuminance, Ametsuchi, Seeing Shadow.
+- [S15] Program 2024: Rinko Kawauchi — KYOTOGRAPHIE. https://www.kyotographie.jp/en/programs/2024/rinko-kawauchi/ — Festival page with recent recognition, M/E context, and Japanese exhibition history.
+- [S16] Rinko Kawauchi’s Silky Bliss — Interview Magazine. https://www.interviewmagazine.com/art/rinko-kawauchi-hermes — English interview article with Kawauchi discussing life, photography, and Illuminance-era work.
+- [S17] Kawauchi Rinko: Finding Eternity in the Everyday — Nippon.com. https://www.nippon.com/en/images/i00053/ — English/Japanese cultural article on Kawauchi’s color, space, Nihonga comparison, Ametsuchi, and photobooks.
+- [S18] 巡回展をつくる──「川内倫子：M/E 球体の上 無限の連なり」展 — artscape. https://artscape.jp/report/curator/10181294_1634.html — Japanese curator note on building the M/E touring exhibition and Shiga context.
+- [S19] 川内倫子「照度 あめつち 影を見る」 — artscape review. https://artscape.jp/report/review/10032895_1735.html — Japanese review on a shift in Kawauchi’s work around Illuminance and Ametsuchi.
+- [S20] 無題（シリーズ「M/E」より） — 金沢21世紀美術館. https://jmapps.ne.jp/kanazawa21/det.html?data_id=4158 — Japanese museum collection page explaining M/E, Iceland, Hokkaido, pandemic context, and body/planet scale.
+- [S21] Illuminance, Ametsuchi, Seeing Shadow — Tokyo Photographic Art Museum PDF. https://topmuseum.jp/upload/4/1594/kawauchi2012.pdf — Japanese/English exhibition PDF for TOP Museum solo exhibition.
+- [S22] KAWAUCHI Rinko press release — Tokyo Photographic Art Museum PDF. https://topmuseum.jp/upload/2/1660/press%20release_english.pdf — English TOP Museum press release for Illuminance, Ametsuchi, Seeing Shadow.
+- [S23] Rinko Kawauchi - Transient Wonders, Everyday Bliss — ARGOS centre for art and media. https://2019.argosarts.org/program.jsp?eventid=08b3ba6c190b4efead78ef1bc0c29280 — Belgian institution page on transient beauty, micro-moments, kairos, and subjective time.
+- [S24] Rinko Kawauchi: a faraway shining star, twinkling in hand — Fotografiska Berlin. https://berlin.fotografiska.com/en/exhibitions/rinko-kawauchi — German exhibition page with artist quote on M/E, Iceland, presence, impermanence, and planet-scale attention.
+- [S25] foam magazine #19 / wonder — FOAM Magazine PDF. https://rinkokawauchi.com/en/wp-content/uploads/sites/2/2017/12/2009_foam-magazine-19.pdf — PDF interview/feature from FOAM on Kawauchi’s bond with the world and wonder.
+- [S26] The rain of blessing — Gallery 916 PDF / Rinko Kawauchi official archive. https://rinkokawauchi.com/en/wp-content/uploads/sites/2/2017/12/2016_Gallery-916.pdf — Exhibition PDF with biography and series context for The rain of blessing.
+- [S27] RINKO KAWAUCHI — Fondazione Sozzani PDF. https://fondazionesozzani.org/wp-content/uploads/2023/10/RINKO-KAWAUCHI_FS_EN.pdf — Italian foundation press PDF for Kawauchi exhibition and international reception.
+- [S28] Rinko Kawauchi press information — The Photographers’ Gallery archive PDF. https://archive.thephotographersgallery.org.uk/coo/user/assets/39/11462.pdf — UK public-gallery press information on Kawauchi’s exhibition and selected recent series.
+- [S29] Rinko Kawauchi Exhibition — SHIFT English. https://www.shift.jp.org/en/archives/2006/06/rinko_kawauchi_exhibition.html — English article on Kawauchi at The Photographers’ Gallery and early UK reception.
+- [S30] 写真家・川内倫子インタビュー — The Fashion Post. https://fashionpost.jp/portraits/171908 — Japanese interview on photobook making, Aperture publication, and international reception.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で30件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +129,36 @@ tags: ["everyday-life", "ephemerality", "memory", "intimacy"]
 - photobook sequence、日常、光、記憶をめぐる日本語・英語批評
 - Aperture、Foam、TOP Museum、出版社資料、本人インタビュー
 - Elina Brotherus、Sophie Calle、ホンマタカシとの比較資料
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 30. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Rinko Kawauchi official / estate / gallery route. https://www.google.com/search?q=Rinko+Kawauchi+photography+official+artist+gallery
+- [route] Rinko Kawauchi search. MoMA. https://www.moma.org/search/?query=Rinko+Kawauchi
+- [route] Rinko Kawauchi search. Tate. https://www.tate.org.uk/search?q=Rinko+Kawauchi
+- [route] Rinko Kawauchi collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Rinko+Kawauchi
+- [route] Rinko Kawauchi search. Guggenheim Museum. https://www.guggenheim.org/?s=Rinko+Kawauchi
+- [route] Rinko Kawauchi search. Art Institute of Chicago. https://www.artic.edu/search?q=Rinko+Kawauchi
+- [route] Rinko Kawauchi search. SFMOMA. https://www.sfmoma.org/search/?q=Rinko+Kawauchi
+- [route] Rinko Kawauchi search. Whitney Museum. https://whitney.org/search?q=Rinko+Kawauchi
+- [route] Rinko Kawauchi search. International Center of Photography. https://www.icp.org/search-results/Rinko%20Kawauchi
+- [route] Rinko Kawauchi search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Rinko+Kawauchi
+- [route] Rinko Kawauchi search. Getty. https://www.getty.edu/art/collection/search/?q=Rinko+Kawauchi
+- [route] Rinko Kawauchi route. Aperture. https://aperture.org/?s=Rinko+Kawauchi
+- [route] Rinko Kawauchi route. Magnum Photos. https://www.magnumphotos.com/?s=Rinko+Kawauchi
+- [route] Rinko Kawauchi criticism route. Artforum. https://www.artforum.com/search/Rinko%20Kawauchi/
+- [route] Rinko Kawauchi criticism route. e-flux. https://www.e-flux.com/search/?q=Rinko+Kawauchi
+- [route] Rinko Kawauchi criticism route. Frieze. https://www.frieze.com/search?keys=Rinko+Kawauchi
+- [route] Rinko Kawauchi monograph / publisher route. https://www.google.com/search?q=Rinko+Kawauchi+photography+monograph+publisher
+- [route] Rinko Kawauchi bibliography. WorldCat. https://search.worldcat.org/search?q=Rinko+Kawauchi+photography
+- [route] Rinko Kawauchi bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Rinko+Kawauchi&searchCode=GKEY%5E*&searchType=0
+- [route] 川内倫子 bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E5%B7%9D%E5%86%85%E5%80%AB%E5%AD%90
+- [route] 川内倫子 / Rinko Kawauchi research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E5%B7%9D%E5%86%85%E5%80%AB%E5%AD%90+Rinko+Kawauchi
+- [route] Rinko Kawauchi scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Rinko+Kawauchi+photography
+- [route] Rinko Kawauchi journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Rinko+Kawauchi+photography
+- [route] Rinko Kawauchi library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Rinko+Kawauchi
+- [route] Rinko Kawauchi archive route. Smithsonian Institution. https://www.si.edu/search?query=Rinko+Kawauchi
+- [route] Rinko Kawauchi archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Rinko+Kawauchi
+- [route] Rinko Kawauchi exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Rinko+Kawauchi
+- [route] Rinko Kawauchi Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Rinko Kawauchi third-language / local institution route. https://www.google.com/search?q=Rinko+Kawauchi+photography+museum+exhibition+catalogue
+- [route] Rinko Kawauchi primary interview / statement route. https://www.google.com/search?q=Rinko+Kawauchi+photographer+interview+artist+statement

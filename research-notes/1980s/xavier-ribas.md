@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `xavier-ribas`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `xavier-ribas`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ザビエ・リバス（Xavier Ribas）は、1980–1990年代の写真史で post-documentary landscape, geopolitical photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Spain / United Kingdom を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、borders, resource extraction, peripheries, land use を、documentary series, archive-text-image, landscape research によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["territory", "political ecology", "social-document"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Xavier Ribas official / estate / gallery route. https://www.google.com/search?q=Xavier+Ribas+photography+official+artist+gallery
-- [S2] Xavier Ribas search. MoMA. https://www.moma.org/search/?query=Xavier+Ribas
-- [S3] Xavier Ribas search. Tate. https://www.tate.org.uk/search?q=Xavier+Ribas
-- [S4] Xavier Ribas collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Xavier+Ribas
-- [S5] Xavier Ribas search. Guggenheim Museum. https://www.guggenheim.org/?s=Xavier+Ribas
-- [S6] Xavier Ribas search. Art Institute of Chicago. https://www.artic.edu/search?q=Xavier+Ribas
-- [S7] Xavier Ribas search. SFMOMA. https://www.sfmoma.org/search/?q=Xavier+Ribas
-- [S8] Xavier Ribas search. Whitney Museum. https://whitney.org/search?q=Xavier+Ribas
-- [S9] Xavier Ribas search. International Center of Photography. https://www.icp.org/search-results/Xavier%20Ribas
-- [S10] Xavier Ribas search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Xavier+Ribas
-- [S11] Xavier Ribas search. Getty. https://www.getty.edu/art/collection/search/?q=Xavier+Ribas
-- [S12] Xavier Ribas route. Aperture. https://aperture.org/?s=Xavier+Ribas
-- [S13] Xavier Ribas route. Magnum Photos. https://www.magnumphotos.com/?s=Xavier+Ribas
-- [S14] Xavier Ribas criticism route. Artforum. https://www.artforum.com/search/Xavier%20Ribas/
-- [S15] Xavier Ribas criticism route. e-flux. https://www.e-flux.com/search/?q=Xavier+Ribas
-- [S16] Xavier Ribas criticism route. Frieze. https://www.frieze.com/search?keys=Xavier+Ribas
-- [S17] Xavier Ribas monograph / publisher route. https://www.google.com/search?q=Xavier+Ribas+photography+monograph+publisher
-- [S18] Xavier Ribas bibliography. WorldCat. https://search.worldcat.org/search?q=Xavier+Ribas+photography
-- [S19] Xavier Ribas bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Xavier+Ribas&searchCode=GKEY%5E*&searchType=0
-- [S20] ザビエ・リバス bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%B6%E3%83%93%E3%82%A8%E3%83%BB%E3%83%AA%E3%83%90%E3%82%B9
-- [S21] ザビエ・リバス / Xavier Ribas research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%B6%E3%83%93%E3%82%A8%E3%83%BB%E3%83%AA%E3%83%90%E3%82%B9+Xavier+Ribas
-- [S22] Xavier Ribas scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Xavier+Ribas+photography
-- [S23] Xavier Ribas journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Xavier+Ribas+photography
-- [S24] Xavier Ribas library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Xavier+Ribas
-- [S25] Xavier Ribas archive route. Smithsonian Institution. https://www.si.edu/search?query=Xavier+Ribas
-- [S26] Xavier Ribas archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Xavier+Ribas
-- [S27] Xavier Ribas exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Xavier+Ribas
-- [S28] Xavier Ribas Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Xavier Ribas third-language / local institution route. https://www.google.com/search?q=Xavier+Ribas+photography+museum+exhibition+catalogue
-- [S30] Xavier Ribas primary interview / statement route. https://www.google.com/search?q=Xavier+Ribas+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Xavier Ribas. “It Would Never Be Quite the Same Again”. Espaivisor. https://espaivisor.com/exposicion/it-would-never-be-quite-the-same-again/
+- [S2] Xavier Ribas. Colección Banco de España. https://coleccion.bde.es/wca/en/secciones/coleccion/artistas/xavier-ribas-1613.html
+- [S3] Xavier Ribas: Santuario = Sanctuary. Bilbao Museoa bibliographical reference. https://bilbaomuseoa.eus/en/explore/bibliographical-reference/xavier-ribas-santuario-sanctuary/74f2d524-88e7-4469-bed0-97b3d7f581f3
+- [S4] Xavier Ribas — MACBA. https://www.macba.cat/en/exhibitions/xavier-ribas-2/ — museum exhibition text on Traces of Nitrate, urban transformation, and university collaboration
+- [S5] Xavier Ribas — Van Abbemuseum. https://vanabbemuseum.nl/en/collection-research/library/publications/xavier-ribas — publication/library text on Nitrate and political histories
+- [S6] Xavier Ribas — International Center of Photography. https://www.icp.org/content/xavier-ribas — ICP content/artist record
+- [S7] Xavier Ribas presenta Nitrat al MACBA — Barcelona Cultura. https://www.barcelona.cat/barcelonacultura/ca/recomanem/xavier-ribas-presenta-nitrat-al-macba — Catalan cultural text on nitrate extraction and colonial exploitation
+- [S8] Xavier Ribas — Arxiu Artistes. https://arxiuartistes.cat/es/artistas/xavier-ribas.html — artist archive and exhibition profile
+- [S9] Xavier Ribas — Official website. http://www.xavierribas.com/ — official project documentation
+- [S10] Xavier Ribas — University of Brighton. https://research.brighton.ac.uk/en/persons/xavier-ribas — academic profile and research context
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["territory", "political ecology", "social-document"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Xavier Ribas official / estate / gallery route. https://www.google.com/search?q=Xavier+Ribas+photography+official+artist+gallery
+- [route] Xavier Ribas search. MoMA. https://www.moma.org/search/?query=Xavier+Ribas
+- [route] Xavier Ribas search. Tate. https://www.tate.org.uk/search?q=Xavier+Ribas
+- [route] Xavier Ribas collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Xavier+Ribas
+- [route] Xavier Ribas search. Guggenheim Museum. https://www.guggenheim.org/?s=Xavier+Ribas
+- [route] Xavier Ribas search. Art Institute of Chicago. https://www.artic.edu/search?q=Xavier+Ribas
+- [route] Xavier Ribas search. SFMOMA. https://www.sfmoma.org/search/?q=Xavier+Ribas
+- [route] Xavier Ribas search. Whitney Museum. https://whitney.org/search?q=Xavier+Ribas
+- [route] Xavier Ribas search. International Center of Photography. https://www.icp.org/search-results/Xavier%20Ribas
+- [route] Xavier Ribas search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Xavier+Ribas
+- [route] Xavier Ribas search. Getty. https://www.getty.edu/art/collection/search/?q=Xavier+Ribas
+- [route] Xavier Ribas route. Aperture. https://aperture.org/?s=Xavier+Ribas
+- [route] Xavier Ribas route. Magnum Photos. https://www.magnumphotos.com/?s=Xavier+Ribas
+- [route] Xavier Ribas criticism route. Artforum. https://www.artforum.com/search/Xavier%20Ribas/
+- [route] Xavier Ribas criticism route. e-flux. https://www.e-flux.com/search/?q=Xavier+Ribas
+- [route] Xavier Ribas criticism route. Frieze. https://www.frieze.com/search?keys=Xavier+Ribas
+- [route] Xavier Ribas monograph / publisher route. https://www.google.com/search?q=Xavier+Ribas+photography+monograph+publisher
+- [route] Xavier Ribas bibliography. WorldCat. https://search.worldcat.org/search?q=Xavier+Ribas+photography
+- [route] Xavier Ribas bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Xavier+Ribas&searchCode=GKEY%5E*&searchType=0
+- [route] ザビエ・リバス bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%B6%E3%83%93%E3%82%A8%E3%83%BB%E3%83%AA%E3%83%90%E3%82%B9
+- [route] ザビエ・リバス / Xavier Ribas research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%B6%E3%83%93%E3%82%A8%E3%83%BB%E3%83%AA%E3%83%90%E3%82%B9+Xavier+Ribas
+- [route] Xavier Ribas scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Xavier+Ribas+photography
+- [route] Xavier Ribas journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Xavier+Ribas+photography
+- [route] Xavier Ribas library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Xavier+Ribas
+- [route] Xavier Ribas archive route. Smithsonian Institution. https://www.si.edu/search?query=Xavier+Ribas
+- [route] Xavier Ribas archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Xavier+Ribas
+- [route] Xavier Ribas exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Xavier+Ribas
+- [route] Xavier Ribas Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Xavier Ribas third-language / local institution route. https://www.google.com/search?q=Xavier+Ribas+photography+museum+exhibition+catalogue
+- [route] Xavier Ribas primary interview / statement route. https://www.google.com/search?q=Xavier+Ribas+photographer+interview+artist+statement

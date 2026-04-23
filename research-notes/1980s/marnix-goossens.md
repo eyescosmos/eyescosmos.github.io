@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `marnix-goossens`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `marnix-goossens`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 マーニクス・ホーセンス（Marnix Goossens）は、1980–1990年代の写真史で staged still life, everyday photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Netherlands を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、plants, objects, domestic traces, nature display を、large-format color, quiet staging, object observation によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["everyday-life", "artifice of nature", "still-life logic"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Marnix Goossens official / estate / gallery route. https://www.google.com/search?q=Marnix+Goossens+photography+official+artist+gallery
-- [S2] Marnix Goossens search. MoMA. https://www.moma.org/search/?query=Marnix+Goossens
-- [S3] Marnix Goossens search. Tate. https://www.tate.org.uk/search?q=Marnix+Goossens
-- [S4] Marnix Goossens collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Marnix+Goossens
-- [S5] Marnix Goossens search. Guggenheim Museum. https://www.guggenheim.org/?s=Marnix+Goossens
-- [S6] Marnix Goossens search. Art Institute of Chicago. https://www.artic.edu/search?q=Marnix+Goossens
-- [S7] Marnix Goossens search. SFMOMA. https://www.sfmoma.org/search/?q=Marnix+Goossens
-- [S8] Marnix Goossens search. Whitney Museum. https://whitney.org/search?q=Marnix+Goossens
-- [S9] Marnix Goossens search. International Center of Photography. https://www.icp.org/search-results/Marnix%20Goossens
-- [S10] Marnix Goossens search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Marnix+Goossens
-- [S11] Marnix Goossens search. Getty. https://www.getty.edu/art/collection/search/?q=Marnix+Goossens
-- [S12] Marnix Goossens route. Aperture. https://aperture.org/?s=Marnix+Goossens
-- [S13] Marnix Goossens route. Magnum Photos. https://www.magnumphotos.com/?s=Marnix+Goossens
-- [S14] Marnix Goossens criticism route. Artforum. https://www.artforum.com/search/Marnix%20Goossens/
-- [S15] Marnix Goossens criticism route. e-flux. https://www.e-flux.com/search/?q=Marnix+Goossens
-- [S16] Marnix Goossens criticism route. Frieze. https://www.frieze.com/search?keys=Marnix+Goossens
-- [S17] Marnix Goossens monograph / publisher route. https://www.google.com/search?q=Marnix+Goossens+photography+monograph+publisher
-- [S18] Marnix Goossens bibliography. WorldCat. https://search.worldcat.org/search?q=Marnix+Goossens+photography
-- [S19] Marnix Goossens bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Marnix+Goossens&searchCode=GKEY%5E*&searchType=0
-- [S20] マーニクス・ホーセンス bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%9E%E3%83%BC%E3%83%8B%E3%82%AF%E3%82%B9%E3%83%BB%E3%83%9B%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%B9
-- [S21] マーニクス・ホーセンス / Marnix Goossens research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%9E%E3%83%BC%E3%83%8B%E3%82%AF%E3%82%B9%E3%83%BB%E3%83%9B%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%B9+Marnix+Goossens
-- [S22] Marnix Goossens scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Marnix+Goossens+photography
-- [S23] Marnix Goossens journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Marnix+Goossens+photography
-- [S24] Marnix Goossens library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Marnix+Goossens
-- [S25] Marnix Goossens archive route. Smithsonian Institution. https://www.si.edu/search?query=Marnix+Goossens
-- [S26] Marnix Goossens archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Marnix+Goossens
-- [S27] Marnix Goossens exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Marnix+Goossens
-- [S28] Marnix Goossens Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Marnix Goossens third-language / local institution route. https://www.google.com/search?q=Marnix+Goossens+photography+museum+exhibition+catalogue
-- [S30] Marnix Goossens primary interview / statement route. https://www.google.com/search?q=Marnix+Goossens+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Marnix Goossens – Yonder. Foam Amsterdam. https://www.foam.org/events/marnix-goossens
+- [S2] Fotograaf Marnix Goossens. Rijksmuseum. https://www.rijksmuseum.nl/en/collection/object/Fotograaf%2BMarnix%2BGoossens--99aaf1c0d1d35eedaef73648af8801c2
+- [S3] zonder titel. Kunst in het UMC Utrecht. https://kunst.umcutrecht.nl/nl/kunstwerken/marnix-goossens
+- [S4] Elspeth Diederix & Marnix Goossens — Huis Marseille. https://huismarseille.nl/en/exhibitions/elspeth-diederix-marnix-goossens/ — Museum exhibition text comparing Goossens with Diederix and nature as constructed reality.
+- [S5] Marnix Goossens: Silver — Sanders Collection / Stedelijk Museum Amsterdam. https://www.pietermariekesanders.nl/en/Collection/Stedelijk/Marnix-Goossens-Silver-2004 — Collection record documenting work in Stedelijk Museum context.
+- [S6] In sight: contemporary Dutch photography from the Stedelijk Museum — Stedelijk Museum Amsterdam. https://www.stedelijk.nl/en/exhibitions/in-sight-contemporary-dutch-photography-from-the-stedelijk-museum — Museum exhibition placing Goossens in contemporary Dutch photography.
+- [S7] Marnix Goossens — Van Abbemuseum Library. https://vanabbemuseum.nl/en/collection-research/library/publications/marnix-goossens — Publication record for photobook/exhibition at Fries Museum.
+- [S8] Nature as Artifice — Collector Daily. https://collectordaily.com/nature-as-artifice-new-dutch-landscape-in-photography-and-video-art-aperture/ — Review of Aperture exhibition with Goossens in Dutch landscape context.
+- [S9] Still-life photography rethinks reality — Korea JoongAng Daily. https://koreajoongangdaily.joins.com/2018/05/16/artsDesign/Stilllife-photography-rethinks-reality/3048200.html — Exhibition review situating Goossens in contemporary still-life photography.
+- [S10] Marnix Goossens artist page — LensCulture. https://www.lensculture.com/marnix-goossens — Photography platform artist page useful as a supplementary direct profile.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["everyday-life", "artifice of nature", "still-life logic"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Marnix Goossens official / estate / gallery route. https://www.google.com/search?q=Marnix+Goossens+photography+official+artist+gallery
+- [route] Marnix Goossens search. MoMA. https://www.moma.org/search/?query=Marnix+Goossens
+- [route] Marnix Goossens search. Tate. https://www.tate.org.uk/search?q=Marnix+Goossens
+- [route] Marnix Goossens collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Marnix+Goossens
+- [route] Marnix Goossens search. Guggenheim Museum. https://www.guggenheim.org/?s=Marnix+Goossens
+- [route] Marnix Goossens search. Art Institute of Chicago. https://www.artic.edu/search?q=Marnix+Goossens
+- [route] Marnix Goossens search. SFMOMA. https://www.sfmoma.org/search/?q=Marnix+Goossens
+- [route] Marnix Goossens search. Whitney Museum. https://whitney.org/search?q=Marnix+Goossens
+- [route] Marnix Goossens search. International Center of Photography. https://www.icp.org/search-results/Marnix%20Goossens
+- [route] Marnix Goossens search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Marnix+Goossens
+- [route] Marnix Goossens search. Getty. https://www.getty.edu/art/collection/search/?q=Marnix+Goossens
+- [route] Marnix Goossens route. Aperture. https://aperture.org/?s=Marnix+Goossens
+- [route] Marnix Goossens route. Magnum Photos. https://www.magnumphotos.com/?s=Marnix+Goossens
+- [route] Marnix Goossens criticism route. Artforum. https://www.artforum.com/search/Marnix%20Goossens/
+- [route] Marnix Goossens criticism route. e-flux. https://www.e-flux.com/search/?q=Marnix+Goossens
+- [route] Marnix Goossens criticism route. Frieze. https://www.frieze.com/search?keys=Marnix+Goossens
+- [route] Marnix Goossens monograph / publisher route. https://www.google.com/search?q=Marnix+Goossens+photography+monograph+publisher
+- [route] Marnix Goossens bibliography. WorldCat. https://search.worldcat.org/search?q=Marnix+Goossens+photography
+- [route] Marnix Goossens bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Marnix+Goossens&searchCode=GKEY%5E*&searchType=0
+- [route] マーニクス・ホーセンス bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%9E%E3%83%BC%E3%83%8B%E3%82%AF%E3%82%B9%E3%83%BB%E3%83%9B%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%B9
+- [route] マーニクス・ホーセンス / Marnix Goossens research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%9E%E3%83%BC%E3%83%8B%E3%82%AF%E3%82%B9%E3%83%BB%E3%83%9B%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%B9+Marnix+Goossens
+- [route] Marnix Goossens scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Marnix+Goossens+photography
+- [route] Marnix Goossens journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Marnix+Goossens+photography
+- [route] Marnix Goossens library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Marnix+Goossens
+- [route] Marnix Goossens archive route. Smithsonian Institution. https://www.si.edu/search?query=Marnix+Goossens
+- [route] Marnix Goossens archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Marnix+Goossens
+- [route] Marnix Goossens exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Marnix+Goossens
+- [route] Marnix Goossens Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Marnix Goossens third-language / local institution route. https://www.google.com/search?q=Marnix+Goossens+photography+museum+exhibition+catalogue
+- [route] Marnix Goossens primary interview / statement route. https://www.google.com/search?q=Marnix+Goossens+photographer+interview+artist+statement

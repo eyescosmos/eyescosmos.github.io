@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `zbigniew-libera`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `zbigniew-libera`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ズビグニェフ・リベラ（Zbigniew Libera）は、1980–1990年代の写真史で critical art, media critique と結びつけて整理したい作家である。活動地域・制度的文脈としては Poland を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、history, Holocaust representation, media images, social discipline を、staged objects, appropriation, photographic documentation によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["criticality", "representation crisis", "institutional critique"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Zbigniew Libera official / estate / gallery route. https://www.google.com/search?q=Zbigniew+Libera+photography+official+artist+gallery
-- [S2] Zbigniew Libera search. MoMA. https://www.moma.org/search/?query=Zbigniew+Libera
-- [S3] Zbigniew Libera search. Tate. https://www.tate.org.uk/search?q=Zbigniew+Libera
-- [S4] Zbigniew Libera collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Zbigniew+Libera
-- [S5] Zbigniew Libera search. Guggenheim Museum. https://www.guggenheim.org/?s=Zbigniew+Libera
-- [S6] Zbigniew Libera search. Art Institute of Chicago. https://www.artic.edu/search?q=Zbigniew+Libera
-- [S7] Zbigniew Libera search. SFMOMA. https://www.sfmoma.org/search/?q=Zbigniew+Libera
-- [S8] Zbigniew Libera search. Whitney Museum. https://whitney.org/search?q=Zbigniew+Libera
-- [S9] Zbigniew Libera search. International Center of Photography. https://www.icp.org/search-results/Zbigniew%20Libera
-- [S10] Zbigniew Libera search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Zbigniew+Libera
-- [S11] Zbigniew Libera search. Getty. https://www.getty.edu/art/collection/search/?q=Zbigniew+Libera
-- [S12] Zbigniew Libera route. Aperture. https://aperture.org/?s=Zbigniew+Libera
-- [S13] Zbigniew Libera route. Magnum Photos. https://www.magnumphotos.com/?s=Zbigniew+Libera
-- [S14] Zbigniew Libera criticism route. Artforum. https://www.artforum.com/search/Zbigniew%20Libera/
-- [S15] Zbigniew Libera criticism route. e-flux. https://www.e-flux.com/search/?q=Zbigniew+Libera
-- [S16] Zbigniew Libera criticism route. Frieze. https://www.frieze.com/search?keys=Zbigniew+Libera
-- [S17] Zbigniew Libera monograph / publisher route. https://www.google.com/search?q=Zbigniew+Libera+photography+monograph+publisher
-- [S18] Zbigniew Libera bibliography. WorldCat. https://search.worldcat.org/search?q=Zbigniew+Libera+photography
-- [S19] Zbigniew Libera bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Zbigniew+Libera&searchCode=GKEY%5E*&searchType=0
-- [S20] ズビグニェフ・リベラ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%BA%E3%83%93%E3%82%B0%E3%83%8B%E3%82%A7%E3%83%95%E3%83%BB%E3%83%AA%E3%83%99%E3%83%A9
-- [S21] ズビグニェフ・リベラ / Zbigniew Libera research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%BA%E3%83%93%E3%82%B0%E3%83%8B%E3%82%A7%E3%83%95%E3%83%BB%E3%83%AA%E3%83%99%E3%83%A9+Zbigniew+Libera
-- [S22] Zbigniew Libera scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Zbigniew+Libera+photography
-- [S23] Zbigniew Libera journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Zbigniew+Libera+photography
-- [S24] Zbigniew Libera library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Zbigniew+Libera
-- [S25] Zbigniew Libera archive route. Smithsonian Institution. https://www.si.edu/search?query=Zbigniew+Libera
-- [S26] Zbigniew Libera archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Zbigniew+Libera
-- [S27] Zbigniew Libera exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Zbigniew+Libera
-- [S28] Zbigniew Libera Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Zbigniew Libera third-language / local institution route. https://www.google.com/search?q=Zbigniew+Libera+photography+museum+exhibition+catalogue
-- [S30] Zbigniew Libera primary interview / statement route. https://www.google.com/search?q=Zbigniew+Libera+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Mystical Perseverance (1984–1990). Ludwig Museum. https://www.ludwigmuseum.hu/en/work/mystical-perseverance
+- [S2] Zbigniew Libera archive 1989–1991. Museum of Modern Art in Warsaw. https://archiwum.artmuseum.pl/en/archiwum/archiwum-zbigniewa-libery/1951
+- [S3] Zbigniew Libera. Niepodlegle / Museum of Modern Art in Warsaw context. https://niepodlegle.artmuseum.pl/en/artysta/191
+- [S4] Selected works by Zbigniew Libera — Culture.pl. https://culture.pl/en/gallery/selected-works-by-zbigniew-libera-image-gallery — image gallery and context for critical multimedia practice
+- [S5] Zbigniew Libera — Culture.pl. https://culture.pl/en/artist/zbigniew-libera — artist profile and Polish critical context
+- [S6] Zbigniew Libera — Raster Gallery. https://rastergallery.com/artists/zbigniew-libera/ — gallery profile and exhibition history
+- [S7] Zbigniew Libera — Zachęta National Gallery of Art. https://zacheta.art.pl/en/kolekcja/katalog/libera-zbigniew — national collection context
+- [S8] Zbigniew Libera — Museum of Modern Art in Warsaw. https://artmuseum.pl/en/archiwum/archiwum-artystow/zbigniew-libera — archive/artist context
+- [S9] Vertical Reach — Artspace New Haven. https://artspacenewhaven.org/wp-content/uploads/2016/02/verticalreach_publication.pdf — publication with Libera context and Raster/Culture.pl references
+- [S10] Mediating Visual Experience — InVisible Culture. https://www.invisibleculturejournal.com/pub/mediating-visual-experience/download/pdf — scholarly article on Libera photographic works and image culture
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["criticality", "representation crisis", "institutional critique"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Zbigniew Libera official / estate / gallery route. https://www.google.com/search?q=Zbigniew+Libera+photography+official+artist+gallery
+- [route] Zbigniew Libera search. MoMA. https://www.moma.org/search/?query=Zbigniew+Libera
+- [route] Zbigniew Libera search. Tate. https://www.tate.org.uk/search?q=Zbigniew+Libera
+- [route] Zbigniew Libera collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Zbigniew+Libera
+- [route] Zbigniew Libera search. Guggenheim Museum. https://www.guggenheim.org/?s=Zbigniew+Libera
+- [route] Zbigniew Libera search. Art Institute of Chicago. https://www.artic.edu/search?q=Zbigniew+Libera
+- [route] Zbigniew Libera search. SFMOMA. https://www.sfmoma.org/search/?q=Zbigniew+Libera
+- [route] Zbigniew Libera search. Whitney Museum. https://whitney.org/search?q=Zbigniew+Libera
+- [route] Zbigniew Libera search. International Center of Photography. https://www.icp.org/search-results/Zbigniew%20Libera
+- [route] Zbigniew Libera search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Zbigniew+Libera
+- [route] Zbigniew Libera search. Getty. https://www.getty.edu/art/collection/search/?q=Zbigniew+Libera
+- [route] Zbigniew Libera route. Aperture. https://aperture.org/?s=Zbigniew+Libera
+- [route] Zbigniew Libera route. Magnum Photos. https://www.magnumphotos.com/?s=Zbigniew+Libera
+- [route] Zbigniew Libera criticism route. Artforum. https://www.artforum.com/search/Zbigniew%20Libera/
+- [route] Zbigniew Libera criticism route. e-flux. https://www.e-flux.com/search/?q=Zbigniew+Libera
+- [route] Zbigniew Libera criticism route. Frieze. https://www.frieze.com/search?keys=Zbigniew+Libera
+- [route] Zbigniew Libera monograph / publisher route. https://www.google.com/search?q=Zbigniew+Libera+photography+monograph+publisher
+- [route] Zbigniew Libera bibliography. WorldCat. https://search.worldcat.org/search?q=Zbigniew+Libera+photography
+- [route] Zbigniew Libera bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Zbigniew+Libera&searchCode=GKEY%5E*&searchType=0
+- [route] ズビグニェフ・リベラ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%BA%E3%83%93%E3%82%B0%E3%83%8B%E3%82%A7%E3%83%95%E3%83%BB%E3%83%AA%E3%83%99%E3%83%A9
+- [route] ズビグニェフ・リベラ / Zbigniew Libera research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%BA%E3%83%93%E3%82%B0%E3%83%8B%E3%82%A7%E3%83%95%E3%83%BB%E3%83%AA%E3%83%99%E3%83%A9+Zbigniew+Libera
+- [route] Zbigniew Libera scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Zbigniew+Libera+photography
+- [route] Zbigniew Libera journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Zbigniew+Libera+photography
+- [route] Zbigniew Libera library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Zbigniew+Libera
+- [route] Zbigniew Libera archive route. Smithsonian Institution. https://www.si.edu/search?query=Zbigniew+Libera
+- [route] Zbigniew Libera archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Zbigniew+Libera
+- [route] Zbigniew Libera exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Zbigniew+Libera
+- [route] Zbigniew Libera Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Zbigniew Libera third-language / local institution route. https://www.google.com/search?q=Zbigniew+Libera+photography+museum+exhibition+catalogue
+- [route] Zbigniew Libera primary interview / statement route. https://www.google.com/search?q=Zbigniew+Libera+photographer+interview+artist+statement

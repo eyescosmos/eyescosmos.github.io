@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `rut-blees-luxemburg`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `rut-blees-luxemburg`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ルット・ブレス・ルクセンブルク（Rut Blees Luxemburg）は、1980–1990年代の写真史で urban night photography, architecture photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Germany / United Kingdom を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、London, night streets, public space, concrete を、long exposure, urban night color, architectural framing によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["urban memory", "public space", "nocturnal modernity"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Rut Blees Luxemburg official / estate / gallery route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photography+official+artist+gallery
-- [S2] Rut Blees Luxemburg search. MoMA. https://www.moma.org/search/?query=Rut+Blees+Luxemburg
-- [S3] Rut Blees Luxemburg search. Tate. https://www.tate.org.uk/search?q=Rut+Blees+Luxemburg
-- [S4] Rut Blees Luxemburg collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Rut+Blees+Luxemburg
-- [S5] Rut Blees Luxemburg search. Guggenheim Museum. https://www.guggenheim.org/?s=Rut+Blees+Luxemburg
-- [S6] Rut Blees Luxemburg search. Art Institute of Chicago. https://www.artic.edu/search?q=Rut+Blees+Luxemburg
-- [S7] Rut Blees Luxemburg search. SFMOMA. https://www.sfmoma.org/search/?q=Rut+Blees+Luxemburg
-- [S8] Rut Blees Luxemburg search. Whitney Museum. https://whitney.org/search?q=Rut+Blees+Luxemburg
-- [S9] Rut Blees Luxemburg search. International Center of Photography. https://www.icp.org/search-results/Rut%20Blees%20Luxemburg
-- [S10] Rut Blees Luxemburg search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Rut+Blees+Luxemburg
-- [S11] Rut Blees Luxemburg search. Getty. https://www.getty.edu/art/collection/search/?q=Rut+Blees+Luxemburg
-- [S12] Rut Blees Luxemburg route. Aperture. https://aperture.org/?s=Rut+Blees+Luxemburg
-- [S13] Rut Blees Luxemburg route. Magnum Photos. https://www.magnumphotos.com/?s=Rut+Blees+Luxemburg
-- [S14] Rut Blees Luxemburg criticism route. Artforum. https://www.artforum.com/search/Rut%20Blees%20Luxemburg/
-- [S15] Rut Blees Luxemburg criticism route. e-flux. https://www.e-flux.com/search/?q=Rut+Blees+Luxemburg
-- [S16] Rut Blees Luxemburg criticism route. Frieze. https://www.frieze.com/search?keys=Rut+Blees+Luxemburg
-- [S17] Rut Blees Luxemburg monograph / publisher route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photography+monograph+publisher
-- [S18] Rut Blees Luxemburg bibliography. WorldCat. https://search.worldcat.org/search?q=Rut+Blees+Luxemburg+photography
-- [S19] Rut Blees Luxemburg bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Rut+Blees+Luxemburg&searchCode=GKEY%5E*&searchType=0
-- [S20] ルット・ブレス・ルクセンブルク bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%AB%E3%83%83%E3%83%88%E3%83%BB%E3%83%96%E3%83%AC%E3%82%B9%E3%83%BB%E3%83%AB%E3%82%AF%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AB%E3%82%AF
-- [S21] ルット・ブレス・ルクセンブルク / Rut Blees Luxemburg research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%AB%E3%83%83%E3%83%88%E3%83%BB%E3%83%96%E3%83%AC%E3%82%B9%E3%83%BB%E3%83%AB%E3%82%AF%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AB%E3%82%AF+Rut+Blees+Luxemburg
-- [S22] Rut Blees Luxemburg scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Rut+Blees+Luxemburg+photography
-- [S23] Rut Blees Luxemburg journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Rut+Blees+Luxemburg+photography
-- [S24] Rut Blees Luxemburg library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Rut+Blees+Luxemburg
-- [S25] Rut Blees Luxemburg archive route. Smithsonian Institution. https://www.si.edu/search?query=Rut+Blees+Luxemburg
-- [S26] Rut Blees Luxemburg archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Rut+Blees+Luxemburg
-- [S27] Rut Blees Luxemburg exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Rut+Blees+Luxemburg
-- [S28] Rut Blees Luxemburg Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Rut Blees Luxemburg third-language / local institution route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photography+museum+exhibition+catalogue
-- [S30] Rut Blees Luxemburg primary interview / statement route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Rut Blees Luxemburg: London Dust. The Photographers’ Gallery. https://thephotographersgallery.org.uk/photography-culture/rut-blees-luxemburg-london-dust
+- [S2] Built Worlds: Photography, landscape and different natures. The Photographers’ Gallery. https://thephotographersgallery.org.uk/photography-culture/built-worlds-photography-landscape-and-different-natures
+- [S3] Uneven Growth: Tactical Urbanisms for Expanding Megacities. MoMA preview PDF. https://www.moma.org/d/pdfs/W1siZiIsIjIwMTgvMDYvMTMvM2xtcW9wNWViMl9Nb01BX1VuZXZlbkdyb3d0aF9QUkVWSUVXLnBkZiJdXQ/MoMA_UnevenGrowth_PREVIEW.pdf?sha=09af930d69ea9d9e
+- [S4] Professor Rut Blees Luxemburg — Royal College of Art. https://www.rca.ac.uk/more/staff/rut-blees-luxemburg/ — institutional profile on urban aesthetics and large-format urban photography
+- [S5] Rut Blees Luxemburg: Phantom — Tate Liverpool / Absolutearts. https://www.absolutearts.com/artsnews/2003/02/05/30726.html — Tate Liverpool exhibition text for Phantom and modernity in Dakar
+- [S6] Rut Blees Luxemburg — Artangel. https://www.artangel.org.uk/project/london-a-modern-project/ — public-art/urban project context
+- [S7] Rut Blees Luxemburg — Museum of London. https://www.museumoflondon.org.uk/discover/rut-blees-luxemburg — urban photography and London context
+- [S8] Rut Blees Luxemburg — The Guardian. https://www.theguardian.com/society/gallery/2009/mar/09/rut-blees-luxemburg-photography — image feature and public reception context
+- [S9] Rut Blees Luxemburg — LSE Cities. https://lsecities.net/media/objects/articles/rut-blees-luxemburg/en-gb/ — urban-photography context through city research platform
+- [S10] Rut Blees Luxemburg — Black Dog Press / Commonsensual. https://blackdogonline.com/products/commonsensual-rut-blees-luxemburg — monograph context for urban night photography
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["urban memory", "public space", "nocturnal modernity"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Rut Blees Luxemburg official / estate / gallery route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photography+official+artist+gallery
+- [route] Rut Blees Luxemburg search. MoMA. https://www.moma.org/search/?query=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg search. Tate. https://www.tate.org.uk/search?q=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg search. Guggenheim Museum. https://www.guggenheim.org/?s=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg search. Art Institute of Chicago. https://www.artic.edu/search?q=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg search. SFMOMA. https://www.sfmoma.org/search/?q=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg search. Whitney Museum. https://whitney.org/search?q=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg search. International Center of Photography. https://www.icp.org/search-results/Rut%20Blees%20Luxemburg
+- [route] Rut Blees Luxemburg search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg search. Getty. https://www.getty.edu/art/collection/search/?q=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg route. Aperture. https://aperture.org/?s=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg route. Magnum Photos. https://www.magnumphotos.com/?s=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg criticism route. Artforum. https://www.artforum.com/search/Rut%20Blees%20Luxemburg/
+- [route] Rut Blees Luxemburg criticism route. e-flux. https://www.e-flux.com/search/?q=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg criticism route. Frieze. https://www.frieze.com/search?keys=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg monograph / publisher route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photography+monograph+publisher
+- [route] Rut Blees Luxemburg bibliography. WorldCat. https://search.worldcat.org/search?q=Rut+Blees+Luxemburg+photography
+- [route] Rut Blees Luxemburg bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Rut+Blees+Luxemburg&searchCode=GKEY%5E*&searchType=0
+- [route] ルット・ブレス・ルクセンブルク bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%AB%E3%83%83%E3%83%88%E3%83%BB%E3%83%96%E3%83%AC%E3%82%B9%E3%83%BB%E3%83%AB%E3%82%AF%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AB%E3%82%AF
+- [route] ルット・ブレス・ルクセンブルク / Rut Blees Luxemburg research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%AB%E3%83%83%E3%83%88%E3%83%BB%E3%83%96%E3%83%AC%E3%82%B9%E3%83%BB%E3%83%AB%E3%82%AF%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AB%E3%82%AF+Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Rut+Blees+Luxemburg+photography
+- [route] Rut Blees Luxemburg journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Rut+Blees+Luxemburg+photography
+- [route] Rut Blees Luxemburg library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg archive route. Smithsonian Institution. https://www.si.edu/search?query=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Rut Blees Luxemburg third-language / local institution route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photography+museum+exhibition+catalogue
+- [route] Rut Blees Luxemburg primary interview / statement route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photographer+interview+artist+statement

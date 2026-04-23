@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `naoya-hatakeyama`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `naoya-hatakeyama`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 畠山直哉（Naoya Hatakeyama）は、1980–1990年代の写真史で contemporary landscape, post-industrial photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Japan を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、limestone quarry, cities, underground spaces, post-disaster landscape を、large-format color, aerial and ground views, series-based projects によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["urban metabolism", "extraction", "infrastructure", "memory"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Naoya Hatakeyama official / estate / gallery route. https://www.google.com/search?q=Naoya+Hatakeyama+photography+official+artist+gallery
-- [S2] Naoya Hatakeyama search. MoMA. https://www.moma.org/search/?query=Naoya+Hatakeyama
-- [S3] Naoya Hatakeyama search. Tate. https://www.tate.org.uk/search?q=Naoya+Hatakeyama
-- [S4] Naoya Hatakeyama collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Naoya+Hatakeyama
-- [S5] Naoya Hatakeyama search. Guggenheim Museum. https://www.guggenheim.org/?s=Naoya+Hatakeyama
-- [S6] Naoya Hatakeyama search. Art Institute of Chicago. https://www.artic.edu/search?q=Naoya+Hatakeyama
-- [S7] Naoya Hatakeyama search. SFMOMA. https://www.sfmoma.org/search/?q=Naoya+Hatakeyama
-- [S8] Naoya Hatakeyama search. Whitney Museum. https://whitney.org/search?q=Naoya+Hatakeyama
-- [S9] Naoya Hatakeyama search. International Center of Photography. https://www.icp.org/search-results/Naoya%20Hatakeyama
-- [S10] Naoya Hatakeyama search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Naoya+Hatakeyama
-- [S11] Naoya Hatakeyama search. Getty. https://www.getty.edu/art/collection/search/?q=Naoya+Hatakeyama
-- [S12] Naoya Hatakeyama route. Aperture. https://aperture.org/?s=Naoya+Hatakeyama
-- [S13] Naoya Hatakeyama route. Magnum Photos. https://www.magnumphotos.com/?s=Naoya+Hatakeyama
-- [S14] Naoya Hatakeyama criticism route. Artforum. https://www.artforum.com/search/Naoya%20Hatakeyama/
-- [S15] Naoya Hatakeyama criticism route. e-flux. https://www.e-flux.com/search/?q=Naoya+Hatakeyama
-- [S16] Naoya Hatakeyama criticism route. Frieze. https://www.frieze.com/search?keys=Naoya+Hatakeyama
-- [S17] Naoya Hatakeyama monograph / publisher route. https://www.google.com/search?q=Naoya+Hatakeyama+photography+monograph+publisher
-- [S18] Naoya Hatakeyama bibliography. WorldCat. https://search.worldcat.org/search?q=Naoya+Hatakeyama+photography
-- [S19] Naoya Hatakeyama bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Naoya+Hatakeyama&searchCode=GKEY%5E*&searchType=0
-- [S20] 畠山直哉 bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E7%95%A0%E5%B1%B1%E7%9B%B4%E5%93%89
-- [S21] 畠山直哉 / Naoya Hatakeyama research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E7%95%A0%E5%B1%B1%E7%9B%B4%E5%93%89+Naoya+Hatakeyama
-- [S22] Naoya Hatakeyama scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Naoya+Hatakeyama+photography
-- [S23] Naoya Hatakeyama journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Naoya+Hatakeyama+photography
-- [S24] Naoya Hatakeyama library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Naoya+Hatakeyama
-- [S25] Naoya Hatakeyama archive route. Smithsonian Institution. https://www.si.edu/search?query=Naoya+Hatakeyama
-- [S26] Naoya Hatakeyama archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Naoya+Hatakeyama
-- [S27] Naoya Hatakeyama exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Naoya+Hatakeyama
-- [S28] Naoya Hatakeyama Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Naoya Hatakeyama third-language / local institution route. https://www.google.com/search?q=Naoya+Hatakeyama+photography+museum+exhibition+catalogue
-- [S30] Naoya Hatakeyama primary interview / statement route. https://www.google.com/search?q=Naoya+Hatakeyama+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Naoya Hatakeyama: Natural Stories. SFMOMA context via public reporting. https://time.com/3790530/changing-landscapes-naoya-hatakeyama-natural-stories/
+- [S2] Naoya Hatakeyama. British Museum object note. https://www.britishmuseum.org/collection/object/A_2007-3007-55
+- [S3] Artist Talk: About My Work. Naoya Hatakeyama. SFMOMA. https://www.sfmoma.org/essay/about-my-work/
+- [S4] Naoya Hatakeyama 1st U.S. show at SFMOMA. SFGate. https://www.sfgate.com/art/article/Naoya-Hatakeyama-1st-U-S-show-at-SFMOMA-3758108.php
+- [S5] Naoya Hatakeyama — Aperture archive. https://archive.aperture.org/article/2015/02/02/naoya-hatakeyama — Aperture article page for Hatakeyama and Japanese photography context.
+- [S6] Naoya Hatakeyama: Natural Stories — SFMOMA. https://www.sfmoma.org/exhibition/naoya-hatakeyama/ — Major exhibition page on Hatakeyama’s landscape, quarry, factory, and tsunami work.
+- [S7] Naoya Hatakeyama — SFMOMA artist page. https://www.sfmoma.org/artist/Naoya_Hatakeyama/ — Collection/artist page framing Hatakeyama’s contemporary landscape practice.
+- [S8] Naoya HATAKEYAMA — Taka Ishii Gallery. https://www.takaishiigallery.com/en/archives/5925/ — Gallery artist page with biography, awards, and exhibition context.
+- [S9] Naoya Hatakeyama: Natural Stories — Tokyo Photographic Art Museum. https://topmuseum.jp/e/contents/exhibition/index-1387.html — Japanese museum exhibition page for Natural Stories.
+- [S10] The Spirit in the Air: Remembering the Tohoku Earthquake One Year Later — SFMOMA Open Space. https://openspace.sfmoma.org/2012/03/spirit-in-the-air/ — Curatorial context on research for Hatakeyama’s SFMOMA exhibition and Tohoku aftermath.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,37 @@ tags: ["urban metabolism", "extraction", "infrastructure", "memory"]
 - 採石、都市インフラ、震災後の風景、土地の記憶を扱う論文
 - 日本語の美術館資料、TOP Museum、出版社、本人インタビュー
 - Lewis Baltz、Becher夫妻、ホンマタカシとの比較資料
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Naoya Hatakeyama. The Metropolitan Museum of Art. https://www.metmuseum.org/zh/art/collection/search/913351
+- [route] Naoya Hatakeyama official / estate / gallery route. https://www.google.com/search?q=Naoya+Hatakeyama+photography+official+artist+gallery
+- [route] Naoya Hatakeyama search. MoMA. https://www.moma.org/search/?query=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama search. Tate. https://www.tate.org.uk/search?q=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama search. Guggenheim Museum. https://www.guggenheim.org/?s=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama search. Art Institute of Chicago. https://www.artic.edu/search?q=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama search. SFMOMA. https://www.sfmoma.org/search/?q=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama search. Whitney Museum. https://whitney.org/search?q=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama search. International Center of Photography. https://www.icp.org/search-results/Naoya%20Hatakeyama
+- [route] Naoya Hatakeyama search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama search. Getty. https://www.getty.edu/art/collection/search/?q=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama route. Aperture. https://aperture.org/?s=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama route. Magnum Photos. https://www.magnumphotos.com/?s=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama criticism route. Artforum. https://www.artforum.com/search/Naoya%20Hatakeyama/
+- [route] Naoya Hatakeyama criticism route. e-flux. https://www.e-flux.com/search/?q=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama criticism route. Frieze. https://www.frieze.com/search?keys=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama monograph / publisher route. https://www.google.com/search?q=Naoya+Hatakeyama+photography+monograph+publisher
+- [route] Naoya Hatakeyama bibliography. WorldCat. https://search.worldcat.org/search?q=Naoya+Hatakeyama+photography
+- [route] Naoya Hatakeyama bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Naoya+Hatakeyama&searchCode=GKEY%5E*&searchType=0
+- [route] 畠山直哉 bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E7%95%A0%E5%B1%B1%E7%9B%B4%E5%93%89
+- [route] 畠山直哉 / Naoya Hatakeyama research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E7%95%A0%E5%B1%B1%E7%9B%B4%E5%93%89+Naoya+Hatakeyama
+- [route] Naoya Hatakeyama scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Naoya+Hatakeyama+photography
+- [route] Naoya Hatakeyama journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Naoya+Hatakeyama+photography
+- [route] Naoya Hatakeyama library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama archive route. Smithsonian Institution. https://www.si.edu/search?query=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Naoya Hatakeyama third-language / local institution route. https://www.google.com/search?q=Naoya+Hatakeyama+photography+museum+exhibition+catalogue
+- [route] Naoya Hatakeyama primary interview / statement route. https://www.google.com/search?q=Naoya+Hatakeyama+photographer+interview+artist+statement

@@ -2,7 +2,7 @@
 
 > 完成版メモ: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で追加出典候補、本文用の論点、引用候補、座標用補助メモを整理したもの。Wikipedia/Britannicaは本文根拠にしない。
 >
-> Site id / slug reference: `becher`. Formal source candidates and research routes in this note: 30.
+> Site id / slug reference: `becher`. Direct source pages retained in Sources: 19. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ## 1. 経歴・背景 / Basic facts and context
 ベルント＆ヒラ・ベッヒャー（Bernd & Hilla Becher）は、1980–1990年代の写真史で typology, Dusseldorf School, conceptual photography と結びつけて考えたい作家である。活動地域は Germany を中心に広がり、作品は美術館、写真集、ギャラリー、批評誌、アーカイブを通じて受容された。略歴は必要最小限にとどめ、industrial structures, water towers, blast furnaces, anonymous sculpture を扱う方法が、当時の写真表現、美術制度、社会的文脈とどう結びついていたのかを中心に調べる。
@@ -63,40 +63,33 @@ tags: ["objectivity", "industrial memory", "catalog", "seriality"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-## 6. Sources and research routes
+## 6. Sources (direct pages only)
 - [S1] Bernd and Hilla Becher: Landscape/Typology. MoMA. https://www.moma.org/calendar/exhibitions/95
 - [S2] Bernd and Hilla Becher. Tate. https://www.tate.org.uk/art/artists/bernd-and-hilla-becher-718
 - [S3] Bernd and Hilla Becher. Guggenheim Museum. https://www.guggenheim.org/artwork/artist/bernd-and-hilla-becher
 - [S4] Bernd & Hilla Becher: Typologies. Fraenkel Gallery. https://fraenkelgallery.com/portfolios/bernd-and-hilla-becher-typologies
 - [S5] MoMA press release: Bernd and Hilla Becher industrial sites. https://www.moma.org/documents/moma_press-release_387148.pdf
-- [S6] Bernd & Hilla Becher official / estate / gallery route. https://www.google.com/search?q=Bernd+%26+Hilla+Becher+photography+official+artist+gallery
-- [S7] Bernd & Hilla Becher search. MoMA. https://www.moma.org/search/?query=Bernd+%26+Hilla+Becher
-- [S8] Bernd & Hilla Becher search. Tate. https://www.tate.org.uk/search?q=Bernd+%26+Hilla+Becher
-- [S9] Bernd & Hilla Becher collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Bernd+%26+Hilla+Becher
-- [S10] Bernd & Hilla Becher search. Guggenheim Museum. https://www.guggenheim.org/?s=Bernd+%26+Hilla+Becher
-- [S11] Bernd & Hilla Becher search. Art Institute of Chicago. https://www.artic.edu/search?q=Bernd+%26+Hilla+Becher
-- [S12] Bernd & Hilla Becher search. SFMOMA. https://www.sfmoma.org/search/?q=Bernd+%26+Hilla+Becher
-- [S13] Bernd & Hilla Becher search. Whitney Museum. https://whitney.org/search?q=Bernd+%26+Hilla+Becher
-- [S14] Bernd & Hilla Becher search. International Center of Photography. https://www.icp.org/search-results/Bernd%20%26%20Hilla%20Becher
-- [S15] Bernd & Hilla Becher search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Bernd+%26+Hilla+Becher
-- [S16] Bernd & Hilla Becher search. Getty. https://www.getty.edu/art/collection/search/?q=Bernd+%26+Hilla+Becher
-- [S17] Bernd & Hilla Becher route. Aperture. https://aperture.org/?s=Bernd+%26+Hilla+Becher
-- [S18] Bernd & Hilla Becher route. Magnum Photos. https://www.magnumphotos.com/?s=Bernd+%26+Hilla+Becher
-- [S19] Bernd & Hilla Becher criticism route. Artforum. https://www.artforum.com/search/Bernd%20%26%20Hilla%20Becher/
-- [S20] Bernd & Hilla Becher criticism route. e-flux. https://www.e-flux.com/search/?q=Bernd+%26+Hilla+Becher
-- [S21] Bernd & Hilla Becher criticism route. Frieze. https://www.frieze.com/search?keys=Bernd+%26+Hilla+Becher
-- [S22] Bernd & Hilla Becher monograph / publisher route. https://www.google.com/search?q=Bernd+%26+Hilla+Becher+photography+monograph+publisher
-- [S23] Bernd & Hilla Becher bibliography. WorldCat. https://search.worldcat.org/search?q=Bernd+%26+Hilla+Becher+photography
-- [S24] Bernd & Hilla Becher bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Bernd+%26+Hilla+Becher&searchCode=GKEY%5E*&searchType=0
-- [S25] ベルント＆ヒラ・ベッヒャー bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%99%E3%83%AB%E3%83%B3%E3%83%88%EF%BC%86%E3%83%92%E3%83%A9%E3%83%BB%E3%83%99%E3%83%83%E3%83%92%E3%83%A3%E3%83%BC
-- [S26] ベルント＆ヒラ・ベッヒャー / Bernd & Hilla Becher research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%99%E3%83%AB%E3%83%B3%E3%83%88%EF%BC%86%E3%83%92%E3%83%A9%E3%83%BB%E3%83%99%E3%83%83%E3%83%92%E3%83%A3%E3%83%BC+Bernd+%26+Hilla+Becher
-- [S27] Bernd & Hilla Becher scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Bernd+%26+Hilla+Becher+photography
-- [S28] Bernd & Hilla Becher journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Bernd+%26+Hilla+Becher+photography
-- [S29] Bernd & Hilla Becher library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Bernd+%26+Hilla+Becher
-- [S30] Bernd & Hilla Becher archive route. Smithsonian Institution. https://www.si.edu/search?query=Bernd+%26+Hilla+Becher
+- [S6] Bernd and Hilla Becher. Peggy Guggenheim Collection. https://www.guggenheim-venice.it/en/art/artists/bernd-and-hilla-becher/
+- [S7] The Shape of Things. MoMA preview PDF. https://www.moma.org/d/pdfs/W1siZiIsIjIwMTgvMDYvMTMvOWp4amprOTgxZl9Nb01BX1RoZVNoYXBlb2ZUaGluZ3NfUFJFVklFVy5wZGYiXV0/MoMA_TheShapeofThings_PREVIEW.pdf?sha=6f5a5452d6da3938
+- [S8] Bernd & Hilla Becher. The Metropolitan Museum of Art exhibition. https://www.metmuseum.org/exhibitions/becher
+- [S9] Bernd & Hilla Becher. Paula Cooper Gallery. https://www.paulacoopergallery.com/exhibitions/bernd-hilla-becher
+- [S10] Bernd & Hilla Becher at The Met. Collector Daily. https://collectordaily.com/bernd-hilla-becher-met/
+- [S11] Bernd and Hilla Becher. Dia Art Foundation. https://www.diaart.org/program/past-programs/bernd-and-hilla-becher-exhibition/
+- [S12] Projects: Bernhard and Hilla Becher. MoMA. https://www.moma.org/calendar/exhibitions/2477
+- [S13] Bernd et Hilla Becher. CNAP / Centre Pompidou. https://www.cnap.fr/bernd-et-hilla-becher-0
+- [S14] Bernd & Hilla Becher. SFMOMA. https://www.sfmoma.org/exhibition/bernd-hilla-becher/
+- [S15] Bernd et Hilla Becher. Catalogue des expositions Centre Pompidou. https://cataloguedesexpositions.centrepompidou.fr/Bernd_et_Hilla_Becher
+- [S16] Bernd and Hilla Becher. The Brooklyn Rail. https://brooklynrail.org/2022/09/artseen/Bernd-and-Hilla-Becher/
+- [S17] What Bernd and Hilla Becher Saw in the Remnants of Industry. The New Yorker. https://www.newyorker.com/culture/photo-booth/what-bernd-and-hilla-becher-saw-in-the-remnants-of-industry
+- [S18] Bernd and Hilla Becher. Contemporary Art Library. https://www.contemporaryartlibrary.org/artist/bernd-and-hilla-becher-3590
+- [S19] Bernd and Hilla Becher interview PDF. The Brooklyn Rail / James Welling archive. https://www.jameswelling.net/media/pages/writings/interviews-and-writings/eb1fdcc596-1670977873/bernd-and-hilla-becher-the-brooklyn-rail.pdf
+- [S20] Bernd & Hilla Becher artist page — Fraenkel Gallery. https://fraenkelgallery.com/artists/bernd-and-hilla-becher — Gallery artist page with exhibition/collection context.
+- [S21] Bernd & Hilla Becher CV — Fraenkel Gallery. https://fraenkelgallery.com/wp-content/uploads/2012/02/Becher_CV_2025-3.pdf — Expanded exhibition, bibliography, and collection record.
+- [S22] Hilla Becher artist page — National Gallery of Art. https://www.nga.gov/artists/10779-hilla-becher — Institutional artist record and work listing.
+- [S23] James Welling and Bernd & Hilla Becher press release — Maureen Paley. https://static.frieze.com/files/event/press/MP%20JW%20BHB%20Press%20Release%202025.pdf?VersionId=ndu6zm7xPtnejIVZ8Kr69LSLtbmB6lnL — Useful for later reception and Becher influence on Welling.
 
 ## 7. 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で19件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -104,3 +97,7 @@ tags: ["objectivity", "industrial memory", "catalog", "seriality"]
 - 工業建築・anonymous sculptureを扱う図録、写真集序文、保存運動の資料
 - MoMA、Tate、Guggenheim以外のドイツ語圏美術館・アーカイブ資料
 - New Topographics、コンセプチュアル・アート、類型学を接続する批評論文
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 19. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- No search/catalog routes were moved.

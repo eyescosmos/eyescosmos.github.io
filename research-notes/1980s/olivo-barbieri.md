@@ -35,7 +35,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `olivo-barbieri`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `olivo-barbieri`. Direct source pages retained in Sources: 3. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 オリーヴォ・バルビエリ（Olivo Barbieri）は、1980–1990年代の写真史で aerial photography, site-specific urban photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Italy を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、cities, spectacle, global architecture, theme parks を、tilt-shift effect, aerial view, large color series によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -91,40 +91,20 @@ tags: ["miniaturization", "urban spectacle", "perception"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Olivo Barbieri official / estate / gallery route. https://www.google.com/search?q=Olivo+Barbieri+photography+official+artist+gallery
-- [S2] Olivo Barbieri search. MoMA. https://www.moma.org/search/?query=Olivo+Barbieri
-- [S3] Olivo Barbieri search. Tate. https://www.tate.org.uk/search?q=Olivo+Barbieri
-- [S4] Olivo Barbieri collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Olivo+Barbieri
-- [S5] Olivo Barbieri search. Guggenheim Museum. https://www.guggenheim.org/?s=Olivo+Barbieri
-- [S6] Olivo Barbieri search. Art Institute of Chicago. https://www.artic.edu/search?q=Olivo+Barbieri
-- [S7] Olivo Barbieri search. SFMOMA. https://www.sfmoma.org/search/?q=Olivo+Barbieri
-- [S8] Olivo Barbieri search. Whitney Museum. https://whitney.org/search?q=Olivo+Barbieri
-- [S9] Olivo Barbieri search. International Center of Photography. https://www.icp.org/search-results/Olivo%20Barbieri
-- [S10] Olivo Barbieri search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Olivo+Barbieri
-- [S11] Olivo Barbieri search. Getty. https://www.getty.edu/art/collection/search/?q=Olivo+Barbieri
-- [S12] Olivo Barbieri route. Aperture. https://aperture.org/?s=Olivo+Barbieri
-- [S13] Olivo Barbieri route. Magnum Photos. https://www.magnumphotos.com/?s=Olivo+Barbieri
-- [S14] Olivo Barbieri criticism route. Artforum. https://www.artforum.com/search/Olivo%20Barbieri/
-- [S15] Olivo Barbieri criticism route. e-flux. https://www.e-flux.com/search/?q=Olivo+Barbieri
-- [S16] Olivo Barbieri criticism route. Frieze. https://www.frieze.com/search?keys=Olivo+Barbieri
-- [S17] Olivo Barbieri monograph / publisher route. https://www.google.com/search?q=Olivo+Barbieri+photography+monograph+publisher
-- [S18] Olivo Barbieri bibliography. WorldCat. https://search.worldcat.org/search?q=Olivo+Barbieri+photography
-- [S19] Olivo Barbieri bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Olivo+Barbieri&searchCode=GKEY%5E*&searchType=0
-- [S20] オリーヴォ・バルビエリ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%B4%E3%82%A9%E3%83%BB%E3%83%90%E3%83%AB%E3%83%93%E3%82%A8%E3%83%AA
-- [S21] オリーヴォ・バルビエリ / Olivo Barbieri research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%B4%E3%82%A9%E3%83%BB%E3%83%90%E3%83%AB%E3%83%93%E3%82%A8%E3%83%AA+Olivo+Barbieri
-- [S22] Olivo Barbieri scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Olivo+Barbieri+photography
-- [S23] Olivo Barbieri journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Olivo+Barbieri+photography
-- [S24] Olivo Barbieri library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Olivo+Barbieri
-- [S25] Olivo Barbieri archive route. Smithsonian Institution. https://www.si.edu/search?query=Olivo+Barbieri
-- [S26] Olivo Barbieri archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Olivo+Barbieri
-- [S27] Olivo Barbieri exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Olivo+Barbieri
-- [S28] Olivo Barbieri Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Olivo Barbieri third-language / local institution route. https://www.google.com/search?q=Olivo+Barbieri+photography+museum+exhibition+catalogue
-- [S30] Olivo Barbieri primary interview / statement route. https://www.google.com/search?q=Olivo+Barbieri+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Olivo Barbieri. Immagini 1978–2014. MAXXI. https://www.maxxi.art/en/olivo-barbieri-immagini-1978-2014/
+- [S2] MAXXIinWeb / Olivo Barbieri. MAXXI. https://www.maxxi.art/en/events/maxxiinweb-olivo-barbieri/
+- [S3] Buenos Aires – Olivo Barbieri photo exhibition to open in Buenos Aires. Ministero degli Affari Esteri e della Cooperazione Internazionale. https://www.esteri.it/en/sala_stampa/archivionotizie/approfondimenti/2016/02/buenos-aires-le-immagini-di-olivo-2/
+- [S4] Olivo Barbieri artist page — SFMOMA. https://www.sfmoma.org/artist/Olivo_Barbieri/ — Collection page for site specific series.
+- [S5] Artificial Reality of Olivo Barbieri — Lux Magazine. https://www.lux-mag.com/artifical-reality-of-olivo-barbier/ — Interview on city, scale, helicopter work, and art photography.
+- [S6] The Archives: Olivo Barbieri — Musée Magazine. https://museemagazine.com/features/2017/7/20/the-archives-olivo-barbieri — Interview on place, truth, color transformation, and site-specific projects.
+- [S7] Olivo Barbieri artist page — MoMA. https://www.moma.org/artists/67827 — MoMA collection record for Site Specific: Las Vegas 05.
+- [S8] Olivo Barbieri artist page — MFAH. https://emuseum.mfah.org/people/17930/olivo-barbieri — Museum collection artist record.
+- [S9] Olivo Barbieri press/review dossier — MAXXI. https://www.maxxi.art/wp-content/uploads/2016/07/MAXXI_RS_Barbieri2015.pdf — Italian review dossier including statements on photography and image-making.
+- [S10] Olivo Barbieri press release — Artforum Artguide PDF. https://artguide.artforum.com/uploads/guide.004/id22173/press_release.pdf — Press release with biography, exhibitions, artist books, films, and interview context.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で3件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -132,3 +112,36 @@ tags: ["miniaturization", "urban spectacle", "perception"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 3. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Olivo Barbieri official / estate / gallery route. https://www.google.com/search?q=Olivo+Barbieri+photography+official+artist+gallery
+- [route] Olivo Barbieri search. MoMA. https://www.moma.org/search/?query=Olivo+Barbieri
+- [route] Olivo Barbieri search. Tate. https://www.tate.org.uk/search?q=Olivo+Barbieri
+- [route] Olivo Barbieri collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Olivo+Barbieri
+- [route] Olivo Barbieri search. Guggenheim Museum. https://www.guggenheim.org/?s=Olivo+Barbieri
+- [route] Olivo Barbieri search. Art Institute of Chicago. https://www.artic.edu/search?q=Olivo+Barbieri
+- [route] Olivo Barbieri search. SFMOMA. https://www.sfmoma.org/search/?q=Olivo+Barbieri
+- [route] Olivo Barbieri search. Whitney Museum. https://whitney.org/search?q=Olivo+Barbieri
+- [route] Olivo Barbieri search. International Center of Photography. https://www.icp.org/search-results/Olivo%20Barbieri
+- [route] Olivo Barbieri search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Olivo+Barbieri
+- [route] Olivo Barbieri search. Getty. https://www.getty.edu/art/collection/search/?q=Olivo+Barbieri
+- [route] Olivo Barbieri route. Aperture. https://aperture.org/?s=Olivo+Barbieri
+- [route] Olivo Barbieri route. Magnum Photos. https://www.magnumphotos.com/?s=Olivo+Barbieri
+- [route] Olivo Barbieri criticism route. Artforum. https://www.artforum.com/search/Olivo%20Barbieri/
+- [route] Olivo Barbieri criticism route. e-flux. https://www.e-flux.com/search/?q=Olivo+Barbieri
+- [route] Olivo Barbieri criticism route. Frieze. https://www.frieze.com/search?keys=Olivo+Barbieri
+- [route] Olivo Barbieri monograph / publisher route. https://www.google.com/search?q=Olivo+Barbieri+photography+monograph+publisher
+- [route] Olivo Barbieri bibliography. WorldCat. https://search.worldcat.org/search?q=Olivo+Barbieri+photography
+- [route] Olivo Barbieri bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Olivo+Barbieri&searchCode=GKEY%5E*&searchType=0
+- [route] オリーヴォ・バルビエリ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%B4%E3%82%A9%E3%83%BB%E3%83%90%E3%83%AB%E3%83%93%E3%82%A8%E3%83%AA
+- [route] オリーヴォ・バルビエリ / Olivo Barbieri research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%B4%E3%82%A9%E3%83%BB%E3%83%90%E3%83%AB%E3%83%93%E3%82%A8%E3%83%AA+Olivo+Barbieri
+- [route] Olivo Barbieri scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Olivo+Barbieri+photography
+- [route] Olivo Barbieri journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Olivo+Barbieri+photography
+- [route] Olivo Barbieri library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Olivo+Barbieri
+- [route] Olivo Barbieri archive route. Smithsonian Institution. https://www.si.edu/search?query=Olivo+Barbieri
+- [route] Olivo Barbieri archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Olivo+Barbieri
+- [route] Olivo Barbieri exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Olivo+Barbieri
+- [route] Olivo Barbieri Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Olivo Barbieri third-language / local institution route. https://www.google.com/search?q=Olivo+Barbieri+photography+museum+exhibition+catalogue
+- [route] Olivo Barbieri primary interview / statement route. https://www.google.com/search?q=Olivo+Barbieri+photographer+interview+artist+statement

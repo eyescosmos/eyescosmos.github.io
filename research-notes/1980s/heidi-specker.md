@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `heidi-specker`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `heidi-specker`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ハイディ・シュペッカー（Heidi Specker）は、1980–1990年代の写真史で architecture photography, post-Becher photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Germany を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、Plattenbau, modernist surfaces, building details を、digital close view, serial architectural detail, cropping によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["surface", "modernity", "post-typology"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Heidi Specker official / estate / gallery route. https://www.google.com/search?q=Heidi+Specker+photography+official+artist+gallery
-- [S2] Heidi Specker search. MoMA. https://www.moma.org/search/?query=Heidi+Specker
-- [S3] Heidi Specker search. Tate. https://www.tate.org.uk/search?q=Heidi+Specker
-- [S4] Heidi Specker collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Heidi+Specker
-- [S5] Heidi Specker search. Guggenheim Museum. https://www.guggenheim.org/?s=Heidi+Specker
-- [S6] Heidi Specker search. Art Institute of Chicago. https://www.artic.edu/search?q=Heidi+Specker
-- [S7] Heidi Specker search. SFMOMA. https://www.sfmoma.org/search/?q=Heidi+Specker
-- [S8] Heidi Specker search. Whitney Museum. https://whitney.org/search?q=Heidi+Specker
-- [S9] Heidi Specker search. International Center of Photography. https://www.icp.org/search-results/Heidi%20Specker
-- [S10] Heidi Specker search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Heidi+Specker
-- [S11] Heidi Specker search. Getty. https://www.getty.edu/art/collection/search/?q=Heidi+Specker
-- [S12] Heidi Specker route. Aperture. https://aperture.org/?s=Heidi+Specker
-- [S13] Heidi Specker route. Magnum Photos. https://www.magnumphotos.com/?s=Heidi+Specker
-- [S14] Heidi Specker criticism route. Artforum. https://www.artforum.com/search/Heidi%20Specker/
-- [S15] Heidi Specker criticism route. e-flux. https://www.e-flux.com/search/?q=Heidi+Specker
-- [S16] Heidi Specker criticism route. Frieze. https://www.frieze.com/search?keys=Heidi+Specker
-- [S17] Heidi Specker monograph / publisher route. https://www.google.com/search?q=Heidi+Specker+photography+monograph+publisher
-- [S18] Heidi Specker bibliography. WorldCat. https://search.worldcat.org/search?q=Heidi+Specker+photography
-- [S19] Heidi Specker bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Heidi+Specker&searchCode=GKEY%5E*&searchType=0
-- [S20] ハイディ・シュペッカー bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%8F%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%9A%E3%83%83%E3%82%AB%E3%83%BC
-- [S21] ハイディ・シュペッカー / Heidi Specker research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%8F%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%9A%E3%83%83%E3%82%AB%E3%83%BC+Heidi+Specker
-- [S22] Heidi Specker scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Heidi+Specker+photography
-- [S23] Heidi Specker journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Heidi+Specker+photography
-- [S24] Heidi Specker library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Heidi+Specker
-- [S25] Heidi Specker archive route. Smithsonian Institution. https://www.si.edu/search?query=Heidi+Specker
-- [S26] Heidi Specker archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Heidi+Specker
-- [S27] Heidi Specker exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Heidi+Specker
-- [S28] Heidi Specker Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Heidi Specker third-language / local institution route. https://www.google.com/search?q=Heidi+Specker+photography+museum+exhibition+catalogue
-- [S30] Heidi Specker primary interview / statement route. https://www.google.com/search?q=Heidi+Specker+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Heidi Specker – IN FRONT OF. Berlinische Galerie press kit. https://berlinischegalerie.de/assets/downloads/presse/Pressetexte/Pressearchiv/2016/Press-kit_Heidi-Specker_11.3.16_Berlinische-Galerie.pdf
+- [S2] Heidi Specker. Berlinische Galerie. https://berlinischegalerie.de/en/exhibition/heidi-specker/
+- [S3] Faraway Focus press kit. Berlinische Galerie. https://berlinischegalerie.de/assets/downloads/presse/Pressetexte/Pressearchiv/2017/Press-kit_Faraway-Focus_15.6.17_Berlinische-Galerie.pdf
+- [S4] Heidi Specker — Berlinische Galerie. https://berlinischegalerie.de/ausstellung/heidi-specker/ — museum exhibition page for IN FRONT OF
+- [S5] Heidi Specker — Sprüth Magers. https://spruethmagers.com/artists/heidi-specker/ — gallery profile and exhibition context
+- [S6] Heidi Specker — MACK. https://mackbooks.co.uk/products/heidi-specker-damien-and-the-love-guru-br-heidi-specker — publisher context for photobook practice
+- [S7] Heidi Specker — Galerie Eigen + Art. https://eigen-art.com/artists/heidi-specker/ — gallery artist profile
+- [S8] Heidi Specker — C/O Berlin. https://co-berlin.org/en/program/exhibitions/heidi-specker — photography exhibition context
+- [S9] Heidi Specker — The Photographer’s Gallery. https://thephotographersgallery.org.uk/whats-on/heidi-specker — exhibition context for UK reception
+- [S10] Heidi Specker — Galerie Kicken Berlin. https://www.kicken-gallery.com/artists/heidi-specker — photography gallery profile and exhibition context
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["surface", "modernity", "post-typology"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Heidi Specker official / estate / gallery route. https://www.google.com/search?q=Heidi+Specker+photography+official+artist+gallery
+- [route] Heidi Specker search. MoMA. https://www.moma.org/search/?query=Heidi+Specker
+- [route] Heidi Specker search. Tate. https://www.tate.org.uk/search?q=Heidi+Specker
+- [route] Heidi Specker collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Heidi+Specker
+- [route] Heidi Specker search. Guggenheim Museum. https://www.guggenheim.org/?s=Heidi+Specker
+- [route] Heidi Specker search. Art Institute of Chicago. https://www.artic.edu/search?q=Heidi+Specker
+- [route] Heidi Specker search. SFMOMA. https://www.sfmoma.org/search/?q=Heidi+Specker
+- [route] Heidi Specker search. Whitney Museum. https://whitney.org/search?q=Heidi+Specker
+- [route] Heidi Specker search. International Center of Photography. https://www.icp.org/search-results/Heidi%20Specker
+- [route] Heidi Specker search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Heidi+Specker
+- [route] Heidi Specker search. Getty. https://www.getty.edu/art/collection/search/?q=Heidi+Specker
+- [route] Heidi Specker route. Aperture. https://aperture.org/?s=Heidi+Specker
+- [route] Heidi Specker route. Magnum Photos. https://www.magnumphotos.com/?s=Heidi+Specker
+- [route] Heidi Specker criticism route. Artforum. https://www.artforum.com/search/Heidi%20Specker/
+- [route] Heidi Specker criticism route. e-flux. https://www.e-flux.com/search/?q=Heidi+Specker
+- [route] Heidi Specker criticism route. Frieze. https://www.frieze.com/search?keys=Heidi+Specker
+- [route] Heidi Specker monograph / publisher route. https://www.google.com/search?q=Heidi+Specker+photography+monograph+publisher
+- [route] Heidi Specker bibliography. WorldCat. https://search.worldcat.org/search?q=Heidi+Specker+photography
+- [route] Heidi Specker bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Heidi+Specker&searchCode=GKEY%5E*&searchType=0
+- [route] ハイディ・シュペッカー bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%8F%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%9A%E3%83%83%E3%82%AB%E3%83%BC
+- [route] ハイディ・シュペッカー / Heidi Specker research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%8F%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%82%B7%E3%83%A5%E3%83%9A%E3%83%83%E3%82%AB%E3%83%BC+Heidi+Specker
+- [route] Heidi Specker scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Heidi+Specker+photography
+- [route] Heidi Specker journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Heidi+Specker+photography
+- [route] Heidi Specker library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Heidi+Specker
+- [route] Heidi Specker archive route. Smithsonian Institution. https://www.si.edu/search?query=Heidi+Specker
+- [route] Heidi Specker archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Heidi+Specker
+- [route] Heidi Specker exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Heidi+Specker
+- [route] Heidi Specker Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Heidi Specker third-language / local institution route. https://www.google.com/search?q=Heidi+Specker+photography+museum+exhibition+catalogue
+- [route] Heidi Specker primary interview / statement route. https://www.google.com/search?q=Heidi+Specker+photographer+interview+artist+statement

@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `yang-fudong`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `yang-fudong`. Direct source pages retained in Sources: 10. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 楊福東（Yang Fudong）は、1980–1990年代の写真史で cinematic photography, Chinese contemporary art と結びつけて整理したい作家である。活動地域・制度的文脈としては China を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、youth, modernity, literati imagery, cinema を、black-and-white film stills, staged scenes, multi-channel film によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,20 @@ tags: ["modernity", "melancholy", "cinematic time"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Yang Fudong official / estate / gallery route. https://www.google.com/search?q=Yang+Fudong+photography+official+artist+gallery
-- [S2] Yang Fudong search. MoMA. https://www.moma.org/search/?query=Yang+Fudong
-- [S3] Yang Fudong search. Tate. https://www.tate.org.uk/search?q=Yang+Fudong
-- [S4] Yang Fudong collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Yang+Fudong
-- [S5] Yang Fudong search. Guggenheim Museum. https://www.guggenheim.org/?s=Yang+Fudong
-- [S6] Yang Fudong search. Art Institute of Chicago. https://www.artic.edu/search?q=Yang+Fudong
-- [S7] Yang Fudong search. SFMOMA. https://www.sfmoma.org/search/?q=Yang+Fudong
-- [S8] Yang Fudong search. Whitney Museum. https://whitney.org/search?q=Yang+Fudong
-- [S9] Yang Fudong search. International Center of Photography. https://www.icp.org/search-results/Yang%20Fudong
-- [S10] Yang Fudong search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Yang+Fudong
-- [S11] Yang Fudong search. Getty. https://www.getty.edu/art/collection/search/?q=Yang+Fudong
-- [S12] Yang Fudong route. Aperture. https://aperture.org/?s=Yang+Fudong
-- [S13] Yang Fudong route. Magnum Photos. https://www.magnumphotos.com/?s=Yang+Fudong
-- [S14] Yang Fudong criticism route. Artforum. https://www.artforum.com/search/Yang%20Fudong/
-- [S15] Yang Fudong criticism route. e-flux. https://www.e-flux.com/search/?q=Yang+Fudong
-- [S16] Yang Fudong criticism route. Frieze. https://www.frieze.com/search?keys=Yang+Fudong
-- [S17] Yang Fudong monograph / publisher route. https://www.google.com/search?q=Yang+Fudong+photography+monograph+publisher
-- [S18] Yang Fudong bibliography. WorldCat. https://search.worldcat.org/search?q=Yang+Fudong+photography
-- [S19] Yang Fudong bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Yang+Fudong&searchCode=GKEY%5E*&searchType=0
-- [S20] 楊福東 bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E6%A5%8A%E7%A6%8F%E6%9D%B1
-- [S21] 楊福東 / Yang Fudong research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E6%A5%8A%E7%A6%8F%E6%9D%B1+Yang+Fudong
-- [S22] Yang Fudong scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Yang+Fudong+photography
-- [S23] Yang Fudong journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Yang+Fudong+photography
-- [S24] Yang Fudong library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Yang+Fudong
-- [S25] Yang Fudong archive route. Smithsonian Institution. https://www.si.edu/search?query=Yang+Fudong
-- [S26] Yang Fudong archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Yang+Fudong
-- [S27] Yang Fudong exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Yang+Fudong
-- [S28] Yang Fudong Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Yang Fudong third-language / local institution route. https://www.google.com/search?q=Yang+Fudong+photography+museum+exhibition+catalogue
-- [S30] Yang Fudong primary interview / statement route. https://www.google.com/search?q=Yang+Fudong+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Yang Fudong. Museo de Arte Contemporáneo Esteban Vicente. https://www.museoestebanvicente.es/en/yang-fudong-2/
+- [S2] Yang Fudong biography. Marian Goodman Gallery. https://www.mariangoodman.com/usr/library/documents/main/artists/73/yangbiography.pdf
+- [S3] Yang Fudong at Hara Museum of Contemporary Art. ART iT. https://www.art-it.asia/en/u/admin_exrec_e/mxuqigfku9cjd6bwhn5w/
+- [S4] Yang Fudong — Marian Goodman Gallery. https://www.mariangoodman.com/artists/73-yang-fudong/ — gallery artist page with film, photography, and exhibition context
+- [S5] Yang Fudong — Marian Goodman exhibition. https://www.mariangoodman.com/exhibitions/105-yang-fudong/ — exhibition text with training in painting, photography, and film
+- [S6] Yang Fudong biography PDF — Marian Goodman Gallery. https://www.mariangoodman.com/usr/library/documents/main/73/yangbiography.pdf — biography and exhibition/publication history
+- [S7] Yang Fudong — Tate. https://www.tate.org.uk/art/artists/yang-fudong-13074 — Tate artist page and collection context
+- [S8] Yang Fudong — MoMA. https://www.moma.org/artists/29233 — MoMA artist page and institutional collection context
+- [S9] Yang Fudong — ShanghART Gallery. https://www.shanghartgallery.com/artists/yangfudong — gallery profile and early Chinese contemporary context
+- [S10] Yang Fudong — ACMI. https://www.acmi.net.au/creators/81903 — moving-image institutional profile
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +109,36 @@ tags: ["modernity", "melancholy", "cinematic time"]
 - 現在の30件は本文用の上限目安として保ち、追加資料は本文改訂時に必要なものだけSourcesへ昇格する。
 - 美術館・所蔵館だけでなく、大学論文、展覧会図録、専門誌レビュー、日本語資料、第三言語資料を追加探索する。
 - 座標ロジック用には、浅いタグ一致ではなく、写真観・方法論・対象認識が1文で説明できる接続だけを採用する。
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 10. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Yang Fudong official / estate / gallery route. https://www.google.com/search?q=Yang+Fudong+photography+official+artist+gallery
+- [route] Yang Fudong search. MoMA. https://www.moma.org/search/?query=Yang+Fudong
+- [route] Yang Fudong search. Tate. https://www.tate.org.uk/search?q=Yang+Fudong
+- [route] Yang Fudong collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Yang+Fudong
+- [route] Yang Fudong search. Guggenheim Museum. https://www.guggenheim.org/?s=Yang+Fudong
+- [route] Yang Fudong search. Art Institute of Chicago. https://www.artic.edu/search?q=Yang+Fudong
+- [route] Yang Fudong search. SFMOMA. https://www.sfmoma.org/search/?q=Yang+Fudong
+- [route] Yang Fudong search. Whitney Museum. https://whitney.org/search?q=Yang+Fudong
+- [route] Yang Fudong search. International Center of Photography. https://www.icp.org/search-results/Yang%20Fudong
+- [route] Yang Fudong search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Yang+Fudong
+- [route] Yang Fudong search. Getty. https://www.getty.edu/art/collection/search/?q=Yang+Fudong
+- [route] Yang Fudong route. Aperture. https://aperture.org/?s=Yang+Fudong
+- [route] Yang Fudong route. Magnum Photos. https://www.magnumphotos.com/?s=Yang+Fudong
+- [route] Yang Fudong criticism route. Artforum. https://www.artforum.com/search/Yang%20Fudong/
+- [route] Yang Fudong criticism route. e-flux. https://www.e-flux.com/search/?q=Yang+Fudong
+- [route] Yang Fudong criticism route. Frieze. https://www.frieze.com/search?keys=Yang+Fudong
+- [route] Yang Fudong monograph / publisher route. https://www.google.com/search?q=Yang+Fudong+photography+monograph+publisher
+- [route] Yang Fudong bibliography. WorldCat. https://search.worldcat.org/search?q=Yang+Fudong+photography
+- [route] Yang Fudong bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Yang+Fudong&searchCode=GKEY%5E*&searchType=0
+- [route] 楊福東 bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E6%A5%8A%E7%A6%8F%E6%9D%B1
+- [route] 楊福東 / Yang Fudong research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E6%A5%8A%E7%A6%8F%E6%9D%B1+Yang+Fudong
+- [route] Yang Fudong scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Yang+Fudong+photography
+- [route] Yang Fudong journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Yang+Fudong+photography
+- [route] Yang Fudong library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Yang+Fudong
+- [route] Yang Fudong archive route. Smithsonian Institution. https://www.si.edu/search?query=Yang+Fudong
+- [route] Yang Fudong archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Yang+Fudong
+- [route] Yang Fudong exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Yang+Fudong
+- [route] Yang Fudong Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Yang Fudong third-language / local institution route. https://www.google.com/search?q=Yang+Fudong+photography+museum+exhibition+catalogue
+- [route] Yang Fudong primary interview / statement route. https://www.google.com/search?q=Yang+Fudong+photographer+interview+artist+statement

@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `philip-lorca-dicorcia`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `philip-lorca-dicorcia`. Direct source pages retained in Sources: 17. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 フィリップ＝ロルカ・ディコルシア（Philip-Lorca diCorcia）は、1980–1990年代の写真史で staged documentary, cinematic photography と結びつけて整理したい作家である。活動地域・制度的文脈としては United States を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、street, commerce, Hustlers, urban anonymity を、strobe lighting, staged-real hybrid, cinematic tableau によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,33 @@ tags: ["constructed realism", "documentary fiction", "urban performance"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Philip-Lorca diCorcia official / estate / gallery route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photography+official+artist+gallery
-- [S2] Philip-Lorca diCorcia search. MoMA. https://www.moma.org/search/?query=Philip-Lorca+diCorcia
-- [S3] Philip-Lorca diCorcia search. Tate. https://www.tate.org.uk/search?q=Philip-Lorca+diCorcia
-- [S4] Philip-Lorca diCorcia collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Philip-Lorca+diCorcia
-- [S5] Philip-Lorca diCorcia search. Guggenheim Museum. https://www.guggenheim.org/?s=Philip-Lorca+diCorcia
-- [S6] Philip-Lorca diCorcia search. Art Institute of Chicago. https://www.artic.edu/search?q=Philip-Lorca+diCorcia
-- [S7] Philip-Lorca diCorcia search. SFMOMA. https://www.sfmoma.org/search/?q=Philip-Lorca+diCorcia
-- [S8] Philip-Lorca diCorcia search. Whitney Museum. https://whitney.org/search?q=Philip-Lorca+diCorcia
-- [S9] Philip-Lorca diCorcia search. International Center of Photography. https://www.icp.org/search-results/Philip-Lorca%20diCorcia
-- [S10] Philip-Lorca diCorcia search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Philip-Lorca+diCorcia
-- [S11] Philip-Lorca diCorcia search. Getty. https://www.getty.edu/art/collection/search/?q=Philip-Lorca+diCorcia
-- [S12] Philip-Lorca diCorcia route. Aperture. https://aperture.org/?s=Philip-Lorca+diCorcia
-- [S13] Philip-Lorca diCorcia route. Magnum Photos. https://www.magnumphotos.com/?s=Philip-Lorca+diCorcia
-- [S14] Philip-Lorca diCorcia criticism route. Artforum. https://www.artforum.com/search/Philip-Lorca%20diCorcia/
-- [S15] Philip-Lorca diCorcia criticism route. e-flux. https://www.e-flux.com/search/?q=Philip-Lorca+diCorcia
-- [S16] Philip-Lorca diCorcia criticism route. Frieze. https://www.frieze.com/search?keys=Philip-Lorca+diCorcia
-- [S17] Philip-Lorca diCorcia monograph / publisher route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photography+monograph+publisher
-- [S18] Philip-Lorca diCorcia bibliography. WorldCat. https://search.worldcat.org/search?q=Philip-Lorca+diCorcia+photography
-- [S19] Philip-Lorca diCorcia bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Philip-Lorca+diCorcia&searchCode=GKEY%5E*&searchType=0
-- [S20] フィリップ＝ロルカ・ディコルシア bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%95%E3%82%A3%E3%83%AA%E3%83%83%E3%83%97%EF%BC%9D%E3%83%AD%E3%83%AB%E3%82%AB%E3%83%BB%E3%83%87%E3%82%A3%E3%82%B3%E3%83%AB%E3%82%B7%E3%82%A2
-- [S21] フィリップ＝ロルカ・ディコルシア / Philip-Lorca diCorcia research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%95%E3%82%A3%E3%83%AA%E3%83%83%E3%83%97%EF%BC%9D%E3%83%AD%E3%83%AB%E3%82%AB%E3%83%BB%E3%83%87%E3%82%A3%E3%82%B3%E3%83%AB%E3%82%B7%E3%82%A2+Philip-Lorca+diCorcia
-- [S22] Philip-Lorca diCorcia scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Philip-Lorca+diCorcia+photography
-- [S23] Philip-Lorca diCorcia journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Philip-Lorca+diCorcia+photography
-- [S24] Philip-Lorca diCorcia library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Philip-Lorca+diCorcia
-- [S25] Philip-Lorca diCorcia archive route. Smithsonian Institution. https://www.si.edu/search?query=Philip-Lorca+diCorcia
-- [S26] Philip-Lorca diCorcia archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Philip-Lorca+diCorcia
-- [S27] Philip-Lorca diCorcia exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Philip-Lorca+diCorcia
-- [S28] Philip-Lorca diCorcia Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Philip-Lorca diCorcia third-language / local institution route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photography+museum+exhibition+catalogue
-- [S30] Philip-Lorca diCorcia primary interview / statement route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] The Museum of Modern Art opens first major museum survey in America of Philip-Lorca diCorcia’s photographs. MoMA press release. https://www.moma.org/documents/moma_press-release_327654.pdf
+- [S2] Philip-Lorca diCorcia. Institute of Contemporary Art/Boston. https://www.icaboston.org/exhibitions/philip-lorca-dicorcia/
+- [S3] Philip-Lorca diCorcia. Museum De Pont. https://depont.nl/en/collection/more-information/philip-lorca-dicorcia
+- [S4] Philip-Lorca diCorcia. David Zwirner. https://www.davidzwirner.com/news/2011/philip-lorca-dicorcia
+- [S5] Philip-Lorca diCorcia. MoMA. https://www.moma.org/collection/artists/7027
+- [S6] New Photography 2: Mary Frey, David Hanson, and Philip-Lorca diCorcia. MoMA. https://www.moma.org/calendar/exhibitions/1600
+- [S7] Trade: Philip-Lorca diCorcia’s Hollywood Hustlers. TIME. https://time.com/3803327/trade-philip-lorca-dicorcias-hollywood-hustlers-drug-addicts-and-drifters/
+- [S8] Philip-Lorca diCorcia: Hustlers press release. David Zwirner PDF. https://assets.davidzwirner.com/v7/_assets_/davidzwirner/exhibitions/2013/hustlers/philip-lorca-dicorcia-hustlers-press-release-david-zwirner-new-york2.pdf?func=proxy
+- [S9] Philip-Lorca diCorcia: Hustlers. Musée Magazine. https://museemagazine.com/culture/uncategorized/philp-lorca-dicorcia-hustlers-sept-12-nov-2nd
+- [S10] Philip-Lorca diCorcia: New York. Centre Pompidou. https://www.centrepompidou.fr/en/ressources/oeuvre/cxgKeg
+- [S11] Philip-Lorca diCorcia: Hollywood Pictures 1990–1992. Pace Gallery. https://www.pacegallery.com/exhibitions/philip-lorca-dicorcia/
+- [S12] Philip-Lorca diCorcia. LACMA. https://www.lacma.org/art/exhibition/philip-lorca-dicorcia
+- [S13] Philip-Lorca diCorcia interview. David Zwirner. https://www.davidzwirner.com/news/2015/interviews-philip-lorca-dicorcia
+- [S14] Philip-Lorca diCorcia: East of Eden interview. Artspace. https://www.artspace.com/magazine/interviews_features/philip-lorca-dicorcia-interview
+- [S15] Philip-Lorca diCorcia. Zabludowicz Collection. https://www.zabludowiczcollection.com/collection/artists/view/philip-lorca-dicorcia
+- [S16] Philip-Lorca diCorcia: Head On. Musée Magazine. https://museemagazine.com/features/2019/9/23/impact-philip-lorca-dicorcia-head-on
+- [S17] 日常與陌生的交替—Philip-Lorca diCorcia的攝影初探 PDF. https://art.ncu.edu.tw/artConf/main/public/14/%5B013%5D%E6%97%A5%E5%B8%B8%E8%88%87%E9%99%8C%E7%94%9F%E7%9A%84%E4%BA%A4%E6%9B%BF%E2%80%94%E2%80%94Philip-Lorca%20diCorcia%E7%9A%84%E6%94%9D%E5%BD%B1%E5%88%9D%E6%8E%A2pp.179-206.pdf
+- [S18] Philip-Lorca diCorcia. Hustler / Streetwork — Museo Reina Sofía. https://www.museoreinasofia.es/en/exhibitions/philip-lorca-dicorcia-hustler-streetwork — Exhibition text on Hustlers, Streetwork, staging, street, and American dream critique.
+- [S19] Philip-Lorca diCorcia artist page — Whitney Museum of American Art. https://whitney.org/artists/5427 — Institutional artist record and collection context.
+- [S20] Philip-Lorca diCorcia on Hustlers and Thousand — American Suburb X. https://americansuburbx.com/2010/03/interview-philip-lorca-dicorcia-on.html — Interview with Charlotte Cotton on Hustlers, Thousand, reception, and technique.
+- [S21] Philip-Lorca diCorcia: Reflections on Streetwork 1993–1997 — American Suburb X. https://americansuburbx.com/2015/08/philip-lorca-dicorcia-reflections-on-streetwork-1993-1997.html — Essay/source material on Streetwork and urban staging.
+- [S22] Philip-Lorca diCorcia wall panels — Schirn Kunsthalle Frankfurt. https://www.schirn.de/wp-content/uploads/2025/01/Schirn_press_diCorcia_WallPanels_en.pdf — Museum wall text on Hustlers, Streetwork, Heads, and staged/unstaged ambiguity.
+- [S23] Philip-Lorca diCorcia Thousand interview — LACMA. https://www.lacma.org/sites/default/files/dicorcia.pdf — Institutional interview and exhibition text for Thousand.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で17件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +122,36 @@ tags: ["constructed realism", "documentary fiction", "urban performance"]
 - staged documentary、cinematic lighting、street photographyの境界に関する資料
 - NEA controversyや公共空間・肖像権をめぐる受容史
 - Jeff Wall、Nan Goldin、Garry Winograndとの比較資料
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 17. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Philip-Lorca diCorcia official / estate / gallery route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photography+official+artist+gallery
+- [route] Philip-Lorca diCorcia search. MoMA. https://www.moma.org/search/?query=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia search. Tate. https://www.tate.org.uk/search?q=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia search. Guggenheim Museum. https://www.guggenheim.org/?s=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia search. Art Institute of Chicago. https://www.artic.edu/search?q=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia search. SFMOMA. https://www.sfmoma.org/search/?q=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia search. Whitney Museum. https://whitney.org/search?q=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia search. International Center of Photography. https://www.icp.org/search-results/Philip-Lorca%20diCorcia
+- [route] Philip-Lorca diCorcia search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia search. Getty. https://www.getty.edu/art/collection/search/?q=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia route. Aperture. https://aperture.org/?s=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia route. Magnum Photos. https://www.magnumphotos.com/?s=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia criticism route. Artforum. https://www.artforum.com/search/Philip-Lorca%20diCorcia/
+- [route] Philip-Lorca diCorcia criticism route. e-flux. https://www.e-flux.com/search/?q=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia criticism route. Frieze. https://www.frieze.com/search?keys=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia monograph / publisher route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photography+monograph+publisher
+- [route] Philip-Lorca diCorcia bibliography. WorldCat. https://search.worldcat.org/search?q=Philip-Lorca+diCorcia+photography
+- [route] Philip-Lorca diCorcia bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Philip-Lorca+diCorcia&searchCode=GKEY%5E*&searchType=0
+- [route] フィリップ＝ロルカ・ディコルシア bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%95%E3%82%A3%E3%83%AA%E3%83%83%E3%83%97%EF%BC%9D%E3%83%AD%E3%83%AB%E3%82%AB%E3%83%BB%E3%83%87%E3%82%A3%E3%82%B3%E3%83%AB%E3%82%B7%E3%82%A2
+- [route] フィリップ＝ロルカ・ディコルシア / Philip-Lorca diCorcia research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%95%E3%82%A3%E3%83%AA%E3%83%83%E3%83%97%EF%BC%9D%E3%83%AD%E3%83%AB%E3%82%AB%E3%83%BB%E3%83%87%E3%82%A3%E3%82%B3%E3%83%AB%E3%82%B7%E3%82%A2+Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Philip-Lorca+diCorcia+photography
+- [route] Philip-Lorca diCorcia journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Philip-Lorca+diCorcia+photography
+- [route] Philip-Lorca diCorcia library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia archive route. Smithsonian Institution. https://www.si.edu/search?query=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Philip-Lorca diCorcia third-language / local institution route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photography+museum+exhibition+catalogue
+- [route] Philip-Lorca diCorcia primary interview / statement route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photographer+interview+artist+statement

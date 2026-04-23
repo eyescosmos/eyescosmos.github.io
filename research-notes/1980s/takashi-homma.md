@@ -32,7 +32,7 @@
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
-> Site id / slug reference: `takashi-homma`. Formal source candidates and research routes in this addendum: 30.
+> Site id / slug reference: `takashi-homma`. Direct source pages retained in Sources: 16. Search, catalog, and database routes are separated under Additional exploration routes.
 
 ### 8.1 本文改訂で強める論点
 ホンマタカシ（Takashi Homma）は、1980–1990年代の写真史で New Tokyo photography, Japanese contemporary photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Japan を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、suburbs, Tokyo, architecture, children を、neutral color, book sequencing, architectural observation によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
@@ -88,40 +88,32 @@ tags: ["suburban modernity", "anti-drama", "everyday landscape"]
 - 美術館・所蔵館の解説文は、代表作や受容史を支える根拠として使い、長く引用しすぎない。
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
-### 8.4 Sources and research routes
-- [S1] Takashi Homma official / estate / gallery route. https://www.google.com/search?q=Takashi+Homma+photography+official+artist+gallery
-- [S2] Takashi Homma search. MoMA. https://www.moma.org/search/?query=Takashi+Homma
-- [S3] Takashi Homma search. Tate. https://www.tate.org.uk/search?q=Takashi+Homma
-- [S4] Takashi Homma collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Takashi+Homma
-- [S5] Takashi Homma search. Guggenheim Museum. https://www.guggenheim.org/?s=Takashi+Homma
-- [S6] Takashi Homma search. Art Institute of Chicago. https://www.artic.edu/search?q=Takashi+Homma
-- [S7] Takashi Homma search. SFMOMA. https://www.sfmoma.org/search/?q=Takashi+Homma
-- [S8] Takashi Homma search. Whitney Museum. https://whitney.org/search?q=Takashi+Homma
-- [S9] Takashi Homma search. International Center of Photography. https://www.icp.org/search-results/Takashi%20Homma
-- [S10] Takashi Homma search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Takashi+Homma
-- [S11] Takashi Homma search. Getty. https://www.getty.edu/art/collection/search/?q=Takashi+Homma
-- [S12] Takashi Homma route. Aperture. https://aperture.org/?s=Takashi+Homma
-- [S13] Takashi Homma route. Magnum Photos. https://www.magnumphotos.com/?s=Takashi+Homma
-- [S14] Takashi Homma criticism route. Artforum. https://www.artforum.com/search/Takashi%20Homma/
-- [S15] Takashi Homma criticism route. e-flux. https://www.e-flux.com/search/?q=Takashi+Homma
-- [S16] Takashi Homma criticism route. Frieze. https://www.frieze.com/search?keys=Takashi+Homma
-- [S17] Takashi Homma monograph / publisher route. https://www.google.com/search?q=Takashi+Homma+photography+monograph+publisher
-- [S18] Takashi Homma bibliography. WorldCat. https://search.worldcat.org/search?q=Takashi+Homma+photography
-- [S19] Takashi Homma bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Takashi+Homma&searchCode=GKEY%5E*&searchType=0
-- [S20] ホンマタカシ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%9B%E3%83%B3%E3%83%9E%E3%82%BF%E3%82%AB%E3%82%B7
-- [S21] ホンマタカシ / Takashi Homma research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%9B%E3%83%B3%E3%83%9E%E3%82%BF%E3%82%AB%E3%82%B7+Takashi+Homma
-- [S22] Takashi Homma scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Takashi+Homma+photography
-- [S23] Takashi Homma journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Takashi+Homma+photography
-- [S24] Takashi Homma library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Takashi+Homma
-- [S25] Takashi Homma archive route. Smithsonian Institution. https://www.si.edu/search?query=Takashi+Homma
-- [S26] Takashi Homma archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Takashi+Homma
-- [S27] Takashi Homma exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Takashi+Homma
-- [S28] Takashi Homma Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
-- [S29] Takashi Homma third-language / local institution route. https://www.google.com/search?q=Takashi+Homma+photography+museum+exhibition+catalogue
-- [S30] Takashi Homma primary interview / statement route. https://www.google.com/search?q=Takashi+Homma+photographer+interview+artist+statement
+### 8.4 Sources (direct pages only)
+- [S1] Homma Camera. MU Hybrid Art House. https://old.mu.nl/en/exhibitions/homma-camera
+- [S2] Takashi Homma. Nonaka-Hill biography. https://www.nonaka-hill.com/usr/library/documents/main/artists/162/takashi-homma_biography-1-.pdf
+- [S3] 即興 ホンマタカシ Revolution 9: Homma Takashi. Tokyo Photographic Art Museum press release. https://topmuseum.jp/upload/2/4713/pressrelease_HOMMA_1005.pdf
+- [S4] Takashi Homma’s Tokyo Obscura. Aperture. https://aperture.org/editorial/magazine-takashi-hommas-tokyo-obscura/
+- [S5] Takashi Homma: Tokyo. Aperture. https://aperture.org/never-on-sale/tokyo/
+- [S6] Takashi Homma: New Documentary. Aperture archive. https://issues.aperture.org/article/2011/3/3/takashi-homma-new-documentary
+- [S7] Takashi Homma exhibition press release. Tokyo Photographic Art Museum PDF. https://topmuseum.jp/upload/2/4713/e_pressrelease_HOMMA_1005.pdf
+- [S8] Takashi Homma on Capturing the City and Fashion of Tokyo. TOKION. https://tokion.jp/en/2022/07/23/interview-takashi-honma-self-07/
+- [S9] Takashi Homma Wants You to Be Seeing Itself. SSENSE. https://www.ssense.com/en-mx/editorial/art/takashi-homma-interview-17
+- [S10] Takashi Homma Wants You to Be Seeing Itself. SSENSE. https://www.ssense.com/en-pr/editorial/art/takashi-homma-interview-17
+- [S11] Takashi Homma. Aperture Summer 2015. https://archive.aperture.org/article/2015/02/02/takashi-homma
+- [S12] HOMMA Takashi. PHOTOGUIDE.JP. https://photoguide.jp/txt/HOMMA_Takashi
+- [S13] Takashi Homma in 2025. Artful Japan. https://artfuljapan.com/news/article/01KETKW7KS75BE3D3DW8EJRC5R/
+- [S14] Takashi Homma: I Am Interested in the Space Between Reality and Fiction. AnOther. https://www.anothermag.com/fashion-beauty/16985/takashi-homma-loro-piana-spring-summer-2026-another-magazine
+- [S15] Portrait of J by Takashi Homma. Session Press. https://www.sessionpress.com/books/portrait-of-j-by-takashi-homma
+- [S16] Takashi Homma photographs Tokyo’s resilient young queer community. i-D. https://i-d.co/article/takashi-homma-lgbtq-tokyo/
+- [S17] Takashi Homma – Tokyo Suburbia — Fotomuseum Winterthur. https://www.fotomuseum.ch/en/exhibitions-post/takashi-homma-tokyo-suburbia/ — Urs Stahel exhibition text on apparent lightness, suburbia, and contemporary society.
+- [S18] Takashi Homma: The Narcissistic City — FANTOM. https://www.fantomprojects.org/takashi-homma-the-narcissistic-city-mack/ — Book/exhibition text on camera obscura, city fragments, and urban unconscious.
+- [S19] Thirty-Six Views of Mount Fuji — MACK. https://www.mackbooks.us/products/thirty-six-views-of-mount-fuji-br-takashi-homma — Publisher text on Homma’s contemporary reworking of Mount Fuji representation.
+- [S20] Takashi Homma: Revolution No.9 / Camera Obscura Studies — Nonaka-Hill. https://www.nonaka-hill.com/exhibitions/64-takashi-homma-revolution-no.9-camera-obscura-studies/ — Gallery text on camera obscura, Tokyo Suburbia, documentary/expression, and photo-book practice.
+- [S21] Takashi Homma press release/checklist — Nonaka-Hill. https://www.nonaka-hill.com/usr/documents/exhibitions/press_release_url/64/takhom_pr_checklist.pdf — Press release PDF with exhibition framing and biography.
+- [S22] Tokyo Suburbia — Micamera. https://www.micamera.com/prodotto/tokyo-suburbia-takashi-homma/ — Italian photobook specialist text on Tokyo Suburbia and its photobook-history reception.
 
 ### 8.5 出典探索メモ / Source exploration memo
-出典候補・探索ルートは30件。美術館・所蔵館、写真専門機関、出版社、ギャラリー、図書館、学術検索、日本語資料、第三言語圏の入口を混ぜた。今回の補強では、実読済みの確定引用だけでなく、Claude Codeが本文改訂時に開いて確認できる探索ルートも含めている。情報量の多い作家は、次段階で展覧会図録、本人インタビュー、写真集序文、同時代レビューを優先的に読み込み、本文注記には実際に確認した資料だけを残す。情報が少ない作家は、ギャラリーCV、地域美術館、図書館目録、CiNii/NDL、第三言語検索を継続して、薄い一般論で終わらせない。
+このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で16件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
 
 ## 9. 追加探索先 / Additional exploration routes
 > 本文用Sourcesは30件前後に保つ。ここは40〜50件へ膨らませるための欄ではなく、Claude Codeが必要な作家だけ深掘りするための追加候補として扱う。実読して本文に使う資料だけ、後でSourcesへ昇格する。
@@ -129,3 +121,36 @@ tags: ["suburban modernity", "anti-drama", "everyday landscape"]
 - 日本の1990年代写真、雑誌、ファッション、都市文化との接続資料
 - ホンマ本人のインタビュー、日本語図録、TOP Museum関連資料
 - 川内倫子、畠山直哉、安村崇との比較資料
+
+### 移動した探索導線 / Moved search and catalog routes
+- Direct source count currently retained: 16. Target for sparse artists: 10–15 direct pages; target for source-rich artists: around 30 direct pages.
+- [route] Takashi Homma official / estate / gallery route. https://www.google.com/search?q=Takashi+Homma+photography+official+artist+gallery
+- [route] Takashi Homma search. MoMA. https://www.moma.org/search/?query=Takashi+Homma
+- [route] Takashi Homma search. Tate. https://www.tate.org.uk/search?q=Takashi+Homma
+- [route] Takashi Homma collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Takashi+Homma
+- [route] Takashi Homma search. Guggenheim Museum. https://www.guggenheim.org/?s=Takashi+Homma
+- [route] Takashi Homma search. Art Institute of Chicago. https://www.artic.edu/search?q=Takashi+Homma
+- [route] Takashi Homma search. SFMOMA. https://www.sfmoma.org/search/?q=Takashi+Homma
+- [route] Takashi Homma search. Whitney Museum. https://whitney.org/search?q=Takashi+Homma
+- [route] Takashi Homma search. International Center of Photography. https://www.icp.org/search-results/Takashi%20Homma
+- [route] Takashi Homma search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Takashi+Homma
+- [route] Takashi Homma search. Getty. https://www.getty.edu/art/collection/search/?q=Takashi+Homma
+- [route] Takashi Homma route. Aperture. https://aperture.org/?s=Takashi+Homma
+- [route] Takashi Homma route. Magnum Photos. https://www.magnumphotos.com/?s=Takashi+Homma
+- [route] Takashi Homma criticism route. Artforum. https://www.artforum.com/search/Takashi%20Homma/
+- [route] Takashi Homma criticism route. e-flux. https://www.e-flux.com/search/?q=Takashi+Homma
+- [route] Takashi Homma criticism route. Frieze. https://www.frieze.com/search?keys=Takashi+Homma
+- [route] Takashi Homma monograph / publisher route. https://www.google.com/search?q=Takashi+Homma+photography+monograph+publisher
+- [route] Takashi Homma bibliography. WorldCat. https://search.worldcat.org/search?q=Takashi+Homma+photography
+- [route] Takashi Homma bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Takashi+Homma&searchCode=GKEY%5E*&searchType=0
+- [route] ホンマタカシ bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E3%83%9B%E3%83%B3%E3%83%9E%E3%82%BF%E3%82%AB%E3%82%B7
+- [route] ホンマタカシ / Takashi Homma research route. CiNii Research. https://cir.nii.ac.jp/all?q=%E3%83%9B%E3%83%B3%E3%83%9E%E3%82%BF%E3%82%AB%E3%82%B7+Takashi+Homma
+- [route] Takashi Homma scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Takashi+Homma+photography
+- [route] Takashi Homma journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Takashi+Homma+photography
+- [route] Takashi Homma library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Takashi+Homma
+- [route] Takashi Homma archive route. Smithsonian Institution. https://www.si.edu/search?query=Takashi+Homma
+- [route] Takashi Homma archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Takashi+Homma
+- [route] Takashi Homma exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Takashi+Homma
+- [route] Takashi Homma Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Takashi Homma third-language / local institution route. https://www.google.com/search?q=Takashi+Homma+photography+museum+exhibition+catalogue
+- [route] Takashi Homma primary interview / statement route. https://www.google.com/search?q=Takashi+Homma+photographer+interview+artist+statement
