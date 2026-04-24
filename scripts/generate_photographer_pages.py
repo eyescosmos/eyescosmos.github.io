@@ -98,7 +98,7 @@ SEO_TEXT_OVERRIDES = {
             "lead": "291ギャラリーと写真誌『カメラ・ワーク』を主宰し、写真を絵画と並ぶ芸術として美術館に送り込んだアメリカ近代写真の中核。「エクイヴァレンツ」では被写体ではなく形式そのものが内面を語ると主張し、抽象写真の理論的基盤を築いた。",
         },
         "en": {
-            "title": "Alfred Stieglitz: Pictorialism and American Photography | Photo Coordinates",
+            "title": "Alfred Stieglitz: Pictorialism | Photo Coordinates",
             "description": "Alfred Stieglitz connected Pictorialism, Photo-Secession, 291, Camera Work, and Equivalents to the institutional rise of modern photography in the United States.",
             "lead": "Alfred Stieglitz connected Pictorialism, Photo-Secession, 291, Camera Work, and Equivalents to the institutional rise of modern photography in the United States.",
         },
@@ -110,7 +110,7 @@ SEO_TEXT_OVERRIDES = {
             "lead": "48歳でカメラを持ち12年間に約900点を残したイギリスのヴィクトリア朝写真家。意図的なソフトフォーカスで被写体の内面を表出させ、写真を芸術として確立した先駆者として知られる。姪孫にヴァージニア・ウルフを持つ。",
         },
         "en": {
-            "title": "Julia Margaret Cameron | Victorian Photography Pioneer | Photo Coordinates",
+            "title": "Julia Margaret Cameron: Pictorialism | Photo Coordinates",
             "description": "A Victorian British photographer who picked up a camera at forty-eight and produced around 900 works over twelve years. A pioneer who used intentional soft focus to evoke the inner life of her subjects, establishing photography as a fine art. Virginia Woolf was her great-niece.",
             "lead": "A Victorian British photographer who picked up a camera at forty-eight and produced around 900 works over twelve years. A pioneer who used intentional soft focus to evoke the inner life of her subjects, establishing photography as a fine art. Virginia Woolf was her great-niece.",
         },
@@ -1242,21 +1242,19 @@ def build_title(photographer: dict, lang: str, era_lookup: dict, movements_meta:
         country = country_entry(photographer.get("nationality") or "").get("en") or ""
         country_adj = COUNTRY_ADJECTIVES_EN.get(country, country)
         candidates = []
-        if movement and country_adj:
-            candidates.append(f"{name_primary}: {movement} and {country_adj} Photography | {site}")
-            candidates.append(f"{name_primary}: {movement} in {country} | {site}")
         if movement:
-            candidates.append(f"{name_primary}: {movement} in Photography History | {site}")
             candidates.append(f"{name_primary}: {movement} | {site}")
+            candidates.append(f"{name_primary}: {movement} Photographer | {site}")
+        if movement and country_adj:
+            candidates.append(f"{name_primary}: {movement}, {country_adj} Photography | {site}")
         if country_adj:
             candidates.append(f"{name_primary} and {country_adj} Photography | {site}")
         role = extract_title_role(photographer, lang, era_lookup, movements_meta, enrichments)
         candidates.append(f"{name_primary}: {role} | {site}")
         for candidate in candidates:
-            if len(candidate) <= 78:
+            if len(candidate) <= 65:
                 return candidate
-        shorter = candidates[-2] if len(candidates) > 1 else candidates[-1]
-        return shorter if len(shorter) <= 90 else f"{name_primary} | {site}"
+        return f"{name_primary} | {site}"
 
     role = extract_title_role(photographer, lang, era_lookup, movements_meta, enrichments)
     base = f"{name_primary} | {role} | {site}"

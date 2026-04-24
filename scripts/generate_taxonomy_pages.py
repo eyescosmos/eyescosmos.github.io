@@ -745,10 +745,17 @@ def taxonomy_page_title(page_kind: str, label: str, lang: str, era_title: str = 
             return f"{label}｜表現｜写真史｜写真の座標｜Eyes Cosmos"
         return f"{label}｜写真家｜写真史｜写真の座標｜Eyes Cosmos"
     if page_kind == "era":
-        return f"{label}: {era_title or 'Photography History'} | Photo Coordinates"
+        title = f"{label}: {era_title or 'Photography History'} | Photo Coordinates"
+        if len(title) <= 65:
+            return title
+        short_era = re.split(r"[:;,]", era_title or "")[0].strip()
+        title = f"{label}: {short_era or 'Photo History'} | Photo Coordinates"
+        return title if len(title) <= 65 else f"{label} Photography History | Photo Coordinates"
     if page_kind == "country":
-        return f"{label} Photography and Photographers | Photo Coordinates"
-    return f"{label} in Photography History | Photo Coordinates"
+        return f"{label} Photographers | Photo Coordinates"
+    if label.lower().endswith("photography"):
+        return f"{label} | Photo Coordinates"
+    return f"{label} Photography | Photo Coordinates"
 
 
 def taxonomy_meta_description(page_kind: str, label: str, lang: str, era_title: str = "") -> str:
