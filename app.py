@@ -1325,12 +1325,14 @@ async def preview(file_id: str, which: str = "current"):
 
 
 @app.get("/diff-overlay/{file_id}")
-async def diff_overlay(file_id: str, full: bool = False, fmt: str = "png", font_size: Optional[int] = None, flat_var: Optional[int] = None, custom_text: Optional[str] = None, text_color: Optional[str] = None):
+async def diff_overlay(file_id: str, full: bool = False, fmt: str = "png", font_size: Optional[int] = None, flat_var: Optional[int] = None, custom_text: Optional[str] = None, text_color: Optional[str] = None, line_height: Optional[int] = None, letter_spacing: Optional[int] = None):
     """Return destroyed image with original RGB values (or custom text) overlaid on changed areas.
     full=True → process at full resolution (for download).
     fmt → "png" (default) or "jpg" for JPEG output.
     custom_text → cycle through words of this text instead of RGB values.
     text_color → hex color string like #ff0000 for text fill (default green #00e650).
+    line_height → cell height in px (overrides auto calculation).
+    letter_spacing → offset added to cell width in px (negative to tighten).
     """
     sess = sessions.get(file_id)
     if not sess:
@@ -1376,8 +1378,8 @@ async def diff_overlay(file_id: str, full: bool = False, fmt: str = "png", font_
         _scale = min(h_img, w_img) / 4000.0
         _auto_font = max(4, int(round(6 * _scale)))
         _fs = font_size if (font_size is not None and font_size >= 1) else _auto_font
-        # cell_h: font size + enough padding so lines never overlap
-        cell_h = max(_fs + 3, int(_fs * 1.3))
+        # cell_h: line_height override, or auto (font size + padding)
+        cell_h = line_height if (line_height is not None and line_height >= 1) else max(_fs + 3, int(_fs * 1.3))
 
         # Prepare custom text tokens (if any)
         _tokens: Optional[list] = None
@@ -1403,8 +1405,10 @@ async def diff_overlay(file_id: str, full: bool = False, fmt: str = "png", font_
         # CJK chars are roughly square; ASCII chars are ~0.62× the height
         _char_w_ratio = 1.05 if _needs_cjk else 0.62
 
-        # cell_w: sized to fit widest label
+        # cell_w: sized to fit widest label, with optional letter_spacing offset
         cell_w = max(cell_h, int(_fs * _char_w_ratio * _max_char))
+        if letter_spacing is not None and letter_spacing != 0:
+            cell_w = max(1, cell_w + letter_spacing)
         font_size = _fs
 
         font = None
