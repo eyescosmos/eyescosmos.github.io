@@ -496,7 +496,7 @@ PHOTOGRAPHERS.push(
   ],
   "thumbnail": "",
   "links": [
-    { "label": "MoMA — Alexander Rodchenko", "url": "https://www.moma.org/artists/5047" },
+    { "label": "Museum of Modern Art — Aleksandr Rodchenko", "url": "https://www.moma.org/artists/4975" },
     { "label": "Smarthistory — Alexander Rodchenko, At the Telephone", "url": "https://smarthistory.org/alexander-rodchenko-at-the-telephone/" }
   ],
   "amazon": "",
@@ -553,7 +553,7 @@ PHOTOGRAPHERS.push(
   ],
   "thumbnail": "",
   "links": [
-    { "label": "MoMA — Germaine Krull", "url": "https://www.moma.org/collection/artists/3268" },
+    { "label": "Museum of Modern Art — Germaine Krull", "url": "https://www.moma.org/artists/3268" },
     { "label": "MoMA Object:Photo — Germaine Krull", "url": "https://www.moma.org/interactives/objectphoto/artists/3268.html" }
   ],
   "amazon": "",
@@ -561,7 +561,7 @@ PHOTOGRAPHERS.push(
     "text": "ジェルメーヌ・クリュル（Germaine Krull、1897–1985）はドイツ出身で、オランダ・フランスを中心に活動した写真家。ポートレート、産業写真、グラフ誌、フォトブック、フォトジャーナリズムなど複数の形式を横断し、単一の国民的伝統に収まらないキャリアを展開した。\n\nクリュルの写真は、鉄骨構造物・橋梁・機械といった産業的な被写体を、グラフィックな構図と強いトーン対比によって提示する。代表作『メタル（Métal）』（1928年）は橋・クレーン・エッフェル塔を斜めの切り取り・近接した画面に収め、産業形態を視覚的テクスチャーとして再提示したフォトブックの先駆的な仕事である*1。ポートレートにおいても——アンドレ・マルロー（1930年）など——同様の近代的圧縮が働いている*2。彼女の手法は単独プリントよりも雑誌や書籍における印刷・流通の論理と結びついており、「サロン・ド・レスカリエ」や「フィルム・ウント・フォト」（1929年）といった展覧会回路での活動も、作品の意味を文脈づける。インターウォー期のヨーロッパ写真において、クリュルはアヴァンギャルドとフォトジャーナリズム双方の回路を通じて、写真の媒体的可能性を書籍・雑誌・展覧会という複数の場で同時に展開した数少ない写真家のひとりだ*3。\n\nMoMAはクリュルをアヴァンギャルド・フォトジャーナリズム・フォトブック史が交差する場所に位置づける。特定の傑作への焦点化よりも形式の多様性と流通のネットワークを強調する近年の受容は、写真近代性を単線的な様式史として語ることへの批判的な視点を内包している*1。",
     "textEn": "Germaine Krull was one of the most dynamic photographers of interwar modernism, working across portraiture, journalism, experimental views of machinery, and urban street life*1*2. Her pictures of bridges, steel structures, cables, and industrial forms belong to the visual culture of the machine age, yet they are not cold diagrams. They combine energy, oblique framing, and physical immediacy with a strong sense of modern rhythm.\n\nKrull's importance lies in her mobility across genres and geographies. She moved between avant-garde experimentation and illustrated journalism, between the modern city and political turbulence, showing that photography could be both formally inventive and embedded in contemporary life*1*2. In photographic history she matters because she expanded the range of modernism beyond male-centered industrial heroics or purely abstract experiment. Her work makes modernity tactile, unstable, and lived — not simply monumental.",
     "citations": [
-      { "num": 1, "name": "MoMA — Germaine Krull", "url": "https://www.moma.org/collection/artists/3268" },
+      { "num": 1, "name": "Museum of Modern Art — Germaine Krull", "url": "https://www.moma.org/artists/3268" },
       { "num": 2, "name": "MoMA — Germaine Krull, André Malraux (1930)", "url": "https://www.moma.org/collection/works/180242" },
       { "num": 3, "name": "MoMA Object:Photo — Métal", "url": "https://www.moma.org/interactives/objectphoto/publications/775.html" }
     ]
