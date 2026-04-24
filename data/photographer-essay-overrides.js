@@ -1,6 +1,14 @@
 window.PHOTOGRAPHER_ESSAY_OVERRIDES = Object.assign(
   window.PHOTOGRAPHER_ESSAY_OVERRIDES || {},
   {
+    'stieglitz': {
+      leadJa: `291ギャラリーと写真誌『カメラ・ワーク』を主宰し、写真を絵画と並ぶ芸術として美術館に送り込んだアメリカ近代写真の中核。「エクイヴァレンツ」では被写体ではなく形式そのものが内面を語ると主張し、抽象写真の理論的基盤を築いた。`,
+      leadEn: `Stieglitz made 291 and Camera Work a bridge from pictorialism to modern photography as museum art. With Equivalents, he argued that visual form itself, not subject matter, could carry inner feeling and helped establish a basis for photographic abstraction.`
+    },
+    'renger': {
+      leadJa: `レンガー＝パッチュは、ピクトリアリズムの美化ともバウハウス的な視覚実験とも異なる立場から、事物そのものの構造的な美しさを精密に示した新即物主義写真の中心人物である。`,
+      leadEn: `Renger-Patzsch made the photographed object itself central, rejecting both pictorialist beautification and Bauhaus-style visual experiment in favor of precise structural description.`
+    },
     'takeji-iwamiya': {
       leadJa: `岩宮武二は、寺社・庭園・工芸・仏像・民具といった日本の伝統的文化形態を主題に、ドキュメントと形式的探求の境界に立つ写真実践を展開した。伝統を観光的に再現するのではなく、写真の語彙で再構成するという姿勢が、戦後日本写真の流れの中に独自の位置を与えている。*1*2`,
       leadEn: `Takeji Iwamiya developed a photographic practice on the border between document and formal inquiry, focusing on Japanese temples, gardens, craft objects, Buddhist sculpture, and vernacular tools. Rather than reproducing tradition as tourism, he reconfigured it through a photographic vocabulary, giving his work a distinct place within postwar Japanese photography.*1*2`,

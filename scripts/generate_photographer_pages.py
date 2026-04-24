@@ -98,9 +98,21 @@ SEO_TEXT_OVERRIDES = {
             "lead": "291ギャラリーと写真誌『カメラ・ワーク』を主宰し、写真を絵画と並ぶ芸術として美術館に送り込んだアメリカ近代写真の中核。「エクイヴァレンツ」では被写体ではなく形式そのものが内面を語ると主張し、抽象写真の理論的基盤を築いた。",
         },
         "en": {
-            "title": "Alfred Stieglitz: Pictorialism | Photo Coordinates",
-            "description": "Alfred Stieglitz connected Pictorialism, Photo-Secession, 291, Camera Work, and Equivalents to the institutional rise of modern photography in the United States.",
-            "lead": "Alfred Stieglitz connected Pictorialism, Photo-Secession, 291, Camera Work, and Equivalents to the institutional rise of modern photography in the United States.",
+            "title": "Alfred Stieglitz | Gallery 291 and Equivalents | Photo Coordinates",
+            "description": "As the force behind Gallery 291 and Camera Work, Alfred Stieglitz helped move photography into the museum as an art beside painting. With Equivalents, he argued that visual form itself could carry inner feeling and helped establish a basis for photographic abstraction.",
+            "lead": "As the force behind Gallery 291 and Camera Work, Alfred Stieglitz helped move photography into the museum as an art beside painting. With Equivalents, he argued that visual form itself could carry inner feeling and helped establish a basis for photographic abstraction.",
+        },
+    },
+    "renger": {
+        "ja": {
+            "title": "アルベルト・レンガー＝パッチュ | 新即物主義と物の写真 | 写真の座標",
+            "description": "レンガー＝パッチュは、ピクトリアリズムの美化ともバウハウス的な視覚実験とも異なる立場から、事物そのものの構造的な美しさを精密に示した新即物主義写真の中心人物である。",
+            "lead": "レンガー＝パッチュは、ピクトリアリズムの美化ともバウハウス的な視覚実験とも異なる立場から、事物そのものの構造的な美しさを精密に示した新即物主義写真の中心人物である。",
+        },
+        "en": {
+            "title": "Albert Renger-Patzsch | New Objectivity and the Photography of Things | Photo Coordinates",
+            "description": "Renger-Patzsch made the photographed object itself central, rejecting both pictorialist beautification and Bauhaus-style visual experiment in favor of precise structural description.",
+            "lead": "Renger-Patzsch made the photographed object itself central, rejecting both pictorialist beautification and Bauhaus-style visual experiment in favor of precise structural description.",
         },
     },
     "cameron": {
@@ -1266,11 +1278,12 @@ def build_title(photographer: dict, lang: str, era_lookup: dict, movements_meta:
     return f"{name_primary} | {role} | {site}"
 
 
-def build_page_structured_data(photographer: dict, lang: str, description: str, canonical: str) -> str:
+def build_page_structured_data(photographer: dict, lang: str, title: str, description: str, canonical: str) -> str:
     birth_year, death_year = parse_years(photographer.get("years") or "")
-    payload = {
-        "@context": "https://schema.org",
+    person_id = f"{canonical}#person"
+    person = {
         "@type": "Person",
+        "@id": person_id,
         "name": display_name(photographer, lang),
         "description": description,
         "url": canonical,
@@ -1278,20 +1291,41 @@ def build_page_structured_data(photographer: dict, lang: str, description: str, 
     }
     alternate_name = display_alt_name(photographer, lang)
     if alternate_name:
-        payload["alternateName"] = alternate_name
+        person["alternateName"] = alternate_name
     if birth_year:
-        payload["birthDate"] = birth_year
+        person["birthDate"] = birth_year
     if death_year:
-        payload["deathDate"] = death_year
+        person["deathDate"] = death_year
     country_name = country_entry(photographer.get("nationality") or "").get("en")
     if country_name:
-        payload["nationality"] = {
+        person["nationality"] = {
             "@type": "Country",
             "name": country_name,
         }
     same_as = SAME_AS_OVERRIDES.get(photographer.get("id"))
     if same_as:
-        payload["sameAs"] = same_as
+        person["sameAs"] = same_as
+    person["subjectOf"] = {"@id": canonical}
+    payload = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": canonical,
+                "url": canonical,
+                "name": title,
+                "description": description,
+                "inLanguage": lang,
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "Photo Coordinates" if lang == "en" else "写真の座標",
+                    "url": f"{SITE}/en/" if lang == "en" else f"{SITE}/",
+                },
+                "about": {"@id": person_id},
+            },
+            person,
+        ],
+    }
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
@@ -1726,7 +1760,7 @@ def main() -> None:
             privacy_href = "/en/privacy-policy.html" if lang == "en" else "/privacy-policy.html"
             alt_name = display_alt_name(photographer, lang)
             page_path = photographer_page_path(photographer, lang)
-            structured_data = build_page_structured_data(photographer, lang, description, canonical)
+            structured_data = build_page_structured_data(photographer, lang, title, description, canonical)
             breadcrumb_structured_data = build_breadcrumb_structured_data(photographer, lang)
             essay_sections_html = split_essay_into_sections(rendered_body, copy["essay"])
             movement_select = render_optional_tax_select(
@@ -1756,9 +1790,6 @@ def main() -> None:
             page_top_links = f"""
       <div class="page-top-links top-links">
         <div class="tab-nav-mobile-grid">
-          <div class="tab-nav-selects">
-            {extra_selects}
-          </div>
           {language_toggle}
         </div>
       </div>"""
