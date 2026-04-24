@@ -1044,7 +1044,19 @@ function joinList(items, lang = currentLanguage) {
     : `${values.slice(0, -1).join('、')}、${values[values.length - 1]}`;
 }
 
-function movementSlug(value) {
+function asciiSlug(value) {
+  return String(value || '')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/\+/g, ' plus ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'movement';
+}
+
+function movementSlug(value, lang = currentLanguage) {
+  if (lang === 'en') return asciiSlug(displayMovementName(value));
   return String(value || '').replace(/[^a-zA-Z\u3000-\u9fff]/g, '');
 }
 
@@ -1181,10 +1193,6 @@ function initializeLanguageControls() {
   });
 }
 
-function movementSlug(name) {
-  return String(name || '').replace(/[^A-Za-z\u3000-\u9fff]/g, '');
-}
-
 function eraPagePath(eraId) {
   return `${currentLanguage === 'en' ? '/en' : ''}/eras/${eraId}.html`;
 }
@@ -1211,7 +1219,7 @@ function countryPagePath(nationality) {
 }
 
 function movementPagePath(name) {
-  return `${currentLanguage === 'en' ? '/en' : ''}/movements/${movementSlug(name)}.html`;
+  return `${currentLanguage === 'en' ? '/en' : ''}/movements/${movementSlug(name, currentLanguage)}.html`;
 }
 
 function navigateArchiveTaxonomy(value) {
@@ -1459,7 +1467,7 @@ function findReadNextTarget(photographer, influencedBy, influencedNext) {
 
   const alternateMovement = (photographer.movements || [])[1];
   if (alternateMovement) {
-    const slug = movementSlug(alternateMovement);
+    const slug = movementSlug(alternateMovement, 'ja');
     return {
       label: displayMovementName(alternateMovement),
       href: `#movement-${slug}`,
@@ -1482,7 +1490,7 @@ function findReadNextTarget(photographer, influencedBy, influencedNext) {
 
   const primaryMovement = (photographer.movements || [])[0];
   if (primaryMovement) {
-    const slug = movementSlug(primaryMovement);
+    const slug = movementSlug(primaryMovement, 'ja');
     return {
       label: displayMovementName(primaryMovement),
       href: `#movement-${slug}`,
@@ -1594,7 +1602,7 @@ function buildRelatedReadingSection(photographer, bodyText = '') {
   const relatedPeople = buildRelatedPeopleEntries(photographer, bodyText);
   const relatedMovements = expandedMovementNames(photographer, 5).map((movementLabel, index) => {
     const sourceMovement = ((photographer.movements || []).concat(getPhotographerEnrichment(photographer).extraMovements || []))[index] || movementLabel;
-    const slug = movementSlug(sourceMovement);
+    const slug = movementSlug(sourceMovement, 'ja');
     return {
       label: movementLabel,
       href: `#movement-${slug}`,
@@ -1659,7 +1667,7 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const tags = expandedMovementNames(p, 5)
     .map((movementLabel, index) => {
       const sourceMovement = ((p.movements || []).concat(getPhotographerEnrichment(p).extraMovements || []))[index] || movementLabel;
-      const slug = movementSlug(sourceMovement);
+      const slug = movementSlug(sourceMovement, 'ja');
       return `<a class="detail-tag" href="#movement-${slug}" onclick="openRecommendedMovement(event,'${slug}')">${displayMovementName(sourceMovement)}</a>`;
     }).join('');
   const detailLinks = getPhotographerEssayPayload(p).links;
@@ -1899,7 +1907,7 @@ function renderMovementTab() {
 
   Object.entries(movementMap).sort((a, b) => a[0].localeCompare(b[0], 'ja')).forEach(([mvName, photographers]) => {
     const meta = MOVEMENTS_META[mvName] || { en: mvName, desc: '' };
-    const mvId = mvName.replace(/[^a-zA-Z\u3000-\u9fff]/g, '');
+    const mvId = movementSlug(mvName, 'ja');
 
     const cardsHTML = photographers.map(p => renderCard(p, `data-mv="${mvId}" onclick="toggleMovementDetail('${p.id}','${mvId}',this)"`)).join('');
 

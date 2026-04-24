@@ -98,6 +98,18 @@ def alternate_urls(rel: str, existing: set[str]) -> dict[str, str]:
     }
 
 
+def alternate_urls_from_html(path: Path) -> dict[str, str]:
+    content = path.read_text(encoding="utf-8", errors="ignore")
+    alternates: dict[str, str] = {}
+    for hreflang, href in re.findall(
+        r'<link\s+rel=["\']alternate["\']\s+hreflang=["\']([^"\']+)["\']\s+href=["\']([^"\']+)["\']',
+        content,
+        re.I,
+    ):
+        alternates[hreflang] = href
+    return alternates
+
+
 def pages() -> list[Page]:
     file_list = html_files()
     existing = {path.relative_to(REPO_ROOT).as_posix() for path in file_list}
@@ -106,7 +118,7 @@ def pages() -> list[Page]:
             rel=path.relative_to(REPO_ROOT).as_posix(),
             url=to_url(path.relative_to(REPO_ROOT).as_posix()),
             lastmod=to_lastmod(path),
-            alternates=alternate_urls(path.relative_to(REPO_ROOT).as_posix(), existing),
+            alternates=alternate_urls_from_html(path) or alternate_urls(path.relative_to(REPO_ROOT).as_posix(), existing),
         )
         for path in file_list
     ]

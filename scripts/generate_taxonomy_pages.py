@@ -5,6 +5,7 @@ import json
 import subprocess
 from collections import Counter, defaultdict
 from pathlib import Path
+import unicodedata
 import html
 import re
 
@@ -267,8 +268,17 @@ def esc(text: str) -> str:
     return html.escape(text or "")
 
 
-def movement_slug(name: str) -> str:
-    import re
+def ascii_slug(text: str) -> str:
+    value = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode("ascii")
+    value = value.lower().replace("&", " and ").replace("+", " plus ")
+    value = re.sub(r"[^a-z0-9]+", "-", value)
+    return value.strip("-") or "movement"
+
+
+def movement_slug(name: str, lang: str = "ja", movements_meta: dict | None = None) -> str:
+    if lang == "en":
+        label = localized_movement_name(name, movements_meta or {}, "en")
+        return ascii_slug(label)
     return re.sub(r"[^A-Za-z\u3000-\u9fff]", "", name or "")
 
 
@@ -286,8 +296,8 @@ def country_path(nationality: str, lang: str) -> str:
     return f"/{'en/' if lang == 'en' else ''}countries/{slug}.html"
 
 
-def movement_path(name: str, lang: str) -> str:
-    return f"/{'en/' if lang == 'en' else ''}movements/{movement_slug(name)}.html"
+def movement_path(name: str, lang: str, movements_meta: dict | None = None) -> str:
+    return f"/{'en/' if lang == 'en' else ''}movements/{movement_slug(name, lang, movements_meta)}.html"
 
 
 def display_name(photographer: dict, lang: str) -> str:
@@ -434,9 +444,9 @@ def page_structured_data(title: str, description: str, canonical: str, lang: str
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
-def alternate_links_html(canonical: str, lang: str) -> str:
-    ja_href = canonical.replace("/en/", "/") if lang == "en" else canonical
-    en_href = canonical if lang == "en" else canonical.replace(f"{SITE}/", f"{SITE}/en/", 1)
+def alternate_links_html(canonical: str, lang: str, ja_href: str | None = None, en_href: str | None = None) -> str:
+    ja_href = ja_href or (canonical.replace("/en/", "/") if lang == "en" else canonical)
+    en_href = en_href or (canonical if lang == "en" else canonical.replace(f"{SITE}/", f"{SITE}/en/", 1))
     return "\n".join(
         [
             f'<link rel="alternate" hreflang="ja" href="{ja_href}">',
@@ -444,6 +454,25 @@ def alternate_links_html(canonical: str, lang: str) -> str:
             f'<link rel="alternate" hreflang="x-default" href="{ja_href}">',
         ]
     )
+
+
+def render_redirect_page(*, from_url: str, to_url: str, label: str) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url={esc(to_url)}">
+<link rel="canonical" href="{esc(to_url)}">
+<title>{esc(label)} | Photo Coordinates</title>
+</head>
+<body>
+<p><a href="{esc(to_url)}">Continue to {esc(label)}</a></p>
+<script>window.location.replace({json.dumps(to_url)});</script>
+</body>
+</html>
+"""
 
 
 def clean_inline_text(text: str) -> str:
@@ -762,12 +791,12 @@ def era_context_html(era: dict, lang: str) -> str:
       </section>'''
 
 
-def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str) -> str:
+def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str, ja_href: str | None = None, en_href: str | None = None) -> str:
     kind_label = "Movement" if page_kind == "movement" else ("Country" if page_kind == "country" else "Era")
     label = f"Photo Coordinates / {kind_label}"
     structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip())
-    ja_href = canonical.replace("/en/", "/") if lang == "en" else canonical
-    en_href = canonical if lang == "en" else canonical.replace(f"{SITE}/", f"{SITE}/en/", 1)
+    ja_href = ja_href or (canonical.replace("/en/", "/") if lang == "en" else canonical)
+    en_href = en_href or (canonical if lang == "en" else canonical.replace(f"{SITE}/", f"{SITE}/en/", 1))
     footer_line1 = "This site gathers and organizes information from publicly available web sources with AI assistance." if lang == "en" else "本サイトの情報はAIによってウェブ上の資料から収集・整理されたものです。"
     footer_line2 = "Sources are listed where possible, but errors or outdated details may remain." if lang == "en" else "各記述には出典を明記していますが、誤りが含まれる可能性があります。"
     footer_line3 = "Please feel free to get in touch if you notice corrections or additions." if lang == "en" else "情報の訂正・追加はお気軽にお知らせください。"
@@ -782,7 +811,7 @@ def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: 
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{canonical}">
-{alternate_links_html(canonical, lang)}
+{alternate_links_html(canonical, lang, ja_href, en_href)}
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="{'Photo Coordinates' if lang == 'en' else '写真の座標'}">
 <meta property="og:title" content="{esc(title)}">
@@ -910,7 +939,7 @@ def render_archive_like_list(
 def render_movement_cards(photographers: list[dict], movements_meta: dict, lang: str) -> str:
     cards = []
     for label, original in top_movements(photographers, movements_meta, lang, 5):
-        cards.append(f'<a class="tag-card" href="{movement_path(original, lang)}">{esc(label)}</a>')
+        cards.append(f'<a class="tag-card" href="{movement_path(original, lang, movements_meta)}">{esc(label)}</a>')
     return "".join(cards) or f'<p>{"Related movements coming soon." if lang == "en" else "関連する運動は準備中です。"}</p>'
 
 
@@ -918,7 +947,7 @@ def render_related_movement_dropdown(photographers: list[dict], movements_meta: 
     label = "Related movements" if lang == "en" else "関連する運動"
     options = [f'<option value="" selected>{esc(label)}</option>']
     for movement_label, original in top_movements(photographers, movements_meta, lang, 8):
-        options.append(f'<option value="{movement_path(original, lang)}">{esc(movement_label)}</option>')
+        options.append(f'<option value="{movement_path(original, lang, movements_meta)}">{esc(movement_label)}</option>')
     return (
         f'<span class="select-wrap taxonomy-inline-select">'
         f'<select class="tax-select" aria-label="{label}" onchange="if(this.value) window.location.href=this.value">{"".join(options)}</select>'
@@ -959,7 +988,7 @@ def render_movement_select(movements: list[str], current: str | None, movements_
     for movement in movements:
         movement_label = localized_movement_name(movement, movements_meta, lang)
         selected = ' selected' if placeholder_label is None and movement == current else ''
-        options.append(f'<option value="{movement_path(movement, lang)}"{selected}>{esc(movement_label)}</option>')
+        options.append(f'<option value="{movement_path(movement, lang, movements_meta)}"{selected}>{esc(movement_label)}</option>')
     return f'<span class="select-wrap"><select class="tax-select filter-select nav-select" aria-label="{label}" onchange="if(this.value) window.location.href=this.value">{ "".join(options) }</select></span>'
 
 
@@ -1149,7 +1178,9 @@ def main():
             movement_label = localized_movement_name(movement, movements_meta, lang)
             title = taxonomy_page_title("movement", movement_label, lang)
             keyword = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates |" if lang == "en" else f"{movement_label}｜表現｜写真史｜<a href=\"/\">写真の座標</a>｜"
-            canonical = f"{SITE}/{'en/' if lang == 'en' else ''}movements/{movement_slug(movement)}.html"
+            ja_href = f"{SITE}/movements/{movement_slug(movement, 'ja', movements_meta)}.html"
+            en_href = f"{SITE}/en/movements/{movement_slug(movement, 'en', movements_meta)}.html"
+            canonical = en_href if lang == "en" else ja_href
             description = taxonomy_meta_description("movement", movement_label, lang)
             movement_desc = movements_meta.get(movement, {}).get("descEn" if lang == "en" else "desc") or movements_meta.get(movement, {}).get("desc") or ""
             movement_desc = clean_context_intro(movement_desc, lang)
@@ -1187,8 +1218,20 @@ def main():
                 list_title="Photographers" if lang == "en" else "写真家一覧",
                 list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, country_overrides, essay_overrides),
                 directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
+                ja_href=ja_href,
+                en_href=en_href,
             )
-            (movements_en_dir if lang == "en" else movements_dir).joinpath(f"{movement_slug(movement)}.html").write_text(page, encoding="utf-8")
+            output_slug = movement_slug(movement, lang, movements_meta)
+            (movements_en_dir if lang == "en" else movements_dir).joinpath(f"{output_slug}.html").write_text(page, encoding="utf-8")
+            if lang == "en":
+                legacy_slug = movement_slug(movement, "ja", movements_meta)
+                if legacy_slug != output_slug:
+                    redirect = render_redirect_page(
+                        from_url=f"{SITE}/en/movements/{legacy_slug}.html",
+                        to_url=en_href,
+                        label=movement_label,
+                    )
+                    movements_en_dir.joinpath(f"{legacy_slug}.html").write_text(redirect, encoding="utf-8")
 
 
 if __name__ == "__main__":

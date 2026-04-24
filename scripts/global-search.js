@@ -109,6 +109,22 @@
     return BASE_URL;
   }
 
+  function asciiSlug(value) {
+    return String(value || '')
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/&/g, ' and ')
+      .replace(/\+/g, ' plus ')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'movement';
+  }
+
+  function movementSlug(name, label, lang) {
+    if (lang === 'en') return asciiSlug(label || name);
+    return String(name || '').replace(/[^A-Za-z\u3000-\u9fff]/g, '');
+  }
+
   function loadScript(src) {
     return new Promise((resolve, reject) => {
       if (document.querySelector(`script[data-global-search-src="${src}"]`)) {
@@ -263,7 +279,7 @@
         id: name,
         title: label,
         alt: lang === 'en' ? name : (meta.en || ''),
-        url: `${rootUrl()}${lang === 'en' ? 'en/' : ''}movements/${encodeURIComponent(name.replace(/[^A-Za-z\u3000-\u9fff]/g, ''))}.html`,
+        url: `${rootUrl()}${lang === 'en' ? 'en/' : ''}movements/${movementSlug(name, label, lang)}.html`,
         meta: lang === 'en' ? 'Movement' : '表現',
         tags: related.slice(0, 3).map((item) => item.title),
         text: lang === 'en' ? (meta.descEn || meta.desc || '') : (meta.desc || meta.descEn || ''),

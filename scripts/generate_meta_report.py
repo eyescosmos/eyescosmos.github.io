@@ -33,6 +33,9 @@ def main() -> None:
     for path in html_files():
         rel = path.relative_to(REPO).as_posix()
         text = path.read_text(encoding="utf-8")
+        robots = extract(r'<meta\s+name="robots"\s+content="(.*?)"', text)
+        if "noindex" in robots.lower():
+            continue
         title = extract(r"<title>(.*?)</title>", text)
         description = extract(r'<meta\s+name="description"\s+content="(.*?)"', text)
         lang = extract(r"<html\b[^>]*\blang=\"(.*?)\"", text) or "ja"

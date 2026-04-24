@@ -587,7 +587,7 @@ def build_meta_summary(photographer: dict, lang: str, era_lookup: dict, movement
 
 
 def movement_slug(name: str) -> str:
-    return re.sub(r"[^A-Za-z\u3000-\u9fff]", "", name or "")
+    return taxonomy_meta.movement_slug(name)
 
 
 def photographer_page_path(photographer: dict, lang: str = "ja") -> str:
@@ -610,9 +610,9 @@ def country_page_path(photographer: dict, lang: str = "ja") -> str:
     return f"/{base}/{slug}.html"
 
 
-def movement_page_path(movement: str, lang: str = "ja") -> str:
+def movement_page_path(movement: str, lang: str = "ja", movements_meta: dict | None = None) -> str:
     base = "en/movements" if lang == "en" else "movements"
-    return f"/{base}/{movement_slug(movement)}.html"
+    return f"/{base}/{taxonomy_meta.movement_slug(movement, lang, movements_meta or {})}.html"
 
 
 def render_site_directory_nav(
@@ -1664,8 +1664,8 @@ def main() -> None:
             movement_select_options = []
             for movement in (photographer.get("movements") or []) + (get_enrichment(enrichments, photographer).get("extraMovements") or []):
                 movement_label = english_movement_name(movement, movements_meta) if lang == "en" else movement
-                movement_target = movement_page_path(movement, lang)
-                tag = f'<a class="tag" href="{movement_page_path(movement, lang)}">{escape_html(movement_label)}</a>'
+                movement_target = movement_page_path(movement, lang, movements_meta)
+                tag = f'<a class="tag" href="{movement_target}">{escape_html(movement_label)}</a>'
                 if tag not in movement_links:
                     movement_links.append(tag)
                 option_tuple = (movement_target, movement_label)
