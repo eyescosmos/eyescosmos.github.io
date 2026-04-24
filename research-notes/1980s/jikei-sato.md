@@ -104,7 +104,7 @@ tags: ["time inscription", "photographic index", "material light"]
 - [S10] SATO Tokihiro — Higashikawa International Photo Festival. https://photo-town.jp/collection/8511 — Award/collection page for Sato in Japanese photography context.
 - [S11] SATO - Breathing Light — PhotoArts. https://www.photoarts.com/gallery/sato/satoexh.html — Older exhibition/web essay with curator framing and work list.
 - [S12] Spiritual Worlds at the Photography Museum — artscape Japan. https://artscape.jp/artscape/eng/ht/1406.html — English review of TOP Museum exhibition, useful for reception and visual interpretation.
-- [S13] Tokyo Metropolitan Museum of Photography press release — Tokyo Photographic Art Museum. https://topmuseum.jp/upload/2/2299/Sato_Tokihiro_Press%20_Release.pdf — Press release for Sato Tokihiro exhibition at TOP Museum.
+- [S13] Tokyo Metropolitan Museum of Photography press release — Tokyo Photographic Art Museum. https://topmuseum.jp/ — Press release for Sato Tokihiro exhibition at TOP Museum.
 
 ### 8.5 出典探索メモ / Source exploration memo
 このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で13件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
@@ -125,8 +125,8 @@ tags: ["time inscription", "photographic index", "material light"]
 - [route] Jikei Sato search. Guggenheim Museum. https://www.guggenheim.org/?s=Jikei+Sato
 - [route] Jikei Sato search. Art Institute of Chicago. https://www.artic.edu/search?q=Jikei+Sato
 - [route] Jikei Sato search. SFMOMA. https://www.sfmoma.org/search/?q=Jikei+Sato
-- [route] Jikei Sato search. Whitney Museum. https://whitney.org/search?q=Jikei+Sato
-- [route] Jikei Sato search. International Center of Photography. https://www.icp.org/search-results/Jikei%20Sato
+- [route] Jikei Sato search. Whitney Museum. https://whitney.org/search?query=Jikei+Sato
+- [route] Jikei Sato search. International Center of Photography. https://www.icp.org/search-results?query=Jikei%20Sato
 - [route] Jikei Sato search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Jikei+Sato
 - [route] Jikei Sato search. Getty. https://www.getty.edu/art/collection/search/?q=Jikei+Sato
 - [route] Jikei Sato route. Aperture. https://aperture.org/?s=Jikei+Sato
@@ -145,6 +145,6 @@ tags: ["time inscription", "photographic index", "material light"]
 - [route] Jikei Sato archive route. Smithsonian Institution. https://www.si.edu/search?query=Jikei+Sato
 - [route] Jikei Sato archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Jikei+Sato
 - [route] Jikei Sato exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Jikei+Sato
-- [route] Jikei Sato Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Jikei Sato Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Jikei Sato third-language / local institution route. https://www.google.com/search?q=Jikei+Sato+photography+museum+exhibition+catalogue
 - [route] Jikei Sato primary interview / statement route. https://www.google.com/search?q=Jikei+Sato+photographer+interview+artist+statement

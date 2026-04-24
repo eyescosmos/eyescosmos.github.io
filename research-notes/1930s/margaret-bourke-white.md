@@ -77,16 +77,16 @@ tags: ["machine-power", "media-spectacle", "modernity", "industrial-photography"
 ## 6. Sources
 - [S1] Margaret Bourke-White. MoMA. https://www.moma.org/artists/712-margaret-bourke-white
 - [S2] Margaret Bourke-White object. ICP. https://www.icp.org/browse/archive/objects/margaret-bourke-white
-- [S3] Margaret Bourke-White. Smithsonian American Art Museum. https://americanart.si.edu/artist/margaret-bourke-white-31093
+- [S3] Margaret Bourke-White. Smithsonian American Art Museum. https://americanart.si.edu/search?query=margaret%20bourke%20white%2031093
 - [S4] Margaret Bourke-White. Saint Louis Art Museum. https://www.slam.org/collection/constituents/443/
 - [S5] Margaret Bourke-White photographs PDF. Columbia University Libraries. https://findingaids.library.columbia.edu/pdf/cul-4080186.pdf
 - [S6] Memorable Life Photographs PDF. MoMA. https://assets.moma.org/documents/moma_catalogue_3282_300062099.pdf
 - [S7] LIFE exhibition didactics PDF. Princeton University Art Museum. https://static.artmuseum.princeton.edu/collections-pdfs/LIFE_didactics_installation.pdf
 - [S8] Margaret Bourke-White search. Library of Congress. https://www.loc.gov/search/?fa=contributor:bourke-white,+margaret
 - [S9] Margaret Bourke-White search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Margaret%20Bourke-White
-- [S10] Margaret Bourke-White search. ICP. https://www.icp.org/search-results/Margaret%20Bourke-White
+- [S10] Margaret Bourke-White search. ICP. https://www.icp.org/search-results?query=Margaret%20Bourke-White
 
-- [S11] Margaret Bourke-White. ICP. https://www.icp.org/browse/archive/constituents/margaret-bourke-white
+- [S11] Margaret Bourke-White. ICP. https://www.icp.org/search-results?query=margaret%20bourke%20white
 - [S12] Margaret Bourke-White. MoMA. https://www.moma.org/artists/708
 - [S13] Margaret Bourke-White Papers. Syracuse University Libraries. https://library.syracuse.edu/digital/guides/b/bourke_white_m.htm
 - [S14] Margaret Bourke-White. International Photography Hall of Fame. https://iphf.org/inductees/margaret-bourke-white/

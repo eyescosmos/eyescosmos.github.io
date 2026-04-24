@@ -77,7 +77,7 @@ tags: ["african-studio-portraiture", "postwar"]
 - [S7] Seydou Keïta search. MoMA. https://www.moma.org/search/?query=Seydou%20Keita
 - [S8] Seydou Keïta search. Fondation Cartier. https://www.fondationcartier.com/en/search?query=Seydou%20Keita
 - [S9] Seydou Keïta search. Guggenheim Museum. https://www.guggenheim.org/?s=Seydou+Keita
-- [S10] Seydou Keïta search. ICP. https://www.icp.org/browse/archive/constituents/seydou-keita
+- [S10] Seydou Keïta search. ICP. https://www.icp.org/search-results?query=seydou%20keita
 - [S11] Seydou Keïta search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Seydou%20Keita
 - [S12] Seydou Keïta search. WorldCat. https://search.worldcat.org/search?q=Seydou+Keita
 

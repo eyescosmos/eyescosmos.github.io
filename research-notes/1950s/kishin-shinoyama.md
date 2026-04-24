@@ -72,7 +72,7 @@ tags: ["commercial-photography", "postwar"]
 - [S3] 篠山紀信検索. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E7%AF%A0%E5%B1%B1%E7%B4%80%E4%BF%A1
 - [S4] 篠山紀信検索. CiNii Research. https://cir.nii.ac.jp/all?q=%E7%AF%A0%E5%B1%B1%E7%B4%80%E4%BF%A1
 
-- [S5] 篠山紀信 search. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S5] 篠山紀信 search. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S6] 篠山紀信 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E7%AF%A0%E5%B1%B1%E7%B4%80%E4%BF%A1
 - [S7] Kishin Shinoyama search. MoMA. https://www.moma.org/search/?query=Kishin%20Shinoyama
 - [S8] Kishin Shinoyama search. Tate. https://www.tate.org.uk/search?q=Kishin%20Shinoyama

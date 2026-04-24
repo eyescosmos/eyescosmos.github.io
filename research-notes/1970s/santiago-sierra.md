@@ -89,9 +89,9 @@ tags: ['labor critique', 'institutional violence', 'ethical discomfort']
 - [S20] Santiago Sierra search. Art Institute of Chicago. https://www.artic.edu/search?q=Santiago+Sierra
 - [S21] Santiago Sierra search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Santiago+Sierra
 - [S22] Santiago Sierra search. SFMOMA. https://www.sfmoma.org/search/?q=Santiago+Sierra
-- [S23] Santiago Sierra archive search. ICP. https://www.icp.org/search-results/Santiago+Sierra
+- [S23] Santiago Sierra archive search. ICP. https://www.icp.org/search-results?query=Santiago+Sierra
 - [S24] Santiago Sierra route. Aperture. https://aperture.org/?s=Santiago+Sierra
-- [S25] Santiago Sierra search. Whitney Museum. https://whitney.org/search?q=Santiago+Sierra
+- [S25] Santiago Sierra search. Whitney Museum. https://whitney.org/search?query=Santiago+Sierra
 - [S26] Santiago Sierra search. Guggenheim Museum. https://www.guggenheim.org/?s=Santiago+Sierra
 - [S27] Santiago Sierra search. Smithsonian Institution. https://www.si.edu/search?query=Santiago+Sierra
 - [S28] Santiago Sierra bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Santiago+Sierra&searchCode=GKEY%5E*&searchType=0

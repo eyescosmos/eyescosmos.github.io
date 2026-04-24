@@ -45,7 +45,7 @@
 - [S9] `Rashid Johnson: Anima`, Hauser & Wirth, https://www.hauserwirth.com/hauser-wirth-exhibitions/rashid-johnson/
 - [S10] `Rashid Johnson: A Poem for Deep Thinkers press release`, Guggenheim Museum PDF, https://www.guggenheim.org/wp-content/uploads/2024/08/press-release-rashid-johnson-a-poem-for-deep-thinkers-12202024.pdf
 - [S11] `Rashid Johnson research guide`, Jordan Schnitzer Museum of Art PDF, https://jsma.uoregon.edu/sites/default/files/2025-03/jsma-research-guide-rashid-johnson.pdf
-- [S12] `Rashid Johnson`, Art Institute of Chicago, https://www.artic.edu/artists/112436/rashid-johnson
+- [S12] `Rashid Johnson`, Art Institute of Chicago, https://www.artic.edu/search?q=rashid%20johnson
 - [S13] `Rashid Johnson`, SFMOMA, https://www.sfmoma.org/artist/rashid_johnson/
 - [S14] `Rashid Johnson`, Whitney Museum of American Art, https://whitney.org/artists/11319
 - [S15] `Rashid Johnson`, David Kordansky Gallery, https://www.davidkordanskygallery.com/artist/rashid-johnson

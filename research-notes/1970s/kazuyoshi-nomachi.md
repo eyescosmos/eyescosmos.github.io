@@ -68,7 +68,7 @@ tags: ['sacred geography', 'pilgrimage', 'cross-cultural witness']
 ## 6. Sources
 - [S1] Kazuyoshi Nomachi official / estate route. Kazuyoshi Nomachi official. https://www.google.com/search?q=Kazuyoshi+Nomachi+official+artist+photographer
 - [S2] Kazuyoshi Nomachi route. National Geographic route. https://www.google.com/search?q=National+Geographic+route+Kazuyoshi+Nomachi+photography
-- [S3] Kazuyoshi Nomachi route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S3] Kazuyoshi Nomachi route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S4] Kazuyoshi Nomachi route. Canon Gallery. https://www.google.com/search?q=Canon+Gallery+Kazuyoshi+Nomachi+photography
 - [S5] Kazuyoshi Nomachi bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Kazuyoshi+Nomachi
 - [S6] Kazuyoshi Nomachi research route. CiNii Research. https://cir.nii.ac.jp/all?q=Kazuyoshi+Nomachi
@@ -91,9 +91,9 @@ tags: ['sacred geography', 'pilgrimage', 'cross-cultural witness']
 - [S22] Kazuyoshi Nomachi search. Art Institute of Chicago. https://www.artic.edu/search?q=Kazuyoshi+Nomachi
 - [S23] Kazuyoshi Nomachi search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Kazuyoshi+Nomachi
 - [S24] Kazuyoshi Nomachi search. SFMOMA. https://www.sfmoma.org/search/?q=Kazuyoshi+Nomachi
-- [S25] Kazuyoshi Nomachi archive search. ICP. https://www.icp.org/search-results/Kazuyoshi+Nomachi
+- [S25] Kazuyoshi Nomachi archive search. ICP. https://www.icp.org/search-results?query=Kazuyoshi+Nomachi
 - [S26] Kazuyoshi Nomachi route. Aperture. https://aperture.org/?s=Kazuyoshi+Nomachi
-- [S27] Kazuyoshi Nomachi search. Whitney Museum. https://whitney.org/search?q=Kazuyoshi+Nomachi
+- [S27] Kazuyoshi Nomachi search. Whitney Museum. https://whitney.org/search?query=Kazuyoshi+Nomachi
 - [S28] Kazuyoshi Nomachi search. Guggenheim Museum. https://www.guggenheim.org/?s=Kazuyoshi+Nomachi
 - [S29] Kazuyoshi Nomachi search. Smithsonian Institution. https://www.si.edu/search?query=Kazuyoshi+Nomachi
 - [S30] Kazuyoshi Nomachi bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Kazuyoshi+Nomachi&searchCode=GKEY%5E*&searchType=0

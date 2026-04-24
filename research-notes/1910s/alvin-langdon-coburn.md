@@ -80,7 +80,7 @@ tags: ["abstraction", "apparatus", "modern-city", "pictorialism", "vorticism"]
 - [S9] Vortograph 1917. Christies. https://onlineonly.christies.com/s/moma-pictorialism-modernism/alvin-langdon-coburn-1882-1966-156/47632
 - [S10] Alvin Langdon Coburn search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Alvin%20Langdon%20Coburn
 - [S11] Alvin Langdon Coburn search. MFA Boston. https://collections.mfa.org/search/objects/*/Alvin%20Langdon%20Coburn
-- [S12] Alvin Langdon Coburn search. ICP. https://www.icp.org/search-results/alvin%20langdon%20coburn
+- [S12] Alvin Langdon Coburn search. ICP. https://www.icp.org/search-results?query=alvin%20langdon%20coburn
 
 ## 7. Source exploration memo / next research routes
 出典数は12件。RPS原資料、Coburn自伝、Camera Work掲載号、Vorticist雑誌資料を追加すると20件前後まで拡張可能。

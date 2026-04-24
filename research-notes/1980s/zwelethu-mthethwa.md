@@ -124,8 +124,8 @@ tags: ["post-apartheid visibility", "dignity and critique", "social space"]
 - [route] Zwelethu Mthethwa search. Guggenheim Museum. https://www.guggenheim.org/?s=Zwelethu+Mthethwa
 - [route] Zwelethu Mthethwa search. Art Institute of Chicago. https://www.artic.edu/search?q=Zwelethu+Mthethwa
 - [route] Zwelethu Mthethwa search. SFMOMA. https://www.sfmoma.org/search/?q=Zwelethu+Mthethwa
-- [route] Zwelethu Mthethwa search. Whitney Museum. https://whitney.org/search?q=Zwelethu+Mthethwa
-- [route] Zwelethu Mthethwa search. International Center of Photography. https://www.icp.org/search-results/Zwelethu%20Mthethwa
+- [route] Zwelethu Mthethwa search. Whitney Museum. https://whitney.org/search?query=Zwelethu+Mthethwa
+- [route] Zwelethu Mthethwa search. International Center of Photography. https://www.icp.org/search-results?query=Zwelethu%20Mthethwa
 - [route] Zwelethu Mthethwa search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Zwelethu+Mthethwa
 - [route] Zwelethu Mthethwa search. Getty. https://www.getty.edu/art/collection/search/?q=Zwelethu+Mthethwa
 - [route] Zwelethu Mthethwa route. Aperture. https://aperture.org/?s=Zwelethu+Mthethwa
@@ -144,6 +144,6 @@ tags: ["post-apartheid visibility", "dignity and critique", "social space"]
 - [route] Zwelethu Mthethwa archive route. Smithsonian Institution. https://www.si.edu/search?query=Zwelethu+Mthethwa
 - [route] Zwelethu Mthethwa archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Zwelethu+Mthethwa
 - [route] Zwelethu Mthethwa exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Zwelethu+Mthethwa
-- [route] Zwelethu Mthethwa Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Zwelethu Mthethwa Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Zwelethu Mthethwa third-language / local institution route. https://www.google.com/search?q=Zwelethu+Mthethwa+photography+museum+exhibition+catalogue
 - [route] Zwelethu Mthethwa primary interview / statement route. https://www.google.com/search?q=Zwelethu+Mthethwa+photographer+interview+artist+statement

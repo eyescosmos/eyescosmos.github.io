@@ -22,7 +22,7 @@
 - No short, securely sourced collective statement has yet been isolated from the consulted materials.
 
 ## 5. Sources
-- [S1] Useful Photography. The Photographers' Gallery / Found, Shared. https://thephotographersgallery.org.uk/whats-on/found-shared
+- [S1] Useful Photography. The Photographers' Gallery / Found, Shared. https://thephotographersgallery.org.uk/search?query=found%20shared
 - [S2] Useful Photography archive / project references. https://erikkessels.com/project/useful-photography/
 
 ## 6. 座標用補助メモ（本文には直接反映しない内部用）
@@ -152,7 +152,7 @@ tags: ["vernacular image", "archive", "utility", "anti-aesthetic"]
 - 批評文は、同時代の評価と後年の再評価を分けるために使う。引用注記は1文につき1つまでに抑える。
 
 ### 8.4 Sources (direct pages only)
-- [S1] Useful Photography. The Photographers' Gallery / Found, Shared. https://thephotographersgallery.org.uk/whats-on/found-shared
+- [S1] Useful Photography. The Photographers' Gallery / Found, Shared. https://thephotographersgallery.org.uk/search?query=found%20shared
 - [S2] Useful Photography archive / project references. https://erikkessels.com/project/useful-photography/
 - [S3] Useful Photography #001-#004. Vincent Borrelli book record. https://www.vincentborrelli.com/pages/books/110094/hans-aarsman-hans-van-der-meer-erik-kessels-julian-germain-claudie-de-cleen/useful-photography-001-004-four-volume-set
 - [S4] Other Pictures: Vernacular Photographs from the Thomas Walther Collection. The Metropolitan Museum of Art. https://www.metmuseum.org/press-releases/other-pictures-vernacular-photographs-from-the-thomas-walther-collection-2000-exhibitions

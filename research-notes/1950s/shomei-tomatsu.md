@@ -72,7 +72,7 @@ tags: ["postwar-japan", "occupation", "nagasaki"]
 - [S3] Shomei Tomatsu. Tate. https://www.tate.org.uk/art/artists/shomei-tomatsu-21140
 - [S4] Shomei Tomatsu. MoMA. https://www.moma.org/artists/5874
 - [S5] Shomei Tomatsu. SFMOMA. https://www.sfmoma.org/artist/Shomei_Tomatsu/
-- [S6] Shomei Tomatsu. ICP. https://www.icp.org/browse/archive/constituents/shomei-tomatsu
+- [S6] Shomei Tomatsu. ICP. https://www.icp.org/search-results?query=shomei%20tomatsu
 - [S7] 東松照明検索. 東京都写真美術館. https://topmuseum.jp/
 - [S8] 東松照明検索. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E6%9D%B1%E6%9D%BE%E7%85%A7%E6%98%8E
 - [S9] 東松照明検索. CiNii Research. https://cir.nii.ac.jp/all?q=%E6%9D%B1%E6%9D%BE%E7%85%A7%E6%98%8E
@@ -81,7 +81,7 @@ tags: ["postwar-japan", "occupation", "nagasaki"]
 - [S11] Shomei Tomatsu: Skin of the Nation. Japan Society. https://japansociety.org/gallery/shomei-tomatsu-skin-of-the-nation/
 - [S12] Shomei Tomatsu search. The Japan Foundation. https://www.jpf.go.jp/e/search.html?q=Shomei+Tomatsu
 - [S13] 東松照明 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E6%9D%B1%E6%9D%BE%E7%85%A7%E6%98%8E
-- [S14] 東松照明 search. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S14] 東松照明 search. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S15] Shomei Tomatsu search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Shomei%20Tomatsu
 
 ## 7. 出典探索メモ / Source exploration memo

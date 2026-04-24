@@ -86,8 +86,8 @@ tags: ['man-altered landscape', 'alienation', 'development critique', 'systemic 
 - [S17] Lewis Baltz collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Lewis+Baltz
 - [S18] Lewis Baltz search. Art Institute of Chicago. https://www.artic.edu/search?q=Lewis+Baltz
 - [S19] Lewis Baltz search. SFMOMA. https://www.sfmoma.org/search/?q=Lewis+Baltz
-- [S20] Lewis Baltz archive search. ICP. https://www.icp.org/search-results/Lewis+Baltz
-- [S21] Lewis Baltz search. Whitney Museum. https://whitney.org/search?q=Lewis+Baltz
+- [S20] Lewis Baltz archive search. ICP. https://www.icp.org/search-results?query=Lewis+Baltz
+- [S21] Lewis Baltz search. Whitney Museum. https://whitney.org/search?query=Lewis+Baltz
 - [S22] Lewis Baltz search. Guggenheim Museum. https://www.guggenheim.org/?s=Lewis+Baltz
 - [S23] Lewis Baltz search. Smithsonian Institution. https://www.si.edu/search?query=Lewis+Baltz
 - [S24] Lewis Baltz bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Lewis+Baltz&searchCode=GKEY%5E*&searchType=0

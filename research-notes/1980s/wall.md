@@ -81,7 +81,7 @@ tags: ["near documentary", "tableau", "cinema and painting", "constructed realis
 - [S15] Jeff Wall — National Gallery of Canada. https://www.gallery.ca/collection/artist/jeff-wall — National collection text on Wall’s art-historical education, Baudelaire, and modern-life imagery.
 - [S16] Jeff Wall — Art21. https://art21.org/artist/jeff-wall/ — Artist profile with education, exhibition history, and institutional framing.
 - [S17] Jeff Wall - Photographs 1984-2023 — Museum of Contemporary Art Toronto. https://moca.ca/exhibitions/jeff-wall/ — Recent museum exhibition page for Wall’s long-form practice from 1984 to 2023.
-- [S18] Jeff Wall — The Art Institute of Chicago. https://www.artic.edu/artists/59979/jeff-wall — Museum artist page and collection entry route for The Flooded Grave.
+- [S18] Jeff Wall — The Art Institute of Chicago. https://www.artic.edu/search?q=jeff%20wall — Museum artist page and collection entry route for The Flooded Grave.
 - [S19] Jeff Wall: Photographs 1978-2004 — Schaulager. https://schaulager.org/en/exhibitions/previous/jeff-wall — Major retrospective text on lightboxes, large format, everyday urban life, painting, and contemporary life.
 - [S20] Jeff Wall — Fondation Cartier pour l’art contemporain. https://www.fondationcartier.com/en/programme/exhibition/jeff-wall — French exhibition text on A Sudden Gust of Wind, art history, film, and social/economic relations.
 - [S21] Jeff Wall — Fondation Henri Cartier-Bresson. https://www.henricartierbresson.org/en/expositions/jeff-wall-2/ — Exhibition page on Smaller Pictures and Wall’s selection of small works.

@@ -122,8 +122,8 @@ tags: ["nature as stage", "taxonomy", "human-nonhuman gaze"]
 - [route] Sanna Kannisto search. Guggenheim Museum. https://www.guggenheim.org/?s=Sanna+Kannisto
 - [route] Sanna Kannisto search. Art Institute of Chicago. https://www.artic.edu/search?q=Sanna+Kannisto
 - [route] Sanna Kannisto search. SFMOMA. https://www.sfmoma.org/search/?q=Sanna+Kannisto
-- [route] Sanna Kannisto search. Whitney Museum. https://whitney.org/search?q=Sanna+Kannisto
-- [route] Sanna Kannisto search. International Center of Photography. https://www.icp.org/search-results/Sanna%20Kannisto
+- [route] Sanna Kannisto search. Whitney Museum. https://whitney.org/search?query=Sanna+Kannisto
+- [route] Sanna Kannisto search. International Center of Photography. https://www.icp.org/search-results?query=Sanna%20Kannisto
 - [route] Sanna Kannisto search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Sanna+Kannisto
 - [route] Sanna Kannisto search. Getty. https://www.getty.edu/art/collection/search/?q=Sanna+Kannisto
 - [route] Sanna Kannisto route. Aperture. https://aperture.org/?s=Sanna+Kannisto
@@ -142,6 +142,6 @@ tags: ["nature as stage", "taxonomy", "human-nonhuman gaze"]
 - [route] Sanna Kannisto archive route. Smithsonian Institution. https://www.si.edu/search?query=Sanna+Kannisto
 - [route] Sanna Kannisto archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Sanna+Kannisto
 - [route] Sanna Kannisto exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Sanna+Kannisto
-- [route] Sanna Kannisto Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Sanna Kannisto Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Sanna Kannisto third-language / local institution route. https://www.google.com/search?q=Sanna+Kannisto+photography+museum+exhibition+catalogue
 - [route] Sanna Kannisto primary interview / statement route. https://www.google.com/search?q=Sanna+Kannisto+photographer+interview+artist+statement

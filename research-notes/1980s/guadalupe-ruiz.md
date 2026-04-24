@@ -121,8 +121,8 @@ tags: ["identity", "migration memory", "representation"]
 - [route] Guadalupe Ruiz search. Guggenheim Museum. https://www.guggenheim.org/?s=Guadalupe+Ruiz
 - [route] Guadalupe Ruiz search. Art Institute of Chicago. https://www.artic.edu/search?q=Guadalupe+Ruiz
 - [route] Guadalupe Ruiz search. SFMOMA. https://www.sfmoma.org/search/?q=Guadalupe+Ruiz
-- [route] Guadalupe Ruiz search. Whitney Museum. https://whitney.org/search?q=Guadalupe+Ruiz
-- [route] Guadalupe Ruiz search. International Center of Photography. https://www.icp.org/search-results/Guadalupe%20Ruiz
+- [route] Guadalupe Ruiz search. Whitney Museum. https://whitney.org/search?query=Guadalupe+Ruiz
+- [route] Guadalupe Ruiz search. International Center of Photography. https://www.icp.org/search-results?query=Guadalupe%20Ruiz
 - [route] Guadalupe Ruiz search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Guadalupe+Ruiz
 - [route] Guadalupe Ruiz search. Getty. https://www.getty.edu/art/collection/search/?q=Guadalupe+Ruiz
 - [route] Guadalupe Ruiz route. Aperture. https://aperture.org/?s=Guadalupe+Ruiz
@@ -141,6 +141,6 @@ tags: ["identity", "migration memory", "representation"]
 - [route] Guadalupe Ruiz archive route. Smithsonian Institution. https://www.si.edu/search?query=Guadalupe+Ruiz
 - [route] Guadalupe Ruiz archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Guadalupe+Ruiz
 - [route] Guadalupe Ruiz exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Guadalupe+Ruiz
-- [route] Guadalupe Ruiz Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Guadalupe Ruiz Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Guadalupe Ruiz third-language / local institution route. https://www.google.com/search?q=Guadalupe+Ruiz+photography+museum+exhibition+catalogue
 - [route] Guadalupe Ruiz primary interview / statement route. https://www.google.com/search?q=Guadalupe+Ruiz+photographer+interview+artist+statement

@@ -122,8 +122,8 @@ tags: ["memory", "transition", "archive"]
 - [route] Iosif Király search. Guggenheim Museum. https://www.guggenheim.org/?s=Iosif+Kir%C3%A1ly
 - [route] Iosif Király search. Art Institute of Chicago. https://www.artic.edu/search?q=Iosif+Kir%C3%A1ly
 - [route] Iosif Király search. SFMOMA. https://www.sfmoma.org/search/?q=Iosif+Kir%C3%A1ly
-- [route] Iosif Király search. Whitney Museum. https://whitney.org/search?q=Iosif+Kir%C3%A1ly
-- [route] Iosif Király search. International Center of Photography. https://www.icp.org/search-results/Iosif%20Kir%C3%A1ly
+- [route] Iosif Király search. Whitney Museum. https://whitney.org/search?query=Iosif+Kir%C3%A1ly
+- [route] Iosif Király search. International Center of Photography. https://www.icp.org/search-results?query=Iosif%20Kir%C3%A1ly
 - [route] Iosif Király search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Iosif+Kir%C3%A1ly
 - [route] Iosif Király search. Getty. https://www.getty.edu/art/collection/search/?q=Iosif+Kir%C3%A1ly
 - [route] Iosif Király route. Aperture. https://aperture.org/?s=Iosif+Kir%C3%A1ly
@@ -142,6 +142,6 @@ tags: ["memory", "transition", "archive"]
 - [route] Iosif Király archive route. Smithsonian Institution. https://www.si.edu/search?query=Iosif+Kir%C3%A1ly
 - [route] Iosif Király archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Iosif+Kir%C3%A1ly
 - [route] Iosif Király exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Iosif+Kir%C3%A1ly
-- [route] Iosif Király Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Iosif Király Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Iosif Király third-language / local institution route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photography+museum+exhibition+catalogue
 - [route] Iosif Király primary interview / statement route. https://www.google.com/search?q=Iosif+Kir%C3%A1ly+photographer+interview+artist+statement

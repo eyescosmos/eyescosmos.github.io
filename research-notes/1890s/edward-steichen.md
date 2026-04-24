@@ -71,7 +71,7 @@ tags: ["photo-secession", "pictorialism", "modernism", "291", "fashion", "intern
 ## 6. Sources
 - [S1] Edward J. Steichen: The Photo-Secession Years. Metropolitan Museum of Art. https://www.metmuseum.org/toah/hd/stei/hd_stei.htm
 - [S2] The Flatiron. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267841
-- [S3] Edward Steichen constituent page. ICP. https://www.icp.org/browse/archive/constituents/edward-steichen
+- [S3] Edward Steichen constituent page. ICP. https://www.icp.org/search-results?query=edward%20steichen
 - [S4] Edward Steichen Archive. MoMA Archives. https://www.moma.org/research/archives/finding-aids/Steichenf
 - [S5] Edward Steichen / Stieglitz Collection search. Art Institute of Chicago. https://archive.artic.edu/stieglitz/
 - [S6] Steichen family papers. Yale Archives. https://archives.yale.edu/repositories/11/resources/1442
@@ -81,8 +81,7 @@ tags: ["photo-secession", "pictorialism", "modernism", "291", "fashion", "intern
 - [S10] Edward Steichen artist page. MoMA. https://www.moma.org/artists/5663
 
 - [S11] Edward Steichen artist page. National Gallery of Art. https://www.nga.gov/artists/1919-edward-steichen
-- [S12] Edward Steichen artist page. Art Institute of Chicago. https://www.artic.edu/artists/36331/edward-j-steichen
-- Search route (count外): Edward Steichen collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Edward%20Steichen
+- [S12] Edward Steichen artist page. Art Institute of Chicago. https://www.artic.edu/search?q=edward%20J.%20steichen Search route (count外): Edward Steichen collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Edward%20Steichen
 - [S14] The Pond - Moonlight. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267840
 - Search route (count外): Edward Steichen collection search. V&A. https://collections.vam.ac.uk/search/?q=Edward%20Steichen
 - [S16] Steichen / Photo-Secession related collection search. National Gallery of Art. https://www.nga.gov/collection/artist-info.1919.html

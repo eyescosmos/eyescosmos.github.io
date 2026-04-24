@@ -122,8 +122,8 @@ tags: ["media critique", "geopolitics", "image regimes"]
 - [route] Marine Hugonnier search. Guggenheim Museum. https://www.guggenheim.org/?s=Marine+Hugonnier
 - [route] Marine Hugonnier search. Art Institute of Chicago. https://www.artic.edu/search?q=Marine+Hugonnier
 - [route] Marine Hugonnier search. SFMOMA. https://www.sfmoma.org/search/?q=Marine+Hugonnier
-- [route] Marine Hugonnier search. Whitney Museum. https://whitney.org/search?q=Marine+Hugonnier
-- [route] Marine Hugonnier search. International Center of Photography. https://www.icp.org/search-results/Marine%20Hugonnier
+- [route] Marine Hugonnier search. Whitney Museum. https://whitney.org/search?query=Marine+Hugonnier
+- [route] Marine Hugonnier search. International Center of Photography. https://www.icp.org/search-results?query=Marine%20Hugonnier
 - [route] Marine Hugonnier search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Marine+Hugonnier
 - [route] Marine Hugonnier search. Getty. https://www.getty.edu/art/collection/search/?q=Marine+Hugonnier
 - [route] Marine Hugonnier route. Aperture. https://aperture.org/?s=Marine+Hugonnier
@@ -142,6 +142,6 @@ tags: ["media critique", "geopolitics", "image regimes"]
 - [route] Marine Hugonnier archive route. Smithsonian Institution. https://www.si.edu/search?query=Marine+Hugonnier
 - [route] Marine Hugonnier archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Marine+Hugonnier
 - [route] Marine Hugonnier exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Marine+Hugonnier
-- [route] Marine Hugonnier Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Marine Hugonnier Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Marine Hugonnier third-language / local institution route. https://www.google.com/search?q=Marine+Hugonnier+photography+museum+exhibition+catalogue
 - [route] Marine Hugonnier primary interview / statement route. https://www.google.com/search?q=Marine+Hugonnier+photographer+interview+artist+statement

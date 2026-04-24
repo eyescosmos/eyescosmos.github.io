@@ -122,8 +122,8 @@ tags: ["miniaturization", "urban spectacle", "perception"]
 - [route] Olivo Barbieri search. Guggenheim Museum. https://www.guggenheim.org/?s=Olivo+Barbieri
 - [route] Olivo Barbieri search. Art Institute of Chicago. https://www.artic.edu/search?q=Olivo+Barbieri
 - [route] Olivo Barbieri search. SFMOMA. https://www.sfmoma.org/search/?q=Olivo+Barbieri
-- [route] Olivo Barbieri search. Whitney Museum. https://whitney.org/search?q=Olivo+Barbieri
-- [route] Olivo Barbieri search. International Center of Photography. https://www.icp.org/search-results/Olivo%20Barbieri
+- [route] Olivo Barbieri search. Whitney Museum. https://whitney.org/search?query=Olivo+Barbieri
+- [route] Olivo Barbieri search. International Center of Photography. https://www.icp.org/search-results?query=Olivo%20Barbieri
 - [route] Olivo Barbieri search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Olivo+Barbieri
 - [route] Olivo Barbieri search. Getty. https://www.getty.edu/art/collection/search/?q=Olivo+Barbieri
 - [route] Olivo Barbieri route. Aperture. https://aperture.org/?s=Olivo+Barbieri
@@ -142,6 +142,6 @@ tags: ["miniaturization", "urban spectacle", "perception"]
 - [route] Olivo Barbieri archive route. Smithsonian Institution. https://www.si.edu/search?query=Olivo+Barbieri
 - [route] Olivo Barbieri archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Olivo+Barbieri
 - [route] Olivo Barbieri exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Olivo+Barbieri
-- [route] Olivo Barbieri Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Olivo Barbieri Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Olivo Barbieri third-language / local institution route. https://www.google.com/search?q=Olivo+Barbieri+photography+museum+exhibition+catalogue
 - [route] Olivo Barbieri primary interview / statement route. https://www.google.com/search?q=Olivo+Barbieri+photographer+interview+artist+statement

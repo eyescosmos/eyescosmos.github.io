@@ -87,7 +87,7 @@ tags: ["political-empathy", "children-after-war", "magnum-humanism", "war-photog
 - [S10] David Seymour search. George Eastman Museum. https://collections.eastman.org/search/david%20seymour
 
 - [S11] David Seymour. National Gallery of Art. https://www.nga.gov/collection/artist-info.29674.html
-- [S12] David Seymour search. ICP. https://www.icp.org/search-results/David%20Seymour
+- [S12] David Seymour search. ICP. https://www.icp.org/search-results?query=David%20Seymour
 - [S13] Chim / David Seymour search. United States Holocaust Memorial Museum. https://collections.ushmm.org/search/?q=David%20Seymour%20Chim
 
 ## 7. Source exploration memo / next research routes

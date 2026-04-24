@@ -78,9 +78,7 @@ URL: https://www.loc.gov/exhibits/jacob-riis/
 [S4] Theodore Roosevelt Center, **Jacob Riis / friendship and reform context**（デジタルアーカイブ）
 
 [S5] ICP, **Jacob Riis**（作家アーカイブ）  
-URL: https://www.icp.org/browse/archive/constituents/jacob-riis
-
-[S6] Jacob A. Riis Museum, **The permanent exhibition**  
+URL: https://www.icp.org/search-results?query=jacob%20riis%20%5BS6%5D Jacob A. Riis Museum, **The permanent exhibition**  
 URL: https://jacobariismuseum.dk/en/permanent-exhibition/
 
 [S7] Museum of the City of New York, **Past Exhibition: Jacob A. Riis: Revealing New York’s Other Half**
@@ -98,7 +96,7 @@ URL: https://www.moma.org/collection/works/51022
 - [S14] PhotoAnthology, How the Other Half Lives (specialist project essay)  URL: https://photoanthology.org/projects/how-the-other-half-lives
 - [S15] LOC brochure, Jacob Riis: Revealing How the Other Half Lives (exhibition brochure PDF)  URL: https://www.loc.gov/exhibits/jacob-riis/images/Riis_Brochure.pdf
 
-- [S16] International Center of Photography, Jacob Riis constituent/archive page (photography archive / collection)  URL: https://www.icp.org/browse/archive/constituents/jacob-riis
+- [S16] International Center of Photography, Jacob Riis constituent/archive page (photography archive / collection)  URL: https://www.icp.org/search-results?query=jacob%20riis
 - [S17] International Center of Photography, Reporters in Mulberry St. (museum object page)  URL: https://www.icp.org/browse/archive/objects/reporters-in-mulberry-st
 - [S18] Jacob A. Riis Museum, Permanent exhibition (museum exhibition)  URL: https://jacobariismuseum.dk/en/permanent-exhibition/
 - [S19] International Center of Photography, The Complete Photographic Work of Jacob A. Riis (library/catalogue record)  URL: https://www.icp.org/content/complete-photographic-work-of-jacob-a-riis

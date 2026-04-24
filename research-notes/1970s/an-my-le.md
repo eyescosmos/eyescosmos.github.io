@@ -89,8 +89,8 @@ tags: ['war memory', 'simulation', 'landscape as political theatre']
 - [S20] An-My Lê search. Art Institute of Chicago. https://www.artic.edu/search?q=An-My+L%C3%AA
 - [S21] An-My Lê search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=An-My+L%C3%AA
 - [S22] An-My Lê search. SFMOMA. https://www.sfmoma.org/search/?q=An-My+L%C3%AA
-- [S23] An-My Lê archive search. ICP. https://www.icp.org/search-results/An-My+L%C3%AA
-- [S24] An-My Lê search. Whitney Museum. https://whitney.org/search?q=An-My+L%C3%AA
+- [S23] An-My Lê archive search. ICP. https://www.icp.org/search-results?query=An-My+L%C3%AA
+- [S24] An-My Lê search. Whitney Museum. https://whitney.org/search?query=An-My+L%C3%AA
 - [S25] An-My Lê search. Guggenheim Museum. https://www.guggenheim.org/?s=An-My+L%C3%AA
 - [S26] An-My Lê search. Smithsonian Institution. https://www.si.edu/search?query=An-My+L%C3%AA
 - [S27] An-My Lê bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=An-My+L%C3%AA&searchCode=GKEY%5E*&searchType=0

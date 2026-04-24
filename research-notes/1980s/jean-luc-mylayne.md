@@ -122,8 +122,8 @@ tags: ["duration", "non-human encounter", "anti-spectacle"]
 - [route] Jean-Luc Mylayne search. Guggenheim Museum. https://www.guggenheim.org/?s=Jean-Luc+Mylayne
 - [route] Jean-Luc Mylayne search. Art Institute of Chicago. https://www.artic.edu/search?q=Jean-Luc+Mylayne
 - [route] Jean-Luc Mylayne search. SFMOMA. https://www.sfmoma.org/search/?q=Jean-Luc+Mylayne
-- [route] Jean-Luc Mylayne search. Whitney Museum. https://whitney.org/search?q=Jean-Luc+Mylayne
-- [route] Jean-Luc Mylayne search. International Center of Photography. https://www.icp.org/search-results/Jean-Luc%20Mylayne
+- [route] Jean-Luc Mylayne search. Whitney Museum. https://whitney.org/search?query=Jean-Luc+Mylayne
+- [route] Jean-Luc Mylayne search. International Center of Photography. https://www.icp.org/search-results?query=Jean-Luc%20Mylayne
 - [route] Jean-Luc Mylayne search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Jean-Luc+Mylayne
 - [route] Jean-Luc Mylayne search. Getty. https://www.getty.edu/art/collection/search/?q=Jean-Luc+Mylayne
 - [route] Jean-Luc Mylayne route. Aperture. https://aperture.org/?s=Jean-Luc+Mylayne
@@ -142,6 +142,6 @@ tags: ["duration", "non-human encounter", "anti-spectacle"]
 - [route] Jean-Luc Mylayne archive route. Smithsonian Institution. https://www.si.edu/search?query=Jean-Luc+Mylayne
 - [route] Jean-Luc Mylayne archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Jean-Luc+Mylayne
 - [route] Jean-Luc Mylayne exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Jean-Luc+Mylayne
-- [route] Jean-Luc Mylayne Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Jean-Luc Mylayne Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Jean-Luc Mylayne third-language / local institution route. https://www.google.com/search?q=Jean-Luc+Mylayne+photography+museum+exhibition+catalogue
 - [route] Jean-Luc Mylayne primary interview / statement route. https://www.google.com/search?q=Jean-Luc+Mylayne+photographer+interview+artist+statement

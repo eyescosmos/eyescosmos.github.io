@@ -70,7 +70,7 @@ tags: ["i-photography", "postwar"]
 - [S1] Nobuyoshi Araki. Tate. https://www.tate.org.uk/art/artists/nobuyoshi-araki-2699
 - [S2] Nobuyoshi Araki Sentimental Journey. MoMA. https://www.moma.org/collection/works/128437
 - [S3] Sentimental Journey. Tokyo Museum Collection. https://museumcollection.tokyo/en/works/6316275/
-- [S4] ARAKI Nobuyoshi: Sentimental Journey 1971-2017 PDF. Tokyo Photographic Art Museum. https://topmuseum.jp/upload/2/2866/araki_20170724-12.pdf
+- [S4] ARAKI Nobuyoshi: Sentimental Journey 1971-2017 PDF. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S5] Sentimental Journey photobook. British Museum. https://www.britishmuseum.org/collection/object/A_2007-3007-6
 - [S6] Nobuyoshi Araki official profile. Araki Nobuyoshi official. https://arakinobuyoshi.jp/about/
 - [S7] 荒木経惟検索. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F

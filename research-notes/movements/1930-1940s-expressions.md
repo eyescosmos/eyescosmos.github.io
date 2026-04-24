@@ -30,7 +30,7 @@
 ## Sources / shared reference routes
 - [S1] FSA/OWI Collection. Library of Congress. https://loc.gov/pictures/collection/fsa/
 - [S2] Migrant Mother Research Guide. Library of Congress. https://guides.loc.gov/migrant-mother
-- [S3] George Rodger. ICP. https://www.icp.org/browse/archive/constituents/george-rodger
+- [S3] George Rodger. ICP. https://www.icp.org/search-results?query=george%20rodger
 - [S4] David Seymour. Magnum Photos. https://www.magnumphotos.com/photographer/david-seymour/
 - [S5] François Kollar. Jeu de Paume. https://jeudepaume.org/en/evenement/francois-kollar-2/
 - [S6] Manuel Alvarez Bravo. MoMA. https://www.moma.org/calendar/exhibitions/239

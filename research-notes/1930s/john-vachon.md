@@ -78,7 +78,7 @@ tags: ["ordinary-life", "archive", "plain-style", "fsa-documentary", "magazine-p
 - [S1] John Vachon. MoMA. https://www.moma.org/collection/artists/6048
 - [S2] John Vachon search. Library of Congress. https://www.loc.gov/pictures/search/?q=John%20Vachon
 - [S3] The Bitter Years PDF. MoMA. https://www.moma.org/documents/moma_catalogue_3433_300188233.pdf
-- [S4] John Vachon search. ICP. https://www.icp.org/search-results/John%20Vachon
+- [S4] John Vachon search. ICP. https://www.icp.org/search-results?query=John%20Vachon
 - [S5] John Vachon search. Getty Museum. https://www.getty.edu/art/collection/search/?q=John%20Vachon
 - [S6] John Vachon search. National Archives. https://catalog.archives.gov/search?q=John%20Vachon
 - [S7] John Vachon search. Smithsonian. https://www.si.edu/search?edan_q=John%20Vachon

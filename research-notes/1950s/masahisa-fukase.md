@@ -68,7 +68,7 @@ tags: ["i-photography", "postwar"]
 
 ## 6. Sources
 - [S1] Masahisa Fukase family album. Aperture. https://aperture.org/editorial/masahisa-fukase-family/
-- [S2] Masahisa Fukase Ravens. MACK. https://mackbooks.us/products/ravens-br-masahisa-fukase
+- [S2] Masahisa Fukase Ravens. MACK. https://mackbooks.us/search?type=product&q=ravens%20masahisa%20fukase
 - [S3] Masahisa Fukase. The Photographers’ Gallery. https://thephotographersgallery.org.uk/search?keys=Masahisa%20Fukase
 - [S4] 深瀬昌久検索. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E6%B7%B1%E7%80%AC%E6%98%8C%E4%B9%85
 - [S5] 深瀬昌久検索. CiNii Research. https://cir.nii.ac.jp/all?q=%E6%B7%B1%E7%80%AC%E6%98%8C%E4%B9%85

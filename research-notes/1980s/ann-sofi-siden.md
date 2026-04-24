@@ -119,8 +119,8 @@ tags: ["institutional gaze", "embodiment", "surveillance"]
 - [route] Ann-Sofi Sidén search. Guggenheim Museum. https://www.guggenheim.org/?s=Ann-Sofi+Sid%C3%A9n
 - [route] Ann-Sofi Sidén search. Art Institute of Chicago. https://www.artic.edu/search?q=Ann-Sofi+Sid%C3%A9n
 - [route] Ann-Sofi Sidén search. SFMOMA. https://www.sfmoma.org/search/?q=Ann-Sofi+Sid%C3%A9n
-- [route] Ann-Sofi Sidén search. Whitney Museum. https://whitney.org/search?q=Ann-Sofi+Sid%C3%A9n
-- [route] Ann-Sofi Sidén search. International Center of Photography. https://www.icp.org/search-results/Ann-Sofi%20Sid%C3%A9n
+- [route] Ann-Sofi Sidén search. Whitney Museum. https://whitney.org/search?query=Ann-Sofi+Sid%C3%A9n
+- [route] Ann-Sofi Sidén search. International Center of Photography. https://www.icp.org/search-results?query=Ann-Sofi%20Sid%C3%A9n
 - [route] Ann-Sofi Sidén search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Ann-Sofi+Sid%C3%A9n
 - [route] Ann-Sofi Sidén search. Getty. https://www.getty.edu/art/collection/search/?q=Ann-Sofi+Sid%C3%A9n
 - [route] Ann-Sofi Sidén route. Aperture. https://aperture.org/?s=Ann-Sofi+Sid%C3%A9n
@@ -139,6 +139,6 @@ tags: ["institutional gaze", "embodiment", "surveillance"]
 - [route] Ann-Sofi Sidén archive route. Smithsonian Institution. https://www.si.edu/search?query=Ann-Sofi+Sid%C3%A9n
 - [route] Ann-Sofi Sidén archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Ann-Sofi+Sid%C3%A9n
 - [route] Ann-Sofi Sidén exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Ann-Sofi+Sid%C3%A9n
-- [route] Ann-Sofi Sidén Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Ann-Sofi Sidén Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Ann-Sofi Sidén third-language / local institution route. https://www.google.com/search?q=Ann-Sofi+Sid%C3%A9n+photography+museum+exhibition+catalogue
 - [route] Ann-Sofi Sidén primary interview / statement route. https://www.google.com/search?q=Ann-Sofi+Sid%C3%A9n+photographer+interview+artist+statement

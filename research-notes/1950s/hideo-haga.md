@@ -75,7 +75,7 @@ tags: ["folklore-photography", "postwar"]
 - [S5] 芳賀日出男 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E8%8A%B3%E8%B3%80%E6%97%A5%E5%87%BA%E7%94%B7
 - [S6] Hideo Haga search. Smithsonian Institution. https://www.si.edu/search?query=Hideo%20Haga
 - [S7] 芳賀ライブラリー. Haga Library. https://hagalibrary.com/
-- [S8] 芳賀日出男 search. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S8] 芳賀日出男 search. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S9] Hideo Haga search. WorldCat. https://search.worldcat.org/search?q=Hideo+Haga
 
 - [S10] Okina (Old man) / Haga Hideo. ToMuCo - Tokyo Museum Collection. https://museumcollection.tokyo/en/works/98506/

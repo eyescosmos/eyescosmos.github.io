@@ -119,8 +119,8 @@ tags: ["autofiction", "desire", "private/public boundary"]
 - [route] Sophie Calle search. Guggenheim Museum. https://www.guggenheim.org/?s=Sophie+Calle
 - [route] Sophie Calle search. Art Institute of Chicago. https://www.artic.edu/search?q=Sophie+Calle
 - [route] Sophie Calle search. SFMOMA. https://www.sfmoma.org/search/?q=Sophie+Calle
-- [route] Sophie Calle search. Whitney Museum. https://whitney.org/search?q=Sophie+Calle
-- [route] Sophie Calle search. International Center of Photography. https://www.icp.org/search-results/Sophie%20Calle
+- [route] Sophie Calle search. Whitney Museum. https://whitney.org/search?query=Sophie+Calle
+- [route] Sophie Calle search. International Center of Photography. https://www.icp.org/search-results?query=Sophie%20Calle
 - [route] Sophie Calle search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Sophie+Calle
 - [route] Sophie Calle search. Getty. https://www.getty.edu/art/collection/search/?q=Sophie+Calle
 - [route] Sophie Calle route. Aperture. https://aperture.org/?s=Sophie+Calle
@@ -139,6 +139,6 @@ tags: ["autofiction", "desire", "private/public boundary"]
 - [route] Sophie Calle archive route. Smithsonian Institution. https://www.si.edu/search?query=Sophie+Calle
 - [route] Sophie Calle archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Sophie+Calle
 - [route] Sophie Calle exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Sophie+Calle
-- [route] Sophie Calle Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Sophie Calle Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Sophie Calle third-language / local institution route. https://www.google.com/search?q=Sophie+Calle+photography+museum+exhibition+catalogue
 - [route] Sophie Calle primary interview / statement route. https://www.google.com/search?q=Sophie+Calle+photographer+interview+artist+statement

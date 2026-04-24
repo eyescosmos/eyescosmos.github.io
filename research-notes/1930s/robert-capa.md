@@ -84,7 +84,7 @@ tags: ["risk", "proximity", "myth", "war-photography", "magnum"]
 - [S7] Robert Capa at Work review. FOTO8. https://www.foto8.com/live/robert-capas-war-stories/
 - [S8] Magnum history. Magnum Photos. https://www.magnumphotos.com/about-magnum/history/
 - [S9] The Construction of Photojournalism PDF. MIT CMS/W. https://cmsw.mit.edu/wp/wp-content/uploads/2016/10/146381149-Michelle-Woodward-The-Construction-of-Photojournalism-Visual-Style-and-Branding-in-the-Magnum-Photos-Agency.pdf
-- [S10] Robert Capa search. ICP. https://www.icp.org/search-results/Robert%20Capa
+- [S10] Robert Capa search. ICP. https://www.icp.org/search-results?query=Robert%20Capa
 - [S11] Robert Capa search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Robert%20Capa
 - [S12] Robert Capa search. Library of Congress. https://www.loc.gov/search/?fa=contributor:capa,+robert
 
@@ -92,7 +92,7 @@ tags: ["risk", "proximity", "myth", "war-photography", "magnum"]
 - [S14] Robert Capa Contemporary Photography Center. Capa Center. https://capacenter.hu/en/
 - [S15] Robert Capa collection search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Robert%20Capa
 - [S16] Robert Capa D-Day photographs. Magnum Photos. https://www.magnumphotos.com/arts-culture/history/robert-capa-d-day-omaha-beach/
-- [S17] Robert Capa and Gerda Taro search. ICP. https://www.icp.org/search-results/Capa%20Taro
+- [S17] Robert Capa and Gerda Taro search. ICP. https://www.icp.org/search-results?query=Capa%20Taro
 - [S18] Robert Capa search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?artist=Robert%20Capa
 - [S19] Robert Capa search. United States Holocaust Memorial Museum. https://collections.ushmm.org/search/?q=Robert%20Capa
 

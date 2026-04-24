@@ -95,7 +95,7 @@ tags: ["identity", "performance", "social belonging"]
 - [S3] Nikki S. Lee. X-TRA. https://www.x-traonline.org/article/nikki-s-lee
 - [S4] Nikki S. Lee — Museum of Modern Art. https://www.moma.org/artists/27968 — MoMA artist page
 - [S5] Nikki S. Lee — Guggenheim Museum. https://www.guggenheim.org/artwork/artist/nikki-s-lee — Guggenheim artist page
-- [S6] Nikki S. Lee — International Center of Photography. https://www.icp.org/browse/archive/constituents/nikki-s-lee — ICP archive/constituent page
+- [S6] Nikki S. Lee — International Center of Photography. https://www.icp.org/search-results?query=nikki%20s%20lee — ICP archive/constituent page
 - [S7] Nikki S. Lee — Leslie Tonkonow Artworks + Projects. https://www.tonkonow.com/artists/nikki-s-lee — gallery profile and exhibitions
 - [S8] Nikki S. Lee: Projects — Cleveland Museum of Art. https://www.clevelandart.org/art/2001.45 — museum object page for Projects series
 - [S9] Nikki S. Lee — SFMOMA. https://www.sfmoma.org/artist/Nikki_S._Lee/ — SFMOMA artist page

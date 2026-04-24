@@ -72,7 +72,7 @@ tags: ['photographic truth', 'perspective', 'constructed evidence']
 - [S4] Barbara Probst route. Centre Pompidou. https://www.google.com/search?q=Centre+Pompidou+Barbara+Probst+photography
 - [S5] Barbara Probst route. Kuckei + Kuckei. https://www.google.com/search?q=Kuckei+%2B+Kuckei+Barbara+Probst+photography
 - [S6] Barbara Probst route. Galerie Rudolfinum. https://www.google.com/search?q=Galerie+Rudolfinum+Barbara+Probst+photography
-- [S7] Barbara Probst route. ICP. https://www.icp.org/search-results/Barbara+Probst
+- [S7] Barbara Probst route. ICP. https://www.icp.org/search-results?query=Barbara+Probst
 - [S8] Barbara Probst route. Aperture. https://aperture.org/?s=Barbara+Probst
 - [S9] Barbara Probst bibliography. WorldCat. https://search.worldcat.org/search?q=Barbara+Probst
 - [S10] Barbara Probst scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Barbara+Probst+photography
@@ -90,7 +90,7 @@ tags: ['photographic truth', 'perspective', 'constructed evidence']
 - [S21] Barbara Probst search. Art Institute of Chicago. https://www.artic.edu/search?q=Barbara+Probst
 - [S22] Barbara Probst search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Barbara+Probst
 - [S23] Barbara Probst search. SFMOMA. https://www.sfmoma.org/search/?q=Barbara+Probst
-- [S24] Barbara Probst search. Whitney Museum. https://whitney.org/search?q=Barbara+Probst
+- [S24] Barbara Probst search. Whitney Museum. https://whitney.org/search?query=Barbara+Probst
 - [S25] Barbara Probst search. Guggenheim Museum. https://www.guggenheim.org/?s=Barbara+Probst
 - [S26] Barbara Probst search. Smithsonian Institution. https://www.si.edu/search?query=Barbara+Probst
 - [S27] Barbara Probst bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Barbara+Probst&searchCode=GKEY%5E*&searchType=0

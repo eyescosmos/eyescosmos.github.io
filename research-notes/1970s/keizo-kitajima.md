@@ -67,7 +67,7 @@ tags: ['post-Provoke speed', 'urban spectacle', 'political transition']
 
 ## 6. Sources
 - [S1] Keizo Kitajima route. Photographers Gallery / Kitajima route. https://www.google.com/search?q=Photographers+Gallery+%2F+Kitajima+route+Keizo+Kitajima+photography
-- [S2] Keizo Kitajima route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S2] Keizo Kitajima route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S3] Keizo Kitajima route. Nikon Salon. https://www.google.com/search?q=Nikon+Salon+Keizo+Kitajima+photography
 - [S4] Keizo Kitajima route. Tokyo Art Beat. https://www.google.com/search?q=Tokyo+Art+Beat+Keizo+Kitajima+photography
 - [S5] Keizo Kitajima bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Keizo+Kitajima
@@ -90,8 +90,8 @@ tags: ['post-Provoke speed', 'urban spectacle', 'political transition']
 - [S21] Keizo Kitajima search. Art Institute of Chicago. https://www.artic.edu/search?q=Keizo+Kitajima
 - [S22] Keizo Kitajima search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Keizo+Kitajima
 - [S23] Keizo Kitajima search. SFMOMA. https://www.sfmoma.org/search/?q=Keizo+Kitajima
-- [S24] Keizo Kitajima archive search. ICP. https://www.icp.org/search-results/Keizo+Kitajima
-- [S25] Keizo Kitajima search. Whitney Museum. https://whitney.org/search?q=Keizo+Kitajima
+- [S24] Keizo Kitajima archive search. ICP. https://www.icp.org/search-results?query=Keizo+Kitajima
+- [S25] Keizo Kitajima search. Whitney Museum. https://whitney.org/search?query=Keizo+Kitajima
 - [S26] Keizo Kitajima search. Guggenheim Museum. https://www.guggenheim.org/?s=Keizo+Kitajima
 - [S27] Keizo Kitajima search. Smithsonian Institution. https://www.si.edu/search?query=Keizo+Kitajima
 - [S28] Keizo Kitajima bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Keizo+Kitajima&searchCode=GKEY%5E*&searchType=0

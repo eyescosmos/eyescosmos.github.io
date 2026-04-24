@@ -78,7 +78,7 @@ tags: ["hanshinkan-modernism", "translation-of-avant-garde", "print-culture", "j
 - [S5] 中山岩太 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E4%B8%AD%E5%B1%B1%E5%B2%A9%E5%A4%AA
 - [S6] 中山岩太 search. CiNii Research. https://cir.nii.ac.jp/all?q=%E4%B8%AD%E5%B1%B1%E5%B2%A9%E5%A4%AA
 - [S7] Iwata Nakayama search. British Museum. https://www.britishmuseum.org/collection/search?keyword=Iwata%20Nakayama
-- [S8] Iwata Nakayama search. ICP. https://www.icp.org/search-results/Iwata%20Nakayama
+- [S8] Iwata Nakayama search. ICP. https://www.icp.org/search-results?query=Iwata%20Nakayama
 - [S9] 中山岩太 search. ToMuCo. https://museumcollection.tokyo/works/?q=%E4%B8%AD%E5%B1%B1%E5%B2%A9%E5%A4%AA
 - [S10] 中山岩太 search. Ashiya City Museum route. https://ashiya-museum.jp/
 

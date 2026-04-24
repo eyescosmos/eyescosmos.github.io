@@ -119,8 +119,8 @@ tags: ["non-place", "urban anonymity", "global architecture"]
 - [route] Frank van der Salm search. Guggenheim Museum. https://www.guggenheim.org/?s=Frank+van+der+Salm
 - [route] Frank van der Salm search. Art Institute of Chicago. https://www.artic.edu/search?q=Frank+van+der+Salm
 - [route] Frank van der Salm search. SFMOMA. https://www.sfmoma.org/search/?q=Frank+van+der+Salm
-- [route] Frank van der Salm search. Whitney Museum. https://whitney.org/search?q=Frank+van+der+Salm
-- [route] Frank van der Salm search. International Center of Photography. https://www.icp.org/search-results/Frank%20van%20der%20Salm
+- [route] Frank van der Salm search. Whitney Museum. https://whitney.org/search?query=Frank+van+der+Salm
+- [route] Frank van der Salm search. International Center of Photography. https://www.icp.org/search-results?query=Frank%20van%20der%20Salm
 - [route] Frank van der Salm search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Frank+van+der+Salm
 - [route] Frank van der Salm search. Getty. https://www.getty.edu/art/collection/search/?q=Frank+van+der+Salm
 - [route] Frank van der Salm route. Aperture. https://aperture.org/?s=Frank+van+der+Salm
@@ -139,6 +139,6 @@ tags: ["non-place", "urban anonymity", "global architecture"]
 - [route] Frank van der Salm archive route. Smithsonian Institution. https://www.si.edu/search?query=Frank+van+der+Salm
 - [route] Frank van der Salm archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Frank+van+der+Salm
 - [route] Frank van der Salm exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Frank+van+der+Salm
-- [route] Frank van der Salm Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Frank van der Salm Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Frank van der Salm third-language / local institution route. https://www.google.com/search?q=Frank+van+der+Salm+photography+museum+exhibition+catalogue
 - [route] Frank van der Salm primary interview / statement route. https://www.google.com/search?q=Frank+van+der+Salm+photographer+interview+artist+statement

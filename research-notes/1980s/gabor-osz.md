@@ -119,8 +119,8 @@ tags: ["apparatus", "historical memory", "optical architecture"]
 - [route] Gábor Ősz search. Guggenheim Museum. https://www.guggenheim.org/?s=G%C3%A1bor+%C5%90sz
 - [route] Gábor Ősz search. Art Institute of Chicago. https://www.artic.edu/search?q=G%C3%A1bor+%C5%90sz
 - [route] Gábor Ősz search. SFMOMA. https://www.sfmoma.org/search/?q=G%C3%A1bor+%C5%90sz
-- [route] Gábor Ősz search. Whitney Museum. https://whitney.org/search?q=G%C3%A1bor+%C5%90sz
-- [route] Gábor Ősz search. International Center of Photography. https://www.icp.org/search-results/G%C3%A1bor%20%C5%90sz
+- [route] Gábor Ősz search. Whitney Museum. https://whitney.org/search?query=G%C3%A1bor+%C5%90sz
+- [route] Gábor Ősz search. International Center of Photography. https://www.icp.org/search-results?query=G%C3%A1bor%20%C5%90sz
 - [route] Gábor Ősz search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=G%C3%A1bor+%C5%90sz
 - [route] Gábor Ősz search. Getty. https://www.getty.edu/art/collection/search/?q=G%C3%A1bor+%C5%90sz
 - [route] Gábor Ősz route. Aperture. https://aperture.org/?s=G%C3%A1bor+%C5%90sz
@@ -139,6 +139,6 @@ tags: ["apparatus", "historical memory", "optical architecture"]
 - [route] Gábor Ősz archive route. Smithsonian Institution. https://www.si.edu/search?query=G%C3%A1bor+%C5%90sz
 - [route] Gábor Ősz archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=G%C3%A1bor+%C5%90sz
 - [route] Gábor Ősz exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=G%C3%A1bor+%C5%90sz
-- [route] Gábor Ősz Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Gábor Ősz Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Gábor Ősz third-language / local institution route. https://www.google.com/search?q=G%C3%A1bor+%C5%90sz+photography+museum+exhibition+catalogue
 - [route] Gábor Ősz primary interview / statement route. https://www.google.com/search?q=G%C3%A1bor+%C5%90sz+photographer+interview+artist+statement

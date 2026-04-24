@@ -119,8 +119,8 @@ tags: ["social critique", "spectacle", "consumerism"]
 - [route] Wang Qingsong search. Guggenheim Museum. https://www.guggenheim.org/?s=Wang+Qingsong
 - [route] Wang Qingsong search. Art Institute of Chicago. https://www.artic.edu/search?q=Wang+Qingsong
 - [route] Wang Qingsong search. SFMOMA. https://www.sfmoma.org/search/?q=Wang+Qingsong
-- [route] Wang Qingsong search. Whitney Museum. https://whitney.org/search?q=Wang+Qingsong
-- [route] Wang Qingsong search. International Center of Photography. https://www.icp.org/search-results/Wang%20Qingsong
+- [route] Wang Qingsong search. Whitney Museum. https://whitney.org/search?query=Wang+Qingsong
+- [route] Wang Qingsong search. International Center of Photography. https://www.icp.org/search-results?query=Wang%20Qingsong
 - [route] Wang Qingsong search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Wang+Qingsong
 - [route] Wang Qingsong search. Getty. https://www.getty.edu/art/collection/search/?q=Wang+Qingsong
 - [route] Wang Qingsong route. Aperture. https://aperture.org/?s=Wang+Qingsong
@@ -139,6 +139,6 @@ tags: ["social critique", "spectacle", "consumerism"]
 - [route] Wang Qingsong archive route. Smithsonian Institution. https://www.si.edu/search?query=Wang+Qingsong
 - [route] Wang Qingsong archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Wang+Qingsong
 - [route] Wang Qingsong exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Wang+Qingsong
-- [route] Wang Qingsong Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Wang Qingsong Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Wang Qingsong third-language / local institution route. https://www.google.com/search?q=Wang+Qingsong+photography+museum+exhibition+catalogue
 - [route] Wang Qingsong primary interview / statement route. https://www.google.com/search?q=Wang+Qingsong+photographer+interview+artist+statement

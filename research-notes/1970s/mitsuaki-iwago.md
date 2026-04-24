@@ -69,7 +69,7 @@ tags: ['animal life', 'ecology', 'popular photographic media']
 - [S1] Mitsuaki Iwago official / estate route. Mitsuaki Iwago official. https://www.google.com/search?q=Mitsuaki+Iwago+official+artist+photographer
 - [S2] Mitsuaki Iwago route. NHK route. https://www.google.com/search?q=NHK+route+Mitsuaki+Iwago+photography
 - [S3] Mitsuaki Iwago route. Canon Gallery. https://www.google.com/search?q=Canon+Gallery+Mitsuaki+Iwago+photography
-- [S4] Mitsuaki Iwago route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S4] Mitsuaki Iwago route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S5] Mitsuaki Iwago bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Mitsuaki+Iwago
 - [S6] Mitsuaki Iwago research route. CiNii Research. https://cir.nii.ac.jp/all?q=Mitsuaki+Iwago
 - [S7] Mitsuaki Iwago bibliography. WorldCat. https://search.worldcat.org/search?q=Mitsuaki+Iwago
@@ -91,9 +91,9 @@ tags: ['animal life', 'ecology', 'popular photographic media']
 - [S22] Mitsuaki Iwago search. Art Institute of Chicago. https://www.artic.edu/search?q=Mitsuaki+Iwago
 - [S23] Mitsuaki Iwago search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Mitsuaki+Iwago
 - [S24] Mitsuaki Iwago search. SFMOMA. https://www.sfmoma.org/search/?q=Mitsuaki+Iwago
-- [S25] Mitsuaki Iwago archive search. ICP. https://www.icp.org/search-results/Mitsuaki+Iwago
+- [S25] Mitsuaki Iwago archive search. ICP. https://www.icp.org/search-results?query=Mitsuaki+Iwago
 - [S26] Mitsuaki Iwago route. Aperture. https://aperture.org/?s=Mitsuaki+Iwago
-- [S27] Mitsuaki Iwago search. Whitney Museum. https://whitney.org/search?q=Mitsuaki+Iwago
+- [S27] Mitsuaki Iwago search. Whitney Museum. https://whitney.org/search?query=Mitsuaki+Iwago
 - [S28] Mitsuaki Iwago search. Guggenheim Museum. https://www.guggenheim.org/?s=Mitsuaki+Iwago
 - [S29] Mitsuaki Iwago search. Smithsonian Institution. https://www.si.edu/search?query=Mitsuaki+Iwago
 - [S30] Mitsuaki Iwago bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Mitsuaki+Iwago&searchCode=GKEY%5E*&searchType=0

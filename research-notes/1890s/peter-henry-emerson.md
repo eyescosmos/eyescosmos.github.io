@@ -78,7 +78,7 @@ tags: ["naturalism", "straight-photography", "vision", "anti-manipulation", "pho
 - [S5] Naturalistic Photography for Students of the Art. Project Gutenberg. https://www.gutenberg.org/ebooks/56833
 - [S6] The Death of Naturalistic Photography. Internet Archive. https://archive.org/details/deathofnaturalist00emer
 - [S7] Photography Not Art: Naturalism according to P.H. Emerson. Musée d’Orsay. https://www.musee-orsay.fr/en/whats-on/exhibitions/photography-not-artnaturalism-according-ph-emerson-1886-1895
-- [S8] Peter Henry Emerson artist page. Art Institute of Chicago. https://www.artic.edu/artists/34398/peter-henry-emerson
+- [S8] Peter Henry Emerson artist page. Art Institute of Chicago. https://www.artic.edu/search?q=peter%20henry%20emerson
 - [S9] Peter Henry Emerson artist page. National Gallery of Art. https://www.nga.gov/artists/6750-peter-henry-emerson
 - [S10] The English Emersons. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267044
 - [S11] Peter Henry Emerson’s Platinum Prints and Photogravures PDF. Cultural Heritage. https://www.culturalheritage.org/docs/default-source/publications/books/platinum-and-palladium-photographs/290-301_wrighttaylor_phemerson.pdf?Status=Master&sfvrsn=10df1020_3

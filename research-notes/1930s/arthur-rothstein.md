@@ -75,18 +75,16 @@ tags: ["state-documentary", "authenticity-debate", "new-deal-visual-policy", "fs
 - 本人発言・同時代批評は、原典確認後に短く引用候補化する。引用は本文1文につき最大1つまでにする。
 
 ## 6. Sources
-- [S1] Arthur Rothstein. ICP. https://www.icp.org/browse/archive/constituents/arthur-rothstein
+- [S1] Arthur Rothstein. ICP. https://www.icp.org/search-results?query=arthur%20rothstein
 - [S2] Arthur Rothstein search. Smithsonian American Art Museum. https://americanart.si.edu/search?query=Arthur%20Rothstein
 - [S3] Arthur Rothstein search. Library of Congress. https://www.loc.gov/pictures/search/?q=Arthur%20Rothstein
 - [S4] Arthur Rothstein photographs return. TIME. https://time.com/3881331/arthur-rothstein-photographs-return-to-columbia/
 - [S5] Arthur Rothstein search. National Archives. https://catalog.archives.gov/search?q=Arthur%20Rothstein
 - [S6] Arthur Rothstein search. MoMA. https://www.moma.org/search/?query=Arthur%20Rothstein
-- [S7] Arthur Rothstein search. ICP Library. https://www.icp.org/search-results/Arthur%20Rothstein
+- [S7] Arthur Rothstein search. ICP Library. https://www.icp.org/search-results?query=Arthur%20Rothstein
 - [S8] FSA collection. Library of Congress. https://loc.gov/pictures/collection/fsa/
 - [S9] Arthur Rothstein search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Arthur%20Rothstein
 - [S10] Arthur Rothstein search. Columbia University Libraries. https://clio.columbia.edu/catalog?q=Arthur%20Rothstein
 
-- [S11] Arthur Rothstein. Smithsonian American Art Museum. https://americanart.si.edu/artist/arthur-rothstein-4126
-
-## 7. Source exploration memo / next research routes
+- [S11] Arthur Rothstein. Smithsonian American Art Museum. https://americanart.si.edu/search?query=arthur%20rothstein%204126%20%23%23 7. Source exploration memo / next research routes
 出典数は11件。情報量に応じて、図録、当時の雑誌、所蔵館検索、地域資料、本人インタビューを追加探索する。

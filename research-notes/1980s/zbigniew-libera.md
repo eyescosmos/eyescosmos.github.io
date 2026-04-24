@@ -119,8 +119,8 @@ tags: ["criticality", "representation crisis", "institutional critique"]
 - [route] Zbigniew Libera search. Guggenheim Museum. https://www.guggenheim.org/?s=Zbigniew+Libera
 - [route] Zbigniew Libera search. Art Institute of Chicago. https://www.artic.edu/search?q=Zbigniew+Libera
 - [route] Zbigniew Libera search. SFMOMA. https://www.sfmoma.org/search/?q=Zbigniew+Libera
-- [route] Zbigniew Libera search. Whitney Museum. https://whitney.org/search?q=Zbigniew+Libera
-- [route] Zbigniew Libera search. International Center of Photography. https://www.icp.org/search-results/Zbigniew%20Libera
+- [route] Zbigniew Libera search. Whitney Museum. https://whitney.org/search?query=Zbigniew+Libera
+- [route] Zbigniew Libera search. International Center of Photography. https://www.icp.org/search-results?query=Zbigniew%20Libera
 - [route] Zbigniew Libera search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Zbigniew+Libera
 - [route] Zbigniew Libera search. Getty. https://www.getty.edu/art/collection/search/?q=Zbigniew+Libera
 - [route] Zbigniew Libera route. Aperture. https://aperture.org/?s=Zbigniew+Libera
@@ -139,6 +139,6 @@ tags: ["criticality", "representation crisis", "institutional critique"]
 - [route] Zbigniew Libera archive route. Smithsonian Institution. https://www.si.edu/search?query=Zbigniew+Libera
 - [route] Zbigniew Libera archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Zbigniew+Libera
 - [route] Zbigniew Libera exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Zbigniew+Libera
-- [route] Zbigniew Libera Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Zbigniew Libera Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Zbigniew Libera third-language / local institution route. https://www.google.com/search?q=Zbigniew+Libera+photography+museum+exhibition+catalogue
 - [route] Zbigniew Libera primary interview / statement route. https://www.google.com/search?q=Zbigniew+Libera+photographer+interview+artist+statement

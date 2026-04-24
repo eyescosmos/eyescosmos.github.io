@@ -89,9 +89,9 @@ tags: ['source gap', 'documentation limit', 'exhibition record']
 - [S20] Santos R. Vasquez search. Art Institute of Chicago. https://www.artic.edu/search?q=Santos+R.+Vasquez
 - [S21] Santos R. Vasquez search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Santos+R.+Vasquez
 - [S22] Santos R. Vasquez search. SFMOMA. https://www.sfmoma.org/search/?q=Santos+R.+Vasquez
-- [S23] Santos R. Vasquez archive search. ICP. https://www.icp.org/search-results/Santos+R.+Vasquez
+- [S23] Santos R. Vasquez archive search. ICP. https://www.icp.org/search-results?query=Santos+R.+Vasquez
 - [S24] Santos R. Vasquez route. Aperture. https://aperture.org/?s=Santos+R.+Vasquez
-- [S25] Santos R. Vasquez search. Whitney Museum. https://whitney.org/search?q=Santos+R.+Vasquez
+- [S25] Santos R. Vasquez search. Whitney Museum. https://whitney.org/search?query=Santos+R.+Vasquez
 - [S26] Santos R. Vasquez search. Guggenheim Museum. https://www.guggenheim.org/?s=Santos+R.+Vasquez
 - [S27] Santos R. Vasquez search. Smithsonian Institution. https://www.si.edu/search?query=Santos+R.+Vasquez
 - [S28] Santos R. Vasquez bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Santos+R.+Vasquez&searchCode=GKEY%5E*&searchType=0

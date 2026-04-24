@@ -125,8 +125,8 @@ tags: ["archive", "memory politics", "image ownership"]
 - [route] Rosângela Rennó search. Guggenheim Museum. https://www.guggenheim.org/?s=Ros%C3%A2ngela+Renn%C3%B3
 - [route] Rosângela Rennó search. Art Institute of Chicago. https://www.artic.edu/search?q=Ros%C3%A2ngela+Renn%C3%B3
 - [route] Rosângela Rennó search. SFMOMA. https://www.sfmoma.org/search/?q=Ros%C3%A2ngela+Renn%C3%B3
-- [route] Rosângela Rennó search. Whitney Museum. https://whitney.org/search?q=Ros%C3%A2ngela+Renn%C3%B3
-- [route] Rosângela Rennó search. International Center of Photography. https://www.icp.org/search-results/Ros%C3%A2ngela%20Renn%C3%B3
+- [route] Rosângela Rennó search. Whitney Museum. https://whitney.org/search?query=Ros%C3%A2ngela+Renn%C3%B3
+- [route] Rosângela Rennó search. International Center of Photography. https://www.icp.org/search-results?query=Ros%C3%A2ngela%20Renn%C3%B3
 - [route] Rosângela Rennó search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Ros%C3%A2ngela+Renn%C3%B3
 - [route] Rosângela Rennó search. Getty. https://www.getty.edu/art/collection/search/?q=Ros%C3%A2ngela+Renn%C3%B3
 - [route] Rosângela Rennó route. Aperture. https://aperture.org/?s=Ros%C3%A2ngela+Renn%C3%B3
@@ -145,6 +145,6 @@ tags: ["archive", "memory politics", "image ownership"]
 - [route] Rosângela Rennó archive route. Smithsonian Institution. https://www.si.edu/search?query=Ros%C3%A2ngela+Renn%C3%B3
 - [route] Rosângela Rennó archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Ros%C3%A2ngela+Renn%C3%B3
 - [route] Rosângela Rennó exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Ros%C3%A2ngela+Renn%C3%B3
-- [route] Rosângela Rennó Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Rosângela Rennó Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Rosângela Rennó third-language / local institution route. https://www.google.com/search?q=Ros%C3%A2ngela+Renn%C3%B3+photography+museum+exhibition+catalogue
 - [route] Rosângela Rennó primary interview / statement route. https://www.google.com/search?q=Ros%C3%A2ngela+Renn%C3%B3+photographer+interview+artist+statement

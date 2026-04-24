@@ -71,7 +71,7 @@ tags: ["straight-photography", "objectivity", "formalism", "materiality", "body"
 - “first camera … in 1902” [S1]
 
 ## 6. Sources
-- [S1] Edward Weston constituent page. ICP. https://www.icp.org/browse/archive/constituents/edward-weston
+- [S1] Edward Weston constituent page. ICP. https://www.icp.org/search-results?query=edward%20weston
 - [S2] Edward Weston: Enduring Vision. Getty Museum. https://www.getty.edu/art/exhibitions/weston/index.html
 - [S3] Edward Weston artist page. SFMOMA. https://www.sfmoma.org/artist/Edward_Weston/
 - [S4] Edward Weston artist page. MoMA. https://www.moma.org/artists/6329

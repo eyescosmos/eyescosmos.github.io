@@ -68,15 +68,15 @@ tags: ['anti-aesthetic', 'city as image-flow', 'media saturation', 'photographic
 ## 6. Sources
 - [S1] Daido Moriyama official site. Daido Moriyama Photo Foundation. https://www.moriyamadaido.com/en/
 - [S2] Daido Moriyama. Tate. https://www.tate.org.uk/art/artists/daido-moriyama-8777
-- [S3] William Klein + Daido Moriyama. The Photographers Gallery. https://thephotographersgallery.org.uk/whats-on/william-klein-daido-moriyama
+- [S3] William Klein + Daido Moriyama. The Photographers Gallery. https://thephotographersgallery.org.uk/search?query=william%20klein%20daido%20moriyama
 - [S4] Daido Moriyama route. Aperture. https://aperture.org/?s=Daido+Moriyama
 - [S5] Daido Moriyama search. MoMA. https://www.moma.org/search/?query=Daido+Moriyama
-- [S6] Daido Moriyama search. ICP. https://www.icp.org/search-results/Daido+Moriyama
+- [S6] Daido Moriyama search. ICP. https://www.icp.org/search-results?query=Daido+Moriyama
 - [S7] Daido Moriyama. Fondation Cartier. https://www.fondationcartier.com/en/exhibitions/daido-moriyama
 - [S8] Daido Moriyama. Steidl. https://steidl.de/Artists/Daido-Moriyama-0506083349.html
 - [S9] 森山大道 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E6%A3%AE%E5%B1%B1%E5%A4%A7%E9%81%93
 - [S10] 森山大道 search. CiNii Research. https://cir.nii.ac.jp/all?q=%E6%A3%AE%E5%B1%B1%E5%A4%A7%E9%81%93
-- [S11] 森山大道 route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S11] 森山大道 route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S12] Daido Moriyama scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Daido+Moriyama+Provoke+are+bure+boke
 
 - [S13] 森山大道 official Japanese. 森山大道写真財団. https://www.moriyamadaido.com/
@@ -86,7 +86,7 @@ tags: ['anti-aesthetic', 'city as image-flow', 'media saturation', 'photographic
 - [S17] Daido Moriyama search. Art Institute of Chicago. https://www.artic.edu/search?q=Daido+Moriyama
 - [S18] Daido Moriyama search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Daido+Moriyama
 - [S19] Daido Moriyama search. SFMOMA. https://www.sfmoma.org/search/?q=Daido+Moriyama
-- [S20] Daido Moriyama search. Whitney Museum. https://whitney.org/search?q=Daido+Moriyama
+- [S20] Daido Moriyama search. Whitney Museum. https://whitney.org/search?query=Daido+Moriyama
 - [S21] Daido Moriyama search. Guggenheim Museum. https://www.guggenheim.org/?s=Daido+Moriyama
 - [S22] Daido Moriyama search. Smithsonian Institution. https://www.si.edu/search?query=Daido+Moriyama
 - [S23] Daido Moriyama bibliography. WorldCat. https://search.worldcat.org/search?q=Daido+Moriyama

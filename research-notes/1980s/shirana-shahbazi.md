@@ -97,7 +97,7 @@ tags: ["representation", "translation", "color surface"]
 - [S6] Shirana Shahbazi Flash Art PDF — Galerie Peter Kilchmann. https://www.peterkilchmann.com/usr/documents/press/download_url/86/sh20_flashart.pdf — critical/review text on color-blocked installations
 - [S7] Shirana Shahbazi — edcat. https://edcat.net/item/shirana-shahbazi/ — photobook/publisher record
 - [S8] Shirana Shahbazi — Kunsthaus Zürich. https://www.kunsthaus.ch/en/sammlung/kunstwerke-von-a-z/?kuenstler=shirana-shahbazi — collection context
-- [S9] Shirana Shahbazi — MACK. https://mackbooks.co.uk/products/shirana-shahbazi-br-shirana-shahbazi — publisher page for photobook context
+- [S9] Shirana Shahbazi — MACK. https://mackbooks.co.uk/search?type=product&q=shirana%20shahbazi%20shirana%20shahbazi — publisher page for photobook context
 - [S10] Shirana Shahbazi — Prix Meret Oppenheim / Swiss Art Awards. https://swissartawards.ch/prix-meret-oppenheim/shirana-shahbazi/ — award/institutional profile
 
 ### 8.5 出典探索メモ / Source exploration memo
@@ -119,8 +119,8 @@ tags: ["representation", "translation", "color surface"]
 - [route] Shirana Shahbazi search. Guggenheim Museum. https://www.guggenheim.org/?s=Shirana+Shahbazi
 - [route] Shirana Shahbazi search. Art Institute of Chicago. https://www.artic.edu/search?q=Shirana+Shahbazi
 - [route] Shirana Shahbazi search. SFMOMA. https://www.sfmoma.org/search/?q=Shirana+Shahbazi
-- [route] Shirana Shahbazi search. Whitney Museum. https://whitney.org/search?q=Shirana+Shahbazi
-- [route] Shirana Shahbazi search. International Center of Photography. https://www.icp.org/search-results/Shirana%20Shahbazi
+- [route] Shirana Shahbazi search. Whitney Museum. https://whitney.org/search?query=Shirana+Shahbazi
+- [route] Shirana Shahbazi search. International Center of Photography. https://www.icp.org/search-results?query=Shirana%20Shahbazi
 - [route] Shirana Shahbazi search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Shirana+Shahbazi
 - [route] Shirana Shahbazi search. Getty. https://www.getty.edu/art/collection/search/?q=Shirana+Shahbazi
 - [route] Shirana Shahbazi route. Aperture. https://aperture.org/?s=Shirana+Shahbazi
@@ -139,6 +139,6 @@ tags: ["representation", "translation", "color surface"]
 - [route] Shirana Shahbazi archive route. Smithsonian Institution. https://www.si.edu/search?query=Shirana+Shahbazi
 - [route] Shirana Shahbazi archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Shirana+Shahbazi
 - [route] Shirana Shahbazi exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Shirana+Shahbazi
-- [route] Shirana Shahbazi Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Shirana Shahbazi Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Shirana Shahbazi third-language / local institution route. https://www.google.com/search?q=Shirana+Shahbazi+photography+museum+exhibition+catalogue
 - [route] Shirana Shahbazi primary interview / statement route. https://www.google.com/search?q=Shirana+Shahbazi+photographer+interview+artist+statement

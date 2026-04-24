@@ -125,8 +125,8 @@ tags: ["constructed nature", "image convention", "post-documentary"]
 - [route] Beate Gütschow search. Guggenheim Museum. https://www.guggenheim.org/?s=Beate+G%C3%BCtschow
 - [route] Beate Gütschow search. Art Institute of Chicago. https://www.artic.edu/search?q=Beate+G%C3%BCtschow
 - [route] Beate Gütschow search. SFMOMA. https://www.sfmoma.org/search/?q=Beate+G%C3%BCtschow
-- [route] Beate Gütschow search. Whitney Museum. https://whitney.org/search?q=Beate+G%C3%BCtschow
-- [route] Beate Gütschow search. International Center of Photography. https://www.icp.org/search-results/Beate%20G%C3%BCtschow
+- [route] Beate Gütschow search. Whitney Museum. https://whitney.org/search?query=Beate+G%C3%BCtschow
+- [route] Beate Gütschow search. International Center of Photography. https://www.icp.org/search-results?query=Beate%20G%C3%BCtschow
 - [route] Beate Gütschow search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Beate+G%C3%BCtschow
 - [route] Beate Gütschow search. Getty. https://www.getty.edu/art/collection/search/?q=Beate+G%C3%BCtschow
 - [route] Beate Gütschow route. Aperture. https://aperture.org/?s=Beate+G%C3%BCtschow
@@ -145,6 +145,6 @@ tags: ["constructed nature", "image convention", "post-documentary"]
 - [route] Beate Gütschow archive route. Smithsonian Institution. https://www.si.edu/search?query=Beate+G%C3%BCtschow
 - [route] Beate Gütschow archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Beate+G%C3%BCtschow
 - [route] Beate Gütschow exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Beate+G%C3%BCtschow
-- [route] Beate Gütschow Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Beate Gütschow Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Beate Gütschow third-language / local institution route. https://www.google.com/search?q=Beate+G%C3%BCtschow+photography+museum+exhibition+catalogue
 - [route] Beate Gütschow primary interview / statement route. https://www.google.com/search?q=Beate+G%C3%BCtschow+photographer+interview+artist+statement

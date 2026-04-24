@@ -76,7 +76,7 @@ tags: ["photo-agency", "wartime-documentation", "institution-building", "life-ph
 
 ## 6. Sources
 - [S1] William Vandivert search. Princeton University Art Museum. https://artmuseum.princeton.edu/collections/objects?search=William%20Vandivert
-- [S2] William Vandivert. ICP. https://www.icp.org/browse/archive/constituents/william-vandivert
+- [S2] William Vandivert. ICP. https://www.icp.org/search-results?query=william%20vandivert
 - [S3] William Vandivert search. MoMA. https://www.moma.org/search/?query=William%20Vandivert
 - [S4] William Vandivert search. Georgia O’Keeffe Museum. https://collections.okeeffemuseum.org/search/William%20Vandivert
 - [S5] Magnum history. Magnum Photos. https://www.magnumphotos.com/about-magnum/history/

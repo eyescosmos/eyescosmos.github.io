@@ -86,8 +86,8 @@ tags: ['American place', 'aftermath', 'civic memory', 'color narrative']
 - [S17] Joel Sternfeld search. Art Institute of Chicago. https://www.artic.edu/search?q=Joel+Sternfeld
 - [S18] Joel Sternfeld search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Joel+Sternfeld
 - [S19] Joel Sternfeld search. SFMOMA. https://www.sfmoma.org/search/?q=Joel+Sternfeld
-- [S20] Joel Sternfeld archive search. ICP. https://www.icp.org/search-results/Joel+Sternfeld
-- [S21] Joel Sternfeld search. Whitney Museum. https://whitney.org/search?q=Joel+Sternfeld
+- [S20] Joel Sternfeld archive search. ICP. https://www.icp.org/search-results?query=Joel+Sternfeld
+- [S21] Joel Sternfeld search. Whitney Museum. https://whitney.org/search?query=Joel+Sternfeld
 - [S22] Joel Sternfeld search. Guggenheim Museum. https://www.guggenheim.org/?s=Joel+Sternfeld
 - [S23] Joel Sternfeld search. Smithsonian Institution. https://www.si.edu/search?query=Joel+Sternfeld
 - [S24] Joel Sternfeld journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Joel+Sternfeld+photography
@@ -96,7 +96,7 @@ tags: ['American place', 'aftermath', 'civic memory', 'color narrative']
 - [S27] Joel Sternfeld library route. NYPL Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Joel+Sternfeld
 - [S28] Joel Sternfeld archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Joel+Sternfeld
 - [S29] Joel Sternfeld research route. CiNii Research. https://cir.nii.ac.jp/all?q=Joel+Sternfeld
-- [S30] Joel Sternfeld Japanese collection route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S30] Joel Sternfeld Japanese collection route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

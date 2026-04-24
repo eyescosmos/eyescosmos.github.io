@@ -119,8 +119,8 @@ tags: ["exile", "home", "identity", "memory"]
 - [route] Jitka Hanzlová search. Guggenheim Museum. https://www.guggenheim.org/?s=Jitka+Hanzlov%C3%A1
 - [route] Jitka Hanzlová search. Art Institute of Chicago. https://www.artic.edu/search?q=Jitka+Hanzlov%C3%A1
 - [route] Jitka Hanzlová search. SFMOMA. https://www.sfmoma.org/search/?q=Jitka+Hanzlov%C3%A1
-- [route] Jitka Hanzlová search. Whitney Museum. https://whitney.org/search?q=Jitka+Hanzlov%C3%A1
-- [route] Jitka Hanzlová search. International Center of Photography. https://www.icp.org/search-results/Jitka%20Hanzlov%C3%A1
+- [route] Jitka Hanzlová search. Whitney Museum. https://whitney.org/search?query=Jitka+Hanzlov%C3%A1
+- [route] Jitka Hanzlová search. International Center of Photography. https://www.icp.org/search-results?query=Jitka%20Hanzlov%C3%A1
 - [route] Jitka Hanzlová search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Jitka+Hanzlov%C3%A1
 - [route] Jitka Hanzlová search. Getty. https://www.getty.edu/art/collection/search/?q=Jitka+Hanzlov%C3%A1
 - [route] Jitka Hanzlová route. Aperture. https://aperture.org/?s=Jitka+Hanzlov%C3%A1
@@ -139,6 +139,6 @@ tags: ["exile", "home", "identity", "memory"]
 - [route] Jitka Hanzlová archive route. Smithsonian Institution. https://www.si.edu/search?query=Jitka+Hanzlov%C3%A1
 - [route] Jitka Hanzlová archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Jitka+Hanzlov%C3%A1
 - [route] Jitka Hanzlová exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Jitka+Hanzlov%C3%A1
-- [route] Jitka Hanzlová Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Jitka Hanzlová Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Jitka Hanzlová third-language / local institution route. https://www.google.com/search?q=Jitka+Hanzlov%C3%A1+photography+museum+exhibition+catalogue
 - [route] Jitka Hanzlová primary interview / statement route. https://www.google.com/search?q=Jitka+Hanzlov%C3%A1+photographer+interview+artist+statement

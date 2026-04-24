@@ -85,7 +85,7 @@ tags: ["straight-photography", "directness", "modernity", "straight-photography"
 - [S12] Paul Strand search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Paul%20Strand
 - [S13] Camera Work Paul Strand search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Camera%20Work%20Paul%20Strand
 - [S14] Manhatta Paul Strand search. MoMA. https://www.moma.org/search/?query=Manhatta%20Paul%20Strand
-- [S15] Paul Strand search. ICP. https://www.icp.org/search-results/paul%20strand
+- [S15] Paul Strand search. ICP. https://www.icp.org/search-results?query=paul%20strand
 - [S16] Paul Strand search. Princeton University Art Museum. https://artmuseum.princeton.edu/collections/objects?search=Paul%20Strand
 
 ## 7. Source exploration memo / next research routes

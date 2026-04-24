@@ -124,8 +124,8 @@ tags: ["ambivalence", "surface", "desire", "image seduction"]
 - [route] Torbjørn Rødland search. Guggenheim Museum. https://www.guggenheim.org/?s=Torbj%C3%B8rn+R%C3%B8dland
 - [route] Torbjørn Rødland search. Art Institute of Chicago. https://www.artic.edu/search?q=Torbj%C3%B8rn+R%C3%B8dland
 - [route] Torbjørn Rødland search. SFMOMA. https://www.sfmoma.org/search/?q=Torbj%C3%B8rn+R%C3%B8dland
-- [route] Torbjørn Rødland search. Whitney Museum. https://whitney.org/search?q=Torbj%C3%B8rn+R%C3%B8dland
-- [route] Torbjørn Rødland search. International Center of Photography. https://www.icp.org/search-results/Torbj%C3%B8rn%20R%C3%B8dland
+- [route] Torbjørn Rødland search. Whitney Museum. https://whitney.org/search?query=Torbj%C3%B8rn+R%C3%B8dland
+- [route] Torbjørn Rødland search. International Center of Photography. https://www.icp.org/search-results?query=Torbj%C3%B8rn%20R%C3%B8dland
 - [route] Torbjørn Rødland search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Torbj%C3%B8rn+R%C3%B8dland
 - [route] Torbjørn Rødland search. Getty. https://www.getty.edu/art/collection/search/?q=Torbj%C3%B8rn+R%C3%B8dland
 - [route] Torbjørn Rødland route. Aperture. https://aperture.org/?s=Torbj%C3%B8rn+R%C3%B8dland
@@ -144,6 +144,6 @@ tags: ["ambivalence", "surface", "desire", "image seduction"]
 - [route] Torbjørn Rødland archive route. Smithsonian Institution. https://www.si.edu/search?query=Torbj%C3%B8rn+R%C3%B8dland
 - [route] Torbjørn Rødland archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Torbj%C3%B8rn+R%C3%B8dland
 - [route] Torbjørn Rødland exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Torbj%C3%B8rn+R%C3%B8dland
-- [route] Torbjørn Rødland Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Torbjørn Rødland Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Torbjørn Rødland third-language / local institution route. https://www.google.com/search?q=Torbj%C3%B8rn+R%C3%B8dland+photography+museum+exhibition+catalogue
 - [route] Torbjørn Rødland primary interview / statement route. https://www.google.com/search?q=Torbj%C3%B8rn+R%C3%B8dland+photographer+interview+artist+statement

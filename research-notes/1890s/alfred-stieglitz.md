@@ -72,9 +72,9 @@ tags: ["photo-secession", "modernism", "institution-building", "camera-work", "2
 - “unmanipulated portraits of the sky” [S1]
 
 ## 6. Sources
-- [S1] Alfred Stieglitz and His Circle. Metropolitan Museum of Art. https://www.metmuseum.org/TOAH/HD/stgl/hd_stgl.htm
+- [S1] Alfred Stieglitz (1864–1946) and American Photography. Metropolitan Museum of Art. https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography
 - [S2] Alfred Stieglitz – pioneer of modern photography. V&A. https://www.vam.ac.uk/articles/alfred-stieglitz-pioneer-of-modern-photography
-- [S3] Alfred Stieglitz artist page. MoMA. https://www.moma.org/artists/5664
+- [S3] Alfred Stieglitz artist page. MoMA. https://www.moma.org/artists/5664-alfred-stieglitz
 - [S4] The Terminal. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267836
 - [S5] The Steerage. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267821
 - [S6] The Steerage. MoMA. https://www.moma.org/collection/works/56685
@@ -90,9 +90,9 @@ tags: ["photo-secession", "modernism", "institution-building", "camera-work", "2
 - [S15] Camera Work No. 1. Princeton University Art Museum. https://artmuseum.princeton.edu/art/collections/objects/59675
 - Search route (count外): Camera Work / Alfred Stieglitz search. Library of Congress. https://www.loc.gov/search/?fa=contributor:stieglitz,+alfred
 - Search route (count外): Alfred Stieglitz collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Alfred%20Stieglitz
-- [S18] Alfred Stieglitz collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KHT
+- [S18] Alfred Stieglitz collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KH0
 - [S19] Georgia O’Keeffe: A Portrait. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267827
-- [S20] Alfred Stieglitz and 291 / archive search. MoMA. https://www.moma.org/artists/5664
+- [S20] Alfred Stieglitz and 291 / archive search. MoMA. https://www.moma.org/artists/5664-alfred-stieglitz
 
 - [S21] Alfred Stieglitz artist page. National Gallery of Art. https://www.nga.gov/artists/1918-alfred-stieglitz
 - [S22] Alfred Stieglitz collection search. George Eastman Museum. https://collections.eastman.org/people/19655/alfred-stieglitz/objects

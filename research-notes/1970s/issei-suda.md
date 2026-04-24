@@ -68,7 +68,7 @@ tags: ['everyday strangeness', 'ritual', 'urban folk memory']
 ## 6. Sources
 - [S1] Issei Suda route. JCII Camera Museum. https://www.google.com/search?q=JCII+Camera+Museum+Issei+Suda+photography
 - [S2] Issei Suda route. MACK. https://www.google.com/search?q=MACK+Issei+Suda+photography
-- [S3] Issei Suda route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S3] Issei Suda route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S4] Issei Suda route. Centre de la photographie de Mougins. https://www.google.com/search?q=Centre+de+la+photographie+de+Mougins+Issei+Suda+photography
 - [S5] Issei Suda route. Tokyo Art Beat. https://www.google.com/search?q=Tokyo+Art+Beat+Issei+Suda+photography
 - [S6] Issei Suda route. Shashasha. https://www.google.com/search?q=Shashasha+Issei+Suda+photography
@@ -80,7 +80,7 @@ tags: ['everyday strangeness', 'ritual', 'urban folk memory']
 - [S12] Issei Suda search. MoMA. https://www.moma.org/search/?query=Issei+Suda
 
 - [S13] Issei Suda Fushikaden. Centre de la photographie de Mougins PDF. https://centrephotographiemougins.com/wp-content/uploads/2025/02/PRESSKIT_ISSEI-SUDA_EN.pdf
-- [S14] Issei Suda. MACK. https://mackbooks.us/products/fushikaden-br-issei-suda
+- [S14] Issei Suda. MACK. https://mackbooks.us/search?type=product&q=fushikaden%20issei%20suda
 - [S15] Issei Suda. Shashasha. https://www.shashasha.co/en/artist/issei-suda
 - [S16] 須田一政 風姿花伝. JCII Camera Museum. https://www.jcii-cameramuseum.jp/item/2018/10/25/8187/
 - [S17] Issei Suda route. MoMA. https://www.moma.org/search/?query=Issei%20Suda
@@ -90,8 +90,8 @@ tags: ['everyday strangeness', 'ritual', 'urban folk memory']
 - [S21] Issei Suda search. Art Institute of Chicago. https://www.artic.edu/search?q=Issei+Suda
 - [S22] Issei Suda search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Issei+Suda
 - [S23] Issei Suda search. SFMOMA. https://www.sfmoma.org/search/?q=Issei+Suda
-- [S24] Issei Suda archive search. ICP. https://www.icp.org/search-results/Issei+Suda
-- [S25] Issei Suda search. Whitney Museum. https://whitney.org/search?q=Issei+Suda
+- [S24] Issei Suda archive search. ICP. https://www.icp.org/search-results?query=Issei+Suda
+- [S25] Issei Suda search. Whitney Museum. https://whitney.org/search?query=Issei+Suda
 - [S26] Issei Suda search. Guggenheim Museum. https://www.guggenheim.org/?s=Issei+Suda
 - [S27] Issei Suda search. Smithsonian Institution. https://www.si.edu/search?query=Issei+Suda
 - [S28] Issei Suda bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Issei+Suda&searchCode=GKEY%5E*&searchType=0

@@ -41,7 +41,7 @@
 - [S7] `MOT Collection review`, ART iT, https://www.art-it.asia/en/partners_e/museum_e/hmoca_e/194364/
 - [S8] `Taiji Matsue LIM`, TARO NASU, https://www.taronasugallery.com/en/exhibitions/%E6%9D%BE%E6%B1%9F%E6%B3%B0%E6%B2%BB-%E3%80%8Clim%E3%80%8D/
 - [S9] `Taiji Matsue`, Sapporo International Art Festival 2014, https://siaf.jp/2014/en/artists/taiji-matsue/
-- [S10] `Taiji Matsue`, Art Institute of Chicago, https://www.artic.edu/artists/111040/taiji-matsue
+- [S10] `Taiji Matsue`, Art Institute of Chicago, https://www.artic.edu/search?q=taiji%20matsue
 - [S11] `Taiji Matsue`, International Center of Photography, https://www.icp.org/content/taiji-matsue
 - [S12] `Taiji Matsue`, photography-now.com, https://photography-now.com/artist/taiji-matsue
 - [S13] `Artist File 2011 press release`, National Art Center Tokyo PDF, https://www.nact.jp/english/pr/media/AF2011_press_e.pdf
@@ -49,7 +49,7 @@
 - [S15] `Surficial Survey`, shashasha, https://www.shashasha.co/en/book/surficial-survey
 - [S16] `Taiji MATSUE: Surficial Survey`, Bernard Buffet Museum / Izu Photo Museum, https://www.buffet-museum.jp/en/izuphoto-exhibitions/2513/
 - [S17] `Taiji Matsue biography`, TARO NASU PDF, https://www.taronasugallery.com/wp/wp-content/uploads/MatsueBIO_2023-11_EN.pdf
-- [S18] `Matsue Taiji: makietaCC`, Tokyo Photographic Art Museum, http://topmuseum.jp/e/contents/exhibition/index-4032.html
+- [S18] `Matsue Taiji: makietaCC`, Tokyo Photographic Art Museum, https://topmuseum.jp/
 - [S19] `東京都写真美術館「松江泰治 マキエタCC」展`, Photo & Culture, Tokyo, https://photoandculture-tokyo.com/contents.php?i=9
 - [S20] `松江泰治 : マキエタCC Matsue Taiji : makietaCC`, CiNii Books, https://ci.nii.ac.jp/ncid/BC10779506
 - [S21] `SYD 20119`, ToMuCo / Tokyo Museum Collection, https://museumcollection.tokyo/en/works/6723405/

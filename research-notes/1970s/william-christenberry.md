@@ -79,7 +79,7 @@ tags: ['place memory', 'vernacular architecture', 'racial violence', 'return']
 - [S11] William Christenberry search. Getty Museum. https://www.getty.edu/art/collection/search/?q=William+Christenberry
 
 - [S12] William Christenberry estate. William Christenberry. https://williamchristenberry.com/
-- [S13] William Christenberry. Smithsonian American Art Museum. https://americanart.si.edu/artist/william-christenberry-875
+- [S13] William Christenberry. Smithsonian American Art Museum. https://americanart.si.edu/search?query=william%20christenberry%20875
 - [S14] William Christenberry. SFMOMA. https://www.sfmoma.org/artist/William_Christenberry/
 - [S15] William Christenberry. Pace Gallery. https://www.pacegallery.com/artists/william-christenberry/
 - [S16] William Christenberry. High Museum of Art search. https://high.org/?s=William+Christenberry
@@ -87,8 +87,8 @@ tags: ['place memory', 'vernacular architecture', 'racial violence', 'return']
 - [S18] William Christenberry search. Art Institute of Chicago. https://www.artic.edu/search?q=William+Christenberry
 - [S19] William Christenberry search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=William+Christenberry
 - [S20] William Christenberry search. SFMOMA. https://www.sfmoma.org/search/?q=William+Christenberry
-- [S21] William Christenberry archive search. ICP. https://www.icp.org/search-results/William+Christenberry
-- [S22] William Christenberry search. Whitney Museum. https://whitney.org/search?q=William+Christenberry
+- [S21] William Christenberry archive search. ICP. https://www.icp.org/search-results?query=William+Christenberry
+- [S22] William Christenberry search. Whitney Museum. https://whitney.org/search?query=William+Christenberry
 - [S23] William Christenberry search. Guggenheim Museum. https://www.guggenheim.org/?s=William+Christenberry
 - [S24] William Christenberry search. Smithsonian Institution. https://www.si.edu/search?query=William+Christenberry
 - [S25] William Christenberry journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=William+Christenberry+photography

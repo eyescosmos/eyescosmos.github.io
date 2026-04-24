@@ -105,7 +105,7 @@ URL: https://www.getty.edu/art/collection/person/103KDR
 - [S15] Paris in Transition, NGA press PDF (museum press / exhibition context)  URL: https://www.nga.gov/content/dam/ngaweb/research/gallery-archives/PressReleases/2009-2000/2006/14A11_45461_20061211.pdf
 - [S16] Morgan Library, Into the Woods labels including Marville (museum label / biography)  URL: https://www.themorgan.org/sites/default/files/pdf/exhibitions/IntoTheWoods_LargePrintLabels.pdf
 
-- [S17] Art Institute of Chicago, Charles Marville artist page (museum artist page / collection works)  URL: https://www.artic.edu/artists/35634/charles-marville
+- [S17] Art Institute of Chicago, Charles Marville artist page (museum artist page / collection works)  URL: https://www.artic.edu/search?q=charles%20marville
 - [S18] Art Institute of Chicago, Rue Chartiere (impasse Chartiere) de la rue de Reims (museum object page)  URL: https://www.artic.edu/artworks/181557/rue-chartiere-impasse-chartiere-de-la-rue-de-reims
 - [S19] Art Institute of Chicago Museum Studies, Notable Acquisitions including Marville (museum publication PDF)  URL: https://www.artic.edu/files/64b94465-907f-4e3b-a4b8-7743198e039f/AIC_MuseumStudies_32-1_UPDF.pdf
 

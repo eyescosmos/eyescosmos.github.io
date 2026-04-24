@@ -76,12 +76,12 @@ tags: ["city", "archive", "modernity", "urban-anonymity", "documentary", "surrea
 - [S3] Atget: Archivist of Paris. ICP. https://www.icp.org/exhibitions/atget-archivist-of-paris
 - [S4] Eugène Atget, Poet Photographer. Paris Musées. https://www.parismusees.paris.fr/en/exposition/eugene-atget-poet-photographer
 - [S5] Eugène Atget / Carnavalet exhibition context. Fondation Henri Cartier-Bresson. https://www.henricartierbresson.org/en/expositions/eugene-atget/
-- [S6] Eugène Atget: The Eternal Inspiration. Tokyo Photographic Art Museum. https://topmuseum.jp/e/contents/exhibition/index-2168.html
+- [S6] Eugène Atget: The Eternal Inspiration. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S7] ATGET wall label / press material. MoMA press archives. https://www.moma.org/docs/press_archives/4379/releases/MOMA_1969_July-December_0072.pdf
 - [S8] Eugène Atget: Documents pour artistes. MoMA press release PDF. https://assets.moma.org/documents/moma_press-release_387242.pdf
 - [S9] Eugène Atget's Documents Pour Artistes. TIME LightBox. https://time.com/34381/eugene-atgets-documents-pour-artistes/
 
-- [S10] Eugène Atget artist page. Art Institute of Chicago. https://www.artic.edu/artists/4474/eugene-atget
+- [S10] Eugène Atget artist page. Art Institute of Chicago. https://www.artic.edu/search?q=eugene%20atget
 - [S11] Eugène Atget artist page. National Gallery of Art. https://www.nga.gov/artists/16475-eugene-atget
 - [S12] Eugène Atget collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KDA
 - [S13] Eugène Atget collection search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Eug%C3%A8ne%20Atget

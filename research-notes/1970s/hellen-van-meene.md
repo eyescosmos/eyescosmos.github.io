@@ -77,7 +77,7 @@ tags: ['constructed identity', 'youth', 'portrait ambiguity']
 - [S9] Hellen van Meene search. Tate. https://www.tate.org.uk/search?q=Hellen+van+Meene
 - [S10] Hellen van Meene route. Aperture. https://aperture.org/?s=Hellen+van+Meene
 - [S11] Hellen van Meene bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Hellen+van+Meene
-- [S12] Hellen van Meene route. ICP. https://www.icp.org/search-results/Hellen+van+Meene
+- [S12] Hellen van Meene route. ICP. https://www.icp.org/search-results?query=Hellen+van+Meene
 
 - [S13] Hellen van Meene. Yancey Richardson. https://www.yanceyrichardson.com/artists/hellen-van-meene
 - [S14] Hellen van Meene. Foam search. https://www.foam.org/search?query=Hellen%20van%20Meene
@@ -89,7 +89,7 @@ tags: ['constructed identity', 'youth', 'portrait ambiguity']
 - [S20] Hellen van Meene search. Art Institute of Chicago. https://www.artic.edu/search?q=Hellen+van+Meene
 - [S21] Hellen van Meene search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Hellen+van+Meene
 - [S22] Hellen van Meene search. SFMOMA. https://www.sfmoma.org/search/?q=Hellen+van+Meene
-- [S23] Hellen van Meene search. Whitney Museum. https://whitney.org/search?q=Hellen+van+Meene
+- [S23] Hellen van Meene search. Whitney Museum. https://whitney.org/search?query=Hellen+van+Meene
 - [S24] Hellen van Meene search. Guggenheim Museum. https://www.guggenheim.org/?s=Hellen+van+Meene
 - [S25] Hellen van Meene search. Smithsonian Institution. https://www.si.edu/search?query=Hellen+van+Meene
 - [S26] Hellen van Meene bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Hellen+van+Meene&searchCode=GKEY%5E*&searchType=0

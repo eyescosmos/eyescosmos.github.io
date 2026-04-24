@@ -118,8 +118,8 @@ tags: ["subculture", "intimate-life", "performance of self"]
 - [route] Diana Scheunemann search. Guggenheim Museum. https://www.guggenheim.org/?s=Diana+Scheunemann
 - [route] Diana Scheunemann search. Art Institute of Chicago. https://www.artic.edu/search?q=Diana+Scheunemann
 - [route] Diana Scheunemann search. SFMOMA. https://www.sfmoma.org/search/?q=Diana+Scheunemann
-- [route] Diana Scheunemann search. Whitney Museum. https://whitney.org/search?q=Diana+Scheunemann
-- [route] Diana Scheunemann search. International Center of Photography. https://www.icp.org/search-results/Diana%20Scheunemann
+- [route] Diana Scheunemann search. Whitney Museum. https://whitney.org/search?query=Diana+Scheunemann
+- [route] Diana Scheunemann search. International Center of Photography. https://www.icp.org/search-results?query=Diana%20Scheunemann
 - [route] Diana Scheunemann search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Diana+Scheunemann
 - [route] Diana Scheunemann search. Getty. https://www.getty.edu/art/collection/search/?q=Diana+Scheunemann
 - [route] Diana Scheunemann route. Aperture. https://aperture.org/?s=Diana+Scheunemann
@@ -138,6 +138,6 @@ tags: ["subculture", "intimate-life", "performance of self"]
 - [route] Diana Scheunemann archive route. Smithsonian Institution. https://www.si.edu/search?query=Diana+Scheunemann
 - [route] Diana Scheunemann archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Diana+Scheunemann
 - [route] Diana Scheunemann exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Diana+Scheunemann
-- [route] Diana Scheunemann Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Diana Scheunemann Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Diana Scheunemann third-language / local institution route. https://www.google.com/search?q=Diana+Scheunemann+photography+museum+exhibition+catalogue
 - [route] Diana Scheunemann primary interview / statement route. https://www.google.com/search?q=Diana+Scheunemann+photographer+interview+artist+statement

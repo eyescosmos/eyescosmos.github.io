@@ -119,8 +119,8 @@ tags: ["representation-crisis", "documentary doubt", "media critique"]
 - [route] Juul Hondius search. Guggenheim Museum. https://www.guggenheim.org/?s=Juul+Hondius
 - [route] Juul Hondius search. Art Institute of Chicago. https://www.artic.edu/search?q=Juul+Hondius
 - [route] Juul Hondius search. SFMOMA. https://www.sfmoma.org/search/?q=Juul+Hondius
-- [route] Juul Hondius search. Whitney Museum. https://whitney.org/search?q=Juul+Hondius
-- [route] Juul Hondius search. International Center of Photography. https://www.icp.org/search-results/Juul%20Hondius
+- [route] Juul Hondius search. Whitney Museum. https://whitney.org/search?query=Juul+Hondius
+- [route] Juul Hondius search. International Center of Photography. https://www.icp.org/search-results?query=Juul%20Hondius
 - [route] Juul Hondius search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Juul+Hondius
 - [route] Juul Hondius search. Getty. https://www.getty.edu/art/collection/search/?q=Juul+Hondius
 - [route] Juul Hondius route. Aperture. https://aperture.org/?s=Juul+Hondius
@@ -139,6 +139,6 @@ tags: ["representation-crisis", "documentary doubt", "media critique"]
 - [route] Juul Hondius archive route. Smithsonian Institution. https://www.si.edu/search?query=Juul+Hondius
 - [route] Juul Hondius archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Juul+Hondius
 - [route] Juul Hondius exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Juul+Hondius
-- [route] Juul Hondius Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Juul Hondius Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Juul Hondius third-language / local institution route. https://www.google.com/search?q=Juul+Hondius+photography+museum+exhibition+catalogue
 - [route] Juul Hondius primary interview / statement route. https://www.google.com/search?q=Juul+Hondius+photographer+interview+artist+statement

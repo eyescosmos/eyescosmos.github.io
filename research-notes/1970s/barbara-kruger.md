@@ -83,9 +83,9 @@ tags: ['media critique', 'representation', 'power language', 'feminist critique'
 - [S14] Barbara Kruger collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Barbara+Kruger
 - [S15] Barbara Kruger search. Tate. https://www.tate.org.uk/search?q=Barbara+Kruger
 - [S16] Barbara Kruger search. SFMOMA. https://www.sfmoma.org/search/?q=Barbara+Kruger
-- [S17] Barbara Kruger archive search. ICP. https://www.icp.org/search-results/Barbara+Kruger
+- [S17] Barbara Kruger archive search. ICP. https://www.icp.org/search-results?query=Barbara+Kruger
 - [S18] Barbara Kruger route. Aperture. https://aperture.org/?s=Barbara+Kruger
-- [S19] Barbara Kruger search. Whitney Museum. https://whitney.org/search?q=Barbara+Kruger
+- [S19] Barbara Kruger search. Whitney Museum. https://whitney.org/search?query=Barbara+Kruger
 - [S20] Barbara Kruger search. Guggenheim Museum. https://www.guggenheim.org/?s=Barbara+Kruger
 - [S21] Barbara Kruger search. Smithsonian Institution. https://www.si.edu/search?query=Barbara+Kruger
 - [S22] Barbara Kruger bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Barbara+Kruger&searchCode=GKEY%5E*&searchType=0

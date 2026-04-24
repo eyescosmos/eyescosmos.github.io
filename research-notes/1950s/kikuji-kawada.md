@@ -70,7 +70,7 @@ tags: ["postwar-japanese-photography", "postwar"]
 - [S1] Kikuji Kawada. Tate. https://www.tate.org.uk/art/artists/kikuji-kawada-22356
 - [S2] Kikuji Kawada. MoMA. https://www.moma.org/artists/6806
 - [S3] Kikuji Kawada. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Kikuji%20Kawada
-- [S4] Kikuji Kawada. MACK. https://mackbooks.us/products/the-map-br-kikuji-kawada
+- [S4] Kikuji Kawada. MACK. https://mackbooks.us/search?type=product&q=the%20map%20kikuji%20kawada
 - [S5] New Japanese Photography catalogue. MoMA. https://assets.moma.org/documents/moma_catalogue_2525_300298255.pdf
 - [S6] 川田喜久治検索. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E5%B7%9D%E7%94%B0%E5%96%9C%E4%B9%85%E6%B2%BB
 - [S7] 川田喜久治検索. CiNii Research. https://cir.nii.ac.jp/all?q=%E5%B7%9D%E7%94%B0%E5%96%9C%E4%B9%85%E6%B2%BB
@@ -79,7 +79,7 @@ tags: ["postwar-japanese-photography", "postwar"]
 - [S9] 川田喜久治 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E5%B7%9D%E7%94%B0%E5%96%9C%E4%B9%85%E6%B2%BB
 - [S10] Kikuji Kawada search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Kikuji%20Kawada
 - [S11] The Map search. Library of Congress catalog. https://catalog.loc.gov/vwebv/search?searchArg=Kikuji+Kawada+The+Map&searchCode=GKEY%5E*&searchType=0
-- [S12] 川田喜久治 search. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S12] 川田喜久治 search. Tokyo Photographic Art Museum. https://topmuseum.jp/
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補は10件以上。『地図』の版、VIVO、戦後記憶、フォトブック史、象徴と痕跡の読みを強化できる。本人インタビューと日本語論文はまだ追加余地がある。

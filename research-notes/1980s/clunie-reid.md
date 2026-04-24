@@ -122,8 +122,8 @@ tags: ["media saturation", "gendered image economy", "appropriation"]
 - [route] Clunie Reid search. Guggenheim Museum. https://www.guggenheim.org/?s=Clunie+Reid
 - [route] Clunie Reid search. Art Institute of Chicago. https://www.artic.edu/search?q=Clunie+Reid
 - [route] Clunie Reid search. SFMOMA. https://www.sfmoma.org/search/?q=Clunie+Reid
-- [route] Clunie Reid search. Whitney Museum. https://whitney.org/search?q=Clunie+Reid
-- [route] Clunie Reid search. International Center of Photography. https://www.icp.org/search-results/Clunie%20Reid
+- [route] Clunie Reid search. Whitney Museum. https://whitney.org/search?query=Clunie+Reid
+- [route] Clunie Reid search. International Center of Photography. https://www.icp.org/search-results?query=Clunie%20Reid
 - [route] Clunie Reid search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Clunie+Reid
 - [route] Clunie Reid search. Getty. https://www.getty.edu/art/collection/search/?q=Clunie+Reid
 - [route] Clunie Reid route. Aperture. https://aperture.org/?s=Clunie+Reid
@@ -142,6 +142,6 @@ tags: ["media saturation", "gendered image economy", "appropriation"]
 - [route] Clunie Reid archive route. Smithsonian Institution. https://www.si.edu/search?query=Clunie+Reid
 - [route] Clunie Reid archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Clunie+Reid
 - [route] Clunie Reid exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Clunie+Reid
-- [route] Clunie Reid Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Clunie Reid Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Clunie Reid third-language / local institution route. https://www.google.com/search?q=Clunie+Reid+photography+museum+exhibition+catalogue
 - [route] Clunie Reid primary interview / statement route. https://www.google.com/search?q=Clunie+Reid+photographer+interview+artist+statement

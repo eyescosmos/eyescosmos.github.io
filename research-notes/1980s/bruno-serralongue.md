@@ -129,8 +129,8 @@ tags: ["media critique", "witness without event", "politics of representation"]
 - [route] Bruno Serralongue search. Guggenheim Museum. https://www.guggenheim.org/?s=Bruno+Serralongue
 - [route] Bruno Serralongue search. Art Institute of Chicago. https://www.artic.edu/search?q=Bruno+Serralongue
 - [route] Bruno Serralongue search. SFMOMA. https://www.sfmoma.org/search/?q=Bruno+Serralongue
-- [route] Bruno Serralongue search. Whitney Museum. https://whitney.org/search?q=Bruno+Serralongue
-- [route] Bruno Serralongue search. International Center of Photography. https://www.icp.org/search-results/Bruno%20Serralongue
+- [route] Bruno Serralongue search. Whitney Museum. https://whitney.org/search?query=Bruno+Serralongue
+- [route] Bruno Serralongue search. International Center of Photography. https://www.icp.org/search-results?query=Bruno%20Serralongue
 - [route] Bruno Serralongue search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Bruno+Serralongue
 - [route] Bruno Serralongue search. Getty. https://www.getty.edu/art/collection/search/?q=Bruno+Serralongue
 - [route] Bruno Serralongue route. Aperture. https://aperture.org/?s=Bruno+Serralongue
@@ -149,6 +149,6 @@ tags: ["media critique", "witness without event", "politics of representation"]
 - [route] Bruno Serralongue archive route. Smithsonian Institution. https://www.si.edu/search?query=Bruno+Serralongue
 - [route] Bruno Serralongue archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Bruno+Serralongue
 - [route] Bruno Serralongue exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Bruno+Serralongue
-- [route] Bruno Serralongue Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Bruno Serralongue Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Bruno Serralongue third-language / local institution route. https://www.google.com/search?q=Bruno+Serralongue+photography+museum+exhibition+catalogue
 - [route] Bruno Serralongue primary interview / statement route. https://www.google.com/search?q=Bruno+Serralongue+photographer+interview+artist+statement

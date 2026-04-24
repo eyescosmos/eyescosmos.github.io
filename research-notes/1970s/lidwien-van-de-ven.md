@@ -89,9 +89,9 @@ tags: ['ideology', 'perception', 'public conflict', 'image politics']
 - [S20] Lidwien van de Ven search. Art Institute of Chicago. https://www.artic.edu/search?q=Lidwien+van+de+Ven
 - [S21] Lidwien van de Ven search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Lidwien+van+de+Ven
 - [S22] Lidwien van de Ven search. SFMOMA. https://www.sfmoma.org/search/?q=Lidwien+van+de+Ven
-- [S23] Lidwien van de Ven archive search. ICP. https://www.icp.org/search-results/Lidwien+van+de+Ven
+- [S23] Lidwien van de Ven archive search. ICP. https://www.icp.org/search-results?query=Lidwien+van+de+Ven
 - [S24] Lidwien van de Ven route. Aperture. https://aperture.org/?s=Lidwien+van+de+Ven
-- [S25] Lidwien van de Ven search. Whitney Museum. https://whitney.org/search?q=Lidwien+van+de+Ven
+- [S25] Lidwien van de Ven search. Whitney Museum. https://whitney.org/search?query=Lidwien+van+de+Ven
 - [S26] Lidwien van de Ven search. Guggenheim Museum. https://www.guggenheim.org/?s=Lidwien+van+de+Ven
 - [S27] Lidwien van de Ven search. Smithsonian Institution. https://www.si.edu/search?query=Lidwien+van+de+Ven
 - [S28] Lidwien van de Ven bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Lidwien+van+de+Ven&searchCode=GKEY%5E*&searchType=0

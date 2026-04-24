@@ -76,7 +76,7 @@ tags: ["documentary-style", "vernacular-america", "anti-propaganda", "fsa-docume
 
 ## 6. Sources
 - [S1] Walker Evans 1903–1975. Metropolitan Museum of Art. https://www.metmuseum.org/toah/hd/evan/hd_evan.htm
-- [S2] Walker Evans. ICP. https://www.icp.org/browse/archive/constituents/walker-evans
+- [S2] Walker Evans. ICP. https://www.icp.org/search-results?query=walker%20evans
 - [S3] Walker Evans. MoMA. https://www.moma.org/artists/1777
 - [S4] Walker Evans. National Gallery of Art. https://www.nga.gov/artists/1795-walker-evans
 - [S5] Walker Evans search. Library of Congress. https://www.loc.gov/pictures/search/?q=Walker%20Evans
@@ -86,7 +86,7 @@ tags: ["documentary-style", "vernacular-america", "anti-propaganda", "fsa-docume
 - [S9] Walker Evans search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Walker%20Evans
 - [S10] Walker Evans search. SFMOMA. https://www.sfmoma.org/artist/Walker_Evans/
 - [S11] Walker Evans search. Art Institute of Chicago. https://www.artic.edu/search?q=Walker%20Evans
-- [S12] Walker Evans search. ICP Library. https://www.icp.org/search-results/Walker%20Evans
+- [S12] Walker Evans search. ICP Library. https://www.icp.org/search-results?query=Walker%20Evans
 
 - [S13] Walker Evans: American Photographs. MoMA exhibition / catalogue route. https://www.moma.org/calendar/exhibitions/2355
 - [S14] Walker Evans and the Picture Postcard. Metropolitan Museum of Art. https://www.metmuseum.org/exhibitions/listings/2009/walker-evans-and-the-picture-postcard

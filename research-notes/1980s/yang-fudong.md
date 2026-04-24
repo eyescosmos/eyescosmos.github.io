@@ -119,8 +119,8 @@ tags: ["modernity", "melancholy", "cinematic time"]
 - [route] Yang Fudong search. Guggenheim Museum. https://www.guggenheim.org/?s=Yang+Fudong
 - [route] Yang Fudong search. Art Institute of Chicago. https://www.artic.edu/search?q=Yang+Fudong
 - [route] Yang Fudong search. SFMOMA. https://www.sfmoma.org/search/?q=Yang+Fudong
-- [route] Yang Fudong search. Whitney Museum. https://whitney.org/search?q=Yang+Fudong
-- [route] Yang Fudong search. International Center of Photography. https://www.icp.org/search-results/Yang%20Fudong
+- [route] Yang Fudong search. Whitney Museum. https://whitney.org/search?query=Yang+Fudong
+- [route] Yang Fudong search. International Center of Photography. https://www.icp.org/search-results?query=Yang%20Fudong
 - [route] Yang Fudong search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Yang+Fudong
 - [route] Yang Fudong search. Getty. https://www.getty.edu/art/collection/search/?q=Yang+Fudong
 - [route] Yang Fudong route. Aperture. https://aperture.org/?s=Yang+Fudong
@@ -139,6 +139,6 @@ tags: ["modernity", "melancholy", "cinematic time"]
 - [route] Yang Fudong archive route. Smithsonian Institution. https://www.si.edu/search?query=Yang+Fudong
 - [route] Yang Fudong archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Yang+Fudong
 - [route] Yang Fudong exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Yang+Fudong
-- [route] Yang Fudong Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Yang Fudong Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Yang Fudong third-language / local institution route. https://www.google.com/search?q=Yang+Fudong+photography+museum+exhibition+catalogue
 - [route] Yang Fudong primary interview / statement route. https://www.google.com/search?q=Yang+Fudong+photographer+interview+artist+statement

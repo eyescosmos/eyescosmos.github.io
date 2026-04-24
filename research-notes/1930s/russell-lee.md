@@ -82,7 +82,7 @@ tags: ["photo-humanism", "ordinary-life", "state-archive", "fsa-documentary", "c
 - [S5] Russell Lee search. National Archives Catalog. https://catalog.archives.gov/search?q=Russell%20Lee
 - [S6] Bound for Glory. Library of Congress. https://www.loc.gov/exhibits/boundforglory/
 - [S7] Russell Lee search. Briscoe Center / UT Austin. https://briscoecenter.org/?s=Russell+Lee
-- [S8] Russell Lee search. ICP. https://www.icp.org/search-results/Russell%20Lee
+- [S8] Russell Lee search. ICP. https://www.icp.org/search-results?query=Russell%20Lee
 - [S9] Russell Lee search. MoMA. https://www.moma.org/search/?query=Russell%20Lee
 - [S10] Russell Lee search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Russell%20Lee
 

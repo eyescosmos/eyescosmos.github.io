@@ -78,7 +78,7 @@ tags: ["machine-aesthetic", "photobook-as-sequence", "mobility", "modernism", "p
 - [S5] Krull search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Germaine%20Krull
 - [S6] Krull search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Germaine%20Krull
 - [S7] Krull search. Jeu de Paume. https://jeudepaume.org/?s=Germaine+Krull
-- [S8] Krull search. ICP. https://www.icp.org/search-results/Germaine%20Krull
+- [S8] Krull search. ICP. https://www.icp.org/search-results?query=Germaine%20Krull
 - [S9] Germaine Krull search. Tate. https://www.tate.org.uk/search?q=Germaine%20Krull
 - [S10] Germaine Krull search. MoMA publications. https://www.moma.org/search/?query=Germaine%20Krull
 - [S11] Germaine Krull search. Art Institute of Chicago. https://www.artic.edu/search?q=Germaine%20Krull

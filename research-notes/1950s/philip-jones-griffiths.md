@@ -68,7 +68,7 @@ tags: ["anti-war-photojournalism", "postwar"]
 
 ## 6. Sources
 - [S1] Philip Jones Griffiths. Magnum Photos. https://www.magnumphotos.com/photographer/philip-jones-griffiths/
-- [S2] Philip Jones Griffiths. ICP. https://www.icp.org/browse/archive/constituents/philip-jones-griffiths
+- [S2] Philip Jones Griffiths. ICP. https://www.icp.org/search-results?query=philip%20jones%20griffiths
 - [S3] Philip Jones Griffiths archive. National Library of Wales. https://www.library.wales/collections/learn-more/photographs/philip-jones-griffiths
 - [S4] Vietnam Inc.. Magnum Photos. https://www.magnumphotos.com/newsroom/conflict/philip-jones-griffiths-vietnam-inc/
 - [S5] Philip Jones Griffiths. The Guardian. https://www.theguardian.com/artanddesign/philip-jones-griffiths

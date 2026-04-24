@@ -76,14 +76,14 @@ tags: ["play", "everyday-life", "urban-improvisation", "street-photography", "ur
 
 ## 6. Sources
 - [S1] Helen Levitt. MoMA. https://www.moma.org/artists/3527
-- [S2] Helen Levitt. ICP. https://www.icp.org/browse/archive/constituents/helen-levitt
+- [S2] Helen Levitt. ICP. https://www.icp.org/search-results?query=helen%20levitt
 - [S3] Helen Levitt. Aperture Archive. https://archive.aperture.org/article/1969/1/1/helen-levitt
 - [S4] Helen Levitt New York. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Helen%20Levitt
 - [S5] Helen Levitt search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?artist=Helen%20Levitt
 - [S6] Helen Levitt search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Helen%20Levitt
 - [S7] Helen Levitt search. SFMOMA. https://www.sfmoma.org/search/?q=Helen%20Levitt
 - [S8] Helen Levitt search. Art Institute of Chicago. https://www.artic.edu/search?q=Helen%20Levitt
-- [S9] Helen Levitt search. ICP Library. https://www.icp.org/search-results/Helen%20Levitt
+- [S9] Helen Levitt search. ICP Library. https://www.icp.org/search-results?query=Helen%20Levitt
 - [S10] Helen Levitt search. MoMA publications. https://www.moma.org/search/?query=Helen%20Levitt
 
 - [S11] Helen Levitt. MoMA. https://www.moma.org/artists/3528

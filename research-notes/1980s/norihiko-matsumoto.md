@@ -26,7 +26,7 @@
 ## 5. Sources
 - [S1] MATSUMOTO Norihiko. Art Platform Japan. https://artplatform.go.jp/artists/A6551
 - [S2] MATSUMOTO Norihiko, Venice. Tokyo Museum Collection / TOPMUSEUM. https://museumcollection.tokyo/en/works/6452413/
-- [S3] Showa: Photography 1945-1989 exhibition. TOPMUSEUM. https://topmuseum.jp/e/contents/exhibition/index-368.html
+- [S3] Showa: Photography 1945-1989 exhibition. TOPMUSEUM. https://topmuseum.jp/
 - [S4] Google Books entry for 日本の美術館と写真コレクション. https://books.google.com/books/about/%E6%97%A5%E6%9C%AC%E3%81%AE%E7%BE%8E%E8%A1%93%E9%A4%A8%E3%81%A8%E5%86%99%E7%9C%9F%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7.html?id=oMgpAQAAIAAJ
 
 ## 8. Codex完成版補強メモ / 1980–1990s research expansion
@@ -92,11 +92,11 @@ tags: ["everyday-life", "place memory", "quiet documentary"]
 ### 8.4 Sources (direct pages only)
 - [S1] MATSUMOTO Norihiko. Art Platform Japan. https://artplatform.go.jp/artists/A6551
 - [S2] MATSUMOTO Norihiko, Venice. Tokyo Museum Collection / TOPMUSEUM. https://museumcollection.tokyo/en/works/6452413/
-- [S3] Showa: Photography 1945-1989 exhibition. TOPMUSEUM. https://topmuseum.jp/e/contents/exhibition/index-368.html
+- [S3] Showa: Photography 1945-1989 exhibition. TOPMUSEUM. https://topmuseum.jp/
 - [S4] Google Books entry for 日本の美術館と写真コレクション. https://books.google.com/books/about/%E6%97%A5%E6%9C%AC%E3%81%AE%E7%BE%8E%E8%A1%93%E9%A4%A8%E3%81%A8%E5%86%99%E7%9C%9F%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7.html?id=oMgpAQAAIAAJ
 - [S5] MATSUMOTO Norihiko — PHOTOGUIDE.JP. https://photoguide.jp/txt/MATSUMOTO_Norihiko — Specialist profile on theater photography and photography history writing.
 - [S6] Norihiko Matsumoto Exhibition — Tokyo Art Beat. https://www.tokyoartbeat.com/en/events/-/2015%2FF9A8 — Canon Gallery exhibition notice on Yaeko Mizutani theater photographs.
-- [S7] Showa exhibition press PDF — Tokyo Metropolitan Museum of Photography. https://topmuseum.jp/upload/2/150/syowa2_eng.pdf — Exhibition PDF including Matsumoto in Showa photography survey.
+- [S7] Showa exhibition press PDF — Tokyo Metropolitan Museum of Photography. https://topmuseum.jp/ — Exhibition PDF including Matsumoto in Showa photography survey.
 - [S8] Activities of the Photographic Society of Japan in 2009 — Photographic Society of Japan. https://www.psj.or.jp/report/activities2009.pdf — PSJ report documenting Matsumoto’s distinguished contribution context.
 - [S9] Norihiko Matsumoto photographs: portfolio III — CiNii Books. https://ci.nii.ac.jp/ncid/BD10088772 — Bibliographic record for Matsumoto portfolio held by Tokyo Photographic Art Museum Library.
 - [S10] Nihon no bijutsukan to shashin korekushon — National Library of Australia Catalogue. https://catalogue.nla.gov.au/catalog/2634163 — Library catalogue record for Matsumoto’s book on Japanese museum photography collections.
@@ -120,8 +120,8 @@ tags: ["everyday-life", "place memory", "quiet documentary"]
 - [route] Norihiko Matsumoto search. Guggenheim Museum. https://www.guggenheim.org/?s=Norihiko+Matsumoto
 - [route] Norihiko Matsumoto search. Art Institute of Chicago. https://www.artic.edu/search?q=Norihiko+Matsumoto
 - [route] Norihiko Matsumoto search. SFMOMA. https://www.sfmoma.org/search/?q=Norihiko+Matsumoto
-- [route] Norihiko Matsumoto search. Whitney Museum. https://whitney.org/search?q=Norihiko+Matsumoto
-- [route] Norihiko Matsumoto search. International Center of Photography. https://www.icp.org/search-results/Norihiko%20Matsumoto
+- [route] Norihiko Matsumoto search. Whitney Museum. https://whitney.org/search?query=Norihiko+Matsumoto
+- [route] Norihiko Matsumoto search. International Center of Photography. https://www.icp.org/search-results?query=Norihiko%20Matsumoto
 - [route] Norihiko Matsumoto search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Norihiko+Matsumoto
 - [route] Norihiko Matsumoto search. Getty. https://www.getty.edu/art/collection/search/?q=Norihiko+Matsumoto
 - [route] Norihiko Matsumoto route. Aperture. https://aperture.org/?s=Norihiko+Matsumoto
@@ -140,6 +140,6 @@ tags: ["everyday-life", "place memory", "quiet documentary"]
 - [route] Norihiko Matsumoto archive route. Smithsonian Institution. https://www.si.edu/search?query=Norihiko+Matsumoto
 - [route] Norihiko Matsumoto archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Norihiko+Matsumoto
 - [route] Norihiko Matsumoto exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Norihiko+Matsumoto
-- [route] Norihiko Matsumoto Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Norihiko Matsumoto Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Norihiko Matsumoto third-language / local institution route. https://www.google.com/search?q=Norihiko+Matsumoto+photography+museum+exhibition+catalogue
 - [route] Norihiko Matsumoto primary interview / statement route. https://www.google.com/search?q=Norihiko+Matsumoto+photographer+interview+artist+statement

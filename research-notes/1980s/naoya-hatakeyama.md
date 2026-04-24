@@ -97,7 +97,7 @@ tags: ["urban metabolism", "extraction", "infrastructure", "memory"]
 - [S6] Naoya Hatakeyama: Natural Stories — SFMOMA. https://www.sfmoma.org/exhibition/naoya-hatakeyama/ — Major exhibition page on Hatakeyama’s landscape, quarry, factory, and tsunami work.
 - [S7] Naoya Hatakeyama — SFMOMA artist page. https://www.sfmoma.org/artist/Naoya_Hatakeyama/ — Collection/artist page framing Hatakeyama’s contemporary landscape practice.
 - [S8] Naoya HATAKEYAMA — Taka Ishii Gallery. https://www.takaishiigallery.com/en/archives/5925/ — Gallery artist page with biography, awards, and exhibition context.
-- [S9] Naoya Hatakeyama: Natural Stories — Tokyo Photographic Art Museum. https://topmuseum.jp/e/contents/exhibition/index-1387.html — Japanese museum exhibition page for Natural Stories.
+- [S9] Naoya Hatakeyama: Natural Stories — Tokyo Photographic Art Museum. https://topmuseum.jp/ — Japanese museum exhibition page for Natural Stories.
 - [S10] The Spirit in the Air: Remembering the Tohoku Earthquake One Year Later — SFMOMA Open Space. https://openspace.sfmoma.org/2012/03/spirit-in-the-air/ — Curatorial context on research for Hatakeyama’s SFMOMA exhibition and Tohoku aftermath.
 
 ### 8.5 出典探索メモ / Source exploration memo
@@ -120,8 +120,8 @@ tags: ["urban metabolism", "extraction", "infrastructure", "memory"]
 - [route] Naoya Hatakeyama search. Guggenheim Museum. https://www.guggenheim.org/?s=Naoya+Hatakeyama
 - [route] Naoya Hatakeyama search. Art Institute of Chicago. https://www.artic.edu/search?q=Naoya+Hatakeyama
 - [route] Naoya Hatakeyama search. SFMOMA. https://www.sfmoma.org/search/?q=Naoya+Hatakeyama
-- [route] Naoya Hatakeyama search. Whitney Museum. https://whitney.org/search?q=Naoya+Hatakeyama
-- [route] Naoya Hatakeyama search. International Center of Photography. https://www.icp.org/search-results/Naoya%20Hatakeyama
+- [route] Naoya Hatakeyama search. Whitney Museum. https://whitney.org/search?query=Naoya+Hatakeyama
+- [route] Naoya Hatakeyama search. International Center of Photography. https://www.icp.org/search-results?query=Naoya%20Hatakeyama
 - [route] Naoya Hatakeyama search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Naoya+Hatakeyama
 - [route] Naoya Hatakeyama search. Getty. https://www.getty.edu/art/collection/search/?q=Naoya+Hatakeyama
 - [route] Naoya Hatakeyama route. Aperture. https://aperture.org/?s=Naoya+Hatakeyama
@@ -140,6 +140,6 @@ tags: ["urban metabolism", "extraction", "infrastructure", "memory"]
 - [route] Naoya Hatakeyama archive route. Smithsonian Institution. https://www.si.edu/search?query=Naoya+Hatakeyama
 - [route] Naoya Hatakeyama archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Naoya+Hatakeyama
 - [route] Naoya Hatakeyama exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Naoya+Hatakeyama
-- [route] Naoya Hatakeyama Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Naoya Hatakeyama Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Naoya Hatakeyama third-language / local institution route. https://www.google.com/search?q=Naoya+Hatakeyama+photography+museum+exhibition+catalogue
 - [route] Naoya Hatakeyama primary interview / statement route. https://www.google.com/search?q=Naoya+Hatakeyama+photographer+interview+artist+statement

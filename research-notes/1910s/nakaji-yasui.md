@@ -79,7 +79,7 @@ tags: ["fragment", "symbol", "subjectivity", "japanese-modernism", "kansai-photo
 - [S6] Yasui exhibition report. Tokyo Art Beat. https://www.tokyoartbeat.com/articles/-/nakaji-yasui-report-202310
 - [S7] Yasui feature PDF. Hyogo Prefectural Museum of Art. https://www.artm.pref.hyogo.jp/artcenter/pdf/hart122.pdf
 - [S8] 安井仲治 search. CiNii Research. https://cir.nii.ac.jp/all?q=%E5%AE%89%E4%BA%95%E4%BB%B2%E6%B2%BB
-- [S9] Nakaji Yasui search. ICP Library. https://www.icp.org/search-results/Nakaji%20Yasui
+- [S9] Nakaji Yasui search. ICP Library. https://www.icp.org/search-results?query=Nakaji%20Yasui
 - [S10] 安井仲治 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E5%AE%89%E4%BA%95%E4%BB%B2%E6%B2%BB
 - [S11] Nakaji Yasui search. Taka Ishii Gallery. https://www.takaishiigallery.com/
 

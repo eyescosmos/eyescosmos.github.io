@@ -121,8 +121,8 @@ tags: ["spectacle", "mortality", "fashion-image"]
 - [route] Kaoru Izima search. Guggenheim Museum. https://www.guggenheim.org/?s=Kaoru+Izima
 - [route] Kaoru Izima search. Art Institute of Chicago. https://www.artic.edu/search?q=Kaoru+Izima
 - [route] Kaoru Izima search. SFMOMA. https://www.sfmoma.org/search/?q=Kaoru+Izima
-- [route] Kaoru Izima search. Whitney Museum. https://whitney.org/search?q=Kaoru+Izima
-- [route] Kaoru Izima search. International Center of Photography. https://www.icp.org/search-results/Kaoru%20Izima
+- [route] Kaoru Izima search. Whitney Museum. https://whitney.org/search?query=Kaoru+Izima
+- [route] Kaoru Izima search. International Center of Photography. https://www.icp.org/search-results?query=Kaoru%20Izima
 - [route] Kaoru Izima search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Kaoru+Izima
 - [route] Kaoru Izima search. Getty. https://www.getty.edu/art/collection/search/?q=Kaoru+Izima
 - [route] Kaoru Izima route. Aperture. https://aperture.org/?s=Kaoru+Izima
@@ -141,6 +141,6 @@ tags: ["spectacle", "mortality", "fashion-image"]
 - [route] Kaoru Izima archive route. Smithsonian Institution. https://www.si.edu/search?query=Kaoru+Izima
 - [route] Kaoru Izima archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Kaoru+Izima
 - [route] Kaoru Izima exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Kaoru+Izima
-- [route] Kaoru Izima Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Kaoru Izima Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Kaoru Izima third-language / local institution route. https://www.google.com/search?q=Kaoru+Izima+photography+museum+exhibition+catalogue
 - [route] Kaoru Izima primary interview / statement route. https://www.google.com/search?q=Kaoru+Izima+photographer+interview+artist+statement

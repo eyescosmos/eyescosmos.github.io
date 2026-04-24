@@ -67,7 +67,7 @@ tags: ["youth-documentary", "postwar"]
 - 同時代批評や後年の図録テキストは、本文では長く引用せず、表現史・受容史を支える根拠として使う。
 
 ## 6. Sources
-- [S1] Larry Clark. ICP. https://www.icp.org/browse/archive/constituents/larry-clark
+- [S1] Larry Clark. ICP. https://www.icp.org/search-results?query=larry%20clark
 - [S2] Larry Clark. Tate. https://www.tate.org.uk/art/artists/larry-clark-813
 - [S3] Larry Clark. MoMA. https://www.moma.org/artists/1154
 - [S4] Larry Clark. Whitney Museum. https://whitney.org/artists/253

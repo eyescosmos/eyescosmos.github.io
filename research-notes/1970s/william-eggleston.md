@@ -85,8 +85,8 @@ tags: ['color as serious art', 'everyday modernity', 'banal subject matter', 'de
 - [S16] William Eggleston search. Tate. https://www.tate.org.uk/search?q=William+Eggleston
 - [S17] William Eggleston search. Art Institute of Chicago. https://www.artic.edu/search?q=William+Eggleston
 - [S18] William Eggleston search. SFMOMA. https://www.sfmoma.org/search/?q=William+Eggleston
-- [S19] William Eggleston archive search. ICP. https://www.icp.org/search-results/William+Eggleston
-- [S20] William Eggleston search. Whitney Museum. https://whitney.org/search?q=William+Eggleston
+- [S19] William Eggleston archive search. ICP. https://www.icp.org/search-results?query=William+Eggleston
+- [S20] William Eggleston search. Whitney Museum. https://whitney.org/search?query=William+Eggleston
 - [S21] William Eggleston search. Guggenheim Museum. https://www.guggenheim.org/?s=William+Eggleston
 - [S22] William Eggleston search. Smithsonian Institution. https://www.si.edu/search?query=William+Eggleston
 - [S23] William Eggleston bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=William+Eggleston&searchCode=GKEY%5E*&searchType=0

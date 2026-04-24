@@ -99,7 +99,7 @@ tags: ["materiality", "abstraction", "photographic process"]
 - [S3] James Welling: Back to Now. Musée Magazine. https://museemagazine.com/features/2023/7/11/james-welling-back-to-now-ktmam
 - [S4] ASX Interviews James Welling (2014). American Suburb X. https://americansuburbx.com/2014/04/asx-interviews-james-welling-2014.html
 - [S5] James Welling — Museum of Modern Art. https://www.moma.org/artists/6350 — MoMA artist page and collection context
-- [S6] James Welling — Art Institute of Chicago. https://www.artic.edu/artists/34645/james-welling — museum artist page
+- [S6] James Welling — Art Institute of Chicago. https://www.artic.edu/search?q=james%20welling — museum artist page
 - [S7] James Welling — Guggenheim Museum. https://www.guggenheim.org/artwork/artist/james-welling — museum collection page
 - [S8] James Welling — David Zwirner. https://www.davidzwirner.com/artists/james-welling — gallery profile and exhibition context
 - [S9] James Welling — SFMOMA. https://www.sfmoma.org/artist/James_Welling/ — SFMOMA artist page

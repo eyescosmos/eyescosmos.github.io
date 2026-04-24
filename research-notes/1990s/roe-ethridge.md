@@ -100,7 +100,7 @@ tags: ["surface", "image economy", "genre instability"]
 - [S6] Roe Ethridge: New Photography 2010 — MoMA. https://www.moma.org/interactives/exhibitions/2010/newphotography/roe-ethridge/studio-with-red-bag/ — MoMA New Photography page
 - [S7] Roe Ethridge — Gagosian. https://gagosian.com/artists/roe-ethridge/ — gallery profile and exhibition history
 - [S8] Roe Ethridge — Andrew Kreps Gallery. https://www.andrewkreps.com/artists/roe-ethridge — gallery artist profile
-- [S9] Roe Ethridge — MACK. https://mackbooks.co.uk/products/roe-ethridge-american-polychronic-br-roe-ethridge — publisher page for photobook context
+- [S9] Roe Ethridge — MACK. https://mackbooks.co.uk/search?type=product&q=roe%20ethridge%20american%20polychronic%20roe%20ethridge — publisher page for photobook context
 - [S10] Roe Ethridge — Carnegie Museum of Art. https://collection.cmoa.org/creator/roe-ethridge — collection artist context
 
 ### 8.5 出典探索メモ / Source exploration memo

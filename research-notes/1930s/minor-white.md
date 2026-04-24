@@ -82,7 +82,7 @@ tags: ["spiritual-experience", "sequence", "inner-state", "equivalents", "spirit
 - [S5] Minor White archive. Center for Creative Photography. https://ccp.arizona.edu/artists/minor-white
 - [S6] Minor White search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Minor%20White
 - [S7] Minor White search. SFMOMA. https://www.sfmoma.org/search/?q=Minor%20White
-- [S8] Minor White search. ICP. https://www.icp.org/search-results/Minor%20White
+- [S8] Minor White search. ICP. https://www.icp.org/search-results?query=Minor%20White
 - [S9] Minor White search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?artist=Minor%20White
 - [S10] Minor White search. WorldCat. https://search.worldcat.org/search?q=Minor+White+photography
 

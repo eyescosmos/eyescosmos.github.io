@@ -119,8 +119,8 @@ tags: ["identity performance", "surface", "media persona"]
 - [route] Jean-Pierre Khazem search. Guggenheim Museum. https://www.guggenheim.org/?s=Jean-Pierre+Khazem
 - [route] Jean-Pierre Khazem search. Art Institute of Chicago. https://www.artic.edu/search?q=Jean-Pierre+Khazem
 - [route] Jean-Pierre Khazem search. SFMOMA. https://www.sfmoma.org/search/?q=Jean-Pierre+Khazem
-- [route] Jean-Pierre Khazem search. Whitney Museum. https://whitney.org/search?q=Jean-Pierre+Khazem
-- [route] Jean-Pierre Khazem search. International Center of Photography. https://www.icp.org/search-results/Jean-Pierre%20Khazem
+- [route] Jean-Pierre Khazem search. Whitney Museum. https://whitney.org/search?query=Jean-Pierre+Khazem
+- [route] Jean-Pierre Khazem search. International Center of Photography. https://www.icp.org/search-results?query=Jean-Pierre%20Khazem
 - [route] Jean-Pierre Khazem search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Jean-Pierre+Khazem
 - [route] Jean-Pierre Khazem search. Getty. https://www.getty.edu/art/collection/search/?q=Jean-Pierre+Khazem
 - [route] Jean-Pierre Khazem route. Aperture. https://aperture.org/?s=Jean-Pierre+Khazem
@@ -139,6 +139,6 @@ tags: ["identity performance", "surface", "media persona"]
 - [route] Jean-Pierre Khazem archive route. Smithsonian Institution. https://www.si.edu/search?query=Jean-Pierre+Khazem
 - [route] Jean-Pierre Khazem archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Jean-Pierre+Khazem
 - [route] Jean-Pierre Khazem exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Jean-Pierre+Khazem
-- [route] Jean-Pierre Khazem Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Jean-Pierre Khazem Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Jean-Pierre Khazem third-language / local institution route. https://www.google.com/search?q=Jean-Pierre+Khazem+photography+museum+exhibition+catalogue
 - [route] Jean-Pierre Khazem primary interview / statement route. https://www.google.com/search?q=Jean-Pierre+Khazem+photographer+interview+artist+statement

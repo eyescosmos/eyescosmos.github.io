@@ -124,8 +124,8 @@ tags: ["identity performance", "appropriation", "Orientalism critique"]
 - [route] Yasumasa Morimura search. Guggenheim Museum. https://www.guggenheim.org/?s=Yasumasa+Morimura
 - [route] Yasumasa Morimura search. Art Institute of Chicago. https://www.artic.edu/search?q=Yasumasa+Morimura
 - [route] Yasumasa Morimura search. SFMOMA. https://www.sfmoma.org/search/?q=Yasumasa+Morimura
-- [route] Yasumasa Morimura search. Whitney Museum. https://whitney.org/search?q=Yasumasa+Morimura
-- [route] Yasumasa Morimura search. International Center of Photography. https://www.icp.org/search-results/Yasumasa%20Morimura
+- [route] Yasumasa Morimura search. Whitney Museum. https://whitney.org/search?query=Yasumasa+Morimura
+- [route] Yasumasa Morimura search. International Center of Photography. https://www.icp.org/search-results?query=Yasumasa%20Morimura
 - [route] Yasumasa Morimura search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Yasumasa+Morimura
 - [route] Yasumasa Morimura search. Getty. https://www.getty.edu/art/collection/search/?q=Yasumasa+Morimura
 - [route] Yasumasa Morimura route. Aperture. https://aperture.org/?s=Yasumasa+Morimura
@@ -144,6 +144,6 @@ tags: ["identity performance", "appropriation", "Orientalism critique"]
 - [route] Yasumasa Morimura archive route. Smithsonian Institution. https://www.si.edu/search?query=Yasumasa+Morimura
 - [route] Yasumasa Morimura archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Yasumasa+Morimura
 - [route] Yasumasa Morimura exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Yasumasa+Morimura
-- [route] Yasumasa Morimura Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Yasumasa Morimura Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Yasumasa Morimura third-language / local institution route. https://www.google.com/search?q=Yasumasa+Morimura+photography+museum+exhibition+catalogue
 - [route] Yasumasa Morimura primary interview / statement route. https://www.google.com/search?q=Yasumasa+Morimura+photographer+interview+artist+statement

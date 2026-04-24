@@ -119,8 +119,8 @@ tags: ["feminist myth", "mobility", "counterculture"]
 - [route] Justine Kurland search. Guggenheim Museum. https://www.guggenheim.org/?s=Justine+Kurland
 - [route] Justine Kurland search. Art Institute of Chicago. https://www.artic.edu/search?q=Justine+Kurland
 - [route] Justine Kurland search. SFMOMA. https://www.sfmoma.org/search/?q=Justine+Kurland
-- [route] Justine Kurland search. Whitney Museum. https://whitney.org/search?q=Justine+Kurland
-- [route] Justine Kurland search. International Center of Photography. https://www.icp.org/search-results/Justine%20Kurland
+- [route] Justine Kurland search. Whitney Museum. https://whitney.org/search?query=Justine+Kurland
+- [route] Justine Kurland search. International Center of Photography. https://www.icp.org/search-results?query=Justine%20Kurland
 - [route] Justine Kurland search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Justine+Kurland
 - [route] Justine Kurland search. Getty. https://www.getty.edu/art/collection/search/?q=Justine+Kurland
 - [route] Justine Kurland route. Aperture. https://aperture.org/?s=Justine+Kurland
@@ -139,6 +139,6 @@ tags: ["feminist myth", "mobility", "counterculture"]
 - [route] Justine Kurland archive route. Smithsonian Institution. https://www.si.edu/search?query=Justine+Kurland
 - [route] Justine Kurland archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Justine+Kurland
 - [route] Justine Kurland exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Justine+Kurland
-- [route] Justine Kurland Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Justine Kurland Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Justine Kurland third-language / local institution route. https://www.google.com/search?q=Justine+Kurland+photography+museum+exhibition+catalogue
 - [route] Justine Kurland primary interview / statement route. https://www.google.com/search?q=Justine+Kurland+photographer+interview+artist+statement

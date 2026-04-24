@@ -80,7 +80,7 @@ tags: ['cultivation', 'everyday landscape', 'postindustrial nature']
 - [S12] Simone Nieweg route. Aperture. https://aperture.org/?s=Simone+Nieweg
 
 - [S13] Simone Nieweg. Galerie m Bochum. https://galerie-m.com/artists/simone-nieweg/
-- [S14] Simone Nieweg. MACK. https://mackbooks.us/products/nature-man-br-simone-nieweg
+- [S14] Simone Nieweg. MACK. https://mackbooks.us/search?type=product&q=nature%20man%20simone%20nieweg
 - [S15] Simone Nieweg. Tate. https://www.tate.org.uk/search?q=Simone%20Nieweg
 - [S16] Simone Nieweg. Museum Kunstpalast search. https://www.kunstpalast.de/en/?s=Simone+Nieweg
 - [S17] Simone Nieweg. MoMA search. https://www.moma.org/search/?query=Simone%20Nieweg
@@ -88,8 +88,8 @@ tags: ['cultivation', 'everyday landscape', 'postindustrial nature']
 - [S19] Simone Nieweg search. Art Institute of Chicago. https://www.artic.edu/search?q=Simone+Nieweg
 - [S20] Simone Nieweg search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Simone+Nieweg
 - [S21] Simone Nieweg search. SFMOMA. https://www.sfmoma.org/search/?q=Simone+Nieweg
-- [S22] Simone Nieweg archive search. ICP. https://www.icp.org/search-results/Simone+Nieweg
-- [S23] Simone Nieweg search. Whitney Museum. https://whitney.org/search?q=Simone+Nieweg
+- [S22] Simone Nieweg archive search. ICP. https://www.icp.org/search-results?query=Simone+Nieweg
+- [S23] Simone Nieweg search. Whitney Museum. https://whitney.org/search?query=Simone+Nieweg
 - [S24] Simone Nieweg search. Guggenheim Museum. https://www.guggenheim.org/?s=Simone+Nieweg
 - [S25] Simone Nieweg search. Smithsonian Institution. https://www.si.edu/search?query=Simone+Nieweg
 - [S26] Simone Nieweg bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Simone+Nieweg&searchCode=GKEY%5E*&searchType=0

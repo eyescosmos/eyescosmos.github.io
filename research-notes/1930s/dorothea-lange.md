@@ -88,7 +88,7 @@ tags: ["social-document", "FSA", "state-archive", "ethics", "labor", "incarcerat
 - [S13] Dorothea Lange search. Library of Congress. https://www.loc.gov/pictures/search/?q=Dorothea%20Lange
 - [S14] Dorothea Lange: Words and Pictures. MoMA. https://www.moma.org/calendar/exhibitions/5079
 - [S15] Dorothea Lange search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?artist=Dorothea%20Lange
-- [S16] Dorothea Lange search. ICP. https://www.icp.org/search-results/Dorothea%20Lange
+- [S16] Dorothea Lange search. ICP. https://www.icp.org/search-results?query=Dorothea%20Lange
 
 - [S17] Correcting the Record on Dorothea Lange’s Japanese Internment Photos. National Archives. https://www.archives.gov/news/75th-anniversary-japanese-internment-news-article
 - [S18] Dorothea Lange Digital Archive. Oakland Museum of California. https://museumca.org/learn-resources/dorothea-lange-digital-archive/

@@ -76,7 +76,7 @@ tags: ["photographic-art", "institution", "beauty", "japanese-pictorialism", "ja
 - [S3] Face to Face: Shiseido and the Manufacture of Beauty. Grey Art Museum / NYU. https://greyartmuseum.nyu.edu/exhibition/shiseido-091500-102800/
 - [S4] 福原信三と美術と資生堂展. Art Platform Japan. https://artplatform.go.jp/ja/artists/A1500
 - [S5] 福原信三 search. ToMuCo. https://museumcollection.tokyo/works/?q=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89
-- [S6] Shinzo Fukuhara search. ICP. https://www.icp.org/search-results/Shinzo%20Fukuhara
+- [S6] Shinzo Fukuhara search. ICP. https://www.icp.org/search-results?query=Shinzo%20Fukuhara
 - [S7] 福原信三 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89
 - [S8] 福原信三 search. CiNii Research. https://cir.nii.ac.jp/all?q=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89
 - [S9] Shinzo Fukuhara search. British Museum. https://www.britishmuseum.org/collection/search?keyword=Shinzo%20Fukuhara

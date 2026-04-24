@@ -86,7 +86,7 @@ tags: ["surrealism", "war-witness", "gender", "surrealism", "fashion-photography
 - [S9] Lee Miller search. MoMA. https://www.moma.org/search/?query=Lee%20Miller
 - [S10] Lee Miller search. Smithsonian Archives of American Art. https://www.aaa.si.edu/search/collections?edan_q=Lee%20Miller
 - [S11] Lee Miller search. LACMA. https://collections.lacma.org/search/site/Lee%20Miller
-- [S12] Lee Miller search. ICP. https://www.icp.org/search-results/Lee%20Miller
+- [S12] Lee Miller search. ICP. https://www.icp.org/search-results?query=Lee%20Miller
 
 - [S13] Lee Miller: A Woman’s War. Imperial War Museums. https://www.iwm.org.uk/history/lee-miller-a-womans-war
 - [S14] Lee Miller. Tate. https://www.tate.org.uk/art/artists/lee-miller-1619

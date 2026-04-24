@@ -118,8 +118,8 @@ tags: ["authorship critique", "originality", "media-critique"]
 - [route] Sherrie Levine search. Guggenheim Museum. https://www.guggenheim.org/?s=Sherrie+Levine
 - [route] Sherrie Levine search. Art Institute of Chicago. https://www.artic.edu/search?q=Sherrie+Levine
 - [route] Sherrie Levine search. SFMOMA. https://www.sfmoma.org/search/?q=Sherrie+Levine
-- [route] Sherrie Levine search. Whitney Museum. https://whitney.org/search?q=Sherrie+Levine
-- [route] Sherrie Levine search. International Center of Photography. https://www.icp.org/search-results/Sherrie%20Levine
+- [route] Sherrie Levine search. Whitney Museum. https://whitney.org/search?query=Sherrie+Levine
+- [route] Sherrie Levine search. International Center of Photography. https://www.icp.org/search-results?query=Sherrie%20Levine
 - [route] Sherrie Levine search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Sherrie+Levine
 - [route] Sherrie Levine search. Getty. https://www.getty.edu/art/collection/search/?q=Sherrie+Levine
 - [route] Sherrie Levine route. Aperture. https://aperture.org/?s=Sherrie+Levine
@@ -138,6 +138,6 @@ tags: ["authorship critique", "originality", "media-critique"]
 - [route] Sherrie Levine archive route. Smithsonian Institution. https://www.si.edu/search?query=Sherrie+Levine
 - [route] Sherrie Levine archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Sherrie+Levine
 - [route] Sherrie Levine exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Sherrie+Levine
-- [route] Sherrie Levine Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Sherrie Levine Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Sherrie Levine third-language / local institution route. https://www.google.com/search?q=Sherrie+Levine+photography+museum+exhibition+catalogue
 - [route] Sherrie Levine primary interview / statement route. https://www.google.com/search?q=Sherrie+Levine+photographer+interview+artist+statement

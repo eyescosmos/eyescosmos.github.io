@@ -76,7 +76,7 @@ tags: ["street-photography", "postwar"]
 - [S6] Louis Faurer search. National Gallery of Art. https://www.nga.gov/collection/artist-info.34018.html
 - [S7] Louis Faurer search. MoMA. https://www.moma.org/search/?query=Louis%20Faurer
 - [S8] Louis Faurer search. Art Institute of Chicago. https://www.artic.edu/search?q=Louis%20Faurer
-- [S9] Louis Faurer search. ICP. https://www.icp.org/browse/archive/constituents/louis-faurer
+- [S9] Louis Faurer search. ICP. https://www.icp.org/search-results?query=louis%20faurer
 - [S10] Louis Faurer search. WorldCat. https://search.worldcat.org/search?q=Louis+Faurer
 
 - [S11] Louis Faurer. MoMA. https://www.moma.org/artists/1811

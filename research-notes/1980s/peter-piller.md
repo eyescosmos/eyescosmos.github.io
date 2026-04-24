@@ -119,8 +119,8 @@ tags: ["archive", "vernacular systems", "catalog impulse"]
 - [route] Peter Piller search. Guggenheim Museum. https://www.guggenheim.org/?s=Peter+Piller
 - [route] Peter Piller search. Art Institute of Chicago. https://www.artic.edu/search?q=Peter+Piller
 - [route] Peter Piller search. SFMOMA. https://www.sfmoma.org/search/?q=Peter+Piller
-- [route] Peter Piller search. Whitney Museum. https://whitney.org/search?q=Peter+Piller
-- [route] Peter Piller search. International Center of Photography. https://www.icp.org/search-results/Peter%20Piller
+- [route] Peter Piller search. Whitney Museum. https://whitney.org/search?query=Peter+Piller
+- [route] Peter Piller search. International Center of Photography. https://www.icp.org/search-results?query=Peter%20Piller
 - [route] Peter Piller search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Peter+Piller
 - [route] Peter Piller search. Getty. https://www.getty.edu/art/collection/search/?q=Peter+Piller
 - [route] Peter Piller route. Aperture. https://aperture.org/?s=Peter+Piller
@@ -139,6 +139,6 @@ tags: ["archive", "vernacular systems", "catalog impulse"]
 - [route] Peter Piller archive route. Smithsonian Institution. https://www.si.edu/search?query=Peter+Piller
 - [route] Peter Piller archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Peter+Piller
 - [route] Peter Piller exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Peter+Piller
-- [route] Peter Piller Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Peter Piller Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Peter Piller third-language / local institution route. https://www.google.com/search?q=Peter+Piller+photography+museum+exhibition+catalogue
 - [route] Peter Piller primary interview / statement route. https://www.google.com/search?q=Peter+Piller+photographer+interview+artist+statement

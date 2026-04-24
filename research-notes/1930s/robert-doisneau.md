@@ -78,7 +78,7 @@ tags: ["humanism", "everyday-life", "staging-controversy", "french-humanist-phot
 - [S1] Robert Doisneau official. Atelier Robert Doisneau. https://www.robert-doisneau.com/en
 - [S2] Robert Doisneau Instants Donnés. Musée Maillol. https://museemaillol.com/en/expositions/robert-doisneau-instants-donnes-2/
 - [S3] Robert Doisneau exhibition. Expo Doisneau. https://www.expo-doisneau.com/en/home/
-- [S4] Robert Doisneau Travaux & Les Jeux. ICP. https://www.icp.org/search-results/Robert%20Doisneau
+- [S4] Robert Doisneau Travaux & Les Jeux. ICP. https://www.icp.org/search-results?query=Robert%20Doisneau
 - [S5] Robert Doisneau search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Robert%20Doisneau
 - [S6] Robert Doisneau search. Paris Musées. https://www.parismuseescollections.paris.fr/fr/recherche/type/oeuvre/auteur/Robert%20Doisneau
 - [S7] Robert Doisneau teacher guide PDF. Musée Maillol. https://museemaillol.com/wp-content/uploads/2025/04/EXPO-Robert-Doinseau-Guide-de-lenseignant%C2%B7e.pdf
@@ -87,7 +87,7 @@ tags: ["humanism", "everyday-life", "staging-controversy", "french-humanist-phot
 - [S10] Robert Doisneau search. MoMA. https://www.moma.org/search/?query=Robert%20Doisneau
 
 - [S11] Robert Doisneau. Atelier Robert Doisneau. https://www.robert-doisneau.com/en/
-- [S12] Robert Doisneau. ICP. https://www.icp.org/browse/archive/constituents/robert-doisneau
+- [S12] Robert Doisneau. ICP. https://www.icp.org/search-results?query=robert%20doisneau
 - [S13] Robert Doisneau search. Paris Musées. https://www.parismuseescollections.paris.fr/en/recherche/type/oeuvre/auteur/Robert%20Doisneau
 
 ## 7. Source exploration memo / next research routes

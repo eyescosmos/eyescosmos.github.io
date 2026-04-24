@@ -84,8 +84,8 @@ tags: ['constructed identity', 'male gaze', 'representation crisis', 'postmodern
 - [S15] Cindy Sherman search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Cindy+Sherman
 - [S16] Cindy Sherman search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Cindy+Sherman
 - [S17] Cindy Sherman search. SFMOMA. https://www.sfmoma.org/search/?q=Cindy+Sherman
-- [S18] Cindy Sherman archive search. ICP. https://www.icp.org/search-results/Cindy+Sherman
-- [S19] Cindy Sherman search. Whitney Museum. https://whitney.org/search?q=Cindy+Sherman
+- [S18] Cindy Sherman archive search. ICP. https://www.icp.org/search-results?query=Cindy+Sherman
+- [S19] Cindy Sherman search. Whitney Museum. https://whitney.org/search?query=Cindy+Sherman
 - [S20] Cindy Sherman search. Guggenheim Museum. https://www.guggenheim.org/?s=Cindy+Sherman
 - [S21] Cindy Sherman search. Smithsonian Institution. https://www.si.edu/search?query=Cindy+Sherman
 - [S22] Cindy Sherman bibliography. WorldCat. https://search.worldcat.org/search?q=Cindy+Sherman

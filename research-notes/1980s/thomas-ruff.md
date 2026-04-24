@@ -131,8 +131,8 @@ tags: ["photographic truth", "image system", "post-photography"]
 - [route] Thomas Ruff search. Guggenheim Museum. https://www.guggenheim.org/?s=Thomas+Ruff
 - [route] Thomas Ruff search. Art Institute of Chicago. https://www.artic.edu/search?q=Thomas+Ruff
 - [route] Thomas Ruff search. SFMOMA. https://www.sfmoma.org/search/?q=Thomas+Ruff
-- [route] Thomas Ruff search. Whitney Museum. https://whitney.org/search?q=Thomas+Ruff
-- [route] Thomas Ruff search. International Center of Photography. https://www.icp.org/search-results/Thomas%20Ruff
+- [route] Thomas Ruff search. Whitney Museum. https://whitney.org/search?query=Thomas+Ruff
+- [route] Thomas Ruff search. International Center of Photography. https://www.icp.org/search-results?query=Thomas%20Ruff
 - [route] Thomas Ruff search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Thomas+Ruff
 - [route] Thomas Ruff search. Getty. https://www.getty.edu/art/collection/search/?q=Thomas+Ruff
 - [route] Thomas Ruff route. Aperture. https://aperture.org/?s=Thomas+Ruff
@@ -151,6 +151,6 @@ tags: ["photographic truth", "image system", "post-photography"]
 - [route] Thomas Ruff archive route. Smithsonian Institution. https://www.si.edu/search?query=Thomas+Ruff
 - [route] Thomas Ruff archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Thomas+Ruff
 - [route] Thomas Ruff exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Thomas+Ruff
-- [route] Thomas Ruff Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Thomas Ruff Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Thomas Ruff third-language / local institution route. https://www.google.com/search?q=Thomas+Ruff+photography+museum+exhibition+catalogue
 - [route] Thomas Ruff primary interview / statement route. https://www.google.com/search?q=Thomas+Ruff+photographer+interview+artist+statement

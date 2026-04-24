@@ -79,14 +79,14 @@ tags: ["snapshot", "private-photography", "memory", "speed", "leisure", "redisco
 - [S8] Jacques Henri Lartigue exhibition text. Gallery 51 PDF. https://www.gallery51.com/wp-content/uploads/2021/04/persLartigueENG.pdf
 
 - [S9] Jacques Henri Lartigue collection search. Getty Museum. https://www.getty.edu/art/collection/person/103KPR
-- [S10] Jacques Henri Lartigue constituent page. ICP. https://www.icp.org/browse/archive/constituents/jacques-henri-lartigue
+- [S10] Jacques Henri Lartigue constituent page. ICP. https://www.icp.org/search-results?query=jacques%20henri%20lartigue
 - [S11] Jacques Henri Lartigue artist page. National Gallery of Art. https://www.nga.gov/artists/30544-jacques-henri-lartigue
 - [S12] Jacques Henri Lartigue press release search. MoMA press archives. https://www.moma.org/documents/moma_catalogue_2563_300062282.pdf
 
 - [S13] Lartigue official portal. Donation Jacques Henri Lartigue. https://www.lartigue.org/
 - [S14] Exhibitions / official archive route. Donation Jacques Henri Lartigue. https://www.lartigue.org/en/exhibitions/
 - [S15] Jacques Henri Lartigue collection search. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Jacques%20Henri%20Lartigue
-- [S16] Jacques Henri Lartigue collection search. Art Institute of Chicago. https://www.artic.edu/artists/108439/jacques-henri-lartigue
+- [S16] Jacques Henri Lartigue collection search. Art Institute of Chicago. https://www.artic.edu/search?q=jacques%20henri%20lartigue
 - [S17] Jacques Henri Lartigue artist page. SFMOMA. https://www.sfmoma.org/artist/Jacques_Henri_Lartigue/
 - Search route (count外): Jacques Henri Lartigue collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Jacques%20Henri%20Lartigue
 - Search route (count外): Jacques Henri Lartigue search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Jacques+Henri+Lartigue

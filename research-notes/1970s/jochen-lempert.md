@@ -89,8 +89,8 @@ tags: ['taxonomy', 'attention', 'nonhuman life', 'archive']
 - [S20] Jochen Lempert search. Art Institute of Chicago. https://www.artic.edu/search?q=Jochen+Lempert
 - [S21] Jochen Lempert search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Jochen+Lempert
 - [S22] Jochen Lempert search. SFMOMA. https://www.sfmoma.org/search/?q=Jochen+Lempert
-- [S23] Jochen Lempert archive search. ICP. https://www.icp.org/search-results/Jochen+Lempert
-- [S24] Jochen Lempert search. Whitney Museum. https://whitney.org/search?q=Jochen+Lempert
+- [S23] Jochen Lempert archive search. ICP. https://www.icp.org/search-results?query=Jochen+Lempert
+- [S24] Jochen Lempert search. Whitney Museum. https://whitney.org/search?query=Jochen+Lempert
 - [S25] Jochen Lempert search. Guggenheim Museum. https://www.guggenheim.org/?s=Jochen+Lempert
 - [S26] Jochen Lempert search. Smithsonian Institution. https://www.si.edu/search?query=Jochen+Lempert
 - [S27] Jochen Lempert bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Jochen+Lempert&searchCode=GKEY%5E*&searchType=0

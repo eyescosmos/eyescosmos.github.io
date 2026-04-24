@@ -68,7 +68,7 @@ tags: ['witness', 'postwar memory', 'human rights', 'gendered suffering']
 ## 6. Sources
 - [S1] Yoshino Oishi official / estate route. Yoshino Oishi official. https://www.google.com/search?q=Yoshino+Oishi+official+artist+photographer
 - [S2] Yoshino Oishi route. Canon Gallery. https://www.google.com/search?q=Canon+Gallery+Yoshino+Oishi+photography
-- [S3] Yoshino Oishi route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S3] Yoshino Oishi route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S4] Yoshino Oishi bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Yoshino+Oishi
 - [S5] Yoshino Oishi research route. CiNii Research. https://cir.nii.ac.jp/all?q=Yoshino+Oishi
 - [S6] Yoshino Oishi bibliography. WorldCat. https://search.worldcat.org/search?q=Yoshino+Oishi
@@ -91,9 +91,9 @@ tags: ['witness', 'postwar memory', 'human rights', 'gendered suffering']
 - [S22] Yoshino Oishi search. Art Institute of Chicago. https://www.artic.edu/search?q=Yoshino+Oishi
 - [S23] Yoshino Oishi search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Yoshino+Oishi
 - [S24] Yoshino Oishi search. SFMOMA. https://www.sfmoma.org/search/?q=Yoshino+Oishi
-- [S25] Yoshino Oishi archive search. ICP. https://www.icp.org/search-results/Yoshino+Oishi
+- [S25] Yoshino Oishi archive search. ICP. https://www.icp.org/search-results?query=Yoshino+Oishi
 - [S26] Yoshino Oishi route. Aperture. https://aperture.org/?s=Yoshino+Oishi
-- [S27] Yoshino Oishi search. Whitney Museum. https://whitney.org/search?q=Yoshino+Oishi
+- [S27] Yoshino Oishi search. Whitney Museum. https://whitney.org/search?query=Yoshino+Oishi
 - [S28] Yoshino Oishi search. Guggenheim Museum. https://www.guggenheim.org/?s=Yoshino+Oishi
 - [S29] Yoshino Oishi search. Smithsonian Institution. https://www.si.edu/search?query=Yoshino+Oishi
 - [S30] Yoshino Oishi bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Yoshino+Oishi&searchCode=GKEY%5E*&searchType=0

@@ -119,8 +119,8 @@ tags: ["urban memory", "public space", "nocturnal modernity"]
 - [route] Rut Blees Luxemburg search. Guggenheim Museum. https://www.guggenheim.org/?s=Rut+Blees+Luxemburg
 - [route] Rut Blees Luxemburg search. Art Institute of Chicago. https://www.artic.edu/search?q=Rut+Blees+Luxemburg
 - [route] Rut Blees Luxemburg search. SFMOMA. https://www.sfmoma.org/search/?q=Rut+Blees+Luxemburg
-- [route] Rut Blees Luxemburg search. Whitney Museum. https://whitney.org/search?q=Rut+Blees+Luxemburg
-- [route] Rut Blees Luxemburg search. International Center of Photography. https://www.icp.org/search-results/Rut%20Blees%20Luxemburg
+- [route] Rut Blees Luxemburg search. Whitney Museum. https://whitney.org/search?query=Rut+Blees+Luxemburg
+- [route] Rut Blees Luxemburg search. International Center of Photography. https://www.icp.org/search-results?query=Rut%20Blees%20Luxemburg
 - [route] Rut Blees Luxemburg search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Rut+Blees+Luxemburg
 - [route] Rut Blees Luxemburg search. Getty. https://www.getty.edu/art/collection/search/?q=Rut+Blees+Luxemburg
 - [route] Rut Blees Luxemburg route. Aperture. https://aperture.org/?s=Rut+Blees+Luxemburg
@@ -139,6 +139,6 @@ tags: ["urban memory", "public space", "nocturnal modernity"]
 - [route] Rut Blees Luxemburg archive route. Smithsonian Institution. https://www.si.edu/search?query=Rut+Blees+Luxemburg
 - [route] Rut Blees Luxemburg archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Rut+Blees+Luxemburg
 - [route] Rut Blees Luxemburg exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Rut+Blees+Luxemburg
-- [route] Rut Blees Luxemburg Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Rut Blees Luxemburg Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Rut Blees Luxemburg third-language / local institution route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photography+museum+exhibition+catalogue
 - [route] Rut Blees Luxemburg primary interview / statement route. https://www.google.com/search?q=Rut+Blees+Luxemburg+photographer+interview+artist+statement

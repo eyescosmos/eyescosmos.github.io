@@ -86,7 +86,7 @@ tags: ["social-realism", "visual-politics", "new-deal", "fsa-documentary", "soci
 - [S9] Ben Shahn search. Library of Congress. https://www.loc.gov/pictures/search/?q=Ben%20Shahn
 - [S10] Ben Shahn search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Ben%20Shahn
 
-- [S11] Ben Shahn. Smithsonian American Art Museum. https://americanart.si.edu/artist/ben-shahn-4426
+- [S11] Ben Shahn. Smithsonian American Art Museum. https://americanart.si.edu/search?query=ben%20shahn%204426
 - [S12] Ben Shahn. MoMA. https://www.moma.org/artists/5355
 - [S13] Ben Shahn Papers. Archives of American Art. https://www.aaa.si.edu/collections/ben-shahn-papers-8154
 - [S14] Ben Shahn search. Library of Congress. https://www.loc.gov/search/?q=Ben%20Shahn

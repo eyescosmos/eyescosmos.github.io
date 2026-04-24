@@ -68,7 +68,7 @@
 - [S1] National Archives, The Civil War as Photographed by Mathew Brady (use: 基本出典). https://www.archives.gov/education/lessons/brady-photos
 - [S2] National Archives, Civil War Photographs (use: 基本出典). https://www.archives.gov/research/still-pictures/civil-war
 - [S3] Library of Congress, Civil War Photographs: The Mathew Brady Bunch (use: 基本出典). https://www.loc.gov/classroom-materials/civil-war-photographs-the-mathew-brady-bunch/
-- [S4] Smithsonian American Art Museum / collection context (use: 基本出典). https://americanart.si.edu/artist/mathew-brady-612
+- [S4] Smithsonian American Art Museum / collection context (use: 基本出典). https://americanart.si.edu/search?query=mathew%20brady%20612
 - [S5] NYPL Archives, Mathew Brady registers (use: 基本出典). https://archives.nypl.org/mss/3494
 - [S6] Mathew Brady, Cornell Dawn’s Early Light (EN; university exhibition; use: 伝記・事業史). https://exhibits.library.cornell.edu/DawnsEarlyLight/feature/mathew-brady
 - [S7] Civil War Glass Negatives and Related Prints, Library of Congress (EN; archive; use: Brady研究の入口). https://www.loc.gov/pictures/collection/cwp/brady.html
@@ -77,7 +77,7 @@
 - [S9] The Met query: Mathew Brady (EN; museum collection; use: 作品と評価). https://www.metmuseum.org/art/collection/search#!?q=Mathew%20Brady
 - [S10] LOC query: Mathew Brady (EN; archive; use: 米国所蔵). https://www.loc.gov/pictures/search/?q=Mathew%20Brady
 - [S11] Mathew B. Brady, Getty Museum person page (EN; museum bio/collection; use: 作家解説と所蔵導線). https://www.getty.edu/art/collection/person/103KK9
-- [S12] Mathew B. Brady, Smithsonian American Art Museum (EN; museum bio; use: 米国美術史文脈の要約). https://americanart.si.edu/artist/mathew-b-brady-6668
+- [S12] Mathew B. Brady, Smithsonian American Art Museum (EN; museum bio; use: 米国美術史文脈の要約). https://americanart.si.edu/search?query=mathew%20B.%20brady%206668
 - [S13] The Civil War as Photographed by Mathew Brady, DocsTeach (EN; archive teaching resource; use: NARA教育版の別導線). https://docsteach.org/activity/the-civil-war-as-photographed-by-mathew-brady/
 
 ## Additional search paths（正式出典ではなく追加調査の入口）

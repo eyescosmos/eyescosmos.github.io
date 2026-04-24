@@ -120,8 +120,8 @@ tags: ["social-document", "everyday duration", "color realism"]
 - [route] Paul Graham search. Guggenheim Museum. https://www.guggenheim.org/?s=Paul+Graham
 - [route] Paul Graham search. Art Institute of Chicago. https://www.artic.edu/search?q=Paul+Graham
 - [route] Paul Graham search. SFMOMA. https://www.sfmoma.org/search/?q=Paul+Graham
-- [route] Paul Graham search. Whitney Museum. https://whitney.org/search?q=Paul+Graham
-- [route] Paul Graham search. International Center of Photography. https://www.icp.org/search-results/Paul%20Graham
+- [route] Paul Graham search. Whitney Museum. https://whitney.org/search?query=Paul+Graham
+- [route] Paul Graham search. International Center of Photography. https://www.icp.org/search-results?query=Paul%20Graham
 - [route] Paul Graham search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Paul+Graham
 - [route] Paul Graham search. Getty. https://www.getty.edu/art/collection/search/?q=Paul+Graham
 - [route] Paul Graham route. Aperture. https://aperture.org/?s=Paul+Graham
@@ -140,6 +140,6 @@ tags: ["social-document", "everyday duration", "color realism"]
 - [route] Paul Graham archive route. Smithsonian Institution. https://www.si.edu/search?query=Paul+Graham
 - [route] Paul Graham archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Paul+Graham
 - [route] Paul Graham exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Paul+Graham
-- [route] Paul Graham Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Paul Graham Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Paul Graham third-language / local institution route. https://www.google.com/search?q=Paul+Graham+photography+museum+exhibition+catalogue
 - [route] Paul Graham primary interview / statement route. https://www.google.com/search?q=Paul+Graham+photographer+interview+artist+statement

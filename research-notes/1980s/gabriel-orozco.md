@@ -119,8 +119,8 @@ tags: ["everyday-life", "mobility", "sculptural thinking"]
 - [route] Gabriel Orozco search. Guggenheim Museum. https://www.guggenheim.org/?s=Gabriel+Orozco
 - [route] Gabriel Orozco search. Art Institute of Chicago. https://www.artic.edu/search?q=Gabriel+Orozco
 - [route] Gabriel Orozco search. SFMOMA. https://www.sfmoma.org/search/?q=Gabriel+Orozco
-- [route] Gabriel Orozco search. Whitney Museum. https://whitney.org/search?q=Gabriel+Orozco
-- [route] Gabriel Orozco search. International Center of Photography. https://www.icp.org/search-results/Gabriel%20Orozco
+- [route] Gabriel Orozco search. Whitney Museum. https://whitney.org/search?query=Gabriel+Orozco
+- [route] Gabriel Orozco search. International Center of Photography. https://www.icp.org/search-results?query=Gabriel%20Orozco
 - [route] Gabriel Orozco search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Gabriel+Orozco
 - [route] Gabriel Orozco search. Getty. https://www.getty.edu/art/collection/search/?q=Gabriel+Orozco
 - [route] Gabriel Orozco route. Aperture. https://aperture.org/?s=Gabriel+Orozco
@@ -139,6 +139,6 @@ tags: ["everyday-life", "mobility", "sculptural thinking"]
 - [route] Gabriel Orozco archive route. Smithsonian Institution. https://www.si.edu/search?query=Gabriel+Orozco
 - [route] Gabriel Orozco archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Gabriel+Orozco
 - [route] Gabriel Orozco exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Gabriel+Orozco
-- [route] Gabriel Orozco Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Gabriel Orozco Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Gabriel Orozco third-language / local institution route. https://www.google.com/search?q=Gabriel+Orozco+photography+museum+exhibition+catalogue
 - [route] Gabriel Orozco primary interview / statement route. https://www.google.com/search?q=Gabriel+Orozco+photographer+interview+artist+statement

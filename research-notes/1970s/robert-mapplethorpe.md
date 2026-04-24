@@ -82,8 +82,8 @@ tags: ['queer visibility', 'classical form and taboo', 'censorship', 'museum con
 - [S13] Robert Mapplethorpe archive. Getty Research Institute. https://www.getty.edu/research/special_collections/notable/mapplethorpe.html
 - [S14] Robert Mapplethorpe. SFMOMA. https://www.sfmoma.org/artist/Robert_Mapplethorpe/
 - [S15] Robert Mapplethorpe search. SFMOMA. https://www.sfmoma.org/search/?q=Robert+Mapplethorpe
-- [S16] Robert Mapplethorpe archive search. ICP. https://www.icp.org/search-results/Robert+Mapplethorpe
-- [S17] Robert Mapplethorpe search. Whitney Museum. https://whitney.org/search?q=Robert+Mapplethorpe
+- [S16] Robert Mapplethorpe archive search. ICP. https://www.icp.org/search-results?query=Robert+Mapplethorpe
+- [S17] Robert Mapplethorpe search. Whitney Museum. https://whitney.org/search?query=Robert+Mapplethorpe
 - [S18] Robert Mapplethorpe search. Guggenheim Museum. https://www.guggenheim.org/?s=Robert+Mapplethorpe
 - [S19] Robert Mapplethorpe search. Smithsonian Institution. https://www.si.edu/search?query=Robert+Mapplethorpe
 - [S20] Robert Mapplethorpe bibliography. WorldCat. https://search.worldcat.org/search?q=Robert+Mapplethorpe
@@ -96,7 +96,7 @@ tags: ['queer visibility', 'classical form and taboo', 'censorship', 'museum con
 - [S27] Robert Mapplethorpe archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Robert+Mapplethorpe
 - [S28] Robert Mapplethorpe bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Robert+Mapplethorpe
 - [S29] Robert Mapplethorpe research route. CiNii Research. https://cir.nii.ac.jp/all?q=Robert+Mapplethorpe
-- [S30] Robert Mapplethorpe Japanese collection route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S30] Robert Mapplethorpe Japanese collection route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補・探索ルートは30件。主要作家では30件近くまで増やし、美術館・所蔵館、出版社、ギャラリー、図書館、学術検索、日本語資料の入口を混ぜた。なお一部は個別作品ページではなく、機関内検索・図書館検索・学術検索の入口であり、Claude Codeが本文を書く段階では、実読したページだけを本文注記に採用する。今後さらに強化するなら、写真集序文、同時代レビュー、本人インタビュー、展覧会図録、第三言語資料を優先して確認する。

@@ -119,8 +119,8 @@ tags: ["territory", "political ecology", "social-document"]
 - [route] Xavier Ribas search. Guggenheim Museum. https://www.guggenheim.org/?s=Xavier+Ribas
 - [route] Xavier Ribas search. Art Institute of Chicago. https://www.artic.edu/search?q=Xavier+Ribas
 - [route] Xavier Ribas search. SFMOMA. https://www.sfmoma.org/search/?q=Xavier+Ribas
-- [route] Xavier Ribas search. Whitney Museum. https://whitney.org/search?q=Xavier+Ribas
-- [route] Xavier Ribas search. International Center of Photography. https://www.icp.org/search-results/Xavier%20Ribas
+- [route] Xavier Ribas search. Whitney Museum. https://whitney.org/search?query=Xavier+Ribas
+- [route] Xavier Ribas search. International Center of Photography. https://www.icp.org/search-results?query=Xavier%20Ribas
 - [route] Xavier Ribas search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Xavier+Ribas
 - [route] Xavier Ribas search. Getty. https://www.getty.edu/art/collection/search/?q=Xavier+Ribas
 - [route] Xavier Ribas route. Aperture. https://aperture.org/?s=Xavier+Ribas
@@ -139,6 +139,6 @@ tags: ["territory", "political ecology", "social-document"]
 - [route] Xavier Ribas archive route. Smithsonian Institution. https://www.si.edu/search?query=Xavier+Ribas
 - [route] Xavier Ribas archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Xavier+Ribas
 - [route] Xavier Ribas exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Xavier+Ribas
-- [route] Xavier Ribas Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Xavier Ribas Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Xavier Ribas third-language / local institution route. https://www.google.com/search?q=Xavier+Ribas+photography+museum+exhibition+catalogue
 - [route] Xavier Ribas primary interview / statement route. https://www.google.com/search?q=Xavier+Ribas+photographer+interview+artist+statement

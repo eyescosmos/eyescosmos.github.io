@@ -123,8 +123,8 @@ tags: ["urban density", "modernity", "spatial archive"]
 - [route] Aglaia Konrad search. Guggenheim Museum. https://www.guggenheim.org/?s=Aglaia+Konrad
 - [route] Aglaia Konrad search. Art Institute of Chicago. https://www.artic.edu/search?q=Aglaia+Konrad
 - [route] Aglaia Konrad search. SFMOMA. https://www.sfmoma.org/search/?q=Aglaia+Konrad
-- [route] Aglaia Konrad search. Whitney Museum. https://whitney.org/search?q=Aglaia+Konrad
-- [route] Aglaia Konrad search. International Center of Photography. https://www.icp.org/search-results/Aglaia%20Konrad
+- [route] Aglaia Konrad search. Whitney Museum. https://whitney.org/search?query=Aglaia+Konrad
+- [route] Aglaia Konrad search. International Center of Photography. https://www.icp.org/search-results?query=Aglaia%20Konrad
 - [route] Aglaia Konrad search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Aglaia+Konrad
 - [route] Aglaia Konrad search. Getty. https://www.getty.edu/art/collection/search/?q=Aglaia+Konrad
 - [route] Aglaia Konrad route. Aperture. https://aperture.org/?s=Aglaia+Konrad
@@ -143,6 +143,6 @@ tags: ["urban density", "modernity", "spatial archive"]
 - [route] Aglaia Konrad archive route. Smithsonian Institution. https://www.si.edu/search?query=Aglaia+Konrad
 - [route] Aglaia Konrad archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Aglaia+Konrad
 - [route] Aglaia Konrad exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Aglaia+Konrad
-- [route] Aglaia Konrad Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Aglaia Konrad Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Aglaia Konrad third-language / local institution route. https://www.google.com/search?q=Aglaia+Konrad+photography+museum+exhibition+catalogue
 - [route] Aglaia Konrad primary interview / statement route. https://www.google.com/search?q=Aglaia+Konrad+photographer+interview+artist+statement

@@ -75,7 +75,7 @@
 - [S7] Julia Margaret Cameron: The Complete Photographs (Internet Archive) (EN; book / archive; use: 基礎図録). https://archive.org/details/juliamargaretcam0000coxj
 - [S8] Armstrong Browning Library blog: Julia Margaret Cameron collection (EN; university blog; use: ブラウニング周辺資料). https://blogs.baylor.edu/armstrongbrowning/tag/julia-margaret-cameron/
 - [S9] Met query: Julia Margaret Cameron (EN; museum collection; use: 作品・展示). https://www.metmuseum.org/art/collection/search#!?q=Julia%20Margaret%20Cameron
-- [S10] Julia Margaret Cameron, ICP archive (EN; museum archive; use: 人物解説と作品群). https://www.icp.org/browse/archive/constituents/julia-margaret-cameron
+- [S10] Julia Margaret Cameron, ICP archive (EN; museum archive; use: 人物解説と作品群). https://www.icp.org/search-results?query=julia%20margaret%20cameron
 - [S11] Unseen photographs by Julia Margaret Cameron on digital display (EN; museum blog; use: デジタル化・作品群の広がり). https://blog.scienceandmediamuseum.org.uk/digitisation-project-julia-margaret-cameron/
 
 ## Additional search paths（正式出典ではなく追加調査の入口）

@@ -120,8 +120,8 @@ tags: ["transition", "memory", "social landscape"]
 - [route] Michael Janiszewski search. Guggenheim Museum. https://www.guggenheim.org/?s=Michael+Janiszewski
 - [route] Michael Janiszewski search. Art Institute of Chicago. https://www.artic.edu/search?q=Michael+Janiszewski
 - [route] Michael Janiszewski search. SFMOMA. https://www.sfmoma.org/search/?q=Michael+Janiszewski
-- [route] Michael Janiszewski search. Whitney Museum. https://whitney.org/search?q=Michael+Janiszewski
-- [route] Michael Janiszewski search. International Center of Photography. https://www.icp.org/search-results/Michael%20Janiszewski
+- [route] Michael Janiszewski search. Whitney Museum. https://whitney.org/search?query=Michael+Janiszewski
+- [route] Michael Janiszewski search. International Center of Photography. https://www.icp.org/search-results?query=Michael%20Janiszewski
 - [route] Michael Janiszewski search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Michael+Janiszewski
 - [route] Michael Janiszewski search. Getty. https://www.getty.edu/art/collection/search/?q=Michael+Janiszewski
 - [route] Michael Janiszewski route. Aperture. https://aperture.org/?s=Michael+Janiszewski
@@ -140,6 +140,6 @@ tags: ["transition", "memory", "social landscape"]
 - [route] Michael Janiszewski archive route. Smithsonian Institution. https://www.si.edu/search?query=Michael+Janiszewski
 - [route] Michael Janiszewski archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Michael+Janiszewski
 - [route] Michael Janiszewski exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Michael+Janiszewski
-- [route] Michael Janiszewski Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Michael Janiszewski Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Michael Janiszewski third-language / local institution route. https://www.google.com/search?q=Michael+Janiszewski+photography+museum+exhibition+catalogue
 - [route] Michael Janiszewski primary interview / statement route. https://www.google.com/search?q=Michael+Janiszewski+photographer+interview+artist+statement

@@ -97,7 +97,7 @@ tags: ["personal intimacy", "memory", "photobook sequence"]
 - [S3] JH Engstrom Talks Photography, Transformation and Love for Paris. American Suburb X. https://americansuburbx.com/2015/04/jh-engstrom-paris-asx-interview.html
 - [S4] JH Engström — Official website. https://jhengstrom.com/ — official project and publication documentation
 - [S5] JH Engström — Aperture. https://aperture.org/editorial/jh-engstrom/ — Aperture editorial context
-- [S6] JH Engström — MACK. https://mackbooks.co.uk/products/forever-br-jh-engstrom — publisher page for photobook practice
+- [S6] JH Engström — MACK. https://mackbooks.co.uk/search?type=product&q=forever%20jh%20engstrom — publisher page for photobook practice
 - [S7] JH Engström — Galerie VU. https://www.galerievu.com/artiste/jh-engstrom/ — gallery artist profile and biography
 - [S8] JH Engström — Hasselblad Foundation. https://www.hasselbladfoundation.org/wp/portfolio-item/jh-engstrom/ — photography foundation profile
 - [S9] JH Engström — Akio Nagasawa Gallery. https://www.akionagasawa.com/en/artist/jh-engstrom/ — Japanese gallery profile and publication context

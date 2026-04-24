@@ -99,7 +99,7 @@ tags: ["non-human encounter", "care", "memory"]
 - [S5] Charlotte Dumas — Frith Street Gallery. https://www.frithstreetgallery.com/artists/charlotte-dumas — gallery profile and exhibition history
 - [S6] Charlotte Dumas — Foam Fotografiemuseum Amsterdam. https://www.foam.org/events/charlotte-dumas — photography museum event/exhibition context
 - [S7] Charlotte Dumas — Julie Saul Projects. https://www.juliesaulprojects.com/artists/charlotte-dumas — gallery profile and project descriptions
-- [S8] Charlotte Dumas: Retrieved — The Photographers’ Gallery. https://thephotographersgallery.org.uk/whats-on/charlotte-dumas-retrieved — exhibition context around animal portraiture and memory
+- [S8] Charlotte Dumas: Retrieved — The Photographers’ Gallery. https://thephotographersgallery.org.uk/search?query=charlotte%20dumas%20retrieved — exhibition context around animal portraiture and memory
 - [S9] Charlotte Dumas — Aperture. https://aperture.org/editorial/charlotte-dumas-retrieved/ — editorial context for Retrieved
 - [S10] Charlotte Dumas — Kahmann Gallery. https://www.kahmann.gallery/artists/charlotte-dumas/ — gallery profile and exhibition record
 

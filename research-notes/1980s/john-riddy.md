@@ -126,8 +126,8 @@ tags: ["historical awareness", "urban memory", "spatial time"]
 - [route] John Riddy search. Guggenheim Museum. https://www.guggenheim.org/?s=John+Riddy
 - [route] John Riddy search. Art Institute of Chicago. https://www.artic.edu/search?q=John+Riddy
 - [route] John Riddy search. SFMOMA. https://www.sfmoma.org/search/?q=John+Riddy
-- [route] John Riddy search. Whitney Museum. https://whitney.org/search?q=John+Riddy
-- [route] John Riddy search. International Center of Photography. https://www.icp.org/search-results/John%20Riddy
+- [route] John Riddy search. Whitney Museum. https://whitney.org/search?query=John+Riddy
+- [route] John Riddy search. International Center of Photography. https://www.icp.org/search-results?query=John%20Riddy
 - [route] John Riddy search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=John+Riddy
 - [route] John Riddy search. Getty. https://www.getty.edu/art/collection/search/?q=John+Riddy
 - [route] John Riddy route. Aperture. https://aperture.org/?s=John+Riddy
@@ -146,6 +146,6 @@ tags: ["historical awareness", "urban memory", "spatial time"]
 - [route] John Riddy archive route. Smithsonian Institution. https://www.si.edu/search?query=John+Riddy
 - [route] John Riddy archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=John+Riddy
 - [route] John Riddy exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=John+Riddy
-- [route] John Riddy Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] John Riddy Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] John Riddy third-language / local institution route. https://www.google.com/search?q=John+Riddy+photography+museum+exhibition+catalogue
 - [route] John Riddy primary interview / statement route. https://www.google.com/search?q=John+Riddy+photographer+interview+artist+statement

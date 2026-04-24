@@ -119,8 +119,8 @@ tags: ["materiality", "duration", "chance", "anachronism"]
 - [route] Tacita Dean search. Guggenheim Museum. https://www.guggenheim.org/?s=Tacita+Dean
 - [route] Tacita Dean search. Art Institute of Chicago. https://www.artic.edu/search?q=Tacita+Dean
 - [route] Tacita Dean search. SFMOMA. https://www.sfmoma.org/search/?q=Tacita+Dean
-- [route] Tacita Dean search. Whitney Museum. https://whitney.org/search?q=Tacita+Dean
-- [route] Tacita Dean search. International Center of Photography. https://www.icp.org/search-results/Tacita%20Dean
+- [route] Tacita Dean search. Whitney Museum. https://whitney.org/search?query=Tacita+Dean
+- [route] Tacita Dean search. International Center of Photography. https://www.icp.org/search-results?query=Tacita%20Dean
 - [route] Tacita Dean search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Tacita+Dean
 - [route] Tacita Dean search. Getty. https://www.getty.edu/art/collection/search/?q=Tacita+Dean
 - [route] Tacita Dean route. Aperture. https://aperture.org/?s=Tacita+Dean
@@ -139,6 +139,6 @@ tags: ["materiality", "duration", "chance", "anachronism"]
 - [route] Tacita Dean archive route. Smithsonian Institution. https://www.si.edu/search?query=Tacita+Dean
 - [route] Tacita Dean archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Tacita+Dean
 - [route] Tacita Dean exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Tacita+Dean
-- [route] Tacita Dean Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Tacita Dean Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Tacita Dean third-language / local institution route. https://www.google.com/search?q=Tacita+Dean+photography+museum+exhibition+catalogue
 - [route] Tacita Dean primary interview / statement route. https://www.google.com/search?q=Tacita+Dean+photographer+interview+artist+statement

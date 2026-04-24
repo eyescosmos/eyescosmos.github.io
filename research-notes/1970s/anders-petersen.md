@@ -90,8 +90,8 @@ tags: ['intimacy', 'outsider community', 'documentary subjectivity']
 - [S21] Anders Petersen search. Art Institute of Chicago. https://www.artic.edu/search?q=Anders+Petersen
 - [S22] Anders Petersen search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Anders+Petersen
 - [S23] Anders Petersen search. SFMOMA. https://www.sfmoma.org/search/?q=Anders+Petersen
-- [S24] Anders Petersen archive search. ICP. https://www.icp.org/search-results/Anders+Petersen
-- [S25] Anders Petersen search. Whitney Museum. https://whitney.org/search?q=Anders+Petersen
+- [S24] Anders Petersen archive search. ICP. https://www.icp.org/search-results?query=Anders+Petersen
+- [S25] Anders Petersen search. Whitney Museum. https://whitney.org/search?query=Anders+Petersen
 - [S26] Anders Petersen search. Guggenheim Museum. https://www.guggenheim.org/?s=Anders+Petersen
 - [S27] Anders Petersen search. Smithsonian Institution. https://www.si.edu/search?query=Anders+Petersen
 - [S28] Anders Petersen bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Anders+Petersen&searchCode=GKEY%5E*&searchType=0

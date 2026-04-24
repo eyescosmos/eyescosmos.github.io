@@ -85,7 +85,7 @@ tags: ["chance", "unconscious", "object-dream", "dada", "surrealism"]
 - [S12] Man Ray search. SFMOMA. https://www.sfmoma.org/artist/Man_Ray/
 - [S13] Man Ray and Fashion. MoMu Antwerp. https://www.momu.be/en/exhibitions/man-ray-and-fashion
 - [S14] Man Ray search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Man%20Ray
-- [S15] Man Ray search. ICP. https://www.icp.org/search-results/man%20ray
+- [S15] Man Ray search. ICP. https://www.icp.org/search-results?query=man%20ray
 - [S16] Man Ray search. Smithsonian American Art Museum. https://americanart.si.edu/search?query=Man%20Ray
 - [S17] Man Ray archive guide. Getty Research Institute. https://www.getty.edu/research/tools/guides_bibliographies/man_ray/
 - [S18] Man Ray search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=Man%20Ray

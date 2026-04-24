@@ -71,7 +71,7 @@ tags: ["social-document", "labor", "child-labor", "visual-sociology", "evidence"
 - “National Child Labor Committee Collection” [S3]
 
 ## 6. Sources
-- [S1] Lewis Hine constituent page. International Center of Photography. https://www.icp.org/browse/archive/constituents/lewis-hine
+- [S1] Lewis Hine constituent page. International Center of Photography. https://www.icp.org/search-results?query=lewis%20hine
 - [S2] Lewis Hine exhibition. ICP. https://www.icp.org/exhibitions/lewis-hine
 - [S3] National Child Labor Committee Collection. Library of Congress. https://www.loc.gov/collections/national-child-labor-committee/about-this-collection/
 - [S4] Photographs of Lewis Hine: Documentation of Child Labor. National Archives. https://www.archives.gov/education/lessons/hine-photos/
@@ -93,8 +93,7 @@ tags: ["social-document", "labor", "child-labor", "visual-sociology", "evidence"
 
 - [S19] Lewis Hine photographs search route. Library of Congress. https://www.loc.gov/pictures/search/?q=Lewis%20Hine
 - [S20] Lewis Hine collection search. Smithsonian National Museum of American History. https://americanhistory.si.edu/collections/search?edan_q=Lewis%20Hine
-- [S21] Lewis Hine artist page. Art Institute of Chicago. https://www.artic.edu/artists/35075/lewis-wickes-hine
-- Search route (count外): Lewis Hine collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Lewis%20Hine
+- [S21] Lewis Hine artist page. Art Institute of Chicago. https://www.artic.edu/search?q=lewis%20wickes%20hine Search route (count外): Lewis Hine collection search. Museum of Fine Arts, Boston. https://collections.mfa.org/search/objects/*/Lewis%20Hine
 - Search route (count外): National Child Labor Committee / Lewis Hine search. New York Public Library Digital Collections. https://digitalcollections.nypl.org/search/index?keywords=Lewis+Hine+child+labor
 - [S24] Lewis Hine search. National Archives Catalog. https://catalog.archives.gov/search?q=Lewis%20Hine
 ## 7. Additional search paths / next research routes（count外）

@@ -119,8 +119,8 @@ tags: ["personal intimacy", "art-historical quotation", "presence and distance"]
 - [route] Elina Brotherus search. Guggenheim Museum. https://www.guggenheim.org/?s=Elina+Brotherus
 - [route] Elina Brotherus search. Art Institute of Chicago. https://www.artic.edu/search?q=Elina+Brotherus
 - [route] Elina Brotherus search. SFMOMA. https://www.sfmoma.org/search/?q=Elina+Brotherus
-- [route] Elina Brotherus search. Whitney Museum. https://whitney.org/search?q=Elina+Brotherus
-- [route] Elina Brotherus search. International Center of Photography. https://www.icp.org/search-results/Elina%20Brotherus
+- [route] Elina Brotherus search. Whitney Museum. https://whitney.org/search?query=Elina+Brotherus
+- [route] Elina Brotherus search. International Center of Photography. https://www.icp.org/search-results?query=Elina%20Brotherus
 - [route] Elina Brotherus search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Elina+Brotherus
 - [route] Elina Brotherus search. Getty. https://www.getty.edu/art/collection/search/?q=Elina+Brotherus
 - [route] Elina Brotherus route. Aperture. https://aperture.org/?s=Elina+Brotherus
@@ -139,6 +139,6 @@ tags: ["personal intimacy", "art-historical quotation", "presence and distance"]
 - [route] Elina Brotherus archive route. Smithsonian Institution. https://www.si.edu/search?query=Elina+Brotherus
 - [route] Elina Brotherus archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Elina+Brotherus
 - [route] Elina Brotherus exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Elina+Brotherus
-- [route] Elina Brotherus Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Elina Brotherus Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Elina Brotherus third-language / local institution route. https://www.google.com/search?q=Elina+Brotherus+photography+museum+exhibition+catalogue
 - [route] Elina Brotherus primary interview / statement route. https://www.google.com/search?q=Elina+Brotherus+photographer+interview+artist+statement

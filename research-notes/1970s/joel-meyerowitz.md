@@ -70,7 +70,7 @@ tags: ['color seeing', 'public space', 'memory and aftermath']
 - [S2] Joel Meyerowitz route. Howard Greenberg Gallery. https://www.google.com/search?q=Howard+Greenberg+Gallery+Joel+Meyerowitz+photography
 - [S3] Joel Meyerowitz search. Tate. https://www.tate.org.uk/search?q=Joel+Meyerowitz
 - [S4] Joel Meyerowitz search. MoMA. https://www.moma.org/search/?query=Joel+Meyerowitz
-- [S5] Joel Meyerowitz route. ICP. https://www.icp.org/search-results/Joel+Meyerowitz
+- [S5] Joel Meyerowitz route. ICP. https://www.icp.org/search-results?query=Joel+Meyerowitz
 - [S6] Joel Meyerowitz search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Joel+Meyerowitz
 - [S7] Joel Meyerowitz route. Aperture. https://aperture.org/?s=Joel+Meyerowitz
 - [S8] Joel Meyerowitz bibliography. WorldCat. https://search.worldcat.org/search?q=Joel+Meyerowitz
@@ -83,12 +83,12 @@ tags: ['color seeing', 'public space', 'memory and aftermath']
 - [S14] Joel Meyerowitz. Howard Greenberg Gallery. https://www.howardgreenberg.com/artists/joel-meyerowitz
 - [S15] Joel Meyerowitz. Magnum Photos. https://www.magnumphotos.com/photographer/joel-meyerowitz/
 - [S16] Joel Meyerowitz. Masters of Photography route. https://masters-of-photography.com/M/meyerowitz/meyerowitz.html
-- [S17] Joel Meyerowitz. ICP route. https://www.icp.org/browse/archive/constituents/joel-meyerowitz
+- [S17] Joel Meyerowitz. ICP route. https://www.icp.org/search-results?query=joel%20meyerowitz
 - [S18] Joel Meyerowitz collection search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Joel+Meyerowitz
 - [S19] Joel Meyerowitz search. Art Institute of Chicago. https://www.artic.edu/search?q=Joel+Meyerowitz
 - [S20] Joel Meyerowitz search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Joel+Meyerowitz
 - [S21] Joel Meyerowitz search. SFMOMA. https://www.sfmoma.org/search/?q=Joel+Meyerowitz
-- [S22] Joel Meyerowitz search. Whitney Museum. https://whitney.org/search?q=Joel+Meyerowitz
+- [S22] Joel Meyerowitz search. Whitney Museum. https://whitney.org/search?query=Joel+Meyerowitz
 - [S23] Joel Meyerowitz search. Guggenheim Museum. https://www.guggenheim.org/?s=Joel+Meyerowitz
 - [S24] Joel Meyerowitz search. Smithsonian Institution. https://www.si.edu/search?query=Joel+Meyerowitz
 - [S25] Joel Meyerowitz journal search. JSTOR. https://www.jstor.org/action/doBasicSearch?Query=Joel+Meyerowitz+photography

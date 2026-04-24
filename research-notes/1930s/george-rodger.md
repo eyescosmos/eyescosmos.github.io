@@ -75,7 +75,7 @@ tags: ["witness", "distance", "postwar-humanism", "war-photography", "magnum"]
 - 本人発言・同時代批評は、原典確認後に短く引用候補化する。引用は本文1文につき最大1つまでにする。
 
 ## 6. Sources
-- [S1] George Rodger. ICP. https://www.icp.org/browse/archive/constituents/george-rodger
+- [S1] George Rodger. ICP. https://www.icp.org/search-results?query=george%20rodger
 - [S2] George Rodger photographer profile. Magnum Photos. https://www.magnumphotos.com/photographer/george-rodger/
 - [S3] George Rodger: The Sahara. Magnum Photos. https://www.magnumphotos.com/arts-culture/travel/george-rodger-sahara/
 - [S4] George Rodger archive. George Rodger Photographs. https://www.georgerodgerphotographs.com/

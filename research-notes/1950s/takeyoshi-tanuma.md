@@ -72,7 +72,7 @@ tags: ["humanist-documentary", "postwar"]
 - [S3] 田沼武能検索. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E7%94%B0%E6%B2%BC%E6%AD%A6%E8%83%BD
 - [S4] 田沼武能検索. CiNii Research. https://cir.nii.ac.jp/all?q=%E7%94%B0%E6%B2%BC%E6%AD%A6%E8%83%BD
 
-- [S5] 田沼武能 search. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S5] 田沼武能 search. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S6] 田沼武能 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=%E7%94%B0%E6%B2%BC%E6%AD%A6%E8%83%BD
 - [S7] 田沼武能 search. Japan Professional Photographers Society. https://www.jps.gr.jp/?s=%E7%94%B0%E6%B2%BC%E6%AD%A6%E8%83%BD
 - [S8] Takeyoshi Tanuma search. UNICEF. https://www.unicef.org/search?force=0&query=Takeyoshi%20Tanuma

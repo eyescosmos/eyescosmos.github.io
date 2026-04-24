@@ -80,7 +80,7 @@ tags: ["typology", "social-taxonomy", "archive", "neue-sachlichkeit", "social-po
 - [S7] August Sander artist page. Tate. https://www.tate.org.uk/art/artists/august-sander-5319
 - [S8] August Sander collection search. Getty Museum. https://www.getty.edu/art/collection/search/?q=August%20Sander
 - [S9] August Sander artist page. National Gallery of Art. https://www.nga.gov/artists/2083-august-sander
-- [S10] August Sander artist page. Art Institute of Chicago. https://www.artic.edu/artists/46511/august-sander
+- [S10] August Sander artist page. Art Institute of Chicago. https://www.artic.edu/search?q=august%20sander
 - [S11] August Sander collection search. Philadelphia Museum of Art. https://philamuseum.org/search/collections?searchTxt=August%20Sander
 - [S12] August Sander collection search. Museum of Fine Arts Boston. https://collections.mfa.org/search/objects/*/August%20Sander
 - [S13] August Sander collection search. Cleveland Museum of Art. https://www.clevelandart.org/art/collection/search?filter-artist=August%20Sander

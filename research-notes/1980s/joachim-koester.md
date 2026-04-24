@@ -119,8 +119,8 @@ tags: ["archive", "historical gaps", "speculative documentary"]
 - [route] Joachim Koester search. Guggenheim Museum. https://www.guggenheim.org/?s=Joachim+Koester
 - [route] Joachim Koester search. Art Institute of Chicago. https://www.artic.edu/search?q=Joachim+Koester
 - [route] Joachim Koester search. SFMOMA. https://www.sfmoma.org/search/?q=Joachim+Koester
-- [route] Joachim Koester search. Whitney Museum. https://whitney.org/search?q=Joachim+Koester
-- [route] Joachim Koester search. International Center of Photography. https://www.icp.org/search-results/Joachim%20Koester
+- [route] Joachim Koester search. Whitney Museum. https://whitney.org/search?query=Joachim+Koester
+- [route] Joachim Koester search. International Center of Photography. https://www.icp.org/search-results?query=Joachim%20Koester
 - [route] Joachim Koester search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Joachim+Koester
 - [route] Joachim Koester search. Getty. https://www.getty.edu/art/collection/search/?q=Joachim+Koester
 - [route] Joachim Koester route. Aperture. https://aperture.org/?s=Joachim+Koester
@@ -139,6 +139,6 @@ tags: ["archive", "historical gaps", "speculative documentary"]
 - [route] Joachim Koester archive route. Smithsonian Institution. https://www.si.edu/search?query=Joachim+Koester
 - [route] Joachim Koester archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Joachim+Koester
 - [route] Joachim Koester exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Joachim+Koester
-- [route] Joachim Koester Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Joachim Koester Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Joachim Koester third-language / local institution route. https://www.google.com/search?q=Joachim+Koester+photography+museum+exhibition+catalogue
 - [route] Joachim Koester primary interview / statement route. https://www.google.com/search?q=Joachim+Koester+photographer+interview+artist+statement

@@ -68,7 +68,7 @@ tags: ["postwar-japanese-avant-garde", "postwar"]
 
 ## 6. Sources
 - [S1] Eikoh Hosoe. National Gallery of Art. https://www.nga.gov/artists/38230-eikoh-hosoe
-- [S2] Eikoh Hosoe. ICP. https://www.icp.org/browse/archive/constituents/eikoh-hosoe
+- [S2] Eikoh Hosoe. ICP. https://www.icp.org/search-results?query=eikoh%20hosoe
 - [S3] Eikoh Hosoe Ordeal by Roses. MoMA. https://www.moma.org/collection/works/51198
 - [S4] Eikoh Hosoe Kamaitachi. Aperture. https://store.aperture.org/products/kamaitachi
 - [S5] Eikoh Hosoe Kamaitachi. Princeton University Art Museum. https://artmuseum.princeton.edu/art/collections/objects/15868

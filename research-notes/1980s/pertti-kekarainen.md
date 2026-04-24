@@ -120,8 +120,8 @@ tags: ["perception", "color-space", "surface"]
 - [route] Pertti Kekarainen search. Guggenheim Museum. https://www.guggenheim.org/?s=Pertti+Kekarainen
 - [route] Pertti Kekarainen search. Art Institute of Chicago. https://www.artic.edu/search?q=Pertti+Kekarainen
 - [route] Pertti Kekarainen search. SFMOMA. https://www.sfmoma.org/search/?q=Pertti+Kekarainen
-- [route] Pertti Kekarainen search. Whitney Museum. https://whitney.org/search?q=Pertti+Kekarainen
-- [route] Pertti Kekarainen search. International Center of Photography. https://www.icp.org/search-results/Pertti%20Kekarainen
+- [route] Pertti Kekarainen search. Whitney Museum. https://whitney.org/search?query=Pertti+Kekarainen
+- [route] Pertti Kekarainen search. International Center of Photography. https://www.icp.org/search-results?query=Pertti%20Kekarainen
 - [route] Pertti Kekarainen search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Pertti+Kekarainen
 - [route] Pertti Kekarainen search. Getty. https://www.getty.edu/art/collection/search/?q=Pertti+Kekarainen
 - [route] Pertti Kekarainen route. Aperture. https://aperture.org/?s=Pertti+Kekarainen
@@ -140,6 +140,6 @@ tags: ["perception", "color-space", "surface"]
 - [route] Pertti Kekarainen archive route. Smithsonian Institution. https://www.si.edu/search?query=Pertti+Kekarainen
 - [route] Pertti Kekarainen archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Pertti+Kekarainen
 - [route] Pertti Kekarainen exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Pertti+Kekarainen
-- [route] Pertti Kekarainen Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Pertti Kekarainen Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Pertti Kekarainen third-language / local institution route. https://www.google.com/search?q=Pertti+Kekarainen+photography+museum+exhibition+catalogue
 - [route] Pertti Kekarainen primary interview / statement route. https://www.google.com/search?q=Pertti+Kekarainen+photographer+interview+artist+statement

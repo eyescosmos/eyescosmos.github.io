@@ -32,7 +32,7 @@
 - [S2] William Klein: YES. ICP. https://www.icp.org/exhibitions/william-klein-yes
 - [S3] New Documents. MoMA. https://www.moma.org/calendar/exhibitions/3487
 - [S4] Shomei Tomatsu, 11:02 Nagasaki. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/854759
-- [S5] Kikuji Kawada, The Map. MACK. https://mackbooks.us/products/the-map-br-kikuji-kawada
+- [S5] Kikuji Kawada, The Map. MACK. https://mackbooks.us/search?type=product&q=the%20map%20kikuji%20kawada
 - [S6] Nobuyoshi Araki, Sentimental Journey. British Museum. https://www.britishmuseum.org/collection/object/A_2007-3007-6
 - [S7] Ed van der Elsken, Camera in Love. Stedelijk Museum. https://www.stedelijk.nl/en/exhibitions/ed-van-der-elsken-camera-in-love
 - [S8] Don McCullin: Shaped by War. Imperial War Museums. https://www.iwm.org.uk/history/don-mccullin-shaped-by-war

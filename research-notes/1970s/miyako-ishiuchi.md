@@ -67,7 +67,7 @@ tags: ['memory', 'body trace', 'materiality', 'postwar trauma']
 
 ## 6. Sources
 - [S1] Miyako Ishiuchi route. Yokohama Museum of Art. https://www.google.com/search?q=Yokohama+Museum+of+Art+Miyako+Ishiuchi+photography
-- [S2] Miyako Ishiuchi route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S2] Miyako Ishiuchi route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S3] Miyako Ishiuchi search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Miyako+Ishiuchi
 - [S4] Miyako Ishiuchi search. MoMA. https://www.moma.org/search/?query=Miyako+Ishiuchi
 - [S5] Miyako Ishiuchi search. Tate. https://www.tate.org.uk/search?q=Miyako+Ishiuchi
@@ -87,9 +87,9 @@ tags: ['memory', 'body trace', 'materiality', 'postwar trauma']
 - [S18] Miyako Ishiuchi search. Art Institute of Chicago. https://www.artic.edu/search?q=Miyako+Ishiuchi
 - [S19] Miyako Ishiuchi search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Miyako+Ishiuchi
 - [S20] Miyako Ishiuchi search. SFMOMA. https://www.sfmoma.org/search/?q=Miyako+Ishiuchi
-- [S21] Miyako Ishiuchi archive search. ICP. https://www.icp.org/search-results/Miyako+Ishiuchi
+- [S21] Miyako Ishiuchi archive search. ICP. https://www.icp.org/search-results?query=Miyako+Ishiuchi
 - [S22] Miyako Ishiuchi route. Aperture. https://aperture.org/?s=Miyako+Ishiuchi
-- [S23] Miyako Ishiuchi search. Whitney Museum. https://whitney.org/search?q=Miyako+Ishiuchi
+- [S23] Miyako Ishiuchi search. Whitney Museum. https://whitney.org/search?query=Miyako+Ishiuchi
 - [S24] Miyako Ishiuchi search. Guggenheim Museum. https://www.guggenheim.org/?s=Miyako+Ishiuchi
 - [S25] Miyako Ishiuchi search. Smithsonian Institution. https://www.si.edu/search?query=Miyako+Ishiuchi
 - [S26] Miyako Ishiuchi bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Miyako+Ishiuchi&searchCode=GKEY%5E*&searchType=0

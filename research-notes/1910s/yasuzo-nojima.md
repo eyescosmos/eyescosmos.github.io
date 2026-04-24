@@ -77,7 +77,7 @@ tags: ["body", "portrait-modernity", "materiality", "japanese-pictorialism", "ja
 - [S4] Yasuzo Nojima books. shashasha. https://www.shashasha.co/jp/artist/yasuzo-nojima
 - [S5] 野島康三 leaflet PDF. 松濤美術館. https://shoto-museum.jp/wp-content/user-data/exhibitions/140nojimayasuzo2/leaflet.pdf
 - [S6] 野島康三論文 PDF. 岩手大学. https://www.edu.iwate-u.ac.jp/wp-content/uploads/2025/04/%E5%B2%A9%E6%89%8B%E5%A4%A7%E5%AD%A6%E6%95%99%E8%82%B2%E5%AD%A6%E9%83%A8%E3%80%80%E7%A0%94%E7%A9%B6%E5%B9%B4%E5%A0%B1Vol.-84%EF%BC%882024%E5%B9%B4%E5%BA%A6%EF%BC%89_%E4%BD%8E%E8%A7%A3%E5%83%8F%E5%BA%A6.pdf
-- [S7] Yasuzo Nojima search. ICP. https://www.icp.org/search-results/Yasuzo%20Nojima
+- [S7] Yasuzo Nojima search. ICP. https://www.icp.org/search-results?query=Yasuzo%20Nojima
 - [S8] 野島康三 search. CiNii Research. https://cir.nii.ac.jp/all?q=%E9%87%8E%E5%B3%B6%E5%BA%B7%E4%B8%89
 - [S9] 野島康三 search. CiNii Research. https://cir.nii.ac.jp/all?q=%E9%87%8E%E5%B3%B6%E5%BA%B7%E4%B8%89
 - [S10] 野島康三 search. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E9%87%8E%E5%B3%B6%E5%BA%B7%E4%B8%89

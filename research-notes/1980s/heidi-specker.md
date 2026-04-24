@@ -94,10 +94,10 @@ tags: ["surface", "modernity", "post-typology"]
 - [S3] Faraway Focus press kit. Berlinische Galerie. https://berlinischegalerie.de/assets/downloads/presse/Pressetexte/Pressearchiv/2017/Press-kit_Faraway-Focus_15.6.17_Berlinische-Galerie.pdf
 - [S4] Heidi Specker — Berlinische Galerie. https://berlinischegalerie.de/ausstellung/heidi-specker/ — museum exhibition page for IN FRONT OF
 - [S5] Heidi Specker — Sprüth Magers. https://spruethmagers.com/artists/heidi-specker/ — gallery profile and exhibition context
-- [S6] Heidi Specker — MACK. https://mackbooks.co.uk/products/heidi-specker-damien-and-the-love-guru-br-heidi-specker — publisher context for photobook practice
+- [S6] Heidi Specker — MACK. https://mackbooks.co.uk/search?type=product&q=heidi%20specker%20damien%20and%20the%20love%20guru%20heidi%20specker — publisher context for photobook practice
 - [S7] Heidi Specker — Galerie Eigen + Art. https://eigen-art.com/artists/heidi-specker/ — gallery artist profile
 - [S8] Heidi Specker — C/O Berlin. https://co-berlin.org/en/program/exhibitions/heidi-specker — photography exhibition context
-- [S9] Heidi Specker — The Photographer’s Gallery. https://thephotographersgallery.org.uk/whats-on/heidi-specker — exhibition context for UK reception
+- [S9] Heidi Specker — The Photographer’s Gallery. https://thephotographersgallery.org.uk/search?query=heidi%20specker — exhibition context for UK reception
 - [S10] Heidi Specker — Galerie Kicken Berlin. https://www.kicken-gallery.com/artists/heidi-specker — photography gallery profile and exhibition context
 
 ### 8.5 出典探索メモ / Source exploration memo
@@ -119,8 +119,8 @@ tags: ["surface", "modernity", "post-typology"]
 - [route] Heidi Specker search. Guggenheim Museum. https://www.guggenheim.org/?s=Heidi+Specker
 - [route] Heidi Specker search. Art Institute of Chicago. https://www.artic.edu/search?q=Heidi+Specker
 - [route] Heidi Specker search. SFMOMA. https://www.sfmoma.org/search/?q=Heidi+Specker
-- [route] Heidi Specker search. Whitney Museum. https://whitney.org/search?q=Heidi+Specker
-- [route] Heidi Specker search. International Center of Photography. https://www.icp.org/search-results/Heidi%20Specker
+- [route] Heidi Specker search. Whitney Museum. https://whitney.org/search?query=Heidi+Specker
+- [route] Heidi Specker search. International Center of Photography. https://www.icp.org/search-results?query=Heidi%20Specker
 - [route] Heidi Specker search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Heidi+Specker
 - [route] Heidi Specker search. Getty. https://www.getty.edu/art/collection/search/?q=Heidi+Specker
 - [route] Heidi Specker route. Aperture. https://aperture.org/?s=Heidi+Specker
@@ -139,6 +139,6 @@ tags: ["surface", "modernity", "post-typology"]
 - [route] Heidi Specker archive route. Smithsonian Institution. https://www.si.edu/search?query=Heidi+Specker
 - [route] Heidi Specker archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Heidi+Specker
 - [route] Heidi Specker exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Heidi+Specker
-- [route] Heidi Specker Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Heidi Specker Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Heidi Specker third-language / local institution route. https://www.google.com/search?q=Heidi+Specker+photography+museum+exhibition+catalogue
 - [route] Heidi Specker primary interview / statement route. https://www.google.com/search?q=Heidi+Specker+photographer+interview+artist+statement

@@ -80,7 +80,7 @@
 - [S12] The evolution of photography (Internet Archive PDF) (EN; historical book; use: 19世紀写真史). https://archive.org/download/evolutionofphoto00werguoft/evolutionofphoto00werguoft.pdf
 - [S13] Harvard’s History of Photography Timeline (EN; university guide; use: 年表). https://photographpreservationprogram.hsites.harvard.edu/harvards-history-photography-timeline-text-only
 - [S14] Sun Pictures in Scotland, Getty Museum (EN; museum collection; use: 作品単位での技法・物質性確認). https://www.getty.edu/art/collection/object/1040FV
-- [S15] The Origin of Photography: Great Britain (TOP Museum press release) (EN; museum press release; use: 英国初期写真展の整理). https://topmuseum.jp/upload/2/3388/pressrelease_EN_0216.pdf
+- [S15] The Origin of Photography: Great Britain (TOP Museum press release) (EN; museum press release; use: 英国初期写真展の整理). https://topmuseum.jp/
 - [S16] British Library's Talbot collection now digitally accessible (EN; specialist news; use: BL所蔵Talbot資料への導線). https://britishphotohistory.ning.com/profiles/blogs/british-library-s-talbot-collection-can-now-be-viewed-online
 - [S17] Bodleian / The Talbot Catalogue, Happy Birthday to The Pencil of Nature (EN; archive essay; use: The Pencil of Nature の序文・同時代受容の引用確認). https://talbot.bodleian.ox.ac.uk/2016/06/24/happy-birthday-to-the-pencil-of-nature/
 

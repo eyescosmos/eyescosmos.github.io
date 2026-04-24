@@ -82,7 +82,7 @@ tags: ["post-revolutionary-modernism", "poetic-realism", "identity", "mexican-mo
 - [S5] Manuel Alvarez Bravo search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Manuel%20Alvarez%20Bravo
 - [S6] Manuel Alvarez Bravo search. Tate. https://www.tate.org.uk/search?q=Manuel%20Alvarez%20Bravo
 - [S7] Manuel Alvarez Bravo search. SFMOMA. https://www.sfmoma.org/search/?q=Manuel%20Alvarez%20Bravo
-- [S8] Manuel Alvarez Bravo search. ICP. https://www.icp.org/search-results/Manuel%20Alvarez%20Bravo
+- [S8] Manuel Alvarez Bravo search. ICP. https://www.icp.org/search-results?query=Manuel%20Alvarez%20Bravo
 - [S9] Manuel Alvarez Bravo search. Museum of Fine Arts Boston. https://collections.mfa.org/search/objects/*/Manuel%20Alvarez%20Bravo
 - [S10] Manuel Alvarez Bravo search. Fundación MAPFRE. https://www.fundacionmapfre.org/en/search/?query=Manuel%20Alvarez%20Bravo
 

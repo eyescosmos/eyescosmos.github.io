@@ -124,8 +124,8 @@ tags: ["battlefield expanded", "land as archive", "imperial memory"]
 - [route] Simon Norfolk search. Guggenheim Museum. https://www.guggenheim.org/?s=Simon+Norfolk
 - [route] Simon Norfolk search. Art Institute of Chicago. https://www.artic.edu/search?q=Simon+Norfolk
 - [route] Simon Norfolk search. SFMOMA. https://www.sfmoma.org/search/?q=Simon+Norfolk
-- [route] Simon Norfolk search. Whitney Museum. https://whitney.org/search?q=Simon+Norfolk
-- [route] Simon Norfolk search. International Center of Photography. https://www.icp.org/search-results/Simon%20Norfolk
+- [route] Simon Norfolk search. Whitney Museum. https://whitney.org/search?query=Simon+Norfolk
+- [route] Simon Norfolk search. International Center of Photography. https://www.icp.org/search-results?query=Simon%20Norfolk
 - [route] Simon Norfolk search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Simon+Norfolk
 - [route] Simon Norfolk search. Getty. https://www.getty.edu/art/collection/search/?q=Simon+Norfolk
 - [route] Simon Norfolk route. Aperture. https://aperture.org/?s=Simon+Norfolk
@@ -144,6 +144,6 @@ tags: ["battlefield expanded", "land as archive", "imperial memory"]
 - [route] Simon Norfolk archive route. Smithsonian Institution. https://www.si.edu/search?query=Simon+Norfolk
 - [route] Simon Norfolk archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Simon+Norfolk
 - [route] Simon Norfolk exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Simon+Norfolk
-- [route] Simon Norfolk Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Simon Norfolk Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Simon Norfolk third-language / local institution route. https://www.google.com/search?q=Simon+Norfolk+photography+museum+exhibition+catalogue
 - [route] Simon Norfolk primary interview / statement route. https://www.google.com/search?q=Simon+Norfolk+photographer+interview+artist+statement

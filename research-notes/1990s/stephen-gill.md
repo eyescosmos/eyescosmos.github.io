@@ -101,7 +101,7 @@ tags: ["place", "materiality", "local ecology"]
 - [S6] Buried — LensCulture. https://www.lensculture.com/projects/336-buried — project page for Buried
 - [S7] Stephen Gill Books — LensCulture. https://www.lensculture.com/stephen-gill/books — book bibliography and publication context
 - [S8] Stephen Gill — National Portrait Gallery. https://www.npg.org.uk/collections/search/person/mp132679/stephen-gill — collection/artist record
-- [S9] Stephen Gill — The Photographers’ Gallery. https://thephotographersgallery.org.uk/whats-on/stephen-gill — photography institution exhibition context
+- [S9] Stephen Gill — The Photographers’ Gallery. https://thephotographersgallery.org.uk/search?query=stephen%20gill — photography institution exhibition context
 - [S10] Stephen Gill — Official website. https://www.stephengill.co.uk/ — official artist site for projects, prints, and publication context
 
 ### 8.5 出典探索メモ / Source exploration memo

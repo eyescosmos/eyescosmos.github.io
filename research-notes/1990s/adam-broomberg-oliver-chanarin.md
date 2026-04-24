@@ -98,10 +98,10 @@ tags: ["war image", "media-critique", "archive", "representation-crisis"]
 - [S3] Une conversation avec Adam Broomberg & Oliver Chanarin. Le Monde / PDF on official site. https://static1.squarespace.com/static/56e1e3e24d088e6834d4fbf4/t/591c2d25be6594a480f4ca86/1495018790585/ARTICLE%2B33%2B-%2BLe%2BMonde.pdf
 - [S4] Adam Broomberg & Oliver Chanarin — Tate. https://www.tate.org.uk/art/artists/adam-broomberg-and-oliver-chanarin-14952 — Tate artist page and collection context
 - [S5] Adam Broomberg & Oliver Chanarin — Lisson Gallery. https://www.lissongallery.com/artists/adam-broomberg-oliver-chanarin — gallery profile and exhibition history
-- [S6] Broomberg & Chanarin: Holy Bible — MACK. https://mackbooks.co.uk/products/holy-bible-br-adam-broomberg-oliver-chanarin — publisher page for archival appropriation and photobook practice
-- [S7] Broomberg & Chanarin: War Primer 2 — MACK. https://mackbooks.co.uk/products/war-primer-2-br-adam-broomberg-oliver-chanarin — publisher page on Brecht, war images, and media critique
-- [S8] Broomberg & Chanarin — The Photographers’ Gallery. https://thephotographersgallery.org.uk/whats-on/adam-broomberg-oliver-chanarin — photography institution exhibition context
-- [S9] Broomberg & Chanarin — International Center of Photography. https://www.icp.org/browse/archive/constituents/adam-broomberg-oliver-chanarin — ICP archive/constituent record
+- [S6] Broomberg & Chanarin: Holy Bible — MACK. https://mackbooks.co.uk/search?type=product&q=holy%20bible%20adam%20broomberg%20oliver%20chanarin — publisher page for archival appropriation and photobook practice
+- [S7] Broomberg & Chanarin: War Primer 2 — MACK. https://mackbooks.co.uk/search?type=product&q=war%20primer%202%20adam%20broomberg%20oliver%20chanarin — publisher page on Brecht, war images, and media critique
+- [S8] Broomberg & Chanarin — The Photographers’ Gallery. https://thephotographersgallery.org.uk/search?query=adam%20broomberg%20oliver%20chanarin — photography institution exhibition context
+- [S9] Broomberg & Chanarin — International Center of Photography. https://www.icp.org/search-results?query=adam%20broomberg%20oliver%20chanarin — ICP archive/constituent record
 - [S10] Adam Broomberg & Oliver Chanarin — Goodman Gallery. https://www.goodman-gallery.com/artists/adam-broomberg-oliver-chanarin — South African gallery profile and exhibition record
 
 ### 8.5 出典探索メモ / Source exploration memo

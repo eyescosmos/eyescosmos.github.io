@@ -89,9 +89,9 @@ tags: ['document', 'commodity', 'political form', 'objecthood']
 - [S20] Jean-Luc Moulène search. Art Institute of Chicago. https://www.artic.edu/search?q=Jean-Luc+Moul%C3%A8ne
 - [S21] Jean-Luc Moulène search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Jean-Luc+Moul%C3%A8ne
 - [S22] Jean-Luc Moulène search. SFMOMA. https://www.sfmoma.org/search/?q=Jean-Luc+Moul%C3%A8ne
-- [S23] Jean-Luc Moulène archive search. ICP. https://www.icp.org/search-results/Jean-Luc+Moul%C3%A8ne
+- [S23] Jean-Luc Moulène archive search. ICP. https://www.icp.org/search-results?query=Jean-Luc+Moul%C3%A8ne
 - [S24] Jean-Luc Moulène route. Aperture. https://aperture.org/?s=Jean-Luc+Moul%C3%A8ne
-- [S25] Jean-Luc Moulène search. Whitney Museum. https://whitney.org/search?q=Jean-Luc+Moul%C3%A8ne
+- [S25] Jean-Luc Moulène search. Whitney Museum. https://whitney.org/search?query=Jean-Luc+Moul%C3%A8ne
 - [S26] Jean-Luc Moulène search. Guggenheim Museum. https://www.guggenheim.org/?s=Jean-Luc+Moul%C3%A8ne
 - [S27] Jean-Luc Moulène search. Smithsonian Institution. https://www.si.edu/search?query=Jean-Luc+Moul%C3%A8ne
 - [S28] Jean-Luc Moulène bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Jean-Luc+Moul%C3%A8ne&searchCode=GKEY%5E*&searchType=0

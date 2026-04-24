@@ -119,8 +119,8 @@ tags: ["everyday-life", "domestic surface", "quiet observation"]
 - [route] Takashi Yasumura search. Guggenheim Museum. https://www.guggenheim.org/?s=Takashi+Yasumura
 - [route] Takashi Yasumura search. Art Institute of Chicago. https://www.artic.edu/search?q=Takashi+Yasumura
 - [route] Takashi Yasumura search. SFMOMA. https://www.sfmoma.org/search/?q=Takashi+Yasumura
-- [route] Takashi Yasumura search. Whitney Museum. https://whitney.org/search?q=Takashi+Yasumura
-- [route] Takashi Yasumura search. International Center of Photography. https://www.icp.org/search-results/Takashi%20Yasumura
+- [route] Takashi Yasumura search. Whitney Museum. https://whitney.org/search?query=Takashi+Yasumura
+- [route] Takashi Yasumura search. International Center of Photography. https://www.icp.org/search-results?query=Takashi%20Yasumura
 - [route] Takashi Yasumura search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Takashi+Yasumura
 - [route] Takashi Yasumura search. Getty. https://www.getty.edu/art/collection/search/?q=Takashi+Yasumura
 - [route] Takashi Yasumura route. Aperture. https://aperture.org/?s=Takashi+Yasumura
@@ -139,6 +139,6 @@ tags: ["everyday-life", "domestic surface", "quiet observation"]
 - [route] Takashi Yasumura archive route. Smithsonian Institution. https://www.si.edu/search?query=Takashi+Yasumura
 - [route] Takashi Yasumura archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Takashi+Yasumura
 - [route] Takashi Yasumura exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Takashi+Yasumura
-- [route] Takashi Yasumura Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Takashi Yasumura Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Takashi Yasumura third-language / local institution route. https://www.google.com/search?q=Takashi+Yasumura+photography+museum+exhibition+catalogue
 - [route] Takashi Yasumura primary interview / statement route. https://www.google.com/search?q=Takashi+Yasumura+photographer+interview+artist+statement

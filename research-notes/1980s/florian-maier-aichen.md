@@ -123,8 +123,8 @@ tags: ["fictional geography", "post-photographic landscape", "sublime"]
 - [route] Florian Maier-Aichen search. Guggenheim Museum. https://www.guggenheim.org/?s=Florian+Maier-Aichen
 - [route] Florian Maier-Aichen search. Art Institute of Chicago. https://www.artic.edu/search?q=Florian+Maier-Aichen
 - [route] Florian Maier-Aichen search. SFMOMA. https://www.sfmoma.org/search/?q=Florian+Maier-Aichen
-- [route] Florian Maier-Aichen search. Whitney Museum. https://whitney.org/search?q=Florian+Maier-Aichen
-- [route] Florian Maier-Aichen search. International Center of Photography. https://www.icp.org/search-results/Florian%20Maier-Aichen
+- [route] Florian Maier-Aichen search. Whitney Museum. https://whitney.org/search?query=Florian+Maier-Aichen
+- [route] Florian Maier-Aichen search. International Center of Photography. https://www.icp.org/search-results?query=Florian%20Maier-Aichen
 - [route] Florian Maier-Aichen search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Florian+Maier-Aichen
 - [route] Florian Maier-Aichen search. Getty. https://www.getty.edu/art/collection/search/?q=Florian+Maier-Aichen
 - [route] Florian Maier-Aichen route. Aperture. https://aperture.org/?s=Florian+Maier-Aichen
@@ -143,6 +143,6 @@ tags: ["fictional geography", "post-photographic landscape", "sublime"]
 - [route] Florian Maier-Aichen archive route. Smithsonian Institution. https://www.si.edu/search?query=Florian+Maier-Aichen
 - [route] Florian Maier-Aichen archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Florian+Maier-Aichen
 - [route] Florian Maier-Aichen exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Florian+Maier-Aichen
-- [route] Florian Maier-Aichen Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Florian Maier-Aichen Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Florian Maier-Aichen third-language / local institution route. https://www.google.com/search?q=Florian+Maier-Aichen+photography+museum+exhibition+catalogue
 - [route] Florian Maier-Aichen primary interview / statement route. https://www.google.com/search?q=Florian+Maier-Aichen+photographer+interview+artist+statement

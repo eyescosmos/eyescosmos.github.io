@@ -70,7 +70,7 @@ tags: ["photobook", "outsider-view", "america", "beat-culture"]
 - [S1] Robert Frank: The Americans. Aperture. https://aperture.org/books/robert-frank-the-americans/
 - [S2] Robert Frank. MoMA. https://www.moma.org/artists/2001
 - [S3] Robert Frank collection. National Gallery of Art. https://www.nga.gov/collection/artist-info.29402.html
-- [S4] Robert Frank. ICP. https://www.icp.org/browse/archive/constituents/robert-frank
+- [S4] Robert Frank. ICP. https://www.icp.org/search-results?query=robert%20frank
 - [S5] Looking In: Robert Frank’s The Americans. National Gallery of Art. https://www.nga.gov/exhibitions/2009/frank.html
 - [S6] Robert Frank. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Robert%20Frank
 - [S7] Robert Frank. SFMOMA. https://www.sfmoma.org/artist/Robert_Frank/
@@ -90,7 +90,7 @@ tags: ["photobook", "outsider-view", "america", "beat-culture"]
 - [S20] Robert Frank archives and papers search. Yale Archives. https://archives.yale.edu/search?search_field=all_fields&q=Robert+Frank+The+Americans
 - [S21] The Americans: Robert Frank. Library of Congress catalog. https://catalog.loc.gov/vwebv/search?searchArg=Robert+Frank+The+Americans&searchCode=GKEY%5E*&searchType=0
 - [S22] Robert Frank search. National Gallery of Canada. https://www.gallery.ca/collection/search-the-collection?search_api_views_fulltext=Robert%20Frank
-- [S23] Robert Frank search. Tokyo Photographic Art Museum Library OPAC route. https://topmuseum.jp/contents/pages/search_index.html
+- [S23] Robert Frank search. Tokyo Photographic Art Museum Library OPAC route. https://topmuseum.jp/
 
 ## 7. 出典探索メモ / Source exploration memo
 出典候補は20件以上。美術館・所蔵館、出版社、図書館、アーカイブをまたいでいるが、初版時レビュー、Guggenheim Fellowship書類、Kerouac序文の版、映画作品資料はさらに追加余地が大きい。日本語資料はTOP、写真集書誌、国内展覧会レビューを補うとよい。

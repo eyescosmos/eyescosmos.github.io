@@ -30,9 +30,7 @@
 - [S1] Annika Elisabeth von Hausswolff: Alternative Secrecy. Moderna Museet. https://www.modernamuseet.se/stockholm/en/exhibitions/annika-von-hausswolff/
 - [S2] Annika von Hausswolff. SFMOMA. https://www.sfmoma.org/artist/Annika_von_Hausswolff/
 - [S3] On photography in a world of images. Moderna Museet. https://www.modernamuseet.se/stockholm/sv/utstallningar/annika-von-hausswolff/om-fotografi-en-varld-av-bilder/
-- [S4] Annika Von Hausswolff. The Art Institute of Chicago. https://www.artic.edu/artists/118928/annika-von-hausswolff
-
-## 8. Codex完成版補強メモ / 1980–1990s research expansion
+- [S4] Annika Von Hausswolff. The Art Institute of Chicago. https://www.artic.edu/search?q=annika%20von%20hausswolff%20%23%23 8. Codex完成版補強メモ / 1980–1990s research expansion
 
 > 追加方針: ChatGPT側の1980–1990sソース・パケットを素材に、Codex側で出典候補と探索ルートを最大30件まで拡張し、本文改訂時に使う論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には実ページと機関内検索・図書館検索・学術検索の入口が混在するため、本文化では実読できた資料だけを注記に採用する。
 >
@@ -96,7 +94,7 @@ tags: ["gendered violence", "absence", "the uncanny"]
 - [S1] Annika Elisabeth von Hausswolff: Alternative Secrecy. Moderna Museet. https://www.modernamuseet.se/stockholm/en/exhibitions/annika-von-hausswolff/
 - [S2] Annika von Hausswolff. SFMOMA. https://www.sfmoma.org/artist/Annika_von_Hausswolff/
 - [S3] On photography in a world of images. Moderna Museet. https://www.modernamuseet.se/stockholm/sv/utstallningar/annika-von-hausswolff/om-fotografi-en-varld-av-bilder/
-- [S4] Annika Von Hausswolff. The Art Institute of Chicago. https://www.artic.edu/artists/118928/annika-von-hausswolff
+- [S4] Annika Von Hausswolff. The Art Institute of Chicago. https://www.artic.edu/search?q=annika%20von%20hausswolff
 - [S5] Special tour with Annika Elisabeth von Hausswolff — Hasselblad Foundation. https://www.hasselbladfoundation.org/en/event/special-tour-of-fotosalongen-2025-with-annika-elisabeth-von-hausswolff/ — Institutional text on her themes, teaching role, Venice Biennale, and Moderna Museet exhibition.
 - [S6] On Photography in a World of Images — Moderna Museet. https://www.modernamuseet.se/stockholm/en/exhibitions/annika-von-hausswolff/photography-world-images/ — Curatorial text for Alternative Secrecy and Swedish photography context.
 - [S7] Annika Elisabeth von Hausswolff — Objektiv Press. https://www.objektiv.no/journal/2024/11/28/annika-elisabeth-von-hausswolf — Critical profile/review on key works and Nordic reception.
@@ -123,8 +121,8 @@ tags: ["gendered violence", "absence", "the uncanny"]
 - [route] Annika von Hausswolff search. Guggenheim Museum. https://www.guggenheim.org/?s=Annika+von+Hausswolff
 - [route] Annika von Hausswolff search. Art Institute of Chicago. https://www.artic.edu/search?q=Annika+von+Hausswolff
 - [route] Annika von Hausswolff search. SFMOMA. https://www.sfmoma.org/search/?q=Annika+von+Hausswolff
-- [route] Annika von Hausswolff search. Whitney Museum. https://whitney.org/search?q=Annika+von+Hausswolff
-- [route] Annika von Hausswolff search. International Center of Photography. https://www.icp.org/search-results/Annika%20von%20Hausswolff
+- [route] Annika von Hausswolff search. Whitney Museum. https://whitney.org/search?query=Annika+von+Hausswolff
+- [route] Annika von Hausswolff search. International Center of Photography. https://www.icp.org/search-results?query=Annika%20von%20Hausswolff
 - [route] Annika von Hausswolff search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Annika+von+Hausswolff
 - [route] Annika von Hausswolff search. Getty. https://www.getty.edu/art/collection/search/?q=Annika+von+Hausswolff
 - [route] Annika von Hausswolff route. Aperture. https://aperture.org/?s=Annika+von+Hausswolff
@@ -143,6 +141,6 @@ tags: ["gendered violence", "absence", "the uncanny"]
 - [route] Annika von Hausswolff archive route. Smithsonian Institution. https://www.si.edu/search?query=Annika+von+Hausswolff
 - [route] Annika von Hausswolff archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Annika+von+Hausswolff
 - [route] Annika von Hausswolff exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Annika+von+Hausswolff
-- [route] Annika von Hausswolff Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Annika von Hausswolff Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Annika von Hausswolff third-language / local institution route. https://www.google.com/search?q=Annika+von+Hausswolff+photography+museum+exhibition+catalogue
 - [route] Annika von Hausswolff primary interview / statement route. https://www.google.com/search?q=Annika+von+Hausswolff+photographer+interview+artist+statement

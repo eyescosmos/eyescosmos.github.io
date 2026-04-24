@@ -67,7 +67,7 @@ tags: ['memory', 'atomic bombing', 'archive', 'postwar modernization']
 
 ## 6. Sources
 - [S1] Hiromi Tsuchida route. Carnegie Museum of Art. https://www.google.com/search?q=Carnegie+Museum+of+Art+Hiromi+Tsuchida+photography
-- [S2] Hiromi Tsuchida route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S2] Hiromi Tsuchida route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S3] Hiromi Tsuchida route. Art Platform Japan. https://www.google.com/search?q=Art+Platform+Japan+Hiromi+Tsuchida+photography
 - [S4] Hiromi Tsuchida route. Yokohama Museum of Art. https://www.google.com/search?q=Yokohama+Museum+of+Art+Hiromi+Tsuchida+photography
 - [S5] Hiromi Tsuchida route. Princeton University Art Museum. https://www.google.com/search?q=Princeton+University+Art+Museum+Hiromi+Tsuchida+photography
@@ -80,7 +80,7 @@ tags: ['memory', 'atomic bombing', 'archive', 'postwar modernization']
 - [S12] Hiromi Tsuchida route. Tokyo Art Beat. https://www.google.com/search?q=Tokyo+Art+Beat+Hiromi+Tsuchida+photography
 
 - [S13] Hiromi Tsuchida. Carnegie Museum of Art. https://carnegieart.org/people/hiromi-tsuchida/
-- [S14] Tsuchida Hiromi exhibition. TOP Museum. https://topmuseum.jp/e/contents/exhibition/index-436.html
+- [S14] Tsuchida Hiromi exhibition. TOP Museum. https://topmuseum.jp/
 - [S15] TSUCHIDA Hiromi Student Uniform. Art Platform Japan. https://artplatform.go.jp/collections/W923040
 - [S16] Hiromi Tsuchida Hiroshima Trilogy. FCCJ. https://www.fccj.or.jp/number-1-shimbun-article/hiroshima-trilogy
 - [S17] Student Uniform Hiroshima Collection. Yokohama Museum of Art. https://inventory.yokohama.art.museum/eng/12906
@@ -91,9 +91,9 @@ tags: ['memory', 'atomic bombing', 'archive', 'postwar modernization']
 - [S22] Hiromi Tsuchida search. Art Institute of Chicago. https://www.artic.edu/search?q=Hiromi+Tsuchida
 - [S23] Hiromi Tsuchida search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Hiromi+Tsuchida
 - [S24] Hiromi Tsuchida search. SFMOMA. https://www.sfmoma.org/search/?q=Hiromi+Tsuchida
-- [S25] Hiromi Tsuchida archive search. ICP. https://www.icp.org/search-results/Hiromi+Tsuchida
+- [S25] Hiromi Tsuchida archive search. ICP. https://www.icp.org/search-results?query=Hiromi+Tsuchida
 - [S26] Hiromi Tsuchida route. Aperture. https://aperture.org/?s=Hiromi+Tsuchida
-- [S27] Hiromi Tsuchida search. Whitney Museum. https://whitney.org/search?q=Hiromi+Tsuchida
+- [S27] Hiromi Tsuchida search. Whitney Museum. https://whitney.org/search?query=Hiromi+Tsuchida
 - [S28] Hiromi Tsuchida search. Guggenheim Museum. https://www.guggenheim.org/?s=Hiromi+Tsuchida
 - [S29] Hiromi Tsuchida search. Smithsonian Institution. https://www.si.edu/search?query=Hiromi+Tsuchida
 - [S30] Hiromi Tsuchida bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Hiromi+Tsuchida&searchCode=GKEY%5E*&searchType=0

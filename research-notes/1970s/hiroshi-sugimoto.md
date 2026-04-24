@@ -88,9 +88,9 @@ tags: ['time', 'representation', 'history of seeing', 'conceptual materiality']
 - [S19] Hiroshi Sugimoto search. Art Institute of Chicago. https://www.artic.edu/search?q=Hiroshi+Sugimoto
 - [S20] Hiroshi Sugimoto search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Hiroshi+Sugimoto
 - [S21] Hiroshi Sugimoto search. SFMOMA. https://www.sfmoma.org/search/?q=Hiroshi+Sugimoto
-- [S22] Hiroshi Sugimoto archive search. ICP. https://www.icp.org/search-results/Hiroshi+Sugimoto
+- [S22] Hiroshi Sugimoto archive search. ICP. https://www.icp.org/search-results?query=Hiroshi+Sugimoto
 - [S23] Hiroshi Sugimoto route. Aperture. https://aperture.org/?s=Hiroshi+Sugimoto
-- [S24] Hiroshi Sugimoto search. Whitney Museum. https://whitney.org/search?q=Hiroshi+Sugimoto
+- [S24] Hiroshi Sugimoto search. Whitney Museum. https://whitney.org/search?query=Hiroshi+Sugimoto
 - [S25] Hiroshi Sugimoto search. Guggenheim Museum. https://www.guggenheim.org/?s=Hiroshi+Sugimoto
 - [S26] Hiroshi Sugimoto search. Smithsonian Institution. https://www.si.edu/search?query=Hiroshi+Sugimoto
 - [S27] Hiroshi Sugimoto bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Hiroshi+Sugimoto&searchCode=GKEY%5E*&searchType=0

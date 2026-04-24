@@ -83,7 +83,7 @@ tags: ["urban-nocturne", "graffiti-archive", "social-space", "paris-night-photog
 - [S6] Brassaï search. MACBA. https://www.macba.cat/en/search?query=Brassa%C3%AF
 - [S7] Brassaï search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Brassa%C3%AF
 - [S8] Brassaï search. V&A. https://collections.vam.ac.uk/search/?q=Brassa%C3%AF
-- [S9] Brassaï search. ICP. https://www.icp.org/search-results/Brassa%C3%AF
+- [S9] Brassaï search. ICP. https://www.icp.org/search-results?query=Brassa%C3%AF
 - [S10] Brassaï catalogue PDF search. MoMA. https://www.moma.org/search/?query=Brassa%C3%AF
 
 - [S11] Brassaï. MoMA. https://www.moma.org/artists/753

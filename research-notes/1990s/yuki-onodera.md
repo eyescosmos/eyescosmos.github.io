@@ -30,9 +30,7 @@
 - [S1] Yuki Onodera. International Center of Photography. https://www.icp.org/content/yuki-onodera-1
 - [S2] CLOSE UP | Interview Yuki Onodera. Canon New Cosmos of Photography. https://global.canon/en/newcosmos/interview/yuki-onodera/index.html
 - [S3] Yuki Onodera 2004 exhibition. The National Museum of Art, Osaka. https://www.nmao.go.jp/archive/en/exhibition/2004/yuki_onodera.html
-- [S4] Onodera Yuki: Into the Labyrinth of Photography. Tokyo Photographic Art Museum PDF. https://topmuseum.jp/upload/2/1202/onodera.pdf
-
-## 8. Codex完成版補強メモ / 1990–2000s research expansion
+- [S4] Onodera Yuki: Into the Labyrinth of Photography. Tokyo Photographic Art Museum PDF. https://topmuseum.jp/ 8. Codex完成版補強メモ / 1990–2000s research expansion
 
 > 追加方針: ChatGPT側の1990–2000sソース・パケットを素材に、Codex側で本文用の直接導線をできるだけ30件へ近づけ、本文改訂用の論点と座標用補助メモを追加した。Wikipedia/Britannicaは本文根拠にしない。下記[S]には、美術館・専門機関・出版社・図書館・学術検索の直接導線を優先して入れた。情報が少ない作家の検索ルートは、本文用Sourcesではなく「追加探索先」に回す運用を前提にする。
 >
@@ -96,7 +94,7 @@ tags: ["identity", "absence", "materiality", "urban trace"]
 - [S1] Yuki Onodera. International Center of Photography. https://www.icp.org/content/yuki-onodera-1
 - [S2] CLOSE UP | Interview Yuki Onodera. Canon New Cosmos of Photography. https://global.canon/en/newcosmos/interview/yuki-onodera/index.html
 - [S3] Yuki Onodera 2004 exhibition. The National Museum of Art, Osaka. https://www.nmao.go.jp/archive/en/exhibition/2004/yuki_onodera.html
-- [S4] Onodera Yuki: Into the Labyrinth of Photography. Tokyo Photographic Art Museum PDF. https://topmuseum.jp/upload/2/1202/onodera.pdf
+- [S4] Onodera Yuki: Into the Labyrinth of Photography. Tokyo Photographic Art Museum PDF. https://topmuseum.jp/
 - [S5] Yuki Onodera official site. https://www.onodera-yuki.com/
 - [S6] Yuki Onodera. Centre Pompidou. https://www.centrepompidou.fr/en/ressources/media/anEi28O
 - [S7] Yuki Onodera. Photography Now. https://photography-now.com/artist/yuki-onodera

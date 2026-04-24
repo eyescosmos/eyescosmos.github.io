@@ -78,7 +78,7 @@ tags: ["pictorialism", "gum-bichromate", "materiality", "handwork", "formal-expe
 - [S7] Camera Work No. 5. Princeton University Art Museum. https://artmuseum.princeton.edu/art/collections/objects/59679
 - [S8] Untitled, Robert Demachy. Cleveland Museum of Art. https://www.clevelandart.org/art/1985.203
 - [S9] Robert Demachy artist page. Amon Carter Museum. https://www.cartermuseum.org/artists/robert-demachy
-- [S10] Robert Demachy artist page. Art Institute of Chicago. https://www.artic.edu/artists/6492/robert-demachy
+- [S10] Robert Demachy artist page. Art Institute of Chicago. https://www.artic.edu/search?q=robert%20demachy
 - [S11] Panel, Robert Demachy. Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search/267853
 
 - [S12] Robert Demachy artist page. MoMA. https://www.moma.org/artists/1460

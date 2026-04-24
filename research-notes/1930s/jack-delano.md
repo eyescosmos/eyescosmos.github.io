@@ -84,7 +84,7 @@ tags: ["human-condition", "colonial-problem", "community-education", "fsa-docume
 - [S7] Jack and Irene Delano papers PDF. Columbia University Libraries. https://findingaids.library.columbia.edu/pdf/cul-12375965.pdf
 - [S8] Jack Delano search. Library of Congress. https://www.loc.gov/pictures/search/?q=Jack%20Delano
 - [S9] Jack Delano search. Smithsonian. https://www.si.edu/search?edan_q=Jack%20Delano
-- [S10] Jack Delano search. ICP. https://www.icp.org/search-results/Jack%20Delano
+- [S10] Jack Delano search. ICP. https://www.icp.org/search-results?query=Jack%20Delano
 
 - [S11] Jack Delano Papers. Archives of American Art. https://www.aaa.si.edu/collections/jack-delano-papers-5554
 - [S12] Jack Delano search. Library of Congress. https://www.loc.gov/search/?fa=contributor:delano,+jack

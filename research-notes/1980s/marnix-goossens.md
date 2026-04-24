@@ -119,8 +119,8 @@ tags: ["everyday-life", "artifice of nature", "still-life logic"]
 - [route] Marnix Goossens search. Guggenheim Museum. https://www.guggenheim.org/?s=Marnix+Goossens
 - [route] Marnix Goossens search. Art Institute of Chicago. https://www.artic.edu/search?q=Marnix+Goossens
 - [route] Marnix Goossens search. SFMOMA. https://www.sfmoma.org/search/?q=Marnix+Goossens
-- [route] Marnix Goossens search. Whitney Museum. https://whitney.org/search?q=Marnix+Goossens
-- [route] Marnix Goossens search. International Center of Photography. https://www.icp.org/search-results/Marnix%20Goossens
+- [route] Marnix Goossens search. Whitney Museum. https://whitney.org/search?query=Marnix+Goossens
+- [route] Marnix Goossens search. International Center of Photography. https://www.icp.org/search-results?query=Marnix%20Goossens
 - [route] Marnix Goossens search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Marnix+Goossens
 - [route] Marnix Goossens search. Getty. https://www.getty.edu/art/collection/search/?q=Marnix+Goossens
 - [route] Marnix Goossens route. Aperture. https://aperture.org/?s=Marnix+Goossens
@@ -139,6 +139,6 @@ tags: ["everyday-life", "artifice of nature", "still-life logic"]
 - [route] Marnix Goossens archive route. Smithsonian Institution. https://www.si.edu/search?query=Marnix+Goossens
 - [route] Marnix Goossens archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Marnix+Goossens
 - [route] Marnix Goossens exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Marnix+Goossens
-- [route] Marnix Goossens Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Marnix Goossens Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Marnix Goossens third-language / local institution route. https://www.google.com/search?q=Marnix+Goossens+photography+museum+exhibition+catalogue
 - [route] Marnix Goossens primary interview / statement route. https://www.google.com/search?q=Marnix+Goossens+photographer+interview+artist+statement

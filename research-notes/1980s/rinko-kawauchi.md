@@ -110,7 +110,7 @@ tags: ["everyday-life", "ephemerality", "memory", "intimacy"]
 - [S19] 川内倫子「照度 あめつち 影を見る」 — artscape review. https://artscape.jp/report/review/10032895_1735.html — Japanese review on a shift in Kawauchi’s work around Illuminance and Ametsuchi.
 - [S20] 無題（シリーズ「M/E」より） — 金沢21世紀美術館. https://jmapps.ne.jp/kanazawa21/det.html?data_id=4158 — Japanese museum collection page explaining M/E, Iceland, Hokkaido, pandemic context, and body/planet scale.
 - [S21] Illuminance, Ametsuchi, Seeing Shadow — Tokyo Photographic Art Museum PDF. https://topmuseum.jp/upload/4/1594/kawauchi2012.pdf — Japanese/English exhibition PDF for TOP Museum solo exhibition.
-- [S22] KAWAUCHI Rinko press release — Tokyo Photographic Art Museum PDF. https://topmuseum.jp/upload/2/1660/press%20release_english.pdf — English TOP Museum press release for Illuminance, Ametsuchi, Seeing Shadow.
+- [S22] KAWAUCHI Rinko press release — Tokyo Photographic Art Museum PDF. https://topmuseum.jp/ — English TOP Museum press release for Illuminance, Ametsuchi, Seeing Shadow.
 - [S23] Rinko Kawauchi - Transient Wonders, Everyday Bliss — ARGOS centre for art and media. https://2019.argosarts.org/program.jsp?eventid=08b3ba6c190b4efead78ef1bc0c29280 — Belgian institution page on transient beauty, micro-moments, kairos, and subjective time.
 - [S24] Rinko Kawauchi: a faraway shining star, twinkling in hand — Fotografiska Berlin. https://berlin.fotografiska.com/en/exhibitions/rinko-kawauchi — German exhibition page with artist quote on M/E, Iceland, presence, impermanence, and planet-scale attention.
 - [S25] foam magazine #19 / wonder — FOAM Magazine PDF. https://rinkokawauchi.com/en/wp-content/uploads/sites/2/2017/12/2009_foam-magazine-19.pdf — PDF interview/feature from FOAM on Kawauchi’s bond with the world and wonder.
@@ -139,8 +139,8 @@ tags: ["everyday-life", "ephemerality", "memory", "intimacy"]
 - [route] Rinko Kawauchi search. Guggenheim Museum. https://www.guggenheim.org/?s=Rinko+Kawauchi
 - [route] Rinko Kawauchi search. Art Institute of Chicago. https://www.artic.edu/search?q=Rinko+Kawauchi
 - [route] Rinko Kawauchi search. SFMOMA. https://www.sfmoma.org/search/?q=Rinko+Kawauchi
-- [route] Rinko Kawauchi search. Whitney Museum. https://whitney.org/search?q=Rinko+Kawauchi
-- [route] Rinko Kawauchi search. International Center of Photography. https://www.icp.org/search-results/Rinko%20Kawauchi
+- [route] Rinko Kawauchi search. Whitney Museum. https://whitney.org/search?query=Rinko+Kawauchi
+- [route] Rinko Kawauchi search. International Center of Photography. https://www.icp.org/search-results?query=Rinko%20Kawauchi
 - [route] Rinko Kawauchi search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Rinko+Kawauchi
 - [route] Rinko Kawauchi search. Getty. https://www.getty.edu/art/collection/search/?q=Rinko+Kawauchi
 - [route] Rinko Kawauchi route. Aperture. https://aperture.org/?s=Rinko+Kawauchi
@@ -159,6 +159,6 @@ tags: ["everyday-life", "ephemerality", "memory", "intimacy"]
 - [route] Rinko Kawauchi archive route. Smithsonian Institution. https://www.si.edu/search?query=Rinko+Kawauchi
 - [route] Rinko Kawauchi archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Rinko+Kawauchi
 - [route] Rinko Kawauchi exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Rinko+Kawauchi
-- [route] Rinko Kawauchi Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Rinko Kawauchi Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Rinko Kawauchi third-language / local institution route. https://www.google.com/search?q=Rinko+Kawauchi+photography+museum+exhibition+catalogue
 - [route] Rinko Kawauchi primary interview / statement route. https://www.google.com/search?q=Rinko+Kawauchi+photographer+interview+artist+statement

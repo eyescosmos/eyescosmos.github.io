@@ -75,7 +75,7 @@ tags: ["photo-essay", "moral-witness", "humanism", "photo-essay", "humanist-phot
 - 本人発言・同時代批評は、原典確認後に短く引用候補化する。引用は本文1文につき最大1つまでにする。
 
 ## 6. Sources
-- [S1] W. Eugene Smith. ICP. https://www.icp.org/browse/archive/constituents/w-eugene-smith
+- [S1] W. Eugene Smith. ICP. https://www.icp.org/search-results?query=w%20eugene%20smith
 - [S2] Minamata. ICP. https://www.icp.org/browse/archive/objects/minamata
 - [S3] W. Eugene Smith Archive. Center for Creative Photography. https://ccp.arizona.edu/artists/w-eugene-smith
 - [S4] W. Eugene Smith search. MoMA. https://www.moma.org/artists/5460
@@ -83,12 +83,12 @@ tags: ["photo-essay", "moral-witness", "humanism", "photo-essay", "humanist-phot
 - [S6] W. Eugene Smith search. Getty Museum. https://www.getty.edu/art/collection/search/?q=W.%20Eugene%20Smith
 - [S7] Minamata moral storytelling. The Phoblographer. https://www.thephoblographer.com/?s=W.+Eugene+Smith+Minamata
 - [S8] W. Eugene Smith Minamata. Artsy. https://www.artsy.net/artist/w-eugene-smith
-- [S9] W. Eugene Smith search. ICP Library. https://www.icp.org/search-results/W.%20Eugene%20Smith
+- [S9] W. Eugene Smith search. ICP Library. https://www.icp.org/search-results?query=W.%20Eugene%20Smith
 - [S10] W. Eugene Smith search. Library of Congress. https://www.loc.gov/search/?all=true&q=W.+Eugene+Smith
 
 - [S11] W. Eugene Smith. MoMA. https://www.moma.org/artists/5468
 - [S12] W. Eugene Smith Memorial Fund. W. Eugene Smith Fund. https://www.smithfund.org/
-- [S13] Minamata search. ICP. https://www.icp.org/search-results/Minamata%20Smith
+- [S13] Minamata search. ICP. https://www.icp.org/search-results?query=Minamata%20Smith
 - [S14] W. Eugene Smith search. Library of Congress. https://www.loc.gov/search/?fa=contributor:smith,+w.+eugene
 - [S15] W. Eugene Smith search. International Photography Hall of Fame. https://iphf.org/inductees/w-eugene-smith/
 

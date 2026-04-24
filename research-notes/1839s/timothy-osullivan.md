@@ -79,8 +79,8 @@
 - [S11] Wheeler’s geographical survey stereoscopic views, ArchivesWest (EN; archive; use: 調査隊写真の一次的所在). https://archiveswest.orbiscascade.org/ark%3A80444/xv05364
 - [S12] The Met query: Timothy O’Sullivan (EN; museum collection; use: 作品と評価). https://www.metmuseum.org/art/collection/search#!?q=Timothy%20O%27Sullivan
 - [S13] LOC query: Timothy O’Sullivan (EN; archive; use: 米国所蔵). https://www.loc.gov/pictures/search/?q=Timothy%20O%27Sullivan
-- [S14] Timothy H. O'Sullivan, Smithsonian American Art Museum (EN; museum bio; use: 作家解説と西部写真の位置づけ). https://americanart.si.edu/artist/timothy-h-osullivan-3600
-- [S15] Timothy H. O'Sullivan, ICP archive (EN; museum archive; use: 作家解説と作品群). https://www.icp.org/browse/archive/constituents/timothy-h-osullivan
+- [S14] Timothy H. O'Sullivan, Smithsonian American Art Museum (EN; museum bio; use: 作家解説と西部写真の位置づけ). https://americanart.si.edu/search?query=timothy%20H.%20osullivan%203600
+- [S15] Timothy H. O'Sullivan, ICP archive (EN; museum archive; use: 作家解説と作品群). https://www.icp.org/search-results?query=timothy%20h%20osullivan
 - [S16] Timothy O'Sullivan, MoMA artist page (EN; museum collection; use: MoMA所蔵と作家解説). https://www.moma.org/collection/artists/4363
 
 ## Additional search paths（正式出典ではなく追加調査の入口）

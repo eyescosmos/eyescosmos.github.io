@@ -76,7 +76,7 @@ tags: ['difference', 'performance of self', 'ethics of looking', 'portrait as en
 - [S8] Diane Arbus search. Art Institute of Chicago. https://www.artic.edu/search?q=Diane+Arbus
 - [S9] Diane Arbus search. MFA Boston. https://collections.mfa.org/search/objects/*/Diane%20Arbus
 - [S10] Diane Arbus bibliography. WorldCat. https://search.worldcat.org/search?q=Diane+Arbus
-- [S11] Diane Arbus Japanese exhibition / book route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S11] Diane Arbus Japanese exhibition / book route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S12] Diane Arbus scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Diane+Arbus+photography+ethics+portrait
 
 - [S13] Diane Arbus. The Art Story. https://www.theartstory.org/artist/arbus-diane/
@@ -86,8 +86,8 @@ tags: ['difference', 'performance of self', 'ethics of looking', 'portrait as en
 - [S17] Diane Arbus search. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Diane+Arbus&searchCode=GKEY%5E*&searchType=0
 - [S18] Diane Arbus search. Tate. https://www.tate.org.uk/search?q=Diane+Arbus
 - [S19] Diane Arbus search. SFMOMA. https://www.sfmoma.org/search/?q=Diane+Arbus
-- [S20] Diane Arbus archive search. ICP. https://www.icp.org/search-results/Diane+Arbus
-- [S21] Diane Arbus search. Whitney Museum. https://whitney.org/search?q=Diane+Arbus
+- [S20] Diane Arbus archive search. ICP. https://www.icp.org/search-results?query=Diane+Arbus
+- [S21] Diane Arbus search. Whitney Museum. https://whitney.org/search?query=Diane+Arbus
 - [S22] Diane Arbus search. Guggenheim Museum. https://www.guggenheim.org/?s=Diane+Arbus
 - [S23] Diane Arbus search. Smithsonian Institution. https://www.si.edu/search?query=Diane+Arbus
 - [S24] Diane Arbus scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Diane+Arbus+photography

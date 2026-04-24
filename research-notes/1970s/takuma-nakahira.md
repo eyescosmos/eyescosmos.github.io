@@ -69,7 +69,7 @@ tags: ['language crisis', 'image circulation', 'anti-aesthetic', 'media critique
 - [S1] Takuma Nakahira route. MACK. https://www.google.com/search?q=MACK+Takuma+Nakahira+photography
 - [S2] Takuma Nakahira search. MoMA. https://www.moma.org/search/?query=Takuma+Nakahira
 - [S3] Takuma Nakahira search. Tate. https://www.tate.org.uk/search?q=Takuma+Nakahira
-- [S4] Takuma Nakahira route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [S4] Takuma Nakahira route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [S5] Takuma Nakahira route. Aperture. https://aperture.org/?s=Takuma+Nakahira
 - [S6] Takuma Nakahira route. Osiris / Provoke route. https://www.google.com/search?q=Osiris+%2F+Provoke+route+Takuma+Nakahira+photography
 - [S7] Takuma Nakahira bibliography route. NDL Search. https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&size=20&q-title=Takuma+Nakahira
@@ -79,7 +79,7 @@ tags: ['language crisis', 'image circulation', 'anti-aesthetic', 'media critique
 - [S11] Takuma Nakahira route. The Photographers Gallery. https://www.google.com/search?q=The+Photographers+Gallery+Takuma+Nakahira+photography
 - [S12] Takuma Nakahira route. Case Publishing. https://www.google.com/search?q=Case+Publishing+Takuma+Nakahira+photography
 
-- [S13] Takuma Nakahira. MACK. https://mackbooks.us/products/for-a-language-to-come-br-takuma-nakahira
+- [S13] Takuma Nakahira. MACK. https://mackbooks.us/search?type=product&q=for%20a%20language%20to%20come%20takuma%20nakahira
 - [S14] Takuma Nakahira. Tate. https://www.tate.org.uk/search?q=Takuma%20Nakahira
 - [S15] 中平卓馬. Case Publishing search. https://www.case-publishing.jp/?s=%E4%B8%AD%E5%B9%B3%E5%8D%93%E9%A6%AC
 - [S16] Takuma Nakahira. The Photographers Gallery route. https://thephotographersgallery.org.uk/search?keys=Takuma%20Nakahira
@@ -88,8 +88,8 @@ tags: ['language crisis', 'image circulation', 'anti-aesthetic', 'media critique
 - [S19] Takuma Nakahira search. Art Institute of Chicago. https://www.artic.edu/search?q=Takuma+Nakahira
 - [S20] Takuma Nakahira search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Takuma+Nakahira
 - [S21] Takuma Nakahira search. SFMOMA. https://www.sfmoma.org/search/?q=Takuma+Nakahira
-- [S22] Takuma Nakahira archive search. ICP. https://www.icp.org/search-results/Takuma+Nakahira
-- [S23] Takuma Nakahira search. Whitney Museum. https://whitney.org/search?q=Takuma+Nakahira
+- [S22] Takuma Nakahira archive search. ICP. https://www.icp.org/search-results?query=Takuma+Nakahira
+- [S23] Takuma Nakahira search. Whitney Museum. https://whitney.org/search?query=Takuma+Nakahira
 - [S24] Takuma Nakahira search. Guggenheim Museum. https://www.guggenheim.org/?s=Takuma+Nakahira
 - [S25] Takuma Nakahira search. Smithsonian Institution. https://www.si.edu/search?query=Takuma+Nakahira
 - [S26] Takuma Nakahira bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Takuma+Nakahira&searchCode=GKEY%5E*&searchType=0

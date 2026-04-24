@@ -71,7 +71,7 @@ tags: ["everyday-life", "intimacy", "contingency", "street-photography", "poetic
 - 本人発言または同時代批評は原典確認後に引用候補化する。
 
 ## 6. Sources
-- [S1] André Kertész. ICP. https://www.icp.org/browse/archive/constituents/andr%C3%A9-kert%C3%A9sz
+- [S1] André Kertész. ICP. https://www.icp.org/search-results?query=andr%C3%A9%20kert%C3%A9sz
 - [S2] André Kertész exhibition. ICP. https://www.icp.org/exhibitions/andre-kertesz
 - [S3] A Selection of Photographs. ICP. https://www.icp.org/exhibitions/a-selection-of-photographs-by-andr%C3%A9-kert%C3%A9sz
 - [S4] Kertész press PDF. ICP. https://www.icp.org/sites/default/files/exhibition/credits/sites/default/files/exhibition_pdfs/kertesz05_press.pdf

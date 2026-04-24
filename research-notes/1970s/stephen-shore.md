@@ -71,7 +71,7 @@ tags: ['color seeing', 'ordinary America', 'serial travel', 'banal modernity']
 - [S3] Stephen Shore route. Aperture. https://aperture.org/?s=Stephen+Shore
 - [S4] Stephen Shore search. The Metropolitan Museum of Art. https://www.metmuseum.org/art/collection/search?q=Stephen+Shore
 - [S5] Stephen Shore search. Tate. https://www.tate.org.uk/search?q=Stephen+Shore
-- [S6] Stephen Shore route. ICP. https://www.icp.org/search-results/Stephen+Shore
+- [S6] Stephen Shore route. ICP. https://www.icp.org/search-results?query=Stephen+Shore
 - [S7] Stephen Shore route. 303 Gallery. https://www.google.com/search?q=303+Gallery+Stephen+Shore+photography
 - [S8] Stephen Shore bibliography. WorldCat. https://search.worldcat.org/search?q=Stephen+Shore
 - [S9] Stephen Shore scholarship route. Google Scholar. https://scholar.google.com/scholar?q=Stephen+Shore+photography
@@ -82,12 +82,12 @@ tags: ['color seeing', 'ordinary America', 'serial travel', 'banal modernity']
 - [S13] Stephen Shore. MoMA. https://www.moma.org/artists/5392
 - [S14] Stephen Shore. 303 Gallery. https://www.303gallery.com/artists/stephen-shore
 - [S15] Stephen Shore. Aperture. https://aperture.org/books/stephen-shore-uncommon-places/
-- [S16] Stephen Shore. MACK. https://mackbooks.us/products/modern-instances-br-stephen-shore
+- [S16] Stephen Shore. MACK. https://mackbooks.us/search?type=product&q=modern%20instances%20stephen%20shore
 - [S17] Stephen Shore search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Stephen+Shore
 - [S18] Stephen Shore search. Art Institute of Chicago. https://www.artic.edu/search?q=Stephen+Shore
 - [S19] Stephen Shore search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Stephen+Shore
 - [S20] Stephen Shore search. SFMOMA. https://www.sfmoma.org/search/?q=Stephen+Shore
-- [S21] Stephen Shore search. Whitney Museum. https://whitney.org/search?q=Stephen+Shore
+- [S21] Stephen Shore search. Whitney Museum. https://whitney.org/search?query=Stephen+Shore
 - [S22] Stephen Shore search. Guggenheim Museum. https://www.guggenheim.org/?s=Stephen+Shore
 - [S23] Stephen Shore search. Smithsonian Institution. https://www.si.edu/search?query=Stephen+Shore
 - [S24] Stephen Shore bibliography. Library of Congress. https://catalog.loc.gov/vwebv/search?searchArg=Stephen+Shore&searchCode=GKEY%5E*&searchType=0

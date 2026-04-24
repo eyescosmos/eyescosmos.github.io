@@ -119,8 +119,8 @@ tags: ["absence", "material memory", "objecthood"]
 - [route] Ricarda Roggan search. Guggenheim Museum. https://www.guggenheim.org/?s=Ricarda+Roggan
 - [route] Ricarda Roggan search. Art Institute of Chicago. https://www.artic.edu/search?q=Ricarda+Roggan
 - [route] Ricarda Roggan search. SFMOMA. https://www.sfmoma.org/search/?q=Ricarda+Roggan
-- [route] Ricarda Roggan search. Whitney Museum. https://whitney.org/search?q=Ricarda+Roggan
-- [route] Ricarda Roggan search. International Center of Photography. https://www.icp.org/search-results/Ricarda%20Roggan
+- [route] Ricarda Roggan search. Whitney Museum. https://whitney.org/search?query=Ricarda+Roggan
+- [route] Ricarda Roggan search. International Center of Photography. https://www.icp.org/search-results?query=Ricarda%20Roggan
 - [route] Ricarda Roggan search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Ricarda+Roggan
 - [route] Ricarda Roggan search. Getty. https://www.getty.edu/art/collection/search/?q=Ricarda+Roggan
 - [route] Ricarda Roggan route. Aperture. https://aperture.org/?s=Ricarda+Roggan
@@ -139,6 +139,6 @@ tags: ["absence", "material memory", "objecthood"]
 - [route] Ricarda Roggan archive route. Smithsonian Institution. https://www.si.edu/search?query=Ricarda+Roggan
 - [route] Ricarda Roggan archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Ricarda+Roggan
 - [route] Ricarda Roggan exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Ricarda+Roggan
-- [route] Ricarda Roggan Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Ricarda Roggan Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Ricarda Roggan third-language / local institution route. https://www.google.com/search?q=Ricarda+Roggan+photography+museum+exhibition+catalogue
 - [route] Ricarda Roggan primary interview / statement route. https://www.google.com/search?q=Ricarda+Roggan+photographer+interview+artist+statement

@@ -119,8 +119,8 @@ tags: ["perception", "architectural intimacy", "surface"]
 - [route] Luisa Lambri search. Guggenheim Museum. https://www.guggenheim.org/?s=Luisa+Lambri
 - [route] Luisa Lambri search. Art Institute of Chicago. https://www.artic.edu/search?q=Luisa+Lambri
 - [route] Luisa Lambri search. SFMOMA. https://www.sfmoma.org/search/?q=Luisa+Lambri
-- [route] Luisa Lambri search. Whitney Museum. https://whitney.org/search?q=Luisa+Lambri
-- [route] Luisa Lambri search. International Center of Photography. https://www.icp.org/search-results/Luisa%20Lambri
+- [route] Luisa Lambri search. Whitney Museum. https://whitney.org/search?query=Luisa+Lambri
+- [route] Luisa Lambri search. International Center of Photography. https://www.icp.org/search-results?query=Luisa%20Lambri
 - [route] Luisa Lambri search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Luisa+Lambri
 - [route] Luisa Lambri search. Getty. https://www.getty.edu/art/collection/search/?q=Luisa+Lambri
 - [route] Luisa Lambri route. Aperture. https://aperture.org/?s=Luisa+Lambri
@@ -139,6 +139,6 @@ tags: ["perception", "architectural intimacy", "surface"]
 - [route] Luisa Lambri archive route. Smithsonian Institution. https://www.si.edu/search?query=Luisa+Lambri
 - [route] Luisa Lambri archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Luisa+Lambri
 - [route] Luisa Lambri exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Luisa+Lambri
-- [route] Luisa Lambri Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Luisa Lambri Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Luisa Lambri third-language / local institution route. https://www.google.com/search?q=Luisa+Lambri+photography+museum+exhibition+catalogue
 - [route] Luisa Lambri primary interview / statement route. https://www.google.com/search?q=Luisa+Lambri+photographer+interview+artist+statement

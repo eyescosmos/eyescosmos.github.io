@@ -71,7 +71,7 @@ tags: ['deindustrialization', 'class', 'community', 'documentary ethics']
 - [S3] Chris Killip. Tate. https://www.tate.org.uk/art/artists/chris-killip-23678
 - [S4] Chris Killip. Martin Parr Foundation. https://www.martinparrfoundation.org/collection/chris-killip/
 - [S5] Chris Killip search. The Photographers Gallery. https://thephotographersgallery.org.uk/search?keys=Chris%20Killip
-- [S6] Chris Killip route. ICP. https://www.icp.org/search-results/Chris+Killip
+- [S6] Chris Killip route. ICP. https://www.icp.org/search-results?query=Chris+Killip
 - [S7] Chris Killip bibliography. WorldCat. https://search.worldcat.org/search?q=Chris+Killip+In+Flagrante
 - [S8] Chris Killip route. Steidl. https://steidl.de/Artists/Chris-Killip-0506084049.html
 - [S9] Chris Killip search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Chris+Killip
@@ -85,7 +85,7 @@ tags: ['deindustrialization', 'class', 'community', 'documentary ethics']
 - [S16] Chris Killip search. Art Institute of Chicago. https://www.artic.edu/search?q=Chris+Killip
 - [S17] Chris Killip search. National Gallery of Art. https://www.nga.gov/collection-search-result.html?searchTerm=Chris+Killip
 - [S18] Chris Killip search. SFMOMA. https://www.sfmoma.org/search/?q=Chris+Killip
-- [S19] Chris Killip search. Whitney Museum. https://whitney.org/search?q=Chris+Killip
+- [S19] Chris Killip search. Whitney Museum. https://whitney.org/search?query=Chris+Killip
 - [S20] Chris Killip search. Guggenheim Museum. https://www.guggenheim.org/?s=Chris+Killip
 - [S21] Chris Killip search. Smithsonian Institution. https://www.si.edu/search?query=Chris+Killip
 - [S22] Chris Killip bibliography. WorldCat. https://search.worldcat.org/search?q=Chris+Killip

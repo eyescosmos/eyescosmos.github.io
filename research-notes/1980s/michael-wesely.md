@@ -98,7 +98,7 @@ tags: ["duration", "time as image", "architectural change"]
 - [S7] Michael Wesely — Danziger Gallery. https://www.danzigergallery.com/artists/michael-wesely — gallery artist profile
 - [S8] Michael Wesely — Galerie Fahnemann. https://www.galeriefahnemann.de/artists/michael-wesely/ — gallery profile and exhibition history
 - [S9] Michael Wesely — Kunstaspekte. https://kunstaspekte.art/person/michael-wesely — exhibition-history route
-- [S10] Michael Wesely — Art Institute of Chicago. https://www.artic.edu/artists/112147/michael-wesely — museum artist page
+- [S10] Michael Wesely — Art Institute of Chicago. https://www.artic.edu/search?q=michael%20wesely — museum artist page
 
 ### 8.5 出典探索メモ / Source exploration memo
 このSources欄には、実際に本文根拠として読める直接ページだけを残した。直接出典数は現時点で10件。10〜15件に届かない作家は、下の追加探索先をClaude Codeが実読し、本文に使えるページだけをSourcesへ昇格する。
@@ -119,8 +119,8 @@ tags: ["duration", "time as image", "architectural change"]
 - [route] Michael Wesely search. Guggenheim Museum. https://www.guggenheim.org/?s=Michael+Wesely
 - [route] Michael Wesely search. Art Institute of Chicago. https://www.artic.edu/search?q=Michael+Wesely
 - [route] Michael Wesely search. SFMOMA. https://www.sfmoma.org/search/?q=Michael+Wesely
-- [route] Michael Wesely search. Whitney Museum. https://whitney.org/search?q=Michael+Wesely
-- [route] Michael Wesely search. International Center of Photography. https://www.icp.org/search-results/Michael%20Wesely
+- [route] Michael Wesely search. Whitney Museum. https://whitney.org/search?query=Michael+Wesely
+- [route] Michael Wesely search. International Center of Photography. https://www.icp.org/search-results?query=Michael%20Wesely
 - [route] Michael Wesely search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Michael+Wesely
 - [route] Michael Wesely search. Getty. https://www.getty.edu/art/collection/search/?q=Michael+Wesely
 - [route] Michael Wesely route. Aperture. https://aperture.org/?s=Michael+Wesely
@@ -139,6 +139,6 @@ tags: ["duration", "time as image", "architectural change"]
 - [route] Michael Wesely archive route. Smithsonian Institution. https://www.si.edu/search?query=Michael+Wesely
 - [route] Michael Wesely archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Michael+Wesely
 - [route] Michael Wesely exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Michael+Wesely
-- [route] Michael Wesely Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Michael Wesely Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Michael Wesely third-language / local institution route. https://www.google.com/search?q=Michael+Wesely+photography+museum+exhibition+catalogue
 - [route] Michael Wesely primary interview / statement route. https://www.google.com/search?q=Michael+Wesely+photographer+interview+artist+statement

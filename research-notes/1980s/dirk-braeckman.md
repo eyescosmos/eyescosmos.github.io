@@ -121,8 +121,8 @@ tags: ["materiality", "absence", "photographic surface"]
 - [route] Dirk Braeckman search. Guggenheim Museum. https://www.guggenheim.org/?s=Dirk+Braeckman
 - [route] Dirk Braeckman search. Art Institute of Chicago. https://www.artic.edu/search?q=Dirk+Braeckman
 - [route] Dirk Braeckman search. SFMOMA. https://www.sfmoma.org/search/?q=Dirk+Braeckman
-- [route] Dirk Braeckman search. Whitney Museum. https://whitney.org/search?q=Dirk+Braeckman
-- [route] Dirk Braeckman search. International Center of Photography. https://www.icp.org/search-results/Dirk%20Braeckman
+- [route] Dirk Braeckman search. Whitney Museum. https://whitney.org/search?query=Dirk+Braeckman
+- [route] Dirk Braeckman search. International Center of Photography. https://www.icp.org/search-results?query=Dirk%20Braeckman
 - [route] Dirk Braeckman search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Dirk+Braeckman
 - [route] Dirk Braeckman search. Getty. https://www.getty.edu/art/collection/search/?q=Dirk+Braeckman
 - [route] Dirk Braeckman route. Aperture. https://aperture.org/?s=Dirk+Braeckman
@@ -141,6 +141,6 @@ tags: ["materiality", "absence", "photographic surface"]
 - [route] Dirk Braeckman archive route. Smithsonian Institution. https://www.si.edu/search?query=Dirk+Braeckman
 - [route] Dirk Braeckman archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Dirk+Braeckman
 - [route] Dirk Braeckman exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Dirk+Braeckman
-- [route] Dirk Braeckman Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Dirk Braeckman Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Dirk Braeckman third-language / local institution route. https://www.google.com/search?q=Dirk+Braeckman+photography+museum+exhibition+catalogue
 - [route] Dirk Braeckman primary interview / statement route. https://www.google.com/search?q=Dirk+Braeckman+photographer+interview+artist+statement

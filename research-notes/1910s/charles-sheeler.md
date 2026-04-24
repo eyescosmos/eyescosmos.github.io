@@ -78,7 +78,7 @@ tags: ["industrial-modernity", "precision", "machine-aesthetic", "precisionism",
 - [S5] Charles Sheeler catalogue PDF. MoMA. https://www.moma.org/documents/moma_catalogue_2559_300062280.pdf
 - [S6] Charles Sheeler search. Philadelphia Museum of Art. https://philamuseum.org/search/collections?searchTxt=Charles%20Sheeler
 - [S7] Charles Sheeler search. Getty Museum. https://www.getty.edu/art/collection/search/?q=Charles%20Sheeler
-- [S8] Charles Sheeler artist. Art Institute of Chicago. https://www.artic.edu/artists/36140/charles-sheeler
+- [S8] Charles Sheeler artist. Art Institute of Chicago. https://www.artic.edu/search?q=charles%20sheeler
 - [S9] Manhatta search. MoMA. https://www.moma.org/search/?query=Manhatta%20Charles%20Sheeler%20Paul%20Strand
 - [S10] Charles Sheeler search. Smithsonian American Art Museum. https://americanart.si.edu/search?query=Charles%20Sheeler
 - [S11] Charles Sheeler search. MFA Boston. https://collections.mfa.org/search/objects/*/Charles%20Sheeler

@@ -132,8 +132,8 @@ tags: ["constructed realism", "documentary fiction", "urban performance"]
 - [route] Philip-Lorca diCorcia search. Guggenheim Museum. https://www.guggenheim.org/?s=Philip-Lorca+diCorcia
 - [route] Philip-Lorca diCorcia search. Art Institute of Chicago. https://www.artic.edu/search?q=Philip-Lorca+diCorcia
 - [route] Philip-Lorca diCorcia search. SFMOMA. https://www.sfmoma.org/search/?q=Philip-Lorca+diCorcia
-- [route] Philip-Lorca diCorcia search. Whitney Museum. https://whitney.org/search?q=Philip-Lorca+diCorcia
-- [route] Philip-Lorca diCorcia search. International Center of Photography. https://www.icp.org/search-results/Philip-Lorca%20diCorcia
+- [route] Philip-Lorca diCorcia search. Whitney Museum. https://whitney.org/search?query=Philip-Lorca+diCorcia
+- [route] Philip-Lorca diCorcia search. International Center of Photography. https://www.icp.org/search-results?query=Philip-Lorca%20diCorcia
 - [route] Philip-Lorca diCorcia search. Centre Pompidou. https://www.centrepompidou.fr/en/recherche?terms=Philip-Lorca+diCorcia
 - [route] Philip-Lorca diCorcia search. Getty. https://www.getty.edu/art/collection/search/?q=Philip-Lorca+diCorcia
 - [route] Philip-Lorca diCorcia route. Aperture. https://aperture.org/?s=Philip-Lorca+diCorcia
@@ -152,6 +152,6 @@ tags: ["constructed realism", "documentary fiction", "urban performance"]
 - [route] Philip-Lorca diCorcia archive route. Smithsonian Institution. https://www.si.edu/search?query=Philip-Lorca+diCorcia
 - [route] Philip-Lorca diCorcia archive route. Archives of American Art / Smithsonian. https://www.aaa.si.edu/search?edan_q=Philip-Lorca+diCorcia
 - [route] Philip-Lorca diCorcia exhibition review route. The Brooklyn Rail. https://brooklynrail.org/?s=Philip-Lorca+diCorcia
-- [route] Philip-Lorca diCorcia Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/contents/pages/search_index.html
+- [route] Philip-Lorca diCorcia Japanese reception route. Tokyo Photographic Art Museum. https://topmuseum.jp/
 - [route] Philip-Lorca diCorcia third-language / local institution route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photography+museum+exhibition+catalogue
 - [route] Philip-Lorca diCorcia primary interview / statement route. https://www.google.com/search?q=Philip-Lorca+diCorcia+photographer+interview+artist+statement
