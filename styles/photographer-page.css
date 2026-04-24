@@ -310,7 +310,7 @@ body::after {
   color: var(--accent);
 }
 .alt { display: block; margin-top: 10px; font: 13px/1.6 'DM Mono', monospace; color: var(--text-dim); letter-spacing: 0.05em; }
-.lead { margin: 18px 0 0; max-width: 820px; color: var(--text-dim); line-height: 1.9; font-size: 15px; }
+.lead { margin: 18px 0 0; max-width: 820px; color: var(--text-dim); line-height: 1.9; font-size: 15px; text-align: justify; }
 .hero-info-groups {
   margin-top: 24px;
   display: flex;
