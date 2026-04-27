@@ -698,3 +698,12 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
     margin-bottom: 12px;
   }
 }
+
+html[lang="en"] .lead,
+html[lang="en"] .section p,
+html[lang="en"] .essay,
+html[lang="en"] .essay p {
+  text-align: left;
+  text-justify: auto;
+  word-spacing: normal;
+}
