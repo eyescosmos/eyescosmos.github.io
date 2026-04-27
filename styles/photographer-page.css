@@ -693,15 +693,8 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
     width: 100%;
     max-width: none;
   }
-  .hero > .tab-nav {
-    margin: 12px -20px 16px;
-    border: none;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background: rgba(14, 12, 10, 0.96);
-  }
-  .hero > .tab-nav .tab-nav-inner {
-    max-width: none;
-    padding: 0 16px;
+  .tab-nav.nav-before-hero {
+    margin-top: 0;
+    margin-bottom: 12px;
   }
 }

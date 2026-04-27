@@ -847,15 +847,21 @@
   function initMobileNavLayout() {
     const hero = document.querySelector('.page-shell > .hero');
     if (!hero) return;
+    const shell = hero.parentNode;
     const mq = window.matchMedia('(max-width: 768px)');
     function doLayout() {
       const nav = document.querySelector('.tab-nav');
-      const title = hero.querySelector('.title');
-      if (!nav || !title) return;
+      if (!nav) return;
       if (mq.matches) {
-        if (nav.parentNode !== hero) title.after(nav);
+        if (nav !== shell.firstElementChild) {
+          shell.prepend(nav);
+          nav.classList.add('nav-before-hero');
+        }
       } else {
-        if (nav.parentNode === hero) hero.after(nav);
+        if (nav.previousElementSibling !== hero || nav.parentNode !== shell) {
+          hero.after(nav);
+        }
+        nav.classList.remove('nav-before-hero');
       }
     }
     doLayout();
