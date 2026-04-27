@@ -844,6 +844,24 @@
     });
   }
 
+  function initMobileNavLayout() {
+    const hero = document.querySelector('.page-shell > .hero');
+    if (!hero) return;
+    const mq = window.matchMedia('(max-width: 768px)');
+    function doLayout() {
+      const nav = document.querySelector('.tab-nav');
+      const title = hero.querySelector('.title');
+      if (!nav || !title) return;
+      if (mq.matches) {
+        if (nav.parentNode !== hero) title.after(nav);
+      } else {
+        if (nav.parentNode === hero) hero.after(nav);
+      }
+    }
+    doLayout();
+    mq.addEventListener('change', doLayout);
+  }
+
   function install() {
     injectStyles();
     document.body.classList.add('global-search-ready');
@@ -881,6 +899,7 @@
       if (event.target.closest('.global-search-nav, .global-search-mobile-shell, .global-search-mobile-button')) return;
       if (window.innerWidth > 768) closeSearch();
     });
+    initMobileNavLayout();
   }
 
   if (document.readyState === 'loading') {
