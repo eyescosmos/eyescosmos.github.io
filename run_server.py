@@ -17,5 +17,24 @@ if SITE_PKGS not in sys.path:
 # Change working directory to project root so uvicorn finds app.py
 os.chdir(ROOT)
 
+# Kill any stale process on port 8000 before binding
+import signal
+import subprocess
+import time
+
+try:
+    result = subprocess.run(["lsof", "-ti", ":8000"], capture_output=True, text=True)
+    pids = [p for p in result.stdout.strip().split("\n") if p.strip()]
+    if pids:
+        for pid in pids:
+            try:
+                os.kill(int(pid), signal.SIGTERM)
+            except ProcessLookupError:
+                pass
+        time.sleep(0.5)
+        print(f"[run_server] Killed stale process(es) on :8000 → {', '.join(pids)}")
+except Exception:
+    pass
+
 import uvicorn
 uvicorn.run("app:app", host="0.0.0.0", port=8000, loop="asyncio", http="h11")
