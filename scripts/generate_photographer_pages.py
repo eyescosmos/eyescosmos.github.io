@@ -115,6 +115,76 @@ SEO_TEXT_OVERRIDES = {
             "lead": "Renger-Patzsch made the photographed object itself central, rejecting both pictorialist beautification and Bauhaus-style visual experiment in favor of precise structural description.",
         },
     },
+    "evans": {
+        "ja": {
+            "title": "ウォーカー・エヴァンス | FSAとアメリカ・ドキュメンタリー | 写真の座標",
+            "description": "ウォーカー・エヴァンスはFSAで農村の貧困を記録しながら、政策宣伝から距離を取り、アメリカの表面を冷静に読むドキュメンタリー写真を確立した。『Let Us Now Praise Famous Men』や地下鉄肖像で、写真を社会記録と批評的観察の両方へ押し広げた。",
+        },
+        "en": {
+            "title": "Walker Evans | FSA and American Documentary | Photo Coordinates",
+            "description": "Walker Evans used FSA work, vernacular signs, storefronts, interiors, and subway portraits to make American documentary photography cool, precise, and critical rather than propagandistic.",
+        },
+    },
+    "cartierbresson": {
+        "ja": {
+            "title": "アンリ・カルティエ＝ブレッソン | 決定的瞬間と写真の構成 | 写真の座標",
+            "description": "アンリ・カルティエ＝ブレッソンはシュルレアリスムの感覚とライカによる即応性を結びつけ、現実の一瞬に形態、身振り、意味が重なる「決定的瞬間」を写真の方法として確立した。マグナム創設にも関わり、20世紀フォトジャーナリズムの基準を作った。",
+        },
+        "en": {
+            "title": "Henri Cartier-Bresson | Decisive Moment | Photo Coordinates",
+            "description": "Henri Cartier-Bresson joined Surrealist alertness to the mobility of the Leica, defining the decisive moment as a meeting of form, gesture, and meaning in modern photography.",
+        },
+    },
+    "eugenesmith": {
+        "ja": {
+            "title": "W・ユージン・スミス | フォト・エッセイと倫理 | 写真の座標",
+            "description": "W・ユージン・スミスは『LIFE』誌でフォト・エッセイを発展させ、長期取材と緻密な編集によって報道写真を物語的で倫理的な形式へ変えた。『Country Doctor』から『水俣』まで、写真が社会的告発になりうることを示した。",
+        },
+        "en": {
+            "title": "W. Eugene Smith | Photo Essay and Ethics | Photo Coordinates",
+            "description": "W. Eugene Smith transformed magazine photojournalism through immersive photo essays, from Country Doctor to Minamata, making documentary photography narrative, partisan, and ethically charged.",
+        },
+    },
+    "ansel-adams": {
+        "ja": {
+            "title": "アンセル・アダムス | ゾーン・システムとアメリカ西部 | 写真の座標",
+            "description": "アンセル・アダムスはヨセミテを中心とするアメリカ西部の風景を、大判カメラとゾーン・システムによる精密なトーン制御で表現した。Group f/64、写真教育、環境保全運動を通じて、風景写真をファインアートと環境意識の領域へ押し上げた。",
+        },
+        "en": {
+            "title": "Ansel Adams | Zone System and the American West | Photo Coordinates",
+            "description": "Ansel Adams turned the American West into a field of tonal precision and ecological imagination, using the Zone System, Group f/64, teaching, and conservation work to shape modern landscape photography.",
+        },
+    },
+    "robertfrank": {
+        "ja": {
+            "title": "ロバート・フランク | 『The Americans』と戦後アメリカ | 写真の座標",
+            "description": "ロバート・フランクは移民の視点から戦後アメリカを横断し、『The Americans』で国旗、車、食堂、人種差別、孤独を粗い粒子と傾いた構図で写した。明朗な報道写真に対抗し、主観的で不穏なアメリカ写真の基準を作った。",
+        },
+        "en": {
+            "title": "Robert Frank | The Americans and Postwar Photography | Photo Coordinates",
+            "description": "Robert Frank crossed the United States as an outsider and made The Americans, a dark, grainy, off-kilter portrait of flags, cars, diners, race, solitude, and postwar unease.",
+        },
+    },
+    "moriyama": {
+        "ja": {
+            "title": "森山大道 | プロヴォークと都市のスナップショット | 写真の座標",
+            "description": "森山大道は新宿をはじめとする都市の断片を、荒れ・ブレ・ボケの写真言語で撮影し、戦後日本写真の視覚を大きく変えた。『にっぽん劇場写真帖』『写真よさようなら』などを通じて、記録と欲望、複製と記憶の境界を問い続けている。",
+        },
+        "en": {
+            "title": "Daido Moriyama | Provoke and the Urban Snapshot | Photo Coordinates",
+            "description": "Daido Moriyama transformed postwar Japanese photography through rough, blurred, high-contrast urban images, turning the street into a field of memory, desire, reproduction, and visual instability.",
+        },
+    },
+    "wolfgang-tillmans": {
+        "ja": {
+            "title": "ヴォルフガング・ティルマンス | 日常・抽象・インスタレーション | 写真の座標",
+            "description": "ヴォルフガング・ティルマンスは、日常、クィアな社会性、クラブ文化、抽象、政治的イメージを横断し、写真を単一の額装作品ではなく壁面、出版、インスタレーションに広がる実践として再定義した現代写真の重要作家である。",
+        },
+        "en": {
+            "title": "Wolfgang Tillmans | Everyday Life, Abstraction, and Installation | Photo Coordinates",
+            "description": "Wolfgang Tillmans redefined contemporary photography across everyday life, queer sociality, club culture, abstraction, politics, publishing, and installation, making display itself part of photographic meaning.",
+        },
+    },
     "cameron": {
         "ja": {
             "title": "ジュリア・マーガレット・キャメロン | ピクトリアリズムの写真家 | 写真の座標",
