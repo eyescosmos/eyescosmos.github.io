@@ -472,6 +472,16 @@ function isCompactArchiveMobile() {
   return window.innerWidth <= 768;
 }
 
+function usesArchiveSummaryCards(card) {
+  return isCompactArchiveMobile() || usesArchiveSummaryDesktopPanel(card);
+}
+
+function usesArchiveSummaryDesktopPanel(card) {
+  return !isCompactArchiveMobile()
+    && document.body?.dataset?.archiveCardMode === 'summary'
+    && !!card?.closest('#era-main .photographers-grid');
+}
+
 function t(key, ...args) {
   const value = UI_TEXT[currentLanguage][key] ?? UI_TEXT.ja[key];
   return typeof value === 'function' ? value(...args) : value;
@@ -1382,6 +1392,8 @@ function renderCard(p, extraAttrs = '') {
         <p class="mobile-card-summary-text">${escapeHtml(compactPhotographerSummary(p))}</p>
         <a class="mobile-card-readmore" href="${photographerPagePath(p)}" onclick="event.stopPropagation()">${currentLanguage === 'en' ? 'Read details' : '詳細を読む'}</a>
       </div>`;
+  const compactMovements = renderCompactCardRelatedMovements(p);
+  const compactRelated = renderCompactCardRelatedPeople(p);
   return `
     <div class="photographer-card${p.isPlaceholder ? ' placeholder' : ''}" data-pid="${p.id}" data-nationality="${countryMeta.nationality}" data-movements="${p.movements.join(',')}" data-search="${searchIndex}" data-placeholder="${p.isPlaceholder ? 'true' : 'false'}" role="button" tabindex="0" ${interactionAttrs}>
       <div class="card-action">
@@ -1399,12 +1411,190 @@ function renderCard(p, extraAttrs = '') {
       </div>
       ${displaySubName(p)}
       <div class="card-years card-years-desktop">${escapeHtml(displayYears(p))}</div>
-      <div class="card-tags">${tags}</div>
+      <div class="card-tags"></div>
       <div class="mobile-card-tags">${compactTags}</div>
-      ${compactSummary}
       ${coordinateButton}
+      ${compactSummary}
+      ${compactMovements}
+      ${compactRelated}
     </div>
   `;
+}
+
+function renderCompactCardRelatedMovements(photographer) {
+  const links = (photographer.movements || []).slice(0, 3).map(movement => {
+    const label = escapeHtml(displayMovementName(movement));
+    const slug = movementSlug(movement, 'ja');
+    return `<a href="#movement-${slug}" onclick="event.stopPropagation(); openRecommendedMovement(event,'${slug}')">${label}</a>`;
+  });
+  if (!links.length) return '';
+  return `
+      <div class="card-related-movements">
+        <span>${currentLanguage === 'en' ? 'Related movements' : '関連する運動'}</span>
+        ${links.join('')}
+      </div>`;
+}
+
+function renderCompactCardRelatedPeople(photographer) {
+  const links = buildRelatedPeopleEntries(photographer, '')
+    .slice(0, 4)
+    .map(person => {
+      if (!person.href) return '';
+      const onclick = person.onclick ? ` onclick="event.stopPropagation(); ${person.onclick}"` : ' target="_blank" rel="noopener"';
+      return `<a href="${person.href}"${onclick}>${escapeHtml(person.label)}</a>`;
+    })
+    .filter(Boolean);
+  if (!links.length) return '';
+  return `
+      <div class="card-related-people">
+        <span>${currentLanguage === 'en' ? 'Related' : '関連人物'}</span>
+        ${links.join('')}
+      </div>`;
+}
+
+function activeArchiveSummaryCard() {
+  return document.querySelector('#era-main .photographer-card.active:not(.filtered-out)');
+}
+
+function removeArchiveSummaryPanels(scope = document) {
+  scope.querySelectorAll('.archive-summary-panel').forEach(panel => panel.remove());
+}
+
+function resetArchiveSummaryCards(scope = document) {
+  scope.querySelectorAll('#era-main .photographer-card.active').forEach(card => {
+    card.classList.remove('active');
+    card.setAttribute('aria-expanded', 'false');
+  });
+}
+
+function clearArchiveSummaryState() {
+  removeArchiveSummaryPanels();
+  resetArchiveSummaryCards();
+}
+
+function archiveSummaryMovementLinks(photographer) {
+  return (photographer.movements || []).slice(0, 3).map(movement => {
+    const label = escapeHtml(displayMovementName(movement));
+    const slug = movementSlug(movement, 'ja');
+    return `<a class="archive-summary-related-link" href="#movement-${slug}" onclick="openRecommendedMovement(event,'${slug}')">${label}</a>`;
+  });
+}
+
+function archiveSummaryPeopleLinks(photographer) {
+  return buildRelatedPeopleEntries(photographer, '')
+    .slice(0, 4)
+    .map(person => {
+      if (!person.href) return '';
+      const onclick = person.onclick ? ` onclick="${person.onclick}"` : '';
+      const externalAttrs = person.onclick ? '' : ' target="_blank" rel="noopener"';
+      return `<a class="archive-summary-related-link" href="${person.href}"${onclick}${externalAttrs}>${escapeHtml(person.label)}</a>`;
+    })
+    .filter(Boolean);
+}
+
+function archiveSummaryRelatedPanel(photographer) {
+  const movementLinks = archiveSummaryMovementLinks(photographer);
+  const peopleLinks = archiveSummaryPeopleLinks(photographer);
+  if (!movementLinks.length && !peopleLinks.length) return '';
+
+  const sections = [];
+  if (movementLinks.length) {
+    sections.push(`
+      <div class="archive-summary-related-block">
+        <div class="archive-summary-related-label">${currentLanguage === 'en' ? 'Related movements' : '関連運動'}</div>
+        <div class="archive-summary-related-links">${movementLinks.join('')}</div>
+      </div>`);
+  }
+  if (peopleLinks.length) {
+    sections.push(`
+      <div class="archive-summary-related-block">
+        <div class="archive-summary-related-label">${currentLanguage === 'en' ? 'Related figures' : '関連人物'}</div>
+        <div class="archive-summary-related-links">${peopleLinks.join('')}</div>
+      </div>`);
+  }
+
+  return `<div class="archive-summary-related">${sections.join('')}</div>`;
+}
+
+function archiveSummaryPanelHtml(photographer) {
+  const altName = currentLanguage === 'en'
+    ? (photographer.nameJa || '')
+    : (photographer.name || '');
+  const metaParts = [displayMeta(photographer), displayYears(photographer)].filter(Boolean);
+  const coordinateLink = photographer.isPlaceholder
+    ? ''
+    : `<button class="archive-summary-panel-action archive-summary-panel-action-button" type="button" onclick="openCoordinatesForPhotographer('${photographer.id}')">${t('coordinateButton')}</button>`;
+  const readLabel = currentLanguage === 'en' ? 'Read details' : '詳細を読む';
+  const relatedPanel = archiveSummaryRelatedPanel(photographer);
+
+  return `
+    <div class="archive-summary-panel-inner">
+      <div class="archive-summary-panel-layout">
+        <div class="archive-summary-panel-main">
+          <div class="archive-summary-panel-header">
+            <div>
+              <div class="archive-summary-panel-name">${escapeHtml(displayName(photographer))}</div>
+              ${altName ? `<div class="archive-summary-panel-subname">${escapeHtml(altName)}</div>` : ''}
+              ${metaParts.length ? `<div class="archive-summary-panel-meta">${escapeHtml(metaParts.join(' / '))}</div>` : ''}
+            </div>
+          </div>
+          <p class="archive-summary-panel-text">${escapeHtml(compactPhotographerSummary(photographer))}</p>
+          <div class="archive-summary-panel-actions">
+            <a class="archive-summary-panel-action" href="${photographerPagePath(photographer)}">${readLabel}</a>
+            ${coordinateLink}
+          </div>
+        </div>
+        ${relatedPanel}
+      </div>
+    </div>
+  `;
+}
+
+function rowEndCardForArchiveSummary(card, grid) {
+  const visibleCards = Array.from(grid.querySelectorAll('.photographer-card:not(.filtered-out)'));
+  if (!visibleCards.length) return card;
+  const activeTop = card.offsetTop;
+  const sameRow = visibleCards.filter(candidate => Math.abs(candidate.offsetTop - activeTop) <= 2);
+  return sameRow[sameRow.length - 1] || card;
+}
+
+function openArchiveSummaryPanel(pid, card) {
+  const photographer = PHOTOGRAPHER_LOOKUP.get(pid);
+  const grid = card.closest('.photographers-grid');
+  if (!photographer || !grid) return;
+
+  removeArchiveSummaryPanels(grid);
+  resetArchiveSummaryCards();
+
+  const anchorCard = rowEndCardForArchiveSummary(card, grid);
+  const panel = document.createElement('div');
+  panel.className = 'archive-summary-panel';
+  panel.dataset.pid = pid;
+  panel.innerHTML = archiveSummaryPanelHtml(photographer);
+  anchorCard.insertAdjacentElement('afterend', panel);
+
+  card.classList.add('active');
+  card.setAttribute('aria-expanded', 'true');
+  setLocationHash(`photographer-${pid}`);
+  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 40);
+}
+
+function syncArchiveSummaryPanel() {
+  const activeCard = activeArchiveSummaryCard();
+  if (isCompactArchiveMobile()) {
+    removeArchiveSummaryPanels();
+    return;
+  }
+  if (!activeCard || !usesArchiveSummaryDesktopPanel(activeCard)) {
+    removeArchiveSummaryPanels();
+    return;
+  }
+  const pid = activeCard.dataset.pid;
+  if (!pid) {
+    removeArchiveSummaryPanels();
+    return;
+  }
+  openArchiveSummaryPanel(pid, activeCard);
 }
 
 /* 脚注マーカー *1 *2 をツールチップ付きの<span>に変換 */
@@ -1777,7 +1967,19 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
    DETAIL PANEL TOGGLE
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function toggleDetail(pid, card) {
-  if (isCompactArchiveMobile()) {
+  if (usesArchiveSummaryDesktopPanel(card)) {
+    const isActive = card.classList.contains('active');
+    const existingPanel = document.querySelector(`.archive-summary-panel[data-pid="${pid}"]`);
+    clearArchiveSummaryState();
+    if (!isActive || !existingPanel) {
+      openArchiveSummaryPanel(pid, card);
+    } else if (window.location.hash === `#photographer-${pid}`) {
+      setLocationHash('');
+    }
+    return;
+  }
+
+  if (usesArchiveSummaryCards(card)) {
     const isActive = card.classList.contains('active');
     document.querySelectorAll('.detail-panel.open').forEach(p => p.classList.remove('open'));
     document.querySelectorAll('.photographer-card.active').forEach(c => c.classList.remove('active'));
@@ -1817,6 +2019,7 @@ function toggleDetail(pid, card) {
 function closeDetail(pid) {
   const panel = document.getElementById(`panel-${pid}`);
   if (panel) panel.classList.remove('open');
+  removeArchiveSummaryPanels();
   document.querySelectorAll('.photographer-card.active').forEach(c => c.classList.remove('active'));
   if (window.location.hash === `#photographer-${pid}`) {
     setLocationHash('');
@@ -1831,6 +2034,7 @@ function populateFilters() {
 }
 
 function applyFilters() {
+  clearArchiveSummaryState();
   const searchInput = document.getElementById('filter-search');
   activeFilters.search = normalizeSearch(searchInput ? searchInput.value : '');
   activeFilters.country = '';
@@ -1881,6 +2085,7 @@ function resetFilters() {
   const searchInput = document.getElementById('filter-search');
   if (searchInput) searchInput.value = '';
   activeFilters = { search: '', country: '', movement: '' };
+  clearArchiveSummaryState();
   document.querySelectorAll('#era-main .photographer-card').forEach(c => c.classList.remove('filtered-out'));
   document.querySelectorAll('.era').forEach(e => e.classList.remove('hidden'));
   document.getElementById('no-results').classList.remove('visible');
@@ -1988,6 +2193,7 @@ function closeMovementDetail(pid, mvId) {
    TAB SWITCHING
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function switchTab(tabId) {
+  clearArchiveSummaryState();
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   const tabContent = document.getElementById(`tab-${tabId}`);
@@ -2136,8 +2342,10 @@ function revealPhotographerFromHash(pid) {
     }
     card.scrollIntoView({ behavior: 'smooth', block: 'center' });
     setTimeout(() => {
-      const panel = document.getElementById(`panel-${pid}`);
-      if (!panel || !panel.classList.contains('open')) {
+      const summaryPanel = document.querySelector(`.archive-summary-panel[data-pid="${pid}"]`);
+      const detailPanel = document.getElementById(`panel-${pid}`);
+      const isOpen = summaryPanel || (detailPanel && detailPanel.classList.contains('open'));
+      if (!isOpen) {
         toggleDetail(pid, card);
       }
     }, 280);
@@ -2190,6 +2398,7 @@ function syncCompactArchiveLayout() {
     });
     document.querySelectorAll('.detail-panel.open').forEach(panel => panel.classList.remove('open'));
   }
+  syncArchiveSummaryPanel();
 }
 
 function updateArchiveStickyOffset() {

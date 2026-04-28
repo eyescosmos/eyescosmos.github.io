@@ -8889,6 +8889,50 @@ Object.assign(window.PHOTOGRAPHER_ESSAY_OVERRIDES, {
         "url": "https://www.metmuseum.org/art/collection/search/818005"
       }
     ]
+  },
+  'edward-weston': {
+    leadJa: `エドワード・ウェストンは、初期のピクトリアリズムと商業スタジオの経験から出発し、のちにストレート写真とGroup f/64へ向かう近代写真の重要作家。物・身体・風景を精密な写真的形態として捉え直した。`,
+    leadEn: `Edward Weston began in pictorialist and studio photography before becoming a central figure of straight photography and Group f/64. His work transformed bodies, objects, and landscapes into sharply seen photographic form.`
+  },
+  'louis-vaire': {
+    leadJa: `ルイ・ヴェールは現時点で人物同定に注意が必要な登録。調査メモではLouis Vertとの誤記・表記揺れの可能性が指摘されており、もし同一人物ならアジェやジェニオーに近いパリの街頭生活・小商いの記録として位置づく。`,
+    leadEn: `Louis Vaire is an identity-audit entry. The research note flags a possible confusion with Louis Vert; if that identification is correct, the work belongs near Atget and Geniaux as a record of Parisian street life and small trades.`
+  },
+  'santos-r-vasquez': {
+    leadJa: `サントス・R・バスケスは、展覧会参加記録は確認できる一方で作品内容の資料が限られる作家。アーカイブでは、作品評価を断定せず、1970-80年代の展示制度と資料の空白を示すsource-gapの例として扱う。`,
+    leadEn: `Santos R. Vasquez is documented mainly through exhibition records while detailed sources on the work remain scarce. The archive treats the entry cautiously, as a source-gap case within the exhibition culture of the 1970s and 1980s.`
+  },
+  'the-atlas-group-walid-raad': {
+    leadJa: `アトラス・グループ／ワリード・ラードは、レバノン内戦をめぐる架空／準架空のアーカイブを通じて、写真・映像・文書が歴史の証拠として機能する条件を問い直したプロジェクト。`,
+    leadEn: `The Atlas Group / Walid Raad uses a fictional or quasi-fictional archive of the Lebanese wars to question how photographs, videos, documents, and lectures become evidence for history.`
+  },
+  'collectif-fact': {
+    leadJa: `collectif_factは、写真・映像・3Dスキャン・建築モデルを組み合わせ、都市空間やメディア映像が知覚をどのように条件づけるかを探るスイスのアーティスト集団。`,
+    leadEn: `collectif_fact is a Swiss artist collective using photography, video, 3D scanning, and architectural modeling to test how urban space, media images, and fiction condition perception.`
+  },
+  'g-r-a-m': {
+    leadJa: `G.R.A.M.は、報道写真や公共イメージを再演・流用・再構成し、メディアが政治的記憶や歴史の見え方を作る仕組みを批評するオーストリアのアーティスト集団。`,
+    leadEn: `G.R.A.M. is an Austrian artist group that reenacts, appropriates, and reconstructs press and public images to expose how media spectacle shapes political memory and historical visibility.`
+  },
+  'multiplicity': {
+    leadJa: `Multiplicityは、写真・地図・証言・映像を組み合わせ、移民、境界、インフラ、移動の政治を調査するイタリアの研究集団。単一の写真ではなく、複数の証拠形式で現代空間を読み解く。`,
+    leadEn: `Multiplicity is an Italian research collective using photography, maps, testimony, video, and installation to investigate migration, borders, infrastructure, and the politics of mobility.`
+  },
+  'wangechi-mutu': {
+    leadJa: `ワンゲチ・ムトゥは、民族誌写真・ファッション写真・医学図版などの断片をコラージュし、植民地主義とジェンダー化された身体表象の歴史を再構成するケニア出身のアーティスト。`,
+    leadEn: `Wangechi Mutu reworks fragments of ethnographic photography, fashion imagery, medical illustration, and photomontage to challenge colonial and gendered histories of the body.`
+  },
+  'ohio': {
+    leadJa: `OHIOは、写真雑誌を展示空間のように扱い、日常的で複製可能な写真の編集・出版・流通を作品化したドイツのプロジェクト。単独作品ではなくページ上の並置から写真を捉え直す。`,
+    leadEn: `OHIO is a German photomagazine and art project that treats publication as an exhibition space, reframing everyday and reproducible photographs through editing, sequencing, and circulation.`
+  },
+  'eve-sussman': {
+    leadJa: `イヴ・サスマンは、歴史絵画のタブローや写真の構図を映像・インスタレーションへ展開し、静止画像が時間、身体、演技によってどのように揺らぐかを探る作家。`,
+    leadEn: `Eve Sussman extends art-historical tableaux and photographic composition into film and installation, exploring how still images become unstable through duration, gesture, and performance.`
+  },
+  'useful-photography': {
+    leadJa: `ユースフル・フォトグラフィーは、実用的・匿名的・日常的な写真を収集・編集し、美術作品ではなく社会の中で使われる画像として写真の価値を捉え直す編集プロジェクト。`,
+    leadEn: `Useful Photography collects and edits practical, anonymous, and vernacular images, shifting attention from authored art photographs to the social uses and afterlives of photographic images.`
   }
 
 });

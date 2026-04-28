@@ -84,15 +84,17 @@ def render_card(
     photographer: dict,
     *,
     lang: str,
+    all_photographers: list[dict],
+    era_order: dict[str, int],
     movements_meta: dict,
     enrichments: dict,
     country_overrides: dict,
     essay_overrides: dict,
+    photographer_order: dict[str, int],
     era_lookup: dict,
 ) -> str:
     country_meta = tax.photographer_country_meta(photographer, enrichments, country_overrides, lang)
     movement_names = [tax.localized_movement_name(m, movements_meta, lang) for m in photographer.get("movements") or []]
-    tags = "".join(f'<span class="card-tag">{tax.esc(name)}</span>' for name in movement_names)
     compact_tags = "".join(f'<span class="card-tag">{tax.esc(name)}</span>' for name in movement_names[:2])
     if len(movement_names) > 2:
         compact_tags += f'<span class="card-tag card-tag-more">+{len(movement_names) - 2}</span>'
@@ -109,6 +111,17 @@ def render_card(
     if not placeholder:
         pid = tax.esc(photographer["id"])
         coordinate_html = f'<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer(\'{pid}\')">{coordinate_button}</button>'
+    related_people_html = render_card_related_people(
+        photographer,
+        all_photographers,
+        era_order=era_order,
+        lang=lang,
+        movements_meta=movements_meta,
+        enrichments=enrichments,
+        country_overrides=country_overrides,
+        photographer_order=photographer_order,
+    )
+    related_movements_html = render_card_related_movements(photographer, lang=lang, movements_meta=movements_meta)
     return f"""
     <div class="photographer-card{' placeholder' if placeholder else ''}" data-pid="{tax.esc(photographer['id'])}" data-nationality="{tax.esc(country_meta.get('nationality', ''))}" data-movements="{tax.esc(','.join(photographer.get('movements') or []))}" data-search="{card_search_index(photographer, country_meta, movements_meta, lang)}" data-placeholder="{'true' if placeholder else 'false'}" role="button" tabindex="0" onclick="toggleDetail('{tax.esc(photographer['id'])}', this)">
       <div class="card-action">
@@ -126,35 +139,96 @@ def render_card(
       </div>
       {alt_html}
       <div class="card-years card-years-desktop">{tax.esc(years)}</div>
-      <div class="card-tags">{tags}</div>
+      <div class="card-tags"></div>
       <div class="mobile-card-tags">{compact_tags}</div>
+      {coordinate_html}
       <div class="mobile-card-summary">
         <p class="mobile-card-summary-text">{tax.esc(summary)}</p>
         <a class="mobile-card-readmore" href="{tax.photographer_path(photographer, lang)}" onclick="event.stopPropagation()">{readmore}</a>
       </div>
-      {coordinate_html}
+      {related_movements_html}
+      {related_people_html}
     </div>"""
+
+
+def render_card_related_movements(photographer: dict, *, lang: str, movements_meta: dict) -> str:
+    movements = photographer.get("movements") or []
+    links = []
+    for movement in movements[:3]:
+        label = tax.esc(tax.localized_movement_name(movement, movements_meta, lang))
+        slug = tax.esc(tax.movement_slug(movement, lang, movements_meta))
+        links.append(f"<a href=\"#movement-{slug}\" onclick=\"event.stopPropagation(); openRecommendedMovement(event,'{slug}')\">{label}</a>")
+    if not links:
+        return ""
+    label = "Related movements" if lang == "en" else "関連する運動"
+    return f'<div class="card-related-movements"><span>{label}</span>{"".join(links)}</div>'
+
+
+def render_card_related_people(
+    photographer: dict,
+    all_photographers: list[dict],
+    *,
+    era_order: dict[str, int],
+    lang: str,
+    movements_meta: dict,
+    enrichments: dict,
+    country_overrides: dict,
+    photographer_order: dict[str, int],
+) -> str:
+    movement_set = set(photographer.get("movements") or [])
+    country = tax.photographer_country_code(photographer, enrichments, country_overrides)
+    target_era_index = era_order.get(photographer.get("era") or "", 999)
+    target_order_index = photographer_order.get(photographer.get("id") or "", 9999)
+    candidates = []
+    for candidate in all_photographers:
+        if candidate.get("id") == photographer.get("id"):
+            continue
+        shared = movement_set.intersection(candidate.get("movements") or [])
+        same_era = candidate.get("era") == photographer.get("era")
+        same_country = country and country == tax.photographer_country_code(candidate, enrichments, country_overrides)
+        if not shared and not same_era and not same_country:
+            continue
+        era_gap = abs(era_order.get(candidate.get("era") or "", 999) - target_era_index)
+        order_gap = abs(photographer_order.get(candidate.get("id") or "", 9999) - target_order_index)
+        score = len(shared) * 100 + (18 if same_era else max(0, 10 - era_gap * 3)) + (6 if same_country else 0) - min(order_gap, 36)
+        candidates.append((score, era_gap, order_gap, candidate))
+    candidates.sort(key=lambda item: (-item[0], item[1], item[2]))
+    links = []
+    for _score, _era_gap, _order_gap, candidate in candidates[:4]:
+        pid = tax.esc(candidate.get("id") or "")
+        label = tax.esc(tax.display_name(candidate, lang))
+        links.append(f"<a href=\"#photographer-{pid}\" onclick=\"event.stopPropagation(); openRecommendedPhotographer(event,'{pid}')\">{label}</a>")
+    if not links:
+        return ""
+    label = "Related" if lang == "en" else "関連人物"
+    return f'<div class="card-related-people"><span>{label}</span>{"".join(links)}</div>'
 
 
 def render_era_section(
     era: dict,
     photographers: list[dict],
     *,
+    all_photographers: list[dict],
+    era_order: dict[str, int],
     lang: str,
     movements_meta: dict,
     enrichments: dict,
     country_overrides: dict,
     essay_overrides: dict,
+    photographer_order: dict[str, int],
     era_lookup: dict,
 ) -> str:
     cards = "".join(
         render_card(
             photographer,
             lang=lang,
+            all_photographers=all_photographers,
+            era_order=era_order,
             movements_meta=movements_meta,
             enrichments=enrichments,
             country_overrides=country_overrides,
             essay_overrides=essay_overrides,
+            photographer_order=photographer_order,
             era_lookup=era_lookup,
         )
         for photographer in photographers
@@ -230,6 +304,8 @@ def main() -> None:
         "ERAS",
     )
     era_lookup = {era["id"]: era for era in eras}
+    era_order = {era["id"]: index for index, era in enumerate(eras)}
+    photographer_order = {photographer["id"]: index for index, photographer in enumerate(photographers)}
     by_era: dict[str, list[dict]] = {}
     for photographer in photographers:
         by_era.setdefault(photographer.get("era"), []).append(photographer)
@@ -251,11 +327,14 @@ def main() -> None:
                 render_era_section(
                     era,
                     people,
+                    all_photographers=photographers,
+                    era_order=era_order,
                     lang=lang,
                     movements_meta=movements_meta,
                     enrichments=enrichments,
                     country_overrides=country_overrides,
                     essay_overrides=essay_overrides,
+                    photographer_order=photographer_order,
                     era_lookup=era_lookup,
                 )
             )
