@@ -2369,6 +2369,39 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['hiroshi-sugimoto'] = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['edward-weston'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4eYwffY' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4n3ygd0' }
+  },
+  books: [
+    {
+      languages: ['ja'],
+      titleJa: 'エドワード・ウェストン 写真集 1',
+      noteJa: 'エドワード・ウェストンの写真集を探すためのAmazonリンク。',
+      urlJa: 'https://amzn.to/4eYwffY'
+    },
+    {
+      languages: ['ja'],
+      titleJa: 'エドワード・ウェストン 写真集 2',
+      noteJa: '同じ作家を別の本や別の掲載でたどるための関連リンク。',
+      urlJa: 'https://amzn.to/4ddO7SW'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Edward Weston photobook 1',
+      noteEn: 'An Amazon link for finding photobooks by Edward Weston.',
+      urlEn: 'https://amzn.to/4n3ygd0'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Edward Weston photobook 2',
+      noteEn: 'A related link for following Weston through another book or edition.',
+      urlEn: 'https://amzn.to/4cX6jiw'
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-金丸重嶺'] = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3Q6RnX8' },
