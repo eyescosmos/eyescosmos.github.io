@@ -69,6 +69,10 @@ function useGraph() {
   }, []);
 }
 
+function isMobileViewportWidth(width) {
+  return width < 700;
+}
+
 // ======================================================
 // Main Constellation View
 // ======================================================
@@ -103,9 +107,10 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
   const padY = Math.max(100, viewport.h * 0.14);
   const cx = viewport.w / 2;
   const cy = viewport.h / 2;
+  const isMobileViewport = isMobileViewportWidth(viewport.w);
   const spread = tweaks.spread || 1;
-  const getViewportInsets = () => viewport.w < 900
-    ? { left: 26, right: 26, top: 120, bottom: 88 }
+  const getViewportInsets = () => isMobileViewport
+    ? { left: 24, right: 24, top: 184, bottom: 116 }
     : { left: Math.min(360, viewport.w * 0.29), right: 90, top: 122, bottom: 92 };
   const toSpreadPx = (p) => {
     const baseX = padX + p.x * (viewport.w - padX * 2);
@@ -202,7 +207,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
         : aEntry.depth === 2 && bEntry.depth === 2
           ? 122 + crowdBoost * 16 + denseBoost * 10
           : 126 + crowdBoost * 18 + denseBoost * 10;
-      return (baseGap + Math.min(36, labelFactor * 1.45)) * specialFocusSpread;
+      return (baseGap + Math.min(36, labelFactor * 1.45)) * specialFocusSpread * (isMobileViewport ? 0.62 : 1);
     };
     const averageAngle = (angles) => {
       if (!angles.length) return 0;
@@ -243,14 +248,15 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
       parentIdsBySecond.get(secondId).push(firstId);
     });
 
+    const mobileConstellationScale = isMobileViewport ? 0.58 : 1;
     const ringRadius1 = Math.max(
       194 + crowdBoost * 22 + denseBoost * 14,
       unit * (0.255 + crowdBoost * 0.016 + denseBoost * 0.011)
-    ) * specialFocusSpread;
+    ) * specialFocusSpread * mobileConstellationScale;
     const ringRadius2 = Math.max(
       ringRadius1 + 148 + crowdBoost * 20 + denseBoost * 14,
       unit * (0.415 + crowdBoost * 0.019 + denseBoost * 0.013)
-    ) * specialFocusSpread;
+    ) * specialFocusSpread * mobileConstellationScale;
 
     const firstDegreeAngleById = new Map();
     const secondDegreeIds = activeEntries.filter((entry) => entry.depth === 2).map((entry) => entry.id);
@@ -291,7 +297,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
 
       const rawSpan = Math.max(0.001, ordered[ordered.length - 1].normalized - ordered[0].normalized);
       const targetSpan = Math.min(
-        Math.PI * 1.9,
+        Math.PI * (isMobileViewport ? 1.72 : 1.9),
         Math.max(minGap * (ordered.length - 1), rawSpan * spanBias, 0.62 * (ordered.length - 1))
       );
       const start = center - targetSpan * 0.5;
@@ -393,10 +399,10 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
     }
 
     const bounds = {
-      minX: focusBase.x - Math.max(560 + crowdBoost * 30 + denseBoost * 20, unit * 0.72) * specialFocusSpread,
-      maxX: focusBase.x + Math.max(560 + crowdBoost * 30 + denseBoost * 20, unit * 0.72) * specialFocusSpread,
-      minY: focusBase.y - Math.max(462 + crowdBoost * 22 + denseBoost * 16, unit * 0.6) * specialFocusSpread,
-      maxY: focusBase.y + Math.max(462 + crowdBoost * 22 + denseBoost * 16, unit * 0.6) * specialFocusSpread
+      minX: focusBase.x - Math.max(560 + crowdBoost * 30 + denseBoost * 20, unit * 0.72) * specialFocusSpread * mobileConstellationScale,
+      maxX: focusBase.x + Math.max(560 + crowdBoost * 30 + denseBoost * 20, unit * 0.72) * specialFocusSpread * mobileConstellationScale,
+      minY: focusBase.y - Math.max(462 + crowdBoost * 22 + denseBoost * 16, unit * 0.6) * specialFocusSpread * mobileConstellationScale,
+      maxY: focusBase.y + Math.max(462 + crowdBoost * 22 + denseBoost * 16, unit * 0.6) * specialFocusSpread * mobileConstellationScale
     };
     activeEntries.forEach((entry) => {
       if (entry.depth === 0) return;
@@ -478,10 +484,11 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
         const availableHeight = Math.max(220, viewport.h - insets.top - insets.bottom);
         const boundsWidth = Math.max(220, maxX - minX);
         const boundsHeight = Math.max(220, maxY - minY);
-        nextTargetZoom = Math.max(0.72, Math.min(3.2, Math.min(
+        const fitZoom = Math.max(isMobileViewport ? 0.98 : 0.72, Math.min(isMobileViewport ? 1.35 : 3.2, Math.min(
           availableWidth / boundsWidth,
           availableHeight / boundsHeight
-        ) * 1.08));
+        ) * (isMobileViewport ? 1.22 : 1.08)));
+        nextTargetZoom = isMobileViewport ? Math.max(1.06, fitZoom) : fitZoom;
 
         const desiredScreenX = insets.left + availableWidth * 0.5;
         const desiredScreenY = insets.top + availableHeight * 0.5;
@@ -614,6 +621,10 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
   // Label visibility logic — readability first.
   const shouldShowLabel = (p, depth, isActive, isHovered) => {
     if (isActive || isHovered) return true;
+    if (isMobileViewport) {
+      if (selected) return depth === 1 && p.influence >= 7;
+      return p.influence >= 9.5;
+    }
     if (depth === 1) return true;
     if (depth === 2) return true;
     if (tweaks.labelDensity === 'all') return true;
@@ -863,19 +874,26 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
 // ======================================================
 // Info Card
 // ======================================================
-function InfoCard({ selected, onClose, onSelectRelated }) {
+function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated }) {
   const { byId, adj } = useGraph();
+  const toggleLabel = selected && byId[selected] ? byId[selected].name : '星座をたどる';
+  const toggleSubLabel = selected ? '作家情報' : 'Guide';
   if (!selected) {
     return (
-      <div className="info-card" style={{ width: "223px" }}>
-        <div className="card-topline"><span>▸ 写真の座標</span></div>
-        <h2 style={{ fontFamily: "\"DM Mono\"" }}>星座をたどる</h2>
-        <div className="en-name">Trace the constellations</div>
-        <p style={{ fontSize: 12.5, lineHeight: 1.7, color: 'var(--ink-80)' }}>
-          星をクリックすると、その写真家と同じ表現文脈で繋がる星座が浮かび上がります。
-        </p>
-        <div className="hint">DRAG 探索 · CLICK 選択 · 表現の文脈 → 星座</div>
-      </div>);
+      <>
+        <button className="info-card-toggle" type="button" onClick={onToggleOpen} aria-expanded={isOpen}>
+          {toggleSubLabel} · {toggleLabel}
+        </button>
+        <div className={`info-card ${isOpen ? 'is-open' : ''}`} style={{ width: "223px" }}>
+          <div className="card-topline"><span>▸ 写真の座標</span></div>
+          <h2 style={{ fontFamily: "\"DM Mono\"" }}>星座をたどる</h2>
+          <div className="en-name">Trace the constellations</div>
+          <p style={{ fontSize: 12.5, lineHeight: 1.7, color: 'var(--ink-80)' }}>
+            星をクリックすると、その写真家と同じ表現文脈で繋がる星座が浮かび上がります。
+          </p>
+          <div className="hint">DRAG 探索 · CLICK 選択 · 表現の文脈 → 星座</div>
+        </div>
+      </>);
 
   }
   const p = byId[selected];
@@ -889,50 +907,55 @@ function InfoCard({ selected, onClose, onSelectRelated }) {
   });
 
   return (
-    <div className="info-card">
-      <button className="close-btn" onClick={onClose} aria-label="close">×</button>
-      <div className="card-topline">
-        <span>▸ 写真家 / PHOTOGRAPHER</span>
-      </div>
-      <h2 style={{ fontFamily: "\"Yu Gothic\"", fontSize: "16px" }}>{p.name}</h2>
-      <div className="en-name">{p.nameEn}</div>
-      <div className="meta-row">
-        <div className="meta">生没年<strong>{p.years}</strong></div>
-        <div className="meta">国<strong>{p.country}</strong></div>
-        <div className="meta">年代<strong>{p.era}</strong></div>
-      </div>
-      <div className="movements">
-        {p.movements.map((m) => {
-          const mv = window.MOVEMENTS[m];
-          const color = mv ? `oklch(0.78 0.1 ${mv.hue})` : 'var(--ink-80)';
-          return <span key={m} className="movement-chip" style={{ '--chip-color': color }}>{m}</span>;
-        })}
-      </div>
-      <div className="connections-list">
-        <strong>★ 星座でつながる写真家</strong>
-        {Object.entries(byMove).map(([move, ids]) => {
-          const mv = window.MOVEMENTS[move];
-          const color = mv ? `oklch(0.78 0.1 ${mv.hue})` : 'var(--accent-cool)';
-          return (
-            <div key={move} style={{ marginBottom: 6 }}>
-              <span style={{
-                fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.15em',
-                color, marginRight: 8, textTransform: 'uppercase'
-              }}>{move}</span>
-              {ids.map((id, i) =>
-              <React.Fragment key={id}>
-                  <a onClick={() => onSelectRelated(id)}>{byId[id].name}</a>
-                  {i < ids.length - 1 && <span style={{ color: 'var(--ink-40)' }}>・</span>}
-                </React.Fragment>
-              )}
-            </div>);
+    <>
+      <button className="info-card-toggle" type="button" onClick={onToggleOpen} aria-expanded={isOpen}>
+        {toggleSubLabel} · {toggleLabel}
+      </button>
+      <div className={`info-card ${isOpen ? 'is-open' : ''}`}>
+        <button className="close-btn" onClick={onClose} aria-label="close">×</button>
+        <div className="card-topline">
+          <span>▸ 写真家 / PHOTOGRAPHER</span>
+        </div>
+        <h2 style={{ fontFamily: "\"Yu Gothic\"", fontSize: "16px" }}>{p.name}</h2>
+        <div className="en-name">{p.nameEn}</div>
+        <div className="meta-row">
+          <div className="meta">生没年<strong>{p.years}</strong></div>
+          <div className="meta">国<strong>{p.country}</strong></div>
+          <div className="meta">年代<strong>{p.era}</strong></div>
+        </div>
+        <div className="movements">
+          {p.movements.map((m) => {
+            const mv = window.MOVEMENTS[m];
+            const color = mv ? `oklch(0.78 0.1 ${mv.hue})` : 'var(--ink-80)';
+            return <span key={m} className="movement-chip" style={{ '--chip-color': color }}>{m}</span>;
+          })}
+        </div>
+        <div className="connections-list">
+          <strong>★ 星座でつながる写真家</strong>
+          {Object.entries(byMove).map(([move, ids]) => {
+            const mv = window.MOVEMENTS[move];
+            const color = mv ? `oklch(0.78 0.1 ${mv.hue})` : 'var(--accent-cool)';
+            return (
+              <div key={move} style={{ marginBottom: 6 }}>
+                <span style={{
+                  fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.15em',
+                  color, marginRight: 8, textTransform: 'uppercase'
+                }}>{move}</span>
+                {ids.map((id, i) =>
+                <React.Fragment key={id}>
+                    <a onClick={() => onSelectRelated(id)}>{byId[id].name}</a>
+                    {i < ids.length - 1 && <span style={{ color: 'var(--ink-40)' }}>・</span>}
+                  </React.Fragment>
+                )}
+              </div>);
 
-        })}
+          })}
+        </div>
+        <a href={p.url} target="_blank" rel="noopener" className="hint" style={{ display: 'block', textDecoration: 'none' }}>
+          → 詳細ページを開く / {p.url.replace('https://eyescosmos.github.io', '')}
+        </a>
       </div>
-      <a href={p.url} target="_blank" rel="noopener" className="hint" style={{ display: 'block', textDecoration: 'none' }}>
-        → 詳細ページを開く / {p.url.replace('https://eyescosmos.github.io', '')}
-      </a>
-    </div>);
+    </>);
 
 }
 
@@ -997,6 +1020,13 @@ function FilterDropdown({ label, options, filter, onChange, kind }) {
 // ======================================================
 function ConnectionLegend({ selected, hops = 2 }) {
   const { byId, adj } = useGraph();
+  const [legendOpen, setLegendOpen] = useState(() => {
+    try {
+      return window.innerWidth > 768;
+    } catch {
+      return true;
+    }
+  });
   if (!selected || !byId[selected]) return null;
   const depths = new Map([[selected, 0]]);
   let frontier = [selected];
@@ -1040,7 +1070,8 @@ function ConnectionLegend({ selected, hops = 2 }) {
     .map(([move]) => move);
   if (moves.length === 0) return null;
   return (
-    <div className="connection-legend">
+    <details className="connection-legend" open={legendOpen} onToggle={(event) => setLegendOpen(event.currentTarget.open)}>
+      <summary className="legend-summary">線</summary>
       <div className="legend-title">線の色 = 表現でのつながり</div>
       <ul>
         {moves.map((m) => {
@@ -1055,7 +1086,7 @@ function ConnectionLegend({ selected, hops = 2 }) {
 
         })}
       </ul>
-    </div>);
+    </details>);
 
 }
 
@@ -1150,14 +1181,178 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "mode": "constellation"
 } /*EDITMODE-END*/;
 
+const MOBILE_TOP_CSS = `
+.info-card-toggle {
+  display: none;
+}
+.connection-legend .legend-summary {
+  display: none;
+  list-style: none;
+}
+.connection-legend .legend-summary::-webkit-details-marker {
+  display: none;
+}
+@media (max-width: 699px) {
+  .masthead {
+    top: calc(16px + env(safe-area-inset-top, 0px));
+    left: 16px;
+    max-width: 220px;
+  }
+  .masthead.dim {
+    opacity: 0.72;
+  }
+  .masthead .eyebrow {
+    margin-bottom: 8px;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+  }
+  .masthead h1 {
+    font-size: 40px;
+    margin-bottom: 6px;
+  }
+  .masthead .sub-en {
+    margin-bottom: 0;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+  .masthead p {
+    display: none;
+  }
+  .side-controls {
+    top: calc(16px + env(safe-area-inset-top, 0px));
+    right: 16px;
+    gap: 0;
+    align-items: flex-end;
+  }
+  .side-controls .dropdown {
+    display: none;
+  }
+  .lang-toggle {
+    margin-bottom: 0;
+  }
+  .lang-toggle button {
+    min-width: 44px;
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+  .side-controls .spread-control {
+    position: fixed;
+    top: calc(132px + env(safe-area-inset-top, 0px));
+    left: 16px;
+    z-index: 24;
+    width: 136px !important;
+    min-width: 0;
+    padding: 8px 10px;
+    background: rgba(10, 14, 24, 0.54);
+  }
+  .side-controls .spread-control input[type="range"]::-webkit-slider-thumb {
+    width: 11px;
+    height: 11px;
+  }
+  .side-controls .spread-control input[type="range"]::-moz-range-thumb {
+    width: 11px;
+    height: 11px;
+  }
+  .info-card {
+    display: none !important;
+  }
+  .info-card.is-open {
+    display: block !important;
+    left: 16px !important;
+    right: 16px !important;
+    bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+    width: auto !important;
+    max-height: min(52svh, 360px) !important;
+    padding: 16px 18px !important;
+  }
+  .info-card-toggle {
+    display: block;
+    position: absolute;
+    left: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 22;
+    min-width: 132px;
+    max-width: calc(100vw - 152px);
+    min-height: 34px;
+    padding: 8px 12px;
+    border: 1px solid var(--ink-20);
+    border-radius: 2px;
+    background: rgba(10, 14, 24, 0.78);
+    color: var(--ink-80);
+    font: 400 10px/1.2 var(--font-mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    backdrop-filter: blur(12px);
+  }
+  .connection-legend {
+    display: block !important;
+    top: calc(48px + env(safe-area-inset-top, 0px)) !important;
+    right: 16px !important;
+    bottom: auto !important;
+    width: 112px !important;
+    max-height: min(40svh, 300px) !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  .connection-legend .legend-summary {
+    display: block;
+    min-height: 30px;
+    padding: 8px 10px;
+    color: var(--ink-80);
+    font: 400 9px/1.1 var(--font-mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .connection-legend .legend-summary::after {
+    content: '+';
+    float: right;
+    color: var(--ink-40);
+  }
+  .connection-legend[open] .legend-summary::after {
+    content: '-';
+  }
+  .connection-legend .legend-title {
+    padding: 0 10px 6px;
+    margin: 0;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+  .connection-legend ul {
+    padding: 0 10px 10px !important;
+    gap: 3px !important;
+  }
+  .connection-legend li {
+    gap: 6px !important;
+    font-size: 9px !important;
+    line-height: 1.25 !important;
+  }
+  .connection-legend .legend-swatch {
+    width: 10px !important;
+  }
+}
+`;
+
 function App() {
   const [selected, setSelected] = useState(null);
   const [hovered, setHovered] = useState(null);
   const [mode, setMode] = useState(TWEAK_DEFAULTS.mode);
   const [filter, setFilter] = useState(null);
-  const [tweaks, setTweaks] = useState(TWEAK_DEFAULTS);
+  const [tweaks, setTweaks] = useState(() => {
+    try {
+      return isMobileViewportWidth(window.innerWidth)
+        ? { ...TWEAK_DEFAULTS, spread: 2.55, labelDensity: 'minimal' }
+        : TWEAK_DEFAULTS;
+    } catch {
+      return TWEAK_DEFAULTS;
+    }
+  });
   const [showTweaks, setShowTweaks] = useState(false);
   const [editModeHost, setEditModeHost] = useState(false);
+  const [infoCardOpen, setInfoCardOpen] = useState(false);
 
   // Restore persisted selection
   useEffect(() => {
@@ -1173,6 +1368,9 @@ function App() {
       if (selected) localStorage.setItem('pc_selected', selected);else
       localStorage.removeItem('pc_selected');
     } catch {}
+  }, [selected]);
+  useEffect(() => {
+    setInfoCardOpen(false);
   }, [selected]);
   useEffect(() => {
     try {localStorage.setItem('pc_mode', mode);} catch {}
@@ -1221,6 +1419,7 @@ function App() {
       return;
     }
     setSelected(id);
+    setInfoCardOpen(false);
   }, [openPhotographerPage, selected]);
 
   // Keep tweak panel visible only when host is in edit mode (Tweaks toolbar toggle on).
@@ -1255,6 +1454,7 @@ function App() {
         ...(tweaks.font === 'sans' ? { fontFamily: 'var(--font-sans)' } :
         tweaks.font === 'serif' ? { fontFamily: 'var(--font-serif)' } : {})
       }}>
+      <style>{MOBILE_TOP_CSS}</style>
       
       {tweaks.theme === 'dark' && <Starfield density={window.innerWidth < 700 ? 160 : 300} theme="dark" />}
       {tweaks.theme === 'light' && <Starfield density={120} theme="light" />}
@@ -1305,8 +1505,13 @@ function App() {
 
       <InfoCard
         selected={selected}
-        onClose={() => setSelected(null)}
-        onSelectRelated={(id) => setSelected(id)} />
+        isOpen={infoCardOpen}
+        onToggleOpen={() => setInfoCardOpen((open) => !open)}
+        onClose={() => setInfoCardOpen(false)}
+        onSelectRelated={(id) => {
+          setSelected(id);
+          setInfoCardOpen(false);
+        }} />
       
 
       <ConnectionLegend selected={selected} hops={tweaks.hops} />
