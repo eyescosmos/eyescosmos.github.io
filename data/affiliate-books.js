@@ -2318,6 +2318,57 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-植田正治'] = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['hiroshi-sugimoto'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4cGhDk0' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3P9nnK4' }
+  },
+  books: [
+    {
+      languages: ['ja'],
+      titleJa: '杉本博司 写真集 1',
+      noteJa: '杉本博司の写真集を探すためのAmazonリンク。',
+      urlJa: 'https://amzn.to/4cGhDk0'
+    },
+    {
+      languages: ['ja'],
+      titleJa: '杉本博司 写真集 2',
+      noteJa: '同じ作家を別の本や別の掲載でたどるための関連リンク。',
+      urlJa: 'https://amzn.to/4tAqZUt'
+    },
+    {
+      languages: ['ja'],
+      titleJa: '杉本博司 写真集 3',
+      noteJa: '関連写真集や近い版を探すためのリンク。',
+      urlJa: 'https://amzn.to/48tfWUy'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Hiroshi Sugimoto photobook 1',
+      noteEn: 'An Amazon link for finding photobooks by Hiroshi Sugimoto.',
+      urlEn: 'https://amzn.to/3P9nnK4'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Hiroshi Sugimoto photobook 2',
+      noteEn: 'A related link for following Sugimoto through another book or edition.',
+      urlEn: 'https://amzn.to/42xC6BE'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Hiroshi Sugimoto photobook 3',
+      noteEn: 'A link for related photobooks and nearby editions.',
+      urlEn: 'https://amzn.to/422D4FY'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Hiroshi Sugimoto photobook 4',
+      noteEn: 'Another Amazon link for related Sugimoto photobooks.',
+      urlEn: 'https://amzn.to/41Zb8CT'
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-金丸重嶺'] = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3Q6RnX8' },

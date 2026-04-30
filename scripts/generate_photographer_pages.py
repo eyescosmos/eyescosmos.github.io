@@ -364,6 +364,9 @@ def build_affiliate_books_html(photographer: dict, lang: str, affiliate_books: d
     entry = affiliate_books.get(photographer.get("id")) or {}
     books = []
     for book in entry.get("books") or []:
+        languages = book.get("languages")
+        if isinstance(languages, list) and lang not in languages:
+            continue
         title = localize_affiliate_value(book, lang, "titleJa", "titleEn", "title")
         note = localize_affiliate_value(book, lang, "noteJa", "noteEn", "note")
         url = localize_affiliate_value(book, lang, "urlJa", "urlEn", "url")
@@ -377,7 +380,7 @@ def build_affiliate_books_html(photographer: dict, lang: str, affiliate_books: d
                 "imageUrl": image_url,
                 "imageAlt": image_alt,
             })
-    books = books[:3]
+    books = books[:4]
 
     if not books:
         return f"""<section class="section" data-affiliate-section data-nosnippet>
