@@ -1,9 +1,12 @@
 (function () {
   const canvas = document.getElementById('constellation-canvas');
   const ctx = canvas.getContext('2d');
+  const toplineEl = document.getElementById('focus-topline');
   const labelEl = document.getElementById('focus-label');
+  const subtitleEl = document.getElementById('focus-subtitle');
   const metaEl = document.getElementById('focus-meta');
   const hintEl = document.getElementById('focus-hint');
+  const scaleRangeEl = document.getElementById('stage-scale-range');
   const fadeEl = document.getElementById('page-fade');
   const zoomInButton = document.getElementById('zoom-in');
   const zoomOutButton = document.getElementById('zoom-out');
@@ -12,19 +15,18 @@
   const languageApi = window.PhotoCoordinatesI18n;
   let currentLanguage = languageApi ? languageApi.getLanguage() : 'ja';
 
+  const nodePalette = ['#f2b9bf', '#d9b0ec', '#c9c8fb', '#6fdbe1', '#8ee8c1', '#f2c57d', '#f3ede6', '#8fb8f5'];
+  const starPalette = ['255,247,235', '245,187,193', '221,182,239', '113,223,228', '147,232,197', '245,198,129', '255,255,255', '158,193,244'];
   const palette = {
-    photographer: '#f1ddc1',
-    movement: '#9ec3f4',
-    idea: '#d7c4f0',
     activeText: '#f5ecdf',
-    text: 'rgba(238, 230, 216, 0.78)',
-    textOutline: '#040507',
-    link: 'rgba(211, 186, 151, 0.5)',
-    linkGlow: 'rgba(211, 186, 151, 0.12)',
-    focusLinkDepth1: 'rgba(126, 212, 255, 0.92)',
-    focusLinkDepth1Glow: 'rgba(126, 212, 255, 0.24)',
-    focusLinkDepth2: 'rgba(227, 198, 149, 0.7)',
-    focusLinkDepth2Glow: 'rgba(227, 198, 149, 0.16)'
+    text: 'rgba(238, 230, 216, 0.68)',
+    textOutline: 'rgba(5, 7, 13, 0.9)',
+    link: 'rgba(238, 230, 216, 0.5)',
+    linkGlow: 'rgba(238, 230, 216, 0.12)',
+    focusLinkDepth1: '#8eb8ff',
+    focusLinkDepth1Glow: 'rgba(142, 184, 255, 0.28)',
+    focusLinkDepth2: 'rgba(238, 230, 216, 0.5)',
+    focusLinkDepth2Glow: 'rgba(238, 230, 216, 0.14)'
   };
 
   const typeLabel = {
@@ -49,10 +51,12 @@
       lede: 'クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。',
       eraLink: '年代順で見る',
       movementLink: '運動・表現から見る',
-      defaultLabel: '写真の座標',
-      defaultMeta: '点ではなく名前そのものをたどりながら、関係の地図を横断します。',
-      defaultHintPointer: 'クリックで関係を開き、◎で初期表示に戻れます。',
-      defaultHintTouch: 'タップで関係を開き、◎で初期表示に戻れます。',
+      defaultTopline: '写真の座標',
+      defaultLabel: '星座をたどる',
+      defaultSubtitle: 'Trace the constellations',
+      defaultMeta: '星をクリックすると、その写真家と同じ表現の文脈で結ばれた星座がゆっくり浮かび上がります。',
+      defaultHintPointer: 'DRAG 探索 ・ CLICK 選択 ・ もう一度 CLICK で詳細へ',
+      defaultHintTouch: 'DRAG 探索 ・ TAP 選択 ・ もう一度 TAP で詳細へ',
       focusedHint: '固定中。線はこの対象から辿れるつながりを示します。もう一度クリックで新しいタブに詳細を開きます。',
       dragHint: '固定中。ドラッグで地図を移動できます。',
       notFocusedHint: 'まだ固定されていません。クリックするとこの名前が中心になります。',
@@ -67,10 +71,12 @@
       lede: 'Use this map to follow how photographers, artistic movements, visual culture, and historical context connect across the history of photography.<br>Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.',
       eraLink: 'Browse by Era',
       movementLink: 'Browse by Movement',
-      defaultLabel: 'Photo Coordinates',
-      defaultMeta: 'Follow names rather than dots, and move across a map of relationships.',
-      defaultHintPointer: 'Click to reveal relationships, and use ◎ to return to the default view.',
-      defaultHintTouch: 'Tap to reveal relationships, and use ◎ to return to the default view.',
+      defaultTopline: 'Photo Coordinates',
+      defaultLabel: 'Trace the constellations',
+      defaultSubtitle: 'Follow the relational field',
+      defaultMeta: 'Click a star and the surrounding constellation slowly reveals the photographers, movements, and ideas connected to it.',
+      defaultHintPointer: 'DRAG to explore ・ CLICK to select ・ CLICK again to open details',
+      defaultHintTouch: 'DRAG to explore ・ TAP to select ・ TAP again to open details',
       focusedHint: 'Pinned. The lines show what can be traced outward from this subject. Click once more to open the detail page in a new tab.',
       dragHint: 'Pinned. You can drag to move around the map.',
       notFocusedHint: 'This node is not pinned yet. Click to bring it to the center.',
@@ -220,6 +226,15 @@
     return ((hashNumber(value) % 1000) / 999 - 0.5) * amplitude;
   }
 
+  function getHashedColor(value, colors) {
+    return colors[hashNumber(value) % colors.length];
+  }
+
+  function getNodeColor(node) {
+    if (!node) return '#f3ede6';
+    return getHashedColor(`${node.id}:${node.type}`, nodePalette);
+  }
+
   function stableAngle(value) {
     return (hashNumber(value) % 360) * (Math.PI / 180);
   }
@@ -334,10 +349,22 @@
           driftX: (Math.random() - 0.5) * 8.2,
           driftY: (Math.random() - 0.5) * 7.1,
           pulse: 0.9 + Math.random() * 0.22,
-          glow: bright ? 1 : Math.random() > 0.6 ? 1 : 0
+          glow: bright ? 1 : Math.random() > 0.6 ? 1 : 0,
+          color: starPalette[Math.floor(Math.random() * starPalette.length)]
         };
       }
     );
+  }
+
+  function syncScaleRange() {
+    if (!scaleRangeEl) return;
+    const span = state.maxScale - state.minScale;
+    if (span <= 0) {
+      scaleRangeEl.value = '0';
+      return;
+    }
+    const ratio = (state.targetScale - state.minScale) / span;
+    scaleRangeEl.value = String(Math.round(Math.max(0, Math.min(1, ratio)) * 100));
   }
 
   function resize() {
@@ -351,6 +378,7 @@
     ctx.setTransform(state.ratio, 0, 0, state.ratio, 0, 0);
     createStars();
     updateScaleBounds();
+    syncScaleRange();
     const focused = getFocusedNode();
     if (focused) {
       frameFocusedViewport(focused);
@@ -958,6 +986,7 @@
     state.targetCameraX = boundsCenterX - ((desiredScreenX - state.width * 0.5) / state.targetScale);
     state.targetCameraY = boundsCenterY - ((desiredScreenY - state.height * 0.5) / state.targetScale);
     clampCamera();
+    syncScaleRange();
   }
 
   function getFocusedNode() {
@@ -990,7 +1019,9 @@
     const target = node || hovered;
 
     if (!target) {
+      if (toplineEl) toplineEl.textContent = localizedUi('defaultTopline');
       labelEl.textContent = localizedUi('defaultLabel');
+      if (subtitleEl) subtitleEl.textContent = localizedUi('defaultSubtitle');
       metaEl.textContent = localizedUi('defaultMeta');
       hintEl.textContent = prefersCoarse
         ? localizedUi('defaultHintTouch')
@@ -1003,8 +1034,16 @@
     const reachCount = traversal
       ? Array.from(traversal.depths.values()).filter(depth => depth > 0 && depth <= state.maxVisibleDepth).length
       : 0;
+    if (toplineEl) toplineEl.textContent = typeLabel[currentLanguage][target.type];
     labelEl.textContent = getNodeLabel(target);
-    metaEl.textContent = `${typeLabel[currentLanguage][target.type]} / ${localizedUi('direct')} ${relatedCount} / ${localizedUi('visible')} ${reachCount}`;
+    if (subtitleEl) {
+      subtitleEl.textContent = currentLanguage === 'en'
+        ? (target.labelJa || typeLabel.ja[target.type])
+        : (target.labelEn || typeLabel.en[target.type]);
+    }
+    metaEl.textContent = currentLanguage === 'en'
+      ? `Directly connected to ${relatedCount} nodes. ${reachCount ? `${reachCount} are currently unfolding in view.` : 'Select it to unfold the surrounding constellation.'}`
+      : `直接つながる関係は ${relatedCount} 件。${reachCount ? `いま ${reachCount} 件のつながりが星座として開いています。` : '選択すると周囲の星座が開きます。'}`;
     if (node && node.id === target.id) {
       hintEl.textContent = target.url
         ? localizedUi('focusedHint')
@@ -1056,6 +1095,7 @@
   function nudgeZoom(multiplier) {
     state.targetScale = clampScale(state.targetScale * multiplier);
     clampCamera();
+    syncScaleRange();
     scheduleFrame();
   }
 
@@ -1064,6 +1104,7 @@
     const multiplier = Math.exp(-event.deltaY * 0.0022);
     state.targetScale = clampScale(state.targetScale * multiplier);
     clampCamera();
+    syncScaleRange();
     scheduleFrame();
   }
 
@@ -1123,6 +1164,7 @@
     }
     initialNode.glow = 1.2;
     clampCamera();
+    syncScaleRange();
     updateFocusPanel();
     updateCursor();
     scheduleFrame();
@@ -1308,7 +1350,7 @@
       state.width * 0.78
     );
     gradient.addColorStop(0, 'rgba(15, 18, 24, 0.82)');
-    gradient.addColorStop(0.35, 'rgba(11, 14, 20, 0.48)');
+    gradient.addColorStop(0.35, 'rgba(11, 14, 20, 0.42)');
     gradient.addColorStop(1, 'rgba(4, 5, 8, 0)');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, state.width, state.height);
@@ -1321,7 +1363,7 @@
       state.height * 0.28,
       state.width * 0.34
     );
-    nebulaA.addColorStop(0, 'rgba(104, 138, 255, 0.08)');
+    nebulaA.addColorStop(0, 'rgba(104, 138, 255, 0.12)');
     nebulaA.addColorStop(1, 'rgba(104, 138, 255, 0)');
     ctx.fillStyle = nebulaA;
     ctx.fillRect(0, 0, state.width, state.height);
@@ -1334,7 +1376,7 @@
       state.height * 0.7,
       state.width * 0.28
     );
-    nebulaB.addColorStop(0, 'rgba(226, 192, 146, 0.06)');
+    nebulaB.addColorStop(0, 'rgba(160, 88, 132, 0.1)');
     nebulaB.addColorStop(1, 'rgba(226, 192, 146, 0)');
     ctx.fillStyle = nebulaB;
     ctx.fillRect(0, 0, state.width, state.height);
@@ -1345,11 +1387,11 @@
       const offsetY = star.driftY * introEase * Math.cos(time * 1.08 + star.phase);
       const pulse = 0.9 + Math.sin(time * star.pulse + star.phase) * 0.12;
       ctx.beginPath();
-      ctx.fillStyle = `rgba(255, 247, 235, ${Math.min(0.85, star.alpha * pulse)})`;
-      ctx.shadowBlur = star.glow ? 15 + introEase * 6 : 3;
+      ctx.fillStyle = `rgba(${star.color}, ${Math.min(0.92, star.alpha * pulse)})`;
+      ctx.shadowBlur = star.glow ? 18 + introEase * 8 : 4;
       ctx.shadowColor = star.glow
-        ? 'rgba(255, 243, 224, 0.52)'
-        : 'rgba(210, 225, 255, 0.16)';
+        ? `rgba(${star.color}, 0.44)`
+        : `rgba(${star.color}, 0.16)`;
       ctx.arc(star.x + offsetX, star.y + offsetY, star.radius * (0.96 + pulse * 0.08), 0, Math.PI * 2);
       ctx.fill();
     });
@@ -1375,9 +1417,9 @@
       ctx.moveTo(start.x, start.y);
       ctx.lineTo(end.x, end.y);
       ctx.strokeStyle = depth === 1 ? palette.focusLinkDepth1 : palette.focusLinkDepth2;
-      ctx.lineWidth = depth === 1 ? 1.4 : 1.02;
-      ctx.globalAlpha = depth === 1 ? 0.92 : 0.56;
-      ctx.shadowBlur = depth === 1 ? 9 : 4;
+      ctx.lineWidth = depth === 1 ? 1.2 : 0.82;
+      ctx.globalAlpha = depth === 1 ? 1 : 0.52;
+      ctx.shadowBlur = depth === 1 ? 8 : 3;
       ctx.shadowColor = depth === 1 ? palette.focusLinkDepth1Glow : palette.focusLinkDepth2Glow;
       ctx.stroke();
       ctx.shadowBlur = 0;
@@ -1393,28 +1435,29 @@
 
     if (!isNodeNearViewport(node)) return;
     const point = { x: node.screenX, y: node.screenY };
+    const nodeColor = getNodeColor(node);
     const prominenceBoost = node.type === 'photographer' && node.prominence ? 1.15 : 0;
     const baseRadius = node.type === 'photographer'
-      ? 2.15 + prominenceBoost
+      ? 3.1 + prominenceBoost
       : node.type === 'movement'
-        ? 1.65
-        : 1.45;
-    const radius = baseRadius + (nodeState.active ? 3.2 : nodeState.related ? 1.6 : 0) + node.glow;
+        ? 2.6
+        : 2.25;
+    const radius = baseRadius + (nodeState.active ? 4.2 : nodeState.related ? 2.1 : 0) + node.glow;
     const lightBoost = node.type === 'photographer' && node.prominence ? 0.14 : 0;
     const coreBoost = node.type === 'photographer' && node.prominence ? 0.18 : 0;
 
     ctx.beginPath();
-    ctx.fillStyle = palette[node.type];
-    ctx.globalAlpha = 0.16 + nodeState.emphasis * (0.82 + lightBoost);
-    ctx.shadowBlur = 12 + nodeState.emphasis * 18 + prominenceBoost * 10;
-    ctx.shadowColor = palette[node.type];
+    ctx.fillStyle = nodeColor;
+    ctx.globalAlpha = 0.18 + nodeState.emphasis * (0.86 + lightBoost);
+    ctx.shadowBlur = 14 + nodeState.emphasis * 18 + prominenceBoost * 10;
+    ctx.shadowColor = nodeColor;
     ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
     ctx.fill();
 
     ctx.beginPath();
     ctx.fillStyle = '#ffffff';
-    ctx.globalAlpha = 0.11 + nodeState.emphasis * (0.38 + coreBoost);
-    ctx.arc(point.x, point.y, Math.max(0.7, radius * (0.36 + coreBoost * 0.08)), 0, Math.PI * 2);
+    ctx.globalAlpha = 0.14 + nodeState.emphasis * (0.4 + coreBoost);
+    ctx.arc(point.x, point.y, Math.max(0.9, radius * (0.34 + coreBoost * 0.08)), 0, Math.PI * 2);
     ctx.fill();
     ctx.shadowBlur = 0;
 
@@ -1428,20 +1471,20 @@
     const labelY = point.y - 4;
     ctx.textAlign = placeLeft ? 'right' : 'left';
     ctx.font = nodeState.active
-      ? '500 15px "Noto Sans JP", sans-serif'
+      ? '500 13px "Noto Sans JP", sans-serif'
       : nodeState.related
-        ? `400 ${node.type === 'photographer' && node.prominence ? 12 : 11}px "Noto Sans JP", sans-serif`
+        ? `400 ${node.type === 'photographer' && node.prominence ? 13 : 11}px "Noto Sans JP", sans-serif`
         : nodeState.chained
           ? `400 ${node.type === 'photographer' && node.prominence ? 11 : 10}px "Noto Sans JP", sans-serif`
         : `400 ${node.type === 'photographer' && node.prominence ? 10 : 9}px "Noto Sans JP", sans-serif`;
     ctx.lineJoin = 'round';
     ctx.miterLimit = 2;
     ctx.strokeStyle = palette.textOutline;
-    ctx.lineWidth = nodeState.active ? 5.5 : nodeState.related ? 4 : 3.2;
-    ctx.globalAlpha = nodeState.active ? 0.96 : nodeState.related ? 0.82 : Math.max(0.26, nodeState.emphasis);
+    ctx.lineWidth = nodeState.active ? 3.8 : nodeState.related ? 3.2 : 3;
+    ctx.globalAlpha = nodeState.active ? 0.92 : nodeState.related ? 0.78 : Math.max(0.22, nodeState.emphasis);
     ctx.strokeText(label, labelX, labelY);
     ctx.fillStyle = nodeState.active ? palette.activeText : palette.text;
-    ctx.globalAlpha = nodeState.active ? 0.98 : nodeState.related ? 0.82 : Math.max(0.24, nodeState.emphasis);
+    ctx.globalAlpha = nodeState.active ? 1 : nodeState.related ? 0.82 : Math.max(0.2, nodeState.emphasis);
     ctx.fillText(label, labelX, labelY);
 
     ctx.textAlign = 'left';
@@ -1492,6 +1535,7 @@
     state.focusTraversalCache = null;
     state.focusLayoutCache = null;
     initialNode.glow = 1.1;
+    syncScaleRange();
     updateFocusPanel();
 
     const requestedFocusId = getRequestedFocusNodeId();
@@ -1531,12 +1575,22 @@
   bindControlButton(zoomOutButton, () => nudgeZoom(1 / 1.5));
   bindControlButton(resetViewButton, resetView);
 
+  if (scaleRangeEl) {
+    scaleRangeEl.addEventListener('input', event => {
+      const value = Number(event.target.value) / 100;
+      state.targetScale = clampScale(state.minScale + (state.maxScale - state.minScale) * value);
+      clampCamera();
+      scheduleFrame();
+    });
+  }
+
   initializeLanguageControls();
   applyStaticTranslations();
   refreshNodeMetrics();
   resize();
   layoutNodes();
   centerInitialNode();
+  syncScaleRange();
   updateCursor();
   scheduleFrame();
 })();
