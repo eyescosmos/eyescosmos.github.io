@@ -83,10 +83,21 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const draggingRef = useRef(null);
+  const dragFrameRef = useRef(null);
+  const pendingPanRef = useRef(null);
   const panRef = useRef({ x: 0, y: 0 });
   const zoomRef = useRef(1);
   const viewAnimRef = useRef(null);
   const lastPointerSelectRef = useRef({ id: null, time: 0 });
+
+  const flushDragPan = () => {
+    dragFrameRef.current = null;
+    const nextPan = pendingPanRef.current;
+    if (!nextPan) return;
+    pendingPanRef.current = null;
+    panRef.current = nextPan;
+    setPan(nextPan);
+  };
 
   useEffect(() => {
     const measure = () => {
@@ -592,30 +603,43 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
 
   // Drag pan
   const onPointerDown = (e) => {
+    if (e.pointerType === 'touch' && e.isPrimary === false) return;
     if (viewAnimRef.current) cancelAnimationFrame(viewAnimRef.current);
+    e.currentTarget?.setPointerCapture?.(e.pointerId);
+    if (e.pointerType === 'touch') e.preventDefault();
     const starNode = e.target.closest('.star');
     draggingRef.current = {
       x: e.clientX - panRef.current.x,
       y: e.clientY - panRef.current.y,
       startX: e.clientX,
       startY: e.clientY,
+      pointerId: e.pointerId,
       starId: starNode?.dataset?.starId || null,
       dragged: false
     };
   };
   const onPointerMove = (e) => {
     if (!draggingRef.current) return;
+    if (e.pointerId !== draggingRef.current.pointerId) return;
+    if (e.cancelable) e.preventDefault();
     if (Math.hypot(e.clientX - draggingRef.current.startX, e.clientY - draggingRef.current.startY) > 6) {
       draggingRef.current.dragged = true;
     }
     const nextPan = { x: e.clientX - draggingRef.current.x, y: e.clientY - draggingRef.current.y };
-    panRef.current = nextPan;
-    setPan(nextPan);
+    pendingPanRef.current = nextPan;
+    if (!dragFrameRef.current) {
+      dragFrameRef.current = requestAnimationFrame(flushDragPan);
+    }
   };
   const onPointerUp = (e) => {
     const currentDrag = draggingRef.current;
+    if (currentDrag && e?.pointerId !== currentDrag.pointerId) return;
     draggingRef.current = null;
     if (!currentDrag) return;
+    if (dragFrameRef.current) {
+      cancelAnimationFrame(dragFrameRef.current);
+      flushDragPan();
+    }
     if (!currentDrag.dragged && currentDrag.starId) {
       e?.preventDefault?.();
       e?.stopPropagation?.();
@@ -625,13 +649,16 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
   };
 
   useEffect(() => {
-    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointermove', onPointerMove, { passive: false });
     window.addEventListener('pointerup', onPointerUp);
+    window.addEventListener('pointercancel', onPointerUp);
     return () => {
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerup', onPointerUp);
+      window.removeEventListener('pointercancel', onPointerUp);
+      if (dragFrameRef.current) cancelAnimationFrame(dragFrameRef.current);
     };
-  });
+  }, []);
 
   // Calculate star render size based on influence + zoom + tweak.
   // Stars scale a bit slower than the canvas zoom so they don't blow up.
@@ -1224,6 +1251,16 @@ const MOBILE_TOP_CSS = `
   display: none;
 }
 @media (max-width: 699px) {
+  html, body, #root, .app {
+    overscroll-behavior: none;
+    touch-action: none;
+  }
+  .stage,
+  .stage svg {
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
   .masthead {
     top: calc(16px + env(safe-area-inset-top, 0px));
     left: 16px;

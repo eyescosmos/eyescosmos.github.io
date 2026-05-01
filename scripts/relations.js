@@ -112,6 +112,9 @@
     dragStartY: 0,
     dragStartCameraX: 0,
     dragStartCameraY: 0,
+    dragFrameHandle: 0,
+    pendingDragCameraX: null,
+    pendingDragCameraY: null,
     pressedNodeId: '',
     hoveredNodeId: '',
     focusedNodeId: '',
@@ -1171,6 +1174,8 @@
   }
 
   function handlePointerDown(event) {
+    if (event.pointerType === 'touch' && event.isPrimary === false) return;
+    if (event.cancelable) event.preventDefault();
     canvas.setPointerCapture(event.pointerId);
     state.pointerDown = true;
     state.dragging = false;
@@ -1188,6 +1193,9 @@
   }
 
   function handlePointerMove(event) {
+    if (state.pointerDown && state.dragPointerId === event.pointerId && event.cancelable) {
+      event.preventDefault();
+    }
     state.pointerX = event.clientX;
     state.pointerY = event.clientY;
 
@@ -1199,11 +1207,11 @@
         state.cameraLockedToFocus = false;
       }
       if (state.dragging) {
-        state.targetCameraX = state.dragStartCameraX - (dx / state.scale);
-        state.targetCameraY = state.dragStartCameraY - (dy / state.scale);
-        clampCamera();
-        updateCursor();
-        scheduleFrame();
+        state.pendingDragCameraX = state.dragStartCameraX - (dx / state.scale);
+        state.pendingDragCameraY = state.dragStartCameraY - (dy / state.scale);
+        if (!state.dragFrameHandle) {
+          state.dragFrameHandle = requestAnimationFrame(flushDragCamera);
+        }
         return;
       }
     }
@@ -1226,8 +1234,13 @@
   }
 
   function handlePointerUp(event) {
+    if (state.dragPointerId !== null && state.dragPointerId !== event.pointerId) return;
     if (canvas.hasPointerCapture(event.pointerId)) {
       canvas.releasePointerCapture(event.pointerId);
+    }
+    if (state.dragFrameHandle) {
+      cancelAnimationFrame(state.dragFrameHandle);
+      flushDragCamera();
     }
 
     const wasDragging = state.dragging;
@@ -1259,6 +1272,18 @@
 
     state.pressedNodeId = '';
     updateCursor();
+  }
+
+  function flushDragCamera() {
+    state.dragFrameHandle = 0;
+    if (state.pendingDragCameraX === null || state.pendingDragCameraY === null) return;
+    state.targetCameraX = state.pendingDragCameraX;
+    state.targetCameraY = state.pendingDragCameraY;
+    state.pendingDragCameraX = null;
+    state.pendingDragCameraY = null;
+    clampCamera();
+    updateCursor();
+    scheduleFrame();
   }
 
   function getNodeState(node) {
@@ -1544,9 +1569,10 @@
     }
   }
 
-  canvas.addEventListener('pointerdown', handlePointerDown);
-  canvas.addEventListener('pointermove', handlePointerMove);
+  canvas.addEventListener('pointerdown', handlePointerDown, { passive: false });
+  canvas.addEventListener('pointermove', handlePointerMove, { passive: false });
   canvas.addEventListener('pointerup', handlePointerUp);
+  canvas.addEventListener('pointercancel', handlePointerUp);
   canvas.addEventListener('pointerleave', handlePointerLeave);
   canvas.addEventListener('wheel', handleWheel, { passive: false });
   window.addEventListener('resize', resize);
