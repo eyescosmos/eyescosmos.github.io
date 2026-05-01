@@ -1286,8 +1286,8 @@ const MOBILE_TOP_CSS = `
   }
   .side-controls .spread-control {
     position: fixed;
-    top: calc(126px + env(safe-area-inset-top, 0px));
-    left: 54px;
+    top: calc(84px + env(safe-area-inset-top, 0px));
+    left: 20px;
     z-index: 24;
     width: 18px !important;
     height: 118px;
@@ -1570,7 +1570,7 @@ function App() {
           type="button"
           onClick={() => setMobileShowAllNames((show) => !show)}
           aria-pressed={mobileShowAllNames}>
-          全名前
+          作家名表示
         </button>
         <FilterDropdown label="表現から見る" kind="movement" options={movements} filter={filter} onChange={setFilter} />
         <FilterDropdown label="国別で見る" kind="country" options={countries} filter={filter} onChange={setFilter} />
