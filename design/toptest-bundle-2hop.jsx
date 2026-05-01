@@ -76,7 +76,7 @@ function isMobileViewportWidth(width) {
 // ======================================================
 // Main Constellation View
 // ======================================================
-function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, filter }) {
+function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, filter, isEnglish = false }) {
   const { photographers, byId, adj, edges } = useGraph();
   const stageRef = useRef(null);
   const [viewport, setViewport] = useState({ w: 1200, h: 800 });
@@ -89,6 +89,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
   const zoomRef = useRef(1);
   const viewAnimRef = useRef(null);
   const lastPointerSelectRef = useRef({ id: null, time: 0 });
+  const labelFor = useCallback((p) => isEnglish ? (p.nameEn || p.name || p.nameJa || p.id) : (p.name || p.nameJa || p.nameEn || p.id), [isEnglish]);
 
   const flushDragPan = () => {
     dragFrameRef.current = null;
@@ -728,7 +729,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
       const fontSize = isMobileViewport
         ? isActive ? 11.2 : depth === 1 ? 8.9 : depth === 2 ? 8 : p.influence >= 9 ? 9 : 8.4
         : isActive ? 13 : depth === 2 ? (p.influence >= 8 ? 9.5 : 8.5) : p.influence >= 8 ? 11.5 : 10.5;
-      const w = (p.name?.length || 4) * (fontSize * 0.92) + 8;
+      const w = (labelFor(p)?.length || 4) * (fontSize * 0.92) + 8;
       const h = depth === 2 ? 12 : 14;
       let placedRect = null;
       for (const off of offsets) {
@@ -916,7 +917,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
                   : depth === 2 ? (p.influence >= 8 ? 0.68 : 0.48) : 1
               }}
               pointerEvents="none">
-              {p.name}
+              {labelFor(p)}
             </text>
           );
 
@@ -929,10 +930,13 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
 // ======================================================
 // Info Card
 // ======================================================
-function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated }) {
+function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated, isEnglish = false }) {
   const { byId, adj } = useGraph();
-  const toggleLabel = selected && byId[selected] ? byId[selected].name : '星座をたどる';
-  const toggleSubLabel = selected ? '作家情報' : 'Guide';
+  const nameFor = (p) => isEnglish ? (p.nameEn || p.name || p.nameJa || p.id) : (p.name || p.nameJa || p.nameEn || p.id);
+  const altNameFor = (p) => isEnglish ? (p.name || p.nameJa || '') : (p.nameEn || '');
+  const movementLabelFor = (m) => isEnglish ? (window.MOVEMENTS_META?.[m]?.en || window.MOVEMENTS?.[m]?.en || m) : m;
+  const toggleLabel = selected && byId[selected] ? nameFor(byId[selected]) : (isEnglish ? 'Trace the constellations' : '星座をたどる');
+  const toggleSubLabel = selected ? (isEnglish ? 'Photographer' : '作家情報') : 'Guide';
   if (!selected) {
     return (
       <>
@@ -940,13 +944,15 @@ function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated }) 
           {toggleSubLabel} · {toggleLabel}
         </button>
         <div className={`info-card ${isOpen ? 'is-open' : ''}`} style={{ width: "223px" }}>
-          <div className="card-topline"><span>▸ 写真の座標</span></div>
-          <h2 style={{ fontFamily: "\"DM Mono\"" }}>星座をたどる</h2>
-          <div className="en-name">Trace the constellations</div>
+          <div className="card-topline"><span>▸ {isEnglish ? 'Photo Coordinates' : '写真の座標'}</span></div>
+          <h2 style={{ fontFamily: "\"DM Mono\"" }}>{isEnglish ? 'Trace the constellations' : '星座をたどる'}</h2>
+          <div className="en-name">{isEnglish ? 'Follow the relational field' : 'Trace the constellations'}</div>
           <p style={{ fontSize: 12.5, lineHeight: 1.7, color: 'var(--ink-80)' }}>
-            星をクリックすると、その写真家と同じ表現文脈で繋がる星座が浮かび上がります。
+            {isEnglish
+              ? 'Click a star and the constellation connected by shared photographic contexts appears.'
+              : '星をクリックすると、その写真家と同じ表現文脈で繋がる星座が浮かび上がります。'}
           </p>
-          <div className="hint">DRAG 探索 · CLICK 選択 · 表現の文脈 → 星座</div>
+          <div className="hint">{isEnglish ? 'DRAG explore · CLICK select · context → constellation' : 'DRAG 探索 · CLICK 選択 · 表現の文脈 → 星座'}</div>
         </div>
       </>);
 
@@ -971,22 +977,22 @@ function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated }) 
         <div className="card-topline">
           <span>▸ 写真家 / PHOTOGRAPHER</span>
         </div>
-        <h2 style={{ fontFamily: "\"Yu Gothic\"", fontSize: "16px" }}>{p.name}</h2>
-        <div className="en-name">{p.nameEn}</div>
+        <h2 style={{ fontFamily: isEnglish ? "\"DM Mono\"" : "\"Yu Gothic\"", fontSize: "16px" }}>{nameFor(p)}</h2>
+        <div className="en-name">{altNameFor(p)}</div>
         <div className="meta-row">
-          <div className="meta">生没年<strong>{p.years}</strong></div>
-          <div className="meta">国<strong>{p.country}</strong></div>
-          <div className="meta">年代<strong>{p.era}</strong></div>
+          <div className="meta">{isEnglish ? 'Years' : '生没年'}<strong>{p.years}</strong></div>
+          <div className="meta">{isEnglish ? 'Country' : '国'}<strong>{p.country}</strong></div>
+          <div className="meta">{isEnglish ? 'Era' : '年代'}<strong>{p.era}</strong></div>
         </div>
         <div className="movements">
           {p.movements.map((m) => {
             const mv = window.MOVEMENTS[m];
             const color = mv ? `oklch(0.78 0.1 ${mv.hue})` : 'var(--ink-80)';
-            return <span key={m} className="movement-chip" style={{ '--chip-color': color }}>{m}</span>;
+            return <span key={m} className="movement-chip" style={{ '--chip-color': color }}>{movementLabelFor(m)}</span>;
           })}
         </div>
         <div className="connections-list">
-          <strong>★ 星座でつながる写真家</strong>
+          <strong>{isEnglish ? '★ Connected photographers' : '★ 星座でつながる写真家'}</strong>
           {Object.entries(byMove).map(([move, ids]) => {
             const mv = window.MOVEMENTS[move];
             const color = mv ? `oklch(0.78 0.1 ${mv.hue})` : 'var(--accent-cool)';
@@ -995,10 +1001,10 @@ function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated }) 
                 <span style={{
                   fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.15em',
                   color, marginRight: 8, textTransform: 'uppercase'
-                }}>{move}</span>
+                }}>{movementLabelFor(move)}</span>
                 {ids.map((id, i) =>
                 <React.Fragment key={id}>
-                    <a onClick={() => onSelectRelated(id)}>{byId[id].name}</a>
+                    <a onClick={() => onSelectRelated(id)}>{nameFor(byId[id])}</a>
                     {i < ids.length - 1 && <span style={{ color: 'var(--ink-40)' }}>・</span>}
                   </React.Fragment>
                 )}
@@ -1007,7 +1013,7 @@ function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated }) 
           })}
         </div>
         <a href={p.url} target="_blank" rel="noopener" className="hint" style={{ display: 'block', textDecoration: 'none' }}>
-          → 詳細ページを開く / {p.url.replace('https://eyescosmos.github.io', '')}
+          → {isEnglish ? 'Open detail page' : '詳細ページを開く'} / {p.url.replace('https://eyescosmos.github.io', '')}
         </a>
       </div>
     </>);
@@ -1073,8 +1079,9 @@ function FilterDropdown({ label, options, filter, onChange, kind }) {
 // ======================================================
 // Tweaks Panel
 // ======================================================
-function ConnectionLegend({ selected, hops = 2 }) {
+function ConnectionLegend({ selected, hops = 2, isEnglish = false }) {
   const { byId, adj } = useGraph();
+  const movementLabelFor = (m) => isEnglish ? (window.MOVEMENTS_META?.[m]?.en || window.MOVEMENTS?.[m]?.en || m) : m;
   const [legendOpen, setLegendOpen] = useState(() => {
     try {
       return window.innerWidth > 768;
@@ -1126,8 +1133,8 @@ function ConnectionLegend({ selected, hops = 2 }) {
   if (moves.length === 0) return null;
   return (
     <details className="connection-legend" open={legendOpen} onToggle={(event) => setLegendOpen(event.currentTarget.open)}>
-      <summary className="legend-summary">線</summary>
-      <div className="legend-title">線の色 = 表現でのつながり</div>
+      <summary className="legend-summary">{isEnglish ? 'Lines' : '線'}</summary>
+      <div className="legend-title">{isEnglish ? 'Line color = shared context' : '線の色 = 表現でのつながり'}</div>
       <ul>
         {moves.map((m) => {
           const mv = window.MOVEMENTS[m];
@@ -1136,7 +1143,7 @@ function ConnectionLegend({ selected, hops = 2 }) {
           return (
             <li key={m}>
               <span className="legend-swatch" style={{ background: color, boxShadow: `0 0 9px ${color}` }} />
-              <span className="legend-label">{m}</span>
+              <span className="legend-label">{movementLabelFor(m)}</span>
             </li>);
 
         })}
@@ -1505,7 +1512,7 @@ function App() {
       } catch {}
       return window.location.pathname || '';
     })();
-    const langPrefix = currentPath.startsWith('/en/') ? '/en' : '';
+    const langPrefix = /(^|\/)en(\/|$)/.test(currentPath) ? '/en' : '';
     const href = `${langPrefix}/photographers/${id}.html`;
     try {
       if (window.parent && window.parent !== window) {
@@ -1555,6 +1562,14 @@ function App() {
       return false;
     }
   })();
+  const isEnglishApp = (() => {
+    try {
+      const parentPath = window.parent && window.parent !== window ? window.parent.location.pathname : window.location.pathname;
+      return /(^|\/)en(\/|$)/.test(parentPath || '');
+    } catch {
+      return /(^|\/)en(\/|$)/.test(window.location.pathname || '');
+    }
+  })();
   const constellationTweaks = isMobileApp && mobileShowAllNames
     ? { ...tweaks, labelDensity: 'all' }
     : tweaks;
@@ -1579,7 +1594,8 @@ function App() {
         hovered={hovered}
         onHover={setHovered}
         tweaks={constellationTweaks}
-        filter={filter} />
+        filter={filter}
+        isEnglish={isEnglishApp} />
       
 
       {/* Masthead */}
@@ -1590,8 +1606,9 @@ function App() {
         <h1>写真の座標</h1>
         <div className="sub-en">PHOTO · COORDINATES</div>
         <p>
-          世界の写真家を〈表現の文脈〉で結び、星座のように辿るアーカイブ。
-          星をタップすると同じ運動・技法で結ばれた星座が浮かび上がります。
+          {isEnglishApp
+            ? 'An archive for tracing photographers through shared visual contexts. Tap a star to reveal its constellation.'
+            : '世界の写真家を〈表現の文脈〉で結び、星座のように辿るアーカイブ。星をタップすると同じ運動・技法で結ばれた星座が浮かび上がります。'}
         </p>
       </div>
 
@@ -1607,11 +1624,11 @@ function App() {
           type="button"
           onClick={() => setMobileShowAllNames((show) => !show)}
           aria-pressed={mobileShowAllNames}>
-          作家名表示
+          {isEnglishApp ? 'Show names' : '作家名表示'}
         </button>
-        <FilterDropdown label="表現から見る" kind="movement" options={movements} filter={filter} onChange={setFilter} />
-        <FilterDropdown label="国別で見る" kind="country" options={countries} filter={filter} onChange={setFilter} />
-        <FilterDropdown label="年代でみる" kind="era" options={eras} filter={filter} onChange={setFilter} />
+        <FilterDropdown label={isEnglishApp ? 'Browse movements' : '表現から見る'} kind="movement" options={movements} filter={filter} onChange={setFilter} />
+        <FilterDropdown label={isEnglishApp ? 'Browse countries' : '国別で見る'} kind="country" options={countries} filter={filter} onChange={setFilter} />
+        <FilterDropdown label={isEnglishApp ? 'Browse eras' : '年代でみる'} kind="era" options={eras} filter={filter} onChange={setFilter} />
         <div className="spread-control" style={{ width: "159px" }}>
           <input
             type="range"
@@ -1631,10 +1648,11 @@ function App() {
         onSelectRelated={(id) => {
           setSelected(id);
           setInfoCardOpen(false);
-        }} />
+        }}
+        isEnglish={isEnglishApp} />
       
 
-      <ConnectionLegend selected={selected} hops={tweaks.hops} />
+      <ConnectionLegend selected={selected} hops={tweaks.hops} isEnglish={isEnglishApp} />
 
       {editModeHost && (
         <div className="action-buttons">

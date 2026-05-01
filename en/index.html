@@ -54,16 +54,12 @@
 
 :root {
   --bg: #040507;
-  --panel: rgba(10, 12, 18, 0.62);
-  --panel-strong: rgba(10, 14, 24, 0.78);
-  --border: rgba(238, 230, 216, 0.18);
   --text: #eee6d8;
   --text-dim: rgba(238, 230, 216, 0.68);
   --text-muted: rgba(238, 230, 216, 0.42);
   --accent: #c6aa82;
-  --link-direct: #8eb8ff;
-  --link-context: rgba(238, 230, 216, 0.5);
-  --link-glow: rgba(142, 184, 255, 0.28);
+  --border: rgba(238, 230, 216, 0.18);
+  --panel: rgba(10, 14, 24, 0.7);
 }
 
 *,
@@ -75,43 +71,31 @@
 html,
 body {
   margin: 0;
-  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 body {
-  background:
-    radial-gradient(ellipse at 70% 40%, rgba(40, 60, 110, 0.22), transparent 55%),
-    radial-gradient(ellipse at 20% 70%, rgba(90, 40, 80, 0.13), transparent 60%),
-    linear-gradient(180deg, #04060c 0%, #070b18 100%),
-    var(--bg);
-  color: var(--text);
-  font-family: 'Noto Sans JP', sans-serif;
-  overflow: hidden;
-}
-
-body.is-navigating #page-fade {
-  opacity: 1;
-}
-
-.shell {
   position: relative;
-  min-height: 100vh;
 }
 
-#constellation-canvas {
-  display: block;
-  width: 100vw;
-  height: 100vh;
+.design-frame {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #040507;
   touch-action: none;
 }
 
 .hud,
-.focus-card,
-.page-links,
-.zoom-controls,
-.connection-legend {
-  position: absolute;
-  z-index: 20;
+.page-links {
+  position: fixed;
+  z-index: 40;
 }
 
 .hud {
@@ -126,13 +110,6 @@ body.is-navigating #page-fade {
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
-  width: 100%;
-  max-width: 300px;
-}
-
-.hero-text > * {
-  width: 100%;
-  margin: 0;
 }
 
 .eyebrow {
@@ -142,10 +119,6 @@ body.is-navigating #page-fade {
   text-transform: uppercase;
 }
 
-.keywordline {
-  display: none;
-}
-
 .title {
   display: block;
   font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
@@ -153,10 +126,10 @@ body.is-navigating #page-fade {
   font-weight: normal;
   letter-spacing: 0.18em;
   line-height: 1.05;
+  margin: 0;
 }
 
 .title em {
-  display: inline-block;
   font-style: normal;
   color: var(--accent);
 }
@@ -168,67 +141,11 @@ body.is-navigating #page-fade {
   text-transform: uppercase;
 }
 
-.title-status {
-  display: none;
-}
-
 .title-subcopy {
   color: rgba(238, 230, 216, 0.82);
   font-size: 13px;
   line-height: 1.7;
   max-width: 247px;
-}
-
-.focus-card {
-  left: 32px;
-  bottom: 28px;
-  width: 280px;
-  max-height: calc(100vh - 180px);
-  overflow-y: auto;
-  padding: 16px 18px 14px;
-  background: var(--panel-strong);
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  backdrop-filter: blur(14px);
-}
-
-.focus-topline {
-  margin-bottom: 6px;
-  color: var(--text-muted);
-  font: 400 8.5px/1 'DM Mono', monospace;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.focus-label {
-  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: 0.08em;
-  color: var(--text);
-}
-
-.focus-subtitle {
-  margin-top: 4px;
-  color: var(--text-dim);
-  font: 400 9.5px/1.4 'DM Mono', monospace;
-  letter-spacing: 0.14em;
-}
-
-.focus-meta {
-  margin-top: 14px;
-  color: rgba(238, 230, 216, 0.84);
-  font-size: 11px;
-  line-height: 1.8;
-}
-
-.focus-hint {
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(238, 230, 216, 0.08);
-  color: var(--text-muted);
-  font: 400 8.5px/1.6 'DM Mono', monospace;
-  letter-spacing: 0.06em;
 }
 
 .page-links {
@@ -260,9 +177,7 @@ body.is-navigating #page-fade {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   padding: 6px 12px;
-  cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
 }
 
 .lang-btn.active {
@@ -389,7 +304,7 @@ body.is-navigating #page-fade {
   padding: 10px 34px 10px 14px;
   border: 1px solid var(--border);
   border-radius: 2px;
-  background: rgba(10, 14, 24, 0.7);
+  background: var(--panel);
   color: rgba(238, 230, 216, 0.82);
   font: 400 12px/1 'Noto Sans JP', sans-serif;
   appearance: none;
@@ -413,7 +328,7 @@ body.is-navigating #page-fade {
   padding: 12px 14px;
   border: 1px solid var(--border);
   border-radius: 2px;
-  background: rgba(10, 14, 24, 0.7);
+  background: var(--panel);
   backdrop-filter: blur(12px);
 }
 
@@ -422,8 +337,9 @@ body.is-navigating #page-fade {
   height: 2px;
   margin: 0;
   appearance: none;
-  background: rgba(198, 170, 130, 0.88);
+  background: var(--accent);
   border-radius: 999px;
+  outline: none;
   accent-color: var(--accent);
 }
 
@@ -431,42 +347,82 @@ body.is-navigating #page-fade {
   appearance: none;
   width: 12px;
   height: 12px;
-  border-radius: 999px;
+  border-radius: 50%;
   background: var(--accent);
-  border: 0;
-  box-shadow: 0 0 8px rgba(198, 170, 130, 0.5);
+  border: none;
+  box-shadow: 0 0 6px rgba(198, 170, 130, 0.6);
 }
 
 .spread-control input[type="range"]::-moz-range-thumb {
   width: 12px;
   height: 12px;
-  border-radius: 999px;
+  border-radius: 50%;
   background: var(--accent);
-  border: 0;
-  box-shadow: 0 0 8px rgba(198, 170, 130, 0.5);
+  border: none;
+  box-shadow: 0 0 6px rgba(198, 170, 130, 0.6);
 }
 
-.zoom-controls {
+.action-buttons {
+  position: fixed;
   right: 32px;
   bottom: 28px;
+  z-index: 40;
   display: flex;
   gap: 6px;
 }
 
-.zoom-btn {
+.control-btn {
   width: 40px;
   height: 40px;
   border: 1px solid var(--border);
   border-radius: 2px;
-  background: rgba(10, 14, 24, 0.7);
+  background: var(--panel);
   color: var(--text-dim);
   font: 400 14px/1 'DM Mono', monospace;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
   transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
-.zoom-btn:hover {
+.mobile-search-toggle {
+  display: none;
+  position: relative;
+}
+
+.mobile-label-toggle {
+  display: none;
+}
+
+.mobile-search-toggle::before,
+.mobile-search-toggle::after {
+  content: '';
+  position: absolute;
+  display: block;
+}
+
+.mobile-search-toggle::before {
+  width: 12px;
+  height: 12px;
+  border: 1.6px solid currentColor;
+  border-radius: 50%;
+  left: 9px;
+  top: 8px;
+}
+
+.mobile-search-toggle::after {
+  width: 7px;
+  height: 1.6px;
+  background: currentColor;
+  transform: rotate(45deg);
+  right: 9px;
+  bottom: 10px;
+  transform-origin: center;
+}
+
+.control-btn:hover {
   border-color: rgba(238, 230, 216, 0.42);
   color: var(--text);
 }
@@ -476,11 +432,7 @@ body.is-navigating #page-fade {
 }
 
 .map-info-summary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   list-style: none;
-  text-transform: lowercase;
 }
 
 .map-info-summary::-webkit-details-marker {
@@ -501,65 +453,6 @@ body.is-navigating #page-fade {
   color: var(--text-dim);
   backdrop-filter: blur(18px);
   box-shadow: 0 14px 42px rgba(0, 0, 0, 0.28);
-}
-
-.connection-legend {
-  right: 32px;
-  bottom: 86px;
-  width: 240px;
-  padding: 10px 14px 11px;
-  background: var(--panel-strong);
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  backdrop-filter: blur(14px);
-}
-
-.connection-legend-title {
-  margin-bottom: 7px;
-  color: var(--text-muted);
-  font: 400 8.5px/1 'DM Mono', monospace;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.connection-legend ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin: 0;
-  padding: 0;
-}
-
-.connection-legend li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(238, 230, 216, 0.82);
-  font-size: 11px;
-  line-height: 1.3;
-}
-
-.connection-legend .legend-swatch {
-  width: 14px;
-  height: 2px;
-  flex: 0 0 auto;
-  border-radius: 2px;
-}
-
-.connection-legend .legend-swatch.direct {
-  background: var(--link-direct);
-}
-
-.connection-legend .legend-swatch.context {
-  background: var(--link-context);
-}
-
-.connection-legend .legend-swatch.photographer {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #f2b9bf 0%, #d7b3ef 36%, #70dde0 72%, #f3ca81 100%);
 }
 
 .map-info-control[open] .map-info-panel {
@@ -648,7 +541,6 @@ body.is-navigating #page-fade {
   color: var(--text-dim);
   font: 400 11px/1.2 'DM Mono', monospace;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   appearance: none;
 }
 
@@ -674,77 +566,72 @@ body.is-navigating #page-fade {
   text-decoration: none;
 }
 
-#page-fade {
+.site-directory-links {
   position: fixed;
-  inset: 0;
-  z-index: 4;
-  background: #000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.32s ease;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 54px;
+  z-index: 40;
+  width: min(720px, calc(100vw - 64px));
+  display: grid;
+  gap: 8px;
+  text-align: center;
+  pointer-events: auto;
 }
 
-.site-directory-links {
-  display: none;
+.site-directory-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 8px;
+  color: var(--text-muted);
+  font: 400 9px/1.5 'DM Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.site-directory-label {
+  color: rgba(213, 194, 156, 0.38);
+}
+
+.site-directory-group a {
+  color: rgba(213, 194, 156, 0.28);
+  text-decoration: none;
+}
+
+.site-directory-group a:hover {
+  color: rgba(235, 224, 204, 0.72);
 }
 
 .site-footer {
-  display: none;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  z-index: 40;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
 }
 
 .site-footer a {
-  color: var(--text-muted);
+  color: rgba(213, 194, 156, 0.28);
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: var(--text-dim);
-}
-
-.mobile-info-drawer {
-  display: none;
-}
-
-.global-search-nav,
-.global-search-mobile-shell {
-  display: none !important;
+  color: rgba(235, 224, 204, 0.72);
 }
 
 @media (max-width: 768px) {
-  body {
-    overflow: hidden;
-  }
-
-  .shell {
-    min-height: 100svh;
-    padding: 0;
-  }
-
-  #constellation-canvas {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100svh;
-    touch-action: none;
-  }
-
   .hud,
   .page-links {
-    position: fixed;
-    z-index: 4;
+    top: calc(14px + env(safe-area-inset-top));
   }
 
   .hud {
-    top: calc(14px + env(safe-area-inset-top));
     left: 16px;
     right: 120px;
     max-width: 240px;
-  }
-
-  .hero-text {
-    width: auto;
-    max-width: 100%;
-    gap: 0;
   }
 
   .title {
@@ -753,20 +640,33 @@ body.is-navigating #page-fade {
     line-height: 1;
   }
 
-  .page-links {
-    top: calc(14px + env(safe-area-inset-top));
-    right: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6px;
-    width: 112px;
+  .title-english {
+    display: none;
   }
 
-  .lang-toggle {
-    background: rgba(10, 12, 18, 0.44);
-    backdrop-filter: blur(14px);
-    margin-bottom: 0;
+  .page-links {
+    right: 16px;
+    width: 112px;
+    gap: 6px;
+  }
+
+  .title-subcopy {
+    display: none;
+  }
+
+  .action-buttons {
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+
+  .control-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .map-info-panel {
+    width: min(320px, calc(100vw - 32px));
+    bottom: calc(100% + 8px);
   }
 
   .lang-btn {
@@ -774,486 +674,424 @@ body.is-navigating #page-fade {
     font-size: 10px;
   }
 
-  .page-select-wrap,
-  .page-search-form,
-  .page-search-suggestions,
-  .page-search-input,
-  .page-select,
-  .spread-control,
-  .eyebrow,
-  .keywordline,
-  .title-status,
+  .lang-btn {
+    min-width: 44px;
+    font-size: 0;
+    letter-spacing: 0;
+  }
+
+  .lang-btn::after {
+    font: 400 10px/1 'DM Mono', monospace;
+    letter-spacing: 0.14em;
+  }
+
+  .lang-btn:first-child::after {
+    content: 'JP';
+  }
+
+  .lang-btn:nth-child(2)::after {
+    content: 'EN';
+  }
+
   .site-directory-links,
-  .connection-legend {
-    display: none;
-  }
-
-  .focus-card {
-    left: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom));
-    width: calc(100vw - 92px);
-    max-height: 30vh;
-    padding: 14px 16px 12px;
-  }
-
-  .focus-topline {
-    margin-bottom: 4px;
-  }
-
-  .focus-label {
-    font-size: 18px;
-  }
-
-  .focus-subtitle {
-    font-size: 9px;
-  }
-
-  .focus-meta {
-    font-size: 10px;
-    line-height: 1.7;
-  }
-
-  .zoom-controls {
-    position: fixed;
-    left: auto;
-    right: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom));
-    z-index: 7;
-    pointer-events: auto;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .zoom-btn {
-    width: 34px;
-    height: 34px;
-    background: rgba(10, 12, 18, 0.48);
-    backdrop-filter: blur(14px);
-    touch-action: manipulation;
-  }
-
-  .map-info-panel {
-    position: fixed;
-    left: 16px;
-    right: 16px;
-    bottom: calc(68px + env(safe-area-inset-bottom));
-    width: auto;
-    max-height: calc(100svh - 104px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-    padding: 16px 16px 18px;
-    z-index: 9;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .mobile-info-drawer {
-    display: block;
-    position: fixed;
-    left: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom));
-    z-index: 5;
-    width: min(calc(100vw - 32px), 24rem);
-  }
-
-  .mobile-info-summary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: rgba(10, 12, 18, 0.52);
-    backdrop-filter: blur(14px);
-    color: var(--text);
-    font: 500 16px/1 'DM Mono', monospace;
-    cursor: pointer;
-    list-style: none;
-    user-select: none;
-  }
-
-  .mobile-info-summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .mobile-info-panel {
-    display: none;
-    margin-top: 10px;
-    padding: 16px 16px 18px;
-    border: 1px solid var(--border);
-    background: rgba(8, 10, 16, 0.86);
-    backdrop-filter: blur(18px);
-    max-height: min(62svh, 30rem);
-    overflow-y: auto;
-  }
-
-  .mobile-info-drawer[open] .mobile-info-panel {
-    display: block;
-  }
-
-  .mobile-info-sections {
-    display: grid;
-    gap: 14px;
-  }
-
-  .mobile-info-block {
-    display: grid;
-    gap: 6px;
-  }
-
-  .mobile-info-heading {
-    color: var(--accent);
-    font: 400 10px/1.4 'DM Mono', monospace;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-
-  .mobile-info-text {
-    color: var(--text-dim);
-    font-size: 13px;
-    line-height: 1.72;
-  }
-
-  .mobile-info-links {
-    display: grid;
-    gap: 8px;
-    margin-top: 2px;
-  }
-
-  .mobile-info-link {
-    display: block;
-    padding: 12px 14px;
-    border: 1px solid var(--border);
-    color: var(--text-dim);
-    text-decoration: none;
-    text-align: center;
-    font: 400 11px/1.2 'DM Mono', monospace;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .mobile-info-select-wrap {
-    position: relative;
-    display: block;
-  }
-
-  .mobile-info-select {
-    width: 100%;
-    min-height: 42px;
-    padding: 12px 36px 12px 14px;
-    border: 1px solid var(--border);
-    background: rgba(10, 12, 18, 0.62);
-    color: var(--text-dim);
-    font: 400 11px/1.2 'DM Mono', monospace;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    appearance: none;
-  }
-
-  .mobile-info-select-wrap::after {
-    content: '▼';
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    font: 400 9px/1 'DM Mono', monospace;
-    color: var(--text-muted);
-    pointer-events: none;
-  }
-
-  .mobile-info-link:hover {
-    color: var(--text);
-    background: rgba(198, 170, 130, 0.06);
-  }
-
-  .mobile-info-footer {
-    margin-top: 4px;
-    font-size: 12px;
-    text-align: left;
-  }
-
-  .mobile-info-footer a {
-    color: rgba(213, 194, 156, 0.76);
-    text-decoration: none;
-  }
-
   .site-footer {
     display: none;
+  }
+
+  .page-select-wrap,
+  .page-search-suggestions,
+  .page-select {
+    display: none;
+  }
+
+  .spread-control {
+    position: fixed;
+    top: calc(84px + env(safe-area-inset-top));
+    left: 20px;
+    z-index: 42;
+    width: 18px;
+    height: 118px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spread-control input[type="range"] {
+    width: 118px;
+    height: 2px;
+    transform: rotate(-90deg);
+    transform-origin: center;
+  }
+
+  .spread-control input[type="range"]::-webkit-slider-thumb {
+    width: 11px;
+    height: 11px;
+  }
+
+  .spread-control input[type="range"]::-moz-range-thumb {
+    width: 11px;
+    height: 11px;
+  }
+
+  .page-search-form {
+    display: none;
+    position: fixed;
+    right: 16px;
+    left: 16px;
+    bottom: calc(58px + env(safe-area-inset-bottom));
+    width: auto;
+    z-index: 70;
+  }
+
+  body.mobile-search-open .page-search-form {
+    display: block;
+  }
+
+  body.mobile-search-open .page-search-input {
+    display: block;
+  }
+
+  body.mobile-search-open .page-search-suggestions {
+    display: grid;
+    top: auto;
+    bottom: calc(100% + 6px);
+  }
+
+  body.mobile-search-open .page-search-suggestions[hidden] {
+    display: none;
+  }
+
+  .mobile-search-toggle {
+    display: inline-flex;
+  }
+
+  .page-links .mobile-label-toggle {
+    display: block;
+    width: 92px;
+    min-height: 24px;
+    margin-top: -3px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: rgba(10, 14, 24, 0.54);
+    color: var(--text-dim);
+    font: 400 8px/1 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .page-links .mobile-label-toggle.active {
+    background: var(--text);
+    color: var(--bg);
   }
 }
 </style>
 </head>
 <body>
-<div class="shell">
-  <canvas id="constellation-canvas" aria-label="A star map visualizing relationships in photographic history"></canvas>
+<iframe id="design-frame" class="design-frame" src="../design/toptest.html" title="Photo Coordinates design stage"></iframe>
 
-  <div class="hud">
-    <div class="hero-text">
-      <div class="eyebrow">Photo Coordinates</div>
-      <div class="keywordline">Contemporary Photography | History | Context | Art | Essays |</div>
-      <h1 class="title"><em id="main-title">Photo Coordinates</em></h1>
-      <div class="title-english">Photo Coordinates</div>
-      <div class="title-status" id="title-status"></div>
-      <div class="title-subcopy" id="title-subcopy">Photo Coordinates is a photography-history site for tracing photographers, movements, countries, and historical context across world photography.</div>
-    </div>
+<div class="hud">
+  <div class="hero-text">
+    <div class="eyebrow">Photo Coordinates</div>
+    <h1 class="title"><em>Photo Coordinates</em></h1>
+    <div class="title-english">Photo Coordinates</div>
+    <div class="title-subcopy">Photo Coordinates is a photography-history site for tracing photographers, movements, countries, and historical context across world photography.</div>
   </div>
-
-  <div class="focus-card" data-nosnippet>
-    <div class="focus-topline" id="focus-topline">Photo Coordinates</div>
-    <div class="focus-label" id="focus-label">Trace the constellations</div>
-    <div class="focus-subtitle" id="focus-subtitle">Follow the relational field</div>
-    <div class="focus-meta" id="focus-meta">Click a star and the surrounding constellation slowly reveals the photographers, movements, and ideas connected to it.</div>
-    <div class="focus-hint" id="focus-hint">DRAG to explore ・ CLICK to select ・ CLICK again to open details</div>
-  </div>
-
-  <div class="page-links" aria-label="Navigate to archive pages" data-nosnippet>
-    <div class="lang-toggle" aria-label="Language switch">
-      <a class="lang-btn" data-lang="ja" href="/">Japanese</a>
-      <a class="lang-btn" data-lang="en" href="/en/">English</a>
-    </div>
-    <form class="page-search-form" id="top-page-search-form" role="search" autocomplete="off">
-      <input class="page-search-input" id="top-page-search-input" type="search" placeholder="Search photographers, movements, countries, eras" aria-autocomplete="list" aria-expanded="false" aria-controls="top-page-search-suggestions">
-      <button class="page-search-button" type="submit" aria-label="Search"></button>
-      <div class="page-search-suggestions" id="top-page-search-suggestions" hidden></div>
-    </form>
-    <span class="page-select-wrap">
-      <select class="page-select" id="page-link-movement-select" aria-label="Browse movements" onchange="if(this.value) window.location.href=this.value">
-        <option value="">Browse movements</option>
-        <option value="movements/アメリカ写真.html">American Photography</option>
-        <option value="movements/バウハウス.html">Bauhaus</option>
-        <option value="movements/イギリス写真.html">British Photography</option>
-        <option value="movements/シネマトグラフィック写真.html">Cinematographic Photography</option>
-        <option value="movements/植民地写真.html">Colonial Photography</option>
-        <option value="movements/カラー写真.html">Color Photography</option>
-        <option value="movements/コンセプチュアル.html">Conceptual</option>
-        <option value="movements/コンセプチュアルアート.html">Conceptual Art</option>
-        <option value="movements/ダダ.html">Dada</option>
-        <option value="movements/決定的瞬間.html">Decisive Moment</option>
-        <option value="movements/ドキュメンタリー.html">Documentary</option>
-        <option value="movements/デュッセルドルフ派.html">Dusseldorf School</option>
-        <option value="movements/環境写真.html">Environmental Photography</option>
-        <option value="movements/実験的技法.html">Experimental Technique</option>
-        <option value="movements/フェミニズム写真.html">Feminist Photography</option>
-        <option value="movements/FSA写真.html">FSA Photography</option>
-        <option value="movements/私写真.html">I-Photography (Shi-shashin)</option>
-        <option value="movements/発明・技術.html">Invention &amp; Technique</option>
-        <option value="movements/日本写真.html">Japanese Photography</option>
-        <option value="movements/風景写真.html">Landscape</option>
-        <option value="movements/大判カラー写真.html">Large-Format Color</option>
-        <option value="movements/LGBTQ.html">LGBTQ+ Photography</option>
-        <option value="movements/モダニズム.html">Modernism</option>
-        <option value="movements/自然主義写真.html">Naturalistic Photography</option>
-        <option value="movements/新即物主義.html">Neue Sachlichkeit</option>
-        <option value="movements/ニューカラー.html">New Color</option>
-        <option value="movements/新しいヴィジョン.html">New Vision</option>
-        <option value="movements/写真分離派.html">Photo-Secession</option>
-        <option value="movements/フォトジャーナリズム.html">Photojournalism</option>
-        <option value="movements/ピクトリアリズム.html">Pictorialism</option>
-        <option value="movements/ピクチャーズ世代.html">Pictures Generation</option>
-        <option value="movements/ポートレート.html">Portrait</option>
-        <option value="movements/プライベート写真.html">Private Photography</option>
-        <option value="movements/プロヴォーク.html">Provoke</option>
-        <option value="movements/レイオグラフ.html">Rayograph / Photogram</option>
-        <option value="movements/リアリズム写真.html">Realism Photography</option>
-        <option value="movements/科学写真.html">Scientific Photography</option>
-        <option value="movements/社会ドキュメンタリー.html">Social Documentary</option>
-        <option value="movements/社会的写真.html">Social Photography</option>
-        <option value="movements/ステージド写真.html">Staged Photography</option>
-        <option value="movements/ストレート写真.html">Straight Photography</option>
-        <option value="movements/ストリート写真.html">Street Photography</option>
-        <option value="movements/シュルレアリスム.html">Surrealism</option>
-        <option value="movements/タイポロジー写真.html">Typological Photography</option>
-        <option value="movements/都市記録.html">Urban Documentation</option>
-        <option value="movements/ヴォルテクシズム.html">Vorticism</option>
-        <option value="movements/戦争写真.html">War Photography</option>
-        <option value="movements/カロタイプ.html">Calotype</option>
-        <option value="movements/ヘリオグラフィー.html">Heliography</option>
-        <option value="movements/写真石版.html">Photolithography</option>
-        <option value="movements/建築写真.html">Architectural Photography</option>
-        <option value="movements/明治ドキュメンタリー.html">Meiji Documentary</option>
-        <option value="movements/肖像写真.html">Portrait Photography</option>
-      </select>
-    </span>
-    <span class="page-select-wrap">
-      <select class="page-select" id="page-link-country-select" aria-label="Browse countries" onchange="if(this.value) window.location.href=this.value">
-        <option value="">Browse countries</option>
-        <option value="countries/united-states.html">United States</option>
-        <option value="countries/united-kingdom.html">United Kingdom</option>
-        <option value="countries/france.html">France</option>
-        <option value="countries/germany.html">Germany</option>
-        <option value="countries/japan.html">Japan</option>
-        <option value="countries/brazil.html">Brazil</option>
-        <option value="countries/canada.html">Canada</option>
-      </select>
-    </span>
-    <span class="page-select-wrap">
-      <select class="page-select" id="page-link-era-select" aria-label="Browse eras" onchange="if(this.value) window.location.href=this.value">
-        <option value="">Browse eras</option>
-        <option value="/en/archive.html#tab-era">Browse by Era</option>
-        <option value="/en/eras/1839.html">1839–1860s</option>
-        <option value="/en/eras/1870.html">1870–1890s</option>
-        <option value="/en/eras/1890.html">1890–1910s</option>
-        <option value="/en/eras/1910.html">1910–1920s</option>
-        <option value="/en/eras/1930.html">1930–1940s</option>
-        <option value="/en/eras/1950.html">1950–1960s</option>
-        <option value="/en/eras/1970.html">1970–1980s</option>
-        <option value="/en/eras/1980.html">1980–1990s</option>
-        <option value="/en/eras/1990.html">1990–2000s</option>
-        <option value="/en/eras/2000.html">2000–2010s</option>
-        <option value="/en/eras/2010.html">2010–2020s</option>
-      </select>
-    </span>
-    <div class="spread-control" aria-label="View scale">
-      <input id="stage-scale-range" type="range" min="0" max="100" step="1" value="22">
-    </div>
-  </div>
-  <div class="zoom-controls" aria-label="Zoom controls" data-nosnippet>
-    <button class="zoom-btn" id="reset-view" type="button" aria-label="Reset view">◎</button>
-    <details class="map-info-control">
-      <summary class="zoom-btn map-info-summary" aria-label="Instructions and notes">i</summary>
-      <div class="map-info-panel">
-        <div class="map-info-sections">
-          <div class="map-info-block">
-            <div class="map-info-heading">About</div>
-            <div class="map-info-text">Photo Coordinates is a photography-history site for tracing photographers, movements, countries, and historical context across world photography.</div>
-          </div>
-          <div class="map-info-block">
-            <div class="map-info-heading">How to use</div>
-            <div class="map-info-text">Click once to bring a node to the center, click again to open the detail page, and drag to explore the map quietly.</div>
-          </div>
-          <div class="map-info-block">
-            <div class="map-info-heading">Editorial approach</div>
-            <div class="map-info-text">Photo Coordinates is an editorial photography-history project that organizes photographers, movements, and historical context from public sources. AI is used as an assistance tool for collecting and arranging sources, while citations are checked and updated over time.</div>
-          </div>
-          <nav class="map-info-block map-info-directory" aria-label="Key pages">
-            <div class="map-info-heading">Key pages</div>
-            <div class="map-info-directory-row">
-              <a href="/en/archive.html">Photographers</a>
-              <a href="/en/relations.html">Relation Map</a>
-              <a href="/en/eras/1839.html">1839-1860s</a>
-              <a href="/en/eras/1910.html">1910-1920s</a>
-              <a href="/en/eras/1950.html">1950-1960s</a>
-              <a href="/en/eras/1970.html">1970-1980s</a>
-            </div>
-            <div class="map-info-directory-row">
-              <a href="/en/photographers/araki.html">Nobuyoshi Araki</a>
-              <a href="/en/photographers/moriyama.html">Daido Moriyama</a>
-              <a href="/en/photographers/domon.html">Ken Domon</a>
-              <a href="/en/photographers/cartierbresson.html">Henri Cartier-Bresson</a>
-              <a href="/en/photographers/evans.html">Walker Evans</a>
-            </div>
-          </nav>
-          <div class="map-info-links">
-            <span class="map-info-select-wrap">
-              <select class="map-info-select" aria-label="Browse eras" onchange="if(this.value) window.location.href=this.value">
-                <option value="">Browse eras</option>
-                <option value="/en/archive.html#tab-era">Browse by Era</option>
-                <option value="/en/eras/1839.html">1839–1860s</option>
-                <option value="/en/eras/1870.html">1870–1890s</option>
-                <option value="/en/eras/1890.html">1890–1910s</option>
-                <option value="/en/eras/1910.html">1910–1920s</option>
-                <option value="/en/eras/1930.html">1930–1940s</option>
-                <option value="/en/eras/1950.html">1950–1960s</option>
-                <option value="/en/eras/1970.html">1970–1980s</option>
-                <option value="/en/eras/1980.html">1980–1990s</option>
-                <option value="/en/eras/1990.html">1990–2000s</option>
-                <option value="/en/eras/2000.html">2000–2010s</option>
-                <option value="/en/eras/2010.html">2010–2020s</option>
-              </select>
-            </span>
-            <span class="map-info-select-wrap">
-              <select class="map-info-select" aria-label="Browse countries" onchange="if(this.value) window.location.href=this.value">
-                <option value="">Browse countries</option>
-                <option value="countries/united-states.html">United States</option>
-                <option value="countries/united-kingdom.html">United Kingdom</option>
-                <option value="countries/france.html">France</option>
-                <option value="countries/germany.html">Germany</option>
-                <option value="countries/japan.html">Japan</option>
-                <option value="countries/brazil.html">Brazil</option>
-                <option value="countries/canada.html">Canada</option>
-              </select>
-            </span>
-            <span class="map-info-select-wrap">
-              <select class="map-info-select" aria-label="Browse movements" onchange="if(this.value) window.location.href=this.value">
-                <option value="">Browse movements</option>
-                <option value="movements/アメリカ写真.html">American Photography</option>
-                <option value="movements/バウハウス.html">Bauhaus</option>
-                <option value="movements/イギリス写真.html">British Photography</option>
-                <option value="movements/シネマトグラフィック写真.html">Cinematographic Photography</option>
-                <option value="movements/植民地写真.html">Colonial Photography</option>
-                <option value="movements/カラー写真.html">Color Photography</option>
-                <option value="movements/コンセプチュアル.html">Conceptual</option>
-                <option value="movements/コンセプチュアルアート.html">Conceptual Art</option>
-                <option value="movements/ダダ.html">Dada</option>
-                <option value="movements/決定的瞬間.html">Decisive Moment</option>
-                <option value="movements/ドキュメンタリー.html">Documentary</option>
-                <option value="movements/デュッセルドルフ派.html">Dusseldorf School</option>
-                <option value="movements/環境写真.html">Environmental Photography</option>
-                <option value="movements/実験的技法.html">Experimental Technique</option>
-                <option value="movements/フェミニズム写真.html">Feminist Photography</option>
-                <option value="movements/FSA写真.html">FSA Photography</option>
-                <option value="movements/私写真.html">I-Photography (Shi-shashin)</option>
-                <option value="movements/発明・技術.html">Invention &amp; Technique</option>
-                <option value="movements/日本写真.html">Japanese Photography</option>
-                <option value="movements/風景写真.html">Landscape</option>
-                <option value="movements/大判カラー写真.html">Large-Format Color</option>
-                <option value="movements/LGBTQ.html">LGBTQ+ Photography</option>
-                <option value="movements/モダニズム.html">Modernism</option>
-                <option value="movements/自然主義写真.html">Naturalistic Photography</option>
-                <option value="movements/新即物主義.html">Neue Sachlichkeit</option>
-                <option value="movements/ニューカラー.html">New Color</option>
-                <option value="movements/新しいヴィジョン.html">New Vision</option>
-                <option value="movements/写真分離派.html">Photo-Secession</option>
-                <option value="movements/フォトジャーナリズム.html">Photojournalism</option>
-                <option value="movements/ピクトリアリズム.html">Pictorialism</option>
-                <option value="movements/ピクチャーズ世代.html">Pictures Generation</option>
-                <option value="movements/ポートレート.html">Portrait</option>
-                <option value="movements/プライベート写真.html">Private Photography</option>
-                <option value="movements/プロヴォーク.html">Provoke</option>
-                <option value="movements/レイオグラフ.html">Rayograph / Photogram</option>
-                <option value="movements/リアリズム写真.html">Realism Photography</option>
-                <option value="movements/科学写真.html">Scientific Photography</option>
-                <option value="movements/社会ドキュメンタリー.html">Social Documentary</option>
-                <option value="movements/社会的写真.html">Social Photography</option>
-                <option value="movements/ステージド写真.html">Staged Photography</option>
-                <option value="movements/ストレート写真.html">Straight Photography</option>
-                <option value="movements/ストリート写真.html">Street Photography</option>
-                <option value="movements/シュルレアリスム.html">Surrealism</option>
-                <option value="movements/タイポロジー写真.html">Typological Photography</option>
-                <option value="movements/都市記録.html">Urban Documentation</option>
-                <option value="movements/ヴォルテクシズム.html">Vorticism</option>
-                <option value="movements/戦争写真.html">War Photography</option>
-                <option value="movements/カロタイプ.html">Calotype</option>
-                <option value="movements/ヘリオグラフィー.html">Heliography</option>
-                <option value="movements/写真石版.html">Photolithography</option>
-                <option value="movements/建築写真.html">Architectural Photography</option>
-                <option value="movements/明治ドキュメンタリー.html">Meiji Documentary</option>
-                <option value="movements/肖像写真.html">Portrait Photography</option>
-              </select>
-            </span>
-          </div>
-          <div class="map-info-footer"><a href="privacy-policy.html">Privacy Policy</a></div>
-        </div>
-      </div>
-    </details>
-    <button class="zoom-btn" id="zoom-out" type="button" aria-label="Zoom out">-</button>
-    <button class="zoom-btn" id="zoom-in" type="button" aria-label="Zoom in">+</button>
-  </div>
-  <aside class="connection-legend" aria-label="Connection legend" data-nosnippet>
-    <div class="connection-legend-title">Connections</div>
-    <ul>
-      <li><span class="legend-swatch direct"></span><span>Direct connections</span></li>
-      <li><span class="legend-swatch context"></span><span>Context around the focus</span></li>
-      <li><span class="legend-swatch photographer"></span><span>Stars mark photographers, movements, and ideas</span></li>
-    </ul>
-  </aside>
 </div>
 
-<div id="page-fade" aria-hidden="true"></div>
-<nav class="site-directory-links" aria-label="Key pages">
+<div class="page-links" aria-label="Navigate to archive pages" data-nosnippet>
+  <div class="lang-toggle" aria-label="Language switch">
+    <a class="lang-btn" href="/">Japanese</a>
+    <a class="lang-btn active" href="/en/">English</a>
+  </div>
+  <button class="mobile-label-toggle" id="mobile-label-toggle" type="button" aria-pressed="false">Show names</button>
+  <form class="page-search-form" id="top-page-search-form" role="search" autocomplete="off">
+    <input class="page-search-input" id="top-page-search-input" type="search" placeholder="Search photographers, movements, countries, eras" aria-autocomplete="list" aria-expanded="false" aria-controls="top-page-search-suggestions">
+    <button class="page-search-button" type="submit" aria-label="Search"></button>
+    <div class="page-search-suggestions" id="top-page-search-suggestions" hidden></div>
+  </form>
+  <span class="page-select-wrap">
+    <select class="page-select" aria-label="Browse movements" onchange="if(this.value) window.location.href=this.value">
+      <option value="">Browse movements</option>
+      <option value="movements/アメリカ写真.html">American Photography</option>
+      <option value="movements/バウハウス.html">Bauhaus</option>
+      <option value="movements/イギリス写真.html">British Photography</option>
+      <option value="movements/シネマトグラフィック写真.html">Cinematographic Photography</option>
+      <option value="movements/植民地写真.html">Colonial Photography</option>
+      <option value="movements/カラー写真.html">Color Photography</option>
+      <option value="movements/コンセプチュアル.html">Conceptual</option>
+      <option value="movements/コンセプチュアルアート.html">Conceptual Art</option>
+      <option value="movements/ダダ.html">Dada</option>
+      <option value="movements/決定的瞬間.html">Decisive Moment</option>
+      <option value="movements/ドキュメンタリー.html">Documentary</option>
+      <option value="movements/デュッセルドルフ派.html">Dusseldorf School</option>
+      <option value="movements/環境写真.html">Environmental Photography</option>
+      <option value="movements/実験的技法.html">Experimental Technique</option>
+      <option value="movements/フェミニズム写真.html">Feminist Photography</option>
+      <option value="movements/FSA写真.html">FSA Photography</option>
+      <option value="movements/私写真.html">I-Photography (Shi-shashin)</option>
+      <option value="movements/発明・技術.html">Invention &amp; Technique</option>
+      <option value="movements/日本写真.html">Japanese Photography</option>
+      <option value="movements/風景写真.html">Landscape</option>
+      <option value="movements/大判カラー写真.html">Large-Format Color</option>
+      <option value="movements/LGBTQ.html">LGBTQ+ Photography</option>
+      <option value="movements/モダニズム.html">Modernism</option>
+      <option value="movements/自然主義写真.html">Naturalistic Photography</option>
+      <option value="movements/新即物主義.html">Neue Sachlichkeit</option>
+      <option value="movements/ニューカラー.html">New Color</option>
+      <option value="movements/新しいヴィジョン.html">New Vision</option>
+      <option value="movements/写真分離派.html">Photo-Secession</option>
+      <option value="movements/フォトジャーナリズム.html">Photojournalism</option>
+      <option value="movements/ピクトリアリズム.html">Pictorialism</option>
+      <option value="movements/ピクチャーズ世代.html">Pictures Generation</option>
+      <option value="movements/ポートレート.html">Portrait</option>
+      <option value="movements/プライベート写真.html">Private Photography</option>
+      <option value="movements/プロヴォーク.html">Provoke</option>
+      <option value="movements/レイオグラフ.html">Rayograph / Photogram</option>
+      <option value="movements/リアリズム写真.html">Realism Photography</option>
+      <option value="movements/科学写真.html">Scientific Photography</option>
+      <option value="movements/社会ドキュメンタリー.html">Social Documentary</option>
+      <option value="movements/社会的写真.html">Social Photography</option>
+      <option value="movements/ステージド写真.html">Staged Photography</option>
+      <option value="movements/ストレート写真.html">Straight Photography</option>
+      <option value="movements/ストリート写真.html">Street Photography</option>
+      <option value="movements/シュルレアリスム.html">Surrealism</option>
+      <option value="movements/タイポロジー写真.html">Typological Photography</option>
+      <option value="movements/都市記録.html">Urban Documentation</option>
+      <option value="movements/ヴォルテクシズム.html">Vorticism</option>
+      <option value="movements/戦争写真.html">War Photography</option>
+      <option value="movements/カロタイプ.html">Calotype</option>
+      <option value="movements/ヘリオグラフィー.html">Heliography</option>
+      <option value="movements/写真石版.html">Photolithography</option>
+      <option value="movements/建築写真.html">Architectural Photography</option>
+      <option value="movements/明治ドキュメンタリー.html">Meiji Documentary</option>
+      <option value="movements/肖像写真.html">Portrait Photography</option>
+    </select>
+  </span>
+  <span class="page-select-wrap">
+    <select class="page-select" aria-label="Browse countries" onchange="if(this.value) window.location.href=this.value">
+      <option value="">Browse countries</option>
+      <option value="countries/united-states.html">United States</option>
+      <option value="countries/albania.html">Albania</option>
+      <option value="countries/australia.html">Australia</option>
+      <option value="countries/austria.html">Austria</option>
+      <option value="countries/belgium.html">Belgium</option>
+      <option value="countries/united-kingdom.html">United Kingdom</option>
+      <option value="countries/italy.html">Italy</option>
+      <option value="countries/ireland.html">Ireland</option>
+      <option value="countries/ukraine.html">Ukraine</option>
+      <option value="countries/netherlands.html">Netherlands</option>
+      <option value="countries/canada.html">Canada</option>
+      <option value="countries/south-korea.html">South Korea</option>
+      <option value="countries/switzerland.html">Switzerland</option>
+      <option value="countries/sweden.html">Sweden</option>
+      <option value="countries/spain.html">Spain</option>
+      <option value="countries/czech-republic.html">Czech Republic</option>
+      <option value="countries/china.html">China</option>
+      <option value="countries/denmark.html">Denmark</option>
+      <option value="countries/germany.html">Germany</option>
+      <option value="countries/north-macedonia.html">North Macedonia</option>
+      <option value="countries/norway.html">Norway</option>
+      <option value="countries/hungary.html">Hungary</option>
+      <option value="countries/france.html">France</option>
+      <option value="countries/brazil.html">Brazil</option>
+      <option value="countries/venezuela.html">Venezuela</option>
+      <option value="countries/poland.html">Poland</option>
+      <option value="countries/mali.html">Mali</option>
+      <option value="countries/mexico.html">Mexico</option>
+      <option value="countries/south-africa.html">South Africa</option>
+      <option value="countries/japan.html">Japan</option>
+      <option value="countries/romania.html">Romania</option>
+      <option value="countries/russia.html">Russia</option>
+    </select>
+  </span>
+  <span class="page-select-wrap">
+    <select class="page-select" aria-label="Browse eras" onchange="if(this.value) window.location.href=this.value">
+      <option value="">Browse eras</option>
+      <option value="archive.html#tab-era">Browse by Era</option>
+      <option value="eras/1839.html">1839–1860s</option>
+      <option value="eras/1870.html">1870–1890s</option>
+      <option value="eras/1890.html">1890–1910s</option>
+      <option value="eras/1910.html">1910–1920s</option>
+      <option value="eras/1930.html">1930–1940s</option>
+      <option value="eras/1950.html">1950–1960s</option>
+      <option value="eras/1970.html">1970–1980s</option>
+      <option value="eras/1980.html">1980–1990s</option>
+      <option value="eras/1990.html">1990–2000s</option>
+      <option value="eras/2000.html">2000–2010s</option>
+      <option value="eras/2010.html">2010–2020s</option>
+    </select>
+  </span>
+  <div class="spread-control" aria-label="Star spread">
+    <input id="stage-scale-range" type="range" min="0" max="100" step="1" value="50">
+  </div>
+</div>
+
+<div class="action-buttons" aria-label="Auxiliary controls" data-nosnippet>
+  <button class="control-btn mobile-search-toggle" id="mobile-search-toggle" type="button" aria-label="Search" aria-expanded="false"></button>
+  <details class="map-info-control">
+    <summary class="control-btn map-info-summary" aria-label="Instructions and notes">i</summary>
+    <div class="map-info-panel">
+      <div class="map-info-sections">
+        <div class="map-info-block">
+          <div class="map-info-heading">About</div>
+          <div class="map-info-text">Photo Coordinates is a photography-history site for tracing photographers, movements, countries, and historical context across world photography.</div>
+        </div>
+        <div class="map-info-block">
+          <div class="map-info-heading">How to use</div>
+          <div class="map-info-text">Click once to bring a star to the center, click again to open the detail page, and drag to explore the map.</div>
+        </div>
+        <div class="map-info-block">
+          <div class="map-info-heading">Editorial approach</div>
+          <div class="map-info-text">Photo Coordinates is an editorial photography-history project that organizes photographers, movements, and historical context from public sources. AI is used as an assistance tool for collecting and arranging sources, while citations are checked and updated over time.</div>
+        </div>
+        <nav class="map-info-block map-info-directory" aria-label="Key pages">
+          <div class="map-info-heading">Key pages</div>
+          <div class="map-info-directory-row">
+            <a href="/en/archive.html">Photographers</a>
+            <a href="/en/relations.html">Relation Map</a>
+            <a href="/en/eras/1839.html">1839-1860s</a>
+            <a href="/en/eras/1910.html">1910-1920s</a>
+            <a href="/en/eras/1950.html">1950-1960s</a>
+            <a href="/en/eras/1970.html">1970-1980s</a>
+          </div>
+          <div class="map-info-directory-row">
+            <a href="/en/photographers/araki.html">Nobuyoshi Araki</a>
+            <a href="/en/photographers/moriyama.html">Daido Moriyama</a>
+            <a href="/en/photographers/domon.html">Ken Domon</a>
+            <a href="/en/photographers/cartierbresson.html">Henri Cartier-Bresson</a>
+            <a href="/en/photographers/evans.html">Walker Evans</a>
+          </div>
+        </nav>
+        <div class="map-info-links">
+          <span class="map-info-select-wrap">
+            <select class="map-info-select" aria-label="Browse eras" onchange="if(this.value) window.location.href=this.value">
+              <option value="">Browse eras</option>
+              <option value="archive.html#tab-era">Browse by Era</option>
+              <option value="eras/1839.html">1839–1860s</option>
+              <option value="eras/1870.html">1870–1890s</option>
+              <option value="eras/1890.html">1890–1910s</option>
+              <option value="eras/1910.html">1910–1920s</option>
+              <option value="eras/1930.html">1930–1940s</option>
+              <option value="eras/1950.html">1950–1960s</option>
+              <option value="eras/1970.html">1970–1980s</option>
+              <option value="eras/1980.html">1980–1990s</option>
+              <option value="eras/1990.html">1990–2000s</option>
+              <option value="eras/2000.html">2000–2010s</option>
+              <option value="eras/2010.html">2010–2020s</option>
+            </select>
+          </span>
+          <span class="map-info-select-wrap">
+            <select class="map-info-select" aria-label="Browse countries" onchange="if(this.value) window.location.href=this.value">
+              <option value="">Browse countries</option>
+              <option value="countries/united-states.html">United States</option>
+              <option value="countries/albania.html">Albania</option>
+              <option value="countries/australia.html">Australia</option>
+              <option value="countries/austria.html">Austria</option>
+              <option value="countries/belgium.html">Belgium</option>
+              <option value="countries/united-kingdom.html">United Kingdom</option>
+              <option value="countries/italy.html">Italy</option>
+              <option value="countries/ireland.html">Ireland</option>
+              <option value="countries/ukraine.html">Ukraine</option>
+              <option value="countries/netherlands.html">Netherlands</option>
+              <option value="countries/canada.html">Canada</option>
+              <option value="countries/south-korea.html">South Korea</option>
+              <option value="countries/switzerland.html">Switzerland</option>
+              <option value="countries/sweden.html">Sweden</option>
+              <option value="countries/spain.html">Spain</option>
+              <option value="countries/czech-republic.html">Czech Republic</option>
+              <option value="countries/china.html">China</option>
+              <option value="countries/denmark.html">Denmark</option>
+              <option value="countries/germany.html">Germany</option>
+              <option value="countries/north-macedonia.html">North Macedonia</option>
+              <option value="countries/norway.html">Norway</option>
+              <option value="countries/hungary.html">Hungary</option>
+              <option value="countries/france.html">France</option>
+              <option value="countries/brazil.html">Brazil</option>
+              <option value="countries/venezuela.html">Venezuela</option>
+              <option value="countries/poland.html">Poland</option>
+              <option value="countries/mali.html">Mali</option>
+              <option value="countries/mexico.html">Mexico</option>
+              <option value="countries/south-africa.html">South Africa</option>
+              <option value="countries/japan.html">Japan</option>
+              <option value="countries/romania.html">Romania</option>
+              <option value="countries/russia.html">Russia</option>
+            </select>
+          </span>
+          <span class="map-info-select-wrap">
+            <select class="map-info-select" aria-label="Browse movements" onchange="if(this.value) window.location.href=this.value">
+              <option value="">Browse movements</option>
+              <option value="movements/アメリカ写真.html">American Photography</option>
+              <option value="movements/バウハウス.html">Bauhaus</option>
+              <option value="movements/イギリス写真.html">British Photography</option>
+              <option value="movements/シネマトグラフィック写真.html">Cinematographic Photography</option>
+              <option value="movements/植民地写真.html">Colonial Photography</option>
+              <option value="movements/カラー写真.html">Color Photography</option>
+              <option value="movements/コンセプチュアル.html">Conceptual</option>
+              <option value="movements/コンセプチュアルアート.html">Conceptual Art</option>
+              <option value="movements/ダダ.html">Dada</option>
+              <option value="movements/決定的瞬間.html">Decisive Moment</option>
+              <option value="movements/ドキュメンタリー.html">Documentary</option>
+              <option value="movements/デュッセルドルフ派.html">Dusseldorf School</option>
+              <option value="movements/環境写真.html">Environmental Photography</option>
+              <option value="movements/実験的技法.html">Experimental Technique</option>
+              <option value="movements/フェミニズム写真.html">Feminist Photography</option>
+              <option value="movements/FSA写真.html">FSA Photography</option>
+              <option value="movements/私写真.html">I-Photography (Shi-shashin)</option>
+              <option value="movements/発明・技術.html">Invention &amp; Technique</option>
+              <option value="movements/日本写真.html">Japanese Photography</option>
+              <option value="movements/風景写真.html">Landscape</option>
+              <option value="movements/大判カラー写真.html">Large-Format Color</option>
+              <option value="movements/LGBTQ.html">LGBTQ+ Photography</option>
+              <option value="movements/モダニズム.html">Modernism</option>
+              <option value="movements/自然主義写真.html">Naturalistic Photography</option>
+              <option value="movements/新即物主義.html">Neue Sachlichkeit</option>
+              <option value="movements/ニューカラー.html">New Color</option>
+              <option value="movements/新しいヴィジョン.html">New Vision</option>
+              <option value="movements/写真分離派.html">Photo-Secession</option>
+              <option value="movements/フォトジャーナリズム.html">Photojournalism</option>
+              <option value="movements/ピクトリアリズム.html">Pictorialism</option>
+              <option value="movements/ピクチャーズ世代.html">Pictures Generation</option>
+              <option value="movements/ポートレート.html">Portrait</option>
+              <option value="movements/プライベート写真.html">Private Photography</option>
+              <option value="movements/プロヴォーク.html">Provoke</option>
+              <option value="movements/レイオグラフ.html">Rayograph / Photogram</option>
+              <option value="movements/リアリズム写真.html">Realism Photography</option>
+              <option value="movements/科学写真.html">Scientific Photography</option>
+              <option value="movements/社会ドキュメンタリー.html">Social Documentary</option>
+              <option value="movements/社会的写真.html">Social Photography</option>
+              <option value="movements/ステージド写真.html">Staged Photography</option>
+              <option value="movements/ストレート写真.html">Straight Photography</option>
+              <option value="movements/ストリート写真.html">Street Photography</option>
+              <option value="movements/シュルレアリスム.html">Surrealism</option>
+              <option value="movements/タイポロジー写真.html">Typological Photography</option>
+              <option value="movements/都市記録.html">Urban Documentation</option>
+              <option value="movements/ヴォルテクシズム.html">Vorticism</option>
+              <option value="movements/戦争写真.html">War Photography</option>
+              <option value="movements/カロタイプ.html">Calotype</option>
+              <option value="movements/ヘリオグラフィー.html">Heliography</option>
+              <option value="movements/写真石版.html">Photolithography</option>
+              <option value="movements/建築写真.html">Architectural Photography</option>
+              <option value="movements/明治ドキュメンタリー.html">Meiji Documentary</option>
+              <option value="movements/肖像写真.html">Portrait Photography</option>
+            </select>
+          </span>
+        </div>
+        <div class="map-info-footer"><a href="privacy-policy.html">Privacy Policy</a></div>
+      </div>
+    </div>
+  </details>
+  <button class="control-btn" id="reset-design-view" type="button" aria-label="Reset view">◎</button>
+</div>
+
+<nav class="site-directory-links" aria-label="主要ページ">
   <div class="site-directory-group">
     <span class="site-directory-label">Index</span>
     <a href="/en/archive.html">Photographers</a>
-    <a href="/en/relations.html">Relation Map</a>
     <a href="/en/eras/1839.html">1839-1860s</a>
     <a href="/en/eras/1910.html">1910-1920s</a>
     <a href="/en/eras/1950.html">1950-1960s</a>
@@ -1268,45 +1106,95 @@ body.is-navigating #page-fade {
     <a href="/en/photographers/evans.html">Walker Evans</a>
   </div>
 </nav>
+
 <footer class="site-footer" data-nosnippet>
   <a href="privacy-policy.html">Privacy Policy</a>
 </footer>
 
-<script src="../data/movements.js?v=20260403d"></script>
 <script src="../data/photographers.js?v=20260405j"></script>
 <script src="../data/photographers-supplement.js?v=20260419c"></script>
 <script src="../data/photographers-manual-additions.js?v=20260409c"></script>
-<script src="../data/relation-graph.js?v=20260419c"></script>
 <script>
   (function () {
-    function syncHeroCopyWidth() {
-      const hero = document.querySelector('.hero-text');
-      const titleText = document.getElementById('main-title');
-      if (!hero || !titleText) return;
-      if (window.innerWidth <= 768) {
-        hero.style.setProperty('--hero-copy-width', 'auto');
-        return;
-      }
-      const viewportWidth = window.innerWidth - 64;
-      const measured = Math.ceil(titleText.getBoundingClientRect().width);
-      const width = Math.max(260, Math.min(measured, viewportWidth));
-      hero.style.setProperty('--hero-copy-width', width + 'px');
-    }
-    window.addEventListener('resize', syncHeroCopyWidth);
-    window.addEventListener('load', syncHeroCopyWidth);
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(syncHeroCopyWidth);
-    }
-  })();
-</script>
-<script src="../scripts/language.js?v=20260403e"></script>
-<script src="../scripts/relations.js?v=20260501a"></script>
-<script>
-  (function () {
+    const DESIGN_DEFAULT_SPREAD = 2.1;
+    const MOBILE_DESIGN_DEFAULT_SPREAD = 3.2;
+    const scaleRange = document.getElementById('stage-scale-range');
+    const resetButton = document.getElementById('reset-design-view');
+    let frame = document.getElementById('design-frame');
     const searchForm = document.getElementById('top-page-search-form');
     const searchInput = document.getElementById('top-page-search-input');
     const searchSuggestions = document.getElementById('top-page-search-suggestions');
+    const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+    const mobileLabelToggle = document.getElementById('mobile-label-toggle');
     const searchCandidates = [];
+
+    function bindFrame(nextFrame) {
+      frame = nextFrame;
+      if (frame) {
+        frame.addEventListener('load', patchDesignFrame);
+      }
+    }
+
+    function clearDesignPersistence() {
+      try {
+        frame.contentWindow.localStorage.removeItem('pc_selected');
+        frame.contentWindow.localStorage.removeItem('pc_mode');
+        frame.contentWindow.postMessage({ type: '__pc_reset_selection' }, '*');
+      } catch {}
+    }
+
+    function closeDesignSelection() {
+      try {
+        const closeButton = frame.contentDocument && frame.contentDocument.querySelector('.close-btn');
+        if (closeButton) {
+          closeButton.click();
+          return true;
+        }
+      } catch {}
+      return false;
+    }
+
+    function getDesignSlider() {
+      const doc = frame && frame.contentDocument;
+      if (!doc) return null;
+      return doc.querySelector('input[type="range"]');
+    }
+    function syncFromDesign() {
+      const designSlider = getDesignSlider();
+      if (!designSlider || !scaleRange) return;
+      const min = Number(designSlider.min || 0);
+      const max = Number(designSlider.max || 100);
+      const value = Number(designSlider.value || min);
+      const ratio = max > min ? ((value - min) / (max - min)) * 100 : 50;
+      scaleRange.value = String(Math.round(ratio));
+    }
+    function syncToDesign() {
+      const designSlider = getDesignSlider();
+      if (!designSlider || !scaleRange) return;
+      const min = Number(designSlider.min || 0);
+      const max = Number(designSlider.max || 100);
+      const ratio = Number(scaleRange.value) / 100;
+      const nextValue = min + (max - min) * ratio;
+      designSlider.value = String(nextValue);
+      designSlider.dispatchEvent(new Event('input', { bubbles: true }));
+      designSlider.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    function resetDesignStage() {
+      clearDesignPersistence();
+      const designSlider = getDesignSlider();
+      if (designSlider) {
+        designSlider.value = String(window.innerWidth <= 768 ? MOBILE_DESIGN_DEFAULT_SPREAD : DESIGN_DEFAULT_SPREAD);
+        designSlider.dispatchEvent(new Event('input', { bubbles: true }));
+        designSlider.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      syncFromDesign();
+      if (!closeDesignSelection()) {
+        requestAnimationFrame(() => {
+          closeDesignSelection();
+        });
+      }
+    }
 
     function normalizeSearchValue(value) {
       return String(value || '')
@@ -1349,11 +1237,11 @@ body.is-navigating #page-fade {
         .filter((photographer) => photographer && photographer.id && !photographer.isPlaceholder)
         .forEach((photographer) => {
           addSearchCandidate(
-            photographer.name || photographer.nameJa || photographer.id,
-            `/en/photographers/${photographer.id}.html`,
+            photographer.nameEn || photographer.name || photographer.nameJa || photographer.id,
+            `photographers/${photographer.id}.html`,
             [
-              photographer.name,
               photographer.nameEn,
+              photographer.name,
               photographer.nameJa,
               photographer.romaji,
               photographer.nameRomaji,
@@ -1422,8 +1310,159 @@ body.is-navigating #page-fade {
       return first ? first.href : '';
     }
 
+    function patchDesignFrame() {
+      const doc = frame && frame.contentDocument;
+      if (!doc) return;
+      if (!doc.getElementById('design-overlay-patch')) {
+        const style = doc.createElement('style');
+        style.id = 'design-overlay-patch';
+        style.textContent = `
+          .masthead,.side-controls,.mode-switcher,.tweaks-panel,.footer-link{display:none!important;}
+          .connection-legend .legend-summary {
+            display: none;
+            list-style: none;
+          }
+          .connection-legend .legend-summary::-webkit-details-marker {
+            display: none;
+          }
+          @media (max-width: 768px) {
+            .info-card {
+              display: none !important;
+            }
+            .connection-legend {
+              display: block !important;
+              top: calc(76px + env(safe-area-inset-top, 0px)) !important;
+              right: 16px !important;
+              bottom: auto !important;
+              width: 92px !important;
+              max-height: min(34svh, 230px) !important;
+              padding: 0 !important;
+              overflow: hidden !important;
+            }
+            .info-card.is-open {
+              display: block !important;
+              left: 16px !important;
+              right: 16px !important;
+              bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+              width: auto !important;
+              max-height: min(52svh, 360px) !important;
+            }
+            .info-card-toggle {
+              position: absolute;
+              left: 16px;
+              bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+              z-index: 22;
+              min-width: 132px;
+              max-width: calc(100vw - 152px);
+              min-height: 34px;
+              padding: 8px 12px;
+              border: 1px solid var(--ink-20);
+              border-radius: 2px;
+              background: rgba(10, 14, 24, 0.78);
+              color: var(--ink-80);
+              font: 400 10px/1.2 var(--font-mono);
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              backdrop-filter: blur(12px);
+            }
+            .connection-legend .legend-summary {
+              display: block;
+              min-height: 24px;
+              padding: 7px 8px;
+              color: var(--ink-80);
+              font: 400 9px/1.1 var(--font-mono);
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+              cursor: pointer;
+            }
+            .connection-legend .legend-summary::after {
+              content: '+';
+              float: right;
+              color: var(--ink-40);
+            }
+            .connection-legend[open] .legend-summary::after {
+              content: '×';
+            }
+            .connection-legend .legend-title {
+              padding: 0 8px 5px;
+              margin: 0;
+              font-size: 8px;
+              letter-spacing: 0.1em;
+            }
+            .connection-legend ul {
+              padding: 0 8px 8px !important;
+              gap: 2px !important;
+            }
+            .connection-legend li {
+              gap: 5px !important;
+              font-size: 8px !important;
+              line-height: 1.25 !important;
+            }
+            .connection-legend .legend-swatch {
+              width: 9px !important;
+            }
+          }
+          @media (min-width: 769px) {
+            .info-card-toggle { display: none !important; }
+          }
+        `;
+        doc.head.appendChild(style);
+      }
+      syncFromDesign();
+      const designSlider = getDesignSlider();
+      if (designSlider && !designSlider.dataset.overlaySynced) {
+        designSlider.dataset.overlaySynced = 'true';
+        designSlider.addEventListener('input', syncFromDesign);
+        designSlider.addEventListener('change', syncFromDesign);
+      }
+      requestAnimationFrame(() => {
+        clearDesignPersistence();
+        closeDesignSelection();
+        syncFromDesign();
+      });
+    }
+    bindFrame(frame);
+    if (scaleRange) {
+      scaleRange.addEventListener('input', syncToDesign);
+      scaleRange.addEventListener('change', syncToDesign);
+    }
+    if (mobileLabelToggle) {
+      mobileLabelToggle.addEventListener('click', () => {
+        const isActive = mobileLabelToggle.classList.toggle('active');
+        mobileLabelToggle.setAttribute('aria-pressed', String(isActive));
+        try {
+          const designToggle = frame.contentDocument && frame.contentDocument.querySelector('.mobile-label-toggle');
+          if (designToggle && designToggle.getAttribute('aria-pressed') !== String(isActive)) {
+            designToggle.click();
+          }
+        } catch {}
+      });
+    }
+    if (resetButton && frame) {
+      resetButton.addEventListener('click', () => {
+        resetDesignStage();
+      });
+    }
     populateSearchSuggestions();
     if (searchForm && searchInput) {
+      if (mobileSearchToggle) {
+        mobileSearchToggle.addEventListener('click', () => {
+          const isOpen = document.body.classList.toggle('mobile-search-open');
+          mobileSearchToggle.setAttribute('aria-expanded', String(isOpen));
+          if (isOpen) {
+            window.setTimeout(() => {
+              searchInput.focus();
+              if (searchInput.value.trim()) renderSearchSuggestions(searchInput.value);
+            }, 30);
+          } else if (searchSuggestions) {
+            searchSuggestions.hidden = true;
+            searchInput.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
       searchInput.addEventListener('input', () => {
         renderSearchSuggestions(searchInput.value);
       });
