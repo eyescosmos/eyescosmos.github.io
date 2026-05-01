@@ -110,7 +110,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
   const isMobileViewport = isMobileViewportWidth(viewport.w);
   const spread = tweaks.spread || 1;
   const getViewportInsets = () => isMobileViewport
-    ? { left: 24, right: 24, top: 184, bottom: 116 }
+    ? { left: 22, right: 22, top: 186, bottom: 126 }
     : { left: Math.min(360, viewport.w * 0.29), right: 90, top: 122, bottom: 92 };
   const toSpreadPx = (p) => {
     const baseX = padX + p.x * (viewport.w - padX * 2);
@@ -248,7 +248,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
       parentIdsBySecond.get(secondId).push(firstId);
     });
 
-    const mobileConstellationScale = isMobileViewport ? 0.48 : 1;
+    const mobileConstellationScale = isMobileViewport ? 0.34 : 1;
     const ringRadius1 = Math.max(
       194 + crowdBoost * 22 + denseBoost * 14,
       unit * (0.255 + crowdBoost * 0.016 + denseBoost * 0.011)
@@ -473,8 +473,8 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
         const x = base.x + off.dx;
         const y = base.y + off.dy;
         const depthForBounds = depthMap?.get(id) || 0;
-        const mobilePadX = depthForBounds === 0 ? 42 : 64;
-        const mobilePadY = depthForBounds === 0 ? 34 : 48;
+        const mobilePadX = depthForBounds === 0 ? 40 : 62;
+        const mobilePadY = depthForBounds === 0 ? 32 : 44;
         const padForBoundsX = isMobileViewport ? mobilePadX : 190;
         const padForBoundsY = isMobileViewport ? mobilePadY : 150;
         minX = Math.min(minX, x - padForBoundsX);
@@ -489,11 +489,11 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
         const availableHeight = Math.max(220, viewport.h - insets.top - insets.bottom);
         const boundsWidth = Math.max(220, maxX - minX);
         const boundsHeight = Math.max(220, maxY - minY);
-        const fitZoom = Math.max(isMobileViewport ? 1.08 : 0.72, Math.min(isMobileViewport ? 1.58 : 3.2, Math.min(
+        const fitZoom = Math.max(isMobileViewport ? 1.0 : 0.72, Math.min(isMobileViewport ? 1.3 : 3.2, Math.min(
           availableWidth / boundsWidth,
           availableHeight / boundsHeight
-        ) * (isMobileViewport ? 1.34 : 1.08)));
-        nextTargetZoom = isMobileViewport ? Math.max(1.14, fitZoom) : fitZoom;
+        ) * (isMobileViewport ? 1.18 : 1.08)));
+        nextTargetZoom = isMobileViewport ? Math.max(1.02, fitZoom) : fitZoom;
 
         const desiredScreenX = insets.left + availableWidth * 0.5;
         const desiredScreenY = insets.top + availableHeight * 0.5;
@@ -501,6 +501,17 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
         const boundsCenterY = (minY + maxY) * 0.5;
         nextTargetPan.x = desiredScreenX - (cx + (boundsCenterX - cx) * nextTargetZoom);
         nextTargetPan.y = desiredScreenY - (cy + (boundsCenterY - cy) * nextTargetZoom);
+
+        if (isMobileViewport) {
+          const screenMinX = cx + (minX - cx) * nextTargetZoom + nextTargetPan.x;
+          const screenMaxX = cx + (maxX - cx) * nextTargetZoom + nextTargetPan.x;
+          const screenMinY = cy + (minY - cy) * nextTargetZoom + nextTargetPan.y;
+          const screenMaxY = cy + (maxY - cy) * nextTargetZoom + nextTargetPan.y;
+          if (screenMinX < insets.left) nextTargetPan.x += insets.left - screenMinX;
+          if (screenMaxX > viewport.w - insets.right) nextTargetPan.x -= screenMaxX - (viewport.w - insets.right);
+          if (screenMinY < insets.top) nextTargetPan.y += insets.top - screenMinY;
+          if (screenMaxY > viewport.h - insets.bottom) nextTargetPan.y -= screenMaxY - (viewport.h - insets.bottom);
+        }
       }
     }
 
@@ -1231,6 +1242,7 @@ const MOBILE_TOP_CSS = `
     margin-bottom: 6px;
   }
   .masthead .sub-en {
+    display: none;
     margin-bottom: 0;
     font-size: 9px;
     letter-spacing: 0.2em;
@@ -1274,15 +1286,25 @@ const MOBILE_TOP_CSS = `
   }
   .side-controls .spread-control {
     position: fixed;
-    top: calc(122px + env(safe-area-inset-top, 0px));
-    left: 16px;
+    top: calc(126px + env(safe-area-inset-top, 0px));
+    left: 54px;
     z-index: 24;
-    width: 116px !important;
+    width: 18px !important;
+    height: 118px;
     min-width: 0;
-    padding: 3px 0;
+    padding: 0;
     border: 0;
     background: transparent;
     backdrop-filter: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .side-controls .spread-control input[type="range"] {
+    width: 118px;
+    height: 2px;
+    transform: rotate(-90deg);
+    transform-origin: center;
   }
   .side-controls .spread-control input[type="range"]::-webkit-slider-thumb {
     width: 11px;
