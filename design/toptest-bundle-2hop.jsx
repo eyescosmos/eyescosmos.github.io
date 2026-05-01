@@ -248,7 +248,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
       parentIdsBySecond.get(secondId).push(firstId);
     });
 
-    const mobileConstellationScale = isMobileViewport ? 0.58 : 1;
+    const mobileConstellationScale = isMobileViewport ? 0.48 : 1;
     const ringRadius1 = Math.max(
       194 + crowdBoost * 22 + denseBoost * 14,
       unit * (0.255 + crowdBoost * 0.016 + denseBoost * 0.011)
@@ -455,7 +455,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
   }, [selected, tweaks.hops, tweaks.spread, viewport.w, viewport.h]);
 
   useEffect(() => {
-    const { memberIds, targetOffsets } = buildSelectionTargets(selected);
+    const { memberIds, targetOffsets, depthMap } = buildSelectionTargets(selected);
     const nextTargetPan = { x: 0, y: 0 };
     let nextTargetZoom = 1;
 
@@ -472,10 +472,15 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
         const off = targetOffsets[id] || { dx: 0, dy: 0 };
         const x = base.x + off.dx;
         const y = base.y + off.dy;
-        minX = Math.min(minX, x - 190);
-        maxX = Math.max(maxX, x + 190);
-        minY = Math.min(minY, y - 150);
-        maxY = Math.max(maxY, y + 150);
+        const depthForBounds = depthMap?.get(id) || 0;
+        const mobilePadX = depthForBounds === 0 ? 42 : 64;
+        const mobilePadY = depthForBounds === 0 ? 34 : 48;
+        const padForBoundsX = isMobileViewport ? mobilePadX : 190;
+        const padForBoundsY = isMobileViewport ? mobilePadY : 150;
+        minX = Math.min(minX, x - padForBoundsX);
+        maxX = Math.max(maxX, x + padForBoundsX);
+        minY = Math.min(minY, y - padForBoundsY);
+        maxY = Math.max(maxY, y + padForBoundsY);
       });
 
       if (Number.isFinite(minX) && Number.isFinite(minY)) {
@@ -484,11 +489,11 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
         const availableHeight = Math.max(220, viewport.h - insets.top - insets.bottom);
         const boundsWidth = Math.max(220, maxX - minX);
         const boundsHeight = Math.max(220, maxY - minY);
-        const fitZoom = Math.max(isMobileViewport ? 0.98 : 0.72, Math.min(isMobileViewport ? 1.35 : 3.2, Math.min(
+        const fitZoom = Math.max(isMobileViewport ? 1.08 : 0.72, Math.min(isMobileViewport ? 1.58 : 3.2, Math.min(
           availableWidth / boundsWidth,
           availableHeight / boundsHeight
-        ) * (isMobileViewport ? 1.22 : 1.08)));
-        nextTargetZoom = isMobileViewport ? Math.max(1.06, fitZoom) : fitZoom;
+        ) * (isMobileViewport ? 1.34 : 1.08)));
+        nextTargetZoom = isMobileViewport ? Math.max(1.14, fitZoom) : fitZoom;
 
         const desiredScreenX = insets.left + availableWidth * 0.5;
         const desiredScreenY = insets.top + availableHeight * 0.5;
@@ -576,30 +581,36 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
 
   // Drag pan
   const onPointerDown = (e) => {
-    if (e.target.closest('.star')) return;
     if (viewAnimRef.current) cancelAnimationFrame(viewAnimRef.current);
-    draggingRef.current = { x: e.clientX - panRef.current.x, y: e.clientY - panRef.current.y };
+    const starNode = e.target.closest('.star');
+    draggingRef.current = {
+      x: e.clientX - panRef.current.x,
+      y: e.clientY - panRef.current.y,
+      startX: e.clientX,
+      startY: e.clientY,
+      starId: starNode?.dataset?.starId || null,
+      dragged: false
+    };
   };
   const onPointerMove = (e) => {
     if (!draggingRef.current) return;
+    if (Math.hypot(e.clientX - draggingRef.current.startX, e.clientY - draggingRef.current.startY) > 6) {
+      draggingRef.current.dragged = true;
+    }
     const nextPan = { x: e.clientX - draggingRef.current.x, y: e.clientY - draggingRef.current.y };
     panRef.current = nextPan;
     setPan(nextPan);
   };
-  const onPointerUp = () => {draggingRef.current = null;};
-
-  const activateStar = (event, id) => {
-    event.preventDefault();
-    event.stopPropagation();
-    lastPointerSelectRef.current = { id, time: performance.now() };
-    onSelect(id);
-  };
-
-  const activateStarFromClick = (event, id) => {
-    event.stopPropagation();
-    const last = lastPointerSelectRef.current;
-    if (last.id === id && performance.now() - last.time < 450) return;
-    onSelect(id);
+  const onPointerUp = (e) => {
+    const currentDrag = draggingRef.current;
+    draggingRef.current = null;
+    if (!currentDrag) return;
+    if (!currentDrag.dragged && currentDrag.starId) {
+      e?.preventDefault?.();
+      e?.stopPropagation?.();
+      lastPointerSelectRef.current = { id: currentDrag.starId, time: performance.now() };
+      onSelect(currentDrag.starId);
+    }
   };
 
   useEffect(() => {
@@ -621,6 +632,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
   // Label visibility logic — readability first.
   const shouldShowLabel = (p, depth, isActive, isHovered) => {
     if (isActive || isHovered) return true;
+    if (tweaks.labelDensity === 'all') return true;
     if (isMobileViewport) {
       if (selected) return depth === 1 && p.influence >= 7;
       return p.influence >= 9.5;
@@ -675,7 +687,9 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
       const isHovered = p.id === hovered;
       if (!shouldShowLabel(p, depth, isActive, isHovered)) continue;
       const pos = toPx(p);
-      const fontSize = isActive ? 13 : depth === 2 ? (p.influence >= 8 ? 9.5 : 8.5) : p.influence >= 8 ? 11.5 : 10.5;
+      const fontSize = isMobileViewport
+        ? isActive ? 11.2 : depth === 1 ? 8.9 : depth === 2 ? 8 : p.influence >= 9 ? 9 : 8.4
+        : isActive ? 13 : depth === 2 ? (p.influence >= 8 ? 9.5 : 8.5) : p.influence >= 8 ? 11.5 : 10.5;
       const w = (p.name?.length || 4) * (fontSize * 0.92) + 8;
       const h = depth === 2 ? 12 : 14;
       let placedRect = null;
@@ -695,7 +709,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
       visible.set(p.id, placedRect.off);
     }
     return visible;
-  }, [photographers, selected, hovered, activeSet, activeDepths, tweaks.labelDensity, zoom, pan.x, pan.y]);
+  }, [photographers, selected, hovered, activeSet, activeDepths, tweaks.labelDensity, zoom, pan.x, pan.y, viewport.w, viewport.h]);
 
   // Nebula labels — aggregate movement positions
   const nebulaLabels = useMemo(() => {
@@ -815,13 +829,12 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
           return (
             <g
               key={p.id}
+              data-star-id={p.id}
               className={`star ${isActive ? 'active' : ''} ${isHovered ? 'hover' : ''} ${isNeighbor ? 'connected' : ''} ${isDim ? 'dim' : ''}`}
               transform={`translate(${pos.x} ${pos.y})`}
-              onPointerUp={(e) => activateStar(e, p.id)}
-              onClick={(e) => activateStarFromClick(e, p.id)}
               onMouseEnter={() => onHover(p.id)}
               onMouseLeave={() => onHover(null)}
-              style={{ color, opacity: depthOpacity, touchAction: 'manipulation' }}>
+              style={{ color, opacity: depthOpacity, touchAction: 'none' }}>
               
               {/* Halo */}
               <circle className="star-halo" r={r * 4} fill={color} opacity="0.12" />
@@ -857,8 +870,12 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
               y={pos.y + labelOff.dy + (labelOff.dy > 0 ? 4 : -4)}
               textAnchor="middle"
               style={{
-                fontSize: isActive ? 13 : depth === 2 ? (p.influence >= 8 ? 9.5 : 8.5) : p.influence >= 8 ? 11.5 : 10.5,
-                opacity: depth === 2 ? (p.influence >= 8 ? 0.68 : 0.48) : 1
+                fontSize: isMobileViewport
+                  ? isActive ? 11.2 : depth === 1 ? 8.9 : depth === 2 ? 8 : p.influence >= 9 ? 9 : 8.4
+                  : isActive ? 13 : depth === 2 ? (p.influence >= 8 ? 9.5 : 8.5) : p.influence >= 8 ? 11.5 : 10.5,
+                opacity: isMobileViewport
+                  ? isActive ? 0.9 : depth === 1 ? 0.68 : depth === 2 ? 0.48 : 0.54
+                  : depth === 2 ? (p.influence >= 8 ? 0.68 : 0.48) : 1
               }}
               pointerEvents="none">
               {p.name}
@@ -1192,6 +1209,9 @@ const MOBILE_TOP_CSS = `
 .connection-legend .legend-summary::-webkit-details-marker {
   display: none;
 }
+.mobile-label-toggle {
+  display: none;
+}
 @media (max-width: 699px) {
   .masthead {
     top: calc(16px + env(safe-area-inset-top, 0px));
@@ -1235,15 +1255,34 @@ const MOBILE_TOP_CSS = `
     padding: 7px 10px;
     font-size: 10px;
   }
+  .mobile-label-toggle {
+    display: block;
+    width: 92px;
+    min-height: 24px;
+    margin-top: 3px;
+    border: 1px solid var(--ink-20);
+    border-radius: 2px;
+    background: rgba(10, 14, 24, 0.54);
+    color: var(--ink-60);
+    font: 400 8px/1 var(--font-mono);
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+  .mobile-label-toggle.active {
+    background: var(--ink-100);
+    color: var(--bg-0);
+  }
   .side-controls .spread-control {
     position: fixed;
-    top: calc(132px + env(safe-area-inset-top, 0px));
+    top: calc(122px + env(safe-area-inset-top, 0px));
     left: 16px;
     z-index: 24;
-    width: 136px !important;
+    width: 116px !important;
     min-width: 0;
-    padding: 8px 10px;
-    background: rgba(10, 14, 24, 0.54);
+    padding: 3px 0;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
   }
   .side-controls .spread-control input[type="range"]::-webkit-slider-thumb {
     width: 11px;
@@ -1289,18 +1328,18 @@ const MOBILE_TOP_CSS = `
   }
   .connection-legend {
     display: block !important;
-    top: calc(48px + env(safe-area-inset-top, 0px)) !important;
+    top: calc(76px + env(safe-area-inset-top, 0px)) !important;
     right: 16px !important;
     bottom: auto !important;
-    width: 112px !important;
-    max-height: min(40svh, 300px) !important;
+    width: 92px !important;
+    max-height: min(34svh, 230px) !important;
     padding: 0 !important;
     overflow: hidden !important;
   }
   .connection-legend .legend-summary {
     display: block;
-    min-height: 30px;
-    padding: 8px 10px;
+    min-height: 24px;
+    padding: 7px 8px;
     color: var(--ink-80);
     font: 400 9px/1.1 var(--font-mono);
     letter-spacing: 0.1em;
@@ -1313,25 +1352,25 @@ const MOBILE_TOP_CSS = `
     color: var(--ink-40);
   }
   .connection-legend[open] .legend-summary::after {
-    content: '-';
+    content: '×';
   }
   .connection-legend .legend-title {
-    padding: 0 10px 6px;
+    padding: 0 8px 5px;
     margin: 0;
     font-size: 8px;
     letter-spacing: 0.1em;
   }
   .connection-legend ul {
-    padding: 0 10px 10px !important;
-    gap: 3px !important;
+    padding: 0 8px 8px !important;
+    gap: 2px !important;
   }
   .connection-legend li {
-    gap: 6px !important;
-    font-size: 9px !important;
+    gap: 5px !important;
+    font-size: 8px !important;
     line-height: 1.25 !important;
   }
   .connection-legend .legend-swatch {
-    width: 10px !important;
+    width: 9px !important;
   }
 }
 `;
@@ -1344,7 +1383,7 @@ function App() {
   const [tweaks, setTweaks] = useState(() => {
     try {
       return isMobileViewportWidth(window.innerWidth)
-        ? { ...TWEAK_DEFAULTS, spread: 2.55, labelDensity: 'minimal' }
+        ? { ...TWEAK_DEFAULTS, spread: 3.2, labelDensity: 'minimal' }
         : TWEAK_DEFAULTS;
     } catch {
       return TWEAK_DEFAULTS;
@@ -1353,6 +1392,7 @@ function App() {
   const [showTweaks, setShowTweaks] = useState(false);
   const [editModeHost, setEditModeHost] = useState(false);
   const [infoCardOpen, setInfoCardOpen] = useState(false);
+  const [mobileShowAllNames, setMobileShowAllNames] = useState(false);
 
   // Restore persisted selection
   useEffect(() => {
@@ -1383,6 +1423,10 @@ function App() {
       if (!d || typeof d !== 'object') return;
       if (d.type === '__activate_edit_mode') setEditModeHost(true);
       if (d.type === '__deactivate_edit_mode') setEditModeHost(false);
+      if (d.type === '__pc_reset_selection') {
+        setSelected(null);
+        setInfoCardOpen(false);
+      }
     };
     window.addEventListener('message', onMsg);
     window.parent?.postMessage({ type: '__edit_mode_available' }, '*');
@@ -1445,6 +1489,16 @@ function App() {
 
   // Font class
   const fontClass = tweaks.font === 'sans' ? 'font-sans' : tweaks.font === 'serif' ? 'font-serif' : 'font-mixed';
+  const isMobileApp = (() => {
+    try {
+      return isMobileViewportWidth(window.innerWidth);
+    } catch {
+      return false;
+    }
+  })();
+  const constellationTweaks = isMobileApp && mobileShowAllNames
+    ? { ...tweaks, labelDensity: 'all' }
+    : tweaks;
 
   return (
     <div
@@ -1465,7 +1519,7 @@ function App() {
         onSelect={handleSelect}
         hovered={hovered}
         onHover={setHovered}
-        tweaks={tweaks}
+        tweaks={constellationTweaks}
         filter={filter} />
       
 
@@ -1489,13 +1543,20 @@ function App() {
           <button className="active">JP</button>
           <button>EN</button>
         </div>
+        <button
+          className={`mobile-label-toggle ${mobileShowAllNames ? 'active' : ''}`}
+          type="button"
+          onClick={() => setMobileShowAllNames((show) => !show)}
+          aria-pressed={mobileShowAllNames}>
+          全名前
+        </button>
         <FilterDropdown label="表現から見る" kind="movement" options={movements} filter={filter} onChange={setFilter} />
         <FilterDropdown label="国別で見る" kind="country" options={countries} filter={filter} onChange={setFilter} />
         <FilterDropdown label="年代でみる" kind="era" options={eras} filter={filter} onChange={setFilter} />
         <div className="spread-control" style={{ width: "159px" }}>
           <input
             type="range"
-            min="0.6" max="3.2" step="0.05"
+            min={isMobileApp ? "2.2" : "0.6"} max={isMobileApp ? "4.2" : "3.2"} step="0.05"
             value={tweaks.spread}
             onChange={(e) => updateTweaks({ ...tweaks, spread: parseFloat(e.target.value) })}
             aria-label="星の散らばり" />

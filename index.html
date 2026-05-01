@@ -391,6 +391,10 @@ body {
   position: relative;
 }
 
+.mobile-label-toggle {
+  display: none;
+}
+
 .mobile-search-toggle::before,
 .mobile-search-toggle::after {
   content: '';
@@ -702,12 +706,14 @@ body {
 
   .spread-control {
     position: fixed;
-    top: calc(132px + env(safe-area-inset-top));
+    top: calc(122px + env(safe-area-inset-top));
     left: 16px;
     z-index: 42;
-    width: 136px;
-    padding: 8px 10px;
-    background: rgba(10, 14, 24, 0.54);
+    width: 116px;
+    padding: 3px 0;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
   }
 
   .spread-control input[type="range"]::-webkit-slider-thumb {
@@ -751,6 +757,26 @@ body {
   .mobile-search-toggle {
     display: inline-flex;
   }
+
+  .page-links .mobile-label-toggle {
+    display: block;
+    width: 92px;
+    min-height: 24px;
+    margin-top: -3px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: rgba(10, 14, 24, 0.54);
+    color: var(--text-dim);
+    font: 400 8px/1 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .page-links .mobile-label-toggle.active {
+    background: var(--text);
+    color: var(--bg);
+  }
 }
 </style>
 </head>
@@ -771,6 +797,7 @@ body {
     <a class="lang-btn active" href="/">Japanese</a>
     <a class="lang-btn" href="/en/">English</a>
   </div>
+  <button class="mobile-label-toggle" id="mobile-label-toggle" type="button" aria-pressed="false">全名前</button>
   <form class="page-search-form" id="top-page-search-form" role="search" autocomplete="off">
     <input class="page-search-input" id="top-page-search-input" type="search" placeholder="写真家名・運動・国・年代を検索" aria-autocomplete="list" aria-expanded="false" aria-controls="top-page-search-suggestions">
     <button class="page-search-button" type="submit" aria-label="検索"></button>
@@ -1079,7 +1106,7 @@ body {
 <script>
   (function () {
     const DESIGN_DEFAULT_SPREAD = 2.1;
-    const MOBILE_DESIGN_DEFAULT_SPREAD = 2.55;
+    const MOBILE_DESIGN_DEFAULT_SPREAD = 3.2;
     const scaleRange = document.getElementById('stage-scale-range');
     const resetButton = document.getElementById('reset-design-view');
     let frame = document.getElementById('design-frame');
@@ -1087,6 +1114,7 @@ body {
     const searchInput = document.getElementById('top-page-search-input');
     const searchSuggestions = document.getElementById('top-page-search-suggestions');
     const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+    const mobileLabelToggle = document.getElementById('mobile-label-toggle');
     const searchCandidates = [];
 
     function bindFrame(nextFrame) {
@@ -1100,6 +1128,7 @@ body {
       try {
         frame.contentWindow.localStorage.removeItem('pc_selected');
         frame.contentWindow.localStorage.removeItem('pc_mode');
+        frame.contentWindow.postMessage({ type: '__pc_reset_selection' }, '*');
       } catch {}
     }
 
@@ -1291,11 +1320,11 @@ body {
             }
             .connection-legend {
               display: block !important;
-              top: calc(48px + env(safe-area-inset-top, 0px)) !important;
+              top: calc(76px + env(safe-area-inset-top, 0px)) !important;
               right: 16px !important;
               bottom: auto !important;
-              width: 112px !important;
-              max-height: min(40svh, 300px) !important;
+              width: 92px !important;
+              max-height: min(34svh, 230px) !important;
               padding: 0 !important;
               overflow: hidden !important;
             }
@@ -1330,8 +1359,8 @@ body {
             }
             .connection-legend .legend-summary {
               display: block;
-              min-height: 30px;
-              padding: 8px 10px;
+              min-height: 24px;
+              padding: 7px 8px;
               color: var(--ink-80);
               font: 400 9px/1.1 var(--font-mono);
               letter-spacing: 0.1em;
@@ -1344,25 +1373,25 @@ body {
               color: var(--ink-40);
             }
             .connection-legend[open] .legend-summary::after {
-              content: '-';
+              content: '×';
             }
             .connection-legend .legend-title {
-              padding: 0 10px 6px;
+              padding: 0 8px 5px;
               margin: 0;
               font-size: 8px;
               letter-spacing: 0.1em;
             }
             .connection-legend ul {
-              padding: 0 10px 10px !important;
-              gap: 3px !important;
+              padding: 0 8px 8px !important;
+              gap: 2px !important;
             }
             .connection-legend li {
-              gap: 6px !important;
-              font-size: 9px !important;
+              gap: 5px !important;
+              font-size: 8px !important;
               line-height: 1.25 !important;
             }
             .connection-legend .legend-swatch {
-              width: 10px !important;
+              width: 9px !important;
             }
           }
           @media (min-width: 769px) {
@@ -1388,6 +1417,18 @@ body {
     if (scaleRange) {
       scaleRange.addEventListener('input', syncToDesign);
       scaleRange.addEventListener('change', syncToDesign);
+    }
+    if (mobileLabelToggle) {
+      mobileLabelToggle.addEventListener('click', () => {
+        const isActive = mobileLabelToggle.classList.toggle('active');
+        mobileLabelToggle.setAttribute('aria-pressed', String(isActive));
+        try {
+          const designToggle = frame.contentDocument && frame.contentDocument.querySelector('.mobile-label-toggle');
+          if (designToggle && designToggle.getAttribute('aria-pressed') !== String(isActive)) {
+            designToggle.click();
+          }
+        } catch {}
+      });
     }
     if (resetButton && frame) {
       resetButton.addEventListener('click', () => {
