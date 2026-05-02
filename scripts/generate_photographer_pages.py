@@ -197,6 +197,18 @@ SEO_TEXT_OVERRIDES = {
             "lead": "A Victorian British photographer who picked up a camera at forty-eight and produced around 900 works over twelve years. A pioneer who used intentional soft focus to evoke the inner life of her subjects, establishing photography as a fine art. Virginia Woolf was her great-niece.",
         },
     },
+    "sherman": {
+        "ja": {
+            "title": "シンディ・シャーマン | 演出写真・ピクチャーズ世代 | 写真の座標",
+            "description": "自らを映画・広告・美術史の人物像に変え、写真がいかに女性像を演出するかを問い続けた作家。『Untitled Film Stills』を軸に、ピクチャーズ世代・フェミニズム写真・演出写真との関わりを解説する。",
+            "lead": "シンディ・シャーマンは、自分自身を映画、広告、雑誌、美術史の見覚えある人物像へ変えることで、写真を「現実の証拠」や「作者の内面」を示す媒体から、イメージが人物をどう演出し、見る側にどんな欲望や物語を引き出すかを問う媒体へ押し広げた作家。1970年代後半のニューヨークで、消費社会の既成イメージを扱ったピクチャーズ世代と並走し、『Untitled Film Stills』からフェミニズム写真、演出写真、ポストモダン写真へ大きな論点を開いた。",
+        },
+        "en": {
+            "title": "Cindy Sherman | Staged Photography and the Pictures Generation | Photo Coordinates",
+            "description": "Cindy Sherman transformed photography from a medium of evidence and authorial expression into a way of testing how cinema, advertising, and art history produce recognizable roles. Tracing Untitled Film Stills, the Pictures Generation, and feminist photography.",
+            "lead": "Cindy Sherman transformed photography from a medium associated with evidence, likeness, and authorial self-expression into a way of testing how cinema, advertising, magazines, and art history produce recognizable roles. Working alongside the Pictures Generation in late-1970s New York, she used her own body, costume, makeup, setting, and camera position to unsettle the idea that a single image can reveal a stable person.",
+        },
+    },
 }
 SAME_AS_OVERRIDES = {
     "stieglitz": [
