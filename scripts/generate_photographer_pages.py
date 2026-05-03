@@ -209,6 +209,16 @@ SEO_TEXT_OVERRIDES = {
             "lead": "Cindy Sherman transformed photography from a medium associated with evidence, likeness, and authorial self-expression into a way of testing how cinema, advertising, magazines, and art history produce recognizable roles. Working alongside the Pictures Generation in late-1970s New York, she used her own body, costume, makeup, setting, and camera position to unsettle the idea that a single image can reveal a stable person.",
         },
     },
+    "lee-miller": {
+        "ja": {
+            "title": "リー・ミラー | 写真史 | 写真の座標",
+            "description": "暗室実験からVogueの戦時写真、第二次大戦の前線報道まで横断したアメリカの写真家。ソラリゼーション技法、戦時下の女性の表現、ダッハウ解放後の記録、マン・レイとの関係の再評価をたどる。",
+        },
+        "en": {
+            "title": "Lee Miller | Photo History | Photo Coordinates",
+            "description": "Lee Miller crossed Surrealist darkroom work, Vogue wartime photography, and Second World War frontline reporting. Solarization, women's imagery, and her reassessment beyond Man Ray are traced here.",
+        },
+    },
 }
 SAME_AS_OVERRIDES = {
     "stieglitz": [
