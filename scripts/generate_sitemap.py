@@ -4,7 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit, urlunsplit
 import re
 
 
@@ -98,6 +98,12 @@ def alternate_urls(rel: str, existing: set[str]) -> dict[str, str]:
     }
 
 
+def encode_url(url: str) -> str:
+    parts = urlsplit(url)
+    encoded_path = quote(parts.path, safe="/-_.~%")
+    return urlunsplit((parts.scheme, parts.netloc, encoded_path, parts.query, parts.fragment))
+
+
 def alternate_urls_from_html(path: Path) -> dict[str, str]:
     content = path.read_text(encoding="utf-8", errors="ignore")
     alternates: dict[str, str] = {}
@@ -106,7 +112,7 @@ def alternate_urls_from_html(path: Path) -> dict[str, str]:
         content,
         re.I,
     ):
-        alternates[hreflang] = href
+        alternates[hreflang] = encode_url(href)
     return alternates
 
 
