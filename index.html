@@ -403,15 +403,27 @@ body {
 }
 
 .mobile-label-toggle {
-  display: none;
-}
-
-.label-control {
-  font-size: 12px;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: rgba(10, 14, 24, 0.54);
+  color: var(--text-dim);
+  font: 400 9px/1 'DM Mono', monospace;
   letter-spacing: 0.08em;
+  cursor: pointer;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
-.label-control.active {
+.mobile-label-toggle:hover {
+  border-color: rgba(238, 230, 216, 0.42);
+  color: var(--text);
+}
+
+.mobile-label-toggle.active {
   background: var(--text);
   color: var(--bg);
   border-color: rgba(238, 230, 216, 0.62);
@@ -791,18 +803,10 @@ body {
   }
 
   .page-links .mobile-label-toggle {
-    display: block;
     width: 92px;
     min-height: 24px;
     margin-top: -3px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    background: rgba(10, 14, 24, 0.54);
-    color: var(--text-dim);
     font: 400 8px/1 'DM Mono', monospace;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-    text-transform: uppercase;
   }
 
   .page-links .mobile-label-toggle.active {
@@ -829,7 +833,7 @@ body {
     <a class="lang-btn active" href="/">Japanese</a>
     <a class="lang-btn" href="/en/">English</a>
   </div>
-  <button class="mobile-label-toggle" id="mobile-label-toggle" type="button" aria-pressed="false">作家名表示</button>
+  <button class="mobile-label-toggle" id="mobile-label-toggle" type="button" aria-pressed="false">全作家名表示</button>
   <form class="page-search-form" id="top-page-search-form" role="search" autocomplete="off">
     <input class="page-search-input" id="top-page-search-input" type="search" placeholder="写真家名・運動・国・年代を検索" aria-autocomplete="list" aria-expanded="false" aria-controls="top-page-search-suggestions">
     <button class="page-search-button" type="submit" aria-label="検索"></button>
@@ -954,7 +958,6 @@ body {
 
 <div class="action-buttons" aria-label="補助操作" data-nosnippet>
   <button class="control-btn mobile-search-toggle" id="mobile-search-toggle" type="button" aria-label="検索" aria-expanded="false"></button>
-  <button class="control-btn label-control" id="map-label-toggle" type="button" aria-label="全作家名を表示" aria-pressed="false" title="全作家名を表示">名</button>
   <details class="map-info-control">
     <summary class="control-btn map-info-summary" aria-label="操作説明と注意書き">i</summary>
     <div class="map-info-panel">
@@ -1148,9 +1151,20 @@ body {
     const searchSuggestions = document.getElementById('top-page-search-suggestions');
     const mobileSearchToggle = document.getElementById('mobile-search-toggle');
     const mobileLabelToggle = document.getElementById('mobile-label-toggle');
-    const mapLabelToggle = document.getElementById('map-label-toggle');
-    const labelToggles = [mobileLabelToggle, mapLabelToggle].filter(Boolean);
+    const labelToggles = [mobileLabelToggle].filter(Boolean);
     const searchCandidates = [];
+
+    function getCoordinateTarget() {
+      const params = new URLSearchParams(window.location.search);
+      const direct = params.get('photographer') || params.get('pid');
+      const focus = params.get('focus') || '';
+      const fromFocus = focus.startsWith('photographer:') ? focus.slice('photographer:'.length) : '';
+      const hash = decodeURIComponent(window.location.hash || '');
+      const fromHash = (hash.match(/^#(?:photographer|coordinates)-(.+)$/) || [])[1] || '';
+      return direct || fromFocus || fromHash || '';
+    }
+
+    const coordinateTarget = getCoordinateTarget();
 
     function bindFrame(nextFrame) {
       frame = nextFrame;
@@ -1165,6 +1179,16 @@ body {
         frame.contentWindow.localStorage.removeItem('pc_mode');
         frame.contentWindow.postMessage({ type: '__pc_reset_selection' }, '*');
       } catch {}
+    }
+
+    function selectDesignPhotographer(id) {
+      if (!id || !frame || !frame.contentWindow) return false;
+      try {
+        frame.contentWindow.localStorage.setItem('pc_selected', id);
+        frame.contentWindow.postMessage({ type: '__pc_select_photographer', id }, '*');
+        return true;
+      } catch {}
+      return false;
     }
 
     function closeDesignSelection() {
@@ -1451,8 +1475,12 @@ body {
         designSlider.addEventListener('change', syncFromDesign);
       }
       requestAnimationFrame(() => {
-        clearDesignPersistence();
-        closeDesignSelection();
+        if (coordinateTarget) {
+          selectDesignPhotographer(coordinateTarget);
+        } else {
+          clearDesignPersistence();
+          closeDesignSelection();
+        }
         syncFromDesign();
       });
     }

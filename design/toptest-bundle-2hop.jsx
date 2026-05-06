@@ -1501,6 +1501,14 @@ function App() {
         setSelected(null);
         setInfoCardOpen(false);
       }
+      if (d.type === '__pc_select_photographer') {
+        const id = String(d.id || '').replace(/^photographer:/, '');
+        const exists = (window.PHOTOGRAPHERS || []).some((p) => p && p.id === id);
+        if (exists) {
+          setSelected(id);
+          setInfoCardOpen(true);
+        }
+      }
     };
     window.addEventListener('message', onMsg);
     window.parent?.postMessage({ type: '__edit_mode_available' }, '*');
@@ -1578,7 +1586,7 @@ function App() {
       return /(^|\/)en(\/|$)/.test(window.location.pathname || '');
     }
   })();
-  const constellationTweaks = isMobileApp && mobileShowAllNames
+  const constellationTweaks = mobileShowAllNames
     ? { ...tweaks, labelDensity: 'all' }
     : tweaks;
 

@@ -868,6 +868,26 @@
     mq.addEventListener('change', doLayout);
   }
 
+  function coordinateHomeUrl(id, lang = currentLanguage()) {
+    const prefix = lang === 'en' ? '/en/' : '/';
+    const encoded = encodeURIComponent(id);
+    return `${prefix}?focus=${encodeURIComponent(`photographer:${id}`)}&photographer=${encoded}`;
+  }
+
+  function installPhotographerCoordinateLink() {
+    const id = document.body?.dataset?.photographerId;
+    if (!id || document.querySelector('.photographer-coordinate-link')) return;
+    const title = document.querySelector('.hero .title');
+    if (!title) return;
+    const lang = currentLanguage();
+    const link = document.createElement('a');
+    link.className = 'photographer-coordinate-link';
+    link.href = coordinateHomeUrl(id, lang);
+    link.textContent = lang === 'en' ? 'View in Coordinates' : '座標で見る';
+    const altName = title.querySelector('.alt');
+    title.insertBefore(link, altName || null);
+  }
+
   function install() {
     injectStyles();
     document.body.classList.add('global-search-ready');
@@ -906,6 +926,7 @@
       if (window.innerWidth > 768) closeSearch();
     });
     initMobileNavLayout();
+    installPhotographerCoordinateLink();
   }
 
   if (document.readyState === 'loading') {

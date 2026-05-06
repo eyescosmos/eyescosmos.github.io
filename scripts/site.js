@@ -1299,7 +1299,7 @@ function populateArchiveNavigation() {
 
 function openCoordinatesForPhotographer(pid) {
   if (!pid) return;
-  const url = `${coordinateBasePath()}?focus=${encodeURIComponent(`photographer:${pid}`)}`;
+  const url = `${coordinateBasePath()}?focus=${encodeURIComponent(`photographer:${pid}`)}&photographer=${encodeURIComponent(pid)}`;
   const popup = window.open(url, '_blank');
   if (!popup) {
     window.location.href = url;

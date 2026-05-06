@@ -309,6 +309,27 @@ body::after {
   letter-spacing: 0.02em;
   color: var(--accent);
 }
+.photographer-coordinate-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin-left: 14px;
+  padding: 6px 10px;
+  vertical-align: middle;
+  border: 1px solid rgba(200, 169, 110, 0.34);
+  border-radius: 2px;
+  background: rgba(200, 169, 110, 0.08);
+  color: var(--text-dim);
+  font: 400 10px/1 'DM Mono', 'Noto Sans JP', monospace;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.photographer-coordinate-link:hover {
+  border-color: rgba(200, 169, 110, 0.62);
+  color: var(--accent);
+  background: rgba(200, 169, 110, 0.13);
+}
 .alt { display: block; margin-top: 10px; font: 13px/1.6 'DM Mono', monospace; color: var(--text-dim); letter-spacing: 0.05em; }
 .lead { margin: 18px 0 0; max-width: 820px; color: var(--text-dim); line-height: 1.9; font-size: 15px; text-align: justify; }
 .hero-info-groups {
@@ -561,6 +582,12 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
 @media (max-width: 720px) {
   .page-shell { width: min(100vw - 28px, 1040px); padding-top: 20px; }
   .hero, .section { padding: 20px; }
+  .photographer-coordinate-link {
+    display: flex;
+    width: max-content;
+    max-width: 100%;
+    margin: 12px 0 0;
+  }
   .topline { flex-direction: column; }
   .hero-info-groups { display: grid; gap: 16px; }
   .related-person-card { min-width: min(100%, 220px); }
