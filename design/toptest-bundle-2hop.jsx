@@ -1,6 +1,68 @@
 /* global React, ReactDOM */
 const { useState, useEffect, useRef, useMemo, useCallback } = React;
 
+function ensureTopPageManualPhotographers() {
+  if (!Array.isArray(window.PHOTOGRAPHERS)) return;
+  const existing = new Set(window.PHOTOGRAPHERS.map((p) => p && p.id));
+  const additions = [
+    {
+      id: 'ernest-cole',
+      name: 'アーネスト・コール',
+      nameJa: 'アーネスト・コール',
+      nameEn: 'Ernest Cole',
+      country: '南アフリカ',
+      nationality: 'ZA',
+      flag: '🇿🇦',
+      years: '1940-1990',
+      era: '1950',
+      movements: ['フォトジャーナリズム', '社会ドキュメンタリー', 'ドキュメンタリー'],
+      influence: 8.8,
+      x: 0.31,
+      y: 0.61
+    },
+    {
+      id: 'pieter-hugo',
+      name: 'ピーター・ヒューゴ',
+      nameJa: 'ピーター・ヒューゴ',
+      nameEn: 'Pieter Hugo',
+      country: '南アフリカ',
+      nationality: 'ZA',
+      flag: '🇿🇦',
+      years: '1976-',
+      era: '2000',
+      movements: ['ポートレート', '社会的写真', 'コンセプチュアルアート'],
+      influence: 7.4,
+      x: 0.73,
+      y: 0.76
+    }
+  ];
+  additions.forEach((photographer) => {
+    if (!existing.has(photographer.id)) {
+      window.PHOTOGRAPHERS.push(photographer);
+      existing.add(photographer.id);
+    }
+  });
+
+  if (!Array.isArray(window.CONNECTIONS)) return;
+  const connectionKey = ([a, b, move]) => `${a}|${b}|${move}`;
+  const connectionKeys = new Set(window.CONNECTIONS.map(connectionKey));
+  [
+    ['ernest-cole', 'riis', '社会ドキュメンタリー'],
+    ['ernest-cole', 'lewis-hine', '社会ドキュメンタリー'],
+    ['ernest-cole', 'capa', 'フォトジャーナリズム'],
+    ['pieter-hugo', 'arbus', 'ポートレート'],
+    ['pieter-hugo', 'mapplethorpe', 'ポートレート'],
+    ['pieter-hugo', 'sherman', 'コンセプチュアルアート']
+  ].forEach((connection) => {
+    if (existing.has(connection[0]) && existing.has(connection[1]) && !connectionKeys.has(connectionKey(connection))) {
+      window.CONNECTIONS.push(connection);
+      connectionKeys.add(connectionKey(connection));
+    }
+  });
+}
+
+ensureTopPageManualPhotographers();
+
 // ======================================================
 // Starfield (ambient background dust)
 // ======================================================
@@ -56,6 +118,7 @@ function Starfield({ density = 260, theme = 'dark' }) {
 // ======================================================
 function useGraph() {
   return useMemo(() => {
+    ensureTopPageManualPhotographers();
     const photographers = window.PHOTOGRAPHERS;
     const byId = Object.fromEntries(photographers.map((p) => [p.id, p]));
     const adj = {};
