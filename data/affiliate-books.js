@@ -2223,6 +2223,31 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['lee-miller'] = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['ernest-cole'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4d1YeZO' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4cTeptJ' }
+  },
+  books: [
+    {
+      titleJa: 'House of Bondage',
+      titleEn: 'House of Bondage',
+      noteJa: 'アパルトヘイトを写真集の章構成で世界に告発した代表作。',
+      noteEn: 'Cole\'s landmark photobook exposing apartheid through a chaptered visual argument.',
+      urlJa: 'https://amzn.to/4d1YeZO',
+      urlEn: 'https://amzn.to/4cTeptJ'
+    },
+    {
+      titleJa: 'The True America',
+      titleEn: 'The True America',
+      noteJa: '亡命後のアメリカで撮影された黒人生活をたどる重要作。',
+      noteEn: 'A key volume on Cole\'s photographs of Black life in the United States after exile.',
+      urlJa: 'https://amzn.to/4tUDXwk',
+      urlEn: 'https://amzn.to/4ucj3Jz'
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['robert-doisneau'] = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3Ok4Lqq' },
