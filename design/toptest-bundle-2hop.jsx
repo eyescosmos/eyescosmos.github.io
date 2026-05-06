@@ -607,7 +607,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
     if (e.pointerType === 'touch' && e.isPrimary === false) return;
     if (viewAnimRef.current) cancelAnimationFrame(viewAnimRef.current);
     e.currentTarget?.setPointerCapture?.(e.pointerId);
-    if (e.pointerType === 'touch') e.preventDefault();
+    if (e.cancelable) e.preventDefault();
     const starNode = e.target.closest('.star');
     draggingRef.current = {
       x: e.clientX - panRef.current.x,
@@ -1256,6 +1256,14 @@ const MOBILE_TOP_CSS = `
 }
 .mobile-label-toggle {
   display: none;
+}
+html, body, #root, .app, .stage, .stage svg, .star-label, .connection-label, .nebula-label {
+  user-select: none;
+  -webkit-user-select: none;
+}
+input, textarea, select {
+  user-select: text;
+  -webkit-user-select: text;
 }
 @media (max-width: 699px) {
   html, body, #root, .app {

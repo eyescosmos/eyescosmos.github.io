@@ -73,9 +73,19 @@ body {
   margin: 0;
   height: 100%;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  overscroll-behavior: none;
   background: var(--bg);
   color: var(--text);
   font-family: 'Noto Sans JP', sans-serif;
+}
+
+input,
+textarea,
+select {
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 body {
@@ -394,6 +404,17 @@ body {
 
 .mobile-label-toggle {
   display: none;
+}
+
+.label-control {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.label-control.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: rgba(238, 230, 216, 0.62);
 }
 
 .mobile-search-toggle::before,
@@ -933,6 +954,7 @@ body {
 
 <div class="action-buttons" aria-label="補助操作" data-nosnippet>
   <button class="control-btn mobile-search-toggle" id="mobile-search-toggle" type="button" aria-label="検索" aria-expanded="false"></button>
+  <button class="control-btn label-control" id="map-label-toggle" type="button" aria-label="全作家名を表示" aria-pressed="false" title="全作家名を表示">名</button>
   <details class="map-info-control">
     <summary class="control-btn map-info-summary" aria-label="操作説明と注意書き">i</summary>
     <div class="map-info-panel">
@@ -1126,6 +1148,8 @@ body {
     const searchSuggestions = document.getElementById('top-page-search-suggestions');
     const mobileSearchToggle = document.getElementById('mobile-search-toggle');
     const mobileLabelToggle = document.getElementById('mobile-label-toggle');
+    const mapLabelToggle = document.getElementById('map-label-toggle');
+    const labelToggles = [mobileLabelToggle, mapLabelToggle].filter(Boolean);
     const searchCandidates = [];
 
     function bindFrame(nextFrame) {
@@ -1318,6 +1342,14 @@ body {
         style.id = 'design-overlay-patch';
         style.textContent = `
           .masthead,.side-controls,.mode-switcher,.tweaks-panel,.footer-link{display:none!important;}
+          html,body,#root,.app,.stage,.stage svg,.star-label,.connection-label,.nebula-label{
+            user-select:none!important;
+            -webkit-user-select:none!important;
+          }
+          input,textarea,select{
+            user-select:text!important;
+            -webkit-user-select:text!important;
+          }
           .connection-legend .legend-summary {
             display: none;
             list-style: none;
@@ -1429,16 +1461,24 @@ body {
       scaleRange.addEventListener('input', syncToDesign);
       scaleRange.addEventListener('change', syncToDesign);
     }
-    if (mobileLabelToggle) {
-      mobileLabelToggle.addEventListener('click', () => {
-        const isActive = mobileLabelToggle.classList.toggle('active');
-        mobileLabelToggle.setAttribute('aria-pressed', String(isActive));
-        try {
-          const designToggle = frame.contentDocument && frame.contentDocument.querySelector('.mobile-label-toggle');
-          if (designToggle && designToggle.getAttribute('aria-pressed') !== String(isActive)) {
-            designToggle.click();
-          }
-        } catch {}
+    if (labelToggles.length) {
+      const setLabelToggleState = (isActive) => {
+        labelToggles.forEach((toggle) => {
+          toggle.classList.toggle('active', isActive);
+          toggle.setAttribute('aria-pressed', String(isActive));
+        });
+      };
+      labelToggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const isActive = toggle.getAttribute('aria-pressed') !== 'true';
+          setLabelToggleState(isActive);
+          try {
+            const designToggle = frame.contentDocument && frame.contentDocument.querySelector('.mobile-label-toggle');
+            if (designToggle && designToggle.getAttribute('aria-pressed') !== String(isActive)) {
+              designToggle.click();
+            }
+          } catch {}
+        });
       });
     }
     if (resetButton && frame) {
