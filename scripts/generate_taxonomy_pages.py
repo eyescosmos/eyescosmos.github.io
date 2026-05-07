@@ -8,6 +8,7 @@ from pathlib import Path
 import unicodedata
 import html
 import re
+from urllib.parse import quote
 
 REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
@@ -917,6 +918,8 @@ def render_archive_like_list(
         if more_count:
             tags_html += f'<span class="archive-list-tag archive-list-tag-more">+{more_count}</span>'
         detail_label = "Read details" if lang == "en" else "詳細を読む"
+        coordinate_label = "View in Coordinates" if lang == "en" else "座標で見る"
+        coordinate_href = f"/{'en/' if lang == 'en' else ''}?focus=photographer%3A{quote(str(photographer.get('id') or ''))}&photographer={quote(str(photographer.get('id') or ''))}"
         descriptor_html = f'<div class="archive-list-descriptor">{esc(descriptor)}</div>' if descriptor else ""
         sub_name = display_alt_name(photographer, lang) if lang == "ja" else ""
         alt_html = f'<div class="archive-list-alt">{esc(sub_name)}</div>' if sub_name else ""
@@ -937,6 +940,7 @@ def render_archive_like_list(
   <div class="archive-list-body">
     <p class="archive-list-lead">{esc(lead)}</p>
     <a class="archive-list-link" href="{photographer_path(photographer, lang)}">{detail_label}</a>
+    <a class="archive-list-link" href="{coordinate_href}">{coordinate_label}</a>
   </div>
 </details>'''
         )
