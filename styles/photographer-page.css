@@ -394,9 +394,11 @@ body::after {
 .section { border: 1px solid var(--border); background: var(--surface); padding: 24px; }
 .section h2 { margin: 0 0 14px; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'DM Mono', monospace; color: var(--accent); }
 .section p, .essay { margin: 0; color: var(--text); line-height: 1.95; font-size: 15px; text-align: justify; }
-.essay h3 { margin: 22px 0 8px; font-size: 15px; font-weight: 600; color: #a6bfa4; letter-spacing: 0.02em; }
+.essay h3 { margin: 22px 0 8px; font-size: 15px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; }
 .essay > h3:first-child { margin-top: 0; }
 .essay h3 + p { margin-top: 0; }
+.essay h4 { margin: 16px 0 6px; font-size: 14px; font-weight: 600; color: #a6bfa4; letter-spacing: 0.02em; }
+.essay h4 + p { margin-top: 0; }
 .essay .inline-photographer-link {
   color: var(--accent-2);
   text-decoration: none;
