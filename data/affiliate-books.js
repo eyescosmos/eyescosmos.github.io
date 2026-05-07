@@ -2248,6 +2248,51 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['ernest-cole'] = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['pieter-hugo'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4tWIr5B' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4nbXd5X' }
+  },
+  books: [
+    {
+      languages: ['ja'],
+      titleJa: 'ピーター・ヒューゴ 写真集 1',
+      noteJa: 'ピーター・ヒューゴの写真集を探すためのAmazonリンク。',
+      urlJa: 'https://amzn.to/4tWIr5B'
+    },
+    {
+      languages: ['ja'],
+      titleJa: 'ピーター・ヒューゴ 写真集 2',
+      noteJa: '同じ作家を別の本や別の掲載でたどるための関連リンク。',
+      urlJa: 'https://amzn.to/49haAMu'
+    },
+    {
+      languages: ['ja'],
+      titleJa: 'ピーター・ヒューゴ 写真集 3',
+      noteJa: '同じ作家をさらに別の本や版でたどるための関連リンク。',
+      urlJa: 'https://amzn.to/3P1JL8j'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Pieter Hugo photobook 1',
+      noteEn: 'An Amazon link for finding photobooks by Pieter Hugo.',
+      urlEn: 'https://amzn.to/4nbXd5X'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Pieter Hugo photobook 2',
+      noteEn: 'A related link for following Hugo through another book or edition.',
+      urlEn: 'https://amzn.to/4u8b9R2'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Pieter Hugo photobook 3',
+      noteEn: 'Another related link for tracing Hugo through available photobook listings.',
+      urlEn: 'https://amzn.to/4wg2PQS'
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['robert-doisneau'] = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3Ok4Lqq' },
