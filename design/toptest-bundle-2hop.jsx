@@ -17,6 +17,8 @@ function ensureTopPageManualPhotographers() {
       era: '1950',
       movements: ['フォトジャーナリズム', '社会ドキュメンタリー', 'ドキュメンタリー'],
       influence: 8.8,
+      url: 'https://eyescosmos.github.io/photographers/ernest-cole.html',
+      urlEn: 'https://eyescosmos.github.io/en/photographers/ernest-cole.html',
       x: 0.31,
       y: 0.61
     },
@@ -32,6 +34,8 @@ function ensureTopPageManualPhotographers() {
       era: '2000',
       movements: ['ポートレート', '社会的写真', 'コンセプチュアルアート'],
       influence: 7.4,
+      url: 'https://eyescosmos.github.io/photographers/pieter-hugo.html',
+      urlEn: 'https://eyescosmos.github.io/en/photographers/pieter-hugo.html',
       x: 0.73,
       y: 0.76
     }
@@ -1022,6 +1026,8 @@ function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated, is
   }
   const p = byId[selected];
   if (!p) return null;
+  const detailPath = `${isEnglish ? '/en' : ''}/photographers/${p.id}.html`;
+  const detailUrl = (isEnglish ? (p.urlEn || '') : '') || p.url || `https://eyescosmos.github.io${detailPath}`;
   const neighbors = (adj[selected] || []).slice(0, 40);
   // group neighbors by movement
   const byMove = {};
@@ -1075,8 +1081,8 @@ function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated, is
 
           })}
         </div>
-        <a href={p.url} target="_blank" rel="noopener" className="hint" style={{ display: 'block', textDecoration: 'none' }}>
-          → {isEnglish ? 'Open detail page' : '詳細ページを開く'} / {p.url.replace('https://eyescosmos.github.io', '')}
+        <a href={detailUrl} target="_blank" rel="noopener" className="hint" style={{ display: 'block', textDecoration: 'none' }}>
+          → {isEnglish ? 'Open detail page' : '詳細ページを開く'} / {detailUrl.replace('https://eyescosmos.github.io', '')}
         </a>
       </div>
     </>);
