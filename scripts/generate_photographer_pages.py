@@ -1893,6 +1893,9 @@ def main() -> None:
             page_top_links = f"""
       <div class="page-top-links top-links">
         <div class="tab-nav-mobile-grid">
+          <div class="tab-nav-selects">
+            {extra_selects}
+          </div>
           {language_toggle}
         </div>
       </div>"""
