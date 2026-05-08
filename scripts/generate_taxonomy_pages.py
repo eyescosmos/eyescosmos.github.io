@@ -1441,33 +1441,7 @@ def first_sentence(text: str, lang: str) -> str:
 
 
 def extend_movement_lead(lead: str, sections: list[dict], lang: str) -> str:
-    if lang == "en":
-        return lead
-    cleaned = strip_inline_link_tokens(lead)
-    if len(cleaned) >= 260 or not sections:
-        return lead
-    extra_bits = []
-    for section in sections[:2]:
-        for paragraph in (section.get("paragraphs") or []):
-            if isinstance(paragraph, list):
-                candidate = first_sentence(render_inline_nodes(paragraph, lang, {}), lang)
-                candidate = re.sub(r"<[^>]+>", "", candidate)
-            elif isinstance(paragraph, dict):
-                candidate = first_sentence(paragraph.get("text") or "", lang)
-            else:
-                candidate = first_sentence(str(paragraph or ""), lang)
-            candidate = strip_inline_link_tokens(html.unescape(candidate)).strip()
-            if not candidate:
-                continue
-            if candidate in cleaned:
-                continue
-            extra_bits.append(candidate)
-            if len(cleaned + "".join(extra_bits)) >= 290:
-                break
-        if len(cleaned + "".join(extra_bits)) >= 290:
-            break
-    extended = (lead + "".join(extra_bits)).strip()
-    return extended if extended else lead
+    return lead
 
 
 def movement_section_bucket_ja(heading: str, index: int) -> str:
@@ -2038,7 +2012,7 @@ def main():
                 essay_overrides,
                 era_lookup,
             )
-            if custom_sections and movement_meta.get("appendSupportSections", True):
+            if custom_sections and movement_meta.get("appendSupportSections", lang == "en"):
                 sections = sections + movement_support_sections(
                     movement,
                     people,
@@ -2053,8 +2027,6 @@ def main():
             lead = extend_movement_lead(lead, sections, lang)
             featured = featured_movement_photographers(people, movement, 4)
             if lang == "ja":
-                sections = standardize_movement_sections_ja(movement_label, lead, sections)
-                sections = ensure_minimum_movement_body_ja(movement, movement_label, sections, people, eras, movements_meta)
                 override_desc = movement_meta.get("metaDescJa") or ""
                 description = override_desc if 90 <= len(override_desc) <= 130 else movement_meta_description_ja(movement_label, lead, movement_desc, featured)
             else:
