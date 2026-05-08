@@ -6,7 +6,217 @@ const MOVEMENTS_META = {
   'ポートレート': { en: 'Portrait', desc: '人物の内面や個性を捉えることを目的とした肖像写真。', descEn: 'Portrait photography aimed at capturing a sitter’s inner life or individuality.' },
   '風景写真': { en: 'Landscape', desc: '自然・都市・建築などを主題とした写真表現。', descEn: 'Photography focused on nature, cities, architecture, and other spatial subjects.' },
   'ピクトリアリズム': { en: 'Pictorialism', desc: '写真を絵画に近づけ、芸術的表現として位置づけようとした19世紀末〜20世紀初頭の運動。', descEn: 'A late nineteenth- and early twentieth-century movement that sought to bring photography closer to painting and establish it as an art form.' },
-  'ストレート写真': { en: 'Straight Photography', desc: 'ピクトリアリズムへの反動として、操作なしに対象をありのままに捉えることを重視した写真実践。', descEn: 'A reaction against pictorialism that emphasized recording subjects plainly and directly, without painterly manipulation.' },
+  'ストレート写真': {
+    en: 'Straight Photography',
+    titleJa: 'ストレート写真とは｜意味・歴史・代表的写真家を解説｜写真の座標',
+    titleEn: 'Straight Photography: Definition, History, and Key Photographers | Photo Coordinates',
+    metaDescJa: 'ストレート写真とは何か。ピクトリアリズムへの反動、写真固有の鮮明さ、近代写真への展開、スティーグリッツやポール・ストランドら代表的写真家を通じて解説します。',
+    metaDescEn: 'A guide to Straight Photography: its definition, reaction against Pictorialism, role in modern photography, and key photographers such as Alfred Stieglitz, Paul Strand, and Charles Sheeler.',
+    desc: 'ピクトリアリズムの絵画的加工や感傷的演出から距離を取り、鮮明な焦点、構図、階調、プリントの精度を通じて写真固有の表現を追求した近代写真の流れ。',
+    descEn: 'A current in modern photography that moved away from Pictorialist painterly effects and pursued photographic expression through sharp focus, composition, tonal control, and print precision.',
+    leadJa: 'ストレート写真は、ピクトリアリズムの絵画的加工や演出から距離を取った写真表現です。鮮明な焦点、明確な構図、対象の質感や構造への注目によって、写真固有の視覚を打ち出しました。ただしそれは「中立な記録」ではなく、写真家の視点、対象の選択、プリント技術を通じて成立した近代写真の重要な流れです。',
+    leadEn: 'Straight Photography refers to a way of making photographs that moved away from the soft focus, handwork, and staged sentiment of Pictorialism. It used sharp focus, clear composition, attention to texture and structure, and precise printing to argue that photography could be expressive through its own means. This straight photography definition does not mean neutral or automatic truth: the photographer’s choices of viewpoint, framing, subject, timing, and print remain central.',
+    sectionsJa: [
+      {
+        heading: 'ストレート写真とは',
+        paragraphs: [
+          [
+            'ストレート写真とは、写真を絵画のように見せるためのぼかし、手彩色、ゴム重クロム酸塩印画のような手作業の効果に頼らず、カメラとプリントが持つ鮮明さ、階調、細部描写を表現の中心に置く考え方です。対象を「ありのまま」に写すという言い方がされますが、ここでいう「ありのまま」は、写真家の判断が消えるという意味ではありません。どこに立ち、何を切り取り、どの光を選び、どの濃度でプリントするかによって、イメージは明確に構成されます。'
+          ],
+          [
+            '19世紀末から20世紀初頭にかけて、',
+            { text: 'ピクトリアリズム', href: '/movements/ピクトリアリズム.html' },
+            'は写真を芸術として認めさせるため、絵画や版画に近い調子を重視しました。ストレート写真はその成果を否定し尽くすというより、写真が絵画を模倣しなくても、レンズ、感光材料、印画紙、構図の精度によって独自の強度を持ちうることを示した運動でした。'
+          ]
+        ]
+      },
+      {
+        heading: 'ピクトリアリズムとの違い',
+        paragraphs: [
+          [
+            'ピクトリアリズムが柔らかな焦点、霧や逆光、手作業による修整、物語性や感傷的な雰囲気を通じて「芸術らしさ」を作ろうとしたのに対し、ストレート写真は対象の輪郭、表面、構造、光の配分を明瞭に扱いました。違いは単に「加工する／しない」ではありません。ストレート写真にも構図、露出、現像、プリントの選択があります。重要なのは、その選択が絵画的効果の模倣ではなく、写真の記録性と光学的な明晰さを生かす方向へ向けられたことです。'
+          ],
+          [
+            { text: 'フレデリック・H・エヴァンズ', href: '/photographers/frederick-h-evans.html' },
+            'の大聖堂写真は、白金印画の繊細な階調と建築空間の秩序によって、初期の「ストレート」な姿勢を示します。一方、',
+            { text: 'アルフレッド・スティーグリッツ', href: '/photographers/stieglitz.html' },
+            'はピクトリアリズムと',
+            { text: '写真分離派', href: '/movements/写真分離派.html' },
+            'の制度的成果を経て、写真が近代美術の言語と接続する道を開きました。'
+          ]
+        ]
+      },
+      {
+        heading: '写真史で何を変えたか',
+        paragraphs: [
+          [
+            'ストレート写真が変えたのは、写真を芸術にするための条件でした。写真は絵画に近づくことで価値を得るのではなく、カメラの即時性、レンズの精密さ、印画紙の階調、日常の対象を構造として見る視点によって価値を持つ。この考え方は、20世紀の',
+            { text: 'モダニズム', href: '/movements/モダニズム.html' },
+            '写真の基盤になりました。都市、機械、建築、看板、人物の顔は、単なる記録対象ではなく、線、面、光、質感の関係として読み替えられました。'
+          ],
+          [
+            { text: 'ポール・ストランド', href: '/photographers/strand.html' },
+            'は1910年代に、幾何学的構成と鋭い焦点によってピクトリアリズムから決定的に離れました。1917年の『Camera Work』最終号で紹介された作品は、近代写真がどのように「直接的」でありながら高度に構成的でありうるかを示しました。',
+            { text: 'チャールズ・シェラー', href: '/photographers/charles-sheeler.html' },
+            'は工場、建築、機械的な形態を明晰な構図で捉え、ストレート写真とアメリカン・モダニズムを結びつけました。'
+          ]
+        ]
+      },
+      {
+        heading: '代表的な写真家',
+        paragraphs: [
+          [
+            '代表的な写真家としては、建築写真の精密な階調で知られる',
+            { text: 'フレデリック・H・エヴァンズ', href: '/photographers/frederick-h-evans.html' },
+            '、写真を近代美術の制度へ接続した',
+            { text: 'アルフレッド・スティーグリッツ', href: '/photographers/stieglitz.html' },
+            '、鋭いフォーカスと都市的構成で転換点を作った',
+            { text: 'ポール・ストランド', href: '/photographers/strand.html' },
+            '、工業風景と建築をモダニズムの視覚へ変換した',
+            { text: 'チャールズ・シェラー', href: '/photographers/charles-sheeler.html' },
+            'が挙げられます。彼らは同じ様式に収まるというより、写真が絵画的演出から離れても強い造形性を持てることを、それぞれ異なる対象と方法で示しました。'
+          ]
+        ]
+      },
+      {
+        heading: '関連する表現',
+        paragraphs: [
+          [
+            'ストレート写真は、出発点としての',
+            { text: 'ピクトリアリズム', href: '/movements/ピクトリアリズム.html' },
+            '、スティーグリッツ周辺の',
+            { text: '写真分離派', href: '/movements/写真分離派.html' },
+            '、20世紀初頭の',
+            { text: 'モダニズム', href: '/movements/モダニズム.html' },
+            'と深く関わります。また、対象の明晰な把握という点ではドイツの',
+            { text: '新即物主義', href: '/movements/新即物主義.html' },
+            '、視点の変革という点では',
+            { text: '新しいヴィジョン', href: '/movements/新しいヴィジョン.html' },
+            '、記録倫理の問題では日本の',
+            { text: 'リアリズム写真', href: '/movements/リアリズム写真.html' },
+            'とも比較できます。'
+          ]
+        ]
+      }
+    ],
+    sectionsEn: [
+      {
+        heading: 'What Is Straight Photography?',
+        paragraphs: [
+          [
+            'Straight Photography is a photographic approach that rejected the idea that a photograph had to imitate painting in order to become art. Instead of soft focus, brushed surfaces, theatrical staging, or sentimental atmosphere, it emphasized sharp focus, precise composition, tonal clarity, and the material quality of the print. In a practical straight photography definition, the photograph is made to look photographic: clear, direct, and attentive to the visual facts produced by lens, light, negative, and paper.'
+          ],
+          [
+            'That does not mean the camera becomes neutral. Straight Photography is not a claim that photographs are untouched truth. A photographer still chooses the subject, viewpoint, distance, moment, framing, exposure, and print. What changed was the direction of those choices: away from painterly disguise and toward the expressive capacities of the photographic medium itself.'
+          ]
+        ]
+      },
+      {
+        heading: 'How It Differed from Pictorialism',
+        paragraphs: [
+          [
+            { text: 'Pictorialism', href: '/en/movements/pictorialism.html' },
+            ' had helped argue that photography could be art, but it often did so by borrowing the language of painting and printmaking: soft lenses, atmospheric effects, handworked surfaces, and symbolic or literary moods. Straight Photography kept the ambition for art while changing the terms. It treated clarity, optical description, and controlled printing not as mechanical limitations but as the basis for a modern photographic language.'
+          ],
+          [
+            { text: 'Frederick H. Evans', href: '/en/photographers/frederick-h-evans.html' },
+            ' offers an early example through his cathedral photographs, where platinum printing and architectural order create a highly exact image without painterly retouching. ',
+            { text: 'Alfred Stieglitz', href: '/en/photographers/stieglitz.html' },
+            ' is more transitional: through ',
+            { text: 'Photo-Secession', href: '/en/movements/photo-secession.html' },
+            ', Camera Work, and 291, he first fought for photography as art, then helped make room for a more modern, medium-conscious practice.'
+          ]
+        ]
+      },
+      {
+        heading: 'Why It Mattered in the History of Photography',
+        paragraphs: [
+          [
+            'Straight Photography mattered because it changed the argument about what made a photograph artistically serious. The answer no longer had to be resemblance to painting. A photograph could gain force from lens-based precision, from the exact relation of line and surface, from tonal control, and from the discovery that ordinary modern subjects could become complex visual structures. This shift helped prepare the ground for ',
+            { text: 'modern photography', href: '/en/movements/modernism.html' },
+            ', especially in the United States.'
+          ],
+          [
+            { text: 'Paul Strand', href: '/en/photographers/strand.html' },
+            ' made the break especially visible in the 1910s. His sharply focused studies of fences, bowls, streets, and faces turned everyday subjects into rigorous arrangements of plane, shape, and viewpoint. Published in the final issue of Camera Work in 1917, Strand’s work showed that direct description could also be formally radical. ',
+            { text: 'Charles Sheeler', href: '/en/photographers/charles-sheeler.html' },
+            ' extended this logic into industrial and architectural subjects, linking Straight Photography with American modernism and the clean geometry of factories, machinery, and built space.'
+          ]
+        ]
+      },
+      {
+        heading: 'Key Photographers',
+        paragraphs: [
+          [
+            'Key photographers associated with Straight Photography include ',
+            { text: 'Frederick H. Evans', href: '/en/photographers/frederick-h-evans.html' },
+            ', whose cathedral interiors demonstrate the expressive power of exact tonal printing; ',
+            { text: 'Alfred Stieglitz', href: '/en/photographers/stieglitz.html' },
+            ', who linked photographic institutions to modern art and supported the shift away from Pictorialism; ',
+            { text: 'Paul Strand', href: '/en/photographers/strand.html' },
+            ', whose 1910s work became a touchstone for sharp-focus modern photography; and ',
+            { text: 'Charles Sheeler', href: '/en/photographers/charles-sheeler.html' },
+            ', whose photographs of architecture and industry made photographic clarity part of a broader modernist vision.'
+          ]
+        ]
+      },
+      {
+        heading: 'Related Movements',
+        paragraphs: [
+          [
+            'Straight Photography is best understood alongside ',
+            { text: 'Pictorialism', href: '/en/movements/pictorialism.html' },
+            ', ',
+            { text: 'Photo-Secession', href: '/en/movements/photo-secession.html' },
+            ', and ',
+            { text: 'Modernism', href: '/en/movements/modernism.html' },
+            '. It also connects to the cool descriptive eye of ',
+            { text: 'Neue Sachlichkeit', href: '/en/movements/neue-sachlichkeit.html' },
+            ', the experimental viewpoints of ',
+            { text: 'New Vision', href: '/en/movements/new-vision.html' },
+            ', and later debates around ',
+            { text: 'Realism Photography', href: '/en/movements/realism-photography.html' },
+            ', where directness becomes an ethical as well as formal question.'
+          ]
+        ]
+      }
+    ],
+    faqJa: [
+      {
+        question: 'ストレート写真とは何ですか？',
+        answer: 'ストレート写真とは、絵画的なぼかしや手作業の加工から距離を取り、鮮明な焦点、構図、階調、プリントの精度によって写真固有の表現を追求した写真の流れです。'
+      },
+      {
+        question: 'ストレート写真とピクトリアリズムの違いは何ですか？',
+        answer: 'ピクトリアリズムが絵画や版画に近い効果で芸術性を示そうとしたのに対し、ストレート写真はレンズによる明晰さ、対象の質感、構図、プリントの精度を表現の核にしました。'
+      },
+      {
+        question: 'ストレート写真の代表的な写真家は誰ですか？',
+        answer: 'フレデリック・H・エヴァンズ、アルフレッド・スティーグリッツ、ポール・ストランド、チャールズ・シェラーなどが代表的です。'
+      }
+    ],
+    faqEn: [
+      {
+        question: 'What is Straight Photography?',
+        answer: 'Straight Photography is an approach that moved away from painterly manipulation and used sharp focus, clear composition, tonal control, and precise printing as the basis of photographic expression.'
+      },
+      {
+        question: 'How is Straight Photography different from Pictorialism?',
+        answer: 'Pictorialism often borrowed effects from painting and printmaking, while Straight Photography emphasized the camera’s optical clarity, the structure of the subject, and the expressive possibilities of the photographic print.'
+      },
+      {
+        question: 'Who are key Straight Photography photographers?',
+        answer: 'Key photographers include Frederick H. Evans, Alfred Stieglitz, Paul Strand, and Charles Sheeler, each of whom helped define photographic clarity, structure, and modern form in different ways.'
+      }
+    ],
+    sources: [
+      { label: 'The Met — Alfred Stieglitz and American Photography', url: 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography' },
+      { label: 'MoMA — Frederick H. Evans, A Sea of Steps', url: 'https://www.moma.org/collection/works/53618' },
+      { label: 'George Eastman Museum — Paul Strand', url: 'https://www.eastman.org/collections/photography/strand-paul' },
+      { label: 'National Gallery of Art — Charles Sheeler', url: 'https://www.nga.gov/artists/2745-charles-sheeler' },
+      { label: 'The Met — Charles Sheeler (1883–1965)', url: 'https://www.metmuseum.org/en/essays/charles-sheeler-1883-1965' }
+    ]
+  },
   'ストリート写真': { en: 'Street Photography', desc: '公共空間での人間の瞬間を捉えることを主眼とした写真実践。', descEn: 'A photographic practice centered on capturing fleeting human moments in public space.' },
   '社会ドキュメンタリー': { en: 'Social Documentary', desc: '社会問題・貧困・格差・差別などを記録し、社会変革を促すことを意識した写真。', descEn: 'Photography that records social problems such as poverty, inequality, and discrimination, often with the aim of prompting social change.' },
   'モダニズム': { en: 'Modernism', desc: '20世紀前半の抽象・構成・実験的技法を導入した写真表現。', descEn: 'Photographic practices of the early twentieth century that embraced abstraction, formal construction, and experiment.' },

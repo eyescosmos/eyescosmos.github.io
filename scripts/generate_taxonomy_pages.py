@@ -269,6 +269,91 @@ def esc(text: str) -> str:
     return html.escape(text or "")
 
 
+def render_inline_nodes(nodes) -> str:
+    if isinstance(nodes, str):
+        return esc(nodes)
+    if not isinstance(nodes, list):
+        return esc(str(nodes or ""))
+    parts = []
+    for node in nodes:
+        if isinstance(node, str):
+            parts.append(esc(node))
+        elif isinstance(node, dict):
+            text = esc(str(node.get("text") or ""))
+            href = node.get("href")
+            if href:
+                class_name = node.get("class") or "taxonomy-inline-link"
+                parts.append(f'<a class="{esc(class_name)}" href="{esc(str(href))}">{text}</a>')
+            else:
+                parts.append(text)
+    return "".join(parts)
+
+
+def render_content_section(section: dict) -> str:
+    heading = section.get("heading") or ""
+    paragraphs = section.get("paragraphs") or []
+    paragraph_html = "\n".join(
+        f'          <p>{render_inline_nodes(paragraph)}</p>'
+        for paragraph in paragraphs
+        if paragraph
+    )
+    return f'''        <section class="section taxonomy-detail-section">
+          <h2>{esc(heading)}</h2>
+{paragraph_html}
+        </section>'''
+
+
+def render_faq_section(faq_items: list[dict], lang: str) -> str:
+    if not faq_items:
+        return ""
+    title = "FAQ" if lang == "en" else "よくある質問"
+    items = []
+    for item in faq_items:
+        question = item.get("question") or ""
+        answer = item.get("answer") or ""
+        if not question or not answer:
+            continue
+        items.append(
+            f'''          <details class="taxonomy-faq-item">
+            <summary>{esc(question)}</summary>
+            <p>{render_inline_nodes(answer)}</p>
+          </details>'''
+        )
+    if not items:
+        return ""
+    return f'''        <section class="section taxonomy-faq">
+          <h2>{esc(title)}</h2>
+          <div class="taxonomy-faq-list">
+{chr(10).join(items)}
+          </div>
+        </section>'''
+
+
+def movement_detail_html(movement_meta: dict, lang: str) -> str:
+    suffix = "En" if lang == "en" else "Ja"
+    sections = movement_meta.get(f"sections{suffix}") or []
+    faq_items = movement_meta.get(f"faq{suffix}") or []
+    sources = movement_meta.get(f"sources{suffix}") or movement_meta.get("sources") or []
+    parts = [render_content_section(section) for section in sections if section]
+    if sources:
+        source_links = "".join(
+            f'<a href="{esc(str(source.get("url") or ""))}" rel="noopener">{esc(str(source.get("label") or ""))}</a>'
+            for source in sources
+            if source.get("url") and source.get("label")
+        )
+        source_title = "Selected Sources" if lang == "en" else "主な参照先"
+        parts.append(
+            f'''        <section class="section taxonomy-sources" data-nosnippet>
+          <h2>{esc(source_title)}</h2>
+          <div class="taxonomy-source-links">{source_links}</div>
+        </section>'''
+        )
+    faq_html = render_faq_section(faq_items, lang)
+    if faq_html:
+        parts.append(faq_html)
+    return "\n".join(parts)
+
+
 def ascii_slug(text: str) -> str:
     value = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode("ascii")
     value = value.lower().replace("&", " and ").replace("+", " plus ")
@@ -416,7 +501,7 @@ def top_movements(photographers: list[dict], movements_meta: dict, lang: str, li
     return items
 
 
-def page_structured_data(title: str, description: str, canonical: str, lang: str, crumb_label: str) -> str:
+def page_structured_data(title: str, description: str, canonical: str, lang: str, crumb_label: str, faq_items: list[dict] | None = None) -> str:
     payload = {
         "@context": "https://schema.org",
         "@graph": [
@@ -442,6 +527,29 @@ def page_structured_data(title: str, description: str, canonical: str, lang: str
             },
         ],
     }
+    if faq_items:
+        questions = []
+        for item in faq_items:
+            question = item.get("question") or ""
+            raw_answer = item.get("answer", "")
+            if isinstance(raw_answer, list):
+                raw_answer = "".join(str(part.get("text", "")) if isinstance(part, dict) else str(part) for part in raw_answer)
+            answer = clean_inline_text(re.sub(r"<[^>]+>", "", str(raw_answer or "")))
+            if question and answer:
+                questions.append({
+                    "@type": "Question",
+                    "name": question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": answer,
+                    },
+                })
+        if questions:
+            payload["@graph"].append({
+                "@type": "FAQPage",
+                "@id": f"{canonical}#faq",
+                "mainEntity": questions,
+            })
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
@@ -759,7 +867,12 @@ def taxonomy_page_title(page_kind: str, label: str, lang: str, era_title: str = 
     return f"{label} Photography | Photo Coordinates"
 
 
-def taxonomy_meta_description(page_kind: str, label: str, lang: str, era_title: str = "") -> str:
+def taxonomy_meta_description(page_kind: str, label: str, lang: str, era_title: str = "", movement_meta: dict | None = None) -> str:
+    movement_meta = movement_meta or {}
+    if page_kind == "movement":
+        override = movement_meta.get("metaDescEn" if lang == "en" else "metaDescJa")
+        if override:
+            return override
     if lang != "en":
         if page_kind == "movement":
             return f"{label}を写真史の中でたどるためのページです。写真の座標で、この表現に関わる写真家や時代背景、関連する運動を一覧できます。"
@@ -799,10 +912,10 @@ def era_context_html(era: dict, lang: str) -> str:
       </section>'''
 
 
-def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str, ja_href: str | None = None, en_href: str | None = None) -> str:
+def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str, ja_href: str | None = None, en_href: str | None = None, faq_items: list[dict] | None = None) -> str:
     kind_label = "Movement" if page_kind == "movement" else ("Country" if page_kind == "country" else "Era")
     label = f"Photo Coordinates / {kind_label}"
-    structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip())
+    structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip(), faq_items)
     ja_href = ja_href or (canonical.replace("/en/", "/") if lang == "en" else canonical)
     en_href = en_href or (canonical if lang == "en" else canonical.replace(f"{SITE}/", f"{SITE}/en/", 1))
     footer_line1 = "This site gathers and organizes information from publicly available web sources with AI assistance." if lang == "en" else "本サイトの情報はAIによってウェブ上の資料から収集・整理されたものです。"
@@ -1186,17 +1299,19 @@ def main():
         # Movement pages
         for movement in all_movements:
             people = sort_photographers(photographers_by_movement.get(movement, []), lang)
+            movement_meta = movements_meta.get(movement, {})
             movement_label = localized_movement_name(movement, movements_meta, lang)
-            title = taxonomy_page_title("movement", movement_label, lang)
+            title = movement_meta.get("titleEn" if lang == "en" else "titleJa") or taxonomy_page_title("movement", movement_label, lang)
             keyword = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates |" if lang == "en" else f"{movement_label}｜表現｜写真史｜<a href=\"/\">写真の座標</a>｜"
             ja_href = f"{SITE}/movements/{movement_slug(movement, 'ja', movements_meta)}.html"
             en_href = f"{SITE}/en/movements/{movement_slug(movement, 'en', movements_meta)}.html"
             canonical = en_href if lang == "en" else ja_href
-            description = taxonomy_meta_description("movement", movement_label, lang)
-            movement_desc = movements_meta.get(movement, {}).get("descEn" if lang == "en" else "desc") or movements_meta.get(movement, {}).get("desc") or ""
+            description = taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta)
+            movement_desc = movement_meta.get("descEn" if lang == "en" else "desc") or movement_meta.get("desc") or ""
             movement_desc = clean_context_intro(movement_desc, lang)
-            lead = movement_lead_text(movement_label, movement_desc, lang)
-            context_html = (
+            lead = movement_meta.get("leadEn" if lang == "en" else "leadJa") or movement_lead_text(movement_label, movement_desc, lang)
+            detail_html = movement_detail_html(movement_meta, lang)
+            context_html = detail_html or (
                 f'''<section class="section taxonomy-context">
         <h2>{"Overview" if lang == "en" else "この表現について"}</h2>
         <div class="context-grid">
@@ -1231,6 +1346,7 @@ def main():
                 directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
                 ja_href=ja_href,
                 en_href=en_href,
+                faq_items=movement_meta.get("faqEn" if lang == "en" else "faqJa") or [],
             )
             output_slug = movement_slug(movement, lang, movements_meta)
             (movements_en_dir if lang == "en" else movements_dir).joinpath(f"{output_slug}.html").write_text(page, encoding="utf-8")

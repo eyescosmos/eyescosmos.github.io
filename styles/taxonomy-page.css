@@ -544,6 +544,60 @@ body::after {
   color: var(--accent);
 }
 .section p { margin: 0; color: var(--text); line-height: 1.95; font-size: 15px; }
+.taxonomy-detail-section {
+  display: grid;
+  gap: 12px;
+}
+.taxonomy-detail-section a,
+.taxonomy-faq a {
+  color: var(--accent-2);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(225, 199, 143, 0.35);
+}
+.taxonomy-detail-section a:hover,
+.taxonomy-faq a:hover {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+.taxonomy-faq-list {
+  display: grid;
+  gap: 8px;
+}
+.taxonomy-faq-item {
+  border: 1px solid var(--border);
+  background: var(--surface2);
+}
+.taxonomy-faq-item summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.5;
+}
+.taxonomy-faq-item p {
+  padding: 0 14px 14px;
+  color: var(--text-dim);
+  font-size: 14px;
+}
+.taxonomy-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.taxonomy-source-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  text-decoration: none;
+  font: 400 10px/1.35 'DM Mono', monospace;
+}
+.taxonomy-source-links a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
 .site-footer {
   margin-top: 22px;
   border-top: 1px solid var(--border);
