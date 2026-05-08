@@ -559,6 +559,24 @@ body::after {
   color: var(--text);
   border-bottom-color: var(--text);
 }
+.taxonomy-citation-ref {
+  margin-left: 0.35em;
+  font-size: 0.72em;
+  vertical-align: super;
+  line-height: 0;
+}
+.taxonomy-citation-ref a {
+  border-bottom: none;
+  padding: 0 0.08em;
+  color: var(--accent);
+  text-decoration: none;
+}
+.taxonomy-citation-ref a + a {
+  margin-left: 0.08em;
+}
+.taxonomy-citation-ref a:hover {
+  color: var(--text);
+}
 .taxonomy-faq-list {
   display: grid;
   gap: 8px;
@@ -579,24 +597,25 @@ body::after {
   color: var(--text-dim);
   font-size: 14px;
 }
-.taxonomy-source-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.taxonomy-source-list {
+  margin: 0;
+  padding-left: 1.4rem;
+  display: grid;
+  gap: 10px;
 }
-.taxonomy-source-links a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 28px;
-  padding: 4px 8px;
-  border: 1px solid var(--border);
+.taxonomy-source-list li {
   color: var(--text-dim);
-  text-decoration: none;
-  font: 400 10px/1.35 'DM Mono', monospace;
+  line-height: 1.7;
+  font-size: 14px;
 }
-.taxonomy-source-links a:hover {
+.taxonomy-source-list a {
+  color: var(--accent-2);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(225, 199, 143, 0.35);
+}
+.taxonomy-source-list a:hover {
   color: var(--text);
-  border-color: var(--accent);
+  border-bottom-color: var(--text);
 }
 .site-footer {
   margin-top: 22px;
