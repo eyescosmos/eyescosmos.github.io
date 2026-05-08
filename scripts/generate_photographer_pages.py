@@ -1262,6 +1262,14 @@ def override_lead_raw(override, lang: str) -> str:
     return normalize_space(lead)
 
 
+def override_rendered_sections_html(override, lang: str) -> str:
+    if not isinstance(override, dict):
+        return ""
+    html_key = "renderedSectionsHtmlEn" if lang == "en" else "renderedSectionsHtmlJa"
+    fallback_key = "renderedSectionsHtmlJa" if lang == "en" else "renderedSectionsHtmlEn"
+    return (override.get(html_key) or override.get(fallback_key) or "").strip()
+
+
 def display_name(photographer: dict, lang: str) -> str:
     if lang == "en":
         return photographer.get("name") or photographer.get("nameJa") or ""
@@ -1906,8 +1914,11 @@ def main() -> None:
             override_body_text, override_citations = override_text_and_citations(override_entry, lang)
             body_text, citations = collect_text_and_citations(photographer, lang)
             override_sections = override_entry.get("sections") if isinstance(override_entry, dict) else None
+            override_sections_html = override_rendered_sections_html(override_entry, lang)
             if override_body_text:
                 body_text = override_body_text
+                citations = override_citations or citations
+            elif override_sections_html and override_citations:
                 citations = override_citations or citations
             if isinstance(override_sections, list) and override_sections:
                 rendered_body = render_override_sections_html(override_sections, lang, alias_lookup, alias_regex, photographer["id"])
@@ -2021,7 +2032,7 @@ def main() -> None:
             page_path = photographer_page_path(photographer, lang)
             structured_data = build_page_structured_data(photographer, lang, title, description, canonical)
             breadcrumb_structured_data = build_breadcrumb_structured_data(photographer, lang)
-            essay_sections_html = split_essay_into_sections(rendered_body, copy["essay"])
+            essay_sections_html = override_sections_html or split_essay_into_sections(rendered_body, copy["essay"])
             movement_select = render_optional_tax_select(
                 movement_select_options,
                 copy["movements"],
