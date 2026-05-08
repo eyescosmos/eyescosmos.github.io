@@ -7,14 +7,15 @@
     typeof MOVEMENTS_META !== 'undefined'
       ? MOVEMENTS_META
       : (window.MOVEMENTS_META || {});
+  const movementTaxonomySource =
+    typeof MOVEMENT_TAXONOMY !== 'undefined'
+      ? MOVEMENT_TAXONOMY
+      : (window.MOVEMENT_TAXONOMY || {});
   const nonPhotographerIds = new Set([
     'charles-wirgman',
     'fabian-marti',
     'gabriel-orozco'
   ]);
-
-  const photographers = photographersSource.filter(p => !p.isPlaceholder && !nonPhotographerIds.has(p.id));
-  const photographerOrder = new Map(photographers.map((p, index) => [p.id, index]));
   const movementMeta = Object.assign({}, movementMetaSource, {
     'LGBTQ+': {
       en: 'LGBTQ+ Photography',
@@ -65,6 +66,35 @@
       desc: '社会構造や格差、共同体の問題を批評的に扱う写真の実践。'
     }
   });
+  const visibleMovementSet = new Set(movementTaxonomySource.featured || []);
+  const movementAliasMap = movementTaxonomySource.aliases || {};
+  const excludedMovementSet = new Set(movementTaxonomySource.excluded || []);
+  const reconsiderMovementSet = new Set(movementTaxonomySource.reconsider || []);
+
+  function canonicalMovementName(name) {
+    if (!name) return '';
+    const canonical = movementAliasMap[name] || name;
+    if (excludedMovementSet.has(canonical) || reconsiderMovementSet.has(canonical)) return '';
+    if (visibleMovementSet.size && !visibleMovementSet.has(canonical)) return '';
+    return canonical;
+  }
+
+  function visibleMovementValues(photographer) {
+    const values = [];
+    const seen = new Set();
+    (photographer.movements || []).forEach(movement => {
+      const canonical = canonicalMovementName(movement);
+      if (!canonical || seen.has(canonical)) return;
+      seen.add(canonical);
+      values.push(canonical);
+    });
+    return values;
+  }
+
+  const photographers = photographersSource
+    .filter(p => !p.isPlaceholder && !nonPhotographerIds.has(p.id))
+    .map(p => ({ ...p, movements: visibleMovementValues(p) }));
+  const photographerOrder = new Map(photographers.map((p, index) => [p.id, index]));
 
   const eraOrder = ['1839', '1870', '1890', '1910', '1930', '1950', '1970', '1980', '1990', '2000', '2010'];
   const eraLabels = {
@@ -93,19 +123,6 @@
     { id: 'idea:critique', label: '政治と批評', labelEn: 'Politics & Critique', subtitle: 'critique / representation', type: 'idea' },
     { id: 'idea:landscape', label: '空間と風景', labelEn: 'Space & Landscape', subtitle: 'landscape / environment', type: 'idea' }
   ];
-
-  const excludedMovements = new Set([
-    'LGBTQ+',
-    'ポートレート',
-    '科学写真',
-    '実験的技法',
-    '環境写真',
-    'FSA写真',
-    '都市記録',
-    '社会ドキュメンタリー',
-    'ステージド写真',
-    'シネマトグラフィック写真'
-  ]);
 
   const featuredIdeaIds = new Set([
     'idea:machine-eye'
@@ -229,7 +246,7 @@
     new Set(
       photographers
         .flatMap(p => p.movements || [])
-        .filter(name => name && !excludedMovements.has(name))
+        .filter(Boolean)
     )
   ).sort((a, b) => a.localeCompare(b, 'ja'));
 
@@ -354,8 +371,11 @@
   });
 
   movementRelations.forEach(([source, destination]) => {
-    if (!usedMovements.includes(source) || !usedMovements.includes(destination)) return;
-    pushUniqueLink(links, seenLinks, `movement:${source}`, `movement:${destination}`, 'influences');
+    const sourceMovement = canonicalMovementName(source);
+    const destinationMovement = canonicalMovementName(destination);
+    if (!sourceMovement || !destinationMovement || sourceMovement === destinationMovement) return;
+    if (!usedMovements.includes(sourceMovement) || !usedMovements.includes(destinationMovement)) return;
+    pushUniqueLink(links, seenLinks, `movement:${sourceMovement}`, `movement:${destinationMovement}`, 'influences');
   });
 
   usedMovements.forEach(name => {

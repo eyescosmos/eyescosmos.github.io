@@ -16,8 +16,8 @@ import generate_taxonomy_pages as taxonomy_meta
 REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260506b"
-GLOBAL_SEARCH_VERSION = "20260506b"
+ASSET_VERSION = "20260508a"
+GLOBAL_SEARCH_VERSION = "20260508a"
 OGP_IMAGE_URL = f"{SITE}/assets/ogp-default.png"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
 NON_PHOTOGRAPHER_IDS = {
@@ -718,8 +718,11 @@ def country_page_path(photographer: dict, lang: str = "ja") -> str:
 
 
 def movement_page_path(movement: str, lang: str = "ja", movements_meta: dict | None = None) -> str:
+    canonical = taxonomy_meta.canonical_movement_name(movement)
+    if not canonical:
+        return ""
     base = "en/movements" if lang == "en" else "movements"
-    return f"/{base}/{taxonomy_meta.movement_slug(movement, lang, movements_meta or {})}.html"
+    return f"/{base}/{taxonomy_meta.movement_slug(canonical, lang, movements_meta or {})}.html"
 
 
 def render_site_directory_nav(
@@ -1698,6 +1701,8 @@ def main() -> None:
         'typeof PHOTOGRAPHER_LINK_ALIASES !== "undefined" ? PHOTOGRAPHER_LINK_ALIASES : {}',
     )
     movements_meta = eval_js(["data/movements.js"], "MOVEMENTS_META")
+    movement_taxonomy = eval_js(["data/movements.js"], "MOVEMENT_TAXONOMY")
+    taxonomy_meta.configure_movement_taxonomy(movement_taxonomy)
     enrichments = eval_js(["data/photographer-enrichments.js"], 'typeof PHOTOGRAPHER_ENRICHMENTS !== "undefined" ? PHOTOGRAPHER_ENRICHMENTS : {}')
     affiliate_books = load_affiliate_books()
     essay_overrides = load_essay_overrides()
@@ -1790,8 +1795,11 @@ def main() -> None:
             movement_links = []
             movement_select_options = []
             for movement in (photographer.get("movements") or []) + (get_enrichment(enrichments, photographer).get("extraMovements") or []):
-                movement_label = english_movement_name(movement, movements_meta) if lang == "en" else movement
-                movement_target = movement_page_path(movement, lang, movements_meta)
+                canonical_movement = taxonomy_meta.canonical_movement_name(movement)
+                if not canonical_movement:
+                    continue
+                movement_label = english_movement_name(canonical_movement, movements_meta) if lang == "en" else canonical_movement
+                movement_target = movement_page_path(canonical_movement, lang, movements_meta)
                 tag = f'<a class="tag" href="{movement_target}">{escape_html(movement_label)}</a>'
                 if tag not in movement_links:
                     movement_links.append(tag)

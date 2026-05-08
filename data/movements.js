@@ -1,3 +1,66 @@
+const MOVEMENT_TAXONOMY = {
+  featured: [
+    'ピクトリアリズム',
+    '写真分離派',
+    'ストレート写真',
+    'モダニズム',
+    '新即物主義',
+    '新しいヴィジョン',
+    'バウハウス',
+    'ヴォルテクシズム',
+    'ダダ',
+    'シュルレアリスム',
+    'レイオグラフ',
+    '自然主義写真',
+    'リアリズム写真',
+    'ドキュメンタリー',
+    '社会ドキュメンタリー',
+    'フォトジャーナリズム',
+    'FSA写真',
+    '決定的瞬間',
+    'ストリート写真',
+    'プロヴォーク',
+    '私写真',
+    'ニューカラー',
+    'カラー写真',
+    '大判カラー写真',
+    'デュッセルドルフ派',
+    'タイポロジー写真',
+    'コンセプチュアルアート',
+    'ピクチャーズ世代',
+    'ステージド写真',
+    'フェミニズム写真',
+    'シネマトグラフィック写真',
+  ],
+  aliases: {
+    'コンセプチュアル': 'コンセプチュアルアート',
+    'プライベート写真': '私写真',
+    '社会的写真': '社会ドキュメンタリー',
+  },
+  excluded: [
+    'アメリカ写真',
+    'イギリス写真',
+    '日本写真',
+    '風景写真',
+    '建築写真',
+    'ポートレート',
+    '肖像写真',
+    '都市記録',
+    '戦争写真',
+    '環境写真',
+    '科学写真',
+    'カロタイプ',
+    'ヘリオグラフィー',
+    '写真石版',
+    '発明・技術',
+  ],
+  reconsider: [
+    '植民地写真',
+    'LGBTQ+',
+    '明治ドキュメンタリー',
+  ],
+};
+
 const MOVEMENTS_META = {
   '発明・技術': { en: 'Invention & Technique', desc: 'ダゲレオタイプ・カロタイプなど写真の基礎技術を確立した時代の実践。', descEn: 'Practices that established photography’s foundational technologies, including the daguerreotype and calotype.' },
   'ドキュメンタリー': { en: 'Documentary', desc: '現実の出来事・社会・人々を記録することを目的とした写真表現。', descEn: 'A photographic practice aimed at recording real events, societies, and people.' },
@@ -235,3 +298,12 @@ const MOVEMENTS_META = {
   '明治ドキュメンタリー': { en: 'Meiji Documentary', desc: '明治期の社会、人物、風俗、近代化を記録する写真実践。', descEn: 'Photography documenting people, customs, society, and modernization in Meiji-period Japan.' },
   '肖像写真': { en: 'Portrait Photography', desc: '人物像を通じて個人、社会的役割、時代の表象を扱う写真表現。', descEn: 'Photography that represents individuals, social roles, and historical moments through portraiture.' },
 };
+
+if (typeof window !== 'undefined') {
+  window.MOVEMENT_TAXONOMY = MOVEMENT_TAXONOMY;
+  window.MOVEMENTS_META = MOVEMENTS_META;
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = { MOVEMENT_TAXONOMY, MOVEMENTS_META };
+}

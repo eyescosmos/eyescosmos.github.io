@@ -1,7 +1,7 @@
 (function () {
-  const SCRIPT_VERSION = '20260421b';
+  const SCRIPT_VERSION = '20260508a';
   const DATA_FILES = [
-    'data/movements.js?v=20260403d',
+    'data/movements.js?v=20260508a',
     'data/eras.js?v=20260403c',
     'data/photographers.js?v=20260405j',
     'data/photographers-supplement.js?v=20260409c',

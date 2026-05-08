@@ -440,6 +440,16 @@ const MOVEMENT_NAME_OVERRIDES_EN = {
   '写真石版': 'Photolithography',
   '明治ドキュメンタリー': 'Meiji Documentary'
 };
+const MOVEMENT_TAXONOMY = window.MOVEMENT_TAXONOMY || {
+  featured: [],
+  aliases: {},
+  excluded: [],
+  reconsider: []
+};
+const VISIBLE_MOVEMENT_SET = new Set(MOVEMENT_TAXONOMY.featured || []);
+const MOVEMENT_ALIAS_MAP = MOVEMENT_TAXONOMY.aliases || {};
+const EXCLUDED_MOVEMENT_SET = new Set(MOVEMENT_TAXONOMY.excluded || []);
+const RECONSIDER_MOVEMENT_SET = new Set(MOVEMENT_TAXONOMY.reconsider || []);
 const JAPANESE_TEXT_RE = /[ぁ-んァ-ン一-龯]/;
 const EN_REFERENCE_REPLACEMENTS = {
   '公式アーカイブ': 'official archive',
@@ -459,7 +469,30 @@ const GENDER_TEXT = {
   女性: { ja: '女性', en: 'Female' }
 };
 
-const VISIBLE_PHOTOGRAPHERS = PHOTOGRAPHERS.filter(photographer => !photographer.isPlaceholder && !NON_PHOTOGRAPHER_IDS.has(photographer.id));
+function canonicalMovementName(name) {
+  if (!name) return '';
+  const canonical = MOVEMENT_ALIAS_MAP[name] || name;
+  if (EXCLUDED_MOVEMENT_SET.has(canonical) || RECONSIDER_MOVEMENT_SET.has(canonical)) return '';
+  if (VISIBLE_MOVEMENT_SET.size && !VISIBLE_MOVEMENT_SET.has(canonical)) return '';
+  return canonical;
+}
+
+function visibleMovementValues(photographer) {
+  const values = [];
+  const seen = new Set();
+  const enrichment = getPhotographerEnrichment(photographer);
+  [...(photographer.movements || []), ...(enrichment.extraMovements || [])].forEach(movement => {
+    const canonical = canonicalMovementName(movement);
+    if (!canonical || seen.has(canonical)) return;
+    seen.add(canonical);
+    values.push(canonical);
+  });
+  return values;
+}
+
+const VISIBLE_PHOTOGRAPHERS = PHOTOGRAPHERS
+  .filter(photographer => !photographer.isPlaceholder && !NON_PHOTOGRAPHER_IDS.has(photographer.id))
+  .map(photographer => ({ ...photographer, movements: visibleMovementValues(photographer) }));
 const PHOTOGRAPHER_ORDER = new Map(VISIBLE_PHOTOGRAPHERS.map((photographer, index) => [photographer.id, index]));
 const ERA_ORDER = new Map((typeof ERAS !== 'undefined' ? ERAS : []).map((era, index) => [era.id, index]));
 const ALNUM_BOUNDARY_RE = /[A-Za-z0-9]/;
@@ -660,16 +693,9 @@ function enrichmentValue(photographer, baseKey) {
 }
 
 function expandedMovementNames(photographer, limit = 5) {
-  const names = [];
-  const seen = new Set();
-  const enrichment = getPhotographerEnrichment(photographer);
-  const values = [...(photographer.movements || []), ...(enrichment.extraMovements || [])];
-  values.forEach(movement => {
-    if (!movement || seen.has(movement)) return;
-    seen.add(movement);
-    names.push(displayMovementName(movement));
-  });
-  return names.slice(0, limit);
+  return visibleMovementValues(photographer)
+    .map(displayMovementName)
+    .slice(0, limit);
 }
 
 function descriptorFor(photographer) {
@@ -906,10 +932,11 @@ function displayGender(value) {
 }
 
 function displayMovementName(movementName) {
+  const canonical = canonicalMovementName(movementName) || movementName;
   if (currentLanguage === 'en') {
-    return MOVEMENTS_META[movementName]?.en || MOVEMENT_NAME_OVERRIDES_EN[movementName] || movementName;
+    return MOVEMENTS_META[canonical]?.en || MOVEMENT_NAME_OVERRIDES_EN[canonical] || canonical;
   }
-  return movementName;
+  return canonical;
 }
 
 function fallbackEnglishReferenceLabel(url) {
@@ -1068,8 +1095,9 @@ function asciiSlug(value) {
 }
 
 function movementSlug(value, lang = currentLanguage) {
-  if (lang === 'en') return asciiSlug(displayMovementName(value));
-  return String(value || '').replace(/[^a-zA-Z\u3000-\u9fff]/g, '');
+  const canonical = canonicalMovementName(value) || value;
+  if (lang === 'en') return asciiSlug(displayMovementName(canonical));
+  return String(canonical || '').replace(/[^a-zA-Z\u3000-\u9fff]/g, '');
 }
 
 function photographerSortValue(photographer) {
@@ -1231,7 +1259,9 @@ function countryPagePath(nationality) {
 }
 
 function movementPagePath(name) {
-  return `${currentLanguage === 'en' ? '/en' : ''}/movements/${movementSlug(name, currentLanguage)}.html`;
+  const canonical = canonicalMovementName(name);
+  if (!canonical) return '';
+  return `${currentLanguage === 'en' ? '/en' : ''}/movements/${movementSlug(canonical, currentLanguage)}.html`;
 }
 
 function navigateArchiveTaxonomy(value) {
@@ -1792,8 +1822,9 @@ function renderRelatedPeopleEntries(entries) {
 
 function buildRelatedReadingSection(photographer, bodyText = '') {
   const relatedPeople = buildRelatedPeopleEntries(photographer, bodyText);
+  const movementValues = visibleMovementValues(photographer);
   const relatedMovements = expandedMovementNames(photographer, 5).map((movementLabel, index) => {
-    const sourceMovement = ((photographer.movements || []).concat(getPhotographerEnrichment(photographer).extraMovements || []))[index] || movementLabel;
+    const sourceMovement = movementValues[index] || movementLabel;
     const slug = movementSlug(sourceMovement, 'ja');
     return {
       label: movementLabel,
@@ -1856,9 +1887,10 @@ function renderDetailPanel(p, idPrefix = 'panel-', customCloseFn = '') {
   const closeFn = customCloseFn || (isMovement ? `closeMovementDetail('${p.id}')` : `closeDetail('${p.id}')`);
   const intro = getPhotographerShortLeadCopy(p, 115);
   const keywordLine = buildPhotographerKeywordLine(p);
+  const movementValues = visibleMovementValues(p);
   const tags = expandedMovementNames(p, 5)
     .map((movementLabel, index) => {
-      const sourceMovement = ((p.movements || []).concat(getPhotographerEnrichment(p).extraMovements || []))[index] || movementLabel;
+      const sourceMovement = movementValues[index] || movementLabel;
       const slug = movementSlug(sourceMovement, 'ja');
       return `<a class="detail-tag" href="#movement-${slug}" onclick="openRecommendedMovement(event,'${slug}')">${displayMovementName(sourceMovement)}</a>`;
     }).join('');

@@ -13,8 +13,8 @@ from urllib.parse import quote, urlparse
 REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260419c"
-GLOBAL_SEARCH_VERSION = "20260421b"
+ASSET_VERSION = "20260508a"
+GLOBAL_SEARCH_VERSION = "20260508a"
 OGP_IMAGE_URL = f"{SITE}/assets/ogp-default.png"
 TRUSTED_SOURCE_HOSTS = {
     "americanart.si.edu",
@@ -152,6 +152,16 @@ FEATURED_PHOTOGRAPHER_IDS = [
     "cartierbresson",
     "hiroshi-sugimoto",
 ]
+MOVEMENT_TAXONOMY = {
+    "featured": [],
+    "aliases": {},
+    "excluded": [],
+    "reconsider": [],
+}
+VISIBLE_MOVEMENT_SET: set[str] = set()
+MOVEMENT_ALIAS_MAP: dict[str, str] = {}
+EXCLUDED_MOVEMENT_SET: set[str] = set()
+RECONSIDER_MOVEMENT_SET: set[str] = set()
 
 JAPANESE_READING_OVERRIDES = {
     "domon": "どもんけん",
@@ -249,6 +259,44 @@ def eval_site_js_object(object_name: str):
     )
     payload = proc.stderr.decode("utf-8") or proc.stdout.decode("utf-8")
     return json.loads(payload)
+
+
+def configure_movement_taxonomy(taxonomy: dict | None):
+    global MOVEMENT_TAXONOMY, VISIBLE_MOVEMENT_SET, MOVEMENT_ALIAS_MAP, EXCLUDED_MOVEMENT_SET, RECONSIDER_MOVEMENT_SET
+    MOVEMENT_TAXONOMY = taxonomy or {
+        "featured": [],
+        "aliases": {},
+        "excluded": [],
+        "reconsider": [],
+    }
+    VISIBLE_MOVEMENT_SET = set(MOVEMENT_TAXONOMY.get("featured") or [])
+    MOVEMENT_ALIAS_MAP = dict(MOVEMENT_TAXONOMY.get("aliases") or {})
+    EXCLUDED_MOVEMENT_SET = set(MOVEMENT_TAXONOMY.get("excluded") or [])
+    RECONSIDER_MOVEMENT_SET = set(MOVEMENT_TAXONOMY.get("reconsider") or [])
+
+
+def canonical_movement_name(name: str | None) -> str | None:
+    if not name:
+        return None
+    canonical = MOVEMENT_ALIAS_MAP.get(name, name)
+    if canonical in EXCLUDED_MOVEMENT_SET or canonical in RECONSIDER_MOVEMENT_SET:
+        return None
+    if VISIBLE_MOVEMENT_SET and canonical not in VISIBLE_MOVEMENT_SET:
+        return None
+    return canonical
+
+
+def visible_movement_values(photographer: dict, enrichments: dict | None = None) -> list[str]:
+    values = []
+    seen = set()
+    enrichment = (enrichments or {}).get(photographer.get("id"), {})
+    for movement in (photographer.get("movements") or []) + (enrichment.get("extraMovements") or []):
+        canonical = canonical_movement_name(movement)
+        if not canonical or canonical in seen:
+            continue
+        seen.add(canonical)
+        values.append(canonical)
+    return values
 
 
 def ensure_country_meta(nationality: str) -> dict | None:
@@ -351,6 +399,7 @@ def ascii_slug(text: str) -> str:
 
 
 def movement_slug(name: str, lang: str = "ja", movements_meta: dict | None = None) -> str:
+    name = canonical_movement_name(name) or name or ""
     if lang == "en":
         label = localized_movement_name(name, movements_meta or {}, "en")
         return ascii_slug(label)
@@ -372,7 +421,10 @@ def country_path(nationality: str, lang: str) -> str:
 
 
 def movement_path(name: str, lang: str, movements_meta: dict | None = None) -> str:
-    return f"/{'en/' if lang == 'en' else ''}movements/{movement_slug(name, lang, movements_meta)}.html"
+    canonical = canonical_movement_name(name)
+    if not canonical:
+        return ""
+    return f"/{'en/' if lang == 'en' else ''}movements/{movement_slug(canonical, lang, movements_meta)}.html"
 
 
 def display_name(photographer: dict, lang: str) -> str:
@@ -481,7 +533,7 @@ def sort_photographers(photographers: list[dict], lang: str) -> list[dict]:
 def top_movements(photographers: list[dict], movements_meta: dict, lang: str, limit: int = 5) -> list[tuple[str, str]]:
     counts = Counter()
     for photographer in photographers:
-        for movement in photographer.get("movements") or []:
+        for movement in visible_movement_values(photographer):
             counts[movement] += 1
     items = []
     for movement, _count in counts.most_common(limit):
@@ -617,20 +669,17 @@ def localized_enrichment_value(photographer: dict, enrichments: dict, base_key: 
 
 
 def localized_movement_name(movement: str, movements_meta: dict, lang: str) -> str:
+    movement = canonical_movement_name(movement) or movement
     if lang == "en":
         return movements_meta.get(movement, {}).get("en") or MOVEMENT_NAME_OVERRIDES_EN.get(movement) or movement
     return movement
 
 
 def photographer_tag_labels(photographer: dict, movements_meta: dict, enrichments: dict, lang: str, limit: int = 2) -> tuple[list[str], int]:
-    enrichment = enrichments.get(photographer.get("id"), {})
-    values = []
-    seen = set()
-    for movement in (photographer.get("movements") or []) + (enrichment.get("extraMovements") or []):
-        if not movement or movement in seen:
-            continue
-        seen.add(movement)
-        values.append(localized_movement_name(movement, movements_meta, lang))
+    values = [
+        localized_movement_name(movement, movements_meta, lang)
+        for movement in visible_movement_values(photographer, enrichments)
+    ]
     return values[:limit], max(0, len(values) - limit)
 
 
@@ -1462,6 +1511,8 @@ def main():
     ], "PHOTOGRAPHERS")
     photographers = [p for p in photographers if p["id"] not in NON_PHOTOGRAPHER_IDS]
     movements_meta = eval_js(["data/movements.js"], "MOVEMENTS_META")
+    movement_taxonomy = eval_js(["data/movements.js"], "MOVEMENT_TAXONOMY")
+    configure_movement_taxonomy(movement_taxonomy)
     enrichments = eval_js(["data/photographer-enrichments.js"], "window.PHOTOGRAPHER_ENRICHMENTS || PHOTOGRAPHER_ENRICHMENTS || {}")
     country_overrides = eval_site_js_object("PHOTOGRAPHER_COUNTRY_OVERRIDES")
     essay_overrides = eval_js(["data/photographer-essay-overrides.js"], "window.PHOTOGRAPHER_ESSAY_OVERRIDES || {}")
@@ -1492,11 +1543,7 @@ def main():
         if country_code:
             ensure_country_meta(country_code)
             photographers_by_country[country_code].append(photographer)
-        movement_values = []
-        for movement in photographer.get("movements") or []:
-            if movement and movement not in movement_values:
-                movement_values.append(movement)
-        for movement in movement_values:
+        for movement in visible_movement_values(photographer, enrichments):
             photographers_by_movement[movement].append(photographer)
 
     all_nationalities = sorted([n for n in photographers_by_country.keys() if ensure_country_meta(n)], key=lambda n: country_label(n, "ja"))
@@ -1504,6 +1551,21 @@ def main():
         [movement for movement, items in photographers_by_movement.items() if items],
         key=lambda movement: localized_movement_name(movement, movements_meta, "en").lower(),
     )
+
+    expected_movement_files_ja = {f"{movement_slug(movement, 'ja', movements_meta)}.html" for movement in all_movements}
+    expected_movement_files_en = set()
+    for movement in all_movements:
+        english_slug = movement_slug(movement, "en", movements_meta)
+        expected_movement_files_en.add(f"{english_slug}.html")
+        legacy_slug = movement_slug(movement, "ja", movements_meta)
+        if legacy_slug != english_slug:
+            expected_movement_files_en.add(f"{legacy_slug}.html")
+    for path in movements_dir.glob("*.html"):
+        if path.name not in expected_movement_files_ja:
+            path.unlink()
+    for path in movements_en_dir.glob("*.html"):
+        if path.name not in expected_movement_files_en:
+            path.unlink()
 
     for lang in ("ja", "en"):
         # Era pages

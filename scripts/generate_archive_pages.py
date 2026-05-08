@@ -54,8 +54,8 @@ def compact_era_title(era: dict, lang: str) -> str:
     return title[:22] + "..." if len(title) > 22 else title
 
 
-def card_search_index(photographer: dict, country_meta: dict, movements_meta: dict, lang: str) -> str:
-    movement_names = [tax.localized_movement_name(m, movements_meta, lang) for m in photographer.get("movements") or []]
+def card_search_index(photographer: dict, country_meta: dict, movements_meta: dict, enrichments: dict, lang: str) -> str:
+    movement_names = [tax.localized_movement_name(m, movements_meta, lang) for m in tax.visible_movement_values(photographer, enrichments)]
     values = [
         tax.display_name(photographer, lang),
         tax.display_alt_name(photographer, lang),
@@ -94,7 +94,8 @@ def render_card(
     era_lookup: dict,
 ) -> str:
     country_meta = tax.photographer_country_meta(photographer, enrichments, country_overrides, lang)
-    movement_names = [tax.localized_movement_name(m, movements_meta, lang) for m in photographer.get("movements") or []]
+    visible_movements = tax.visible_movement_values(photographer, enrichments)
+    movement_names = [tax.localized_movement_name(m, movements_meta, lang) for m in visible_movements]
     compact_tags = "".join(f'<span class="card-tag">{tax.esc(name)}</span>' for name in movement_names[:2])
     if len(movement_names) > 2:
         compact_tags += f'<span class="card-tag card-tag-more">+{len(movement_names) - 2}</span>'
@@ -121,9 +122,9 @@ def render_card(
         country_overrides=country_overrides,
         photographer_order=photographer_order,
     )
-    related_movements_html = render_card_related_movements(photographer, lang=lang, movements_meta=movements_meta)
+    related_movements_html = render_card_related_movements(photographer, lang=lang, movements_meta=movements_meta, enrichments=enrichments)
     return f"""
-    <div class="photographer-card{' placeholder' if placeholder else ''}" data-pid="{tax.esc(photographer['id'])}" data-nationality="{tax.esc(country_meta.get('nationality', ''))}" data-movements="{tax.esc(','.join(photographer.get('movements') or []))}" data-search="{card_search_index(photographer, country_meta, movements_meta, lang)}" data-placeholder="{'true' if placeholder else 'false'}" role="button" tabindex="0" onclick="toggleDetail('{tax.esc(photographer['id'])}', this)">
+    <div class="photographer-card{' placeholder' if placeholder else ''}" data-pid="{tax.esc(photographer['id'])}" data-nationality="{tax.esc(country_meta.get('nationality', ''))}" data-movements="{tax.esc(','.join(visible_movements))}" data-search="{card_search_index(photographer, country_meta, movements_meta, enrichments, lang)}" data-placeholder="{'true' if placeholder else 'false'}" role="button" tabindex="0" onclick="toggleDetail('{tax.esc(photographer['id'])}', this)">
       <div class="card-action">
         <div class="card-action-label">{coordinate_detail}</div>
         <div class="card-arrow">↗</div>
@@ -151,8 +152,8 @@ def render_card(
     </div>"""
 
 
-def render_card_related_movements(photographer: dict, *, lang: str, movements_meta: dict) -> str:
-    movements = photographer.get("movements") or []
+def render_card_related_movements(photographer: dict, *, lang: str, movements_meta: dict, enrichments: dict) -> str:
+    movements = tax.visible_movement_values(photographer, enrichments)
     links = []
     for movement in movements[:3]:
         label = tax.esc(tax.localized_movement_name(movement, movements_meta, lang))
@@ -175,7 +176,7 @@ def render_card_related_people(
     country_overrides: dict,
     photographer_order: dict[str, int],
 ) -> str:
-    movement_set = set(photographer.get("movements") or [])
+    movement_set = set(tax.visible_movement_values(photographer, enrichments))
     country = tax.photographer_country_code(photographer, enrichments, country_overrides)
     target_era_index = era_order.get(photographer.get("era") or "", 999)
     target_order_index = photographer_order.get(photographer.get("id") or "", 9999)
@@ -183,7 +184,7 @@ def render_card_related_people(
     for candidate in all_photographers:
         if candidate.get("id") == photographer.get("id"):
             continue
-        shared = movement_set.intersection(candidate.get("movements") or [])
+        shared = movement_set.intersection(tax.visible_movement_values(candidate, enrichments))
         same_era = candidate.get("era") == photographer.get("era")
         same_country = country and country == tax.photographer_country_code(candidate, enrichments, country_overrides)
         if not shared and not same_era and not same_country:
@@ -296,6 +297,8 @@ def main() -> None:
     )
     photographers = [p for p in photographers if p["id"] not in tax.NON_PHOTOGRAPHER_IDS]
     movements_meta = tax.eval_js(["data/movements.js"], "MOVEMENTS_META")
+    movement_taxonomy = tax.eval_js(["data/movements.js"], "MOVEMENT_TAXONOMY")
+    tax.configure_movement_taxonomy(movement_taxonomy)
     enrichments = tax.eval_js(["data/photographer-enrichments.js"], "window.PHOTOGRAPHER_ENRICHMENTS || PHOTOGRAPHER_ENRICHMENTS || {}")
     country_overrides = tax.eval_site_js_object("PHOTOGRAPHER_COUNTRY_OVERRIDES")
     essay_overrides = tax.eval_js(["data/photographer-essay-overrides.js"], "window.PHOTOGRAPHER_ESSAY_OVERRIDES || {}")
