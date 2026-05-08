@@ -65,6 +65,50 @@ MOVEMENT_NAME_OVERRIDES_EN = {
     "写真石版": "Photolithography",
     "明治ドキュメンタリー": "Meiji Documentary",
 }
+MOVEMENT_SEARCH_TERMS_EN = {
+    "写真分離派": ["photo-secession", "photo secession"],
+    "ストレート写真": ["straight photography"],
+    "モダニズム": ["modernism", "modernist photography"],
+    "新即物主義": ["neue sachlichkeit", "new objectivity"],
+    "新しいヴィジョン": ["new vision"],
+    "バウハウス": ["bauhaus"],
+    "シュルレアリスム": ["surrealism", "surrealist photography"],
+    "レイオグラフ": ["rayograph", "rayographs"],
+    "自然主義写真": ["naturalistic photography", "naturalism"],
+    "リアリズム写真": ["realist photography", "realism photography"],
+    "ドキュメンタリー": ["documentary", "documentary photography"],
+    "社会ドキュメンタリー": ["social documentary", "social documentary photography"],
+    "フォトジャーナリズム": ["photojournalism", "photo journalism"],
+    "FSA写真": ["fsa", "fsa photography", "farm security administration"],
+    "決定的瞬間": ["decisive moment"],
+    "ストリート写真": ["street photography"],
+    "プロヴォーク": ["provoke"],
+    "私写真": ["i-photography", "shi-shashin", "private photography"],
+    "ニューカラー": ["new color"],
+    "カラー写真": ["color photography", "colour photography"],
+    "大判カラー写真": ["large-format color", "large format color"],
+    "デュッセルドルフ派": ["dusseldorf school", "düsseldorf school"],
+    "タイポロジー写真": ["typological photography", "typology photography"],
+    "コンセプチュアルアート": ["conceptual art"],
+    "ピクチャーズ世代": ["pictures generation"],
+    "ステージド写真": ["staged photography"],
+    "フェミニズム写真": ["feminist photography"],
+    "シネマトグラフィック写真": ["cinematographic photography", "cinematic photography"],
+}
+MOVEMENT_TEXT_SKIP_KEYS = {
+    "url",
+    "href",
+    "id",
+    "num",
+    "name",
+    "label",
+    "title",
+    "citations",
+    "links",
+    "sources",
+}
+JA_MOVEMENT_PREV_BLOCK_RE = re.compile(r"[ァ-ン一-龯A-Za-z0-9]")
+JA_MOVEMENT_NEXT_BLOCK_RE = re.compile(r"[ァ-ン一-龯A-Za-z0-9]")
 YEAR_OVERRIDES = {
     # These entries correct legacy activity-period values in the source data.
     # They are limited to dates already present in local research notes or static copy.
@@ -335,6 +379,108 @@ def clip_at_word(text: str, length: int) -> str:
 def english_movement_name(movement: str, movements_meta: dict) -> str:
     meta = movements_meta.get(movement, {})
     return meta.get("en") or MOVEMENT_NAME_OVERRIDES_EN.get(movement) or movement
+
+
+def collect_text_fragments(value, bucket: list[str]) -> None:
+    if isinstance(value, str):
+        normalized = normalize_space(strip_cite_markers(html.unescape(value)))
+        if normalized:
+            bucket.append(normalized)
+        return
+    if isinstance(value, list):
+        for item in value:
+            collect_text_fragments(item, bucket)
+        return
+    if isinstance(value, dict):
+        for key, item in value.items():
+            if key in MOVEMENT_TEXT_SKIP_KEYS:
+                continue
+            collect_text_fragments(item, bucket)
+
+
+def contains_japanese_movement_term(text: str, term: str) -> bool:
+    if not text or not term:
+        return False
+    start = 0
+    while True:
+        index = text.find(term, start)
+        if index < 0:
+            return False
+        prev_char = text[index - 1] if index > 0 else ""
+        next_index = index + len(term)
+        next_char = text[next_index] if next_index < len(text) else ""
+        if not JA_MOVEMENT_PREV_BLOCK_RE.search(prev_char) and not JA_MOVEMENT_NEXT_BLOCK_RE.search(next_char):
+            return True
+        start = index + len(term)
+
+
+def inferred_movement_names(
+    photographer: dict,
+    movements_meta: dict,
+    enrichments: dict,
+    override_entry: dict | None = None,
+) -> list[str]:
+    texts: list[str] = []
+    collect_text_fragments(photographer.get("context") or {}, texts)
+    collect_text_fragments(override_entry or {}, texts)
+    collect_text_fragments(get_enrichment(enrichments, photographer), texts)
+    if not texts:
+        return []
+
+    haystack_ja = "\n".join(texts)
+    haystack_en = "\n".join(texts).lower()
+    inferred: list[str] = []
+    seen = set()
+
+    for movement in taxonomy_meta.MOVEMENT_TAXONOMY.get("featured") or []:
+        canonical = taxonomy_meta.canonical_movement_name(movement)
+        if not canonical or canonical in seen:
+            continue
+
+        matched = contains_japanese_movement_term(haystack_ja, canonical)
+        if not matched:
+            for alias, alias_target in (taxonomy_meta.MOVEMENT_ALIAS_MAP or {}).items():
+                if alias_target == canonical and contains_japanese_movement_term(haystack_ja, alias):
+                    matched = True
+                    break
+        if not matched:
+            english_terms = [english_movement_name(canonical, movements_meta)] + MOVEMENT_SEARCH_TERMS_EN.get(canonical, [])
+            for term in english_terms:
+                if term and term.lower() in haystack_en:
+                    matched = True
+                    break
+        if matched:
+            inferred.append(canonical)
+            seen.add(canonical)
+
+    return inferred
+
+
+def related_movement_names(
+    photographer: dict,
+    movements_meta: dict,
+    enrichments: dict,
+    override_entry: dict | None = None,
+    limit: int = 5,
+) -> list[str]:
+    names: list[str] = []
+    seen = set()
+
+    for movement in taxonomy_meta.visible_movement_values(photographer, enrichments):
+        if movement in seen:
+            continue
+        names.append(movement)
+        seen.add(movement)
+
+    for movement in inferred_movement_names(photographer, movements_meta, enrichments, override_entry):
+        if movement in seen:
+            continue
+        names.append(movement)
+        seen.add(movement)
+        if len(names) >= limit:
+            break
+
+    return names[:limit]
 
 
 def fallback_english_reference_label(url: str) -> str:
@@ -1794,10 +1940,13 @@ def main() -> None:
 
             movement_links = []
             movement_select_options = []
-            for movement in (photographer.get("movements") or []) + (get_enrichment(enrichments, photographer).get("extraMovements") or []):
-                canonical_movement = taxonomy_meta.canonical_movement_name(movement)
-                if not canonical_movement:
-                    continue
+            movement_names = related_movement_names(
+                photographer,
+                movements_meta,
+                enrichments,
+                override_entry=override_entry if isinstance(override_entry, dict) else None,
+            )
+            for canonical_movement in movement_names:
                 movement_label = english_movement_name(canonical_movement, movements_meta) if lang == "en" else canonical_movement
                 movement_target = movement_page_path(canonical_movement, lang, movements_meta)
                 tag = f'<a class="tag" href="{movement_target}">{escape_html(movement_label)}</a>'
@@ -1809,6 +1958,13 @@ def main() -> None:
                 if len(movement_links) >= 5:
                     break
             movement_html = "".join(movement_links) or f'<div class="note">{copy["movementPlaceholder"]}</div>'
+            if not movement_select_options:
+                for canonical_movement in taxonomy_meta.MOVEMENT_TAXONOMY.get("featured") or []:
+                    movement_label = english_movement_name(canonical_movement, movements_meta) if lang == "en" else canonical_movement
+                    movement_target = movement_page_path(canonical_movement, lang, movements_meta)
+                    option_tuple = (movement_target, movement_label)
+                    if movement_target and option_tuple not in movement_select_options:
+                        movement_select_options.append(option_tuple)
 
             related_people = build_related_people_items(photographer, lang, enrichments, photographers, era_index, photographer_index, body_text)
             related_people_html = render_related_people_html(related_people, copy["relatedPeoplePlaceholder"])
