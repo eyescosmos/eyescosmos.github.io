@@ -1,0 +1,1406 @@
+const PHOTOGRAPHERS = [
+  /* ─────────────────────────────────────────
+     1839–1860s
+     ───────────────────────────────────────── */
+  {
+    id: 'daguerre',
+    name: 'Louis Daguerre',
+    nameJa: 'ルイ・ダゲール',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1787–1851',
+    gender: '男性',
+    era: '1839',
+    movements: ['発明・技術'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Louis_Daguerre' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ダゲールはパリで大型ジオラマ劇場を経営する舞台演出家だった。ジオラマは透過光と反射光を切り替えて風景画を昼から夜へと変化させる視覚装置であり、光と像の定着への強い関心をもたらした*1。1826年頃から発明家ニエプスと共同研究を開始し、ニエプスの死後（1833年）も銀板に水銀蒸気で像を定着させる方法を独自に改良し続けた。1839年1月7日、フランス科学アカデミーでダゲレオタイプが公開され、同年8月19日にフランス政府が製法を「全人類への贈り物」として（イギリスを除く全世界で）無償公開した*2。この公開により技術は急速に普及したが、各ダゲレオタイプは複製不可能な一点物だった。代表作「ボールヴァール・デュ・タンプル」（c.1838）はパリの大通りを写したもので、長時間露光のため動く馬車・歩行者は写らず、靴磨きをされながら静止していた男性のみが写り込んだ——これが「写真に初めて写った人間」とされる*1。同年3月8日の研究室火災でほとんどの記録が失われ、現存確認済みの作品は25点未満に留まる*2。',
+      textEn: 'Daguerre began as a theatrical designer who ran a large diorama theater in Paris. The diorama shifted painted scenes from daylight to night by changing transmitted and reflected light, and it sharpened his obsession with fixing light and image in permanent form*1. Around 1826 he began working with Nicéphore Niépce; after Niépce’s death in 1833, Daguerre kept refining a process that developed an image on a silvered plate with mercury vapor. On January 7, 1839, the daguerreotype was announced at the French Academy of Sciences, and on August 19 the French state released the process as a “gift to the world” outside Britain*2. The method spread rapidly, but each daguerreotype remained a unique, non-reproducible object. His famous view of the Boulevard du Temple (c.1838) became known for capturing what is often described as the first human figure recorded in a photograph: a man standing still long enough to have his boots polished while traffic disappeared in the long exposure*1. A studio fire on March 8, 1839 destroyed most of Daguerre’s surviving records, and fewer than twenty-five works are confirmed today*2.',
+      citations: [
+        { num: 1, name: 'Metropolitan Museum of Art — Daguerre and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+        { num: 2, name: 'Wikipedia — Louis Daguerre', url: 'https://en.wikipedia.org/wiki/Louis_Daguerre' },
+      ]
+    }
+  },
+
+  {
+    id: 'talbot',
+    name: 'William Henry Fox Talbot',
+    nameJa: 'ウィリアム・ヘンリー・フォックス・タルボット',
+    nationality: 'GB',
+    flag: '🇬🇧',
+    years: '1800–1877',
+    gender: '男性',
+    era: '1839',
+    movements: ['発明・技術'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/william-henry-fox-talbot-british-1800-1877' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Henry_Fox_Talbot' },
+      { label: 'The Met Collection', url: 'https://www.metmuseum.org/art/collection/search#!?q=fox+talbot' },
+    ],
+    amazon: '',
+    context: {
+      text: 'タルボットは1833年10月、ハネムーン中のイタリア・コモ湖でカメラ・ルシダ（光学式製図器）を用いてスケッチを試みたが、自身の画力の乏しさに深く失望した。「カメラから目を離すと、紙の上には情けない痕跡しか残っていない」と後に記している*1。この体験から「カメラが投影する像を化学的に定着できないか」という着想を得て帰国後に実験を開始。1835年の明るい夏、ラコック・アビーの敷地内に小型カメラ（妻が「ネズミ捕り」と呼んだ）を複数設置し、建物の輪郭を感光紙に記録した*2。塩化銀を染み込ませた紙ネガから複数の陽画を作るこのカロタイプ方式は後の写真文化の基盤となった。1839年1月にダゲールの成功の報せを聞き、急いで自身の発明を公表した。1844–46年刊行の写真集『自然の鉛筆』は商業出版された最初の写真入り書籍であり、写真の記録・芸術・複製としての用途を世に示した*1。ただしタルボットが特許権を厳格に管理したため、イギリスではカロタイプの普及がフランスに比べて大きく遅れた*2。',
+      textEn: 'In October 1833, while on his honeymoon at Lake Como, Talbot tried to sketch with a camera lucida and was frustrated by what he saw as his own lack of drawing skill. He later wrote that once he looked away from the optical device, only a miserable trace remained on the page*1. That disappointment led him to ask whether the camera’s projected image might be fixed chemically. Back in England, he began experiments, and by the bright summer of 1835 he was placing small cameras around Lacock Abbey, using sensitized paper to record the outline of buildings*2. His calotype process, which produced multiple positive prints from a paper negative, became a foundation for photographic reproducibility. When news of Daguerre’s success arrived in January 1839, Talbot rushed to announce his own work. The Pencil of Nature, published in parts between 1844 and 1846, became the first commercially published book illustrated with photographs and demonstrated photography as record, art, and reproducible medium*1. Yet Talbot’s strict patent control also slowed the spread of the calotype in Britain compared with France*2.',
+      citations: [
+        { num: 1, name: 'Metropolitan Museum of Art — William Henry Fox Talbot', url: 'https://www.metmuseum.org/essays/william-henry-fox-talbot-1800-1877-and-the-invention-of-photography' },
+        { num: 2, name: 'V&A — William Henry Fox Talbot', url: 'https://www.vam.ac.uk/articles/william-henry-fox-talbot-an-introduction' },
+      ]
+    }
+  },
+
+  {
+    id: 'fenton',
+    name: 'Roger Fenton',
+    nameJa: 'ロジャー・フェントン',
+    nationality: 'GB',
+    flag: '🇬🇧',
+    years: '1819–1869',
+    gender: '男性',
+    era: '1839',
+    movements: ['ドキュメンタリー', '戦争写真'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/1898' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Roger_Fenton' },
+      { label: 'The Met Collection', url: 'https://www.metmuseum.org/art/collection/search?q=roger+fenton' },
+    ],
+    amazon: '',
+    context: {
+      text: 'フェントンは1853年に英国王立写真協会（ロイヤル・フォトグラフィック・ソサエティ）の設立に中心的役割を果たした弁護士出身の写真家だった*1。1854年のクリミア戦争で従軍記者ウィリアム・ハワード・ラッセル（タイムズ紙）が英国軍の失態を連報したことで、戦争は国内で深刻に不人気となった。マンチェスターの出版業者トーマス・アグニュー商会はプリンス・アルバートを通じて政府の協力を取り付け、「否定的な世論を和らげる写真」を撮るためフェントンを現地に派遣した*2。アグニューは「死体・残虐な場面は撮影しないこと」を明示的に要請しており、フェントンの360点の写真には死傷者・戦闘の場面がほぼ存在しない*1。代表作「死の影の谷」（砲弾が散乱する道）については、ジャーナリストのエロール・モリスが後に二種類の写真の比較から「砲弾を並べ替えて演出した可能性がある」と論証し、写真の「真実性」を問う議論を呼んだ*2。フェントンは1862年に突然写真活動を終え、機材を売却して法律家に戻った。',
+      textEn: 'Fenton, trained as a lawyer, became one of the key figures behind the founding of the Royal Photographic Society in 1853*1. During the Crimean War, William Howard Russell’s dispatches for The Times exposed the failures of the British army and made the war deeply unpopular at home. The Manchester publisher Thomas Agnew & Sons, working with support routed through Prince Albert, arranged for Fenton to travel to the front and produce photographs that might soften negative public opinion*2. Agnew explicitly instructed him not to photograph corpses or scenes of extreme violence, so among Fenton’s roughly 360 images, almost none show direct combat or the dead*1. His best-known picture, The Valley of the Shadow of Death, later became central to debates about photographic truth when Errol Morris argued that the cannonballs visible in the scene may have been rearranged for effect*2. Fenton abruptly left photography in 1862, sold his equipment, and returned to legal work.',
+      citations: [
+        { num: 1, name: 'Library of Congress — Fenton Crimean War Photographs', url: 'https://www.loc.gov/collections/fenton-crimean-war-photographs/about-this-collection/' },
+        { num: 2, name: 'Metropolitan Museum of Art — Roger Fenton', url: 'https://www.metmuseum.org/essays/roger-fenton-1819-1869' },
+      ]
+    }
+  },
+
+  {
+    id: 'beato',
+    name: 'Felice Beato',
+    nameJa: 'フェリーチェ・ベアト',
+    nationality: 'IT / GB',
+    flag: '🇮🇹',
+    years: '1832–1909',
+    gender: '男性',
+    era: '1839',
+    movements: ['ドキュメンタリー', '戦争写真', '植民地写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=felice+beato' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Felice_Beato' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ヴェネツィア生まれでイギリスに帰化したベアトは、1855年のクリミア戦争取材を皮切りに英仏軍が展開する場所へと同行し続けた写真家だった*1。1857–58年のインド大反乱後のラクナウでは、骸骨が散乱するセカンダーラバーグの「事後の現場」を撮影した（数ヶ月後の再訪撮影であり、遺体配置の演出が指摘されることもある）。1860年の第二次アヘン戦争では英仏連合軍に従い中国各地を撮影した。その際に知り合った英国人挿絵記者チャールズ・ウィルグマンとともに1863年に横浜へ移り、「ベアト＆ウィルグマン」スタジオを開設した*2。ベアトは「西洋人が東洋の何を求めているか」を正確に把握しており、日本の風景・人物・風俗を外国人旅行者向けに写真帖として販売した。日本では写真の手彩色技法を広め、幕末から明治初期の日本社会を記録した*1。彼の視線は帝国主義の文脈に置かれており、今日の研究者はその権力関係を批判的に検討している*2。',
+      textEn: 'Felice Beato was one of the earliest globally mobile photographers, following British and French imperial campaigns from the Crimean War onward*1. After photographing the aftermath of the Indian Rebellion and the Second Opium War, he moved to Yokohama in 1863 with the British illustrator Charles Wirgman and opened the Beato & Wirgman studio*2. Beato understood very clearly what Western travelers wanted to see in the East, and he sold albums of Japanese landscapes, people, and customs while helping to establish the hand-colored album tradition in Japan. His work is therefore a major visual record of the transition from the late Tokugawa period to early Meiji society*1. At the same time, the work is inseparable from imperial power, and it is now often examined critically in that context*2.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Felice Beato', url: 'https://en.wikipedia.org/wiki/Felice_Beato' },
+        { num: 2, name: "MIT Visualizing Cultures — Beato's Japan", url: 'https://visualizingcultures.mit.edu/beato_places/essay.pdf' },
+      ]
+    }
+  },
+
+  {
+    id: 'nadar',
+    name: 'Nadar',
+    nameJa: 'ナダール',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1820–1910',
+    gender: '男性',
+    era: '1839',
+    movements: ['ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=nadar' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Nadar_(photographer)' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ナダール（本名ガスパール＝フェリックス・トゥルナション）はジャーナリスト・風刺漫画家として当代の文化人と深く交流していたが、1853年頃から写真家に転身した*1。人物の内面を見抜く取材者としての眼が、肖像写真家としての強みとなった。当時主流だった刺繍背景・小道具・仰々しい衣装を排し、グレーの無地背景と自然光のみで撮影したのは「余計な装飾が被写体の個性を隠してしまう」という判断からだった。ヴィクトル・ユゴー・サラ・ベルナール・シャルル・ボードレール・エクトル・ベルリオーズらのポートレートでその方法論を示した*2。1858年には気球から世界初の航空写真を撮影し、1861年にはパリの地下道（カタコンブ・下水道）でアーク灯を用いた初の電灯撮影を行った。写真撮影の技術的可能性を拡張しながら、1874年には自身のスタジオを印象派の画家たちに無償で提供し第1回印象派展の会場となった——写真の普及が肖像画市場を変え、印象派の登場を後押しした時代の交差点にナダールは立っていた*1。',
+      textEn: 'Nadar, born Gaspard-Felix Tournachon, entered photography around 1853 after careers in journalism and caricature had already connected him to the leading figures of French culture*1. His portraits rejected elaborate backdrops and props in favor of a plain gray ground and natural light, because he believed decoration hid the sitter\'s real character. Portraits of figures such as Victor Hugo, Sarah Bernhardt, Baudelaire, and Berlioz made that approach famous*2. He also pushed photography technically, making one of the earliest aerial photographs from a balloon in 1858 and using electric light in the Paris catacombs in 1861. When he lent his studio for the first Impressionist exhibition in 1874, he stood at a key intersection where photography was changing portrait culture and modern painting was emerging beside it*1.',
+      citations: [
+        { num: 1, name: 'Britannica — Nadar', url: 'https://www.britannica.com/biography/Nadar' },
+        { num: 2, name: 'Wikipedia — Nadar', url: 'https://en.wikipedia.org/wiki/Nadar_(photographer)' },
+      ]
+    }
+  },
+
+  {
+    id: 'legray',
+    name: 'Gustave Le Gray',
+    nameJa: 'ギュスターヴ・ル・グレー',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1820–1884',
+    gender: '男性',
+    era: '1839',
+    movements: ['風景写真', '発明・技術'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=gustave+le+gray' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Gustave_Le_Gray' },
+    ],
+    amazon: '',
+    context: {
+      text: 'パリで絵画を学んだル・グレーは1840年代後半から写真家に転身し、ナダールらを育てた写真学校をパリに開いた*1。代表作の海景写真は技術的な難題から生まれた。ガラス湿板（コロジオン法）は水面と空では必要露光時間が大きく異なり、一枚のネガで両者を適切に写すことができなかった——空に合わせれば海面は暗くなり、海面に合わせれば空は白くとびる。ル・グレーの解決策は、海と空で別々に露光した2枚のネガを暗室で合成する「コンビネーション・プリント」だった。当時この手法を一切公言しなかったため、批評家は両者が同時に写り込んだ光景に驚嘆した*2。1857年の「大波」はその技術の頂点を示す作品とされる。1851年頃に開発した「ワックス紙ネガ法」もカロタイプの改良として現地準備時間を短縮した。1860年頃に財政難でフランスを去り、エジプト・カイロに移住。スタジオを開いて写真家・デッサン教師として働き、1884年にカイロで没した。パリでの活躍に比べ晩年は忘れられた存在となったが、20世紀後半以降に再評価が進んでいる*1。',
+      textEn: 'Gustave Le Gray, trained first as a painter in Paris, turned to photography in the late 1840s and opened the school that helped shape figures such as Nadar*1. His famous seascapes solved a technical problem: a single negative could not properly render both sea and sky, so he combined separate exposures in the darkroom to make images such as The Great Wave*2. He also improved the calotype through the waxed-paper negative process. Financial difficulty forced him out of France around 1860, and he spent the rest of his life in Cairo as a photographer and drawing teacher. Forgotten for a long time, he has since been restored to a central place in nineteenth-century photographic history*1.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Gustave Le Gray', url: 'https://en.wikipedia.org/wiki/Gustave_Le_Gray' },
+        { num: 2, name: "Nonsite.org — Photography and the Philosophy of Time: On Gustave Le Gray's Great Wave", url: 'https://nonsite.org/photography-and-the-philosophy-of-time/' },
+      ]
+    }
+  },
+
+  /* ────────── 1870–1890s ────────── */
+  {
+    id: 'muybridge',
+    name: 'Eadweard Muybridge',
+    nameJa: 'エドワード・マイブリッジ',
+    nationality: 'GB / US',
+    flag: '🇬🇧',
+    years: '1830–1904',
+    gender: '男性',
+    era: '1870',
+    movements: ['科学写真', '実験的技法'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Eadweard_Muybridge' },
+      { label: 'Kingston Museum', url: 'https://www.kingstonmuseum.co.uk/eadweard-muybridge/' },
+      { label: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/Eadweard_Muybridge' },
+    ],
+    amazon: '',
+    context: {
+      text: 'スタンフォード大学創設者でもあるリーランド・スタンフォードは、馬が疾走中に四肢をすべて地面から離す瞬間があるかどうかという当時未解決の科学論争に写真で決着をつけるため、1872年頃にマイブリッジに撮影を依頼した*1。当初の実験は技術的限界から不明瞭だったが、マイブリッジはシャッター機構を改良し続け、1878年6月にパロ・アルトのスタンフォード牧場でコース沿いに24台のカメラを設置して馬が順次トリップワイヤーを踏む方式の連続撮影に成功した。「馬の動き」は四肢が同時に地面を離れる瞬間を視覚的に証明し、即座に世界の新聞に転載された*2。マイブリッジはこの成果をさらに「動かして見せる」ために、1879年に連続写真をガラス円盤に描いてスクリーンに投影する「ズープラキシスコープ」を発明した——映画の前身とされる装置であり、1888年にエジソンがマイブリッジと面会してキネトスコープ（映写機）開発に着手する契機となった*1。1883–86年にはフィラデルフィア大学の支援を受けて人体・動物の多様な動作を体系的に撮影し、11巻の写真集『動物の動作』（1887年）として刊行した。1893年のシカゴ万博では「ズープラキシグラフィカル・ホール」でプロジェクション上映を行い、スタンフォードとはその後写真集の著作権をめぐる訴訟に発展した*2。',
+      textEn: 'Eadweard Muybridge became famous when Leland Stanford hired him to resolve the question of whether a galloping horse ever lifts all four feet from the ground at once*1. In 1878 he succeeded by lining a track with cameras triggered by tripwires, producing the sequence that proved the point and circulated around the world*2. He then developed the zoopraxiscope to project motion from sequential images, making him a crucial figure in the prehistory of cinema. His later work at the University of Pennsylvania systematically analyzed human and animal motion in extraordinary detail. Muybridge helped turn photography into a scientific instrument for studying movement itself*1.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Eadweard Muybridge', url: 'https://en.wikipedia.org/wiki/Eadweard_Muybridge' },
+        { num: 2, name: 'Britannica — Eadweard Muybridge', url: 'https://www.britannica.com/biography/Eadweard-Muybridge' },
+      ]
+    }
+  },
+
+  {
+    id: 'marey',
+    name: 'Étienne-Jules Marey',
+    nameJa: 'エティエンヌ＝ジュール・マレー',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1830–1904',
+    gender: '男性',
+    era: '1870',
+    movements: ['科学写真', '実験的技法'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/%C3%89tienne-Jules_Marey' },
+      { label: 'Musée Marey', url: 'https://musee-marey.fr' },
+    ],
+    amazon: '',
+    context: {
+      text: 'コレージュ・ド・フランスで生理学を研究していたマレーは、心臓・筋肉・神経の運動を計測する研究を進める中で、「肉眼では観察できない速い動作をどう記録するか」という問題に直面していた。1878年頃にマイブリッジの連続写真に接したことで、写真を科学的計測の道具として採用することを決意した*1。ただしマイブリッジが複数のカメラで各瞬間を別々に記録したのに対し、マレーは「運動の軌跡全体を一枚の乾板に収める」ことで動作の連続的な変化を可視化することを目指し、1882年に回転式ガラス板カメラ「クロノフォトグラフィック・ガン」を発明した。毎秒12コマで撮影し、鳥の飛翔・人体の歩行・落下する猫などを一画面に多重露光した*2。「時系列の動きを空間として表現する」このアプローチは、1910年代にイタリア未来派（フュトゥリスモ）の画家ジャコモ・バッラらが絵画における動体表現の視覚的参照源とし、マルセル・デュシャンの「階段を降りる裸体No.2」（1912年）にも影響を与えたとされる。フランス政府の支援のもとで行った研究は医学・体育・軍事訓練の分野にも応用され、リュミエール兄弟の映画開発の直接的な前史をなすと位置づけられている*1。',
+      textEn: 'Etienne-Jules Marey approached photography through physiology. He needed a way to record movement too rapid for the naked eye, and after seeing Muybridge\'s work he adopted photography as a scientific instrument*1. Unlike Muybridge, he tried to register an entire trajectory on a single plate, leading to the chronophotographic gun of 1882. Its layered images of birds, walking bodies, and animals converted time into visible form*2. That approach shaped later artistic representations of motion and also belongs to the broader prehistory of cinema and modern motion study*1.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Étienne-Jules Marey', url: 'https://en.wikipedia.org/wiki/%C3%89tienne-Jules_Marey' },
+        { num: 2, name: 'Britannica — Étienne-Jules Marey', url: 'https://www.britannica.com/biography/Etienne-Jules-Marey' },
+      ]
+    }
+  },
+
+  {
+    id: 'riis',
+    name: 'Jacob Riis',
+    nameJa: 'ジェイコブ・リース',
+    nationality: 'DK / US',
+    flag: '🇩🇰',
+    years: '1849–1914',
+    gender: '男性',
+    era: '1870',
+    movements: ['社会ドキュメンタリー', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Jacob_Riis' },
+      { label: 'MoMA', url: 'https://www.moma.org/artists/4978' },
+      { label: 'Library of Congress', url: 'https://www.loc.gov/pictures/collection/ggbain/item/ggb2005025700/' },
+    ],
+    amazon: '',
+    context: {
+      text: 'デンマーク出身のリースは1870年にアメリカへ移民し、自身も極貧・失業・路上生活を経験した後に記者へと転じた*1。ニューヨーク・イブニング・サンの警察担当記者としてロウアーイーストサイドのテネメント（過密集合住宅）の実態を目撃し、「言葉では伝わらない現実を見せる方法」として1887年頃からマグネシウム・フラッシュを使った室内撮影を試みた——当時の感光材料では暗い屋内を照らすにはフラッシュ以外に手段がなかった*2。突然の閃光で驚かせながら撮影する方法は今日批判的に検討されているが、1890年刊行の『向こう半分の人々はどう暮らしているか』は中産階級の読者に移民貧困層の住環境を初めて視覚的に示した。セオドア・ルーズベルト（当時ニューヨーク警察委員長）は本書に感銘を受け、翌朝リース宅を訪問して「あなたの仕事をしたい、何でも協力する」とメモを残したと伝わる*1。この出会いがテネメント住宅改革法の成立につながった。写真を社会変革の手段として意図的に使った初期の先例として位置づけられる一方、アイルランド系・ユダヤ系・中国系移民への固定観念を反映する視点は現代の研究者によって批判的に再評価されている*2。',
+      textEn: 'Jacob Riis emigrated from Denmark to the United States in 1870 and knew poverty first-hand before becoming a reporter*1. As a police reporter for the New York Evening Sun, he confronted the overcrowded tenements of the Lower East Side and began using flash photography to show interiors that words alone could not convey*2. His 1890 book How the Other Half Lives forced middle-class readers to confront immigrant housing conditions visually and became a landmark in reform photography. Theodore Roosevelt was deeply influenced by it, and Riis became one of the earliest photographers to use the medium deliberately as an instrument of social change*1. At the same time, his work is now also examined critically for the stereotypes it could reinforce about immigrant communities*2.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Jacob Riis', url: 'https://en.wikipedia.org/wiki/Jacob_Riis' },
+        { num: 2, name: 'Smithsonian Magazine — Jacob Riis', url: 'https://www.smithsonianmag.com/history/how-jacob-riis-exposed-shame-new-york-city-slums-180956836/' },
+      ]
+    }
+  },
+
+  {
+    id: 'marville',
+    name: 'Charles Marville',
+    nameJa: 'シャルル・マルヴィル',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1813–1879',
+    gender: '男性',
+    era: '1870',
+    movements: ['ドキュメンタリー', '都市記録'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=charles+marville' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Charles_Marville' },
+      { label: 'Bibliothèque Historique de la Ville de Paris', url: 'https://bibliotheques-specialisees.paris.fr' },
+    ],
+    amazon: '',
+    context: {
+      text: 'マルヴィルは19世紀前半から挿絵画家・銅版画家として活動していたが、写真技術の登場後に転身した*1。1853年にナポレオン3世の命を受けたジョルジュ＝ウジェーヌ・オスマン男爵がパリの大規模近代化改造を開始すると、マルヴィルはパリ市公式写真家として取り壊し前の街区を記録するよう行政から命じられた——改造の正当性を示す「ビフォー・アフター」記録として依頼されたものだった*2。オスマン改造は中世来の路地・密集街区を広大なブールヴァール・下水道・公園に置き換えることで衛生・交通・治安の改善を目指したが、同時に中世以来の都市の記憶を消し去るものでもあった。マルヴィルは取り壊し直前のノートルダム大聖堂周辺・シテ島・レ・アル地区などを湿板コロジオン法の大判カメラで体系的に撮影し、約900点が現在パリ市立歴史図書館（BHVP）に収蔵されている*1。「改善のための行政記録」として依頼された写真が、結果として近代化が消し去った都市の記憶の集成となった——この「公的委嘱が批評的アーカイブを生み出す」逆説は、その後のドキュメンタリー写真史に繰り返し現れるパターンとして参照されている*2。',
+      textEn: 'Charles Marville began as an illustrator and engraver before turning to photography*1. When Haussmann began rebuilding Paris under Napoleon III, Marville was commissioned to photograph neighborhoods before demolition as part of the city\'s modernization program*2. Those images were meant as administrative records, but they became something more lasting: an archive of the urban memory that modernization erased. Marville systematically photographed areas around Notre-Dame, the Ile de la Cite, and Les Halles, leaving one of the great visual records of disappearing nineteenth-century Paris*1. His work is often cited as an early documentary paradox in which an official commission ends up preserving what official policy destroys*2.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Charles Marville', url: 'https://en.wikipedia.org/wiki/Charles_Marville' },
+        { num: 2, name: 'Metropolitan Museum of Art — Charles Marville', url: 'https://www.metmuseum.org/art/collection/search?q=charles+marville' },
+      ]
+    }
+  },
+
+  {
+    id: 'annan',
+    name: 'Thomas Annan',
+    nameJa: 'トーマス・アナン',
+    nationality: 'GB',
+    flag: '🇬🇧',
+    years: '1829–1887',
+    gender: '男性',
+    era: '1870',
+    movements: ['社会ドキュメンタリー', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Thomas_Annan_(photographer)' },
+      { label: 'Glasgow Museums', url: 'https://www.glasgowmuseums.com' },
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=thomas+annan' },
+    ],
+    amazon: '',
+    context: {
+      text: 'グラスゴーでは19世紀中頃からコレラ・腸チフスが繰り返し流行し、当局はその温床を旧市街の密集路地「クローズ」に求めた。1866年の市条例に基づき設立されたグラスゴー市改善委員会は旧街区の撤去・再開発を決定し、記録写真を行政の文書化手段として採用した*1。その委嘱を受けたアナンは1868–71年に湿板コロジオン法で路地を撮影し、後に乾板法で再撮影・拡充した1877–79年版（計71点）を「グラスゴーの古い路地と街路の写真」として刊行した。仄暗い路地に佇む住民・洗濯物・石畳を正面から捉えた写真は、撤去の正当性を示すための記録として依頼されたものだったが、結果としてグラスゴー労働者階級の生活環境の証言となった*2。リース（ニューヨーク、1888–90年）より20年早く公的委嘱による都市貧困環境の記録という先例を作り、「改善のための記録が貧困の証言になる」という写真の逆説的機能を初期に示した事例とされる。アナンの息子ジェームズ・クレイグ・アナンはウィーン分離派とも交流したピクトリアリズムの写真家として活躍した*1。',
+      textEn: 'Thomas Annan was commissioned by the Glasgow City Improvement Trust to photograph old closes and streets marked for clearance under nineteenth-century urban reform*1. Intended as evidence to justify demolition, his photographs became some of the earliest powerful records of urban poverty: dark lanes, hanging laundry, cobbles, and working-class residents facing the camera in spaces about to disappear*2. Long before Riis in New York, Annan showed how a civic record could turn into testimony about social conditions. His work remains important both for the history of documentary photography and for the visual history of industrial Glasgow*1.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Thomas Annan', url: 'https://en.wikipedia.org/wiki/Thomas_Annan_(photographer)' },
+        { num: 2, name: 'Metropolitan Museum of Art — Thomas Annan', url: 'https://www.metmuseum.org/art/collection/search?q=thomas+annan' },
+      ]
+    }
+  },
+
+  /* ────────── 1839–1860s（再掲） ────────── */
+  {
+    id: 'brady',
+    name: 'Mathew Brady',
+    nameJa: 'マシュー・ブレイディ',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1822–1896',
+    gender: '男性',
+    era: '1839',
+    movements: ['ポートレート', 'ドキュメンタリー', '戦争写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Mathew_Brady' },
+      { label: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/Mathew_Brady' },
+      { label: 'Library of Congress', url: 'https://www.loc.gov/pictures/collection/cwp/brady.html' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ニューヨーク出身のブレイディは1840年代から大統領を含む著名人の肖像写真で名声を築き、アメリカ最高の肖像写真家と呼ばれた*1。1861年の南北戦争勃発にあたり「戦争は写真で記録されなければならない」という確信から私財を投じて20人以上の写真家チームを組織し、携帯暗室馬車で各戦場に派遣した。彼自身は晩年に「ある精神が私の足に《行け》と言い、私は行った」と語っている*2。アレクサンダー・ガードナー、ティモシー・オサリヴァンら傘下の写真家が残した記録は1万枚以上に上る。1862年10月、ガードナーが撮影したアンティータムの戦場死者の写真がブレイディのニューヨーク・ギャラリーで展示された——アメリカ市民が戦場の死者の写真を目にした最初の機会であり、ニューヨーク・タイムズは「ブレイディ氏は戦争の恐ろしい現実を我々の目の前に持ち込んだ」と報じた*1。戦後、政府はネガの買取を拒否し、ブレイディは破産。1875年に議会が2万5千ドルで購入したが（自身が投じた費用の4分の1以下）、彼は極貧のまま1896年に没した*2。',
+      textEn: 'Mathew Brady became famous through portraits of major American figures and was widely regarded as the leading portrait photographer in the United States*1. At the outbreak of the Civil War, he invested his own fortune in the belief that war had to be photographed, organizing a large team of operators and sending them into the field with mobile darkrooms. Images associated with Brady\'s studio, including those made by Alexander Gardner and Timothy O\'Sullivan, brought the reality of war to the public with unprecedented force*2. When photographs of the dead at Antietam were shown in his New York gallery in 1862, viewers confronted battlefield corpses in a new and shocking way*1. Brady later went bankrupt and died in poverty, which shows both the cultural power and the financial fragility of early war photography*2.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Mathew Brady', url: 'https://en.wikipedia.org/wiki/Mathew_Brady' },
+        { num: 2, name: 'Library of Congress — Brady-Handy Photograph Collection', url: 'https://www.loc.gov/pictures/collection/cwp/brady.html' },
+      ]
+    }
+  },
+
+  {
+    id: 'cameron',
+    name: 'Julia Margaret Cameron',
+    nameJa: 'ジュリア・マーガレット・キャメロン',
+    nationality: 'GB',
+    flag: '🇬🇧',
+    years: '1815–1879',
+    gender: '女性',
+    era: '1839',
+    movements: ['ピクトリアリズム', 'ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/992' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Julia_Margaret_Cameron' },
+      { label: 'The Met Collection', url: 'https://www.metmuseum.org/art/collection/search?q=julia+margaret+cameron' },
+      { label: 'Victoria & Albert Museum', url: 'https://www.vam.ac.uk/collections/photography?q=julia+margaret+cameron' },
+    ],
+    amazon: '',
+    context: {
+      text: 'キャメロンは1815年にカルカッタで生まれ、詩人テニスン・科学者ハーシェルらと親交を持つヴィクトリア朝のインテリゲンチャの中にいた。1863年、娘からカメラを贈られた時、彼女は48歳だった*1。ハーシェル卿への手紙でキャメロンは「私の志は写真を高貴にし、それに高い芸術の性格と用途を与えることだ」と記している——この言葉が彼女の写真活動全体の目的を示す*2。その手段として当時の標準（鮮鋭な像）を意図的に外したソフトフォーカスを選んだ。長時間露光・浅い被写界深度・低照明を組み合わせ、化学薬品の染みや指紋もそのまま残した。「技術的欠陥」と批判されたが、キャメロンは「写真の真実は精密さではなく内面を喚起することにある」と信じた*1。チャールズ・ダーウィン・テニスン・カーライルらのポートレート、アーサー王伝説・聖書をテーマにした構成作品を残した。作品は大判（約38×30cm）で制作され、絵画と比較できる規模を持っていた。1875年にセイロン（現スリランカ）へ移住し、1879年に没した*2。',
+      textEn: 'Julia Margaret Cameron was already forty-eight when her daughter gave her a camera in 1863*1. Moving within a Victorian intellectual world that included Tennyson and Herschel, she immediately set herself an ambitious goal: to ennoble photography and give it the character and use of high art*2. Instead of sharp definition, she embraced soft focus, long exposure, shallow depth, and even visible chemical marks when they helped evoke inner life. Though critics called these technical faults, Cameron believed that photography\'s truth lay not in precision but in emotional and spiritual intensity*1. Her portraits of figures such as Darwin and Tennyson, along with her staged biblical and Arthurian scenes, made her one of the great pioneers of expressive portraiture*2.',
+      citations: [
+        { num: 1, name: "V&A — Julia Margaret Cameron's working methods", url: 'https://www.vam.ac.uk/articles/julia-margaret-camerons-working-methods' },
+        { num: 2, name: 'Wikipedia — Julia Margaret Cameron', url: 'https://en.wikipedia.org/wiki/Julia_Margaret_Cameron' },
+      ]
+    }
+  },
+
+  /* ────────── 1890–1910s ────────── */
+  {
+    id: 'emerson',
+    name: 'Peter Henry Emerson',
+    nameJa: 'ピーター・ヘンリー・エマーソン',
+    nationality: 'GB',
+    flag: '🇬🇧',
+    years: '1856–1936',
+    gender: '男性',
+    era: '1890',
+    movements: ['自然主義写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Peter_Henry_Emerson' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Peter-Henry-Emerson' },
+      { label: 'Tate Papers — Emerson\'s Evolution', url: 'https://www.tate.org.uk/research/tate-papers/27/emersons-evolution' },
+    ],
+    amazon: '',
+    context: {
+      text: 'エマーソンがスタジオ演出を「不正直」と批判し、単一ネガ・単一露光による写真を芸術の条件とした根拠は、ドイツの生理学者ヘルマン・フォン・ヘルムホルツの視覚生理学にあった。ヘルムホルツは網膜中心窩のみが鮮明に見え、周辺視野は自動的に軟化するという人間の視覚特性を解明しており、エマーソンは1889年の著書『芸術学生のための自然主義写真論』でこの理論を写真に適用した*1。主要被写体のみを鮮明に、周辺はやや軟焦点にする「差動焦点法」こそが人間の視覚に最も忠実であり、それゆえ芸術的表現として価値を持つという論理だった。哲学的基盤はハーバート・スペンサーの進化心理学——「心は外部刺激を受動的に受け取る」という立場——であり、カメラの光学プロセスが人間知覚を科学的に再現できると主張した*2。複数ネガを合成するコンビネーションプリントやスタジオの人工的配置は、この自然な視覚体験を歪める「不正直」な操作とみなした。代表作は東アングリアの漁師・農民の生活を記録した写真集『ノーフォーク・ブローズの生活と風景』（1886年）であり、写真集という形式で芸術的意図を示す試みでもあった*3。しかし1891年、ハーター＆ドリフィールドの研究が露光の機械的法則を証明し、ウィリアム・ジェームズが「心は外部刺激に能動的に関与する」と反証したことで哲学的基盤が崩れ、エマーソンは「自然主義写真の死」と題した黒縁のパンフレットを写真界に送り自説を撤回した*4。撤回はエマーソンが写真の芸術性の主張を諦めたことを意味したが、「写真が絵画を模倣せず、写真固有の視覚原理を根拠に芸術性を論証しようとした最初の試み」として、後のストランドやウェストンらのストレート写真理論の先駆けとなった*5。また若きアルフレッド・スティーグリッツを見出し励ましを与えた事実も記録されており、20世紀写真史の中心へとつながる橋渡しの役割を果たした*1。',
+      textEn: 'Peter Henry Emerson argued that photography should be truthful to human vision rather than to studio convention. Drawing on Helmholtz, he claimed that only the center of vision is truly sharp, so a photograph should hold its main subject in clarity while allowing the rest to soften*1. This theory supported his attack on staged studio imagery and on combination printing, which he considered dishonest distortions of natural sight*2. His book Life and Landscape on the Norfolk Broads helped establish both naturalistic photography and the photobook as serious artistic forms*3. Although he later publicly retreated from some of his arguments, Emerson\'s attempt to ground photographic art in the medium\'s own visual logic became an important precursor to later straight photography*5.',
+      citations: [
+        { num: 1, name: 'Tate Papers — Emerson&#39;s Evolution', url: 'https://www.tate.org.uk/research/tate-papers/27/emersons-evolution' },
+        { num: 2, name: 'Art History Unstuffed — Peter Henry Emerson (1856–1936)', url: 'https://arthistoryunstuffed.com/peter-henry-emerson-1856-1936/' },
+        { num: 3, name: 'Minneapolis Institute of Art — Peter Henry Emerson and American Naturalistic Photography', url: 'https://new.artsmia.org/press/peter-henry-emerson-and-american-naturalistic-photography' },
+        { num: 4, name: 'Internet Archive — The Death of Naturalistic Photography [1890]', url: 'https://archive.org/details/1890Death_naturalistic_photography-BP21-6' },
+        { num: 5, name: 'On Landscape — Peter Henry Emerson', url: 'https://www.onlandscape.co.uk/2020/09/peter-henry-emerson/' },
+      ]
+    }
+  },
+
+  {
+    id: 'stieglitz',
+    name: 'Alfred Stieglitz',
+    nameJa: 'アルフレッド・スティーグリッツ',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1864–1946',
+    gender: '男性',
+    era: '1890',
+    movements: ['ピクトリアリズム', '写真分離派', 'ストレート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Alfred_Stieglitz' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Alfred-Stieglitz' },
+      { label: 'V&A', url: 'https://www.vam.ac.uk/articles/alfred-stieglitz-pioneer-of-modern-photography' },
+    ],
+    amazon: '',
+    context: {
+      text: '1890年代のニューヨークでは写真は「機械的な複写装置」とみなされ、絵画・彫刻と同列の芸術として美術館に展示される対象ではなかった。スティーグリッツが写真の芸術的地位を高めようとしたのは、この文化的偏見と正面から戦うためだった*1。初期のピクトリアリズムの段階では——軟焦点・ゴム重クロム酸塩プリント・絵画的構図——を駆使して「写真も絵画に匹敵する」ことを示そうとした。1902年に結成した写真分離派の目的をスティーグリッツ自身は「ピクトリアル写真に傾倒したアメリカ人たちをまとめ、それが個人的表現の独自媒体として認められるよう努める」と定義した*2。1903年創刊の写真誌『カメラ・ワーク』と1905年開廊のギャラリー291は、写真を絵画と同じ文脈に置く制度的戦略だった。291ではマティス（1908年）・セザンヌ・ピカソ（1911年）らのアメリカ初個展を開催し、前衛絵画と並置することで「写真は芸術か」という問い自体を時代遅れにしようとした*3。しかし第一次世界大戦後、スティーグリッツはピクトリアリズムの方針——絵画を模倣することで芸術性を証明する——が根本的に誤りだと気づいた。モダニズムの核心は「素材固有の特性を尊重する」ことにあり、写真が絵画を真似することはその独自性を自ら否定することだったのである*4。「ストレート写真」への転換後、1922年から始めた「エクイヴァレンツ」では雲の連作約350点を制作し、「写真は被写体によらず内的状態の等価物たりうる」と宣言した*5。この概念が音楽と本質的に結びついていることは、最初の連作タイトル「音楽：十枚の雲の写真の連作」（Music: A Sequence of Ten Cloud Photographs, 1922）と「空の歌」（Songs of the Sky, 1923）に端的に示されている。スティーグリッツはジョージア・オキーフに「作曲家アーネスト・ブロッホがこれを見て『音楽だ！これは音楽だ！』と叫ぶような写真を撮りたい」と語り、実際にブロッホはその通りの言葉を発したと伝えられている*5。この発想の背景にはウォルター・ペイター（1877年）の「すべての芸術は音楽の状態に憧れ続けている」という美学思想がある——音楽が形式のみで感情を喚起するように、写真もまた「何が写っているか」ではなく視覚的形式の自律的な力で内的状態を伝えうると主張したのである*4。写真が純粋に抽象的な感情の記録になりうることを初めて体系的に主張した作品群として、批評家ヒルトン・クレイマーはエクイヴァレンツが「1940〜50年代のアメリカ絵画に現れるまで到達しなかった種類の抒情的抽象に達していた」と評した*6。',
+      textEn: `In New York in the 1890s, photography was still widely treated as a mechanical copying process rather than something museums might exhibit beside painting and sculpture. Stieglitz's effort to raise the medium's status began as a direct confrontation with that prejudice*1. In his pictorialist phase he used soft focus, gum bichromate printing, and painterly composition to prove that photographs could rival painting. He defined the Photo-Secession, founded in 1902, as an attempt to unite Americans devoted to pictorial photography and secure recognition for it as a distinct medium of personal expression*2. Camera Work, launched in 1903, and the gallery 291, opened in 1905, were institutional strategies for placing photography in the same cultural frame as modern art. At 291 he mounted the first American exhibitions of figures such as Matisse, Cezanne, and Picasso, effectively making the question "Is photography art?" seem increasingly obsolete*3. After World War I, however, Stieglitz came to see pictorialism's basic premise as flawed: if modernism meant respecting the inherent properties of each medium, then photography could not justify itself by imitating painting*4. In the move toward straight photography, his Equivalents series, begun in 1922, produced roughly 350 cloud studies and proposed that photography could become an equivalent of inner feeling rather than merely a record of external subjects*5. The musical dimension of this idea is inscribed in the early series titles themselves: Music: A Sequence of Ten Cloud Photographs (1922) and Songs of the Sky (1923). Stieglitz told Georgia O'Keeffe that he wanted to make photographs which, when the composer Ernest Bloch saw them, would make him exclaim "Music! Music! Man, why that is music!" — and when Bloch did see them, that was precisely what he said*5. The theoretical grounding was Walter Pater's dictum of 1877 that "all art constantly aspires towards the condition of music": just as music arouses emotion through pure form without reference to external subjects, Stieglitz argued that photography could do the same, transmitting inner states through visual form alone, independent of what the image depicted*4. These pictures were among the first to insist systematically that photography could register abstract emotional states rather than merely document the world. Critic Hilton Kramer later argued that the Equivalents reached a lyric abstraction that American painting itself would not fully attain until the 1940s and 1950s*6.`,
+      citations: [
+        { num: 1, name: 'Metropolitan Museum of Art — Alfred Stieglitz (1864–1946) and American Photography', url: 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography' },
+        { num: 2, name: 'The Art Story — Alfred Stieglitz', url: 'https://www.theartstory.org/artist/stieglitz-alfred/' },
+        { num: 3, name: 'V&A — Alfred Stieglitz: Pioneer of Modern Photography', url: 'https://www.vam.ac.uk/articles/alfred-stieglitz-pioneer-of-modern-photography' },
+        { num: 4, name: 'Aesthetics of Photography — Alfred Stieglitz', url: 'https://aestheticsofphotography.com/alfred-stieglitz/' },
+        { num: 5, name: 'Art Institute of Chicago — Alfred Stieglitz Collection: Equivalents', url: 'https://archive.artic.edu/stieglitz/equivalents/' },
+        { num: 6, name: 'Modernism/Modernity Print+ — Unrarified Air: Stieglitz and the Modernism of Equivalence', url: 'https://modernismmodernity.org/articles/unrarified-air' },
+      ]
+    }
+  },
+
+  {
+    id: 'kasebier',
+    name: 'Gertrude Käsebier',
+    nameJa: 'ガートルード・ケーゼビア',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1852–1934',
+    gender: '女性',
+    era: '1890',
+    movements: ['ピクトリアリズム', '写真分離派', 'ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/calendar/exhibitions/365' },
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/267530' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Gertrude_K%C3%A4sebier' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Gertrude-Kasebier' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ケーゼビアが「人物写真とは伝記であれ——被写体の本質的な気質・魂・人間性を一枚の写真に引き出す」を信念としたのは、当時のニューヨーク商業写真スタジオが「技術的正確さ」の競争に終始していたからである*1。19世紀末の肖像写真は照明・ポーズを規格化した名刺判写真の延長であり、被写体の内面は記録の対象外だった。ケーゼビアはプラット・インスティチュートで絵画を学んだ経験から、「一枚の絵で何を省くかの識別眼こそが構図と感情を決定する」と考えており、この原則を肖像写真に持ち込んだ*2。彼女は撮影前に被写体と長時間を過ごし、「演出されていても真正に見える」効果を追求した。代表作「女たちの中に祝福された人よ」（1899年）では、詩人アグネス・リーと娘ペギーを二部屋の境の敷居に立たせ、壁の「受胎告知」版画と呼応させることで母から娘への世代の継承を聖書的文脈に置いた*3。プラチナプリントとゴム重クロム酸塩の操作によって、ガラス板ネガが持つ鮮鋭な細部を意図的に軟化させ、「絵画としての写真」を実現した*4。ケーゼビアが商業スタジオを経営しながら芸術的実践を貫いたのは、彼女自身の経済的自立への必要性でもあった。夫との不幸な結婚のなかで三人の子を育て、37歳でプラットに入学し、1897年にフィフス・アベニューに独立スタジオを開設した。スティーグリッツは彼女を「この国の肖像写真家として疑いなくリーダー」と評した*5。後の写真批評では、彼女の制作したジェンダー化されたイメージ——母性・聖性・「ヨーク（멍에）」をテーマとする作品——と私生活の乖離が、フェミニズムの視点から論じられている*6。',
+      textEn: 'Gertrude Kasebier believed that a portrait should be almost biographical, revealing the sitter\'s essential temperament and humanity rather than merely recording appearance*1. Against the standardized studio portraiture of the late nineteenth century, she brought a painter\'s sense of omission, mood, and composition into photography*2. She often spent long periods with her sitters before making a picture, aiming for images that felt emotionally true even when carefully arranged. Works such as Blessed Art Thou Among Women joined motherhood to a sacred visual language*3. Her pictorialist manipulation of platinum and gum processes softened the hard detail of the negative and helped establish a specifically artistic portrait photography*4. Stieglitz considered her the leading portrait photographer in America*5.',
+      citations: [
+        { num: 1, name: 'All About Photo — Gertrude Käsebier', url: 'https://www.all-about-photo.com/photographers/photographer/1632/gertrude-kasebier' },
+        { num: 2, name: 'The Portrait Photography of Gertrude Käsebier — Different Drum', url: 'http://litflower.com/portrait-photography-gertrude-kasebier/' },
+        { num: 3, name: 'Brooklyn Museum — Blessed Art Thou Among Women', url: 'https://brooklynmuseum.org/objects/111126' },
+        { num: 4, name: 'Delaware Art Museum — Women in Pictorialist Photography: Gertrude Käsebier', url: 'https://exhibitions.lib.udel.edu/women-in-pictorialist-photography/gertrude-kasebier%EF%BF%BC/' },
+        { num: 5, name: 'Art Institute of Chicago — Gertrude Käsebier (Alfred Stieglitz Collection)', url: 'https://archive.artic.edu/stieglitz/gertrude-kaesebier/' },
+        { num: 6, name: 'Artsy — Gertrude Käsebier&#39;s Camera-Box Heart', url: 'https://www.artsy.net/article/machamux-photographer-gertrude-kasebier-camera-box-heart' },
+      ]
+    }
+  },
+
+  {
+    id: 'steichen',
+    name: 'Edward Steichen',
+    nameJa: 'エドワード・スタイケン',
+    nationality: 'LU / US',
+    flag: '🇱🇺',
+    years: '1879–1973',
+    gender: '男性',
+    era: '1890',
+    movements: ['ピクトリアリズム', '写真分離派', 'ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/edward-j-steichen-1879-1973-the-photo-secession-years' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Edward_Steichen' },
+      { label: 'The Art Story', url: 'https://www.theartstory.org/artist/steichen-edward/' },
+    ],
+    amazon: '',
+    context: {
+      text: 'スタイケンがピクトリアリズムに向かった出発点は、写真が絵画と同等の芸術的地位を得るためには「絵画のように見える」ことが最も有効な戦略だという判断だった。ルクセンブルク生まれでアメリカ育ちのスタイケンは幼少期から絵を描き、ジェームズ・ホイッスラーのトーナリズム——霧と光の微妙な階調が感情を喚起する絵画——を深く吸収していた*1。プラチナ・ゴム重クロム酸塩多層刷りで同一ネガから3種の色調を生み出した「フラットアイアン」（1904年）は、「印刷プロセスそのものを絵画制作の場」として使う方法論を体現しており、「写真が絵画に規模・色彩・個性・表現において拮抗できる」ことの実証だった*2。1907年には「薄暮の3枚のプラチナプリント」が1000ドルで売れ——当時の写真作品として異例の高値——、ピクトリアリズムが芸術市場に受け入れられた証となった*1。しかし第一次世界大戦が転換点となった。陸軍写真部門の指揮官として航空偵察写真を統括したスタイケンは、精密・直接・操作なしの記録こそが写真固有の能力であることを経験的に確信した*3。戦後スタイケンは「私は画家として高級な壁紙に金枠をつけていたに過ぎなかった——全部燃やした」と語り絵画を捨て、コンデ・ナスト社の「ヴォーグ」「ヴァニティ・フェア」の首席写真家として人工照明・高コントラスト・鮮鋭焦点のストレート写真に転換した*4。1947年にMoMAの写真部門ディレクターに就任し、1955年の「人間家族」展を企画した——68カ国503名・503点の写真で「人類の共通性」を訴えた展覧会は38カ国を巡回し900万人が鑑賞した。写真が美術館制度の中で大衆と共有される媒体として確立した出来事だった*5。',
+      textEn: 'Edward Steichen first embraced pictorialism because he believed photography could only claim equal status with painting if it looked painterly*1. His early prints, especially The Flatiron, used layered printing processes to treat the photographic print itself as a site of artistic construction*2. After World War I, however, his experience with aerial reconnaissance convinced him that precision and directness were photography\'s real strengths*3. He abandoned his earlier pictorialist ambitions and became a major fashion photographer for Vogue and Vanity Fair before later taking over the photography department at MoMA. With The Family of Man in 1955, he helped establish photography as a museum medium with global public reach*5.',
+      citations: [
+        { num: 1, name: 'Metropolitan Museum of Art — Edward J. Steichen: The Photo-Secession Years', url: 'https://www.metmuseum.org/essays/edward-j-steichen-1879-1973-the-photo-secession-years' },
+        { num: 2, name: 'Metropolitan Museum of Art — The Flatiron (collection)', url: 'https://www.metmuseum.org/art/collection/search/267803' },
+        { num: 3, name: 'The Art Story — Edward Steichen', url: 'https://www.theartstory.org/artist/steichen-edward/' },
+        { num: 4, name: 'Family of Man Education — Edward Steichen: From a man of his time to an artist out of time', url: 'https://www.thefamilyofman.education/en/historical-context/edward-steichen-from-a-man-of-his-time-to-an-artist-out-of-time' },
+        { num: 5, name: 'ICP — Edward Steichen', url: 'https://www.icp.org/browse/archive/constituents/edward-steichen' },
+      ]
+    }
+  },
+
+  {
+    id: 'demachy',
+    name: 'Robert Demachy',
+    nameJa: 'ロベール・ドマシー',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1859–1936',
+    gender: '男性',
+    era: '1890',
+    movements: ['ピクトリアリズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/289550' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Robert_Demachy' },
+      { label: 'Monovisions — Robert Demachy Biography', url: 'https://monovisions.com/robert-demachy-biography-pictorial-photographer/' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ドマシーの芸術写真論の核心は「自然はしばしば美しいが、そのままでは決して芸術的ではない。芸術作品には芸術家の介入が不可欠であり、ストレート写真はテーマを記録するだけだ」という立場にあった*1。この主張の下敷きにあるのは、19世紀フランス美術における「自然のコピーではなく転写」という芸術観——エドガー・ドガが踊り子を光と運動の印象として描いたように、芸術家は目の前の光景をそのまま複写するのではなく、感覚の等価物を構成すべきだという考えだった*2。ドマシーはこの理念の実践手段として、ゴム重クロム酸塩プリントを選んだ。感光した顔料ゴム液を水で洗い流す工程で、アーティストが針やブラシで像を直接操作できる技法である。ドマシーはこれを「写真アクアチント」と命名し、銅版画と同列の版画芸術として写真を位置づけようとした——版画家が金属板に手を加えて唯一の印刷物を作るように、写真家も印刷段階で介入することで芸術的価値を生み出せるという論理だった*3。代表作「速度」（1904年）はダンサーの像を印刷段階で激しく引き伸ばし・ぼかして動感を表現した作品で、「カメラが捉えた瞬間」ではなく「アーティストが構成した運動の観念」を提示するものである*4。1895年にパリ・ロンドン・ブリュッセルで初のガム印画を発表した際、「写真革命」と評された——この文脈でスティーグリッツは1904年にドマシーを「ガム印刷の父」と称し『カメラ・ワーク』で積極的に紹介した*5。ドマシーは生涯に1000点以上の写真評論を執筆し操作写真を理論的に擁護し続けたが、1914年に突然写真を止め素描に転じた。その理由は現在も文献上説明されていない*6。',
+      textEn: 'Robert Demachy argued that nature might be beautiful, but it could not become art without the intervention of the artist*1. That belief led him to champion gum bichromate printing, which allowed photographers to manipulate the image directly with brush or needle during the printing process*3. For Demachy, photography should not simply record what the camera saw; it should translate sensation and movement into an artistic equivalent. Works such as Speed turned a dancer into an image of motion shaped as much by hand as by lens*4. He became one of the clearest theorists of pictorialist manipulation and remained a central defender of the idea that photographic art required transformation rather than mere description*5.',
+      citations: [
+        { num: 1, name: 'New Old Photography — Robert Demachy, French 1859–1936', url: 'https://platinumprince.com/individual-pictorialists/2019/4/3/robert-demarchy' },
+        { num: 2, name: 'The Art Story — Pictorialism', url: 'https://www.theartstory.org/movement/pictorialism/' },
+        { num: 3, name: 'SUNY New Paltz Dorsky Museum — Robert Demachy', url: 'https://www.newpaltz.edu/museum/collections/selections/robert-demachy/' },
+        { num: 4, name: 'Metropolitan Museum of Art — Struggle (Demachy, Robert)', url: 'https://www.metmuseum.org/art/collection/search/289550' },
+        { num: 5, name: 'Academia.edu — Robert Demachy: apostle of the gum bichromate process', url: 'https://www.academia.edu/29332945/Robert_Demachy_apostle_of_the_gum_bichromate_process_2015_' },
+        { num: 6, name: 'Monovisions — Robert Demachy Biography', url: 'https://monovisions.com/robert-demachy-biography-pictorial-photographer/' },
+      ]
+    }
+  },
+
+  /* ─────────────────────────────────────────
+     1910–1920s
+     ───────────────────────────────────────── */
+  {
+    id: 'strand',
+    name: 'Paul Strand',
+    nameJa: 'ポール・ストランド',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1890–1976',
+    gender: '男性',
+    era: '1910',
+    movements: ['ストレート写真', 'モダニズム', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/5722' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Paul_Strand' },
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=paul+strand' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ポール・ストランドが写真の転換を遂げた背景には、1907年にルイス・ハインに連れられて初めて訪れたギャラリー291での体験がある。セザンヌはリンゴや山などの自然物を「球・円柱・円錐の組み合わせ」として捉え直し、ピカソ・ブラックはそこからさらに踏み込んで対象を複数の視点から見た幾何学的平面に分解し、ひとつの画面上に再構成した——これが「形の構造的分解」である*1。ストランドが直感したのは、現実の世界にはすでにその幾何学が潜んでいるということだった。柵の縦板が刻むリズム、窓の格子が床に落とす平行四辺形の影、テラスに置かれたボウルが描く円弧と楕円——それらをシャープなフォーカスと高コントラストでそのまま写し取ることで、絵画のような筆触の模倣なしに純粋な構造的美を引き出せる。逆に言えば、ピクトリアリズムのソフトフォーカスや印画技法はそれらの幾何学をぼかして曖昧にするものであり、暗室での操作なく現実をありのままに写し取る「ストレート写真」こそが、この発見を実現できる方法だったのだ*1。1912年頃まで彼はピクトリアリズムの技法を実践していたが、この論理的な転換を経てシャープなフォーカスと大胆な幾何学的構成へと向かった。1916年のニューヨークで制作された「白い柵」「裏庭のボウル」は視点と形の純粋な相互作用のみを主題とし、同年のロウアーイーストサイドで撮影した「盲目の女」は、隠しプリズムレンズで被写体に気づかれずに正面から撮影した先駆的なストリートポートレートだった*2。これらはスティーグリッツ主宰の『カメラ・ワーク』最終号（第49–50号、1917年）に掲載され、「これまで写真界に現れた最も直接的で最も率直な仕事」と評された。「カメラという道具のもつ、絵画とは関係しながらも絵画を侵犯しない、純粋かつ知性的な使用」というストランド自身の言葉がストレート写真の宣言として後世に引用される*3。第一次世界大戦中は軍の医療部門でX線技師として従軍し、戦後にチャールズ・シェラーとのドキュメンタリー映画「マンハッタ」（1921年）を発表。1930年代はメキシコに招かれてムラリスモ政府文化局の映画部門を率い、農地改革を主題とした映画「波」（1936年）を制作した*4。その後ニューメキシコ・ニューイングランド・フランス・イタリア・ガーナなど各地で農民の生活を記録し続け、「時代を超えた普遍的な人間の尊厳の記録」という一貫した主題のもとで半世紀以上にわたる制作を続けた。1936年にはニューヨーク写真リーグを支援し、社会変革を写真で実践するという理念を次世代に継承した*5。彼の1916–17年の仕事は写真が絵画の模倣を脱して独自の表現媒体として自立した歴史的転換点であり、アンセル・アダムズ・エドワード・ウェストンらに受け継がれたアメリカ「ストレート写真」の直接の源流とされている。スティーグリッツがピクトリアリズムからの脱却を主導したとすれば、ストランドはその脱却の具体的な方法論を実証した写真家だった*3。',
+      textEn: `Paul Strand's decisive break came in part from his first visit to Gallery 291 in 1907, where Lewis Hine introduced him to modern painting. Cezanne's reduction of nature to spheres, cylinders, and cones, and the Cubist fragmentation of form by Picasso and Braque, suggested to Strand that geometry already lay hidden within the modern world*1. The rhythm of fence slats, the parallelogram of a window shadow on the floor, the ellipse of a bowl on a terrace: all of these could be revealed through sharp focus and high contrast, without borrowing painterly brushwork. From that point of view, pictorialist soft focus and manipulation only obscured the structural clarity that photography was uniquely able to show. Straight photography, with no darkroom theatrics and no imitation of painting, became the method equal to this discovery*1. By around 1912 he had turned away from pictorialism and moved toward bold geometry and crisp focus. Works such as White Fence and Bowl, New York from 1916 made pure relationships of shape and viewpoint their subject, while Blind Woman from the same year used a hidden prism lens to produce one of the earliest frontal street portraits of someone unaware of the camera*2. Published in the final double issue of Camera Work in 1917, these photographs were praised as the most direct and candid work yet to appear in photography. Strand's own phrase about a pure and intelligent use of the camera, related to painting yet never trespassing on it, later became a succinct declaration of straight photography*3. During World War I he served as an X-ray technician, and afterward collaborated with Charles Sheeler on the film Manhatta (1921). In the 1930s he worked in Mexico, directing film projects tied to agrarian reform, and later continued to photograph farmers and ordinary people in New Mexico, New England, France, Italy, and Ghana under the long, consistent theme of human dignity across time and place*4. His work of 1916-17 is now regarded as a decisive historical turning point: if Stieglitz led the break with pictorialism, Strand demonstrated exactly how that break could be made*5.`,
+      citations: [
+        { num: 1, name: 'The Art Story — Paul Strand', url: 'https://www.theartstory.org/artist/strand-paul/' },
+        { num: 2, name: 'Metropolitan Museum of Art — Paul Strand', url: 'https://www.metmuseum.org/toah/hd/strn/hd_strn.htm' },
+        { num: 3, name: 'Smarthistory — Paul Strand, White Fence', url: 'https://smarthistory.org/paul-strand-white-fence/' },
+        { num: 4, name: 'George Eastman Museum — Paul Strand', url: 'https://www.eastman.org/collections/photography/strand-paul' },
+        { num: 5, name: 'AnOther Magazine — Paul Strand', url: 'https://www.anothermag.com/art-photography/11173/paul-strand-radical-political-art' }
+      ]
+    }
+  },
+
+  {
+    id: 'coburn',
+    name: 'Alvin Langdon Coburn',
+    nameJa: 'アルヴィン・ラングドン・コバーン',
+    nationality: 'US / GB',
+    flag: '🇺🇸',
+    years: '1882–1966',
+    gender: '男性',
+    era: '1910',
+    movements: ['モダニズム', 'ヴォルテクシズム', '実験的技法'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Alvin_Langdon_Coburn' },
+      { label: 'Tate — Vortograph', url: 'https://www.tate.org.uk/art/artworks/coburn-vortograph-p04469' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ボストン生まれのアルヴィン・ラングドン・コバーンは17歳で写真家フレデリック・H・デイに師事して写真を学び、1902年にスティーグリッツの写真分離派に参加した。ロンドンとニューヨークを行き来しながら都市の高所からの俯瞰写真や著名人の肖像（ロダン・マーク・トウェイン・バーナード・ショウら）を制作し、写真集「ロンドン」（1909年）・「ニューヨーク」（1910年）でピクトリアリズムの優れた実践者として名声を得た*1。転機は1916–17年にエズラ・パウンドおよびウィンダム・ルイスのヴォルテクシズム運動と交流したことにある。ヴォルテクシズムは機械と運動のエネルギーを芸術に取り込もうとしたイギリスの前衛運動だった。第一次世界大戦中の閉塞した創作環境の中で、コバーンは既存の対象を「そのまま写す」ことへの限界を感じた*2。そこで三枚の金属鏡を正三角柱に配置した万華鏡装置「ヴォルトスコープ」を自作し、レンズ前方に装着することで被写体を幾何学的抽象パターンへと変換して撮影する技法を開発した。1917年2月のロンドン・カメラ・クラブで発表した「ヴォルトグラフ」18点は、写真史上最初の純粋抽象写真の展覧会として記録されている*3。パウンドは「カメラは現実から解放された！」と評し、美術史家キース・F・デイヴィスは「完全な抽象を意図した最初の写真群」と位置づけた*4。しかしコバーンはその後まもなく神智学・フリーメーソンに専心して写真から離れ、北ウェールズに隠棲した。この短命な実験は、ピクトリアリストとして成功した写真家が表象の限界に突き当たり、装置の変換によって「見ること」の概念そのものを問い直した試みとして後世に再評価されている*5。',
+      textEn: 'Alvin Langdon Coburn first became known as a pictorialist through elevated city views and portraits of major cultural figures*1. A decisive shift came when he encountered Ezra Pound and Wyndham Lewis and moved toward Vorticism, an avant-garde language of machines, force, and abstraction*2. In 1917 he exhibited his vortographs, made with a three-mirror device called the vortoscope that fractured the visible world into angular patterns. These works are often described as among the first deliberately abstract photographs in history*3. Soon afterward Coburn withdrew from photography into mysticism, but the vortographs remained important as a moment when photography challenged representation itself*5.',
+      citations: [
+        { num: 1, name: 'Royal Photographic Society — Alvin Langdon Coburn', url: 'https://rps.org/about/collections/coburn/' },
+        { num: 2, name: 'PhotoAnthology — Coburn and Vorticism', url: 'https://photoanthology.com/alvin-langdon-coburn/' },
+        { num: 3, name: 'MoMA — Vortograph', url: 'https://www.moma.org/collection/works/46633' },
+        { num: 4, name: 'George Eastman Museum — Coburn', url: 'https://www.eastman.org/collections/photography/coburn-alvin-langdon' },
+        { num: 5, name: 'Tate — Vortograph (Ezra Pound)', url: 'https://www.tate.org.uk/art/artworks/coburn-vortograph-p04469' }
+      ]
+    }
+  },
+
+  {
+    id: 'manray',
+    name: 'Man Ray',
+    nameJa: 'マン・レイ',
+    nationality: 'US / FR',
+    flag: '🇺🇸',
+    years: '1890–1976',
+    gender: '男性',
+    era: '1910',
+    movements: ['ダダ', 'シュルレアリスム', 'レイオグラフ'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/3787' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Man_Ray' },
+      { label: 'Tate', url: 'https://www.tate.org.uk/art/artists/man-ray-1542' },
+    ],
+    amazon: '',
+    context: {
+      text: 'フィラデルフィア生まれのエマニュエル・ラドニツキー（マン・レイ）が写真実践に転じた最大の契機は、1913年のアーモリーショーでマルセル・デュシャンの作品と出会い、その後親交を深めたことにある。デュシャンの「レディメイド」概念——既製品を提示するだけで芸術になるという考え——は、「写真は芸術を記録するためではなく、それ自体が思考のツールになりうる」という発想をマン・レイに与えた*1。第一次世界大戦の大量殺戮に幻滅したダダイストたちは、理性・進歩・国家・既成芸術の権威をすべて解体しようとした。マン・レイはその写真的実践を担う一人として1921年にパリへ移住し、アンドレ・ブルトン率いるシュルレアリスムに合流した*2。同年、暗室で作業中に印画紙の上にうっかり物を置いたまま光を当てたことで、カメラを使わずに物の影を直接感光紙に焼き付ける技法を「発見」した。これを「レイオグラフ」と命名し、詩人トリスタン・ツァラは「物体が夢を見る瞬間」と評した*3。レイオグラフはネガが存在しない一点ものであり、物と光の直接的な接触の痕跡という性格がシュルレアリスムの「偶然性」と「無意識の表出」への関心と完全に呼応した。1929年にはアシスタントのリー・ミラーの暗室操作の失敗から「ソラリゼーション」（明暗部分反転）技法を開発し、以後これを多くの写真やポートレートに応用した*4。ファッション誌ヴォーグ・ヴァニティ・フェアへの写真提供は生活費を賄いつつも、前衛芸術家が商業メディアにどこまで応じるかという緊張を体現した存在でもあった。第二次世界大戦中はロサンゼルスへ避難し、戦後パリに戻って制作を継続した*5。マン・レイの実践は「写真とは何かを記録するためではなく、何かを出現させる装置だ」という観点の礎となり、カメラレス写真・ソラリゼーション・多重露光など暗室技法の実験的可能性を20世紀全体を通じて探究した後継者たちに影響を与え続けた。その根底にあったのは「制作行為における偶然の積極的受容」というダダ以来の問いだった*6。',
+      textEn: `For Emmanuel Radnitzky, later known as Man Ray, the decisive turn toward photography came after the 1913 Armory Show and his growing friendship with Marcel Duchamp. Duchamp's idea of the readymade suggested that photography need not merely document art; it could itself become an instrument of thought*1. The Dada generation, shattered by World War I, set out to dismantle the authority of reason, progress, nationalism, and inherited artistic convention. As part of that broader project, Man Ray moved to Paris in 1921 and entered the orbit of Andre Breton and Surrealism*2. That same year he "discovered" the rayograph when he accidentally exposed photographic paper with objects left on it in the darkroom, producing camera-less images from the direct contact of object and light. Tristan Tzara called them moments when objects seemed to dream*3. Because rayographs had no negative and no indexical relation to a camera view, they fit perfectly with Surrealism's fascination with chance and the eruption of the unconscious. In 1929, after an apparent darkroom accident with his assistant Lee Miller, Man Ray developed the technique of solarization and went on to apply it to portraits and other works*4. His commercial work for magazines such as Vogue and Vanity Fair also embodied a modern tension: how far could an avant-garde artist enter the world of fashion and mass circulation without being absorbed by it? He fled to Los Angeles during World War II and returned to Paris after the war to continue working*5. More broadly, Man Ray helped establish a crucial modern idea: photography was not only a medium for recording what already existed, but also a device for making something appear. Camera-less images, solarization, and other darkroom experiments became central resources for later artists across the twentieth century, all linked to the Dada question of how chance might be welcomed into the act of making*6.`,
+      citations: [
+        { num: 1, name: 'The Art Story — Man Ray', url: 'https://www.theartstory.org/artist/man-ray/' },
+        { num: 2, name: 'Metropolitan Museum of Art — Man Ray', url: 'https://www.metmuseum.org/toah/hd/manr/hd_manr.htm' },
+        { num: 3, name: 'Tate — Man Ray', url: 'https://www.tate.org.uk/art/artists/man-ray-1542' },
+        { num: 4, name: 'MoMA — Man Ray Rayographs', url: 'https://www.moma.org/artists/3787' },
+        { num: 5, name: 'Philadelphia Museum of Art — Man Ray', url: 'https://www.philamuseum.org/collection/object/89165' },
+        { num: 6, name: 'Artsper — Man Ray Biography', url: 'https://www.artsper.com/en/contemporary-artists/france/1085/man-ray' }
+      ]
+    }
+  },
+
+  {
+    id: 'moholy',
+    name: 'László Moholy-Nagy',
+    nameJa: 'ラースロー・モホイ＝ナジ',
+    nationality: 'HU / DE',
+    flag: '🇭🇺',
+    years: '1895–1946',
+    gender: '男性',
+    era: '1910',
+    movements: ['バウハウス', '新しいヴィジョン', 'レイオグラフ', '実験的技法'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/4016' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Moholy-Nagy' },
+      { label: 'Bauhaus-Archiv', url: 'https://www.bauhaus.de/en/sammlung/6574_laszlo_moholy_nagy/' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ハンガリー生まれのラースロー・モホイ＝ナジは第一次世界大戦に従軍し、塹壕の中で独学でデッサンを始めた。戦後ベルリンでロシア構成主義・ダダと接触し、「芸術は社会変革の工具でなければならない」という信念を持つようになった*1。1923年にヴァルター・グロピウスに招かれてバウハウスの金属工房マイスターに就任すると、写真・映画・印刷をデザイン教育の中心に組み込み始めた。1925年の著書『絵画・写真・映画』では「写真の問題は写真らしい写真を作ることではなく、いかに人間の視知覚を拡張するかにある」と論じた。同書は「光で描くことができれば、まずそれを試みよ。絵筆は不要だ」という視点から、印刷・ポスター・書籍デザインにいたる視覚メディア全体を射程に収めた革命的な教科書だった*2。モホイ＝ナジが推進した「新しいヴィジョン」の核心は、「見慣れたものを見知らぬものとして提示する」という認識論的革新にあった——真上からの俯瞰・真下からの仰角・極端なクローズアップ・放射状の光と影など、通常の人間視点には存在しない角度からの提示が認識そのものを刷新するという考え方だ*3。フォトグラム（暗室での物体の直接感光）はマン・レイと独立に実践し、「純粋な光の構成」として体系化した。1930年には鉄骨と透明素材にモーターを組み込んだ「光・空間調整装置」を完成させ、その映像記録「光のディスプレイ」（1930年）も発表した*4。「今日、写真を読めない者は文盲と同じだ」という言葉は視覚リテラシーを20世紀教育の根本問題として定式化した*5。1933年のナチス政権樹立でバウハウスは閉校となり、モホイ＝ナジはロンドンを経て1937年にシカゴへ移住し「ニュー・バウハウス（現イリノイ工科大学デザイン学部）」を設立した。死後1947年に刊行された遺著『動体視力』はデザイン教育の基本文献となり、彼が持ち込んだ「見ることを教える」という教育哲学は戦後の商業デザイン・広告写真・建築写真に広範な影響を及ぼした*6。「形の知覚そのものを教育で変えられる」というモホイ＝ナジの確信は、現代デザイン教育の中心原理として今日も継承されている。',
+      textEn: `Born in Hungary, Laszlo Moholy-Nagy served in World War I and began drawing on his own while still in the trenches. After the war he encountered Russian Constructivism and Dada in Berlin and came to believe that art had to function as an instrument of social transformation*1. Invited by Walter Gropius to join the Bauhaus in 1923, he began placing photography, film, and print at the center of design education. In Painting, Photography, Film (1925), he argued that the real problem of photography was not to make "photographic" pictures but to extend human vision itself. The book was revolutionary in its insistence that if one could draw with light, one should try that before reaching for a brush, linking photography to poster design, typography, and the full field of visual communication*2. Moholy-Nagy's New Vision was an epistemological project: by showing familiar things from unfamiliar angles, whether through bird's-eye views, steep upward shots, extreme close-ups, or radiating patterns of light and shadow, photography could renew perception itself*3. He also explored photograms independently of Man Ray, treating them as pure constructions in light. In 1930 he completed the Light-Space Modulator, a motorized structure of metal and transparent materials, and filmed it in Light Play: Black-White-Gray*4. His famous remark that the illiterate of the future would be the person unable to read photographs made visual literacy into a central question of twentieth-century education*5. After the Nazis shut down the Bauhaus in 1933, he moved through London and eventually to Chicago, where he founded the New Bauhaus in 1937. His posthumous book Vision in Motion (1947) became a foundational text in design education, and his conviction that perception itself could be transformed through training continues to shape modern design, advertising, architecture, and photographic education*6.`,
+      citations: [
+        { num: 1, name: 'Tate — László Moholy-Nagy', url: 'https://www.tate.org.uk/art/artists/laszlo-moholy-nagy-1599' },
+        { num: 2, name: 'Metropolitan Museum of Art — Moholy-Nagy', url: 'https://www.metmuseum.org/toah/hd/moho/hd_moho.htm' },
+        { num: 3, name: 'Bauhaus-Archiv — Moholy-Nagy', url: 'https://www.bauhaus.de/en/sammlung/6574_laszlo_moholy_nagy/' },
+        { num: 4, name: 'MoMA — László Moholy-Nagy', url: 'https://www.moma.org/artists/4016' },
+        { num: 5, name: 'Art History Unstuffed — Moholy-Nagy and the New Vision', url: 'https://www.arthistoryunstuffed.com/moholy-nagy-new-vision/' },
+        { num: 6, name: 'IIT Institute of Design — History', url: 'https://id.iit.edu/about/history/' }
+      ]
+    }
+  },
+
+  {
+    id: 'sander',
+    name: 'August Sander',
+    nameJa: 'アウグスト・ザンダー',
+    nationality: 'DE',
+    flag: '🇩🇪',
+    years: '1876–1964',
+    gender: '男性',
+    era: '1910',
+    movements: ['新即物主義', '社会ドキュメンタリー', 'ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/5180' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/August_Sander' },
+      { label: 'Tate', url: 'https://www.tate.org.uk/art/artists/august-sander-1860' },
+    ],
+    amazon: '',
+    context: {
+      text: 'アウグスト・ザンダーが「20世紀の人々」という組織的肖像プロジェクトを構想するに至った根拠には、20世紀初頭のドイツで科学的信頼性をもっていた「人相学」への関心があった。職業・社会的立場・生活環境が身体と顔に刻印されるという考え方のもとで、ザンダーはヴェスターヴァルト地方の農民を繰り返し撮影し「人物の外見から社会構造を可視化できる」という確信を深めた*1。プロジェクトは農民→職人→女性→階級と職業→芸術家→都市→最後の人々という7つのグループで構成され、全体で数百点のポートレートから成る「人類学的アーカイブ」として構想された。その最初の公開が1929年刊行の写真集『時代の顔』（45点収録）であり、序文を書いた小説家アルフレート・デーブリンは「文字のない社会学だ」と評した*2。ヴァイマール共和国期の「新即物主義」の画家たち——オットー・ディックスやゲオルク・グロスが感傷を排した冷徹な視点でヴァイマール社会を描いたのと同じ姿勢が、ザンダーのポートレートにもあった*3。ヴァイマール時代のドイツには「社会的に周縁化された人々をいかに表象するか」という議論が渦巻いており、ザンダーのプロジェクトはその文脈の中で「非評価的・非感傷的な記録」の可能性を示した試みでもあった。1934年、ナチス政権は息子エーリッヒ（反ナチ活動で逮捕・1944年獄死）への圧力として『時代の顔』の残部を没収・廃棄し、ゲシュタポの捜索でガラス乾板の一部が押収・破壊された*4。ザンダー自身は戦争を生き延びたが1946年のケルン・アトリエ火災でさらに多くの資料を失った。1950–60年代の写真史再評価でジョン・ザルコウスキー（MoMA）らが「ポートレートが社会の証言になりうる」という先駆的実践として再発見し、ダイアン・アーバスのアウトサイダー・ポートレートへの影響が指摘されている*5。またベッヒャー夫妻による工業建築の類型的記録にもザンダーの「社会の全体を体系的に記録する」という方法論の継承が認められる。「写真家は絵を描くのではなく、社会の証人でなければならない」という彼の言葉は、ドキュメンタリー写真の倫理的根拠として今日も引用される*6。',
+      textEn: `August Sander's vast portrait project People of the Twentieth Century grew in part from the prestige that physiognomy still held in early twentieth-century Germany. If profession, social class, and living conditions left their marks on the body and face, then perhaps portrait photography could make social structure visible through appearance itself. Repeatedly photographing farmers in the Westerwald deepened Sander's conviction that society could be mapped through faces*1. He organized the project into seven broad groups - peasants, skilled trades, women, classes and professions, artists, the city, and the last people - envisioning an anthropological archive composed of hundreds of portraits. Its first major public form was Face of Our Time in 1929, a book of forty-five images whose preface by Alfred Doblin described it as sociology without words*2. Sander's cold clarity placed him near the painters of New Objectivity, such as Otto Dix and George Grosz, who likewise approached Weimar society without sentimentality*3. In that context, his portraits suggested the possibility of a nonjudgmental, unsentimental social record. The Nazi regime later targeted the project: copies of Face of Our Time were seized and destroyed in 1934, and glass negatives were confiscated or damaged, partly through pressure connected to the anti-Nazi activities of his son Erich, who later died in prison*4. Sander survived the war, but the 1946 fire in his Cologne studio destroyed still more material. In the 1950s and 1960s figures such as John Szarkowski at MoMA helped restore his reputation, recognizing him as a pioneer who showed how portraiture could function as social testimony; later critics have traced his influence forward to Diane Arbus and to the systematic typologies of Bernd and Hilla Becher*5. His claim that the photographer must be a witness to society rather than a maker of pictures continues to serve as a concise ethical statement for documentary practice*6.`,
+      citations: [
+        { num: 1, name: 'Metropolitan Museum of Art — August Sander', url: 'https://www.metmuseum.org/toah/hd/sand/hd_sand.htm' },
+        { num: 2, name: 'Tate — August Sander Research Papers', url: 'https://www.tate.org.uk/research/publications/tate-papers/14/august-sander-people-of-the-twentieth-century' },
+        { num: 3, name: 'Hauser & Wirth — August Sander', url: 'https://www.hauserwirth.com/artists/2822-august-sander/' },
+        { num: 4, name: 'MoMA — August Sander', url: 'https://www.moma.org/artists/5180' },
+        { num: 5, name: 'George Eastman Museum — August Sander', url: 'https://www.eastman.org/collections/photography/sander-august' },
+        { num: 6, name: 'Apollo Magazine — August Sander', url: 'https://www.apollo-magazine.com/august-sander-people-of-the-twentieth-century/' }
+      ]
+    }
+  },
+
+  {
+    id: 'renger',
+    name: 'Albert Renger-Patzsch',
+    nameJa: 'アルベルト・レンガー＝パッチュ',
+    nationality: 'DE',
+    flag: '🇩🇪',
+    years: '1897–1966',
+    gender: '男性',
+    era: '1910',
+    movements: ['新即物主義', 'モダニズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Albert_Renger-Patzsch' },
+      { label: 'J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/artist/2038' },
+      { label: 'Tate', url: 'https://www.tate.org.uk/art/artists/albert-renger-patzsch-1814' },
+    ],
+    amazon: '',
+    context: {
+      text: 'アルベルト・レンガー＝パッチュは1920年代のドイツで、ピクトリアリズムとバウハウス系実験写真の双方に距離を置く第三の路線を切り開いた。ピクトリアリズムが写真を絵画的に「美化」し、バウハウスが写真を視知覚変革の道具とみなしたのに対し、レンガー＝パッチュは「物それ自体の構造的な美しさをそのまま示す」という立場をとった*1。1928年刊行の写真集は工場の煙突・鉄道橋・植物の細部・陶磁器の反射・鋳物工具など100点を収録したものだが、本人が意図したタイトルは「物」であり、出版社エルンスト・ヴァスムートが商業的理由から「世界は美しい（Die Welt ist schön）」に変更したという経緯がある*2。この刊行は批評家ヘルムート・ゲルンスハイムが「ドイツ近代写真の転換点」と評し、トーマス・マンは公開の場で絶賛した*3。ヴァルター・ベンヤミンは1931年の論考「写真の小史」で「物に宇宙的な意味を持たせることができるが、人間の社会的条件については沈黙している」と批判した——政治的・社会的文脈を排した「物の美しさ」への集中への正面からの異議申し立てだった*4。レンガー＝パッチュが実践した「物の写真」は対象の形・質感・光を最大限の技術的精度で記録する手法であり、ザンダーが社会の総体を記録しようとしたのに対し、個別の事物の視覚的純度にこだわった点で対照的だった。ザンダーが人物の類型記録を、ブロッスフェルトが植物のマクロ拡大写真を担ったのと並び、レンガー＝パッチュが工業形態と日用物品を記録する——この三者が新即物主義写真の三本柱をなした*3。彼が植物撮影から培ったマクロ接写の技法——被写体に極限まで接近し精密な光学系で素材の肌理・反射・微細な構造を引き出す——は工業製品にも等しく適用され、肉眼では見過ごされる「物の内的秩序」を浮かび上がらせた*2。1944年の連合軍爆撃でゾースト近郊のアトリエが壊滅しコレクションの大部分を失ったが、戦後はルール地方の鉱山・製鉄所を精力的に撮影し続けた*5。彼のアプローチはドイツ産業写真・製品広告の美学的基盤となり、ベッヒャー夫妻による工業建築の類型的記録の源流の一つとして位置づけられている*6。',
+      textEn: 'Albert Renger-Patzsch opened a third path in 1920s Germany, distancing himself from both pictorialist beautification and Bauhaus-style experimentation*1. He insisted on the structural beauty of things themselves, and his book Die Welt ist schon made plants, machines, tools, and industrial forms into central subjects of modern photography*2. Critics quickly recognized the book as a turning point, even as Walter Benjamin later criticized its silence about the social conditions around the objects it depicted*3. Renger-Patzsch\'s descriptive precision and faith in the visual autonomy of things made him a major figure in New Objectivity. Alongside August Sander\'s typological portraiture and Karl Blossfeldt\'s microscopic plant studies, his work on manufactured objects and industrial forms completed the three pillars of New Objectivity photography*3. The macro close-up technique he developed through botanical photography — pressing to the limits of proximity and optical precision to reveal the grain, reflection, and inner structure of materials — applied equally to industrial products, uncovering an order in things that ordinary sight overlooks*2. His approach would later feed into industrial photography and into the typological thinking of the Bechers*6.',
+      citations: [
+        { num: 1, name: 'Aperture — Albert Renger-Patzsch', url: 'https://aperture.org/editorial/albert-renger-patzsch/' },
+        { num: 2, name: 'J. Paul Getty Museum — Renger-Patzsch', url: 'https://www.getty.edu/art/collection/artist/2038' },
+        { num: 3, name: 'George Eastman Museum — Renger-Patzsch', url: 'https://www.eastman.org/collections/photography/renger-patzsch' },
+        { num: 4, name: 'Tate — Albert Renger-Patzsch', url: 'https://www.tate.org.uk/art/artists/albert-renger-patzsch-1814' },
+        { num: 5, name: 'PhotoAnthology — Albert Renger-Patzsch', url: 'https://photoanthology.com/albert-renger-patzsch/' },
+        { num: 6, name: 'UGA Esploro — Renger-Patzsch and Neue Sachlichkeit', url: 'https://esploro.libs.uga.edu/esploro/outputs/graduate/The-New-Objectivity-photography-of-Albert/9949333614902959' }
+      ]
+    }
+  },
+  /* ─────────────────────────────────────────
+     1930–1940s
+     ───────────────────────────────────────── */
+
+  {
+    id: 'lange',
+    name: 'Dorothea Lange',
+    nameJa: 'ドロシア・ラング',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1895–1965',
+    gender: '女性',
+    era: '1930',
+    movements: ['FSA写真', '社会ドキュメンタリー', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/3373' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Dorothea_Lange' },
+      { label: 'Library of Congress', url: 'https://guides.loc.gov/migrant-mother' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ドロシア・ラングはサンフランシスコで商業ポートレートスタジオを経営していたが、1932年の大恐慌の絶頂期に、スタジオの窓から路上の失業者行列を見て外に飛び出したことがドキュメンタリー写真への転換点となった。1935年に連邦農業安定局（FSA）のロイ・ストライカーに雇用され、農村の貧困記録を担う写真家となった*1。FSAは農村の困窮を可視化してニューディール政策への支持を喚起する証拠写真を集めることを使命としており、ラングはカリフォルニア州各地の移住農業労働者キャンプを記録した。1936年3月、ニポモのエンドウ豆労働者キャンプで5〜6枚の連続撮影を行い、フローレンス・オーウェンズ・トンプソン（チェロキー族、当時32歳）とその子どもたちを捉えた一枚が「移住者の母」となった。ラングが記した詳細なキャプション——「食料なしに7人の子どもを抱え、野菜と子どもたちが捕まえた鳥で生き延びている」——とともに『サンフランシスコ・ニュース』紙（1936年3月10日付）に掲載され、連邦政府はキャンプに20,000ポンドの食糧を緊急輸送した*2。この写真はMoMAが1941年に「ドキュメンタリーの傑作」として評価し、大恐慌を象徴する一枚として世界的に知られる。ラングはトンプソンの名前も経歴も記録せず、撮影後すぐに写真を連邦政府への提出前に新聞社へ送った——トンプソンは後に「写真を売らないと言っていた」と証言しており、ラングが交わしたとされる約束の不履行が問題となった*3。撮影された写真は連邦政府委託のため著作権が発生せず、ラングにもトンプソンにも対価は一切支払われなかった。トンプソンは「あの写真から一銭も得られなかった」と語り、自分の名前が判明したのは撮影から42年後の1978年のことだった*3。政府の委嘱を受けた写真家と、貧困ゆえに撮影を断る選択肢を持ちにくかった被写体との非対称な関係、そして対価も名誉も伴わないまま肖像が国家プロパガンダとして流通した構造は、ドキュメンタリー写真における被写体の権利・同意・利益配分という問題を先駆的に提起したケースとして今日も論じられる*3。1942年には大統領令9066号による日系人強制収容を陸軍省から記録する任務を受けたが、当局はその写真を機密扱いとして封印し、存命中には公開されなかった*4。1965年にMoMAで大規模な回顧展が準備されたが、ラングは同年66歳でその開幕を見ることなく死去した。「移住者の母」は一枚の写真が政府の政策決定に直接影響を与えた稀有な例として写真史に記録されており、写真がプロパガンダ手段として機能しながら被写体の人間的尊厳を記録するという二重の役割の複雑さを体現した作品である。この複雑さはドキュメンタリー写真の倫理的基盤について今日も議論を呼び続けている*5。彼女が実践した「被写体が語り、写真家は聴く」という撮影倫理は、現代のドキュメンタリー写真実践の倫理的基盤の一つとして継承されている。',
+      textEn: `Dorothea Lange ran a commercial portrait studio in San Francisco, but during the depths of the Depression in 1932 she looked out her studio window, saw unemployed men standing in line in the street, and walked out toward documentary work. In 1935 Roy Stryker hired her for the Farm Security Administration, where she became one of the key photographers recording rural poverty*1. The FSA's mission was to produce evidence that would make deprivation visible and strengthen support for New Deal policy, and Lange traveled through California migrant labor camps as part of that program. In March 1936, at a pea-pickers' camp in Nipomo, she made a short sequence of photographs of Florence Owens Thompson and her children; one image became Migrant Mother. Published with Lange's caption describing a family with seven children surviving without food, the photograph prompted the federal government to send 20,000 pounds of emergency aid to the camp*2. MoMA later hailed it as a documentary masterpiece, and it became an enduring emblem of the Great Depression. Yet the picture also exposed deep ethical tensions. Lange recorded neither Thompson's name nor full history and sent the image to the press before submitting it to the federal agency; Thompson later said Lange had promised not to sell the pictures*3. Because the work had been made under federal commission, neither photographer nor subject received royalties, and Thompson said she never earned a cent from the image. Her identity was not publicly established until 1978, forty-two years after the photograph was made*3. The asymmetry between a government photographer and a desperately poor subject with little power to refuse, along with the circulation of Thompson's likeness without compensation or recognition, has made Migrant Mother a central case in debates over consent, rights, and benefit in documentary photography*3. In 1942 Lange was also commissioned to document the incarceration of Japanese Americans under Executive Order 9066, but those images were impounded and largely unseen during her lifetime*4. She died in 1965 just before a major retrospective prepared by MoMA opened. Her work remains essential not only because it shaped policy so directly, but because it continues to embody documentary photography's ethical contradiction: a picture can serve both as state instrument and as a profound record of human dignity*5.`,
+      citations: [
+        { num: 1, name: 'Museum of Contemporary Photography — Dorothea Lange and the Documentary Tradition', url: 'https://www.mocp.org/resources/dorothea-lange-and-the-documentary-tradition/' },
+        { num: 2, name: 'Library of Congress — Migrant Mother Research Guide', url: 'https://guides.loc.gov/migrant-mother' },
+        { num: 3, name: 'JSTOR Daily — Dorothea Lange and the Making of Migrant Mother', url: 'https://daily.jstor.org/dorothea-lange-and-the-making-of-migrant-mother/' },
+        { num: 4, name: 'Smarthistory — Dorothea Lange, Migrant Mother', url: 'https://smarthistory.org/dorothea-lange-migrant-mother/' },
+        { num: 5, name: 'LA Review of Books — Migrant Mother: Dorothea Lange and the Truth of Photography', url: 'https://lareviewofbooks.org/article/migrant-mother-dorothea-lange-truth-photography/' }
+      ]
+    }
+  },
+
+  {
+    id: 'evans',
+    name: 'Walker Evans',
+    nameJa: 'ウォーカー・エヴァンス',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1903–1975',
+    gender: '男性',
+    era: '1930',
+    movements: ['FSA写真', 'ドキュメンタリー', 'ストリート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Metropolitan Museum of Art', url: 'https://www.metmuseum.org/essays/walker-evans-1903-1975' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Walker_Evans' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/walker-evans' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ウォーカー・エヴァンズはFSA（農業安定局）のために1935–37年に南部を中心に農村の貧困を記録したが、同局の本来の使命——ニューディール政策宣伝のための写真提供——に対して意図的に距離を置いた。「プロパガンダ仕事にエヴァンズほど不向きな人物は想像しにくい」と当時から評されるほど、政治的メッセージより「アメリカの日常の本質的な蒸留」を追求し、8×10インチ大判カメラでの精密な構図と自然光のみで対象を記録した*1。指定された取材ルートも無視して個人的な主題——ガスステーション・理髪店の看板・ヴィクトリア朝建築など——を追い続けた。1938年、MoMAは写真家単独としては同館史上初となる個展「アメリカン・フォトグラフス」をエヴァンズに提供し、批評家リンカーン・カースタインの論文を添えた写真集を刊行した。これは写真を「ファインアート」として美術館が本格的に承認した最初期の出来事の一つとして写真史に記録されている*2。ジャーナリストのジェームズ・エイジーとアラバマ州の白人小作農三家族に同居して取材した成果は、雑誌に採用されず1941年にようやく書籍『今こそ有名な人々を称えよう』として出版された。当初は不評だったが1960年代の再刊以降は20世紀アメリカ文学の金字塔として評価が定まった*3。エヴァンズはキャプションなしで写真を提示することにこだわり、「写真集の各節末にだけ説明を記す」という形式を採用した——これは観者に先入観なく写真と向き合う機会を与える意図的な選択であり、写真が何かを語るためには文字の補助を必要としないという確信の表れだった。後年のニューヨーク地下鉄シリーズ（1938–41年撮影、1966年刊行）では、衣服の下に隠したカメラで乗客に気づかれずに撮影し、匿名の他者の顔に社会の断面を読み取ろうとした*4。1945年から20年間『フォーチュン』誌の写真編集者を務め、1965年にはイェール大学の写真教授に就任した。エヴァンズの写真が「詩的」と評される根拠は、操作や演出ではなく選択と構図にある。何を枠に収め何を切り落とすかという判断が、ガスステーションの看板・擦り切れた壁・小作農の顔を「現在が既に過去であるかのように見える」静けさで提示し、見慣れた日常に見過ごされていた普遍性を浮かび上がらせる——これをメトロポリタン美術館は「文学のリリシズム・アイロニー・叙述構造を写真に持ち込んだ」と評した*1。「文字通り、権威ある、超越的」という彼自身のスタイルの定義は記録の詩性という逆説を言語化したものであり、ロバート・フランク・リー・フリードランダーなど次世代アメリカ写真が継承した美学の源流となった*5。彼のFSA写真はその後ライブラリー・オブ・コングレスに永続保存されており、今日でも研究者・写真家に参照され続けている。',
+      textEn: `Walker Evans photographed rural poverty in the American South for the Farm Security Administration from 1935 to 1937, yet he kept a deliberate distance from the agency's propagandistic purpose. So ill-suited was he to overt political messaging that contemporaries remarked one could hardly imagine anyone less fit for propaganda work. Rather than illustrate policy, he pursued what he called the essential distillation of American everyday life, using an 8x10 camera, exact composition, and available light*1. He often ignored assigned routes in order to pursue his own subjects, from gas stations and storefront signs to Victorian houses. In 1938, MoMA gave Evans the museum's first solo exhibition devoted to a photographer, American Photographs, and published an accompanying book with an essay by Lincoln Kirstein. It stands as one of the key moments in the museum legitimation of photography as fine art*2. His collaboration with James Agee among white sharecroppers in Alabama failed to appear in magazine form and only reached the public in 1941 as Let Us Now Praise Famous Men, a book initially neglected and later canonized as a major work of American literature*3. Evans insisted on presenting pictures with minimal captioning, often confining explanatory text to the ends of sections in a book, because he believed photographs should meet viewers before language organizes them. In his subway portraits, made secretly in New York between 1938 and 1941 and published in 1966, he used a concealed camera to register anonymous fellow passengers as if their faces held compressed fragments of social reality*4. After 1945 he worked for two decades as a photo editor at Fortune and later taught at Yale. The poetry in Evans's pictures lies not in manipulation but in selection and framing: signs, worn walls, or the faces of tenant farmers are made to feel as if the present has already slipped into history. The Metropolitan Museum of Art has described this as a photographic equivalent of literary lyricism, irony, and narrative structure*1. His phrase "literal, documentary, style, lucid, severe, direct" became an influential paradoxical model for later American photographers from Robert Frank to Lee Friedlander*5.`,
+      citations: [
+        { num: 1, name: 'Metropolitan Museum of Art — Walker Evans (1903–1975)', url: 'https://www.metmuseum.org/essays/walker-evans-1903-1975' },
+        { num: 2, name: 'International Center of Photography — Walker Evans', url: 'https://www.icp.org/browse/archive/constituents/walker-evans' },
+        { num: 3, name: 'Smithsonian National Museum of American History — Walker Evans', url: 'https://americanhistory.si.edu/collections/object/nmah_1341035' },
+        { num: 4, name: 'MoMA — Walker Evans', url: 'https://www.moma.org/artists/1777' },
+        { num: 5, name: 'John&#39;s Chronicle — Walker Evans: Literate, Authoritative, Transcendent', url: 'https://johnschronicle.org/2018/12/17/walker-evans-literate-authoratative-transcendent/' }
+      ]
+    }
+  },
+
+  {
+    id: 'cartierbresson',
+    name: 'Henri Cartier-Bresson',
+    nameJa: 'アンリ・カルティエ＝ブレッソン',
+    nationality: 'FR',
+    flag: '🇫🇷',
+    years: '1908–2004',
+    gender: '男性',
+    era: '1930',
+    movements: ['決定的瞬間', 'フォトジャーナリズム', 'ストリート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Fondation HCB', url: 'https://www.henricartierbresson.org/en/hcb/biography/' },
+      { label: 'Magnum Photos', url: 'https://www.magnumphotos.com/photographer/henri-cartier-bresson/' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Henri_Cartier-Bresson' },
+    ],
+    amazon: '',
+    context: {
+      text: 'アンリ・カルティエ＝ブレッソンは1926年からシュルレアリスム運動と接触し、ルネ・クルヴェルの紹介でアンドレ・ブルトンと出会った。シュルレアリスムの「現実の事物の中に潜む夢的な質を顕在化させる」という視点を写真に持ち込み、1931年にライカ35mmカメラを手にして以来、プリントの加工・トリミングを徹底して拒否し、ファインダーの中での形の構成と「一瞬の意味」の同時把握を唯一の制作原理とした*1。「ある事象の意味と、その事象を正確に組織する形の同時認識——これが一瞬のうちに起きる」という言葉が写真論の核心だ*2。1940年に独軍の捕虜となり、フランス中部ゲルスドルフ（現ドイツ）の収容所で3年間過ごし、3度目の試みで1943年に脱走した。帰国後、パリ解放（1944年）を記録するとともにジャン・ルノワールのアシスタントとして映画にも関わった。1947年にロバート・キャパ・デイヴィッド・シーモア（シム）・ジョージ・ロジャー・ウィリアム・ヴァンディヴァートとともにマグナム・フォトを共同設立した。マグナムは写真家が自分の作品の著作権と編集権を保持できる初のフォト・エージェンシーであり、「どの雑誌からも独立したまま世界の重要な出来事を伝える」という理念のもとで設立された*3。1952年刊行のフランス語版写真集『逃げ去るイメージ』は英語版で『決定的瞬間』と題され、表紙はアンリ・マティスがデザインした。マグナムの一員としてインド独立（1947年）・ガンジー暗殺（1948年）・中国共産革命（1948年）などを取材し、戦後フォトジャーナリズムの美学的・倫理的基準を確立した*4。1955年にルーヴル美術館での写真展示を初めて許可された最初の写真家となり、写真のファインアート化を象徴する存在となった。1975年以降は写真制作をほぼ停止してデッサンと絵画に専念し、「写真家は常に何かを奪っている。絵は与えることだ」と語ったとされる。2003年には財団をパリに設立し、作品の恒久的な保存と公開の場を確保した*5。彼が示した「技術的精度より瞬間の詩性」という写真観は、世界中のストリートフォトグラファーに継承され続けている。フラッシュを一切使わないという彼の信念は「人工光は瞬間の詩性を殺す」という考えに基づいており、自然光と瞬間の倫理を生涯貫いた。',
+      textEn: `Henri Cartier-Bresson encountered Surrealism from 1926 onward and, through Rene Crevel, came into contact with Andre Breton. He brought Surrealism's attention to the dreamlike charge hidden within ordinary reality into photography, and from the moment he picked up a Leica in 1931 he rejected retouching and cropping, making the simultaneous grasp of form and event inside the viewfinder his central principle*1. His well-known formulation - the simultaneous recognition, in a fraction of a second, of the significance of an event and of the precise organization of forms that give it expression - remains the core of his photographic thought*2. Taken prisoner by the German army in 1940, he spent three years in a camp before escaping on his third attempt in 1943. Back in France, he documented the liberation of Paris and also worked with Jean Renoir. In 1947 he co-founded Magnum Photos with Robert Capa, David Seymour, George Rodger, and William Vandivert. Magnum was the first major photo agency built around photographers retaining copyright and editorial control while reporting the world's decisive events independently of any single magazine*3. His 1952 French book Images a la Sauvette appeared in English as The Decisive Moment, with a cover by Henri Matisse. As a Magnum photographer he covered Indian independence, Gandhi's assassination, and the Chinese Revolution, helping set the aesthetic and ethical terms of postwar photojournalism*4. In 1955 he became the first photographer to be granted an exhibition in the Louvre, a symbolic milestone in photography's acceptance as fine art. After 1975 he largely withdrew from photography to focus on drawing, and in 2003 he established a foundation in Paris to preserve his work*5. His commitment to the poetry of the instant over technical display, along with his refusal to use flash because he believed artificial light killed that poetry, made him a foundational figure for generations of street photographers around the world.`,
+      citations: [
+        { num: 1, name: 'The Art Story — Henri Cartier-Bresson', url: 'https://www.theartstory.org/artist/cartier-bresson-henri/' },
+        { num: 2, name: 'Aesthetics of Photography — Henri Cartier-Bresson', url: 'https://aestheticsofphotography.com/henri-cartier-bresson/' },
+        { num: 3, name: 'International Center of Photography — Cartier-Bresson', url: 'https://www.icp.org/browse/archive/constituents/henri-cartier-bresson' },
+        { num: 4, name: 'Fondation Henri Cartier-Bresson', url: 'https://www.henricartierbresson.org/en/hcb/' },
+        { num: 5, name: 'Magnum Photos — Henri Cartier-Bresson', url: 'https://www.magnumphotos.com/photographer/henri-cartier-bresson/' }
+      ]
+    }
+  },
+
+  {
+    id: 'capa',
+    name: 'Robert Capa',
+    nameJa: 'ロバート・キャパ',
+    nationality: 'HU',
+    flag: '🇭🇺',
+    years: '1913–1954',
+    gender: '男性',
+    era: '1930',
+    movements: ['戦争写真', 'フォトジャーナリズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Magnum Photos', url: 'https://www.magnumphotos.com/photographer/robert-capa/' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Robert_Capa' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/robert-capa' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ロバート・キャパはブダペスト生まれのアンドレ・フリードマンが1933年のパリで作り上げたペルソナだった。反政府活動を理由に17歳でハンガリーを追われ、ベルリンで写真エージェンシー（デフォト）のアシスタントとして暗室技術と取材術を学んだのち、ナチス台頭を避けてパリに移った。外国人フリーランスとして写真を高値で売るための戦略として、「著名なアメリカ人写真家ロバート・キャパ」という架空の人物像を当時の恋人ゲルダ・タローと共謀して作り上げた*1。1936年のスペイン内戦取材中に撮影した「崩れ落ちる兵士」は、共和国軍民兵フェデリコ・ボレル・ガルシアが銃弾を受けて崩れ落ちる瞬間とされ、『ヴュ（Vu）』誌掲載後にキャパを国際的に知らしめ、1938年英国の『ピクチャー・ポスト』誌が「世界最高の戦場写真家」と呼んだ*2。写真が実際の戦闘中に撮影されたかどうかについての論争は今日まで続いている。1944年6月6日のノルマンディー上陸作戦（オマハ・ビーチ）では4本のフィルムを撮影してロンドンに持ち帰ったが、現像を急いだ担当者が乾燥温度を誤り、フィルムの大部分が熱で溶けて11コマのみが残存した。『ライフ』誌（1944年6月19日号）はこれを「興奮で手が震えた」と説明したが、キャパ自身はその説明を否定した*3。1947年にカルティエ＝ブレッソン・デイヴィッド・シーモア・ジョージ・ロジャーとともにマグナム・フォトを設立した。「雑誌の需要に縛られない、写真家が著作権を保持する協同組合」という構想はキャパが主導し、パリとニューヨークにオフィスを置く国際的な組織として発足した*4。「写真が十分に良くなければ、あなたは被写体に十分近づいていない」という言葉は戦場写真の方法論と倫理を語る格言となった。スペイン内戦・日中戦争・第二次世界大戦・第一次中東戦争・第一次インドシナ戦争と5つの戦争を取材した。1954年5月25日、北ベトナムのタイビン省での取材中に地雷を踏んで40歳で死亡した。1966年にキャパの遺志を継いで設立された国際写真センター（ICP）は「ロバート・キャパ金メダル賞」を設けており、これは今日も戦場・報道写真分野における最高の国際賞の一つとして継続されている*5。キャパの死後に発見された「メキシコのスーツケース」（2007年）にはスペイン内戦時の約4500枚の未知のネガが含まれていた。',
+      textEn: 'Robert Capa was a persona invented in Paris in 1933 by the Hungarian-born Andre Friedmann and Gerda Taro, partly so his pictures could command higher prices on the freelance market*1. His image of the Falling Soldier from the Spanish Civil War made him internationally famous, even as debate over its exact circumstances has never ended*2. On D-Day in 1944 he photographed the Normandy landings, but a darkroom accident destroyed most of the negatives, leaving only eleven surviving frames from Omaha Beach*3. In 1947 he helped found Magnum Photos, building an agency in which photographers would retain control over their work rather than simply serving magazine demand*4. After covering five wars, he was killed by a landmine in Indochina in 1954. His legacy continued through Magnum, the ICP\'s Robert Capa Gold Medal, and the later discovery of the Mexican Suitcase of Spanish Civil War negatives*5.',
+      citations: [
+        { num: 1, name: 'The Art Story — Robert Capa', url: 'https://www.theartstory.org/artist/capa-robert/' },
+        { num: 2, name: 'Metropolitan Museum of Art — The Falling Soldier', url: 'https://www.metmuseum.org/art/collection/search/283315' },
+        { num: 3, name: 'Head On Photo Festival — Robert Capa D-Day', url: 'https://headon.org.au/magazine/robert-capa-and-the-story-behind-his-iconic-d-day-pictures' },
+        { num: 4, name: 'Magnum Photos — Robert Capa', url: 'https://www.magnumphotos.com/photographer/robert-capa/' },
+        { num: 5, name: 'International Center of Photography — This Is War! Robert Capa at Work', url: 'https://www.icp.org/sites/default/files/exhibition/credits/sites/default/files/exhibition_pdfs/rcapa_press.pdf' }
+      ]
+    }
+  },
+
+  {
+    id: 'domon',
+    name: 'Ken Domon',
+    nameJa: '土門拳',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1909–1990',
+    gender: '男性',
+    era: '1930',
+    movements: ['社会ドキュメンタリー', 'リアリズム写真', '日本写真'],
+    thumbnail: '',
+    links: [
+      { label: '土門拳記念館', url: 'http://www.domonken-kinenkan.jp/' },
+      { label: 'Wikipedia (JA)', url: 'https://ja.wikipedia.org/wiki/%E5%9C%9F%E9%96%80%E6%8B%B3' },
+      { label: 'Artscape', url: 'https://artscape.jp/artword/index.php/%E5%9C%9F%E9%96%80%E6%8B%B3' },
+    ],
+    amazon: '',
+    context: {
+      text: '土門拳が戦後に提唱した「リアリズム写真」は、戦前のサロン写真（技巧的な美的追求）と、自身が戦時中に携わったプロパガンダ写真報道への反省から生まれた。「カメラとモチーフの直結」と「絶対非演出の絶対スナップ」を原理として、社会の現実と人間の生を加工・演出なしに提示することが写真の使命だと主張した*1。1950年から写真誌「カメラ」の月例審査員として多数のアマチュア写真家を指導し、その思想に共鳴した写真家群からは川田喜久治・東松照明・深瀬昌久らが育った*2。1955年に「リアリズム第一段階の終了」を宣言し、より深い主題性を持つ「第二段階」への移行として広島の原爆被害者記録に着手した。1957年から1年間にわたって広島の原爆病院・障害者施設・孤児院を「取り憑かれたように」取材し、5,800枚のネガから171点を収録した写真集『ヒロシマ』（1958年、研光社）を刊行した。国内外で大きな反響を呼び、戦後日本のドキュメンタリー写真の頂点とされる*3。同年代の写真集『筑豊のこどもたち』（1960年）は炭鉱地帯で生きる子どもたちの貧困を記録し、100円の廉価版として10万部が売れ、日本ジャーナリスト会議賞（第3回）を受賞した。『古寺巡礼』（美術出版社、1963–75年）は奈良・法隆寺・薬師寺などの仏像を大判カメラと多灯フラッシュで撮影した生涯の仕事となった。「日本文化とは何か」「日本人とは何か」という問いを写真で問い続けたこの仕事は、1968年に脳卒中で倒れた後も車椅子での制作を続けることで完成された*4。土門がリアリズム写真運動を通じて育てた写真家たちは、1960–70年代の日本写真の黄金時代を形成し、山形県酒田市に1983年に開館した土門拳記念館はその全作品を収蔵している*5。',
+      textEn: `Ken Domon's postwar call for "realist photography" grew out of two dissatisfactions: the salon photography of the prewar years, with its emphasis on technical prettiness, and his own experience participating in wartime propaganda imagery. His principles were the direct connection between camera and motif and the absolutely un-staged snapshot. For Domon, photography's task was to present social reality and human life without embellishment or theatrical manipulation*1. From 1950 onward he served as a monthly juror for the magazine Camera, where he influenced large numbers of amateur photographers; among those shaped by his ideas were later major figures such as Kikuji Kawada, Shomei Tomatsu, and Masahisa Fukase*2. In 1955 he declared the end of realism's "first stage" and moved toward a deeper second stage with his work on the victims of Hiroshima. Over the course of a year beginning in 1957, he worked obsessively in atomic-bomb hospitals, facilities for the disabled, and orphanages, producing 5,800 negatives from which 171 photographs were selected for the 1958 book Hiroshima. The book had a major impact both inside and outside Japan and is widely regarded as one of the summits of postwar Japanese documentary photography*3. His book Children of Chikuho (1960), on the poverty of children in the coal-mining region, sold some 100,000 copies in an inexpensive edition and won the Japan Journalists Conference Award. His long project Pilgrimage Through Ancient Temples, produced between 1963 and 1975, used a large-format camera and multi-flash lighting to photograph Buddhist sculpture in Nara, Horyuji, Yakushiji, and elsewhere. It became the work through which he asked, photographically, what Japanese culture and the Japanese people might be. Even after a stroke in 1968, he continued working from a wheelchair until the project was complete*4. The photographers formed under the banner of realism helped define the golden age of Japanese photography in the 1960s and 1970s, and the Ken Domon Museum of Photography, opened in Sakata in 1983, now preserves the full range of his work*5.`,
+      citations: [
+        { num: 1, name: '土門拳記念館 — 土門拳とその作品（戦後）', url: 'http://www.domonken-kinenkan.jp/domonken/sengo/' },
+        { num: 2, name: 'nippon.com — 「鬼」と呼ばれた写真家・土門拳', url: 'https://www.nippon.com/ja/images/i00058/' },
+        { num: 3, name: 'shashasha — Ken Domon', url: 'https://www.shashasha.co/en/artist/ken-domon' },
+        { num: 4, name: '九州芸文館 — 土門拳の古寺巡礼展', url: 'https://www.kyushu-geibun.jp/main/1833.html' },
+        { num: 5, name: '土門拳記念館', url: 'http://www.domonken-kinenkan.jp/domonken/' }
+      ]
+    }
+  },
+
+  {
+    id: 'eugenesmith',
+    name: 'W. Eugene Smith',
+    nameJa: 'W・ユージン・スミス',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1918–1978',
+    gender: '男性',
+    era: '1930',
+    movements: ['戦争写真', '社会ドキュメンタリー', 'フォトジャーナリズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/W._Eugene_Smith' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/w-eugene-smith' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/W-Eugene-Smith' },
+    ],
+    amazon: '',
+    context: {
+      text: 'W・ユージン・スミスは1948年から1956年にかけて『ライフ』誌でフォト・エッセイという形式を確立した。従来の報道写真が「決定的瞬間の一枚」を追うものだったのに対し、スミスは数週間〜数年にわたって被写体の生活に同居し、被写体との関係を深めながら撮影した大量のカットを導入・展開・結末のある物語として編集するという長編ストーリーテリングの手法を採った*1。「ジャーナリズムから最初に消したい言葉は客観性だ」と述べたスミスにとって、フォト・エッセイは事実の羅列でなく「告発の叫び」として機能するものだった*3。1948年刊行の「カントリー・ドクター」はコロラド州の農村医師アーネスト・チェリアーニの日常を12日間追ったもので、写真ジャーナリズム史上最初の本格的なフォト・エッセイとして評価されている*1。スミスは「写真の使用方法に関する編集権」を巡って『ライフ』誌と繰り返し衝突し、計2度退社した。1955年にマグナムに参加し、ピッツバーグを主題とした大規模な都市記録プロジェクトに着手。当初3カ月の契約だったが3年間に延長され、17,000点の写真とオーディオ記録を残した*2。1971年、水俣病患者の家族からの連絡を受けてアイリーン・三重子とともに水俣市に移住し、当初3カ月の予定だった滞在が3年に及んだ。水銀汚染による神経障害を全身に負った胎児性水俣病患者の桐野智子を風呂に入れる母の写真「入浴する智子と母」は1972年に『ライフ』誌に掲載され、チッソの産業公害を世界に訴える象徴的な作品となった*3。1972年、チッソ幹部との交渉に患者家族と同行したスミスは、会社が雇った暴力団員に殴打されて意識を失い、右目の視力を永続的に損傷した。この暴行の事実は水俣病問題を国際的に広める契機となり、スミスの写真は裁判の証拠として機能し、チッソが被害者への損害賠償責任を負った日本初の公害訴訟の成立に寄与した*4。「真実を偏見とせよ」というスミスの言葉は、フォト・エッセイが単なる記録を超えて道徳的・政治的な主張になりうるという彼の立場を示している*5。',
+      textEn: 'W. Eugene Smith helped define the modern photo essay at LIFE by turning long periods of immersion with his subjects into narrative picture stories rather than isolated news images*1. For Smith, documentary work was not neutral description but a moral cry, which is why projects such as Country Doctor became landmarks in photojournalism*3. His constant battles with editors over control of his images eventually pushed him away from magazine journalism and into larger independent projects, including the vast Pittsburgh essay*2. In the 1970s his work in Minamata, Japan, transformed industrial pollution into a global visual indictment, and his photograph of Tomoko Uemura in her bath became one of the most powerful environmental images of the century*4. Smith remains central to the idea that documentary photography can be narrative, partisan, and ethically charged at the same time*5.',
+      citations: [
+        { num: 1, name: 'PetaPixel — W. Eugene Smith: Father of the Photo Essay', url: 'https://petapixel.com/2019/08/17/w-eugene-smith-master-of-the-editorial-photo-essay/' },
+        { num: 2, name: 'International Center of Photography — W. Eugene Smith', url: 'https://www.icp.org/browse/archive/constituents/w-eugene-smith' },
+        { num: 3, name: 'The Phoblographer — W. Eugene Smith: How Minamata Ushered Moral Storytelling', url: 'https://www.thephoblographer.com/2024/08/16/w-eugene-smith-how-minamata-redefined-photojournalism-with-a-moral-purpose/' },
+        { num: 4, name: 'Artsy — W. Eugene Smith, 101 Images from Minamata', url: 'https://www.artsy.net/artwork/w-eugene-smith-101-images-from-minamata' },
+        { num: 5, name: 'Center for Creative Photography — W. Eugene Smith Archive', url: 'https://ccp.arizona.edu/collections/w-eugene-smith-archive' }
+      ]
+    }
+  },
+
+  /* ─────────────────────────────────────────
+     1950–1960s
+     ───────────────────────────────────────── */
+
+  {
+    id: 'robertfrank',
+    name: 'Robert Frank',
+    nameJa: 'ロバート・フランク',
+    nationality: 'CH',
+    flag: '🇨🇭',
+    years: '1924–2019',
+    gender: '男性',
+    era: '1950',
+    movements: ['アメリカ写真', 'ドキュメンタリー', 'ストリート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Robert_Frank' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/robert-frank' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Robert-Frank' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ロバート・フランクはスイス・ユダヤ系家庭にチューリッヒで生まれ、1947年にニューヨークへ移住してハーパーズ・バザーのファッション写真家として働き始めた。しかし自身の写真的衝動はファッションではなく、移民の外国人として見るアメリカの「表面の下」にあった*1。1954年、ウォーカー・エヴァンズの推薦状（「今日の若手写真家の中で最も才能がある」）を添えてグッゲンハイム・フェローシップに申請し採択され、2年間で28,000枚以上を撮影した。アーカンソー州では汚れた服と外国語なまりを理由に警察に数時間拘束されるなど、アウトサイダーとしての体験が写真の視点に深く刻まれた*2。28,000枚から83枚を選んで構成した写真集『アメリカン』は1958年にフランスで出版され、翌年の米国版序文をビート作家ジャック・ケルアックが担当した。ケルアックは「小さなカメラを持ったスイス人、控え目で感じのよいロバート・フランクは、フィルムにアメリカの悲しい詩を吸い取り、世界の悲劇的詩人の仲間入りを果たした」と書いた*3。当時の主要写真誌『ポピュラー・フォトグラフィー』は「無意味なブレ・粒子・泥んこの露出・酔っ払いのホリゾン・全般的な杜撰さ」と批判したが、評論家ショーン・オハガンは後年「20世紀で最も影響力のある写真集かもしれない」と評価した*4。フランクが拒んでいたのは、1950年代の『ライフ』誌が体現した「繁栄し健全なアメリカ」という楽観的なビジュアル言語——明るい露出・整った構図・国民的一体感を演出するグラビア写真——だった。フランクの目はその「表面の下」に潜む人種隔離・孤独・格差を、外国人ならではの距離感で掬い上げた*2。初出版時は不評だったが、1960年代に入り公民権運動やベトナム反戦の気運が高まる中で、アメリカ社会の矛盾を先取りしていた写真集として再評価が急進した。ICPは『アメリカン』を「写真史上最も革命的な写真集のひとつ」と位置づけており、ゲーリー・ウィノグランド・リー・フリードランダー・ダニー・リヨン・ジョエル・マイロウィッツら1960年代以降のストリート写真家たちにとっての「バイブル」となった*2。写真集刊行後はドキュメンタリー映画制作に移行し、ビート世代の作家・詩人たちとの共同作「プル・マイ・デイジー」（1959年）を制作した*5。',
+      textEn: `Robert Frank was born into a Swiss Jewish family in Zurich and moved to New York in 1947, where he initially found work in fashion photography for Harper's Bazaar. Yet the real subject of his photography was not fashion but the America he saw as an immigrant outsider, what lay beneath its public surface*1. In 1954, with a recommendation from Walker Evans describing him as the most talented of the younger photographers, Frank received a Guggenheim Fellowship and spent two years making more than 28,000 exposures across the United States. His experience of being stopped and detained in Arkansas because of his appearance and foreign accent sharpened the outsider perspective that runs through the work*2. From those thousands of images he selected eighty-three for The Americans, first published in France in 1958 and then in the United States the following year with an introduction by Jack Kerouac, who famously wrote that this shy, pleasant Swiss with a little camera had absorbed the sad poem of America into film*3. Contemporary magazines such as Popular Photography attacked the book's blur, grain, rough exposure, and tilted horizons as incompetence, but later critics would call it perhaps the most influential photobook of the twentieth century*4. What Frank refused was the bright, orderly, optimistic visual language of 1950s LIFE magazine, with its carefully composed images of prosperity and national cohesion. His photographs instead registered segregation, loneliness, and inequality with the peculiar closeness and distance of someone who did not entirely belong*2. Though poorly received at first, the book was radically revalued in the 1960s as civil rights struggle and antiwar protest made its bleak vision of America newly legible. ICP has called The Americans one of the most revolutionary books in photographic history, and it became a touchstone for later photographers such as Garry Winogrand, Lee Friedlander, Danny Lyon, and Joel Meyerowitz*2. After publishing the book, Frank moved increasingly into documentary filmmaking, including Pull My Daisy (1959), made with writers and poets of the Beat generation*5.`,
+      citations: [
+        { num: 1, name: 'PBS NewsHour — Robert Frank: An Outsider Looking In', url: 'https://www.pbs.org/newshour/arts/robert-frank-an-outsider-looking-in' },
+        { num: 2, name: 'Sotheby&#39;s — The Everlasting Influence of Robert Frank&#39;s The Americans', url: 'https://www.sothebys.com/en/articles/the-everlasting-influence-of-robert-franks-the-americans' },
+        { num: 3, name: 'Aperture — Robert Frank: The Americans', url: 'https://aperture.org/books/robert-frank-the-americans/' },
+        { num: 4, name: 'Artsy — How Robert Frank&#39;s The Americans Broke the Rules', url: 'https://www.artsy.net/article/artsy-editorial-robert-franks-the-americans-matters-today' },
+        { num: 5, name: 'ArtNews — Robert Frank, Legendary Photographer and Filmmaker', url: 'https://www.artnews.com/art-news/news/robert-frank-photographer-dead-13204/' }
+      ]
+    }
+  },
+
+  {
+    id: 'williamklein',
+    name: 'William Klein',
+    nameJa: 'ウィリアム・クライン',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1926–2022',
+    gender: '男性',
+    era: '1950',
+    movements: ['ストリート写真', 'アメリカ写真', 'フォトジャーナリズム'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/William_Klein_(photographer)' },
+      { label: 'ICP', url: 'https://www.icp.org/browse/archive/constituents/william-klein' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ウィリアム・クラインはニューヨーク生まれだが、除隊後のパリでフェルナン・レジェのもとで絵画を学び、エルスワース・ケリーやジャック・ヤングマンらアメリカ人画家と交流した。1954年にヴォーグ誌のアート・ディレクター、アレクサンダー・リーバーマンの目に留まり、ニューヨーク帰任とともに同誌の写真家として招かれた*1。1954–56年のニューヨーク滞在中に撮影した写真をまとめた写真集『ニューヨーク、人生は善く、善くあなたのために』（1956年）は、フランスで刊行されプリ・ナダール賞（1957年）を受賞したが、米国の出版社はマンハッタンの汚い側面への視線を嫌って長年拒絶し続けた*2。クラインは高速フィルム・高コントラスト・粒子・ブレ・広角レンズ・挑発的な密着クローズアップという技法を、「欠点」としてではなく「都市のエネルギーを写真に転換する言語」として意図的に選択した。クライン自身は「カメラでしかできないこと——粒子、コントラスト、ブレ、歪んだフレーミングなど——を探求した。写真のルールは私には関係なかった。私は外からやってきた」と語っている*3。この姿勢はピクトリアリズムの「美しい絵」への志向とも、ドキュメンタリーの「中立的記録」という建前とも異なる第三の立場——写真家の主観・攻撃性・コメントを画面に刻み込む表現——を切り開くものだった。広角レンズを顔に押しつけるような密着クローズアップは被写体を圧迫・変形させ、「記録」でなく「衝撃」を意図したものであり、当時のギャラリーやメディアが「暴力的」と評した所以でもある*2。この写真集が「20世紀で最も重要な写真集の一つ」と位置づけられる根拠は、それがロバート・フランクの『アメリカン』（1958年）とともに、写真の技術的正確さを規範とする当時の主流に正面から反旗を翻した最初の写真集のひとつだったからであり、ICP・Artforum・ニューヨーク・タイムズなど複数の権威ある機関が「写真の正統派技法への反抗」の起点として繰り返し参照してきた*4。1955年からヴォーグ誌で10年間ファッション写真を担当し、モデルをスタジオから街頭に連れ出すという革新的な手法でファッション写真の概念を変えた。後年は映画監督としても活躍し、1966年に『フー・アー・ユー、ポリー・マグー？』を発表するなど多彩な活動を続け、2022年に96歳で死去した*5。',
+      textEn: 'William Klein brought a painter\'s aggression to photography, using grain, blur, wide-angle distortion, and invasive closeness as a language of urban energy rather than as technical flaws*1. His book Life is Good & Good for You in New York was first welcomed in France and resisted in the United States because of its harsh, unstable view of Manhattan*2. Klein rejected both pictorial beauty and neutral documentary description, making subjectivity, speed, and shock visible inside the frame*3. Later critics repeatedly grouped the book with Robert Frank\'s The Americans as a decisive rebellion against photographic orthodoxy*4. He also transformed fashion photography by moving models into the street and later expanded into filmmaking, remaining influential across several visual media*5.',
+      citations: [
+        { num: 1, name: 'International Center of Photography — William Klein', url: 'https://www.icp.org/browse/archive/constituents/william-klein' },
+        { num: 2, name: 'Howard Greenberg Gallery — William Klein', url: 'https://www.howardgreenberg.com/artists/william-klein' },
+        { num: 3, name: 'i-D — William Klein was 20th century fashion photography&#39;s creative freak', url: 'https://i-d.co/article/william-klein-photography/' },
+        { num: 4, name: 'Artforum — William Klein and the Radioactive Fifties', url: 'https://www.artforum.com/features/william-klein-and-the-radioactive-fifties-214042/' },
+        { num: 5, name: 'Metropolitan Museum of Art — William Klein', url: 'https://www.metmuseum.org/art/collection/search/266102' }
+      ]
+    }
+  },
+
+  {
+    id: 'araki',
+    name: 'Nobuyoshi Araki',
+    nameJa: '荒木経惟',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1940–',
+    gender: '男性',
+    era: '1950',
+    movements: ['私写真', '日本写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (JA)', url: 'https://ja.wikipedia.org/wiki/%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F' },
+      { label: 'Artscape', url: 'https://artscape.jp/artword/index.php/%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F' },
+    ],
+    amazon: '',
+    context: {
+      text: '荒木経惟は電通の広告写真家として働く傍ら、同社の秘書として働いていた青木陽子（ヨーコ）と1971年7月7日に結婚した。その新婚旅行（柳川・九州）で撮影した写真を私家版写真集『センチメンタルな旅』（1971年）として自費出版したのが、彼の写真家としての出発点となった*1。この写真集はホテルの朝食・窓からの景色・ヨーコとの私的な場面を日常スナップの形式で収録したもので、「私的な最も内密な記憶の公開」という行為そのものをアート実践として提示した*2。荒木は自らの写真スタイルを「私写真」と名付けた。これは日本の「私小説」——一人称の語り手が自身の内面と親密な関係を赤裸々に描く文学形式——から着想した概念であり、「写真家の主観的な生の体験」を芸術の正当な主題として位置づけるものだった*3。当時の写真界は報道（客観・中立）と美術（形式・距離）に二分されており、個人的なスナップは芸術とみなされなかった。荒木がこの境界を問い続けた理由は、最も私的なものこそが最も普遍的であるという確信にあった——自分とヨーコの愛・性・死は誰もが経験する生の本質であり、その記録は個人日記である以前に人間の条件の証言だという認識である*3。「写真は呼吸と同じくらい自然なものだ。写真は生そのものだ」というアラキの言葉はこの確信を端的に示す*3。エロス・死・時間は彼の一貫した主題で、1993年の写真集『エロトス』はギリシア神話のエロス（愛・欲望）とタナトス（死）を題名に重ね、「生の喜びと死の予感が出会い混ざり合う」と述べている*3。当時のプロヴォーク運動（中平卓馬・森山大道ら）の反乱精神と共鳴しながらも、「私は正式に参加できなかったが、反乱の精神は共有した」と語っており、日本の前衛写真の文脈に位置しながら独自の軌道を歩んだ*3。虚実の境界——撮影された親密な場面が「真正の私的瞬間」なのか「演出された構築物」なのか——もアラキ作品が問い続けた核心だった。1992年には猥褻物陳列罪で写真集販売に関わったギャラリー従業員が摘発され、荒木自身も繰り返し検閲と衝突しながら法の輪郭を試し続けた*3。1990年のヨーコの卵巣癌による死は「冬の旅」という続篇を生み、愛・生・喪失という弧を写真集として完結させた*4。ヴェネツィア・ビエンナーレ（1997年）をはじめ欧米の主要美術館で多数の個展が開催され、100冊超の写真集を刊行している*5。「私が写真を撮らなければ、私には何もない」という言葉が示すように、撮影は彼にとって生の記録であると同時に生の実践そのものだった*3。',
+      textEn: 'Nobuyoshi Araki built his art from the most intimate material available: his own life. While working as a commercial photographer at Dentsu, he married Yoko Aoki on July 7, 1971, and the photographs he made on their honeymoon in Yanagawa became the privately published book Sentimental Journey, the true beginning of his career as an artist*1. Hotel breakfasts, windows, train rides, and private moments with Yoko were presented not simply as personal snapshots but as the public release of deeply private memory itself*2. Araki called this method I-photography, borrowing from the Japanese I-novel and insisting that the photographer’s subjective lived experience could stand as a legitimate artistic subject*3. At a moment when Japanese photography was still largely divided between neutral reportage and formal art photography, he opened a third path by treating love, sex, death, and time as central subjects. What drove him was the conviction that the most private things could also be the most universal: his life with Yoko was not only personal diary material, but testimony to the basic conditions of being human*3. His statement that photography is as natural as breathing makes that conviction explicit*3. Eros, death, and time remained the core of his work, and in books such as Erotos he explicitly joined eros and thanatos, insisting that the joy of life and the premonition of death are inseparable*3. Though he was never an official member of Provoke, he later said that he shared its rebellious spirit, and he developed his work in tension with the postwar Japanese avant-garde while remaining entirely singular*3. The unstable border between truth and performance also became one of the central questions of his practice: are the intimate scenes he photographs genuine private moments, staged constructions, or both at once? Repeated clashes with censorship sharpened that question even further*3. After Yoko died of ovarian cancer in 1990, Araki transformed grief into the sequel Winter Journey, completing a photographic arc of love, life, and loss*4. Through more than a hundred books and major exhibitions in Japan, Europe, and the United States, he established a body of work in which photography was not only a record of life but one of its essential practices*5.',
+      citations: [
+        { num: 1, name: 'shashasha — Nobuyoshi Araki: Sentimental Journey', url: 'https://www.shashasha.co/en/book/nobuyoshi-araki-sentimental-journey-1971-2017' },
+        { num: 2, name: 'AnOther Magazine — Exposing Nobuyoshi Araki&#39;s Most Sentimental Series', url: 'https://www.anothermag.com/art-photography/8792/exposing-nobuyoshi-arakis-most-sentimental-series' },
+        { num: 3, name: 'Duke University Press — Crossing Boundaries: An Interview with Nobuyoshi Araki', url: 'https://read.dukeupress.edu/trans-asia-photography/article/doi/10.1215/215820251_1-2-205/312607/Crossing-Boundaries-An-Interview-with-Nobuyoshi' },
+        { num: 4, name: 'Singulart — Sentimental Journey by Nobuyoshi Araki: An Exploration of Love', url: 'https://www.singulart.com/blog/en/2024/06/03/sentimental-journey-by-nobuyoshi-araki/' },
+        { num: 5, name: 'p55.art — Who was the Japanese photographer Nobuyoshi Araki?', url: 'https://www.p55.art/en/blogs/p55-magazine/who-was-the-japanese-photographer-nobuyoshi-araki' }
+      ]
+    }
+  },
+
+  {
+    id: 'tomatsu',
+    name: 'Shomei Tomatsu',
+    nameJa: '東松照明',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1930–2012',
+    gender: '男性',
+    era: '1950',
+    movements: ['日本写真', '社会ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'SFMOMA', url: 'https://www.sfmoma.org/artist/shomei_tomatsu/' },
+      { label: 'Wikipedia (JA)', url: 'https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%9D%BE%E7%85%A7%E6%98%8E' },
+    ],
+    amazon: '',
+    context: {
+      text: '東松照明は1930年に名古屋で生まれ、戦時中に軍需工場に動員された世代として、終戦と同時にアメリカ軍の占領を直接経験した。占領軍の兵士に対する個人的な親切と、その存在が日本社会に与える暴力性への反感が同時に存在する、「愛憎」の複雑な感情が、その後の生涯のテーマを形成した*1。東松にとって写真の使命は「戦後日本社会の内側からの記録」にあった。戦時中に刷り込まれた国家プロパガンダへの不信から、「世界で信じられるのは、自分の目で実際に見たものだけだ」という確信を持つに至り、外部のジャーナリストや占領軍が提示する「外側からのジャパン像」ではなく、占領・原爆・高度成長の渦中を生きた日本人としての内側の証言を積み重ねることを一貫して選んだ*1。「敗戦後、闇と光が明確に見えるようになり、価値観が180度転換した」というSFMOMAに収録された東松自身の言葉は、この世代的体験が写真行為の根拠になったことを示している*5。1959年に奈良原一高・細江英公らとともに写真家集団「VIVO」を設立し、「主観的ドキュメンタリー」——純粋な記録と表現主義的な印画技法・劇的な角度・象徴的な構成を融合させる手法——を確立した*2。VIVOがこの手法を必要としたのには明確な理由がある。東松自身は「写真の硬化症を避けるために、リポルタージュという悪霊を追い払うことが重要だった」と語っており、純粋な報道的記録が事象の表面をなぞるだけになり感情的・象徴的な次元を失うことへの危機感があった*3。占領・原爆・高度成長という戦後日本の現実は、中立的な記録では捉えられない複雑な感情——愛憎・驚異と恐怖・被害者性と共犯性——を内包しており、事実の描写と隠喩的な陳述の双方として機能する写真だけが内側からの証言となりえた。高コントラストの暗室処理と極端なトリミングは事象の「重力」を可視化し、斜め構図は不安定な社会状況の表象として機能した——主観は恣意ではなく、言語化できない現実に接近するための方法だったのである*2。1960年の「占領——チューインガムとチョコレート」シリーズは、日本各地の米軍基地周辺を撮影したもので、アメリカ兵と日本人女性の接触・均質的な日本社会への異人種の出現・抵抗文化の発生など、占領がもたらした「アメリカニゼーション」の諸相を記録した*3。1960年に長崎を初めて訪れ、1945年8月9日の原爆投下後も生き続けた被爆者（ヒバクシャ）を撮影し始めた。1961年にはその成果が土門拳のヒロシマ写真とともに『ヒロシマ・ナガサキ・ドキュメント1961』（ロシア語・英語のみで刊行）に収録された。1966年刊行の写真集『11時02分 NAGASAKI』では、原爆の熱線に溶けたビール瓶・止まった時計・破壊された浦上天主堂の断片など事物の記録と被爆者の肖像が組み合わされた*4。東松の最も有名な一枚とされる「溶けたビール瓶」は、核爆発が物質に刻んだ痕跡を通じて、戦後日本の暴力と変容を可視化した作品として評価されている。若い世代の森山大道・中平卓馬ら「プロヴォーク」グループへの影響が指摘されており、サンフランシスコ近代美術館・シカゴ美術館などで大規模な個展が開催されている*5。',
+      textEn: `Shomei Tomatsu made postwar Japan itself into his subject. Born in Nagoya in 1930, he belonged to the generation that experienced wartime mobilization and, immediately after defeat, the direct reality of the American occupation. That produced a lasting ambivalence in him: personal kindness from individual soldiers could coexist with anger toward the violence their presence brought into Japanese society*1. For Tomatsu, photography became a mission to record postwar Japan from the inside. Distrustful of wartime propaganda and skeptical of images of Japan made by foreign journalists or the occupying forces, he came to believe that only what he had seen with his own eyes could be trusted*1. In 1959 he co-founded the group VIVO with Ikko Narahara, Eikoh Hosoe, and others, and helped establish a subjective documentary approach that fused record with expressive angles, symbolism, and darkroom intensity*2. The reason VIVO required this approach was precise: Tomatsu stated that "to avoid the sclerosis of photography, it was important to cast out the evil spirit of reportage." Pure photojournalism, he argued, traced only the surface of events and lost the emotional and symbolic dimensions that made postwar Japan's reality comprehensible*3. The occupation, the atomic bomb, and rapid economic transformation all contained emotional contradictions — desire and resentment, victimhood and complicity — that neutral documentation could not hold. Only photographs functioning simultaneously as factual record and metaphorical statement could serve as testimony from the inside. High-contrast darkroom processing and extreme cropping made the "gravity" of events visible; diagonal framing served as a figure for social instability — subjectivity was not arbitrariness but a method for approaching realities that resisted language*2. His series Occupation: Chewing Gum and Chocolate photographed the environments around American bases and traced the forms of Americanization that entered everyday Japanese life through desire, resentment, mimicry, and power*3. After first visiting Nagasaki in 1960, he began photographing hibakusha and the material remains of the atomic bomb. In 11:02 Nagasaki he paired portraits of survivors with melted bottles, stopped clocks, and ruined church fragments, showing that historical violence could be made visible through the traces it leaves on bodies and things*4. His photograph of the melted beer bottle became one of the defining icons of postwar Japanese photography. Tomatsu is now recognized as one of the crucial figures linking realist postwar documentary to the later radicalism of Provoke and to the broader international understanding of Japanese photography*5.`,
+      citations: [
+        { num: 1, name: 'Smithsonian National Museum of Asian Art — Tomatsu Shomei', url: 'https://asia-archive.si.edu/exhibition/tomatsu-shomei/' },
+        { num: 2, name: 'Michael Hoppen Gallery — Shomei Tomatsu', url: 'https://www.michaelhoppengallery.com/artists/64-shomei-tomatsu/' },
+        { num: 3, name: 'Aperture — Remembering Shomei Tomatsu (1930-2012)', url: 'https://aperture.org/editorial/remembering-shomei-tomatsu-1930-2012/' },
+        { num: 4, name: 'shashasha — Shomei Tomatsu', url: 'https://www.shashasha.co/en/artist/shomei-tomatsu' },
+        { num: 5, name: 'SFMOMA — Shomei Tomatsu', url: 'https://www.sfmoma.org/artist/Shomei_Tomatsu/' }
+      ]
+    }
+  },
+
+  {
+    id: 'winogrand',
+    name: 'Garry Winogrand',
+    nameJa: 'ゲリー・ウィノグランド',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1928–1984',
+    gender: '男性',
+    era: '1950',
+    movements: ['ストリート写真', 'アメリカ写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Garry_Winogrand' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Garry-Winogrand' },
+      { label: 'Fraenkel Gallery', url: 'https://fraenkelgallery.com/artists/garry-winogrand' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ガリー・ウィノグランドはニューヨーク・ブロンクス生まれで、1950年代に雑誌のフリーランス写真家としてキャリアを始め、35mmライカカメラを常に携帯して街頭での速写を続けた。その独自のスタイルは「アブストラクト・エクスプレッショニズムに近い、鋭い対角線で構成された動的な構図」と評されている*1。1967年、MoMAの写真部門ディレクター、ジョン・ザルコウスキーが企画した展覧会「ニュー・ドキュメンツ」にダイアン・アーバスとリー・フリードランダーとともに参加し、「彼の世代の中心的な写真家」と位置づけられた*2。ザルコウスキーはこの世代の作品に「スナップショット美学」の概念を定式化した——傾いたフレーム・動体のブレ・一見不安定な構図など、従来の美術写真の規範を逸脱する視覚言語を写真固有の美学として肯定したのである。ウィノグランドの画面についてザルコウスキーは「混沌とした表面の下に、ほぼ無意識に感じ取れる秩序がある——それが作者の視覚的知性の証だ」と評している*5。ウィノグランドの師アレクセイ・ブロドヴィッチは「方法論や技術ではなく直感に頼れ」と説き、この哲学はウィノグランドの撮影姿勢の核となった*6。「写真を撮るのは、世界が写真の中でどう見えるかを確かめるためだ——私には前もって言いたいことなど何もない」という言葉はこの方法論を端的に示す。ウィノグランドは撮影後すぐにフィルムを現像しなかった——「撮影した日の気分が残っていると、その記憶で写真を選んでしまう」という理由から、1〜2年時間を置いてから作業した。1975年刊行の写真集『女たちは美しい』は85点の女性の写真を収録し、フェミニスト批評から性差別的と批判される一方、「1970年代のフェミニズム台頭と性的変容の時代における女性の表現」の記録とする評価もある*3。1975年頃からテキサス・ロサンゼルスへと生活の拠点を移し、撮影スタイルはより暗く複雑なものへと変化した。1984年に56歳でガンにより急死し、現像済みだが未プルーフの6,500本のフィルムと未現像2,500本を含む合計30万点もの未整理写真を遺した*4。この膨大な「未完の仕事」はアリゾナ大学クリエイティブ・フォトグラフィー・センターに収蔵され、1988年のMoMAでの回顧展（ザルコウスキー企画）でその一部が公開された。「私はアメリカの学生だ」という言葉が示すように、彼の写真は変動するアメリカ社会の断面を鋭く切り取り続けた*5。',
+      textEn: 'Garry Winogrand made street photography feel fast, unstable, and improvisational. Born in the Bronx, he began in the 1950s as a freelance magazine photographer and carried a 35mm Leica constantly through the streets of New York. His pictures came to be described as dynamic constructions of sharp diagonals, crowd pressure, blur, and visual imbalance, almost like abstract expressionism translated into a documentary register*1. In 1967 he appeared in John Szarkowski’s New Documents at MoMA alongside Diane Arbus and Lee Friedlander, where he was identified as one of the central photographers of his generation*2. Szarkowski helped formalize the idea of a snapshot aesthetic through work like Winogrand’s: tilted frames, blurred motion, and seemingly unstable compositions became not defects but a distinctly photographic language. Winogrand’s teacher Alexey Brodovitch had urged him to rely on intuition rather than technique or system, and that principle remained central to his practice*6. His famous remark that he photographed to see what the world looked like photographed made clear that he did not begin with a fixed message; the camera was a tool of discovery. He also delayed working on his negatives for long periods because he believed immediate memory distorted judgment. His 1975 book Women Are Beautiful, with its eighty-five photographs of women, has remained controversial, criticized by some as sexist and defended by others as a vivid record of changing gender relations in the 1970s*3. After moving to Texas and Los Angeles, his work grew darker and more complicated. When he died in 1984 at fifty-six, he left behind an enormous archive of edited, unedited, and undeveloped film, a body of unfinished work that only deepened his image as a photographer driven above all by seeing itself*4.',
+      citations: [
+        { num: 1, name: 'Phaidon — The Pioneering Street Photography of Garry Winogrand', url: 'https://www.phaidon.com/en-us/blogs/artspace/the-pioneering-photography-of-garry-winogrand' },
+        { num: 2, name: 'MoMA — Garry Winogrand, Women are Beautiful', url: 'https://www.moma.org/collection/works/111102' },
+        { num: 3, name: 'Denver Art Museum — Garry Winogrand: Women are Beautiful', url: 'https://www.denverartmuseum.org/en/exhibitions/garry-winogrand-women-are-beautiful' },
+        { num: 4, name: 'Public Delivery — Garry Winogrand&#39;s Women are Beautiful – 50 years later', url: 'https://publicdelivery.org/garry-winogrand-women-are-beautiful/' },
+        { num: 5, name: 'Fraenkel Gallery — Garry Winogrand', url: 'https://fraenkelgallery.com/artists/garry-winogrand' },
+        { num: 6, name: 'Britannica — Garry Winogrand', url: 'https://www.britannica.com/biography/Garry-Winogrand' }
+      ]
+    }
+  },
+
+  {
+    id: 'friedlander',
+    name: 'Lee Friedlander',
+    nameJa: 'リー・フリードランダー',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1934–',
+    gender: '男性',
+    era: '1950',
+    movements: ['ストリート写真', 'アメリカ写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/calendar/exhibitions/113' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Lee_Friedlander' },
+    ],
+    amazon: '',
+    context: {
+      text: 'リー・フリードランダーはワシントン州アバディーン生まれで、1953年からロサンゼルスのアート・センター・スクールで写真を学び、1956年からニューヨークを拠点にエスクァイア・スポーツ・イラストレイテッドなど雑誌の仕事を手がけた。1966年、ネイサン・ライアンズがジョージ・イーストマン・ハウスで企画した展覧会「社会的風景に向けて（Toward a Social Landscape）」にブルース・デイヴィッドソン・ガリー・ウィノグランドらとともに参加した*1。フリードランダー自身が語った「ソーシャルランドスケープ」とは自然の風景の対極——都市・道路・建物・商業空間・自動車という人間が作り上げた環境のことであり、社会改革のための記録ではなく、その環境をそのまま個人的な視点で知ろうとする試みを意味した。1967年のMoMA「ニュー・ドキュメンツ」展（ダイアン・アーバス・ガリー・ウィノグランドとともに）では、キュレーターのジョン・ザルコウスキーが「目的は生活を改革することではなく、それを知ることだ」と評し、フリードランダーをアメリカ写真の新しい世代の代表として決定的に位置づけた*2。彼の特徴的な構成法は、ショーウィンドウのガラス・鏡・窓への反射と透過が重なって空間・光・物体が視覚的な層を形成する点にある。不透明さと透明さが同一画面で共存し、街路標識・電話ボックス・チェーンフェンスといった「ストリート・ファーニチャー」がサブ・フレームとして画面を分割するこの手法を都市の路上に応用することで、アメリカの都市空間が持つ「遮蔽・混乱・偶然」を視覚言語に変換した*3。また窓や鏡への映り込み、あるいは影だけとして自らを画面に組み込む「セルフポートレート」手法は、写真家自身を不可視にすることが常識だった時代へのラディカルな問いかけだった。フリードランダーの画面はウォーカー・エヴァンズとユージン・アジェの明晰さを継承しながら、ポップ・アートの皮肉とユーモアを組み合わせたと評されている*4。2005年にMoMAで大規模な回顧展が開催され、写真・セルフポートレート・ヌード・風景・都市の各シリーズが網羅された。シカゴ美術館・メトロポリタン美術館・国立美術館・ホイットニー美術館など主要機関が作品を収蔵しており、ロバート・フランク以降のアメリカ写真を定義した写真家の一人として位置づけられている*5。',
+      textEn: 'Lee Friedlander made what he called the social landscape, a photography not of untouched nature but of roads, storefronts, signs, windows, cars, and the built environment of modern America*1. Born in Aberdeen, Washington, he studied photography in Los Angeles and from the mid-1950s worked in New York for magazines such as Esquire and Sports Illustrated. In 1966 he took part in Nathan Lyons’s exhibition Toward a Social Landscape, which proposed exactly this new field of attention*1. The following year, in New Documents, John Szarkowski described photographers such as Friedlander as shifting documentary away from social reform and toward a more personal way of knowing the world*2. Friedlander’s pictures are built from layers: reflections in shop windows, mirrors, and glass; overlapping spaces where transparency and blockage coexist; and the sub-frames formed by telephone booths, road signs, fences, and other pieces of street furniture*3. By applying that method to the American street, he transformed obstruction, accident, and visual confusion into a rigorous photographic language. His recurring self-portraits, made through shadows or reflections, also challenged the assumption that the photographer should remain invisible. Critics often describe his work as combining the clarity of Walker Evans and Eugène Atget with a distinctly pop irony and wit*4. Friedlander became one of the defining figures of postwar American photography by turning ordinary visual clutter into one of the medium’s most sophisticated formal languages*5.',
+      citations: [
+        { num: 1, name: 'Common Edge — The Social Landscapes of Lee Friedlander', url: 'https://commonedge.org/the-social-landscapes-of-lee-friedlander/' },
+        { num: 2, name: 'International Center of Photography — Lee Friedlander', url: 'https://www.icp.org/browse/archive/constituents/lee-friedlander' },
+        { num: 3, name: 'The Art Story — Lee Friedlander', url: 'https://www.theartstory.org/artist/friedlander-lee/' },
+        { num: 4, name: 'B&W Magazine — The Social Landscapes of Lee Friedlander', url: 'https://www.bandwmag.com/articles/the-social-landscapes-of-lee-friedlander' },
+        { num: 5, name: 'Whitney Museum of American Art — Lee Friedlander', url: 'https://whitney.org/artists/465' }
+      ]
+    }
+  },
+
+  /* ─────────────────────────────────────────
+     1970–1980s
+     ───────────────────────────────────────── */
+
+  {
+    id: 'arbus',
+    name: 'Diane Arbus',
+    nameJa: 'ダイアン・アーバス',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1923–1971',
+    gender: '女性',
+    era: '1970',
+    movements: ['ドキュメンタリー', 'ポートレート', '社会ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Aperture', url: 'https://aperture.org/books/diane-arbus-an-aperture-monograph/' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Diane_Arbus' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ダイアン・アーバスは1923年ニューヨーク生まれ。父が5番街の高級毛皮・百貨店「ラセックス」を経営する裕福なユダヤ系家庭に育ち、大恐慌の影すら届かない隔絶した環境の中で過ごした。「私は免疫を与えられ、あらゆる状況から守られて育った。子供の頃に苦しんだことがあるとすれば、逆境をまったく感じたことがないということだった」という自己認識は、彼女の生涯を貫く動機の核心をなす*1。18歳でアラン・アーバスと結婚し、1950年代は夫婦でヴォーグ・ハーパーズ・バザーのファッション写真を担当したが、この「美しいものだけを見せる」商業写真に深い閉塞感を覚えた。転機は1956年頃、リゼット・モデルのニュースクール・フォー・ソーシャル・リサーチの授業への入門だった。モデルの教えの核心は「gut（はらわた）で撮れ」——理性ではなく本能と情動に従い、自分が本当に惹きつけられるものへ直進せよというものだった*1。元夫アラン・アーバスは「3回の授業でダイアンは写真家になった」と語っている。モデルの薫陶のもとでアーバスが自らのものとした命題が「恐怖こそ撮るべきものだ（Take pictures of what you fear）」であり、これは1971年の授業記録を基に死後1972年にアパーチャーが刊行したモノグラフに収録されている*5。この命題の根には、幼少期の「禁じられた視線」があった——障害者や社会の周縁にいる人を見てはいけないという暗黙の規範が、逆にそこへのとめどない惹きつけを生んだのだった。彼女の撮影行為は、見てはいけないとされたものを正面から見る行為であり、その恐怖を通過することで自らの出自の特権性を贖おうとする試みでもあった。フリークスについて彼女はこう語った——「ほとんどの人は人生でトラウマ的な体験をすることを恐れながら生きている。フリークスは最初からトラウマとともに生まれた。彼らはすでに人生の試練を乗り越えた貴族たちだ」（1972年アパーチャー・モノグラフ）*5。サーカス・精神病院・ヌーディストキャンプ・タイムズスクエアのトランスベスタイト・バーへ足を運び、被写体と長期にわたる関係を築いてから正面から撮影するという手法は「写真家と被写体の間の適切な距離」という慣習を根本から覆した。「カメラは、行きたい場所へ行き、やりたいことをする許可証だった」と彼女は語っている。1963年・1966年にグッゲンハイム・フェローシップを連続受賞。1967年MoMAの「ニュー・ドキュメンツ」展（フリードランダー・ウィノグランドとともに）でザルコウスキーに「ドキュメンタリー写真をより個人的な目的に向け直した」写真家として位置づけられた*2。同年の代表作「双子（ニュージャージー州ロゼル、1967年）」はシカゴ美術館等に収蔵されている*3。ICPは彼女を「写真の語り方を変えた人物」と記録する*4。1971年7月に48歳で死去。翌1972年にはヴェネツィア・ビエンナーレに作品が展示された最初のアメリカ人写真家となり、同年アパーチャー財団がドゥーン・アーバスとマービン・イズラエル編集による遺作集を刊行した*5。',
+      textEn: 'Diane Arbus grew up in a prosperous Jewish family on Manhattan\'s Central Park West, insulated from the Depression and from any direct encounter with hardship or difference. "I grew up feeling immune and exempt from circumstance," she wrote. "One of the things I suffered from was that I never felt adversity." That sense of having been quarantined from the texture of real life became the driving force of her practice*1. After years making fashion photographs for Vogue and Harper\'s Bazaar alongside her husband Allan Arbus, she enrolled in Lisette Model\'s classes at the New School for Social Research around 1956. Model\'s core teaching was "shoot from the gut" — trust instinct, go directly toward what compels you — and it converted Arbus\'s fear into a stimulus. Allan Arbus later said: "Three sessions and Diane was a photographer." The principle Arbus made her own was "Take pictures of what you fear," recorded in her 1971 class remarks and compiled in the posthumous Aperture monograph*5. The camera, she said, was "a license to go wherever I wanted and to do what I wanted to do." In practice this meant sustained visits to circuses, nudist camps, mental institutions, and the transvestite bars of Times Square — places her upbringing had forbidden her even to look at. She returned repeatedly to the same subjects over months and years, building the trust that made her close, frontal portraits possible. About the people she called freaks she wrote: "Most people go through life dreading they\'ll have a traumatic experience. Freaks were born with their trauma. They\'ve already passed their test in life. They\'re aristocrats"*5. In New Documents at MoMA in 1967, John Szarkowski placed her alongside Lee Friedlander and Garry Winogrand as photographers redirecting documentary toward personal vision rather than social reform*2. The Identical Twins, Roselle, N.J. (1967) became one of the defining images of a new portraiture*3. ICP records her as someone who changed the way photography speaks*4. She died in 1971; the following year her work appeared at the Venice Biennale — the first American photographer to be included — and the Aperture monograph, edited by Doon Arbus and Marvin Israel, established her posthumous reputation worldwide*5.',
+      citations: [
+        { num: 1, name: 'The Art Story — Diane Arbus', url: 'https://www.theartstory.org/artist/arbus-diane/' },
+        { num: 2, name: 'MoMA — New Documents, 1967', url: 'https://www.moma.org/calendar/exhibitions/3487' },
+        { num: 3, name: 'Art Institute of Chicago — Identical Twins, Roselle, N.J.', url: 'https://www.artic.edu/artworks/67958/identical-twins-roselle-n-j' },
+        { num: 4, name: 'ICP — Diane Arbus', url: 'https://www.icp.org/browse/archive/constituents/diane-arbus' },
+        { num: 5, name: 'Aperture — Diane Arbus: An Aperture Monograph', url: 'https://aperture.org/books/diane-arbus-an-aperture-monograph/' }
+      ]
+    }
+  },
+
+  {
+    id: 'moriyama',
+    name: 'Daido Moriyama',
+    nameJa: '森山大道',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1938–',
+    gender: '男性',
+    era: '1970',
+    movements: ['プロヴォーク', '日本写真', 'ストリート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (JA)', url: 'https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%B1%B1%E5%A4%A7%E9%81%93' },
+      { label: 'Artscape', url: 'https://artscape.jp/artword/index.php/%E6%A3%AE%E5%B1%B1%E5%A4%A7%E9%81%93' },
+    ],
+    amazon: '',
+    context: {
+      text: '森山大道は1938年大阪府池田市生まれ。父の職業柄、幼少期から東京・広島・千葉・島根・大阪と各地を転々とした放浪の生い立ちが、後の「さすらう眼差し」の原型となった。岩宮武二・細江英公のアシスタントを経て1961年に独立するが、個人的・即興的な路線へと向かわせた決定的な契機はウィリアム・クラインの写真集との出会いだった。「巨大なショックだった」と森山自身が語ったクラインの粗粒子でエネルギッシュなストリート写真は、写真が客観的記録ではなく生々しい衝突の痕跡でありうることを示していた*1。1968年創刊の写真誌「プロヴォーク」（中平卓馬・多木浩二・岡田隆彦らが「思想のためのちょうはつてき資料」を副題に創刊）に第2号から参加した森山が実践した「アレ・ブレ・ボケ」——粗い粒子・手ブレ・ピントのずれ——の美学は、単なる技法上の実験ではなかった。その背景には二重の否定があった。第一に、1960年の安保闘争の挫折と1968年の全共闘運動の高揚という文脈で、政治的言語がことごとく信頼を失い、「言葉で表現できないものを写真が捕捉すべき」という切迫した問題意識があった。第二に、さらに根本的な認識——整然とした「鮮明な写真」は現実を捏造しうるという不信感だった。日本の写真家たちが戦時中に帝国主義的プロパガンダを支持する作品を大量に制作していたという歴史への対峙から、「写真が現実を表現できる」という信念そのものが危険な道具になりうることをプロヴォークの参加者たちは認識していた*2。粒子・ブレ・ピントのずれという「不完全さ」は欠如ではなく、理性的な制御や意味の確定を拒む感覚の誠実な痕跡を選びとる行為だった。「私が街に出ていく時、計画はない。ある通りを歩き、別の角を曲がりたいと感じたら曲がる。本当に、私は犬のようなものだ——どこへ行くかを、物の匂いによって決める」という自己記述は1971年の代表作「三沢の野良犬」に直結し、思想や言語ではなく身体と衝動に写真行為の根拠を置く立場を示している。また「コピーのコピー」という概念——自らをそう定義する視点——はアンディ・ウォーホルの複製思想と交差しながら、写真家の固有性よりも複製と流通のプロセスそのものに意味を見出す姿勢を示す。1972年の写真集「写真よさようなら」は他の芸術家の作品や切り取ったネガを混在させ著者性とスタイルを解体しようとした試みであり、テート・ギャラリーのコレクションに収蔵されている*3。欧米写真批評における位置づけは、1974年にMoMAの写真部長ジョン・ザルコウスキーが企画した「新日本写真展」から始まる。ザルコウスキーは「東松照明の仕事に潜むニヒリズムの示唆が、森山によってあけすけかつ効果的に明示化された」と論じ、森山を新世代日本写真の中心に位置づけた*6。1999年にはSFMOMAが「Daido Moriyama: Stray Dog」を開催し、米国一流美術館が日本人写真家に与えた最初の本格的回顧展となった。アパーチャー誌は「戦後日本を描写するというラベルは表面を引っかくだけ」であり、彼の真の関心は「イメージをその本質へと解体すること」にあると論じた*7。2012〜13年のテート・モダンでのウィリアム・クラインとの二人展では批評家サラ・ケントが「森山は西洋写真家の信者としてではなく、それ自体として評価されるべきだ」と主張した*2。2019年にはハッセルブラッド財団国際写真賞を受賞し「史上最も重要で影響力ある写真家の一人」と評された*4。MoMAも恒久コレクションに収蔵しており*5、そのアレ・ブレ・ボケの美学はウォルフガング・ティルマンスら後続世代に広く影響を与えている。',
+      textEn: `Daido Moriyama was born in Ikeda, Osaka, in 1938 into a family whose frequent moves — Tokyo, Hiroshima, Chiba, Shimane, Osaka — gave him what he later described as an instinct for wandering that became foundational to his practice. After assisting Takeji Iwamiya and Eikoh Hosoe, the decisive turn toward a personal and improvisational approach came through his encounter with William Klein's photobooks. "A huge shock," he called it: Klein's rough, aggressive pictures of city life showed that photography could be a record of collision rather than calm observation, and that directness was more honest than polish*1. He joined Provoke magazine from its second issue in 1968. The magazine's subtitle — "provocative materials for thought" — expressed a precise critical position: political language had failed after the collapse of the 1960 Anpo security treaty struggle, and clean, well-made images were suspect because Japanese photographers had used them to support imperial propaganda during the war. A sharp, composed photograph could lie; grain, blur, and lost focus could not*2. The are-bure-boke aesthetic — grainy, blurred, out of focus — was therefore not a stylistic preference but an ethical claim: the only honest image was one that showed the limits of the photographer's control, a trace of a body moving through a world that resisted rational ordering. Moriyama described his approach in terms of instinct rather than method: "When I go out into the street, I have no plan. I walk down one street and feel like turning a corner, so I turn. I am really like a dog — I decide where to go by the smell of things." This connects directly to his best-known single image, Stray Dog, Misawa (1971)*3. His concept of "copy of a copy" — drawn partly from Warhol — placed the emphasis not on the photographer's unique vision but on the circulation of images as a cultural process. Farewell Photography (1972), which mixed his own images with those of other artists and cropped negatives, pushed the dismantling of authorship as far as it could go; it later entered the Tate collection*3. His international reputation was shaped by a sequence of institutional moments: John Szarkowski's New Japanese Photography at MoMA in 1974, where Szarkowski wrote that what was nihilistic suggestion in Tomatsu became in Moriyama "frank and effective statement"; the first major American museum retrospective at SFMOMA in 1999; and Aperture's argument that the label "postwar Japan" only scratches the surface, and that his real concern was dismantling the image itself*6. A 2012-13 Tate Modern exhibition pairing him with William Klein drew the response from critic Sarah Kent that Moriyama "deserves to be seen as a law unto himself, rather than an acolyte of a more familiar western photographer"*2. In 2019 he received the Hasselblad Award, whose jury chair described him as one of the most important and influential photographers in history*4. MoMA holds his work in its permanent collection*5.`,
+      citations: [
+        { num: 1, name: 'MoMA — For the Sake of Thought: Provoke, 1968–1970', url: 'https://www.moma.org/explore/inside_out/2013/01/25/for-the-sake-of-thought-provoke-1968-1970/' },
+        { num: 2, name: 'Tate — Daido Moriyama artist page', url: 'https://www.tate.org.uk/art/artists/daido-moriyama-11595' },
+        { num: 3, name: 'Tate — Farewell Photography, 写真よさようなら', url: 'https://www.tate.org.uk/art/artworks/moriyama-farewell-photography-p79977' },
+        { num: 4, name: 'Hasselblad Foundation — Hasselblad Award Winner 2019', url: 'https://www.hasselbladfoundation.org/en/hasselblad-award-winner-2019/' },
+        { num: 5, name: 'MoMA — Daido Moriyama artist page', url: 'https://www.moma.org/artists/4099' },
+        { num: 6, name: 'SFMOMA — Distant Relations: Japanese Photography in American Exhibitions in the 1970s', url: 'https://www.sfmoma.org/essay/distant-relations-japanese-photography-in-american-exhibitions-in-the-1970s/' },
+        { num: 7, name: 'Aperture — Why Daido Moriyama&#39;s Radical Vision Is Misunderstood', url: 'https://aperture.org/editorial/why-daido-moriyamas-radical-vision-is-misunderstood/' }
+      ]
+    }
+  },
+
+  {
+    id: 'sherman',
+    name: 'Cindy Sherman',
+    nameJa: 'シンディ・シャーマン',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1954–',
+    gender: '女性',
+    era: '1970',
+    movements: ['ピクチャーズ世代', 'コンセプチュアル', 'フェミニズム写真'],
+    thumbnail: '',
+    links: [
+      { label: 'MoMA', url: 'https://www.moma.org/artists/5376' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Cindy_Sherman' },
+    ],
+    amazon: '',
+    context: {
+      text: 'シンディ・シャーマンは1954年ニュージャージー生まれ。1977年から1980年にかけて制作した69点の黒白写真シリーズ「アンタイトルド・フィルム・スティルズ」は、1950〜60年代のハリウッド映画・フィルム・ノワール・ヨーロッパ芸術映画のスチール写真を模倣しているように見えながら、実際には存在しない映画の一場面として虚構の重層構造を持つ。シャーマン自身が監督・モデル・スタイリスト・撮影のすべてを担い、イングニュー・働く女性・ヴァンプ・孤独な主婦などの典型的な女性像を演じた*1。MoMAは1995年に69点の全シリーズを収蔵し、翌1996〜97年に完全展示を実施した*2。このシリーズは「ピクチャーズ・ジェネレーション（Pictures Generation）」の中核的作品として位置づけられる。ピクチャーズ・ジェネレーションとは、1977年にダグラス・クリンプがニューヨークのアーティスツ・スペースで企画した「ピクチャーズ」展（トロイ・ブロントゥック・ジャック・ゴールドスタイン・シェリー・レヴァイン・ロバート・ロンゴらが参加）を起点に生まれた批評的概念で、「ポップ・カルチャーの既成イメージを流用することで写真の意味が他の表象との関係から生まれることを示す」というクリンプの理論が核をなす*3。シャーマンは当初のメンバーではなかったが、この枠組みへの中核的参加者として認められ、2009年のメトロポリタン美術館の大規模展でも中心に据えられた。「大量に流通するイメージの中に内在する権力構造を可視化する」とはこういうことだ——フィルム・スティルズは実在しない映画のスチール写真のように見えるが、これによって映画が作り上げてきた「女性らしさ」のイメージが自然なものではなく文化的に構築されたスクリプトであることが露わになる。フィルム批評家ローラ・マルヴェイは「女性が男性の視線の客体として提示されるという映画の形式的構造そのもの（スコポフィリア的なまなざし）を、シャーマンの作品はパロディとして解剖している」と論じた。批評家クレイグ・オーウェンズはシャーマンを「既成のイメージを没収し、そこに批判的な意味の層を付け加えることで元のイデオロギー的機能を置換するポストモダンの寓意作家」として位置づけた*3。「ポストモダン写真の揺るぎない礎石」と評価される理由は三点に集約される。第一に、オリジナリティではなく流用：既存の映像規範を再コード化するという身振りが、本物の自己表現を理想とするモダニズムへの根本的な拒絶を示す。第二に、アイデンティティの不安定性：「自己同一性は社会的規範と個人的意図の間の不安定な妥協にすぎない」ことを繰り返し実演する。第三に、写真の真実要求への問い：現実を映すとされるメディアを使って明白に構築されたイメージを作ることで、写真のドキュメンタリー的前提を逆用する*5。ローラン・バルトの理論との親和性はとくに「作者の死」（1967年）にある——バルトは作品の意味は作者の意図ではなく読者が構築すると論じたが、シャーマンはペルソナの背後に安定した作者的主体を完全に消去することでこれを構造として実現する。ジャック・ラカンとの親和性は「鏡像段階」と「まなざし」の理論にある。ラカンにとって自我は鏡のイメージとの出会いを通じて形成されるが、その認識は常に誤認（自己よりも統一されたイメージへの同一化）であり、シャーマンの作品はこの誤認を逐語的に反復する。またラカン的なまなざしにおいて対象もまた見返す——シャーマンの各ペルソナが鑑賞者を見返す不穏さは、観者が視覚的支配の幻想を持てなくなる効果をもたらす。批評家ロザリンド・クラウスは1993年の著作でシュミュラクル（原本なきコピー）とラカン理論を組み合わせてシャーマンを論じた。1981年の「アンタイトルド #96」（センターフォールズシリーズ）は2011年クリスティーズで389万ドルの当時写真最高額を記録した*4。2012年MoMAで約170点を展示する大規模回顧展が開催された。',
+      textEn: `Born in New Jersey in 1954, Cindy Sherman made her Untitled Film Stills between 1977 and 1980, a series of sixty-nine black-and-white photographs that seem to belong to 1950s and 1960s Hollywood movies, film noir, and European art cinema. Sherman acted as director, performer, stylist, and photographer all at once, staging herself as types such as the ingénue, the working woman, the vamp, or the lonely housewife*1. It remains the only major series she made outside the studio. Each photograph looks like a still from a film that does not actually exist, which gives the work its layered fiction. MoMA acquired the full set in 1995*1 and organized a complete exhibition of the series in 1996-97*2. The Film Stills are now understood as a foundational work of the Pictures Generation that emerged in late-1970s New York. Alongside artists such as Richard Prince, Sherrie Levine, and Robert Longo, Sherman used pre-existing image codes from mass media to expose the structures of power embedded in the pictures that circulate everywhere*3. Feminist criticism has treated the work as a dismantling of the mechanism through which women are offered up as objects for the gaze. Her 1981 Untitled #96, from the Centerfolds series originally commissioned by Artforum, set a then-record price for a photograph at Christie's in 2011*4. MoMA now holds dozens of her works*5, and Sherman is widely regarded as one of the essential figures of postmodern photography. Across later series such as Centerfolds, History Portraits, Disaster, and Sex Pictures, she continued to make performance, masquerade, and the instability of identity her central subject. By using herself while simultaneously withholding any stable "self," Sherman produced a practice that has been discussed not only in art history but also through theoretical frames associated with thinkers such as Roland Barthes and Jacques Lacan. A major MoMA retrospective in 2012 confirmed the scale of that achievement.`,
+      citations: [
+        { num: 1, name: 'MoMA — Cindy Sherman artist page', url: 'https://www.moma.org/collection/artists/5392' },
+        { num: 2, name: 'MoMA — Cindy Sherman: The Complete Untitled Film Stills, 1997', url: 'https://www.moma.org/calendar/exhibitions/253' },
+        { num: 3, name: 'ICP — Pictures Generation, 1974–1984', url: 'https://www.icp.org/content/pictures-generation-1974-1984' },
+        { num: 4, name: 'Popular Photography — Cindy Sherman Print Sells For $3.9 Million At Auction', url: 'https://www.popphoto.com/news/2011/05/cindy-sherman-print-sells-39-million-auction-highest-ever-photograp/' },
+        { num: 5, name: 'The Art Story — Cindy Sherman', url: 'https://www.theartstory.org/artist/sherman-cindy/' }
+      ]
+    }
+  },
+
+  {
+    id: 'mapplethorpe',
+    name: 'Robert Mapplethorpe',
+    nameJa: 'ロバート・メイプルソープ',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1946–1989',
+    gender: '男性',
+    era: '1970',
+    movements: ['コンセプチュアル', 'ポートレート'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Robert_Mapplethorpe' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Robert-Mapplethorpe' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ロバート・メイプルソープは1946年ニューヨーク・フラッシング生まれ。プラット・インスティテュートで美術を学んだのち、1970年にポラロイドカメラで写真を撮り始め、独学でスタジオ写真へと発展させた。1978年にはX・Y・Zの3部作ポートフォリオを制作した。Xポートフォリオはニューヨークのゲイ・S&Mシーンを被写体とした13点、Yポートフォリオは花の静物、Zポートフォリオは黒人男性のポートレートから構成される*1。アンディ・ウォーホル・パティ・スミス・トルーマン・カポーティ・ルイーズ・ブルジョワ・フィリップ・グラスらのポートレートでも知られ、1988年にはホイットニー美術館で最初の大規模回顧展が開催された。1989年、フィラデルフィアのICA（現代美術センター）を皮切りに始まった巡回展「ザ・パーフェクト・モーメント」をめぐる論争は、メイプルソープを「芸術的自由をめぐる世紀末アメリカの文化戦争の象徴」に押し上げた*2。ワシントンDCのコーコラン・ギャラリーが連邦議会との衝突を恐れ6月12日に開幕キャンセルを発表すると、抗議した芸術家たちはメイプルソープの作品を館外の壁に投影した。ノースカロライナ州のジェシー・ヘルムズ上院議員はNEA（全米芸術基金）が「わいせつ」な芸術に資金提供することを禁じる法案を提出した*3。翌1990年、シンシナティのコンテンポラリー・アーツ・センター（CAC）と館長デニス・バリーが7点の写真に対して4件の刑事起訴を受けた——「美術館館長が展示作品をめぐって刑事訴追を受けた米国初の事例」として注目された裁判は1990年10月5日に無罪評決となった*3。1986年にAIDSの診断を受けたメイプルソープは創作を加速させ、1989年3月9日、42歳で死去した。生前に設立したロバート・メイプルソープ財団は写真芸術の支援とAIDS研究への資金提供を継続している*1。メイプルソープの写真は古典絵画の均衡と形式美の原理を写真に適用したような構図を特徴とし、花・性的な被写体・黒人男性のポートレートをすべて同じ美的秩序で提示することで鑑賞者の倫理的判断を宙吊りにした。パティ・スミスは「彼は美の追求者だった」と述べている*5。',
+      textEn: 'Robert Mapplethorpe applied an austere classical sense of balance and form to subjects that American culture often kept sharply apart: flowers, celebrity portraits, Black male bodies, and explicit gay sexual imagery*1. His X, Y, and Z portfolios made that range unmistakable, and his work soon became central to debates about beauty, desire, race, and censorship*2. The controversy around The Perfect Moment turned his photography into a national argument about public funding and museum freedom*3. Even amid those battles, his work remained formally exact and sculptural, suspending easy moral judgment by giving every subject the same visual intensity. Through the Mapplethorpe Foundation, his influence has continued in both photography and AIDS-related philanthropy*5.',
+      citations: [
+        { num: 1, name: 'Mapplethorpe Foundation — Biography', url: 'https://www.mapplethorpe.org/biography' },
+        { num: 2, name: 'Mapplethorpe Foundation — The Perfect Moment', url: 'https://www.mapplethorpe.org/selected-publications/the-perfect-moment' },
+        { num: 3, name: 'Smithsonian Magazine — When Art Fought the Law and the Art Won', url: 'https://www.smithsonianmag.com/history/when-art-fought-law-and-art-won-180956810/' },
+        { num: 4, name: 'Smithsonian Magazine — How a Museum Cancelling a Controversial Mapplethorpe Exhibition Changed My Life', url: 'https://www.smithsonianmag.com/arts-culture/how-museum-cancelling-controversial-mapplethorpe-exhibition-changed-my-life-180959311/' },
+        { num: 5, name: 'ICP — Robert Mapplethorpe', url: 'https://www.icp.org/browse/archive/constituents/robert-mapplethorpe' }
+      ]
+    }
+  },
+
+  {
+    id: 'kruger',
+    name: 'Barbara Kruger',
+    nameJa: 'バーバラ・クルーガー',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1945–',
+    gender: '女性',
+    era: '1970',
+    movements: ['ピクチャーズ世代', 'コンセプチュアル', 'フェミニズム写真'],
+    thumbnail: '',
+    links: [
+      { label: 'The Broad', url: 'https://www.thebroad.org/art/barbara-kruger/untitled-your-body-battleground' },
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Barbara_Kruger' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/Barbara-Kruger' },
+    ],
+    amazon: '',
+    context: {
+      text: 'バーバラ・クルーガーは1945年ニュージャージー州ニューアーク生まれ。パーソンズ美術大学でダイアン・アーバスとマービン・イズラエルに学んだのち、コンデ・ナスト社の雑誌「マドモアゼル」でアートディレクターを20代前半で務めた。クルーガーが習得した雑誌・広告の視覚言語とは、1960〜70年代アメリカの「クリエイティブ・レボリューション」が確立したものだ——フューチュラ・ボールドやヘルベチカに代表される幾何学的サンセリフ書体で断定的な命令文を打ち、クローズアップされた身体写真と組み合わせ、赤・黒・白の高コントラストで即座に目を奪う構成である。これは「あなたはこれを買うべきだ」「あなたはこうであるべきだ」と読者に語りかける命令形の修辞学であり、クルーガー自身は後に「私の芸術活動の約85パーセントはグラフィック・デザイナーとしての仕事に育てられた」と述べている*1。1977〜78年に自ら撮影した写真を試みた後、1979年頃から自己撮影を完全にやめ報道・広告・記録写真などの「見つけた写真（found images）」をベースに制作するようになった。これにはロラン・バルト「作者の死」とヴァルター・ベンヤミン「複製技術時代の芸術作品」への傾倒が決定的だった——バルトが「意味は生産の地点ではなく消費の地点で構築される」と論じ、ベンヤミンが複製が「アウラ」を消失させ政治的転用を可能にすると論じたことで、アーティストが自らイメージを生産する必然性が失われた。また、ダグラス・クリンプのピクチャーズ世代の文脈において「オリジナリティは幻想であり、既成イメージを流用することで再現前化の権力構造を暴く」という共通理解が形成されていたことも背景にある*3。見つけた写真がすでに帯びている文化的権威——広告の説得力、報道写真の信憑性——を保持しつつ、テキストの介入でその意味を反転させることがクルーガーの戦略の核心だった。「私は買い物をする、ゆえに私は存在する」（1987年）はレーガノミクス期の消費主義批判*2、「あなたの身体は戦場だ」（1989年）は中絶権を求めるワシントンDCの女性行進のための作品だ*2。パブリックアートの定義の拡張という点でいえば、クルーガー以前のパブリックアートは恒久的彫刻・壁画・建築統合作品を指し、美術の文脈を知る人が立ち止まって鑑賞するものだった。クルーガーの拡張はそれとは根本的に異なる——彼女は美術の外側にある商業コミュニケーションの実際のインフラ（バスの車体広告・ビルボード・バス停シェルター・都市の床面）を占拠し、その文脈のなかで批判的内容を流通させた。1997年にはニューヨーク市のバスが作品でラッピングされ、2012年にはロサンゼルス全土の12台のバス・85か所のビルボードとバス停が同時展開されてロサンゼルス史上最大の移動式パブリックアートと称された。2012年のハーシュホーン美術館インスタレーション「Belief+Doubt」は約622平方メートルのロビー・エスカレーター・床面を覆い、2022年のシカゴ美術館回顧展では約1670平方メートルの展示空間とアトリウムをビニールプリントと音声インスタレーションで満たした——制度空間そのものが作品となる。クルーガーの実践は「パブリックスペースはすでに消費主義のための政治的芸術に満たされている。私はその同じインフラを批判的内容で占拠する」という論理に基づいており、美術と広告の境界を問い直す実践として後続世代に広く影響を与えた*5。グッゲンハイム・フェローシップ（1983年）受賞。2022〜23年のMoMA大規模個展「あなたのことを考えている。私のことを。あなたのことを。」では展示空間全体をインスタレーションとして覆った*4。',
+      textEn: 'Barbara Kruger turned the visual language of magazines and advertising back against itself. Using found black-and-white images overlaid with blunt red-and-white text, she made works that confront power, identity, gender, and consumerism*1. Pieces such as I Shop Therefore I Am and Your Body is a Battleground became defining works of the Pictures Generation and of feminist image critique*2. Over time her practice expanded from framed works into installations that covered walls, floors, buses, and public spaces. Kruger showed that photography, text, design, and architecture could be fused into a single critical language*5.',
+      citations: [
+        { num: 1, name: 'Whitney Museum — Barbara Kruger artist page', url: 'https://whitney.org/artists/2635' },
+        { num: 2, name: 'The Art Story — Barbara Kruger', url: 'https://www.theartstory.org/artist/kruger-barbara/' },
+        { num: 3, name: 'ICP — Pictures Generation, 1974–1984', url: 'https://www.icp.org/content/pictures-generation-1974-1984' },
+        { num: 4, name: 'MoMA — Barbara Kruger: Thinking of You. I Mean Me. I Mean You.', url: 'https://www.moma.org/calendar/exhibitions/5394' },
+        { num: 5, name: 'Tate — Barbara Kruger artist page', url: 'https://www.tate.org.uk/art/artists/barbara-kruger-1443' }
+      ]
+    }
+  },
+
+  {
+    id: 'eggleston',
+    name: 'William Eggleston',
+    nameJa: 'ウィリアム・エグルストン',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1939–',
+    gender: '男性',
+    era: '1970',
+    movements: ['カラー写真', 'アメリカ写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/William_Eggleston' },
+      { label: 'Britannica', url: 'https://www.britannica.com/biography/William-Eggleston' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ウィリアム・エグルストンは1939年テネシー州メンフィス生まれ。1960年代から35mmのカラーフィルムで撮影を始め、1976年にMoMAでジョン・ザルコウスキーの企画により「ウィリアム・エグルストン・ガイド」展を開催した。「MoMAが開催した初のカラー写真単独個展かつ初のカラー写真出版物」として記録される歴史的展覧会であり、1969〜71年の撮影375点から選定した48点を展示した*1。ショッピングセンター・ガソリンスタンド・郊外の民家・赤信号・電球が下がる天井——誰もが見過ごすような南部の日常の断片を捉えたエグルストンのスタイルは「民主的なカメラ（democratic camera）」と呼ばれる。これはエグルストン自身の言葉「私はすべての被写体を民主的に見る——何も他のものより重要でも軽要でもない」に由来し、2008年のホイットニー美術館大回顧展のタイトルにも採用された*2。「被写体のヒエラルキーを認めない」というこの姿勢は、「重要な」ロケーションや社会的題材を選ぶべきとしてきた従来のドキュメンタリー写真の価値観を根本から覆した。技法面では1940年代にコダックが開発した商業印刷用プロセス「ダイ・トランスファー・プリント」を1972年から芸術表現に転用した最初の写真家として知られる。シアン・マゼンタ・イエローの各染料層を順次手動で転写する極めて労働集約的なこのプロセスは絵画に近い物理的な表面と、「精緻にして感情的な飽和感」と評される稀有な色彩密度をもたらした*3。1976年の展覧会は批評家を二分した。ニューヨーク・タイムズのヒルトン・クレイマーは「完全に陳腐、完全に退屈」と酷評した。しかしザルコウスキーは「これらの写真は、私には完璧に見える」と断言した。「ウィリアム・エグルストン・ガイド」が後にMoMA史上最も重要な写真出版物の一つと位置づけられるようになった理由は三点にある。第一に、カラー写真をファインアートの正当な媒体として制度的に承認した最初の事例であること——それまでカラーは広告・ファッション・スナップショットのものとされていた。第二に、主題の民主化——「視覚的関心は被写体ではなく見方の質に宿る」ことを実証したこと。第三に、アメリカの平凡な日常空間がシリアスな芸術写真の正当な領地であることを確立したこと。これらの論拠が積み重なり、カラー写真の歴史は「ガイド」以前と以後に分断されるものとなった*5。1974年グッゲンハイム・フェローシップ、1998年ハッセルブラッド財団国際写真賞受賞*4。ナン・ゴールディン・ウォルフガング・ティルマンス、映画監督ガス・ヴァン・サント・ソフィア・コッポラらに影響を与え、その影響は写真の枠を超えている*2。',
+      textEn: 'William Eggleston made ordinary Southern life central to fine-art color photography. His 1976 exhibition William Eggleston\'s Guide at MoMA was a landmark because it was the museum\'s first solo show devoted to color photography*1. Shopping centers, gas stations, suburban houses, traffic lights, and ceilings with bare lightbulbs became part of what he called a democratic camera, one that refused to rank subjects by importance*2. By adapting the dye-transfer process, he gave those ordinary scenes extraordinary chromatic intensity*3. Work that once seemed trivial or offensive to critics later came to be recognized as one of the decisive shifts that moved color photography to the center of photographic history*5.',
+      citations: [
+        { num: 1, name: 'MoMA — William Eggleston&#39;s Guide (1976 exhibition)', url: 'https://store.moma.org/products/william-egglestons-guide-hardcover-3' },
+        { num: 2, name: 'Whitney Museum — William Eggleston: Democratic Camera', url: 'https://whitney.org/exhibitions/william-eggleston' },
+        { num: 3, name: 'Aperture — The Emotional Saturation of William Eggleston&#39;s Last Dyes', url: 'https://aperture.org/editorial/the-emotional-saturation-of-william-egglestons-last-dyes/' },
+        { num: 4, name: 'Hasselblad Foundation — William Eggleston', url: 'https://www.hasselbladfoundation.org/en/portfolio_page/william-eggleston/' },
+        { num: 5, name: 'MoMA — William Eggleston artist page', url: 'https://www.moma.org/artists/1690' }
+      ]
+    }
+  },
+
+  /* ─────────────────────────────────────────
+     1980s
+     ───────────────────────────────────────── */
+  {
+    id: 'goldin',
+    name: 'Nan Goldin',
+    nameJa: 'ナン・ゴールディン',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1953–',
+    era: '1980',
+    movements: ['ドキュメンタリー', 'プライベート写真', 'LGBTQ+'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Nan_Goldin' },
+      { label: 'Artnet — Nan Goldin', url: 'https://www.artnet.com/artists/nan-goldin/' },
+    ],
+    amazon: '',
+    context: {
+      text: '1953年にワシントンDCで生まれたゴールディンは、11歳で姉バーバラを自殺で失った経験から「写真は愛する人を失う前に記録し続けることができる」という確信を抱き、16歳でカメラを手にした*1。1970年代末にニューヨークへ移り、ボウエリー周辺のゲイ・トランスジェンダー・セックスワーカーのコミュニティに住み込みながら日記代わりに撮影を重ね、積み重ねた690枚超のスライドをバーや映画館でルー・リードやヴェルヴェット・アンダーグラウンドの音楽とともに上映し続けた*2。この記録は1986年にアパーチャー財団から写真集『性的依存のバラッド』として刊行され、アルル国際写真フェスティバルのコダック写真集賞を受賞した*2。「私は写真を記憶の代わりに使う。記憶は失われるが写真は残る」というゴールディン自身の言葉が示すように、彼女の方法論は外部の観察者ではなくコミュニティ内側の当事者が「見せることを選ぶ」という権力関係の逆転を体現しており、同時代の報道写真が保った観察者的距離とは根本的に異なった*1。カメラは彼女にとってコミュニティのメンバーシップ証明であり、被写体との関係性の中から生まれた写真群は、後のSNS時代のセルフドキュメンタリー文化に先行するものとして再評価されている*2。1980年代に猛威を振るったエイズ禍は彼女の「選んだ家族」を次々と奪い、スライドショーは生の記録から悼みの場へと変貌した——バラッドに登場する多くの人物が1990年代初頭までに逝去している*3。1985年のホイットニー・ビエンナーレで美術界に広く知られ、1996年のホイットニー美術館回顧展で国際的評価を確立した*4。作品はMoMA・グッゲンハイム・テートが収蔵し、2007年にはハッセルブラッド賞を受賞した*5。2017年には自身のオキシコンチン依存症の経験から処方薬乱用問題への抗議団体P.A.I.N.（処方薬乱用介入委員会）を結成し、サックラー家の資金を受けていたメトロポリタン・グッゲンハイム・テート・ルーヴルへの抗議を主導した*3。世界の主要美術館が寄附金の返還とサックラーの冠名撤去に応じる事態となり、写真家が美術機関の資金構造そのものを変えた事例として記録されている*1。私的証言を社会変革の道具へと転化させた実践は、2022年にローラ・ポイトラス監督がドキュメンタリー映画化（ヴェネツィア映画祭金獅子賞）して広く知られた*1。',
+      textEn: 'Nan Goldin made intimacy itself into photographic method. Living within queer and trans communities around the Bowery, she photographed friends, lovers, sex workers, and chosen family from the inside rather than as an outsider*1. The resulting slideshows and the book The Ballad of Sexual Dependency turned private experience, memory, and vulnerability into a new kind of documentary practice*2. When AIDS devastated her community, the work became not only a diary but also a space of mourning*3. Goldin later carried that intimate witness into activism through P.A.I.N., showing how personal testimony could become a force of institutional change*5.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Nan Goldin', url: 'https://en.wikipedia.org/wiki/Nan_Goldin' },
+        { num: 2, name: 'Aperture Foundation — The Ballad of Sexual Dependency', url: 'https://aperture.org/books/the-ballad-of-sexual-dependency/' },
+        { num: 3, name: 'The Guardian — Nan Goldin and the opioid crisis', url: 'https://www.theguardian.com/artanddesign/2019/jan/25/nan-goldin-photographer-opioid-crisis-sackler-family' },
+        { num: 4, name: 'Whitney Museum — Nan Goldin', url: 'https://whitney.org/artists/3451' },
+        { num: 5, name: 'Hasselblad Foundation — Nan Goldin', url: 'https://hasselbladfoundation.org/wp/laureates/nan-goldin/' }
+      ]
+    }
+  },
+
+  {
+    id: 'wall',
+    name: 'Jeff Wall',
+    nameJa: 'ジェフ・ウォール',
+    nationality: 'CA',
+    flag: '🇨🇦',
+    years: '1946–',
+    era: '1980',
+    movements: ['シネマトグラフィック写真', 'ステージド写真', 'コンセプチュアルアート'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Jeff_Wall' },
+      { label: 'Tate — Jeff Wall', url: 'https://www.tate.org.uk/art/artists/jeff-wall-2475' },
+    ],
+    amazon: '',
+    context: {
+      text: '1946年バンクーバー生まれのウォールは、ブリティッシュ・コロンビア大学で修士号を取得した後、1970〜73年にロンドンのコートールド美術研究所でT.J.クラークに師事しマネと近代絵画論を研究した。クラークのマルクス主義的美術史——絵画を特定の社会関係とイデオロギー的緊張の文書として読む方法——はウォールに「絵画は美の記録ではなく社会的知識の一形式だ」という認識をもたらし、「19世紀の絵画が担った都市的現実の記録という機能を写真でいかに更新できるか」という問いを抱いて1970年代末に写真に転じた*1。絵画史の文脈を写真に持ち込む手法は具体的な参照として機能する。1977年にマドリードのプラド美術館でベラスケスとゴヤに圧倒されたウォールは、バス停の広告用バックライト透過式ディスプレイに近代的な絵画的発光の等価物を見出した。この形式が最初の大型ライトボックス作品「破壊された部屋」（1978年）に結実した——ドラクロワ「サルダナパールの死」（1827年）の左上から右下へ走る強い対角線構図と赤を基調とした暴力と性のイメージを借用し、荒廃した賃貸室の「事後」として再配置したものだ*1。「女性のための絵（1979年）」はマネ「フォリー＝ベルジェールのバー」（1882年）の内部構造を借用——バーメイドと客、鏡の反射という構成要素を現代のスタジオに移し、カメラをマネの絵における不安定な反射の位置に置くことでまなざしの機構そのものを可視化した。「突然の一陣の風（葛飾北斎に倣って）」（1993年）は北斎「富嶽三十六景・駿州江尻」の構図をブリティッシュ・コロンビアの農業地帯に移し100枚超のカットを1年かけてデジタル合成した作品で、テート・モダンが収蔵している*3。「映画的写真（cinematography）」という概念が演出と記録の写真的本質論争を無効化するメカニズムとはこうだ。ウォール自身は「私はこれをシネマトグラフィーと呼ぶ——映画制作から切り離しただけだ」と述べた。映画はつねに演出・俳優・セット・照明・編集を伴うが、「現実を偽造している」と非難されない——映画的なものとは「起こりえた状況の構築された表象」であり、実際の空間と身体の物理的リアリティを保ちながら現実を再現する様式だ。ウォールはこの様式を写真に持ち込むことで、「ドキュメンタリー対演出」という二項対立を溶解させた。彼の「ニア・ドキュメンタリー（near documentary）」概念はこれをさらに精緻化する——実際に目撃した出来事を俳優と小道具で同じロケーションに再構築することで、「記録したもの」でも「作り話」でもない第三の位置を占める*2。1995年に「Marks of Indifference: Aspects of Photography in, or as, Conceptual Art」（ロサンゼルス現代美術館刊行カタログ所収）という重要な理論的テキストを発表した。ここでウォールはコンセプチュアルアートが写真のドキュメンタリー的主張を利用したことが逆説的に「絵画的イメージ制作の再導入」を準備した、という歴史的論拠を展開し、自らの実践を正当化した。批評家マイケル・フリードはウォールの写真が「吸収（absorption）とシアトリカリティ（theatricality）」というシャルダンからマネに至る絵画の問題系と格闘していると論じ、ウォールを「これまでのどの時期よりも写真が芸術として重要になった」時代の中心に位置づけた。写真を絵画史と同等の解釈的深さを持つ芸術形式として位置づけた功績は、写真がギャラリーの壁を絵画と同等に占有し、批評・収集・美術館展示に絵画と同じ制度的重力を持つようになった1990年代以降の変容に決定的に寄与した*1。2002年ハッセルブラッド賞受賞。2005〜06年テート・モダンおよび2007年MoMAで大規模個展が開催された*4。',
+      textEn: 'Jeff Wall turned photography toward large-scale staged images that behave like encounters with cinema, painting, and urban modernity all at once*1. His lightbox works, displayed like luminous screens, made photography newly at home in the contemporary gallery while refusing the old opposition between document and fabrication*2. From The Destroyed Room to A Sudden Gust of Wind (after Hokusai), Wall repeatedly placed photography into direct dialogue with art history and modern social space*3. His work helped define the collector culture and museum status of contemporary photography from the 1990s onward*4.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Jeff Wall', url: 'https://en.wikipedia.org/wiki/Jeff_Wall' },
+        { num: 2, name: 'Tate — Jeff Wall', url: 'https://www.tate.org.uk/art/artists/jeff-wall-2476' },
+        { num: 3, name: 'Tate — A Sudden Gust of Wind (after Hokusai)', url: 'https://www.tate.org.uk/art/artworks/wall-a-sudden-gust-of-wind-after-hokusai-p77872' },
+        { num: 4, name: 'Hasselblad Foundation — Jeff Wall', url: 'https://hasselbladfoundation.org/wp/laureates/jeff-wall/' }
+      ]
+    }
+  },
+
+  {
+    id: 'gursky',
+    name: 'Andreas Gursky',
+    nameJa: 'アンドレアス・グルスキー',
+    nationality: 'DE',
+    flag: '🇩🇪',
+    years: '1955–',
+    era: '1980',
+    movements: ['デュッセルドルフ派', '大判カラー写真', 'コンセプチュアルアート'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Andreas_Gursky' },
+      { label: 'Tate — Andreas Gursky', url: 'https://www.tate.org.uk/art/artists/andreas-gursky-2508' },
+    ],
+    amazon: '',
+    context: {
+      text: '1955年ライプツィヒ生まれのグルスキーは、写真家の父・祖父のもとで育ち、フォルクヴァング芸術大学でオットー・シュタイネルトに学んだ後、デュッセルドルフ芸術アカデミーでベルント・ベッヒャーに師事した*1。師の「タイポロジー的記録」という方法論を継承しながら、対象を資本主義のグローバルな空間——証券取引所・物流倉庫・スタジアム——へと転じ、高所から大判カメラで撮影した複数カットをデジタル合成することで「人間の目では捉えられない全体像」を構築する手法を確立した*2。1999年の「ライン川（ライン IIシリーズ）」は河川両岸の堤防を幾何学的に整理した極度に抽象化された横断面で、2011年にクリスティーズのオークションで約433万ドルで落札されて当時の写真作品史上最高額を記録した*1。グルスキーの大型プリント（通常150×300センチ超）が示す「無数の反復に溶け込む個人」という構図は、グローバル化した経済システムの均質性と人間の無力さを視覚化するものとして批評家から繰り返し引用されてきた*3。ベッヒャーの弟子仲間であるトーマス・シュトゥルート・トーマス・ルフらとともに「デュッセルドルフ派」と呼ばれ、2001年のMoMA個展をはじめ主要美術館での展覧会を重ね、MoMA・テート・グッゲンハイムが作品を収蔵する*1。デュッセルドルフ芸術アカデミーの教授を長年務め、ドイツ写真研究所の設立にも関与した*2。1999年の「99セント」はアメリカのスーパーマーケットの棚を高密度に捉えた作品で、消費社会の過剰さを「ライン川」と並ぶ代表作として広く知られる*2。グルスキーがファインアートとしての写真の市場価値を飛躍的に高めた背景には複数の要因が連動している。第一に、150×300センチを超える巨大プリントが白壁のギャラリーで絵画と競う物理的存在感を実現し、「写真でも一室を支配できる」ことをコレクターに証明した。第二に、一作品あたりの版数を通常6部以下に制限することで希少性の論理を写真市場に持ち込み、版画・彫刻と同じ原則でコレクション価値を生み出した。第三に、ロスコの色面抽象を想起させる「99セント」の構成やミニマリズムと共鳴する「ライン川」の水平構造が、写真を絵画と同じ批評的語彙で論じる根拠を与え、コレクターに「写真を買う」ではなく「コンセプチュアル・アートを買う」という認識を生んだ。元MoMAキュレーターのピーター・ガラッシは「現代アートへの独自かつ挑戦的な貢献」と評し、2001年のMoMA個展が機関としての最高の承認を付与した*2。ベッヒャー夫妻から継承したコンセプチュアルアートとしての系譜が、主要オークションハウスで写真を絵画・彫刻と同列に扱わせる先例を確立し、現代フォトグラフィー・コレクター市場の形成に決定的な役割を果たした*3。',
+      textEn: `Born in Leipzig in 1955, Andreas Gursky grew up in a family of photographers, studied first with Otto Steinert at the Folkwang School, and then with Bernd Becher at the Dusseldorf Academy*1. He inherited the Bechers' typological discipline but redirected it toward the spaces of global capitalism - stock exchanges, logistics centers, stadiums, retail interiors - developing a method that often combined multiple large-format views into digitally assembled images larger and more comprehensive than ordinary human seeing*2. Rhine II (1999), with its radically abstracted geometry of riverbank and horizon, became emblematic of his practice; when it sold at Christie's in 2011 for roughly $4.3 million, it set a record for a photographic work at auction*1. Gursky's monumental prints, often well over 150 by 300 centimeters, repeatedly stage the individual as a tiny unit dissolved in repetition, making visible the scale, uniformity, and impersonal logic of global systems*3. Grouped with fellow Becher students such as Thomas Struth and Thomas Ruff under the label of the Dusseldorf School, he has been the subject of major exhibitions at institutions including MoMA, and his work is held by museums such as Tate and the Guggenheim*1. He also taught for many years at the Dusseldorf Academy and has been involved in shaping photographic institutions in Germany*2. Works such as 99 Cent, with its dense image of supermarket abundance, are frequently cited alongside Rhine II as defining pictures of late consumer culture*2. The mechanisms behind Gursky's impact on the photography market were several. First, his enormous prints — often exceeding 150 by 300 centimeters — gave photographs the same physical presence as large-scale paintings in gallery spaces, proving that a photograph could dominate a room. Second, by strictly limiting editions to as few as six prints per work, he imported the logic of scarcity from print and sculpture markets into photography. Third, the painterly qualities of his images — 99 Cent evoking a Rothko color field, Rhine II resonating with Minimalist horizontality — gave critics and collectors a vocabulary borrowed from painting to justify photography prices. Former MoMA curator Peter Galassi described his work as "a distinctive and challenging contribution to contemporary art," and the 2001 MoMA retrospective provided the institutional validation that collectors required*2. The lineage from the Bechers' conceptualism meant that major auction houses began treating photography on the same terms as painting and sculpture, establishing the collector market for contemporary photography as it now exists*3.`,
+      citations: [
+        { num: 1, name: 'Wikipedia — Andreas Gursky', url: 'https://en.wikipedia.org/wiki/Andreas_Gursky' },
+        { num: 2, name: 'Tate — Andreas Gursky', url: 'https://www.tate.org.uk/art/artists/andreas-gursky-2826' },
+        { num: 3, name: 'Guggenheim — Andreas Gursky', url: 'https://www.guggenheim.org/artwork/artist/andreas-gursky' }
+      ]
+    }
+  },
+
+  {
+    id: 'salgado',
+    name: 'Sebastião Salgado',
+    nameJa: 'セバスチャン・サルガド',
+    nationality: 'BR',
+    flag: '🇧🇷',
+    years: '1944–',
+    era: '1980',
+    movements: ['ドキュメンタリー', '社会的写真', '環境写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Sebasti%C3%A3o_Salgado' },
+      { label: 'Britannica — Sebastião Salgado', url: 'https://www.britannica.com/biography/Sebastiao-Salgado' },
+    ],
+    amazon: '',
+    context: {
+      text: '1944年ブラジル・ミナスジェライス州生まれのサルガドは、経済学の博士課程修了後に世界銀行のエコノミストとして赴任したアフリカで写真と出会い、「数字やレポートでは伝わらない人間の苦しみを写真で見せることができる」という確信から1973年にキャリアを転換した*1。ガンマ・シグマを経てマグナム・フォトスに加盟し（1979〜94年）、世界各地の労働現場を取材した。ブラジルのセラ・ペラーダ金鉱山（最盛期に採掘者5万人超）を1986〜89年に取材した写真は工業化以前の人力採掘を地獄絵的スケールで記録し、1993年刊行の写真集『ワーカーズ』（26か国の労働現場を収録）のランドマーク的イメージとなった*2。1994年のルワンダ虐殺取材で難民と死体を撮り続けた経験からPTSDを発症し、帰国後は「私の身体が腐っていくような感覚だった」と語るほど深刻な状態に陥り、しばらく写真を撮れなかった*1。回復の契機となったのは妻レリアとともに故郷農場の荒廃した土地に「インスティトゥート・テラ」を設立し、200万本以上の植樹で熱帯雨林を再生したことで、「写真を離れて自然を回復させることで自分も回復した」と述べている*3。この経験は2013年の写真集『ジェネシス』——手つかずの自然と先住民をモノクロで記録した集大成——への道を開いた*2。サルガドの高コントラストのモノクロ写真が持つ美しさは、「苦しみを美化している」という批評と「美によってのみ人々は直視できる」という擁護の両方を生み出し、ドキュメンタリー写真の倫理論争の焦点に置かれ続けてきた*4。1989年ハッセルブラッド賞・1998年プリンシパル・デ・アストゥリアス芸術賞を受賞し、テート・モダン・グランパレなど世界の主要美術館で大規模回顧展を開催した。2025年5月に81歳で逝去した*1。エコノミストとしての訓練がサルガドに「個人の苦しみをシステムと構造の文脈で捉える」視点をもたらしており、1995〜99年に取材した写真集『移民』（2000年刊）では難民・移住労働者・都市移住者の人口移動をグローバルな視点から描出した*1。スーザン・ソンタグは著書『他者の苦痛へのまなざし』（2003年）でサルガドの写真を具体的に論じ、「美的快楽が苦しみへの共感を麻痺させる」と批判した——これはドキュメンタリー写真史上最も著名な倫理論争のひとつとなった*4。マグナムを離れた後はパリに自身のエージェンシー「アマゾナス・イメージ」を設立し、写真の権利を自ら管理した*2。',
+      textEn: 'Sebastiao Salgado moved from economics to photography because he felt that numbers and reports could not convey human suffering with the force that images might*1. His projects on labor, migration, famine, and ecology gave documentary photography an epic, often monumental scale, from the miners of Serra Pelada to the displaced people of Migrations and the environments of Genesis*2. At the same time, his lush black-and-white style placed him at the center of intense ethical debate about whether beauty deepens or weakens political response to suffering*4. Salgado remains one of the most influential and contested figures in late documentary photography*1.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Sebastião Salgado', url: 'https://en.wikipedia.org/wiki/Sebasti%C3%A3o_Salgado' },
+        { num: 2, name: 'Magnum Photos — Sebastião Salgado', url: 'https://www.magnumphotos.com/photographer/sebastiao-salgado/' },
+        { num: 3, name: 'Instituto Terra', url: 'https://www.institutoterra.org/' },
+        { num: 4, name: 'The Guardian — Sebastião Salgado', url: 'https://www.theguardian.com/artanddesign/sebastiao-salgado' }
+      ]
+    }
+  },
+
+  {
+    id: 'parr',
+    name: 'Martin Parr',
+    nameJa: 'マーティン・パー',
+    nationality: 'GB',
+    flag: '🇬🇧',
+    years: '1952–',
+    era: '1980',
+    movements: ['ドキュメンタリー', 'ニューカラー', 'イギリス写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Martin_Parr' },
+      { label: 'Martin Parr Foundation', url: 'https://www.martinparr.com/' },
+    ],
+    amazon: '',
+    context: {
+      text: '1952年イングランド・サリー州生まれのパーは、マンチェスター工科大学で写真を学んだ後、北イングランドの衰退するコミュニティを撮り続け、1983〜85年の夏にマージーサイドの労働者階級が集うシーサイドリゾート・ニュー・ブライトンを取材した*1。電子フラッシュ・近接・飽和色彩によって記録した写真集『ラスト・リゾート』（1986年刊）は、サッチャー政権下の産業空洞化と格差の中で「格安リゾートに喜ぶしかない人々」を愛情と皮肉の入り混じった目線で描き、英国ドキュメンタリー写真の文法を一変させた*2。パーが変えた「文法」とは、ビル・ブラント・ドン・マクリン・クリス・キリップらが体現してきた英国人道主義的ドキュメンタリーの慣習——モノクローム・被写体との距離を保った観察・苦境にある労働者階級への共感と連帯——のことである。その伝統では被写体は尊厳をもって、しばしば英雄的に描かれた。パーはジョエル・マイヤーウィッツやウィリアム・エグルストンから学んだカラーとリングフラッシュによる近接撮影でこれを置き換え、共感の代わりに人類学的な観察眼と諷刺的な距離を持ち込んだ。批評家ゲリー・バジャーはこれを「モノクロームからカラーへの地震のような転換で、ドキュメンタリー写真の新しいトーンの発展を告げるものだった」と評した*2。1994年のマグナム入会審査ではフィリップ・ジョーンズ・グリフィスが「これは異端だ」と強く反対し、「被写体への共感というヒューマニスト的信条をパーは踏みにじっている」と主張したが、最終的に僅差の多数決で承認された*1。1990年代以降はグローバリゼーションと消費文化の均質化——世界各地のビュッフェ・土産物屋・観光客——を撮り続け、約60冊のフォトブックを刊行してフォトブック文化の普及にも尽力した*3。2015年に設立したマーティン・パー財団はブリストルを拠点として英国・アイルランド写真史のアーカイブ収集と公開に取り組む*4。2021年にCBE（コマンダー・オブ・ザ・ブリティッシュ・エンパイア）を受章し、2025年に73歳で逝去した*1。作品はテート・モダン・ポンピドゥーセンター・V&A博物館などの主要コレクションに収蔵されており、英国の日常を最も鋭く批評した写真家として国際的に位置づけられている*1。2013〜17年にはマグナム・フォトスの会長を務めた*2。',
+      textEn: 'Martin Parr changed documentary photography by bringing saturated color, electronic flash, and intrusive closeness into the depiction of ordinary British life*1. The "grammar" he overturned was the humanist documentary tradition embodied by photographers such as Bill Brandt, Don McCullin, and Chris Killip — monochrome, observational distance, and empathy with working-class subjects depicted with dignity and often heroism. Drawing on American color photographers like Joel Meyerowitz and William Eggleston, Parr replaced empathy with anthropological detachment and satirical irony. The Last Resort became a landmark because it mixed satire, affection, vulgarity, and social critique in ways that broke with older documentary seriousness*2. Critic Gerry Badger called it "a seismic change — from monochrome to colour, a fundamental technical change that heralded the development of a new tone in documentary photography." The controversy was fierce: at Parr\'s Magnum admission in 1994, Philip Jones Griffiths called it heresy, arguing that Parr had violated the humanist faith requiring empathy between photographer and subject; the vote passed by a narrow majority*1. Parr later expanded this approach to global tourism, consumption, and the homogenized rituals of late capitalism, while also becoming one of the great champions of photobook culture*3. His work remains essential for understanding how documentary could become comic, uncomfortable, and brightly colored without losing its critical edge*4.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Martin Parr', url: 'https://en.wikipedia.org/wiki/Martin_Parr' },
+        { num: 2, name: 'Magnum Photos — Martin Parr', url: 'https://www.magnumphotos.com/photographer/martin-parr/' },
+        { num: 3, name: 'Photography Now — Martin Parr', url: 'https://photography-now.com/exhibition/martin_parr' },
+        { num: 4, name: 'Martin Parr Foundation', url: 'https://martinparrfoundation.org/' }
+      ]
+    }
+  },
+
+  {
+    id: 'becher',
+    name: 'Bernd & Hilla Becher',
+    nameJa: 'ベルント＆ヒラ・ベッヒャー',
+    nationality: 'DE',
+    flag: '🇩🇪',
+    years: '1931–2007 / 1934–2022',
+    era: '1980',
+    movements: ['タイポロジー写真', 'コンセプチュアルアート', 'デュッセルドルフ派'],
+    thumbnail: '',
+    links: [
+      { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Bernd_%26_Hilla_Becher' },
+      { label: 'Tate — Bernd and Hilla Becher', url: 'https://www.tate.org.uk/art/artists/bernd-and-hilla-becher-718' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ベルント（1931〜2007）とヒラ（1934〜2022）のベッヒャー夫妻はデュッセルドルフ芸術アカデミーで出会い、1959年から共同制作を開始した*1。20世紀後半に急速に消えゆくドイツ・ルール工業地帯の産業建築——水塔・溶鉱炉・ガスタンク・炭鉱の捲揚機・石灰窯——を記録するため、常に曇天・正面・同一スケール・モノクロ・人物なしという厳格な条件で撮影し、同一類型の複数作品をグリッド状に並べた「タイポロジー・シート」として提示した*2。「匿名の彫刻（Anonyme Skulpturen）」とは、1970年に刊行した同名の写真集（デュッセルドルフ：アート・プレス社）で提唱した概念である。水塔・ガスタンク・溶鉱炉といった産業構造物は美的意図なしに純粋な機能と構造的必然から形態が決定される——すなわち誰の名もない「匿名」の形態だが、その結果として彫刻的な視覚的説得力を持つ形が生まれている、という主張だ。これはデュシャンのレディメイドの論理と直結する：美的意図なしに作られたものを「彫刻」と名指す行為そのものが芸術的提案になる。工業建築を「彫刻」と呼ぶことで、機能と美の二項対立・記録と美術の境界・建築と彫刻の区分を同時に問い直した*1。ミニマリズムおよびコンセプチュアルアートの文脈での評価がタイポロジーの方法論を美術史に定着させたメカニズムを理解するには、1969年を出発点とする必要がある。この年、デュッセルドルフ市立芸術館でベッヒャー夫妻の個展が開催されたが、同時期の同館はアメリカのミニマリズム（ドナルド・ジャッド・カール・アンドレ・ダン・フレイヴィン）の展示も行っていた。観客と批評家は同一の制度空間でベッヒャーとミニマリズムを並べて体験した——これが最初の決定的な出会いだった。形式的共鳴は実質的だった：ジャッドやアンドレが追求した「シリアリティ（連続性）・客観性・表現の排除」をベッヒャーのタイポロジー・グリッドも共有していた。ソル・ルウィットの「アイデアが作品を生む機械になる」という定式はベッヒャーの手続き——「同一類型をすべて同一条件で撮影する」という規則が主観的判断を介さず作品を生成する——を正確に記述する。コンセプチュアルアートの文脈との相性が良かったのは、情報・記録・系統的分類をアート実践の中心に置くという問題意識をコンセプチュアルアートと共有していたからだ。カール・アンドレは1972年12月の「アートフォーラム」誌にベッヒャー論を寄稿し「タイポロジーの異常な科学的価値」を認めた——これはアメリカのミニマリズム・コンセプチュアルアート界が夫妻を正式に「採用」した事件とされる。同年、ハラルド・ゼーマン企画のカッセル・ドクメンタ5にも参加し国際的地位を確立した。MoMAは1970年の「インフォメーション」展でベッヒャーを脱物質化・情報ベースのコンセプチュアルアートとして位置づけた。このような制度的枠組みの連鎖——アートフォーラムへの掲載、MoMAへの参加、ドクメンタへの参加——によって夫妻の作品は美術史の解釈インフラ（批評書誌・美術館収蔵・オークション記録・学術分析）に組み込まれ、「タイポロジー」が写真の一実践ではなく美術史的概念として確立した*1。この地位確立がデュッセルドルフ芸術アカデミーでの教育活動を介してグルスキー・シュトゥルート・ルフ・ヘーファーら「デュッセルドルフ派」に継承され、1990年代以降の大判カラー写真市場を形成した*3。1991年のヴェネツィア・ビエンナーレでは写真ではなく彫刻部門の金獅子賞を受賞——これは「匿名の彫刻」論の制度的な最終確認であり、写真が彫刻と同等の芸術的地位を持つという認識の転換点とされる*1。2002年エラスムス賞・2004年ハッセルブラッド賞を受賞。作品はMoMA・テート・シカゴ美術館ほか世界の主要美術館に収蔵されている*4。',
+      textEn: 'Bernd and Hilla Becher turned industrial structures into one of the central subjects of postwar conceptual photography*1. By photographing water towers, furnaces, gas tanks, and winding towers under strict conditions of frontal view, overcast light, and consistent scale, they developed the typological grid as a visual method*2. Their work shifted attention from the individuality of a single building to the differences within a class of forms, which is why it was often understood as a kind of anonymous sculpture. As teachers in Dusseldorf, they shaped a generation that included Gursky, Struth, Ruff, and Hofer*3. The Bechers remain crucial both as artists and as preservers of industrial memory*4.',
+      citations: [
+        { num: 1, name: 'Wikipedia — Bernd and Hilla Becher', url: 'https://en.wikipedia.org/wiki/Bernd_%26_Hilla_Becher' },
+        { num: 2, name: 'Tate — Bernd and Hilla Becher', url: 'https://www.tate.org.uk/art/artists/bernd-and-hilla-becher-718' },
+        { num: 3, name: 'Guggenheim — Bernd and Hilla Becher', url: 'https://www.guggenheim.org/artwork/artist/bernd-and-hilla-becher' },
+        { num: 4, name: 'Hasselblad Foundation — Bernd and Hilla Becher', url: 'https://hasselbladfoundation.org/wp/laureates/bernd-och-hilla-becher/' }
+      ]
+    }
+  },
+
+];
