@@ -156,7 +156,12 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
   const zoomRef = useRef(1);
   const viewAnimRef = useRef(null);
   const lastPointerSelectRef = useRef({ id: null, time: 0 });
+  const onSelectRef = useRef(onSelect);
   const labelFor = useCallback((p) => isEnglish ? (p.nameEn || p.name || p.nameJa || p.id) : (p.name || p.nameJa || p.nameEn || p.id), [isEnglish]);
+
+  useEffect(() => {
+    onSelectRef.current = onSelect;
+  }, [onSelect]);
 
   const flushDragPan = () => {
     dragFrameRef.current = null;
@@ -712,7 +717,7 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
       e?.preventDefault?.();
       e?.stopPropagation?.();
       lastPointerSelectRef.current = { id: currentDrag.starId, time: performance.now() };
-      onSelect(currentDrag.starId);
+      onSelectRef.current(currentDrag.starId);
     }
   };
 
