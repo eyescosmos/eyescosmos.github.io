@@ -1469,7 +1469,7 @@ def extend_movement_lead(lead: str, sections: list[dict], lang: str) -> str:
     return extended if extended else lead
 
 
-def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str, ja_href: str | None = None, en_href: str | None = None) -> str:
+def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str, movements_meta: dict | None = None, ja_href: str | None = None, en_href: str | None = None) -> str:
     kind_label = "Movement" if page_kind == "movement" else ("Country" if page_kind == "country" else "Era")
     label = f"Photo Coordinates / {kind_label}"
     structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip())
@@ -1542,7 +1542,7 @@ gtag('config', '{GA_ID}');
   <div class="page-shell">
     <div class="hero">
       <h1 class="title">{esc(title.split('｜')[0].split('|')[0].strip())}</h1>
-      <p class="lead">{esc(lead)}</p>
+      <p class="lead">{render_inline_nodes(lead, lang, movements_meta)}</p>
       <div class="hero-meta">{hero_groups_html}</div>
     </div>
     <div class="section-grid">
@@ -1940,6 +1940,7 @@ def main():
                 list_title="Photographers" if lang == "en" else "写真家一覧",
                 list_html=render_archive_like_list(people, lang, era_lookup, movements_meta, enrichments, country_overrides, essay_overrides),
                 directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
+                movements_meta=movements_meta,
                 ja_href=ja_href,
                 en_href=en_href,
             )
