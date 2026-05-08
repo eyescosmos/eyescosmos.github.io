@@ -654,6 +654,7 @@ def page_structured_data(title: str, description: str, canonical: str, lang: str
                 "@id": canonical,
                 "url": canonical,
                 "name": title,
+                "headline": title,
                 "description": description,
                 "inLanguage": "en" if lang == "en" else "ja",
                 "isPartOf": {
@@ -1216,7 +1217,7 @@ def movement_support_sections(
     if featured:
         photographer_paragraphs = []
         for photographer in featured:
-            lead = photographer_short_lead(photographer, essay_overrides, movements_meta, enrichments, era_lookup, lang, 280 if lang == "en" else 260)
+            lead = photographer_short_lead(photographer, essay_overrides, movements_meta, enrichments, era_lookup, lang, 280 if lang == "en" else 380)
             photographer_paragraphs.append(linked_photographer_lead_nodes(photographer, lead, lang))
         sections.append({
             "heading": "Photographers in View" if lang == "en" else "関わりの深い写真家",
@@ -1469,6 +1470,148 @@ def extend_movement_lead(lead: str, sections: list[dict], lang: str) -> str:
     return extended if extended else lead
 
 
+def movement_section_bucket_ja(heading: str, index: int) -> str:
+    label = (heading or "").strip()
+    if label == "関わりの深い写真家":
+        return "photographers"
+    if label == "関連する表現":
+        return "related"
+    if label in {"受容と読み替え", "批判とその後", "批判と継承"}:
+        return "after"
+    if label == "写真史の中での位置":
+        return "impact"
+    if any(keyword in label for keyword in ("どこから", "どんな状況", "記録の制度", "成立背景")):
+        return "background"
+    if any(keyword in label for keyword in ("技法と制度", "視覚の方法", "方法と媒体", "イメージの扱い方", "色とスケールの使い方", "制度と流通", "写真家と写真集", "何を目指したのか")):
+        return "aims"
+    if any(keyword in label for keyword in ("写真史で何を変えたか", "展開の場", "なぜ受容が遅れたのか", "教育とその外部", "印刷媒体としての写真", "アーカイブと権力")):
+        return "impact"
+    if "批判" in label or "その後" in label or "継承" in label:
+        return "after"
+    if index <= 0:
+        return "background"
+    if index == 1:
+        return "aims"
+    if index == 2:
+        return "impact"
+    return "after"
+
+
+def standardize_movement_sections_ja(movement_label: str, lead: str, sections: list[dict]) -> list[dict]:
+    buckets = {
+        "definition": [lead],
+        "background": [],
+        "aims": [],
+        "impact": [],
+        "after": [],
+        "photographers": [],
+        "related": [],
+    }
+    for index, section in enumerate(sections):
+        bucket = movement_section_bucket_ja(section.get("heading") or "", index)
+        buckets[bucket].extend(section.get("paragraphs") or [])
+
+    ordered = [
+        (f"{movement_label}とは", buckets["definition"]),
+        ("成立背景", buckets["background"]),
+        ("何を目指したのか", buckets["aims"]),
+        ("写真史で何を変えたか", buckets["impact"]),
+        ("批判・限界・その後", buckets["after"]),
+        ("代表的な写真家", buckets["photographers"]),
+        ("関連する表現", buckets["related"]),
+    ]
+
+    normalized = []
+    for heading, paragraphs in ordered:
+        filtered = [paragraph for paragraph in paragraphs if paragraph]
+        if not filtered and heading == f"{movement_label}とは":
+            filtered = [lead]
+        normalized.append({"heading": heading, "paragraphs": filtered})
+    return normalized
+
+
+def movement_meta_description_ja(
+    label: str,
+    lead: str,
+    movement_desc: str,
+    featured_people: list[dict],
+) -> str:
+    names = [display_name(photographer, "ja") for photographer in featured_people[:2] if display_name(photographer, "ja")]
+    name_variants = []
+    if len(names) >= 2:
+        name_variants.append("、".join(names[:2]))
+    if names:
+        name_variants.append(names[0])
+    name_variants.append("")
+
+    first_candidate = ""
+    for limit in (62, 56, 50, 44):
+        summary = sentence_summary(strip_inline_link_tokens(lead or movement_desc), "ja", limit=limit, max_sentences=1)
+        summary = re.sub(rf"^{re.escape(label)}は[、，]?", "", summary).strip()
+        summary = summary.rstrip("。")
+        for name_text in name_variants:
+            if name_text:
+                candidate = f"{label}とは何か。{summary}。{name_text}などの代表作家と関連する表現を手がかりに、成立背景、何を目指したのか、写真史で何を変えたかまで解説します。"
+            else:
+                candidate = f"{label}とは何か。{summary}。関連する表現を手がかりに、成立背景、代表的な写真家、何を目指したのか、写真史で何を変えたかまで解説します。"
+            if not first_candidate:
+                first_candidate = candidate
+            if 90 <= len(candidate) <= 130:
+                return candidate
+
+    if first_candidate:
+        return first_candidate[:129].rstrip("、。") + "。"
+
+    fallback = f"{label}とは何か。成立背景、代表的な写真家、関連する表現、何を目指したのか、写真史で何を変えたかまで解説します。"
+    return fallback
+
+
+def movement_sections_plain_text(sections: list[dict], lang: str, movements_meta: dict) -> str:
+    chunks = []
+    for section in sections:
+        for paragraph in section.get("paragraphs") or []:
+            nodes, _cite_keys, _no_cite = paragraph_payload(paragraph, lang, movements_meta)
+            text = render_inline_nodes(nodes, lang, movements_meta)
+            text = re.sub(r"<[^>]+>", "", text)
+            text = html.unescape(text).strip()
+            if text:
+                chunks.append(text)
+    return clean_inline_text(" ".join(chunks))
+
+
+def ensure_minimum_movement_body_ja(
+    movement: str,
+    movement_label: str,
+    sections: list[dict],
+    people: list[dict],
+    eras: list[dict],
+    movements_meta: dict,
+) -> list[dict]:
+    if len(movement_sections_plain_text(sections, "ja", movements_meta)) >= 2000:
+        return sections
+
+    timeframe_nodes = movement_era_span_nodes(people, eras, "ja")
+    related_nodes = related_movement_items(people, movement, movements_meta, "ja", 4)
+    if related_nodes:
+        extra_nodes = [movement_label, "は"]
+        if timeframe_nodes:
+            extra_nodes += timeframe_nodes
+        extra_nodes += ["に広がった議論として見ると、"] + join_node_list(related_nodes, "ja") + ["とのあいだで批評語や制度の使われ方がどう変わったかも見えやすくなります。雑誌、展覧会、教育、出版のどこで機能したのかをたどることが、この表現の厚みを測る手がかりになります。"]
+    else:
+        extra_nodes = [movement_label, "は"]
+        if timeframe_nodes:
+            extra_nodes += timeframe_nodes
+        extra_nodes += ["に広がった表現として読むことで、作品の見た目だけでなく、雑誌、展覧会、教育、出版のどこで機能したのかという制度面の変化も追いやすくなります。"]
+
+    for section in sections:
+        if section.get("heading") == "関連する表現":
+            section.setdefault("paragraphs", []).append(extra_nodes)
+            break
+    else:
+        sections.append({"heading": "関連する表現", "paragraphs": [extra_nodes]})
+    return sections
+
+
 def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str, movements_meta: dict | None = None, ja_href: str | None = None, en_href: str | None = None) -> str:
     kind_label = "Movement" if page_kind == "movement" else ("Country" if page_kind == "country" else "Era")
     label = f"Photo Coordinates / {kind_label}"
@@ -1554,9 +1697,9 @@ gtag('config', '{GA_ID}');
     </div>
     {directory_nav_html}
     <footer class="site-footer" data-nosnippet>
-      <div>{esc(footer_line1)}</div>
-      <div class="footer-secondary">{esc(footer_line2)}</div>
-      {footer_extra}
+      <div data-nosnippet>{esc(footer_line1)}</div>
+      <div class="footer-secondary" data-nosnippet>{esc(footer_line2)}</div>
+      {footer_extra.replace('<div class="footer-secondary">', '<div class="footer-secondary" data-nosnippet>') if footer_extra else ""}
       <div class="footer-links"><a href="{privacy_href}">{privacy_label}</a></div>
     </footer>
   </div>
@@ -1880,7 +2023,6 @@ def main():
             canonical = en_href if lang == "en" else ja_href
             movement_desc = movement_meta.get("descEn" if lang == "en" else "desc") or movement_meta.get("desc") or ""
             movement_desc = clean_context_intro(movement_desc, lang)
-            description = taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta, movement_desc=movement_desc)
             lead = movement_meta.get("leadEn" if lang == "en" else "leadJa") or movement_lead_text(movement_label, movement_desc, lang)
             custom_sections = movement_meta.get("sectionsEn" if lang == "en" else "sectionsJa") or []
             sections = custom_sections or movement_auto_sections(
@@ -1910,6 +2052,13 @@ def main():
                 )
             lead = extend_movement_lead(lead, sections, lang)
             featured = featured_movement_photographers(people, movement, 4)
+            if lang == "ja":
+                sections = standardize_movement_sections_ja(movement_label, lead, sections)
+                sections = ensure_minimum_movement_body_ja(movement, movement_label, sections, people, eras, movements_meta)
+                override_desc = movement_meta.get("metaDescJa") or ""
+                description = override_desc if 90 <= len(override_desc) <= 130 else movement_meta_description_ja(movement_label, lead, movement_desc, featured)
+            else:
+                description = taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta, movement_desc=movement_desc)
             sources = movement_source_links(
                 movement_meta.get("sourcesEn" if lang == "en" else "sourcesJa") or movement_meta.get("sources") or [],
                 featured,
