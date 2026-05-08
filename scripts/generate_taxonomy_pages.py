@@ -8,7 +8,7 @@ from pathlib import Path
 import unicodedata
 import html
 import re
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
@@ -16,6 +16,28 @@ GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260419c"
 GLOBAL_SEARCH_VERSION = "20260421b"
 OGP_IMAGE_URL = f"{SITE}/assets/ogp-default.png"
+TRUSTED_SOURCE_HOSTS = {
+    "americanart.si.edu",
+    "archive.artic.edu",
+    "artic.edu",
+    "artplatform.go.jp",
+    "collections.eastman.org",
+    "domonken-kinenkan.jp",
+    "eastman.org",
+    "getty.edu",
+    "hasselbladfoundation.org",
+    "henricartierbresson.org",
+    "icp.org",
+    "loc.gov",
+    "metmuseum.org",
+    "moma.org",
+    "nga.gov",
+    "smarthistory.org",
+    "tate.org.uk",
+    "topmuseum.jp",
+    "vam.ac.uk",
+    "whitney.org",
+}
 NON_PHOTOGRAPHER_IDS = {
     "charles-wirgman",
     "fabian-marti",
@@ -303,37 +325,7 @@ def render_content_section(section: dict) -> str:
         </section>'''
 
 
-def render_faq_section(faq_items: list[dict], lang: str) -> str:
-    if not faq_items:
-        return ""
-    title = "FAQ" if lang == "en" else "よくある質問"
-    items = []
-    for item in faq_items:
-        question = item.get("question") or ""
-        answer = item.get("answer") or ""
-        if not question or not answer:
-            continue
-        items.append(
-            f'''          <details class="taxonomy-faq-item">
-            <summary>{esc(question)}</summary>
-            <p>{render_inline_nodes(answer)}</p>
-          </details>'''
-        )
-    if not items:
-        return ""
-    return f'''        <section class="section taxonomy-faq">
-          <h2>{esc(title)}</h2>
-          <div class="taxonomy-faq-list">
-{chr(10).join(items)}
-          </div>
-        </section>'''
-
-
-def movement_detail_html(movement_meta: dict, lang: str) -> str:
-    suffix = "En" if lang == "en" else "Ja"
-    sections = movement_meta.get(f"sections{suffix}") or []
-    faq_items = movement_meta.get(f"faq{suffix}") or []
-    sources = movement_meta.get(f"sources{suffix}") or movement_meta.get("sources") or []
+def render_movement_detail_html(sections: list[dict], sources: list[dict], lang: str) -> str:
     parts = [render_content_section(section) for section in sections if section]
     if sources:
         source_links = "".join(
@@ -348,9 +340,6 @@ def movement_detail_html(movement_meta: dict, lang: str) -> str:
           <div class="taxonomy-source-links">{source_links}</div>
         </section>'''
         )
-    faq_html = render_faq_section(faq_items, lang)
-    if faq_html:
-        parts.append(faq_html)
     return "\n".join(parts)
 
 
@@ -501,7 +490,7 @@ def top_movements(photographers: list[dict], movements_meta: dict, lang: str, li
     return items
 
 
-def page_structured_data(title: str, description: str, canonical: str, lang: str, crumb_label: str, faq_items: list[dict] | None = None) -> str:
+def page_structured_data(title: str, description: str, canonical: str, lang: str, crumb_label: str) -> str:
     payload = {
         "@context": "https://schema.org",
         "@graph": [
@@ -527,29 +516,6 @@ def page_structured_data(title: str, description: str, canonical: str, lang: str
             },
         ],
     }
-    if faq_items:
-        questions = []
-        for item in faq_items:
-            question = item.get("question") or ""
-            raw_answer = item.get("answer", "")
-            if isinstance(raw_answer, list):
-                raw_answer = "".join(str(part.get("text", "")) if isinstance(part, dict) else str(part) for part in raw_answer)
-            answer = clean_inline_text(re.sub(r"<[^>]+>", "", str(raw_answer or "")))
-            if question and answer:
-                questions.append({
-                    "@type": "Question",
-                    "name": question,
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": answer,
-                    },
-                })
-        if questions:
-            payload["@graph"].append({
-                "@type": "FAQPage",
-                "@id": f"{canonical}#faq",
-                "mainEntity": questions,
-            })
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
@@ -784,6 +750,294 @@ def join_labels(labels: list[str], lang: str) -> str:
     return "、".join(labels)
 
 
+def join_node_list(items: list[dict], lang: str) -> list:
+    if not items:
+        return []
+    nodes = []
+    total = len(items)
+    for index, item in enumerate(items):
+        if index:
+            if lang == "en":
+                if total == 2:
+                    nodes.append(" and ")
+                elif index == total - 1:
+                    nodes.append(", and ")
+                else:
+                    nodes.append(", ")
+            else:
+                nodes.append("、")
+        nodes.append(item)
+    return nodes
+
+
+def is_trusted_source_url(url: str) -> bool:
+    if not url:
+        return False
+    host = (urlparse(url).hostname or "").lower()
+    host = host[4:] if host.startswith("www.") else host
+    return any(host == trusted or host.endswith(f".{trusted}") for trusted in TRUSTED_SOURCE_HOSTS)
+
+
+def photographer_source_records(photographer: dict) -> list[dict]:
+    records = []
+    for block in ("context", "expression"):
+        citations = (photographer.get(block) or {}).get("citations") or []
+        for citation in citations:
+            records.append({
+                "label": citation.get("name") or citation.get("label") or "",
+                "url": citation.get("url") or "",
+            })
+    for link in photographer.get("links") or []:
+        records.append({
+            "label": link.get("label") or "",
+            "url": link.get("url") or "",
+        })
+    return records
+
+
+def photographer_has_trusted_source(photographer: dict) -> bool:
+    return any(is_trusted_source_url(record.get("url") or "") for record in photographer_source_records(photographer))
+
+
+def movement_index_in_photographer(photographer: dict, movement: str) -> int:
+    values = photographer.get("movements") or []
+    try:
+        return values.index(movement)
+    except ValueError:
+        return 99
+
+
+def featured_movement_photographers(people: list[dict], movement: str, limit: int = 4) -> list[dict]:
+    ranked = sorted(
+        people,
+        key=lambda photographer: (
+            movement_index_in_photographer(photographer, movement),
+            0 if photographer_has_trusted_source(photographer) else 1,
+            parse_birth_year(photographer),
+            (display_name(photographer, "en") or "").lower(),
+        ),
+    )
+    return ranked[:limit]
+
+
+def strip_leading_name(text: str, name: str) -> str:
+    value = (text or "").strip()
+    if not value or not name:
+        return value
+    if value.startswith(name):
+        return value[len(name):].lstrip()
+    return value
+
+
+def photographer_name_candidates(photographer: dict, lang: str) -> list[str]:
+    candidates = []
+    primary = display_name(photographer, lang)
+    secondary = display_alt_name(photographer, lang)
+    for value in (primary, secondary):
+        if value and value not in candidates:
+            candidates.append(value)
+    if lang == "ja" and primary and "・" in primary:
+        surname = primary.split("・")[-1].strip()
+        if surname and surname not in candidates:
+            candidates.append(surname)
+    if lang == "en" and primary and " " in primary:
+        surname = primary.split(" ")[-1].strip()
+        if surname and surname not in candidates:
+            candidates.append(surname)
+    return candidates
+
+
+def linked_photographer_lead_nodes(photographer: dict, lead: str, lang: str) -> list:
+    text = clean_inline_text(lead)
+    href = photographer_path(photographer, lang)
+    for candidate in photographer_name_candidates(photographer, lang):
+        index = text.find(candidate)
+        if index >= 0:
+            nodes = []
+            if index > 0:
+                nodes.append(text[:index])
+            nodes.append({"text": candidate, "href": href})
+            if index + len(candidate) < len(text):
+                nodes.append(text[index + len(candidate):])
+            return nodes
+    separator = ": " if lang == "en" else "："
+    return [{"text": display_name(photographer, lang), "href": href}, separator, text]
+
+
+def related_movement_items(people: list[dict], current_movement: str, movements_meta: dict, lang: str, limit: int = 4) -> list[dict]:
+    counts = Counter()
+    for photographer in people:
+        seen = set()
+        for movement in photographer.get("movements") or []:
+            if not movement or movement == current_movement or movement in seen:
+                continue
+            seen.add(movement)
+            counts[movement] += 1
+    items = []
+    for movement, _count in counts.most_common(limit):
+        items.append({
+            "text": localized_movement_name(movement, movements_meta, lang),
+            "href": movement_path(movement, lang, movements_meta),
+        })
+    return items
+
+
+def movement_era_span_nodes(people: list[dict], eras: list[dict], lang: str) -> list:
+    order_lookup = {era["id"]: index for index, era in enumerate(eras)}
+    unique_ids = sorted(
+        {
+            photographer.get("era")
+            for photographer in people
+            if photographer.get("era") in order_lookup
+        },
+        key=lambda era_id: order_lookup[era_id],
+    )
+    if not unique_ids:
+        return []
+    first = next((era for era in eras if era["id"] == unique_ids[0]), None)
+    if not first:
+        return []
+    first_node = {"text": era_short_label(first, lang), "href": era_path(first["id"], lang)}
+    if len(unique_ids) == 1:
+        return ["in ", first_node] if lang == "en" else [first_node, "に"]
+    last = next((era for era in eras if era["id"] == unique_ids[-1]), None)
+    if not last or last["id"] == first["id"]:
+        return [first_node]
+    last_node = {"text": era_short_label(last, lang), "href": era_path(last["id"], lang)}
+    if lang == "en":
+        return ["from ", first_node, " to ", last_node]
+    return [first_node, "から", last_node, "にかけて"]
+
+
+def movement_auto_sections(
+    movement: str,
+    movement_label: str,
+    movement_desc: str,
+    people: list[dict],
+    eras: list[dict],
+    lang: str,
+    movements_meta: dict,
+    enrichments: dict,
+    country_overrides: dict,
+    essay_overrides: dict,
+    era_lookup: dict,
+) -> list[dict]:
+    timeframe_nodes = movement_era_span_nodes(people, eras, lang)
+    related_nodes = related_movement_items(people, movement, movements_meta, lang, 4)
+    featured = featured_movement_photographers(people, movement, 4)
+
+    if lang == "en":
+        sections = [
+            {
+                "heading": f"What Is {movement_label}?",
+                "paragraphs": [
+                    [movement_lead_text(movement_label, movement_desc, lang)],
+                    ["Rather than stopping at a dictionary definition, this page places the term beside photographers, periods, and adjacent approaches so that its historical use can be read in context."],
+                ],
+            }
+        ]
+        history_paragraph = []
+        if timeframe_nodes:
+            history_paragraph = ["On this site, photographers connected to ", movement_label, " appear mainly "] + timeframe_nodes
+            if related_nodes:
+                history_paragraph += [", often overlapping with "] + join_node_list(related_nodes, lang) + ["."]
+            else:
+                history_paragraph += ["."]
+        else:
+            history_paragraph = [movement_label, " is treated here as a historical entry point that links photographers, periods, and neighboring approaches rather than as a detached glossary term."]
+        history_paragraph += [" The category is most useful when read alongside the people and contexts that made it visible."]
+        sections.append(
+            {
+                "heading": "Where It Sits in the History of Photography",
+                "paragraphs": [history_paragraph],
+            }
+        )
+        photographer_paragraphs = []
+        if featured:
+            photographer_paragraphs.append(["A practical way into this page is to start with photographers whose work makes the category visible in concrete terms."])
+            for photographer in featured:
+                lead = photographer_short_lead(photographer, essay_overrides, movements_meta, enrichments, era_lookup, lang, 150)
+                photographer_paragraphs.append(linked_photographer_lead_nodes(photographer, lead, lang))
+            sections.append({"heading": "Key Photographers", "paragraphs": photographer_paragraphs})
+        if related_nodes:
+            sections.append(
+                {
+                    "heading": "Related Movements",
+                    "paragraphs": [
+                        [movement_label, " often overlaps with "] + join_node_list(related_nodes, lang) + [". These links do not mean the categories are identical; they show where subject matter, method, institutions, or historical context begin to touch."]
+                    ],
+                }
+            )
+        return sections
+
+    sections = [
+        {
+            "heading": f"{movement_label}とは",
+            "paragraphs": [
+                [movement_lead_text(movement_label, movement_desc, lang)],
+                ["このページでは、用語だけを短く定義するのではなく、関係する写真家、時代、近い表現をあわせて見られるようにしています。"],
+            ],
+        }
+    ]
+    history_paragraph = []
+    if timeframe_nodes:
+        history_paragraph = ["このページに集めた作家は"] + timeframe_nodes
+        if related_nodes:
+            history_paragraph += ["現れ、"] + join_node_list(related_nodes, lang) + ["と重なりながら展開しています。"]
+        else:
+            history_paragraph += ["現れています。"]
+    else:
+        history_paragraph = [movement_label, "は、このサイトでは写真家・時代・関連表現を結ぶ入口として扱っています。"]
+    history_paragraph += [" 単独の流派として固定するよりも、写真史の中でどの時代や実践と接続しているかを見るためのページです。"]
+    sections.append(
+        {
+            "heading": "写真史の中での位置",
+            "paragraphs": [history_paragraph],
+        }
+    )
+    if featured:
+        photographer_paragraphs = [["この表現を考える入口として、まず次の写真家を見ておくと流れがつかみやすくなります。"]]
+        for photographer in featured:
+            lead = photographer_short_lead(photographer, essay_overrides, movements_meta, enrichments, era_lookup, lang, 140)
+            photographer_paragraphs.append(linked_photographer_lead_nodes(photographer, lead, lang))
+        sections.append({"heading": "代表的な写真家", "paragraphs": photographer_paragraphs})
+    if related_nodes:
+        sections.append(
+            {
+                "heading": "関連する表現",
+                "paragraphs": [
+                    [movement_label, "は、"] + join_node_list(related_nodes, lang) + ["と併せて読むと位置づけが見えやすくなります。主題、方法、制度、時代背景のどこで接しているのかを見比べることで、境界の引かれ方も読み取りやすくなります。"]
+                ],
+            }
+        )
+    return sections
+
+
+def movement_source_links(custom_sources: list[dict], featured: list[dict], fallback_people: list[dict], limit: int = 5) -> list[dict]:
+    items = []
+    seen = set()
+    for record in custom_sources:
+        url = record.get("url") or ""
+        label = record.get("label") or ""
+        if not url or not label or url in seen:
+            continue
+        seen.add(url)
+        items.append({"label": label, "url": url})
+        if len(items) >= limit:
+            return items
+    for photographer in featured + fallback_people:
+        for record in photographer_source_records(photographer):
+            url = record.get("url") or ""
+            label = record.get("label") or ""
+            if not url or not label or url in seen or not is_trusted_source_url(url):
+                continue
+            seen.add(url)
+            items.append({"label": label, "url": url})
+            if len(items) >= limit:
+                return items
+    return items
+
+
 def era_lead_text(era: dict, short: str, people: list[dict], movements_meta: dict, lang: str) -> str:
     title = (era.get("titleEn") if lang == "en" else era.get("title")) or short
     movement_text = join_labels(movement_labels_for_text(people, movements_meta, lang, 3), lang)
@@ -820,21 +1074,47 @@ def lower_initial(text: str) -> str:
     return text[0].lower() + text[1:]
 
 
+def natural_japanese_definition(summary: str) -> str:
+    value = (summary or "").strip()
+    if not value:
+        return ""
+    body = value.rstrip("。")
+    nominal_endings = (
+        "運動",
+        "技術",
+        "技法",
+        "写真",
+        "写真誌",
+        "思想誌",
+        "概念",
+        "潮流",
+        "表現",
+        "記録",
+        "実践",
+        "流れ",
+        "媒体",
+        "学校",
+        "学派",
+        "分類",
+        "カテゴリー",
+        "プロジェクト",
+    )
+    if body.endswith(nominal_endings):
+        return f"{body}です。"
+    return f"{body}。"
+
+
 def movement_lead_text(movement_label: str, movement_desc: str, lang: str) -> str:
-    summary = sentence_summary(movement_desc, lang, limit=160 if lang == "en" else 90, max_sentences=1)
+    summary = sentence_summary(movement_desc, lang, limit=170 if lang == "en" else 100, max_sentences=1)
     if lang == "en":
         if summary:
             summary_body = lower_initial(summary.rstrip(".!?"))
-            if summary_body.startswith(("a ", "an ", "the ")):
-                context = f"It can be understood as {summary_body}."
-            else:
-                context = summary.rstrip(".!?") + "."
-            return f"{movement_label} is an important thread within the history of photography. {context} This movement page brings together photographers, eras, and related contexts so readers can see how the approach developed, where it circulated, and which artists help define its historical position."
-        return f"{movement_label} is an important thread within the history of photography. This movement page brings together photographers, eras, and related contexts so readers can see how the approach developed, where it circulated, and which artists help define its historical position."
+            return f"{movement_label} refers to {summary_body}. This page places the term within the history of photography through representative photographers, nearby movements, and the periods in which the approach became visible."
+        return f"{movement_label} refers to a category used to follow related photographers and approaches in the history of photography. This page places the term beside periods, people, and adjacent movements so that it can be read in context."
     if summary:
-        summary_body = summary if summary.endswith("。") else f"{summary.rstrip('。')}。"
-        return f"{movement_label}は、写真史の流れを考えるうえで重要な表現のひとつです。{summary_body}このページでは、関係する写真家や時代の流れをたどります。"
-    return f"{movement_label}は、写真史の流れを考えるうえで重要な表現のひとつです。このページでは、関係する写真家や時代背景をあわせてたどります。"
+        summary_body = natural_japanese_definition(summary)
+        return f"{movement_label}は、{summary_body}このページでは、関連する写真家、時代、近い表現を通して、その位置づけを写真史の中でたどります。"
+    return f"{movement_label}とは、写真史の中で関連する写真家や時代と結びつけて読むための表現分類です。このページでは、その位置づけを周辺の文脈とあわせてたどります。"
 
 
 def clean_context_intro(text: str, lang: str) -> str:
@@ -851,7 +1131,7 @@ def clean_context_intro(text: str, lang: str) -> str:
 def taxonomy_page_title(page_kind: str, label: str, lang: str, era_title: str = "") -> str:
     if lang != "en":
         if page_kind == "movement":
-            return f"{label}｜表現｜写真史｜写真の座標｜Eyes Cosmos"
+            return f"{label}とは｜意味・歴史・代表的写真家を解説｜写真の座標"
         return f"{label}｜写真家｜写真史｜写真の座標｜Eyes Cosmos"
     if page_kind == "era":
         title = f"{label}: {era_title or 'Photography History'} | Photo Coordinates"
@@ -862,12 +1142,10 @@ def taxonomy_page_title(page_kind: str, label: str, lang: str, era_title: str = 
         return title if len(title) <= 65 else f"{label} Photography History | Photo Coordinates"
     if page_kind == "country":
         return f"{label} Photographers | Photo Coordinates"
-    if label.lower().endswith("photography"):
-        return f"{label} | Photo Coordinates"
-    return f"{label} Photography | Photo Coordinates"
+    return f"{label}: Definition, History, and Key Photographers | Photo Coordinates"
 
 
-def taxonomy_meta_description(page_kind: str, label: str, lang: str, era_title: str = "", movement_meta: dict | None = None) -> str:
+def taxonomy_meta_description(page_kind: str, label: str, lang: str, era_title: str = "", movement_meta: dict | None = None, movement_desc: str = "") -> str:
     movement_meta = movement_meta or {}
     if page_kind == "movement":
         override = movement_meta.get("metaDescEn" if lang == "en" else "metaDescJa")
@@ -875,13 +1153,20 @@ def taxonomy_meta_description(page_kind: str, label: str, lang: str, era_title: 
             return override
     if lang != "en":
         if page_kind == "movement":
-            return f"{label}を写真史の中でたどるためのページです。写真の座標で、この表現に関わる写真家や時代背景、関連する運動を一覧できます。"
+            summary = sentence_summary(movement_desc, lang, limit=70, max_sentences=1)
+            if summary:
+                summary_body = natural_japanese_definition(summary)
+                return f"{label}とは何か。{summary_body} 写真史での位置づけ、代表的写真家、関連する表現とのつながりを解説します。"
+            return f"{label}とは何か。写真史での位置づけ、代表的写真家、関連する表現とのつながりを解説します。"
         return f"{label}の写真家を一覧できる写真史ページです。写真の座標で、写真家、関連運動、時代の流れをまとめてたどれます。"
     if page_kind == "era":
         return f"Explore {label} in photography history through photographers, movements, world events, and visual context on Photo Coordinates."
     if page_kind == "country":
         return f"Browse photographers connected to {label}, with related eras, movements, and historical context in the history of photography."
-    return f"Explore {label} through photographers, related eras, and historical context in the history of photography."
+    summary = sentence_summary(movement_desc, lang, limit=110, max_sentences=1)
+    if summary:
+        return f"What is {label}? {summary} This guide explains its place in the history of photography, key photographers, and related approaches."
+    return f"What is {label}? This guide explains its place in the history of photography, key photographers, and related approaches."
 
 
 def era_context_html(era: dict, lang: str) -> str:
@@ -912,10 +1197,10 @@ def era_context_html(era: dict, lang: str) -> str:
       </section>'''
 
 
-def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str, ja_href: str | None = None, en_href: str | None = None, faq_items: list[dict] | None = None) -> str:
+def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: str, canonical: str, description: str, lead: str, home_href: str, controls_html: str, hero_groups_html: str, context_html: str, list_title: str, list_html: str, directory_nav_html: str, ja_href: str | None = None, en_href: str | None = None) -> str:
     kind_label = "Movement" if page_kind == "movement" else ("Country" if page_kind == "country" else "Era")
     label = f"Photo Coordinates / {kind_label}"
-    structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip(), faq_items)
+    structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip())
     ja_href = ja_href or (canonical.replace("/en/", "/") if lang == "en" else canonical)
     en_href = en_href or (canonical if lang == "en" else canonical.replace(f"{SITE}/", f"{SITE}/en/", 1))
     footer_line1 = "This site gathers and organizes information from publicly available web sources with AI assistance." if lang == "en" else "本サイトの情報はAIによってウェブ上の資料から収集・整理されたものです。"
@@ -1306,21 +1591,32 @@ def main():
             ja_href = f"{SITE}/movements/{movement_slug(movement, 'ja', movements_meta)}.html"
             en_href = f"{SITE}/en/movements/{movement_slug(movement, 'en', movements_meta)}.html"
             canonical = en_href if lang == "en" else ja_href
-            description = taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta)
             movement_desc = movement_meta.get("descEn" if lang == "en" else "desc") or movement_meta.get("desc") or ""
             movement_desc = clean_context_intro(movement_desc, lang)
+            description = taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta, movement_desc=movement_desc)
             lead = movement_meta.get("leadEn" if lang == "en" else "leadJa") or movement_lead_text(movement_label, movement_desc, lang)
-            detail_html = movement_detail_html(movement_meta, lang)
-            context_html = detail_html or (
-                f'''<section class="section taxonomy-context">
-        <h2>{"Overview" if lang == "en" else "この表現について"}</h2>
-        <div class="context-grid">
-          <div class="context-block">
-            <div class="context-text">{esc(short_block_text(movement_desc, lang, 260 if lang == "en" else 150))}</div>
-          </div>
-        </div>
-      </section>'''
-            ) if movement_desc else ""
+            custom_sections = movement_meta.get("sectionsEn" if lang == "en" else "sectionsJa") or []
+            sections = custom_sections or movement_auto_sections(
+                movement,
+                movement_label,
+                movement_desc,
+                people,
+                eras,
+                lang,
+                movements_meta,
+                enrichments,
+                country_overrides,
+                essay_overrides,
+                era_lookup,
+            )
+            featured = featured_movement_photographers(people, movement, 4)
+            sources = movement_source_links(
+                movement_meta.get("sourcesEn" if lang == "en" else "sourcesJa") or movement_meta.get("sources") or [],
+                featured,
+                people,
+                5,
+            )
+            context_html = render_movement_detail_html(sections, sources, lang)
             hero_groups = (
                 f'<div class="meta-group"><div class="group-label">{"Basic facts" if lang == "en" else "基本情報"}</div><div class="mini-card-grid"><div class="mini-card"><span class="mini-card-label">{"Movement" if lang == "en" else "表現"}</span><span class="mini-card-value">{esc(movement_label)}</span></div><div class="mini-card"><span class="mini-card-label">{"Photographers" if lang == "en" else "写真家数"}</span><span class="mini-card-value">{len(people)}</span></div></div></div>'
             )
@@ -1346,7 +1642,6 @@ def main():
                 directory_nav_html=render_site_directory_nav(photographers, eras, all_nationalities, lang),
                 ja_href=ja_href,
                 en_href=en_href,
-                faq_items=movement_meta.get("faqEn" if lang == "en" else "faqJa") or [],
             )
             output_slug = movement_slug(movement, lang, movements_meta)
             (movements_en_dir if lang == "en" else movements_dir).joinpath(f"{output_slug}.html").write_text(page, encoding="utf-8")

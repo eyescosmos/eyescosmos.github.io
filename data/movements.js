@@ -181,34 +181,6 @@ const MOVEMENTS_META = {
         ]
       }
     ],
-    faqJa: [
-      {
-        question: 'ストレート写真とは何ですか？',
-        answer: 'ストレート写真とは、絵画的なぼかしや手作業の加工から距離を取り、鮮明な焦点、構図、階調、プリントの精度によって写真固有の表現を追求した写真の流れです。'
-      },
-      {
-        question: 'ストレート写真とピクトリアリズムの違いは何ですか？',
-        answer: 'ピクトリアリズムが絵画や版画に近い効果で芸術性を示そうとしたのに対し、ストレート写真はレンズによる明晰さ、対象の質感、構図、プリントの精度を表現の核にしました。'
-      },
-      {
-        question: 'ストレート写真の代表的な写真家は誰ですか？',
-        answer: 'フレデリック・H・エヴァンズ、アルフレッド・スティーグリッツ、ポール・ストランド、チャールズ・シェラーなどが代表的です。'
-      }
-    ],
-    faqEn: [
-      {
-        question: 'What is Straight Photography?',
-        answer: 'Straight Photography is an approach that moved away from painterly manipulation and used sharp focus, clear composition, tonal control, and precise printing as the basis of photographic expression.'
-      },
-      {
-        question: 'How is Straight Photography different from Pictorialism?',
-        answer: 'Pictorialism often borrowed effects from painting and printmaking, while Straight Photography emphasized the camera’s optical clarity, the structure of the subject, and the expressive possibilities of the photographic print.'
-      },
-      {
-        question: 'Who are key Straight Photography photographers?',
-        answer: 'Key photographers include Frederick H. Evans, Alfred Stieglitz, Paul Strand, and Charles Sheeler, each of whom helped define photographic clarity, structure, and modern form in different ways.'
-      }
-    ],
     sources: [
       { label: 'The Met — Alfred Stieglitz and American Photography', url: 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography' },
       { label: 'MoMA — Frederick H. Evans, A Sea of Steps', url: 'https://www.moma.org/collection/works/53618' },
