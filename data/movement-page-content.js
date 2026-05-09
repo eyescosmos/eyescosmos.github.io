@@ -1449,18 +1449,140 @@ const ESSAY_MAIN_COUNT_JA = {
   'タイポロジー写真': 6,
 };
 
+const META_DESC_OVERRIDES_JA = {
+  'カラー写真': 'カラー写真は、手彩色、オートクローム、コダクローム、広告、美術館受容を通じて、色が写真の価値づけをどう変えたかをたどる表現史である。ニューカラー以前の技術、商業、家庭写真をめぐる制度的葛藤も扱う。',
+  'デュッセルドルフ派': 'デュッセルドルフ派は、ベッヒャー夫妻の教育、タイポロジー、大判プリント、現代美術市場を通じて、戦後写真の制度を組み替えた潮流である。記録とコンセプト、展示スケールの交差を読む。',
+  '新しいヴィジョン': '新しいヴィジョンは、俯瞰、仰角、クローズアップ、フォトグラムによって、1920年代の都市と身体に新しい知覚を与えようとした写真の実験である。バウハウス、構成主義、印刷文化との接続も扱う。',
+  'ダダ': 'ダダは、第一次世界大戦後の反芸術の文脈で、フォトモンタージュや印刷物を使い、写真の証拠性と政治的イメージを分解した表現史である。',
+  'シュルレアリスム': 'シュルレアリスム写真は、マン・レイ、リー・ミラー、アジェらを通じて、現実に密着する写真が夢、偶然、無意識をどう生み出したかを扱う。',
+  'モダニズム': 'モダニズム写真は、都市化、工業化、印刷文化、バウハウスや新しいヴィジョンを通じて、写真を近代的な視覚言語へ組み替えた流れである。',
+  'コンセプチュアルアート': 'コンセプチュアルアートにおける写真は、作品の記録、指示、言語、制度批評を担い、美しいプリントとは別の回路で美術を支えた。',
+};
+
+const normalizeJaTone = (value) => String(value || '')
+  .replace(/見えてきます/g, '見えてくる')
+  .replace(/特徴があります/g, '特徴をもつ')
+  .replace(/媒体になりました/g, '媒体となった')
+  .replace(/学校でした/g, '学校だった')
+  .replace(/重要です/g, '重要である')
+  .replace(/にに/g, 'に')
+  .replace(/指します/g, '指す')
+  .replace(/示します/g, '示す')
+  .replace(/写します/g, '写す')
+  .replace(/映します/g, '映す')
+  .replace(/促します/g, '促す')
+  .replace(/残します/g, '残す')
+  .replace(/押し出します/g, '押し出す')
+  .replace(/作り出します/g, '作り出す')
+  .replace(/取ります/g, '取る')
+  .replace(/作ります/g, '作る')
+  .replace(/運びます/g, '運ぶ')
+  .replace(/読み込まされます/g, '読み込まされる')
+  .replace(/求めます/g, '求める')
+  .replace(/決まります/g, '決まる')
+  .replace(/深まります/g, '深まる')
+  .replace(/違います/g, '違う')
+  .replace(/関わります/g, '関わる')
+  .replace(/結びつきます/g, '結びつく')
+  .replace(/つながります/g, 'つながる')
+  .replace(/始まっています/g, '始まっている')
+  .replace(/続いています/g, '続いている')
+  .replace(/成り立っています/g, '成り立っている')
+  .replace(/生き残ります/g, '生き残る')
+  .replace(/前面に出ます/g, '前面に出る')
+  .replace(/先に来ます/g, '先に来る')
+  .replace(/影響します/g, '影響する')
+  .replace(/実験されます/g, '実験される')
+  .replace(/共有されます/g, '共有される')
+  .replace(/再編されます/g, '再編される')
+  .replace(/読まれます/g, '読まれる')
+  .replace(/問われます/g, '問われる')
+  .replace(/語られます/g, '語られる')
+  .replace(/配置されます/g, '配置される')
+  .replace(/形成されます/g, '形成される')
+  .replace(/示されます/g, '示される')
+  .replace(/流通します/g, '流通する')
+  .replace(/機能します/g, '機能する')
+  .replace(/露出します/g, '露出する')
+  .replace(/再生産していました/g, '再生産していた')
+  .replace(/意識します/g, '意識する')
+  .replace(/しています/g, 'している')
+  .replace(/していました/g, 'していた')
+  .replace(/されています/g, 'されている')
+  .replace(/していました/g, 'していた')
+  .replace(/していません/g, 'していない')
+  .replace(/しています/g, 'している')
+  .replace(/してきました/g, 'してきた')
+  .replace(/されました/g, 'された')
+  .replace(/になりました/g, 'になった')
+  .replace(/となりました/g, 'となった')
+  .replace(/できました/g, 'できた')
+  .replace(/ありました/g, 'あった')
+  .replace(/いました/g, 'いた')
+  .replace(/ではありません/g, 'ではない')
+  .replace(/ではありませんでした/g, 'ではなかった')
+  .replace(/ではありません/g, 'ではない')
+  .replace(/ありません/g, 'ない')
+  .replace(/あります/g, 'ある')
+  .replace(/なります/g, 'なる')
+  .replace(/できます/g, 'できる')
+  .replace(/読めます/g, '読める')
+  .replace(/見えます/g, '見える')
+  .replace(/持ちます/g, '持つ')
+  .replace(/変わります/g, '変わる')
+  .replace(/つきまといます/g, 'つきまとう')
+  .replace(/招きます/g, '招く')
+  .replace(/分かります/g, 'わかる')
+  .replace(/わかります/g, 'わかる')
+  .replace(/読めません/g, '読めない')
+  .replace(/欠かせません/g, '欠かせない')
+  .replace(/なりません/g, 'ならない')
+  .replace(/ません/g, 'ない')
+  .replace(/でした/g, 'だった')
+  .replace(/でしょう/g, 'だろう')
+  .replace(/です/g, 'である')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)します/g, '$1する')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)きます/g, '$1く')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)ぎます/g, '$1ぐ')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)みます/g, '$1む')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)びます/g, '$1ぶ')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)ります/g, '$1る')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)います/g, '$1う')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)ちます/g, '$1つ')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)えます/g, '$1える')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)けます/g, '$1ける')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)げます/g, '$1げる')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)せます/g, '$1せる')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)てます/g, '$1てる')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)ねます/g, '$1ねる')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)べます/g, '$1べる')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)めます/g, '$1める')
+  .replace(/([一-龥ァ-ヶぁ-んー]+)れます/g, '$1れる');
+
+const normalizeParagraphTone = (paragraph) => {
+  if (typeof paragraph === 'string') return normalizeJaTone(paragraph);
+  if (paragraph && typeof paragraph === 'object' && typeof paragraph.text === 'string') {
+    return { ...paragraph, text: normalizeJaTone(paragraph.text) };
+  }
+  return paragraph;
+};
+
 Object.entries(MOVEMENT_PAGE_CONTENT).forEach(([movement, entry]) => {
   entry.appendSupportSections = false;
   if (LEAD_OVERRIDES_JA[movement]) {
     entry.leadJa = LEAD_OVERRIDES_JA[movement];
   }
+  if (META_DESC_OVERRIDES_JA[movement]) {
+    entry.metaDescJa = META_DESC_OVERRIDES_JA[movement];
+  }
+  entry.leadJa = normalizeJaTone(entry.leadJa || '');
   const paragraphs = flattenMovementParagraphs(entry.sectionsJa || []);
   const mainCount = ESSAY_MAIN_COUNT_JA[movement]
     || (paragraphs.length >= 10 ? 6 : paragraphs.length >= 8 ? 5 : Math.max(3, Math.ceil(paragraphs.length * 0.6)));
   entry.sectionsJa = essaySectionsJa(
-    paragraphs.slice(0, mainCount),
-    paragraphs.slice(mainCount),
-    RELATED_MOVEMENT_TEXT_JA[movement] ? [RELATED_MOVEMENT_TEXT_JA[movement]] : []
+    paragraphs.slice(0, mainCount).map(normalizeParagraphTone),
+    paragraphs.slice(mainCount).map(normalizeParagraphTone),
+    RELATED_MOVEMENT_TEXT_JA[movement] ? [normalizeJaTone(RELATED_MOVEMENT_TEXT_JA[movement])] : []
   );
   entry.sources = mergeSources(
     entry.sources || [],
@@ -1469,15 +1591,15 @@ Object.entries(MOVEMENT_PAGE_CONTENT).forEach(([movement, entry]) => {
   );
   const extras = MOVEMENT_EXTRA_PARAGRAPHS_JA[movement] || {};
   Object.entries(extras).forEach(([heading, extraParagraphs]) => {
-    appendSectionParagraphs(entry, heading, extraParagraphs);
+    appendSectionParagraphs(entry, heading, extraParagraphs.map(normalizeParagraphTone));
   });
   const deepening = MOVEMENT_DEEPENING_JA[movement] || {};
   Object.entries(deepening).forEach(([heading, extraParagraphs]) => {
-    appendSectionParagraphs(entry, heading, extraParagraphs);
+    appendSectionParagraphs(entry, heading, extraParagraphs.map(normalizeParagraphTone));
   });
   const finishing = MOVEMENT_FINISHING_JA[movement] || {};
   Object.entries(finishing).forEach(([heading, extraParagraphs]) => {
-    appendSectionParagraphs(entry, heading, extraParagraphs);
+    appendSectionParagraphs(entry, heading, extraParagraphs.map(normalizeParagraphTone));
   });
 });
 

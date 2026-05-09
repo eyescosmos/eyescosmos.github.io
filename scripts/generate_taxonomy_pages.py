@@ -418,7 +418,7 @@ def render_content_section(
 ) -> str:
     heading = section.get("heading") or ""
     paragraphs = section.get("paragraphs") or []
-    paragraph_parts = []
+    rendered_segments = []
     for paragraph in paragraphs:
         if not paragraph:
             continue
@@ -435,7 +435,22 @@ def render_content_section(
                 resolved = [used_sources[source_cursor_box[0] % len(used_sources)]]
                 source_cursor_box[0] += 1
             numbers = [used_sources.index(source) + 1 for source in resolved]
-        paragraph_parts.append(f'          <p>{render_inline_nodes(nodes, lang, movements_meta)}{citation_sup_html(numbers)}</p>')
+        rendered_segments.append(render_inline_nodes(nodes, lang, movements_meta) + citation_sup_html(numbers))
+    paragraph_parts = []
+    current: list[str] = []
+    current_len = 0
+    target_len = 620 if lang == "ja" else 900
+    min_len = 360 if lang == "ja" else 520
+    for segment in rendered_segments:
+        plain_len = len(re.sub(r"<[^>]+>", "", segment))
+        if current and current_len >= min_len and current_len + plain_len > target_len:
+            paragraph_parts.append(f'          <p>{"".join(current)}</p>')
+            current = []
+            current_len = 0
+        current.append(segment)
+        current_len += plain_len
+    if current:
+        paragraph_parts.append(f'          <p>{"".join(current)}</p>')
     paragraph_html = "\n".join(paragraph_parts)
     return f'''        <section class="section taxonomy-detail-section">
           <h2>{esc(heading)}</h2>
@@ -1346,7 +1361,7 @@ def clean_context_intro(text: str, lang: str) -> str:
 def taxonomy_page_title(page_kind: str, label: str, lang: str, era_title: str = "") -> str:
     if lang != "en":
         if page_kind == "movement":
-            return f"{label}とは｜意味・歴史・代表的写真家を解説｜写真の座標"
+            return f"{label}｜写真史と表現史｜写真の座標"
         return f"{label}｜写真家｜写真史｜写真の座標｜Eyes Cosmos"
     if page_kind == "era":
         title = f"{label}: {era_title or 'Photography History'} | Photo Coordinates"
@@ -1510,34 +1525,20 @@ def movement_meta_description_ja(
     movement_desc: str,
     featured_people: list[dict],
 ) -> str:
+    base = strip_inline_link_tokens(lead or movement_desc)
+    base = re.sub(rf"^{re.escape(label)}は[、，]?", "", base).strip()
+    base = re.sub(r"(です|ます|でした|でしょう|になります)(。|、|$)", lambda m: {"です": "である", "ます": "る", "でした": "だった", "でしょう": "だろう", "になります": "になる"}[m.group(1)] + m.group(2), base)
     names = [display_name(photographer, "ja") for photographer in featured_people[:2] if display_name(photographer, "ja")]
-    name_variants = []
-    if len(names) >= 2:
-        name_variants.append("、".join(names[:2]))
-    if names:
-        name_variants.append(names[0])
-    name_variants.append("")
-
-    first_candidate = ""
-    for limit in (62, 56, 50, 44):
-        summary = sentence_summary(strip_inline_link_tokens(lead or movement_desc), "ja", limit=limit, max_sentences=1)
-        summary = re.sub(rf"^{re.escape(label)}は[、，]?", "", summary).strip()
-        summary = summary.rstrip("。")
-        for name_text in name_variants:
-            if name_text:
-                candidate = f"{label}とは何か。{summary}。{name_text}などの代表作家と関連する表現を手がかりに、成立背景、何を目指したのか、写真史で何を変えたかまで解説します。"
-            else:
-                candidate = f"{label}とは何か。{summary}。関連する表現を手がかりに、成立背景、代表的な写真家、何を目指したのか、写真史で何を変えたかまで解説します。"
-            if not first_candidate:
-                first_candidate = candidate
-            if 90 <= len(candidate) <= 130:
-                return candidate
-
-    if first_candidate:
-        return first_candidate[:129].rstrip("、。") + "。"
-
-    fallback = f"{label}とは何か。成立背景、代表的な写真家、関連する表現、何を目指したのか、写真史で何を変えたかまで解説します。"
-    return fallback
+    name_text = "、".join(names)
+    for limit in (96, 88, 80, 72):
+        summary = sentence_summary(base, "ja", limit=limit, max_sentences=2).rstrip("。")
+        candidate = f"{label}は、{summary}。"
+        if name_text and len(candidate) < 105:
+            candidate = candidate.rstrip("。") + f"。{name_text}らの実践と写真史上の位置づけを扱う。"
+        if 90 <= len(candidate) <= 130:
+            return candidate
+    candidate = f"{label}は、{sentence_summary(base, 'ja', limit=110, max_sentences=2).rstrip('。')}。"
+    return candidate[:129].rstrip("、。") + "。"
 
 
 def movement_sections_plain_text(sections: list[dict], lang: str, movements_meta: dict) -> str:
@@ -1551,6 +1552,71 @@ def movement_sections_plain_text(sections: list[dict], lang: str, movements_meta
             if text:
                 chunks.append(text)
     return clean_inline_text(" ".join(chunks))
+
+
+def normalize_japanese_movement_page_html(page: str) -> str:
+    replacements = [
+        ("見えてきます", "見えてくる"),
+        ("特徴があります", "特徴をもつ"),
+        ("媒体になりました", "媒体となった"),
+        ("指しる", "指す"),
+        ("示しました", "示した"),
+        ("変えました", "変えた"),
+        ("かけました", "かけた"),
+        ("押し上げました", "押し上げた"),
+        ("組み込まれました", "組み込まれた"),
+        ("影響しました", "影響した"),
+        ("開きました", "開いた"),
+        ("得ます", "得る"),
+        ("生じます", "生じる"),
+        ("広げた写真家です", "広げた写真家である"),
+        ("深く関わります", "深く関わる"),
+        ("機能します", "機能する"),
+        ("可視化します", "可視化する"),
+        ("影響します", "影響する"),
+        ("つながります", "つながる"),
+        ("決定します", "決定する"),
+        ("流通します", "流通する"),
+        ("再編されます", "再編される"),
+        ("読まれます", "読まれる"),
+        ("問われます", "問われる"),
+        ("語られます", "語られる"),
+        ("配置されます", "配置される"),
+        ("形成されます", "形成される"),
+        ("示されます", "示される"),
+        ("見なされます", "見なされる"),
+        ("求めます", "求める"),
+        ("違います", "違う"),
+        ("運びます", "運ぶ"),
+        ("語ります", "語る"),
+        ("作ります", "作る"),
+        ("取ります", "取る"),
+        ("持っています", "持っている"),
+        ("立っています", "立っている"),
+        ("結びついています", "結びついている"),
+        ("始まっています", "始まっている"),
+        ("続いています", "続いている"),
+        ("成り立っています", "成り立っている"),
+        ("なっています", "なっている"),
+        ("されています", "されている"),
+        ("しています", "している"),
+        ("していました", "していた"),
+        ("しました", "した"),
+        ("ました", "た"),
+        ("できます", "できる"),
+        ("あります", "ある"),
+        ("なります", "なる"),
+        ("います", "いる"),
+        ("ます。", "る。"),
+        ("ますが", "るが"),
+        ("ます、", "る、"),
+        ("でした", "だった"),
+        ("でしょう", "だろう"),
+        ("です", "である"),
+    ]
+    for before, after in replacements:
+        page = page.replace(before, after)
+    return page
 
 
 def ensure_minimum_movement_body_ja(
@@ -1592,9 +1658,9 @@ def render_taxonomy_page(*, lang: str, page_kind: str, title: str, keywordline: 
     structured = page_structured_data(title, description, canonical, lang, title.split("｜")[0].split("|")[0].strip())
     ja_href = ja_href or (canonical.replace("/en/", "/") if lang == "en" else canonical)
     en_href = en_href or (canonical if lang == "en" else canonical.replace(f"{SITE}/", f"{SITE}/en/", 1))
-    footer_line1 = "This site gathers and organizes information from publicly available web sources with AI assistance." if lang == "en" else "本サイトの情報はAIによってウェブ上の資料から収集・整理されたものです。"
-    footer_line2 = "Sources are listed where possible, but errors or outdated details may remain." if lang == "en" else "各記述には出典を明記していますが、誤りが含まれる可能性があります。"
-    footer_line3 = "Please feel free to get in touch if you notice corrections or additions." if lang == "en" else "情報の訂正・追加はお気軽にお知らせください。"
+    footer_line1 = "This site gathers and organizes information from publicly available web sources with AI assistance." if lang == "en" else "本サイトの情報はAIによってウェブ上の資料から収集・整理されたもの。"
+    footer_line2 = "Sources are listed where possible, but errors or outdated details may remain." if lang == "en" else "各記述には出典を明記しているが、誤りが含まれる可能性がある。"
+    footer_line3 = "Please feel free to get in touch if you notice corrections or additions." if lang == "en" else "情報の訂正・追加は随時受け付けている。"
     privacy_label = "Privacy Policy" if lang == "en" else "プライバシーポリシー"
     privacy_href = "/en/privacy-policy.html" if lang == "en" else "/privacy-policy.html"
     footer_extra = f'<div class="footer-secondary">{esc(footer_line3)}</div>' if page_kind == "era" else ""
@@ -1990,7 +2056,7 @@ def main():
             people = sort_photographers(photographers_by_movement.get(movement, []), lang)
             movement_meta = movements_meta.get(movement, {})
             movement_label = localized_movement_name(movement, movements_meta, lang)
-            title = movement_meta.get("titleEn" if lang == "en" else "titleJa") or taxonomy_page_title("movement", movement_label, lang)
+            title = (movement_meta.get("titleEn") if lang == "en" else "") or taxonomy_page_title("movement", movement_label, lang)
             keyword = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates |" if lang == "en" else f"{movement_label}｜表現｜写真史｜<a href=\"/\">写真の座標</a>｜"
             ja_href = f"{SITE}/movements/{movement_slug(movement, 'ja', movements_meta)}.html"
             en_href = f"{SITE}/en/movements/{movement_slug(movement, 'en', movements_meta)}.html"
@@ -2065,6 +2131,8 @@ def main():
                 ja_href=ja_href,
                 en_href=en_href,
             )
+            if lang == "ja":
+                page = normalize_japanese_movement_page_html(page)
             output_slug = movement_slug(movement, lang, movements_meta)
             (movements_en_dir if lang == "en" else movements_dir).joinpath(f"{output_slug}.html").write_text(page, encoding="utf-8")
             if lang == "en":
