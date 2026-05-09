@@ -568,7 +568,7 @@ body::after {
 .taxonomy-citation-ref a {
   border-bottom: none;
   padding: 0 0.08em;
-  color: var(--accent);
+  color: var(--accent-2);
   text-decoration: none;
 }
 .taxonomy-citation-ref a + a {
