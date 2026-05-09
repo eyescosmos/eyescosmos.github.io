@@ -1712,15 +1712,14 @@ def render_archive_like_list(
         coordinate_href = f"/{'en/' if lang == 'en' else ''}?focus=photographer%3A{quote(str(photographer.get('id') or ''))}&photographer={quote(str(photographer.get('id') or ''))}"
         descriptor_html = f'<div class="archive-list-descriptor">{esc(descriptor)}</div>' if descriptor else ""
         sub_name = display_alt_name(photographer, lang) if lang == "ja" else ""
-        alt_html = f'<div class="archive-list-alt">{esc(sub_name)}</div>' if sub_name else ""
+        alt_html = f'\n        <div class="archive-list-alt">{esc(sub_name)}</div>' if sub_name else ""
         items.append(
             f'''<details class="archive-list-card">
   <summary class="archive-list-summary">
     {overline_html}
     <div class="archive-list-heading">
       <div class="archive-list-name-wrap">
-        <div class="archive-list-name">{esc(display_name(photographer, lang))}</div>
-        {alt_html}
+        <div class="archive-list-name">{esc(display_name(photographer, lang))}</div>{alt_html}
       </div>
       <div class="archive-list-chevron" aria-hidden="true">+</div>
     </div>
