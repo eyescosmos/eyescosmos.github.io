@@ -399,6 +399,8 @@ body::after {
 .essay h3 + p { margin-top: 0; }
 .essay h4 { margin: 16px 0 6px; font-size: 14px; font-weight: 600; color: #a6bfa4; letter-spacing: 0.02em; }
 .essay h4 + p { margin-top: 0; }
+.essay a { color: var(--accent-2); }
+.essay a:hover { color: var(--accent); }
 .essay .inline-photographer-link {
   color: var(--accent-2);
   text-decoration: none;
