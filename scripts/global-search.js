@@ -5,7 +5,7 @@
     'data/eras.js?v=20260403c',
     'data/photographers.js?v=20260405j',
     'data/photographers-supplement.js?v=20260409c',
-    'data/photographers-manual-additions.js?v=20260506a',
+    'data/photographers-manual-additions.js?v=20260509a',
     'data/content-helpers.js?v=20260418e',
     'data/future/era-1990s.js?v=20260418d',
     'data/future/era-2000s.js?v=20260403c',

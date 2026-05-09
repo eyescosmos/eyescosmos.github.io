@@ -108,10 +108,8 @@ def render_card(
     coordinate_detail = "Details" if lang == "en" else "詳細"
     coordinate_button = "View in Coordinates" if lang == "en" else "座標で見る"
     placeholder = tax.strip_citation_markers(summary) in {"準備中。", "Coming soon.", "Essay coming soon.", "解説は準備中です。"}
-    coordinate_html = ""
-    if not placeholder:
-        pid = tax.esc(photographer["id"])
-        coordinate_html = f'<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer(\'{pid}\')">{coordinate_button}</button>'
+    pid = tax.esc(photographer["id"])
+    coordinate_html = f'<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer(\'{pid}\')">{coordinate_button}</button>'
     related_people_html = render_card_related_people(
         photographer,
         all_photographers,

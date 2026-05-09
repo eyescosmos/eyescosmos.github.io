@@ -6,6 +6,40 @@ function ensureTopPageManualPhotographers() {
   const existing = new Set(window.PHOTOGRAPHERS.map((p) => p && p.id));
   const additions = [
     {
+      id: 'irving-penn',
+      name: 'アーヴィング・ペン',
+      nameJa: 'アーヴィング・ペン',
+      nameEn: 'Irving Penn',
+      country: 'アメリカ',
+      nationality: 'US',
+      flag: '🇺🇸',
+      years: '1917-2009',
+      era: '1930',
+      movements: ['モダニズム', 'ストレート写真', 'タイポロジー写真'],
+      influence: 8.9,
+      url: 'https://eyescosmos.github.io/photographers/irving-penn.html',
+      urlEn: 'https://eyescosmos.github.io/en/photographers/irving-penn.html',
+      x: 0.49,
+      y: 0.43
+    },
+    {
+      id: 'richard-avedon',
+      name: 'リチャード・アヴェドン',
+      nameJa: 'リチャード・アヴェドン',
+      nameEn: 'Richard Avedon',
+      country: 'アメリカ',
+      nationality: 'US',
+      flag: '🇺🇸',
+      years: '1923-2004',
+      era: '1950',
+      movements: ['フォトジャーナリズム', 'ドキュメンタリー', 'ステージド写真'],
+      influence: 8.9,
+      url: 'https://eyescosmos.github.io/photographers/richard-avedon.html',
+      urlEn: 'https://eyescosmos.github.io/en/photographers/richard-avedon.html',
+      x: 0.52,
+      y: 0.47
+    },
+    {
       id: 'ernest-cole',
       name: 'アーネスト・コール',
       nameJa: 'アーネスト・コール',
@@ -51,6 +85,12 @@ function ensureTopPageManualPhotographers() {
   const connectionKey = ([a, b, move]) => `${a}|${b}|${move}`;
   const connectionKeys = new Set(window.CONNECTIONS.map(connectionKey));
   [
+    ['irving-penn', 'richard-avedon', 'ステージド写真'],
+    ['irving-penn', 'strand', 'ストレート写真'],
+    ['irving-penn', 'sander', 'タイポロジー写真'],
+    ['richard-avedon', 'irving-penn', 'ステージド写真'],
+    ['richard-avedon', 'capa', 'フォトジャーナリズム'],
+    ['richard-avedon', 'arbus', 'ドキュメンタリー'],
     ['ernest-cole', 'riis', '社会ドキュメンタリー'],
     ['ernest-cole', 'lewis-hine', '社会ドキュメンタリー'],
     ['ernest-cole', 'capa', 'フォトジャーナリズム'],
@@ -1038,7 +1078,7 @@ function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated, is
   const byMove = {};
   neighbors.forEach((n) => {
     byMove[n.move] = byMove[n.move] || [];
-    byMove[n.move].push(n.id);
+    if (!byMove[n.move].includes(n.id)) byMove[n.move].push(n.id);
   });
 
   return (

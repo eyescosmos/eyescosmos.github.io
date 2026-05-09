@@ -1415,9 +1415,7 @@ function renderCard(p, extraAttrs = '') {
     ? movementNames.slice(0, 2).map(m => `<span class="card-tag">${m}</span>`).join('') + (movementNames.length > 2 ? `<span class="card-tag card-tag-more">+${movementNames.length - 2}</span>` : '')
     : '';
   const searchIndex = buildSearchIndex(p);
-  const coordinateButton = p.isPlaceholder
-    ? ''
-    : `<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer('${p.id}')">${t('coordinateButton')}</button>`;
+  const coordinateButton = `<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer('${p.id}')">${t('coordinateButton')}</button>`;
   const interactionAttrs = extraAttrs || `onclick="toggleDetail('${p.id}', this)"`;
   const compactSummary = `
       <div class="mobile-card-summary">
