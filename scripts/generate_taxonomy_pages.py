@@ -1554,71 +1554,6 @@ def movement_sections_plain_text(sections: list[dict], lang: str, movements_meta
     return clean_inline_text(" ".join(chunks))
 
 
-def normalize_japanese_movement_page_html(page: str) -> str:
-    replacements = [
-        ("見えてきます", "見えてくる"),
-        ("特徴があります", "特徴をもつ"),
-        ("媒体になりました", "媒体となった"),
-        ("指しる", "指す"),
-        ("示しました", "示した"),
-        ("変えました", "変えた"),
-        ("かけました", "かけた"),
-        ("押し上げました", "押し上げた"),
-        ("組み込まれました", "組み込まれた"),
-        ("影響しました", "影響した"),
-        ("開きました", "開いた"),
-        ("得ます", "得る"),
-        ("生じます", "生じる"),
-        ("広げた写真家です", "広げた写真家である"),
-        ("深く関わります", "深く関わる"),
-        ("機能します", "機能する"),
-        ("可視化します", "可視化する"),
-        ("影響します", "影響する"),
-        ("つながります", "つながる"),
-        ("決定します", "決定する"),
-        ("流通します", "流通する"),
-        ("再編されます", "再編される"),
-        ("読まれます", "読まれる"),
-        ("問われます", "問われる"),
-        ("語られます", "語られる"),
-        ("配置されます", "配置される"),
-        ("形成されます", "形成される"),
-        ("示されます", "示される"),
-        ("見なされます", "見なされる"),
-        ("求めます", "求める"),
-        ("違います", "違う"),
-        ("運びます", "運ぶ"),
-        ("語ります", "語る"),
-        ("作ります", "作る"),
-        ("取ります", "取る"),
-        ("持っています", "持っている"),
-        ("立っています", "立っている"),
-        ("結びついています", "結びついている"),
-        ("始まっています", "始まっている"),
-        ("続いています", "続いている"),
-        ("成り立っています", "成り立っている"),
-        ("なっています", "なっている"),
-        ("されています", "されている"),
-        ("しています", "している"),
-        ("していました", "していた"),
-        ("しました", "した"),
-        ("ました", "た"),
-        ("できます", "できる"),
-        ("あります", "ある"),
-        ("なります", "なる"),
-        ("います", "いる"),
-        ("ます。", "る。"),
-        ("ますが", "るが"),
-        ("ます、", "る、"),
-        ("でした", "だった"),
-        ("でしょう", "だろう"),
-        ("です", "である"),
-    ]
-    for before, after in replacements:
-        page = page.replace(before, after)
-    return page
-
-
 def ensure_minimum_movement_body_ja(
     movement: str,
     movement_label: str,
@@ -1764,6 +1699,8 @@ def render_archive_like_list(
         country_meta = photographer_country_meta(photographer, enrichments, country_overrides, lang)
         tags, more_count = photographer_tag_labels(photographer, movements_meta, enrichments, lang, 2)
         lead = photographer_short_lead(photographer, essay_overrides, movements_meta, enrichments, era_lookup, lang, 115)
+        if lang == "ja":
+            lead = lead.replace("写真家です。", "写真家である。")
         descriptor = photographer_short_descriptor(photographer, movements_meta, enrichments, era_lookup, lang)
         years = display_years(photographer, lang)
         overline_html = archive_list_overline_html(country_meta, years)
@@ -2131,8 +2068,6 @@ def main():
                 ja_href=ja_href,
                 en_href=en_href,
             )
-            if lang == "ja":
-                page = normalize_japanese_movement_page_html(page)
             output_slug = movement_slug(movement, lang, movements_meta)
             (movements_en_dir if lang == "en" else movements_dir).joinpath(f"{output_slug}.html").write_text(page, encoding="utf-8")
             if lang == "en":

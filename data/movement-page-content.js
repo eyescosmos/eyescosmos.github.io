@@ -1468,6 +1468,10 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/にに/g, 'に')
   .replace(/指します/g, '指す')
   .replace(/示します/g, '示す')
+  .replace(/示しました/g, '示した')
+  .replace(/生みます/g, '生む')
+  .replace(/広げています/g, '広げている')
+  .replace(/広げた写真家です/g, '広げた写真家である')
   .replace(/写します/g, '写す')
   .replace(/映します/g, '映す')
   .replace(/促します/g, '促す')
@@ -1476,7 +1480,46 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/作り出します/g, '作り出す')
   .replace(/取ります/g, '取る')
   .replace(/作ります/g, '作る')
+  .replace(/作りました/g, '作った')
+  .replace(/作りあげます/g, '作りあげる')
+  .replace(/つくりあげます/g, 'つくりあげる')
   .replace(/運びます/g, '運ぶ')
+  .replace(/据えました/g, '据えた')
+  .replace(/語ります/g, '語る')
+  .replace(/近づけます/g, '近づける')
+  .replace(/ありえます/g, 'ありえる')
+  .replace(/押し上げました/g, '押し上げた')
+  .replace(/押し広げました/g, '押し広げた')
+  .replace(/行われました/g, '行われた')
+  .replace(/向け始めます/g, '向け始める')
+  .replace(/向かいました/g, '向かった')
+  .replace(/読み直せます/g, '読み直せる')
+  .replace(/置かれます/g, '置かれる')
+  .replace(/与えます/g, '与える')
+  .replace(/与えました/g, '与えた')
+  .replace(/つくります/g, 'つくる')
+  .replace(/選ばれました/g, '選ばれた')
+  .replace(/見誤ります/g, '見誤る')
+  .replace(/言えます/g, '言える')
+  .replace(/扱いました/g, '扱った')
+  .replace(/想像させます/g, '想像させる')
+  .replace(/組み替えました/g, '組み替えた')
+  .replace(/決めます/g, '決める')
+  .replace(/自覚させました/g, '自覚させた')
+  .replace(/意識させます/g, '意識させる')
+  .replace(/引き受けます/g, '引き受ける')
+  .replace(/働きます/g, '働く')
+  .replace(/広がります/g, '広がる')
+  .replace(/伴います/g, '伴う')
+  .replace(/生じます/g, '生じる')
+  .replace(/実験されます/g, '実験される')
+  .replace(/共有しながら活動の輪郭をつくっていきます/g, '共有しながら活動の輪郭をつくっていく')
+  .replace(/位置づけます/g, '位置づける')
+  .replace(/しはじめます/g, 'しはじめる')
+  .replace(/戻ります/g, '戻る')
+  .replace(/生まれます/g, '生まれる')
+  .replace(/残ります/g, '残る')
+  .replace(/前に出ます/g, '前に出る')
   .replace(/読み込まされます/g, '読み込まされる')
   .replace(/求めます/g, '求める')
   .replace(/決まります/g, '決まる')
@@ -1485,6 +1528,63 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/関わります/g, '関わる')
   .replace(/結びつきます/g, '結びつく')
   .replace(/つながります/g, 'つながる')
+  .replace(/つながっています/g, 'つながっている')
+  .replace(/広がりました/g, '広がった')
+  .replace(/強まりました/g, '強まった')
+  .replace(/残りました/g, '残った')
+  .replace(/進みました/g, '進んだ')
+  .replace(/変わりました/g, '変わった')
+  .replace(/入り込みました/g, '入り込んだ')
+  .replace(/揺らぎました/g, '揺らいだ')
+  .replace(/置きました/g, '置いた')
+  .replace(/広まりました/g, '広まった')
+  .replace(/働きました/g, '働いた')
+  .replace(/支えました/g, '支えた')
+  .replace(/持ちました/g, '持った')
+  .replace(/招きました/g, '招いた')
+  .replace(/受け取っています/g, '受け取っている')
+  .replace(/読まれています/g, '読まれている')
+  .replace(/支えられています/g, '支えられている')
+  .replace(/出ています/g, '出ている')
+  .replace(/用いられてきました/g, '用いられてきた')
+  .replace(/持っています/g, '持っている')
+  .replace(/抱えます/g, '抱える')
+  .replace(/失います/g, '失う')
+  .replace(/立ち上がります/g, '立ち上がる')
+  .replace(/戻ってしまいます/g, '戻ってしまう')
+  .replace(/さかのぼれます/g, 'さかのぼれる')
+  .replace(/離れます/g, '離れる')
+  .replace(/要ります/g, '要る')
+  .replace(/分かれます/g, '分かれる')
+  .replace(/知られます/g, '知られる')
+  .replace(/得ます/g, '得る')
+  .replace(/疑います/g, '疑う')
+  .replace(/暴かれます/g, '暴かれる')
+  .replace(/加わります/g, '加わる')
+  .replace(/加わりました/g, '加わった')
+  .replace(/現れます/g, '現れる')
+  .replace(/決定します/g, '決定する')
+  .replace(/揺れます/g, '揺れる')
+  .replace(/認めます/g, '認める')
+  .replace(/済みます/g, '済む')
+  .replace(/かかります/g, 'かかる')
+  .replace(/増幅します/g, '増幅する')
+  .replace(/重視されます/g, '重視される')
+  .replace(/指摘されます/g, '指摘される')
+  .replace(/回収されやすいことが挙げられます/g, '回収されやすいことが挙げられる')
+  .replace(/転化しやすいことが挙げられます/g, '転化しやすいことが挙げられる')
+  .replace(/欠かせなくなっています/g, '欠かせなくなっている')
+  .replace(/かかっています/g, 'かかっている')
+  .replace(/になっています/g, 'になっている')
+  .replace(/ています/g, 'ている')
+  .replace(/でいます/g, 'でいる')
+  .replace(/ていきます/g, 'ていく')
+  .replace(/っていきます/g, 'っていく')
+  .replace(/てきます/g, 'てくる')
+  .replace(/てしまいます/g, 'てしまう')
+  .replace(/でしまいます/g, 'でしまう')
+  .replace(/てしまいました/g, 'てしまった')
+  .replace(/でしまいました/g, 'でしまった')
   .replace(/始まっています/g, '始まっている')
   .replace(/続いています/g, '続いている')
   .replace(/成り立っています/g, '成り立っている')
@@ -1504,6 +1604,16 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/流通します/g, '流通する')
   .replace(/機能します/g, '機能する')
   .replace(/露出します/g, '露出する')
+  .replace(/します/g, 'する')
+  .replace(/しました/g, 'した')
+  .replace(/されます/g, 'される')
+  .replace(/られます/g, 'られる')
+  .replace(/されました/g, 'された')
+  .replace(/られました/g, 'られた')
+  .replace(/れました/g, 'れた')
+  .replace(/れます/g, 'れる')
+  .replace(/だと言えます/g, 'だと言える')
+  .replace(/と言えます/g, 'と言える')
   .replace(/再生産していました/g, '再生産していた')
   .replace(/意識します/g, '意識する')
   .replace(/しています/g, 'している')
@@ -1519,7 +1629,6 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/できました/g, 'できた')
   .replace(/ありました/g, 'あった')
   .replace(/いました/g, 'いた')
-  .replace(/ではありません/g, 'ではない')
   .replace(/ではありませんでした/g, 'ではなかった')
   .replace(/ではありません/g, 'ではない')
   .replace(/ありません/g, 'ない')
@@ -1541,28 +1650,59 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/でした/g, 'だった')
   .replace(/でしょう/g, 'だろう')
   .replace(/です/g, 'である')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)します/g, '$1する')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)きます/g, '$1く')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)ぎます/g, '$1ぐ')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)みます/g, '$1む')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)びます/g, '$1ぶ')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)ります/g, '$1る')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)います/g, '$1う')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)ちます/g, '$1つ')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)えます/g, '$1える')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)けます/g, '$1ける')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)げます/g, '$1げる')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)せます/g, '$1せる')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)てます/g, '$1てる')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)ねます/g, '$1ねる')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)べます/g, '$1べる')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)めます/g, '$1める')
-  .replace(/([一-龥ァ-ヶぁ-んー]+)れます/g, '$1れる');
+  .replace(/ではないだった/g, 'ではなかった')
+  .replace(/いないだった/g, 'いなかった')
+  .replace(/終わりないだった/g, '終わらなかった')
+  .replace(/とどまりない/g, 'とどまらない')
+  .replace(/つきまといた/g, 'つきまとった')
+  .replace(/暗示す/g, '暗示する');
 
 const normalizeParagraphTone = (paragraph) => {
   if (typeof paragraph === 'string') return normalizeJaTone(paragraph);
   if (paragraph && typeof paragraph === 'object' && typeof paragraph.text === 'string') {
     return { ...paragraph, text: normalizeJaTone(paragraph.text) };
+  }
+  return paragraph;
+};
+
+const SIGNIFICANCE_OPENERS_JA = {
+  'ピクトリアリズム': 'この運動が残したのは、',
+  '写真分離派': '写真分離派の転換点は、',
+  'ストレート写真': 'この流れで置き換えられたのは、',
+  '自然主義写真': 'エマーソンの議論が早くから開いたのは、',
+  'モダニズム': 'モダニズム写真が押し出したのは、',
+  '新即物主義': '新即物主義が写真にもたらしたのは、',
+  '新しいヴィジョン': 'この実験が強く示したのは、',
+  'バウハウス': 'バウハウスで変わったのは、',
+  'ヴォルテクシズム': '写真史上で何を変えたかといえば、',
+  'ダダ': 'ダダの写真が露わにしたのは、',
+  'シュルレアリスム': 'シュルレアリスム写真の重要な逆説は、',
+  'レイオグラフ': 'レイオグラフが突きつけたのは、',
+  'ドキュメンタリー': 'ドキュメンタリーが開いたのは、',
+  'FSA写真': 'FSA写真で明らかになったのは、',
+  '決定的瞬間': 'この概念が更新したのは、',
+  'ストリート写真': 'ストリート写真が押し広げたのは、',
+  'リアリズム写真': '戦後日本でこの言葉が動かしたのは、',
+  'プロヴォーク': 'プロヴォークが持ち込んだのは、',
+  '私写真': '私写真が可視化したのは、',
+  'ニューカラー': 'ニューカラーが変えたのは、',
+  'カラー写真': 'カラー写真をめぐる争点は、',
+  '大判カラー写真': '大判カラー写真で再定義されたのは、',
+  'デュッセルドルフ派': 'デュッセルドルフ派が結び直したのは、',
+  'タイポロジー写真': 'タイポロジー写真が離れたのは、',
+  'コンセプチュアルアート': 'コンセプチュアルアートが反転させたのは、',
+  'ピクチャーズ世代': 'ピクチャーズ世代が軸足を移したのは、',
+  'ステージド写真': 'ステージド写真が露わにしたのは、',
+  'フェミニズム写真': 'フェミニズム写真が動かしたのは、',
+  'シネマトグラフィック写真': 'シネマトグラフィック写真が示したのは、',
+};
+
+const deTemplateSignificance = (movement, paragraph) => {
+  const opener = SIGNIFICANCE_OPENERS_JA[movement] || 'この表現で重要なのは、';
+  const replaceText = (text) => String(text || '').replace(/^写真史上の意義は、/, opener);
+  if (typeof paragraph === 'string') return replaceText(paragraph);
+  if (paragraph && typeof paragraph === 'object' && typeof paragraph.text === 'string') {
+    return { ...paragraph, text: replaceText(paragraph.text) };
   }
   return paragraph;
 };
@@ -1580,8 +1720,8 @@ Object.entries(MOVEMENT_PAGE_CONTENT).forEach(([movement, entry]) => {
   const mainCount = ESSAY_MAIN_COUNT_JA[movement]
     || (paragraphs.length >= 10 ? 6 : paragraphs.length >= 8 ? 5 : Math.max(3, Math.ceil(paragraphs.length * 0.6)));
   entry.sectionsJa = essaySectionsJa(
-    paragraphs.slice(0, mainCount).map(normalizeParagraphTone),
-    paragraphs.slice(mainCount).map(normalizeParagraphTone),
+    paragraphs.slice(0, mainCount).map(normalizeParagraphTone).map((paragraph) => deTemplateSignificance(movement, paragraph)),
+    paragraphs.slice(mainCount).map(normalizeParagraphTone).map((paragraph) => deTemplateSignificance(movement, paragraph)),
     RELATED_MOVEMENT_TEXT_JA[movement] ? [normalizeJaTone(RELATED_MOVEMENT_TEXT_JA[movement])] : []
   );
   entry.sources = mergeSources(
