@@ -2441,7 +2441,8 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['hiroshi-sugimoto'] = {
 
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['irving-penn'] = {
   featured: {
-    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/48NEnwi' }
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/48NEnwi' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4u4Iblj' }
   },
   books: [
     {
@@ -2467,6 +2468,30 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['irving-penn'] = {
       noteJa: 'アーヴィング・ペンの作品理解に役立つ関連書籍。',
       urlJa: 'https://amzn.to/4wlzeFC',
       languages: ['ja']
+    },
+    {
+      titleEn: 'Irving Penn related book 1',
+      noteEn: 'A related book for understanding Irving Penn and his photographic work.',
+      urlEn: 'https://amzn.to/4u4Iblj',
+      languages: ['en']
+    },
+    {
+      titleEn: 'Irving Penn related book 2',
+      noteEn: 'A related book for understanding Irving Penn and his photographic work.',
+      urlEn: 'https://amzn.to/4tsHelF',
+      languages: ['en']
+    },
+    {
+      titleEn: 'Irving Penn related book 3',
+      noteEn: 'A related book for understanding Irving Penn and his photographic work.',
+      urlEn: 'https://amzn.to/4u0HoBD',
+      languages: ['en']
+    },
+    {
+      titleEn: 'Irving Penn related book 4',
+      noteEn: 'A related book for understanding Irving Penn and his photographic work.',
+      urlEn: 'https://amzn.to/4u3ZOSn',
+      languages: ['en']
     }
   ]
 };
