@@ -2446,50 +2446,50 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['irving-penn'] = {
   },
   books: [
     {
-      titleJa: 'アーヴィング・ペン関連書籍 1',
-      noteJa: 'アーヴィング・ペンの作品理解に役立つ関連書籍。',
+      titleJa: 'Still Life: Irving Penn Photographs 1938-2000',
+      noteJa: '花、食物、廃棄物までを静物として見つめたペンの画面構成と質感を追える一冊。',
       urlJa: 'https://amzn.to/48NEnwi',
       languages: ['ja']
     },
     {
-      titleJa: 'アーヴィング・ペン関連書籍 2',
-      noteJa: 'アーヴィング・ペンの作品理解に役立つ関連書籍。',
+      titleJa: 'アーヴィング・ペン全仕事［図録］',
+      noteJa: '東京都写真美術館の展覧会図録として、肖像、ファッション、静物を横断して見渡せる。',
       urlJa: 'https://amzn.to/4cXOFfG',
       languages: ['ja']
     },
     {
-      titleJa: 'アーヴィング・ペン関連書籍 3',
-      noteJa: 'アーヴィング・ペンの作品理解に役立つ関連書籍。',
+      titleJa: 'Irving Penn',
+      noteJa: 'メトロポリタン美術館の回顧展に基づき、長い制作を総覧する大型カタログ。',
       urlJa: 'https://amzn.to/4uKolvH',
       languages: ['ja']
     },
     {
-      titleJa: 'アーヴィング・ペン関連書籍 4',
-      noteJa: 'アーヴィング・ペンの作品理解に役立つ関連書籍。',
+      titleJa: 'アーヴィング・ペン 三宅一生の仕事への視点',
+      noteJa: '三宅一生との協働を通じて、服、身体、写真の造形的な関係をたどる。',
       urlJa: 'https://amzn.to/4wlzeFC',
       languages: ['ja']
     },
     {
-      titleEn: 'Irving Penn related book 1',
-      noteEn: 'A related book for understanding Irving Penn and his photographic work.',
+      titleEn: 'Still Life: Irving Penn Photographs 1938-2000',
+      noteEn: 'A focused view of Penn's still lifes, from flowers and food to discarded objects and surface detail.',
       urlEn: 'https://amzn.to/4u4Iblj',
       languages: ['en']
     },
     {
-      titleEn: 'Irving Penn related book 2',
-      noteEn: 'A related book for understanding Irving Penn and his photographic work.',
+      titleEn: 'Irving Penn',
+      noteEn: 'The Metropolitan Museum of Art catalogue surveys Penn's portraits, fashion work, still lifes, and prints.',
       urlEn: 'https://amzn.to/4tsHelF',
       languages: ['en']
     },
     {
-      titleEn: 'Irving Penn related book 3',
-      noteEn: 'A related book for understanding Irving Penn and his photographic work.',
+      titleEn: 'Irving Penn: A Career in Photography',
+      noteEn: 'Colin Westerbeck's volume frames Penn's career across magazine work, studio portraiture, and printmaking.',
       urlEn: 'https://amzn.to/4u0HoBD',
       languages: ['en']
     },
     {
-      titleEn: 'Irving Penn related book 4',
-      noteEn: 'A related book for understanding Irving Penn and his photographic work.',
+      titleEn: 'Passage: A Work Record',
+      noteEn: 'Penn's own work record offers a broad path through decades of photographs, assignments, and studio practice.',
       urlEn: 'https://amzn.to/4u3ZOSn',
       languages: ['en']
     }
@@ -2503,56 +2503,56 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['richard-avedon'] = {
   },
   books: [
     {
-      titleJa: 'リチャード・アヴェドン関連書籍 1',
-      noteJa: 'リチャード・アヴェドンの作品理解に役立つ関連書籍。',
+      titleJa: 'Evidence 1944-1994',
+      noteJa: '1944年から1994年までの仕事を、ファッション、肖像、政治的イメージを含めて広くたどる。',
       urlJa: 'https://amzn.to/49kCt6o',
       languages: ['ja']
     },
     {
-      titleJa: 'リチャード・アヴェドン関連書籍 2',
-      noteJa: 'リチャード・アヴェドンの作品理解に役立つ関連書籍。',
+      titleJa: 'Richard Avedon: Relationships',
+      noteJa: '人物同士、写真家と被写体、見る側の距離を軸に、アヴェドンの肖像を読み直す。',
       urlJa: 'https://amzn.to/3PjxmfQ',
       languages: ['ja']
     },
     {
-      titleJa: 'リチャード・アヴェドン関連書籍 3',
-      noteJa: 'リチャード・アヴェドンの作品理解に役立つ関連書籍。',
+      titleJa: 'Woman in the Mirror',
+      noteJa: 'ファッション写真と女性像の関係から、誌面で作られる身振りと表面を見られる。',
       urlJa: 'https://amzn.to/48QR8WT',
       languages: ['ja']
     },
     {
-      titleJa: 'リチャード・アヴェドン関連書籍 4',
-      noteJa: 'リチャード・アヴェドンの作品理解に役立つ関連書籍。',
+      titleJa: 'Richard Avedon Immortal: Portraits 1951-2004',
+      noteJa: '1951年から2004年までの肖像を通じ、顔、老い、名声、死の見せ方を追える。',
       urlJa: 'https://amzn.to/4uJmO9c',
       languages: ['ja']
     },
     {
-      titleEn: 'Richard Avedon related book 1',
-      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      titleEn: 'Evidence 1944-1994',
+      noteEn: 'A broad survey of Avedon's fashion, portrait, and public-facing images across five decades.',
       urlEn: 'https://amzn.to/4nkF4ms',
       languages: ['en']
     },
     {
-      titleEn: 'Richard Avedon related book 2',
-      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      titleEn: "Richard Avedon: The Harper's Bazaar Years",
+      noteEn: "A focused look at the magazine work that shaped Avedon's fashion photography and editorial rhythm.",
       urlEn: 'https://amzn.to/4nlmwm7',
       languages: ['en']
     },
     {
-      titleEn: 'Richard Avedon related book 3',
-      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      titleEn: 'Richard Avedon: Relationships',
+      noteEn: 'This volume reads Avedon through the charged relations between sitter, photographer, and viewer.',
       urlEn: 'https://amzn.to/4uK3Cbj',
       languages: ['en']
     },
     {
-      titleEn: 'Richard Avedon related book 4',
-      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      titleEn: 'Richard Avedon Immortal: Portraits 1951-2004',
+      noteEn: 'A portrait-focused book that follows Avedon's treatment of fame, aging, presence, and mortality.',
       urlEn: 'https://amzn.to/3OT7bg7',
       languages: ['en']
     },
     {
-      titleEn: 'Richard Avedon related book 5',
-      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      titleEn: 'Woman in the Mirror',
+      noteEn: "A fashion-centered volume on how Avedon's images stage women, clothing, gesture, and surface.",
       urlEn: 'https://amzn.to/4dlsrTX',
       languages: ['en']
     }
