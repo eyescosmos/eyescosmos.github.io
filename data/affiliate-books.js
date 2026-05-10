@@ -2496,6 +2496,38 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['irving-penn'] = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['richard-avedon'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/49kCt6o' }
+  },
+  books: [
+    {
+      titleJa: 'リチャード・アヴェドン関連書籍 1',
+      noteJa: 'リチャード・アヴェドンの作品理解に役立つ関連書籍。',
+      urlJa: 'https://amzn.to/49kCt6o',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'リチャード・アヴェドン関連書籍 2',
+      noteJa: 'リチャード・アヴェドンの作品理解に役立つ関連書籍。',
+      urlJa: 'https://amzn.to/3PjxmfQ',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'リチャード・アヴェドン関連書籍 3',
+      noteJa: 'リチャード・アヴェドンの作品理解に役立つ関連書籍。',
+      urlJa: 'https://amzn.to/48QR8WT',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'リチャード・アヴェドン関連書籍 4',
+      noteJa: 'リチャード・アヴェドンの作品理解に役立つ関連書籍。',
+      urlJa: 'https://amzn.to/4uJmO9c',
+      languages: ['ja']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['edward-weston'] = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4eYwffY' },
