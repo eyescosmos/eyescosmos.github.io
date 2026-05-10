@@ -2439,6 +2439,38 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['hiroshi-sugimoto'] = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['irving-penn'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/48NEnwi' }
+  },
+  books: [
+    {
+      titleJa: 'アーヴィング・ペン関連書籍 1',
+      noteJa: 'アーヴィング・ペンの作品理解に役立つ関連書籍。',
+      urlJa: 'https://amzn.to/48NEnwi',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'アーヴィング・ペン関連書籍 2',
+      noteJa: 'アーヴィング・ペンの作品理解に役立つ関連書籍。',
+      urlJa: 'https://amzn.to/4cXOFfG',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'アーヴィング・ペン関連書籍 3',
+      noteJa: 'アーヴィング・ペンの作品理解に役立つ関連書籍。',
+      urlJa: 'https://amzn.to/4uKolvH',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'アーヴィング・ペン関連書籍 4',
+      noteJa: 'アーヴィング・ペンの作品理解に役立つ関連書籍。',
+      urlJa: 'https://amzn.to/4wlzeFC',
+      languages: ['ja']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['edward-weston'] = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4eYwffY' },
