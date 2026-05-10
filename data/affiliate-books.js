@@ -2498,7 +2498,8 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['irving-penn'] = {
 
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['richard-avedon'] = {
   featured: {
-    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/49kCt6o' }
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/49kCt6o' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4nkF4ms' }
   },
   books: [
     {
@@ -2524,6 +2525,36 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['richard-avedon'] = {
       noteJa: 'リチャード・アヴェドンの作品理解に役立つ関連書籍。',
       urlJa: 'https://amzn.to/4uJmO9c',
       languages: ['ja']
+    },
+    {
+      titleEn: 'Richard Avedon related book 1',
+      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      urlEn: 'https://amzn.to/4nkF4ms',
+      languages: ['en']
+    },
+    {
+      titleEn: 'Richard Avedon related book 2',
+      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      urlEn: 'https://amzn.to/4nlmwm7',
+      languages: ['en']
+    },
+    {
+      titleEn: 'Richard Avedon related book 3',
+      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      urlEn: 'https://amzn.to/4uK3Cbj',
+      languages: ['en']
+    },
+    {
+      titleEn: 'Richard Avedon related book 4',
+      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      urlEn: 'https://amzn.to/3OT7bg7',
+      languages: ['en']
+    },
+    {
+      titleEn: 'Richard Avedon related book 5',
+      noteEn: 'A related book for understanding Richard Avedon and his photographic work.',
+      urlEn: 'https://amzn.to/4dlsrTX',
+      languages: ['en']
     }
   ]
 };

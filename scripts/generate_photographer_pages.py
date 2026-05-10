@@ -548,7 +548,7 @@ def build_affiliate_books_html(photographer: dict, lang: str, affiliate_books: d
                 "imageUrl": image_url,
                 "imageAlt": image_alt,
             })
-    books = books[:4]
+    books = books[:5]
 
     if not books:
         return f"""<section class="section" data-affiliate-section data-nosnippet>
