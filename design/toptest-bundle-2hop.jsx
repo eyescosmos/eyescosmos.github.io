@@ -72,6 +72,23 @@ function ensureTopPageManualPhotographers() {
       urlEn: 'https://eyescosmos.github.io/en/photographers/pieter-hugo.html',
       x: 0.73,
       y: 0.76
+    },
+    {
+      id: 'tokuko-ushioda',
+      name: '潮田登久子',
+      nameJa: '潮田登久子',
+      nameEn: 'Tokuko Ushioda',
+      country: '日本',
+      nationality: 'JP',
+      flag: '🇯🇵',
+      years: '1940-',
+      era: '1970',
+      movements: ['日本写真', '私写真', 'タイポロジー写真', 'プライベート写真'],
+      influence: 7.2,
+      url: 'https://eyescosmos.github.io/photographers/tokuko-ushioda.html',
+      urlEn: 'https://eyescosmos.github.io/en/photographers/tokuko-ushioda.html',
+      x: 0.58,
+      y: 0.66
     }
   ];
   additions.forEach((photographer) => {
@@ -96,7 +113,11 @@ function ensureTopPageManualPhotographers() {
     ['ernest-cole', 'capa', 'フォトジャーナリズム'],
     ['pieter-hugo', 'arbus', 'ポートレート'],
     ['pieter-hugo', 'mapplethorpe', 'ポートレート'],
-    ['pieter-hugo', 'sherman', 'コンセプチュアルアート']
+    ['pieter-hugo', 'sherman', 'コンセプチュアルアート'],
+    ['tokuko-ushioda', 'rinko-kawauchi', '日本写真'],
+    ['tokuko-ushioda', 'araki', '私写真'],
+    ['tokuko-ushioda', 'becher', 'タイポロジー写真'],
+    ['tokuko-ushioda', 'yurie-nagashima', 'プライベート写真']
   ].forEach((connection) => {
     if (existing.has(connection[0]) && existing.has(connection[1]) && !connectionKeys.has(connectionKey(connection))) {
       window.CONNECTIONS.push(connection);

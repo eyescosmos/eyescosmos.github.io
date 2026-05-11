@@ -2471,25 +2471,25 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['irving-penn'] = {
     },
     {
       titleEn: 'Still Life: Irving Penn Photographs 1938-2000',
-      noteEn: 'A focused view of Penn's still lifes, from flowers and food to discarded objects and surface detail.',
+      noteEn: 'A focused view of Penn\'s still lifes, from flowers and food to discarded objects and surface detail.',
       urlEn: 'https://amzn.to/4u4Iblj',
       languages: ['en']
     },
     {
       titleEn: 'Irving Penn',
-      noteEn: 'The Metropolitan Museum of Art catalogue surveys Penn's portraits, fashion work, still lifes, and prints.',
+      noteEn: 'The Metropolitan Museum of Art catalogue surveys Penn\'s portraits, fashion work, still lifes, and prints.',
       urlEn: 'https://amzn.to/4tsHelF',
       languages: ['en']
     },
     {
       titleEn: 'Irving Penn: A Career in Photography',
-      noteEn: 'Colin Westerbeck's volume frames Penn's career across magazine work, studio portraiture, and printmaking.',
+      noteEn: 'Colin Westerbeck\'s volume frames Penn\'s career across magazine work, studio portraiture, and printmaking.',
       urlEn: 'https://amzn.to/4u0HoBD',
       languages: ['en']
     },
     {
       titleEn: 'Passage: A Work Record',
-      noteEn: 'Penn's own work record offers a broad path through decades of photographs, assignments, and studio practice.',
+      noteEn: 'Penn\'s own work record offers a broad path through decades of photographs, assignments, and studio practice.',
       urlEn: 'https://amzn.to/4u3ZOSn',
       languages: ['en']
     }
@@ -2528,7 +2528,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['richard-avedon'] = {
     },
     {
       titleEn: 'Evidence 1944-1994',
-      noteEn: 'A broad survey of Avedon's fashion, portrait, and public-facing images across five decades.',
+      noteEn: 'A broad survey of Avedon\'s fashion, portrait, and public-facing images across five decades.',
       urlEn: 'https://amzn.to/4nkF4ms',
       languages: ['en']
     },
@@ -2546,7 +2546,7 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['richard-avedon'] = {
     },
     {
       titleEn: 'Richard Avedon Immortal: Portraits 1951-2004',
-      noteEn: 'A portrait-focused book that follows Avedon's treatment of fame, aging, presence, and mortality.',
+      noteEn: 'A portrait-focused book that follows Avedon\'s treatment of fame, aging, presence, and mortality.',
       urlEn: 'https://amzn.to/3OT7bg7',
       languages: ['en']
     },

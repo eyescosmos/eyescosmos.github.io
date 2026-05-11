@@ -87,6 +87,7 @@
     'lieko-shiga': 'しがりえこ',
     'noriko-hayashi': 'はやしのりこ',
     'daisuke-yokota': 'よこただいすけ',
+    'tokuko-ushioda': 'うしおだとくこ',
   };
   const SUGGESTIONS_JA = ['アメリカ写真', 'ピクトリアリズム', '1890'];
   const SUGGESTIONS_EN = ['American Photography', 'Pictorialism', '1890'];

@@ -215,6 +215,7 @@ JAPANESE_READING_OVERRIDES = {
     "lieko-shiga": "しがりえこ",
     "noriko-hayashi": "はやしのりこ",
     "daisuke-yokota": "よこただいすけ",
+    "tokuko-ushioda": "うしおだとくこ",
 }
 
 GOJUON_ROWS = {
