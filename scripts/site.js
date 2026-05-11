@@ -440,12 +440,6 @@ const MOVEMENT_NAME_OVERRIDES_EN = {
   '写真石版': 'Photolithography',
   '明治ドキュメンタリー': 'Meiji Documentary'
 };
-const MOVEMENT_TAXONOMY = window.MOVEMENT_TAXONOMY || {
-  featured: [],
-  aliases: {},
-  excluded: [],
-  reconsider: []
-};
 const VISIBLE_MOVEMENT_SET = new Set(MOVEMENT_TAXONOMY.featured || []);
 const MOVEMENT_ALIAS_MAP = MOVEMENT_TAXONOMY.aliases || {};
 const EXCLUDED_MOVEMENT_SET = new Set(MOVEMENT_TAXONOMY.excluded || []);
