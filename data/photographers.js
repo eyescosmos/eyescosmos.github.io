@@ -335,18 +335,19 @@ const PHOTOGRAPHERS = [
     movements: ['ピクトリアリズム', 'ポートレート'],
     thumbnail: '',
     links: [
-      { label: 'MoMA', url: 'https://www.moma.org/artists/992' },
+      { label: 'V&A — Julia Margaret Cameron', url: 'https://www.vam.ac.uk/collections/julia-margaret-cameron' },
+      { label: 'The Met Collection', url: 'https://www.metmuseum.org/art/collection/search?q=Julia%20Margaret%20Cameron' },
+      { label: 'National Portrait Gallery', url: 'https://www.npg.org.uk/collections/search/person/mp00717/julia-margaret-cameron' },
+      { label: 'Getty Publications', url: 'https://www.getty.edu/publications/virtuallibrary/0892366818.html' },
       { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Julia_Margaret_Cameron' },
-      { label: 'The Met Collection', url: 'https://www.metmuseum.org/art/collection/search?q=julia+margaret+cameron' },
-      { label: 'Victoria & Albert Museum', url: 'https://www.vam.ac.uk/collections/photography?q=julia+margaret+cameron' },
     ],
-    amazon: '',
+    amazon: 'https://amzn.to/3NN5xMt',
     context: {
-      text: 'キャメロンは1815年にカルカッタで生まれ、詩人テニスン・科学者ハーシェルらと親交を持つヴィクトリア朝のインテリゲンチャの中にいた。1863年、娘からカメラを贈られた時、彼女は48歳だった*1。ハーシェル卿への手紙でキャメロンは「私の志は写真を高貴にし、それに高い芸術の性格と用途を与えることだ」と記している——この言葉が彼女の写真活動全体の目的を示す*2。その手段として当時の標準（鮮鋭な像）を意図的に外したソフトフォーカスを選んだ。長時間露光・浅い被写界深度・低照明を組み合わせ、化学薬品の染みや指紋もそのまま残した。「技術的欠陥」と批判されたが、キャメロンは「写真の真実は精密さではなく内面を喚起することにある」と信じた*1。チャールズ・ダーウィン・テニスン・カーライルらのポートレート、アーサー王伝説・聖書をテーマにした構成作品を残した。作品は大判（約38×30cm）で制作され、絵画と比較できる規模を持っていた。1875年にセイロン（現スリランカ）へ移住し、1879年に没した*2。',
-      textEn: 'Julia Margaret Cameron was already forty-eight when her daughter gave her a camera in 1863*1. Moving within a Victorian intellectual world that included Tennyson and Herschel, she immediately set herself an ambitious goal: to ennoble photography and give it the character and use of high art*2. Instead of sharp definition, she embraced soft focus, long exposure, shallow depth, and even visible chemical marks when they helped evoke inner life. Though critics called these technical faults, Cameron believed that photography\'s truth lay not in precision but in emotional and spiritual intensity*1. Her portraits of figures such as Darwin and Tennyson, along with her staged biblical and Arthurian scenes, made her one of the great pioneers of expressive portraiture*2.',
+      text: 'キャメロンは1815年にカルカッタで生まれ、1848年に夫とともにイギリスへ移った。ワイト島ではテニスン・ダーウィン・ワッツらと近く、1863年に娘からカメラを贈られ制作を始めた*1。湿板コロジオン法は化学的に不安定で、薬品のむらや指紋が像に入りやすかったが、キャメロンはその揺らぎをソフトフォーカスと組み合わせ、家族や使用人を聖母・詩の人物として撮影した*2。1865年には大型ネガを導入して近接肖像を制作し、1874年にはテニスン『国王牧歌』の写真挿絵を手がけた。後のピクトリアリズムに先立ち、肖像写真が外見の記録にとどまらず感情と想像力を扱えることを示した*1。1875年にセイロン（現スリランカ）へ移り、1879年に没した*1。',
+      textEn: 'Cameron was born in 1815 in Calcutta and moved to Britain with her husband in 1848. At Freshwater on the Isle of Wight she lived near Tennyson, Darwin, and Watts, and began photographing in 1863 after her daughter gave her a camera*1. The wet-collodion process she used was chemically unstable, leaving stains and marks in the image, but she combined those traces with soft focus and close framing to photograph family members and servants as Madonnas and literary figures*2. In 1865 she adopted large-format negatives for close-up portraits, and in 1874 she produced photographic illustrations for Tennyson\'s Idylls of the King. Working before Pictorialism took shape, she showed that portrait photography could carry feeling and imagination beyond outward likeness*1. She moved to Ceylon in 1875 and died there in 1879*1.',
       citations: [
         { num: 1, name: "V&A — Julia Margaret Cameron's working methods", url: 'https://www.vam.ac.uk/articles/julia-margaret-camerons-working-methods' },
-        { num: 2, name: 'Wikipedia — Julia Margaret Cameron', url: 'https://en.wikipedia.org/wiki/Julia_Margaret_Cameron' },
+        { num: 2, name: 'National Gallery of Canada — Focus on the Collection: Julia Margaret Cameron', url: 'https://www.gallery.ca/photo-blog/focus-on-the-collection-julia-margaret-cameron-1815-1879' },
       ]
     }
   },

@@ -231,14 +231,14 @@ SEO_TEXT_OVERRIDES = {
     },
     "cameron": {
         "ja": {
-            "title": "ジュリア・マーガレット・キャメロン | ピクトリアリズムの写真家 | 写真の座標",
-            "description": "48歳でカメラを持ち12年間に約900点を残したイギリスのヴィクトリア朝写真家。意図的なソフトフォーカスで被写体の内面を表出させ、写真を芸術として確立した先駆者として知られる。姪孫にヴァージニア・ウルフを持つ。",
-            "lead": "48歳でカメラを持ち12年間に約900点を残したイギリスのヴィクトリア朝写真家。意図的なソフトフォーカスで被写体の内面を表出させ、写真を芸術として確立した先駆者として知られる。姪孫にヴァージニア・ウルフを持つ。",
+            "title": "ジュリア・マーガレット・キャメロン | ヴィクトリア朝の肖像写真家 | 写真の座標",
+            "description": "湿板写真の揺らぎとソフトフォーカスを用い、家族や使用人を聖母・文学の人物として撮影。後のピクトリアリズムに先立ち、肖像写真を外見の記録から感情と想像力の像へ転じた写真家。",
+            "lead": "ヴィクトリア朝イギリスで、肖像写真を単なる外見の記録から、感情、信仰、文学的想像力を帯びた像へ押し広げた写真家。ソフトフォーカス、近接、大判ネガ、湿板写真の揺らぎを用い、家族、使用人、文学者、科学者を、聖母、預言者、詩の登場人物のように撮影した。技術的な鮮明さをめぐる当時の規範に対し、写真が内面や演出を扱えることを早い時期に示した。",
         },
         "en": {
-            "title": "Julia Margaret Cameron: Pictorialism | Photo Coordinates",
-            "description": "A Victorian British photographer who picked up a camera at forty-eight and produced around 900 works over twelve years. A pioneer who used intentional soft focus to evoke the inner life of her subjects, establishing photography as a fine art. Virginia Woolf was her great-niece.",
-            "lead": "A Victorian British photographer who picked up a camera at forty-eight and produced around 900 works over twelve years. A pioneer who used intentional soft focus to evoke the inner life of her subjects, establishing photography as a fine art. Virginia Woolf was her great-niece.",
+            "title": "Julia Margaret Cameron | Victorian Portrait Photographer | Photo Coordinates",
+            "description": "Cameron used soft focus and wet-plate instability to photograph family and servants as Madonnas and literary figures, anticipating Pictorialism by a generation.",
+            "lead": "In Victorian Britain, Julia Margaret Cameron pushed portrait photography beyond the recording of outward likeness, turning it into an image charged with feeling, faith, and literary imagination. Through soft focus, close framing, large negatives, and the instabilities of the wet-collodion process, she photographed family members, servants, writers, and scientists as if they were Madonnas, prophets, or figures from poetry. At a time when photographic value was often tied to technical sharpness, her work showed early on that the medium could also carry inwardness, staging, and mythic suggestion.",
         },
     },
     "sherman": {
@@ -1124,12 +1124,12 @@ def render_manual_sectioned_essay_html(
             ("Criticism and reception", "These pictures were among", None),
         ],
         ("cameron", "ja"): [
-            ("経歴", None, "その手段として"),
-            ("表現解説", "その手段として", None),
+            ("経歴", None, "湿板コロジオン法は"),
+            ("表現解説", "湿板コロジオン法は", None),
         ],
         ("cameron", "en"): [
-            ("Biography", None, "Instead of sharp definition"),
-            ("Expression / method", "Instead of sharp definition", None),
+            ("Biography", None, "The wet-collodion process"),
+            ("Analysis of Expression", "The wet-collodion process", None),
         ],
     }
     section_rules = rules.get((photographer_id, lang))
