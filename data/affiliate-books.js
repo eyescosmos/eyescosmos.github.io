@@ -1660,33 +1660,48 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.salgado = {
 
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.parr = {
   featured: {
-    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4vk2I6m' },
-    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4voplGU' }
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/49qhE9E' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/42sZu3q' }
   },
   books: [
     {
       titleJa: 'The Last Resort: Photographs of New Brighton',
-      titleEn: 'Last Resort Martin Parr',
-      noteJa: '消費社会の色彩とアイロニーを読む鍵。',
-      noteEn: 'A key to reading color, irony, and consumer culture.',
-      urlJa: 'https://amzn.to/4vk2I6m',
-      urlEn: 'https://amzn.to/4voplGU'
+      titleEn: 'The Last Resort',
+      noteJa: 'ニュー・ブライトンの海辺から、英国ドキュメンタリーをカラーとフラッシュで更新した代表作。',
+      noteEn: 'Parr\'s landmark New Brighton series, where saturated color and flash reshaped British documentary photography.',
+      urlJa: 'https://amzn.to/49qhE9E',
+      urlEn: 'https://amzn.to/42sZu3q',
+      languages: ['ja', 'en']
     },
     {
-      titleJa: 'Global Warning',
-      titleEn: 'Small World Martin Parr',
-      noteJa: '同じ作家を別の編集や視点でたどれる関連写真集。',
-      noteEn: 'A related photobook that follows the same photographer through a different edit or perspective.',
-      urlJa: 'https://amzn.to/4mlMHc0',
-      urlEn: 'https://amzn.to/4sH9CjL'
+      titleJa: 'The Last Resort: Photographs of New Brighton',
+      noteJa: '同シリーズを別版でたどるためのリンク。パーの転換点を手元で確認できる。',
+      urlJa: 'https://amzn.to/4fgKYTL',
+      languages: ['ja']
     },
     {
-      titleJa: 'Amazon検索結果',
-      titleEn: 'Amazon Search Results',
-      noteJa: '関連写真集や別の版を探すための検索リンク。',
-      noteEn: 'A search link for related photobooks and other available editions.',
-      urlJa: 'https://amzn.to/4tDigR3',
-      urlEn: 'https://amzn.to/4mhg1k1'
+      titleJa: 'Life\'s a Beach',
+      titleEn: 'Martin Parr: Life\'s a Beach',
+      noteJa: '海辺の余暇と観光を、ユーモアと皮肉の強い色彩で読む一冊。',
+      noteEn: 'A compact, playful route through beaches, tourism, leisure, and Parr\'s eye for social comedy.',
+      urlJa: 'https://amzn.to/48RdYO3',
+      urlEn: 'https://amzn.to/4nleQjQ',
+      languages: ['ja', 'en']
+    },
+    {
+      titleEn: 'Real Food',
+      noteEn: 'A deadpan Parr catalogue of food, appetite, flash, and everyday consumer culture.',
+      urlEn: 'https://amzn.to/4u88abz',
+      languages: ['en']
+    },
+    {
+      titleJa: 'The Photobook: A History, Vol. 1',
+      titleEn: 'The Photobook: A History, Vol. 1',
+      noteJa: '写真集史を作家自身のコレクションと視点からたどる、フォトブック理解の基本書。',
+      noteEn: 'A foundational photobook-history volume shaped by Parr\'s collecting eye and editorial judgment.',
+      urlJa: 'https://amzn.to/4fhqgmF',
+      urlEn: 'https://amzn.to/4tYV14q',
+      languages: ['ja', 'en']
     }
   ]
 };
@@ -2604,6 +2619,57 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-金丸重嶺'] = {
       noteJa: '写真集ではなく、日本写真を考えるための関連論考。',
       noteEn: 'Not a photobook but a related critical text for understanding Japanese photography.',
       urlJa: 'https://amzn.to/3Q6RnX8'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['tokuko-ushioda'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4d4pVCE' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3QSwq2L' }
+  },
+  books: [
+    {
+      languages: ['ja'],
+      titleJa: 'マイハズバンド',
+      noteJa: '約40年後に再編集された家族写真を、二冊組の写真集としてたどる代表作。',
+      urlJa: 'https://amzn.to/4d4pVCE'
+    },
+    {
+      languages: ['ja'],
+      titleJa: '冷蔵庫―潮田登久子・写真集',
+      noteJa: '家庭の冷蔵庫を反復して撮影した、生活の痕跡を読む初期代表作。',
+      urlJa: 'https://amzn.to/4dAPknp'
+    },
+    {
+      languages: ['ja'],
+      titleJa: '本の景色 SERIE BIBLIOTHECA',
+      noteJa: '本を情報ではなく、造本・棚・保存空間を含む物質として見るシリーズ。',
+      urlJa: 'https://amzn.to/4fcOv5p'
+    },
+    {
+      languages: ['ja'],
+      titleJa: 'I\'M SO HAPPY YOU ARE HERE: Japanese Women Photographers from the 1950s to Now',
+      noteJa: '潮田を含む日本女性写真家史の再配置を確認できる国際的な一冊。',
+      urlJa: 'https://amzn.to/4whP0BD'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Tokuko Ushioda: My Husband (Two Volumes)',
+      noteEn: 'A two-volume photobook that reframes family photographs from the late 1970s and early 1980s.',
+      urlEn: 'https://amzn.to/3QSwq2L'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Tokuko Ushioda: Ice Box',
+      noteEn: 'The refrigerator series, useful for reading Ushioda through domestic objects and repeated observation.',
+      urlEn: 'https://amzn.to/4u2b6Gq'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'I\'m So Happy You Are Here: Japanese Women Photographers from the 1950s to Now',
+      noteEn: 'A broader context for Ushioda within the international reassessment of Japanese women photographers.',
+      urlEn: 'https://amzn.to/42XGk5J'
     }
   ]
 };
