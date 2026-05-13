@@ -1,11 +1,11 @@
 (function () {
-  const SCRIPT_VERSION = '20260508a';
+  const SCRIPT_VERSION = '20260513a';
   const DATA_FILES = [
     'data/movements.js?v=20260508a',
     'data/eras.js?v=20260403c',
     'data/photographers.js?v=20260405j',
     'data/photographers-supplement.js?v=20260409c',
-    'data/photographers-manual-additions.js?v=20260509a',
+    'data/photographers-manual-additions.js?v=20260513a',
     'data/content-helpers.js?v=20260418e',
     'data/future/era-1990s.js?v=20260418d',
     'data/future/era-2000s.js?v=20260403c',
@@ -88,6 +88,8 @@
     'noriko-hayashi': 'はやしのりこ',
     'daisuke-yokota': 'よこただいすけ',
     'tokuko-ushioda': 'うしおだとくこ',
+    'michio-hoshino': 'ほしのみちお',
+    'annie-leibovitz': 'あにーりーぼびっつ',
   };
   const SUGGESTIONS_JA = ['アメリカ写真', 'ピクトリアリズム', '1890'];
   const SUGGESTIONS_EN = ['American Photography', 'Pictorialism', '1890'];
