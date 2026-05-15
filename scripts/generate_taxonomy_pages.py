@@ -402,6 +402,7 @@ def paragraph_payload(paragraph, lang: str, movements_meta: dict | None = None) 
 def citation_sup_html(numbers: list[int]) -> str:
     if not numbers:
         return ""
+    numbers = numbers[:1]
     links = "".join(
         f'<a href="#cite-{number}" aria-label="Source {number}">{number}</a>'
         for number in numbers
@@ -493,6 +494,13 @@ def render_movement_detail_html(sections: list[dict], sources: list[dict], lang:
         for section in sections
         if section
     ]
+    used_numbers = [
+        int(match)
+        for part in parts
+        for match in re.findall(r'href="#cite-(\d+)"', part)
+    ]
+    if used_numbers:
+        used_sources = used_sources[:max(used_numbers)]
     if used_sources:
         source_items = "\n".join(
             f'            <li id="cite-{index}"><a href="{esc(source["url"])}" rel="noopener">{esc(source["label"])}</a></li>'

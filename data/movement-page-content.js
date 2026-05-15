@@ -183,6 +183,21 @@ const DOCUMENTARY_SOURCES = [
   src('Smarthistory — Dorothea Lange, Migrant Mother', 'https://smarthistory.org/dorothea-lange-migrant-mother/'),
 ];
 
+const SOCIAL_DOCUMENTARY_SOURCES = [
+  src('National Galleries of Scotland — Thomas Annan, Close No. 37 High Street', 'https://www.nationalgalleries.org/art-and-artists/9021'),
+  src('MoMA — Jacob Riis', 'https://www.moma.org/artists/4978'),
+  src('Library of Congress — Jacob Riis Collection', 'https://www.loc.gov/pictures/collection/ggbain/item/ggb2005025700/'),
+  src('Library of Congress — National Child Labor Committee Collection', 'https://www.loc.gov/pictures/collection/nclc/'),
+  src('National Archives — Lewis Hine: Documentation of Child Labor', 'https://www.archives.gov/education/lessons/hine-photos'),
+  src('Library of Congress — FSA/OWI Black-and-White Negatives', 'https://www.loc.gov/collections/fsa-owi-black-and-white-negatives/about-this-collection/'),
+  src('Library of Congress — Migrant Mother Research Guide', 'https://guides.loc.gov/migrant-mother'),
+  src('ICP — W. Eugene Smith', 'https://www.icp.org/browse/archive/constituents/w-eugene-smith'),
+  src('MoMA — Ernest Cole', 'https://www.moma.org/artists/2680'),
+  src('The Met — Walker Evans', 'https://www.metmuseum.org/essays/walker-evans-1903-1975'),
+  src('ICP — Walker Evans', 'https://www.icp.org/browse/archive/constituents/walker-evans'),
+  src('Smarthistory — Dorothea Lange, Migrant Mother', 'https://smarthistory.org/dorothea-lange-migrant-mother/'),
+];
+
 const PHOTOJOURNALISM_SOURCES = [
   src('ICP — Henri Cartier-Bresson', 'https://www.icp.org/browse/archive/constituents/henri-cartier-bresson'),
   src('Fondation HCB — Biography', 'https://www.henricartierbresson.org/en/hcb/biography/'),
@@ -515,7 +530,7 @@ const MOVEMENT_PAGE_CONTENT = {
       'さらに、撮る側と撮られる側の非対称性も避けて通れません。外部からコミュニティへ入る写真家が、その人びとの声を代弁してしまう危険、あるいは貧困や差別のイメージが消費される危険は、現代の議論でも中心にあります。',
       'それでも社会ドキュメンタリーは、写真が公共の論争に介入できることを最もはっきり示した領域です。[[m:ドキュメンタリー|ドキュメンタリー]]全般の中でも、とりわけ社会改革と写真の関係を考える入口として、このページは独立した意味を持ちます。',
     ]),
-    sources: [...DOCUMENTARY_SOURCES],
+    sources: [...SOCIAL_DOCUMENTARY_SOURCES],
   },
   'フォトジャーナリズム': {
     leadJa: 'フォトジャーナリズムは、時事的な出来事を写真で伝える実践ですが、その本体は一枚の決定的な写真だけにあるのではありません。雑誌や新聞の編集、キャプション、レイアウト、配信、著作権、取材の移動手段まで含めて成立する報道の制度です。20世紀前半の図版雑誌、戦争報道、マグナムの成立を通じて、写真家は単なる現場記録者から、世界の見え方を組み立てる語り手へ変わりました。その反面、速報性や劇的効果が真実性をゆがめる危険も常につきまといます。',
@@ -1505,6 +1520,7 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/想像させます/g, '想像させる')
   .replace(/組み替えました/g, '組み替えた')
   .replace(/決めます/g, '決める')
+  .replace(/決めました/g, '決めた')
   .replace(/自覚させました/g, '自覚させた')
   .replace(/意識させます/g, '意識させる')
   .replace(/引き受けます/g, '引き受ける')
@@ -1531,6 +1547,8 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/つながっています/g, 'つながっている')
   .replace(/広がりました/g, '広がった')
   .replace(/強まりました/g, '強まった')
+  .replace(/いきました/g, 'いった')
+  .replace(/いきます/g, 'いく')
   .replace(/残りました/g, '残った')
   .replace(/進みました/g, '進んだ')
   .replace(/変わりました/g, '変わった')
@@ -1623,8 +1641,11 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/していません/g, 'していない')
   .replace(/しています/g, 'している')
   .replace(/してきました/g, 'してきた')
+  .replace(/されてきました/g, 'されてきた')
+  .replace(/きました/g, 'きた')
   .replace(/されました/g, 'された')
   .replace(/になりました/g, 'になった')
+  .replace(/なりました/g, 'なった')
   .replace(/となりました/g, 'となった')
   .replace(/できました/g, 'できた')
   .replace(/ありました/g, 'あった')
@@ -1653,6 +1674,7 @@ const normalizeJaTone = (value) => String(value || '')
   .replace(/ではないだった/g, 'ではなかった')
   .replace(/いないだった/g, 'いなかった')
   .replace(/終わりないだった/g, '終わらなかった')
+  .replace(/限りない/g, '限らない')
   .replace(/とどまりない/g, 'とどまらない')
   .replace(/つきまといた/g, 'つきまとった')
   .replace(/暗示す/g, '暗示する');
