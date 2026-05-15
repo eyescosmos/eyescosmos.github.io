@@ -211,12 +211,12 @@ SEO_TEXT_OVERRIDES = {
     },
     "moriyama": {
         "ja": {
-            "title": "森山大道 | プロヴォークと都市のスナップショット | 写真の座標",
-            "description": "森山大道は新宿をはじめとする都市の断片を、荒れ・ブレ・ボケの写真言語で撮影し、戦後日本写真の視覚を大きく変えた。『にっぽん劇場写真帖』『写真よさようなら』などを通じて、記録と欲望、複製と記憶の境界を問い続けている。",
+            "title": "森山大道｜プロヴォークとアレ・ブレ・ボケ｜写真の座標",
+            "description": "美術館・アーカイブ資料を手がかりに、森山大道のプロヴォーク、アレ・ブレ・ボケ、写真集、都市写真、戦後日本写真を読み解く写真史解説。",
         },
         "en": {
-            "title": "Daido Moriyama | Provoke and the Urban Snapshot | Photo Coordinates",
-            "description": "Daido Moriyama transformed postwar Japanese photography through rough, blurred, high-contrast urban images, turning the street into a field of memory, desire, reproduction, and visual instability.",
+            "title": "Daido Moriyama | Provoke and Are-Bure-Boke | Photo Coordinates",
+            "description": "Using museum, archive, and specialist sources, this page examines Daido Moriyama through Provoke, are-bure-boke, photobooks, urban photography, and postwar Japanese photography.",
         },
     },
     "wolfgang-tillmans": {
