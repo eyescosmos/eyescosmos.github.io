@@ -181,11 +181,11 @@ SEO_TEXT_OVERRIDES = {
     },
     "eugenesmith": {
         "ja": {
-            "title": "W・ユージン・スミス | フォト・エッセイと倫理 | 写真の座標",
+            "title": "W・ユージン・スミス｜水俣とフォト・エッセイ｜写真の座標",
             "description": "W・ユージン・スミスは『LIFE』誌でフォト・エッセイを発展させ、長期取材と緻密な編集によって報道写真を物語的で倫理的な形式へ変えた。『Country Doctor』から『水俣』まで、写真が社会的告発になりうることを示した。",
         },
         "en": {
-            "title": "W. Eugene Smith | Photo Essay and Ethics | Photo Coordinates",
+            "title": "W. Eugene Smith | Minamata Project and the Photo Essay | Photo Coordinates",
             "description": "W. Eugene Smith transformed magazine photojournalism through immersive photo essays, from Country Doctor to Minamata, making documentary photography narrative, partisan, and ethically charged.",
         },
     },
@@ -1494,12 +1494,27 @@ def build_intro(photographer: dict, lang: str, era_lookup: dict, movements_meta:
 
 
 def build_description(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
-    return build_meta_summary(photographer, lang, era_lookup, movements_meta, enrichments)
+    name = display_name(photographer, lang)
+    themes = photographer_meta_themes(photographer, lang, era_lookup, movements_meta, enrichments, limit=4)
+    if lang == "en":
+        theme_text = join_list(themes, lang) if themes else "photographic method, historical context, and critical reception"
+        return normalize_space(
+            f"Using museum, archive, and specialist sources, this page examines {name} through {theme_text}."
+        )
+    theme_text = "、".join(themes) if themes else "写真表現、時代背景、写真史上の位置づけ"
+    return normalize_space(
+        f"美術館・アーカイブ資料を手がかりに、{name}の{theme_text}を読み解く写真史解説。"
+    )
 
 
 def build_title(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
     name_primary = display_name(photographer, lang)
     site = "Photo Coordinates" if lang == "en" else "写真の座標"
+    themes = photographer_meta_themes(photographer, lang, era_lookup, movements_meta, enrichments, limit=2)
+    if themes:
+        theme_text = join_list(themes, lang)
+        separator = " | " if lang == "en" else "｜"
+        return f"{name_primary}{separator}{theme_text}{separator}{site}"
     if lang == "en":
         movement_names = expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=1)
         movement = movement_names[0] if movement_names else ""
@@ -1528,6 +1543,84 @@ def build_title(photographer: dict, lang: str, era_lookup: dict, movements_meta:
     available = max(8, max_length - len(name_primary) - len(site) - 6)
     role = truncate_text(role, available).rstrip("。")
     return f"{name_primary} | {role} | {site}"
+
+
+def photographer_meta_themes(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict, limit: int = 4) -> list[str]:
+    values: list[str] = []
+    override = SEO_TEXT_OVERRIDES.get(photographer.get("id"), {}).get(lang, {})
+    override_title = override.get("title") or ""
+    if override_title:
+        pieces = [normalize_space(piece) for piece in re.split(r"\s*[|｜]\s*", override_title) if normalize_space(piece)]
+        site = "Photo Coordinates" if lang == "en" else "写真の座標"
+        name = display_name(photographer, lang)
+        for piece in pieces:
+            if piece in {site, name}:
+                continue
+            if lang == "en":
+                split_pieces = re.split(r"\s+and\s+|,\s*", piece)
+            else:
+                split_pieces = re.split(r"と|、", piece)
+            for value in split_pieces:
+                value = normalize_space(value)
+                if value and value not in values:
+                    values.append(value)
+
+    for movement in expanded_movement_names(photographer, lang, movements_meta, enrichments, limit=3):
+        if movement and movement not in values:
+            values.append(movement)
+
+    descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
+    descriptor = normalize_space(descriptor)
+    if descriptor and not meta_theme_is_role_label(descriptor, lang) and descriptor not in values:
+        values.append(descriptor)
+
+    role = extract_title_role(photographer, lang, era_lookup, movements_meta, enrichments)
+    role = normalize_space(role)
+    if role and not meta_theme_is_role_label(role, lang) and role not in values:
+        values.append(role)
+
+    period = era_period(photographer, era_lookup)
+    if period and period != "—" and period not in values and len(values) < 2:
+        values.append(period)
+
+    cleaned = []
+    for value in values:
+        value = clean_meta_theme(value, lang)
+        if value and value not in cleaned:
+            cleaned.append(value)
+    return cleaned[:limit]
+
+
+def meta_theme_is_role_label(value: str, lang: str) -> bool:
+    text = normalize_space(value)
+    if not text:
+        return True
+    if lang == "en":
+        lower = text.lower()
+        return lower in {"photographer", "an important photographer"} or lower.endswith(" photographer") or lower.startswith("an ") and " photographer" in lower
+    return (
+        "写真家" in text
+        or "重要作家" in text
+        or text.startswith("（")
+        or text.startswith("(")
+        or text in {"写真史", "Photo History"}
+    )
+
+
+def clean_meta_theme(value: str, lang: str) -> str:
+    text = normalize_space(value)
+    if lang == "en":
+        text = re.sub(r"^(?:a|an)\\s+", "", text, flags=re.I)
+        text = re.sub(r"\\s+[Pp]hotographer$", "", text)
+        text = re.sub(r"^Pioneer of\\s+", "", text)
+        return text.strip(" ,.")
+    text = re.sub(r"の(?:重要作家|中心作家|写真家)$", "", text)
+    text = re.sub(r"を記録した写真家$", "", text)
+    text = re.sub(r"を撮り続けた写真家$", "", text)
+    text = re.sub(r"を追った写真家$", "", text)
+    text = re.sub(r"を築いた写真家$", "", text)
+    text = re.sub(r"を代表する写真家$", "", text)
+    return text.strip(" 、。")
 
 
 def build_page_structured_data(photographer: dict, lang: str, title: str, description: str, canonical: str) -> str:
@@ -1936,8 +2029,6 @@ def main() -> None:
             intro = build_intro(photographer, lang, era_lookup, movements_meta, enrichments)
             seo_override = SEO_TEXT_OVERRIDES.get(photographer["id"], {}).get(lang, {})
             if seo_override:
-                description = seo_override.get("description") or description
-                title = seo_override.get("title") or title
                 intro = seo_override.get("lead") or intro
             intro = override_lead(override_entry, lang) or intro
             lead_raw = override_lead_raw(override_entry, lang)

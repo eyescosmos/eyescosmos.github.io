@@ -1159,8 +1159,8 @@ function updateArchiveLanguageLinks() {
 function applyStaticTranslations() {
   document.documentElement.lang = currentLanguage;
   document.title = currentLanguage === 'en'
-    ? 'Photo Coordinates | Browse Photography History by Era, Country, and Movement'
-    : '写真の座標 | 年代順・国別・表現でたどる写真史';
+    ? 'Photographer Archive | Browse by Era, Country, and Movement | Photo Coordinates'
+    : '写真家一覧｜年代・国・運動から探す写真史｜写真の座標';
 
   const mappings = [
     ['archive-back-link', 'homeBack'],

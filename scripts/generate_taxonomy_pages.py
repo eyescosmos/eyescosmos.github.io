@@ -1362,49 +1362,68 @@ def clean_context_intro(text: str, lang: str) -> str:
 def taxonomy_page_title(page_kind: str, label: str, lang: str, era_title: str = "") -> str:
     if lang != "en":
         if page_kind == "movement":
-            return f"{label}｜写真史と表現史｜写真の座標"
-        return f"{label}｜写真家｜写真史｜写真の座標｜Eyes Cosmos"
+            subject = movement_title_subject(label)
+            return f"{label}｜{subject}｜写真の座標"
+        if page_kind == "country":
+            return f"{label}の写真史｜写真家と表現の流れ｜写真の座標"
+        return f"{label}の写真史｜写真家・運動・時代背景｜写真の座標"
     if page_kind == "era":
-        title = f"{label}: {era_title or 'Photography History'} | Photo Coordinates"
-        if len(title) <= 65:
-            return title
-        short_era = re.split(r"[:;,]", era_title or "")[0].strip()
-        title = f"{label}: {short_era or 'Photo History'} | Photo Coordinates"
-        return title if len(title) <= 65 else f"{label} Photography History | Photo Coordinates"
+        return f"{label} Photo History | Photographers, Movements, and Context | Photo Coordinates"
     if page_kind == "country":
-        return f"{label} Photographers | Photo Coordinates"
-    return f"{label}: Definition, History, and Key Photographers | Photo Coordinates"
+        return f"{label} Photo History | Photographers and Visual Culture | Photo Coordinates"
+    return f"{label} | Meaning in Photography History | Photo Coordinates"
 
 
 def taxonomy_meta_description(page_kind: str, label: str, lang: str, era_title: str = "", movement_meta: dict | None = None, movement_desc: str = "") -> str:
     movement_meta = movement_meta or {}
-    if page_kind == "movement":
-        override = movement_meta.get("metaDescEn" if lang == "en" else "metaDescJa")
-        if override:
-            return override
-        lead_override = movement_meta.get("leadEn" if lang == "en" else "leadJa")
-        if lead_override:
-            summary = sentence_summary(strip_inline_link_tokens(lead_override), lang, limit=110 if lang == "en" else 78, max_sentences=1)
-            if lang == "en":
-                return summary if summary else f"What is {label}? This guide explains its place in the history of photography, key photographers, and related approaches."
-            if summary:
-                return summary
     if lang != "en":
         if page_kind == "movement":
-            summary = sentence_summary(movement_desc, lang, limit=70, max_sentences=1)
-            if summary:
-                summary_body = natural_japanese_definition(summary)
-                return f"{label}とは何か。{summary_body} 写真史での位置づけ、代表的写真家、関連する表現とのつながりを解説します。"
-            return f"{label}とは何か。写真史での位置づけ、代表的写真家、関連する表現とのつながりを解説します。"
-        return f"{label}の写真家を一覧できる写真史ページです。写真の座標で、写真家、関連運動、時代の流れをまとめてたどれます。"
+            return f"美術館・アーカイブ資料を手がかりに、{label}の成立背景、代表作家、表現の特徴、写真史上の意味を読み解く写真史解説。"
+        if page_kind == "country":
+            return f"美術館・アーカイブ資料を手がかりに、{label}の写真史を、代表的な写真家・運動・時代背景の関係から整理します。"
+        return f"美術館・アーカイブ資料を手がかりに、{label}の写真史を、写真家・運動・社会背景・表現の変化から整理します。"
     if page_kind == "era":
-        return f"Explore {label} in photography history through photographers, movements, world events, and visual context on Photo Coordinates."
+        return f"Using museum, archive, and specialist sources, this page organizes {label} photo history through photographers, movements, social context, and changes in visual expression."
     if page_kind == "country":
-        return f"Browse photographers connected to {label}, with related eras, movements, and historical context in the history of photography."
-    summary = sentence_summary(movement_desc, lang, limit=110, max_sentences=1)
-    if summary:
-        return f"What is {label}? {summary} This guide explains its place in the history of photography, key photographers, and related approaches."
-    return f"What is {label}? This guide explains its place in the history of photography, key photographers, and related approaches."
+        return f"Using museum, archive, and specialist sources, this page organizes the photo history of {label} through photographers, movements, and historical context."
+    return f"Using museum, archive, and specialist sources, this page examines {label} through its origins, key photographers, visual methods, and meaning in photography history."
+
+
+def movement_title_subject(label: str) -> str:
+    subjects = {
+        "ストレート写真": "近代写真と写真の自律性",
+        "社会ドキュメンタリー": "写真と社会的証言",
+        "ピクトリアリズム": "絵画性と写真表現",
+        "フォトジャーナリズム": "報道写真と社会的証言",
+        "ドキュメンタリー": "記録と写真表現",
+        "モダニズム": "近代視覚と写真表現",
+        "写真分離派": "近代写真と芸術写真",
+        "新即物主義": "客観性と事物の表現",
+        "新しいヴィジョン": "近代視覚と実験",
+        "バウハウス": "デザイン教育と写真表現",
+        "シュルレアリスム": "無意識と写真表現",
+        "レイオグラフ": "カメラレス写真と実験",
+        "リアリズム写真": "現実記録と写真表現",
+        "FSA写真": "大恐慌と社会記録",
+        "決定的瞬間": "瞬間と構図の写真論",
+        "ストリート写真": "都市観察とスナップショット",
+        "プロヴォーク": "戦後日本写真と視覚言語",
+        "私写真": "私性と写真表現",
+        "ニューカラー": "色彩と日常風景",
+        "カラー写真": "色彩表現と写真史",
+        "大判カラー写真": "風景と現代写真",
+        "デュッセルドルフ派": "タイポロジーと現代写真",
+        "タイポロジー写真": "分類と反復の表現",
+        "コンセプチュアルアート": "概念と写真表現",
+        "ピクチャーズ世代": "イメージ批評とポストモダン",
+        "ステージド写真": "演出と写真表現",
+        "フェミニズム写真": "ジェンダー表象と批評",
+        "シネマトグラフィック写真": "映画的構成と写真表現",
+        "自然主義写真": "自然観察と写真表現",
+        "ヴォルテクシズム": "前衛芸術と写真表現",
+        "ダダ": "前衛芸術と写真表現",
+    }
+    return subjects.get(label, "写真史上の意味")
 
 
 def era_context_html(era: dict, lang: str) -> str:
@@ -1993,7 +2012,7 @@ def main():
             people = sort_photographers(photographers_by_movement.get(movement, []), lang)
             movement_meta = movements_meta.get(movement, {})
             movement_label = localized_movement_name(movement, movements_meta, lang)
-            title = (movement_meta.get("titleEn") if lang == "en" else "") or taxonomy_page_title("movement", movement_label, lang)
+            title = taxonomy_page_title("movement", movement_label, lang)
             keyword = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates |" if lang == "en" else f"{movement_label}｜表現｜写真史｜<a href=\"/\">写真の座標</a>｜"
             ja_href = f"{SITE}/movements/{movement_slug(movement, 'ja', movements_meta)}.html"
             en_href = f"{SITE}/en/movements/{movement_slug(movement, 'en', movements_meta)}.html"
@@ -2030,8 +2049,7 @@ def main():
             lead = extend_movement_lead(lead, sections, lang)
             featured = featured_movement_photographers(people, movement, 4)
             if lang == "ja":
-                override_desc = movement_meta.get("metaDescJa") or ""
-                description = override_desc if 90 <= len(override_desc) <= 130 else movement_meta_description_ja(movement_label, lead, movement_desc, featured)
+                description = taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta, movement_desc=movement_desc)
             else:
                 description = taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta, movement_desc=movement_desc)
             sources = movement_source_links(
