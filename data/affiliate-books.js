@@ -2674,6 +2674,69 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['tokuko-ushioda'] = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['michio-hoshino'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/490478F' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4wxcJxx' }
+  },
+  books: [
+    {
+      languages: ['ja'],
+      titleJa: 'アラスカ―極北・生命の地図',
+      noteJa: '野生動物、風景、エッセイ、撮影データから星野のアラスカ像を広くたどれる大型写真集。',
+      urlJa: 'https://amzn.to/490478F'
+    },
+    {
+      languages: ['ja'],
+      titleJa: 'カリブー 極北の旅人',
+      noteJa: '星野が最大のテーマとしたカリブーの旅を、長年の観察と撮影日誌から読む一冊。',
+      urlJa: 'https://amzn.to/42AtaLW'
+    },
+    {
+      languages: ['ja'],
+      titleJa: 'アークティック・オデッセイ―遥かなる極北の記憶',
+      noteJa: '極北の人々、神話、歌、風景を重ね、写真と物語で土地の記憶をたどる写真集。',
+      urlJa: 'https://amzn.to/4wD0SOL'
+    },
+    {
+      languages: ['ja'],
+      titleJa: '新版 星野道夫 悠久の時を旅する',
+      noteJa: '没後の展覧会受容と代表作をまとめて確認できる、星野道夫入門にも向く新版。',
+      urlJa: 'https://amzn.to/4uTjAjq'
+    },
+    {
+      languages: ['ja'],
+      titleJa: '星野道夫 エッセイ 4冊セット',
+      noteJa: '写真と並んで読まれてきた星野の文章世界を、まとめてたどるための入口。',
+      urlJa: 'https://amzn.to/4tFHAW6'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Grizzly',
+      noteEn: 'An early photobook centered on the bears that shaped Hoshino\'s long attention to Alaska\'s wild lives.',
+      urlEn: 'https://amzn.to/4wxcJxx'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'Moose',
+      noteEn: 'A focused study of moose, landscape, and northern lifeways in Hoshino\'s Alaskan work.',
+      urlEn: 'https://amzn.to/4nAIMJ8'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'The Journey of Caribou',
+      noteEn: 'A key route into Hoshino\'s largest theme: migration, waiting, and the scale of Arctic land.',
+      urlEn: 'https://amzn.to/4uSM1Ov'
+    },
+    {
+      languages: ['en'],
+      titleEn: 'The Travelling Tree',
+      noteEn: 'The English edition of Hoshino\'s essays, useful for reading his photographs beside his prose.',
+      urlEn: 'https://amzn.to/3RGfahi'
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-鈴木八郎'] = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4t8lU5C' },
