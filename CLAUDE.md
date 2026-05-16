@@ -14,6 +14,12 @@
 - 最小差分で修正する
 - 変更後の報告は簡潔にする
 
+## Design invariants
+- 本文があるページの h2 / セクションタイトルは、font-size: 14px、color: #c8a96e（アンバー）を維持する
+- 本文内の h3 / 表現解説内の小見出しは、font-size: 1.02rem（約16.3px）、color: #a6bfa4（セージグリーン）を維持する
+- 本文内リンクは青色で統一し、通常時・hover時ともアンバーや本文色へ戻さない
+- これらの表示ルールを変更する場合は、個別HTMLの本文ではなく共通CSS（例: styles/photographer-page.css、styles/taxonomy-page.css）と必要な生成元を優先して調整する
+
 ## Writing principles
 - AIの主観は書かない
 - 出典・引用は明記する
