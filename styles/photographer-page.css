@@ -498,7 +498,7 @@ body::after {
     linear-gradient(180deg, rgba(255, 179, 71, 0.07), transparent 34%),
     var(--surface);
 }
-.section[data-affiliate-section] h2 { color: var(--accent); }
+.section[data-affiliate-section] h2 { color: var(--amazon-brand); }
 .amazon-cta {
   border-color: var(--amazon-border-strong) !important;
   background:
