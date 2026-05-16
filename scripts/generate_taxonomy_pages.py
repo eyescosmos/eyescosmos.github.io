@@ -404,10 +404,10 @@ def citation_sup_html(numbers: list[int]) -> str:
         return ""
     numbers = numbers[:1]
     links = "".join(
-        f'<a href="#cite-{number}" aria-label="Source {number}">{number}</a>'
+        f'<a href="#cite-{number}" aria-label="Source {number}">*{number}</a>'
         for number in numbers
     )
-    return f'<sup class="taxonomy-citation-ref">{links}</sup>'
+    return f'<sup class="sup-ref">{links}</sup>'
 
 
 def render_content_section(
@@ -503,16 +503,16 @@ def render_movement_detail_html(sections: list[dict], sources: list[dict], lang:
         used_sources = used_sources[:max(used_numbers)]
     if used_sources:
         source_items = "\n".join(
-            f'            <li id="cite-{index}"><a href="{esc(source["url"])}" rel="noopener">{esc(source["label"])}</a></li>'
+            f'            <div class="cite-item" id="cite-{index}"><div class="cite-num">*{index}</div><a href="{esc(source["url"])}" rel="noopener" target="_blank">{esc(source["label"])}</a></div>'
             for index, source in enumerate(used_sources, start=1)
         )
-        source_title = "Selected Sources" if lang == "en" else "主な参照先"
+        source_title = "Sources" if lang == "en" else "出典"
         parts.append(
             f'''        <section class="section taxonomy-sources" data-nosnippet>
           <h2>{esc(source_title)}</h2>
-          <ol class="taxonomy-source-list">
+          <div class="sources">
 {source_items}
-          </ol>
+          </div>
         </section>'''
         )
     return "\n".join(parts)
