@@ -13,7 +13,7 @@ from urllib.parse import quote, urlparse
 REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260508a"
+ASSET_VERSION = "20260517a"
 GLOBAL_SEARCH_VERSION = "20260508a"
 OGP_IMAGE_URL = f"{SITE}/assets/ogp-default.png"
 TRUSTED_SOURCE_HOSTS = {

@@ -394,21 +394,21 @@ body::after {
 .section { border: 1px solid var(--border); background: var(--surface); padding: 24px; }
 .section h2 { margin: 0 0 14px; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'DM Mono', monospace; color: var(--accent); }
 .section p, .essay { margin: 0; color: var(--text); line-height: 1.95; font-size: 15px; text-align: justify; }
-.essay h3 { margin: 22px 0 8px; font-size: 15px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; }
+.essay h3 { margin: 22px 0 8px; font-size: 1.02rem !important; font-weight: 600; color: #a6bfa4 !important; letter-spacing: 0.02em; }
 .essay > h3:first-child { margin-top: 0; }
 .essay h3 + p { margin-top: 0; }
 .essay h4 { margin: 16px 0 6px; font-size: 14px; font-weight: 600; color: #a6bfa4; letter-spacing: 0.02em; }
 .essay h4 + p { margin-top: 0; }
 .essay a { color: var(--accent-2); }
-.essay a:hover { color: var(--accent); }
+.essay a:hover { color: var(--accent-2); }
 .essay .inline-photographer-link {
   color: var(--accent-2);
   text-decoration: none;
   border-bottom: 1px solid rgba(159, 180, 223, 0.4);
 }
 .essay .inline-photographer-link:hover {
-  color: var(--accent);
-  border-bottom-color: rgba(215, 192, 156, 0.85);
+  color: var(--accent-2);
+  border-bottom-color: rgba(159, 180, 223, 0.72);
 }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
 .tags-flow,
@@ -498,7 +498,7 @@ body::after {
     linear-gradient(180deg, rgba(255, 179, 71, 0.07), transparent 34%),
     var(--surface);
 }
-.section[data-affiliate-section] h2 { color: var(--amazon-brand); }
+.section[data-affiliate-section] h2 { color: var(--accent); }
 .amazon-cta {
   border-color: var(--amazon-border-strong) !important;
   background:

@@ -556,8 +556,8 @@ body::after {
 }
 .taxonomy-detail-section a:hover,
 .taxonomy-faq a:hover {
-  color: var(--text);
-  border-bottom-color: var(--text);
+  color: var(--accent-2);
+  border-bottom-color: rgba(159, 180, 223, 0.72);
 }
 .taxonomy-citation-ref {
   margin-left: 0.35em;
@@ -575,7 +575,7 @@ body::after {
   margin-left: 0.08em;
 }
 .taxonomy-citation-ref a:hover {
-  color: var(--text);
+  color: var(--accent-2);
 }
 .taxonomy-faq-list {
   display: grid;
@@ -614,8 +614,8 @@ body::after {
   border-bottom: 1px solid rgba(225, 199, 143, 0.35);
 }
 .taxonomy-source-list a:hover {
-  color: var(--text);
-  border-bottom-color: var(--text);
+  color: var(--accent-2);
+  border-bottom-color: rgba(159, 180, 223, 0.72);
 }
 .site-footer {
   margin-top: 22px;
