@@ -16,7 +16,7 @@ import generate_taxonomy_pages as taxonomy_meta
 REPO = Path(__file__).resolve().parent.parent
 SITE = "https://eyescosmos.github.io"
 GA_ID = "G-2VRTV8BZEJ"
-ASSET_VERSION = "20260517b"
+ASSET_VERSION = "20260517c"
 GLOBAL_SEARCH_VERSION = "20260508a"
 OGP_IMAGE_URL = f"{SITE}/assets/ogp-default.png"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
