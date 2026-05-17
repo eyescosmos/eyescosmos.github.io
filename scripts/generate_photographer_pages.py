@@ -263,6 +263,150 @@ SEO_TEXT_OVERRIDES = {
             "description": "Lee Miller crossed Surrealist darkroom work, Vogue wartime photography, and Second World War frontline reporting. Solarization, women's imagery, and her reassessment beyond Man Ray are traced here.",
         },
     },
+    "nicephore-niepce": {
+        "ja": {
+            "title": "ニセフォール・ニエプス｜世界最古の写真とヘリオグラフィー｜写真の座標",
+            "description": "ニセフォール・ニエプスを、世界最古の写真《ル・グラの窓からの眺め》、ヘリオグラフィー、写真の発明史から解説。",
+            "lead": "世界最古の写真《ル・グラの窓からの眺め》とヘリオグラフィーによって、写真の発明史に決定的な位置を占めた人物。",
+        },
+        "en": {
+            "title": "Nicéphore Niépce | The First Photograph and Heliography | Photo Coordinates",
+            "description": "Explore Nicéphore Niépce through heliography, View from the Window at Le Gras, and the invention of photography.",
+            "lead": "A pioneer of heliography whose View from the Window at Le Gras is central to the history of the first surviving photograph.",
+        },
+    },
+    "daguerre": {
+        "ja": {
+            "title": "ルイ・ダゲール｜ダゲレオタイプと写真術の公開｜写真の座標",
+            "description": "ルイ・ダゲールを、ダゲレオタイプ、銀板写真、1839年の写真術公開、《タンプル大通り》から解説。",
+            "lead": "ダゲレオタイプを通じて写真術を社会に広めた人物。銀板写真、都市の視覚、1839年の公開制度から写真の出発点を考える。",
+        },
+        "en": {
+            "title": "Louis Daguerre | Daguerreotype and Early Photography | Photo Coordinates",
+            "description": "Explore Louis Daguerre through the daguerreotype, Boulevard du Temple, and the public announcement of photography in 1839.",
+            "lead": "The inventor associated with the daguerreotype, whose process helped bring photography into public use in 1839.",
+        },
+    },
+    "talbot": {
+        "ja": {
+            "title": "フォックス・タルボット｜カロタイプと『自然の鉛筆』｜写真の座標",
+            "description": "フォックス・タルボットを、カロタイプ、ネガ・ポジ法、写真集『自然の鉛筆』から解説。",
+            "lead": "カロタイプとネガ・ポジ法によって、写真を複製可能なメディアへ導いた人物。『自然の鉛筆』から写真集の始まりもたどる。",
+        },
+        "en": {
+            "title": "William Henry Fox Talbot | Calotype and The Pencil of Nature | Photo Coordinates",
+            "description": "Explore Fox Talbot through the calotype, the negative-positive process, and The Pencil of Nature, one of the first photographic books.",
+            "lead": "A key figure in the calotype and negative-positive process, connecting early photography to reproducibility and the photographic book.",
+        },
+    },
+    "david-octavius-hill": {
+        "ja": {
+            "title": "デイヴィッド・オクタヴィアス・ヒル｜ヒル＆アダムソンとカロタイプ｜写真の座標",
+            "description": "デイヴィッド・オクタヴィアス・ヒルを、ロバート・アダムソンとの協働、カロタイプ、ニューヘブン連作から解説。",
+            "lead": "ロバート・アダムソンとの協働により、カロタイプを肖像と社会記録へ展開した人物。ニューヘブンの漁師たちの連作も重要。",
+        },
+        "en": {
+            "title": "David Octavius Hill | Hill & Adamson and the Calotype | Photo Coordinates",
+            "description": "Explore David Octavius Hill through his collaboration with Robert Adamson, calotype portraiture, and the Newhaven fisherfolk photographs.",
+            "lead": "Known for his collaboration with Robert Adamson, Hill helped turn calotype portraiture toward social presence and early documentary form.",
+        },
+    },
+    "robert-adamson": {
+        "ja": {
+            "title": "ロバート・アダムソン｜ヒル＆アダムソンのカロタイプ写真｜写真の座標",
+            "description": "ロバート・アダムソンを、ヒルとの協働、カロタイプ技術、ニューヘブンの漁師たち、初期社会記録写真から解説。",
+            "lead": "ヒルとの協働で、カロタイプを肖像・労働・地域社会の記録へ広げた写真家。初期写真の表現力を大きく押し広げた。",
+        },
+        "en": {
+            "title": "Robert Adamson | Hill & Adamson and Early Calotype Photography | Photo Coordinates",
+            "description": "Explore Robert Adamson through his collaboration with David Octavius Hill, calotype technique, and early social portraiture in Scotland.",
+            "lead": "A photographer whose collaboration with Hill gave calotype photography unusual depth in portraiture, labor, and social record.",
+        },
+    },
+    "fenton": {
+        "ja": {
+            "title": "ロジャー・フェントン｜クリミア戦争と初期戦争写真｜写真の座標",
+            "description": "ロジャー・フェントンを、クリミア戦争、《死の影の谷》、戦争写真が見せたもの／隠したものから解説。",
+            "lead": "クリミア戦争を撮影した初期戦争写真の代表的存在。戦場を記録する写真が、報道・国家・世論とどう結びついたかを示す。",
+        },
+        "en": {
+            "title": "Roger Fenton | Crimean War Photography | Photo Coordinates",
+            "description": "Explore Roger Fenton through Crimean War photography, Valley of the Shadow of Death, and the early limits of war reportage.",
+            "lead": "One of the central figures in early war photography, known for his Crimean War images and Valley of the Shadow of Death.",
+        },
+    },
+    "legray": {
+        "ja": {
+            "title": "ギュスターヴ・ル・グレー｜海景写真とコンビネーション・プリント｜写真の座標",
+            "description": "ギュスターヴ・ル・グレーを、《大波》、海景写真、空と海を合成するコンビネーション・プリントから解説。",
+            "lead": "海景写真とコンビネーション・プリントによって、初期写真に技術的精度と絵画的構成をもたらした写真家。",
+        },
+        "en": {
+            "title": "Gustave Le Gray | Seascapes and Combination Printing | Photo Coordinates",
+            "description": "Explore Gustave Le Gray through seascapes, The Great Wave, Sète, and combination printing in early photographic art.",
+            "lead": "A leading figure in early photographic art, known for seascapes and combination printing that joined technical control with visual drama.",
+        },
+    },
+    "nadar": {
+        "ja": {
+            "title": "ナダール｜肖像写真・気球・航空写真｜写真の座標",
+            "description": "ナダールを、肖像写真、ボードレールやユゴーのポートレート、気球による航空写真、地下撮影から解説。",
+            "lead": "肖像写真、気球による航空写真、地下撮影を横断した写真家。十九世紀パリの文化人と都市空間を写真に結びつけた。",
+        },
+        "en": {
+            "title": "Nadar | Portrait Photography, Balloons and Aerial Views | Photo Coordinates",
+            "description": "Explore Nadar through portrait photography, aerial views from balloons, underground photography, and portraits of nineteenth-century artists.",
+            "lead": "A photographer of portraits, balloons, aerial views, and underground spaces, linking nineteenth-century celebrity culture with experimental photography.",
+        },
+    },
+    "alexander-gardner": {
+        "ja": {
+            "title": "アレクサンダー・ガードナー｜南北戦争写真と記録の倫理｜写真の座標",
+            "description": "アレクサンダー・ガードナーを、南北戦争写真、『戦争写真スケッチブック』、アンティータム、リンカーン暗殺後の記録から解説。",
+            "lead": "南北戦争写真を通じて、戦場の死、記録の編集、写真の証拠性を問い直した写真家。アンティータムの記録でも知られる。",
+        },
+        "en": {
+            "title": "Alexander Gardner | Civil War Photography and Documentary Evidence | Photo Coordinates",
+            "description": "Explore Alexander Gardner through Civil War photography, Antietam, Gardner's Photographic Sketch Book, and the ethics of photographic evidence.",
+            "lead": "A Civil War photographer whose images of Antietam and photographic publications raised questions about evidence, staging, and historical memory.",
+        },
+    },
+    "brady": {
+        "ja": {
+            "title": "マシュー・ブレイディ｜南北戦争写真と肖像スタジオ｜写真の座標",
+            "description": "マシュー・ブレイディを、南北戦争写真、アンティータムの死者、大統領肖像、写真スタジオの記録体制から解説。",
+            "lead": "肖像スタジオと撮影チームを通じて、南北戦争の視覚記録を組織した写真家。戦争写真とメディア体制の接点を示す。",
+        },
+        "en": {
+            "title": "Mathew Brady | Civil War Photography and the Portrait Studio | Photo Coordinates",
+            "description": "Explore Mathew Brady through Civil War photography, presidential portraits, Antietam, and the studio network behind wartime images.",
+            "lead": "A portrait studio figure who organized one of the major photographic records of the American Civil War.",
+        },
+    },
+    "beato": {
+        "ja": {
+            "title": "フェリーチェ・ベアト｜幕末日本・横浜写真・手彩色写真｜写真の座標",
+            "description": "フェリーチェ・ベアトを、幕末日本、横浜写真、手彩色写真、クリミア戦争から東アジアへの記録写真で解説。",
+            "lead": "幕末日本、横浜写真、手彩色写真を通じて、十九世紀の東アジア像を形成した写真家。戦争写真から観光的イメージまでを横断する。",
+        },
+        "en": {
+            "title": "Felice Beato | Japan, Yokohama Photography and Hand-Colored Prints | Photo Coordinates",
+            "description": "Explore Felice Beato through photographs of Japan, Yokohama photography, hand-colored prints, and nineteenth-century visual records of Asia.",
+            "lead": "A photographer associated with Bakumatsu Japan, Yokohama photography, hand-colored prints, and nineteenth-century images of Asia.",
+        },
+    },
+    "timothy-osullivan": {
+        "ja": {
+            "title": "ティモシー・オサリヴァン｜南北戦争写真と西部測量写真｜写真の座標",
+            "description": "ティモシー・オサリヴァンを、南北戦争写真、ゲティスバーグ、西部測量写真、ニュー・トポグラフィクスへの接続から解説。",
+            "lead": "南北戦争とアメリカ西部測量を撮影した写真家。地形、戦場、国家的調査が写真の視線をどう変えたかを示す。",
+        },
+        "en": {
+            "title": "Timothy O'Sullivan | Civil War and American West Survey Photography | Photo Coordinates",
+            "description": "Explore Timothy O'Sullivan through Civil War photography, American West survey images, Gettysburg, and later links to topographic photography.",
+            "lead": "A photographer of the Civil War and American West surveys whose images later became important to discussions of topographic landscape photography.",
+        },
+    },
 }
 SAME_AS_OVERRIDES = {
     "stieglitz": [
@@ -277,6 +421,58 @@ SAME_AS_OVERRIDES = {
         "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A5%E3%83%AA%E3%82%A2%E3%83%BB%E3%83%9E%E3%83%BC%E3%82%AC%E3%83%AC%E3%83%83%E3%83%88%E3%83%BB%E3%82%AD%E3%83%A3%E3%83%A1%E3%83%AD%E3%83%B3",
         "https://www.wikidata.org/wiki/Q230120",
         "https://viaf.org/viaf/61616074",
+    ],
+    "nicephore-niepce": [
+        "https://en.wikipedia.org/wiki/Nic%C3%A9phore_Ni%C3%A9pce",
+        "https://www.wikidata.org/wiki/Q52384",
+        "https://viaf.org/viaf/12482609",
+    ],
+    "daguerre": [
+        "https://en.wikipedia.org/wiki/Louis_Daguerre",
+        "https://www.wikidata.org/wiki/Q183364",
+        "https://viaf.org/viaf/59128560",
+    ],
+    "talbot": [
+        "https://en.wikipedia.org/wiki/Henry_Fox_Talbot",
+        "https://www.wikidata.org/wiki/Q107316",
+        "https://viaf.org/viaf/56603025",
+    ],
+    "david-octavius-hill": [
+        "https://en.wikipedia.org/wiki/David_Octavius_Hill",
+        "https://www.wikidata.org/wiki/Q348282",
+    ],
+    "robert-adamson": [
+        "https://en.wikipedia.org/wiki/Robert_Adamson_(photographer)",
+        "https://www.wikidata.org/wiki/Q392453",
+    ],
+    "fenton": [
+        "https://en.wikipedia.org/wiki/Roger_Fenton",
+        "https://www.wikidata.org/wiki/Q349687",
+    ],
+    "legray": [
+        "https://en.wikipedia.org/wiki/Gustave_Le_Gray",
+        "https://www.wikidata.org/wiki/Q613302",
+    ],
+    "nadar": [
+        "https://en.wikipedia.org/wiki/Nadar_(photographer)",
+        "https://www.wikidata.org/wiki/Q292552",
+        "https://viaf.org/viaf/32794097",
+    ],
+    "alexander-gardner": [
+        "https://en.wikipedia.org/wiki/Alexander_Gardner_(photographer)",
+        "https://www.wikidata.org/wiki/Q390803",
+    ],
+    "brady": [
+        "https://en.wikipedia.org/wiki/Mathew_Brady",
+        "https://www.wikidata.org/wiki/Q355819",
+    ],
+    "beato": [
+        "https://en.wikipedia.org/wiki/Felice_Beato",
+        "https://www.wikidata.org/wiki/Q23824",
+    ],
+    "timothy-osullivan": [
+        "https://en.wikipedia.org/wiki/Timothy_H._O%27Sullivan",
+        "https://www.wikidata.org/wiki/Q389282",
     ],
 }
 JP_TEXT_RE = re.compile(r"[ぁ-んァ-ン一-龯]")
@@ -2030,6 +2226,8 @@ def main() -> None:
             seo_override = SEO_TEXT_OVERRIDES.get(photographer["id"], {}).get(lang, {})
             if seo_override:
                 intro = seo_override.get("lead") or intro
+                description = seo_override.get("description") or description
+                title = seo_override.get("title") or title
             intro = override_lead(override_entry, lang) or intro
             lead_raw = override_lead_raw(override_entry, lang)
             if lead_raw:

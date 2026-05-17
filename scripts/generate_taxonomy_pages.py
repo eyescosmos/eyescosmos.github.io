@@ -44,6 +44,70 @@ NON_PHOTOGRAPHER_IDS = {
     "gabriel-orozco",
 }
 
+CARD_LEAD_OVERRIDES = {
+    "nicephore-niepce": {
+        "ja": "世界最古の写真《ル・グラの窓からの眺め》とヘリオグラフィーによって、写真の発明史に決定的な位置を占めた人物。",
+        "en": "A pioneer of heliography whose View from the Window at Le Gras is central to the history of the first surviving photograph.",
+    },
+    "daguerre": {
+        "ja": "ダゲレオタイプを通じて写真術を社会に広めた人物。銀板写真、都市の視覚、1839年の公開制度から写真の出発点を考える。",
+        "en": "The inventor associated with the daguerreotype, whose process helped bring photography into public use in 1839.",
+    },
+    "talbot": {
+        "ja": "カロタイプとネガ・ポジ法によって、写真を複製可能なメディアへ導いた人物。『自然の鉛筆』から写真集の始まりもたどる。",
+        "en": "A key figure in the calotype and negative-positive process, connecting early photography to reproducibility and the photographic book.",
+    },
+    "david-octavius-hill": {
+        "ja": "ロバート・アダムソンとの協働により、カロタイプを肖像と社会記録へ展開した人物。ニューヘブンの漁師たちの連作も重要。",
+        "en": "Known for his collaboration with Robert Adamson, Hill helped turn calotype portraiture toward social presence and early documentary form.",
+    },
+    "robert-adamson": {
+        "ja": "ヒルとの協働で、カロタイプを肖像・労働・地域社会の記録へ広げた写真家。初期写真の表現力を大きく押し広げた。",
+        "en": "A photographer whose collaboration with Hill gave calotype photography unusual depth in portraiture, labor, and social record.",
+    },
+    "fenton": {
+        "ja": "クリミア戦争を撮影した初期戦争写真の代表的存在。戦場を記録する写真が、報道・国家・世論とどう結びついたかを示す。",
+        "en": "One of the central figures in early war photography, known for his Crimean War images and Valley of the Shadow of Death.",
+    },
+    "legray": {
+        "ja": "海景写真とコンビネーション・プリントによって、初期写真に技術的精度と絵画的構成をもたらした写真家。",
+        "en": "A leading figure in early photographic art, known for seascapes and combination printing that joined technical control with visual drama.",
+    },
+    "nadar": {
+        "ja": "肖像写真、気球による航空写真、地下撮影を横断した写真家。十九世紀パリの文化人と都市空間を写真に結びつけた。",
+        "en": "A photographer of portraits, balloons, aerial views, and underground spaces, linking nineteenth-century celebrity culture with experimental photography.",
+    },
+    "alexander-gardner": {
+        "ja": "南北戦争写真を通じて、戦場の死、記録の編集、写真の証拠性を問い直した写真家。アンティータムの記録でも知られる。",
+        "en": "A Civil War photographer whose images of Antietam and photographic publications raised questions about evidence, staging, and historical memory.",
+    },
+    "brady": {
+        "ja": "肖像スタジオと撮影チームを通じて、南北戦争の視覚記録を組織した写真家。戦争写真とメディア体制の接点を示す。",
+        "en": "A portrait studio figure who organized one of the major photographic records of the American Civil War.",
+    },
+    "beato": {
+        "ja": "幕末日本、横浜写真、手彩色写真を通じて、十九世紀の東アジア像を形成した写真家。戦争写真から観光的イメージまでを横断する。",
+        "en": "A photographer associated with Bakumatsu Japan, Yokohama photography, hand-colored prints, and nineteenth-century images of Asia.",
+    },
+    "timothy-osullivan": {
+        "ja": "南北戦争とアメリカ西部測量を撮影した写真家。地形、戦場、国家的調査が写真の視線をどう変えたかを示す。",
+        "en": "A photographer of the Civil War and American West surveys whose images later became important to discussions of topographic landscape photography.",
+    },
+}
+
+ERA_SEO_OVERRIDES = {
+    "1839": {
+        "ja": {
+            "title": "1839–1860s｜写真の発明・カロタイプ・初期戦争写真｜写真の座標",
+            "description": "1839–1860sの写真史を、ニエプス、ダゲール、タルボット、フェントン、ベアトらを通じて、写真の発明、カロタイプ、肖像写真、戦争写真からたどる。",
+        },
+        "en": {
+            "title": "1839–1860s | Invention of Photography, Calotype and Early War Photography | Photo Coordinates",
+            "description": "Explore photography from 1839 to the 1860s through Niépce, Daguerre, Talbot, Fenton, Beato and others, from invention to calotype, portraiture and war photography.",
+        },
+    },
+}
+
 COUNTRY_META = {
     "FR": {"ja_code": "FR", "ja_name": "フランス", "en_name": "France", "slug": "france", "flag": "🇫🇷"},
     "GB": {"ja_code": "GB", "ja_name": "イギリス", "en_name": "United Kingdom", "slug": "united-kingdom", "flag": "🇬🇧"},
@@ -848,6 +912,9 @@ def photographer_short_lead(
     lang: str,
     limit: int = 115,
 ) -> str:
+    card_lead = CARD_LEAD_OVERRIDES.get(photographer.get("id") or "", {}).get(lang)
+    if card_lead:
+        return short_block_text(card_lead, lang, limit)
     override = essay_overrides.get(photographer.get("id"), {})
     if lang == "en":
         base = strip_citation_markers(override.get("leadEn") or first_essay_paragraph(override.get("textEn") or override.get("textJa") or ""))
@@ -1945,11 +2012,12 @@ def main():
             era_id = era["id"]
             era_title = era.get("titleEn") if lang == "en" else era.get("title")
             short = era_short_label(era, lang)
-            title = taxonomy_page_title("era", short, lang, era_title or "")
+            era_seo = ERA_SEO_OVERRIDES.get(era_id, {}).get(lang, {})
+            title = era_seo.get("title") or taxonomy_page_title("era", short, lang, era_title or "")
             keyword = f"{short} | Photographers | History of Photography | Photo Coordinates |" if lang == "en" else f"{short}｜写真家｜写真史｜<a href=\"/\">写真の座標</a>｜"
             people = sort_photographers(photographers_by_era.get(era_id, []), lang)
             canonical = f"{SITE}/{'en/' if lang == 'en' else ''}eras/{era_id}.html"
-            description = taxonomy_meta_description("era", short, lang, era_title or "")
+            description = era_seo.get("description") or taxonomy_meta_description("era", short, lang, era_title or "")
             lead = era_lead_text(era, short, people, movements_meta, lang)
             context_html = era_context_html(era, lang)
             hero_groups = (

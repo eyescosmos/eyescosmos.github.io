@@ -397,10 +397,15 @@ body::after {
 .essay h3 { margin: 22px 0 8px; font-size: 1.02rem !important; font-weight: 600; color: #a6bfa4 !important; letter-spacing: 0.02em; }
 .essay > h3:first-child { margin-top: 0; }
 .essay h3 + p { margin-top: 0; }
+.section > h3 { margin: 1.65rem 0 0.55rem; font-size: 1.02rem; font-weight: 600; color: #a6bfa4; letter-spacing: 0.03em; }
+.section > h3:first-of-type { margin-top: 0; }
+.section > h3 + p { margin-top: 0; }
 .essay h4 { margin: 16px 0 6px; font-size: 1.02rem !important; font-weight: 600; color: #a6bfa4 !important; letter-spacing: 0.02em; }
 .essay h4 + p { margin-top: 0; }
 .essay a { color: var(--accent-2); }
-.essay a:hover { color: var(--accent-2); }
+.essay a:hover { color: var(--accent); }
+.section p a { color: var(--accent-2); }
+.section p a:hover { color: var(--accent); }
 .essay .inline-photographer-link {
   color: var(--accent-2);
   text-decoration: none;
