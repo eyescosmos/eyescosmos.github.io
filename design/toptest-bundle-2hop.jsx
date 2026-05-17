@@ -106,6 +106,23 @@ function ensureTopPageManualPhotographers() {
       urlEn: 'https://eyescosmos.github.io/en/photographers/annie-leibovitz.html',
       x: 0.62,
       y: 0.52
+    },
+    {
+      id: 'michio-hoshino',
+      name: '星野道夫',
+      nameJa: '星野道夫',
+      nameEn: 'Michio Hoshino',
+      country: '日本',
+      nationality: 'JP',
+      flag: '🇯🇵',
+      years: '1952-1996',
+      era: '1980',
+      movements: ['ドキュメンタリー'],
+      influence: 7.1,
+      url: 'https://eyescosmos.github.io/photographers/michio-hoshino.html',
+      urlEn: 'https://eyescosmos.github.io/en/photographers/michio-hoshino.html',
+      x: 0.67,
+      y: 0.69
     }
   ];
   additions.forEach((photographer) => {
@@ -138,7 +155,10 @@ function ensureTopPageManualPhotographers() {
     ['annie-leibovitz', 'richard-avedon', 'ステージド写真'],
     ['annie-leibovitz', 'irving-penn', 'ポートレート'],
     ['annie-leibovitz', 'mapplethorpe', 'ポートレート'],
-    ['annie-leibovitz', 'sherman', 'ステージド写真']
+    ['annie-leibovitz', 'sherman', 'ステージド写真'],
+    ['michio-hoshino', 'salgado', 'ドキュメンタリー'],
+    ['michio-hoshino', 'domon', 'ドキュメンタリー'],
+    ['michio-hoshino', 'mitsuaki-iwago', 'ドキュメンタリー']
   ].forEach((connection) => {
     if (existing.has(connection[0]) && existing.has(connection[1]) && !connectionKeys.has(connectionKey(connection))) {
       window.CONNECTIONS.push(connection);
