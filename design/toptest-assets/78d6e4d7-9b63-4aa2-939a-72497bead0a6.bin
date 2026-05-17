@@ -484,10 +484,12 @@ function Constellation({ mode, selected, onSelect, hovered, onHover, tweaks, fil
 
         const desiredScreenX = insets.left + availableWidth * 0.5;
         const desiredScreenY = insets.top + availableHeight * 0.5;
-        const boundsCenterX = (minX + maxX) * 0.5;
-        const boundsCenterY = (minY + maxY) * 0.5;
-        nextTargetPan.x = desiredScreenX - (cx + (boundsCenterX - cx) * nextTargetZoom);
-        nextTargetPan.y = desiredScreenY - (cy + (boundsCenterY - cy) * nextTargetZoom);
+        const selectedBase = toSpreadPx(byId[selected]);
+        const selectedOffset = targetOffsets[selected] || { dx: 0, dy: 0 };
+        const focusX = selectedBase.x + selectedOffset.dx;
+        const focusY = selectedBase.y + selectedOffset.dy;
+        nextTargetPan.x = desiredScreenX - (cx + (focusX - cx) * nextTargetZoom);
+        nextTargetPan.y = desiredScreenY - (cy + (focusY - cy) * nextTargetZoom);
       }
     }
 
