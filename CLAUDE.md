@@ -46,6 +46,12 @@
 - 関連作品・写真集
 - 参考文献・出典
 
+## Content storage — CRITICAL
+- 写真家の本文・解説は必ず `data/photographer-essay-overrides.js` に書く
+- `photographers/*.html` に直接書いてはならない（ジェネレータ実行で上書きされ消える）
+- ジェネレータ（`scripts/generate_photographer_pages.py`）は全HTMLを毎回上書き生成する
+- HTMLへの直接編集は永久に失われる。唯一の永続ストレージは overrides JS ファイル
+
 ## Content consistency
 - アーカイブページと写真家の個別ページで同じ解説を持つ場合は、内容の整合性を保つこと
 - どちらか一方の解説を更新した場合は、対応するもう一方のページにも同じ変更を適用
