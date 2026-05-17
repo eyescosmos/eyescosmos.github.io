@@ -10,13 +10,23 @@ window.PHOTOGRAPHER_ESSAY_OVERRIDES = Object.assign(
 
 表現解説
 
+写真を近代芸術の制度へ接続する課題
+
 1890年代のニューヨークでは、写真は機械的複写の装置とみなされ、絵画や彫刻と同じ地位で美術館や批評の枠組みに入ることはなかった。スティーグリッツの実践が特殊なのは、作品制作以上に、写真をこの枠組みへ接続し直すための装置を連続的に設計した点にある*4。その入り口になったのは、ヨーロッパで成熟したピクトリアリズムの流用だった。この流儀は漠然とした美意識の産物ではなく、作品面で守られた具体的なルールの束として成立していた。ソフトフォーカス・レンズの採用、ゴム重クロム酸塩プリントやプラチナ・パラジウム印画による連続階調と深い黒、絵画的な三分割構図や消失点の操作、霧や薄明、夕暮れ、雪といった大気条件の選好、象徴的・文学的・寓意的なモチーフの導入、ネガやプリント面への手作業的介入による一点性の強調といった選択規則が重ねられ、画面の表情が決められていった*5。一連の手続きは写真を絵画・版画・エッチングの視覚文法へ翻訳する作業であり、単なる美的選好ではなく、写真を既存の芸術言語に同調させるための戦略としても機能した*20。
+
+分離派、『カメラ・ワーク』、291という三つの装置
 
 1902年に結成された写真分離派は、「ピクトリアル写真に傾倒したアメリカ人たちをまとめ、それが個人的表現の独自媒体として認められるよう努める」ための組織として立ち上げられた*6。分離派の活動を支えた実体の一つが、1903年創刊の写真誌『カメラ・ワーク』である。上質なフォトグラビュア印刷と厳選された寄稿は、この雑誌自体を個別の作品群に近い位置へ押し上げ、何を「写真作品」として扱うかを編集的に決める回路として働いた*7。1905年にニューヨーク五番街291番地に開廊した、のちに291と呼ばれる小さな展示室は、そこに対となるもう一本の装置を加えた。写真の個展に加え、アンリ・マティス（1908年）、ポール・セザンヌ、パブロ・ピカソ（1911年）らをアメリカでいち早く紹介したこの空間は、写真と近代絵画を同じ壁面で並べることで、「写真は芸術か」という二分法そのものを相対化する場として機能した*8。
 
+《The Terminal》《The Steerage》と近代構成への転換
+
 《The Terminal》（1893年）に見える小型カメラによる都市への即応性や、《The Steerage》（1907年）における移民船の日常空間と近代的な幾何学的構成の接続は、ピクトリアリズムの文法のなかで都市経験を扱う独自のモードを示している*9*23。《The Steerage》では、上下デッキを分けるタラップ、円筒形のファンネル、斜めに伸びる鉄鎖、突き出た麦わら帽子、階段の欄干といった現実の要素が、そのまま三角・斜線・水平線として画面を分割する抽象的な面の配置に読み換えられ、労働者階級の日常の一場面が近代構成写真の早い例として位置づけ直された*21。第一次世界大戦後、スティーグリッツは絵画的効果への傾倒から距離を取り、素材固有の性質を前提に写真を考える方向へと重心を移していった。モダニズムの核心が「媒体固有の特性を尊重する」ことにあるとすれば、写真が絵画を模倣することはその独自性を自ら否定することになりかねない、という認識である*1。この動きは、ポール・ストランドら次世代の作家や、ストレート写真に属する実践と共鳴しながら進んだ。
 
+「エクイヴァレンツ」と形式＝等価物の美学
+
 1922年以降に集中して制作された雲の連作「エクイヴァレンツ」は、このシフトが具体化した重要な契機の一つである*11。最初の連作タイトル「音楽：十枚の雲の写真の連作」（Music: A Sequence of Ten Cloud Photographs, 1922年）や「空の歌」（Songs of the Sky, 1923年）が示すとおり、スティーグリッツは雲を「被写体」ではなく、形式そのものが感情や思考の等価物になる平面として扱った*12。この等価物という発想が指し示すのは、雲の種類や気象学的な情報ではなく、光の方向、明暗の分布、画面上での雲塊の位置、輪郭の角度、階調のグラデーションといった形式要素の配置そのものが、個々の内的状態のアナロジーとして受け取られうる、という視覚的な等号関係である*11。作曲家アーネスト・ブロッホがこの連作を前に「音楽だ、これは音楽だ」と応じたという記録は、この発想の射程が視覚表現に閉じていなかったことを示している*13。
+
+抒情的抽象との共鳴、編集者としての六つの回路
 
 背景には、形式が物語や再現から独立して感情を喚起しうるという、近代芸術に広く共有された発想がある*11。スティーグリッツはその可能性を写真の側へ引き寄せた。音楽が具体的な対象の描写を持たずとも、リズム、音高、強度、間といった形式要素の配置だけで聴く者に情動を呼び起こすように、雲の写真もまた主題の物語性を経由せず、光と形、階調と間隔の配置によって作用しうる、という見立てである*11。ただし、雲の連作が開いた方向を、後世の抽象写真やf/64、『アパーチュア』誌、アーロン・シスキンドへ一本の線で結ぶことには慎重でありたい。関連は多面的で、エドワード・ウェストンやアンセル・アダムズが追求した乾いた形式性とも完全には重ならない。ここで重要なのは、雲の連作が写真における抽象を、一回的な実験ではなく持続的なプロジェクトとして考えうるものにした点である*2*11。
 
@@ -24,20 +34,30 @@ window.PHOTOGRAPHER_ESSAY_OVERRIDES = Object.assign(
 
 批評と受容
 
-スティーグリッツの受容は、特定の代表作の再評価というよりも、制度と資料の長期的な再編を通じて進んだ。1946年の没後、1948年にニューヨーク近代美術館で追悼展が開かれ、以降、作品、書簡、『カメラ・ワーク』、291関連資料が主要機関へ段階的に移されていった*16。現在ではナショナル・ギャラリー・オブ・アートが、ジョージア・オキーフからの寄贈を中心に約1600点のオリジナル・プリントを収蔵し、「キー・セット」として公開している*17。シカゴ美術館、メトロポリタン美術館、ゲッティ美術館、ジョージ・イーストマン・ミュージアムなども、独自の厚みをもつコレクションを形成している*18。日本では、富士フイルムが主催したピクトリアリズム展やアメリカ近代写真の企画展などの機会に、スティーグリッツを含む写真分離派以降のネットワークが継続的に紹介されてきた*19。総体としての受容は、個別の代表作の評価以上に、写真を美術館、雑誌、ギャラリー、コレクションの循環に組み込んだ実践全体を、後続世代がどう引き継ぎ直しているかという問いと結びついている。`,
+スティーグリッツの受容は、特定の代表作の再評価というよりも、制度と資料の長期的な再編を通じて進んだ。1946年の没後、1948年にニューヨーク近代美術館で追悼展が開かれ、以降、作品、書簡、『カメラ・ワーク』、291関連資料が主要機関へ段階的に移されていった*16。現在ではナショナル・ギャラリー・オブ・アートが、ジョージア・オキーフからの寄贈を中心に約1600点のオリジナル・プリントを収蔵し、「キー・セット」として公開している*17。シカゴ美術館、メトロポリタン美術館、ゲッティ美術館、ジョージ・イーストマン・ミュージアムなども、独自の厚みをもつコレクションを形成している*18。批評の側からは、雲の連作「エクイヴァレンツ」が写真史の内部だけでなく、近代芸術における等価性や抽象の問題として読み直されてきた*14。他方で、こうした制度的な影響力の強さは、同時代の評価においては排他性や権威性への批判と結びつく局面も持っていた。『カメラ・ワーク』や291の選定は自身の美学に沿って厳しく絞り込まれ、その外側に置かれた実践、とりわけジェイコブ・リースやルイス・ハインに代表される労働、移民、貧困を主題とする社会記録的なドキュメンタリー写真は、彼の発信の回路では主流として扱われなかった*15。この編集的な線引きは、アメリカ近代写真が制度化されていく過程で、芸術としての写真と社会の事実を伝える写真とのあいだに早い段階で別々の系譜を敷くことにもつながっていった*4。日本では、富士フイルムが主催したピクトリアリズム展やアメリカ近代写真の企画展などの機会に、スティーグリッツを含む写真分離派以降のネットワークが継続的に紹介されてきた*19。総体としての受容は、個別の代表作の評価以上に、写真を美術館、雑誌、ギャラリー、コレクションの循環に組み込んだ実践全体を、後続世代がどう引き継ぎ直しているかという問いと結びついている。`,
       textEn: `Biography
 
 Alfred Stieglitz was born in 1864 in Hoboken, New Jersey, into an affluent German-Jewish immigrant family. He studied photographic chemistry with Hermann Wilhelm Vogel in Berlin and encountered European photographic circles before returning to the United States in 1890*1. In 1902 he founded the Photo-Secession as a group for American pictorial photographers, and in 1903 he launched Camera Work. In 1905 he opened the small Fifth Avenue space later known simply as 291, where he showed photography alongside early American presentations of Henri Matisse, Paul Cezanne, Pablo Picasso, and other European modernists*2. After 291 closed in 1917, he continued to operate smaller exhibition spaces, including the Intimate Gallery and An American Place, while maintaining a long editorial and artistic partnership with Georgia O'Keeffe. He died in New York in 1946*3.
 
 Expression / method
 
+Connecting photography to the institutions of modern art
+
 In New York in the 1890s, photography was still commonly treated as a mechanical copying process rather than as something that could enter museums and criticism on the same terms as painting or sculpture. What makes Stieglitz distinctive is that he did not only make photographs; he repeatedly designed the institutional devices through which photography could be attached to the language of modern art*4. His first route was pictorialism, imported and adapted from European artistic photography. Pictorialism was not merely a vague preference for beauty. It was a disciplined set of visual rules: soft-focus lenses, gum bichromate and platinum or palladium printing, continuous tone and deep blacks, painterly composition, atmospheric effects such as mist and snow, symbolic or literary subject matter, and manual intervention in negative or print to emphasize the singularity of the object*5. These procedures translated photography into the visual grammar of painting, printmaking, and etching. They also acted strategically, allowing photography to borrow the authority of established art languages while arguing for its own legitimacy*20.
+
+The Photo-Secession, Camera Work, and 291 as institutional devices
 
 The Photo-Secession, founded in 1902, gave this strategy a social and editorial form. Stieglitz defined it as an effort to gather Americans devoted to pictorial photography and to secure recognition for it as a distinctive medium of personal expression*6. Camera Work, begun in 1903, was one of the key instruments of that effort. Through high-quality photogravure, carefully selected contributors, and a controlled editorial voice, the magazine became more than a record of work already made. It functioned as a gate through which particular images, names, and arguments could become visible as photographic art*7. The small gallery at 291 Fifth Avenue added a second device. By placing photographic exhibitions beside modern painting and sculpture, and by showing figures such as Matisse, Cezanne, and Picasso early in the American context, 291 made the question "is photography art?" less a theoretical problem than a curatorial arrangement on the wall*8.
 
+The Terminal, The Steerage, and the turn toward modern composition
+
 Works such as The Terminal (1893) and The Steerage (1907) show how Stieglitz brought urban experience into this evolving language. The Terminal uses the small camera's responsiveness to street conditions, while The Steerage joins the everyday space of an immigrant ship to a sharply modern sense of geometry*9*23. In The Steerage, the gangway, funnel, iron chain, straw hat, railings, and separated decks are not only social details. They become diagonals, triangles, horizontal divisions, and planes. A scene of classed modern life is therefore re-read as an early instance of modern photographic construction*21. After the First World War, Stieglitz moved away from overtly painterly effects and toward a conception of photography based on the properties of the medium itself. If modernism meant respecting the specific capacities of each medium, then photography could not justify itself by imitating painting*1. This shift resonated with Paul Strand and with the later language of straight photography.
 
+The Equivalents and an aesthetic of form-as-equivalent
+
 The cloud series known as the Equivalents, begun in 1922, was a crucial point in that shift*11. Titles such as Music: A Sequence of Ten Cloud Photographs and Songs of the Sky make clear that Stieglitz treated clouds less as meteorological subjects than as fields in which form itself could become an equivalent of feeling and thought*12. The point was not to identify cloud types or record weather. It was to make the direction of light, distribution of tones, position of cloud masses, edges, angles, and gradations function as analogues of inner states*11. The story that the composer Ernest Bloch responded to the pictures by calling them music indicates how far Stieglitz wanted the project to move beyond simple visual description*13.
+
+Resonance with abstraction and six circuits of institutional practice
 
 Behind this idea lies a broader modern belief that visual form can produce emotion without depending on narrative or recognizable subject matter*11. Stieglitz translated that possibility into photography. Just as music can move listeners through rhythm, pitch, intensity, and interval without representing an external object, a photograph of clouds might work through light, shape, tone, and spacing rather than through the story of what it depicts*11. It would be too simple to draw a single straight line from the Equivalents to later abstraction, Group f/64, Aperture, or Aaron Siskind. The relationships are multiple, and the dry formalism of Edward Weston and Ansel Adams does not entirely share Stieglitz's subjective register. What matters here is that the cloud pictures made photographic abstraction thinkable as a sustained project rather than an isolated experiment*2*11.
 
@@ -45,7 +65,7 @@ Stieglitz's larger contribution lies in the way he kept several circuits active 
 
 Criticism and reception
 
-Stieglitz's reception developed less through the rediscovery of a single masterpiece than through the long institutional reorganization of his works and papers. After his death in 1946, the Museum of Modern Art mounted a memorial exhibition in 1948, and his photographs, correspondence, Camera Work material, and 291-related documents entered major collections in stages*16. The National Gallery of Art now holds roughly 1,600 original prints, centered on Georgia O'Keeffe's gift, and makes them available as the Key Set*17. The Art Institute of Chicago, the Metropolitan Museum of Art, the Getty Museum, and the George Eastman Museum also hold substantial Stieglitz materials*18. In Japan, exhibitions at FUJIFILM SQUARE and related projects have continued to introduce the Photo-Secession and the broader network of American modern photography*19. Overall, his reception turns on more than the value of individual images: it concerns how later generations inherit the system he built, in which photographs moved through museums, magazines, galleries, collections, and criticism as modern art.`,
+Stieglitz's reception developed less through the rediscovery of a single masterpiece than through the long institutional reorganization of his works and papers. After his death in 1946, the Museum of Modern Art mounted a memorial exhibition in 1948, and his photographs, correspondence, Camera Work material, and 291-related documents entered major collections in stages*16. The National Gallery of Art now holds roughly 1,600 original prints, centered on Georgia O'Keeffe's gift, and makes them available as the Key Set*17. The Art Institute of Chicago, the Metropolitan Museum of Art, the Getty Museum, and the George Eastman Museum also hold substantial Stieglitz materials*18. Critically, the Equivalents have continued to be reread not only within photographic history but also through broader modernist questions of equivalence and abstraction*14. Yet this institutional influence also had an exclusionary edge. Camera Work and 291 were filtered through Stieglitz's own aesthetics, and practices left outside those circuits — especially the social documentary photography of Jacob Riis and Lewis Hine, whose subjects were labor, immigration, and poverty — were not treated as central within his system*15. This editorial boundary contributed to an early split within American modern photography between photography-as-art and photography-as-social-record*4. In Japan, exhibitions at FUJIFILM SQUARE and related projects have continued to introduce the Photo-Secession and the broader network of American modern photography*19. Overall, his reception turns on more than the value of individual images: it concerns how later generations inherit the system he built, in which photographs moved through museums, magazines, galleries, collections, and criticism as modern art.`,
       citations: [
         { num: 1, name: 'Metropolitan Museum of Art — Alfred Stieglitz (1864–1946) and American Photography', url: 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography' },
         { num: 2, name: 'V&A — Alfred Stieglitz: Pioneer of Modern Photography', url: 'https://www.vam.ac.uk/articles/alfred-stieglitz-pioneer-of-modern-photography' },
@@ -60,7 +80,7 @@ Stieglitz's reception developed less through the rediscovery of a single masterp
         { num: 11, name: 'Art Institute of Chicago — Alfred Stieglitz Collection: Equivalents', url: 'https://archive.artic.edu/stieglitz/equivalents/' },
         { num: 12, name: 'Metropolitan Museum of Art — Equivalent', url: 'https://www.metmuseum.org/art/collection/search/267822' },
         { num: 13, name: 'The Phillips Collection — Equivalent', url: 'https://www.phillipscollection.org/collection/equivalent-6' },
-        { num: 14, name: 'V&A — Alfred Stieglitz: Pioneer of Modern Photography', url: 'https://www.vam.ac.uk/articles/alfred-stieglitz-pioneer-of-modern-photography' },
+        { num: 14, name: 'Modernism/Modernity Print+ — Unrarified Air: Stieglitz and the Modernism of Equivalence', url: 'https://modernismmodernity.org/articles/unrarified-air' },
         { num: 15, name: 'Metropolitan Museum of Art — Alfred Stieglitz (1864–1946) and American Photography', url: 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography' },
         { num: 16, name: 'Museum of Modern Art — 1948 Alfred Stieglitz Memorial Exhibition', url: 'https://www.moma.org/docs/press_archives/1272/releases/MOMA_1946-1948_0147_1948-09-24_48924-37.pdf' },
         { num: 17, name: 'National Gallery of Art — Introduction to the Alfred Stieglitz Key Set', url: 'https://www.nga.gov/research/publications/alfred-stieglitz-key-set/introduction-key-set' },
