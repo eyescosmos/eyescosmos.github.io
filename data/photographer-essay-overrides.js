@@ -10005,6 +10005,9 @@ The estate at Saint-Loup-de-Varennes where Niépce worked is preserved today and
       { num: 12, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
       { num: 13, name: 'National Science and Media Museum — A-Z of Photography: Nicéphore Niépce', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-joseph-nicephore-niepce-first-photograph/' },
       { num: 14, name: 'bicentennial-of-photography.org — Niépce and the Invention', url: 'https://bicentennial-of-photography.org/daguerre-invention-photography/' },
+    ],
+    works: [
+      { titleJa: 'ル・グラの窓からの眺め', titleEn: 'View from the Window at Le Gras', url: 'https://www.hrc.utexas.edu/niepce-heliograph/' },
     ]
   },
 
@@ -10074,6 +10077,9 @@ The Metropolitan Museum of Art writes that the daguerreotype remains without riv
       { num: 10, name: 'George Eastman Museum — The Daguerreotype', url: 'https://www.eastman.org/daguerreotype' },
       { num: 11, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
       { num: 12, name: 'Smithsonian American Art Museum — Photography', url: 'https://americanart.si.edu/art/photography' },
+    ],
+    works: [
+      { titleJa: 'ボールヴァール・デュ・タンプル', titleEn: 'Boulevard du Temple', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
     ]
   },
 
@@ -10148,6 +10154,10 @@ Lacock Abbey (Wiltshire) is preserved by the National Trust; the rooms and darkr
       { num: 11, name: 'V&A — William Henry Fox Talbot: An Introduction', url: 'https://www.vam.ac.uk/articles/william-henry-fox-talbot-an-introduction' },
       { num: 12, name: 'National Trust — Lacock Abbey', url: 'https://www.nationaltrust.org.uk/visit/wiltshire/lacock-abbey-village-and-cloisters' },
       { num: 13, name: 'National Science and Media Museum — A-Z of Photography: Calotype', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-calotype/' },
+    ],
+    works: [
+      { titleJa: '格子窓', titleEn: 'The Latticed Window', url: 'https://collections.vam.ac.uk/item/O1196839/the-latticed-window-calotype-negative-talbot-william-henry-fox/' },
+      { titleJa: '自然の鉛筆', titleEn: 'The Pencil of Nature', url: 'https://www.metmuseum.org/art/collection/search/267791' },
     ]
   },
 
@@ -10217,6 +10227,10 @@ That Hill began photographing as a practical aid to painting, and then exceeded 
       { num: 10, name: 'J. Paul Getty Museum — Hill and Adamson', url: 'https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/' },
       { num: 11, name: 'National Galleries of Scotland — Hill and Adamson', url: 'https://www.nationalgalleries.org/art-and-artists/features/hill-adamson' },
       { num: 12, name: 'Metropolitan Museum of Art — David Octavius Hill and Robert Adamson', url: 'https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s' },
+    ],
+    works: [
+      { titleJa: 'ヒル＆アダムソン作品集（J. Paul Getty Museum）', titleEn: 'Hill & Adamson at the J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/' },
+      { titleJa: 'ヒル＆アダムソン作品集（National Galleries of Scotland）', titleEn: 'Hill & Adamson at National Galleries of Scotland', url: 'https://www.nationalgalleries.org/art-and-artists/features/hill-adamson' },
     ]
   },
 
@@ -10280,6 +10294,9 @@ Adamson's particular position in photographic history lies in being evaluated as
       { num: 8, name: 'Metropolitan Museum of Art — David Octavius Hill and Robert Adamson', url: 'https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s' },
       { num: 9, name: 'National Galleries of Scotland — Hill and Adamson', url: 'https://www.nationalgalleries.org/art-and-artists/features/hill-adamson' },
       { num: 10, name: 'J. Paul Getty Museum — Hill and Adamson', url: 'https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/' },
+    ],
+    works: [
+      { titleJa: 'ヒル＆アダムソン作品集（J. Paul Getty Museum）', titleEn: 'Hill & Adamson at the J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/' },
     ]
   },
 
@@ -10348,6 +10365,10 @@ The Metropolitan Museum situates Fenton as a pioneer of "new uses of photography
       { num: 9, name: 'Library of Congress — Fenton Crimean War Photographs Collection', url: 'https://www.loc.gov/collections/fenton-crimean-war-photographs/about-this-collection/' },
       { num: 10, name: 'Metropolitan Museum of Art — Roger Fenton (1819–1869)', url: 'https://www.metmuseum.org/essays/roger-fenton-1819-1869' },
       { num: 11, name: 'MoMA — Roger Fenton', url: 'https://www.moma.org/artists/1898' },
+    ],
+    works: [
+      { titleJa: '死の影の谷', titleEn: 'The Valley of the Shadow of Death', url: 'https://www.loc.gov/collections/fenton-crimean-war-photographs/about-this-collection/' },
+      { titleJa: 'フェントン・クリミア戦争写真コレクション（Library of Congress）', titleEn: 'Fenton Crimean War Photographs (Library of Congress)', url: 'https://www.loc.gov/collections/fenton-crimean-war-photographs/about-this-collection/' },
     ]
   },
 
@@ -10416,6 +10437,10 @@ The Bibliothèque nationale de France holds a large number of Le Gray's original
       { num: 9, name: 'V&A — Gustave Le Gray: Photographer', url: 'https://www.vam.ac.uk/articles/gustave-le-gray' },
       { num: 10, name: 'Bibliothèque nationale de France — Gustave Le Gray', url: 'https://gallica.bnf.fr/services/engine/search/sru?operation=searchRetrieve&version=1.2&query=%28gallica.title+all+%22le+gray%22%29+and+dc.type+all+%22image%22&lang=fr&suggest=0' },
       { num: 11, name: 'V&A — Gustave Le Gray: Photographer', url: 'https://www.vam.ac.uk/articles/gustave-le-gray' },
+    ],
+    works: [
+      { titleJa: '大波', titleEn: 'La Grande Vague (The Great Wave)', url: 'https://www.getty.edu/art/collection/artists/2244/gustave-le-gray-french-1820-1884/' },
+      { titleJa: '水上のブリッグ帆船', titleEn: 'Brig upon the Water', url: 'https://www.getty.edu/art/collection/artists/2244/gustave-le-gray-french-1820-1884/' },
     ]
   },
 
@@ -10488,6 +10513,10 @@ When Nadar began photography, the democratization of portraiture — making like
       { num: 9, name: 'Metropolitan Museum of Art — Nadar (Gaspard-Félix Tournachon)', url: 'https://www.metmuseum.org/art/collection/search?q=nadar&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
       { num: 10, name: 'Metropolitan Museum of Art — The First Impressionist Exhibition, 1874', url: 'https://www.metmuseum.org/toah/hd/impr/hd_impr.htm' },
       { num: 11, name: 'J. Paul Getty Museum — Nadar', url: 'https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/' },
+    ],
+    works: [
+      { titleJa: 'ナダール作品集（J. Paul Getty Museum）', titleEn: 'Nadar at the J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/' },
+      { titleJa: 'ナダール作品集（MoMA）', titleEn: 'Nadar at MoMA', url: 'https://www.moma.org/artists/4213' },
     ]
   },
 
@@ -10556,6 +10585,10 @@ The western survey photographs Gardner made from 1867 to 1869 — covering Kansa
       { num: 9, name: 'J. Paul Getty Museum — Alexander Gardner', url: 'https://www.getty.edu/art/collection/artists/2019/alexander-gardner-american-born-scotland-1821-1882/' },
       { num: 10, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
       { num: 11, name: 'Library of Congress — Alexander Gardner Photographs', url: 'https://www.loc.gov/pictures/related/?fi=name&q=Gardner%2C+Alexander%2C+1821-1882' },
+    ],
+    works: [
+      { titleJa: '反乱軍の狙撃兵の家', titleEn: 'Home of a Rebel Sharpshooter, Gettysburg', url: 'https://www.getty.edu/art/collection/artists/2019/alexander-gardner-american-born-scotland-1821-1882/' },
+      { titleJa: 'ガードナー写真スケッチブック（Library of Congress）', titleEn: "Gardner's Photographic Sketch Book of the War (Library of Congress)", url: 'https://www.loc.gov/pictures/related/?fi=name&q=Gardner%2C+Alexander%2C+1821-1882' },
     ]
   },
 
@@ -10624,6 +10657,10 @@ Brady's life embodies both the heroic ambition and the tragic failure of a momen
       { num: 9, name: 'Library of Congress — Civil War Photographs', url: 'https://www.loc.gov/collections/civil-war-photographs/about-this-collection/' },
       { num: 10, name: 'Metropolitan Museum of Art — Mathew Brady', url: 'https://www.metmuseum.org/art/collection/search?q=mathew+brady&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
       { num: 11, name: 'Library of Congress — Brady-Handy Photograph Collection', url: 'https://www.loc.gov/pictures/collection/cwp/brady.html' },
+    ],
+    works: [
+      { titleJa: 'ブレイディ南北戦争写真（Library of Congress）', titleEn: 'Brady Civil War Photographs (Library of Congress)', url: 'https://www.loc.gov/collections/civil-war-photographs/about-this-collection/' },
+      { titleJa: 'ブレイディ・ハンディ写真コレクション（Library of Congress）', titleEn: 'Brady-Handy Photograph Collection (Library of Congress)', url: 'https://www.loc.gov/pictures/collection/cwp/brady.html' },
     ]
   },
 
@@ -10687,6 +10724,10 @@ As visual documentation of Japan in the late Tokugawa and early Meiji periods, B
       { num: 8, name: 'MIT Visualizing Cultures — Beato\'s Japan', url: 'https://visualizingcultures.mit.edu/beato_places/essay.pdf' },
       { num: 9, name: 'Metropolitan Museum of Art — Felice Beato Collection', url: 'https://www.metmuseum.org/art/collection/search?q=felice+beato&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
       { num: 10, name: 'MIT Visualizing Cultures — Beato\'s Japan', url: 'https://visualizingcultures.mit.edu/beato_places/essay.pdf' },
+    ],
+    works: [
+      { titleJa: 'フェリーチェ・ベアト作品集（J. Paul Getty Museum）', titleEn: 'Felice Beato at the J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/artists/1061/felice-a-beato-british-born-italy-1832-1909/' },
+      { titleJa: 'フェリーチェ・ベアト作品集（The Met）', titleEn: 'Felice Beato at the Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=felice+beato&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
     ]
   },
 
@@ -10755,6 +10796,10 @@ O'Sullivan's trajectory — unrecognized in his lifetime, then reclaimed as a fo
       { num: 9, name: 'Smithsonian American Art Museum — Framing the West', url: 'https://americanart.si.edu/exhibitions/osullivan' },
       { num: 10, name: 'MoMA — Timothy O\'Sullivan', url: 'https://www.moma.org/artists/4488' },
       { num: 11, name: 'George Eastman Museum — New Topographics', url: 'https://www.eastman.org/collections/photography' },
+    ],
+    works: [
+      { titleJa: '死の収穫', titleEn: 'A Harvest of Death', url: 'https://www.moma.org/collection/works/92454' },
+      { titleJa: 'タファ・ドームズ', titleEn: 'Tufa Domes, Pyramid Lake', url: 'https://www.moma.org/artists/4488' },
     ]
   },
 
