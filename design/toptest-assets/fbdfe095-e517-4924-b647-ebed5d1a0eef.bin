@@ -198,6 +198,23 @@
     }
   });
 
+  const curatedConnections = [
+    ['ansel-adams', 'edward-weston', 'ストレート写真'],
+    ['ansel-adams', 'stieglitz', 'ストレート写真'],
+    ['ansel-adams', 'strand', 'ストレート写真'],
+    ['ansel-adams', 'minor-white', 'ストレート写真'],
+    ['ansel-adams', 'timothy-osullivan', '風景写真'],
+    ['ansel-adams', 'robert-adams', '環境写真'],
+  ];
+  const outIds = new Set(out.map(p => p.id));
+  curatedConnections.forEach(([a, b, move]) => {
+    if (!outIds.has(a) || !outIds.has(b)) return;
+    const k = [a, b].sort().join('::');
+    if (connSet.has(k)) return;
+    connSet.add(k);
+    connections.push([a, b, move]);
+  });
+
   window.PHOTOGRAPHERS = out;
   window.MOVEMENTS = MOVEMENTS;
   window.CONNECTIONS = connections;

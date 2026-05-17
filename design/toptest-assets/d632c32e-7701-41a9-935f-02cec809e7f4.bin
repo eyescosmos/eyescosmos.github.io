@@ -1109,7 +1109,7 @@ PHOTOGRAPHERS.push(
   "years": "1940s / 1940年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": ["ストレート写真", "風景写真", "アメリカ写真"],
   "thumbnail": "",
   "links": [
     { "label": "National Gallery of Art — Ansel Adams", "url": "https://www.nga.gov/artists/25-ansel-adams" },

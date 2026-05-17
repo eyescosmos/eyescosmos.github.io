@@ -1169,6 +1169,11 @@ function App() {
       if (!d || typeof d !== 'object') return;
       if (d.type === '__activate_edit_mode') setEditModeHost(true);
       if (d.type === '__deactivate_edit_mode') setEditModeHost(false);
+      if (d.type === '__pc_select_photographer') {
+        const id = String(d.id || '');
+        if ((window.PHOTOGRAPHERS || []).some((p) => p.id === id)) setSelected(id);
+      }
+      if (d.type === '__pc_reset_selection') setSelected(null);
     };
     window.addEventListener('message', onMsg);
     window.parent?.postMessage({ type: '__edit_mode_available' }, '*');
