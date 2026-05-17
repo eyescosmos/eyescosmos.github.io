@@ -195,8 +195,8 @@ SEO_TEXT_OVERRIDES = {
             "description": "アンセル・アダムスはヨセミテを中心とするアメリカ西部の風景を、大判カメラとゾーン・システムによる精密なトーン制御で表現した。Group f/64、写真教育、環境保全運動を通じて、風景写真をファインアートと環境意識の領域へ押し上げた。",
         },
         "en": {
-            "title": "Ansel Adams | Zone System and the American West | Photo Coordinates",
-            "description": "Ansel Adams turned the American West into a field of tonal precision and ecological imagination, using the Zone System, Group f/64, teaching, and conservation work to shape modern landscape photography.",
+            "title": "Ansel Adams | Zone System, Group f/64, and Print as Performance",
+            "description": "How Ansel Adams connected Group f/64’s straight photography with the Zone System’s control of exposure, development, and print. A source-based essay on Yosemite, print performance, conservation, and Manzanar.",
         },
     },
     "robertfrank": {
@@ -1303,6 +1303,7 @@ ESSAY_HEADING_SET = {
     '表現解説',
     '批評と受容',
     'Biography',
+    'How the Zone System relates to Group f/64',
     'Expression / method',
     'Criticism and reception',
 }
@@ -1596,6 +1597,8 @@ def descriptor_for(photographer: dict, lang: str, era_lookup: dict, movements_me
 
 
 def build_keyword_line(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
+    if photographer.get("id") == "ansel-adams" and lang == "en":
+        return "Ansel Adams | Zone System, Group f/64, and Print as Performance | Photo Coordinates |"
     name = display_name(photographer, lang)
     descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
     history_label = "History of Photography" if lang == "en" else "写真史"
@@ -1608,6 +1611,8 @@ def build_keyword_line(photographer: dict, lang: str, era_lookup: dict, movement
 
 
 def build_keyword_line_html(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
+    if photographer.get("id") == "ansel-adams" and lang == "en":
+        return 'Ansel Adams | Zone System, Group f/64, and Print as Performance | <a href="/en/">Photo Coordinates</a> |'
     name = display_name(photographer, lang)
     descriptor = descriptor_for(photographer, lang, era_lookup, movements_meta, enrichments)
     history_label = "History of Photography" if lang == "en" else "写真史"
@@ -2492,12 +2497,12 @@ gtag('config', '{GA_ID}');
     <div class="section-grid">
 {essay_sections_html}
       {affiliate_section_html}
-      <section class="section" data-nosnippet>
+      <section class="section">
         <h2>{copy['links']}</h2>
         <div class="links">{links_html}</div>
       </section>
-      {f'<section class="section" data-nosnippet><h2>{copy["works"]}</h2><div class="links">{works_html}</div></section>' if works_html else ''}
-      <section class="section" data-nosnippet>
+      {f'<section class="section"><h2>{copy["works"]}</h2><div class="links">{works_html}</div></section>' if works_html else ''}
+      <section class="section">
         <h2>{copy['sources']}</h2>
         <div class="sources">{citations_html}</div>
       </section>
