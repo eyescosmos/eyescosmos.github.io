@@ -9933,5 +9933,830 @@ Tillmans's reception began in the context of 1990s magazine culture and club cul
     ],
   },
 
+  'nicephore-niepce': {
+    leadJa: `ヘリオグラフィーを発明し、現存最古の写真「ル・グラの窓からの眺め」（1826〜27年頃）を残したニエプスは、光化学的な像の固定を初めて実現した人物である。1839年の公式発表でその功績はほぼ無視されたが、20世紀の写真史研究によって再評価され、写真の発明者として位置づけ直されている。`,
+    leadEn: `Niépce invented héliographie and made what is now recognized as the oldest surviving photograph, the View from the Window at Le Gras (c. 1826–27). Suppressed in the 1839 announcement, he was reassessed by twentieth-century scholarship as the first person to permanently fix a camera image by chemistry.`,
+    textJa: `経歴
+
+ジョゼフ・ニセフォール・ニエプスは1765年にフランス・ブルゴーニュのシャロン＝シュル＝ソーヌに生まれた。裕福な法律家の家庭に育ち、科学と工芸への強い関心を持っていた。ナポレオン軍に短期間従軍した後、故郷サン＝ルー＝ド＝ヴァレンヌの農場に戻り、兄クロードとともにさまざまな発明に取り組んだ。1807年には「ピレオロフォール」——世界初の内燃機関の一つとされる船舶推進装置——を兄と共同発明している*1。
+
+1816年頃からニエプスはカメラ・オブスクーラが投影する像を化学的に固定する試みを開始した。「ヘリオグラフィー（太陽による書き込み）」と名付けたこの手法は、石油由来のアスファルト素材であるユダのビチューメンをラベンダー油に溶かして錫板に塗布し、カメラ・オブスクーラで長時間露光するものだった。光の当たった部分のビチューメンが硬化し、残りはラベンダー油で洗い流される——光化学反応によって像を素材に永続的に記録するという写真の根本原理の最初の実現だった*2。
+
+約1826〜27年に撮影された「ル・グラの窓からの眺め」は、農場の上階窓から撮影した作品で、現存最古の写真として認められている。露光時間は数時間から数日間に及んだと推定される。太陽が空を横断したことで建物の両側が同時に明るく映っており、これが長時間露光の証拠となっている*3。
+
+1827年にニエプスは英国を訪れ、王立協会に研究を提示しようとしたが、手法の詳細の公開を拒んだため受理されなかった。1829年にルイ・ダゲールと10年間の共同研究契約を締結し、ヘリオグラフィーの詳細を開示した。二人は1832年に「フィジオタイプ」という改良手法も共同開発したが、ニエプスは1833年に死去した。ダゲールは一人で研究を続け、1839年にダゲレオタイプを発表した。1839年の公式発表においてニエプスの名はほぼ言及されず、息子イジドールは1841年に小冊子を発行してこの不当な扱いに異議を申し立てた*4。
+
+表現解説
+
+「ル・グラの窓からの眺め」は芸術的な意図よりも科学的な証明の性格が強い。フォグがかかったような薄い像で、細部の解像度はダゲレオタイプに遠く及ばない。しかしこの作品の意義は像の質よりも、光化学反応によって現実の場面が直接素材に永続的に記録されたという事実にある*5。
+
+ヘリオグラフィーのプロセスは、後の写真技術が採用した銀塩乳剤とは根本的に異なる化学的原理に基づいていた。しかし「カメラが収束する光を化学物質に直接記録する」という基本概念——それ以前に誰も実現に成功しなかった——をニエプスは1826〜27年に実証した。露光時間の長さはビチューメンの感光速度の遅さによるものであり、実用的な写真技術としての限界だった*6。この制約をダゲールが銀板＋水銀蒸気プロセスで克服することで、1839年の劇的な露光時間短縮が実現した。
+
+1827年の王立協会への提示拒否に見られる秘密保持の姿勢は、ダゲールとの関係においても繰り返し見られる態度であり、産業的・商業的な発明競争においてニエプスが自らの優先権をいかに意識していたかを示している*7。
+
+批評と受容
+
+1839年のフランス政府によるダゲレオタイプの公式発表において、ニエプスの役割は副次的にしか言及されなかった。ダゲールが独占的な功績者として位置づけられたこの発表は、写真史における最初の功績争奪の事例として今日も分析されている*8。
+
+決定的な再評価は1952年、写真史家ヘルムート・ガーンズハイムとアリソン・ガーンズハイムが行方不明になっていた「ル・グラの窓からの眺め」を発見したことで訪れた*9。1963年にテキサス大学オースティン校のハリー・ランサム・センターが取得し、世界に公開した*10。2002〜03年にはゲッティ保存研究所がX線蛍光分光法と走査型電子顕微鏡で素材分析を行い、ビチューメンと鉛合金錫板で構成されることを科学的に確認した*11。
+
+メトロポリタン美術館は「ニエプスは1826年までに原始的ながらも真実の成果を達成していた」と評価し、写真の発明における先駆者としての地位を明確に記している*12。英国・ブラッドフォードの国立科学・メディア博物館もニエプスを写真の発明者として位置づけ、ダゲールの成功はニエプスの研究なしには不可能だったと述べている*13。
+
+ニエプスが実際に実験を行ったサン＝ルー＝ド＝ヴァレンヌの農場は今日も保存されており、1974年に博物館として公開された。また「写真の200周年」を記念した国際的プログラムにおいてもニエプスの先駆的業績は中心的に位置づけられている*14。`,
+    textEn: `Biography
+
+Joseph Nicéphore Niépce was born in 1765 in Chalon-sur-Saône, Burgundy, into a well-to-do legal family with strong interests in science and craft. After brief military service under Napoleon, he returned to the family estate at Saint-Loup-de-Varennes, where he and his brother Claude worked on a series of inventions. In 1807 they co-invented the pyréolophore, a boat-propulsion engine often described as one of the first internal combustion engines*1.
+
+Around 1816 Niépce began trying to fix the image projected by a camera obscura. The process he called héliographie coated a pewter plate with bitumen of Judea — an asphalt derivative — dissolved in oil of lavender. A long camera-obscura exposure hardened the bitumen where light struck; unexposed areas were washed away with lavender oil, leaving a permanent record. This was the first time light had been used to chemically and durably fix a camera image in a physical material*2.
+
+The View from the Window at Le Gras (c. 1826–27), taken from an upper-storey window of his estate, is now recognized as the oldest surviving photograph. The exposure is estimated at many hours or perhaps several days. The sun's movement across the sky during that time caused buildings on both sides of the courtyard to appear lit simultaneously — the visible evidence of the long exposure duration*3.
+
+In 1827 Niépce visited England hoping to present his process to the Royal Society, but was refused because he would not disclose his method. He signed a ten-year partnership agreement with Daguerre in 1829, sharing heliography's details. Together they developed the physautotype in 1832, but Niépce died in 1833 before a commercially viable process was realized. Daguerre continued alone and announced the daguerreotype in January 1839. The official announcement barely mentioned Niépce; his son Isidore published a pamphlet in 1841 contesting this omission*4.
+
+Expression / method
+
+The View from the Window at Le Gras has the character of scientific proof more than artistic intention. The image is faint and tonally compressed, lacking the sharpness the daguerreotype would later achieve. Its significance lies not in optical quality but in the fact that a real scene was directly and permanently registered by light acting on chemistry*5.
+
+Niépce's bitumen-on-pewter process operated on a different chemical principle than the silver salts later adopted by photography. But the core concept — that a camera's convergent light could be registered chemically without human drawing — was demonstrated by Niépce in 1826–27, before anyone else succeeded*6. The long exposure was a direct consequence of bitumen's low photosensitivity. Daguerre's contribution was to find a much faster silver-based process, reducing exposure times to practical lengths.
+
+The secrecy Niépce maintained about his method — from the Royal Society refusal to the careful management of the Daguerre partnership — reflects a clear awareness of the competitive stakes of invention in early industrial Europe*7.
+
+Criticism and reception
+
+In the French government's 1839 announcement of the daguerreotype as "a gift to the world," Niépce's role was reduced to a brief historical footnote. The positioning of Daguerre as the sole named inventor remains the first major dispute over photographic priority and is analyzed in those terms today*8.
+
+The decisive reassessment came in 1952, when photographic historians Helmut and Alison Gernsheim rediscovered the Le Gras heliograph, which had been missing for decades*9. In 1963 the Harry Ransom Center at the University of Texas at Austin acquired it*10. In 2002–03 the Getty Conservation Institute carried out X-ray fluorescence spectroscopy and scanning electron microscopy, scientifically confirming the plate as bitumen on a tin-lead alloy*11.
+
+The Metropolitan Museum of Art writes that Niépce "had achieved primitive but real results as early as 1826," explicitly recognizing his founding role*12. The National Science and Media Museum (Bradford) positions Niépce as the inventor of photography and states that Daguerre could not have succeeded without him*13.
+
+The estate at Saint-Loup-de-Varennes where Niépce worked is preserved today and opened as a museum in 1974. International programs marking the bicentennial of photography have centered Niépce's role as the point of origin*14.`,
+    citations: [
+      { num: 1, name: 'National Science and Media Museum — A-Z of Photography: Nicéphore Niépce', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-joseph-nicephore-niepce-first-photograph/' },
+      { num: 2, name: 'Harry Ransom Center — The Niépce Heliograph', url: 'https://www.hrc.utexas.edu/niepce-heliograph/' },
+      { num: 3, name: 'Harry Ransom Center — The Niépce Heliograph', url: 'https://www.hrc.utexas.edu/niepce-heliograph/' },
+      { num: 4, name: 'bicentennial-of-photography.org — Daguerre and the Invention', url: 'https://bicentennial-of-photography.org/daguerre-invention-photography/' },
+      { num: 5, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+      { num: 6, name: 'Harry Ransom Center — The Niépce Heliograph', url: 'https://www.hrc.utexas.edu/niepce-heliograph/' },
+      { num: 7, name: 'National Science and Media Museum — A-Z of Photography: Nicéphore Niépce', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-joseph-nicephore-niepce-first-photograph/' },
+      { num: 8, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+      { num: 9, name: 'Harry Ransom Center — Gernsheim Collection Guide', url: 'https://www.hrc.utexas.edu/collections/guide/gernsheim/' },
+      { num: 10, name: 'Harry Ransom Center — The Niépce Heliograph', url: 'https://www.hrc.utexas.edu/niepce-heliograph/' },
+      { num: 11, name: 'Getty Conservation Institute Newsletter 19.1', url: 'https://www.getty.edu/conservation/publications_resources/newsletters/19_1/gcinews4.html' },
+      { num: 12, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+      { num: 13, name: 'National Science and Media Museum — A-Z of Photography: Nicéphore Niépce', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-joseph-nicephore-niepce-first-photograph/' },
+      { num: 14, name: 'bicentennial-of-photography.org — Niépce and the Invention', url: 'https://bicentennial-of-photography.org/daguerre-invention-photography/' },
+    ]
+  },
+
+  'daguerre': {
+    leadJa: `ダゲールはダゲレオタイプを発明し、1839年8月19日の公開により写真を事実上「全人類の所有物」とした。各プリントが複製不可能な一点物であるこの形式は、肖像写真の民主化を一方で進めながら、複製性というタルボットが切り開く方向とは根本的に異なる道を歩んだ。`,
+    leadEn: `Daguerre invented the daguerreotype and made it available worldwide on August 19, 1839, through the French state's announcement. Each image was a unique, non-reproducible object — a direction that democratized portraiture while diverging fundamentally from the negative-positive reproducibility Talbot would develop.`,
+    textJa: `経歴
+
+ルイ＝ジャック＝マンデ・ダゲールは1787年にフランス・ピカルディ地方のコルメイユ＝アン＝パリジに生まれた。パリで舞台美術や建築の修業を積み、1822年に「ジオラマ」と呼ばれる視覚的見世物を共同発明・開業した。ジオラマは透過光と反射光を切り替えて巨大な透明画布を昼から夜へと変化させる装置であり、光と像の定着への強い関心を育てた*1。
+
+1826年頃から発明家ニセフォール・ニエプスと共同研究を開始し、ニエプスの死後（1833年）も銀板に水銀蒸気で像を定着させる方法を独自に改良し続けた。1835年頃に水銀蒸気による現像という決定的な技術的発見に至り、露光時間を大幅に短縮することに成功した。ヨウ化銀を塗布した銀板を露光後に加熱した水銀蒸気の上にかざすことで、潜像が顕在化する——この発見がダゲレオタイプを実用化の域に押し上げた*2。
+
+1839年1月7日、フランス科学アカデミーでフランソワ・アラゴがダゲレオタイプを発表した。同年8月19日、フランス政府は製法を「全人類への贈り物」として——英国を除く全世界で——無償公開した。この公開により技術は急速に普及したが、各ダゲレオタイプは複製不可能な一点物だった*3。代表作「ボールヴァール・デュ・タンプル」（c.1838）には、靴磨きをされながら静止していた男性のみが写り込んでいる——長時間露光のため動く馬車・歩行者は写らず、これが「写真に初めて写った人間」とされる*4。
+
+1839年3月8日の研究室火災で多くの初期記録が失われ、現存確認済みの作品は25点未満に留まる。ダゲールは1851年に没した*5。
+
+表現解説
+
+ダゲレオタイプの特質は、その比類のない解像力と一点性にある。銀表面に直接記録された像は、当時の絵画や版画では到達できない細部の精度を持ち、オリヴァー・ウェンデル・ホームズが「記憶を持つ鏡」と呼んだように、現実の鏡像に近い驚異をもたらした*6。各板は複製できないため、同一の像が二枚存在することはなく、写真は本質的に「世界でたった一枚」の物体だった。
+
+ダゲレオタイプが実現した露光時間の大幅な短縮——野外撮影で数分、最終的には屋内でも十数秒程度——は肖像写真を実用化した。1840年代のニューヨーク・パリ・ロンドンでは、かつて絵画家にしか依頼できなかった肖像が、中産階級の手の届く料金で誰でも持てるようになった*7。この民主化の側面は、ダゲレオタイプが複製不可能であるにもかかわらず社会的なインパクトを持ったことの逆説でもある。
+
+技術の普及において重要な役割を果たしたのが、ダゲールの手法を解説した公開デモンストレーションとパンフレットだった。1839年8月の発表から数週間後には、ヨーロッパ各地でダゲレオタイプの試作が報告されている*8。
+
+批評と受容
+
+ダゲレオタイプの登場がもたらした最初の文化的衝撃は、劇作家ゴーティエや詩人ボードレールの反応に代表される。ボードレールは「写真は芸術の侍女であって、芸術そのものではない」と論じ、芸術としての写真の地位を否定する側に立ったが、それ自体がダゲレオタイプの衝撃の大きさを証言している*9。
+
+1840年代を通じてダゲレオタイプの肖像スタジオがニューヨーク・ボストン・フィラデルフィアで急増し、アメリカ市場は1851年のロンドン万博でダゲレオタイプ部門を席巻した*10。1851年に湿板コロジオン法が開発されると、複製可能な紙焼き写真との競合が始まり、ダゲレオタイプは1860年代以降に急速に廃れていく。
+
+メトロポリタン美術館はダゲレオタイプを「その精巧さ、細部の解像度、独特の輝きにおいて他の写真プロセスに匹敵するものがない」と評価しており、現代においても「写真の起源」という文脈だけでなく、その視覚的特質が独自の芸術的価値として再評価されている*11。ジョージ・イーストマン博物館やスミソニアンは大規模なコレクションを持ち、南北戦争期のダゲレオタイプの修復・デジタル化も進んでいる*12。`,
+    textEn: `Biography
+
+Louis-Jacques-Mandé Daguerre was born in 1787 in Cormeilles-en-Parisis, Picardy. He trained as a stage designer and architect in Paris and in 1822 co-invented and opened the Diorama — a spectacle that transformed vast translucent canvases from day to night by switching between transmitted and reflected light, cultivating his obsession with fixing light and image*1.
+
+Around 1826 he began collaborating with the inventor Nicéphore Niépce. After Niépce's death in 1833, Daguerre continued refining a method that developed a latent image on a silvered plate by exposure to heated mercury vapor. The critical discovery — probably made around 1835 — was that mercury vapor could make a faint latent image visible with great speed and clarity, dramatically reducing exposure times*2.
+
+On January 7, 1839, François Arago announced the daguerreotype at the French Academy of Sciences. On August 19 the French state released the process to the world — outside Britain — as "a gift to all." The technique spread rapidly, but each daguerreotype remained a unique, non-reproducible object*3. His Boulevard du Temple (c.1838) became famous for capturing what is often described as the first human figure in a photograph: a man standing still for a boot-shine while moving carriages and pedestrians disappeared in the long exposure*4.
+
+A fire at his studio on March 8, 1839 destroyed much of his early work; fewer than twenty-five confirmed originals survive. Daguerre died in 1851*5.
+
+Expression / method
+
+The daguerreotype's defining qualities were its extraordinary resolution and its singularity. Recorded directly on a silver surface, the image achieved a fineness no contemporary painting or engraving could match. Oliver Wendell Holmes called it "a mirror with a memory" — an object close to a reflection of reality itself*6. Because no negative existed, no copy was possible; each plate was constitutionally unique.
+
+The dramatic shortening of exposure times — from hours toward minutes outdoors, and eventually tens of seconds in studio conditions — made portrait photography practical for the first time. By the 1840s, New York, Paris, and London had studios where a likeness could be obtained at a price accessible to the middle class rather than reserved for oil painters*7. This democratizing force is the central paradox of the daguerreotype: a non-reproducible object that nevertheless transformed how societies represented themselves.
+
+The rapid global spread of the process was facilitated by Daguerre's own publication of a detailed technical manual and public demonstrations, which enabled independent replication within weeks of the August 1839 announcement*8.
+
+Criticism and reception
+
+The daguerreotype's cultural shock is registered most clearly in its critics. Baudelaire argued that photography could only serve as art's handmaid — never as art itself — but this very argument bears witness to how forcefully the new medium had entered cultural life*9.
+
+Through the 1840s daguerreotype portrait studios multiplied rapidly in American cities; at the 1851 Great Exhibition in London, American daguerreotypists dominated their category*10. After the wet-collodion process was introduced in 1851, competition from reproducible paper photographs accelerated; by the 1860s the daguerreotype had largely given way to other forms.
+
+The Metropolitan Museum of Art writes that the daguerreotype remains without rival "in its intricacy, detail, and luminous quality," and it is today valued not only as a historical origin but for its visual distinctiveness*11. The George Eastman Museum and the Smithsonian hold major daguerreotype collections, and ongoing conservation and digitization projects continue to recover damaged Civil War-era examples*12.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+      { num: 2, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+      { num: 3, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+      { num: 4, name: 'Metropolitan Museum of Art — Boulevard du Temple', url: 'https://www.metmuseum.org/art/collection/search/267885' },
+      { num: 5, name: 'National Science and Media Museum — A-Z of Photography: Daguerreotype', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-daguerreotype/' },
+      { num: 6, name: 'George Eastman Museum — The Daguerreotype', url: 'https://www.eastman.org/daguerreotype' },
+      { num: 7, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+      { num: 8, name: 'National Science and Media Museum — A-Z of Photography: Daguerreotype', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-daguerreotype/' },
+      { num: 9, name: 'Metropolitan Museum of Art — Photography and the Art Market', url: 'https://www.metmuseum.org/essays/photography-and-the-art-market' },
+      { num: 10, name: 'George Eastman Museum — The Daguerreotype', url: 'https://www.eastman.org/daguerreotype' },
+      { num: 11, name: 'Metropolitan Museum of Art — Daguerre (1787–1851) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/daguerre-1787-1851-and-the-invention-of-photography' },
+      { num: 12, name: 'Smithsonian American Art Museum — Photography', url: 'https://americanart.si.edu/art/photography' },
+    ]
+  },
+
+  'talbot': {
+    leadJa: `タルボットはカロタイプ（ネガ＝ポジ方式）を発明し、一枚のネガから複数の陽画を作るという写真の複製性の基盤を築いた。「自然の鉛筆」（1844〜46年）は商業出版された最初の写真入り書籍であり、写真が記録・芸術・複製の三つの機能を持つことを世に示した。`,
+    leadEn: `Talbot invented the calotype, establishing the negative-positive principle that made photography reproducible from a single exposure. The Pencil of Nature (1844–46) was the first commercially published photographically illustrated book, demonstrating photography as record, art, and reproductive medium simultaneously.`,
+    textJa: `経歴
+
+ウィリアム・ヘンリー・フォックス・タルボットは1800年にドーセット州メルバリー・サンプフォードに生まれた。ケンブリッジ大学でラテン語・ギリシャ語・数学・自然科学を修め、のちに言語学・植物学・天文学など多岐にわたる研究を残した博学者である*1。
+
+転機は1833年10月のイタリア・コモ湖でのハネムーンだった。カメラ・ルシダ（光学式製図器）を用いてスケッチを試みたが、自身の画力の乏しさに深く失望した。「カメラから目を離すと、紙の上には情けない痕跡しか残っていない」と後に記している。この体験から「カメラが投影する像を化学的に定着できないか」という着想を得て帰国後に実験を開始した*2。
+
+1835年夏、ラコック・アビーの敷地内に小型カメラを複数設置し、塩化銀を染み込ませた紙に建物の輪郭を記録した——妻がこのカメラを「ネズミ捕り」と呼んだことは有名である。「格子窓」（c.1835）はこの時期の現存最古のタルボット作品で、わずか2.5cm×2.5cmの小片に窓格子が写し取られている*3。
+
+1839年1月にダゲールの成功の報を聞き、急いで自身の発明を公表した。1841年に「カロタイプ」と改名し特許を取得した改良版ネガ＝ポジ方式は、紙ネガから複数の陽画を作る本格的な複製写真技術の最初の実用化だった。1844〜46年に刊行した写真集『自然の鉛筆』は商業出版された最初の写真入り書籍であり、全24枚の写真で写真の記録・芸術・複製としての可能性を示した*4。
+
+タルボットは特許権を厳格に管理したため、イギリスではカロタイプの普及がフランスに比べて大きく遅れた。晩年は楔形文字の解読研究にも多くの時間を費やし、1877年に没した*5。
+
+表現解説
+
+カロタイプとダゲレオタイプを比較するとき、両者の差異は単なる技術の優劣ではなく、写真の根本的な概念の違いとして立ち現れる。ダゲレオタイプは複製不可能な一点物として現実の精密な記録を目指したのに対し、カロタイプは紙ネガの粒状感・柔らかさ・複製性という三つの特質を持つ*6。タルボットのプロセスは「写真は複製される」という現代的な写真概念の起源である。
+
+紙ネガの物質的な特性——繊維の目が像に溶け込む点——は視覚的な限界であると同時に、ヒル＆アダムソンが発見したように絵画的な美質をもたらした。『自然の鉛筆』の第一帖（ラコック・アビーの格子窓）についてタルボットは、写真について理論的・哲学的に論じた最初のテキストの一つを書き添えている。写真とは何かという問いに対する最初の本格的な考察は、彼のこの著作の中に見出される*7。
+
+ネガ＝ポジ概念の発明は、のちのフィルム写真・デジタル画像処理・印刷技術に至るまでの写真の複製原理の基礎となった。この点でタルボットの貢献は、視覚的な美質よりも概念的・技術的な射程において評価されるべき側面が大きい*8。
+
+批評と受容
+
+タルボットの特許管理の結果として、1840年代のイギリスでは写真の商業的発展が著しく抑制された。これは写真史の一つの皮肉であり、発明者が自らの発明の普及を妨げた事例として分析されている*9。1852年以降、タルボットは特許の一部を緩和し、アマチュア写真家には無償使用を認めた。
+
+タルボットの遺産の核心は、ネガから複数の陽画を作るという原理にある。この原理は20世紀の写真文化全体——雑誌・新聞・書籍・広告——を支える基盤となった。メトロポリタン美術館はタルボットを「ダゲールと並ぶ写真の共同発明者」と評しており*10、V&Aはラコック・アビーの現地コレクションと並ぶ世界最大のタルボット・コレクションを有している*11。
+
+ラコック・アビー（ウィルトシャー）はナショナル・トラストによって保存されており、タルボットが写真実験を行った部屋や暗室が公開されている。フォックス・タルボット博物館は1975年に開館し、オリジナル・プリントと実験ノートを収蔵している*12。近年は彼の植物標本写真（フォトジェニック・ドローイング）が写真史の中で独立した美術的評価を受けるようになってきた*13。`,
+    textEn: `Biography
+
+William Henry Fox Talbot was born in 1800 at Melbury Sampford, Dorset. He studied Latin, Greek, mathematics, and natural science at Cambridge and later produced work across linguistics, botany, and astronomy — a nineteenth-century polymath whose photography was only one strand of a broad scientific practice*1.
+
+The turning point came in October 1833 at Lake Como, on his honeymoon. Trying to sketch with a camera lucida, he was frustrated by what he saw as his own inability to draw. He later wrote that once he looked away from the device, "only a faint and imperfect trace" was left on the paper. That frustration prompted the question of whether the camera's projected image might be fixed chemically, and he began experiments on his return*2.
+
+In the summer of 1835 he placed small cameras around Lacock Abbey, recording the buildings on sensitized paper. His wife called the boxes "mousetrap cameras." The Latticed Window (c.1835), a fragment barely 2.5 × 2.5 cm, is the oldest surviving Talbot image from this period*3.
+
+When news of Daguerre's success arrived in January 1839, Talbot hastened to publicize his own method. The calotype process, patented in 1841 under that name, used paper negatives and allowed multiple positive prints from a single exposure — the first practical negative-positive photography. The Pencil of Nature, published in installments from 1844 to 1846, was the first commercially produced book illustrated with photographs, demonstrating photography as record, art, and reproduced medium across its twenty-four plates*4.
+
+Talbot's strict patent enforcement significantly slowed British photography relative to France. He also devoted much of his later life to cuneiform decipherment. He died in 1877*5.
+
+Expression / method
+
+The difference between calotype and daguerreotype is not simply a matter of technical quality. The daguerreotype aimed at a faithful, non-reproducible record on a singular object; the calotype combined paper's grainy, soft texture with the capacity to make multiple copies*6. Talbot's process is the origin of the modern photographic concept in which "photographs are reproduced."
+
+The material character of the paper negative — the way the paper's grain merges with the image — was both a visual limitation and the source of the painterly quality that Hill and Adamson discovered. For the first plate of The Pencil of Nature — Lacock Abbey's latticed window — Talbot wrote one of the earliest theoretical and philosophical texts about photography, raising for the first time what a photograph fundamentally is*7.
+
+The negative-positive principle established by Talbot became the foundation for all subsequent photographic reproduction: film photography, halftone printing, photogravure, and eventually digital image capture. In this respect Talbot's contribution is more conceptual and technical than it is aesthetic, and its full significance emerged over the following century*8.
+
+Criticism and reception
+
+Talbot's patent policy became one of photography's early ironies: the inventor of a reproducible medium inhibited the medium's reproduction. British commercial photography was measurably slower to develop than its French counterpart through the 1840s*9. After 1852 Talbot relaxed some restrictions and allowed amateur use without fee.
+
+The core of Talbot's legacy is the negative. That concept — one exposure, many prints — underpinned the entire photographic economy of the twentieth century: magazines, newspapers, books, and advertising. The Metropolitan Museum names him as co-inventor of photography alongside Daguerre*10, and the V&A holds one of the world's largest Talbot collections alongside the in situ holdings at Lacock Abbey*11.
+
+Lacock Abbey (Wiltshire) is preserved by the National Trust; the rooms and darkroom where Talbot worked are open to visitors. The Fox Talbot Museum opened in 1975 and holds original prints and experimental notebooks*12. In recent years, Talbot's photogenic drawings of plant specimens have begun to attract art-historical attention in their own right, as objects that sit between scientific record and aesthetic form*13.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — William Henry Fox Talbot (1800–1877) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/william-henry-fox-talbot-british-1800-1877' },
+      { num: 2, name: 'V&A — William Henry Fox Talbot: An Introduction', url: 'https://www.vam.ac.uk/articles/william-henry-fox-talbot-an-introduction' },
+      { num: 3, name: 'V&A — The Latticed Window', url: 'https://collections.vam.ac.uk/item/O1196839/the-latticed-window-calotype-negative-talbot-william-henry-fox/' },
+      { num: 4, name: 'Metropolitan Museum of Art — The Pencil of Nature', url: 'https://www.metmuseum.org/art/collection/search/267791' },
+      { num: 5, name: 'V&A — William Henry Fox Talbot: An Introduction', url: 'https://www.vam.ac.uk/articles/william-henry-fox-talbot-an-introduction' },
+      { num: 6, name: 'Metropolitan Museum of Art — William Henry Fox Talbot (1800–1877) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/william-henry-fox-talbot-british-1800-1877' },
+      { num: 7, name: 'Metropolitan Museum of Art — The Pencil of Nature', url: 'https://www.metmuseum.org/art/collection/search/267791' },
+      { num: 8, name: 'V&A — William Henry Fox Talbot: An Introduction', url: 'https://www.vam.ac.uk/articles/william-henry-fox-talbot-an-introduction' },
+      { num: 9, name: 'Metropolitan Museum of Art — William Henry Fox Talbot (1800–1877) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/william-henry-fox-talbot-british-1800-1877' },
+      { num: 10, name: 'Metropolitan Museum of Art — William Henry Fox Talbot (1800–1877) and the Invention of Photography', url: 'https://www.metmuseum.org/essays/william-henry-fox-talbot-british-1800-1877' },
+      { num: 11, name: 'V&A — William Henry Fox Talbot: An Introduction', url: 'https://www.vam.ac.uk/articles/william-henry-fox-talbot-an-introduction' },
+      { num: 12, name: 'National Trust — Lacock Abbey', url: 'https://www.nationaltrust.org.uk/visit/wiltshire/lacock-abbey-village-and-cloisters' },
+      { num: 13, name: 'National Science and Media Museum — A-Z of Photography: Calotype', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-calotype/' },
+    ]
+  },
+
+  'david-octavius-hill': {
+    leadJa: `画家としての構図知識とロバート・アダムソンの技量を組み合わせ、1843〜48年にカロタイプで約3000点を制作したヒルは、写真を芸術的媒体として意識的に用いた最初の本格的実践者として評価されている。ニューヘブン漁師の連作は写真史上最初の社会記録プロジェクトであり、スティーグリッツはヒルを「絵画的写真の父」と呼んだ。`,
+    leadEn: `Hill combined a painter's compositional knowledge with Adamson's technical expertise to produce around 3,000 calotypes between 1843 and 1848, the first sustained artistic photographic practice. The Newhaven fishermen series is the earliest major social documentary project in photography, and Stieglitz called Hill "the father of pictorial photography."`,
+    textJa: `経歴
+
+デイヴィッド・オクタヴィアス・ヒルは1802年にスコットランドのパースに生まれた。エジンバラで絵画を学び、風景版画や油絵を手がける画家として王立スコットランド・アカデミーの創立メンバーとなり、1830年からその書記を長年務めた。エジンバラの知的・文化的サークルの中心にいた人物で、自然な物腰と気取りのなさが被写体を安心させる特別な能力をもたらした*1。
+
+写真との関わりが始まるきっかけは1843年5月18日のスコットランド宗教改革「ディスラプション」だった。約155名の牧師が国家権力による教会人事介入に抗議してスコットランド自由教会を設立したこの事件で、ヒルはその場に居合わせた470名以上の人物全員を描き込む巨大な記念絵画の制作を決意した。参考用の肖像写真が必要となり、植物学者のデイヴィッド・ブリュースターがヒルに新進の写真家ロバート・アダムソンを紹介した*2。
+
+ヒルは絵画家として培った構図知識を写真に応用し、アダムソンが技術的な全工程——感光紙の調製・カメラの操作・現像・プリント——を担当した。この分業体制のもとで二人は1843〜48年の約5年間に推定3000点のカロタイプを制作した。エジンバラの著名人の肖像のほか、ニューヘブンの漁師・漁師の女性の連作、エジンバラと周辺の建築写真などが主要な仕事だった*3。
+
+1848年にアダムソンが26〜27歳で死去した後、ヒルは写真活動を中断して絵画に戻った。「ディスラプション」の記念絵画は1866年にようやく完成した。ヒルは1870年に没した*4。
+
+表現解説
+
+ヒルとアダムソンが選んだカロタイプ法は、技術的な解像度でダゲレオタイプに劣る。しかしヒルはこの「劣位」を芸術的選択として積極的に意義づけた。「紙の粗さこそがカロタイプをダゲレオタイプに細部で劣らせる主因だが、それこそがカロタイプの命だ」という言葉は、技術的限界を視覚的特質へ転換する発想を明確に示している*5。
+
+カロタイプ・プリントの茶褐色の豊かな調子と光を吸収するマットな表面は、同時代の観察者にレンブラントの版画との類似を即座に想起させた。水彩画家ジョン・ハーデンは1843年11月に初めて二人の作品を見て「これはレンブラントだ、しかしさらに優れている、最高の古典的巨匠たちの様式とそっくりだ」と記録している*6。ヒルはレンブラントやオランダ絵画の肖像画法を意識的に参照しながら被写体を配置しており、この絵画的な参照の意識性が、同時代の他の写真家との決定的な差異となっている。
+
+ニューヘブンの漁師・漁師の女性を撮影した連作は、写真史上最初の重要な社会記録プロジェクトとして位置づけられている。ニューヘブン（エジンバラ近郊のフィルス湾岸の漁村）の住民を被写体にした約130点は、特定の社会集団を組織的に写真記録した最初の試みとして、のちのドキュメンタリー写真の先駆とみなされている*7。
+
+批評と受容
+
+ヒルとアダムソンの仕事が写真史の正典に位置づけられた最大の契機は、スティーグリッツによる再評価だった。スティーグリッツはヒルを「絵画的写真の父」と呼び、Camera Work誌でヒル＆アダムソンの写真をフォトグラビュール複製として1905年・1909年・1912年に掲載した。同時代のピクトリアリストたちにとって、ヒルの実践は自分たちの芸術的野心の19世紀的先例として機能した*8。
+
+メトロポリタン美術館はヒルとアダムソンの写真を「写真による肖像として最高の達成の一つ」と評しており*9、ゲッティ美術館も両者の共同制作を「西洋写真史において最も重要な」パートナーシップの一つに位置づけている*10。スコットランド国立美術館（エジンバラ）はオリジナル・カロタイプの世界最大のコレクションを有しており、約3000点のプリントと関連資料を収蔵している*11。
+
+ヒルが最初に写真を始めたのは絵画の参考資料を集めるためだったが、写真実践を続けるうちに参考資料の収集という目的を超えていったことは、彼の証言や制作量からも明らかである。写真家として、絵画家として、どちらの立場で彼を評価するかという問いは、写真が「芸術か否か」という19世紀の議論の核心に直結している*12。`,
+    textEn: `Biography
+
+David Octavius Hill was born in 1802 in Perth, Scotland. He trained as a painter in Edinburgh, worked as a landscape printmaker and oil painter, and became a founding member and long-serving secretary of the Royal Scottish Academy from 1830. A prominent figure in Edinburgh's intellectual life, his ease with people made him an exceptionally effective presence in photographic portraiture*1.
+
+His involvement with photography began with the Disruption of May 18, 1843. On that day approximately 155 ministers left the Church of Scotland to found the Free Church of Scotland, protesting state interference in church appointments. Hill witnessed the event and resolved to paint a monumental commemorative canvas depicting all 470-plus signatories. Needing portrait references, he was introduced to the young photographer Robert Adamson by the physicist David Brewster*2.
+
+Hill brought compositional knowledge from painting; Adamson handled all technical operations — sensitizing paper, exposing the camera, developing negatives, printing salt prints. Under this division of labor they produced an estimated 3,000 calotypes over roughly five years between 1843 and 1848. Their subjects ranged from Edinburgh intellectuals and clergy to the fishermen and fishwives of Newhaven, and architectural views of Edinburgh and its surroundings*3.
+
+After Adamson died in 1848 at around 26 or 27, Hill set photography aside and returned to painting. The Disruption canvas was finally completed in 1866. Hill died in 1870*4.
+
+Expression / method
+
+Hill and Adamson chose the calotype over the daguerreotype. The calotype's optical resolution was inferior, but Hill framed this limitation as an artistic choice. His written remark is explicit: "The rough and unequal texture throughout the paper is the main cause of the calotype failing in details before the Daguerreotype — and this is the very life of it." This is a claim that the medium's limitation was also its defining visual quality*5.
+
+The warm brown tonality and matte, light-absorbing surface of salt prints recalled Rembrandt to contemporaries immediately. The watercolorist John Harden wrote in November 1843, on first seeing their work: "The pictures produced are as Rembrandt's but improved, so like his style and the oldest and finest masters"*6. Hill consciously placed subjects with reference to Rembrandt and Dutch portraiture. This intentional pictorial reference is what distinguishes the Hill-Adamson practice from the work of photographers who were not trained in the visual traditions of painting.
+
+The Newhaven series — about 130 photographs of fishermen and fishwives from the fishing community on the south shore of the Firth of Forth — is recognized as the first major social documentary project in photography. A systematic visual record of a specific occupational community, it anticipates the social documentary tradition that would define the medium's public function in the twentieth century*7.
+
+Criticism and reception
+
+The decisive rehabilitation of Hill and Adamson's work in photographic history came through Stieglitz's advocacy. Stieglitz called Hill "the father of pictorial photography" and published photogravure reproductions of their calotypes in Camera Work in 1905, 1909, and 1912. For the pictorialists of the early twentieth century, Hill's practice offered a nineteenth-century precedent for the proposition that photography could be art*8.
+
+The Metropolitan Museum of Art writes that their photographs "still rank among the highest achievements of photographic portraiture"*9. The Getty Museum identifies their partnership as one of "the most important" in the history of Western photography*10. The Scottish National Portrait Gallery (Edinburgh) holds the world's largest collection of Hill and Adamson calotypes — approximately 3,000 prints and related materials*11.
+
+That Hill began photographing as a practical aid to painting, and then exceeded that purpose, is visible in both the volume of work and his own accounts. The question of whether to evaluate him as photographer or painter leads directly to the nineteenth-century debate about photography's status — a debate his practice helped shape from the inside*12.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — David Octavius Hill and Robert Adamson', url: 'https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s' },
+      { num: 2, name: 'Metropolitan Museum of Art — David Octavius Hill and Robert Adamson', url: 'https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s' },
+      { num: 3, name: 'J. Paul Getty Museum — Hill and Adamson', url: 'https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/' },
+      { num: 4, name: 'National Galleries of Scotland — Hill and Adamson', url: 'https://www.nationalgalleries.org/art-and-artists/features/hill-adamson' },
+      { num: 5, name: 'University of Glasgow — Hill and Adamson Calotype Process', url: 'https://www.gla.ac.uk/myglasgow/archivespecialcollections/discover/specialcollectionsa-z/hilladamson/calotypeprocess/' },
+      { num: 6, name: 'University of Glasgow — Hill and Adamson Calotype Process', url: 'https://www.gla.ac.uk/myglasgow/archivespecialcollections/discover/specialcollectionsa-z/hilladamson/calotypeprocess/' },
+      { num: 7, name: 'J. Paul Getty Museum — Hill and Adamson', url: 'https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/' },
+      { num: 8, name: 'Art of the Photogravure — James Craig Annan', url: 'https://photogravure.com/highlights/james-craig-annan/' },
+      { num: 9, name: 'Metropolitan Museum of Art — David Octavius Hill and Robert Adamson', url: 'https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s' },
+      { num: 10, name: 'J. Paul Getty Museum — Hill and Adamson', url: 'https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/' },
+      { num: 11, name: 'National Galleries of Scotland — Hill and Adamson', url: 'https://www.nationalgalleries.org/art-and-artists/features/hill-adamson' },
+      { num: 12, name: 'Metropolitan Museum of Art — David Octavius Hill and Robert Adamson', url: 'https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s' },
+    ]
+  },
+
+  'robert-adamson': {
+    leadJa: `1843〜48年のわずか5年間でヒルとともに約3000点のカロタイプを制作し、26〜27歳で早世したアダムソンは、ヒルの絵画的直観を写真技術に変換した技術的な主導者である。その仕事は没後半世紀を経てジェームズ・クレイグ・アナンのフォトグラビュール再制作を通じてCamera Workに掲載され、写真史の正典に位置づけられた。`,
+    leadEn: `Adamson produced around 3,000 calotypes with Hill in just five years between 1843 and 1848, dying at 26 or 27, yet his technical mastery was the engine of the partnership. Recognition came posthumously through James Craig Annan's photogravures in Camera Work, which placed the Hill-Adamson body of work permanently in photographic history.`,
+    textJa: `経歴
+
+ロバート・アダムソンは1821年にスコットランドのファイフ州バーンサイドに農家の子として生まれた。兄のジョン・アダムソンはスコットランドで最初にタルボットのカロタイプ法を習得した写真家の一人であり、ロバートはその兄から技術を学んだ。1843年初夏にエジンバラのカルトン・ヒルのロック・ハウスにスタジオを構え、同市初のプロのカロタイプ写真家として開業した*1。
+
+開業まもなく画家のデイヴィッド・オクタヴィアス・ヒルが「ディスラプション」の記念絵画用の肖像写真を求めてやってきた。植物学者デイヴィッド・ブリュースターの仲介によって始まったこの協働は、4年半にわたる写真史上最初の本格的な芸術的写真パートナーシップへと発展した*2。アダムソンが担当したのは技術的な全工程——感光紙の調製・カメラの操作・現像・ソルト・プリントへの焼き付け——であり、ヒルが構図と演出を担当した。
+
+ヒルとの共同制作では、スコットランド教会の牧師の肖像・ニューヘブンの漁師と漁師の女性の連作・エジンバラと周辺の建築風景など推定3000点が生み出された*3。アダムソンは1847年末に重篤な病に倒れ、1848年1月に26〜27歳という若さで死去した。
+
+表現解説
+
+アダムソンが使用したカロタイプ法は、タルボットが1841年に特許を取得した、紙のネガから複数のプリントを作成できる手法だった。プリントは茶褐色の豊かな調子と絹のようなマットな質感を持ち、光を反射するダゲレオタイプとは対照的に光を吸収する表面を持つ——この特質がレンブラントの版画との視覚的類似性を生み出した。1843年11月に初めて二人の作品を見た水彩画家ジョン・ハーデンは「これはレンブラントだ、しかしさらに優れている、最高の古典的巨匠たちの様式とそっくりだ」と記している*4。
+
+技術的な分業において、アダムソンの役割は単なる操作者ではなかった。感光紙の品質・露光時間・現像タイミング・プリントの調子管理は、最終的な像の視覚的特質を直接規定する判断を伴う作業であり、ヒルの絵画的直観をカロタイプの物質的特質に変換する技術的解釈者としてアダムソンが機能していたことが、研究者によって指摘されている*5。
+
+アダムソンがカメラを構えた時期の露光条件は、現代のそれとは根本的に異なる。自然光のみで、青空の直射光の下か薄曇りの拡散光の下でしか撮影できなかった。被写体は数秒から数十秒間静止する必要があり、カルトン・ヒルのスタジオは光量を最大化するために周到に設計されていた*6。
+
+批評と受容
+
+アダムソンの没後半世紀を経て、スコットランドの写真家ジェームズ・クレイグ・アナンがオリジナルのカロタイプ・ネガをフォトグラビュールに変換し、スティーグリッツのCamera Work誌（1905・1909・1912年）に掲載された。これにより、ヒル＆アダムソンのカロタイプは初めて国際的な写真芸術のオーディエンスに届いた*7。
+
+メトロポリタン美術館はヒルとアダムソンの写真を「写真による肖像として最高の達成の一つ」と評しており、ゲッティ美術館も両者の協働を「西洋写真史において最も重要な」パートナーシップの一つとして位置づけている*8。スコットランド国立美術館（エジンバラ）は世界最大のコレクションを有しており、ニューヘブン漁師の連作はデジタル化・公開されている*9。
+
+アダムソンが写真史において占める位置の特殊性は、協働者の芸術的意図を技術的に実現した側として評価されることにある。20世紀の写真史研究においては、ヒルの絵画的意図よりもアダムソンのカロタイプ技術の習熟度こそが、この協働を同時代の他の写真実践と際立たせた要因だったという見方も提示されている*10。`,
+    textEn: `Biography
+
+Robert Adamson was born in 1821 in Burnside, Fife, Scotland, the son of a farmer. His older brother John Adamson was one of the first calotypists in Scotland; Robert learned the technique from him. In early summer 1843 he established himself at Rock House on Edinburgh's Calton Hill as the city's first professional calotypist*1.
+
+Within weeks, the painter David Octavius Hill approached him needing photographic reference portraits for a commemorative canvas of the 1843 Disruption of the Church of Scotland. Brokered by the physicist David Brewster, what began as a practical commission became, over four and a half years, the first major artistic photography partnership in the medium's history*2. Adamson's role was entirely technical: he sensitized the paper, operated the camera, developed the negatives, and printed the salt paper positives. Hill composed the pictures.
+
+Together with Hill, Adamson produced approximately 3,000 photographs: ministerial portraits, the landmark Newhaven fishermen and fishwives series, and architectural studies of Edinburgh and its surroundings*3. Adamson fell seriously ill in late 1847 and died in January 1848, aged 26 or 27.
+
+Expression / method
+
+Adamson worked with Talbot's calotype process (patented 1841), which used paper negatives and enabled multiple prints from a single negative. The resulting salt prints had a warm brown tonality and a matte, velvety surface that absorbed light rather than reflecting it — producing visual qualities that contemporaries immediately compared to Rembrandt. The watercolorist John Harden wrote on first seeing their work in November 1843: "The pictures produced are as Rembrandt's but improved, so like his style and the oldest and finest masters"*4.
+
+Within the technical division of labor, Adamson's role was not that of a passive operator. Decisions about paper sensitization, exposure duration, development timing, and the tonal management of prints directly determined the final image's visual character. Researchers have argued that Adamson was less an executor of Hill's pictorial intentions than a technical interpreter, translating those intentions into the specific material qualities of the calotype*5.
+
+Adamson's exposure conditions were fundamentally different from modern photography. He worked in natural light only — direct sun or diffuse overcast — and subjects had to hold still for several seconds to tens of seconds. The Rock House studio on Calton Hill was designed to maximize available light*6.
+
+Criticism and reception
+
+Half a century after Adamson's death, the Scottish photographer James Craig Annan converted original calotype negatives to photogravure and published them in Stieglitz's Camera Work in 1905, 1909, and 1912. This was the first time the Hill-Adamson calotypes reached an international art-photography audience*7.
+
+The Metropolitan Museum of Art writes that their photographs "still rank among the highest achievements of photographic portraiture," and the Getty Museum identifies their partnership as one of "the most important" in the history of Western photography*8. The Scottish National Portrait Gallery (Edinburgh) holds the world's largest Hill-Adamson collection; the Newhaven fishermen series has been digitized and made publicly accessible*9.
+
+Adamson's particular position in photographic history lies in being evaluated as the technical realizer of a collaborator's artistic vision. Some twentieth-century photographic historians have argued that Adamson's calotype mastery — more than Hill's pictorial intentions — was what distinguished this partnership from contemporary practice*10.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — David Octavius Hill and Robert Adamson', url: 'https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s' },
+      { num: 2, name: 'Metropolitan Museum of Art — David Octavius Hill and Robert Adamson', url: 'https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s' },
+      { num: 3, name: 'National Galleries of Scotland — Hill and Adamson', url: 'https://www.nationalgalleries.org/art-and-artists/features/hill-adamson' },
+      { num: 4, name: 'University of Glasgow — Hill and Adamson Calotype Process', url: 'https://www.gla.ac.uk/myglasgow/archivespecialcollections/discover/specialcollectionsa-z/hilladamson/calotypeprocess/' },
+      { num: 5, name: 'J. Paul Getty Museum — Hill and Adamson', url: 'https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/' },
+      { num: 6, name: 'University of Glasgow — Hill and Adamson Calotype Process', url: 'https://www.gla.ac.uk/myglasgow/archivespecialcollections/discover/specialcollectionsa-z/hilladamson/calotypeprocess/' },
+      { num: 7, name: 'Art of the Photogravure — James Craig Annan', url: 'https://photogravure.com/highlights/james-craig-annan/' },
+      { num: 8, name: 'Metropolitan Museum of Art — David Octavius Hill and Robert Adamson', url: 'https://www.metmuseum.org/essays/david-octavius-hill-1802-1870-and-robert-adamson-1821-1848-1840s' },
+      { num: 9, name: 'National Galleries of Scotland — Hill and Adamson', url: 'https://www.nationalgalleries.org/art-and-artists/features/hill-adamson' },
+      { num: 10, name: 'J. Paul Getty Museum — Hill and Adamson', url: 'https://www.getty.edu/art/collection/artists/1261/hill-adamson-scottish-active-1843-1848/' },
+    ]
+  },
+
+  'fenton': {
+    leadJa: `弁護士出身のフェントンは1853年に英国王立写真協会の設立に中心的役割を果たし、1855年のクリミア戦争で最初の大規模な従軍写真プロジェクトを遂行した。「死体を撮るな」という出版業者の指示のもとで作られた約360点は、戦争写真と宣伝の関係を問う議論の起点であり続けている。`,
+    leadEn: `Fenton, a trained lawyer, co-founded the Royal Photographic Society in 1853 and undertook the first large-scale war photography project in the Crimea in 1855. His roughly 360 photographs, made under explicit instructions not to show the dead, remain the starting point for debates about war photography and propaganda.`,
+    textJa: `経歴
+
+ロジャー・フェントンは1819年にランカシャーで生まれた。ユニバーシティ・カレッジ・ロンドンで法律を学んだ後、パリでポール・ドラローシュのもとで絵画を修業した。1843〜44年頃から写真に取り組み始め、1851年のロンドン万博では英国の写真家を組織する中核人物の一人となった。1853年には英国王立写真協会（ロイヤル・フォトグラフィック・ソサエティ）の設立に中心的役割を果たした*1。
+
+1854年のクリミア戦争で従軍記者ウィリアム・ハワード・ラッセル（タイムズ紙）が英国軍の失態を連報したことで、戦争は国内で深刻に不人気となった。マンチェスターの出版業者トーマス・アグニュー商会はプリンス・アルバートを通じて政府の協力を取り付け、「否定的な世論を和らげる写真」を撮るためフェントンを現地に派遣した。アグニューは「死体・残虐な場面は撮影しないこと」を明示的に要請した*2。
+
+フェントンは1855年3月から6月にかけてクリミア半島に滞在し、専用の暗室馬車「フォトグラフィック・ヴァン」を持ち込んで、ガラス湿板コロジオン法で約360点のアルブミン・プリント原版を制作した。帰国後に展示・販売されたこれらの写真は、初めて戦場の現実を英国市民に視覚的に伝えたが、死傷者・戦闘の場面はほぼ存在しなかった*3。
+
+フェントンは1862年に突然写真活動をすべて終え、機材一式を売却して法律の仕事に戻った。退去の理由は今日も明確ではない。1869年に没した*4。
+
+表現解説
+
+フェントンの約360点のクリミア写真は、軍人の肖像・キャンプの日常・戦場の地形という三つのカテゴリーに集中している。この構成は「否定的な世論を和らげる」という委嘱の意図と直結しており、写真が何を映すかではなく何を映さないかによって意味が決まるという問題を先取りしている*5。
+
+最も広く知られる作品「死の影の谷」（The Valley of the Shadow of Death, 1855年）は、砲弾が散乱する荒涼たる丘の道を写したものである。ジャーナリストで映画監督のエロール・モリスは2007〜08年の詳細な調査において、同じ場所を撮影した二枚の写真を比較分析し、砲弾が道の上と道の脇という異なる位置に配置されていることを示した。どちらが先に撮影されたかをめぐる議論は決着していないが、この分析は写真の「真実性」という概念をめぐる最重要の事例の一つとして今日も参照されている*6。
+
+フェントンの写真はアルブミン・プリントで制作されており、ガラス湿板ネガから複数の焼き付けが可能だった。この技術は、ダゲレオタイプの一点性から複製可能な写真印刷への移行期を示す重要な証拠でもある*7。
+
+批評と受容
+
+フェントンのクリミア写真は、当時の英国社会において「戦争写真の起源」として即座に認識されたわけではなかった。写真展示と写真集の販売が続いたものの、当初の社会的インパクトは限定的だった。彼の重要性が写真史的に確立されるのは20世紀に入ってからであり、特に戦争写真の倫理と宣伝の問題が論じられるようになったことと連動している*8。
+
+現在、フェントンのクリミア写真約263点は米国議会図書館（ライブラリー・オブ・コングレス）の「フェントン・クリミア戦争写真コレクション」として公開されており、高解像度でデジタル閲覧が可能である。これはフェントン研究の最も包括的な公開アーカイブとなっている*9。
+
+メトロポリタン美術館はフェントンを「写真の新しい使用法——報道と旅行写真——の開拓者」として位置づけており*10、MoMAも彼のコレクションを保有している*11。弁護士・画家修業者・写真協会設立者・従軍写真家という経歴は、写真の制度的・商業的・政治的発展が複雑に絡み合った1850年代英国の文化状況を象徴している。`,
+    textEn: `Biography
+
+Roger Fenton was born in Lancashire in 1819. He studied law at University College London, then trained as a painter in Paris under Paul Delaroche. He began photographing around 1843–44 and by 1851 had become a central organizer of British photographers for the Great Exhibition. In 1853 he was instrumental in founding the Royal Photographic Society*1.
+
+When William Howard Russell's dispatches in The Times exposed the failures of the British army in the Crimean War of 1854, the war became deeply unpopular at home. The Manchester publisher Thomas Agnew & Sons, working with support routed through Prince Albert, arranged for Fenton to travel to the front and produce photographs that might soften negative public opinion. Agnew explicitly instructed him not to photograph corpses or scenes of extreme violence*2.
+
+Fenton spent March to June 1855 in the Crimea, bringing a specially converted horse-drawn darkroom van. Working in wet-collodion on glass, he made approximately 360 albumen print negatives. Exhibited and sold in Britain on his return, the photographs gave British audiences their first visual access to the war's landscape — but showed almost no dead or combat*3.
+
+In 1862 Fenton abruptly ended all photographic activity, sold his equipment, and returned to legal work. The reason remains unclear. He died in 1869*4.
+
+Expression / method
+
+Fenton's approximately 360 Crimea photographs concentrate on three categories: military portraiture, camp daily life, and terrain. This composition corresponds directly to the brief — to "soften negative public opinion" — and anticipates the argument that a photograph's meaning is as much a function of what it does not show as what it does*5.
+
+The most widely known image, The Valley of the Shadow of Death (1855), shows a rutted road strewn with cannonballs. In 2007–08, the journalist and filmmaker Errol Morris conducted a detailed comparative analysis of two versions of this scene and demonstrated that the cannonballs appear in different positions in the two photographs — some in the road, some to the side. The question of which was made first remains unresolved, but Morris's analysis has become one of the most cited case studies in the discussion of photographic "truth"*6.
+
+Fenton's photographs were made as albumen prints from wet-collodion glass negatives, enabling multiple prints from a single exposure. This technique marks the transition from the one-off daguerreotype to reproducible photographic printing*7.
+
+Criticism and reception
+
+Fenton's Crimea photographs were not immediately recognized as the "origin of war photography" in British society. Exhibition and album sales continued, but the initial public impact was limited. His historical importance solidified in the twentieth century, particularly as debates about the ethics and propaganda functions of war photography intensified*8.
+
+Today approximately 263 of Fenton's Crimea photographs are held by the Library of Congress as the Fenton Crimean War Photographs Collection and are publicly accessible in high resolution — the most comprehensive open archive for Fenton research*9.
+
+The Metropolitan Museum situates Fenton as a pioneer of "new uses of photography — reportage and travel photography"*10, and MoMA holds examples of his work*11. His trajectory — lawyer, art student, society co-founder, war photographer — reflects the overlapping institutional, commercial, and political forces shaping British photography in the 1850s.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — Roger Fenton (1819–1869)', url: 'https://www.metmuseum.org/essays/roger-fenton-1819-1869' },
+      { num: 2, name: 'Metropolitan Museum of Art — Roger Fenton (1819–1869)', url: 'https://www.metmuseum.org/essays/roger-fenton-1819-1869' },
+      { num: 3, name: 'Library of Congress — Fenton Crimean War Photographs Collection', url: 'https://www.loc.gov/collections/fenton-crimean-war-photographs/about-this-collection/' },
+      { num: 4, name: 'Metropolitan Museum of Art — Roger Fenton (1819–1869)', url: 'https://www.metmuseum.org/essays/roger-fenton-1819-1869' },
+      { num: 5, name: 'Library of Congress — Fenton Crimean War Photographs Collection', url: 'https://www.loc.gov/collections/fenton-crimean-war-photographs/about-this-collection/' },
+      { num: 6, name: 'Metropolitan Museum of Art — Roger Fenton (1819–1869)', url: 'https://www.metmuseum.org/essays/roger-fenton-1819-1869' },
+      { num: 7, name: 'National Science and Media Museum — A-Z of Photography: Wet Collodion', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-wet-collodion/' },
+      { num: 8, name: 'Metropolitan Museum of Art — Roger Fenton (1819–1869)', url: 'https://www.metmuseum.org/essays/roger-fenton-1819-1869' },
+      { num: 9, name: 'Library of Congress — Fenton Crimean War Photographs Collection', url: 'https://www.loc.gov/collections/fenton-crimean-war-photographs/about-this-collection/' },
+      { num: 10, name: 'Metropolitan Museum of Art — Roger Fenton (1819–1869)', url: 'https://www.metmuseum.org/essays/roger-fenton-1819-1869' },
+      { num: 11, name: 'MoMA — Roger Fenton', url: 'https://www.moma.org/artists/1898' },
+    ]
+  },
+
+  'legray': {
+    leadJa: `パリで絵画を学んだル・グレーは1840年代後半から写真に転じ、ナダールらを育てた写真教育者でもあった。コンビネーション・プリント（複数ネガの合成）による海景写真の技術的革新と、湿板コロジオン法の改良（ワックス紙ネガ法）によって、1850年代の写真表現を技術的に主導した。`,
+    leadEn: `Le Gray moved from Paris painting to photography in the late 1840s and taught figures including Nadar. He technically dominated 1850s photography through two innovations: the combination print (composite of separate negatives for sea and sky) and the waxed-paper negative that improved the calotype for outdoor use.`,
+    textJa: `経歴
+
+ギュスターヴ・ル・グレーは1820年にパリ近郊のヴィリエ＝ル＝ベルに生まれた。ポール・ドラローシュのアトリエで絵画を学び、ロジャー・フェントンらと同時期にその薫陶を受けた。1840年代後半から写真に転じ、パリのシャンブール通りに写真学校を開いた。ここでナダール・シャルル・ネグル・アンリ・ル・セック・テオフィル・ゴーティエらが写真を学んでいる*1。
+
+1851年頃にタルボットのカロタイプを改良した「ワックス紙ネガ法」を発明した。生の紙にワックスを染み込ませることで、撮影前に調製でき数日間保存可能なネガが実現した。これはカロタイプの最大の欠点——撮影直前に感光液を塗布しなければならない手間——を解消し、旅行・野外撮影の実用性を大幅に向上させた*2。同年、フランス政府の「歴史的建造物撮影ミッション」に参加してフォンテーヌブローを記録した。
+
+1851〜57年頃に湿板コロジオン法を習得し、海景写真で卓越した技術的実験を展開した。代表作「大波」（La Grande Vague, 1857年）はコンビネーション・プリント技術の頂点とされる。1857年にはナポレオン3世の軍事演習「シャロン陣営」の公式写真家も務めた*3。
+
+1860年頃に財政的な困難からフランスを離れ、エジプト・カイロへ移住した。アレクサンドリアでスタジオを開き、写真家・デッサン教師として働いた。パリでの名声とは対照的に晩年は歴史から忘れられた存在となり、1884年にカイロで没した*4。
+
+表現解説
+
+ル・グレーの海景写真が提示した技術的問題は鮮明だった。ガラス湿板コロジオン法では、明るい空と暗い海面の露光に必要な時間が大きく異なり、一枚のネガで両者を適切に表現することは原理的に不可能だった——空に露光を合わせれば海面は暗く潰れ、海面に合わせれば空は白くとびる。ル・グレーの解決策は、海と空をそれぞれ最適な露光で別々に撮影した2枚のネガを、暗室での合成印画（コンビネーション・プリント）によって一枚の作品に仕上げることだった*5。
+
+当時ル・グレーはこの手法を一切公言しなかった。そのため批評家は、空と海が同時に完璧な露光で写り込んだ光景に驚嘆し、自然の奇跡として受け取った。後に手法が明かされたとき、それはドキュメンタリー的「真実」と技術的「操作」の境界に関する最初の写真的議論の一つを引き起こした*6。
+
+「大波」と並ぶ重要作「水上のブリッグ帆船」（Brig upon the Water, 1856年頃）も同様の手法で制作されている。これらの作品は1857年のパリの写真サロンで大きな反響を呼び、ル・グレーの評価を一気に高めた。雲と海を別々のネガで撮影し一枚に合成するアプローチは、後のフォトモンタージュやデジタル合成の技術的先駆としても位置づけられる*7。
+
+批評と受容
+
+ル・グレーは生前にかなりの名声を得たが、財政的な失敗と亡命によってその評価はフランスにおいてほぼ忘却された。20世紀後半以降の再評価は、主にオークション市場と主要美術館のコレクション形成を通じて進んだ。「大波」は1999年にクリスティーズのオークションで当時の写真作品の世界最高落札価格を記録し、写真市場における19世紀写真の再評価を象徴する出来事となった*8。
+
+メトロポリタン美術館・V&A・ゲッティ美術館・ビクトリア・アルバート博物館はいずれも重要なル・グレー・コレクションを有している。V&Aは2002年に大規模な回顧展「ギュスターヴ・ル・グレー：写真家」を開催し、彼の技術的革新と芸術的ヴィジョンを改めて位置づけた*9。
+
+フランス国立図書館（BnF）はル・グレーのオリジナル・プリントを多数所蔵しており、1851年の歴史的建造物撮影ミッションの作品もその一部である*10。ル・グレーの仕事は、技術的革新・芸術的野心・商業的失敗が交差した19世紀中葉の写真史の複雑さを体現する存在として、今日も研究者の関心を集めている*11。`,
+    textEn: `Biography
+
+Gustave Le Gray was born in 1820 in Villiers-le-Bel, near Paris. He trained as a painter in Paul Delaroche's studio — at the same period as Roger Fenton — and moved to photography in the late 1840s. He opened a photography school on the rue de la Boétie in Paris where figures including Nadar, Charles Nègre, Henri Le Secq, and Théophile Gautier learned the medium*1.
+
+Around 1851 he invented the waxed-paper negative process — an improvement on Talbot's calotype in which waxed paper could be prepared days before use and kept for several days after. This solved the calotype's main practical limitation (requiring fresh sensitization immediately before exposure) and made outdoor and travel photography far more feasible*2. That same year he participated in the French government's Missions Héliographiques, documenting Fontainebleau.
+
+In the mid-1850s he mastered the wet-collodion process and developed his most technically distinctive work: seascape photographs, of which La Grande Vague (The Great Wave, 1857) is the central example. In 1857 he also served as official photographer for Napoleon III's military exercises at the Camp de Châlons*3.
+
+Financial difficulties forced him out of France around 1860. He settled in Cairo, opened a studio in Alexandria, and worked as a photographer and drawing teacher. Largely forgotten in France for the rest of his life, he died in Cairo in 1884*4.
+
+Expression / method
+
+The technical problem Le Gray's seascapes solved was precise: wet collodion's exposure requirements for bright sky and dark sea were incompatible in a single negative — expose for the sky and the sea goes black; expose for the sea and the sky bleaches out. Le Gray's solution was the combination print: photographing sky and sea separately at optimal exposures and printing from two negatives onto a single sheet of paper*5.
+
+Le Gray never disclosed this method at the time. Critics and viewers accordingly treated the perfect sky-and-sea images as natural wonders. When the technique eventually became known, it generated one of the first photographic debates about the boundary between documentary "truth" and technical "manipulation"*6.
+
+The companion piece to The Great Wave, Brig upon the Water (c.1856), was made by the same method. Both works attracted considerable attention at Paris's 1857 photographic salon and substantially advanced Le Gray's reputation. The approach of combining separately exposed negatives into a single unified image is also a technical antecedent to photomontage and digital compositing*7.
+
+Criticism and reception
+
+Le Gray achieved considerable fame in his lifetime but his reputation in France was largely lost after his financial collapse and emigration. The reassessment from the late twentieth century onwards proceeded primarily through the auction market and major museum acquisitions. In 1999, La Grande Vague sold at Christie's for what was then a world record for a photograph at auction, marking a turning point in the commercial revaluation of nineteenth-century photography*8.
+
+The Metropolitan Museum, V&A, Getty Museum, and Bibliothèque nationale de France all hold significant Le Gray collections. The V&A mounted a major retrospective in 2002, "Gustave Le Gray: Photographer," which comprehensively reassessed his technical innovations and artistic vision*9.
+
+The Bibliothèque nationale de France holds a large number of Le Gray's original prints, including work from the 1851 Missions Héliographiques*10. His practice — technical invention, artistic ambition, commercial failure, exile — makes him one of the most complex figures in mid-nineteenth-century photographic history, and one who continues to attract sustained scholarly attention*11.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — Gustave Le Gray (1820–1884)', url: 'https://www.metmuseum.org/art/collection/search?q=gustave+le+gray&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
+      { num: 2, name: 'National Science and Media Museum — A-Z of Photography: Waxed Paper Negative', url: 'https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-waxed-paper-negative/' },
+      { num: 3, name: 'J. Paul Getty Museum — Gustave Le Gray', url: 'https://www.getty.edu/art/collection/artists/2244/gustave-le-gray-french-1820-1884/' },
+      { num: 4, name: 'J. Paul Getty Museum — Gustave Le Gray', url: 'https://www.getty.edu/art/collection/artists/2244/gustave-le-gray-french-1820-1884/' },
+      { num: 5, name: 'Metropolitan Museum of Art — The Great Wave, Sète', url: 'https://www.metmuseum.org/art/collection/search/283194' },
+      { num: 6, name: 'J. Paul Getty Museum — Gustave Le Gray', url: 'https://www.getty.edu/art/collection/artists/2244/gustave-le-gray-french-1820-1884/' },
+      { num: 7, name: 'Metropolitan Museum of Art — The Great Wave, Sète', url: 'https://www.metmuseum.org/art/collection/search/283194' },
+      { num: 8, name: 'J. Paul Getty Museum — Gustave Le Gray', url: 'https://www.getty.edu/art/collection/artists/2244/gustave-le-gray-french-1820-1884/' },
+      { num: 9, name: 'V&A — Gustave Le Gray: Photographer', url: 'https://www.vam.ac.uk/articles/gustave-le-gray' },
+      { num: 10, name: 'Bibliothèque nationale de France — Gustave Le Gray', url: 'https://gallica.bnf.fr/services/engine/search/sru?operation=searchRetrieve&version=1.2&query=%28gallica.title+all+%22le+gray%22%29+and+dc.type+all+%22image%22&lang=fr&suggest=0' },
+      { num: 11, name: 'V&A — Gustave Le Gray: Photographer', url: 'https://www.vam.ac.uk/articles/gustave-le-gray' },
+    ]
+  },
+
+  'nadar': {
+    leadJa: `ジャーナリスト・風刺漫画家として当代の文化人と深く交流していたナダールは、1853年頃から肖像写真家に転身し、グレーの無地背景と自然光のみで被写体の内面を引き出す革新的な方式を確立した。1858年の気球からの航空写真、1861年のパリ地下道での電灯撮影、1874年の印象派第1回展会場の無償提供と、写真の技術的・社会的可能性の拡張に一貫して取り組んだ。`,
+    leadEn: `Nadar moved from journalism and caricature into portrait photography around 1853, establishing a spare studio approach — plain grey background, natural light, no props — aimed at revealing character rather than status. He expanded photography's technical and social reach through aerial photography from a balloon (1858), electric-light work in the Paris catacombs (1861), and lending his studio for the first Impressionist exhibition (1874).`,
+    textJa: `経歴
+
+ガスパール＝フェリックス・トゥルナション（ナダールは筆名）は1820年にパリに生まれた。ジャーナリスト・風刺漫画家として出発し、「パンテオン・ナダール」と呼ばれる当代の著名人250人以上を描いた大型石版画（1854年）は、その幅広いネットワークを示している。1853年頃から写真家に転身し、サン＝ラザール通りにスタジオを開いた*1。
+
+1854〜55年頃から本格的な肖像写真家として活動を開始し、ヴィクトル・ユゴー・シャルル・ボードレール・エクトル・ベルリオーズ・サラ・ベルナール・ウジェーヌ・ドラクロワ・ジョルジュ・サンドらの肖像で名声を確立した。当時主流だった刺繍背景・小道具・仰々しい衣装を排し、グレーの無地背景と自然光のみで撮影するスタイルは「余計な装飾が被写体の個性を隠してしまう」という信念に基づいていた*2。
+
+1858年にはセーヌ川上空を飛ぶ気球「ジャアン」から世界最初の航空写真の一つを撮影した。1861年にはパリの地下墓地（カタコンブ）と下水道でカーボン・アーク灯を用いた電灯撮影を行い、自然光の届かない空間での写真撮影を初めて実現した*3。
+
+1874年4月には、当時の美術界から拒絶されていたモネ・ドガ・ピサロ・ルノワールらの画家たちに、サン＝ラザール通りのスタジオを第1回印象派展（正式名称「画家・彫刻家・版画家等芸術家協会員展覧会」）の会場として無償提供した*4。
+
+息子のポール・ナダールに事業を引き継いだ後も写真への関心を保ち続け、1910年にパリで没した。
+
+表現解説
+
+ナダールの肖像写真の革新は、技術よりも演出の哲学にある。ダゲレオタイプ時代から続く肖像写真の常套手段——人物の社会的地位を誇示するための豪華な背景・衣装・調度——を意識的に排除し、被写体の顔・身体・姿勢・表情だけで「その人」を表すことを目指した*5。この姿勢は、ナダールが写真を撮る前にジャーナリスト・漫画家として人物の本質を見抜く取材眼を培っていたことと切り離せない。
+
+ユゴーのポートレート（c.1878）では、老年の文豪の顔の彫りの深さと知性が直截に伝わる。ボードレールのポートレート（c.1855）では、詩人の鋭さと緊張感が、装飾のないフレームの中でより際立つ。これらの肖像は、個人のアイデンティティを視覚的に固定するという写真の社会的機能が確立した歴史的瞬間に位置している*6。
+
+1861年のカタコンブ撮影は技術的な快挙だった。地下墓地の骸骨と石壁を写すためには、自然光が届かない空間での長時間照明が必要であり、カーボン・アーク灯の使用と複数の電池の組み合わせによって初めて実現した。この技術実験は、写真が外光に依存しない記録手段になり得ることを初めて示した*7。
+
+批評と受容
+
+ナダールの肖像写真が写真史において占める地位は、個別の代表作よりも、肖像写真という様式全体への美学的介入として評価されている。彼が確立したシンプルな背景と自然光という方式は、のちのポートレート写真の美学的規準の一つとなり、20世紀の著名人ポートレート——ユサフ・カーシュからアニー・リーボヴィッツに至るまで——の系譜にも繋がっている*8。
+
+メトロポリタン美術館はナダールの重要な作品群を収蔵しており、フランス国立図書館（BnF）も大規模なコレクションを持つ*9。1874年の印象派展の会場提供は、ナダールが単なる肖像写真家ではなく、当時の前衛的な文化運動の支持者として機能していたことを示す重要な歴史的行為として、美術史においても継続的に参照されている*10。
+
+ナダールが写真を始めた頃、写真の民主化——肖像を中産階級一般に普及させること——は、絵画による肖像の市場を侵食しつつあった。印象派の誕生は一方で写真と絵画の機能分担の再定義と連動しており、その交差点にナダールは立っていた*11。`,
+    textEn: `Biography
+
+Gaspard-Félix Tournachon, who worked under the name Nadar, was born in Paris in 1820. He began as a journalist and caricaturist; his large lithograph the Panthéon Nadar (1854) depicted more than 250 notable contemporaries and demonstrates the breadth of his cultural network. Around 1853 he turned to photography and opened a studio on the rue Saint-Lazare*1.
+
+From around 1854–55 he became established as a portrait photographer, building a reputation through portraits of Victor Hugo, Charles Baudelaire, Hector Berlioz, Sarah Bernhardt, Eugène Delacroix, George Sand, and many others. He eliminated elaborate backgrounds, props, and theatrical costumes, working instead with a plain grey background and natural light alone. His reasoning, which he stated explicitly, was that decoration conceals the sitter's real character*2.
+
+In 1858 he made one of the earliest aerial photographs from a balloon over Paris. In 1861 he photographed the Paris catacombs and sewers using carbon arc lighting — the first application of electric light to photography in a space unreachable by natural light*3.
+
+In April 1874 he lent his rue Saint-Lazare studio free of charge to Monet, Degas, Pissarro, Renoir, and their colleagues for the first Impressionist exhibition — formally titled the Exhibition of the Société Anonyme des Artistes Peintres, Sculpteurs, Graveurs, etc.*4
+
+After passing the business to his son Paul, he maintained his interest in photography until his death in Paris in 1910.
+
+Expression / method
+
+Nadar's portrait innovation lies in philosophy of staging rather than technique. He consciously rejected the conventions of daguerreotype-era portraiture — elaborate backgrounds and furnishings deployed to signal social status — and aimed for a representation that worked through face, body, posture, and expression alone*5. This approach is inseparable from the journalistic and caricaturist's eye he had trained before moving to photography.
+
+The portrait of Hugo (c.1878) transmits the carved intelligence of the old novelist directly. The portrait of Baudelaire (c.1855) lets the poet's sharpness and tension read more clearly in the absence of decorative framing. These portraits occupy a historical moment when photography was establishing its social function as the technology that fixes individual identity visually*6.
+
+The 1861 catacomb photographs were a technical feat. Photographing skeletons and stone walls in underground spaces required sustained illumination where natural light could not reach, achieved through carbon arc lamps and multiple batteries — the first demonstration that photography could operate as a recording instrument independent of daylight*7.
+
+Criticism and reception
+
+Nadar's position in photographic history is evaluated less as the maker of individual masterpieces than as an aesthetic intervention into the genre of portraiture as a whole. The plain background and natural light he established became one of the aesthetic standards for portrait photography, connecting forward to twentieth-century celebrity portraiture from Yousuf Karsh to Annie Leibovitz*8.
+
+The Metropolitan Museum holds an important group of Nadar's photographs, and the Bibliothèque nationale de France holds a large collection*9. The loan of his studio for the 1874 Impressionist exhibition is consistently cited in art history as evidence that Nadar was not only a portrait photographer but an active supporter of the avant-garde cultural movements of his time*10.
+
+When Nadar began photography, the democratization of portraiture — making likenesses accessible to the middle class rather than reserved for oil painting — was already reshaping the art market. The emergence of Impressionism was linked in part to this renegotiation of what painting could do that photography could not. Nadar stood at that intersection*11.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — Nadar (Gaspard-Félix Tournachon)', url: 'https://www.metmuseum.org/art/collection/search?q=nadar&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
+      { num: 2, name: 'Metropolitan Museum of Art — Nadar (Gaspard-Félix Tournachon)', url: 'https://www.metmuseum.org/art/collection/search?q=nadar&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
+      { num: 3, name: 'George Eastman Museum — Nadar', url: 'https://www.eastman.org/nadar' },
+      { num: 4, name: 'Metropolitan Museum of Art — The First Impressionist Exhibition, 1874', url: 'https://www.metmuseum.org/toah/hd/impr/hd_impr.htm' },
+      { num: 5, name: 'J. Paul Getty Museum — Nadar', url: 'https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/' },
+      { num: 6, name: 'J. Paul Getty Museum — Nadar', url: 'https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/' },
+      { num: 7, name: 'George Eastman Museum — Nadar', url: 'https://www.eastman.org/nadar' },
+      { num: 8, name: 'J. Paul Getty Museum — Nadar', url: 'https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/' },
+      { num: 9, name: 'Metropolitan Museum of Art — Nadar (Gaspard-Félix Tournachon)', url: 'https://www.metmuseum.org/art/collection/search?q=nadar&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
+      { num: 10, name: 'Metropolitan Museum of Art — The First Impressionist Exhibition, 1874', url: 'https://www.metmuseum.org/toah/hd/impr/hd_impr.htm' },
+      { num: 11, name: 'J. Paul Getty Museum — Nadar', url: 'https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/' },
+    ]
+  },
+
+  'alexander-gardner': {
+    leadJa: `スコットランド出身のガードナーは南北戦争の写真記録においてブレイディの組織から独立し、写真家個人のクレジットを明示した写真集『ガードナーの戦争写真スケッチブック』（1865〜66年）を刊行した。これはドキュメンタリー写真における著作権の原則的な主張として写真史上画期的な行為であり、スミソニアンは彼を「アメリカ最初の近代的写真家」と評している。`,
+    leadEn: `Gardner, born in Scotland, broke from Brady's organization during the Civil War and published Gardner's Photographic Sketch Book of the War (1865–66) with individual photographers named throughout — a principled assertion of authorship in documentary photography that the Smithsonian would later call the work of "America's first modern photographer."`,
+    textJa: `経歴
+
+アレクサンダー・ガードナーは1821年にスコットランドのグラスゴー近郊に生まれた。1856年頃に渡米し、マシュー・ブレイディのワシントンD.C.スタジオの管理者となった。南北戦争が勃発すると、マクレラン将軍参謀部の地図・海図複写担当として戦場関係の写真業務を開始し、その後戦場写真の撮影に転じた*1。
+
+1862年11月にブレイディのもとを離れて独立し、多くのスタッフを引き連れて自身のスタジオを設立した。ブレイディが写真家の個人クレジットを表示しなかったのとは対照的に、ガードナーは1865〜66年刊行の写真集『ガードナーの戦争写真スケッチブック』（全2巻、100枚のアルブミン銀塩プリント収録）において11名の写真家を個別に明記した。これはドキュメンタリー写真における著作権の原則的な主張として写真史上画期的な行為だった*2。
+
+1862年のアンティータムの戦い後、ガードナーは戦場の死者を撮影し、ニューヨークでの展示は戦争のリアルを初めて市民に直視させた。ゲティスバーグで撮影した「反乱軍の狙撃兵の家」（1863年）は後の調査によって遺体の移動と小道具の使用が示されており、ドキュメンタリー写真における演出と記録の倫理問題を先取りする作品として今日も論争の対象である*3。
+
+1865年にはリンカーン暗殺の共謀者4名の処刑（7月7日）を撮影することを許された唯一の写真家として現場に立ち会った。戦後は1867年よりカンザス・パシフィック鉄道の測量写真家として西部開拓を記録し、1882年に没した*4。
+
+表現解説
+
+ガードナーの実践の核心は、写真家の個人的な著作者性という概念の導入にある。ブレイディの組織では写真家の名前はスタジオ名（「ブレイディのガレリア」）の下に隠れており、誰が実際にシャッターを切ったかは一般に知られなかった。ガードナーはこれを意識的に変えた。『スケッチブック』では各写真に撮影者と解説者の名が明記されており、この実践はドキュメンタリー写真における個人の証言と責任を制度化する最初の試みとして機能している*5。
+
+アンティータムの死傷者写真は戦争写真の歴史において転換点を画す。「ブレイディ氏の展覧会」としてニューヨーク・ギャラリーで1862年10月に公開されたこれらの写真は、アメリカ市民が戦場の死者の写真を初めて目にした出来事として記録されている。ニューヨーク・タイムズは「ブレイディ氏は戦争の恐ろしい現実を我々の目の前に持ち込んだ」と報じた——写真家はガードナーだったが、クレジットはブレイディとなっていた*6。
+
+「反乱軍の狙撃兵の家」（Home of a Rebel Sharpshooter, Gettysburg, 1863年）をめぐる演出論争は、戦争写真の真実性と倫理を問う議論の原点的事例である。調査によれば、遺体が別の場所から移動され、ライフルが証拠品として立てかけられたという。この問題は、写真が同時に記録と演出であり得るという根本的な矛盾をはらむ写真の本質論の中心に置かれている*7。
+
+批評と受容
+
+スミソニアン国立肖像画美術館は2015〜16年の大規模回顧展「共和国の暗野」においてガードナーを「アメリカ最初の近代的写真家」と評し、写真に写実主義の重みを注入してアメリカ文化の変容に決定的な役割を果たした人物として位置づけた*8。
+
+ゲッティ美術館はガードナーの『スケッチブック』を「アメリカ最初の南北戦争写真の出版コレクション」と評価し*9、メトロポリタン美術館は「南北戦争の壮大な記録という構想はブレイディのものだったが、それを実際に実行したのはガードナーだった」と評している*10。
+
+ガードナーが西部測量の仕事（1867〜69年）で残したカンザス・コロラド・ニューメキシコ・アリゾナの写真は、19世紀アメリカの西部拡大を記録した重要なアーカイブとして今日も評価されており、戦争写真とは別の系譜においてもガードナーの仕事は参照され続けている*11。`,
+    textEn: `Biography
+
+Alexander Gardner was born in 1821 near Glasgow, Scotland. He emigrated to the United States around 1856 and became manager of Mathew Brady's Washington, D.C., portrait studio. When the Civil War broke out, he was attached to General McClellan's staff to copy maps and charts, then moved into battlefield photography*1.
+
+He left Brady in November 1862 and set up his own studio, taking much of Brady's experienced staff with him. In 1865–66 Gardner published Gardner's Photographic Sketch Book of the War, two volumes containing 100 albumen silver prints. Unlike Brady, who suppressed individual photographers' credits, Gardner specifically named all eleven contributors — a principled assertion of authorship in documentary photography*2.
+
+After photographing the carnage at Antietam in 1862, Gardner produced at Gettysburg one of the most debated photographs in the medium's history: "Home of a Rebel Sharpshooter" (1863). Subsequent research has established that the body was moved, the stone-wall position was staged, and the rifle leaning against the rocks was a prop*3.
+
+In 1865 he was the only photographer permitted to document the execution of Lincoln's four conspirators on July 7. After the war he was appointed chief photographer for the Kansas Pacific Railroad (1867), documenting westward expansion through Kansas, Colorado, New Mexico, and Arizona. He died in 1882*4.
+
+Expression / method
+
+The core of Gardner's practice is the introduction of individual authorship as a concept in documentary photography. Under Brady's organization, the photographer's name was subsumed under the studio brand; who had actually made any given photograph was not publicly known. Gardner changed this deliberately. The Sketch Book credits each photograph by name of photographer and caption writer — an early institutionalization of the idea that a documentary photograph carries the personal testimony and responsibility of an identifiable individual*5.
+
+The Antietam dead photographs mark a turning point in the history of war photography. Exhibited in October 1862 at Brady's New York Gallery as "Brady's exhibition," these photographs gave American civilians their first visual encounter with battlefield corpses. The New York Times reported that "Brady has brought the terrible reality of war to our doors" — the photographer was Gardner, but the credit was Brady's*6.
+
+The staged-body controversy around "Home of a Rebel Sharpshooter" (Gettysburg, 1863) is the foundational case study for debates about documentary authenticity. The evidence suggests the body was moved from elsewhere, the position was composed, and the rifle was placed as a prop. This problem — the photograph as simultaneously record and construction — is positioned at the center of the fundamental argument about what documentary photography is*7.
+
+Criticism and reception
+
+The Smithsonian's National Portrait Gallery, in its 2015–16 retrospective "Dark Fields of the Republic," called Gardner "America's first modern photographer," crediting him with injecting a sobering realism into American visual culture*8.
+
+The Getty Museum calls the Sketch Book "the first published collection of Civil War photographs"*9, and the Metropolitan Museum writes that "it was Gardner who actually executed" the grand idea of an epic Civil War documentation that Brady had conceived*10.
+
+The western survey photographs Gardner made from 1867 to 1869 — covering Kansas, Colorado, New Mexico, and Arizona — are valued as an important archive of nineteenth-century American expansion, and they situate Gardner's practice in a documentary tradition separate from, and as significant as, his war photography*11.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
+      { num: 2, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
+      { num: 3, name: 'J. Paul Getty Museum — Alexander Gardner', url: 'https://www.getty.edu/art/collection/artists/2019/alexander-gardner-american-born-scotland-1821-1882/' },
+      { num: 4, name: 'J. Paul Getty Museum — Alexander Gardner', url: 'https://www.getty.edu/art/collection/artists/2019/alexander-gardner-american-born-scotland-1821-1882/' },
+      { num: 5, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
+      { num: 6, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
+      { num: 7, name: 'J. Paul Getty Museum — Alexander Gardner', url: 'https://www.getty.edu/art/collection/artists/2019/alexander-gardner-american-born-scotland-1821-1882/' },
+      { num: 8, name: 'Smithsonian National Portrait Gallery — Dark Fields of the Republic', url: 'https://npg.si.edu/exhibition/dark-fields-republic-alexander-gardner-photographs-1859-1872' },
+      { num: 9, name: 'J. Paul Getty Museum — Alexander Gardner', url: 'https://www.getty.edu/art/collection/artists/2019/alexander-gardner-american-born-scotland-1821-1882/' },
+      { num: 10, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
+      { num: 11, name: 'Library of Congress — Alexander Gardner Photographs', url: 'https://www.loc.gov/pictures/related/?fi=name&q=Gardner%2C+Alexander%2C+1821-1882' },
+    ]
+  },
+
+  'brady': {
+    leadJa: `1840年代からアメリカ最高の肖像写真家として大統領を含む著名人を撮影したブレイディは、南北戦争において私財を投じて20人以上の写真家を組織し、米国史上最大規模の戦場写真プロジェクトを指揮した。1862年のアンティータム死者の写真展示は、アメリカ市民が戦場の死者の写真を初めて目にした歴史的出来事として記録されている。`,
+    leadEn: `Brady was the leading American portrait photographer of the 1840s–50s, building his reputation on photographs of presidents and public figures. He invested his own fortune in organizing more than twenty photographers to document the Civil War — the largest such project in American history. The 1862 exhibition of Antietam dead photographs marked the first time American civilians confronted photographic images of battlefield corpses.`,
+    textJa: `経歴
+
+マシュー・ブレイディはニューヨーク州ウォーレン郡で約1822年に生まれた。若い頃から写真に取り組み、1844年頃にニューヨーク市ブロードウェイに最初のダゲレオタイプ・スタジオを開設した。ジョン・クィンシー・アダムズ・アンドリュー・ジャクソン・ジェームズ・ポーク・ミラード・フィルモアらの大統領を含む著名人の肖像で名声を築き、ニューヨーク・ワシントンD.C.の二大スタジオを経営して「アメリカ最高の肖像写真家」と呼ばれた*1。
+
+1851年のロンドン万博ではダゲレオタイプ部門でメダルを受賞し、国際的な認知も得た。写真技術が湿板コロジオン法へ移行する1850年代にも地位を維持し、写真帖「著名なアメリカ人ギャラリー」シリーズで歴史的な肖像アーカイブを構築した*2。
+
+1861年の南北戦争勃発にあたり「戦争は写真で記録されなければならない」という確信から、政府から正式なアクセスを確保した上で私財を投じて20人以上の写真家チームを組織し、携帯暗室馬車で各戦場に派遣した。ブレイディ自身は晩年に「ある精神が私の足に『行け』と言い、私は行った」と語っている*3。アレクサンダー・ガードナー、ティモシー・オサリヴァンら傘下の写真家が残した記録は1万枚以上に上る。
+
+1862年10月にアンティータムの死傷者を撮影した写真がブレイディのニューヨーク・ギャラリーで展示された——アメリカ市民が戦場の死者の写真を目にした最初の機会であり、ニューヨーク・タイムズは「ブレイディ氏は戦争の恐ろしい現実を我々の目の前に持ち込んだ」と報じた*4。
+
+戦後、政府はネガの買取を拒否し、ブレイディは南北戦争写真への投資で破産に追い込まれた。1875年に議会が2万5千ドルでネガを購入したが（自身が投じた費用の4分の1以下）、晩年は極貧のまま1896年に没した*5。
+
+表現解説
+
+ブレイディの南北戦争プロジェクトの組織論的特質は、写真の制作と配給を工場制的に管理した点にある。携帯暗室馬車（「ホワット・イズ・イット？・ワゴン」と呼ばれた）を複数の戦場に同時展開し、写真家ごとに担当地域を割り当て、撮影した湿板ネガを定期的にワシントンD.C.のスタジオに送って管理した。この体制は、個人の写真家の実践から組織的な映像アーカイブの生産への移行を象徴している*6。
+
+ブレイディ個人の視力は戦時中に著しく低下しており、戦場での実際の撮影の多くは他の写真家が担当していた。ブレイディの役割は、プロジェクト全体の企画・組織・資金調達・クレジット管理（スタジオ名の下に全作品をまとめること）にあった。この点でブレイディは、写真の制作者というよりも写真の編集者・プロデューサーとして機能していた*7。
+
+批評と受容
+
+ブレイディの遺産には二重性がある。一方では、南北戦争の視覚的記録という歴史的アーカイブの創出者として、また大統領肖像の体系的な収集者として評価される。他方では、傘下の写真家（特にガードナーとオサリヴァン）の労働と功績を自らのスタジオ名の下に隠蔽したという批判もある*8。
+
+米国議会図書館は「ブレイディ・ハンディ写真コレクション」として約6000点のネガを収蔵しており、南北戦争関連の写真も含む「南北戦争写真コレクション」も大規模な形で公開されている*9。メトロポリタン美術館はブレイディの肖像写真を20点以上収蔵しており、19世紀アメリカの政治的・文化的人物のアーカイブとして位置づけている*10。
+
+ブレイディの生涯は、写真が社会的・文化的インフラとしての地位を確立した時代の英雄的な成功と悲劇的な失敗の両方を体現している。南北戦争写真への投資による破産は、写真の社会的価値が経済的な評価と一致しなかった19世紀の逆説的な状況を象徴している*11。`,
+    textEn: `Biography
+
+Mathew Brady was born around 1822 in Warren County, New York. He opened his first daguerreotype studio on Broadway in New York around 1844 and built a reputation through portraits of presidents — including John Quincy Adams, Andrew Jackson, James Polk, and Millard Fillmore — and other prominent Americans. By the 1850s he operated major studios in New York and Washington, D.C., and was widely regarded as the leading portrait photographer in the United States*1.
+
+He won a medal at the 1851 Great Exhibition in London and maintained his position through the transition to wet-collodion photography in the 1850s, building an archive of American leaders through the Gallery of Illustrious Americans series*2.
+
+At the outbreak of the Civil War in 1861, with official access secured from the government, Brady invested his own fortune in the conviction that the war had to be photographed. He organized more than twenty photographers and sent them into the field with mobile darkroom wagons. He later said: "A spirit in my feet said 'Go,' and I went"*3. The team, which included Alexander Gardner and Timothy O'Sullivan, produced more than ten thousand photographs.
+
+In October 1862, photographs of the dead at Antietam were exhibited in his New York gallery — giving American civilians their first visual encounter with battlefield corpses. The New York Times reported: "Mr. Brady has brought the terrible reality of war to our doors"*4.
+
+After the war the government refused to purchase his negatives. Brady was ruined financially by his Civil War investment. Congress eventually paid $25,000 for the negatives in 1875 — a fraction of what he had spent. He died in poverty in 1896*5.
+
+Expression / method
+
+The organizational character of Brady's Civil War project was its defining feature. He deployed multiple mobile darkroom wagons simultaneously to different theaters, assigned photographers by region, and had wet-collodion negatives shipped back to his Washington studio for processing and storage. This system represents the transition from the individual practitioner to the organized production of photographic archives*6.
+
+Brady's own eyesight had deteriorated significantly by wartime, and most of the actual field photography was done by other photographers in his employ. His function was to plan, organize, finance, and control credit — bringing all work under the studio name, suppressing individual photographers' bylines. In this sense Brady operated more as editor and producer than as photographer*7.
+
+Criticism and reception
+
+Brady's legacy is double-sided. On one hand, he is credited as the creator of the Civil War's visual archive and as a systematic collector of presidential portraiture. On the other, he is criticized for the suppression of the labor and authorship of his photographers, particularly Gardner and O'Sullivan*8.
+
+The Library of Congress holds approximately 6,000 negatives in the Brady-Handy Collection, and the Civil War photographs are also available in the Library's Civil War Photographs collection*9. The Metropolitan Museum holds more than twenty Brady portraits, positioned as an archive of nineteenth-century American political and cultural figures*10.
+
+Brady's life embodies both the heroic ambition and the tragic failure of a moment when photography was establishing itself as a social and cultural infrastructure. His bankruptcy after investing in the Civil War record is a paradox of the period: the social value of photography did not translate into the economic return he had counted on*11.`,
+    citations: [
+      { num: 1, name: 'Library of Congress — Brady-Handy Photograph Collection', url: 'https://www.loc.gov/pictures/collection/cwp/brady.html' },
+      { num: 2, name: 'Metropolitan Museum of Art — Mathew Brady', url: 'https://www.metmuseum.org/art/collection/search?q=mathew+brady&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
+      { num: 3, name: 'Library of Congress — Mathew Brady and the Image of History', url: 'https://www.loc.gov/pictures/collection/cwp/brady.html' },
+      { num: 4, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
+      { num: 5, name: 'Library of Congress — Brady-Handy Photograph Collection', url: 'https://www.loc.gov/pictures/collection/cwp/brady.html' },
+      { num: 6, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
+      { num: 7, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
+      { num: 8, name: 'J. Paul Getty Museum — Alexander Gardner', url: 'https://www.getty.edu/art/collection/artists/2019/alexander-gardner-american-born-scotland-1821-1882/' },
+      { num: 9, name: 'Library of Congress — Civil War Photographs', url: 'https://www.loc.gov/collections/civil-war-photographs/about-this-collection/' },
+      { num: 10, name: 'Metropolitan Museum of Art — Mathew Brady', url: 'https://www.metmuseum.org/art/collection/search?q=mathew+brady&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
+      { num: 11, name: 'Library of Congress — Brady-Handy Photograph Collection', url: 'https://www.loc.gov/pictures/collection/cwp/brady.html' },
+    ]
+  },
+
+  'beato': {
+    leadJa: `ヴェネツィア生まれでイギリスに帰化したベアトは、クリミア・インド・中国・日本と英仏軍の展開する場所を追い続けた写真家だった。1863年から横浜に拠点を置き、手彩色の写真帖によって日本の風景・人物・風俗を外国人旅行者向けに販売した。帝国主義の視線と被写体の商品化という問題は、今日も批判的に検討され続けている。`,
+    leadEn: `Beato, Venice-born and naturalized British, followed British and French imperial campaigns from Crimea through India, China, and Japan. Based in Yokohama from 1863, he sold hand-colored photographic albums of Japanese landscapes and people to foreign visitors. His relationship to imperial power and the commodification of his subjects remains a subject of critical examination.`,
+    textJa: `経歴
+
+フェリーチェ・ベアトは1832年頃にヴェネツィアに生まれ、後にイギリスに帰化した。1855年のクリミア戦争でジェームズ・ロバートソンとともに従軍写真を撮影したことが記録上の最初の活動である。以後、英仏軍が展開する戦場と占領地に継続的に同行した*1。
+
+1857〜58年のインド大反乱（セポイの乱）後のラクナウでは、英軍がセカンダーラバーグを奪取した戦闘の「事後の現場」を撮影した。数ヶ月後の再訪撮影とされており、散乱した骸骨が画面に大きく配置されている——遺体配置の演出が指摘されることもある*2。1860年の第二次アヘン戦争では英仏連合軍に従い北京・天津・大沽砲台などを撮影した。
+
+その際に知り合った英国人挿絵記者チャールズ・ウィルグマンとともに1863年に横浜へ移り、「ベアト＆ウィルグマン」スタジオを開設した。1877年頃まで横浜を拠点として活動し、日本の風景・人物・風俗を写した写真帖を外国人旅行者向けに販売した*3。横浜を離れた後はビルマ（現ミャンマー、1885年）・スーダン（1885〜86年）・朝鮮（1904年頃）にも移動した記録があり、晩年は不明確な部分が多い。1909年頃に没したと推定されている*4。
+
+表現解説
+
+ベアトの日本写真は大きく二つのカテゴリーに分類される——日本の風景・建築（富士山・寺社・宿場町など）と、芸者・侍・職人・農民など様々な「日本的な人物」のスタジオ・ポートレートである。いずれも外国人旅行者・外交官・商人が土産物として購入する写真帖向けに制作されており、「西洋人が東洋の何を求めているか」を正確に把握した商業的判断に基づいていた*5。
+
+ベアトは横浜で写真の手彩色技法を普及させた。彩色を担当したのは多くの場合日本人の画工であり、西洋の写真技術と日本の絵画的伝統が融合した独特の制作様式が生まれた。この手彩色写真帖の様式は明治期の横浜写真の定型となり、日本国内でも複数の写真家がこの方式を採用した*6。
+
+インドやアジアでの「事後の現場」撮影における演出の問題——骸骨の配置、遺体の移動——は、ドキュメンタリー写真の倫理をめぐる議論において今日も参照される。ベアトの写真は、戦争の惨禍を記録するという意図と、外国人読者向けに「東洋の異質性」を演出するという商業的要請の間の緊張を体現している*7。
+
+批評と受容
+
+ベアトの仕事は長らく写真史において周辺的な位置に置かれてきたが、20世紀後半以降の帝国主義批評・植民地写真研究・アジア写真史研究の発展とともに再評価が進んでいる。MIT「文化を可視化する」プロジェクトはベアトの日本写真を「帝国の視線」という理論的枠組みで詳細に分析しており、その商業的・政治的文脈の解読が進んでいる*8。
+
+メトロポリタン美術館・ゲッティ美術館・横浜開港資料館はベアトの作品を収蔵している。日本の写真史研究においては、ベアトが横浜に持ち込んだ湿板コロジオン技術と手彩色写真帖の様式が、明治初期の日本写真の発展に与えた影響が継続的に研究されている*9。
+
+幕末から明治初期の日本を記録した視覚資料として、ベアトの写真帖は歴史的・民族誌的な資料価値を持つ。しかし同時に、その視線が帝国主義的権力関係の中に置かれていることを批判的に検討することが、今日の写真史研究においては不可欠とされている*10。`,
+    textEn: `Biography
+
+Felice Beato was born around 1832 in Venice and was later naturalized as a British subject. The earliest documented record of his activity is the Crimean War (1855), where he photographed alongside James Robertson. From that point he consistently followed British and French imperial campaigns*1.
+
+After the Indian Rebellion (1857–58), he photographed the "aftermath" at Lucknow, including the Secunderbagh — a site where British forces had fought — showing scattered skeletal remains. The photographs are understood as a return visit months after the battle, and the arrangement of human remains has been questioned*2. During the Second Opium War (1860) he followed the Anglo-French forces through Beijing, Tianjin, and the Dagu Forts.
+
+In 1863 he moved to Yokohama with the British illustrator Charles Wirgman, opening the Beato & Wirgman studio. He worked there until around 1877, selling hand-colored photographic albums of Japanese landscapes, people, and customs to foreign visitors, travelers, and diplomats*3. After leaving Yokohama he is documented in Burma (1885), Sudan (1885–86), and Korea (around 1904). He is thought to have died around 1909*4.
+
+Expression / method
+
+Beato's Japan photographs fall into two broad categories: landscapes and architecture (Mount Fuji, temples, post towns) and studio portraits of "typical Japanese" figures — geisha, samurai, craftsmen, farmers. Both were made for photographic albums sold to foreign visitors as souvenirs, based on a precise understanding of what Western consumers wanted from images of Japan*5.
+
+Beato popularized hand-coloring of photographs in Yokohama, with the coloring usually carried out by Japanese painters. This created a distinctive hybrid production that fused Western photographic technology with Japanese pictorial tradition. The hand-colored album format became the standard for Yokohama photography in the Meiji period and was adopted by multiple Japanese photographers*6.
+
+The staging questions around his "aftermath" photographs in India and China — rearranged bones, moved bodies — continue to be cited in discussions of documentary ethics. Beato's work embodies the tension between recording military violence and performing "Oriental otherness" for a Western commercial audience*7.
+
+Criticism and reception
+
+Beato's work long occupied a marginal position in photographic history, but has undergone substantial reassessment from the late twentieth century through the development of postcolonial criticism, colonial photography studies, and Asian photographic history. MIT's Visualizing Cultures project has produced detailed analysis of his Japan photographs in the framework of "imperial gaze," advancing the critical reading of their commercial and political context*8.
+
+The Metropolitan Museum, the Getty Museum, and the Yokohama Archives of History hold Beato's work. In Japanese photographic history, continuing research examines the influence of the wet-collodion techniques and hand-colored album format Beato brought to Yokohama on the development of early Meiji photography*9.
+
+As visual documentation of Japan in the late Tokugawa and early Meiji periods, Beato's albums have significant historical and ethnographic value. At the same time, contemporary photographic history requires critical examination of the imperial power relations embedded in that gaze*10.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — Felice Beato Collection', url: 'https://www.metmuseum.org/art/collection/search?q=felice+beato&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
+      { num: 2, name: 'J. Paul Getty Museum — Felice Beato', url: 'https://www.getty.edu/art/collection/artists/1061/felice-a-beato-british-born-italy-1832-1909/' },
+      { num: 3, name: 'MIT Visualizing Cultures — Beato\'s Japan', url: 'https://visualizingcultures.mit.edu/beato_places/essay.pdf' },
+      { num: 4, name: 'J. Paul Getty Museum — Felice Beato', url: 'https://www.getty.edu/art/collection/artists/1061/felice-a-beato-british-born-italy-1832-1909/' },
+      { num: 5, name: 'MIT Visualizing Cultures — Beato\'s Japan', url: 'https://visualizingcultures.mit.edu/beato_places/essay.pdf' },
+      { num: 6, name: 'MIT Visualizing Cultures — Beato\'s Japan', url: 'https://visualizingcultures.mit.edu/beato_places/essay.pdf' },
+      { num: 7, name: 'J. Paul Getty Museum — Felice Beato', url: 'https://www.getty.edu/art/collection/artists/1061/felice-a-beato-british-born-italy-1832-1909/' },
+      { num: 8, name: 'MIT Visualizing Cultures — Beato\'s Japan', url: 'https://visualizingcultures.mit.edu/beato_places/essay.pdf' },
+      { num: 9, name: 'Metropolitan Museum of Art — Felice Beato Collection', url: 'https://www.metmuseum.org/art/collection/search?q=felice+beato&perPage=20&sortBy=Relevance&offset=0&pageSize=0' },
+      { num: 10, name: 'MIT Visualizing Cultures — Beato\'s Japan', url: 'https://visualizingcultures.mit.edu/beato_places/essay.pdf' },
+    ]
+  },
+
+  'timothy-osullivan': {
+    leadJa: `南北戦争でガードナーの『スケッチブック』に44点を寄稿し（単独写真家として最多）、戦後は西部の地質調査に転じて「死の収穫」（1863年）から「タファ・ドームズ」（1867年）へと写真の射程を広げた。乾いた直接性と演出の拒否は、1975年のニュー・トポグラフィクス展においてロバート・アダムスらが参照した源流となった。`,
+    leadEn: `O'Sullivan contributed 44 of the 100 photographs in Gardner's Civil War Sketch Book — the most by any single photographer — then turned to western geological surveys after the war, extending his range from "A Harvest of Death" (1863) to the Tufa Domes at Pyramid Lake (1867). His forthright, undecorated style became a primary reference for Robert Adams and the photographers of the 1975 New Topographics exhibition.`,
+    textJa: `経歴
+
+ティモシー・オサリヴァンは1840年頃にアイルランドで生まれ、幼児期に家族とともにニューヨークへ移住したと推定されている。マシュー・ブレイディのスタジオで修業した後、南北戦争ではアレクサンダー・ガードナーとともに戦場を撮影した。ガードナーの『戦争写真スケッチブック』（1865〜66年）に収録された100点のうち44点がオサリヴァンの作品とされ、単一写真家としては最多の寄稿数である*1。
+
+1863年7月にゲティスバーグで撮影した「死の収穫」（A Harvest of Death）は、霧の中に横たわる戦死した北軍兵士を捉えた作品で、ガードナーの書いた説明文とともにスケッチブックに掲載された。この作品はMoMA・ナショナル・ギャラリー・スミソニアン・シカゴ美術館・メトロポリタン美術館など主要機関が所蔵している*2。
+
+戦後のオサリヴァンは西部の地質調査写真に転じた。1867〜69年のクラレンス・キング指揮の第40緯線地質探検に帯同し、ネバダ砂漠のピラミッド湖の「タファ・ドームズ」（Tufa Domes, Pyramid Lake, 1867年）やカーソン砂漠の砂丘など荒涼とした大地を記録した*3。1871〜74年にはジョージ・ウィーラー中尉の測量調査に帯同してキャニオン・デ・シェイ等を撮影した。これらの写真はMoMAのコレクション（アンセル・アダムスからの寄贈）に収蔵されている*4。
+
+1880年に財務省の公式写真家に任命されたが、1882年に結核により42歳前後で死去した。生涯を通じて財産も名声も残さなかった。
+
+表現解説
+
+オサリヴァンの西部写真が特異なのは、同時代のカールトン・ワトキンスやエドワード・マイブリッジが採用したロマンティックな崇高美の様式とは対照的な、意図的な乾燥感と即物性にある。スミソニアン・アメリカン・アート・ミュージアムのキュレーター、トビー・ジュロヴィクスは、オサリヴァンの美学を「伝統的な審美的枠組みに抵抗する、率直で厳格なスタイル」と評した*5。
+
+「タファ・ドームズ」（1867年）に見られる石灰質凝灰岩の奇岩と湖面の組み合わせは、風景写真における「驚異・崇高・美」の典型的な演出とは異なる。岩の質感と水面の光を淡々と記録するオサリヴァンのアプローチは、地質調査という科学的目的に即した直接性を持ちながら、同時に1960〜70年代のアメリカの写真家たちがニュー・トポグラフィクスとして発展させた視覚言語の原型となっている*6。
+
+「死の収穫」における霧と死体の配置は、ガードナーの散文的な説明文との組み合わせで提示されることで、単なる戦場の記録を超えた意味を持つ。この作品は後の写真史において、戦争写真とドキュメンタリー写真が持つ証言としての重みと倫理を論じる際の参照点として繰り返し呼び起こされている*7。
+
+批評と受容
+
+オサリヴァンの再評価における最大の転換点は、1975年にジョージ・イーストマン・ハウス（現ジョージ・イーストマン博物館）が組織した「ニュー・トポグラフィクス：人間が変えた土地」展である。ロバート・アダムス・ルイス・ボルツ・スティーブン・ショアらが人工的に変容した現代アメリカの風景を乾いた目線で撮影したこの展覧会において、オサリヴァンは19世紀の先行者として明示的に参照された*8。
+
+スミソニアン・アメリカン・アート・ミュージアムは2010年の「西部の額縁：ティモシー・オサリヴァン写真展」において、オサリヴァンの実践を包括的に再評価した*9。MoMAはアンセル・アダムスからの寄贈によるオサリヴァンの西部写真コレクションを所蔵しており、彼の作品を20世紀アメリカ写真の系譜に位置づけている*10。
+
+生前に名声も財産も残さなかったオサリヴァンが、20世紀後半の写真史研究においてアメリカ写真史の最重要人物の一人として位置づけられた過程は、写真史がいかに「遅れた承認」によって構成されるかを示す典型的な事例でもある*11。`,
+    textEn: `Biography
+
+Timothy O'Sullivan was born around 1840, most likely in Ireland, and emigrated with his family to New York as a young child. He trained under Mathew Brady before joining Alexander Gardner's studio. Forty-four of the one hundred photographs in Gardner's Photographic Sketch Book of the War (1865–66) are credited to O'Sullivan — more than any other single contributor*1.
+
+At Gettysburg in July 1863 he made "A Harvest of Death," capturing Union soldiers fallen in the mist — published in Gardner's Sketch Book with Gardner's own prose caption. The image is now held by MoMA, the National Gallery of Art, the Smithsonian American Art Museum, the Art Institute of Chicago, and the Metropolitan Museum*2.
+
+After the war O'Sullivan redirected his career toward geological survey photography. He accompanied Clarence King's Fortieth Parallel Survey (1867–69), photographing the Nevada desert — the Tufa Domes at Pyramid Lake, the Carson Desert sand dunes — with a directness that resisted romantic landscape conventions*3. In 1871–74 he joined Lt. George Wheeler's survey and photographed Canyon de Chelly and the Southwest; prints from this work are held by MoMA, donated by Ansel Adams*4.
+
+Appointed chief photographer to the U.S. Treasury in 1880, he died of tuberculosis in 1882 at around age 42, little known and with no financial estate.
+
+Expression / method
+
+What distinguishes O'Sullivan's western photographs from the work of contemporaries like Carleton Watkins or Eadweard Muybridge is a deliberate dryness and directness that avoids the conventions of romantic landscape. Smithsonian American Art Museum curator Toby Jurovics wrote that O'Sullivan "developed a forthright and rigorous style" that "resisted traditional aesthetic frameworks"*5.
+
+The Tufa Domes at Pyramid Lake (1867) — limestone formations emerging from the Nevada desert — do not deploy the drama of sublime spectacle typical of contemporaneous landscape photography. The matter-of-fact registration of rock texture and desert light corresponds to the scientific purpose of the geological survey while also anticipating the visual language that 1960s–70s American photographers would develop as New Topographics*6.
+
+"A Harvest of Death" acquires its meaning in part through its pairing with Gardner's written caption, making the photograph something beyond a bare record of the battlefield. The work is repeatedly invoked in later photographic history as a touchstone for the evidentiary weight and ethics of documentary witness*7.
+
+Criticism and reception
+
+The decisive turning point in O'Sullivan's reassessment was the 1975 exhibition "New Topographics: Photographs of a Man-Altered Landscape" at the George Eastman House (now George Eastman Museum). Robert Adams, Lewis Baltz, Stephen Shore, and their contemporaries — photographing contemporary American landscapes with dry, uninflected attention — explicitly cited O'Sullivan as a nineteenth-century precedent for their practice*8.
+
+The Smithsonian American Art Museum's 2010 exhibition "Framing the West: The Survey Photographs of Timothy H. O'Sullivan" undertook a comprehensive reassessment*9. MoMA holds a significant collection of O'Sullivan's western photographs from the Ansel Adams donation, situating his work within the lineage of twentieth-century American photography*10.
+
+O'Sullivan's trajectory — unrecognized in his lifetime, then reclaimed as a foundational figure in the late twentieth century — is a representative case of how photographic history is shaped by delayed recognition, by which later practitioners construct the precedents they need*11.`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — Photography and the Civil War, 1861–1865', url: 'https://www.metmuseum.org/essays/photography-and-the-civil-war-1861-1865' },
+      { num: 2, name: 'MoMA — A Harvest of Death, Gettysburg, Pennsylvania (O\'Sullivan)', url: 'https://www.moma.org/collection/works/92454' },
+      { num: 3, name: 'Smithsonian American Art Museum — Framing the West', url: 'https://americanart.si.edu/exhibitions/osullivan' },
+      { num: 4, name: 'MoMA — Timothy O\'Sullivan', url: 'https://www.moma.org/artists/4488' },
+      { num: 5, name: 'Smithsonian American Art Museum — Framing the West', url: 'https://americanart.si.edu/exhibitions/osullivan' },
+      { num: 6, name: 'Smithsonian American Art Museum — Framing the West', url: 'https://americanart.si.edu/exhibitions/osullivan' },
+      { num: 7, name: 'MoMA — A Harvest of Death, Gettysburg, Pennsylvania (O\'Sullivan)', url: 'https://www.moma.org/collection/works/92454' },
+      { num: 8, name: 'George Eastman Museum — New Topographics', url: 'https://www.eastman.org/collections/photography' },
+      { num: 9, name: 'Smithsonian American Art Museum — Framing the West', url: 'https://americanart.si.edu/exhibitions/osullivan' },
+      { num: 10, name: 'MoMA — Timothy O\'Sullivan', url: 'https://www.moma.org/artists/4488' },
+      { num: 11, name: 'George Eastman Museum — New Topographics', url: 'https://www.eastman.org/collections/photography' },
+    ]
+  },
+
 });
 /* 2026-04-19 English reflection overrides end */
