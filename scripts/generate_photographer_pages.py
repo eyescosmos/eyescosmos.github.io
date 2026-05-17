@@ -1317,6 +1317,8 @@ def render_override_essay_html(text: str, lang: str, alias_lookup: dict[str, dic
     for block in blocks:
         if block in ESSAY_HEADING_SET:
             parts.append(f"<h3>{escape_html(block)}</h3>")
+        elif len(block) <= 80 and not re.search(r"\*\d+", block) and not re.search(r"[。！？.!?]$", block):
+            parts.append(f"<h4>{escape_html(block)}</h4>")
         else:
             parts.append(f"<p>{_render_cited_segment(block, lang, alias_lookup, regex, exclude_id, linked_ids, works_lookup=works_lookup, works_regex=works_regex)}</p>")
     return "".join(parts)

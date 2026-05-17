@@ -11700,7 +11700,11 @@ When Ushioda was making the photographs that would later become My Husband and I
   'irving-penn': {
     leadJa: `アーヴィング・ペンは、Vogueの誌面で鍛えたデザイン感覚を、白い背景、古い劇場幕、自然光、静物、職業肖像、プラチナ・パラジウム・プリントへ展開した写真家である。ファッションや広告の明快さを、人物や物の輪郭、沈黙、表面、印画紙の質感まで見つめる形式へ変え、商業写真と美術写真の境界を静かに組み替えた。`,
     leadEn: `Irving Penn was a photographer who extended the design intelligence he developed at Vogue into white backgrounds, worn theater curtains, natural light, still lifes, occupational portraits, and platinum-palladium prints. He transformed the clarity required by fashion and advertising into a form attentive to the contours of people and objects, silence, surface, and the texture of photographic paper, quietly rearranging the boundary between commercial and fine-art photography.`,
-    textJa: `表現解説
+    textJa: `経歴
+
+アーヴィング・ペンは1917年、ニュージャージー州プレインフィールドに生まれ、1934年から1938年までフィラデルフィア工芸美術館学校で学んだ。そこで師事したアレクセイ・ブロドヴィッチは、パリの1920年代文化を経験したロシア出身のデザイナーで、雑誌、展覧会、建築、写真を横断してモダンアートとデザインを教えていた*1。ペンはブロドヴィッチの助手やアートディレクター職を経たのち、1941年に画家を目指してメキシコへ向かうが、自作の絵に失望して破棄し、ニューヨークに戻った*1。1943年、同じくロシア出身でパリの出版文化を経験していたアレキサンダー・リーバーマンが、『Vogue』の新しいアートディレクターとしてペンを雇い、レイアウトや表紙案を考える仕事を任せた*1。リーバーマンは、旅先で撮られたペンのコンタクトシートに、何を見るべきかをすでに知っている眼を見て、彼自身に写真を撮るよう促した*1。ここからペンは、Vogueのために六十年以上にわたって制作しながら、雑誌、広告、肖像、静物、旅先のポートレート、プリント制作を、スタジオの条件、構図の圧縮、表面の観察、印画紙上の階調へ集めていく。彼を「洗練されたファッション写真家」とだけ呼ぶと、この複数の領域を一つの写真形式へ束ねた仕事が見えにくくなる。メトロポリタン美術館は、ペンの七十年近いキャリアを、構図、ニュアンス、細部への注意によって特徴づけられる簡潔なスタジオ美学として整理している*3。スミソニアン・アメリカ美術館も、ペンをファッション、ポートレート、静物、私的なスタジオ作品まで横断した作家として扱い、雑誌写真とファインアート写真の隔たりを狭めた写真家の一人として位置づけている*4。
+
+表現解説
 
 背景を消すのではなく、見る条件を作る
 
