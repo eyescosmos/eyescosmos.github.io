@@ -89,6 +89,23 @@ function ensureTopPageManualPhotographers() {
       urlEn: 'https://eyescosmos.github.io/en/photographers/tokuko-ushioda.html',
       x: 0.58,
       y: 0.66
+    },
+    {
+      id: 'annie-leibovitz',
+      name: 'アニー・リーボヴィッツ',
+      nameJa: 'アニー・リーボヴィッツ',
+      nameEn: 'Annie Leibovitz',
+      country: 'アメリカ',
+      nationality: 'US',
+      flag: '🇺🇸',
+      years: '1949-',
+      era: '1970',
+      movements: ['ポートレート', 'ステージド写真', 'カラー写真'],
+      influence: 7.4,
+      url: 'https://eyescosmos.github.io/photographers/annie-leibovitz.html',
+      urlEn: 'https://eyescosmos.github.io/en/photographers/annie-leibovitz.html',
+      x: 0.62,
+      y: 0.52
     }
   ];
   additions.forEach((photographer) => {
@@ -117,7 +134,11 @@ function ensureTopPageManualPhotographers() {
     ['tokuko-ushioda', 'rinko-kawauchi', '日本写真'],
     ['tokuko-ushioda', 'araki', '私写真'],
     ['tokuko-ushioda', 'becher', 'タイポロジー写真'],
-    ['tokuko-ushioda', 'yurie-nagashima', 'プライベート写真']
+    ['tokuko-ushioda', 'yurie-nagashima', 'プライベート写真'],
+    ['annie-leibovitz', 'richard-avedon', 'ステージド写真'],
+    ['annie-leibovitz', 'irving-penn', 'ポートレート'],
+    ['annie-leibovitz', 'mapplethorpe', 'ポートレート'],
+    ['annie-leibovitz', 'sherman', 'ステージド写真']
   ].forEach((connection) => {
     if (existing.has(connection[0]) && existing.has(connection[1]) && !connectionKeys.has(connectionKey(connection))) {
       window.CONNECTIONS.push(connection);
