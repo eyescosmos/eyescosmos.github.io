@@ -572,7 +572,7 @@ def render_movement_detail_html(sections: list[dict], sources: list[dict], lang:
         )
         source_title = "Sources" if lang == "en" else "出典"
         parts.append(
-            f'''        <section class="section taxonomy-sources" data-nosnippet>
+            f'''        <section class="section taxonomy-sources">
           <h2>{esc(source_title)}</h2>
           <div class="sources">
 {source_items}

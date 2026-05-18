@@ -795,7 +795,7 @@ function renderArchiveAffiliateSection(photographer) {
   const books = getArchiveAffiliateBooks(photographer);
   if (!books.length) {
     return `
-      <div class="detail-section detail-books-section">
+      <div class="detail-section detail-books-section" data-nosnippet>
         <div class="detail-section-title">${t('books')}</div>
         <div class="amazon-placeholder">${t('amazonPending')}</div>
       </div>`;
@@ -815,7 +815,7 @@ function renderArchiveAffiliateSection(photographer) {
   }).join('');
 
   return `
-      <div class="detail-section detail-books-section">
+      <div class="detail-section detail-books-section" data-nosnippet>
         <div class="detail-section-title">${t('books')}</div>
         <div class="detail-books-grid">${cards}</div>
       </div>`;
@@ -1453,7 +1453,7 @@ function renderCompactCardRelatedMovements(photographer) {
   });
   if (!links.length) return '';
   return `
-      <div class="card-related-movements">
+      <div class="card-related-movements" data-nosnippet>
         <span>${currentLanguage === 'en' ? 'Related movements' : '関連する運動'}</span>
         ${links.join('')}
       </div>`;
@@ -1470,7 +1470,7 @@ function renderCompactCardRelatedPeople(photographer) {
     .filter(Boolean);
   if (!links.length) return '';
   return `
-      <div class="card-related-people">
+      <div class="card-related-people" data-nosnippet>
         <span>${currentLanguage === 'en' ? 'Related' : '関連人物'}</span>
         ${links.join('')}
       </div>`;
@@ -1537,7 +1537,7 @@ function archiveSummaryRelatedPanel(photographer) {
       </div>`);
   }
 
-  return `<div class="archive-summary-related">${sections.join('')}</div>`;
+  return `<div class="archive-summary-related" data-nosnippet>${sections.join('')}</div>`;
 }
 
 function archiveSummaryPanelHtml(photographer) {
@@ -1842,7 +1842,7 @@ function buildRelatedReadingSection(photographer, bodyText = '') {
     `).join('');
 
   return `
-      <div class="detail-section">
+      <div class="detail-section" data-nosnippet>
         <div class="detail-section-title">${t('relatedReading')}</div>
         <div class="detail-related-grid">${rows}</div>
       </div>`;
