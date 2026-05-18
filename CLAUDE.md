@@ -65,3 +65,28 @@
 - 日本語ページで内容を確定してから英語ページへ反映する
 - 英語ページ反映時は、新規調査ではなく既存の日本語内容を自然な英語に整える
 - 英語ページの変更は対象セクションのみに限定する
+
+## Content preservation — Codex並行作業時の消失防止
+
+### 作業前（必須）
+- 編集を始める前に必ず `git pull origin main` で最新を取得する
+- pull 後、対象ファイルの主要セクション（本文・作品画像・出典など）が残っているか確認してから編集を開始する
+
+### push 前（必須）
+- push 前に `git diff origin/main` を確認し、自分の変更以外でセクションが消えていないか確認する
+- 特に以下のセクションが消えていたら即座に復元する：
+  - 本文（経歴・表現解説・批評と受容 / Career・Expression・Criticism）
+  - 作品画像 / Work images セクション
+  - 出典 / Sources セクション
+
+### Codex の変更を pull したとき
+- `git show <commit>` でどのセクションが変更されたかを確認する
+- Codex はアフィリエイト書籍カード・SEO・デザインを担当する。本文や出典が消えていたら復元する
+- Codex の変更（書籍カード等）は上書きせず、自分の変更と共存させる
+
+### 手書きHTMLページ（ジェネレータ非対象）の扱い
+- 以下のページは直接HTMLを編集しており、ジェネレータで上書きされない：
+  - `photographers/annie-leibovitz.html` / `en/photographers/annie-leibovitz.html`
+  - `photographers/stieglitz.html` / `en/photographers/stieglitz.html`
+- これらのページに本文を直接書くことは許可されるが、push 後に Codex が上書きする可能性がある
+- 重要な本文は `data/photographer-essay-overrides.js` への移行を検討する
