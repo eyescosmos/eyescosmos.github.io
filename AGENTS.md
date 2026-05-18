@@ -11,6 +11,9 @@
 - 過去にHTMLへ直接書かれた本文がジェネレータ再実行で上書きされ、14人分の解説が消失した。
 - 写真家本文・解説の唯一の永続的な編集先は `data/photographer-essay-overrides.js`。
 - ジェネレータを実行したあとは、変更された `photographers/*.html` と `en/photographers/*.html` もコミットに含める。生成結果がリポジトリ上の実体である。
+- 例外的に復元作業などでHTML側に本文が残っている場合でも、ジェネレータを回す前に同じ本文が `data/photographer-essay-overrides.js` に入っているか必ず確認する。
+- `scripts/generate_photographer_pages.py` 実行後、対象外の写真家ページで本文、外部リンク、出典が「準備中」へ戻る差分が出た場合は、その生成結果を採用しない。対象外HTMLは復元し、本文をoverridesへ移してから再生成する。
+- アフィリエイト、ナビゲーション、SEOなど本文以外の小変更でも、ジェネレータ実行で本文が消えないか `git diff` で必ず確認する。
 
 ## Workflow
 

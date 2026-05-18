@@ -2737,6 +2737,39 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['michio-hoshino'] = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['annie-leibovitz'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4frakym' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4um2FWM' }
+  },
+  books: [
+    {
+      titleJa: 'Annie Leibovitz: Wonderland',
+      titleEn: 'Annie Leibovitz: Wonderland',
+      noteJa: 'ファッション、演劇、セレブリティの演出を横断して、リーボヴィッツの物語的な肖像表現をたどる一冊。',
+      noteEn: 'A strong route into Leibovitz\'s staged portraiture across fashion, performance, and celebrity culture.',
+      urlJa: 'https://amzn.to/4frakym',
+      urlEn: 'https://amzn.to/4um2FWM'
+    },
+    {
+      titleJa: 'Annie Leibovitz: Women: 2025 Edition',
+      titleEn: 'Annie Leibovitz: Women: 2025 Edition',
+      noteJa: '女性像をめぐる長期的な関心を、ファッション、権力、身体、親密さの交差点から見直せる新版。',
+      noteEn: 'A renewed edition for reading her portraits of women through fashion, power, bodies, and intimacy.',
+      urlJa: 'https://amzn.to/497AkuL',
+      urlEn: 'https://amzn.to/4dhREQo'
+    },
+    {
+      titleJa: 'Annie Leibovitz: A Photographer\'s Life, 1990-2005',
+      titleEn: 'Annie Leibovitz: A Photographer\'s Life, 1990-2005',
+      noteJa: '雑誌の仕事と私的な写真を並置し、リーボヴィッツの肖像が記憶と生活へ広がる転換点を示す写真集。',
+      noteEn: 'A pivotal book that places commissioned portraits beside private photographs, expanding portraiture into memory and life.',
+      urlJa: 'https://amzn.to/4wECX1m',
+      urlEn: 'https://amzn.to/3Rcch7T'
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-鈴木八郎'] = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4t8lU5C' },
