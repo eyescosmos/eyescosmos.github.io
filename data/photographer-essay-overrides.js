@@ -12179,5 +12179,699 @@ In 1986, Hoshino received the third Anima Prize for GRIZZLY , and in 1990 he rec
       { num: 28, name: 'Alaska Magazine — Nick Jans, "Michio\'s Trail"', url: 'https://alaskamagazine.com/authentic-alaska/michios-trail/' },
     ]
   },
+
+  'muybridge': {
+    leadJa: `複数カメラによる連続撮影で運動の時間構造を可視化し、ズープラクシスコープで動きとして再投影した写真家。University of Pennsylvaniaとの共同研究、講演実演、ヨセミテの景観写真も含む実践は、写真・科学・映像技術の交差点に立つ。`,
+    leadEn: `Known for sequential multi-camera photographs of motion, Muybridge collaborated with the University of Pennsylvania on his landmark Animal Locomotion series and invented the zoopraxiscope for projecting moving images. His practice spans photography, science, landscape, and early film technology.`,
+    textJa: `経歴
+
+エドワード・マイブリッジは1830年にイングランドのキングストン・アポン・テムズに生まれ、1850年代にアメリカ西海岸へ渡った。*1 カリフォルニアで書籍商・出版業を営んだのち写真に転じ、ヨセミテ渓谷の大判景観写真で評価を得た。*2 1872年、実業家リーランド・スタンフォードの依頼を受けて馬の疾走写真に取り組み始め、1878年のサクラメント・バレー実験で複数カメラによる連続撮影に成功した。*3 この成果を基盤に1884年からUniversity of Pennsylvaniaの後援のもとで動物・人体運動の大規模研究プロジェクトを開始し、1887年に全11巻の《Animal Locomotion》を出版した。*4 晩年はイングランドに帰国し、1904年にキングストンで没した。University of Pennsylvaniaの展示資料はこの研究の全体像を伝えており、写真・文書・書簡を含む大規模なコレクションが保存されている。*5
+
+表現解説
+
+複数カメラが分解した時間
+
+マイブリッジの運動写真が歴史的に重要なのは、馬が四脚を地面から離す瞬間を証明したからだけではない。複数台のカメラを等間隔に並べ、糸とシャッターを連動させて一定時間ごとに切るという方法は、運動を時間軸に沿った一連の静止像として記録する新たな視覚装置を生み出した。*6 Library of Congressは「人間の眼では捉えられない動きをカメラ群が可視化した」と評し、この手法を写真の可能性の拡張として位置づけている。*7 ここで重要なのは、単一の瞬間を切り取る従来の写真と異なり、系列としての写真が時間の構造を可視化するという転換が生じた点である。この差異は、単一乾板に複数露光を重ねたエティエンヌ＝ジュール・マレーと比較すると明確になる。*8 マレーが時間の流れを一枚の画像に解析的に凝縮したのに対し、マイブリッジは時間を複数フレームへと展開し、視線に順序として経験させた。どちらも「見えない運動」を写真化したが、その方法論は対照的であり、後の映画と静止写真の分岐を予告している。*9
+
+University of PennsylvaniaとAnimal Locomotion
+
+1884年以降の研究は、個人の探究を超えて大学という制度に組み込まれた集団的プロジェクトへと発展した。University of Pennsylvaniaアーカイブには、この研究の記録が写真・文書・書簡として大量に保存されており、《Animal Locomotion》が芸術作品であると同時に計測・分類・教育のための資料集であったことを示している。*10 Penn Librariesはこのコレクションを「マイブリッジ研究の中心的な資料群」として位置づけ、科学と芸術の境界を横断する実践として紹介している。*11 全11巻に収録された781枚の図版には、歩行・走行・跳躍・投擲など、ほぼすべての身体的動作が含まれ、それぞれが定規と格子を背景に撮影されている。*12 この計測的フレームは、身体を医学・解剖・スポーツ科学・芸術教育の複合領域に開く視覚装置であった。Penn Todayの特集は、この研究が当時の科学者や芸術家たちとの緊密な交流のもとで進められたことを伝えている。*13 PhotoAnthologyは、《Animal Locomotion》が後続の写真家、科学者、アーティストたちに与えた参照的な影響の大きさを指摘している。*14
+
+ズープラクシスコープと「見せる技術」
+
+マイブリッジの実践は連続写真の制作だけにとどまらなかった。彼は1879年頃にズープラクシスコープを開発し、連続写真をガラス円盤に描き移して光学的に再投影することで、止まった像を動きとして見せることに成功した。*15 キングストン・ミュージアムに現存するズープラクシスコープ原器と70枚のガラス円盤は、「初期の動画投影の先駆的作業の証」として公式に位置づけられている。*16 彼は欧米各地で講演を行い、連続写真と投影実演を組み合わせることで、写真・科学・見せ物の三領域をまたぐ文化的実践者として活動した。University of Pennsylvaniaに関わる文書類がSmithsonian Archives of American Artにも収蔵されていることは、この実践の複数機関にまたがる広がりを示している。*17 Smithsonian National Museum of American Historyが所蔵する《Animal Locomotion》の図版は、連続写真が科学記録を超えて美術館コレクションに定着した水準の作品として受け継がれてきたことを示す。*18 またヨセミテの景観写真も彼の実践の重要な一翼を担っており、SFMOMAが所蔵する作品はその系譜を示す。*19
+
+批評と受容
+
+《Animal Locomotion》の各図版はシアトル美術館をはじめ北米の主要美術館に所蔵され、写真史と美術館コレクションの両方に定着している。*20 National Gallery of Artのアーティスト・ページも、彼の写真が写真史の標準的参照点として機能していることを示す。*21 身体を格子の前に立たせて分解・計測する方法は、今日では身体を管理・規格化する近代的視線の問題として批評的に読まれることが多く、NYU特別コレクションに収蔵されたアーカイブはこの研究をめぐる多領域的な学術関心を示している。*22 FUJIFILMスクエアの展示は、日本での受容を含む国際的な再評価の文脈を伝えている。*23 Library of Congressが所蔵する《Animal Locomotion》の版本記録は、この出版物が科学・芸術・技術の境界を横断する複合的アーカイブとして受け継がれていることを示す。*24 デトロイト美術館も個別図版を所蔵しており、各美術館コレクションへの広がりを示している。*25
+
+`,
+    citations: [
+      { num: 1, name: 'Muybridge in Kingston — Eadweard Muybridge Biography', url: 'https://muybridgeinkingston.co.uk/eadweard-muybridge-biography/' },
+      { num: 2, name: 'Muybridge in Kingston — Muybridge Exhibits', url: 'https://muybridgeinkingston.co.uk/muybridge-exhibits/' },
+      { num: 3, name: 'Muybridge in Kingston — The Muybridge Collection', url: 'https://muybridgeinkingston.co.uk/the-muybridge-collection/' },
+      { num: 4, name: 'University of Pennsylvania Archives — Eadweard Muybridge Collection (finding aid)', url: 'https://archives.upenn.edu/collections/finding-aid/upt50m993/' },
+      { num: 5, name: 'University of Pennsylvania Archives — Muybridge\'s Animal Locomotion Study', url: 'https://archives.upenn.edu/exhibits/penn-history/muybridge/' },
+      { num: 6, name: 'Muybridge Image & Context — Animal in Motion', url: 'https://www.eadweardmuybridge.co.uk/muybridge_image_and_context/animal_in_motion' },
+      { num: 7, name: 'Library of Congress Blogs — Eadweard Muybridge: Birth of a Photographic Pioneer', url: 'https://blogs.loc.gov/picturethis/2014/04/eadweard-muybridge-birth-of-a-photographic-pioneer/' },
+      { num: 8, name: 'Metropolitan Museum of Art — Animal Locomotion, Volume IX (object record)', url: 'https://www.metmuseum.org/art/collection/search/266439' },
+      { num: 9, name: 'Internet Archive — The Science of Animal Locomotion (Zoopraxography)', url: 'https://archive.org/search?query=%22Descriptive+Zoopraxography%22' },
+      { num: 10, name: 'University of Pennsylvania Archives — Selected Items from the Eadweard Muybridge Collection', url: 'https://archives.upenn.edu/digitized-resources/docs-pubs/muybridge/' },
+      { num: 11, name: 'Penn Libraries — Eadweard Muybridge Collections', url: 'https://www.library.upenn.edu/collections/notable/eadweard-muybridge-collections' },
+      { num: 12, name: 'Internet Archive — Animal Locomotion (publication record)', url: 'https://archive.org/search?query=%22Animal+Locomotion%22+Muybridge' },
+      { num: 13, name: 'Penn Today — The Science of Motion', url: 'https://penntoday.upenn.edu/news/science-motion' },
+      { num: 14, name: 'PhotoAnthology — Animal Locomotion', url: 'https://photoanthology.org/projects/animal-locomotion' },
+      { num: 15, name: 'Muybridge Image & Context — Zoopraxography', url: 'https://www.eadweardmuybridge.co.uk/muybridge_image_and_context/zoopraxography/' },
+      { num: 16, name: 'Muybridge in Kingston — The Muybridge Collection (zoopraxiscope and glass discs)', url: 'https://muybridgeinkingston.co.uk/the-muybridge-collection/' },
+      { num: 17, name: 'Smithsonian Archives of American Art — University of Pennsylvania papers relating to Muybridge\'s Animal Locomotion studies', url: 'https://www.aaa.si.edu/collections/university-pennsylvania-papers-concerning-eadweard-muybridges-studies-animal-locomotion-10257' },
+      { num: 18, name: 'Smithsonian National Museum of American History — Animal Locomotion Plate 615', url: 'https://americanhistory.si.edu/collections/nmah_1892099' },
+      { num: 19, name: 'SFMOMA — Eadweard Muybridge', url: 'https://www.sfmoma.org/artist/Eadweard_Muybridge/' },
+      { num: 20, name: 'Seattle Art Museum — Animal Locomotion', url: 'https://art.seattleartmuseum.org/objects/10556/animal-locomotion' },
+      { num: 21, name: 'National Gallery of Art — Eadweard Muybridge (artist page)', url: 'https://www.nga.gov/artists/16474-eadweard-muybridge' },
+      { num: 22, name: 'NYU Special Collections — Eadweard Muybridge photograph collection', url: 'https://findingaids.library.nyu.edu/nyhs/pr205_muybridge/' },
+      { num: 23, name: 'FUJIFILM SQUARE Photo History Museum — Animal Locomotion exhibition', url: 'https://fujifilmsquare.jp/en/exhibition/251001_05.html' },
+      { num: 24, name: 'Library of Congress — Animal locomotion (library record)', url: 'https://www.loc.gov/item/97503994/' },
+      { num: 25, name: 'Detroit Institute of Arts — Animal Locomotion, Plate 646', url: 'https://dia.org/collection/plate-646-animal-locomotion-87302' },
+    ],
+    works: [
+      { titleJa: 'Animal Locomotion Plate 615 — Smithsonian National Museum of American History', url: 'https://americanhistory.si.edu/collections/nmah_1892099' },
+      { titleJa: 'Animal Locomotion, Plate 755 — Pennsylvania Academy of the Fine Arts', url: 'https://www.pafa.org/museum/collection/item/animal-locomotion-volume-xii-miscellaneous-plate-755' },
+      { titleJa: 'Animal Locomotion — Seattle Art Museum', url: 'https://art.seattleartmuseum.org/objects/10556/animal-locomotion' },
+    ],
+    textEn: `Biography
+
+Eadweard Muybridge was born in Kingston upon Thames, England, in 1830 and moved to the American West Coast in the 1850s.*1 After working as a bookseller and publisher in California, he turned to photography and earned recognition for large-format landscape photographs of Yosemite Valley.*2 In 1872, at the commission of businessman Leland Stanford, he began work on photographs of a galloping horse, and in 1878 succeeded at the Sacramento Valley experiment in capturing sequential images with multiple cameras.*3 Building on these results, from 1884 he undertook a large-scale research project on animal and human locomotion under the auspices of the University of Pennsylvania, publishing the eleven-volume Animal Locomotion in 1887.*4 In his later years he returned to England and died in Kingston in 1904. The University of Pennsylvania's exhibition materials convey the full scope of this research, with a large collection of photographs, documents, and letters preserved.*5
+
+Expression
+
+Time Decomposed by Multiple Cameras
+
+The historical significance of Muybridge's motion photographs lies not only in proving that a horse lifts all four legs from the ground simultaneously. Arranging multiple cameras at equal intervals and linking threads to shutters to fire at set intervals created a new visual apparatus that recorded motion as a series of still images along a time axis.*6 The Library of Congress described this as cameras making visible "movements that the human eye could not capture," positioning the method as an expansion of photography's possibilities.*7 The crucial point is that, unlike conventional photography which captured a single instant, a series of photographs visualized the structure of time — a fundamental shift. This distinction becomes clear in comparison with Étienne-Jules Marey, who superimposed multiple exposures onto a single plate.*8 Where Marey analytically condensed the flow of time into a single image, Muybridge spread time across multiple frames, presenting it to the viewer as a sequential experience. Both photographed "invisible motion," but their methodologies were contrasting, anticipating the later divergence between cinema and still photography.*9
+
+University of Pennsylvania and Animal Locomotion
+
+The research from 1884 onward developed from individual exploration into a collective project embedded in a university institution. The University of Pennsylvania Archives holds enormous quantities of photographs, documents, and correspondence from this research, showing that Animal Locomotion was simultaneously a work of art and a reference collection for measurement, classification, and education.*10 Penn Libraries positions this collection as "the central body of material for Muybridge research," presenting it as a practice that crosses the boundary between science and art.*11 The 781 plates in the eleven volumes encompass nearly every bodily action — walking, running, jumping, throwing — each photographed against a ruler and grid backdrop.*12 This metrological frame was a visual apparatus that opened the body to a complex domain spanning medicine, anatomy, sports science, and art education. A Penn Today feature conveys that this research proceeded in close exchange with scientists and artists of the era.*13 PhotoAnthology notes the scale of the referential influence Animal Locomotion has had on subsequent photographers, scientists, and artists.*14
+
+The Zoopraxiscope and the Art of Showing
+
+Muybridge's practice did not stop at producing sequential photographs. Around 1879 he developed the zoopraxiscope, and by tracing sequential photographs onto glass discs and projecting them optically, he succeeded in showing still images as motion.*15 The original zoopraxiscope and seventy glass discs held at Kingston Museum are officially positioned as "testament to his pioneering work in early moving-image projection."*16 He lectured across Europe and America, combining sequential photographs with projection demonstrations to operate as a cultural practitioner spanning photography, science, and spectacle. The fact that documents relating to the University of Pennsylvania are also held by the Smithsonian Archives of American Art demonstrates the multi-institutional reach of this practice.*17 The Animal Locomotion plates held by the Smithsonian National Museum of American History show that sequential photographs have been passed down as works of a caliber established in museum collections beyond scientific documentation.*18 His Yosemite landscape photographs also form an important part of his practice, as demonstrated by works held at SFMOMA.*19
+
+Critical Reception
+
+Individual plates from Animal Locomotion are held by major North American museums including the Seattle Art Museum and have become established in both photography history and museum collections.*20 The National Gallery of Art's artist page also demonstrates that his photographs function as a standard reference point in photography history.*21 The method of placing bodies in front of a grid for decomposition and measurement is today often read critically as a modern gaze that manages and standardizes the body, and the archive held at NYU Special Collections demonstrates the multi-disciplinary scholarly interest in this research.*22 The FUJIFILM SQUARE exhibition conveys the context of international reappraisal including reception in Japan.*23 The Library of Congress's edition records of Animal Locomotion show that this publication has been passed down as a complex archive crossing the boundaries of science, art, and technology.*24 The Detroit Institute of Arts also holds individual plates, demonstrating the breadth of holdings across museum collections.*25
+
+`,
+  },
+
+  'marey': {
+    leadJa: `単一乾板に複数露光を重ねるクロノフォトグラフィーで、運動を時間の解析図として可視化した生理学者。マイブリッジが系列として時間を分解したのに対し、マレーは時間を一枚の画像に凝縮し、身体・労働・飛翔を科学的計測の対象へ変えた。`,
+    leadEn: `A physiologist who used chronophotography — multiple exposures on a single plate — to analyze motion as scientific data. While Muybridge spread time across sequential frames, Marey condensed it onto a single image, transforming bodies, labor, and flight into measurable, analyzable form.`,
+    textEn: `Biography
+
+Étienne-Jules Marey was born in Beaune, France, in 1830 and trained in medicine and physiology in Paris. He held a professorship in physiology at the Collège de France, where he spent years measuring and recording bodily functions including blood circulation, respiration, and muscle contraction.*1 He adopted photography as a research tool from the 1880s onward, developing the technique he called "chronophotography," which exposed multiple images onto a single photographic plate.*2 This method allowed him to render bird flight, human running and jumping, and airflow as visual analytical diagrams.*3 In 1882 he completed his chronophotographic gun, achieving twelve frames per second. He died in Paris in 1904.*4
+
+Expression
+
+Chronophotographic method
+
+The core of Marey's method lay in superimposing multiple exposures on a single plate, condensing the passage of time into one analytically structured image. The Metropolitan Museum's Bird in Flight is widely cited as a canonical example: the wings of a bird appear as overlapping figures, making every phase of the movement visible simultaneously within a single photograph.*5 The Met's notes on Chronophotograph explicitly state that "unlike Muybridge's motion studies, Marey used multiple exposures on a single plate," framing the methodological difference between the two as a key contrast in photographic history.*6 For Marey, photography was not a means of aesthetic expression but a measuring instrument for quantifying patterns of movement invisible to the naked eye. The Linda Hall Library characterizes his place in the history of science as "the intersection of physiological motion measurement and photography in the second half of the nineteenth century."*7 What chronophotography visualized was not the "instant" of time but the "structure" of time.
+
+Body, labor, and science
+
+Marey's investigations extended beyond bird flight and acrobatics to encompass the working body. His collaborative research with Fremont on bodily movement and energy expenditure carried implications for the efficiency principles underlying modern industrial production.*8 A publication issued by Université Paris Cité Éditions, subtitled "Chronophotography: Science and Art," situates Marey's work at the intersection of science and art while connecting it to a broad range of questions including sport, labor, and comparative physiology.*9 Educational materials from the Cinémathèque française present his chronophotography as a precursor to cinema and motion analysis, and the interpretation that he laid the groundwork for optical devices capable of producing continuous imagery is also valid from the standpoint of film history.*10 The Camera Museum's permanent exhibition similarly frames Marey's technique as one of the innovations that prepared the way for the century of film.*11
+
+Contrast with Muybridge
+
+The comparison with Eadweard Muybridge sharpens Marey's distinctiveness. Where Muybridge divided time using multiple cameras and presented the results as a sequence of independent still images, Marey folded time into a single frame.*12 This difference is not merely a matter of visual method; it reflects different answers to the question of what photography should do. Marey's single-plate images presented movement as an abstract diagram — time converted into spatial form.*13 This model became a visual point of reference for later Modernist painting and Futurism when they represented motion as divided planes, connecting Marey not only to the prehistory of cinema but to twentieth-century visual culture more broadly. ACMI holds and exhibits Marey's chronophotographic prints in the context of screen culture, demonstrating the continuity between motion photography and moving-image culture.*14
+
+Critical reception
+
+Marey's reception has been built up through institutional holdings and exhibitions at institutions that evaluate his work from both photographic and film-historical perspectives, including MoMA, the Musée d'Orsay, and SFMOMA.*15 The Musée d'Orsay exhibition "Movements of Air: Marey, Photographer of Fluids" was a significant attempt to reposition chronophotography within the context of visual art.*16 Chronophotographic films held by the Science Museum Group are preserved as material evidence of the prehistory of cinema and are consulted as sources for the history of technology.*17 Critically, Marey's photographs were not made with aesthetic expression in mind, but the perspective that treats the body as measurable motion data laid the foundations for later body science, sports measurement, and image analysis, while also raising questions about the modern gaze that processes the body as information.*18 Scholarly studies published by OpenEdition and CNRS Éditions discuss Marey's practice in relation to the formation of modern concepts of the body rather than confining him to the history of technology, demonstrating the continuing critical interest in his work.*19 The National Gallery of Canada's Study in Motion by Chronophotography shows that Marey's photographs have been received as works of a caliber that belongs in fine-art museum collections.*20
+
+`,
+    textJa: `経歴
+
+エティエンヌ＝ジュール・マレーは1830年にフランスのボーヌに生まれ、パリで医学・生理学の教育を受けた。コレージュ・ド・フランスで生理学の教授職を務め、血液循環、呼吸、筋収縮など身体機能の計測と記録に長年取り組んだ。*1 写真を研究ツールとして採用したのは1880年代以降で、単一の写真乾板に複数の露光を重ねる「クロノフォトグラフィー」の手法を開発した。*2 この技術により、鳥の飛翔、人体の走行や跳躍、空気の流れなどを視覚的な解析図として記録することが可能になった。*3 1882年にはクロノフォトグラフィック・ガンを完成させ、秒間12コマの連続撮影を実現した。1904年にパリで没した。*4
+
+表現解説
+
+クロノフォトグラフィーの方法
+
+マレーの方法の核心は、単一の乾板上に複数の露光を重ねることで、時間の流れを一枚の画像に解析的に凝縮する点にある。メトロポリタン美術館の《Bird in Flight》は、この技法の典型例として広く参照されており、鳥の翼の動きが複数の像として重なり合い、一枚の写真の中で運動のすべての相が同時に見える。*5 同美術館の《Chronophotograph》解説は、「マイブリッジの運動研究とは異なり、マレーは単一の乾板に複数露光を重ねた」と明示し、両者の方法論的差異を写真史の重要な対照として位置づけている。*6 マレーにとって写真は美的表現の手段ではなく、肉眼では把握できない運動法則を定量化するための計測装置であった。Linda Hall Libraryの解説は、マレーの科学史的位置づけを「生理学的運動計測と写真の結合という、十九世紀後半の知の交差点」として整理している。*7 クロノフォトグラフィーが可視化したのは、時間の「瞬間」ではなく、時間の「構造」であったといえる。
+
+身体・労働・科学との接続
+
+マレーの研究は鳥の飛翔やアクロバットにとどまらず、労働する身体にも向けられた。研究者フレモンとの共同による身体運動とエネルギー消費の研究は、近代産業生産の効率化の基礎原理に接続する含意をもっていた。*8 Université Paris Cité Éditionsが刊行する「クロノフォトグラフィー：科学と芸術」という副題をもつ出版物は、マレーの仕事を科学と芸術の交差点に位置づけつつ、スポーツや労働、比較生理学まで含む広い問題系と結びつけて論じている。*9 Cinémathèque françaiseの教材は、彼のクロノフォトグラフィーを映画と運動解析の前史として示しており、連続映像を生み出す光学装置への道筋を提供したとする解釈は映画史の観点からも有効である。*10 Camera Museumの常設展解説も同様に、マレーの手法が映画の世紀を準備した技術革新のひとつとして位置づけられている。*11
+
+マイブリッジとの対照とその射程
+
+エドワード・マイブリッジとの比較は、マレーの固有性を際立たせる。マイブリッジが複数のカメラで時間を分割し、独立した静止像の系列として展開したのに対し、マレーは単一の画面に時間を折りたたんだ。*12 このちがいは視覚的な方法の差異にとどまらず、写真に何をさせるかという問いの差異でもある。マレーの単一像は、動きを抽象的な図として、つまり時間を空間へ変換した形式として提示した。*13 このモデルは、後のモダニズム絵画や未来派が運動を分割面として表現するときの視覚的参照点となり、映画前史のみならず二十世紀の視覚文化とも接続する。ACMIはマレーのクロノフォトグラフィー・プリントをスクリーン文化の文脈で所蔵・展示しており、運動写真と映像文化の連続性を示している。*14
+
+批評と受容
+
+マレーの受容は、MoMA、Musée d'Orsay、SFMOMAなど写真史・映画史の両面から評価する機関による所蔵と展覧会によって積み上げられてきた。*15 Musée d'Orsayが開催した「大気の運動：流体を撮影したマレー」展は、クロノフォトグラフィーを視覚芸術の文脈に再置換する重要な試みとして注目された。*16 Science Museum Groupの所蔵するクロノフォトグラフィー・フィルムは、映画前史の物的証拠として保存されており、技術史の資料としても参照される。*17 批評的には、マレーの写真は美的表現を目的にしたものではないが、身体を計測可能な運動パターンとして扱う視点が、後の身体科学・スポーツ計測・映像分析の基礎をなすとともに、身体を情報として扱う近代的視線の問題を提起している。*18 OpenEditionおよびCNRS Éditionsが刊行する学術論考は、マレーの実践を単なる技術史に閉じず、近代的身体概念の形成とのかかわりで論じており、批評的関心の継続を示している。*19 National Gallery of Canadaが所蔵する《Study in Motion by Chronophotography》は、マレーの写真が美術館コレクションにも定着した水準の作品として受け継がれていることを示す。*20
+
+`,
+    citations: [
+      { num: 1, name: 'MoMA — Étienne-Jules Marey (artist page)', url: 'https://www.moma.org/collection/artists/7838' },
+      { num: 2, name: 'Metropolitan Museum of Art — Chronophotograph (object record)', url: 'https://www.metmuseum.org/art/collection/search/265094' },
+      { num: 3, name: 'SFMOMA — Étienne-Jules Marey', url: 'https://www.sfmoma.org/artist/Etienne-Jules_Marey/' },
+      { num: 4, name: 'Linda Hall Library — Étienne-Jules Marey', url: 'https://www.lindahall.org/about/news/scientist-of-the-day/etienne-jules-marey/' },
+      { num: 5, name: 'Metropolitan Museum of Art — [Bird in Flight] (object record)', url: 'https://www.metmuseum.org/art/collection/search/286544' },
+      { num: 6, name: 'Metropolitan Museum of Art — Chronophotograph (Muybridge comparison note)', url: 'https://www.metmuseum.org/art/collection/search/265094' },
+      { num: 7, name: 'Linda Hall Library — Étienne-Jules Marey (science history)', url: 'https://www.lindahall.org/about/news/scientist-of-the-day/etienne-jules-marey/' },
+      { num: 8, name: 'Université Paris Cité Éditions — Étienne-Jules Marey: chronophotographie, sciences et arts', url: 'https://editions.u-pariscite.fr/etienne-jules-marey/' },
+      { num: 9, name: 'Université Paris Cité Éditions — Étienne-Jules Marey publication', url: 'https://editions.u-pariscite.fr/etienne-jules-marey/' },
+      { num: 10, name: 'La Cinémathèque française — La chronophotographie, comment ça marche ?', url: 'https://www.cinematheque.fr/intervention/1766.html' },
+      { num: 11, name: 'Camera Museum — Breaking down movement (permanent exhibition)', url: 'https://www.cameramuseum.ch/en/discover/permanent-exhibition/the-century-of-the-film/breaking-down-movement/' },
+      { num: 12, name: 'Google Arts & Culture — Chronophotographic gun, Bird in flight', url: 'https://artsandculture.google.com/asset/chronophotographic-view-made-with-chronophotographic-gun-bird-in-flight/qQGGmxepeCksog' },
+      { num: 13, name: 'NGA — Intersections exhibition wall text (Marey/Muybridge context)', url: 'https://www.nga.gov/sites/default/files/migrate_images/content/dam/ngaweb/press/exh/4745/intersections-walltext.pdf' },
+      { num: 14, name: 'ACMI — Chronophotographic prints (collection record)', url: 'https://www.acmi.net.au/works/112095--chronophotographic-prints/' },
+      { num: 15, name: 'Musée d\'Orsay — Étienne-Jules Marey (artist/personality page)', url: 'https://www.musee-orsay.fr/en/ressources/repertoire-artistes-personnalites/22784' },
+      { num: 16, name: 'Musée d\'Orsay — Movements of Air: Marey Photographer of Fluids (exhibition)', url: 'https://www.musee-orsay.fr/en/whats-on/exhibitions/presentation/movements-air-etienne-jules-marey-1830-1904-photographer-fluids' },
+      { num: 17, name: 'Science Museum Group — Chronophotographic Films made by Étienne-Jules Marey', url: 'https://collection.sciencemuseumgroup.org.uk/objects/co18361/chronophotographic-films-made-by-etienne-jules-marey' },
+      { num: 18, name: 'Internet Archive — La chronophotographie (Marey, primary publication)', url: 'https://archive.org/search?query=%22La+chronophotographie%22+Marey' },
+      { num: 19, name: 'OpenEdition / CNRS Éditions — Retour sur Marey (scholarly chapter)', url: 'https://books.openedition.org/editionscnrs/2753?lang=en' },
+      { num: 20, name: 'National Gallery of Canada — Study in Motion by Chronophotography', url: 'https://www.gallery.ca/collection/artwork/study-in-motion-by-chronophotography' },
+    ],
+    works: [
+      { titleJa: '[Bird in Flight] — Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/286544' },
+      { titleJa: 'Chronophotograph — Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/265094' },
+      { titleJa: 'Study in Motion by Chronophotography — National Gallery of Canada', url: 'https://www.gallery.ca/collection/artwork/study-in-motion-by-chronophotography' },
+    ],
+  },
+
+  'marville': {
+    leadJa: `ハウスマンによるパリ改造を前後して、旧市街の消滅と新パリの出現を市の委嘱のもとで記録した写真家。行政的記録として依頼された仕事が、都市の自己表象を構成する視覚アーカイブとして再評価されている。`,
+    leadEn: `Commissioned by the city of Paris, Marville documented both the medieval streets swept away by Haussmann's urban renovation and the new Paris that replaced them. Intended as administrative records, his photographs have been reread as a major visual archive of modern urban transformation.`,
+    textEn: `Biography
+
+Charles Marville was born in Paris in 1813 and began his career as an illustrator and engraver before turning to photography when the medium emerged. From the 1850s he photographed Parisian urban scenes including cathedrals, city halls, and streets, and in the 1860s he was commissioned by the city authorities to document the transformation of Paris under Napoleon III.*1 The commission covered both the medieval streets of the old city that would be demolished by Haussmann's renovations and the new boulevards and public buildings that replaced them. The Metropolitan Museum's exhibition text makes this explicit, noting that Marville's photographs spanned both disappearance and emergence.*2 He worked as the official photographer of the city of Paris, systematically recording the narrow lanes, alleys, and back streets of the old city until the urban reorganization was complete. He died in Paris in 1879.*3
+
+Expression
+
+Haussmann and the commission
+
+To understand Marville's photographs, it is essential to recognize that his client was the city administration and that his work functioned as part of a state-led urban restructuring. The National Gallery of Art describes his project as "one of the earliest and most powerful explorations of large-scale urban transformation," acknowledging a significance that exceeds local documentation.*4 Haussmann's renovation was at the heart of nineteenth-century urban politics, combining sanitation, traffic management, military control, and landscape reorganization; Marville's photographs made that institutional restructuring visible as streets, buildings, squares, and the desolate peripheries being cleared.*5 The Getty Museum's artist page positions Marville as a photographer who produced his work administratively for the city of Paris, indicating that his photographs functioned as instruments of urban self-management and record-keeping.*6
+
+Dual record of disappearance and emergence
+
+Marville's distinctiveness lies in the fact that his work is not simply a nostalgic record of the old city. While photographing the old quarters, he simultaneously documented the construction of new boulevards and public facilities. The Paris.fr article on Haussmann and Marville frames this duality within the context of the "grands travaux de Paris," showing that his photographs functioned not only as a record of what was being lost but also as a self-image of the modern city as it was being formed.*7 In its Changing Paris piece, Aperture reads Marville's photographs alongside images of what came after, using visual comparison to demonstrate the contemporary reach of this record.*8 The Metropolitan Museum's exhibition press release notes that, viewed from today, the administrative records of the time have been transformed into "an accumulation of memories of old Paris as it disappeared."*9
+
+Urban visual discourse
+
+What distinguishes Marville's photographs is a quiet compositional register quite unlike journalism or sensationalism. Within the constraints of long exposure times and large-format equipment, his pictures render empty streets, the facades of buildings on the eve of demolition, and hanging mist or dust as the structure of space rather than as sentiment.*10 The Houston Museum of Fine Arts exhibition text prizes this quietness as "a method of soberly presenting urban transformation as visual fact," clearly differentiating it from the accusatory energy of documentary journalism.*11 A scholarly review in CAA Reviews repositions Marville's work at the intersection of urban history, photographic history, and administrative history, arguing that his photographs function as "an archive constituting the visual self-representation of the modern city."*12 Individual works such as the photograph of the Palais Royal held by Paris Musées are in the city's own collection, where they are preserved as both records and cultural patrimony.*13
+
+Critical reception
+
+Marville's reception has grown, particularly from the latter twentieth century onward, as his photographs have been reread not as mere urban documents but as a visual archive through which the formation of the modern city can be analyzed. His work being shown at the Met, NGA, and MFAH reflects an institutional evaluation that repositions it at the intersection of photographic history, museum holdings, and urban history.*14 The National Gallery of Art maintains a dedicated artist page for Marville and holds works including Cloud Study, Paris.*15 The Städel Museum's digital collection also holds Marville's work, indicating his spread into European museum collections.*16 Within photographic history, Marville has been read not only as a precursor to Eugène Atget but as a figure who shows how photography records a city being administratively and technically restructured while simultaneously participating in its memorialization.*17 Princeton University Art Museum and the Morgan Library & Museum also hold related works, attesting to continued scholarly interest.*18 The Art Institute of Chicago's Museum Studies journal has referenced and reproduced Marville's work, connecting individual street photographs to the materiality of collodion and albumen, urban naming practices, and administrative classification.*19 A Washington Post exhibition review conveyed the contemporary significance of Marville's project to a general audience as "photography standing between record and loss."*20 Photographic records of Parisian sites held by the Library of Congress confirm that his documentation has entered international archives.*21
+
+`,
+    textJa: `経歴
+
+シャルル・マルヴィルは1813年にパリに生まれ、挿絵画家・銅版画家として出発したのち、写真技術の登場とともに転身した。1850年代から大聖堂・市庁舎・街路など、パリの都市景観の撮影を始め、1860年代には市当局からナポレオン三世治下の都市改造の記録を委嘱された。*1 依頼の内容は、ハウスマンによる改造で失われる旧市街の中世的街路と、新たに整備される大通りや公共建築の両方を撮影することであった。メトロポリタン美術館の展覧会記述はこの点を明示しており、マルヴィルの写真が消滅と出現の双方にまたがっていたことを示している。*2 彼はパリ市の公式写真家として旧市街の細街路・路地・裏通りを系統的に記録し、その作業は都市再編が完了するまで続いた。1879年にパリで没した。*3
+
+表現解説
+
+ハウスマン改造と委嘱の文脈
+
+マルヴィルの写真を理解する上で不可欠なのは、依頼者が市行政であり、写真が国家的な都市再編の一部として機能していたという点である。National Gallery of Artはこの仕事を「大規模な都市変容を扱った最初期かつ最も強力な探究のひとつ」として位置づけており、単なる地域記録の域を超えた意義を認めている。*4 ハウスマン改造は衛生、交通、軍事的統制、景観再編を伴う十九世紀的都市政治の核であり、マルヴィルの写真はその制度的再編を、街路、建築、広場、外縁部の荒涼とした風景として可視化した。*5 Getty Museum の作家ページは、マルヴィルがパリ市のために行政的に写真を制作した写真家として位置づけており、この仕事が都市の自己管理と記録の道具として機能していたことを示している。*6
+
+消滅と出現の双重記録
+
+マルヴィルの固有性は、旧市街の哀惜的な記録にとどまらない点にある。彼は旧市街を撮りながら、同時に新しい大通りや公共施設の建設過程も記録した。Paris.frが掲載するハウスマンとマルヴィルについての都市史記事は、この双重性を「パリの大改造」という文脈で整理しており、彼の写真が失われゆくものへのノスタルジーだけでなく、現れつつある近代都市の自己像としても機能していたことを示す。*7 ApertureはChanging Paris記事のなかで、マルヴィルの写真を都市変容の「その後」とともに読む試みを行い、視覚的な比較を通じてこの記録の現代的な射程を示している。*8 Met Press Releaseの展覧会紹介文は、今日から振り返ったときに、かつての行政的記録が「消えゆく旧パリの記憶の集積」へと変質していることを示している。*9
+
+都市変容の視覚言説
+
+マルヴィルの写真の特徴は、ジャーナリズムやセンセーショナリズムとは異なる静謐な構図にある。長い露光時間と大判フォーマットの制約のもとで、彼の写真は人通りのない街路、取り壊し直前の建物の正面、立ち込める霧や土埃などを、情緒よりも空間の構造として描出している。*10 Houston Museum of Fine Artsの展覧会記述は、この静謐さを「都市変容を視覚的事実として沈着に提示する方法」として評価しており、報道写真的な告発性との違いを明確にしている。*11 CAA Reviewsに掲載された学術評論は、マルヴィルの仕事を都市史・写真史・行政史の交差点に置き直し、彼の写真が「近代都市の自己表象を構成するアーカイブ」として機能していることを論じている。*12 Paris Musées所蔵のパレ・ロワイヤル写真など、個々の作品はパリ市のコレクションにも収蔵されており、記録と文化財の両面で継承されている。*13
+
+批評と受容
+
+マルヴィルの受容は、二十世紀後半以降、彼の写真が単なる都市資料ではなく、近代都市の成立を読み解く視覚アーカイブとして再評価されることで積み上げられてきた。Met、NGA、MFAHで展覧会化されたことは、彼の仕事を写真史・美術館資料・都市史の交差点に置き直す制度的評価を示している。*14 National Gallery of Artはマルヴィルの専用アーティスト・ページを設け、《Cloud Study, Paris》をはじめとする作品を所蔵している。*15 Städel Museumのデジタル・コレクションもマルヴィルの作品を収蔵しており、ヨーロッパの美術館への普及を示す。*16 写真史的には、マルヴィルはウジェーヌ・アジェの前史としてだけでなく、都市が行政的・技術的に再編される局面を写真がどのように記録し、同時に記憶化に関わるかを示す作家として読まれている。*17 Princeton University Art MuseumやMorgan Library & Museumも関連作品を所蔵しており、彼の写真が写真史の文脈で継続的に研究されていることを示す。*18 Art Institute of Chicagoのミュージアム・スタディーズ誌はマルヴィルの作品を掲載・論及し、個別の街路写真が湿板・アルビュメンの物質性、都市の命名、行政的分類と結びつくことを示している。*19 Washington Postの展覧会評は、一般読者向けにマルヴィルの仕事の現代的な意義を「記録と喪失のあいだに立つ写真」として伝えている。*20 Library of Congressが所蔵するパリ各地の写真レコードは、彼の記録が国際的なアーカイブに定着していることを示す。*21
+
+`,
+    citations: [
+      { num: 1, name: 'Metropolitan Museum of Art — Charles Marville: Photographer of Paris (exhibition)', url: 'https://www.metmuseum.org/exhibitions/listings/2014/charles-marville' },
+      { num: 2, name: 'Metropolitan Museum of Art — Charles Marville: Photographer of Paris (exhibition page)', url: 'https://www.metmuseum.org/exhibitions/listings/2014/charles-marville' },
+      { num: 3, name: 'Getty Museum — Charles Marville (artist page)', url: 'https://www.getty.edu/art/collection/person/103KDR' },
+      { num: 4, name: 'National Gallery of Art — Charles Marville, Photographer of Paris (exhibition)', url: 'https://www.nga.gov/exhibitions/charles-marville-photographer-paris' },
+      { num: 5, name: 'National Gallery of Art — Charles Marville (artist page)', url: 'https://www.nga.gov/artists/16473-charles-marville' },
+      { num: 6, name: 'Getty Museum — Charles Marville (collection artist page)', url: 'https://www.getty.edu/art/collection/person/103KDR' },
+      { num: 7, name: 'Paris.fr — Haussmann et Marville, Paris en grand (urban history article)', url: 'https://www.paris.fr/pages/haussmann-et-marville-paris-en-grand-23959' },
+      { num: 8, name: 'Aperture — Changing Paris Then and Now', url: 'https://aperture.org/editorial/changing-paris/' },
+      { num: 9, name: 'Metropolitan Museum of Art — Charles Marville: Photographer of Paris (press release)', url: 'https://www.metmuseum.org/press-releases/charles-marville-2014-exhibitions' },
+      { num: 10, name: 'Internet Archive — Charles Marville: Photographer of Paris (exhibition catalogue)', url: 'https://archive.org/search?query=%22Charles+Marville%3A+Photographer+of+Paris%22' },
+      { num: 11, name: 'Museum of Fine Arts, Houston — Charles Marville: Photographer of Paris', url: 'https://www.mfah.org/art/exhibitions/charles-marville-photographer-paris' },
+      { num: 12, name: 'CAA Reviews — Charles Marville: Photographer of Paris (scholarly review)', url: 'https://www.caareviews.org/reviews/2361' },
+      { num: 13, name: 'Paris Musées / Musée Carnavalet — Palais Royal by Charles Marville', url: 'https://www.parismuseescollections.paris.fr/en/node/171983' },
+      { num: 14, name: 'Metropolitan Museum of Art — Charles Marville exhibition (main page)', url: 'https://www.metmuseum.org/en/exhibitions/listings/2014/charles-marville' },
+      { num: 15, name: 'National Gallery of Art — Cloud Study, Paris (object record)', url: 'https://www.nga.gov/artworks/155901-cloud-study-paris' },
+      { num: 16, name: 'Städel Museum — Charles Marville (digital collection profile)', url: 'https://sammlung.staedelmuseum.de/en/person/marville-charles' },
+      { num: 17, name: 'NGA — Charles Marville exhibition checklist (PDF)', url: 'https://www.nga.gov/content/dam/ngaweb/press/exh/3209/3209-list.pdf' },
+      { num: 18, name: 'Princeton University Art Museum — A Gallery of French Sculpture in the Louvre', url: 'https://artmuseum.princeton.edu/art/collections/objects/18981' },
+      { num: 19, name: 'Art Institute of Chicago — Museum Studies, Notable Acquisitions including Marville (PDF)', url: 'https://www.artic.edu/files/64b94465-907f-4e3b-a4b8-7743198e039f/AIC_MuseumStudies_32-1_UPDF.pdf' },
+      { num: 20, name: 'Washington Post — Charles Marville: Photographer of Paris (exhibition review)', url: 'https://www.washingtonpost.com/goingoutguide/museums/charles-marville-photographer-of-paris-art-review/2013/10/24/a6ce12fc-27ab-11e3-b75d-5b7f66349852_story.html' },
+      { num: 21, name: 'Library of Congress — [Notre Dame, Paris, France. View from spire.] (photograph record)', url: 'https://www.loc.gov/pictures/item/2002717334/' },
+    ],
+    works: [
+      { titleJa: 'Cloud Study, Paris — National Gallery of Art', url: 'https://www.nga.gov/artworks/155901-cloud-study-paris' },
+      { titleJa: 'Palais Royal — Paris Musées (Musée Carnavalet)', url: 'https://www.parismuseescollections.paris.fr/en/node/171983' },
+      { titleJa: 'A Gallery of French Sculpture in the Louvre — Princeton University Art Museum', url: 'https://artmuseum.princeton.edu/art/collections/objects/18981' },
+    ],
+  },
+
+  'frederick-h-evans': {
+    leadJa: `イングランドとフランスのゴシック大聖堂を、プラチナ印画の繊細な階調で記録した写真家。建築を物理的構造としてではなく、光と空間に宿る精神性の経験として捉え、写真を芸術として自立させる実践の重要な位置を占める。`,
+    leadEn: `Evans photographed Gothic cathedrals in England and France using platinum prints and their exquisite tonal range. His approach treated architecture not as a physical record but as a medium for spiritual experience through light and space, placing him among those who argued for photography as a fine art.`,
+    textEn: `Biography
+
+Frederick H. Evans was born in London in 1853 and worked for many years as a bookseller. Through his trade he built relationships with William Morris, Aubrey Beardsley, and others, and began photographing seriously in the 1880s.*1 By the 1890s he was photographing Gothic cathedrals in England and France with sustained purpose, and his work was recognized within the pictorialist community, particularly among members of the Linked Ring Brotherhood.*2 In 1898, at William Morris's request, he photographed Kelmscott Manor, and the sense of spatial light and harmony he developed there became the foundation for his later cathedral work.*3 The Getty retrospective "A Record of Emotion" reappraised Evans not as a practitioner of architectural documentation but as an artist who transformed architecture into "a record of emotion."*4 He died in London in 1943.
+
+Expression
+
+Platinum prints and architectural spirituality
+
+The central point in discussing Evans is that he did not "document" architecture but photographed it as a site of light, order, and spiritual experience. The Getty exhibition catalogue uses the subtitle "A Record of Emotion" and frames his architectural photography as a practice bound up with feeling.*5 The same catalogue explains that Evans was drawn to medieval cathedrals in England and France and that his photographs carry "spirituality and symbolism" — terms that are central to how his work should be understood.*6 The material properties of platinum prints — their continuous tonal scale from deep black to pale white — allowed him to record the texture of stone, the verticality of columns, and the order of light entering from above with great precision. MoMA's artist page also positions Evans as a practitioner of "straight photography" while emphasizing his concern with spiritual spatial experience.*7
+
+Kelmscott, cathedrals, and the organization of light
+
+The Metropolitan Museum's entry on In the Attics notes that the photographs of Kelmscott Manor made at Morris's request already possessed "a sense of harmony and spirituality" that would come to characterize his cathedral work.*8 His photographs do not render buildings as exteriors; they bring forward the time, thought, and atmosphere absorbed into a space through the arrangement of light. The well-known work A Sea of Steps, Wells Cathedral is valued as a photograph that, though architectural, transforms the succession of stone steps, the direction of light, and the upward movement of space into a symbolic experience; the National Gallery of Canada describes it as "one of the most recognized images in the history of photography."*9 Philadelphia Museum of Art's Kelmscott Manor: Attics is a concrete record of the collaboration with Morris and demonstrates the connection to the Arts and Crafts movement.*10 The National Gallery of Art also holds Evans's work, attesting to his sustained critical standing.*11
+
+Linked Ring and the photography-as-art movement
+
+Evans's membership in the Linked Ring Brotherhood connects him not merely to architectural photography but to the contemporaneous movement to establish photography as a fine art.*12 The Linked Ring was the British organization of pictorialists who sought to elevate photography through painterly technique and manual manipulation. Evans belonged to that context while remaining distinct: he constructed photographic spirituality through reliance on the structure of light and architecture rather than through pictorial retouching.*13 A British Art Studies article on lantern slides shows that Evans's photographs were connected not only to printed exhibition work but to the spaces of projection, education, and viewing, indicating that his practice extended beyond production into a broader range of cultural activity.*14 Collection records at LACMA, the National Galleries of Scotland, and the Saint Louis Art Museum show that his work has been valued consistently across a wide range of English-speaking institutions.*15
+
+Critical reception
+
+Critical attention to Evans has gathered around his platinum-print tonal range and his capacity to transform cathedral space into spiritual experience. Exhibition and collection records at Getty, NGA Canada, the Met, MoMA, and the National Galleries of Scotland position him as an artist who treated photography as "a record of emotion" rather than as a practitioner of architectural documentation.*16 A Sea of Steps is held as a major work by both MoMA and NGA Canada, and the evaluation that recognizes its spiritual and formal value beyond the category of architectural photography is well established.*17 George Eastman Museum holds a significant number of Evans's photographs, confirming his place in the photographic history archive.*18 Philadelphia Museum of Art's Westminster Abbey: South Ambulatory, which captures the depth and light of a cathedral interior, shows the breadth of his approach.*19 The Smithsonian National Museum of American History's Photographic History Collection holds Evans's work, confirming his recognized historical importance.*20 Evans's photographs have also been featured in Kalamazoo Institute of Arts collection highlights publications, demonstrating their spread across museum collections.*21 Critically, Evans belongs to the pictorialist context while remaining distinctive in having constructed photographic spirituality through the cathedral's structure of space and light, and can be read as a figure who anticipated the question: photography becomes art not by imitating painting but by the means specific to photography itself.*22 The Metropolitan Museum of Art Bulletin's Photographs in the Metropolitan references Evans's work and attests that he was incorporated into museum collections at an early stage.*23
+
+`,
+    textJa: `経歴
+
+フレデリック・H・エヴァンズは1853年にロンドンに生まれ、長く書店主を営んだ。書店経営を通じてウィリアム・モリス、オーブリー・ビアズリーらと交流し、1880年代から写真の実践を本格的に始めた。*1 1890年代にはイングランドやフランスのゴシック大聖堂を精力的に撮影し始め、その写真は写真芸術運動のコミュニティ、とりわけLinked Ring Brotherhoodで高く評価された。*2 1898年にはウィリアム・モリスの依頼を受けてケルムスコット・マナーを撮影し、そこで培った空間の光と調和の感覚が、のちの大聖堂写真の基礎となった。*3 Gettが企画した回顧展「A Record of Emotion」は、エヴァンズを建築記録の実務家ではなく、「感情の記録」を写真に変えた作家として再評価するものであった。*4 1943年にロンドンで没した。
+
+表現解説
+
+プラチナ印画と建築の精神性
+
+エヴァンズを本文化する際の中心は、彼が建築を「記録」したのではなく、光・秩序・精神性の場として写真化したことに置くべきである。Gettyの展覧会図録は副題を「感情の記録（A Record of Emotion）」とし、彼の建築写真を感情と結びついた実践として位置づけている。*5 同図録はさらに、エヴァンズが英国とフランスの中世大聖堂に関心を持ち、その写真が「精神性と象徴性（spirituality and symbolism）」を帯びると説明しており、この語は本文での彼の位置づけの核となる。*6 プラチナ印画の物質的特性、すなわち深い黒から淡い白への連続的な階調は、石の質感、柱の垂直性、天井から差し込む光の秩序を細密に記録することを可能にした。MoMAのアーティスト・ページもエヴァンズを「straight photography」の実践者として位置づけつつ、精神的な空間経験への関心を強調している。*7
+
+ケルムスコット、大聖堂、光の組織
+
+メトロポリタン美術館が所蔵する《In the Attics》の作品解説は、ウィリアム・モリスの依頼によるケルムスコット・マナーの撮影が、のちの大聖堂写真を特徴づける「調和と精神性の感覚」をすでに備えていたと評している。*8 つまり彼の写真は、建物を外観として写すのではなく、空間に染み込んだ時間・思想・気配を、光の配列によって立ち上げるものであった。代表作《A Sea of Steps, Wells Cathedral》は、建築写真でありながら、石段の連なり、光の方向、空間の上昇感を象徴的な経験に変える作品として評価されており、National Gallery of Canadaはこれを「写真史のなかで最も認識されるイメージのひとつ」として紹介している。*9 Philadelphia Museum of Artが所蔵する《Kelmscott Manor: Attics》は、モリスとの協働が残した具体的な記録であり、アーツ・アンド・クラフツ運動との結びつきを示している。*10 National Gallery of Artのアーティスト・ページもエヴァンズの作品を所蔵しており、彼の継続的な評価を示す。*11
+
+Linked Ringと写真芸術運動
+
+Linked Ring Brotherhoodへの参加は、エヴァンズを単なる建築写真家ではなく、写真を美術として位置づけようとする同時代の運動に接続する。*12 Linked Ringは、写真を絵画的技巧や手作業的な加工によって芸術化しようとしたピクトリアリストたちの英国版の組織であった。エヴァンズはその文脈に属しながらも、絵画的加工よりも光と建築の構造そのものに依拠して写真的精神性を作った点で独自である。*13 British Art Studiesに掲載されたランタン・スライドをめぐる論文は、エヴァンズの写真がプリントだけでなく、投影・教育・鑑賞の場とも結びついていたことを示しており、彼の実践が単なる制作にとどまらない複合的な広がりをもっていたことを示している。*14 LACMA、National Galleries of Scotland、Saint Louis Art Museumなどの所蔵記録は、エヴァンズの写真が英語圏の広い地域で評価され続けていることを示す。*15
+
+批評と受容
+
+エヴァンズの評価は、プラチナ・プリントによる階調表現と、大聖堂空間を精神的経験へ変換する能力に集まる。Getty、NGA Canada、Met、MoMA、National Galleries of Scotlandなどの所蔵・展覧会資料は、彼を建築記録の実務家ではなく、写真を「感情の記録」として扱った作家として位置づけている。*16 《A Sea of Steps》は、MoMAとNGA Canadaの双方が代表作として所蔵する作品であり、建築写真の枠を超えた精神的・形式的な価値を認める評価が安定している。*17 George Eastman Museumはエヴァンズの写真を多数収蔵しており、写真史のアーカイブとしての継続的な位置づけを示している。*18 Philadelphia Museum of Art所蔵の《Westminster Abbey: South Ambulatory》は、大聖堂空間の奥行きと光を捉えた作品として、彼の方法の幅を示している。*19 Smithsonian National Museum of American HistoryのPhotographic History Collectionもエヴァンズの作品を収蔵しており、歴史的な重要性が公認されていることを示す。*20 Kalamazoo Institute of Artsのコレクション・ハイライト出版物でもエヴァンズの作品が取り上げられており、美術館コレクションへの広がりを示している。*21 批評的には、エヴァンズはピクトリアリズムの文脈に属しながら、大聖堂の空間と光の構造に依拠して写真的精神性を作った点で独自であり、「写真は絵画を模倣することによって芸術になるのではなく、写真固有の手段によって芸術になる」という問いを先取りした作家として読むことができる。*22 Metropolitan Museum of Art BulletinはPhotographs in the Metropolitanのなかでエヴァンズの作品に言及しており、彼が早い時期から美術館コレクションに組み込まれてきたことを示している。*23
+
+`,
+    citations: [
+      { num: 1, name: 'Getty Publications — The Photographs of Frederick H. Evans (exhibition catalogue)', url: 'https://www.getty.edu/publications/virtuallibrary/9780892369881.html' },
+      { num: 2, name: 'National Galleries of Scotland — Frederick Henry Evans (artist page)', url: 'https://www.nationalgalleries.org/art-and-artists/artists/frederick-henry-evans' },
+      { num: 3, name: 'Metropolitan Museum of Art — Kelmscott Manor Photographs (object record)', url: 'https://www.metmuseum.org/art/collection/search/271329' },
+      { num: 4, name: 'Getty Museum — A Record of Emotion: The Photographs of Frederick H. Evans (exhibition)', url: 'https://www.getty.edu/art/exhibitions/frederick_evans/' },
+      { num: 5, name: 'Getty Publications PDF — The Photographs of Frederick H. Evans', url: 'https://www.getty.edu/publications/resources/virtuallibrary/9780892369881.pdf' },
+      { num: 6, name: 'Getty Publications — The Photographs of Frederick H. Evans (spirituality and symbolism)', url: 'https://www.getty.edu/publications/virtuallibrary/9780892369881.html' },
+      { num: 7, name: 'MoMA — Frederick H. Evans (artist page)', url: 'https://www.moma.org/collection/artists/1774' },
+      { num: 8, name: 'Metropolitan Museum of Art — In the Attics (object record)', url: 'https://www.metmuseum.org/art/collection/search/675552' },
+      { num: 9, name: 'National Gallery of Canada — Wells Cathedral: A Sea of Steps', url: 'https://www.gallery.ca/collection/artwork/wells-cathedral-a-sea-of-steps' },
+      { num: 10, name: 'Philadelphia Museum of Art — Kelmscott Manor: Attics (object record)', url: 'https://www.philamuseum.org/objects/44516' },
+      { num: 11, name: 'National Gallery of Art — Frederick H. Evans (artist page)', url: 'https://www.nga.gov/artists/13534-frederick-h-evans' },
+      { num: 12, name: 'SFMOMA — Frederick H. Evans (artist page)', url: 'https://www.sfmoma.org/artist/Frederick_H._Evans/' },
+      { num: 13, name: 'LACMA — Frederick H. Evans, 1853–1943: Ten Photographs', url: 'https://collections.lacma.org/node/155436' },
+      { num: 14, name: 'British Art Studies — Varieties of Photographic Experience: Frederick H. Evans and the Lantern Slide (PDF)', url: 'https://britishartstudies.ac.uk/issues/01/_assets/downloads/publication-lantern-slide.pdf' },
+      { num: 15, name: 'Saint Louis Art Museum — Frederick H. Evans (constituent page)', url: 'https://www.slam.org/collection/constituents/881/' },
+      { num: 16, name: 'Getty Museum — A Record of Emotion: The Photographs of Frederick H. Evans (exhibition overview)', url: 'https://www.getty.edu/art/exhibitions/frederick_evans/' },
+      { num: 17, name: 'MoMA — A Sea of Steps, Wells Cathedral (object record)', url: 'https://www.moma.org/collection/works/53618' },
+      { num: 18, name: 'George Eastman Museum — Frederick H. Evans works', url: 'https://collections.eastman.org/people/20017/frederick-h-evans/objects' },
+      { num: 19, name: 'Philadelphia Museum of Art — Westminster Abbey: South Ambulatory', url: 'https://www.philamuseum.org/collection/object/141064' },
+      { num: 20, name: 'Smithsonian National Museum of American History — Photographic History Collection: Frederick Evans', url: 'https://americanhistory.si.edu/collections/nmah_1379860' },
+      { num: 21, name: 'Kalamazoo Institute of Arts — Collection Highlights including Frederick Henry Evans (PDF)', url: 'https://kiarts.org/wp-content/uploads/2021/05/Collection-Highlights-5.pdf' },
+      { num: 22, name: 'Princeton University Art Museum — Ely Cathedral: Across Nave and Octagon', url: 'https://artmuseum.princeton.edu/art/collections/objects/129225' },
+      { num: 23, name: 'Metropolitan Museum of Art Bulletin — Photographs in the Metropolitan (PDF)', url: 'https://resources.metmuseum.org/resources/metpublications/pdf/Photographs_in_the_Metropolitan_The_Metropolitan_Museum_of_Art_Bulletin_v_27_no_7_March_1969.pdf' },
+    ],
+    works: [
+      { titleJa: 'A Sea of Steps, Wells Cathedral — MoMA', url: 'https://www.moma.org/collection/works/53618' },
+      { titleJa: 'In the Attics — Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/675552' },
+      { titleJa: 'Lincoln Cathedral: Stairway in Southwest Turret — Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/267698' },
+    ],
+  },
+
+  'annan': {
+    leadJa: `産業都市グラスゴーの旧市街、取り壊し直前の密集路地を市の委嘱で系統的に記録した写真家。改善政策の記録として依頼された写真が、都市貧困の証言として再評価される逆説的な位置にあり、ドキュメンタリー写真の前史として頻繁に参照される。`,
+    leadEn: `Annan photographed the dense closes and tenements of Glasgow's old town before their clearance under the city's Improvement Act. Commissioned as administrative records, his photographs have since been reread as precursors to the documentary tradition and as testimony to the social conditions of industrial-era urban poverty.`,
+    textEn: `Biography
+
+Thomas Annan was born in Cromartie, Scotland, in 1829 and established himself as a photographer in Glasgow. His work ranged across architecture, portraiture, and urban views, and he also undertook reproduction and publication work including a photographic record of the stained glass in Glasgow Cathedral.*1 In 1868 he was commissioned by the Glasgow Improvement Trust to photograph the areas of the old city subject to redevelopment, producing the series that would become The Old Closes and Streets of Glasgow.*2 The Getty exhibition text describes Annan as "a photographer who documented the social landscape and built environment of an industrial city for over twenty-five years," indicating that his practice was not limited to the old-city record.*3 He died in Glasgow in 1887.
+
+Expression
+
+The context of old-town documentation
+
+To understand Annan's Old Closes it is essential to recognize that his client was the city's improvement administration and that the photographs were produced as administrative material for urban redevelopment. The Glasgow Improvement Act of 1866 drove a systematic program to demolish the closes — the dense alleyways of the old city — where cholera and typhus had repeatedly broken out, and Annan's photographs were positioned as a record of those streets immediately before demolition.*4 The scholarly book Thomas Annan of Glasgow: Pioneer of the Documentary Photograph, available through OAPEN, discusses Annan not as a minor local photographer but as one who documented urban change over an extended period, placing Old Closes at the origin of the urban documentary tradition.*5 The National Library of Scotland's exhibition situates the cultural position of Annan's photographs and photobook within the context of "Scotland and the Photobook," indicating the importance of distribution through the printed medium.*6
+
+Duality of condemnation and preservation
+
+What distinguishes Annan's photographs is a quiet, structural gaze quite distinct from the emotional accusation of social reform photography. The RISD Museum's entry for Close No. 37 High Street makes explicit that the wet-plate technique was required to photograph the dark alleyways and that the work was tied to the improvement plan for demolishing them.*7 Annan's photographs do register the material reality of urban poverty, but their compositional stillness and handling of spatial density set them apart from straightforward journalism or sensationalism.*8 Rather, his photographs carry a dual character: they comprehend the city as an object of improvement while visually preserving the weight of that space. The National Galleries of Scotland's feature on Annan describes The Old Closes and Streets of Glasgow as "the most celebrated work with continuing significance in Glasgow," indicating that this duality is at the heart of how the work is valued.*9
+
+Cross-domain practice
+
+Annan was not only a photographer of slums; he was also strongly connected to questions of architecture, publication, and graphic reproduction. The range of material documented by Glasgow Libraries (Annan Collection Loose Prints) shows that the archive he left encompasses not only photographs but a wide range of material connected to architectural, print, and publishing practice.*11 A Journal of Urban History article, "A Walk in Thomas Annan's Glasgow," analyzes his photographs from an urban history perspective, showing that they continue to be consulted for academic purposes such as tracing changes in street names, buildings, and spaces.*12 Individual close photographs such as Close #29 Gallowgate held by the High Museum of Art are in major North American museum collections, attesting to international reception within photographic history.*13
+
+Critical reception
+
+Later critical attention to Annan has concentrated on rereading The Old Closes and Streets of Glasgow as an early document of urban transformation, poverty, and publication photography. The Getty exhibition "Thomas Annan: Photographer of Glasgow" was an important opportunity for comprehensive reassessment of this work.*14 As collection records at the Met, MoMA, LACMA, and the Rijksmuseum demonstrate, the series has circulated internationally in the contexts of photobooks, graphic reproduction, and museum collections.*15 The Rijksmuseum's The Slums of Glasgow shows in its very title how the later reception has shifted, with photographs commissioned as administrative records being received as testimony to urban poverty.*16 The Art Institute of Chicago also holds The Old Closes & Streets of Glasgow, reflecting continued attention in North America.*17 The Rijksmuseum Bulletin has published discussion of Old Closes, showing that the photobook continues to be examined within both art history and photographic history.*18 The publication Thomas Annan: Photographer of Glasgow issued by the Getty Museum Store in connection with the exhibition serves as a focal point for scholarly reassessment.*19 The National Galleries of Scotland's most recent Biennial Review records a new acquisition of Annan's work, showing that his collection is continuing to grow in Scotland.*20 The Saint Louis Art Museum's Close, No. 75 High Street (Glasgow) illustrates the situation in which individual close photographs are distributed across institutions worldwide.*21 In photographic history, Annan can be understood not only as a precursor to Atget but, from a different angle than Jacob Riis or Eadweard Muybridge, as a pioneer who converted urban space into a photographic archive.*22
+
+`,
+    textJa: `経歴
+
+トーマス・アナンは1829年にスコットランドのクロマーティに生まれ、グラスゴーで写真家として活動を始めた。建築・人物・都市景観など多岐にわたる撮影を行うかたわら、グラスゴー大聖堂のステンドグラスの写真記録など、出版・複製に関わる仕事も手がけた。*1 1868年、グラスゴー改善トラストから旧市街の再開発にあたる地区の撮影を委嘱され、のちに《The Old Closes and Streets of Glasgow》として結実する一連の写真を制作した。*2 Gettyの展覧会記述はアナンを、「産業都市の社会的景観と建築環境を25年以上にわたって撮影した写真家」として位置づけており、彼の仕事が旧市街記録に限られないことを示している。*3 1887年にグラスゴーで没した。
+
+表現解説
+
+旧市街記録の文脈
+
+アナンの《Old Closes》を理解する上で不可欠なのは、依頼者が市の改善行政であり、写真が都市再開発のための行政資料として制作されたという点である。Glasgow Improvement Act（1866年）は、コレラや腸チフスが繰り返し流行した旧市街のクローズ（密集路地）を系統的に取り壊す計画を推進しており、アナンの写真はその取り壊し直前の記録として位置づけられる。*4 OAPENに収録された学術書《Thomas Annan of Glasgow: Pioneer of the Documentary Photograph》は、アナンを単なる地方写真師ではなく、都市環境の変化を長期的に記録した写真家として論じており、《Old Closes》を都市ドキュメンタリーの先駆として位置づけている。*5 National Library of Scotlandの展示は、アナンの写真と写真集の文化的位置を「スコットランドとフォトブック」という文脈で整理しており、出版メディアを通じた流通の重要性を示している。*6
+
+「告発と保存」の二重性
+
+アナンの写真の特質は、社会改革写真の感情的告発とは一線を画する、静謐で構造的な視線にある。RISD Museumが所蔵する《Close No. 37 High Street》の作品解説は、暗い路地の撮影に湿板技法が必要だったこと、そしてそれが取り壊し前の都市改善計画と結びついていたことを明示している。*7 アナンの写真には確かに都市貧困の物質的現実が映っているが、フレーミングの静けさと空間の密度の扱いは、単純なジャーナリズムやセンセーショナリズムとは異なる。*8 むしろ彼の写真は、都市を改善対象として把握しつつ、その空間の重みを視覚的に保存する二重の性格をもっている。National Galleries of Scotlandのアナン特集記事は、「グラスゴーにおいて継続的な意義をもつ最も著名な仕事として《Old Closes and Streets of Glasgow》」を位置づけており、この二重性が評価の核心にあることを示している。*9
+
+建築・出版・都市記録の横断
+
+アナンは「貧民街の写真家」だけでなく、建築・出版・版画的複製の問題とも強く結びつく。グラスゴー大聖堂のステンドグラス記録、都市景観、各種出版物に関わる資料は、彼を十九世紀の都市と建築を広く可視化する実務的かつ美学的な写真家として示している。*10 Glasgow Librariesのアーカイブ目録（Annan Collection Loose Prints）は、彼の遺した資料群が写真だけでなく、建築・版画・出版実践に関わる広範な資料を含むことを示している。*11 Journal of Urban Historyに掲載された「アナンのグラスゴーを歩く」は、彼の写真を都市史の視点から分析しており、街路名・建物・空間の変化の追跡という学術的な用途でも参照され続けていることを示す。*12 High Museum of Artが所蔵する《Close #29 Gallowgate》など、個別のクローズ写真は北米の主要美術館にも収蔵されており、国際的な写真史への定着を示している。*13
+
+批評と受容
+
+アナンの後年の評価は、《Old Closes and Streets of Glasgow》を都市改造・貧困・出版写真の初期ドキュメントとして読み直す方向に集中している。Gettyの展覧会「Thomas Annan: Photographer of Glasgow」は、この仕事を包括的に再評価する重要な機会となった。*14 Met、MoMA、LACMA、Rijksmuseumなどの所蔵レコードが示すように、このシリーズは写真集・版画的複製・美術館コレクションの文脈でも国際的に流通している。*15 Rijksmuseumが所蔵する《The Slums of Glasgow》は、このタイトルそのものが後世の再解釈を示しており、行政記録として依頼された写真が都市貧困の証言として受容されていることを示す。*16 Art Institute of Chicagoも《The Old Closes & Streets of Glasgow》を所蔵しており、北米での継続的な評価を示す。*17 Rijksmuseum Bulletinは《Old Closes》をめぐる論考を掲載しており、この写真集が美術史・写真史の双方で継続的に論じられていることを示す。*18 Getty Museum Store が展覧会に合わせて刊行した《Thomas Annan: Photographer of Glasgow》出版物は、学術的再評価の集約点として位置づけられる。*19 National Galleries of Scotlandの最新Biennial Reviewは、アナン作品の新規収蔵を記録しており、スコットランドにおけるコレクションの充実が続いていることを示す。*20 Saint Louis Art Museumが所蔵する《Close, No. 75 High Street (Glasgow)》は、個別の路地写真が各地の美術館に分散収蔵されている状況を示している。*21 写真史的には、アナンはアジェの前史としてだけでなく、ジェイコブ・リースやエドワード・マイブリッジとは異なる角度で、都市空間を写真のアーカイブへと変換した先駆として理解できる。*22
+
+`,
+    citations: [
+      { num: 1, name: 'Getty Museum — Thomas Annan: Photographer of Glasgow (exhibition)', url: 'https://www.getty.edu/art/exhibitions/thomas_annan/' },
+      { num: 2, name: 'National Galleries of Scotland — Thomas Annan (feature article)', url: 'https://www.nationalgalleries.org/art-and-artists/features/thomas-annan' },
+      { num: 3, name: 'Getty Museum — Thomas Annan exhibition PDF', url: 'https://www.getty.edu/art/exhibitions/thomas_annan/THA_Web_PDF.pdf' },
+      { num: 4, name: 'National Library of Scotland — Old Closes (library exhibition)', url: 'https://www.nls.uk/exhibitions/scotland-and-the-photobook/architecture/old-closes/' },
+      { num: 5, name: 'OAPEN — Thomas Annan of Glasgow: Pioneer of the Documentary Photograph (scholarly book)', url: 'https://directory.doabooks.org/handle/20.500.12854/28928' },
+      { num: 6, name: 'National Library of Scotland — Scotland and the Photobook: Old Closes', url: 'https://www.nls.uk/exhibitions/scotland-and-the-photobook/architecture/old-closes/' },
+      { num: 7, name: 'RISD Museum — Close No. 37 High Street (object record)', url: 'https://risdmuseum.org/art-design/collection/close-no-37-high-street-75064' },
+      { num: 8, name: 'Harvard Art Museums — The Old Closes and Streets of Glasgow (object record)', url: 'https://harvardartmuseums.org/collections/object/229961' },
+      { num: 9, name: 'National Galleries of Scotland — The Old Closes & Streets of Glasgow 1878–79', url: 'https://www.nationalgalleries.org/art-and-artists/177100/old-closes-streets-glasgow-1878-79' },
+      { num: 10, name: 'Science Museum Group — Thomas Annan (collection / maker page)', url: 'https://collection.sciencemuseumgroup.org.uk/people/ap28693/thomas-annan' },
+      { num: 11, name: 'Glasgow Libraries — Annan Collection Loose Prints (archive catalogue)', url: 'https://libcat.csglasgow.org/documents/836643/988153/Annan%2BCollection%2Bof%2BBound%2BVolumes/a76a121c-228c-41fd-8656-180e94c49e2f' },
+      { num: 12, name: 'Journal of Urban History — A Walk in Thomas Annan\'s Glasgow (scholarly article)', url: 'https://journals.sagepub.com/doi/10.1177/00961442221095892' },
+      { num: 13, name: 'High Museum of Art — Close #29 Gallowgate (object record)', url: 'https://high.org/collection/close-29-gallowgate/' },
+      { num: 14, name: 'Getty Museum — Thomas Annan collection exhibition page', url: 'https://www.getty.edu/art/collection/exhibition/103Q44' },
+      { num: 15, name: 'MoMA — Thomas Annan, The Old Closes and Streets of Glasgow (object record)', url: 'https://www.moma.org/collection/works/50366' },
+      { num: 16, name: 'Rijksmuseum — The Slums of Glasgow (object record)', url: 'https://www.rijksmuseum.nl/en/collection/RP-F-F80004' },
+      { num: 17, name: 'Art Institute of Chicago — The Old Closes & Streets of Glasgow (object record)', url: 'https://www.artic.edu/artworks/47082/the-old-closes-streets-of-glasgow' },
+      { num: 18, name: 'Rijksmuseum Bulletin — Thomas Annan / Old Closes discussion (PDF)', url: 'https://bulletin.rijksmuseum.nl/article/download/9890/10383/16340' },
+      { num: 19, name: 'Getty Museum Store — Thomas Annan: Photographer of Glasgow (publication)', url: 'https://shop.getty.edu/collections/non-sale-getty-publications/products/thomas-annan-photographer-of-glasgow-978-1606065235' },
+      { num: 20, name: 'National Galleries of Scotland — Biennial Review 2023–25 (including Annan acquisition)', url: 'https://www.nationalgalleries.org/sites/default/files/2026-02/NGS%20Biennial%20Review%20202325.pdf' },
+      { num: 21, name: 'Saint Louis Art Museum — Close, No. 75 High Street (Glasgow)', url: 'https://www.slam.org/collection/objects/65090' },
+      { num: 22, name: 'National Gallery of Art — Old Vennel, off High Street (object record)', url: 'https://www.nga.gov/artworks/92283-old-vennel-high-street' },
+    ],
+    works: [
+      { titleJa: 'Close No. 37 High Street — RISD Museum', url: 'https://risdmuseum.org/art-design/collection/close-no-37-high-street-75064' },
+      { titleJa: 'The Slums of Glasgow — Rijksmuseum', url: 'https://www.rijksmuseum.nl/en/collection/RP-F-F80004' },
+      { titleJa: 'Close, No. 75 High Street (Glasgow) — Saint Louis Art Museum', url: 'https://www.slam.org/collection/objects/65090' },
+    ],
+  },
+
+  'riis': {
+    leadJa: `ニューヨークのスラムを写真・文章・講演・書籍の複合メディアで可視化した改革者。みずからを写真家とは考えず、社会変革のためのコミュニケーターとして実践し、フラッシュ技術による暗部記録と出版・講演の組み合わせで都市改革を動かした。`,
+    leadEn: `A journalist, lecturer, and reformer as much as a photographer, Riis used flash photography, newspaper reports, books, and lantern-slide lectures to expose conditions in New York's slums. The Library of Congress describes him as a "multi-skilled communicator" who did not consider himself a photographer.`,
+    textEn: `Biography
+
+Jacob Riis was born in Ribe, Denmark, in 1849 and emigrated to the United States in 1870. While working as a journalist in New York, he began in the 1880s using flash powder to photograph the slums of the Lower East Side at night.*1 His 1890 book How the Other Half Lives, combining photographs, text, and illustrations, was widely read as a pioneering work of social reform and brought about real changes in New York City's housing and sanitation policy.*2 The Library of Congress exhibition "Jacob Riis: Revealing 'How the Other Half Lives'" explicitly describes Riis as someone who "well understood the power of photography but did not consider himself a photographer," repositioning him as a "multi-skilled communicator" who worked across the roles of writer, photographer, lecturer, advocate, and ally.*3 His friendship with Theodore Roosevelt, who was then New York City's police commissioner, shows the political connections his reform activity maintained.*4 He died in Massachusetts in 1914.
+
+Expression
+
+Beyond photographer
+
+The first thing to establish about Riis's practice is that photography did not function alone; it was integrated with writing, lectures, newspapers, books, and lantern slides. The LOC exhibition materials show that Riis left a composite archive including lantern slides for lectures, scrapbooks, letters, and handwritten notes, confirming that photography was only one element of his practice.*5 The exhibition co-organized by MCNY and LOC demonstrates that his materials include not only photographs but writings, letters, lectures, and scrapbooks, and underscores the importance of understanding his work as "a multi-media reform movement" rather than as a body of photographic work.*6 The LOC exhibition overview describes Riis as "single-mindedly devoted to fighting for the poor," making clear that his practice was oriented toward social persuasion rather than artistic autonomy.*7
+
+Flash technology and urban visibility
+
+What is technically significant about Riis's photographic practice is his pioneering use of flash powder for photography in dark spaces. Cellars, tenements at night, tobacco factories, and lodging houses — spaces that had been impossible to photograph with conventional techniques — were made visible through an explosive burst of intense light, and this made the slums a "visible" problem that could be brought into public debate.*8 The Jacob A. Riis Museum's permanent exhibition shows that his photographs continue to be recognized in contemporary Denmark as a pioneering record of urban society.*9 MoMA's The Bend shows that individual works have been received as belonging to a level of achievement that has secured their place in museum collections.*10 The full text of How the Other Half Lives is available through Project Gutenberg and is continually consulted as a primary source.*11 A specialist essay on PhotoAnthology analyzes the ways in which this publication functioned as a complex of photographs, text, and reform activity.*12
+
+Reform and representation
+
+The power of Riis's photographs lay in transforming slum dwellers from "invisible" people into a public problem. At the same time, his representations of children, immigrants, workers, and slum residents, while promoting reform, also risked typifying and objectifying his subjects.*13 MCNY's educational materials list the terms flash powder, narrative, immigration, and labor side by side, pointing to the complex entanglement of technology, institution, and social problems, and inviting a multi-perspective evaluation that resists straightforward heroization.*14 The Lehigh University Library exhibition presents the material reality of the first edition of How the Other Half Lives and conveys the book's role as a vehicle for reaching readers.*15 SFMOMA's Lodgers in a Crowded Bayard Street Tenement is a widely known example of flash-illuminated overcrowded living space.*16
+
+Critical reception
+
+What is significant in Riis's reception is that both the evaluation of him as a precursor to social documentary photography and the critical questioning of the ethics of representing poverty and immigration continue simultaneously. The ICP shows that his photographs were largely forgotten after his death, rediscovered through the finding of negatives and subsequent exhibitions — a discontinuous reception that is itself part of any assessment of Riis.*17 MoMA's Lodgers in Bayard Street Tenement, Five Cents a Spot shows that individual works have reached the level of scrutiny that comes with a place in photographic history.*18 The exhibition catalogue Jacob A. Riis: Revealing New York's Other Half, published by Yale University Press, serves as a focal point for scholarly reassessment.*19 The ICP's bibliographic record for The Complete Photographic Work of Jacob A. Riis indicates that systematic organization of the photographs is progressing.*20 The LOC exhibition brochure provides an overview of Riis's methods and subjects and has been used in both education and research.*21 The Hunger Museum's entry positions How the Other Half Lives as a book that transmits the history of poverty and hunger, showing its continuing use in contexts beyond photographic history.*22 The "The Other Half" exhibition at Foam Amsterdam demonstrates European reception and international reassessment of Riis's photographs.*23
+
+`,
+    textJa: `経歴
+
+ジェイコブ・リースは1849年にデンマークのリーベに生まれ、1870年にアメリカへ渡った。ニューヨークでジャーナリストとして活動するかたわら、1880年代からフラッシュパウダーを用いた夜間撮影でロワー・イースト・サイドのスラムを記録し始めた。*1 1890年に出版した《How the Other Half Lives》は、写真・文章・図版を組み合わせた先駆的な社会改革書として広く読まれ、ニューヨーク市の住宅・衛生政策に実際の変化をもたらした。*2 Library of Congressが開催した展覧会「Jacob Riis: Revealing 'How the Other Half Lives'」は、リースを「写真の力をよく理解していたが、自身を写真家とは考えていなかった」人物として明示し、彼を writer、photographer、lecturer、advocate、ally を横断する「multi-skilled communicator」として再配置している。*3 当時のニューヨーク市警察委員だったセオドア・ルーズヴェルトとの交友は、改革活動の政治的な接点を示している。*4 1914年にマサチューセッツで没した。
+
+表現解説
+
+「写真家」を超えたコミュニケーター
+
+リースの実践で最初に押さえるべきことは、写真が単独で機能したのではなく、文章・講演・新聞・書籍・幻灯と一体だったことである。LOCの展覧会資料は、リースが講演用のランタン・スライド、スクラップブック、書簡、手書きのメモを含む複合的な資料群を残したことを示しており、写真が彼の実践の一要素にすぎなかったことを裏づけている。*5 MCNYとLOCが共同で構成した展覧会は、彼の資料が写真だけでなく著作・書簡・講演・スクラップブックを含むことを示し、「写真作品」よりも「社会改革のための複合メディア運動」として理解することの重要性を示している。*6 LOCの展覧会概要ページは、リースを「single-mindedly devoted to fighting for the poor」として描写しており、彼の実践が美術的自律性よりも社会的説得を目的にしていたことを明確にしている。*7
+
+フラッシュ技術と都市の可視化
+
+リースの写真的実践で技術史的に重要なのは、フラッシュパウダーを用いた暗部撮影の先駆的活用である。地下の長屋、夜の路地、煙草工場、宿泊所など、従来の写真技術では記録が困難だった空間を、強烈な光の爆発によって可視化したことが、スラムを「見える」問題として公共の議論に持ち込む手段となった。*8 Jacob A. Riis Museumの常設展は、彼の写真が現代のデンマークでも都市社会記録の先駆として評価され続けていることを示している。*9 MoMAが所蔵する《The Bend》は、彼の写真が美術館コレクションにも定着した水準の作品として受け継がれていることを示す。*10 《How the Other Half Lives》のテキスト全文はProject Gutenbergで公開されており、一次資料として継続的に参照されている。*11 PhotoAnthologyの専門家向けエッセイは、この出版物が写真・文章・改革運動の複合体として機能した方法を分析している。*12
+
+改革の推進力と表象の非対称性
+
+リースの写真の力は、スラム住民を「見えない存在」から公共的問題へと変換した点にある。しかし同時に、子どもや移民、労働者、スラム住民の表象は、改革を促す一方で、被写体を典型化・客体化する危険も孕んでいる。*13 MCNYの教材資料は、flash powder、narrative、immigration、laborといった語が並び、技術・制度・社会問題の複雑な絡みを示しており、単純な英雄化を避けた複眼的な評価を促している。*14 Lehigh University Libraryの展示は、《How the Other Half Lives》初版の物質的な実体を示しており、本としての流通と読者への働きかけの側面を伝えている。*15 SFMOMAが所蔵する《Lodgers in a Crowded Bayard Street Tenement》は、過密な生活空間をフラッシュで照らした典型的な作品として広く知られている。*16
+
+批評と受容
+
+リースの受容で重要なのは、写真史における社会記録写真の先駆としての評価と、貧困・移民の表象の倫理をめぐる批評的問い直しの双方が継続していることである。ICPは彼の写真が死後しばらく忘れられ、ネガ発見と展覧会を経て再発見されたという経緯を示しており、受容の不連続性そのものがリース評価の一部をなしている。*17 MoMAが所蔵する《Lodgers in Bayard Street Tenement, Five Cents a Spot》は、個別作品が写真史の文脈で精査される水準に達していることを示す。*18 Yale University Pressが刊行した展覧会カタログ《Jacob A. Riis: Revealing New York's Other Half》は、学術的再評価の集約点として位置づけられる。*19 ICPの《Complete Photographic Work of Jacob A. Riis》の書誌記録は、写真の体系的な整理が進んでいることを示している。*20 LOCの展覧会用ブロシュアはリースの方法と主題の全体像を整理しており、教育・研究の双方で活用されている。*21 Hunger Museumの解説は、《How the Other Half Lives》を貧困と飢餓の歴史を伝える書物として位置づけており、写真史以外の文脈での継続的な参照を示す。*22 Foam Amsterdamが企画した「The Other Half」展は、ヨーロッパでの受容とリース写真の国際的な再評価を示している。*23
+
+`,
+    citations: [
+      { num: 1, name: 'Library of Congress — Jacob Riis: Revealing "How the Other Half Lives" (exhibition home)', url: 'https://www.loc.gov/exhibits/jacob-riis/' },
+      { num: 2, name: 'Project Gutenberg — How the Other Half Lives (digitized primary publication)', url: 'https://www.gutenberg.org/files/45502/45502-h/45502-h.htm' },
+      { num: 3, name: 'Library of Congress — Jacob Riis biography section (exhibition)', url: 'https://www.loc.gov/exhibits/jacob-riis/biography.html' },
+      { num: 4, name: 'Theodore Roosevelt Center — Jacob Riis / friendship and reform context', url: 'https://www.theodorerooseveltcenter.org/Research/Digital-Library' },
+      { num: 5, name: 'Library of Congress — Jacob Riis Exhibition Items', url: 'https://www.loc.gov/exhibits/jacob-riis/exhibition-items.html' },
+      { num: 6, name: 'Museum of the City of New York — Jacob A. Riis: Revealing New York\'s Other Half (exhibition)', url: 'https://www.mcny.org/exhibition/jacob-riis' },
+      { num: 7, name: 'Library of Congress — Jacob Riis exhibition overview', url: 'https://www.loc.gov/exhibits/jacob-riis/overview.html' },
+      { num: 8, name: 'Library of Congress — Jacob Riis exhibition brochure (PDF)', url: 'https://www.loc.gov/exhibits/jacob-riis/images/Riis_Brochure.pdf' },
+      { num: 9, name: 'Jacob A. Riis Museum — The permanent exhibition', url: 'https://jacobariismuseum.dk/en/permanent-exhibition/' },
+      { num: 10, name: 'MoMA — Jacob August Riis, The Bend (object record)', url: 'https://www.moma.org/collection/works/51022' },
+      { num: 11, name: 'Project Gutenberg — How the Other Half Lives (full text)', url: 'https://www.gutenberg.org/files/45502/45502-h/45502-h.htm' },
+      { num: 12, name: 'PhotoAnthology — How the Other Half Lives (specialist project essay)', url: 'https://photoanthology.org/projects/how-the-other-half-lives' },
+      { num: 13, name: 'Museum of the City of New York — Past Exhibition: Jacob Riis lesson plans', url: 'https://www.mcny.org/lesson-plans/past-exhibition-jacob-riis' },
+      { num: 14, name: 'MCNY / Activist New York — Settlement lesson plan with Riis photographs (PDF)', url: 'https://activistnewyork.mcny.org/sites/default/files/SettlementLessonPlan.pdf' },
+      { num: 15, name: 'Lehigh University Library Exhibits — How the Other Half Lives (university library exhibition)', url: 'https://exhibits.lib.lehigh.edu/exhibits/show/barcan/rare_books/other_half' },
+      { num: 16, name: 'SFMOMA — Lodgers in a Crowded Bayard Street Tenement', url: 'https://www.sfmoma.org/artwork/98.129/' },
+      { num: 17, name: 'International Center of Photography — Jacob Riis (archive page)', url: 'https://www.icp.org/search-results?query=jacob%20riis' },
+      { num: 18, name: 'MoMA — Lodgers in Bayard Street Tenement, Five Cents a Spot', url: 'https://www.moma.org/collection/works/51194' },
+      { num: 19, name: 'Yale University Press — Jacob A. Riis: Revealing New York\'s Other Half (exhibition catalogue)', url: 'https://yalebooks.yale.edu/9780300209167/jacob-a-riis-revealing-new-yorks-other-half/' },
+      { num: 20, name: 'International Center of Photography — The Complete Photographic Work of Jacob A. Riis', url: 'https://www.icp.org/content/complete-photographic-work-of-jacob-a-riis' },
+      { num: 21, name: 'Library of Congress — Jacob Riis: Revealing How the Other Half Lives (brochure PDF)', url: 'https://www.loc.gov/exhibits/jacob-riis/images/Riis_Brochure.pdf' },
+      { num: 22, name: 'Hunger Museum — How the Other Half Lives (artifact page)', url: 'https://hungermuseum.org/artifacts/how-the-other-half-lives/' },
+      { num: 23, name: 'Foam — Jacob Riis: The Other Half (museum exhibition)', url: 'https://www.foam.org/events/jacob-riis' },
+    ],
+    works: [
+      { titleJa: 'Lodgers in a Crowded Bayard Street Tenement — SFMOMA', url: 'https://www.sfmoma.org/artwork/98.129/' },
+      { titleJa: 'Lodgers in Bayard Street Tenement, Five Cents a Spot — MoMA', url: 'https://www.moma.org/collection/works/51194' },
+      { titleJa: 'The Bend — MoMA', url: 'https://www.moma.org/collection/works/51022' },
+    ],
+  },
+
+  'jp-冨重利平': {
+    leadJa: `熊本で冨重写真所を創業し、肖像写真・熊本城記録・夏目漱石や小泉八雲の肖像を残した写真師。地方都市における写真の制度化を担い、継承される写真館として地域近代の自己表象を支えた拠点を築いた。`,
+    leadEn: `Tomishige Rihei founded the Tomishige Photography Studio in Kumamoto, leaving portrait photographs of figures including Natsume Soseki and Lafcadio Hearn and documentation of Kumamoto Castle. His studio became a key institution for photographic practice and regional modernity in Meiji-era Japan.`,
+    textEn: `Biography
+
+Tomishige Rihei was born in 1837 in Higo Province (present-day Kumamoto Prefecture), and his original family name was Shinokura. He studied photography in the final years of the Edo period and by the 1870s had opened a photography studio in Kumamoto.*1 The surviving collection includes glass plates, portraits, photographic equipment, and related documents, covering both the practical operations of the studio and visual records of regional modernization.*2 He also left documentary photographs of Kumamoto Castle, the old castle town, and the aftermath of the Seinan War, positioning him as a photographer who witnessed the region's modernization and historical turning points.*3 He is also known for having photographed portraits of Natsume Soseki and Lafcadio Hearn, giving his work connections to literary history. He died in 1912. His studio was succeeded by Tokuji, the second-generation head.*4
+
+Expression
+
+Institutional significance of the Tomishige Photography Studio
+
+Tomishige Rihei must be approached not only through analysis of individual works but as the founding figure of the Tomishige Photography Studio — a commercial photography studio and starting point for a regional archive. The survey report of the Nara National Research Institute for Cultural Properties describes the studio's holdings — encompassing glass plates, equipment, and documents — as a comprehensive archive of modern visual culture, showing that they constitute a complex body of material for understanding studio operations, the studio's connections to local society, and the history of photography as a technology.*5 The city of Kumamoto has registered the Tomishige Photography Studio building as a Registered Tangible Cultural Property of Japan, meaning that its physical structure has also been recognized as cultural heritage.*6 A paper published on J-STAGE by the Japanese Society for the Science of Design, under the subtitle "Centering on the Tomishige Rihei Materials," discusses methodology for surveying materials related to commercial photographers, indicating that the studio's holdings constitute a significant case study for research in photographic history.*7
+
+Portrait culture and regional modernization
+
+The exhibition context's phrase "the modern age of portraiture" is suggestive, indicating that the Tomishige Photography Studio's importance lies in its role in the formation of modern portrait culture in a regional city.*8 Portrait photography extended far beyond commemorative photographs; it was bound up with the modern institutions of self-representation — families, local notables, military, administration, schools — and recorded how urban society in Kumamoto made itself visible. The J-STAGE paper "Photographs That Recorded Japan's Modernization" can be read as a study showing that the Tomishige Photography Studio's materials occupy the boundary between private portraiture and public record.*9 The Kumamoto University exhibition "The Tomishige Photography Studio and the Modernization of Kumamoto" demonstrates that this studio was not merely a commercial establishment but a witness to regional modernization, and it continues to be evaluated in the context of university-community collaboration.*10 Symposium materials from Kokugakuin University reference Tomishige's documentary photographs in the context of tracing changes in Kumamoto Castle and the castle town through old photographs, showing their use from an architectural and urban history perspective.*11
+
+Succession
+
+It is important not to close the study of Rihei's work within a single-artist framework but to treat the Tomishige Photography Studio as an institution that was continued and inherited. The survey report recorded in the National Cultural Properties Registry shows that this body of material was not formed in a single generation but through a process of succession and accumulation.*12 Viewed in relation to the succession by Tokuji as the second-generation head, the significance of Rihei's work lies not in specific individual works but in having established the institution of a regional photography studio and passed it on to the next generation.*13 The Japan Photography Preservation Center's report discusses how the materials of commercial photographers including the Tomishige Photography Studio have been preserved as cultural archives, showing continuing evaluation in the context of preservation activity.*14 The old studio building of the Tomishige Photography Studio as recorded by 10+1 Photo Archives shows that the photography studio as a space has been positioned as a regional modern architectural heritage.*15
+
+Critical reception
+
+The evaluation of Tomishige Rihei has advanced more through the investigation and preservation of the Tomishige Photography Studio's materials than through art-historical evaluation of individual works. His significance has been recognized not as an "artist who left masterworks" but as a case showing how photography became institutionalized in regional society and took root as portraiture, documentation, and commercial practice.*5 Within Japanese photographic history, his work functions as material for reconsidering modernization from the vantage point of Kumamoto as a regional base, counterbalancing a photographic history centered on Tokyo and Yokohama. Kumamoto city's cultural property information treats the Tomishige Photography Studio as a surviving regional photography studio and as a body of materials — glass plates, equipment, and documents — constituting a record of modern visual culture.*6 At present, the available materials are concentrated in the contexts of studio history, materials surveys, and exhibition records rather than in a critical history of the artist as such, and deeper research into individual works is anticipated going forward.*16
+
+`,
+    textJa: `経歴
+
+冨重利平は1837年に肥後国（現・熊本県）に生まれ、本姓は篠倉という。幕末に写真術を修め、1870年代には熊本で写真館を開業した。*1 残存する資料群には、ガラス原板、肖像、撮影機材、周辺文書などが含まれ、写真館の実務と近代化の視覚記録の双方にまたがる内容をもつ。*2 熊本城や旧城下町の記録、西南戦争後の記録写真なども残されており、地域の近代化と歴史的転換を目撃した写真師として位置づけられる。*3 夏目漱石や小泉八雲の肖像写真を撮影したことも知られ、文学史との接点をもつ。1922年没。二代目徳次がその後を継いだ。*4
+
+表現解説
+
+冨重写真所の制度的意義
+
+冨重利平については、個別作品論だけでなく、冨重写真所という営業写真館・地域アーカイブの起点として扱う必要がある。奈良文化財研究所の調査報告書は、冨重写真所の資料群を、ガラス原板・機材・文書を含む近代視覚文化の総合資料として位置づけており、写真館の業務・地域社会との接点・技術史を読み解く複合的な資料集であることを示している。*5 熊本市は冨重写真所の建物を国登録有形文化財として登録しており、物理的な施設もまた文化遺産として認定されている。*6 J-STAGEに掲載された日本デザイン学会の論文は、「冨重利平資料を中心に」という副題のもと、営業写真師に関する資料調査の方法論を論じており、この写真所の資料群が写真史研究の重要な事例であることを示している。*7
+
+肖像文化と地域近代化
+
+展覧会文脈の「肖像のモダンエイジ」という語は示唆的で、冨重写真所の重要性が、地方における近代肖像文化の形成にあることを示している。*8 肖像写真は単なる記念写真にとどまらず、家族・地域有力者・軍事・行政・学校などの近代的自己表象の制度と結びついており、熊本の都市社会がどのように自己を可視化したかを記録している。J-STAGEに掲載された「日本の近代化を記録した写真」は、冨重写真所の資料が私的肖像と公共的記録の境界にあることを示す論考として参照できる。*9 熊本大学が開催した展覧会「冨重写真所と熊本の近代化」は、この写真館が単なる商業施設ではなく、地域近代化の証人であったことを示しており、大学と地域連携の文脈で継続的に評価されている。*10 國學院大學のシンポジウム資料は、熊本城と城下町の変遷を古写真に探るという文脈で冨重の記録写真を参照しており、建築・都市史の視点からの利用を示す。*11
+
+写真館の継承という視点
+
+利平の仕事を単独の作家論として閉じず、冨重写真所という継承される制度として捉えることが重要である。全国文化財総覧に記録された調査報告書は、この資料群が一代限りではなく、継承と蓄積のプロセスを経て形成されたことを示している。*12 二代目徳次への継承を見据えれば、利平の仕事の意義は特定の作品にあるのではなく、地方写真館という制度を根づかせ、次世代に引き渡したことにある。*13 日本写真保存センターの報告書は、冨重写真所をはじめとする営業写真師の資料がいかに文化的アーカイブとして保存されてきたかを論じており、保存活動の文脈での継続的な評価を示している。*14 10+1 Photo Archivesが記録した冨重写真所旧スタジオの建築は、空間としての写真館が地域の近代建築遺産として位置づけられていることを示す。*15
+
+批評と受容
+
+冨重利平の評価は、単独作品の美術史的評価よりも、冨重写真所資料の調査・保存を通じて進んでいる。「名作を残した作家」というよりも、地方社会で写真がどのように制度化され、肖像・記録・営業実践として根づいたかを示す事例として重要性が認められてきた。*5 日本写真史においては、東京・横浜中心の初期写真史を相対化し、熊本という地域拠点から近代化を見直す素材として機能している。熊本市の文化財情報は、冨重写真所を地域写真館の遺構として、ガラス原板・機材・文書を含む近代視覚文化の資料群として扱っている。*6 現時点で確認できる資料は、作家としての批評史よりも写真所史・資料調査・展覧会記録の文脈に集中しており、今後の個別作品研究の深化が期待される。*16
+
+`,
+    citations: [
+      { num: 1, name: 'J-STAGE / 日本デザイン学会 — 営業写真師に関する資料調査について―冨重利平資料を中心に―', url: 'https://www.jstage.jst.go.jp/article/jads/24/0/24_15/_article/-char/ja/' },
+      { num: 2, name: '奈良文化財研究所 / 全国文化財総覧 — 冨重写真所資料調査報告書', url: 'https://sitereports.nabunken.go.jp/99366' },
+      { num: 3, name: 'J-STAGE — 日本の近代化を記録した写真―冨重写真所資料を中心として', url: 'https://www.jstage.jst.go.jp/article/photogrst1964/65/2/65_2_111/_article/-char/ja/' },
+      { num: 4, name: '地域史略年譜 — 冨重利平・冨重徳次の略年譜', url: 'https://shashinshi.biz/archives/1993' },
+      { num: 5, name: '奈良文化財研究所 — 冨重写真所資料調査報告書（総覧）', url: 'https://sitereports.nabunken.go.jp/99366' },
+      { num: 6, name: '熊本市 — 冨重写真所（国登録有形文化財）', url: 'https://www.city.kumamoto.jp/kiji00363798/index.html' },
+      { num: 7, name: 'J-STAGE PDF — 営業写真師に関する資料調査と情報化に関する基本指針の提案', url: 'https://www.jstage.jst.go.jp/article/jads/24/0/24_15/_pdf/-char/ja' },
+      { num: 8, name: '熊本県立美術館友の会ニュース — 肖像のモダンエイジ 冨重写真所展', url: 'https://sitereports.nabunken.go.jp/99366' },
+      { num: 9, name: 'J-STAGE — 日本の近代化を記録した写真（論文）', url: 'https://www.jstage.jst.go.jp/article/photogrst1964/65/2/65_2_111/_article/-char/ja/' },
+      { num: 10, name: '熊本大学 — 写真展 冨重写真所と熊本の近代化', url: 'https://www.kumamoto-u.ac.jp/kenkyuu_sangakurenkei/sangakurenkei/chiikirenkei/news/20140227-0331' },
+      { num: 11, name: '國學院大學フロンティア — 熊本城と城下町の変遷を古写真に探る', url: 'https://www2.kokugakuin.ac.jp/frontier/publication/sympo00/tomita.html' },
+      { num: 12, name: '全国文化財総覧 — 冨重写真所資料調査報告書', url: 'https://sitereports.nabunken.go.jp/99366' },
+      { num: 13, name: '熊本大学 — 冨重写真所と熊本の近代化 poster PDF', url: 'https://www.kumamoto-u.ac.jp/kenkyuu_sangakurenkei/sangakurenkei/chiikirenkei/news/news-file/20140227-0331.pdf' },
+      { num: 14, name: '日本写真保存センター — 文化関係資料のアーカイブ構築報告書（PDF）', url: 'https://www.jps.gr.jp/wp-content/uploads/H25center.pdf' },
+      { num: 15, name: '10+1 Photo Archives — 熊本 / 冨重写真所旧スタジオ', url: 'https://www.10plus1.jp/photo-archives/82/album.php?c=12&i=0' },
+      { num: 16, name: '熊本市 — 新町・古町界隈（PDF）', url: 'https://www.city.kumamoto.jp/kiji0035911/5_5911_187692_up_WZGRRQ3H.pdf' },
+    ],
+    works: [
+      { titleJa: '冨重写真所（国登録有形文化財）— 熊本市', url: 'https://www.city.kumamoto.jp/kiji00363798/index.html' },
+      { titleJa: '写真展「冨重写真所と熊本の近代化」— 熊本大学', url: 'https://www.kumamoto-u.ac.jp/kenkyuu_sangakurenkei/sangakurenkei/chiikirenkei/news/20140227-0331' },
+    ],
+  },
+
+  'jp-横山松三郎': {
+    leadJa: `写真・写真油絵・石版印刷・文化財調査を横断し、明治国家の視覚制度形成に関わった複合的実践者。江戸城撮影・壬申検査への参加・博覧会記録など明治初期の視覚記録制度の核にあり、関係写真群は重要文化財に指定されている。`,
+    leadEn: `Yokoyama Matsusaburō worked across photography, photo-oil painting, lithography, and cultural heritage documentation, playing a central role in the visual record-keeping of the early Meiji state. His photographs of Edo Castle and the Jinshin Survey have been designated Important Cultural Properties of Japan.`,
+    textEn: `Biography
+
+Yokoyama Matsusaburo was born in 1838 on Etorofu Island and studied photography in the final years of the Edo period. He is said to have learned photographic technique under Shimooka Renjo.*1 In the early Meiji period he was involved in photographing Edo Castle (later the Imperial Palace) during the transition from the shogunate to the new government, and those photographs are now among the materials held as Important Cultural Properties by the Tokyo National Museum.*2 He participated as an art photography specialist in the Jinshin Survey of 1872 — a government-led project to investigate shrines, temples, and cultural properties across the country — and made substantial contributions to cultural property documentation.*3 He was also responsible for photographing works submitted to the Vienna World Exposition (1873), connecting him to the Meiji state's external self-representation.*4 In addition to photography he worked in photo-oil painting (a technique combining oil painting with photography) and lithography, and he died in 1884.*5
+
+Expression
+
+Cross-media expression: photography, oil painting, and lithography
+
+What stands out in Yokoyama Matsusaburo's practice is that he did not treat photography as a single isolated medium but worked across it in combination with oil painting, lithography, and cultural property documentation. The Edo-Tokyo Museum's description of him as "the Leonardo da Vinci of Japan" is an exaggerated tagline, but his photo-oil painting and cross-media activities do confirm that he was not a practitioner confined to one field.*6 Photo-oil painting was an experiment in adding pictorial value and color to the reproductive capacity of photography, and it shows how photography in the Meiji period was connected to "art" and "education" as well as to "documentation." A J-STAGE paper on photo-oil painting discusses the practice and its historical context in detail.*7 The Art Platform Japan artist database presents Yokoyama's activities in a cross-domain framework and shows his positioning within the contexts of domestic art, cultural property, and photographic history.*8
+
+National surveys and cultural property documentation
+
+More important than reading Yokoyama's work as individual artistic output is recognizing that his practice was integrated into the visual record-keeping systems of the early Meiji state. The Tokyo National Museum holds the photographs connected to the Jinshin Survey as Important Cultural Properties, indicating that the survey in which Yokoyama participated was one of the institutional starting points for cultural property documentation in Japan.*9 The museum's page on "The Jinshin Survey" explains that this investigation was one of the earliest government-organized attempts to document temples, shrines, and cultural properties systematically across the country, with photography as its central means.*10 The cultural property designation records held in the Agency for Cultural Affairs database show that materials related to Yokoyama received a fresh designation as Important Cultural Properties in 2023, confirming the high level of current evaluation.*11 The Nikko Scenic Views Photographs in the Cultural Heritage Online database can be consulted individually as photographs connected to the Jinshin Survey.*12
+
+Multi-media practitioner
+
+What best conveys Yokoyama's distinctive character is the item recorded by the Tokyo National Research Institute for Cultural Properties concerning the discovery of his photographic plates. The rediscovery of the original plates confirmed the material evidence of his practice and expanded the foundation for research.*13 Works records published by the Tokyo Museum Collection show that the photographs he left are held in multiple institutions and remain the subject of ongoing research and exhibition.*14 The "Photographs Taken for the Austrian Vienna Exhibition" held in the DNP Image Archive can be consulted as a work that provides the concrete context of participation in the Vienna World Exposition.*15 The CiNii Research record "Yokoyama Matsusaburo and the Nikko Photographs" is a published academic research record showing that individual scholarly studies of his photographs continue.*16
+
+Critical reception
+
+The historical significance of Yokoyama Matsusaburo lies in prompting consideration of early Japanese photography not simply as technological adoption but in connection with the record-keeping systems, cultural property surveys, expositions, education, and printing technologies of the nation-building period. The Art Platform Japan artist information organizes his positioning within the domestic contexts of art and photographic history, and a certain degree of record also exists in international databases.*8 The Kyoto National Museum Bulletin article "The Achievements of Ninagawa Noritane and Art Photographer Yokoyama Matsusaburo" is positioned as a representative earlier study that addresses his role in the context of the Jinshin Survey in a specialist manner.*17 The Tokyo Metropolitan Museum of Photography's exhibition work list for "Early Photographic History of the Kanto Region" also positions Yokoyama as an important figure in the photographic history of the early Meiji period.*18 KAKEN research output report (19K00934) makes available the findings of a Grant-in-Aid research project that includes archival investigation related to Yokoyama Matsusaburo, indicating the context of ongoing academic research.*19
+
+`,
+    textJa: `経歴
+
+横山松三郎は天保9年（1838年）に択捉島に生まれ、幕末に写真術を修めた。下岡蓮杖に師事して写真技術を学んだとも伝えられている。*1 明治初期には、幕府から新政府への移行期における江戸城（のちの皇居）の写真撮影に携わり、その写真は現在、東京国立博物館が重要文化財として収蔵する資料に含まれる。*2 1872年に行われた壬申検査（全国の社寺仏閣・文化財を調査した政府主導の事業）には古美術写真家として参加し、文化財の記録に大きく貢献した。*3 ウィーン万博（1873年）への出品撮影も担当し、明治国家の対外的な自己表象にも関わった。*4 写真のみならず、写真を下敷きにした写真油絵（油彩と写真を組み合わせた手法）や石版印刷にも取り組み、明治16年（1884年）に没した。*5
+
+表現解説
+
+写真と油絵・石版の横断
+
+横山松三郎の実践で際立つのは、彼が写真を単独の媒体として扱わず、油彩・石版印刷・文化財調査などと横断的に組み合わせた点にある。江戸東京博物館が「日本のダ・ヴィンチ」と呼ぶのは誇張的なキャッチであるが、写真油絵や多媒体的活動を考えると、少なくとも一分野に閉じない実践者であったことは確かである。*6 写真油絵は、写真の再現性に絵画的価値や色彩を与える実験であり、明治期に写真が「記録」だけでなく「美術」や「教育」とどのように接続されたかを示す。J-STAGEに掲載された写真油絵に関する論文は、この技法の実態と歴史的文脈を詳細に論じている。*7 Art Platform Japanが公開するアーティスト・データベースは、横山の活動を横断的に整理しており、国内の美術・文化財・写真史の文脈での位置づけを示している。*8
+
+国家調査と文化財記録
+
+横山の仕事を個人的な作品論として読む以上に重要なのは、彼の実践が明治国家の視覚制度形成に組み込まれていたという点である。東京国立博物館は、壬申検査にかかわる写真群を重要文化財として収蔵しており、横山が参加したこの調査が日本の文化財記録の制度的出発点のひとつであったことを示している。*9 同博物館の「壬申検査について」のページは、この調査が政府主導で全国の寺社・文化財を組織的に記録した最初期の試みであり、写真がその中心的な手段であったことを解説している。*10 文化庁のデータベースに収録された横山関係資料の指定記録は、彼の写真群が2023年に改めて重要文化財の指定を受けたことを示しており、今日における評価の高さを裏づけている。*11 文化遺産オンラインが公開する《日光名勝写真》は、壬申検査関連の写真として個別に参照できる。*12
+
+複合メディア実践者として
+
+横山の固有性を最もよく伝えるのは、東京文化財研究所が記録した「横山松三郎の写真原板発見」という事項である。原板の再発見によって、彼の実践の物質的な証拠が確認され、研究の基盤が広がった。*13 Tokyo Museum Collectionが公開する作品記録は、彼の残した写真が複数の機関に収蔵され、継続的な研究と展示の対象となっていることを示している。*14 DNPイメージアーカイブが所蔵する「墺国維府博覧会出品撮影」は、ウィーン万博への参加という具体的な文脈を示す作品として参照できる。*15 CiNii Researchに収録された「横山松三郎と日光山写真」は、彼の写真に関する個別の学術研究が継続していることを示す論文記録である。*16
+
+批評と受容
+
+横山松三郎の歴史的意義は、初期日本写真を、単なる技術導入ではなく、国家形成期の記録制度・文化財調査・博覧会・教育・印刷技術と結びつけて考えさせる点にある。Art Platform Japanのアーティスト情報は、国内の美術・写真史の文脈での位置づけを整理しており、国際的なデータベースにも一定の記録が存在する。*8 京都国立博物館学叢に掲載された「蜷川式胤と古美術写真家横山松三郎の業績」は、壬申検査の文脈での彼の役割を専門的に論じた代表的な先行研究として位置づけられる。*17 東京都写真美術館が作成した「関東の初期写真史」展覧会作品リストも、横山を明治初期の写真史の重要人物として位置づけている。*18 KAKEN研究成果報告書（19K00934）は、横山松三郎にかかわる史料調査を含む科研費研究の成果を公開しており、現在進行形の学術調査の文脈を示す。*19
+
+`,
+    citations: [
+      { num: 1, name: 'Art Platform Japan — 横山松三郎（アーティスト・データベース）', url: 'https://artplatform.go.jp/artists/A3646' },
+      { num: 2, name: '東京国立博物館 — 写真資料 歴史的写真', url: 'https://www.tnm.jp/modules/r_free_page/index.php?id=1392' },
+      { num: 3, name: '東京国立博物館 — 壬申検査について', url: 'https://www.tnm.jp/modules/r_free_page/index.php?id=147' },
+      { num: 4, name: 'DNPイメージアーカイブ — 墺国維府博覧会出品撮影', url: 'https://images.dnpartcom.jp/ia/workDetail?id=E0068123' },
+      { num: 5, name: 'J-STAGE — 写真油絵研究論文（PDF）', url: 'https://www.jstage.jst.go.jp/article/photogrst/89/1/89_41/_pdf/-char/en' },
+      { num: 6, name: '江戸東京博物館 — The Man Who Captured the Turbulence（展覧会ページ）', url: 'https://www.edo-tokyo-museum.or.jp/en/s-exhibition/yokoyama-matsusaburo/' },
+      { num: 7, name: 'J-STAGE — 写真油絵研究（専門論文）', url: 'https://www.jstage.jst.go.jp/article/photogrst/89/1/89_41/_pdf/-char/en' },
+      { num: 8, name: 'Art Platform Japan — 横山松三郎（アーティスト・データベース）', url: 'https://artplatform.go.jp/artists/A3646' },
+      { num: 9, name: '文化庁 文化遺産データベース — 横山松三郎関係資料（重要文化財）', url: 'https://online.bunka.go.jp/db/heritages/detail/564575' },
+      { num: 10, name: '東京国立博物館 — 壬申検査について（博物館史）', url: 'https://www.tnm.jp/modules/r_free_page/index.php?id=147' },
+      { num: 11, name: '文化庁 文化審議会報道発表 — 横山松三郎関係資料含む重文指定（PDF）', url: 'https://www.bunka.go.jp/koho_hodo_oshirase/hodohappyo/pdf/93793501_01.pdf' },
+      { num: 12, name: '文化遺産オンライン — 日光名勝写真', url: 'https://bunka.nii.ac.jp/heritages/detail/438635' },
+      { num: 13, name: '東京文化財研究所 — 横山松三郎の写真原板発見', url: 'https://www.tobunken.go.jp/materials/nenshi/7075.html' },
+      { num: 14, name: 'Tokyo Museum Collection — 横山松三郎 作品記録', url: 'https://museumcollection.tokyo/works/6242314/' },
+      { num: 15, name: 'DNPイメージアーカイブ — 墺国維府博覧会出品撮影（ウィーン万博）', url: 'https://images.dnpartcom.jp/ia/workDetail?id=E0068123' },
+      { num: 16, name: 'CiNii Research — 横山松三郎と日光山写真（学術論文記録）', url: 'https://cir.nii.ac.jp/crid/1520010379858053760' },
+      { num: 17, name: '京都国立博物館学叢 — 蜷川式胤と古美術写真家横山松三郎の業績（PDF）', url: 'https://www.kyohaku.go.jp/jp/learn/assets/publications/knm-bulletin/11/011_ronbun_e.pdf' },
+      { num: 18, name: '文化庁 文化遺産データベース — 横山松三郎関係資料', url: 'https://online.bunka.go.jp/db/heritages/detail/564575' },
+      { num: 19, name: 'KAKEN — 研究成果報告書 19K00934（横山松三郎関係史料調査）', url: 'https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-19K00934/' },
+    ],
+    works: [
+      { titleJa: '日光名勝写真 — 文化遺産オンライン', url: 'https://bunka.nii.ac.jp/heritages/detail/438635' },
+      { titleJa: '横山松三郎関係資料（重要文化財）— 文化庁 文化遺産データベース', url: 'https://online.bunka.go.jp/db/heritages/detail/564575' },
+      { titleJa: '横山松三郎 作品記録 — Tokyo Museum Collection', url: 'https://museumcollection.tokyo/en/works/6242181/' },
+    ],
+  },
+
+  'jp-冨重徳次': {
+    leadJa: `冨重写真所の二代目として、利平が築いた写真館の制度と記録文化を持続させた写真師。個人の表現者というより、地方近代における写真館の継承そのものを体現した存在として、写真史の中に位置づけられる。`,
+    leadEn: `The second-generation head of the Tomishige Photography Studio, Tokuji continued the institutional practice and documentary record-keeping established by Rihei. He is significant less as an individual artistic innovator than as a figure who sustained photography's role in regional Meiji and Taisho Japan.`,
+    textEn: `Biography
+
+Tomishige Tokuji was born in 1862, trained in photography under Tomishige Rihei, and succeeded him as the second-generation head of the Tomishige Photography Studio.*1 The "Tomishige Tokuji Curriculum Vitae" referenced in the Japan Society for the Science of Design survey paper records an outline of his career and shows that he inherited photographic techniques as a direct pupil of Rihei.*2 He assumed responsibilities for the studio's work while Rihei was still alive and continued to maintain its name and base after Rihei's death. He kept the studio operating through the Meiji, Taisho, and early Showa periods, occupying a distinctive position in regional photographic history as a "successor." He died in 1938.*3
+
+Expression
+
+Succession and the continuity of the institution
+
+When discussing Tomishige Tokuji as a practitioner, the most defensible positioning based on currently available materials is as the figure who sustained regional modern visual practice as inheritor of the Tomishige Photography Studio, rather than constructing a thick individual artist account. The survey report of the Nara National Research Institute for Cultural Properties and the records in the National Cultural Properties Registry treat the Tomishige Photography Studio not as the talent of a single generation but as a continuing regional photography studio, and within that framework Tokuji, as the second-generation head, was responsible for the continued accumulation of the studio's materials.*4 As the Kumamoto city cultural property information shows, the Tomishige Photography Studio building itself is protected as a Registered Tangible Cultural Property, carrying significance as regional heritage beyond the individual achievements of any single photographer.*5 The J-STAGE study discusses photography as a record of modernization centering on the studio's materials, and the studio's continued activity including the period of Tokuji's tenure is positioned within that framework.*6
+
+Regional role of the photography studio in regional modernity
+
+The exhibition phrase "the modern age of portraiture" serves as a term indicating that the Tomishige Photography Studio was a site that produced the modern self-image of local residents.*7 The long-term maintenance of Kumamoto's portrait culture, regional documentation, and commercial photography network through the succession from Rihei to Tokuji shows that the photography studio functioned as the foundation for the community's self-representation rather than simply as a commercial establishment. The Kumamoto University exhibition "The Tomishige Photography Studio and the Modernization of Kumamoto" positions the studio's activities spanning both Rihei and Tokuji as a history of Kumamoto's modernization, showing the importance of the succession perspective.*8 The Bunshun Online discussion of photographs attributed to Tokuji showing the Nihongi pleasure district is a rare reference point that presents concrete evidence of his documentary work from later in his career.*9 The Kokugakuin University symposium materials reference the Tomishige Photography Studio's records from the perspective of research into old photographs, indicating connections to architectural and urban history.*10 The old studio building recorded by 10+1 Photo Archives conveys the architectural succession of the photography studio as a space.*11
+
+Critical reception
+
+On Tomishige Tokuji, given that individual critical histories and first-person statements are thin in currently available materials, a more honest evaluation comes from not constructing an inflated account. What matters is that his name survives within the preservation and survey of the Tomishige Photography Studio's materials as the second-generation head, and this in itself demonstrates that the photography studio continued not as a single generation's talent but as a trade, a set of techniques, a client network, and a body of accumulated materials.*12 Within photographic history, Tokuji is a figure who speaks to the continuity of photographic institutions in regional modernity rather than as "an individual innovator." The long-term maintenance of Kumamoto's portrait culture, regional documentation, and commercial photography network through the succession from Rihei to Tokuji provides an important case study for thinking about the regional photographic history of modern Japan.*13
+
+`,
+    textJa: `経歴
+
+冨重徳次は1862年に生まれ、冨重利平の弟子として写真技術を習得し、冨重写真所の二代目を継いだ。*1 日本デザイン学会の資料調査論文が参照する「冨重徳次履歴書」には、彼の経歴の概略が記録されており、利平の直弟子として写真技術を受け継いだことが示されている。*2 利平の存命中から写真所の業務を担い、利平の没後もその名跡と拠点を守り続けた。明治・大正・昭和初期にかけて写真所を維持し、地方写真史においては「継承者」という独自の位置を占める。1938年に没した。*3
+
+表現解説
+
+写真所の継承と制度の持続
+
+冨重徳次を作家として論じるとき、現時点の確認資料では単独の作家論として厚く書くよりも、冨重写真所の継承者として地方近代の視覚制度を持続させた人物として位置づけるのがもっとも安定している。奈良文化財研究所の調査報告書および全国文化財総覧の記録は、冨重写真所を一代限りの才能ではなく、継承される地域写真館として扱っており、その中で徳次は二代目として写真所の資料群の継続的な蓄積を担った。*4 熊本市の文化財情報が示すように、冨重写真所の建物そのものが国登録有形文化財として保護されており、写真師の個人的な業績を超えた地域遺産としての意味を持っている。*5 J-STAGEの論考は、写真所の資料群を中心に近代化の記録としての写真を論じており、徳次の時代を含む写真所の継続的な活動がその文脈に位置づけられる。*6
+
+地方近代における写真館の役割
+
+「肖像のモダンエイジ」という展覧会文脈は、冨重写真所が地域住民の近代的自己像を作り出す場だったことを示す語として使える。*7 利平から徳次への継承を通じて、熊本の肖像文化、地域記録、営業写真のネットワークが長期的に維持されたことは、写真館が単なる商業施設ではなく、地域社会の自己表象の基盤として機能していたことを示す。熊本大学が開催した展覧会「冨重写真所と熊本の近代化」は、利平・徳次両者にわたる写真所の活動を、熊本の近代化の歴史として位置づけており、継承という視点の重要性を示している。*8 文春オンラインに掲載された、徳次が撮影したとされる二本木遊廓の写真の解説は、晩年の記録写真の実例として、彼の仕事の具体的な内容を示す希少な参照点となっている。*9 國學院大學のシンポジウム資料は古写真研究の文脈から冨重写真所の記録を参照しており、建築史・都市史との接点を示している。*10 10+1 Photo Archivesが記録した旧スタジオの建築は、空間としての写真館の継承を伝えている。*11
+
+批評と受容
+
+冨重徳次については、現時点では単独の批評史や作家発言が薄いため、無理に大きな作家像を作らない方が誠実な評価につながる。しかし、冨重写真所資料の保存・調査の中で二代目として名前が残ること自体が、地域写真館が一代限りではなく、家業・技術・顧客関係・資料群として継続したことを示している。*12 写真史的には、徳次は「個人の革新者」というより、地方近代における写真制度の持続性を語るための人物である。利平から徳次への継承を通じて、熊本の肖像文化・地域記録・営業写真のネットワークが長期的に維持されたことは、近代日本の地方写真史を考える上での重要な事例を提供している。*13
+
+`,
+    citations: [
+      { num: 1, name: 'J-STAGE / 日本デザイン学会 — 営業写真師に関する資料調査（冨重利平資料を中心に）', url: 'https://www.jstage.jst.go.jp/article/jads/24/0/24_15/_article/-char/ja/' },
+      { num: 2, name: 'J-STAGE PDF — 営業写真師に関する資料調査と情報化に関する基本指針の提案', url: 'https://www.jstage.jst.go.jp/article/jads/24/0/24_15/_pdf/-char/ja' },
+      { num: 3, name: '地域史略年譜 — 冨重利平・冨重徳次の略年譜', url: 'https://shashinshi.biz/archives/1993' },
+      { num: 4, name: '奈良文化財研究所 / 全国文化財総覧 — 冨重写真所資料調査報告書', url: 'https://sitereports.nabunken.go.jp/99366' },
+      { num: 5, name: '熊本市 — 冨重写真所（国登録有形文化財）', url: 'https://www.city.kumamoto.jp/kiji00363798/index.html' },
+      { num: 6, name: 'J-STAGE — 日本の近代化を記録した写真―冨重写真所資料を中心として', url: 'https://www.jstage.jst.go.jp/article/photogrst1964/65/2/65_2_111/_article/-char/ja/' },
+      { num: 7, name: '熊本県立美術館友の会ニュース — 肖像のモダンエイジ 冨重写真所展（展覧会言及）', url: 'https://sitereports.nabunken.go.jp/99366' },
+      { num: 8, name: '熊本大学 — 写真展「冨重写真所と熊本の近代化」', url: 'https://www.kumamoto-u.ac.jp/kenkyuu_sangakurenkei/sangakurenkei/chiikirenkei/news/20140227-0331' },
+      { num: 9, name: '文春オンライン — 冨重徳次撮影の二本木遊廓写真解説', url: 'https://bunshun.jp/articles/-/85330?page=2' },
+      { num: 10, name: '國學院大學フロンティア — 熊本城と城下町の変遷を古写真に探る', url: 'https://www2.kokugakuin.ac.jp/frontier/publication/sympo00/tomita.html' },
+      { num: 11, name: '10+1 Photo Archives — 熊本 / 冨重写真所旧スタジオ', url: 'https://www.10plus1.jp/photo-archives/82/album.php?c=12&i=0' },
+      { num: 12, name: '全国文化財総覧 — 冨重写真所資料調査報告書', url: 'https://sitereports.nabunken.go.jp/99366' },
+      { num: 13, name: '熊本大学五高記念館 館報（PDF）', url: 'https://www.goko.kumamoto-u.ac.jp/img/about/books/kanpo2.pdf' },
+    ],
+    works: [
+      { titleJa: '冨重写真所（国登録有形文化財）— 熊本市', url: 'https://www.city.kumamoto.jp/kiji00363798/index.html' },
+      { titleJa: '冨重徳次撮影・二本木遊廓写真解説 — 文春オンライン', url: 'https://bunshun.jp/articles/-/85330?page=2' },
+    ],
+  },
 });
 /* 2026-04-19 English reflection overrides end */

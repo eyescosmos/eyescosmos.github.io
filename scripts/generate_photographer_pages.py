@@ -455,6 +455,96 @@ SEO_TEXT_OVERRIDES = {
             "lead": "A photographer of the Civil War and American West surveys whose images later became important to discussions of topographic landscape photography.",
         },
     },
+    "muybridge": {
+        "ja": {
+            "title": "エドワード・マイブリッジ | 連続写真と映像前史 | 写真の座標",
+            "description": "馬の連続写真から投影装置まで、マイブリッジの実践を科学・大学制度・映像前史の交差点として写真史的に解説。運動の分解と再生が写真と映画の境界を揺らした意味を読み解く。",
+        },
+        "en": {
+            "title": "Eadweard Muybridge | Motion Studies and Proto-Cinema | Photo Coordinates",
+            "description": "From sequential motion photography to the Zoopraxiscope, Muybridge's practice is traced through science, university research, and proto-cinema history using museum and archive sources.",
+        },
+    },
+    "marey": {
+        "ja": {
+            "title": "エティエンヌ＝ジュール・マレー | クロノフォトグラフィーと身体科学 | 写真の座標",
+            "description": "クロノフォトグラフィーで運動を一枚の画像に凝縮したマレーを、生理学・身体科学・映像前史の文脈から解説。マイブリッジとの方法論的対照と、近代的身体計測との関係を論じる。",
+        },
+        "en": {
+            "title": "Étienne-Jules Marey | Chronophotography and Body Science | Photo Coordinates",
+            "description": "Marey's chronophotography — multiple exposures on one plate — is examined through physiology, labor science, and proto-cinema, with comparison to Muybridge's sequential approach.",
+        },
+    },
+    "marville": {
+        "ja": {
+            "title": "シャルル・マルヴィル | パリ都市変容の写真記録 | 写真の座標",
+            "description": "ハウスマン改造前後のパリを市の委嘱で記録したマルヴィルの実践を、行政的近代化・都市史・写真アーカイブの観点から解説。旧市街の消滅と新都の出現という二重記録を論じる。",
+        },
+        "en": {
+            "title": "Charles Marville | Paris Urban Photography | Photo Coordinates",
+            "description": "Marville's photographs of Paris before and after Haussmann's rebuilding, analyzed as both municipal record and visual archive of modern urban transformation.",
+        },
+    },
+    "frederick-h-evans": {
+        "ja": {
+            "title": "フレデリック・H・エヴァンズ | 大聖堂写真と写真芸術運動 | 写真の座標",
+            "description": "ゴシック大聖堂をプラチナ印画の階調で写真化したエヴァンズを、Linked Ringと写真芸術運動・精神性・建築空間の光の組織化から解説。写真が記録から芸術的経験へ移行する過程を論じる。",
+        },
+        "en": {
+            "title": "Frederick H. Evans | Cathedral Photography and Art Photography | Photo Coordinates",
+            "description": "Evans's platinum print cathedral photographs examined through Linked Ring, the Arts and Crafts milieu, and the argument for photography as fine art.",
+        },
+    },
+    "annan": {
+        "ja": {
+            "title": "トーマス・アナン | グラスゴー旧市街とドキュメンタリー前史 | 写真の座標",
+            "description": "グラスゴー旧市街を改善委嘱で記録したアナンを、都市史・出版写真・ドキュメンタリー前史の文脈で解説。改善記録として撮られた写真が都市貧困の証言として再評価される逆説を論じる。",
+        },
+        "en": {
+            "title": "Thomas Annan | Glasgow Documentary Photography | Photo Coordinates",
+            "description": "Thomas Annan's Glasgow photographs examined as early documentary records, with analysis of how improvement commission images became testimony to urban poverty.",
+        },
+    },
+    "riis": {
+        "ja": {
+            "title": "ジェイコブ・リース | スラムの可視化と社会改革写真 | 写真の座標",
+            "description": "ニューヨークのスラムをフラッシュ写真・書籍・講演で可視化したリースを、社会改革・メディア史・ドキュメンタリー前史から解説。改革の道具としての写真が孕む表象の問題も論じる。",
+        },
+        "en": {
+            "title": "Jacob Riis | Social Reform Photography | Photo Coordinates",
+            "description": "Riis's combination of flash photography, books, and lectures as tools for social reform, traced through media history and early documentary photography.",
+        },
+    },
+    "jp-tomishige-rihei": {
+        "ja": {
+            "title": "冨重利平 | 熊本・明治写真館の制度化 | 写真の座標",
+            "description": "熊本で冨重写真所を創業した冨重利平を、地方写真制度の形成・明治肖像文化・写真館の継承という観点から解説。九州の明治写真史における位置づけを出典に基づき論じる。",
+        },
+        "en": {
+            "title": "Tomishige Rihei | Meiji Portrait Photography in Kumamoto | Photo Coordinates",
+            "description": "Tomishige Rihei examined through Meiji portrait culture, regional modernization, and the institutional history of photography in Kyushu.",
+        },
+    },
+    "jp-yokoyama-matsusaburo": {
+        "ja": {
+            "title": "横山松三郎 | 明治視覚制度と複合メディア実践 | 写真の座標",
+            "description": "写真・油絵・石版を横断し江戸城撮影・壬申検査・博覧会記録に関わった横山松三郎を、明治視覚制度の形成という文脈から解説。関係資料は重要文化財に指定されている。",
+        },
+        "en": {
+            "title": "Yokoyama Matsusaburo | Meiji Photography and Visual Documentation | Photo Coordinates",
+            "description": "Yokoyama Matsusaburo's cross-media practice examined through Meiji visual documentation systems, Edo Castle photography, and cultural heritage surveys.",
+        },
+    },
+    "jp-tomishige-tokuji": {
+        "ja": {
+            "title": "冨重徳次 | 写真館の継承と地域近代 | 写真の座標",
+            "description": "冨重利平の後継として冨重写真所を引き継いだ徳次を、地方近代における写真館の継承と制度持続という観点から解説。熊本の肖像文化と地域記録の長期的維持を論じる。",
+        },
+        "en": {
+            "title": "Tomishige Tokuji | Photography Studio Succession in Kumamoto | Photo Coordinates",
+            "description": "Tomishige Tokuji and the institutional continuity of the Kumamoto photography studio examined through regional Meiji and Taisho photography history.",
+        },
+    },
 }
 SAME_AS_OVERRIDES = {
     "stieglitz": [
