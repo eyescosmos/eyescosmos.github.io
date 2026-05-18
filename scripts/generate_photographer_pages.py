@@ -146,6 +146,29 @@ STRUCTURED_DATA_ALTERNATE_NAME_OVERRIDES = {
             "William Eugene Smith",
         ],
     },
+    "hiroshi-sugimoto": {
+        "en": [
+            "Sugimoto Hiroshi",
+            "杉本博司",
+        ],
+    },
+    "edward-weston": {
+        "en": [
+            "Edward Henry Weston",
+        ],
+    },
+    "renger": {
+        "en": [
+            "Albert Renger Patzsch",
+            "Renger-Patzsch",
+        ],
+    },
+    "moriyama": {
+        "en": [
+            "Moriyama Daido",
+            "森山大道",
+        ],
+    },
 }
 SEO_TEXT_OVERRIDES = {
     "stieglitz": {
@@ -167,9 +190,21 @@ SEO_TEXT_OVERRIDES = {
             "lead": "レンガー＝パッチュは、ピクトリアリズムの美化ともバウハウス的な視覚実験とも異なる立場から、事物そのものの構造的な美しさを精密に示した新即物主義写真の中心人物である。",
         },
         "en": {
-            "title": "Albert Renger-Patzsch | New Objectivity and the Photography of Things | Photo Coordinates",
-            "description": "Renger-Patzsch made the photographed object itself central, rejecting both pictorialist beautification and Bauhaus-style visual experiment in favor of precise structural description.",
+            "title": "Albert Renger-Patzsch | New Objectivity, Neues Sehen, and Things | Photo Coordinates",
+            "description": "Albert Renger-Patzsch is explained through New Objectivity, Neues Sehen, Die Welt ist schön, industrial forms, plants, objects, and precise photographic description.",
             "lead": "Renger-Patzsch made the photographed object itself central, rejecting both pictorialist beautification and Bauhaus-style visual experiment in favor of precise structural description.",
+        },
+    },
+    "hiroshi-sugimoto": {
+        "en": {
+            "title": "Hiroshi Sugimoto | Seascapes, Theaters, Dioramas, and Time | Photo Coordinates",
+            "description": "Hiroshi Sugimoto is explained through Seascapes, Theaters, Dioramas, long exposure, time, memory, museums, and conceptual photography.",
+        },
+    },
+    "edward-weston": {
+        "en": {
+            "title": "Edward Weston | Group f/64, Straight Photography, and Modern Form | Photo Coordinates",
+            "description": "Edward Weston is explained through Group f/64, straight photography, Mexico, Pepper No. 30, nudes, shells, Point Lobos, and modern photographic form.",
         },
     },
     "evans": {
@@ -228,8 +263,8 @@ SEO_TEXT_OVERRIDES = {
             "description": "美術館・アーカイブ資料を手がかりに、森山大道のプロヴォーク、アレ・ブレ・ボケ、写真集、都市写真、戦後日本写真を読み解く写真史解説。",
         },
         "en": {
-            "title": "Daido Moriyama | Provoke and Are-Bure-Boke | Photo Coordinates",
-            "description": "Using museum, archive, and specialist sources, this page examines Daido Moriyama through Provoke, are-bure-boke, photobooks, urban photography, and postwar Japanese photography.",
+            "title": "Daido Moriyama | Provoke, Are-Bure-Boke, and Japanese Street Photography | Photo Coordinates",
+            "description": "Daido Moriyama is explained through Provoke, are-bure-boke, photobooks, Tokyo street photography, rephotography, and postwar Japanese image culture.",
         },
     },
     "wolfgang-tillmans": {
@@ -1318,6 +1353,9 @@ ESSAY_HEADING_SET = {
     'Biography',
     'How the Zone System relates to Group f/64',
     'Expression / method',
+    'Seascapes, Theaters, Dioramas, and the Photograph as Time',
+    'Group f/64, Straight Photography, and the Matter of Form',
+    'New Objectivity and Neues Sehen: The Photography of Things',
     'Criticism and reception',
 }
 
