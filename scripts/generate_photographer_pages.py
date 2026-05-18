@@ -141,6 +141,10 @@ STRUCTURED_DATA_ALTERNATE_NAME_OVERRIDES = {
             "ユージン・スミス",
             "ユージンスミス",
         ],
+        "en": [
+            "Eugene Smith",
+            "William Eugene Smith",
+        ],
     },
 }
 SEO_TEXT_OVERRIDES = {
@@ -195,7 +199,7 @@ SEO_TEXT_OVERRIDES = {
         },
         "en": {
             "title": "W. Eugene Smith | Minamata Project and the Photo Essay | Photo Coordinates",
-            "description": "W. Eugene Smith transformed magazine photojournalism through immersive photo essays, from Country Doctor to Minamata, making documentary photography narrative, partisan, and ethically charged.",
+            "description": "W. Eugene Smith's photography is explained through the Minamata Project, LIFE photo essays, Pittsburgh, darkroom printing, and the ethics of documentary representation.",
         },
     },
     "ansel-adams": {
