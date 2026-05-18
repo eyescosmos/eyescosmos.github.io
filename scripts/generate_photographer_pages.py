@@ -134,6 +134,15 @@ YEAR_OVERRIDES = {
     "robert-doisneau": "1912-1994",
     "russell-lee": "1903-1986",
 }
+STRUCTURED_DATA_ALTERNATE_NAME_OVERRIDES = {
+    "eugenesmith": {
+        "ja": [
+            "W. Eugene Smith",
+            "ユージン・スミス",
+            "ユージンスミス",
+        ],
+    },
+}
 SEO_TEXT_OVERRIDES = {
     "stieglitz": {
         "ja": {
@@ -181,8 +190,8 @@ SEO_TEXT_OVERRIDES = {
     },
     "eugenesmith": {
         "ja": {
-            "title": "W・ユージン・スミス｜水俣とフォト・エッセイ｜写真の座標",
-            "description": "W・ユージン・スミスは『LIFE』誌でフォト・エッセイを発展させ、長期取材と緻密な編集によって報道写真を物語的で倫理的な形式へ変えた。『Country Doctor』から『水俣』まで、写真が社会的告発になりうることを示した。",
+            "title": "W・ユージン・スミス｜水俣・フォトエッセイ・写真史｜写真の座標",
+            "description": "W・ユージン・スミスの写真を、水俣、LIFE誌のフォト・エッセイ、ピッツバーグ、ニューヨーク・ロフト期から写真史的に解説します。",
         },
         "en": {
             "title": "W. Eugene Smith | Minamata Project and the Photo Essay | Photo Coordinates",
@@ -1882,7 +1891,9 @@ def build_page_structured_data(photographer: dict, lang: str, title: str, descri
         "url": canonical,
         "jobTitle": "Photographer" if lang == "en" else "写真家",
     }
-    alternate_name = display_alt_name(photographer, lang)
+    alternate_name = STRUCTURED_DATA_ALTERNATE_NAME_OVERRIDES.get(photographer.get("id"), {}).get(lang)
+    if not alternate_name:
+        alternate_name = display_alt_name(photographer, lang)
     if alternate_name:
         person["alternateName"] = alternate_name
     if birth_year:
