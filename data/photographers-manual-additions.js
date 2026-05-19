@@ -436,8 +436,8 @@ const PHOTOGRAPHER_MANUAL_ADDITIONS = [
     links: [],
     amazon: '',
     context: {
-      text: '本文は準備中です。',
-      textEn: 'This essay is in preparation.',
+      text: 'アニー・リーボヴィッツは、Rolling Stone、Vanity Fair、Vogueを横断し、音楽、映画、ファッション、政治、私的記憶を公共的な肖像イメージへ変換してきたアメリカの写真家。',
+      textEn: 'Annie Leibovitz is an American photographer who moved through Rolling Stone, Vanity Fair, and Vogue, turning music, film, fashion, politics, and private memory into public portrait images.',
       citations: [],
     },
   },

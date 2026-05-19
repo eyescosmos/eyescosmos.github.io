@@ -176,6 +176,18 @@ STRUCTURED_DATA_ALTERNATE_NAME_OVERRIDES = {
     },
 }
 SEO_TEXT_OVERRIDES = {
+    "annie-leibovitz": {
+        "ja": {
+            "title": "アニー・リーボヴィッツ｜雑誌ページと公共的イメージの肖像写真｜写真の座標",
+            "description": "アニー・リーボヴィッツを、Rolling Stone、Vanity Fair、Vogue、ジョン・レノン、デミ・ムーア、Women、Wonderlandから読み解く写真史解説。",
+            "lead": "アニー・リーボヴィッツは、Rolling Stone、Vanity Fair、Vogueを横断し、音楽、映画、ファッション、政治、私的記憶を公共的な肖像イメージへ変換してきたアメリカの写真家。",
+        },
+        "en": {
+            "title": "Annie Leibovitz | Magazine Pages and Public Portraiture | Photo Coordinates",
+            "description": "A photo-history essay on Annie Leibovitz through Rolling Stone, Vanity Fair, Vogue, John Lennon, Demi Moore, Women, Wonderland, and the making of public images.",
+            "lead": "Annie Leibovitz is an American photographer who moved through Rolling Stone, Vanity Fair, and Vogue, turning music, film, fashion, politics, and private memory into public portrait images.",
+        },
+    },
     "stieglitz": {
         "ja": {
             "title": "アルフレッド・スティーグリッツ | 291ギャラリーとエクイヴァレンツ | 写真の座標",
