@@ -2502,8 +2502,14 @@ def main() -> None:
                         related_people_select_options.append(option_tuple)
 
             links = (override_entry.get("links") if isinstance(override_entry, dict) and override_entry.get("links") else None) or photographer.get("links") or []
+            def localized_link_label(link: dict) -> str:
+                if lang == "en" and link.get("labelEn"):
+                    return link["labelEn"]
+                label = link.get("label", "")
+                return english_reference_label(label, link.get("url", "")) if lang == "en" else label
+
             links_html = "".join(
-                f'<a class="chip-link" href="{escape_html(link["url"])}" target="_blank" rel="noopener">{escape_html(english_reference_label(link["label"], link["url"]) if lang == "en" else link["label"])} ↗</a>'
+                f'<a class="chip-link" href="{escape_html(link["url"])}" target="_blank" rel="noopener">{escape_html(localized_link_label(link))} ↗</a>'
                 for link in links
             ) or f'<div class="note">{copy["linksPlaceholder"]}</div>'
             works_for_page = (override_entry.get("works") or []) if isinstance(override_entry, dict) else []

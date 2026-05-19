@@ -90,6 +90,12 @@ Stieglitz's reception developed less through the rediscovery of a single masterp
         { num: 21, name: 'Museum of Modern Art — The Steerage', url: 'https://www.moma.org/collection/works/56685' },
         { num: 22, name: 'Metropolitan Museum of Art Bulletin — The Art of Seeing: Photographs from the Alfred Stieglitz Collection', url: 'https://resources.metmuseum.org/resources/metpublications/pdf/The_Art_of_Seeing_Photographs_from_the_Alfred_Stieglitz_Collection_The_Metropolitan_Museum_of_Bulletin_v_35_no_4_Spring_1978.pdf' },
         { num: 23, name: 'Metropolitan Museum of Art — The Terminal', url: 'https://www.metmuseum.org/art/collection/search/267836' },
+      ],
+      works: [
+        { titleJa: 'The Terminal', titleEn: 'The Terminal', url: 'https://www.metmuseum.org/art/collection/search/267836' },
+        { titleJa: 'The Steerage', titleEn: 'The Steerage', url: 'https://www.metmuseum.org/art/collection/search/267821' },
+        { titleJa: 'エクイヴァレンツ', titleEn: 'Equivalents', url: 'https://archive.artic.edu/stieglitz/equivalents/' },
+        { titleJa: 'Equivalent', titleEn: 'Equivalent', url: 'https://www.metmuseum.org/art/collection/search/267822' },
       ]
     },
     'renger': {
@@ -12744,6 +12750,16 @@ In 2025, the English translation of The Traveling Tree was published by Hachette
 The continuation of posthumous exhibitions is also significant. The Michio Hoshino Office's list of exhibitions records numerous traveling shows, including "The World of Michio Hoshino" from 1998 to 2000, "Coming Home!" in Alaska in 2000, "The Universe of Michio Hoshino" from 2003 onward, and special exhibitions marking the twentieth anniversary of his death from 2016*11. The 2022 Tokyo Photographic Art Museum exhibition traced his path from the records he made in the first Alaskan village he entered to photographs taken shortly before his death in Kamchatka, incorporating archival material throughout*2. Juneau Empire reported that the Alaska State Legislature honored Hoshino in 2021, with a commendation stating that his photographs and books had drawn generations of Japanese to Alaska and strengthened the ties between the two regions*25. In Alaska Magazine, writer Nick Jans recalled shared memories with Hoshino at caribou migration sites and noted that Hoshino had been recognized in Alaska as an outstanding nature photographer and that later Japanese photographers followed in his path*28.
 
 Drawing together the sources identified in this account, Hoshino's work extended nature photography beyond "photographs that show the beauty of nature" into a place where it could be received as a form — the photo-essay — that asks how people imagine and read the time of the natural world. His representative animal photographs appear not only with field-guide information, but accompanied by time spent waiting, migrating herds, hunting peoples, myths, attitudes toward life and death, prose, and posthumous readers. Considered alongside overseas sources, this work extends beyond Japanese photo-essay culture and has been received in Alaskan museums, art collections, natural history exhibitions, and English-language publishing and reviews as an expression of the relationship between land, animals, and people. Work images, including Polar Bear Mother and Cub Moving Across Blizzard Ice, Hudson Bay, Canada, can be confirmed on the Tokyo Photographic Art Museum's exhibition page*2.`,
+    links: [
+      { url: 'https://www.michio-hoshino.com/profile/', label: '星野道夫事務所公式サイト — プロフィール', labelEn: 'Michio Hoshino Office — Profile' },
+      { url: 'https://www.michio-hoshino.com/gallery/', label: '星野道夫事務所公式サイト — ギャラリー', labelEn: 'Michio Hoshino Office — Gallery' },
+      { url: 'https://www.michio-hoshino.com/collection/list/photobook', label: '星野道夫事務所公式サイト — 写真集', labelEn: 'Michio Hoshino Office — Photobooks' },
+      { url: 'https://www.michio-hoshino.com/profile/exhibition/', label: '星野道夫事務所公式サイト — 写真展', labelEn: 'Michio Hoshino Office — Exhibitions' },
+      { url: 'https://topmuseum.jp/exhibition/4311/', label: '東京都写真美術館 — 星野道夫 悠久の時を旅する', labelEn: 'Tokyo Photographic Art Museum — Michio Hoshino: The Eternal Journey' },
+      { url: 'https://fujifilmsquare.jp/exhibition/260724_01.html', label: 'FUJIFILM SQUARE — 星野道夫 NANOOK', labelEn: 'FUJIFILM SQUARE — Michio Hoshino NANOOK' },
+      { url: 'https://vilda.alaska.edu/digital/collection/cdmg3/id/17/', label: 'Alaska Digital Archives — Coming Home: The Photographs of Michio Hoshino' },
+      { url: 'https://www.hachette.co.uk/titles/michio-hoshino/the-traveling-tree/9781856755924/', label: 'Hachette UK — The Traveling Tree' },
+    ],
     citations: [
       { num: 1, name: '星野道夫事務所公式サイト — プロフィール', url: 'https://www.michio-hoshino.com/profile/' },
       { num: 2, name: '東京都写真美術館 — 星野道夫「悠久の時を旅する」', url: 'https://topmuseum.jp/exhibition/4311/' },
