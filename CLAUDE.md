@@ -102,6 +102,15 @@ textJa・textEn のメインセクション見出しは、ジェネレータの 
   - WARN が出たら、該当エントリの textEn が途中で切れていないか確認し、不足セクションを補完してから push する
   - このチェックで防ぐ問題：textJa には経歴・表現解説・批評と受容があるのに textEn が途中で切れている状態（過去に発生）
 
+### Codex の変更を pull する前（必須）
+- pull する前に `git fetch origin main` してから `git diff HEAD origin/main -- data/photographer-essay-overrides.js` を確認する
+- Codex のコミットで overrides.js が変更されている場合、以下のセクションが消えていないか確認する：
+  - 各エントリの `textJa` / `textEn`
+  - `citations` 配列
+- 消失が確認できた場合は pull せず、Codex 側に連絡して修正を依頼する
+- HTML ページ（`photographers/` / `en/photographers/`）についても同様に確認する：
+  - `git diff HEAD origin/main -- photographers/ en/photographers/` で本文・出典・作品画像セクションが消えていないか確認する
+
 ### Codex の変更を pull したとき
 - `git show <commit>` でどのセクションが変更されたかを確認する
 - Codex はアフィリエイト書籍カード・SEO・デザインを担当する。本文や出典が消えていたら復元する
