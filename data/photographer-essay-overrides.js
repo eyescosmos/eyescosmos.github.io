@@ -9064,9 +9064,557 @@ Weston's reception is formed across several layers: success as a contemporary sa
       { num: 27, name: 'Traditional Fine Arts Organization / CCP — Edward Weston: A Vision Conserved', url: 'https://www.tfaoi.org/aa/3aa/3aa603.htm' },
     ]
   },
+  'kasebier': {
+    leadJa: `ガートルード・ケーゼビアは、絵画を学んだ後に写真へ転じ、肖像写真にピクトリアリズムの光と構成を持ち込んだ写真家。スティーグリッツとともにフォト・セセッションを創設し、《祝せられよ、女たちの中の女よ》をはじめ母性・宗教・個性を主題とした作品で、商業スタジオの技術競争とは異なる写真のあり方を示した。`,
+    leadEn: `Gertrude Käsebier trained as a painter before turning to photography, bringing pictorialist light and composition to portraiture. Co-founder of the Photo-Secession with Stieglitz, she demonstrated through works such as Blessed Art Thou Among Women that photography could pursue artistic and spiritual aims distinct from the technical competition of commercial studios.`,
+    renderedSectionsHtmlJa: `<section class="section">
+<h2>経歴</h2>
+<div class="essay">
+<p>ガートルード・ケーゼビアは1852年、アイオワ州フォートマディソンに生まれた。幼少期を開拓地コロラドで過ごし、ニューヨークへ移った後、1874年にエドゥアルト・ケーゼビアと結婚して三人の子どもを育てた。1888年、36歳のときにプラット・インスティテュートへ入学して絵画を学び、絵画修業を経てから写真へ転じた。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>1897年にニューヨーク5番街にスタジオを開き、富裕層を顧客とする商業肖像写真家として急速に評価を高めた。<a href="/photographers/stieglitz.html">アルフレッド・スティーグリッツ</a>は彼女を「アメリカで最も優れたポートレート写真家」と呼び、その評価は業界内外に広まった。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>1902年、ケーゼビアは<a class="inline-photographer-link" href="/photographers/stieglitz.html">スティーグリッツ</a>、<a href="/photographers/steichen.html">エドワード・スタイケン</a>らとともにフォト・セセッションを共同設立した。機関誌『カメラ・ワーク』への参加を通じて国際的な芸術写真の議論に加わる一方、スタジオの商業活動も継続した。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>スティーグリッツとの関係は1910年代に入って緊張をはらむようになり、フォト・セセッションとの距離が生まれた。バッファロー・ビルのワイルド・ウェスト・ショーに参加するネイティブ・アメリカンの肖像撮影を行うなど、商業的な活動と芸術的な探求を晩年まで並行させた。1934年にニューヨークで没した。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>表現解説</h2>
+<div class="essay">
+<h4>絵画訓練から生まれた光と構成の移植</h4>
+<p>ケーゼビアの写真の特徴は、プラット・インスティテュートで培った絵画の訓練が写真の構成と光の扱いに直接反映されていることにある。ソフトフォーカス・レンズ、逆光、白い光の拡散を用い、被写体の表情よりも画面全体の光の質と空気感を優先した手法は、ピクトリアリズムの中心的な方法論であり、写真が絵画と同等の芸術性を持てることを主張するための実践だった。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>プラチナ・パラジウム印画（プラチナプリント）はケーゼビアが好んだ技法の一つで、豊かな中間調と深い黒、ベルベットのような表面質感を生み出す。銀塩プリントに比べて長期保存に優れ、当時の芸術写真家たちが絵画的な深みを求める際に選んだ素材だった。この選択は視覚的な効果だけでなく、写真を版画や絵画に近い一点性の物として扱う戦略とも結びついていた。<sup class="sup-ref"><a href="#cite-15">*15</a></sup></p>
+<p>ケーゼビアが信じていたのは、肖像写真が「伝記」であるべきだということ——被写体の本質的な気質、魂、人間性を一枚の写真に引き出すべきだという考えだった。当時のニューヨーク商業写真スタジオが技術的正確さの競争に終始していたのに対し、彼女はプリントの質感や光の演出を通じて被写体の内面性を画面に定着しようとした。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<h4>《祝せられよ、女たちの中の女よ》——母性と宗教的図像の交差</h4>
+<p>1899年に制作された<a href="https://www.metmuseum.org/art/collection/search/283116" rel="noopener" target="_blank">《Blessed Art Thou Among Women》</a>は、ケーゼビアの代表作であるとともに、ピクトリアリズム写真の中でも最も議論される作品の一つである。扉口に立つ母親と、その前に小さく立つ娘という構図は、受胎告知の図像学を参照しており、明るい逆光と白いドレスが宗教的な雰囲気を強調している。スミソニアン国立アメリカ歴史博物館の解説によれば、この作品はキリスト教の聖書の句をタイトルに持ち、母と子の関係を日常の中の宗教的場面として提示した。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>この作品は、同時代の<a class="inline-photographer-link" href="/photographers/cameron.html">ジュリア・マーガレット・キャメロン</a>が探求した母性・女性・宗教という主題と共鳴する。ただしケーゼビアは、キャメロンのような英国貴族的な余裕ではなく、家庭の経済的責任を担いながら商業スタジオを経営する実業家として写真に関わっており、その実践的な立場が作品に独自の緊張感を与えている。ブルックリン美術館も《Blessed Art Thou Among Women》を所蔵し、母性というテーマの視覚史において継続的に参照されている。<sup class="sup-ref"><a href="#cite-16">*16</a></sup></p>
+<h4>ネイティブ・アメリカンの肖像——類型化への抵抗と個人性の探求</h4>
+<p>ケーゼビアは富裕層の商業顧客だけでなく、バッファロー・ビルのワイルド・ウェスト・ショーに参加していたネイティブ・アメリカンの人々を積極的に被写体として選んだ。同時代の多くの写真家が先住民族を「民族的類型」として記録したのに対し、ケーゼビアの肖像写真は個人の表情と内面性を捉えようとした。これは、彼女が肖像写真において一貫して追求した「伝記としての写真」という理念の実践でもあった。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>メトロポリタン美術館が所蔵する<a href="https://www.metmuseum.org/art/collection/search/283117" rel="noopener" target="_blank">《The Sketch》</a>などの作品にも、ケーゼビアの肖像における同様の個人性への志向が見られる。ナショナル・ギャラリー・オブ・アートも複数のケーゼビア作品を収蔵し、アメリカ近代写真の重要な参照点として公開している。<sup class="sup-ref"><a href="#cite-18">*18</a></sup></p>
+<h4>『カメラ・ワーク』と制度的評価——フォト・セセッション内での位置</h4>
+<p>ケーゼビアの作品は『カメラ・ワーク』第1号および第10号をはじめ複数号に掲載された。『カメラ・ワーク』への掲載は単なる雑誌掲載ではなく、写真を芸術として制度化するための戦略の一部であり、ケーゼビアはその中核的な担い手だった。第10号に掲載された版はプリンストン大学美術館が所蔵しており、写真の再現印刷の質においても当時最高水準のものだった。<sup class="sup-ref"><a href="#cite-20">*20</a></sup></p>
+<p>フォト・セセッション内での彼女の位置は複雑だった。スティーグリッツが主導権を握り、ストレート写真の方向へ運動をシフトさせるにつれて、ケーゼビアのピクトリアリズム的な姿勢との乖離が生じた。商業的な成功を収めながら、男性が多数を占めるフォト・セセッションの中で自身の芸術的立場を維持したことは、彼女の実践の複合的な性格を示している。ジョージ・イーストマン・ミュージアムも多数のケーゼビア作品を収蔵し、ピクトリアリズム写真のコレクションの中心的な存在として位置づけている。<sup class="sup-ref"><a href="#cite-12">*12</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>批評と受容</h2>
+<div class="essay">
+<p>ケーゼビアは生前、スティーグリッツから「アメリカで最も優れたポートレート写真家」と評され、写真芸術運動の中心的人物として認知されていた。フォト・セセッションが解散し、スティーグリッツがストレート写真へと方向を転換すると、ケーゼビアのピクトリアリズム的な作風は一時的に時代遅れと見なされる局面があった。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>20世紀後半に入り、フェミニスト美術史研究がピクトリアリズム時代の女性写真家を再評価する中で、ケーゼビアの位置づけは大きく変わった。1992年にMoMAが開催した展覧会は彼女の作品を体系的に再検討し、肖像写真の芸術的な可能性を追求した先駆者として再び注目を集めた。このMoMAプレスリリースは当時の評価の変化を記録している。<sup class="sup-ref"><a href="#cite-19">*19</a></sup></p>
+<p>ナショナル・ミュージアム・オブ・ウィメン・イン・ジ・アーツ（NMWA）はケーゼビアをフォト・セセッション創設メンバーとして明確に位置づけ、彼女の仕事が写真史において女性の視点と芸術的な野心の交差点にあったことを示している。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>現在は、アモン・カーター美術館、メトロポリタン美術館、クリーブランド美術館、ゲッティ美術館、ジョージ・イーストマン・ミュージアム、スミソニアン機関など主要機関が作品を収蔵し、ピクトリアリズム写真の達成として継続的に展示・研究されている。デラウェア大学の展示アーカイブもケーゼビアの文脈を詳しく解説しており、ピクトリアリズム研究の参照点として機能している。ケーゼビアの仕事が商業スタジオの実務と写真芸術運動の双方にまたがる位置にあったことは、近年の研究においても重要な論点として繰り返し検討されている。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+</div>
+</section>`,
+    renderedSectionsHtmlEn: `<section class="section">
+<h2>Biography</h2>
+<div class="essay">
+<p>Gertrude Käsebier was born in 1852 in Fort Madison, Iowa. She spent her early years in the frontier territory of Colorado, then moved to New York, married Eduard Käsebier in 1874, and raised three children. In 1888, at thirty-six, she enrolled at the Pratt Institute in Brooklyn to study painting. She turned to photography seriously after that training, opening a studio on Fifth Avenue in 1897.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>By the turn of the century Käsebier had become one of the most commercially successful portrait photographers in New York. <a href="/photographers/stieglitz.html">Alfred Stieglitz</a> called her "the leading portrait photographer in America," an assessment that spread widely through the profession and shaped her public reputation.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>In 1902 Käsebier co-founded the Photo-Secession with <a class="inline-photographer-link" href="/photographers/stieglitz.html">Stieglitz</a> and <a href="/photographers/steichen.html">Edward Steichen</a>. The organization aimed to win institutional recognition for photography as a fine art, and through Camera Work it exerted a lasting influence on photographic history.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>Her studio continued to thrive commercially while she maintained her involvement in the Photo-Secession. Her relationship with Stieglitz grew strained in the 1910s, partly over aesthetic differences as the movement shifted toward straight photography. She also photographed Native Americans connected with Buffalo Bill's Wild West show, pursuing the documentary and artistic dimensions of her practice simultaneously. She continued to work until her death in New York in 1934.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Expression / method</h2>
+<div class="essay">
+<h4>From painting training to photographic light and composition</h4>
+<p>The defining characteristic of Käsebier's photography is the direct transfer of her Pratt Institute painting training into the way she handled composition and light. Her portraits use soft-focus lenses, back-lighting, and diffused white light, giving priority to the overall quality of light and atmosphere in the frame over precise facial detail. This was a central method of Pictorialism — the practical argument that photography could achieve artistic parity with painting.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>Käsebier favored platinum and palladium printing, which produces rich mid-tones, deep blacks, and a velvety surface quality. Compared to silver gelatin, these processes offered superior archival stability and a tonal depth associated with printmaking. The choice was not only visual but strategic — positioning the photograph as a singular, precious object close to painting or etching rather than a mass-reproducible image.<sup class="sup-ref"><a href="#cite-15">*15</a></sup></p>
+<p>Käsebier believed that a portrait should function as "biography" — drawing out the essential temperament, spirit, and humanity of the subject in a single image. Where New York's commercial studios competed on technical accuracy, she used print texture and lighting to fix an interior quality on the picture surface.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<h4>Blessed Art Thou Among Women — motherhood and religious iconography</h4>
+<p>Made in 1899, <a href="https://www.metmuseum.org/art/collection/search/283116" rel="noopener" target="_blank">Blessed Art Thou Among Women</a> is both her signature work and one of the most discussed images in Pictorialist photography. A mother stands in a doorway while her small daughter stands before her. The composition references the iconography of the Annunciation, and bright back-lighting with white dress amplifies the devotional mood. According to the Smithsonian's National Museum of American History, the title quotes a Biblical verse and frames the mother-and-child relationship as a religious scene within everyday life.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>The work resonates with the same subjects — motherhood, femininity, and religious feeling — that <a class="inline-photographer-link" href="/photographers/cameron.html">Julia Margaret Cameron</a> pursued in Britain, though Käsebier came to her practice not from aristocratic leisure but as a working studio owner with family responsibilities. The Metropolitan Museum holds the gelatin silver print, where the soft contours and tonal contrast remain fully visible. The Brooklyn Museum also holds a version, situating the image within the visual history of the theme of motherhood.<sup class="sup-ref"><a href="#cite-16">*16</a></sup></p>
+<h4>Native American portraits and resistance to typological photography</h4>
+<p>Käsebier chose Native American sitters as subjects alongside her wealthy commercial clients. Unlike many contemporaries who photographed indigenous people as "ethnic types" for scientific classification, her portraits sought individual expression and interiority — a direct application of her consistent belief that the portrait should function as biography rather than documentation of a category.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>The Metropolitan Museum's collection includes <a href="https://www.metmuseum.org/art/collection/search/283117" rel="noopener" target="_blank">The Sketch</a>, which shows the same attention to individual presence that characterizes her best portrait work. The National Gallery of Art also holds multiple Käsebier prints as part of its American modern photography holdings.<sup class="sup-ref"><a href="#cite-18">*18</a></sup></p>
+<h4>Camera Work and her position within the Photo-Secession</h4>
+<p>Käsebier's work appeared in Camera Work from its first issue and in several subsequent numbers, including Number 10, a copy held at the Princeton University Art Museum. Inclusion in Camera Work was not merely magazine publication but a strategic move in the institutionalization of photography as art, and Käsebier was one of its central figures.<sup class="sup-ref"><a href="#cite-20">*20</a></sup></p>
+<p>Her position within the Photo-Secession was complex. As Stieglitz steered the movement toward straight photography and his own aesthetic preferences increasingly dominated the selection for Camera Work and 291, Käsebier's Pictorialist approach gradually moved toward the margins of the organization she had helped to found. The George Eastman Museum holds an extensive collection of her work and situates her as a central figure in Pictorialist photography's institutional history.<sup class="sup-ref"><a href="#cite-12">*12</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Criticism and reception</h2>
+<div class="essay">
+<p>During her lifetime Käsebier was recognized by Stieglitz as the leading portrait photographer in America and occupied a central position in the fine-art photography movement. When the Photo-Secession dissolved and Stieglitz shifted toward straight photography, her Pictorialist style came to be associated with a superseded aesthetic moment by some critics.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>From the late twentieth century onward, feminist art-historical scholarship systematically reappraised women photographers of the Pictorialist era and substantially reframed Käsebier's place in history. MoMA's 1992 exhibition examined her work in depth, re-establishing her as a pioneer who pursued the artistic possibilities of portraiture from a position of both commercial necessity and genuine artistic ambition — a combination that distinguished her from many male contemporaries of the period.<sup class="sup-ref"><a href="#cite-19">*19</a></sup></p>
+<p>Today the National Museum of Women in the Arts identifies Käsebier as a founding member of the Photo-Secession and situates her practice at the intersection of women's perspectives and artistic ambition in photographic history.<sup class="sup-ref"><a href="#cite-1">*1</a></sup> Major works are held at the Amon Carter Museum, Metropolitan Museum, Cleveland Museum, Getty Museum, George Eastman Museum, and Smithsonian Institution — collectively positioning her as one of the defining figures of American Pictorialist photography.<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
+</div>
+</section>`,
+    links: [
+      { url: 'https://nmwa.org/blog/nmwa-exhibitions/gertrude-kasebier-a-founding-member-of-photo-secession-movement/', label: 'National Museum of Women in the Arts — Gertrude Käsebier: A Founding Member of the Photo-Secession' },
+      { url: 'https://www.americanhistory.si.edu/explore/stories/gertrude-kasebiers-photographs-about-motherhood', label: 'Smithsonian / NMAH — Gertrude Käsebier\'s Photographs About Motherhood' },
+      { url: 'https://www.cartermuseum.org/collection/gertrude-kasebier-photographer-p198032', label: 'Amon Carter Museum — Gertrude Käsebier Collection' },
+      { url: 'https://www.metmuseum.org/art/collection/search/283116', label: 'Metropolitan Museum of Art — Blessed Art Thou Among Women' },
+      { url: 'https://library.udel.edu/special/exhibits/pictorialism/kasebier/', label: 'University of Delaware — Pictorialism: Gertrude Käsebier' },
+      { url: 'https://artmuseum.princeton.edu/art/collections/objects/59684', label: 'Princeton University Art Museum — Camera Work No. 10' },
+      { url: 'https://www.moma.org/artists/3007', label: 'MoMA — Gertrude Käsebier' },
+      { url: 'https://www.nga.gov/artists/30534-gertrude-kasebier', label: 'National Gallery of Art — Gertrude Käsebier' },
+    ],
+    citations: [
+      { num: 1, url: 'https://nmwa.org/blog/nmwa-exhibitions/gertrude-kasebier-a-founding-member-of-photo-secession-movement/', name: 'National Museum of Women in the Arts — Gertrude Käsebier: A Founding Member of the Photo-Secession' },
+      { num: 2, url: 'https://www.americanhistory.si.edu/explore/stories/gertrude-kasebiers-photographs-about-motherhood', name: 'Smithsonian / NMAH — Gertrude Käsebier\'s Photographs About Motherhood' },
+      { num: 3, url: 'https://www.cartermuseum.org/collection/gertrude-kasebier-photographer-p198032', name: 'Amon Carter Museum — Gertrude Käsebier Collection' },
+      { num: 4, url: 'https://www.metmuseum.org/art/collection/search/283116', name: 'Metropolitan Museum of Art — Blessed Art Thou Among Women' },
+      { num: 5, url: 'https://www.cartermuseum.org/search?search=Gertrude%20Kasebier', name: 'Amon Carter Museum — Gertrude Käsebier search' },
+      { num: 6, url: 'https://www.metmuseum.org/art/collection/search/283117', name: 'Metropolitan Museum of Art — The Sketch' },
+      { num: 7, url: 'https://www.moma.org/calendar/exhibitions/289', name: 'MoMA — Gertrude Käsebier exhibition 1992' },
+      { num: 8, url: 'https://library.udel.edu/special/exhibits/pictorialism/kasebier/', name: 'University of Delaware — Pictorialism: Gertrude Käsebier' },
+      { num: 9, url: 'https://www.getty.edu/art/collection/person/103KNE', name: 'Getty Museum — Gertrude Käsebier' },
+      { num: 10, url: 'https://www.nga.gov/artists/30534-gertrude-kasebier', name: 'National Gallery of Art — Gertrude Käsebier' },
+      { num: 11, url: 'https://artmuseum.princeton.edu/art/collections/objects/59684', name: 'Princeton University Art Museum — Camera Work No. 10' },
+      { num: 12, url: 'https://collections.eastman.org/people/19918/gertrude-kasebier/objects', name: 'George Eastman Museum — Gertrude Käsebier collection' },
+      { num: 13, url: 'https://www.si.edu/object/photographic-history-collection-gertrude-kasebier-collection%3Anmah_1343903', name: 'Smithsonian Institution — Gertrude Käsebier Photographic History Collection' },
+      { num: 14, url: 'https://www.clevelandart.org/art/collection/search?filter-artist=Gertrude%20K%C3%A4sebier', name: 'Cleveland Museum of Art — Gertrude Käsebier' },
+      { num: 15, url: 'https://www.moma.org/artists/3007', name: 'MoMA — Gertrude Käsebier artist page' },
+      { num: 16, url: 'https://www.brooklynmuseum.org/opencollection/objects/2175', name: 'Brooklyn Museum — Blessed Art Thou Among Women' },
+      { num: 17, url: 'https://www.metmuseum.org/art/collection/search/283117', name: 'Metropolitan Museum of Art — The Sketch' },
+      { num: 18, url: 'https://www.nga.gov/artists/30534-gertrude-kasebier', name: 'National Gallery of Art — Gertrude Käsebier' },
+      { num: 19, url: 'https://www.moma.org/docs/press_archives/7015/releases/MOMA_1992_0023_18.pdf', name: 'MoMA press release — Gertrude Käsebier 1992 exhibition' },
+      { num: 20, url: 'https://artmuseum.princeton.edu/collections/objects?search=Gertrude%20K%C3%A4sebier', name: 'Princeton University Art Museum — Gertrude Käsebier' },
+    ],
+    works: [
+      { titleJa: '祝せられよ、女たちの中の女よ', titleEn: 'Blessed Art Thou Among Women', url: 'https://www.brooklynmuseum.org/opencollection/objects/2175' },
+      { titleJa: 'The Sketch', titleEn: 'The Sketch', url: 'https://www.metmuseum.org/art/collection/search/283117' },
+      { titleJa: 'ジョージ・イーストマン・ミュージアム所蔵コレクション', titleEn: 'George Eastman Museum Collection', url: 'https://collections.eastman.org/people/19918/gertrude-kasebier/objects' },
+    ],
+  },
+
+  'demachy': {
+    leadJa: `ロベール・ドマシーは、ゴム重クロム酸塩プロセスをピクトリアリズム写真の核心的な手法として擁護したパリの写真家。裕福なアマチュアとして制作を行いながら、スティーグリッツや『カメラ・ワーク』との交流を通じて国際的な芸術写真運動に参与し、手の介入による写真のイメージ変容が芸術性の根拠であることを論じた。`,
+    leadEn: `Robert Demachy was a Paris-based photographer who championed the gum bichromate process as the defining technique of Pictorialist photography. Working as a wealthy amateur, he contributed to the international art photography movement through his connections with Stieglitz and Camera Work, arguing that manual intervention in the photographic image was the basis of its artistic legitimacy.`,
+    renderedSectionsHtmlJa: `<section class="section">
+<h2>経歴</h2>
+<div class="essay">
+<p>ロベール・ドマシーは1859年、パリの裕福な銀行家の家庭に生まれた。写真を職業とせず、富裕なアマチュアとして生涯にわたって制作を続けた。パリ写真クラブ（Photo-Club de Paris）の創設メンバーおよび中心的な活動家として、フランスの芸術写真運動を国際的なネットワークへと接続する役割を担った。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p><a href="/photographers/stieglitz.html">アルフレッド・スティーグリッツ</a>との交流を通じてフォト・セセッションとの関係を築き、機関誌『カメラ・ワーク』に作品と論文を掲載した。ドマシーは単なる写真制作者にとどまらず、芸術写真の理論的な擁護者としても知られ、生涯を通じて約1000本に及ぶ論考・批評文を執筆したとされる。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>特筆すべきは、1914年に突然写真制作をやめた事実である。その理由は現在も明確にはわかっていない。30年近くにわたって積み重ねた実践とその突然の中断は、写真史の中で一種の謎として残っている。彼は1936年にパリで没した。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>表現解説</h2>
+<div class="essay">
+<h4>ゴム重クロム酸塩と手の介入——操作の論理</h4>
+<p>ドマシーが最も力を注いだのはゴム重クロム酸塩プロセス（gum bichromate）の探求と理論化だった。このプロセスでは、感光性を持つゴム液を塗布した紙に露光し、現像過程で筆や水によって乳剤を部分的に除去・操作することができる。その結果、写真のイメージは写実的な記録から離れ、筆致や質感が残る絵画的な表面へと変容する。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>ドマシーはこの「手の介入」こそが写真を芸術たらしめる根拠だと論じた。当時の写真リアリズム派、とりわけ<a class="inline-photographer-link" href="/photographers/emerson.html">ピーター・ヘンリー・エマーソン</a>は、写真の価値はカメラが対象を客観的に記録することにあると主張し、暗室での操作を不正とみなした。これに対してドマシーは、写真は機械が生み出した像にすぎず、芸術としての価値はそれを変容させる写真家の判断と手技にあると主張した。この論争は、写真が芸術たりえるかという問いをめぐる20世紀写真史の議論の先駆けとして今日も参照される。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>フランス・ピクトリアリズムは、象徴主義や印象主義と隣接する絵画的伝統の中で発展した。ドマシーの実践は、この伝統の中で写真を絵画の言語と接続しようとする意識的な試みであり、単に「写真らしくない」美しさを追求したのではなく、当時の絵画批評の基準を写真に持ち込もうとする戦略的な実践だった。<sup class="sup-ref"><a href="#cite-21">*21</a></sup></p>
+<h4>オイルプリントと写真アクアチント——複数の技法的実験</h4>
+<p>ドマシーはゴム重クロム酸塩以外にも複数の代替プロセスを用いた。オイルプリント（huile）は乾燥した重クロム酸塩乳剤に油性インクを選択的に付着させる手法で、版画的な質感と光の深みを写真に与えることができる。写真アクアチント（photographic aquatint）は銅版腐食技法と写真を組み合わせたもので、エッチングに近い線描的な表現を可能にした。これらの技法選択は、写真のイメージを手工芸的な表面へ変換することへの一貫した志向を示している。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>クリーブランド美術館が所蔵するドマシーの作品は、ゴム重クロム酸塩プロセスによる独特の粒子感と柔らかな明暗が確認でき、写真の表面が絵画的な質感へと変容していることを示す好例である。ゲッティ美術館も複数のドマシー作品を所蔵しており、フランス・ピクトリアリズムの国際的なコレクションとして位置づけられている。<sup class="sup-ref"><a href="#cite-20">*20</a></sup></p>
+<h4>代表作——速度、ブルターニュ、ノルマンディー、舞台裏</h4>
+<p><a href="https://www.metmuseum.org/art/collection/search/289550" rel="noopener" target="_blank">《Struggle》（闘い）</a>はドマシーの代表的な作品の一つで、バレエダンサーの動きをゴム重クロム酸塩プロセスによって曖昧かつ動的なイメージへと変換している。輪郭は意図的にぼかされ、人物の形は絵画的なエネルギーとして現れる。メトロポリタン美術館はこの作品を所蔵し、ピクトリアリズム写真の重要な一例として継続的に参照されている。<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<p>《Speed》（速度）、《In Brittany》、《A Street in Normandy》、《Behind the Scenes》といった作品群は、ドマシーが都市・地方・舞台という多様な主題においても一貫して絵画的な変容を追求したことを示している。ナショナル・ギャラリー（ワシントンDC）が所蔵する<a href="https://www.nga.gov/artworks/137118-pont-des-arts-paris" rel="noopener" target="_blank">《Pont des Arts, Paris》</a>も、パリの橋上の人々を霞んだ光とぼかしの中に溶け込ませた作品で、都市空間の記録ではなく雰囲気と光の詩として写真を位置づける姿勢が読み取れる。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<h4>『カメラ・ワーク』での掲載と国際的な論争への参加</h4>
+<p>ドマシーは『カメラ・ワーク』に作品だけでなく理論的な論文も寄稿し、写真リアリズムと芸術写真のあいだの議論に積極的に参加した。プリンストン大学美術館が所蔵する『カメラ・ワーク』第5号には彼の作品が収録されており、国際的な芸術写真誌としての同誌の役割を示している。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p><a class="inline-photographer-link" href="/photographers/stieglitz.html">スティーグリッツ</a>との交流は、ニューヨークとパリの芸術写真運動が単一の国際的な運動として機能していたことを示す重要な事例の一つである。MoMAもドマシーの作品を所蔵し、ジョージ・イーストマン・ミュージアムも写真アクアチントを含む複数の作品を収蔵している。こうした北米の主要コレクションへの収蔵は、ドマシーの実践が国際的なピクトリアリズム運動の文脈で理解されてきたことを示している。<sup class="sup-ref"><a href="#cite-22">*22</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>批評と受容</h2>
+<div class="essay">
+<p>ドマシーは生前、ピクトリアリズムの「ゴム重クロム酸塩の使徒（apostle of the gum bichromate process）」として知られ、その理論的な主張は当時の芸術写真論争の中心に位置した。1914年の突然の制作停止は彼の評価を複雑にしたが、写真の操作性をめぐる議論は20世紀を通じて繰り返し浮上し、ドマシーの立場はそうした議論の先駆的な事例として参照されてきた。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>ムゼ・ドルセーはドマシーを19世紀末から20世紀初頭のフランス芸術写真の重要人物として収録・展示しており、彼の実践がフランスの写真史において占める位置を示している。パリ市立博物館コレクション（Paris Musées）も作品を公開し、フランスの視覚文化史の中での参照可能性が増している。<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+<p>現代の写真史研究においては、ドマシーのゴム重クロム酸塩の実験は、写真の指標性（現実を忠実に写す性質）と芸術性（写真家の意図と手の介入による変容）のあいだの緊張を際立たせた実践として位置づけられている。写真が絵画と異なる独自の価値を持つというストレート写真の立場が台頭する中で、ドマシーのような操作的なアプローチは後退したが、近年のデジタル操作をめぐる議論においても、彼の主張した問いは形を変えて繰り返されている。ヤール大学美術館やフィラデルフィア美術館など複数の機関がコレクションを持ち、研究者が参照できる資料基盤が整っている。<sup class="sup-ref"><a href="#cite-13">*13</a></sup></p>
+<p>アモン・カーター美術館やSFMOMAもドマシーの作品を収蔵しており、ピクトリアリズムのコレクションとして継続的に参照されている。ガリカ（BnF）のドマシー関連文書、パリ市立博物館コレクション（Paris Musées）の作品記録は、フランスの文化的資産としての位置を示す資料として機能している。現代の美術館コレクションを通じて彼の実践が参照されつづけることは、ピクトリアリズムという写真の「失われた時代」が芸術史において依然として検討すべき問いを持っていることを示している。<sup class="sup-ref"><a href="#cite-12">*12</a></sup></p>
+</div>
+</section>`,
+    renderedSectionsHtmlEn: `<section class="section">
+<h2>Biography</h2>
+<div class="essay">
+<p>Robert Demachy was born in 1859 into a wealthy Parisian banking family. He worked throughout his life as a wealthy amateur rather than a professional photographer. As a leading member of the Photo-Club de Paris, he helped connect France's art photography movement with the broader international network.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>Through his relationship with <a href="/photographers/stieglitz.html">Alfred Stieglitz</a> he built ties with the Photo-Secession and contributed both photographs and theoretical essays to Camera Work, making him a prominent defender of art photography's theoretical foundations as well as a practitioner.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>One notable fact is that Demachy abruptly stopped photographing in 1914. The reason remains unclear. The sudden abandonment of nearly three decades of sustained practice stands as an unexplained episode in photographic history. He died in Paris in 1936.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Expression / method</h2>
+<div class="essay">
+<h4>Gum bichromate and manual intervention — the logic of manipulation</h4>
+<p>Demachy devoted the greatest part of his energy to exploring and theorizing the gum bichromate process. In this process, paper coated with a light-sensitive gum solution is exposed and then the emulsion partially removed or manipulated during development using a brush or water. The photographic image moves away from realistic record and toward a painterly surface that retains brushwork and texture.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>Demachy argued that this manual intervention was precisely what gave photography its artistic legitimacy. Straight photography advocates — particularly <a class="inline-photographer-link" href="/photographers/emerson.html">Peter Henry Emerson</a> — held that photography's value lay in the camera's objective record of the subject and considered darkroom manipulation a form of dishonesty. Demachy countered that the camera produces only a mechanical image, and artistic value lies in the photographer's judgment and handwork that transforms it. This debate is now a foundational reference point in discussions of photography's relationship to truth and manipulation.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>French Pictorialism developed in proximity to Symbolism and Impressionism in painting. Demachy's practice was a conscious attempt to bring photography into contact with these pictorial traditions — not simply to pursue beauty for its own sake but to apply the critical standards of contemporary painting to the photographic image as a strategic argument for the medium's legitimacy.<sup class="sup-ref"><a href="#cite-21">*21</a></sup></p>
+<h4>Oil printing and photographic aquatint — multiple technical experiments</h4>
+<p>Beyond gum bichromate, Demachy worked with several alternative processes. Oil printing attaches oil-based ink selectively to a dried bichromate emulsion, lending prints a printmaking quality and tonal depth. Photographic aquatint (photographic aquatinte) combines etching technique with photography, enabling a linear, engraving-like expression. These technical choices reflect a consistent orientation toward transforming the photographic image into a handcrafted surface.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>The Cleveland Museum of Art's Demachy work displays the distinctive granularity and soft chiaroscuro of the gum bichromate process, demonstrating how the photographic surface could be transformed into a painterly texture. The Getty Museum also holds several Demachy works, situating them within an international Pictorialist collection.<sup class="sup-ref"><a href="#cite-20">*20</a></sup></p>
+<h4>Key works — Speed, In Brittany, A Street in Normandy, Behind the Scenes</h4>
+<p><a href="https://www.metmuseum.org/art/collection/search/289550" rel="noopener" target="_blank">Struggle</a> is among Demachy's best-known works, translating the movement of a ballet dancer through the gum bichromate process into an ambiguous, dynamic image in which contours are deliberately blurred and the human form appears as pictorial energy. The Metropolitan Museum holds the work, where it continues to be cited as an important example of Pictorialist photography.<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<p>Speed, In Brittany, A Street in Normandy, and Behind the Scenes demonstrate that Demachy consistently pursued painterly transformation across urban, regional, and theatrical subjects alike. <a href="https://www.nga.gov/artworks/137118-pont-des-arts-paris" rel="noopener" target="_blank">Pont des Arts, Paris</a> at the National Gallery of Art dissolves figures on a Paris bridge into hazy light and blur, positioning photography not as urban record but as a poem of atmosphere and light.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<h4>Camera Work and participation in international debate</h4>
+<p>Demachy contributed theoretical essays as well as photographs to Camera Work, actively engaging in the debate between straight photography and art photography. Camera Work Number 5, held at the Princeton University Art Museum, includes his work and illustrates the journal's role as an international art photography forum.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>His exchanges with <a class="inline-photographer-link" href="/photographers/stieglitz.html">Stieglitz</a> demonstrate that the New York and Paris art photography movements functioned as a single international network. MoMA holds Demachy's works in its collection, and the George Eastman Museum holds pieces including photographic aquatints. Such holdings in major North American institutions indicate that Demachy's practice has been understood within the context of the international Pictorialist movement.<sup class="sup-ref"><a href="#cite-22">*22</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Criticism and reception</h2>
+<div class="essay">
+<p>In his own time Demachy was known as the "apostle of the gum bichromate process," and his theoretical arguments occupied a central position in the art photography debates of the era. His sudden cessation of photography in 1914 complicated his legacy; questions about photographic manipulation recur throughout the twentieth century, and Demachy's position has been cited as an early precedent in those recurring discussions.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>The Musée d'Orsay includes Demachy as a significant figure in French art photography of the late nineteenth and early twentieth centuries, indicating his established place in France's photographic history. The Paris Musées collection also makes works available online, increasing his accessibility within French visual culture history.<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+<p>In contemporary photographic history scholarship, Demachy's gum bichromate experiments are positioned as a practice that made visible the tension between photography's indexical quality (faithful recording of reality) and its artistic dimension (the photographer's intent and manual transformation). As straight photography rose to dominance, his manipulative approach receded; yet in recent debates around digital manipulation, the questions he argued have returned in new form. The Yale University Art Gallery and the Philadelphia Museum of Art hold works, providing a broad institutional research base for scholars approaching his practice.<sup class="sup-ref"><a href="#cite-13">*13</a></sup></p>
+<p>The Amon Carter Museum of American Art and SFMOMA also hold Demachy's work, where they continue to serve as reference points for the Pictorialist collection. Gallica (BnF) digitized documents and the Paris Musées catalogue records function as source material demonstrating his place within France's cultural heritage. The ongoing presence of his practice in these institutional collections indicates that Pictorialism — photography's so-called lost era — continues to pose questions that art history has not fully resolved.<sup class="sup-ref"><a href="#cite-12">*12</a></sup></p>
+</div>
+</section>`,
+    links: [
+      { url: 'https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/robert-demachy-10724', label: 'Musée d\'Orsay — Robert Demachy' },
+      { url: 'https://www.newpaltz.edu/museum/collections/selections/robert-demachy/', label: 'Samuel Dorsky Museum of Art — Robert Demachy' },
+      { url: 'https://artmuseum.princeton.edu/art/collections/objects/59679', label: 'Princeton University Art Museum — Camera Work No. 5' },
+      { url: 'https://www.clevelandart.org/art/1985.203', label: 'Cleveland Museum of Art — Robert Demachy work' },
+      { url: 'https://www.cartermuseum.org/artists/robert-demachy', label: 'Amon Carter Museum — Robert Demachy' },
+      { url: 'https://www.metmuseum.org/art/collection/search/289550', label: 'Metropolitan Museum of Art — Struggle' },
+      { url: 'https://www.nga.gov/artworks/137118-pont-des-arts-paris', label: 'National Gallery of Art — Pont des Arts, Paris' },
+      { url: 'https://www.getty.edu/art/collection/person/103KFG', label: 'Getty Museum — Robert Demachy' },
+      { url: 'https://www.moma.org/artists/1460', label: 'MoMA — Robert Demachy' },
+    ],
+    citations: [
+      { num: 1, url: 'https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/robert-demachy-10724', name: 'Musée d\'Orsay — Robert Demachy' },
+      { num: 2, url: 'https://www.newpaltz.edu/museum/collections/selections/robert-demachy/', name: 'Samuel Dorsky Museum of Art — Robert Demachy' },
+      { num: 3, url: 'https://artmuseum.princeton.edu/art/collections/objects/59679', name: 'Princeton University Art Museum — Camera Work No. 5' },
+      { num: 4, url: 'https://www.clevelandart.org/art/1985.203', name: 'Cleveland Museum of Art — Robert Demachy work' },
+      { num: 5, url: 'https://www.cartermuseum.org/artists/robert-demachy', name: 'Amon Carter Museum — Robert Demachy' },
+      { num: 6, url: 'https://www.metmuseum.org/art/collection/search/289550', name: 'Metropolitan Museum of Art — Struggle' },
+      { num: 7, url: 'https://www.sfmoma.org/artist/Robert_Demachy/', name: 'SFMOMA — Robert Demachy' },
+      { num: 8, url: 'https://www.nga.gov/artworks/137118-pont-des-arts-paris', name: 'National Gallery of Art — Pont des Arts, Paris' },
+      { num: 9, url: 'https://www.getty.edu/art/collection/person/103KFG', name: 'Getty Museum — Robert Demachy' },
+      { num: 10, url: 'https://www.moma.org/artists/1460', name: 'MoMA — Robert Demachy' },
+      { num: 11, url: 'https://www.parismuseescollections.paris.fr/fr/recherche/type/oeuvre/auteur/Robert%20Demachy', name: 'Paris Musées — Robert Demachy works' },
+      { num: 12, url: 'https://www.sfmoma.org/artist/Robert_Demachy/', name: 'SFMOMA — Robert Demachy' },
+      { num: 13, url: 'https://artgallery.yale.edu/collection/search/Robert%20Demachy', name: 'Yale University Art Gallery — Robert Demachy' },
+      { num: 14, url: 'https://philamuseum.org/search/collections?searchTxt=Robert%20Demachy', name: 'Philadelphia Museum of Art — Robert Demachy' },
+      { num: 15, url: 'https://gallica.bnf.fr/services/engine/search/sru?operation=searchRetrieve&query=%28gallica%20all%20%22Robert%20Demachy%22%29', name: 'Gallica BnF — Robert Demachy' },
+      { num: 16, url: 'https://artmuseum.princeton.edu/collections/objects?search=Robert%20Demachy', name: 'Princeton University Art Museum — Robert Demachy' },
+      { num: 17, url: 'https://www.moma.org/search?query=Robert%20Demachy%20Camera%20Work', name: 'MoMA — Robert Demachy in Camera Work' },
+      { num: 18, url: 'https://www.metmuseum.org/art/collection/search/267853', name: 'Metropolitan Museum of Art — Demachy Panel' },
+      { num: 19, url: 'https://www.nga.gov/artists/30527-robert-demachy', name: 'National Gallery of Art — Robert Demachy artist page' },
+      { num: 20, url: 'https://www.getty.edu/art/collection/person/103KFG', name: 'Getty Museum — Robert Demachy' },
+      { num: 21, url: 'https://collections.eastman.org/people/19467/robert-demachy/objects', name: 'George Eastman Museum — Robert Demachy' },
+      { num: 22, url: 'https://www.moma.org/artists/1460', name: 'MoMA — Robert Demachy artist page' },
+    ],
+    works: [
+      { titleJa: 'Struggle', titleEn: 'Struggle', url: 'https://www.metmuseum.org/art/collection/search/289550' },
+      { titleJa: 'Pont des Arts, Paris', titleEn: 'Pont des Arts, Paris', url: 'https://www.nga.gov/artworks/137118-pont-des-arts-paris' },
+      { titleJa: 'Panel', titleEn: 'Panel', url: 'https://www.metmuseum.org/art/collection/search/267853' },
+    ],
+  },
+
+  'lewis-hine': {
+    leadJa: `ルイス・ハインは、エリス島の移民、炭鉱や製造工場の子ども労働者、エンパイア・ステート・ビルの建設現場という三つの場で写真を撮り、写真を社会変革の証拠として体系的に用いた先駆的な実践家。労働と移民の現場を記録した写真は、立法・報道・教育の場で具体的に機能した。`,
+    leadEn: `Lewis Hine photographed in three landmark sites — Ellis Island immigrants, child workers in mines and factories, and the construction of the Empire State Building — systematically using photography as evidence for social reform. His records of labor and immigration functioned concretely in legislation, journalism, and education.`,
+    renderedSectionsHtmlJa: `<section class="section">
+<h2>経歴</h2>
+<div class="essay">
+<p>ルイス・ウィックス・ハインは1874年、ウィスコンシン州オシュコシュに生まれた。社会学と教育学を学び、1904年からニューヨークのエシカル・カルチャー・スクールで教壇に立ちながら写真を撮り始めた。最初の重要な仕事は1905年から1907年にかけてのエリス島での移民記録で、ヨーロッパから新大陸へ渡る人々の顔と身体を接近した距離で記録した。この仕事は移民を問題として捉えるのではなく、移民のステレオタイプに反証することを意図していたという点で、当時の写真報道と一線を画していた。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>1907年から1908年のピッツバーグ調査への関与を経て、1908年から1918年にかけてはNLCL（全米児童労働委員会）の調査写真家として全米を横断し、炭鉱、繊維工場、缶詰工場、ガラス工場、農場で働く子どもたちを撮影した。工場内への立ち入りは困難を伴い、ハインは機械修理工、聖書のセールスマン、安全検査員などと偽って現場に入ることもあった。撮影にあたってはメモ帳に子どもの身長や推定年齢、労働時間と賃金を記録し、写真と数字のデータを組み合わせた調査資料として機能させた。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>1930年から1931年にかけてはエンパイア・ステート・ビルの建設現場を記録し、高所で作業する鉄鋼労働者の写真を撮った。これらは1932年に写真集『Men at Work』として出版された。ハインは1940年に貧困の中で没した。死後、ICPをはじめとする機関が彼の業績への関心を示し始めた。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>表現解説</h2>
+<div class="essay">
+<h4>記録の方法論——写真とフィールドノートのあいだ</h4>
+<p>ハインの写真実践において特徴的なのは、写真が単独で成立するイメージとしてではなく、調査資料の一部として機能するように設計されていた点である。NCLCの調査では、撮影された子ども一人ひとりについて、身長、推定年齢、働いている部署、労働時間と賃金といったデータが別途記録された。この「写真＋フィールドノート」の組み合わせは、感情への訴えと事実の記録を同時に機能させる戦略だった。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>米国議会図書館が所蔵するNCLCコレクションは5000点を超えるガラスおよびフィルムネガを含み、ハインの体系的な調査記録の規模を示している。これらは単なる写真の集積ではなく、立法の証拠として機能することを意図した資料体だった。国立公文書館もNCLCのハイン写真を教育素材として公開しており、写真を歴史的証拠として用いる際の重要な参照事例として機能している。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<h4>エリス島の移民写真——個人の顔を持つ群衆</h4>
+<p>エリス島でハインが撮った写真は、移民を数値や集合として捉えた同時代の多くの記録写真と異なり、一人ひとりの被写体の表情と存在感を強調した。接近した距離での撮影、被写体の目線と向き合う構図、光の取り扱いはどれも、エリス島を通過する人々が統計的な「移民」ではなく固有の個人であることを示すための選択だった。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>この姿勢は、ハインが社会学的な調査の文脈から写真に入った経緯と深く関わっている。彼は移民を問題として記録するのではなく、アメリカ社会に新しく加わった人々の多様性と個性を示す素材として写真を使った。UMBCのハイン・コレクションもこの時期の撮影を含む重要なアーカイブの一つである。<sup class="sup-ref"><a href="#cite-12">*12</a></sup></p>
+<h4>子ども労働の記録——証拠写真の倫理と<a class="inline-photographer-link" href="/photographers/riis.html">ジェイコブ・リース</a>との比較</h4>
+<p>NCLCの調査写真の目的は、当時の大衆に子ども労働の実態を可視化することだった。ハインの写真は、地方紙、全国誌、展覧会、議会へのロビー活動において使用された。1916年のキーティング＝オーウェン児童労働法の成立は、子ども労働廃止をめぐる長い運動の産物であり、ハインの調査写真はその運動における重要な証拠資料として機能した。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>ハインの実践が写真史において特に重視される理由の一つは、同時代のジェイコブ・リースとの比較にある。リースも貧困と移民をテーマとしたが、彼の写真は衝撃と同情への訴えに依拠する側面が強かった。ハインはより体系的な調査手法、フィールドノートとの組み合わせ、被写体への倫理的な向き合い方という点で、ドキュメンタリー写真の方法論を一段階前進させたと評価されている。ICPはハインを「近代的・ドキュメンタリー写真の先駆者」として位置づけている。<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
+<p>スミソニアン国立アメリカ歴史博物館もNCLC関連写真を所蔵し、社会変革と視覚記録の関係の重要な事例として公開している。米国議会議事堂ビジターセンターもハインのNLCL写真を展示し、アメリカの立法史と写真の交点を示している。<sup class="sup-ref"><a href="#cite-20">*20</a></sup></p>
+<h4>高所の労働者——《Men at Work》と労働の尊厳</h4>
+<p>エンパイア・ステート・ビルの建設現場でハインが撮った写真は、NCLCの告発的な記録写真と性格が異なる。鉄骨の上に立ち、高さ数百メートルで作業する労働者を下から仰いだ構図、または彼らと並んで撮った写真は、危険な労働条件の暴露よりも労働者の技術と存在を讃える性格を持っている。この転換は、搾取の暴露から労働の尊厳の視覚的な記念碑へというハインの実践の変容を示している。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>MoMAが所蔵する《Men at Work》のイメージは、同書が単なる報道写真集ではなく、写真家が視点と構図を通じて意味を作る実践として写真を位置づけていることを示している。メトロポリタン美術館もハインの複数の作品を所蔵しており、ドキュメンタリー写真の美術館コレクションへの統合を示している。<sup class="sup-ref"><a href="#cite-17">*17</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>批評と受容</h2>
+<div class="essay">
+<p>ハインは生前、NCLCの調査写真家として一定の認知を得ていたが、晩年は仕事が減り、1940年に貧困の中で没した。写真史の中での評価は死後に高まり、ドキュメンタリー写真の先駆者として位置づけられるようになった。生前の貧困と死後の高い評価という対比は、写真史における制度的認知の問題を象徴している。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>ICPはハインを「社会的ドキュメンタリー写真の父」に準じる存在として位置づけており、彼の実践が後のFSA（農業安定局）写真プロジェクト、<a class="inline-photographer-link" href="/photographers/evans.html">ウォーカー・エヴァンス</a>、<a class="inline-photographer-link" href="/photographers/lange.html">ドロシア・ラング</a>らに受け継がれる流れを示している。オーストラリア国立美術館もドキュメンタリー写真の先駆者としてハインを論じており、彼の影響が国際的な評価へと広がっている。<sup class="sup-ref"><a href="#cite-16">*16</a></sup></p>
+<p>ゲッティ美術館もハインの作品を所蔵しており、議会図書館のNCLCコレクションとともに、ハインの実践を研究するための主要なアーカイブが整備されている。議会図書館のファインディング・エイドはNCLCコレクションの詳細な資料構成を公開しており、ハインの調査写真の性格をより詳細に把握するための資料として機能している。<sup class="sup-ref"><a href="#cite-15">*15</a></sup></p>
+<p>ハインの死後の再評価は、写真が社会変革の証拠として制度的に用いられた歴史をどのように語るかという問いとともに進んできた。オクラホマ歴史協会などの地域機関も特定州でのハインの調査写真を公開しており、NCLCの全米横断的な調査の地方的な側面を具体的に示している。ナショナル・アーカイブス・カタログはハインの写真を教育・調査の文脈で検索可能にしており、歴史的証拠としての写真のアーカイブ整備が継続している。スミソニアン国立アメリカ歴史博物館のコレクションも、ハインの写真をアメリカの労働・移民・社会変革の視覚的証拠として位置づけており、教育・研究の双方の文脈でアクセスを可能にしている。<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+</div>
+</section>`,
+    renderedSectionsHtmlEn: `<section class="section">
+<h2>Biography</h2>
+<div class="essay">
+<p>Lewis Wickes Hine was born in 1874 in Oshkosh, Wisconsin. He studied sociology and education, and from 1904 began photographing while teaching at the Ethical Culture School in New York. His first major body of work came in 1905–07 at Ellis Island, where he photographed immigrants arriving from Europe at close range, recording faces and bodies in transit to a new world.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>From 1908 to 1918 Hine worked as an investigative photographer for the National Child Labor Committee (NCLC), traveling across the United States to document children working in coal mines, textile mills, canneries, glassworks, and farms. Access to factory interiors was difficult; Hine sometimes gained entry by posing as a machinery repairman, Bible salesman, or safety inspector. During each shoot he recorded children's heights, estimated ages, and working hours in a notebook, combining photographs with numerical data to create survey documents.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>In 1930–31 he photographed the construction of the Empire State Building, capturing steelworkers on beams high above the city. These images were published in 1932 as Men at Work. Hine died in poverty in 1940. In the years following his death, institutions including the ICP began bringing renewed attention to his work.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Expression / method</h2>
+<div class="essay">
+<h4>Documentary method — between photograph and field note</h4>
+<p>The defining characteristic of Hine's practice was that photographs were designed to function not as standalone images but as components of survey documents. For each NCLC investigation, he recorded separately each child's height, estimated age, department, working hours, and wages. This pairing of photograph and field note was a strategy that made emotional appeal and factual record work simultaneously.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>The NCLC collection at the Library of Congress holds more than five thousand glass and film negatives, showing the scale of Hine's systematic survey record — a body of material intended to function as legislative evidence rather than a mere accumulation of images. The National Archives also makes these photographs publicly available as educational materials. The UMBC Hine Collection is another important archive from this period.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<h4>Ellis Island immigration — a crowd with individual faces</h4>
+<p>Unlike many contemporary records that treated immigrants as aggregate numbers, Hine's Ellis Island photographs emphasized the expression and presence of individual subjects. Shooting at close range, meeting sitters' gazes, and handling light in a particular way were all choices made to demonstrate that the people passing through Ellis Island were distinct individuals rather than a statistical category called "immigrants" — a deliberate counter to negative immigrant stereotypes of the period.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>This approach was connected to Hine's entry into photography through sociological survey work. He used the camera not to record immigrants as a problem to be managed but to demonstrate the diversity and individuality of people newly added to American society. The Smithsonian's National Museum of American History holds NCLC-related photographs as part of its collections on this history.<sup class="sup-ref"><a href="#cite-13">*13</a></sup></p>
+<h4>Child labor records — evidence photography and comparison with Riis</h4>
+<p>The NCLC investigative photographs aimed to make the reality of child labor visible to a broad public. Hine's images were used in local newspapers, national magazines, exhibitions, and congressional lobbying. The Keating-Owen Child Labor Act of 1916 was the product of a long reform campaign, and Hine's survey photographs functioned as important evidentiary material within that movement.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>One reason Hine is significant in photographic history is his contrast with <a class="inline-photographer-link" href="/photographers/riis.html">Jacob Riis</a>, who also photographed poverty and immigration in contemporary New York. Where Riis relied substantially on shock and pity, Hine advanced the methodology of documentary photography through more systematic survey methods, ethical relationship to subjects, and the pairing of photographs with numerical data — a distinction the ICP positions as central to his legacy as a precursor to modernist and documentary photography.<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
+<h4>Workers at height — Men at Work and the dignity of labor</h4>
+<p>The photographs Hine made at the Empire State Building construction site have a different character from his NCLC investigative work. Images of workers standing on steel beams hundreds of meters up — composed from below looking up, or taken alongside the workers — celebrate skill and presence rather than exposing dangerous conditions. This shift from exposing exploitation to celebrating labor represents a transformation in Hine's practice between his reform-era and later work.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>The Men at Work images held at MoMA show that the book was not merely a photojournalism collection but positioned photography as a practice in which the photographer creates meaning through viewpoint and composition. The Metropolitan Museum also holds works by Hine, indicating the integration of his documentary photography into major art museum collections.<sup class="sup-ref"><a href="#cite-17">*17</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Criticism and reception</h2>
+<div class="essay">
+<p>Hine received recognition during his lifetime as an NCLC investigative photographer, but work declined in his later years and he died in poverty in 1940. His standing in photographic history grew after his death, and he came to be identified as a pioneer of documentary photography. The contrast between poverty at death and celebrated posthumous legacy is itself a significant fact in the institutional history of photography.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>The ICP positions Hine as a figure whose practice approaches that of the "father of social documentary photography," tracing continuities between his work and the later FSA photographic project, <a class="inline-photographer-link" href="/photographers/evans.html">Walker Evans</a>, and <a class="inline-photographer-link" href="/photographers/lange.html">Dorothea Lange</a>. The National Gallery of Australia has also discussed Hine as a documentary conscience, situating his influence internationally.<sup class="sup-ref"><a href="#cite-16">*16</a></sup></p>
+<p>The Getty Museum holds Hine's works, and the Library of Congress finding aids for the NCLC collection provide detailed access to the archive's structure — making it possible to understand the full character of his investigative documentation. The US Capitol Visitor Center also exhibits Hine's NCLC photographs, placing them within the history of American legislation and the visual record of reform.<sup class="sup-ref"><a href="#cite-15">*15</a></sup></p>
+<p>Regional institutions such as the Oklahoma Historical Society have published Hine's survey photographs for specific states, illustrating the local dimensions of the NCLC's nationwide investigation. The National Archives Catalog makes Hine's photographs searchable in educational and research contexts, reflecting the ongoing institutional maintenance of his images as historical evidence. His posthumous reappraisal has developed alongside broader questions about how photography's role in social change is narrated within institutional history.<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+</div>
+</section>`,
+    links: [
+      { url: 'https://www.icp.org/browse/archive/constituents/lewis-wickes-hine?all/all/all/all/0', label: 'ICP — Lewis Wickes Hine' },
+      { url: 'https://www.loc.gov/collections/national-child-labor-committee/about-this-collection/', label: 'Library of Congress — National Child Labor Committee Collection' },
+      { url: 'https://www.archives.gov/education/lessons/hine-photos/', label: 'National Archives — Lewis Hine Photos' },
+      { url: 'https://www.moma.org/artists/2627', label: 'MoMA — Lewis Hine' },
+      { url: 'https://www.visitthecapitol.gov/artifact/photographs-lewis-hine-national-child-labor-committee', label: 'US Capitol Visitor Center — Photographs by Lewis Hine, National Child Labor Committee' },
+      { url: 'https://www.loc.gov/pictures/search/?q=Lewis%20Hine', label: 'Library of Congress Prints and Photographs — Lewis Hine' },
+    ],
+    citations: [
+      { num: 1, url: 'https://www.icp.org/browse/archive/constituents/lewis-wickes-hine?all/all/all/all/0', name: 'ICP — Lewis Wickes Hine' },
+      { num: 2, url: 'https://www.icp.org/exhibitions/lewis-hine', name: 'ICP — Lewis Hine exhibition' },
+      { num: 3, url: 'https://www.loc.gov/collections/national-child-labor-committee/about-this-collection/', name: 'Library of Congress — National Child Labor Committee Collection' },
+      { num: 4, url: 'https://www.archives.gov/education/lessons/hine-photos/', name: 'National Archives — Lewis Hine Photos' },
+      { num: 5, url: 'https://history.house.gov/Blog/Detail/15032398418', name: 'US House History — Child Labor' },
+      { num: 6, url: 'https://www.okhistory.org/learn/childlabor', name: 'Oklahoma Historical Society — Child Labor' },
+      { num: 7, url: 'https://www.moma.org/collection/works/186049', name: 'MoMA — Men at Work' },
+      { num: 8, url: 'https://nga.gov.au/stories-ideas/the-documentary-conscience/', name: 'National Gallery of Australia — The Documentary Conscience' },
+      { num: 9, url: 'https://www.visitthecapitol.gov/artifact/photographs-lewis-hine-national-child-labor-committee', name: 'US Capitol Visitor Center — Lewis Hine / NCLC' },
+      { num: 10, url: 'https://www.moma.org/artists/2627', name: 'MoMA — Lewis Hine artist page' },
+      { num: 11, url: 'https://catalog.archives.gov/search?q=Lewis%20Hine', name: 'National Archives Catalog — Lewis Hine' },
+      { num: 12, url: 'https://contentdm.ad.umbc.edu/digital/collection/hinecoll', name: 'UMBC — Lewis Hine Collection' },
+      { num: 13, url: 'https://americanhistory.si.edu/collections/search?edan_q=Lewis%20Hine', name: 'Smithsonian NMAH — Lewis Hine' },
+      { num: 14, url: 'https://www.icp.org/browse/archive/objects/national-child-labor-committee-publications', name: 'ICP — National Child Labor Committee publications' },
+      { num: 15, url: 'https://findingaids.loc.gov/db/search/xq/searchMfer02.xq?_id=loc.mss.eadmss.ms012051', name: 'Library of Congress — NCLC finding aid' },
+      { num: 16, url: 'https://nga.gov.au/stories-ideas/the-documentary-conscience/', name: 'National Gallery of Australia — The Documentary Conscience' },
+      { num: 17, url: 'https://www.metmuseum.org/art/collection/search?q=Lewis%20Hine', name: 'Metropolitan Museum of Art — Lewis Hine' },
+      { num: 18, url: 'https://www.getty.edu/art/collection/person/103KJX', name: 'Getty Museum — Lewis Hine' },
+      { num: 19, url: 'https://www.loc.gov/pictures/search/?q=Lewis%20Hine', name: 'Library of Congress Prints and Photographs — Lewis Hine' },
+      { num: 20, url: 'https://www.visitthecapitol.gov/artifact/photographs-lewis-hine-national-child-labor-committee', name: 'US Capitol Visitor Center — Lewis Hine / NCLC' },
+    ],
+    works: [
+      { titleJa: 'Men at Work', titleEn: 'Men at Work', url: 'https://www.moma.org/collection/works/186049' },
+      { titleJa: '全米児童労働委員会（NCLC）写真コレクション', titleEn: 'National Child Labor Committee Collection', url: 'https://www.loc.gov/collections/national-child-labor-committee/about-this-collection/' },
+      { titleJa: 'ICP — ルイス・ハイン', titleEn: 'ICP — Lewis Wickes Hine', url: 'https://www.icp.org/browse/archive/constituents/lewis-wickes-hine?all/all/all/all/0' },
+    ],
+  },
+
+  'paul-geniaux': {
+    leadJa: `ポール・ジェニオーはブルターニュ出身のフランス人写真家で、1900年前後のパリの街頭職人・小商人・行商人を記録した。兄シャルルと「ジェニオー兄弟」として活動し、ブルターニュの伝統的な生活と都市パリの日常を撮り続けた。アジェ、ルイ・ヴェールとともにICPの展覧会で紹介され、パリの街頭記録の重要な担い手として再評価されている。`,
+    leadEn: `Paul Géniaux was a French photographer from Brittany who recorded the street workers, small traders, and itinerant vendors of Paris around 1900. Working with his brother Charles as the "Géniaux brothers," he documented both traditional Breton life and Parisian daily life. Exhibited alongside Atget and Louis Vert at the ICP, he is increasingly recognized as an important recorder of Parisian street culture.`,
+    renderedSectionsHtmlJa: `<section class="section">
+<h2>経歴</h2>
+<div class="essay">
+<p>ポール・ジェニオーは1873年、フランス北西部ブルターニュのレンヌに生まれた。兄のシャルル・ジェニオー（1870–1931）は詩人・小説家・画家として知られており、二人は「ジェニオー兄弟（les frères Géniaux）」として共同で写真・文章・絵を組み合わせた作品を手がけた。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>1898年前後にパリへ移り、パリの街頭を主な撮影対象とした。牛乳売り、靴磨き、傘修理職人、錫職人、古紙回収業者など、都市の周縁で生計を立てる人々の仕事と生活を記録した。同時にブルターニュにも定期的に戻り、亜麻、塩、スレートの収穫など、ブルターニュの伝統的な農業と漁業の光景も撮影した。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>ジェニオーの写真は当時の図版入り新聞・雑誌に掲載され、広い意味での写真ジャーナリズムと芸術記録のあいだに位置する仕事として機能した。1929年（または1930年）にパリで没した。レ・シャン・リーブルの解説によれば、彼の仕事は20世紀を通じて「大きく知られていない（largement méconnus）」状態に置かれていたという。<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>表現解説</h2>
+<div class="essay">
+<h4>パリの街頭職人の記録——消えゆく職業の視覚的アーカイブ</h4>
+<p>ジェニオーの中心的な仕事は、1900年前後のパリに存在した多種多様な街頭職業（petits métiers）の記録である。牛乳売り（marchande de café au lait）、靴磨き、行商人、傘修理職人、廃品回収業者（chiffonnier）、古紙業者といった職種は、工業化と都市化の波の中で消えつつあった。ジェニオーはこれらの職業人を民族誌的な分類よりも詩的・記録的な関心から撮り、急速に変化するパリの都市的現実を記録した。<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<p>ムゼ・ドルセーのコレクションには、ジェニオーの代表的な作品の一つである<a href="https://www.musee-orsay.fr/en/artworks/la-foule-sur-les-boulevards-le-jour-de-la-mi-careme-87620" rel="noopener" target="_blank">《La Foule sur les boulevards, le jour de la mi-carême》</a>が含まれる。ブールバール上の群衆をカーニバルの日に捉えたこの作品は、パリの街頭を記録と詩の両面から扱うジェニオーの姿勢を示している。<sup class="sup-ref"><a href="#cite-17">*17</a></sup></p>
+<p>パリ市立博物館（ミュゼ・カルナヴァレ）のコレクションには診療所の待合室を記録した《Au dispensaire》など複数のジェニオー作品が含まれており、街頭の商売人だけでなく都市の周縁的な空間や施設の日常も視野に入れた記録だったことを示している。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<h4>ジェニオー兄弟の共同制作とブルターニュの記録</h4>
+<p>ポール・ジェニオーの仕事を理解するうえで、兄シャルルとの共同性は重要な要素である。シャルルはブルターニュをテーマにした詩と小説を書き、ポールはその視覚的な記録を写真で担う関係だった。ブルターニュの漁師、農民、伝統衣装、亜麻収穫などの写真は、シャルルの文学的な関心と呼応しつつ、フランス地方文化の記録としての意味も持っている。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>ポール・ジェニオーのスタイルは、ピクトリアリズムの美化よりもリアリスト的な直接的記録に近い。被写体を過度に美化せず、職業的な動作の瞬間や表情を捉えることに重点を置いたアプローチは、芸術写真運動とは距離を置きながら、都市の記録者としての独自の位置を示している。レンヌのミュゼ・ドゥ・ブルターニュ（レ・シャン・リーブル）では、ジェニオー兄弟の写真展が開催されており、ブルターニュ地域の記憶遺産としての写真の位置づけが進んでいる。<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p>
+<h4>アジェ、ルイ・ヴェールとの比較——三つの視線</h4>
+<p>ジェニオーの仕事は、同時代に同じくパリの街頭を記録したウジェーヌ・アジェ、<a href="/photographers/louis-vaire.html">ルイ・ヴェール</a>との関係において理解できる。ICPがかつて開催した展覧会「ジェニオー、アジェ、ヴェール——プティ・メティエとパリジャンの類型（Géniaux, Atget, Vert: Petits métiers et types parisiens）」は、この三者を同じ文脈で並べた。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>アジェが建築、街路、ショーウィンドウに注目し都市の形態を記録したのに対して、ジェニオーは人物と職業に焦点を当てた。ルイ・ヴェールとは共通する主題（街頭職人）を持ちながら、ジェニオーはブルターニュとパリという二つの地理的な場所を往復した点で独自の位置を占める。ロジェ＝ヴィオレ・ギャラリーのアーカイブにもジェニオーの作品が含まれており、フランス視覚文化史の資料として参照できる。<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+<h4>雑誌掲載とベル・エポックのパリ</h4>
+<p>ジェニオーの写真は当時の挿絵入り新聞・雑誌に掲載された。これは彼の仕事がメディア流通を前提とした実用的な写真としても機能していたことを意味する。この位置づけは、アジェの写真が主にアーカイブ用に制作されたこと、ルイ・ヴェールがアマチュア協会の枠で活動したこととは異なり、より広い公衆への接触を前提にしていた。1900年前後のベル・エポックとは、都市が急速に近代化・電化し、街頭の伝統的な職業が消えていく時代であり、ジェニオーはその変化の直前に記録を残した写真家の一人だった。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>BnFカタログおよびGallicaにはジェニオー関連の資料が収録されており、フランス国立図書館としての資料的位置が確認できる。POPデータベース（フランス文化省）にも作品情報が登録されており、フランスの公的文化資産として認定されていることを示している。<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>批評と受容</h2>
+<div class="essay">
+<p>ジェニオーは生前、挿絵雑誌の写真家として知られたが、20世紀を通じて写真史の主要な議論からは外れた位置に置かれることが多かった。ブルターニュ地域の文化記憶として再評価が進んだのは近年のことで、レ・シャン・リーブルでの展覧会が地域史からの再発見に寄与した。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>国際的な評価においては、ICPの展覧会がアジェ、ルイ・ヴェールとの並置によって、ジェニオーを1900年前後のパリ街頭記録写真の重要な担い手として位置づけた。ムゼ・ドルセーのアーカイブにもジェニオーの記録が含まれ、フランス写真史の中での参照可能性が増している。パリ市立博物館コレクション（Paris Musées）も作品をオンラインで公開している。<sup class="sup-ref"><a href="#cite-10">*10</a></sup></p>
+<p>『フォトグラフィカ』誌が掲載したジェニオーをめぐる論文（OpenEditionで公開）は、彼の作品を単なる地方写真家の仕事として矮小化せず、1900年前後のパリにおける都市と地方、記録と詩のあいだに立つ実践として読み解いている。ミュゼ・ド・ブルターニュのプレスキット（PDFで公開）もジェニオーを地域の写真史の重要人物として詳述している。<sup class="sup-ref"><a href="#cite-17">*17</a></sup></p>
+<p>ジェニオーの写真は、同時代の社会改革写真——<a class="inline-photographer-link" href="/photographers/lewis-hine.html">ルイス・ハイン</a>が児童労働を記録し、<a class="inline-photographer-link" href="/photographers/riis.html">ジェイコブ・リース</a>がニューヨークの貧困を告発した写真実践——とは主題の共鳴を持ちながら、それらほど明確に政策変更を目指していなかった。ジェニオーの記録は社会批評的な告発よりも詩的・民族誌的な記録に近く、都市の変化を前に「何があったか」を記録しておく動機に近い場所に位置している。BnFがアクセス可能にしているジェニオー関連文書や、ロジェ＝ヴィオレのアーカイブは、このような文脈での資料的な参照を可能にしている。モルビアン県アーカイブなどのブルターニュ地方資料館も、ジェニオー兄弟の活動を地域史の一部として記録しており、地方レベルでの保存と参照が継続していることを示している。<sup class="sup-ref"><a href="#cite-13">*13</a></sup></p>
+</div>
+</section>`,
+    renderedSectionsHtmlEn: `<section class="section">
+<h2>Biography</h2>
+<div class="essay">
+<p>Paul Géniaux was born in 1873 in Rennes, in the Brittany region of northwestern France. His brother Charles Géniaux (1870–1931) was a poet, novelist, and painter; the two worked together as the "Géniaux brothers," combining photography, writing, and visual art.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>Around 1898 Paul moved to Paris and made the city's streets his main subject. He photographed milk sellers, shoe-shiners, umbrella repairers, tinkers, and ragpickers — people earning their living on the margins of the city. He also returned regularly to Brittany to photograph traditional agricultural and fishing scenes including linen, salt, and slate harvests.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>His photographs appeared in illustrated newspapers and magazines of the period, situating his practice between photojournalism and artistic record in the broadest sense. He died in Paris in 1929 or 1930. Les Champs Libres documentation describes his work as "largely unknown" (largement méconnus) throughout the twentieth century.<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Expression / method</h2>
+<div class="essay">
+<h4>Recording Parisian street trades — a visual archive of disappearing occupations</h4>
+<p>The heart of Géniaux's work is the documentation of the many street occupations (petits métiers) that existed in Paris around 1900. Milk and coffee sellers, shoe-shiners, itinerant vendors, umbrella repairers, ragpickers, and waste-paper dealers were trades disappearing under the pressures of industrialization and urbanization. Géniaux photographed these workers from a poetic and documentary interest rather than ethnographic classification, producing a record of the rapidly modernizing city at the moment of transformation.<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<p>The Musée d'Orsay collection includes <a href="https://www.musee-orsay.fr/en/artworks/la-foule-sur-les-boulevards-le-jour-de-la-mi-careme-87620" rel="noopener" target="_blank">La Foule sur les boulevards, le jour de la mi-carême</a>, capturing crowds on the Boulevards on a carnival day — showing Géniaux's approach to the street as both documentary record and poetic observation.<sup class="sup-ref"><a href="#cite-17">*17</a></sup></p>
+<p>The Musée Carnavalet collection includes several Géniaux works, among them Au dispensaire, a record of the waiting room of a medical dispensary. These images show that his scope extended beyond street traders to include the everyday life of marginal urban spaces and institutions.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<h4>The Géniaux brothers' collaboration and the Brittany record</h4>
+<p>The collaboration with his brother Charles is an important element in understanding Paul Géniaux's work. Charles wrote poetry and novels with Brittany as their subject while Paul provided the visual documentation in photographs. The photographs of Breton fishermen, farmers, traditional dress, and linen harvests respond to Charles's literary interests while also constituting a record of French regional culture.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>Géniaux's style is closer to realist documentation than to Pictorialist beautification. His approach — concentrating on the moment of occupational movement and expression without excessive aestheticization — maintains a distinct position as an urban recorder operating at a distance from the art photography movement. Les Champs Libres has held exhibitions of the Géniaux brothers' work, advancing their positioning as part of Brittany's regional cultural memory.<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p>
+<h4>Comparison with Atget and Louis Vert — three visions</h4>
+<p>Géniaux's work is best understood in relation to Eugène Atget and <a href="/photographers/louis-vaire.html">Louis Vert</a>, who were also recording Parisian streets in the same period. The ICP's exhibition "Géniaux, Atget, Vert: Petits métiers et types parisiens" placed the three photographers in the same context.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>Where Atget focused on architecture, streets, and shop windows — the form of the city — Géniaux concentrated on people and occupations. He shares subjects with Louis Vert (street trades) but holds a distinct position through his movement between Brittany and Paris. The Galerie Roger-Viollet archive also holds Géniaux material, providing another point of access to his work within French visual culture history.<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+<h4>Magazine publication and the Belle Époque context</h4>
+<p>Géniaux's photographs were published in illustrated newspapers and magazines of the time, meaning his work functioned as practical photography intended for media distribution as well as artistic record. This distinguishes him from Atget, who produced photographs primarily for archival use, and from Louis Vert, who operated within the framework of an amateur photographic society. The Belle Époque was a period of rapid urban modernization and electrification in Paris; Géniaux was one of those who recorded the traditional street life that was disappearing in the process.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>The BnF catalogue and Gallica include Géniaux-related materials confirming the institutional record of his work in France's national library system. The POP database (French Ministry of Culture) lists his works as registered cultural assets.<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Criticism and reception</h2>
+<div class="essay">
+<p>During his lifetime Géniaux was known as a photographer for illustrated magazines, but throughout the twentieth century he occupied a position outside the main discussions of photographic history. His reappraisal as part of Brittany's cultural memory is a recent development, with exhibitions at Les Champs Libres contributing to rediscovery from a regional history perspective.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>In terms of international recognition, the ICP exhibition positioning Géniaux alongside Atget and Louis Vert placed him as one figure within the Parisian street photography of around 1900. The Musée d'Orsay archive includes records of Géniaux, and the Paris Musées collection makes works available online, increasing accessibility within French photographic history.<sup class="sup-ref"><a href="#cite-10">*10</a></sup></p>
+<p>An article on Géniaux published in the journal Photographica (available via OpenEdition) reads his work not as the minor output of a regional photographer but as a practice situated between city and region, documentation and poetry, in Paris around 1900. The Musée de Bretagne press kit also provides detailed contextualizing information on Géniaux as a significant figure in regional photographic history.<sup class="sup-ref"><a href="#cite-17">*17</a></sup></p>
+<p>Géniaux's photographs share thematic resonances with the social reform photography practiced at the same time by <a class="inline-photographer-link" href="/photographers/lewis-hine.html">Lewis Hine</a> (child labor documentation) and <a class="inline-photographer-link" href="/photographers/riis.html">Jacob Riis</a> (New York poverty exposés), yet without the explicit aim of policy change. His record is closer to poetic and ethnographic documentation than to social critical accusation — motivated more by preserving what existed in the face of urban transformation. The BnF catalogue and Gallica hold Géniaux-related materials that serve as primary reference points for this contextual reading.<sup class="sup-ref"><a href="#cite-13">*13</a></sup></p>
+</div>
+</section>`,
+    links: [
+      { url: 'https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/paul-geniaux-14400', label: 'Musée d\'Orsay — Paul Géniaux' },
+      { url: 'https://www.leschampslibres.fr/professionnels/les-expositions-itinerantes/expositions-itinerantes-photographiques/paul-et-charles-geniaux', label: 'Les Champs Libres — Paul et Charles Géniaux' },
+      { url: 'https://www.icp.org/browse/archive/objects/exhibition-poster-for-geniaux-atget-vert-petits-m%C3%A9tiers-et-types-parisiens', label: 'ICP — Géniaux, Atget, Vert: Petits métiers et types parisiens' },
+      { url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/au-dispensaire', label: 'Paris Musées / Carnavalet — Au dispensaire' },
+      { url: 'https://journals.openedition.org/photographica/5027', label: 'Photographica — Paul Géniaux article' },
+      { url: 'https://www.musee-orsay.fr/en/artworks/la-foule-sur-les-boulevards-le-jour-de-la-mi-careme-87620', label: 'Musée d\'Orsay — La Foule sur les boulevards' },
+    ],
+    citations: [
+      { num: 1, url: 'https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/paul-geniaux-14400', name: 'Musée d\'Orsay — Paul Géniaux' },
+      { num: 2, url: 'https://www.leschampslibres.fr/professionnels/les-expositions-itinerantes/expositions-itinerantes-photographiques/paul-et-charles-geniaux', name: 'Les Champs Libres — Paul et Charles Géniaux' },
+      { num: 3, url: 'https://loeildelaphotographie.com/en/charles-and-paul-geniaux-photography-a-destiny/', name: 'L\'Œil de la Photographie — Charles and Paul Géniaux' },
+      { num: 4, url: 'https://www.icp.org/browse/archive/objects/exhibition-poster-for-geniaux-atget-vert-petits-m%C3%A9tiers-et-types-parisiens', name: 'ICP — Géniaux, Atget, Vert exhibition poster' },
+      { num: 5, url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/au-dispensaire', name: 'Paris Musées / Carnavalet — Au dispensaire' },
+      { num: 6, url: 'https://journals.openedition.org/photographica/5027', name: 'Photographica — Paul Géniaux' },
+      { num: 7, url: 'https://www.parismuseescollections.paris.fr/fr/recherche/type/oeuvre/auteur/Paul%20G%C3%A9niaux', name: 'Paris Musées — Paul Géniaux works' },
+      { num: 8, url: 'https://www.galerie-roger-viollet.fr/en/photo-a-75001-1233625770', name: 'Galerie Roger-Viollet — Paul Géniaux, Chiffonniers' },
+      { num: 9, url: 'https://www.leschampslibres.fr/media/gallery/pdfs/presse/dp/2019/dp-musee-charles-paul-geniaux-photographie.pdf', name: 'Musée de Bretagne — Paul et Charles Géniaux press kit (PDF)' },
+      { num: 10, url: 'https://www.parismuseescollections.paris.fr/fr/recherche/type/oeuvre/auteur/Paul%20G%C3%A9niaux', name: 'Paris Musées — Paul Géniaux works' },
+      { num: 11, url: 'https://www.roger-viollet.fr/en/search/Paul%20G%C3%A9niaux', name: 'Roger-Viollet — Paul Géniaux' },
+      { num: 12, url: 'https://www.pop.culture.gouv.fr/search/list?mainSearch=%22Paul%20G%C3%A9niaux%22', name: 'POP Ministère de la Culture — Paul Géniaux' },
+      { num: 13, url: 'https://catalogue.bnf.fr/rechercher.do?motRecherche=Paul+G%C3%A9niaux', name: 'BnF Catalogue — Paul Géniaux' },
+      { num: 14, url: 'https://data.bnf.fr/fr/search?term=Paul+G%C3%A9niaux', name: 'BnF Data — Paul Géniaux' },
+      { num: 15, url: 'https://gallica.bnf.fr/services/engine/search/sru?operation=searchRetrieve&query=%28gallica%20all%20%22Paul%20G%C3%A9niaux%22%29', name: 'Gallica BnF — Paul Géniaux' },
+      { num: 16, url: 'https://www.musee-orsay.fr/en/artworks/la-foule-sur-les-boulevards-le-jour-de-la-mi-careme-87620', name: 'Musée d\'Orsay — La Foule sur les boulevards' },
+      { num: 17, url: 'https://journals.openedition.org/photographica/pdf/5027', name: 'OpenEdition Photographica — Paul Géniaux (PDF)' },
+    ],
+    works: [
+      { titleJa: 'La Foule sur les boulevards（ミ=カレームの日のパリ大通り）', titleEn: 'La Foule sur les boulevards', url: 'https://www.musee-orsay.fr/en/artworks/la-foule-sur-les-boulevards-le-jour-de-la-mi-careme-87620' },
+      { titleJa: 'Au dispensaire（診療所にて）', titleEn: 'Au dispensaire', url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/au-dispensaire' },
+      { titleJa: 'ICP — ジェニオー・アジェ・ヴェール展', titleEn: 'ICP — Géniaux, Atget, Vert exhibition', url: 'https://www.icp.org/browse/archive/objects/exhibition-poster-for-geniaux-atget-vert-petits-m%C3%A9tiers-et-types-parisiens' },
+    ],
+  },
+
   'louis-vaire': {
-    leadJa: `ルイ・ヴェールは現時点で人物同定に注意が必要な登録。調査メモではLouis Vertとの誤記・表記揺れの可能性が指摘されており、もし同一人物ならアジェやジェニオーに近いパリの街頭生活・小商いの記録として位置づく。`,
-    leadEn: `Louis Vaire is an identity-audit entry. The research note flags a possible confusion with Louis Vert; if that identification is correct, the work belongs near Atget and Geniaux as a record of Parisian street life and small trades.`
+    leadJa: `このサイトでは「ルイ・ヴェール（louis-vaire）」として登録されているが、資料上は Louis Vert（ルイ・ヴェール、1865–1924）として確認される。パリの街頭職業人を1900年から1906年にかけて記録し、ミュゼ・カルナヴァレに作品が所蔵される。アジェ、ジェニオーとともに20世紀初頭のパリ街頭記録写真を代表する一人として位置づく。`,
+    leadEn: `The site entry "louis-vaire" corresponds to the photographer documented as Louis Vert (1865–1924). He recorded Parisian street trades between approximately 1900 and 1906; his works are held at the Musée Carnavalet. Alongside Atget and Géniaux, he represents a key figure in the documentary photography of Parisian street life at the turn of the twentieth century.`,
+    renderedSectionsHtmlJa: `<section class="section">
+<h2>経歴</h2>
+<div class="essay">
+<p>ルイ・ヴェール（Louis Vert、1865–1924）は、ムゼ・ドルセーおよびICPの記録によって確認されるパリの街頭記録写真家である。このサイトのエントリ名「louis-vaire」は表記の揺れによるもので、実際の写真家はLouis Vertである。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>ヴェールは1865年に生まれ、1924年に没した。フランス写真協会（SFP：Société Française de Photographie）に関わるアマチュア写真家として活動し、1900年から1906年頃にかけてパリの街頭職業人を集中的に撮影した。作品の大部分はミュゼ・カルナヴァレに収蔵されている。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>ルイ・ヴェールの活動を記録した研究書として、アラン・フルキエ著『Louis Vert (1865–1924): photographe de l'animation de la rue à Paris』がある。このモノグラフは彼の仕事を体系的に整理した主要な学術的参照点である。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>ヴェールが集中的に撮影した1900年から1906年という期間は、1900年のパリ万博直後から始まる。パリ万博は近代的な都市技術・交通・建築を世界に示す場であり、その直後の期間にヴェールが伝統的な街頭職業人を記録していたという時間的な文脈は、変化の時代における消えゆく都市生活の記録という意味を与えている。フォトグラフィカ誌のSFP文脈論文も、このアマチュア写真運動と街頭記録の関係を論じている。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>表現解説</h2>
+<div class="essay">
+<h4>パリの「小さな職業」の記録——消えゆく都市的生業の視覚的目録</h4>
+<p>ルイ・ヴェールの写真の主題は、1900年前後のパリで生計を立てていた街頭職業人（petits métiers）だった。錫職人（étameur）、ビラ貼り職人（afficheur）、荷運び人（portefaix）、カフェオレ売り（marchande de café）、くず拾い（chiffonnier）、船頭（bateliers）、柳細工職人（vannier）、栗売り（marchand de marrons）など多様な職種が記録されている。これらの職業の多くは、工業化・近代化のなかで1910年代以降に急速に姿を消した。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>パリ市立博物館コレクション（Paris Musées）はヴェールの複数の作品をオンラインで公開しており、それぞれの職業人を接近した距離で捉えた画面構成は、民族誌的な類型化よりも個人の仕事の動作と表情を記録しようとする姿勢を示している。1900年のパリ万博を前後する時期は、都市が急速に変化する時代であり、ヴェールの写真はその変化の直前に、伝統的な街頭生活を記録した視覚的な目録として機能している。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<h4><a class="inline-photographer-link" href="/photographers/eugene-atget.html">アジェ</a>・<a class="inline-photographer-link" href="/photographers/paul-geniaux.html">ジェニオー</a>との並置——三つの視線と方法論の差異</h4>
+<p>ICPはかつて「ジェニオー、アジェ、ヴェール——プティ・メティエとパリジャンの類型」という展覧会を開催し、ウジェーヌ・アジェ、<a href="/photographers/paul-geniaux.html">ポール・ジェニオー</a>とルイ・ヴェールを同一の文脈に並べた。<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<p>アジェが都市の形態（建築、ショーウィンドウ、街路）を記録したのに対し、ヴェールとジェニオーは人物と職業に焦点を当てた。ヴェールの写真は、ジェニオーのようなブルターニュとの往来がなくパリの街頭に集中しており、主題の範囲においてより徹底したパリの記録者だったとも言える。ヒストワール・パール・リマージュのコレクションもヴェールの花売り写真を参照資料として公開しており、ベル・エポックのパリを伝える視覚的証拠として位置づけている。<sup class="sup-ref"><a href="#cite-19">*19</a></sup></p>
+<h4>SFPとアマチュア写真運動——制度的文脈</h4>
+<p>ルイ・ヴェールはSFP（フランス写真協会）に関わるアマチュア写真家として活動した。19世紀末から20世紀初頭のフランスでは、アマチュア写真運動が盛んで、街頭記録、旅行写真、科学写真など多様なジャンルにアマチュアが参入していた。ヴェールのパリ街頭写真は、この広い意味でのアマチュア文化の中で生まれた実践の一例として位置づけられる。SFPの教育資料『アマチュアの共和国』も、この時代のアマチュア写真運動の文脈を示している。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>ミュゼ・バルベリーニの研究資料も、この時代のパリ街頭写真を「新しい芸術」の文脈で論じており、ヴェールのような記録者が何を意味していたかを理解するための参照点として機能している。ロジェ＝ヴィオレ・ギャラリーのデータベースにはヴェールの行商人写真（1900年頃）が含まれており、国際的な写真アーカイブの中に位置づけられている。<sup class="sup-ref"><a href="#cite-21">*21</a></sup></p>
+<h4>主要作品とカルナヴァレ・コレクション——制度的認知と保存</h4>
+<p>ミュゼ・カルナヴァレのコレクションには、ヴェールの多数の作品が収蔵されている。<a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/etameur" rel="noopener" target="_blank">《Étameur》</a>（錫職人）、《Balayeuse, place de l'Hôtel de Ville》（市庁舎広場の清掃員）、<a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/portefaix-1" rel="noopener" target="_blank">《Portefaix》</a>（荷運び人）、《Marchande de café》（コーヒー売り）、<a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/bateliers" rel="noopener" target="_blank">《Bateliers》</a>（船頭）、《Vannier》（柳細工職人）、<a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/afficheur" rel="noopener" target="_blank">《Afficheur》</a>（ビラ貼り職人）、<a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/chiffonnier-7" rel="noopener" target="_blank">《Chiffonnier》</a>（くず拾い）などがある。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>これらの作品は、ある職業が存在したという事実記録であると同時に、その職業人が日常の動作の中にある姿として捉えられており、記録と詩のあいだに位置する。スクアル・フォトグラフィーのアーカイブには花売りの写真（1900–1906年）が含まれており、別の角度からヴェールの主題の広がりを確認できる。また、ルーヴル堰との関係を示す「ボート貸し人」（loueur de bateaux）の写真もカルナヴァレ・コレクションに含まれる。<sup class="sup-ref"><a href="#cite-15">*15</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>批評と受容</h2>
+<div class="essay">
+<p>ルイ・ヴェールは、アジェほど写真史の主要な語りに組み込まれてこなかったが、アラン・フルキエによる研究書の刊行により、彼の仕事は体系的に整理されるようになった。フルキエのモノグラフはヴェールの活動を包括的に論じた唯一の学術的文献であり、一次的な参照点として機能している。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>ムゼ・ドルセーがヴェールのデータを収録し、ICPが彼をアジェ、ジェニオーとともに展示したことで、1900年前後のパリ街頭記録という文脈においてヴェールの位置が確認されるようになった。ミュゼ・カルナヴァレへの収蔵は、彼の写真がパリの都市記憶遺産として制度的に認められていることを示している。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>近年の写真史研究では、アジェのような孤高の作家像と対比しながら、ヴェールやジェニオーのような複数の実践者による記録の厚みとして20世紀初頭のパリを再構成しようとする方向が見られる。BnFのアジェ関連展示も、同時代の街頭記録者との比較においてこの時代を捉え直す文脈を提供している。<sup class="sup-ref"><a href="#cite-20">*20</a></sup></p>
+<p>MITのデジタルオブジェクト管理システム（MIT DOME）にはヴェールを含む「ジェニオー、アジェ、ヴェール」展のカタログ記録が収録されており、ICPの展覧会がアカデミックなアーカイブに残されている証拠として機能している。また、ルーヴル美術館近くでボートを貸し出す「テュイルリー公園のボート貸し人」（loueur de bateaux aux Tuileries）の写真など、パリの公共空間の記録としての視点も確認できる。Wikimedia Commonsにもミュゼ・カルナヴァレ所蔵のヴェール写真のカテゴリーが設けられており、デジタル環境での資料へのアクセスが広がっている。<sup class="sup-ref"><a href="#cite-22">*22</a></sup></p>
+</div>
+</section>`,
+    renderedSectionsHtmlEn: `<section class="section">
+<h2>Biography</h2>
+<div class="essay">
+<p>Louis Vert (1865–1924) is the photographer documented by the Musée d'Orsay and the ICP under this site's entry name "louis-vaire," which reflects a variant spelling. He worked as an amateur photographer connected with the SFP (Société Française de Photographie) and produced an intensive series of photographs of Parisian street trades between approximately 1900 and 1906. The majority of his works are held at the Musée Carnavalet.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>His documented activity is the subject of Alain Fourquier's monograph Louis Vert (1865–1924): photographe de l'animation de la rue à Paris — the primary scholarly reference for understanding his work systematically.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Expression / method</h2>
+<div class="essay">
+<h4>Recording the "petits métiers" of Paris — a visual catalogue of disappearing trades</h4>
+<p>The subjects of Louis Vert's photographs are the street tradespeople (petits métiers) who made their living in Paris around 1900: tinkers (étameurs), bill posters (afficheurs), porters (portefaix), café au lait sellers (marchandes de café), ragpickers (chiffonniers), boatmen (bateliers), basket weavers (vanniers), and chestnut sellers (marchands de marrons). Many of these occupations disappeared rapidly after the 1910s under industrialization and modernization.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>The Paris Musées collection makes several of Vert's works available online. The close-range framing used for each worker suggests an approach oriented toward recording individual movements and expressions rather than classifying occupational or ethnic types. The period around the 1900 Paris World's Fair was one of rapid urban transformation; Vert's photographs constitute a visual inventory of traditional Parisian street life at the moment of its disappearance.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<h4>Positioned alongside <a class="inline-photographer-link" href="/photographers/eugene-atget.html">Atget</a> and <a class="inline-photographer-link" href="/photographers/paul-geniaux.html">Géniaux</a> — three visions, methodological differences</h4>
+<p>The ICP's exhibition "Géniaux, Atget, Vert: Petits métiers et types parisiens" placed Louis Vert in the same context as Eugène Atget and <a href="/photographers/paul-geniaux.html">Paul Géniaux</a>.<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<p>Where Atget recorded the form of the city — architecture, shop windows, streets — Vert and Géniaux focused on people and occupations. Vert's photographs, without Géniaux's movement between Brittany and Paris, concentrated entirely on the Parisian street, making him in some respects the more focused recorder of Parisian working life. The Histoire par l'image collection includes a flower seller photograph by Vert and contextualizes it within the visual evidence for Belle Époque Paris.<sup class="sup-ref"><a href="#cite-19">*19</a></sup></p>
+<h4>SFP and the amateur photography movement — institutional context</h4>
+<p>Louis Vert worked as an amateur photographer connected with the SFP. In late nineteenth- and early twentieth-century France, the amateur photography movement was extensive, with amateurs active across documentary, travel, and scientific photography. Vert's Paris street work is one example of practice that emerged within this broader amateur culture. The SFP's educational document La République des amateurs provides context for this movement.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>Museum Barberini research materials situate this period's Parisian street photography within the emergence of "a new art," providing a framework for understanding what it meant to document the city's street trades as Vert did. The Galerie Roger-Viollet database holds an itinerant photographer image by Vert (c. 1900), situating his work within an international photographic archive.<sup class="sup-ref"><a href="#cite-21">*21</a></sup></p>
+<h4>Key works and the Carnavalet collection — institutional preservation</h4>
+<p>The Musée Carnavalet holds multiple works by Vert, including <a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/etameur" rel="noopener" target="_blank">Étameur</a>, Balayeuse place de l'Hôtel de Ville, <a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/afficheur" rel="noopener" target="_blank">Afficheur</a>, <a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/portefaix-1" rel="noopener" target="_blank">Portefaix</a>, Marchande de café, <a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/bateliers" rel="noopener" target="_blank">Bateliers</a>, Vannier, and <a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/chiffonnier-7" rel="noopener" target="_blank">Chiffonnier</a>.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>These works function simultaneously as factual records of occupations that existed and as images of individuals within the movements of daily work — positioned between documentation and poetry. The Squal Photographie archive includes a flower seller photograph (1900–1906), and the Paris Musées database records a loueur de bateaux (boat rental) photograph among the Carnavalet holdings.<sup class="sup-ref"><a href="#cite-15">*15</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Criticism and reception</h2>
+<div class="essay">
+<p>Louis Vert has not been incorporated into the main narrative of photographic history to the extent that Atget has, but the publication of Alain Fourquier's monograph established a systematic basis for understanding his work as a distinct and significant body of photography.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>The Musée d'Orsay's documentation of Vert and the ICP's exhibition placing him alongside Atget and Géniaux have confirmed his position within the context of Parisian street photography around 1900. His inclusion in the Musée Carnavalet's collection indicates institutional recognition of his photographs as part of Paris's urban cultural memory.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>Recent photographic history research has increasingly attempted to reconstruct early twentieth-century Paris not through the image of a single solitary genius like Atget but through the depth of record created by multiple practitioners including Vert and Géniaux. The BnF's Atget-related exhibition materials also provide context for comparing this generation of street recorders. Wikimedia Commons holds a category of Vert photographs from the Musée Carnavalet, increasing public accessibility to his archive.<sup class="sup-ref"><a href="#cite-20">*20</a></sup></p>
+</div>
+</section>`,
+    links: [
+      { url: 'https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/louis-vert-23715', label: 'Musée d\'Orsay — Louis Vert' },
+      { url: 'https://www.mollat.com/livres/887998/alain-fourquier-louis-vert-1865-1924-photographe-de-l-animation-de-la-rue-a-paris', label: 'Mollat — Louis Vert (1865–1924): photographe de l\'animation de la rue à Paris' },
+      { url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/etameur', label: 'Paris Musées / Carnavalet — Étameur' },
+      { url: 'https://www.icp.org/browse/archive/objects/exhibition-poster-for-geniaux-atget-vert-petits-m%C3%A9tiers-et-types-parisiens', label: 'ICP — Géniaux, Atget, Vert: Petits métiers et types parisiens' },
+      { url: 'https://commons.wikimedia.org/wiki/Category:Photographs_by_Louis_Vert_in_the_Mus%C3%A9e_Carnavalet', label: 'Wikimedia Commons — Photographs by Louis Vert in the Musée Carnavalet' },
+      { url: 'https://www.squal-photographie.com/photographes-de-rue/louis-vert', label: 'Squal Photographie — Louis Vert' },
+    ],
+    citations: [
+      { num: 1, url: 'https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/louis-vert-23715', name: 'Musée d\'Orsay — Louis Vert' },
+      { num: 2, url: 'https://www.mollat.com/livres/887998/alain-fourquier-louis-vert-1865-1924-photographe-de-l-animation-de-la-rue-a-paris', name: 'Mollat — Louis Vert (1865–1924): photographe de l\'animation de la rue à Paris' },
+      { num: 3, url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/etameur', name: 'Paris Musées / Carnavalet — Étameur' },
+      { num: 4, url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/balayeuse-place-de-l-hotel-de-ville', name: 'Paris Musées / Carnavalet — Balayeuse, place de l\'Hôtel de Ville' },
+      { num: 5, url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/afficheur', name: 'Paris Musées / Carnavalet — Afficheur' },
+      { num: 6, url: 'https://www.icp.org/browse/archive/objects/exhibition-poster-for-geniaux-atget-vert-petits-m%C3%A9tiers-et-types-parisiens', name: 'ICP — Géniaux, Atget, Vert exhibition poster' },
+      { num: 7, url: 'https://journals.openedition.org/photographica/pdf/398', name: 'Photographica — Louis Vert article' },
+      { num: 8, url: 'https://sfp.asso.fr/collection/pdfs/dossierenseignants_republiquedesamateurs.pdf', name: 'SFP — La République des amateurs (dossier pédagogique)' },
+      { num: 9, url: 'https://www.galerie-roger-viollet.fr/en/photo-refuse-collection-1900-1906-photograph-by-louis-37247-630761912', name: 'Galerie Roger-Viollet — Louis Vert, Refuse collection 1900–1906' },
+      { num: 10, url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/chiffonnier-7', name: 'Paris Musées / Carnavalet — Chiffonnier' },
+      { num: 11, url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/portefaix-1', name: 'Paris Musées / Carnavalet — Portefaix' },
+      { num: 12, url: 'https://www.parismuseescollections.paris.fr/de/node/170646', name: 'Paris Musées / Carnavalet — Marchande de café' },
+      { num: 13, url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/bateliers', name: 'Paris Musées / Carnavalet — Bateliers' },
+      { num: 14, url: 'https://www.parismuseescollections.paris.fr/de/node/458013', name: 'Paris Musées / Carnavalet — Vannier' },
+      { num: 15, url: 'https://www.parismuseescollections.paris.fr/en/node/170686', name: 'Paris Musées / Carnavalet — Loueur de bateaux' },
+      { num: 16, url: 'https://www.parismuseescollections.paris.fr/en/node/170647', name: 'Paris Musées / Carnavalet — Marchand de marrons' },
+      { num: 17, url: 'https://www.squal-photographie.com/portfolio-photographes/louis-vert-vendeuse-de-fleurs-paris-1900-1906', name: 'Squal Photographie — Louis Vert, flower seller Paris 1900–1906' },
+      { num: 18, url: 'https://prolog.museum-barberini.de/en/7270/a-new-art', name: 'Museum Barberini — A New Art (Paris street photography context)' },
+      { num: 19, url: 'https://histoire-image.org/oeuvres/fleuriste', name: 'Histoire par l\'image — Fleuriste (Louis Vert)' },
+      { num: 20, url: 'https://expositions.bnf.fr/atget/arret/26.htm', name: 'BnF — Atget exhibition context (street photography)' },
+      { num: 21, url: 'https://www.galerie-roger-viollet.fr/en/photo-itinerant-photographer-paris-about-1900-124094-1875128640', name: 'Galerie Roger-Viollet — Louis Vert, itinerant photographer Paris c.1900' },
+      { num: 22, url: 'https://dome.mit.edu/handle/1721.3/24376', name: 'MIT DOME — Atget, Géniaux, Vert exhibition catalogue record' },
+    ],
+    works: [
+      { titleJa: 'Étameur（鍋修理職人）', titleEn: 'Étameur', url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/etameur' },
+      { titleJa: 'Balayeuse, place de l\'Hôtel de Ville', titleEn: 'Balayeuse, place de l\'Hôtel de Ville', url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/balayeuse-place-de-l-hotel-de-ville' },
+      { titleJa: 'カルナヴァレ美術館 — ルイ・ヴェール所蔵写真', titleEn: 'Musée Carnavalet — Photographs by Louis Vert', url: 'https://commons.wikimedia.org/wiki/Category:Photographs_by_Louis_Vert_in_the_Mus%C3%A9e_Carnavalet' },
+    ],
   },
   'santos-r-vasquez': {
     leadJa: `サントス・R・バスケスは、展覧会参加記録は確認できる一方で作品内容の資料が限られる作家。アーカイブでは、作品評価を断定せず、1970-80年代の展示制度と資料の空白を示すsource-gapの例として扱う。`,
@@ -13040,6 +13588,412 @@ On Tomishige Tokuji, given that individual critical histories and first-person s
       { titleJa: `National Galleries of Scotland — Susan Sontag. Critic（1991）`, titleEn: `National Galleries of Scotland — Susan Sontag. Critic (1991)`, url: `https://www.nationalgalleries.org/art-and-artists/42480` },
     ],
     },
+
+  'jp-屋須弘平': {
+    leadJa: `屋須弘平は幕末に生まれ、グアテマラで「フォトグラフィア・ハポネサ（日本写真）」スタジオを開いた日本人写真家。フアン・ホセ・デ・ヘスス・ヤスの名でカトリックに改宗し、アンティグアの宗教行列や上流市民の肖像を記録した。日本人のラテンアメリカ移住史と写真史が交差する稀有な存在として、近年再評価が進んでいる。`,
+    leadEn: `Kohei Yasu was a Japanese photographer born in the late Edo period who opened a "Fotografía Japonesa" studio in Guatemala. Converting to Catholicism under the name Juan José de Jesús Yas, he documented Antigua's religious processions and the portraits of the urban upper class. As a rare figure at the intersection of Japanese emigration history and photographic history, he has been receiving renewed attention in recent years.`,
+    renderedSectionsHtmlJa: `<section class="section">
+<h2>経歴</h2>
+<div class="essay">
+<p>屋須弘平（やす こうへい）は1846年、現在の岩手県藤沢（当時の陸前国磐井郡）に生まれた。幕末の混乱期に育ち、明治維新後に海外への道を探った。渡航の経路の詳細はすべてが明らかではないが、メキシコを経由してグアテマラへたどり着いたとされる。写真を職業として選んだ動機も記録には残っていないが、当時中南米の主要都市では写真スタジオが有力な独立の生計手段として機能しており、言語的・文化的な障壁が大きい移民にとっても比較的参入しやすい職種だった可能性がある。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>グアテマラ市に到着した後、1878年頃に「フォトグラフィア・ハポネサ（Fotografía Japonesa）」という名のスタジオを開設した。この名称は「日本の写真」を意味し、日本人写真家としての出自を看板に掲げたものだった。カトリックに改宗し、フアン・ホセ・デ・ヘスス・ヤス（Juan José de Jesús Yas）という洗礼名を持つようになった。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>スタジオはアンティグア・グアテマラを拠点とし、屋須は現地の社会に深く根を下ろした。当時のグアテマラの写真業界は、ヨーロッパやアメリカ出身の写真家が多く活動しており、アジア出身の写真家が商業スタジオを経営することはきわめて例外的だった。屋須は言語、宗教、社会的な慣習を含む現地文化への統合を経ながら、40年近くにわたって写真家として活動した。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>屋須はグアテマラに根を下ろし、アンティグア・グアテマラの宗教行列、上流階層の家族や個人の肖像、都市景観などを撮影した。彼のガラスネガのコレクションはノリエガ家が所蔵し、1982年にCIRMA（中米地域研究センター）が取得して保存している。屋須は1917年にグアテマラで没した。彼は日本人のラテンアメリカにおける移住史上、最も早い時期に記録が残る写真家の一人であり、場合によっては中米に定着した最初の日本人写真家とも考えられている。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>表現解説</h2>
+<div class="essay">
+<h4>セマナ・サンタの記録——植民地期カトリック文化の視覚化</h4>
+<p>屋須弘平の写真の主要な主題の一つはアンティグア・グアテマラのカトリック宗教行列、特にセマナ・サンタ（聖週間）の行列である。植民地時代に形成されたグアテマラのカトリック文化の伝統的な側面を記録したこれらの写真は、屋須自身がカトリックに改宗し「フアン・ホセ・デ・ヘスス・ヤス」という洗礼名を持つようになったこととも深く関わっている。屋須の視線は外部からの観察者ではなく、信徒としての内側の視点をも持っていた。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>アンティグア・グアテマラは、かつてのスペイン植民地の中心都市として豊かなカトリック視覚文化を維持しており、セマナ・サンタの行列は現在も世界最大規模のものの一つとして知られる。屋須の写真はこの文化の19世紀末から20世紀初頭の姿を記録した貴重な視覚的証拠として、グアテマラの文化遺産研究において位置づけられている。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<h4>スタジオ肖像写真と「フォトグラフィア・ハポネサ」の意味</h4>
+<p>屋須のもう一つの主要な主題は、グアテマラ市の上流市民や家族の肖像写真である。当時のラテンアメリカの商業スタジオ写真の様式を踏まえつつ、被写体の個性を引き出そうとする姿勢が見られる。東京都立博物館が所蔵する屋須の作品には、スタジオポートレートの正式な構成を保ちながら独自の要素が見られる。<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<p>スタジオ名「フォトグラフィア・ハポネサ（Fotografía Japonesa）」は商業戦略として読み解くことができる。19世紀後半のグアテマラにとって日本は遠い東洋の国であり、その名を冠したスタジオは珍しさと技術への信頼感を同時に訴えかけるものだったと考えられる。日本の技術的先進性のイメージを商業資源として活用した例として、写真史と移民史の双方から注目される。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<h4>ガラスネガの保存——CIRMAと英国図書館EAPプロジェクト</h4>
+<p>屋須が使用したガラスネガは、CIRMAによる保存で現在も確認できる。CIRMAは1982年にノリエガ家からこのコレクションを取得し、以来グアテマラの写真遺産の保存機関として機能している。英国図書館のEAP165プロジェクト（Endangered Archives Programme）は、ラテンアメリカの農村部を含む写真コレクションのデジタル化・保存に取り組んでおり、屋須のコレクションを含む資料が保存対象として参照されている。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>議会図書館（LoC）もグアテマラ関連写真の一部として屋須の作品を収録しており、北米の研究機関からもアクセスできる形で資料が整備されつつある。在グアテマラ日本大使館のCIRMA紹介ページは、日本語でこのコレクションの重要性を説明している。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<h4>日本人移民史と写真史の交差点——中南米における稀有な事例</h4>
+<p>屋須弘平は、日本人の中南米移住の歴史において最も早い時期に記録が残る一人である。19世紀後半の日本人海外移住はハワイ、北米、ブラジルを中心とするものが多く、グアテマラへの移住はきわめて稀だった。屋須はそこで写真スタジオを開き、カトリックへの改宗を含む現地社会への統合を経ながら40年近くにわたって活動した。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>ハイデルベルク大学のチェン・ホンルイによる博士論文はグアテマラの日本写真の歴史を分析しており、屋須弘平の事例を日本人移民と写真史の接続点として詳細に扱っている。ミュゼアム・ドット・オルジャパン（museum.or.jp）は2025年に関連展示を記録し、屋須の事例が日本の博物館界でも認知されるようになっていることを示している。<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>批評と受容</h2>
+<div class="essay">
+<p>屋須弘平は20世紀を通じて写真史の主要な語りからほぼ完全に外れていた。日本の写真史ではその存在が知られず、グアテマラ写真史においても長らく注目されなかった。CIRMAがノリエガ家からコレクションを取得した1982年以降、資料の存在が確認されるようになったが、本格的な研究と展示が始まったのはさらに後のことである。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>在グアテマラ日本大使館はCIRMAとの共同で屋須の写真に関する展示・広報活動を行っており、日本とグアテマラの両国において彼の存在の認知が高まっている。2025年の展示もその継続として開催された。屋須の事例は、日本とラテンアメリカの文化的・写真的な接続を示す稀有な例として、両国の文化交流史の文脈でも注目されている。<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p>
+<p>アートスケープの報告は屋須弘平の写真を日本・グアテマラの交差点に位置する貴重な記録として紹介し、より広い公衆への認知につながっている。東京都立博物館コレクションも屋須の作品を所蔵し、日本の写真史研究においても参照できる形で公開されている。写真史と移民史の双方にまたがる存在として、今後の研究の深化が期待される。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<p>屋須の事例は、写真史の「世界性」を問い直す素材として重要である。19世紀末の写真史は欧米中心の語りで構成されることが多いが、屋須のように非西洋出身の写真家が移住先の社会で独自の実践を築いた事例は、写真の地理的・文化的な広がりを再考させる。ガラスネガという物質的な媒体の保存と制度化の経緯は、写真資料がどのように「歴史」となるかを示す事例としても参照できる。議会図書館のグアテマラ関連コレクションや在グアテマラ日本大使館の広報活動は、こうした再評価の実践的な基盤を提供している。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+</div>
+</section>`,
+    renderedSectionsHtmlEn: `<section class="section">
+<h2>Biography</h2>
+<div class="essay">
+<p>Kohei Yasu was born in 1846 in Fujisawa in the Rikuzen-Iwai region of what is now Iwate Prefecture, northern Japan. Growing up during the turbulent final years of the Edo period, he sought a path overseas after the Meiji Restoration. The exact route of his journey is not fully documented, but he is understood to have arrived in Guatemala by way of Mexico.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>After settling in Guatemala City, he opened a studio named "Fotografía Japonesa" (Japanese Photography) around 1878. The name announced his origins as a Japanese photographer. He converted to Catholicism and took the baptismal name Juan José de Jesús Yas.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>Yasu established himself in Guatemala and photographed Antigua Guatemala's religious processions, portraits of upper-class families and individuals, and urban landscapes. His glass negatives were later held by the Noriega family and acquired for preservation by CIRMA (Centro de Investigaciones Regionales de Mesoamérica) in 1982. He died in Guatemala in 1917. He is among the earliest — and possibly the first — Japanese photographer to settle and work in Central America.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Expression / method</h2>
+<div class="essay">
+<h4>Semana Santa documentation — visualizing colonial-era Catholic culture</h4>
+<p>One of Yasu's main photographic subjects is the Catholic religious processions of Antigua Guatemala, particularly Semana Santa (Holy Week). These photographs document the Catholic traditions formed during the colonial period — a dimension not unrelated to Yasu's own conversion to Catholicism and adoption of the baptismal name Juan José de Jesús Yas. His gaze was not that of an external observer alone; he also held the perspective of someone integrated into the faith he was documenting.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>Antigua Guatemala, as the former center of Spanish colonial administration, maintains a rich Catholic visual culture; its Semana Santa processions are among the largest in the world today. Yasu's photographs constitute valuable visual evidence of this culture in the late nineteenth and early twentieth centuries, and are positioned within Guatemalan cultural heritage research as a primary visual source.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<h4>Studio portraiture and the meaning of "Fotografía Japonesa"</h4>
+<p>Yasu's other major subject is studio portraiture of Guatemala City's upper-class families and individuals. His portraits follow the conventions of Latin American commercial studio photography of the period while showing an approach that seeks to draw out the subject's individual qualities. Works held at the Tokyo Metropolitan Museum retain the formal composition of studio portraiture while introducing an individual dimension in the relationship with the sitter.<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<p>The studio name "Fotografía Japonesa" can be read as a commercial strategy. In late nineteenth-century Guatemala, Japan was a distant Eastern country, and a studio bearing its name likely conveyed both novelty and a confidence in technical skill. His use of Japanese identity as a commercial resource — in a period when Japan's technological modernization was a recognized fact internationally — is a notable aspect of his practice viewed from both photographic and emigration history.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<h4>Glass negatives — CIRMA preservation and the British Library EAP project</h4>
+<p>Yasu's glass negatives survive in CIRMA's preservation collection. CIRMA acquired the collection from the Noriega family in 1982 and has since functioned as a preservation institution for Guatemalan photographic heritage. The British Library's EAP165 project (Endangered Archives Programme) has engaged with the digitization and preservation of photographic collections in rural Guatemala, and Yasu's holdings are referenced among relevant materials.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>The Library of Congress also holds Yasu-related material within its Guatemala photographic holdings, and the Japanese Embassy in Guatemala's CIRMA introduction page explains the collection's significance in Japanese. These institutional holdings make the archive increasingly accessible to researchers in both Japan and internationally.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<h4>Intersection of Japanese emigration and photographic history — a rare Central American case</h4>
+<p>Kohei Yasu is among the earliest Japanese individuals in emigration history for whom photographic records survive in Latin America. Japanese overseas migration in the late nineteenth century centered on Hawaii, North America, and Brazil; migration to Guatemala was extremely rare. Yasu opened a photography studio there and remained active within local society for nearly forty years, having integrated into Guatemalan life through religious conversion and a Spanish name.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>Chen Hongrui's doctoral thesis from Heidelberg University analyzes the history of Japanese photography in Guatemala, treating the Kohei Yasu case in detail as a point of connection between Japanese emigration history and photographic history. The museum.or.jp record of a 2025 exhibition reflects growing recognition of Yasu's case within Japan's museum community.<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Criticism and reception</h2>
+<div class="essay">
+<p>Kohei Yasu was almost entirely absent from the main narratives of photographic history throughout the twentieth century — unknown in Japan's photographic history and long overlooked in Guatemala's as well. After CIRMA acquired the collection from the Noriega family in 1982, the existence of the materials was confirmed, but substantive research and exhibition began still later.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>The Japanese Embassy in Guatemala has collaborated with CIRMA on exhibitions and public communication regarding Yasu's photographs, raising awareness of his work in both Japan and Guatemala. An exhibition held in 2025 continued this ongoing effort. His case is increasingly recognized as a rare point of connection between Japanese and Latin American cultural and photographic history.<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p>
+<p>Coverage in Japanese arts media including an Artscape report has introduced Yasu's photographs as a valuable record at the intersection of Japan and Guatemala. Works held at the Tokyo Metropolitan Museum are publicly accessible, making them available to researchers in Japanese photographic history. As both a photographer and an emigrant who converted to Catholicism and integrated into Central American society, Yasu represents a figure whose significance spans multiple historical contexts.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+</div>
+</section>`,
+    links: [
+      { url: 'https://archiv.ub.uni-heidelberg.de/volltextserver/36910/', label: 'Heidelberg University — Fotografía Japonesa in Guatemala (thesis)' },
+      { url: 'https://eap.bl.uk/project/eap165', label: 'British Library / EAP — Endangered Archives Programme: Guatemala' },
+      { url: 'https://museumcollection.tokyo/en/works/6980540/', label: 'Tokyo Metropolitan Museum Collection — Kohei Yasu portrait' },
+      { url: 'https://artscape.jp/report/review/10122326_1735.html', label: 'Artscape — 屋須弘平 review' },
+      { url: 'https://www.loc.gov/pictures/item/2015646987/', label: 'Library of Congress — Kohei Yasu' },
+    ],
+    citations: [
+      { num: 1, url: 'https://archiv.ub.uni-heidelberg.de/volltextserver/36910/', name: 'Heidelberg University — Fotografía Japonesa in Guatemala (thesis)' },
+      { num: 2, url: 'https://archiv.ub.uni-heidelberg.de/volltextserver/36910/1/Chen-Fotografia_Japonesa_in_Guatemala.pdf', name: 'Heidelberg University — Fotografía Japonesa in Guatemala (PDF)' },
+      { num: 3, url: 'https://www.gt.emb-japan.go.jp/itpr_ja/EF20250206.html', name: '在グアテマラ日本大使館 — 屋須弘平展示 2025' },
+      { num: 4, url: 'https://www.gt.emb-japan.go.jp/itpr_ja/CIRMA.html', name: '在グアテマラ日本大使館 — CIRMA紹介（日本語）' },
+      { num: 5, url: 'https://www.loc.gov/pictures/item/2015646987/', name: 'Library of Congress — Kohei Yasu' },
+      { num: 6, url: 'https://museumcollection.tokyo/en/works/6980540/', name: 'Tokyo Metropolitan Museum Collection — Kohei Yasu portrait' },
+      { num: 7, url: 'https://artscape.jp/report/review/10122326_1735.html', name: 'Artscape — 屋須弘平 review' },
+      { num: 8, url: 'https://eap.bl.uk/project/eap165', name: 'British Library / EAP — Endangered Archives Programme: Guatemala' },
+      { num: 9, url: 'https://www.gt.emb-japan.go.jp/itpr_ja/EF20250206.html', name: '在グアテマラ日本大使館 — 屋須弘平展示 2025' },
+      { num: 10, url: 'https://www.museum.or.jp/event/24113', name: 'Museum.or.jp — 屋須弘平関連展示 2025' },
+      { num: 11, url: 'https://archiv.ub.uni-heidelberg.de/volltextserver/36910/1/Chen-Fotografia_Japonesa_in_Guatemala.pdf', name: 'Heidelberg University — Fotografía Japonesa in Guatemala (PDF full text)' },
+      { num: 12, url: 'https://www.gt.emb-japan.go.jp/itpr_ja/CIRMA.html', name: '在グアテマラ日本大使館 — CIRMA紹介' },
+    ],
+    works: [
+      { titleJa: '東京都写真美術館所蔵 — 屋須弘平肖像作品', titleEn: 'Tokyo Metropolitan Museum of Photography — Kohei Yasu portrait', url: 'https://museumcollection.tokyo/en/works/6980540/' },
+      { titleJa: '米国議会図書館 — 屋須弘平', titleEn: 'Library of Congress — Kohei Yasu', url: 'https://www.loc.gov/pictures/item/2015646987/' },
+    ],
+  },
+
+  'jp-鳥居龍蔵': {
+    leadJa: `鳥居龍蔵は独学で人類学を修め、1895年から台湾・満洲・朝鮮・沖縄・アイヌ・モンゴルなどで現地調査を行った日本の人類学者・考古学者。約2500枚のガラス乾板写真を残し、考古学的遺跡と民族誌的分類を視覚的に記録した。日本の帝国的知識生産の文脈と写真技術の関係を問う際の重要な参照事例として位置づけられる。`,
+    leadEn: `Ryuzo Torii was a self-educated Japanese anthropologist and archaeologist who conducted fieldwork in Taiwan, Manchuria, Korea, Okinawa, the Ainu region, Mongolia, and elsewhere from 1895 onward. He left approximately 2,500 glass plate photographs documenting archaeological sites and ethnographic subjects. His work is an important reference point for examining the relationship between Japanese imperial knowledge production and photographic technology.`,
+    renderedSectionsHtmlJa: `<section class="section">
+<h2>経歴</h2>
+<div class="essay">
+<p>鳥居龍蔵（とりい りゅうぞう）は1870年、徳島に商家の子として生まれた。正規の高等教育を受けていないが、独学で民俗学・考古学・人類学を学び、1890年から東京帝国大学人類学教室（坪井正五郎のラボ、現・東京大学総合研究博物館）に関わるようになった。正式な学位を持たない独学者が帝国大学の研究機関と連携してフィールドワークを行ったこと自体、明治の知的制度の周縁に位置する特異な経歴を示している。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>最初の本格的な野外調査は1895年の遼東半島調査で、日清戦争後の日本の統治地域において考古学的・民族誌的な記録を行った。その後、台湾（1896年以降、複数回）、満洲・朝鮮、沖縄、アイヌ居住地、モンゴル、中国南西部、後年には南アメリカにも調査地を広げた。この移動の軌跡は、明治・大正期の日本帝国の版図拡大と密接に連動しており、調査対象となった地域はいずれも日本の影響圏と重なっている。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>鳥居は調査のたびにカメラを携行し、遺跡、遺物、現地住民の容貌・衣装・建築・農業などをガラス乾板に記録した。現在、約2500枚のガラス乾板が保存されており、そのアーカイブの中心は徳島の鳥居龍蔵記念博物館が担っている。1953年に没した。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>表現解説</h2>
+<div class="essay">
+<h4>民族誌的分類と考古学記録としての写真——科学的道具としての視線</h4>
+<p>鳥居の写真実践は、芸術的な意図ではなく、人類学・考古学の証拠収集という目的から生まれた。ガラス乾板を用いた撮影は、遺跡の平面・立面・遺物配置、現地住民の身体的特徴・衣装・農具・建築・祭祀などを記録するための科学的な道具として機能した。鳥居の調査においてカメラは、スケッチ、発掘記録、身体測定と並ぶ人類学的調査の標準的な道具の一つとして位置づけられていた。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>那覇市歴史博物館デジタルアーカイブは鳥居が沖縄で撮影した写真を公開しており、沖縄の家屋建築、農業の場面、人物の肖像などが含まれる。これらの写真は単なる旅行写真でも芸術的な記録でもなく、人類学的な分類の視線が明確に感じられる資料である。CiNiiに収録された写真目録はこのアーカイブへの学術的なアクセスを可能にしている。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<p>鳥居が用いた写真技法は、当時の人類学調査の標準的な手順に従っており、被写体の正面と側面を対にして撮影する人体計測的なポートレートが含まれていた。こうした構図は、個人の表情や内面を捉えることを目的とした肖像写真とは根本的に異なり、形態的特徴を比較・分類するための資料写真としての性格を示している。この方法論は、19世紀後半のヨーロッパ人類学の視覚的実践から移入されたものであり、鳥居の調査はその日本的な展開の一例として位置づけられる。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<h4>台湾原住民族の記録と帝国的知識生産——2022年シンポジウムの問い</h4>
+<p>鳥居が最も多くの写真を残した地域の一つは台湾で、1896年から数回の調査においてアミ族、パイワン族、ルカイ族など台湾原住民族（現在「原住民族」と呼ばれる諸集団）の容貌、衣装、建築、農業、祭祀を記録した。これらの写真は、日本の台湾統治のための民族誌的基礎データとして機能した側面があり、近年の植民地主義と人類学をめぐる批判的研究の文脈においても参照されている。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>鳥居龍蔵記念博物館と台湾の機関が共同で開催した2022年シンポジウムは、鳥居の調査資料の国際的な再評価と、台湾原住民族の視点からの批判的検討を行った。KAKEN（科学研究費）プロジェクトも示すように、鳥居龍蔵の写真アーカイブは現在も学術研究の対象として、デジタル化・整理・再分析が続いている。<sup class="sup-ref"><a href="#cite-10">*10</a></sup></p>
+<h4>写真と身体測定——人類学的手法と帝国の視線</h4>
+<p>19世紀末から20世紀初頭の人類学では、写真と身体測定（人体計測学）を組み合わせた調査が一般的に行われた。鳥居の調査もこの方法論と結びついており、写真は視覚的な記録と同時に、人種・民族の形態的差異を分類するための比較資料としても機能することが想定されていた。この調査方法は、19世紀の人類学の主流であり、鳥居の実践はその日本版として位置づけられる。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>Taylor &amp; Francisが掲載した論文はこの問いを正面から扱い、鳥居の調査を日本の植民地人類学史の中に位置づけている。鳥居の写真が純粋な記録として読める一方で、帝国日本の知識生産が「他者」を分類・管理するための視覚的言語を形成していたという批判的な問いとは不可分であるというのが、この論文の中心的な主張である。奈良文化財研究所のデータベースにも鳥居関連の論文が収録されており、考古学史の観点からの参照が可能である。<sup class="sup-ref"><a href="#cite-18">*18</a></sup></p>
+<h4>2500枚のガラス乾板——明治・大正期日本における調査写真の制度化</h4>
+<p>鳥居の約2500枚のガラス乾板アーカイブは、明治・大正期の日本において写真が学術調査の標準的なツールとして制度化されていく過程を示す重要な資料である。このアーカイブの中心は徳島の鳥居龍蔵記念博物館が担い、CiNiiの著作目録と写真目録が学術的なアクセスを補完している。東京大学総合研究博物館も関連資料を保存し、考古学・人類学の制度史の観点から参照されている。<sup class="sup-ref"><a href="#cite-17">*17</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>批評と受容</h2>
+<div class="essay">
+<p>鳥居龍蔵は日本の人類学・考古学史では先駆的な野外調査者として評価されてきた。徳島市の鳥居龍蔵記念博物館は彼の業績を顕彰し、アーカイブの保存と公開を担っている。その独学による広大な調査の軌跡は、明治の知的環境の中で「非制度的な学者」が制度の周縁でどのように機能したかの事例としても注目される。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>一方、近年の植民地主義と学術史をめぐる批判的研究の文脈では、鳥居の調査が日本の帝国主義的な拡張と連動した知識生産として成立していたという観点からの検討が増えている。台湾・朝鮮・沖縄での調査は、それぞれの地域の人々を「研究対象」として分類する構造を持っており、現代の研究はその構造を批判的に検討することを求めている。2022年の台湾シンポジウムはこの問いへの国際的な取り組みの一例として位置づけられる。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>CiNiiの著作情報と写真目録、KAKENの研究プロジェクト記録は、このアーカイブへの学術的なアクセスを可能にしている。CiNii収録の伝記文献も鳥居の生涯と学術的業績を参照可能な形で整理しており、日本の人類学史研究の基本的な参照点となっている。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>奈良文化財研究所のデータベースも鳥居関連の考古学史論文を収録しており、考古学と人類学の制度史の観点からの参照が可能である。国立歴史民俗博物館のデータベースは、日本の民俗・考古学分野における関連資料を横断的に検索できる資料として機能している。鳥居の事例は、写真が芸術や商業の記録としてではなく、帝国的な知識収集の手段として機能した側面を具体的に示す事例として、近年の学際的な研究においてより広く参照されるようになっている。<sup class="sup-ref"><a href="#cite-18">*18</a></sup></p>
+<p>写真史における鳥居の位置は、日本の近代的学術制度の「内側」と「外側」の境界にある。帝国大学の制度と連動しながらも正規の資格を持たない調査者として機能した彼の経歴は、明治期の知の生産が必ずしも制度の内部だけで行われたのではないことを示す。ガラス乾板という媒体の物質性と、それが現代までどのように保存・継承されてきたかの経緯もまた、写真アーカイブの制度化という問いを具体的に示す事例として価値を持っている。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+</div>
+</section>`,
+    renderedSectionsHtmlEn: `<section class="section">
+<h2>Biography</h2>
+<div class="essay">
+<p>Ryuzo Torii was born in Tokushima in 1870, the son of a merchant family. Without formal higher education, he taught himself folklore, archaeology, and anthropology and became associated with the Anthropology Laboratory of Tokyo Imperial University (under Shogoro Tsuboi; now the University of Tokyo Museum) from 1890. A self-taught scholar working at the margins of Meiji academic institutions, his career offers an unusual case study in how knowledge production operated in institutional peripheries during this period.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>His first substantial fieldwork was on the Liaodong Peninsula in 1895, recording archaeological and ethnographic materials in territories under Japanese control after the First Sino-Japanese War. He subsequently extended his survey sites to include Taiwan (1896 onward, multiple times), Manchuria and Korea, Okinawa, the Ainu region, Mongolia, southwest China, and later South America. This trajectory closely follows the expanding footprint of the Japanese empire, with virtually every survey region overlapping with Japan's sphere of influence during the Meiji and Taisho periods.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>Torii carried a camera on every survey, photographing archaeological sites, artifacts, and the appearance, dress, buildings, and agriculture of local inhabitants. Approximately 2,500 glass plates survive; the center of the archive is the Torii Ryuzo Memorial Museum in Tokushima. He died in 1953.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Expression / method</h2>
+<div class="essay">
+<h4>Photography as ethnographic classification and archaeological record — the scientific gaze</h4>
+<p>Torii's photographic practice arose from the objective of collecting evidence for anthropology and archaeology rather than from artistic intent. Glass plate photography functioned as a scientific instrument for recording the plan, elevation, and artifact arrangement of archaeological sites alongside the physical characteristics, dress, tools, buildings, and rituals of local populations. Within Torii's surveys, the camera was positioned as a standard investigative tool alongside sketching, excavation records, and physical measurement.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>The Naha City Historical Museum Digital Archive makes available photographs Torii took in Okinawa, including domestic architecture, agricultural scenes, and individual portraits. These images carry a clear anthropological classificatory gaze rather than functioning as travel photographs or artistic records. CiNii's photographic index makes this archive accessible to academic researchers.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<p>Among the photographic techniques Torii employed were frontal and profile portrait pairs used in anthropometric documentation — a procedure standard in the anthropological surveys of the era. This type of framing is fundamentally different from portrait photography aimed at capturing individual expression or inner life; it treats the body as comparative morphological data. This methodology was imported from European anthropological visual practice of the late nineteenth century, and Torii's surveys represent its Japanese deployment.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<h4>Taiwan indigenous peoples and imperial knowledge production — the 2022 symposium</h4>
+<p>One of the regions for which Torii left the greatest number of photographs is Taiwan, where he documented the appearance, dress, architecture, agriculture, and ritual of the Ami, Paiwan, Rukai, and other indigenous peoples across several surveys from 1896 onward. These photographs served in part as ethnographic baseline data for Japanese colonial administration of Taiwan, and they are referenced in recent critical scholarship on colonialism and anthropology.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>A 2022 symposium convened jointly by the Torii Ryuzo Memorial Museum and Taiwanese institutions undertook international reappraisal of his survey materials together with critical examination from the perspective of Taiwan's indigenous peoples. KAKEN research projects indicate that Torii's photographic archive remains an active subject of academic study, with ongoing digitization, cataloguing, and reanalysis.<sup class="sup-ref"><a href="#cite-10">*10</a></sup></p>
+<h4>Photography and anthropometric measurement — the imperial gaze</h4>
+<p>Late nineteenth- and early twentieth-century anthropology commonly combined photography with physical measurement (anthropometry). Torii's surveys were not separate from this methodology; photographs were expected to function simultaneously as visual records and as comparative material for classifying morphological differences between racial and ethnic groups. His practice is a Japanese version of the broader international methodology of anthropological photography in this period.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>An article published in a Taylor &amp; Francis journal addresses this question directly, situating Torii's surveys within the history of Japanese colonial anthropology and arguing that his photographic archive is inseparable from the critical question of how imperial Japan's knowledge production formed a visual language for classifying and managing "others." The Nabunken (National Research Institute for Cultural Properties) database includes related articles accessible from an archaeological history perspective.<sup class="sup-ref"><a href="#cite-18">*18</a></sup></p>
+<h4>2,500 glass plates — institutionalization of survey photography in Meiji and Taisho Japan</h4>
+<p>Torii's glass plate archive of approximately 2,500 images is important evidence of the process by which photography became institutionalized as a standard tool of academic survey work in Meiji and Taisho Japan. The Torii Ryuzo Memorial Museum is the primary custodian; CiNii's author bibliography and photographic indexes provide supplementary access. The University of Tokyo Museum also holds related materials and is referenced from the institutional history of Japanese archaeology and anthropology.<sup class="sup-ref"><a href="#cite-17">*17</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Criticism and reception</h2>
+<div class="essay">
+<p>In Japanese anthropological and archaeological history, Torii has been valued as a pioneering self-taught fieldworker. The Torii Ryuzo Memorial Museum in Tokushima honors his achievements and is responsible for the archive's preservation and public access. His trajectory as a non-institutionally trained scholar who worked at the margins of the academic system is also a notable case study in the intellectual history of Meiji Japan.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>In recent critical scholarship on colonialism and the history of knowledge, there is growing attention to the fact that Torii's surveys constituted a form of knowledge production linked to Japan's imperial expansion. His surveys in Taiwan, Korea, and Okinawa carried a structure that classified the peoples of each region as "subjects of study," and contemporary research requires that this structure be examined critically. The 2022 Taiwan symposium is one example of the international engagement with this question.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>CiNii's cataloguing of related articles, photographic indexes, and biographical documentation makes this archive accessible to academic researchers. The CiNii biographical record and KAKEN research project records systematically organize Torii's scholarly legacy, making him a basic reference point in the history of Japanese anthropology.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>The Nabunken (National Research Institute for Cultural Properties) database includes archaeological history articles referencing Torii, enabling citation from the perspective of archaeological institutional history. The National Museum of Japanese History database serves as a cross-domain resource for related materials in folklore and archaeology. Torii's case is increasingly referenced in interdisciplinary research for the way it concretely illustrates photography functioning as a means of imperial knowledge collection rather than as artistic record or commercial documentation.<sup class="sup-ref"><a href="#cite-18">*18</a></sup></p>
+</div>
+</section>`,
+    links: [
+      { url: 'https://torii-museum.bunmori.tokushima.jp/about.html', label: '鳥居龍蔵記念博物館 — 概要' },
+      { url: 'https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-19K00211/', label: 'KAKEN — 鳥居龍蔵写真資料研究' },
+      { url: 'https://www.rekishi-archive.city.naha.okinawa.jp/digital-museum/7/70684', label: '那覇市歴史博物館 — 鳥居龍蔵沖縄写真' },
+      { url: 'https://ci.nii.ac.jp/ncid/BA71919690', label: 'CiNii — 鳥居龍蔵写真目録' },
+      { url: 'https://www.tandfonline.com/doi/abs/10.1080/10371390412331331546', label: 'Taylor & Francis — Ryuzo Torii and colonial anthropology' },
+      { url: 'https://torii-museum.bunmori.tokushima.jp/taiwan/taiwan_sympo_2022.pdf', label: '鳥居龍蔵記念博物館 — 台湾シンポジウム 2022' },
+    ],
+    citations: [
+      { num: 1, url: 'https://torii-museum.bunmori.tokushima.jp/about.html', name: '鳥居龍蔵記念博物館 — 概要' },
+      { num: 2, url: 'https://torii-museum.bunmori.tokushima.jp/newsletter/06.pdf', name: '鳥居龍蔵記念博物館ニュースレター — 写真資料' },
+      { num: 3, url: 'https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-19K00211/', name: 'KAKEN — 鳥居龍蔵写真資料研究' },
+      { num: 4, url: 'https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-63300013/', name: 'KAKEN — 鳥居龍蔵調査関連研究' },
+      { num: 5, url: 'https://ci.nii.ac.jp/ncid/BA71919690', name: 'CiNii — 鳥居龍蔵写真目録' },
+      { num: 6, url: 'https://ci.nii.ac.jp/author/DA01098226', name: 'CiNii — 鳥居龍蔵著作' },
+      { num: 7, url: 'https://www.rekishi-archive.city.naha.okinawa.jp/digital-museum/7/70684', name: '那覇市歴史博物館 — 鳥居龍蔵沖縄写真' },
+      { num: 8, url: 'https://www.tandfonline.com/doi/abs/10.1080/10371390412331331546', name: 'Taylor & Francis — Ryuzo Torii and colonial anthropology' },
+      { num: 9, url: 'https://ci.nii.ac.jp/ncid/BB21092904', name: 'CiNii — 鳥居龍蔵伝記' },
+      { num: 10, url: 'https://torii-museum.bunmori.tokushima.jp/taiwan/taiwan_sympo_2022.pdf', name: '鳥居龍蔵記念博物館 — 台湾シンポジウム 2022' },
+      { num: 11, url: 'https://ci.nii.ac.jp/author/DA01098226', name: 'CiNii — 鳥居龍蔵著者情報' },
+      { num: 12, url: 'https://torii-museum.bunmori.tokushima.jp/taiwan/taiwan_sympo_2022.pdf', name: '鳥居龍蔵記念博物館 — 台湾シンポジウム 2022 (PDF)' },
+      { num: 13, url: 'https://torii-museum.bunmori.tokushima.jp/newsletter/06.pdf', name: '鳥居龍蔵記念博物館ニュースレター' },
+      { num: 14, url: 'https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-63300013/', name: 'KAKEN — 鳥居龍蔵関連旧研究' },
+      { num: 15, url: 'https://ci.nii.ac.jp/ncid/BA71919690', name: 'CiNii — 鳥居龍蔵写真資料目録' },
+      { num: 16, url: 'https://www.rekishi-archive.city.naha.okinawa.jp/digital-museum/7/70684', name: '那覇市歴史博物館 — 鳥居龍蔵沖縄写真（デジタル）' },
+      { num: 17, url: 'https://ci.nii.ac.jp/ncid/BB21092904', name: 'CiNii — 鳥居龍蔵伝記文献' },
+      { num: 18, url: 'https://sitereports.nabunken.go.jp/article/91013', name: '奈良文化財研究所 — 鳥居龍蔵関連論文' },
+    ],
+    works: [
+      { titleJa: '那覇市歴史博物館 — 鳥居龍蔵沖縄写真（デジタル）', titleEn: 'Naha City Museum of History — Torii Ryuzo Okinawa photographs (digital)', url: 'https://www.rekishi-archive.city.naha.okinawa.jp/digital-museum/7/70684' },
+    ],
+  },
+
+  'jp-鹿島清兵衛': {
+    leadJa: `鹿島清兵衛は「写真大尽」と呼ばれた明治の写真パトロンで、銀座に玄鹿館スタジオを構え、国産乾板製造会社の設立、日本写真会の組織化、X線写真の公開実演などを通じて、明治写真界の制度的基盤を作った人物。富士山写真24枚を明治天皇に献上したことでも知られる。`,
+    leadEn: `Kajima Seibei was a Meiji-era photography patron known as the "photographic magnate." Operating the Genroku-kan studio in Ginza, founding a domestic dry plate manufacturing company, organizing the Japan Photographic Society, and publicly demonstrating X-ray photography, he built the institutional infrastructure of Meiji photography. He is also known for donating twenty-four photographs of Mount Fuji to Emperor Meiji.`,
+    renderedSectionsHtmlJa: `<section class="section">
+<h2>経歴</h2>
+<div class="essay">
+<p>鹿島清兵衛（かじま せいべい）は1866年に生まれ、1924年に没した。横浜・銀座を拠点とする酒問屋・貿易商として富を築いた鹿島家に生まれ、その財力と関心を写真の普及と制度化に注いだ。1890年代の東京写真界を牽引する存在として、「写真大尽（しゃしんだいじん）」という称号を得た。「大尽」は江戸語で豪快に散財する大金持ちを意味し、鹿島が写真の普及に惜しみなく資金を投じた様子を示している。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>銀座に「玄鹿館（げんろくかん）」を開設し、自身のスタジオとして運営するとともに写真家たちの活動拠点としても機能させた。技術的な実験にも積極的で、1890年代の日本で「ほぼ10年間、日本の写真界を支配した（dominated photographic scene in Japan for most of the 1890s）」とされる存在だった。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>富士山を24の角度から撮影し、その写真帖を明治天皇に献上した。X線写真の公開実演、大型プリント（100cm超）の制作、マグネシウム閃光を用いた夜間撮影など、当時の写真技術の最前線を積極的に追った。1924年に没した。写真史研究家・ドブソンのシーボルトハウス講義は鹿島を横浜写真時代の終わりを象徴する存在として論じており、国際的な写真史研究においても参照される事例となっている。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>表現解説</h2>
+<div class="essay">
+<h4>築地乾板製造所——国産写真材料の自立</h4>
+<p>鹿島清兵衛の写真史上の最も重要な貢献の一つは、築地乾板製造所（築地乾板製造会社）の設立推進である。明治期の日本では写真材料のほとんどが輸入に依存しており、写真の普及は輸入材料のコストと供給に左右されていた。鹿島が国産の乾板製造を推進したことで、写真材料の国内調達が可能になり、写真の普及コストが下がる制度的基盤が作られた。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<p>この取り組みは写真を趣味や商業の枠を超えて、日本の産業と技術の一部として定着させようとする意識を示している。フジフイルム・スクエアの解説は鹿島の活動を明治期写真の産業的基盤形成の先駆として位置づけており、「明治後期に国産乾板を普及させた」という評価を与えている。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<h4>日本写真会と大日本写真品評会——組織化による制度構築</h4>
+<p>鹿島は日本写真会（にほんしゃしんかい）を設立し、写真家たちが集い、作品を評価し合い、情報を交換する場を組織した。さらに大日本写真品評会（だいにほんしゃしんひんぴょうかい）を主催し、写真の品質と表現を競う場を作った。これらの活動は、写真が個人の趣味や商業サービスから組織的な文化活動として位置づけられる方向への重要な一歩だった。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>写真蒐集ネットワークを通じて各地の写真家を連携させた鹿島の役割は、制度の担い手としての性格を明確に示している。フジフイルム・スクエアが記録した2006年の特集記事は、鹿島の活動を明治期写真産業の先駆として位置づけており、「明治後期に国産乾板を普及させた」という評価を示している。東京アートビートが記録した2019年の展覧会も、鹿島の活動を再評価する機会の一つとなった。<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<h4>X線写真の公開実演と技術の最前線への傾倒</h4>
+<p>1895年にレントゲンがX線を発見した後、鹿島はいち早くX線写真（レントゲン写真）の公開実演を日本で行った。これは写真技術の最前線を積極的に取り込み広く人々に示そうとする鹿島の姿勢を象徴する出来事である。100cm超の大型プリントの制作も、当時の技術の限界に挑む実験として位置づけられる。幕末・明治写真史のブログ（shashinshi.biz）は鹿島の技術的実験の詳細を記録している。<sup class="sup-ref"><a href="#cite-12">*12</a></sup></p>
+<p>技術の公開実演は、写真が科学と結びついた近代の記録技術であることを社会に示す教育的な効果を持つと同時に、鹿島のパトロン的な立場を強化するものでもあった。フジフイルム・スクエアの2019年活動報告も鹿島清兵衛に関する展示・研究の成果を記録している。<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+<h4>富士山写真二十四景と皇室献上——写真の公的媒体としての制度化</h4>
+<p>鹿島清兵衛が24の角度から撮影した富士山の写真を明治天皇に献上した行為は、写真が単なる娯楽や商業の記録にとどまらず、国家の象徴を視覚的に記録・伝達する公的な媒体としての地位を確立しようとする文脈の中にある。フランス・パリの日本文化会館（メゾン・ド・ラ・カルチャー・デュ・ジャポン・ア・パリ）での展示は、鹿島清兵衛の写真が国際的な文脈でも紹介されている事例の一つである。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<p>シーボルトハウス（オランダ、ライデン）でのドブソン講義は、鹿島を横浜写真時代の終わりを象徴する人物として論じており、明治期写真の制度史という観点から国際的な研究者が参照する事例になっている。この文脈において鹿島は、横浜を中心とした幕末・明治写真の最終段階を担う存在として位置づけられる。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<h4>アマチュアと制度のあいだ——「写真大尽」という称号の意味</h4>
+<p>「写真大尽」という称号は、単なる富裕な趣味人の逸話ではなく、写真が産業・文化・技術として成立するために必要な人的・資本的な結節点を担った存在として鹿島を読むための手がかりである。明治の写真界は、職業写真家、アマチュア、輸入業者、技術者、パトロンが複合的に絡み合う場であり、鹿島はその複合性の中心に位置していた。この観点から、彼は写真を「撮る人」ではなく写真の制度そのものを「作る人」として写真史に記録されている。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>批評と受容</h2>
+<div class="essay">
+<p>鹿島清兵衛は写真史において「作品を作る芸術家写真家」ではなく「写真の制度を作るパトロン」として位置づけられる。この二重性は、彼が写真史の語りの中で収まりにくい理由の一つであり、同時に彼を制度史・文化産業史の観点から評価する際の重要な手がかりでもある。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>フジフイルム・スクエアが継続的に鹿島清兵衛の資料を公開・解説していることは、日本の写真産業の先駆者として彼を位置づける視点が定着していることを示している。シーボルトハウスでのドブソン講義での言及は、明治期写真の制度史という観点から国際的な研究者が参照する事例となっている。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>鹿島の遺産の中で最も継続的に評価されているのは、国産乾板製造の推進と写真会の組織化という制度的な貢献である。象彰館のコレクション（SZK001538）も鹿島関連資料を収蔵しており、彼の活動が写真をインフラを持った文化産業として日本社会に定着させる過程を示す重要な事例として明治写真史研究の基本的な参照点になっている。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>幕末明治の写真師総覧（shashinshi.biz）は鹿島の技術的実験と活動の詳細を記録しており、写真史研究者が個々の事実を検証するための資料として機能している。フジフイルム・スクエアの2019年活動報告も展示と研究の成果を記録し、鹿島清兵衛の評価が現在も継続していることを示している。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>鹿島清兵衛の活動を「写真を作る」という軸から外して「写真の場を作る・支える」という軸で捉え直すとき、明治写真史の語りは、撮影の技術的・芸術的な進歩だけでなく、写真を支えた経済的・社会的・制度的な基盤の形成にも目を向けることになる。こうした視点は、写真史を制度・産業・社会の側面から再検討する近年の傾向と共鳴しており、パトロンや組織者という役割が写真史においても正当に評価される方向で、鹿島の事例がその文脈で参照される機会は今後も増えると考えられる。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+</div>
+</section>`,
+    renderedSectionsHtmlEn: `<section class="section">
+<h2>Biography</h2>
+<div class="essay">
+<p>Kajima Seibei was born in 1866 and died in 1924. He was born into the Kajima family, wealthy sake merchants and traders based in Yokohama and Ginza, and directed the family's resources toward the dissemination and institutionalization of photography.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>He opened the "Genroku-kan" studio in Ginza, operating it both as his personal studio and as a hub for other photographers' activities. By the 1890s he had become a leading figure in the Tokyo photography world, earning the nickname "shashin daijin" (photographic magnate) — an Edo-period term for a person of great wealth who spends lavishly, indicating Kajima's readiness to invest freely in the spread of photography.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>Kajima was also actively engaged in technical experimentation: public demonstrations of X-ray photography, large-format printing, and night photography with magnesium flash. He photographed Mount Fuji from twenty-four angles and donated the resulting album to Emperor Meiji — indicating that photography had come to be recognized as an official documentary medium with significance in relation to the imperial household.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Expression / method</h2>
+<div class="essay">
+<h4>Domestic dry plate manufacturing and technical independence</h4>
+<p>Among Kajima's most significant contributions to photographic history is the founding of the Tsukiji Dry Plate Manufacturing Company. In Meiji Japan, most photographic materials were imported, and the spread of photography depended on the cost and supply of those imports. Kajima's promotion of domestic dry plate production created a foundation on which the cost of photography could be reduced and the practice more widely disseminated.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<p>This initiative reflects an awareness of photography as something to be established as part of Japan's industry and technology rather than confined to hobbyist or commercial contexts. The Fujifilm Square commentary positions Kajima's activities as pioneering in the formation of the industrial infrastructure of Meiji photography.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<h4>Organizing the Japan Photographic Society</h4>
+<p>Kajima founded the Japan Photographic Society (Nihon Shashin-kai) as a venue for photographers to gather, evaluate work, and exchange information, and organized the Grand Japan Photography Exhibition (Dai-Nihon Shashin Hinpyōkai) as a competitive forum for photographic quality and expression. These activities moved photography from individual hobby or commercial service toward organized cultural activity.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>Materials related to Kajima held at the Shozokan illustrate the breadth of his activities and how they have been preserved as institutional memory within Japanese photographic history. The Fujifilm Square 2006 feature article on Kajima positions his activities as pioneering in the industrial infrastructure of Meiji photography, specifically recognizing his role in spreading domestic dry plates in the late Meiji period.<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p>
+<h4>Public demonstration of X-ray photography</h4>
+<p>Shortly after Röntgen's discovery of X-rays in 1895, Kajima staged a public demonstration of X-ray photography (röntgenography) in Japan — one of the earliest such demonstrations in the country. This was characteristic of his approach: to actively incorporate the technical frontier and demonstrate it widely. The public demonstration also served an educational function, showing society that photography was a modern recording technology connected to science.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<h4>Mount Fuji and the imperial donation</h4>
+<p>Kajima's donation of twenty-four Mount Fuji photographs to Emperor Meiji sits within a context of establishing photography as a medium capable of visually recording and transmitting the symbols of the nation rather than being limited to entertainment or commercial record. An exhibition at the Maison de la Culture du Japon à Paris is one example of Kajima's photographs being introduced in an international context.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Criticism and reception</h2>
+<div class="essay">
+<p>In photographic history, Kajima Seibei is positioned not as "an artistic photographer who makes works" but as "a patron who builds the institutions of photography." This duality is one reason he sits awkwardly in standard photographic narratives.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>Fujifilm Square's ongoing publication and commentary on Kajima materials since 2006 indicates that the view of him as a pioneer of Japan's photography industry has become established. He has also been referenced in a Dobson lecture at the SieboldHuis in Leiden, making him a case study cited by international researchers approaching the institutional history of Meiji photography.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>The most consistently evaluated aspect of Kajima's legacy is his institutional contribution: the promotion of domestic dry plate manufacturing and the organization of photographic societies. His activities are a basic reference point in Meiji photographic history research as a key case study in the process by which photography became established as a cultural industry with an infrastructure in Japanese society.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>The shashinshi.biz database of late Edo and Meiji photographers records the details of Kajima's technical experiments and activities, serving as a verification resource for photographic history researchers. The Fujifilm Square 2019 activity report also documents the results of the exhibition and related research, indicating that scholarly attention to Kajima remains active. His nickname "shashin daijin" — the photographic magnate — remains a key entry point into understanding Meiji photography's transition from a technology of individual craft into an organized cultural industry.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+</div>
+</section>`,
+    links: [
+      { url: 'https://fujifilmsquare.jp/en/detail/19060104.html', label: 'Fujifilm Square — Kajima Seibei (EN)' },
+      { url: 'https://fujifilmsquare.jp/detail/19060104.html', label: 'フジフイルム・スクエア — 鹿島清兵衛（日本語）' },
+      { url: 'https://www.sieboldhuis.org/en/activities/lz-20230923dobson/', label: 'SieboldHuis — Dobson Lecture (Meiji photography)' },
+      { url: 'https://collection.shozokan.nich.go.jp/en/object/SZK001538', label: 'Shozokan — Kajima Seibei material' },
+      { url: 'https://www.mcjp.fr/ja/agenda/yokohama-shashin-iv-kajima-seibei', label: 'Maison de la Culture du Japon à Paris — 鹿島清兵衛' },
+      { url: 'https://fujifilmsquare.jp/profile/seibei_kajima.html', label: 'フジフイルム・スクエア — 鹿島清兵衛プロフィール' },
+    ],
+    citations: [
+      { num: 1, url: 'https://fujifilmsquare.jp/en/detail/19060104.html', name: 'Fujifilm Square — Kajima Seibei (EN)' },
+      { num: 2, url: 'https://fujifilmsquare.jp/detail/19060104.html', name: 'フジフイルム・スクエア — 鹿島清兵衛' },
+      { num: 3, url: 'https://www.sieboldhuis.org/en/activities/lz-20230923dobson/', name: 'SieboldHuis — Dobson Lecture (Meiji photography)' },
+      { num: 4, url: 'https://collection.shozokan.nich.go.jp/en/object/SZK001538', name: 'Shozokan — Kajima Seibei material' },
+      { num: 5, url: 'https://www.mcjp.fr/ja/agenda/yokohama-shashin-iv-kajima-seibei', name: 'Maison de la Culture du Japon à Paris — 鹿島清兵衛' },
+      { num: 6, url: 'https://www.tokyoartbeat.com/events/-/2019%2F1F38', name: 'Tokyo Art Beat — 鹿島清兵衛展' },
+      { num: 7, url: 'https://fujifilmsquare.jp/profile/seibei_kajima.html', name: 'フジフイルム・スクエア — 鹿島清兵衛プロフィール' },
+      { num: 8, url: 'https://shashinshi.biz/archives/11947', name: '幕末明治の写真 — 鹿島清兵衛' },
+    ],
+    works: [
+      { titleJa: '尚蔵館 — 鹿島清兵衛資料', titleEn: 'Shozokan — Kajima Seibei material', url: 'https://collection.shozokan.nich.go.jp/en/object/SZK001538' },
+      { titleJa: 'フジフイルム・スクエア — 鹿島清兵衛', titleEn: 'Fujifilm Square — Kajima Seibei', url: 'https://fujifilmsquare.jp/en/detail/19060104.html' },
+    ],
+  },
+
+  'jp-亀井茲明': {
+    leadJa: `亀井茲明は公家・伯爵の身分から写真に関心を持ち、日清戦争（1894–95）の記録写真チームを組織した明治の写真パトロン。300枚を超える従軍写真を『明治廿七八年戦役写真帖』にまとめ、明治天皇に献上した。日本における組織的な戦争写真の制度化を先導した人物として、写真史上に位置づけられる。`,
+    leadEn: `Koreaki Kamei was a Meiji-era court noble and count who organized a photographic team to document the First Sino-Japanese War (1894–95). He compiled more than 300 war photographs into the Meiji 27-28 War Photo Album and presented it to Emperor Meiji. He is positioned in photographic history as a pioneer in the institutionalization of organized war photography in Japan.`,
+    renderedSectionsHtmlJa: `<section class="section">
+<h2>経歴</h2>
+<div class="essay">
+<p>亀井茲明（かめい これあき）は1858年（一部の資料では1861年）に生まれた公家・伯爵である。明治維新後の西洋文化導入の時代に育ち、若年期にドイツへ留学して美術・技術を学んだ。帰国後は写真への関心を深め、自ら写真を手がけながら、西洋写真・美術品・書籍のコレクションを形成した。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>写真史における特筆すべき活動は、1894年から95年の日清戦争に際して写真記録チームを組織し、自身もその一員として従軍したことである。戦役中に撮影された約300枚の写真は『明治廿七八年戦役写真帖（めいじにじゅうしちはちねんせんえきしゃしんちょう）』として編纂され、明治天皇に献上された。この写真帖と従軍日記は、近代史研究の重要な一次資料として学術的に評価されている。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>亀井は1896年に没した。写真記録事業の完了から間もない、比較的若い年齢での死だった。東京大学総合図書館の亀井文庫（亀井コレクション）は、写真帖・西洋古写真コレクション・書籍・美術品・関連文書など、亀井が生涯をかけて収集した資料を保存・公開しており、柏書房が写真帖と日記の双方を出版して研究者が一次資料に当たるための窓口を提供している。<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>表現解説</h2>
+<div class="essay">
+<h4>組織的な戦争写真の先駆</h4>
+<p>亀井茲明が写真史において重要とされる理由は、個人の撮影者としての技術よりも、従軍写真班を組織した点にある。日清戦争の記録は、単独の写真家が偶然に戦場に居合わせたものではなく、事前に計画された組織的な記録事業として実施された。構造的には、アメリカの南北戦争においてマシュー・ブレイディやアレクサンダー・ガードナーが行った組織的な戦争写真記録に相当する位置づけにある。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>東京都立博物館のデジタルアーカイブに収録された亀井の戦争写真は、戦場の光景、軍隊の移動、占領地の様子などを記録している。これらは戦闘の劇的な瞬間を追った報道写真的なものではなく、戦役全体を体系的に記録・証拠化するための調査写真としての性格が強い。記録の目的は、戦争の感情的な告発ではなく、国家的な戦役の視覚的な文書化にあった。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>放送ライブラリーが記録したNHKの番組によれば、亀井の別邸から発見された約300枚の従軍写真と日記は「戦争の本質に迫る」資料として紹介された。これらの写真は、当時の一般的な戦争報道写真とは性格の異なる記録として再発見され、日清戦争の実態に迫る視覚的証拠として評価されている。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<h4>『明治廿七八年戦役写真帖』という形式と天皇への献上</h4>
+<p>亀井が編纂した写真帖は、日清戦争の視覚的な記録を天皇に献上するという政治的・礼式的な行為と結びついている。写真帖という形式は、単なる写真の束ではなく、編集・装丁・献納という行為を通じて、国家の戦争を正式に記念化・文書化するメディアとして機能した。この事例は、明治国家において写真が公的な文書体系の一部として制度化されていたことを示している。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>柏書房が刊行した従軍写真帖案内および亀井の従軍日記は、写真と文字記録を組み合わせた一次資料として、日清戦争史と近代日本の写真史の双方において参照されている。日記と写真を照合することで、どの撮影がどの時点・場所のものかを確認できる点が学術的に有用とされている。<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+<h4>亀井文庫——写真帖を超えた文化資産</h4>
+<p>東京大学総合研究博物館が管理する亀井文庫（西洋古写真コレクション）は、亀井茲明が蒐集した西洋の古写真を含む文化資産として、美術史・写真史研究から参照されている。このコレクションはドイツ留学中から形成されたとみられ、西洋の写真技術と美術に対する亀井の継続的な関心を反映している。東京大学デジタルアーカイブ・ポータルを通じてコレクションの一部に学術的なアクセスが可能である。<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>東京大学リポジトリに収録された亀井文庫目録は、写真帖・書籍・美術品・文書を含むコレクション全体の構成を記録している。KAKEN（科学研究費）の研究プロジェクト「亀井コレクションに関する総合的研究」は、このアーカイブを学術研究の対象として体系的に整理することを目標としており、近代日本の写真史と美術史の交点として位置づけている。<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p>
+<h4>ドイツ留学と西洋写真技術の受容</h4>
+<p>亀井がドイツで学んだことは、彼の写真への関心の形成において重要な背景である。明治期の日本において写真技術は、フランス・イギリス・アメリカなど複数の西洋諸国から移入されたが、ドイツの光学技術と写真科学も重要な源流だった。亀井がドイツで美術と技術を学び、帰国後に写真に関わったことは、明治の知識人・貴族層が西洋の新技術を文化へ取り込んでいく過程の一例として読める。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<h4>戦争写真の記録と批判的読解</h4>
+<p>亀井の戦争写真は、日清戦争に勝利した側の観点から撮影された公式的な性格の記録である。占領地と戦場を記録したこれらの写真が誰の視点によって、どのような目的のために撮られたかという問いは、現代の写真史研究において不可避である。勝者の立場から行われた公式記録という性格は、アメリカ南北戦争の写真が後に批判的に検討されてきたのと類似した問いをはらんでいる。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>立命館大学の資料が論じるように、日清戦争の映像・写真記録は、日本が近代国家として最初の本格的な対外戦争を視覚化した事例として、戦争と視覚メディアの関係史において重要な位置を占める。この文脈において亀井の事業は、国家が写真を戦争の記録・記念・正当化のために組織的に用いた日本最初期の事例として読むことができる。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>批評と受容</h2>
+<div class="essay">
+<p>亀井茲明は、日本の写真史において組織的な戦争写真を先導した人物として位置づけられている。評価の核心は個人の撮影技術の達成ではなく、写真班の組織化、写真帖の編纂、天皇への献上という制度的な実践の先例としての意義にある。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>東京大学総合図書館の亀井文庫は、写真帖・西洋写真コレクション・関連文書を含む重要なアーカイブとして研究者に参照されており、KAKENの研究プロジェクトがこのコレクションを対象とした包括的な学術研究を支援してきた。リポジトリに収録された亀井文庫目録は、コレクションの詳細な内容へのアクセスを提供している。<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>放送ライブラリーが収録したNHK番組は、従軍写真と日記を近年再発見された資料として紹介し、一般視聴者への普及に寄与した。このような公共メディアでの紹介は、写真史研究の外側でも亀井への関心を広げることにつながっている。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>立命館大学の資料が示すように、日清戦争の映像・写真記録の歴史的位置づけは、戦争と視覚メディアの関係をめぐる近代日本史研究において継続的に論じられている主題である。幕末明治の写真師総覧のウェブサイトも日清戦争関連の写真師について記録しており、当時の写真活動の全体像を把握するための参照資料として機能している。<sup class="sup-ref"><a href="#cite-12">*12</a></sup></p>
+<p>アート・プラットフォーム・ジャパンは亀井茲明を日本の芸術・写真・文化史にまたがる人物として収録している。東京都立博物館のデジタルアーカイブは、亀井の戦争写真を直接参照できる重要な公開窓口として機能しており、写真帖の制作と天皇への献上という行為を示す実証的な資料として位置づけられている。こうした参照の蓄積は、亀井茲明の評価が特定の研究分野にとどまらず、近代日本の視覚文化史全体に定着していることを示している。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+</div>
+</section>`,
+    renderedSectionsHtmlEn: `<section class="section">
+<h2>Biography</h2>
+<div class="essay">
+<p>Koreaki Kamei was a court noble and count born in 1858 (some sources give 1861). Growing up during the Meiji period's rapid introduction of Western culture, he studied art and technology in Germany in his youth. After returning to Japan he deepened his interest in photography, practicing the medium himself while building a collection of Western photographs, artworks, and books.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>His defining contribution to photographic history came during the First Sino-Japanese War of 1894–95, when he organized a photographic team and accompanied it to the front. The approximately three hundred photographs produced were compiled as the Meiji 27-28 War Photo Album (Meiji nijūshichi-hachi nen seneki shashin-chō) and presented to Emperor Meiji. The album and his campaign diary have been recognized as primary sources of major importance for modern historical research.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>Kamei died in 1896, relatively shortly after completing the photographic record project. The Kamei Collection (Kamei Bunko) at the University of Tokyo General Library preserves and provides access to the album alongside Western vintage photographs, books, artworks, and related documents. Kashiwa Shobō has published both the photo album guide and his campaign diary, providing researchers with access to the primary sources.<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Expression / method</h2>
+<div class="essay">
+<h4>Pioneer of organized war photography</h4>
+<p>The significance of Kamei's contribution to photographic history lies beyond individual documentary practice in the organization of a war photography team. The Sino-Japanese War documentation was not a single photographer happening to be present at the front; it was a planned, organized record-making enterprise. In structural terms, it is comparable to the organized war photography that Mathew Brady and Alexander Gardner conducted during the American Civil War.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>The Tokyo Metropolitan Museum digital collection includes Kamei's war photographs, recording battlefield scenes, troop movements, and occupied territories. These carry a character closer to systematic survey documentation — evidence and record of the campaign as a whole — than to photojournalistic images focused on dramatic combat moments. The purpose of the record was the visual documentation of a national war, not the emotional exposure of its costs.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<p>According to an NHK program recorded in the Broadcast Library archive, approximately three hundred campaign photographs and a diary found at Kamei's residence were introduced as materials that "look into the essence of war." These photographs were rediscovered as a record distinct in character from conventional war reporting images of the period, and have been valued as visual evidence of the reality of the Sino-Japanese War.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<h4>The photo album format and presentation to the Emperor</h4>
+<p>The photo album Kamei compiled is bound up with the political and ceremonial act of presenting a visual record of a national war to the Emperor. The photo album as a form functioned not as a mere collection of photographs but, through editing, binding, and presentation, as a medium for formally commemorating and documenting the national war. This indicates that photography had been institutionalized as part of the Meiji state's documentary system.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>Kashiwa Shobō has published both the Sino-Japanese War Campaign Photo Album and Kamei's campaign diary as primary source materials referenced in both the history of the Sino-Japanese War and modern Japanese photographic history. The ability to cross-reference diary entries with photographs to confirm the timing and location of individual shots is considered academically significant.<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+<h4>The Kamei Collection — a cultural resource beyond the album</h4>
+<p>The Kamei Collection (Western Vintage Photography Collection) administered by the University of Tokyo Museum includes Western vintage photographs assembled by Kamei and has been consulted by scholars of art and photographic history. The collection appears to have begun forming during his German studies, reflecting his sustained interest in Western photographic technology and art. Parts of the collection are accessible to researchers through the University of Tokyo's digital archive portal.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<p>The Kamei Bunko catalog held in the University of Tokyo repository documents the full structure of the collection, including the photo album, books, artworks, and documents. The KAKEN-funded research project on the Kamei Collection supported comprehensive academic study of this archive, situating it at the intersection of modern Japanese photographic and art history.<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p>
+<h4>German study and the reception of Western photographic technology</h4>
+<p>Kamei's study in Germany is an important background for understanding how his interest in photography formed. Photographic technology in Meiji Japan was imported from multiple Western countries including France, Britain, and the United States; German optical technology and photographic science were also significant sources. His engagement with art and technology in Germany, followed by involvement with photography after returning home, is one instance of the Meiji intelligentsia and aristocracy incorporating Western technology into Japanese culture.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<h4>War photography, record, and critical reading</h4>
+<p>Kamei's war photographs are official-character records shot from the perspective of the victorious side in the Sino-Japanese War. The question of whose viewpoint these photographs of occupied territories and battlefields represent, and for what purpose they were made, is unavoidable in contemporary photographic history research. Their character as official records made from the position of the victor raises questions parallel to those raised in the critical examination of American Civil War photography.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>As discussed in a Ritsumeikan University paper, the historical position of Sino-Japanese War photographic and film records occupies an important place in the history of war and visual media in modern Japan — Japan's first major international war, recorded and visualized as a modern state. In this context, Kamei's enterprise is readable as among the earliest documented cases in Japan of a state systematically using photography for war documentation, commemoration, and legitimation.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+</div>
+</section>
+<section class="section">
+<h2>Criticism and reception</h2>
+<div class="essay">
+<p>Koreaki Kamei is positioned in Japanese photographic history as a pioneer who led the institutionalization of organized war photography. That standing rests not on individual photographic achievement but on the significance of his photographic team organization, album compilation, and imperial presentation as institutional precedents.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>The Kamei Collection at the University of Tokyo Library — containing the photo album, Western photography collection, and related documents — is consulted by researchers as an important archive, and KAKEN research projects have supported comprehensive academic study of this collection. The Kamei Bunko catalog in the university repository provides detailed access to the collection's contents.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>The NHK program recorded in the Broadcast Library introduced the campaign photographs and diary as recently rediscovered materials, contributing to broader public awareness of Kamei beyond photographic history research. Such public media coverage has extended interest in his work beyond specialist scholarship.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>As shown in Ritsumeikan University research, the historical position of Sino-Japanese War photographic and film records remains an active topic in modern Japanese historical studies of war and visual media. The shashinshi.biz database of late Edo and Meiji photographers also records Sino-Japanese War photography activity, providing context for the range of visual documentation of that conflict.<sup class="sup-ref"><a href="#cite-12">*12</a></sup></p>
+<p>Art Platform Japan lists Koreaki Kamei as a figure spanning Japanese art, photography, and cultural history. The Tokyo Metropolitan Museum's digital archive functions as an important public access point for his war photographs, serving as empirical evidence for photography's position as a medium of official documentation within the Meiji state.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+</div>
+</section>`,
+    links: [
+      { url: 'https://www.lib.u-tokyo.ac.jp/ja/library/general/collectionall/kamei', label: '東京大学総合図書館 — 亀井文庫' },
+      { url: 'https://da.dl.itc.u-tokyo.ac.jp/portal/en/search?kywd=%E4%BA%80%E4%BA%95%E8%8C%B2%E6%98%8E', label: '東京大学デジタルアーカイブ・ポータル — 亀井茲明' },
+      { url: 'https://museumcollection.tokyo/en/works/74085/', label: 'Tokyo Metropolitan Museum Collection — Kamei Koreaki' },
+      { url: 'https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-14390016/', label: 'KAKEN — 亀井コレクション研究プロジェクト' },
+      { url: 'https://artplatform.go.jp/ja/artists/A6273', label: 'Art Platform Japan — 亀井茲明' },
+      { url: 'https://www.kashiwashobo.co.jp/book/9784760140145', label: '柏書房 — 亀井茲明関連書' },
+    ],
+    citations: [
+      { num: 1, url: 'https://www.lib.u-tokyo.ac.jp/ja/library/general/collectionall/kamei', name: '東京大学総合図書館 — 亀井文庫' },
+      { num: 2, url: 'https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-14390016/', name: 'KAKEN — 亀井コレクション研究プロジェクト' },
+      { num: 3, url: 'https://museumcollection.tokyo/en/works/74085/', name: 'Tokyo Metropolitan Museum Collection — Kamei Koreaki' },
+      { num: 4, url: 'https://www.bpcj.or.jp/program/detail/005056/', name: '放送ライブラリー — 亀井茲明関連' },
+      { num: 5, url: 'https://artplatform.go.jp/ja/artists/A6273', name: 'Art Platform Japan — 亀井茲明' },
+      { num: 6, url: 'https://www.kashiwashobo.co.jp/book/9784760140145', name: '柏書房 — 亀井茲明関連書' },
+      { num: 7, url: 'https://www.ritsumei.ac.jp/acd/cg/lt/rb/614/614PDF/yamamoto.pdf', name: '立命館大学 — 明治期写真史論文' },
+      { num: 8, url: 'https://da.dl.itc.u-tokyo.ac.jp/portal/en/search?kywd=%E4%BA%80%E4%BA%95%E8%8C%B2%E6%98%8E', name: '東京大学デジタルアーカイブ・ポータル — 亀井茲明' },
+      { num: 9, url: 'https://repository.dl.itc.u-tokyo.ac.jp/records/54856', name: '東京大学リポジトリ — 亀井文庫目録' },
+      { num: 10, url: 'https://commons.wikimedia.org/wiki/Category:Kamei_Koreaki', name: 'Wikimedia Commons — Kamei Koreaki' },
+      { num: 11, url: 'https://www.kashiwashobo.co.jp/book/4760107843', name: '柏書房 — 日清戦争従軍写真帖 伯爵亀井茲明の日記' },
+      { num: 12, url: 'https://shashinshi.biz/archives/9003', name: '幕末明治の写真師総覧 — 日清戦争関連写真師リスト' },
+    ],
+    works: [
+      { titleJa: '東京都写真美術館所蔵 — 亀井茲明', titleEn: 'Tokyo Metropolitan Museum Collection — Kamei Koreaki', url: 'https://museumcollection.tokyo/en/works/74085/' },
+      { titleJa: '亀井文庫 — 東京大学総合図書館', titleEn: 'Kamei Bunko — University of Tokyo Library', url: 'https://www.lib.u-tokyo.ac.jp/ja/library/general/collectionall/kamei' },
+    ],
+  },
 
 });
 /* 2026-04-19 English reflection overrides end */
