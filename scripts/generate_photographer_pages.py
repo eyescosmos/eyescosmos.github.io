@@ -169,6 +169,11 @@ STRUCTURED_DATA_ALTERNATE_NAME_OVERRIDES = {
             "森山大道",
         ],
     },
+    "sherman": {
+        "en": [
+            "Cynthia Morris Sherman",
+        ],
+    },
 }
 SEO_TEXT_OVERRIDES = {
     "stieglitz": {
@@ -213,8 +218,8 @@ SEO_TEXT_OVERRIDES = {
             "description": "ウォーカー・エヴァンスはFSAで農村の貧困を記録しながら、政策宣伝から距離を取り、アメリカの表面を冷静に読むドキュメンタリー写真を確立した。『Let Us Now Praise Famous Men』や地下鉄肖像で、写真を社会記録と批評的観察の両方へ押し広げた。",
         },
         "en": {
-            "title": "Walker Evans | FSA and American Documentary | Photo Coordinates",
-            "description": "Walker Evans used FSA work, vernacular signs, storefronts, interiors, and subway portraits to make American documentary photography cool, precise, and critical rather than propagandistic.",
+            "title": "Walker Evans | FSA, American Photographs, and Documentary Style | Photo Coordinates",
+            "description": "Walker Evans is explained through FSA photography, American Photographs, Let Us Now Praise Famous Men, subway portraits, vernacular signs, storefronts, and documentary style.",
         },
     },
     "cartierbresson": {
@@ -297,8 +302,14 @@ SEO_TEXT_OVERRIDES = {
         },
         "en": {
             "title": "Cindy Sherman | Staged Photography and the Pictures Generation | Photo Coordinates",
-            "description": "Cindy Sherman transformed photography from a medium of evidence and authorial expression into a way of testing how cinema, advertising, and art history produce recognizable roles. Tracing Untitled Film Stills, the Pictures Generation, and feminist photography.",
+            "description": "Cindy Sherman is explained through Untitled Film Stills, staged photography, the Pictures Generation, feminism, identity, media images, and the performance of female roles.",
             "lead": "Cindy Sherman transformed photography from a medium associated with evidence, likeness, and authorial self-expression into a way of testing how cinema, advertising, magazines, and art history produce recognizable roles. Working alongside the Pictures Generation in late-1970s New York, she used her own body, costume, makeup, setting, and camera position to unsettle the idea that a single image can reveal a stable person.",
+        },
+    },
+    "irving-penn": {
+        "en": {
+            "title": "Irving Penn | Vogue, Studio Portraits, Still Life, and the Print | Photo Coordinates",
+            "description": "Irving Penn is explained through Vogue, studio portraits, fashion photography, Small Trades, still life, platinum-palladium printing, and the boundary between magazine and fine-art photography.",
         },
     },
     "lee-miller": {
@@ -1446,6 +1457,9 @@ ESSAY_HEADING_SET = {
     'Seascapes, Theaters, Dioramas, and the Photograph as Time',
     'Group f/64, Straight Photography, and the Matter of Form',
     'New Objectivity and Neues Sehen: The Photography of Things',
+    'FSA, American Photographs, and Documentary Style',
+    'Untitled Film Stills, Staged Photography, and the Pictures Generation',
+    'Vogue, Studio Portraits, Still Life, and the Print',
     'Criticism and reception',
 }
 

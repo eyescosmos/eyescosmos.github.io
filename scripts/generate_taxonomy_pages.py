@@ -2088,7 +2088,10 @@ def main():
             people = sort_photographers(photographers_by_movement.get(movement, []), lang)
             movement_meta = movements_meta.get(movement, {})
             movement_label = localized_movement_name(movement, movements_meta, lang)
-            title = taxonomy_page_title("movement", movement_label, lang)
+            title = (
+                movement_meta.get("titleEn" if lang == "en" else "titleJa")
+                or taxonomy_page_title("movement", movement_label, lang)
+            )
             keyword = f"{movement_label} | Photography Movement | History of Photography | Photo Coordinates |" if lang == "en" else f"{movement_label}｜表現｜写真史｜<a href=\"/\">写真の座標</a>｜"
             ja_href = f"{SITE}/movements/{movement_slug(movement, 'ja', movements_meta)}.html"
             en_href = f"{SITE}/en/movements/{movement_slug(movement, 'en', movements_meta)}.html"
@@ -2124,10 +2127,10 @@ def main():
                 )
             lead = extend_movement_lead(lead, sections, lang)
             featured = featured_movement_photographers(people, movement, 4)
-            if lang == "ja":
-                description = taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta, movement_desc=movement_desc)
-            else:
-                description = taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta, movement_desc=movement_desc)
+            description = (
+                movement_meta.get("metaDescEn" if lang == "en" else "metaDescJa")
+                or taxonomy_meta_description("movement", movement_label, lang, movement_meta=movement_meta, movement_desc=movement_desc)
+            )
             sources = movement_source_links(
                 movement_meta.get("sourcesEn" if lang == "en" else "sourcesJa") or movement_meta.get("sources") or [],
                 featured,
