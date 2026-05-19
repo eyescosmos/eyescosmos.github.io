@@ -14,6 +14,7 @@
 - 例外的に復元作業などでHTML側に本文が残っている場合でも、ジェネレータを回す前に同じ本文が `data/photographer-essay-overrides.js` に入っているか必ず確認する。
 - `scripts/generate_photographer_pages.py` 実行後、対象外の写真家ページで本文、外部リンク、出典が「準備中」へ戻る差分が出た場合は、その生成結果を採用しない。対象外HTMLは復元し、本文をoverridesへ移してから再生成する。
 - アフィリエイト、ナビゲーション、SEOなど本文以外の小変更でも、ジェネレータ実行で本文が消えないか `git diff` で必ず確認する。
+- Claude Codeなど他エージェントの更新を取り込む前に、まず `git fetch` でリモート差分を取得し、`git diff HEAD..origin/main` などで取り込み予定の変更を確認する。写真家ページや生成元で、本文・見出し・外部リンク・出典・Amazonリンクが消える、または「準備中」へ戻る差分がないことを確認してから `git pull --rebase` する。消失が疑われる場合はpullを止め、差分内容を報告する。
 
 ## Workflow
 
