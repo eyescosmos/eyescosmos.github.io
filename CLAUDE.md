@@ -78,6 +78,13 @@
   - 本文（経歴・表現解説・批評と受容 / Career・Expression・Criticism）
   - 作品画像 / Work images セクション
   - 出典 / Sources セクション
+- `photographer-essay-overrides.js` を編集した場合は、push 前に必ず以下を実行する：
+  ```
+  python3 scripts/check_texten_completeness.py
+  ```
+  - OK が出ればそのまま push する
+  - WARN が出たら、該当エントリの textEn が途中で切れていないか確認し、不足セクションを補完してから push する
+  - このチェックで防ぐ問題：textJa には経歴・表現解説・批評と受容があるのに textEn が途中で切れている状態（過去に発生）
 
 ### Codex の変更を pull したとき
 - `git show <commit>` でどのセクションが変更されたかを確認する
