@@ -11536,7 +11536,7 @@ The background to Hugo's work across parts of Africa is his own position as a wh
 
 Hugo occupies an important place in post-apartheid South African photography because his work emerges after the period of direct denunciation and photojournalistic exposure, yet remains bound to the political pressure of portraiture. The V&A's Figures and Fictions presented South African photography after the 2000s as a field in which identity, race, gender, class, and politics were being reconsidered, and it placed Hugo within that context*6. In Hugo's work, the question is not only who the subject is. When a white South African photographer photographs the African continent, his own family in South Africa, sites of electronic waste, and marginalized people, the photographer's position, the subject's self-presentation, and the expectations of an international audience enter the same frame. The frontal figure is both someone being presented and someone who holds the viewer's gaze in return.
 
-Expression
+Expression / method
 
 Frontal portraiture: Sander, Arbus, Ruff, and Hugo's distance from them
 
@@ -11632,7 +11632,7 @@ Hugo's recent series What the Light Falls On does not simply relocate the concer
 
 Martin Parr was born in 1952 in Epsom, Surrey, in south-east England, and turned toward photography through the experience of learning cameras, developing, and printing from his grandfather, George Parr*18. Parr later recalled that, for a child growing up in suburban Epsom near London, Yorkshire with his grandfather offered a different sense of community, and that borrowing his grandfather's camera, developing film, and making prints led him to decide, at the age of thirteen or fourteen, that he wanted to become a photographer*22. From 1970 to 1973 he studied photography at Manchester Polytechnic, where the work of Tony Ray-Jones, introduced by Bill Jay in 1972, became a major stimulus for photographing everyday life in his own country*22. Ray-Jones had travelled across England in the late 1960s, photographing seaside resorts, festivals, social rituals, and eccentric customs with humor and melancholy as ways of recording a vanishing mode of life; for Parr, "photographing the British" therefore came to mean not only photographing political events, but also making leisure, gestures, habits, local ceremonies, and everyday rituals into subjects for photography*26. Parr's early work was made in black and white in communities in northern England and Ireland, and he later described the move from black and white to color in The Last Resort as a decisive shift*22. Before arriving at that form, several lines had converged: Ray-Jones's observation of Britain, the American photography of Robert Frank, Lee Friedlander, and Garry Winogrand encountered through Creative Camera , and the situation after the late 1970s in which color photography in the United States began to be treated in museums as a serious photographic language*27. This shift did not simply negate the ethics of black-and-white photography and class representation long shared by British social documentary; it was a way to make fragments of ordinary life—leisure, food, tourism, souvenir photographs, shopping—visible as the surfaces of consumer society after the 1980s. Magnum Photos describes Parr's photographs as making fiction out of reality, and places him as an artist who shaped photographic culture through more than one hundred books of his own, many edited volumes, exhibitions, curating, and collecting*3. In 2021 he was awarded a CBE for services to photography*4. Parr died at his home in Bristol on December 6, 2025*2.
 
-Expression
+Expression / method
 
 From black-and-white community to the color of consumer society
 
@@ -11825,7 +11825,7 @@ Cameron's photographs were praised and criticized during her lifetime. Within a 
 
 Tokuko Ushioda was born in Tokyo. She entered Kuwasawa Design School in 1960 and graduated in 1963 from its Living Design Department, where she majored in photography*1. AWARE's artist biography notes that she studied at Kuwasawa with Yasuhiro Ishimoto and Kiyoji Otsuji, and that she also came into contact with photographers of the same generation such as Shigeo Gocho*2. From 1966 to 1978 she worked as an assistant and lecturer in photography at Kuwasawa Design School and Tokyo Zokei University, and around 1975 she began working as a freelance photographer*3. In 1976 she held her first solo exhibition, Smiling Handcuffs, at Shinjuku Nikon Salon; in 1978 she married the photographer Shinzo Shimao, and their daughter Maho was born the same year*4. At the beginning of 1979, the family moved into a room in the former residence of Ozaki Yukio, which had been relocated to Gotokuji in Tokyo. Life in this old Western-style house later became the domestic setting behind My Husband and ICE BOX*5. From the 1990s onward, Ushioda developed the long-term project BIBLIOTHECA, photographing books, shelves, libraries, publishing houses, and conservation spaces; in 2018 the series received the 37th Domon Ken Award, the Photographic Society of Japan's Photographer Award, and the Higashikawa Domestic Photographer Award*6. In 2022, torch press published My Husband, a photobook made from family photographs taken from the late 1970s to the early 1980s, and the book received a Jurors' Special Mention at the Paris Photo–Aperture PhotoBook Awards*7.
 
-Expression
+Expression / method
 
 Kuwasawa and Kiyoji Otsuji: beginning in a place where photographs were read
 
@@ -12149,7 +12149,7 @@ After graduating from Keio University, Hoshino worked for two years as an assist
 
 In 1986, Hoshino received the third Anima Prize for GRIZZLY , and in 1990 he received the fifteenth Kimura Ihei Photography Award. The official award archive records the award works as " Alaska: A Tale Like the Wind " in Weekly Asahi and the exhibition " Alaska: 63 Degrees North "*5. What matters here is that the recognition was directed not only at a single photobook, but also at magazine serialization, exhibition, and a form of presentation that combined photographs and prose. In 1996, Hoshino died in a brown-bear accident while accompanying a television crew at Kurile Lake on the Kamchatka Peninsula in Russia*3. After his death, his work continued to be re-edited through photobooks, collected writings, traveling exhibitions, and reading projects. The Tokyo Photographic Art Museum exhibition The Eternal Journey , held from 2022 to 2023, was organized to survey his path from the village photographs he made in Alaska at the age of twenty to the photographs taken in Kamchatka shortly before his death*2.
 
-Expression
+Expression / method
 
 Photography as an entry point into the land
 
@@ -12187,7 +12187,7 @@ The approach to Indigenous life and myth, however, does not mean the photographe
 
 Japanese photography from the 1970s onward — the period of Hoshino's activity — encompassed diverse approaches dealing with people in society, cities, suburbs, and changing landscapes. The Japan Foundation traveling exhibition "Gazing at the Contemporary World" organized Japanese photography from this period and later in two parts — "Changing Society" and "Changing Landscape" — citing works by Moriyama Daido, Tomatsu Shomei, Araki Nobuyoshi, Ushioda Tokuko, Kitai Kazuo, Shibata Toshio, and Honma Takashi*21. Within that contemporary range, Hoshino, starting from his experience in Shishmaref, continued to record the nature of the far north, wildlife, the lives of its people, and a changing Alaska through photographs and prose*1. Placing Hoshino in photographic history is better served not only by comparison with nature photography in general, but by situating him within the intertwining of environmental representation between Japan and the United States in the twentieth century. A doctoral thesis abstract from the University of Tokyo, "Dialogue Around Nature: The Intertwining of Environmental Representation between Japan and the United States in the Twentieth Century," treats Hoshino in its third chapter — "Nature That Questions: Photographer Michio Hoshino's Alaska Experience (1970–2000)" — and examines the worldview of Alaskan hunting peoples he pursued, the intellectual significance of Alaska as a place, and the misreadings that arose in posthumous evaluation*22. The official gallery text for "The Myth of the Whale Drifts Through the Universe" also confirms, in words drawn from Hoshino's own writing, that forests, glaciers, and whales seemed to be connected within a long span of time*13.
 
-Critical Reception
+Criticism and reception
 
 Hoshino's standing was shaped not only by awards during his lifetime but by posthumous publishing, exhibitions, and a reading culture that formed around his work. The Japan Foundation's Japanese Book News reported that a traveling exhibition that began in autumn 1998 brought Hoshino to the center of attention, with 123,000 visitors in twelve days at a Tokyo department store venue*9. The same article noted that essay collections including Inuniq and Northern Lights were also reissued and that many bookshops set up dedicated displays, and assessed that Hoshino's work could not be explained by the beauty of Alaskan landscapes alone — that it conveyed images of human life and death to those who read his photographs and prose together*9. This reception shows that Hoshino was repositioned not merely as a nature photographer who became popular after death but as a writer whose photographs, prose, bookshops, and traveling exhibitions operated together within a culture of readers. A commendation from the city of Ichikawa also positions his work as having left many insights about the earth, nature, life, people, and civilization*15.
 
@@ -12290,7 +12290,7 @@ University of PennsylvaniaとAnimal Locomotion
 
 Eadweard Muybridge was born in Kingston upon Thames, England, in 1830 and moved to the American West Coast in the 1850s.*1 After working as a bookseller and publisher in California, he turned to photography and earned recognition for large-format landscape photographs of Yosemite Valley.*2 In 1872, at the commission of businessman Leland Stanford, he began work on photographs of a galloping horse, and in 1878 succeeded at the Sacramento Valley experiment in capturing sequential images with multiple cameras.*3 Building on these results, from 1884 he undertook a large-scale research project on animal and human locomotion under the auspices of the University of Pennsylvania, publishing the eleven-volume Animal Locomotion in 1887.*4 In his later years he returned to England and died in Kingston in 1904. The University of Pennsylvania's exhibition materials convey the full scope of this research, with a large collection of photographs, documents, and letters preserved.*5
 
-Expression
+Expression / method
 
 Time Decomposed by Multiple Cameras
 
@@ -12304,7 +12304,7 @@ The Zoopraxiscope and the Art of Showing
 
 Muybridge's practice did not stop at producing sequential photographs. Around 1879 he developed the zoopraxiscope, and by tracing sequential photographs onto glass discs and projecting them optically, he succeeded in showing still images as motion.*15 The original zoopraxiscope and seventy glass discs held at Kingston Museum are officially positioned as "testament to his pioneering work in early moving-image projection."*16 He lectured across Europe and America, combining sequential photographs with projection demonstrations to operate as a cultural practitioner spanning photography, science, and spectacle. The fact that documents relating to the University of Pennsylvania are also held by the Smithsonian Archives of American Art demonstrates the multi-institutional reach of this practice.*17 The Animal Locomotion plates held by the Smithsonian National Museum of American History show that sequential photographs have been passed down as works of a caliber established in museum collections beyond scientific documentation.*18 His Yosemite landscape photographs also form an important part of his practice, as demonstrated by works held at SFMOMA.*19
 
-Critical Reception
+Criticism and reception
 
 Individual plates from Animal Locomotion are held by major North American museums including the Seattle Art Museum and have become established in both photography history and museum collections.*20 The National Gallery of Art's artist page also demonstrates that his photographs function as a standard reference point in photography history.*21 The method of placing bodies in front of a grid for decomposition and measurement is today often read critically as a modern gaze that manages and standardizes the body, and the archive held at NYU Special Collections demonstrates the multi-disciplinary scholarly interest in this research.*22 The FUJIFILM SQUARE exhibition conveys the context of international reappraisal including reception in Japan.*23 The Library of Congress's edition records of Animal Locomotion show that this publication has been passed down as a complex archive crossing the boundaries of science, art, and technology.*24 The Detroit Institute of Arts also holds individual plates, demonstrating the breadth of holdings across museum collections.*25
 
@@ -12318,7 +12318,7 @@ Individual plates from Animal Locomotion are held by major North American museum
 
 Étienne-Jules Marey was born in Beaune, France, in 1830 and trained in medicine and physiology in Paris. He held a professorship in physiology at the Collège de France, where he spent years measuring and recording bodily functions including blood circulation, respiration, and muscle contraction.*1 He adopted photography as a research tool from the 1880s onward, developing the technique he called "chronophotography," which exposed multiple images onto a single photographic plate.*2 This method allowed him to render bird flight, human running and jumping, and airflow as visual analytical diagrams.*3 In 1882 he completed his chronophotographic gun, achieving twelve frames per second. He died in Paris in 1904.*4
 
-Expression
+Expression / method
 
 Chronophotographic method
 
@@ -12396,7 +12396,7 @@ Marey's reception has been built up through institutional holdings and exhibitio
 
 Charles Marville was born in Paris in 1813 and began his career as an illustrator and engraver before turning to photography when the medium emerged. From the 1850s he photographed Parisian urban scenes including cathedrals, city halls, and streets, and in the 1860s he was commissioned by the city authorities to document the transformation of Paris under Napoleon III.*1 The commission covered both the medieval streets of the old city that would be demolished by Haussmann's renovations and the new boulevards and public buildings that replaced them. The Metropolitan Museum's exhibition text makes this explicit, noting that Marville's photographs spanned both disappearance and emergence.*2 He worked as the official photographer of the city of Paris, systematically recording the narrow lanes, alleys, and back streets of the old city until the urban reorganization was complete. He died in Paris in 1879.*3
 
-Expression
+Expression / method
 
 Haussmann and the commission
 
@@ -12475,7 +12475,7 @@ Marville's reception has grown, particularly from the latter twentieth century o
 
 Frederick H. Evans was born in London in 1853 and worked for many years as a bookseller. Through his trade he built relationships with William Morris, Aubrey Beardsley, and others, and began photographing seriously in the 1880s.*1 By the 1890s he was photographing Gothic cathedrals in England and France with sustained purpose, and his work was recognized within the pictorialist community, particularly among members of the Linked Ring Brotherhood.*2 In 1898, at William Morris's request, he photographed Kelmscott Manor, and the sense of spatial light and harmony he developed there became the foundation for his later cathedral work.*3 The Getty retrospective "A Record of Emotion" reappraised Evans not as a practitioner of architectural documentation but as an artist who transformed architecture into "a record of emotion."*4 He died in London in 1943.
 
-Expression
+Expression / method
 
 Platinum prints and architectural spirituality
 
@@ -12556,7 +12556,7 @@ Linked Ring Brotherhoodへの参加は、エヴァンズを単なる建築写真
 
 Thomas Annan was born in Cromartie, Scotland, in 1829 and established himself as a photographer in Glasgow. His work ranged across architecture, portraiture, and urban views, and he also undertook reproduction and publication work including a photographic record of the stained glass in Glasgow Cathedral.*1 In 1868 he was commissioned by the Glasgow Improvement Trust to photograph the areas of the old city subject to redevelopment, producing the series that would become The Old Closes and Streets of Glasgow.*2 The Getty exhibition text describes Annan as "a photographer who documented the social landscape and built environment of an industrial city for over twenty-five years," indicating that his practice was not limited to the old-city record.*3 He died in Glasgow in 1887.
 
-Expression
+Expression / method
 
 The context of old-town documentation
 
@@ -12636,7 +12636,7 @@ Later critical attention to Annan has concentrated on rereading The Old Closes a
 
 Jacob Riis was born in Ribe, Denmark, in 1849 and emigrated to the United States in 1870. While working as a journalist in New York, he began in the 1880s using flash powder to photograph the slums of the Lower East Side at night.*1 His 1890 book How the Other Half Lives, combining photographs, text, and illustrations, was widely read as a pioneering work of social reform and brought about real changes in New York City's housing and sanitation policy.*2 The Library of Congress exhibition "Jacob Riis: Revealing 'How the Other Half Lives'" explicitly describes Riis as someone who "well understood the power of photography but did not consider himself a photographer," repositioning him as a "multi-skilled communicator" who worked across the roles of writer, photographer, lecturer, advocate, and ally.*3 His friendship with Theodore Roosevelt, who was then New York City's police commissioner, shows the political connections his reform activity maintained.*4 He died in Massachusetts in 1914.
 
-Expression
+Expression / method
 
 Beyond photographer
 
@@ -12717,7 +12717,7 @@ What is significant in Riis's reception is that both the evaluation of him as a 
 
 Tomishige Rihei was born in 1837 in Higo Province (present-day Kumamoto Prefecture), and his original family name was Shinokura. He studied photography in the final years of the Edo period and by the 1870s had opened a photography studio in Kumamoto.*1 The surviving collection includes glass plates, portraits, photographic equipment, and related documents, covering both the practical operations of the studio and visual records of regional modernization.*2 He also left documentary photographs of Kumamoto Castle, the old castle town, and the aftermath of the Seinan War, positioning him as a photographer who witnessed the region's modernization and historical turning points.*3 He is also known for having photographed portraits of Natsume Soseki and Lafcadio Hearn, giving his work connections to literary history. He died in 1912. His studio was succeeded by Tokuji, the second-generation head.*4
 
-Expression
+Expression / method
 
 Institutional significance of the Tomishige Photography Studio
 
@@ -12790,7 +12790,7 @@ The evaluation of Tomishige Rihei has advanced more through the investigation an
 
 Yokoyama Matsusaburo was born in 1838 on Etorofu Island and studied photography in the final years of the Edo period. He is said to have learned photographic technique under Shimooka Renjo.*1 In the early Meiji period he was involved in photographing Edo Castle (later the Imperial Palace) during the transition from the shogunate to the new government, and those photographs are now among the materials held as Important Cultural Properties by the Tokyo National Museum.*2 He participated as an art photography specialist in the Jinshin Survey of 1872 — a government-led project to investigate shrines, temples, and cultural properties across the country — and made substantial contributions to cultural property documentation.*3 He was also responsible for photographing works submitted to the Vienna World Exposition (1873), connecting him to the Meiji state's external self-representation.*4 In addition to photography he worked in photo-oil painting (a technique combining oil painting with photography) and lithography, and he died in 1884.*5
 
-Expression
+Expression / method
 
 Cross-media expression: photography, oil painting, and lithography
 
@@ -12867,7 +12867,7 @@ The historical significance of Yokoyama Matsusaburo lies in prompting considerat
 
 Tomishige Tokuji was born in 1862, trained in photography under Tomishige Rihei, and succeeded him as the second-generation head of the Tomishige Photography Studio.*1 The "Tomishige Tokuji Curriculum Vitae" referenced in the Japan Society for the Science of Design survey paper records an outline of his career and shows that he inherited photographic techniques as a direct pupil of Rihei.*2 He assumed responsibilities for the studio's work while Rihei was still alive and continued to maintain its name and base after Rihei's death. He kept the studio operating through the Meiji, Taisho, and early Showa periods, occupying a distinctive position in regional photographic history as a "successor." He died in 1938.*3
 
-Expression
+Expression / method
 
 Succession and the continuity of the institution
 
