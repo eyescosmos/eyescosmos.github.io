@@ -1363,10 +1363,15 @@ def build_works_targets(essay_overrides: dict) -> tuple[dict[str, str], "re.Patt
             url = work.get("url", "")
             if not url:
                 continue
+            titles = []
             for key in ("titleJa", "titleEn"):
-                title = work.get(key, "")
-                if title:
-                    works_lookup[title] = url
+                if work.get(key):
+                    titles.append(work[key])
+            aliases = work.get("aliases") or []
+            if isinstance(aliases, list):
+                titles.extend(alias for alias in aliases if alias)
+            for title in titles:
+                works_lookup[title] = url
     if not works_lookup:
         return {}, None
     pattern = "|".join(re.escape(t) for t in sorted(works_lookup, key=len, reverse=True))
@@ -2514,8 +2519,9 @@ def main() -> None:
             ) or f'<div class="note">{copy["linksPlaceholder"]}</div>'
             works_for_page = (override_entry.get("works") or []) if isinstance(override_entry, dict) else []
             works_title_key = "titleEn" if lang == "en" else "titleJa"
+            works_label_key = "labelEn" if lang == "en" else "labelJa"
             works_html = "".join(
-                f'<a class="chip-link" href="{escape_html(w["url"])}" target="_blank" rel="noopener">{escape_html(w.get(works_title_key) or w.get("titleJa") or w.get("titleEn", ""))} ↗</a>'
+                f'<a class="chip-link" href="{escape_html(w["url"])}" target="_blank" rel="noopener">{escape_html(w.get(works_label_key) or w.get(works_title_key) or w.get("titleJa") or w.get("titleEn", ""))} ↗</a>'
                 for w in works_for_page
                 if w.get("url") and (w.get("titleJa") or w.get("titleEn"))
             )

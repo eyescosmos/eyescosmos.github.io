@@ -14013,3 +14013,257 @@ On Tomishige Tokuji, given that individual critical histories and first-person s
 
 });
 /* 2026-04-19 English reflection overrides end */
+
+/* 2026-05-19 work-link restoration and long-essay work links.
+   Keep this as a non-destructive merge so regenerated pages do not lose
+   current essay bodies, citations, or existing external links. */
+(function () {
+  const overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+  const additions = {
+    'ansel-adams': {
+      works: [
+        { titleJa: 'Winter Yosemite Valley', titleEn: 'Winter Yosemite Valley', labelJa: 'The Met — Winter Yosemite Valley', labelEn: 'The Met — Winter Yosemite Valley', url: 'https://www.metmuseum.org/art/collection/search/269297', aliases: ['Winter Yosemite Valley', '冬のヨセミテ渓谷'] },
+        { titleJa: 'Monolith, the Face of Half Dome', titleEn: 'Monolith, the Face of Half Dome', labelJa: 'The Met — Monolith, the Face of Half Dome', labelEn: 'The Met — Monolith, the Face of Half Dome', url: 'https://www.metmuseum.org/art/collection/search/262595', aliases: ['Monolith, the Face of Half Dome, Yosemite National Park, California', 'Monolith, the Face of Half Dome', 'モノリス、ハーフドームの顔'] },
+        { titleJa: 'Moonrise, Hernandez, New Mexico', titleEn: 'Moonrise, Hernandez, New Mexico', labelJa: 'National Gallery of Art — Moonrise, Hernandez, New Mexico', labelEn: 'National Gallery of Art — Moonrise, Hernandez, New Mexico', url: 'https://www.nga.gov/artworks/66680-moonrise-hernandez-new-mexico', aliases: ['Moonrise, Hernandez, New Mexico', 'Moonrise', 'ムーンライズ'] },
+        { titleJa: 'Born Free and Equal', titleEn: 'Born Free and Equal', labelJa: 'Library of Congress — Born Free and Equal / Manzanar photographs', labelEn: 'Library of Congress — Born Free and Equal / Manzanar photographs', url: 'https://www.loc.gov/collections/ansel-adams-manzanar/about-this-collection/', aliases: ['Born Free and Equal', 'Manzanar', 'マンザナー'] },
+      ],
+    },
+    'arbus': {
+      works: [
+        { titleJa: 'Child with a toy hand grenade in Central Park, N.Y.C.', titleEn: 'Child with a toy hand grenade in Central Park, N.Y.C.', labelJa: 'National Galleries of Scotland — Child with a toy hand grenade in Central Park, N.Y.C.', labelEn: 'National Galleries of Scotland — Child with a toy hand grenade in Central Park, N.Y.C.', url: 'https://www.nationalgalleries.org/art-and-artists/92865', aliases: ['Child with a toy hand grenade in Central Park, N.Y.C.', 'Child with a toy hand grenade', 'おもちゃの手榴弾を持つ少年'] },
+        { titleJa: 'Identical twins, Roselle, N.J.', titleEn: 'Identical twins, Roselle, N.J.', labelJa: 'MoMA — Identical twins, Roselle, N.J.', labelEn: 'MoMA — Identical twins, Roselle, N.J.', url: 'https://www.moma.org/collection/works/58927', aliases: ['Identical twins, Roselle, N.J.', 'Identical twins', '一卵性双生児'] },
+        { titleJa: 'Puerto Rican woman with a beauty mark, N.Y.C.', titleEn: 'Puerto Rican woman with a beauty mark, N.Y.C.', labelJa: 'National Galleries of Scotland — Puerto Rican woman with a beauty mark, N.Y.C.', labelEn: 'National Galleries of Scotland — Puerto Rican woman with a beauty mark, N.Y.C.', url: 'https://www.nationalgalleries.org/art-and-artists/92885', aliases: ['Puerto Rican woman with a beauty mark, N.Y.C.', 'Puerto Rican woman with a beauty mark'] },
+        { titleJa: 'A Jewish Giant at Home with His Parents in the Bronx, N.Y.', titleEn: 'A Jewish Giant at Home with His Parents in the Bronx, N.Y.', labelJa: 'The Jewish Museum — A Jewish Giant at Home with His Parents in the Bronx, N.Y.', labelEn: 'The Jewish Museum — A Jewish Giant at Home with His Parents in the Bronx, N.Y.', url: 'https://collections.thejewishmuseum.org/collection/5433-a-jewish-giant-at-home-with-his-parents-in-the-bronx-n-y', aliases: ['A Jewish Giant at Home with his Parents in the Bronx, New York', 'A Jewish Giant at Home with His Parents in the Bronx, N.Y.', 'Jewish Giant'] },
+      ],
+    },
+    'beate-gutschow': {
+      works: [
+        { titleJa: 'LS', titleEn: 'LS', labelJa: 'Kunstaspekte — Beate Gütschow: LS / landscape works', labelEn: 'Kunstaspekte — Beate Gütschow: LS / landscape works', url: 'https://kunstaspekte.art/event/beate-gutschow-ls-2004-05', aliases: ['LS', 'ランドスケープ'] },
+        { titleJa: 'S', titleEn: 'S', labelJa: 'Museum Angewandte Kunst — Beate Gütschow interview / staged city works', labelEn: 'Museum Angewandte Kunst — Beate Gütschow interview / staged city works', url: 'https://www.museumangewandtekunst.de/de/veranstaltungen/interview-beate-guetschow/', aliases: ['S', '都市シリーズ'] },
+      ],
+    },
+    'cameron': {
+      works: [
+        { titleJa: 'Sir John Herschel', titleEn: 'Sir John Herschel', labelJa: 'The Met — Sir John Herschel', labelEn: 'The Met — Sir John Herschel', url: 'https://www.metmuseum.org/art/collection/search/282064', aliases: ['Sir John Herschel', 'ジョン・ハーシェル'] },
+        { titleJa: 'The Mountain Nymph Sweet Liberty', titleEn: 'The Mountain Nymph Sweet Liberty', labelJa: 'The Met — The Mountain Nymph Sweet Liberty', labelEn: 'The Met — The Mountain Nymph Sweet Liberty', url: 'https://www.metmuseum.org/art/collection/search/268697', aliases: ['The Mountain Nymph Sweet Liberty', 'Mountain Nymph Sweet Liberty'] },
+        { titleJa: 'The Passing of King Arthur', titleEn: 'The Passing of King Arthur', labelJa: 'The Met — The Passing of King Arthur', labelEn: 'The Met — The Passing of King Arthur', url: 'https://www.metmuseum.org/art/collection/search/282150', aliases: ['The Passing of King Arthur'] },
+        { titleJa: 'Sadness', titleEn: 'Sadness', labelJa: 'Getty Museum — Sadness', labelEn: 'Getty Museum — Sadness', url: 'https://www.getty.edu/art/collection/object/104G0A', aliases: ['Sadness'] },
+      ],
+    },
+    'cartierbresson': {
+      works: [
+        { titleJa: 'Behind the Gare St. Lazare', titleEn: 'Behind the Gare St. Lazare', labelJa: 'MoMA — Behind the Gare St. Lazare', labelEn: 'MoMA — Behind the Gare St. Lazare', url: 'https://www.moma.org/collection/works/98333', aliases: ['Behind the Gare St. Lazare', 'サン＝ラザール駅裏'] },
+        { titleJa: 'Hyères, France', titleEn: 'Hyères, France', labelJa: 'MoMA — Hyères, France', labelEn: 'MoMA — Hyères, France', url: 'https://www.moma.org/collection/works/44586', aliases: ['Hyères, France', 'Hyères'] },
+        { titleJa: 'Seville, Spain', titleEn: 'Seville, Spain', labelJa: 'MoMA — Seville, Spain', labelEn: 'MoMA — Seville, Spain', url: 'https://www.moma.org/collection/works/56129', aliases: ['Seville, Spain', 'Seville'] },
+        { titleJa: 'Rue Mouffetard, Paris', titleEn: 'Rue Mouffetard, Paris', labelJa: 'MoMA — Rue Mouffetard, Paris', labelEn: 'MoMA — Rue Mouffetard, Paris', url: 'https://www.moma.org/collection/works/88041', aliases: ['Rue Mouffetard, Paris', 'Rue Mouffetard'] },
+        { titleJa: 'Images à la Sauvette / The Decisive Moment', titleEn: 'Images à la Sauvette / The Decisive Moment', labelJa: 'Fondation HCB — The Decisive Moment', labelEn: 'Fondation HCB — The Decisive Moment', url: 'https://www.henricartierbresson.org/en/actualites/the-decisive-moment-a-licp-a-new-york/', aliases: ['Images à la Sauvette', 'The Decisive Moment', '決定的瞬間'] },
+      ],
+    },
+    'edward-weston': {
+      links: [
+        { label: 'International Center of Photography — Edward Weston', url: 'https://www.icp.org/browse/archive/constituents/edward-weston' },
+        { label: 'Center for Creative Photography — Edward Weston', url: 'https://ccp.arizona.edu/artists/edward-weston/' },
+        { label: 'Getty Museum — Edward Weston: Enduring Vision', url: 'https://www.getty.edu/art/exhibitions/weston/index.html' },
+        { label: 'SFMOMA — Edward Weston', url: 'https://www.sfmoma.org/artist/Edward_Weston/' },
+        { label: 'CAMERA Torino — Edward Weston. The Matter of Forms', url: 'https://camera.to/en/mostre/edward-weston-the-matter-of-forms/' },
+        { label: 'Bruce Museum — Group f/64', url: 'https://brucemuseum.org/exhibitions/photographic-revolutionaries-of-group-f64-works-from-the-bank-of-america-collection/' },
+        { label: 'Center for Creative Photography / Santa Barbara Museum of Art — Margrethe Mather and Edward Weston', url: 'https://tfaoi.org/aa/3aa/3aa602.htm' },
+        { label: 'MoMA Object:Photo — Steel: Armco, Middletown, Ohio', url: 'https://www.moma.org/interactives/objectphoto/objects/84082.html' },
+      ],
+      works: [
+        { titleJa: 'Pepper no. 30', titleEn: 'Pepper no. 30', labelJa: 'Smithsonian American Art Museum — Pepper no. 30', labelEn: 'Smithsonian American Art Museum — Pepper no. 30', url: 'https://americanart.si.edu/artwork/pepper-no-30-27566', aliases: ['Pepper no. 30', 'Pepper No. 30', 'Pepper #30'] },
+        { titleJa: 'Nude in Dunes', titleEn: 'Nude in Dunes', labelJa: 'MoMA — Nude in Dunes', labelEn: 'MoMA — Nude in Dunes', url: 'https://www.moma.org/collection/works/53260', aliases: ['Nude in Dunes'] },
+        { titleJa: 'Sonya', titleEn: 'Sonya', labelJa: 'The Met — Sonya', labelEn: 'The Met — Sonya', url: 'https://www.metmuseum.org/art/collection/search/291963', aliases: ['Sonya'] },
+        { titleJa: 'Pepper No. 30', titleEn: 'Pepper No. 30', labelJa: 'Monterey Museum of Art — Pepper No. 30', labelEn: 'Monterey Museum of Art — Pepper No. 30', url: 'https://collections.montereyart.org/objects-1/info/1372?sort=0', aliases: ['Monterey Museum of Art — Pepper No. 30'] },
+        { titleJa: 'Point Lobos', titleEn: 'Point Lobos', labelJa: 'National Gallery of Art — Point Lobos', labelEn: 'National Gallery of Art — Point Lobos', url: 'https://www.nga.gov/artworks/225455-point-lobos', aliases: ['Point Lobos'] },
+        { titleJa: 'Steel: Armco, Middletown, Ohio', titleEn: 'Steel: Armco, Middletown, Ohio', labelJa: 'MoMA Object:Photo — Steel: Armco, Middletown, Ohio', labelEn: 'MoMA Object:Photo — Steel: Armco, Middletown, Ohio', url: 'https://www.moma.org/interactives/objectphoto/objects/84082.html', aliases: ['Steel: Armco, Middletown, Ohio', 'Armco Steel', 'Armco'] },
+        { titleJa: 'Tomato Field, Monterey Coast', titleEn: 'Tomato Field, Monterey Coast', labelJa: 'MoMA — Tomato Field, Monterey Coast', labelEn: 'MoMA — Tomato Field, Monterey Coast', url: 'https://www.moma.org/collection/works/53626', aliases: ['Tomato Field, Monterey Coast'] },
+      ],
+    },
+    'ernest-cole': {
+      works: [
+        { titleJa: 'House of Bondage', titleEn: 'House of Bondage', labelJa: 'MoMA — Ernest Cole’s House of Bondage', labelEn: 'MoMA — Ernest Cole’s House of Bondage', url: 'https://www.moma.org/calendar/galleries/5591', aliases: ['House of Bondage', 'ハウス・オブ・ボンデージ'] },
+        { titleJa: 'House of Bondage archive', titleEn: 'House of Bondage archive', labelJa: 'Google Arts & Culture — Ernest Cole Archive: House of Bondage', labelEn: 'Google Arts & Culture — Ernest Cole Archive: House of Bondage', url: 'https://artsandculture.google.com/story/ernest-cole-archive-house-of-bondage-photography-legacy-project/zwVB4W-AFppRBQ?hl=en', aliases: ['Ernest Cole Archive: House of Bondage'] },
+        { titleJa: 'House of Bondage vintage works', titleEn: 'House of Bondage vintage works', labelJa: 'Goodman Gallery — House of Bondage vintage works', labelEn: 'Goodman Gallery — House of Bondage vintage works', url: 'https://goodman-viewingroom.exhibit-e.art/viewing-room/ernest-cole-house-of-bondage-vintage-works-from-the-ernest-cole-family-trust-part-three2', aliases: ['Vintage works from the Ernest Cole Family Trust'] },
+        { titleJa: 'The True America', titleEn: 'The True America', labelJa: 'Magnum Photos — Ernest Cole’s Rediscovered Archive', labelEn: 'Magnum Photos — Ernest Cole’s Rediscovered Archive', url: 'https://www.magnumphotos.com/arts-culture/society-arts-culture/ernest-cole-rediscovered-archive-apartheid-black-history/', aliases: ['The True America', 'rediscovered archive'] },
+      ],
+    },
+    'eugenesmith': {
+      works: [
+        { titleJa: 'Country Doctor', titleEn: 'Country Doctor', labelJa: 'Magnum Photos — Country Doctor', labelEn: 'Magnum Photos — Country Doctor', url: 'https://www.magnumphotos.com/newsroom/society/w-eugene-smith-country-doctor/', aliases: ['Country Doctor', 'カントリー・ドクター'] },
+        { titleJa: 'The Walk to Paradise Garden', titleEn: 'The Walk to Paradise Garden', labelJa: 'MoMA — The Walk to Paradise Garden', labelEn: 'MoMA — The Walk to Paradise Garden', url: 'https://www.moma.org/collection/works/54679', aliases: ['The Walk to Paradise Garden'] },
+        { titleJa: 'Minamata', titleEn: 'Minamata', labelJa: 'Magnum Photos — Minamata', labelEn: 'Magnum Photos — Minamata', url: 'https://www.magnumphotos.com/arts-culture/society-arts-culture/w-eugene-smith-minamata-warning-to-the-world/', aliases: ['Minamata', '水俣'] },
+        { titleJa: 'Spanish Village', titleEn: 'Spanish Village', labelJa: 'Magnum Photos — Master of the Photo Essay', labelEn: 'Magnum Photos — Master of the Photo Essay', url: 'https://www.magnumphotos.com/theory-and-practice/w-eugene-smith-master-of-the-photo-essay/', aliases: ['Spanish Village', 'スペインの村'] },
+      ],
+    },
+    'evans': {
+      works: [
+        { titleJa: 'American Photographs', titleEn: 'American Photographs', labelJa: 'MoMA — American Photographs', labelEn: 'MoMA — American Photographs', url: 'https://www.moma.org/calendar/exhibitions/2968', aliases: ['American Photographs', 'アメリカン・フォトグラフス'] },
+        { titleJa: 'Alabama Tenant Farmer', titleEn: 'Alabama Tenant Farmer', labelJa: 'The Met — Alabama Tenant Farmer', labelEn: 'The Met — Alabama Tenant Farmer', url: 'https://www.metmuseum.org/art/collection/search/284047', aliases: ['Alabama Tenant Farmer'] },
+        { titleJa: 'Alabama Tenant Farmer Wife', titleEn: 'Alabama Tenant Farmer Wife', labelJa: 'The Met — Alabama Tenant Farmer Wife', labelEn: 'The Met — Alabama Tenant Farmer Wife', url: 'https://www.metmuseum.org/art/collection/search/284685', aliases: ['Alabama Tenant Farmer Wife'] },
+        { titleJa: 'Subway Passengers, New York City', titleEn: 'Subway Passengers, New York City', labelJa: 'The Met — Subway Passengers, New York City', labelEn: 'The Met — Subway Passengers, New York City', url: 'https://www.metmuseum.org/art/collection/search/259975', aliases: ['Subway Passengers, New York City', 'Subway Passengers', '地下鉄肖像'] },
+        { titleJa: 'Minstrel Showbill', titleEn: 'Minstrel Showbill', labelJa: 'Amon Carter Museum — Minstrel Showbill', labelEn: 'Amon Carter Museum — Minstrel Showbill', url: 'https://www.cartermuseum.org/collection/minstrel-showbill-p1978482', aliases: ['Minstrel Showbill'] },
+      ],
+    },
+    'hiroshi-sugimoto': {
+      links: [
+        { label: 'MOMAT — HIROSHI SUGIMOTO: EXTINCTION', url: 'https://www.momat.go.jp/en/exhibitions/569' },
+        { label: 'Mori Art Museum — STARS: Hiroshi Sugimoto', url: 'https://www.mori.art.museum/en/exhibitions/stars/03/index.html' },
+        { label: 'Hiroshi Sugimoto Official — Exhibitions', url: 'https://www.sugimotohiroshi.com/biography-1' },
+        { label: 'Fondation Cartier — Étant donné: Le Grand Verre', url: 'https://www.fondationcartier.com/en/programme/exhibition/hiroshi-sugimoto' },
+        { label: 'Fundación MAPFRE — Hiroshi Sugimoto. Black Box', url: 'https://www.fundacionmapfre.org/arte-y-cultura/exposiciones/historico/ano-2016/hiroshi-sugimoto/' },
+        { label: 'Foam — Hiroshi Sugimoto: Black Box', url: 'https://www.foam.org/events/hiroshi-sugimoto' },
+        { label: 'Museum Brandhorst — Revolution', url: 'https://www.museum-brandhorst.de/en/exhibitions/hiroshi-sugimoto-revolution/' },
+        { label: 'Hayward Gallery — Hiroshi Sugimoto: Time Machine', url: 'https://www.southbankcentre.co.uk/venues/hayward-gallery/past-exhibitions/hiroshi-sugimoto-time-machine/' },
+        { label: 'UCCA — Hiroshi Sugimoto: Time Machine', url: 'https://ucca.org.cn/en/exhibition/hiroshi-sugimoto-time-machine/' },
+        { label: 'REALKYOTO — 写真の終わり——杉本博司「時間の終わり」展の余白に', url: 'https://realkyoto.jp/article/sugimoto_asada/' },
+      ],
+      works: [
+        { titleJa: 'Polar Bear', titleEn: 'Polar Bear', labelJa: 'MoMA — Polar Bear', labelEn: 'MoMA — Polar Bear', url: 'https://www.moma.org/collection/works/49997', aliases: ['Polar Bear'] },
+        { titleJa: 'U.A. Walker, New York', titleEn: 'U.A. Walker, New York', labelJa: 'MoMA — U.A. Walker, New York', labelEn: 'MoMA — U.A. Walker, New York', url: 'https://www.moma.org/collection/works/45308', aliases: ['U.A. Walker, New York'] },
+        { titleJa: 'Avalon Theatre, Catalina Island', titleEn: 'Avalon Theatre, Catalina Island', labelJa: 'The Met — Avalon Theatre, Catalina Island', labelEn: 'The Met — Avalon Theatre, Catalina Island', url: 'https://www.metmuseum.org/art/collection/search/267318', aliases: ['Avalon Theatre, Catalina Island'] },
+        { titleJa: 'Ligurian Sea, Saviore', titleEn: 'Ligurian Sea, Saviore', labelJa: 'The Met — Ligurian Sea, Saviore', labelEn: 'The Met — Ligurian Sea, Saviore', url: 'https://www.metmuseum.org/art/collection/search/267008', aliases: ['Ligurian Sea, Saviore'] },
+        { titleJa: 'Anne Boleyn', titleEn: 'Anne Boleyn', labelJa: 'Guggenheim Bilbao — Anne Boleyn', labelEn: 'Guggenheim Bilbao — Anne Boleyn', url: 'https://www.guggenheim-bilbao.eus/en/exhibitions/sugimoto-portraits', aliases: ['Anne Boleyn'] },
+        { titleJa: 'Conceptual Forms', titleEn: 'Conceptual Forms', labelJa: 'Hiroshi Sugimoto Official — Conceptual Forms', labelEn: 'Hiroshi Sugimoto Official — Conceptual Forms', url: 'https://www.sugimotohiroshi.com/new-page-24', aliases: ['Conceptual Forms'] },
+        { titleJa: 'Étant donné: Le Grand Verre', titleEn: 'Étant donné: Le Grand Verre', labelJa: 'Fondation Cartier — Étant donné: Le Grand Verre', labelEn: 'Fondation Cartier — Étant donné: Le Grand Verre', url: 'https://www.fondationcartier.com/en/programme/exhibition/hiroshi-sugimoto', aliases: ['Étant donné: Le Grand Verre', '大ガラス'] },
+      ],
+    },
+    'irving-penn': {
+      links: [
+        { label: 'Irving Penn Foundation — Biography', url: 'https://irvingpenn.org/biography' },
+        { label: 'The Art Institute of Chicago — Ethnographic Studies', url: 'https://archive.artic.edu/irvingpennarchives/ethnographic/' },
+        { label: 'The Art Institute of Chicago — Still Lifes', url: 'https://archive.artic.edu/irvingpennarchives/still-lifes/' },
+        { label: 'The Art Institute of Chicago — Platinum Prints', url: 'https://archive.artic.edu/irvingpennarchives/platinum/' },
+        { label: 'Smithsonian American Art Museum — Irving Penn', url: 'https://americanart.si.edu/exhibitions/irving-penn' },
+        { label: 'Maison Européenne de la Photographie — Irving Penn', url: 'https://www.mep-fr.org/en/collections/irving-penn/' },
+      ],
+      works: [
+        { titleJa: 'Small Trades', titleEn: 'Small Trades', labelJa: 'J. Paul Getty Museum — Small Trades', labelEn: 'J. Paul Getty Museum — Small Trades', url: 'https://www.getty.edu/art/exhibitions/penn/', aliases: ['Small Trades', '小さな職業'] },
+        { titleJa: 'Nude No. 143', titleEn: 'Nude No. 143', labelJa: 'The Met — Nude No. 143', labelEn: 'The Met — Nude No. 143', url: 'https://www.metmuseum.org/art/collection/search/285092', aliases: ['Nude No. 143'] },
+        { titleJa: 'Eye Through a keyhole, New York', titleEn: 'Eye Through a keyhole, New York', labelJa: 'Tokyo Photographic Art Museum — Eye Through a keyhole, New York', labelEn: 'Tokyo Photographic Art Museum — Eye Through a keyhole, New York', url: 'https://collection.topmuseum.jp/Publish/detailPage/20600/', aliases: ['Eye Through a keyhole, New York'] },
+        { titleJa: 'Cigarette No. 37, New York', titleEn: 'Cigarette No. 37, New York', labelJa: 'Pace Gallery — Cigarette No. 37, New York', labelEn: 'Pace Gallery — Cigarette No. 37, New York', url: 'https://www.pacegallery.com/artworks/irving-penn-cigarette-no-37-new-york/', aliases: ['Cigarette No. 37, New York', 'Cigarette No. 37'] },
+        { titleJa: 'Issey Miyake, New York', titleEn: 'Issey Miyake, New York', labelJa: 'The Met — Issey Miyake, New York', labelEn: 'The Met — Issey Miyake, New York', url: 'https://www.metmuseum.org/art/collection/search/714746', aliases: ['Issey Miyake, New York'] },
+      ],
+    },
+    'lee-miller': {
+      works: [
+        { titleJa: 'Impasse des Deux Anges', titleEn: 'Impasse des Deux Anges', labelJa: 'The Met — Impasse des Deux Anges', labelEn: 'The Met — Impasse des Deux Anges', url: 'https://www.metmuseum.org/art/collection/search/265510', aliases: ['Impasse des Deux Anges'] },
+        { titleJa: 'Untitled, 1929–32', titleEn: 'Untitled, 1929–32', labelJa: 'MoMA — Untitled, 1929–32', labelEn: 'MoMA — Untitled, 1929–32', url: 'https://www.moma.org/collection/works/83850', aliases: ['Untitled, 1929–32', 'Untitled, 1929-32'] },
+        { titleJa: 'Rene Magritte, Brussels, 1944', titleEn: 'Rene Magritte, Brussels, 1944', labelJa: 'National Galleries of Scotland — Rene Magritte, Brussels, 1944', labelEn: 'National Galleries of Scotland — Rene Magritte, Brussels, 1944', url: 'https://www.nationalgalleries.org/art-and-artists/95014', aliases: ['Rene Magritte, Brussels, 1944', 'René Magritte, Brussels, 1944'] },
+        { titleJa: 'Lee Miller picture library', titleEn: 'Lee Miller picture library', labelJa: 'Lee Miller Archives — Picture Library', labelEn: 'Lee Miller Archives — Picture Library', url: 'https://www.leemiller.co.uk/', aliases: ['Électricité', 'Corsetry', 'Women with firemasks'] },
+      ],
+    },
+    'michio-hoshino': {
+      works: [
+        { titleJa: 'Coming Home: The Photographs of Michio Hoshino', titleEn: 'Coming Home: The Photographs of Michio Hoshino', labelJa: 'Alaska’s Digital Archives — Coming Home: The Photographs of Michio Hoshino', labelEn: 'Alaska’s Digital Archives — Coming Home: The Photographs of Michio Hoshino', url: 'https://vilda.alaska.edu/digital/collection/cdmg3/id/17/', aliases: ['Coming Home', 'The Photographs of Michio Hoshino'] },
+        { titleJa: 'Natural Wonders', titleEn: 'Natural Wonders', labelJa: 'University of Alaska Museum of the North — Natural Wonders', labelEn: 'University of Alaska Museum of the North — Natural Wonders', url: 'https://www.uaf.edu/museum/exhibits/galleries/natural-wonders/', aliases: ['Natural Wonders'] },
+        { titleJa: 'ALASKA', titleEn: 'ALASKA', labelJa: '星野道夫公式サイト — ALASKA', labelEn: 'Michio Hoshino official site — ALASKA', url: 'https://michio-hoshino.com/', aliases: ['ALASKA', 'GRIZZLY', 'MOOSE'] },
+      ],
+    },
+    'moriyama': {
+      works: [
+        { titleJa: 'ON THE ROAD', titleEn: 'ON THE ROAD', labelJa: 'SFMOMA — ON THE ROAD, 1969', labelEn: 'SFMOMA — ON THE ROAD, 1969', url: 'https://www.sfmoma.org/artwork/2014.1175/', aliases: ['ON THE ROAD', 'On the Road'] },
+        { titleJa: 'Grand Level, Yubari', titleEn: 'Grand Level, Yubari', labelJa: 'The Met — Grand Level, Yubari', labelEn: 'The Met — Grand Level, Yubari', url: 'https://www.metmuseum.org/art/collection/search/284421', aliases: ['Grand Level, Yubari'] },
+        { titleJa: 'Stray Dog', titleEn: 'Stray Dog', labelJa: 'SFMOMA — Daido Moriyama: Stray Dog', labelEn: 'SFMOMA — Daido Moriyama: Stray Dog', url: 'https://www.sfmoma.org/exhibition/daido-moriyama/', aliases: ['Stray Dog', '野良犬'] },
+        { titleJa: 'Farewell Photography', titleEn: 'Farewell Photography', labelJa: 'The Photographers’ Gallery — Daido Moriyama retrospective', labelEn: 'The Photographers’ Gallery — Daido Moriyama retrospective', url: 'https://thephotographersgallery.org.uk/whats-on/daido-moriyama-retrospective', aliases: ['Farewell Photography', '写真よさようなら'] },
+      ],
+    },
+    'parr': {
+      works: [
+        { titleJa: 'The Last Resort', titleEn: 'The Last Resort', labelJa: 'Magnum Photos — The Last Resort', labelEn: 'Magnum Photos — The Last Resort', url: 'https://www.magnumphotos.com/arts-culture/society-arts-culture/martin-parr-the-last-resort/', aliases: ['The Last Resort', 'ラスト・リゾート'] },
+        { titleJa: 'Small World', titleEn: 'Small World', labelJa: 'Magnum Photos — Global Tourism / Small World', labelEn: 'Magnum Photos — Global Tourism / Small World', url: 'https://www.magnumphotos.com/arts-culture/travel/global-tourism-martin-parr/', aliases: ['Small World'] },
+        { titleJa: 'Common Sense', titleEn: 'Common Sense', labelJa: 'Magnum Photos — Common Sense', labelEn: 'Magnum Photos — Common Sense', url: 'https://www.magnumphotos.com/arts-culture/society-arts-culture/martin-parr-common-sense/', aliases: ['Common Sense'] },
+        { titleJa: 'Only in England', titleEn: 'Only in England', labelJa: 'National Science and Media Museum — Only in England', labelEn: 'National Science and Media Museum — Only in England', url: 'https://www.scienceandmediamuseum.org.uk/what-was-on/only-england-photographs-tony-ray-jones-and-martin-parr', aliases: ['Only in England'] },
+      ],
+    },
+    'pieter-hugo': {
+      works: [
+        { titleJa: 'Mallam Mantari Lamal with Mainasara, Nigeria', titleEn: 'Mallam Mantari Lamal with Mainasara, Nigeria', labelJa: 'The Met — Mallam Mantari Lamal with Mainasara, Nigeria', labelEn: 'The Met — Mallam Mantari Lamal with Mainasara, Nigeria', url: 'https://www.metmuseum.org/art/collection/search/291477', aliases: ['Mallam Mantari Lamal with Mainasara, Nigeria'] },
+        { titleJa: 'Al Hasan Abukari, Agbogbloshie Market, Accra, Ghana', titleEn: 'Al Hasan Abukari, Agbogbloshie Market, Accra, Ghana', labelJa: 'SFMOMA — Al Hasan Abukari, Agbogbloshie Market, Accra, Ghana', labelEn: 'SFMOMA — Al Hasan Abukari, Agbogbloshie Market, Accra, Ghana', url: 'https://www.sfmoma.org/artwork/2012.104/', aliases: ['Al Hasan Abukari, Agbogbloshie Market, Accra, Ghana'] },
+        { titleJa: 'The Hyena and Other Men', titleEn: 'The Hyena and Other Men', labelJa: 'Pieter Hugo official — The Hyena and Other Men', labelEn: 'Pieter Hugo official — The Hyena and Other Men', url: 'https://pieterhugo.com/The-Hyena-and-Other-Men', aliases: ['The Hyena and Other Men'] },
+        { titleJa: 'Permanent Error', titleEn: 'Permanent Error', labelJa: 'Pieter Hugo official — Permanent Error', labelEn: 'Pieter Hugo official — Permanent Error', url: 'https://pieterhugo.com/Permanent-Error', aliases: ['Permanent Error'] },
+        { titleJa: 'Kin', titleEn: 'Kin', labelJa: 'Fondation Henri Cartier-Bresson — Pieter Hugo: Kin', labelEn: 'Fondation Henri Cartier-Bresson — Pieter Hugo: Kin', url: 'https://www.henricartierbresson.org/en/expositions/pieter-hugo/', aliases: ['Kin'] },
+      ],
+    },
+    'renger': {
+      works: [
+        { titleJa: 'Die Welt ist schön', titleEn: 'Die Welt ist schön', labelJa: 'MoMA Object:Photo — Die Welt ist schön', labelEn: 'MoMA Object:Photo — Die Welt ist schön', url: 'https://www.moma.org/interactives/objectphoto/publications/780.html', aliases: ['Die Welt ist schön', 'The World is Beautiful', '世界は美しい'] },
+        { titleJa: 'Albert Renger-Patzsch collection', titleEn: 'Albert Renger-Patzsch collection', labelJa: 'Getty Museum — Albert Renger-Patzsch works', labelEn: 'Getty Museum — Albert Renger-Patzsch works', url: 'https://www.getty.edu/art/collection/person/103KHR', aliases: ['Albert Renger-Patzsch collection'] },
+        { titleJa: 'Albert Renger-Patzsch works', titleEn: 'Albert Renger-Patzsch works', labelJa: 'National Gallery of Art — Albert Renger-Patzsch', labelEn: 'National Gallery of Art — Albert Renger-Patzsch', url: 'https://www.nga.gov/artists/13554-albert-renger-patzsch', aliases: ['Renger-Patzsch works'] },
+      ],
+    },
+    'richard-avedon': {
+      links: [
+        { label: 'The Richard Avedon Foundation — Biography', url: 'https://www.avedonfoundation.org/biography' },
+        { label: 'ICP — Richard Avedon', url: 'https://www.icp.org/browse/archive/constituents/richard-avedon' },
+        { label: 'SFMOMA — Richard Avedon Photographs 1946–2004', url: 'https://www.sfmoma.org/exhibition/richard-avedon/' },
+        { label: 'Amon Carter Museum — In the American West', url: 'https://www.cartermuseum.org/carter-collection/collection-group/american-west' },
+        { label: 'Fondation Henri Cartier-Bresson — Richard Avedon: In the American West', url: 'https://www.henricartierbresson.org/en/expositions/richard-avedon/' },
+        { label: 'MoMA — Richard Avedon', url: 'https://www.moma.org/artists/248-richard-avedon' },
+      ],
+      works: [
+        { titleJa: 'Renee The New Look of Dior Place de la Concorde, Paris', titleEn: 'Renee The New Look of Dior Place de la Concorde, Paris', labelJa: '東京都写真美術館 — Renee The New Look of Dior Place de la Concorde, Paris', labelEn: 'Tokyo Photographic Art Museum — Renee The New Look of Dior Place de la Concorde, Paris', url: 'https://collection.topmuseum.jp/Publish/detailPage/31345/', aliases: ['Renee The New Look of Dior Place de la Concorde, Paris'] },
+        { titleJa: 'Dovima with Elephants', titleEn: 'Dovima with Elephants', labelJa: 'SFMOMA — Dovima with Elephants', labelEn: 'SFMOMA — Dovima with Elephants', url: 'https://www.sfmoma.org/exhibition/richard-avedon/', aliases: ['Dovima with Elephants', 'Dovima with Elephants, Evening Dress by Dior, Cirque d’Hiver, Paris', 'Dovima with Elephants, Evening Dress by Dior, Cirque d’Hiver'] },
+        { titleJa: 'Carmen (Homage to Munkácsi), coat by Cardin, Place Francois-Premier, Paris', titleEn: 'Carmen (Homage to Munkácsi), coat by Cardin, Place Francois-Premier, Paris', labelJa: 'V&A — Carmen (Homage to Munkácsi)', labelEn: 'V&A — Carmen (Homage to Munkácsi)', url: 'https://www.vam.ac.uk/articles/100-years-of-fashion-photography', aliases: ['Carmen (Homage to Munkácsi), coat by Cardin, Place Francois-Premier, Paris', 'Carmen (Homage to Munkácsi)'] },
+        { titleJa: 'A. L. Bean', titleEn: 'A. L. Bean', labelJa: 'Amon Carter Museum — A. L. Bean', labelEn: 'Amon Carter Museum — A. L. Bean', url: 'https://www.cartermuseum.org/collection/l-bean-cotton-farmer-sweetwater-texas-31079-p19852840', aliases: ['A. L. Bean', 'A. L. Bean, Cotton Farmer, Sweetwater, Texas'] },
+        { titleJa: 'Alton Terry', titleEn: 'Alton Terry', labelJa: 'Amon Carter Museum — Alton Terry', labelEn: 'Amon Carter Museum — Alton Terry', url: 'https://www.cartermuseum.org/collection/alton-terry-oil-field-worker-frenstat-texas-92880-p19852858', aliases: ['Alton Terry', 'Alton Terry, oil field worker, Frenstat, Texas'] },
+        { titleJa: 'Marilyn Monroe', titleEn: 'Marilyn Monroe', labelJa: 'MoMA — Marilyn Monroe', labelEn: 'MoMA — Marilyn Monroe', url: 'https://www.moma.org/collection/works/128614?artist_id=248&page=1&sov_referrer=artist', aliases: ['Marilyn Monroe', 'Marilyn Monroe, actress, New York, May 6, 1957'] },
+        { titleJa: 'The Family', titleEn: 'The Family', labelJa: 'National Gallery of Art — The Family', labelEn: 'National Gallery of Art — The Family', url: 'https://www.nga.gov/artworks/233967-family', aliases: ['The Family'] },
+      ],
+    },
+    'robertfrank': {
+      works: [
+        { titleJa: 'Trolley—New Orleans', titleEn: 'Trolley—New Orleans', labelJa: 'MoMA — Trolley—New Orleans', labelEn: 'MoMA — Trolley—New Orleans', url: 'https://www.moma.org/collection/works/54484', aliases: ['Trolley—New Orleans', 'Trolley-New Orleans', 'Trolley, New Orleans'] },
+        { titleJa: 'Parade—Hoboken, New Jersey', titleEn: 'Parade—Hoboken, New Jersey', labelJa: 'National Gallery of Art — Parade—Hoboken, New Jersey', labelEn: 'National Gallery of Art — Parade—Hoboken, New Jersey', url: 'https://www.nga.gov/artworks/72864-parade-hoboken-new-jersey', aliases: ['Parade—Hoboken, New Jersey', 'Parade-Hoboken, New Jersey'] },
+        { titleJa: 'U.S. 90, En Route to Del Rio, Texas', titleEn: 'U.S. 90, En Route to Del Rio, Texas', labelJa: 'National Gallery of Art — U.S. 90, En Route to Del Rio, Texas', labelEn: 'National Gallery of Art — U.S. 90, En Route to Del Rio, Texas', url: 'https://www.nga.gov/artworks/85943-guggenheim-393americans-83-us-90-en-route-del-rio-texas', aliases: ['U.S. 90, En Route to Del Rio, Texas'] },
+        { titleJa: 'Elevator, Miami Beach', titleEn: 'Elevator, Miami Beach', labelJa: 'The Met — Elevator, Miami Beach', labelEn: 'The Met — Elevator, Miami Beach', url: 'https://www.metmuseum.org/art/collection/search/265014', aliases: ['Elevator, Miami Beach'] },
+        { titleJa: 'The Americans', titleEn: 'The Americans', labelJa: 'National Gallery of Art — Looking In: Robert Frank’s The Americans', labelEn: 'National Gallery of Art — Looking In: Robert Frank’s The Americans', url: 'https://www.nga.gov/exhibitions/looking', aliases: ['The Americans', 'Les Américains', 'アメリカ人'] },
+      ],
+    },
+    'sherman': {
+      works: [
+        { titleJa: 'Untitled Film Still #21', titleEn: 'Untitled Film Still #21', labelJa: 'The Met — Untitled Film Still #21', labelEn: 'The Met — Untitled Film Still #21', url: 'https://www.metmuseum.org/art/collection/search/266784', aliases: ['Untitled Film Still #21'] },
+        { titleJa: 'Untitled #87', titleEn: 'Untitled #87', labelJa: 'The Met — Untitled #87', labelEn: 'The Met — Untitled #87', url: 'https://www.metmuseum.org/art/collection/search/267146', aliases: ['Untitled #87'] },
+        { titleJa: 'Untitled #224', titleEn: 'Untitled #224', labelJa: 'MoMA Audio — Untitled #224', labelEn: 'MoMA Audio — Untitled #224', url: 'https://www.moma.org/audio/playlist/261/3365', aliases: ['Untitled #224'] },
+        { titleJa: 'The Complete Untitled Film Stills', titleEn: 'The Complete Untitled Film Stills', labelJa: 'MoMA — The Complete Untitled Film Stills', labelEn: 'MoMA — The Complete Untitled Film Stills', url: 'https://www.moma.org/calendar/exhibitions/253', aliases: ['Untitled Film Stills', 'The Complete Untitled Film Stills'] },
+      ],
+    },
+    'tokuko-ushioda': {
+      works: [
+        { titleJa: '本の景色 BIBLIOTHECA', titleEn: 'BIBLIOTHECA', labelJa: 'Nikon THE GALLERY — 本の景色 BIBLIOTHECA', labelEn: 'Nikon THE GALLERY — BIBLIOTHECA', url: 'https://nij.nikon.com/enjoy/exhibition/thegallery/events/201706/20180410.html', aliases: ['本の景色 BIBLIOTHECA', 'BIBLIOTHECA'] },
+        { titleJa: 'マイハズバンド', titleEn: 'My Husband', labelJa: 'The Third Gallery Aya — マイハズバンド', labelEn: 'The Third Gallery Aya — My Husband', url: 'https://thethirdgalleryaya.com/artists/tokuko-ushioda/', aliases: ['マイハズバンド', 'My Husband'] },
+        { titleJa: '冷蔵庫 / ICE BOX', titleEn: 'ICE BOX', labelJa: 'The Third Gallery Aya — 冷蔵庫 / ICE BOX', labelEn: 'The Third Gallery Aya — ICE BOX', url: 'https://thethirdgalleryaya.com/artists/tokuko-ushioda/', aliases: ['冷蔵庫', 'ICE BOX'] },
+        { titleJa: 'TOPコレクション セレンディピティ', titleEn: 'TOP Collection: Serendipity', labelJa: '東京都写真美術館 — TOPコレクション セレンディピティ', labelEn: 'Tokyo Photographic Art Museum — TOP Collection: Serendipity', url: 'https://topmuseum.jp/exhibition/4530/', aliases: ['TOPコレクション セレンディピティ', 'Serendipity'] },
+      ],
+    },
+    'wolfgang-tillmans': {
+      works: [
+        { titleJa: 'Freischwimmer 199', titleEn: 'Freischwimmer 199', labelJa: 'MoMA — Freischwimmer 199', labelEn: 'MoMA — Freischwimmer 199', url: 'https://www.moma.org/collection/works/164471', aliases: ['Freischwimmer 199'] },
+        { titleJa: 'AIDS, General Idea', titleEn: 'AIDS, General Idea', labelJa: 'MoMA — AIDS, General Idea', labelEn: 'MoMA — AIDS, General Idea', url: 'https://www.moma.org/collection/works/164443', aliases: ['AIDS, General Idea'] },
+        { titleJa: 'Lutz & Alex sitting in the trees', titleEn: 'Lutz & Alex sitting in the trees', labelJa: 'MoMA brochure — Lutz & Alex sitting in the trees', labelEn: 'MoMA brochure — Lutz & Alex sitting in the trees', url: 'https://press.moma.org/wp-content/uploads/2022/09/MoMA_Tilllmans_Exhibition-Brochure_FINAL.pdf', aliases: ['Lutz & Alex sitting in the trees', 'Lutz and Alex sitting in the trees'] },
+        { titleJa: 'To look without fear', titleEn: 'To look without fear', labelJa: 'MoMA — To look without fear', labelEn: 'MoMA — To look without fear', url: 'https://press.moma.org/wp-content/uploads/2022/09/MoMA_Tilllmans_Exhibition-Brochure_FINAL.pdf', aliases: ['To look without fear'] },
+      ],
+    },
+  };
+
+  Object.entries(additions).forEach(([id, patch]) => {
+    const current = overrides[id] || {};
+    const merged = { ...current };
+    if (patch.links) {
+      const seenLinks = new Set((current.links || []).map((link) => link.url));
+      merged.links = [
+        ...(current.links || []),
+        ...patch.links.filter((link) => link.url && !seenLinks.has(link.url)),
+      ];
+    }
+    if (patch.works) {
+      const seenWorks = new Set((current.works || []).map((work) => work.url));
+      merged.works = [
+        ...(current.works || []),
+        ...patch.works.filter((work) => work.url && !seenWorks.has(work.url)),
+      ];
+    }
+    overrides[id] = merged;
+  });
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
