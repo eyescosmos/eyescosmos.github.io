@@ -94,6 +94,7 @@ textJa・textEn のメインセクション見出しは、ジェネレータの 
   - 本文（経歴・表現解説・批評と受容 / Career・Expression・Criticism）
   - 作品画像 / Work images セクション
   - 出典 / Sources セクション
+  - **外部リンク（chip-link ボタン）** — 後述のジェネレータ実行前チェックで防ぐ
 - `photographer-essay-overrides.js` を編集した場合は、push 前に必ず以下を実行する：
   ```
   python3 scripts/check_texten_completeness.py
@@ -115,6 +116,23 @@ textJa・textEn のメインセクション見出しは、ジェネレータの 
 - `git show <commit>` でどのセクションが変更されたかを確認する
 - Codex はアフィリエイト書籍カード・SEO・デザインを担当する。本文や出典が消えていたら復元する
 - Codex の変更（書籍カード等）は上書きせず、自分の変更と共存させる
+
+### ジェネレータ実行前チェック — 外部リンク消失の防止 — CRITICAL
+
+**過去に発生した問題：** overrides.js の `links:` 配列が削除・未設定の状態でジェネレータを実行すると、HTML に残っていた chip-link 外部リンクが上書きで消える。
+
+**ジェネレータ（`python3 scripts/generate_photographer_pages.py`）を実行する前に必ず確認すること：**
+
+1. 編集対象の写真家エントリが overrides.js に `links:` 配列を持っているか確認する
+2. 対応する HTML（`photographers/xxx.html`）に chip-link 外部リンクが存在する場合、その URL が overrides.js の `links:` に入っているかを照合する
+3. HTML に links があるのに overrides.js に `links:` がない場合、先に overrides.js へ追記してからジェネレータを実行する
+
+```bash
+# HTML に外部リンクがあるか確認するコマンド例
+grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
+```
+
+この確認を怠ると、ジェネレータ実行で多数ページの外部リンクが一括消失する。
 
 ### 手書きHTMLページ（ジェネレータ非対象）の扱い
 - 以下のページは直接HTMLを編集しており、ジェネレータで上書きされない：
