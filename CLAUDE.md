@@ -46,6 +46,22 @@
 - 関連作品・写真集
 - 参考文献・出典
 
+## Section heading rules — CRITICAL
+
+textJa・textEn のメインセクション見出しは、ジェネレータの `ESSAY_HEADING_SET` に登録された語のみを使うこと。それ以外の語はh4（小見出し）になり、「解説」（デフォルト）という不要な見出しが出現する。
+
+### 許可される見出し語（これ以外は使わない）
+- textJa：`経歴`、`表現解説`、`批評と受容`
+- textEn：`Biography`、`Expression / method`、`Criticism and reception`
+
+### NG 例（使ってはいけない言い換え）
+- `経歴と背景` → `経歴` にする
+- `批評と評価` → `批評と受容` にする
+- `Background and formation` → `Biography` にする
+- `Critical reception` → `Criticism and reception` にする（大文字・語順に注意）
+
+新しい見出しパターンが必要な場合は、`scripts/generate_photographer_pages.py` の `ESSAY_HEADING_SET` に追加してから使う。
+
 ## Content storage — CRITICAL
 - 写真家の本文・解説は必ず `data/photographer-essay-overrides.js` に書く
 - `photographers/*.html` に直接書いてはならない（ジェネレータ実行で上書きされ消える）
