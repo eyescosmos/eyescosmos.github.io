@@ -324,6 +324,12 @@ SEO_TEXT_OVERRIDES = {
             "description": "Irving Penn is explained through Vogue, studio portraits, fashion photography, Small Trades, still life, platinum-palladium printing, and the boundary between magazine and fine-art photography.",
         },
     },
+    "richard-avedon": {
+        "en": {
+            "title": "Richard Avedon | Fashion Photography, Portraits & Style | Photo Coordinates",
+            "description": "Richard Avedon explained through fashion photography, portrait style, white backgrounds, performance, and In the American West, with photo-history context, key works, and sources.",
+        },
+    },
     "lee-miller": {
         "ja": {
             "title": "リー・ミラー | 写真史 | 写真の座標",
@@ -1355,6 +1361,12 @@ def build_alias_targets(photographers: list[dict], alias_map: dict[str, str]):
 
 
 def build_works_targets(essay_overrides: dict) -> tuple[dict[str, str], "re.Pattern | None"]:
+    def should_index_work_title(title: str) -> bool:
+        compact = re.sub(r"\s+", "", title or "")
+        if not compact:
+            return False
+        return not (compact.isascii() and compact.isalnum() and len(compact) < 3)
+
     works_lookup: dict[str, str] = {}
     for entry in essay_overrides.values():
         if not isinstance(entry, dict):
@@ -1371,7 +1383,8 @@ def build_works_targets(essay_overrides: dict) -> tuple[dict[str, str], "re.Patt
             if isinstance(aliases, list):
                 titles.extend(alias for alias in aliases if alias)
             for title in titles:
-                works_lookup[title] = url
+                if should_index_work_title(title):
+                    works_lookup[title] = url
     if not works_lookup:
         return {}, None
     pattern = "|".join(re.escape(t) for t in sorted(works_lookup, key=len, reverse=True))
@@ -1469,6 +1482,10 @@ ESSAY_HEADING_SET = {
     '表現解説',
     '批評と受容',
     'Biography',
+    'How Avedon changed fashion photography',
+    'Portrait style: white background, performance, and confrontation',
+    'Technical style: light, large-format camera, composition, and printed scale',
+    'In the American West',
     'How the Zone System relates to Group f/64',
     'Expression / method',
     'Seascapes, Theaters, Dioramas, and the Photograph as Time',
@@ -1656,7 +1673,10 @@ def override_text_and_citations(override, lang: str):
                 parts.append(heading)
             parts.extend(paragraph for paragraph in paragraphs if paragraph)
         text = "\n\n".join(parts)
-    citations = override.get("citations") if isinstance(override.get("citations"), list) else None
+    citations_key = "citationsEn" if lang == "en" else "citationsJa"
+    citations = override.get(citations_key) if isinstance(override.get(citations_key), list) else None
+    if citations is None:
+        citations = override.get("citations") if isinstance(override.get("citations"), list) else None
     return text, citations
 
 

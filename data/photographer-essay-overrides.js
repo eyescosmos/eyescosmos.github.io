@@ -14267,3 +14267,97 @@ On Tomishige Tokuji, given that individual critical histories and first-person s
   });
   window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
 })();
+
+/* 2026-05-20 Richard Avedon English SEO and body correction.
+   This overrides the English body only after a previous generator restore
+   accidentally attached Irving Penn text to the English Avedon page. */
+(function () {
+  const overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+  const current = overrides['richard-avedon'] || {};
+  overrides['richard-avedon'] = {
+    ...current,
+    leadEn: `Richard Avedon was an American fashion and portrait photographer who changed the look of postwar fashion photography through movement, performance, and modern magazine design. Working for Harper's Bazaar, Vogue, and later The New Yorker, he developed a portrait style built around white backgrounds, direct confrontation, precise lighting, and printed scale. In In the American West, he used that same frontal method to move the American West away from heroic landscape myth and toward bodies, work, clothing, and direct gaze.`,
+    textEn: `Biography
+
+Richard Avedon was born in New York in 1923. During the Second World War he served in the United States Merchant Marine, where he made identification photographs; the Richard Avedon Foundation records his later recollection that this work, repeated across many faces, helped him understand that he was becoming a photographer*1. After the war he studied with Alexey Brodovitch at the New School's Design Laboratory and began working for Harper's Bazaar, first through Junior Bazaar and then as one of the magazine's defining photographers*1*4. This background matters because Avedon's photography developed inside the page culture of magazines: editing, typography, clothing, bodies, and reader attention were part of the medium from the beginning.
+
+His career moved across Harper's Bazaar, Vogue, and The New Yorker, while also entering museums, books, advertising, and large-scale exhibitions. ICP summarizes Avedon as a photographer whose work ranged across fashion and portraiture and whose museum recognition became central to his later reputation*2. The Avedon Foundation's magazine archive also records his long work across Harper's Bazaar, Life, Vogue, Rolling Stone, The New Yorker, and other publications, and notes that he became The New Yorker's first staff photographer in 1992*3. Avedon is therefore best understood not as a photographer who left commercial work behind for art, but as someone who made the magazine page, the portrait session, the photobook, and the exhibition wall part of one continuous photographic practice.
+
+How Avedon changed fashion photography
+
+Avedon's fashion photography changed the field by moving clothing away from static display and toward movement, theatricality, and modern social life. The Museum of Fine Arts, Boston notes that he grew up around fashion through his father's women's clothing business, studied with Brodovitch after military service, and joined Junior Bazaar at the age of twenty-one*4. In the years after the war, fashion magazines were not only catalogs of garments; they were places where readers encountered new images of urban life, desire, mobility, and modern femininity. Avedon made use of that context by photographing fashion as something performed by bodies in motion.
+
+The Avedon Foundation explains that when he began at Harper's Bazaar he was not initially allowed to use the studio, so he photographed models in streets, nightclubs, circuses, beaches, and other public settings*1. This limitation became a method. Clothes were no longer isolated products but part of an event involving a model, a place, a gesture, and a story. MFA Boston describes his early fashion images as showing women laughing, jumping, dancing, roller-skating, and otherwise moving through a postwar world of energy and possibility*4. In this sense, Avedon's fashion photography made modernity visible not only through the garments but through how bodies seemed to inhabit them.
+
+Key works show the method clearly. The Tokyo Photographic Art Museum record for Renee The New Look of Dior Place de la Concorde, Paris places the photograph in Avedon's early Paris fashion work, where Dior's New Look is staged within the city rather than sealed inside a studio*7. SFMOMA's retrospective page reproduces Dovima with Elephants, Evening Dress by Dior, Cirque d'Hiver, Paris, 1955, in which the dress, the model's arms, the elephants, and the circus setting form a charged theatrical image*5. V&A's history of fashion photography discusses Carmen (Homage to Munkácsi), coat by Cardin, Place Francois-Premier, Paris as an homage to Martin Munkácsi and as part of the move toward fashion images made outside the studio*6. These examples show why "Richard Avedon fashion photography" cannot be reduced to elegant clothes. His fashion photos make clothing appear through movement, staging, magazine rhythm, and the viewer's immediate sense that a scene is happening.
+
+A short comparison with Irving Penn clarifies the point without turning this page into a Penn essay. The Art Institute of Chicago's Penn Archives describes how, as fashion imagery shifted toward spontaneity in the 1960s, Avedon often carried movement and urban energy while Penn continued to concentrate on detail, form, and composition*18. Both photographers brought magazine work into the museum and the history of modern photography, but Avedon's strongest fashion images generally emphasize encounter, action, and performance rather than the still concentration of the studio.
+
+Portrait style: white background, performance, and confrontation
+
+Avedon's portrait style is often associated with the white background, but the white ground should not be mistaken for neutrality or simple truth. It removes the room, landscape, class markers, and anecdotal setting that might explain a person from the outside. What remains is face, clothing, posture, skin, hands, gaze, fatigue, resistance, and the fact of being photographed. National Portrait Gallery Australia quotes Avedon's view that photographs do not go below the surface, while also emphasizing that the surface is full of clues*8. His portraits work through that tension: viewers are asked to read people from visible signs while also becoming aware of how unstable such reading can be.
+
+This is why performance matters. Avedon's sitters do not simply reveal themselves; they respond to the camera, the photographer, the studio situation, and the pressure of being seen. SFMOMA's materials on Richard Avedon Photographs 1946-2004 emphasize the breadth of his portrait practice across celebrities, political figures, artists, writers, and anonymous people, while also stressing the intensity of his confrontational approach*5*11. In a portrait such as Marilyn Monroe, actress, New York, May 6, 1957, the image is not only a celebrity likeness. MoMA's collection record lets viewers see Monroe's exhaustion and inwardness within the same frontal photographic encounter that made her public image famous*16. Avedon's portrait photography style is powerful because it converts the session itself into visible pressure.
+
+Technical style: light, large-format camera, composition, and printed scale
+
+Avedon's technical style depends on restraint. He often used plain white backgrounds, controlled light, frontal composition, and a large-format camera to create sharp detail and a direct relation between sitter and viewer. The method reduces narrative surroundings but increases attention to small differences: the tilt of a head, the angle of shoulders, wrinkles in clothing, the texture of skin, and the sitter's awareness of the camera. The photograph becomes a field where composition and psychological pressure are difficult to separate.
+
+Printed scale is also central. Avedon's portraits did not remain only magazine images. They appeared as photobooks, museum prints, and large exhibition works whose size changed the viewer's physical relation to the sitter. The Image Centre's Richard Avedon Immortal exhibition describes the way his portraits circulated through celebrity culture, print, and exhibition, while the Avedon Foundation's exhibition record shows how the work has repeatedly been reframed in institutional contexts*13*14. The shift from magazine page to large print does not simply make the same image bigger. It changes the viewer's encounter with the face and body, making Avedon's white background feel less like empty space and more like a stage on which looking becomes unavoidable.
+
+In the American West
+
+In the American West is the clearest example of Avedon's frontal method moving outside fashion and celebrity. The Amon Carter Museum explains that the project was commissioned in 1979 by museum director Mitchell A. Wilder, and that from 1979 to 1984 Avedon traveled through seventeen states and 189 towns, making 752 sittings and exposing about 17,000 sheets of film*9. The museum emphasizes that he photographed people who were not the famous models, actors, and political figures associated with much of his earlier career, and that he placed them before a seamless white background that removed direct reference to place*9.
+
+The result was a portrait project about the American West that did not rely on heroic landscape, cowboy myth, or open-sky romance. Subjects were identified by name, work, place, and date: cotton farmers, oil-field workers, drifters, students, soldiers, and others. Amon Carter's object record for A. L. Bean, cotton farmer, Sweetwater, Texas, 3/10/79 presents one of the project's central images, where worn clothing, direct gaze, and the white background replace conventional western scenery*10. The museum's collection group for In the American West lets viewers see how the series repeatedly foregrounds bodies, labor, clothing, and looking rather than landscape*9.
+
+Fondation Henri Cartier-Bresson describes In the American West as a body of work opposed to traditional and mythologized representations of the American West, and its 2025 exhibition presented the full set of 103 photographs included in the original publication*12. This framing is important for SEO as well as interpretation: users searching for "Richard Avedon photography style" or "technical style lighting composition" often need to understand that the same white-background method served different purposes in different contexts. In fashion it made clothes into modern events; in celebrity portraiture it intensified the encounter with a public figure; in In the American West it stripped away western scenery and made work, body, and social role the visible problem.
+
+Criticism and reception
+
+Avedon's reception has been shaped by the fact that his work crosses categories that are often kept separate: fashion photography, portraiture, documentary address, magazines, books, advertising, and museum exhibitions. Smithsonian Magazine describes how Avedon pushed the boundaries of portrait photography and made readers confront celebrities, models, political figures, activists, writers, and ordinary Americans through the major magazines of the twentieth century*15. The National Gallery of Art's record for The Family also shows how a magazine commission could become a dense collective portrait of political power, public image, and publication format*17. This range is not incidental. Avedon's photographs gain much of their force from moving between the quick visibility of magazine culture and the slower confrontation of exhibition space.
+
+Institutional reception began early and continued after his death. The Avedon Foundation records major exhibitions across museums and galleries, and MoMA's artist page confirms his place in the museum history of photography*13*16. SFMOMA's retrospective treated the full arc from early street and fashion work to portraits and later projects, while The Image Centre's more recent exhibition shows how his photographs continue to be read through celebrity, mortality, and public memory*5*14. The critical problem in Avedon's work is also its strength: his images are never simply transparent records of people. They are highly controlled encounters in which lighting, background, camera distance, scale, page, and wall all shape what viewers believe they can see.
+
+For that reason, Avedon's importance in photo history lies not only in individual famous images such as Dovima with Elephants or Marilyn Monroe. It lies in how he made fashion photography more active, portraiture more confrontational, and the white background a flexible structure for performance, scrutiny, and social reading. His work shows how a photograph can move from magazine desire to museum scale without losing its connection to the conditions of looking.`,
+    citationsEn: [
+      { num: 1, name: 'The Richard Avedon Foundation — History', url: 'https://www.avedonfoundation.org/' },
+      { num: 2, name: 'ICP — Richard Avedon', url: 'https://www.icp.org/browse/archive/constituents/richard-avedon' },
+      { num: 3, name: 'The Richard Avedon Foundation — Magazines', url: 'https://www.avedonfoundation.org/magazines/' },
+      { num: 4, name: 'Museum of Fine Arts, Boston — Avedon Fashion 1944–2000', url: 'https://www.mfa.org/news/press-releases/08-10-2010' },
+      { num: 5, name: 'SFMOMA — Richard Avedon Photographs 1946–2004', url: 'https://www.sfmoma.org/exhibition/richard-avedon/' },
+      { num: 6, name: 'V&A — 100 years of fashion photography', url: 'https://www.vam.ac.uk/articles/100-years-of-fashion-photography' },
+      { num: 7, name: 'Tokyo Photographic Art Museum — Renee The New Look of Dior', url: 'https://collection.topmuseum.jp/Publish/detailPage/31345/' },
+      { num: 8, name: 'National Portrait Gallery Australia — The Avedon effect', url: 'https://www.portrait.gov.au/magazines/46/the-avedon-effect' },
+      { num: 9, name: 'Amon Carter Museum — In the American West', url: 'https://www.cartermuseum.org/carter-collection/collection-group/american-west' },
+      { num: 10, name: 'Amon Carter Museum — A. L. Bean', url: 'https://www.cartermuseum.org/collection/l-bean-cotton-farmer-sweetwater-texas-31079-p19852840' },
+      { num: 11, name: 'SFMOMA Press Release — Richard Avedon: Photographs 1946–2004', url: 'https://www.sfmoma.org/press/release/sfmoma-presents-richard-avedon-photographs-194620/' },
+      { num: 12, name: 'Fondation Henri Cartier-Bresson — Richard Avedon: In the American West', url: 'https://www.henricartierbresson.org/en/expositions/richard-avedon/' },
+      { num: 13, name: 'The Richard Avedon Foundation — Exhibitions', url: 'https://www.avedonfoundation.org/exhibitions' },
+      { num: 14, name: 'The Image Centre — Richard Avedon Immortal', url: 'https://theimagecentre.ca/exhibition/richard-avedon-immortal/' },
+      { num: 15, name: 'Smithsonian Magazine — Richard Avedon Pushed the Boundaries of Portrait Photography', url: 'https://www.smithsonianmag.com/smithsonian-institution/richard-avedon-pushed-the-boundaries-of-portrait-photography-180981330/' },
+      { num: 16, name: 'MoMA — Richard Avedon', url: 'https://www.moma.org/artists/248-richard-avedon' },
+      { num: 17, name: 'National Gallery of Art — The Family', url: 'https://www.nga.gov/artworks/233967-family' },
+      { num: 18, name: 'Art Institute of Chicago — Irving Penn Archives: Fashion', url: 'https://archive.artic.edu/irvingpennarchives/fashion/' },
+    ],
+    links: [
+      { label: 'The Richard Avedon Foundation — History', url: 'https://www.avedonfoundation.org/' },
+      { label: 'The Richard Avedon Foundation — Magazines', url: 'https://www.avedonfoundation.org/magazines/' },
+      { label: 'ICP — Richard Avedon', url: 'https://www.icp.org/browse/archive/constituents/richard-avedon' },
+      { label: 'SFMOMA — Richard Avedon Photographs 1946–2004', url: 'https://www.sfmoma.org/exhibition/richard-avedon/' },
+      { label: 'Amon Carter Museum — In the American West', url: 'https://www.cartermuseum.org/carter-collection/collection-group/american-west' },
+      { label: 'Fondation Henri Cartier-Bresson — Richard Avedon: In the American West', url: 'https://www.henricartierbresson.org/en/expositions/richard-avedon/' },
+      { label: 'MoMA — Richard Avedon', url: 'https://www.moma.org/artists/248-richard-avedon' },
+    ],
+    works: [
+      { titleJa: 'Renee The New Look of Dior Place de la Concorde, Paris', titleEn: 'Renee The New Look of Dior Place de la Concorde, Paris', labelJa: '東京都写真美術館 — Renee The New Look of Dior Place de la Concorde, Paris', labelEn: 'Tokyo Photographic Art Museum — Renee The New Look of Dior Place de la Concorde, Paris', url: 'https://collection.topmuseum.jp/Publish/detailPage/31345/', aliases: ['Renee The New Look of Dior Place de la Concorde, Paris'] },
+      { titleJa: 'Dovima with Elephants', titleEn: 'Dovima with Elephants', labelJa: 'SFMOMA — Dovima with Elephants', labelEn: 'SFMOMA — Dovima with Elephants', url: 'https://www.sfmoma.org/exhibition/richard-avedon/', aliases: ['Dovima with Elephants', 'Dovima with Elephants, Evening Dress by Dior, Cirque d’Hiver, Paris', 'Dovima with Elephants, Evening Dress by Dior, Cirque d’Hiver'] },
+      { titleJa: 'Carmen (Homage to Munkácsi), coat by Cardin, Place Francois-Premier, Paris', titleEn: 'Carmen (Homage to Munkácsi), coat by Cardin, Place Francois-Premier, Paris', labelJa: 'V&A — Carmen (Homage to Munkácsi)', labelEn: 'V&A — Carmen (Homage to Munkácsi)', url: 'https://www.vam.ac.uk/articles/100-years-of-fashion-photography', aliases: ['Carmen (Homage to Munkácsi), coat by Cardin, Place Francois-Premier, Paris', 'Carmen (Homage to Munkácsi)'] },
+      { titleJa: 'Marilyn Monroe', titleEn: 'Marilyn Monroe', labelJa: 'MoMA — Marilyn Monroe', labelEn: 'MoMA — Marilyn Monroe', url: 'https://www.moma.org/collection/works/128614?artist_id=248&page=1&sov_referrer=artist', aliases: ['Marilyn Monroe', 'Marilyn Monroe, actress, New York, May 6, 1957'] },
+      { titleJa: 'A. L. Bean', titleEn: 'A. L. Bean', labelJa: 'Amon Carter Museum — A. L. Bean', labelEn: 'Amon Carter Museum — A. L. Bean', url: 'https://www.cartermuseum.org/collection/l-bean-cotton-farmer-sweetwater-texas-31079-p19852840', aliases: ['A. L. Bean', 'A. L. Bean, cotton farmer, Sweetwater, Texas, 3/10/79', 'A. L. Bean, Cotton Farmer, Sweetwater, Texas'] },
+      { titleJa: 'Alton Terry', titleEn: 'Alton Terry', labelJa: 'Amon Carter Museum — Alton Terry', labelEn: 'Amon Carter Museum — Alton Terry', url: 'https://www.cartermuseum.org/collection/alton-terry-oil-field-worker-frenstat-texas-92880-p19852858', aliases: ['Alton Terry', 'Alton Terry, oil field worker, Frenstat, Texas, 9/28/80'] },
+      { titleJa: 'The Family', titleEn: 'The Family', labelJa: 'National Gallery of Art — The Family', labelEn: 'National Gallery of Art — The Family', url: 'https://www.nga.gov/artworks/233967-family', aliases: ['The Family'] },
+    ],
+  };
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
