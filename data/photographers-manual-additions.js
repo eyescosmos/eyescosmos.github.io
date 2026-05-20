@@ -494,6 +494,7 @@ const PHOTOGRAPHER_LINK_ALIASES = {
   'アーヴィング・ペン': 'irving-penn',
   'アービング・ペン': 'irving-penn',
   'Irving Penn': 'irving-penn',
+  'ペン': 'irving-penn',
   'リチャード・アヴェドン': 'richard-avedon',
   'リチャード・アベドン': 'richard-avedon',
   'Richard Avedon': 'richard-avedon',
