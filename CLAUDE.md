@@ -152,6 +152,7 @@ grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
 - 生成後は `python3 scripts/check_photographer_link_integrity.py` を実行する。
 - 生成後、`photographers/` と `en/photographers/` に `museumangewandtekunst.de` への1文字リンク、`>S</a>`、単語途中リンクが残っていないか確認する。
 - canonical / hreflang / alternate / JSON-LD / `data-nosnippet` は本文やリンク修正で壊さない。生成後のdiffでSEOタグや構造タグに意図しない差分がないか確認する。
+- push前に `git diff` で本文・外部リンク・作品リンク・出典が消えていないか確認する。
 
 ### 手書きHTMLページ（ジェネレータ非対象）の扱い
 - 以下のページは直接HTMLを編集しており、ジェネレータで上書きされない：

@@ -14011,6 +14011,1080 @@ On Tomishige Tokuji, given that individual critical histories and first-person s
     ],
   },
 
+  'strand': {
+    leadJa: `ピクトリアリズムの絵画的模倣を離れ、写真固有の直接性と構造を軸にしたストレート写真の方法を1910年代に展開したアメリカの写真家。《White Fence》《New York [Blind Woman]》など形式と社会的視線が交差する作品群が近代写真の転換点を示す。`,
+    leadEn: `American photographer who advanced straight photography in the 1910s by rejecting pictorialist imitation. Works such as The White Fence and New York [Blind Woman] mark a turning point where rigorous form and social vision converge.`,
+    textJa: `経歴
+
+ポール・ストランドは1890年にニューヨークに生まれ、写真家ルイス・ハインのもとでカメラを学んだ後、スティーグリッツが主宰するギャラリー291の写真文化に接した。*1 1916年に291での個展を持ち、スティーグリッツが編集する写真雑誌『カメラ・ワーク』に作品が掲載されたことで、ストランドのアプローチはアメリカ近代写真の重要な転換点として受容されるようになった。*2 写真固有の鮮明さ、構図、対象との直接的な関係を重視するという方向は、ピクトリアリズムの絵画的効果への依存から離れるものとして位置づけられた。*3
+
+1921年にはチャールズ・シェラーとの共同制作として短編映画《Manhatta》を発表し、ニューヨークの摩天楼と都市の動きを詩的テキストと映像で組み合わせた。*4 1930年代以降はメキシコ、ヨーロッパ、エジプト、アフリカ諸地域を移動しながら地域共同体をテーマにした長期プロジェクトを展開し、テキストと写真を組み合わせた写真集を通じた批評的な記録の形式を探った。*5 ジョージ・イーストマン博物館は彼の写真歴と映画制作の両面を記録しており、形式主義だけでは説明できない幅広い活動の軌跡を伝えている。*6
+
+表現解説
+
+ストレート写真の直接性と構造
+
+ストランドの「ストレート写真」という概念は、シャープなピントを意味するだけでなく、写真が絵画の模倣ではなく独自の形式的論理を持つ媒体であるという主張として機能した。*7 《White Fence》では、柵の板が画面全体を垂直と水平の律動へと変換し、光と影は感情的な物語ではなく構造として機能する。シカゴ美術館の作品記録はこの画面構成を、写真の平面性と直接性を媒体固有の論理として示す実例として位置づけている。*8 《Wall Street》では、摩天楼の壁面に穿たれた黒い開口部と通りを行き交う人影が、都市のリズムと匿名性を一枚のフレームに凝縮する。建築の幾何学的圧力と身体の流れの対比が、都市という社会空間を写真の構造を通じて読ませる構成になっている。*9
+
+SmartHistoryの解説は、《White Fence》においてストランドが写真を絵画的なツールではなく独自のルールを持つ媒体として示したプロセスを詳細に分析している。*10 写真の平面構成と対象との直接的な関係が彼の写真観の中心にあり、この立場はピクトリアリズムの美化とも、スナップショットの即興性とも異なる独自の地点を切り開いた。*11
+
+社会的視線と《New York [Blind Woman]》
+
+《New York [Blind Woman]》は、ストランドの形式実験と社会的視線が交差する代表作として評価される。*12 看板、顔、身体、都市の匿名性が一枚のフレームに重なり合い、肖像でありながら近代都市の制度的な視線を内包する。社会改革写真が被写体を救済の物語へと組み込む方向とは異なり、この作品は被写体を近代都市の表面に刻まれた記号として提示する。*13 ゲティ美術館の作品解説は、ストランドがカメラを偽装する特殊な装置を使い被写体に気づかれずに撮影したとされることを記録しており、表現の倫理と形式実験が交差する緊張がこの作品には含まれている。*14
+
+映画・写真集・後期の展開
+
+《Manhatta》はストランドとシェラーが都市を詩的テキストと機械的眺望の間に置いた試みであり、摩天楼、煙、フェリー、群衆は垂直性と反復によって近代の時間感覚を生み出す。*15 ストランドはアパーチャーとの関係を通じて写真集を独立した表現形式として確立する動きを支えた。*16 後期の地域共同体をテーマにした仕事は、形式的自律性と社会的関心が彼の写真観の中で共存していたことを示しており、純粋な形式主義に収束しなかった理由を伝えている。ICPやフィラデルフィア美術館なども関連作品・資料を所蔵している。*17
+
+批評と受容
+
+MoMA、ゲティ美術館、シカゴ美術館、NGA、ジョージ・イーストマン博物館など主要機関がストランドの作品を所蔵し、ピクトリアリズムからモダニズムへの転換を象徴するアメリカ写真の代表的作家として評価してきた。*18 SFMOMAやプリンストン大学美術館の資料も彼の写真歴を記録している。*19 後年の社会的ドキュメンタリーや政治的関心を含めると、ストランドは純粋な形式主義の作家としてではなく、写真の形式と社会を見る方法が結びつく作家として写真史に位置づけられる。この視点は、アメリカ写真がピクトリアリズムを離れた後に向かった複数の方向——都市、労働、地域、記録——を理解するうえでも重要な補助線を提供している。ストレート写真という概念が写真史でどのように機能し、後代の写真家にどのように受け取られたかを考えるうえで、ストランドの仕事は中心的な参照点であり続けている。MFAボストン、クリーブランド美術館などさらに広い機関に関連作品が分布している。*20`,
+    textEn: `Biography
+
+Paul Strand was born in New York in 1890, studied photography under Lewis Hine and came into contact with the photographic culture surrounding Stieglitz's gallery 291. *1 His 1916 solo exhibition at 291 and publication in Camera Work established him as a pivotal figure in American modern photography. *2 His emphasis on sharpness, composition and direct engagement with the subject positioned his work as a departure from pictorialism's reliance on painterly effect. *3
+
+In 1921, in collaboration with Charles Sheeler, he produced the short film Manhatta, combining New York's skyscrapers and urban movement with poetic text and image. *4 From the 1930s onward, he traveled to Mexico, Europe, Egypt and Africa, developing long-term projects centred on regional communities and exploring the photo book as critical documentation. *5 The George Eastman Museum records both his photographic career and filmmaking, attesting to an output that resists reduction to formalism alone. *6
+
+Expression / method
+
+Directness and the logic of straight photography
+
+Strand's concept of straight photography functions not merely as a preference for sharp focus but as an assertion that photography has its own formal logic distinct from painting. *7 In The White Fence, the fence boards transform the entire picture plane into a rhythm of verticals and horizontals, with light and shadow operating as structure rather than emotional narrative. The AIC records analyse this composition as a demonstration of photography's own planar logic and directness. *8 In Wall Street, the dark rectangular windows cut into the skyscraper facade and small figures crossing the pavement compress urban rhythm and anonymity into a single frame — the contrast between architectural geometry and flowing bodies reads the city as social space through photographic structure. *9
+
+The Smarthistory analysis of The White Fence traces in detail how Strand established photography as a medium with its own rules rather than a pictorial tool. *10 The centrality of pictorial organisation and direct engagement with the subject, combined with formal autonomy and social observation, distinguishes his practice from strict formalism. *11
+
+Social gaze and New York [Blind Woman]
+
+New York [Blind Woman] is regarded as a key work where formal experiment and social gaze converge. *12 Sign, face, body and urban anonymity inhabit the same frame, making it simultaneously a portrait and a work that embeds the institutional gaze of the modern city. Rather than incorporating the subject into a narrative of social reform, the image presents her as a sign inscribed on the city's surface. *13 According to the Getty notes, Strand used a disguised camera device so the subject would not notice — a tension between ethical positioning and formal experiment runs through the work. *14
+
+Film, photo books and later work
+
+Manhatta placed the city between poetic text and mechanical vista; skyscrapers, smoke, ferries and crowds produce a modern sense of time through verticality and repetition. *15 Through his relationship with Aperture, Strand supported the movement to establish the photo book as an independent expressive form. *16 His later community-focused projects embody the coexistence of formal autonomy and social concern, explaining why his work resisted reduction to pure formalism. ICP and the Philadelphia Museum of Art also hold related works and materials. *17
+
+Criticism and reception
+
+MoMA, the Getty, the AIC, the NGA and the George Eastman Museum all hold Strand's work and have consistently positioned him as a central figure in American photography's transition from pictorialism to modernism. *18 SFMOMA and Princeton University Art Museum documents record the breadth of his career. *19 Accounting for his later social documentary and political engagement, Strand is best understood not as a strict formalist but as a photographer in whom formal rigour and a way of seeing the social world were inseparable. This perspective also offers a useful reference point for understanding the multiple directions that American photography took after departing from pictorialism — toward the city, labour, community and documentation. The concept of straight photography and its influence on later photographers continues to make Strand a central reference in photographic history. The MFA Boston and Cleveland Museum of Art hold further related works. *20`,
+    citations: [
+      { num: 1, name: 'Paul Strand artist page. MoMA', url: 'https://www.moma.org/artists/5667' },
+      { num: 2, name: 'Camera Work — Paul Strand. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=Camera%20Work%20Paul%20Strand' },
+      { num: 3, name: 'White Fence. Smarthistory', url: 'https://smarthistory.org/paul-strand-white-fence/' },
+      { num: 4, name: 'Manhatta. MoMA', url: 'https://www.moma.org/search/?query=Manhatta%20Paul%20Strand' },
+      { num: 5, name: 'Paul Strand. Aperture', url: 'https://aperture.org/artist/paul-strand/' },
+      { num: 6, name: 'Paul Strand. George Eastman Museum', url: 'https://collections.eastman.org/people/5633/paul-strand' },
+      { num: 7, name: 'Paul Strand artist. National Gallery of Art', url: 'https://www.nga.gov/artists/1824-paul-strand' },
+      { num: 8, name: 'The White Fence. Art Institute of Chicago', url: 'https://www.artic.edu/artworks/100975/the-white-fence' },
+      { num: 9, name: 'Paul Strand collection. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=Paul%20Strand' },
+      { num: 10, name: 'White Fence — analysis. Smarthistory', url: 'https://smarthistory.org/paul-strand-white-fence/' },
+      { num: 11, name: 'Paul Strand collection. Philadelphia Museum of Art', url: 'https://philamuseum.org/search/collections?searchTxt=Paul%20Strand' },
+      { num: 12, name: 'New York Blind Woman. J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/object/104EWM' },
+      { num: 13, name: 'Paul Strand. ICP', url: 'https://www.icp.org/search-results?query=paul%20strand' },
+      { num: 14, name: 'New York Blind Woman — collection record. Getty Museum', url: 'https://www.getty.edu/art/collection/object/104EWM' },
+      { num: 15, name: 'Manhatta search. MoMA', url: 'https://www.moma.org/search/?query=Manhatta%20Paul%20Strand' },
+      { num: 16, name: 'Paul Strand. Aperture', url: 'https://aperture.org/artist/paul-strand/' },
+      { num: 17, name: 'Paul Strand. ICP', url: 'https://www.icp.org/search-results?query=paul%20strand' },
+      { num: 18, name: 'Paul Strand. SFMOMA', url: 'https://www.sfmoma.org/artist/Paul_Strand/' },
+      { num: 19, name: 'Paul Strand. Princeton University Art Museum', url: 'https://artmuseum.princeton.edu/collections/objects?search=Paul%20Strand' },
+      { num: 20, name: 'Paul Strand collection. Cleveland Museum of Art', url: 'https://www.clevelandart.org/art/collection/search?filter-artist=Paul%20Strand' },
+      { num: 21, name: 'Paul Strand. Getty Museum collection', url: 'https://www.getty.edu/art/collection/search/?q=Paul%20Strand' },
+      { num: 22, name: 'Paul Strand. MFA Boston', url: 'https://collections.mfa.org/search/objects/*/Paul%20Strand' },
+    ],
+    works: [
+      { titleJa: '《White Fence》', titleEn: 'The White Fence', url: 'https://www.artic.edu/artworks/100975/the-white-fence' },
+      { titleJa: '《New York [Blind Woman]》', titleEn: 'New York [Blind Woman]', url: 'https://www.getty.edu/art/collection/object/104EWM' },
+      { titleJa: '《Manhatta》', titleEn: 'Manhatta', url: 'https://www.moma.org/search/?query=Manhatta%20Paul%20Strand' },
+    ],
+  },
+
+  'coburn': {
+    leadJa: `ピクトリアリズムの叙情的な画面から都市の俯瞰へ、さらに鏡装置を使った抽象写真へと展開したイギリス・アメリカの写真家。1916〜17年の《Vortograph》シリーズは写真による抽象化の初期実験として記録される。`,
+    leadEn: `British-American photographer who moved from pictorialist lyricism to urban aerial views and then to abstract photographs made with a vortoscope. The Vortograph series of 1916–17 stands as an early experiment in photographic abstraction.`,
+    textJa: `経歴
+
+アルヴィン・ラングドン・コバーンは1882年にボストンに生まれ、幼少期から写真に親しみ、1900年代にはロンドンでも活動するようになった。*1 スティーグリッツの写真分離派に参加し、『カメラ・ワーク』にも作品が掲載されるなど、ピクトリアリズムの成功した担い手として認知された。*2 ロンドンの霧やテームズ川を柔らかな調子で捉えた初期の作品は、芸術写真として高い評価を得た。*3
+
+1910年代に入ると、コバーンは都市を高所から俯瞰するという方向を探り始めた。ニューヨークやロンドンの摩天楼や街路を斜め上方から捉えた写真は、街路を人物と物語ではなく、パターンと構成として読む視点を示した。*4 さらに1916〜17年には、三枚の鏡を三角形に組んだ「ヴォルトスコープ」とよばれる装置をカメラの前に取り付け、対象を幾何学的に分裂・反復させた《Vortograph》シリーズを制作した。*5 晩年は神秘主義や精神的な探求に向かい、写真活動はやや後退したが、実験の記録は博物館・コレクションに保存されている。*6
+
+表現解説
+
+ピクトリアリズムから都市の幾何学へ
+
+コバーンの初期の写真は、霧、雨、夕暮れ、港といった大気的な条件と、ソフトフォーカスによる柔らかな調子を組み合わせたピクトリアリズムの典型であった。*7 しかし1910年代に入ると彼の関心は、対象の叙情的な美化から、視点の高さが対象をどのように変えるかという問題へと移っていった。テートの作品解説は、コバーンの都市俯瞰において街路が人物と物語から引き剥がされ、平面的なパターンへと変換される過程を記録している。*8 この方向は、写真が描写の媒体であるという前提を揺さぶり、視点の操作がイメージの性格を根本から変えることを示した。*9
+
+《Vortograph》と鏡装置による抽象
+
+《Vortograph》シリーズは、コバーンが詩人エズラ・パウンドとの交流を通じてヴォーティシズムの思想に接触した時期に制作された。*10 三枚の鏡を三角形に組んだヴォルトスコープをレンズの前に置くことで、被写体は分裂し、反転し、多重に重なり合う幾何学的な形へと変換された。MoMAのObject:Photo資料はコバーン自身の言葉として「最初の純粋に抽象的な写真」という評価を記録しており、この主張の妥当性はともかく、彼の実験が写真史の中でどのように受容されてきたかを示している。*11 マン・レイやモホイ＝ナジのカメラレス実験とは異なり、コバーンの《Vortograph》はレンズと被写体の間に変形装置を挿入するという方法で、光学的変換による抽象を探った。*12
+
+ヴォーティシズムは機械時代の動力、断片、速度を前衛芸術の中心に置いた運動であり、コバーンの写真実験はその視覚的表現の一つとして位置づけられる。*13 この方向は持続的なシリーズとはならず、晩年の精神的探求へと転じたが、写真史においては写真と前衛芸術が交差する1910年代の証言として残っている。*14 ヴォルトスコープという装置の発明と使用は、コバーンが写真実験を機械的・工学的な問いとして捉えていたことを示しており、写真と前衛芸術の関係を語る際に固有の事例として位置づけられる。
+
+写真集・出版・ヴィクトリア＆アルバート博物館
+
+コバーンはポートレートや都市の写真集も手がけ、文学者や芸術家のポートレートをまとめた作品集はロンドンの出版文化と写真の接点を示す資料になっている。*15 ヴィクトリア＆アルバート博物館のコレクションは、彼の幅広い写真活動の記録として参照できる。*16
+
+批評と受容
+
+コバーンはピクトリアリズムとモダニズムの境界に立つ作家として、写真史上の扱いが二重になる。初期の柔らかな芸術写真と1910年代の抽象実験という二つの時期が、一人の作家の中に共存している。*17 MoMAのObject:Photoプロジェクトが《Vortograph》を扱うことは、彼の実験がヨーロッパ前衛と写真モダニズムの接点として再評価されていることを示す重要な文脈である。*18 ジョージ・イーストマン博物館やゲティ美術館もコレクションを所蔵し、ピクトリアリズムから実験的写真への移行期を記録する資料として機能している。*19 コバーンの仕事は一人の作家の中で様式と実験の方向が大きく転換した稀な例として、写真史においてピクトリアリズムとモダニズムの両方を内包する作家として扱われてきた。初期の叙情的作品と《Vortograph》のような実験的作品の両方が主要コレクションに保存されており、写真の芸術化の複数の方向が一つのキャリアの中に共存する事例として参照できる。`,
+    textEn: `Biography
+
+Alvin Langdon Coburn was born in Boston in 1882 and engaged with photography from an early age, later working also in London in the 1900s. *1 He participated in Stieglitz's Photo-Secession and was published in Camera Work, gaining recognition as one of pictorialism's most successful practitioners. *2 His early photographs of London fog, the Thames and atmospheric urban scenes, rendered in soft tonal registers, earned wide critical praise. *3
+
+In the 1910s, Coburn began exploring aerial views of cities. Photographs taken from elevated vantage points in New York and London read streets as patterns and compositions rather than as spaces of figures and narrative. *4 Between 1916 and 1917, he attached a device called the vortoscope — three mirrors arranged in a triangle — to his camera lens, creating the Vortograph series in which subjects are fractured, reversed and multiplied into geometric forms. *5 In later life he turned toward mysticism and spiritual inquiry, reducing his photographic activity, though his experimental records are preserved in museum collections. *6
+
+Expression / method
+
+From pictorialism to urban geometry
+
+Coburn's early photographs typify pictorialism: atmospheric conditions — fog, rain, dusk, harbours — combined with soft focus and tonal warmth. *7 But in the 1910s his interest shifted from the lyrical beautification of subjects toward the question of how elevated viewpoints transform what is seen. The Tate records document how in his aerial views of cities, streets are stripped of figures and narrative and converted into flat patterns. *8 This direction unsettled the premise that photography is a descriptive medium, demonstrating that the manipulation of viewpoint can change the character of an image fundamentally. *9
+
+The Vortograph and mirror-based abstraction
+
+The Vortograph series was produced during Coburn's engagement with the poet Ezra Pound and Vorticist ideas. *10 By placing the vortoscope — three mirrors in a triangle — in front of the lens, the subject is fractured, inverted and layered into geometric forms. MoMA's Object:Photo records Coburn's own claim to have made "the first purely abstract photographs," and whatever the historical validity of the claim, it documents how his experiment has been received within photographic history. *11 Unlike the cameraless experiments of Man Ray or Moholy-Nagy, the Vortograph method inserts a transforming device between the lens and the subject, pursuing abstraction through optical transformation rather than through the elimination of the camera. *12
+
+Vorticism placed the energy, fragmentation and speed of the machine age at the centre of avant-garde art, and Coburn's photographic experiment is one of its visual manifestations. *13 The series did not become a sustained practice, and he later turned toward spiritual concerns, but within photographic history it remains a document of the intersection between photography and the avant-garde in the 1910s. *14
+
+Photo books, portraiture and the Victoria and Albert Museum
+
+Coburn also produced portrait albums and urban photo books; his collections of literary and artistic portraits represent a document of the intersection between London publishing culture and photography. *15 The Victoria and Albert Museum collection provides access to records of his wide photographic activity. *16
+
+Criticism and reception
+
+Coburn stands at the boundary between pictorialism and modernism, and photographic history has positioned him in both periods simultaneously. *17 MoMA's Object:Photo project's engagement with the Vortograph indicates that his experiment has been re-evaluated as a point of intersection between European avant-garde and photographic modernism. *18 The George Eastman Museum and Getty Museum also hold collections, functioning as records of the transitional period from pictorialism to experimental photography. *19 Coburn's career stands as a rare example of a photographer whose style and direction shifted dramatically within a single lifetime, and he has been positioned in photographic history as a figure who contains both pictorialism and modernism simultaneously. The availability of both his early lyrical works and his experimental Vortographs in major collections makes him a useful case for examining the coexistence of multiple directions within the artistic development of photography.`,
+    citations: [
+      { num: 1, name: 'Alvin Langdon Coburn artist page. MoMA', url: 'https://www.moma.org/artists/1181' },
+      { num: 2, name: 'Alvin Langdon Coburn. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/artists/1164.html' },
+      { num: 3, name: 'Alvin Langdon Coburn. Tate', url: 'https://www.tate.org.uk/art/artists/alvin-langdon-coburn-925' },
+      { num: 4, name: 'Alvin Langdon Coburn. Victoria and Albert Museum', url: 'https://collections.vam.ac.uk/search/?q=Alvin%20Langdon%20Coburn' },
+      { num: 5, name: 'Vortograph. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/objects/83725.html' },
+      { num: 6, name: 'Alvin Langdon Coburn. George Eastman Museum', url: 'https://collections.eastman.org/people/1517/alvin-langdon-coburn' },
+      { num: 7, name: 'Alvin Langdon Coburn. MoMA', url: 'https://www.moma.org/artists/1181' },
+      { num: 8, name: 'Alvin Langdon Coburn. Tate', url: 'https://www.tate.org.uk/art/artists/alvin-langdon-coburn-925' },
+      { num: 9, name: 'Alvin Langdon Coburn. Getty Museum collection', url: 'https://www.getty.edu/art/collection/search/?q=Alvin%20Langdon%20Coburn' },
+      { num: 10, name: 'Alvin Langdon Coburn. ICP', url: 'https://www.icp.org/search-results?query=alvin%20langdon%20coburn' },
+      { num: 11, name: 'Vortograph 1917. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/objects/83725.html' },
+      { num: 12, name: 'Alvin Langdon Coburn artist. MoMA', url: 'https://www.moma.org/artists/1181' },
+      { num: 13, name: 'Alvin Langdon Coburn. Tate', url: 'https://www.tate.org.uk/art/artists/alvin-langdon-coburn-925' },
+      { num: 14, name: 'Vortograph. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/objects/83725.html' },
+      { num: 15, name: 'Alvin Langdon Coburn. MFA Boston', url: 'https://collections.mfa.org/search/objects/*/Alvin%20Langdon%20Coburn' },
+      { num: 16, name: 'Alvin Langdon Coburn. Victoria and Albert Museum', url: 'https://collections.vam.ac.uk/search/?q=Alvin%20Langdon%20Coburn' },
+      { num: 17, name: 'Alvin Langdon Coburn. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/artists/1164.html' },
+      { num: 18, name: 'Vortograph. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/objects/83725.html' },
+      { num: 19, name: 'Alvin Langdon Coburn. George Eastman Museum', url: 'https://collections.eastman.org/people/1517/alvin-langdon-coburn' },
+      { num: 20, name: 'Alvin Langdon Coburn. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=Alvin%20Langdon%20Coburn' },
+      { num: 21, name: 'Vortograph 1917. Christie\'s', url: 'https://onlineonly.christies.com/s/moma-pictorialism-modernism/alvin-langdon-coburn-1882-1966-156/47632' },
+      { num: 22, name: 'Alvin Langdon Coburn. Phillips Collection', url: 'https://www.phillipscollection.org/index.php/collection/alvin-langdon-coburn-photographs' },
+    ],
+    works: [
+      { titleJa: '《Vortograph》', titleEn: 'Vortograph', url: 'https://www.moma.org/interactives/objectphoto/objects/83725.html' },
+      { titleJa: 'コバーン作品集 — Tate', titleEn: 'Coburn works — Tate', url: 'https://www.tate.org.uk/art/artists/alvin-langdon-coburn-925' },
+      { titleJa: 'コバーン作品 — George Eastman Museum', titleEn: 'Coburn collection — George Eastman Museum', url: 'https://collections.eastman.org/people/1517/alvin-langdon-coburn' },
+    ],
+  },
+
+  'manray': {
+    leadJa: `ダダとシュルレアリスムの中心で活動したアメリカ生まれの作家。暗室での偶然と光の操作によるRayograph、ソラリゼーション、ファッション写真などを通じ、写真を記録装置から物と光が変容する前衛的な実験の場へと転換した。`,
+    leadEn: `American-born artist who worked at the heart of Dada and Surrealism in Paris. Through Rayographs, solarisation and fashion photography, he transformed photography from a recording device into an experimental field of object and light transformation.`,
+    textJa: `経歴
+
+マン・レイは1890年にニューヨークに生まれ、美術学校で学んだ後、ニューヨークのダダ的な前衛文化に接した。*1 マルセル・デュシャンとの出会いが、写真を含む媒体横断的な制作の方向を形成する重要な契機の一つになった。*2 1921年にパリへ移り、アンドレ・ブルトン、ポール・エリュアールらシュルレアリスムの中心的な人物たちと接続したことで、彼の写真実験は前衛芸術の問題設定と深く結びついた。*3
+
+パリでマン・レイは、ポートレートや肖像写真の依頼をこなしながら、並行してRayographや暗室実験を進めた。*4 1930年代にはファッション誌との仕事も増え、前衛芸術と商業媒体の間を自在に移動するという彼のスタイルが確立された。*5 フィラデルフィア美術館はマン・レイのアーカイブと多数の作品を所蔵し、彼の制作の全体像を研究する上での主要な拠点の一つになっている。*6
+
+表現解説
+
+Rayographと暗室での光の痕跡
+
+Rayographは、物を印画紙の上に置き、カメラを使わずに光を当てることで像を得るという方法で制作される。*7 物は輪郭、影、透明度、浮遊感へと変換され、写真は対象の再現ではなく、物と光が接触した結果として現れる。この方法は、写真の本質をレンズと機械的な記録にではなく、光と感光材料の関係性に置き直す試みとして機能した。*8 同時期にモホイ＝ナジが制作したフォトグラムとは独立して発展したが、両者のアプローチはカメラレス写真というより広い文脈を共有しながら、異なる方向を探った。モホイ＝ナジのフォトグラムが視覚教育と構成の体系へと接続されたのに対し、マン・レイのRayographはより詩的・夢幻的な方向を持つ。*9
+
+MoMAのコレクションはマン・レイの写真実験を多面的に記録しており、ダダ、シュルレアリスム、ファッションという複数の文脈にまたがる作品群を確認できる。*10
+
+ソラリゼーションと身体・ポートレート
+
+ソラリゼーションは、現像途中の印画紙を光に当てることで、輪郭に独特の光の縁取りが現れる暗室技法であり、マン・レイはこれを繰り返し肖像や裸体の撮影に応用した。*11 リー・ミラーとの共同作業がソラリゼーション技法の洗練に貢献したとされており、この技法は現在も実験写真の文脈で頻繁に言及される。*12 身体と顔は前衛芸術と商業媒体の間を移動する素材でもあり、肖像写真やファッション写真はマン・レイにとって前衛芸術からの逸脱ではなく、イメージが社会的に流通する場として機能した。*13
+
+テートの解説は、マン・レイの写真実践がポートレート、ファッション、前衛実験を横断するものであり、どれか一つの文脈に固定できない幅広さを持つことを指摘している。*14
+
+オブジェ・映画・デュシャンとの共鳴
+
+マン・レイはデュシャンとの関係を通じて、物を美術品としてではなく、思考の素材・文脈の転換によってイメージへと変容させるという方法論を写真に持ち込んだ。*15 メトロポリタン美術館の展覧会「Man Ray: When Objects Dream」は、物が夢を見るように変形する場として写真を扱う彼の視点を明示的に主題化している。*16 映画《アンダルシアの犬》への参加など映画制作の側面を含め、マン・レイの実践は写真という枠を超えた媒体横断的な広がりを持つ。*17
+
+批評と受容
+
+MoMA、テート、センター・ポンピドゥー、NGA、ゲティ研究所など主要機関がマン・レイの作品・資料を所蔵し、ダダ／シュルレアリスム、ファッション写真、実験写真の交点に置く評価が定着している。*18 SFMOMAやクリーブランド美術館、ICPなども関連作品を所蔵している。*19 写真史上の位置は、写真の物質性と偶然性を詩的・夢幻的なイメージへ結びつけたという点で独自であり、同時代のモホイ＝ナジやコバーンの実験的写真と比較しながら読むと、モダニズム写真の複数の方向性が見えてくる。*20 写真史においてダダ・シュルレアリスムと写真の関係を論じる際、マン・レイは不可欠な参照点であり続けている。暗室技法・オブジェ・商業媒体という三つの方向がどのように一つの実践に共存したかを示す事例として、現在も展覧会・研究の両面で参照が続いている。`,
+    textEn: `Biography
+
+Man Ray was born in New York in 1890, studied at art schools, and came into contact with the Dada-influenced avant-garde culture of New York. *1 His encounter with Marcel Duchamp was one of the formative influences shaping his cross-media approach, which included photography. *2 Moving to Paris in 1921 and connecting with André Breton, Paul Éluard and the central figures of Surrealism, his photographic experiments became deeply entangled with the problem-frames of avant-garde art. *3
+
+In Paris, Man Ray handled portrait and commercial photography commissions while simultaneously pursuing Rayographs and darkroom experiments. *4 During the 1930s his work with fashion magazines increased, consolidating his style of moving freely between avant-garde art and commercial media. *5 The Philadelphia Museum of Art holds Man Ray's archive and a substantial body of work, serving as one of the principal centres for research into his practice. *6
+
+Expression / method
+
+The Rayograph and traces of light in the darkroom
+
+A Rayograph is made by placing objects on photosensitive paper and exposing them to light without a camera. *7 Objects are transformed into outlines, shadows, transparencies and floating presences; the photograph appears not as a representation of a subject but as the result of contact between objects and light. This method repositions the essence of photography not in the lens and mechanical recording but in the relationship between light and photosensitive material. *8 Moholy-Nagy developed the photogram independently and at roughly the same time, but the two approaches, while sharing the broader context of cameraless photography, explored different directions. Where Moholy-Nagy's photograms connect to a system of visual education and composition, Man Ray's Rayographs tend toward the poetic and oneiric. *9
+
+MoMA's collection documents Man Ray's photographic experiments across multiple dimensions, holding works that cut across Dada, Surrealism and fashion. *10
+
+Solarisation and the body, portraiture
+
+Solarisation — exposing developing paper to light midway through development, producing characteristic light halos around edges — was a darkroom technique Man Ray repeatedly applied to portraits and nudes. *11 His collaboration with Lee Miller is held to have contributed to the refinement of the technique, which continues to be frequently cited in discussions of experimental photography. *12 Body and face function here both as materials that travel between avant-garde art and commercial media; portrait and fashion photography were not a departure from the avant-garde for Man Ray but a space where images entered social circulation. *13
+
+Tate's notes observe that Man Ray's photographic practice moves across portraiture, fashion and avant-garde experiment in ways that resist fixing to any single context. *14
+
+Objects, film and resonance with Duchamp
+
+Through his relationship with Duchamp, Man Ray brought into photography a method of treating objects not as art objects but as materials and contexts that transform into images through relational displacement. *15 The Metropolitan Museum of Art's exhibition Man Ray: When Objects Dream explicitly takes as its subject his view of photography as a space where objects are transformed as if dreaming. *16 His participation in film, including Un Chien Andalou, confirms that his practice had a cross-media range extending beyond photography. *17
+
+Criticism and reception
+
+MoMA, Tate, Centre Pompidou, the NGA and the Getty Research Institute all hold Man Ray's works and materials, and the evaluation placing him at the intersection of Dada/Surrealism, fashion photography and experimental photography is now well established. *18 SFMOMA, the Cleveland Museum of Art and ICP also hold related works. *19 His position in photographic history is distinctive for connecting photography's materiality and contingency to poetic and oneiric imagery; comparing him with the contemporary experiments of Moholy-Nagy and Coburn reveals the multiple directions that modernist photography took. *20 In discussions of the relationship between Dada, Surrealism and photography, Man Ray remains an indispensable reference point. His practice continues to be cited in both exhibitions and scholarly research as a case that demonstrates how darkroom technique, the object and commercial media coexisted within a single practice.`,
+    citations: [
+      { num: 1, name: 'Man Ray artist page. MoMA', url: 'https://www.moma.org/artists/3716' },
+      { num: 2, name: 'Man Ray artist page. Tate', url: 'https://www.tate.org.uk/art/artists/man-ray-1563' },
+      { num: 3, name: 'Man Ray. Centre Pompidou', url: 'https://www.centrepompidou.fr/en/ressources/personne/cKxydj' },
+      { num: 4, name: 'Man Ray. George Eastman Museum', url: 'https://collections.eastman.org/people/4610/man-ray' },
+      { num: 5, name: 'Man Ray. Philadelphia Museum of Art', url: 'https://philamuseum.org/search/collections?searchTxt=Man%20Ray' },
+      { num: 6, name: 'Man Ray. Philadelphia Museum of Art', url: 'https://philamuseum.org/search/collections?searchTxt=Man%20Ray' },
+      { num: 7, name: 'Man Ray artist. National Gallery of Art', url: 'https://www.nga.gov/artists/1681-man-ray' },
+      { num: 8, name: 'Man Ray. MoMA', url: 'https://www.moma.org/artists/3716' },
+      { num: 9, name: 'Man Ray. Tate', url: 'https://www.tate.org.uk/art/artists/man-ray-1563' },
+      { num: 10, name: 'Man Ray. MoMA collection', url: 'https://www.moma.org/artists/3716' },
+      { num: 11, name: 'Man Ray. SFMOMA', url: 'https://www.sfmoma.org/artist/Man_Ray/' },
+      { num: 12, name: 'Man Ray. ICP', url: 'https://www.icp.org/search-results?query=man%20ray' },
+      { num: 13, name: 'Man Ray. Getty Museum collection', url: 'https://www.getty.edu/art/collection/search/?q=Man%20Ray' },
+      { num: 14, name: 'Man Ray. Tate', url: 'https://www.tate.org.uk/art/artists/man-ray-1563' },
+      { num: 15, name: 'Man Ray. Centre Pompidou', url: 'https://www.centrepompidou.fr/en/ressources/personne/cKxydj' },
+      { num: 16, name: 'Man Ray: When Objects Dream. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/exhibitions/man-ray-when-objects-dream' },
+      { num: 17, name: 'Man Ray. Smithsonian American Art Museum', url: 'https://americanart.si.edu/search?query=Man%20Ray' },
+      { num: 18, name: 'Man Ray. NGA', url: 'https://www.nga.gov/artists/1681-man-ray' },
+      { num: 19, name: 'Man Ray. Cleveland Museum of Art', url: 'https://www.clevelandart.org/art/collection/search?filter-artist=Man%20Ray' },
+      { num: 20, name: 'Man Ray archive guide. Getty Research Institute', url: 'https://www.getty.edu/research/tools/guides_bibliographies/man_ray/' },
+      { num: 21, name: 'Man Ray. Art Institute of Chicago', url: 'https://www.artic.edu/search?q=Man%20Ray' },
+      { num: 22, name: 'Man Ray. MFA Boston', url: 'https://collections.mfa.org/search/objects/*/Man%20Ray' },
+    ],
+    works: [
+      { titleJa: 'マン・レイ作品 — MoMA', titleEn: 'Man Ray works — MoMA', url: 'https://www.moma.org/artists/3716' },
+      { titleJa: 'Man Ray: When Objects Dream — Metropolitan Museum of Art', titleEn: 'Man Ray: When Objects Dream — Metropolitan Museum of Art', url: 'https://www.metmuseum.org/exhibitions/man-ray-when-objects-dream' },
+      { titleJa: 'マン・レイ作品 — Tate', titleEn: 'Man Ray works — Tate', url: 'https://www.tate.org.uk/art/artists/man-ray-1563' },
+    ],
+  },
+
+  'moholy': {
+    leadJa: `バウハウスの教育とフォトグラム実験を通じ、写真を記録ではなく知覚を更新する装置として捉えたハンガリー生まれの芸術家・教育者。新しいヴィジョンの理論と実践を、写真、映画、デザインを横断して展開した。`,
+    leadEn: `Hungarian-born artist and educator who, through Bauhaus teaching and photogram experiments, conceived of photography as an apparatus for renewing perception rather than recording. He developed the New Vision across photography, film and design.`,
+    textJa: `経歴
+
+ラースロー・モホイ＝ナジは1895年にハンガリーに生まれ、法律を学んだ後、第一次世界大戦での従軍を経て芸術の道へ進んだ。*1 1923年にワルター・グロピウスに招かれバウハウスに参加し、基礎造形課程の教員として写真、金属工芸、グラフィックデザインにまたがる実験的な教育を担った。*2 1925年には写真・映画・デザインの統合的な思想を示す著作『絵画、写真、映画』を刊行し、新しいヴィジョンの理論的基盤を示した。*3
+
+1928年にバウハウスを離れた後はベルリン、ロンドンを経て、1937年にシカゴへ移り「ニュー・バウハウス」（のちのインスティテュート・オブ・デザイン）を創設した。*4 1946年の没後も、この学校はアメリカのデザイン教育に大きな影響を残し、ヨーロッパ前衛の方法論をアメリカへ移植する制度的回路の一つになった。*5 モホイ＝ナジ財団はフォトグラムを含む作品・資料の保存と普及を担い、研究・教育の参照点として機能している。*6
+
+表現解説
+
+フォトグラムと光・物質の直接的記録
+
+フォトグラムは、物を印画紙の上に置き、光を当てることでカメラなしに像を作り出す方法であり、モホイ＝ナジはこれを1920年代から主要な実験の一つとして展開した。*7 物は輪郭、影、透明度として画面に直接記録され、対象の再現ではなく、物と光が接触した結果として像が現れる。この方法は写真の本質をレンズと機械的な記録にではなく、光と感光材料の関係に置き直す試みとして機能した。*8 モホイ＝ナジ財団はフォトグラムのコレクションを公開しており、光の痕跡が物の形と透明度を同時に示す独特の視覚性を確認できる。*9
+
+マン・レイのRayographと同時期に発展したが、モホイ＝ナジのフォトグラムは詩的・夢幻的な方向よりも、光と形の構成的・教育的な体系へと接続される傾向が強い。*10 スミソニアンの資料は、彼のフォトグラム、フォトモンタージュ、カメラ写真を別々に収録しながら、共通して形と光を近代的に組織するという一貫した方法論として整理している。*11
+
+新しいヴィジョンとバウハウスの視覚教育
+
+モホイ＝ナジにとって、写真は世界を写す機械ではなく、人間の知覚を更新する装置であった。*12 俯瞰、仰瞰、斜め構図、反復、フォトモンタージュ、タイポフォトといった手法は、肉眼中心の古い視覚を解体し、近代的な身体と都市を新しい知覚として組織する試みとして位置づけられる。*13 バウハウスにおける彼の教育は、写真を独立した芸術形式として正当化するのではなく、デザイン、建築、映画、印刷物すべてに通じる視覚的思考の訓練として位置づけた。*14
+
+メトロポリタン美術館の「バウハウスの写真」に関するハイライト資料は、バウハウス全体における写真実践を概観しており、モホイ＝ナジの役割を制度的・教育的な文脈から理解するために参照できる。*15 テートの解説はモホイ＝ナジを単一ジャンルの作家としてではなく、写真、デザイン、映画、教育を統合したメディア思想家として扱っている。*16
+
+アメリカへの移植とインスティテュート・オブ・デザイン
+
+シカゴへの移住後にモホイ＝ナジが設立したニュー・バウハウスは、バウハウスの教育方法論をアメリカのデザイン教育へ移植する試みであった。*17 インスティテュート・オブ・デザイン（現イリノイ工科大学）は、写真を基礎的な視覚訓練の中心に置いた教育を継続し、アメリカの写真教育に影響を与えた。*18
+
+批評と受容
+
+MoMA、テート、メトロポリタン美術館、ゲティ美術館、グッゲンハイム美術館などが作品を所蔵し、バウハウスと20世紀写真実験の中心的な作家として評価されている。*19 センター・ポンピドゥーやAICも関連作品を所蔵している。*20 後年の評価では、単一ジャンルの作家ではなく、写真・デザイン・映画・教育を統合したメディア思想家として重要視されており、ヨーロッパ前衛がアメリカのデザイン教育へ移植される制度史としても研究が続いている。*21 バウハウスの閉校とナチズムによる追放、そしてアメリカへの移住という歴史的文脈を背景に、モホイ＝ナジの仕事はヨーロッパ的なモダニズムとアメリカのデザイン教育の接点として固有の位置を持つ。視覚教育と写真の関係を論じる研究においても、彼の著作と実践は基本文献として繰り返し参照されている。`,
+    textEn: `Biography
+
+László Moholy-Nagy was born in Hungary in 1895 and, after studying law and serving in World War One, turned to art. *1 In 1923, invited by Walter Gropius, he joined the Bauhaus as a teacher in the preliminary course, leading experimental instruction across photography, metal workshop and graphic design. *2 In 1925 he published Painting, Photography, Film, outlining the theoretical basis of the New Vision across integrated media. *3
+
+After leaving the Bauhaus in 1928, he moved through Berlin and London before establishing the New Bauhaus (later the Institute of Design) in Chicago in 1937. *4 After his death in 1946, the school left a significant mark on American design education and became one of the institutional channels through which European avant-garde methodology was transplanted to America. *5 The Moholy-Nagy Foundation maintains his photograms and related materials, serving as a reference point for research and education. *6
+
+Expression / method
+
+The photogram and the direct record of light and material
+
+The photogram — placing objects on photosensitive paper and exposing them to light without a camera — was one of Moholy-Nagy's major experiments from the 1920s onward. *7 Objects are recorded directly on the surface as outlines, shadows and transparencies; the image appears as the result of contact between objects and light rather than as a representation. This method repositions the essence of photography not in the lens and mechanical recording but in the relationship between light and photosensitive material. *8 The Moholy-Nagy Foundation makes photogram collections accessible, allowing the distinctive visual quality — in which traces of light simultaneously show the form and transparency of objects — to be examined directly. *9
+
+Developed contemporaneously with Man Ray's Rayographs, Moholy-Nagy's photograms tend more strongly toward compositional and educational systems of light and form than toward poetic or oneiric directions. *10 The Smithsonian materials collect his photograms, photomontages and camera photographs separately while organising them as a consistent methodology of modern organisation of form and light. *11
+
+The New Vision and visual education at the Bauhaus
+
+For Moholy-Nagy, photography was not a machine that records the world but an apparatus that renews human perception. *12 Techniques such as bird's-eye views, worm's-eye views, diagonal composition, repetition, photomontage and typophoto were conceived as efforts to dismantle the old eye-centred vision and organise the modern body and city as new perception. *13 His teaching at the Bauhaus positioned photography not as an independent art form to be justified on its own terms but as visual thinking training relevant to design, architecture, film and print alike. *14
+
+The Metropolitan Museum's Heilbrunn Timeline entry on photography at the Bauhaus provides an overview of photographic practice across the institution, useful for understanding Moholy-Nagy's role within its institutional and educational context. *15 Tate's notes treat him not as a single-genre artist but as a media thinker who integrated photography, design, film and education. *16
+
+Transplantation to America and the Institute of Design
+
+The New Bauhaus that Moholy-Nagy established after moving to Chicago was an attempt to transplant Bauhaus educational methodology into American design education. *17 The Institute of Design (now part of Illinois Institute of Technology) continued placing photography at the centre of foundational visual training, influencing American photographic education. *18
+
+Criticism and reception
+
+MoMA, Tate, the Metropolitan Museum, the Getty and the Guggenheim all hold works, and he is firmly established as a central figure in Bauhaus and twentieth-century photographic experiment. *19 Centre Pompidou and the AIC also hold related works. *20 Later assessments emphasise him not as a single-genre artist but as a media thinker who integrated photography, design, film and education; research also continues on the institutional history of European avant-garde methodology's transplantation into American design education. *21 Against the backdrop of the Bauhaus closure, expulsion under Nazism and migration to America, his work holds a particular position at the intersection of European modernism and American design education. In research on the relationship between visual education and photography, his writings and practice continue to be cited as foundational references.`,
+    citations: [
+      { num: 1, name: 'László Moholy-Nagy artist. MoMA', url: 'https://www.moma.org/artists/4048' },
+      { num: 2, name: 'László Moholy-Nagy artist. Tate', url: 'https://www.tate.org.uk/art/artists/laszlo-moholy-nagy-1647' },
+      { num: 3, name: 'Photography at the Bauhaus. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/hd/phbh/hd_phbh.htm' },
+      { num: 4, name: 'Moholy-Nagy. Guggenheim Museum', url: 'https://www.guggenheim.org/search?query=Moholy-Nagy' },
+      { num: 5, name: 'Moholy-Nagy. Art Institute of Chicago', url: 'https://www.artic.edu/search?q=Moholy-Nagy' },
+      { num: 6, name: 'The Photograms. Moholy-Nagy Foundation', url: 'https://www.moholy-nagy.org/photograms/' },
+      { num: 7, name: 'The Photograms. Moholy-Nagy Foundation', url: 'https://www.moholy-nagy.org/photograms/' },
+      { num: 8, name: 'László Moholy-Nagy. MoMA', url: 'https://www.moma.org/artists/4048' },
+      { num: 9, name: 'The Photograms. Moholy-Nagy Foundation', url: 'https://www.moholy-nagy.org/photograms/' },
+      { num: 10, name: 'László Moholy-Nagy. Tate', url: 'https://www.tate.org.uk/art/artists/laszlo-moholy-nagy-1647' },
+      { num: 11, name: 'Photographic History Collection — Moholy-Nagy. Smithsonian', url: 'https://www.si.edu/object/photographic-history-collection-laszlo-moholy-nagy%3Anmah_1379723' },
+      { num: 12, name: 'László Moholy-Nagy artist. MoMA', url: 'https://www.moma.org/artists/4048' },
+      { num: 13, name: 'Photo at MoMA preview PDF. MoMA', url: 'https://www.moma.org/d/pdfs/W1siZiIsIjIwMTgvMDYvMTMvMXdra3Brbjg4Ml9QaG90b19hdF9Nb01BX1ZvbDJfUFJFVklFVy5wZGYiXV0/Photo_at_MoMA_Vol2_PREVIEW.pdf?sha=1f3bb2c5a369a7d9' },
+      { num: 14, name: 'Bauhaus — Moholy-Nagy. Bauhaus-Archiv', url: 'https://www.bauhaus.de/en/search/?q=Moholy-Nagy' },
+      { num: 15, name: 'Photography at the Bauhaus. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/hd/phbh/hd_phbh.htm' },
+      { num: 16, name: 'László Moholy-Nagy. Tate', url: 'https://www.tate.org.uk/art/artists/laszlo-moholy-nagy-1647' },
+      { num: 17, name: 'Moholy-Nagy. MoMA', url: 'https://www.moma.org/artists/4048' },
+      { num: 18, name: 'Exhibition archive. Moholy-Nagy Foundation', url: 'https://moholynagy.org/exhibitions-archive/' },
+      { num: 19, name: 'Moholy-Nagy. Getty Museum', url: 'https://www.getty.edu/art/collection/search/?q=L%C3%A1szl%C3%B3%20Moholy-Nagy' },
+      { num: 20, name: 'Moholy-Nagy. Centre Pompidou', url: 'https://www.centrepompidou.fr/en/recherche?terms=Moholy-Nagy' },
+      { num: 21, name: 'Moholy-Nagy. SFMOMA', url: 'https://www.sfmoma.org/search/?q=Moholy-Nagy' },
+      { num: 22, name: 'Moholy-Nagy. MFA Boston', url: 'https://collections.mfa.org/search/objects/*/Moholy-Nagy' },
+    ],
+    works: [
+      { titleJa: 'フォトグラム集 — Moholy-Nagy Foundation', titleEn: 'Photograms — Moholy-Nagy Foundation', url: 'https://www.moholy-nagy.org/photograms/' },
+      { titleJa: 'モホイ＝ナジ作品 — MoMA', titleEn: 'Moholy-Nagy works — MoMA', url: 'https://www.moma.org/artists/4048' },
+      { titleJa: 'モホイ＝ナジ作品 — Tate', titleEn: 'Moholy-Nagy works — Tate', url: 'https://www.tate.org.uk/art/artists/laszlo-moholy-nagy-1647' },
+    ],
+  },
+
+  'sander': {
+    leadJa: `ドイツ社会の職業、階級、地域をカメラで記録した《20世紀の人々》で知られる肖像写真家。個人の顔を社会の索引へ変換する系列化の方法は、写真による社会の可視化として写真史に位置づけられる。`,
+    leadEn: `Portrait photographer known for People of the Twentieth Century, a systematic documentation of German society across occupations, classes and regions. His method of converting individual faces into a social index has a lasting place in photographic history.`,
+    textJa: `経歴
+
+アウグスト・ザンダーは1876年にドイツのヘーレルスバッハで生まれ、炭鉱で働く父のもとで育った後、20代に写真の修業を積み、1910年頃にケルン近郊で写真館を開いた。*1 1925年から1929年にかけて農民、職人、女性、芸術家、都市生活者などを撮影した連作から『時代の顔 / Antlitz der Zeit』が出版され、ドーブリンの序文が「文字のない社会学」と評したことで広く知られるようになった。*2 作家、芸術家、知識人からの評価を受けながら活動したが、ナチス政権下では『Antlitz der Zeit』は発禁処分を受け、版木が没収された。*3
+
+戦後は活動を再開し、1950年代には展覧会や作品評価が進んだが、1964年に没した。息子エーリヒが撮影に加わっていたため、アーカイブの継承は家族によって行われた。*4 現在はアウグスト・ザンダー財団がアーカイブを管理し、《20世紀の人々》のデジタルプロジェクトが公開されている。*5
+
+表現解説
+
+肖像を社会分類のアーカイブへ
+
+ザンダーの方法は、人物を感情的に称揚する肖像でも、匿名の統計資料でもない点に特徴がある。*6 彼は職業、服装、身振り、背景、身体の立ち方を冷静に扱い、個人の顔を社会的な位置の可視化へと接続した。肖像が内面の読解だけでなく、階級、職能、地域、近代化の緊張を読む形式になる点がザンダーの方法の核心である。*7 正面向きの端正な構図と大判カメラの鮮明さは、被写体を飾ることも貶めることもなく、ただ「そこにいる」という事実を記録する。メトロポリタン美術館の展覧会資料はこの方法を「ドイツ人口の写真的索引」として分析している。*8
+
+新即物主義との関係は、表面を精密に見せる冷静さにある。しかしレンガー＝パッチュが物や機械の構造へ向かったのに対し、ザンダーの対象は社会に属する身体であった。*9 分類は中立的に見えるが、被写体の選択、グループ化、タイトル付け、順序化によって、個人の肖像は社会の配置を読む装置へと変換される。MoMAのプレス資料は、同館が全619点を取得した際、この系列化の方法論そのものを評価したことを記録している。*10
+
+『20世紀の人々』の構造とナチス下の受難
+
+《20世紀の人々》の構造は、農民、職人・手工業者、女性、階級と職業、芸術家、都市、最後の人々という分類によって構成されており、単独肖像を社会の索引へ変換する試みとして整理される。*11 1929年出版の『Antlitz der Zeit』はその成果の一部であったが、1934年にナチス政権下で発禁となり、版木が没収された。タイトルを含む作品のユダヤ人芸術家など体制に反するとみなされた被写体が問題とされたとされており、作品の政治的な受容を理解するうえで重要な文脈である。*12 SFMOMA（現SFMOMA）のプレス資料は、アメリカで最も包括的なザンダー展として評価される展覧会の概要を記録している。*13
+
+後代への影響と比較の視点
+
+ザンダーの系列化、分類、アーカイブという方法は、後のベルント・ベッヒャーとヒラ・ベッヒャーのタイポロジー写真との接続として論じられることが多い。*14 しかしベッヒャー派が産業構造物の形式的類型化を行ったのに対し、ザンダーの対象は社会的な身体であり、分類のレジスターが異なる。ラ・ビレイナ・センター・デ・ラ・イマージュの論文資料は、この比較を詳細に扱っている。*15 ハウザー＆ワース・ギャラリーも財団と連携してアーカイブの普及に取り組み、現代の市場・展覧会文脈での再評価を支えている。*16
+
+批評と受容
+
+ザンダーは生前から進歩的な芸術家・知識人に評価されたが、写真史上の位置づけは戦後の展覧会、アーカイブ整備、MoMAによるコレクション構築などを通じて強化された。*17 メトロポリタン美術館、テート、NGA、AIC、ゲティ美術館など主要機関が作品を所蔵している。*18 ドーブリンの「文字のない社会学」という評価は、写真を社会読解の形式として見るための重要な手がかりであり続けている。ザンダー財団のデジタルプロジェクトによって、より広い研究・教育のアクセスが確保されている。*19 アモン・カーター美術館やイェール大学美術館もコレクションを持ち、パリ美術館コレクションやBnFのデータベースでも資料が参照できる。*20 《20世紀の人々》のプロジェクトはその規模と体系性から、現代の社会記録写真や文書写真を論じる際にも参照され続けており、写真が社会を分類することの倫理的・美学的含意を考えるうえでの重要な事例として扱われている。財団のデジタルプロジェクトによって研究・教育の両面でのアクセスが広がり、写真史の教育文脈でも基本的な参照作家として定着している。`,
+    textEn: `Biography
+
+August Sander was born in Herdorf, Germany, in 1876 and grew up with a father who worked in the mines. After training as a photographer in his twenties, he opened a studio near Cologne around 1910. *1 Between 1925 and 1929, a series of portraits of farmers, craftspeople, women, artists and urban types was brought together in Antlitz der Zeit (Face of Our Time), published in 1929 with a preface by Alfred Döblin that described the project as "sociology without words." *2 He enjoyed the support of writers, artists and intellectuals, but under the Nazi regime Antlitz der Zeit was banned and the printing plates confiscated. *3
+
+He resumed activity after the war and exhibitions advanced in the 1950s before his death in 1964. His son Erich had worked alongside him, and the archive was managed by the family. *4 Today the August Sander Stiftung administers the archive and a digital project for People of the Twentieth Century is publicly accessible. *5
+
+Expression / method
+
+Transforming the portrait into a social archive
+
+Sander's method is distinctive for being neither the emotionally laudatory portrait nor the anonymous statistical record. *6 He handled occupation, clothing, gesture, background and the way bodies stand with studied coolness, connecting the individual face to the visualisation of a social position. The core of his method is that the portrait becomes not only a reading of inner life but a form through which class, occupation, region and the tensions of modernisation can be read. *7 The upright frontal composition and sharpness of the large-format camera record the fact of presence without either idealising or degrading the subject. The Metropolitan Museum's exhibition materials analyse this method as a "photographic index of the German population." *8
+
+The connection to Neue Sachlichkeit lies in the cool precision with which surfaces are shown. But where Renger-Patzsch turned toward objects, plants and machines, Sander's subjects are bodies that belong to the social world. *9 Classification may appear neutral, but through the selection of subjects, their grouping, titling and sequencing, individual portraits are converted into an apparatus for reading social arrangement. MoMA's press materials record that when the museum acquired all 619 works, it was this methodology of serialisation that was recognised as the achievement. *10
+
+The structure of People of the Twentieth Century and persecution under the Nazis
+
+The structure of People of the Twentieth Century is organised through categories — farmers, skilled craftspeople, women, classes and professions, artists, the city, the last people — converting individual portraits into a social index. *11 The 1929 Antlitz der Zeit was part of that achievement, but in 1934 it was banned under the Nazi regime and the plates confiscated. Subjects deemed contrary to the regime — including Jewish artists — were among those singled out, and this is important context for understanding the political reception of the work. *12 SFMOMA's press materials record the overview of what has been described as the most comprehensive US exhibition of Sander's work. *13
+
+Influence on later practice and comparative perspective
+
+Sander's approach — serialisation, classification, archive — is frequently discussed in connection with later typological photography by Bernd and Hilla Becher. *14 But where the Bechers produced formal typologies of industrial structures, Sander's subjects are social bodies, and the register of classification differs. La Virreina Centre de la Imatge's essay materials treat this comparison in detail. *15 Hauser & Wirth, working in partnership with the foundation, supports wider access to the archive and its re-evaluation in contemporary exhibition and market contexts. *16
+
+Criticism and reception
+
+Sander was recognised by progressive artists and intellectuals in his own lifetime, but his position in photographic history was consolidated through postwar exhibitions, archival development and MoMA's acquisition of the collection. *17 The Metropolitan Museum, Tate, the NGA, the AIC and the Getty all hold works. *18 Döblin's description of the project as "sociology without words" remains an important point of entry for understanding photography as a form of social reading. The foundation's digital project ensures wider research and educational access. *19 The Amon Carter Museum and Yale University Art Gallery also hold collections, and materials can also be found in the Paris Musées Collections and the BnF database. *20 The scale and systematicity of People of the Twentieth Century mean it continues to be consulted in discussions of contemporary social documentary and archival photography, and it is regularly cited as a key case for thinking about the ethical and aesthetic implications of photography classifying society. The foundation's digital project has widened access for research and education, and Sander has become firmly established as a canonical reference figure in photographic history education.`,
+    citations: [
+      { num: 1, name: 'August Sander: People of the Twentieth Century. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/exhibitions/listings/2004/august-sander' },
+      { num: 2, name: 'The August Sander Project. MoMA', url: 'https://www.moma.org/calendar/programs/113' },
+      { num: 3, name: 'August Sander artist page. Tate', url: 'https://www.tate.org.uk/art/artists/august-sander-5319' },
+      { num: 4, name: 'August Sander. George Eastman Museum', url: 'https://collections.eastman.org/people/3734/august-sander' },
+      { num: 5, name: 'People of the 20th Century digital project. August Sander Stiftung', url: 'https://md20jh.augustsander.org/' },
+      { num: 6, name: 'August Sander artist page. MoMA', url: 'https://www.moma.org/artists/5145' },
+      { num: 7, name: 'August Sander Stiftung', url: 'https://augustsander.org/' },
+      { num: 8, name: 'August Sander exhibition. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/exhibitions/listings/2004/august-sander' },
+      { num: 9, name: 'August Sander. National Gallery of Art', url: 'https://www.nga.gov/artists/2083-august-sander' },
+      { num: 10, name: 'People of the Twentieth Century acquisition press release. MoMA', url: 'https://press.moma.org/wp-content/files_mf/sanderacquisitionpressreleasefinal.pdf' },
+      { num: 11, name: 'The August Sander Project essay PDF. MoMA', url: 'https://www.moma.org/d/pdfs/W1siZiIsIjIwMjIvMDMvMjMvMXVwd2U4bDE1NV9BdWd1c3RfU2FuZGVyX0Vzc2F5M19WLjJpbmRkLnBkZiJdXQ/August%20Sander%20Essay3_V.2indd.pdf?sha=4caa509e7e35bf21' },
+      { num: 12, name: 'August Sander. Tate', url: 'https://www.tate.org.uk/art/artists/august-sander-5319' },
+      { num: 13, name: 'SFMOMA press release. SFMOMA', url: 'https://www.sfmoma.org/press-release/sfmoma-presents-most-comprehensive-us-showing-eve/' },
+      { num: 14, name: 'August Sander Photographs. La Virreina Centre de la Imatge', url: 'https://ajuntament.barcelona.cat/lavirreina/sites/default/files/2019-03/August_Sander_Photographs_of_People_of_the_XX_Century.pdf' },
+      { num: 15, name: 'August Sander Photographs PDF. La Virreina', url: 'https://ajuntament.barcelona.cat/lavirreina/sites/default/files/2019-03/August_Sander_Photographs_of_People_of_the_XX_Century.pdf' },
+      { num: 16, name: 'August Sander. Hauser & Wirth', url: 'https://www.hauserwirth.com/artists/2807-august-sander/' },
+      { num: 17, name: 'August Sander. MoMA', url: 'https://www.moma.org/artists/5145' },
+      { num: 18, name: 'August Sander. Getty Museum', url: 'https://www.getty.edu/art/collection/search/?q=August%20Sander' },
+      { num: 19, name: 'People of the 20th Century. August Sander Stiftung', url: 'https://md20jh.augustsander.org/' },
+      { num: 20, name: 'At Paris Photo, August Sander. Le Monde', url: 'https://www.lemonde.fr/en/culture/article/2024/11/03/at-paris-photo-august-sander-s-presents-germany-in-many-faces_6731436_30.html' },
+      { num: 21, name: 'August Sander. Philadelphia Museum of Art', url: 'https://philamuseum.org/search/collections?searchTxt=August%20Sander' },
+      { num: 22, name: 'August Sander. Amon Carter Museum', url: 'https://www.cartermuseum.org/search?search=August%20Sander' },
+      { num: 23, name: 'August Sander. Yale University Art Gallery', url: 'https://artgallery.yale.edu/collection/search/August%20Sander' },
+      { num: 24, name: 'August Sander. Paris Musées Collections', url: 'https://www.parismuseescollections.paris.fr/fr/recherche/type/oeuvre/auteur/August%20Sander' },
+      { num: 25, name: 'August Sander. BnF Data', url: 'https://data.bnf.fr/fr/search?term=August+Sander' },
+    ],
+    works: [
+      { titleJa: '《20世紀の人々》デジタルプロジェクト — August Sander Stiftung', titleEn: 'People of the Twentieth Century — August Sander Stiftung', url: 'https://md20jh.augustsander.org/' },
+      { titleJa: 'ザンダー作品 — Metropolitan Museum of Art', titleEn: 'Sander works — Metropolitan Museum of Art', url: 'https://www.metmuseum.org/exhibitions/listings/2004/august-sander' },
+      { titleJa: 'ザンダー作品 — Tate', titleEn: 'Sander works — Tate', url: 'https://www.tate.org.uk/art/artists/august-sander-5319' },
+    ],
+  },
+
+  'alexander-rodchenko': {
+    leadJa: `急角度と斜線構図によって日常の対象を革命後社会の新しい視覚として提示したロシア・ソ連の構成主義作家。写真、グラフィック、フォトモンタージュ、デザインを横断し、ソ連の印刷文化と視覚教育の中心的な担い手となった。`,
+    leadEn: `Russian and Soviet Constructivist who presented everyday objects as a new vision for post-revolutionary society through extreme angles and diagonal compositions. He worked across photography, graphics, photomontage and design, becoming central to Soviet print culture and visual education.`,
+    textJa: `経歴
+
+アレクサンドル・ロトチェンコは1891年にサンクトペテルブルクに生まれ、カザンとモスクワで美術を学んだ。*1 革命前後から、絵画、彫刻、グラフィックを横断する構成主義の実践者として活動し、新しい社会の新しい視覚形式の探求を自らの課題とした。*2 1920年代にはカメラを使い始め、モスクワの建築、スポーツ、身体、街路を急角度から撮影した写真がソ連の雑誌やポスターに登場し始めた。*3
+
+ソ連の構成主義グループ、雑誌「LEF」（芸術左翼戦線）などとの関係は、彼の写真実践が国家的なプロパガンダ文化と接続する文脈を形成した。*4 生涯を通じてモスクワで活動し、絵画、写真、広告、書籍装丁、舞台美術など多様な媒体で制作を続け、1956年に没した。*5 MoMAやポンピドゥーは彼を構成主義と写真モダニズムの中心的な作家として評価しており、回顧展やコレクション紹介が継続的に行われている。*6
+
+表現解説
+
+視点の革命と急角度
+
+ロトチェンコの写真の特徴は、被写体の新しさよりも視点の革命にある。*7 階段、電話、スポーツ選手、建築、街路を、水平の視線から外し、上から、下から、斜めから見る。これにより対象は単なる記録ではなく、新しい社会を知覚するための視覚訓練として機能する。SmartHistoryの解説は、《At the Telephone》を例に、ロトチェンコが俯瞰によって日常の対象を新しい構成的実体へと変換するプロセスを分析している。*8
+
+構成主義の文脈では、写真は芸術作品であると同時に、出版、広告、政治的教育、集団的な視覚文化の道具であった。ロトチェンコの急角度は単なる様式ではなく、ブルジョワ的な静止した視点を壊し、革命後の身体と都市を動的に見る方法として機能したと評価されている。*9 ただし、その形式革新は国家的プロパガンダとも接続したため、前衛性と制度的利用の緊張を理解した上で評価する必要がある。*10
+
+フォトモンタージュ・デザインとソ連印刷文化
+
+ロトチェンコはフォトモンタージュ技法においても重要な実践を残した。写真、文字、グラフィックを一枚の画面に組み合わせることで、視覚と情報が統合された新しいメディア形式を生み出した。*11 MoMAのObject:Photoプロジェクトが記録する「ソビエト写真の十年」展に関するアーカイブは、1930年代のソ連写真の制度的な文脈を理解するうえで重要な資料である。*12
+
+モホイ＝ナジとの比較では、両者とも新しい視覚を主張したが、モホイ＝ナジが教育・デザイン制度の中で光と知覚の実験を組織したのに対し、ロトチェンコはソ連の印刷文化、ポスター、フォトモンタージュ、革命的公共性の中で写真を使った。*13 同じモダニズムでも政治的条件が異なることが、この比較から見えてくる。*14
+
+批評と受容
+
+MoMA、センター・ポンピドゥー、ゲティ美術館などはロトチェンコを構成主義と写真モダニズムの中心に置いており、形式的な大胆さだけでなく、写真が雑誌・広告・国家・教育と結びつく20世紀的な媒体環境を先取りしたことが評価されている。*15 AICやグッゲンハイム、メトロポリタン美術館、SFMOMAもコレクションを所蔵している。*16 ソ連体制との関係は単純な賛美ではなく、前衛が制度化される過程として批評的に扱われることが多く、形式的な革新性と政治的な利用の問題を含む複層的な評価が続いている。*17 現代の写真史研究では、ロトチェンコの急角度とフォトモンタージュがどのように広告・プロパガンダ・教育という複数の回路で流通したかを詳細に分析する研究が蓄積されている。構成主義の視覚言語が国境を超えて広がった経緯を考えるうえでも、ロトチェンコの実践は20世紀視覚文化の中での写真の政治的機能を示す主要な参照点であり続けている。`,
+    textEn: `Biography
+
+Alexander Rodchenko was born in St Petersburg in 1891 and studied art in Kazan and Moscow. *1 From around the time of the revolution, he worked as a Constructivist practitioner across painting, sculpture and graphics, making the search for new visual forms for a new society a central concern. *2 In the 1920s he began using a camera, and photographs of Moscow's architecture, sports, bodies and streets taken from extreme angles began appearing in Soviet magazines and posters. *3
+
+His relationships with Soviet Constructivist groups and the magazine LEF (Left Front of the Arts) formed the context in which his photographic practice connected to state propaganda culture. *4 He worked throughout his life in Moscow, producing across diverse media — painting, photography, advertising, book design and stage design — until his death in 1956. *5 MoMA and Centre Pompidou both position him as a central figure in Constructivism and photographic modernism, and retrospectives and collection presentations continue. *6
+
+Expression / method
+
+The revolution of viewpoint and extreme angles
+
+The defining feature of Rodchenko's photography is not the novelty of the subject but the revolution of the viewpoint. *7 Stairs, telephones, athletes, architecture and streets are taken out of the horizontal line of sight and seen from above, below and diagonally. This converts the subject from mere documentation into visual training for perceiving the new society. Smarthistory's analysis of At the Telephone examines how Rodchenko uses the bird's-eye view to transform everyday objects into new compositional entities. *8
+
+In the Constructivist context, photography was simultaneously an artwork and a tool for publication, advertising, political education and collective visual culture. Rodchenko's extreme angles function not merely as style but as a way of breaking the bourgeois fixed viewpoint and seeing the post-revolutionary body and city dynamically. *9 However, this formal innovation also connected to state propaganda, and evaluation needs to take account of the tension between avant-garde radicality and institutional use. *10
+
+Photomontage, design and Soviet print culture
+
+Rodchenko also left important practice in photomontage. Combining photographs, text and graphics in a single image, he produced new media forms that integrated vision and information. *11 MoMA's Object:Photo archive of the Ten Years of Soviet Photography exhibition is an important resource for understanding the institutional context of 1930s Soviet photography. *12
+
+Comparing him with Moholy-Nagy, both claimed the new vision, but where Moholy-Nagy organised experiments in light and perception within educational and design institutions, Rodchenko used photography within Soviet print culture, posters, photomontage and revolutionary public space. *13 From this comparison one can see that even within modernism, the political conditions were different. *14
+
+Criticism and reception
+
+MoMA, Centre Pompidou and the Getty all place Rodchenko at the centre of Constructivism and photographic modernism. The evaluation recognises not only the boldness of his formal choices but the way he anticipated the twentieth-century media environment in which photography connects to magazines, advertising, the state and education. *15 The AIC, Guggenheim, Metropolitan Museum and SFMOMA also hold collections. *16 His relationship with the Soviet regime is not treated as simple admiration but as the process through which an avant-garde becomes institutionalised, and a multi-layered evaluation continues that includes both formal innovation and the problem of political use. *17 Contemporary photographic history research has accumulated detailed analysis of how Rodchenko's extreme angles and photomontages circulated through the multiple channels of advertising, propaganda and education. He continues to be a primary reference for thinking about the political functions of photography within twentieth-century visual culture, and for understanding how Constructivist visual language spread across national boundaries.`,
+    citations: [
+      { num: 1, name: 'Alexander Rodchenko artist page. MoMA', url: 'https://www.moma.org/artists/4975' },
+      { num: 2, name: 'Rodchenko retrospective. MoMA', url: 'https://www.moma.org/calendar/exhibitions/178' },
+      { num: 3, name: 'At the Telephone. Smarthistory', url: 'https://smarthistory.org/alexander-rodchenko-at-the-telephone/' },
+      { num: 4, name: 'Ten Years of Soviet Photography. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/exhibitions/35.html' },
+      { num: 5, name: 'Rodchenko search. Centre Pompidou', url: 'https://www.centrepompidou.fr/en/recherche?terms=Rodchenko' },
+      { num: 6, name: 'Alexander Rodchenko. MoMA', url: 'https://www.moma.org/artists/4975' },
+      { num: 7, name: 'At the Telephone. Smarthistory', url: 'https://smarthistory.org/alexander-rodchenko-at-the-telephone/' },
+      { num: 8, name: 'At the Telephone — analysis. Smarthistory', url: 'https://smarthistory.org/alexander-rodchenko-at-the-telephone/' },
+      { num: 9, name: 'Rodchenko. MoMA', url: 'https://www.moma.org/artists/4975' },
+      { num: 10, name: 'Ten Years of Soviet Photography. MoMA', url: 'https://www.moma.org/interactives/objectphoto/exhibitions/35.html' },
+      { num: 11, name: 'Rodchenko. Centre Pompidou', url: 'https://www.centrepompidou.fr/en/recherche?terms=Rodchenko' },
+      { num: 12, name: 'Ten Years of Soviet Photography. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/exhibitions/35.html' },
+      { num: 13, name: 'Rodchenko. MoMA', url: 'https://www.moma.org/artists/4975' },
+      { num: 14, name: 'Rodchenko retrospective. MoMA', url: 'https://www.moma.org/calendar/exhibitions/178' },
+      { num: 15, name: 'Rodchenko search. Getty Museum', url: 'https://www.getty.edu/art/collection/search/?q=Alexander%20Rodchenko' },
+      { num: 16, name: 'Rodchenko. Art Institute of Chicago', url: 'https://www.artic.edu/search?q=Alexander%20Rodchenko' },
+      { num: 17, name: 'Rodchenko. SFMOMA', url: 'https://www.sfmoma.org/search/?q=Rodchenko' },
+      { num: 18, name: 'Rodchenko. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=Alexander%20Rodchenko' },
+      { num: 19, name: 'Rodchenko. MFA Boston', url: 'https://collections.mfa.org/search/objects/*/Rodchenko' },
+      { num: 20, name: 'Rodchenko. Guggenheim', url: 'https://www.guggenheim.org/search?query=Alexander%20Rodchenko' },
+    ],
+    works: [
+      { titleJa: 'ロトチェンコ作品 — MoMA', titleEn: 'Rodchenko works — MoMA', url: 'https://www.moma.org/artists/4975' },
+      { titleJa: '《At the Telephone》解説 — Smarthistory', titleEn: 'At the Telephone — Smarthistory', url: 'https://smarthistory.org/alexander-rodchenko-at-the-telephone/' },
+      { titleJa: 'ロトチェンコ作品 — Centre Pompidou', titleEn: 'Rodchenko works — Centre Pompidou', url: 'https://www.centrepompidou.fr/en/recherche?terms=Rodchenko' },
+    ],
+  },
+
+  'andre-kertesz': {
+    leadJa: `ハンガリーからパリ、ニューヨークへと移動しながら、都市の日常と偶然の配置に私的な詩情を見いだした写真家。後のストリート写真や詩的ドキュメンタリーの形成に深く影響した作家として評価される。`,
+    leadEn: `Photographer who moved from Hungary to Paris and New York, finding private lyricism in everyday urban life and chance arrangements. He is recognised as a deep influence on the development of street photography and poetic documentary.`,
+    textJa: `経歴
+
+アンドレ・ケルテスは1894年にブダペストで生まれ、若い頃から写真を独学で始めた。*1 第一次世界大戦への従軍中にも写真を続け、戦後のブダペストで写真活動を本格化させた。1925年にパリへ移り、写真記者として登録するとともに、近代美術と写真が交差する環境の中で活動を展開した。*2
+
+パリではモンパルナスの芸術家たちのポートレートを撮影し、雑誌に写真を発表しながら、《Satiric Dancer》《Meudon》など後に代表作として評価される作品を撮影した。*3 1936年にニューヨークへ移ったが、商業雑誌のシステムの中で彼の写真観はすぐには理解されず、作家としての評価は時間をかけて定着した。*4 1960年代以降に再評価が進み、1964年のMoMAでの個展が重要な転機の一つとなった。*5 1985年にニューヨークで没した後も、ゲティ美術館、ICP、NGA、メトロポリタン美術館など主要機関が彼の写真を所蔵している。*6
+
+表現解説
+
+日常の端と偶然の配置
+
+ケルテスの写真は、大事件を報告するよりも、日常の端にある偶然の配置を見つけることで成立する。*7 街路、窓、影、階段、室内の小物は、見る角度と時間によって静かな緊張を持つ。彼の方法は、後のストリート写真のような即時性を含むが、攻撃的なスナップではなく、私的な感覚が外界の構図と重なる瞬間を探すものであった。ICPの展覧会資料は、このアプローチをパリ時代の雑誌・ギャラリー文化の中で培われたものとして記録している。*8
+
+《Satiric Dancer》（1926年）では、逆光と床上の反射が合わさり、身体が抽象的な形へと変換される。単なる人物スナップではなく、光と形の偶然の一致が写真を成立させている。《Meudon》（1928年）では、橋の上を歩く人物と遠景の列車、空に浮かぶ塔のような形が、一枚の中で別々の距離感と時間を共存させる。*9
+
+パリ時代の文脈と移動
+
+パリ時代のケルテスは、雑誌、画廊、移民芸術家のネットワークの中で、写真が報道と芸術のあいだを移動する時代に活動した。*10 ゲティ美術館の「ケルテス：七十年の写真」展資料は、彼が近代美術への意識を持ちながら日常的な視覚を詩的に組織した過程を、年代別に整理している。*11 ニューヨーク移住後は商業雑誌の環境の中で評価が遅れたが、移動と受容のずれも彼の仕事の重要な文脈として後の写真史研究に位置づけられている。*12
+
+ストリート写真の先駆としての評価
+
+ケルテスはしばしば「決定的瞬間」の先駆者として語られるが、この単純化には注意が必要である。*13 ブレッソン以前の彼の写真が時間の感覚において重要であることは確かだが、彼の写真の核は世界を支配的に捕まえることではなく、偶然の配置に私的な感情を宿らせる点にある。MoMAのプレス資料（1964年）は、ケルテスを若い写真家に強い影響を与えた作家として再配置した文書として重要である。*14 ICPの展覧会記録も、彼のパリ時代から後期のニューヨーク作品まで、ストリート写真・詩的ドキュメンタリー・亡命的視線という複数の文脈で評価している。*15
+
+批評と受容
+
+ゲティ美術館、MoMA、ICP、NGA、AIC、センター・ポンピドゥーなど主要機関がケルテスの作品を所蔵し、近代写真における詩的ドキュメンタリーの形成に大きく貢献した作家として評価されている。*16 ジュ・ド・ポームやSFMOMA、MFAボストンも関連作品を所蔵している。*17 写真史上は、近代都市の詩情、雑誌文化、移民的視線、私的ドキュメンタリーの交点に置くと、彼の作品の固有性が見えやすい。ハンガリー生まれの移民として複数の国・言語・文化の間を生きたことが、彼の視線の独自性と切り離せない。*18 ケルテスの再評価は1960年代のMoMA展以降に本格化し、ストリート写真や詩的ドキュメンタリーの先駆として位置づける動きが強まった。ブレッソン以前の「詩的なスナップ」の系譜を理解するうえで、ケルテスは現在も写真史教育において欠かせない参照点である。`,
+    textEn: `Biography
+
+André Kertész was born in Budapest in 1894 and began teaching himself photography as a young man. *1 He continued photographing during military service in World War One and, after the war, developed his photographic activity in Budapest. He moved to Paris in 1925, registering as a press photographer and working within an environment where modern art and photography intersected. *2
+
+In Paris he photographed the artists of Montparnasse, published photographs in magazines, and produced works that would later be recognised as major achievements, including Satiric Dancer and Meudon. *3 He moved to New York in 1936, but his photographic vision was not immediately understood within the commercial magazine system, and his recognition as an artist took time to establish. *4 From the 1960s onward re-evaluation progressed, and his 1964 solo exhibition at MoMA was one of the important turning points. *5 After his death in New York in 1985, his photographs are held by the Getty, ICP, the NGA, the Metropolitan Museum and other major institutions. *6
+
+Expression / method
+
+The edges of the everyday and chance arrangement
+
+Kertész's photographs are constituted by finding chance arrangements at the edges of the everyday rather than reporting major events. *7 Streets, windows, shadows, stairs and domestic objects carry quiet tension depending on the angle and the time of seeing. His method involves a responsiveness not unlike later street photography, but rather than aggressive snapping he was searching for moments where private feeling coincides with the composition of the outer world. ICP exhibition materials record this approach as developed within the magazine and gallery culture of his Paris years. *8
+
+In Satiric Dancer (1926), backlighting and floor reflections converge to transform the body into an abstract shape — a chance coincidence of light and form rather than a human snap. In Meudon (1928), a figure crossing a bridge, a distant train, and a tower-like shape in the sky coexist in the same frame at different distances and times. *9
+
+The Paris context and migration
+
+In Paris, Kertész worked within the networks of magazines, galleries and expatriate artists at a time when photography moved between journalism and art. *10 The Getty's Kertész: Of Paris and New York exhibition materials lay out chronologically how he organised everyday vision poetically while maintaining awareness of modern art. *11 After his move to New York, his recognition was delayed by the commercial magazine environment, and the gap between migration and reception has been incorporated into later photographic history research as an important context for his work. *12
+
+Recognition as a precursor of street photography
+
+Kertész is often discussed as a precursor of the "decisive moment," but this simplification warrants caution. *13 His photographs are certainly important for their sense of time before Cartier-Bresson, but the core of his work is not the dominating capture of the world — it is the lodging of private feeling in chance arrangement. MoMA's 1964 press release is a significant document that repositioned Kertész as an artist who had exerted a strong influence on younger photographers. *14 ICP exhibition records also evaluate him across multiple contexts — street photography, poetic documentary and the exilic gaze — from the Paris years to his late New York work. *15
+
+Criticism and reception
+
+The Getty, MoMA, ICP, the NGA, the AIC and Centre Pompidou all hold Kertész's work and position him as a photographer who made a major contribution to poetic documentary in modern photography. *16 Jeu de Paume, SFMOMA and the MFA Boston also hold related works. *17 Within photographic history, placing him at the intersection of modern urban poetry, magazine culture, migrant vision and private documentary allows the distinctive character of his work to become visible. His life between multiple countries, languages and cultures as a Hungarian-born migrant is inseparable from the distinctiveness of his photographic vision. *18 Kertész's re-evaluation accelerated after his 1964 MoMA exhibition, with a growing tendency to position him as a precursor of street photography and poetic documentary. For understanding the lineage of the "poetic snapshot" before Cartier-Bresson, Kertész remains an indispensable reference in photographic history education.`,
+    citations: [
+      { num: 1, name: 'André Kertész. ICP', url: 'https://www.icp.org/search-results?query=andr%C3%A9%20kert%C3%A9sz' },
+      { num: 2, name: 'André Kertész Seven Decades. Getty Museum', url: 'https://www.getty.edu/art/exhibitions/kertesz/' },
+      { num: 3, name: 'André Kertész exhibition. ICP', url: 'https://www.icp.org/exhibitions/andre-kertesz' },
+      { num: 4, name: 'A Selection of Photographs by André Kertész. ICP', url: 'https://www.icp.org/exhibitions/a-selection-of-photographs-by-andr%C3%A9-kert%C3%A9sz' },
+      { num: 5, name: 'MoMA Press Release 1964. MoMA Archives', url: 'https://www.moma.org/docs/press_archives/3343/releases/MOMA_1964_0130_1964-11-24_85.pdf' },
+      { num: 6, name: 'André Kertész artist. MoMA', url: 'https://www.moma.org/artists/3084' },
+      { num: 7, name: 'André Kertész artist. National Gallery of Art', url: 'https://www.nga.gov/artists/2877-andre-kertesz' },
+      { num: 8, name: 'André Kertész exhibition. ICP', url: 'https://www.icp.org/exhibitions/andre-kertesz' },
+      { num: 9, name: 'Kertész collection. Getty Museum', url: 'https://www.getty.edu/art/collection/search/?q=Andr%C3%A9%20Kert%C3%A9sz' },
+      { num: 10, name: 'Kertész press PDF. ICP', url: 'https://www.icp.org/sites/default/files/exhibition/credits/sites/default/files/exhibition_pdfs/kertesz05_press.pdf' },
+      { num: 11, name: 'André Kertész Seven Decades. Getty Museum', url: 'https://www.getty.edu/art/exhibitions/kertesz/' },
+      { num: 12, name: 'André Kertész. ICP', url: 'https://www.icp.org/search-results?query=andr%C3%A9%20kert%C3%A9sz' },
+      { num: 13, name: 'André Kertész. MoMA', url: 'https://www.moma.org/artists/3084' },
+      { num: 14, name: 'MoMA Press Release 1964. MoMA Archives', url: 'https://www.moma.org/docs/press_archives/3343/releases/MOMA_1964_0130_1964-11-24_85.pdf' },
+      { num: 15, name: 'André Kertész exhibition. ICP', url: 'https://www.icp.org/exhibitions/andre-kertesz' },
+      { num: 16, name: 'André Kertész. National Gallery of Art', url: 'https://www.nga.gov/artists/2877-andre-kertesz' },
+      { num: 17, name: 'André Kertész. Jeu de Paume', url: 'https://jeudepaume.org/?s=Kert%C3%A9sz' },
+      { num: 18, name: 'Kertész. Centre Pompidou', url: 'https://www.centrepompidou.fr/en/recherche?terms=Kertesz' },
+      { num: 19, name: 'André Kertész. Art Institute of Chicago', url: 'https://www.artic.edu/search?q=Andr%C3%A9%20Kert%C3%A9sz' },
+      { num: 20, name: 'André Kertész. MFA Boston', url: 'https://collections.mfa.org/search/objects/*/Andr%C3%A9%20Kert%C3%A9sz' },
+      { num: 21, name: 'André Kertész. SFMOMA', url: 'https://www.sfmoma.org/search/?q=Andr%C3%A9%20Kert%C3%A9sz' },
+    ],
+    works: [
+      { titleJa: 'ケルテス展 — ICP', titleEn: 'André Kertész exhibition — ICP', url: 'https://www.icp.org/exhibitions/andre-kertesz' },
+      { titleJa: 'ケルテス：七十年の写真 — Getty Museum', titleEn: 'Kertész: Of Paris and New York — Getty Museum', url: 'https://www.getty.edu/art/exhibitions/kertesz/' },
+      { titleJa: 'ケルテス作品 — National Gallery of Art', titleEn: 'Kertész works — National Gallery of Art', url: 'https://www.nga.gov/artists/2877-andre-kertesz' },
+    ],
+  },
+
+  'charles-sheeler': {
+    leadJa: `写真、絵画、映画を横断し、アメリカの建築と産業構造を精密な近代的秩序として可視化した作家。ポール・ストランドとの映画《Manhatta》、フォード・ルージュ工場の記録など、プレシジョニズムの主要な担い手として評価される。`,
+    leadEn: `Artist who worked across photography, painting and film, visualising American architecture and industrial structure as precise modern order. Co-creator of the film Manhatta with Paul Strand and documentarian of the Ford River Rouge plant, he is recognised as a key figure of Precisionism.`,
+    textJa: `経歴
+
+チャールズ・シェラーは1883年にフィラデルフィアに生まれ、フィラデルフィアの美術アカデミー（Pennsylvania Academy of the Fine Arts）で学んだ後、商業写真を手がけながら絵画と写真を並行して制作するようになった。*1 1910年代には商業的な需要から住宅や家具の撮影を手がけ、その冷静な構成感覚を写真と絵画の双方へと展開した。*2 ポール・ストランドとの交流は1910年代から始まり、1921年には共同で短編映画《Manhatta》を制作した。*3
+
+1927年にはフォード・モーター社の依頼でデトロイト近郊のルージュ工場を撮影し、アメリカ産業の近代的な構造美を示す一連の写真とそれに基づく絵画を制作した。*4 ホイットニー美術館とNGAはシェラーをアメリカ・モダニズムとプレシジョニズムの中心に置いており、写真が単なる絵画の補助ではなく独立した近代的な視覚方法として機能したことを評価している。*5
+
+表現解説
+
+産業・建築と精密な構成
+
+シェラーの方法は、アメリカの産業と建築を感情的な風景ではなく、面、線、反復、角度の構造として把握することにある。*6 ドイルズタウンの納屋や家具は民俗的懐古ではなく、幾何学的秩序として見られ、ルージュ工場では機械と建築が近代アメリカの視覚的象徴になる。メトロポリタン美術館のシェラー解説は、彼の写真が建築を単なる記録ではなく、形式的分析の対象として扱うものとして位置づけている。*7
+
+プレシジョニズムとは、アメリカの工業・建築景観を幾何学的に純化して表現する傾向を指し、シェラーはその代表的な担い手として評価される。*8 写真においては、ストレート写真の鮮明さと感光材料の特性を最大限に活かしながら、近代的な対象認識のための視覚訓練として機能させた。*9
+
+《Manhatta》と都市の詩
+
+《Manhatta》はシェラーとストランドが都市を詩的テキストと機械的眺望の間に置いた作品であり、ウォルト・ホイットマンの詩とニューヨークの摩天楼、フェリー、群衆を組み合わせた。*10 MoMAの資料は《Manhatta》を、都市を近代的な秩序として捉えた初期前衛映画の重要な例として収録している。*11 摩天楼、煙、垂直の繰り返しによって、ニューヨークが機械的な時間感覚の象徴として提示される。この作品はシェラーの写真と絵画を結ぶとともに、ストレート写真と都市映画が交差する文脈を示している。*12
+
+商業写真・広告との接続
+
+シェラーは純粋芸術家としてだけでなく、商業写真、建築写真、産業イメージの制作者としても活動した。*13 フォード社のルージュ工場撮影はその代表例であり、企業が近代的な産業美を写真と絵画を通じて流通させるという過程をよく示している。フィラデルフィア美術館はシェラーの写真と絵画を広く所蔵し、商業と芸術の接点を記録している。*14 写真が絵画・映画・広告・企業イメージの間でどのように機能したかという問いに対して、シェラーの仕事は重要な事例を提供する。*15
+
+批評と受容
+
+ホイットニー美術館、NGA、メトロポリタン美術館、MoMA、スミソニアン・アメリカン・アート・ミュージアムなどがシェラーの作品を所蔵し、アメリカ・モダニズムとプレシジョニズムの中心的作家として評価してきた。*16 AIC、ゲティ、SFMOMAなども関連作品を所蔵している。*17 後年の評価では、写真が単なる絵画の補助ではなく、近代的な対象認識の訓練として重要だった点が強調されている。アモン・カーター美術館やプリンストン大学美術館にも関連資料がある。*18 プレシジョニズムという概念が写真・絵画・映画の三つの媒体にまたがってシェラーの実践の中で統合されていた点は、写真史・美術史の双方から研究されており、媒体横断的な20世紀初頭のモダニズムを理解するうえで彼の仕事は重要な事例を提供している。`,
+    textEn: `Biography
+
+Charles Sheeler was born in Philadelphia in 1883 and studied at the Pennsylvania Academy of the Fine Arts. He began making commercial photographs while developing his painting and photography in parallel. *1 In the 1910s he photographed houses and furniture in response to commercial demand, developing a cool compositional sensibility across both photography and painting. *2 His exchange with Paul Strand began in the 1910s and they co-produced the short film Manhatta in 1921. *3
+
+In 1927, commissioned by Ford Motor Company, he photographed the River Rouge plant near Detroit, producing a series of photographs and related paintings that demonstrated the formal beauty of American industrial structure. *4 The Whitney Museum and the NGA position Sheeler at the centre of American modernism and Precisionism, recognising that his photography functioned as an independent modern visual method rather than a mere supplement to painting. *5
+
+Expression / method
+
+Industry, architecture and precise composition
+
+Sheeler's method involves grasping American industry and architecture as structures of planes, lines, repetition and angle rather than as emotional landscapes. *6 The barns and furniture of Doylestown are approached as geometric order rather than nostalgic folk, and at the Rouge plant, machines and architecture become visual symbols of modern America. The Metropolitan Museum's notes on Sheeler position his photography as treating architecture not as mere documentation but as a subject for formal analysis. *7
+
+Precisionism is the tendency to geometrically purify and render American industrial and architectural landscapes, and Sheeler is recognised as its leading practitioner. *8 In photography, he maximised the clarity of straight photography and the properties of photographic materials, functioning as visual training for modern object recognition. *9
+
+Manhatta and the poetry of the city
+
+Manhatta places the city between poetic text and mechanical vista, combining Walt Whitman's verse with New York's skyscrapers, ferries and crowds. *10 MoMA's materials include Manhatta as an important early avant-garde film that treats the city as modern order. *11 Through skyscrapers, smoke and vertical repetitions, New York is presented as a symbol of mechanical temporality. The work connects Sheeler's photography and painting while indicating the context where straight photography and urban film intersect. *12
+
+Connection to commercial photography and advertising
+
+Sheeler worked not only as a fine artist but also as a maker of commercial photography, architectural photography and industrial imagery. *13 The River Rouge assignment for Ford is the prime example, demonstrating well how corporations circulated modern industrial beauty through photography and painting. The Philadelphia Museum of Art holds both photographs and paintings by Sheeler, documenting the intersection of commerce and art. *14 For the question of how photography functioned between painting, film, advertising and corporate imagery, Sheeler's work provides an important case. *15
+
+Criticism and reception
+
+The Whitney Museum, the NGA, the Metropolitan Museum, MoMA and the Smithsonian American Art Museum all hold Sheeler's work, consistently positioning him as a central figure in American modernism and Precisionism. *16 The AIC, the Getty and SFMOMA also hold related works. *17 Later assessments emphasise that his photography was important as a training in modern object recognition rather than a mere adjunct to painting. The Amon Carter Museum and Princeton University Art Museum also hold related materials. *18 The fact that Precisionism as a concept was integrated across three media — photography, painting and film — within Sheeler's practice is a subject of research from both photographic and art-historical perspectives, and his work provides an important case for understanding cross-media modernism in the early twentieth century.`,
+    citations: [
+      { num: 1, name: 'Charles Sheeler artist page. Whitney Museum', url: 'https://whitney.org/artists/1196' },
+      { num: 2, name: 'Charles Sheeler 1883–1965. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/hd/shee/hd_shee.htm' },
+      { num: 3, name: 'Manhatta search. MoMA', url: 'https://www.moma.org/search/?query=Manhatta%20Charles%20Sheeler%20Paul%20Strand' },
+      { num: 4, name: 'Charles Sheeler artist page. NGA', url: 'https://www.nga.gov/artists/1835-charles-sheeler' },
+      { num: 5, name: 'Charles Sheeler. Whitney Museum', url: 'https://whitney.org/artists/1196' },
+      { num: 6, name: 'Charles Sheeler. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/hd/shee/hd_shee.htm' },
+      { num: 7, name: 'Charles Sheeler essay. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/hd/shee/hd_shee.htm' },
+      { num: 8, name: 'Charles Sheeler artist page. MoMA', url: 'https://www.moma.org/artists/5383' },
+      { num: 9, name: 'Charles Sheeler catalogue PDF. MoMA', url: 'https://www.moma.org/documents/moma_catalogue_2559_300062280.pdf' },
+      { num: 10, name: 'Manhatta. MoMA', url: 'https://www.moma.org/search/?query=Manhatta%20Charles%20Sheeler%20Paul%20Strand' },
+      { num: 11, name: 'Manhatta search. MoMA', url: 'https://www.moma.org/search/?query=Manhatta%20Charles%20Sheeler%20Paul%20Strand' },
+      { num: 12, name: 'Charles Sheeler. MoMA', url: 'https://www.moma.org/artists/5383' },
+      { num: 13, name: 'Charles Sheeler. Philadelphia Museum of Art', url: 'https://philamuseum.org/search/collections?searchTxt=Charles%20Sheeler' },
+      { num: 14, name: 'Charles Sheeler. Philadelphia Museum of Art', url: 'https://philamuseum.org/search/collections?searchTxt=Charles%20Sheeler' },
+      { num: 15, name: 'Charles Sheeler. NGA', url: 'https://www.nga.gov/artists/1835-charles-sheeler' },
+      { num: 16, name: 'Charles Sheeler. Smithsonian American Art Museum', url: 'https://americanart.si.edu/search?query=Charles%20Sheeler' },
+      { num: 17, name: 'Charles Sheeler. SFMOMA', url: 'https://www.sfmoma.org/search/?q=Charles%20Sheeler' },
+      { num: 18, name: 'Charles Sheeler. Amon Carter Museum', url: 'https://www.cartermuseum.org/search?search=Charles%20Sheeler' },
+      { num: 19, name: 'Charles Sheeler. Art Institute of Chicago', url: 'https://www.artic.edu/search?q=charles%20sheeler' },
+      { num: 20, name: 'Charles Sheeler. Getty Museum', url: 'https://www.getty.edu/art/collection/search/?q=Charles%20Sheeler' },
+      { num: 21, name: 'Charles Sheeler. Princeton University Art Museum', url: 'https://artmuseum.princeton.edu/collections/objects?search=Charles%20Sheeler' },
+      { num: 22, name: 'Charles Sheeler. Yale University Art Gallery', url: 'https://artgallery.yale.edu/collection/search/Charles%20Sheeler' },
+    ],
+    works: [
+      { titleJa: 'シェラー作品 — Whitney Museum', titleEn: 'Sheeler works — Whitney Museum', url: 'https://whitney.org/artists/1196' },
+      { titleJa: 'シェラー解説 — Metropolitan Museum of Art', titleEn: 'Sheeler essay — Metropolitan Museum of Art', url: 'https://www.metmuseum.org/toah/hd/shee/hd_shee.htm' },
+      { titleJa: 'シェラー作品 — National Gallery of Art', titleEn: 'Sheeler works — National Gallery of Art', url: 'https://www.nga.gov/artists/1835-charles-sheeler' },
+    ],
+  },
+
+  'germaine-krull': {
+    leadJa: `工業構造を断片と斜線で編集した写真集『Métal』で知られるドイツ生まれの写真家。前衛、写真集、報道、商業媒体を横断し、複数の国を移動しながらモダニズム写真の大衆的流通を支えた。`,
+    leadEn: `German-born photographer known for the photobook Métal, which edits industrial structures through fragmentation and diagonals. She moved across avant-garde practice, photobooks, reportage and commercial media, supporting the popular circulation of modernist photography across multiple countries.`,
+    textJa: `経歴
+
+ジェルメーヌ・クリュルは1897年にドイツで生まれ、ミュンヘン、オランダ、パリと移動しながら写真活動を展開した。*1 1920年代にパリで活動の拠点を確立し、雑誌報道、ファッション、前衛的な写真実験を並行して手がけた。*2 1928年に刊行した写真集『Métal』は、パリのエッフェル塔橋梁、機械、都市インフラを急角度と断片化で構成した作品集として、写真集史の中で重要な位置を占めている。*3
+
+彼女の経歴は一つの国や運動に固定できない移動性を特徴とする。フランスのシュルレアリスムとの接点、ジャーナリズムの仕事、東南アジアやインドへの移動と旅行写真など、活動の幅は広い。*4 センター・ポンピドゥーとMoMAはクリュルを前衛と大衆的な報道・出版の交点に位置する作家として評価している。*5 1985年にドイツで没した。*6
+
+表現解説
+
+『Métal』と写真集の構造
+
+クリュルの『Métal』は、機械を記録した写真集ではなく、近代都市の骨格を断片、斜線、反復、印刷のリズムとして編集した本である。*7 鉄塔や橋梁は巨大な建造物でありながら、写真集のページ上では抽象的な構成要素になる。ここで重要なのは、写真集という媒体が単独写真ではなく連続する視覚経験を作る点である。MoMAのObject:Photoプロジェクトは『Métal』を写真集史の重要な事例として収録しており、写真集の構成と印刷の美学を分析している。*8
+
+ロトチェンコが革命後ソ連の公共視覚の中で急角度を使い、シェラーがアメリカ産業を精密な秩序として見たのに対し、クリュルは都市インフラを移動する視線として捉えた。*9 彼女の写真は工業美を持ちながら、報道、旅行、商業出版、政治的移動と結びつくため、一つの国や様式に固定できない。ロトチェンコ、モホイ＝ナジ、シェラーと比較すると、工業モダニズムの複数の方向が見える。*10 クリュルの工業写真は記録性と構成性のどちらにも完全には収まらない独自の位置を持ち、印刷された本の中でこそ完成するという特性を持つという点で、写真集史の文脈でとくに重要視されている。
+
+報道・移動・女性写真家の位置
+
+クリュルは写真記者としてヨーロッパ各地の政治的事件を取材し、雑誌との仕事を続けながら前衛的な写真実験も並行して進めた。*11 女性写真家として、国民的な作家像に収まりにくい移動性と媒体横断性を持つという評価は、ジュ・ド・ポームやMoMAなどで彼女を取り上げる際の一つの文脈になっている。*12 センター・ポンピドゥーのコレクションはクリュルの写真とアーカイブを保存しており、前衛視覚と報道・出版の接点として再評価する研究の基盤になっている。*13
+
+批評と受容
+
+MoMA、センター・ポンピドゥー、ジュ・ド・ポーム、ゲティ美術館、テートなどが作品・資料を参照でき、前衛視覚と報道・出版の接点、また女性写真家としての移動性が再評価されている。*14 ICPやメトロポリタン美術館、AIC、MFAボストンなども関連作品を所蔵している。*15 後年の写真集研究において、『Métal』は写真集が単なる写真の集合ではなく、編集・印刷・デザインを通じた独自の視覚経験を作る媒体として機能する早い例として繰り返し参照される。*16 クリュルの移動と媒体横断的な活動は、国民的な芸術家像に収まりにくいという点で、写真史の中で女性写真家の位置を再検討するための事例としても論じられてきた。前衛、報道、商業を横断した実践は、単一ジャンルの写真家像では捉えにくい20世紀前半の写真的実践の多様性を示している。`,
+    textEn: `Biography
+
+Germaine Krull was born in Germany in 1897 and pursued photography while moving through Munich, the Netherlands and Paris. *1 She established her base of operations in Paris in the 1920s, working in parallel on magazine reportage, fashion and avant-garde photographic experiment. *2 Her 1928 photobook Métal — compositions of the Eiffel Tower's iron structures, machines and urban infrastructure made with extreme angles and fragmentation — occupies an important place in the history of the photobook. *3
+
+Her career is characterised by a mobility that resists fixing to a single country or movement. Her connections include French Surrealism, journalism, and travel photography in Southeast Asia and India. *4 Centre Pompidou and MoMA both position her at the intersection of the avant-garde and popular reportage and publishing. *5 She died in Germany in 1985. *6
+
+Expression / method
+
+Métal and the structure of the photobook
+
+Krull's Métal is not a photobook that documents machinery: it is a book that edits the skeleton of the modern city as fragments, diagonals, repetitions and the rhythm of print. *7 Iron towers and bridges may be massive structures, but on the pages of the photobook they become abstract compositional elements. What matters here is that the photobook as a medium creates a sequential visual experience rather than a collection of individual photographs. MoMA's Object:Photo project includes Métal as a significant case in photobook history, analysing the aesthetics of sequencing and printing. *8
+
+Where Rodchenko used extreme angles within post-revolutionary Soviet public vision and Sheeler saw American industry as precise order, Krull grasped urban infrastructure as a moving gaze. *9 Her photographs have an industrial beauty while also connecting to reportage, travel, commercial publishing and political migration, resisting fixing to a single country or style. Comparing her with Rodchenko, Moholy-Nagy and Sheeler reveals the multiple directions taken by industrial modernism. *10
+
+Reportage, mobility and the position of the woman photographer
+
+Krull worked as a press photographer covering political events across Europe while continuing her avant-garde photographic experiments in parallel. *11 The evaluation of her as a woman photographer with a mobility and cross-media range that resists a national artist image has been one of the frameworks in which she is discussed at Jeu de Paume, MoMA and elsewhere. *12 Centre Pompidou's collection holds Krull's photographs and archives, forming the basis for research that re-evaluates her at the intersection of avant-garde vision and reportage and publishing. *13
+
+Criticism and reception
+
+MoMA, Centre Pompidou, Jeu de Paume, the Getty and Tate all provide access to works and materials, and re-evaluation continues both of her position at the intersection of avant-garde vision and reportage/publishing and of her mobility as a woman photographer. *14 ICP, the Metropolitan Museum, the AIC and the MFA Boston also hold related works. *15 In later photobook studies, Métal is repeatedly cited as an early example of the photobook functioning as a medium that creates a distinctive visual experience through editing, printing and design rather than simply collecting photographs. *16 Krull's mobility and cross-media range have been discussed as a case for reconsidering the position of women photographers within photographic history, given how difficult her practice is to contain within a national artist image. Her practice — spanning avant-garde, reportage and commercial work in equal measure — demonstrates a diversity in early twentieth-century photographic practice that resists single-genre framing.`,
+    citations: [
+      { num: 1, name: 'Germaine Krull artist. MoMA', url: 'https://www.moma.org/artists/3261' },
+      { num: 2, name: 'Krull search. Getty Museum', url: 'https://www.getty.edu/art/collection/search/?q=Germaine%20Krull' },
+      { num: 3, name: 'Métal. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/books/802.html' },
+      { num: 4, name: 'Krull search. Centre Pompidou', url: 'https://www.centrepompidou.fr/en/recherche?terms=Germaine%20Krull' },
+      { num: 5, name: 'Germaine Krull. MoMA', url: 'https://www.moma.org/artists/3261' },
+      { num: 6, name: 'Germaine Krull. Tate', url: 'https://www.tate.org.uk/search?q=Germaine%20Krull' },
+      { num: 7, name: 'Métal. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/books/802.html' },
+      { num: 8, name: 'Métal — photobook record. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/books/802.html' },
+      { num: 9, name: 'Germaine Krull. MoMA', url: 'https://www.moma.org/artists/3261' },
+      { num: 10, name: 'Germaine Krull André Malraux. MoMA', url: 'https://www.moma.org/collection/works/54849' },
+      { num: 11, name: 'Krull search. Jeu de Paume', url: 'https://jeudepaume.org/?s=Germaine+Krull' },
+      { num: 12, name: 'Krull search. Jeu de Paume', url: 'https://jeudepaume.org/?s=Germaine+Krull' },
+      { num: 13, name: 'Krull. Centre Pompidou', url: 'https://www.centrepompidou.fr/en/recherche?terms=Germaine%20Krull' },
+      { num: 14, name: 'Germaine Krull. ICP', url: 'https://www.icp.org/search-results?query=Germaine%20Krull' },
+      { num: 15, name: 'Germaine Krull. Art Institute of Chicago', url: 'https://www.artic.edu/search?q=Germaine%20Krull' },
+      { num: 16, name: 'Métal. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/books/802.html' },
+      { num: 17, name: 'Germaine Krull. MFA Boston', url: 'https://collections.mfa.org/search/objects/*/Germaine%20Krull' },
+      { num: 18, name: 'Germaine Krull. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search?q=Germaine%20Krull' },
+      { num: 19, name: 'Germaine Krull. SFMOMA', url: 'https://www.sfmoma.org/search/?q=Germaine%20Krull' },
+    ],
+    works: [
+      { titleJa: '『Métal』— MoMA Object:Photo', titleEn: 'Métal — MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/books/802.html' },
+      { titleJa: 'クリュル作品 — MoMA', titleEn: 'Krull works — MoMA', url: 'https://www.moma.org/artists/3261' },
+      { titleJa: 'クリュル作品 — Centre Pompidou', titleEn: 'Krull works — Centre Pompidou', url: 'https://www.centrepompidou.fr/en/recherche?terms=Germaine%20Krull' },
+    ],
+  },
+
+  'jp-中山岩太': {
+    leadJa: `ニューヨークとパリでの経験を神戸・芦屋の写真文化へ接続し、日本モダニズム写真の形成に関わった写真家。商業写真と構成的実験の双方を担い、阪神間モダニズムの視覚文化を支えた。`,
+    leadEn: `Photographer who connected experiences in New York and Paris to Kobe and Ashiya's photographic culture, contributing to the formation of Japanese modernist photography. He worked across commercial photography and compositional experiment, supporting the visual culture of Hanshinkan modernism.`,
+    textJa: `経歴
+
+中山岩太は1895年に熊本に生まれ、神戸を拠点に写真館を開いた後、1920年代にニューヨークへ渡り商業写真を学んだ。*1 ニューヨークでは写真スタジオでの実務経験を積むとともに、近代的な広告写真と商業写真の技術に接した。*2 さらにパリにも滞在し、ヨーロッパ前衛の視覚文化を肌で感じながら、帰国後は神戸・芦屋を中心に活動を再開した。*3
+
+1930年代には芦屋カメラクラブの中心的なメンバーとなり、写真による構成的実験と商業写真の技術を結びつけた活動を展開した。*4 兵庫県立美術館が2025年に公開した特集は、純写真の追求、ニューヨーク・パリ経験、阪神間モダニズムという三つの軸で中山の活動を整理しており、関西写真文化の中での彼の位置を理解するための重要な資料となっている。*5 商業写真、肖像、前衛的構成、写真グループ活動を横断し、関西写真文化の制度と表現を結んだ。1949年に没した。*6
+
+表現解説
+
+海外経験と阪神間モダニズムへの接続
+
+中山岩太の表現の特徴は、海外前衛の単純な輸入ではなく、ニューヨークとパリで得た視覚経験を阪神間の都市文化と写真サークルの中で再編したところにある。*7 商業写真や肖像の技術を持ちながら、彼は写真を広告的な洗練、構成的実験、都市的感覚のあいだで展開した。芦屋という場所は、当時の阪神間モダニズムの文化的な環境であり、建築、デザイン、写真、文学が交差する都市的な文化圏を形成していた。*8
+
+ICPライブラリーは中山の写真集を所蔵しており、日本近代写真の国際的な参照点の一つになっている。*9 彼の写真が成立するには、作品単体よりも媒体と場を重視した分析が有効である。芦屋カメラクラブ、雑誌、展覧会、阪神間モダニズムの生活文化は、彼の写真が生まれる社会的な条件だった。ロトチェンコやモホイ＝ナジのような欧米前衛と直接同じ文脈に置くのではなく、それらの視覚言語が日本の商業・都市・クラブ文化の中でどのように変形したかを示すものとして評価できる。*10
+
+商業写真・肖像の洗練と構成的実験
+
+中山は商業スタジオとしての技術的な洗練と、構成的実験の双方を持っていた。*11 肖像写真では、欧米の商業写真技術を応用しながら、被写体の個性と写真の形式的な構成を結びつける方向を探った。芦屋という場所は高い経済水準と文化的な関心を持つ顧客層を形成しており、商業写真と芸術写真の間に明確な壁がなかったことが彼の作風の幅を生み出した。*12
+
+安井仲治との比較も有効である。安井が関西のアマチュア写真文化の中で多様な実験を行ったのに対し、中山は海外経験と商業的な洗練を強く持つ。両者は日本モダニズム写真の異なる側面を代表するが、阪神間という共通の文化的土台を持つ。*13
+
+批評と受容
+
+中山の海外機関での個別資料は多くないが、ICPライブラリーの所蔵情報、兵庫県立美術館の特集、CiNiiの研究資料などが再評価の足場になっている。*14 NDLサーチにも関連書誌資料がある。*15 写真史上は、日本のモダニズム写真を欧米前衛の受容としてだけではなく、阪神間の都市文化、クラブ、出版、商業写真との接続として書くことが重要であり、中山はその中心的な担い手の一人として位置づけられる。芦屋市立美術博物館も関連資料を所蔵しており、地域的な文脈での研究が続いている。*16 日本近代写真史の国際的な参照可能性という観点では、ICPライブラリーのような海外機関が中山の写真集を所蔵していることは、阪神間モダニズムを日本内部の現象としてではなく、より広い国際的なモダニズムの文脈に接続して考えるための基盤となっている。`,
+    textEn: `Biography
+
+Iwata Nakayama was born in Kumamoto in 1895, opened a photographic studio based in Kobe, and in the 1920s travelled to New York to study commercial photography. *1 There he gained practical experience in photographic studios and came into contact with the techniques of modern advertising and commercial photography. *2 He also stayed in Paris, experiencing the European avant-garde visual culture firsthand, and after returning to Japan resumed his activities centred on Kobe and Ashiya. *3
+
+In the 1930s he became a central member of the Ashiya Camera Club, developing activities that combined compositional photographic experiment with commercial photography skills. *4 A 2025 feature published by the Hyogo Prefectural Museum of Art organises his activities around three axes — the pursuit of pure photography, his New York and Paris experiences, and Hanshinkan modernism — and serves as an important resource for understanding his position within Kansai photographic culture. *5 He worked across commercial photography, portraiture, compositional experiment and photographic club activity, connecting the institutions and expression of Kansai photographic culture. He died in 1949. *6
+
+Expression / method
+
+Overseas experience and connection to Hanshinkan modernism
+
+The defining feature of Nakayama's expression is not the simple importation of overseas avant-garde but the reworking of visual experiences gained in New York and Paris within the urban culture and photographic circles of the Hanshin region. *7 Equipped with commercial photography and portrait techniques, he developed photography between advertising refinement, compositional experiment and urban sensibility. Ashiya was the cultural environment of Hanshinkan modernism at the time, forming an urban cultural sphere in which architecture, design, photography and literature intersected. *8
+
+ICP Library holds Nakayama's photography publications, making them one of the international reference points for Japanese modern photography. *9 For the analysis of how his photography came into being, an approach that values media and place over the individual work is productive. The Ashiya Camera Club, magazines, exhibitions and the living culture of Hanshinkan modernism were the social conditions in which his photography was made. Rather than placing him directly in the same context as Western avant-garde figures such as Rodchenko or Moholy-Nagy, his work is best evaluated as evidence of how those visual languages were transformed within Japanese commercial, urban and club culture. *10
+
+Commercial photography, portrait refinement and compositional experiment
+
+Nakayama possessed both technical refinement as a commercial studio and the capacity for compositional experiment. *11 In portraiture, he applied Western commercial photography technique while exploring a way of connecting the subject's individuality to the formal composition of the photograph. Ashiya formed a clientele of high economic and cultural interest, and the absence of a clear wall between commercial and art photography produced the breadth of his style. *12
+
+Comparison with Nakaji Yasui is also useful. Where Yasui conducted diverse experiments within Kansai's amateur photography culture, Nakayama held strong overseas experience and commercial refinement. Both represent different aspects of Japanese modernist photography but share the common cultural base of the Hanshin region. *13
+
+Criticism and reception
+
+Individual international materials on Nakayama are not extensive, but the ICP Library holdings, the Hyogo Prefectural Museum of Art feature and CiNii research materials form the basis for re-evaluation. *14 NDL Search also holds related bibliographic materials. *15 Within photographic history, writing about Japanese modernist photography not only as the reception of Western avant-garde but as its connection to urban culture, clubs, publishing and commercial photography in the Hanshin region is essential, and Nakayama is positioned as one of its central practitioners. The Ashiya City Museum of Art and History also holds related materials, and research in local context continues. *16 From the perspective of the international referenceability of modern Japanese photographic history, the fact that overseas institutions such as the ICP Library hold Nakayama's publications provides a foundation for thinking about Hanshinkan modernism not as a purely internal Japanese phenomenon but in connection with broader international modernism.`,
+    citations: [
+      { num: 1, name: 'Nakayama Iwata ten. ICP Library', url: 'https://www.icp.org/content/nakayama-iwata-ten' },
+      { num: 2, name: 'Iwata Nakayama exhibition. MEM', url: 'https://mem-inc.jp/2025/09/13/iwata2025/' },
+      { num: 3, name: 'Hyogo Prefectural Museum of Art', url: 'https://www.artm.pref.hyogo.jp/' },
+      { num: 4, name: 'Nakayama Iwata. ICP', url: 'https://www.icp.org/search-results?query=Iwata%20Nakayama' },
+      { num: 5, name: 'Hyogo Prefectural Museum of Art', url: 'https://www.artm.pref.hyogo.jp/' },
+      { num: 6, name: 'Iwata Nakayama. British Museum', url: 'https://www.britishmuseum.org/collection/search?keyword=Iwata%20Nakayama' },
+      { num: 7, name: 'Nakayama Iwata. ICP Library', url: 'https://www.icp.org/content/nakayama-iwata-ten' },
+      { num: 8, name: 'Iwata Nakayama exhibition. MEM', url: 'https://mem-inc.jp/2025/09/13/iwata2025/' },
+      { num: 9, name: 'Nakayama Iwata ten. ICP Library', url: 'https://www.icp.org/content/nakayama-iwata-ten' },
+      { num: 10, name: 'Hyogo Prefectural Museum of Art', url: 'https://www.artm.pref.hyogo.jp/' },
+      { num: 11, name: '中山岩太 search. CiNii Research', url: 'https://cir.nii.ac.jp/all?q=%E4%B8%AD%E5%B1%B1%E5%B2%A9%E5%A4%AA' },
+      { num: 12, name: 'Iwata Nakayama exhibition. MEM', url: 'https://mem-inc.jp/2025/09/13/iwata2025/' },
+      { num: 13, name: 'Nakayama Iwata. ICP Library', url: 'https://www.icp.org/content/nakayama-iwata-ten' },
+      { num: 14, name: '中山岩太 search. CiNii Research', url: 'https://cir.nii.ac.jp/all?q=%E4%B8%AD%E5%B1%B1%E5%B2%A9%E5%A4%AA' },
+      { num: 15, name: '中山岩太 search. NDL Search', url: 'https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E4%B8%AD%E5%B1%B1%E5%B2%A9%E5%A4%AA' },
+      { num: 16, name: 'Ashiya City Museum. 芦屋市立美術博物館', url: 'https://ashiya-museum.jp/' },
+      { num: 17, name: '中山岩太 search. ToMuCo', url: 'https://museumcollection.tokyo/works/?q=%E4%B8%AD%E5%B1%B1%E5%B2%A9%E5%A4%AA' },
+      { num: 18, name: 'Tokyo University of the Arts Museum', url: 'https://museum.geidai.ac.jp/' },
+    ],
+    works: [
+      { titleJa: '中山岩太展記録 — ICP Library', titleEn: 'Nakayama Iwata — ICP Library', url: 'https://www.icp.org/content/nakayama-iwata-ten' },
+      { titleJa: '中山岩太展 — MEM', titleEn: 'Iwata Nakayama exhibition — MEM', url: 'https://mem-inc.jp/2025/09/13/iwata2025/' },
+      { titleJa: '中山岩太 — ToMuCo', titleEn: 'Iwata Nakayama — ToMuCo', url: 'https://museumcollection.tokyo/works/?q=%E4%B8%AD%E5%B1%B1%E5%B2%A9%E5%A4%AA' },
+    ],
+  },
+
+  'jp-安井仲治': {
+    leadJa: `浪華写真倶楽部・丹平写真倶楽部など関西写真文化の中で活動し、ピクトリアリズムから構成写真、合成ネガまで幅広い実験を展開した写真家。戦前日本写真の実験性を代表する作家として国内外で再評価が進んでいる。`,
+    leadEn: `Photographer who worked within Kansai photographic culture — the Naniwa and Tampei photography clubs — developing wide-ranging experiments from pictorialism to constructive photography and composite negatives. He is increasingly recognised internationally as a representative figure of pre-war Japanese photographic experimentation.`,
+    textJa: `経歴
+
+安井仲治は1903年に大阪に生まれ、10代から写真に親しんだ。*1 浪華写真倶楽部に参加し、その後丹平写真倶楽部、銀鈴社など関西の複数の写真グループで活動を展開した。*2 関西写真文化は当時のアマチュア写真家にとって豊かな実験の場であり、雑誌や展覧会を通じて新しい表現を試す環境が整っていた。*3
+
+National Art Center Tokyo（国立新美術館）のアート・コモンズに収録された記録は、安井の活動を1903年から1942年という短い生涯の中で整理した重要な資料である。*4 1930年代に入ると、複数ネガの合成、プリント時のトリミングなどの実験的手法を積極的に取り入れ、単純な写実から離れる方向を明確にした。愛知県美術館の回顧展はこれらの技法を実証的に分析している。*5 1942年に39歳で没した。没後も影響力は続き、土門拳や森山大道など後の写真家による評価の言葉が残されている。*6
+
+表現解説
+
+一つの様式に固定されない実験の広がり
+
+安井仲治の表現は一つの様式に固定できない。初期にはソフトフォーカスやピクトリアリズム的な画面を用いながら、次第に静物、都市、人物、構成写真、合成、トリミングへと広がった。*7 彼の重要性は、多様な技法を流行として取り入れたことではなく、現実の断片から象徴的なイメージを作る方法を探り続けた点にある。東京ステーションギャラリーのチェックリストPDFは、安井の作品リストを体系的に整理しており、実験の幅広さを確認できる。*8
+
+関西写真文化は安井にとって不可欠な文脈である。浪華写真倶楽部、丹平写真倶楽部などの場は、アマチュア写真家が技法を競い、雑誌や展覧会を通じて新しい表現を実験する環境だった。*9 安井はその中で、ヨーロッパ前衛の受容を直接模倣するのではなく、日常の断片、都市の不安、身体、物の配置を独自の緊張感へ変換した。英国博物館には安井の写真集資料が所蔵されており、国際的な参照点の一つとなっている。*10
+
+複数ネガ合成とトリミングの実験
+
+複数ネガの合成やトリミングは、写真を単純な記録から現実の断片を再構成する媒体へと変える。*11 安井はこれらの技法を通じて、カメラが捉えた現実を一度解体し、別の秩序として組み直す実験を行った。愛知県美術館の回顧展（当初URL変更により現在は別アドレス）はこの手法を実証的に分析しており、作品ごとの技法の記録が現在も研究資料として機能している。*12 国立新美術館の資料はこの回顧展を安井再評価の重要な節点として記録している。*13
+
+東京アートビートの展覧会レポートは、2023〜24年の回顧展についての詳細な評価を提供しており、安井の現代における位置づけを確認できる。*14 こうした技法実験は、後の日本写真における主観性、都市感覚、実験性を考えるうえで重要な前史となっている。*15
+
+批評と受容
+
+近年の愛知県美術館、東京ステーションギャラリー、兵庫県立美術館の展覧会は、安井を戦前日本写真の傑出した存在として再検討している。*16 英国博物館は写真集・復刻・英日解説の国際的な参照点として機能している。*17 CiNii ResearchやNDLサーチには多数の研究論文・書誌資料があり、学術的な再評価も進んでいる。*18 後代の写真家による評価の言葉が示すように、安井の実験は特定の様式の継承ではなく、写真が現実と主観をどのように組み替えるかという問いとして受け取られている。*19 戦前日本写真の再評価においては、欧米前衛の輸入という枠組みを超えて、日本国内のアマチュア文化・クラブ・雑誌・展覧会という制度の中で独自の実験が行われていたことを示す証拠として、安井の仕事は中心的に取り上げられてきた。`,
+    textEn: `Biography
+
+Nakaji Yasui was born in Osaka in 1903 and became familiar with photography in his teens. *1 He participated in the Naniwa Photography Club and subsequently developed his activities across several Kansai photography groups including the Tampei Photography Club and Ginrei-sha. *2 Kansai photographic culture provided a rich environment for experimentation for amateur photographers of the time, with magazines and exhibitions creating space for testing new expressions. *3
+
+Records held in the Art Commons of the National Art Center Tokyo document his activities within his short life of 1903 to 1942. *4 Entering the 1930s, he actively incorporated experimental techniques such as composite negatives and cropping during printing, making his departure from simple realism explicit. The Aichi Prefectural Museum of Art retrospective analysed these techniques empirically. *5 He died in 1942 at the age of 39. His influence continued after his death, with statements of appreciation left by later photographers including Domon Ken and Daido Moriyama. *6
+
+Expression / method
+
+The range of experiment that resists fixing to a single style
+
+Yasui's expression cannot be fixed to a single style. Early on he used soft focus and pictorialist compositions; gradually this expanded to still life, urban scenes, portraiture, constructive photography, composites and cropping. *7 His importance lies not in incorporating diverse techniques as fashion but in his continuous search for methods of creating symbolic images from fragments of reality. The Tokyo Station Gallery checklist PDF systematically organises Yasui's works, allowing the breadth of his experiments to be confirmed. *8
+
+Kansai photographic culture is an indispensable context for Yasui. The Naniwa and Tampei photography clubs were environments where amateur photographers competed in technique and experimented with new expressions through magazines and exhibitions. *9 Within these settings, rather than directly imitating the reception of the European avant-garde, Yasui converted fragments of the everyday, urban anxiety, bodies and object arrangements into a distinctive tension. The British Museum holds photobook materials on Yasui, providing one international point of reference. *10
+
+Composite negative experiments and cropping
+
+Composite negatives and cropping convert photography from simple documentation to a medium for reconstituting fragments of reality. *11 Through these techniques, Yasui conducted experiments of decomposing the reality captured by the camera and reassembling it as a different order. The Aichi Prefectural Museum of Art retrospective analysed these techniques empirically, and per-work technique records continue to function as research materials. *12 The National Art Center Tokyo's records document this retrospective as an important node in Yasui's re-evaluation. *13
+
+The Tokyo Art Beat exhibition report provides detailed evaluation of the 2023–24 retrospective, allowing Yasui's contemporary positioning to be confirmed. *14 These technical experiments have become an important prehistory for thinking about subjectivity, urban sensibility and experimentality in later Japanese photography. *15
+
+Criticism and reception
+
+Recent exhibitions at the Aichi Prefectural Museum of Art, the Tokyo Station Gallery and the Hyogo Prefectural Museum of Art have reconsidered Yasui as an outstanding figure in pre-war Japanese photography. *16 The British Museum functions as an international point of reference for photobooks, reprints and bilingual commentary. *17 CiNii Research and NDL Search hold numerous research articles and bibliographic materials, and scholarly re-evaluation is advancing. *18 As the statements by later photographers demonstrate, Yasui's experiments are received not as the inheritance of a particular style but as a question about how photography reorganises reality and subjectivity. *19 In the re-evaluation of pre-war Japanese photography, Yasui's work is centrally cited as evidence that original experiments were conducted within the institutions of domestic amateur culture — clubs, magazines and exhibitions — going beyond the framework of simply receiving Western avant-garde influences.`,
+    citations: [
+      { num: 1, name: 'Yasui Nakaji 1903-1942. National Art Center Tokyo', url: 'https://www.nact.jp/english/artcommons/user/detail/75721' },
+      { num: 2, name: 'Yasui Nakaji biography. British Museum', url: 'https://www.britishmuseum.org/collection/term/BIOG187550' },
+      { num: 3, name: 'Yasui feature PDF. Hyogo Prefectural Museum of Art', url: 'https://www.artm.pref.hyogo.jp/artcenter/pdf/hart122.pdf' },
+      { num: 4, name: 'Yasui Nakaji 1903-1942. National Art Center Tokyo', url: 'https://www.nact.jp/english/artcommons/user/detail/75721' },
+      { num: 5, name: 'Yasui exhibition report. Tokyo Art Beat', url: 'https://www.tokyoartbeat.com/articles/-/nakaji-yasui-report-202310' },
+      { num: 6, name: 'Yasui Nakaji photobook. British Museum', url: 'https://www.britishmuseum.org/collection/object/A_2008-3035-87' },
+      { num: 7, name: 'Yasui Nakaji. National Art Center Tokyo', url: 'https://www.nact.jp/english/artcommons/user/detail/75721' },
+      { num: 8, name: 'Yasui checklist PDF. Tokyo Station Gallery', url: 'https://www.ejrcf.or.jp/gallery/pdf/list_202402_yasui.pdf' },
+      { num: 9, name: 'Yasui feature. Hyogo Prefectural Museum of Art', url: 'https://www.artm.pref.hyogo.jp/artcenter/pdf/hart122.pdf' },
+      { num: 10, name: 'Yasui Nakaji photobook. British Museum', url: 'https://www.britishmuseum.org/collection/object/A_2008-3035-87' },
+      { num: 11, name: 'Yasui Nakaji. National Art Center Tokyo', url: 'https://www.nact.jp/english/artcommons/user/detail/75721' },
+      { num: 12, name: 'Yasui exhibition report. Tokyo Art Beat', url: 'https://www.tokyoartbeat.com/articles/-/nakaji-yasui-report-202310' },
+      { num: 13, name: 'Yasui Nakaji 1903-1942. National Art Center Tokyo', url: 'https://www.nact.jp/english/artcommons/user/detail/75721' },
+      { num: 14, name: 'Yasui exhibition report. Tokyo Art Beat', url: 'https://www.tokyoartbeat.com/articles/-/nakaji-yasui-report-202310' },
+      { num: 15, name: 'Yasui feature PDF. Hyogo Prefectural Museum of Art', url: 'https://www.artm.pref.hyogo.jp/artcenter/pdf/hart122.pdf' },
+      { num: 16, name: 'Yasui checklist PDF. Tokyo Station Gallery', url: 'https://www.ejrcf.or.jp/gallery/pdf/list_202402_yasui.pdf' },
+      { num: 17, name: 'Yasui Nakaji biography. British Museum', url: 'https://www.britishmuseum.org/collection/term/BIOG187550' },
+      { num: 18, name: '安井仲治 search. CiNii Research', url: 'https://cir.nii.ac.jp/all?q=%E5%AE%89%E4%BA%95%E4%BB%B2%E6%B2%BB' },
+      { num: 19, name: '安井仲治 search. NDL Search', url: 'https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E5%AE%89%E4%BA%95%E4%BB%B2%E6%B2%BB' },
+      { num: 20, name: 'Nakaji Yasui search. ICP Library', url: 'https://www.icp.org/search-results?query=Nakaji%20Yasui' },
+    ],
+    works: [
+      { titleJa: '安井仲治記録 — National Art Center Tokyo', titleEn: 'Yasui Nakaji record — National Art Center Tokyo', url: 'https://www.nact.jp/english/artcommons/user/detail/75721' },
+      { titleJa: '安井仲治写真集 — British Museum', titleEn: 'Yasui Nakaji photobook — British Museum', url: 'https://www.britishmuseum.org/collection/object/A_2008-3035-87' },
+      { titleJa: '安井仲治展報告 — Tokyo Art Beat', titleEn: 'Yasui Nakaji exhibition report — Tokyo Art Beat', url: 'https://www.tokyoartbeat.com/articles/-/nakaji-yasui-report-202310' },
+    ],
+  },
+
+  'jp-福原信三': {
+    leadJa: `資生堂初代社長として企業文化を形成しながら、写真芸術社の設立と資生堂ギャラリーの創設を通じて日本の写真芸術制度を整えた写真家・文化人。制度形成と表現の双方から日本近代写真を支えた。`,
+    leadEn: `First president of Shiseido who, while shaping corporate culture, established the photographic institution of Japan through founding the Sha-shin Geijutsu-sha and Shiseido Gallery. He supported modern Japanese photography from both institution-building and expressive practice.`,
+    textJa: `経歴
+
+福原信三は1883年に東京に生まれ、資生堂創業者の子として欧米へ留学した後、父の後を継いで資生堂の経営に携わった。*1 欧米滞在中に写真と芸術の関係への関心を深め、帰国後は経営者としての立場と写真家・文化人としての活動を並行して進めた。*2 1921年には写真芸術の普及・研究を目的とした写真芸術社を組織し、写真を近代的な芸術文化として位置づける制度的な基盤づくりに取り組んだ。*3
+
+1919年には資生堂ギャラリーを創設し、商業企業のスペースでありながら美術、デザイン、写真、広告を接続する文化的な空間として機能させた。*4 1923年には写真理論として重要な「光と其諧調」を発表し、光と調子に基づく写真の美学的理論を示した。グレイ・アート・ミュージアム（ニューヨーク大学）の資料はこれらの活動を整理した重要な参照点である。*5 1948年に没した。*6
+
+表現解説
+
+写真制度の形成者として
+
+福原信三の表現を考えるとき、写真作品の柔らかな調子だけでなく、制度形成者としての役割を同時に扱う必要がある。*7 彼は欧米滞在と資生堂の企業文化を背景に、写真を単なる記録や趣味から、近代的な美意識を担う媒体へ押し上げようとした。ここでいう芸術写真はピクトリアリズムの模倣にとどまらず、光、調子、印刷、展示空間、雑誌文化を含む総合的な視覚文化の構想である。資生堂ギャラリーの100周年に関連した展示は、福原を企業経営を超えた社会創造的な芸術家として再検討している。*8
+
+福原の重要性は、作家個人の画面だけではなく、写真を受け取る制度を作った点にある。資生堂ギャラリーは商業企業の場でありながら、近代日本の文化装置として美術、デザイン、写真、広告を接続した。写真芸術社の活動や理論的文章は、野島康三、中山岩太、安井仲治らが活動するための環境とも接続する。*9
+
+光の美学と「光と其諧調」
+
+1923年に発表された「光と其諧調」は、写真における光と調子の関係を理論的に探求した文章であり、日本の写真理論の形成に重要な位置を占める。*10 福原の作品における柔らかな光と淡い調子は、単なる個人的な好みではなく、近代都市の消費文化と芸術写真の間で生まれた美学として読むことができる。資生堂プレスリリースのPDFは、この理論と作品の関係を整理した資料として参照できる。*11
+
+Art Platform Japanの福原信三ページは、日本の芸術制度における彼の位置づけを確認できるデータベースとして機能している。*12 ToMuCo（東京国立近代美術館コレクション連携データベース）にも福原の関連作品が登録されている。*13
+
+資生堂ギャラリーと企業文化の接続
+
+資生堂ギャラリーの創設は、商業企業が文化的な場を作るという近代日本固有のモデルを示している。*14 化粧品・香料というビジネスと、光・美・芸術という価値観の接続は、資生堂のブランドアイデンティティを形成するとともに、日本の近代視覚文化に商業と芸術が共存するという文化的な土台を作った。フランス語圏の資料である日本写真協会に関するフランス語Wikipediaの書誌情報ルートは、日本近代写真の国際的な参照可能性を示している。*15
+
+批評と受容
+
+資生堂ギャラリーの展示と研究資料は福原信三の再評価の主要な場であり続けている。*16 CiNii Researchには多数の研究論文がある。*17 NDLサーチには関連書誌資料が充実している。*18 英国博物館やICP Libraryでも断片的な資料参照が可能である。*19 Art Platform Japanのデータベースは、日本の芸術制度における彼の地位を確認できる。写真史上は、作品評価と制度史を分けず、写真文化を支える場を作ったこと自体を批評的意義として書くと彼の固有性が見えやすい。*20 企業、ギャラリー、出版、写真理論という複数の回路で同時に働いたという点で、福原の事例は日本近代の文化制度史においても個人と組織の関係を考えるための重要な参照点である。`,
+    textEn: `Biography
+
+Shinzo Fukuhara was born in Tokyo in 1883, studied in Europe and America as the son of Shiseido's founder, and took over the management of Shiseido after his father. *1 During his time abroad he deepened his interest in the relationship between photography and art, and after returning to Japan he pursued management and photographic/cultural activity in parallel. *2 In 1921 he organised the Sha-shin Geijutsu-sha (Photographic Art Society) with the purpose of promoting and researching photographic art, working to build the institutional basis for positioning photography as a modern artistic culture. *3
+
+In 1919 he established the Shiseido Gallery, which, while a commercial enterprise space, functioned as a cultural space connecting art, design, photography and advertising. *4 In 1923 he published "Light and Its Tone," an important photographic theory text setting out an aesthetic theory of photography based on light and tone. The Grey Art Museum (NYU) materials provide an important point of reference organising these activities. *5 He died in 1948. *6
+
+Expression / method
+
+As an institution builder
+
+To think about Fukuhara's expression, it is necessary to address both the soft tonal quality of his photographic works and his role as an institution builder simultaneously. *7 Drawing on his time in Europe and America and the corporate culture of Shiseido, he worked to elevate photography from mere documentation or hobby to a medium bearing modern aesthetic values. The art photography he envisioned was not limited to imitation of pictorialism but a conception of comprehensive visual culture encompassing light, tone, printing, exhibition space and magazine culture. An exhibition marking the Shiseido Gallery's centenary reconsidered Fukuhara as an artist of social creation beyond corporate management. *8
+
+Fukuhara's importance lies not only in the individual works he made but in the fact that he built the institutions through which photography could be received. The Shiseido Gallery, while a commercial enterprise space, functioned as a cultural apparatus for modern Japan connecting art, design, photography and advertising. The activities of the Sha-shin Geijutsu-sha and his theoretical writings also connect to the environment in which Yasuzo Nojima, Iwata Nakayama and Nakaji Yasui worked. *9
+
+The aesthetics of light and "Light and Its Tone"
+
+"Light and Its Tone," published in 1923, is a text exploring theoretically the relationship between light and tone in photography and occupies an important position in the formation of Japanese photographic theory. *10 The soft light and gentle tones in Fukuhara's works can be read not as mere personal preference but as an aesthetic produced between modern urban consumer culture and art photography. The Shiseido press release PDF can be consulted as materials organising the relationship between this theory and his works. *11
+
+Art Platform Japan's Fukuhara Shinzo page functions as a database for confirming his position in Japan's art institutions. *12 ToMuCo (the Tokyo National Museum of Modern Art collection-linked database) also registers related works by Fukuhara. *13
+
+Shiseido Gallery and the connection of corporate culture
+
+The establishment of the Shiseido Gallery represents a uniquely modern Japanese model of a commercial corporation creating cultural space. *14 The connection between the business of cosmetics and fragrance and the values of light, beauty and art both shaped Shiseido's brand identity and created a cultural base in which commerce and art coexisted within modern Japanese visual culture. The bibliographic reference route via French-language sources on the Société photographique japonaise indicates the international referenceability of Japanese modern photography. *15
+
+Criticism and reception
+
+Shiseido Gallery exhibitions and research materials remain the main venue for the re-evaluation of Fukuhara Shinzo. *16 CiNii Research holds numerous research articles. *17 NDL Search holds extensive related bibliographic materials. *18 Fragmentary material references are also possible at the British Museum and ICP Library. *19 The Art Platform Japan database allows his position in Japan's art institutions to be confirmed. Within photographic history, the distinctive character of his contribution becomes visible when institution-building — the creation of the very spaces that support photographic culture — is treated as a critical achievement alongside the evaluation of individual works. *20 The fact that Fukuhara worked simultaneously through the multiple channels of a corporation, a gallery, publishing and photographic theory makes his case an important reference point in the institutional history of modern Japanese culture for thinking about the relationship between individuals and organisations.`,
+    citations: [
+      { num: 1, name: '福原信三の美学. SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/jp/exhibition/704/' },
+      { num: 2, name: 'Face to Face: Shiseido and the Manufacture of Beauty. Grey Art Museum / NYU', url: 'https://greyartmuseum.nyu.edu/exhibition/shiseido-091500-102800/' },
+      { num: 3, name: 'Face to Face: Shiseido. Grey Art Museum', url: 'https://greyartmuseum.nyu.edu/exhibition/shiseido-091500-102800/' },
+      { num: 4, name: '福原信三の美学. SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/jp/exhibition/704/' },
+      { num: 5, name: 'Face to Face: Shiseido. Grey Art Museum / NYU', url: 'https://greyartmuseum.nyu.edu/exhibition/shiseido-091500-102800/' },
+      { num: 6, name: '福原信三 search. ToMuCo', url: 'https://museumcollection.tokyo/works/?q=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89' },
+      { num: 7, name: '福原信三の美学. SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/jp/exhibition/704/' },
+      { num: 8, name: 'SHISEIDO GALLERY 100周年. SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/jp/exhibition/704/' },
+      { num: 9, name: 'Face to Face: Shiseido. Grey Art Museum', url: 'https://greyartmuseum.nyu.edu/exhibition/shiseido-091500-102800/' },
+      { num: 10, name: 'Shinzo Fukuhara press release PDF. SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/wpss/wp-content/uploads/2018/09/wpss-1st2018-10-19-2018-12-26-2nd2019-1-16-2019-3-17-201809051.pdf' },
+      { num: 11, name: 'Shinzo Fukuhara press release PDF. SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/wpss/wp-content/uploads/2018/09/wpss-1st2018-10-19-2018-12-26-2nd2019-1-16-2019-3-17-201809051.pdf' },
+      { num: 12, name: '福原信三. Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A1500' },
+      { num: 13, name: '福原信三 search. ToMuCo', url: 'https://museumcollection.tokyo/works/?q=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89' },
+      { num: 14, name: '福原信三の美学. SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/jp/exhibition/704/' },
+      { num: 15, name: 'Société photographique japonaise. French Wikipedia', url: 'https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_photographique_japonaise_%281924-%29' },
+      { num: 16, name: 'SHISEIDO GALLERY展示. SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/jp/exhibition/704/' },
+      { num: 17, name: '福原信三 search. CiNii Research', url: 'https://cir.nii.ac.jp/all?q=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89' },
+      { num: 18, name: '福原信三 search. NDL Search', url: 'https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E7%A6%8F%E5%8E%9F%E4%BF%A1%E4%B8%89' },
+      { num: 19, name: 'Shinzo Fukuhara search. British Museum', url: 'https://www.britishmuseum.org/collection/search?keyword=Shinzo%20Fukuhara' },
+      { num: 20, name: '福原信三. Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A1500' },
+    ],
+    works: [
+      { titleJa: '「福原信三の美学」展 — SHISEIDO GALLERY', titleEn: 'The Aesthetics of Shinzo Fukuhara — SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/jp/exhibition/704/' },
+      { titleJa: 'Face to Face: Shiseido and the Manufacture of Beauty — Grey Art Museum', titleEn: 'Face to Face: Shiseido and the Manufacture of Beauty — Grey Art Museum', url: 'https://greyartmuseum.nyu.edu/exhibition/shiseido-091500-102800/' },
+      { titleJa: '福原信三 — Art Platform Japan', titleEn: 'Fukuhara Shinzo — Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A1500' },
+    ],
+  },
+
+  'jp-野島康三': {
+    leadJa: `絵画主義的な印画の質感と近代的な人物把握を結び、日本近代写真の肖像表現を切り開いた写真家。ピクトリアリズムから日本固有の写真モダニズムへの移行期に、身体と顔の存在感を写真として立ち上げた作家として位置づけられる。`,
+    leadEn: `Photographer who united the material quality of pictorialist printing with modern portrait expression, opening new possibilities for portraiture in Japanese modern photography. He is positioned in the transition from pictorialism to Japanese photographic modernism, bringing bodily and facial presence alive through photography.`,
+    textJa: `経歴
+
+野島康三は1889年に埼玉に生まれ、写真を独学で学んだ後、1910〜20年代にかけて肖像写真と裸婦写真を中心とした制作を展開した。*1 福原信三との交流は、写真芸術社の活動と重なり、日本の写真芸術制度の形成期に深く関わった。*2 スティーグリッツとの比較は、国立映画アーカイブ（東京）の資料でも言及されており、日米の同時代的な写真芸術化を考える補助線として機能する。*3
+
+野島は写真集の出版にも積極的であり、その表紙や構成もデザイン的な意識を持って作られた。*4 shashasha（写真集専門の書店・オンラインストア）は野島の写真集を複数取り扱っており、現代における入手可能性を示している。*5 1964年に没した。その後も日本近代写真史の展覧会や研究で繰り返し取り上げられてきた。*6
+
+表現解説
+
+ピクトリアリズムから近代肖像へ
+
+野島康三の表現は、ピクトリアリズムの柔らかな印画から近代的な肖像へ移る過程に位置する。*7 彼の人物写真や裸婦は、単なる美化ではなく、身体と顔の存在感を写真の物質的な調子の中で押し出すものである。ブロムオイルの質感や濃淡は絵画的でありながら、対象への接近はより直接的で、人物を雰囲気の中に溶かすのではなく、画面上に強い実在感として立ち上げる。*8
+
+松濤美術館のリーフレットPDFは、野島の技法と作品構造を具体的に整理しており、ブロムオイルプリントの質感と構図の関係を確認できる重要な資料である。*9 岩手大学の研究論文PDFは野島康三の写真表現を学術的に分析した研究であり、ピクトリアリズムから日本モダニズムへの移行という問いに対する現代的な取り組みを示している。*10
+
+写真の物質性と身体の存在感
+
+野島の写真が他のピクトリアリズム作家と異なるのは、印画の物質的な特性と被写体の実在感が強く結びついている点にある。*11 絵画的な調子の深みと、顔・身体への直接的な接近が共存しており、単純に「美しい写真」ではなく、「存在が現れる写真」として評価される。ToMuCoに収録された「野島康三氏」の作品記録は、作品ごとの技法と印画の特性を確認できる資料として機能している。*12
+
+スティーグリッツとの比較は象徴的な補助線であるが、直接的な影響関係ではなく、日米で同時期に写真が芸術化されていく過程を理解するための文脈として扱われる。*13 CiNii Researchには野島に関する複数の研究論文があり、学術的な再評価が継続している。*14
+
+後期の位置づけと日本モダニズムへの接続
+
+野島の写真は、後の安井仲治や中山岩太のような急角度やフォトモンタージュを前面化した実験的モダニズムとは異なる。*15 しかし、被写体との距離、印画の深い質感、人物の孤立した存在感によって、写真が絵画から離れながらも物質的な美を保つ道筋を示した。これは日本近代写真が西洋の前衛を直接模倣するのではなく、独自の言語を模索した過程の一例として読める。*16
+
+批評と受容
+
+野島の受容は、日本近代写真史の展覧会、写真集復刻、研究論文を通じて再評価されてきた。*17 海外での資料は限定的だが、英国博物館の写真集資料は写真集・肖像・印画技法の文脈を支える重要な参照点である。*18 NDLサーチのデータベースには関連書誌資料が豊富にある。*19 ICPやToMuCoにも作品・関連記録が確認できる。ピクトリアリズムから日本モダニズムへの転換点として位置づけると、彼の仕事の写真史上の意義が明確になる。*20 野島の肖像と裸婦は、日本近代写真においてどのように「近代的な人物像」が形成されたかを考えるうえで重要な一次資料であり、印画技法と被写体への接近方法の両面から研究が続いている。`,
+    textEn: `Biography
+
+Yasuzo Nojima was born in Saitama in 1889, taught himself photography, and developed his practice centred on portrait and nude photography through the 1910s and 1920s. *1 His exchange with Shinzo Fukuhara overlapped with the activities of the Sha-shin Geijutsu-sha, and he was deeply involved in the formative period of Japan's photographic art institutions. *2 Comparison with Stieglitz appears in materials at the National Film Archive of Japan (Tokyo), functioning as a reference line for thinking about the contemporaneous artistic development of photography in Japan and the United States. *3
+
+Nojima was also active in publishing photobooks, which were made with a conscious attention to design in their covers and layout. *4 Shashasha (a specialist photobook shop and online store) stocks multiple Nojima photobooks, attesting to contemporary availability. *5 He died in 1964 and has continued to be discussed in exhibitions and research on the history of modern Japanese photography. *6
+
+Expression / method
+
+From pictorialism to modern portraiture
+
+Nojima's expression is positioned in the transition from pictorialism's soft printing to modern portraiture. *7 His figure photographs and nudes are not simply about beautification; they push the presence of body and face through the material tonal quality of the photograph. The quality and gradation of the bromoil print has a painterly character, but the approach to the subject is more direct, not dissolving the person into atmosphere but bringing them up on the picture plane with strong actual presence. *8
+
+The Shoto Museum leaflet PDF provides concrete notes on Nojima's techniques and the structure of his works, serving as an important resource for confirming the relationship between the texture of the bromoil print and composition. *9 The Iwate University research paper PDF analyses Nojima's photographic expression in academic terms, demonstrating a contemporary approach to the question of transition from pictorialism to Japanese modernism. *10
+
+The materiality of photography and the presence of the body
+
+What distinguishes Nojima's photography from other pictorialist photographers is that the material character of the print and the actual presence of the subject are strongly bound together. *11 The depth of the painterly tone and the direct approach to face and body coexist, evaluated not as simply "beautiful photography" but as "photography in which presence appears." The work records in ToMuCo for "Nojima Yasuzo-shi" function as materials for confirming the technique and print characteristics of individual works. *12
+
+Comparison with Stieglitz serves as a symbolic reference line but is treated not as direct influence but as context for understanding how photography underwent artistic development contemporaneously in Japan and the United States. *13 CiNii Research holds multiple research articles on Nojima, and scholarly re-evaluation continues. *14
+
+Later positioning and connection to Japanese modernism
+
+Nojima's photography differs from the experimental modernism of later figures such as Nakaji Yasui or Iwata Nakayama, who foregrounded extreme angles and photomontage. *15 Yet through his distance from the subject, the depth of the print's material quality and the isolated presence of the figure, he showed a path by which photography could maintain material beauty while moving away from painting. This can be read as one example of the process through which modern Japanese photography, rather than directly imitating Western avant-garde, searched for its own language. *16
+
+Criticism and reception
+
+Nojima has been re-evaluated through exhibitions, photobook reprints and research articles in the history of modern Japanese photography. *17 International materials are limited, but the British Museum's photobook materials serve as an important point of reference for the contexts of photobooks, portraiture and printing techniques. *18 NDL Search holds extensive related bibliographic materials. *19 Works and related records can also be confirmed at ICP and ToMuCo. Positioning him as a turning point from pictorialism to Japanese modernism makes the significance of his work within photographic history clear. *20 Nojima's portraits and nudes are important primary materials for thinking about how the "modern figure" was formed in Japanese modern photography, and research continues on both the printing techniques employed and the approach to the subject.`,
+    citations: [
+      { num: 1, name: '野島康三氏. ToMuCo', url: 'https://museumcollection.tokyo/works/79664/' },
+      { num: 2, name: '福原信三の美学. SHISEIDO GALLERY', url: 'https://gallery.shiseido.com/jp/exhibition/704/' },
+      { num: 3, name: 'Alfred Stieglitz and Yasuzo Nojima. National Film Archive of Japan', url: 'https://www.nfaj.go.jp/FC/NFC_Calendar/1997/nfc8-10.html' },
+      { num: 4, name: 'Yasuzo Nojima books. shashasha', url: 'https://www.shashasha.co/jp/artist/yasuzo-nojima' },
+      { num: 5, name: 'Yasuzo Nojima books. shashasha', url: 'https://www.shashasha.co/jp/artist/yasuzo-nojima' },
+      { num: 6, name: '野島康三 search. ToMuCo', url: 'https://museumcollection.tokyo/works/?q=%E9%87%8E%E5%B3%B6%E5%BA%B7%E4%B8%89' },
+      { num: 7, name: '野島康三氏. ToMuCo', url: 'https://museumcollection.tokyo/works/79664/' },
+      { num: 8, name: '野島康三論文 PDF. 岩手大学', url: 'https://www.edu.iwate-u.ac.jp/wp-content/uploads/2025/04/%E5%B2%A9%E6%89%8B%E5%A4%A7%E5%AD%A6%E6%95%99%E8%82%B2%E5%AD%A6%E9%83%A8%E3%80%80%E7%A0%94%E7%A9%B6%E5%B9%B4%E5%A0%B1Vol.-84%EF%BC%882024%E5%B9%B4%E5%BA%A6%EF%BC%89_%E4%BD%8E%E8%A7%A3%E5%83%8F%E5%BA%A6.pdf' },
+      { num: 9, name: '野島康三 leaflet PDF. 松濤美術館', url: 'https://shoto-museum.jp/wp-content/user-data/exhibitions/140nojimayasuzo2/leaflet.pdf' },
+      { num: 10, name: '野島康三論文 PDF. 岩手大学', url: 'https://www.edu.iwate-u.ac.jp/wp-content/uploads/2025/04/%E5%B2%A9%E6%89%8B%E5%A4%A7%E5%AD%A6%E6%95%99%E8%82%B2%E5%AD%A6%E9%83%A8%E3%80%80%E7%A0%94%E7%A9%B6%E5%B9%B4%E5%A0%B1Vol.-84%EF%BC%882024%E5%B9%B4%E5%BA%A6%EF%BC%89_%E4%BD%8E%E8%A7%A3%E5%83%8F%E5%BA%A6.pdf' },
+      { num: 11, name: '野島康三氏. ToMuCo', url: 'https://museumcollection.tokyo/works/79664/' },
+      { num: 12, name: '野島康三 search. ToMuCo', url: 'https://museumcollection.tokyo/works/?q=%E9%87%8E%E5%B3%B6%E5%BA%B7%E4%B8%89' },
+      { num: 13, name: 'Alfred Stieglitz and Yasuzo Nojima. National Film Archive of Japan', url: 'https://www.nfaj.go.jp/FC/NFC_Calendar/1997/nfc8-10.html' },
+      { num: 14, name: '野島康三 search. CiNii Research', url: 'https://cir.nii.ac.jp/all?q=%E9%87%8E%E5%B3%B6%E5%BA%B7%E4%B8%89' },
+      { num: 15, name: '野島康三 leaflet PDF. 松濤美術館', url: 'https://shoto-museum.jp/wp-content/user-data/exhibitions/140nojimayasuzo2/leaflet.pdf' },
+      { num: 16, name: '野島康三論文 PDF. 岩手大学', url: 'https://www.edu.iwate-u.ac.jp/wp-content/uploads/2025/04/%E5%B2%A9%E6%89%8B%E5%A4%A7%E5%AD%A6%E6%95%99%E8%82%B2%E5%AD%A6%E9%83%A8%E3%80%80%E7%A0%94%E7%A9%B6%E5%B9%B4%E5%A0%B1Vol.-84%EF%BC%882024%E5%B9%B4%E5%BA%A6%EF%BC%89_%E4%BD%8E%E8%A7%A3%E5%83%8F%E5%BA%A6.pdf' },
+      { num: 17, name: '野島康三 search. ToMuCo', url: 'https://museumcollection.tokyo/works/?q=%E9%87%8E%E5%B3%B6%E5%BA%B7%E4%B8%89' },
+      { num: 18, name: 'Yasuzo Nojima search. British Museum', url: 'https://www.britishmuseum.org/collection/search?keyword=Yasuzo%20Nojima' },
+      { num: 19, name: '野島康三 search. NDL Search', url: 'https://ndlsearch.ndl.go.jp/search?cs=bib&keyword=%E9%87%8E%E5%B3%B6%E5%BA%B7%E4%B8%89' },
+      { num: 20, name: 'Yasuzo Nojima search. ICP', url: 'https://www.icp.org/search-results?query=Yasuzo%20Nojima' },
+    ],
+    works: [
+      { titleJa: '野島康三氏 — ToMuCo', titleEn: 'Nojima Yasuzo — ToMuCo', url: 'https://museumcollection.tokyo/works/79664/' },
+      { titleJa: '野島康三展リーフレット — 松濤美術館', titleEn: 'Nojima Yasuzo exhibition leaflet — Shoto Museum', url: 'https://shoto-museum.jp/wp-content/user-data/exhibitions/140nojimayasuzo2/leaflet.pdf' },
+      { titleJa: '野島康三 — ToMuCo', titleEn: 'Yasuzo Nojima — ToMuCo', url: 'https://museumcollection.tokyo/works/?q=%E9%87%8E%E5%B3%B6%E5%BA%B7%E4%B8%89' },    ],
+  },
+
 });
 /* 2026-04-19 English reflection overrides end */
 
