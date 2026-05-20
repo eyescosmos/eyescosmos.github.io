@@ -20,6 +20,10 @@ ASSET_VERSION = "20260517d"
 GLOBAL_SEARCH_VERSION = "20260508a"
 OGP_IMAGE_URL = f"{SITE}/assets/ogp-default.png"
 ALNUM_BOUNDARY_RE = re.compile(r"[A-Za-z0-9]")
+# Katakana block (U+30A0–U+30FF) including prolonged sound mark ー (U+30FC)
+# Used to prevent short katakana aliases (e.g. "ペン") from matching inside longer
+# katakana words (e.g. "ペンシルバニア", "スペンサー", "サーペンタイン").
+KATAKANA_RE = re.compile(r"[゠-ヿ]")
 NON_PHOTOGRAPHER_IDS = {
     "charles-wirgman",
     "fabian-marti",
@@ -1397,11 +1401,21 @@ def build_works_targets(essay_overrides: dict, photographer_id: str | None = Non
 
 
 def should_skip_alias_boundary(source: str, start: int, end: int, alias: str) -> bool:
-    if not ALNUM_BOUNDARY_RE.search(alias or ""):
-        return False
     prev_char = source[start - 1] if start > 0 else ""
     next_char = source[end] if end < len(source) else ""
-    return bool(ALNUM_BOUNDARY_RE.search(prev_char) or ALNUM_BOUNDARY_RE.search(next_char))
+    # ASCII alphanumeric boundary: skip if alias contains A-Za-z0-9 and is adjacent to same
+    if ALNUM_BOUNDARY_RE.search(alias or ""):
+        if ALNUM_BOUNDARY_RE.search(prev_char) or ALNUM_BOUNDARY_RE.search(next_char):
+            return True
+    # Katakana boundary: skip if alias contains katakana and is adjacent to katakana.
+    # Prevents short katakana aliases (e.g. "ペン") from matching inside longer katakana
+    # words (e.g. "ペンシルバニア", "スペンサー", "サーペンタイン").
+    # Does NOT apply to kanji aliases: in Japanese, a proper noun in kanji is often
+    # immediately followed by other kanji (e.g. "土門拳賞"), so CJK adjacency is NOT a boundary.
+    if KATAKANA_RE.search(alias or ""):
+        if KATAKANA_RE.search(prev_char) or KATAKANA_RE.search(next_char):
+            return True
+    return False
 
 
 def render_linked_text(

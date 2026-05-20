@@ -154,6 +154,21 @@ grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
 - canonical / hreflang / alternate / JSON-LD / `data-nosnippet` は本文やリンク修正で壊さない。生成後のdiffでSEOタグや構造タグに意図しない差分がないか確認する。
 - push前に `git diff` で本文・外部リンク・作品リンク・出典が消えていないか確認する。
 
+### エイリアスマップの短すぎる日本語エイリアス — CRITICAL
+
+**過去に発生した問題：** `data/photographers-manual-additions.js` の `PHOTOGRAPHER_LINK_ALIASES` に `'ペン': 'irving-penn'` が登録されており、「ペンシルバニア」「スペンサー」「サーペンタイン」内の「ペン」が Irving Penn へのリンクに誤変換された（4ページで確認）。
+
+**根本原因：** `should_skip_alias_boundary()` は ASCII 英数字の境界しかチェックしておらず、日本語（カタカナ）境界を検出できなかった。
+
+**実施済み対応：**
+1. `'ペン': 'irving-penn'` をエイリアスマップから削除（`アーヴィング・ペン` 等の長いエイリアスが残存）
+2. `scripts/generate_photographer_pages.py` の `should_skip_alias_boundary()` に `KATAKANA_RE` 境界チェックを追加。カタカナエイリアスが隣接カタカナに接していればリンクをスキップする。
+
+**エイリアス登録ルール（今後）：**
+- カタカナ2〜3文字のみの短いエイリアス（例: `ペン`、`マン`）は登録しない。文中の別語への誤マッチが起きる。
+- `アーヴィング・ペン` のような姓名フルカタカナ形、または漢字氏名形を使う。
+- 新しくエイリアスを追加した場合は、追加後にジェネレータを実行し `python3 scripts/check_photographer_link_integrity.py` で誤リンクがないか確認する。
+
 ### 手書きHTMLページ（ジェネレータ非対象）の扱い
 - 以下のページは直接HTMLを編集しており、ジェネレータで上書きされない：
   - `photographers/annie-leibovitz.html` / `en/photographers/annie-leibovitz.html`
