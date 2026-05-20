@@ -134,6 +134,25 @@ grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
 
 この確認を怠ると、ジェネレータ実行で多数ページの外部リンクが一括消失する。
 
+### 本文混入・誤リンク再発防止 — CRITICAL
+
+**過去に発生した問題：**
+- `richard-avedon` 英語ページの `textEn` に Irving Penn 本文が混入した。
+- 作品リンク自動化が全作家横断の作品名辞書として効き、`S` だけが `museumangewandtekunst.de` に飛ぶ誤リンクが複数ページで発生した。
+- `The Family` のような汎用的な作品名が、`The Family of Man` の一部へ誤リンクされた。
+
+**写真家ページやジェネレータを触る場合は必ず守ること：**
+- `data/photographer-essay-overrides.js` の各エントリで、対象ID、`leadJa/leadEn`、`textJa/textEn`、`citations/citationsEn/citationsJa`、`links`、`works` が同じ作家に対応しているか確認する。
+- 既存エントリを丸ごと置換する場合は、本文だけでなく、出典・外部リンク・作品リンクを消していないか確認する。必要に応じて `...current` で既存値を保持する。
+- 英語だけ出典を変える場合は `citationsEn` を使い、共通 `citations` を不用意に上書きしない。日本語本文の注番号を壊す可能性がある。
+- Avedon/Penn、Adams/Weston、Sugimoto/Moriyama、Avedon/Leibovitz など近い作家では、比較文脈と本文混入を区別する。別作家のBiography・Expression/method・Criticism・Photobooks・Sourcesがまとまって入っていたらFAIL。
+- 本文中の作品自動リンクは、そのページ自身の `works` に登録された作品だけを対象にする。別作家の `works` をグローバルに本文へ適用しない。
+- `S` / `LS` など1〜2文字のASCII英数字タイトル・別名は本文自動リンク対象にしない。作品欄のchip-linkとして表示するのはよいが、本文内の単語の一部へリンクさせない。
+- 汎用語の作品名（例: `The Family`）は、必要なら `autoLink: false` を付け、作品欄には残して本文自動リンクから除外する。
+- 生成後は `python3 scripts/check_photographer_link_integrity.py` を実行する。
+- 生成後、`photographers/` と `en/photographers/` に `museumangewandtekunst.de` への1文字リンク、`>S</a>`、単語途中リンクが残っていないか確認する。
+- canonical / hreflang / alternate / JSON-LD / `data-nosnippet` は本文やリンク修正で壊さない。生成後のdiffでSEOタグや構造タグに意図しない差分がないか確認する。
+
 ### 手書きHTMLページ（ジェネレータ非対象）の扱い
 - 以下のページは直接HTMLを編集しており、ジェネレータで上書きされない：
   - `photographers/annie-leibovitz.html` / `en/photographers/annie-leibovitz.html`
