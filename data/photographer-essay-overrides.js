@@ -14208,7 +14208,7 @@ On Tomishige Tokuji, given that individual critical histories and first-person s
         { titleJa: 'A. L. Bean', titleEn: 'A. L. Bean', labelJa: 'Amon Carter Museum — A. L. Bean', labelEn: 'Amon Carter Museum — A. L. Bean', url: 'https://www.cartermuseum.org/collection/l-bean-cotton-farmer-sweetwater-texas-31079-p19852840', aliases: ['A. L. Bean', 'A. L. Bean, Cotton Farmer, Sweetwater, Texas'] },
         { titleJa: 'Alton Terry', titleEn: 'Alton Terry', labelJa: 'Amon Carter Museum — Alton Terry', labelEn: 'Amon Carter Museum — Alton Terry', url: 'https://www.cartermuseum.org/collection/alton-terry-oil-field-worker-frenstat-texas-92880-p19852858', aliases: ['Alton Terry', 'Alton Terry, oil field worker, Frenstat, Texas'] },
         { titleJa: 'Marilyn Monroe', titleEn: 'Marilyn Monroe', labelJa: 'MoMA — Marilyn Monroe', labelEn: 'MoMA — Marilyn Monroe', url: 'https://www.moma.org/collection/works/128614?artist_id=248&page=1&sov_referrer=artist', aliases: ['Marilyn Monroe', 'Marilyn Monroe, actress, New York, May 6, 1957'] },
-        { titleJa: 'The Family', titleEn: 'The Family', labelJa: 'National Gallery of Art — The Family', labelEn: 'National Gallery of Art — The Family', url: 'https://www.nga.gov/artworks/233967-family', aliases: ['The Family'] },
+        { titleJa: 'The Family', titleEn: 'The Family', labelJa: 'National Gallery of Art — The Family', labelEn: 'National Gallery of Art — The Family', url: 'https://www.nga.gov/artworks/233967-family', aliases: ['The Family'], autoLink: false },
       ],
     },
     'robertfrank': {
@@ -14283,6 +14283,8 @@ Richard Avedon was born in New York in 1923. During the Second World War he serv
 
 His career moved across Harper's Bazaar, Vogue, and The New Yorker, while also entering museums, books, advertising, and large-scale exhibitions. ICP summarizes Avedon as a photographer whose work ranged across fashion and portraiture and whose museum recognition became central to his later reputation*2. The Avedon Foundation's magazine archive also records his long work across Harper's Bazaar, Life, Vogue, Rolling Stone, The New Yorker, and other publications, and notes that he became The New Yorker's first staff photographer in 1992*3. Avedon is therefore best understood not as a photographer who left commercial work behind for art, but as someone who made the magazine page, the portrait session, the photobook, and the exhibition wall part of one continuous photographic practice.
 
+Expression / method
+
 How Avedon changed fashion photography
 
 Avedon's fashion photography changed the field by moving clothing away from static display and toward movement, theatricality, and modern social life. The Museum of Fine Arts, Boston notes that he grew up around fashion through his father's women's clothing business, studied with Brodovitch after military service, and joined Junior Bazaar at the age of twenty-one*4. In the years after the war, fashion magazines were not only catalogs of garments; they were places where readers encountered new images of urban life, desire, mobility, and modern femininity. Avedon made use of that context by photographing fashion as something performed by bodies in motion.
@@ -14356,7 +14358,7 @@ For that reason, Avedon's importance in photo history lies not only in individua
       { titleJa: 'Marilyn Monroe', titleEn: 'Marilyn Monroe', labelJa: 'MoMA — Marilyn Monroe', labelEn: 'MoMA — Marilyn Monroe', url: 'https://www.moma.org/collection/works/128614?artist_id=248&page=1&sov_referrer=artist', aliases: ['Marilyn Monroe', 'Marilyn Monroe, actress, New York, May 6, 1957'] },
       { titleJa: 'A. L. Bean', titleEn: 'A. L. Bean', labelJa: 'Amon Carter Museum — A. L. Bean', labelEn: 'Amon Carter Museum — A. L. Bean', url: 'https://www.cartermuseum.org/collection/l-bean-cotton-farmer-sweetwater-texas-31079-p19852840', aliases: ['A. L. Bean', 'A. L. Bean, cotton farmer, Sweetwater, Texas, 3/10/79', 'A. L. Bean, Cotton Farmer, Sweetwater, Texas'] },
       { titleJa: 'Alton Terry', titleEn: 'Alton Terry', labelJa: 'Amon Carter Museum — Alton Terry', labelEn: 'Amon Carter Museum — Alton Terry', url: 'https://www.cartermuseum.org/collection/alton-terry-oil-field-worker-frenstat-texas-92880-p19852858', aliases: ['Alton Terry', 'Alton Terry, oil field worker, Frenstat, Texas, 9/28/80'] },
-      { titleJa: 'The Family', titleEn: 'The Family', labelJa: 'National Gallery of Art — The Family', labelEn: 'National Gallery of Art — The Family', url: 'https://www.nga.gov/artworks/233967-family', aliases: ['The Family'] },
+      { titleJa: 'The Family', titleEn: 'The Family', labelJa: 'National Gallery of Art — The Family', labelEn: 'National Gallery of Art — The Family', url: 'https://www.nga.gov/artworks/233967-family', aliases: ['The Family'], autoLink: false },
     ],
   };
   window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;

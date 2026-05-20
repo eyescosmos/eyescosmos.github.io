@@ -1360,7 +1360,7 @@ def build_alias_targets(photographers: list[dict], alias_map: dict[str, str]):
     return {alias: photographer for alias, photographer in targets}, regex
 
 
-def build_works_targets(essay_overrides: dict) -> tuple[dict[str, str], "re.Pattern | None"]:
+def build_works_targets(essay_overrides: dict, photographer_id: str | None = None) -> tuple[dict[str, str], "re.Pattern | None"]:
     def should_index_work_title(title: str) -> bool:
         compact = re.sub(r"\s+", "", title or "")
         if not compact:
@@ -1368,12 +1368,17 @@ def build_works_targets(essay_overrides: dict) -> tuple[dict[str, str], "re.Patt
         return not (compact.isascii() and compact.isalnum() and len(compact) < 3)
 
     works_lookup: dict[str, str] = {}
-    for entry in essay_overrides.values():
+    entries = [essay_overrides.get(photographer_id)] if photographer_id else essay_overrides.values()
+    for entry in entries:
         if not isinstance(entry, dict):
             continue
         for work in entry.get("works") or []:
+            if not isinstance(work, dict):
+                continue
             url = work.get("url", "")
             if not url:
+                continue
+            if work.get("autoLink") is False:
                 continue
             titles = []
             for key in ("titleJa", "titleEn"):
@@ -1482,10 +1487,6 @@ ESSAY_HEADING_SET = {
     '表現解説',
     '批評と受容',
     'Biography',
-    'How Avedon changed fashion photography',
-    'Portrait style: white background, performance, and confrontation',
-    'Technical style: light, large-format camera, composition, and printed scale',
-    'In the American West',
     'How the Zone System relates to Group f/64',
     'Expression / method',
     'Seascapes, Theaters, Dioramas, and the Photograph as Time',
@@ -2427,7 +2428,6 @@ def main() -> None:
     era_index = {era["id"]: idx for idx, era in enumerate(eras)}
     photographer_index = {p["id"]: idx for idx, p in enumerate(photographers)}
     alias_lookup, alias_regex = build_alias_targets(photographers, alias_map)
-    works_lookup, works_regex = build_works_targets(essay_overrides)
     all_nationalities = sorted(
         [nationality for nationality in {p.get("nationality") for p in photographers if p.get("nationality")} if country_entry(nationality).get("slug")],
         key=lambda nationality: country_entry(nationality).get("ja", nationality),
@@ -2451,6 +2451,7 @@ def main() -> None:
 
         for photographer in target_photographers:
             override_entry = essay_overrides.get(photographer["id"])
+            works_lookup, works_regex = build_works_targets(essay_overrides, photographer["id"])
             override_body_text, override_citations = override_text_and_citations(override_entry, lang)
             body_text, citations = collect_text_and_citations(photographer, lang)
             override_sections = override_entry.get("sections") if isinstance(override_entry, dict) else None
