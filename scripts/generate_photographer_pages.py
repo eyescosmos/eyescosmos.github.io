@@ -324,8 +324,8 @@ SEO_TEXT_OVERRIDES = {
     },
     "irving-penn": {
         "en": {
-            "title": "Irving Penn | Vogue, Studio Portraits, Still Life, and the Print | Photo Coordinates",
-            "description": "Irving Penn is explained through Vogue, studio portraits, fashion photography, Small Trades, still life, platinum-palladium printing, and the boundary between magazine and fine-art photography.",
+            "title": "Irving Penn | Vogue, Studio Portraits, Still Life & Print | Photo Coordinates",
+            "description": "Explore Irving Penn’s work across Vogue, studio portraiture, fashion photography, color and still life photography, and platinum-palladium prints within modern photographic history.",
         },
     },
     "richard-avedon": {

@@ -40,6 +40,9 @@
 - 本文中の作品自動リンクは、そのページ自身の `works` に登録された作品だけを対象にする。別作家の `works` をグローバルに本文へ適用しない。
 - 1〜2文字のASCII英数字タイトル・別名（例: `S`, `LS`）は本文自動リンク対象にしない。作品欄のchip-linkとして表示するのはよいが、本文内の単語の一部へリンクさせない。
 - 汎用語の作品名（例: `The Family`）は、必要なら `autoLink: false` を付け、作品欄には残して本文自動リンクから除外する。`The Family of Man` のような別語句の一部にリンクさせない。
+- `scripts/generate_photographer_pages.py` の `should_skip_alias_boundary()` と `KATAKANA_RE` 境界チェックは変更しない。純カタカナの短いエイリアスが、別のカタカナ語の語中へ誤リンクされるのを防ぐために必要。
+- `data/photographers-manual-additions.js` の `PHOTOGRAPHER_LINK_ALIASES` にある `'ペン': 'irving-penn'` は削除しない。AvedonページなどでPennの略称として正当に使われるため、削除ではなく境界チェックで誤マッチを防ぐ。
+- 短いカタカナエイリアス（例: `ペン`）を追加・変更した場合は、`ペンシルバニア`、`スペンサー`、`コペンハーゲン`、`サーペンタイン` のような語中リンクが起きていないか確認する。平仮名助詞が続く正当な略称リンクとは区別する。
 - 生成後は `scripts/check_photographer_link_integrity.py` を実行し、1文字外部リンク、Avedon/Penn Biography混入、Photobooks見出し不一致を確認する。
 - 追加で、`photographers/` と `en/photographers/` に `museumangewandtekunst.de` への1文字リンク、`>S</a>`、単語途中リンクが残っていないか確認する。
 - canonical / hreflang / alternate / JSON-LD / `data-nosnippet` は本文やリンク修正で壊さない。生成後のdiffでSEOタグや構造タグに意図しない差分がないか確認する。
