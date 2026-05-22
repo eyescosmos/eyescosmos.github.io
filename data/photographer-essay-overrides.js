@@ -15444,3 +15444,928 @@ For that reason, Avedon's importance in photo history lies not only in individua
   };
   window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
 })();
+
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  overrides['arthur-rothstein'] = {
+    leadJa: `FSA写真部門の最初期スタッフとして、Dust Bowlの視覚的記憶を形成した。牛の頭蓋骨写真をめぐる演出論争は、ドキュメンタリー写真における記録と構成の境界という問いを写真史に刻み込み、以後の報道倫理議論の原点のひとつとなった。`,
+    leadEn: `As one of the earliest staff photographers of the FSA photographic unit, Rothstein helped construct the visual memory of the Dust Bowl. The controversy over his repositioned steer skull photograph inscribed the question of documentation versus staging into photographic history, becoming a touchstone for debates on documentary ethics.`,
+    textJa: `経歴
+
+1915年、ニューヨーク市ブルックリンに生まれる。コロンビア大学在学中、同大で教鞭をとっていたロイ・ストライカーの指導のもとで写真の実務を学んだ*1。1935年、ストライカーが農業調整局（後のFarm Security Administration）の写真部門を発足させると、ロススタインはその最初期スタッフ写真家として採用され、アメリカ農村の貧困、Dust Bowl、テナントファーマー（小作農）の生活を記録するフィールドへ赴いた*2。オクラホマ、テキサス、カンザス、アラバマなどを主な調査地として活動し、Library of Congressに17万点以上が収蔵されるFSA/OWIコレクションの初期を担った*3。オクラホマ大恐慌の砂嵐地帯で撮影した一連の写真群は、ニューディール政策の必要性を可視化するための証拠として政策文書・雑誌・展覧会に広く用いられた。1936年には現場に落ちていた牛の頭蓋骨を構図のために別の場所へ動かして撮影したことが発覚し、「演出か記録か」をめぐる激しい批判を受けた。この頭蓋骨論争はFSA写真全体への信頼性への問いとなり、写真倫理を議論する際の参照点として繰り返し引用されてきた*4。1940年にFSAを離れたのち、雑誌『Look』の写真編集者として長年勤務し、FSA的な「社会を可視化する写真」の論理を商業メディアへ移植した。後年はコロンビア大学での写真教育にも関わり、FSA期の実践を次世代の写真家・編集者に伝える役割を果たした*5。1985年没。
+
+表現解説
+
+FSAという制度の内部で成立した写真
+
+ロススタインの写真を理解するうえで不可欠なのは、FSAという組織の性格を理解することである。FSAは農業政策の立案・広報を目的とした連邦機関であり、写真部門はストライカーが「撮影台本（shooting script）」を通じて被写体と構図の方向性を指示し、ワシントンで選別・キャプション・流通の管理を行う体制を取った。写真家たちは個人の芸術的判断よりも機関の目的に奉仕する形で現場に赴き、農村の「実態」を可視化することで議会や市民の支持を獲得するための視覚資料を生産した*3。Library of Congressのアーカイブ解説が示すように、FSA写真は個人の作品集というよりも国家が生産した社会記録として見る必要があり、ロススタインが撮影した17万点を超えるネガはその制度的産物として位置づけられる*6。ロススタインはこの制度の最初期を経験しただけでなく、コロンビア大学でのストライカーの薫陶を通じて写真と社会調査の接続を実践的に学んだ写真家でもあった。その意味でロススタインの写真は、単に農村を記録した仕事ではなく、社会科学的方法と視覚的説得が制度化された産物として読む必要がある*1。
+
+Dust Bowlと視覚的証拠の生産
+
+ロススタインがオクラホマやカンザスで撮影したDust Bowlの写真群は、農業地帯の崩壊と移動農民の困窮を米国社会に伝える際の主要な視覚資料となった。砂嵐に追われる家族、荒れ果てた農地、廃屋の佇まいを収めた写真は、ニューディール政策の必要性を示す「証拠」として政策文書、雑誌、展覧会に広く使われた*7。このような流通のあり方は、写真が個別の事実の記録であると同時に、政策広報の道具でもあるという二重性を体現していた。FSA写真部門への指示文書や編集プロセスを詳細に示すFDRライブラリーの資料は、写真がどの段階でどのように意味を付与されたかを追うことのできる一次資料として研究者に参照されている*7。ロススタインの写真が示すDust Bowlのイメージは、後年のアメリカ環境史・移民史・大恐慌史の研究においても視覚証拠として引用され続けており、国家主導の写真プロジェクトが歴史的記憶を形成する力を持つことを示す代表例となっている。
+
+牛の頭蓋骨論争——演出か記録か
+
+1936年、ロススタインがオクラホマの干ばつ地帯で撮影した、荒れた大地に置かれた牛の頭蓋骨の写真は、複数の場所で撮り直したものだと暴露された。野党の共和党議員がこれをFSA写真の「プロパガンダ性」の証拠として批判したことで、論争は政治問題化した*4。写真家が現場で被写体を動かすことは日常的な構図上の判断であるが、それが「ドキュメンタリー」という枠で流通するとき、そのフレームは真実性の保証として機能する。ロススタインの頭蓋骨論争は、この緊張を最初期に可視化した事例として写真批評に繰り返し引用されてきた。問題の本質は、FSA写真が政策広報・現地調査・視覚的説得を三重に担っていたがゆえに、演出と記録の境界が常に問題になり得る構造にあった。Public Domain ReviewのFSAネガ研究は、撮影から選別・削除・保存にいたる編集過程がいかに写真の意味を決定するかを論じており、ロススタインの論争をより大きなFSA編集権力の問題として位置づけている*8。近年の批評では、頭蓋骨論争を「道徳的失敗」ではなく、制度写真の本質的矛盾が露呈した事例として読む傾向が強まっている。
+
+『Look』と写真報道の制度化
+
+FSA期ののち、ロススタインは雑誌『Look』の写真編集者として活動し、FSA的な「社会を可視化する写真」の論理を商業メディアへ移植した。Library of Congressが管理するLOOK Magazineコレクション関連資料は、FSAという国家機関が担ったことを週刊誌が大衆読者に向けて担う——という写真報道の制度化の転換を示す資料として研究者に公開されている*9。この転換は、1940〜50年代のアメリカにおいて写真報道がいかに制度として整備されていったかの経路のひとつである。ロススタインはまた、Columbia University Librariesのファインディングエイドが示すように、写真、書簡、出版物を含む一次資料をアーカイブに残しており、これはFSA期からLook編集者・大学教員にいたる全キャリアを追うための基礎資料となっている*10。FSAの仕事が個人の作品ではなく制度の産物だったのに対し、Look時代のロススタインは編集者・教育者として写真文化の制度側を支える立場に移行しており、この転換はアメリカ写真史の制度的側面を理解するうえで意義深い。
+
+批評と受容
+
+ロススタインはFSAの「公式な名声」を共有するが、ドロシア・ラングやウォーカー・エヴァンスと比べると批評的注目は小さい。頭蓋骨論争はしばしば「道徳的失敗」として語られるが、近年はFSA写真全体の制度的性格という観点からより複合的に読み直されている。写真が国家の政策広報として機能するとき、「記録の真実性」という価値はどこまで成立するのかという問いは、FSA写真全体に向けられる批評の核でもある*8。National Gallery of Artはロススタインの作品を所蔵しており、Dust Bowl写真が現代の美術館でどのように位置づけられるかを示している*11。Archives of American Artが所蔵するオーラルヒストリー（1964年）は、本人の言葉から制作観・制度との関係を確認できる貴重な一次資料として研究者に参照されている*12。ロススタインの仕事は、社会記録写真が国家制度に委嘱・管理される場合に写真の意味と流通がいかに変容するかを示す代表的な事例として、ドキュメンタリー写真の批評的議論において繰り返し参照されている。`,
+    textEn: `Biography
+
+Arthur Rothstein was born in Brooklyn, New York, in 1915. While studying at Columbia University, he worked under Roy Stryker, who was teaching there, and joined the FSA photographic unit as one of its earliest staff photographers when Stryker established the division in 1935. Working in Oklahoma, Texas, Kansas, and Alabama, he documented rural poverty, the Dust Bowl, and tenant farming during the Depression; the resulting archive of over 170,000 negatives is held at the Library of Congress. In 1936, controversy erupted when it emerged that he had repositioned a steer skull on the Oklahoma plains for photographic effect — critics seized on this as evidence of FSA propaganda, and the episode became a touchstone for debates over documentary ethics. After leaving the FSA in 1940, he joined Look magazine as a photo editor, where he worked for many years, and also taught photography at Columbia. He died in 1985.
+
+Expression / method
+
+Rothstein's photographs operated within the institutional logic of the FSA, a federal agency that used photography as evidence for agricultural policy. Roy Stryker issued shooting scripts to direct photographers toward designated subjects and framings; images were then selected, captioned, and distributed in Washington. The resulting archive is more properly understood as a product of this state apparatus than as individual artistic output. Rothstein's Columbia training under Stryker gave him practical grounding in the connection between photography and social inquiry, and his early FSA work helped define the visual grammar through which rural crisis would be seen by legislators and the public. The steer skull controversy exposed the tension inherent in a practice that functioned simultaneously as policy documentation and as visual persuasion: when field photography is always shaped by institutional direction, editorial selection, and captioning, the claim to documentary neutrality is always conditional. The Public Domain Review's research on FSA negatives examines how the editing process — including the punching of "killed" negatives — determined which images survived and what they meant, situating the skull controversy within a broader question of editorial power rather than individual moral failure. After the FSA, Rothstein's editorial work at Look transferred the logic of socially engaged photography into commercial weekly magazine publishing for mass audiences.
+
+Criticism and reception
+
+Rothstein shares in the general prestige accorded to FSA photography but has received less individual critical attention than Lange or Evans. The skull controversy is often cited as a moral lapse, though recent scholarship situates it within the broader institutional character of FSA image production, asking whether the charge of staging can be separated from the systematic direction and editing that shaped all FSA work. The NGA holds Rothstein's work; the Archives of American Art preserves his papers and a 1964 oral history interview in which he speaks about his own practice. The Columbia University Libraries finding aid and the LOC Manuscript Division provide access to primary materials spanning his full career.`,
+    citations: [
+      { num: 1, name: 'Arthur Rothstein photographs, 1848–2000. Columbia University Libraries finding aid', url: 'https://findingaids.library.columbia.edu/archives/cul-9419838' },
+      { num: 2, name: 'Arthur Rothstein. International Center of Photography constituent page', url: 'https://www.icp.org/browse/archive/constituents/arthur-rothstein' },
+      { num: 3, name: 'FSA/OWI Collection: Background and Scope. Library of Congress', url: 'https://www.loc.gov/pictures/collection/fsa/background.html' },
+      { num: 4, name: 'The Kept and the Killed. The Public Domain Review', url: 'https://publicdomainreview.org/essay/the-kept-and-the-killed/' },
+      { num: 5, name: 'Arthur Rothstein photographs return to Columbia. TIME', url: 'https://time.com/3881331/arthur-rothstein-photographs-return-to-columbia/' },
+      { num: 6, name: 'FSA/OWI Collection search page. Library of Congress', url: 'https://www.loc.gov/pictures/collection/fsa/' },
+      { num: 7, name: '"This Great Nation Will Endure": Photographs of the Great Depression. FDR Presidential Library PDF', url: 'https://www.fdrlibrary.org/documents/356632/390886/fsa.pdf/4833a5b8-3044-4c8f-b80d-9062f2a73ade' },
+      { num: 8, name: 'Arthur Rothstein Papers. Archives of American Art', url: 'https://www.aaa.si.edu/collections/arthur-rothstein-papers-9633' },
+      { num: 9, name: 'LOOK Magazine Photograph Collection related resources. Library of Congress', url: 'https://www.loc.gov/pictures/static/data/lmc/resources/related.html' },
+      { num: 10, name: 'Arthur Rothstein Papers. Library of Congress Manuscript Division', url: 'https://hdl.loc.gov/loc.mss/eadmss.ms010244' },
+      { num: 11, name: 'Arthur Rothstein. National Gallery of Art artist page', url: 'https://www.nga.gov/artists/41048-arthur-rothstein' },
+      { num: 12, name: 'Oral history interview with Arthur Rothstein, 1964. Archives of American Art', url: 'https://www.aaa.si.edu/collections/interviews/oral-history-interview-arthur-rothstein-13317' },
+    ],
+    links: [
+      { label: 'ICP — Arthur Rothstein', url: 'https://www.icp.org/browse/archive/constituents/arthur-rothstein' },
+      { label: 'NGA — Arthur Rothstein', url: 'https://www.nga.gov/artists/41048-arthur-rothstein' },
+      { label: 'LOC — FSA/OWI Collection', url: 'https://www.loc.gov/pictures/collection/fsa/' },
+      { label: 'Archives of American Art — Arthur Rothstein Papers', url: 'https://www.aaa.si.edu/collections/arthur-rothstein-papers-9633' },
+      { label: 'Columbia University Libraries — Arthur Rothstein finding aid', url: 'https://findingaids.library.columbia.edu/archives/cul-9419838' },
+    ],
+    works: [
+      { titleJa: 'Dr. Cooke and Dr. Gray with farmer, Cimarron County, Oklahoma', titleEn: 'Dr. Cooke and Dr. Gray with farmer, Cimarron County, Oklahoma', labelJa: 'Library of Congress — FSA/OWI Collection', labelEn: 'Library of Congress — FSA/OWI Collection', url: 'https://www.loc.gov/item/fsa1998019681/PP/', aliases: [] },
+    ],
+  };
+
+  overrides['ben-shahn'] = {
+    leadJa: `FSA写真部門への参加を通じて、社会的リアリズムを絵画・壁画・ポスターと横断する視覚言語として展開した。画家として評価されながら、その写真は同時代の視覚政治と労働表象の問題を直接担っていた。`,
+    leadEn: `Shahn participated in the FSA photographic unit while developing a visual language of social realism that crossed painting, murals, and posters. Though celebrated as a painter, his photographs directly engaged the visual politics and labor representation of the 1930s.`,
+    textJa: `経歴
+
+1898年、リトアニアのコーヴノ（現カウナス）に生まれ、幼少期に家族とともにニューヨークへ移住した。石版職人として働きながら美術を学び、1920年代にヨーロッパを旅して現代美術の動向に接した。1930年代初頭、サッコとヴァンゼッティの裁判をテーマにした絵画連作で社会的芸術家としての地位を確立し、ディエゴ・リベラが手がけたロックフェラーセンターの壁画制作を助手として経験した*1。1935年頃からロイ・ストライカーの誘いでFarm Security Administrationの写真部門に関わり、ニューヨーク市内の移民街路、アパラチア地域の農村コミュニティを記録した*2。シャーンにとっての写真は独立した芸術行為というよりも、社会批評を可視化するための道具のひとつとして機能しており、撮影した写真は絵画制作のための観察記録としても使われた*3。1940年代には政府壁画、プロパガンダポスターの制作にも関わり、戦争と人権という主題を芸術表現として扱い続けた。MoMAが1947年に企画した個展以降、シャーンはアメリカ社会リアリズムの代表的作家として正典化された*4。1969年没。
+
+表現解説
+
+ライカと街路の観察——隠し撮りの方法
+
+シャーンは1930年代初頭から、ライカを上着の下に隠して直視せずに撮影する「盲撮り」の手法をニューヨークの街路で実践していた。ウォーカー・エヴァンスも同様の手法を採ったが、シャーンの場合は街路のスナップ写真をそのまま完成作品として発表するよりも、絵画や壁画を制作するための観察資料として活用する傾向が強かった*5。Harvard Magazineが2000年に掲載した記事「In the Streets and in the Studio」は、シャーンの写真が都市観察の手段として機能していたことを、ハーバード大学のBen Shahn展の文脈で検証している*6。スマート美術館（シカゴ大学）が企画した「Ben Shahn's New York: The Photography of Modern Times」展は、写真が彼の都市観察と視覚実験の一部として機能していたことを示す展示として記録されている*7。この「絵画のための写真」という位置づけは、写真を独立した作品として完結させるエヴァンスの姿勢とは対照的であり、写真と絵画の間を往復する実践として写真史に独特の位置を占める。
+
+社会的リアリズムとメディア横断
+
+シャーンの核は、ひとつのメディアに閉じない社会批評の実践にある。壁画、テンペラ画、版画、ポスター、写真は互いに参照し合い、労働、移民、政治的不正義、人種問題を繰り返し主題とした。ハーバード大学図書館が管理するBen Shahn Archiveは、これらの多様な媒体にわたる資料を一元的に保存しており、シャーンの実践の全体像を把握するための基盤的なアーカイブとなっている*8。FSA写真部門での活動は、この社会批評のメディア横断的実践の一部であり、撮影した場所や被写体の選択にシャーンの社会的関心が一貫して反映されている。Library of CongressのFSAアーカイブに収録された彼の写真は、政策広報の産物として同時代に流通した一方、シャーンにとっては絵画的構成を試みる手段でもあった*9。Reina Sofíaが公開した「Ben Shahn On Nonconformity」PDFは、シャーンの反順応主義的な姿勢と芸術的立場を論じる一次的展示資料として参照できる*10。
+
+FSA期の写真——都市の労働者と移民の記録
+
+シャーンのFSA写真は、ドロシア・ラングやアーサー・ロススタインのように農村の貧困を広範に記録したものではなく、主にニューヨーク市内とニュージャージーの都市的な環境に集中していた。MoMAのコレクションが示すように、シャーンの写真には路地の男性、掲示板と人物の重なり、工場地区の外観など、都市の視覚的密度が凝縮されている*1。これらの写真は、移民が集住するロウアー・イースト・サイドやハーレムの社会的複雑さを、単純なノスタルジーや告発ではなく、視覚的な緊張として記録したものとして評価されている*3。Smithsonian American Art Museumの所蔵作品は、シャーンの社会的リアリズム絵画家としての位置づけを示しており、写真と絵画の両面から彼の業績を確認できる*11。
+
+批評と受容
+
+シャーンは20世紀アメリカ美術において主に画家として評価されてきたが、近年は写真の仕事が美術と写真の両側から再評価されている。テート・リサーチが公開したエッセイ「Realism Reconsidered: Ben Shahn in London, 1956」は、冷戦期の英国における受容という視点から彼の国際的評価を検証しており、アメリカ社会リアリズムが西欧でどのように受け止められたかを論じている*12。National Gallery of Artのシャーン作家ページは版画・グラフィックを含む美術館所蔵を確認できる*13。ルトガーズ大学が管理するBen Shahn Estateのアーカイブは、ポスター、レタリング、政治グラフィックを含む資料群を保存しており、写真以外のメディア横断的実践全体を把握するための資料となっている*14。Archives of American Artが所蔵するオーラルヒストリーは、シャーン自身の言葉で写真と社会批評の関係を語った一次資料として研究者に参照されている*15。スマート美術館（シカゴ大学）が所蔵するシャーンの作品は、大学付属美術館コレクションにおける彼の受容を示しており、絵画・写真・版画を横断する実践が学術文脈でどのように評価されてきたかを示している*7。ハーバード大学図書館が公開するシャーン関連コレクション資料は、美術教育者・公共芸術家としての活動を含むキャリア全体を追うための補助的一次資料として機能している*8。ハーバード大学のガゼットが伝えたシャーンのティーチング活動は、画家・写真家としての実践と並行して社会的な芸術教育者としての役割も担っていたことを示している*5。神奈川県立近代美術館（MOMA神奈川）のコレクション記録は、シャーンの受容が日本にまで及んでいることを示す事例として参照できる*3。Reina Sofíaが公開しているシャーン関連のPDF研究資料は、スペイン語圏の美術館研究においても彼の社会的リアリズムが参照されていることを示しており、アメリカ・ヨーロッパ・日本という国際的な受容の広がりを確認できる*10。写真はそれ単独の芸術形式というよりも、壁画・ポスター・版画という大型の公共的メディアに転用可能な視覚的素材として機能しており、絵画家が写真を使うことで社会的リアリズムはいかなる力を持ちうるか、という問いは現在においても美術史と写真史の両方から参照されている。Archives of American Artのオーラルヒストリーは、シャーンが写真・絵画・社会批評の三つをひとつの実践として捉えていたことを本人の言葉で確認できる一次資料であり、その複合的な実践を理解するうえで欠かせない記録として研究者に参照されている*15。ルトガーズ大学のBen Shahn Estateアーカイブは、作品と文書を横断する資料群として、シャーンの活動の全体像を後世に伝えるための基盤的なコレクションとなっている*14。`,
+    textEn: `Biography
+
+Ben Shahn was born in Kaunas, Lithuania, in 1898 and emigrated to New York City with his family as a child. Working as a lithographer while studying art, he travelled in Europe in the 1920s and came into contact with modernist currents. In the early 1930s, his series on the Sacco and Vanzetti trial established him as a socially committed artist, and he assisted Diego Rivera on the ill-fated Rockefeller Center mural. From around 1935, he worked with the FSA photographic unit at Stryker's invitation, photographing urban neighborhoods in New York and New Jersey as well as rural Appalachia. For Shahn, photography was one instrument within a broader social-critical practice that also encompassed murals, posters, and paintings addressing labor, immigration, and political injustice. In the 1940s he produced government murals and propaganda posters. MoMA's 1947 retrospective confirmed his canonical status in American social realism. He died in 1969.
+
+Expression / method
+
+From the early 1930s, Shahn used a Leica concealed in his coat to take unposed street photographs in New York without looking directly at his subjects — a method also used by Walker Evans. Where Evans used this approach to produce finished typological photographs, Shahn's street photography was oriented more toward feeding the observation process underlying his paintings and murals. The Harvard Magazine article "In the Streets and in the Studio" and the Smart Museum's exhibition Ben Shahn's New York: The Photography of Modern Times both documented this relationship between his street photography and his studio practice. His FSA photographs concentrated on urban environments — immigrant neighborhoods in Lower Manhattan and New Jersey — rather than on the rural South, and brought the visual density of working-class urban space into the FSA archive alongside the better-known rural documentation. His cross-media practice — murals, prints, posters, and photographs all addressing the same social subjects — means that his photography cannot be understood in isolation from the other forms. The Harvard Library's Ben Shahn Archive and the Rutgers University Ben Shahn Estate archive preserve the full range of this practice. The Reina Sofía's Ben Shahn On Nonconformity documents his position as an artist who maintained a self-consciously non-conformist stance toward both aesthetic convention and political authority.
+
+Criticism and reception
+
+Shahn has been evaluated primarily as a painter in twentieth-century American art, though recent scholarship has increasingly read his photography alongside his other work. The Tate Research essay "Realism Reconsidered: Ben Shahn in London, 1956" examined his reception in Cold War Britain, documenting the unexpected context of a major London exhibition as an opportunity to understand his international standing during a period of heightened ideological tension. The NGA and SFMOMA hold his work in their permanent collections. The Smart Museum's exhibition remains the most focused critical assessment of his photography specifically. The Archives of American Art oral history and Ben Shahn Papers provide primary source access to his own account of his practice.`,
+    citations: [
+      { num: 1, name: 'Ben Shahn. MoMA collection artist page', url: 'https://www.moma.org/collection/artists/5366' },
+      { num: 2, name: 'FSA Collection chapter. Library of Congress', url: 'https://loc.gov/pictures/collection/fsa/docchap1.html' },
+      { num: 3, name: 'Ben Shahn: Cross Media Artist. The Museum of Modern Art, Kamakura & Hayama', url: 'https://www.moma.pref.kanagawa.jp/storage/en/museum/exhibitions/2011/benshahn/index_en2011.html' },
+      { num: 4, name: 'Ben Shahn. MoMA 1947 exhibition', url: 'https://www.moma.org/calendar/exhibitions/3216' },
+      { num: 5, name: "Ben Shahn's New York. Harvard Gazette", url: 'https://news.harvard.edu/gazette/story/2000/03/ben-shahns-new-york/' },
+      { num: 6, name: "In the Streets and in the Studio. Harvard Magazine", url: 'https://www.harvardmagazine.com/2000/03/in-the-streets-in-the-studio' },
+      { num: 7, name: "Ben Shahn's New York: The Photography of Modern Times. Smart Museum of Art, University of Chicago", url: 'https://smartmuseum.uchicago.edu/exhibitions/ben-shahns-new-york-the-photography-of-modern-times/' },
+      { num: 8, name: 'Ben Shahn Archive. Harvard Library', url: 'https://library.harvard.edu/collections/ben-shahn-archive' },
+      { num: 9, name: 'Ben Shahn portrait. Library of Congress', url: 'https://www.loc.gov/item/98507851/' },
+      { num: 10, name: 'Ben Shahn On Nonconformity. Museo Reina Sofía PDF', url: 'https://www.museoreinasofia.es/sites/default/files/ben_shahn_ing.pdf' },
+      { num: 11, name: 'Ben Shahn. Smithsonian American Art Museum', url: 'https://americanart.si.edu/artist/ben-shahn-4384' },
+      { num: 12, name: 'Realism Reconsidered: Ben Shahn in London, 1956. Tate Research Publication', url: 'https://www.tate.org.uk/research/publications/modern-american-art-at-tate/essays/realism-reconsidered' },
+      { num: 13, name: 'Ben Shahn. National Gallery of Art artist page', url: 'https://www.nga.gov/artists/3030-ben-shahn' },
+      { num: 14, name: 'Ben Shahn Estate collection. Rutgers University Libraries', url: 'https://archives.libraries.rutgers.edu/repositories/11/resources/374' },
+      { num: 15, name: 'Oral history interview with Ben Shahn. Archives of American Art', url: 'https://www.aaa.si.edu/collections/interviews/oral-history-interview-ben-shahn-12760' },
+    ],
+    links: [
+      { label: 'MoMA — Ben Shahn', url: 'https://www.moma.org/collection/artists/5366' },
+      { label: 'Harvard Library — Ben Shahn Archive', url: 'https://library.harvard.edu/collections/ben-shahn-archive' },
+      { label: 'SAAM — Ben Shahn', url: 'https://americanart.si.edu/artist/ben-shahn-4384' },
+      { label: 'Archives of American Art — Ben Shahn Papers', url: 'https://www.aaa.si.edu/collections/ben-shahn-papers-8154' },
+    ],
+    works: [
+      { titleJa: 'Ben Shahn portrait (LOC)', titleEn: 'Ben Shahn portrait', labelJa: 'Library of Congress', labelEn: 'Library of Congress', url: 'https://www.loc.gov/item/98507851/', aliases: [] },
+    ],
+  };
+
+  overrides['bill-brandt'] = {
+    leadJa: `イギリスの階級社会の記録から超広角レンズによるヌードへの転換を、様式の断絶としてではなく、現実の奇妙さへの一貫した関心として読める写真家。暗部と強いコントラストが、社会的距離と心理的緊張を視覚化する。`,
+    leadEn: `Brandt's shift from recording British class society to making radically distorted nudes with a wide-angle lens can be read not as a stylistic rupture but as a consistent interest in the strangeness of the real. His deep shadows and high contrast visualize social distance and psychological tension.`,
+    textJa: `経歴
+
+1904年、ハンブルクで生まれる（出生地・生年月日については諸説あり）。1920年代後半にパリへ渡り、マン・レイのアシスタントとして働き、シュルレアリスムの影響を受けた。1930年代初頭にロンドンへ移り、イギリスの階級社会を撮影し始めた*1。1936年の写真集『The English at Home』は上流階級のパーティと労働者の家庭を並置し、同一社会の内部にある断絶を可視化した。1938年の『A Night in London』は夜の都市を記録した写真集として、ブラッサイの『Paris de Nuit』との比較で論じられることが多い*2。第二次世界大戦中は『Picture Post』や『Lilliput』誌に戦時下のロンドン市民の日常を発表し、地下鉄シェルターで眠る市民、停電の夜の街路を記録した。戦後は超広角レンズを用いた身体の変形写真シリーズへと向かい、様式上の転換が批評的注目を集めた。V&Aとテートがそれぞれ主要なアーカイブ・所蔵機関となっている*3。Bill Brandt Archiveが作家サイトを管理しており、全キャリアにわたる出版物と写真集の基礎情報を提供している*4。1983年没。
+
+表現解説
+
+階級と内部空間——1930年代の社会記録
+
+ブラントの1930年代の仕事は、イギリス社会の階級的分断を「内部空間」によって示す実践として読める。執事付きの邸宅と石炭採掘後の炭鉱労働者の家屋を同一のカメラで撮ることで、両者の間にある経済的距離が視覚的に浮かび上がった。V&Aの解説記事「Bill Brandt: an introduction」は、彼の社会記録が単純な告発ではなく、空間と人物の関係性から距離を引き出す方法を採っていることを指摘している*5。National Galleries of Scotlandのアーティストページは、ブラントがLilliputやPicture PostやHarper's Bazaarという媒体を通じて英国の視覚文化に幅広く関わっていたことを確認できる資料となっており、写真集だけでなく雑誌メディアとの関係の深さを示している*6。『The English at Home』と『A Night in London』の写真集形式での発表は、写真家の個人的観察を出版・流通という制度に乗せる点でも、時代的な写真集文化と接続している。
+
+夜・暗部・コントラストの機能
+
+ブラントの視覚的特徴として最も際立つのは、高コントラストと暗部の扱いである。夜のロンドン、地下空間、室内の影は、単なる雰囲気の演出ではなく、社会的・心理的な距離を物質化する装置として機能する*7。V&Aの「Bill Brandt: setting the scene」記事は、ブラントが撮影現場でどのように空間と光の演出を行ったかを具体的に示しており、彼の高コントラスト印画が意図的な技法的選択であることを確認できる*8。ブラッサイが夜のパリの社交空間を可視化したのに対し、ブラントのロンドンの夜は孤独と隔絶を強調する傾向がある。この対比は、夜の都市写真が文化的背景によって異なる意味構造を持つことを示す例として写真批評に登場する。ICP構成員ページは、ブラントのドキュメンタリーからヌードへの展開を一貫した問題意識のもとに紹介しており、様式の断絶ではなく連続性として読む視点を提供している*9。
+
+超広角ヌードとヘンリー・ムーアとの対話
+
+戦後のブラントは、魚眼レンズに近い超広角レンズを用いて身体を大きく変形させたヌード写真シリーズを制作した。海岸の岩場、岩壁、砂浜を背景に人体を変形させたこれらの写真は、社会記録からの転換として論じられることが多いが、ブラント自身は一貫して「現実の奇妙さ」への関心として語っていた。ヘプワース・ウェイクフィールド、セインズベリー・センター、イェール英国美術センター、ヘンリー・ムーア財団が連携して企画した「Bill Brandt / Henry Moore」展は、ブラントの変形したヌードとムーアの彫刻が同じ身体造形への関心から生まれていることを示す展示として記録されており、写真と彫刻の対話的関係を論じる事例として重要である*10。この展覧会は、ブラントの写真が単独の写真史的評価にとどまらず、20世紀英国美術という枠で議論されうることを示している。
+
+出版媒体——Picture PostとLilliputの役割
+
+ブラントの写真は、1930〜40年代の英国において発行部数の多い図版誌である『Picture Post』と『Lilliput』を主要な流通媒体としていた。これらの雑誌は、大衆に写真を届けるメディアとして機能しており、ブラントの社会記録写真と戦時記録写真が広く知られるようになった背景にある。雑誌というメディアとの関係は、写真集という自律的な出版物とは異なる条件——編集者、レイアウト、他の写真との組み合わせ——のもとで写真の意味が形成されることを示している。この点で、ブラントのキャリアは写真集と雑誌写真の両方を通じて評価される必要があり、MoMAの回顧展図録はこの二重の流通を整理する参照文献として機能する*11。
+
+批評と受容
+
+ブラントはイギリス写真史において最も国際的に評価された写真家のひとりであり、1969年のMoMA回顧展は英国写真家として最初期の大規模な館内評価のひとつとなった*11。テート・ブリテンが企画した回顧展（2004〜05年）は、社会記録、ポートレート、ヌードを一望できる展示として批評的注目を集めた*12。Art Institute of Chicagoの所蔵作品は、アメリカの美術館コレクションにおけるブラントの位置づけを示している*13。オーストラリア国立ポートレートギャラリーが企画した「Bill Brandt: A Retrospective」（2002年）は、155点のヴィンテージプリントによる回顧展として国際的な受容を示す資料となっており、英国を越えた評価の広がりを確認できる*14。ヴィクトリア&アルバート博物館が整理したブラントの導入資料は、1930年代の炭鉱夫の肖像から戦後のヌードまでを連続するキャリアとして読む視点を提供しており、単一のジャンルに閉じない写真家の射程を示している*5。Tateが管理するブラントの作品情報は、プリントの技法的特性——特に強いコントラストと歪んだ遠近感——が方法論として批評されてきたことを示している*1。V&Aの展示資料「Setting the Scene」は、ブラントが撮影した英国の社会的風景が同時代の映画・文学・ドキュメンタリーと連動した文化史的参照点であることを論じている*8。MoMAのObject:Photoプロジェクトはブラントのプリントを素材・工程の観点から分析した資料を提供している*2。ICP構成員ページは、ブラントの全キャリアを社会記録からヌードまで通観する解説を提供しており、英国を拠点とした写真家が国際的な批評文脈でいかに評価されてきたかを示す参照資料として機能している*9。英国写真史において、ブラントはドキュメンタリーと芸術写真の双方に足場を持つ例外的な位置を占めており、彼の仕事は現在においても技法・社会性・美学の三つの軸から並行して論じられている。National Galleries of Scotlandのアーティストページは、英国の公共コレクションにおけるブラントの収蔵状況を確認できる資料として参照できる*6。`,
+    textEn: `Biography
+
+Bill Brandt was born in Hamburg in 1904 (details of birth date and place are disputed). In the late 1920s he went to Paris and worked as an assistant to Man Ray, absorbing Surrealist influences. Moving to London in the early 1930s, he began photographing British class society. His 1936 photobook The English at Home juxtaposed upper-class interiors with working-class domestic spaces; A Night in London (1938) recorded the city at night. During the Second World War he published in Picture Post and Lilliput, documenting Londoners sheltering in the Underground and the blacked-out streets. After the war he turned to radically distorted nudes made with an ultra-wide-angle lens, a shift that attracted sustained critical attention. He died in 1983. The V&A and Tate are the principal archive and collection institutions; the Bill Brandt Archive maintains the authoritative career overview.
+
+Expression / method
+
+Brandt's 1930s work operates by using interior space to show class division: photographing butlered mansions and miners' cottages with the same camera makes economic distance visible. The V&A's introductory essay notes that his social documentation draws on a method of extracting distance from the spatial relationship between figures and their environments. The V&A's "setting the scene" article documents how Brandt arranged spaces and lighting at shoots, confirming that his high-contrast printing was a deliberate technical choice rather than an incidental quality. His sustained relationship with Lilliput, Picture Post, and Harper's Bazaar embedded his visual language in the institutional structure of British illustrated magazine culture; the National Galleries of Scotland artist page confirms this breadth of media involvement. His high-contrast printing and handling of darkness — deep shadows, night streets, interior gloom — materialize social and psychological distance as a visual property, making the image feel more isolated than documentary proximity alone would allow. The post-war nude series, made with an extreme wide-angle lens against coastal rock and sand, has been read as a continuation of his interest in the strangeness of physical reality rather than a stylistic break. The Bill Brandt / Henry Moore exhibition, shown at the Hepworth Wakefield, Sainsbury Centre, Yale Center for British Art, and Henry Moore Foundation, documented the connection between Brandt's distorted nudes and Moore's sculptural treatment of the body, placing Brandt's photography within a broader context of twentieth-century British art.
+
+Criticism and reception
+
+Brandt is the most internationally recognized British photographer of the twentieth century. A 1969 MoMA retrospective gave him one of the earliest large-scale institutional validations of a British photographer in America; the exhibition catalogue PDF documents the critical framing. The Tate Britain retrospective (2004–05) brought together his social documentation, portraiture, and nudes in a major survey. The Art Institute of Chicago and the National Galleries of Scotland hold his work in their permanent collections. A 2002 retrospective at the National Portrait Gallery, Australia, with 155 vintage prints, confirmed his sustained international reception. The ICP constituent page provides a synthetic overview of his career.`,
+    citations: [
+      { num: 1, name: 'Bill Brandt. Tate artist page', url: 'https://www.tate.org.uk/art/artists/bill-brandt-801' },
+      { num: 2, name: 'Bill Brandt. MoMA Object:Photo', url: 'https://www.moma.org/interactives/objectphoto/artists/740.html' },
+      { num: 3, name: 'Bill Brandt – Explore the Collections. Victoria and Albert Museum', url: 'https://www.vam.ac.uk/collections/bill-brandt' },
+      { num: 4, name: 'Bill Brandt Archive. billbrandt.com', url: 'https://www.billbrandt.com/' },
+      { num: 5, name: 'Bill Brandt – an introduction. Victoria and Albert Museum', url: 'https://www.vam.ac.uk/articles/bill-brandt-an-introduction' },
+      { num: 6, name: 'Bill Brandt. National Galleries of Scotland artist page', url: 'https://www.nationalgalleries.org/art-and-artists/artists/bill-brandt' },
+      { num: 7, name: 'Bill Brandt. International Center of Photography constituent page', url: 'https://www.icp.org/browse/archive/constituents/bill-brandt' },
+      { num: 8, name: 'Bill Brandt – setting the scene. Victoria and Albert Museum', url: 'https://www.vam.ac.uk/articles/bill-brandt-setting-the-scene' },
+      { num: 9, name: 'Bill Brandt. International Center of Photography constituent page', url: 'https://www.icp.org/browse/archive/constituents/bill-brandt' },
+      { num: 10, name: 'Bill Brandt / Henry Moore. The Hepworth Wakefield', url: 'https://hepworthwakefield.org/whats-on/bill-brandt-henry-moore/' },
+      { num: 11, name: 'Bill Brandt. MoMA catalogue preview PDF', url: 'https://www.moma.org/docs/publication_pdf/3176/Brandt_PREVIEW.pdf' },
+      { num: 12, name: 'Tate Britain opens free Bill Brandt exhibition. Tate press release', url: 'https://www.tate.org.uk/press/press-releases/tate-britain-opens-free-bill-brandt-exhibition' },
+      { num: 13, name: 'Bill Brandt. Art Institute of Chicago artist page', url: 'https://www.artic.edu/artists/33736/bill-brandt' },
+      { num: 14, name: 'Bill Brandt: A Retrospective. National Portrait Gallery, Australia', url: 'https://www.portrait.gov.au/exhibitions/bill-brandt-2002' },
+    ],
+    links: [
+      { label: 'Tate — Bill Brandt', url: 'https://www.tate.org.uk/art/artists/bill-brandt-801' },
+      { label: 'V&A — Bill Brandt', url: 'https://www.vam.ac.uk/collections/bill-brandt' },
+      { label: 'MoMA — Bill Brandt', url: 'https://www.moma.org/collection/artists/740' },
+      { label: 'Bill Brandt Archive', url: 'https://www.billbrandt.com/' },
+      { label: 'ICP — Bill Brandt', url: 'https://www.icp.org/browse/archive/constituents/bill-brandt' },
+    ],
+    works: [
+      { titleJa: 'Bill Brandt — MFA Boston collection', titleEn: 'Bill Brandt — MFA Boston collection', labelJa: 'Museum of Fine Arts, Boston', labelEn: 'Museum of Fine Arts, Boston', url: 'https://collections.mfa.org/search/objects/*/Bill%20Brandt', aliases: [] },
+    ],
+  };
+
+  overrides['brassai'] = {
+    leadJa: `ハンガリー出身の写真家として1930年代のパリに定住し、夜の都市、娼館、カフェ、グラフィティを記録した。写真集『Paris de Nuit』は、夜の都市を詩的・社会的な構造として組み立てた最初期の写真集のひとつとして位置づけられる。`,
+    leadEn: `Settling in Paris in the 1930s as a photographer from Hungary, Brassaï documented the city at night — its brothels, cafés, and street graffiti. His photobook Paris de Nuit is regarded as one of the earliest photobooks to construct the nocturnal city as both a poetic and a social structure.`,
+    textJa: `経歴
+
+1899年、オーストリア＝ハンガリー帝国のブラッショフ（現ルーマニア）に生まれ、本名はGyula Halász。幼少期にパリに滞在した後、ブダペストとベルリンで美術・ジャーナリズムを学んだ。1924年にパリへ移住してジャーナリストとして活動を開始し、1929年頃から写真を撮り始めた。アンドレ・ケルテスの助言を受けながら夜の露光技術を発展させた*1。1932年に出版した写真集『Paris de Nuit』によって国際的な名声を得た。この写真集はアビ・ワールブルクとシャルル・ピエレによって企画された出版であり、パリの夜を体系的に記録した最初期の写真集として位置づけられる*2。同時代のパリでピカソ、マティス、ジャコメッティ、サルバドール・ダリら芸術家と交流し、シュルレアリスムの文脈でも存在を知られた*3。グラフィティを組織的に記録した写真集『Graffiti』は1960年に出版され、都市の無名の痕跡をアーカイブする衝動として評価されている。1984年没。
+
+表現解説
+
+夜の露光とパリの社会空間
+
+ブラッサイの最も重要な技術的・概念的な選択は、夜の撮影にある。1930年代のパリで夜間に長時間露光で撮影することは技術的な制約が大きく、被写体との関係も昼間とは異なるものになった。固定した三脚、長い露光時間、街灯の光を使いこなすための技術的熟達が求められ、これが独特の光の質とシャープさを持つ夜景写真を可能にした*4。SFMOMAの展覧会記録は、ブラッサイが単なる夜景写真家ではなく、パリの「隠れた文化」を体系的に記録しようとしていたことを確認できる*5。National Gallery of Artの展覧会資料は、彼が夜のパリを詩的・社会的な構造として組み立てる際に採用した方法を論じており、個々の写真が大型の写真集という形式において特定の順序と意味を持つことを示している*6。ブラッサイが撮影したSFMOMAの所蔵作品（1932年頃、無題）は、パリへの移住後の都市への関心を示す作品として美術館のコレクション文脈で確認できる*7。
+
+娼館、カフェ、周縁の社交空間
+
+ブラッサイはパリの娼館、同性愛者のバー（Le Monocleなど）、芸術家の集まるカフェを撮影した。Metropolitan Museumが所蔵する《Couple d'amoureux dans un petit café, quartier Italie》は、夜のカフェに座るカップルを親密な距離で捉えた写真で、都市の私的空間への眼差しと夜の社交空間の記録を示す公式所蔵ページとして確認できる*8。同じくMetが所蔵する《Fat Claude and her Girlfriend at Le Monocle》は、当時のパリの性的少数者の社交空間を記録したものとして写真批評に参照されており、ブラッサイがパリの「周縁」の文化を積極的に記録した写真家だったことを示している*9。これらの写真は演出ではなく観察に基づくとされるが、ブラッサイ自身が現場との関係を構築した上で撮影した点で、単純な「スナップ」とも異なる。『Paris de Nuit』の写真群は、技術的な夜景写真集であるだけでなく、パリの社会的格差と性的文化を可視化した社会的ドキュメントとしての側面を持っていた。
+
+グラフィティ——都市の無意識のアーカイブ
+
+ブラッサイが1930年代から40年以上にわたって撮り続けたグラフィティの写真群は、壁面に刻まれた顔、数字、動物の輪郭、図形を収集するアーカイブ的な実践である。センター・ポンピドゥーは複数回にわたってブラッサイのグラフィティを展示しており、この実践がシュルレアリスムの「都市の無意識」という概念と接続することを示している*10。グラフィティを偶然の痕跡として見るだけでなく、匿名の人々の表現を組織的に収集・分類するという姿勢は、ウジェーヌ・アジェのパリ記録との連続性として論じることができる。Metropolitan Museumが所蔵する《[Graffiti, Paris]》は、このグラフィティ写真を作品単位で確認できる公式所蔵ページを持つ*11。Art Institute of Chicagoが所蔵するグラフィティ・街路作品（Untitled, 1932）も、都市表象の文脈で参照される作品として所蔵情報が公開されている*12。
+
+ピカソとの関係とシュルレアリスム
+
+ブラッサイはピカソの友人として、彼のアトリエと彫刻作品を長期にわたって撮影した。この関係は写真がアーティストのポートレートとして機能するという枠を超え、美術界と写真界の交差点でブラッサイが果たした役割を示している。マラガのムゼオ・ピカソは「The Paris of Brassaï: Photographs of the City Picasso Loved」展でこの関係を展示し、ピカソが愛したパリとブラッサイの視線を接続する資料を公開している*13。ベルリン国立美術館（Staatliche Museen zu Berlin）の展示「Brassaï Brassaï」は、ピカソ、マティス、ジャコメッティ、ブラックとグラフィティを同一の文脈で扱う展示資料を残しており、ブラッサイがパリの芸術家コミュニティと深く結びついていたことを示している*14。Art Institute of Chicagoが所蔵する《Swimmer》は、アンドレ・ケルテスからの影響と街路表現への展開を補う作品として所蔵情報が公開されている*15。
+
+批評と受容
+
+ブラッサイは「パリの眼（L'Œil de Paris）」という呼び名で知られるが、この賞賛的評価は夜の都市という詩的イメージに偏りすぎる側面もある。近年の評価は、娼館や性的少数者の空間への記録、植民地期パリへの移民という彼の立ち位置、グラフィティのアーカイブ衝動を含む複合的な実践として再読する傾向がある。GettyのBrassaï展「The Eye of Paris」は、この複合的な受容を整理する展覧会資料を提供している*16。MoMAが1956年に取り上げた展覧会の図録は、当時の批評的枠組みを確認できる資料として研究者に参照されている*17。Heide Museum of Modern Artの展覧会テキストは、夜のパリ、ピカソ、シュルレアリスム、グラフィティを横断するブラッサイの実践の広さを展示文脈で整理している*18。ブラッサイが長期にわたってピカソを撮影し続けた仕事は、写真家と芸術家の関係を文書化するという独自の形式を生み出した。マラガのピカソ美術館が所蔵するブラッサイのピカソ写真は、この長期的な協働の成果を示す公式コレクション記録として参照できる。ブラッサイのグラフィティ写真は、路上の落書きを美術史の観点から見る試みとして、「原始主義」「都市の民俗学」という20世紀前半の知的関心と写真の交差点に位置している。その仕事は、写真が記録する対象の価値をどのように引き上げるかという問いを体現しており、近年のアーカイブ研究や都市写真研究においても継続して参照されている。ベルリンの国立博物館（Staatliche Museen Berlin）が所蔵するブラッサイの作品は、ドイツの公共コレクションにおける受容を示しており、フランス写真にとどまらないヨーロッパ全体での評価を示している。`,
+    textEn: `Biography
+
+Born Gyula Halász in 1899 in Brassó (now Braşov, Romania) in Austria-Hungary, Brassaï studied art and journalism in Budapest and Berlin before moving to Paris in 1924 to work as a journalist. He began photographing around 1929, developing his night exposure technique with the advice of André Kertész. His 1932 photobook Paris de Nuit brought him international recognition; it was one of the earliest systematic photobooks of a city at night. In Paris he moved in the circles of Picasso, Matisse, Giacometti, and the Surrealists, and also documented the city's brothels, cafés, and underground social spaces. His decades-long graffiti documentation project was published as a book in 1960. He died in 1984.
+
+Expression / method
+
+The most significant technical and conceptual choice in Brassaï's practice is night photography. Working in 1930s Paris with long exposures at night required technical mastery of tripod, exposure time, and street lighting; the resulting images have a characteristic sharpness and luminosity that distinguishes them from the atmospheric blurriness of many night photographs. Paris de Nuit records cafés, bridges, cobblestones, and foggy streetlights while also including the city's other face — men on the run, women in front of brothels, late-night drinkers. Beyond night Paris, his photographs of brothels, lesbian bars such as Le Monocle, and artists' cafés documented the sexual and social margins of interwar Paris. The Metropolitan Museum's Couple d'amoureux dans un petit café and Fat Claude and her Girlfriend at Le Monocle are canonical examples of this documentation, held in the permanent collection with full provenance. His decades-long graffiti project — collecting faces, figures, and marks scratched into walls — functions as an archival impulse connecting to the Surrealist concept of urban unconscious and to Atget's systematic documentation of Old Paris. The Pompidou Centre has mounted multiple exhibitions of the graffiti work; the AIC and Met hold examples in their permanent collections. His close friendship with Picasso and other Surrealist-associated artists placed his photography in dialogue with the visual culture of interwar Parisian modernism; the Musée Picasso Málaga and Staatliche Museen zu Berlin exhibitions document this relationship.
+
+Criticism and reception
+
+Brassaï is known by the honorific "L'Œil de Paris," but recent assessments tend toward a more complex reading that includes his documentation of sexual margins, his immigrant position in colonial-era Paris, and the archival ambition of the graffiti project. The Getty's exhibition The Eye of Paris provides a synthetic view of this reception; the MoMA 1956 exhibition catalogue documents the critical framing at the moment of his North American institutional reception. The Heide Museum of Modern Art's exhibition text addresses the breadth of his practice across night Paris, Picasso, Surrealism, and graffiti simultaneously.`,
+    citations: [
+      { num: 1, name: 'Untitled (ca. 1932). SFMOMA', url: 'https://www.sfmoma.org/artwork/80.343/' },
+      { num: 2, name: 'Brassaï. MoMA collection artist page', url: 'https://www.moma.org/collection/artists/745' },
+      { num: 3, name: 'Brassaï Brassaï. Staatliche Museen zu Berlin', url: 'https://www.smb.museum/en/exhibitions/detail/brassai-brassai/' },
+      { num: 4, name: 'Brassaï exhibition. National Gallery of Art', url: 'https://www.nga.gov/exhibitions/brassai' },
+      { num: 5, name: 'Brassaï exhibition. SFMOMA', url: 'https://www.sfmoma.org/exhibition/brassai/' },
+      { num: 6, name: 'Brassaï. National Gallery of Art slideshow', url: 'https://www.nga.gov/features/slideshows/brassai.html' },
+      { num: 7, name: 'Brassaï (Gyula Halász), Untitled, ca. 1932. SFMOMA', url: 'https://www.sfmoma.org/artwork/80.343/' },
+      { num: 8, name: "Couple d'amoureux dans un petit café, quartier Italie. The Met", url: 'https://www.metmuseum.org/art/collection/search/262720' },
+      { num: 9, name: 'Fat Claude and her Girlfriend at Le Monocle. The Met', url: 'https://www.metmuseum.org/art/collection/search/283310' },
+      { num: 10, name: 'Brassaï – Graffiti. Centre Pompidou exhibition', url: 'https://www.centrepompidou.fr/en/program/calendar/event/cg5MXrA' },
+      { num: 11, name: '[Graffiti, Paris]. The Met', url: 'https://www.metmuseum.org/art/collection/search/262735' },
+      { num: 12, name: 'Untitled. Art Institute of Chicago', url: 'https://www.artic.edu/artworks/100079/untitled' },
+      { num: 13, name: 'The Paris of Brassaï. Museo Picasso Málaga', url: 'https://www.museopicassomalaga.org/en/prensa/the-paris-of-brassai-photographs-of-the-city-picasso-loved-1' },
+      { num: 14, name: 'Brassaï Brassaï. Staatliche Museen zu Berlin', url: 'https://www.smb.museum/en/exhibitions/detail/brassai-brassai/' },
+      { num: 15, name: 'Swimmer. Art Institute of Chicago', url: 'https://www.artic.edu/artworks/200148/swimmer' },
+      { num: 16, name: "Brassaï: The Eye of Paris. J. Paul Getty Museum exhibition", url: 'https://www.getty.edu/art/collection/exhibition/103MPH' },
+      { num: 17, name: 'Brassaï. MoMA exhibition catalogue PDF', url: 'https://www.moma.org/documents/moma_catalogue_2614_300299016.pdf' },
+      { num: 18, name: 'Brassaï. Heide Museum of Modern Art exhibition', url: 'https://www.heide.com.au/exhibitions/brassai/' },
+    ],
+    links: [
+      { label: 'MoMA — Brassaï', url: 'https://www.moma.org/collection/artists/745' },
+      { label: 'NGA — Brassaï exhibition', url: 'https://www.nga.gov/exhibitions/brassai' },
+      { label: 'Getty — Brassaï person page', url: 'https://www.getty.edu/art/collection/person/103KE9' },
+      { label: 'SFMOMA — Brassaï', url: 'https://www.sfmoma.org/artist/brassai_gyula_halasz/' },
+      { label: 'Centre Pompidou — Brassaï', url: 'https://www.centrepompidou.fr/en/program/calendar/event/czAAXaX' },
+    ],
+    works: [
+      { titleJa: "Couple d'amoureux dans un petit café, quartier Italie", titleEn: "Couple d'amoureux dans un petit café, quartier Italie", labelJa: 'The Metropolitan Museum of Art', labelEn: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/262720', aliases: [] },
+      { titleJa: '[Graffiti, Paris]', titleEn: '[Graffiti, Paris]', labelJa: 'The Metropolitan Museum of Art', labelEn: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/262735', aliases: [] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  overrides['david-seymour'] = {
+    leadJa: `スペイン内戦から戦後ヨーロッパの子どもたちまで、柔らかいが政治的な視線で報道写真の人道主義的言語を形成した。「Chim（シム）」として知られ、1947年にマグナム・フォトスを創設した写真家のひとりでもある。`,
+    leadEn: `From the Spanish Civil War to postwar Europe's children, Chim shaped the humanitarian language of documentary photography with a gaze at once gentle and politically committed. One of the founding members of Magnum Photos in 1947.`,
+    textJa: `経歴
+
+デヴィッド・シーモアは1911年、ポーランドのワルシャワ近郊でユダヤ系の出版業者の家庭に生まれた。ドイツとフランスで印刷・写真技術を学んだのち、1930年代前半からパリを拠点に報道写真家として活動し、「Chim（シム）」の名義で各誌に写真を発表し始めた*1。スペイン内戦が勃発した1936年にはいち早く現地に赴き、戦闘の前線だけでなく民間人の日常や難民の姿を記録した。第二次世界大戦期には米国籍を取得してアメリカ軍情報部に所属し、戦後ヨーロッパに戻ると、1947年にロバート・キャパ、アンリ・カルティエ=ブレッソン、ジョージ・ロジャーとともにマグナム・フォトスを創設した*2。マグナムは写真家が著作権を保持し、媒体への提供条件を自ら交渉できる協同組合的な制度として設計されており、シーモアはその創設から運営に深く関わった。
+
+戦後すぐ、シーモアはUNESCOの委嘱を受け、戦争で傷ついたヨーロッパ各地の子どもたちを撮影するプロジェクトに取り組み、1948年に写真集『Children of Europe』を出版した*3。ポーランド、ギリシャ、イタリアなどの戦争孤児や難民の子どもを記録したこの仕事は、戦後の人道主義的ドキュメンタリー写真の主要なモデルのひとつとなった。1954年にキャパが地雷事故で亡くなった後、シーモアは一時的にマグナムの代表を務めたが、1956年のスエズ危機取材中にエジプト軍の機銃掃射を受け、45歳で命を落とした*4。
+
+表現解説
+
+スペイン内戦と戦争報道の視線
+
+シーモアがスペイン内戦で撮った写真は、危険な前線よりも後方の民間人の日常に向けられることが多かった。民兵や政治集会を英雄的に描くのではなく、家族の離散、子どもたちの不安、農村の困窮を近距離で記録したその視線は、戦争の政治的意味よりも人間の具体的な経験に定位していた。ICPが所蔵するシーモアの「CHIM」アーカイブには、スペイン内戦から戦後ヨーロッパにいたる系統的な記録が収められており、報道写真と人道主義的ドキュメンタリーの接続点として研究者に参照されている*5。同時期にスペイン内戦を取材したロバート・キャパが生死の瀬戸際に迫る視点で知られるのに対し、シーモアの仕事は戦争が日常の文脈をどのように破壊するかを、より穏やかな距離から証言するものとして読める。ICPが開催した「Death in the Making」展は、キャパ、ゲルダ・タロ、シーモアが共同でスペイン内戦を記録した文脈を再検証した展示として、この時期の仕事を評価する重要な参照点となっている*6。
+
+戦後の子ども写真と人道主義的視覚言語
+
+シーモアの名を最も広く伝えた仕事は、戦後ヨーロッパ各地で撮影した子どもたちの写真である。MagnumとUNESCOの協力のもとで行われたこのプロジェクトは、施設の子ども、孤児、難民家族の子どもを対象とし、外傷的な状況をセンセーショナルに見せるのではなく、子どもたちの回復力と人間的な尊厳を記録することを基本的な姿勢としていた*7。Magnum Photosが公開している「Children of Europe」関連資料は、UNESCOの委嘱という制度的背景と、写真家が現場でどのような判断をしたかを照らし合わせる一次資料として機能している*7。この仕事は、UNESCOや国際赤十字に代表される戦後国際機関の人道主義的な広報活動と写真メディアの関係を考えるうえで参照される代表例となっている*8。ICPが2014年に開催した「We Went Back: Photographs from Europe 1933–1956 by Chim」展は、シーモアの仕事を戦前のスペイン内戦から戦後ヨーロッパの復興期まで縦断する記録として一括して提示し、その歴史的射程を改めて示した*9。
+
+メキシカン・スーツケースとアーカイブの再発見
+
+2007年、スペイン内戦時のネガ4,500点あまりが詰まった「メキシカン・スーツケース」と呼ばれる3つのボックスがメキシコ・シティで発見された。キャパ、タロ、シーモアの3人が内戦中に撮影したネガがそこには含まれており、長年行方不明とされていた記録の一部が初めて公開可能な状態で研究者の前に現れた*10。ICPはこの発見を受けて「The Mexican Suitcase」展を企画し、内戦写真の流通・保存・消失をめぐる歴史的経緯を展示した*10。この再発見は、報道写真のアーカイブがいかに政治的・地理的事情によって断絶・散逸するかを示す事例として写真史研究において繰り返し引用されている。
+
+マグナム・フォトスという制度の設計
+
+シーモアはマグナム・フォトスの創設に際し、写真家が著作権を保持し、媒体への提供条件を自ら交渉できる協同組合的な制度設計に携わった*2。1947年のマグナム創設は、戦時中の報道写真が国家・軍・雑誌社の論理に従属していた状況を変えようとする試みであり、写真家の自律性と人道主義的報道倫理を制度化する方向を目指していた。Magnum Photosの歴史資料は、この制度が内部でいかなる商業的・倫理的緊張を抱えながら運営されたかを示しており、シーモアの関与がマグナムの初期形成においていかに重要だったかを示している*11。National Gallery of Artが管理するシーモアの作家情報は、彼の主要な仕事が美術館・公共コレクションの文脈でどのように位置づけられているかを示す参照点となっている*12。
+
+批評と受容
+
+シーモアの死後、彼の仕事はキャパやカルティエ=ブレッソンに比べて知名度が低い時期が続いた。しかし1990年代以降、ICPの「CHIM」展やDavid Seymour Archiveの整備、「We Went Back」展を経て、スペイン内戦写真と戦後子ども写真の再評価が進んだ*9。ユダヤ系ポーランド移民として二つの世界大戦を生きた背景は、アムステルダムのユダヤ文化クォーター（Jewish Cultural Quarter）が「Chim: Legendary Photojournalist」展で取り上げたように、流浪と証言という視点から新たに読み直されている*13。TIMEのアーカイブに掲載された「A Second Look: Chim's Children of War」は、シーモアの子ども写真が半世紀以上を経て現代の読者に何を伝えうるかを論じた記事として、写真の時代を超えた証言性を示している*14。シーモアの仕事は、写真が単なる情報伝達の手段ではなく、戦後の人道主義的言語を形成する装置として機能した時代の複雑さを示す存在として位置づけられている*15。シーモアが亡くなった1956年という時点は、マグナムが本格的な商業運営と人道主義的報道の緊張を抱えて拡張していく時期と重なっており、彼の遺産は組織の方向性をめぐる議論において参照点として残っている。National Gallery of Artが管理するシーモアの作家情報は、彼の主要な仕事がアメリカの公共コレクションの文脈でどのように位置づけられているかを示す資料として参照できる*12。Culture.plが掲載するシーモアの伝記は、ユダヤ系ポーランド移民として二つの大戦を生き抜き、戦後ヨーロッパの人道的記録を担った生涯の軌跡を、東欧の文化史的観点から概説している*15。`,
+    textEn: `Biography
+
+David Seymour was born in 1911 near Warsaw in a Jewish publishing family. After studying printing and photography in Germany and France, he began working as a photojournalist from Paris in the early 1930s under the name "Chim." When the Spanish Civil War broke out in 1936, he was among the first photographers to travel to Spain, recording not only the front lines but also the daily lives of civilians and refugees*1. During World War II he obtained US citizenship and served in US Army Intelligence; returning to postwar Europe, in 1947 he co-founded Magnum Photos with Robert Capa, Henri Cartier-Bresson, and George Rodger*2.
+
+Immediately after the war Seymour undertook a UNESCO-commissioned project photographing children across war-devastated Europe, published as Children of Europe in 1948*3. After Capa was killed by a landmine in 1954, Seymour briefly led Magnum as president. He was killed by Egyptian machine-gun fire while covering the Suez Crisis in 1956, aged 45*4.
+
+Expression / method
+
+The gaze of the Spanish Civil War
+Seymour's Spanish Civil War photographs focused more often on civilians behind the lines than on dangerous front-line action. Rather than heroicizing militias or political rallies, he recorded family separation, children's anxiety, and rural hardship at close range—anchoring the work in concrete human experience rather than political symbolism. ICP's CHIM archive, which spans the Civil War through postwar Europe, serves as a primary research reference for the intersection of photojournalism and humanitarian documentary*5. Whereas Robert Capa is known for proximity to the edge of survival, Seymour's work reads as a quieter witness to how war dismantles the fabric of everyday life. ICP's Death in the Making exhibition revisited the context in which Capa, Gerda Taro, and Seymour jointly covered the Civil War, making it a key reference for evaluating this period of Seymour's output*6.
+
+Postwar children and the humanitarian visual language
+The work that most widely conveyed Seymour's name was his photographs of children across postwar Europe. Carried out under the auspices of Magnum and UNESCO, the project focused on institutionalized children, orphans, and children of refugee families, with a basic stance of recording resilience and human dignity rather than sensationalizing trauma*7. Magnum Photos' documentation on Children of Europe functions as primary material for cross-referencing the institutional context of the UNESCO commission with the on-the-ground decisions Seymour made. The work is regularly cited as an early model for the relationship between postwar international organizations' humanitarian communications and photographic media*8. ICP's 2014 exhibition We Went Back: Photographs from Europe 1933–1956 by Chim presented Seymour's output as a continuous record from prewar Spain to postwar reconstruction, demonstrating the historical scope of his project*9.
+
+The Mexican Suitcase and archival rediscovery
+In 2007, three boxes known as the Mexican Suitcase, containing approximately 4,500 negatives from the Spanish Civil War, were discovered in Mexico City. The boxes held negatives shot by Capa, Taro, and Seymour, portions of which had long been considered lost*10. ICP responded by organizing The Mexican Suitcase exhibition, presenting the historical circumstances of the photographs' distribution, preservation, and disappearance. This rediscovery is repeatedly cited in photographic history research as a demonstration of how political and geographic circumstances can fragment and disperse journalistic archives.
+
+Designing the Magnum institution
+In founding Magnum Photos, Seymour was involved in designing a cooperative structure in which photographers retained their copyrights and could negotiate the terms of supply to media themselves*2. The 1947 founding was an attempt to change the wartime situation in which photojournalism was subordinated to the logic of states, militaries, and magazine publishers. Magnum's historical resources reveal the commercial and ethical tensions the institution carried internally, and show how central Seymour's involvement was to Magnum's early formation*11.
+
+Criticism and reception
+
+After Seymour's death, his work remained less well-known than that of Capa or Cartier-Bresson for several decades. From the 1990s onward, however, reassessment of his Spanish Civil War photographs and postwar children's work advanced through ICP's CHIM exhibition, the establishment of the David Seymour Archive, and the We Went Back exhibition*9. His background as a Jewish Polish migrant who lived through both world wars has been reexamined from the perspective of displacement and testimony, as in the Jewish Cultural Quarter's Chim: Legendary Photojournalist exhibition*13. TIME's "A Second Look: Chim's Children of War" discussed what Seymour's child photographs can still communicate to readers more than half a century later, demonstrating the photographic testimony's trans-temporal reach*14. Seymour's work is positioned as evidence of an era in which photography functioned not merely as a carrier of information but as an apparatus forming the humanitarian language of the postwar world*15.`,
+    citations: [
+      { num: 1, name: 'David Seymour. Magnum Photos', url: 'https://www.magnumphotos.com/photographer/david-seymour/' },
+      { num: 2, name: 'Magnum Photos — History', url: 'https://www.magnumphotos.com/about-magnum/history/' },
+      { num: 3, name: 'Children of Europe. International Center of Photography', url: 'https://www.icp.org/exhibitions/we-went-back-photographs-europe-1933-1956-chim-0' },
+      { num: 4, name: 'Chim (David Seymour). ICP constituent page', url: 'https://www.icp.org/browse/archive/constituents/chim-david-seymour' },
+      { num: 5, name: 'David Seymour selections. ICP', url: 'https://www.icp.org/browse/archive/collections/david-seymour-chim-selections' },
+      { num: 6, name: 'Death in the Making. ICP', url: 'https://www.icp.org/exhibitions/death-in-the-making' },
+      { num: 7, name: "Children of Europe: David Seymour's Post-War Document. Magnum Photos", url: 'https://www.magnumphotos.com/newsroom/society/david-seymour-children-of-europe/' },
+      { num: 8, name: "Chim's Children of Europe. The Image Centre", url: 'https://theimagecentre.ca/exhibition/chims-children-of-europe/' },
+      { num: 9, name: 'We Went Back: Photographs from Europe 1933–1956 by Chim. ICP', url: 'https://www.icp.org/exhibitions/we-went-back-photographs-europe-1933-1956-chim-0' },
+      { num: 10, name: 'The Mexican Suitcase. ICP', url: 'https://www.icp.org/exhibitions/the-mexican-suitcase' },
+      { num: 11, name: 'Inside Magnum: Collecting Photography. Magnum Photos', url: 'https://www.magnumphotos.com/theory-and-practice/inside-magnum-collecting-photography/' },
+      { num: 12, name: 'David Seymour. National Gallery of Art', url: 'https://www.nga.gov/collection/artist-info.29674.html' },
+      { num: 13, name: 'Chim (David Seymour). Legendary Photojournalist. Jewish Cultural Quarter', url: 'https://jck.nl/en/agenda/chim-david-seymour-legendary-photojournalist' },
+      { num: 14, name: "A Second Look: Chim's Children of War. TIME", url: 'https://time.com/3796013/a-second-look-chims-children-of-war/' },
+      { num: 15, name: 'David Seymour (Chim) — Biography. Culture.pl', url: 'https://culture.pl/en/artist/david-seymour-chim' },
+    ],
+    links: [
+      { label: 'Magnum Photos — David Seymour', url: 'https://www.magnumphotos.com/photographer/david-seymour/' },
+      { label: 'David Seymour Archive', url: 'https://davidseymour.com/' },
+      { label: 'ICP — CHIM selections', url: 'https://www.icp.org/browse/archive/collections/david-seymour-chim-selections' },
+    ],
+    works: [
+      { titleJa: '子どもたち、スペイン', titleEn: 'Children, Spain', labelJa: 'スペイン内戦の子ども記録（マグナム）', labelEn: 'Children during Spanish Civil War (Magnum)', url: 'https://www.magnumphotos.com/newsroom/society/david-seymour-children-of-europe/', aliases: [] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
+
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  overrides['jp-長谷川伝次郎'] = {
+    leadJa: `満洲、ヒマラヤ、インドを撮影地とする旅行・探検写真集を相次いで刊行し、1930〜40年代日本の外地表象と出版写真文化の交点に位置した写真家。戦後は国内の仏像・古寺写真へと活動を転じ、旅行写真から文化財写真にまたがる幅広い仕事を残した。`,
+    leadEn: `A photographer who produced travel and expedition photobooks across Manchuria, the Himalayas, and India, positioning himself at the intersection of colonial visual culture and publishing photography in 1930s–40s Japan. After the war he turned to temple and Buddhist sculpture photography within Japan.`,
+    textJa: `経歴
+
+長谷川伝次郎は1894年生まれ。1920年代から30年代にかけて旅行・探検を主題とした写真活動を展開し、満洲（中国東北部）、ヒマラヤ、インドをおもなフィールドとした*1。Art Platform Japanに収録されたプロフィールは、長谷川を旅行写真・外地写真の文脈に位置づける記録として機能しており、その活動範囲の広さを示している。満洲については写真集『満洲幻想』（昭和館デジタルアーカイブ所蔵）と旅行記的構成を持つ『満洲紀行』を刊行し、旅行写真と商業出版を結びつける仕事を行った*2。国立国会図書館サーチが収録する『満洲幻想』の書誌は、この写真集が「伝説の写真家 長谷川伝次郎」という副題を持ち、現地の風景・人物・都市を網羅する構成を取っていたことを示している*3。東京都写真美術館は長谷川の写真を収蔵しており、1930〜40年代の日本における外地・旅行写真の文脈を示す資料として位置づけている*4。
+
+長谷川はヒマラヤへの探検旅行にも参加し、その記録を写真集・紀行文として出版した。昭和館デジタルアーカイブが所蔵する『ヒマラヤの旅』（限定本・図版・地図付き）は、探検旅行写真の代表的な出版物として書誌が確認できる*5。Kotobankの人名辞典は、ヒマラヤのほかにインド仏跡の撮影にも取り組んだことを伝えており、旅行写真の範囲が宗教遺跡へも及んでいたことを示している*6。CiNiiが収録する仏像写真集『蘇る大和の仏像』は、長谷川が戦後に日本国内の古寺・仏像写真へ活動を展開した事実を示す書誌資料である*7。1976年没。
+
+表現解説
+
+旅行写真と出版メディアの関係
+
+長谷川伝次郎の仕事を単純に「旅行写真家」として閉じてしまうと、彼が担った役割の特殊性が見えにくい。1930年代日本において、旅行写真は個人の趣味にとどまらず、雑誌・写真集・講演・展覧会など複数のメディアを経由して受容される視覚文化の一形態となっていた。JCIIカメラ博物館が「写された外地」という文脈で1930〜40年代の外地写真を整理しているように、長谷川の満洲・ヒマラヤ写真は同時代の外地表象の流通経路と重なり合う位置にある*8。国立国会図書館サーチに書誌が収録される『満洲幻想』は、旅行写真が商業出版として流通する際に帯びる意味——観光的想像力、地理的好奇心、植民地的視線——を示す出版物として参照できる*3。写真集という形式は、連続する写真、キャプション、地図、随想を組み合わせることで、単一の写真プリントとは異なる読者経験を生み出しており、長谷川の仕事はその形式の特性を活かした出版物として位置づけられる。
+
+満洲という表象空間
+
+長谷川が活動した1930年代の満洲は、日本の「満洲国」建設後の政治的空間であり、写真や旅行記が担う視覚言語には帝国日本の外地イメージが混入する。昭和館デジタルアーカイブが所蔵する『満洲幻想』の「伝説の写真家」という副題からもわかるように、長谷川の満洲写真は同時代においても特異な存在として受け止められていたことが示唆される*2。長谷川の仕事は帝国日本の版図拡大と観光産業の発展が重なる時代に生まれたものであり、そこに収められた風景・人物・都市のイメージは、近代日本が外地をどのように見、どのように流通させたかを考えるうえで参照できる資料性を持つ。旅行写真集という形式は、一見中立的な紀行文の構造をとりながらも、どこへ行き何を見るかという選択そのものが歴史的文脈を帯びている。
+
+探検写真とヒマラヤ
+
+長谷川は満洲だけでなくヒマラヤへの探検旅行にも参加し、その記録を出版した。探検写真は一般の旅行写真とは異なり、未知・未踏という空間的想像力を視覚化する装置としての性格が強く、出版に際してはその「発見」的な語りが写真の意味を大きく規定した。昭和館が所蔵する『ヒマラヤの旅』の書誌情報は、限定本という出版形式が写真と地図・図版を組み合わせた探検記録として成立していたことを示している*5。長谷川は仏跡写真の仕事にも取り組んでおり、ヒマラヤからインドの宗教遺跡へと撮影範囲を広げていたことは、旅行写真が観光だけでなく宗教・文化研究的な関心とも接続していたことを示している*6。このような探検・聖地写真の出版は、1930〜40年代日本における写真と地理的・宗教的想像力の関係を示す事例として位置づけられる。
+
+仏像写真と戦後活動
+
+長谷川は戦後、外地探検を離れて日本国内の古寺・仏像の撮影に注力した。CiNiiが収録する『蘇る大和の仏像』は、奈良をはじめとする寺院の仏像写真を収めた写真集であり、戦前の外地探検写真と戦後の国内文化財写真という二段構えの活動が見えてくる*7。東京都写真美術館に収蔵される作品《運河》は、長谷川の写真が美術館のコレクションとして正式に位置づけられていることを示す記録として参照できる*4。Art Platform Japanの資料は、長谷川が写真家として日本写真史上に残る業績を残した人物として評価されていることを示しており、外地写真・探検写真・文化財写真の三領域にわたる活動の広がりが確認できる*1。
+
+批評と受容
+
+長谷川伝次郎の名は、戦後の写真史において主流の表現写真や報道写真の文脈では取り上げられることが少ない。しかし近年、1930〜40年代の日本における外地表象・旅行メディア・出版写真の研究が進む中で、長谷川の仕事は帝国日本の視覚文化を示す資料として注目されている*8。JCIIカメラ博物館が整理した外地写真の文脈は、長谷川の仕事が土門拳、金丸重嶺、那須誠志ら同時代の写真家とは異なる経路——旅行出版・探検記・外地写真集——を通じて写真文化に関わっていたことを示している。東京都写真美術館のコレクションに収蔵された作品は、外地・探検という文脈で制作された同時代の写真として位置づけられており、日本近代写真史における旅行・外地写真の系譜を整理するうえで参照できる存在として残っている*4。長谷川の活動が1894年生まれという世代に属することは重要である。この世代の写真家は、大正期の写真愛好文化と昭和初期の出版産業の拡大を下地として成長し、外地への渡航が制度的に可能になった時期に旅行・探検という形で活動を展開した。外地写真と探検写真が商業出版として流通した1930年代の状況は、写真が「芸術か記録か」という二項対立だけでは捉えきれない多様な使われ方をしていた時代の断面を示している。長谷川が戦後に仏像写真へと活動を転じたことは、外地という空間が喪失した後に写真家がいかに被写体を再設定したかという問いを示す一事例として読める。Art Platform Japanに収録されるような記録が整備されていることは、従来の写真史では周縁に置かれがちだった旅行・外地写真の系譜が、より広い視野で写真史を再構築する動きの中で再発見されつつあることを示している。東洋文庫近代中国研究委員会が収集した資料に含まれる『満洲紀行』の蔵書記録は、長谷川の出版物が中国・東アジア研究の文脈でも資料として保存されていることを示しており、その仕事が帝国日本の外地表象として学術的に参照されていることを示している。長谷川のような写真家を取り上げることは、写真史が「誰を記録し、どの写真が残され、どのように参照されるか」という問いを内包していることを改めて示している。`,
+    textEn: `Biography
+
+Denjiro Hasegawa was born in 1894 and developed a photographic practice centered on travel and expedition through the 1920s–40s, working primarily in Manchuria, the Himalayas, and India*1. For Manchuria he published the photobook Manshū Gensō (Manchurian Phantom, held in the Shōwakan Digital Archive) and the travel-narrative Manshū Kikō, linking travel photography to commercial publishing*2. The NDL bibliographic record for Manshū Gensō shows the book carried the subtitle "Legendary Photographer Denjiro Hasegawa" and encompassed landscapes, people, and cities*3. The Tokyo Metropolitan Museum of Photography holds works by Hasegawa as part of its collection of colonial and travel photography from the 1930s–40s*4.
+
+Hasegawa also participated in Himalayan expeditions, publishing those records as photobooks and travel narratives. The Shōwakan Digital Archive holds Himalaya no Tabi (limited edition, with plates, maps)*5. The Kotobank biographical dictionary records that he also photographed Buddhist sites in India, extending his range into religious heritage*6. The CiNii bibliographic record for the postwar sculptural photobook Yomigaeru Yamato no Butsuzō shows his turn toward domestic temple and Buddhist sculpture photography after the war*7. Died 1976.
+
+Expression / method
+
+Travel photography and publishing media
+Reducing Hasegawa to "travel photographer" obscures the specificity of his role. In 1930s Japan, travel photography was not simply a personal pursuit but a form of visual culture received through magazines, photobooks, lectures, and exhibitions. As JCII Camera Museum's framing of 1930s–40s "outer territories" photography demonstrates, Hasegawa's Manchurian and Himalayan work overlaps with the circulation routes of colonial visual representation in his era*8. The NDL-catalogued Manshū Gensō can be read as a publication that, in entering commercial distribution, took on meanings associated with touristic imagination, geographic curiosity, and colonial gaze*3.
+
+Manchuria as representational space
+The Manchuria in which Hasegawa worked in the 1930s was a politically charged space following the establishment of "Manchukuo," and the visual language of photographs and travel writing carried imperial Japanese imagery of foreign territories. The subtitle "Legendary Photographer" on Shōwakan's copy of Manshū Gensō suggests the work was already received as exceptional by contemporaries*2. Hasegawa's photobooks were produced at the intersection of imperial expansion and the growth of the tourism industry, and the landscape, human, and urban images they contain remain as material for considering how modern Japan saw and circulated images of foreign territories.
+
+Expedition photography and the Himalayas
+Beyond Manchuria, Hasegawa joined Himalayan expeditions and published the records. Expedition photography differs from general travel photography in its stronger character as an apparatus visualizing the spatial imagination of the unknown; the "discovery" narrative strongly shaped the meaning of images in publication. The Shōwakan's bibliographic record for Himalaya no Tabi shows the limited-edition format combined photographs with maps and plates as exploration documentation*5. His extension into Indian Buddhist sites shows travel photography connecting to religious-cultural inquiry as well as tourism*6.
+
+Criticism and reception
+
+Hasegawa's name appears infrequently in postwar photographic histories dominated by expressive or documentary photography. Yet as research into colonial visual representation and travel publishing in 1930s–40s Japan has advanced, his work has attracted renewed attention as material for imperial Japanese visual culture*8. The Tokyo Metropolitan Museum of Photography's collection situates his works among those produced in colonial and expedition contexts, making them a reference point for tracing the lineage of travel and colonial photography in modern Japanese photographic history*4.`,
+    citations: [
+      { num: 1, name: '長谷川伝次郎. Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A3928' },
+      { num: 2, name: '満洲幻想. 昭和館デジタルアーカイブ', url: 'https://search.showakan.go.jp/search/book/detail.php?material_cord=000045181' },
+      { num: 3, name: '満洲幻想 伝説の写真家長谷川伝次郎. 国立国会図書館サーチ', url: 'https://ndlsearch.ndl.go.jp/books/R100000002-I000001937870' },
+      { num: 4, name: '長谷川伝次郎《運河》. 東京都写真美術館収蔵品検索', url: 'https://collection.topmuseum.jp/Publish/detailPage/19228/' },
+      { num: 5, name: 'ヒマラヤの旅. 昭和館デジタルアーカイブ', url: 'https://search.showakan.go.jp/search/book/detail.php?material_cord=080002082' },
+      { num: 6, name: '長谷川伝次郎. Kotobank / 講談社デジタル版 日本人名大辞典', url: 'https://kotobank.jp/word/%E9%95%B7%E8%B0%B7%E5%B7%9D%E4%BC%9D%E6%AC%A1%E9%83%8E-1101089' },
+      { num: 7, name: '蘇る大和の仏像. CiNii Books', url: 'https://ci.nii.ac.jp/ncid/BN03771931' },
+      { num: 8, name: '写された外地. JCIIカメラ博物館', url: 'https://www.jcii-cameramuseum.jp/club25/2023/10/11/34172/' },
+    ],
+    links: [
+      { label: 'Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A3928' },
+      { label: '東京都写真美術館 収蔵品', url: 'https://collection.topmuseum.jp/Publish/detailPage/19228/' },
+    ],
+    works: [
+      { titleJa: '運河', titleEn: 'Canal', labelJa: '東京都写真美術館所蔵', labelEn: 'Tokyo Metropolitan Museum of Photography', url: 'https://collection.topmuseum.jp/Publish/detailPage/19228/', aliases: [] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
+
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  overrides['lange'] = {
+    leadJa: `Farm Security Administrationの写真部門で農業移住民の困窮を記録し、《移住者の母》で大恐慌の視覚的象徴を作った。日系人強制収容の記録では、国家委嘱写真でありながら国家の暴力を露呈させるという二重性を持つ仕事を残し、社会ドキュメンタリー写真の倫理的問いを体現した。`,
+    leadEn: `Lange documented the destitution of migrant farmworkers for the FSA, creating the visual symbol of the Depression in Migrant Mother. Her record of Japanese American incarceration — commissioned by the state yet exposing state violence — embodies the ethical tensions at the heart of social documentary photography.`,
+    textJa: `経歴
+
+ドロシア・ラングは、独学で写真を学んだのちサンフランシスコに移り住み、ポートレート・スタジオを開業した。1930年代初頭、大恐慌が西海岸にも波及すると、スタジオの外に集まる失業者や路上生活者に目を向け始め、ドキュメンタリー写真への転換を果たした*1。Museum of Contemporary Photographyが論じているように、ラングのドキュメンタリーへの移行は、商業的ポートレートの世界から社会的な「見ること」へと向かう転換として写真史に位置づけられている。1935年、Farm Security Administration（FSA）の写真部門に採用されたラングは、カリフォルニア州を中心に大恐慌下のテナントファーマー（小作農）、季節労働者、移動農民の生活を記録する現場に赴いた。翌1936年、エンドウ豆農場の収穫キャンプで撮影した《Migrant Mother》（《移住者の母》）は、FSAのプレスリリースを通じて新聞に配信され、大恐慌の苦境を凝縮する単一のアイコンとして全米に広まった*2。
+
+第二次世界大戦期、ラングは戦時移送局（WRA）の委嘱を受けて日系アメリカ人の強制収容を記録したが、その写真の多くは政府によって機密指定・封印され、公開されたのは戦後になってからだった*3。MoMAはラングの回顧展を複数回開催し、彼女の仕事をアメリカ社会ドキュメンタリーの中心に位置づけた*4。Oakland Museum of Californiaが整備したDorothea Lange Digital Archiveは、彼女の写真、書簡、フィールドノート、口述記録を公開しており、研究者にとっての一次資料として機能している*5。1965年没。
+
+表現解説
+
+FSAという制度とドキュメンタリーの生産
+
+ラングのFSA期の写真を理解するには、FSAがいかなる制度だったかを理解することが重要である。FSA写真部門では、ロイ・ストライカーが「撮影台本（shooting script）」を用いて被写体と構図の方向を指示し、ワシントンで選別・キャプション・流通の管理を行った。ラングを含む写真家たちは、農村の「実態」を可視化することで議会や市民の政治的支持を獲得するための視覚資料を生産する立場にあった*6。Library of Congressのミグラント・マザー研究ガイドが示すように、《Migrant Mother》は一枚のアイコンとして消費されやすいが、同じ場面には複数のカットが存在し、選択・編集・キャプション・公開の過程そのものが写真の意味を作る制度的産物として見る必要がある。このような制度の内部で写真が意味を帯びる構造は、MoMAのカタログPDFが「写真と言葉（Words and Pictures）」という観点から論じており、キャプションと本文の組み合わせがいかに写真の意味を構成したかを示している*7。
+
+《Migrant Mother》の成立と被写体倫理
+
+1936年2月、カリフォルニア州ニポモのエンドウ豆農場でフローレンス・トンプソンとその子どもたちを撮影したこの写真は、大恐慌下のカリフォルニア農業移住者への支援を政府に求める世論形成に寄与したとされる。Smithsonianが所蔵する《Migrant Mother》のアーカイブ資料は、この写真が農業行政の文書として入手・保存された経緯を示している*8。Oakland Museum of Californiaのドロシア・ラング・デジタル・アーカイブは、写真の成立、被写体であるトンプソン本人の後年の受け止め方、写真のアイコン化のプロセスを詳細に追えるデジタル資料として整備されており、被写体が「撮られた側」としていかにこの写真の流通を経験したかを補完的に示している*9。JSTOR Dailyに掲載された《Migrant Mother》成立に関する論考は、この写真が単一の「偶然の出会い」から生まれたのではなく、複数の撮影行為と選択の結果であることを示している*10。Smarthistoryによる詳細な図像解析は、被写体の姿勢・視線・子どもの配置という構図的選択がいかにアイコン的な力を生み出したかを論じており、ドキュメンタリー写真における「構成」の問題として《Migrant Mother》を読む視点を提供している*11。
+
+日系人強制収容の記録と封印
+
+1942年、大統領行政命令第9066号の発令により、西海岸の日系アメリカ人が強制的に収容所に移送された。ラングはWRAの委嘱を受けてこの収容のプロセスを記録したが、撮影した写真の多くは「士気を損なう恐れがある」として軍によって没収・機密指定され、一般には公開されなかった。National Archivesは、この封印の経緯と75周年の記録公開について詳細な資料を公開しており、ラングの写真が国家委嘱でありながら同時に国家の行為を記録するという二重の位置にあったことを示している*12。Densho Encyclopediaは日系アメリカ人の視点からこの収容記録を読み解く研究資料を提供しており、ラングの写真が後年に国家批判の視覚資料として再発見される過程を補足している*13。ICPが所蔵する行政命令9066号関連資料は、この時代の写真が持つ制度的性格と証言的性格の両立を論じる際の参照点となっている*14。FDRライブラリー（国立公文書館）は戦時期の日系人収容に関する写真記録と政策文書をブログ資料として公開しており、写真と政策決定の関係を示す補助資料となっている*15。
+
+写真と言葉——フィールドノートとキャプション
+
+ラングの仕事において重要なのは写真単体の力だけではなく、フィールドノート、キャプション草稿、配置の選択がいかに写真の意味を形成したかである。MoMAの「Words and Pictures」展（2020年）は、ラングがフィールドで書き残したキャプション草稿と最終的に流通したキャプションを対比させ、言語と画像の相互規定の過程を示した*7。Archives of American Art（スミソニアン）が収録するラングの1964年のオーラルヒストリーは、彼女の制作方法、FSAでの経験、写真が担う社会的責任についての本人の言葉を伝える重要な一次資料である*16。Online Archive of Californiaが管理するDorothea Lange Collection（1919〜1965年）のファインディングエイドは、写真・書簡・出版物を含む全アーカイブの範囲と内容を整理した研究基礎資料として公開されている*17。Amon Carter Museum of American Artはラングの作品を収蔵し、大恐慌期の社会記録写真のコレクションの一部として位置づけている*18。
+
+批評と受容
+
+ラングはアメリカ社会ドキュメンタリーの代名詞として強く正典化されているが、近年の研究は《Migrant Mother》の神話化と、それが隠蔽するものに批判的な目を向けている。フローレンス・トンプソン本人が「撮られた側」として写真の無断流通に不快感を示していたことは、Oakland Museum of Californiaのアーカイブが明らかにした事実として、被写体倫理の議論の中心的な事例となっている*9。同時に、日系人収容所写真の封印と再発見は、国家委嘱写真が後世に国家批判の資料へ転化する可能性を示す事例として、写真史・アーカイブ研究の双方から参照されている*12。SFMOMAが管理するラングの作家情報は、彼女の仕事が西海岸の美術館・文化機関の文脈でどのように位置づけられているかを示している*19。Getty Museumの「About Life: The Photographs of Dorothea Lange」展は、ラングの全仕事を俯瞰して制度ドキュメンタリーと倫理的証言の両面を論じた展覧会として評価されており、ラングを単純な「人道主義的写真家」に閉じない多層的な読み直しを示している*20。MoMAが所蔵する児童写真教材PDFは、ラングの写真が美術教育の文脈においても参照されてきたことを示しており、社会記録写真が美術教育に組み込まれる過程の事例として機能している*21。`,
+    textEn: `Biography
+
+Dorothea Lange learned photography largely on her own, then moved to San Francisco and opened a portrait studio. When the Great Depression reached the West Coast in the early 1930s, she turned her attention to the unemployed and homeless gathering outside her studio, making a shift toward documentary photography*1. As the Museum of Contemporary Photography has argued, this transition — from commercial portraiture to social observation — is a defining movement in her place in photographic history. Hired by the Farm Security Administration's photographic unit in 1935, she traveled to document the lives of tenant farmers, seasonal workers, and migrant farmworkers across California. In February 1936, her photograph of Florence Thompson and her children at a pea-pickers' camp — distributed through FSA press releases — spread across the country as a single icon condensing the Depression's hardship*2.
+
+During World War II Lange accepted a commission from the War Relocation Authority to record the forced incarceration of Japanese Americans, but most of those photographs were confiscated and classified by the military as potentially damaging to morale, not made public until after the war*3. MoMA organized multiple retrospectives of her work, placing it at the center of American social documentary*4. Oakland Museum of California's Dorothea Lange Digital Archive, now publicly accessible, provides photographs, correspondence, field notes, and oral history as primary research material*5. Died 1965.
+
+Expression / method
+
+The FSA as institution: producing documentary
+Understanding Lange's FSA-period photographs requires understanding the FSA's institutional character. In the photographic unit, Roy Stryker used "shooting scripts" to direct photographers toward particular subjects and compositions; selection, captioning, and distribution were managed centrally in Washington. Lange and her colleagues produced visual material whose purpose was to generate political support for New Deal policy among legislators and the public*6. As the Library of Congress's Migrant Mother research guide demonstrates, Migrant Mother is easily consumed as a single icon, but the same scene exists in multiple takes, and the process of selection, editing, captioning, and release must be seen as constitutive of its meaning. MoMA's catalogue PDF, and later the "Words and Pictures" exhibition, addresses how the combination of captions and images shaped photographic meaning*7.
+
+The making of Migrant Mother and subject ethics
+Lange's photograph of Florence Thompson at the Nipomo pea-pickers' camp became a visual symbol of Depression-era hardship and is said to have contributed to calls for relief. The Smithsonian's archival record of Migrant Mother shows how the photograph entered and was preserved in agricultural administrative documentation*8. Oakland Museum of California's Dorothea Lange Digital Archive provides detailed material tracing the photograph's creation, Thompson's later account of having been photographed, and the process of its iconization — showing how the subject experienced the circulation of an image she had not consented to*9. A JSTOR Daily analysis of the photograph's making demonstrates that it emerged not from a single chance encounter but from multiple exposures and acts of selection*10. Smarthistory's close visual analysis argues that the compositional choices — posture, gaze, positioning of the children — generated the image's iconic force, framing Migrant Mother as a problem in "composition" within documentary photography*11.
+
+The Japanese American incarceration record and its suppression
+Following Executive Order 9066 in 1942, Japanese Americans on the West Coast were forcibly relocated to incarceration camps. Lange was commissioned by the WRA to document this process, but most of the resulting photographs were confiscated and classified by the military as potentially damaging to morale. The National Archives has published detailed material on how this suppression occurred and on the 75th-anniversary declassification, showing that Lange's photographs occupied a dual position: commissioned by the state yet recording an act of state violence*12. Densho Encyclopedia offers research material for reading the incarceration record from the Japanese American perspective, supplementing the account of how Lange's photographs were rediscovered as documentation for state critique*13. ICP's holdings related to Executive Order 9066 provide a reference point for discussing the coexistence of institutional and testimonial character in this photography*14.
+
+Photography and words: field notes and captions
+What mattered in Lange's work was not photographic images alone but also field notes, caption drafts, and curatorial choices — the ways language and image mutually defined each other. MoMA's "Words and Pictures" exhibition (2020) juxtaposed Lange's field caption drafts with the captions that finally circulated, showing the mutual determination of language and image*7. The oral history interview with Dorothea Lange (1964) held by the Archives of American Art is an essential primary source conveying her account of her working methods, FSA experience, and views on photography's social responsibilities*16. The finding aid for the Dorothea Lange Collection (1919–1965) at the Online Archive of California provides a comprehensive inventory of the full archive — photographs, correspondence, and publications — as a research foundation*17.
+
+Criticism and reception
+
+Lange has been strongly canonized as the embodiment of American social documentary, but recent scholarship focuses critical attention on the mythologizing of Migrant Mother and what that mythologizing conceals. Florence Thompson's discomfort at the unauthorized circulation of the image — a fact the Oakland Museum of California's archive brought to light — has become a central case in debates over photographic subject ethics*9. At the same time, the suppression and rediscovery of the Japanese American incarceration photographs is cited both in photographic history and archival studies as a demonstration of how state-commissioned photography can become material for state critique in later generations*12. SFMOMA's artist page situates Lange's work within the West Coast institutional context*19. Getty Museum's "About Life: The Photographs of Dorothea Lange" exhibition assessed her full body of work, addressing both the institutional-documentary and ethical-witnessing dimensions — exemplifying a multi-layered rereading that refuses to contain Lange within a simple "humanitarian photographer" frame*20.`,
+    citations: [
+      { num: 1, name: 'Dorothea Lange and the Documentary Tradition. Museum of Contemporary Photography', url: 'https://www.mocp.org/collection/mpp/lange_dorothea.php' },
+      { num: 2, name: 'Migrant Mother Research Guide. Library of Congress', url: 'https://guides.loc.gov/migrant-mother' },
+      { num: 3, name: 'Correcting the Record on Dorothea Lange\'s Japanese Internment Photos. National Archives', url: 'https://www.archives.gov/news/75th-anniversary-japanese-internment-news-article' },
+      { num: 4, name: 'Dorothea Lange artist page. MoMA', url: 'https://www.moma.org/artists/3373' },
+      { num: 5, name: 'Dorothea Lange Digital Archive. Oakland Museum of California', url: 'https://museumca.org/learn-resources/dorothea-lange-digital-archive/' },
+      { num: 6, name: 'Farm Security Administration — Background and Scope. Library of Congress', url: 'https://www.loc.gov/pictures/collection/fsa/background.html' },
+      { num: 7, name: 'Dorothea Lange: Words and Pictures. MoMA', url: 'https://www.moma.org/calendar/exhibitions/5079' },
+      { num: 8, name: 'Migrant Mother. Smithsonian National Museum of American History', url: 'https://www.si.edu/object/migrant-mother-dorothea-lange%3Anmah_1313354' },
+      { num: 9, name: 'Migrant Mother: Birth of An Icon. Oakland Museum of California', url: 'https://dorothealange.museumca.org/section/migrant-mother-birth-of-an-icon/' },
+      { num: 10, name: 'Dorothea Lange and the Making of Migrant Mother. JSTOR Daily', url: 'https://daily.jstor.org/dorothea-lange-and-the-making-of-migrant-mother/' },
+      { num: 11, name: 'Dorothea Lange, Migrant Mother. Smarthistory', url: 'https://smarthistory.org/lange-migrant-mother/' },
+      { num: 12, name: 'Correcting the Record on Dorothea Lange\'s Japanese Internment Photos. National Archives', url: 'https://www.archives.gov/news/75th-anniversary-japanese-internment-news-article' },
+      { num: 13, name: 'Dorothea Lange. Densho Encyclopedia', url: 'https://encyclopedia.densho.org/Dorothea%20Lange/' },
+      { num: 14, name: 'Executive Order 9066. International Center of Photography', url: 'https://www.icp.org/content/executive-order-9066' },
+      { num: 15, name: 'Images of Internment. FDR Library / National Archives', url: 'https://fdr.blogs.archives.gov/2017/02/17/images-of-internment/' },
+      { num: 16, name: 'Oral history interview with Dorothea Lange, 1964. Archives of American Art', url: 'https://www.aaa.si.edu/collections/interviews/oral-history-interview-dorothea-lange-11757' },
+      { num: 17, name: 'Dorothea Lange Collection, 1919–1965. Online Archive of California', url: 'https://oac.cdlib.org/findaid/ark:/13030/ft3f59n5wt' },
+      { num: 18, name: 'Dorothea Lange. Amon Carter Museum of American Art', url: 'https://www.cartermuseum.org/artists/dorothea-lange' },
+      { num: 19, name: 'Dorothea Lange artist page. SFMOMA', url: 'https://www.sfmoma.org/artist/Dorothea_Lange/' },
+      { num: 20, name: 'About Life: The Photographs of Dorothea Lange. Getty Museum', url: 'https://www.getty.edu/art/exhibitions/lange/' },
+      { num: 21, name: "Dorothea Lange's Pictures of Children PDF. MoMA", url: 'https://www.moma.org/d/pdfs/W1siZiIsIjIwMjAvMDQvMTQvNzFmdXpvanZrNF9Eb3JvdGhlYV9MYW5nZV9zX1BpY3R1cmVzX29mX0NoaWxkcmVuX19BX1Jlc291cmNlX2Zvcl9UZWFjaGVyc19TdHVkZW50c19hbmRfRmFtaWxpZXNfLnBkZiJdXQ/Dorothea%20Lange%E2%80%99s%20Pictures%20of%20Children_%20A%20Resource%20for%20Teachers%2C%20Students%2C%20and%20Families%20.pdf?sha=e2b8a5211e4ae252' },
+    ],
+    links: [
+      { label: 'Dorothea Lange Digital Archive (OMCA)', url: 'https://museumca.org/learn-resources/dorothea-lange-digital-archive/' },
+      { label: 'Migrant Mother Research Guide — LOC', url: 'https://guides.loc.gov/migrant-mother' },
+      { label: 'MoMA — Dorothea Lange', url: 'https://www.moma.org/artists/3373' },
+    ],
+    works: [
+      { titleJa: '移住者の母', titleEn: 'Migrant Mother', labelJa: 'スミソニアン国立アメリカ歴史博物館', labelEn: 'Smithsonian National Museum of American History', url: 'https://www.si.edu/object/migrant-mother-dorothea-lange%3Anmah_1313354', aliases: ['Migrant Mother'] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
+
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  overrides['francois-kollar'] = {
+    leadJa: `スロバキア出身の移民写真家として、1930年代フランスの全産業を横断して記録した委嘱写真集『La France travaille』（全15巻）を残した。産業・労働・広告・ファッションが同一の視覚言語で接続される仕事は、委嘱写真という制度が国民的イメージをいかに形成するかを示す事例として読まれている。`,
+    leadEn: `A Slovak-born immigrant photographer, Kollar produced the fifteen-volume commissioned photobook La France travaille, documenting the full span of French industry in the 1930s. His work, in which industry, labor, advertising, and fashion converge in a single visual language, is read as a case study in how commissioned photography shapes national imagery.`,
+    textJa: `経歴
+
+フランソワ・コラーは1904年、スロバキア（当時ハンガリー王国領）に生まれ、1920年代にフランスへ渡った。パリで金属加工職人として働いたのち写真の仕事に転じ、1920年代末から広告・ファッション写真家として活動を始めた*1。コラーの名を写真史に定着させたのは、1931年から35年にかけてフランス政府系出版機関「Horizons de France」の委嘱で撮影・刊行した全15巻の写真集『La France travaille』（働くフランス）である。この仕事でコラーは、農業、漁業、製鉄、繊維、印刷、宝飾など主要産業を横断的に記録し、労働者の身体と機械と生産の現場を系統的に視覚化した*2。詩人ポール・ヴァレリーが序文を寄せたとされるこの写真集は、写真と知識人言説の接続という1930年代フランス文化の特徴を示す事例でもある。
+
+『La France travaille』刊行後もコラーはパリを拠点に活動を続け、広告写真やファッション写真を手がけながら産業写真の仕事も並行させた。パレ・ガリエラが所蔵するコラーのファッション写真関連資料は、産業写真とファッション写真が同一の写真家に共存していたことを示している*3。Jeu de Paumeが2021年に開催した「François Kollar: A Working Eye」展は、生涯にわたるアーカイブを整理した大規模な回顧展として、コラーの仕事を1930年代産業写真の重要な例として再評価した*4。1979年没。
+
+表現解説
+
+『La France travaille』という委嘱写真集プロジェクト
+
+コラーの仕事の中心は『La France travaille』全15巻という巨大な委嘱写真集プロジェクトである。フランスの産業・農業・職人仕事を網羅するこの仕事は、単なる産業記録ではなく、フランス国民経済を視覚的に統合しようとする出版プロジェクトとして機能した。Jeu de Paumeのドシエ・ドキュマンテール（資料冊子）は、全15巻の構成と撮影された産業セクター、そして出版の背景にある国民的イメージの構築という意図を詳細に論じており、コラーの仕事が委嘱写真として持つ政治的・文化的性格を明らかにしている*5。Aderオークションに記録されている全15巻の競売事例は、この写真集がその後コレクターや研究者に参照され続けていることを示す記録として機能している*6。Jeu de Paumeが別に公開した展示ドキュメントPDFも、同プロジェクトの内部構造と撮影過程を追うための参照資料として整備されている*7。
+
+労働者の身体と産業構図
+
+コラーが産業写真で採用した構図と光線の使い方は、ドイツのニュー・オブジェクティヴィティ（新即物主義）やアメリカのプレシジョニズムと接触しながら、フランス産業の「人間的な顔」を強調するという傾向を持っていた。Citécoが開催した「François Kollar, photographe du travail」展は、経済史・産業史の視点からコラーの写真を再配置しており、労働表象が経済的価値の可視化として機能した側面を論じている*8。Le Mondeが取り上げたコラーの仕事の特徴は、機械美や工場の幾何学よりも、労働者の手や表情、作業環境の具体性にあるという指摘であり、アルベール・レンジャー＝パッチュやシャールズ・シーラーが機械そのものに向けた視線との差異を示している*9。Paris Artのレビューが指摘する「視線の職人（un ouvrier du regard）」という側面は、写真家が職人・労働者のまなざしで産業を撮るという方法論上の特性を示しており、産業写真の内側から産業を問う視点として批評的関心を集めている*10。
+
+移民・植民地という隠れた文脈
+
+コラー自身がスロバキア出身の移民であり、『La France travaille』に含まれるモロッコ人炭鉱労働者の記録は、フランス産業が植民地・移民労働力と不可分であったことを視覚的に示している。移民・歴史博物館（Musée national de l'histoire de l'immigration）が取り上げた「François Kollar et le mineur marocain」という視点は、コラーの産業写真がフランス国民経済の均質なイメージを作ろうとする一方で、そこに植民地的労働の痕跡が刻み込まれているという批評的読みを提示している*11。この視点は『La France travaille』が単純な産業賛美の写真集ではなく、1930年代フランスの社会的・植民地的矛盾を記録した文書として読める可能性を示している。OpenEditionに収録された研究論文は、コラーの職人撮影のアーカイブを「作業場の中のカメラ」という観点から論じており、産業写真の被写体選定と配置がいかに演出的な要素を持ちながらも記録的な性格を維持しているかを分析している*12。
+
+広告写真・ファッション写真との往復
+
+コラーは産業写真と並行して、高級ファッション誌の撮影や商品広告の写真も手がけており、パリのパレ・ガリエラが所蔵するファッション写真関連資料はその仕事の一端を示している*3。産業と広告というジャンルの往復は、コラーが「記録写真家」だけではなく、商業メディアのニーズに応じた視覚言語を持つ写真家でもあったことを示す。Artforum関連のプレスリリースPDFは、Jeu de Paumeの展示が「A Working Eye」というタイトルのもとコラーの広告・産業・ファッションの全領域を横断した評価を示したことを伝えている*13。イゼール美術館が開催した「François Kollar: Nous à l'œuvre」展の図録PDFは、労働写真の再展示・再解釈という観点から、コラーの仕事の現代的な参照可能性を示している*14。
+
+批評と受容
+
+フランソワ・コラーは長らく写真史の主流——決定的瞬間、人道主義的報道、アヴァンギャルド実験——から外れた位置に置かれ、委嘱産業写真というジャンルとともに過小評価される傾向があった。しかしJeu de Paumeの「A Working Eye」展と「Un ouvrier du regard」展は、コラーの仕事を単なる記録写真の文脈に閉じず、1930年代フランスにおける写真と国民的イメージの生産という大きな問いとして再評価した*4。移民・植民地・労働という視点からの再読は、フランス写真史に埋め込まれた権力関係を問い直す近年の研究動向の中にコラーの仕事を位置づけ、産業写真をめぐる批評の射程を広げている*11。Jeu de Paumeのドシエが提示する文書解説は、委嘱写真が国家・出版・産業の三者の利害の交差点で生産されるという構造を示しており、コラーの仕事を個人の様式よりも制度の産物として読む視点を提供している*5。Jeu de Paumeの「Un ouvrier du regard」展のタイトルが示すとおり、コラーの評価は「見ることの職人性」という概念によって整理されており、これは写真家を芸術家としてではなく技術・労働・観察の担い手として位置づける批評的枠組みとして意義を持っている。この枠組みは、1930年代産業写真の評価が「芸術か記録か」という単純な二項対立を超えて、写真家の制度的役割・技術的選択・社会的文脈との関係として議論されるべきという近年の傾向と接続する。`,
+    textEn: `Biography
+
+François Kollar was born in 1904 in Slovakia (then part of the Kingdom of Hungary) and moved to France in the 1920s. After working in Paris as a metalworker he turned to photography, beginning to work as an advertising and fashion photographer in the late 1920s*1. What fixed his name in photographic history was La France travaille (Working France), a fifteen-volume commissioned photobook produced for the government-linked publisher Horizons de France between 1931 and 1935. For this project Kollar systematically documented agriculture, fishing, steel, textiles, printing, jewelry, and other major industries, visualizing workers' bodies, machines, and production environments across the full breadth of the French economy*2. The Palais Galliera holds fashion photographs related to Kollar's parallel commercial work*3. Jeu de Paume's 2021 retrospective François Kollar: A Working Eye surveyed his life's archive and reassessed his work as a significant example of 1930s industrial photography*4. Died 1979.
+
+Expression / method
+
+La France travaille as a commissioned photobook project
+The center of Kollar's work was the vast commissioned project of La France travaille, fifteen volumes covering French industry, agriculture, and craft. Rather than simple industrial documentation, the project functioned as a publishing enterprise seeking to visually integrate the French national economy. Jeu de Paume's dossier documentaire addresses the structure of all fifteen volumes, the industrial sectors covered, and the intent to construct national imagery behind the publication — making explicit the political and cultural character of Kollar's work as commissioned photography*5. The Ader auction record of a complete fifteen-volume set shows that the photobook continued to be referenced by collectors and researchers long after publication*6.
+
+Workers' bodies and industrial composition
+The compositional and lighting approaches Kollar adopted in his industrial photography touched on the German New Objectivity and American Precisionism while tending toward emphasizing the "human face" of French industry. Citéco's exhibition François Kollar, photographe du travail repositioned his photographs from the perspectives of economic and industrial history, arguing that his labor imagery functioned as a visualization of economic value*8. As Le Monde observed, what characterizes Kollar's work is not machine aesthetics or factory geometry but the concrete specificity of workers' hands, faces, and working environments — a distinction from the gaze Albert Renger-Patzsch or Charles Sheeler directed at machines themselves*9. Paris Art's description of his approach as that of "un ouvrier du regard" (a craftsman of the eye) identifies a methodological specificity: a photographer who, as a craftsman himself, looked at industry from within*10.
+
+The concealed context of immigration and colonialism
+Kollar himself was a Slovak immigrant, and the Moroccan miners' record within La France travaille visually shows that French industry was inseparable from colonial and immigrant labor. The Musée national de l'histoire de l'immigration's presentation of "François Kollar et le mineur marocain" offers a critical reading: that Kollar's industrial photography, while constructing a unified image of the French national economy, simultaneously inscribes traces of colonial labor — suggesting La France travaille can be read not as simple industrial celebration but as a document of France's social and colonial contradictions in the 1930s*11. An OpenEdition research article analyses Kollar's workshop archive through the lens of "the camera in the atelier," examining how the selection and arrangement of subjects maintained documentary character while involving elements of staging*12.
+
+Criticism and reception
+
+Kollar was long placed outside the main currents of photographic history — the decisive moment, humanist reportage, avant-garde experiment — and, along with the genre of commissioned industrial photography, tended to be undervalued. Jeu de Paume's A Working Eye and Un ouvrier du regard exhibitions, however, reassessed his work not as mere documentation but as a larger question about photography and the production of national imagery in 1930s France*4. The perspectives of immigration, colonialism, and labor have repositioned Kollar's work within recent critical research questioning the power relations embedded in French photographic history, broadening the scope of critique around industrial photography*11.`,
+    citations: [
+      { num: 1, name: 'François Kollar. Jeu de Paume', url: 'https://jeudepaume.org/en/evenement/francois-kollar-2/' },
+      { num: 2, name: 'La France travaille auction record. Ader', url: 'https://www.ader-paris.fr/en/lot/148886/24121904-kollar-francois-1904-1979-15-volumes-la-france-travaille' },
+      { num: 3, name: 'François Kollar. Palais Galliera', url: 'https://www.palaisgalliera.paris.fr/en/work/francois-kollar' },
+      { num: 4, name: 'François Kollar. A Working Eye. Jeu de Paume', url: 'https://jeudepaume.org/en/evenement/francois-kollar-a-working-eye/' },
+      { num: 5, name: 'François Kollar dossier documentaire PDF. Jeu de Paume', url: 'https://jeudepaume.org/wp-content/uploads/2021/04/DossierDocumentaire_FrancoisKollar.pdf' },
+      { num: 6, name: 'La France travaille auction record. Ader', url: 'https://www.ader-paris.fr/en/lot/148886/24121904-kollar-francois-1904-1979-15-volumes-la-france-travaille' },
+      { num: 7, name: 'François Kollar dossier PDF. Jeu de Paume', url: 'https://jeudepaume.org/wp-content/uploads/2021/09/DD-KOLLAR_web.pdf' },
+      { num: 8, name: 'François Kollar, photographe du travail. Citéco', url: 'https://www.citeco.fr/fran%C3%A7ois-kollar-photographe-du-travail' },
+      { num: 9, name: 'François Kollar and workers. Le Monde', url: 'https://www.lemonde.fr/en/m-le-mag/article/2026/01/26/francois-kollar-shines-a-light-on-parisian-workers-between-the-world-wars_6749800_117.html' },
+      { num: 10, name: 'Un ouvrier du regard. Paris Art', url: 'https://www.paris-art.com/un-ouvrier-du-regard-2/' },
+      { num: 11, name: 'François Kollar et le mineur marocain. Musée national de l\'histoire de l\'immigration', url: 'https://www.histoire-immigration.fr/francois-kollar-et-le-mineur-marocain-destins-croises' },
+      { num: 12, name: 'La chambre dans l\'atelier. OpenEdition Journals', url: 'https://journals.openedition.org/itti/2483' },
+      { num: 13, name: 'François Kollar A Working Eye PDF. Artforum Guide / Jeu de Paume', url: 'https://artguide.artforum.com/uploads/guide.003/id19089/press_release.pdf' },
+      { num: 14, name: 'François Kollar. Nous à l\'œuvre. Musée de l\'Ancien Évêché / Isère PDF', url: 'https://musees.isere.fr/sites/portail-musee-fr/files/2025-11/dp_francois_kollar._nous_a_loeuvre.pdf' },
+    ],
+    links: [
+      { label: 'Jeu de Paume — A Working Eye', url: 'https://jeudepaume.org/en/evenement/francois-kollar-a-working-eye/' },
+      { label: 'Dossier documentaire PDF', url: 'https://jeudepaume.org/wp-content/uploads/2021/04/DossierDocumentaire_FrancoisKollar.pdf' },
+    ],
+    works: [
+      { titleJa: 'La France travaille（労働するフランス）', titleEn: 'La France travaille', labelJa: 'Jeu de Paume 展覧会', labelEn: 'Jeu de Paume exhibition', url: 'https://jeudepaume.org/en/evenement/francois-kollar-a-working-eye/', aliases: [] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  overrides['george-rodger'] = {
+    leadJa: `第二次世界大戦のヨーロッパ戦線を撮り続け、ベルゲン・ベルゼン解放時の記録で写真史に衝撃を残した。その経験が「人間を撮る距離」への根本的な問い直しを迫り、戦後はアフリカへ向かってマグナム・フォトス創設の一員となった。`,
+    leadEn: `Rodger covered the European theater throughout World War II, leaving an indelible mark on photographic history with his images of the liberation of Bergen-Belsen. That experience forced a fundamental rethinking of how close to photograph human beings, leading him toward Africa and a founding role in Magnum Photos.`,
+    textJa: `経歴
+
+ジョージ・ロジャーは1908年、イングランド・チェシャーに生まれ、商船乗組員や農業労働者などを経たのち写真の仕事に就いた*1。第二次世界大戦が始まると、雑誌『LIFE』の特派員として戦場に赴き、北アフリカ戦線、エチオピア、ビルマ、インド、中東を撮影した。LIFE Photo Archivesに収録されたロジャーの写真は、彼が複数の戦域を横断して記録した幅広いフィールドワークを示している*2。1945年4月、ナチスの強制収容所ベルゲン・ベルゼンの解放に居合わせたロジャーは、そこで目撃した大量の遺体と生存者の惨状を記録した。George Rodger PhotographsのBiogrpahy資料が伝えるように、ロジャーはのちにこの撮影時に自分が構図を探していた事実に気づいて深く衝撃を受け、以後は戦場を撮ることを拒否するようになったという*3。
+
+1947年、ロジャーはロバート・キャパ、アンリ・カルティエ=ブレッソン、デヴィッド・シーモアとともにマグナム・フォトスを創設した*4。戦後の活動の軸となったのはアフリカへの長期取材であり、スーダン、ヌバ山地、サハラ砂漠の人々と文化を記録する仕事を重ねた。Magnum Photosが公開しているサハラ取材の資料は、戦争報道から地域的・文化的なドキュメンタリーへの方向転換を示している*5。1995年没。
+
+表現解説
+
+ベルゲン・ベルゼンの衝撃と「見ること」への問い
+
+ロジャーのキャリアにおける最も重要な転換点のひとつは、1945年4月のベルゲン・ベルゼン解放の記録である。United States Holocaust Memorial Museumのコレクションはロジャーが撮影したベルゼン写真を収蔵しており、この記録が戦後の強制収容所の視覚的証言として歴史的に参照されてきたことを示している*6。Bergen-Belsen Memorialのウェブサイトは、ロジャーが「自分が遺体を構図の要素として意識していることに気づいて嘔吐感を覚えた」と後年に語ったとされる発言を伝えており、この経験が写真家として「人間を見る距離」を根本から問い直す契機となったとされている*7。この出来事は、戦争報道において「見ること」と「記録すること」が写真家自身に何をもたらすかという問いを写真史に刻んだ事例として繰り返し引用されている。Photographers' GalleryのアーカイブPDFもロジャーのこの転換について記述しており、戦後の倫理的な方向転換の文脈として参照できる*8。
+
+アフリカへの転換と長期取材の方法
+
+ベルゼン以降、ロジャーは戦場を避け、アフリカの各地へ向かった。スーダンのヌバ山地やサハラ砂漠の人々を撮影した仕事は、単発の報道写真ではなく、長期にわたって特定の地域と人々を記録する方法として特徴づけられる。Magnum Photosが公開しているロジャーのサハラ取材資料は、この時期の仕事が、戦時の即時性とは異なる時間軸で進められたことを示している*5。ICPが収録するロジャーのプロフィールは、戦後アフリカ取材という方向性が彼の写真家としての自己定義を大きく変えた事実を示す資料として機能している*9。一方で、ロジャーのアフリカ写真には、西洋写真家によるアフリカ表象という植民地的視線の問題が批評的に指摘されており、人類学的な好奇心と人道主義的関心の境界について批評的に読む必要がある。
+
+マグナム・フォトスと制度的自律性
+
+ロジャーはマグナム・フォトスの創設者の一人として、写真家が著作権を持ち、発表条件を自ら制御できる協同組合的な制度の設計に関わった*4。LIFE誌という大手出版社の論理のもとで戦争を撮り続けた経験が、自律的な制度の必要性への確信を生んだとする解釈は、マグナムの制度史として繰り返し言及されている。Magnum Photosの歴史資料は、創設者それぞれの戦時経験がどのようにマグナムという組織の原則に結晶したかを論じており、ロジャーの役割は制度の倫理的基盤の一部として理解できる*10。George Rodger Photographsの公式サイトが提供する年表は、戦前から死去までのキャリアを系統的に追うための基礎資料として整備されている*11。
+
+LIFE誌と戦時報道の制度
+
+ロジャーが戦争中に活動したLIFE誌は、写真報道を大衆読者に届ける最大の媒体の一つであり、その編集判断が写真の意味と流通を大きく決定した。LIFE Photo Archivesに収録されたロジャーの写真は、LIFE誌という媒体がいかに戦場写真を選別・配置して意味を構成したかを追うための資料として機能する*2。複数の戦域を横断してLIFEのために撮影したロジャーの仕事は、個人の写真家の判断と雑誌の編集権力が交差する領域として、写真史の制度的側面を論じる際の参照点となっている。MoMAが所蔵するロジャーの作品情報は、彼の仕事が美術館コレクションとして位置づけられていることを示しており、報道写真と美術写真の境界線を考えるうえでの事例として参照できる*12。
+
+批評と受容
+
+ジョージ・ロジャーの評価は、長らくベルゼン記録と戦争報道写真の文脈で語られてきた。しかし近年の評価では、アフリカ長期取材が担った意味——植民地的視線という批判的問題を含む——と、マグナム創設者としての制度的役割が再評価されている。Internet Archiveにアクセスできるモノグラフ「Humanity and Inhumanity: the photographic journey of George Rodger」は、戦争記録とアフリカ取材を一連のキャリアとして読む主要な研究資料として位置づけられている*13。ICPのコンスティテュエントページは、ロジャーの仕事が報道写真と美術写真の双方から参照されてきたことを示す資料として機能している*9。ロジャーの仕事は、「証言とは何か」「写真家が暴力の現場に居合わせることの倫理とコスト」という問いを写真史に刻んだ事例として、戦争写真の倫理をめぐる現在の議論にも参照され続けている*7。ロジャーのアフリカ写真は、戦後のヒューマニズム写真の代表例として度々引用されるが、批評的読みにおいては、西洋の写真家がアフリカの人々を撮影する行為そのものに内在する権力関係の問題が指摘されている。George Rodger Photographsの公式アーカイブが提供する年表と作品群は、ベルゼン以前・以後というキャリアの分断点を可視化しており、「見ること」の倫理を写真家個人の経験から論じるための基礎的資料として整備されている*11。MoMAが所蔵するロジャーの作品は、報道写真家として出発した彼の仕事が美術館コレクションとして位置づけられていることを示している*12。Magnum Photosのロジャープロフィールは、彼の仕事が戦争報道とアフリカ取材という二つの軸で評価されていることを示しており、創設メンバーとして組織の歴史とともに参照され続ける写真家として整備されている*4。ロジャーのキャリアは、戦時報道・記録・民族写真・制度設計という複数の役割が交差する事例として、20世紀報道写真史の中で独自の位置を占めている。George Rodger Photographs公式サイトの年表は、ベルゼン以降の活動の全体像を把握するための基礎的な資料として整備されており、戦後の方向転換を追う研究者に参照されている*3。`,
+    textEn: `Biography
+
+George Rodger was born in 1908 in Cheshire, England, and came to photography after working as a merchant sailor and farm laborer*1. When World War II began he became a LIFE correspondent, covering the North African front, Ethiopia, Burma, India, and the Middle East. LIFE Photo Archives' holdings of Rodger's work demonstrate the breadth of his field coverage across multiple theaters of war*2. In April 1945, at the liberation of Bergen-Belsen, Rodger recorded the massed bodies and the condition of survivors. As the biography material at George Rodger Photographs recounts, Rodger later described being shocked to discover he had been looking for compositions among the bodies — an awareness that led him to refuse thereafter to photograph battlefields*3.
+
+In 1947 Rodger co-founded Magnum Photos with Robert Capa, Henri Cartier-Bresson, and David Seymour*4. The axis of his postwar work was long-form reportage in Africa, with extended projects recording the peoples and cultures of Sudan's Nuba Mountains, the Sahara, and other regions. Magnum Photos' documentation of his Sahara work shows the shift from wartime immediacy to a different temporal scale of practice*5. Died 1995.
+
+Expression / method
+
+Bergen-Belsen and the question of looking
+One of the most important turning points in Rodger's career was recording the liberation of Bergen-Belsen in April 1945. The United States Holocaust Memorial Museum holds Rodger's Belsen photographs as part of its collections, showing how this record has been referenced historically as visual testimony to the concentration camp*6. The Bergen-Belsen Memorial site recounts Rodger's reported statement that he felt nauseous when he realized he was using bodies as compositional elements — an experience said to have forced him to rethink, at a fundamental level, the distance at which human beings may be photographed*7. This episode is repeatedly cited in photographic history as a case in which "the act of seeing and recording" was shown to exact a cost from the photographer. The Photographers' Gallery archive PDF also addresses this transformation, providing a reference for the postwar ethical reorientation of his practice*8.
+
+The turn toward Africa and the method of long-form reportage
+After Belsen, Rodger avoided the battlefield and turned toward Africa. His photographs of the Nuba Mountains in Sudan and of Saharan peoples are characterized not as single-issue news reportage but as long-term documentation of specific regions and peoples. Magnum's Sahara materials demonstrate that this work was carried out on a time scale fundamentally different from wartime immediacy*5. ICP's profile of Rodger serves as evidence that the postwar African direction substantially redefined his self-understanding as a photographer*9. At the same time, Rodger's African photographs are critically subject to questions about the colonial gaze of Western photographers depicting Africa; the boundary between anthropological curiosity and humanitarian concern must be read critically.
+
+Magnum Photos and institutional autonomy
+As a Magnum co-founder, Rodger was involved in designing a cooperative structure in which photographers owned their copyrights and controlled the terms of their work's publication*4. The interpretation that his years photographing war under the logic of a major publisher — LIFE — generated a conviction about the need for an autonomous institution is repeatedly cited in histories of Magnum. Magnum's historical resources discuss how each founder's wartime experience crystallized into the organization's founding principles; Rodger's role can be understood as part of the institution's ethical foundation*10. The official George Rodger Photographs chronology provides a systematic record of his career from prewar years to his death as a foundational research resource*11.
+
+Criticism and reception
+
+George Rodger's critical standing has long been framed by the Belsen record and the context of war photography. More recently, however, reassessment has engaged both the meaning of his long-form African work — including the critical problem of the colonial gaze — and his institutional role as a Magnum founder. The monograph Humanity and Inhumanity: the photographic journey of George Rodger, bibliographically accessible through Internet Archive, is positioned as the primary research resource for reading his war documentation and African reportage as a continuous career*13. Rodger's work continues to be referenced in current debates about the ethics of war photography, as a case study in questions about what testimony means and what it costs a photographer to be present at scenes of violence*7.`,
+    citations: [
+      { num: 1, name: 'George Rodger archive. George Rodger Photographs', url: 'https://www.georgerodgerphotographs.com/' },
+      { num: 2, name: 'George Rodger Photo Archives. LIFE', url: 'https://www.life.com/tag/george-rodger/' },
+      { num: 3, name: 'Biography. George Rodger Photographs official site', url: 'https://www.georgerodgerphotographs.com/biography' },
+      { num: 4, name: 'George Rodger photographer profile. Magnum Photos', url: 'https://www.magnumphotos.com/photographer/george-rodger/' },
+      { num: 5, name: 'George Rodger: The Sahara. Magnum Photos', url: 'https://www.magnumphotos.com/arts-culture/travel/george-rodger-sahara/' },
+      { num: 6, name: 'George Rodger photographs. United States Holocaust Memorial Museum', url: 'https://collections.ushmm.org/search/catalog/irn737022' },
+      { num: 7, name: 'George Rodger – Photographer. Bergen-Belsen Memorial', url: 'https://www.belsen.co.uk/george-rodger-photographer/' },
+      { num: 8, name: 'George Rodger PDF. The Photographers Gallery Archive', url: 'https://archive.thephotographersgallery.org.uk/coo/user/assets/29/8680.pdf' },
+      { num: 9, name: 'George Rodger. International Center of Photography', url: 'https://www.icp.org/browse/archive/constituents/george-rodger' },
+      { num: 10, name: 'Magnum Photos history', url: 'https://www.magnumphotos.com/about-magnum/history/' },
+      { num: 11, name: 'Chronology. George Rodger Photographs', url: 'https://www.georgerodgerphotographs.com/chronology' },
+      { num: 12, name: 'George Rodger. MoMA', url: 'https://www.moma.org/artists/65538-george-rodger' },
+      { num: 13, name: 'Humanity and Inhumanity: the photographic journey of George Rodger. Internet Archive', url: 'https://archive.org/details/humanityinhumani0000rodg' },
+    ],
+    links: [
+      { label: 'George Rodger Photographs', url: 'https://www.georgerodgerphotographs.com/' },
+      { label: 'Magnum Photos — George Rodger', url: 'https://www.magnumphotos.com/photographer/george-rodger/' },
+    ],
+    works: [
+      { titleJa: 'ベルゲン・ベルゼン（USHMM収蔵）', titleEn: 'Bergen-Belsen photographs', labelJa: '米国ホロコースト記念博物館', labelEn: 'United States Holocaust Memorial Museum', url: 'https://collections.ushmm.org/search/catalog/irn737022', aliases: [] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
+
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  overrides['jp-鈴木八郎'] = {
+    leadJa: `写真家・編集者・写真史家の三役を担い、1930〜40年代の日本写真文化を支えたインフラ的人物。撮影技法書の執筆、雑誌編集、写真教育、外地写真展への関与を通じて、日本の写真文化の制度的基盤の一角を担った。`,
+    leadEn: `Photographer, editor, and photographic historian, Hachiro Suzuki was an infrastructural figure who supported Japanese photographic culture in the 1930s–40s through technical writing, magazine editing, photographic education, and involvement in colonial-territory photography exhibitions.`,
+    textJa: `経歴
+
+鈴木八郎は1900年に生まれ、写真家としての活動と並行して写真誌の編集、撮影技法書の執筆、写真教育など複数の役割を担い、日本写真文化の制度的基盤の一角を担った人物である。Art Platform Japanに収録されたプロフィールは、鈴木が写真家として日本写真史に残る業績を持つ人物として評価されていることを示している*1。JCIIカメラ博物館が整理した「写された外地」の文脈は、鈴木が1930〜40年代の外地写真の展覧会・出版に関与した事実を示しており、外地写真の制度的流通に携わった一人として位置づけられている*2。
+
+Japan Search / ToMuCoに収録された関係資料は、鈴木の仕事が東京都写真美術館に収蔵されており、同時代の写真文化の記録として評価されていることを示している*3。CiNiiが収録する鈴木八郎の写真集書誌は、写真集の出版という形でも作品が残されていることを確認できる*4。JCIIフォトサロンが開催した「鈴木八郎のまなざし——オリジナルプリント」展（2009年）は、鈴木が没後においても写真家として再評価されてきた事実を示している*5。国立国会図書館典拠データは「鈴木, 八郎, 1900-1985」として著者情報を管理しており、著作群の確認ができる*6。碧南市藤井達吉現代美術館のPDF資料は鈴木のコレクションに関する調査資料として機能している*7。1985年没。
+
+表現解説
+
+写真家・編集者・写真史家の三役
+
+鈴木八郎を位置づけるうえで重要なのは、彼が「代表作品」で知られる写真家というよりも、写真文化を支える複数の役割を担った人物だという点である。JCIIが公開している「写真人とその本 30 ／鈴木八郎」と題する資料PDFは、鈴木が撮影技法書の著者として、写真教育の担い手として、また写真史の整理者として機能したことを示す基礎資料として整備されている*8。撮影技法書は、写真知識を体系的に普及させるための媒体として、1930〜40年代の日本アマチュア写真文化の拡大を支えた。写真雑誌の編集という役割は、写真家個人の作品を受け取るだけでなく、写真という文化の言語を形成する立場であり、鈴木の仕事はこの意味でも評価できる。
+
+外地写真と視覚文化
+
+JCIIカメラ博物館が整理した外地写真の文脈において、鈴木八郎は外地表象の展覧会・出版に関与した人物として位置づけられている*2。1930〜40年代日本において、満洲、朝鮮、台湾などの外地を撮影した写真は、展覧会や出版を経て「外地イメージ」として流通し、帝国日本の地理的想像力を形成する視覚文化の一部を成した。鈴木が写真家・編集者として外地写真の流通に関わっていたとすれば、その仕事は個人の表現というよりも、この視覚文化の制度的生産の一角を担うものとして読める。外地写真の文脈での鈴木の位置は、土門拳や金丸重嶺とは異なるアプローチ——商業写真・技法書・教育という経路での写真文化への関与——として理解できる。
+
+東京都写真美術館と作品の継承
+
+Japan Search / ToMuCoが示す東京都写真美術館の収蔵品情報は、鈴木の仕事が公共コレクションとして保存・継承されていることを示している*3。東京都写真美術館収蔵品検索に収録された作品《草津道》は、国内風景・旅行写真という鈴木のもう一つの側面を示す公式作品レコードとして参照できる*9。撮影技法書・写真誌編集という仕事は文献として残るが、写真プリントとして美術館に収蔵されることで、鈴木の仕事は写真文化の資料としての継続的な参照可能性を持つことになる。
+
+日本写真文化のインフラとしての役割
+
+鈴木八郎の活動は、1930〜40年代の日本写真文化を支えた制度的インフラという観点から理解することが重要である。写真誌・撮影技法書・展覧会・教育という複数の経路を通じて写真文化に関わる仕事は、「写真史」の中で代表作家と並んで記録されにくいが、文化インフラとして不可欠な役割を果たす。日本写真協会の過去の受賞者一覧は、写真文化を支えた制度内での評価として確認できる資料であり、鈴木のような人物が写真界の制度的評価の中にどのように位置づけられたかを照らし合わせる資料として参照できる*10。日本写真家協会創立60周年記念関連PDFは、日本写真家ネットワークの制度的文脈を示す横断資料として、鈴木の活動の背景を補完している*11。
+
+批評と受容
+
+鈴木八郎は、土門拳や植田正治のように「代表作」で語られる写真家とは異なる位置に置かれてきた。しかし近年の日本写真史研究では、写真を支えた制度的人物——編集者、技法書著者、教育者——への関心が高まっており、鈴木の仕事はその文脈で再評価される可能性を持つ。JCIIフォトサロンが「鈴木八郎のまなざし——オリジナルプリント」展を開催したことは、写真家としての鈴木を制度的文脈から離れた個人の表現者として見直す試みとして位置づけられる*5。碧南市藤井達吉現代美術館のコレクション調査PDFは、地域の美術館が鈴木の写真を収蔵・調査している事実を示しており、都市の大型美術館だけでなく地方の文化機関においても継続的に参照されていることがわかる*7。Made in Wonderの書誌ノートが示す鈴木八郎写真集の流通記録は、写真集として残された仕事が写真市場・コレクターの文脈でも参照されていることを示している*12。日本写真史において、鈴木のような「制度的人物」が再評価されるようになった背景には、写真文化を「傑作・名写真家」の系譜としてではなく、出版・教育・機関・団体という構造から理解しようとする歴史記述の転換がある。鈴木が活動した1930〜50年代は、日本写真文化が戦争報道・商業写真・芸術写真・アマチュア写真という複数の方向に分岐しながら拡張した時期であり、その分岐を横断して写真文化を支えた編集者・教育者・写真史家の役割は改めて問い直されつつある。JCIIが「写真人とその本」という連載で鈴木を取り上げた事実は、写真技術書の著者としての仕事が専門的記録として残り続けていることを示しており、技法書という地味な形式が文化的インフラとして評価される傾向を示している*8。国立国会図書館典拠データが管理する著作者情報は、鈴木の著作群が継続的に参照可能な状態で維持されており、日本の写真文化史を研究する際の基礎的資料として機能していることを示している*6。Japan Searchが提供するクロスサーチは、鈴木の作品・著作が複数のデジタルアーカイブにまたがって参照可能な状態にあることを示しており、写真文化史の横断的調査のための検索基盤として整備されている。鈴木八郎という人物が日本写真協会・JCIIという写真文化の制度的中枢と接続して活動していた事実は、個人の表現力だけでなく制度的なネットワークの中で写真文化が育まれてきたことを示している。このような視点から鈴木の仕事を見ることで、日本写真史を「代表作家の系譜」としてではなく、多様な関係者が支えた文化インフラとして理解するための補助的事例を提供している。碧南市藤井達吉現代美術館という愛知県の地方美術館が鈴木の写真を調査・収蔵していることは、写真文化が首都だけでなく地方の文化機関にも根づいていることを示す一事例として意義を持つ。鈴木八郎の活動は、写真の撮影・編集・批評・保存というサイクルを個人のキャリアの中で体現した存在として、日本写真文化史の制度的側面から参照できる。`,
+    textEn: `Biography
+
+Hachiro Suzuki was born in 1900 and, alongside his work as a photographer, took on multiple roles — editor of photographic journals, author of technical photography manuals, and educator — making him an infrastructural figure in Japanese photographic culture. Art Platform Japan's profile identifies him as a photographer with recognized accomplishments in Japanese photographic history*1. JCII Camera Museum's framing of "outer territories photography" places Suzuki among those involved in exhibitions and publications of colonial-territory photographs in the 1930s–40s*2. Japan Search / ToMuCo records his work in the Tokyo Metropolitan Museum of Photography collection*3. CiNii confirms the existence of published photobooks*4. JCII Photo Salon's 2009 exhibition "Hachiro Suzuki no Manazashi — Original Prints" shows he was reassessed as a photographer posthumously*5. The NDL authority data records him as "Suzuki, Hachirō, 1900–1985"*6. Died 1985.
+
+Expression / method
+
+Photographer, editor, and photographic historian
+What is important in positioning Hachiro Suzuki is that he was less a photographer known for a canonical body of work and more a person who played multiple roles supporting photographic culture. JCII's "Photographer and Books No. 30: Hachiro Suzuki" PDF establishes him as an author of technical manuals, a supporter of photographic education, and an organizer of photographic history*8. Technical photography books served as a medium for systematically disseminating photographic knowledge — supporting the expansion of Japanese amateur photography culture in the 1930s–40s. The editorial role in photographic journals involves not merely receiving photographers' work but forming the language of photography as a cultural practice; Suzuki's work is significant in this sense too.
+
+Outer territories photography and visual culture
+Within JCII Camera Museum's framing of outer territories photography, Suzuki is positioned as a person involved in exhibitions and publications of colonial-territory imagery*2. In 1930s–40s Japan, photographs taken in Manchuria, Korea, Taiwan, and other territories circulated through exhibitions and publications as "colonial images," forming part of the visual culture constructing imperial Japan's geographical imagination. If Suzuki was involved in the circulation of colonial-territory photographs as photographer and editor, his work is readable not as individual expression but as part of the institutional production of that visual culture.
+
+Tokyo Metropolitan Museum and the continuity of the work
+The Tokyo Metropolitan Museum's holdings information via Japan Search / ToMuCo shows that Suzuki's work is preserved and maintained in a public collection*3. The collection record for the work Kusatsu Road provides an official record of one dimension of Suzuki's practice — domestic landscape and travel photography*9. Technical manuals and journal editing survive as documents; preservation as photographic prints in a museum gives Suzuki's work a continuing reference possibility as material for photographic culture.
+
+Criticism and reception
+
+Hachiro Suzuki has occupied a different position from photographers discussed in terms of "canonical works," such as Ken Domon or Shoji Ueda. In recent Japanese photographic history scholarship, however, interest in the institutional figures who supported photography — editors, technical manual authors, educators — has grown, and Suzuki's work has potential for reassessment in that context. JCII Photo Salon's "Hachiro Suzuki no Manazashi — Original Prints" exhibition can be read as an attempt to reconsider Suzuki as an individual expressive photographer apart from his institutional role*5. The Made in Wonder bibliographic note on Suzuki's photobook shows that his work preserved in photobook form continues to be referenced in photographic market and collector contexts*12.`,
+    citations: [
+      { num: 1, name: '鈴木八郎. Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A6538' },
+      { num: 2, name: '写された外地. JCIIカメラ博物館', url: 'https://www.jcii-cameramuseum.jp/club25/2023/10/11/34172/' },
+      { num: 3, name: '鈴木八郎関係資料. Japan Search / ToMuCo', url: 'https://jpsearch.go.jp/item/tokyomuseumcolection-topmuseumjbD30103361' },
+      { num: 4, name: '鈴木八郎写真集. CiNii Books', url: 'https://ci.nii.ac.jp/ncid/BN15154681' },
+      { num: 5, name: '鈴木八郎のまなざし——オリジナルプリント. JCIIフォトサロン', url: 'https://www.jcii-cameramuseum.jp/photosalon/2009/12/01/9123/' },
+      { num: 6, name: '鈴木, 八郎, 1900-1985. 国立国会図書館典拠データ', url: 'https://id.ndl.go.jp/auth/ndlna/00075271' },
+      { num: 7, name: '鈴木八郎コレクション PDF. 碧南市藤井達吉現代美術館', url: 'https://www.city.hekinan.lg.jp/material/files/group/62/sh.pdf' },
+      { num: 8, name: '写真人とその本 30 ／鈴木八郎 PDF. JCII', url: 'https://www.jcii-camera.or.jp/business/pdf/photographer_books30.pdf' },
+      { num: 9, name: '草津道. 東京都写真美術館収蔵品検索', url: 'https://collection.topmuseum.jp/Publish/detailPage/20538/' },
+      { num: 10, name: '過去の受賞者. 日本写真協会', url: 'https://www.psj.or.jp/psjaward/all.html' },
+      { num: 11, name: '成熟と多様化を求めて. 日本写真家協会創立60周年記念 PDF', url: 'https://www.jps.gr.jp/jps60/images/book-leaflet.pdf' },
+      { num: 12, name: '鈴木八郎写真集. Made in Wonder', url: 'https://www.made-in-wonder.com/item_detail.php?item_id=1767' },
+    ],
+    links: [
+      { label: 'Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A6538' },
+      { label: 'JCIIフォトサロン', url: 'https://www.jcii-cameramuseum.jp/photosalon/2009/12/01/9123/' },
+      { label: '東京都写真美術館 収蔵品', url: 'https://collection.topmuseum.jp/Publish/detailPage/20538/' },
+    ],
+    works: [
+      { titleJa: '草津道', titleEn: 'Kusatsu Road', labelJa: '東京都写真美術館所蔵', labelEn: 'Tokyo Metropolitan Museum of Photography', url: 'https://collection.topmuseum.jp/Publish/detailPage/20538/', aliases: [] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
+
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  overrides['helen-levitt'] = {
+    leadJa: `ニューヨークの路上でチョーク落書きを遊ぶ子ども、路地の即興的な身振り、街角の人間的な演劇を撮り続けた。子どもをノスタルジーではなく都市の遊戯性・階級性・身体の即興として捉える視点は、ストリート写真のもっとも繊細な声のひとつとして写真史に位置づけられている。`,
+    leadEn: `Levitt spent decades photographing children playing with chalk drawings on New York sidewalks, the improvised gestures of alleyways, and the human theater of street corners. Her way of reading children not through nostalgia but as the urban improvisation of play, class, and the body places her among the most quietly distinctive voices in the history of street photography.`,
+    textJa: `経歴
+
+ヘレン・レヴィットは1913年、ニューヨーク市ブルックリンに生まれた。10代でアンリ・カルティエ=ブレッソンの仕事に触れ、ウォーカー・エヴァンズとの交流から写真の見方を学んだとされる。MoMAが管理するレヴィットの作家情報は、彼女がMoMAのコレクションに複数の作品が収蔵されている写真家であることを示しており、その仕事が1930年代末から一貫して評価されてきたことを示している*1。1930年代後半から40年代にかけて、レヴィットはニューヨーク、とりわけハーレム、ロウアー・イースト・サイド、スパニッシュ・ハーレムなどの路地でライカの小型カメラを使って子どもや街の人々を撮影した。Aperture Archiveに収録されたレヴィットの1969年の記事は、彼女の初期の仕事の受容と位置づけを示す一次資料として機能している*2。
+
+レヴィットはジェームズ・エイジーと協力してドキュメンタリー映画にも取り組み、1940年代に映像制作の仕事も担っていた。ICP（国際写真センター）のコンスティテュエント・ページは、彼女の仕事を報道写真とは異なる「詩的なストリート写真」の文脈に位置づけている*3。National Gallery of Artはレヴィットの作品を23点所蔵しており、その作家情報はモノクロからカラーへの移行を含む全キャリアを概観している*4。2009年没。
+
+表現解説
+
+路上の子どもとチョーク落書き
+
+レヴィットが最もよく知られているのは、路上でチョーク落書きを描いたり、遊び道具なしに体だけで遊んだりする子どもたちの写真である。Smithsonian American Art Museumが所蔵する作品《New York》の解説は、レヴィットの写真が右角ファインダーを使った不意打ちの撮影によって、子どもの自然な身振りと表情を捉えたものであることを示している*5。子どもの写真がノスタルジー的な「無邪気さ」のアイコンとして読まれやすいのに対し、レヴィットの仕事を特徴づけるのは、子どもたちが路地という社会的空間の中で演じる即興的な演劇、階級的な環境、都市の偶然性への鋭敏な観察である。Fondation Henri Cartier-Bressonが開催した「Helen Levitt」展は、カルティエ=ブレッソンとの接続という文脈でレヴィットの仕事を評価し、決定的瞬間とは異なる「持続する偶然性」の写真として提示した*6。
+
+右角ファインダーと「見られない」視線
+
+レヴィットは右角ファインダー（アングル・ファインダー）を使用することで、被写体が自分を撮影されていることに気づかないまま撮影するという方法を採った。このアプローチは、観察者としての写真家が被写体の行動に介入しないという方針を技術的に実現したものである。Art Institute of Chicagoのアーティスト・ページは、レヴィットの方法を「観察型」ストリート写真の典型として位置づけており、彼女の技術的選択が視覚的スタイルと一体であることを示している*7。Whitney Museumのアーティスト・ページもレヴィットの作品を収蔵しており、アメリカ美術の文脈における彼女の位置を示している*8。Smithsonianの収蔵作品情報は、子どもの身体と路上という組み合わせがいかにレヴィットの視覚言語を構成しているかを示す作品記録として参照できる*5。
+
+カラー写真への移行
+
+レヴィットは1970〜80年代にカラー写真の仕事も手がけており、初期のモノクロとは異なる視覚的局面を開いた。National Gallery of Artが所蔵する23点のコレクションにはカラー作品も含まれており、モノクロとカラーを通じて一貫したレヴィットの主題——路上の日常性、子どもの遊び、身体の即興——が確認できる*4。The Photographers' Galleryのプレスリリースに含まれる「In the Street」展の資料は、ストリート、映画、カラー写真という三つの側面からレヴィットの全仕事を概観した展示として、初期から晩年までの連続性を示している*9。High Museum of Artの「Helen Levitt: In the Street」展は、路上写真という主題を通じてレヴィットの仕事を歴史的に位置づけた展覧会として参照できる*10。
+
+ウォーカー・エヴァンズとの関係、そして独自性
+
+レヴィットはウォーカー・エヴァンズとの交流から写真の見方を学んだとされ、FSA的な社会記録写真との近さを持つように見える。しかし彼女の仕事は、FSAのような国家委嘱の制度外に位置しており、政策広報の論理から完全に自由な位置で路上を撮った。エヴァンズが都市の建築、標識、人々の表面的な様相を一定の距離から観察したのに対し、レヴィットは子どもたちの身体と動きにより近く、より親密な視線を向けた。MFA Boston（ボストン美術館）の検索システムに収録されたレヴィットの作品情報は、彼女の仕事が複数の主要美術館に分散して収蔵されていることを示す補助資料として機能している。Spencer Museum of Art（カンザス大学）のコレクション情報は、大学附属美術館における収蔵という観点からレヴィットの受容の広がりを示している*11。
+
+批評と受容
+
+ヘレン・レヴィットは生前から高い評価を受けていたが、その仕事がより広く知られるようになったのはアパーチャーからの写真集出版とMoMAの回顧展を経た後であり、死後に再評価が進んだ写真家のひとりでもある。ICPのコンスティテュエント・ページは、彼女の仕事を戦争報道や社会記録とは異なる「詩的ドキュメンタリー」として位置づけており、ドキュメンタリーと叙情性の境界で仕事をした写真家という評価を示している*3。Getty Museumのパーソン・ページは、ゲッティ所蔵の作品と作家情報を通じて彼女の仕事の公式コレクション側の受容を示している*12。Aperture Archiveの1969年掲載記事は、初期評価の文脈を確認できる一次資料として機能しており、レヴィットが批評家にどのように受け止められていたかを示している*2。近年の評価では、子どもの写真をジェンダーや階級の視点から読み直す試みが進んでおり、レヴィットが撮った子どもたちの多くが低所得階層の有色人種の子どもたちであるという事実が、写真の政治的・社会的読みを補完している。MoMAのコレクションにおける彼女の位置は、ストリート写真というジャンルがいかにして「芸術」として美術館に収蔵されるようになったかを示す事例のひとつとして、写真史上の重要な参照点となっている*1。NGA（ナショナル・ギャラリー・オブ・アート）が所蔵する23点の作品群には、初期のモノクロから晩年のカラーまでが含まれており、レヴィットのキャリア全体にわたる視覚的一貫性——身体・路上・即興性——を確認できる公式コレクション記録として機能している*4。Aperture Archiveに収録された1969年の記事は、レヴィットが若い写真家として批評家のレーダーに上がった時期の評価の文脈を示しており、後年の正典化が遡及的に構築されたものではなく同時代の評価に基づいていることを示している*2。レヴィットの写真は、静かな一貫性で路上の日常を記録し続けたその姿勢とともに、ストリート写真の繊細な達成のひとつとして写真史に残っている。`,
+    textEn: `Biography
+
+Helen Levitt was born in 1913 in Brooklyn, New York. As a teenager she encountered the work of Henri Cartier-Bresson; her understanding of photography is said to have developed through exchanges with Walker Evans. MoMA's artist records — showing multiple works in the collection — indicate that her work received recognition from the late 1930s onward*1. From the late 1930s through the 1940s Levitt photographed children and street inhabitants in New York's neighborhoods, particularly Harlem, the Lower East Side, and Spanish Harlem, using a small Leica camera. Aperture Archive's 1969 article on Levitt functions as primary material for understanding the reception and early positioning of her work*2.
+
+Levitt collaborated with James Agee on documentary film work in the 1940s. ICP's constituent page places her work in the context of "lyric street photography" distinct from photojournalism*3. The National Gallery of Art holds twenty-three of her works, and its artist page surveys her full career including the shift to color*4. Died 2009.
+
+Expression / method
+
+Street children and chalk drawings
+Levitt is best known for photographs of children drawing with chalk on sidewalks or playing with only their bodies as instruments. The Smithsonian American Art Museum's record for the work New York describes how Levitt's use of a right-angle viewfinder enabled undetected shooting that captured children's natural gestures and expressions*5. While children's photographs easily read as nostalgic icons of "innocence," what characterizes Levitt's work is sharp observation of the improvised theater children perform in the social space of the alley — the class environment, the accidents of the urban fabric. Fondation Henri Cartier-Bresson's Helen Levitt exhibition evaluated her work in the context of her connection to Cartier-Bresson, presenting it as a photography of "sustained contingency" distinct from the decisive moment*6.
+
+The right-angle viewfinder and the unseen gaze
+Levitt used a right-angle viewfinder so that subjects remained unaware they were being photographed. This approach technically realized a policy of non-intervention in subjects' behavior by the observing photographer. Art Institute of Chicago's artist page positions Levitt's method as exemplary of "observational" street photography, showing that her technical choices were integral to her visual style*7. Whitney Museum also holds her work, indicating her place in the context of American art*8.
+
+The shift to color photography
+In the 1970s–80s Levitt also worked in color, opening a visual dimension different from her early monochrome work. The National Gallery of Art's twenty-three works include color pieces, and through monochrome and color alike, Levitt's consistent subjects — everyday street life, children's play, physical improvisation — are confirmed*4. The Photographers' Gallery press release for the "In the Street" exhibition surveys Levitt's full practice across street photography, film, and color work, showing the continuity from early to late career*9.
+
+Criticism and reception
+
+Helen Levitt received critical recognition during her lifetime, but it was through Aperture photobook publications and MoMA retrospectives that her work became more widely known — she is among the photographers whose reputations have deepened in later decades. ICP's constituent page positions her work as "lyric documentary," distinct from war reportage or social record, marking her as a photographer who worked at the boundary of documentary and lyricism*3. Getty Museum's person page shows the reception of her work in official collection contexts*12. Recent assessment has advanced readings of her children's photographs through the lenses of gender and class, noting that many of the children she photographed were low-income children of color — supplementing the political and social reading of the work. Her place in MoMA's collection is one reference point for how street photography became a genre collected by art museums*1.`,
+    citations: [
+      { num: 1, name: 'Helen Levitt. MoMA', url: 'https://www.moma.org/collection/artists/3520' },
+      { num: 2, name: 'Helen Levitt. Aperture Archive', url: 'https://archive.aperture.org/article/1969/1/1/helen-levitt' },
+      { num: 3, name: 'Helen Levitt. International Center of Photography', url: 'https://www.icp.org/browse/archive/constituents/helen-levitt' },
+      { num: 4, name: 'Helen Levitt. National Gallery of Art artist page', url: 'https://www.nga.gov/artists/16230-helen-levitt' },
+      { num: 5, name: 'New York. Smithsonian American Art Museum', url: 'https://americanart.si.edu/artwork/new-york-14608' },
+      { num: 6, name: 'Helen Levitt. Fondation Henri Cartier-Bresson', url: 'https://www.henricartierbresson.org/en/expositions/helen-levitt-2/' },
+      { num: 7, name: 'Helen Levitt. Art Institute of Chicago artist page', url: 'https://www.artic.edu/artists/35465/helen-levitt' },
+      { num: 8, name: 'Helen Levitt. Whitney Museum artist page', url: 'https://whitney.org/artists/4246' },
+      { num: 9, name: "Helen Levitt: In the Street press release. The Photographers' Gallery PDF", url: 'https://thephotographersgallery.org.uk/sites/default/files/attachments/Final%20Press%20release%20%20Helen%20Levitt%20%20In%20the%20Street.pdf' },
+      { num: 10, name: 'Helen Levitt: In the Street. High Museum of Art', url: 'https://high.org/exhibition/helen-levitt-in-the-street/' },
+      { num: 11, name: 'Helen Levitt. Spencer Museum of Art, University of Kansas', url: 'https://spencerart.ku.edu/art/collections-online/artist/18272' },
+      { num: 12, name: 'Helen Levitt. Getty Museum person page', url: 'https://www.getty.edu/art/collection/person/104PGR' },
+    ],
+    links: [
+      { label: 'MoMA — Helen Levitt', url: 'https://www.moma.org/collection/artists/3520' },
+      { label: 'ICP — Helen Levitt', url: 'https://www.icp.org/browse/archive/constituents/helen-levitt' },
+      { label: 'NGA — Helen Levitt', url: 'https://www.nga.gov/artists/16230-helen-levitt' },
+    ],
+    works: [
+      { titleJa: 'ニューヨーク', titleEn: 'New York', labelJa: 'スミソニアン・アメリカン・アート・ミュージアム所蔵', labelEn: 'Smithsonian American Art Museum', url: 'https://americanart.si.edu/artwork/new-york-14608', aliases: [] },
+      { titleJa: 'ニューヨーク（メット）', titleEn: 'New York (Met)', labelJa: 'メトロポリタン美術館所蔵', labelEn: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/265044', aliases: [] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
+
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  overrides['jack-delano'] = {
+    leadJa: `FSA写真家としてアメリカ農村・炭鉱・鉄道の貧困を記録し、プエルトリコに移住後は写真・映画・音楽・文化政策を通じて島の社会変容を担った。ニューディールの社会記録写真が戦後の地域文化政策へ移行する過程を示す、独自の経路を持つ写真家。`,
+    leadEn: `As an FSA photographer Delano documented poverty in American farmland, coalfields, and railroads; after moving to Puerto Rico he was involved in the island's social transformation through photography, film, music, and cultural policy. A photographer with a unique trajectory showing how New Deal social documentary moved toward postwar regional cultural policy.`,
+    textJa: `経歴
+
+ジャック・デラーノは1914年、ウクライナのキエフでユダヤ系の家庭に生まれ、幼少期に家族とともにアメリカへ移民した。画家・音楽家としての訓練を経て写真の仕事に転じ、1940年にFarm Security Administration（FSA）の写真部門に採用された。Library of Congressが公開しているデラーノのFSA関連資料は、彼がプエルトリコ、コネティカット、ジョージア、シカゴなど広範なフィールドで記録活動を行ったことを示している*1。農業移住者の生活、炭鉱労働者、農村コミュニティを撮影した彼の仕事は、FSAの他の写真家たちと並んでアメリカ大恐慌期の視覚的記録として評価されている。
+
+1943年、デラーノはOWI（Office of War Information）のために仕事を続けながらプエルトリコに派遣され、その後プエルトリコに永住を決めた。Archives of American Artが収録するジャック・デラーノ夫妻のオーラルヒストリーは、この決断の背景と、島での文化的活動の展開を本人の言葉で伝える一次資料として機能している*2。プエルトリコでは、DIVEDCO（División de Educación de la Comunidad）という政府機関の教育映画・ポスター制作に携わり、写真・映画・音楽・教育の複数領域にわたって島の文化的インフラ整備に貢献した*3。Museo de Arte de Puerto Ricoは、デラーノをプエルトリコの文化的貢献者として評価している*4。1997年没。
+
+表現解説
+
+FSAという制度と社会記録写真
+
+デラーノのFSA期の仕事は、ロイ・ストライカーの方針のもと、農業・労働・農村コミュニティの社会的実態を可視化することを目的とした制度的写真として成立した。Library of Congressのプエルトリコ農園経済に関するリサーチガイドは、デラーノの仕事がFSA/OWIのアーカイブの一部として管理されており、特にプエルトリコの農業経済・農村社会の記録において重要な役割を担ったことを示している*5。Columbia University Librariesのファインディングエイドが整理するデラーノ夫妻のアーカイブは、写真・音楽・映画・書簡を含む1731〜2003年にわたる資料群として管理されており、全キャリアを追うための基礎資料として公開されている*6。FSAという制度の内部では、ストライカーの撮影台本と編集権力が写真の意味を大きく規定した。デラーノの仕事はこの制度的枠組みの内部で生産されながらも、被写体のコミュニティへの関与という点でその枠組みを超える要素を持っていた。
+
+プエルトリコという撮影地
+
+デラーノがFSAのためにプエルトリコを最初に撮影した時期は、アメリカによるプエルトリコ統治という植民地的文脈と不可分である。Library of Congressが管理する1940年代のプエルトリコ農園労働者の写真記録は、FSA写真がいかにして帝国的権力構造の視覚化装置として機能しうるかという批評的問題を孕んでいる*1。Interventions誌（Taylor & Francis）に掲載された研究論文は、デラーノの仕事を「植民地的問題の視覚化」という観点から批評的に論じており、FSA写真の人道主義的表層の内部に権力関係が埋め込まれていることを指摘している*7。この批評的読みは、デラーノを単純な「弱者の側に立つ写真家」として正典化することへの警戒を促す視点として重要である。inLibraに収録された研究資料は、20世紀中盤のプエルトリコの視覚的イメージの形成過程を追う論考として参照できる*8。
+
+DIVEDCO——文化政策としての映像制作
+
+デラーノが永住したプエルトリコで最も長期にわたって関与したのは、División de Educación de la Comunidad（DIVEDCO）という政府機関の教育映画・ポスター制作である。DIVEDCOはプエルトリコ政府が設立した地域教育機関であり、映画、ポスター、農村コミュニティへの上映活動を通じて社会変革を図った。Archivo ICPが管理するDIVEDCOのアーカイブは、この機関の活動全体と、そこでのデラーノの役割を示す資料として整備されている*9。Smithsonianが所蔵するDIVEDCO映画ポスター《Desde las Nubes》の資料は、デラーノが携わった制作活動の具体的な成果物として参照できる*10。DIVEDCOにおける仕事は、写真家が国家のプロパガンダを担うのではなく、地域コミュニティの文化的自律性を支援するという志向を持っており、FSA期の制度的制約とは異なる位置づけを持つ。
+
+カラー写真と記録の技法
+
+デラーノはFSA/OWI期においてカラースライドの撮影にも携わり、Library of CongressのFSA/OWIカラー写真コレクションにはデラーノの仕事が含まれている*1。National Museum of American Historyが管理するデラーノ関連資料は、「プエルトリコ週間」に関連した彼の写真記録の一部を示しており、写真が文化的イベントの記録として機能した事例を示している*11。Archives of American Artが所蔵するジャック・デラーノ・ペーパーズ（1939〜43年）は、FSA期の現場での活動、ストライカーとの往来、写真制作の実態を追う一次資料として研究者に参照されている*12。
+
+批評と受容
+
+ジャック・デラーノは、FSA写真家としての仕事が主に評価されてきたが、プエルトリコへの移住後の長期にわたる文化的貢献が近年の研究ではより重要視されている。Columbia University Librariesのファインディングエイドが管理する1731〜2003年にわたるアーカイブは、FSA期の写真家という枠組みを大幅に超えた生涯の軌跡を示しており、写真・音楽・映画・文化政策という複数領域にわたる活動の全体像として研究者に参照されている*6。Internet ArchiveにアクセスできるデラーノのモノグラフPuerto Rico mío: four decades of changeは、1940年代から80年代にかけてのプエルトリコの変容を長期的に記録した仕事として、写真と歴史的証言の関係を論じる際の重要な参照資料となっている*13。Museo de Arte de Puerto Ricoが示すように、デラーノはプエルトリコの文化的記憶においてFSA写真家というよりも島の文化的担い手として評価されており、アメリカ本土と島嶼部植民地の間で活動した写真家の独自の位置づけが見えてくる*4。Library of CongressのFSA/OWIファインディングエイドPDFは、デラーノの撮影した膨大なネガと関連文書が公的アーカイブとして体系的に保存されていることを示しており、写真の制作から保存・公開にいたる過程を追う研究の基礎資料として整備されている*14。AAA（アーカイブズ・オブ・アメリカン・アート）が所蔵するデラーノ・ペーパーズは、FSA期の活動記録と後年のプエルトリコでの仕事を並置して理解するための文書群として、写真史と文化政策史の双方から参照されている*15。`,
+    textEn: `Biography
+
+Jack Delano was born in 1914 in Kyiv, Ukraine, to a Jewish family, and immigrated to the United States with his family as a child. After training as a painter and musician he turned to photography, and in 1940 was hired by the Farm Security Administration's photographic unit. Library of Congress materials related to Delano's FSA work show him recording across a wide range of fields — Puerto Rico, Connecticut, Georgia, Chicago*1. His documentation of the lives of migrant farmworkers, coal miners, and rural communities stands alongside other FSA photographers' work as a visual record of Depression-era America.
+
+In 1943, while continuing to work for the Office of War Information, Delano was sent to Puerto Rico and subsequently chose to settle there permanently. The oral history interview with Jack and Irene Delano held by the Archives of American Art is primary material conveying in his own words the background of this decision and the development of his cultural work on the island*2. In Puerto Rico he became involved in the educational film and poster production of DIVEDCO (División de Educación de la Comunidad), contributing across photography, film, music, and education to the island's cultural infrastructure*3. The Museo de Arte de Puerto Rico recognizes him as a cultural contributor to Puerto Rico*4. Died 1997.
+
+Expression / method
+
+The FSA and social documentary photography
+Delano's FSA-period work was institutional photography established under Roy Stryker's direction for the purpose of making visible the social conditions of agriculture, labor, and rural communities. The Library of Congress research guide on Puerto Rican plantation life shows that Delano's work — particularly its record of Puerto Rico's agricultural economy and rural society — is managed as part of the FSA/OWI archive and played an important role there*5. Columbia University Libraries' finding aid for the Jack and Irene Delano papers manages records from 1731–2003, including photographs, music, film, and correspondence, as a research foundation covering the full career*6.
+
+Puerto Rico as photographic site
+When Delano first photographed Puerto Rico for the FSA, the context was inseparable from the colonial framework of American rule over Puerto Rico. The Interventions journal article (Taylor & Francis) critically discusses Delano's work from the perspective of "picturing our colonial problem," pointing out that power relations are embedded within the humanitarian surface of FSA photography*7. This critical reading is important as a perspective that guards against simple canonization of Delano as a photographer "on the side of the weak." The inLibra research material is a reference for tracing the formation of mid-twentieth-century Puerto Rican visual imagery*8.
+
+DIVEDCO: filmmaking as cultural policy
+The longest sustained engagement of Delano's Puerto Rican years was with DIVEDCO (División de Educación de la Comunidad), producing educational films and posters. DIVEDCO was a regional education organization established by the Puerto Rican government to pursue social transformation through film, posters, and rural community screenings. Archivo ICP's DIVEDCO archive documents the organization's full activities and Delano's role within them*9. The Smithsonian's record of the DIVEDCO film poster Desde las Nubes can be referenced as a concrete product of Delano's production work*10. DIVEDCO work, oriented toward supporting the cultural autonomy of local communities rather than serving state propaganda, occupies a position different from FSA-era institutional constraints.
+
+Criticism and reception
+
+Jack Delano has been evaluated primarily for his FSA work, but recent scholarship increasingly values his long-term cultural contributions after moving to Puerto Rico. Columbia University Libraries' finding aid for records from 1731–2003 shows a life trajectory far exceeding the "FSA photographer" frame, and serves as a research reference for the full picture of activities spanning photography, music, film, and cultural policy*6. The monograph Puerto Rico mío: four decades of change, accessible through Internet Archive, is an important reference for discussions of photography and historical testimony, documenting Puerto Rico's transformation from the 1940s to the 1980s*13. As demonstrated by Museo de Arte de Puerto Rico, Delano is valued in Puerto Rican cultural memory less as an FSA photographer than as a bearer of island culture — revealing the distinctive positioning of a photographer who worked between the American mainland and an insular colonial territory*4.`,
+    citations: [
+      { num: 1, name: 'FSA borrower in Puerto Rico. Library of Congress', url: 'https://www.loc.gov/item/2017877772/' },
+      { num: 2, name: 'Oral history interview with Jack and Irene Delano. Archives of American Art', url: 'https://www.aaa.si.edu/collections/interviews/oral-history-interview-jack-and-irene-delano-13026' },
+      { num: 3, name: 'DIVEDCO. Archivo ICP', url: 'https://www.archivoicp.com/divedco' },
+      { num: 4, name: 'Jack Delano. Museo de Arte de Puerto Rico', url: 'https://www.mapr.org/en/museum/cede/artist/delano-jack' },
+      { num: 5, name: 'Jack and Irene Delano - Puerto Rico\'s Plantation Economy. Library of Congress Research Guide', url: 'https://guides.loc.gov/puerto-rico-plantation-life/jack-irene-delano' },
+      { num: 6, name: 'Jack and Irene Delano papers, 1731–2003. Columbia University Libraries', url: 'https://findingaids.library.columbia.edu/archives/cul-12375965' },
+      { num: 7, name: 'Picturing "our colonial problem". Interventions / Taylor & Francis', url: 'https://www.tandfonline.com/doi/full/10.1080/1369801X.2024.2401523' },
+      { num: 8, name: 'Setting the Stage for Mid-Twentieth-Century Imagery of Puerto Rico. inLibra', url: 'https://www.inlibra.com/10.5771/9780739189191-77.pdf' },
+      { num: 9, name: 'DIVEDCO. Archivo ICP', url: 'https://www.archivoicp.com/divedco' },
+      { num: 10, name: 'Desde las Nubes [screen print poster]. Smithsonian National Museum of American History', url: 'https://americanhistory.si.edu/zh-hans/collections/archival-item/sova-nmah-ac-0615-ref970?page=8' },
+      { num: 11, name: 'Puerto Rico Week / Jack Delano. National Museum of American History', url: 'https://www.americanhistory.si.edu/ne/collections/archival-item/sova-nmah-ac-0615-ref912' },
+      { num: 12, name: 'Jack Delano papers, 1939–1943. Archives of American Art', url: 'https://www.aaa.si.edu/collections/jack-delano-papers-9300' },
+      { num: 13, name: 'Puerto Rico mío: four decades of change. Internet Archive', url: 'https://archive.org/details/puertoricomiofou00dela' },
+      { num: 14, name: 'Jack Delano Papers PDF. Library of Congress finding aid', url: 'https://findingaids.loc.gov/exist_collections/ead3pdf/mss/2007/ms007117.pdf' },
+      { num: 15, name: 'Jack Delano Papers. Archives of American Art', url: 'https://www.aaa.si.edu/collections/jack-delano-papers-5554' },
+    ],
+    links: [
+      { label: 'Jack Delano — LOC Puerto Rico guide', url: 'https://guides.loc.gov/puerto-rico-plantation-life/jack-irene-delano' },
+      { label: 'Museo de Arte de Puerto Rico', url: 'https://www.mapr.org/en/museum/cede/artist/delano-jack' },
+      { label: 'Columbia University Libraries finding aid', url: 'https://findingaids.library.columbia.edu/archives/cul-12375965' },
+    ],
+    works: [
+      { titleJa: 'プエルトリコの農園労働者', titleEn: 'Puerto Rico plantation worker', labelJa: 'Library of Congress FSA/OWI', labelEn: 'Library of Congress', url: 'https://www.loc.gov/item/2017877772/', aliases: [] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
