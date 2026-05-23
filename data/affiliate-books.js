@@ -79,6 +79,71 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.fenton = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['timothy-osullivan'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4nHmyoB' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4dYMSau' }
+  },
+  books: [
+    {
+      titleJa: 'Timothy H. O\'Sullivan: The King Survey Photographs',
+      titleEn: 'Timothy H. O\'Sullivan: The King Survey Photographs',
+      noteJa: 'キング測量隊での西部写真を通じて、オサリヴァンの地形を見る鋭さを確認できる一冊。',
+      noteEn: 'A focused look at O\'Sullivan\'s King Survey photographs and his rigorous way of seeing western terrain.',
+      urlJa: 'https://amzn.to/4nHmyoB',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Timothy O\'Sullivan: America\'s Forgotten Photographer',
+      titleEn: 'Timothy O\'Sullivan: America\'s Forgotten Photographer',
+      noteJa: '南北戦争から西部探検まで、オサリヴァンの生涯と仕事を通史的にたどる評伝。',
+      noteEn: 'A biographical route through O\'Sullivan\'s work from the Civil War to the western surveys.',
+      urlJa: 'https://amzn.to/3RqazQr',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'The Photographic Artifacts of Timothy O\'Sullivan',
+      titleEn: 'The Photographic Artifacts of Timothy O\'Sullivan',
+      noteJa: '作品を写真史だけでなく、制作・探検・再撮影の文脈から読み直す研究書。',
+      noteEn: 'A study that rereads O\'Sullivan through making, exploration, and rephotography.',
+      urlJa: 'https://amzn.to/4wKiU1h',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Timothy O\'Sullivan: America\'s Forgotten Photographer',
+      titleEn: 'Timothy O\'Sullivan: America\'s Forgotten Photographer',
+      noteJa: '南北戦争から西部探検まで、オサリヴァンの生涯と仕事を通史的にたどる評伝。',
+      noteEn: 'A biographical route through O\'Sullivan\'s work from the Civil War to the western surveys.',
+      urlEn: 'https://amzn.to/4dYMSau',
+      languages: ['en']
+    },
+    {
+      titleJa: 'Timothy H. O\'Sullivan: The King Survey Photographs',
+      titleEn: 'Timothy H. O\'Sullivan: The King Survey Photographs',
+      noteJa: 'キング測量隊での西部写真を通じて、オサリヴァンの地形を見る鋭さを確認できる一冊。',
+      noteEn: 'A focused look at O\'Sullivan\'s King Survey photographs and his rigorous way of seeing western terrain.',
+      urlEn: 'https://amzn.to/4nJvMRj',
+      languages: ['en']
+    },
+    {
+      titleJa: 'Framing the West: The Survey Photographs of Timothy H. O\'Sullivan',
+      titleEn: 'Framing the West: The Survey Photographs of Timothy H. O\'Sullivan',
+      noteJa: '西部調査写真の形式性と影響を、複数の論考から読み解く展覧会図録。',
+      noteEn: 'An exhibition volume that interprets O\'Sullivan\'s western survey photographs and their wider influence.',
+      urlEn: 'https://amzn.to/4nNKeb4',
+      languages: ['en']
+    },
+    {
+      titleJa: 'American Frontiers: The Photographs of Timothy H. O\'Sullivan, 1867-1874',
+      titleEn: 'American Frontiers: The Photographs of Timothy H. O\'Sullivan, 1867-1874',
+      noteJa: '1867年から1874年の西部写真をまとめ、フロンティア表象の基礎資料として読める一冊。',
+      noteEn: 'A key volume on O\'Sullivan\'s western photographs from 1867 to 1874 and frontier representation.',
+      urlEn: 'https://amzn.to/4f3qKwS',
+      languages: ['en']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.beato = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4ts7tsG' },
