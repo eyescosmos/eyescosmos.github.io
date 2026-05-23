@@ -2808,3 +2808,23 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-長谷川伝次郎'] = {
     }
   ]
 };
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-冨重利平'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/42RCVW9' }
+  },
+  books: [
+    {
+      titleJa: '肖像のモダンエイジ ―冨重写真所展',
+      noteJa: '冨重写真所の肖像文化を、地域の近代化と結びつけて見るための展覧会資料。',
+      urlJa: 'https://amzn.to/42RCVW9',
+      languages: ['ja']
+    },
+    {
+      titleJa: '写真の先駆者 冨重利平作品集',
+      noteJa: '冨重利平の作品をまとまって確認できる、初期日本写真史の地域的広がりを知るための一冊。',
+      urlJa: 'https://amzn.to/4uuKmyN',
+      languages: ['ja']
+    }
+  ]
+};
