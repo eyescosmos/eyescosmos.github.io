@@ -38,6 +38,33 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.daguerre = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['nicephore-niepce'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4wLqetC' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/43qYxZC' }
+  },
+  books: [
+    {
+      titleJa: 'Nicéphore Niépce: Une vie, essais, travaux',
+      noteJa: 'ニエプスの生涯・実験・発明の過程をたどる基礎資料。',
+      urlJa: 'https://amzn.to/4wLqetC',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Photographies: Histoires parallèles',
+      noteJa: '写真史を複数の流れから読み直す資料として、ニエプスの発明史を広い文脈に置ける一冊。',
+      urlJa: 'https://amzn.to/4tPdkIo',
+      languages: ['ja']
+    },
+    {
+      titleEn: 'Nicéphore Niépce, 1765-1833: L\'invention de la photographie',
+      noteEn: 'A focused volume on Niépce and the invention of photography.',
+      urlEn: 'https://amzn.to/43qYxZC',
+      languages: ['en']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.talbot = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3PSfN6C' },
