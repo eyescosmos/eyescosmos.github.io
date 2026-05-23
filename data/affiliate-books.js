@@ -196,6 +196,39 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.fenton = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['alexander-gardner'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4nN9dev' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tVPIBP' }
+  },
+  books: [
+    {
+      titleJa: 'Alexander Gardner: The Western Photographs, 1867-1868',
+      titleEn: 'Alexander Gardner: The Western Photographs, 1867-1868',
+      noteJa: '南北戦争後の西部調査写真を通じて、ガードナーの記録写真の射程を広げて見られる一冊。',
+      noteEn: 'A strong view of Gardner’s postwar western survey work and the reach of his documentary practice.',
+      urlJa: 'https://amzn.to/4nN9dev',
+      urlEn: 'https://amzn.to/4tVPIBP'
+    },
+    {
+      titleJa: 'To Elevate the Masses: Alexander Gardner, Photography and Democracy in Nineteenth-Century America',
+      titleEn: 'To Elevate the Masses: Alexander Gardner, Photography and Democracy in Nineteenth-Century America',
+      noteJa: 'ガードナーの写真を、19世紀アメリカの民主主義・公共性・視覚文化の中で読む研究書。',
+      noteEn: 'A study of Gardner’s photography within nineteenth-century American democracy and public visual culture.',
+      urlJa: 'https://amzn.to/3PHaUxr',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Gardner’s Photographic Sketch Book of the Civil War',
+      titleEn: 'Gardner’s Photographic Sketch Book of the Civil War',
+      noteJa: '南北戦争写真の古典で、戦場の記録と写真家クレジットの問題を考える基礎資料。',
+      noteEn: 'A classic Civil War photobook and a foundation for reading battlefield photography and authorship.',
+      urlEn: 'https://amzn.to/3Pz2nNc',
+      languages: ['en']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.beato = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4ts7tsG' },
