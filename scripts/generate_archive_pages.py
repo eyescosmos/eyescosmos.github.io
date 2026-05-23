@@ -109,7 +109,7 @@ def render_card(
     coordinate_button = "View in Coordinates" if lang == "en" else "座標で見る"
     placeholder = tax.strip_citation_markers(summary) in {"準備中。", "Coming soon.", "Essay coming soon.", "解説は準備中です。"}
     pid = tax.esc(photographer["id"])
-    coordinate_html = f'<button class="coordinate-link" type="button" onclick="event.stopPropagation(); openCoordinatesForPhotographer(\'{pid}\')">{coordinate_button}</button>'
+    coordinate_html = f'<button class="coordinate-link" type="button" data-nosnippet onclick="event.stopPropagation(); openCoordinatesForPhotographer(\'{pid}\')">{coordinate_button}</button>'
     related_people_html = render_card_related_people(
         photographer,
         all_photographers,
@@ -143,7 +143,7 @@ def render_card(
       {coordinate_html}
       <div class="mobile-card-summary">
         <p class="mobile-card-summary-text">{tax.esc(summary)}</p>
-        <a class="mobile-card-readmore" href="{tax.photographer_path(photographer, lang)}" onclick="event.stopPropagation()">{readmore}</a>
+        <a class="mobile-card-readmore" href="{tax.photographer_path(photographer, lang)}" data-nosnippet onclick="event.stopPropagation()">{readmore}</a>
       </div>
       {related_movements_html}
       {related_people_html}
@@ -160,7 +160,7 @@ def render_card_related_movements(photographer: dict, *, lang: str, movements_me
     if not links:
         return ""
     label = "Related movements" if lang == "en" else "関連する運動"
-    return f'<div class="card-related-movements"><span>{label}</span>{"".join(links)}</div>'
+    return f'<div class="card-related-movements" data-nosnippet><span>{label}</span>{"".join(links)}</div>'
 
 
 def render_card_related_people(
@@ -200,7 +200,7 @@ def render_card_related_people(
     if not links:
         return ""
     label = "Related" if lang == "en" else "関連人物"
-    return f'<div class="card-related-people"><span>{label}</span>{"".join(links)}</div>'
+    return f'<div class="card-related-people" data-nosnippet><span>{label}</span>{"".join(links)}</div>'
 
 
 def render_era_section(
