@@ -89,6 +89,47 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.talbot = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['david-octavius-hill'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4dAv0S0' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tPgDiE' }
+  },
+  books: [
+    {
+      titleJa: 'David Octavius Hill & Robert Adamson',
+      titleEn: 'David Octavius Hill & Robert Adamson',
+      noteJa: 'ヒルとアダムソンの共同制作を、肖像とカロタイプ表現の基礎から押さえる一冊。',
+      noteEn: 'A concise route into the Hill and Adamson collaboration, portraiture, and early calotype practice.',
+      urlJa: 'https://amzn.to/4dAv0S0',
+      urlEn: 'https://amzn.to/4v5FW1a'
+    },
+    {
+      titleJa: 'The Personal Art of David Octavius Hill',
+      titleEn: 'The Personal Art of David Octavius Hill',
+      noteJa: '画家としてのヒルの構成感覚と、写真が個人的な芸術表現へ広がる過程を読むための研究書。',
+      noteEn: 'A study of Hill\'s painterly sensibility and the way his photography became a personal art.',
+      urlJa: 'https://amzn.to/4fDY3ql',
+      urlEn: 'https://amzn.to/4tPgDiE'
+    },
+    {
+      titleJa: 'Hill and Adamson: Photographs from the J. Paul Getty Museum',
+      titleEn: 'Hill and Adamson: Photographs from the J. Paul Getty Museum',
+      noteJa: 'ゲッティ美術館所蔵作を通じて、二人のカロタイプの質感と肖像表現を見渡せる図録。',
+      noteEn: 'A Getty Museum volume for seeing the texture and portrait achievement of their calotypes.',
+      urlJa: 'https://amzn.to/4v4RuBB',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'David Octavius Hill (Master of Photography)',
+      titleEn: 'David Octavius Hill (Master of Photography)',
+      noteJa: '初期写真の名手としてのヒルを、代表作から手早く確認できる写真集。',
+      noteEn: 'A focused volume for quickly seeing Hill\'s place among the early masters of photography.',
+      urlEn: 'https://amzn.to/49PHbt3',
+      languages: ['en']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.fenton = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4twsm6g' },
