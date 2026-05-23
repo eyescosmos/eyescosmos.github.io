@@ -2862,6 +2862,20 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-冨重利平'] = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-冨重徳次'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4x3DlXx' }
+  },
+  books: [
+    {
+      titleJa: '肖像のモダンエイジ ―冨重写真所展',
+      noteJa: '冨重写真所の肖像文化を通じて、徳次が継承した地域写真館の役割も読み取れる展覧会資料。',
+      urlJa: 'https://amzn.to/4x3DlXx',
+      languages: ['ja']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-横山松三郎'] = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4v8utht' }
