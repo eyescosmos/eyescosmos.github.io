@@ -2808,3 +2808,17 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-長谷川伝次郎'] = {
     }
   ]
 };
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-冨重徳次'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4x3DlXx' }
+  },
+  books: [
+    {
+      titleJa: '肖像のモダンエイジ ―冨重写真所展',
+      noteJa: '冨重写真所の肖像文化を通じて、徳次が継承した地域写真館の役割も読み取れる展覧会資料。',
+      urlJa: 'https://amzn.to/4x3DlXx',
+      languages: ['ja']
+    }
+  ]
+};
