@@ -16447,3 +16447,651 @@ Jack Delano has been evaluated primarily for his FSA work, but recent scholarshi
 
   window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
 })();
+
+;(function() {
+  var overrides = window.PHOTOGRAPHER_ESSAY_OVERRIDES || {};
+
+  // ─── Robert Capa ──────────────────────────────────────────────────────────
+  overrides['capa'] = {
+    leadJa: `ハンガリー出身の報道写真家。スペイン内戦から日中戦争、D-Dayまで戦場の最前線に肉迫し続け、「最も偉大な戦争写真家」という神話を雑誌メディアとの共犯関係の中で作り上げた。「ロバート・キャパ」というペンネーム自体が亡命者による演出の産物であり、1947年にはマグナム・フォトスを共同創設して写真家の権利管理モデルを制度化した。`,
+    leadEn: `Born Endre Friedmann in Budapest, Robert Capa worked the front lines of the Spanish Civil War, the Japanese invasion of China, and the Normandy landings. His persona as "the greatest war photographer" was itself a construction, co-built by magazine media and self-narration. In 1947 he co-founded Magnum Photos, institutionalizing a model for photographer agency and rights.`,
+    textJa: `経歴
+
+ロバート・キャパは本名エンドレ・エルネスト・フリードマンとして1913年にブダペストに生まれた。17歳でハンガリーを離れ、ベルリンで写真エージェンシーのアシスタントとして暗室技術を学んだ後、ナチス台頭を機に1933年にパリへ渡った*1。パリでは恋人ゲルダ・タロー（本名ゲルタ・ポホリレ）と共謀して「ロバート・キャパ」という架空のアメリカ人写真家のペルソナを作り上げた。この名は高額請求のための商業戦略であると同時に、ハンガリー系ユダヤ人亡命者という身分を隠す手段でもあった。1936年のスペイン内戦取材で2人は国際的な名声を得たが、タローは1937年7月のブルネテの戦いで戦車に轢かれ26歳で死亡した。1938年には日中戦争の中国戦線を取材し漢口（Hankow）など各地を撮影した*2。第二次世界大戦ではアフリカ・シチリア・イタリア・西欧各地に赴き、1944年6月6日のノルマンディー上陸作戦（D-Day）に連合軍第一波と共に参加した*3。1947年にアンリ・カルティエ＝ブレッソン、デビッド・シーモア、ジョージ・ロジャー、ウィリアム・ヴァンダイヴァートとともにマグナム・フォトスを共同創設した*4。1948年にはイスラエル建国の現場を取材し、その写真群は米国ホロコースト記念博物館が保管している*5。1954年5月25日、インドシナ戦争取材中に地雷を踏み41歳で死亡した。死後の2007年に「メキシコのスーツケース」が発見され、スペイン内戦時の未知のネガ約4500枚が含まれていた。このネガはゲルダ・タローと、メキシコ人映画監督経由でニューヨークに渡っており、2010年にICPが《Mexican Suitcase》展として公開した。
+
+表現解説
+
+スペイン内戦とゲルダ・タローの共同制作
+
+キャパのスペイン内戦取材はゲルダ・タローとの共同作業として始まり、2人は「キャパ」という名を一時期共有して写真を発表した。《落下する兵士》（Cerro Muriano, Spain, 1936）はゲッティ美術館が所蔵する作品として流通しているが*6、その撮影者の特定や状況をめぐる論争は今なお続く。論争の核心は真偽判定よりも「近接＝証言の保証」という写真報道の約束事がいかに形成され強化されたかにある。ICPが企画した《This Is War! Robert Capa at Work》展は、スペイン・中国・D-Dayの写真がいかに撮られ・選ばれ・流通したかを検証する展覧会として、写真の制作過程と神話形成の両面を問い直した*7。バービカンでの同展巡回は英国での受容文脈を示す*8。横浜美術館でのゲルダ・タローとの二人展は、キャパを単独の神話としてではなくタローとのコラボレーションとして再評価する試みである*9。
+
+D-Dayとオマハ・ビーチ写真の物質的条件
+
+1944年6月6日、キャパは連合軍の最初の上陸部隊とともにオマハ・ビーチへ向かい、波打ち際から岸に向かう兵士たちを撮影した。現像ミスによって大半のコマが失われ、残った11枚はぶれた非明晰な画像だった*3。「不完全さが真実性を証明する」という評価の型は、このD-Day写真の受容を通じて形成された。ゲッティ美術館は《Omaha Beach, Normandy, France》を公式所蔵として管理しており*10、帝国戦争博物館（IWM）はキャパが使用したContax IIカメラキットを所蔵し、写真の物質的な生産条件を機材の角度から確認できる*11。ナショナルWWIIミュージアムはキャパのオマハ・ビーチ写真を戦争記憶の象徴的視覚資料として位置づけている*12。ムゼ・ド・ラ・リベラシオン・ド・パリでの2026年回顧展は、若年期・亡命・「キャパ/タロ」という自己演出を中心に据えており、この複合的な神話形成の検討に資する*13。
+
+カラー写真と活動の多面性
+
+キャパの活動はモノクロの戦争写真に限らない。ICPの《Capa in Color》展は1930–40年代の西欧・米国の日常を記録したカラー写真群を公開し、戦争写真家という固定像の外側を提示した*14。これらの写真は、コダクロームが普及しはじめた時代に撮影されたカラーフィルム作品であり、フランス・イギリスの街角や人々の顔を軽快なトーンで収めており、モノクロの戦場写真とは異なる観察者としての側面を示している。ブダペストのロバート・キャパ現代写真センターは同展を同時期に開催し、生まれた都市での継続的な再評価を担っている*15。ジュ・ド・ポームでの《Capa in Color》展はフランスでの受容の一端を示しており*16、TIME誌の特集はカラー写真群の初期公開として参照できる*17。
+
+キャパ研究の現状と「メキシコのスーツケース」
+
+2000年代以降のキャパ研究は、写真の真偽よりも「写真が神話化される過程」を問う方向に移行してきた。リチャード・ウィーランのキャパ伝記（1985年）は《落下する兵士》の撮影地をセロ・ムリアーノとして特定しようとする試みとして知られるが、スペインのアーカイブ研究者らは複数の反証を提示しており、今なお論争は継続している。この論争が継続する事実そのものが、写真報道における「証言の約束」という制度的な期待の強さを映している。「メキシコのスーツケース」発見後、ゲルダ・タローが独立した写真家として改めて評価されたことは、「キャパ」という名前に収束してきた写真史の語りを問い直す契機となった。
+
+マグナム創設と写真家の権利管理
+
+1947年のマグナム・フォトス創設以前、写真家は雑誌社との専属契約によってネガの所有権を失うことが慣例だった。マグナムはこのモデルを変え、写真家が撮影・配信の各段階で主体性を持つエージェントモデルを制度化した*4。MIT CMS/Wの研究論文「The Construction of Photojournalism」はマグナムの視覚スタイルとブランド構築を制度史として分析しており、フォトジャーナリズムの組織化における写真家の権利意識の変化を論じている*18。
+
+批評と受容
+
+キャパの神話——演出された名前・雑誌キャプション・本人の語り・真偽論争——は、写真批評において繰り返し問い直されてきた。2007年の「メキシコのスーツケース」公開後、ゲルダ・タローの写真家としての独自の功績が改めて評価され、「キャパ」という名が2人の共同制作から生まれたブランドであったという歴史的事実が広く認知された。フィラデルフィア美術館、テル・アビブ美術館、スペインのシルクロ・デ・ベジャス・アルテスなど複数の機関での回顧展は、スペイン内戦から中国・D-Day・イスラエルまでの全取材を一括して評価する文脈を形成してきた*19。東京都写真美術館での《ロバート・キャパ 戦争》展は日本語圏での受容の場として機能している*20。海外プレスクラブ（OPC）は「ロバート・キャパ金メダル賞」を毎年授与しており、戦争・報道写真の国際的な評価基準としてキャパの遺産が継続している*21。キャパ・センター・ブダペストは写真家の生まれた都市での長期的な顕彰機関として、生涯を通じた全取材の再評価を継続して担っている*15。`,
+    textEn: `Biography
+
+Robert Capa was born Endre Ernő Friedmann in Budapest in 1913. He left Hungary at seventeen, learned darkroom technique as an assistant at a Berlin photo agency, and moved to Paris in 1933 as the Nazis rose to power. In Paris he and his partner Gerda Taro (born Gerta Pohorylle) conspired to create the persona of "Robert Capa" — an invented American photographer — as both a commercial strategy and a way of concealing their identity as Jewish émigrés*1. The Spanish Civil War (1936) brought them international recognition while working together; Taro was killed at Brunete in July 1937, crushed by a tank at the age of twenty-six*2. In 1938 he covered the Japanese invasion of China, photographing the Hankow front. The Second World War took him across North Africa, Sicily, Italy, and Western Europe; on June 6, 1944, he landed on Omaha Beach with the first wave of Allied troops*3. In 1947 he co-founded Magnum Photos alongside Henri Cartier-Bresson, David Seymour, George Rodger, and William Vandivert*4. He covered the establishment of Israel in 1948; those photographs are held by the United States Holocaust Memorial Museum*5. He died on May 25, 1954, stepping on a land mine in Indochina at the age of 41. The Mexican Suitcase, discovered in 2007 and exhibited by ICP in 2010, added approximately 4,500 previously unknown Spanish Civil War negatives to the record.
+
+Expression / method
+
+The Spanish Civil War and the Capa/Taro collaboration
+
+Capa's Spanish Civil War coverage began as a collaboration with Gerda Taro; for a period the two shared the "Capa" byline. The Falling Soldier (Cerro Muriano, Spain, 1936) circulates as a work held by the J. Paul Getty Museum*6, while debate over its authorship and circumstances has continued. The core issue is not the verdict on authenticity but how "proximity as a guarantee of truth" was formed and reinforced within photojournalism. ICP's This Is War! Robert Capa at Work examined how images from Spain, China, and D-Day were made, selected, and distributed — questioning both methods and myth-making*7. The tour to the Barbican documents how this discourse traveled into British reception*8. The Yokohama Museum of Art's dual exhibition of Capa and Taro represents an attempt to reframe Capa within the collaborative context*9.
+
+D-Day and the material conditions of Omaha Beach photography
+
+On June 6, 1944, Capa landed on Omaha Beach with the first Allied wave and photographed soldiers moving toward shore from the waterline. A developing accident destroyed most of the roll, leaving eleven blurred, unstable frames*3. The idea that "imperfection certifies authenticity" crystallized through the reception of these photographs. The J. Paul Getty Museum holds Omaha Beach, Normandy, France*10. The Imperial War Museums hold the Contax II camera kit Capa used on D-Day, providing a material record of production conditions*11. The National WWII Museum positions the images as iconic visual documents of wartime memory*12. The 2026 retrospective at the Musée de la Libération de Paris centers on his youth, exile, and the self-constructed persona of "Capa/Taro"*13.
+
+Color photography and multiple dimensions of work
+
+Capa's work extended beyond black-and-white war photography. ICP's Capa in Color exhibition revealed an archive of color photographs recording daily life in Western Europe and the United States in the 1930s–40s, made on Kodachrome when color film was still uncommon — offering a relaxed observational mode entirely distinct from his wartime photographs*14. The Robert Capa Contemporary Photography Center in Budapest mounted the same exhibition simultaneously, continuing reappraisal in his birth city*15. The Jeu de Paume Capa in Color exhibition documents the French dimension of this reception*16, and a TIME magazine feature represents an early public release of this work*17.
+
+Magnum and the institutionalization of photographer agency
+
+Before the founding of Magnum Photos in 1947, photographers typically lost ownership of their negatives under exclusive magazine contracts. Magnum institutionalized a model in which photographers retained copyright and syndication rights at every stage of production and distribution*4. The MIT CMS/W research paper "The Construction of Photojournalism" analyzes Magnum's visual style and brand-building as institutional history, tracing the change in photographers' rights consciousness*18.
+
+Criticism and reception
+
+The myth of Capa — the invented name, the magazine captions, the self-narration, the authenticity debates — has been repeatedly interrogated in photographic criticism. Following the 2007 discovery and 2010 exhibition of the Mexican Suitcase, Gerda Taro's independent contribution was widely recognized, and the historical fact that "Capa" was a jointly produced brand became broadly acknowledged. Retrospectives at the Philadelphia Museum of Art, the Tel Aviv Museum of Art, and the Círculo de Bellas Artes have shaped cumulative frameworks for evaluating his coverage of five wars*19. The Tokyo Photographic Art Museum's Robert Capa: War exhibition functions as a site of reception in Japanese-language culture*20. The Overseas Press Club of America awards the Robert Capa Gold Medal annually, sustaining his legacy as an international standard in war and documentary photography*21.`,
+    citations: [
+      { num: 1, name: 'Robert Capa. Magnum Photos', url: 'https://www.magnumphotos.com/photographer/robert-capa/' },
+      { num: 2, name: 'Hankow, 1938. The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/260714' },
+      { num: 3, name: 'D-Day and the Omaha Beach landings. Magnum Photos', url: 'https://www.magnumphotos.com/newsroom/conflict/robert-capa-d-day-omaha-beach/' },
+      { num: 4, name: 'Magnum history. Magnum Photos', url: 'https://www.magnumphotos.com/about-magnum/history/' },
+      { num: 5, name: 'Robert Capa and Mark Markov-Grinberg collection. United States Holocaust Memorial Museum', url: 'https://collections.ushmm.org/search/catalog/irn524084' },
+      { num: 6, name: 'Cerro Muriano, Spain (The Falling Soldier). J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/object/10983E' },
+      { num: 7, name: 'This Is War! Robert Capa at Work. ICP', url: 'https://www.icp.org/exhibitions/this-is-war-robert-capa-at-work' },
+      { num: 8, name: 'This Is War! Robert Capa at Work. Barbican', url: 'https://www.barbican.org.uk/whats-on/2008/event/this-is-war' },
+      { num: 9, name: 'Two Photographers: Capa / Taro. Yokohama Museum of Art', url: 'https://yokohama.art.museum/eng/exhibition/201301_twophotographers/' },
+      { num: 10, name: 'Omaha Beach, Normandy, France. J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/object/1097QN' },
+      { num: 11, name: 'Contax II 35mm Field Camera Kit. Imperial War Museums', url: 'https://www.iwm.org.uk/collections/item/object/30004742' },
+      { num: 12, name: "Robert Capa's Iconic Images from Omaha Beach. National WWII Museum", url: 'https://www.nationalww2museum.org/war/articles/robert-capas-iconic-images-omaha-beach' },
+      { num: 13, name: 'Musée de la Libération de Paris – Musée du Général Leclerc – Musée Jean Moulin', url: 'https://www.museeliberation-leclerc-moulin.paris.fr/' },
+      { num: 14, name: 'Capa in Color. ICP', url: 'https://www.icp.org/exhibitions/capa-in-color' },
+      { num: 15, name: 'Capa in Color. Robert Capa Contemporary Photography Center', url: 'https://capacenter.hu/en/sajtoszoba/capa-in-color-2/' },
+      { num: 16, name: 'Capa in Color. Jeu de Paume', url: 'https://jeudepaume.org/en/evenement/capa-in-color/' },
+      { num: 17, name: 'Robert Capa in Color. TIME', url: 'https://time.com/3829565/robert-capa-in-color/' },
+      { num: 18, name: 'The Construction of Photojournalism. MIT CMS/W', url: 'https://cmsw.mit.edu/wp/wp-content/uploads/2016/10/146381149-Michelle-Woodward-The-Construction-of-Photojournalism-Visual-Style-and-Branding-in-the-Magnum-Photos-Agency.pdf' },
+      { num: 19, name: 'Robert Capa. Philadelphia Museum of Art', url: 'https://www.philamuseum.org/exhibitions/robert-capa-photographs' },
+      { num: 20, name: 'ロバート・キャパ 戦争. 東京都写真美術館', url: 'https://topmuseum.jp/exhibition/4868/?lang=en' },
+      { num: 21, name: 'Robert Capa Gold Medal. Overseas Press Club of America', url: 'https://opcofamerica.org/Award/the-robert-capa-gold-medal-award/' },
+    ],
+    links: [
+      { label: 'Magnum Photos', url: 'https://www.magnumphotos.com/photographer/robert-capa/' },
+      { label: 'ICP — Robert Capa', url: 'https://www.icp.org/browse/archive/constituents/robert-capa' },
+      { label: 'Capa Center Budapest', url: 'https://capacenter.hu/en/' },
+      { label: 'MoMA — collection', url: 'https://www.moma.org/collection/artists/956' },
+    ],
+    works: [
+      { titleJa: '落下する兵士（セロ・ムリアーノ）', titleEn: 'Cerro Muriano, Spain (The Falling Soldier)', labelJa: 'ゲッティ美術館所蔵', labelEn: 'J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/object/10983E', aliases: ['落下する兵士'] },
+      { titleJa: 'オマハ・ビーチ、ノルマンディー', titleEn: 'Omaha Beach, Normandy, France', labelJa: 'ゲッティ美術館所蔵', labelEn: 'J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/object/1097QN', aliases: [] },
+    ],
+  };
+
+  // ─── Ken Domon ────────────────────────────────────────────────────────────
+  overrides['domon'] = {
+    leadJa: `戦前の報道写真から出発し、戦後は子ども・古寺・ヒロシマを連作で記録した日本の写真家。「絶対非演出・絶対スナップ」を原則とするリアリズム論を写真雑誌で展開し、木村伊兵衛との論争を通じて戦後日本写真の言語を整備した。土門拳記念館（山形県酒田市）は本人が設立に関わった専門美術館として全作品を所蔵する。`,
+    leadEn: `Ken Domon moved from prewar press photography to a postwar career defined by serial projects on children, Buddhist temples, Hiroshima, and coal-mining communities. His doctrine of "absolute non-staging, absolute snapshot" — debated publicly against Ihei Kimura — helped shape the language of postwar Japanese photography. The Ken Domon Museum in Sakata holds his complete archive.`,
+    textJa: `経歴
+
+土門拳は1909年に山形県酒田市に生まれ、上京後に写真を始め、1930年代から新聞・雑誌の報道写真家として活動した*1。戦前の仕事には国家宣伝写真への参加も含まれており、その経験が戦後の「リアリズム写真」提唱の背景にある。1950年代から「絶対非演出・絶対スナップ」を原則とした直接リアリズムを写真雑誌で展開し、木村伊兵衛との「リアリズム論争」を通じて戦後日本写真の言語形成に大きく関与した*2。代表的な連作は「子供たち」「筑豊のこどもたち」（1960年）、「ヒロシマ」（1958年）、「古寺巡礼」（1963–75年）である。1957年から1年間にわたって広島の原爆病院・障害者施設・孤児院を取材し、5800枚のネガから171点を収録した写真集『ヒロシマ』（1958年）を刊行した*3。1968年に脳出血で倒れた後も車椅子で制作を続け、1974年にはMoMAの《New Japanese Photography》展に参加して室生寺写真が国際的文脈に置かれた*4。山形美術館は「土門拳の昭和」展として昭和史的側面を取り上げており*5、土門拳記念館（山形県酒田市）は1983年に建築家・谷口吉生の設計で開館し、全作品と資料を所蔵する*6。1990年に死去した。
+
+表現解説
+
+「絶対非演出・絶対スナップ」という方法論と論争
+
+「絶対非演出・絶対スナップ」は、単なる技術的指示ではなく、写真家が現実に向き合う際の倫理的立場として提示された。「絶対」という語は、演出・補正・待機撮影をいかなる場合にも排除するという意味での原則であり、木村伊兵衛が「写真家の主観・情感による選択もまた正当なリアリズムである」と応じたことで、両者の差異が明確化された。この論争は1950年代の写真雑誌『カメラ』『フォトアート』などを舞台に展開し、「写真は直接現実を切り取るべきか、それとも写真家の主観を媒介するべきか」をめぐる戦後日本写真界の中心的な問いを形成した。リアリズム写真運動は、戦前のサロン写真への反省と戦時の宣伝写真という二重の遺産から生まれた制度的転換点として理解できる。FUJIFILMスクエアの略歴資料は土門の経歴と方法論の形成過程を基礎的に確認できる*7。nippon.comの記事「鬼と呼ばれた写真家・土門拳」は、この方法論が周囲にどのように受け止められたかを示す補助資料として機能する*8。
+
+子どもの記録と被写体への接近
+
+「筑豊のこどもたち」（1960年）は炭鉱地帯に暮らす子どもたちの生活環境を長期にわたって記録した連作で、廉価版として10万部が売れ社会的反響を呼んだ。MoMAは《Children, c.1955》を所蔵しており、戦後リアリズムの一例として国際的文脈に位置づけている*9。FUJIFILMスクエアの英語展覧会資料は、子どもと肖像の二面性とヴィンテージ・プリントについて英語圏向けに解説しており*10、ニューヨークの日系人歴史デジタル博物館もMoMA展示歴を含む英語資料を残している*11。土門の子ども写真の特徴は被写体との距離の近さと画面の密度にあり、「被写体が写真家の存在を知っている」状態を前提とする接近法として読み取れる。「筑豊のこどもたち」は単に貧困を告発する社会記録ではなく、子どもの眼と身体の存在感を画面に定着させることで、見る行為の倫理を問い直す作品として批評的に位置づけられてきた。
+
+古寺巡礼と仏像写真の国際受容
+
+「古寺巡礼」シリーズ（1963–75年）は奈良・京都の寺院建築と仏像を大判カメラと多灯フラッシュで精細に記録した生涯の大プロジェクトであり、強力な人工光によって自然光では見えない仏像の質感・細部を浮かび上がらせた点で技術的にも革新的だった。東京都写真美術館が「土門拳の古寺巡礼」展を開催し継続的な受容の場を提供している*12。MoMAは《The Muro River (Summer)》と《Detail of the Sitting Image of Buddha Shakyamuni in the Hall of Miroku, Muro-Ji, Nara》を所蔵しており、1974年の《New Japanese Photography》展でのその提示が国際的位置づけの基盤となった*13。MoMAの《New Japanese Photography》展図録（1974年）は土門の室生寺写真を戦後日本写真の重要な系譜として位置づけた一次資料として参照できる*4。子どもを見つめた眼と仏像の細部を見つめた眼は、被写体へ徹底的に接近するという同一の態度から生まれた。
+
+ヒロシマの記録と証言性
+
+「ヒロシマ」連作（1958年）は原爆被害者と後遺症を5800枚のネガから171点にまとめた写真集として刊行され、国内外で大きな反響を呼んだ。土門はケロイドを持つ人物の顔と身体をクローズアップで撮影し、被害の現実を視覚的に証言する写真として機能させた。この連作は、美しい仏像を記録する眼と傷ついた人体を見つめる眼が同一の写真家から生まれるという問いを提起し、「リアリズム」が何を見るべきかを実践で示した仕事として評価されている*3。
+
+「ヒロシマ」連作の制作倫理
+
+ヒロシマ連作において土門は単発の取材ではなく長期にわたる継続的な関与を選んだ。原爆被害者との信頼関係を時間をかけて築いた上で撮影するという姿勢は、「絶対スナップ」の原則と矛盾するように見えるが、土門は「被写体が自分の存在を知っている状態での自然な反応」こそを求めていたとしている。5800枚のネガから171点を選ぶ作業は、単なる量的な縮減ではなく、証言写真として何が必要かという編集的・倫理的判断の実践であった。MoMAの《New Japanese Photography》展図録はこの連作が戦後日本写真の核心的な成果として国際的に受容された文脈を示している*4。
+
+批評と受容
+
+土門拳の評価はリアリズム論争への参加・写真集の規模と完成度・美術館への作品収蔵という複数の経路を通じて形成された。ローマのムゼオ・デル・アーラ・パチスでの個展は「日本リアリズムの巨匠」（Domon Ken: The Master of Japanese Realism）として欧州に土門を紹介しており、イタリアでの受容を示す国際的根拠になる*14。Artribuneの企画情報は同展の規模・構成・海外展示の文脈を補う資料として機能する*15。土門拳記念館の建築は谷口吉生が担当し、その館はMoMAのリニューアルプレスリリースに参照されるなど美術館の制度化という側面でも注目できる*6。国立新美術館アートコモンズは「古寺巡礼 秋」展の記録を保管しており*16、日本写真学会のPDF資料は展覧会の流通経緯を記録している*17。MoMAのプレスリリースは1974年展の意義を当時の文脈で確認できる資料となっている*18。
+
+国際受容の文脈において、土門のリアリズムは「日本的社会記録写真」の典型として位置づけられてきた。しかしその「日本的」という括りは、戦後の写真言語がアメリカ・フランス・ドイツの写真モダニズムと独立して形成されたかのような誤解を生みやすい。土門のリアリズム論は、ロバート・フランクやウジェーヌ・アジェの系譜との比較において、共通点と差異を問う国際的な写真史の議論の中に位置づけることが可能である。`,
+    textEn: `Biography
+
+Ken Domon was born in Sakata, Yamagata Prefecture, in 1909 and moved to Tokyo to take up photography, working from the 1930s as a press photographer for newspapers and magazines*1. His prewar experience included participation in state-propaganda imagery — a background that directly informed his postwar call for "realist photography." His public debate with Ihei Kimura over realism in the 1950s became a defining argument for postwar Japanese photography*2. His major serial projects include Children (1950s), Hiroshima (1958), Children of Chikuho (1960), and Pilgrimage Through Ancient Temples (1963–75). Beginning in 1957 he spent a year working in atomic-bomb hospitals, facilities for the disabled, and orphanages, producing 5,800 negatives from which 171 photographs were selected for the 1958 book Hiroshima*3. He participated in MoMA's New Japanese Photography exhibition (1974), bringing his Muro-ji photographs into an international context*4. The Yamagata Museum of Art mounted an exhibition on his documentation of the Showa era*5. The Ken Domon Museum of Photography in Sakata, designed by architect Yoshio Taniguchi and opened in 1983, holds his complete archive*6. He died in 1990.
+
+Expression / method
+
+"Absolute non-staging, absolute snapshot" and the realism debate
+
+Domon's doctrine of "absolute non-staging, absolute snapshot" (zettai hi-enshutsu, zettai sunappu) was an ethical stance toward reality rather than a technical specification. The word "absolute" meant that staging, correction, or waiting for a set-up shot were to be excluded in every case. Ihei Kimura's rejoinder — that the photographer's subjectivity and sensibility in selection also constituted legitimate realism — clarified the distance between the two positions. The exchange unfolded through photography journals such as Camera and Photo Art in the 1950s, and constituted a central debate in postwar Japanese photography. The realist photography movement arose from a double inheritance: a reaction against prewar salon photography and the experience of wartime propaganda. FUJIFILM Square's biographical resource provides a baseline confirmation of his career and method*7. The nippon.com article "The Photographer Called a Demon: Ken Domon" documents how his stance was received by contemporaries*8.
+
+Children and the ethics of proximity
+
+Children of Chikuho (1960) records the living conditions of children in the Chikuho coal-mining region over an extended period and sold around 100,000 copies in an inexpensive edition, generating wide social impact. MoMA holds Children, c.1955 in its collection, situating Domon's work within a postwar realist context for international audiences*9. FUJIFILM Square's English exhibition resource explains the duality of children and portraiture in his work, and discusses his vintage prints*10. The Digital Museum of the History of Japanese in New York holds English-language documentation including his MoMA exhibition history*11. Children of Chikuho is understood not merely as social documentation of poverty but as a work that confronts the ethics of looking — registering the presence of children's eyes and bodies with unusual closeness and intensity.
+
+Pilgrimage Through Ancient Temples and international reception
+
+Pilgrimage Through Ancient Temples (1963–75) used a large-format camera and multi-flash lighting to photograph Buddhist sculpture and temple architecture in Nara and Kyoto. The use of powerful artificial light was technically innovative — it brought out textures and details invisible in natural light. The Tokyo Metropolitan Museum of Photography staged Ken Domon's Pilgrimage Through Ancient Temples, providing a sustained institutional reception*12. MoMA holds The Muro River (Summer) and Detail of the Sitting Image of Buddha Shakyamuni in the Hall of Miroku, Muro-Ji, Nara; their presentation in the 1974 New Japanese Photography exhibition established the international positioning of this work*13. The MoMA New Japanese Photography catalogue (1974) is a primary source for understanding how Domon's temple photographs were positioned within the postwar Japanese tradition*4. The eye that scrutinized children and the eye that examined a sculpture's surface emerged from the same fundamental impulse toward proximity.
+
+Hiroshima and the documentary as witness
+
+The Hiroshima series (1958) — drawn from 5,800 negatives to 171 selected photographs — generated major impact both inside and outside Japan. Domon photographed keloid scars and damaged bodies in extreme close-up, functioning as visual testimony of the aftermath of the atomic bomb. This work raises the question of how the same photographer's eye that recorded beautiful sculptures could also face damaged human bodies, and what that says about "realism" as an ethical commitment*3.
+
+Criticism and reception
+
+Domon's standing as the leading figure of Japanese realism was formed through multiple channels: participation in the realism debates, the scale and ambition of his photobook projects, and institutional acquisition. The Museo dell'Ara Pacis in Rome mounted an individual exhibition under the title Domon Ken: The Master of Japanese Realism, demonstrating his European reception*14. Artribune's coverage of the exhibition supplements information on its scale and international context*15. The Ken Domon Museum of Photography, designed by Yoshio Taniguchi and referenced in MoMA's reopening press materials, marks the institutionalization of his legacy in architectural and museum terms*6. The National Art Center Tokyo's ArtCommons archive holds records of the Pilgrimage Through Ancient Temples — Autumn exhibition*16. The Japan Society of Photography PDF documents the circulation of his exhibitions*17. MoMA's 1974 press release allows confirmation of the exhibition's significance in its contemporary context*18.`,
+    citations: [
+      { num: 1, name: '土門拳プロフィール. FUJIFILM SQUARE', url: 'https://fujifilmsquare.jp/profile/ken_domon.html' },
+      { num: 2, name: '土門拳. shashasha', url: 'https://www.shashasha.co/jp/artist/ken-domon' },
+      { num: 3, name: '土門拳作品・ヒロシマ. 東京都写真美術館 / ToMuCo', url: 'https://museumcollection.tokyo/works/93412/' },
+      { num: 4, name: 'New Japanese Photography catalogue PDF. MoMA', url: 'https://assets.moma.org/documents/moma_catalogue_2525_300298255.pdf' },
+      { num: 5, name: '土門拳の昭和. 山形美術館', url: 'https://www.yamagata-art-museum.or.jp/exhibition/1333.html' },
+      { num: 6, name: 'Yoshio Taniguchi / Ken Domon Museum of Photography. MoMA press release', url: 'https://assets.moma.org/documents/moma_press-release_387079.pdf' },
+      { num: 7, name: '土門拳プロフィール. FUJIFILM SQUARE', url: 'https://fujifilmsquare.jp/profile/ken_domon.html' },
+      { num: 8, name: '鬼と呼ばれた写真家・土門拳. nippon.com', url: 'https://www.nippon.com/ja/japan-topics/g00954/' },
+      { num: 9, name: 'Ken Domon, Children, c.1955. MoMA', url: 'https://www.moma.org/collection/works/48221' },
+      { num: 10, name: 'Ken Domon — Dual Perspectives. FUJIFILM SQUARE English', url: 'https://fujifilmsquare.jp/en/detail/14100104.html' },
+      { num: 11, name: 'Domon Ken – Photographer of Modern Japan. Digital Museum of the History of Japanese in NY', url: 'https://www.historyofjapaneseinny.org/artifacts/domon-ken/' },
+      { num: 12, name: '土門拳の古寺巡礼. 東京都写真美術館', url: 'https://topmuseum.jp/exhibition/4317/' },
+      { num: 13, name: 'Ken Domon, The Muro River (Summer). MoMA', url: 'https://www.moma.org/collection/works/50733' },
+      { num: 14, name: "Domon Ken. The Master of Japanese Realism. Museo dell'Ara Pacis", url: 'https://www.arapacis.it/en/mostra-evento/domon-ken' },
+      { num: 15, name: 'Domon Ken: The Master of Japanese Realism. Artribune', url: 'https://www.artribune.com/arti-visive/fotografia/2024/09/mostra-ken-domon-master-japanese-realism-roma/' },
+      { num: 16, name: '土門拳 古寺巡礼 秋. 国立新美術館アートコモンズ', url: 'https://nact.jp/artcommons/user/detail/3350' },
+      { num: 17, name: '土門拳 exhibition route. 日本写真学会 PDF', url: 'https://www.spij.jp/wp-content/uploads/2024/04/%E7%AC%AC50%E5%9B%9E%E3%80%8C%E5%86%99%E7%9C%9F%E5%A5%BD%E3%81%8D%E3%80%8D%E5%AE%9A%E6%9C%9F%E8%AC%9B%E6%BC%94%E4%BC%9A%E3%83%81%E3%83%A9%E3%82%B7_240408.pdf' },
+      { num: 18, name: 'New Japanese Photography press release. MoMA Archives', url: 'https://www.moma.org/docs/press_archives/5101/releases/MOMA_1974_0032_29.pdf' },
+    ],
+    links: [
+      { label: '土門拳記念館', url: 'https://assets.moma.org/documents/moma_press-release_387079.pdf' },
+      { label: 'MoMA — artist page', url: 'https://www.moma.org/collection/artists/1581' },
+      { label: 'FUJIFILM SQUARE — プロフィール', url: 'https://fujifilmsquare.jp/profile/ken_domon.html' },
+      { label: 'Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A3936' },
+    ],
+    works: [
+      { titleJa: '筑豊のこどもたち', titleEn: 'Children of Chikuho', labelJa: 'MoMA所蔵（子供たち c.1955）', labelEn: 'MoMA', url: 'https://www.moma.org/collection/works/48221', aliases: [] },
+      { titleJa: '室生川（夏）', titleEn: 'The Muro River (Summer)', labelJa: 'MoMA所蔵', labelEn: 'MoMA', url: 'https://www.moma.org/collection/works/50733', aliases: [] },
+    ],
+  };
+
+  // ─── Koyo Kageyama ────────────────────────────────────────────────────────
+  overrides['jp-影山光洋'] = {
+    leadJa: `戦時の報道写真と戦後の家族・子ども・都市の記録を長期にわたって撮り続けた日本の写真家。報道の文脈と私的な記録の眼が混在する写真群は、昭和期の生活史を視覚化する資料として東京都写真美術館などに収蔵されている。アマースト大学でも「昭和の50年」展として紹介された。`,
+    leadEn: `Koyo Kageyama worked as a press photographer through the wartime period and continued to document family life, children, and urban change in postwar Japan. His photographs — mixing press context with a more intimate observational mode — are held in the Tokyo Metropolitan Museum of Photography as visual documents of Showa-era life. His work was exhibited in the United States under the title Fifty Years of Showa Japan.`,
+    textJa: `経歴
+
+影山光洋は1907年に生まれ、戦前から写真家・報道写真家として活動した。1930年代から報道の現場に関わり、プレスカメラを手に従軍・報道の現場に携わった。東京都写真美術館（TOP Museum）は影山の作品を収蔵しており、戦中・戦後を連続して捉えた写真群を所蔵資料として管理している*1。アマースト大学（Amherst College）のミード美術館は「Fifty Years of Showa Japan」展（2006年）として影山の仕事を英語圏に紹介した*2。東京都写真美術館収蔵品には戦時の従軍記録から戦後の家族記録まで幅広い作品が含まれており、昭和という時代をまたぐ視覚記録として位置づけられている。国立国会図書館典拠データは著作情報を管理しており*3、Art Platform Japanは影山の作家情報を典拠資料として管理している*4。1981年に死去した。東京都美術館OPACには「知っていますか？日本に戦争があった時代を」展の記録が残されており、影山の写真展の流通経緯を確認できる*5。
+
+表現解説
+
+戦時報道と従軍写真の制度的文脈
+
+影山光洋の戦時写真は、報道機関が組織した従軍取材の枠組みの中で生産された。1930–40年代の日本では、写真は国家宣伝の視覚装置としても機能しており、報道写真家は「国家に奉仕しながら記録する」という二重の役割を担わされた。東京都写真美術館コレクションに収蔵されている《落陽を浴びて（シンガポール陥落）》は、1942年のシンガポール陥落を記録した写真として美術館が一次資料として管理している*6。こうした従軍写真が後の美術館コレクションに収蔵されることで、歴史的記録としての性格と、当時の宣伝的機能という緊張関係が一枚の写真の中に保存される。PHOTOGUIDE.JPは影山の経歴と代表作についての資料を参照できる*7。
+
+戦後の家族記録と「私的」ドキュメンタリー
+
+戦後の影山の写真には、家族・子ども・都市の変化を長期にわたって追いかける眼が一貫している。東京都写真美術館収蔵の《戦後10年、家族の肖像》は、戦後10年の家族の姿を記録した作品として美術館の収蔵品検索で確認できる*8。報道カメラマンが戦後もその眼を家族や身近な日常へ向け続けた記録は、公的なニュース写真と私的な生活記録のあいだにある独自の位置を示す。戦前・戦中の報道と戦後の家族記録が同一の写真家のキャリアに収まっている事実は、昭和という時代を通じた写真家の役割の変化を映す鏡として読み取れる。東京都写真美術館の収蔵品検索は影山作品の複数の作品情報を一次資料として確認できる*9。
+
+「昭和の50年」という射程と国際受容
+
+アマースト大学での「Fifty Years of Showa Japan」展（2006年）は、影山の仕事を昭和史の視覚記録として英語圏の文脈に置いた展覧会として参照できる*2。影山の写真がカバーする時間軸は、戦前の昭和初期から戦中・戦後の高度成長期にまたがり、日本社会の変化を長い射程で記録した視覚資料としての性質を持つ。こうした長期記録は、土門拳の社会的リアリズムや木村伊兵衛のスナップとは異なる位置に置かれ、報道と記録の間を行き来する昭和中期の写真実践の一形態として理解できる。
+
+批評と受容
+
+影山光洋は土門拳や木村伊兵衛のように写真史の中心に位置づけられる作家ではないが、戦時・戦後をまたぐ長期記録として昭和期の生活史を視覚化した写真家として評価される。東京都写真美術館の収蔵は、その作品が一次資料として保存・研究される位置を保証する。戦前の報道写真と戦後の家族記録という二つの側面が同一の写真家から生まれた事実は、報道写真と私的記録の境界が昭和期においてどのように変化したかを問う素材になる。アマースト大学での英語圏への紹介は、日本写真史の「周辺」にある写真家が国際的な文脈でどのように受容されるかを示す一例ともなっている*2。`,
+    textEn: `Biography
+
+Koyo Kageyama was born in 1907 and worked as a photographer and press photographer from the prewar period. During the wartime years he covered military advances with a press camera, and his photographs document events including the fall of Singapore*1. After the war he continued photographing family life, children, and urban change across the postwar decades, forming a visual record that spans the Showa era. The Tokyo Metropolitan Museum of Photography (TOP Museum) holds his work in its collection*2. He died in 1981. His authority record is maintained by the National Diet Library*3. The Mead Art Museum at Amherst College presented his work to English-speaking audiences in the exhibition Fifty Years of Showa Japan (2006)*4.
+
+Expression / method
+
+Wartime press photography and its institutional context
+
+Kageyama's wartime photographs were produced within the framework of institutionally organized press coverage. The Tokyo Metropolitan Museum of Photography holds Bathed in the Setting Sun (Fall of Singapore), a photograph recording the 1942 fall of Singapore as an archival document*5. Such press photographs operated within the visual apparatus of wartime state communication even as they bore the outward form of news reporting.
+
+Postwar family documentation and the "private" documentary
+
+In Kageyama's postwar work, a consistent observational eye follows family life, children, and urban transformation over the long term. The Tokyo Metropolitan Museum collection includes Ten Years After the War: Family Portrait, accessible through the museum's collection search*6. A press photographer who continued directing his eye toward family and daily life after the war occupies a distinctive position between official news photography and intimate life documentation. PHOTOGUIDE.JP holds reference material on Kageyama's career and representative works*7.
+
+The fifty-year Showa span
+
+The Amherst College exhibition Fifty Years of Showa Japan (2006) situated Kageyama's work as a visual record of Showa history for English-language audiences*4. His photographic timeline stretches from the early Showa wartime period through postwar reconstruction and into the era of high economic growth — a range of visual documentation spanning major transformations in Japanese society. Art Platform Japan maintains his artist record as an authority resource*8.
+
+Criticism and reception
+
+Kageyama is not positioned at the center of photography historiography in the way that Ken Domon or Ihei Kimura are, but he is recognized as a photographer whose long-term record visualizes the social history of the Showa era across both wartime and postwar contexts. The Tokyo Metropolitan Museum of Photography's acquisition ensures his work is preserved and accessible as a primary source. The fact that wartime press photographs and postwar family records emerged from the same photographer raises questions about how the boundary between press photography and private documentation shifted through the Showa period.`,
+    citations: [
+      { num: 1, name: '影山光洋. Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A3936' },
+      { num: 2, name: '影山光洋作品. 東京都写真美術館 / ToMuCo', url: 'https://collection.topmuseum.jp/Publish/detailPage/46167/' },
+      { num: 3, name: '影山光洋. Web NDL Authorities', url: 'https://id.ndl.go.jp/auth/ndlna/00026012' },
+      { num: 4, name: 'Fifty Years of Showa Japan. Amherst College / Mead Art Museum', url: 'https://www.amherst.edu/museums/mead/exhibitions/2006/kageyama' },
+      { num: 5, name: '落陽を浴びて（シンガポール陥落）. 東京都写真美術館 / ToMuCo', url: 'https://museumcollection.tokyo/works/85538/' },
+      { num: 6, name: '戦後10年、家族の肖像. 東京都写真美術館収蔵品検索', url: 'https://collection.topmuseum.jp/Publish/detailPage/7749/' },
+      { num: 7, name: 'KAGEYAMA Koyo. PHOTOGUIDE.JP', url: 'https://photoguide.jp/txt/KAGEYAMA_Koyo' },
+      { num: 8, name: '影山光洋. Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A3936' },
+      { num: 9, name: '影山光洋写真展 : 知っていますか?日本に戦争があった時代を. 東京都美術館OPAC', url: 'https://jmapps.ne.jp/tobikan_opac/det.html?data_id=22821' },
+    ],
+    links: [
+      { label: 'Art Platform Japan', url: 'https://artplatform.go.jp/ja/artists/A3936' },
+      { label: '東京都写真美術館コレクション', url: 'https://collection.topmuseum.jp/Publish/detailPage/46167/' },
+      { label: 'Amherst College — Fifty Years of Showa Japan', url: 'https://www.amherst.edu/museums/mead/exhibitions/2006/kageyama' },
+    ],
+    works: [
+      { titleJa: '落陽を浴びて（シンガポール陥落）', titleEn: 'Bathed in the Setting Sun (Fall of Singapore)', labelJa: '東京都写真美術館所蔵', labelEn: 'Tokyo Metropolitan Museum of Photography', url: 'https://museumcollection.tokyo/works/85538/', aliases: [] },
+      { titleJa: '戦後10年、家族の肖像', titleEn: 'Ten Years After the War: Family Portrait', labelJa: '東京都写真美術館所蔵', labelEn: 'Tokyo Metropolitan Museum of Photography', url: 'https://collection.topmuseum.jp/Publish/detailPage/7749/', aliases: [] },
+    ],
+  };
+
+  // ─── John Vachon ──────────────────────────────────────────────────────────
+  overrides['john-vachon'] = {
+    leadJa: `FSAのファイル整理補助者から始まり、ロイ・ストライカーの指導のもとで写真家として成長した。劇的な象徴より地方都市・道路・穀物倉庫・人々の平熱を記録し、FSAの視覚記録が「名作」だけでなく日常の堆積で成り立っていたことを示す。戦後は『ルック』誌の写真家として活躍し、戦後ポーランドも取材した。`,
+    leadEn: `John Vachon began as a file clerk for the FSA photographic unit and grew into a photographer under Roy Stryker's direction. Rather than symbolic images, he recorded the ordinary textures of small towns, roads, grain elevators, and working people — evidence that the FSA archive was built as much from accumulated dailiness as from decisive moments. After the war he worked for Look magazine and covered postwar Poland.`,
+    textJa: `経歴
+
+ジョン・ヴァションは1914年にミネソタ州セントポールに生まれた。1936年にワシントンD.C.でFSA（農業安定局）写真ユニットのファイル整理補助者（messenger/file clerk）として職を得た*1。ロイ・ストライカーのもとでウォーカー・エヴァンスらの先輩写真家の作品を整理するうちに自ら写真を始め、1938年からFSAの正式な写真家として中西部・平原州・農村地帯を記録した*2。Library of Congressの「Selecting Photographs for the FSA/OWI Print File」資料はヴァションのケーススタディを含み、写真選択の制度的プロセスを示す資料として機能する*3。戦後は『ルック（Look）』誌の写真家として活躍し、雑誌報道写真の世界で主要な仕事を続けた*4。1947年には戦後ポーランドをUNRRAの取材で撮影しており、FSA時代とは異なる国際的視点を示している*5。1964年にスミソニアン・アーカイブ・オブ・アメリカン・アートのオーラルヒストリー・インタビューに応じ、FSA時代の経緯を本人の言葉で証言している*6。1975年に死去した。
+
+表現解説
+
+補助者から写真家へ——FSAという育成制度
+
+ヴァションのFSA入りはファイル整理補助からであり、ストライカーの指導と先輩写真家の仕事との接触が写真を始める契機になった。MoMAはヴァションの作品を所蔵しており、アーティストページで基本的な経歴を確認できる*7。ヴァションの経歴は、FSAの写真ユニットが単に写真家を雇用した組織ではなく、写真家を育成する制度でもあったことを示す例として読める。Library of Congressのジョン・ヴァション・ペーパーズは、FSA・OWI・LOOK各期の一次資料を保管している*8。ICPのコンスティテュエント・ページはFSAからLOOK誌、フォト・リーグまでの経歴を確認できる資料として機能する*9。
+
+「見ることの平熱」——記録の累積としてのFSA写真
+
+ヴァションの写真は劇的な瞬間より、地方都市の街角・道路標識・穀物倉庫・看板・無名の人々の日常という素材によって特徴づけられる。FSA写真記録が「名作」だけでなく、こうした地味な観察の累積で成り立っていることを体現している。MoMAの《The Bitter Years》展図録PDFはFSA写真の批評的文脈を提示しており、ヴァションの位置づけを確認できる補助資料になっている*10。Museum of the City of New York（MCNY）は『ルック』誌コレクションのデジタル化プロジェクトとしてヴァションの仕事を継続的に整備しており、FSAから雑誌写真へと移行した経路を示す資料になっている*4。ミネソタ歴史協会のMNopedia項目はヴァションの経歴を地域的背景から確認できる*11。Photogrammar / イェール大学のFSAデータベースはヴァションのFSA期写真の地理的分布と撮影地を確認できる*12。
+
+ポーランド取材と戦後の視野
+
+1947年にJDCアーカイブが保管するプロジェクト「Post-World War II Poland」として取材された一連の写真は、戦後ヨーロッパの復興と難民問題を記録したものであり、FSAの国内社会記録と異なる文脈に属する*5。ヴァションの活動は、1930年代のFSA写真家という固定像の外側に、戦後のフォトジャーナリストとしての側面を持っている。このポーランド取材は、FSAの社会記録と戦後国際フォトジャーナリズムの橋渡しとして位置づけられる仕事である。
+
+批評と受容
+
+ヴァションはFSAの写真家群の中でウォーカー・エヴァンスやドロシア・ラングほどには名前が挙がらない作家だが、その地味さがFSA写真記録の本質的な性格——劇的なものだけでなく平凡な記録の厚みで成り立っているという側面——を示す。ヴァションへの批評的関心は、FSA写真の「周縁」を通じて記録制度の全体像を問い直す視点として近年高まっており、MCNYのデジタル化プロジェクトはその流れを受けたアーカイブ的実践として位置づけられる*4。`,
+    textEn: `Biography
+
+John Vachon was born in Saint Paul, Minnesota, in 1914 and joined the FSA photographic unit in Washington, D.C., in 1936 as a file clerk*1. Through Roy Stryker's guidance and daily contact with the work of Walker Evans and others, he taught himself photography and became an official FSA photographer from 1938, recording the Midwest, the Plains, and rural America*2. After the war he worked as a staff photographer for Look magazine*3. In 1947 he photographed postwar Poland for UNRRA, a dimension of his career distinct from FSA domestic documentation*4. He gave an oral history interview at the Smithsonian's Archives of American Art in 1964, leaving a first-person account of the FSA years*5. He died in 1975.
+
+Expression / method
+
+From file clerk to photographer
+
+Vachon's entry into the FSA as a messenger and file clerk, followed by Stryker's encouragement to photograph, makes his career a case study in how the FSA photographic unit functioned as a training institution as well as an employer. MoMA holds his work and provides an artist page for career reference*6. The Library of Congress resource "Selecting Photographs for the FSA/OWI Print File" includes a Vachon case study showing the institutional selection process*7.
+
+The ordinary register — small observations accumulated
+
+Vachon's photographs are characterized less by dramatic symbol than by the ordinary materials of small-town America: street corners, road signs, grain elevators, storefronts, and unnamed working people. The MoMA Bitter Years catalogue PDF provides a critical context for FSA photography in which Vachon's position can be located*8. The Museum of the City of New York's project Digitizing the Work of John Vachon in the LOOK Magazine Collection documents the transition from FSA to magazine photography*3. The MNopedia entry from the Minnesota Historical Society situates his career within its regional context*9.
+
+Poland and the postwar scope
+
+The series of photographs archived by the JDC Archives under "Post-World War II Poland" documents postwar European reconstruction and displaced persons — a context distinct from FSA domestic social recording*4. The Photogrammar / Yale University FSA database allows spatial and geographic mapping of Vachon's FSA-period photographs*10.
+
+Criticism and reception
+
+Vachon does not figure as prominently in FSA historiography as Walker Evans or Dorothea Lange, but his relative obscurity reflects something essential about the FSA archive: that it was built from the accumulation of ordinary photographs as much as from decisive images. The John Vachon Papers at the Library of Congress hold primary material across the FSA, OWI, and Look periods*11. ICP's constituent page documents his career from FSA through Look and the Photo League*12.`,
+    citations: [
+      { num: 1, name: 'John Vachon. MoMA', url: 'https://www.moma.org/collection/artists/6048' },
+      { num: 2, name: 'FSA collection. Library of Congress', url: 'https://www.loc.gov/pictures/collection/fsa/' },
+      { num: 3, name: 'Digitizing the Work of John Vachon in the LOOK Magazine Collection. MCNY', url: 'https://www.mcny.org/story/digitizing-john-vachon' },
+      { num: 4, name: 'John Vachon: Post-World War II Poland. JDC Archives', url: 'https://archives.jdc.org/project/post-world-war-ii-poland-photos-by-john-vachon/' },
+      { num: 5, name: 'Oral history interview with John Vachon, 1964. Archives of American Art', url: 'https://www.aaa.si.edu/collections/interviews/oral-history-interview-john-vachon-11830' },
+      { num: 6, name: 'John Vachon. MoMA artist page', url: 'https://www.moma.org/collection/artists/6048' },
+      { num: 7, name: 'Selecting Photographs for the FSA/OWI Print File: John Vachon case study. Library of Congress', url: 'https://www.loc.gov/rr/print/coll/Vachon_FSA-1938-RoanokeFarms.pdf' },
+      { num: 8, name: 'The Bitter Years catalogue PDF. MoMA', url: 'https://www.moma.org/documents/moma_catalogue_3433_300188233.pdf' },
+      { num: 9, name: 'Vachon, John (1914–1975). MNopedia / Minnesota Historical Society', url: 'https://www.mnhs.org/mnopedia/search/index/person/vachon-john-1914-1975' },
+      { num: 10, name: 'John Vachon. Photogrammar / Yale University', url: 'https://photogrammar.org/photographers/JohnVachon' },
+      { num: 11, name: 'Collection: John Vachon Papers. Library of Congress', url: 'https://hdl.loc.gov/loc.mss/eadmss.ms007030' },
+      { num: 12, name: 'John Vachon. ICP constituent page', url: 'https://www.icp.org/browse/archive/constituents/john-vachon' },
+    ],
+    links: [
+      { label: 'MoMA — artist page', url: 'https://www.moma.org/collection/artists/6048' },
+      { label: 'Library of Congress FSA collection', url: 'https://www.loc.gov/pictures/collection/fsa/' },
+      { label: 'JDC Archives — Poland project', url: 'https://archives.jdc.org/project/post-world-war-ii-poland-photos-by-john-vachon/' },
+      { label: 'ICP constituent page', url: 'https://www.icp.org/browse/archive/constituents/john-vachon' },
+    ],
+    works: [],
+  };
+
+  // ─── Manuel Álvarez Bravo ─────────────────────────────────────────────────
+  overrides['manuel-alvarez-bravo'] = {
+    leadJa: `メキシコシティ生まれ。革命後メキシコの文化政策とモダニズムが交差する時代に、日常・身体・死・路上を詩的な構成として写真に変換した。シュルレアリスムとの関係は様式の輸入ではなく、メキシコの日常の中に内在する不穏さを写真化した方法として理解できる。MoMAのコレクションに複数作品が収蔵され、そのアーカイブはUNESCOの世界記憶遺産に登録されている。`,
+    leadEn: `Born in Mexico City, Manuel Álvarez Bravo transformed everyday life, the body, death, and urban streets into quietly charged photographic compositions during the era of post-revolutionary cultural politics. His relation to surrealism is best understood not as stylistic import but as a method for photographing the unease latent within ordinary Mexican life. His archive is recognized as a UNESCO Memory of the World.`,
+    textJa: `経歴
+
+マヌエル・アルバレス・ブラボは1902年にメキシコシティに生まれた。祖父も父親も写真家であり、視覚芸術への早期の親しみは家庭環境に由来する。1920年代に写真を本格的に始め、ティナ・モドッティとエドワード・ウェストンとの交流を通じて近代写真の方法に接した*1。1930年代以降、ディエゴ・リベラやホセ・クレメンテ・オロスコら壁画家が担ったメキシコ革命後の文化政策と接続しながら、独自の写真言語を形成した。MoMAは1929年に初めて作品を取得し、1971年に個展を開催しており、国際的な受容は早い時期から始まった*2。ゲッティ美術館は多数の作品を所蔵し、アーティスト専用ページを持つ*3。「アルチーボ・マヌエル・アルバレス・ブラボ」は公式アーカイブとして運営されており、そのネガ・出版物・文書コレクションはUNESCOの世界記憶遺産に登録されている*4。メトロポリタン美術館はアルバレス・ブラボの複数の作品を所蔵しており、《Los Agachados》（かがんでいる人たち）はその代表的な所蔵作品として確認できる*6。世田谷美術館での個展（日本）は日本でも大規模な展覧会が開催されたことを示す*7。2002年に100歳でメキシコシティにて死去した。
+
+表現解説
+
+革命後メキシコと視覚文化の形成
+
+1920–30年代のメキシコは、革命後の国民文化形成と近代化が同時に進んだ時代であり、壁画運動、民俗芸術の再評価、左派知識人のネットワークが写真を含む視覚文化を支えた。アルバレス・ブラボはその文脈の中で活動し、『メキシカン・フォークウェイズ（Mexican Folkways）』誌への寄稿を通じて革命後メキシコの文化的自己表現に参加した。MoMAの展覧会資料はその国際的な文脈への位置づけを示す*2。《The Photographers' Gallery》のPhotopoetryに関するPDF解説は「詩的ドキュメンタリー」「日常」「寓意」という観点からアルバレス・ブラボの方法を論じており、文脈理解の補助資料になっている*5。MoMAの図録PDFはディエゴ・リベラなど同時代の評価を含む資料として参照できる*8。
+
+日常・身体・寓意の写真化
+
+アルバレス・ブラボの写真は、路上・壁・影・人体・動物の死体・儀礼・廃墟を素材にしながら、それらを記号として機能させる構成力が特徴である。《Los Agachados》（かがんでいる人たち）はメトロポリタン美術館が所蔵しており、同一フレームに収まる複数の人物と空間構成が形成する寓意性を確認できる*6。Des Moines Art Centerの展覧会ページはメキシコ内外の作家交流を重視する視点から解説している*9。「Revelaciones: the art of Manuel Alvarez Bravo」はMuseum of Photographic Arts巡回展の図録として、国際的な受容の文脈を確認できる*11。ゲッティ美術館の出版物《In Focus: Manuel Alvarez Bravo》は彼の写真方法を解説する出版物として参照できる*13。
+
+シュルレアリスムとの関係
+
+ブルトンとの交流やパリのシュルレアリスム展への参加は、アルバレス・ブラボをしばしばシュルレアリスムの文脈に位置づける根拠となる。しかしその関係は、ヨーロッパのシュルレアリスムの語彙をメキシコに「輸入」したのではなく、メキシコの日常生活・死の文化・身体の不穏さを写真という媒体で提示するための方法として接続した、と理解する視点が重要である。ティナ・モドッティとの交流は、社会的関心を持つ写真家のコミュニティとの接続を示し、ウェストンとの関係は形式主義的な見方との接点を示す。
+
+批評と受容
+
+アルバレス・ブラボはラテンアメリカ近代写真の基準点として位置づけられており、MoMAとゲッティ美術館が代表的なコレクションを持つ。Fundación MAPFREでの回顧展はスペインでの受容を示す*10。UNESCOの世界記憶遺産へのアーカイブ登録は、アルバレス・ブラボの遺産が写真史の重要な記録として国際的に認定されていることを示す最大の根拠となっている*4。公式アーカイブのウェブサイトは出版物・作品情報の一次的な確認先として機能する*12。`,
+    textEn: `Biography
+
+Manuel Álvarez Bravo was born in Mexico City in 1902 and took up photography seriously in the 1920s, coming into contact with modern photographic practice through exchanges with Tina Modotti and Edward Weston*1. From the 1930s he developed his own photographic language in connection with the post-revolutionary cultural project of Diego Rivera, José Clemente Orozco, and the muralists. MoMA acquired his work as early as 1929 and mounted a solo exhibition in 1971, establishing early international recognition*2. The J. Paul Getty Museum holds a substantial collection and maintains a dedicated artist page*3. The Archivo Manuel Álvarez Bravo operates as his official archive; its collection of negatives, publications, and documents is recognized as a UNESCO Memory of the World*4. He died in Mexico City in 2002 at the age of 100.
+
+Expression / method
+
+Post-revolutionary Mexico and the visual culture context
+
+The Mexico of the 1920s–30s was a period of simultaneous post-revolutionary nation-building and modernization, in which muralism, the reassessment of folk art, and left intellectual networks sustained visual culture including photography. Álvarez Bravo participated through contributions to Mexican Folkways magazine and through direct connection to the cultural politics of his moment. MoMA exhibition materials document the international positioning of his work*2. The Photographers' Gallery's Photopoetry PDF discusses his method in terms of "poetic documentary," everyday life, and allegory*5.
+
+Everyday life, the body, and allegory
+
+Álvarez Bravo's photographs work with the street, walls, shadows, the human body, animal carcasses, ritual, and ruin as materials — transforming them into signs through compositional pressure. Los Agachados (The Crouching Ones) is held by the Metropolitan Museum of Art, where its multiple figures and spatial arrangement can be examined as an exercise in pictorial allegory*6. The Photopoetry exhibition at The Photographers' Gallery documents a dimension of his London reception*5. A solo exhibition at the Setagaya Art Museum in Tokyo indicates that substantial exhibitions of his work were mounted in Japan as well*7.
+
+Surrealism and the question of method
+
+His exchanges with Breton and participation in Parisian surrealist exhibitions have situated him in surrealist contexts, but the more significant interpretation is that he connected with surrealism not as an import of European vocabulary but as a method for presenting the unsettling dimensions of Mexican everyday life, death culture, and the body through photography. The MoMA catalogue PDF includes period evaluations by Diego Rivera*8. The Des Moines Art Center exhibition page takes a view emphasizing cross-border artistic exchange*9.
+
+Criticism and reception
+
+Álvarez Bravo is positioned as a reference point for modern Latin American photography, with major collections at MoMA and the Getty. Fundación MAPFRE's retrospective shows his reception in Spain*10. Revelaciones: the art of Manuel Alvarez Bravo, the catalogue for the Museum of Photographic Arts touring exhibition, provides documentation of his international critical reception*11.`,
+    citations: [
+      { num: 1, name: 'Manuel Álvarez Bravo. MoMA artist page', url: 'https://www.moma.org/collection/artists/135' },
+      { num: 2, name: 'Manuel Alvarez Bravo exhibition. MoMA', url: 'https://www.moma.org/calendar/exhibitions/239' },
+      { num: 3, name: 'Manuel Álvarez Bravo. J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/person/103KCK' },
+      { num: 4, name: 'Archives of Manuel Álvarez Bravo. UNESCO Memory of the World', url: 'https://www.unesco.org/en/memory-world/archives-negatives-publications-and-documents-manuel-alvarez-bravo' },
+      { num: 5, name: 'Manuel Álvarez Bravo: Photopoetry. The Photographers\' Gallery PDF', url: 'https://thephotographersgallery.org.uk/sites/default/files/Manuel%20Alvarez%20Bravo%2C%20Photopoetry.pdf' },
+      { num: 6, name: 'Los Agachados. The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/265452' },
+      { num: 7, name: 'Manuel Álvarez Bravo Photographs. Setagaya Art Museum', url: 'https://www.setagayaartmuseum.or.jp/en/exhibition/special/detail.php?id=sp00181' },
+      { num: 8, name: 'Manuel Alvarez Bravo. MoMA catalogue PDF', url: 'https://assets.moma.org/documents/moma_catalogue_2663_300062414.pdf' },
+      { num: 9, name: 'Manuel Álvarez Bravo. Des Moines Art Center', url: 'https://desmoinesartcenter.org/art/exhibitions/manuel-alvarez-bravo/' },
+      { num: 10, name: 'Manuel Álvarez Bravo retrospective. Fundación MAPFRE', url: 'https://www.artealdia.com/News/Manuel-Alvarez-Bravo-s-retrospective-at-Foundation-MAPFRE-Spain' },
+      { num: 11, name: 'Revelaciones: the art of Manuel Alvarez Bravo. Internet Archive', url: 'https://archive.org/details/revelacionesarto0000alva' },
+      { num: 12, name: 'Archive. Archivo Manuel Álvarez Bravo', url: 'https://www.manuelalvarezbravo.org/archive/' },
+      { num: 13, name: 'In Focus: Manuel Alvarez Bravo. Getty Publications', url: 'https://shop.getty.edu/products/in-focus-manuel-alvarez-bravo-978-0892366255' },
+    ],
+    links: [
+      { label: 'MoMA — artist page', url: 'https://www.moma.org/collection/artists/135' },
+      { label: 'J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/person/103KCK' },
+      { label: 'Archivo Manuel Álvarez Bravo', url: 'https://www.manuelalvarezbravo.org/archive/' },
+      { label: 'UNESCO Memory of the World', url: 'https://www.unesco.org/en/memory-world/archives-negatives-publications-and-documents-manuel-alvarez-bravo' },
+    ],
+    works: [
+      { titleJa: 'ロス・アガチャドス（かがんでいる人たち）', titleEn: 'Los Agachados (The Crouching Ones)', labelJa: 'メトロポリタン美術館所蔵', labelEn: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/265452', aliases: ['Los Agachados'] },
+    ],
+  };
+
+  // ─── Marcel Bovis ─────────────────────────────────────────────────────────
+  overrides['marcel-bovis'] = {
+    leadJa: `ニース生まれのフランスの写真家。パリの夜の都市を長時間露光と精密な光の計算で記録し、フランス「新しい視覚」の潮流と1930年代の雑誌文化の交点に位置する。戦後はグループ・デ・キャンズ（Groupe des XV）に参加して写真の芸術的地位の制度化に貢献し、フランス国立図書館（BnF）に作品が収蔵されている。`,
+    leadEn: `Born in Nice, Marcel Bovis photographed the nocturnal city of Paris using long exposure and precise light calculation, placing him at the intersection of the French New Vision and 1930s magazine culture. After the war he participated in the Groupe des XV, contributing to the institutionalization of photography as an art form in France. His work is held in the Bibliothèque nationale de France (BnF).`,
+    textJa: `経歴
+
+マルセル・ボヴィスは1904年にニースに生まれ、1920年代末からパリで写真を始めた*1。1930年代には『アール・エ・メティエ・グラフィック（Arts et Métiers Graphiques）』誌をはじめとする印刷・デザイン専門誌に作品を発表し、パリの夜景写真で知られるようになった。1930年代から40年代にかけてはグループ・ル・レクタングル（Le Rectangle）に参加した。第二次世界大戦後は、写真を芸術として制度化する目的で1946年に設立されたグループ・デ・キャンズ（Groupe des XV）の中心メンバーとなった。後年はアルジェリアの古代遺跡も撮影し、フランス文化省系の機関である遺産・写真メディアテーク（Médiathèque du patrimoine et de la photographie）が6×6判ネガを含む作品群を所蔵している*2。1997年に死去した。BnF（フランス国立図書館）はボヴィスの典拠レコードを管理しており、所蔵資料の確認に用いられる*3。マイゾン・デ・ザール・ドゥ・アントニー（Maison des Arts d'Antony）はボヴィスの作品についての専門ガイドPDFを公開しており*4、メトロポリタン美術館は《Hôtel de l'Univers, Nantes》を所蔵している*5。
+
+表現解説
+
+パリの夜景と長時間露光の技法
+
+ボヴィスのパリ夜景写真は、街灯・看板・濡れた舗道の反射・建物の輪郭を、長時間露光によって構成的な画面へと変換する技法に特徴がある。同時代のブラッサイがパリの夜を人間の生態と都市の肉感で記録したのに対し、ボヴィスはより幾何学的・構成的な観点から夜の都市空間を整理する傾向を持つ。マイゾン・デ・ザール・ドゥ・アントニーのガイドPDFは、ボヴィスの方法と代表作についての専門的な解説資料として機能する*4。メトロポリタン美術館の《Hôtel de l'Univers, Nantes》はボヴィスの夜のインテリア写真の一例を公式所蔵作品として確認できる*5。ユニバーシティ・オブ・シカゴのスマート美術館もボヴィスの作品を所蔵している*7。
+
+「新しい視覚」と雑誌文化の交点
+
+ボヴィスが1930年代に作品を発表した『アール・エ・メティエ・グラフィック』誌は、グラフィックデザイン・タイポグラフィ・写真の最先端を紹介するフランスの高級印刷誌であり、バウハウス的な「新しい視覚」の影響を受けた作家と写真の国際的潮流が交差する場だった。ボヴィスの作品がこの媒体に採用されたことは、彼が当時のフランスにおける写真モダニズムの一翼を担っていたことを示す。学術誌『Revue archéologique』所収論文「L'Algérie antique de Marcel Bovis」（cairn.info）は、パリ夜景写真以外のアルジェリア古代遺跡写真という側面を専門的に論じており、ボヴィスの活動の広がりを示している*8。
+
+グループ・デ・キャンズと写真芸術の制度化
+
+1946年に設立されたグループ・デ・キャンズは、写真家自身が運営する展覧会活動を通じて写真を芸術として確立しようとしたフランスの組織であり、ボヴィスを含む15名の写真家が毎年展覧会を開催した。このグループへの参加は、ボヴィスが単に写真を撮る実作者であっただけでなく、写真の制度的地位の形成に関与した人物であることを示す。メディアテーク・デュ・パトリモワーヌは6×6判ネガを含む作品群のアーカイブを所蔵しており*2、マイゾン・デ・ザール・ドゥ・アントニーとの共同展示「Marcel Bovis 6×6」はこのアーカイブを公開する機会となった*9。
+
+批評と受容
+
+ボヴィスはブラッサイやロベール・ドワノーほど国際的に知られていないが、パリの夜景写真とフランス写真芸術の制度化という二つの側面で評価されている。ドワノーが遺したマイゾン・ド・ラ・フォトグラフィー・ロベール・ドワノーでの展覧会は、同時代作家の機関での再評価として注目できる*6。メディアテーク・デュ・パトリモワーヌは「Marcel Bovis（1904-1997）」として作家ページを持ち、国家機関系の所蔵・アーカイブ確認のための公的資料として機能する*2。`,
+    textEn: `Biography
+
+Marcel Bovis was born in Nice in 1904 and began photographing in Paris in the late 1920s*1. During the 1930s he contributed to Arts et Métiers Graphiques and other design and printing journals, becoming known for his nocturnal Paris photographs. He was a member of the group Le Rectangle in the 1930s–40s. After the Second World War he became a central member of the Groupe des XV, founded in 1946 to institutionalize photography as an art form. He later photographed ancient sites in Algeria; his archive including 6×6 negatives is held by the Médiathèque du patrimoine et de la photographie*2. He died in 1997. The BnF maintains his authority record*3.
+
+Expression / method
+
+Paris at night and long-exposure technique
+
+Bovis's nocturnal Paris photographs transform streetlights, illuminated signs, reflections on wet pavement, and building contours into compositionally structured frames through long exposure. Where Brassaï recorded the night city through human activity and urban flesh, Bovis tends toward a more geometric and architecturally organized reading of nocturnal urban space. The Maison des Arts d'Antony guide PDF functions as a specialist source on his methods and representative works*4. The Metropolitan Museum of Art holds Hôtel de l'Univers, Nantes, an example of his nocturnal interior photography*5.
+
+The New Vision and magazine culture
+
+The journal Arts et Métiers Graphiques, where Bovis published in the 1930s, was a high-production French printing magazine at the forefront of graphic design, typography, and photography, and a site where Bauhaus-influenced New Vision work intersected with international photographic modernism. L'Œil de la Photographie documents an exhibition of Bovis's work at the Maison de la Photographie Robert Doisneau, confirming continued reappraisal within French photography history*6.
+
+The Groupe des XV and institutionalization
+
+The Groupe des XV, founded in 1946, was a photographer-run organization that used annual exhibitions to establish photography as an art form. Bovis's participation marks him as an actor in the institutional formation of French photographic art, not only as a practitioner but as an organizer. The Médiathèque du patrimoine holds an archive of his 6×6 negatives*2, and the Smart Museum of Art at the University of Chicago also holds his work*7.
+
+Criticism and reception
+
+Bovis is less internationally known than Brassaï or Robert Doisneau, but is recognized for two contributions: nocturnal Paris photography and the institutionalization of photographic art in France. An exhibition at the Maison de la Photographie Robert Doisneau represents reappraisal of his work within an institution associated with a contemporary*6. The academic article "L'Algérie antique de Marcel Bovis" in the Revue archéologique (available via cairn.info) provides specialist analysis of his Algerian archaeological photography — an underexplored dimension of his practice*8.`,
+    citations: [
+      { num: 1, name: 'Marcel Bovis person notice. BnF Catalogue', url: 'https://catalogue.bnf.fr/ark:/12148/cb11893654v' },
+      { num: 2, name: 'Marcel Bovis (1904-1997). Médiathèque du patrimoine et de la photographie', url: 'https://mediatheque-patrimoine.culture.gouv.fr/collection/objet/marcel-bovis-1904-1997' },
+      { num: 3, name: 'Marcel Bovis. BnF Catalogue', url: 'https://catalogue.bnf.fr/ark:/12148/cb11893654v' },
+      { num: 4, name: 'Marcel Bovis guide PDF. Maison des Arts Antony', url: 'https://www.maisondesarts-antony.fr/wp-content/uploads/2023/05/CL-MB.pdf' },
+      { num: 5, name: 'Hôtel de l\'Univers, Nantes. Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/288676' },
+      { num: 6, name: 'Marcel Bovis at the Maison de la Photographie Robert Doisneau. L\'Œil de la Photographie', url: 'https://loeildelaphotographie.com/en/marcel-bovis-at-the-maison-de-la-photographie-robert-doisneau/' },
+      { num: 7, name: 'Marcel Bovis. Smart Museum of Art, University of Chicago', url: 'https://smartcollection.uchicago.edu/people/798/marcel-bovis' },
+      { num: 8, name: "L'Algérie antique de Marcel Bovis. Revue archéologique / cairn.info", url: 'https://shs.cairn.info/revue-revue-archeologique-2025-2-page-387?lang=fr&tab=illustrations' },
+      { num: 9, name: 'Maison des Arts : Marcel Bovis : 6 x 6. L\'Œil de la Photographie', url: 'https://loeildelaphotographie.com/en/maison-des-arts-marcel-bovis-6-x-6-dv/' },
+      { num: 10, name: 'Marcel Bovis 6x6. Médiathèque du patrimoine', url: 'https://mediatheque-patrimoine.culture.gouv.fr/actualite/marcel-bovis-6x6' },
+      { num: 11, name: 'Maison des Arts d\'Antony, Marcel Bovis 6x6', url: 'https://www.maisondesarts-antony.fr/marcel-bovis-6x6/' },
+    ],
+    links: [
+      { label: 'BnF Catalogue', url: 'https://catalogue.bnf.fr/ark:/12148/cb11893654v' },
+      { label: 'Médiathèque du patrimoine', url: 'https://mediatheque-patrimoine.culture.gouv.fr/collection/objet/marcel-bovis-1904-1997' },
+      { label: "L'Œil de la Photographie", url: 'https://loeildelaphotographie.com/en/marcel-bovis-at-the-maison-de-la-photographie-robert-doisneau/' },
+    ],
+    works: [
+      { titleJa: 'オテル・ド・リュニヴェール、ナント', titleEn: "Hôtel de l'Univers, Nantes", labelJa: 'メトロポリタン美術館所蔵', labelEn: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/288676', aliases: [] },
+    ],
+  };
+
+  // ─── Margaret Bourke-White ────────────────────────────────────────────────
+  overrides['margaret-bourke-white'] = {
+    leadJa: `工業写真・ソ連取材・LIFE創刊表紙・戦争報道を横断し、近代の機械と権力を壮大な構図で可視化したアメリカの写真家。LIFEの第1号表紙（1936年）を飾り、女性として初めて第二次世界大戦の戦場に正式に許可された報道写真家となった。ICPのコンスティテュエント・ページとMoMAコレクションが基本的な一次資料として機能する。`,
+    leadEn: `Margaret Bourke-White photographed American industry, Soviet modernization, the founding of LIFE magazine, and the front lines of World War II, visualizing the machinery and power of modernity in sweeping compositions. Her photograph ran on the first cover of LIFE (1936); she was the first woman officially accredited as a war photographer in the Second World War. MoMA and ICP hold major collections of her work.`,
+    textJa: `経歴
+
+マーガレット・バーク＝ホワイトは1904年にニューヨーク市に生まれた。父親は印刷技師であり、工業技術への関心を子どもたちに与えた環境が後の工業写真への傾倒につながった。コーネル大学在籍中に写真を本格的に始め、1920年代後半にクリーブランドで工業施設の撮影で評価を得た。ヘンリー・ルースの創刊した経済誌『フォーチュン（Fortune）』に1929年から寄稿し、製鉄所・工場・機械を大判カメラと強い人工照明で精密に記録するスタイルを確立した*1。1930年にはソビエト連邦を取材し、社会主義近代化の現場を記録した最初の外国人写真家の一人となった。1936年にルースが創刊した写真誌『LIFE』の創刊第1号の表紙写真（フォート・ペック・ダム）を撮影し、以後LIFEと長期的な関係を結んだ*2。第二次世界大戦では女性として初めて戦場取材の正式な許可を得てアメリカ陸軍の公式認定報道写真家となり、北アフリカ・イタリア・ドイツを取材した。1945年のバッヘンヴァルト強制収容所解放の記録写真はパットン将軍との同行取材として撮影され、西側の読者に収容所の実態を伝えた*3。朝鮮戦争も取材し、マハトマ・ガンジーのポートレートでも知られる。ICPのコンスティテュエント・ページはバーク＝ホワイトの作品・出版物・経歴の国際的な記録として機能する*4。晩年はパーキンソン病と闘い、1971年に死去した。
+
+表現解説
+
+工業写真と機械の美学
+
+バーク＝ホワイトの工業写真は、製鉄所の溶鉱炉・クレーン・ダム・機械を大胆なアングルと強い人工照明で記録し、機械を美的対象として提示した。この手法は1920年代アメリカの機械文明讃美の気風と重なり、チャールズ・シーラーのプレシジョニスム絵画が共有した「工業の崇高さ」という視覚言語に接続する。大判カメラのGraflexを用いた強いコントラストと几帳面な構図は、工業資本の可視化という文脈に置かれると同時に、近代機械を美術作品に昇格させようとする企図としても読める。MoMAはバーク＝ホワイトの作品を所蔵しており、コレクション・アーティストページで確認できる*5。サンルイス美術館のコンスティテュエント・ページは作家情報と所蔵資料の基本確認に用いられる*6。MoMAの《Memorable Life Photographs》展図録PDFは写真ジャーナリズムにおける位置づけを検討できる資料として機能する*7。アーツ誌（MDPI）の査読論文「The Hands of Fortune: Margaret Bourke-White's Magazine Photographs」は雑誌写真・労働の手・フォト・エッセイを学術的に分析しており、批評的評価の補助資料になっている*8。
+
+バーク＝ホワイトの代表的な工業写真としては、1934年のクライスラービルのガーゴイル像からの写真がある。バーク＝ホワイトはビルの最上部に設置されたガーゴイル像の隣に立ち、ニューヨークの街路を見下ろした写真で知られ、これは当時の建築と工業と写真の三つの近代性が交差した象徴的なイメージとなった。フォーチュン誌の仕事は「産業の顔」を読者に見せるという編集方針のもとで行われており、バーク＝ホワイトの写真はその視覚的プログラムの中心を担った。
+
+LIFE創刊とフォト・エッセイの制度化
+
+1936年の『LIFE』創刊はアメリカの雑誌ジャーナリズムにおける写真の地位を一変させた出来事であり、バーク＝ホワイトはその象徴的存在となった。LIFEはテキストより写真を主体とするフォト・エッセイの形式を確立し、バーク＝ホワイトの大規模で劇的な構図はこの形式に最もよく適合していた。LIFEの公式写真アーカイブはバーク＝ホワイトの仕事を継続的に公開している*2。プリンストン大学美術館の《LIFE》展示資料PDFはLIFE誌の制度的・視覚的特性を詳述しており、バーク＝ホワイトのフォト・エッセイがどのような編集枠組みの中で機能したかを理解する文脈資料になる*9。コロンビア大学図書館のファインディング・エイドPDFは写真・ネガ・書簡・出版物の所在を管理する一次資料の集約点として機能する*10。
+
+ソビエト取材と「近代の記録」
+
+1930年代のソビエト取材は工場・ダム・農場集団化の現場を記録した仕事として、機械と国家の関係を視覚化するという問いを早くから提起していた。バーク＝ホワイトが単に工業国アメリカの写真家ではなく、20世紀のグローバルな近代化の視覚的記録者だったことを示す重要な仕事として位置づけられる。国際写真殿堂はバーク＝ホワイトをインダクティとして顕彰しており、そのアーカイブは写真史上の位置づけを確認できる*11。
+
+ソビエト取材（1930年、1931年）では、ドニエプル川のダム建設・製鉄所・集団農場を撮影し、写真集『Eyes on Russia』（1931年）として刊行した。この仕事はソ連の近代化政策を肯定的な光の下で描いており、1930年代の西側における社会主義への複雑な視線と資本主義の危機という文脈に置かれる。後年のバーク＝ホワイト自身はこの取材の政治的含意について問われることが多くなったが、写真の質と機械の美学という観点では一貫した方法論を示している。
+
+戦争報道と証言の倫理
+
+第二次世界大戦・朝鮮戦争の取材において、バーク＝ホワイトは危険地帯へのアクセスを武器として戦争の実態を視覚的に証言した。バッヘンヴァルト強制収容所解放の写真は、収容所の実態を西側の読者に伝える報道写真の機能を最も際立った形で示す仕事の一つとなった*3。高所・危険地帯・機械への接近、強いライトと構図、LIFEの表紙という組み合わせは、視覚的スペクタクルと証言性の緊張として批評的に読める。女性報道写真家として公式認定を得るための戦いは、1940年代のメディア制度が女性を前線から排除していた事実と切り離せない。
+
+
+
+写真技術と視覚スタイルにおける貢献
+
+バーク＝ホワイトの照明技術は、スタジオ撮影の手法を屋外の工業現場に持ち込むという実践として革新的だった。複数の照明器具を使って鉄鋼・炎・金属の光沢を立体的に引き出す技術は、同時代の産業写真の水準を上げ、Fortune誌・LIFE誌が求める視覚的インパクトに応えるものだった。この技術的達成は、女性写真家による工業写真という当時の社会的偏見を乗り越える実践的な武器でもあった。
+
+批評と受容
+
+バーク＝ホワイトは女性報道写真家の先駆けとして評価されることが多いが、その仕事を「例外的成功」として個人化する語りに留まると、工業資本・国家・雑誌メディアが求めた近代のイメージとの共犯関係が見えにくくなる。イタリア・レッジョ・エミリアでの展覧会資料は欧州での受容の一端を示しており*12、LIFE公式アーカイブとICPが国際的な研究の基盤を提供している*4。ムゼ・マガジン/モンロー・ギャラリーのフィーチャーは現代ギャラリーの文脈でのバーク＝ホワイト受容を補う資料として機能する*13。ゲッティ美術館のアーティスト・ページはゲッティ所蔵作品への公式導線として参照できる*14。MoMAとICPの双方がバーク＝ホワイトの作品を収蔵・研究の対象とし続けており、写真ジャーナリズムの制度史における彼女の位置は安定した参照点となっている*1。`,
+    textEn: `Biography
+
+Margaret Bourke-White was born in New York City in 1904. Her father was a printing engineer, and an environment of industrial interest shaped her later turn toward industrial photography. She took up photography seriously at Cornell University and gained recognition in the late 1920s by photographing industrial facilities in Cleveland. From 1929 she contributed to Henry Luce's Fortune magazine, establishing a style of precise large-format documentation of steel mills, factories, and machinery under strong artificial light*1. In 1930 she traveled to the Soviet Union and became one of the first foreign photographers to document socialist industrialization. In 1936 she photographed Fort Peck Dam for the cover of the inaugural issue of LIFE magazine, beginning a long working relationship with the publication*2. During the Second World War she was the first woman to receive official accreditation as a war photographer — an official US Army designation — and covered North Africa, Italy, and Germany. In 1945 she photographed the liberation of Buchenwald concentration camp while accompanying General Patton's advance, transmitting the reality of the camps to Western readers*3. She also covered the Korean War and is known for her portrait of Mahatma Gandhi. ICP's constituent page serves as an international record of her works, publications, and career*4. She died in 1971 after years with Parkinson's disease.
+
+Expression / method
+
+Industrial photography and machine aesthetics
+
+Bourke-White's industrial photographs used bold angles and strong artificial lighting to render blast furnaces, cranes, dams, and machinery as aesthetic objects — positioning the machine as a subject of visual contemplation. This approach aligned with the American culture of technological celebration in the 1920s and connects to the visual language of "industrial sublime" shared by Precisionist painters such as Charles Sheeler. Her use of the Graflex large-format camera, strong contrast, and meticulous composition can be situated within the context of making industrial capital visible, while also read as an attempt to elevate modern machinery to the status of fine art subjects. MoMA holds her work and artist page in its collection*5. The Saint Louis Art Museum constituent page provides a baseline for artist information and holdings*6. The MoMA Memorable Life Photographs catalogue PDF provides a supplementary resource for situating her within photojournalism history*7. The MDPI peer-reviewed article "The Hands of Fortune: Margaret Bourke-White's Magazine Photographs" provides scholarly analysis of her magazine work, labor imagery, and photo-essays*8.
+
+LIFE and the institutionalization of the photo-essay
+
+The founding of LIFE in 1936 transformed the status of photography in American magazine journalism, and Bourke-White became its symbolic figure. LIFE established the photo-essay form with photographs as primary carrier rather than text, and her large-scale, dramatic compositions were the best fit for this format. LIFE's official photography archive continues to make her work accessible*2. Princeton University Art Museum's LIFE didactics installation PDF details the institutional and visual character of LIFE magazine, providing context for understanding how Bourke-White's photo-essays functioned within its editorial framework*9. The Columbia University Libraries finding aid PDF documents the location of her photographs, negatives, correspondence, and publications as a primary source index*10.
+
+Soviet coverage and "recording modernity"
+
+Her Soviet assignments in the 1930s — documenting factories, dams, and collectivized agriculture — raised questions about the visual representation of the relationship between machine and state from an early date. This work positions her as a visual chronicler of global twentieth-century modernization rather than simply a photographer of industrial America. The International Photography Hall of Fame recognizes her as an inductee and its archive allows confirmation of her historical standing*11.
+
+War photography and the ethics of witness
+
+In her Second World War and Korean War coverage, Bourke-White leveraged hard-won access to dangerous zones as a vehicle for visual witness. Her photographs of the liberation of Buchenwald became among the most powerful instances of photography as testimony to a Western readership*3. Her combination of access to elevated or hazardous vantage points, strong lighting and composition, and LIFE covers can be read as a tension between visual spectacle and photographic witness. Her struggle to obtain official accreditation as a woman war photographer is inseparable from the fact that 1940s media institutions routinely excluded women from the front.
+
+Criticism and reception
+
+Bourke-White is frequently framed as a pioneering woman photographer, but narratives of individual exception can obscure the position of her work within a visual culture shaped by industrial capital, the state, and magazine media. Exhibition materials from Reggio Emilia, Italy, indicate the reach of her European reception*12. LIFE's official archive and ICP together provide the institutional foundation for international research*4. A Musée Magazine / Monroe Gallery feature documents her contemporary gallery reception*13. The J. Paul Getty Museum artist page provides the official entry point for its holdings*14.`,
+    citations: [
+      { num: 1, name: 'Margaret Bourke-White. MoMA', url: 'https://www.moma.org/artists/712-margaret-bourke-white' },
+      { num: 2, name: 'The Photography of Margaret Bourke-White. LIFE', url: 'https://www.life.com/photographer/margaret-bourke-white/' },
+      { num: 3, name: 'Buchenwald. United States Holocaust Memorial Museum Encyclopedia', url: 'https://encyclopedia.ushmm.org/content/en/article/buchenwald' },
+      { num: 4, name: 'Margaret Bourke-White. ICP constituent page', url: 'https://www.icp.org/browse/archive/constituents/margaret-bourke-white' },
+      { num: 5, name: 'Margaret Bourke-White. MoMA collection artist page', url: 'https://www.moma.org/collection/artists/712' },
+      { num: 6, name: 'Margaret Bourke-White. Saint Louis Art Museum', url: 'https://www.slam.org/collection/constituents/443/' },
+      { num: 7, name: 'Memorable Life Photographs PDF. MoMA', url: 'https://assets.moma.org/documents/moma_catalogue_3282_300062099.pdf' },
+      { num: 8, name: "The Hands of Fortune: Margaret Bourke-White's Magazine Photographs. Arts / MDPI", url: 'https://www.mdpi.com/2076-0752/11/2/45' },
+      { num: 9, name: 'LIFE exhibition didactics PDF. Princeton University Art Museum', url: 'https://static.artmuseum.princeton.edu/collections-pdfs/LIFE_didactics_installation.pdf' },
+      { num: 10, name: 'Margaret Bourke-White photographs PDF. Columbia University Libraries', url: 'https://findingaids.library.columbia.edu/pdf/cul-4080186.pdf' },
+      { num: 11, name: 'Margaret Bourke-White. International Photography Hall of Fame', url: 'https://iphf.org/inductees/margaret-bourke-white/' },
+      { num: 12, name: 'Margaret Bourke-White on show in Reggio Emilia. Juliet Art Magazine', url: 'https://www.juliet-artmagazine.com/en/a-photographic-view-between-social-issues-and-the-american-lifestyle-margaret-bourke-white-on-show-in-reggio-emilia/' },
+      { num: 13, name: 'Margaret Bourke-White. Monroe Gallery of Photography', url: 'https://www.monroegallery.com/artists/margaret-bourke-white' },
+      { num: 14, name: 'Margaret Bourke-White. J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/search/?q=margaret+bourke-white&types=Photographs' },
+    ],
+    links: [
+      { label: 'MoMA — collection', url: 'https://www.moma.org/collection/artists/712' },
+      { label: 'ICP — constituent page', url: 'https://www.icp.org/browse/archive/constituents/margaret-bourke-white' },
+      { label: 'LIFE — photo archive', url: 'https://www.life.com/photographer/margaret-bourke-white/' },
+      { label: 'Columbia University Libraries finding aid', url: 'https://findingaids.library.columbia.edu/pdf/cul-4080186.pdf' },
+    ],
+    works: [],
+  };
+
+  // ─── Minor White ──────────────────────────────────────────────────────────
+  overrides['minor-white'] = {
+    leadJa: `スティーグリッツの「等価物（Equivalents）」の概念を受け継ぎ、風景・岩・光の表面を内面的経験の等価物として連続的に組み立てた。Aperture誌の創刊（1952年）と写真教育の実践を通じて、写真を単なる記録から「経験の媒体」へと押し広げる制度的基盤を整備した。プリンストン大学美術館がマイナー・ホワイト・アーカイブを所蔵する。`,
+    leadEn: `Inheriting Alfred Stieglitz's concept of the Equivalent, Minor White organized landscapes, rocks, and surfaces of light into sequential structures functioning as equivalents of interior experience. Through co-founding Aperture in 1952 and decades of teaching, he built an institutional foundation for photography as a medium of experience rather than mere record. Princeton University Art Museum holds the Minor White Archive.`,
+    textJa: `経歴
+
+マイナー・ホワイトは1908年にミネアポリスに生まれ、オレゴン大学で生物学を学んだ後、1930年代後半から本格的に写真を始めた*1。1940年前後にポートランドで人物・ヌード写真を撮影し、初期の作品群を形成した*2。第二次世界大戦中に従軍し、フィリピンで複数年を過ごしたことが精神的・写真的な転換点になったと後に証言している。戦後、アンセル・アダムスの指導を受けるためサンフランシスコに移り、カリフォルニア・スクール・オブ・ファイン・アーツ（現SFCA）で写真を教えた。アンセル・アダムス、ドロシア・ラング、ボーモント・ニューホールとともに1952年にAperture誌を創刊した*3。SFMOMAのアーティスト・ページはAperture創刊・精神性・教育・作品群を英語で要約しており、基本的な参照点となる*4。1950年代以降、シークエンス（連作）という方法論を中心に据え、複数の写真を詩的な順序で配置することで単独の作品以上の意味を生み出す方法を実践・理論化した。ロチェスター工科大学（RIT）でも教鞭を執り、多くの写真家を育てた。1967年にAperture誌の編集責任をケアテイカーに委ね、マサチューセッツ工科大学（MIT）でも教えた。プリンストン大学美術館はマイナー・ホワイト・アーカイブを所蔵しており、日記・書簡・教育資料・作品資料が集積されている*5。1976年にケンブリッジ（マサチューセッツ）で死去した。
+
+表現解説
+
+スティーグリッツの「等価物」概念の継承と発展
+
+ホワイトの写真方法論の中心にあるのは、アルフレッド・スティーグリッツが1920年代に提唱した「等価物（Equivalents）」の概念——雲の写真が内面的な感情状態の等価物として機能するという考え方——をさらに発展させた立場である。スティーグリッツにとって等価物は感情の「外面的対応物」だったが、ホワイトはそれを超え、写真が撮影者の内的状態と観者の経験を結ぶ「媒体」そのものだという立場を取った。岩・水・光の表面・雪は外界の記録としてではなく、撮影時のホワイトの意識状態の等価物として機能し、かつ観者にも別様の内的経験を引き起こす触媒として構想された。MoMAの《Minor White: the eye that shapes》展は、ホワイトのアーカイブに基づいてその方法論と展開を提示した展覧会として基本的な参照点になっている*6。MoMAの展覧会図録PDFはこの方法論をより詳細に論じており、批評的文脈の確認に用いられる*7。ゲッティ美術館のアーティスト・ページはサンフランシスコ期などの作品への公式導線として機能する*8。
+
+シークエンスという方法論の実践
+
+ホワイトが独自に発展させたシークエンスの方法は、複数の写真を詩のような順序で配置し、個別の作品が単体では持たない意味の層を生み出す技法である。各写真は独立した作品であると同時に、前後の写真との文脈の中でその意味が変化する。《Sequence 13: Return to the Bud》（1959–60年）はその実践の具体例として参照されることが多く、《Memorable Fancies》系のシークエンスは感情的・詩的な順序のあり方を示している。Aperture誌はシークエンスを含むホワイトの実践と批評を継続的に掲載し、写真批評の言語を形成する媒体として機能した*3。Aperture誌アーカイブはホワイトの批評・編集への関与を一次資料として参照できる*9。アート・インスティテュート・オブ・シカゴ（AIC）は《Sequence 13: Return to the Bud》（1960年AIC展示）の記録をヒュー・エドワーズ・アーカイブに持ち、ホワイトのシークエンス受容の制度史を補う資料になっている*10。AICが所蔵する《Lighthouse and Wood, Multiple Image》は多重露光・後期の構成的作品を公式ページで確認できる*11。ゲッティ美術館の《The Sound of One Hand Clapping, Pultneyville, New York》は禅・精神性・シークエンスの接点を示す作品として参照できる*12。
+
+精神性・禅・教育の統合
+
+ホワイトは写真教育を単なる技術指導ではなく、見ることの哲学的・精神的訓練として位置づけた。禅・ゲオルギー・グルジェフ・ゲシュタルト心理学など多様な思想的影響を統合した教育実践は、批評家から「非合理的」とも「独自」とも評価された。RITとMITでの教育はそれぞれ異なる文脈での写真批評・写真家育成の場として機能し、ホワイトの薫陶を受けた写真家は1960–70年代のアメリカ写真批評を支える世代を形成した。ジョージ・イーストマン博物館のコレクションはホワイトの作品群を所蔵し、彼が関わった写真誌『Image』のオンライン公開も担当している*13。ミネアポリス美術館（Mia）は《Peeled Paint, Rochester, New York》を所蔵しており、ロチェスター期の表面・抽象・物質感の作品として確認できる*14。センター・フォー・クリエイティブ・フォトグラフィー（CCP）はホワイトのアーカイブを管理しており、研究者への一次資料アクセスを提供している*15。
+
+アーカイブと作品の集積
+
+プリンストン大学美術館のファインディング・エイドはマイナー・ホワイト・アーカイブ（1908–1976年）の全容を記録しており、日記・書簡・教育資料・作品資料の詳細な索引として機能する*5。同美術館が開催した《Minor White: The Eye That Shapes》回顧展は、Archive・未発表作品・シークエンスを包括的に提示した展覧会として写真史上の評価を示す*16。主要モノグラフ《Minor White: Rites and Passages》はインターネット・アーカイブで書誌確認ができ、書簡を含む一次資料の参照点になっている*17。ジョージ・イーストマン博物館による写真誌『Image』のオンライン公開プロジェクトは、ホワイトが関わった写真批評・教育制度の媒体史を補う資料として機能する*18。
+
+批評と受容
+
+ホワイトへの批評的評価は三層で形成されている——スティーグリッツの精神的形式主義の継承者、写真教育における理論的先駆者、Apertureという批評媒体の組織者。この三層は相互に補強し合い、ホワイトを1950–70年代のアメリカ美術写真の制度的中心に位置づけた。一方、「精神性」の強調が写真の社会的側面を遠ざけるという批判的な読みも存在し、1970年代以降の写真批評が社会・歴史的なドキュメンタリーを再評価する中でホワイトの位置づけは揺れ動いた。MFA Houstonのアーティスト・ページはホワイトの受容を国際的な機関として確認できる*19。Aperture誌の《Memorable Fancies: Minor White's Photography and Legacy》シンポジウムはホワイトの遺産を批評的に継承する場として機能した*20。NGAのアーティスト・ページはNGA所蔵45作品への公式導線であり、コーコラン由来作品も含む*21。`,
+    textEn: `Biography
+
+Minor White was born in Minneapolis in 1908 and studied biology at the University of Oregon before taking up photography seriously in the late 1930s*1. Around 1940 he photographed figures and nudes in Portland, forming an early body of work*2. He served in the Second World War and later testified that the years spent in the Philippines constituted a spiritual and photographic turning point. After the war he moved to San Francisco under Ansel Adams's guidance and taught photography at the California School of Fine Arts. Together with Ansel Adams, Dorothea Lange, and Beaumont Newhall, he co-founded Aperture magazine in 1952*3. SFMOMA's artist page provides a concise English summary of his founding role in Aperture, his spirituality, his teaching, and his body of work*4. From the 1950s he centered his practice on the methodology of the sequence — arranging multiple photographs in poetic order to generate meanings beyond individual images. He taught at the Rochester Institute of Technology and shaped a generation of photographers. In 1967 he transferred editorial responsibility for Aperture and also taught at MIT. Princeton University Art Museum holds the Minor White Archive, accumulating diaries, correspondence, teaching materials, and work documentation*5. He died in Cambridge, Massachusetts, in 1976.
+
+Expression / method
+
+Inheriting and extending Stieglitz's Equivalent
+
+The center of White's photographic method was an extension of Alfred Stieglitz's concept of the Equivalent from the 1920s — the idea that photographs of clouds could function as equivalents of interior emotional states. Where Stieglitz treated the equivalent as an external correlative of emotion, White went further: for him photography was a medium that connected the photographer's interior state with the viewer's experience. Rocks, water, surfaces of light, and snow were conceived not as records of the external world but as equivalents of White's state of consciousness at the time of shooting — and as catalysts capable of triggering distinct interior experiences in viewers. MoMA's exhibition Minor White: the eye that shapes functions as a primary reference for his methodology and its development*6. The MoMA catalogue PDF discusses this methodology in greater detail and is used for confirming critical context*7. The J. Paul Getty Museum artist page provides the official entry point for its holdings from his San Francisco period and beyond*8.
+
+The sequence as practiced methodology
+
+White's sequence method positions multiple photographs in a poem-like order, generating layers of meaning that individual images cannot carry alone. Each photograph is simultaneously an independent work and one whose meaning changes in relation to the photographs before and after it. Sequence 13: Return to the Bud (1959–60) is frequently cited as a concrete example of this practice. Aperture magazine continuously published White's practice and criticism, functioning as a medium that shaped the language of photographic criticism*3. The Aperture archive provides primary source access to his editorial and critical engagement*9. The Art Institute of Chicago holds archival records of Sequence 13: Return to the Bud (exhibited at AIC in 1960) in the Hugh Edwards Archive, providing an institutional history resource for White's sequence reception*10. AIC also holds Lighthouse and Wood, Multiple Image, available as an official work page for his late compositional and multiple-exposure work*11. The Getty Museum's The Sound of One Hand Clapping, Pultneyville, New York can be referenced as a work at the intersection of Zen, spirituality, and sequence*12.
+
+Spirituality, Zen, and the integration of teaching
+
+White positioned photography education as philosophical and spiritual training in the act of seeing, not merely technical instruction. His pedagogical practice integrated Zen, Gurdjieff, and Gestalt psychology — evaluated by critics as both "irrational" and distinctively original. His teaching at RIT and MIT functioned as spaces for photographic criticism and photographer formation in distinct institutional contexts; those he taught shaped a generation that supported American photographic criticism in the 1960s–70s. The George Eastman Museum holds his works and manages the online publication project for Image journal, which White contributed to*13. The Minneapolis Institute of Art holds Peeled Paint, Rochester, New York as a work from his Rochester period engaging surface, abstraction, and materiality*14. The Center for Creative Photography (CCP) manages White's archive and provides primary source access for researchers*15.
+
+Archive and accumulated work
+
+Princeton University Art Museum's finding aid for the Minor White Archive (1908–1976) documents its full scope: diaries, correspondence, teaching materials, and work documentation*5. The museum's retrospective Minor White: The Eye That Shapes comprehensively presented his archive, unpublished work, and sequences*16. The monograph Minor White: Rites and Passages is available for bibliographic confirmation via Internet Archive, serving as a primary reference point including correspondence*17. The George Eastman Museum's project to publish Image journal online supplements the institutional history of photographic criticism and education in which White played a central role*18.
+
+Criticism and reception
+
+Critical evaluation of White has been structured on three levels: inheritor of Stieglitz's spiritual formalism, theoretical pioneer in photography education, and organizer of Aperture as a critical medium. These three levels reinforce each other, positioning White at the institutional center of American art photography from the 1950s through the 1970s. A critical reading also exists in which the emphasis on "spirituality" distances photography from its social dimensions; as photographic criticism from the 1970s onward reappraised social and historical documentary, White's positioning became subject to debate. The MFA Houston artist page provides international institutional confirmation of his reception*19. Aperture's Memorable Fancies: Minor White's Photography and Legacy symposium served as a critically active space for engaging with his legacy*20. The National Gallery of Art artist page provides the official entry point for its 45 holdings, including works from the Corcoran collection*21.`,
+    citations: [
+      { num: 1, name: 'Minor White. SFMOMA artist page', url: 'https://www.sfmoma.org/artist/Minor_White/' },
+      { num: 2, name: 'Nude, Portland, Oregon. The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/art/collection/search/265573' },
+      { num: 3, name: 'Minor White. Aperture', url: 'https://aperture.org/editorial/minor-white/' },
+      { num: 4, name: 'Minor White. SFMOMA artist page', url: 'https://www.sfmoma.org/artist/Minor_White/' },
+      { num: 5, name: 'Minor White Archive, 1908–1976: Finding Aid. Princeton University Art Museum', url: 'https://static.artmuseum.princeton.edu/MWA_finding_aid.html' },
+      { num: 6, name: 'Minor White: the eye that shapes. MoMA', url: 'https://www.moma.org/calendar/exhibitions/2227' },
+      { num: 7, name: 'Minor White, the eye that shapes. MoMA catalogue PDF', url: 'https://assets.moma.org/documents/moma_catalogue_2130_300062906.pdf' },
+      { num: 8, name: 'Minor White. J. Paul Getty Museum artist page', url: 'https://www.getty.edu/art/collection/person/103KEZ' },
+      { num: 9, name: 'Minor White. Aperture Archive', url: 'https://archive.aperture.org/topics/minor-white' },
+      { num: 10, name: 'Sequence 13: Return to the Bud. AIC / Hugh Edwards archive', url: 'https://archive.artic.edu/edwards/exhibitions/' },
+      { num: 11, name: 'Lighthouse and Wood, Multiple Image. Art Institute of Chicago', url: 'https://www.artic.edu/artworks/44598/lighthouse-and-wood-multiple-image' },
+      { num: 12, name: 'The Sound of One Hand Clapping, Pultneyville, New York. J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/object/109JCX' },
+      { num: 13, name: 'Works of Minor White. George Eastman Museum', url: 'https://collections.eastman.org/people/64145/minor-white/objects' },
+      { num: 14, name: 'Peeled Paint, Rochester, New York. Minneapolis Institute of Art', url: 'https://collections.artsmia.org/art/38168/peeled-paint-minor-white' },
+      { num: 15, name: 'Minor White. Center for Creative Photography, University of Arizona', url: 'https://ccp.arizona.edu/artists/minor-white' },
+      { num: 16, name: 'Minor White: The Eye That Shapes. Princeton University Art Museum', url: 'https://artmuseum.princeton.edu/exhibitions-events/exhibitions/minor-white-eye-shapes' },
+      { num: 17, name: 'Minor White: Rites and Passages. Internet Archive', url: 'https://archive.org/search?query=minor+white+rites+and+passages' },
+      { num: 18, name: 'Image journal. George Eastman Museum', url: 'https://www.eastman.org/research-collections/library/image' },
+      { num: 19, name: 'Minor White. Museum of Fine Arts Houston', url: 'https://emuseum.mfah.org/people/2354/minor-white' },
+      { num: 20, name: "Memorable Fancies: Minor White's Photography and Legacy. Aperture", url: 'https://aperture.org/events/memorable-fancies-minor-whites-photography-and-legacy/' },
+      { num: 21, name: 'Minor White. National Gallery of Art', url: 'https://www.nga.gov/artists/5480-minor-white' },
+    ],
+    links: [
+      { label: 'Aperture — editorial', url: 'https://aperture.org/editorial/minor-white/' },
+      { label: 'Princeton — Minor White Archive', url: 'https://static.artmuseum.princeton.edu/MWA_finding_aid.html' },
+      { label: 'Center for Creative Photography', url: 'https://ccp.arizona.edu/artists/minor-white' },
+      { label: 'MoMA — exhibition', url: 'https://www.moma.org/calendar/exhibitions/2227' },
+    ],
+    works: [
+      { titleJa: 'ライトハウスとウッド（多重露光）', titleEn: 'Lighthouse and Wood, Multiple Image', labelJa: 'シカゴ美術館所蔵', labelEn: 'Art Institute of Chicago', url: 'https://www.artic.edu/artworks/44598/lighthouse-and-wood-multiple-image', aliases: [] },
+      { titleJa: 'ピールド・ペイント、ロチェスター', titleEn: 'Peeled Paint, Rochester, New York', labelJa: 'ミネアポリス美術館所蔵', labelEn: 'Minneapolis Institute of Art', url: 'https://collections.artsmia.org/art/38168/peeled-paint-minor-white', aliases: [] },
+      { titleJa: '片手の音、ニューヨーク州プルトニービル', titleEn: 'The Sound of One Hand Clapping, Pultneyville, New York', labelJa: 'ゲッティ美術館所蔵', labelEn: 'J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/object/109JCX', aliases: [] },
+    ],
+  };
+
+  window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
+})();
