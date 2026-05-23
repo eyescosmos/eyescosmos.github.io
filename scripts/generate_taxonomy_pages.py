@@ -1823,8 +1823,8 @@ def render_archive_like_list(
   </summary>
   <div class="archive-list-body">
     <p class="archive-list-lead">{esc(lead)}</p>
-    <a class="archive-list-link" href="{photographer_path(photographer, lang)}">{detail_label}</a>
-    <a class="archive-list-link" href="{coordinate_href}">{coordinate_label}</a>
+    <a class="archive-list-link" href="{photographer_path(photographer, lang)}" data-nosnippet>{detail_label}</a>
+    <a class="archive-list-link" href="{coordinate_href}" data-nosnippet>{coordinate_label}</a>
   </div>
 </details>'''
         )
