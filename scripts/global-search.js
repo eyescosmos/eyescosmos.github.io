@@ -21,6 +21,24 @@
     'fabian-marti',
     'gabriel-orozco',
   ]);
+  const EN_PHOTOGRAPHER_SLUG_OVERRIDES = {
+    'jp-横山松三郎': 'yokoyama-matsusaburo',
+    'jp-冨重利平': 'tomishige-rihei',
+    'jp-冨重徳次': 'tomishige-tokuji',
+    'jp-鹿島清兵衛': 'kajima-seibei',
+    'jp-亀井茲明': 'koreaki-kamei',
+    'jp-屋須弘平': 'kohei-yasu',
+    'jp-鳥居龍蔵': 'ryuzo-torii',
+    'jp-福原信三': 'shinzo-fukuhara',
+    'jp-野島康三': 'yasuzo-nojima',
+    'jp-中山岩太': 'iwata-nakayama',
+    'jp-安井仲治': 'nakaji-yasui',
+    'jp-植田正治': 'shoji-ueda',
+    'jp-金丸重嶺': 'shigene-kanamaru',
+    'jp-鈴木八郎': 'hachiro-suzuki',
+    'jp-長谷川伝次郎': 'denjiro-hasegawa',
+    'jp-影山光洋': 'koyo-kageyama',
+  };
   const COUNTRY_META = {
     FR: { ja: 'フランス', en: 'France', slug: 'france', flag: '🇫🇷' },
     GB: { ja: 'イギリス', en: 'United Kingdom', slug: 'united-kingdom', flag: '🇬🇧' },
@@ -261,7 +279,7 @@
           id: photographer.id,
           title: name,
           alt,
-          url: `${rootUrl()}${lang === 'en' ? 'en/' : ''}photographers/${photographer.id}.html`,
+          url: `${rootUrl()}${lang === 'en' ? 'en/' : ''}photographers/${lang === 'en' ? (EN_PHOTOGRAPHER_SLUG_OVERRIDES[photographer.id] || photographer.id) : photographer.id}.html`,
           meta: [country.flag, country.code, photographer.years].filter(Boolean).join(' / '),
           tags: movementLabels.slice(0, 3),
           text: shortLead(photographer, lang),

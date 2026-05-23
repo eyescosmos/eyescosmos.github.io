@@ -29,6 +29,25 @@ NON_PHOTOGRAPHER_IDS = {
     "fabian-marti",
     "gabriel-orozco",
 }
+
+EN_PHOTOGRAPHER_SLUG_OVERRIDES = {
+    "jp-横山松三郎": "yokoyama-matsusaburo",
+    "jp-冨重利平": "tomishige-rihei",
+    "jp-冨重徳次": "tomishige-tokuji",
+    "jp-鹿島清兵衛": "kajima-seibei",
+    "jp-亀井茲明": "koreaki-kamei",
+    "jp-屋須弘平": "kohei-yasu",
+    "jp-鳥居龍蔵": "ryuzo-torii",
+    "jp-福原信三": "shinzo-fukuhara",
+    "jp-野島康三": "yasuzo-nojima",
+    "jp-中山岩太": "iwata-nakayama",
+    "jp-安井仲治": "nakaji-yasui",
+    "jp-植田正治": "shoji-ueda",
+    "jp-金丸重嶺": "shigene-kanamaru",
+    "jp-鈴木八郎": "hachiro-suzuki",
+    "jp-長谷川伝次郎": "denjiro-hasegawa",
+    "jp-影山光洋": "koyo-kageyama",
+}
 COUNTRY_META = {
     "FR": {"slug": "france", "ja": "フランス", "en": "France"},
     "GB": {"slug": "united-kingdom", "ja": "イギリス", "en": "United Kingdom"},
@@ -1212,7 +1231,27 @@ def movement_slug(name: str) -> str:
 
 def photographer_page_path(photographer: dict, lang: str = "ja") -> str:
     base = "en/photographers" if lang == "en" else "photographers"
-    return f"/{base}/{photographer['id']}.html"
+    slug = EN_PHOTOGRAPHER_SLUG_OVERRIDES.get(photographer["id"], photographer["id"]) if lang == "en" else photographer["id"]
+    return f"/{base}/{slug}.html"
+
+
+def render_legacy_redirect_page(to_url: str, title: str) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url={escape_html(to_url)}">
+<link rel="canonical" href="{escape_html(to_url)}">
+<title>{escape_html(title)}</title>
+</head>
+<body>
+<p><a href="{escape_html(to_url)}">Continue to {escape_html(title)}</a></p>
+<script>window.location.replace({json.dumps(to_url)});</script>
+</body>
+</html>
+"""
 
 
 def era_page_path(photographer: dict, lang: str = "ja") -> str:
@@ -2740,7 +2779,14 @@ gtag('config', '{GA_ID}');
 </body>
 </html>
 """
-            (out_dir / f"{photographer['id']}.html").write_text(page, encoding="utf-8")
+            page_filename = Path(page_path).name
+            (out_dir / page_filename).write_text(page, encoding="utf-8")
+            legacy_en_slug = EN_PHOTOGRAPHER_SLUG_OVERRIDES.get(photographer["id"])
+            if lang == "en" and legacy_en_slug:
+                legacy_filename = f"{photographer['id']}.html"
+                if legacy_filename != page_filename:
+                    legacy_page = render_legacy_redirect_page(canonical, title)
+                    (out_dir / legacy_filename).write_text(legacy_page, encoding="utf-8")
             report_rows.append({
                 "lang": lang,
                 "path": page_path,

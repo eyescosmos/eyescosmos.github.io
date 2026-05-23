@@ -44,6 +44,25 @@ NON_PHOTOGRAPHER_IDS = {
     "gabriel-orozco",
 }
 
+EN_PHOTOGRAPHER_SLUG_OVERRIDES = {
+    "jp-横山松三郎": "yokoyama-matsusaburo",
+    "jp-冨重利平": "tomishige-rihei",
+    "jp-冨重徳次": "tomishige-tokuji",
+    "jp-鹿島清兵衛": "kajima-seibei",
+    "jp-亀井茲明": "koreaki-kamei",
+    "jp-屋須弘平": "kohei-yasu",
+    "jp-鳥居龍蔵": "ryuzo-torii",
+    "jp-福原信三": "shinzo-fukuhara",
+    "jp-野島康三": "yasuzo-nojima",
+    "jp-中山岩太": "iwata-nakayama",
+    "jp-安井仲治": "nakaji-yasui",
+    "jp-植田正治": "shoji-ueda",
+    "jp-金丸重嶺": "shigene-kanamaru",
+    "jp-鈴木八郎": "hachiro-suzuki",
+    "jp-長谷川伝次郎": "denjiro-hasegawa",
+    "jp-影山光洋": "koyo-kageyama",
+}
+
 CARD_LEAD_OVERRIDES = {
     "nicephore-niepce": {
         "ja": "世界最古の写真《ル・グラの窓からの眺め》とヘリオグラフィーによって、写真の発明史に決定的な位置を占めた人物。",
@@ -598,7 +617,8 @@ def movement_slug(name: str, lang: str = "ja", movements_meta: dict | None = Non
 
 
 def photographer_path(photographer: dict, lang: str) -> str:
-    return f"/{'en/' if lang == 'en' else ''}photographers/{photographer['id']}.html"
+    slug = EN_PHOTOGRAPHER_SLUG_OVERRIDES.get(photographer["id"], photographer["id"]) if lang == "en" else photographer["id"]
+    return f"/{'en/' if lang == 'en' else ''}photographers/{slug}.html"
 
 
 def era_path(era_id: str, lang: str) -> str:

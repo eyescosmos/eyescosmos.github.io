@@ -16,6 +16,28 @@
     'fabian-marti',
     'gabriel-orozco'
   ]);
+  const enPhotographerSlugOverrides = {
+    'jp-横山松三郎': 'yokoyama-matsusaburo',
+    'jp-冨重利平': 'tomishige-rihei',
+    'jp-冨重徳次': 'tomishige-tokuji',
+    'jp-鹿島清兵衛': 'kajima-seibei',
+    'jp-亀井茲明': 'koreaki-kamei',
+    'jp-屋須弘平': 'kohei-yasu',
+    'jp-鳥居龍蔵': 'ryuzo-torii',
+    'jp-福原信三': 'shinzo-fukuhara',
+    'jp-野島康三': 'yasuzo-nojima',
+    'jp-中山岩太': 'iwata-nakayama',
+    'jp-安井仲治': 'nakaji-yasui',
+    'jp-植田正治': 'shoji-ueda',
+    'jp-金丸重嶺': 'shigene-kanamaru',
+    'jp-鈴木八郎': 'hachiro-suzuki',
+    'jp-長谷川伝次郎': 'denjiro-hasegawa',
+    'jp-影山光洋': 'koyo-kageyama',
+  };
+  const photographerUrl = (p, lang) => {
+    const slug = lang === 'en' ? (enPhotographerSlugOverrides[p.id] || p.id) : p.id;
+    return `/${lang === 'en' ? 'en/' : ''}photographers/${slug}.html`;
+  };
   const movementMeta = Object.assign({}, movementMetaSource, {
     'LGBTQ+': {
       en: 'LGBTQ+ Photography',
@@ -276,9 +298,9 @@
     yearValue: parseYearValue(p.years, p.era),
     order: index,
     prominence: featuredPhotographerIds.has(p.id) ? 1 : 0,
-    url: `/photographers/${p.id}.html`,
-    urlJa: `/photographers/${p.id}.html`,
-    urlEn: `/en/photographers/${p.id}.html`
+    url: photographerUrl(p, 'ja'),
+    urlJa: photographerUrl(p, 'ja'),
+    urlEn: photographerUrl(p, 'en')
   }));
 
   const movementMembers = new Map();
