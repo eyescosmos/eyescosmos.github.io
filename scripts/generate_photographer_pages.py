@@ -2712,7 +2712,6 @@ gtag('config', '{GA_ID}');
     </nav>
     <div class="section-grid">
 {essay_sections_html}
-      {affiliate_section_html}
       <section class="section">
         <h2>{copy['links']}</h2>
         <div class="links">{links_html}</div>
@@ -2722,6 +2721,7 @@ gtag('config', '{GA_ID}');
         <h2>{copy['sources']}</h2>
         <div class="sources">{citations_html}</div>
       </section>
+      {affiliate_section_html}
     </div>
     {directory_nav}
     <footer class="site-footer" data-nosnippet>
