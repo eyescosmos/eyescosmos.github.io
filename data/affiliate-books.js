@@ -62,6 +62,55 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.talbot = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['robert-adamson'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4wKugTb' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3RXww9x' }
+  },
+  books: [
+    {
+      titleJa: 'David Octavius Hill & Robert Adamson',
+      titleEn: 'David Octavius Hill & Robert Adamson',
+      noteJa: 'ヒルとの共同制作を通じて、アダムソンの技術と初期カロタイプの質感を押さえる一冊。',
+      noteEn: 'A concise route into Adamson’s technical role in the Hill and Adamson collaboration.',
+      urlJa: 'https://amzn.to/4wKugTb',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Hill and Adamson: Photographs from the J. Paul Getty Museum',
+      titleEn: 'Hill and Adamson: Photographs from the J. Paul Getty Museum',
+      noteJa: 'ゲッティ美術館所蔵作から、肖像とニューヘブン連作の視覚的な強さを見渡せる図録。',
+      noteEn: 'A Getty Museum volume for seeing the strength of their portraits and Newhaven studies.',
+      urlJa: 'https://amzn.to/4dVYJWV',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'The Photographs of David Octavius Hill and Robert Adamson',
+      titleEn: 'The Photographs of David Octavius Hill and Robert Adamson',
+      noteJa: '二人の共同制作を、写真史上の主要作品としてまとめて確認できる写真集。',
+      noteEn: 'A focused collection of the partnership’s key photographs and early calotype achievement.',
+      urlEn: 'https://amzn.to/3RXww9x',
+      languages: ['en']
+    },
+    {
+      titleJa: 'David Octavius Hill 1802-1870 and Robert Adamson 1821-1848',
+      titleEn: 'David Octavius Hill 1802-1870 and Robert Adamson 1821-1848',
+      noteJa: 'ヒルとアダムソンの協働を作家史として追うための資料的な一冊。',
+      noteEn: 'A useful historical volume for following Hill and Adamson as a collaborative practice.',
+      urlEn: 'https://amzn.to/3PXSb0P',
+      languages: ['en']
+    },
+    {
+      titleJa: 'Hill & Adamson: Calotype Photographic Reproductions',
+      titleEn: 'Hill & Adamson: Calotype Photographic Reproductions',
+      noteJa: 'カロタイプ複製を通じて、紙ネガ由来の柔らかな階調と質感を確認できる一冊。',
+      noteEn: 'A reproduction volume that foregrounds the soft tonal range and paper-negative texture of calotypes.',
+      urlEn: 'https://amzn.to/4dJyJwM',
+      languages: ['en']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.fenton = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4twsm6g' },
