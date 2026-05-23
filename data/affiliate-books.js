@@ -2808,3 +2808,23 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-長谷川伝次郎'] = {
     }
   ]
 };
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-横山松三郎'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4v8utht' }
+  },
+  books: [
+    {
+      titleJa: '通天楼日記 横山松三郎と明治初期の写真・洋画・印刷',
+      noteJa: '横山松三郎の活動を、写真・洋画・印刷が交差する明治初期の実践として読むための一冊。',
+      urlJa: 'https://amzn.to/4v8utht',
+      languages: ['ja']
+    },
+    {
+      titleJa: '幕末・明治の東京 横山松三郎を中心に',
+      noteJa: '横山松三郎を軸に、幕末から明治の東京を写真資料からたどる展覧会系資料。',
+      urlJa: 'https://amzn.to/4dqYAdZ',
+      languages: ['ja']
+    }
+  ]
+};
