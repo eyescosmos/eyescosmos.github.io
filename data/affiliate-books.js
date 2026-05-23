@@ -318,6 +318,39 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.emerson = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS["frederick-h-evans"] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4dKQXhp' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/42UXp0f' }
+  },
+  books: [
+    {
+      titleJa: 'The Photographs of Frederick H. Evans',
+      titleEn: 'The Photographs of Frederick H. Evans',
+      noteJa: 'Gettyの展覧会カタログとして、大聖堂写真から肖像・風景までエヴァンズの全体像を掴める一冊。',
+      noteEn: 'A Getty exhibition catalogue that gives a broad view of Evans, from cathedral interiors to portraits and landscapes.',
+      urlJa: 'https://amzn.to/4dKQXhp',
+      urlEn: 'https://amzn.to/42UXp0f'
+    },
+    {
+      titleJa: 'Frederick H. Evans (Aperture Monograph, Vol. 18, No. 1)',
+      titleEn: 'Frederick H. Evans (Aperture Monograph, Vol. 18, No. 1)',
+      noteJa: 'Aperture Monographとして、エヴァンズの建築写真をコンパクトに確認できる資料。',
+      noteEn: 'An Aperture Monograph for a compact look at Evans’s architectural photography.',
+      urlJa: 'https://amzn.to/4v5534a',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Frederick H. Evans: Photographer of the Majesty, Light and Space of the Medieval Cathedrals of England and France',
+      titleEn: 'Frederick H. Evans: Photographer of the Majesty, Light and Space of the Medieval Cathedrals of England and France',
+      noteJa: 'ボーモント・ニューホールによる、大聖堂の光と空間を中心に読むための古典的なモノグラフ。',
+      noteEn: 'A classic Beaumont Newhall monograph centered on the light and space of Evans’s cathedral photographs.',
+      urlJa: 'https://amzn.to/3Rpf7qc',
+      urlEn: 'https://amzn.to/3RoWXoy'
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.stieglitz = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4c8xbLY' },
