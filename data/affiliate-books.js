@@ -38,6 +38,33 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.daguerre = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['nicephore-niepce'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4wLqetC' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/43qYxZC' }
+  },
+  books: [
+    {
+      titleJa: 'Nicéphore Niépce: Une vie, essais, travaux',
+      noteJa: 'ニエプスの生涯・実験・発明の過程をたどる基礎資料。',
+      urlJa: 'https://amzn.to/4wLqetC',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Photographies: Histoires parallèles',
+      noteJa: '写真史を複数の流れから読み直す資料として、ニエプスの発明史を広い文脈に置ける一冊。',
+      urlJa: 'https://amzn.to/4tPdkIo',
+      languages: ['ja']
+    },
+    {
+      titleEn: 'Nicéphore Niépce, 1765-1833: L\'invention de la photographie',
+      noteEn: 'A focused volume on Niépce and the invention of photography.',
+      urlEn: 'https://amzn.to/43qYxZC',
+      languages: ['en']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.talbot = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/3PSfN6C' },
@@ -62,6 +89,96 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.talbot = {
   ]
 };
 
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['david-octavius-hill'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4dAv0S0' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tPgDiE' }
+  },
+  books: [
+    {
+      titleJa: 'David Octavius Hill & Robert Adamson',
+      titleEn: 'David Octavius Hill & Robert Adamson',
+      noteJa: 'ヒルとアダムソンの共同制作を、肖像とカロタイプ表現の基礎から押さえる一冊。',
+      noteEn: 'A concise route into the Hill and Adamson collaboration, portraiture, and early calotype practice.',
+      urlJa: 'https://amzn.to/4dAv0S0',
+      urlEn: 'https://amzn.to/4v5FW1a'
+    },
+    {
+      titleJa: 'The Personal Art of David Octavius Hill',
+      titleEn: 'The Personal Art of David Octavius Hill',
+      noteJa: '画家としてのヒルの構成感覚と、写真が個人的な芸術表現へ広がる過程を読むための研究書。',
+      noteEn: 'A study of Hill\'s painterly sensibility and the way his photography became a personal art.',
+      urlJa: 'https://amzn.to/4fDY3ql',
+      urlEn: 'https://amzn.to/4tPgDiE'
+    },
+    {
+      titleJa: 'Hill and Adamson: Photographs from the J. Paul Getty Museum',
+      titleEn: 'Hill and Adamson: Photographs from the J. Paul Getty Museum',
+      noteJa: 'ゲッティ美術館所蔵作を通じて、二人のカロタイプの質感と肖像表現を見渡せる図録。',
+      noteEn: 'A Getty Museum volume for seeing the texture and portrait achievement of their calotypes.',
+      urlJa: 'https://amzn.to/4v4RuBB',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'David Octavius Hill (Master of Photography)',
+      titleEn: 'David Octavius Hill (Master of Photography)',
+      noteJa: '初期写真の名手としてのヒルを、代表作から手早く確認できる写真集。',
+      noteEn: 'A focused volume for quickly seeing Hill\'s place among the early masters of photography.',
+      urlEn: 'https://amzn.to/49PHbt3',
+      languages: ['en']
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['robert-adamson'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4wKugTb' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/3RXww9x' }
+  },
+  books: [
+    {
+      titleJa: 'David Octavius Hill & Robert Adamson',
+      titleEn: 'David Octavius Hill & Robert Adamson',
+      noteJa: 'ヒルとの共同制作を通じて、アダムソンの技術と初期カロタイプの質感を押さえる一冊。',
+      noteEn: 'A concise route into Adamson’s technical role in the Hill and Adamson collaboration.',
+      urlJa: 'https://amzn.to/4wKugTb',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Hill and Adamson: Photographs from the J. Paul Getty Museum',
+      titleEn: 'Hill and Adamson: Photographs from the J. Paul Getty Museum',
+      noteJa: 'ゲッティ美術館所蔵作から、肖像とニューヘブン連作の視覚的な強さを見渡せる図録。',
+      noteEn: 'A Getty Museum volume for seeing the strength of their portraits and Newhaven studies.',
+      urlJa: 'https://amzn.to/4dVYJWV',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'The Photographs of David Octavius Hill and Robert Adamson',
+      titleEn: 'The Photographs of David Octavius Hill and Robert Adamson',
+      noteJa: '二人の共同制作を、写真史上の主要作品としてまとめて確認できる写真集。',
+      noteEn: 'A focused collection of the partnership’s key photographs and early calotype achievement.',
+      urlEn: 'https://amzn.to/3RXww9x',
+      languages: ['en']
+    },
+    {
+      titleJa: 'David Octavius Hill 1802-1870 and Robert Adamson 1821-1848',
+      titleEn: 'David Octavius Hill 1802-1870 and Robert Adamson 1821-1848',
+      noteJa: 'ヒルとアダムソンの協働を作家史として追うための資料的な一冊。',
+      noteEn: 'A useful historical volume for following Hill and Adamson as a collaborative practice.',
+      urlEn: 'https://amzn.to/3PXSb0P',
+      languages: ['en']
+    },
+    {
+      titleJa: 'Hill & Adamson: Calotype Photographic Reproductions',
+      titleEn: 'Hill & Adamson: Calotype Photographic Reproductions',
+      noteJa: 'カロタイプ複製を通じて、紙ネガ由来の柔らかな階調と質感を確認できる一冊。',
+      noteEn: 'A reproduction volume that foregrounds the soft tonal range and paper-negative texture of calotypes.',
+      urlEn: 'https://amzn.to/4dJyJwM',
+      languages: ['en']
+    }
+  ]
+};
+
 window.PHOTOGRAPHER_AFFILIATE_BOOKS.fenton = {
   featured: {
     ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4twsm6g' },
@@ -75,6 +192,104 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.fenton = {
       noteEn: 'An entry point for thinking about what war photography shows and conceals.',
       urlJa: 'https://amzn.to/4twsm6g',
       urlEn: 'https://amzn.to/4sObWpJ'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['alexander-gardner'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4nN9dev' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4tVPIBP' }
+  },
+  books: [
+    {
+      titleJa: 'Alexander Gardner: The Western Photographs, 1867-1868',
+      titleEn: 'Alexander Gardner: The Western Photographs, 1867-1868',
+      noteJa: '南北戦争後の西部調査写真を通じて、ガードナーの記録写真の射程を広げて見られる一冊。',
+      noteEn: 'A strong view of Gardner’s postwar western survey work and the reach of his documentary practice.',
+      urlJa: 'https://amzn.to/4nN9dev',
+      urlEn: 'https://amzn.to/4tVPIBP'
+    },
+    {
+      titleJa: 'To Elevate the Masses: Alexander Gardner, Photography and Democracy in Nineteenth-Century America',
+      titleEn: 'To Elevate the Masses: Alexander Gardner, Photography and Democracy in Nineteenth-Century America',
+      noteJa: 'ガードナーの写真を、19世紀アメリカの民主主義・公共性・視覚文化の中で読む研究書。',
+      noteEn: 'A study of Gardner’s photography within nineteenth-century American democracy and public visual culture.',
+      urlJa: 'https://amzn.to/3PHaUxr',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Gardner’s Photographic Sketch Book of the Civil War',
+      titleEn: 'Gardner’s Photographic Sketch Book of the Civil War',
+      noteJa: '南北戦争写真の古典で、戦場の記録と写真家クレジットの問題を考える基礎資料。',
+      noteEn: 'A classic Civil War photobook and a foundation for reading battlefield photography and authorship.',
+      urlEn: 'https://amzn.to/3Pz2nNc',
+      languages: ['en']
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['timothy-osullivan'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4nHmyoB' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/4dYMSau' }
+  },
+  books: [
+    {
+      titleJa: 'Timothy H. O\'Sullivan: The King Survey Photographs',
+      titleEn: 'Timothy H. O\'Sullivan: The King Survey Photographs',
+      noteJa: 'キング測量隊での西部写真を通じて、オサリヴァンの地形を見る鋭さを確認できる一冊。',
+      noteEn: 'A focused look at O\'Sullivan\'s King Survey photographs and his rigorous way of seeing western terrain.',
+      urlJa: 'https://amzn.to/4nHmyoB',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Timothy O\'Sullivan: America\'s Forgotten Photographer',
+      titleEn: 'Timothy O\'Sullivan: America\'s Forgotten Photographer',
+      noteJa: '南北戦争から西部探検まで、オサリヴァンの生涯と仕事を通史的にたどる評伝。',
+      noteEn: 'A biographical route through O\'Sullivan\'s work from the Civil War to the western surveys.',
+      urlJa: 'https://amzn.to/3RqazQr',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'The Photographic Artifacts of Timothy O\'Sullivan',
+      titleEn: 'The Photographic Artifacts of Timothy O\'Sullivan',
+      noteJa: '作品を写真史だけでなく、制作・探検・再撮影の文脈から読み直す研究書。',
+      noteEn: 'A study that rereads O\'Sullivan through making, exploration, and rephotography.',
+      urlJa: 'https://amzn.to/4wKiU1h',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Timothy O\'Sullivan: America\'s Forgotten Photographer',
+      titleEn: 'Timothy O\'Sullivan: America\'s Forgotten Photographer',
+      noteJa: '南北戦争から西部探検まで、オサリヴァンの生涯と仕事を通史的にたどる評伝。',
+      noteEn: 'A biographical route through O\'Sullivan\'s work from the Civil War to the western surveys.',
+      urlEn: 'https://amzn.to/4dYMSau',
+      languages: ['en']
+    },
+    {
+      titleJa: 'Timothy H. O\'Sullivan: The King Survey Photographs',
+      titleEn: 'Timothy H. O\'Sullivan: The King Survey Photographs',
+      noteJa: 'キング測量隊での西部写真を通じて、オサリヴァンの地形を見る鋭さを確認できる一冊。',
+      noteEn: 'A focused look at O\'Sullivan\'s King Survey photographs and his rigorous way of seeing western terrain.',
+      urlEn: 'https://amzn.to/4nJvMRj',
+      languages: ['en']
+    },
+    {
+      titleJa: 'Framing the West: The Survey Photographs of Timothy H. O\'Sullivan',
+      titleEn: 'Framing the West: The Survey Photographs of Timothy H. O\'Sullivan',
+      noteJa: '西部調査写真の形式性と影響を、複数の論考から読み解く展覧会図録。',
+      noteEn: 'An exhibition volume that interprets O\'Sullivan\'s western survey photographs and their wider influence.',
+      urlEn: 'https://amzn.to/4nNKeb4',
+      languages: ['en']
+    },
+    {
+      titleJa: 'American Frontiers: The Photographs of Timothy H. O\'Sullivan, 1867-1874',
+      titleEn: 'American Frontiers: The Photographs of Timothy H. O\'Sullivan, 1867-1874',
+      noteJa: '1867年から1874年の西部写真をまとめ、フロンティア表象の基礎資料として読める一冊。',
+      noteEn: 'A key volume on O\'Sullivan\'s western photographs from 1867 to 1874 and frontier representation.',
+      urlEn: 'https://amzn.to/4f3qKwS',
+      languages: ['en']
     }
   ]
 };
@@ -314,6 +529,39 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS.emerson = {
       noteJa: '関連写真集や別の版を探すための検索リンク。',
       noteEn: 'A search link for related photobooks and other available editions.',
       urlEn: 'https://amzn.to/4sf72B0'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS["frederick-h-evans"] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4dKQXhp' },
+    en: { label: 'View on Amazon ↗', url: 'https://amzn.to/42UXp0f' }
+  },
+  books: [
+    {
+      titleJa: 'The Photographs of Frederick H. Evans',
+      titleEn: 'The Photographs of Frederick H. Evans',
+      noteJa: 'Gettyの展覧会カタログとして、大聖堂写真から肖像・風景までエヴァンズの全体像を掴める一冊。',
+      noteEn: 'A Getty exhibition catalogue that gives a broad view of Evans, from cathedral interiors to portraits and landscapes.',
+      urlJa: 'https://amzn.to/4dKQXhp',
+      urlEn: 'https://amzn.to/42UXp0f'
+    },
+    {
+      titleJa: 'Frederick H. Evans (Aperture Monograph, Vol. 18, No. 1)',
+      titleEn: 'Frederick H. Evans (Aperture Monograph, Vol. 18, No. 1)',
+      noteJa: 'Aperture Monographとして、エヴァンズの建築写真をコンパクトに確認できる資料。',
+      noteEn: 'An Aperture Monograph for a compact look at Evans’s architectural photography.',
+      urlJa: 'https://amzn.to/4v5534a',
+      languages: ['ja']
+    },
+    {
+      titleJa: 'Frederick H. Evans: Photographer of the Majesty, Light and Space of the Medieval Cathedrals of England and France',
+      titleEn: 'Frederick H. Evans: Photographer of the Majesty, Light and Space of the Medieval Cathedrals of England and France',
+      noteJa: 'ボーモント・ニューホールによる、大聖堂の光と空間を中心に読むための古典的なモノグラフ。',
+      noteEn: 'A classic Beaumont Newhall monograph centered on the light and space of Evans’s cathedral photographs.',
+      urlJa: 'https://amzn.to/3Rpf7qc',
+      urlEn: 'https://amzn.to/3RoWXoy'
     }
   ]
 };
@@ -2805,6 +3053,60 @@ window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-長谷川伝次郎'] = {
       noteJa: '日本写真を写真史の流れとともにたどる入口になる一冊。',
       noteEn: 'An entry point into Japanese photography through the photographer\'s place in its broader history.',
       urlJa: 'https://amzn.to/4mqFmrM'
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-冨重利平'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/42RCVW9' }
+  },
+  books: [
+    {
+      titleJa: '肖像のモダンエイジ ―冨重写真所展',
+      noteJa: '冨重写真所の肖像文化を、地域の近代化と結びつけて見るための展覧会資料。',
+      urlJa: 'https://amzn.to/42RCVW9',
+      languages: ['ja']
+    },
+    {
+      titleJa: '写真の先駆者 冨重利平作品集',
+      noteJa: '冨重利平の作品をまとまって確認できる、初期日本写真史の地域的広がりを知るための一冊。',
+      urlJa: 'https://amzn.to/4uuKmyN',
+      languages: ['ja']
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-冨重徳次'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4x3DlXx' }
+  },
+  books: [
+    {
+      titleJa: '肖像のモダンエイジ ―冨重写真所展',
+      noteJa: '冨重写真所の肖像文化を通じて、徳次が継承した地域写真館の役割も読み取れる展覧会資料。',
+      urlJa: 'https://amzn.to/4x3DlXx',
+      languages: ['ja']
+    }
+  ]
+};
+
+window.PHOTOGRAPHER_AFFILIATE_BOOKS['jp-横山松三郎'] = {
+  featured: {
+    ja: { label: 'Amazonで見る ↗', url: 'https://amzn.to/4v8utht' }
+  },
+  books: [
+    {
+      titleJa: '通天楼日記 横山松三郎と明治初期の写真・洋画・印刷',
+      noteJa: '横山松三郎の活動を、写真・洋画・印刷が交差する明治初期の実践として読むための一冊。',
+      urlJa: 'https://amzn.to/4v8utht',
+      languages: ['ja']
+    },
+    {
+      titleJa: '幕末・明治の東京 横山松三郎を中心に',
+      noteJa: '横山松三郎を軸に、幕末から明治の東京を写真資料からたどる展覧会系資料。',
+      urlJa: 'https://amzn.to/4dqYAdZ',
+      languages: ['ja']
     }
   ]
 };
