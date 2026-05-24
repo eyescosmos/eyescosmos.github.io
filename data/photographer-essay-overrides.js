@@ -17096,5 +17096,421 @@ Critical evaluation of White has been structured on three levels: inheritor of S
     ],
   };
 
+  // ─── Robert Doisneau ─────────────────────────────────────────────────────────
+  overrides['robert-doisneau'] = {
+    leadJa: `ロベール・ドアノーは、パリ郊外・労働・広告・演出を横断しながら、戦後フランスのヒューマニスト写真の制度を作り上げた写真家。偶然と演出のあいだにある独自の観察眼は、「パリの恋人写真家」という単一の受容像を超えた実践の複層性を持つ。`,
+    leadEn: `Robert Doisneau worked across Paris suburbs, labor, advertising, and staged scenes to help shape the institutional language of postwar French humanist photography. His practice exceeds the romantic image of "the poet of Paris" with which he is most widely identified.`,
+    textJa: `経歴
+
+ロベール・ドアノーは1912年にパリ郊外ジャンティイに生まれた。グラフィック・アート学校エコール・エスティエンヌでリトグラフを学んだのち写真へ転換を図り、1934年にルノー自動車ビヤンクール工場の宣伝・記録写真家として採用された*1。工場での撮影は産業・広告写真の基盤を与え、1939年の解雇後はフリーランスとして独立した。第二次世界大戦中は占領下のパリで撮影を続け、レジスタンスへの協力として偽造書類の作成に関わったとされる*4。1944年のパリ解放を記録し、関連写真・手稿を1985年に国立レジスタンス博物館へ寄贈した*17。1946年にラフォ（Rapho）通信社に加わり、翌年から雑誌『ヴォーグ』の仕事も引き受け、報道・広告・雑誌という複数の職能的文脈を横断して活動した*1。
+
+表現解説
+
+郊外という出発点
+
+ドアノーの写真の起点は、ロマンチックなパリの街角ではなく、ジャンティイ、バニュー、イヴリーといった労働者・移民が混在するパリ郊外であった*1。アトリエ・ロベール・ドアノーが管理する45万点以上のアーカイブは、「パリの恋人写真家」という単一の受容イメージをはるかに超えた記録の広がりを示している*2。テーマ別ポートフォリオには1945年のノール＝パ＝ドゥ・カレー地域の炭鉱夫、英国、芸術家たちが含まれており、郊外・労働という軸が有名な街角作品群とは別の文体的基盤を形成していた*3。富士フイルムスクエアの展示は、ドアノーの活動の出発点をパリ郊外の子ども・路上・工場環境に置き、この観察が後の作品群の語法を準備したと論じている*14。
+
+偶然と演出のあいだ
+
+ドアノーの方法論において繰り返し問われるのは「演出か偶然か」という問いである。《市庁舎前のキス》（1950年）はその典型で、長らく路上で偶然捉えた恋人たちの場面として流通したが、1993年の訴訟において本人がモデルを用いた演出であることを認めた*4。しかしこの「演出」は欠陥ではなくドアノーの方法の核心であり、偶然の発見のように見える構図が細心の観察と事前の準備によって組み立てられていた。ゲッティ美術館が所蔵する《盲目のアコーディオン弾き》（1953年）は、即興的な観察と構図の構築の両面を持つ作品として、作品画像をオンラインで確認できる*6。富士フイルムスクエアの第2期展示は、雑誌・広告という流通媒体が《市庁舎前のキス》を戦後フランスの都市イメージの代名詞として量産・定着させた過程を跡づけた*15。センター・ポンピドゥーの1994年の展覧会は「小さな劇場」というドアノー自身のメタファーを通じて、ユーモアと観察の組み合わせが持つ写真的な意味を示した*8。1945年の《ラ・ストリクト・ランティミテ》は同館が所蔵する作品として戦後直後の親密な都市場面を具体化している*9。
+フォンダシオン・アンリ・カルティエ＝ブレッソンの「Du métier à l'œuvre（職業から作品へ）」展は、ドアノーを「パリの詩人」という単純化から切り離し、職業写真家としての複雑な実践の中に作品が生まれた過程を検証した*16。
+
+芸術家との親近感
+
+ドアノーはピカソをはじめとする芸術家・文化人のポートレートも多く残した。《レ・パン・ド・ピカソ（ピカソのパン）》（1950年、ヴァロリス）はパリ近代美術館に所蔵されており、ユーモアと芸術家への親近感が交わる場面として知られている*11。1934年の初期作《ラ・プルミエール・メートレス》も同館が所蔵しており、戦後の有名作だけに閉じない初期ドアノーの視線を示している*10。ゲッティ美術館はドアノーのリトグラファーとしての訓練が画面構成への感覚的な基盤を与えたと評価している*5。
+
+批評と受容
+
+フランス人道主義写真の典型と再評価
+
+ドアノーはブラッサイ、ウィリー・ロニス、イジスらとともに「フランス人道主義写真（French humanist photography）」の代表者として括られてきた。しかし近年の批評は各写真家の被写体との距離、発表媒体、政治的立場を区別する傾向があり、ICPが整理するように、ドアノーの実践は占領・解放期のパリ、レジスタンス、ラフォ、ヴォーグ、広告・雑誌仕事という複数の文脈にまたがる*4。国立レジスタンス博物館の「L'esprit de résistance」展は、1985年寄贈の写真・手稿を基盤に、占領下の偽造活動とレジスタンスを扱い、戦後の受容が切り落としやすい政治的な層を後年の議論に接続した*17。ミュゼ・マイヨールの2025年展「Instants Donnés」は、ヴォーグ、広告、子ども、郊外を含む約400点の選定によって、ドアノーを多面的な実践者として再提示した*13。センター・ポンピドゥーが所蔵するパリ解放期のFFI兵士の記録写真は、「パリの恋人写真家」とは異なる歴史的文脈でドアノーの実践を位置づける材料になっている*12。`,
+    textEn: `Biography
+
+Robert Doisneau was born in 1912 in Gentilly, a suburb of Paris. He studied lithography at the École Estienne, then shifted to photography in the early 1930s and joined Renault's Billancourt factory in 1934 as an industrial and advertising photographer*1. Dismissed in 1939, he established himself as a freelance photographer. During the German occupation he continued photographing Paris and reportedly forged identity documents to assist the Resistance*4. He documented the Liberation of Paris in 1944 and in 1985 donated related photographs and manuscripts to the Musée de la Résistance nationale*17. In 1946 he joined the Rapho agency and the following year began working regularly for Vogue, navigating simultaneously the professional worlds of advertising, press, and magazine photography*1.
+
+Expression / method
+
+The suburbs as starting point
+
+Doisneau's photographic practice did not begin in the romantic center of Paris but in the working-class suburbs of Gentilly, Bagneux, and Ivry*1. The official archive holds over 450,000 photographs, demonstrating a scope that exceeds the single image of the kissing couple with which he is most closely identified*2. Themed portfolios include coal miners in the Nord-Pas-de-Calais region in 1945, England, and artists — underscoring that suburbs and labor formed a stylistic foundation distinct from the famous street-corner work*3. The Fujifilm Square exhibition situated Doisneau's starting point in suburban children, streets, and factory environments, arguing that this observation prepared the stylistic foundations for his later celebrated photographs*14.
+
+Between staging and chance
+
+The recurring question in discussions of Doisneau's method is whether his images are staged or spontaneous. Le Baiser de l'Hôtel de Ville (1950) became the emblematic case: it circulated for decades as a spontaneously caught moment, but in a 1993 lawsuit Doisneau acknowledged that the couple had been posed*4. This staging is the core of his method rather than a flaw: what appear to be chance compositions were assembled through careful observation and advance preparation. The Getty Museum holds The Blind Accordionist (1953), a work whose combination of observational immediacy and constructed composition can be viewed online*6. The second Fujifilm Square exhibition traced how magazine and advertising distribution turned Le Baiser into a repeated reference point for the postwar French image of Paris*15. The Centre Pompidou's 1994 exhibition used Doisneau's own metaphor of a "small theater" to illuminate the combination of humor and observation that defines his photographic stance*8. La Stricte intimité (1945) is held by the same institution as an example of the intimate postwar urban scene he documented*9.
+The Fondation Henri Cartier-Bresson's exhibition Du métier à l'œuvre (From Craft to Work) separated Doisneau from the simplified "poet of Paris" label and examined the complex professional practice within which his images were produced*16.
+
+Intimacy with artists
+
+Doisneau made portraits of many artists and cultural figures, most notably Picasso. Les pains de Picasso (1950, Vallauris), held in the Musée d'Art moderne de Paris, exemplifies the intersection of humor and intimacy with artists that characterizes this strand of his practice*11. La première maîtresse (1934), also held at the same museum, shows the early Doisneau before the celebrated postwar work*10. The Getty Museum notes that his lithographic training provided a foundational sensitivity to pictorial composition*5.
+
+Criticism and reception
+
+French humanist photography and its limits
+
+Doisneau has long been grouped with Brassaï, Willy Ronis, and Izis under the label of "French humanist photography." Recent criticism tends to distinguish individual stances, distances from subjects, publication contexts, and political positions. As the ICP archive organizes, Doisneau's practice spanned wartime and postwar Paris, Resistance activity, Rapho, Vogue, and advertising — a layered set of contexts that the single label of "humanist photography" compresses*4. The Musée de la Résistance nationale's L'esprit de résistance drew on the 1985 donated photographs and manuscripts to reconnect Doisneau to the political layers that postwar popular reception tends to overlook*17. The Musée Maillol's 2025 exhibition Instants Donnés, selecting approximately four hundred works across Vogue, advertising, children, and suburbs, repositioned him as a multifaceted practitioner*13. The Liberation-period photographs of FFI fighters held by Paris Musées provide a further context for his practice beyond the romantic street-corner image*12.`,
+    citations: [
+      { num: 1, name: 'Atelier Robert Doisneau: Full Biography', url: 'https://www.robert-doisneau.com/en/robert-doisneau/biography/' },
+      { num: 2, name: 'Atelier Robert Doisneau: Portfolios', url: 'https://www.robert-doisneau.com/en/robert-doisneau/portfolios/' },
+      { num: 3, name: 'Atelier Robert Doisneau: Miners portfolio', url: 'https://www.robert-doisneau.com/en/robert-doisneau/portfolios/1568%2Cmineurs.htm' },
+      { num: 4, name: 'Robert Doisneau. International Center of Photography', url: 'https://www.icp.org/browse/archive/constituents/robert-doisneau' },
+      { num: 5, name: 'Robert Doisneau. Getty Museum collection artist page', url: 'https://www.getty.edu/art/collection/person/104N2T' },
+      { num: 6, name: 'The Blind Accordionist. J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/object/107VTG' },
+      { num: 7, name: 'Robert Doisneau. Centre Pompidou artist page', url: 'https://www.centrepompidou.fr/en/ressources/personne/crgbEj' },
+      { num: 8, name: 'Robert Doisneau exhibition 1994. Centre Pompidou', url: 'https://www.centrepompidou.fr/en/program/calendar/event/cc6jAK' },
+      { num: 9, name: 'La Stricte intimité. Centre Pompidou', url: 'https://www.centrepompidou.fr/fr/ressources/oeuvre/c9dnqA' },
+      { num: 10, name: 'La première maîtresse. Paris Musées / Musée d\'Art Moderne de Paris', url: 'https://www.parismuseescollections.paris.fr/fr/musee-d-art-moderne/oeuvres/la-premiere-maitresse' },
+      { num: 11, name: 'Les pains de Picasso. Paris Musées / Musée d\'Art Moderne de Paris', url: 'https://www.parismuseescollections.paris.fr/fr/musee-d-art-moderne/oeuvres/les-pains-de-picasso' },
+      { num: 12, name: 'FFI derrière une barricade. Paris Musées / Musée Carnavalet', url: 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/ffi-derriere-une-barricade-boulevards-saint-germain-et-saint-michel-22-23' },
+      { num: 13, name: 'Robert Doisneau. Instants Donnés. Musée Maillol', url: 'https://museemaillol.com/en/expositions/robert-doisneau-instants-donnes-2/' },
+      { num: 14, name: 'Robert Doisneau Photo Exhibition Part 1: The Suburbs of Paris. FUJIFILM SQUARE', url: 'https://fujifilmsquare.jp/en/exhibition/240829_05.html' },
+      { num: 15, name: 'Robert Doisneau Photo Exhibition Part 2. FUJIFILM SQUARE', url: 'https://fujifilmsquare.jp/en/exhibition/241031_05.html' },
+      { num: 16, name: 'Robert Doisneau. Fondation Henri Cartier-Bresson', url: 'https://www.henricartierbresson.org/en/expositions/robert-doisneau-2/' },
+      { num: 17, name: 'Robert Doisneau – L\'esprit de résistance. Musée de la Résistance nationale', url: 'https://www.musee-resistance.com/expositions/doisneau/' },
+    ],
+    links: [
+      { label: 'ICP — Travaux & Les Jeux', url: 'https://www.icp.org/content/travaux-les-jeux' },
+      { label: 'Musée Maillol — Instants Donnés', url: 'https://museemaillol.com/en/expositions/robert-doisneau-instants-donnes-2/' },
+      { label: 'Atelier Robert Doisneau — official site', url: 'https://www.robert-doisneau.com/en/robert-doisneau/' },
+      { label: 'Centre Pompidou — Doisneau', url: 'https://www.centrepompidou.fr/en/ressources/personne/crgbEj' },
+    ],
+    works: [
+      { titleJa: '盲目のアコーディオン弾き', titleEn: 'The Blind Accordionist', labelJa: 'ゲッティ美術館所蔵', labelEn: 'J. Paul Getty Museum', url: 'https://www.getty.edu/art/collection/object/107VTG', aliases: [] },
+      { titleJa: 'ラ・ストリクト・ランティミテ', titleEn: 'La Stricte intimité', labelJa: 'センター・ポンピドゥー所蔵', labelEn: 'Centre Pompidou', url: 'https://www.centrepompidou.fr/fr/ressources/oeuvre/c9dnqA', aliases: [] },
+      { titleJa: 'ラ・プルミエール・メートレス', titleEn: 'La première maîtresse', labelJa: 'パリ近代美術館所蔵', labelEn: 'Musée d\'Art Moderne de Paris', url: 'https://www.parismuseescollections.paris.fr/fr/musee-d-art-moderne/oeuvres/la-premiere-maitresse', aliases: [] },
+      { titleJa: 'レ・パン・ド・ピカソ', titleEn: 'Les pains de Picasso', labelJa: 'パリ近代美術館所蔵', labelEn: 'Musée d\'Art Moderne de Paris', url: 'https://www.parismuseescollections.paris.fr/fr/musee-d-art-moderne/oeuvres/les-pains-de-picasso', aliases: [] },
+    ],
+  };
+
+  // ─── Russell Lee ──────────────────────────────────────────────────────────────
+  overrides['russell-lee'] = {
+    leadJa: `ラッセル・リーはFSA写真家のなかでも最大規模の記録を残した写真家。農村・炭鉱・日系人強制収容所を粘り強く撮影した大量アーカイブは、一枚の傑作よりもコミュニティの実態を積み上げる方法として、ドキュメンタリーの別の可能性を示している。`,
+    leadEn: `Russell Lee produced the largest photographic archive among FSA photographers. His sustained documentation of rural communities, coal mining towns, and Japanese American incarceration camps presents documentary as systematic accumulation rather than individual masterwork.`,
+    textJa: `経歴
+
+ラッセル・リーは1903年イリノイ州オタワに生まれた。化学エンジニアリングを学んだ後に芸術を志し、ヨーロッパで絵画を学んでいる*1。1935〜36年頃に写真へ転向し、ロイ・ストライカーが率いるアメリカ農業安定局（FSA）の写真部門に参加した*2。FSAでは農村・炭鉱・移民コミュニティを主対象に大量の記録活動を行い、FSA写真家の中でもっとも多くのプリントを残したとされている*1。1942年にはFSAを離れ、戦時移住局（WRA）の委嘱でカリフォルニアの日系人強制退去と収容所での生活を撮影した*8。第二次世界大戦後の1946年、連邦政府の委嘱によりアパラチア山脈の炭鉱コミュニティ調査（コール・サーベイ）を実施し、妻ジーンの手書きキャプションと組み合わせた約2,800点の記録を残した*4。戦後はテキサス大学オースティン校で写真を教え、晩年をオースティンで過ごした*10。ブリスコー・センター（テキサス大学アメリカ史センター）はリーの大規模なアーカイブを保管しており、1935〜36年から1977年に及ぶ射程の研究が続けられている*6。
+
+表現解説
+
+量とコミュニティの記録
+
+FSA写真家の中でドロシア・ラングやウォーカー・エバンスが少数の傑作で記憶されるのに対し、ラッセル・リーは量的な蓄積とコミュニティの全体像の記録を方法論の核に置いた写真家として評価されている*1。議会図書館のブログ記事は、リーの方法の特徴として「ひとつのコミュニティに時間をかけて滞在し、市場・学校・教会・路上での人々の動作を複数の写真で積み上げること」を描いている*2。この「複数の写真での積み上げ」は、単一の決定的瞬間を目指すのとは異なる、ドキュメンタリーの別の可能性を示すものとして評価されてきた。ヒューマニティーズ・テキサスの巡回展示解説は、1935〜36年の初期から1977年まで継続した射程の広さを示しており、アーカイブ全体の重みが評価される根拠になっている*7。議会図書館の「Bound for Glory」展はリーを白黒FSAドキュメンタリーだけでなく、1939〜43年のFSA/OWIカラー記録の文脈にも接続している*3。
+
+炭鉱調査の社会的機能
+
+1946年の炭鉱コミュニティ調査（コール・サーベイ）は、リーの実践が単独の写真家の作品論にとどまらない社会的な射程を持つことを示す重要な事例である。ナショナル・アーカイブズの「Power & Light: Russell Lee's Coal Survey」展は、ストライキ後の炭鉱コミュニティに政府委嘱で入ったリーが、鉱夫の医療・住宅・家族生活・危険な作業環境をジーンのキャプションと組み合わせて文書化した写真群を展示した*4。国立公文書館財団の記事によると、この調査は約2,800点の写真を含み、ナショナル・アーカイブズが所蔵する最も大規模なリー写真コレクションを形成している*5。「Power & Light」展は2024〜25年にわたって開催され、炭鉱コミュニティの記録が歴史的評価を受けてきた経緯を確認できる*15。
+
+日系人強制収容所の記録と倫理的複雑さ
+
+1942年のWRA委嘱写真は、リーの実践の倫理的に最も複雑な部分を示している。デンショ百科事典はリーの日系人収容所写真を、国家委嘱写真として「収容所での生活を穏当に見せる」という政治的目的に奉仕した面があることを指摘している*8。ディスカバー・ニッケイの記事は、日系コミュニティ側の観点から、リーの写真が強制移動・収容という状況に置かれた人々の日常を細部まで記録したことを評価しつつ、それが誰の視線のための記録であったかを問い直している*9。デンショのWRA政府写真に関する記事は、ドロシア・ラングやアンセル・アダムスとの比較においても、リーの収容所写真が国家委嘱の制度的文脈で被写体とどう向き合うかという問いを提起する資料として位置づけている*14。
+
+批評と受容
+
+FSA写真家の再評価とリーの位置
+
+FSA写真は1970年代以降、「国家が演出した貧困の美化」という批判を含む再評価が進んだ。この文脈でリーは、傑作への集中ではなくアーカイブの全体的な重みに価値を見出す評価視点から、新たな関心を集めてきた。スミソニアン・アーカイブズ・オブ・アメリカン・アートが保管する1964年のオーラルヒストリー・インタビューは、リー自身の語りによる作家形成の経緯を提供し、後年の受容史研究における一次資料として機能する*11。テキサス州歴史協会のハンドブックは、リーをテキサスとの関係で記述しており、UT オースティンへの転身と晩年のオースティン定住が後半生の軸を形成したことを確認できる*10。アモン・カーター美術館の作家ページはFSA写真家としての制度的な位置を確認できる情報を提供している*12。`,
+    textEn: `Biography
+
+Russell Lee was born in 1903 in Ottawa, Illinois. After studying chemical engineering he turned to art, studying painting in Europe, then shifted to photography around 1935–36 and joined the Farm Security Administration (FSA) photographic division under Roy Stryker*1. At the FSA he documented rural communities, labor, and migrant life across the United States and is said to have produced more prints than any other FSA photographer*1. In 1942 he left the FSA and photographed the forced relocation and incarceration of Japanese Americans under a War Relocation Authority (WRA) commission*8. In 1946 a federal commission took him to Appalachian coal-mining communities; the resulting survey of approximately 2,800 photographs combined with his wife Jean's handwritten captions forms one of the most extensive single bodies of work held by the National Archives*4. After the war he taught photography at the University of Texas at Austin and spent his later years there*10. The Briscoe Center for American History holds his extensive archive, supporting research that spans from 1935–36 to 1977*6.
+
+Expression / method
+
+Quantity and the record of community
+
+Where Dorothea Lange and Walker Evans are remembered for a small number of master images, Russell Lee placed systematic accumulation and the comprehensive record of community at the core of his method*1. A Library of Congress blog post describes Lee's approach as "staying in one community long enough to photograph its market, school, church, and streets across multiple frames," building social density through sequence rather than individual image*2. This approach of accumulation rather than the decisive single frame has been recognized as a different model of documentary possibility. The Humanities Texas touring exhibition confirms the breadth of his practice from early work in 1935–36 through 1977*7. The Library of Congress's Bound for Glory exhibition connects Lee to the FSA/OWI color photography program of 1939–43, extending his practice beyond the black-and-white documentary image*3.
+
+The social function of the Coal Survey
+
+The 1946 Coal Survey demonstrates that Lee's practice extended beyond the individual photographer's oeuvre into direct social function. The National Archives' Power & Light: Russell Lee's Coal Survey exhibition displayed his documentation of miners' medical care, housing, family life, and dangerous working conditions, paired with Jean Lee's captions*4. The National Archives Foundation reports the survey contains approximately 2,800 photographs, forming one of the largest Lee collections in the Archives*5. Power & Light ran through 2024–25, confirming continued historical recognition of this documentary record*15.
+
+Japanese American incarceration photography and ethical complexity
+
+The 1942 WRA commission photographs represent the most ethically complex part of Lee's practice. The Densho Encyclopedia notes that Lee's incarceration photographs served a political purpose — presenting life in the camps as orderly — as part of a government commission*8. The Discover Nikkei article reads these photographs from a Japanese American community perspective, acknowledging Lee's detailed documentation of daily life while questioning whose gaze shaped the record*9. The Densho article on WRA government photography places Lee's work alongside Dorothea Lange's and Ansel Adams's in a comparative context of government-commissioned photography and the ethics of institutional framing*14.
+
+Criticism and reception
+
+Reappraisal within FSA documentary
+
+FSA photography has been subject to reappraisal since the 1970s, including criticism of its construction of poverty for a government program. Within this context, Lee has attracted renewed attention from the perspective that values the weight of an archive as a whole rather than concentrating on masterworks. The 1964 oral history interview preserved at the Smithsonian Archives of American Art provides a primary record of Lee's account of his own formation as a photographer*11. The Texas State Historical Association handbook entry addresses Lee in the context of Texas, confirming the centrality of his UT Austin years and his later life in Austin to the second half of his career*10. The Amon Carter Museum of American Art holds his work, providing an institutional basis for his position within American photographic history*12.`,
+    citations: [
+      { num: 1, name: 'Russell Lee Collection. Library of Congress', url: 'https://www.loc.gov/collections/russell-lee/about-this-collection/' },
+      { num: 2, name: 'A Small Texas Town on a March Afternoon in 1940. Library of Congress Blog', url: 'https://blogs.loc.gov/picturethis/2021/03/a-small-texas-town-on-a-march-afternoon-in-1940/' },
+      { num: 3, name: 'Bound for Glory: America in Color 1939–1943. Library of Congress', url: 'https://www.loc.gov/exhibits/bound-for-glory/' },
+      { num: 4, name: 'Power & Light: Russell Lee\'s Coal Survey. National Archives', url: 'https://visit.archives.gov/whats-on/explore-exhibits/power-light-russell-lees-coal-survey' },
+      { num: 5, name: 'Spotlight on Russell Lee. National Archives Foundation', url: 'https://archivesfoundation.org/newsletter/spotlight-on-russell-lee/' },
+      { num: 6, name: 'The Documentary Photography of Russell Lee. Briscoe Center for American History', url: 'https://briscoecenter.org/about/news/center-for-american-history-presents-panel-discussion-and-exhibition-the-documentary-photography-of-russell-lee/' },
+      { num: 7, name: 'Russell Lee Photographs. Humanities Texas', url: 'https://www.humanitiestexas.org/news/events/russell-lee-photographs-5' },
+      { num: 8, name: 'Russell Lee. Densho Encyclopedia', url: 'https://encyclopedia.densho.org/Russell%20Lee/' },
+      { num: 9, name: 'Photographer Russell Lee. Discover Nikkei', url: 'https://discovernikkei.org/en/journal/2014/5/26/russell-lee/' },
+      { num: 10, name: 'Russell Werner Lee. Texas State Historical Association', url: 'https://www.tshaonline.org/handbook/entries/lee-russell-werner' },
+      { num: 11, name: 'Oral history interview with Russell and Jean Lee. Smithsonian Archives of American Art', url: 'https://www.aaa.si.edu/collections/interviews/oral-history-interview-russell-and-jean-lee-12176' },
+      { num: 12, name: 'Russell Lee. Amon Carter Museum of American Art', url: 'https://www.cartermuseum.org/artists/russell-lee' },
+      { num: 13, name: 'Russell Lee, Austin. Amon Carter Museum of American Art', url: 'https://www.cartermuseum.org/collection/russell-lee-austin-p19851729' },
+      { num: 14, name: 'Government photography of the WRA Camps and Resettlement. Densho Encyclopedia', url: 'https://encyclopedia.densho.org/Government_photography_of_the_WRA_Camps_and_Resettlement/' },
+      { num: 15, name: 'National Archives Showcases Historical Coal Mining Communities. Obama Presidential Library', url: 'https://www.obamalibrary.gov/news/national-archives-showcases-historical-coal-mining-communities-new-photography-exhibit' },
+    ],
+    links: [
+      { label: 'Library of Congress — Russell Lee Biography', url: 'https://www.loc.gov/item/prn-21-012/definitive-biography-brings-life-of-influential-documentary-photographer-russell-lee-out-of-the-shadows-drawing-on-librarys-photography-archive/2021-03-01/' },
+      { label: 'National Archives — Russell Lee Exhibit', url: 'https://www.archives.gov/news/articles/power-and-light-follow-up' },
+      { label: 'Library of Congress — Russell Lee Collection', url: 'https://www.loc.gov/collections/russell-lee/about-this-collection/' },
+      { label: 'Densho Encyclopedia — Russell Lee', url: 'https://encyclopedia.densho.org/Russell%20Lee/' },
+    ],
+    works: [],
+  };
+
+  // ─── William Vandivert ────────────────────────────────────────────────────────
+  overrides['william-vandivert'] = {
+    leadJa: `ウィリアム・ヴァンディヴァートは、『LIFE』誌のスタッフ写真家として戦時ヨーロッパを取材し、マグナム・フォトス創設メンバーとして写真エージェンシーの制度化に参加した写真家。戦時報道の最前線と写真家の権利獲得運動をつなぐ制度史上の中継点として評価されている。`,
+    leadEn: `William Vandivert covered wartime Europe as a LIFE staff photographer and participated in the founding of Magnum Photos, helping to institutionalize the model of photographer agency and rights management. His place in photographic history lies at the junction of wartime reportage and the postwar effort to establish photographers' institutional autonomy.`,
+    textJa: `経歴
+
+ウィリアム・ヴァンディヴァートは1912年にアメリカで生まれた。1930年代末から『LIFE』誌のスタッフ写真家として活動を開始し、1938〜40年代にかけて英国・欧州各地での取材を行った*3。第二次世界大戦中はロンドン大空襲（ブリッツ）を含む欧州の戦況を取材し、1945年にはベルリン陥落後の廃墟とヒトラーの地下壕（フューラーバンカー）を撮影した*4。ベルゲン＝ベルゼンなど強制収容所解放時の写真は『LIFE』誌の特集で掲載され、戦争と人道的惨禍の視覚的証言として機能した。ICPのアーカイブには46点のアーカイブ項目があり、ガルデレーゲン、避難民、マクデブルクなど戦時報道の作品群を確認できる*2。1947年、アンリ・カルティエ＝ブレッソン、ロバート・キャパ、デヴィッド・シーモア、ジョージ・ロジャーとともにマグナム・フォトスを共同創設した*6。MoMAの作家ページによると、1942年に個展を開催し、1948年以降の複数の写真展にも参加している*1。1989年に没した。
+
+表現解説
+
+『LIFE』誌と報道写真の制度
+
+ヴァンディヴァートの実践を理解するには、『LIFE』誌という媒体・制度への組み込みを起点にする必要がある。『LIFE』はグラビア印刷と見開き展開によって写真の意味生成に深く関与し、撮影者個人の意図よりも編集部の選択と配置が写真の社会的機能を決定する場合も多かった*3。ヴァンディヴァートはこの制度の内側で働きながら、英国・欧州・戦後直後のベルリンという歴史的な現場を記録した。
+
+ヒトラーの地下壕と視覚的証言
+
+1945年のベルリン取材は、ヴァンディヴァートの報道写真家としての代表的な仕事の一つである。ベルリン陥落直後にヒトラーの地下壕（フューラーバンカー）に入り、廃墟となった内部を撮影した記録は、TIME/LIFEの特集記事として流通し、戦後の歴史的文書として参照され続けている*4。LIFE Photo Collection / Google Arts & Cultureには地下壕の個別作品ページがあり、作品画像を確認できる*11。The Art Newspaperの記事が示すように、Magnum創設の「MoMAランチ説」はのちに神話として再検討され、1947年当時の実際の経緯においてヴァンディヴァートとキャパがニューヨークにいた事実が一次資料として確認されている*9。
+
+マグナム創設と写真家の権利
+
+1947年のマグナム・フォトス創設は、雑誌社が写真家のネガを所有するという慣行に対して、写真家が自らの作品の権利と流通を管理するエージェンシー・モデルを打ち立てた制度的な転換点である*6。Transatlantic Cultures誌の論考は、ヴァンディヴァートをRita Vandivertとともに米国側の創設メンバーとして位置づけており、単に写真を撮るだけでなく、エージェンシーの法人格・財務・日常運営を担った夫妻の役割を制度史として扱っている*7。UC Pressのブログは、Rita VandivertとMaria Eisnerの役割に注目し、Magnum初期運営における実務的貢献を記録している*8。
+
+批評と受容
+
+相対的に限られた受容と制度史上の意義
+
+ヴァンディヴァートの受容は、キャパ、カルティエ＝ブレッソン、シーモアといった他のマグナム創設者に比べて相対的に限られている。しかし制度史の観点からは、写真家が雑誌メディアへの従属から離脱してエージェンシーを組織した動きの最初期のメンバーとして、重要な位置を占める。ジョージア・オキーフ美術館など複数の機関が作品を所蔵しており、戦時報道写真家としての歴史的位置は制度的に確認されている*10。LIFE Photo Collectionはヒトラー地下壕だけでなく、1943年のベンガル飢饉など世界各地の報道記録を収録しており、欧州戦線以外でのヴァンディヴァートの取材の広がりを確認できる*13。`,
+    textEn: `Biography
+
+William Vandivert was born in 1912 in the United States. He began working as a LIFE staff photographer in the late 1930s and covered Britain and Europe from 1938 onward*3. During the Second World War he documented the Blitz and European theater; in 1945 he photographed the ruins of Berlin and the interior of Hitler's underground bunker following the city's fall*4. Photographs of the liberation of Bergen-Belsen and other concentration camps appeared in LIFE features as visual testimony to war and humanitarian crisis. The ICP archive holds 46 entries for his work, including photographs from Gardelegen, displaced persons, and Magdeburg*2. In 1947 he co-founded Magnum Photos alongside Henri Cartier-Bresson, Robert Capa, David Seymour, and George Rodger*6. The MoMA artist page confirms a solo exhibition at MoMA in 1942 and participation in multiple later exhibitions*1. He died in 1989.
+
+Expression / method
+
+LIFE magazine and the institution of photojournalism
+
+To understand Vandivert's practice, it is necessary to start with his embedding within LIFE magazine as an institution. LIFE's gravure printing and double-page spreads made editorial selection and placement inseparable from a photograph's social function, often determining that function more decisively than the individual photographer's intention*3. Working within this institution, Vandivert documented Britain, wartime Europe, and postwar Berlin at historically decisive moments.
+
+Hitler's bunker and visual testimony
+
+The 1945 Berlin assignment is among the most representative examples of Vandivert's photojournalistic work. Entering the Führerbunker shortly after the fall of Berlin, he photographed the ruined interior — images that circulated as TIME/LIFE features and have continued to be cited as historical documents*4. The LIFE Photo Collection on Google Arts & Culture holds an individual work page for the bunker photographs, where images can be viewed online*11. As The Art Newspaper's article demonstrates, the celebrated "MoMA lunch" founding narrative for Magnum was later reexamined, and primary sources confirm that Vandivert and Capa were present in New York at the relevant time*9.
+
+Magnum founding and photographer rights
+
+The founding of Magnum Photos in 1947 was an institutional turning point: against the prevailing practice in which magazine publishers owned photographers' negatives, it established an agency model in which photographers retained control over their work and its distribution*6. The Transatlantic Cultures essay places Vandivert and Rita Vandivert as the US-side founding members, treating the couple's role in establishing the agency's legal status, finances, and daily operations as a subject of institutional history*7. The UC Press blog highlights Rita Vandivert's and Maria Eisner's practical contributions to the early running of Magnum*8.
+
+Criticism and reception
+
+Limited individual reception and institutional significance
+
+Vandivert's individual reception is more limited than that of the other Magnum founders. In the institutional history of photography, however, he occupies a significant position as a founding member of the first effort by photojournalists to organize independently of magazine publishers. The Georgia O'Keeffe Museum and other institutions hold his work, confirming his historical position as a wartime photojournalist*10. The LIFE Photo Collection holds Vandivert photographs covering not only the Berlin bunker but the Bengal Famine (1943) and other worldwide assignments, offering a broader picture of his reportage*13.`,
+    citations: [
+      { num: 1, name: 'William Vandivert. MoMA artist page', url: 'https://www.moma.org/artists/6089' },
+      { num: 2, name: 'William Vandivert. ICP constituent page', url: 'https://www.icp.org/browse/archive/constituents/william-vandivert' },
+      { num: 3, name: 'The Photography of William Vandivert. LIFE', url: 'https://www.life.com/photographer/william-vandivert/' },
+      { num: 4, name: 'After the Fall: Photos of Hitler\'s Bunker and the Ruins of Berlin. TIME/LIFE', url: 'https://time.com/3524807/after-the-fall-photos-of-hitlers-bunker-and-the-ruins-of-berlin/' },
+      { num: 5, name: 'Inside Hitler\'s Bunker. TIME/LIFE', url: 'https://time.com/77721/inside-hitlers-bunker-eerie-chaos-beneath-berlin/' },
+      { num: 6, name: 'Magnum Photos: History', url: 'https://www.magnumphotos.com/about-magnum/history/' },
+      { num: 7, name: 'Was "American" Photography a European Invention? Transatlantic Cultures', url: 'https://www.transatlantic-cultures.org/fr/catalog/la-photographie-americaine-une-invention-europeenne' },
+      { num: 8, name: 'How the Popular Fascination with Photography Helped Launch the Mythic Magnum Photo Agency. UC Press Blog', url: 'https://www.ucpress.edu/blog-posts/51714-how-the-popular-fascination-with-photography-helped-launch-the-mythic-magnum-photo-agency' },
+      { num: 9, name: 'Magnum Photos: how it all began 70 years ago. The Art Newspaper', url: 'https://www.theartnewspaper.com/2017/05/15/magnum-photos-how-it-all-began-70-years-ago' },
+      { num: 10, name: 'William Vandivert. Georgia O\'Keeffe Museum', url: 'https://data.okeeffemuseum.org/actor/1765/' },
+      { num: 11, name: 'Hitler\'s Destroyed Bunker. LIFE Photo Collection / Google Arts & Culture', url: 'https://artsandculture.google.com/asset/hitler-s-destroyed-bunker/xgH6yRUp-mcU_A?hl=en' },
+      { num: 12, name: 'Calcutta And Bengal Famine. LIFE Photo Collection / Google Arts & Culture', url: 'https://artsandculture.google.com/asset/calcutta-and-bengal-famine/SQEJn6Exoo-JOA?hl=en' },
+      { num: 13, name: 'William Vandivert Photo Archives. LIFE', url: 'https://www.life.com/tag/william-vandivert/' },
+      { num: 14, name: 'National Portrait Gallery: Magnum women photographers', url: 'https://www.npg.org.uk/collections/reframing-narratives-women-in-portraiture/commission-magnum-women-photographers/' },
+    ],
+    links: [
+      { label: 'Georgia O\'Keeffe Museum — Vandivert', url: 'https://data.okeeffemuseum.org/actor/1765/' },
+      { label: 'MoMA Press Release 1942 — Vandivert', url: 'https://www.moma.org/docs/press_archives/788/releases/MOMA_1942_0030_1942-04-14_42414-26.pdf' },
+      { label: 'Georgia O\'Keeffe Museum — Vandivert', url: 'https://data.okeeffemuseum.org/actor/1765/' },
+      { label: 'ICP — William Vandivert archive', url: 'https://www.icp.org/browse/archive/constituents/william-vandivert' },
+    ],
+    works: [
+      { titleJa: 'ヒトラーの地下壕', titleEn: "Hitler's Destroyed Bunker", labelJa: 'LIFE Photo Collection / Google Arts & Culture', labelEn: 'LIFE Photo Collection / Google Arts & Culture', url: 'https://artsandculture.google.com/asset/hitler-s-destroyed-bunker/xgH6yRUp-mcU_A?hl=en', aliases: [] },
+      { titleJa: 'カルカッタとベンガル飢饉', titleEn: 'Calcutta And Bengal Famine', labelJa: 'LIFE Photo Collection / Google Arts & Culture', labelEn: 'LIFE Photo Collection / Google Arts & Culture', url: 'https://artsandculture.google.com/asset/calcutta-and-bengal-famine/SQEJn6Exoo-JOA?hl=en', aliases: [] },
+    ],
+  };
+
+  // ─── 金丸重嶺 ─────────────────────────────────────────────────────────────────
+  overrides['jp-金丸重嶺'] = {
+    leadJa: `金丸重嶺は、商業写真・写真教育・批評を束ねて日本モダニズム写真の制度を作った人物。撮影者としてより、欧米の新興写真を日本へ移植し、広告写真の語法を教育によって定着させた媒介者としての役割が、写真史における独自の位置を与えている。`,
+    leadEn: `Shigene Kanamaru shaped the institutional foundations of Japanese modernist photography through commercial practice, education, and criticism rather than primarily through individual image-making. His role in transplanting European New Photography into Japan and codifying advertising photography through teaching defines his distinct place in photographic history.`,
+    textJa: `経歴
+
+金丸重嶺は1900年に生まれた。1920年代後半から写真家・評論家・教育者として日本の写真文化の制度形成に関わり、欧米の新興写真（ノイエ・ザハリヒカイト、バウハウス的視覚など）を日本に紹介した*1。1932年には技術教育・理論書として『新興写真の作り方』を刊行し、日本で新興写真の実践を学ぼうとする写真家・愛好家の教科書的な位置を占めた*4。この著作はブリティッシュ・ミュージアムも写真集・著作として所蔵している*13。商業写真スタジオ「金鈴社」を拠点に広告・宣伝写真を実践し、1936年のベルリン・オリンピックにも取材として参加した*5。日本大学芸術学部写真学科の設立に関わり、同校での写真教育の制度化に中心的な役割を果たした*2。1958年には日本広告写真家協会（APA）の初代会長に就任し、戦後の広告写真家の職能団体の確立を主導した*10。1977年に没した。
+
+表現解説
+
+欧米新興写真の受容と理論化
+
+金丸の写真史上の重要性は、個別の代表作よりも、欧米の新興写真を体系的に整理・紹介した「受容と理論化」の役割に求められる。鳥海早喜の博士論文（日本大学）は、金丸を新興写真時代の実践と初期写真教育の中心人物として詳細に論証した学術資料である*2。日本大学芸術学部写真学科の没後40年記念展覧会（2017年）は、広告写真、スナップ、ベルリン・オリンピック写真、国策宣伝写真、初公開資料を含む展示として、生前の活動の全体を初めて体系的に提示した*5。東京アートビートの英語展示解説は、金丸を「日本大学写真学科の創設者、広告写真の先駆者、新興写真の主導者」の3つの役割を担った人物として紹介し、その独自性を海外向けに説明している*6。
+
+商業写真・広告と金鈴社
+
+金丸の商業写真実践は、金鈴社というスタジオを通じて具体化された。美術手帖の紹介記事は、金鈴社、欧州新興写真受容、日本大学写真教育という三つの軸で金丸の業績を整理しており、商業写真と教育の結合という点で金丸の独自性を示している*7。TCDC図書館の書誌資料は、1930年代日本の宣伝・モダニズムを扱う文脈において「Kanamaru Shigene Archive / Nihon University Collection」への言及があり、広告写真・宣伝・近代デザイン史への接続を示している*14。KAKENの研究課題は「日本の広告写真先駆者・金丸重嶺に関する研究」として金丸を近代デザイン史にも接続し、美術写真に閉じない研究の広がりを示している*9。
+
+写真教育と戦後制度への接続
+
+アートスケープの展評（飯沢耕太郎）は、金丸の「生前の名声と没後の忘却」というパターンを批評的に論じており、1920〜40年代の影響力の大きさと、その後の受容の落差を記録している*8。ブリティッシュ・ミュージアムが作家典拠と写真集所蔵を持つことは、金丸が日本国内の評価にとどまらず、海外の美術・写真研究機関にも参照されていることを示している*12。SFMOMAの論考「Exhibiting 'The End of Modern Photography'」は、金丸が1970年代の日本写真展での「主観的／客観的」分類に関わったことを示す英語資料として、戦前新興写真だけでなく戦後批評・展覧会制度まで広げる視点を提供している*11。
+
+批評と受容
+
+制度構築者としての再評価
+
+金丸の写真史上の位置は、個々の作品の批評的評価よりも制度形成への寄与によって規定されている。アートスケープのレビューが指摘するように、金丸は生前は日本の広告写真・新興写真の代表的な実践者として名声を博したが、没後は長期にわたって忘却され、2017年の没後40年記念展によって初めて体系的な回顧が行われた*8。国書刊行会の評伝・論考は日本写真芸術学会賞・学術賞を受賞しており、金丸研究の学術的な重要性が認められた事実を確認できる*1。SFMOMAの論考は戦後日本の写真批評史における金丸の連続した役割を示し、「新興写真の先駆者」という戦前限定の評価を超えて、戦後の制度的展覧会実践まで射程を広げている*11。Mutual Images Journalの学術論文は、金丸・伊奈信男・木村伊兵衛が1949年の『戦後アメリカ写真芸術』への関与を通じて戦前と戦後の海外写真受容へ橋渡しをした人物として位置づけており、単なる新興写真の実践者ではなく戦後の写真言語形成にも関わった媒介者であることを示している*15。`,
+    textEn: `Biography
+
+Shigene Kanamaru was born in 1900. From the late 1920s he was involved in shaping the institutional foundations of Japanese photographic culture as photographer, critic, and educator, introducing European New Photography — including Neue Sachlichkeit and Bauhaus-inflected vision — into Japan*1. In 1932 he published Shinkō shashin no tsukurikata (How to Make New Photography), a technical and theoretical text that functioned as a manual for practitioners of New Photography in Japan*4. The work is held by the British Museum as a photographically significant publication*13. Through his commercial photography studio Kinrinsha he practiced advertising and publicity photography and covered the 1936 Berlin Olympics*5. He was involved in establishing the photography department at Nihon University College of Art, playing a central role in institutionalizing photographic education*2. In 1958 he became the first president of the Japan Advertising Photographers' Association (APA), leading the establishment of a postwar professional organization for advertising photographers*10. He died in 1977.
+
+Expression / method
+
+Reception and theorization of European New Photography
+
+Kanamaru's significance in photographic history lies less in individual masterworks than in his systematic reception and theorization of European New Photography. Toriumi Saki's doctoral dissertation at Nihon University provides detailed scholarly argumentation for Kanamaru's central role in New Photography practice and early photographic education*2. The 2017 memorial retrospective at Nihon University College of Art Photography Department, organized forty years after his death, presented the full range of his practice including advertising photography, snapshots, Berlin Olympics coverage, wartime publicity photography, and previously unpublished materials*5. The Tokyo Art Beat English exhibition text introduces Kanamaru as "the founder of the photography department at Nihon University, pioneer of advertising photography, and leader of New Photography" — concentrating three roles in a single figure*6.
+
+Commercial photography, advertising, and Kinrinsha
+
+Kanamaru's commercial practice was based at the Kinrinsha studio. The Bijutsu Techō article organizes his achievement around the three axes of Kinrinsha, reception of European New Photography, and photographic education at Nihon University, demonstrating how commercial and educational roles combined in his practice*7. The TCDC Library bibliographic resource references the Kanamaru Shigene Archive / Nihon University Collection in the context of 1930s Japanese publicity and modernism, providing a complementary angle on advertising photography, propaganda, and modern design history*14. The KAKEN research grant "A Research on Shigene Kanamaru as a Pioneer of Advertising Photography in Japan" connects him to design history and extends his significance beyond art photography*9.
+
+Photographic education and postwar institutional connections
+
+The Artscape exhibition review by Iizawa Kōtarō documents the characteristic pattern of Kanamaru's reception — considerable influence during his lifetime followed by long postwar neglect — and discusses the scale of his 1920s–40s influence critically*8. The British Museum's holdings of both an artist authority record and a copy of Shinkō shashin no tsukurikata confirm that Kanamaru is referenced in overseas art and photography research institutions*12. The SFMOMA essay "Exhibiting 'The End of Modern Photography'" identifies Kanamaru's involvement in the "subjective/objective" classification framework used in 1970s Japanese photography exhibitions, extending the scope of his influence from prewar New Photography into postwar institutional criticism*11.
+
+Criticism and reception
+
+Reappraisal as institution-builder
+
+Kanamaru's position in photographic history is defined more by his contribution to institution-building than by critical evaluation of individual works. As the Artscape review notes, he was widely recognized during his lifetime as a leading practitioner of Japanese advertising and New Photography, but was largely overlooked after his death; the 2017 retrospective marked the first systematic retrospective evaluation*8. The Kokusho Kankōkai monograph received the Japan Society for Photographic Arts Academic Award, confirming the scholarly importance of Kanamaru research*1. The SFMOMA essay demonstrates the continuity of Kanamaru's role into postwar photographic criticism and exhibition practice*11. The Mutual Images Journal article "Photography magazines and cross-cultural encounters in postwar Japan" positions Kanamaru as a continuing mediator of photographic language formation — not only a prewar New Photography practitioner but a bridge between prewar and postwar reception of foreign photography*15.`,
+    citations: [
+      { num: 1, name: '新興写真の先駆者 金丸重嶺. 国書刊行会', url: 'https://www.kokusho.co.jp/np/isbn/9784336072818/' },
+      { num: 2, name: '鳥海早喜「金丸重嶺研究」博士論文. 日本大学リポジトリ', url: 'https://nihon-u.repo.nii.ac.jp/record/2000368/files/toriumi-saki-3.pdf' },
+      { num: 3, name: '論文審査の結果の要旨. 日本大学リポジトリ', url: 'https://nihon-u.repo.nii.ac.jp/record/2000368/files/toriumi-saki-2.pdf' },
+      { num: 4, name: '新興写真の作り方. 国立国会図書館デジタル資料', url: 'https://ndlsearch.ndl.go.jp/books/R100000039-I1234025' },
+      { num: 5, name: '没後40年記念展覧会 写真家金丸重嶺 新興写真の時代1926-1945. 日本大学芸術学部写真学科', url: 'https://www.nuaphoto.com/2017/01/29/%E6%B2%A1%E5%BE%8C40%E5%B9%B4%E8%A8%98%E5%BF%B5%E5%B1%95%E8%A6%A7%E4%BC%9A-%E5%86%99%E7%9C%9F%E5%AE%B6-%E9%87%91%E4%B8%B8%E9%87%8D%E5%B6%BA-%E6%96%B0%E8%88%88%E5%86%99%E7%9C%9F%E3%81%AE%E6%99%82%E4%BB%A31926-1945/' },
+      { num: 6, name: 'Shigene Kanamaru: Era of New Photography 1926–1945. Tokyo Art Beat', url: 'https://www.tokyoartbeat.com/en/events/-/2017%2FB129' },
+      { num: 7, name: '日本広告写真の先駆者・金丸重嶺. 美術手帖', url: 'https://bijutsutecho.com/magazine/news/exhibition/415' },
+      { num: 8, name: '写真家金丸重嶺 新興写真の時代 1926-1945. artscapeレビュー', url: 'https://artscape.jp/report/review/10134205_1735.html' },
+      { num: 9, name: 'A Research on Shigene Kanamaru as a pioneer of advertising photography in Japan. KAKEN', url: 'https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-16K16751' },
+      { num: 10, name: '協会の歴史. 日本広告写真家協会APA', url: 'https://apa.or.jp/apa/history/' },
+      { num: 11, name: 'Exhibiting "The End of Modern Photography". SFMOMA', url: 'https://www.sfmoma.org/essay/exhibiting-the-end-of-modern-photography-ten-artists-of-contemporary-japanese-photography-and-fifteen-photographers-today/' },
+      { num: 12, name: 'Kanamaru Shigene. British Museum', url: 'https://www.britishmuseum.org/collection/term/BIOG187508' },
+      { num: 13, name: 'Photobook: Shinkō shashin no tsukurikata. British Museum', url: 'https://www.britishmuseum.org/collection/object/A_2008-3035-66' },
+      { num: 14, name: 'Publicity and Propaganda in 1930s Japan: Modernism as Method. TCDC Library', url: 'https://library.tcdc.or.th/record/read/a00041199' },
+      { num: 15, name: 'Photography magazines and cross-cultural encounters in postwar Japan. Mutual Images Journal', url: 'https://www.mutualimages-journal.org/index.php/mi/article/view/8-3' },
+    ],
+    links: [
+      { label: '国書刊行会 — 新興写真の先駆者 金丸重嶺', url: 'https://www.kokusho.co.jp/news/2022/01/202201261850.html' },
+      { label: 'アートプラットフォームジャパン — 金丸重嶺', url: 'https://artplatform.go.jp/ja/artists/A5649' },
+      { label: '日本広告写真家協会APA — 協会の歴史', url: 'https://apa.or.jp/apa/history/' },
+      { label: 'British Museum — Kanamaru Shigene', url: 'https://www.britishmuseum.org/collection/term/BIOG187508' },
+    ],
+    works: [],
+  };
+
+  // ─── 植田正治 ─────────────────────────────────────────────────────────────────
+  overrides['jp-植田正治'] = {
+    leadJa: `植田正治は、鳥取の砂丘と家族を舞台に、日常を演出された場面として提示した写真家。記録でも報道でもない、配置と余白によって日常を劇場化する「植田調」は、日本写真のモダニズムに独自の系譜を刻んだ。`,
+    leadEn: `Shoji Ueda staged everyday scenes on the sand dunes of Tottori, presenting family members and acquaintances as figures within carefully arranged compositions. His style, known as Ueda-chō, opened a distinct lineage within Japanese photographic modernism by treating ordinary life as theatrical arrangement rather than documentary record.`,
+    textJa: `経歴
+
+植田正治は1913年3月、鳥取県境港に生まれた。1930年に上京して東洋写真専門学校で写真の理論と技術を学び、1932年に卒業して帰郷した*6。師にあたる塩谷定好のリアリズム的な地方写真から出発しながら、1930年代にはマン・レイ、アンドレ・ケルテス、ジャック＝アンリ・ラルティーグの作品を参照して独自の演出的方法を形成した*6。1937年には地域の写真家たちとともに中国写真家集団を設立し、山陰地方のモダニスト的写真運動の一核となった*19。
+
+第二次世界大戦中は軍事写真への動員を避けて活動を一時中断し、1945年の終戦後に鳥取砂丘での演出写真を本格的に再開した*6。1947年には東京の写真家集団・銀龍社に参加し、都市部の前衛的な写真家との交流を持った*19。1949年には《パパとママとコドモたち》をはじめとする家族シリーズを雑誌発表し、「植田調」として知られる演出写真の様式が確立した*3。1954年に二科賞を受賞し、写真界での地位を固めた*19。1958年、エドワード・スタイケンがMoMAの展覧会に植田の作品を選出し、国際的な認知の端緒が開かれた*19。MoMAが所蔵するゲラチン・シルバー・プリント《雪の面》は、この時期の作品の一例として参照できる*4。
+
+1974年からは雑誌『カメラ毎日』に「A Piece of Life」シリーズを連載し、日本の写真雑誌メディアでの長期的な発表を続けた*19。1975年から1994年まで九州産業大学で写真を教え、後進の育成にも関わった*19。1978年にフランスのルネサンス・ダルル（アルル・フォト・フェスティバル）に参加し、欧州での初めての本格的な発表の機会となった*19。1982年にはフォトキナ展（ドイツ）に参加し、1987年に再びアルルに招待された*19。1995年に植田正治写真美術館（鳥取県西伯郡伯耆町）が開館し、約12,000点の作品を収蔵している*7。1996年にはフランス政府からシュヴァリエ・デ・ザール・エ・デ・レットル勲章を受けた*19。2000年7月に没した。
+
+表現解説
+
+演出写真の成立と様式的影響
+
+植田の様式形成には複数の影響源がある。直接の師にあたる塩谷定好（1899–1988）が山陰地方の自然・農村を写実的に記録したのに対し、植田はマン・レイのシュルレアリスム的操作とアンドレ・ケルテスの詩的な構成から画面を作る発想を組み込み、演出という視覚的論理へと組み替えた*6。Art Platform Japanが記録する1937年の《コンポジション》は、砂丘・家族シリーズ以前にモダニスト的な形式実験がすでに行われていたことを示す初期作品であり、植田が1930年代のフォルマリスム的な語法に関与していた痕跡を残している*14。東京都写真美術館が2013年に開催した「植田正治とラルティーグ：写真の遊び場」展は、植田とジャック＝アンリ・ラルティーグを「アマチュア写真の本質的な喜び」という軸で並置し、二人が写真を遊びと捉えていた共通の態度を示した*16。
+
+砂丘と家族の劇場性
+
+植田の代表的な方法は、家族や知人を砂丘という広大で平坦な空間に配置し、正面性・疎な空間・精密な人物配置によって、静かな滑稽味と詩的な感覚を同居させることにある*1。MOMATが所蔵する1939年の《四人の少女・四つのポーズ》は、家族シリーズ以前の初期演出方法を示す作品として、砂丘シリーズが完成したスタイルに収束する以前の探索の痕跡を残している*2。《パパとママとコドモたち》（1949年）は砂丘に配置された家族の後ろ姿という「植田調」の核心を示す作品で、MOMATのキュレーター解説はこれをモダニズム的構成と家族・日常という主題の結合として論じている*15。スミソニアン国立アジア美術館は植田の同時期の作品《ぼくとネコ》（ca. 1950）と《砂丘の妻》（ca. 1950）を所蔵しており、演出のバリエーションを確認できる*6。SFMOMAは植田の作品ページを持ち、米国美術館での所蔵を確認できる*5。
+
+地方性とアマチュア写真の自由
+
+植田の写真的モダニズムが東京ではなく鳥取を基盤にしていることは、日本写真史における重要な補足線である。「植田調」という様式名は単なるスタイルの記述語ではなく、地方性・非専業性・家族との近接という条件がそのスタイルを可能にしたことを示す。鳥取砂丘という特定の地形が「舞台装置」として機能し、同じ場所を繰り返し訪れることで構図の蓄積と変奏が生まれた構造は、大都市の商業スタジオには再現しにくい条件であった。富士フイルムスクエアの展示解説は後期作品・写真集との接続を示し、「植田調」が一つの完成した様式として晩年まで維持されたことを記録している*8。植田正治写真美術館の建築（新高松建築設計事務所）は「一人の写真家を恒久的に保存・展示する施設」として設計されており、作品と展示空間の関係を建築の側から示している*17。
+
+批評と受容
+
+「植田調」と日本写真モダニズムへの位置づけ
+
+植田の受容は国内外で一貫して強く、1995年の写真美術館開館後に土門拳のリアリズムや木村伊兵衛のスナップとは異なる演出・演劇性の系譜として体系的な再評価が進んだ。MOMATは多数の作品を収蔵して継続的な展示を行っており、作品ページは初期から晩年にわたる幅広い収蔵を示している*2。SFMOMAの論考「Distant Relations: Japanese Photography in American Exhibitions in the 1970s」は1970年代の米国での日本写真展受容を分析しており、植田が1979年のICP展「Japan: A Self-Portrait」（ニューヨーク、4月27日〜6月3日）に参加し、国際的な日本写真の文脈に組み込まれていたことを示している*12。中国・Three Shadows Photography Art Centreでの141点規模の大規模回顧展は東アジア圏での受容を示しており、植田の影響が日本と欧米にとどまらないことを示している*18。
+
+国際的評価とアルル以降
+
+1978年のアルル・フォト・フェスティバル参加は、植田にとって欧州の写真批評の文脈で初めて本格的に評価される機会となった*19。1982年のフォトキナ（ドイツ）参加、1987年のアルル再招待と、1980年代を通じて国際的な露出が継続した*19。1996年のフランス政府シュヴァリエ・デ・ザール・エ・デ・レットル受章は、「植田調」が日本写真の文脈を超えてフランスの芸術・文化批評の文脈でも評価されたことを示す制度的な認証であった*19。MoMA、SFMOMA、ゲッティ、スミソニアンという複数の米国主要機関での所蔵は、植田が日本の演出写真を代表する国際的な作家として定着していることを示している*13。`,
+    textEn: `Biography
+
+Shoji Ueda was born in March 1913 in Sakaiminato, Tottori Prefecture. In 1930 he moved to Tokyo to study at the Oriental School of Photography, graduating in 1932 and returning to his hometown*6. Starting from the realist regional photography of his mentor Shiotani Teiko, he developed an original staged method through study of Man Ray, André Kertész, and Jacques-Henri Lartigue*6. In 1937 he co-founded the Chugoku Photographers Group with local photographers, forming a nucleus of modernist photography practice in the San'in region*19.
+
+During World War II he suspended his activities to avoid military photography assignments, resuming his staged work on the Tottori sand dunes after the war ended in 1945*6. In 1947 he joined Ginryusha, a Tokyo-based photographers' collective, building connections with avant-garde practitioners in the capital*19. His family series, including Papa and Mama and Children (1949), established the visual idiom known as Ueda-chō*3. He won the Nika Prize in 1954*19, and in 1958 Edward Steichen selected his work for an exhibition at MoMA, opening the way for international recognition*19. MoMA's holding of the gelatin silver print Snow Surface can be confirmed in the collection*4. From 1974 he contributed the "A Piece of Life" series to Camera Mainichi magazine, and from 1975 to 1994 he taught photography at Kyushu Sangyo University*19. He participated in the Rencontres d'Arles in 1978 and again in 1987, and in the Photokina exhibition in Germany in 1982*19. The Shoji Ueda Museum of Photography (Hōki-chō, Tottori) opened in 1995 holding approximately 12,000 works*7. In 1996 the French government awarded him the Chevalier des Arts et des Lettres*19. He died in July 2000.
+
+Expression / method
+
+Formation of the staged method and stylistic influences
+
+Ueda's style draws from multiple sources. Where his mentor Shiotani Teiko documented the nature and rural life of San'in in a realist mode, Ueda absorbed Man Ray's surrealist manipulation and André Kertész's poetic construction, recasting them into a visual logic of staging*6. Composition (1937), documented on Art Platform Japan, is an early work showing that formalist experimentation preceded the sand dune and family series*14. The Tokyo Metropolitan Museum of Photography's 2013 exhibition "Ueda and Lartigue" juxtaposed Ueda with Jacques-Henri Lartigue under the shared axis of "the essential joy of amateur photography," showing how both photographers treated photography as play*16.
+
+Theatricality of sand dunes and family
+
+Ueda's characteristic method is to arrange family members and acquaintances in expansive, flat spaces such as sand dunes and build compositions that combine frontality, sparse spacing, and precise placement to create a coexistence of quiet absurdity and poetic feeling*1. Four Girls, Four Positions (1939) in the MOMAT collection shows the early staged method that preceded the family series and retains traces of formal experimentation before the mature style converged*2. Papa and Mama and Children (1949) is the canonical example of Ueda-chō — a family seen from behind on the sand dunes — and the MOMAT curator's text discusses it as a combination of modernist composition and the subject matter of family and everyday life*15. The Smithsonian National Museum of Asian Art holds Boku to Neko (The Cat and Me, ca. 1950) and My Wife on the Dunes (ca. 1950), showing the variety of Ueda's staged approach during this period*6. SFMOMA also holds works by Ueda, confirming his presence in American museum collections*5.
+
+Locality and the freedom of amateur photography
+
+The fact that Ueda's photographic modernism was based in Tottori rather than Tokyo is an important supplementary lineage in Japanese photographic history. Ueda-chō is not merely a stylistic label but a marker that locality, non-professionalism, and proximity to family made that style possible. The Tottori sand dunes functioned as a fixed stage, and the accumulation and variation of compositions arising from repeated visits to the same site was a condition difficult to replicate in a commercial urban studio. The Fujifilm Square exhibition text documents connections to late works and photobooks, recording that the Ueda-chō idiom was maintained into his final years*8. The Shoji Ueda Museum of Photography, designed by Shin Takamatsu Architects, was conceived as "a facility for the permanent preservation and exhibition of a single photographer," reflecting the relationship between the works and their exhibition space from an architectural perspective*17.
+
+Criticism and reception
+
+Ueda-chō and its place in Japanese photographic modernism
+
+Ueda's reception has been consistently strong at home and abroad, and since the 1995 museum opening systematic reappraisal has placed him in a distinct lineage separate from Ken Domon's realism and Kimura Ihei's snapshot work. MOMAT holds a wide range of works spanning his career and stages continuous exhibitions*2. The SFMOMA essay "Distant Relations: Japanese Photography in American Exhibitions in the 1970s" analyzes Japanese photography's reception in 1970s American exhibitions and documents Ueda's participation in the ICP exhibition Japan: A Self-Portrait (New York, April 27–June 3, 1979)*12. The large-scale 141-work retrospective at Three Shadows Photography Art Centre in China demonstrates reception extending beyond Japan and the West*18.
+
+International recognition and after Arles
+
+His participation in the Rencontres d'Arles in 1978 was the first occasion on which Ueda's work was assessed seriously within the context of European photography criticism*19. His presence continued throughout the 1980s with the Photokina exhibition in Germany (1982) and a second invitation to Arles (1987)*19. The French government's award of the Chevalier des Arts et des Lettres in 1996 represented institutional recognition that the Ueda-chō aesthetic had been evaluated within French art and cultural criticism beyond the frame of Japanese photography*19. Holdings at MoMA, SFMOMA, the Getty, and the Smithsonian confirm Ueda's standing as the internationally recognized representative of Japanese staged photography*13.`,
+    citations: [
+      { num: 1, name: 'Shoji Ueda Museum of Photography. 植田正治写真美術館公式英語ページ', url: 'https://www.houki-town.jp/ueda/english/' },
+      { num: 2, name: 'UEDA, Shoji. National Museum of Modern Art, Tokyo (MOMAT)', url: 'https://www.momat.go.jp/en/artists/aue014' },
+      { num: 3, name: 'Papa and Mama and Children. MOMAT', url: 'https://www.momat.go.jp/en/collection/ph0441' },
+      { num: 4, name: 'Shoji Ueda. Snow Surface. MoMA', url: 'https://www.moma.org/collection/works/49401' },
+      { num: 5, name: 'Shoji Ueda. SFMOMA artist page', url: 'https://www.sfmoma.org/artist/Shoji_Ueda/' },
+      { num: 6, name: 'Ueda Shoji. Smithsonian National Museum of Asian Art', url: 'https://asia-archive.si.edu/exhibition/ueda-shoji/' },
+      { num: 7, name: 'Shoji Ueda Museum of Photography. Tottori Tourism Guide', url: 'https://www.tottori-tour.jp/en/sightseeing/858/' },
+      { num: 8, name: 'Shoji Ueda Photo Exhibition "Vest Pocket Sketches." FUJIFILM SQUARE', url: 'https://fujifilmsquare.jp/en/exhibition/220630_05.html' },
+      { num: 9, name: 'Shiroi Kaze (Brilliant Scenes). ToMuCo / Tokyo Photographic Art Museum', url: 'https://museumcollection.tokyo/en/works/65630/' },
+      { num: 10, name: 'SHOJI UEDA MUSEUM OF PHOTOGRAPHY. Art Commons / National Art Center, Tokyo', url: 'https://www.nact.jp/english/artcommons/user/search_venue?gallery=45' },
+      { num: 11, name: 'Shoji Ueda Museum of Photography. Japan National Tourism Organization (JNTO)', url: 'https://www.japan.travel/en/spot/939/' },
+      { num: 12, name: 'Distant Relations: Japanese Photography in American Exhibitions in the 1970s. SFMOMA', url: 'https://www.sfmoma.org/essay/distant-relations-japanese-photography-in-american-exhibitions-in-the-1970s/' },
+      { num: 13, name: 'Shoji Ueda. Getty Museum collection artist page', url: 'https://www.getty.edu/art/collection/person/104MXK' },
+      { num: 14, name: 'UEDA Shoji, Composition. Art Platform Japan', url: 'https://artplatform.go.jp/collections/W938123' },
+      { num: 15, name: 'UEDA Shoji, Papa and Mama and Children. MOMAT Magazine', url: 'https://www.momat.go.jp/en/magazine/064' },
+      { num: 16, name: 'Ueda and Lartigue. Tokyo Photographic Art Museum', url: 'https://topmuseum.jp/exhibition/2015/?lang=en' },
+      { num: 17, name: 'Shoji Ueda Museum of Photography. Shin Takamatsu Architect & Associates', url: 'https://takamatsu.co.jp/en/project/shoji-ueda-museum-of-photography/' },
+      { num: 18, name: 'Shoji Ueda retrospective. Three Shadows Photography Art Centre / Contact Tokyo', url: 'https://www.contact-tokyo.com/wp/wp-content/uploads/2019/09/4fdc00b060c3754eacb2a78855625714.pdf' },
+      { num: 19, name: 'Shoji Ueda. Howard Greenberg Gallery', url: 'https://www.howardgreenberg.com/artists/165-shoji-ueda' },
+    ],
+    links: [
+      { label: '植田正治写真美術館', url: 'https://www.houki-town.jp/ueda/' },
+      { label: '東京都写真美術館 — 植田正治：写真の作法', url: 'https://topmuseum.jp/contents/exhibition/index-766.html' },
+      { label: 'ShaSha — 植田正治とその時代', url: 'https://www.kitamura.jp/shasha/article/japanese-masterpiece-series-20231025/' },
+      { label: 'MOMAT — 植田正治', url: 'https://www.momat.go.jp/en/artists/aue014' },
+      { label: 'Howard Greenberg Gallery — Shoji Ueda', url: 'https://www.howardgreenberg.com/artists/165-shoji-ueda' },
+      { label: 'Smithsonian — Ueda Shoji', url: 'https://asia-archive.si.edu/exhibition/ueda-shoji/' },
+    ],
+    works: [
+      { titleJa: 'パパとママとコドモたち', titleEn: 'Papa and Mama and Children', labelJa: '東京国立近代美術館所蔵', labelEn: 'National Museum of Modern Art, Tokyo', url: 'https://www.momat.go.jp/en/collection/ph0441', aliases: [] },
+      { titleJa: '雪の面', titleEn: 'Snow Surface', labelJa: 'MoMA所蔵', labelEn: 'Museum of Modern Art, New York', url: 'https://www.moma.org/collection/works/49401', aliases: [] },
+      { titleJa: 'コンポジション', titleEn: 'Composition', labelJa: 'アートプラットフォームジャパン', labelEn: 'Art Platform Japan', url: 'https://artplatform.go.jp/collections/W938123', aliases: [] },
+      { titleJa: '白い風（ブリリアント・シーンズ）より', titleEn: 'From Shiroi Kaze (Brilliant Scenes)', labelJa: '東京都写真美術館所蔵', labelEn: 'Tokyo Photographic Art Museum', url: 'https://museumcollection.tokyo/en/works/65630/', aliases: [] },
+    ],
+  };
+
   window.PHOTOGRAPHER_ESSAY_OVERRIDES = overrides;
 })();
