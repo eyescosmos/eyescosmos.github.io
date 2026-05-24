@@ -532,7 +532,7 @@ def render_content_section(
             paragraph_parts.append(f'          <p>{"".join(current)}</p>')
             current = []
             current_len = 0
-        current.append(segment)
+        current.append((" " if current else "") + segment)
         current_len += plain_len
     if current:
         paragraph_parts.append(f'          <p>{"".join(current)}</p>')
@@ -1281,7 +1281,7 @@ def movement_source_links(custom_sources: list[dict], featured: list[dict], fall
         if not url or not label or url in seen:
             continue
         seen.add(url)
-        items.append({"label": label, "url": url})
+        items.append({"id": record.get("id") or url, "label": label, "url": url})
         if len(items) >= limit:
             return items
     for photographer in featured + fallback_people:
@@ -1291,7 +1291,7 @@ def movement_source_links(custom_sources: list[dict], featured: list[dict], fall
             if not url or not label or url in seen or not is_trusted_source_url(url):
                 continue
             seen.add(url)
-            items.append({"label": label, "url": url})
+            items.append({"id": record.get("id") or url, "label": label, "url": url})
             if len(items) >= limit:
                 return items
     return items

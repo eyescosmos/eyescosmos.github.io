@@ -332,6 +332,48 @@ const FEMINISM_SOURCES = [
 const MOVEMENT_PAGE_CONTENT = {
   'ピクトリアリズム': {
     leadJa: 'ピクトリアリズムは、19世紀末から20世紀初頭にかけて、写真を絵画や版画に並ぶ美術として認めさせようとした国際的な潮流です。柔らかな焦点や手作業の印画技法ばかりが注目されがちですが、その核心にあったのは、プリントを単なる複製ではなく作者の判断が刻まれた作品として提示することでした。のちにストレート写真から厳しく批判される一方で、写真が美術制度へ入るための足場もこの運動が整えました。',
+    leadEn: 'Pictorialism was a late nineteenth- and early twentieth-century effort to make photography legible as fine art. Its soft focus, handwork, and painterly printing were not only decorative effects; they were ways of arguing that a photograph could carry authorship, interpretation, and exhibition value as a finished print.',
+    metaDescEn: 'Pictorialism used soft focus, hand processes, and painterly print effects to argue for photography as art before straight photography challenged its values.',
+    sectionsEn: [
+      {
+        heading: 'What Pictorialism Meant in Photography',
+        paragraphs: [
+          para('Pictorialism emerged when photography was spreading through commercial studios, illustrated publications, and amateur clubs, but its standing as art remained contested. Pictorialist photographers answered that problem by treating the print as the site of artistic judgment rather than as a transparent copy of the negative.', ['pictorialism-emerson-met']),
+          para('That argument could take many forms. Julia Margaret Cameron’s deliberately soft portraits, P. H. Emerson’s selective focus and platinum tonalities, and later Photo-Secession prints all used different means, but each shifted attention toward how a photograph was made, printed, circulated, and judged.', ['pictorialism-cameron-vam']),
+        ],
+      },
+      {
+        heading: 'Processes, Print Culture, and the Claim to Art',
+        paragraphs: [
+          para('The movement valued processes that made the surface of the photograph feel chosen: soft-focus lenses, platinum printing, photogravure, gum bichromate, retouching, and other forms of hand intervention. These techniques were not simply a refusal of mechanical accuracy; they were a strategy for making the photographer’s decisions visible in the final object.', ['pictorialism-stieglitz-vam']),
+          para('Because of that, pictorialism depended on institutions as much as style. Salons, camera clubs, portfolios, and finely printed journals helped photographs enter the spaces and habits of collecting usually associated with prints and drawings. The Art Institute of Chicago’s Stieglitz materials make clear how publication, exhibition, and collection formed part of the same campaign.', ['pictorialism-stieglitz-aic']),
+        ],
+      },
+      {
+        heading: 'Photo-Secession and the Break with Straight Photography',
+        paragraphs: [
+          para('Photo-Secession grew out of pictorialist values, especially the belief that photography needed its own artistic institutions, but it also exposed the limits of a purely painterly defense of the medium. Stieglitz’s circle used Camera Work and 291 to promote pictorialist photography while also opening a path toward a sharper modernist language.', ['pictorialism-photo-secession-moma']),
+          para('Straight photography later defined itself against pictorialism’s atmospheres and handwork. The disagreement was not just about manipulation; it was about whether photography should prove itself by resembling older arts or by making a new aesthetic from lens description, tonal clarity, and the specific qualities of the photographic print.', ['pictorialism-stieglitz-met']),
+        ],
+      },
+      {
+        heading: 'Why It Still Matters',
+        paragraphs: [
+          para('Pictorialism changed photography by forcing the question of where photographic authorship resides. It made printing, editioning, exhibition, and critical language part of the medium’s history, even when later modernists rejected its look.', ['pictorialism-kasebier-aic']),
+          para('The movement also reminds us that photography did not enter museums only by becoming sharper or more documentary. It first had to build a culture of prints, journals, clubs, collectors, and arguments about taste. Those structures remained important even after the pictorialist style lost authority.', ['pictorialism-stieglitz-aic']),
+        ],
+      },
+    ],
+    sourcesEn: [
+      srcId('pictorialism-cameron-vam', 'V&A — Julia Margaret Cameron’s working methods', 'https://www.vam.ac.uk/articles/julia-margaret-camerons-working-methods'),
+      srcId('pictorialism-emerson-met', 'The Met — Peter Henry Emerson, Poling the Marsh Hay', 'https://www.metmuseum.org/art/collection/search/283227'),
+      srcId('pictorialism-stieglitz-vam', 'V&A — Alfred Stieglitz: Pioneer of Modern Photography', 'https://www.vam.ac.uk/articles/alfred-stieglitz-pioneer-of-modern-photography'),
+      srcId('pictorialism-stieglitz-aic', 'Art Institute of Chicago — Alfred Stieglitz Collection', 'https://archive.artic.edu/stieglitz/about/'),
+      srcId('pictorialism-photo-secession-moma', 'MoMA — Photo-Secession', 'https://www.moma.org/collection/terms/photo-secession'),
+      srcId('pictorialism-stieglitz-met', 'The Met — Alfred Stieglitz and American Photography', 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography'),
+      srcId('pictorialism-kasebier-aic', 'Art Institute of Chicago — Gertrude Käsebier', 'https://archive.artic.edu/stieglitz/gertrude-kaesebier/'),
+      ...PICTORIALISM_SOURCES,
+    ],
     sectionsJa: sections(FOUNDATIONS_HEADINGS, [
       'ピクトリアリズムが強く意識されたのは、乾板や印刷技術の普及で写真が大量に複製されるようになった時代でした。写真が工業製品や報道資料として広がるほど、作者の美的判断はどこに宿るのかという問いも強まり、各地の写真クラブやサロンが「芸術写真」の条件を競って定義しはじめます。',
       'その文脈で重視されたのが、絵画や版画と同じように、プリントを最終作品として統御することでした。柔焦点レンズ、白金印画、ゴム重クロム酸塩印画、手彩色やレタッチは、単なる装飾ではなく、機械的再現を越えて作者の手を可視化するための方法として選ばれました。',
@@ -346,6 +388,48 @@ const MOVEMENT_PAGE_CONTENT = {
   },
   '写真分離派': {
     leadJa: '写真分離派は、1902年に[[p:stieglitz|アルフレッド・スティーグリッツ]]がニューヨークで立ち上げたグループで、写真を絵画や版画と同等の美術として認めさせるための制度運動でした。重要だったのは、作風の統一よりも、雑誌『Camera Work』、ギャラリー291、展覧会、コレクションを通じて写真の見せ方そのものを組み替えたことです。ピクトリアリズムの完成点であると同時に、[[m:ストレート写真|ストレート写真]]や[[m:モダニズム|モダニズム]]へつながる橋でもありました。',
+    leadEn: 'Photo-Secession was the group Alfred Stieglitz formed in New York in 1902 to argue for photography as fine art. Its importance lies less in a single look than in the institutions it built: Camera Work, 291, exhibitions, collections, and a critical vocabulary that moved photography from pictorialist art photography toward modernism.',
+    metaDescEn: 'Photo-Secession connected pictorialist art photography to modernism through Alfred Stieglitz, Camera Work, 291, exhibitions, and fine-art collecting.',
+    sectionsEn: [
+      {
+        heading: 'What the Photo-Secession Was',
+        paragraphs: [
+          para('Photo-Secession was both a group and an institutional strategy. Stieglitz gathered photographers who wanted photography judged as art, but the group’s deeper effect came from controlling how photographs were selected, printed, discussed, exhibited, and preserved.', ['photosecession-stieglitz-met']),
+          para('Its name signaled a break from existing photographic organizations, yet its early values remained close to pictorialism. Gertrude Käsebier, Edward Steichen, Clarence H. White, Alvin Langdon Coburn, and Stieglitz himself shared a concern with expressive prints, carefully edited exhibitions, and photography’s status among the other arts.', ['photosecession-aic']),
+        ],
+      },
+      {
+        heading: 'Camera Work, 291, and the Art Institution',
+        paragraphs: [
+          para('Camera Work gave Photo-Secession a material form. The journal’s photogravures, criticism, and carefully staged reproductions presented photography as something to read, collect, and debate, not just as a technical image. Its pages also made the photographic print part of an international modern art conversation.', ['photosecession-camerawork-moma']),
+          para('The Little Galleries of the Photo-Secession, later known as 291, extended that argument into exhibition space. By showing photography beside modern painting, drawing, and sculpture, Stieglitz made the gallery itself a tool for changing what photography could be understood to do.', ['photosecession-291-nga']),
+        ],
+      },
+      {
+        heading: 'Between Pictorialism and Modern Photography',
+        paragraphs: [
+          para('Photo-Secession did not simply replace pictorialism. It brought pictorialist print culture to a high level of refinement while also creating the conditions for a more direct modernist photography. The shift becomes clear when Stieglitz’s later support for Paul Strand appears beside his earlier defense of manipulated, atmospheric prints.', ['photosecession-strand-met']),
+          para('That is why the movement matters as a bridge. It helped photography enter art institutions through pictorialist values, then helped loosen photography from those same values by emphasizing modern form, urban experience, and the medium’s own visual force.', ['photosecession-vam']),
+        ],
+      },
+      {
+        heading: 'Why It Matters in Photography History',
+        paragraphs: [
+          para('Photo-Secession changed the infrastructure of photography. It linked photographers, collectors, critics, journals, galleries, and museums into a circuit that could sustain photography as an art form over time.', ['photosecession-nga']),
+          para('The movement also shows that photographic modernism did not begin only with sharper prints or new subject matter. It also depended on who edited the magazine, who controlled the gallery, which works entered collections, and how those choices taught audiences to look.', ['photosecession-aic']),
+        ],
+      },
+    ],
+    sourcesEn: [
+      srcId('photosecession-stieglitz-met', 'The Met — Alfred Stieglitz and American Photography', 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography'),
+      srcId('photosecession-aic', 'Art Institute of Chicago — Alfred Stieglitz Collection', 'https://archive.artic.edu/stieglitz/about/'),
+      srcId('photosecession-camerawork-moma', 'MoMA — Camera Work | Object:Photo', 'https://www.moma.org/interactives/objectphoto/publications/770.html'),
+      srcId('photosecession-291-nga', 'National Gallery of Art — 1905 New York (291)', 'https://www.nga.gov/research/publications/1905-new-york-291'),
+      srcId('photosecession-strand-met', 'The Met — Paul Strand', 'https://www.metmuseum.org/essays/paul-strand-1890-1976'),
+      srcId('photosecession-vam', 'V&A — Alfred Stieglitz: Pioneer of Modern Photography', 'https://www.vam.ac.uk/articles/alfred-stieglitz-pioneer-of-modern-photography'),
+      srcId('photosecession-nga', 'National Gallery of Art — Alfred Stieglitz Key Set Introduction', 'https://www.nga.gov/research/publications/alfred-stieglitz-key-set/introduction-key-set'),
+      ...PHOTO_SECESSION_SOURCES,
+    ],
     sectionsJa: sections(FOUNDATIONS_HEADINGS, [
       '写真分離派が生まれた背景には、アメリカで写真クラブ文化が成熟する一方、写真が依然として工芸や商業の下位に置かれていた状況がありました。スティーグリッツは、絵画の審査制度を模したサロン的な場を利用しつつも、より選別的で国際的な前衛写真の共同体をつくろうとしました。',
       '「分離」という名称は、既存の写真団体から距離を取り、写真の芸術性を自前の基準で定義する姿勢を示していました。実際にはゆるやかなネットワークで、[[p:kasebier|ケーゼビア]]、[[p:steichen|エドワード・スタイケン]]、[[p:coburn|アルヴィン・ラングドン・コバーン]]らが、雑誌、展覧会、印刷物を共有しながら活動の輪郭をつくっていきます。',
@@ -402,6 +486,47 @@ const MOVEMENT_PAGE_CONTENT = {
   },
   '新即物主義': {
     leadJa: '新即物主義は、1920年代ドイツで広がった芸術潮流で、感傷や表現主義的誇張を避け、事物や人物を冷静で明晰な視線のもとに置こうとした写真の実践です。しばしば「客観的」と要約されますが、その客観性は自然にそこにあるのではなく、正面性、均質な光、反復、シリーズ化、印刷物への配置によって構成された視覚でした。[[m:ストレート写真|ストレート写真]]や[[m:タイポロジー写真|タイポロジー写真]]の系譜を考えるうえでも重要な節目です。',
+    leadEn: 'Neue Sachlichkeit, or New Objectivity, names a German interwar approach to photography that favored sharp description, sober surfaces, and serial comparison over expressive atmosphere. Its “objectivity” was not neutral transparency; it was built through framing, lighting, classification, and the way images were arranged in books and archives.',
+    metaDescEn: 'New Objectivity photography used sharp detail, typology, and serial comparison in Weimar Germany through August Sander and Albert Renger-Patzsch.',
+    sectionsEn: [
+      {
+        heading: 'What Is New Objectivity Photography?',
+        paragraphs: [
+          para('New Objectivity photography developed in the Weimar Republic as part of a broader turn away from expressionist intensity toward cool observation, social description, and the exact surface of things. In photography, that meant sharp focus, frontal description, repeated formats, and attention to the object, face, plant, machine, or building as evidence.', ['neuesachlichkeit-newvision-met']),
+          para('The term can sound as if the camera simply recorded facts, but the photographs were highly structured. August Sander’s portraits classify social roles, Albert Renger-Patzsch’s objects emphasize form and texture, and Karl Blossfeldt’s plant studies make natural growth appear almost architectural.', ['neuesachlichkeit-renger-met']),
+        ],
+      },
+      {
+        heading: 'Weimar Germany, Typology, and the Cataloging Impulse',
+        paragraphs: [
+          para('Sander’s People of the Twentieth Century is central because it treated portraiture as a social atlas. Occupation, dress, gesture, and setting became tools for comparing types within German society, turning the portrait into part of an archive rather than a single psychological encounter.', ['neuesachlichkeit-sander-met']),
+          para('Renger-Patzsch’s work moved in a different direction. His plants, industrial objects, glassware, and machinery often isolate things with a precision that lets comparison and structure come forward. The result is close to straight photography in clarity, but it belongs to a German culture of cataloging, industry, and interwar realism.', ['neuesachlichkeit-renger-moma']),
+        ],
+      },
+      {
+        heading: 'Difference from Straight Photography and New Vision',
+        paragraphs: [
+          para('New Objectivity overlaps with American straight photography in its respect for sharp detail and the camera’s descriptive power. The difference is historical pressure: in Germany the method often carried a stronger typological and social charge, shaped by Weimar debates about class, labor, industry, and the ordering of modern life.', ['neuesachlichkeit-renger-met']),
+          para('It also differs from New Vision. Where New Vision favored oblique angles, photograms, montage, and perceptual shock, New Objectivity often worked through frontal comparison and repeated formats. Both belonged to interwar modernism, but one stressed new seeing while the other stressed the disciplined description of things and types.', ['neuesachlichkeit-phdu-met']),
+        ],
+      },
+      {
+        heading: 'Why It Matters',
+        paragraphs: [
+          para('New Objectivity changed photography by making serial description and comparison central to modern photographic thinking. Its legacy runs through typological photography, the Bechers, the Düsseldorf School, and later archive-based practices that treat photographs as systems of knowledge.', ['neuesachlichkeit-phdu-met']),
+          para('At the same time, the movement warns against treating clarity as innocence. The act of classifying people, objects, and buildings always carries assumptions about what counts as a type, what deserves comparison, and what kind of order photography is being asked to make visible.', ['neuesachlichkeit-sander-met']),
+        ],
+      },
+    ],
+    sourcesEn: [
+      srcId('neuesachlichkeit-newvision-met', 'The Met — New Vision Photography', 'https://www.metmuseum.org/essays/the-new-vision-of-photography'),
+      srcId('neuesachlichkeit-renger-met', 'The Met — Albert Renger-Patzsch, Snake Head', 'https://www.metmuseum.org/art/collection/search/283285'),
+      srcId('neuesachlichkeit-sander-met', 'The Met — August Sander: People of the Twentieth Century', 'https://www.metmuseum.org/zh/exhibitions/listings/2004/august-sander'),
+      srcId('neuesachlichkeit-renger-moma', 'MoMA Object:Photo — Albert Renger-Patzsch', 'https://www.moma.org/interactives/objectphoto/artists/4866.html'),
+      srcId('neuesachlichkeit-phdu-met', 'The Met — Photography in Düsseldorf', 'https://www.metmuseum.org/toah/hd/phdu/hd_phdu.htm'),
+      srcId('neuesachlichkeit-renger-getty', 'J. Paul Getty Museum — Albert Renger-Patzsch', 'https://www.getty.edu/art/collection/person/103KHR'),
+      ...MODERNISM_SOURCES,
+    ],
     sectionsJa: sections(AVANT_HEADINGS, [
       '新即物主義の背景には、第一次世界大戦後のドイツ社会と、表現主義の激しい身振りへの反動がありました。絵画やデザインの領域で感情の爆発より冷静な観察が求められるのと並行して、写真もまた、対象を明晰に見せること自体を新しいリアリティとして押し出します。',
       '写真では[[p:sander|アウグスト・ザンダー]]と[[p:renger|アルベルト・レンガー＝パッチュ]]が象徴的です。ザンダーは社会階層や職業を横断する肖像の体系化によってドイツ社会の顔貌を並べ、レンガー＝パッチュは植物、機械、工場、道具の表面と構造を、装飾を排した近距離で写しました。',
@@ -416,6 +541,47 @@ const MOVEMENT_PAGE_CONTENT = {
   },
   '新しいヴィジョン': {
     leadJa: '新しいヴィジョンは、1920年代から30年代にかけて、写真が人間の習慣的な見方を破り、近代の身体と都市にふさわしい知覚を訓練しうるという考えのもとで展開した視覚の潮流です。俯瞰、仰角、極端なクローズアップ、フォトグラム、モンタージュなどの技法は単なる奇抜さではなく、写真が世界を「別様に見る」ための装置だという思想に支えられていました。[[m:バウハウス|バウハウス]]や構成主義、印刷文化との接続が欠かせません。',
+    leadEn: 'New Vision photography was a 1920s and 1930s avant-garde approach that treated the camera as a way to retrain perception. Unusual angles, close-ups, photograms, photomontage, and photographic typography were used to make modern industry, cities, bodies, and printed media visible in new ways.',
+    metaDescEn: 'New Vision photography used unusual angles, photograms, montage, and modern design to rethink how the camera could see the industrial world.',
+    sectionsEn: [
+      {
+        heading: 'What New Vision Changed',
+        paragraphs: [
+          para('New Vision did not abandon photography’s ability to describe the world; it expanded what description could mean. In the years after World War I, photographers and designers used the camera to register industrial modernity, speed, mass media, and the instability of everyday vision.', ['newvision-met']),
+          para('László Moholy-Nagy gave the idea a particularly influential form. For him, the camera was not only an aid to the eye but a device that could train perception through extreme vantage points, cropped details, light experiments, and combinations of photography with typography.', ['newvision-moholy-met']),
+        ],
+      },
+      {
+        heading: 'Methods: Angles, Photograms, Montage',
+        paragraphs: [
+          para('The visual language of New Vision includes high and low angles, tilted horizons, close-ups, photograms, negative printing, photomontage, and the placement of photographs within posters, magazines, and books. These methods made the image feel less like a window and more like an active construction of modern seeing.', ['newvision-met']),
+          para('Photograms were especially useful because they removed the camera while keeping photography tied to light, surface, and experiment. Montage and typophoto pushed in another direction, making the page or poster a field where photographs, words, and graphic design could produce meaning together.', ['newvision-production-moma']),
+        ],
+      },
+      {
+        heading: 'Bauhaus, Mass Media, and Industrial Modernity',
+        paragraphs: [
+          para('The Bauhaus gave New Vision a powerful educational and design context. Moholy-Nagy’s teaching, Lucia Moholy’s documentation, and the school’s printed materials helped move photographic experiment into architecture, advertising, typography, and visual education.', ['newvision-bauhaus-met']),
+          para('New Vision also belonged to a larger culture of illustrated magazines, exhibitions, film, and portable cameras. It was not just a studio style; it was a way of adapting photography to a world increasingly experienced through reproduction, circulation, and changing viewpoints.', ['newvision-shaping-moma']),
+        ],
+      },
+      {
+        heading: 'Difference from Bauhaus and New Objectivity',
+        paragraphs: [
+          para('New Vision is related to Bauhaus photography but not identical with it. Bauhaus names an institution and educational culture, while New Vision names a theory of photographic seeing that could travel through schools, magazines, exhibitions, and avant-garde networks.', ['newvision-bauhaus-met']),
+          para('It also differs from New Objectivity. New Objectivity often organized things and people through frontal clarity and typological comparison; New Vision more often disturbed ordinary vision through angle, scale, montage, and optical experiment. Together they show two different ways interwar photography answered modern life.', ['newvision-met']),
+        ],
+      },
+    ],
+    sourcesEn: [
+      srcId('newvision-met', 'The Met — New Vision Photography', 'https://www.metmuseum.org/essays/the-new-vision-of-photography'),
+      srcId('newvision-moholy-met', 'The Met — Moholy-Nagy and Lucia Moholy', 'https://www.metmuseum.org/research-centers/leonard-a-lauder-research-center/research-resources/modern-art-index-project/lazslo-moholy-nagy-and-lucia-moholy'),
+      srcId('newvision-production-moma', 'MoMA — Production/Reproduction', 'https://www.moma.org/interactives/exhibitions/2014/productionreproduction/'),
+      srcId('newvision-bauhaus-met', 'The Met — Photography at the Bauhaus', 'https://www.metmuseum.org/essays/photography-at-the-bauhaus'),
+      srcId('newvision-shaping-moma', 'MoMA — The Shaping of New Visions', 'https://www.moma.org/calendar/exhibitions/1230'),
+      srcId('newvision-moholy-tate', 'Tate — László Moholy-Nagy', 'https://www.tate.org.uk/art/artists/laszlo-moholy-nagy-1599'),
+      ...NEW_VISION_SOURCES,
+    ],
     sectionsJa: sections(AVANT_HEADINGS, [
       '新しいヴィジョンが強く意識されたのは、機械文明と大衆印刷文化が視覚経験を作り替えつつあった時代でした。航空写真、新聞写真、映画、広告、科学画像が日常に入り込み、地上の一点から静かに眺める旧来の視点だけでは近代世界を捉えきれなくなります。',
       'その変化を理論化した代表が[[p:moholy|モホリ＝ナジ]]です。彼は写真を、現実をそのまま写す補助媒体ではなく、視覚そのものを再教育する装置として考えました。急角度、強いトリミング、反転、フォトグラム、文字と写真の組み合わせは、見る者の慣れた遠近感を崩すための方法でした。',
@@ -430,6 +596,47 @@ const MOVEMENT_PAGE_CONTENT = {
   },
   'バウハウス': {
     leadJa: 'バウハウスの写真は、写真を独立した芸術ジャンルとして称揚しただけではなく、デザイン、タイポグラフィ、広告、建築、教育のあいだで機能する近代的な視覚訓練として位置づけた点に特徴があります。学校内に早い段階から正式な写真科があったわけではありませんが、[[p:moholy|モホリ＝ナジ]]やルチア・モホリの活動を通じて、写真は光、素材、空間、印刷を横断する中心的な媒体になりました。[[m:新しいヴィジョン|新しいヴィジョン]]と切り離しては読めません。',
+    leadEn: 'Bauhaus photography was not a single style. It was the point where experimental vision, design education, typography, architecture, advertising, and documentation met. Through László Moholy-Nagy, Lucia Moholy, Herbert Bayer, and others, photography became a tool for both visual experiment and modern communication.',
+    metaDescEn: 'Bauhaus photography connected experimental vision, design education, typography, and modern visual culture through figures such as Moholy-Nagy and Lucia Moholy.',
+    sectionsEn: [
+      {
+        heading: 'What Bauhaus Photography Means',
+        paragraphs: [
+          para('The Bauhaus was founded in 1919 as a school that joined art, craft, architecture, and modern technology. Photography was not immediately organized as a formal workshop, but the school’s rethinking of materials and perception made it a natural site for photographic experiment.', ['bauhaus-met']),
+          para('Bauhaus photography therefore means more than photographs made at the school. It includes photograms, oblique viewpoints, architectural documentation, student life, typography, advertising, and the use of photographs to project the school’s own public image.', ['bauhaus-dancing-met']),
+        ],
+      },
+      {
+        heading: 'Moholy-Nagy, Lucia Moholy, and Visual Education',
+        paragraphs: [
+          para('László Moholy-Nagy’s arrival in 1923 gave photography a new theoretical role at the Bauhaus. His photograms, camera angles, negative reversals, and typophoto experiments treated photography as a way to work with light, space, and perception rather than simply to reproduce appearances.', ['bauhaus-moholy-lucia-met']),
+          para('Lucia Moholy’s work is equally important because her photographs of buildings, objects, and people helped define how the Bauhaus was seen outside the school. Her documentation was not neutral background material; it shaped the institution’s visual identity and the later memory of Bauhaus design.', ['bauhaus-moholy-lucia-met']),
+        ],
+      },
+      {
+        heading: 'Design, Typography, and Modern Visual Culture',
+        paragraphs: [
+          para('Photography at the Bauhaus moved easily between artwork, classroom exercise, publicity, and design tool. The photograph could be printed with type, placed in a layout, used to document an object, or turned into an abstract study of light and form.', ['bauhaus-met']),
+          para('That makes Bauhaus photography different from a narrow movement label. It connected camera work to the broader systems of modern visual culture: books, posters, exhibitions, architecture, theater, and industrial design education.', ['bauhaus-shaping-moma']),
+        ],
+      },
+      {
+        heading: 'Relation to New Vision and New Objectivity',
+        paragraphs: [
+          para('Bauhaus photography overlaps strongly with New Vision, especially in Moholy-Nagy’s belief that the camera could retrain sight through new vantage points and optical experiments. The difference is that Bauhaus also names the school, curriculum, and design setting that put those experiments to work.', ['bauhaus-newvision-met']),
+          para('It is also distinct from New Objectivity. Bauhaus photographs could be sharp and descriptive, but their historical role lies in the crossing of experiment, pedagogy, publication, and design. They show how photography became part of how modern life was taught, displayed, and organized.', ['bauhaus-met']),
+        ],
+      },
+    ],
+    sourcesEn: [
+      srcId('bauhaus-met', 'The Met — Photography at the Bauhaus', 'https://www.metmuseum.org/essays/photography-at-the-bauhaus'),
+      srcId('bauhaus-dancing-met', 'The Met — Dancing on the Roof: Photography and the Bauhaus', 'https://www.metmuseum.org/exhibitions/listings/2001/photography-and-the-bauhaus'),
+      srcId('bauhaus-moholy-lucia-met', 'The Met — Moholy-Nagy and Lucia Moholy', 'https://www.metmuseum.org/research-centers/leonard-a-lauder-research-center/research-resources/modern-art-index-project/lazslo-moholy-nagy-and-lucia-moholy'),
+      srcId('bauhaus-newvision-met', 'The Met — New Vision Photography', 'https://www.metmuseum.org/essays/the-new-vision-of-photography'),
+      srcId('bauhaus-shaping-moma', 'MoMA — The Shaping of New Visions', 'https://www.moma.org/calendar/exhibitions/1230'),
+      srcId('bauhaus-moholy-tate', 'Tate — László Moholy-Nagy', 'https://www.tate.org.uk/art/artists/laszlo-moholy-nagy-1599'),
+      ...BAUHAUS_SOURCES,
+    ],
     sectionsJa: sections(AVANT_HEADINGS, [
       '1919年に創設されたバウハウスは、工芸と美術、教育と産業を結び直す学校でした。写真がただちに制度の中心にあったわけではありませんが、伝統的な材料や造形原理を根本から見直す空気のなかで、写真もまた再評価される余地を得ます。',
       '決定的だったのが、1923年以後の[[p:moholy|モホリ＝ナジ]]です。彼は金属工房や予備課程を担当しながら、フォトグラム、急角度、ネガ反転、文字との組み合わせなどを通じて、写真を再現の道具ではなく、光の操作と空間認識の実験場として理論化しました。',
