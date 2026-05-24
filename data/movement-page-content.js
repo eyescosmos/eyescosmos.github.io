@@ -363,6 +363,14 @@ const MOVEMENT_PAGE_CONTENT = {
           para('The movement also reminds us that photography did not enter museums only by becoming sharper or more documentary. It first had to build a culture of prints, journals, clubs, collectors, and arguments about taste. Those structures remained important even after the pictorialist style lost authority.', ['pictorialism-stieglitz-aic']),
         ],
       },
+      {
+        heading: 'Artists, Journals, and Afterlives',
+        paragraphs: [
+          para('Cameron’s later reception also shows why pictorialism should not be reduced to a single recipe for blur. Her portraits became a reference point for thinking about focus, intimacy, and theatrical presence before the word pictorialism was fixed as a movement label.', ['pictorialism-moma-cameron']),
+          para('Emerson’s changing ideas about naturalistic photography complicate the story as well. His writing and photographs show that nineteenth-century debates about art photography already included arguments over vision, optics, and how much intervention a photograph could bear.', ['pictorialism-tate-emerson']),
+          para('Steichen’s Photo-Secession years make the transition especially visible: the same network that refined pictorialist print culture also helped prepare the modernist break that would challenge it.', ['pictorialism-steichen-met']),
+        ],
+      },
     ],
     sourcesEn: [
       srcId('pictorialism-cameron-vam', 'V&A — Julia Margaret Cameron’s working methods', 'https://www.vam.ac.uk/articles/julia-margaret-camerons-working-methods'),
@@ -372,6 +380,9 @@ const MOVEMENT_PAGE_CONTENT = {
       srcId('pictorialism-photo-secession-moma', 'MoMA — Photo-Secession', 'https://www.moma.org/collection/terms/photo-secession'),
       srcId('pictorialism-stieglitz-met', 'The Met — Alfred Stieglitz and American Photography', 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography'),
       srcId('pictorialism-kasebier-aic', 'Art Institute of Chicago — Gertrude Käsebier', 'https://archive.artic.edu/stieglitz/gertrude-kaesebier/'),
+      srcId('pictorialism-moma-cameron', 'MoMA — Julia Margaret Cameron', 'https://www.moma.org/artists/992'),
+      srcId('pictorialism-tate-emerson', 'Tate Papers — Emerson’s Evolution', 'https://www.tate.org.uk/research/tate-papers/27/emersons-evolution'),
+      srcId('pictorialism-steichen-met', 'The Met — Edward J. Steichen: The Photo-Secession Years', 'https://www.metmuseum.org/essays/edward-j-steichen-1879-1973-the-photo-secession-years'),
       ...PICTORIALISM_SOURCES,
     ],
     sectionsJa: sections(FOUNDATIONS_HEADINGS, [
@@ -419,6 +430,14 @@ const MOVEMENT_PAGE_CONTENT = {
           para('The movement also shows that photographic modernism did not begin only with sharper prints or new subject matter. It also depended on who edited the magazine, who controlled the gallery, which works entered collections, and how those choices taught audiences to look.', ['photosecession-aic']),
         ],
       },
+      {
+        heading: 'Artists and Institutional Memory',
+        paragraphs: [
+          para('MoMA’s definition of Photo-Secession helps keep the term tied to a specific network rather than to pictorialism in general. That matters because the group’s historical force came from a named circle, a magazine, and a gallery program, not only from a soft-focus style.', ['photosecession-term-moma']),
+          para('Stieglitz’s later museum reception also shaped how the movement was remembered. Artist pages and collection records turn a once-contested campaign for photography into an art-historical category that can be taught, collected, and linked to modernism.', ['photosecession-stieglitz-moma']),
+          para('Getty’s collection record is useful here because it places Stieglitz within a broader institutional frame: photographer, editor, dealer, and advocate. Photo-Secession belongs to all of those roles at once.', ['photosecession-stieglitz-getty']),
+        ],
+      },
     ],
     sourcesEn: [
       srcId('photosecession-stieglitz-met', 'The Met — Alfred Stieglitz and American Photography', 'https://www.metmuseum.org/essays/alfred-stieglitz-1864-1946-and-american-photography'),
@@ -428,6 +447,9 @@ const MOVEMENT_PAGE_CONTENT = {
       srcId('photosecession-strand-met', 'The Met — Paul Strand', 'https://www.metmuseum.org/essays/paul-strand-1890-1976'),
       srcId('photosecession-vam', 'V&A — Alfred Stieglitz: Pioneer of Modern Photography', 'https://www.vam.ac.uk/articles/alfred-stieglitz-pioneer-of-modern-photography'),
       srcId('photosecession-nga', 'National Gallery of Art — Alfred Stieglitz Key Set Introduction', 'https://www.nga.gov/research/publications/alfred-stieglitz-key-set/introduction-key-set'),
+      srcId('photosecession-term-moma', 'MoMA — Photo-Secession', 'https://www.moma.org/collection/terms/photo-secession'),
+      srcId('photosecession-stieglitz-moma', 'MoMA — Alfred Stieglitz', 'https://www.moma.org/artists/5664-alfred-stieglitz'),
+      srcId('photosecession-stieglitz-getty', 'J. Paul Getty Museum — Alfred Stieglitz', 'https://www.getty.edu/art/collection/person/103KH0'),
       ...PHOTO_SECESSION_SOURCES,
     ],
     sectionsJa: sections(FOUNDATIONS_HEADINGS, [
@@ -506,15 +528,24 @@ const MOVEMENT_PAGE_CONTENT = {
       {
         heading: 'Difference from Straight Photography and New Vision',
         paragraphs: [
-          para('New Objectivity overlaps with American straight photography in its respect for sharp detail and the camera’s descriptive power. The difference is historical pressure: in Germany the method often carried a stronger typological and social charge, shaped by Weimar debates about class, labor, industry, and the ordering of modern life.', ['neuesachlichkeit-renger-met']),
+          para('New Objectivity overlaps with American straight photography in its respect for sharp detail and the camera’s descriptive power. The difference is historical pressure: in Germany the method often carried a stronger typological and social charge, shaped by Weimar debates about class, labor, industry, and the ordering of modern life.', ['neuesachlichkeit-renger-getty']),
           para('It also differs from New Vision. Where New Vision favored oblique angles, photograms, montage, and perceptual shock, New Objectivity often worked through frontal comparison and repeated formats. Both belonged to interwar modernism, but one stressed new seeing while the other stressed the disciplined description of things and types.', ['neuesachlichkeit-phdu-met']),
         ],
       },
       {
         heading: 'Why It Matters',
         paragraphs: [
-          para('New Objectivity changed photography by making serial description and comparison central to modern photographic thinking. Its legacy runs through typological photography, the Bechers, the Düsseldorf School, and later archive-based practices that treat photographs as systems of knowledge.', ['neuesachlichkeit-phdu-met']),
+          para('New Objectivity changed photography by making serial description and comparison central to modern photographic thinking. Its legacy runs through typological photography, the Bechers, the Düsseldorf School, and later archive-based practices that treat photographs as systems of knowledge.', ['neuesachlichkeit-diewelt-moma']),
           para('At the same time, the movement warns against treating clarity as innocence. The act of classifying people, objects, and buildings always carries assumptions about what counts as a type, what deserves comparison, and what kind of order photography is being asked to make visible.', ['neuesachlichkeit-sander-met']),
+        ],
+      },
+      {
+        heading: 'Objects, Archives, and Later Typologies',
+        paragraphs: [
+          para('The Düsseldorf School matters because it carried the cataloging impulse into a postwar academy and exhibition culture. The Bechers’ grids of industrial structures did not simply repeat New Objectivity, but they made its comparative logic newly visible in contemporary art.', ['neuesachlichkeit-phdu-met']),
+          para('American straight photography offers a useful comparison because Paul Strand also made clarity and structure central to modern photography. New Objectivity, however, more often turns that clarity into a social or typological system.', ['neuesachlichkeit-strand-met']),
+          para('The Bauhaus provides the neighboring contrast: it used photography to teach and reorganize seeing, while New Objectivity used the camera to sort, compare, and stabilize the visible world.', ['neuesachlichkeit-bauhaus-met']),
+          para('MoMA’s Object:Photo project is also helpful because it frames New Objectivity within a wider interwar network of books, exhibitions, and photographic modernisms rather than as an isolated German style.', ['neuesachlichkeit-objectphoto-moma']),
         ],
       },
     ],
@@ -523,8 +554,12 @@ const MOVEMENT_PAGE_CONTENT = {
       srcId('neuesachlichkeit-renger-met', 'The Met — Albert Renger-Patzsch, Snake Head', 'https://www.metmuseum.org/art/collection/search/283285'),
       srcId('neuesachlichkeit-sander-met', 'The Met — August Sander: People of the Twentieth Century', 'https://www.metmuseum.org/zh/exhibitions/listings/2004/august-sander'),
       srcId('neuesachlichkeit-renger-moma', 'MoMA Object:Photo — Albert Renger-Patzsch', 'https://www.moma.org/interactives/objectphoto/artists/4866.html'),
-      srcId('neuesachlichkeit-phdu-met', 'The Met — Photography in Düsseldorf', 'https://www.metmuseum.org/toah/hd/phdu/hd_phdu.htm'),
       srcId('neuesachlichkeit-renger-getty', 'J. Paul Getty Museum — Albert Renger-Patzsch', 'https://www.getty.edu/art/collection/person/103KHR'),
+      srcId('neuesachlichkeit-phdu-met', 'The Met — Photography in Düsseldorf', 'https://www.metmuseum.org/toah/hd/phdu/hd_phdu.htm'),
+      srcId('neuesachlichkeit-diewelt-moma', 'MoMA Object:Photo — Die Welt ist schön', 'https://www.moma.org/interactives/objectphoto/publications/780.html'),
+      srcId('neuesachlichkeit-strand-met', 'The Met — Paul Strand', 'https://www.metmuseum.org/essays/paul-strand-1890-1976'),
+      srcId('neuesachlichkeit-bauhaus-met', 'The Met — Photography at the Bauhaus', 'https://www.metmuseum.org/essays/photography-at-the-bauhaus'),
+      srcId('neuesachlichkeit-objectphoto-moma', 'MoMA — Object:Photo / The Project', 'https://www.moma.org/interactives/objectphoto/the_project.html'),
       ...MODERNISM_SOURCES,
     ],
     sectionsJa: sections(AVANT_HEADINGS, [
@@ -554,7 +589,7 @@ const MOVEMENT_PAGE_CONTENT = {
       {
         heading: 'Methods: Angles, Photograms, Montage',
         paragraphs: [
-          para('The visual language of New Vision includes high and low angles, tilted horizons, close-ups, photograms, negative printing, photomontage, and the placement of photographs within posters, magazines, and books. These methods made the image feel less like a window and more like an active construction of modern seeing.', ['newvision-met']),
+          para('The visual language of New Vision includes high and low angles, tilted horizons, close-ups, photograms, negative printing, photomontage, and the placement of photographs within posters, magazines, and books. These methods made the image feel less like a window and more like an active construction of modern seeing.', ['newvision-climbing-met']),
           para('Photograms were especially useful because they removed the camera while keeping photography tied to light, surface, and experiment. Montage and typophoto pushed in another direction, making the page or poster a field where photographs, words, and graphic design could produce meaning together.', ['newvision-production-moma']),
         ],
       },
@@ -568,18 +603,29 @@ const MOVEMENT_PAGE_CONTENT = {
       {
         heading: 'Difference from Bauhaus and New Objectivity',
         paragraphs: [
-          para('New Vision is related to Bauhaus photography but not identical with it. Bauhaus names an institution and educational culture, while New Vision names a theory of photographic seeing that could travel through schools, magazines, exhibitions, and avant-garde networks.', ['newvision-bauhaus-met']),
-          para('It also differs from New Objectivity. New Objectivity often organized things and people through frontal clarity and typological comparison; New Vision more often disturbed ordinary vision through angle, scale, montage, and optical experiment. Together they show two different ways interwar photography answered modern life.', ['newvision-met']),
+          para('New Vision is related to Bauhaus photography but not identical with it. Bauhaus names an institution and educational culture, while New Vision names a theory of photographic seeing that could travel through schools, magazines, exhibitions, and avant-garde networks.', ['newvision-moholy-tate']),
+          para('It also differs from New Objectivity. New Objectivity often organized things and people through frontal clarity and typological comparison; New Vision more often disturbed ordinary vision through angle, scale, montage, and optical experiment. Together they show two different ways interwar photography answered modern life.', ['newvision-objectphoto-moma']),
+        ],
+      },
+      {
+        heading: 'Publications and the Expanded Camera',
+        paragraphs: [
+          para('Moholy-Nagy’s own museum record helps show why New Vision was not only a checklist of formal devices. His work moved between painting, design, photography, teaching, and publication, which is why the camera could become part of a broader modern visual program.', ['newvision-moholy-moma']),
+          para('Bauhaus exhibition histories are useful because they place photographic experiment beside architecture, performance, and student culture. New Vision photographs were often made to circulate through these mixed institutional settings rather than to stand alone as isolated prints.', ['newvision-dancing-met']),
         ],
       },
     ],
     sourcesEn: [
       srcId('newvision-met', 'The Met — New Vision Photography', 'https://www.metmuseum.org/essays/the-new-vision-of-photography'),
       srcId('newvision-moholy-met', 'The Met — Moholy-Nagy and Lucia Moholy', 'https://www.metmuseum.org/research-centers/leonard-a-lauder-research-center/research-resources/modern-art-index-project/lazslo-moholy-nagy-and-lucia-moholy'),
+      srcId('newvision-climbing-met', 'The Met — László Moholy-Nagy, Decorating Work, Switzerland', 'https://www.metmuseum.org/fr/art/collection/search/285429'),
       srcId('newvision-production-moma', 'MoMA — Production/Reproduction', 'https://www.moma.org/interactives/exhibitions/2014/productionreproduction/'),
       srcId('newvision-bauhaus-met', 'The Met — Photography at the Bauhaus', 'https://www.metmuseum.org/essays/photography-at-the-bauhaus'),
       srcId('newvision-shaping-moma', 'MoMA — The Shaping of New Visions', 'https://www.moma.org/calendar/exhibitions/1230'),
       srcId('newvision-moholy-tate', 'Tate — László Moholy-Nagy', 'https://www.tate.org.uk/art/artists/laszlo-moholy-nagy-1599'),
+      srcId('newvision-objectphoto-moma', 'MoMA — Object:Photo / The Project', 'https://www.moma.org/interactives/objectphoto/the_project.html'),
+      srcId('newvision-moholy-moma', 'MoMA — László Moholy-Nagy', 'https://www.moma.org/collection/artists/4048'),
+      srcId('newvision-dancing-met', 'The Met — Dancing on the Roof: Photography and the Bauhaus', 'https://www.metmuseum.org/exhibitions/listings/2001/photography-and-the-bauhaus'),
       ...NEW_VISION_SOURCES,
     ],
     sectionsJa: sections(AVANT_HEADINGS, [
@@ -610,13 +656,13 @@ const MOVEMENT_PAGE_CONTENT = {
         heading: 'Moholy-Nagy, Lucia Moholy, and Visual Education',
         paragraphs: [
           para('László Moholy-Nagy’s arrival in 1923 gave photography a new theoretical role at the Bauhaus. His photograms, camera angles, negative reversals, and typophoto experiments treated photography as a way to work with light, space, and perception rather than simply to reproduce appearances.', ['bauhaus-moholy-lucia-met']),
-          para('Lucia Moholy’s work is equally important because her photographs of buildings, objects, and people helped define how the Bauhaus was seen outside the school. Her documentation was not neutral background material; it shaped the institution’s visual identity and the later memory of Bauhaus design.', ['bauhaus-moholy-lucia-met']),
+          para('Lucia Moholy’s work is equally important because her photographs of buildings, objects, and people helped define how the Bauhaus was seen outside the school. Her documentation was not neutral background material; it shaped the institution’s visual identity and the later memory of Bauhaus design.', ['bauhaus-moholy-tate']),
         ],
       },
       {
         heading: 'Design, Typography, and Modern Visual Culture',
         paragraphs: [
-          para('Photography at the Bauhaus moved easily between artwork, classroom exercise, publicity, and design tool. The photograph could be printed with type, placed in a layout, used to document an object, or turned into an abstract study of light and form.', ['bauhaus-met']),
+          para('Photography at the Bauhaus moved easily between artwork, classroom exercise, publicity, and design tool. The photograph could be printed with type, placed in a layout, used to document an object, or turned into an abstract study of light and form.', ['bauhaus-climbing-met']),
           para('That makes Bauhaus photography different from a narrow movement label. It connected camera work to the broader systems of modern visual culture: books, posters, exhibitions, architecture, theater, and industrial design education.', ['bauhaus-shaping-moma']),
         ],
       },
@@ -624,7 +670,14 @@ const MOVEMENT_PAGE_CONTENT = {
         heading: 'Relation to New Vision and New Objectivity',
         paragraphs: [
           para('Bauhaus photography overlaps strongly with New Vision, especially in Moholy-Nagy’s belief that the camera could retrain sight through new vantage points and optical experiments. The difference is that Bauhaus also names the school, curriculum, and design setting that put those experiments to work.', ['bauhaus-newvision-met']),
-          para('It is also distinct from New Objectivity. Bauhaus photographs could be sharp and descriptive, but their historical role lies in the crossing of experiment, pedagogy, publication, and design. They show how photography became part of how modern life was taught, displayed, and organized.', ['bauhaus-met']),
+          para('It is also distinct from New Objectivity. Bauhaus photographs could be sharp and descriptive, but their historical role lies in the crossing of experiment, pedagogy, publication, and design. They show how photography became part of how modern life was taught, displayed, and organized.', ['bauhaus-metaphors']),
+        ],
+      },
+      {
+        heading: 'Archives, Bayer, and Later Design Culture',
+        paragraphs: [
+          para('Herbert Bayer is useful for seeing how Bauhaus photography moved into graphic design, exhibition design, and photomontage after the school years. His Object:Photo record connects Bauhaus teaching to the wider New Vision environment and to later photographic work.', ['bauhaus-bayer-moma']),
+          para('The Bauhaus-Archiv’s photography holdings make the institutional point concrete. Its collections include documentary, private, architectural, and artistic photographs by figures such as Lucia Moholy, Moholy-Nagy, Walter Peterhans, and Herbert Schürmann, showing how broad the photographic record of the school actually is.', ['bauhaus-archive-photo']),
         ],
       },
     ],
@@ -632,9 +685,13 @@ const MOVEMENT_PAGE_CONTENT = {
       srcId('bauhaus-met', 'The Met — Photography at the Bauhaus', 'https://www.metmuseum.org/essays/photography-at-the-bauhaus'),
       srcId('bauhaus-dancing-met', 'The Met — Dancing on the Roof: Photography and the Bauhaus', 'https://www.metmuseum.org/exhibitions/listings/2001/photography-and-the-bauhaus'),
       srcId('bauhaus-moholy-lucia-met', 'The Met — Moholy-Nagy and Lucia Moholy', 'https://www.metmuseum.org/research-centers/leonard-a-lauder-research-center/research-resources/modern-art-index-project/lazslo-moholy-nagy-and-lucia-moholy'),
-      srcId('bauhaus-newvision-met', 'The Met — New Vision Photography', 'https://www.metmuseum.org/essays/the-new-vision-of-photography'),
-      srcId('bauhaus-shaping-moma', 'MoMA — The Shaping of New Visions', 'https://www.moma.org/calendar/exhibitions/1230'),
       srcId('bauhaus-moholy-tate', 'Tate — László Moholy-Nagy', 'https://www.tate.org.uk/art/artists/laszlo-moholy-nagy-1599'),
+      srcId('bauhaus-climbing-met', 'The Met — László Moholy-Nagy [Climbing the Mast]', 'https://www.metmuseum.org/fr/art/collection/search/285429'),
+      srcId('bauhaus-shaping-moma', 'MoMA — The Shaping of New Visions', 'https://www.moma.org/calendar/exhibitions/1230'),
+      srcId('bauhaus-newvision-met', 'The Met — New Vision Photography', 'https://www.metmuseum.org/essays/the-new-vision-of-photography'),
+      srcId('bauhaus-metaphors', 'The Met — The Structure of Photographic Metaphors', 'https://www.metmuseum.org/toah/hd/pmet/hob_1995.563.htm'),
+      srcId('bauhaus-bayer-moma', 'MoMA Object:Photo — Herbert Bayer', 'https://www.moma.org/interactives/objectphoto/artists/399.html'),
+      srcId('bauhaus-archive-photo', 'Bauhaus-Archiv — Fotografie', 'https://www.bauhaus.de/de/sammlung/6300_bestaende/6301_fotografie/'),
       ...BAUHAUS_SOURCES,
     ],
     sectionsJa: sections(AVANT_HEADINGS, [
