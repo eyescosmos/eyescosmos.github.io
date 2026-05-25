@@ -324,9 +324,9 @@ SEO_TEXT_OVERRIDES = {
             "lead": "ヴィクトリア朝イギリスで、肖像写真を単なる外見の記録から、感情、信仰、文学的想像力を帯びた像へ押し広げた写真家。ソフトフォーカス、近接、大判ネガ、湿板写真の揺らぎを用い、家族、使用人、文学者、科学者を、聖母、預言者、詩の登場人物のように撮影した。技術的な鮮明さをめぐる当時の規範に対し、写真が内面や演出を扱えることを早い時期に示した。",
         },
         "en": {
-            "title": "Julia Margaret Cameron | Victorian Portrait Photographer | Photo Coordinates",
-            "description": "Cameron used soft focus and wet-plate instability to photograph family and servants as Madonnas and literary figures, anticipating Pictorialism by a generation.",
-            "lead": "In Victorian Britain, Julia Margaret Cameron pushed portrait photography beyond the recording of outward likeness, turning it into an image charged with feeling, faith, and literary imagination. Through soft focus, close framing, large negatives, and the instabilities of the wet-collodion process, she photographed family members, servants, writers, and scientists as if they were Madonnas, prophets, or figures from poetry. At a time when photographic value was often tied to technical sharpness, her work showed early on that the medium could also carry inwardness, staging, and mythic suggestion.",
+            "title": "Julia Margaret Cameron | Soft Focus Portraits & Pictorialism",
+            "description": "Explore Julia Margaret Cameron's Victorian photography through soft-focus portraits, wet-collodion technique, staged literary photographs, and her place before Pictorialism.",
+            "lead": "Julia Margaret Cameron was a Victorian photographer whose soft-focus portraits and staged literary photographs helped shift photography from outward likeness toward feeling, faith, and imagination before Pictorialism took shape. Through close framing, large negatives, and the instabilities of the wet-collodion process, she photographed family members, servants, writers, and scientists as if they were Madonnas, prophets, or figures from poetry. At a time when photographic value was often tied to technical sharpness, her work showed early on that the medium could also carry inwardness, staging, and mythic suggestion.",
         },
     },
     "sherman": {
