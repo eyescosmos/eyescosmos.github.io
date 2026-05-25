@@ -218,9 +218,9 @@ SEO_TEXT_OVERRIDES = {
             "lead": "291ギャラリーと写真誌『カメラ・ワーク』を主宰し、写真を絵画と並ぶ芸術として美術館に送り込んだアメリカ近代写真の中核。「エクイヴァレンツ」では被写体ではなく形式そのものが内面を語ると主張し、抽象写真の理論的基盤を築いた。",
         },
         "en": {
-            "title": "Alfred Stieglitz | Gallery 291 and Equivalents | Photo Coordinates",
-            "description": "As the force behind Gallery 291 and Camera Work, Alfred Stieglitz helped move photography into the museum as an art beside painting. With Equivalents, he argued that visual form itself could carry inner feeling and helped establish a basis for photographic abstraction.",
-            "lead": "As the force behind Gallery 291 and Camera Work, Alfred Stieglitz helped move photography into the museum as an art beside painting. With Equivalents, he argued that visual form itself could carry inner feeling and helped establish a basis for photographic abstraction.",
+            "title": "Alfred Stieglitz | Pictorialism, 291 & Equivalents",
+            "description": "Explore Alfred Stieglitz's photography style through Pictorialism, Camera Work, Gallery 291, The Steerage, and the Equivalents that helped define photography as modern art.",
+            "lead": "Alfred Stieglitz helped change how photography was viewed by moving it from Pictorialism toward modern art through Camera Work, Gallery 291, and a carefully argued photography style. With The Steerage and the Equivalents, he treated photographic form itself as a way to carry feeling, abstraction, and cultural authority.",
         },
     },
     "renger": {

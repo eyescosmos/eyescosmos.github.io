@@ -3,7 +3,7 @@ window.PHOTOGRAPHER_ESSAY_OVERRIDES = Object.assign(
   {
     'stieglitz': {
       leadJa: `291ギャラリーと写真誌『カメラ・ワーク』を主宰し、写真を絵画と並ぶ芸術として美術館に送り込んだアメリカ近代写真の中核。「エクイヴァレンツ」では被写体ではなく形式そのものが内面を語ると主張し、抽象写真の理論的基盤を築いた。`,
-      leadEn: `Stieglitz made 291 and Camera Work a bridge from pictorialism to modern photography as museum art. With Equivalents, he argued that visual form itself, not subject matter, could carry inner feeling and helped establish a basis for photographic abstraction.`,
+      leadEn: `Alfred Stieglitz helped change how photography was viewed by moving it from Pictorialism toward modern art through Camera Work, Gallery 291, and a carefully argued photography style. With The Steerage and the Equivalents, he treated photographic form itself as a way to carry feeling, abstraction, and cultural authority.`,
       textJa: `経歴
 
 1864年、ニューヨーク近郊ホーボーケンの裕福なユダヤ系ドイツ移民家庭に生まれる。ベルリン工科大学で写真化学者ヘルマン・ウォーゲルに師事し、ヨーロッパ各地の写真表現に触れたのち、1890年にアメリカへ帰国した*1。1902年にアメリカのピクトリアリズム写真家を束ねる集団として写真分離派を結成し、翌1903年には写真誌『カメラ・ワーク』を創刊した。1905年にニューヨーク五番街291番地へ開廊した通称「291」では、写真に加えてアンリ・マティス、ポール・セザンヌ、パブロ・ピカソらをアメリカでいち早く紹介したことでも知られる*2。1917年の291閉廊後はインティメイト・ギャラリー（1925年）とアメリカン・プレイス（1929年）という小規模な発表の場を運営し、妻で画家のジョージア・オキーフとの編集と制作の共同実践を晩年まで続けた。1946年、ニューヨークで没した*3。
