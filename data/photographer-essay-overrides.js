@@ -11776,7 +11776,7 @@ Evans's reception began within the category of the FSA photographer but later mo
 
   'lee-miller': {
     leadJa: `リー・ミラーは、シュルレアリスムの暗室実験、Vogueのファッション写真、第二次世界大戦の従軍報道を横断したアメリカの写真家。ソラリゼーションや身体の断片化、戦時下の女性像、ダッハウ解放後の記録まで、演出と証言の境界で写真が現実をどのように組み替え、同時に歴史の証拠となるかを示した。 マン・レイの周辺作家としてではなく、雑誌メディア、戦時下の女性の経験、前線報道が重なる写真家として位置づけられる。`,
-    leadEn: `Lee Miller crossed Surrealist darkroom work, Vogue wartime photography, and Second World War frontline reporting. Solarization, women's imagery, and her reassessment beyond Man Ray are traced here. Rather than treating her as a peripheral figure around Man Ray, this page reads Miller through the intersections of magazine culture, women's wartime experience, and war correspondence.`,
+    leadEn: `Lee Miller was a photographer whose war photographs and Second World War reporting grew out of Surrealist darkroom work, Vogue photography, and a sharp understanding of how bodies and rooms carry history. Her work moves from solarization and fashion imagery to women's wartime experience, frontline correspondence, and photographs made after the liberation of Europe, while her reassessment reaches beyond the old label of Man Ray's muse.`,
     textJa: `リー・ミラーは、ニューヨークのファッションモデル、パリとニューヨークの写真家、Vogueの撮影者、第二次世界大戦の従軍記者という複数の立場を移動した作家である。ただし、その軌跡は「モデルから写真家へ」という伝記的な転身だけでは捉えきれない。リー・ミラー・アーカイブは、彼女が1920年代ニューヨークのファッションモデルとして写真の世界に入りながら、1929年にパリへ渡り、撮られる側ではなく撮る側を選んだことを強調している *1 。同アーカイブは、シュルレアリスム、Vogueのファッション編集、第二次世界大戦のフォトジャーナリズム、20世紀の重要人物の肖像を含む6万点以上の画像と文書を保存していると説明しており、彼女の仕事は最初から一つのジャンルに収まるものではなかった *2 。このページでは、ミラーを男性作家の周辺に置くのではなく、身体、衣服、都市、戦時下の生活、解放直後のヨーロッパを、構成された像として、同時に歴史の証言として扱った写真家として整理する。 その軸は、初期の暗室実験、Vogueの誌面、前線の写真を別々の経歴として並べることではなく、身体や場所を一度ずらして見せる方法が、ファッションの身体、戦時下の女性、収容所解放後の証言へ形を変えて続いていく点にある。
 
 見られる側から、像を作る側へ

@@ -359,8 +359,9 @@ SEO_TEXT_OVERRIDES = {
             "description": "暗室実験からVogueの戦時写真、第二次大戦の前線報道まで横断したアメリカの写真家。ソラリゼーション技法、戦時下の女性の表現、ダッハウ解放後の記録、マン・レイとの関係の再評価をたどる。",
         },
         "en": {
-            "title": "Lee Miller | Photo History | Photo Coordinates",
-            "description": "Lee Miller crossed Surrealist darkroom work, Vogue wartime photography, and Second World War frontline reporting. Solarization, women's imagery, and her reassessment beyond Man Ray are traced here.",
+            "title": "Lee Miller | War Photography, Vogue & Surrealism",
+            "description": "Explore Lee Miller's war photographs, Second World War reporting, Vogue photography, Surrealist darkroom work, solarization, and reassessment beyond Man Ray.",
+            "lead": "Lee Miller was a photographer whose war photographs and Second World War reporting grew out of Surrealist darkroom work, Vogue photography, and a sharp understanding of how bodies and rooms carry history. Her work moves from solarization and fashion imagery to women's wartime experience, frontline correspondence, and photographs made after the liberation of Europe, while her reassessment reaches beyond the old label of Man Ray's muse.",
         },
     },
     "nicephore-niepce": {
