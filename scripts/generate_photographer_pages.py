@@ -666,6 +666,7 @@ SAME_AS_OVERRIDES = {
         "https://www.wikidata.org/wiki/Q389282",
     ],
 }
+INLINE_INTERNAL_LINK_RE = re.compile(r"\[\[(p|m):([^|\]]+)\|([^\]]+)\]\]")
 JP_TEXT_RE = re.compile(r"[ぁ-んァ-ン一-龯]")
 EN_REFERENCE_REPLACEMENTS = {
     "公式アーカイブ": "official archive",
@@ -1458,7 +1459,20 @@ def should_skip_alias_boundary(source: str, start: int, end: int, alias: str) ->
     return False
 
 
-def render_linked_text(
+def explicit_internal_link_html(link_type: str, target: str, label: str, lang: str, movements_meta: dict | None = None) -> str:
+    href = ""
+    class_name = "inline-photographer-link"
+    if link_type == "p":
+        href = photographer_page_path({"id": target}, lang)
+    elif link_type == "m":
+        href = movement_page_path(target, lang, movements_meta or {})
+        class_name = "inline-movement-link"
+    if not href:
+        return escape_html(label)
+    return f'<a class="{class_name}" href="{escape_html(href)}">{escape_html(label)}</a>'
+
+
+def render_auto_linked_text(
     text: str,
     lang: str,
     alias_lookup: dict[str, dict],
@@ -1520,7 +1534,39 @@ def render_linked_text(
     return "".join(parts).replace("\n", "<br>")
 
 
-def _render_cited_segment(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, linked_ids: set[str], works_lookup: dict[str, str] | None = None, works_regex: "re.Pattern | None" = None) -> str:
+def render_linked_text(
+    text: str,
+    lang: str,
+    alias_lookup: dict[str, dict],
+    regex: re.Pattern | None,
+    exclude_id: str | None = None,
+    linked_ids: set[str] | None = None,
+    works_lookup: dict[str, str] | None = None,
+    works_regex: "re.Pattern | None" = None,
+    movements_meta: dict | None = None,
+) -> str:
+    if not text:
+        return ""
+    linked_ids = linked_ids or set()
+    if not INLINE_INTERNAL_LINK_RE.search(text):
+        return render_auto_linked_text(text, lang, alias_lookup, regex, exclude_id=exclude_id, linked_ids=linked_ids, works_lookup=works_lookup, works_regex=works_regex)
+
+    parts: list[str] = []
+    cursor = 0
+    for match in INLINE_INTERNAL_LINK_RE.finditer(text):
+        if match.start() > cursor:
+            parts.append(render_auto_linked_text(text[cursor:match.start()], lang, alias_lookup, regex, exclude_id=exclude_id, linked_ids=linked_ids, works_lookup=works_lookup, works_regex=works_regex))
+        link_type, target, label = match.groups()
+        parts.append(explicit_internal_link_html(link_type, target, label, lang, movements_meta))
+        if link_type == "p":
+            linked_ids.add(target)
+        cursor = match.end()
+    if cursor < len(text):
+        parts.append(render_auto_linked_text(text[cursor:], lang, alias_lookup, regex, exclude_id=exclude_id, linked_ids=linked_ids, works_lookup=works_lookup, works_regex=works_regex))
+    return "".join(parts)
+
+
+def _render_cited_segment(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, linked_ids: set[str], works_lookup: dict[str, str] | None = None, works_regex: "re.Pattern | None" = None, movements_meta: dict | None = None) -> str:
     chunks: list[str] = []
     for part in re.split(r"(\*\d+)", text or ""):
         cite = re.fullmatch(r"\*(\d+)", part or "")
@@ -1528,12 +1574,12 @@ def _render_cited_segment(text: str, lang: str, alias_lookup: dict[str, dict], r
             num = cite.group(1)
             chunks.append(f'<sup class="sup-ref"><a href="#cite-{num}">*{num}</a></sup>')
         else:
-            chunks.append(render_linked_text(part, lang, alias_lookup, regex, exclude_id=exclude_id, linked_ids=linked_ids, works_lookup=works_lookup, works_regex=works_regex))
+            chunks.append(render_linked_text(part, lang, alias_lookup, regex, exclude_id=exclude_id, linked_ids=linked_ids, works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta))
     return "".join(chunks)
 
 
-def render_cited_text(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, works_lookup: dict[str, str] | None = None, works_regex: "re.Pattern | None" = None) -> str:
-    return _render_cited_segment(text, lang, alias_lookup, regex, exclude_id, set(), works_lookup=works_lookup, works_regex=works_regex)
+def render_cited_text(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, works_lookup: dict[str, str] | None = None, works_regex: "re.Pattern | None" = None, movements_meta: dict | None = None) -> str:
+    return _render_cited_segment(text, lang, alias_lookup, regex, exclude_id, set(), works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta)
 
 
 ESSAY_HEADING_SET = {
@@ -1553,7 +1599,7 @@ ESSAY_HEADING_SET = {
 }
 
 
-def render_override_essay_html(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, works_lookup: dict[str, str] | None = None, works_regex: "re.Pattern | None" = None) -> str:
+def render_override_essay_html(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, works_lookup: dict[str, str] | None = None, works_regex: "re.Pattern | None" = None, movements_meta: dict | None = None) -> str:
     if not text:
         return ""
     blocks = [block.strip() for block in re.split(r"\n\s*\n", text) if block.strip()]
@@ -1565,11 +1611,11 @@ def render_override_essay_html(text: str, lang: str, alias_lookup: dict[str, dic
         elif len(block) <= 80 and not re.search(r"\*\d+", block) and not re.search(r"[。！？.!?]$", block):
             parts.append(f"<h4>{escape_html(block)}</h4>")
         else:
-            parts.append(f"<p>{_render_cited_segment(block, lang, alias_lookup, regex, exclude_id, linked_ids, works_lookup=works_lookup, works_regex=works_regex)}</p>")
+            parts.append(f"<p>{_render_cited_segment(block, lang, alias_lookup, regex, exclude_id, linked_ids, works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta)}</p>")
     return "".join(parts)
 
 
-def render_override_sections_html(sections, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, works_lookup: dict[str, str] | None = None, works_regex: "re.Pattern | None" = None) -> str:
+def render_override_sections_html(sections, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, works_lookup: dict[str, str] | None = None, works_regex: "re.Pattern | None" = None, movements_meta: dict | None = None) -> str:
     if not isinstance(sections, list):
         return ""
     heading_key = "headingEn" if lang == "en" else "headingJa"
@@ -1588,7 +1634,7 @@ def render_override_sections_html(sections, lang: str, alias_lookup: dict[str, d
         for paragraph in paragraphs:
             if not paragraph:
                 continue
-            parts.append(f"<p>{_render_cited_segment(paragraph, lang, alias_lookup, regex, exclude_id, linked_ids, works_lookup=works_lookup, works_regex=works_regex)}</p>")
+            parts.append(f"<p>{_render_cited_segment(paragraph, lang, alias_lookup, regex, exclude_id, linked_ids, works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta)}</p>")
     return "".join(parts)
 
 
@@ -1600,6 +1646,7 @@ def render_manual_sectioned_essay_html(
     regex: re.Pattern | None,
     works_lookup: dict[str, str] | None = None,
     works_regex: "re.Pattern | None" = None,
+    movements_meta: dict | None = None,
 ) -> str:
     """Preserve curated h2-level structure for legacy one-block essays."""
     rules = {
@@ -1639,7 +1686,7 @@ def render_manual_sectioned_essay_html(
         paragraphs = [block.strip() for block in re.split(r"\n\s*\n", segment) if block.strip()]
         parts.append(f"<h3>{escape_html(heading)}</h3>")
         for paragraph in paragraphs:
-            parts.append(f"<p>{_render_cited_segment(paragraph, lang, alias_lookup, regex, photographer_id, linked_ids, works_lookup=works_lookup, works_regex=works_regex)}</p>")
+            parts.append(f"<p>{_render_cited_segment(paragraph, lang, alias_lookup, regex, photographer_id, linked_ids, works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta)}</p>")
     return "".join(parts)
 
 
@@ -2516,13 +2563,13 @@ def main() -> None:
             elif override_sections_html and override_citations:
                 citations = override_citations or citations
             if isinstance(override_sections, list) and override_sections:
-                rendered_body = render_override_sections_html(override_sections, lang, alias_lookup, alias_regex, photographer["id"], works_lookup=works_lookup, works_regex=works_regex)
+                rendered_body = render_override_sections_html(override_sections, lang, alias_lookup, alias_regex, photographer["id"], works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta)
             elif override_body_text:
-                rendered_body = render_override_essay_html(override_body_text, lang, alias_lookup, alias_regex, photographer["id"], works_lookup=works_lookup, works_regex=works_regex)
+                rendered_body = render_override_essay_html(override_body_text, lang, alias_lookup, alias_regex, photographer["id"], works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta)
             elif body_text and photographer["id"] in {"stieglitz", "cameron"}:
-                rendered_body = render_manual_sectioned_essay_html(photographer["id"], body_text, lang, alias_lookup, alias_regex, works_lookup=works_lookup, works_regex=works_regex) or render_override_essay_html(body_text, lang, alias_lookup, alias_regex, photographer["id"], works_lookup=works_lookup, works_regex=works_regex)
+                rendered_body = render_manual_sectioned_essay_html(photographer["id"], body_text, lang, alias_lookup, alias_regex, works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta) or render_override_essay_html(body_text, lang, alias_lookup, alias_regex, photographer["id"], works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta)
             elif body_text:
-                rendered_body = render_override_essay_html(body_text, lang, alias_lookup, alias_regex, photographer["id"], works_lookup=works_lookup, works_regex=works_regex)
+                rendered_body = render_override_essay_html(body_text, lang, alias_lookup, alias_regex, photographer["id"], works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta)
             else:
                 rendered_body = f"<p>{escape_html(copy['placeholder'])}</p>"
             is_placeholder_page = is_placeholder_text(body_text, lang)
@@ -2537,7 +2584,7 @@ def main() -> None:
             intro = override_lead(override_entry, lang) or intro
             lead_raw = override_lead_raw(override_entry, lang)
             if lead_raw:
-                lead_html = _render_cited_segment(lead_raw, lang, alias_lookup, alias_regex, photographer["id"], set(), works_lookup=works_lookup, works_regex=works_regex)
+                lead_html = _render_cited_segment(lead_raw, lang, alias_lookup, alias_regex, photographer["id"], set(), works_lookup=works_lookup, works_regex=works_regex, movements_meta=movements_meta)
             else:
                 lead_html = escape_html(intro)
             keyword_line = build_keyword_line(photographer, lang, era_lookup, movements_meta, enrichments)

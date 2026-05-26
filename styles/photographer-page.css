@@ -366,6 +366,7 @@ body::after {
   align-items: stretch;
 }
 .fact-item {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -407,12 +408,14 @@ body::after {
 .essay a:hover { color: var(--accent); }
 .section p a { color: var(--accent-2); }
 .section p a:hover { color: var(--accent); }
-.essay .inline-photographer-link {
+.essay .inline-photographer-link,
+.essay .inline-movement-link {
   color: var(--accent-2);
   text-decoration: none;
   border-bottom: 1px solid rgba(159, 180, 223, 0.4);
 }
-.essay .inline-photographer-link:hover {
+.essay .inline-photographer-link:hover,
+.essay .inline-movement-link:hover {
   color: var(--accent-2);
   border-bottom-color: rgba(159, 180, 223, 0.72);
 }
@@ -709,12 +712,12 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
     max-width: none;
   }
   .facts-grid {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     width: 100%;
   }
   .fact-item {
     width: auto;
-    flex: 1 1 0;
+    flex: 1 1 130px;
     min-width: 0;
     justify-content: center;
   }
