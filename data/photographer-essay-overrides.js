@@ -9868,7 +9868,16 @@ Weston's reception is formed across several layers: success as a contemporary sa
   },
 
 'ansel-adams': {
-    leadJa: `アンセル・アダムスは、ヨセミテとアメリカ西部の風景を、露光・現像・プリントの精密な判断によって構成した、目の前の自然を光と階調の言語へ変換した写真家。ゾーンシステム、Group f/64、スティーグリッツとの関係、音楽的な「演奏」としてのプリント、ベイエリア写真史、環境保護とマンザナー写真を通して、写真が絵画の模倣から離れ、自然を自律した光と階調のイメージへ変える過程と、その表現が後の風景写真に継承・反転される論点を読み解く。`, 
+    thesisJa: `アダムスは写真というメディアのルールを書き換えた人ではなく、スティーグリッツやストランドが切り開いたストレート写真の方法論を、ゾーンシステムと暗室の精度によって<em>一つの体系へと精緻化した</em>人物である。ネガを楽譜、プリントを演奏とする彼の比喩は、写真を機械的な複製から解放し、暗室での解釈を制作の中心に据えた。`,
+    thesisEn: `Adams did not rewrite the rules of the photographic medium — instead, he <em>refined the straight photography methodology pioneered by Stieglitz and Strand into a unified system</em> through the Zone System and the precision of the darkroom. His metaphor of the negative as score and the print as performance freed photography from mechanical reproduction, placing darkroom interpretation at the center of the work.`,
+    keywords: ["ストレート写真", "Group f/64", "ゾーンシステム", "ヨセミテ", "マンザナー", "New Topographics"],
+    viewWorks: [
+      {label: "The Met — Monolith, the Face of Half Dome", url: "https://www.metmuseum.org/art/collection/search/262595"},
+      {label: "NGA — Moonrise, Hernandez, New Mexico", url: "https://www.nga.gov/artworks/66680-moonrise-hernandez-new-mexico"},
+      {label: "SFMOMA — Ansel Adams Collection", url: "https://www.sfmoma.org/artist/ansel_adams/"},
+      {label: "LOC — マンザナー写真", url: "https://www.loc.gov/collections/ansel-adams-manzanar/about-this-collection/"},
+    ],
+    leadJa: `アンセル・アダムスは、ヨセミテとアメリカ西部の風景を、露光・現像・プリントの精密な判断によって構成した、目の前の自然を光と階調の言語へ変換した写真家。ゾーンシステム、Group f/64、スティーグリッツとの関係、音楽的な「演奏」としてのプリント、ベイエリア写真史、環境保護とマンザナー写真を通して、写真が絵画の模倣から離れ、自然を自律した光と階調のイメージへ変える過程と、その表現が後の風景写真に継承・反転される論点を読み解く。`,
     leadEn: `Ansel Adams photographed Yosemite and the American West through precise judgments of exposure, development, and printing — converting natural landscapes into a language of light and tonal gradation. Through the Zone System, Group f/64, his relationship with Stieglitz, the idea of the print as musical performance, Bay Area photography history, environmental advocacy, and the Manzanar internment photographs, this page traces how photography separated itself from pictorialist painting and how Adams's approach has been both continued and contested by later landscape photographers.`, 
     textJa: `経歴
 

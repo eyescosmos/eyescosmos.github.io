@@ -1586,7 +1586,15 @@ ESSAY_HEADING_SET = {
     '経歴',
     '表現解説',
     '批評と受容',
+    '背景と時代',
+    '表現の核心',
+    '代表作・方法・媒体',
+    '批評と写真史上の位置',
     'Biography',
+    'Background & Era',
+    'Core Expression',
+    'Representative Works & Methods',
+    'Criticism & Position',
     'How the Zone System relates to Group f/64',
     'Expression / method',
     'Seascapes, Theaters, Dioramas, and the Photograph as Time',
@@ -1597,6 +1605,44 @@ ESSAY_HEADING_SET = {
     'Vogue, Studio Portraits, Still Life, and the Print',
     'Criticism and reception',
 }
+
+HEADING_DISPLAY_MAP_JA: dict[str, str] = {
+    '経歴': '背景と時代',
+    '表現解説': '表現の核心',
+    '批評と受容': '批評と写真史上の位置',
+}
+
+HEADING_DISPLAY_MAP_EN: dict[str, str] = {
+    'Biography': 'Background & Era',
+    'Expression / method': 'Core Expression',
+    'Criticism and reception': 'Criticism & Position',
+}
+
+
+def apply_v2_section_format(html: str, lang: str) -> str:
+    """Post-process pre-rendered <section> HTML to add § numbering and renamed headings."""
+    if not html:
+        return html
+    heading_map = HEADING_DISPLAY_MAP_JA if lang == "ja" else HEADING_DISPLAY_MAP_EN
+    section_pattern = re.compile(r'<section\b([^>]*)>(.*?)</section>', re.DOTALL)
+    matches = section_pattern.findall(html)
+    if not matches:
+        return html
+    total = len(matches)
+    result_parts: list[str] = []
+    for i, (attrs, body) in enumerate(matches):
+        sec_num = f"§ {i + 1:02d} / {total:02d}"
+        h2_pattern = re.compile(r'<h2\b[^>]*>(.*?)</h2>', re.DOTALL)
+        h2_match = h2_pattern.search(body)
+        if h2_match:
+            raw_heading = strip_tags(h2_match.group(1)).strip()
+            display_heading = heading_map.get(raw_heading, raw_heading)
+            new_h2 = f'<h2 class="sec-heading"><span class="sec-num">{sec_num}</span><span class="sec-title">{escape_html(display_heading)}</span></h2>'
+            body = h2_pattern.sub(new_h2, body, count=1)
+        if 'class="section"' not in attrs:
+            attrs = ' class="section"' + attrs
+        result_parts.append(f'<section{attrs}>{body}</section>')
+    return '\n'.join(result_parts)
 
 
 def render_override_essay_html(text: str, lang: str, alias_lookup: dict[str, dict], regex: re.Pattern | None, exclude_id: str, works_lookup: dict[str, str] | None = None, works_regex: "re.Pattern | None" = None, movements_meta: dict | None = None) -> str:
@@ -1690,12 +1736,14 @@ def render_manual_sectioned_essay_html(
     return "".join(parts)
 
 
-def split_essay_into_sections(rendered_body: str, default_heading: str) -> str:
+def split_essay_into_sections(rendered_body: str, default_heading: str, lang: str = "ja") -> str:
     if not rendered_body:
         return f"""      <section class="section">
         <h2>{escape_html(default_heading)}</h2>
         <div class="essay"></div>
       </section>"""
+
+    heading_map = HEADING_DISPLAY_MAP_JA if lang == "ja" else HEADING_DISPLAY_MAP_EN
 
     tokens = re.split(r"(<h3>.*?</h3>)", rendered_body)
     sections: list[tuple[str, list[str]]] = []
@@ -1711,7 +1759,8 @@ def split_essay_into_sections(rendered_body: str, default_heading: str) -> str:
             if current_parts or not saw_heading:
                 if current_parts:
                     sections.append((current_heading, current_parts))
-            current_heading = strip_tags(heading_match.group(1))
+            raw_heading = strip_tags(heading_match.group(1))
+            current_heading = heading_map.get(raw_heading, raw_heading)
             current_parts = []
             saw_heading = True
             continue
@@ -1723,11 +1772,14 @@ def split_essay_into_sections(rendered_body: str, default_heading: str) -> str:
     if not saw_heading:
         sections = [(default_heading, [rendered_body])]
 
+    total = len(sections)
     rendered_sections = []
-    for heading, parts in sections:
+    for i, (heading, parts) in enumerate(sections):
         body = "".join(parts)
+        sec_num = f"§ {i + 1:02d} / {total:02d}"
+        h2_inner = f'<span class="sec-num">{sec_num}</span><span class="sec-title">{escape_html(heading)}</span>'
         rendered_sections.append(f"""      <section class="section">
-        <h2>{escape_html(heading)}</h2>
+        <h2 class="sec-heading">{h2_inner}</h2>
         <div class="essay">{body}</div>
       </section>""")
     return "\n".join(rendered_sections)
@@ -1888,6 +1940,164 @@ def descriptor_for(photographer: dict, lang: str, era_lookup: dict, movements_me
         return movement_names[0]
     era = era_lookup.get(photographer.get("era"), {})
     return (era.get("titleEn") if lang == "en" else era.get("title")) or era.get("period") or ""
+
+
+def build_entry_index(photographers: list[dict]) -> dict[str, int]:
+    sorted_ids = sorted(p["id"] for p in photographers)
+    return {pid: i + 1 for i, pid in enumerate(sorted_ids)}
+
+
+def build_entry_meta_html(
+    photographer: dict,
+    lang: str,
+    entry_num: int,
+    era_lookup: dict,
+    movements_meta: dict,
+    enrichments: dict,
+) -> str:
+    country = escape_html(display_country(photographer, lang))
+    period = escape_html(era_period(photographer, era_lookup))
+    movement_names = related_movement_names(photographer, movements_meta, enrichments)
+    primary_movement = ""
+    if movement_names:
+        if lang == "en":
+            primary_movement = escape_html(english_movement_name(movement_names[0], movements_meta))
+        else:
+            primary_movement = escape_html(movement_names[0])
+    from datetime import date
+    updated = date.today().strftime("%Y.%m.%d")
+    category = "Photographer"
+    return f"""<dl class="entry-meta">
+    <dt>Entry</dt><dd>No. {entry_num:03d}</dd>
+    <dt>Category</dt><dd>{category}</dd>
+    <dt>Country</dt><dd>{country}</dd>
+    <dt>Period</dt><dd>{period}</dd>
+    <dt>Movement</dt><dd>{primary_movement}</dd>
+    <dt>Updated</dt><dd>{updated}</dd>
+  </dl>"""
+
+
+def build_title_block_html(
+    photographer: dict,
+    lang: str,
+    entry_num: int,
+    movements_meta: dict,
+    enrichments: dict,
+) -> str:
+    movement_names = related_movement_names(photographer, movements_meta, enrichments)
+    primary_movement = ""
+    if movement_names:
+        if lang == "en":
+            primary_movement = escape_html(english_movement_name(movement_names[0], movements_meta))
+        else:
+            primary_movement = escape_html(movement_names[0])
+    alt_name = display_alt_name(photographer, lang)
+    years_str = escape_html(display_years(photographer, lang))
+    article_no = f"§ {entry_num:03d} — Photographer Index — {primary_movement}"
+    en_name = escape_html(alt_name or display_name(photographer, "en"))
+    ja_main = escape_html(display_name(photographer, lang))
+    return f"""<div class="title-block">
+    <div class="article-no">{article_no}</div>
+    <h1 class="title">{ja_main}</h1>
+    <div class="en-title">{en_name}<span class="years">{years_str}</span></div>
+  </div>"""
+
+
+def build_thesis_html(override_entry: dict | None, lang: str) -> str:
+    if not isinstance(override_entry, dict):
+        return ""
+    key = "thesisEn" if lang == "en" else "thesisJa"
+    thesis = override_entry.get(key) or ""
+    if not thesis:
+        return ""
+    label = "What this photographer changed" if lang == "en" else "この写真家が変えたこと"
+    return f"""<div class="thesis">
+    <div class="thesis-label">{escape_html(label)}</div>
+    <p class="thesis-body">{thesis}</p>
+  </div>"""
+
+
+def build_facts_table_html(
+    photographer: dict,
+    lang: str,
+    era_lookup: dict,
+    movements_meta: dict,
+    enrichments: dict,
+) -> str:
+    country_href = country_page_path(photographer, lang)
+    era_href = era_page_path(photographer, lang)
+    country_val = escape_html(display_country(photographer, lang))
+    era_val = escape_html(era_period(photographer, era_lookup))
+    years_val = escape_html(display_years(photographer, lang))
+    movement_names = related_movement_names(photographer, movements_meta, enrichments)
+    movement_val = ""
+    movement_href = ""
+    if movement_names:
+        m0 = movement_names[0]
+        movement_val = escape_html(english_movement_name(m0, movements_meta) if lang == "en" else m0)
+        movement_href = movement_page_path(m0, lang, movements_meta)
+
+    lbl_country = "Country" if lang == "en" else "国"
+    lbl_era = "Era" if lang == "en" else "時代"
+    lbl_years = "Years" if lang == "en" else "生没年"
+    lbl_movement = "Movement" if lang == "en" else "運動"
+
+    country_cell = f'<a href="{country_href}">{country_val}</a>' if country_href else country_val
+    era_cell = f'<a href="{era_href}">{era_val}</a>' if era_href else era_val
+    movement_cell = f'<a href="{movement_href}">{movement_val}</a>' if movement_href and movement_val else movement_val
+
+    return f"""<table class="facts">
+    <tr><th>{lbl_country}</th><td>{country_cell}</td></tr>
+    <tr><th>{lbl_era}</th><td>{era_cell}</td></tr>
+    <tr><th>{lbl_years}</th><td>{years_val}</td></tr>
+    <tr><th>{lbl_movement}</th><td>{movement_cell}</td></tr>
+  </table>"""
+
+
+def build_page_keywords_html(
+    override_entry: dict | None,
+    lang: str,
+    movements_meta: dict,
+) -> str:
+    if not isinstance(override_entry, dict):
+        return ""
+    kws = override_entry.get("keywords") or []
+    if not kws:
+        return ""
+    label = "Keywords" if lang == "en" else "キーワード"
+    parts = []
+    for kw in kws:
+        slug = movement_slug(kw)
+        href = movement_page_path(kw, lang, movements_meta) if kw in movements_meta else f"/keywords/{slug}.html"
+        parts.append(f'<a href="{href}">{escape_html(kw)}</a>')
+    sep = '<span class="kw-sep">/</span>'
+    return f"""<div class="page-keywords"><b>{label}:</b>{sep.join(parts)}</div>"""
+
+
+def build_view_works_html(override_entry: dict | None, lang: str, works_links: list[dict]) -> str:
+    items: list[dict] = []
+    if isinstance(override_entry, dict):
+        items = override_entry.get("viewWorks") or []
+    if not items:
+        items = works_links[:4]
+    if not items:
+        return ""
+    note = (
+        "This site does not display work images. Please visit the official archives below."
+        if lang == "en"
+        else "本サイトでは作品画像を掲載していません。下記の公式アーカイブで作品をご覧ください。"
+    )
+    heading = "View Works" if lang == "en" else "作品を見る"
+    links_html = "".join(
+        f'<a class="chip-link" href="{escape_html(item["url"])}" target="_blank" rel="noopener">{escape_html(item["label"])} ↗</a>'
+        for item in items
+        if item.get("url")
+    )
+    return f"""<section class="section view-works-section">
+        <h2>{escape_html(heading)}</h2>
+        <p class="view-works-note">{escape_html(note)}</p>
+        <div class="links">{links_html}</div>
+      </section>"""
 
 
 def build_keyword_line(photographer: dict, lang: str, era_lookup: dict, movements_meta: dict, enrichments: dict) -> str:
@@ -2538,6 +2748,8 @@ def main() -> None:
         key=lambda movement: english_movement_name(movement, movements_meta).lower(),
     )
 
+    entry_index = build_entry_index(photographers)
+
     report_rows = []
 
     for lang in ("ja", "en"):
@@ -2688,7 +2900,15 @@ def main() -> None:
             page_path = photographer_page_path(photographer, lang)
             structured_data = build_page_structured_data(photographer, lang, title, description, canonical)
             breadcrumb_structured_data = build_breadcrumb_structured_data(photographer, lang)
-            essay_sections_html = override_sections_html or split_essay_into_sections(rendered_body, copy["essay"])
+            essay_sections_html = (apply_v2_section_format(override_sections_html, lang) if override_sections_html else None) or split_essay_into_sections(rendered_body, copy["essay"], lang=lang)
+            entry_num = entry_index.get(photographer["id"], 0)
+            entry_meta_html = build_entry_meta_html(photographer, lang, entry_num, era_lookup, movements_meta, enrichments)
+            title_block_html = build_title_block_html(photographer, lang, entry_num, movements_meta, enrichments)
+            thesis_html = build_thesis_html(override_entry if isinstance(override_entry, dict) else None, lang)
+            facts_table_html = build_facts_table_html(photographer, lang, era_lookup, movements_meta, enrichments)
+            page_keywords_html = build_page_keywords_html(override_entry if isinstance(override_entry, dict) else None, lang, movements_meta)
+            view_works_links = [{"label": w.get("labelJa") or w.get("labelEn") or w.get("titleJa") or w.get("titleEn", ""), "url": w.get("url", "")} for w in works_for_page if w.get("url")]
+            view_works_html = build_view_works_html(override_entry if isinstance(override_entry, dict) else None, lang, view_works_links)
             movement_select = render_optional_tax_select(
                 movement_select_options,
                 copy["movements"],
@@ -2769,29 +2989,15 @@ gtag('config', '{GA_ID}');
     </div>
   </header>
   <div class="page-shell">
-    <div class="hero">
-      <h1 class="title">{escape_html(display_name(photographer, lang))}{f'<span class="alt">{escape_html(alt_name)}</span>' if alt_name else ''}</h1>
+    {entry_meta_html}
+    {title_block_html}
+    <div class="lead-abstract">
       <p class="lead">{lead_html}</p>
-      <div class="hero-info-groups">
-        <div class="info-group">
-          <div class="group-label">{'Basic facts' if lang == 'en' else '基本情報'}</div>
-          <div class="facts-grid">
-            <div class="fact-item">
-              <span class="fact-label">{copy['country']}</span>
-              {f'<a class="fact-value" href="{country_href}">{escape_html(display_country(photographer, lang))}</a>' if country_href else f'<span class="fact-value">{escape_html(display_country(photographer, lang))}</span>'}
-            </div>
-            <div class="fact-item">
-              <span class="fact-label">{copy['era']}</span>
-              {f'<a class="fact-value" href="{era_href}">{escape_html(era_period(photographer, era_lookup))}</a>' if era_href else f'<span class="fact-value">{escape_html(era_period(photographer, era_lookup))}</span>'}
-            </div>
-            <div class="fact-item">
-              <span class="fact-label">{'Years' if lang == 'en' else '生没年'}</span>
-              <span class="fact-value">{escape_html(display_years(photographer, lang))}</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    {thesis_html}
+    {facts_table_html}
+    {page_keywords_html}
+    {view_works_html}
     <nav class="tab-nav" data-nosnippet>
       <div class="tab-nav-inner">
 {page_top_links}
