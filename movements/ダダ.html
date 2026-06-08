@@ -1,178 +1,771 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ダダ｜前衛芸術と写真表現｜写真の座標</title>
-<meta name="description" content="美術館・アーカイブ資料を手がかりに、ダダの成立背景、代表作家、表現の特徴、写真史上の意味を読み解く写真史解説。">
-<link rel="canonical" href="https://eyescosmos.github.io/movements/ダダ.html">
-<link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/movements/ダダ.html">
-<link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/movements/dada.html">
-<link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/movements/ダダ.html">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="写真の座標">
-<meta property="og:title" content="ダダ｜前衛芸術と写真表現｜写真の座標">
-<meta property="og:description" content="美術館・アーカイブ資料を手がかりに、ダダの成立背景、代表作家、表現の特徴、写真史上の意味を読み解く写真史解説。">
-<meta property="og:url" content="https://eyescosmos.github.io/movements/ダダ.html">
-<meta property="og:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="写真の座標">
-<meta name="twitter:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ダダ｜前衛芸術と写真表現｜写真の座標">
-<meta name="twitter:description" content="美術館・アーカイブ資料を手がかりに、ダダの成立背景、代表作家、表現の特徴、写真史上の意味を読み解く写真史解説。">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://eyescosmos.github.io/movements/ダダ.html",
-      "url": "https://eyescosmos.github.io/movements/ダダ.html",
-      "name": "ダダ｜前衛芸術と写真表現｜写真の座標",
-      "headline": "ダダ｜前衛芸術と写真表現｜写真の座標",
-      "description": "美術館・アーカイブ資料を手がかりに、ダダの成立背景、代表作家、表現の特徴、写真史上の意味を読み解く写真史解説。",
-      "inLanguage": "ja",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "写真の座標",
-        "url": "https://eyescosmos.github.io/"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "写真の座標",
-          "item": "https://eyescosmos.github.io/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "ダダ",
-          "item": "https://eyescosmos.github.io/movements/ダダ.html"
-        }
-      ]
-    }
-  ]
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ダダ｜Dada｜写真の座標</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles/card-v4-base.css"><link rel="stylesheet" href="../styles/card-v5-overrides.css">
+<style>
+/* ============================================================
+   写真の座標 — 運動ページ · ストレート写真
+   Design: v1.0 · movement page · same system as era pages
+   ============================================================ */
+:root {
+  --bg:          #fafaf5;
+  --surface:     #ffffff;
+  --surface-2:   #f0ede5;
+  --text-main:   #0e0c0a;
+  --text-sub:    #5a554d;
+  --text-mute:   #8a8478;
+  --text-deep:   #b8b0a4;
+  --border:      #0e0c0a;
+  --border-soft: #c4bcb0;
+  --rule:        #c4bcb0;
+  --rule-strong: #0e0c0a;
+  --accent-s:    #0a2540;
+  --accent-a:    #a83a2a;
+  --accent-d:    #d6402e;
+  --accent-h:    #ccff00;
+  --rev-bg:      #0e0c0a;
+  --rev-text:    #f2efe8;
+  --font-jp:     'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, sans-serif;
+  --font-en:     'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mo:     'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-se:     'Cormorant Garamond', 'Times New Roman', serif;
+  --font-se-jp:  'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+  /* aliases for card-v4-base.css */
+  --font-sans-jp: var(--font-jp);
+  --font-sans-en: var(--font-en);
+  --font-mono: var(--font-mo);
+  --accent-structure: var(--accent-s);
+  --accent-action: var(--accent-a);
+  --r-card: 4px;
+  --dur-2: 200ms;
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --reverse-text: var(--rev-text, #f2efe8);}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-jp);
+  font-feature-settings: "palt" 1;
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; background: transparent; border: 0; color: inherit; }
+::selection { background: var(--rev-bg); color: var(--rev-text); }
+.page { max-width: 1440px; margin: 0 auto; background: var(--bg); }
+
+/* ── HEADER ─────────────────────────────────────────────── */
+.head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 32px;
+  border-bottom: 1.5px solid var(--rule-strong);
+  background: var(--bg);
+}
+.head__brand { display: inline-flex; align-items: baseline; gap: 12px; }
+.head__brand-ja { font-family: var(--font-jp); font-weight: 700; font-size: 18px; letter-spacing: 0.10em; }
+.head__brand-ja a { color: var(--text-main); }
+.head__brand-en { font-family: var(--font-en); font-weight: 500; font-size: 12px; color: var(--text-sub); }
+.head__crumbs {
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  text-align: center;
+}
+.head__crumbs em { font-style: normal; color: var(--accent-s); font-weight: 500; }
+.head__crumbs .sep { color: var(--text-deep); margin: 0 10px; }
+.updated-date {
+  background: var(--accent-h);
+  color: var(--text-main);
+  padding: 1px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+.head__meta { display: flex; align-items: center; gap: 16px; }
+.head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+
+/* ── MOVEMENT HERO ─────────────────────────────────────── */
+.mvt-hero {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  border-bottom: 1.5px solid var(--rule-strong);
+  min-height: 280px;
+}
+.mvt-hero__art {
+  background: var(--rev-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1.5px solid var(--rule-strong);
+  user-select: none;
+  padding: 28px 26px 26px;
+  overflow: hidden;
+}
+.mvt-hero__art-label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.mvt-hero__art-code {
+  font-family: var(--font-en);
+  font-weight: 900;
+  font-size: clamp(80px, 10vw, 148px);
+  line-height: 0.84;
+  letter-spacing: -0.06em;
+  color: var(--rev-text);
+}
+.mvt-hero__art-code .ac { color: var(--accent-d); }
+.mvt-hero__art-foot { display: flex; flex-direction: column; gap: 5px; }
+.mvt-hero__art-en {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-deep);
+}
+.mvt-hero__art-count {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.mvt-hero__info {
+  padding: 36px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  background: var(--surface);
+}
+.mvt-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+}
+.mvt-hero__eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 1.5px;
+  background: var(--accent-s);
+  flex-shrink: 0;
+}
+.mvt-hero__title {
+  font-family: var(--font-jp);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.mvt-hero__subtitle {
+  font-family: var(--font-se);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--accent-a);
+  letter-spacing: 0.01em;
+}
+.mvt-hero__lead {
+  font-family: var(--font-se-jp);
+  font-size: 15px;
+  line-height: 1.92;
+  color: var(--text-sub);
+  max-width: 42em;
+}
+.mvt-hero__lead a {
+  color: var(--accent-s);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--accent-s) 40%, transparent);
+}
+.mvt-hero__meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+}
+.mvt-hero__meta-item {
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid var(--border-soft);
+  line-height: 1.7;
+}
+.mvt-hero__meta-item:last-child { border-right: 0; padding-right: 0; margin-right: 0; }
+.mvt-hero__meta-item strong { color: var(--text-main); font-weight: 500; margin-left: 6px; }
+
+/* ── MOVEMENT NAV ──────────────────────────────────────── */
+.mvt-nav {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1.5px solid var(--rule-strong);
+  background: var(--surface-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mvt-nav::-webkit-scrollbar { display: none; }
+.mvt-nav__label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  padding: 0 20px;
+  white-space: nowrap;
+  border-right: 1.5px solid var(--rule-strong);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+.mvt-nav__strip { display: flex; align-items: stretch; }
+.mvt-nav__item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-mute);
+  white-space: nowrap;
+  border-right: 1px solid var(--border-soft);
+  transition: color 120ms, background 120ms;
+}
+.mvt-nav__item:hover { color: var(--accent-a); background: var(--surface); }
+.mvt-nav__item.is-active {
+  background: var(--rev-bg);
+  color: var(--rev-text);
+  font-weight: 500;
+}
+
+/* ── LAYOUT ────────────────────────────────────────────── */
+.era-outer { background: var(--surface); border-bottom: 1.5px solid var(--rule-strong); }
+.era-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 52px 32px 96px;
+  display: grid;
+  grid-template-columns: 1fr 284px;
+  gap: 52px;
+  align-items: start;
+}
+.era-main { display: grid; gap: 16px; min-width: 0; }
+
+/* ── ABSTRACT ──────────────────────────────────────────── */
+.ph-abstract {
+  border-left: 4px solid var(--accent-h);
+  padding: 16px 22px;
+  background: var(--surface-2);
+}
+.ph-abstract__label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.ph-abstract p {
+  font-size: 16px;
+  line-height: 1.95;
+  max-width: 44em;
+  text-align: justify;
+  text-wrap: pretty;
+  font-family: var(--font-se-jp);
+}
+
+/* ── THESIS ────────────────────────────────────────────── */
+.ph-thesis {
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+}
+.ph-thesis__label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+  padding: 12px 24px;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ph-thesis__label::before { content: ''; width: 28px; height: 1.5px; background: var(--accent-s); flex-shrink: 0; }
+.ph-thesis__body {
+  padding: 22px 24px 24px;
+  font-size: 16px;
+  line-height: 1.95;
+  max-width: 44em;
+  text-align: justify;
+  text-wrap: pretty;
+  font-family: var(--font-se-jp);
+}
+.ph-thesis__body em { font-style: normal; font-weight: 700; color: var(--accent-a); }
+
+/* ── SECTION PANELS ────────────────────────────────────── */
+.ph-section { border: 1.5px solid var(--border); background: var(--surface); overflow: hidden; }
+.ph-section__head {
+  padding: 14px 24px;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--surface-2);
+}
+.ph-section__title { display: flex; align-items: baseline; gap: 16px; }
+.ph-section__num {
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ph-section__num::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-h);
+  flex-shrink: 0;
+}
+.ph-section__name { font-family: var(--font-jp); font-weight: 900; font-size: 20px; letter-spacing: 0.03em; }
+.ph-section__body { padding: 24px 28px 28px; }
+.ph-section__body p {
+  font-family: var(--font-se-jp);
+  font-size: 16px;
+  line-height: 1.95;
+  color: var(--text-sub);
+  text-align: justify;
+  text-wrap: pretty;
+}
+.ph-section__body p + p { margin-top: 20px; }
+.ph-section__body a {
+  color: var(--accent-s);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--accent-s) 35%, transparent);
+}
+.ph-section__body .sup-ref { margin-left: 2px; }
+.ph-section__body .sup-ref a {
+  color: var(--text-mute);
+  font-family: var(--font-mo);
+  font-size: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+.ph-section__body .sup-ref a:hover { color: var(--accent-a); }
+
+
+/* ── PHOTOGRAPHER CARDS ─────────────────────────────────── */
+.er-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.pc-card {
+  border: 1.5px solid var(--border);
+  background: var(--surface-2);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 200ms ease;
+}
+.pc-card:hover { transform: translateY(-2px); }
+.pc-card > a { display: block; color: inherit; text-decoration: none; }
+.pc-top {
+  position: relative;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--surface-2);
+  padding: 48px 18px 14px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.pc-top__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.pc-top__meta .idx { position: absolute; top: 12px; left: 18px; font-family: var(--font-mo); font-weight: 500; font-size: 32px; line-height: 0.9; letter-spacing: -0.03em; color: var(--accent-s); z-index: 2; }
+.pc-top__meta > span:nth-child(2) { position: absolute; top: 16px; right: 18px; }
+.pc-top__art { overflow: hidden; }
+
+/* Year */
+.pc-top--year .pc-top__art { flex: 1; display: flex; flex-direction: column; gap: 0; justify-content: center; overflow: hidden; }
+.yr-birth { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 104px; line-height: 0.84; letter-spacing: -0.01em; color: var(--text-main); display: block; }
+.yr-dash  { font-family: var(--font-en); font-size: 28px; font-weight: 300; line-height: 1.1; letter-spacing: 0.18em; color: var(--accent-s); display: block; }
+.yr-death { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-style: italic; font-size: 60px; line-height: 0.84; letter-spacing: -0.01em; color: var(--text-main); opacity: 0.72; display: block; }
+
+/* Initials */
+.pc-top--initials .pc-top__art {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-en); font-weight: 800; font-size: 148px;
+  line-height: 0.82; letter-spacing: -0.06em; color: var(--text-main);
+}
+.pc-top--initials .pc-top__art .accent { color: var(--accent-a); }
+
+/* Slash */
+.pc-top--slash .pc-top__art { flex: 1; display: flex; flex-direction: column; gap: 2px; justify-content: flex-end; overflow: hidden; }
+.pc-top--slash .fn { font-family: var(--font-mo); font-size: 9px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--text-mute); display: block; }
+.pc-top--slash .ln { font-family: var(--font-en); font-weight: 900; font-size: 88px; line-height: 0.80; letter-spacing: -0.05em; color: var(--text-main); display: block; overflow: hidden; }
+
+/* Stacked */
+.pc-top--stacked .pc-top__art { flex: 1; display: flex; flex-direction: column; gap: 0; justify-content: flex-end; overflow: hidden; }
+.pc-top--stacked .pc-top__art span { font-family: var(--font-en); font-weight: 900; font-size: 72px; line-height: 0.84; letter-spacing: -0.04em; color: var(--text-main); display: block; }
+
+/* Twosize */
+.pc-top--twosize .pc-top__art { flex: 1; display: flex; flex-direction: column; gap: 8px; justify-content: center; overflow: hidden; }
+.big  { font-family: var(--font-en); font-weight: 900; font-size: 82px; line-height: 0.80; letter-spacing: -0.05em; color: var(--text-main); display: block; overflow: hidden; }
+.anno { font-family: var(--font-mo); font-size: 9px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--text-mute); display: block; }
+
+/* Fragment */
+.pc-top--fragment { overflow: hidden; }
+.pc-top--fragment .pc-top__art {
+  font-family: var(--font-en); font-weight: 900; font-size: 280px;
+  line-height: 0.72; letter-spacing: -0.05em; color: var(--text-main);
+  opacity: 0.12; transform: translate(-16px, 14px);
+  pointer-events: none; user-select: none;
+}
+
+/* Card body */
+.pc-body { padding: 22px 22px 24px; display: grid; gap: 12px; background: var(--surface-2); }
+.pc-body__kind { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mo); font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-mute); font-weight: 500; }
+.pc-body__kind::before { content: ''; width: 8px; height: 8px; background: var(--accent-a); border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.pc-body__name { font-family: var(--font-jp); font-weight: 700; font-size: 24px; line-height: 1.3; letter-spacing: 0.04em; color: var(--text-main); margin: 0; }
+.pc-body__name-en { font-family: var(--font-se); font-style: italic; font-weight: 500; font-size: 15px; color: var(--accent-a); margin-top: 4px; }
+.pc-body__meta { font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mute); }
+.pc-body .pc-body__lede { font-family: var(--font-jp); font-size: 14px; line-height: 1.85; color: var(--text-main); margin: 0; }
+.pc-body__tags { display: flex; flex-wrap: wrap; gap: 12px; }
+.pc-body__tag { font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.10em; color: var(--text-sub); }
+.pc-body__tag::before { content: '· '; color: var(--text-deep); }
+.pc-body__cta {
+  padding-top: 14px; border-top: 1px solid var(--border-soft);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--accent-a); font-weight: 500; margin-top: 4px;
+}
+.pc-card:hover .pc-body__cta { color: var(--accent-d); }
+/* kf-char / kf-gloss — kanji card art (from archive inline CSS) */
+.kf-char{font-family:'Noto Sans JP',sans-serif;font-weight:900;line-height:0.88;letter-spacing:-0.02em;color:var(--text-main);display:block;}
+.kf-gloss{font-family:var(--font-mo);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent-s);display:block;font-weight:500;}
+/* Additional card variant styles from archive (not in card-v4-base.css) */
+.pc-top--kanji-foreign .pc-top__art{display:flex;flex-direction:column;gap:4px;overflow:hidden;}
+.pc-top--cite .pc-top__art{display:flex;flex-direction:column;gap:6px;overflow:hidden;}
+.cty{font-family:var(--font-en);font-weight:900;font-size:58px;line-height:0.82;letter-spacing:-0.04em;color:var(--text-main);display:block;overflow:hidden;}
+.cyr{font-family:var(--font-mo);font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent-s);display:block;}
+.pc-top--title .pc-top__art{font-family:var(--font-en);font-weight:900;font-size:82px;line-height:0.82;letter-spacing:-0.05em;color:var(--text-main);overflow:hidden;}
+.pc-top--serif .pc-top__art{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:76px;line-height:0.87;color:var(--text-main);letter-spacing:-0.01em;overflow:hidden;}
+.pc-top--country .pc-top__art{font-family:var(--font-mo);font-weight:600;font-size:118px;line-height:0.82;letter-spacing:-0.07em;color:var(--text-main);}
+.pc-top--rotate{overflow:hidden;}
+.pc-top--rotate .pc-top__art{writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);font-family:var(--font-en);font-weight:900;font-size:100px;letter-spacing:-0.05em;line-height:0.85;color:var(--text-main);max-height:160px;overflow:hidden;align-self:flex-start;}
+.pc-top--outline{overflow:hidden;}
+.pc-top--outline .pc-top__art{font-family:var(--font-en);font-weight:900;font-size:112px;line-height:0.80;letter-spacing:-0.06em;-webkit-text-stroke:1.5px var(--text-main);color:transparent;overflow:hidden;}
+
+/* ── SOURCES ───────────────────────────────────────────── */
+.sources-grid { display: grid; gap: 0; }
+.src-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.src-item:last-child { border-bottom: 0; }
+.src-num {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.20em;
+  color: var(--accent-s);
+  font-weight: 500;
+}
+.src-link {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-sub);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--border-soft);
+  transition: color 100ms;
+}
+.src-link:hover { color: var(--accent-a); text-decoration-color: var(--accent-a); }
+
+/* ── SIDEBAR ───────────────────────────────────────────── */
+.era-side {
+  position: sticky;
+  top: 24px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+.ph-side-block {
+  border: 1px solid var(--border-soft);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.ph-side-block__head {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--surface);
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+}
+.ph-side-block__body { padding: 14px; }
+.ph-side-meta { display: grid; gap: 0; }
+.ph-side-meta-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 8px;
+  font-size: 12px;
+  align-items: start;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ph-side-meta-row:first-child { padding-top: 0; }
+.ph-side-meta-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.ph-side-meta-key {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  padding-top: 2px;
+}
+.ph-side-meta-val { color: var(--text-main); line-height: 1.5; }
+.ph-side-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ph-side-chip {
+  display: inline-flex;
+  padding: 5px 10px;
+  border: 1px solid var(--border-soft);
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  color: var(--text-sub);
+  transition: border-color 100ms, color 100ms;
+}
+.ph-side-chip a { color: inherit; }
+.ph-side-chip:hover { border-color: var(--accent-a); color: var(--accent-a); }
+.ph-side-chip.is-primary {
+  background: var(--accent-h);
+  border-color: var(--accent-h);
+  color: var(--text-main);
+}
+.ph-side-nav { display: grid; gap: 0; }
+.ph-side-nav a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  transition: color 120ms, background 120ms;
+}
+.ph-side-nav a:last-child { border-bottom: 0; }
+.ph-side-nav a:hover { color: var(--accent-a); background: var(--surface); }
+.ph-side-nav a span:last-child { color: var(--text-deep); }
+
+/* ── FOOTER ────────────────────────────────────────────── */
+.foot {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-top: 1.5px solid var(--rule-strong);
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.foot__center { text-align: center; }
+.foot__right { text-align: right; }
+.foot a { color: var(--accent-a); }
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .mvt-hero { grid-template-columns: 260px 1fr; }
+  .era-layout { grid-template-columns: 1fr; gap: 28px; }
+  .era-side { position: static; grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .head { grid-template-columns: auto 1fr; gap: 12px; padding: 12px 16px; }
+  .head__crumbs { display: none; }
+  .mvt-hero { grid-template-columns: 1fr; }
+  .mvt-hero__art {
+    min-height: 140px;
+    border-right: 0;
+    border-bottom: 1.5px solid var(--rule-strong);
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 20px 24px;
+  }
+  .mvt-hero__art-label { display: none; }
+  .mvt-hero__art-code { font-size: 80px; }
+  .mvt-hero__info { padding: 24px 20px; }
+  .era-layout { padding: 28px 16px 64px; }
+  .era-side { grid-template-columns: 1fr; }
+  .er-cards { grid-template-columns: 1fr; }
+  .foot { grid-template-columns: 1fr; gap: 4px; }
+  .foot__center, .foot__right { text-align: left; }
+}
+@media (max-width: 480px) {
+  .mvt-nav__label { display: none; }
+  .mvt-hero__art-code { font-size: 64px; }
+}
+/* ── SEARCH SIDEBAR ─────────────────────────────────────── */
+.ph-side-search{border:1px solid var(--border-soft);background:var(--surface-2);}
+.ph-side-search__label{display:block;font-family:var(--font-mo);font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--accent-s);font-weight:500;padding:10px 14px 6px;background:var(--surface);border-bottom:1px solid var(--border-soft);}
+.ph-side-search__field{display:flex;align-items:center;transition:background 120ms;}
+.ph-side-search__field:focus-within{background:var(--accent-h);}
+.ph-side-search__field:focus-within .ph-side-search__input,.ph-side-search__field:focus-within .ph-side-search__btn{color:var(--text-main);}
+.ph-side-search__input{flex:1;font-family:var(--font-mo);font-size:11px;letter-spacing:0.08em;color:var(--text-sub);background:transparent;border:none;outline:none;padding:10px 8px 10px 14px;width:100%;min-width:0;}
+.ph-side-search__input::placeholder{color:var(--text-mute);font-size:10px;}
+.ph-side-search__btn{display:flex;align-items:center;justify-content:center;padding:0 12px;color:var(--text-mute);background:transparent;border:none;cursor:pointer;transition:color 120ms;}
+.ph-side-search__btn:hover{color:var(--text-main);}
+.ph-search-suggestions{list-style:none;border-top:1px solid var(--border-soft);background:var(--surface);max-height:280px;overflow-y:auto;}
+.ph-search-suggestions[hidden]{display:none;}
+.ph-search-suggestion{display:block;border-bottom:1px solid var(--border-soft);}
+.ph-search-suggestion:last-child{border-bottom:none;}
+.ph-search-suggestion a{display:flex;flex-direction:column;gap:2px;padding:10px 14px;transition:background 80ms;text-decoration:none;}
+.ph-search-suggestion a:hover,.ph-search-suggestion a:focus{background:var(--accent-h);outline:none;}
+.ph-search-suggestion__name{font-family:var(--font-jp);font-weight:700;font-size:13px;color:var(--text-main);}
+.ph-search-suggestion__name mark{background:var(--accent-h);color:var(--text-main);font-weight:700;}
+.ph-search-suggestion__meta{font-family:var(--font-mo);font-size:10px;letter-spacing:0.12em;color:var(--text-mute);text-transform:uppercase;}
+.ph-search-suggestion__en{font-family:var(--font-se);font-style:italic;font-size:11px;color:var(--text-sub);}
+.ph-search-no-result{padding:12px 14px;font-family:var(--font-mo);font-size:10px;letter-spacing:0.14em;color:var(--text-mute);text-transform:uppercase;}
+/* ── SOURCES (photographer-page format) ─────────────────── */
+.ph-sources{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;}
+.ph-cite{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;font-size:12px;line-height:1.55;}
+.ph-cite__num{font-family:var(--font-mo);font-size:10px;color:var(--accent-s);padding-top:2px;}
+.ph-cite a{color:var(--accent-a);}
+@media(max-width:640px){.ph-sources{grid-template-columns:1fr;}}
+/* ── BRAND PHOTO MARK ────────────────────────────────────── */
+.head__brand-photo{background:var(--accent-d);color:#ffffff;padding:0 0.05em;border-radius:2px;display:inline-block;line-height:0.96;}
+
+</style></head><body><div class="page">
+<header class="head"><div class="head__brand"><span class="head__brand-ja"><a href="../index-v51.html"><span class="head__brand-photo">写真</span>の座標</a></span><span class="head__brand-en">Photo Coordinates</span></div><div class="head__crumbs"><em>MOVEMENTS</em><span class="sep">/</span>ダダ<span class="sep">·</span>Dada<span class="sep">·</span>UPDATED&nbsp;<span class="updated-date">2026.05</span></div><div class="head__meta"><div class="head__lang"><button class="is-active">JP</button><button>EN</button></div></div></header>
+<section class="mvt-hero"><div class="mvt-hero__art"><div class="mvt-hero__art-label">MOVEMENT · 表現</div><div class="mvt-hero__art-code">DA<span class="ac">DA</span></div><div class="mvt-hero__art-foot"><div class="mvt-hero__art-en">DADA</div><div class="mvt-hero__art-count">1 PHOTOGRAPHERS</div></div></div><div class="mvt-hero__info"><div class="mvt-hero__eyebrow">§ — Movement — 表現で読む</div><h1 class="mvt-hero__title">ダダ</h1><div class="mvt-hero__subtitle">Dada</div><p class="mvt-hero__lead">ダダの写真は、写真を現実の証拠や美しいプリントとして扱うのではなく、切断し、貼り合わせ、再配置し、印刷物の中で政治的に機能させる素材へ変えた。第一次世界大戦への幻滅から生まれた反芸術の運動として知られるが、写真史上で重要なのは、フォトモンタージュによって大量複製されたメディア画像を批判の武器へ転用したことである。写真の真実らしさは、ここで初めて大規模に分解された。</p><div class="mvt-hero__meta-row"><span class="mvt-hero__meta-item">Photographers<strong>1</strong></span><span class="mvt-hero__meta-item">Category<strong>表現</strong></span><span class="mvt-hero__meta-item">Period<strong>1916–1920s</strong></span><span class="mvt-hero__meta-item">Updated<strong>2026.05</strong></span></div></div></section>
+<nav class="mvt-nav"><div class="mvt-nav__label">§ — 表現で読む</div><div class="mvt-nav__strip"><a class="mvt-nav__item" href="./自然主義写真.html">自然主義写真</a><a class="mvt-nav__item" href="./ピクトリアリズム.html">ピクトリアリズム</a><a class="mvt-nav__item" href="./写真分離派.html">写真分離派</a><a class="mvt-nav__item" href="./ストレート写真.html">ストレート写真</a><a class="mvt-nav__item" href="./新即物主義.html">新即物主義</a><a class="mvt-nav__item" href="./新しいヴィジョン.html">新しいヴィジョン</a><a class="mvt-nav__item" href="./バウハウス.html">バウハウス</a><a class="mvt-nav__item" href="./ヴォルテクシズム.html">ヴォルテクシズム</a><a class="mvt-nav__item is-active" href="./ダダ.html">ダダ</a><a class="mvt-nav__item" href="./シュルレアリスム.html">シュルレアリスム</a><a class="mvt-nav__item" href="./レイオグラフ.html">レイオグラフ</a><a class="mvt-nav__item" href="./モダニズム.html">モダニズム</a><a class="mvt-nav__item" href="./決定的瞬間.html">決定的瞬間</a><a class="mvt-nav__item" href="./ドキュメンタリー.html">ドキュメンタリー</a><a class="mvt-nav__item" href="./社会ドキュメンタリー.html">社会ドキュメンタリー</a><a class="mvt-nav__item" href="./FSA写真.html">FSA写真</a><a class="mvt-nav__item" href="./フォトジャーナリズム.html">フォトジャーナリズム</a><a class="mvt-nav__item" href="./ストリート写真.html">ストリート写真</a><a class="mvt-nav__item" href="./プロヴォーク.html">プロヴォーク</a><a class="mvt-nav__item" href="./リアリズム写真.html">リアリズム写真</a><a class="mvt-nav__item" href="./私写真.html">私写真</a><a class="mvt-nav__item" href="./コンセプチュアルアート.html">コンセプチュアルアート</a><a class="mvt-nav__item" href="./ニューカラー.html">ニューカラー</a><a class="mvt-nav__item" href="./カラー写真.html">カラー写真</a><a class="mvt-nav__item" href="./ピクチャーズ世代.html">ピクチャーズ世代</a><a class="mvt-nav__item" href="./フェミニズム写真.html">フェミニズム写真</a><a class="mvt-nav__item" href="./タイポロジー写真.html">タイポロジー写真</a><a class="mvt-nav__item" href="./デュッセルドルフ派.html">デュッセルドルフ派</a><a class="mvt-nav__item" href="./大判カラー写真.html">大判カラー写真</a><a class="mvt-nav__item" href="./シネマトグラフィック写真.html">シネマトグラフィック写真</a><a class="mvt-nav__item" href="./ステージド写真.html">ステージド写真</a></div></nav>
+<div class="era-outer"><div class="era-layout"><main class="era-main">
+<div class="ph-abstract"><div class="ph-abstract__label">Overview · この表現について</div><p>大量複製されたメディア画像を批判の武器へ転用した前衛運動。切断と再配置によって、写真の「本物らしさ」は批評の効果へと変換された。</p></div>
+<div class="ph-thesis"><div class="ph-thesis__label">核心命題</div><p class="ph-thesis__body">ダダが露わにしたのは、<em>写真の真実性が自動的なものではなく、編集と配置によっていくらでも組み替えられる</em>ことである。これは後のシュルレアリスム、コンセプチュアルアート、ピクチャーズ世代へつながる大きな転換だった。</p></div>
+<section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 01</span><span class="ph-section__name">表現解説</span></div></div><div class="ph-section__body"><p>ダダは1916年のチューリヒから始まり、ベルリン、パリ、ニューヨークへ広がった。背景にあるのは、第一次世界大戦が近代文明の進歩神話を崩したことである。写真にとって転換的だったのは、新聞や雑誌から切り抜いたイメージを組み替えるフォトモンタージュである。<a href="../manray.html">マン・レイ</a>のような写真実験も重要であるが、ベルリンではハンナ・ヘッヒやハートフィールド、ハウスマンが大量印刷された顔、文字、機械部品を組み替えて、政治とメディアの言語を反転させた。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+<p>ダダの写真実践は、美術館の一枚物よりも、ポスター、雑誌、パンフレット、展覧会空間といった複合的な媒体の中で力を持った。印刷物に介入することで、写真は作品であると同時に宣言や攻撃文にもなる。ジョン・ハートフィールドの政治的フォトモンタージュが新聞やポスターの回路でファシズムを直接風刺したのに対し、マン・レイの実験は写真の物質的な不確かさを押し出した。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p></div></section>
+<section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 02</span><span class="ph-section__name">批評と受容</span></div></div><div class="ph-section__body"><p>ダダは破壊と否定の身振りが強いため、長期的な構築原理を持ちにくいという限界もあった。反芸術の語りが後から制度化されるという逆説も生じる。のちにダダが美術館や教科書の中で正典化されると、反芸術の衝撃はしばしば安全な歴史語りへ回収された。<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p>
+<p>それでもダダの写真を読む意味は大きく、写真が「写すこと」だけでなく「すでにある像を再編すること」によっても歴史を動かせると示したからである。<a href="./シュルレアリスム.html">シュルレアリスム</a>や<a href="./レイオグラフ.html">レイオグラフ</a>と併せて見ると、その破壊のあとにどんな新しい写真言語が開いたのかがはっきりする。<sup class="sup-ref"><a href="#cite-10">*10</a></sup></p></div></section>
+<section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 03</span><span class="ph-section__name">関連する表現</span></div></div><div class="ph-section__body"><p><a href="./シュルレアリスム.html">シュルレアリスム</a>が夢や欲望へ向かったのに対し、ダダはまず切断と政治的風刺に向かった。<a href="./レイオグラフ.html">レイオグラフ</a>や後の<a href="./コンセプチュアルアート.html">コンセプチュアルアート</a>へ開いた回路も、この反芸術の身振りから読み直せる。<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p></div></section>
+<section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 04</span><span class="ph-section__name">写真家一覧</span></div></div><div class="ph-section__body"><div class="er-cards">
+<article class="pc-card pc-card--photographer">
+  <a href="../manray.html">
+    <div class="pc-top pc-top--country">
+      <div class="pc-top__meta"><span class="idx">21</span><span>PHOTOGRAPHER</span></div>
+      <div class="pc-top__art">MR</div>
+      <div class="pc-top__hint">MAN RAY · 1890–1976</div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-body__kind">Photographer</span>
+      <div><h3 class="pc-body__name">マン・レイ</h3><div class="pc-body__name-en">Man Ray</div></div>
+      <div class="pc-body__meta">アメリカ / フランス · 1890–1976</div>
+      <p class="pc-body__lede">ダダとシュルレアリスムの中心で活動したアメリカ生まれの作家。暗室での偶然と光の操作によるRayograph、ソラリゼーション、ファッション写真などを通じ、写真を記録装置か…</p>
+      <div class="pc-body__channel">写真史の論点 · ダダ</div>
+      <div class="pc-body__tags"><span class="pc-body__tag">ダダ</span><span class="pc-body__tag">シュルレアリスム</span><span class="pc-body__tag">レイオグラフ</span></div>
+      <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+    </div>
+  </a>
+</article>
+</div></div></section>
+<section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ SRC</span><span class="ph-section__name">出典</span></div></div><div class="ph-section__body"><div class="ph-sources"><div class="ph-cite" id="cite-1"><span class="ph-cite__num">*1</span><a href="https://www.moma.org/calendar/exhibitions/241" rel="noopener" target="_blank">MoMA — The Photomontages of Hannah Höch</a></div><div class="ph-cite" id="cite-2"><span class="ph-cite__num">*2</span><a href="https://www.metmuseum.org/ko/art/collection/search/265169" rel="noopener" target="_blank">The Met — Hannah Höch, Weltrevolution</a></div><div class="ph-cite" id="cite-3"><span class="ph-cite__num">*3</span><a href="https://www.metmuseum.org/art/collection/search/210014296" rel="noopener" target="_blank">The Met — Hannah Höch, Der Traum seinen Lebens</a></div><div class="ph-cite" id="cite-4"><span class="ph-cite__num">*4</span><a href="https://www.moma.org/collection/terms/photomontage" rel="noopener" target="_blank">MoMA — Photomontage term</a></div><div class="ph-cite" id="cite-5"><span class="ph-cite__num">*5</span><a href="https://www.getty.edu/art/exhibitions/heartfield/" rel="noopener" target="_blank">Getty — Agitated Images: John Heartfield</a></div><div class="ph-cite" id="cite-6"><span class="ph-cite__num">*6</span><a href="https://www.metmuseum.org/toah/hd/manr/hd_manr.htm" rel="noopener" target="_blank">The Met — Man Ray</a></div><div class="ph-cite" id="cite-7"><span class="ph-cite__num">*7</span><a href="https://www.tate.org.uk/art/artists/man-ray-1542" rel="noopener" target="_blank">Tate — Man Ray</a></div><div class="ph-cite" id="cite-8"><span class="ph-cite__num">*8</span><a href="https://www.moma.org/artists/3787" rel="noopener" target="_blank">MoMA — Rayographs / Man Ray</a></div><div class="ph-cite" id="cite-9"><span class="ph-cite__num">*9</span><a href="https://www.moma.org/artists/2675" rel="noopener" target="_blank">MoMA — Hannah Höch artist page</a></div><div class="ph-cite" id="cite-10"><span class="ph-cite__num">*10</span><a href="https://www.moma.org/audio/playlist/198/2633" rel="noopener" target="_blank">MoMA audio — Cut with a Kitchen Knife</a></div></div></div></section>
+</main><aside class="era-side">
+<div class="ph-side-search"><form class="ph-side-search__form" onsubmit="return false;"><label class="ph-side-search__label" for="ph-search-input">SEARCH · 写真家を探す</label><div class="ph-side-search__field"><input class="ph-side-search__input" id="ph-search-input" type="search" placeholder="写真家名・運動・キーワード" autocomplete="off" aria-autocomplete="list" aria-controls="ph-search-suggestions" aria-expanded="false"><button class="ph-side-search__btn" type="button" aria-label="検索"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div></form><ul class="ph-search-suggestions" id="ph-search-suggestions" role="listbox" hidden></ul></div><div class="ph-side-block"><div class="ph-side-block__head">Entry · データ</div><div class="ph-side-block__body"><div class="ph-side-meta"><div class="ph-side-meta-row"><span class="ph-side-meta-key">Movement</span><span class="ph-side-meta-val">ダダ</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">English</span><span class="ph-side-meta-val">Dada</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Photogs</span><span class="ph-side-meta-val">1</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Period</span><span class="ph-side-meta-val">1916–1920s</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Updated</span><span class="ph-side-meta-val">2026.05</span></div></div></div></div>
+<div class="ph-side-block"><div class="ph-side-block__head">Related · 関連する表現</div><div class="ph-side-block__body"><div class="ph-side-chips"><span class="ph-side-chip is-primary">ダダ</span><span class="ph-side-chip"><a href="./シュルレアリスム.html">シュルレアリスム</a></span><span class="ph-side-chip"><a href="./レイオグラフ.html">レイオグラフ</a></span><span class="ph-side-chip"><a href="./コンセプチュアルアート.html">コンセプチュアルアート</a></span></div></div></div>
+<div class="ph-side-block"><div class="ph-side-block__head">Photographers · 写真家</div><div class="ph-side-block__body"><div class="ph-side-chips"><span class="ph-side-chip"><a href="../manray.html">Ray</a></span></div></div></div>
+<div class="ph-side-block"><div class="ph-side-block__head">Navigate · 移動</div><nav class="ph-side-nav"><a href="../cards-archive.html"><span>表現一覧</span><span>All Movements</span></a><a href="../index-v51.html"><span>トップへ</span><span>Top</span></a></nav></div>
+</aside></div></div>
+<footer class="foot"><div>© Photo Coordinates · Movement</div><div class="foot__center">美術館・アーカイブ・専門資料に基づく</div><div class="foot__right"><a href="/privacy">プライバシー</a> · <a href="/colophon">コロフォン</a></div></footer>
+</div><script>
+(function(){
+  var input=document.getElementById('ph-search-input'),list=document.getElementById('ph-search-suggestions');
+  if(!input||!list)return;
+  var photographers=[];
+  fetch('/card-data.json').then(function(r){return r.json();}).then(function(data){
+    photographers=(data.photographers||[]).map(function(p){
+      return{name_ja:p.nameJa||'',name_en:p.nameEn||'',slug:p.id||'',url:p.href||'',
+             country:(p.metaJa||'').split('·')[0].trim(),movement:p.channel||''};
+    });
+  });
+  function matches(ph,q){var ql=q.toLowerCase();
+    return ph.name_ja.includes(q)||ph.name_en.toLowerCase().includes(ql)||
+           ph.slug.toLowerCase().includes(ql)||
+           (ph.movement&&ph.movement.toLowerCase().includes(ql))||
+           (ph.country&&ph.country.includes(q));}
+  function hl(t,q){if(!q)return t;var i=t.toLowerCase().indexOf(q.toLowerCase());
+    if(i===-1)return t;
+    return t.slice(0,i)+'<mark>'+t.slice(i,i+q.length)+'</mark>'+t.slice(i+q.length);}
+  function render(rs,q){list.innerHTML='';
+    if(!rs.length){list.innerHTML='<li class="ph-search-no-result">該当する写真家が見つかりません</li>';
+      list.hidden=false;input.setAttribute('aria-expanded','true');return;}
+    rs.slice(0,5).forEach(function(ph){var li=document.createElement('li');
+      li.className='ph-search-suggestion';li.setAttribute('role','option');
+      li.innerHTML='<a href="'+ph.url+'">'
+        +'<span class="ph-search-suggestion__name">'+hl(ph.name_ja,q)+'</span>'
+        +'<span class="ph-search-suggestion__en">'+ph.name_en+'</span>'
+        +'<span class="ph-search-suggestion__meta">'+ph.country
+        +(ph.movement?' · '+ph.movement:'')+'</span></a>';
+      list.appendChild(li);});
+    list.hidden=false;input.setAttribute('aria-expanded','true');}
+  function hide(){list.hidden=true;list.innerHTML='';input.setAttribute('aria-expanded','false');}
+  input.addEventListener('input',function(){var q=this.value.trim();if(!q){hide();return;}
+    render(photographers.filter(function(ph){return matches(ph,q);}),q);});
+  input.addEventListener('blur',function(){setTimeout(hide,150);});
+  input.addEventListener('keydown',function(e){if(e.key==='Escape'){hide();input.blur();}});
+})();
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2VRTV8BZEJ"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-2VRTV8BZEJ');
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles/taxonomy-page.css?v=20260517a">
-</head>
-<body>
-  <header class="page-header" data-nosnippet>
-    <div class="container">
-      <div class="header-top">
-        <div class="header-label">Photo Coordinates / Movement</div>
-      </div>
-      <div class="site-brand-title"><a class="site-brand-title-link" href="/"><em>写真の座標</em></a></div>
-      <p class="header-keywordline">ダダ｜表現｜写真史｜<a href="/">写真の座標</a>｜</p>
-    </div>
-  </header>
-  <nav class="tab-nav" data-nosnippet>
-    <div class="tab-nav-inner">
-      <div class="page-top-links top-links">
-        <div class="tab-nav-selects">
-          <span class="select-wrap"><select class="tax-select filter-select nav-select" aria-label="年代別で見る" onchange="if(this.value) window.location.href=this.value"><option value="" selected>年代別で見る</option><option value="/archive.html#tab-era">年代順で見る</option><option value="/eras/1839.html">1839–1860s</option><option value="/eras/1870.html">1870–1890s</option><option value="/eras/1890.html">1890–1910s</option><option value="/eras/1910.html">1910–1920s</option><option value="/eras/1930.html">1930–1940s</option><option value="/eras/1950.html">1950–1960s</option><option value="/eras/1970.html">1970–1980s</option><option value="/eras/1980.html">1980–1990s</option><option value="/eras/1990.html">1990–2000s</option><option value="/eras/2000.html">2000–2010s</option><option value="/eras/2010.html">2010–2020s</option></select></span><span class="select-wrap"><select class="tax-select filter-select nav-select" aria-label="国別でみる" onchange="if(this.value) window.location.href=this.value"><option value="" selected>国別で見る</option><option value="/countries/ireland.html">アイルランド</option><option value="/countries/united-states.html">アメリカ</option><option value="/countries/united-states-united-kingdom.html">アメリカ / イギリス</option><option value="/countries/united-states-france.html">アメリカ / フランス</option><option value="/countries/argentina-spain.html">アルゼンチン / スペイン</option><option value="/countries/albania.html">アルバニア</option><option value="/countries/united-kingdom.html">イギリス</option><option value="/countries/united-kingdom-united-states.html">イギリス / アメリカ</option><option value="/countries/italy.html">イタリア</option><option value="/countries/italy-united-kingdom.html">イタリア / イギリス</option><option value="/countries/iran-switzerland.html">イラン / スイス</option><option value="/countries/ukraine.html">ウクライナ</option><option value="/countries/ukraine-united-states.html">ウクライナ / アメリカ</option><option value="/countries/netherlands.html">オランダ</option><option value="/countries/australia.html">オーストラリア</option><option value="/countries/austria.html">オーストリア</option><option value="/countries/austria-canada.html">オーストリア / カナダ</option><option value="/countries/canada.html">カナダ</option><option value="/countries/canada-united-states.html">カナダ / アメリカ</option><option value="/countries/kenya-united-states.html">ケニア / アメリカ</option><option value="/countries/switzerland.html">スイス</option><option value="/countries/switzerland-germany.html">スイス / ドイツ</option><option value="/countries/sweden.html">スウェーデン</option><option value="/countries/spain.html">スペイン</option><option value="/countries/slovakia-france.html">スロバキア / フランス</option><option value="/countries/czech-republic.html">チェコ</option><option value="/countries/denmark.html">デンマーク</option><option value="/countries/denmark-united-states.html">デンマーク / アメリカ</option><option value="/countries/germany.html">ドイツ</option><option value="/countries/germany-united-kingdom.html">ドイツ / イギリス</option><option value="/countries/germany-brazil.html">ドイツ / ブラジル</option><option value="/countries/nigeria-united-kingdom.html">ナイジェリア / イギリス</option><option value="/countries/norway.html">ノルウェー</option><option value="/countries/hungary.html">ハンガリー</option><option value="/countries/hungary-germany.html">ハンガリー / ドイツ</option><option value="/countries/hungary-france.html">ハンガリー / フランス</option><option value="/countries/finland.html">フィンランド</option><option value="/countries/france.html">フランス</option><option value="/countries/brazil.html">ブラジル</option><option value="/countries/vietnam-united-states.html">ベトナム / アメリカ</option><option value="/countries/venezuela.html">ベネズエラ</option><option value="/countries/belgium.html">ベルギー</option><option value="/countries/poland.html">ポーランド</option><option value="/countries/poland-united-states.html">ポーランド / アメリカ</option><option value="/countries/mali.html">マリ</option><option value="/countries/mexico.html">メキシコ</option><option value="/countries/mexico-switzerland.html">メキシコ / スイス</option><option value="/countries/morocco-france.html">モロッコ / フランス</option><option value="/countries/lithuania-united-states.html">リトアニア / アメリカ</option><option value="/countries/lithuania-united-kingdom.html">リトアニア / イギリス</option><option value="/countries/lithuania-france.html">リトアニア / フランス</option><option value="/countries/luxembourg-united-states.html">ルクセンブルク / アメリカ</option><option value="/countries/romania.html">ルーマニア</option><option value="/countries/lebanon-united-states.html">レバノン / アメリカ</option><option value="/countries/russia.html">ロシア</option><option value="/countries/china.html">中国</option><option value="/countries/north-macedonia.html">北マケドニア</option><option value="/countries/south-africa.html">南アフリカ</option><option value="/countries/south-africa-united-kingdom.html">南アフリカ / イギリス</option><option value="/countries/japan.html">日本</option><option value="/countries/south-korea.html">韓国</option><option value="/countries/south-korea-united-states.html">韓国 / アメリカ</option></select></span><span class="select-wrap"><select class="tax-select filter-select nav-select" aria-label="表現からみる" onchange="if(this.value) window.location.href=this.value"><option value="" selected>表現から見る</option><option value="/movements/バウハウス.html">バウハウス</option><option value="/movements/シネマトグラフィック写真.html">シネマトグラフィック写真</option><option value="/movements/カラー写真.html">カラー写真</option><option value="/movements/コンセプチュアルアート.html">コンセプチュアルアート</option><option value="/movements/ダダ.html">ダダ</option><option value="/movements/決定的瞬間.html">決定的瞬間</option><option value="/movements/ドキュメンタリー.html">ドキュメンタリー</option><option value="/movements/デュッセルドルフ派.html">デュッセルドルフ派</option><option value="/movements/フェミニズム写真.html">フェミニズム写真</option><option value="/movements/FSA写真.html">FSA写真</option><option value="/movements/私写真.html">私写真</option><option value="/movements/大判カラー写真.html">大判カラー写真</option><option value="/movements/モダニズム.html">モダニズム</option><option value="/movements/自然主義写真.html">自然主義写真</option><option value="/movements/新即物主義.html">新即物主義</option><option value="/movements/ニューカラー.html">ニューカラー</option><option value="/movements/新しいヴィジョン.html">新しいヴィジョン</option><option value="/movements/写真分離派.html">写真分離派</option><option value="/movements/フォトジャーナリズム.html">フォトジャーナリズム</option><option value="/movements/ピクトリアリズム.html">ピクトリアリズム</option><option value="/movements/ピクチャーズ世代.html">ピクチャーズ世代</option><option value="/movements/プロヴォーク.html">プロヴォーク</option><option value="/movements/レイオグラフ.html">レイオグラフ</option><option value="/movements/リアリズム写真.html">リアリズム写真</option><option value="/movements/社会ドキュメンタリー.html">社会ドキュメンタリー</option><option value="/movements/ステージド写真.html">ステージド写真</option><option value="/movements/ストレート写真.html">ストレート写真</option><option value="/movements/ストリート写真.html">ストリート写真</option><option value="/movements/シュルレアリスム.html">シュルレアリスム</option><option value="/movements/タイポロジー写真.html">タイポロジー写真</option><option value="/movements/ヴォルテクシズム.html">ヴォルテクシズム</option></select></span>
-        </div>
-      </div>
-      <div class="lang-toggle tab-lang-toggle" aria-label="Language switch">
-        <a class="lang-btn active" href="https://eyescosmos.github.io/movements/ダダ.html">Japanese</a>
-        <a class="lang-btn" href="https://eyescosmos.github.io/en/movements/dada.html">English</a>
-      </div>
-    </div>
-  </nav>
-  <div class="page-shell">
-    <div class="hero">
-      <h1 class="title">ダダ</h1>
-      <p class="lead">ダダの写真は、写真を現実の証拠や美しいプリントとして扱うのではなく、切断し、貼り合わせ、再配置し、印刷物の中で政治的に機能させる素材へ変えました。第一次世界大戦への幻滅から生まれた反芸術の運動として知られるが、写真史上で重要なのは、フォトモンタージュによって大量複製されたメディア画像を批判の武器へ転用したことである。写真の真実らしさは、ここで初めて大規模に分解された。</p>
-      <div class="hero-meta"><div class="meta-group"><div class="group-label">基本情報</div><div class="mini-card-grid"><div class="mini-card"><span class="mini-card-label">表現</span><span class="mini-card-value">ダダ</span></div><div class="mini-card"><span class="mini-card-label">写真家数</span><span class="mini-card-value">1</span></div></div></div></div>
-    </div>
-    <div class="section-grid">
-              <section class="section taxonomy-detail-section">
-          <h2>表現解説</h2>
-          <p>ダダは1916年のチューリヒから始まり、その後ベルリン、パリ、ニューヨークなどへ広がった。背景にあるのは、第一次世界大戦が近代文明の進歩神話を崩したことである。理性、国家、芸術の権威そのものが疑われ、断片、ナンセンス、偶発性が反抗の形式になった。<sup class="sup-ref"><a href="#cite-1" aria-label="Source 1">*1</a></sup>写真にとって転換的だったのは、新聞や雑誌から切り抜いたイメージを組み替えるフォトモンタージュである。<a class="taxonomy-inline-link" href="/photographers/manray.html">マン・レイ</a>のような写真実験も重要であるが、ベルリンではハンナ・ヘッヒやハートフィールド、ハウスマンが、大量印刷された顔、文字、機械部品を組み替えて、政治とメディアの言語を反転させました。<sup class="sup-ref"><a href="#cite-2" aria-label="Source 2">*2</a></sup>ここで写真は、現場を忠実に記録するものではなく、すでに流通しているイメージを奪い返して別の文脈へ投げ込む素材になる。切断と再配置によって、写真の「本物らしさ」は批評の効果へと変換された。<sup class="sup-ref"><a href="#cite-3" aria-label="Source 3">*3</a></sup>ダダの写真実践は、美術館の一枚物よりも、ポスター、雑誌、パンフレット、展覧会空間といった複合的な媒体の中で力を持った。印刷物に介入することで、写真は作品であると同時に宣言や攻撃文にもなる。<sup class="sup-ref"><a href="#cite-4" aria-label="Source 4">*4</a></sup>ダダの写真が露わにしたのは、写真の真実性が自動的なものではなく、編集と配置によっていくらでも組み替えられることを露わにした点にある。これは後の<a class="taxonomy-inline-link" href="/movements/シュルレアリスム.html">シュルレアリスム</a>、<a class="taxonomy-inline-link" href="/movements/コンセプチュアルアート.html">コンセプチュアルアート</a>、<a class="taxonomy-inline-link" href="/movements/ピクチャーズ世代.html">ピクチャーズ世代</a>へつながる大きな転換だった。<sup class="sup-ref"><a href="#cite-5" aria-label="Source 5">*5</a></sup></p>
-          <p>ベルリン・ダダにおけるハンナ・ヘッヒ、ジョン・ハートフィールド、ラウル・ハウスマンのフォトモンタージュは、雑誌や新聞のイメージを切断して、戦後ドイツの政治とメディアそのものを風刺する装置だった。マン・レイの実験が個々のイメージの不安定さへ向かったのに対し、ベルリンの写真実践は印刷メディアの大量流通へ直接介入する点で、より露骨に政治的である。<sup class="sup-ref"><a href="#cite-6" aria-label="Source 6">*6</a></sup>ジョン・ハートフィールドの政治的フォトモンタージュが、新聞やポスターの回路でファシズムや資本主義を直接風刺したのに対し、マン・レイの実験は写真の物質的な不確かさを押し出した。ここにある差を押さえると、ダダは単なる奇抜な前衛ではなく、印刷メディアの政治利用と写真そのものの解体が同時に進んだ場だったと見えてくる。<sup class="sup-ref"><a href="#cite-7" aria-label="Source 7">*7</a></sup></p>
-        </section>
-        <section class="section taxonomy-detail-section">
-          <h2>批評と受容</h2>
-          <p>また、写真を複製メディアとして積極的に利用したことで、ダダは一点物の芸術作品という考え方にも揺さぶりをかけました。写真が新聞、広告、プロパガンダの回路を通って政治的に働くという理解は、この時期に急速に深まる。<sup class="sup-ref"><a href="#cite-8" aria-label="Source 8">*8</a></sup>その一方で、ダダは破壊と否定の身振りが強いため、長期的な構築原理を持ちにくいという限界もあった。運動の内部でも政治的立場やメディア戦略は一枚岩ではなく、反芸術の語りが後から制度化されるという逆説も生じる。<sup class="sup-ref"><a href="#cite-9" aria-label="Source 9">*9</a></sup>それでもダダの写真を読む意味は大きく、写真が「写すこと」だけでなく「すでにある像を再編すること」によっても歴史を動かせると示したからである。<a class="taxonomy-inline-link" href="/movements/シュルレアリスム.html">シュルレアリスム</a>や<a class="taxonomy-inline-link" href="/movements/レイオグラフ.html">レイオグラフ</a>と併せて見ると、その破壊のあとにどんな新しい写真言語が開いたのかがはっきりする。<sup class="sup-ref"><a href="#cite-10" aria-label="Source 10">*10</a></sup>のちにダダが美術館や教科書の中で正典化されると、反芸術の衝撃はしばしば安全な歴史語りへ回収された。政治性と遊戯性のあいだの緊張、印刷物に介入する攻撃性、既存の秩序を笑いで壊す身振りを見失うと、ダダの写真はただの面白いコラージュに縮んでしまう。<sup class="sup-ref"><a href="#cite-1" aria-label="Source 1">*1</a></sup>ベルリン・ダダのフォトモンタージュが雑誌『AIZ』などの政治的印刷物へ接続していく流れを見ると、ダダの写真は美術館の壁より、複製と配布の回路の中で本来の強さを持っていたことがよくわかる。制度内に収まった現在でも、その複製性こそがダダの急進性の核だった。<sup class="sup-ref"><a href="#cite-2" aria-label="Source 2">*2</a></sup></p>
-        </section>
-        <section class="section taxonomy-detail-section">
-          <h2>関連する表現</h2>
-          <p><a class="taxonomy-inline-link" href="/movements/シュルレアリスム.html">シュルレアリスム</a>が夢や欲望へ向かったのに対し、ダダはまず切断と政治的風刺に向かった。<a class="taxonomy-inline-link" href="/movements/レイオグラフ.html">レイオグラフ</a>や後の<a class="taxonomy-inline-link" href="/movements/コンセプチュアルアート.html">コンセプチュアルアート</a>へ開いた回路も、この反芸術の身振りから読み直せる。<sup class="sup-ref"><a href="#cite-3" aria-label="Source 3">*3</a></sup></p>
-        </section>
-        <section class="section taxonomy-sources">
-          <h2>出典</h2>
-          <div class="sources">
-            <div class="cite-item" id="cite-1"><div class="cite-num">*1</div><a href="https://www.moma.org/calendar/exhibitions/241" rel="noopener" target="_blank">MoMA — The Photomontages of Hannah Höch</a></div>
-            <div class="cite-item" id="cite-2"><div class="cite-num">*2</div><a href="https://www.metmuseum.org/ko/art/collection/search/265169" rel="noopener" target="_blank">The Met — Hannah Höch, Weltrevolution</a></div>
-            <div class="cite-item" id="cite-3"><div class="cite-num">*3</div><a href="https://www.metmuseum.org/art/collection/search/210014296" rel="noopener" target="_blank">The Met — Hannah Höch, Der Traum seinen Lebens</a></div>
-            <div class="cite-item" id="cite-4"><div class="cite-num">*4</div><a href="https://www.moma.org/collection/terms/photomontage" rel="noopener" target="_blank">MoMA — Photomontage term</a></div>
-            <div class="cite-item" id="cite-5"><div class="cite-num">*5</div><a href="https://www.getty.edu/art/exhibitions/heartfield/" rel="noopener" target="_blank">Getty — Agitated Images: John Heartfield</a></div>
-            <div class="cite-item" id="cite-6"><div class="cite-num">*6</div><a href="https://www.metmuseum.org/toah/hd/manr/hd_manr.htm" rel="noopener" target="_blank">The Met — Man Ray</a></div>
-            <div class="cite-item" id="cite-7"><div class="cite-num">*7</div><a href="https://www.tate.org.uk/art/artists/man-ray-1542" rel="noopener" target="_blank">Tate — Man Ray</a></div>
-            <div class="cite-item" id="cite-8"><div class="cite-num">*8</div><a href="https://www.moma.org/artists/3787" rel="noopener" target="_blank">MoMA — Rayographs / Man Ray</a></div>
-            <div class="cite-item" id="cite-9"><div class="cite-num">*9</div><a href="https://www.moma.org/artists/2675" rel="noopener" target="_blank">MoMA — Hannah Höch artist page</a></div>
-            <div class="cite-item" id="cite-10"><div class="cite-num">*10</div><a href="https://www.moma.org/audio/playlist/198/2633" rel="noopener" target="_blank">MoMA audio — Cut with a Kitchen Knife</a></div>
-          </div>
-        </section>
-      <section class="section">
-        <h2>写真家一覧</h2>
-        <div class="archive-list-shell"><div class="archive-list"><details class="archive-list-card">
-  <summary class="archive-list-summary">
-    <div class="archive-list-overline"><span class="archive-list-country"><span class="archive-list-flag">🇺🇸 🇫🇷</span><span class="archive-list-country-code">US / FR</span></span><span class="archive-list-years">1890–1976</span></div>
-    <div class="archive-list-heading">
-      <div class="archive-list-name-wrap">
-        <div class="archive-list-name">マン・レイ</div>
-        <div class="archive-list-alt">Man Ray</div>
-      </div>
-      <div class="archive-list-chevron" aria-hidden="true">+</div>
-    </div>
-    <div class="archive-list-descriptor">シュルレアリスム写真</div>
-    <div class="archive-list-tags"><span class="archive-list-tag">ダダ</span><span class="archive-list-tag">シュルレアリスム</span><span class="archive-list-tag archive-list-tag-more">+1</span></div>
-  </summary>
-  <div class="archive-list-body">
-    <p class="archive-list-lead">フィラデルフィア生まれのエマニュエル・ラドニツキー（マン・レイ）が写真実践に転じた最大の契機は、1913年のアーモリーショーでマルセル・デュシャンの作品と出会い、その後親交を深めたことにある。</p>
-    <a class="archive-list-link" href="/photographers/manray.html" data-nosnippet>詳細を読む</a>
-    <a class="archive-list-link" href="/?focus=photographer%3Amanray&photographer=manray" data-nosnippet>座標で見る</a>
-  </div>
-</details></div></div>
-      </section>
-    </div>
-    
-      <nav class="site-directory-links" aria-label="サイト内リンク" data-nosnippet>
-        <div class="site-directory-group">
-          <div class="site-directory-label">年代一覧</div>
-          <div class="site-directory-items"><a href="/eras/1839.html">1839–1860s</a><a href="/eras/1870.html">1870–1890s</a><a href="/eras/1890.html">1890–1910s</a><a href="/eras/1910.html">1910–1920s</a><a href="/eras/1930.html">1930–1940s</a><a href="/eras/1950.html">1950–1960s</a><a href="/eras/1970.html">1970–1980s</a><a href="/eras/1980.html">1980–1990s</a><a href="/eras/1990.html">1990–2000s</a><a href="/eras/2000.html">2000–2010s</a><a href="/eras/2010.html">2010–2020s</a></div>
-        </div>
-        <div class="site-directory-group">
-          <div class="site-directory-label">国一覧</div>
-          <div class="site-directory-items"><a href="/countries/ireland.html">アイルランド</a><a href="/countries/united-states.html">アメリカ</a><a href="/countries/united-states-united-kingdom.html">アメリカ / イギリス</a><a href="/countries/united-states-france.html">アメリカ / フランス</a><a href="/countries/argentina-spain.html">アルゼンチン / スペイン</a><a href="/countries/albania.html">アルバニア</a><a href="/countries/united-kingdom.html">イギリス</a><a href="/countries/united-kingdom-united-states.html">イギリス / アメリカ</a><a href="/countries/italy.html">イタリア</a><a href="/countries/italy-united-kingdom.html">イタリア / イギリス</a><a href="/countries/iran-switzerland.html">イラン / スイス</a><a href="/countries/ukraine.html">ウクライナ</a><a href="/countries/ukraine-united-states.html">ウクライナ / アメリカ</a><a href="/countries/netherlands.html">オランダ</a><a href="/countries/australia.html">オーストラリア</a><a href="/countries/austria.html">オーストリア</a><a href="/countries/austria-canada.html">オーストリア / カナダ</a><a href="/countries/canada.html">カナダ</a><a href="/countries/canada-united-states.html">カナダ / アメリカ</a><a href="/countries/kenya-united-states.html">ケニア / アメリカ</a><a href="/countries/switzerland.html">スイス</a><a href="/countries/switzerland-germany.html">スイス / ドイツ</a><a href="/countries/sweden.html">スウェーデン</a><a href="/countries/spain.html">スペイン</a><a href="/countries/slovakia-france.html">スロバキア / フランス</a><a href="/countries/czech-republic.html">チェコ</a><a href="/countries/denmark.html">デンマーク</a><a href="/countries/denmark-united-states.html">デンマーク / アメリカ</a><a href="/countries/germany.html">ドイツ</a><a href="/countries/germany-united-kingdom.html">ドイツ / イギリス</a><a href="/countries/germany-brazil.html">ドイツ / ブラジル</a><a href="/countries/nigeria-united-kingdom.html">ナイジェリア / イギリス</a><a href="/countries/norway.html">ノルウェー</a><a href="/countries/hungary.html">ハンガリー</a><a href="/countries/hungary-germany.html">ハンガリー / ドイツ</a><a href="/countries/hungary-france.html">ハンガリー / フランス</a><a href="/countries/finland.html">フィンランド</a><a href="/countries/france.html">フランス</a><a href="/countries/brazil.html">ブラジル</a><a href="/countries/vietnam-united-states.html">ベトナム / アメリカ</a><a href="/countries/venezuela.html">ベネズエラ</a><a href="/countries/belgium.html">ベルギー</a><a href="/countries/poland.html">ポーランド</a><a href="/countries/poland-united-states.html">ポーランド / アメリカ</a><a href="/countries/mali.html">マリ</a><a href="/countries/mexico.html">メキシコ</a><a href="/countries/mexico-switzerland.html">メキシコ / スイス</a><a href="/countries/morocco-france.html">モロッコ / フランス</a><a href="/countries/lithuania-united-states.html">リトアニア / アメリカ</a><a href="/countries/lithuania-united-kingdom.html">リトアニア / イギリス</a><a href="/countries/lithuania-france.html">リトアニア / フランス</a><a href="/countries/luxembourg-united-states.html">ルクセンブルク / アメリカ</a><a href="/countries/romania.html">ルーマニア</a><a href="/countries/lebanon-united-states.html">レバノン / アメリカ</a><a href="/countries/russia.html">ロシア</a><a href="/countries/china.html">中国</a><a href="/countries/north-macedonia.html">北マケドニア</a><a href="/countries/south-africa.html">南アフリカ</a><a href="/countries/south-africa-united-kingdom.html">南アフリカ / イギリス</a><a href="/countries/japan.html">日本</a><a href="/countries/south-korea.html">韓国</a><a href="/countries/south-korea-united-states.html">韓国 / アメリカ</a></div>
-        </div>
-        <div class="site-directory-group">
-          <div class="site-directory-label">代表写真家一覧</div>
-          <div class="site-directory-items"><a href="/photographers/daguerre.html">ルイ・ダゲール</a><a href="/photographers/fenton.html">ロジャー・フェントン</a><a href="/photographers/beato.html">フェリーチェ・ベアト</a><a href="/photographers/nadar.html">ナダール</a><a href="/photographers/stieglitz.html">アルフレッド・スティーグリッツ</a><a href="/photographers/strand.html">ポール・ストランド</a><a href="/photographers/cartierbresson.html">アンリ・カルティエ＝ブレッソン</a><a href="/photographers/hiroshi-sugimoto.html">杉本博司</a></div>
-        </div>
-      </nav>
-    <footer class="site-footer" data-nosnippet>
-      <div data-nosnippet>本サイトの情報はAIによってウェブ上の資料から収集・整理されたもの。</div>
-      <div class="footer-secondary" data-nosnippet>各記述には出典を明記しているが、誤りが含まれる可能性がある。</div>
-      
-      <div class="footer-links"><a href="/privacy-policy.html">プライバシーポリシー</a></div>
-    </footer>
-  </div>
-  <script src="../scripts/global-search.js?v=20260508a"></script>
-</body>
-</html>
+</body></html>

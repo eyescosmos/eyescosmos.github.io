@@ -1,1524 +1,2549 @@
 <!DOCTYPE html>
-<html lang="ja" data-fixed-lang="true" data-page-title-ja="写真の座標｜美術館・アーカイブ資料から読む写真史サイト" data-page-title-en="Photo Coordinates | A Photo History Site Based on Museum and Archive Sources">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>写真の座標｜美術館・アーカイブ資料から読む写真史サイト</title>
-<meta name="description" content="写真の座標は、世界と日本の写真史を、美術館・アーカイブ・専門資料を手がかりに読み解く写真史サイトです。写真家・運動・思想・時代背景の関係から、作品の意味と公式閲覧先をたどれます。">
-<link rel="canonical" href="https://eyescosmos.github.io/">
-<link rel="alternate" hreflang="ja" href="https://eyescosmos.github.io/">
-<link rel="alternate" hreflang="en" href="https://eyescosmos.github.io/en/">
-<link rel="alternate" hreflang="x-default" href="https://eyescosmos.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="写真の座標">
-<meta property="og:title" content="写真の座標｜美術館・アーカイブ資料から読む写真史サイト">
-<meta property="og:description" content="写真の座標は、世界と日本の写真史を、美術館・アーカイブ・専門資料を手がかりに読み解く写真史サイトです。写真家・運動・思想・時代背景の関係から、作品の意味と公式閲覧先をたどれます。">
-<meta property="og:url" content="https://eyescosmos.github.io/">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:locale:alternate" content="en_US">
-<meta property="og:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="写真の座標">
-<meta name="twitter:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="写真の座標｜美術館・アーカイブ資料から読む写真史サイト">
-<meta name="twitter:description" content="写真の座標は、世界と日本の写真史を、美術館・アーカイブ・専門資料を手がかりに読み解く写真史サイトです。写真家・運動・思想・時代背景の関係から、作品の意味と公式閲覧先をたどれます。">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "写真の座標",
-  "alternateName": "Photo Coordinates",
-  "url": "https://eyescosmos.github.io/",
-  "description": "写真の座標は、世界と日本の写真史を、美術館・アーカイブ・専門資料を手がかりに読み解く写真史サイトです。写真家・運動・思想・時代背景の関係から、作品の意味と公式閲覧先をたどれます。",
-  "inLanguage": "ja"
-}
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2VRTV8BZEJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2VRTV8BZEJ');
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 <style>
-@font-face {
-  font-family: 'KaisotaiNextUP';
-  src: url('fonts/Kaisotai-Next-UP-B.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+em { font-style: italic; }
+
+/* ── DESIGN TOKENS ── */
 :root {
-  --bg: #040507;
-  --text: #eee6d8;
-  --text-dim: rgba(238, 230, 216, 0.68);
-  --text-muted: rgba(238, 230, 216, 0.42);
-  --accent: #c6aa82;
-  --border: rgba(238, 230, 216, 0.18);
-  --panel: rgba(10, 14, 24, 0.7);
+  --bg:        #fafaf5;
+  --surface:   #ffffff;
+  --surface-2: #f0ede5;
+
+  --text-main: #0e0c0a;
+  --text-sub:  #5a554d;
+  --text-mute: #8a8478;
+  --text-deep: #b8b0a4;
+
+  --border:      #0e0c0a;
+  --border-soft: #a39d90;
+
+  --accent-structure: #0a2540;
+  --accent-action:    #a83a2a;
+  --accent-display:   #d6402e;
+  --accent-highlight: #ccff00;
+
+  --map-bg:   #080808;
+  --map-text: #d8d2c4;
+  --map-line: #c8a96e;
+
+  --reverse-bg:   #0e0c0a;
+  --reverse-text: #fafaf5;
+
+  --font-sans-jp: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'YuGothic', system-ui, sans-serif;
+  --font-sans-en: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-serif-accent: 'Cormorant Garamond', 'Times New Roman', serif;
+
+  --r-card: 4px;
+  --r-chip: 2px;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* ── DUAL RED REMAP ── */
+.hero, .tabs, .toolbar, .cards,
+.archive-cta, .era, .bottom-links, .coord__side {
+  --accent-action: var(--accent-display);
 }
 
-html,
+/* ── PAGE ── */
 body {
-  margin: 0;
-  height: 100%;
-  overflow: hidden;
-  user-select: none;
-  -webkit-user-select: none;
-  overscroll-behavior: none;
   background: var(--bg);
-  color: var(--text);
-  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text-main);
+  font-family: var(--font-sans-jp);
+  font-size: 17px;
+  line-height: 1.85;
 }
 
-input,
-textarea,
-select {
-  user-select: text;
-  -webkit-user-select: text;
+.page { max-width: 100%; overflow-x: clip; } /* clip は sticky を壊さない */
+
+/* ───────────────────────────────────────────
+   01 HEADER
+─────────────────────────────────────────── */
+.head {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0;
+  padding: 0 32px;
+  height: 52px;
+  background: var(--bg);
+  border-bottom: 1.5px solid var(--border);
 }
 
-body {
-  position: relative;
-}
-
-.design-frame {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: #040507;
-  touch-action: none;
-}
-
-.hud,
-.page-links {
-  position: fixed;
-  z-index: 40;
-}
-
-.hud {
-  top: 28px;
-  left: 32px;
-  max-width: 300px;
-  pointer-events: none;
-}
-
-.hero-text {
+.head__brand {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 12px;
 }
-
-.eyebrow {
-  color: var(--text-dim);
-  font: 400 10px/1 'DM Mono', monospace;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.head__brand-ja {
+  font-family: var(--font-sans-jp);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.10em;
+  color: var(--text-main);
 }
-
-.title {
-  display: block;
-  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
-  font-size: clamp(42px, 5vw, 52px);
-  font-weight: normal;
-  letter-spacing: 0.18em;
-  line-height: 1.05;
-  margin: 0;
-}
-
-.title em {
-  font-style: normal;
-  color: var(--accent);
-}
-
-.title-english {
-  color: rgba(213, 194, 156, 0.74);
-  font: 400 11px/1.35 'DM Mono', monospace;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-
-.title-subcopy {
-  color: rgba(238, 230, 216, 0.82);
+.head__brand-en {
+  font-family: var(--font-sans-en);
+  font-weight: 500;
   font-size: 13px;
-  line-height: 1.7;
-  max-width: 247px;
+  letter-spacing: 0.06em;
+  color: var(--text-sub);
 }
 
-.page-links {
-  top: 28px;
-  right: 32px;
+.head__crumbs {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  text-align: center;
+}
+.head__crumbs .sep { color: var(--text-deep); margin: 0 4px; }
+.updated-date {
+  background: var(--accent-highlight);
+  color: var(--text-main);
+  padding: 1px 6px;
+  border-radius: var(--r-chip);
+}
+
+.head__lang {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--r-chip);
+  overflow: hidden;
+}
+.head__lang button {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  color: var(--text-sub);
+  background: transparent;
+  border-right: 1px solid var(--border);
+}
+.head__lang button:last-child { border-right: none; }
+.head__lang button.is-active {
+  background: var(--text-main);
+  color: var(--bg);
+}
+
+/* ───────────────────────────────────────────
+   02 HERO
+─────────────────────────────────────────── */
+.hero {
+  padding: 100px 32px 72px;
+  background: var(--bg);
+  border-bottom: 1.5px solid var(--border);
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 56px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero__eyebrow::before {
+  content: '';
+  width: 36px;
+  height: 1px;
+  background: #0a2540;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.hero__eyebrow .vol {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hero__eyebrow .vol::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--accent-highlight);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hero__primary {
+  font-family: var(--font-sans-jp);
+  font-weight: 900;
+  font-size: clamp(96px, 13.5vw, 200px);
+  line-height: 0.88;
+  color: var(--text-main);
+  margin-bottom: 0;
+}
+.hero__primary .hl {
+  background: var(--accent-display);
+  color: #ffffff;
+  padding: 0 0.05em;
+  border-radius: var(--r-chip);
+  display: inline-block;
+  line-height: 0.96;
+}
+
+.hero__subtitle {
+  font-family: var(--font-sans-en);
+  font-weight: 400;
+  font-size: clamp(18px, 1.8vw, 28px);
+  letter-spacing: 0.01em;
+  color: var(--text-sub);
+  margin-top: 24px;
+}
+.hero__subtitle .sep { margin: 0 8px; color: var(--text-deep); }
+
+.hero__foot {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1px solid #a39d90;
+  align-items: end;
+}
+
+.hero__lead {
+  font-size: 17px;
+  line-height: 1.85;
+  max-width: 38em;
+  color: var(--text-main);
+}
+.hero__lead strong { font-weight: 700; }
+
+.hero__note-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-  width: 160px;
+  gap: 16px;
+  text-align: right;
+}
+.hero__note {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5a554d;
+  line-height: 1.8;
+}
+.hero__note::before {
+  content: '— ';
+  color: #0a2540;
+  letter-spacing: 0;
+}
+.hero__fig {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.20em;
+  color: var(--text-deep);
 }
 
-.lang-toggle {
-  display: inline-flex;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  overflow: hidden;
-  margin-bottom: 6px;
+/* ───────────────────────────────────────────
+   03 TABS
+─────────────────────────────────────────── */
+.tabs {
+  position: sticky;
+  top: 52px;
+  z-index: 90;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  grid-template-rows: 70px;
+  background: var(--bg);
+  border-bottom: 1.5px solid var(--border);
 }
-
-.lang-btn {
-  display: inline-flex;
+.tabs__btn--search {
+  display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  padding: 0 28px;
+  height: 70px;
+  min-height: 0;
+  max-height: 70px;
+  border-left: 1px solid var(--border);
+  color: var(--text-mute);
+  overflow: hidden;
+  transition: background 120ms, color 120ms;
+}
+.tabs__btn--search:hover { background: rgba(14,12,10,0.05); color: var(--text-main); }
+.tabs__btn--search.is-active { background: #0e0c0a; color: #fafaf5; }
+.tabs__search-icon {
+  font-size: 52px;
+  line-height: 70px;
+  display: block;
+  height: 70px;
+}
+
+/* ── SEARCH OVERLAY ── */
+.search-overlay {
+  position: sticky;
+  top: calc(52px + 72px);
+  z-index: 88;
+  background: var(--bg);
+  border-bottom: 1.5px solid var(--border);
+  padding: 20px 32px;
+  display: none;
+}
+.search-overlay.is-open { display: block; }
+.search-overlay__input {
+  width: 100%;
+  font-family: var(--font-sans-jp);
+  font-size: 18px;
   background: transparent;
-  color: var(--text-dim);
-  font: 400 10px/1 'DM Mono', monospace;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 6px 12px;
+  border: none;
+  border-bottom: 1.5px solid var(--border);
+  outline: none;
+  padding: 12px 0;
+  color: var(--text-main);
+}
+.search-overlay__input::placeholder { color: var(--text-mute); }
+.search-results {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.search-result-item {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  padding: 8px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-chip);
+  color: var(--text-sub);
   text-decoration: none;
+  transition: background 100ms, color 100ms;
 }
+.search-result-item:hover { background: var(--text-main); color: var(--bg); border-color: var(--text-main); }
 
-.lang-btn.active {
-  color: #040507;
-  background: var(--text);
+.tabs__btn {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 0 24px;
+  height: 70px;
+  min-height: 0;
+  max-height: 70px;
+  background: transparent;
+  color: var(--text-mute);
+  border: 0;
+  border-radius: 0;
+  text-align: left;
+  overflow: hidden;
+  transition: background 120ms, color 120ms;
 }
-
-.lang-btn + .lang-btn {
+.tabs__btn + .tabs__btn {
   border-left: 1px solid var(--border);
 }
-
-.page-select-wrap {
-  position: relative;
-  width: 100%;
+.tabs__btn.is-active {
+  background: #0e0c0a;
+  color: #fafaf5;
 }
 
-.page-search-form {
-  position: relative;
-  width: 100%;
+.tabs__num {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #b8b0a4;
+}
+.tabs__btn.is-active .tabs__num {
+  color: #a83a2a;
 }
 
-.page-search-suggestions {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  right: 0;
+.tabs__title { display: flex; flex-direction: column; gap: 3px; }
+.tabs__title-ja {
+  font-family: var(--font-sans-jp);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: #5a554d;
+}
+.tabs__btn.is-active .tabs__title-ja { color: #fafaf5; }
+.tabs__title-en {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: #b8b0a4;
+}
+.tabs__btn.is-active .tabs__title-en { color: #fafaf5; opacity: 0.65; }
+
+/* ───────────────────────────────────────────
+   04 COORDINATES VIEW
+─────────────────────────────────────────── */
+.coord {
   display: grid;
-  gap: 2px;
-  padding: 6px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: rgba(8, 10, 16, 0.92);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.34);
-  z-index: 80;
+  grid-template-columns: 1fr 340px;
+  grid-template-areas:
+    "head side"
+    "map  side";
+  align-items: start;
+  border-bottom: 1.5px solid var(--border);
 }
 
-.page-search-suggestions[hidden] {
-  display: none;
-}
-
-.page-search-suggestion {
-  display: block;
-  width: 100%;
-  border: 0;
-  background: transparent;
-  color: rgba(238, 230, 216, 0.82);
-  text-align: left;
-  padding: 8px 10px;
-  font: 400 12px/1.45 'Noto Sans JP', sans-serif;
-  cursor: pointer;
-}
-
-.page-search-suggestion:hover,
-.page-search-suggestion:focus {
-  outline: none;
-  background: rgba(238, 230, 216, 0.08);
-}
-
-.page-search-input {
-  width: 100%;
-  min-height: 40px;
-  padding: 10px 40px 10px 14px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: var(--panel);
-  color: rgba(238, 230, 216, 0.88);
-  font: 400 12px/1.2 'Noto Sans JP', sans-serif;
-  backdrop-filter: blur(12px);
-}
-
-.page-search-input::placeholder {
-  color: var(--text-muted);
-}
-
-.page-search-input:focus {
-  outline: none;
-  border-color: rgba(213, 194, 156, 0.42);
-}
-
-.page-search-button {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  width: 18px;
-  height: 18px;
-  transform: translateY(-50%);
-  border: 0;
-  background: transparent;
-  color: var(--text-muted);
-  padding: 0;
-  cursor: pointer;
-}
-
-.page-search-button::before,
-.page-search-button::after {
-  content: '';
-  position: absolute;
-  display: block;
-}
-
-.page-search-button::before {
-  width: 9px;
-  height: 9px;
-  border: 1.5px solid currentColor;
-  border-radius: 50%;
-  left: 2px;
-  top: 2px;
-}
-
-.page-search-button::after {
-  width: 6px;
-  height: 1.5px;
-  background: currentColor;
-  transform: rotate(45deg);
-  right: 1px;
-  bottom: 2px;
-  transform-origin: center;
-}
-
-.page-select {
-  width: 100%;
-  min-height: 40px;
-  padding: 10px 34px 10px 14px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: var(--panel);
-  color: rgba(238, 230, 216, 0.82);
-  font: 400 12px/1 'Noto Sans JP', sans-serif;
-  appearance: none;
-  cursor: pointer;
-  backdrop-filter: blur(12px);
-}
-
-.page-select-wrap::after {
-  content: '▾';
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font: 400 9px/1 'DM Mono', monospace;
-  color: var(--text-muted);
-  pointer-events: none;
-}
-
-.spread-control {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: var(--panel);
-  backdrop-filter: blur(12px);
-}
-
-.spread-control input[type="range"] {
-  width: 100%;
-  height: 2px;
-  margin: 0;
-  appearance: none;
-  background: var(--accent);
-  border-radius: 999px;
-  outline: none;
-  accent-color: var(--accent);
-}
-
-.spread-control input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: none;
-  box-shadow: 0 0 6px rgba(198, 170, 130, 0.6);
-}
-
-.spread-control input[type="range"]::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: none;
-  box-shadow: 0 0 6px rgba(198, 170, 130, 0.6);
-}
-
-.action-buttons {
-  position: fixed;
-  right: 32px;
-  bottom: 28px;
-  z-index: 40;
+.coord__head {
+  grid-area: head;
+  background: var(--surface);
+  padding: 32px 32px 0;
   display: flex;
-  gap: 6px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
 }
 
-.control-btn {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: var(--panel);
-  color: var(--text-dim);
-  font: 400 14px/1 'DM Mono', monospace;
-  display: inline-flex;
+.coord__main {
+  grid-area: map;
+  background: var(--surface);
+  padding: 0 32px 32px;
+}
+.coord__title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.coord__fig {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.coord__title {
+  font-family: var(--font-sans-jp);
+  font-weight: 900;
+  font-size: 28px;
+  color: var(--text-main);
+}
+.coord__title em { font-style: normal; }
+.coord__sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+}
+
+.coord__nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.coord__nav a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--text-sub);
+  text-transform: uppercase;
+}
+.coord__nav a.is-primary {
+  border: 1.5px solid var(--border);
+  padding: 8px 16px;
+  border-radius: var(--r-chip);
+  color: var(--text-main);
+  font-weight: 500;
+  transition: background 120ms, color 120ms;
+}
+.coord__nav a.is-primary:hover {
+  background: var(--text-main);
+  color: var(--bg);
+}
+
+.coord__frame {
+  position: relative;
+  background: var(--map-bg);
+  height: 640px;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.coord__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  overflow: hidden;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.coord__reset {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 6;
+  background: rgba(8,8,8,0.72);
+  border: 1px solid rgba(216,210,196,0.35);
+  color: #d8d2c4;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-chip);
+  cursor: pointer;
+  display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  backdrop-filter: blur(12px);
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  transition: background 120ms, border-color 120ms;
+}
+.coord__reset:hover {
+  background: rgba(8,8,8,0.92);
+  border-color: rgba(216,210,196,0.7);
 }
 
-.mobile-search-toggle {
-  display: none;
-  position: relative;
+.coord__legend {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 18px;
+  margin-top: 4px;
 }
-
-.mobile-label-toggle {
-  display: block;
-  width: 100%;
-  min-height: 28px;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: rgba(10, 14, 24, 0.54);
-  color: var(--text-dim);
-  font: 400 9px/1 'DM Mono', monospace;
-  letter-spacing: 0.08em;
-  cursor: pointer;
+.coord__legend-loading {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-mute);
+  letter-spacing: 0.14em;
+}
+.coord__legend-title {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
-  backdrop-filter: blur(12px);
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  color: var(--text-mute);
+  margin-bottom: 14px;
+}
+.coord__legend-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+}
+.coord__legend-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-sub);
+}
+.coord__legend-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
-.mobile-label-toggle:hover {
-  border-color: rgba(238, 230, 216, 0.42);
-  color: var(--text);
+/* SIDE */
+.coord__side {
+  grid-area: side;
+  align-self: start;
+  background: transparent;
+  border-left: none;
 }
 
-.mobile-label-toggle.active {
-  background: var(--text);
-  color: var(--bg);
-  border-color: rgba(238, 230, 216, 0.62);
+/* デフォルト空状態 */
+.coord__side-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 300px;
+  padding: 32px 24px;
+}
+.coord__side-prompt {
+  text-align: center;
+  color: var(--text-mute);
+}
+.coord__side-prompt-icon {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--accent-highlight);
+}
+.coord__side-prompt p {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: var(--text-mute);
 }
 
-.mobile-search-toggle::before,
-.mobile-search-toggle::after {
+/* サイドカード: 640px の地図と同じ高さ内に収める */
+/* サイドカード: ページスクロールに乗せる、圧縮なし */
+#coord-card-wrap {
+  padding: 16px;
+}
+#coord-card-wrap .pc-card {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+/* ───────────────────────────────────────────
+   05 CARDS VIEW
+─────────────────────────────────────────── */
+.cards-view {
+  background: #ffffff;
+  padding: 0 0 80px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.cards-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 32px 32px;
+  border-bottom: 1.5px solid var(--border);
+  gap: 32px;
+}
+.cards-head__section {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #0a2540;
+  font-weight: 500;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 18px;
+}
+.cards-head__section::before {
   content: '';
   position: absolute;
-  display: block;
-}
-
-.mobile-search-toggle::before {
-  width: 12px;
-  height: 12px;
-  border: 1.6px solid currentColor;
-  border-radius: 50%;
-  left: 9px;
-  top: 8px;
-}
-
-.mobile-search-toggle::after {
-  width: 7px;
-  height: 1.6px;
-  background: currentColor;
-  transform: rotate(45deg);
-  right: 9px;
-  bottom: 10px;
-  transform-origin: center;
-}
-
-.control-btn:hover {
-  border-color: rgba(238, 230, 216, 0.42);
-  color: var(--text);
-}
-
-.map-info-control {
-  position: relative;
-}
-
-.map-info-summary {
-  list-style: none;
-}
-
-.map-info-summary::-webkit-details-marker {
-  display: none;
-}
-
-.map-info-panel {
-  display: none;
-  position: absolute;
-  right: 0;
-  bottom: calc(100% + 10px);
-  width: min(340px, calc(100vw - 64px));
-  max-height: min(62svh, 31rem);
-  overflow-y: auto;
-  padding: 16px 16px 18px;
-  border: 1px solid var(--border);
-  background: rgba(8, 10, 16, 0.88);
-  color: var(--text-dim);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.28);
-}
-
-.map-info-control[open] .map-info-panel {
-  display: block;
-}
-
-.map-info-sections {
-  display: grid;
-  gap: 14px;
-}
-
-.map-info-block {
-  display: grid;
-  gap: 6px;
-}
-
-.map-info-heading {
-  color: var(--accent);
-  font: 400 10px/1.4 'DM Mono', monospace;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.map-info-text {
-  color: var(--text-dim);
-  font-size: 13px;
-  line-height: 1.72;
-}
-
-.map-info-links {
-  display: grid;
-  gap: 8px;
-  margin-top: 2px;
-}
-
-.map-info-link {
-  display: block;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  color: var(--text-dim);
-  text-decoration: none;
-  text-align: center;
-  font: 400 11px/1.2 'DM Mono', monospace;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.map-info-link:hover {
-  color: var(--text);
-  background: rgba(198, 170, 130, 0.06);
-}
-
-.map-info-directory {
-  display: grid;
-  gap: 6px;
-}
-
-.map-info-directory-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px 8px;
-}
-
-.map-info-directory a {
-  color: rgba(213, 194, 156, 0.58);
-  font: 400 10px/1.5 'DM Mono', monospace;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-}
-
-.map-info-directory a:hover {
-  color: rgba(235, 224, 204, 0.82);
-}
-
-.map-info-select-wrap {
-  position: relative;
-  display: block;
-}
-
-.map-info-select {
-  width: 100%;
-  min-height: 42px;
-  padding: 12px 36px 12px 14px;
-  border: 1px solid var(--border);
-  background: rgba(10, 12, 18, 0.62);
-  color: var(--text-dim);
-  font: 400 11px/1.2 'DM Mono', monospace;
-  letter-spacing: 0.14em;
-  appearance: none;
-}
-
-.map-info-select-wrap::after {
-  content: '▼';
-  position: absolute;
-  right: 14px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
-  font: 400 9px/1 'DM Mono', monospace;
-  color: var(--text-muted);
-  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-highlight);
+  border-radius: 50%;
 }
-
-.map-info-footer {
-  margin-top: 4px;
-  font-size: 12px;
-  text-align: left;
+.cards-head__title {
+  font-family: var(--font-sans-jp);
+  font-weight: 900;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 1.02;
+  color: var(--text-main);
 }
-
-.map-info-footer a {
-  color: rgba(213, 194, 156, 0.76);
-  text-decoration: none;
+.cards-head__title em {
+  color: #0a2540;
+  font-style: normal;
 }
-
-.site-directory-links {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 54px;
-  z-index: 40;
-  width: min(720px, calc(100vw - 64px));
-  display: grid;
-  gap: 8px;
-  text-align: center;
-  pointer-events: auto;
+.cards-head__sub {
+  font-size: 14px;
+  color: var(--text-sub);
+  margin-top: 12px;
 }
+.cards-head__legend {
+  font-size: 13px;
+  color: var(--text-sub);
+  text-align: right;
+  flex-shrink: 0;
+}
+.l-row { display: flex; gap: 16px; margin-top: 10px; justify-content: flex-end; }
+.l-chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-sub);
+}
+.l-chip i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.l-chip.is-ph i { background: var(--accent-display); }
+.l-chip.is-mv i { background: var(--accent-structure); border-radius: 0; }
+.l-chip.is-th i { background: var(--text-main); border-radius: 0; }
 
-.site-directory-group {
+/* TOOLBAR */
+.toolbar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px 8px;
-  color: var(--text-muted);
-  font: 400 9px/1.5 'DM Mono', monospace;
+  align-items: stretch;
+  gap: 0;
+  margin: 0 0 40px;
+  border-bottom: 1px solid #0e0c0a;
+}
+.toolbar__search {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  flex: 1;
+  min-width: 280px;
+  border-right: 1px solid #0e0c0a;
+  background: transparent;
+}
+.toolbar__search::before {
+  content: '⌕';
+  color: #8a8478;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.toolbar__search input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-sans-jp);
+  font-size: 13px;
+  color: var(--text-main);
+}
+.toolbar__search input::placeholder { color: var(--text-mute); }
+
+.pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 16px 20px;
+  border: 0;
+  border-right: 1px solid #0e0c0a;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-sub);
+  cursor: pointer;
+  transition: background 100ms, color 100ms;
+}
+.pill:hover { background: rgba(14,12,10,0.05); color: var(--text-main); }
+.pill.is-active {
+  background: #d6402e;
+  color: #fafaf5;
+}
+.pill--sort {
+  color: var(--text-mute);
+  border-right: 0;
+  border-left: 1px solid #0e0c0a;
+}
+.sort-wrap {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: stretch;
+}
+.sort-wrap .pill--sort { margin-left: 0; }
+.sort-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 50;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  min-width: 160px;
+}
+.sort-dropdown.is-open { display: block; }
+.sort-option {
+  display: block;
+  width: 100%;
+  padding: 12px 18px;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-sub);
+  cursor: pointer;
+}
+.sort-option:last-child { border-bottom: 0; }
+.sort-option:hover { background: var(--surface-2); color: var(--text-main); }
+.sort-option.is-active { color: var(--text-main); font-weight: 600; }
+.sort-divider {
+  padding: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--text-mute);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* CARD GRID */
+.cards {
+  column-count: 4;
+  column-gap: 28px;
+  padding: 40px 32px 0;
+  column-fill: balance;
+}
+
+/* CARD */
+.pc-card {
+  background: var(--surface-2, #f0ede5);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-card);
+  break-inside: avoid;
+  margin-bottom: 28px;
+  overflow: hidden;
+  transition: border-color 120ms;
+}
+.pc-card a { display: block; color: inherit; }
+.pc-card:hover { border-color: var(--text-main); }
+
+/* CARD TOP */
+.pc-top {
+  position: relative;
+  min-height: 220px;
+  padding: 48px 18px 18px;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--surface-2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pc-top__meta {
+  position: static;
+}
+.pc-top__meta .idx {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 32px;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  color: #0a2540;
+  z-index: 2;
+}
+.pc-top--number .pc-top__meta .idx { color: #d6402e; }
+.pc-top__meta > span:nth-child(2) {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.pc-top__art {
+  font-family: var(--font-sans-en);
+  font-weight: 800;
+  font-size: 160px;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  color: var(--text-main);
+  overflow: hidden;
+}
+.pc-top__art .accent { color: var(--accent-display); }
+.pc-top__art .dash   { color: var(--accent-display); }
+.pc-top__hint {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-top: 8px;
+}
+
+/* CARD TOP VARIANTS */
+.pc-top--kanji .pc-top__art {
+  font-family: var(--font-sans-jp);
+  font-weight: 900;
+  font-size: 160px;
+  letter-spacing: -0.02em;
+}
+.pc-top--year .pc-top__art {
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.pc-top--title .pc-top__art {
+  font-family: var(--font-serif-accent);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+}
+.pc-top--stacked .pc-top__art {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  display: flex;
+  flex-direction: column;
+}
+.pc-top--stacked .pc-top__art span:nth-child(2) { color: var(--accent-display); }
+.pc-top--stacked .pc-top__art span:last-child {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: #8a8478;
+  font-weight: 400;
+  font-style: normal;
+}
+.pc-top--title .pc-top__art .year {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: #8a8478;
+  display: block;
+  margin-top: 6px;
+}
+.pc-top--number {
+  background: var(--reverse-bg);
+}
+.pc-top--number .pc-top__meta .idx { color: var(--accent-display); }
+.pc-top--number .pc-top__art {
+  font-size: 160px;
+  color: var(--reverse-text);
+}
+.pc-top--number .pc-top__hint { color: rgba(250,250,245,0.45); }
+.pc-top--slash .pc-top__art {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+}
+.pc-top--slash .pc-top__art em {
+  font-family: var(--font-serif-accent);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 32px;
+}
+.pc-top--grid .pc-top__art {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  max-width: 60px;
+  margin-bottom: 8px;
+}
+.pc-top--grid .pc-top__art i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--border);
+  font-style: normal;
+  background: transparent;
+}
+
+/* CARD BODY */
+.pc-body {
+  display: grid;
+  gap: 12px;
+  padding: 22px 22px 24px;
+  background: var(--surface-2);
+}
+.pc-body__kind {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pc-body__kind::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-display);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.pc-body__name {
+  font-family: var(--font-sans-jp);
+  font-weight: 700;
+  font-size: 24px;
   letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+.pc-body__name-en {
+  font-family: var(--font-serif-accent);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 15px;
+  color: #d6402e;
+  display: block;
+  margin-top: 4px;
+}
+.pc-body__meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-mute);
+}
+.pc-body__lede {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-main);
+  margin: 0;
+}
+.pc-body__channel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #8a8478;
+  border-top: 1px solid #a39d90;
+  padding-top: 10px;
+  margin-top: 2px;
+}
+.pc-body__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.pc-body__tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-sub);
+}
+.pc-body__tag::before { content: '· '; }
+.pc-body__tag[data-hot] {
+  background: var(--accent-highlight);
+  color: var(--text-main);
+  padding: 2px 7px;
+  border-radius: var(--r-chip);
+}
+.pc-body__tag[data-hot]::before { content: ''; }
+.pc-body__cta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #d6402e;
+  padding-top: 14px;
+  border-top: 1px solid #a39d90;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pc-card:hover .pc-body__cta span:last-child {
+  transform: translateX(4px);
+  display: inline-block;
+  transition: transform 120ms ease;
 }
 
-.site-directory-label {
-  color: rgba(213, 194, 156, 0.38);
+/* ───────────────────────────────────────────
+   06 ARCHIVE CTA
+─────────────────────────────────────────── */
+.archive-cta {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+  padding: 36px 32px;
+  background: #0e0c0a;
+  color: #fafaf5;
+  border-bottom: 1.5px solid #0e0c0a;
 }
-
-.site-directory-group a {
-  color: rgba(213, 194, 156, 0.28);
-  text-decoration: none;
+.archive-cta__no {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #a83a2a;
+  font-weight: 500;
 }
-
-.site-directory-group a:hover {
-  color: rgba(235, 224, 204, 0.72);
+.archive-cta__main {
+  font-family: var(--font-sans-jp);
+  font-weight: 700;
+  font-size: clamp(24px, 2.8vw, 38px);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  color: #fafaf5;
 }
-
-.site-footer {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 24px;
-  z-index: 40;
+.archive-cta__main em {
+  font-style: normal;
+  background: #fafaf5;
+  color: #0e0c0a;
+  padding: 0 0.16em;
+  border-radius: var(--r-chip);
+}
+.archive-cta__arrow {
+  font-family: var(--font-mono);
   font-size: 12px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #fafaf5;
+  padding: 16px 22px;
+  border: 1.5px solid #fafaf5;
+  border-radius: var(--r-chip);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 120ms, border-color 120ms;
+}
+.archive-cta__arrow:hover {
+  background: #a83a2a;
+  border-color: #a83a2a;
+}
+
+/* ───────────────────────────────────────────
+   07 ERA
+─────────────────────────────────────────── */
+.era {
+  padding: 104px 32px 88px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.era__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 32px;
+}
+.era__section {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0a2540;
+  font-weight: 500;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 18px;
+}
+.era__section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: var(--accent-highlight);
+  border-radius: 50%;
+}
+.era__title {
+  font-family: var(--font-sans-jp);
+  font-weight: 900;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 1.02;
+}
+.era__sub {
+  font-size: 14px;
+  color: var(--text-sub);
   line-height: 1.7;
-  text-align: center;
+  max-width: 28em;
+  text-align: right;
 }
 
-.site-footer a {
-  color: rgba(213, 194, 156, 0.28);
-  text-decoration: none;
+.era__grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 0;
+  border-top: 1.5px solid var(--border);
+}
+.era__grid::-webkit-scrollbar { display: none; }
+.era__item {
+  flex-shrink: 0;
+  width: 280px;
+  scroll-snap-align: start;
+  border-right: 1.5px solid var(--border);
+  padding: 32px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background 120ms;
+}
+.era__item:last-child { border-right: none; }
+.era__item:hover { background: var(--surface-2); }
+.era__scroll-hint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.era__arrows {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.era__arrow {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-chip);
+  background: transparent;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms, color 120ms;
+}
+.era__arrow:hover {
+  background: var(--text-main);
+  color: var(--bg);
+}
+.era__arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+.era__years {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: #0a2540;
+  text-transform: uppercase;
+}
+.era__label {
+  font-family: var(--font-sans-en);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  color: var(--text-main);
+}
+.era__change {
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+.era__cta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-top: auto;
+  transition: color 120ms;
+}
+.era__item:hover .era__cta { color: var(--accent-action); }
+
+/* ───────────────────────────────────────────
+   08 BOTTOM LINKS
+─────────────────────────────────────────── */
+.bottom-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1.5px solid var(--border);
+  border-bottom: 1.5px solid var(--border);
+}
+.bl {
+  padding: 64px 32px 56px;
+  border-right: 1.5px solid var(--border);
+  display: grid;
+  gap: 16px;
+  transition: background 120ms;
+}
+.bl:last-child { border-right: none; }
+.bl:hover { background: rgba(14,12,10,0.03); }
+.bl__no {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-structure);
+}
+.bl__no em {
+  font-style: normal;
+  color: var(--accent-structure);
+}
+.bl__title {
+  font-family: var(--font-sans-jp);
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+.bl__title em {
+  color: #0a2540;
+  font-style: normal;
+}
+.bl__sub {
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+.bl__cta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #d6402e;
+  padding-top: 16px;
+  border-top: 1px solid #a39d90;
+  margin-top: auto;
 }
 
-.site-footer a:hover {
-  color: rgba(235, 224, 204, 0.72);
+/* ───────────────────────────────────────────
+   FOOTER
+─────────────────────────────────────────── */
+.foot {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 20px 32px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-mute);
+  border-top: 1px solid var(--border-soft);
+}
+.foot__center { text-align: center; }
+.foot__right { text-align: right; }
+.foot a { color: var(--accent-action); }
+.foot a:hover { text-decoration: underline; }
+
+/* ── EM ITALIC SUPPRESSION (JP headings) ── */
+.era__title em,
+.bl__title em,
+.cards-head__title em,
+.archive-cta__main em {
+  font-style: normal;
 }
 
-@media (max-width: 768px) {
-  .hud,
-  .page-links {
-    top: calc(14px + env(safe-area-inset-top));
-  }
+/* ── ALL SECTIONS ALWAYS VISIBLE ── */
+/* #view-coord は .coord { display: grid } をそのまま使う */
+#view-cards { display: block; }
+/* #view-era は .era のデフォルト display をそのまま使う */
 
-  .hud {
-    left: 16px;
-    right: 120px;
-    max-width: 240px;
-  }
-
-  .title {
-    font-size: 40px;
-    letter-spacing: 0.14em;
-    line-height: 1;
-  }
-
-  .title-english {
-    display: none;
-  }
-
-  .page-links {
-    right: 16px;
-    width: 112px;
-    gap: 6px;
-  }
-
-  .title-subcopy {
-    display: none;
-  }
-
-  .action-buttons {
-    right: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom));
-  }
-
-  .control-btn {
-    width: 34px;
-    height: 34px;
-  }
-
-  .map-info-panel {
-    width: min(320px, calc(100vw - 32px));
-    bottom: calc(100% + 8px);
-  }
-
-  .lang-btn {
-    padding: 6px 8px;
-    font-size: 10px;
-  }
-
-  .lang-btn {
-    min-width: 44px;
-    font-size: 0;
-    letter-spacing: 0;
-  }
-
-  .lang-btn::after {
-    font: 400 10px/1 'DM Mono', monospace;
-    letter-spacing: 0.14em;
-  }
-
-  .lang-btn:first-child::after {
-    content: 'JP';
-  }
-
-  .lang-btn:nth-child(2)::after {
-    content: 'EN';
-  }
-
-  .site-directory-links,
-  .site-footer {
-    display: none;
-  }
-
-  .page-select-wrap,
-  .page-search-suggestions,
-  .page-select {
-    display: none;
-  }
-
-  .spread-control {
-    position: fixed;
-    top: calc(84px + env(safe-area-inset-top));
-    left: 20px;
-    z-index: 42;
-    width: 18px;
-    height: 118px;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    backdrop-filter: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .spread-control input[type="range"] {
-    width: 118px;
-    height: 2px;
-    transform: rotate(-90deg);
-    transform-origin: center;
-  }
-
-  .spread-control input[type="range"]::-webkit-slider-thumb {
-    width: 11px;
-    height: 11px;
-  }
-
-  .spread-control input[type="range"]::-moz-range-thumb {
-    width: 11px;
-    height: 11px;
-  }
-
-  .page-search-form {
-    display: none;
-    position: fixed;
-    right: 16px;
-    left: 16px;
-    bottom: calc(58px + env(safe-area-inset-bottom));
-    width: auto;
-    z-index: 70;
-  }
-
-  body.mobile-search-open .page-search-form {
-    display: block;
-  }
-
-  body.mobile-search-open .page-search-input {
-    display: block;
-  }
-
-  body.mobile-search-open .page-search-suggestions {
-    display: grid;
-    top: auto;
-    bottom: calc(100% + 6px);
-  }
-
-  body.mobile-search-open .page-search-suggestions[hidden] {
-    display: none;
-  }
-
-  .mobile-search-toggle {
-    display: inline-flex;
-  }
-
-  .page-links .mobile-label-toggle {
-    width: 92px;
-    min-height: 24px;
-    margin-top: -3px;
-    font: 400 8px/1 'DM Mono', monospace;
-  }
-
-  .page-links .mobile-label-toggle.active {
-    background: var(--text);
-    color: var(--bg);
-  }
-}
 </style>
 </head>
 <body>
-<iframe id="design-frame" class="design-frame" src="design/toptest-extracted.html?v=20260517c" title="Photo Coordinates design stage" data-nosnippet></iframe>
+<div class="page">
 
-<div class="hud">
-  <div class="hero-text">
-    <div class="eyebrow">Photo Coordinates</div>
-    <h1 class="title"><em>写真の座標</em></h1>
-    <div class="title-english">Photo Coordinates</div>
-    <div class="title-subcopy" data-nosnippet>美術館・アーカイブ・専門資料を手がかりに、写真家・運動・思想・時代背景の関係から世界と日本の写真史をたどるサイトです。</div>
-  </div>
-</div>
-
-<div class="page-links" aria-label="一覧ページへの移動" data-nosnippet>
-  <div class="lang-toggle" aria-label="Language switch">
-    <a class="lang-btn active" href="/">Japanese</a>
-    <a class="lang-btn" href="/en/">English</a>
-  </div>
-  <button class="mobile-label-toggle" id="mobile-label-toggle" type="button" aria-pressed="false">全作家名表示</button>
-  <form class="page-search-form" id="top-page-search-form" role="search" autocomplete="off">
-    <input class="page-search-input" id="top-page-search-input" type="search" placeholder="写真家名・運動・国・年代を検索" aria-autocomplete="list" aria-expanded="false" aria-controls="top-page-search-suggestions">
-    <button class="page-search-button" type="submit" aria-label="検索"></button>
-    <div class="page-search-suggestions" id="top-page-search-suggestions" hidden></div>
-  </form>
-  <span class="page-select-wrap">
-    <select class="page-select" aria-label="表現から見る" onchange="if(this.value) window.location.href=this.value">
-      <option value="">表現から見る</option>
-      <option value="movements/ピクトリアリズム.html">ピクトリアリズム</option>
-      <option value="movements/写真分離派.html">写真分離派</option>
-      <option value="movements/ストレート写真.html">ストレート写真</option>
-      <option value="movements/モダニズム.html">モダニズム</option>
-      <option value="movements/新即物主義.html">新即物主義</option>
-      <option value="movements/新しいヴィジョン.html">新しいヴィジョン</option>
-      <option value="movements/バウハウス.html">バウハウス</option>
-      <option value="movements/ヴォルテクシズム.html">ヴォルテクシズム</option>
-      <option value="movements/ダダ.html">ダダ</option>
-      <option value="movements/シュルレアリスム.html">シュルレアリスム</option>
-      <option value="movements/レイオグラフ.html">レイオグラフ</option>
-      <option value="movements/自然主義写真.html">自然主義写真</option>
-      <option value="movements/リアリズム写真.html">リアリズム写真</option>
-      <option value="movements/ドキュメンタリー.html">ドキュメンタリー</option>
-      <option value="movements/社会ドキュメンタリー.html">社会ドキュメンタリー</option>
-      <option value="movements/フォトジャーナリズム.html">フォトジャーナリズム</option>
-      <option value="movements/FSA写真.html">FSA写真</option>
-      <option value="movements/決定的瞬間.html">決定的瞬間</option>
-      <option value="movements/ストリート写真.html">ストリート写真</option>
-      <option value="movements/プロヴォーク.html">プロヴォーク</option>
-      <option value="movements/私写真.html">私写真</option>
-      <option value="movements/ニューカラー.html">ニューカラー</option>
-      <option value="movements/カラー写真.html">カラー写真</option>
-      <option value="movements/大判カラー写真.html">大判カラー写真</option>
-      <option value="movements/デュッセルドルフ派.html">デュッセルドルフ派</option>
-      <option value="movements/タイポロジー写真.html">タイポロジー写真</option>
-      <option value="movements/コンセプチュアルアート.html">コンセプチュアルアート</option>
-      <option value="movements/ピクチャーズ世代.html">ピクチャーズ世代</option>
-      <option value="movements/ステージド写真.html">ステージド写真</option>
-      <option value="movements/フェミニズム写真.html">フェミニズム写真</option>
-      <option value="movements/シネマトグラフィック写真.html">シネマトグラフィック写真</option>
-    </select>
-  </span>
-  <span class="page-select-wrap">
-    <select class="page-select" aria-label="国別で見る" onchange="if(this.value) window.location.href=this.value">
-      <option value="">国別で見る</option>
-      <option value="countries/united-states.html">アメリカ</option>
-      <option value="countries/albania.html">アルバニア</option>
-      <option value="countries/australia.html">オーストラリア</option>
-      <option value="countries/austria.html">オーストリア</option>
-      <option value="countries/belgium.html">ベルギー</option>
-      <option value="countries/united-kingdom.html">イギリス</option>
-      <option value="countries/italy.html">イタリア</option>
-      <option value="countries/ireland.html">アイルランド</option>
-      <option value="countries/ukraine.html">ウクライナ</option>
-      <option value="countries/netherlands.html">オランダ</option>
-      <option value="countries/canada.html">カナダ</option>
-      <option value="countries/south-korea.html">韓国</option>
-      <option value="countries/switzerland.html">スイス</option>
-      <option value="countries/sweden.html">スウェーデン</option>
-      <option value="countries/spain.html">スペイン</option>
-      <option value="countries/czech-republic.html">チェコ</option>
-      <option value="countries/china.html">中国</option>
-      <option value="countries/denmark.html">デンマーク</option>
-      <option value="countries/germany.html">ドイツ</option>
-      <option value="countries/north-macedonia.html">北マケドニア</option>
-      <option value="countries/norway.html">ノルウェー</option>
-      <option value="countries/hungary.html">ハンガリー</option>
-      <option value="countries/france.html">フランス</option>
-      <option value="countries/brazil.html">ブラジル</option>
-      <option value="countries/venezuela.html">ベネズエラ</option>
-      <option value="countries/poland.html">ポーランド</option>
-      <option value="countries/mali.html">マリ</option>
-      <option value="countries/mexico.html">メキシコ</option>
-      <option value="countries/south-africa.html">南アフリカ</option>
-      <option value="countries/japan.html">日本</option>
-      <option value="countries/romania.html">ルーマニア</option>
-      <option value="countries/russia.html">ロシア</option>
-    </select>
-  </span>
-  <span class="page-select-wrap">
-    <select class="page-select" aria-label="年代別でみる" onchange="if(this.value) window.location.href=this.value">
-      <option value="">年代でみる</option>
-      <option value="archive.html#tab-era">年代順で見る</option>
-      <option value="eras/1839.html">1839–1860s</option>
-      <option value="eras/1870.html">1870–1890s</option>
-      <option value="eras/1890.html">1890–1910s</option>
-      <option value="eras/1910.html">1910–1920s</option>
-      <option value="eras/1930.html">1930–1940s</option>
-      <option value="eras/1950.html">1950–1960s</option>
-      <option value="eras/1970.html">1970–1980s</option>
-      <option value="eras/1980.html">1980–1990s</option>
-      <option value="eras/1990.html">1990–2000s</option>
-      <option value="eras/2000.html">2000–2010s</option>
-      <option value="eras/2010.html">2010–2020s</option>
-    </select>
-  </span>
-  <div class="spread-control" aria-label="星の散らばり">
-    <input id="stage-scale-range" type="range" min="0" max="100" step="1" value="50">
-  </div>
-</div>
-
-<div class="action-buttons" aria-label="補助操作" data-nosnippet>
-  <button class="control-btn mobile-search-toggle" id="mobile-search-toggle" type="button" aria-label="検索" aria-expanded="false"></button>
-  <details class="map-info-control">
-    <summary class="control-btn map-info-summary" aria-label="操作説明と注意書き">i</summary>
-    <div class="map-info-panel">
-      <div class="map-info-sections">
-        <div class="map-info-block">
-          <div class="map-info-heading">このサイトについて</div>
-          <div class="map-info-text">美術館・アーカイブ・専門資料を手がかりに、写真家・運動・思想・時代背景の関係から世界と日本の写真史をたどるサイトです。作品画像は各美術館・公式コレクションページへの導線を設け、無断転載は行いません。</div>
-        </div>
-        <div class="map-info-block">
-          <div class="map-info-heading">使い方</div>
-          <div class="map-info-text">クリックで中心に寄せ、もう一度クリックで詳細へ移動します。ドラッグすると広い地図を静かに探索できます。</div>
-        </div>
-        <div class="map-info-block">
-          <div class="map-info-heading">編集方針</div>
-          <div class="map-info-text">本サイトは公開資料をもとに、写真家・運動・時代背景の関係を編集・整理する写真史プロジェクトです。資料収集と整理にはAIも補助的に用い、出典を確認しながら更新しています。</div>
-        </div>
-        <nav class="map-info-block map-info-directory" aria-label="主要ページ">
-          <div class="map-info-heading">主要ページ</div>
-          <div class="map-info-directory-row">
-            <a href="/archive.html">写真家一覧</a>
-            <a href="/relations.html">関係地図</a>
-            <a href="/eras/1839.html">1839-1860s</a>
-            <a href="/eras/1910.html">1910-1920s</a>
-            <a href="/eras/1950.html">1950-1960s</a>
-            <a href="/eras/1970.html">1970-1980s</a>
-          </div>
-          <div class="map-info-directory-row">
-            <a href="/photographers/araki.html">荒木経惟</a>
-            <a href="/photographers/moriyama.html">森山大道</a>
-            <a href="/photographers/domon.html">土門拳</a>
-            <a href="/photographers/cartierbresson.html">アンリ・カルティエ＝ブレッソン</a>
-            <a href="/photographers/evans.html">ウォーカー・エヴァンス</a>
-          </div>
-        </nav>
-        <div class="map-info-links">
-          <span class="map-info-select-wrap">
-            <select class="map-info-select" aria-label="年代別でみる" onchange="if(this.value) window.location.href=this.value">
-              <option value="">年代別でみる</option>
-              <option value="archive.html#tab-era">年代順で見る</option>
-              <option value="eras/1839.html">1839–1860s</option>
-              <option value="eras/1870.html">1870–1890s</option>
-              <option value="eras/1890.html">1890–1910s</option>
-              <option value="eras/1910.html">1910–1920s</option>
-              <option value="eras/1930.html">1930–1940s</option>
-              <option value="eras/1950.html">1950–1960s</option>
-              <option value="eras/1970.html">1970–1980s</option>
-              <option value="eras/1980.html">1980–1990s</option>
-              <option value="eras/1990.html">1990–2000s</option>
-              <option value="eras/2000.html">2000–2010s</option>
-              <option value="eras/2010.html">2010–2020s</option>
-            </select>
-          </span>
-          <span class="map-info-select-wrap">
-            <select class="map-info-select" aria-label="国別で見る" onchange="if(this.value) window.location.href=this.value">
-              <option value="">国別で見る</option>
-              <option value="countries/united-states.html">アメリカ</option>
-              <option value="countries/albania.html">アルバニア</option>
-              <option value="countries/australia.html">オーストラリア</option>
-              <option value="countries/austria.html">オーストリア</option>
-              <option value="countries/belgium.html">ベルギー</option>
-              <option value="countries/united-kingdom.html">イギリス</option>
-              <option value="countries/italy.html">イタリア</option>
-              <option value="countries/ireland.html">アイルランド</option>
-              <option value="countries/ukraine.html">ウクライナ</option>
-              <option value="countries/netherlands.html">オランダ</option>
-              <option value="countries/canada.html">カナダ</option>
-              <option value="countries/south-korea.html">韓国</option>
-              <option value="countries/switzerland.html">スイス</option>
-              <option value="countries/sweden.html">スウェーデン</option>
-              <option value="countries/spain.html">スペイン</option>
-              <option value="countries/czech-republic.html">チェコ</option>
-              <option value="countries/china.html">中国</option>
-              <option value="countries/denmark.html">デンマーク</option>
-              <option value="countries/germany.html">ドイツ</option>
-              <option value="countries/north-macedonia.html">北マケドニア</option>
-              <option value="countries/norway.html">ノルウェー</option>
-              <option value="countries/hungary.html">ハンガリー</option>
-              <option value="countries/france.html">フランス</option>
-              <option value="countries/brazil.html">ブラジル</option>
-              <option value="countries/venezuela.html">ベネズエラ</option>
-              <option value="countries/poland.html">ポーランド</option>
-              <option value="countries/mali.html">マリ</option>
-              <option value="countries/mexico.html">メキシコ</option>
-              <option value="countries/south-africa.html">南アフリカ</option>
-              <option value="countries/japan.html">日本</option>
-              <option value="countries/romania.html">ルーマニア</option>
-              <option value="countries/russia.html">ロシア</option>
-            </select>
-          </span>
-          <span class="map-info-select-wrap">
-            <select class="map-info-select" aria-label="表現から見る" onchange="if(this.value) window.location.href=this.value">
-              <option value="">表現から見る</option>
-              <option value="movements/ピクトリアリズム.html">ピクトリアリズム</option>
-              <option value="movements/写真分離派.html">写真分離派</option>
-              <option value="movements/ストレート写真.html">ストレート写真</option>
-              <option value="movements/モダニズム.html">モダニズム</option>
-              <option value="movements/新即物主義.html">新即物主義</option>
-              <option value="movements/新しいヴィジョン.html">新しいヴィジョン</option>
-              <option value="movements/バウハウス.html">バウハウス</option>
-              <option value="movements/ヴォルテクシズム.html">ヴォルテクシズム</option>
-              <option value="movements/ダダ.html">ダダ</option>
-              <option value="movements/シュルレアリスム.html">シュルレアリスム</option>
-              <option value="movements/レイオグラフ.html">レイオグラフ</option>
-              <option value="movements/自然主義写真.html">自然主義写真</option>
-              <option value="movements/リアリズム写真.html">リアリズム写真</option>
-              <option value="movements/ドキュメンタリー.html">ドキュメンタリー</option>
-              <option value="movements/社会ドキュメンタリー.html">社会ドキュメンタリー</option>
-              <option value="movements/フォトジャーナリズム.html">フォトジャーナリズム</option>
-              <option value="movements/FSA写真.html">FSA写真</option>
-              <option value="movements/決定的瞬間.html">決定的瞬間</option>
-              <option value="movements/ストリート写真.html">ストリート写真</option>
-              <option value="movements/プロヴォーク.html">プロヴォーク</option>
-              <option value="movements/私写真.html">私写真</option>
-              <option value="movements/ニューカラー.html">ニューカラー</option>
-              <option value="movements/カラー写真.html">カラー写真</option>
-              <option value="movements/大判カラー写真.html">大判カラー写真</option>
-              <option value="movements/デュッセルドルフ派.html">デュッセルドルフ派</option>
-              <option value="movements/タイポロジー写真.html">タイポロジー写真</option>
-              <option value="movements/コンセプチュアルアート.html">コンセプチュアルアート</option>
-              <option value="movements/ピクチャーズ世代.html">ピクチャーズ世代</option>
-              <option value="movements/ステージド写真.html">ステージド写真</option>
-              <option value="movements/フェミニズム写真.html">フェミニズム写真</option>
-              <option value="movements/シネマトグラフィック写真.html">シネマトグラフィック写真</option>
-            </select>
-          </span>
-        </div>
-        <div class="map-info-footer"><a href="privacy-policy.html">プライバシーポリシー</a></div>
+  <!-- ───── HEADER ───── -->
+  <header class="head">
+    <a href="index.html" class="head__brand" style="text-decoration:none;">
+      <span class="head__brand-ja">写真の座標</span>
+      <span class="head__brand-en">Photo Coordinates</span>
+    </a>
+    <div class="head__crumbs">
+      <em>INDEX</em><span class="sep">/</span>TOP
+      <span class="sep">·</span>SOURCES&nbsp;美術館・アーカイブ・専門資料
+      <span class="sep">·</span>UPDATED&nbsp;<span class="updated-date">2026.05</span>
+    </div>
+    <div class="head__meta">
+      <div class="head__lang">
+        <button class="is-active">JP</button>
+        <button onclick="location.href='en/'">EN</button>
       </div>
     </div>
-  </details>
-  <button class="control-btn" id="reset-design-view" type="button" aria-label="初期表示に戻る">◎</button>
+  </header>
+
+  <!-- ───── HERO ───── -->
+  <section class="hero">
+    <div class="hero__eyebrow">
+      <span class="vol">VOL. 01</span>
+      <span class="num">§ —</span>
+      <span>写真史を、座標で読む</span>
+    </div>
+
+    <h1 class="hero__primary"><span class="hl">写真</span>の座標</h1>
+    <div class="hero__subtitle">Photo Coordinates<span class="sep">/</span>A History of Photography</div>
+
+    <div class="hero__foot">
+      <p class="hero__lead">
+        写真家を名前で覚えるためではなく、<br>
+        その人が写真表現の<strong>何を変えたのか</strong>を読むための写真史サイト。
+      </p>
+      <div class="hero__note-block">
+        <div class="hero__note">作品は公式リンクで見る。<br>ここでは意味を読む。</div>
+        <div class="hero__fig">FIG. 00 — COVER</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── TABS ───── -->
+  <div class="tabs">
+    <button class="tabs__btn is-active" data-target="view-coord">
+      <span class="tabs__num">01</span>
+      <span class="tabs__title">
+        <span class="tabs__title-ja">座標で見る</span>
+        <span class="tabs__title-en">§ I — By Coordinates</span>
+      </span>
+    </button>
+    <button class="tabs__btn" data-target="view-cards">
+      <span class="tabs__num">02</span>
+      <span class="tabs__title">
+        <span class="tabs__title-ja">カードで読む</span>
+        <span class="tabs__title-en">§ II — By Cards</span>
+      </span>
+    </button>
+    <button class="tabs__btn" data-target="view-era">
+      <span class="tabs__num">03</span>
+      <span class="tabs__title">
+        <span class="tabs__title-ja">時代から読む</span>
+        <span class="tabs__title-en">§ IV — By Era</span>
+      </span>
+    </button>
+    <button class="tabs__btn tabs__btn--search" aria-label="検索">
+      <span class="tabs__search-icon">⌕</span>
+    </button>
+  </div>
+
+  <!-- ───── SEARCH OVERLAY ───── -->
+  <div class="search-overlay" id="search-overlay" role="search">
+    <input class="search-overlay__input" id="search-input" type="search"
+           placeholder="写真家名・運動・国・年代を検索..." autocomplete="off" spellcheck="false">
+    <div class="search-results" id="search-results"></div>
+  </div>
+
+  <!-- ───── COORDINATES VIEW ───── -->
+  <section class="coord" id="view-coord">
+    <header class="coord__head">
+      <div>
+        <div class="coord__title-row">
+          <span class="coord__fig">FIG. 01</span>
+          <h2 class="coord__title">座標</h2>
+        </div>
+        <div class="coord__sub">Coordinates of Photographers, Movements &amp; Ideas</div>
+      </div>
+      <nav class="coord__nav">
+        <a href="#help">使い方</a>
+        <a href="../design/toptest-extracted.html" class="is-primary" target="_blank">全体マップへ →</a>
+      </nav>
+    </header>
+
+    <div class="coord__main">
+      <div class="coord__frame">
+        <button class="coord__reset" id="coord-reset" title="デフォルトに戻す" aria-label="デフォルトに戻す">⟳</button>
+        <iframe id="design-frame" src="design/toptest-extracted.html?v=20260517c" title="Photo Coordinates design stage" style="border:none; width:100%; height:100%;"></iframe>
+      </div>
+
+      <div class="coord__legend" id="coord-legend">
+        <span class="coord__legend-loading">— 線の凡例を読み込み中 —</span>
+      </div>
+    </div>
+
+    <aside class="coord__side">
+      <!-- デフォルト状態（未選択） -->
+      <div class="coord__side-empty" id="coord-empty">
+        <div class="coord__side-prompt">
+          <span class="coord__side-prompt-icon">↖</span>
+          <p>地図上の写真家をクリックすると<br>ここに情報が表示されます</p>
+        </div>
+      </div>
+
+      <!-- クリック後: pc-card を複製して表示 -->
+      <div id="coord-card-wrap" style="display:none; overflow-y:auto; height:100%;"></div>
+    </aside>
+  </section>
+
+  <!-- ───── CARDS VIEW ───── -->
+  <section class="cards-view" id="view-cards">
+    <header class="cards-head">
+      <div>
+        <div class="cards-head__section">§ II — BY CARDS</div>
+        <h2 class="cards-head__title"><em>カード</em>で読む</h2>
+        <div class="cards-head__sub">12 cards · 写真家ごとに切り口を変えて編集</div>
+      </div>
+      <div class="cards-head__legend">
+        Photographers · Movements · Themes
+        <div class="l-row">
+          <span class="l-chip is-ph"><i></i>Photographer</span>
+          <span class="l-chip is-mv"><i></i>Movement</span>
+          <span class="l-chip is-th"><i></i>Theme</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <label class="toolbar__search">
+        <input type="search" id="nd-cards-search" placeholder="写真家名・運動・国・年代を検索">
+      </label>
+      <button class="pill is-active" data-filter="photographer">Photographer</button>
+      <button class="pill" data-filter="movement">Movement</button>
+      <div class="sort-wrap">
+        <button class="pill pill--sort" id="nd-sort-btn">Sort · <span class="nd-sort-label">おすすめ順</span> ▾</button>
+        <div class="sort-dropdown" id="nd-sort-dropdown">
+          <button class="sort-option is-active" data-sort="default">おすすめ順</button>
+          <button class="sort-option" data-sort="movement">ムーブメント順</button>
+          <div class="sort-divider">— 年代で絞る —</div>
+          <button class="sort-option" data-sort="era:1839">1839 — 発明と実験</button>
+          <button class="sort-option" data-sort="era:1870">1870 — 技術普及と肖像写真</button>
+          <button class="sort-option" data-sort="era:1890">1890 — ピクトリアリズム</button>
+          <button class="sort-option" data-sort="era:1910">1910 — ストレート写真</button>
+          <button class="sort-option" data-sort="era:1930">1930 — ドキュメンタリー</button>
+          <button class="sort-option" data-sort="era:1950">1950 — 写真集と街路写真</button>
+          <button class="sort-option" data-sort="era:1970">1970 — 写真を疑う写真</button>
+          <button class="sort-option" data-sort="era:1980">1980 — ポストモダン</button>
+          <button class="sort-option" data-sort="era:1990">1990 — 制度的受容</button>
+          <button class="sort-option" data-sort="era:2000">2000 — デジタル化</button>
+          <button class="sort-option" data-sort="era:2010">2010 — SNS・AI</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         ⚠️  TOP12 カード — このブロック内の pc-top・idx・pc-top__art は変更禁止
+         ページロード後に JavaScript が cards-archive.html の内容で自動上書きする。
+         ハードコード値はフォールバック用であり、リンク追加など他の修正でも
+         pc-top 関連のクラス・数値・テキストには一切触れないこと。
+         カードデザインを変更したい場合は cards-archive.html を修正する。
+         ===================================================================== -->
+    <div class="cards" id="nd-cards-grid">
+
+      <!-- 01 Stieglitz -->
+      <article class="pc-card pc-card--photographer">
+        <a href="stieglitz.html" target="_blank">
+          <div class="pc-top pc-top--initials">
+            <div class="pc-top__meta"><span class="idx">15</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art">A<span class="accent">S</span></div>
+            <div class="pc-top__hint">ALFRED STIEGLITZ · 1864–1946</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">アルフレッド・スティーグリッツ</h3>
+              <div class="pc-body__name-en">Alfred Stieglitz</div>
+            </div>
+            <div class="pc-body__meta">アメリカ · 1864–1946</div>
+            <p class="pc-body__lede">写真がまだ芸術と見なされなかった時代に、画廊と機関誌で「写真を見せる場」そのものを発明した。作品より先に、写真が置かれる制度を作った人。</p>
+            <div class="pc-body__channel">制度を作る写真 · PICTORIALISM</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag" data-hot>291</span>
+              <span class="pc-body__tag">Camera Work</span>
+              <span class="pc-body__tag">近代写真</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 02 Nakahira -->
+      <article class="pc-card pc-card--photographer">
+        <a href="takuma-nakahira.html" target="_blank">
+          <div class="pc-top pc-top--kanji">
+            <div class="pc-top__meta"><span class="idx">111</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art">卓馬</div>
+            <div class="pc-top__hint">TAKUMA NAKAHIRA · 1938–2015</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">中平卓馬</h3>
+              <div class="pc-body__name-en">Takuma Nakahira</div>
+            </div>
+            <div class="pc-body__meta">日本 · 1938–2015</div>
+            <p class="pc-body__lede">撮ることと意味が結びつく回路を断ち切ろうとした写真家。後に自分のネガを焼き、写真とは「視ること」そのものではないかと問い直し続けた。</p>
+            <div class="pc-body__channel">写真そのものを疑う · PROVOKE</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">Provoke</span>
+              <span class="pc-body__tag">アレ・ブレ・ボケ</span>
+              <span class="pc-body__tag">事物への回帰</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 03 Sherman -->
+      <article class="pc-card pc-card--photographer">
+        <a href="sherman.html" target="_blank">
+          <div class="pc-top pc-top--stacked">
+            <div class="pc-top__meta"><span class="idx">39</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art">
+              <span>UNTITLED</span>
+              <span>FILM</span>
+              <span>STILLS</span>
+              <span>1977–80</span>
+            </div>
+            <div class="pc-top__hint">CINDY SHERMAN · 1954–</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">シンディ・シャーマン</h3>
+              <div class="pc-body__name-en">Cindy Sherman</div>
+            </div>
+            <div class="pc-body__meta">アメリカ · 1954–</div>
+            <p class="pc-body__lede">自分を被写体に映画のスチル風自画像を撮り続けることで、「女性のイメージ」が誰によってどう作られてきたかを写真の中で剥がしていった。</p>
+            <div class="pc-body__channel">演じられるイメージ · PICTURES GEN.</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">Untitled Film Stills</span>
+              <span class="pc-body__tag">Pictures Generation</span>
+              <span class="pc-body__tag">自己撮影</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 04 Evans -->
+      <article class="pc-card pc-card--photographer">
+        <a href="evans.html" target="_blank">
+          <div class="pc-top pc-top--year">
+            <div class="pc-top__meta"><span class="idx">26</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art">1903<span class="dash">—</span>1975</div>
+            <div class="pc-top__hint">WALKER EVANS · FSA · AMERICAN PHOTOGRAPHS</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">ウォーカー・エヴァンス</h3>
+              <div class="pc-body__name-en">Walker Evans</div>
+            </div>
+            <div class="pc-body__meta">アメリカ · 1903–1975</div>
+            <p class="pc-body__lede">感傷を抜いた正面と均等な距離で南部の小作農を撮り、ドキュメンタリーに「叙情ではなく構造を見る」という別の文法を持ち込んだ。</p>
+            <div class="pc-body__channel">読む報道写真 · DOCUMENTARY</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">American Photographs</span>
+              <span class="pc-body__tag">FSA</span>
+              <span class="pc-body__tag">正対</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 05 Frank -->
+      <article class="pc-card pc-card--photographer">
+        <a href="robertfrank.html" target="_blank">
+          <div class="pc-top pc-top--title">
+            <div class="pc-top__meta"><span class="idx">31</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art">The<br>Americans<br><span class="year">1958</span></div>
+            <div class="pc-top__hint">ROBERT FRANK · 1924–2019</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">ロバート・フランク</h3>
+              <div class="pc-body__name-en">Robert Frank</div>
+            </div>
+            <div class="pc-body__meta">スイス / アメリカ · 1924–2019</div>
+            <p class="pc-body__lede">一冊『The Americans』で、写真集を「並びと間で読むメディア」として確立した。一枚一枚の決定的瞬間より、シークエンスとして見ることを発明した。</p>
+            <div class="pc-body__channel">写真集という方法 · PHOTOBOOK</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">The Americans</span>
+              <span class="pc-body__tag">シークエンス</span>
+              <span class="pc-body__tag">リトルブック</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 06 Moriyama -->
+      <article class="pc-card pc-card--photographer">
+        <a href="moriyama.html" target="_blank">
+          <div class="pc-top pc-top--kanji">
+            <div class="pc-top__meta"><span class="idx">38</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art">新宿</div>
+            <div class="pc-top__hint">DAIDO MORIYAMA · 1938–</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">森山大道</h3>
+              <div class="pc-body__name-en">Daido Moriyama</div>
+            </div>
+            <div class="pc-body__meta">日本 · 1938–</div>
+            <p class="pc-body__lede">撮る前に都市があるのではなく、歩き続けるカメラの粒子のなかから都市が滲み出てくる、という見え方を作った。視ること自体の生々しさを残した。</p>
+            <div class="pc-body__channel">都市と欲望 · STREET</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">新宿</span>
+              <span class="pc-body__tag">街路</span>
+              <span class="pc-body__tag">粗粒子</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 07 Becher -->
+      <article class="pc-card pc-card--photographer">
+        <a href="becher.html" target="_blank">
+          <div class="pc-top pc-top--grid">
+            <div class="pc-top__meta"><span class="idx">48</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art">
+              <i></i><i></i><i></i>
+              <i></i><i></i><i></i>
+              <i></i><i></i><i></i>
+            </div>
+            <div class="pc-top__hint">BERND &amp; HILLA BECHER · TYPOLOGIES</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">ベルント＆ヒラ・ベッヒャー</h3>
+              <div class="pc-body__name-en">Bernd &amp; Hilla Becher</div>
+            </div>
+            <div class="pc-body__meta">ドイツ · 1959–2007</div>
+            <p class="pc-body__lede">給水塔や溶鉱炉を同じ条件で延々と撮り、グリッドに並べた。一枚で語る写真ではなく、並べて比較するための写真という用途を開いた。</p>
+            <div class="pc-body__channel">プリントと明晰さ · DÜSSELDORF</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">タイポロジー</span>
+              <span class="pc-body__tag">産業遺構</span>
+              <span class="pc-body__tag">グリッド</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 08 Cartier-Bresson -->
+      <article class="pc-card pc-card--photographer">
+        <a href="cartierbresson.html" target="_blank">
+          <div class="pc-top pc-top--initials">
+            <div class="pc-top__meta"><span class="idx">27</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art" style="font-size:128px;letter-spacing:-0.07em;">HC<span class="accent">B</span></div>
+            <div class="pc-top__hint">HENRI CARTIER-BRESSON · 1908–2004</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">アンリ・カルティエ＝ブレッソン</h3>
+              <div class="pc-body__name-en">Henri Cartier-Bresson</div>
+            </div>
+            <div class="pc-body__meta">フランス · 1908–2004</div>
+            <p class="pc-body__lede">シャッターは「ものを切り出す道具」だ、と決めた人。形と時間が同時に決まる一瞬を見つけることを、職業的写真家の規律に変えた。</p>
+            <div class="pc-body__channel">読む報道写真 · MAGNUM</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">Magnum</span>
+              <span class="pc-body__tag">幾何</span>
+              <span class="pc-body__tag">街路</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 09 Goldin -->
+      <article class="pc-card pc-card--photographer">
+        <a href="goldin.html" target="_blank">
+          <div class="pc-top pc-top--title">
+            <div class="pc-top__meta"><span class="idx">43</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art" style="font-size:54px;">The Ballad<br>of Sexual<br>Dependency</div>
+            <div class="pc-top__hint">NAN GOLDIN · 1953–</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">ナン・ゴールディン</h3>
+              <div class="pc-body__name-en">Nan Goldin</div>
+            </div>
+            <div class="pc-body__meta">アメリカ · 1953–</div>
+            <p class="pc-body__lede">自分と恋人と友人たちの夜を、家族写真のように撮った。撮る側と撮られる側の距離をなくしたところに写真が成立しうると示した。</p>
+            <div class="pc-body__channel">都市と欲望 · PRIVATE</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">Ballad</span>
+              <span class="pc-body__tag">親密性</span>
+              <span class="pc-body__tag">スライド上映</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 10 Arbus -->
+      <article class="pc-card pc-card--photographer">
+        <a href="arbus.html" target="_blank">
+          <div class="pc-top pc-top--number">
+            <div class="pc-top__meta"><span class="idx">37</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art">37</div>
+            <div class="pc-top__hint">DIANE ARBUS · 1923–1971</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">ダイアン・アーバス</h3>
+              <div class="pc-body__name-en">Diane Arbus</div>
+            </div>
+            <div class="pc-body__meta">アメリカ · 1923–1971</div>
+            <p class="pc-body__lede">見世物的に消費されていた人々の前にきちんと立ち、目を合わせ、対等な肖像として撮った。誰を正面から撮れるか、という写真の倫理を更新した。</p>
+            <div class="pc-body__channel">視線を変える · DOCUMENTARY</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">肖像</span>
+              <span class="pc-body__tag">ニューヨーク</span>
+              <span class="pc-body__tag">スクエア</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 11 Sander -->
+      <article class="pc-card pc-card--photographer">
+        <a href="sander.html" target="_blank">
+          <div class="pc-top pc-top--slash">
+            <div class="pc-top__meta"><span class="idx">23</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art">AUGUST<br>SANDER<br><em>20th cent.</em></div>
+            <div class="pc-top__hint">MENSCHEN DES 20. JAHRHUNDERTS</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">アウグスト・ザンダー</h3>
+              <div class="pc-body__name-en">August Sander</div>
+            </div>
+            <div class="pc-body__meta">ドイツ · 1876–1964</div>
+            <p class="pc-body__lede">職業と階層を軸に同時代のドイツ人を分類して撮り並べる、という途方もない試み。写真を「社会を整理するための装置」として運用した最初期の人。</p>
+            <div class="pc-body__channel">制度を作る写真 · NEUE SACHLICHKEIT</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">20世紀の人々</span>
+              <span class="pc-body__tag">類型</span>
+              <span class="pc-body__tag">ケルン</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 12 Araki -->
+      <article class="pc-card pc-card--photographer">
+        <a href="araki.html" target="_blank">
+          <div class="pc-top pc-top--kanji">
+            <div class="pc-top__meta"><span class="idx">33</span><span>PHOTOGRAPHER</span></div>
+            <div class="pc-top__art" style="font-size:172px;">私</div>
+            <div class="pc-top__hint">NOBUYOSHI ARAKI · 1940–</div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-body__kind">Photographer</span>
+            <div>
+              <h3 class="pc-body__name">荒木経惟</h3>
+              <div class="pc-body__name-en">Nobuyoshi Araki</div>
+            </div>
+            <div class="pc-body__meta">日本 · 1940–</div>
+            <p class="pc-body__lede">新婚旅行を一冊の私家本にして「私写真」という言い方を成立させた。日常・性・死の境界を写真集の編集で繋ぐ手つきを発明した。</p>
+            <div class="pc-body__channel">写真集という方法 · PRIVATE</div>
+            <div class="pc-body__tags">
+              <span class="pc-body__tag">センチメンタルな旅</span>
+              <span class="pc-body__tag">日記</span>
+              <span class="pc-body__tag">東京</span>
+            </div>
+            <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ───── ARCHIVE CTA ───── -->
+  <div class="archive-cta">
+    <span class="archive-cta__no">§ III — ARCHIVE</span>
+    <span class="archive-cta__main">すべての写真家を <em>カードで</em> 見る</span>
+    <a class="archive-cta__arrow" href="cards-archive.html" target="_blank">Open the Archive →</a>
+  </div>
+
+  <!-- ───── ERA ───── -->
+  <section class="era" id="view-era">
+    <header class="era__head">
+      <div>
+        <div class="era__section">§ IV — BY ERA</div>
+        <h2 class="era__title"><em>時代</em>から読む</h2>
+      </div>
+      <div class="era__sub">
+        単に年代順ではなく、その時代に写真表現の何が変わったのかを読む
+        <div class="era__scroll-hint">全 11 時代</div>
+        <div class="era__arrows">
+          <button class="era__arrow" id="era-prev" aria-label="前の時代">←</button>
+          <button class="era__arrow" id="era-next" aria-label="次の時代">→</button>
+        </div>
+      </div>
+    </header>
+    <div class="era__grid" id="era-grid">
+      <a class="era__item" href="eras/1839.html">
+        <div class="era__years">1839 — 1860s</div>
+        <div class="era__label">写真の誕生</div>
+        <div class="era__change">ニエプス、ダゲール、タルボット。写真という装置が生まれ、見ることの意味が変わり始める。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/1870.html">
+        <div class="era__years">1870s — 1880s</div>
+        <div class="era__label">記録・報道・肖像の確立</div>
+        <div class="era__change">写真が社会的記録の手段として定着。乾板技術の普及で撮影の裾野が広がる。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/1890.html">
+        <div class="era__years">1890s — 1910s</div>
+        <div class="era__label">ピクトリアリズムと芸術写真</div>
+        <div class="era__change">写真を絵画に近づけ「芸術」として認めさせようとする運動。スティーグリッツが制度を作る。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/1910.html">
+        <div class="era__years">1910s — 1920s</div>
+        <div class="era__label">ストレート写真と近代化</div>
+        <div class="era__change">絵画模倣を捨て、写真固有の鮮明さと正確さを肯定する。モダニズムと写真の交差。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/1930.html">
+        <div class="era__years">1930s — 1940s</div>
+        <div class="era__label">ドキュメンタリーと社会写真</div>
+        <div class="era__change">FSA、マグナム前夜。社会的現実を伝える写真の文法が整備されていく。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/1950.html">
+        <div class="era__years">1950s — 1960s</div>
+        <div class="era__label">写真集と街路写真</div>
+        <div class="era__change">フランク『The Americans』で写真集が「並びで読むメディア」になる。街路写真の全盛。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/1970.html">
+        <div class="era__years">1970s — 1980s</div>
+        <div class="era__label">写真を疑う写真</div>
+        <div class="era__change">プロヴォーク、Pictures Generation、デュッセルドルフ派。写真が写真自身を問い始める。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/1980.html">
+        <div class="era__years">1980s — 1990s</div>
+        <div class="era__label">ポストモダンと制度批判</div>
+        <div class="era__change">美術館・市場・批評の制度が写真を取り込む。イメージの流通と消費が主題になる。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/1990.html">
+        <div class="era__years">1990s — 2000s</div>
+        <div class="era__label">写真の制度的受容</div>
+        <div class="era__change">大型プリント化、美術館への本格収蔵。写真が現代美術の主流メディアとして確立される。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/2000.html">
+        <div class="era__years">2000s — 2010s</div>
+        <div class="era__label">デジタル化と写真の変容</div>
+        <div class="era__change">デジタルカメラの普及、写真の証拠性の揺らぎ。撮ることと見ることの関係が変わる。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+      <a class="era__item" href="eras/2010.html">
+        <div class="era__years">2010s — 2020s</div>
+        <div class="era__label">SNS・スマートフォン・AI</div>
+        <div class="era__change">誰もが撮り、誰もが配信する時代。AI生成画像が写真の固有性と真実性を問い直す。</div>
+        <div class="era__cta">Read this era →</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ───── BOTTOM LINKS ───── -->
+  <nav class="bottom-links">
+    <a class="bl" href="cards-archive.html" target="_blank">
+      <span class="bl__no"><em>§ V</em> — ARCHIVE</span>
+      <h3 class="bl__title"><em>写真家</em>を探す</h3>
+      <p class="bl__sub">カード棚の完全版。検索・国・時代・運動・テーマから探す本格版アーカイブ。</p>
+      <span class="bl__cta">Browse the archive</span>
+    </a>
+    <a class="bl" href="movements/ストレート写真.html" target="_blank">
+      <span class="bl__no"><em>§ VI</em> — MOVEMENTS</span>
+      <h3 class="bl__title"><em>運動</em>から読む</h3>
+      <p class="bl__sub">ストレート写真、Provoke、Pictures Generation などを関係で読む。</p>
+      <span class="bl__cta">Open the movements</span>
+    </a>
+    <a class="bl" href="#">
+      <span class="bl__no"><em>§ VII</em> — NOTES</span>
+      <h3 class="bl__title"><em>読み物</em>へ進む</h3>
+      <p class="bl__sub">比較記事、問いから入る写真史、展覧会前の予習記事。</p>
+      <span class="bl__cta">Read the notes</span>
+    </a>
+  </nav>
+
+  <!-- ───── FOOTER ───── -->
+  <footer class="foot">
+    <div>© Photo Coordinates · VOL. 01</div>
+    <div class="foot__center">美術館・アーカイブ・専門資料に基づく</div>
+    <div class="foot__right"><a href="../privacy-policy.html">プライバシー</a> · <a href="#">コロフォン</a></div>
+  </footer>
+
 </div>
 
-<nav class="site-directory-links" aria-label="主要ページ" data-nosnippet>
-  <div class="site-directory-group">
-    <span class="site-directory-label">Index</span>
-    <a href="/archive.html">写真家一覧</a>
-    <a href="/eras/1839.html">1839-1860s</a>
-    <a href="/eras/1910.html">1910-1920s</a>
-    <a href="/eras/1950.html">1950-1960s</a>
-    <a href="/eras/1970.html">1970-1980s</a>
-  </div>
-  <div class="site-directory-group">
-    <span class="site-directory-label">Photographers</span>
-    <a href="/photographers/araki.html">荒木経惟</a>
-    <a href="/photographers/moriyama.html">森山大道</a>
-    <a href="/photographers/domon.html">土門拳</a>
-    <a href="/photographers/cartierbresson.html">アンリ・カルティエ＝ブレッソン</a>
-    <a href="/photographers/evans.html">ウォーカー・エヴァンス</a>
-  </div>
-</nav>
-
-<footer class="site-footer" data-nosnippet>
-  <a href="privacy-policy.html">プライバシーポリシー</a>
-</footer>
-
-<script src="data/photographers.js?v=20260405j"></script>
-<script src="data/photographers-supplement.js?v=20260419c"></script>
-<script src="data/photographers-manual-additions.js?v=20260513a"></script>
 <script>
-  (function () {
-    const DESIGN_DEFAULT_SPREAD = 2.1;
-    const MOBILE_DESIGN_DEFAULT_SPREAD = 3.2;
-    const scaleRange = document.getElementById('stage-scale-range');
-    const resetButton = document.getElementById('reset-design-view');
-    let frame = document.getElementById('design-frame');
-    const searchForm = document.getElementById('top-page-search-form');
-    const searchInput = document.getElementById('top-page-search-input');
-    const searchSuggestions = document.getElementById('top-page-search-suggestions');
-    const mobileSearchToggle = document.getElementById('mobile-search-toggle');
-    const mobileLabelToggle = document.getElementById('mobile-label-toggle');
-    const labelToggles = [mobileLabelToggle].filter(Boolean);
-    const searchCandidates = [];
-
-    function getCoordinateTarget() {
-      const params = new URLSearchParams(window.location.search);
-      const direct = params.get('photographer') || params.get('pid');
-      const focus = params.get('focus') || '';
-      const fromFocus = focus.startsWith('photographer:') ? focus.slice('photographer:'.length) : '';
-      const hash = decodeURIComponent(window.location.hash || '');
-      const fromHash = (hash.match(/^#(?:photographer|coordinates)-(.+)$/) || [])[1] || '';
-      return direct || fromFocus || fromHash || '';
-    }
-
-    const coordinateTarget = getCoordinateTarget();
-
-    function bindFrame(nextFrame) {
-      frame = nextFrame;
-      if (frame) {
-        frame.addEventListener('load', patchDesignFrame);
-      }
-    }
-
-    function clearDesignPersistence() {
-      try {
-        frame.contentWindow.localStorage.removeItem('pc_selected');
-        frame.contentWindow.localStorage.removeItem('pc_mode');
-        frame.contentWindow.postMessage({ type: '__pc_reset_selection' }, '*');
-      } catch {}
-    }
-
-    function selectDesignPhotographer(id) {
-      if (!id || !frame || !frame.contentWindow) return false;
-      try {
-        frame.contentWindow.localStorage.setItem('pc_selected', id);
-        frame.contentWindow.postMessage({ type: '__pc_select_photographer', id }, '*');
-        return true;
-      } catch {}
-      return false;
-    }
-
-    function closeDesignSelection() {
-      try {
-        const closeButton = frame.contentDocument && frame.contentDocument.querySelector('.close-btn');
-        if (closeButton) {
-          closeButton.click();
-          return true;
+  // Design frame embed patch
+  const designFrame = document.getElementById('design-frame');
+  function patchDesignFrame() {
+    const doc = designFrame && designFrame.contentDocument;
+    if (!doc) return;
+    if (!doc.getElementById('design-overlay-patch')) {
+      const style = doc.createElement('style');
+      style.id = 'design-overlay-patch';
+      style.textContent = `
+        .masthead, .side-controls, .mode-switcher, .tweaks-panel,
+        .footer-link, .info-card, .info-card-toggle, .connection-legend {
+          display: none !important;
         }
-      } catch {}
-      return false;
-    }
-
-    function getDesignSlider() {
-      const doc = frame && frame.contentDocument;
-      if (!doc) return null;
-      return doc.querySelector('input[type="range"]');
-    }
-    function syncFromDesign() {
-      const designSlider = getDesignSlider();
-      if (!designSlider || !scaleRange) return;
-      const min = Number(designSlider.min || 0);
-      const max = Number(designSlider.max || 100);
-      const value = Number(designSlider.value || min);
-      const ratio = max > min ? ((value - min) / (max - min)) * 100 : 50;
-      scaleRange.value = String(Math.round(ratio));
-    }
-    function syncToDesign() {
-      const designSlider = getDesignSlider();
-      if (!designSlider || !scaleRange) return;
-      const min = Number(designSlider.min || 0);
-      const max = Number(designSlider.max || 100);
-      const ratio = Number(scaleRange.value) / 100;
-      const nextValue = min + (max - min) * ratio;
-      designSlider.value = String(nextValue);
-      designSlider.dispatchEvent(new Event('input', { bubbles: true }));
-      designSlider.dispatchEvent(new Event('change', { bubbles: true }));
-    }
-
-    function resetDesignStage() {
-      clearDesignPersistence();
-      const designSlider = getDesignSlider();
-      if (designSlider) {
-        designSlider.value = String(window.innerWidth <= 768 ? MOBILE_DESIGN_DEFAULT_SPREAD : DESIGN_DEFAULT_SPREAD);
-        designSlider.dispatchEvent(new Event('input', { bubbles: true }));
-        designSlider.dispatchEvent(new Event('change', { bubbles: true }));
-      }
-      syncFromDesign();
-      if (!closeDesignSelection()) {
-        requestAnimationFrame(() => {
-          closeDesignSelection();
-        });
-      }
-    }
-
-    function normalizeSearchValue(value) {
-      return String(value || '')
-        .normalize('NFKC')
-        .toLowerCase()
-        .replace(/[\u30a1-\u30f6]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0x60))
-        .replace(/[・･\s\u3000|｜/／\\()[\]{}「」『』.,，、。:：;；'’"“”\-‐‑‒–—―=＝+＋_＿]/g, '');
-    }
-
-    function addSearchCandidate(label, href, aliases = []) {
-      const safeLabel = String(label || '').trim();
-      const safeHref = String(href || '').trim();
-      if (!safeLabel || !safeHref) return;
-      const rawAliases = [safeLabel, ...aliases]
-        .flatMap((entry) => {
-          const text = String(entry || '').trim();
-          if (!text) return [];
-          const parts = text
-            .split(/[・･\s\u3000|｜/／\\()[\]{}「」『』.,，、。:：;；'’"“”\-‐‑‒–—―=＝+＋_＿]+/g)
-            .map((part) => part.trim())
-            .filter((part) => part.length >= 2);
-          return [text, ...parts];
-        });
-      const normalizedAliases = rawAliases
-        .map((entry) => normalizeSearchValue(entry))
-        .filter(Boolean);
-      searchCandidates.push({
-        label: safeLabel,
-        href: safeHref,
-        aliases: Array.from(new Set(normalizedAliases)),
-      });
-    }
-
-    function buildSearchCandidates() {
-      if (searchCandidates.length) return;
-      const photographerList = typeof PHOTOGRAPHERS !== 'undefined'
-        ? (Array.isArray(PHOTOGRAPHERS) ? PHOTOGRAPHERS : [])
-        : (Array.isArray(window.PHOTOGRAPHERS) ? window.PHOTOGRAPHERS : []);
-      photographerList
-        .filter((photographer) => photographer && photographer.id && !photographer.isPlaceholder)
-        .forEach((photographer) => {
-          addSearchCandidate(
-            photographer.nameJa || photographer.name || photographer.id,
-            `photographers/${photographer.id}.html`,
-            [
-              photographer.nameJa,
-              photographer.name,
-              photographer.nameEn,
-              photographer.romaji,
-              photographer.nameRomaji,
-              photographer.id,
-            ]
-          );
-        });
-      document.querySelectorAll('.page-select option, .map-info-select option').forEach((option) => {
-        const href = option.value;
-        const label = option.textContent;
-        if (!href || !label || href.includes('archive.html#')) return;
-        const hrefSlug = href.split('/').pop()?.replace(/\.html$/i, '').replace(/[-_]+/g, ' ') || '';
-        addSearchCandidate(label, href, [hrefSlug]);
-      });
-    }
-
-    function escapeHtml(value) {
-      return String(value || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    function matchingSearchCandidates(query) {
-      const normalized = normalizeSearchValue(query);
-      if (!normalized) return [];
-      buildSearchCandidates();
-      const scored = searchCandidates
-        .map((candidate) => {
-          let score = -1;
-          candidate.aliases.forEach((alias) => {
-            if (alias === normalized) score = Math.max(score, 300);
-            else if (alias.startsWith(normalized)) score = Math.max(score, 200 - (alias.length - normalized.length));
-            else if (alias.includes(normalized)) score = Math.max(score, 100 - alias.indexOf(normalized));
-          });
-          return score >= 0 ? { candidate, score } : null;
-        })
-        .filter(Boolean)
-        .sort((a, b) => b.score - a.score || a.candidate.label.length - b.candidate.label.length);
-      return scored.slice(0, 8).map((entry) => entry.candidate);
-    }
-
-    function renderSearchSuggestions(query) {
-      if (!searchSuggestions || !searchInput) return;
-      const results = matchingSearchCandidates(query);
-      if (!results.length) {
-        searchSuggestions.hidden = true;
-        searchInput.setAttribute('aria-expanded', 'false');
-        return;
-      }
-      searchSuggestions.hidden = false;
-      searchInput.setAttribute('aria-expanded', 'true');
-      searchSuggestions.innerHTML = results
-        .map((candidate) => `<button class="page-search-suggestion" type="button" data-search-href="${escapeHtml(candidate.href)}">${escapeHtml(candidate.label)}</button>`)
-        .join('');
-    }
-
-    function populateSearchSuggestions() {
-      buildSearchCandidates();
-    }
-
-    function resolveSearchTarget(query) {
-      const [first] = matchingSearchCandidates(query);
-      return first ? first.href : '';
-    }
-
-    function patchDesignFrame() {
-      const doc = frame && frame.contentDocument;
-      if (!doc) return;
-      if (!doc.getElementById('design-overlay-patch')) {
-        const style = doc.createElement('style');
-        style.id = 'design-overlay-patch';
-        style.textContent = `
-          .masthead,.side-controls,.mode-switcher,.tweaks-panel,.footer-link{display:none!important;}
-          html,body,#root,.app,.stage,.stage svg,.star-label,.connection-label,.nebula-label{
-            user-select:none!important;
-            -webkit-user-select:none!important;
-          }
-          input,textarea,select{
-            user-select:text!important;
-            -webkit-user-select:text!important;
-          }
-          .connection-legend .legend-summary {
-            display: none;
-            list-style: none;
-          }
-          .connection-legend .legend-summary::-webkit-details-marker {
-            display: none;
-          }
-          @media (max-width: 768px) {
-            .info-card {
-              display: none !important;
-            }
-            .connection-legend {
-              display: block !important;
-              top: calc(76px + env(safe-area-inset-top, 0px)) !important;
-              right: 16px !important;
-              bottom: auto !important;
-              width: 92px !important;
-              max-height: min(34svh, 230px) !important;
-              padding: 0 !important;
-              overflow: hidden !important;
-            }
-            .info-card.is-open {
-              display: block !important;
-              left: 16px !important;
-              right: 16px !important;
-              bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
-              width: auto !important;
-              max-height: min(52svh, 360px) !important;
-            }
-            .info-card-toggle {
-              position: absolute;
-              left: 16px;
-              bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-              z-index: 22;
-              min-width: 132px;
-              max-width: calc(100vw - 152px);
-              min-height: 34px;
-              padding: 8px 12px;
-              border: 1px solid var(--ink-20);
-              border-radius: 2px;
-              background: rgba(10, 14, 24, 0.78);
-              color: var(--ink-80);
-              font: 400 10px/1.2 var(--font-mono);
-              letter-spacing: 0.12em;
-              text-transform: uppercase;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              backdrop-filter: blur(12px);
-            }
-            .connection-legend .legend-summary {
-              display: block;
-              min-height: 24px;
-              padding: 7px 8px;
-              color: var(--ink-80);
-              font: 400 9px/1.1 var(--font-mono);
-              letter-spacing: 0.1em;
-              text-transform: uppercase;
-              cursor: pointer;
-            }
-            .connection-legend .legend-summary::after {
-              content: '+';
-              float: right;
-              color: var(--ink-40);
-            }
-            .connection-legend[open] .legend-summary::after {
-              content: '×';
-            }
-            .connection-legend .legend-title {
-              padding: 0 8px 5px;
-              margin: 0;
-              font-size: 8px;
-              letter-spacing: 0.1em;
-            }
-            .connection-legend ul {
-              padding: 0 8px 8px !important;
-              gap: 2px !important;
-            }
-            .connection-legend li {
-              gap: 5px !important;
-              font-size: 8px !important;
-              line-height: 1.25 !important;
-            }
-            .connection-legend .legend-swatch {
-              width: 9px !important;
-            }
-          }
-          @media (min-width: 769px) {
-            .info-card-toggle { display: none !important; }
-          }
-        `;
-        doc.head.appendChild(style);
-      }
-      syncFromDesign();
-      const designSlider = getDesignSlider();
-      if (designSlider && !designSlider.dataset.overlaySynced) {
-        designSlider.dataset.overlaySynced = 'true';
-        designSlider.addEventListener('input', syncFromDesign);
-        designSlider.addEventListener('change', syncFromDesign);
-      }
-      requestAnimationFrame(() => {
-        if (coordinateTarget) {
-          selectDesignPhotographer(coordinateTarget);
-        } else {
-          clearDesignPersistence();
-          closeDesignSelection();
+        html, body, #root, .app, .stage, .stage svg,
+        .star-label, .connection-label, .nebula-label {
+          user-select: none !important;
+          -webkit-user-select: none !important;
         }
-        syncFromDesign();
-      });
-    }
-    bindFrame(frame);
-    if (scaleRange) {
-      scaleRange.addEventListener('input', syncToDesign);
-      scaleRange.addEventListener('change', syncToDesign);
-    }
-    if (labelToggles.length) {
-      const setLabelToggleState = (isActive) => {
-        labelToggles.forEach((toggle) => {
-          toggle.classList.toggle('active', isActive);
-          toggle.setAttribute('aria-pressed', String(isActive));
-        });
-      };
-      labelToggles.forEach((toggle) => {
-        toggle.addEventListener('click', () => {
-          const isActive = toggle.getAttribute('aria-pressed') !== 'true';
-          setLabelToggleState(isActive);
-          try {
-            const designToggle = frame.contentDocument && frame.contentDocument.querySelector('.mobile-label-toggle');
-            if (designToggle && designToggle.getAttribute('aria-pressed') !== String(isActive)) {
-              designToggle.click();
-            }
-          } catch {}
-        });
-      });
-    }
-    if (resetButton && frame) {
-      resetButton.addEventListener('click', () => {
-        resetDesignStage();
-      });
-    }
-    populateSearchSuggestions();
-    if (searchForm && searchInput) {
-      if (mobileSearchToggle) {
-        mobileSearchToggle.addEventListener('click', () => {
-          const isOpen = document.body.classList.toggle('mobile-search-open');
-          mobileSearchToggle.setAttribute('aria-expanded', String(isOpen));
-          if (isOpen) {
-            window.setTimeout(() => {
-              searchInput.focus();
-              if (searchInput.value.trim()) renderSearchSuggestions(searchInput.value);
-            }, 30);
-          } else if (searchSuggestions) {
-            searchSuggestions.hidden = true;
-            searchInput.setAttribute('aria-expanded', 'false');
-          }
-        });
+      `;
+      doc.head.appendChild(style);
+
+      // Send legend data to parent (called on every change)
+      function sendLegendData() {
+        const lis = doc.querySelectorAll('.connection-legend li');
+        const items = Array.from(lis).map(li => {
+          const swatch = li.querySelector('.legend-swatch');
+          const label  = li.querySelector('.legend-label');
+          return {
+            color: swatch ? swatch.style.background : '',
+            label: label  ? label.textContent.trim() : ''
+          };
+        }).filter(d => d.label);
+        window.parent?.postMessage({ type: '__pc_legend', items }, '*');
       }
-      searchInput.addEventListener('input', () => {
-        renderSearchSuggestions(searchInput.value);
-      });
-      searchInput.addEventListener('focus', () => {
-        if (searchInput.value.trim()) renderSearchSuggestions(searchInput.value);
-      });
-      searchInput.addEventListener('blur', () => {
-        window.setTimeout(() => {
-          if (searchSuggestions) searchSuggestions.hidden = true;
-          searchInput.setAttribute('aria-expanded', 'false');
-        }, 120);
-      });
-      if (searchSuggestions) {
-        searchSuggestions.addEventListener('click', (event) => {
-          const button = event.target.closest('[data-search-href]');
-          if (!button) return;
-          const href = button.getAttribute('data-search-href');
-          if (href) window.location.href = href;
-        });
-      }
-      searchForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const target = resolveSearchTarget(searchInput.value);
-        if (target) {
-          window.location.href = target;
-          return;
+
+      // MutationObserver: watch body for React re-renders (legend + photographer selection)
+      let legendTimer = null;
+      let lastSelectedName = '';
+      const legendObserver = new MutationObserver(() => {
+        clearTimeout(legendTimer);
+        legendTimer = setTimeout(sendLegendData, 150);
+
+        // Detect photographer selection via info-card h2 change
+        const h2 = doc.querySelector('.info-card h2');
+        const name = h2 ? h2.textContent.trim() : '';
+        if (name && name !== '星座をたどる' && name !== lastSelectedName) {
+          lastSelectedName = name;
+          window.postMessage({ type: 'photographer-click', name }, window.location.origin);
         }
-        searchInput.focus();
-        searchInput.select();
       });
+      legendObserver.observe(doc.body, { childList: true, subtree: true, characterData: true });
     }
-  })();
+  }
+  if (designFrame) {
+    designFrame.addEventListener('load', patchDesignFrame);
+  }
+
+  // Reset button
+  const coordReset = document.getElementById('coord-reset');
+  const designBaseSrc = 'design/toptest-extracted.html?v=20260517c';
+  if (coordReset && designFrame) {
+    coordReset.addEventListener('click', () => {
+      // Same-origin: clear localStorage so React doesn't restore previous selection/pan/zoom
+      try {
+        const ls = designFrame.contentWindow.localStorage;
+        ls.removeItem('pc_selected');
+        ls.removeItem('pc_mode');
+      } catch (e) {}
+      // Reload with unique URL to bypass cache
+      designFrame.src = designBaseSrc + '&_r=' + Date.now();
+      // Reset side panel to default empty state
+      const wrap  = document.getElementById('coord-card-wrap');
+      const empty = document.getElementById('coord-empty');
+      if (wrap && empty) {
+        wrap.innerHTML = '';
+        wrap.style.display = 'none';
+        empty.style.display = '';
+      }
+    });
+  }
+
+  // Search overlay
+  const searchBtn    = document.querySelector('.tabs__btn--search');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchInput  = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+
+  // Build index from card HTML
+  const searchIndex = Array.from(document.querySelectorAll('.pc-card')).map(card => {
+    const link = card.querySelector('a');
+    return {
+      href:    link ? link.getAttribute('href') : '#',
+      name:    card.querySelector('.pc-body__name')?.textContent.trim() || '',
+      nameEn:  card.querySelector('.pc-body__name-en')?.textContent.trim() || '',
+      meta:    card.querySelector('.pc-body__meta')?.textContent.trim() || '',
+      channel: card.querySelector('.pc-body__channel')?.textContent.trim() || '',
+    };
+  });
+
+  function runSearch(q) {
+    searchResults.innerHTML = '';
+    if (!q) return;
+    const lower = q.toLowerCase();
+    const hits = searchIndex.filter(p =>
+      p.name.includes(q) || p.nameEn.toLowerCase().includes(lower) ||
+      p.meta.toLowerCase().includes(lower) || p.channel.toLowerCase().includes(lower)
+    );
+    if (hits.length === 0) {
+      searchResults.innerHTML = '<span style="font-family:var(--font-mono);font-size:11px;color:var(--text-mute);">該当なし</span>';
+      return;
+    }
+    hits.forEach(p => {
+      const a = document.createElement('a');
+      a.className = 'search-result-item';
+      a.href = p.href;
+      a.textContent = p.name + (p.nameEn ? ' / ' + p.nameEn : '');
+      searchResults.appendChild(a);
+    });
+  }
+
+  if (searchBtn && searchOverlay) {
+    searchBtn.addEventListener('click', () => {
+      const isOpen = searchOverlay.classList.toggle('is-open');
+      searchBtn.classList.toggle('is-active', isOpen);
+      if (isOpen) { searchInput.focus(); searchInput.value = ''; searchResults.innerHTML = ''; }
+    });
+    searchInput.addEventListener('input', () => runSearch(searchInput.value.trim()));
+    searchInput.addEventListener('keydown', e => { if (e.key === 'Escape') searchBtn.click(); });
+  }
+
+  // Sticky tab scroll + active sync
+  const tabBtns = document.querySelectorAll('.tabs__btn');
+  const tabBar  = document.querySelector('.tabs');
+  const OFFSET  = () => 52 + (tabBar ? tabBar.offsetHeight : 0);
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.target);
+      if (!target) return;
+      const top = target.getBoundingClientRect().top + window.scrollY - OFFSET();
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  // IntersectionObserver: アクティブタブ自動更新
+  const sections = [
+    document.getElementById('view-coord'),
+    document.getElementById('view-cards'),
+    document.getElementById('view-era'),
+  ];
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = sections.indexOf(entry.target);
+        tabBtns.forEach(b => b.classList.remove('is-active'));
+        if (idx !== -1) tabBtns[idx].classList.add('is-active');
+      }
+    });
+  }, {
+    rootMargin: '-40% 0px -55% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(s => { if (s) observer.observe(s); });
+
+  // Photographer data for side panel cards
+  // REMOVED: photographerData (no longer needed — we clone existing pc-cards)
+  const photographerData_UNUSED = {
+    'daguerre': { no: '01', name: 'ルイ・ダゲール', nameEn: 'Louis Daguerre', meta: 'FR · 1787–1851', lede: 'ダゲールはダゲレオタイプを発明し、1839年8月19日の公開により写真を事実上「全人類の所有物」とした。各プリントが複製不可能な一点物であるこの形式は、肖像写真の民主化を一方で進めながら、複製性というタルボットが切り開く方向とは根本的に異なる道を歩んだ。', channel: '発明・技術', url: 'daguerre.html' },
+    'talbot': { no: '02', name: 'ウィリアム・ヘンリー・フォックス・タルボット', nameEn: 'William Henry Fox Talbot', meta: 'GB · 1800–1877', lede: 'タルボットはカロタイプ（ネガ＝ポジ方式）を発明し、一枚のネガから複数の陽画を作るという写真の複製性の基盤を築いた。「自然の鉛筆」（1844〜46年）は商業出版された最初の写真入り書籍であり、写真が記録・芸術・複製の三つの機能を持つことを世に示した。', channel: '発明・技術', url: 'talbot.html' },
+    'fenton': { no: '03', name: 'ロジャー・フェントン', nameEn: 'Roger Fenton', meta: 'GB · 1819–1869', lede: '弁護士出身のフェントンは1853年に英国王立写真協会の設立に中心的役割を果たし、1855年のクリミア戦争で最初の大規模な従軍写真プロジェクトを遂行した。「死体を撮るな」という出版業者の指示のもとで作られた約360点は、戦争写真と宣伝の関係を問う議論の起点であり続けている。', channel: 'ドキュメンタリー', url: 'fenton.html' },
+    'beato': { no: '04', name: 'フェリーチェ・ベアト', nameEn: 'Felice Beato', meta: 'IT / GB · 1832–1909', lede: 'ヴェネツィア生まれでイギリスに帰化したベアトは、クリミア・インド・中国・日本と英仏軍の展開する場所を追い続けた写真家だった。1863年から横浜に拠点を置き、手彩色の写真帖によって日本の風景・人物・風俗を外国人旅行者向けに販売した。帝国主義の視線と被写体の商品化という問題は、今日も批判的に検討され続けている。', channel: 'ドキュメンタリー', url: 'beato.html' },
+    'nadar': { no: '05', name: 'ナダール', nameEn: 'Nadar', meta: 'FR · 1820–1910', lede: 'ジャーナリスト・風刺漫画家として当代の文化人と深く交流していたナダールは、1853年頃から肖像写真家に転身し、グレーの無地背景と自然光のみで被写体の内面を引き出す革新的な方式を確立した。1858年の気球からの航空写真、1861年のパリ地下道での電灯撮影、1874年の印象派第1回展会場の無償提供と、写真の技術的・社会的可能性の拡張に一貫して取り組んだ。', channel: 'ポートレート', url: 'nadar.html' },
+    'legray': { no: '06', name: 'ギュスターヴ・ル・グレー', nameEn: 'Gustave Le Gray', meta: 'FR · 1820–1884', lede: 'パリで絵画を学んだル・グレーは1840年代後半から写真に転じ、ナダールらを育てた写真教育者でもあった。コンビネーション・プリント（複数ネガの合成）による海景写真の技術的革新と、湿板コロジオン法の改良（ワックス紙ネガ法）によって、1850年代の写真表現を技術的に主導した。', channel: '風景写真', url: 'legray.html' },
+    'muybridge': { no: '07', name: 'エドワード・マイブリッジ', nameEn: 'Eadweard Muybridge', meta: 'GB / US · 1830–1904', lede: '複数カメラによる連続撮影で運動の時間構造を可視化し、ズープラクシスコープで動きとして再投影した写真家。University of Pennsylvaniaとの共同研究、講演実演、ヨセミテの景観写真も含む実践は、写真・科学・映像技術の交差点に立つ。', channel: '科学写真', url: 'muybridge.html' },
+    'marey': { no: '08', name: 'エティエンヌ＝ジュール・マレー', nameEn: 'Étienne-Jules Marey', meta: 'FR · 1830–1904', lede: '単一乾板に複数露光を重ねるクロノフォトグラフィーで、運動を時間の解析図として可視化した生理学者。マイブリッジが系列として時間を分解したのに対し、マレーは時間を一枚の画像に凝縮し、身体・労働・飛翔を科学的計測の対象へ変えた。', channel: '科学写真', url: 'marey.html' },
+    'riis': { no: '09', name: 'ジェイコブ・リース', nameEn: 'Jacob Riis', meta: 'DK / US · 1849–1914', lede: 'ニューヨークのスラムを写真・文章・講演・書籍の複合メディアで可視化した改革者。みずからを写真家とは考えず、社会変革のためのコミュニケーターとして実践し、フラッシュ技術による暗部記録と出版・講演の組み合わせで都市改革を動かした。', channel: '社会ドキュメンタリー', url: 'riis.html' },
+    'marville': { no: '10', name: 'シャルル・マルヴィル', nameEn: 'Charles Marville', meta: 'FR · 1813–1879', lede: 'ハウスマンによるパリ改造を前後して、旧市街の消滅と新パリの出現を市の委嘱のもとで記録した写真家。行政的記録として依頼された仕事が、都市の自己表象を構成する視覚アーカイブとして再評価されている。', channel: 'ドキュメンタリー', url: 'marville.html' },
+    'annan': { no: '11', name: 'トーマス・アナン', nameEn: 'Thomas Annan', meta: 'GB · 1829–1887', lede: '産業都市グラスゴーの旧市街、取り壊し直前の密集路地を市の委嘱で系統的に記録した写真家。改善政策の記録として依頼された写真が、都市貧困の証言として再評価される逆説的な位置にあり、ドキュメンタリー写真の前史として頻繁に参照される。', channel: '社会ドキュメンタリー', url: 'annan.html' },
+    'brady': { no: '12', name: 'マシュー・ブレイディ', nameEn: 'Mathew Brady', meta: 'US · 1822–1896', lede: '1840年代からアメリカ最高の肖像写真家として大統領を含む著名人を撮影したブレイディは、南北戦争において私財を投じて20人以上の写真家を組織し、米国史上最大規模の戦場写真プロジェクトを指揮した。1862年のアンティータム死者の写真展示は、アメリカ市民が戦場の死者の写真を初めて目にした歴史的出来事として記録されている。', channel: 'ポートレート', url: 'brady.html' },
+    'cameron': { no: '13', name: 'ジュリア・マーガレット・キャメロン', nameEn: 'Julia Margaret Cameron', meta: 'GB · 1815–1879', lede: 'ヴィクトリア朝イギリスで、肖像写真を単なる外見の記録から、感情、信仰、文学的想像力を帯びた像へ押し広げた写真家。ソフトフォーカス、近接、大判ネガ、湿板写真の揺らぎを用い、家族、使用人、文学者、科学者を、聖母、預言者、詩の登場人物のように撮影した。技術的な鮮明さをめぐる当時の規範に対し、写真が内面や演出を扱えることを早い時期に示した。', channel: 'ピクトリアリズム', url: 'cameron.html' },
+    'emerson': { no: '14', name: 'ピーター・ヘンリー・エマーソン', nameEn: 'Peter Henry Emerson', meta: 'GB · 1856–1936', lede: '', channel: '自然主義写真', url: 'emerson.html' },
+    'stieglitz': { no: '15', name: 'アルフレッド・スティーグリッツ', nameEn: 'Alfred Stieglitz', meta: 'US · 1864–1946', lede: '291ギャラリーと写真誌『カメラ・ワーク』を主宰し、写真を絵画と並ぶ芸術として美術館に送り込んだアメリカ近代写真の中核。「エクイヴァレンツ」では被写体ではなく形式そのものが内面を語ると主張し、抽象写真の理論的基盤を築いた。', channel: 'ピクトリアリズム', url: 'stieglitz.html' },
+    'kasebier': { no: '16', name: 'ガートルード・ケーゼビア', nameEn: 'Gertrude Käsebier', meta: 'US · 1852–1934', lede: 'ガートルード・ケーゼビアは、絵画を学んだ後に写真へ転じ、肖像写真にピクトリアリズムの光と構成を持ち込んだ写真家。スティーグリッツとともにフォト・セセッションを創設し、《祝せられよ、女たちの中の女よ》をはじめ母性・宗教・個性を主題とした作品で、商業スタジオの技術競争とは異なる写真のあり方を示した。', channel: 'ピクトリアリズム', url: 'kasebier.html' },
+    'steichen': { no: '17', name: 'エドワード・スタイケン', nameEn: 'Edward Steichen', meta: 'LU / US · 1879–1973', lede: '', channel: 'ピクトリアリズム', url: 'steichen.html' },
+    'demachy': { no: '18', name: 'ロベール・ドマシー', nameEn: 'Robert Demachy', meta: 'FR · 1859–1936', lede: 'ロベール・ドマシーは、ゴム重クロム酸塩プロセスをピクトリアリズム写真の核心的な手法として擁護したパリの写真家。裕福なアマチュアとして制作を行いながら、スティーグリッツや『カメラ・ワーク』との交流を通じて国際的な芸術写真運動に参与し、手の介入による写真のイメージ変容が芸術性の根拠であることを論じた。', channel: 'ピクトリアリズム', url: 'demachy.html' },
+    'strand': { no: '19', name: 'ポール・ストランド', nameEn: 'Paul Strand', meta: 'US · 1890–1976', lede: 'ピクトリアリズムの絵画的模倣を離れ、写真固有の直接性と構造を軸にしたストレート写真の方法を1910年代に展開したアメリカの写真家。《White Fence》《New York [Blind Woman]》など形式と社会的視線が交差する作品群が近代写真の転換点を示す。', channel: 'ストレート写真', url: 'strand.html' },
+    'coburn': { no: '20', name: 'アルヴィン・ラングドン・コバーン', nameEn: 'Alvin Langdon Coburn', meta: 'US / GB · 1882–1966', lede: 'ピクトリアリズムの叙情的な画面から都市の俯瞰へ、さらに鏡装置を使った抽象写真へと展開したイギリス・アメリカの写真家。1916〜17年の《Vortograph》シリーズは写真による抽象化の初期実験として記録される。', channel: 'モダニズム', url: 'coburn.html' },
+    'manray': { no: '21', name: 'マン・レイ', nameEn: 'Man Ray', meta: 'US / FR · 1890–1976', lede: 'ダダとシュルレアリスムの中心で活動したアメリカ生まれの作家。暗室での偶然と光の操作によるRayograph、ソラリゼーション、ファッション写真などを通じ、写真を記録装置から物と光が変容する前衛的な実験の場へと転換した。', channel: 'ダダ', url: 'manray.html' },
+    'moholy': { no: '22', name: 'ラースロー・モホイ＝ナジ', nameEn: 'László Moholy-Nagy', meta: 'HU / DE · 1895–1946', lede: 'バウハウスの教育とフォトグラム実験を通じ、写真を記録ではなく知覚を更新する装置として捉えたハンガリー生まれの芸術家・教育者。新しいヴィジョンの理論と実践を、写真、映画、デザインを横断して展開した。', channel: 'バウハウス', url: 'moholy.html' },
+    'sander': { no: '23', name: 'アウグスト・ザンダー', nameEn: 'August Sander', meta: 'DE · 1876–1964', lede: 'ドイツ社会の職業、階級、地域をカメラで記録した《20世紀の人々》で知られる肖像写真家。個人の顔を社会の索引へ変換する系列化の方法は、写真による社会の可視化として写真史に位置づけられる。', channel: '新即物主義', url: 'sander.html' },
+    'renger': { no: '24', name: 'アルベルト・レンガー＝パッチュ', nameEn: 'Albert Renger-Patzsch', meta: 'DE · 1897–1966', lede: 'レンガー＝パッチュは、ピクトリアリズムの美化ともバウハウス的な視覚実験とも異なる立場から、事物そのものの構造的な美しさを精密に示した新即物主義写真の中心人物である。', channel: '新即物主義', url: 'renger.html' },
+    'lange': { no: '25', name: 'ドロシア・ラング', nameEn: 'Dorothea Lange', meta: 'US · 1895–1965', lede: '', channel: 'FSA写真', url: 'lange.html' },
+    'evans': { no: '26', name: 'ウォーカー・エヴァンス', nameEn: 'Walker Evans', meta: 'US · 1903–1975', lede: 'ウォーカー・エヴァンスは、看板、商店、路上、室内、小作農の肖像を、説明しすぎない正面性と連作の中に置いたアメリカの写真家。FSA（米国農業安定局の政府写真プロジェクト）、American Photographs、Let Us Now Praise Famous Men、地下鉄肖像を通じて、記録写真を政策宣伝や情緒的報道から距離をとる「ドキュメンタリー・スタイル」へ押し広げ、アメリカの日常を、後から読み直せる視覚の構造として残した。文学への関心、ヴァナキュラーな文字や建築への観察、写真集としての編集感覚が重なり、ロバート・フランク以後のアメリカ写真にも参照される、写真史上の基準点になった。', channel: 'FSA写真', url: 'evans.html' },
+    'cartierbresson': { no: '27', name: 'アンリ・カルティエ＝ブレッソン', nameEn: 'Henri Cartier-Bresson', meta: 'FR · 1908–2004', lede: '絵画で培った構成感覚を、ライカの機動性と街頭の偶然に結びつけ、日常や政治的出来事の一瞬を「写真で読む」形式へ変えた写真家。『Images à la Sauvette』、英語版『The Decisive Moment』、マグナム・フォトを通じて、構図、時間、報道、写真集編集を結びつける見方を広げた。', channel: '決定的瞬間', url: 'cartierbresson.html' },
+    'capa': { no: '28', name: 'ロバート・キャパ', nameEn: 'Robert Capa', meta: 'HU · 1913–1954', lede: '', channel: '戦争写真', url: 'capa.html' },
+    'domon': { no: '29', name: '土門拳', nameEn: 'Ken Domon', meta: 'JP · 1909–1990', lede: '', channel: '社会ドキュメンタリー', url: 'domon.html' },
+    'eugenesmith': { no: '30', name: 'W・ユージン・スミス', nameEn: 'W. Eugene Smith', meta: 'US · 1918–1978', lede: 'W・ユージン・スミスは、『LIFE』誌のフォト・エッセイ、ピッツバーグ、水俣を通じて、写真を一枚の速報ではなく、人物の仕事、疲労、生活環境、社会制度を読む長編の証言へ広げた写真家です。暗室の濃いプリントと編集順序で読者の感情を導いた一方、その主観性と被写体表象の倫理も現在まで議論を残しています。', channel: '戦争写真', url: 'eugenesmith.html' },
+    'robertfrank': { no: '31', name: 'ロバート・フランク', nameEn: 'Robert Frank', meta: 'CH · 1924–2019', lede: 'ロバート・フランクは、写真集『The Americans』で戦後アメリカの道路、車、国旗、ダイナー、人種隔離の場面を、粗い粒子と不安定な構図、緻密な編集順序でつなぎ直した写真家。外部者の視線とビート的な移動感覚によって、ドキュメンタリー写真を一枚の証拠から、読む写真集の批評的形式へ広げた。', channel: 'アメリカ写真', url: 'robertfrank.html' },
+    'williamklein': { no: '32', name: 'ウィリアム・クライン', nameEn: 'William Klein', meta: 'US · 1926–2022', lede: '', channel: 'ストリート写真', url: 'williamklein.html' },
+    'araki': { no: '33', name: '荒木経惟', nameEn: 'Nobuyoshi Araki', meta: 'JP · 1940–', lede: '', channel: '私写真', url: 'araki.html' },
+    'tomatsu': { no: '34', name: '東松照明', nameEn: 'Shomei Tomatsu', meta: 'JP · 1930–2012', lede: '', channel: '日本写真', url: 'tomatsu.html' },
+    'winogrand': { no: '35', name: 'ゲリー・ウィノグランド', nameEn: 'Garry Winogrand', meta: 'US · 1928–1984', lede: '', channel: 'ストリート写真', url: 'winogrand.html' },
+    'friedlander': { no: '36', name: 'リー・フリードランダー', nameEn: 'Lee Friedlander', meta: 'US · 1934–', lede: '', channel: 'ストリート写真', url: 'friedlander.html' },
+    'arbus': { no: '37', name: 'ダイアン・アーバス', nameEn: 'Diane Arbus', meta: 'US · 1923–1971', lede: 'ダイアン・アーバスは、戦後アメリカの人物写真を、社会の説明ではなく「見る側と見られる側の関係」を露出させる場へ押し広げた写真家。正面性の強い肖像、雑誌仕事、New Documents、死後の写真集と展示を通じて、普通／異質、親密さ／暴力性、記録／演技の境界を問い続けた。街路、室内、見世物小屋、家族写真の形式に現れる身振りをとらえ、写真が人物を写すだけでなく、鑑賞者の視線そのものを試す媒体であることを示した。', channel: 'ドキュメンタリー', url: 'arbus.html' },
+    'moriyama': { no: '38', name: '森山大道', nameEn: 'Daido Moriyama', meta: 'JP · 1938–', lede: '東京や日本各地の路上、劇場、歓楽街、広告、雑誌やテレビのイメージを、粗い粒子、ブレ、強いコントラストのスナップでとらえ、1960年代後半以降の日本写真に大きな転換点をつくった写真家。『にっぽん劇場写真帖』『写真よさようなら』『記録』を通じて、写真を現実の透明な記録としてだけでなく、都市にあふれる複製イメージを写真集や雑誌の中で組み替える媒体として示した。プロヴォーク周辺の問題意識を受け継ぎながら、路上の経験、移動、印刷メディアを結びつけるその表現は、戦後日本のストリート写真から現代の写真表現にまで広く波及している。', channel: 'プロヴォーク', url: 'moriyama.html' },
+    'sherman': { no: '39', name: 'シンディ・シャーマン', nameEn: 'Cindy Sherman', meta: 'US · 1954–', lede: 'シンディ・シャーマンは、自分自身を映画、広告、雑誌、美術史の見覚えある人物像へ変えることで、写真を「現実の証拠」や「作者の内面」を示す媒体から、イメージが人物をどう演出し、見る側にどんな欲望や物語を引き出すかを問う媒体へ押し広げた作家。1970年代後半のニューヨークで、消費社会の既成イメージを扱ったピクチャーズ世代と並走し、『Untitled Film Stills』からフェミニズム写真、演出写真、ポストモダン写真へ大きな論点を開いた。', channel: 'ピクチャーズ世代', url: 'sherman.html' },
+    'mapplethorpe': { no: '40', name: 'ロバート・メイプルソープ', nameEn: 'Robert Mapplethorpe', meta: 'US · 1946–1989', lede: '', channel: 'コンセプチュアル', url: 'mapplethorpe.html' },
+    'kruger': { no: '41', name: 'バーバラ・クルーガー', nameEn: 'Barbara Kruger', meta: 'US · 1945–', lede: '', channel: 'ピクチャーズ世代', url: 'kruger.html' },
+    'eggleston': { no: '42', name: 'ウィリアム・エグルストン', nameEn: 'William Eggleston', meta: 'US · 1939–', lede: '', channel: 'カラー写真', url: 'eggleston.html' },
+    'goldin': { no: '43', name: 'ナン・ゴールディン', nameEn: 'Nan Goldin', meta: 'US · 1953–', lede: '', channel: 'ドキュメンタリー', url: 'goldin.html' },
+    'wall': { no: '44', name: 'ジェフ・ウォール', nameEn: 'Jeff Wall', meta: 'CA · 1946–', lede: 'ジェフ・ウォールは、ライトボックスによる大型写真、映画的な準備、絵画史や文学の再読を通じて、写真を一瞬の記録から、出来事の見え方を組み立てる媒体へ押し広げた作家。バンクーバーの街路、室内、郊外の断片を、マネ、ドラクロワ、北斎、エリソンらの図像や物語と重ね、ドキュメントと演出、偶然と制作、社会的現実と寓話の境界を組み替えた。', channel: 'シネマトグラフィック写真', url: 'wall.html' },
+    'gursky': { no: '45', name: 'アンドレアス・グルスキー', nameEn: 'Andreas Gursky', meta: 'DE · 1955–', lede: '', channel: 'デュッセルドルフ派', url: 'gursky.html' },
+    'salgado': { no: '46', name: 'セバスチャン・サルガド', nameEn: 'Sebastião Salgado', meta: 'BR · 1944–', lede: '', channel: 'ドキュメンタリー', url: 'salgado.html' },
+    'parr': { no: '47', name: 'マーティン・パー', nameEn: 'Martin Parr', meta: 'GB · 1952–', lede: 'マーティン・パーは、英国の海辺、家庭、買い物、観光、食べ物を、飽和したカラーと近距離のフラッシュで撮影した写真家である。白黒の社会的ドキュメンタリーを背景にしながら、悲劇や告発に寄せすぎず、消費社会の中で人々がどのような身振り、物、色、余暇の形式をまとっているかを、写真集と展示の連続したイメージで見せた。英国ドキュメンタリー、ニューカラー、フォトブック文化が交わる地点で、日常の凡庸さを社会の自己像として扱った。', channel: 'ドキュメンタリー', url: 'parr.html' },
+    'becher': { no: '48', name: 'ベルント＆ヒラ・ベッヒャー', nameEn: 'Bernd & Hilla Becher', meta: 'DE · 1931–2007 / 1934–2022', lede: '', channel: 'タイポロジー写真', url: 'becher.html' },
+    'nicephore-niepce': { no: '49', name: 'ニセフォール・ニエプス', nameEn: 'Nicéphore Niépce', meta: 'FR · 1765-1833', lede: 'ヘリオグラフィーを発明し、現存最古の写真「ル・グラの窓からの眺め」（1826〜27年頃）を残したニエプスは、光化学的な像の固定を初めて実現した人物である。1839年の公式発表でその功績はほぼ無視されたが、20世紀の写真史研究によって再評価され、写真の発明者として位置づけ直されている。', channel: '発明・技術', url: 'nicephore-niepce.html' },
+    'alexander-gardner': { no: '50', name: 'アレクサンダー・ガードナー', nameEn: 'Alexander Gardner', meta: 'GB / US · 1821-1882', lede: 'スコットランド出身のガードナーは南北戦争の写真記録においてブレイディの組織から独立し、写真家個人のクレジットを明示した写真集『ガードナーの戦争写真スケッチブック』（1865〜66年）を刊行した。これはドキュメンタリー写真における著作権の原則的な主張として写真史上画期的な行為であり、スミソニアンは彼を「アメリカ最初の近代的写真家」と評している。', channel: '戦争写真', url: 'alexander-gardner.html' },
+    'timothy-osullivan': { no: '51', name: 'ティモシー・オサリヴァン', nameEn: "Timothy O'Sullivan", meta: 'US · 1840-1882', lede: '南北戦争でガードナーの『スケッチブック』に44点を寄稿し（単独写真家として最多）、戦後は西部の地質調査に転じて「死の収穫」（1863年）から「タファ・ドームズ」（1867年）へと写真の射程を広げた。乾いた直接性と演出の拒否は、1975年のニュー・トポグラフィクス展においてロバート・アダムスらが参照した源流となった。', channel: '戦争写真', url: 'timothy-osullivan.html' },
+    'lee-miller': { no: '52', name: 'リー・ミラー', nameEn: 'Lee Miller', meta: 'US · 1907-1977', lede: 'リー・ミラーは、シュルレアリスムの暗室実験、Vogueのファッション写真、第二次世界大戦の従軍報道を横断したアメリカの写真家。ソラリゼーションや身体の断片化、戦時下の女性像、ダッハウ解放後の記録まで、演出と証言の境界で写真が現実をどのように組み替え、同時に歴史の証拠となるかを示した。 マン・レイの周辺作家としてではなく、雑誌メディア、戦時下の女性の経験、前線報道が重なる写真家として位置づけられる。', channel: 'シュルレアリスム', url: 'lee-miller.html' },
+    'george-rodger': { no: '53', name: 'ジョージ・ロジャー', nameEn: 'George Rodger', meta: 'GB · 1908-1995', lede: '', channel: '戦争写真', url: 'george-rodger.html' },
+    'william-vandivert': { no: '54', name: 'ウィリアム・ヴァンディヴァート', nameEn: 'William Vandivert', meta: 'US · 1912-1989', lede: '', channel: '戦争写真', url: 'william-vandivert.html' },
+    'takeji-iwamiya': { no: '55', name: '岩宮武二', nameEn: 'Takeji Iwamiya', meta: 'JP · 1920-1989', lede: '岩宮武二は、寺社・庭園・工芸・仏像・民具といった日本の伝統的文化形態を主題に、ドキュメントと形式的探求の境界に立つ写真実践を展開した。伝統を観光的に再現するのではなく、写真の語彙で再構成するという姿勢が、戦後日本写真の流れの中に独自の位置を与えている。', channel: '日本写真', url: 'takeji-iwamiya.html' },
+    'kikuji-kawada': { no: '56', name: '川田喜久治', nameEn: 'Kikuji Kawada', meta: 'JP · 1933-2021', lede: '1933年生まれ、2021年没。写真家集団「VIVO」のメンバーとして知られ、代表作『地図』（1959〜1965年）でフォトブック史に独自の位置を占める。戦後の記憶・広島・占領の痕跡・敗戦と高度成長の間に横たわる心的後像を主題とし、暗い色調・断片・象徴的なシーケンスによる表現で知られる。', channel: '日本写真', url: 'kikuji-kawada.html' },
+    'masahisa-fukase': { no: '57', name: '深瀬昌久', nameEn: 'Masahisa Fukase', meta: 'JP · 1934-2012', lede: '1934年生まれ、2012年没。家族・妻・孤独・自己崩壊を主題とした強烈に個人的な写真で知られる。代表作として妻・洋子を撮影した『洋子』、家族記録の『家族』、そして離婚後に制作されたカラス連作『鴉』（Ravens、1986年）が国際的に高い評価を受けている。', channel: '日本写真', url: 'masahisa-fukase.html' },
+    'philip-jones-griffiths': { no: '58', name: 'フィリップ・ジョーンズ・グリフィス', nameEn: 'Philip Jones Griffiths', meta: 'GB · 1936-2008', lede: '1936年ウェールズ生まれ、2008年没。マグナム・フォトスのメンバーとして知られ、代表作『ベトナム株式会社』（Vietnam Inc., 1971年）はベトナム戦争に関するテキストと写真による反戦批評として、政治的フォトジャーナリズムの代表作のひとつに数えられる。長形式の批評的フォトブックによって戦争写真を再定義した写真家として評価されている。', channel: '戦争写真', url: 'philip-jones-griffiths.html' },
+    'don-mccullin': { no: '59', name: 'ドン・マクリン', nameEn: 'Don McCullin', meta: 'GB · 1935-', lede: '1935年ロンドン生まれのフォトジャーナリスト。キプロス、ビアフラ、ベトナム、カンボジア、北アイルランドなど世界各地の紛争地帯を取材し、戦後フォトジャーナリズムを代表する写真家となった。強烈なモノクロと危険への肉薄によるドキュメンタリー、および晩年の風景写真への転換が、その写真史的な位置を形成している。', channel: '戦争写真', url: 'don-mccullin.html' },
+    'chris-killip': { no: '60', name: 'クリス・キリップ', nameEn: 'Chris Killip', meta: 'GB · 1946-2020', lede: '1946年マン島生まれ、2020年没。1970〜80年代のイングランド北東部——タインサイドの造船所・炭鉱・失業した工業地帯——を長期にわたって記録した。写真集《In Flagrante》（1988年）は脱工業化時代のイギリスに生きた人々の歴史的証言として評価され、社会的ドキュメンタリー写真の重要な参照点となっている。', channel: 'ドキュメンタリー', url: 'chris-killip.html' },
+    'irving-penn': { no: '61', name: 'アーヴィング・ペン', nameEn: 'Irving Penn', meta: 'US · 1917-2009', lede: 'アーヴィング・ペンは、Vogueの誌面で鍛えたデザイン感覚を、白い背景、古い劇場幕、自然光、静物、職業肖像、プラチナ・パラジウム・プリントへ展開した写真家である。ファッションや広告の明快さを、人物や物の輪郭、沈黙、表面、印画紙の質感まで見つめる形式へ変え、商業写真と美術写真の境界を静かに組み替えた。', channel: 'モダニズム', url: 'irving-penn.html' },
+    'richard-avedon': { no: '62', name: 'リチャード・アヴェドン', nameEn: 'Richard Avedon', meta: 'US · 1923-2004', lede: "リチャード・アヴェドンは、Harper's Bazaar、Vogue、The New Yorkerなどの誌面で、ファッション写真とポートレートを戦後アメリカの視覚文化へ押し広げた写真家。彼は服や人物を「内面の説明」としてではなく、動き、白背景、印刷面、巨大なプリントによって、撮影者、被写体、読者／鑑賞者が表面から意味を読み取る緊張の場として組み立てた。《In the American West》では、その方法を、アメリカ西部を風景や英雄譚ではなく、身体、職業名、衣服、視線から見直す肖像へ広げた。", channel: 'フォトジャーナリズム', url: 'richard-avedon.html' },
+    'ernest-cole': { no: '63', name: 'アーネスト・コール', nameEn: 'Ernest Cole', meta: 'ZA · 1940-1990', lede: '1940年、南アフリカ、プレトリア近郊に生まれたアーネスト・コールは、雑誌『ドラム』周辺の黒人ジャーナリズムから写真を始め、1967年の写真集『House of Bondage』で鉱山、パス法、通勤列車、学校、病院、白人専用標識を章ごとに結びつけた。彼の写真は、アパルトヘイトを象徴的な事件ではなく、労働、移動、教育、住居、公共空間に入り込む日常の管理として読ませ、近年の再刊、未発表章、亡命後のアメリカ写真の公開によって、南アフリカ写真と社会ドキュメンタリー、フォトブック史の接点で再評価されている。', channel: 'フォトジャーナリズム', url: 'ernest-cole.html' },
+    'tokuko-ushioda': { no: '64', name: '潮田登久子', nameEn: 'Tokuko Ushioda', meta: 'JP · 1940-', lede: '潮田登久子は、冷蔵庫、本、豪徳寺の部屋に残る光や生活用品を通じて、近しい人の時間を人物の表情だけに頼らず写してきた写真家である。桑沢で石元泰博、大辻清司に学び、街の人物写真から出発したが、人を撮ることへの躊躇を経て、生活に触れたモノを正面から記録する方法へ進んだ。近年は『マイハズバンド』を機に、家族写真、物撮り、フォトブック、日本女性写真家史を結ぶ作家として再評価が進んでいる。', channel: '日本写真', url: 'tokuko-ushioda.html' },
+    'pieter-hugo': { no: '65', name: 'ピーター・ヒューゴ', nameEn: 'Pieter Hugo', meta: 'ZA · 1976-', lede: 'ピーター・ヒューゴは、南アフリカを拠点に、正面性の強いポートレートでポスト・アパルトヘイトの記憶、白人性、周縁化、電子廃棄物、他者表象の不安を扱う写真家。『The Hyena and Other Men』『Permanent Error』『Kin』では、人物・場所・動物・廃棄物・家族を強い画面の中に固定し、被写体を見ているはずの鑑賞者自身の距離感、判断、欲望まで作品の問題として浮かび上がらせた。', channel: 'ポートレート', url: 'pieter-hugo.html' },
+    'michio-hoshino': { no: '66', name: '星野道夫', nameEn: 'Michio Hoshino', meta: 'JP · 1952-1996', lede: '星野道夫は1952年、千葉県市川市に生まれ、アラスカの野生動物、風景、人々の暮らし、神話を写真と文章で記録した写真家。十九歳のときに見たシシュマレフ村の航空写真をきっかけに土地へ入り、以後、極北の自然を「人間の外にある景色」ではなく、移動、狩猟、記憶、死生観を含む長い時間として読ませた。アラスカ大学北方博物館や海外出版資料にも足跡が残る。', channel: '日本写真', url: 'michio-hoshino.html' },
+    'annie-leibovitz': { no: '67', name: 'アニー・リーボヴィッツ', nameEn: 'Annie Leibovitz', meta: 'US · 1949-', lede: 'アニー・リーボヴィッツは、Rolling Stoneで写真家として出発し、Vanity Fair、Vogueへ活動を広げながら、雑誌の表紙や特集の中で人物を強い場面として見せてきたアメリカの肖像写真家である。ジョン・レノンとオノ・ヨーコ、妊娠したデミ・ムーア、《Women》《Wonderland》などを手がかりに、スターの身体や親密さが、どのように時代の記憶として読まれるのかをたどる。', channel: 'ポートレート', url: 'annie-leibovitz.html' },
+  };
+
+  // --- cards-archive.html から正確なカードHTMLを取得 ---
+  let archiveCardMap = {};   // nameJa → card outerHTML (正確なデザイン)
+  let cardDataIndex  = {};   // nameJa → card-data entry (フォールバック用)
+
+  // デフォルト表示のTOP12固定リスト（アーカイブ取得後はここから正確なカードを引く）
+  const ND_TOP12_NAMES = [
+    'アルフレッド・スティーグリッツ', '中平卓馬', 'シンディ・シャーマン',
+    'ウォーカー・エヴァンス', 'ロバート・フランク', '森山大道',
+    'ベルント＆ヒラ・ベッヒャー', 'アンリ・カルティエ＝ブレッソン',
+    'ナン・ゴールディン', 'ダイアン・アーバス', 'アウグスト・ザンダー', '荒木経惟'
+  ];
+
+  // ── Cards view controller ──────────────────────────────
+  const ndCardsGrid  = document.getElementById('nd-cards-grid');
+  const ndSearchEl   = document.getElementById('nd-cards-search');
+  const ndDefaultHtml = ndCardsGrid ? ndCardsGrid.innerHTML : '';
+  let ndFilter = 'photographer';
+  let ndSort   = 'default';
+  let ndQuery  = '';
+  let ndPhData = [];
+  let ndMvData = [];
+
+  function ndRender() {
+    if (!ndCardsGrid) return;
+
+    // デフォルト表示：TOP12固定リスト（アーカイブ取得済みならアーカイブ版で）
+    if (ndFilter === 'photographer' && !ndQuery && ndSort === 'default') {
+      if (Object.keys(archiveCardMap).length > 0) {
+        const html = ND_TOP12_NAMES.map(n => archiveCardMap[n] || '').filter(h => h).join('');
+        ndCardsGrid.innerHTML = html || ndDefaultHtml;
+      } else {
+        ndCardsGrid.innerHTML = ndDefaultHtml;
+      }
+      return;
+    }
+
+    // フィルタ・検索・ソート時
+    let src = ndQuery
+      ? [...ndPhData, ...ndMvData]
+      : (ndFilter === 'photographer' ? ndPhData : ndMvData);
+
+    if (ndQuery) {
+      const q = ndQuery.toLowerCase();
+      src = src.filter(p =>
+        (p.nameJa  || '').includes(ndQuery) ||
+        (p.nameEn  || '').toLowerCase().includes(q) ||
+        (p.metaJa  || '').toLowerCase().includes(q) ||
+        (p.channel || '').includes(ndQuery)
+      );
+    }
+
+    if (ndSort === 'movement') {
+      src = [...src].sort((a, b) =>
+        (a.channel || '').localeCompare(b.channel || '', 'ja')
+      );
+    } else if (ndSort.startsWith('era:')) {
+      const eraVal = ndSort.slice(4);
+      src = src.filter(p => String(p.era) === eraVal);
+    }
+
+    const shown = src.slice(0, 12);
+    ndCardsGrid.innerHTML = shown.length
+      ? shown.map(p => archiveCardMap[p.nameJa] || buildDynamicCard(p)).join('')
+      : '<p style="padding:40px 32px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;color:var(--text-mute);">該当する結果が見つかりません</p>';
+  }
+
+  // Filter pills
+  document.querySelectorAll('.pill[data-filter]').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.pill[data-filter]').forEach(p => p.classList.remove('is-active'));
+      pill.classList.add('is-active');
+      ndFilter = pill.dataset.filter;
+      ndQuery  = '';
+      if (ndSearchEl) ndSearchEl.value = '';
+      ndRender();
+    });
+  });
+
+  // Search
+  let ndTimer;
+  if (ndSearchEl) {
+    ndSearchEl.addEventListener('input', () => {
+      clearTimeout(ndTimer);
+      ndTimer = setTimeout(() => {
+        ndQuery = ndSearchEl.value.trim();
+        ndRender();
+      }, 150);
+    });
+  }
+
+  // Sort dropdown
+  const ndSortBtn  = document.getElementById('nd-sort-btn');
+  const ndSortDrop = document.getElementById('nd-sort-dropdown');
+  if (ndSortBtn && ndSortDrop) {
+    ndSortBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      ndSortDrop.classList.toggle('is-open');
+    });
+    document.addEventListener('click', () => ndSortDrop.classList.remove('is-open'));
+    ndSortDrop.querySelectorAll('.sort-option').forEach(opt => {
+      opt.addEventListener('click', e => {
+        e.stopPropagation();
+        ndSort = opt.dataset.sort;
+        ndSortDrop.querySelectorAll('.sort-option').forEach(o => o.classList.remove('is-active'));
+        opt.classList.add('is-active');
+        const labelEl = ndSortBtn.querySelector('.nd-sort-label');
+        if (labelEl) labelEl.textContent = opt.textContent;
+        ndSortDrop.classList.remove('is-open');
+        ndRender();
+      });
+    });
+  }
+  // ────────────────────────────────────────────────────────
+
+  fetch('cards-archive.html')
+    .then(r => r.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const archiveStyle = doc.querySelector('style');
+      if (archiveStyle && !document.getElementById('archive-card-styles')) {
+        const s = document.createElement('style');
+        s.id = 'archive-card-styles';
+        s.textContent = archiveStyle.textContent;
+        document.head.appendChild(s);
+      }
+      doc.querySelectorAll('.pc-card').forEach(card => {
+        const nameEl = card.querySelector('.pc-body__name');
+        if (nameEl) archiveCardMap[nameEl.textContent.trim()] = card.outerHTML;
+      });
+      // アーカイブ取得完了後、ndPhData が揃っていれば再描画
+      if (ndPhData.length > 0) ndRender();
+    })
+    .catch(() => {});
+
+  fetch('card-data.json')
+    .then(r => r.json())
+    .then(d => {
+      (d.photographers || []).forEach(p => { cardDataIndex[p.nameJa] = p; });
+      (d.movements   || []).forEach(p => { cardDataIndex[p.nameJa] = p; });
+      ndPhData = d.photographers || [];
+      ndMvData = d.movements     || [];
+      ndRender(); // 初期描画
+    })
+    .catch(() => {});
+
+  // Build card HTML from card-data.json entry
+  function buildDynamicCard(p) {
+    const idx = p.idx || '';
+    const style = p.style || 'pc-top--kanji';
+    const artText = p.artText || '';
+    const hintText = p.hintText || '';
+    const namePart = hintText.split('·')[0].trim();
+    const nameWords = namePart.split(/\s+/);
+
+    let topArt = '';
+    if (style === 'pc-top--kanji') {
+      topArt = `<div class="pc-top__art">${artText}</div>`;
+    } else if (style === 'pc-top--initials') {
+      const body = artText.slice(0, -1);
+      const last = artText.slice(-1);
+      topArt = `<div class="pc-top__art">${body}<span class="accent">${last}</span></div>`;
+    } else if (style === 'pc-top--year') {
+      const parts = artText.split('—');
+      topArt = `<div class="pc-top__art">${parts[0]}<span class="dash">—</span>${parts[1] || ''}</div>`;
+    } else if (style === 'pc-top--slash') {
+      const first = nameWords.slice(0, -1).join(' ') || nameWords[0];
+      const last  = nameWords[nameWords.length - 1];
+      topArt = `<div class="pc-top__art">${first}<br><strong style="font-size:88px;line-height:0.84;letter-spacing:-0.05em;font-family:var(--font-sans-en);font-weight:900;">${last}</strong></div>`;
+    } else if (style === 'pc-top--stacked') {
+      const spans = nameWords.slice(0, 3).map(w => `<span>${w}</span>`).join('');
+      topArt = `<div class="pc-top__art">${spans}</div>`;
+    } else if (style === 'pc-top--title') {
+      topArt = `<div class="pc-top__art">${namePart}</div>`;
+    } else if (style === 'pc-top--number') {
+      topArt = `<div class="pc-top__art">${idx}</div>`;
+    } else if (style === 'pc-top--grid') {
+      topArt = `<div class="pc-top__art"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>`;
+    } else {
+      topArt = `<div class="pc-top__art">${artText}</div>`;
+    }
+
+    const tagsHtml = (p.tags || []).slice(0, 3).map(t => `<span class="pc-body__tag">${t}</span>`).join('');
+    const lede = (p.ledeJa || p.ledeEn || '').slice(0, 120);
+    const typeClass = p.type === 'movement' ? 'pc-card--movement' : 'pc-card--photographer';
+    const kindLabel = p.type === 'movement' ? 'Movement' : 'Photographer';
+
+    return `<article class="pc-card ${typeClass}">
+  <a href="${p.href}">
+    <div class="pc-top ${style}${style === 'pc-top--number' ? ' pc-top--number' : ''}">
+      <div class="pc-top__meta"><span class="idx">${idx}</span><span>${kindLabel.toUpperCase()}</span></div>
+      ${topArt}
+      <div class="pc-top__hint">${hintText}</div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-body__kind">${kindLabel}</span>
+      <div><h3 class="pc-body__name">${p.nameJa}</h3><div class="pc-body__name-en">${p.nameEn || ''}</div></div>
+      <div class="pc-body__meta">${p.metaJa || ''}</div>
+      <p class="pc-body__lede">${lede}${lede.length >= 120 ? '…' : ''}</p>
+      <div class="pc-body__channel">${p.channel || ''}</div>
+      <div class="pc-body__tags">${tagsHtml}</div>
+      <div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div>
+    </div>
+  </a>
+</article>`;
+  }
+
+  // Receive photographer click from iframe — show matching pc-card in side panel
+  window.addEventListener('message', (e) => {
+    if (e.origin !== window.location.origin) return;
+    const data = e.data;
+    if (!data || data.type !== 'photographer-click') return;
+
+    const empty = document.getElementById('coord-empty');
+    const wrap  = document.getElementById('coord-card-wrap');
+    if (!empty || !wrap) return;
+
+    // カードを表示してコード部分へスクロール
+    function showCard(html) {
+      empty.style.display = 'none';
+      wrap.style.display  = 'block';
+      wrap.innerHTML = html;
+      // coord セクション先頭が sticky ヘッダ下に来るようスクロール
+      const coordSection = document.getElementById('view-coord');
+      if (coordSection) {
+        const top = coordSection.getBoundingClientRect().top + window.scrollY - 124;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
+    }
+
+    // 1. cards-archive.html から取得した正確なカードを優先使用
+    if (archiveCardMap[data.name]) {
+      showCard(archiveCardMap[data.name]);
+      return;
+    }
+
+    // 2. TOP12 プリロードカードを検索
+    let matchCard = null;
+    document.querySelectorAll('#view-cards .pc-card').forEach(card => {
+      if (matchCard) return;
+      const nameEl = card.querySelector('.pc-body__name');
+      if (nameEl && nameEl.textContent.trim() === data.name) matchCard = card;
+    });
+
+    if (matchCard) {
+      showCard(matchCard.outerHTML);
+      return;
+    }
+
+    // 3. card-data.json からフォールバック生成
+    const entry = cardDataIndex[data.name];
+    if (entry) {
+      showCard(buildDynamicCard(entry));
+      return;
+    }
+
+    // 4. 最終フォールバック: アーカイブへのリンク
+    showCard(`<div style="padding:24px;font-family:var(--font-mono);font-size:12px;line-height:1.8;color:var(--text-sub);">
+      <div style="font-size:16px;font-weight:700;color:var(--text-main);margin-bottom:12px;">${data.name}</div>
+      <a href="cards-archive.html" target="_blank" style="display:block;margin-top:16px;padding:12px 16px;border:1.5px solid var(--border);color:var(--text-main);text-align:center;letter-spacing:0.14em;text-transform:uppercase;font-size:10px;">
+        カードアーカイブで見る →
+      </a>
+    </div>`);
+  });
+
+  // Receive legend from iframe and render
+  const coordLegend = document.getElementById('coord-legend');
+  window.addEventListener('message', (e) => {
+    if (e.data?.type !== '__pc_legend' || !coordLegend) return;
+    const items = e.data.items;
+    if (!items || items.length === 0) {
+      coordLegend.innerHTML = '<span class="coord__legend-loading">写真家をクリックすると線の凡例が表示されます</span>';
+      return;
+    }
+    coordLegend.innerHTML =
+      '<div class="coord__legend-title">線の色 = 表現でのつながり</div>' +
+      '<ul class="coord__legend-list">' +
+      items.map(d =>
+        `<li><span class="coord__legend-swatch" style="background:${d.color};box-shadow:0 0 5px ${d.color}40"></span>${d.label}</li>`
+      ).join('') +
+      '</ul>';
+  });
+
+  // Era arrow navigation
+  const eraGrid = document.getElementById('era-grid');
+  const eraPrev = document.getElementById('era-prev');
+  const eraNext = document.getElementById('era-next');
+  const ERA_ITEM_W = 280 + 1.5; // width + border
+
+  function updateEraArrows() {
+    if (!eraGrid) return;
+    const atStart = eraGrid.scrollLeft <= 4;
+    const atEnd = eraGrid.scrollLeft >= eraGrid.scrollWidth - eraGrid.clientWidth - 4;
+    if (eraPrev) eraPrev.disabled = atStart;
+    if (eraNext) eraNext.disabled = atEnd;
+  }
+
+  if (eraGrid) {
+    eraPrev?.addEventListener('click', () => {
+      eraGrid.scrollBy({ left: -ERA_ITEM_W * 2, behavior: 'smooth' });
+    });
+    eraNext?.addEventListener('click', () => {
+      eraGrid.scrollBy({ left: ERA_ITEM_W * 2, behavior: 'smooth' });
+    });
+    eraGrid.addEventListener('scroll', updateEraArrows, { passive: true });
+    updateEraArrows();
+  }
+
+  // Filter pills
+  document.querySelectorAll('.pill:not(.pill--sort)').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.pill:not(.pill--sort)').forEach(p => p.classList.remove('is-active'));
+      pill.classList.add('is-active');
+    });
+  });
 </script>
 </body>
 </html>
