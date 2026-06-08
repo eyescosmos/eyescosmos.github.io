@@ -1590,10 +1590,10 @@ body {
 
     <!-- =====================================================================
          ⚠️  TOP12 カード — このブロック内の pc-top・idx・pc-top__art は変更禁止
-         ページロード後に JavaScript が cards-archive.html の内容で自動上書きする。
+         ページロード後に JavaScript が archive.html の内容で自動上書きする。
          ハードコード値はフォールバック用であり、リンク追加など他の修正でも
          pc-top 関連のクラス・数値・テキストには一切触れないこと。
-         カードデザインを変更したい場合は cards-archive.html を修正する。
+         カードデザインを変更したい場合は archive.html を修正する。
          ===================================================================== -->
     <div class="cards" id="cards-grid">
 
@@ -1937,7 +1937,7 @@ body {
   <div class="archive-cta">
     <span class="archive-cta__no">§ III — ARCHIVE</span>
     <span class="archive-cta__main">すべての写真家を <em>カードで</em> 見る</span>
-    <a class="archive-cta__arrow" href="cards-archive.html" target="_blank">Open the Archive →</a>
+    <a class="archive-cta__arrow" href="archive.html" target="_blank">Open the Archive →</a>
   </div>
 
   <!-- ───── ERA ───── -->
@@ -2028,7 +2028,7 @@ body {
 
   <!-- ───── BOTTOM LINKS ───── -->
   <nav class="bottom-links">
-    <a class="bl" href="cards-archive.html" target="_blank">
+    <a class="bl" href="archive.html" target="_blank">
       <span class="bl__no"><em>§ V</em> — ARCHIVE</span>
       <h3 class="bl__title"><em>写真家</em>を探す</h3>
       <p class="bl__sub">カード棚の完全版。検索・国・時代・運動・テーマから探す本格版アーカイブ。</p>
@@ -2296,11 +2296,11 @@ body {
     'annie-leibovitz': { no: '67', name: 'アニー・リーボヴィッツ', nameEn: 'Annie Leibovitz', meta: 'US · 1949-', lede: 'アニー・リーボヴィッツは、Rolling Stoneで写真家として出発し、Vanity Fair、Vogueへ活動を広げながら、雑誌の表紙や特集の中で人物を強い場面として見せてきたアメリカの肖像写真家である。ジョン・レノンとオノ・ヨーコ、妊娠したデミ・ムーア、《Women》《Wonderland》などを手がかりに、スターの身体や親密さが、どのように時代の記憶として読まれるのかをたどる。', channel: 'ポートレート', url: 'photographers/annie-leibovitz.html' },
   };
 
-  // --- cards-archive.html から正確なカードHTMLを取得 ---
+  // --- archive.html から正確なカードHTMLを取得 ---
   let archiveCardMap = {};   // nameJa → card outerHTML (正確なデザイン)
   let cardDataIndex  = {};   // nameJa → card-data entry (フォールバック用)
 
-  fetch('cards-archive.html')
+  fetch('archive.html')
     .then(r => r.text())
     .then(html => {
       const parser = new DOMParser();
@@ -2532,7 +2532,7 @@ body {
       wrap.innerHTML = html;
     }
 
-    // 1. cards-archive.html から取得した正確なカードを優先使用
+    // 1. archive.html から取得した正確なカードを優先使用
     if (archiveCardMap[data.name]) {
       showCard(archiveCardMap[data.name]);
       return;
@@ -2561,7 +2561,7 @@ body {
     // 4. 最終フォールバック: アーカイブへのリンク
     showCard(`<div style="padding:24px;font-family:var(--font-mono);font-size:12px;line-height:1.8;color:var(--text-sub);">
       <div style="font-size:16px;font-weight:700;color:var(--text-main);margin-bottom:12px;">${data.name}</div>
-      <a href="cards-archive.html" target="_blank" style="display:block;margin-top:16px;padding:12px 16px;border:1.5px solid var(--border);color:var(--text-main);text-align:center;letter-spacing:0.14em;text-transform:uppercase;font-size:10px;">
+      <a href="archive.html" target="_blank" style="display:block;margin-top:16px;padding:12px 16px;border:1.5px solid var(--border);color:var(--text-main);text-align:center;letter-spacing:0.14em;text-transform:uppercase;font-size:10px;">
         カードアーカイブで見る →
       </a>
     </div>`);
