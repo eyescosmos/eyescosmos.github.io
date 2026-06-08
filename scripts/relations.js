@@ -139,6 +139,14 @@
     }
   };
 
+  // Build meta lookup from PHOTOGRAPHERS global for postMessage enrichment
+  const photographerMetaMap = new Map(
+    (typeof PHOTOGRAPHERS !== 'undefined' ? PHOTOGRAPHERS : []).map(p => [
+      p.id,
+      [p.nationality, p.years].filter(Boolean).join(' · ')
+    ])
+  );
+
   const nodes = RELATION_GRAPH.nodes.map(node => ({
     ...node,
     x: 0,
@@ -1014,6 +1022,21 @@
     frameFocusedViewport(node);
     updateFocusPanel();
     scheduleFrame();
+
+    if (node.type === 'photographer' && window.parent !== window) {
+      const key = node.key || id.replace(/^photographer:/, '');
+      const targetUrl = currentLanguage === 'en'
+        ? (node.urlEn || node.urlJa || node.url || '#')
+        : (node.urlJa || node.urlEn || node.url || '#');
+      window.parent.postMessage({
+        type: 'photographer-click',
+        id: key,
+        name: node.labelJa || node.label || '',
+        nameEn: node.labelEn || node.label || '',
+        meta: photographerMetaMap.get(key) || '',
+        url: targetUrl
+      }, window.location.origin);
+    }
   }
 
   function updateFocusPanel() {

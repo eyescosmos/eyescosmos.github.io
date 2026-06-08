@@ -320,6 +320,8 @@ body {
   color: var(--text-main);
 }
 .search-overlay__input::placeholder { color: var(--text-mute); }
+.search-overlay:focus-within { background: var(--accent-highlight); }
+.search-overlay:focus-within .search-overlay__input { border-bottom-color: rgba(0,0,0,0.25); color: var(--text-main); }
 .search-results {
   margin-top: 16px;
   display: flex;
@@ -403,7 +405,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 340px;
   grid-template-areas:
-    "head side"
+    "head head"
     "map  side";
   align-items: start;
   border-bottom: 1.5px solid var(--border);
@@ -569,6 +571,7 @@ body {
 .coord__side {
   grid-area: side;
   align-self: start;
+  height: 640px;
   background: transparent;
   border-left: none;
 }
@@ -731,6 +734,8 @@ body {
   color: var(--text-main);
 }
 .toolbar__search input::placeholder { color: var(--text-mute); }
+.toolbar__search:focus-within { background: var(--accent-highlight); }
+.toolbar__search:focus-within::before { color: var(--text-main); }
 
 .pill {
   font-family: var(--font-mono);
@@ -754,6 +759,7 @@ body {
 }
 .pill--sort {
   color: var(--text-mute);
+  margin-left: auto;
   border-right: 0;
   border-left: 1px solid #0e0c0a;
 }
@@ -794,12 +800,14 @@ body {
 .sort-option:hover { background: var(--surface-2); color: var(--text-main); }
 .sort-option.is-active { color: var(--text-main); font-weight: 600; }
 .sort-divider {
-  padding: 8px 18px;
+  padding: 8px 18px 6px;
   font-family: var(--font-mono);
   font-size: 9px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   color: var(--text-mute);
+  border-top: 1px solid var(--border-soft);
   border-bottom: 1px solid var(--border-soft);
+  margin-top: 4px;
 }
 
 /* CARD GRID */
@@ -810,7 +818,7 @@ body {
   column-fill: balance;
 }
 
-/* CARD */
+/* ─── CARD (card-v4-base + v51 overrides) ─── */
 .pc-card {
   background: var(--surface-2, #f0ede5);
   border: 1.5px solid var(--border);
@@ -823,195 +831,268 @@ body {
 .pc-card a { display: block; color: inherit; }
 .pc-card:hover { border-color: var(--text-main); }
 
-/* CARD TOP */
+/* CARD TOP — card-v4-base + v51 overrides */
 .pc-top {
   position: relative;
   min-height: 220px;
-  padding: 48px 18px 18px;
+  padding: 48px 22px 18px; /* v51: padding-top 48px */
   border-bottom: 1.5px solid var(--border);
-  background: var(--surface-2);
+  background: var(--surface-2, #f0ede5);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
-.pc-top__meta {
-  position: static;
-}
+/* v51: idx を absolute で左上に */
+.pc-top__meta { position: static; }
 .pc-top__meta .idx {
   position: absolute;
-  top: 12px;
-  left: 18px;
+  top: 12px; left: 18px;
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 32px;
-  letter-spacing: -0.03em;
   line-height: 0.9;
-  color: #0a2540;
+  letter-spacing: -0.03em;
+  color: var(--accent-structure);
   z-index: 2;
 }
-.pc-top--number .pc-top__meta .idx { color: #d6402e; }
 .pc-top__meta > span:nth-child(2) {
   position: absolute;
-  top: 16px;
-  right: 18px;
+  top: 16px; right: 18px;
   font-family: var(--font-mono);
   font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--text-mute);
 }
-.pc-top__art {
-  font-family: var(--font-sans-en);
-  font-weight: 800;
-  font-size: 160px;
-  letter-spacing: -0.04em;
-  line-height: 0.85;
-  color: var(--text-main);
-  overflow: hidden;
-}
-.pc-top__art .accent { color: var(--accent-display); }
-.pc-top__art .dash   { color: var(--accent-display); }
+/* art: base は overflow: hidden のみ。各バリアントで flex: 1 + centering */
+.pc-top__art { overflow: hidden; }
 .pc-top__hint {
   font-family: var(--font-mono);
   font-size: 9px;
   letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--text-mute);
-  margin-top: 8px;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(transparent, var(--surface-2, #f0ede5) 65%);
+  padding-top: 10px;
+  margin-top: -10px;
 }
 
-/* CARD TOP VARIANTS */
-.pc-top--kanji .pc-top__art {
-  font-family: var(--font-sans-jp);
-  font-weight: 900;
-  font-size: 160px;
-  letter-spacing: -0.02em;
+/* VARIANTS — card-v4-base 準拠 */
+.pc-top--initials .pc-top__art {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-sans-en);
+  font-weight: 800;
+  font-size: 168px;
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  color: var(--text-main);
 }
+.pc-top--initials .pc-top__art .accent { color: var(--accent-action); }
+
 .pc-top--year .pc-top__art {
-  font-size: 56px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-.pc-top--title .pc-top__art {
-  font-family: var(--font-serif-accent);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 1.0;
-  letter-spacing: -0.01em;
-}
-.pc-top--stacked .pc-top__art {
-  font-size: 38px;
-  font-weight: 700;
-  line-height: 1.0;
-  letter-spacing: -0.01em;
   display: flex;
   flex-direction: column;
+  gap: 0;
+  overflow: hidden;
 }
-.pc-top--stacked .pc-top__art span:nth-child(2) { color: var(--accent-display); }
-.pc-top--stacked .pc-top__art span:last-child {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  color: #8a8478;
-  font-weight: 400;
-  font-style: normal;
+.yr-birth { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 104px; line-height: 0.84; letter-spacing: -0.01em; color: var(--text-main); display: block; }
+.yr-dash { font-family: var(--font-sans-en); font-size: 28px; font-weight: 300; line-height: 1.1; letter-spacing: 0.18em; color: var(--accent-structure); display: block; }
+.yr-death { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-style: italic; font-size: 60px; line-height: 0.84; letter-spacing: -0.01em; color: var(--text-main); opacity: 0.72; display: block; }
+
+.pc-top--kanji .pc-top__art {
+  flex: none;
+  display: flex; align-items: center; justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: var(--font-sans-jp);
+  font-weight: 900;
+  font-size: 148px;
+  line-height: 0.86;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
 }
-.pc-top--title .pc-top__art .year {
-  font-family: var(--font-mono);
-  font-style: normal;
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  color: #8a8478;
+
+.pc-top--title .pc-top__art {
+  font-family: var(--font-sans-en);
+  font-weight: 900;
+  font-size: 82px;
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+  color: var(--text-main);
+  overflow: hidden;
+}
+
+.pc-top--stacked .pc-top__art {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+.pc-top--stacked .pc-top__art span {
+  font-family: var(--font-sans-en);
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 0.84;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
   display: block;
-  margin-top: 6px;
 }
+.pc-top--stacked .pc-top__art span:nth-child(2) { color: var(--accent-action); }
+
 .pc-top--number {
   background: var(--reverse-bg);
 }
-.pc-top--number .pc-top__meta .idx { color: var(--accent-display); }
+.pc-top--number .pc-top__meta .idx { color: var(--accent-action); }
+.pc-top--number .pc-top__hint { color: rgba(250,250,245,0.45); opacity: 0.6; }
 .pc-top--number .pc-top__art {
-  font-size: 160px;
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 180px;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
   color: var(--reverse-text);
 }
-.pc-top--number .pc-top__hint { color: rgba(250,250,245,0.45); }
+
 .pc-top--slash .pc-top__art {
-  font-family: var(--font-mono);
-  font-size: 28px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.3;
   display: flex;
   flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
 }
-.pc-top--slash .pc-top__art em {
-  font-family: var(--font-serif-accent);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 32px;
-}
+.pc-top--slash .fn { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--text-mute); display: block; }
+.pc-top--slash .ln { font-family: var(--font-sans-en); font-weight: 900; font-size: 88px; line-height: 0.80; letter-spacing: -0.05em; color: var(--text-main); display: block; overflow: hidden; }
+
 .pc-top--grid .pc-top__art {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  max-width: 60px;
-  margin-bottom: 8px;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+  padding: 6px 0;
 }
 .pc-top--grid .pc-top__art i {
+  border: 1px solid var(--border);
+  background: var(--bg);
   display: block;
-  width: 14px;
-  height: 14px;
-  border: 1.5px solid var(--border);
-  font-style: normal;
-  background: transparent;
+}
+.pc-top--grid .pc-top__art i:nth-child(5) { background: var(--text-main); }
+
+/* アーカイブ追加スタイル (serif / cite / country) */
+.pc-top--serif .pc-top__art {
+  flex: 1;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 76px;
+  line-height: 0.87;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  overflow: hidden;
+}
+.pc-top--cite .pc-top__art {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+  justify-content: center;
+}
+.cty {
+  font-family: var(--font-sans-en);
+  font-weight: 900;
+  font-size: 58px;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  display: block;
+  overflow: hidden;
+}
+.cyr {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-structure);
+  display: block;
+}
+.pc-top--country .pc-top__art {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 118px;
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+  color: var(--text-main);
 }
 
 /* CARD BODY */
 .pc-body {
+  padding: 22px 22px 24px;
   display: grid;
   gap: 12px;
-  padding: 22px 22px 24px;
-  background: var(--surface-2);
+  background: var(--surface-2, #f0ede5);
 }
 .pc-body__kind {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-sub);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  font-weight: 500;
 }
 .pc-body__kind::before {
   content: '';
-  display: inline-block;
   width: 8px;
   height: 8px;
-  background: var(--accent-display);
+  background: var(--accent-action);
   border-radius: 50%;
+  display: inline-block;
   flex-shrink: 0;
 }
+.pc-card--movement .pc-body__kind::before { background: var(--accent-structure); border-radius: 2px; }
+.pc-body__channel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  border-top: 1px solid var(--border-soft);
+  padding-top: 10px;
+  margin-top: 2px;
+}
 .pc-body__name {
+  margin: 0;
   font-family: var(--font-sans-jp);
   font-weight: 700;
   font-size: 24px;
-  letter-spacing: 0.04em;
   line-height: 1.3;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
 }
 .pc-body__name-en {
   font-family: var(--font-serif-accent);
   font-style: italic;
   font-weight: 500;
   font-size: 15px;
-  color: #d6402e;
-  display: block;
+  color: var(--accent-action);
   margin-top: 4px;
 }
 .pc-body__meta {
   font-family: var(--font-mono);
   font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--text-mute);
 }
 .pc-body__lede {
@@ -1020,28 +1101,14 @@ body {
   color: var(--text-main);
   margin: 0;
 }
-.pc-body__channel {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #8a8478;
-  border-top: 1px solid #a39d90;
-  padding-top: 10px;
-  margin-top: 2px;
-}
-.pc-body__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+.pc-body__tags { display: flex; flex-wrap: wrap; gap: 12px; }
 .pc-body__tag {
   font-family: var(--font-mono);
   font-size: 10px;
+  letter-spacing: 0.10em;
   color: var(--text-sub);
 }
-.pc-body__tag::before { content: '· '; }
+.pc-body__tag::before { content: '· '; color: var(--text-deep); }
 .pc-body__tag[data-hot] {
   background: var(--accent-highlight);
   color: var(--text-main);
@@ -1050,17 +1117,18 @@ body {
 }
 .pc-body__tag[data-hot]::before { content: ''; }
 .pc-body__cta {
+  padding-top: 14px;
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  color: var(--accent-action);
   font-weight: 500;
-  color: #d6402e;
-  padding-top: 14px;
-  border-top: 1px solid #a39d90;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 4px;
 }
 .pc-card:hover .pc-body__cta span:last-child {
   transform: translateX(4px);
@@ -1169,8 +1237,8 @@ body {
   font-size: 14px;
   color: var(--text-sub);
   line-height: 1.7;
-  max-width: 28em;
   text-align: right;
+  white-space: nowrap;
 }
 
 .era__grid {
@@ -1472,7 +1540,7 @@ body {
       </div>
 
       <!-- クリック後: pc-card を複製して表示 -->
-      <div id="coord-card-wrap" style="display:none; overflow-y:auto; height:100%;"></div>
+      <div id="coord-card-wrap" style="display:none;"></div>
     </aside>
   </section>
 
@@ -1485,24 +1553,23 @@ body {
         <div class="cards-head__sub">12 cards · 写真家ごとに切り口を変えて編集</div>
       </div>
       <div class="cards-head__legend">
-        Photographers · Movements · Themes
+        Photographers · Movements
         <div class="l-row">
           <span class="l-chip is-ph"><i></i>Photographer</span>
           <span class="l-chip is-mv"><i></i>Movement</span>
-          <span class="l-chip is-th"><i></i>Theme</span>
         </div>
       </div>
     </header>
 
     <div class="toolbar">
       <label class="toolbar__search">
-        <input type="search" id="nd-cards-search" placeholder="写真家名・運動・国・年代を検索">
+        <input type="search" id="cards-search" placeholder="写真家名・運動・国・年代を検索">
       </label>
       <button class="pill is-active" data-filter="photographer">Photographer</button>
       <button class="pill" data-filter="movement">Movement</button>
       <div class="sort-wrap">
-        <button class="pill pill--sort" id="nd-sort-btn">Sort · <span class="nd-sort-label">おすすめ順</span> ▾</button>
-        <div class="sort-dropdown" id="nd-sort-dropdown">
+        <button class="pill pill--sort" id="sort-btn">Sort · <span class="sort-label">おすすめ順</span> ▾</button>
+        <div class="sort-dropdown" id="sort-dropdown">
           <button class="sort-option is-active" data-sort="default">おすすめ順</button>
           <button class="sort-option" data-sort="movement">ムーブメント順</button>
           <div class="sort-divider">— 年代で絞る —</div>
@@ -1528,11 +1595,11 @@ body {
          pc-top 関連のクラス・数値・テキストには一切触れないこと。
          カードデザインを変更したい場合は cards-archive.html を修正する。
          ===================================================================== -->
-    <div class="cards" id="nd-cards-grid">
+    <div class="cards" id="cards-grid">
 
       <!-- 01 Stieglitz -->
       <article class="pc-card pc-card--photographer">
-        <a href="stieglitz.html" target="_blank">
+        <a href="photographers/stieglitz.html" target="_blank">
           <div class="pc-top pc-top--initials">
             <div class="pc-top__meta"><span class="idx">15</span><span>PHOTOGRAPHER</span></div>
             <div class="pc-top__art">A<span class="accent">S</span></div>
@@ -1559,7 +1626,7 @@ body {
 
       <!-- 02 Nakahira -->
       <article class="pc-card pc-card--photographer">
-        <a href="takuma-nakahira.html" target="_blank">
+        <a href="photographers/takuma-nakahira.html" target="_blank">
           <div class="pc-top pc-top--kanji">
             <div class="pc-top__meta"><span class="idx">111</span><span>PHOTOGRAPHER</span></div>
             <div class="pc-top__art">卓馬</div>
@@ -1586,7 +1653,7 @@ body {
 
       <!-- 03 Sherman -->
       <article class="pc-card pc-card--photographer">
-        <a href="sherman.html" target="_blank">
+        <a href="photographers/sherman.html" target="_blank">
           <div class="pc-top pc-top--stacked">
             <div class="pc-top__meta"><span class="idx">39</span><span>PHOTOGRAPHER</span></div>
             <div class="pc-top__art">
@@ -1618,10 +1685,10 @@ body {
 
       <!-- 04 Evans -->
       <article class="pc-card pc-card--photographer">
-        <a href="evans.html" target="_blank">
+        <a href="photographers/evans.html" target="_blank">
           <div class="pc-top pc-top--year">
             <div class="pc-top__meta"><span class="idx">26</span><span>PHOTOGRAPHER</span></div>
-            <div class="pc-top__art">1903<span class="dash">—</span>1975</div>
+            <div class="pc-top__art"><span class="yr-birth">1903</span><span class="yr-dash">—</span><span class="yr-death">1975</span></div>
             <div class="pc-top__hint">WALKER EVANS · FSA · AMERICAN PHOTOGRAPHS</div>
           </div>
           <div class="pc-body">
@@ -1645,10 +1712,10 @@ body {
 
       <!-- 05 Frank -->
       <article class="pc-card pc-card--photographer">
-        <a href="robertfrank.html" target="_blank">
-          <div class="pc-top pc-top--title">
+        <a href="photographers/robertfrank.html" target="_blank">
+          <div class="pc-top pc-top--serif">
             <div class="pc-top__meta"><span class="idx">31</span><span>PHOTOGRAPHER</span></div>
-            <div class="pc-top__art">The<br>Americans<br><span class="year">1958</span></div>
+            <div class="pc-top__art" style="font-size:72px;">The<br>Americans</div>
             <div class="pc-top__hint">ROBERT FRANK · 1924–2019</div>
           </div>
           <div class="pc-body">
@@ -1672,7 +1739,7 @@ body {
 
       <!-- 06 Moriyama -->
       <article class="pc-card pc-card--photographer">
-        <a href="moriyama.html" target="_blank">
+        <a href="photographers/moriyama.html" target="_blank">
           <div class="pc-top pc-top--kanji">
             <div class="pc-top__meta"><span class="idx">38</span><span>PHOTOGRAPHER</span></div>
             <div class="pc-top__art">新宿</div>
@@ -1699,7 +1766,7 @@ body {
 
       <!-- 07 Becher -->
       <article class="pc-card pc-card--photographer">
-        <a href="becher.html" target="_blank">
+        <a href="photographers/becher.html" target="_blank">
           <div class="pc-top pc-top--grid">
             <div class="pc-top__meta"><span class="idx">48</span><span>PHOTOGRAPHER</span></div>
             <div class="pc-top__art">
@@ -1730,7 +1797,7 @@ body {
 
       <!-- 08 Cartier-Bresson -->
       <article class="pc-card pc-card--photographer">
-        <a href="cartierbresson.html" target="_blank">
+        <a href="photographers/cartierbresson.html" target="_blank">
           <div class="pc-top pc-top--initials">
             <div class="pc-top__meta"><span class="idx">27</span><span>PHOTOGRAPHER</span></div>
             <div class="pc-top__art" style="font-size:128px;letter-spacing:-0.07em;">HC<span class="accent">B</span></div>
@@ -1757,10 +1824,10 @@ body {
 
       <!-- 09 Goldin -->
       <article class="pc-card pc-card--photographer">
-        <a href="goldin.html" target="_blank">
-          <div class="pc-top pc-top--title">
+        <a href="photographers/goldin.html" target="_blank">
+          <div class="pc-top pc-top--serif">
             <div class="pc-top__meta"><span class="idx">43</span><span>PHOTOGRAPHER</span></div>
-            <div class="pc-top__art" style="font-size:54px;">The Ballad<br>of Sexual<br>Dependency</div>
+            <div class="pc-top__art" style="font-size:40px;">The Ballad<br>of Sexual<br>Dependency</div>
             <div class="pc-top__hint">NAN GOLDIN · 1953–</div>
           </div>
           <div class="pc-body">
@@ -1784,10 +1851,10 @@ body {
 
       <!-- 10 Arbus -->
       <article class="pc-card pc-card--photographer">
-        <a href="arbus.html" target="_blank">
-          <div class="pc-top pc-top--number">
+        <a href="photographers/arbus.html" target="_blank">
+          <div class="pc-top pc-top--cite">
             <div class="pc-top__meta"><span class="idx">37</span><span>PHOTOGRAPHER</span></div>
-            <div class="pc-top__art">37</div>
+            <div class="pc-top__art"><span class="cty">NEW YORK</span><span class="cyr">1923</span></div>
             <div class="pc-top__hint">DIANE ARBUS · 1923–1971</div>
           </div>
           <div class="pc-body">
@@ -1811,11 +1878,11 @@ body {
 
       <!-- 11 Sander -->
       <article class="pc-card pc-card--photographer">
-        <a href="sander.html" target="_blank">
-          <div class="pc-top pc-top--slash">
+        <a href="photographers/sander.html" target="_blank">
+          <div class="pc-top pc-top--country">
             <div class="pc-top__meta"><span class="idx">23</span><span>PHOTOGRAPHER</span></div>
-            <div class="pc-top__art">AUGUST<br>SANDER<br><em>20th cent.</em></div>
-            <div class="pc-top__hint">MENSCHEN DES 20. JAHRHUNDERTS</div>
+            <div class="pc-top__art">DEU</div>
+            <div class="pc-top__hint">AUGUST SANDER · MENSCHEN DES 20. JAHRHUNDERTS</div>
           </div>
           <div class="pc-body">
             <span class="pc-body__kind">Photographer</span>
@@ -1838,7 +1905,7 @@ body {
 
       <!-- 12 Araki -->
       <article class="pc-card pc-card--photographer">
-        <a href="araki.html" target="_blank">
+        <a href="photographers/araki.html" target="_blank">
           <div class="pc-top pc-top--kanji">
             <div class="pc-top__meta"><span class="idx">33</span><span>PHOTOGRAPHER</span></div>
             <div class="pc-top__art" style="font-size:172px;">私</div>
@@ -2233,121 +2300,12 @@ body {
   let archiveCardMap = {};   // nameJa → card outerHTML (正確なデザイン)
   let cardDataIndex  = {};   // nameJa → card-data entry (フォールバック用)
 
-  // デフォルト表示のTOP12固定リスト（アーカイブ取得後はここから正確なカードを引く）
-  const ND_TOP12_NAMES = [
-    'アルフレッド・スティーグリッツ', '中平卓馬', 'シンディ・シャーマン',
-    'ウォーカー・エヴァンス', 'ロバート・フランク', '森山大道',
-    'ベルント＆ヒラ・ベッヒャー', 'アンリ・カルティエ＝ブレッソン',
-    'ナン・ゴールディン', 'ダイアン・アーバス', 'アウグスト・ザンダー', '荒木経惟'
-  ];
-
-  // ── Cards view controller ──────────────────────────────
-  const ndCardsGrid  = document.getElementById('nd-cards-grid');
-  const ndSearchEl   = document.getElementById('nd-cards-search');
-  const ndDefaultHtml = ndCardsGrid ? ndCardsGrid.innerHTML : '';
-  let ndFilter = 'photographer';
-  let ndSort   = 'default';
-  let ndQuery  = '';
-  let ndPhData = [];
-  let ndMvData = [];
-
-  function ndRender() {
-    if (!ndCardsGrid) return;
-
-    // デフォルト表示：TOP12固定リスト（アーカイブ取得済みならアーカイブ版で）
-    if (ndFilter === 'photographer' && !ndQuery && ndSort === 'default') {
-      if (Object.keys(archiveCardMap).length > 0) {
-        const html = ND_TOP12_NAMES.map(n => archiveCardMap[n] || '').filter(h => h).join('');
-        ndCardsGrid.innerHTML = html || ndDefaultHtml;
-      } else {
-        ndCardsGrid.innerHTML = ndDefaultHtml;
-      }
-      return;
-    }
-
-    // フィルタ・検索・ソート時
-    let src = ndQuery
-      ? [...ndPhData, ...ndMvData]
-      : (ndFilter === 'photographer' ? ndPhData : ndMvData);
-
-    if (ndQuery) {
-      const q = ndQuery.toLowerCase();
-      src = src.filter(p =>
-        (p.nameJa  || '').includes(ndQuery) ||
-        (p.nameEn  || '').toLowerCase().includes(q) ||
-        (p.metaJa  || '').toLowerCase().includes(q) ||
-        (p.channel || '').includes(ndQuery)
-      );
-    }
-
-    if (ndSort === 'movement') {
-      src = [...src].sort((a, b) =>
-        (a.channel || '').localeCompare(b.channel || '', 'ja')
-      );
-    } else if (ndSort.startsWith('era:')) {
-      const eraVal = ndSort.slice(4);
-      src = src.filter(p => String(p.era) === eraVal);
-    }
-
-    const shown = src.slice(0, 12);
-    ndCardsGrid.innerHTML = shown.length
-      ? shown.map(p => archiveCardMap[p.nameJa] || buildDynamicCard(p)).join('')
-      : '<p style="padding:40px 32px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;color:var(--text-mute);">該当する結果が見つかりません</p>';
-  }
-
-  // Filter pills
-  document.querySelectorAll('.pill[data-filter]').forEach(pill => {
-    pill.addEventListener('click', () => {
-      document.querySelectorAll('.pill[data-filter]').forEach(p => p.classList.remove('is-active'));
-      pill.classList.add('is-active');
-      ndFilter = pill.dataset.filter;
-      ndQuery  = '';
-      if (ndSearchEl) ndSearchEl.value = '';
-      ndRender();
-    });
-  });
-
-  // Search
-  let ndTimer;
-  if (ndSearchEl) {
-    ndSearchEl.addEventListener('input', () => {
-      clearTimeout(ndTimer);
-      ndTimer = setTimeout(() => {
-        ndQuery = ndSearchEl.value.trim();
-        ndRender();
-      }, 150);
-    });
-  }
-
-  // Sort dropdown
-  const ndSortBtn  = document.getElementById('nd-sort-btn');
-  const ndSortDrop = document.getElementById('nd-sort-dropdown');
-  if (ndSortBtn && ndSortDrop) {
-    ndSortBtn.addEventListener('click', e => {
-      e.stopPropagation();
-      ndSortDrop.classList.toggle('is-open');
-    });
-    document.addEventListener('click', () => ndSortDrop.classList.remove('is-open'));
-    ndSortDrop.querySelectorAll('.sort-option').forEach(opt => {
-      opt.addEventListener('click', e => {
-        e.stopPropagation();
-        ndSort = opt.dataset.sort;
-        ndSortDrop.querySelectorAll('.sort-option').forEach(o => o.classList.remove('is-active'));
-        opt.classList.add('is-active');
-        const labelEl = ndSortBtn.querySelector('.nd-sort-label');
-        if (labelEl) labelEl.textContent = opt.textContent;
-        ndSortDrop.classList.remove('is-open');
-        ndRender();
-      });
-    });
-  }
-  // ────────────────────────────────────────────────────────
-
   fetch('cards-archive.html')
     .then(r => r.text())
     .then(html => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
+      // 追加CSS (archive 固有スタイル) を index に注入
       const archiveStyle = doc.querySelector('style');
       if (archiveStyle && !document.getElementById('archive-card-styles')) {
         const s = document.createElement('style');
@@ -2359,19 +2317,141 @@ body {
         const nameEl = card.querySelector('.pc-body__name');
         if (nameEl) archiveCardMap[nameEl.textContent.trim()] = card.outerHTML;
       });
-      // アーカイブ取得完了後、ndPhData が揃っていれば再描画
-      if (ndPhData.length > 0) ndRender();
+      // アーカイブ取得完了後、card-data.json も読み込み済みなら常に再描画
+      if (typeof window.__cvRender === 'function' && cvPhData.length > 0) {
+        window.__cvRender();
+      }
     })
     .catch(() => {});
+
+  // ── Cards view controller ──────────────────────────────
+  const cardsGrid = document.getElementById('cards-grid');
+  const cvSearchEl = document.getElementById('cards-search');
+  let cvFilter = 'photographer';
+  let cvSort   = 'default';
+  let cvQuery  = '';
+  let cvPhData = [];
+  let cvMvData = [];
+
+  // 初期の手書きTOP12カードを保存（アーカイブ未取得時のフォールバック用）
+  const defaultPhHtml = cardsGrid ? cardsGrid.innerHTML : '';
+
+  // デフォルト表示のTOP12固定リスト（アーカイブ取得後はここから正確なカードを引く）
+  const TOP12_NAMES = [
+    'アルフレッド・スティーグリッツ', '中平卓馬', 'シンディ・シャーマン',
+    'ウォーカー・エヴァンス', 'ロバート・フランク', '森山大道',
+    'ベルント＆ヒラ・ベッヒャー', 'アンリ・カルティエ＝ブレッソン',
+    'ナン・ゴールディン', 'ダイアン・アーバス', 'アウグスト・ザンダー', '荒木経惟'
+  ];
+
+  function cvRender() {
+    if (!cardsGrid) return;
+    // window に公開して archive fetch 完了後の再描画に使う
+    window.__cvRender  = cvRender;
+    window.__cvFilter  = cvFilter;
+    window.__cvQuery   = cvQuery;
+    window.__cvSort    = cvSort;
+
+    // デフォルト表示（未検索・未フィルタ）はTOP12固定リストを使用
+    if (cvFilter === 'photographer' && !cvQuery && cvSort === 'default') {
+      if (Object.keys(archiveCardMap).length > 0) {
+        // アーカイブ取得済み → 正確なカードHTMLで表示
+        cardsGrid.innerHTML = TOP12_NAMES.map(n => archiveCardMap[n] || '').filter(h => h).join('') || defaultPhHtml;
+      } else {
+        // アーカイブ未取得 → 手書きカードをフォールバック表示
+        cardsGrid.innerHTML = defaultPhHtml;
+      }
+      return;
+    }
+
+    // 検索中は写真家・運動の両方を対象にする
+    let src = cvQuery
+      ? [...cvPhData, ...cvMvData]
+      : (cvFilter === 'photographer' ? cvPhData : cvMvData);
+
+    // 検索フィルタ
+    if (cvQuery) {
+      const q = cvQuery.toLowerCase();
+      src = src.filter(p =>
+        (p.nameJa  || '').includes(cvQuery) ||
+        (p.nameEn  || '').toLowerCase().includes(q) ||
+        (p.metaJa  || '').toLowerCase().includes(q) ||
+        (p.channel || '').includes(cvQuery)
+      );
+    }
+
+    // ソート / 年代フィルタ
+    if (cvSort === 'movement') {
+      src = [...src].sort((a, b) =>
+        (a.channel || '').localeCompare(b.channel || '', 'ja')
+      );
+    } else if (cvSort.startsWith('era:')) {
+      const eraVal = cvSort.slice(4);
+      src = src.filter(p => String(p.era) === eraVal);
+    }
+
+    const shown = src.slice(0, 12);
+    cardsGrid.innerHTML = shown.length
+      ? shown.map(p => archiveCardMap[p.nameJa] || buildDynamicCard(p)).join('')
+      : '<p style="padding:40px 32px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;color:var(--text-mute);">該当する結果が見つかりません</p>';
+  }
+
+  // Filter pills
+  document.querySelectorAll('.pill[data-filter]').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.pill[data-filter]').forEach(p => p.classList.remove('is-active'));
+      pill.classList.add('is-active');
+      cvFilter = pill.dataset.filter;
+      cvQuery  = '';
+      if (cvSearchEl) cvSearchEl.value = '';
+      cvRender();
+    });
+  });
+
+  // Search (1文字から反応)
+  let cvTimer;
+  if (cvSearchEl) {
+    cvSearchEl.addEventListener('input', () => {
+      clearTimeout(cvTimer);
+      cvTimer = setTimeout(() => {
+        cvQuery = cvSearchEl.value.trim();
+        cvRender();
+      }, 150);
+    });
+  }
+
+  // Sort dropdown
+  const sortBtn  = document.getElementById('sort-btn');
+  const sortDrop = document.getElementById('sort-dropdown');
+  if (sortBtn && sortDrop) {
+    sortBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      sortDrop.classList.toggle('is-open');
+    });
+    document.addEventListener('click', () => sortDrop.classList.remove('is-open'));
+    sortDrop.querySelectorAll('.sort-option').forEach(opt => {
+      opt.addEventListener('click', e => {
+        e.stopPropagation();
+        cvSort = opt.dataset.sort;
+        sortDrop.querySelectorAll('.sort-option').forEach(o => o.classList.remove('is-active'));
+        opt.classList.add('is-active');
+        const labelEl = sortBtn.querySelector('.sort-label');
+        if (labelEl) labelEl.textContent = opt.textContent;
+        sortDrop.classList.remove('is-open');
+        cvRender();
+      });
+    });
+  }
+  // ────────────────────────────────────────────────────────
 
   fetch('card-data.json')
     .then(r => r.json())
     .then(d => {
       (d.photographers || []).forEach(p => { cardDataIndex[p.nameJa] = p; });
       (d.movements   || []).forEach(p => { cardDataIndex[p.nameJa] = p; });
-      ndPhData = d.photographers || [];
-      ndMvData = d.movements     || [];
-      ndRender(); // 初期描画
+      cvPhData = d.photographers || [];
+      cvMvData = d.movements     || [];
+      cvRender(); // 初期描画
     })
     .catch(() => {});
 
@@ -2393,11 +2473,11 @@ body {
       topArt = `<div class="pc-top__art">${body}<span class="accent">${last}</span></div>`;
     } else if (style === 'pc-top--year') {
       const parts = artText.split('—');
-      topArt = `<div class="pc-top__art">${parts[0]}<span class="dash">—</span>${parts[1] || ''}</div>`;
+      topArt = `<div class="pc-top__art"><span class="yr-birth">${parts[0].trim()}</span><span class="yr-dash">—</span><span class="yr-death">${(parts[1] || '').trim()}</span></div>`;
     } else if (style === 'pc-top--slash') {
       const first = nameWords.slice(0, -1).join(' ') || nameWords[0];
       const last  = nameWords[nameWords.length - 1];
-      topArt = `<div class="pc-top__art">${first}<br><strong style="font-size:88px;line-height:0.84;letter-spacing:-0.05em;font-family:var(--font-sans-en);font-weight:900;">${last}</strong></div>`;
+      topArt = `<div class="pc-top__art"><span class="fn">${first}</span><span class="ln">${last}</span></div>`;
     } else if (style === 'pc-top--stacked') {
       const spans = nameWords.slice(0, 3).map(w => `<span>${w}</span>`).join('');
       topArt = `<div class="pc-top__art">${spans}</div>`;
@@ -2446,17 +2526,10 @@ body {
     const wrap  = document.getElementById('coord-card-wrap');
     if (!empty || !wrap) return;
 
-    // カードを表示してコード部分へスクロール
     function showCard(html) {
       empty.style.display = 'none';
       wrap.style.display  = 'block';
       wrap.innerHTML = html;
-      // coord セクション先頭が sticky ヘッダ下に来るようスクロール
-      const coordSection = document.getElementById('view-coord');
-      if (coordSection) {
-        const top = coordSection.getBoundingClientRect().top + window.scrollY - 124;
-        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-      }
     }
 
     // 1. cards-archive.html から取得した正確なカードを優先使用
@@ -2537,13 +2610,6 @@ body {
     updateEraArrows();
   }
 
-  // Filter pills
-  document.querySelectorAll('.pill:not(.pill--sort)').forEach(pill => {
-    pill.addEventListener('click', () => {
-      document.querySelectorAll('.pill:not(.pill--sort)').forEach(p => p.classList.remove('is-active'));
-      pill.classList.add('is-active');
-    });
-  });
 </script>
 </body>
 </html>

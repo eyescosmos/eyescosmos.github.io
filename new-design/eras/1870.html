@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1870–1890s｜産業化・社会改革・写真の大衆化｜写真の座標</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/card-v4-base.css"><link rel="stylesheet" href="../styles/card-v5-overrides.css">
+<style>
+/* ============================================================
+   写真の座標 — 時代ページ · 1839–1860s
+   Design: v5.1 light paper · spot color · super-flat
+   ============================================================ */
+:root {
+  --bg:          #fafaf5;
+  --surface:     #ffffff;
+  --surface-2:   #f0ede5;
+  --text-main:   #0e0c0a;
+  --text-sub:    #5a554d;
+  --text-mute:   #8a8478;
+  --text-deep:   #b8b0a4;
+  --border:      #0e0c0a;
+  --border-soft: #c4bcb0;
+  --rule:        #c4bcb0;
+  --rule-strong: #0e0c0a;
+  --accent-s:    #0a2540;
+  --accent-a:    #a83a2a;
+  --accent-d:    #d6402e;
+  --accent-h:    #ccff00;
+  --rev-bg:      #0e0c0a;
+  --rev-text:    #f2efe8;
+  --font-jp:     'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, sans-serif;
+  --font-en:     'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mo:     'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-se:     'Cormorant Garamond', 'Times New Roman', serif;
+  --font-se-jp:  'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+
+  /* aliases for card-v4-base.css */
+  --font-sans-jp: var(--font-jp);
+  --font-sans-en: var(--font-en);
+  --font-mono: var(--font-mo);
+  --accent-structure: var(--accent-s);
+  --accent-action: var(--accent-a);
+  --r-card: 4px;
+  --dur-2: 200ms;
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --reverse-text: var(--rev-text, #f2efe8);}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-jp);
+  font-feature-settings: "palt" 1;
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; background: transparent; border: 0; color: inherit; }
+::selection { background: var(--rev-bg); color: var(--rev-text); }
+.page { max-width: 1440px; margin: 0 auto; background: var(--bg); }
+
+/* ── HEADER ───────────────────────────────────────────────── */
+.head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 32px;
+  border-bottom: 1.5px solid var(--rule-strong);
+  background: var(--bg);
+}
+.head__brand { display: inline-flex; align-items: baseline; gap: 12px; }
+.head__brand-ja { font-family: var(--font-jp); font-weight: 700; font-size: 18px; letter-spacing: 0.10em; }
+.head__brand-ja a { color: var(--text-main); }
+.head__brand-en { font-family: var(--font-en); font-weight: 500; font-size: 12px; color: var(--text-sub); }
+.head__crumbs {
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  text-align: center;
+}
+.head__crumbs em { font-style: normal; color: var(--accent-s); font-weight: 500; }
+.head__crumbs .sep { color: var(--text-deep); margin: 0 10px; }
+.updated-date {
+  background: var(--accent-h);
+  color: var(--text-main);
+  padding: 1px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+.head__meta { display: flex; align-items: center; gap: 16px; }
+.head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+
+/* ── ERA HERO ─────────────────────────────────────────────── */
+.era-hero {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  border-bottom: 1.5px solid var(--rule-strong);
+  min-height: 280px;
+}
+.era-hero__art {
+  background: var(--rev-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1.5px solid var(--rule-strong);
+  user-select: none;
+  padding: 32px 24px;
+  gap: 10px;
+}
+.era-hero__art-label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  align-self: flex-start;
+}
+.era-hero__art-year {
+  font-family: var(--font-en);
+  font-weight: 900;
+  font-size: clamp(80px, 9.5vw, 144px);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  color: var(--rev-text);
+  align-self: flex-start;
+}
+.era-hero__art-year span { color: var(--accent-d); }
+.era-hero__info {
+  padding: 36px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  background: var(--surface);
+}
+.era-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+}
+.era-hero__eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 1.5px;
+  background: var(--accent-s);
+  flex-shrink: 0;
+}
+.era-hero__title {
+  font-family: var(--font-en);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.era-hero__period {
+  font-family: var(--font-se);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--accent-a);
+  letter-spacing: 0.01em;
+}
+.era-hero__lead {
+  font-family: var(--font-se-jp);
+  font-size: 15px;
+  line-height: 1.90;
+  color: var(--text-sub);
+  max-width: 40em;
+}
+.era-hero__meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+}
+.era-hero__meta-item {
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid var(--border-soft);
+  line-height: 1.7;
+}
+.era-hero__meta-item:last-child { border-right: 0; padding-right: 0; margin-right: 0; }
+.era-hero__meta-item strong { color: var(--text-main); font-weight: 500; margin-left: 6px; }
+
+/* ── ERA NAV ──────────────────────────────────────────────── */
+.era-nav {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1.5px solid var(--rule-strong);
+  background: var(--surface-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.era-nav::-webkit-scrollbar { display: none; }
+.era-nav__label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  padding: 0 20px;
+  white-space: nowrap;
+  border-right: 1.5px solid var(--rule-strong);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+.era-nav__strip { display: flex; align-items: stretch; }
+.era-nav__item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--text-mute);
+  white-space: nowrap;
+  border-right: 1px solid var(--border-soft);
+  transition: color 120ms, background 120ms;
+}
+.era-nav__item:hover { color: var(--accent-a); background: var(--surface); }
+.era-nav__item.is-active {
+  background: var(--rev-bg);
+  color: var(--rev-text);
+  font-weight: 500;
+}
+
+/* ── LAYOUT ───────────────────────────────────────────────── */
+.era-outer { background: var(--surface); border-bottom: 1.5px solid var(--rule-strong); }
+.era-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 52px 32px 96px;
+  display: grid;
+  grid-template-columns: 1fr 284px;
+  gap: 52px;
+  align-items: start;
+}
+.era-main { display: grid; gap: 16px; min-width: 0; }
+
+/* ── ABSTRACT ─────────────────────────────────────────────── */
+.ph-abstract {
+  border-left: 4px solid var(--accent-h);
+  padding: 16px 22px;
+  background: var(--surface-2);
+}
+.ph-abstract__label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.ph-abstract p {
+  font-size: 16px;
+  line-height: 1.95;
+  max-width: 44em;
+  text-align: justify;
+  text-wrap: pretty;
+  font-family: var(--font-se-jp);
+}
+
+/* ── THESIS ───────────────────────────────────────────────── */
+.ph-thesis {
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+}
+.ph-thesis__label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+  padding: 12px 24px;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ph-thesis__label::before { content: ''; width: 28px; height: 1.5px; background: var(--accent-s); flex-shrink: 0; }
+.ph-thesis__body {
+  padding: 22px 24px 24px;
+  font-size: 16px;
+  line-height: 1.95;
+  max-width: 44em;
+  text-align: justify;
+  text-wrap: pretty;
+  font-family: var(--font-se-jp);
+}
+.ph-thesis__body em { font-style: normal; font-weight: 700; color: var(--accent-a); }
+
+/* ── SECTION PANELS ───────────────────────────────────────── */
+.ph-section { border: 1.5px solid var(--border); background: var(--surface); overflow: hidden; }
+.ph-section__head {
+  padding: 14px 24px;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--surface-2);
+}
+.ph-section__title { display: flex; align-items: baseline; gap: 16px; }
+.ph-section__num {
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ph-section__num::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-h);
+  flex-shrink: 0;
+}
+.ph-section__name { font-family: var(--font-jp); font-weight: 900; font-size: 20px; letter-spacing: 0.03em; }
+.ph-section__body { padding: 24px 28px 28px; }
+
+/* ── CONTEXT GRID ─────────────────────────────────────────── */
+.era-context-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5px;
+  background: var(--border-soft);
+  border: 1.5px solid var(--border-soft);
+}
+.era-context-block { background: var(--surface); padding: 18px 22px; }
+.era-context-label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.era-context-text {
+  font-family: var(--font-se-jp);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-sub);
+  text-align: justify;
+}
+
+
+/* ── CARDS (grid + typographic overrides) ────────────────── */
+.er-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.pc-card, .pc-top, .pc-body { background: var(--surface-2); }
+.pc-top { padding-top: 48px; }
+.pc-top__meta .idx { position: absolute; top: 12px; left: 18px; font-family: var(--font-mo); font-weight: 500; font-size: 32px; line-height: 0.9; letter-spacing: -0.03em; color: var(--accent-s); z-index: 2; }
+.pc-top__meta > span:nth-child(2) { position: absolute; top: 16px; right: 18px; }
+.pc-top--year .pc-top__art { display: flex; flex-direction: column; gap: 0; overflow: hidden; }
+.yr-birth { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 104px; line-height: 0.84; letter-spacing: -0.01em; color: var(--text-main); }
+.yr-dash { font-family: var(--font-en); font-size: 28px; font-weight: 300; line-height: 1.1; letter-spacing: 0.18em; color: var(--accent-s); display: block; }
+.yr-death { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-style: italic; font-size: 60px; line-height: 0.84; letter-spacing: -0.01em; color: var(--text-main); opacity: 0.72; }
+.pc-top--slash .pc-top__art { display: flex; flex-direction: column; gap: 2px; overflow: hidden; }
+.pc-top--slash .fn { font-family: var(--font-mo); font-size: 9px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--text-mute); display: block; }
+.pc-top--slash .ln { font-family: var(--font-en); font-weight: 900; font-size: 88px; line-height: 0.80; letter-spacing: -0.05em; color: var(--text-main); display: block; overflow: hidden; }
+.pc-top--title .pc-top__art { flex: 1; display: flex; align-items: flex-end; font-family: var(--font-en); font-weight: 900; font-size: 82px; line-height: 0.82; letter-spacing: -0.05em; color: var(--text-main); overflow: hidden; }
+.pc-top--stacked .pc-top__art { display: flex; flex-direction: column; gap: 0; overflow: hidden; }
+.pc-top--stacked .pc-top__art span { font-family: var(--font-en); font-weight: 900; font-size: 72px; line-height: 0.84; letter-spacing: -0.04em; color: var(--text-main); display: block; }
+.pc-top--twosize .pc-top__art { display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+.big { font-family: var(--font-en); font-weight: 900; font-size: 82px; line-height: 0.80; letter-spacing: -0.05em; color: var(--text-main); display: block; overflow: hidden; }
+.anno { font-family: var(--font-mo); font-size: 9px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--text-mute); display: block; }
+.pc-top--fragment { overflow: hidden; }
+.pc-top--fragment .pc-top__art { font-family: var(--font-en); font-weight: 900; font-size: 280px; line-height: 0.72; letter-spacing: -0.05em; color: var(--text-main); opacity: 0.16; transform: translate(-16px, 14px); pointer-events: none; user-select: none; }
+.pc-top--kanji-foreign .pc-top__art { display: flex; flex-direction: column; gap: 4px; overflow: hidden; }
+.kf-char { font-family: var(--font-jp); font-weight: 900; line-height: 0.88; letter-spacing: -0.02em; color: var(--text-main); display: block; }
+.kf-gloss { font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent-s); display: block; font-weight: 500; }
+/* 検索フィールド */
+.era-search__label { display: flex; align-items: center; gap: 8px; }
+.era-search__label::before { content: '⌕'; color: var(--text-mute); font-size: 16px; font-family: var(--font-mo); flex-shrink: 0; }
+.era-search__input { background: transparent; border: 0; outline: 0; color: var(--text-main); font-family: var(--font-jp); font-size: 13px; width: 100%; }
+.era-search__input::placeholder { color: var(--text-mute); }
+.er-no-result { font-size: 12px; color: var(--text-mute); font-family: var(--font-mo); letter-spacing: 0.12em; padding: 8px 0; display: none; }
+
+/* ── SIDEBAR ──────────────────────────────────────────────── */
+.era-side {
+  position: sticky;
+  top: 24px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+.ph-side-block {
+  border: 1px solid var(--border-soft);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.ph-side-block__head {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--surface);
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+}
+.ph-side-block__body { padding: 14px; }
+.ph-side-meta { display: grid; gap: 0; }
+.ph-side-meta-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px;
+  font-size: 12px;
+  align-items: start;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ph-side-meta-row:first-child { padding-top: 0; }
+.ph-side-meta-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.ph-side-meta-key {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  padding-top: 2px;
+}
+.ph-side-meta-val { color: var(--text-main); line-height: 1.5; }
+.ph-side-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ph-side-chip {
+  display: inline-flex;
+  padding: 5px 10px;
+  border: 1px solid var(--border-soft);
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  color: var(--text-sub);
+}
+.ph-side-chip a { color: inherit; }
+.ph-side-chip:hover { border-color: var(--accent-a); color: var(--accent-a); cursor: default; }
+.ph-side-chip.is-primary {
+  background: var(--accent-h);
+  border-color: var(--accent-h);
+  color: var(--text-main);
+}
+.ph-side-nav { display: grid; gap: 0; }
+.ph-side-nav a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  transition: color 120ms, background 120ms;
+}
+.ph-side-nav a:last-child { border-bottom: 0; }
+.ph-side-nav a:hover { color: var(--accent-a); background: var(--surface); }
+.ph-side-nav a span:last-child { color: var(--text-deep); }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.foot {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-top: 1.5px solid var(--rule-strong);
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.foot__center { text-align: center; }
+.foot__right { text-align: right; }
+.foot a { color: var(--accent-a); }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .era-hero { grid-template-columns: 260px 1fr; }
+  .era-layout { grid-template-columns: 1fr; gap: 28px; }
+  .era-side { position: static; grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .head { grid-template-columns: auto 1fr; gap: 12px; padding: 12px 16px; }
+  .head__crumbs { display: none; }
+  .era-hero { grid-template-columns: 1fr; }
+  .era-hero__art { min-height: 160px; border-right: 0; border-bottom: 1.5px solid var(--rule-strong); flex-direction: row; align-items: flex-end; gap: 16px; padding: 20px 24px; }
+  .era-hero__art-label { display: none; }
+  .era-hero__art-year { font-size: 80px; }
+  .era-hero__info { padding: 24px 20px; }
+  .era-layout { padding: 28px 16px 64px; }
+  .era-side { grid-template-columns: 1fr; }
+  .er-cards { grid-template-columns: 1fr; }
+  .era-context-grid { grid-template-columns: 1fr; }
+  .foot { grid-template-columns: 1fr; gap: 4px; }
+  .foot__center, .foot__right { text-align: left; }
+}
+@media (max-width: 480px) {
+  .era-nav__label { display: none; }
+  .era-hero__art-year { font-size: 64px; }
+}
+
+/* ── BRAND PHOTO MARK ─────────────────────────────────────── */
+.head__brand-photo { background: var(--accent-d); color: #fff; padding: 0 0.05em; border-radius: 2px; display: inline-block; line-height: 0.96; }
+</style>
+</head><body><div class="page">
+<header class="head"><div class="head__brand"><span class="head__brand-ja"><a href="../index.html"><span class="head__brand-photo">写真</span>の座標</a></span><span class="head__brand-en">Photo Coordinates</span></div><div class="head__crumbs"><em>ERAS</em><span class="sep">/</span>1870–1890s<span class="sep">·</span>産業化・社会改革・写真の大衆化<span class="sep">·</span>UPDATED&nbsp;<span class="updated-date">2026.05</span></div><div class="head__meta"><div class="head__lang"><button class="is-active">JP</button><button>EN</button></div></div></header>
+<section class="era-hero"><div class="era-hero__art"><div class="era-hero__art-label">ERA · 02 · 産業化</div><div class="era-hero__art-year">18<span>70</span></div></div><div class="era-hero__info"><div class="era-hero__eyebrow">§ — Era Index — 時代で読む</div><h1 class="era-hero__title">1870–1890s</h1><div class="era-hero__period">産業化・社会改革・写真の大衆化</div><p class="era-hero__lead">乾板写真の発明によって写真が「現場で準備不要な記録」へ変わり、1888年コダックカメラが大衆に開いた時代。都市貧困・移民・労働問題を記録するドキュメンタリー写真が生まれ、マイブリッジとマレーは連続写真で映画の扉を開いた。</p><div class="era-hero__meta-row"><span class="era-hero__meta-item">Photographers <strong>9</strong></span><span class="era-hero__meta-item">Period <strong>1870–1890s</strong></span><span class="era-hero__meta-item">Movements <strong>4</strong></span><span class="era-hero__meta-item">Vol <strong>ERA · 02</strong></span></div></div></section>
+<nav class="era-nav" aria-label="時代ナビゲーション"><div class="era-nav__label">§ — 時代で読む</div><div class="era-nav__strip"><a class="era-nav__item" href="1839.html">1839–60s</a><a class="era-nav__item is-active" href="1870.html">1870–90s</a><a class="era-nav__item" href="1890.html">1890–1910s</a><a class="era-nav__item" href="1910.html">1910–20s</a><a class="era-nav__item" href="1930.html">1930–40s</a><a class="era-nav__item" href="1950.html">1950–60s</a><a class="era-nav__item" href="1970.html">1970–80s</a><a class="era-nav__item" href="1980.html">1980–90s</a><a class="era-nav__item" href="1990.html">1990–2000s</a><a class="era-nav__item" href="2000.html">2000–10s</a><a class="era-nav__item" href="2010.html">2010–20s</a></div></nav>
+<div class="era-outer"><div class="era-layout">
+<main class="era-main"><div class="ph-abstract"><div class="ph-abstract__label">Overview · この時代について</div><p>1871年マドックスの乾板発明により撮影直前の薬品塗布が不要になり写真は携帯性を高めた。1888年コダックは「ボタンを押すだけ」を実現し写真撮影を専門家から大衆へ開放した。一方で都市の貧困・移民・スラムを記録する社会写真家も生まれた時代。</p></div><div class="ph-thesis"><div class="ph-thesis__label">この時代が変えたこと</div><p class="ph-thesis__body">この時代の最大の転換は<em>写真が「専門家の技術」から「大衆の道具」へ移行したこと</em>だ。同時にリースとアナンは写真を社会改革の証拠として使い、写真が<em>報道・政治・制度変革</em>と結びつく出発点を作った。</p></div><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ CTX</span><span class="ph-section__name">この時代の背景</span></div></div><div class="ph-section__body"><div class="era-context-grid"><div class="era-context-block"><div class="era-context-label">政治・社会</div><p class="era-context-text">普仏戦争（1870-71年）でドイツ帝国が誕生。パリ・コミューン（1871年）は72日で鎮圧。1884-85年ベルリン会議でアフリカ分割が制度化された。</p></div><div class="era-context-block"><div class="era-context-label">産業化と写真</div><p class="era-context-text">1888年コダックカメラ登場。写真が大衆メディアとなり、ハーフトーン印刷（1880年）で新聞掲載が可能になった。</p></div><div class="era-context-block"><div class="era-context-label">技術の変遷</div><p class="era-context-text">マドックスの乾板（1871年）で携帯性が向上。ロールフィルムの登場と「You press the button, we do the rest」の時代へ。</p></div><div class="era-context-block"><div class="era-context-label">表現の方向性</div><p class="era-context-text">都市の貧困・スラム・移民を記録する社会写真家が登場。科学目的の連続写真が映画の基盤を作った。</p></div></div></div></section><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ PH</span><span class="ph-section__name">この時代の写真家</span></div></div><div class="ph-section__body"><div class="er-cards"><article class="pc-card pc-card--photographer"><a href="../muybridge.html"><div class="pc-top pc-top--year"><div class="pc-top__meta"><span class="idx">01</span><span>GB/US</span></div><div class="pc-top__art"><span class="yr-birth">1830</span><span class="yr-dash">—</span><span class="yr-death">1904</span></div><div class="pc-top__hint">EADWEARD MUYBRIDGE · 1830–1904</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">エドワード・マイブリッジ</h3><div class="pc-body__name-en">Eadweard Muybridge</div></div><div class="pc-body__meta">イギリス / アメリカ · 1830–1904</div><p class="pc-body__lede">疾走する馬の連続写真で運動分析に革命をもたらした写真家。ゾープラキスコープの発展を経て映画誕生の直接的な礎となった。</p><div class="pc-body__channel">写真史の論点 · 連続写真</div><div class="pc-body__tags"><span class="pc-body__tag">連続写真</span><span class="pc-body__tag">運動分析</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article><article class="pc-card pc-card--photographer"><a href="../marey.html"><div class="pc-top pc-top--stacked"><div class="pc-top__meta"><span class="idx">02</span><span>FR</span></div><div class="pc-top__art"><span>MAREY</span></div><div class="pc-top__hint">MAREY · 1830–1904</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">エティエンヌ＝ジュール・マレー</h3><div class="pc-body__name-en">Étienne-Jules Marey</div></div><div class="pc-body__meta">フランス · 1830–1904</div><p class="pc-body__lede">生理学者として運動の記録に写真を用い、クロノフォトグラフィーを開発。時間と運動の科学的可視化という写真の新しい用法を拓いた。</p><div class="pc-body__channel">写真史の論点 · 科学写真</div><div class="pc-body__tags"><span class="pc-body__tag">科学写真</span><span class="pc-body__tag">連続写真</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article><article class="pc-card pc-card--photographer"><a href="../riis.html"><div class="pc-top pc-top--slash"><div class="pc-top__meta"><span class="idx">03</span><span>DK/US</span></div><div class="pc-top__art"><span class="fn">JACOB</span><span class="ln">RIIS</span></div><div class="pc-top__hint">JACOB RIIS · 1849–1914</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">ジェイコブ・リース</h3><div class="pc-body__name-en">Jacob Riis</div></div><div class="pc-body__meta">デンマーク / アメリカ · 1849–1914</div><p class="pc-body__lede">デンマーク移民として貧困を経験後、ニューヨークのスラムをフラッシュで撮影し社会改革に使った写真家。「How the Other Half Lives」が立法に影響を与えた。</p><div class="pc-body__channel">社会ドキュメンタリー · SOCIAL DOCUMENTARY</div><div class="pc-body__tags"><span class="pc-body__tag">社会ドキュメンタリー</span><span class="pc-body__tag">移民写真</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article><article class="pc-card pc-card--photographer"><a href="../marville.html"><div class="pc-top pc-top--title"><div class="pc-top__meta"><span class="idx">04</span><span>FR</span></div><div class="pc-top__art">MARVILLE</div><div class="pc-top__hint">CHARLES MARVILLE · 1813–1879</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">シャルル・マルヴィル</h3><div class="pc-body__name-en">Charles Marville</div></div><div class="pc-body__meta">フランス · 1813–1879</div><p class="pc-body__lede">オスマン大改造で取り壊されるパリの旧市街を組織的に記録。都市改造と写真記録の関係を問う先駆的ドキュメント写真家。</p><div class="pc-body__channel">ドキュメンタリー · DOCUMENTARY</div><div class="pc-body__tags"><span class="pc-body__tag">都市写真</span><span class="pc-body__tag">ドキュメンタリー</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article><article class="pc-card pc-card--photographer"><a href="../annan.html"><div class="pc-top pc-top--initials"><div class="pc-top__meta"><span class="idx">05</span><span>GB</span></div><div class="pc-top__art">T<span class="accent">A</span></div><div class="pc-top__hint">THOMAS ANNAN · 1829–1887</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">トーマス・アナン</h3><div class="pc-body__name-en">Thomas Annan</div></div><div class="pc-body__meta">イギリス · 1829–1887</div><p class="pc-body__lede">グラスゴーの旧市街クローズを撮影し、衛生・貧困・都市改造と写真の関係を示した初期社会写真の先駆者。</p><div class="pc-body__channel">社会ドキュメンタリー · SOCIAL DOCUMENTARY</div><div class="pc-body__tags"><span class="pc-body__tag">社会ドキュメンタリー</span><span class="pc-body__tag">都市写真</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article><article class="pc-card pc-card--photographer"><a href="../jp-yokoyama-matsusaburo.html"><div class="pc-top pc-top--fragment"><div class="pc-top__meta"><span class="idx">06</span><span>JP</span></div><div class="pc-top__art">横</div><div class="pc-top__hint">横山松三郎 · 1838–1884</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">横山松三郎</h3><div class="pc-body__name-en">Yokoyama Matsusaburo</div></div><div class="pc-body__meta">日本 · 1838–1884</div><p class="pc-body__lede">幕末明治期の写真技術の普及に貢献した開拓的写真師。択捉島生まれで、西洋写真技術を日本各地に広めた先駆者。</p><div class="pc-body__channel">明治写真 · MEIJI PHOTOGRAPHY</div><div class="pc-body__tags"><span class="pc-body__tag">明治写真</span><span class="pc-body__tag">幕末</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article><article class="pc-card pc-card--photographer"><a href="../jp-tomishige-rihei.html"><div class="pc-top pc-top--twosize"><div class="pc-top__meta"><span class="idx">07</span><span>JP</span></div><div class="pc-top__art"><span class="big">利平</span><span class="anno">JP · 1837</span></div><div class="pc-top__hint">冨重利平 · 1837–1922</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">冨重利平</h3><div class="pc-body__name-en">Tomishige Rihei</div></div><div class="pc-body__meta">日本 · 1837–1922</div><p class="pc-body__lede">九州における明治写真史の重要人物。熊本を拠点に近代写真技術を定着させ、弟子を通じて地方写真史に深く根ざした。</p><div class="pc-body__channel">明治写真 · MEIJI PHOTOGRAPHY</div><div class="pc-body__tags"><span class="pc-body__tag">明治写真</span><span class="pc-body__tag">地方写真</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article><article class="pc-card pc-card--photographer"><a href="../frederick-h-evans.html"><div class="pc-top pc-top--serif"><div class="pc-top__meta"><span class="idx">08</span><span>GB</span></div><div class="pc-top__art">Vision</div><div class="pc-top__hint">FREDERICK H. EVANS · 1853–1943</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">フレデリック・H・エヴァンズ</h3><div class="pc-body__name-en">Frederick H. Evans</div></div><div class="pc-body__meta">イギリス · 1853–1943</div><p class="pc-body__lede">大聖堂建築のプラチナプリントで知られる写真家。ピクトリアリズムとストレート写真の境界に位置し、建築空間に光と影の詩学を見出した。</p><div class="pc-body__channel">ストレート写真 · ピクトリアリズム</div><div class="pc-body__tags"><span class="pc-body__tag">ピクトリアリズム</span><span class="pc-body__tag">建築写真</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article><article class="pc-card pc-card--photographer"><a href="../jp-tomishige-tokuji.html"><div class="pc-top pc-top--rotate"><div class="pc-top__meta"><span class="idx">09</span><span>JP</span></div><div class="pc-top__art">徳次</div><div class="pc-top__hint">冨重徳次 · 明治期</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">冨重徳次</h3><div class="pc-body__name-en">Tomishige Tokuji</div></div><div class="pc-body__meta">日本 · 明治期</div><p class="pc-body__lede">冨重利平の弟子として熊本写真史を継承した写真師。幕末明治の写真師データベースに記録される地方写真文化の担い手。</p><div class="pc-body__channel">明治写真 · MEIJI PHOTOGRAPHY</div><div class="pc-body__tags"><span class="pc-body__tag">明治写真</span><span class="pc-body__tag">地方写真</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article></div></div></section></main>
+<aside class="era-side">      <div class="ph-side-block">
+        <div class="ph-side-block__head">Search · 写真家を探す</div>
+        <div class="ph-side-block__body">
+          <label class="era-search__label">
+            <input type="search" class="era-search__input" placeholder="写真家名・国を検索…">
+          </label>
+          <p class="er-no-result">一致する写真家が見つかりません</p>
+        </div>
+      </div>
+<div class="ph-side-block"><div class="ph-side-block__head">Entry · 時代データ</div><div class="ph-side-block__body"><div class="ph-side-meta"><div class="ph-side-meta-row"><span class="ph-side-meta-key">Period</span><span class="ph-side-meta-val">1870–1890s</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Category</span><span class="ph-side-meta-val">Era · 産業化</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Photogs</span><span class="ph-side-meta-val">9</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Movements</span><span class="ph-side-meta-val">4</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Vol</span><span class="ph-side-meta-val">ERA · 02</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Updated</span><span class="ph-side-meta-val">2026.05</span></div></div></div></div><div class="ph-side-block"><div class="ph-side-block__head">Movements · 運動・ジャンル</div><div class="ph-side-block__body"><div class="ph-side-chips"><span class="ph-side-chip is-primary">社会ドキュメンタリー</span><span class="ph-side-chip">ドキュメンタリー</span><span class="ph-side-chip">ピクトリアリズム</span><span class="ph-side-chip">ストレート写真</span></div></div></div><div class="ph-side-block"><div class="ph-side-block__head">Keywords · キーワード</div><div class="ph-side-block__body"><div class="ph-side-chips"><span class="ph-side-chip">乾板写真</span><span class="ph-side-chip">コダック</span><span class="ph-side-chip">社会改革</span><span class="ph-side-chip">連続写真</span><span class="ph-side-chip">都市記録</span></div></div></div>
+
+<div class="ph-side-block"><div class="ph-side-block__head">Navigate · 移動</div><nav class="ph-side-nav"><a href="1890.html"><span>次の時代 →</span><span>1890–1910s</span></a><a href="1839.html"><span>← 前の時代</span><span>1839–60s</span></a><a href="../cards-archive.html"><span>← 年代一覧</span><span>All Eras</span></a><a href="../index.html"><span>トップページへ</span><span>Top</span></a></nav></div></aside>
+</div></div>
+<footer class="foot"><div>© Photo Coordinates · VOL. 02</div><div class="foot__center">美術館・アーカイブ・専門資料に基づく</div><div class="foot__right"><a href="#">プライバシー</a> · <a href="#">コロフォン</a></div></footer></div><script>
+(function(){
+  var input = document.querySelector('.era-search__input');
+  var noResult = document.querySelector('.er-no-result');
+  if (!input) return;
+  input.addEventListener('input', function() {
+    var q = this.value.trim().toLowerCase();
+    var cards = document.querySelectorAll('.er-cards .pc-card');
+    var visible = 0;
+    cards.forEach(function(c) {
+      var show = !q || c.textContent.toLowerCase().includes(q);
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (noResult) noResult.style.display = (q && visible === 0) ? '' : 'none';
+  });
+})();
+</script>
+</body></html>

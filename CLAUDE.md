@@ -30,12 +30,34 @@
 - 意図しない空セクション（中身のない `<section>` 等）
 - 参照実装に存在しないセクション種別・ID
 
-### 情報の捏造禁止
+新基準で廃止されたクラス・タグ（発見したら除去する）：
+- `page-facts`, `facts-grid`, `fact-item`
+- `table.facts` および facts テーブル全体
+- 「外部リンク」セクション（出典と重複するため）
+- 「関連作品」セクション（「作品を見る」と重複するため）
+- `title-block` 内の `<span class="years">`（生没年は entry-meta に集約）
+- 古い 3 列構成の entry-meta（`grid-template-columns: auto 1fr auto 1fr auto 1fr` の名残）
+
+HTML 構造破損の典型例（発見したら修正する）：
+- `page-shell` や `container` 開始直後の、対応する開始タグのない `</div>` の連続
+- 開始タグだけがあり閉じタグがない `<div>` や `<section>`
+- ネストが崩れたタグ階層
+
+### 情報の捏造禁止とバックアップ
 
 - 書誌情報（書名・著者・出版社・年・ISBN）を推測または生成しない
 - 出典に書いていない評価・批評を書かない
 - 不明な書籍情報・URLが必要な場合は Daisuke に確認する（空欄にして確認依頼）
 - Amazon URLや外部リンクを推測で生成しない（Daisuke が用意したもののみ使用）
+
+バックアップ作成（既存ページ修正時の必須手順）：
+- 既存ページを修正する場合、編集前に必ず
+  `photographers/{ファイル名}-backup.html` としてバックアップを作成する。
+  バックアップなしで上書きしない。
+- バックアップは `cp` コマンドまたは内蔵のファイル操作で作成する。
+- バックアップ作成後、編集前のファイル内容を読み込み、本文・出典・
+  書籍情報・Amazon リンクなど、復元時に参照すべき情報を把握してから
+  編集に入る。
 
 ### 編集後の確認項目
 
@@ -44,6 +66,33 @@
 - 「さらに読む」セクションの書籍に書名・著者・出版社・年が揃っているか
 - 孤立タグ・残骸の除去が完了しているか
 - 変更が最小差分になっているか（不要なリファクタが混入していないか）
+- thesis に禁止表現（「完成」「完成形に」「完成させた」「決定的」「唯一の」
+  「集大成」「頂点」「真の○○」など、歴史を閉じる最上級・断定表現）が
+  混入していないか確認する。混入していれば本文の出典から導ける表現に書き換える
+  （「thesis の断定度に関する基準」セクション参照）。
+- 出典 sup-ref と cite-NN の対応関係を検証する：
+  - 本文中の各 `<sup class="sup-ref"><a href="#cite-N">*N</a></sup>` の
+    リンク先が、出典セクションの `cite-N` に実在するか
+  - 出典セクションの各 `cite-N` が、本文中で少なくとも 1 回参照されているか
+    （孤立した cite がないか）
+  - 番号の重複・欠番がないか
+
+### 適用範囲
+
+本作業手順は写真家個別ページ（`photographers/*.html`）にのみ適用する。
+以下のページ群には適用しない：
+
+- 分類ページ（国別: `countries/*.html`、運動別: `movements/*.html`、
+  年代別: `eras/*.html`、キーワード別: `keywords/*.html`）
+- 日本語サイトのトップページ、アーカイブページ、サイトナビゲーションページ
+- 英語版ページ（`en/photographers/*.html`）— 構造は同じだが、翻訳・校正の
+  別基準を伴うため、ペアで作業する場合のみ対象
+
+参照実装は `photographers/ansel-adams.html`、直近修正済みの実例は
+`photographers/hiroshi-sugimoto.html`。
+
+分類ページの構造基準は後日別途定義する予定。それまでは分類ページの
+構造変更を伴う修正は行わない。
 
 ## Design invariants
 - 本文があるページの h2 / セクションタイトルは、font-size: 14px、color: #c8a96e（アンバー）を維持する
@@ -328,3 +377,140 @@ grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
   - `photographers/stieglitz.html` / `en/photographers/stieglitz.html`
 - これらのページに本文を直接書くことは許可されるが、push 後に Codex が上書きする可能性がある
 - 重要な本文は `data/photographer-essay-overrides.js` への移行を検討する
+
+
+## 新デザインページ（new-design/）の編集ルール — CRITICAL
+
+### 基本原則：依頼された箇所以外は変更しない
+
+`new-design/index.html` をはじめとする新デザインページを編集する際は、
+**依頼された修正のみを行い、それ以外の箇所には一切触れない。**
+
+リンク追加を依頼された場合 → href 属性のみ変更。他は変えない。
+テキスト修正を依頼された場合 → そのテキストのみ変更。他は変えない。
+
+### 変更禁止項目（依頼があっても勝手に触らない）
+
+以下は「古い・間違い・改善できる」と見えても変更してはならない：
+
+1. **TOP12カードHTML** — `pc-top`・`idx`・`pc-top__art`・`pc-top--XXX`クラス
+   （JavaScript がアーカイブ版で自動上書きするため、ハードコード値は問題ない）
+
+2. **フィルター・ソートUI** — `.pill[data-filter]`・`#nd-sort-btn`・`#nd-sort-dropdown`・
+   `.sort-option[data-sort]` の構造・属性・テキスト
+
+3. **カード制御JavaScript** — `ndRender()`・`archiveCardMap`・`ND_TOP12_NAMES`・
+   `ndPhData`/`ndMvData`・フィルターイベントリスナー・ソートイベントリスナー
+
+4. **アーカイブ取得ロジック** — `fetch('cards-archive.html')`・`fetch('card-data.json')` の処理
+
+5. **CSSクラス体系** — `sort-wrap`・`sort-dropdown`・`sort-option`・`sort-divider` の定義
+
+### 編集前の確認
+
+`new-design/index.html` を編集する前に、変更対象のセクションのみを読む。
+ファイル全体をリファクタ・整理・改善しない。
+
+## カードデザインシステム（v4/v5.1）
+
+### TOP12カード ハードコードHTML — 絶対に変更禁止 — CRITICAL
+
+`new-design/index.html` および `index-v51.html` には TOP12 写真家のカードが HTML に直接書かれている。
+**これらのカード HTML（`pc-top`・`pc-top__art`・`idx` など）は、いかなる修正作業でも絶対に変更してはならない。**
+
+理由：
+- カードのスタイル（`pc-top--cite` / `pc-top--number` など）・番号・アート内容は
+  `cards-archive.html` を正とし、ページロード後に JavaScript が自動で上書きする
+- ハードコード部分はロード中の一時表示にすぎず、最終表示は常にアーカイブ準拠になる
+- しかし別の修正作業でこの部分を触ると「ハードコード値」が変わり、
+  アーカイブ取得が失敗した場合（オフライン・fetch エラー等）に誤表示が残る
+
+作業時の禁止事項：
+- `<!-- 01 Stieglitz -->` 〜 `<!-- 12 Araki -->` の各 `<article>` 内の `pc-top` div を変更しない
+- `idx` の数値を変更しない
+- `pc-top__art` の内容を変更しない
+- `pc-top--XXX` クラスを変更しない
+
+リンク追加など他の修正をする際も、TOP12 カードブロックには一切触れないこと。
+もしカードスタイルの変更が必要な場合は `cards-archive.html` を修正する（こちらが正）。
+
+### ファイル構成
+
+| ファイル | 役割 |
+|---|---|
+| `new-design/index.html` | 新デザイントップページ（スターマップ + TOP12カード）|
+| `new-design/cards-archive.html` | 新デザイン用アーカイブ（カードの正データ）|
+| `cards-archive.html` | カードアーカイブページ本体（283写真家 + 31運動 = 314枚） |
+| `card-data.json` | 全314枚のカードデータ（photographers / movements） |
+| `styles/card-v4-base.css` | カードデザインシステム基盤CSS |
+| `styles/card-v5-overrides.css` | v5追加オーバーライドCSS |
+| `index-v51.html` | v5.1トップページデザイン（スターマップ + 12枚フィーチャードカード） |
+
+### カードの種類
+
+- **Photographer カード** — 283枚（`data-type="photographer"`）
+- **Movement カード** — 31枚（`data-type="movement"`）
+
+### スタイル割り振りの優先順位
+
+1. **TOP12 ハードコード**
+   `stieglitz`, `takuma-nakahira`, `sherman`, `evans`, `robertfrank`, `moriyama`, `becher`, `cartierbresson`, `goldin`, `arbus`, `sander`, `araki`
+
+2. **日本人写真家（nameJaに漢字あり）**
+   → `pc-top--kanji` スタイル固定（artText は主題語）
+
+3. **外国人写真家（主要28名）**
+   → `pc-top--kanji-foreign`（概念漢字 + 英語グロス）
+
+4. **残り外国人写真家**
+   → 8スタイルをローテーション（`card-data.json` の `style` フィールド参照）
+
+5. **運動カード**
+   → 8スタイルのローテーション
+
+### card-data.json のスタイルフィールド
+
+card-data.json の `style` フィールドが使うのは以下 8 種のみ：
+- `pc-top--kanji`（130件）
+- `pc-top--title`（28件）
+- `pc-top--slash`（28件）
+- `pc-top--year`（27件）
+- `pc-top--number`（27件）
+- `pc-top--grid`（26件）
+- `pc-top--stacked`（25件）
+- `pc-top--initials`（23件）
+
+### カード番号（idx）
+
+- `card-data.json` の `idx` を正とする
+- TOP12 の番号は card-data.json に合わせること（スティーグリッツ=15、中平=111 など）
+- 番号は追加順（時代順でない）
+- 運動カードは写真家の続番
+
+### スタークリック（index-v51.html）
+
+- 地図上の写真家をクリックすると、対応するカードをサイドパネルに表示する
+- TOP12 の写真家 → 事前生成のフルデザインカードをクローン
+- それ以外 → `card-data.json` から動的生成（`buildDynamicCard()` 関数）
+- どちらにも一致しない場合 → archive へのリンクを表示
+
+### CSSクラス体系
+
+```
+.pc-card               # カード全体
+  .pc-card--photographer  # 写真家カード
+  .pc-card--movement      # 運動カード
+.pc-top                # カード上部（アートエリア）
+  .pc-top__meta        # 番号 + ラベル
+  .pc-top__art         # メインのタイポグラフィ
+  .pc-top__hint        # 下部のヒントテキスト
+.pc-body               # カード下部（テキストエリア）
+  .pc-body__kind       # 種別ラベル
+  .pc-body__name       # 日本語名
+  .pc-body__name-en    # 英語名
+  .pc-body__meta       # 生没年・国籍
+  .pc-body__lede       # 紹介文
+  .pc-body__channel    # チャンネル名
+  .pc-body__tags       # タグ（最大3つ）
+  .pc-body__cta        # 「写真史上の位置を読む →」
+```

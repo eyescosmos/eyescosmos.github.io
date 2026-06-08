@@ -2872,9 +2872,9 @@ def main() -> None:
             era_href = era_page_path(photographer, lang)
             country_href = country_page_path(photographer, lang)
             era_select_options = [
-                ((("/en" if lang == "en" else "") + "/archive.html#tab-era"), copy["archive"], False)
+                ("/cards-archive.html", copy["archive"], False)
             ] + [
-                (era_page_path({"era": era["id"]}, lang), (era.get("period") or "").replace(" — ", "–"), era["id"] == photographer.get("era"))
+                (f'/new-design/eras/{era["id"]}.html', (era.get("period") or "").replace(" — ", "–"), era["id"] == photographer.get("era"))
                 for era in eras
             ]
             era_select = render_tax_select(
