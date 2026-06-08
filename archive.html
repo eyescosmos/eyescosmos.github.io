@@ -57,6 +57,157 @@
 .no-results{display:none;padding:80px 0;text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-mute);}
 .no-results.is-visible{display:block;}
 .pc-card.is-hidden{display:none;}
+.mobile-filter-strip{display:none;}
+
+@media (max-width:720px){
+html{scroll-padding-top:72px;}
+body{background:#070707;overflow-x:hidden;}
+.page{overflow-x:clip;background:#070707;max-width:none;}
+.head{
+  position:sticky;
+  top:0;
+  z-index:100;
+  min-height:72px;
+  padding:calc(12px + env(safe-area-inset-top)) 16px 10px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  align-items:end;
+  background:rgba(250,250,245,.96);
+  color:#0e0c0a;
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.head__brand{display:flex;flex-direction:column;align-items:flex-start;gap:0;min-width:0;}
+.head__brand-ja{font-size:20px;line-height:1.2;letter-spacing:.06em;color:#0e0c0a;}
+.head__brand-en{font-size:11px;line-height:1.25;letter-spacing:.04em;color:#5a554d;}
+.brand-hl{background:#d6402e;color:#fff;padding:0 .12em .02em;margin-right:.02em;border-radius:0;line-height:1.08;}
+.head__crumbs{display:none;}
+.head__lang{border-color:#0e0c0a;}
+.head__lang button{min-width:42px;min-height:38px;padding:7px 10px;font-size:11px;color:#5a554d;}
+.head__lang button.is-active{background:#0e0c0a;color:#fafaf5;}
+.archive-hero{display:none;}
+.archive-body{padding:0 0 28px;background:#070707;border-bottom:0;}
+.toolbar,
+.toolbar-era{display:none;}
+.mobile-filter-strip{
+  position:sticky;
+  top:calc(72px + env(safe-area-inset-top));
+  z-index:80;
+  display:flex;
+  flex-wrap:nowrap;
+  gap:8px;
+  align-items:center;
+  overflow-x:auto;
+  margin:0;
+  padding:8px 16px 12px;
+  background:#070707;
+  border:0;
+  scrollbar-width:none;
+}
+.mobile-filter-strip::-webkit-scrollbar{display:none;}
+.pill,
+.pill-era,
+.mobile-filter-chip{
+  flex:0 0 auto;
+  height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 14px;
+  border:0;
+  border-radius:0;
+  background:#1d1d1d;
+  color:#fafaf5;
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.pill.is-active,
+.pill-era.is-active,
+.mobile-filter-chip.is-active{background:#ccff00;color:#0e0c0a;}
+.result-bar{
+  padding:4px 16px 10px;
+  background:#070707;
+  color:rgba(250,250,245,.56);
+  font-size:9px;
+  letter-spacing:.14em;
+}
+.result-bar__num{color:#ccff00;}
+.cards{
+  display:block!important;
+  column-count:2!important;
+  column-gap:10px!important;
+  column-fill:balance!important;
+  padding:6px 8px 28px!important;
+  background:#070707!important;
+}
+.pc-card{
+  display:block!important;
+  width:auto!important;
+  max-width:none!important;
+  margin:0 0 10px!important;
+  break-inside:avoid!important;
+  page-break-inside:avoid!important;
+  border:0!important;
+  border-radius:16px!important;
+  overflow:hidden!important;
+  background:var(--surface-2)!important;
+}
+.pc-card.is-hidden{display:none!important;}
+.pc-top{
+  min-height:154px!important;
+  padding:34px 12px 12px!important;
+  border-bottom-width:1px!important;
+}
+.pc-top__meta .idx{top:10px!important;left:12px!important;font-size:20px!important;}
+.pc-top__meta>span:nth-child(2){
+  top:12px!important;
+  right:12px!important;
+  max-width:78px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-size:7px!important;
+  letter-spacing:.14em!important;
+  white-space:nowrap;
+}
+.pc-top__hint{font-size:7px!important;letter-spacing:.12em!important;line-height:1.35!important;}
+.pc-top--initials .pc-top__art{font-size:88px!important;}
+.pc-top--kanji .pc-top__art{font-size:86px!important;}
+.pc-top--number .pc-top__art{font-size:96px!important;}
+.pc-top--country .pc-top__art{font-size:72px!important;}
+.pc-top--serif .pc-top__art{font-size:42px!important;}
+.pc-top--title .pc-top__art{font-size:46px!important;}
+.pc-top--slash .ln{font-size:46px!important;}
+.pc-top--stacked .pc-top__art span{font-size:40px!important;}
+.pc-top--cite .cty,
+.cty{font-size:34px!important;}
+.yr-birth{font-size:58px!important;}
+.yr-dash{font-size:18px!important;}
+.yr-death{font-size:36px!important;}
+.pc-body{padding:13px 12px 14px!important;gap:8px!important;}
+.pc-body__kind{font-size:7.5px!important;letter-spacing:.14em!important;}
+.pc-body__kind::before{width:7px!important;height:7px!important;}
+.pc-body__name{font-size:14px!important;line-height:1.35!important;letter-spacing:.02em!important;}
+.pc-body__name-en{font-size:11px!important;margin-top:2px!important;}
+.pc-body__meta,
+.pc-body__channel{font-size:7.5px!important;letter-spacing:.12em!important;line-height:1.5!important;}
+.pc-body__lede{
+  display:-webkit-box!important;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  font-size:11px!important;
+  line-height:1.65!important;
+}
+.pc-body__tags,
+.pc-body__cta{display:none!important;}
+.no-results{color:rgba(250,250,245,.6);padding:56px 16px;}
+.foot{display:none;}
+}
 </style>
 </head>
 <body class="lang-jp v51">
@@ -93,6 +244,23 @@
       <span class="toolbar-era__label">Era</span>
       <button class="pill-era is-active" data-era="">All</button>
       <button class="pill-era" data-era="1839">1839–</button><button class="pill-era" data-era="1870">1870s</button><button class="pill-era" data-era="1890">1890s</button><button class="pill-era" data-era="1910">1910s</button><button class="pill-era" data-era="1930">1930s</button><button class="pill-era" data-era="1950">1950s</button><button class="pill-era" data-era="1970">1970s</button><button class="pill-era" data-era="1980">1980s</button><button class="pill-era" data-era="1990">1990s</button><button class="pill-era" data-era="2000">2000s</button><button class="pill-era" data-era="2010">2010s–</button>
+    </div>
+    <div class="mobile-filter-strip" id="mobile-filter-strip">
+      <button class="mobile-filter-chip is-active" data-mobile-type="all">All</button>
+      <button class="mobile-filter-chip" data-mobile-type="photographer">写真家</button>
+      <button class="mobile-filter-chip" data-mobile-type="movement">運動</button>
+      <button class="mobile-filter-chip is-active" data-mobile-era="">All Era</button>
+      <button class="mobile-filter-chip" data-mobile-era="1839">1839–</button>
+      <button class="mobile-filter-chip" data-mobile-era="1870">1870s</button>
+      <button class="mobile-filter-chip" data-mobile-era="1890">1890s</button>
+      <button class="mobile-filter-chip" data-mobile-era="1910">1910s</button>
+      <button class="mobile-filter-chip" data-mobile-era="1930">1930s</button>
+      <button class="mobile-filter-chip" data-mobile-era="1950">1950s</button>
+      <button class="mobile-filter-chip" data-mobile-era="1970">1970s</button>
+      <button class="mobile-filter-chip" data-mobile-era="1980">1980s</button>
+      <button class="mobile-filter-chip" data-mobile-era="1990">1990s</button>
+      <button class="mobile-filter-chip" data-mobile-era="2000">2000s</button>
+      <button class="mobile-filter-chip" data-mobile-era="2010">2010s–</button>
     </div>
     <div class="result-bar">
       表示中 <span class="result-bar__num" id="visible-count">314</span> / 314
@@ -5765,6 +5933,7 @@
   const searchInput=document.getElementById('search-input');
   const visibleCount=document.getElementById('visible-count');
   const noResults=document.getElementById('no-results');
+  const mobileStrip=document.getElementById('mobile-filter-strip');
   let currentType='all',currentEra='',currentSearch='';
   function applyFilters(){
     let shown=0;
@@ -5787,6 +5956,24 @@
     if(!btn)return;
     document.querySelectorAll('#era-toolbar .pill-era').forEach(b=>b.classList.remove('is-active'));
     btn.classList.add('is-active');currentEra=btn.dataset.era||'';applyFilters();
+  });
+  mobileStrip?.addEventListener('click',e=>{
+    const typeBtn=e.target.closest('[data-mobile-type]');
+    if(typeBtn){
+      mobileStrip.querySelectorAll('[data-mobile-type]').forEach(b=>b.classList.remove('is-active'));
+      typeBtn.classList.add('is-active');
+      currentType=typeBtn.dataset.mobileType;
+      document.querySelectorAll('#type-toolbar .pill').forEach(b=>b.classList.toggle('is-active',b.dataset.filter===currentType));
+      applyFilters();
+      return;
+    }
+    const eraBtn=e.target.closest('[data-mobile-era]');
+    if(!eraBtn)return;
+    mobileStrip.querySelectorAll('[data-mobile-era]').forEach(b=>b.classList.remove('is-active'));
+    eraBtn.classList.add('is-active');
+    currentEra=eraBtn.dataset.mobileEra||'';
+    document.querySelectorAll('#era-toolbar .pill-era').forEach(b=>b.classList.toggle('is-active',(b.dataset.era||'')===currentEra));
+    applyFilters();
   });
   let timer;
   searchInput.addEventListener('input',e=>{clearTimeout(timer);timer=setTimeout(()=>{currentSearch=e.target.value.trim();applyFilters();},160);});

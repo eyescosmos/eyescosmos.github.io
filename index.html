@@ -1420,6 +1420,607 @@ body {
 /* #view-coord は .coord { display: grid } をそのまま使う */
 #view-cards { display: block; }
 /* #view-era は .era のデフォルト display をそのまま使う */
+.mobile-sort-chip { display: none; }
+.mobile-archive-cta { display: none; }
+
+/* ───────────────────────────────────────────
+   MOBILE APP SHELL
+   PC layout above remains unchanged. Phones use real tab panels.
+─────────────────────────────────────────── */
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 112px;
+  }
+
+  body {
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  .page {
+    overflow-x: clip;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .head {
+    height: auto;
+    min-height: 72px;
+    padding: calc(12px + env(safe-area-inset-top)) 16px 10px;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: end;
+    background: rgba(250, 250, 245, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .head__brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    min-width: 0;
+  }
+
+  .head__brand-ja {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+  }
+
+  .head__brand-mark {
+    display: inline-block;
+    padding: 0 0.12em 0.02em;
+    margin-right: 0.02em;
+    background: var(--accent-display);
+    color: #ffffff;
+    border-radius: 2px;
+    line-height: 1.08;
+   }
+
+  .head__brand-en {
+    font-size: 11px;
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+  }
+
+  .head__crumbs {
+    display: none;
+  }
+
+  .head__lang button {
+    min-width: 42px;
+    min-height: 38px;
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .hero {
+    display: none;
+  }
+
+  .tabs {
+    top: calc(72px + env(safe-area-inset-top));
+    display: flex;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    height: 52px;
+    overflow-x: auto;
+    gap: 22px;
+    padding: 0 16px;
+    background: rgba(250, 250, 245, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabs__btn {
+    display: inline-flex;
+    grid-template-columns: none;
+    gap: 0;
+    align-items: center;
+    flex: 0 0 auto;
+    height: 52px;
+    max-height: 52px;
+    min-height: 52px;
+    padding: 0;
+    color: var(--text-sub);
+    border: 0 !important;
+    overflow: visible;
+    position: relative;
+  }
+
+  .tabs__btn.is-active {
+    background: var(--accent-highlight);
+    color: var(--text-main);
+    padding: 0 10px;
+    border-radius: 0;
+  }
+
+  .tabs__num,
+  .tabs__title-en,
+  .tabs__btn--search {
+    display: none;
+  }
+
+  .tabs__title-ja {
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    color: inherit;
+  }
+
+  .tabs__btn.is-active .tabs__title-ja {
+    color: inherit;
+  }
+
+  .search-overlay {
+    display: none !important;
+  }
+
+  .coord,
+  .cards-view,
+  .era {
+    display: none !important;
+  }
+
+  body.mobile-view-coord .coord,
+  body.mobile-view-cards .cards-view,
+  body.mobile-view-era .era {
+    display: block !important;
+  }
+
+  .coord {
+    border-bottom: 0;
+    background: var(--surface);
+  }
+
+  .coord__head {
+    display: none;
+  }
+
+  .coord__title-row {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .coord__fig {
+    font-size: 9px;
+  }
+
+  .coord__title {
+    font-size: 28px;
+    line-height: 1.05;
+  }
+
+  .coord__sub {
+    font-size: 9px;
+    line-height: 1.8;
+    letter-spacing: 0.12em;
+  }
+
+  .coord__nav {
+    display: none;
+  }
+
+  .coord__main {
+    padding: 0;
+    background: var(--surface);
+  }
+
+  .coord__frame {
+    height: min(68vh, 620px);
+    min-height: 430px;
+    margin: 0;
+    border-radius: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: #05070c;
+  }
+
+  .coord__reset {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+  }
+
+  .coord__legend {
+    display: block;
+    padding: 14px 16px 18px;
+    margin: 0;
+    border-top: 0;
+    background: var(--surface);
+  }
+
+  .coord__legend-list {
+    gap: 8px 14px;
+  }
+
+  .coord__legend-list li,
+  .coord__legend-loading {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+
+  .coord__side {
+    display: block;
+    height: auto;
+    min-height: 0;
+    background: var(--surface);
+  }
+
+  .coord__side-empty {
+    min-height: 170px;
+    padding: 24px 16px 34px;
+  }
+
+  .coord__side-prompt p {
+    font-size: 10px;
+  }
+
+  #coord-card-wrap {
+    padding: 16px;
+  }
+
+  .cards-view {
+    background: #070707;
+    border-bottom: 0;
+    padding: 0 0 32px;
+  }
+
+  .cards-head {
+    display: none;
+  }
+
+  .cards-head__section,
+  .cards-head__sub,
+  .cards-head__legend {
+    display: none;
+  }
+
+  .cards-head__title {
+    font-size: 24px;
+    line-height: 1.2;
+    color: #fafaf5;
+    letter-spacing: 0.02em;
+  }
+
+  .cards-head__title em {
+    color: #fafaf5;
+  }
+
+  .toolbar {
+    position: sticky;
+    top: calc(124px + env(safe-area-inset-top));
+    z-index: 70;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 8px 16px 12px;
+    margin: 0;
+    border: 0;
+    background: #070707;
+    scrollbar-width: none;
+  }
+
+  .toolbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .toolbar__search {
+    display: none;
+  }
+
+  .toolbar__search input {
+    font-size: 13px;
+    color: #0e0c0a;
+  }
+
+  .pill,
+  .pill--sort {
+    flex: 0 0 auto;
+    height: 42px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 999px;
+    background: #1d1d1d;
+    color: #fafaf5;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .pill.is-active {
+    background: #fafaf5;
+    color: #0e0c0a;
+  }
+
+  .sort-wrap {
+    display: none;
+  }
+
+  .sort-wrap .pill {
+    display: none;
+  }
+
+  .mobile-sort-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .mobile-sort-chip.is-active {
+    background: #fafaf5;
+    color: #0e0c0a;
+  }
+
+  .cards {
+    column-count: 2;
+    column-gap: 10px;
+    column-fill: auto;
+    padding: 6px 8px 28px;
+    background: #070707;
+  }
+
+  .pc-card {
+    margin-bottom: 10px;
+    border: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface-2);
+  }
+
+  .pc-top {
+    min-height: 154px;
+    padding: 34px 12px 12px;
+    border-bottom-width: 1px;
+  }
+
+  .pc-top__meta .idx {
+    top: 10px;
+    left: 12px;
+    font-size: 20px;
+  }
+
+  .pc-top__meta > span:nth-child(2) {
+    top: 12px;
+    right: 12px;
+    max-width: 78px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 7px;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+  }
+
+  .pc-top__hint {
+    font-size: 7px;
+    letter-spacing: 0.12em;
+    line-height: 1.35;
+  }
+
+  .pc-top--initials .pc-top__art { font-size: 88px; }
+  .pc-top--kanji .pc-top__art { font-size: 86px; }
+  .pc-top--number .pc-top__art { font-size: 96px; }
+  .pc-top--country .pc-top__art { font-size: 72px; }
+  .pc-top--serif .pc-top__art { font-size: 42px; }
+  .pc-top--title .pc-top__art { font-size: 46px; }
+  .pc-top--slash .ln { font-size: 46px; }
+  .pc-top--stacked .pc-top__art span { font-size: 40px; }
+  .pc-top--cite .cty,
+  .cty { font-size: 34px; }
+  .yr-birth { font-size: 58px; }
+  .yr-dash { font-size: 18px; }
+  .yr-death { font-size: 36px; }
+
+  .pc-body {
+    padding: 13px 12px 14px;
+    gap: 8px;
+  }
+
+  .pc-body__kind {
+    font-size: 7.5px;
+    letter-spacing: 0.14em;
+  }
+
+  .pc-body__kind::before {
+    width: 7px;
+    height: 7px;
+  }
+
+  .pc-body__name {
+    font-size: 14px;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+  }
+
+  .pc-body__name-en {
+    font-size: 11px;
+    margin-top: 2px;
+  }
+
+  .pc-body__meta,
+  .pc-body__channel {
+    font-size: 7.5px;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+  }
+
+  .pc-body__lede {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .pc-body__tags,
+  .pc-body__cta {
+    display: none;
+  }
+
+  .archive-cta,
+  .bottom-links,
+  .foot {
+    display: none;
+  }
+
+  .era {
+    padding: 24px 16px 36px;
+    border-bottom: 0;
+    background: var(--bg);
+  }
+
+  .era__head {
+    display: none;
+  }
+
+  .era__section,
+  .era__scroll-hint,
+  .era__arrows {
+    display: none;
+  }
+
+  .era__title {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .era__sub {
+    margin-top: 8px;
+    font-size: 13px;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .era__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    overflow: visible;
+    border-top: 0;
+  }
+
+  .era__item {
+    width: auto;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 16px 16px;
+    background: var(--surface);
+    gap: 8px;
+  }
+
+  .era__years {
+    font-size: 11px;
+  }
+
+  .era__label {
+    font-family: var(--font-sans-jp);
+    font-size: 18px;
+  }
+
+  .era__change {
+    font-size: 13px;
+  }
+
+  body.mobile-view-cards #cards-grid.cards {
+    display: block !important;
+    column-count: 2 !important;
+    column-gap: 10px !important;
+    column-fill: balance !important;
+    padding: 6px 8px 28px !important;
+    background: #070707 !important;
+  }
+
+  body.mobile-view-cards #view-cards > .toolbar {
+    position: sticky !important;
+    top: calc(124px + env(safe-area-inset-top)) !important;
+    z-index: 70 !important;
+    display: flex !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    padding: 8px 16px 12px !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: #070707 !important;
+    scrollbar-width: none !important;
+  }
+
+  body.mobile-view-cards #view-cards > .toolbar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body.mobile-view-cards #cards-grid .pc-card {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 0 10px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 0 !important;
+    border-radius: 16px !important;
+  }
+
+  .mobile-archive-cta {
+    display: grid;
+    gap: 10px;
+    margin: 4px 8px 28px;
+    padding: 22px 18px 20px;
+    background: #fafaf5;
+    color: #0e0c0a;
+    border-radius: 0;
+  }
+
+  .mobile-archive-cta__no {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-display);
+  }
+
+  .mobile-archive-cta__main {
+    font-family: var(--font-sans-jp);
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+  }
+
+  .mobile-archive-cta__main em {
+    font-style: normal;
+    background: var(--text-main);
+    color: #fafaf5;
+    padding: 0 0.12em;
+  }
+
+  .mobile-archive-cta__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-soft);
+    padding-top: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-display);
+  }
+}
 
 </style>
 </head>
@@ -1429,7 +2030,7 @@ body {
   <!-- ───── HEADER ───── -->
   <header class="head">
     <a href="index.html" class="head__brand" style="text-decoration:none;">
-      <span class="head__brand-ja">写真の座標</span>
+      <span class="head__brand-ja"><span class="head__brand-mark">写真</span>の座標</span>
       <span class="head__brand-en">Photo Coordinates</span>
     </a>
     <div class="head__crumbs">
@@ -1567,6 +2168,18 @@ body {
       </label>
       <button class="pill is-active" data-filter="photographer">Photographer</button>
       <button class="pill" data-filter="movement">Movement</button>
+      <button class="pill mobile-sort-chip is-active" data-mobile-sort="default">おすすめ順</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:1839">1839</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:1870">1870s</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:1890">1890s</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:1910">1910s</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:1930">1930s</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:1950">1950s</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:1970">1970s</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:1980">1980s</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:1990">1990s</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:2000">2000s</button>
+      <button class="pill mobile-sort-chip" data-mobile-sort="era:2010">2010s</button>
       <div class="sort-wrap">
         <button class="pill pill--sort" id="sort-btn">Sort · <span class="sort-label">おすすめ順</span> ▾</button>
         <div class="sort-dropdown" id="sort-dropdown">
@@ -1931,6 +2544,12 @@ body {
       </article>
 
     </div>
+
+    <a class="mobile-archive-cta" href="archive.html">
+      <span class="mobile-archive-cta__no">§ III — ARCHIVE</span>
+      <span class="mobile-archive-cta__main">すべての写真家を <em>カードで</em> 見る</span>
+      <span class="mobile-archive-cta__arrow"><span>Open the Archive</span><span>→</span></span>
+    </a>
   </section>
 
   <!-- ───── ARCHIVE CTA ───── -->
@@ -2067,8 +2686,20 @@ body {
       const style = doc.createElement('style');
       style.id = 'design-overlay-patch';
       style.textContent = `
-        .masthead, .side-controls, .mode-switcher, .tweaks-panel,
-        .footer-link, .info-card, .info-card-toggle, .connection-legend {
+        .masthead,
+        .side-controls,
+        .side-controls *,
+        .lang-toggle,
+        .spread-control,
+        .dropdown,
+        .dropdown-menu,
+        .mode-switcher,
+        .tweaks-panel,
+        .footer-link,
+        .info-card,
+        .info-card-toggle,
+        .connection-legend,
+        .action-buttons {
           display: none !important;
         }
         html, body, #root, .app, .stage, .stage svg,
@@ -2113,6 +2744,8 @@ body {
   }
   if (designFrame) {
     designFrame.addEventListener('load', patchDesignFrame);
+    setTimeout(patchDesignFrame, 250);
+    setTimeout(patchDesignFrame, 1000);
   }
 
   // Reset button
@@ -2192,9 +2825,27 @@ body {
   const tabBtns = document.querySelectorAll('.tabs__btn');
   const tabBar  = document.querySelector('.tabs');
   const OFFSET  = () => 52 + (tabBar ? tabBar.offsetHeight : 0);
+  const mobileTabMq = window.matchMedia('(max-width: 720px)');
+
+  function setMobileView(targetId, opts = {}) {
+    if (!targetId) targetId = 'view-coord';
+    document.body.classList.remove('mobile-view-coord', 'mobile-view-cards', 'mobile-view-era');
+    document.body.classList.add('mobile-' + targetId);
+    tabBtns.forEach(b => b.classList.toggle('is-active', b.dataset.target === targetId));
+    if (!opts.preserveScroll) window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  if (mobileTabMq.matches) {
+    setMobileView('view-coord', { preserveScroll: true, instant: true });
+  }
 
   tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      if (mobileTabMq.matches) {
+        e.preventDefault();
+        setMobileView(btn.dataset.target);
+        return;
+      }
       const target = document.getElementById(btn.dataset.target);
       if (!target) return;
       const top = target.getBoundingClientRect().top + window.scrollY - OFFSET();
@@ -2210,6 +2861,7 @@ body {
   ];
 
   const observer = new IntersectionObserver(entries => {
+    if (mobileTabMq.matches) return;
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const idx = sections.indexOf(entry.target);
@@ -2223,6 +2875,15 @@ body {
   });
 
   sections.forEach(s => { if (s) observer.observe(s); });
+
+  mobileTabMq.addEventListener?.('change', () => {
+    if (mobileTabMq.matches) {
+      const active = document.querySelector('.tabs__btn.is-active[data-target]');
+      setMobileView(active?.dataset.target || 'view-coord', { preserveScroll: true, instant: true });
+    } else {
+      document.body.classList.remove('mobile-view-coord', 'mobile-view-cards', 'mobile-view-era');
+    }
+  });
 
   // Photographer data for side panel cards
   // REMOVED: photographerData (no longer needed — we clone existing pc-cards)
@@ -2442,6 +3103,23 @@ body {
       });
     });
   }
+
+  // Mobile sort/era chips: no dropdown on phones.
+  document.querySelectorAll('.mobile-sort-chip[data-mobile-sort]').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.mobile-sort-chip[data-mobile-sort]').forEach(c => c.classList.remove('is-active'));
+      chip.classList.add('is-active');
+      cvSort = chip.dataset.mobileSort;
+      const matchingDesktopOption = document.querySelector(`.sort-option[data-sort="${cvSort}"]`);
+      if (matchingDesktopOption && sortBtn) {
+        document.querySelectorAll('.sort-option').forEach(o => o.classList.remove('is-active'));
+        matchingDesktopOption.classList.add('is-active');
+        const labelEl = sortBtn.querySelector('.sort-label');
+        if (labelEl) labelEl.textContent = matchingDesktopOption.textContent;
+      }
+      cvRender();
+    });
+  });
   // ────────────────────────────────────────────────────────
 
   fetch('card-data.json')
@@ -2518,7 +3196,7 @@ body {
 
   // Receive photographer click from iframe — show matching pc-card in side panel
   window.addEventListener('message', (e) => {
-    if (e.origin !== window.location.origin) return;
+    if (window.location.protocol !== 'file:' && e.origin !== window.location.origin) return;
     const data = e.data;
     if (!data || data.type !== 'photographer-click') return;
 
