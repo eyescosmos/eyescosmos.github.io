@@ -51,7 +51,7 @@
   --font-se-jp:'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho','YuMincho',serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 body{background:var(--bg);color:var(--text-main);font-family:var(--font-jp);font-feature-settings:"palt" 1;font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 a{color:inherit;text-decoration:none;}
 img{display:block;max-width:100%;}
@@ -73,6 +73,7 @@ button{font-family:inherit;cursor:pointer;background:transparent;border:0;color:
 .head__lang{display:inline-flex;border:1px solid var(--border);border-radius:2px;overflow:hidden;}
 .head__lang button{padding:4px 10px;color:var(--text-sub);font-family:var(--font-mo);font-size:10px;letter-spacing:0.20em;}
 .head__lang button.is-active{background:var(--text-main);color:var(--rev-text);}
+.head__mobile-search{display:none;}
 /* HERO */
 .ph-hero{display:grid;grid-template-columns:360px 1fr;border-bottom:1.5px solid var(--rule-strong);min-height:300px;}
 .ph-hero__art{background:var(--rev-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-en);font-weight:800;font-size:clamp(130px,15vw,210px);line-height:0.82;letter-spacing:-0.065em;color:var(--rev-text);border-right:1.5px solid var(--rule-strong);user-select:none;flex-shrink:0;}
@@ -94,14 +95,14 @@ button{font-family:inherit;cursor:pointer;background:transparent;border:0;color:
 /* ABSTRACT */
 .ph-abstract{border-left:4px solid var(--accent-h);padding:16px 22px;background:var(--surface-2);}
 .ph-abstract__label{font-family:var(--font-mo);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent-s);font-weight:500;margin-bottom:10px;}
-.ph-abstract p{font-size:17px;line-height:1.95;max-width:42em;text-align:justify;text-wrap:pretty;font-family:var(--font-se-jp);}
+.ph-abstract p{font-size:17px;line-height:1.95;max-width:42em;text-align:justify;font-family:var(--font-se-jp);}
 .ph-abstract a{color:var(--accent-a);border-bottom:1px solid rgba(168,58,42,0.4);}
 .ph-abstract a:hover{border-bottom-color:var(--accent-a);}
 /* THESIS */
 .ph-thesis{border:1.5px solid var(--border);padding:0;background:var(--bg);}
 .ph-thesis__label{font-family:var(--font-mo);font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent-s);font-weight:500;padding:12px 24px;border-bottom:1.5px solid var(--border);background:var(--surface-2);display:flex;align-items:center;gap:12px;}
 .ph-thesis__label::before{content:'';width:28px;height:1.5px;background:var(--accent-s);}
-.ph-thesis__body{padding:22px 24px 24px;font-size:17px;line-height:1.95;max-width:42em;text-align:justify;text-wrap:pretty;font-family:var(--font-se-jp);}
+.ph-thesis__body{padding:22px 24px 24px;font-size:17px;line-height:1.95;max-width:42em;text-align:justify;font-family:var(--font-se-jp);}
 .ph-thesis__body em{font-style:normal;font-weight:700;color:var(--accent-a);}
 .ph-thesis__body.is-prep{color:var(--text-mute);font-style:italic;}
 /* ENTRY META */
@@ -145,7 +146,7 @@ button{font-family:inherit;cursor:pointer;background:transparent;border:0;color:
 .toc-sub a:hover{color:var(--accent-a);}
 /* ESSAY */
 .essay{font-size:17px;line-height:1.95;color:var(--text-main);max-width:42em;}
-.essay p{margin-bottom:1.6em;text-align:justify;text-wrap:pretty;font-family:var(--font-se-jp);line-height:1.95;color:#1a1a1a;font-weight:500;font-size:16.5px;}
+.essay p{margin-bottom:1.6em;text-align:justify;font-family:var(--font-se-jp);line-height:1.95;color:#1a1a1a;font-weight:500;font-size:16.5px;}
 .essay p:last-child{margin-bottom:0;}
 .essay h3{font-family:var(--font-jp);font-weight:700;font-size:18.5px;letter-spacing:0.02em;color:var(--text-main);margin:2.4em 0 0.65em;padding-left:14px;border-left:3px solid var(--accent-a);scroll-margin-top:20px;}
 .essay h3:first-child{margin-top:0;}
@@ -269,6 +270,32 @@ sup{line-height:0;}
   margin-right: 8px;
   vertical-align: 1px;
 }
+
+/* Mobile reading/search sync */
+@media (max-width: 768px) {
+  .ph-layout { max-width: 375px; margin: 0 auto; }
+}
+@media (max-width: 720px) {
+  .head { position: sticky; top: 0; z-index: 200; grid-template-columns: 1fr auto; gap: 12px; padding: 12px 16px; }
+  .head__brand { flex-wrap: wrap; gap: 4px 10px; }
+  .head__brand-en { font-size: 11px; }
+  .head__mobile-search { display: block; grid-column: 1 / -1; }
+  .head__mobile-search .ph-side-search__label { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .head__mobile-search .ph-side-search__input { padding: 9px 8px 9px 12px; font-size: 11px; }
+  .ph-side > .ph-side-search { display: none; }
+  .ph-layout { padding: 28px 12px 64px; }
+  .ph-section__head { padding: 18px 12px; }
+  .ph-section__title { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .ph-section__body { padding: 24px 18px 28px; }
+  .ph-abstract p,
+  .ph-thesis__body,
+  .essay,
+  .essay p { letter-spacing: 0; line-height: 1.9; text-align: left; }
+  .ph-abstract p,
+  .ph-thesis__body,
+  .essay p { font-size: 15px; }
+}
+
 </style>
 </head>
 <body>
@@ -289,7 +316,7 @@ sup{line-height:0;}
       <button>EN</button>
     </div>
   </div>
-</header>
+<div class="head__mobile-search"><form class="ph-side-search__form" onsubmit="return false;"><label class="ph-side-search__label" for="ph-search-input-mobile">SEARCH · 写真家を探す</label><div class="ph-side-search__field"><input class="ph-side-search__input" id="ph-search-input-mobile" type="search" placeholder="SEARCH · 写真家を探す" autocomplete="off" aria-autocomplete="list" aria-controls="ph-search-suggestions-mobile" aria-expanded="false"><button class="ph-side-search__btn" type="button" aria-label="検索"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div></form><ul class="ph-search-suggestions" id="ph-search-suggestions-mobile" role="listbox" hidden></ul></div></header>
 
 <section class="ph-hero">
   <div class="ph-hero__art">T<span>R</span></div>
@@ -2797,6 +2824,28 @@ sup{line-height:0;}
   });
   input.addEventListener('blur',function(){ setTimeout(hide,150); });
   input.addEventListener('keydown',function(e){ if(e.key==='Escape'){ hide(); input.blur(); } });
+})();
+</script>
+<script>
+(function(){
+  var wrap=document.querySelector('.head__mobile-search');
+  if(!wrap)return;
+  var input=wrap.querySelector('.ph-side-search__input'),list=wrap.querySelector('.ph-search-suggestions');
+  if(!input||!list)return;
+  function normalize(items){return (items||[]).map(function(p){return{name_ja:p.name_ja||p.nameJa||'',name_en:p.name_en||p.nameEn||'',slug:p.slug||p.id||'',url:p.url||(p.href?(p.href[0]==='/'?p.href:'/'+p.href):''),country:p.country||((p.metaJa||'').split('·')[0].trim()),movement:p.movement||p.channel||''};});}
+  function start(photographers){
+    function toKatakana(s){return s.replace(/[ぁ-ゖ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
+    function matches(ph,q){var ql=q.toLowerCase(),qk=toKatakana(q);return ph.name_ja.includes(q)||ph.name_ja.includes(qk)||ph.name_en.toLowerCase().includes(ql)||ph.slug.toLowerCase().includes(ql)||(ph.movement&&ph.movement.toLowerCase().includes(ql))||(ph.country&&ph.country.includes(q));}
+    function hl(t,q){if(!q)return t;var i=t.toLowerCase().indexOf(q.toLowerCase());if(i===-1)return t;return t.slice(0,i)+'<mark>'+t.slice(i,i+q.length)+'</mark>'+t.slice(i+q.length);}
+    function render(rs,q){list.innerHTML='';if(!rs.length){list.innerHTML='<li class="ph-search-no-result">該当する写真家が見つかりません</li>';list.hidden=false;input.setAttribute('aria-expanded','true');return;}rs.slice(0,5).forEach(function(ph){var li=document.createElement('li');li.className='ph-search-suggestion';li.setAttribute('role','option');li.innerHTML='<a href="'+ph.url+'"><span class="ph-search-suggestion__name">'+hl(ph.name_ja,q)+'</span><span class="ph-search-suggestion__en">'+ph.name_en+'</span><span class="ph-search-suggestion__meta">'+(ph.country||'')+(ph.movement?' · '+ph.movement:'')+'</span></a>';list.appendChild(li);});list.hidden=false;input.setAttribute('aria-expanded','true');}
+    function hide(){list.hidden=true;list.innerHTML='';input.setAttribute('aria-expanded','false');}
+    input.addEventListener('input',function(){var q=this.value.trim();if(!q){hide();return;}render(photographers.filter(function(ph){return matches(ph,q);}),q);});
+    input.addEventListener('blur',function(){setTimeout(hide,150);});
+    input.addEventListener('keydown',function(e){if(e.key==='Escape'){hide();input.blur();}});
+  }
+  var indexEl=document.getElementById('photographer-index');
+  if(indexEl){try{start(normalize(JSON.parse(indexEl.textContent)));}catch(e){}return;}
+  fetch('/card-data.json').then(function(r){return r.json();}).then(function(data){start(normalize(data.photographers||[]));}).catch(function(){});
 })();
 </script>
 </body>

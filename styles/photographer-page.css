@@ -736,6 +736,16 @@ body[data-photographer-id="stieglitz"] .info-group.is-related {
   .fact-value {
     font-size: 11px;
   }
+  .body-text,
+  .lead,
+  .section p,
+  .essay,
+  .essay p,
+  .thesis-body {
+    letter-spacing: 0;
+    line-height: 1.9;
+    text-align: left;
+  }
   .tag {
     width: 100%;
     justify-content: center;

@@ -38,7 +38,7 @@
   --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
   --reverse-text: var(--rev-text, #f2efe8);}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   background: var(--bg);
   color: var(--text-main);
@@ -91,6 +91,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
 .head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
 .head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__mobile-search{display:none;}
 
 /* ── MOVEMENT HERO ─────────────────────────────────────── */
 .mvt-hero {
@@ -292,7 +293,6 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   line-height: 1.95;
   max-width: 44em;
   text-align: justify;
-  text-wrap: pretty;
   font-family: var(--font-se-jp);
 }
 
@@ -322,7 +322,6 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   line-height: 1.95;
   max-width: 44em;
   text-align: justify;
-  text-wrap: pretty;
   font-family: var(--font-se-jp);
 }
 .ph-thesis__body em { font-style: normal; font-weight: 700; color: var(--accent-a); }
@@ -364,7 +363,6 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   line-height: 1.95;
   color: var(--text-sub);
   text-align: justify;
-  text-wrap: pretty;
 }
 .ph-section__body p + p { margin-top: 20px; }
 .ph-section__body a {
@@ -690,7 +688,63 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 /* ── BRAND PHOTO MARK ────────────────────────────────────── */
 .head__brand-photo{background:var(--accent-d);color:#ffffff;padding:0 0.05em;border-radius:2px;display:inline-block;line-height:0.96;}
 
-</style></head><body><div class="page"><header class="head"><div class="head__brand"><span class="head__brand-ja"><a href="../index.html"><span class="head__brand-photo">写真</span>の座標</a></span><span class="head__brand-en">Photo Coordinates</span></div><div class="head__crumbs"><em>MOVEMENTS</em><span class="sep">/</span>写真分離派<span class="sep">·</span>Photo-Secession<span class="sep">·</span>UPDATED&nbsp;<span class="updated-date">2026.05</span></div><div class="head__meta"><div class="head__lang"><button class="is-active">JP</button><button>EN</button></div></div></header><section class="mvt-hero"><div class="mvt-hero__art"><div class="mvt-hero__art-label">MOVEMENT · 表現</div><div class="mvt-hero__art-code">PS<span class="ac">EC</span></div><div class="mvt-hero__art-foot"><div class="mvt-hero__art-en">PHOTO-SECESSION</div><div class="mvt-hero__art-count">4 PHOTOGRAPHERS</div></div></div><div class="mvt-hero__info"><div class="mvt-hero__eyebrow">§ — Movement — 表現で読む</div><h1 class="mvt-hero__title">写真分離派</h1><div class="mvt-hero__subtitle">Photo-Secession</div><p class="mvt-hero__lead">写真分離派は、1902年にアルフレッド・スティーグリッツがニューヨークで組織した写真家集団で、写真を絵画と並ぶ芸術として美術館に送り込むことを目指した。雑誌『カメラ・ワーク』と291ギャラリーを媒体として、写真と近代美術の接点を作り出した制度的な拠点だった。</p><div class="mvt-hero__meta-row"><span class="mvt-hero__meta-item">Photographers<strong>4</strong></span><span class="mvt-hero__meta-item">Category<strong>表現</strong></span><span class="mvt-hero__meta-item">Period<strong>1902–1917</strong></span><span class="mvt-hero__meta-item">Updated<strong>2026.05</strong></span></div></div></section><nav class="mvt-nav"><div class="mvt-nav__label">§ — 表現で読む</div><div class="mvt-nav__strip"><a class="mvt-nav__item" href="./自然主義写真.html">自然主義写真</a><a class="mvt-nav__item" href="./ピクトリアリズム.html">ピクトリアリズム</a><a class="mvt-nav__item is-active" href="./写真分離派.html">写真分離派</a><a class="mvt-nav__item" href="./ストレート写真.html">ストレート写真</a><a class="mvt-nav__item" href="./新即物主義.html">新即物主義</a><a class="mvt-nav__item" href="./新しいヴィジョン.html">新しいヴィジョン</a><a class="mvt-nav__item" href="./バウハウス.html">バウハウス</a><a class="mvt-nav__item" href="./ヴォルテクシズム.html">ヴォルテクシズム</a><a class="mvt-nav__item" href="./ダダ.html">ダダ</a><a class="mvt-nav__item" href="./シュルレアリスム.html">シュルレアリスム</a><a class="mvt-nav__item" href="./レイオグラフ.html">レイオグラフ</a><a class="mvt-nav__item" href="./モダニズム.html">モダニズム</a><a class="mvt-nav__item" href="./決定的瞬間.html">決定的瞬間</a><a class="mvt-nav__item" href="./ドキュメンタリー.html">ドキュメンタリー</a><a class="mvt-nav__item" href="./社会ドキュメンタリー.html">社会ドキュメンタリー</a><a class="mvt-nav__item" href="./FSA写真.html">FSA写真</a><a class="mvt-nav__item" href="./フォトジャーナリズム.html">フォトジャーナリズム</a><a class="mvt-nav__item" href="./ストリート写真.html">ストリート写真</a><a class="mvt-nav__item" href="./プロヴォーク.html">プロヴォーク</a><a class="mvt-nav__item" href="./リアリズム写真.html">リアリズム写真</a><a class="mvt-nav__item" href="./私写真.html">私写真</a><a class="mvt-nav__item" href="./コンセプチュアルアート.html">コンセプチュアルアート</a><a class="mvt-nav__item" href="./ニューカラー.html">ニューカラー</a><a class="mvt-nav__item" href="./カラー写真.html">カラー写真</a><a class="mvt-nav__item" href="./ピクチャーズ世代.html">ピクチャーズ世代</a><a class="mvt-nav__item" href="./フェミニズム写真.html">フェミニズム写真</a><a class="mvt-nav__item" href="./タイポロジー写真.html">タイポロジー写真</a><a class="mvt-nav__item" href="./デュッセルドルフ派.html">デュッセルドルフ派</a><a class="mvt-nav__item" href="./大判カラー写真.html">大判カラー写真</a><a class="mvt-nav__item" href="./シネマトグラフィック写真.html">シネマトグラフィック写真</a><a class="mvt-nav__item" href="./ステージド写真.html">ステージド写真</a></div></nav><div class="era-outer"><div class="era-layout"><main class="era-main"><div class="ph-abstract"><div class="ph-abstract__label">Overview · この表現について</div><p>1902年にスティーグリッツが組織した写真家集団。『カメラ・ワーク』誌と291ギャラリーを媒体として写真を芸術として制度化。写真と近代美術の接点を作り出した。</p></div><div class="ph-thesis"><div class="ph-thesis__label">核心命題</div><p class="ph-thesis__body">写真分離派が重要なのは芸術性を主張したからだけでなく、<em>その主張を制度として実装した</em>点にある。雑誌・ギャラリー・批評の言葉・展示形式を組み合わせ「美術として見られる場」を整備した。</p></div><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 01</span><span class="ph-section__name">表現解説</span></div></div><div class="ph-section__body"><p>スティーグリッツが1902年に写真分離派を設立した背景には、カメラ・クラブ内での写真の扱いへの不満がある。技術的な巧みさが評価される展覧会文化に対し、芸術的な表現の質を問う場を作ろうとした。雑誌『カメラ・ワーク』は1903年の創刊から1917年の終刊まで、グラビア印刷による高品質な写真図版と批評テキストを組み合わせ、写真を芸術として議論する土台を作った。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
+
+/* Mobile reading/search sync */
+@media (max-width: 768px) {
+  .era-layout { max-width: 375px; margin: 0 auto; }
+}
+@media (max-width: 760px) {
+  .head { position: sticky; top: 0; z-index: 200; grid-template-columns: 1fr auto; gap: 12px; padding: 12px 16px; }
+  .head__brand { flex-wrap: wrap; gap: 4px 10px; }
+  .head__brand-en { font-size: 11px; }
+  .head__mobile-search { display: block; grid-column: 1 / -1; }
+  .head__mobile-search .ph-side-search__label { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .head__mobile-search .ph-side-search__input { padding: 9px 8px 9px 12px; font-size: 11px; }
+  .era-side > .ph-side-search { display: none; }
+  .era-layout { padding: 28px 12px 64px; }
+  .ph-section__head { padding: 18px 12px; }
+  .ph-section__title { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .ph-section__body { padding: 24px 18px 28px; }
+  .mvt-hero__lead,
+  .era-hero__lead,
+  .ph-abstract p,
+  .ph-thesis__body,
+  .ph-section__body p,
+  .era-context-text { letter-spacing: 0; line-height: 1.9; text-align: left; }
+  .mvt-hero__lead,
+  .era-hero__lead,
+  .ph-abstract p,
+  .ph-thesis__body,
+  .ph-section__body p,
+  .era-context-text { font-size: 15px; }
+  .er-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .er-cards .pc-top { min-height: 128px; padding: 34px 10px 10px; }
+  .er-cards .pc-body { padding: 12px 10px 14px; gap: 8px; }
+  .er-cards .pc-body__kind { font-size: 8px; letter-spacing: 0.16em; }
+  .er-cards .pc-body__name { font-size: 15px; line-height: 1.35; }
+  .er-cards .pc-body__name-en { font-size: 12px; }
+  .er-cards .pc-body__meta,
+  .er-cards .pc-body__channel,
+  .er-cards .pc-body__tag,
+  .er-cards .pc-body__cta { font-size: 8px; letter-spacing: 0.10em; }
+  .er-cards .pc-body .pc-body__lede { display: none; }
+  .er-cards .pc-body__tags { gap: 4px 8px; }
+  .er-cards .pc-top__hint { font-size: 8px; }
+  .er-cards .pc-top__meta .idx { font-size: 22px; top: 10px; left: 10px; }
+  .er-cards .pc-top__meta > span:nth-child(2) { top: 12px; right: 10px; }
+  .er-cards .pc-top--initials .pc-top__art { font-size: 70px; }
+  .er-cards .pc-top--slash .ln { font-size: 36px !important; }
+  .er-cards .pc-top--stacked .pc-top__art span { font-size: 32px !important; }
+  .er-cards .pc-top--cite .cty,
+  .er-cards .cty { font-size: 28px !important; }
+  .er-cards .yr-birth { font-size: 44px !important; }
+  .er-cards .yr-dash { font-size: 14px !important; }
+  .er-cards .yr-death { font-size: 28px !important; }
+  .er-cards .kf-char { font-size: 64px; }
+  .er-cards .kf-gloss { font-size: 8px; letter-spacing: 0.18em; }
+}
+
+</style></head><body><div class="page"><header class="head"><div class="head__brand"><span class="head__brand-ja"><a href="../index.html"><span class="head__brand-photo">写真</span>の座標</a></span><span class="head__brand-en">Photo Coordinates</span></div><div class="head__crumbs"><em>MOVEMENTS</em><span class="sep">/</span>写真分離派<span class="sep">·</span>Photo-Secession<span class="sep">·</span>UPDATED&nbsp;<span class="updated-date">2026.05</span></div><div class="head__meta"><div class="head__lang"><button class="is-active">JP</button><button>EN</button></div></div><div class="head__mobile-search"><form class="ph-side-search__form" onsubmit="return false;"><label class="ph-side-search__label" for="ph-search-input-mobile">SEARCH · 写真家を探す</label><div class="ph-side-search__field"><input class="ph-side-search__input" id="ph-search-input-mobile" type="search" placeholder="SEARCH · 写真家を探す" autocomplete="off" aria-autocomplete="list" aria-controls="ph-search-suggestions-mobile" aria-expanded="false"><button class="ph-side-search__btn" type="button" aria-label="検索"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div></form><ul class="ph-search-suggestions" id="ph-search-suggestions-mobile" role="listbox" hidden></ul></div></header><section class="mvt-hero"><div class="mvt-hero__art"><div class="mvt-hero__art-label">MOVEMENT · 表現</div><div class="mvt-hero__art-code">PS<span class="ac">EC</span></div><div class="mvt-hero__art-foot"><div class="mvt-hero__art-en">PHOTO-SECESSION</div><div class="mvt-hero__art-count">4 PHOTOGRAPHERS</div></div></div><div class="mvt-hero__info"><div class="mvt-hero__eyebrow">§ — Movement — 表現で読む</div><h1 class="mvt-hero__title">写真分離派</h1><div class="mvt-hero__subtitle">Photo-Secession</div><p class="mvt-hero__lead">写真分離派は、1902年にアルフレッド・スティーグリッツがニューヨークで組織した写真家集団で、写真を絵画と並ぶ芸術として美術館に送り込むことを目指した。雑誌『カメラ・ワーク』と291ギャラリーを媒体として、写真と近代美術の接点を作り出した制度的な拠点だった。</p><div class="mvt-hero__meta-row"><span class="mvt-hero__meta-item">Photographers<strong>4</strong></span><span class="mvt-hero__meta-item">Category<strong>表現</strong></span><span class="mvt-hero__meta-item">Period<strong>1902–1917</strong></span><span class="mvt-hero__meta-item">Updated<strong>2026.05</strong></span></div></div></section><nav class="mvt-nav"><div class="mvt-nav__label">§ — 表現で読む</div><div class="mvt-nav__strip"><a class="mvt-nav__item" href="./自然主義写真.html">自然主義写真</a><a class="mvt-nav__item" href="./ピクトリアリズム.html">ピクトリアリズム</a><a class="mvt-nav__item is-active" href="./写真分離派.html">写真分離派</a><a class="mvt-nav__item" href="./ストレート写真.html">ストレート写真</a><a class="mvt-nav__item" href="./新即物主義.html">新即物主義</a><a class="mvt-nav__item" href="./新しいヴィジョン.html">新しいヴィジョン</a><a class="mvt-nav__item" href="./バウハウス.html">バウハウス</a><a class="mvt-nav__item" href="./ヴォルテクシズム.html">ヴォルテクシズム</a><a class="mvt-nav__item" href="./ダダ.html">ダダ</a><a class="mvt-nav__item" href="./シュルレアリスム.html">シュルレアリスム</a><a class="mvt-nav__item" href="./レイオグラフ.html">レイオグラフ</a><a class="mvt-nav__item" href="./モダニズム.html">モダニズム</a><a class="mvt-nav__item" href="./決定的瞬間.html">決定的瞬間</a><a class="mvt-nav__item" href="./ドキュメンタリー.html">ドキュメンタリー</a><a class="mvt-nav__item" href="./社会ドキュメンタリー.html">社会ドキュメンタリー</a><a class="mvt-nav__item" href="./FSA写真.html">FSA写真</a><a class="mvt-nav__item" href="./フォトジャーナリズム.html">フォトジャーナリズム</a><a class="mvt-nav__item" href="./ストリート写真.html">ストリート写真</a><a class="mvt-nav__item" href="./プロヴォーク.html">プロヴォーク</a><a class="mvt-nav__item" href="./リアリズム写真.html">リアリズム写真</a><a class="mvt-nav__item" href="./私写真.html">私写真</a><a class="mvt-nav__item" href="./コンセプチュアルアート.html">コンセプチュアルアート</a><a class="mvt-nav__item" href="./ニューカラー.html">ニューカラー</a><a class="mvt-nav__item" href="./カラー写真.html">カラー写真</a><a class="mvt-nav__item" href="./ピクチャーズ世代.html">ピクチャーズ世代</a><a class="mvt-nav__item" href="./フェミニズム写真.html">フェミニズム写真</a><a class="mvt-nav__item" href="./タイポロジー写真.html">タイポロジー写真</a><a class="mvt-nav__item" href="./デュッセルドルフ派.html">デュッセルドルフ派</a><a class="mvt-nav__item" href="./大判カラー写真.html">大判カラー写真</a><a class="mvt-nav__item" href="./シネマトグラフィック写真.html">シネマトグラフィック写真</a><a class="mvt-nav__item" href="./ステージド写真.html">ステージド写真</a></div></nav><div class="era-outer"><div class="era-layout"><main class="era-main"><div class="ph-abstract"><div class="ph-abstract__label">Overview · この表現について</div><p>1902年にスティーグリッツが組織した写真家集団。『カメラ・ワーク』誌と291ギャラリーを媒体として写真を芸術として制度化。写真と近代美術の接点を作り出した。</p></div><div class="ph-thesis"><div class="ph-thesis__label">核心命題</div><p class="ph-thesis__body">写真分離派が重要なのは芸術性を主張したからだけでなく、<em>その主張を制度として実装した</em>点にある。雑誌・ギャラリー・批評の言葉・展示形式を組み合わせ「美術として見られる場」を整備した。</p></div><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 01</span><span class="ph-section__name">表現解説</span></div></div><div class="ph-section__body"><p>スティーグリッツが1902年に写真分離派を設立した背景には、カメラ・クラブ内での写真の扱いへの不満がある。技術的な巧みさが評価される展覧会文化に対し、芸術的な表現の質を問う場を作ろうとした。雑誌『カメラ・ワーク』は1903年の創刊から1917年の終刊まで、グラビア印刷による高品質な写真図版と批評テキストを組み合わせ、写真を芸術として議論する土台を作った。<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
 <p>291ギャラリーでは、写真だけでなくロダン、マティス、ピカソ、セザンヌなどの近代美術も展示された。写真が美術と等価であると主張するための戦略的な並置だった。<a href="../photographers/kasebier.html">ガートルード・ケーゼビア</a>、エドワード・スタイケン、アルヴィン・コバーンらが中心的なメンバーとして関わる。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p></div></section>
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 02</span><span class="ph-section__name">批評と受容</span></div></div><div class="ph-section__body"><p>写真分離派の内部でも路線の違いはあった。スタイケンやケーゼビアーのように絵画的な処理を重視する流れと、スティーグリッツ自身がのちに「等価」と呼んだような直接写真の方向は一致しない。1910年代以降のスティーグリッツの変化は、ピクトリアリズム的なものへの距離感を示す。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
 <p>写真分離派の制度的な遺産は、写真が美術館・批評・市場のシステムに入るための基盤を作ったことである。<a href="./ピクトリアリズム.html">ピクトリアリズム</a>の延長として出発しながら、最終的には<a href="./ストレート写真.html">ストレート写真</a>への転換を牽引する役割も果たした。<sup class="sup-ref"><a href="#cite-9">*9</a></sup></p></div></section>
@@ -804,6 +858,28 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     render(photographers.filter(function(ph){return matches(ph,q);}),q);});
   input.addEventListener('blur',function(){setTimeout(hide,150);});
   input.addEventListener('keydown',function(e){if(e.key==='Escape'){hide();input.blur();}});
+})();
+</script>
+<script>
+(function(){
+  var wrap=document.querySelector('.head__mobile-search');
+  if(!wrap)return;
+  var input=wrap.querySelector('.ph-side-search__input'),list=wrap.querySelector('.ph-search-suggestions');
+  if(!input||!list)return;
+  function normalize(items){return (items||[]).map(function(p){return{name_ja:p.name_ja||p.nameJa||'',name_en:p.name_en||p.nameEn||'',slug:p.slug||p.id||'',url:p.url||(p.href?(p.href[0]==='/'?p.href:'/'+p.href):''),country:p.country||((p.metaJa||'').split('·')[0].trim()),movement:p.movement||p.channel||''};});}
+  function start(photographers){
+    function toKatakana(s){return s.replace(/[ぁ-ゖ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
+    function matches(ph,q){var ql=q.toLowerCase(),qk=toKatakana(q);return ph.name_ja.includes(q)||ph.name_ja.includes(qk)||ph.name_en.toLowerCase().includes(ql)||ph.slug.toLowerCase().includes(ql)||(ph.movement&&ph.movement.toLowerCase().includes(ql))||(ph.country&&ph.country.includes(q));}
+    function hl(t,q){if(!q)return t;var i=t.toLowerCase().indexOf(q.toLowerCase());if(i===-1)return t;return t.slice(0,i)+'<mark>'+t.slice(i,i+q.length)+'</mark>'+t.slice(i+q.length);}
+    function render(rs,q){list.innerHTML='';if(!rs.length){list.innerHTML='<li class="ph-search-no-result">該当する写真家が見つかりません</li>';list.hidden=false;input.setAttribute('aria-expanded','true');return;}rs.slice(0,5).forEach(function(ph){var li=document.createElement('li');li.className='ph-search-suggestion';li.setAttribute('role','option');li.innerHTML='<a href="'+ph.url+'"><span class="ph-search-suggestion__name">'+hl(ph.name_ja,q)+'</span><span class="ph-search-suggestion__en">'+ph.name_en+'</span><span class="ph-search-suggestion__meta">'+(ph.country||'')+(ph.movement?' · '+ph.movement:'')+'</span></a>';list.appendChild(li);});list.hidden=false;input.setAttribute('aria-expanded','true');}
+    function hide(){list.hidden=true;list.innerHTML='';input.setAttribute('aria-expanded','false');}
+    input.addEventListener('input',function(){var q=this.value.trim();if(!q){hide();return;}render(photographers.filter(function(ph){return matches(ph,q);}),q);});
+    input.addEventListener('blur',function(){setTimeout(hide,150);});
+    input.addEventListener('keydown',function(e){if(e.key==='Escape'){hide();input.blur();}});
+  }
+  var indexEl=document.getElementById('photographer-index');
+  if(indexEl){try{start(normalize(JSON.parse(indexEl.textContent)));}catch(e){}return;}
+  fetch('/card-data.json').then(function(r){return r.json();}).then(function(data){start(normalize(data.photographers||[]));}).catch(function(){});
 })();
 </script>
 </body></html>
