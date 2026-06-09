@@ -846,7 +846,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   var photographers=[];
   fetch('/card-data.json').then(function(r){return r.json();}).then(function(data){
     photographers=(data.photographers||[]).map(function(p){
-      return{name_ja:p.nameJa||'',name_en:p.nameEn||'',slug:p.id||'',url:p.href||'',
+      return{name_ja:p.nameJa||'',name_en:p.nameEn||'',slug:p.id||'',url:p.href?(p.href[0]==='/'?p.href:'/'+p.href):'',
              country:(p.metaJa||'').split('·')[0].trim(),movement:p.channel||''};
     });
   });
