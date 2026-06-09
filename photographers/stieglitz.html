@@ -288,9 +288,15 @@ sup { line-height:0; }
   .essay p {
     letter-spacing: 0;
     line-height: 1.9;
-    text-align: left;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-character;
   }
-  .essay p { font-size:15.5px; }
+  .ph-abstract p,
+  .ph-thesis__body,
+  .essay p {
+    font-size:15.5px;
+  }
   .foot { grid-template-columns:1fr; gap:4px; }
   .foot__center,.foot__right { text-align:left; }
 }
