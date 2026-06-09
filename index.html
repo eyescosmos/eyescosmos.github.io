@@ -291,10 +291,8 @@ body {
 .tabs__btn--search:hover { background: rgba(14,12,10,0.05); color: var(--text-main); }
 .tabs__btn--search.is-active { background: #0e0c0a; color: #fafaf5; }
 .tabs__search-icon {
-  font-size: 52px;
-  line-height: 70px;
   display: block;
-  height: 70px;
+  flex-shrink: 0;
 }
 
 /* ── SEARCH OVERLAY ── */
@@ -2109,7 +2107,7 @@ body {
       </span>
     </button>
     <button class="tabs__btn tabs__btn--search" aria-label="検索">
-      <span class="tabs__search-icon">⌕</span>
+      <svg class="tabs__search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><line x1="13.5" y1="13.5" x2="19" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
   </div>
 
@@ -2806,12 +2804,14 @@ body {
     };
   });
 
+  function toKatakana(s){return s.replace(/[ぁ-ゖ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
   function runSearch(q) {
     searchResults.innerHTML = '';
     if (!q) return;
     const lower = q.toLowerCase();
+    const qk = toKatakana(q);
     const hits = searchIndex.filter(p =>
-      p.name.includes(q) || p.nameEn.toLowerCase().includes(lower) ||
+      p.name.includes(q) || p.name.includes(qk) || p.nameEn.toLowerCase().includes(lower) ||
       p.meta.toLowerCase().includes(lower) || p.channel.toLowerCase().includes(lower)
     );
     if (hits.length === 0) {

@@ -775,8 +775,9 @@ sup { line-height:0; }
               country:(p.metaJa||'').split('·')[0].trim(),movement:p.channel||''};
     });
   });
-  function matches(ph,q){var ql=q.toLowerCase();
-    return ph.name_ja.includes(q)||ph.name_en.toLowerCase().includes(ql)||
+  function toKatakana(s){return s.replace(/[\u3041-\u3096]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
+  function matches(ph,q){var ql=q.toLowerCase(),qk=toKatakana(q);
+    return ph.name_ja.includes(q)||ph.name_ja.includes(qk)||ph.name_en.toLowerCase().includes(ql)||
            ph.slug.toLowerCase().includes(ql)||(ph.movement&&ph.movement.toLowerCase().includes(ql))||
            (ph.country&&ph.country.includes(q));}
   function hl(t,q){if(!q)return t;var i=t.toLowerCase().indexOf(q.toLowerCase());
