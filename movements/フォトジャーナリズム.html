@@ -717,31 +717,77 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   .ph-thesis__body,
   .ph-section__body p,
   .era-context-text { font-size: 15px; }
-  .er-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .er-cards .pc-top { min-height: 128px; padding: 34px 10px 10px; }
-  .er-cards .pc-body { padding: 12px 10px 14px; gap: 8px; }
-  .er-cards .pc-body__kind { font-size: 8px; letter-spacing: 0.16em; }
-  .er-cards .pc-body__name { font-size: 15px; line-height: 1.35; }
-  .er-cards .pc-body__name-en { font-size: 12px; }
-  .er-cards .pc-body__meta,
-  .er-cards .pc-body__channel,
-  .er-cards .pc-body__tag,
-  .er-cards .pc-body__cta { font-size: 8px; letter-spacing: 0.10em; }
-  .er-cards .pc-body .pc-body__lede { display: none; }
-  .er-cards .pc-body__tags { gap: 4px 8px; }
-  .er-cards .pc-top__hint { font-size: 8px; }
-  .er-cards .pc-top__meta .idx { font-size: 22px; top: 10px; left: 10px; }
-  .er-cards .pc-top__meta > span:nth-child(2) { top: 12px; right: 10px; }
-  .er-cards .pc-top--initials .pc-top__art { font-size: 70px; }
-  .er-cards .pc-top--slash .ln { font-size: 36px !important; }
-  .er-cards .pc-top--stacked .pc-top__art span { font-size: 32px !important; }
+  .ph-section:has(.er-cards) { border: 0; background: transparent; overflow: visible; }
+  .ph-section:has(.er-cards) .ph-section__head { border-bottom: 0; background: transparent; padding: 8px 0 14px; }
+  .ph-section:has(.er-cards) .ph-section__body { padding: 0; background: transparent; }
+  .er-cards {
+    display: block !important;
+    column-count: 2 !important;
+    column-gap: 10px !important;
+    column-fill: balance !important;
+    padding: 6px 8px 28px !important;
+    background: transparent !important;
+  }
+  .er-cards .pc-card {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 0 10px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    background: var(--surface-2) !important;
+  }
+  .er-cards .pc-card.is-hidden { display: none !important; }
+  .er-cards .pc-top {
+    min-height: 154px !important;
+    padding: 34px 12px 12px !important;
+    border-bottom-width: 1px !important;
+  }
+  .er-cards .pc-top__meta .idx { top: 10px !important; left: 12px !important; font-size: 20px !important; }
+  .er-cards .pc-top__meta > span:nth-child(2) {
+    top: 12px !important;
+    right: 12px !important;
+    max-width: 78px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 7px !important;
+    letter-spacing: .14em !important;
+    white-space: nowrap;
+  }
+  .er-cards .pc-top__hint { font-size: 7px !important; letter-spacing: .12em !important; line-height: 1.35 !important; }
+  .er-cards .pc-top--initials .pc-top__art { font-size: 88px !important; }
+  .er-cards .pc-top--kanji .pc-top__art { font-size: 86px !important; }
+  .er-cards .pc-top--number .pc-top__art { font-size: 96px !important; }
+  .er-cards .pc-top--country .pc-top__art { font-size: 72px !important; }
+  .er-cards .pc-top--serif .pc-top__art { font-size: 42px !important; }
+  .er-cards .pc-top--title .pc-top__art { font-size: 46px !important; }
+  .er-cards .pc-top--slash .ln { font-size: 46px !important; }
+  .er-cards .pc-top--stacked .pc-top__art span { font-size: 40px !important; }
   .er-cards .pc-top--cite .cty,
-  .er-cards .cty { font-size: 28px !important; }
-  .er-cards .yr-birth { font-size: 44px !important; }
-  .er-cards .yr-dash { font-size: 14px !important; }
-  .er-cards .yr-death { font-size: 28px !important; }
-  .er-cards .kf-char { font-size: 64px; }
-  .er-cards .kf-gloss { font-size: 8px; letter-spacing: 0.18em; }
+  .er-cards .cty { font-size: 34px !important; }
+  .er-cards .yr-birth { font-size: 58px !important; }
+  .er-cards .yr-dash { font-size: 18px !important; }
+  .er-cards .yr-death { font-size: 36px !important; }
+  .er-cards .pc-body { padding: 13px 12px 14px !important; gap: 8px !important; }
+  .er-cards .pc-body__kind { font-size: 7.5px !important; letter-spacing: .14em !important; }
+  .er-cards .pc-body__kind::before { width: 7px !important; height: 7px !important; }
+  .er-cards .pc-body__name { font-size: 14px !important; line-height: 1.35 !important; letter-spacing: .02em !important; }
+  .er-cards .pc-body__name-en { font-size: 11px !important; margin-top: 2px !important; }
+  .er-cards .pc-body__meta,
+  .er-cards .pc-body__channel { font-size: 7.5px !important; letter-spacing: .12em !important; line-height: 1.5 !important; }
+  .er-cards .pc-body__lede {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 11px !important;
+    line-height: 1.65 !important;
+  }
+  .er-cards .pc-body__tags,
+  .er-cards .pc-body__cta { display: none !important; }
 }
 
 </style></head><body><div class="page">
