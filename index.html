@@ -2828,13 +2828,24 @@ body {
   }
 
   if (searchBtn && searchOverlay) {
+    function closeSearch() {
+      searchOverlay.classList.remove('is-open');
+      searchBtn.classList.remove('is-active');
+    }
     searchBtn.addEventListener('click', () => {
       const isOpen = searchOverlay.classList.toggle('is-open');
       searchBtn.classList.toggle('is-active', isOpen);
       if (isOpen) { searchInput.focus(); searchInput.value = ''; searchResults.innerHTML = ''; }
     });
     searchInput.addEventListener('input', () => runSearch(searchInput.value.trim()));
-    searchInput.addEventListener('keydown', e => { if (e.key === 'Escape') searchBtn.click(); });
+    searchInput.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    document.addEventListener('click', e => {
+      if (searchOverlay.classList.contains('is-open') &&
+          !searchOverlay.contains(e.target) &&
+          !searchBtn.contains(e.target)) {
+        closeSearch();
+      }
+    });
   }
 
   // Sticky tab scroll + active sync
