@@ -58,6 +58,7 @@
 .no-results.is-visible{display:block;}
 .pc-card.is-hidden{display:none;}
 .mobile-filter-strip{display:none;}
+.mobile-filter-search{display:none;}
 
 @media (max-width:720px){
 html{scroll-padding-top:72px;}
@@ -107,6 +108,38 @@ body{background:#070707;overflow-x:hidden;}
   scrollbar-width:none;
 }
 .mobile-filter-strip::-webkit-scrollbar{display:none;}
+.mobile-filter-search{
+  flex:0 0 224px;
+  height:42px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:0 13px;
+  min-width:0;
+  border-radius:999px;
+  background:#fafaf5;
+  color:#0e0c0a;
+}
+.mobile-filter-search::before{
+  content:'⌕';
+  flex:0 0 auto;
+  color:#5a554d;
+  font-family:var(--font-mono);
+  font-size:14px;
+}
+.mobile-filter-search input{
+  width:100%;
+  min-width:0;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:#0e0c0a;
+  font-family:var(--font-sans-jp);
+  font-size:12px;
+  line-height:1;
+}
+.mobile-filter-search input::placeholder{color:#8a8478;}
+.mobile-filter-search:focus-within{background:#ccff00;}
 .pill,
 .pill-era,
 .mobile-filter-chip{
@@ -117,7 +150,7 @@ body{background:#070707;overflow-x:hidden;}
   justify-content:center;
   padding:0 14px;
   border:0;
-  border-radius:0;
+  border-radius:999px;
   background:#1d1d1d;
   color:#fafaf5;
   font-family:var(--font-mono);
@@ -128,7 +161,7 @@ body{background:#070707;overflow-x:hidden;}
 }
 .pill.is-active,
 .pill-era.is-active,
-.mobile-filter-chip.is-active{background:#ccff00;color:#0e0c0a;}
+.mobile-filter-chip.is-active{background:#fafaf5;color:#0e0c0a;}
 .result-bar{
   padding:4px 16px 10px;
   background:#070707;
@@ -246,6 +279,9 @@ body{background:#070707;overflow-x:hidden;}
       <button class="pill-era" data-era="1839">1839–</button><button class="pill-era" data-era="1870">1870s</button><button class="pill-era" data-era="1890">1890s</button><button class="pill-era" data-era="1910">1910s</button><button class="pill-era" data-era="1930">1930s</button><button class="pill-era" data-era="1950">1950s</button><button class="pill-era" data-era="1970">1970s</button><button class="pill-era" data-era="1980">1980s</button><button class="pill-era" data-era="1990">1990s</button><button class="pill-era" data-era="2000">2000s</button><button class="pill-era" data-era="2010">2010s–</button>
     </div>
     <div class="mobile-filter-strip" id="mobile-filter-strip">
+      <label class="mobile-filter-search">
+        <input type="search" id="mobile-search-input" placeholder="写真家名・運動・国・タグで検索" autocomplete="off">
+      </label>
       <button class="mobile-filter-chip is-active" data-mobile-type="all">All</button>
       <button class="mobile-filter-chip" data-mobile-type="photographer">写真家</button>
       <button class="mobile-filter-chip" data-mobile-type="movement">運動</button>
@@ -5931,6 +5967,7 @@ body{background:#070707;overflow-x:hidden;}
 (function(){
   const cards=Array.from(document.querySelectorAll('.pc-card'));
   const searchInput=document.getElementById('search-input');
+  const mobileSearchInput=document.getElementById('mobile-search-input');
   const visibleCount=document.getElementById('visible-count');
   const noResults=document.getElementById('no-results');
   const mobileStrip=document.getElementById('mobile-filter-strip');
@@ -5976,7 +6013,17 @@ body{background:#070707;overflow-x:hidden;}
     applyFilters();
   });
   let timer;
-  searchInput.addEventListener('input',e=>{clearTimeout(timer);timer=setTimeout(()=>{currentSearch=e.target.value.trim();applyFilters();},160);});
+  function queueSearch(value, source){
+    clearTimeout(timer);
+    timer=setTimeout(()=>{
+      currentSearch=value.trim();
+      if(source!==searchInput&&searchInput)searchInput.value=currentSearch;
+      if(source!==mobileSearchInput&&mobileSearchInput)mobileSearchInput.value=currentSearch;
+      applyFilters();
+    },160);
+  }
+  searchInput.addEventListener('input',e=>queueSearch(e.target.value,e.target));
+  mobileSearchInput?.addEventListener('input',e=>queueSearch(e.target.value,e.target));
 })();
 </script>
 </body>

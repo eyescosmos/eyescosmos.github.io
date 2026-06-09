@@ -1719,11 +1719,27 @@ body {
   }
 
   .toolbar__search {
-    display: none;
+    flex: 0 0 224px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 13px;
+    min-width: 0;
+    border: 0;
+    border-radius: 999px;
+    background: #fafaf5;
+    color: #0e0c0a;
+  }
+
+  .toolbar__search::before {
+    color: #5a554d;
+    font-size: 14px;
   }
 
   .toolbar__search input {
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 1;
     color: #0e0c0a;
   }
 
