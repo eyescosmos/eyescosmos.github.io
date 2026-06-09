@@ -409,3 +409,80 @@ body.v53 {
   font-weight: 700;
   letter-spacing: 0.22em;
 }
+
+/* ===========================================================
+   カードスタイル全variant — archive.html / era / movement 共通
+   =========================================================== */
+
+/* 汎用上書き */
+.pc-top__art { overflow: hidden; }
+.pc-top__hint {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(transparent, var(--surface-2) 65%);
+  padding-top: 10px;
+  margin-top: -10px;
+}
+
+/* --year (yr-birth / yr-dash / yr-death) */
+.pc-top--year .pc-top__art { display: flex; flex-direction: column; gap: 0; overflow: hidden; }
+.yr-birth { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 104px; line-height: 0.84; letter-spacing: -0.01em; color: var(--text-main); }
+.yr-dash  { font-family: var(--font-sans-en); font-size: 28px; font-weight: 300; line-height: 1.1; letter-spacing: 0.18em; color: var(--accent-structure); display: block; }
+.yr-death { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-style: italic; font-size: 60px; line-height: 0.84; letter-spacing: -0.01em; color: var(--text-main); opacity: 0.72; }
+
+/* --slash (fn / ln) */
+.pc-top--slash .pc-top__art { display: flex; flex-direction: column; gap: 2px; overflow: hidden; }
+.pc-top--slash .fn { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--text-mute); display: block; }
+.pc-top--slash .ln { font-family: var(--font-sans-en); font-weight: 900; font-size: 88px; line-height: 0.80; letter-spacing: -0.05em; color: var(--text-main); display: block; overflow: hidden; }
+
+/* --cite (cty / cyr) */
+.pc-top--cite .pc-top__art { display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
+.cty { font-family: var(--font-sans-en); font-weight: 900; font-size: 58px; line-height: 0.82; letter-spacing: -0.04em; color: var(--text-main); display: block; overflow: hidden; }
+.cyr { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent-structure); display: block; }
+
+/* --title */
+.pc-top--title .pc-top__art { font-family: var(--font-sans-en); font-weight: 900; font-size: 82px; line-height: 0.82; letter-spacing: -0.05em; color: var(--text-main); overflow: hidden; }
+
+/* --serif */
+.pc-top--serif .pc-top__art { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 76px; line-height: 0.87; color: var(--text-main); letter-spacing: -0.01em; overflow: hidden; }
+
+/* --country */
+.pc-top--country .pc-top__art { font-family: var(--font-mono); font-weight: 600; font-size: 118px; line-height: 0.82; letter-spacing: -0.07em; color: var(--text-main); }
+
+/* --rotate */
+.pc-top--rotate { overflow: hidden; }
+.pc-top--rotate .pc-top__art { writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); font-family: var(--font-sans-en); font-weight: 900; font-size: 100px; letter-spacing: -0.05em; line-height: 0.85; color: var(--text-main); max-height: 160px; overflow: hidden; align-self: flex-start; }
+
+/* --outline */
+.pc-top--outline { overflow: hidden; }
+.pc-top--outline .pc-top__art { font-family: var(--font-sans-en); font-weight: 900; font-size: 112px; line-height: 0.80; letter-spacing: -0.06em; -webkit-text-stroke: 1.5px var(--text-main); color: transparent; overflow: hidden; }
+
+/* --stacked (v5 override: single-weight) */
+.pc-top--stacked .pc-top__art { display: flex; flex-direction: column; gap: 0; overflow: hidden; }
+.pc-top--stacked .pc-top__art span { font-family: var(--font-sans-en); font-weight: 900; font-size: 72px; line-height: 0.84; letter-spacing: -0.04em; color: var(--text-main); display: block; }
+
+/* --twosize (big / anno) */
+.pc-top--twosize .pc-top__art { display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+.big  { font-family: var(--font-sans-en); font-weight: 900; font-size: 82px; line-height: 0.80; letter-spacing: -0.05em; color: var(--text-main); display: block; overflow: hidden; }
+.anno { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--text-mute); display: block; }
+
+/* --fragment */
+.pc-top--fragment { overflow: hidden; }
+.pc-top--fragment .pc-top__art { font-family: var(--font-sans-en); font-weight: 900; font-size: 280px; line-height: 0.72; letter-spacing: -0.05em; color: var(--text-main); opacity: 0.16; transform: translate(-16px, 14px); pointer-events: none; user-select: none; }
+
+/* --kanji-foreign (kf-char / kf-gloss) */
+.pc-top--kanji-foreign .pc-top__art { display: flex; flex-direction: column; gap: 4px; overflow: hidden; }
+.kf-char  { font-family: 'Noto Sans JP', sans-serif; font-weight: 900; line-height: 0.88; letter-spacing: -0.02em; color: var(--text-main); display: block; }
+.kf-gloss { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent-structure); display: block; font-weight: 500; }
+
+/* モバイル時のフォントサイズ縮小 */
+@media (max-width: 720px) {
+  .pc-top--title .pc-top__art  { font-size: 46px !important; }
+  .pc-top--serif .pc-top__art  { font-size: 42px !important; }
+  .pc-top--slash .ln           { font-size: 46px !important; }
+  .pc-top--stacked .pc-top__art span { font-size: 40px !important; }
+  .pc-top--cite .cty, .cty     { font-size: 34px !important; }
+  .yr-birth                    { font-size: 58px !important; }
+  .yr-dash                     { font-size: 18px !important; }
+  .yr-death                    { font-size: 36px !important; }
+}
