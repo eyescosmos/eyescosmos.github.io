@@ -412,8 +412,6 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 .era-side {
   position: sticky;
   top: 24px;
-  max-height: calc(100vh - 32px);
-  overflow-y: auto;
   display: grid;
   gap: 14px;
   align-content: start;
@@ -536,6 +534,27 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 
 /* ── BRAND PHOTO MARK ─────────────────────────────────────── */
 .head__brand-photo { background: var(--accent-d); color: #fff; padding: 0 0.05em; border-radius: 2px; display: inline-block; line-height: 0.96; }
+
+.ph-side-search{border:1px solid var(--border-soft);background:var(--surface-2);}
+.ph-side-search__label{display:block;font-family:var(--font-mo);font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--accent-s);font-weight:500;padding:10px 14px 6px;background:var(--surface);border-bottom:1px solid var(--border-soft);}
+.ph-side-search__field{display:flex;align-items:center;transition:background 120ms;}
+.ph-side-search__field:focus-within{background:var(--accent-h);}
+.ph-side-search__field:focus-within .ph-side-search__input,.ph-side-search__field:focus-within .ph-side-search__btn{color:var(--text-main);}
+.ph-side-search__input{flex:1;font-family:var(--font-mo);font-size:11px;letter-spacing:0.08em;color:var(--text-sub);background:transparent;border:none;outline:none;padding:10px 8px 10px 14px;width:100%;min-width:0;}
+.ph-side-search__input::placeholder{color:var(--text-mute);font-size:10px;}
+.ph-side-search__btn{display:flex;align-items:center;justify-content:center;padding:0 12px;color:var(--text-mute);background:transparent;border:none;cursor:pointer;transition:color 120ms;}
+.ph-side-search__btn:hover{color:var(--text-main);}
+.ph-search-suggestions{list-style:none;border-top:1px solid var(--border-soft);background:var(--surface);max-height:280px;overflow-y:auto;}
+.ph-search-suggestions[hidden]{display:none;}
+.ph-search-suggestion{display:block;border-bottom:1px solid var(--border-soft);}
+.ph-search-suggestion:last-child{border-bottom:none;}
+.ph-search-suggestion a{display:flex;flex-direction:column;gap:2px;padding:10px 14px;transition:background 80ms;text-decoration:none;}
+.ph-search-suggestion a:hover,.ph-search-suggestion a:focus{background:var(--accent-h);outline:none;}
+.ph-search-suggestion__name{font-family:var(--font-jp);font-weight:700;font-size:13px;color:var(--text-main);}
+.ph-search-suggestion__name mark{background:var(--accent-h);color:var(--text-main);font-weight:700;}
+.ph-search-suggestion__meta{font-family:var(--font-mo);font-size:10px;letter-spacing:0.12em;color:var(--text-mute);text-transform:uppercase;}
+.ph-search-suggestion__en{font-family:var(--font-se);font-style:italic;font-size:11px;color:var(--text-sub);}
+.ph-search-no-result{padding:12px 14px;font-family:var(--font-mo);font-size:10px;letter-spacing:0.14em;color:var(--text-mute);text-transform:uppercase;}
 </style>
 </head><body><div class="page">
 <header class="head"><div class="head__brand"><span class="head__brand-ja"><a href="../index.html"><span class="head__brand-photo">写真</span>の座標</a></span><span class="head__brand-en">Photo Coordinates</span></div><div class="head__crumbs"><em>ERAS</em><span class="sep">/</span>1910–1920s<span class="sep">·</span>モダニズムの台頭：大戦・ダダ・ストレート写真<span class="sep">·</span>UPDATED&nbsp;<span class="updated-date">2026.05</span></div><div class="head__meta"><div class="head__lang"><button class="is-active">JP</button><button>EN</button></div></div></header>
@@ -583,35 +602,54 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
       <div class="pc-top__art"><span class="yr-birth">1897</span><span class="yr-dash">—</span><span class="yr-death">1985</span></div>
       <div class="pc-top__hint">GERMAINE KRULL · 1897–1985</div>
     </div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">ジェルメーヌ・クリュル</h3><div class="pc-body__name-en">Germaine Krull</div></div><div class="pc-body__meta">ドイツ · 1897–1985</div><p class="pc-body__lede">産業・都市・肖像・ジャーナリズムを横断した戦間期モダニズムの写真家。「メタル」（1928年）でエッフェル塔や橋梁を機械美として捉えた。</p><div class="pc-body__channel">モダニズム · フォトジャーナリズム</div><div class="pc-body__tags"><span class="pc-body__tag">モダニズム</span><span class="pc-body__tag">工業写真</span></div><div class="pc-body__cta"><span>写真史上の位置を読む</span><span>→</span></div></div></a></article></div></div></section></main>
-<aside class="era-side">      <div class="ph-side-block">
-        <div class="ph-side-block__head">Search · 写真家を探す</div>
-        <div class="ph-side-block__body">
-          <label class="era-search__label">
-            <input type="search" class="era-search__input" placeholder="写真家名・国を検索…">
-          </label>
-          <p class="er-no-result">一致する写真家が見つかりません</p>
-        </div>
+<aside class="era-side">            <div class="ph-side-search">
+        <form class="ph-side-search__form" onsubmit="return false;">
+          <label class="ph-side-search__label" for="ph-search-input">SEARCH · 写真家を探す</label>
+          <div class="ph-side-search__field">
+            <input class="ph-side-search__input" id="ph-search-input" type="search" placeholder="写真家名・運動・キーワード" autocomplete="off" aria-autocomplete="list" aria-controls="ph-search-suggestions" aria-expanded="false">
+            <button class="ph-side-search__btn" type="button" aria-label="検索">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </form>
+        <ul class="ph-search-suggestions" id="ph-search-suggestions" role="listbox" hidden></ul>
       </div>
-<div class="ph-side-block"><div class="ph-side-block__head">Entry · 時代データ</div><div class="ph-side-block__body"><div class="ph-side-meta"><div class="ph-side-meta-row"><span class="ph-side-meta-key">Period</span><span class="ph-side-meta-val">1910–1920s</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Category</span><span class="ph-side-meta-val">Era · モダニズム</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Photogs</span><span class="ph-side-meta-val">10</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Movements</span><span class="ph-side-meta-val">5</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Vol</span><span class="ph-side-meta-val">ERA · 04</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Updated</span><span class="ph-side-meta-val">2026.05</span></div></div></div></div><div class="ph-side-block"><div class="ph-side-block__head">Movements · 運動・ジャンル</div><div class="ph-side-block__body"><div class="ph-side-chips"><span class="ph-side-chip is-primary">ストレート写真</span><span class="ph-side-chip">ダダ</span><span class="ph-side-chip">バウハウス</span><span class="ph-side-chip">新即物主義</span><span class="ph-side-chip">モダニズム</span></div></div></div><div class="ph-side-block"><div class="ph-side-block__head">Keywords · キーワード</div><div class="ph-side-block__body"><div class="ph-side-chips"><span class="ph-side-chip">ストレート写真</span><span class="ph-side-chip">レイオグラフ</span><span class="ph-side-chip">新しいヴィジョン</span><span class="ph-side-chip">構成主義</span><span class="ph-side-chip">フォトグラム</span></div></div></div>
+<div class="ph-side-block"><div class="ph-side-block__head">Entry · 時代データ</div><div class="ph-side-block__body"><div class="ph-side-meta"><div class="ph-side-meta-row"><span class="ph-side-meta-key">Period</span><span class="ph-side-meta-val">1910–1920s</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Category</span><span class="ph-side-meta-val">Era · モダニズム</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Photogs</span><span class="ph-side-meta-val">10</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Movements</span><span class="ph-side-meta-val">5</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Vol</span><span class="ph-side-meta-val">ERA · 04</span></div><div class="ph-side-meta-row"><span class="ph-side-meta-key">Updated</span><span class="ph-side-meta-val">2026.05</span></div></div></div></div><div class="ph-side-block"><div class="ph-side-block__head">Movements · 運動・ジャンル</div><div class="ph-side-block__body"><div class="ph-side-chips"><span class="ph-side-chip is-primary"><a href="../movements/ストレート写真.html">ストレート写真</a></span><span class="ph-side-chip"><a href="../movements/ダダ.html">ダダ</a></span><span class="ph-side-chip"><a href="../movements/バウハウス.html">バウハウス</a></span><span class="ph-side-chip"><a href="../movements/新即物主義.html">新即物主義</a></span><span class="ph-side-chip"><a href="../movements/モダニズム.html">モダニズム</a></span></div></div></div><div class="ph-side-block"><div class="ph-side-block__head">Keywords · キーワード</div><div class="ph-side-block__body"><div class="ph-side-chips"><span class="ph-side-chip">ストレート写真</span><span class="ph-side-chip">レイオグラフ</span><span class="ph-side-chip">新しいヴィジョン</span><span class="ph-side-chip">構成主義</span><span class="ph-side-chip">フォトグラム</span></div></div></div>
 
 <div class="ph-side-block"><div class="ph-side-block__head">Navigate · 移動</div><nav class="ph-side-nav"><a href="1930.html"><span>次の時代 →</span><span>1930–40s</span></a><a href="1890.html"><span>← 前の時代</span><span>1890–1910s</span></a><a href="../archive.html"><span>← 年代一覧</span><span>All Eras</span></a><a href="../index.html"><span>トップページへ</span><span>Top</span></a></nav></div></aside>
 </div></div>
 <footer class="foot"><div>© Photo Coordinates · VOL. 04</div><div class="foot__center">美術館・アーカイブ・専門資料に基づく</div><div class="foot__right"><a href="#">プライバシー</a> · <a href="#">コロフォン</a></div></footer></div><script>
 (function(){
-  var input = document.querySelector('.era-search__input');
-  var noResult = document.querySelector('.er-no-result');
-  if (!input) return;
-  input.addEventListener('input', function() {
-    var q = this.value.trim().toLowerCase();
-    var cards = document.querySelectorAll('.er-cards .pc-card');
-    var visible = 0;
-    cards.forEach(function(c) {
-      var show = !q || c.textContent.toLowerCase().includes(q);
-      c.style.display = show ? '' : 'none';
-      if (show) visible++;
+  var input=document.getElementById('ph-search-input'),list=document.getElementById('ph-search-suggestions');
+  if(!input||!list) return;
+  var photographers=[];
+  fetch('/card-data.json').then(function(r){return r.json();}).then(function(data){
+    photographers=(data.photographers||[]).map(function(p){
+      return{name_ja:p.nameJa||'',name_en:p.nameEn||'',slug:p.id||'',url:p.href?(p.href[0]==='/'?p.href:'/'+p.href):'',
+             country:(p.metaJa||'').split('\xb7')[0].trim(),movement:p.channel||''};
     });
-    if (noResult) noResult.style.display = (q && visible === 0) ? '' : 'none';
   });
+  function matches(ph,q){var ql=q.toLowerCase();
+    return ph.name_ja.includes(q)||ph.name_en.toLowerCase().includes(ql)||
+           ph.slug.toLowerCase().includes(ql)||(ph.movement&&ph.movement.toLowerCase().includes(ql))||
+           (ph.country&&ph.country.includes(q));}
+  function hl(t,q){if(!q)return t;var i=t.toLowerCase().indexOf(q.toLowerCase());
+    if(i===-1)return t;return t.slice(0,i)+'<mark>'+t.slice(i,i+q.length)+'</mark>'+t.slice(i+q.length);}
+  function render(rs,q){list.innerHTML='';
+    if(!rs.length){list.innerHTML='<li class="ph-search-no-result">\u8a72\u5f53\u3059\u308b\u5199\u771f\u5bb6\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093</li>';
+      list.hidden=false;input.setAttribute('aria-expanded','true');return;}
+    rs.slice(0,5).forEach(function(ph){var li=document.createElement('li');
+      li.className='ph-search-suggestion';li.setAttribute('role','option');
+      li.innerHTML='<a href="'+ph.url+'"><span class="ph-search-suggestion__name">'+hl(ph.name_ja,q)+'</span>'+
+        '<span class="ph-search-suggestion__en">'+ph.name_en+'</span>'+
+        '<span class="ph-search-suggestion__meta">'+ph.country+(ph.movement?' \xb7 '+ph.movement:'')+'</span></a>';
+      list.appendChild(li);});
+    list.hidden=false;input.setAttribute('aria-expanded','true');}
+  function hide(){list.hidden=true;list.innerHTML='';input.setAttribute('aria-expanded','false');}
+  input.addEventListener('input',function(){var q=this.value.trim();if(!q){hide();return;}
+    render(photographers.filter(function(ph){return matches(ph,q);}),q);});
+  input.addEventListener('blur',function(){setTimeout(hide,150);});
+  input.addEventListener('keydown',function(e){if(e.key==='Escape'){hide();input.blur();}});
 })();
 </script>
 </body></html>
