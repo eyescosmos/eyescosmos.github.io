@@ -588,24 +588,31 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   .ph-thesis__body,
   .ph-section__body p,
   .era-context-text { font-size: 15px; }
-  .ph-section:has(.er-cards) { border: 0; background: transparent; overflow: visible; }
+  .ph-section:has(.er-cards) { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; border: 0; background: transparent; overflow: visible; }
   .ph-section:has(.er-cards) .ph-section__head { border-bottom: 0; background: transparent; padding: 8px 0 14px; }
-  .ph-section:has(.er-cards) .ph-section__body { padding: 0; background: transparent; }
+  .ph-section:has(.er-cards) .ph-section__body { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; padding: 0; background: transparent; }
   .er-cards {
     display: block !important;
     column-count: 2 !important;
     column-gap: 10px !important;
     column-fill: balance !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     padding: 6px 8px 28px !important;
     background: transparent !important;
+    overflow-x: hidden !important;
   }
   .er-cards .pc-card {
-    display: block !important;
-    width: auto !important;
-    max-width: none !important;
+    display: inline-block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
     margin: 0 0 10px !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
+    vertical-align: top !important;
     border: 0 !important;
     border-radius: 16px !important;
     overflow: hidden !important;
@@ -613,6 +620,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   }
   .er-cards .pc-card.is-hidden { display: none !important; }
   .er-cards .pc-top {
+    min-width: 0 !important;
+    max-width: 100% !important;
     min-height: 154px !important;
     padding: 34px 12px 12px !important;
     border-bottom-width: 1px !important;
@@ -629,6 +638,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     white-space: nowrap;
   }
   .er-cards .pc-top__hint { font-size: 7px !important; letter-spacing: .12em !important; line-height: 1.35 !important; }
+  .er-cards .pc-top__art { max-width: 100% !important; min-width: 0 !important; }
   .er-cards .pc-top--initials .pc-top__art { font-size: 88px !important; }
   .er-cards .pc-top--kanji .pc-top__art { font-size: 86px !important; }
   .er-cards .pc-top--number .pc-top__art { font-size: 96px !important; }
@@ -642,7 +652,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   .er-cards .yr-birth { font-size: 58px !important; }
   .er-cards .yr-dash { font-size: 18px !important; }
   .er-cards .yr-death { font-size: 36px !important; }
-  .er-cards .pc-body { padding: 13px 12px 14px !important; gap: 8px !important; }
+  .er-cards .pc-body { min-width: 0 !important; max-width: 100% !important; padding: 13px 12px 14px !important; gap: 8px !important; }
   .er-cards .pc-body__kind { font-size: 7.5px !important; letter-spacing: .14em !important; }
   .er-cards .pc-body__kind::before { width: 7px !important; height: 7px !important; }
   .er-cards .pc-body__name { font-size: 14px !important; line-height: 1.35 !important; letter-spacing: .02em !important; }
