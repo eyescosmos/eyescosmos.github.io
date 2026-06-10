@@ -378,6 +378,46 @@ grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
 - これらのページに本文を直接書くことは許可されるが、push 後に Codex が上書きする可能性がある
 - 重要な本文は `data/photographer-essay-overrides.js` への移行を検討する
 
+## ページ移行・テンプレート差し替え時の必須要素 — CRITICAL
+
+**過去に発生した問題：** 2026-06-08 の v5.1 全ページ移行（コミット 8ab5c9569）で、
+新テンプレートに GA タグが含まれておらず、日本語の写真家285・運動31・年代11・
+トップ・アーカイブの計測が約3日間止まった（2026-06-11 のコミット 33353c879 で復旧）。
+
+**ルール：デザイン移行・テンプレート差し替え・ページの新版置き換えを行うときは、
+見た目のHTMLだけでなく、以下の「不可視の必須要素」を新ページに引き継ぐこと。**
+
+### 引き継ぎ必須要素チェックリスト
+
+1. **Google Analytics**（gtag、ID: `G-2VRTV8BZEJ`）— 全公開ページに必須
+2. **meta description / canonical / hreflang（ja・en・x-default）/ OG / Twitter カード**
+3. **`<html lang="...">`** の言語属性
+4. **data-nosnippet**（UIクローム：ヘッダー・タブ・ツールバー・フィルター・件数表示・
+   フッター、カードの pc-top と pc-body__cta）
+5. **構造化データ（JSON-LD）** — 旧ページにあった場合
+6. `google739a609ca0f00aca.html`（サイト所有権確認ファイル）は削除・変更しない
+
+### 移行後の検証（push 前に必須）
+
+```bash
+# GAカバレッジ一覧（リダイレクトスタブとGoogle確認ファイル以外は全数一致すること）
+for d in . photographers movements eras countries en en/photographers en/countries en/movements en/eras; do
+  tot=$(ls $d/*.html 2>/dev/null | wc -l); has=$(grep -l googletagmanager $d/*.html 2>/dev/null | wc -l);
+  echo "$d: $tot total / $has with-GA"; done
+
+# GA欠落の自動補完（冪等。GA済み・リダイレクトスタブ・バックアップ・en/・new-design/ は自動スキップ）
+python3 scripts/insert_ga_tags.py
+```
+
+- 旧ページと新ページの `<head>` を diff し、消えるメタタグを一つずつ「消してよい」と
+  確認できるまで push しない
+- GA が不要なのは：リダイレクトスタブ（`noindex` + `http-equiv="refresh"` を両方持つ
+  転送専用ページ）、`*-backup.html`、Google 確認ファイルのみ。
+  **noindex だけのフルページ（例: fabian-marti, gabriel-orozco）には GA を入れる**
+  （noindex は検索除外であって計測除外ではない）
+- アーカイブ英語版は `scripts/build_archive_en.py` が SEO メタの日→英変換を含むため、
+  日本語 archive.html に必須要素を入れてから再生成すれば英語側にも引き継がれる
+
 
 ## 新デザインページ（new-design/）の編集ルール — CRITICAL
 
