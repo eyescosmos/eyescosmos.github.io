@@ -371,9 +371,29 @@ def main():
                       '<div class="pc-body__meta">JP · Meiji era</div>')
 
     # ── ページ chrome ──
+    JA_TITLE = '写真家アーカイブ｜時代・国・運動から探す｜写真の座標'
+    EN_TITLE = 'Photographer Archive | Browse by Era, Country, and Movement | Photo Coordinates'
+    JA_DESC = ('写真史を314枚のカードで整理した写真家アーカイブ。世界と日本の写真家283人と31の写真運動を、'
+               '時代・国・運動・タグで検索・絞り込みできる。各カードから写真史上の位置づけの解説ページへ。')
+    EN_DESC = ('Browse global and Japanese photographers by era, country, movement, and visual approach. '
+               'Using museum, archive, and specialist sources, Photo Coordinates organizes relationships '
+               'among photographers and their place in photo history.')
     chrome = [
         ('<html lang="ja">', '<html lang="en">'),
-        ('<title>写真の座標 — カードアーカイブ</title>', '<title>Photo Coordinates — Card Archive</title>'),
+        (f'<title>{JA_TITLE}</title>', f'<title>{EN_TITLE}</title>'),
+        (f'<meta name="description" content="{JA_DESC}">', f'<meta name="description" content="{EN_DESC}">'),
+        ('<link rel="canonical" href="https://eyescosmos.github.io/archive.html">',
+         '<link rel="canonical" href="https://eyescosmos.github.io/en/archive.html">'),
+        ('<meta property="og:site_name" content="写真の座標 Photo Coordinates">',
+         '<meta property="og:site_name" content="Photo Coordinates">'),
+        (f'<meta property="og:title" content="{JA_TITLE}">', f'<meta property="og:title" content="{EN_TITLE}">'),
+        (f'<meta property="og:description" content="{JA_DESC}">', f'<meta property="og:description" content="{EN_DESC}">'),
+        ('<meta property="og:url" content="https://eyescosmos.github.io/archive.html">',
+         '<meta property="og:url" content="https://eyescosmos.github.io/en/archive.html">'),
+        ('<meta property="og:locale" content="ja_JP">', '<meta property="og:locale" content="en_US">'),
+        ('<meta property="og:locale:alternate" content="en_US">', '<meta property="og:locale:alternate" content="ja_JP">'),
+        (f'<meta name="twitter:title" content="{JA_TITLE}">', f'<meta name="twitter:title" content="{EN_TITLE}">'),
+        (f'<meta name="twitter:description" content="{JA_DESC}">', f'<meta name="twitter:description" content="{EN_DESC}">'),
         ('<link rel="stylesheet" href="styles/card-v4-base.css">', '<link rel="stylesheet" href="/styles/card-v4-base.css">'),
         ('<link rel="stylesheet" href="styles/card-v5-overrides.css">', '<link rel="stylesheet" href="/styles/card-v5-overrides.css">'),
         ('<body class="lang-jp v51">', '<body class="lang-en v51">'),
@@ -394,8 +414,8 @@ def main():
          '<button class="mobile-filter-chip" data-mobile-type="movement">Movements</button>'),
         ('表示中 <span class="result-bar__num" id="visible-count">314</span> / 314',
          'Showing <span class="result-bar__num" id="visible-count">314</span> / 314'),
-        ('<div class="no-results" id="no-results">該当するカードが見つかりませんでした</div>',
-         '<div class="no-results" id="no-results">No matching cards found</div>'),
+        ('<div class="no-results" id="no-results" data-nosnippet>該当するカードが見つかりませんでした</div>',
+         '<div class="no-results" id="no-results" data-nosnippet>No matching cards found</div>'),
         ('<div class="foot__center">美術館・アーカイブ・専門資料に基づく</div>',
          '<div class="foot__center">Based on museum, archive, and specialist sources</div>'),
         ('<div class="foot__right"><a href="photographers/privacy-policy.html">プライバシー</a> · <a href="#">コロフォン</a></div>',
