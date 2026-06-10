@@ -2994,9 +2994,6 @@ body {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
       // 新デザインカード（.pc-card）を持つアーカイブのみ処理する。
-      // 旧デザイン en/archive.html の <style> はグローバルセレクタを含み、
-      // 注入するとこのページのデザインが崩れるため。
-      // 英語版アーカイブが新デザイン化されたら自動でカード上書きが有効になる。
       if (!doc.querySelector('.pc-card')) return;
       // 追加CSS (archive 固有スタイル) を index に注入
       const archiveStyle = doc.querySelector('style');
@@ -3007,8 +3004,12 @@ body {
         document.head.appendChild(s);
       }
       doc.querySelectorAll('.pc-card').forEach(card => {
+        // 英語アーカイブは pc-body__name が英語名・pc-body__name-en が日本語名。
+        // TOP12_NAMES / card-data.json の nameJa どちらでも引けるよう両方をキーにする。
         const nameEl = card.querySelector('.pc-body__name');
         if (nameEl) archiveCardMap[nameEl.textContent.trim()] = card.outerHTML;
+        const nameJaEl = card.querySelector('.pc-body__name-en');
+        if (nameJaEl) archiveCardMap[nameJaEl.textContent.trim()] = card.outerHTML;
       });
       // アーカイブ取得完了後、card-data.json も読み込み済みなら常に再描画
       if (typeof window.__cvRender === 'function' && cvPhData.length > 0) {
