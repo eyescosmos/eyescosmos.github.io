@@ -85,6 +85,7 @@
 .pc-card.is-hidden{display:none;}
 .mobile-filter-strip{display:none;}
 .mobile-filter-search{display:none;}
+.archive-sticky-filters{position:sticky;top:0;z-index:60;background:var(--surface);}
 
 @media (max-width:720px){
 html{scroll-padding-top:72px;}
@@ -116,6 +117,7 @@ body{background:#070707;overflow-x:hidden;}
 .head__lang button.is-active{background:#0e0c0a;color:#fafaf5;}
 .archive-hero{display:none;}
 .archive-body{padding:0 0 28px;background:#070707;border-bottom:0;}
+.archive-sticky-filters{position:static;}
 .toolbar,
 .toolbar-era{display:none;}
 .mobile-filter-strip{
@@ -291,6 +293,7 @@ body{background:#070707;overflow-x:hidden;}
     <div class="archive-hero__sub" data-nosnippet>283 PHOTOGRAPHERS · 31 MOVEMENTS · 314 TOTAL</div>
   </section>
   <div class="archive-body">
+    <div class="archive-sticky-filters">
     <div class="toolbar" id="type-toolbar" data-nosnippet>
       <label class="toolbar__search">
         <input type="search" id="search-input" placeholder="写真家名・運動・国・タグで検索…" autocomplete="off">
@@ -303,6 +306,7 @@ body{background:#070707;overflow-x:hidden;}
       <span class="toolbar-era__label">Era</span>
       <button class="pill-era is-active" data-era="">All</button>
       <button class="pill-era" data-era="1839">1839–</button><button class="pill-era" data-era="1870">1870s</button><button class="pill-era" data-era="1890">1890s</button><button class="pill-era" data-era="1910">1910s</button><button class="pill-era" data-era="1930">1930s</button><button class="pill-era" data-era="1950">1950s</button><button class="pill-era" data-era="1970">1970s</button><button class="pill-era" data-era="1980">1980s</button><button class="pill-era" data-era="1990">1990s</button><button class="pill-era" data-era="2000">2000s</button><button class="pill-era" data-era="2010">2010s–</button>
+    </div>
     </div>
     <div class="mobile-filter-strip" id="mobile-filter-strip" data-nosnippet>
       <label class="mobile-filter-search">
