@@ -440,7 +440,7 @@ def main():
          '<div class="no-results" id="no-results" data-nosnippet>No matching cards found</div>'),
         ('<div class="foot__center">美術館・アーカイブ・専門資料に基づく</div>',
          '<div class="foot__center">Based on museum, archive, and specialist sources</div>'),
-        ('<div class="foot__right"><a href="photographers/privacy-policy.html">プライバシー</a> · <a href="#">コロフォン</a></div>',
+        ('<div class="foot__right"><a href="privacy-policy.html">プライバシー</a> · <a href="#">コロフォン</a></div>',
          '<div class="foot__right"><a href="/en/privacy-policy.html">Privacy</a> · <a href="#">Colophon</a></div>'),
     ]
     for a, b in chrome:
