@@ -4786,5 +4786,34 @@ PHOTOGRAPHERS.push(
     "textEn": "Coming soon.",
     "citations": []
   }
+},
+{
+  "id": "arata-dodo",
+  "name": "Arata Dodo",
+  "nameJa": "百々新",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1974–",
+  "gender": "男性",
+  "era": "2000",
+  "movements": [
+    "ドキュメンタリー"
+  ],
+  "thumbnail": "",
+  "links": [
+    { "label": "shashasha — Arata DODO", "url": "https://www.shashasha.co/en/artist/arata-dodo" },
+    { "label": "Akaaka — 対岸 / Taigan", "url": "https://akaaka.com/publishing/dodo-taigan/" },
+    { "label": "Case Publishing — White Map on the Silk Road", "url": "https://case-publishing.jp/en/publication/white-map-on-the-silk-road" }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "百々新は1974年大阪生まれの写真家。『上海の流儀』『対岸』『White Map on the Silk Road』などで、上海、カスピ海沿岸、シルクロード、京都などを移動しながら、人々の生活、土地の空気、見る者との距離を写真集として編んできた*1。\n\n代表作『対岸』はカスピ海を囲む地域をめぐるシリーズで、地理的な向こう岸だけでなく、自分と他者、現在と未来の距離を考えるための言葉として「対岸」を扱う*2。『White Map on the Silk Road』では複数の旅の写真が組み直され、異国趣味ではなく、生活の多様な形に近づく視線が前面に出る*3。\n\n写真史上は、旅写真を観光的な記録にとどめず、写真集の順序と断片によって、移動する身体と土地の生活感覚のあいだに生まれる距離を見せる現代ドキュメンタリーの作家として位置づけられる。『対岸』で木村伊兵衛写真賞を受賞した*1。",
+    "textEn": "Arata Dodo is a Japanese photographer born in Osaka in 1974. His books, including Shanghai Style, Taigan, and White Map on the Silk Road, build travel into a form of contemporary documentary, moving through Shanghai, the Caspian Sea region, the Silk Road, and Kyoto while attending to everyday life, distance, and the rhythm of the photobook*1.\n\nTaigan follows places around the Caspian Sea and treats the idea of the opposite shore not only as geography, but also as a way to think about the distance between self, others, present life, and possible futures*2. White Map on the Silk Road gathers several journeys into a book that looks less for exotic difference than for the many ways people organize daily life*3.\n\nWithin photography history, Dodo is best understood as a contemporary Japanese photographer who turns travel into a photobook structure: fragments of streets, people, light, and movement become a way to measure the relation between the photographer's body and the places he encounters. Taigan received the Kimura Ihei Photography Award*1.",
+    "citations": [
+      { "num": 1, "name": "shashasha — Arata DODO", "url": "https://www.shashasha.co/en/artist/arata-dodo" },
+      { "num": 2, "name": "Akaaka — 対岸 / Taigan", "url": "https://akaaka.com/publishing/dodo-taigan/" },
+      { "num": 3, "name": "Case Publishing — White Map on the Silk Road", "url": "https://case-publishing.jp/en/publication/white-map-on-the-silk-road" }
+    ]
+  }
 }
 );
