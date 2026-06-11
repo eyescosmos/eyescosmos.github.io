@@ -7,3 +7,6 @@ __pycache__/
 dist/
 build/
 .env
+
+# ローカル作業用（過去に誤コミット→削除済み。dd8bc74cf 参照）
+new-design/
