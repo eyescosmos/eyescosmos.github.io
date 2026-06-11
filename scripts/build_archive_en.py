@@ -17,6 +17,24 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+def build_movement_slug_map():
+    """en/movements のリダイレクトスタブ（日本語ファイル名）から 日本語名.html → 英語スラッグ.html の対応表を作る"""
+    d = os.path.join(ROOT, 'en', 'movements')
+    mapping = {}
+    for fn in os.listdir(d):
+        if not fn.endswith('.html') or fn.isascii():
+            continue
+        with open(os.path.join(d, fn), encoding='utf-8') as f:
+            head = f.read(1000)
+        m = re.search(r'url=https://eyescosmos\.github\.io/en/movements/([^"]+?\.html)', head)
+        if m:
+            mapping[fn] = m.group(1)
+    return mapping
+
+
+MOVEMENT_SLUG_MAP = build_movement_slug_map()
+
 LEDE_MAX = 178  # 日本語版の86字トランケートに視覚的に相当する英語の長さ
 
 # ── チャンネル接頭辞（日本語 → 英語）。接尾辞（· 以降）は既に英語なので維持 ──
@@ -351,7 +369,11 @@ def main():
         href_m = re.search(r'<a href="([^"]+)" target', card)
         href = href_m.group(1)
         if is_movement:
-            new_href = '/en' + href if href.startswith('/movements/') else href
+            if href.startswith('/movements/'):
+                fn = unesc(href[len('/movements/'):])
+                new_href = '/en/movements/' + MOVEMENT_SLUG_MAP.get(fn, fn)
+            else:
+                new_href = href
         else:
             pid = name_en2id.get(name_en, '')
             if pid in NO_EN_PAGE:
