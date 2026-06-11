@@ -1294,11 +1294,20 @@ def unlink_orphan_cite_refs(html):
 
 
 def apply_id_aliases(html):
-    """EN ページ内の日本語ファイル名 photographer リンクを ASCII id に統一する"""
+    """EN ページ内の photographer リンクを実在チェックで補正する。
+    EN ページが無く JA ページのみ存在する場合は JA ページへ向ける。"""
     for ja_id, ascii_id in FALLBACK_ID_ALIAS.items():
         html = html.replace(f'photographers/{ja_id}.html',
                             f'photographers/{ascii_id}.html')
-    return html
+
+    def repl(m):
+        ph_id = m.group(1)
+        if not os.path.exists(os.path.join(ROOT, 'en', 'photographers', f'{ph_id}.html')) \
+                and os.path.exists(os.path.join(ROOT, 'photographers', f'{ph_id}.html')):
+            return f'href="/photographers/{ph_id}.html"'
+        return m.group(0)
+
+    return re.sub(r'href="\.\./photographers/([^"]+)\.html"', repl, html)
 
 
 def add_nosnippet_chrome(html):
