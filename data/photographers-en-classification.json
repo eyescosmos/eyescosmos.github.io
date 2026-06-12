@@ -1,0 +1,223 @@
+{
+  "ja_count": 293,
+  "en_count": 298,
+  "both": 281,
+  "missing_en": [
+    "alec-soth.html",
+    "arata-dodo.html",
+    "boris-mikhailov.html",
+    "edward-burtynsky.html",
+    "fabian-marti.html",
+    "gabriel-orozco.html",
+    "gregory-crewdson.html",
+    "jp-木村伊兵衛.html",
+    "masashi-asada.html",
+    "rineke-dijkstra.html",
+    "thomas-struth.html",
+    "zanele-muholi.html"
+  ],
+  "extra_en": {
+    "denjiro-hasegawa.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 23528
+    },
+    "hachiro-suzuki.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 30093
+    },
+    "iwata-nakayama.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 27505
+    },
+    "kajima-seibei.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 25056
+    },
+    "kohei-yasu.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 31476
+    },
+    "koreaki-kamei.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 28922
+    },
+    "koyo-kageyama.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 24063
+    },
+    "nakaji-yasui.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 28247
+    },
+    "ryuzo-torii.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 29772
+    },
+    "shigene-kanamaru.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 27037
+    },
+    "shinzo-fukuhara.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 28736
+    },
+    "shoji-ueda.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 32451
+    },
+    "stieglitz-backup.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 37813
+    },
+    "tomishige-rihei.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 26963
+    },
+    "tomishige-tokuji.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 24335
+    },
+    "yasuzo-nojima.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 29058
+    },
+    "yokoyama-matsusaburo.html": {
+      "redirect": false,
+      "noindex": false,
+      "target": null,
+      "size": 31836
+    }
+  },
+  "jp_slug_mapping": {
+    "denjiro-hasegawa.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-長谷川伝次郎.html",
+      "ja_file": "jp-長谷川伝次郎.html",
+      "ja_exists": true
+    },
+    "hachiro-suzuki.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-鈴木八郎.html",
+      "ja_file": "jp-鈴木八郎.html",
+      "ja_exists": true
+    },
+    "iwata-nakayama.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-中山岩太.html",
+      "ja_file": "jp-中山岩太.html",
+      "ja_exists": true
+    },
+    "kajima-seibei.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-鹿島清兵衛.html",
+      "ja_file": "jp-鹿島清兵衛.html",
+      "ja_exists": true
+    },
+    "kohei-yasu.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-屋須弘平.html",
+      "ja_file": "jp-屋須弘平.html",
+      "ja_exists": true
+    },
+    "koreaki-kamei.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-亀井茲明.html",
+      "ja_file": "jp-亀井茲明.html",
+      "ja_exists": true
+    },
+    "koyo-kageyama.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-影山光洋.html",
+      "ja_file": "jp-影山光洋.html",
+      "ja_exists": true
+    },
+    "nakaji-yasui.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-安井仲治.html",
+      "ja_file": "jp-安井仲治.html",
+      "ja_exists": true
+    },
+    "ryuzo-torii.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-鳥居龍蔵.html",
+      "ja_file": "jp-鳥居龍蔵.html",
+      "ja_exists": true
+    },
+    "shigene-kanamaru.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-金丸重嶺.html",
+      "ja_file": "jp-金丸重嶺.html",
+      "ja_exists": true
+    },
+    "shinzo-fukuhara.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-福原信三.html",
+      "ja_file": "jp-福原信三.html",
+      "ja_exists": true
+    },
+    "shoji-ueda.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-植田正治.html",
+      "ja_file": "jp-植田正治.html",
+      "ja_exists": true
+    },
+    "tomishige-rihei.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-冨重利平.html",
+      "ja_file": "jp-冨重利平.html",
+      "ja_exists": true
+    },
+    "tomishige-tokuji.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-冨重徳次.html",
+      "ja_file": "jp-冨重徳次.html",
+      "ja_exists": true
+    },
+    "yasuzo-nojima.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-野島康三.html",
+      "ja_file": "jp-野島康三.html",
+      "ja_exists": true
+    },
+    "yokoyama-matsusaburo.html": {
+      "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-横山松三郎.html",
+      "ja_file": "jp-横山松三郎.html",
+      "ja_exists": true
+    }
+  },
+  "stieglitz_backup_note": "en/photographers/stieglitz-backup.html is a backup remnant; excluded from build",
+  "jp_pages_without_en": [
+    "jp-木村伊兵衛.html"
+  ],
+  "missing_en_true": [
+    "alec-soth.html",
+    "arata-dodo.html",
+    "boris-mikhailov.html",
+    "edward-burtynsky.html",
+    "fabian-marti.html",
+    "gabriel-orozco.html",
+    "gregory-crewdson.html",
+    "jp-木村伊兵衛.html",
+    "masashi-asada.html",
+    "rineke-dijkstra.html",
+    "thomas-struth.html",
+    "zanele-muholi.html"
+  ]
+}
