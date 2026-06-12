@@ -1120,6 +1120,281 @@ def add_nosnippet(html):
 
 # ── KEYWORDS label translation (Keywords already English label) ────────────
 
+# ── RESIDUAL JA→EN translation pass ────────────────────────────────────────
+UI_TERMS_JSON = os.path.join(ROOT, 'data', 'photographers-en-ui-terms.json')
+_UI_TERMS = None
+_SLUG_TO_NAME_EN = None
+
+
+def load_ui_terms():
+    global _UI_TERMS
+    if _UI_TERMS is None:
+        _UI_TERMS = json.load(open(UI_TERMS_JSON, encoding='utf-8'))
+    return _UI_TERMS
+
+
+def load_slug_to_name_en():
+    """slug (id) → nameEn from card-data.json, for Navigate prev/next labels."""
+    global _SLUG_TO_NAME_EN
+    if _SLUG_TO_NAME_EN is None:
+        _SLUG_TO_NAME_EN = {}
+        cd = json.load(open(os.path.join(ROOT, 'card-data.json'), encoding='utf-8'))
+        for grp in ('photographers', 'movements'):
+            for item in cd.get(grp, []):
+                pid = item.get('id')
+                nen = item.get('nameEn')
+                if pid and nen:
+                    _SLUG_TO_NAME_EN[pid] = nen
+    return _SLUG_TO_NAME_EN
+
+
+def _translate_term(seg, terms, countries, warnings, page_label):
+    """Translate one JA segment via countries→terms; warn+return-as-is on miss."""
+    seg = seg.strip()
+    if not seg or not CJK_RE.search(seg):
+        return seg
+    if seg in countries:
+        return countries[seg]
+    if seg in terms:
+        return terms[seg]
+    warnings.append(f'{page_label}: untranslated term: {seg}')
+    return seg
+
+
+def _translate_compound(value, terms, countries, warnings, page_label):
+    """Split a compound 'A / B' value on ' / ' and translate each part."""
+    parts = value.split(' / ')
+    return ' / '.join(
+        _translate_term(p, terms, countries, warnings, page_label) for p in parts
+    )
+
+
+def _strip_arrow(s):
+    return s[:-2].rstrip() if s.endswith(' ↗') else s
+
+
+def translate_residuals(html, page, slug, ja_file, warnings):
+    ui = load_ui_terms()
+    terms = ui['terms']
+    countries = ui['countries']
+    channels = ui['channels']
+    fixed = ui['fixed']
+    works_labels = ui['works_labels']
+    page_label = ja_file
+
+    # (a) Brand: 写真の座標 → Photo Coordinates
+    html = html.replace(
+        '<span class="head__brand-photo">写真</span>の座標',
+        '<span class="head__brand-photo">Photo</span> Coordinates',
+    )
+
+    # (b) Period values  "1970s / 1970年代" → "1970s"  (hero years, meta dd, side meta)
+    html = re.sub(r'(\d{4})s / \1年代', r'\1s', html)
+    # standalone 明治期 etc. handled by term dicts in (d)
+
+    # (j) Hero art: rebuild CJK ph-hero__art from EN h1 initials
+    h1m = re.search(r'<h1 class="ph-hero__name">(.*?)</h1>', html, re.S)
+    en_name = re.sub(r'<[^>]+>', '', h1m.group(1)).strip() if h1m else ''
+
+    def repl_hero_art(m):
+        inner = m.group(1)
+        if not CJK_RE.search(inner):
+            return m.group(0)
+        toks = [t for t in re.split(r'\s+', en_name) if t]
+        if len(toks) >= 2:
+            x, y = toks[0][0], toks[-1][0]
+        elif toks:
+            x = toks[0][0]
+            y = toks[0][1] if len(toks[0]) > 1 else toks[0][0]
+        else:
+            return m.group(0)
+        return f'<div class="ph-hero__art">{x}<span>{y}</span></div>'
+
+    html = re.sub(r'<div class="ph-hero__art">(.*?)</div>', repl_hero_art, html, flags=re.S)
+
+    # (c) Channel strings inside ph-hero__meta-item <strong> (Channel<strong>…</strong>)
+    def repl_channel(m):
+        val = m.group(1)
+        if not CJK_RE.search(val):
+            return m.group(0)
+        if ' · ' in val:
+            seg0, seg1 = val.split(' · ', 1)
+            seg0 = channels.get(seg0.strip(), seg0.strip())
+            if CJK_RE.search(seg1):
+                seg1 = _translate_term(seg1, terms, countries, warnings, page_label)
+            new = seg0 + ' · ' + seg1
+        else:
+            new = channels.get(val.strip(), val.strip())
+            if CJK_RE.search(new):
+                warnings.append(f'{page_label}: untranslated channel: {val.strip()}')
+        return m.group(0).replace('>' + val + '<', '>' + new + '<')
+
+    html = re.sub(r'Channel<strong>([^<]*)</strong>', repl_channel, html)
+
+    # (d) eyebrow trailing term (after last —)
+    def repl_eyebrow(m):
+        inner = m.group(1)
+        if '—' in inner:
+            head, last = inner.rsplit('—', 1)
+            last_s = last.strip()
+            if CJK_RE.search(last_s):
+                t = _translate_term(last_s, terms, countries, warnings, page_label)
+                return '<div class="ph-hero__eyebrow">' + head + '— ' + t + '</div>'
+        return m.group(0)
+
+    html = re.sub(r'<div class="ph-hero__eyebrow">(.*?)</div>', repl_eyebrow, html, flags=re.S)
+
+    # Helper: translate a CJK text node that may be bare or wrapped in <a>…</a>
+    def _translate_node(inner):
+        am = re.fullmatch(r'(\s*<a [^>]*>)(.*?)(</a>\s*)', inner, re.S)
+        if am:
+            txt = am.group(2).strip()
+            if not CJK_RE.search(txt):
+                return inner
+            new = _translate_compound(txt, terms, countries, warnings, page_label)
+            return am.group(1) + new + am.group(3)
+        txt = inner.strip()
+        if not CJK_RE.search(txt):
+            return inner
+        return _translate_compound(txt, terms, countries, warnings, page_label)
+
+    # (d) keyword chips: ph-kw, ph-side-chip  (bare text or <a>-wrapped)
+    def repl_kw(m):
+        open_tag, inner, close_tag = m.group(1), m.group(2), m.group(3)
+        if not CJK_RE.search(inner):
+            return m.group(0)
+        return open_tag + _translate_node(inner) + close_tag
+
+    html = re.sub(r'(<span class="ph-kw">)(.*?)(</span>)', repl_kw, html, flags=re.S)
+    html = re.sub(r'(<span class="ph-side-chip(?: is-primary)?">)(.*?)(</span>)',
+                  repl_kw, html, flags=re.S)
+
+    # (d) meta dd values: ph-side-meta-val (bare text or <a>-wrapped)
+    def repl_side_meta(m):
+        inner = m.group(1)
+        if not CJK_RE.search(inner):
+            return m.group(0)
+        return '<span class="ph-side-meta-val">' + _translate_node(inner) + '</span>'
+
+    html = re.sub(r'<span class="ph-side-meta-val">(.*?)</span>', repl_side_meta, html, flags=re.S)
+
+    # (d) entry-meta <dd> values (Country / Period / Movement etc.)
+    def repl_dd(m):
+        inner = m.group(1)
+        if not CJK_RE.search(inner):
+            return m.group(0)
+        return '<dd>' + _translate_node(inner) + '</dd>'
+
+    html = re.sub(r'<dd>(.*?)</dd>', repl_dd, html, flags=re.S)
+
+    # (d) hero meta Country / Period / Movement <strong>…</strong>  (compound)
+    def repl_hero_country(m):
+        val = m.group(1)
+        if not CJK_RE.search(val):
+            return m.group(0)
+        new = _translate_compound(val.strip(), terms, countries, warnings, page_label)
+        return m.group(0).replace('>' + val + '<', '>' + new + '<')
+
+    html = re.sub(r'(?:Country|Period|Movement)<strong>([^<]*)</strong>',
+                  repl_hero_country, html)
+
+    # (e) chip-link labels (works links + side works)
+    def repl_chip_link(m):
+        pre, inner = m.group(1), m.group(2)
+        base = _strip_arrow(inner)
+        had_arrow = inner.endswith(' ↗')
+        if not CJK_RE.search(base):
+            return m.group(0)
+        if base in works_labels:
+            new = works_labels[base]
+        else:
+            warnings.append(f'{page_label}: untranslated works label: {base}')
+            new = base
+        return pre + new + (' ↗' if had_arrow else '') + '</a>'
+
+    html = re.sub(r'(<a class="chip-link"[^>]*>)(.*?)</a>', repl_chip_link, html, flags=re.S)
+
+    # (f) Sidebar Navigate prev/next: resolve adjacent slug → nameEn
+    name_map = load_slug_to_name_en()
+
+    def repl_nav(m):
+        href, span_inner, tail = m.group(1), m.group(2), m.group(3)
+        if not CJK_RE.search(span_inner):
+            return m.group(0)
+        sm = re.search(r'/(?:en/)?photographers/([^"/]+)\.html$', href)
+        new_label = None
+        if sm:
+            tgt_slug = urllib.parse.unquote(sm.group(1))
+            new_label = name_map.get(tgt_slug)
+            if not new_label:
+                # fallback: harvest h1 of that EN page
+                cand = os.path.join(EN_DIR, tgt_slug + '.html')
+                if os.path.exists(cand):
+                    hh = open(cand, encoding='utf-8').read()
+                    hm = re.search(r'<h1 class="ph-hero__name">(.*?)</h1>', hh, re.S)
+                    if hm:
+                        new_label = re.sub(r'<[^>]+>', '', hm.group(1)).strip()
+        if not new_label:
+            warnings.append(f'{page_label}: untranslated nav label: {span_inner.strip()}')
+            return m.group(0)
+        # preserve arrow position
+        if span_inner.strip().startswith('←'):
+            rebuilt = '← ' + new_label
+        elif span_inner.strip().endswith('→'):
+            rebuilt = new_label + ' →'
+        else:
+            rebuilt = new_label
+        return f'<a href="{href}"><span>{rebuilt}</span>{tail}'
+
+    html = re.sub(
+        r'<a href="([^"]+)"><span>([^<]*)</span>(<span>[^<]*</span></a>)',
+        repl_nav, html,
+    )
+
+    # (g) prep-block / ph-works-note (exact fixed-dict match)
+    def repl_fixed(m):
+        open_tag, inner = m.group(1), m.group(2)
+        txt = inner.strip()
+        if not CJK_RE.search(txt):
+            return m.group(0)
+        if txt in fixed:
+            return open_tag + fixed[txt] + m.group(0)[len(open_tag) + len(inner):]
+        warnings.append(f'{page_label}: unmatched fixed note: {txt}')
+        return m.group(0)
+
+    html = re.sub(
+        r'(<(?:p|div) class="(?:ph-works-note|prep-block)"[^>]*>)([^<]*)</(?:p|div)>',
+        repl_fixed, html)
+
+    # (h) head__crumbs trailing JA keyword run (after a · separator)
+    cm = re.search(r'(<div class="head__crumbs">)(.*?)(</div>)', html, re.S)
+    if cm and CJK_RE.search(cm.group(2)):
+        crumb = cm.group(2)
+
+        def repl_crumb_seg(mm):
+            seg = mm.group(1)
+            if not CJK_RE.search(seg):
+                return mm.group(0)
+            t = seg.strip()
+            tr = channels.get(t) or terms.get(t) or countries.get(t)
+            if tr is None:
+                warnings.append(f'{page_label}: untranslated crumb term: {t}')
+                return mm.group(0)
+            return mm.group(0).replace(seg, tr)
+
+        # translate text after each <span class="sep">…</span>
+        crumb2 = re.sub(r'(?<=</span>)([^<]+)', repl_crumb_seg, crumb)
+        html = html[:cm.start()] + cm.group(1) + crumb2 + cm.group(3) + html[cm.end():]
+
+    # (i) Search widget ids on jp-mapped pages: JA stem → EN slug
+    ja_stem = ja_file[:-5]
+    if ja_stem != slug and CJK_RE.search(ja_stem):
+        for prefix in ('ph-search-input-', 'ph-search-suggestions-'):
+            html = html.replace(prefix + ja_stem, prefix + slug)
+
+    return html
+
+
 # ── main per-page processing ───────────────────────────────────────────────
 def process_page(ja_file, page, ja_to_en, warnings):
     ja_path = os.path.join(JA_DIR, ja_file)
@@ -1152,6 +1427,7 @@ def process_page(ja_file, page, ja_to_en, warnings):
     html = rebuild_footer(html)
     html = absolutize_and_localize_links(html, slug, ja_to_en)
     html = add_nosnippet(html)
+    html = translate_residuals(html, page, slug, ja_file, warnings)
 
     return slug, html
 

@@ -210,6 +210,18 @@ def audit(slug, html):
             fails.append('ph-rel-list item has CJK run 3+')
             break
 
+    # ── NEW: zero visible CJK (text nodes only) outside ph-hero__en ──
+    vis = re.sub(r'<style\b[^>]*>.*?</style>', '', html, flags=re.S | re.I)
+    vis = re.sub(r'<script\b[^>]*>.*?</script>', '', vis, flags=re.S | re.I)
+    # drop the allowed native-script name element
+    vis = re.sub(r'<div class="ph-hero__en">.*?</div>', '', vis, flags=re.S)
+    # remove all tags (incl. attribute values) leaving only text nodes
+    vis = re.sub(r'<[^>]+>', '', vis)
+    runs = re.findall(r'[぀-ヿ㐀-䶿一-鿿豈-﫿][぀-ヿ㐀-䶿一-鿿豈-﫿\sぁ-ゟ・＝／]*', vis)
+    runs = [r.strip() for r in runs if r.strip()]
+    if runs:
+        fails.append('visible CJK: ' + '; '.join(runs[:5]))
+
     return fails
 
 
