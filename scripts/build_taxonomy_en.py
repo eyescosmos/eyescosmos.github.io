@@ -550,13 +550,25 @@ def unesc(t):
              .replace('&lt;', '<').replace('&gt;', '>'))
 
 
-def load_en_archive_cards():
-    """Build mapping from photographer-id → card HTML from en/archive.html"""
+def load_en_archive_cards(swap_nationality=False):
+    """Build mapping from photographer-id → card HTML from en/archive.html.
+
+    swap_nationality: if True, replace <span>PHOTOGRAPHER</span> with the
+    nationality code from card-data.json.  Pass True only for era pages;
+    movement pages keep the PHOTOGRAPHER placeholder so they stay in sync
+    with the Japanese movement pages.
+    """
     fp = os.path.join(ROOT, 'en/archive.html')
     html = open(fp, encoding='utf-8').read()
     cards = re.findall(
         r'(<article class="pc-card pc-card--photographer"[^>]*>.*?</article>)',
         html, re.S)
+    if swap_nationality:
+        # Load card-data.json for nationality lookup
+        card_data_fp = os.path.join(ROOT, 'card-data.json')
+        with open(card_data_fp, encoding='utf-8') as _f:
+            _card_data = json.load(_f)
+        _nationality_map = {p['id']: p.get('nationality', '') for p in _card_data.get('photographers', [])}
     id_to_card = {}
     for card in cards:
         m = re.search(r'href="(/en/photographers/([^"]+))"', card)
@@ -565,6 +577,11 @@ def load_en_archive_cards():
             # Fix href for relative path from en/movements/ or en/eras/
             fixed = card.replace('href="/en/photographers/', 'href="../photographers/')
             fixed = fixed.replace('target="_blank"', '')  # open in same window
+            # Replace PHOTOGRAPHER placeholder with nationality code if requested
+            if swap_nationality:
+                nationality = _nationality_map.get(ph_id, '')
+                if nationality and '<span>PHOTOGRAPHER</span>' in fixed:
+                    fixed = fixed.replace('<span>PHOTOGRAPHER</span>', f'<span>{nationality}</span>', 1)
             id_to_card[ph_id] = fixed
     return id_to_card
 
@@ -1759,7 +1776,7 @@ def build_movements():
 
 def build_eras():
     en_data = json.load(open(os.path.join(ROOT, 'data/taxonomy-en-content.json'), encoding='utf-8'))
-    id_to_card = load_en_archive_cards()
+    id_to_card = load_en_archive_cards(swap_nationality=True)
 
     all_missing = []
     generated = 0
