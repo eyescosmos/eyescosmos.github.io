@@ -200,24 +200,30 @@
       "ja_hreflang": "https://eyescosmos.github.io/photographers/jp-横山松三郎.html",
       "ja_file": "jp-横山松三郎.html",
       "ja_exists": true
+    },
+    "ihei-kimura.html": {
+      "ja_hreflang": "../../photographers/jp-%E6%9C%A8%E6%9D%91%E4%BC%8A%E5%85%B5%E8%A1%9B.html",
+      "ja_file": "jp-木村伊兵衛.html",
+      "ja_exists": true
     }
   },
   "stieglitz_backup_note": "en/photographers/stieglitz-backup.html is a backup remnant; excluded from build",
   "jp_pages_without_en": [
     "jp-木村伊兵衛.html"
   ],
-  "missing_en_true": [
+  "missing_en_true": [],
+  "translated_stage4": [
     "alec-soth.html",
     "arata-dodo.html",
     "boris-mikhailov.html",
     "edward-burtynsky.html",
-    "fabian-marti.html",
-    "gabriel-orozco.html",
     "gregory-crewdson.html",
     "jp-木村伊兵衛.html",
     "masashi-asada.html",
     "rineke-dijkstra.html",
     "thomas-struth.html",
-    "zanele-muholi.html"
+    "zanele-muholi.html",
+    "fabian-marti.html",
+    "gabriel-orozco.html"
   ]
 }

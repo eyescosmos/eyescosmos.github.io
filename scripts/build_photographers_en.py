@@ -197,7 +197,7 @@ def translate_movement_name(ja_name):
 
 
 # ── HEAD rebuild ───────────────────────────────────────────────────────────
-def build_head_meta(page, slug):
+def build_head_meta(page, slug, noindex=False):
     en_url = f'{BASE}/en/photographers/{slug}.html'
     hreflang = page.get('hreflang') or {}
     ja_url = hreflang.get('ja') or f'{BASE}/photographers/{slug}.html'
@@ -214,7 +214,8 @@ def build_head_meta(page, slug):
     if desc:
         lines.append(f'<meta name="description" content="{attr_esc(unesc(desc))}">')
     lines.append(f'<link rel="canonical" href="{en_url}">')
-    lines.append('<meta name="robots" content="index, follow">')
+    lines.append('<meta name="robots" content="%s">'
+                 % ('noindex, follow' if noindex else 'index, follow'))
     lines.append(f'<link rel="alternate" hreflang="ja" href="{ja_url}">')
     lines.append(f'<link rel="alternate" hreflang="en" href="{en_href}">')
     lines.append(f'<link rel="alternate" hreflang="x-default" href="{xd}">')
@@ -251,20 +252,79 @@ def build_head_meta(page, slug):
     return '\n'.join(lines)
 
 
+def _strip_ja_head_meta(head_html):
+    """Remove ALL JA per-page meta from a <head> fragment, wherever it appears:
+    <title>, meta description, canonical link, hreflang alternates, all og:*
+    and twitter:* metas, robots meta (but keep one if it carries noindex), and
+    all JSON-LD script blocks. Keep charset, viewport, font preconnect/links,
+    inline <style>, GA scripts, and any other meta we don't recognize."""
+    # JSON-LD blocks (any position)
+    head_html = re.sub(
+        r'[ \t]*<script type="application/ld\+json">.*?</script>\s*\n?',
+        '', head_html, flags=re.S | re.I)
+
+    # robots: drop all (the EN block emits its own, noindex-aware)
+    head_html = re.sub(r'[ \t]*<meta name="robots"[^>]*>\s*\n?',
+                       '', head_html, flags=re.I)
+
+    # title
+    head_html = re.sub(r'[ \t]*<title>.*?</title>\s*\n?', '',
+                       head_html, flags=re.S | re.I)
+    # meta description
+    head_html = re.sub(r'[ \t]*<meta name="description"[^>]*>\s*\n?', '',
+                       head_html, flags=re.I)
+    # canonical
+    head_html = re.sub(r'[ \t]*<link rel="canonical"[^>]*>\s*\n?', '',
+                       head_html, flags=re.I)
+    # hreflang alternates
+    head_html = re.sub(r'[ \t]*<link rel="alternate" hreflang="[^"]*"[^>]*>\s*\n?',
+                       '', head_html, flags=re.I)
+    # all og:* metas
+    head_html = re.sub(r'[ \t]*<meta property="og:[^"]*"[^>]*>\s*\n?', '',
+                       head_html, flags=re.I)
+    # all twitter:* metas
+    head_html = re.sub(r'[ \t]*<meta name="twitter:[^"]*"[^>]*>\s*\n?', '',
+                       head_html, flags=re.I)
+    return head_html
+
+
 def replace_head(html, page, slug):
-    """Strip the JA per-page meta tags (between viewport and the fonts link)
-    and insert the EN meta block. Preserve charset/viewport/fonts/style/GA."""
-    # Anchor 1: end of the viewport meta tag.
-    vp = re.search(r'<meta name="viewport"[^>]*>', html)
+    """Strip ALL JA per-page meta across the entire <head> (wherever it sits,
+    before or after the fonts link) and insert the EN meta block right after the
+    viewport meta. Preserve charset/viewport/fonts/style/GA."""
+    head_m = re.search(r'<head\b[^>]*>(.*?)</head>', html, re.S | re.I)
+    if not head_m:
+        raise ValueError('no <head>')
+    head_inner = head_m.group(1)
+
+    # Anchor: end of the viewport meta tag (within head).
+    vp = re.search(r'<meta name="viewport"[^>]*>', head_inner)
     if not vp:
         raise ValueError('no viewport meta')
-    head_open_end = vp.end()
-    # Anchor 2: the fonts <link> (preconnect + stylesheet block start).
-    fonts = re.search(r'<link rel="preconnect"', html)
-    if not fonts or fonts.start() < head_open_end:
-        raise ValueError('no fonts preconnect after viewport')
-    new_block = '\n' + build_head_meta(page, slug) + '\n'
-    return html[:head_open_end] + new_block + html[fonts.start():]
+
+    noindex = bool(re.search(r'<meta name="robots"[^>]*noindex', head_inner, re.I))
+    cleaned = _strip_ja_head_meta(head_inner)
+    # Re-find viewport in the cleaned fragment (offsets shifted by removals).
+    vp2 = re.search(r'<meta name="viewport"[^>]*>', cleaned)
+    head_open_end = vp2.end()
+    new_block = '\n' + build_head_meta(page, slug, noindex=noindex) + '\n'
+    new_head_inner = cleaned[:head_open_end] + new_block + cleaned[head_open_end:]
+    return html[:head_m.start(1)] + new_head_inner + html[head_m.end(1):]
+
+
+def strip_body_jsonld(html):
+    """Remove any JSON-LD script blocks in the <body> (JA leftovers). The only
+    JSON-LD on the page must be the EN block inserted in <head>."""
+    body_m = re.search(r'<body\b[^>]*>(.*)</body>', html, re.S | re.I)
+    if not body_m:
+        return html
+    body = body_m.group(1)
+    new_body = re.sub(
+        r'[ \t]*<script type="application/ld\+json">.*?</script>\s*\n?',
+        '', body, flags=re.S | re.I)
+    if new_body == body:
+        return html
+    return html[:body_m.start(1)] + new_body + html[body_m.end(1):]
 
 
 # ── EN readability style override (idempotent) ────────────────────────────
@@ -631,8 +691,6 @@ def num_label_short(i):
 
 def replace_toc_and_sections(html, page):
     """Remove JA ph-toc + all id=sec-NN sections, insert EN-built ones."""
-    sections_html, toc_html = build_sections_and_toc(page)
-
     # Remove existing ph-toc <details>
     tm = find_element(html, 'details', 'class="ph-toc"')
     if not tm:
@@ -641,6 +699,14 @@ def replace_toc_and_sections(html, page):
 
     # Find span of all sec-NN sections (contiguous run). Locate first & last.
     sec_starts = [mm.start() for mm in re.finditer(r'<section class="ph-section" id="sec-\d+">', html)]
+    if not page.get('sections'):
+        # Placeholder pages (e.g. noindex stubs) have no essay sections and no
+        # harvested sections: drop the TOC, leave the (absent) sections alone.
+        if sec_starts:
+            raise ValueError('harvest has no sections but JA template does')
+        return html[:t_start] + html[t_end:]
+
+    sections_html, toc_html = build_sections_and_toc(page)
     if not sec_starts:
         raise ValueError('no sec-NN sections found')
     first_sec = sec_starts[0]
@@ -659,19 +725,32 @@ def replace_toc_and_sections(html, page):
 
 
 # ── RELATED section ────────────────────────────────────────────────────────
+def find_section_open_before(html, idx):
+    """Return the start index of the <section class="ph-section" ...> opening
+    tag (with or without extra attributes such as id="sec-rel") that immediately
+    precedes idx, or -1 if none found."""
+    best = -1
+    for m in re.finditer(r'<section class="ph-section"(?:\s[^>]*)?>', html):
+        if m.start() < idx:
+            best = m.start()
+        else:
+            break
+    return best
+
+
 def rebuild_related(html, page):
-    relm = None
-    m = re.search(r'<span class="ph-section__name">関連する写真家・運動</span>', html)
     sd = page.get('site_directory_html') or ''
     people = extract_directory_group(sd, 'Related people')
     movements = extract_directory_group(sd, 'Related movements')
 
-    # locate RELATED section by its § REL token
+    # locate RELATED section by its § REL token. The JA section may be named
+    # either 関連する写真家・運動 or the variant 関連と参考資料, and the opening
+    # tag may carry id="sec-rel" — handle the opening tag robustly.
     relnum = re.search(r'<span class="ph-section__num">§ REL</span>', html)
     if not relnum:
         return html
-    # the section element containing this token
-    sec_open = html.rfind('<section class="ph-section">', 0, relnum.start())
+    # the section element containing this token (may have attributes/id)
+    sec_open = find_section_open_before(html, relnum.start())
     if sec_open == -1:
         return html
     _, sec_end, _ = extract_balanced(html, sec_open, 'section')
@@ -732,7 +811,9 @@ def rebuild_further(html, page):
     refnum = re.search(r'<span class="ph-section__num">§ REF</span>', html)
     if not refnum:
         return html
-    sec_open = html.rfind('<section class="ph-section">', 0, refnum.start())
+    sec_open = find_section_open_before(html, refnum.start())
+    if sec_open == -1:
+        return html
     _, sec_end, _ = extract_balanced(html, sec_open, 'section')
 
     body_parts = []
@@ -813,8 +894,10 @@ def render_book(pb):
 def rebuild_sources(html, page):
     srcnum = re.search(r'<span class="ph-section__num">§ SRC</span>', html)
     if not srcnum:
-        return html
-    sec_open = html.rfind('<section class="ph-section">', 0, srcnum.start())
+        return html, set()
+    sec_open = find_section_open_before(html, srcnum.start())
+    if sec_open == -1:
+        return html, set()
     _, sec_end, _ = extract_balanced(html, sec_open, 'section')
 
     sources_html = page.get('sources_html') or ''
@@ -1051,6 +1134,7 @@ def process_page(ja_file, page, ja_to_en, warnings):
     prev_link = compute_prev_link(html, ja_to_en)
 
     html = replace_head(html, page, slug)
+    html = strip_body_jsonld(html)
     html = insert_readability_style(html)
     html = rebuild_header(html, page, slug, ja_file)
     html = rebuild_hero(html, page)
@@ -1081,6 +1165,10 @@ def main():
 
     content = json.load(open(CONTENT_JSON, encoding='utf-8'))
     pages = content['pages']
+    stage4_json = os.path.join(ROOT, 'data', 'photographers-en-stage4.json')
+    if os.path.exists(stage4_json):
+        stage4 = json.load(open(stage4_json, encoding='utf-8'))
+        pages.update(stage4.get('pages', {}))
     classification = load_classification()
     ja_to_en, en_to_ja = build_jp_slug_map(classification)
     missing_true = set(classification.get('missing_en_true', []))

@@ -10,6 +10,7 @@ With no args, audits every en/photographers/*.html except jp-*.html redirect
 stubs and *-backup.html. Prints PASS/FAIL per page with reasons.
 """
 
+import json
 import os
 import re
 import sys
@@ -71,13 +72,19 @@ def audit(slug, html):
     elif CJK_RE.search(strip_tags(h1s[0])):
         fails.append('h1 contains CJK')
 
-    # CJK ratio in .essay and .ph-abstract
-    for cls in ('essay', 'ph-abstract'):
-        for bm in re.finditer(r'<div class="' + cls + r'"[^>]*>(.*?)</div>\s*</div>', html, re.S):
-            r = cjk_ratio(bm.group(1))
-            if r >= 0.05:
-                fails.append(f'{cls} CJK ratio {r:.2f}')
-                break
+    # CJK ratio in .essay bodies
+    for bm in re.finditer(r'<div class="essay"[^>]*>(.*?)</div>\s*</div>', html, re.S):
+        r = cjk_ratio(bm.group(1))
+        if r >= 0.05:
+            fails.append(f'essay CJK ratio {r:.2f}')
+            break
+    # CJK ratio in the .ph-abstract prose (its <p>, which holds the translated
+    # text — avoid over-capturing downstream blocks via greedy div matching)
+    for am in re.finditer(r'<div class="ph-abstract"[^>]*>(.*?)</div>', html, re.S):
+        pm = re.search(r'<p[^>]*>(.*?)</p>', am.group(1), re.S)
+        if pm and cjk_ratio(pm.group(1)) >= 0.05:
+            fails.append(f'ph-abstract CJK ratio {cjk_ratio(pm.group(1)):.2f}')
+            break
 
     # sup-ref → cite-N exist
     cite_ids = set(re.findall(r'id="cite-(\d+)"', html))
@@ -134,6 +141,74 @@ def audit(slug, html):
     # file size
     if len(html.encode('utf-8')) <= 40 * 1024:
         fails.append('size <= 40KB')
+
+    # ── NEW: head must be CJK-free in title / description / og:* / twitter:* ──
+    head_m = re.search(r'<head\b[^>]*>(.*?)</head>', html, re.S | re.I)
+    head = head_m.group(1) if head_m else ''
+
+    tm = re.search(r'<title>(.*?)</title>', head, re.S | re.I)
+    if tm and CJK_RE.search(tm.group(1)):
+        fails.append('title contains CJK')
+
+    dm = re.search(r'<meta name="description" content="([^"]*)"', head, re.I)
+    if dm and CJK_RE.search(dm.group(1)):
+        fails.append('meta description contains CJK')
+
+    og_contents = re.findall(r'<meta property="og:[^"]*" content="([^"]*)"', head, re.I)
+    if any(CJK_RE.search(c) for c in og_contents):
+        fails.append('og:* content contains CJK')
+    tw_contents = re.findall(r'<meta name="twitter:[^"]*" content="([^"]*)"', head, re.I)
+    if any(CJK_RE.search(c) for c in tw_contents):
+        fails.append('twitter:* content contains CJK')
+
+    # ── NEW: exactly one og:title / og:description / twitter:title ──
+    for prop, pat in (
+        ('og:title', r'<meta property="og:title"'),
+        ('og:description', r'<meta property="og:description"'),
+        ('twitter:title', r'<meta name="twitter:title"'),
+    ):
+        n = len(re.findall(pat, html))
+        if n != 1:
+            fails.append(f'{prop} count={n}')
+
+    # ── NEW: every JSON-LD block parses and is CJK-free in name/description ──
+    # A leaked JA block carries a string-valued JA "name"/"description" (and a
+    # string JA "alternateName"); those FAIL. The EN harvest's own Person object
+    # legitimately lists the native-script name inside an alternateName *array*
+    # alongside the romaji name — that array form is intentional and allowed.
+    for jm in re.finditer(r'<script type="application/ld\+json">(.*?)</script>',
+                          html, re.S | re.I):
+        raw = jm.group(1).strip()
+        try:
+            data = json.loads(raw)
+        except Exception as e:
+            fails.append(f'jsonld parse error: {type(e).__name__}')
+            continue
+        blocks = data if isinstance(data, list) else [data]
+        bad = False
+        for b in blocks:
+            if not isinstance(b, dict):
+                continue
+            for key in ('name', 'description', 'alternateName'):
+                v = b.get(key)
+                if isinstance(v, str) and CJK_RE.search(v):
+                    bad = True
+        if bad:
+            fails.append('jsonld contains CJK in name/description/alternateName')
+            break
+
+    # ── NEW: no ph-section__name contains CJK ──
+    for snm in re.findall(r'<span class="ph-section__name">(.*?)</span>', html, re.S):
+        if CJK_RE.search(strip_tags(snm)):
+            fails.append('ph-section__name contains CJK')
+            break
+
+    # ── NEW: ph-rel-list items contain no CJK run of 3+ chars ──
+    for lm in re.finditer(r'<ul class="ph-rel-list[^"]*">(.*?)</ul>', html, re.S):
+        text = strip_tags(lm.group(1))
+        if re.search(r'[぀-ヿ㐀-䶿一-鿿豈-﫿]{3,}', text):
+            fails.append('ph-rel-list item has CJK run 3+')
+            break
 
     return fails
 
