@@ -467,6 +467,23 @@ grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
 - 短いカタカナエイリアス（2〜3文字）を追加する際は、前後がカタカナの語に誤マッチしないか確認する。
 - 追加後は必ずジェネレータを実行し `python3 scripts/check_photographer_link_integrity.py` で誤リンクがないか確認する。
 
+### entry-meta 国名・キーワードのリンク（後処理）— CRITICAL
+
+写真家ページの entry-meta `<dt>Country</dt>` の国名と、キーワード
+（`.ph-kw` ＋ サイドバー Keywords ブロックの `.ph-side-chip`）は、対応ページが
+実在する場合のみリンク化する。実装は `scripts/link_country_keywords.py`
+（HTML を直接サージカル編集。本文・出典・書籍カードは一切触らない。冪等）。
+
+- 国名：写真家の `nationality`（card-data）の各コードを単国ページへリンク。
+  単国ページが無い国（スロバキア・リトアニア等の複合専用国）は plain のまま。
+  JA→`/countries/`、EN→`/en/countries/`。
+- キーワード：運動ページが実在すればリンク（JA は `/movements/{語}.html`、
+  EN は slug 化して `/en/movements/{slug}.html`）。実在しない語（Magnum 等）は
+  plain。`/keywords/` ページは無いのでリンクしない。
+- **`build_photographers_en.py` 等で EN 写真家ページを再生成したら、必ず
+  `python3 scripts/link_country_keywords.py` を再実行する**（JA ページは
+  source of truth なので直接編集が残るが、EN は再生成で消えるため）。
+
 ### 手書きHTMLページ（ジェネレータ非対象）の扱い
 - 以下のページは直接HTMLを編集しており、ジェネレータで上書きされない：
   - `photographers/annie-leibovitz.html` / `en/photographers/annie-leibovitz.html`
