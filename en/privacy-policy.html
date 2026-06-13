@@ -31,217 +31,475 @@
   gtag('js', new Date());
   gtag('config', 'G-2VRTV8BZEJ');
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 <style>
-@font-face {
-  font-family: 'KaisotaiNextUP';
-  src: url('../fonts/Kaisotai-Next-UP-B.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
+/* ============================================================
+   Photo Coordinates — Privacy Policy · v5.1 light paper
+   ============================================================ */
 :root {
-  --bg: #080808;
-  --surface: #161412;
-  --border: #2a2520;
-  --accent: #c8a96e;
-  --accent-dim: #7a6540;
-  --text: #e8e0d4;
-  --text-dim: #c0b4a8;
-  --text-muted: #6e6560;
+  --bg:          #fafaf5;
+  --surface:     #ffffff;
+  --surface-2:   #f0ede5;
+  --text-main:   #0e0c0a;
+  --text-sub:    #5a554d;
+  --text-mute:   #8a8478;
+  --text-deep:   #b8b0a4;
+  --border:      #0e0c0a;
+  --border-soft: #c4bcb0;
+  --rule:        #c4bcb0;
+  --rule-strong: #0e0c0a;
+  --accent-s:    #0a2540;
+  --accent-a:    #a83a2a;
+  --accent-d:    #d6402e;
+  --accent-h:    #ccff00;
+  --rev-bg:      #0e0c0a;
+  --rev-text:    #f2efe8;
+  --font-jp:     'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, sans-serif;
+  --font-en:     'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mo:     'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-se:     'Cormorant Garamond', 'Times New Roman', serif;
+  --font-se-jp:  'Noto Serif JP', 'Hiragino Mincho ProN', serif;
 }
-
-* { box-sizing: border-box; }
-html, body { margin: 0; min-height: 100%; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(200,169,110,0.08) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(200,169,110,0.05) 0%, transparent 40%),
-    var(--bg);
-  color: var(--text);
-  font-family: 'Noto Sans JP', sans-serif;
-  line-height: 1.9;
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-en);
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
-.wrap { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
-.topbar {
-  display: flex;
-  justify-content: space-between;
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; background: transparent; border: 0; color: inherit; }
+::selection { background: var(--rev-bg); color: var(--rev-text); }
+.page { max-width: 1440px; margin: 0 auto; background: var(--bg); }
+
+/* ── HEADER ───────────────────────────────────────────────── */
+.head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
+  gap: 24px;
+  padding: 16px 32px;
+  border-bottom: 1.5px solid var(--rule-strong);
+  background: var(--bg);
 }
-.back-links, .lang-toggle { display: flex; gap: 10px; flex-wrap: wrap; }
-.chip {
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid var(--border);
-  color: var(--text-dim);
-  text-decoration: none;
-  padding: 10px 14px;
-  font: 400 11px/1 'DM Mono', monospace;
-  letter-spacing: 0.12em;
+.head__brand { display: inline-flex; align-items: baseline; gap: 12px; }
+.head__brand-ja { font-family: var(--font-jp); font-weight: 700; font-size: 18px; letter-spacing: 0.10em; }
+.head__brand-ja a { color: var(--text-main); }
+.head__brand-en { font-family: var(--font-en); font-weight: 500; font-size: 12px; color: var(--text-sub); }
+.head__brand-photo { background: var(--accent-d); color: #fff; padding: 0 0.05em; border-radius: 2px; display: inline-block; line-height: 0.96; }
+.head__crumbs {
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
+  color: var(--text-mute);
+  text-align: center;
 }
-.chip.active { color: var(--text); background: rgba(200,169,110,0.1); }
-.chip:hover { color: var(--text); border-color: var(--accent-dim); }
-.eyebrow {
-  font: 400 11px/1 'DM Mono', monospace;
+.head__crumbs em { font-style: normal; color: var(--accent-s); font-weight: 500; }
+.head__crumbs .sep { color: var(--text-deep); margin: 0 10px; }
+.updated-date {
+  background: var(--accent-h);
+  color: var(--text-main);
+  padding: 1px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+.head__meta { display: flex; align-items: center; gap: 16px; }
+.head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+.head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; display: inline-block; }
+.head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__mobile-search { display: none; }
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.era-hero {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  border-bottom: 1.5px solid var(--rule-strong);
+  min-height: 280px;
+}
+.era-hero__art {
+  background: var(--rev-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1.5px solid var(--rule-strong);
+  user-select: none;
+  padding: 32px 24px;
+  gap: 10px;
+}
+.era-hero__art-label {
+  font-family: var(--font-mo);
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  align-self: flex-start;
+}
+.era-hero__art-year {
+  font-family: var(--font-en);
+  font-weight: 900;
+  font-size: clamp(80px, 9vw, 128px);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  color: var(--rev-text);
+  align-self: flex-start;
+}
+.era-hero__art-year span { color: var(--accent-d); }
+.era-hero__info {
+  padding: 36px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  background: var(--surface);
+}
+.era-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-s);
+  font-weight: 500;
+}
+.era-hero__eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 1.5px;
+  background: var(--accent-s);
+  flex-shrink: 0;
+}
+.era-hero__title {
+  font-family: var(--font-en);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.era-hero__period {
+  font-family: var(--font-se);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--accent-a);
+  letter-spacing: 0.01em;
+}
+.era-hero__lead {
+  font-family: var(--font-se);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-sub);
+  max-width: 42em;
+}
+.era-hero__meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+}
+.era-hero__meta-item {
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid var(--border-soft);
+  line-height: 1.7;
+}
+.era-hero__meta-item:last-child { border-right: 0; padding-right: 0; margin-right: 0; }
+.era-hero__meta-item strong { color: var(--text-main); font-weight: 500; margin-left: 6px; }
+
+/* ── LAYOUT ───────────────────────────────────────────────── */
+.era-outer { background: var(--surface); border-bottom: 1.5px solid var(--rule-strong); }
+.era-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 52px 32px 96px;
+  display: grid;
+  gap: 52px;
+  align-items: start;
+}
+.era-layout--solo { grid-template-columns: 1fr; }
+.era-main { display: grid; gap: 16px; min-width: 0; }
+
+/* ── SECTION PANELS ───────────────────────────────────────── */
+.ph-section { border: 1.5px solid var(--border); background: var(--surface); overflow: hidden; }
+.ph-section__head {
+  padding: 14px 24px;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--surface-2);
+}
+.ph-section__title { display: flex; align-items: baseline; gap: 16px; }
+.ph-section__num {
+  font-family: var(--font-mo);
+  font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 18px;
+  color: var(--accent-s);
+  font-weight: 500;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.site-brand-title {
-  margin: 16px 0 0;
-  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
-  font-size: clamp(28px, 4.5vw, 58px);
-  font-weight: normal;
-  line-height: 1.1;
-  letter-spacing: 0.18em;
-  max-width: 800px;
+.ph-section__num::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-h);
+  flex-shrink: 0;
 }
-.site-brand-title-link {
-  color: inherit;
-  text-decoration: none;
+.ph-section__name { font-family: var(--font-en); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; }
+.ph-section__body { padding: 24px 28px 28px; }
+.ph-section__body p {
+  font-family: var(--font-en);
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-sub);
+  max-width: 46em;
 }
-.site-brand-title-link:hover {
-  color: var(--accent);
+.ph-section__body p + p { margin-top: 14px; }
+.ph-section__body a { color: var(--accent-a); }
+
+/* ── SITE DIRECTORY ───────────────────────────────────────── */
+.site-directory-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  padding: 40px 32px;
+  border-top: 1.5px solid var(--rule-strong);
+  background: var(--surface-2);
 }
-.site-brand-title em {
-  color: var(--accent);
-  font-style: normal;
-}
-h1 {
-  margin: 0;
-  font-family: 'KaisotaiNextUP', 'Noto Sans JP', sans-serif;
-  font-size: clamp(34px, 5vw, 64px);
-  font-weight: normal;
-  letter-spacing: 0.16em;
-  line-height: 1.08;
-}
-h1 em { font-style: normal; color: var(--accent); }
-.lead {
-  max-width: 720px;
-  margin: 20px 0 0;
-  color: var(--text-dim);
-  font-size: 15px;
-}
-.updated {
-  margin-top: 16px;
-  color: var(--text-muted);
-  font: 400 11px/1.8 'DM Mono', monospace;
-}
-main {
-  margin-top: 40px;
+.site-directory-label { font-family: var(--font-mo); font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-s); font-weight: 500; margin-bottom: 12px; }
+.site-directory-items { display: flex; flex-wrap: wrap; gap: 6px 12px; }
+.site-directory-items a { font-family: var(--font-en); font-size: 12px; color: var(--text-sub); transition: color 120ms; }
+.site-directory-items a:hover { color: var(--accent-a); }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.foot {
   padding: 32px;
-  border: 1px solid var(--border);
-  background: rgba(22, 20, 18, 0.82);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-top: 1.5px solid var(--rule-strong);
+  font-family: var(--font-mo);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
 }
-section + section { margin-top: 28px; }
-h2 {
-  margin: 0 0 12px;
-  color: var(--accent);
-  font-size: 18px;
-  font-weight: 700;
-}
-p { margin: 0; color: var(--text-dim); }
-p + p { margin-top: 12px; }
-a { color: var(--accent); }
-footer {
-  margin-top: 28px;
-  color: var(--text-muted);
-  font-size: 12px;
-}
-@media (max-width: 640px) {
-  .wrap { padding: 28px 18px 56px; }
-  main { padding: 24px 18px; }
-  .lang-toggle .chip {
-    font-size: 0;
-  }
-  .lang-toggle .chip::after {
-    font-size: 11px;
-    line-height: 1;
-  }
-  .lang-toggle .chip:first-child::after {
-    content: "JP";
-  }
-  .lang-toggle .chip:nth-child(2)::after {
-    content: "EN";
-  }
+.foot__center { text-align: center; }
+.foot__right { text-align: right; }
+.foot a { color: var(--accent-a); }
+
+/* ── MOBILE SEARCH ────────────────────────────────────────── */
+.ph-side-search__field { display: flex; align-items: center; transition: background 120ms; }
+.ph-side-search__field:focus-within { background: var(--accent-h); }
+.ph-side-search__field:focus-within .ph-side-search__input,
+.ph-side-search__field:focus-within .ph-side-search__btn { color: var(--text-main); }
+.ph-side-search__input { flex: 1; font-family: var(--font-mo); font-size: 11px; letter-spacing: 0.08em; color: var(--text-sub); background: transparent; border: none; outline: none; padding: 10px 8px 10px 14px; width: 100%; min-width: 0; }
+.ph-side-search__input::placeholder { color: var(--text-mute); font-size: 10px; }
+.ph-side-search__btn { display: flex; align-items: center; justify-content: center; padding: 0 12px; color: var(--text-mute); background: transparent; border: none; cursor: pointer; transition: color 120ms; }
+.ph-side-search__btn:hover { color: var(--text-main); }
+.ph-search-suggestions { list-style: none; border-top: 1px solid var(--border-soft); background: var(--surface); max-height: 280px; overflow-y: auto; }
+.ph-search-suggestions[hidden] { display: none; }
+.ph-search-suggestion { display: block; border-bottom: 1px solid var(--border-soft); }
+.ph-search-suggestion:last-child { border-bottom: none; }
+.ph-search-suggestion a { display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; transition: background 80ms; text-decoration: none; }
+.ph-search-suggestion a:hover, .ph-search-suggestion a:focus { background: var(--accent-h); outline: none; }
+.ph-search-suggestion__name { font-family: var(--font-jp); font-weight: 700; font-size: 13px; color: var(--text-main); }
+.ph-search-suggestion__name mark { background: var(--accent-h); color: var(--text-main); font-weight: 700; }
+.ph-search-suggestion__en { font-family: var(--font-se); font-style: italic; font-size: 11px; color: var(--text-sub); }
+.ph-search-suggestion__meta { font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.12em; color: var(--text-mute); text-transform: uppercase; }
+.ph-search-no-result { padding: 12px 14px; font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.14em; color: var(--text-mute); text-transform: uppercase; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .head { position: sticky; top: 0; z-index: 200; grid-template-columns: 1fr auto; gap: 12px; padding: 12px 16px; }
+  .head__brand { flex-wrap: wrap; gap: 4px 10px; }
+  .head__crumbs { display: none; }
+  .head__mobile-search { display: block; grid-column: 1 / -1; border: 1px solid var(--border-soft); background: var(--surface-2); }
+  .head__mobile-search .ph-side-search__label { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .era-hero { grid-template-columns: 1fr; }
+  .era-hero__art { min-height: 160px; border-right: 0; border-bottom: 1.5px solid var(--rule-strong); flex-direction: row; align-items: flex-end; gap: 16px; padding: 20px 24px; }
+  .era-hero__art-label { display: none; }
+  .era-hero__art-year { font-size: 72px; }
+  .era-hero__info { padding: 24px 20px; }
+  .era-layout { padding: 28px 16px 64px; }
+  .ph-section__head { padding: 16px 16px; }
+  .ph-section__title { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .ph-section__body { padding: 20px 18px 24px; }
+  .ph-section__body p { font-size: 15px; line-height: 1.8; }
+  .site-directory-links { padding: 28px 16px; grid-template-columns: 1fr; }
+  .foot { grid-template-columns: 1fr; gap: 6px; }
+  .foot__center, .foot__right { text-align: left; }
 }
 </style>
 </head>
-<body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="back-links">
-        <a class="chip" href="/en/">Photo Coordinates</a>
-        <a class="chip" href="/en/archive.html">Browse by Era</a>
-      </div>
-      <div class="lang-toggle" aria-label="Language switch">
-        <a class="chip" href="/privacy-policy.html">Japanese</a>
-        <a class="chip active" href="/en/privacy-policy.html">English</a>
-      </div>
+<body class="lang-en v51">
+<div class="page">
+
+<!-- ── HEADER ─────────────────────────────────────────────── -->
+<header class="head" data-nosnippet>
+  <div class="head__brand">
+    <span class="head__brand-ja"><a href="../index.html"><span class="head__brand-photo">写真</span>の座標</a></span>
+    <span class="head__brand-en">Photo Coordinates</span>
+  </div>
+  <div class="head__crumbs">
+    <em>SITE</em><span class="sep">/</span>Privacy Policy <span class="sep">·</span>プライバシーポリシー <span class="sep">·</span>UPDATED&nbsp;<span class="updated-date">2026.04</span>
+  </div>
+  <div class="head__meta">
+    <div class="head__lang"><a href="https://eyescosmos.github.io/privacy-policy.html">JP</a><a class="is-active">EN</a></div>
+  </div>
+<div class="head__mobile-search"><form class="ph-side-search__form" onsubmit="return false;"><label class="ph-side-search__label" for="ph-search-input-mobile">SEARCH · Find a photographer</label><div class="ph-side-search__field"><input class="ph-side-search__input" id="ph-search-input-mobile" type="search" placeholder="Search photographers" autocomplete="off" aria-autocomplete="list" aria-controls="ph-search-suggestions-mobile" aria-expanded="false"><button class="ph-side-search__btn" type="button" aria-label="Search"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div></form><ul class="ph-search-suggestions" id="ph-search-suggestions-mobile" role="listbox" hidden></ul></div></header>
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="era-hero">
+  <div class="era-hero__art">
+    <div class="era-hero__art-label">DOCUMENT · PRIVACY</div>
+    <div class="era-hero__art-year">P<span>P</span></div>
+  </div>
+  <div class="era-hero__info">
+    <div class="era-hero__eyebrow">§ — Site Policy</div>
+    <h1 class="era-hero__title">Privacy Policy</h1>
+    <div class="era-hero__period">プライバシーポリシー</div>
+    <p class="era-hero__lead">This page outlines how Photo Coordinates handles analytics, cookies, affiliate links, and information that may be provided when contacting the site.</p>
+    <div class="era-hero__meta-row">
+      <span class="era-hero__meta-item">Updated <strong>2026.04</strong></span>
+      <span class="era-hero__meta-item">Site <strong>Photo Coordinates</strong></span>
+      <span class="era-hero__meta-item">Type <strong>Policy</strong></span>
     </div>
+  </div>
+</section>
 
-    <div class="eyebrow">Photo Coordinates / Privacy Policy</div>
-    <div class="site-brand-title"><a class="site-brand-title-link" href="/en/"><em>Photo Coordinates</em></a></div>
-    <h1><em>Photo Coordinates</em> Privacy Policy</h1>
-    <p class="lead">This page outlines how Photo Coordinates handles analytics, cookies, affiliate links, and information that may be provided when contacting the site.</p>
-    <div class="updated">Last updated: 2026-04-04</div>
+<!-- ── MAIN CONTENT ───────────────────────────────────────── -->
+<div class="era-outer">
+  <div class="era-layout era-layout--solo">
+    <main class="era-main">
 
-    <main>
-      <section>
-        <h2>1. About this site</h2>
-        <p>Photo Coordinates is an independently operated website that explores the history of photography through photographers, movements, ideas, and historical context.</p>
+      <section class="ph-section">
+        <div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 01</span><span class="ph-section__name">About this site</span></div></div>
+        <div class="ph-section__body">
+          <p>Photo Coordinates is an independently operated website that explores the history of photography through photographers, movements, ideas, and historical context.</p>
+        </div>
       </section>
 
-      <section>
-        <h2>2. Google Analytics</h2>
-        <p>This site uses Google Analytics. Google Analytics may use Cookies and similar technologies to collect information such as pages viewed, device type, time spent on the site, and referral sources.</p>
-        <p>This information is used to understand general usage patterns and improve the site. It is typically handled in a way that does not directly identify individual visitors.</p>
+      <section class="ph-section">
+        <div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 02</span><span class="ph-section__name">Google Analytics</span></div></div>
+        <div class="ph-section__body">
+          <p>This site uses Google Analytics. Google Analytics may use Cookies and similar technologies to collect information such as pages viewed, device type, time spent on the site, and referral sources.</p>
+          <p>This information is used to understand general usage patterns and improve the site. It is typically handled in a way that does not directly identify individual visitors.</p>
+        </div>
       </section>
 
-      <section>
-        <h2>3. Cookies</h2>
-        <p>This site may use Cookies for analytics and basic site optimization. You can disable Cookies through your browser settings, although some features or measurements may not work as intended.</p>
+      <section class="ph-section">
+        <div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 03</span><span class="ph-section__name">Cookies</span></div></div>
+        <div class="ph-section__body">
+          <p>This site may use Cookies for analytics and basic site optimization. You can disable Cookies through your browser settings, although some features or measurements may not work as intended.</p>
+        </div>
       </section>
 
-      <section>
-        <h2>4. Amazon Associates and affiliate links</h2>
-        <p>Photo Coordinates participates in the Amazon Associates Program. Some links to books and related materials may be affiliate links, which means the site operator may earn a referral fee if a purchase is made through those links.</p>
-        <p>As an Amazon Associate, Photo Coordinates earns from qualifying purchases.</p>
-        <p>Books and materials are selected based on their relevance to the history of photography and the understanding of photographers and movements featured on the site.</p>
+      <section class="ph-section">
+        <div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 04</span><span class="ph-section__name">Amazon Associates and affiliate links</span></div></div>
+        <div class="ph-section__body">
+          <p>Photo Coordinates participates in the Amazon Associates Program. Some links to books and related materials may be affiliate links, which means the site operator may earn a referral fee if a purchase is made through those links.</p>
+          <p>As an Amazon Associate, Photo Coordinates earns from qualifying purchases.</p>
+          <p>Books and materials are selected based on their relevance to the history of photography and the understanding of photographers and movements featured on the site.</p>
+        </div>
       </section>
 
-      <section>
-        <h2>5. Information provided through contact</h2>
-        <p>If you contact the site operator by email or other available means, information such as your name, email address, and message content may be collected in order to respond and handle the inquiry.</p>
-        <p>Such information will be used only for communication, support, and related follow-up.</p>
+      <section class="ph-section">
+        <div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 05</span><span class="ph-section__name">Information provided through contact</span></div></div>
+        <div class="ph-section__body">
+          <p>If you contact the site operator by email or other available means, information such as your name, email address, and message content may be collected in order to respond and handle the inquiry.</p>
+          <p>Such information will be used only for communication, support, and related follow-up.</p>
+        </div>
       </section>
 
-      <section>
-        <h2>6. Handling of personal information</h2>
-        <p>Any personal information obtained through direct contact will be handled appropriately and will not be used for unrelated purposes or shared with third parties without a proper reason, except where required by law.</p>
+      <section class="ph-section">
+        <div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 06</span><span class="ph-section__name">Handling of personal information</span></div></div>
+        <div class="ph-section__body">
+          <p>Any personal information obtained through direct contact will be handled appropriately and will not be used for unrelated purposes or shared with third parties without a proper reason, except where required by law.</p>
+        </div>
       </section>
 
-      <section>
-        <h2>7. External services</h2>
-        <p>This site includes links to and features from external services such as Google Analytics and Amazon. Please refer to the privacy policies of those services for information on how they handle data on their own platforms.</p>
+      <section class="ph-section">
+        <div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 07</span><span class="ph-section__name">External services</span></div></div>
+        <div class="ph-section__body">
+          <p>This site includes links to and features from external services such as Google Analytics and Amazon. Please refer to the privacy policies of those services for information on how they handle data on their own platforms.</p>
+        </div>
       </section>
 
-      <section>
-        <h2>8. Policy updates</h2>
-        <p>This policy may be updated as needed to reflect changes in site operations, tools, or legal requirements. Any revised version will become effective when posted on this page.</p>
+      <section class="ph-section">
+        <div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 08</span><span class="ph-section__name">Policy updates</span></div></div>
+        <div class="ph-section__body">
+          <p>This policy may be updated as needed to reflect changes in site operations, tools, or legal requirements. Any revised version will become effective when posted on this page.</p>
+          <p>This policy may be revised as the use of Google Analytics, Amazon Associates, or site features changes over time.</p>
+        </div>
       </section>
 
-      <footer data-nosnippet>
-        <p>This policy may be revised as the use of Google Analytics, Amazon Associates, or site features changes over time.</p>
-      </footer>
     </main>
   </div>
-  <script src="../scripts/global-search.js?v=20260419b"></script>
+</div>
+
+<!-- ── SITE DIRECTORY ─────────────────────────────────────── -->
+<nav class="site-directory-links" aria-label="Site links" data-nosnippet>
+  <div class="site-directory-group">
+    <div class="site-directory-label">Era index</div>
+    <div class="site-directory-items"><a href="/en/eras/1839.html">1839–1860s</a><a href="/en/eras/1870.html">1870–1890s</a><a href="/en/eras/1890.html">1890–1910s</a><a href="/en/eras/1910.html">1910–1920s</a><a href="/en/eras/1930.html">1930–1940s</a><a href="/en/eras/1950.html">1950–1960s</a><a href="/en/eras/1970.html">1970–1980s</a><a href="/en/eras/1980.html">1980–1990s</a><a href="/en/eras/1990.html">1990–2000s</a><a href="/en/eras/2000.html">2000–2010s</a><a href="/en/eras/2010.html">2010–2020s</a></div>
+  </div>
+  <div class="site-directory-group">
+    <div class="site-directory-label">Country index</div>
+    <div class="site-directory-items"><a href="/en/countries/albania.html">Albania</a><a href="/en/countries/australia.html">Australia</a><a href="/en/countries/austria.html">Austria</a><a href="/en/countries/belgium.html">Belgium</a><a href="/en/countries/brazil.html">Brazil</a><a href="/en/countries/canada.html">Canada</a><a href="/en/countries/china.html">China</a><a href="/en/countries/czech-republic.html">Czech Republic</a><a href="/en/countries/denmark.html">Denmark</a><a href="/en/countries/finland.html">Finland</a><a href="/en/countries/france.html">France</a><a href="/en/countries/germany.html">Germany</a><a href="/en/countries/hungary.html">Hungary</a><a href="/en/countries/ireland.html">Ireland</a><a href="/en/countries/italy.html">Italy</a><a href="/en/countries/japan.html">Japan</a><a href="/en/countries/mali.html">Mali</a><a href="/en/countries/mexico.html">Mexico</a><a href="/en/countries/netherlands.html">Netherlands</a><a href="/en/countries/north-macedonia.html">North Macedonia</a><a href="/en/countries/norway.html">Norway</a><a href="/en/countries/poland.html">Poland</a><a href="/en/countries/romania.html">Romania</a><a href="/en/countries/russia.html">Russia</a><a href="/en/countries/south-africa.html">South Africa</a><a href="/en/countries/south-korea.html">South Korea</a><a href="/en/countries/spain.html">Spain</a><a href="/en/countries/sweden.html">Sweden</a><a href="/en/countries/switzerland.html">Switzerland</a><a href="/en/countries/ukraine.html">Ukraine</a><a href="/en/countries/united-kingdom.html">United Kingdom</a><a href="/en/countries/united-states.html">United States</a><a href="/en/countries/venezuela.html">Venezuela</a></div>
+  </div>
+  <div class="site-directory-group">
+    <div class="site-directory-label">Featured photographers</div>
+    <div class="site-directory-items"><a href="/en/photographers/daguerre.html">Louis Daguerre</a><a href="/en/photographers/fenton.html">Roger Fenton</a><a href="/en/photographers/beato.html">Felice Beato</a><a href="/en/photographers/nadar.html">Nadar</a><a href="/en/photographers/stieglitz.html">Alfred Stieglitz</a><a href="/en/photographers/strand.html">Paul Strand</a><a href="/en/photographers/cartierbresson.html">Henri Cartier-Bresson</a><a href="/en/photographers/hiroshi-sugimoto.html">Hiroshi Sugimoto</a></div>
+  </div>
+</nav>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer class="foot" data-nosnippet>
+  <div>© Photo Coordinates · 写真の座標</div>
+  <div class="foot__center">Based on museum, archive, and specialist sources</div>
+  <div class="foot__right"><a href="/en/index.html">Home</a></div>
+</footer>
+
+</div><!-- /.page -->
+<script>
+(function(){
+  var wrap=document.querySelector('.head__mobile-search');
+  if(!wrap)return;
+  var input=wrap.querySelector('.ph-side-search__input'),list=wrap.querySelector('.ph-search-suggestions');
+  if(!input||!list)return;
+  function normalize(items){return (items||[]).map(function(p){return{name_ja:p.name_ja||p.nameJa||'',name_en:p.name_en||p.nameEn||'',slug:p.slug||p.id||'',url:p.url||(p.href?(p.href[0]==='/'?p.href:'/'+p.href):''),country:p.country||((p.metaJa||'').split('·')[0].trim()),movement:p.movement||p.channel||''};});}
+  function start(photographers){
+    function toKatakana(s){return s.replace(/[ぁ-ゖ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
+    function matches(ph,q){var ql=q.toLowerCase(),qk=toKatakana(q);return ph.name_ja.includes(q)||ph.name_ja.includes(qk)||ph.name_en.toLowerCase().includes(ql)||ph.slug.toLowerCase().includes(ql)||(ph.movement&&ph.movement.toLowerCase().includes(ql))||(ph.country&&ph.country.includes(q));}
+    function hl(t,q){if(!q)return t;var i=t.toLowerCase().indexOf(q.toLowerCase());if(i===-1)return t;return t.slice(0,i)+'<mark>'+t.slice(i,i+q.length)+'</mark>'+t.slice(i+q.length);}
+    function render(rs,q){list.innerHTML='';if(!rs.length){list.innerHTML='<li class="ph-search-no-result">No matching photographer</li>';list.hidden=false;input.setAttribute('aria-expanded','true');return;}rs.slice(0,5).forEach(function(ph){var li=document.createElement('li');li.className='ph-search-suggestion';li.setAttribute('role','option');var u=ph.url.replace('/photographers/','/en/photographers/');li.innerHTML='<a href="'+u+'"><span class="ph-search-suggestion__name">'+hl(ph.name_en||ph.name_ja,q)+'</span><span class="ph-search-suggestion__en">'+ph.name_ja+'</span><span class="ph-search-suggestion__meta">'+(ph.country||'')+(ph.movement?' · '+ph.movement:'')+'</span></a>';list.appendChild(li);});list.hidden=false;input.setAttribute('aria-expanded','true');}
+    function hide(){list.hidden=true;list.innerHTML='';input.setAttribute('aria-expanded','false');}
+    input.addEventListener('input',function(){var q=this.value.trim();if(!q){hide();return;}render(photographers.filter(function(ph){return matches(ph,q);}),q);});
+    input.addEventListener('blur',function(){setTimeout(hide,150);});
+    input.addEventListener('keydown',function(e){if(e.key==='Escape'){hide();input.blur();}});
+  }
+  fetch('/card-data.json').then(function(r){return r.json();}).then(function(data){start(normalize(data.photographers||[]));}).catch(function(){});
+})();
+</script>
 </body>
 </html>
