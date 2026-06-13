@@ -1,0 +1,651 @@
+[
+  {
+    "slug": "albania",
+    "codes": [
+      "AL"
+    ],
+    "nameJa": "アルバニア",
+    "nameEn": "Albania",
+    "lead": "アルバニアに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "argentina-spain",
+    "codes": [
+      "AR",
+      "ES"
+    ],
+    "nameJa": "アルゼンチン / スペイン",
+    "nameEn": "Argentina / Spain",
+    "lead": "アルゼンチン / スペインにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "australia",
+    "codes": [
+      "AU"
+    ],
+    "nameJa": "オーストラリア",
+    "nameEn": "Australia",
+    "lead": "オーストラリアに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "austria",
+    "codes": [
+      "AT"
+    ],
+    "nameJa": "オーストリア",
+    "nameEn": "Austria",
+    "lead": "オーストリアに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "austria-canada",
+    "codes": [
+      "AT",
+      "CA"
+    ],
+    "nameJa": "オーストリア / カナダ",
+    "nameEn": "Austria / Canada",
+    "lead": "オーストリア / カナダにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "belgium",
+    "codes": [
+      "BE"
+    ],
+    "nameJa": "ベルギー",
+    "nameEn": "Belgium",
+    "lead": "ベルギーに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "brazil",
+    "codes": [
+      "BR"
+    ],
+    "nameJa": "ブラジル",
+    "nameEn": "Brazil",
+    "lead": "ブラジルに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "canada",
+    "codes": [
+      "CA"
+    ],
+    "nameJa": "カナダ",
+    "nameEn": "Canada",
+    "lead": "カナダに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "canada-united-states",
+    "codes": [
+      "CA",
+      "US"
+    ],
+    "nameJa": "カナダ / アメリカ",
+    "nameEn": "Canada / United States",
+    "lead": "カナダ / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "china",
+    "codes": [
+      "CN"
+    ],
+    "nameJa": "中国",
+    "nameEn": "China",
+    "lead": "中国に関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "czech-republic",
+    "codes": [
+      "CZ"
+    ],
+    "nameJa": "チェコ",
+    "nameEn": "Czech Republic",
+    "lead": "チェコに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "denmark",
+    "codes": [
+      "DK"
+    ],
+    "nameJa": "デンマーク",
+    "nameEn": "Denmark",
+    "lead": "デンマークに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "denmark-united-states",
+    "codes": [
+      "DK",
+      "US"
+    ],
+    "nameJa": "デンマーク / アメリカ",
+    "nameEn": "Denmark / United States",
+    "lead": "デンマーク / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "finland",
+    "codes": [
+      "FI"
+    ],
+    "nameJa": "フィンランド",
+    "nameEn": "Finland",
+    "lead": "フィンランドに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "france",
+    "codes": [
+      "FR"
+    ],
+    "nameJa": "フランス",
+    "nameEn": "France",
+    "lead": "フランスに関わる写真家を、写真の発明から現代美術まで、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "germany",
+    "codes": [
+      "DE"
+    ],
+    "nameJa": "ドイツ",
+    "nameEn": "Germany",
+    "lead": "ドイツに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "germany-brazil",
+    "codes": [
+      "DE",
+      "BR"
+    ],
+    "nameJa": "ドイツ / ブラジル",
+    "nameEn": "Germany / Brazil",
+    "lead": "ドイツ / ブラジルにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "germany-united-kingdom",
+    "codes": [
+      "DE",
+      "GB"
+    ],
+    "nameJa": "ドイツ / イギリス",
+    "nameEn": "Germany / United Kingdom",
+    "lead": "ドイツ / イギリスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "hungary",
+    "codes": [
+      "HU"
+    ],
+    "nameJa": "ハンガリー",
+    "nameEn": "Hungary",
+    "lead": "ハンガリーに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "hungary-france",
+    "codes": [
+      "HU",
+      "FR"
+    ],
+    "nameJa": "ハンガリー / フランス",
+    "nameEn": "Hungary / France",
+    "lead": "ハンガリー / フランスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "hungary-germany",
+    "codes": [
+      "HU",
+      "DE"
+    ],
+    "nameJa": "ハンガリー / ドイツ",
+    "nameEn": "Hungary / Germany",
+    "lead": "ハンガリー / ドイツにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "iran-switzerland",
+    "codes": [
+      "IR",
+      "CH"
+    ],
+    "nameJa": "イラン / スイス",
+    "nameEn": "Iran / Switzerland",
+    "lead": "イラン / スイスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "ireland",
+    "codes": [
+      "IE"
+    ],
+    "nameJa": "アイルランド",
+    "nameEn": "Ireland",
+    "lead": "アイルランドに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "italy",
+    "codes": [
+      "IT"
+    ],
+    "nameJa": "イタリア",
+    "nameEn": "Italy",
+    "lead": "イタリアに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "italy-united-kingdom",
+    "codes": [
+      "IT",
+      "GB"
+    ],
+    "nameJa": "イタリア / イギリス",
+    "nameEn": "Italy / United Kingdom",
+    "lead": "イタリア / イギリスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "japan",
+    "codes": [
+      "JP"
+    ],
+    "nameJa": "日本",
+    "nameEn": "Japan",
+    "lead": "日本に関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "kenya-united-states",
+    "codes": [
+      "KE",
+      "US"
+    ],
+    "nameJa": "ケニア / アメリカ",
+    "nameEn": "Kenya / United States",
+    "lead": "ケニア / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "lebanon-united-states",
+    "codes": [
+      "LB",
+      "US"
+    ],
+    "nameJa": "レバノン / アメリカ",
+    "nameEn": "Lebanon / United States",
+    "lead": "レバノン / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "lithuania-france",
+    "codes": [
+      "LT",
+      "FR"
+    ],
+    "nameJa": "リトアニア / フランス",
+    "nameEn": "Lithuania / France",
+    "lead": "リトアニア / フランスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "lithuania-united-kingdom",
+    "codes": [
+      "LT",
+      "GB"
+    ],
+    "nameJa": "リトアニア / イギリス",
+    "nameEn": "Lithuania / United Kingdom",
+    "lead": "リトアニア / イギリスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "lithuania-united-states",
+    "codes": [
+      "LT",
+      "US"
+    ],
+    "nameJa": "リトアニア / アメリカ",
+    "nameEn": "Lithuania / United States",
+    "lead": "リトアニア / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "luxembourg-united-states",
+    "codes": [
+      "LU",
+      "US"
+    ],
+    "nameJa": "ルクセンブルク / アメリカ",
+    "nameEn": "Luxembourg / United States",
+    "lead": "ルクセンブルク / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "mali",
+    "codes": [
+      "ML"
+    ],
+    "nameJa": "マリ",
+    "nameEn": "Mali",
+    "lead": "マリに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "mexico",
+    "codes": [
+      "MX"
+    ],
+    "nameJa": "メキシコ",
+    "nameEn": "Mexico",
+    "lead": "メキシコに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "mexico-switzerland",
+    "codes": [
+      "MX",
+      "CH"
+    ],
+    "nameJa": "メキシコ / スイス",
+    "nameEn": "Mexico / Switzerland",
+    "lead": "メキシコ / スイスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "morocco-france",
+    "codes": [
+      "MA",
+      "FR"
+    ],
+    "nameJa": "モロッコ / フランス",
+    "nameEn": "Morocco / France",
+    "lead": "モロッコ / フランスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "netherlands",
+    "codes": [
+      "NL"
+    ],
+    "nameJa": "オランダ",
+    "nameEn": "Netherlands",
+    "lead": "オランダに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "nigeria-united-kingdom",
+    "codes": [
+      "NG",
+      "GB"
+    ],
+    "nameJa": "ナイジェリア / イギリス",
+    "nameEn": "Nigeria / United Kingdom",
+    "lead": "ナイジェリア / イギリスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "north-macedonia",
+    "codes": [
+      "MK"
+    ],
+    "nameJa": "北マケドニア",
+    "nameEn": "North Macedonia",
+    "lead": "北マケドニアに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "norway",
+    "codes": [
+      "NO"
+    ],
+    "nameJa": "ノルウェー",
+    "nameEn": "Norway",
+    "lead": "ノルウェーに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "poland",
+    "codes": [
+      "PL"
+    ],
+    "nameJa": "ポーランド",
+    "nameEn": "Poland",
+    "lead": "ポーランドに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "poland-united-states",
+    "codes": [
+      "PL",
+      "US"
+    ],
+    "nameJa": "ポーランド / アメリカ",
+    "nameEn": "Poland / United States",
+    "lead": "ポーランド / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "romania",
+    "codes": [
+      "RO"
+    ],
+    "nameJa": "ルーマニア",
+    "nameEn": "Romania",
+    "lead": "ルーマニアに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "russia",
+    "codes": [
+      "RU"
+    ],
+    "nameJa": "ロシア",
+    "nameEn": "Russia",
+    "lead": "ロシアに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "slovakia-france",
+    "codes": [
+      "SK",
+      "FR"
+    ],
+    "nameJa": "スロバキア / フランス",
+    "nameEn": "Slovakia / France",
+    "lead": "スロバキア / フランスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "south-africa",
+    "codes": [
+      "ZA"
+    ],
+    "nameJa": "南アフリカ",
+    "nameEn": "South Africa",
+    "lead": "南アフリカに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "south-africa-united-kingdom",
+    "codes": [
+      "ZA",
+      "GB"
+    ],
+    "nameJa": "南アフリカ / イギリス",
+    "nameEn": "South Africa / United Kingdom",
+    "lead": "南アフリカ / イギリスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "south-korea",
+    "codes": [
+      "KR"
+    ],
+    "nameJa": "韓国",
+    "nameEn": "South Korea",
+    "lead": "韓国に関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "south-korea-united-states",
+    "codes": [
+      "KR",
+      "US"
+    ],
+    "nameJa": "韓国 / アメリカ",
+    "nameEn": "South Korea / United States",
+    "lead": "韓国 / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "spain",
+    "codes": [
+      "ES"
+    ],
+    "nameJa": "スペイン",
+    "nameEn": "Spain",
+    "lead": "スペインに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "sweden",
+    "codes": [
+      "SE"
+    ],
+    "nameJa": "スウェーデン",
+    "nameEn": "Sweden",
+    "lead": "スウェーデンに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "switzerland",
+    "codes": [
+      "CH"
+    ],
+    "nameJa": "スイス",
+    "nameEn": "Switzerland",
+    "lead": "スイスに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "switzerland-germany",
+    "codes": [
+      "CH",
+      "DE"
+    ],
+    "nameJa": "スイス / ドイツ",
+    "nameEn": "Switzerland / Germany",
+    "lead": "スイス / ドイツにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "ukraine",
+    "codes": [
+      "UA"
+    ],
+    "nameJa": "ウクライナ",
+    "nameEn": "Ukraine",
+    "lead": "ウクライナに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "ukraine-united-states",
+    "codes": [
+      "UA",
+      "US"
+    ],
+    "nameJa": "ウクライナ / アメリカ",
+    "nameEn": "Ukraine / United States",
+    "lead": "ウクライナ / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "united-kingdom",
+    "codes": [
+      "GB"
+    ],
+    "nameJa": "イギリス",
+    "nameEn": "United Kingdom",
+    "lead": "イギリスに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "united-kingdom-united-states",
+    "codes": [
+      "GB",
+      "US"
+    ],
+    "nameJa": "イギリス / アメリカ",
+    "nameEn": "United Kingdom / United States",
+    "lead": "イギリス / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "united-states",
+    "codes": [
+      "US"
+    ],
+    "nameJa": "アメリカ",
+    "nameEn": "United States",
+    "lead": "アメリカに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "united-states-france",
+    "codes": [
+      "US",
+      "FR"
+    ],
+    "nameJa": "アメリカ / フランス",
+    "nameEn": "United States / France",
+    "lead": "アメリカ / フランスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "united-states-united-kingdom",
+    "codes": [
+      "US",
+      "GB"
+    ],
+    "nameJa": "アメリカ / イギリス",
+    "nameEn": "United States / United Kingdom",
+    "lead": "アメリカ / イギリスにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "venezuela",
+    "codes": [
+      "VE"
+    ],
+    "nameJa": "ベネズエラ",
+    "nameEn": "Venezuela",
+    "lead": "ベネズエラに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  },
+  {
+    "slug": "vietnam-united-states",
+    "codes": [
+      "VN",
+      "US"
+    ],
+    "nameJa": "ベトナム / アメリカ",
+    "nameEn": "Vietnam / United States",
+    "lead": "ベトナム / アメリカにまたがる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.06"
+  }
+]
