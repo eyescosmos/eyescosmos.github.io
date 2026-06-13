@@ -341,6 +341,10 @@ def insert_readability_style(html):
     return html[:style_close] + insert + html[style_close + len('</style>'):]
 
 
+def remove_duplicate_brand_subtitle(html):
+    return html.replace('<span class="head__brand-en">Photo Coordinates</span>', '')
+
+
 # ── HEADER (brand, crumbs, lang toggle, mobile search labels) ─────────────
 def rebuild_header(html, page, slug, ja_file):
     # lang attr
@@ -348,6 +352,7 @@ def rebuild_header(html, page, slug, ja_file):
     # brand link → /en/index.html
     html = html.replace('<a href="/index.html"><span class="head__brand-photo">写真</span>の座標</a>',
                         '<a href="/en/index.html"><span class="head__brand-photo">写真</span>の座標</a>')
+    html = remove_duplicate_brand_subtitle(html)
     # crumbs
     html = rebuild_crumbs(html, page)
     # lang toggle: JP→JA page, EN active
@@ -1187,6 +1192,7 @@ def translate_residuals(html, page, slug, ja_file, warnings):
         '<span class="head__brand-photo">写真</span>の座標',
         '<span class="head__brand-photo">Photo</span> Coordinates',
     )
+    html = remove_duplicate_brand_subtitle(html)
 
     # (b) Period values  "1970s / 1970年代" → "1970s"  (hero years, meta dd, side meta)
     html = re.sub(r'(\d{4})s / \1年代', r'\1s', html)
