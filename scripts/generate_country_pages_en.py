@@ -54,6 +54,27 @@ EN_MOVEMENTS = [
 FEATURED_IDS = ["daguerre", "fenton", "beato", "nadar",
                 "stieglitz", "strand", "cartierbresson", "hiroshi-sugimoto"]
 
+CARD_FILTER_JS = """\
+<script>
+(function(){
+  var input=document.getElementById('country-filter');
+  if(!input)return;
+  var grid=document.getElementById('cards-grid');
+  var none=document.getElementById('er-no-result');
+  var cards=grid?[].slice.call(grid.querySelectorAll('.pc-card')):[];
+  function norm(s){return (s||'').toLowerCase();}
+  input.addEventListener('input',function(){
+    var q=norm(this.value.trim());var shown=0;
+    cards.forEach(function(c){
+      var hit=!q||norm(c.textContent).indexOf(q)!==-1;
+      c.style.display=hit?'':'none';
+      if(hit)shown++;
+    });
+    if(none)none.style.display=(q&&shown===0)?'block':'none';
+  });
+})();
+</script>"""
+
 
 # ── card source ────────────────────────────────────────────────────────────
 
@@ -141,17 +162,12 @@ def build_dir_photographers(card_map: dict[str, dict]) -> str:
 
 COUNTRY_CSS_OVERRIDES = """\
 <style>
-.country-nav{display:flex;align-items:center;border-bottom:1.5px solid var(--rule-strong);background:var(--surface-2);overflow-x:auto;scrollbar-width:none;}
-.country-nav::-webkit-scrollbar{display:none;}
-.country-nav__label{font-family:var(--font-mo);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent-s);padding:0 20px;white-space:nowrap;border-right:1.5px solid var(--rule-strong);display:flex;align-items:center;flex-shrink:0;font-weight:500;align-self:stretch;}
-.country-nav__selects{display:flex;gap:10px;padding:10px 16px;flex-wrap:wrap;}
-.country-nav select{font-family:var(--font-mo);font-size:10px;letter-spacing:0.10em;color:var(--text-sub);background:var(--surface);border:1px solid var(--border-soft);border-radius:2px;padding:6px 10px;cursor:pointer;max-width:200px;}
-.country-nav__search{position:relative;display:inline-flex;align-items:center;}
-.country-nav__search-input{font-family:var(--font-mo);font-size:10px;letter-spacing:0.10em;color:var(--text-main);background:var(--surface);border:1px solid var(--border-soft);border-radius:2px;padding:6px 12px;min-width:220px;outline:none;}
-.country-nav__search-input::placeholder{color:var(--text-mute);}
-.country-nav__search-input:focus{border-color:var(--accent-s);}
-.country-nav__search .ph-search-suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:60;border:1px solid var(--border);border-top:1px solid var(--border);background:var(--surface);max-height:320px;overflow-y:auto;list-style:none;box-shadow:0 8px 24px rgba(14,12,10,0.14);}
-.country-nav__search .ph-search-suggestions[hidden]{display:none;}
+.country-sticky{position:sticky;top:0;z-index:90;background:var(--bg);}
+.country-toolbar{border-bottom:1.5px solid var(--rule-strong);background:var(--surface);}
+.country-toolbar .toolbar__search{border-right:0;flex:1;width:100%;}
+.country-strip .era-nav__label{white-space:nowrap;}
+.er-no-result{display:none;padding:48px 8px;font-family:var(--font-mo);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mute);}
+@media(max-width:760px){.head{position:static;}}
 .head__lang a{padding:4px 10px;color:var(--text-sub);font-family:var(--font-mo);font-size:10px;letter-spacing:0.20em;display:inline-block;}
 .head__lang a.is-active{background:var(--text-main);color:var(--rev-text);}
 .era-layout--solo{grid-template-columns:1fr;}
@@ -162,7 +178,7 @@ COUNTRY_CSS_OVERRIDES = """\
 .site-directory-items a{font-family:var(--font-jp);font-size:12px;color:var(--text-sub);transition:color 120ms;}
 .site-directory-items a:hover{color:var(--accent-a);}
 @media(max-width:768px){.era-layout--solo{max-width:none;}}
-@media(max-width:760px){.site-directory-links{padding:28px 16px;grid-template-columns:1fr;}.country-nav__selects{padding:10px 12px;}}
+@media(max-width:760px){.site-directory-links{padding:28px 16px;grid-template-columns:1fr;}}
 </style>"""
 
 GA_BLOCK = ('<script async src="https://www.googletagmanager.com/gtag/js?id=G-2VRTV8BZEJ"></script>\n'
@@ -178,10 +194,14 @@ GOOGLE_FONTS = (
 
 
 def render_page(cfg: dict, *, era_style, archive_card_css, mobile_search,
-                bottom_scripts, countries_sel, eras_sel, movements_sel,
+                bottom_scripts, strip_pairs,
                 dir_eras, dir_countries, dir_photographers, cards_html,
                 member_count) -> str:
     slug = cfg["slug"]
+    country_strip = "\n".join(
+        f'    <a class="era-nav__item{" is-active" if s == slug else ""}" '
+        f'href="/en/countries/{s}.html">{label}</a>'
+        for s, label in strip_pairs)
     name_en = cfg["nameEn"]
     name_ja = cfg["nameJa"]
     code = cfg["codes"][0]
@@ -260,18 +280,20 @@ def render_page(cfg: dict, *, era_style, archive_card_css, mobile_search,
   </div>
 </section>
 
-<nav class="country-nav" data-nosnippet aria-label="Taxonomy navigation">
-  <div class="country-nav__label">§ — Browse</div>
-  <div class="country-nav__selects">
-    {countries_sel}
-    {eras_sel}
-    {movements_sel}
-    <div class="country-nav__search">
-      <input class="country-nav__search-input" id="ph-search-input" type="search" placeholder="Find a photographer · SEARCH" autocomplete="off" aria-label="Find a photographer" aria-autocomplete="list" aria-controls="ph-search-suggestions" aria-expanded="false">
-      <ul class="ph-search-suggestions" id="ph-search-suggestions" role="listbox" hidden></ul>
-    </div>
+<!-- ── STICKY: search + browse by country ──────────────────── -->
+<div class="country-sticky">
+  <div class="country-toolbar" data-nosnippet>
+    <label class="toolbar__search">
+      <input type="search" id="country-filter" placeholder="Search by name, movement, country, or tag…" autocomplete="off" aria-label="Search photographers in this country">
+    </label>
   </div>
-</nav>
+  <nav class="era-nav country-strip" data-nosnippet aria-label="Country navigation">
+    <div class="era-nav__label">§ — Browse by country</div>
+    <div class="era-nav__strip">
+{country_strip}
+    </div>
+  </nav>
+</div>
 
 <div class="era-outer">
   <div class="era-layout era-layout--solo">
@@ -289,6 +311,7 @@ def render_page(cfg: dict, *, era_style, archive_card_css, mobile_search,
 {cards_html}
 
           </div>
+          <div class="er-no-result" id="er-no-result">No photographers match your search</div>
         </div>
       </section>
     </main>
@@ -318,6 +341,7 @@ def render_page(cfg: dict, *, era_style, archive_card_css, mobile_search,
 
 </div><!-- /.page -->
 {bottom_scripts}
+{CARD_FILTER_JS}
 </body>
 </html>
 """
@@ -355,9 +379,8 @@ def main() -> None:
     archive_lookup = build_en_archive_lookup(arch_html)
     archive_card_css = extract_archive_card_css(arch_html)
 
-    countries_sel = build_countries_select(list(registry))
-    eras_sel = build_eras_select()
-    movements_sel = build_movements_select()
+    # Ordered (slug, nameEn) pairs for the horizontal "Browse by country" strip
+    strip_pairs = sorted(((r["slug"], r["nameEn"]) for r in registry), key=lambda x: x[1])
     dir_eras = build_dir_eras()
     dir_countries = build_dir_countries(list(registry))
     dir_photographers = build_dir_photographers(card_map)
@@ -393,8 +416,7 @@ def main() -> None:
             cards.append(transform_card_en(art, p["id"], nat))
         html = render_page(cfg, era_style=era_style, archive_card_css=archive_card_css,
                            mobile_search=mobile_search, bottom_scripts=bottom_scripts,
-                           countries_sel=countries_sel, eras_sel=eras_sel,
-                           movements_sel=movements_sel, dir_eras=dir_eras,
+                           strip_pairs=strip_pairs, dir_eras=dir_eras,
                            dir_countries=dir_countries, dir_photographers=dir_photographers,
                            cards_html="\n".join(cards), member_count=len(members))
         (REPO / "en" / "countries" / f"{cfg['slug']}.html").write_text(html, encoding="utf-8")

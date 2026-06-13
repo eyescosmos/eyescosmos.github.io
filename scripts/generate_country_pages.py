@@ -357,17 +357,12 @@ SITE_DIR_PHOTOGRAPHERS = (
 # Country-page additional CSS overrides (exact per spec)
 COUNTRY_CSS_OVERRIDES = """\
 <style>
-.country-nav{display:flex;align-items:center;border-bottom:1.5px solid var(--rule-strong);background:var(--surface-2);overflow-x:auto;scrollbar-width:none;}
-.country-nav::-webkit-scrollbar{display:none;}
-.country-nav__label{font-family:var(--font-mo);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent-s);padding:0 20px;white-space:nowrap;border-right:1.5px solid var(--rule-strong);display:flex;align-items:center;flex-shrink:0;font-weight:500;align-self:stretch;}
-.country-nav__selects{display:flex;gap:10px;padding:10px 16px;flex-wrap:wrap;}
-.country-nav select{font-family:var(--font-mo);font-size:10px;letter-spacing:0.10em;color:var(--text-sub);background:var(--surface);border:1px solid var(--border-soft);border-radius:2px;padding:6px 10px;cursor:pointer;max-width:200px;}
-.country-nav__search{position:relative;display:inline-flex;align-items:center;}
-.country-nav__search-input{font-family:var(--font-mo);font-size:10px;letter-spacing:0.10em;color:var(--text-main);background:var(--surface);border:1px solid var(--border-soft);border-radius:2px;padding:6px 12px;min-width:220px;outline:none;}
-.country-nav__search-input::placeholder{color:var(--text-mute);}
-.country-nav__search-input:focus{border-color:var(--accent-s);}
-.country-nav__search .ph-search-suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:60;border:1px solid var(--border);border-top:1px solid var(--border);background:var(--surface);max-height:320px;overflow-y:auto;list-style:none;box-shadow:0 8px 24px rgba(14,12,10,0.14);}
-.country-nav__search .ph-search-suggestions[hidden]{display:none;}
+.country-sticky{position:sticky;top:0;z-index:90;background:var(--bg);}
+.country-toolbar{border-bottom:1.5px solid var(--rule-strong);background:var(--surface);}
+.country-toolbar .toolbar__search{border-right:0;flex:1;width:100%;}
+.country-strip .era-nav__label{white-space:nowrap;}
+@media(max-width:760px){.head{position:static;}}
+.er-no-result{display:none;padding:48px 8px;font-family:var(--font-mo);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mute);}
 .head__lang a{padding:4px 10px;color:var(--text-sub);font-family:var(--font-mo);font-size:10px;letter-spacing:0.20em;display:inline-block;}
 .head__lang a.is-active{background:var(--text-main);color:var(--rev-text);}
 .era-layout--solo{grid-template-columns:1fr;}
@@ -382,7 +377,7 @@ COUNTRY_CSS_OVERRIDES = """\
 .site-directory-items a:hover{color:var(--accent-a);}
 /* cards use archive masonry; let the solo layout breathe full-width on small screens */
 @media(max-width:768px){.era-layout--solo{max-width:none;}}
-@media(max-width:760px){.site-directory-links{padding:28px 16px;grid-template-columns:1fr;}.country-nav__selects{padding:10px 12px;}}
+@media(max-width:760px){.site-directory-links{padding:28px 16px;grid-template-columns:1fr;}}
 </style>"""
 
 # GA block (verbatim)
@@ -425,6 +420,27 @@ SEARCH_SCRIPT_SIDEBAR = """\
     render(photographers.filter(function(ph){return matches(ph,q);}),q);});
   input.addEventListener('blur',function(){setTimeout(hide,150);});
   input.addEventListener('keydown',function(e){if(e.key==='Escape'){hide();input.blur();}});
+})();
+</script>"""
+
+CARD_FILTER_SCRIPT = """\
+<script>
+(function(){
+  var input=document.getElementById('country-filter');
+  if(!input)return;
+  var grid=document.getElementById('cards-grid');
+  var none=document.getElementById('er-no-result');
+  var cards=grid?[].slice.call(grid.querySelectorAll('.pc-card')):[];
+  function norm(s){return (s||'').toLowerCase();}
+  input.addEventListener('input',function(){
+    var q=norm(this.value.trim());var shown=0;
+    cards.forEach(function(c){
+      var hit=!q||norm(c.textContent).indexOf(q)!==-1;
+      c.style.display=hit?'':'none';
+      if(hit)shown++;
+    });
+    if(none)none.style.display=(q&&shown===0)?'block':'none';
+  });
 })();
 </script>"""
 
@@ -509,7 +525,8 @@ def assert_members(config: dict, members: list[dict]) -> None:
 def generate_country_page(config: dict, era_style_block: str,
                            archive_card_css: str,
                            archive_lookup: dict[str, str],
-                           card_data: list[dict]) -> str:
+                           card_data: list[dict],
+                           strip_pairs: list[tuple[str, str]]) -> str:
     """Generate the full HTML for a country hub page."""
     members = get_members(config, card_data)
     assert_members(config, members)
@@ -546,6 +563,13 @@ def generate_country_page(config: dict, era_style_block: str,
     else:
         art_text = code[0] + (f'<span>{code[1:]}</span>' if len(code) > 1 else '')
     hero_class = "era-hero country-hero country-hero--multi" if is_multi else "era-hero country-hero"
+
+    # Horizontal "国から読む" strip (all single country pages, current one active)
+    country_strip = "\n".join(
+        f'    <a class="era-nav__item{" is-active" if s == slug else ""}" '
+        f'href="/countries/{s}.html">{label}</a>'
+        for s, label in strip_pairs
+    )
 
     canonical_url = f"https://eyescosmos.github.io/countries/{slug}.html"
     en_url = f"https://eyescosmos.github.io/en/countries/{slug}.html"
@@ -647,19 +671,20 @@ def generate_country_page(config: dict, era_style_block: str,
   </div>
 </section>
 
-<!-- ── COUNTRY NAV (分類で読む + 検索) ──────────────────────── -->
-<nav class="country-nav" data-nosnippet aria-label="分類ナビゲーション">
-  <div class="country-nav__label">§ — 分類で読む</div>
-  <div class="country-nav__selects">
-    {COUNTRIES_SELECT}
-    {ERAS_SELECT}
-    {MOVEMENTS_SELECT}
-    <div class="country-nav__search">
-      <input class="country-nav__search-input" id="ph-search-input" type="search" placeholder="写真家を検索 · SEARCH" autocomplete="off" aria-label="写真家を検索" aria-autocomplete="list" aria-controls="ph-search-suggestions" aria-expanded="false">
-      <ul class="ph-search-suggestions" id="ph-search-suggestions" role="listbox" hidden></ul>
-    </div>
+<!-- ── STICKY: 検索 ＋ 国から読む ───────────────────────────── -->
+<div class="country-sticky">
+  <div class="country-toolbar" data-nosnippet>
+    <label class="toolbar__search">
+      <input type="search" id="country-filter" placeholder="写真家名・運動・国・タグで検索…" autocomplete="off" aria-label="この国の写真家を検索">
+    </label>
   </div>
-</nav>
+  <nav class="era-nav country-strip" data-nosnippet aria-label="国ナビゲーション">
+    <div class="era-nav__label">§ — 国から読む</div>
+    <div class="era-nav__strip">
+{country_strip}
+    </div>
+  </nav>
+</div>
 
 <!-- ── MAIN CONTENT ───────────────────────────────────────── -->
 <div class="era-outer">
@@ -682,6 +707,7 @@ def generate_country_page(config: dict, era_style_block: str,
 {cards_html}
 
           </div>
+          <div class="er-no-result" id="er-no-result">該当する写真家がいません</div>
         </div>
       </section>
 
@@ -714,7 +740,7 @@ def generate_country_page(config: dict, era_style_block: str,
 </footer>
 
 </div><!-- /.page -->
-{SEARCH_SCRIPT_SIDEBAR}
+{CARD_FILTER_SCRIPT}
 {SEARCH_SCRIPT_MOBILE}
 </body>
 </html>
@@ -793,11 +819,20 @@ def main() -> None:
     SITE_DIR_COUNTRIES = filter_country_links(SITE_DIR_COUNTRIES, allowed_slugs)
     print(f"Country nav restricted to {len(allowed_slugs)} single pages")
 
+    # Ordered (slug, label) pairs for the horizontal "国から読む" strip
+    strip_pairs = re.findall(
+        r'<option value="/countries/([^"]+)\.html">([^<]+)</option>', COUNTRIES_SELECT)
+
+    # Optional: limit to given slugs (e.g. python3 … --only france)
+    only = set(sys.argv[2:]) if len(sys.argv) > 1 and sys.argv[1] == "--only" else None
+
     # Generate pages
     total = 0
     for config in registry:
+        if only and config["slug"] not in only:
+            continue
         html = generate_country_page(config, era_style_block, archive_card_css,
-                                     archive_lookup, card_data)
+                                     archive_lookup, card_data, strip_pairs)
         out_path = REPO / "countries" / f"{config['slug']}.html"
         out_path.write_text(html, encoding="utf-8")
         total += 1

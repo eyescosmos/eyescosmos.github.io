@@ -688,17 +688,12 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 
 </style>
 <style>
-.country-nav{display:flex;align-items:center;border-bottom:1.5px solid var(--rule-strong);background:var(--surface-2);overflow-x:auto;scrollbar-width:none;}
-.country-nav::-webkit-scrollbar{display:none;}
-.country-nav__label{font-family:var(--font-mo);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent-s);padding:0 20px;white-space:nowrap;border-right:1.5px solid var(--rule-strong);display:flex;align-items:center;flex-shrink:0;font-weight:500;align-self:stretch;}
-.country-nav__selects{display:flex;gap:10px;padding:10px 16px;flex-wrap:wrap;}
-.country-nav select{font-family:var(--font-mo);font-size:10px;letter-spacing:0.10em;color:var(--text-sub);background:var(--surface);border:1px solid var(--border-soft);border-radius:2px;padding:6px 10px;cursor:pointer;max-width:200px;}
-.country-nav__search{position:relative;display:inline-flex;align-items:center;}
-.country-nav__search-input{font-family:var(--font-mo);font-size:10px;letter-spacing:0.10em;color:var(--text-main);background:var(--surface);border:1px solid var(--border-soft);border-radius:2px;padding:6px 12px;min-width:220px;outline:none;}
-.country-nav__search-input::placeholder{color:var(--text-mute);}
-.country-nav__search-input:focus{border-color:var(--accent-s);}
-.country-nav__search .ph-search-suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:60;border:1px solid var(--border);border-top:1px solid var(--border);background:var(--surface);max-height:320px;overflow-y:auto;list-style:none;box-shadow:0 8px 24px rgba(14,12,10,0.14);}
-.country-nav__search .ph-search-suggestions[hidden]{display:none;}
+.country-sticky{position:sticky;top:0;z-index:90;background:var(--bg);}
+.country-toolbar{border-bottom:1.5px solid var(--rule-strong);background:var(--surface);}
+.country-toolbar .toolbar__search{border-right:0;flex:1;width:100%;}
+.country-strip .era-nav__label{white-space:nowrap;}
+@media(max-width:760px){.head{position:static;}}
+.er-no-result{display:none;padding:48px 8px;font-family:var(--font-mo);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mute);}
 .head__lang a{padding:4px 10px;color:var(--text-sub);font-family:var(--font-mo);font-size:10px;letter-spacing:0.20em;display:inline-block;}
 .head__lang a.is-active{background:var(--text-main);color:var(--rev-text);}
 .era-layout--solo{grid-template-columns:1fr;}
@@ -713,7 +708,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 .site-directory-items a:hover{color:var(--accent-a);}
 /* cards use archive masonry; let the solo layout breathe full-width on small screens */
 @media(max-width:768px){.era-layout--solo{max-width:none;}}
-@media(max-width:760px){.site-directory-links{padding:28px 16px;grid-template-columns:1fr;}.country-nav__selects{padding:10px 12px;}}
+@media(max-width:760px){.site-directory-links{padding:28px 16px;grid-template-columns:1fr;}}
 </style>
 <style>
 .pc-top--year .pc-top__art{display:flex;flex-direction:column;gap:0;overflow:hidden;}
@@ -787,19 +782,52 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   </div>
 </section>
 
-<!-- ── COUNTRY NAV (分類で読む + 検索) ──────────────────────── -->
-<nav class="country-nav" data-nosnippet aria-label="分類ナビゲーション">
-  <div class="country-nav__label">§ — 分類で読む</div>
-  <div class="country-nav__selects">
-    <select class="tax-select filter-select nav-select" aria-label="国別でみる" onchange="if(this.value) window.location.href=this.value"><option value="" selected>国別で見る</option><option value="/countries/ireland.html">アイルランド</option><option value="/countries/united-states.html">アメリカ</option><option value="/countries/albania.html">アルバニア</option><option value="/countries/united-kingdom.html">イギリス</option><option value="/countries/italy.html">イタリア</option><option value="/countries/ukraine.html">ウクライナ</option><option value="/countries/netherlands.html">オランダ</option><option value="/countries/australia.html">オーストラリア</option><option value="/countries/austria.html">オーストリア</option><option value="/countries/canada.html">カナダ</option><option value="/countries/switzerland.html">スイス</option><option value="/countries/sweden.html">スウェーデン</option><option value="/countries/spain.html">スペイン</option><option value="/countries/czech-republic.html">チェコ</option><option value="/countries/denmark.html">デンマーク</option><option value="/countries/germany.html">ドイツ</option><option value="/countries/norway.html">ノルウェー</option><option value="/countries/hungary.html">ハンガリー</option><option value="/countries/finland.html">フィンランド</option><option value="/countries/france.html">フランス</option><option value="/countries/brazil.html">ブラジル</option><option value="/countries/venezuela.html">ベネズエラ</option><option value="/countries/belgium.html">ベルギー</option><option value="/countries/poland.html">ポーランド</option><option value="/countries/mali.html">マリ</option><option value="/countries/mexico.html">メキシコ</option><option value="/countries/romania.html">ルーマニア</option><option value="/countries/russia.html">ロシア</option><option value="/countries/china.html">中国</option><option value="/countries/north-macedonia.html">北マケドニア</option><option value="/countries/south-africa.html">南アフリカ</option><option value="/countries/japan.html">日本</option><option value="/countries/south-korea.html">韓国</option></select>
-    <select class="tax-select filter-select nav-select" aria-label="年代別で見る" onchange="if(this.value) window.location.href=this.value"><option value="" selected>年代別で見る</option><option value="/archive.html">年代順で見る</option><option value="/eras/1839.html">1839–1860s</option><option value="/eras/1870.html">1870–1890s</option><option value="/eras/1890.html">1890–1910s</option><option value="/eras/1910.html">1910–1920s</option><option value="/eras/1930.html">1930–1940s</option><option value="/eras/1950.html">1950–1960s</option><option value="/eras/1970.html">1970–1980s</option><option value="/eras/1980.html">1980–1990s</option><option value="/eras/1990.html">1990–2000s</option><option value="/eras/2000.html">2000–2010s</option><option value="/eras/2010.html">2010–2020s</option></select>
-    <select class="tax-select filter-select nav-select" aria-label="関連する運動" onchange="if(this.value) window.location.href=this.value"><option value="" selected>関連する運動</option><option value="/movements/FSA写真.html">FSA写真</option><option value="/movements/カラー写真.html">カラー写真</option><option value="/movements/コンセプチュアルアート.html">コンセプチュアルアート</option><option value="/movements/シネマトグラフィック写真.html">シネマトグラフィック写真</option><option value="/movements/シュルレアリスム.html">シュルレアリスム</option><option value="/movements/ステージド写真.html">ステージド写真</option><option value="/movements/ストリート写真.html">ストリート写真</option><option value="/movements/ストレート写真.html">ストレート写真</option><option value="/movements/タイポロジー写真.html">タイポロジー写真</option><option value="/movements/ダダ.html">ダダ</option><option value="/movements/デュッセルドルフ派.html">デュッセルドルフ派</option><option value="/movements/ドキュメンタリー.html">ドキュメンタリー</option><option value="/movements/ニューカラー.html">ニューカラー</option><option value="/movements/バウハウス.html">バウハウス</option><option value="/movements/ピクチャーズ世代.html">ピクチャーズ世代</option><option value="/movements/ピクトリアリズム.html">ピクトリアリズム</option><option value="/movements/フェミニズム写真.html">フェミニズム写真</option><option value="/movements/フォトジャーナリズム.html">フォトジャーナリズム</option><option value="/movements/プロヴォーク.html">プロヴォーク</option><option value="/movements/モダニズム.html">モダニズム</option><option value="/movements/リアリズム写真.html">リアリズム写真</option><option value="/movements/レイオグラフ.html">レイオグラフ</option><option value="/movements/ヴォルテクシズム.html">ヴォルテクシズム</option><option value="/movements/写真分離派.html">写真分離派</option><option value="/movements/大判カラー写真.html">大判カラー写真</option><option value="/movements/新しいヴィジョン.html">新しいヴィジョン</option><option value="/movements/新即物主義.html">新即物主義</option><option value="/movements/決定的瞬間.html">決定的瞬間</option><option value="/movements/社会ドキュメンタリー.html">社会ドキュメンタリー</option><option value="/movements/私写真.html">私写真</option><option value="/movements/自然主義写真.html">自然主義写真</option></select>
-    <div class="country-nav__search">
-      <input class="country-nav__search-input" id="ph-search-input" type="search" placeholder="写真家を検索 · SEARCH" autocomplete="off" aria-label="写真家を検索" aria-autocomplete="list" aria-controls="ph-search-suggestions" aria-expanded="false">
-      <ul class="ph-search-suggestions" id="ph-search-suggestions" role="listbox" hidden></ul>
-    </div>
+<!-- ── STICKY: 検索 ＋ 国から読む ───────────────────────────── -->
+<div class="country-sticky">
+  <div class="country-toolbar" data-nosnippet>
+    <label class="toolbar__search">
+      <input type="search" id="country-filter" placeholder="写真家名・運動・国・タグで検索…" autocomplete="off" aria-label="この国の写真家を検索">
+    </label>
   </div>
-</nav>
+  <nav class="era-nav country-strip" data-nosnippet aria-label="国ナビゲーション">
+    <div class="era-nav__label">§ — 国から読む</div>
+    <div class="era-nav__strip">
+    <a class="era-nav__item" href="/countries/ireland.html">アイルランド</a>
+    <a class="era-nav__item" href="/countries/united-states.html">アメリカ</a>
+    <a class="era-nav__item" href="/countries/albania.html">アルバニア</a>
+    <a class="era-nav__item" href="/countries/united-kingdom.html">イギリス</a>
+    <a class="era-nav__item" href="/countries/italy.html">イタリア</a>
+    <a class="era-nav__item" href="/countries/ukraine.html">ウクライナ</a>
+    <a class="era-nav__item" href="/countries/netherlands.html">オランダ</a>
+    <a class="era-nav__item" href="/countries/australia.html">オーストラリア</a>
+    <a class="era-nav__item" href="/countries/austria.html">オーストリア</a>
+    <a class="era-nav__item" href="/countries/canada.html">カナダ</a>
+    <a class="era-nav__item" href="/countries/switzerland.html">スイス</a>
+    <a class="era-nav__item" href="/countries/sweden.html">スウェーデン</a>
+    <a class="era-nav__item" href="/countries/spain.html">スペイン</a>
+    <a class="era-nav__item is-active" href="/countries/czech-republic.html">チェコ</a>
+    <a class="era-nav__item" href="/countries/denmark.html">デンマーク</a>
+    <a class="era-nav__item" href="/countries/germany.html">ドイツ</a>
+    <a class="era-nav__item" href="/countries/norway.html">ノルウェー</a>
+    <a class="era-nav__item" href="/countries/hungary.html">ハンガリー</a>
+    <a class="era-nav__item" href="/countries/finland.html">フィンランド</a>
+    <a class="era-nav__item" href="/countries/france.html">フランス</a>
+    <a class="era-nav__item" href="/countries/brazil.html">ブラジル</a>
+    <a class="era-nav__item" href="/countries/venezuela.html">ベネズエラ</a>
+    <a class="era-nav__item" href="/countries/belgium.html">ベルギー</a>
+    <a class="era-nav__item" href="/countries/poland.html">ポーランド</a>
+    <a class="era-nav__item" href="/countries/mali.html">マリ</a>
+    <a class="era-nav__item" href="/countries/mexico.html">メキシコ</a>
+    <a class="era-nav__item" href="/countries/romania.html">ルーマニア</a>
+    <a class="era-nav__item" href="/countries/russia.html">ロシア</a>
+    <a class="era-nav__item" href="/countries/china.html">中国</a>
+    <a class="era-nav__item" href="/countries/north-macedonia.html">北マケドニア</a>
+    <a class="era-nav__item" href="/countries/south-africa.html">南アフリカ</a>
+    <a class="era-nav__item" href="/countries/japan.html">日本</a>
+    <a class="era-nav__item" href="/countries/south-korea.html">韓国</a>
+    </div>
+  </nav>
+</div>
 
 <!-- ── MAIN CONTENT ───────────────────────────────────────── -->
 <div class="era-outer">
@@ -857,6 +885,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 </article>
 
           </div>
+          <div class="er-no-result" id="er-no-result">該当する写真家がいません</div>
         </div>
       </section>
 
@@ -891,37 +920,21 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 </div><!-- /.page -->
 <script>
 (function(){
-  var input=document.getElementById('ph-search-input'),list=document.getElementById('ph-search-suggestions');
-  if(!input||!list) return;
-  var photographers=[];
-  fetch('/card-data.json').then(function(r){return r.json();}).then(function(data){
-    photographers=(data.photographers||[]).map(function(p){
-      return{name_ja:p.nameJa||'',name_en:p.nameEn||'',slug:p.id||'',url:p.href?(p.href[0]==='/'?p.href:'/'+p.href):'',
-             country:(p.metaJa||'').split('·')[0].trim(),movement:p.channel||''};
+  var input=document.getElementById('country-filter');
+  if(!input)return;
+  var grid=document.getElementById('cards-grid');
+  var none=document.getElementById('er-no-result');
+  var cards=grid?[].slice.call(grid.querySelectorAll('.pc-card')):[];
+  function norm(s){return (s||'').toLowerCase();}
+  input.addEventListener('input',function(){
+    var q=norm(this.value.trim());var shown=0;
+    cards.forEach(function(c){
+      var hit=!q||norm(c.textContent).indexOf(q)!==-1;
+      c.style.display=hit?'':'none';
+      if(hit)shown++;
     });
+    if(none)none.style.display=(q&&shown===0)?'block':'none';
   });
-  function toKatakana(s){return s.replace(/[ぁ-ゖ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
-  function matches(ph,q){var ql=q.toLowerCase(),qk=toKatakana(q);
-    return ph.name_ja.includes(q)||ph.name_ja.includes(qk)||ph.name_en.toLowerCase().includes(ql)||
-           ph.slug.toLowerCase().includes(ql)||(ph.movement&&ph.movement.toLowerCase().includes(ql))||
-           (ph.country&&ph.country.includes(q));}
-  function hl(t,q){if(!q)return t;var i=t.toLowerCase().indexOf(q.toLowerCase());
-    if(i===-1)return t;return t.slice(0,i)+'<mark>'+t.slice(i,i+q.length)+'</mark>'+t.slice(i+q.length);}
-  function render(rs,q){list.innerHTML='';
-    if(!rs.length){list.innerHTML='<li class="ph-search-no-result">\u8a72\u5f53\u3059\u308b\u5199\u771f\u5bb6\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093</li>';
-      list.hidden=false;input.setAttribute('aria-expanded','true');return;}
-    rs.slice(0,5).forEach(function(ph){var li=document.createElement('li');
-      li.className='ph-search-suggestion';li.setAttribute('role','option');
-      li.innerHTML='<a href="'+ph.url+'"><span class="ph-search-suggestion__name">'+hl(ph.name_ja,q)+'</span>'+
-        '<span class="ph-search-suggestion__en">'+ph.name_en+'</span>'+
-        '<span class="ph-search-suggestion__meta">'+ph.country+(ph.movement?' \xb7 '+ph.movement:'')+'</span></a>';
-      list.appendChild(li);});
-    list.hidden=false;input.setAttribute('aria-expanded','true');}
-  function hide(){list.hidden=true;list.innerHTML='';input.setAttribute('aria-expanded','false');}
-  input.addEventListener('input',function(){var q=this.value.trim();if(!q){hide();return;}
-    render(photographers.filter(function(ph){return matches(ph,q);}),q);});
-  input.addEventListener('blur',function(){setTimeout(hide,150);});
-  input.addEventListener('keydown',function(e){if(e.key==='Escape'){hide();input.blur();}});
 })();
 </script>
 <script>

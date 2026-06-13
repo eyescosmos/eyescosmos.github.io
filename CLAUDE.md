@@ -140,10 +140,18 @@ HTML 構造破損の典型例（発見したら修正する）：
    `<style>`・GA）
 2. `header.head`（ブランド・パンくず `COUNTRIES / 国名`・言語トグル JP/EN・
    モバイル検索）— `data-nosnippet`
-3. `nav.country-nav`（国別・年代別・運動の 3 つの `<select>` を旧ページから
-   そのまま移植。フル一覧ナビ）— `data-nosnippet`
-4. `section.era-hero.country-hero`（アート面に国コード大文字＋ラベル、
+3. `section.era-hero.country-hero`（アート面に国コード大文字＋ラベル、
    info に国名 h1・英語名・リード文・メタ行 Photographers/Country/Code/Vol）
+4. `div.country-sticky`（**position:sticky; top:0** でスクロール追従）内に：
+   - `div.country-toolbar > label.toolbar__search`：アーカイブと同形の検索欄
+     （`#country-filter`）。このページのカードをテキストで実時間フィルタ
+     （`CARD_FILTER_SCRIPT`、ヒット0件で `#er-no-result` 表示）
+   - `nav.era-nav.country-strip`：年代ページと同形の**横スクロール strip**で
+     全単国を列挙（現在の国は `is-active`）。ラベル「§ — 国から読む」
+     （EN は「§ — Browse by country」）
+   - モバイルでは header の sticky を解除（`@media(max-width:760px){.head{position:static}}`）
+     して二重 sticky の重なりを防ぐ。旧 `<select>` 3種・候補ドロップダウン検索は廃止
+   — `data-nosnippet`
 5. `div.era-outer > div.era-layout.era-layout--solo > main.era-main`（**サイド
    バーなし single-column**）内に `section.ph-section` 1 個。`§ PH / 国名の
    写真家` の見出し＋`div.er-cards`（カードグリッド）

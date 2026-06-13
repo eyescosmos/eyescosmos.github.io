@@ -688,17 +688,12 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 
 </style>
 <style>
-.country-nav{display:flex;align-items:center;border-bottom:1.5px solid var(--rule-strong);background:var(--surface-2);overflow-x:auto;scrollbar-width:none;}
-.country-nav::-webkit-scrollbar{display:none;}
-.country-nav__label{font-family:var(--font-mo);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent-s);padding:0 20px;white-space:nowrap;border-right:1.5px solid var(--rule-strong);display:flex;align-items:center;flex-shrink:0;font-weight:500;align-self:stretch;}
-.country-nav__selects{display:flex;gap:10px;padding:10px 16px;flex-wrap:wrap;}
-.country-nav select{font-family:var(--font-mo);font-size:10px;letter-spacing:0.10em;color:var(--text-sub);background:var(--surface);border:1px solid var(--border-soft);border-radius:2px;padding:6px 10px;cursor:pointer;max-width:200px;}
-.country-nav__search{position:relative;display:inline-flex;align-items:center;}
-.country-nav__search-input{font-family:var(--font-mo);font-size:10px;letter-spacing:0.10em;color:var(--text-main);background:var(--surface);border:1px solid var(--border-soft);border-radius:2px;padding:6px 12px;min-width:220px;outline:none;}
-.country-nav__search-input::placeholder{color:var(--text-mute);}
-.country-nav__search-input:focus{border-color:var(--accent-s);}
-.country-nav__search .ph-search-suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:60;border:1px solid var(--border);border-top:1px solid var(--border);background:var(--surface);max-height:320px;overflow-y:auto;list-style:none;box-shadow:0 8px 24px rgba(14,12,10,0.14);}
-.country-nav__search .ph-search-suggestions[hidden]{display:none;}
+.country-sticky{position:sticky;top:0;z-index:90;background:var(--bg);}
+.country-toolbar{border-bottom:1.5px solid var(--rule-strong);background:var(--surface);}
+.country-toolbar .toolbar__search{border-right:0;flex:1;width:100%;}
+.country-strip .era-nav__label{white-space:nowrap;}
+.er-no-result{display:none;padding:48px 8px;font-family:var(--font-mo);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mute);}
+@media(max-width:760px){.head{position:static;}}
 .head__lang a{padding:4px 10px;color:var(--text-sub);font-family:var(--font-mo);font-size:10px;letter-spacing:0.20em;display:inline-block;}
 .head__lang a.is-active{background:var(--text-main);color:var(--rev-text);}
 .era-layout--solo{grid-template-columns:1fr;}
@@ -709,7 +704,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 .site-directory-items a{font-family:var(--font-jp);font-size:12px;color:var(--text-sub);transition:color 120ms;}
 .site-directory-items a:hover{color:var(--accent-a);}
 @media(max-width:768px){.era-layout--solo{max-width:none;}}
-@media(max-width:760px){.site-directory-links{padding:28px 16px;grid-template-columns:1fr;}.country-nav__selects{padding:10px 12px;}}
+@media(max-width:760px){.site-directory-links{padding:28px 16px;grid-template-columns:1fr;}}
 </style>
 <style>
 .pc-top--year .pc-top__art{display:flex;flex-direction:column;gap:0;overflow:hidden;}
@@ -781,18 +776,52 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   </div>
 </section>
 
-<nav class="country-nav" data-nosnippet aria-label="Taxonomy navigation">
-  <div class="country-nav__label">§ — Browse</div>
-  <div class="country-nav__selects">
-    <select class="tax-select filter-select nav-select" aria-label="Browse countries" onchange="if(this.value) window.location.href=this.value"><option value="" selected>Browse countries</option><option value="/en/countries/albania.html">Albania</option><option value="/en/countries/australia.html">Australia</option><option value="/en/countries/austria.html">Austria</option><option value="/en/countries/belgium.html">Belgium</option><option value="/en/countries/brazil.html">Brazil</option><option value="/en/countries/canada.html">Canada</option><option value="/en/countries/china.html">China</option><option value="/en/countries/czech-republic.html">Czech Republic</option><option value="/en/countries/denmark.html">Denmark</option><option value="/en/countries/finland.html">Finland</option><option value="/en/countries/france.html">France</option><option value="/en/countries/germany.html">Germany</option><option value="/en/countries/hungary.html">Hungary</option><option value="/en/countries/ireland.html">Ireland</option><option value="/en/countries/italy.html">Italy</option><option value="/en/countries/japan.html">Japan</option><option value="/en/countries/mali.html">Mali</option><option value="/en/countries/mexico.html">Mexico</option><option value="/en/countries/netherlands.html">Netherlands</option><option value="/en/countries/north-macedonia.html">North Macedonia</option><option value="/en/countries/norway.html">Norway</option><option value="/en/countries/poland.html">Poland</option><option value="/en/countries/romania.html">Romania</option><option value="/en/countries/russia.html">Russia</option><option value="/en/countries/south-africa.html">South Africa</option><option value="/en/countries/south-korea.html">South Korea</option><option value="/en/countries/spain.html">Spain</option><option value="/en/countries/sweden.html">Sweden</option><option value="/en/countries/switzerland.html">Switzerland</option><option value="/en/countries/ukraine.html">Ukraine</option><option value="/en/countries/united-kingdom.html">United Kingdom</option><option value="/en/countries/united-states.html">United States</option><option value="/en/countries/venezuela.html">Venezuela</option></select>
-    <select class="tax-select filter-select nav-select" aria-label="Browse eras" onchange="if(this.value) window.location.href=this.value"><option value="" selected>Browse eras</option><option value="/en/archive.html">Browse by Era</option><option value="/en/eras/1839.html">1839–1860s</option><option value="/en/eras/1870.html">1870–1890s</option><option value="/en/eras/1890.html">1890–1910s</option><option value="/en/eras/1910.html">1910–1920s</option><option value="/en/eras/1930.html">1930–1940s</option><option value="/en/eras/1950.html">1950–1960s</option><option value="/en/eras/1970.html">1970–1980s</option><option value="/en/eras/1980.html">1980–1990s</option><option value="/en/eras/1990.html">1990–2000s</option><option value="/en/eras/2000.html">2000–2010s</option><option value="/en/eras/2010.html">2010–2020s</option></select>
-    <select class="tax-select filter-select nav-select" aria-label="Related movements" onchange="if(this.value) window.location.href=this.value"><option value="" selected>Related movements</option><option value="/en/movements/conceptual-art.html">Conceptual Art</option><option value="/en/movements/documentary.html">Documentary</option><option value="/en/movements/pictorialism.html">Pictorialism</option><option value="/en/movements/social-documentary.html">Social Documentary</option><option value="/en/movements/i-photography-shi-shashin.html">I-Photography (Shi-shashin)</option><option value="/en/movements/decisive-moment.html">Decisive Moment</option><option value="/en/movements/photojournalism.html">Photojournalism</option><option value="/en/movements/street-photography.html">Street Photography</option></select>
-    <div class="country-nav__search">
-      <input class="country-nav__search-input" id="ph-search-input" type="search" placeholder="Find a photographer · SEARCH" autocomplete="off" aria-label="Find a photographer" aria-autocomplete="list" aria-controls="ph-search-suggestions" aria-expanded="false">
-      <ul class="ph-search-suggestions" id="ph-search-suggestions" role="listbox" hidden></ul>
-    </div>
+<!-- ── STICKY: search + browse by country ──────────────────── -->
+<div class="country-sticky">
+  <div class="country-toolbar" data-nosnippet>
+    <label class="toolbar__search">
+      <input type="search" id="country-filter" placeholder="Search by name, movement, country, or tag…" autocomplete="off" aria-label="Search photographers in this country">
+    </label>
   </div>
-</nav>
+  <nav class="era-nav country-strip" data-nosnippet aria-label="Country navigation">
+    <div class="era-nav__label">§ — Browse by country</div>
+    <div class="era-nav__strip">
+    <a class="era-nav__item" href="/en/countries/albania.html">Albania</a>
+    <a class="era-nav__item" href="/en/countries/australia.html">Australia</a>
+    <a class="era-nav__item" href="/en/countries/austria.html">Austria</a>
+    <a class="era-nav__item" href="/en/countries/belgium.html">Belgium</a>
+    <a class="era-nav__item" href="/en/countries/brazil.html">Brazil</a>
+    <a class="era-nav__item" href="/en/countries/canada.html">Canada</a>
+    <a class="era-nav__item" href="/en/countries/china.html">China</a>
+    <a class="era-nav__item" href="/en/countries/czech-republic.html">Czech Republic</a>
+    <a class="era-nav__item" href="/en/countries/denmark.html">Denmark</a>
+    <a class="era-nav__item" href="/en/countries/finland.html">Finland</a>
+    <a class="era-nav__item" href="/en/countries/france.html">France</a>
+    <a class="era-nav__item is-active" href="/en/countries/germany.html">Germany</a>
+    <a class="era-nav__item" href="/en/countries/hungary.html">Hungary</a>
+    <a class="era-nav__item" href="/en/countries/ireland.html">Ireland</a>
+    <a class="era-nav__item" href="/en/countries/italy.html">Italy</a>
+    <a class="era-nav__item" href="/en/countries/japan.html">Japan</a>
+    <a class="era-nav__item" href="/en/countries/mali.html">Mali</a>
+    <a class="era-nav__item" href="/en/countries/mexico.html">Mexico</a>
+    <a class="era-nav__item" href="/en/countries/netherlands.html">Netherlands</a>
+    <a class="era-nav__item" href="/en/countries/north-macedonia.html">North Macedonia</a>
+    <a class="era-nav__item" href="/en/countries/norway.html">Norway</a>
+    <a class="era-nav__item" href="/en/countries/poland.html">Poland</a>
+    <a class="era-nav__item" href="/en/countries/romania.html">Romania</a>
+    <a class="era-nav__item" href="/en/countries/russia.html">Russia</a>
+    <a class="era-nav__item" href="/en/countries/south-africa.html">South Africa</a>
+    <a class="era-nav__item" href="/en/countries/south-korea.html">South Korea</a>
+    <a class="era-nav__item" href="/en/countries/spain.html">Spain</a>
+    <a class="era-nav__item" href="/en/countries/sweden.html">Sweden</a>
+    <a class="era-nav__item" href="/en/countries/switzerland.html">Switzerland</a>
+    <a class="era-nav__item" href="/en/countries/ukraine.html">Ukraine</a>
+    <a class="era-nav__item" href="/en/countries/united-kingdom.html">United Kingdom</a>
+    <a class="era-nav__item" href="/en/countries/united-states.html">United States</a>
+    <a class="era-nav__item" href="/en/countries/venezuela.html">Venezuela</a>
+    </div>
+  </nav>
+</div>
 
 <div class="era-outer">
   <div class="era-layout era-layout--solo">
@@ -1313,6 +1342,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 </article>
 
           </div>
+          <div class="er-no-result" id="er-no-result">No photographers match your search</div>
         </div>
       </section>
     </main>
@@ -1396,6 +1426,25 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   var indexEl=document.getElementById('photographer-index');
   if(indexEl){try{start(normalize(JSON.parse(indexEl.textContent)));}catch(e){}return;}
   fetch('/card-data.json').then(function(r){return r.json();}).then(function(data){start(normalize(data.photographers||[]));}).catch(function(){});
+})();
+</script>
+<script>
+(function(){
+  var input=document.getElementById('country-filter');
+  if(!input)return;
+  var grid=document.getElementById('cards-grid');
+  var none=document.getElementById('er-no-result');
+  var cards=grid?[].slice.call(grid.querySelectorAll('.pc-card')):[];
+  function norm(s){return (s||'').toLowerCase();}
+  input.addEventListener('input',function(){
+    var q=norm(this.value.trim());var shown=0;
+    cards.forEach(function(c){
+      var hit=!q||norm(c.textContent).indexOf(q)!==-1;
+      c.style.display=hit?'':'none';
+      if(hit)shown++;
+    });
+    if(none)none.style.display=(q&&shown===0)?'block':'none';
+  });
 })();
 </script>
 </body>
