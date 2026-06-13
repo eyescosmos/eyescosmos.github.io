@@ -2722,6 +2722,11 @@ body {
   function patchDesignFrame() {
     const doc = designFrame && designFrame.contentDocument;
     if (!doc) return;
+    if (!doc.body) {
+      setTimeout(patchDesignFrame, 100);
+      return;
+    }
+    if (doc.getElementById('design-overlay-observer')) return;
     if (!doc.getElementById('design-overlay-patch')) {
       const style = doc.createElement('style');
       style.id = 'design-overlay-patch';
@@ -2739,6 +2744,8 @@ body {
         .info-card,
         .info-card-toggle,
         .connection-legend,
+        details.connection-legend,
+        .connection-legend .legend-summary,
         .action-buttons {
           display: none !important;
         }
@@ -2749,38 +2756,63 @@ body {
         }
       `;
       doc.head.appendChild(style);
+    }
 
-      // Send legend data to parent (called on every change)
-      function sendLegendData() {
-        const lis = doc.querySelectorAll('.connection-legend li');
-        const items = Array.from(lis).map(li => {
-          const swatch = li.querySelector('.legend-swatch');
-          const label  = li.querySelector('.legend-label');
-          return {
-            color: swatch ? swatch.style.background : '',
-            label: label  ? label.textContent.trim() : ''
-          };
-        }).filter(d => d.label);
-        window.parent?.postMessage({ type: '__pc_legend', items }, '*');
-      }
+    const marker = doc.createElement('meta');
+    marker.id = 'design-overlay-observer';
+    marker.setAttribute('data-owner', 'photo-coordinates');
+    doc.head.appendChild(marker);
 
-      // MutationObserver: watch body for React re-renders (legend + photographer selection)
-      let legendTimer = null;
-      let lastSelectedName = '';
-      const legendObserver = new MutationObserver(() => {
-        clearTimeout(legendTimer);
-        legendTimer = setTimeout(sendLegendData, 150);
-
-        // Detect photographer selection via info-card h2 change
-        const h2 = doc.querySelector('.info-card h2');
-        const name = h2 ? h2.textContent.trim() : '';
-        if (name && name !== '星座をたどる' && name !== lastSelectedName) {
-          lastSelectedName = name;
-          window.postMessage({ type: 'photographer-click', name }, window.location.origin);
+    function hideEmbeddedMapControls() {
+      doc.querySelectorAll('.connection-legend, details.connection-legend, .legend-summary').forEach(el => {
+        el.style.setProperty('display', 'none', 'important');
+      });
+      doc.querySelectorAll('summary').forEach(summary => {
+        const label = summary.textContent.trim();
+        if (label === '線' || label === 'Lines') {
+          summary.style.setProperty('display', 'none', 'important');
+          summary.closest('details')?.style.setProperty('display', 'none', 'important');
         }
       });
-      legendObserver.observe(doc.body, { childList: true, subtree: true, characterData: true });
     }
+
+    // Send legend data to parent (called on every change)
+    function sendLegendData() {
+      const lis = doc.querySelectorAll('.connection-legend li');
+      const items = Array.from(lis).map(li => {
+        const swatch = li.querySelector('.legend-swatch');
+        const label  = li.querySelector('.legend-label');
+        return {
+          color: swatch ? swatch.style.background : '',
+          label: label  ? label.textContent.trim() : ''
+        };
+      }).filter(d => d.label);
+      window.parent?.postMessage({ type: '__pc_legend', items }, '*');
+    }
+
+    // MutationObserver: watch body for React re-renders (legend + photographer selection)
+    let legendTimer = null;
+    let lastSelectedName = '';
+    function syncSelectedPhotographer() {
+      const h2 = doc.querySelector('.info-card h2');
+      const name = h2 ? h2.textContent.trim() : '';
+      if (name && name !== '星座をたどる' && name !== lastSelectedName) {
+        lastSelectedName = name;
+        window.postMessage({ type: 'photographer-click', name }, '*');
+      }
+    }
+    const legendObserver = new MutationObserver(() => {
+      hideEmbeddedMapControls();
+      clearTimeout(legendTimer);
+      legendTimer = setTimeout(sendLegendData, 150);
+
+      // Detect photographer selection via info-card h2 change
+      syncSelectedPhotographer();
+    });
+    legendObserver.observe(doc.body, { childList: true, subtree: true, characterData: true });
+    hideEmbeddedMapControls();
+    sendLegendData();
+    syncSelectedPhotographer();
   }
   if (designFrame) {
     designFrame.addEventListener('load', patchDesignFrame);
