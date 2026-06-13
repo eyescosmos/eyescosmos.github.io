@@ -371,6 +371,41 @@ textJa・textEn のメインセクション見出しは、ジェネレータの 
 - ジェネレータ（`scripts/generate_photographer_pages.py`）は全HTMLを毎回上書き生成する
 - HTMLへの直接編集は永久に失われる。唯一の永続ストレージは overrides JS ファイル
 
+## `scripts/generate_photographer_pages.py` は実行禁止 — 旧デザインで現行と乖離 — CRITICAL
+
+**絶対に `python3 scripts/generate_photographer_pages.py` を実行しないこと。**
+
+**理由（2026-06-13 確認）:** 現行の日本語写真家ページは v5.1 新デザイン
+（`<header class="head">` ＋ `head__lang` トグル ＋ `<section class="ph-hero">`）に
+移行済み。一方この旧ジェネレータは**別物の旧デザイン**（`lang-toggle`/`lang-btn`・
+`title-block`・`lead-abstract`・`facts` テーブル等）を生成する。つまりジェネレータの
+出力は現行ページと一致しない。
+
+**実行した場合に起きること:**
+- 294枚すべての JA 写真家ページの**デザインが旧版に巻き戻る**
+- 修正済みの JA→EN 言語トグル（`<a href="/en/photographers/…"><button>EN</button></a>`）が
+  消え、無反応の `<button>EN</button>` に戻る
+- `ph-hero` ヒーロー・現行ヘッダー・モバイル検索などの新要素が消失する
+
+**現在の正（source of truth）:**
+- 日本語写真家ページの**構造・デザイン・ヘッダー・言語トグルは `photographers/*.html` 自身**
+  （JA HTML が正）。構造的修正は HTML を直接編集する。
+- 本文・解説テキストは引き続き `data/photographer-essay-overrides.js` が正
+  （ただし overrides の反映に旧ジェネレータを使ってはならない。本文編集も現状は HTML 直接編集で行う）。
+- 英語ページは `scripts/build_photographers_en.py` が JA HTML を入力に再生成する
+  （この EN ビルダーは現行デザインを生成するので実行してよい）。
+
+**言語トグルが再び壊れていないかの確認:**
+```bash
+# JA 側に無反応の素の EN ボタンが無いこと（0 件であるべき）
+grep -l '<button>EN</button>' photographers/*.html movements/*.html eras/*.html
+# 再発時の冪等修正
+python3 scripts/fix_ja_lang_toggle.py --apply   # countries は除外・EN実在を検証
+```
+
+旧ジェネレータを現行デザイン用に作り直す場合は、Daisuke の明示依頼があったときのみ着手し、
+着手前に本注意書きを更新すること。
+
 ## Content consistency
 - アーカイブページと写真家の個別ページで同じ解説を持つ場合は、内容の整合性を保つこと
 - どちらか一方の解説を更新した場合は、対応するもう一方のページにも同じ変更を適用
