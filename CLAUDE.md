@@ -182,8 +182,13 @@ HTML 構造破損の典型例（発見したら修正する）：
 - カード href は `../photographers/`（相対）、ナビ・フッターは `/…`（絶対）。
 
 ### EN 版
-- 英語版（`en/countries/*.html`）は基準確定後に別途。JA で内容を確定してから
-  反映する。
+- 英語版（`en/countries/*.html`）も同一仕様で移行済み（単国33＋複合29スタブ）。
+  生成は `scripts/generate_country_pages_en.py`：`data/country-pages.json`（共通の正本）
+  ＋ EN カードは `en/archive.html`（href `/en/photographers/`、lede は EN サイト共通で
+  切り詰め表示のまま）＋ EN クローム（header/hero/footer/検索）は `en/eras/1839.html`
+  から抽出。h1=英名・period=和名、運動ドロップダウンは有効な EN movement 8件、
+  era 系リンクは `/en/eras/`・`/en/archive.html`（旧EN国別は誤って `/eras/` を指していた）。
+  複合は EN redirect スタブ（→ `/en/countries/<target>`、JA スタブの転送先を踏襲）。
 
 ## Design invariants
 - 本文があるページの h2 / セクションタイトルは、font-size: 14px、color: #c8a96e（アンバー）を維持する
