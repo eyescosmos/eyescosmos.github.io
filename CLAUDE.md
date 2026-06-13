@@ -117,7 +117,14 @@ HTML 構造破損の典型例（発見したら修正する）：
   年代ページの `add_missing_era_cards.py` と共有。カードCSSは `archive.html` の
   バリアント定義を流用（`.cards` masonry ＋ `body.v51` ＋ 全 `pc-top--*`）。
 - 運動ドロップダウンは `movements/*.html` 全件を列挙（全ページ共通）。
-- 複合（二重国籍）ページは当面 v5.1 で維持。削除・リダイレクト化は後日。
+- **国別ページは単国（33ページ）のみ。二重国籍（複合）ページは廃止済み。**
+  二重国籍写真家は関係する各単国ページに掲載される（例: マン・レイ→アメリカ＋フランス）。
+  旧複合ページ（hungary-france.html 等 29枚）は `scripts/retire_composite_country_pages.py`
+  により **redirect スタブ化**（noindex + meta-refresh + canonical → 第1コードの単国ページ）。
+  ナビ・サイト内リンクからは除外済み（`generate_country_pages.py` が registry に無い
+  slug を除去）。複合ページを新規に作らないこと。
+  ※他セクション（en/・一部 photographer ページ）から複合ページへの旧リンクは
+  スタブ経由で転送される。各ジェネレータ再実行時に単国ページへ張り替えること。
 
 ### 位置づけ
 - 国別ページは**写真家一覧が主役のシンプルなハブ**。解説・thesis・abstract・

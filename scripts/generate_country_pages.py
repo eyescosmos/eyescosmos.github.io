@@ -740,8 +740,24 @@ def build_movements_select() -> str:
             + "".join(opts) + "</select>")
 
 
+def filter_country_links(fragment: str, allowed: set[str]) -> str:
+    """Drop <option>/<a> entries for country slugs not in `allowed`
+    (used to remove retired composite pages from nav + site directory)."""
+    fragment = re.sub(
+        r'<option value="/countries/([^"]+)\.html">.*?</option>',
+        lambda m: m.group(0) if m.group(1) in allowed else '',
+        fragment,
+    )
+    fragment = re.sub(
+        r'<a href="/countries/([^"]+)\.html">.*?</a>',
+        lambda m: m.group(0) if m.group(1) in allowed else '',
+        fragment,
+    )
+    return fragment
+
+
 def main() -> None:
-    global MOVEMENTS_SELECT
+    global MOVEMENTS_SELECT, COUNTRIES_SELECT, SITE_DIR_COUNTRIES
 
     # Load era page for style block
     era_path = REPO / "eras" / "1839.html"
@@ -769,6 +785,13 @@ def main() -> None:
     # Load the country-page registry (source of truth)
     registry = json.loads((REPO / "data" / "country-pages.json").read_text(encoding="utf-8"))
     print(f"Country registry: {len(registry)} pages")
+
+    # Restrict country nav + site directory to pages that still exist as full
+    # pages (composite pages are retired to redirect stubs).
+    allowed_slugs = {r["slug"] for r in registry}
+    COUNTRIES_SELECT = filter_country_links(COUNTRIES_SELECT, allowed_slugs)
+    SITE_DIR_COUNTRIES = filter_country_links(SITE_DIR_COUNTRIES, allowed_slugs)
+    print(f"Country nav restricted to {len(allowed_slugs)} single pages")
 
     # Generate pages
     total = 0
