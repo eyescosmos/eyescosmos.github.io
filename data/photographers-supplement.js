@@ -4815,5 +4815,56 @@ PHOTOGRAPHERS.push(
       { "num": 3, "name": "Case Publishing — White Map on the Silk Road", "url": "https://case-publishing.jp/en/publication/white-map-on-the-silk-road" }
     ]
   }
+},
+{
+  "id": "sibylle-bergemann",
+  "name": "Sibylle Bergemann",
+  "nameJa": "ジビレ・ベルゲマン",
+  "nationality": "DE",
+  "flag": "🇩🇪",
+  "years": "1941–2010",
+  "gender": "女性",
+  "era": "1980",
+  "movements": [
+    "東ドイツ写真",
+    "ファッション写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Sibylle Bergemann Estate — Biography",
+      "url": "https://sibyllebergemann.com/biography"
+    },
+    {
+      "label": "Berlinische Galerie — Sibylle Bergemann",
+      "url": "https://berlinischegalerie.de/en/exhibition/sibylle-bergemann/"
+    },
+    {
+      "label": "OSTKREUZ — Sibylle Bergemann",
+      "url": "https://www.ostkreuz.de/en/photographers/sibylle-bergemann/"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "ジビレ・ベルゲマンは、東ドイツの文化誌『Sibylle』を舞台に、ファッション写真を都市と社会のなかの肖像として撮り直した写真家。アルノ・フィッシャーの写真教育と写真エッセイの方法を受け継ぎ、人物と環境、服や記念碑との関係を連作へ編んだ。代表作《記念碑（Das Denkmal）》ではマルクス＝エンゲルス像の制作過程を11年にわたり追い、統一後はOstkreuz（オストクロイツ）の設立と教育を通じて後続世代へ著者性の方法を手渡した。",
+    "textEn": "Sibylle Bergemann reframed fashion photography as portraiture within the city and society, working through the East German cultural magazine Sibylle. Building on Arno Fischer's teaching and the photo-essay tradition, she wove people together with their clothes, interiors, streets and monuments into long series. Her landmark Das Denkmal followed the eleven-year making of East Berlin's Marx-Engels monument, and after reunification she co-founded the Ostkreuz agency.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Sibylle Bergemann Estate — Biography",
+        "url": "https://sibyllebergemann.com/biography"
+      },
+      {
+        "num": 2,
+        "name": "Berlinische Galerie — Sibylle Bergemann",
+        "url": "https://berlinischegalerie.de/en/exhibition/sibylle-bergemann/"
+      },
+      {
+        "num": 3,
+        "name": "OSTKREUZ — Sibylle Bergemann",
+        "url": "https://www.ostkreuz.de/en/photographers/sibylle-bergemann/"
+      }
+    ]
+  }
 }
 );

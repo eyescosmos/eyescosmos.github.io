@@ -5657,6 +5657,23 @@
       "style": "pc-top--year",
       "artText": "1949",
       "hintText": "ANNIE LEIBOVITZ · 1949-"
+    },
+    {
+      "type": "photographer",
+      "id": "sibylle-bergemann",
+      "idx": 284,
+      "nameJa": "ジビレ・ベルゲマン",
+      "nameEn": "Sibylle Bergemann",
+      "nationality": "DE",
+      "era": "1980",
+      "metaJa": "ドイツ · 1941–2010",
+      "style": "pc-top--initials",
+      "artText": "SB",
+      "hintText": "SIBYLLE BERGEMANN · 1941–2010",
+      "channel": "東ドイツ写真 · ファッション/ドキュメンタリー",
+      "tags": ["東ドイツ写真", "ファッション写真", "ドイツ"],
+      "href": "photographers/sibylle-bergemann.html",
+      "ledeJa": "ジビレ・ベルゲマンは、東ドイツの文化誌『Sibylle』を舞台に、ファッション写真を都市と社会のなかの肖像として撮り直した写真家。アルノ・フィッシャーの写真教育と写真エッセイの方法を受け継ぎ、人物と環境、服や記念碑との関係を連作へ編んだ。代表作《記念碑（Das Denkmal）》ではマルクス＝エンゲルス像の制作過程を11年にわたり追い、統一後はOstkreuz（オストクロイツ）の設立と教育を通じて後続世代へ著者性の方法を手渡した。"
     }
   ],
   "movements": [

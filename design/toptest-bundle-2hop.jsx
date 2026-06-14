@@ -123,6 +123,23 @@ function ensureTopPageManualPhotographers() {
       urlEn: 'https://eyescosmos.github.io/en/photographers/michio-hoshino.html',
       x: 0.67,
       y: 0.69
+    },
+    {
+      id: 'sibylle-bergemann',
+      name: 'ジビレ・ベルゲマン',
+      nameJa: 'ジビレ・ベルゲマン',
+      nameEn: 'Sibylle Bergemann',
+      country: 'ドイツ',
+      nationality: 'DE',
+      flag: '🇩🇪',
+      years: '1941-2010',
+      era: '1980',
+      movements: ['東ドイツ写真', 'ファッション写真', 'ドキュメンタリー'],
+      influence: 7.3,
+      url: 'https://eyescosmos.github.io/photographers/sibylle-bergemann.html',
+      urlEn: 'https://eyescosmos.github.io/en/photographers/sibylle-bergemann.html',
+      x: 0.45,
+      y: 0.50
     }
   ];
   additions.forEach((photographer) => {
@@ -158,7 +175,11 @@ function ensureTopPageManualPhotographers() {
     ['annie-leibovitz', 'sherman', 'ステージド写真'],
     ['michio-hoshino', 'salgado', 'ドキュメンタリー'],
     ['michio-hoshino', 'domon', 'ドキュメンタリー'],
-    ['michio-hoshino', 'mitsuaki-iwago', 'ドキュメンタリー']
+    ['michio-hoshino', 'mitsuaki-iwago', 'ドキュメンタリー'],
+    ['sibylle-bergemann', 'becher', 'タイポロジー写真'],
+    ['sibylle-bergemann', 'sander', 'ポートレート'],
+    ['sibylle-bergemann', 'cartierbresson', 'ドキュメンタリー'],
+    ['sibylle-bergemann', 'evans', 'ドキュメンタリー']
   ].forEach((connection) => {
     if (existing.has(connection[0]) && existing.has(connection[1]) && !connectionKeys.has(connectionKey(connection))) {
       window.CONNECTIONS.push(connection);
