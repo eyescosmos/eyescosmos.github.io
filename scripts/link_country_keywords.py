@@ -9,6 +9,10 @@ For every photographers/*.html (JA) and en/photographers/*.html (EN):
     such as Slovakia/Lithuania have no single page → stay plain text).
   - keyword chips (.ph-kw and the sidebar "Keywords" block .ph-side-chip):
     link to the matching movement page when one exists; otherwise plain.
+    Additionally handles:
+    (a) alias chips (e.g. "FSA" → FSA写真, "Conceptual" → conceptual-art)
+    (b) country-name chips (e.g. "アメリカ", "United States") → country pages
+    (c) slash-composite chips (e.g. "デンマーク / アメリカ") → resolve per part
 
 Idempotent: re-running produces no further changes.
 """
@@ -80,21 +84,117 @@ def patch_country(html_text: str, pid: str, lang: str) -> str:
 
 # ── keywords ─────────────────────────────────────────────────────────────--
 
+# Alias maps: chip text → movement page stem/slug.
+# Applies only when the exact text appears and the target page exists.
+# Strict: exact match only; do not add entries without verifying page existence.
+JA_MOVEMENT_ALIASES: dict[str, str] = {
+    "コンセプチュアル": "コンセプチュアルアート",
+    "FSA": "FSA写真",
+    "Bauhaus": "バウハウス",
+    "Provoke": "プロヴォーク",
+}
+
+EN_MOVEMENT_ALIASES: dict[str, str] = {
+    "Conceptual": "conceptual-art",
+    "FSA": "fsa-photography",
+}
+
+
 def movement_href(keyword: str, lang: str) -> str | None:
+    """Return href for keyword if a movement page exists (exact match only)."""
     if lang == "en":
         slug = slugify_en(keyword)
-        return f"/en/movements/{slug}.html" if (REPO / "en" / "movements" / f"{slug}.html").exists() else None
-    return f"/movements/{keyword}.html" if (REPO / "movements" / f"{keyword}.html").exists() else None
+        if (REPO / "en" / "movements" / f"{slug}.html").exists():
+            return f"/en/movements/{slug}.html"
+        return None
+    if (REPO / "movements" / f"{keyword}.html").exists():
+        return f"/movements/{keyword}.html"
+    return None
+
+
+def alias_movement_href(keyword: str, lang: str) -> str | None:
+    """Return href via alias map when keyword has a name-variant for a movement."""
+    if lang == "en":
+        stem = EN_MOVEMENT_ALIASES.get(keyword)
+        if stem and (REPO / "en" / "movements" / f"{stem}.html").exists():
+            return f"/en/movements/{stem}.html"
+    else:
+        stem = JA_MOVEMENT_ALIASES.get(keyword)
+        if stem and (REPO / "movements" / f"{stem}.html").exists():
+            return f"/movements/{stem}.html"
+    return None
+
+
+def country_chip_href(keyword: str, lang: str) -> str | None:
+    """Return href if keyword is an exact country name with a single country page."""
+    name2code = EN_NAME2CODE if lang == "en" else JA_NAME2CODE
+    code = name2code.get(keyword)
+    if not code:
+        return None
+    meta = BASE.get(code)
+    if not meta:
+        return None
+    slug = meta["slug"]
+    base = "en/countries" if lang == "en" else "countries"
+    if (REPO / base / f"{slug}.html").exists():
+        return f"/{base}/{slug}.html"
+    return None
+
+
+def chip_href(keyword: str, lang: str) -> str | None:
+    """Resolve a chip keyword to an href using priority order:
+    1. Movement exact match
+    2. Movement alias match
+    3. Country name exact match
+    Returns None if no match.
+    """
+    return (
+        movement_href(keyword, lang)
+        or alias_movement_href(keyword, lang)
+        or country_chip_href(keyword, lang)
+    )
+
+
+def resolve_chip_inner(inner: str, lang: str) -> str:
+    """Resolve a chip's inner HTML (which may contain ' / ' separated parts).
+
+    - If inner contains ' / ', split and resolve each part independently.
+      Parts that resolve get wrapped in <a>; unresolved parts stay plain.
+      Results are joined with ' / '.
+    - If no slash, resolve as a single keyword.
+    - Already-linked inner (contains '<') is returned unchanged (idempotent).
+    """
+    if "<" in inner:
+        # Already linked (or contains HTML) — skip to preserve idempotency
+        return inner
+
+    stripped = inner.strip()
+    if " / " in stripped:
+        parts = stripped.split(" / ")
+        out = []
+        for part in parts:
+            href = chip_href(part.strip(), lang)
+            if href:
+                out.append(f'<a href="{href}">{esc(part)}</a>')
+            else:
+                out.append(esc(part))
+        return " / ".join(out)
+    else:
+        href = chip_href(stripped, lang)
+        if href:
+            return f'<a href="{href}">{inner}</a>'
+        return inner
 
 
 def link_chips(segment: str, classes: str, lang: str) -> str:
     def repl(m):
         cls, inner = m.group(1), m.group(2)
-        href = movement_href(inner.strip(), lang)
-        if not href:
+        new_inner = resolve_chip_inner(inner, lang)
+        if new_inner == inner:
             return m.group(0)
-        return f'<span class="{cls}"><a href="{href}">{inner}</a></span>'
+        return f'<span class="{cls}">{new_inner}</span>'
     # [^<]+ guarantees we only touch plain (unlinked) chips → idempotent
+    # For slash-composite chips we need to allow ' / ' inside, so we use [^<]+
     return re.sub(rf'<span class="({classes})">([^<]+)</span>', repl, segment)
 
 
