@@ -795,6 +795,45 @@ def rebuild_related(html, page):
     return html[:sec_open] + new_sec + html[sec_end:]
 
 
+# ── HAND-EDIT SAFETY GUARD ─────────────────────────────────────────────────
+def _live_thesis_text(html):
+    m = re.search(r'<p class="ph-thesis__body[^"]*">(.*?)</p>', html, re.S)
+    if not m:
+        return ''
+    return re.sub(r'<[^>]+>', '', m.group(1)).strip()
+
+
+def _live_rel_hrefs(html):
+    """Set of hrefs inside the §REL (Related photographers/movements) section."""
+    relnum = re.search(r'<span class="ph-section__num">§ REL</span>', html)
+    if not relnum:
+        return set()
+    sec_open = find_section_open_before(html, relnum.start())
+    if sec_open == -1:
+        return set()
+    try:
+        _, sec_end, _ = extract_balanced(html, sec_open, 'section')
+    except Exception:
+        return set()
+    body = html[sec_open:sec_end]
+    return set(re.findall(r'<a href="([^"]+)"', body))
+
+
+def detect_content_loss(old_html, new_html):
+    """Return a human-readable description if regenerating (new_html) would
+    delete hand-added content present in the current file (old_html). Guards the
+    two block types that are hand-authored directly in the page: the thesis
+    ('この写真家が変えたこと' / 'What this photographer changed') and the §REL
+    Related photographers/movements links. Returns '' when nothing is lost."""
+    losses = []
+    if _live_thesis_text(old_html) and not _live_thesis_text(new_html):
+        losses.append('thesis block (What this photographer changed)')
+    dropped = _live_rel_hrefs(old_html) - _live_rel_hrefs(new_html)
+    if dropped:
+        losses.append('%d Related photographers/movements link(s)' % len(dropped))
+    return '; '.join(losses)
+
+
 def extract_directory_group(sd_html, label_prefix):
     """Return list of (href, name) for a contextual directory group."""
     # find the label then the following items div
@@ -1443,6 +1482,9 @@ def main():
     ap.add_argument('--slug', action='append', default=[])
     ap.add_argument('--pilot', action='store_true')
     ap.add_argument('--all', action='store_true')
+    ap.add_argument('--force', action='store_true',
+                    help='overwrite even if it would delete hand-added '
+                         'thesis/related not present in the JSON source')
     args = ap.parse_args()
 
     content = json.load(open(CONTENT_JSON, encoding='utf-8'))
@@ -1478,6 +1520,7 @@ def main():
 
     warnings = []
     written = []
+    guard_skips = []
     for ja_file in targets:
         if ja_file in missing_true:
             warnings.append(f'{ja_file}: in missing_en_true, skipped (Stage 4)')
@@ -1515,6 +1558,14 @@ def main():
         if out is None:
             continue
         out_path = os.path.join(EN_DIR, slug + '.html')
+        # SAFETY GUARD: never silently delete hand-added thesis/related that is
+        # not reproduced from the JSON source. Skip the page and report instead.
+        if not args.force and os.path.exists(out_path):
+            old_html = open(out_path, encoding='utf-8').read()
+            loss = detect_content_loss(old_html, out)
+            if loss:
+                guard_skips.append((slug + '.html', loss))
+                continue
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write(out)
         written.append((slug + '.html', len(out.encode('utf-8'))))
@@ -1522,6 +1573,13 @@ def main():
     print('Wrote %d page(s):' % len(written))
     for fn, size in written:
         print('  %-40s %8d bytes (%.1f KB)' % (fn, size, size / 1024))
+    if guard_skips:
+        print('\n🛑 SKIPPED %d page(s) to protect hand-written content '
+              '(NOT overwritten):' % len(guard_skips))
+        for fn, loss in guard_skips:
+            print('  ✋ %s — would delete: %s' % (fn, loss))
+        print('  → 手書き内容を data/photographers-en-content.json に入れてから再実行してください\n'
+              '    （thesis_html / site_directory_html）。意図的に消す場合のみ --force。')
     if warnings:
         print('\nWarnings (%d):' % len(warnings))
         for w in warnings:
