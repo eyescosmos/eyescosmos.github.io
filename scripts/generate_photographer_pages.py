@@ -2678,6 +2678,23 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    # ── SAFETY GUARD ──────────────────────────────────────────────────────────
+    # このジェネレータは旧デザインを出力し、現行 v5.1 の写真家ページ（294枚）と
+    # JA→EN 言語トグルを巻き戻す。CLAUDE.md で実行厳禁。誤実行を物理的に止める。
+    # どうしても実行する必要があるとき（Daisuke の明示依頼時のみ）は環境変数で解除：
+    #   ALLOW_LEGACY_PHOTOGRAPHER_GEN=1 python3 scripts/generate_photographer_pages.py
+    import os
+    if os.environ.get("ALLOW_LEGACY_PHOTOGRAPHER_GEN") != "1":
+        import sys
+        sys.stderr.write(
+            "\n[ABORT] generate_photographer_pages.py は実行禁止です（旧デザイン生成）。\n"
+            "  現行 JA 写真家ページの正本は photographers/*.html（直接編集）。\n"
+            "  本文の正本は data/photographer-essay-overrides.js。\n"
+            "  どうしても必要なら ALLOW_LEGACY_PHOTOGRAPHER_GEN=1 を付けて実行し、\n"
+            "  実行前に CLAUDE.md の該当注意書きを更新すること。\n\n"
+        )
+        raise SystemExit(2)
+    # ──────────────────────────────────────────────────────────────────────────
     args = parse_args()
     only_ids = set(args.only)
     all_photographers = eval_js(

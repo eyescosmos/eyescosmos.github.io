@@ -1,0 +1,11 @@
+#!/bin/sh
+# push 前に決定論的な不変条件をチェック（重複id・GA欠落など）。
+# FAIL したら push をブロック。緊急回避は: git push --no-verify
+echo "[pre-push] preflight 実行中…"
+python3 "$(git rev-parse --show-toplevel)/scripts/preflight.py"
+status=$?
+if [ "$status" -ne 0 ]; then
+  echo "[pre-push] preflight FAILED — push を中止しました（回避: git push --no-verify）"
+  exit 1
+fi
+exit 0

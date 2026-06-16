@@ -289,6 +289,21 @@ def update_archive(path: Path, lang: str, main_html: str, directory_html: str) -
 
 
 def main() -> None:
+    # ── SAFETY GUARD ──────────────────────────────────────────────────────────
+    # このジェネレータは旧デザイン（<div class="photographer-card"> / toggleDetail）を
+    # 出力する。現行の archive.html / en/archive.html は v5.1 の <article class="pc-card">
+    # （JA が正本・手編集、EN は build_archive_en.py で生成）。実行すると v5.1 アーカイブを
+    # 旧デザインへ巻き戻す。解除は ALLOW_LEGACY_ARCHIVE_GEN=1。
+    import os, sys
+    if os.environ.get("ALLOW_LEGACY_ARCHIVE_GEN") != "1":
+        sys.stderr.write(
+            "\n[ABORT] generate_archive_pages.py は実行禁止です（旧 photographer-card デザイン生成）。\n"
+            "  現行アーカイブの正本は archive.html（v5.1 pc-card・直接編集）。\n"
+            "  EN は build_archive_en.py（card-data.json から pc-card を翻訳生成）を使う。\n"
+            "  どうしても必要なら ALLOW_LEGACY_ARCHIVE_GEN=1 を付けて実行すること。\n\n"
+        )
+        raise SystemExit(2)
+    # ──────────────────────────────────────────────────────────────────────────
     photographers = tax.eval_js(
         ["data/photographers.js", "data/photographers-manual-additions.js", "data/photographers-supplement.js"],
         "PHOTOGRAPHERS",

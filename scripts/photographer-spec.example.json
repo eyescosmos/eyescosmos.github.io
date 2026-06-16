@@ -1,0 +1,32 @@
+{
+  "_doc": "add_photographer.py 用の入力テンプレ。コピーして値を埋め、`python3 scripts/add_photographer.py myspec.json --apply` で投入。",
+  "id": "toyoko-tokiwa",
+  "nameJa": "常盤とよ子",
+  "nameEn": "Toyoko Tokiwa",
+  "years": "1928–2019",
+  "nationality": "JP",
+  "countryJa": "日本",
+  "era": "1950",
+  "channel": "写真史の論点 · 社会ドキュメンタリー",
+  "channelEn": "Topics in photo history · Social Documentary",
+  "channelEnUpper": "Topics in photo history · SOCIAL DOCUMENTARY",
+  "style": "pc-top--kanji",
+  "artText": "毒花",
+  "ledeShortJa": "占領後の横浜で「働く女性」を主題に撮影。写真集『危険な毒花』（1957年）は赤線の女性の生活を一人称の文章と写真で伝えた。",
+  "ledeShortEn": "Toyoko Tokiwa photographed \"working women\" in post-occupation Yokohama. Her 1957 photobook Dangerous Poisonous Flowers combined photographs with first-person prose …",
+  "tags": ["社会ドキュメンタリー", "日本写真"],
+  "tagsEn": ["Social Documentary", "Japanese Photography"],
+  "movements": ["社会ドキュメンタリー", "日本写真", "ドキュメンタリー"],
+  "flag": "🇯🇵",
+  "gender": "女性",
+  "movementSlugJa": "社会ドキュメンタリー",
+  "movementSlugEn": "social-documentary",
+  "starTextJa": "（スターマップ用の本文。出典マーカー *1 *2 … を文末に付け、citations と対応させる）",
+  "starTextEn": "(Star-map body text, with *1 *2 … markers matching citations)",
+  "citations": [
+    { "num": 1, "name": "出典名", "url": "https://example.com" }
+  ],
+  "links": [
+    { "label": "MoMA Post", "url": "https://example.com" }
+  ]
+}

@@ -458,6 +458,28 @@ python3 scripts/fix_ja_lang_toggle.py --apply   # countries は除外・EN実在
 旧ジェネレータを現行デザイン用に作り直す場合は、Daisuke の明示依頼があったときのみ着手し、
 着手前に本注意書きを更新すること。
 
+## `scripts/generate_archive_pages.py` も実行禁止 — 旧デザイン生成 — CRITICAL
+
+`generate_archive_pages.py` は旧デザイン（`<div class="photographer-card">` ＋ `toggleDetail()`）を
+出力する。現行の `archive.html` / `en/archive.html` は v5.1 の `<article class="pc-card">`
+（**JA archive.html が正本・手編集**、**EN は `scripts/build_archive_en.py`** が card-data.json から
+pc-card を翻訳生成）。`generate_archive_pages.py` を実行すると v5.1 アーカイブを旧デザインへ
+巻き戻す。2026-06-16 に `main()` 冒頭へ物理ガードを追加済み（解除は環境変数
+`ALLOW_LEGACY_ARCHIVE_GEN=1`、generate_photographer_pages.py は `ALLOW_LEGACY_PHOTOGRAPHER_GEN=1`）。
+
+## 機械チェック（地雷の門番）— 文章ルールより優先 — 2026-06-16 追加
+
+CLAUDE.md の多くのルールは過去の事故の再発防止。重要なものは機械チェックへ移管済み：
+- **`scripts/preflight.py`** — 決定論的な不変条件を検査（写真家id重複：
+  photographers.js と supplement.js への二重登録／card-data.json 重複／GA(googletagmanager)欠落）。
+  既存 `check_*.py` は WARN 表示のみ。`python3 scripts/preflight.py`。
+- **`.githooks/pre-push`**（`git config core.hooksPath .githooks`）— push 前に preflight を自動実行し
+  FAIL ならブロック。緊急回避は `git push --no-verify`。
+- **`scripts/add_photographer.py` ＋ `scripts/photographer-spec.example.json`** — 新規写真家を
+  card-data.json／supplement.js／スターマップ bin へ重複ガード付きで投入し、v5.1 カードの
+  貼り付け用 HTML と実行コマンドを出力する半自動ヘルパー。
+- 旧デザイン生成器2本（写真家・アーカイブ）は実行されると物理ガードで中断する（上記）。
+
 ## Content consistency
 - アーカイブページと写真家の個別ページで同じ解説を持つ場合は、内容の整合性を保つこと
 - どちらか一方の解説を更新した場合は、対応するもう一方のページにも同じ変更を適用
