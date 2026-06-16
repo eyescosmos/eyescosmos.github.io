@@ -4868,3 +4868,59 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "toyoko-tokiwa",
+  "name": "Toyoko Tokiwa",
+  "nameJa": "常盤とよ子",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1928–2019",
+  "gender": "女性",
+  "era": "1950",
+  "movements": [
+    "社会ドキュメンタリー",
+    "日本写真",
+    "ドキュメンタリー"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "MoMA Post",
+      "url": "https://post.moma.org/the-empathetic-gaze-toyoko-tokiwas-dangerous-poisonous-flowers-and-the-female-photographic-subject-in-postwar-japan/"
+    },
+    {
+      "label": "AWARE",
+      "url": "https://awarewomenartists.com/en/artists_japan/%E5%B8%B8%E7%9B%A4-%E3%81%A8%E3%82%88%E5%AD%90/"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "常盤とよ子は1928年に横浜で生まれ、占領後の基地の街で「働く女性」を主題に撮影した写真家である。デパート店員、看護師、女子プロレスラー、ヌードモデル、赤線地帯の女性など14の職業を扱った1956年の個展「働く女性」を経て、1957年に写真集『危険な毒花』を刊行した*1。同書は「男でなく女であることが、写真を撮るうえで不利になるのだろうか」という問いから始まり、写真と一人称の文章を組み合わせて、赤線の女性を風俗的好奇心や道徳的類型に閉じ込めず、働き、疲れ、病む生活者として伝えようとした*2。当初は物陰からの撮影や隠し撮りもあったが、反復訪問と会話を通じて室内まで近づき、撮影者自身の偏見が変化する過程を記録した*3。1958年には女流写真家協会の結成に加わり、雑誌・個展・写真集・テレビを横断して、女性が撮る側と著者の側に立つ経路を広げた*1。近年はApertureや国際展を通じて、女性の労働と女性写真家の職業形成を結ぶ作家として再評価が進んでいる*4。",
+    "textEn": "Toyoko Tokiwa, born in Yokohama in 1928, photographed \"working women\" in the base towns of post-occupation Japan. After her 1956 solo exhibition Working Women, which addressed fourteen occupations from department-store clerks and nurses to women wrestlers, nude models, and women in the akasen red-light district, she published the photobook Dangerous Poisonous Flowers in 1957*1. The book opens by asking whether being a woman rather than a man was a disadvantage in photography, and combines photographs with first-person prose to present women in the akasen not as erotic curiosity or moral types but as people who worked, tired, and fell ill*2. Beginning with distant and hidden shots, she moved—through repeated visits and conversation—into interior spaces, recording how her own prejudices changed*3. In 1958 she helped found the Japan Women Photographers Association, widening, across magazines, exhibitions, photobooks, and television, the routes by which women could stand behind the camera as authors*1. Through Aperture and international exhibitions her work is now reconsidered as connecting women's labor with the professional formation of women photographers*4.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Tokyo National Research Institute for Cultural Properties — Toyoko Tokiwa",
+        "url": "https://www.tobunken.go.jp/materials/bukko/2041126.html"
+      },
+      {
+        "num": 2,
+        "name": "MoMA Post — The Empathetic Gaze: Toyoko Tokiwa's Dangerous Poisonous Flowers",
+        "url": "https://post.moma.org/the-empathetic-gaze-toyoko-tokiwas-dangerous-poisonous-flowers-and-the-female-photographic-subject-in-postwar-japan/"
+      },
+      {
+        "num": 3,
+        "name": "AWARE — Toyoko Tokiwa",
+        "url": "https://awarewomenartists.com/en/artists_japan/%E5%B8%B8%E7%9B%A4-%E3%81%A8%E3%82%88%E5%AD%90/"
+      },
+      {
+        "num": 4,
+        "name": "Aperture — The Japanese Women Who Transformed Photography",
+        "url": "https://aperture.org/editorial/the-japanese-women-who-transformed-photography/"
+      }
+    ]
+  }
+}
+);

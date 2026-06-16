@@ -48,6 +48,7 @@ CHANNEL_PREFIX = {
     'イメージを疑う': 'Questioning the image',
     '並べて見る写真': 'Seeing in series',
     '写真運動': 'Movement',
+    '東ドイツ写真': 'East German Photography',
 }
 
 # ── メタ行の国名 → コード（en/index.html の "US · 1864–1946" 形式に合わせる） ──
@@ -123,6 +124,10 @@ GENRE_TAG = {
     '自然主義写真': 'Naturalistic Photography',
     '都市記録': 'Urban documentation',
     '風景写真': 'Landscape photography',
+    '働く女性': 'Working Women',
+    '東ドイツ写真': 'East German Photography',
+    'ファッション写真': 'Fashion Photography',
+    'ファッション/ドキュメンタリー': 'Fashion / Documentary',
 }
 
 # overrides に leadEn がなく、TOP12・英語ページからも取れない写真家の手動翻訳
@@ -395,7 +400,7 @@ def main():
     # ── ページ chrome ──
     JA_TITLE = '写真家アーカイブ｜時代・国・運動から探す｜写真の座標'
     EN_TITLE = 'Photographer Archive | Browse by Era, Country, and Movement | Photo Coordinates'
-    JA_DESC = ('写真史を314枚のカードで整理した写真家アーカイブ。世界と日本の写真家283人と31の写真運動を、'
+    JA_DESC = ('写真史を316枚のカードで整理した写真家アーカイブ。世界と日本の写真家285人と31の写真運動を、'
                '時代・国・運動・タグで検索・絞り込みできる。各カードから写真史上の位置づけの解説ページへ。')
     EN_DESC = ('Browse global and Japanese photographers by era, country, movement, and visual approach. '
                'Using museum, archive, and specialist sources, Photo Coordinates organizes relationships '
@@ -434,8 +439,8 @@ def main():
          '<button class="mobile-filter-chip" data-mobile-type="photographer">Photographers</button>'),
         ('<button class="mobile-filter-chip" data-mobile-type="movement">運動</button>',
          '<button class="mobile-filter-chip" data-mobile-type="movement">Movements</button>'),
-        ('表示中 <span class="result-bar__num" id="visible-count">314</span> / 314',
-         'Showing <span class="result-bar__num" id="visible-count">314</span> / 314'),
+        ('表示中 <span class="result-bar__num" id="visible-count">316</span> / 316',
+         'Showing <span class="result-bar__num" id="visible-count">316</span> / 316'),
         ('<div class="no-results" id="no-results" data-nosnippet>該当するカードが見つかりませんでした</div>',
          '<div class="no-results" id="no-results" data-nosnippet>No matching cards found</div>'),
         ('<div class="foot__center">美術館・アーカイブ・専門資料に基づく</div>',

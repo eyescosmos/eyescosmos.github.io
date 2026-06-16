@@ -5671,9 +5671,35 @@
       "artText": "SB",
       "hintText": "SIBYLLE BERGEMANN · 1941–2010",
       "channel": "東ドイツ写真 · ファッション/ドキュメンタリー",
-      "tags": ["東ドイツ写真", "ファッション写真", "ドイツ"],
+      "tags": [
+        "東ドイツ写真",
+        "ファッション写真",
+        "ドイツ"
+      ],
       "href": "photographers/sibylle-bergemann.html",
       "ledeJa": "ジビレ・ベルゲマンは、東ドイツの文化誌『Sibylle』を舞台に、ファッション写真を都市と社会のなかの肖像として撮り直した写真家。アルノ・フィッシャーの写真教育と写真エッセイの方法を受け継ぎ、人物と環境、服や記念碑との関係を連作へ編んだ。代表作《記念碑（Das Denkmal）》ではマルクス＝エンゲルス像の制作過程を11年にわたり追い、統一後はOstkreuz（オストクロイツ）の設立と教育を通じて後続世代へ著者性の方法を手渡した。"
+    },
+    {
+      "type": "photographer",
+      "id": "toyoko-tokiwa",
+      "href": "photographers/toyoko-tokiwa.html",
+      "idx": 285,
+      "nameJa": "常盤とよ子",
+      "nameEn": "Toyoko Tokiwa",
+      "metaJa": "日本 · 1928–2019",
+      "era": "1950",
+      "nationality": "JP",
+      "ledeJa": "占領後の横浜で、赤線地帯・診療所・女子プロレス・婦人保護施設など「働く女性」の生活を撮った写真家。写真集『危険な毒花』では一人称の文章と写真を組み合わせ、女性が写真家として働くことと、被写体である女性の生活を同じ実践のなかで結びつけた。",
+      "channel": "写真史の論点 · 社会ドキュメンタリー",
+      "tags": [
+        "社会ドキュメンタリー",
+        "働く女性",
+        "日本写真",
+        "日本"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "毒花",
+      "hintText": "TOYOKO TOKIWA · 1928–2019"
     }
   ],
   "movements": [
