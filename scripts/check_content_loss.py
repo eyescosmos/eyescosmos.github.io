@@ -14,10 +14,17 @@
 これは build_photographers_en.py の detect_content_loss と同じ堅牢シグナルを、
 「生成」ではなく「コミット/作業ツリー全体」に対して後追いで当てるもの。
 
+加えて「消失ではないが本文の事実がすり替わった」事故（例: renger の経歴が
+再生成で誤事実へ巻き戻った件）も拾う。これは消失ガードの盲点だった:
+  - 出典数・セクション数・FIG 数といった構造シグナルが一切変わっていないのに、
+    経歴/表現/批評などの本文テキスト・lead・thesis の文面だけが変化している場合を
+    「書き換えの疑い（要目視）」として情報警告する。
+  - 構造が増減する通常の加筆・§REL だけの変更では鳴らない（低ノイズ設計）。
+
 特徴（安全側に倒す）:
   - ファイルを一切書き換えない（読み取りのみ）。
   - 既定では exit 0（報告のみ・push を止めない）。
-  - --strict を付けたときだけ、損失検知で exit 1。
+  - --strict を付けたときだけ、「消失」検知で exit 1（書き換え警告は常に exit 0）。
   - reformat に強い「明確な減少」だけを拾い、誤検知を避ける。
 
 使い方:
@@ -109,6 +116,54 @@ def detect_losses(old, new):
     return losses
 
 
+# ── 本文の「書き換え」検知（消失ではない事実すり替え）─────────────────────
+def _norm_text(fragment):
+    """HTML 断片を比較用の素テキストへ正規化（タグ除去・実体参照・空白畳み）。"""
+    t = re.sub(r'<[^>]+>', ' ', fragment)
+    for a, b in (('&#x27;', "'"), ('&#39;', "'"), ('&quot;', '"'),
+                 ('&amp;', '&'), ('&lt;', '<'), ('&gt;', '>'), ('&nbsp;', ' ')):
+        t = t.replace(a, b)
+    return re.sub(r'\s+', ' ', t).strip()
+
+
+def essay_text(html):
+    """全 .essay 本文ブロック（経歴/表現/批評など）の正規化テキストを連結。"""
+    blocks = re.findall(r'<div class="essay">(.*?)</div>', html, re.S)
+    return _norm_text(' '.join(blocks))
+
+
+def lead_text(html):
+    m = re.search(r'<div class="ph-abstract">.*?<p[^>]*>(.*?)</p>', html, re.S)
+    return _norm_text(m.group(1)) if m else ''
+
+
+def thesis_text(html):
+    m = re.search(r'<p class="ph-thesis__body[^"]*">(.*?)</p>', html, re.S)
+    return _norm_text(m.group(1)) if m else ''
+
+
+def structurally_unchanged(old, new):
+    """出典・セクション・FIG が一切増減していない（=加筆や再構成でない）。"""
+    return (cite_ids(old) == cite_ids(new)
+            and section_count(old) == section_count(new)
+            and fig_count(old) == fig_count(new))
+
+
+def detect_rewrites(old, new):
+    """消失ではないが本文の文面だけが変化したケース（事実すり替えの疑い）。
+    構造シグナルが完全に不変のときだけ拾い、通常の加筆では鳴らさない。"""
+    if not structurally_unchanged(old, new):
+        return []
+    rewrites = []
+    if essay_text(old) and essay_text(old) != essay_text(new):
+        rewrites.append('経歴/表現/批評などの本文テキスト')
+    if lead_text(old) and lead_text(old) != lead_text(new):
+        rewrites.append('lead/abstract 段落の文面')
+    if thesis_text(old) and thesis_text(old) != thesis_text(new):
+        rewrites.append('thesis の文面')
+    return rewrites
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--against', default='HEAD',
@@ -123,6 +178,7 @@ def main():
         os.chdir(root)
 
     findings = []
+    rewrite_findings = []
     for path in changed_html(args.against):
         old = old_blob(args.against, path)
         if old is None:
@@ -135,19 +191,34 @@ def main():
         losses = detect_losses(old, new)
         if losses:
             findings.append((path, losses))
+        rewrites = detect_rewrites(old, new)
+        if rewrites:
+            rewrite_findings.append((path, rewrites))
 
-    if not findings:
-        print('check_content_loss: OK（%s と比べて本文の消失なし）' % args.against)
+    if not findings and not rewrite_findings:
+        print('check_content_loss: OK（%s と比べて本文の消失・書き換えなし）' % args.against)
         return 0
 
-    print('🛑 本文消失の疑い（%s と比較。書き換えはしていません）:' % args.against)
-    for path, losses in findings:
-        print('  ✋ %s' % path)
-        for l in losses:
-            print('       − %s' % l)
-    print('  → 意図的な削除でなければ復元してください。'
-          '生成で消えた場合は正本(JA HTML / photographers-en-content.json)に戻してから再生成。')
-    return 1 if args.strict else 0
+    if findings:
+        print('🛑 本文消失の疑い（%s と比較。書き換えはしていません）:' % args.against)
+        for path, losses in findings:
+            print('  ✋ %s' % path)
+            for l in losses:
+                print('       − %s' % l)
+        print('  → 意図的な削除でなければ復元してください。'
+              '生成で消えた場合は正本(JA HTML / photographers-en-content.json)に戻してから再生成。')
+
+    if rewrite_findings:
+        print('⚠ 本文の書き換え（消失ではない・構造不変のまま文面が変化＝事実すり替えの疑い・要目視）:')
+        for path, rewrites in rewrite_findings:
+            print('  ✋ %s' % path)
+            for r in rewrites:
+                print('       ~ %s' % r)
+        print('  → 意図した修正なら問題なし。EN は再生成で巻き戻った可能性があるので、'
+              '正本(JA HTML / photographers-en-content.json・overrides.js)と一致しているか確認。')
+
+    # 書き換え警告だけのときは push を止めない（加筆・正当な修正で日常的に出るため）。
+    return 1 if (findings and args.strict) else 0
 
 
 if __name__ == '__main__':
