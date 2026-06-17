@@ -819,18 +819,49 @@ def _live_rel_hrefs(html):
     return set(re.findall(r'<a href="([^"]+)"', body))
 
 
+def _live_cite_ids(html):
+    """Set of source-citation ids (id="cite-N") present in the page. These are
+    explicit, stable anchors — a robust signal that survives reformatting."""
+    return set(re.findall(r'id="cite-(\d+)"', html))
+
+
+def _live_fig_count(html):
+    """Number of distinct FIG. NN representative-work markers."""
+    return len(set(re.findall(r'FIG\.\s*(\d+)', html)))
+
+
+def _live_lead_text(html):
+    """Lead/abstract paragraph text (first <p> inside .ph-abstract)."""
+    m = re.search(r'<div class="ph-abstract">.*?<p[^>]*>(.*?)</p>', html, re.S)
+    return re.sub(r'<[^>]+>', '', m.group(1)).strip() if m else ''
+
+
 def detect_content_loss(old_html, new_html):
     """Return a human-readable description if regenerating (new_html) would
-    delete hand-added content present in the current file (old_html). Guards the
-    two block types that are hand-authored directly in the page: the thesis
-    ('この写真家が変えたこと' / 'What this photographer changed') and the §REL
-    Related photographers/movements links. Returns '' when nothing is lost."""
+    delete hand-added content present in the current file (old_html). Guards
+    content that is hand-authored directly in the page: the thesis
+    ('この写真家が変えたこと' / 'What this photographer changed'), the §REL
+    Related photographers/movements links, source citations (cite-N),
+    representative-work FIG markers, and the lead/abstract paragraph.
+    Only flags clear shrinkage (dropped ids / fewer figures / vanished block)
+    using robust signals, to avoid false positives from mere reformatting.
+    Returns '' when nothing is lost."""
     losses = []
     if _live_thesis_text(old_html) and not _live_thesis_text(new_html):
         losses.append('thesis block (What this photographer changed)')
     dropped = _live_rel_hrefs(old_html) - _live_rel_hrefs(new_html)
     if dropped:
         losses.append('%d Related photographers/movements link(s)' % len(dropped))
+    dropped_cites = _live_cite_ids(old_html) - _live_cite_ids(new_html)
+    if dropped_cites:
+        losses.append('%d source citation(s) [cite-%s]' % (
+            len(dropped_cites),
+            ','.join(sorted(dropped_cites, key=int))))
+    old_figs, new_figs = _live_fig_count(old_html), _live_fig_count(new_html)
+    if old_figs > new_figs:
+        losses.append('%d representative-work FIG marker(s)' % (old_figs - new_figs))
+    if _live_lead_text(old_html) and not _live_lead_text(new_html):
+        losses.append('lead/abstract paragraph')
     return '; '.join(losses)
 
 
@@ -1485,6 +1516,9 @@ def main():
     ap.add_argument('--force', action='store_true',
                     help='overwrite even if it would delete hand-added '
                          'thesis/related not present in the JSON source')
+    ap.add_argument('--dry-run', action='store_true',
+                    help='compute output and run the content-loss guard but '
+                         'write nothing; reports would-write / would-skip')
     args = ap.parse_args()
 
     content = json.load(open(CONTENT_JSON, encoding='utf-8'))
@@ -1566,11 +1600,13 @@ def main():
             if loss:
                 guard_skips.append((slug + '.html', loss))
                 continue
-        with open(out_path, 'w', encoding='utf-8') as f:
-            f.write(out)
+        if not args.dry_run:
+            with open(out_path, 'w', encoding='utf-8') as f:
+                f.write(out)
         written.append((slug + '.html', len(out.encode('utf-8'))))
 
-    print('Wrote %d page(s):' % len(written))
+    print('%s %d page(s):' % ('Would write' if args.dry_run else 'Wrote',
+                              len(written)))
     for fn, size in written:
         print('  %-40s %8d bytes (%.1f KB)' % (fn, size, size / 1024))
     if guard_skips:
