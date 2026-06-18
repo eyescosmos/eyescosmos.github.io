@@ -64,6 +64,7 @@ git diff origin/main
 ```
 
 - `git diff origin/main` では、本文・thesis・関連欄・出典・作品画像・外部リンク・Amazonリンク・SEOタグが意図せず消えていないか目視する。
+- push 前に必ず `git status --short` と `git diff --name-only` / `git diff --stat` を見て、依頼対象外ファイルの巻き込み、生成前状態への巻き戻り、本文・構造・リンク・出典の消失、意図しない差分がないことを確認する。未追跡ファイルは依頼対象でない限り stage しない。
 - 警告が出た場合は、意図した変更か、正本(JA HTML / `data/photographers-en-content.json` / `data/photographer-essay-overrides.js`)と一致しているか確認してから push する。
 
 ## General Style

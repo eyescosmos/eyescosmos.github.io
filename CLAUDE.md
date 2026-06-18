@@ -35,6 +35,7 @@ python3 scripts/preflight.py
 git diff origin/main
 ```
 警告が出たら、意図した変更か、正本（JA HTML / `data/photographers-en-content.json` / `data/photographer-essay-overrides.js`）と一致しているか確認してから push する。
+push 前には必ず `git status --short` と `git diff --name-only` / `git diff --stat` も確認し、依頼対象外ファイルの巻き込み、生成前状態への巻き戻り、本文・構造・リンク・出典の消失、意図しない差分がないことを確認する。未追跡ファイルは依頼対象でない限り stage しない。
 
 ## Skill priority
 - 既存ファイルの形式よりskill.mdの指示を優先すること
