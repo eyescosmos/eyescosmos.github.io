@@ -282,6 +282,177 @@ def check_en_changed_slug_integrity() -> None:
             warnings.append(f"[EN {slug}] {f}")
 
 
+# ── 写真家以外の EN ページ（国別 / 年代・運動 / アーカイブ）の軽量ガード ──────
+# 設計（Codex 合意 2026-06-19）:
+#   - 正本 JSON のエントリ内容消失 = HARD（変更が無ければ必ずグリーン＝門にできる）
+#   - 生成物 EN HTML の直接編集疑い = WARN
+#   - 触ったファイル / 触った正本エントリだけ検査（baseline は写真家ガードと共通）
+#   - 本文が JSON 外（build_taxonomy_en.py の直書き）にもある混在構造でも、
+#     「JSON が確実に内容を失った」ことだけを HARD にする。曖昧判定はしない。
+#   - per-slug リーダは追加しない（写真家のみで十分という方針）。
+
+COUNTRY_JSON = "data/country-pages.json"
+TAXONOMY_JSON = "data/taxonomy-en-content.json"
+CARD_DATA_JSON = "card-data.json"
+
+
+def _is_filled(v) -> bool:
+    """JSON 値が「中身を持つ」か（消失判定用）。str は空白除去、コンテナは長さで判定。"""
+    if isinstance(v, str):
+        return bool(v.strip())
+    if isinstance(v, (list, dict)):
+        return len(v) > 0
+    return v is not None
+
+
+def _load_json_ref(baseline: str, rel_path: str):
+    """baseline 時点と作業ツリーの JSON を (base, work) で返す（解析失敗時 None）。"""
+    def _parse(text):
+        try:
+            return json.loads(text) if text else None
+        except Exception:  # noqa: BLE001
+            return None
+    base = _parse(_git_show(baseline, rel_path))
+    wp = REPO / rel_path
+    work = _parse(wp.read_text(encoding="utf-8")) if wp.exists() else None
+    return base, work
+
+
+def _changed_html_basenames(baseline: str, rel_dir: str) -> set[str]:
+    """baseline と作業ツリーで差分のある rel_dir 直下の *.html ベース名。
+    リダイレクトスタブ / *-backup.html は除外（直接編集の対象ではない）。"""
+    proc = subprocess.run(["git", "diff", "--name-only", baseline, "--", rel_dir],
+                          capture_output=True, text=True, cwd=REPO)
+    out: set[str] = set()
+    for line in proc.stdout.splitlines():
+        name = os.path.basename(line.strip())
+        if not name.endswith(".html") or name.endswith("-backup.html"):
+            continue
+        # rel_dir 直下のみ（en の archive.html 等。サブディレクトリは別 rel_dir で扱う）
+        if os.path.dirname(line.strip()) != rel_dir:
+            continue
+        fp = REPO / rel_dir / name
+        if fp.exists() and is_redirect_stub(fp.read_text(encoding="utf-8", errors="ignore")):
+            continue
+        out.add(name)
+    return out
+
+
+def check_country_en() -> None:
+    """国別 EN（en/countries/*.html）の正本 country-pages.json の内容消失=HARD、
+    生成物 HTML の直接編集疑い=WARN。"""
+    baseline = _baseline_ref()
+    base, work = _load_json_ref(baseline, COUNTRY_JSON)
+    if not isinstance(work, list):
+        return
+    base_map = {r["slug"]: r for r in (base or []) if isinstance(r, dict) and r.get("slug")}
+    work_map = {r["slug"]: r for r in work if isinstance(r, dict) and r.get("slug")}
+    changed = {s for s, we in work_map.items() if base_map.get(s) != we}
+    # 1) 正本の内容消失（HARD）— base/work 双方にあるエントリのみ
+    for slug in changed:
+        be, we = base_map.get(slug), work_map[slug]
+        if be is None:
+            continue  # 新規 slug は loss 判定対象外
+        losses = [f for f in ("lead", "nameEn", "nameJa")
+                  if _is_filled(be.get(f)) and not _is_filled(we.get(f))]
+        if be.get("codes") and not we.get("codes"):
+            losses.append("codes")
+        if losses:
+            hard_failures.append(
+                f"{COUNTRY_JSON} の {slug} が内容を失っている: {', '.join(losses)}")
+    # 2) 生成物 EN HTML の直接編集疑い（WARN）
+    for name in _changed_html_basenames(baseline, "en/countries"):
+        slug = name[:-5]
+        if slug not in work_map:        # 複合スタブ等は正本に無い → 対象外
+            continue
+        if slug not in changed:
+            warnings.append(
+                f"[EN country {slug}] 生成物 en/countries/{name} を直接編集した疑い。"
+                f"正本は {COUNTRY_JSON}。generate_country_pages_en.py で再生成すること")
+
+
+def check_taxonomy_en() -> None:
+    """年代・運動 EN（en/eras・en/movements）の正本 taxonomy-en-content.json の
+    内容消失=HARD、生成物 HTML の直接編集疑い=WARN。本文が builder 直書きにも
+    あるため、判定は「JSON が確実に失った」ものだけに限定する。"""
+    baseline = _baseline_ref()
+    base, work = _load_json_ref(baseline, TAXONOMY_JSON)
+    if not isinstance(work, dict):
+        return
+    for group, rel_dir in (("movements", "en/movements"), ("eras", "en/eras")):
+        base_g = (base or {}).get(group, {}) if isinstance(base, dict) else {}
+        work_g = work.get(group, {})
+        if not isinstance(work_g, dict):
+            continue
+        changed = {k for k, wv in work_g.items() if base_g.get(k) != wv}
+        # 内容消失（HARD）
+        for slug in changed:
+            be, we = base_g.get(slug), work_g.get(slug)
+            if be is None:
+                continue
+            losses = []
+            bmeta, wmeta = be.get("meta", {}), we.get("meta", {})
+            for field in ("title", "description"):
+                if _is_filled(bmeta.get(field)) and not _is_filled(wmeta.get(field)):
+                    losses.append(f"meta.{field}")
+            bsec, wsec = be.get("sections", {}), we.get("sections", {})
+            for key, bv in bsec.items():
+                if _is_filled(bv) and not _is_filled(wsec.get(key)):
+                    losses.append(f"section[{key}]")
+            if losses:
+                hard_failures.append(
+                    f"{TAXONOMY_JSON} の {group}/{slug} が内容を失っている: "
+                    + ", ".join(losses[:4]))
+        # 直接編集（WARN）
+        for name in _changed_html_basenames(baseline, rel_dir):
+            slug = name[:-5]
+            if slug not in work_g:       # JA 名スタブ等は正本キーに無い → 対象外
+                continue
+            if slug not in changed:
+                warnings.append(
+                    f"[EN {group}/{slug}] 生成物 {rel_dir}/{name} を直接編集した疑い。"
+                    f"正本は {TAXONOMY_JSON}。build_taxonomy_en.py で再生成すること")
+
+
+def check_archive_en() -> None:
+    """アーカイブ EN（en/archive.html）の正本 card-data.json の内容消失=HARD、
+    生成物 HTML だけが変わって card-data.json が不変なら直接編集疑い=WARN。"""
+    baseline = _baseline_ref()
+    base, work = _load_json_ref(baseline, CARD_DATA_JSON)
+    if not isinstance(work, dict):
+        return
+    json_changed = base != work
+    if isinstance(base, dict) and json_changed:
+        for group in ("photographers", "movements"):
+            base_list = base.get(group, []) or []
+            work_list = work.get(group, []) or []
+            base_map = {c.get("id"): c for c in base_list if isinstance(c, dict) and c.get("id")}
+            work_map = {c.get("id"): c for c in work_list if isinstance(c, dict) and c.get("id")}
+            if len(work_list) < len(base_list):
+                hard_failures.append(
+                    f"{CARD_DATA_JSON} の {group} カード数が減少: "
+                    f"{len(base_list)}→{len(work_list)}")
+            missing = sorted(set(base_map) - set(work_map))
+            if missing:
+                hard_failures.append(
+                    f"{CARD_DATA_JSON} の {group} から card 消失: {missing[:5]}")
+            for cid in set(base_map) & set(work_map):
+                bc, wc = base_map[cid], work_map[cid]
+                lost = [f for f in ("nameEn", "nameJa", "href")
+                        if _is_filled(bc.get(f)) and not _is_filled(wc.get(f))]
+                if lost:
+                    hard_failures.append(
+                        f"{CARD_DATA_JSON} の {group}/{cid} がフィールドを失っている: "
+                        + ", ".join(lost))
+    # 生成物 en/archive.html の直接編集疑い（WARN）
+    proc = subprocess.run(["git", "diff", "--name-only", baseline, "--", "en/archive.html"],
+                          capture_output=True, text=True, cwd=REPO)
+    if proc.stdout.strip() and not json_changed:
+        warnings.append(
+            f"[EN archive] 生成物 en/archive.html を直接編集した疑い。"
+            f"正本は {CARD_DATA_JSON}。build_archive_en.py で再生成すること")
+
+
 def run_existing_check(script: str) -> None:
     path = REPO / "scripts" / script
     if not path.exists():
@@ -307,6 +478,9 @@ def main() -> int:
     check_en_changed_slug_closure()
     check_en_direct_edit()
     check_en_changed_slug_integrity()
+    check_country_en()
+    check_taxonomy_en()
+    check_archive_en()
     run_existing_check("check_photographer_link_integrity.py")
 
     if warnings:
