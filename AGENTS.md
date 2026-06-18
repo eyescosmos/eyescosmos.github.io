@@ -52,6 +52,10 @@
   - 文面だけの変化は「事実すり替えの疑い」として警告される場合がある。警告は目視確認する。
 - `scripts/en_entry.py <slug>` / `scripts/check_en_entry.py <slug>` は EN 写真家ページの対象slugだけを読む・検査するためのツール。通称slugも可（例: `atget` -> `eugene-atget`）。
 - `scripts/preflight.py` と `.githooks/pre-push` は id重複、card-data重複、GA欠落、触ったEN slugの内容消失、EN HTMLとJSONの乖離、EN HTML直接編集疑いなどを検査する。FAILなら push しない。緊急回避は `git push --no-verify`。
+  - EN写真家: `data/photographers-en-content.json` と `en/photographers/*.html` の差分から対象slugを推定し、内容消失・再生成漏れ・直接編集疑いを検知する。
+  - EN国別: `data/country-pages.json` の主要情報消失をHARD、`en/countries/*.html` だけの変更を直接編集疑いWARNにする。
+  - EN年代/運動: `data/taxonomy-en-content.json` のメタ・セクション消失をHARD、`en/eras/*.html` / `en/movements/*.html` だけの変更を直接編集疑いWARNにする。
+  - ENアーカイブ: `card-data.json` のカード数・id・`nameEn` / `nameJa` / `href` 消失をHARD、`en/archive.html` だけの変更を直接編集疑いWARNにする。
 - 新規clone / Codex環境では、最初に `bash scripts/setup_hooks.sh` を一度実行して `.githooks/pre-push` を有効化する。`core.hooksPath` はローカル設定なので、実行するまでpush前チェックは自動では走らない。
 - content系ガードは GA / canonical / hreflang / OG / JSON-LD / `data-nosnippet` の欠落までは防がない。テンプレ差し替え時は別途確認する。
 
