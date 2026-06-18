@@ -14,9 +14,10 @@
   - 出力物。直接手編集しても `scripts/build_photographers_en.py` の再生成で消える。
   - EN本文の正本は `data/photographers-en-content.json`。
   - `body_html` = 本文、`thesis_html` = thesis、`site_directory_html` = Related people / Related movements。
+  - 作業前に `python3 scripts/en_entry.py <slug>` で対象slugだけを確認する。巨大JSON全体を読む必要はない。
   - EN本文の事実を直すときは、必要に応じて `data/photographer-essay-overrides.js` の `textEn` も同じ内容にそろえる。片方だけ直すと旧経路との不整合が残る。
   - EN本文・thesis・§REL を直すときは EN HTML ではなく正本データを直し、`python3 scripts/build_photographers_en.py --slug <slug>` で再生成する。
-  - ENページを修正・追加・新規作成したら、作業終了前に必ず `data/photographers-en-content.json`（同slugがあれば `data/photographers-en-stage4.json` も）を確認し、`python3 scripts/build_photographers_en.py --slug <slug> --dry-run` が `SKIPPED` しないことを確認する。EN HTMLだけの差分で終えない。
+  - ENページを修正・追加・新規作成したら、作業終了前に必ず `python3 scripts/check_en_entry.py <slug>` と `python3 scripts/preflight.py` を実行する。EN HTMLだけの差分で終えない。
 
 ### その他の生成構造
 
@@ -49,8 +50,23 @@
 - `scripts/check_content_loss.py` は読み取り専用の横断チェック。JA/EN両方で HEAD 比の出典・セクション・FIG・thesis・lead の減少を報告する。
   - `--strict` は消失時のみ非0終了。
   - 文面だけの変化は「事実すり替えの疑い」として警告される場合がある。警告は目視確認する。
-- `scripts/preflight.py` と `.githooks/pre-push` は id重複、card-data重複、GA欠落などを検査する。FAILなら push しない。緊急回避は `git push --no-verify`。
+- `scripts/en_entry.py <slug>` / `scripts/check_en_entry.py <slug>` は EN 写真家ページの対象slugだけを読む・検査するためのツール。通称slugも可（例: `atget` -> `eugene-atget`）。
+- `scripts/preflight.py` と `.githooks/pre-push` は id重複、card-data重複、GA欠落、触ったEN slugの内容消失、EN HTMLとJSONの乖離、EN HTML直接編集疑いなどを検査する。FAILなら push しない。緊急回避は `git push --no-verify`。
+- 新規clone / Codex環境では、最初に `bash scripts/setup_hooks.sh` を一度実行して `.githooks/pre-push` を有効化する。`core.hooksPath` はローカル設定なので、実行するまでpush前チェックは自動では走らない。
 - content系ガードは GA / canonical / hreflang / OG / JSON-LD / `data-nosnippet` の欠落までは防がない。テンプレ差し替え時は別途確認する。
+
+## EN 写真家ページ編集フロー — Required
+
+```bash
+python3 scripts/en_entry.py <slug>
+# data/photographers-en-content.json を修正（EN HTMLは直接編集しない）
+python3 scripts/build_photographers_en.py --slug <slug>
+python3 scripts/check_en_entry.py <slug>
+python3 scripts/preflight.py
+```
+
+- `--force` は消失ガードを外すため常用しない。誤検知や意図的な削除時だけ使う。
+- `preflight.py` は baseline（通常 `origin/main`）と比較し、触ったEN slugだけを検査する。既存不具合は無関係なpushをブロックしない。
 
 ## Push前チェック — Required
 
