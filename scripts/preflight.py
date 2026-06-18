@@ -23,6 +23,15 @@ GA_TOKEN = "googletagmanager"
 hard_failures: list[str] = []
 warnings: list[str] = []
 
+# check_en_entry の検査ロジックを再利用する
+sys.path.insert(0, str(REPO / "scripts"))
+try:
+    import check_en_entry as cee  # noqa: E402
+except Exception:  # noqa: BLE001
+    cee = None
+
+EN_CONTENT_JSON = "data/photographers-en-content.json"
+
 
 def eval_photographers() -> list[dict]:
     """taxonomy/photographer ジェネレータと同じ3ファイルを eval して PHOTOGRAPHERS を得る。"""
@@ -101,6 +110,114 @@ def check_ga_coverage() -> None:
         )
 
 
+def _git_show_head(rel_path: str) -> str | None:
+    """HEAD 時点のファイル内容。存在しなければ None。"""
+    proc = subprocess.run(["git", "show", f"HEAD:{rel_path}"],
+                          capture_output=True, text=True, cwd=REPO)
+    return proc.stdout if proc.returncode == 0 else None
+
+
+def _en_entry_metrics(entry: dict) -> dict:
+    """EN エントリの「減ってはいけない」量を数える。"""
+    sources = entry.get("sources_html") or ""
+    body = "\n".join(
+        ([entry.get("thesis_html") or "", entry.get("lead_html") or ""]
+         + [s.get("body_html", "") for s in (entry.get("sections") or [])])
+    )
+    links = {h for h in re.findall(r'href="(https?://[^"]+)"', _all_link_html(entry))}
+    return {
+        "cite": len(set(re.findall(r'id="cite-(\d+)"', sources))),
+        "sections": len(entry.get("sections") or []),
+        "links": links,
+        "thesis": bool((entry.get("thesis_html") or "").strip()),
+        "supref": len(re.findall(r'href="#cite-\d+"', body)),
+    }
+
+
+def _all_link_html(entry: dict) -> str:
+    if cee is not None:
+        return cee.all_link_html(entry)
+    # フォールバック（cee 不在時）
+    fields = ("lead_html", "thesis_html", "keywords_html", "view_works_links_html",
+              "notable_works_html", "photobooks_html", "external_links_html",
+              "further_reading_html", "sources_html", "site_directory_html")
+    chunks = [entry.get(f) or "" for f in fields if entry.get(f) not in (None, "None")]
+    chunks += [s.get("body_html", "") for s in (entry.get("sections") or [])]
+    return "\n".join(chunks)
+
+
+def _changed_en_slugs() -> dict:
+    """working tree と HEAD の photographers-en-content.json を比較し、
+    内容が変わった slug を {slug: (head_entry|None, work_entry)} で返す。"""
+    head_raw = _git_show_head(EN_CONTENT_JSON)
+    work_path = REPO / EN_CONTENT_JSON
+    if head_raw is None or not work_path.exists():
+        return {}
+    try:
+        head_pages = json.loads(head_raw).get("pages", {})
+        work_pages = json.loads(work_path.read_text(encoding="utf-8")).get("pages", {})
+    except Exception:  # noqa: BLE001
+        return {}
+    changed = {}
+    for slug, work_entry in work_pages.items():
+        head_entry = head_pages.get(slug)
+        if head_entry != work_entry:
+            changed[slug] = (head_entry, work_entry)
+    return changed
+
+
+def check_en_content_loss() -> None:
+    """JSON-vs-HEAD: 触った EN エントリが本文・出典・リンクを失っていないか（HARD）。
+    変更が無ければ必ずグリーンなので門にできる。"""
+    for slug, (head_entry, work_entry) in _changed_en_slugs().items():
+        if head_entry is None:
+            continue  # 新規 slug は loss 判定対象外
+        old, new = _en_entry_metrics(head_entry), _en_entry_metrics(work_entry)
+        losses = []
+        if new["cite"] < old["cite"]:
+            losses.append(f"出典 {old['cite']}→{new['cite']}")
+        if new["sections"] < old["sections"]:
+            losses.append(f"本文セクション {old['sections']}→{new['sections']}")
+        if new["supref"] < old["supref"]:
+            losses.append(f"本文 sup-ref {old['supref']}→{new['supref']}")
+        if old["thesis"] and not new["thesis"]:
+            losses.append("thesis が空に")
+        dropped = sorted(old["links"] - new["links"])
+        if dropped:
+            losses.append(f"リンク{len(dropped)}件消失: {dropped[:3]}")
+        if losses:
+            hard_failures.append(
+                f"{EN_CONTENT_JSON} の {slug} が内容を失っている: " + " / ".join(losses)
+            )
+
+
+def check_en_changed_slug_closure() -> None:
+    """変更 slug の再生成 EN HTML が JSON 宣言と一致するか（HARD）。
+    JSON を編集したのに build_photographers_en.py --slug を回し忘れた状態を捕捉。"""
+    if cee is None:
+        return
+    for slug, (_head, _work) in _changed_en_slugs().items():
+        if slug in cee.HAND_MAINTAINED_EN:
+            continue
+        rep = cee.Report(slug)
+        cee.check_html_vs_json(_work, slug, rep)
+        for f in rep.fails:
+            hard_failures.append(f"[EN closure] {f}（build_photographers_en.py --slug {slug[:-5]} を実行）")
+
+
+def check_en_changed_slug_integrity() -> None:
+    """変更 slug の sup/cite・リンク健全性（WARN）。
+    既存バグを抱えた slug を触っても push はブロックしないが気づけるようにする。"""
+    if cee is None:
+        return
+    for slug, (_head, _work) in _changed_en_slugs().items():
+        rep = cee.Report(slug)
+        cee.check_cite_supref(_work, rep)
+        cee.check_links(_work, rep)
+        for f in rep.fails:
+            warnings.append(f"[EN {slug}] {f}")
+
+
 def run_existing_check(script: str) -> None:
     path = REPO / "scripts" / script
     if not path.exists():
@@ -120,6 +237,9 @@ def main() -> int:
     check_dup_ids_js()
     check_dup_ids_carddata()
     check_ga_coverage()
+    check_en_content_loss()
+    check_en_changed_slug_closure()
+    check_en_changed_slug_integrity()
     run_existing_check("check_photographer_link_integrity.py")
 
     if warnings:
