@@ -713,11 +713,24 @@ def replace_toc_and_sections(html, page):
 
     sections_html, toc_html = build_sections_and_toc(page)
     if not sec_starts:
-        raise ValueError('no sec-NN sections found')
-    first_sec = sec_starts[0]
-    # end of last sec-NN section
-    last_start = sec_starts[-1]
-    _, last_end, _ = extract_balanced(html, last_start, 'section')
+        # Some hand-authored JA pages use descriptive section ids instead of
+        # generated sec-NN ids. In that case, replace the contiguous run of
+        # essay sections between the TOC and the §REL block.
+        first = re.search(r'<section class="ph-section"(?:\s[^>]*)?>', html[t_end:])
+        rel = re.search(r'<span class="ph-section__num">§ REL</span>', html[t_end:])
+        if not first or not rel or first.start() >= rel.start():
+            raise ValueError('no replaceable essay sections found')
+        first_sec = t_end + first.start()
+        rel_token = t_end + rel.start()
+        last_start = find_section_open_before(html, rel_token)
+        if last_start < first_sec:
+            raise ValueError('no replaceable essay sections found')
+        _, last_end, _ = extract_balanced(html, last_start, 'section')
+    else:
+        first_sec = sec_starts[0]
+        # end of last sec-NN section
+        last_start = sec_starts[-1]
+        _, last_end, _ = extract_balanced(html, last_start, 'section')
 
     # Sanity: the ph-toc precedes the first section
     if not (t_end <= first_sec):
