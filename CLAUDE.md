@@ -14,6 +14,7 @@
 - EN 写真家本文の正本は `data/photographers-en-content.json`。`body_html` が本文、`thesis_html` が thesis、`site_directory_html` が Related people / Related movements。
 - EN 本文の事実を直す場合は、`data/photographers-en-content.json` の該当 `body_html` と、必要なら旧経路の `data/photographer-essay-overrides.js` の `textEn` を両方そろえる。片方だけだと不整合が残る。
 - EN の本文 / thesis / §REL を直すときは EN HTML を触らず、正本データを直して `python3 scripts/build_photographers_en.py --slug <slug>` で再生成する。
+- EN ページを修正・追加・新規作成したら、作業終了前に必ず `data/photographers-en-content.json`（同slugがあれば `data/photographers-en-stage4.json` も）を確認し、`python3 scripts/build_photographers_en.py --slug <slug> --dry-run` が `SKIPPED` しないことを確認する。EN HTMLだけの差分で終えない。
 
 ### その他の正本
 - アーカイブ: `archive.html` が JA 正本。`en/archive.html` は `scripts/build_archive_en.py` で生成。`scripts/generate_archive_pages.py` は実行禁止。

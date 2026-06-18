@@ -550,10 +550,12 @@ def translate_keyword_movements(fragment):
     return fragment
 
 
-def rebuild_keywords(html):
+def rebuild_keywords(html, page):
     km = find_element(html, 'div', 'class="ph-keywords"')
     if km:
         outer, start, end, inner = km
+        if page.get('keywords_html'):
+            return html[:start] + page['keywords_html'] + html[end:]
         inner2 = inner.replace('<span class="ph-keywords__label">Keywords</span>',
                                '<span class="ph-keywords__label">Keywords</span>')
         inner2 = translate_keyword_movements(inner2)
@@ -714,18 +716,24 @@ def replace_toc_and_sections(html, page):
     sections_html, toc_html = build_sections_and_toc(page)
     if not sec_starts:
         # Some hand-authored JA pages use descriptive section ids instead of
-        # generated sec-NN ids. In that case, replace the contiguous run of
-        # essay sections between the TOC and the §REL block.
-        first = re.search(r'<section class="ph-section"(?:\s[^>]*)?>', html[t_end:])
+        # generated sec-NN ids. In that case, replace only the essay sections
+        # labelled "§ NN / NN" so WORKS / REL / REF / SRC are not swallowed.
         rel = re.search(r'<span class="ph-section__num">§ REL</span>', html[t_end:])
-        if not first or not rel or first.start() >= rel.start():
+        if not rel:
             raise ValueError('no replaceable essay sections found')
-        first_sec = t_end + first.start()
         rel_token = t_end + rel.start()
-        last_start = find_section_open_before(html, rel_token)
-        if last_start < first_sec:
+        essay_spans = []
+        for m in re.finditer(r'<section class="ph-section"(?:\s[^>]*)?>', html):
+            if m.start() < t_end or m.start() >= rel_token:
+                continue
+            inner, sec_end, sec_start = extract_balanced(html, m.start(), 'section')
+            num = re.search(r'<span class="ph-section__num">\s*§\s*\d+\s*/\s*\d+\s*</span>', inner)
+            if num:
+                essay_spans.append((sec_start, sec_end))
+        if not essay_spans:
             raise ValueError('no replaceable essay sections found')
-        _, last_end, _ = extract_balanced(html, last_start, 'section')
+        first_sec = essay_spans[0][0]
+        last_end = essay_spans[-1][1]
     else:
         first_sec = sec_starts[0]
         # end of last sec-NN section
@@ -1064,7 +1072,14 @@ def rebuild_sidebar(html, page, slug, ja_file, prev_link):
     scb = find_element(html, 'div', 'class="ph-side-chips"')
     if scb:
         outer, start, end, inner = scb
-        new_inner = translate_keyword_movements(inner)
+        if page.get('keywords_html'):
+            chips = []
+            for idx, km in enumerate(re.finditer(r'<span class="ph-kw">((?:.|\n)*?)</span>', page['keywords_html'])):
+                cls = 'ph-side-chip is-primary' if idx == 0 else 'ph-side-chip'
+                chips.append(f'<span class="{cls}">{km.group(1)}</span>')
+            new_inner = '\n            '.join(chips) if chips else translate_keyword_movements(inner)
+        else:
+            new_inner = translate_keyword_movements(inner)
         html = html[:start] + '<div class="ph-side-chips">' + new_inner + '</div>' + html[end:]
 
     # side nav
@@ -1505,7 +1520,7 @@ def process_page(ja_file, page, ja_to_en, warnings):
     html = rebuild_abstract(html, page)
     html = rebuild_thesis(html, page)
     html = rebuild_entry_meta(html)
-    html = rebuild_keywords(html)
+    html = rebuild_keywords(html, page)
     html = rebuild_works(html, page)
     html = replace_toc_and_sections(html, page)
     html = rebuild_related(html, page)

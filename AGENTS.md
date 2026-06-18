@@ -16,6 +16,7 @@
   - `body_html` = 本文、`thesis_html` = thesis、`site_directory_html` = Related people / Related movements。
   - EN本文の事実を直すときは、必要に応じて `data/photographer-essay-overrides.js` の `textEn` も同じ内容にそろえる。片方だけ直すと旧経路との不整合が残る。
   - EN本文・thesis・§REL を直すときは EN HTML ではなく正本データを直し、`python3 scripts/build_photographers_en.py --slug <slug>` で再生成する。
+  - ENページを修正・追加・新規作成したら、作業終了前に必ず `data/photographers-en-content.json`（同slugがあれば `data/photographers-en-stage4.json` も）を確認し、`python3 scripts/build_photographers_en.py --slug <slug> --dry-run` が `SKIPPED` しないことを確認する。EN HTMLだけの差分で終えない。
 
 ### その他の生成構造
 
