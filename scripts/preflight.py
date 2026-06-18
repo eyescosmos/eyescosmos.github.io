@@ -11,7 +11,9 @@
 CLAUDE.md の「不可視の必須要素」「重複防止」を文章ルールから機械チェックへ移管する土台。
 """
 from __future__ import annotations
+import functools
 import json
+import os
 import re
 import subprocess
 import sys
@@ -114,9 +116,24 @@ def check_ga_coverage() -> None:
         )
 
 
-def _git_show_head(rel_path: str) -> str | None:
-    """HEAD 時点のファイル内容。存在しなければ None。"""
-    proc = subprocess.run(["git", "show", f"HEAD:{rel_path}"],
+def _baseline_ref() -> str:
+    """比較基準。push 時に実効化するため「公開済み側」を優先する。
+    upstream（@{u}）→ origin/main → HEAD の順で最初に解決できたものを使う。
+    env PREFLIGHT_BASE で上書き可。"""
+    forced = os.environ.get("PREFLIGHT_BASE")
+    if forced:
+        return forced
+    for cand in ("@{u}", "origin/main"):
+        proc = subprocess.run(["git", "rev-parse", "--verify", "--quiet", cand],
+                              capture_output=True, text=True, cwd=REPO)
+        if proc.returncode == 0 and proc.stdout.strip():
+            return cand
+    return "HEAD"
+
+
+def _git_show(ref: str, rel_path: str) -> str | None:
+    """ref 時点のファイル内容。存在しなければ None。"""
+    proc = subprocess.run(["git", "show", f"{ref}:{rel_path}"],
                           capture_output=True, text=True, cwd=REPO)
     return proc.stdout if proc.returncode == 0 else None
 
@@ -150,33 +167,59 @@ def _all_link_html(entry: dict) -> str:
     return "\n".join(chunks)
 
 
-def _changed_en_slugs() -> dict:
-    """working tree と HEAD の photographers-en-content.json を比較し、
-    内容が変わった slug を {slug: (head_entry|None, work_entry)} で返す。"""
-    head_raw = _git_show_head(EN_CONTENT_JSON)
+HAND_MAINTAINED_EN = getattr(cee, "HAND_MAINTAINED_EN", {"stieglitz.html", "annie-leibovitz.html"})
+
+
+@functools.lru_cache(maxsize=1)
+def _touched_en() -> dict:
+    """baseline（origin/main 等）と作業ツリーを比較し、触れた EN slug を集める。
+    JSON エントリの変化と en/photographers/*.html の変化の両方を合流させる。
+    返り値 {slug: {"base", "work", "json_changed", "html_changed"}}。"""
+    baseline = _baseline_ref()
     work_path = REPO / EN_CONTENT_JSON
-    if head_raw is None or not work_path.exists():
-        return {}
     try:
-        head_pages = json.loads(head_raw).get("pages", {})
-        work_pages = json.loads(work_path.read_text(encoding="utf-8")).get("pages", {})
+        work_pages = json.loads(work_path.read_text(encoding="utf-8")).get("pages", {}) \
+            if work_path.exists() else {}
     except Exception:  # noqa: BLE001
-        return {}
-    changed = {}
-    for slug, work_entry in work_pages.items():
-        head_entry = head_pages.get(slug)
-        if head_entry != work_entry:
-            changed[slug] = (head_entry, work_entry)
-    return changed
+        work_pages = {}
+    base_raw = _git_show(baseline, EN_CONTENT_JSON)
+    try:
+        base_pages = json.loads(base_raw).get("pages", {}) if base_raw else {}
+    except Exception:  # noqa: BLE001
+        base_pages = {}
+
+    touched: dict[str, dict] = {}
+    # 1) JSON エントリの変化
+    for slug, we in work_pages.items():
+        be = base_pages.get(slug)
+        if be != we:
+            touched[slug] = {"base": be, "work": we, "json_changed": True, "html_changed": False}
+    # 2) en/photographers/*.html の変化
+    proc = subprocess.run(["git", "diff", "--name-only", baseline, "--", "en/photographers"],
+                          capture_output=True, text=True, cwd=REPO)
+    for line in proc.stdout.splitlines():
+        name = os.path.basename(line.strip())
+        if not name.endswith(".html") or name.startswith("jp-") or name.endswith("-backup.html"):
+            continue
+        info = touched.get(name)
+        if info:
+            info["html_changed"] = True
+        else:
+            touched[name] = {"base": base_pages.get(name), "work": work_pages.get(name),
+                             "json_changed": False, "html_changed": True}
+    return touched
 
 
 def check_en_content_loss() -> None:
-    """JSON-vs-HEAD: 触った EN エントリが本文・出典・リンクを失っていないか（HARD）。
+    """JSON-vs-baseline: 触った EN エントリが本文・出典・リンクを失っていないか（HARD）。
     変更が無ければ必ずグリーンなので門にできる。"""
-    for slug, (head_entry, work_entry) in _changed_en_slugs().items():
-        if head_entry is None:
-            continue  # 新規 slug は loss 判定対象外
-        old, new = _en_entry_metrics(head_entry), _en_entry_metrics(work_entry)
+    for slug, info in _touched_en().items():
+        if not info["json_changed"]:
+            continue
+        be, we = info["base"], info["work"]
+        if be is None or we is None:
+            continue  # 新規 slug / 削除は loss 判定対象外
+        old, new = _en_entry_metrics(be), _en_entry_metrics(we)
         losses = []
         if new["cite"] < old["cite"]:
             losses.append(f"出典 {old['cite']}→{new['cite']}")
@@ -196,28 +239,45 @@ def check_en_content_loss() -> None:
 
 
 def check_en_changed_slug_closure() -> None:
-    """変更 slug の再生成 EN HTML が JSON 宣言と一致するか（HARD）。
-    JSON を編集したのに build_photographers_en.py --slug を回し忘れた状態を捕捉。"""
+    """触った slug の EN HTML が JSON 宣言と一致するか（HARD）。
+    JSON を直して再生成し忘れた／生成物を直接編集して JSON と乖離した状態を捕捉。"""
     if cee is None:
         return
-    for slug, (_head, _work) in _changed_en_slugs().items():
-        if slug in cee.HAND_MAINTAINED_EN:
+    for slug, info in _touched_en().items():
+        if slug in HAND_MAINTAINED_EN or info["work"] is None:
             continue
         rep = cee.Report(slug)
-        cee.check_html_vs_json(_work, slug, rep)
+        cee.check_html_vs_json(info["work"], slug, rep)
         for f in rep.fails:
-            hard_failures.append(f"[EN closure] {f}（build_photographers_en.py --slug {slug[:-5]} を実行）")
+            hard_failures.append(
+                f"[EN closure] {f}（build_photographers_en.py --slug {slug[:-5]} を実行）")
+
+
+def check_en_direct_edit() -> None:
+    """生成物の EN HTML が直接編集された疑いを検知（WARN）。
+    EN HTML が変わったのに対応する JSON が変わっていない＝手編集の兆候。
+    手書き維持ページ（annie-leibovitz / stieglitz）は例外。"""
+    for slug, info in _touched_en().items():
+        if slug in HAND_MAINTAINED_EN:
+            continue
+        if info["html_changed"] and not info["json_changed"]:
+            warnings.append(
+                f"[EN {slug}] 生成物の EN HTML を直接編集した疑い。正本は {EN_CONTENT_JSON}。"
+                f"JSON を直して build_photographers_en.py --slug {slug[:-5]} で再生成すること"
+            )
 
 
 def check_en_changed_slug_integrity() -> None:
-    """変更 slug の sup/cite・リンク健全性（WARN）。
+    """触った slug の sup/cite・リンク健全性（WARN）。
     既存バグを抱えた slug を触っても push はブロックしないが気づけるようにする。"""
     if cee is None:
         return
-    for slug, (_head, _work) in _changed_en_slugs().items():
+    for slug, info in _touched_en().items():
+        if info["work"] is None:
+            continue
         rep = cee.Report(slug)
-        cee.check_cite_supref(_work, rep)
-        cee.check_links(_work, rep)
+        cee.check_cite_supref(info["work"], rep)
+        cee.check_links(info["work"], rep)
         for f in rep.fails:
             warnings.append(f"[EN {slug}] {f}")
 
@@ -245,6 +305,7 @@ def main() -> int:
     check_ga_coverage()
     check_en_content_loss()
     check_en_changed_slug_closure()
+    check_en_direct_edit()
     check_en_changed_slug_integrity()
     run_existing_check("check_photographer_link_integrity.py")
 
