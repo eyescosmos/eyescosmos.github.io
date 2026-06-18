@@ -45,7 +45,10 @@ PROHIBITED_SOURCE_DOMAINS = (
     'pinterest.', 'tumblr.com',
 )
 # EN HTML を手書きで維持している例外ページ（JSON は正本ではないので closure 検査をしない）
-HAND_MAINTAINED_EN = {'stieglitz.html', 'annie-leibovitz.html'}
+# - shoji-ueda: 現 EN HTML が JA ページに対応した正（本文の脚注 *1..*17 と出典が整合）。
+#   JSON 側の sources_html / リンクは別系統の誤りで、本文と番号が対応しない。
+#   よって JSON からの再生成は禁止（正しい HTML を壊す）。HTML を手編集で維持する。
+HAND_MAINTAINED_EN = {'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html'}
 # Amazon 検索結果・トラッキングの兆候
 AMAZON_SEARCH_SIGNS = ('/s?', '/s/ref', '?k=', '&k=', 'field-keywords', '/gp/search')
 
