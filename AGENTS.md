@@ -57,8 +57,10 @@
   - EN年代/運動: `data/taxonomy-en-content.json` のメタ・セクション消失をHARD、`en/eras/*.html` / `en/movements/*.html` だけの変更を直接編集疑いWARNにする。
   - ENアーカイブ: `card-data.json` のカード数・id・`nameEn` / `nameJa` / `href` 消失をHARD、`en/archive.html` だけの変更を直接編集疑いWARNにする。
   - 本文消失: `scripts/check_content_loss.py` を同じbaseline・`--strict`で実行して取り込む。写真家リーフ（JA + EN）の明確な本文消失（出典cite / 本文セクション / FIG / thesis / lead の減少）をHARD、構造不変のまま文面だけ変化した「書き換えの疑い」をWARNにする。JA写真家HTML（正本）の本文消失もpush前に自動ブロックされる。
+  - SEO/不可視要素: 触った公開HTML（GAと同じ範囲）を baseline 比較し、baselineにあった canonical / JSON-LD / title / meta description / data-nosnippet の消失、または hreflang の減少をHARD。OGP/Twitter減・data-nosnippet部分減・新規ページのコア欠落をWARN。元から無いページ・新規ページはブロックしない（段階導入）。
+  - JA分類ページ本文消失: 触った `archive.html` / `eras/*` / `movements/*`（HTML正本）を baseline 比較し、`<main>`領域消失・`<h1>`消失・`pc-card`数の減少をHARD、section/リンク/data-nosnippet の減少をWARN。国別はJSON正本のため対象外。
 - 新規clone / Codex環境では、最初に `bash scripts/setup_hooks.sh` を一度実行して `.githooks/pre-push` を有効化する。`core.hooksPath` はローカル設定なので、実行するまでpush前チェックは自動では走らない。
-- content系ガードは GA / canonical / hreflang / OG / JSON-LD / `data-nosnippet` の欠落までは防がない。テンプレ差し替え時は別途確認する。
+- 上記SEOガードは「baselineにあった要素が消える事故」を止めるもので、元から欠けている既存穴（例: JA hreflang）の検出・修正はしない。テンプレ差し替え時は別途確認する。
 
 ## EN 写真家ページ編集フロー — Required
 

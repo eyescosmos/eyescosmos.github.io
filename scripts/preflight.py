@@ -22,6 +22,10 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 GA_TOKEN = "googletagmanager"
 
+# GA カバレッジと同じ「公開 HTML」対象範囲（ルート直下＋各分類ディレクトリ）
+PUBLIC_HTML_DIRS = [".", "photographers", "movements", "eras", "countries",
+                    "en", "en/photographers", "en/countries", "en/movements", "en/eras"]
+
 hard_failures: list[str] = []
 warnings: list[str] = []          # 要確認（今回の変更に起因しうる）
 known_warnings: list[str] = []    # 既知・非ブロック（環境差や既存ノイズ）
@@ -94,9 +98,7 @@ def is_redirect_stub(html: str) -> bool:
 def check_ga_coverage() -> None:
     """公開 .html に GA があるか。例外: リダイレクトスタブ / *-backup.html / Google確認ファイル。"""
     missing: list[str] = []
-    dirs = [".", "photographers", "movements", "eras", "countries",
-            "en", "en/photographers", "en/countries", "en/movements", "en/eras"]
-    for d in dirs:
+    for d in PUBLIC_HTML_DIRS:
         p = REPO / d
         if not p.is_dir():
             continue
@@ -453,6 +455,136 @@ def check_archive_en() -> None:
             f"正本は {CARD_DATA_JSON}。build_archive_en.py で再生成すること")
 
 
+# ── SEO / 不可視必須要素 & JA 分類ページの本文消失（baseline 比較・触ったものだけ）──
+# 設計（2026-06-19 追加）:
+#   - 既存ページには穴がある前提で「baseline にあった要素が消えた」ときだけ HARD。
+#     元から無いページ・新規ページはブロックしない（段階導入）。
+#   - redirect stub / *-backup.html / google確認ファイル / 削除済みは対象外。
+#   - 触った公開 HTML だけが対象＝無関係な push は必ずグリーン。
+
+def _touched_html(baseline: str, allowed_dirs: list[str]) -> list[tuple[str, str]]:
+    """baseline と作業ツリーで差分のある公開 HTML を (rel_path, work_html) で返す。
+    stub / backup / google / 削除済みは除外。allowed_dirs は直下のみ（再帰しない）。"""
+    allowed = set(allowed_dirs)
+    proc = subprocess.run(["git", "diff", "--name-only", baseline],
+                          capture_output=True, text=True, cwd=REPO)
+    out: list[tuple[str, str]] = []
+    for line in proc.stdout.splitlines():
+        rel = line.strip()
+        if not rel.endswith(".html") or rel.endswith("-backup.html"):
+            continue
+        d = os.path.dirname(rel) or "."
+        if d not in allowed:
+            continue
+        if os.path.basename(rel).startswith("google"):
+            continue
+        fp = REPO / rel
+        if not fp.exists():
+            continue  # 削除はページ単位の事象として別扱い
+        html = fp.read_text(encoding="utf-8", errors="ignore")
+        if is_redirect_stub(html):
+            continue  # スタブ化は意図的な転送なので対象外
+        out.append((rel, html))
+    return out
+
+
+def _seo_metrics(html: str) -> dict:
+    title = re.search(r'<title[^>]*>(.*?)</title>', html, re.S | re.I)
+    return {
+        "canonical": len(re.findall(r'rel=["\']canonical["\']', html, re.I)),
+        "hreflang": len(re.findall(r'hreflang=', html, re.I)),
+        "jsonld": len(re.findall(r'application/ld\+json', html, re.I)),
+        "nosnippet": len(re.findall(r'data-nosnippet', html, re.I)),
+        "title": 1 if (title and re.sub(r'<[^>]+>', '', title.group(1)).strip()) else 0,
+        "description": len(re.findall(r'name=["\']description["\']', html, re.I)),
+        "og": len(re.findall(r'og:title|og:description', html, re.I)),
+        "twitter": len(re.findall(r'twitter:title|twitter:description', html, re.I)),
+    }
+
+
+def check_seo_invisible_loss() -> None:
+    """公開 HTML の不可視必須要素（canonical / hreflang / JSON-LD / data-nosnippet /
+    title / description / OGP / Twitter）が baseline 比で消えていないか。
+    完全消失・hreflang 減＝HARD、OGP/Twitter 減・nosnippet 部分減・新規欠落＝WARN。"""
+    baseline = _baseline_ref()
+    for rel, work_html in _touched_html(baseline, PUBLIC_HTML_DIRS):
+        wm = _seo_metrics(work_html)
+        base_html = _git_show(baseline, rel)
+        if base_html is None:
+            missing = [k for k in ("canonical", "title", "description") if wm[k] == 0]
+            if missing:
+                warnings.append(
+                    f"[SEO新規 {rel}] コア要素が未設定: {', '.join(missing)}")
+            continue
+        bm = _seo_metrics(base_html)
+        hard = []
+        for key, label in (("canonical", "canonical"), ("jsonld", "JSON-LD"),
+                           ("title", "title"), ("description", "meta description"),
+                           ("nosnippet", "data-nosnippet")):
+            if bm[key] > 0 and wm[key] == 0:
+                hard.append(f"{label} 消失")
+        if bm["hreflang"] > wm["hreflang"]:
+            hard.append(f"hreflang {bm['hreflang']}→{wm['hreflang']}")
+        if hard:
+            hard_failures.append(
+                f"[SEO {rel}] baseline 比で必須要素が消失: " + " / ".join(hard))
+        warn = []
+        if bm["og"] > wm["og"]:
+            warn.append(f"OGP {bm['og']}→{wm['og']}")
+        if bm["twitter"] > wm["twitter"]:
+            warn.append(f"Twitter {bm['twitter']}→{wm['twitter']}")
+        if 0 < wm["nosnippet"] < bm["nosnippet"]:
+            warn.append(f"data-nosnippet {bm['nosnippet']}→{wm['nosnippet']}")
+        if warn:
+            warnings.append(f"[SEO {rel}] 不可視要素が減少（要確認）: " + " / ".join(warn))
+
+
+def _classif_metrics(html: str) -> dict:
+    return {
+        "main": len(re.findall(r'<main\b', html, re.I)),
+        "h1": len(re.findall(r'<h1\b', html, re.I)),
+        "cards": len(re.findall(r'pc-card', html)),
+        "section": len(re.findall(r'<section\b', html, re.I)),
+        "anchors": len(re.findall(r'<a\s', html, re.I)),
+        "nosnippet": len(re.findall(r'data-nosnippet', html)),
+    }
+
+
+def check_ja_classification_loss() -> None:
+    """JA 分類ページ（archive.html / eras / movements）の主要コンテンツが baseline 比で
+    大きく消えていないか。HTML が正本のため軽量メトリクスで明確な消失だけ拾う。
+    main 領域消失・h1 消失・カード数減＝HARD、section/リンク/nosnippet 減＝WARN。
+    国別は JSON 正本なので今回は対象外。"""
+    baseline = _baseline_ref()
+    targets = _touched_html(baseline, ["eras", "movements"])
+    targets += [(rel, html) for rel, html in _touched_html(baseline, ["."])
+                if os.path.basename(rel) == "archive.html"]
+    for rel, work_html in targets:
+        base_html = _git_show(baseline, rel)
+        if base_html is None:
+            continue  # 新規分類ページはブロックしない
+        bm, wm = _classif_metrics(base_html), _classif_metrics(work_html)
+        hard = []
+        if bm["main"] > 0 and wm["main"] == 0:
+            hard.append("main 領域消失")
+        if bm["h1"] > 0 and wm["h1"] == 0:
+            hard.append("h1 消失")
+        if wm["cards"] < bm["cards"]:
+            hard.append(f"カード {bm['cards']}→{wm['cards']}")
+        if hard:
+            hard_failures.append(
+                f"[JA分類 {rel}] 主要コンテンツが消失: " + " / ".join(hard))
+        warn = []
+        if wm["section"] < bm["section"]:
+            warn.append(f"section {bm['section']}→{wm['section']}")
+        if bm["anchors"] - wm["anchors"] >= 10 and wm["anchors"] < bm["anchors"] * 0.85:
+            warn.append(f"リンク {bm['anchors']}→{wm['anchors']}")
+        if wm["nosnippet"] < bm["nosnippet"]:
+            warn.append(f"data-nosnippet {bm['nosnippet']}→{wm['nosnippet']}")
+        if warn:
+            warnings.append(f"[JA分類 {rel}] 指標が減少（要確認）: " + " / ".join(warn))
+
+
 def check_content_loss_guard() -> None:
     """写真家リーフ（JA + EN）の本文消失をブロック経路へ昇格する。
     check_content_loss.py を preflight と共通の baseline・--strict で実行し:
@@ -522,6 +654,8 @@ def main() -> int:
     check_taxonomy_en()
     check_archive_en()
     check_content_loss_guard()
+    check_seo_invisible_loss()
+    check_ja_classification_loss()
     run_existing_check("check_photographer_link_integrity.py")
 
     if warnings:
