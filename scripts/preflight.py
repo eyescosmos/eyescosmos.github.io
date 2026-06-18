@@ -21,7 +21,8 @@ REPO = Path(__file__).resolve().parent.parent
 GA_TOKEN = "googletagmanager"
 
 hard_failures: list[str] = []
-warnings: list[str] = []
+warnings: list[str] = []          # 要確認（今回の変更に起因しうる）
+known_warnings: list[str] = []    # 既知・非ブロック（環境差や既存ノイズ）
 
 # check_en_entry の検査ロジックを再利用する
 sys.path.insert(0, str(REPO / "scripts"))
@@ -59,7 +60,10 @@ def check_dup_ids_js() -> None:
     try:
         ids = [i for i in eval_photographers() if i]
     except Exception as e:  # noqa: BLE001
-        warnings.append(f"JS PHOTOGRAPHERS を eval できず重複チェックをスキップ: {e}")
+        known_warnings.append(
+            "JS写真家の重複チェックをスキップ（既知・非ブロック: osascript(JavaScript) を"
+            f"使えない環境。macOS 以外では正常に出る）: {e}"
+        )
         return
     seen, dups = set(), set()
     for i in ids:
@@ -225,12 +229,14 @@ def run_existing_check(script: str) -> None:
     proc = subprocess.run([sys.executable, str(path)], capture_output=True, text=True, cwd=REPO)
     out = (proc.stdout + proc.stderr).strip()
     if proc.returncode != 0:
-        warnings.append(f"{script} が非0終了 (既存ノイズの可能性): 末尾→ " + out.splitlines()[-1] if out else script)
-    else:
-        # 1文字リンク等の致命傷だけ拾う
-        for token in ("museumangewandtekunst", ">S</a>"):
-            if token in out:
-                warnings.append(f"{script} 出力に '{token}' を検出")
+        tail = out.splitlines()[-1] if out else script
+        known_warnings.append(
+            f"{script} が非0終了（既知ノイズ・非ブロック: Biography 先頭文言等の既存指摘）: 末尾→ {tail}"
+        )
+    # 1文字リンク等の致命傷は returncode に関わらず拾い、要確認として上げる
+    for token in ("museumangewandtekunst", ">S</a>"):
+        if token in out:
+            warnings.append(f"{script} 出力に '{token}' を検出（要確認）")
 
 
 def main() -> int:
@@ -243,9 +249,13 @@ def main() -> int:
     run_existing_check("check_photographer_link_integrity.py")
 
     if warnings:
-        print("── WARN（ブロックしない・要確認）──")
+        print("── WARN（要確認・ブロックしない）──")
         for w in warnings:
             print("  ⚠ " + w)
+    if known_warnings:
+        print("── WARN（既知・非ブロック / 対応不要）──")
+        for w in known_warnings:
+            print("  · " + w)
     if hard_failures:
         print("\n── FAIL（push をブロック）──")
         for h in hard_failures:
