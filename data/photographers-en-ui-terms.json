@@ -130,6 +130,7 @@
   "本サイトでは作品画像を掲載していません。下記の公式・美術館・写真機関資料で作品情報をご覧ください。": "This site does not display work images. Please see the official, museum, and photography-institution resources below.",
   "本サイトでは作品画像を掲載していません。下記の公式・美術館・出版社資料で作品情報をご覧ください。": "This site does not display work images. Please see the official, museum, and publisher resources below.",
   "本サイトでは作品画像を掲載していません。下記の公式アーカイブで作品をご覧ください。": "This site does not display work images. Please visit the official archives below.",
+  "作品画像を各美術館・コレクションの公式ページで確認する。": "View works on official museum and collection pages.",
   "本サイトでは作品画像を掲載していません。以下の美術館・コレクションの公式ページで、本文に登場する作品と関連作品を確認できます。": "This site does not reproduce artwork images. The works discussed here, along with related photographs, can be viewed on the official museum and collection pages below."
  },
  "works_labels": {
@@ -152,7 +153,13 @@
   "LOC — マンザナー写真": "LOC — Manzanar photographs",
   "La Foule sur les boulevards（ミ=カレームの日のパリ大通り）": "La Foule sur les boulevards",
   "MoMA — Bruce Springsteen: Born in the U.S.A. アルバムカバー": "MoMA — Bruce Springsteen: Born in the U.S.A. album cover",
+  "MoMA — Gathering Water-Lilies（1885年頃）": "MoMA — Gathering Water-Lilies (c. 1885)",
+  "MoMA — Gathering Water-Lilies（1885年頃）↗": "MoMA — Gathering Water-Lilies (c. 1885)",
+  "MoMA — The Clay Mill（1887年頃）": "MoMA — The Clay Mill (c. 1887)",
+  "MoMA — The Clay Mill（1887年頃）↗": "MoMA — The Clay Mill (c. 1887)",
   "MoMA所蔵": "MoMA collection",
+  "Musée d’Orsay — The Lone Lagoon（1895年）": "Musée d’Orsay — The Lone Lagoon (1895)",
+  "Musée d’Orsay — The Lone Lagoon（1895年）↗": "Musée d’Orsay — The Lone Lagoon (1895)",
   "MoMA所蔵（子供たち c.1955）": "MoMA collection (Children, c.1955)",
   "Nikon THE GALLERY — 本の景色 BIBLIOTHECA": "Nikon THE GALLERY — Hon no keshiki: BIBLIOTHECA",
   "Portfolio statement — Charles Fréger 公式サイト": "Portfolio statement — Charles Fréger official site",
