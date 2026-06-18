@@ -56,6 +56,7 @@
   - EN国別: `data/country-pages.json` の主要情報消失をHARD、`en/countries/*.html` だけの変更を直接編集疑いWARNにする。
   - EN年代/運動: `data/taxonomy-en-content.json` のメタ・セクション消失をHARD、`en/eras/*.html` / `en/movements/*.html` だけの変更を直接編集疑いWARNにする。
   - ENアーカイブ: `card-data.json` のカード数・id・`nameEn` / `nameJa` / `href` 消失をHARD、`en/archive.html` だけの変更を直接編集疑いWARNにする。
+  - 本文消失: `scripts/check_content_loss.py` を同じbaseline・`--strict`で実行して取り込む。写真家リーフ（JA + EN）の明確な本文消失（出典cite / 本文セクション / FIG / thesis / lead の減少）をHARD、構造不変のまま文面だけ変化した「書き換えの疑い」をWARNにする。JA写真家HTML（正本）の本文消失もpush前に自動ブロックされる。
 - 新規clone / Codex環境では、最初に `bash scripts/setup_hooks.sh` を一度実行して `.githooks/pre-push` を有効化する。`core.hooksPath` はローカル設定なので、実行するまでpush前チェックは自動では走らない。
 - content系ガードは GA / canonical / hreflang / OG / JSON-LD / `data-nosnippet` の欠落までは防がない。テンプレ差し替え時は別途確認する。
 

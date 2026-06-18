@@ -453,6 +453,46 @@ def check_archive_en() -> None:
             f"正本は {CARD_DATA_JSON}。build_archive_en.py で再生成すること")
 
 
+def check_content_loss_guard() -> None:
+    """写真家リーフ（JA + EN）の本文消失をブロック経路へ昇格する。
+    check_content_loss.py を preflight と共通の baseline・--strict で実行し:
+      - 明確な消失（出典 / 本文セクション / FIG / thesis / lead）= HARD
+      - 構造不変のまま文面だけ変化した「書き換えの疑い」= WARN（ブロックしない）
+    触ったファイルだけが対象なので、変更が無ければ必ずグリーン＝門にできる。
+    JA 写真家 HTML（正本）の本文消失はこれまで手動チェック頼みだった穴を塞ぐ。"""
+    script = REPO / "scripts" / "check_content_loss.py"
+    if not script.exists():
+        return
+    baseline = _baseline_ref()
+    proc = subprocess.run(
+        [sys.executable, str(script), "--against", baseline, "--strict"],
+        capture_output=True, text=True, cwd=REPO)
+    out = proc.stdout
+    loss_part, _, rewrite_part = out.partition("⚠ 本文の書き換え")
+    # 消失（HARD）— --strict は損失検知時のみ exit 1
+    if proc.returncode != 0:
+        items, cur = [], None
+        for line in loss_part.splitlines():
+            s = line.strip()
+            if s.startswith("✋"):
+                cur = s[1:].strip()
+            elif s.startswith("−") and cur:
+                items.append(f"{cur}（{s[1:].strip()}）")
+        detail = " / ".join(items[:6]) if items else \
+            "scripts/check_content_loss.py を実行して確認"
+        hard_failures.append(
+            "本文消失の疑い（check_content_loss・JA/EN 写真家）: " + detail
+            + "。意図的でなければ正本(JA HTML / photographers-en-content.json)へ復元")
+    # 書き換え（WARN）— 文面だけの変化。事実すり替えの疑いとして目視
+    if rewrite_part.strip():
+        files = [l.strip()[1:].strip() for l in rewrite_part.splitlines()
+                 if l.strip().startswith("✋")]
+        warnings.append(
+            "本文の書き換えの疑い（構造不変のまま文面が変化・要目視）: "
+            + ", ".join(files[:6])
+            + "。正本(JA HTML / photographers-en-content.json・overrides.js)と一致するか確認")
+
+
 def run_existing_check(script: str) -> None:
     path = REPO / "scripts" / script
     if not path.exists():
@@ -481,6 +521,7 @@ def main() -> int:
     check_country_en()
     check_taxonomy_en()
     check_archive_en()
+    check_content_loss_guard()
     run_existing_check("check_photographer_link_integrity.py")
 
     if warnings:
