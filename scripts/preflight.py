@@ -554,6 +554,10 @@ def check_ja_seo_holes() -> None:
             missing.append("OGP 未設定")
         if m["nosnippet"] == 0:
             missing.append("data-nosnippet 未設定")
+        if m["description"] == 0:
+            missing.append("meta description 未設定")
+        if m["jsonld"] == 0:
+            missing.append("JSON-LD 未設定")
         slug = os.path.splitext(os.path.basename(rel))[0]
         has_en = (REPO / "en" / "photographers" / f"{slug}.html").exists()
         if m["hreflang"] == 0 and "noindex" not in work_html and has_en:
