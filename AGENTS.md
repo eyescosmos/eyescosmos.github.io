@@ -34,6 +34,25 @@
 - 捏造禁止。出典にない評価・書誌・URL・Amazonリンクを推測で作らない。
 - EN生成は JA を読むだけで、JA を書き換えない。逆に EN HTML の手書き修正は、正本データに入っていない限り消える。
 
+### 新規写真家追加フロー — Required
+
+新規写真家をゼロから追加するときは、後からSEO・構造・掲載漏れを直す往復を避けるため、次の順で進める。
+
+```bash
+python3 scripts/add_photographer.py spec.json --apply
+# 出力された貼り付けカードと手作業チェックリストに従う
+# JAページは参照実装 photographers/ansel-adams.html をコピーして作成
+# ENは data/photographers-en-content.json を正本として編集し、build_photographers_en.py --slug <slug> で生成
+python3 scripts/check_new_photographer.py --slug <slug>
+python3 scripts/preflight.py
+```
+
+- `scripts/add_photographer.py` は card-data / supplement.js / スターマップ投入と、archive・年代・運動カードの貼り付け用HTML、手作業チェックリストを出す作業ナビ。危険な旧生成器は呼ばない。
+- JAページは参照実装 `photographers/ansel-adams.html` をコピーし、名前・slug・本文・thesis・出典・作品リンクを差し替える。`photographers/winogrand.html` は本文が単一「解説」節の薄い型なのでコピー元にしない。canonical / og:url / JSON-LD `Person.url` は必ず自slugに合わせる。JA JSON-LDは現状実体に合わせて `Person` 型を必須とし、WebPage / BreadcrumbList は必須にしない。
+- `scripts/check_new_photographer.py --slug <slug>` は構造・cite整合・JSON-LD実体準拠の完成検査。通称slug可。`--strict-new` は不足を一部HARD化する明示検査用。`--all` は既存不具合の可視化用で、既存全ページを一括修正する指示ではない。
+- `preflight.py` には同検査の touched-only 軽量版が入っている。常時preflightは明確な破損だけHARD、完成度不足はWARN中心。完成検査の本命は必ず `check_new_photographer.py --slug <slug>` で行う。
+- 既存バグ（例: `sharon-lockhart` の dangling cite）は、そのページを修正する時に直す。無関係な新規追加作業では触らない。
+
 ## Forbidden / High-Risk Commands
 
 - 実行禁止:
@@ -59,7 +78,7 @@
   - 本文消失: `scripts/check_content_loss.py` を同じbaseline・`--strict`で実行して取り込む。写真家リーフ（JA + EN）の明確な本文消失（出典cite / 本文セクション / FIG / thesis / lead の減少）をHARD、構造不変のまま文面だけ変化した「書き換えの疑い」をWARNにする。JA写真家HTML（正本）の本文消失もpush前に自動ブロックされる。
   - SEO/不可視要素: 触った公開HTML（GAと同じ範囲）を baseline 比較し、baselineにあった canonical / JSON-LD / title / meta description / data-nosnippet の消失、または hreflang の減少をHARD。OGP/Twitter減・data-nosnippet部分減・新規ページのコア欠落をWARN。元から無いページ・新規ページはブロックしない（段階導入）。
   - JA写真家ページのSEO穴検知: `check_ja_seo_holes()` は、触った `photographers/*.html` だけを対象に、canonical / OGP / data-nosnippet / hreflang / meta description / JSON-LD が「元から無い・新規ページで付け忘れた」場合に WARN を出す。上のSEO消失ガードは「baselineにあった要素が消えた事故」をHARDで止めるものだが、`check_ja_seo_holes()` は穴検知専用で、pushをブロックしない。本文修正だけでSEO要素を消していない場合は鳴らないのが正常。
-  - 新規JA写真家ページの最善手: 完成済みページ（例 `photographers/winogrand.html`）を丸ごとコピーして、名前・本文・出典・作品リンクだけ差し替える。これで GA / canonical / hreflang / OGP / Twitter / meta description / JSON-LD / data-nosnippet が最初から入る。ゼロから組むとGA欠落はHARDブロック、残りのSEO穴はWARNになりやすい。
+  - 新規JA写真家ページの最善手: 参照実装 `photographers/ansel-adams.html` を丸ごとコピーして、名前・本文・出典・作品リンクだけ差し替える。これで GA / canonical / hreflang / OGP / Twitter / meta description / JSON-LD / data-nosnippet が最初から入る。`photographers/winogrand.html` は薄い型なのでコピー元にしない。ゼロから組むとGA欠落はHARDブロック、残りのSEO穴はWARNになりやすい。
   - `scripts/fill_seo_tags.py` は、既存JA写真家ページのSEO穴を本文・出典に触らず補う冪等フィクサー。`python3 scripts/fill_seo_tags.py` はdry-run、`--apply` で書き込み。補えるのは canonical / hreflang / data-nosnippet / OGP / Twitter。meta description本文とJSON-LDは捏造回避のため生成しないので、完成済みページからの移植または手作業で別途入れる。
   - JA分類ページ本文消失: 触った `archive.html` / `eras/*` / `movements/*`（HTML正本）を baseline 比較し、`<main>`領域消失・`<h1>`消失・`pc-card`数の減少をHARD、section/リンク/data-nosnippet の減少をWARN。国別はJSON正本のため対象外。
 - 新規clone / Codex環境では、最初に `bash scripts/setup_hooks.sh` を一度実行して `.githooks/pre-push` を有効化する。`core.hooksPath` はローカル設定なので、実行するまでpush前チェックは自動では走らない。
