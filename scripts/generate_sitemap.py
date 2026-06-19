@@ -30,6 +30,8 @@ def html_files() -> list[Path]:
             continue
         if re.fullmatch(r"google[0-9a-f]+\.html", path.name):
             continue
+        if path.name.endswith("-backup.html"):
+            continue
         content = path.read_text(encoding="utf-8", errors="ignore")
         if re.search(r'<meta\s+name=["\']robots["\']\s+content=["\'][^"\']*noindex', content, re.I):
             continue
