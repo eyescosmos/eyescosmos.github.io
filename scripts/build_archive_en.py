@@ -185,7 +185,8 @@ MOVEMENT_LEDES = {
 }
 
 # 英語個別ページが存在しない写真家（日本語ページへリンクする）
-NO_EN_PAGE = {'fabian-marti', 'gabriel-orozco'}
+# fabian-marti / gabriel-orozco は EN ページ作成済みのため除外（2026-06-19）
+NO_EN_PAGE: set[str] = set()
 
 
 def esc(t):
