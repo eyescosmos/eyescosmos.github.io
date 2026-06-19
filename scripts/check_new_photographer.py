@@ -56,8 +56,14 @@ SKIP_IN_PREFLIGHT = {
     "ga_missing", "canonical_absent", "ogp_absent", "twitter_absent",
     "hreflang_absent", "nosnippet_absent", "description_absent", "jsonld_absent",
     "cite_orphan", "works_empty", "further_empty", "related_empty",
-    "body_links_scarce", "en_breadcrumb_absent",
+    "body_links_scarce", "en_breadcrumb_absent", "body_shape_nonstandard",
 }
+
+# 本文レイアウトの正の型（参照実装 ansel-adams.html・実測270/295が準拠）。
+# essay 節は原則この並び：背景と時代 → 表現の核心 → 代表作・方法・媒体 → 批評と写真史上の位置。
+# 長さは写真家ごとに増減してよいが、節名は標準ボキャブラリに揃える。
+CANON_SECTION_TOKENS = ("背景と時代", "表現の核心", "代表作", "批評と写真史")
+NON_ESSAY_SECTION_NAMES = {"作品を見る", "関連する写真家・運動", "さらに読む", "出典"}
 
 LEGACY_MARKERS = (
     r'class="lang-toggle"', r'class="lang-btn"', r'class="title-block"',
@@ -200,7 +206,32 @@ def check_ja(slug: str, html: str) -> list[Finding]:
     # 完成度（空セクション・本文リンク僅少）
     f += _check_completeness(html)
 
+    # 本文レイアウトの型（ansel-adams 準拠か）
+    f += _check_body_shape(html)
+
     return f
+
+
+def _section_names(html: str) -> list[str]:
+    return [re.sub(r'<[^>]+>', '', m).strip()
+            for m in re.findall(r'<span class="ph-section__name">(.*?)</span>', html, re.S)]
+
+
+def _check_body_shape(html: str) -> list[Finding]:
+    """essay 節が標準ボキャブラリ（背景と時代/表現の核心/代表作・方法・媒体/批評と写真史上の位置）
+    に揃っているか。完成検査(--slug)専用の型ナッジ。長さの増減は許容し、薄い／型崩れだけ拾う。
+    実測で 270/295 が準拠＝低ノイズ・preflight には入れない（SKIP_IN_PREFLIGHT）。"""
+    essay = [n for n in _section_names(html) if n not in NON_ESSAY_SECTION_NAMES]
+    if not essay or essay == ["解説"]:
+        return [Finding("body_shape_nonstandard", SOFT,
+                        "本文が単一『解説』節（薄い型）。標準は 背景と時代 / 表現の核心 / "
+                        "代表作・方法・媒体 / 批評と写真史上の位置（参照: ansel-adams.html）")]
+    hits = sum(any(tok in n for n in essay) for tok in CANON_SECTION_TOKENS)
+    if hits < 2:
+        return [Finding("body_shape_nonstandard", SOFT,
+                        f"本文節名が標準ボキャブラリから外れている: {essay}。"
+                        "標準は 背景と時代 / 表現の核心 / 代表作・方法・媒体 / 批評と写真史上の位置")]
+    return []
 
 
 def _check_jsonld_ja(html: str, self_tail: str) -> list[Finding]:
