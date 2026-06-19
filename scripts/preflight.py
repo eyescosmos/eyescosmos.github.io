@@ -539,6 +539,29 @@ def check_seo_invisible_loss() -> None:
             warnings.append(f"[SEO {rel}] 不可視要素が減少（要確認）: " + " / ".join(warn))
 
 
+def check_ja_seo_holes() -> None:
+    """JA 写真家ページの既存 SEO 穴を WARN で検知する。
+    check_seo_invisible_loss は「baseline にあった要素の消失」検知。
+    こちらは「触った JA ページに要素が元から無い / 付け忘れ」を検知する。
+    WARN 専用で、push は絶対にブロックしない。"""
+    baseline = _baseline_ref()
+    for rel, work_html in _touched_html(baseline, ["photographers"]):
+        m = _seo_metrics(work_html)
+        missing = []
+        if m["canonical"] == 0:
+            missing.append("canonical 未設定")
+        if m["og"] == 0:
+            missing.append("OGP 未設定")
+        if m["nosnippet"] == 0:
+            missing.append("data-nosnippet 未設定")
+        slug = os.path.splitext(os.path.basename(rel))[0]
+        has_en = (REPO / "en" / "photographers" / f"{slug}.html").exists()
+        if m["hreflang"] == 0 and "noindex" not in work_html and has_en:
+            missing.append("hreflang 未設定")
+        if missing:
+            warnings.append(f"[SEO穴 {rel}] 未設定: {', '.join(missing)}")
+
+
 def _classif_metrics(html: str) -> dict:
     return {
         "main": len(re.findall(r'<main\b', html, re.I)),
@@ -655,6 +678,7 @@ def main() -> int:
     check_archive_en()
     check_content_loss_guard()
     check_seo_invisible_loss()
+    check_ja_seo_holes()
     check_ja_classification_loss()
     run_existing_check("check_photographer_link_integrity.py")
 
