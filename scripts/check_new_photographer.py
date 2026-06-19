@@ -57,6 +57,7 @@ SKIP_IN_PREFLIGHT = {
     "hreflang_absent", "nosnippet_absent", "description_absent", "jsonld_absent",
     "cite_orphan", "works_empty", "further_empty", "related_empty",
     "body_links_scarce", "en_breadcrumb_absent", "body_shape_nonstandard",
+    "description_empty", "ogp_empty",
 }
 
 # 本文レイアウトの正の型（参照実装 ansel-adams.html・実測270/295が準拠）。
@@ -181,13 +182,21 @@ def check_ja(slug: str, html: str) -> list[Finding]:
     if ogurl and not ogurl.endswith(self_tail):
         f.append(Finding("ogurl_mismatch", HARD, f"og:url が自slug不一致: {ogurl}"))
 
-    # OGP / Twitter / hreflang / description / data-nosnippet（欠落＝gate/warn）
-    if not (_meta_content(html, prop="og:title") and _meta_content(html, prop="og:description")):
+    # OGP（タグ欠落＝gate / 内容空＝soft 記入待ち。scaffold は空で出すため区別する）
+    ogt = _meta_content(html, prop="og:title")
+    ogd = _meta_content(html, prop="og:description")
+    if ogt is None or ogd is None:
         f.append(Finding("ogp_absent", GATE, "OGP(title/description) 未設定"))
+    elif not (ogt.strip() and ogd.strip()):
+        f.append(Finding("ogp_empty", SOFT, "OGP description が空（記入する）"))
     if not (_meta_content(html, name="twitter:title") or _meta_content(html, name="twitter:card")):
         f.append(Finding("twitter_absent", WARN, "Twitter カード未設定"))
-    if not _meta_content(html, name="description"):
+    # meta description（タグ欠落＝gate / 内容空＝soft 記入待ち）
+    desc = _meta_content(html, name="description")
+    if desc is None:
         f.append(Finding("description_absent", GATE, "meta description 未設定"))
+    elif not desc.strip():
+        f.append(Finding("description_empty", SOFT, "meta description が空（記入する）"))
     if "data-nosnippet" not in html:
         f.append(Finding("nosnippet_absent", GATE, "data-nosnippet 未設定"))
     has_en = en_path(slug).exists()

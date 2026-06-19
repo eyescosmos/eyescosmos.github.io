@@ -15,8 +15,13 @@
 - 最後に preflight.py を実行して決定論チェック。
 
 使い方:
-  python3 scripts/add_photographer.py path/to/spec.json [--apply]
+  python3 scripts/add_photographer.py path/to/spec.json [--apply] [--scaffold]
   --apply 無し = ドライラン（データ投入はせず、何をするか＋スニペットだけ表示）
+  --scaffold  = 参照実装 ansel-adams.html をコピーし、機械的に確定できる項目だけ置換した
+                「安全な空骨格ページ」を photographers/<id>.html に生成する。本文・thesis・
+                出典・description は生成しない（捏造回避）。既存ページは上書きしない。
+                --apply と併用で書き出し（--scaffold 単独はドライラン）。生成後 check_new_photographer
+                を自動実行して未記入箇所を WARN 表示する。
 
 spec.json 必須キー:
   id, nameJa, nameEn, years("1928–2019"), nationality("JP"), countryJa("日本"),
@@ -36,12 +41,16 @@ import re
 import shutil
 import subprocess
 import sys
+from datetime import date
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 CARD_DATA = REPO / "card-data.json"
 SUPPLEMENT = REPO / "data/photographers-supplement.js"
 STAR_BIN = REPO / "design/toptest-assets/d369d828-79e5-4719-ae51-89a0c1b743d0.bin"
+# scaffold のコピー元は参照実装で固定（winogrand は薄い型なので使わない）
+SCAFFOLD_BASE = REPO / "photographers/ansel-adams.html"
+SITE = "https://eyescosmos.github.io"
 
 REQUIRED = [
     "id", "nameJa", "nameEn", "years", "nationality", "countryJa", "era",
@@ -169,6 +178,313 @@ def card_html(spec: dict, lang: str, *, label: str, href_prefix: str) -> str:
     </div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">{name}</h3><div class="pc-body__name-en">{name2}</div></div><div class="pc-body__meta">{meta}</div><p class="pc-body__lede">{lede}</p><div class="pc-body__channel">{channel}</div><div class="pc-body__tags">{tag_html}</div><div class="pc-body__cta" data-nosnippet><span>{cta}</span><span>→</span></div></div></a></article>'''
 
 
+# ── 安全な空骨格 scaffold（ansel-adams をコピー → 機械確定項目だけ置換 → 本文は空）──
+# 重要: 本文・批評・description本文・JSON-LD description・cite・FIG・作品解説・関連欄本文は
+# 生成しない（捏造回避）。Adams 由来の本文/cite/REL/WORKS/書誌が一切残らないよう、
+# hero+main+aside を丸ごと空骨格に作り替える。head と footer 以降の chrome は流用。
+
+def _parse_years(years: str) -> tuple[str, str]:
+    """'1928–2019' → ('1928','2019')。存命 '1948–' → ('1948','')。"""
+    parts = re.split(r"\s*[–—\-]\s*", (years or "").strip())
+    birth = parts[0].strip() if parts else ""
+    death = parts[1].strip() if len(parts) > 1 and parts[1].strip() else ""
+    return birth, death
+
+
+def _hero_initials(name_en: str) -> str:
+    words = [w for w in re.split(r"\s+", (name_en or "").strip()) if w]
+    if not words:
+        return "·"
+    first = words[0][0].upper()
+    if len(words) >= 2:
+        return f"{first}<span>{words[-1][0].upper()}</span>"
+    return first
+
+
+def _scaffold_jsonld(spec: dict) -> str:
+    """Person 型のみ（実体準拠）。description は捏造回避のため入れない。"""
+    birth, death = _parse_years(spec["years"])
+    obj = {
+        "@context": "https://schema.org", "@type": "Person",
+        "name": spec["nameJa"], "alternateName": spec["nameEn"],
+        "nationality": spec["countryJa"],
+        "url": f"{SITE}/photographers/{spec['id']}.html",
+    }
+    if birth:
+        obj["birthDate"] = birth
+    if death:
+        obj["deathDate"] = death
+    return ('<script type="application/ld+json">\n'
+            + json.dumps(obj, ensure_ascii=False, indent=2) + "\n</script>")
+
+
+def _patch_head_and_header(prefix: str, spec: dict) -> str:
+    """head の SEO タグ・JSON-LD と header の crumbs / 言語トグルを spec に合わせる。
+    prefix（hero より前）に存在する自slug参照は ansel-adams のみなので URL は一括置換できる。"""
+    pid = spec["id"]
+    tags = spec.get("tags") or []
+    kw_phrase = "・".join(tags[:2]) if tags else spec["nameEn"]
+    title = f"{spec['nameJa']}｜{kw_phrase}｜写真の座標"
+    ym = date.today().strftime("%Y.%m")
+
+    # 1) URL の自slug（canonical / hreflang ja・en・x-default / og:url / 言語トグル EN /
+    #    JSON-LD url）。en 形は ja 形を内包するので 1 回の置換で両方直る。
+    prefix = prefix.replace(f"photographers/{Path(SCAFFOLD_BASE).stem}.html",
+                            f"photographers/{pid}.html")
+
+    # 2) 名前を含むタグ（title / og:title / twitter:title）→ 新タイトル。
+    prefix = re.sub(r"<title>.*?</title>", f"<title>{title}</title>", prefix, flags=re.S)
+    prefix = re.sub(r'(<meta property="og:title" content=")[^"]*(">)',
+                    rf"\g<1>{title}\g<2>", prefix)
+    prefix = re.sub(r'(<meta name="twitter:title" content=")[^"]*(">)',
+                    rf"\g<1>{title}\g<2>", prefix)
+
+    # 3) description 系は捏造回避のため空にする（タグは残す＝手で記入）。
+    for pat in (r'(<meta name="description" content=")[^"]*(">)',
+                r'(<meta property="og:description" content=")[^"]*(">)',
+                r'(<meta name="twitter:description" content=")[^"]*(">)'):
+        prefix = re.sub(pat, r"\g<1>\g<2>", prefix)
+
+    # 4) JSON-LD を Person だけで作り直す（Adams の name/生没年/description を残さない）。
+    prefix = re.sub(r'<script type="application/ld\+json">.*?</script>',
+                    lambda _m: _scaffold_jsonld(spec), prefix, count=1, flags=re.S)
+
+    # 5) header crumbs を作り替える。
+    crumbs = (
+        '<div class="head__crumbs">\n'
+        f'    <em>PHOTOGRAPHERS</em><span class="sep">/</span>{spec["nameEn"].upper()}\n'
+        + (f'    <span class="sep">·</span>{tags[0]}\n' if tags else "")
+        + f'    <span class="sep">·</span>UPDATED&nbsp;<span class="updated-date">{ym}</span>\n'
+        '  </div>')
+    prefix = re.sub(r'<div class="head__crumbs">.*?</div>', lambda _m: crumbs,
+                    prefix, count=1, flags=re.S)
+    return prefix
+
+
+def _scaffold_body(spec: dict, idx) -> str:
+    """hero + outer(main+aside) を spec 駆動の空骨格として生成する。"""
+    pid = spec["id"]
+    tags = spec.get("tags") or []
+    art = _hero_initials(spec["nameEn"])
+    entry_no = f"{int(idx):03d}" if str(idx).isdigit() else str(idx)
+    kw = tags[0] if tags else ""
+    era = spec["era"]
+    period = f"{era}年代"
+    updated = date.today().strftime("%Y.%m.%d")
+
+    kw_chips = "\n        ".join(f'<span class="ph-kw">{t}</span>' for t in tags) or \
+        '<span class="ph-kw">—</span>'
+    side_chips = "\n            ".join(
+        f'<span class="ph-side-chip{" is-primary" if i == 0 else ""}">{t}</span>'
+        for i, t in enumerate(tags)) or '<span class="ph-side-chip">—</span>'
+
+    sections = ["背景と時代", "表現の核心", "代表作・方法・媒体", "批評と写真史上の位置"]
+    toc = "\n            ".join(
+        f'<li class="toc-section"><a href="#sec-0{i}">'
+        f'<span class="toc-num">§ 0{i}</span> {name}</a></li>'
+        for i, name in enumerate(sections, 1))
+    essays = "\n\n".join(f'''      <section class="ph-section" id="sec-0{i}">
+        <div class="ph-section__head">
+          <div class="ph-section__title">
+            <span class="ph-section__num">§ 0{i} / 04</span>
+            <span class="ph-section__name">{name}</span>
+          </div>
+        </div>
+        <div class="ph-section__body">
+          <div class="essay">
+            <p></p>
+          </div>
+        </div>
+      </section>''' for i, name in enumerate(sections, 1))
+
+    return f'''<section class="ph-hero">
+  <div class="ph-hero__art">{art}</div>
+  <div class="ph-hero__info">
+    <div class="ph-hero__eyebrow">§ {entry_no} — Photographer Index — {kw}</div>
+    <h1 class="ph-hero__name">{spec['nameJa']}</h1>
+    <div class="ph-hero__en">
+      {spec['nameEn']}
+      <span class="ph-hero__years">{spec['years']}</span>
+    </div>
+    <div class="ph-hero__meta-row">
+      <span class="ph-hero__meta-item">Country<strong>{spec['countryJa']}</strong></span>
+      <span class="ph-hero__meta-item">Period<strong>{period}</strong></span>
+      <span class="ph-hero__meta-item">Channel<strong>{spec['channel']}</strong></span>
+    </div>
+  </div>
+</section>
+
+<div class="ph-outer">
+  <div class="ph-layout">
+
+    <main class="ph-main">
+
+      <div class="ph-abstract">
+        <div class="ph-abstract__label">Abstract</div>
+        <p></p>
+      </div>
+
+      <dl class="ph-entry-meta">
+        <dt>Entry</dt><dd>No. {entry_no}</dd>
+        <dt>Category</dt><dd>Photographer</dd>
+        <dt>Country</dt><dd>{spec['countryJa']}</dd>
+        <dt>Years</dt><dd>{spec['years']}</dd>
+        <dt>Period</dt><dd><a href="../eras/{era}.html">{period}</a></dd>
+        <dt>Movement</dt><dd>—</dd>
+        <dt>Updated</dt><dd>{updated}</dd>
+        <dt></dt><dd></dd>
+      </dl>
+
+      <div class="ph-keywords">
+        <span class="ph-keywords__label">Keywords</span>
+        {kw_chips}
+      </div>
+
+      <section class="ph-section">
+        <div class="ph-section__head">
+          <div class="ph-section__title">
+            <span class="ph-section__num">§ WORKS</span>
+            <span class="ph-section__name">作品を見る</span>
+          </div>
+        </div>
+        <div class="ph-section__body">
+          <div class="prep-block" data-nosnippet>本サイトでは作品画像を掲載していません。公式アーカイブへのリンクは準備中です。</div>
+        </div>
+      </section>
+
+      <details class="ph-toc" data-nosnippet>
+        <summary>目次 · Table of Contents</summary>
+        <div class="toc-body">
+          <ol class="toc-list">
+            {toc}
+          </ol>
+        </div>
+      </details>
+
+{essays}
+
+      <section class="ph-section">
+        <div class="ph-section__head">
+          <div class="ph-section__title">
+            <span class="ph-section__num">§ REL</span>
+            <span class="ph-section__name">関連する写真家・運動</span>
+          </div>
+        </div>
+        <div class="ph-section__body">
+          <div class="prep-block" data-nosnippet>準備中</div>
+        </div>
+      </section>
+
+      <section class="ph-section">
+        <div class="ph-section__head">
+          <div class="ph-section__title">
+            <span class="ph-section__num">§ REF</span>
+            <span class="ph-section__name">さらに読む</span>
+          </div>
+        </div>
+        <div class="ph-section__body">
+          <div class="prep-block" data-nosnippet>準備中</div>
+        </div>
+      </section>
+
+      <section class="ph-section">
+        <div class="ph-section__head">
+          <div class="ph-section__title">
+            <span class="ph-section__num">§ SRC</span>
+            <span class="ph-section__name">出典</span>
+          </div>
+        </div>
+        <div class="ph-section__body">
+          <div class="ph-sources"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="ph-side">
+
+      <div class="ph-side-search" data-nosnippet>
+        <form class="ph-side-search__form" onsubmit="return false;">
+          <label class="ph-side-search__label" for="ph-search-input-{pid}">SEARCH · 写真家を探す</label>
+          <div class="ph-side-search__field">
+            <input class="ph-side-search__input" id="ph-search-input-{pid}" type="search" placeholder="写真家名・運動・キーワード" autocomplete="off" aria-autocomplete="list" aria-controls="ph-search-suggestions-{pid}" aria-expanded="false">
+            <button class="ph-side-search__btn" type="button" aria-label="検索">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </form>
+        <ul class="ph-search-suggestions" id="ph-search-suggestions-{pid}" role="listbox" hidden data-nosnippet></ul>
+      </div>
+
+      <div class="ph-side-block">
+        <div class="ph-side-block__head">Entry · 写真家データ</div>
+        <div class="ph-side-block__body">
+          <div class="ph-side-meta">
+            <div class="ph-side-meta-row"><span class="ph-side-meta-key">Country</span><span class="ph-side-meta-val">{spec['countryJa']}</span></div>
+            <div class="ph-side-meta-row"><span class="ph-side-meta-key">Years</span><span class="ph-side-meta-val">{spec['years']}</span></div>
+            <div class="ph-side-meta-row"><span class="ph-side-meta-key">Period</span><span class="ph-side-meta-val"><a href="../eras/{era}.html">{period}</a></span></div>
+            <div class="ph-side-meta-row"><span class="ph-side-meta-key">Movement</span><span class="ph-side-meta-val">—</span></div>
+            <div class="ph-side-meta-row"><span class="ph-side-meta-key">Updated</span><span class="ph-side-meta-val">{updated}</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ph-side-block">
+        <div class="ph-side-block__head">Keywords · キーワード</div>
+        <div class="ph-side-block__body">
+          <div class="ph-side-chips">
+            {side_chips}
+          </div>
+        </div>
+      </div>
+
+      <div class="ph-side-block">
+        <div class="ph-side-block__head">Navigate · 移動</div>
+        <nav class="ph-side-nav" data-nosnippet>
+          <a href="/archive.html"><span>← 写真家一覧</span><span>Archive</span></a>
+          <a href="/index.html"><span>トップページへ</span><span>Top</span></a>
+        </nav>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+'''
+
+
+def build_scaffold_html(spec: dict, idx) -> str:
+    base = SCAFFOLD_BASE.read_text(encoding="utf-8")
+    hero_at = base.index('<section class="ph-hero">')
+    footer_at = base.index('<footer class="foot"')
+    prefix = _patch_head_and_header(base[:hero_at], spec)
+    suffix = base[footer_at:]              # footer + page close + 検索インデックス + scripts（流用）
+    return prefix + _scaffold_body(spec, idx) + suffix
+
+
+def scaffold_page(spec: dict, apply: bool):
+    pid = spec["id"]
+    out = REPO / "photographers" / f"{pid}.html"
+    print("\n" + "=" * 70)
+    print("空骨格 scaffold（ansel-adams コピー → 機械確定項目だけ置換 → 本文は空）")
+    print("=" * 70)
+    if out.exists():
+        print(f"  🛑 {out.relative_to(REPO)} は既に存在 → 上書きしない（安全スキップ）。")
+        print("     既存ページを作り直す場合は手動でバックアップしてから削除すること。")
+        return False
+    cd = json.loads(CARD_DATA.read_text(encoding="utf-8"))
+    idx = next((p["idx"] for p in cd["photographers"] if p["id"] == pid), spec.get("idx", "—"))
+    html = build_scaffold_html(spec, idx)
+    if not apply:
+        print(f"  [DRY-RUN] {out.relative_to(REPO)} を生成予定（--apply で書き出し）。{len(html)} bytes。")
+        return False
+    out.write_text(html, encoding="utf-8")
+    print(f"  ✅ 生成: {out.relative_to(REPO)}（{len(html)} bytes）")
+    print("  ※本文・thesis・出典・description は空。要素を流し込んで完成させること。")
+    return True
+
+
 def print_snippets_and_runbook(spec: dict):
     cd = json.loads(CARD_DATA.read_text(encoding="utf-8"))
     idx = next((p["idx"] for p in cd["photographers"] if p["id"] == spec["id"]), spec.get("idx", "?"))
@@ -217,10 +533,11 @@ def print_manual_checklist(spec: dict):
     print("次に手作業で埋めるもの（データ投入では埋まらない）")
     print("=" * 70)
     print(f"□ photographers/{sid}.html を作成")
-    print("    最善手＝参照実装 photographers/ansel-adams.html を丸ごとコピーして")
-    print("    名前・本文・slug だけ差し替える（SEO一式＝canonical/hreflang/OGP/Twitter/")
-    print("    description/JSON-LD(Person)/data-nosnippet/GA ＋ 本文レイアウトの型が最初から入る）。")
-    print("    ※winogrand.html は『解説』1節だけの薄い型なのでコピー元にしない。")
+    print("    最速＝空骨格 scaffold を生成（このスクリプトに --scaffold を付ける）：")
+    print(f"      python3 scripts/add_photographer.py <spec.json> --apply --scaffold")
+    print("    → ansel-adams.html をコピーし、slug/URL/名前/生没年/国/era など機械確定項目だけ")
+    print("      置換した空骨格を作る（SEO一式＋本文4節の型が入り、Adams 残骸ゼロ）。")
+    print("    手作業でやる場合も参照実装は ansel-adams.html（winogrand は薄い型なので使わない）。")
     print(f"    ・canonical / og:url / JSON-LD url を /photographers/{sid}.html に統一")
     print(f"    ・JSON-LD は @type:Person、name/alternateName/birthDate/deathDate を {spec['nameJa']} 実体に")
     print("    ・meta description と JSON-LD 本文は捏造せず、検証済み情報だけ手書き")
@@ -243,9 +560,10 @@ def print_manual_checklist(spec: dict):
 def main():
     args = sys.argv[1:]
     apply = "--apply" in args
+    scaffold = "--scaffold" in args
     paths = [a for a in args if not a.startswith("--")]
     if not paths:
-        fail("spec.json のパスを指定してください（--apply で実投入）")
+        fail("spec.json のパスを指定してください（--apply で実投入 / --scaffold で空骨格ページ生成）")
     spec = load_spec(paths[0])
 
     if spec["id"] in {p.get("id") for p in json.loads(CARD_DATA.read_text(encoding='utf-8'))["photographers"]} \
@@ -256,12 +574,18 @@ def main():
     insert_card_data(spec, apply)
     insert_star(spec, SUPPLEMENT, apply)
     insert_star(spec, STAR_BIN, apply)
+    scaffolded = scaffold_page(spec, apply) if scaffold else False
     print_snippets_and_runbook(spec)
+    if scaffolded:
+        print("\n── 生成ページの完成検査（未記入箇所が WARN で出る）──")
+        subprocess.run([sys.executable, str(REPO / "scripts/check_new_photographer.py"),
+                        "--slug", spec["id"]])
     if apply:
         print("\n── preflight ──")
         subprocess.run([sys.executable, str(REPO / "scripts/preflight.py")])
     else:
-        print("\n（ドライラン。実投入するには --apply を付けて再実行）")
+        suffix = "" if scaffold else "（--scaffold で空骨格ページも生成）"
+        print(f"\n（ドライラン。実投入するには --apply を付けて再実行）{suffix}")
 
 
 if __name__ == "__main__":

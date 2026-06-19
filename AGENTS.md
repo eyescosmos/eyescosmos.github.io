@@ -39,15 +39,16 @@
 新規写真家をゼロから追加するときは、後からSEO・構造・掲載漏れを直す往復を避けるため、次の順で進める。
 
 ```bash
-python3 scripts/add_photographer.py spec.json --apply
+python3 scripts/add_photographer.py spec.json --apply --scaffold
+# --scaffold で photographers/<id>.html の安全な空骨格が生成される（既存は上書きしない）
 # 出力された貼り付けカードと手作業チェックリストに従う
-# JAページは参照実装 photographers/ansel-adams.html をコピーして作成
 # ENは data/photographers-en-content.json を正本として編集し、build_photographers_en.py --slug <slug> で生成
 python3 scripts/check_new_photographer.py --slug <slug>
 python3 scripts/preflight.py
 ```
 
 - `scripts/add_photographer.py` は card-data / supplement.js / スターマップ投入と、archive・年代・運動カードの貼り付け用HTML、手作業チェックリストを出す作業ナビ。危険な旧生成器は呼ばない。
+- `--scaffold` は `photographers/<id>.html` の**安全な空骨格**を生成する（コピー元は `ansel-adams.html` 固定）。slug / canonical / hreflang / og:url / JSON-LD `Person.url` / title / h1 / hero名 / name / 生没年 / 国 / era など**機械的に確定できる項目だけ**置換し、本文・thesis・出典・cite・FIG・description本文・JSON-LD descriptionは生成しない（捏造回避）。Adams由来の本文/cite/REL/WORKS/書誌は残らない。**既存ページは上書きしない**。生成後 `check_new_photographer.py --slug <id>` を自動実行して未記入WARNを出す。手コピー時の置換ミス・残骸消し残しを無くすのが目的。
 - JAページは参照実装 `photographers/ansel-adams.html` をコピーし、名前・slug・本文・thesis・出典・作品リンクを差し替える。`photographers/winogrand.html` は本文が単一「解説」節の薄い型なのでコピー元にしない。canonical / og:url / JSON-LD `Person.url` は必ず自slugに合わせる。JA JSON-LDは現状実体に合わせて `Person` 型を必須とし、WebPage / BreadcrumbList は必須にしない。
 - `scripts/check_new_photographer.py --slug <slug>` は構造・cite整合・JSON-LD実体準拠の完成検査。通称slug可。`--strict-new` は不足を一部HARD化する明示検査用。`--all` は既存不具合の可視化用で、既存全ページを一括修正する指示ではない。
 - `preflight.py` には同検査の touched-only 軽量版が入っている。常時preflightは明確な破損だけHARD、完成度不足はWARN中心。完成検査の本命は必ず `check_new_photographer.py --slug <slug>` で行う。
