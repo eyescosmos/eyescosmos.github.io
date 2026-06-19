@@ -37,6 +37,12 @@ try:
 except Exception:  # noqa: BLE001
     cee = None
 
+# 新規写真家ページの構造／cite 検査（touched-only の軽量網として再利用）
+try:
+    import check_new_photographer as cnp  # noqa: E402
+except Exception:  # noqa: BLE001
+    cnp = None
+
 EN_CONTENT_JSON = "data/photographers-en-content.json"
 
 
@@ -652,6 +658,49 @@ def check_content_loss_guard() -> None:
             + "。正本(JA HTML / photographers-en-content.json・overrides.js)と一致するか確認")
 
 
+def check_new_photographer_pages() -> None:
+    """新規／触った JA 写真家ページの構造・cite 整合を touched-only で検査する。
+    設計（[[project_new_photographer_guard]]・2026-06-19 合意）:
+      - 明確な破損（決定論・既存295グリーン）だけ HARD。完成度不足は WARN。
+      - SEO 欠落系・空セクション・orphan cite は既存チェック／頻出ノイズのため
+        preflight では出さない（check_new_photographer.SKIP_IN_PREFLIGHT）。
+      - 完成検査の本命は `check_new_photographer.py --slug <slug>`。これは網。
+    """
+    if cnp is None:
+        return
+    # 全体の決定論不変条件: card-data に id があるのにページが無い（HARD）
+    try:
+        miss = cnp.carddata_missing_pages()
+    except Exception:  # noqa: BLE001
+        miss = []
+    if miss:
+        hard_failures.append(
+            f"card-data.json に id があるが photographers/<id>.html が不在: {miss[:8]}")
+    # 触った JA 写真家ページだけ構造検査
+    baseline = _baseline_ref()
+    try:
+        carddata = cnp.carddata_ids()
+    except Exception:  # noqa: BLE001
+        carddata = set()
+    for rel, work_html in _touched_html(baseline, ["photographers"]):
+        slug = os.path.splitext(os.path.basename(rel))[0]
+        for fd in cnp.check_ja(slug, work_html):
+            if fd.code in cnp.SKIP_IN_PREFLIGHT:
+                continue
+            if fd.level in (cnp.HARD, cnp.GATE):
+                # GATE（完成ゲート）は preflight 常時では WARN に落とす
+                if fd.level == cnp.HARD:
+                    hard_failures.append(f"[新規写真家 {slug}] {fd.msg}")
+                else:
+                    warnings.append(f"[新規写真家 {slug}] {fd.msg}")
+            elif fd.level == cnp.WARN:
+                warnings.append(f"[新規写真家 {slug}] {fd.msg}")
+        if slug not in carddata:
+            warnings.append(
+                f"[新規写真家 {slug}] card-data.json に未登録"
+                f"（アーカイブ/星座に出ない。add_photographer.py で投入）")
+
+
 def run_existing_check(script: str) -> None:
     path = REPO / "scripts" / script
     if not path.exists():
@@ -684,6 +733,7 @@ def main() -> int:
     check_seo_invisible_loss()
     check_ja_seo_holes()
     check_ja_classification_loss()
+    check_new_photographer_pages()
     run_existing_check("check_photographer_link_integrity.py")
 
     if warnings:

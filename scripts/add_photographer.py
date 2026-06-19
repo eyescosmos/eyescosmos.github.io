@@ -192,6 +192,7 @@ def print_snippets_and_runbook(spec: dict):
     if spec["movementSlugEn"]:
         print(f"\n--- en/movements/{spec['movementSlugEn']}.html（EN, label=国コード, href_prefix='../'）---")
         print(card_html(spec, "en", label=spec["nationality"], href_prefix="../"))
+    print_manual_checklist(spec)
     print("\n" + "=" * 70)
     print("次に実行するコマンド（順に）")
     print("=" * 70)
@@ -200,9 +201,39 @@ def print_snippets_and_runbook(spec: dict):
     print("  # 国ページ（nationality に該当する国 slug を指定）")
     print(f"  python3 scripts/generate_country_pages.py    # JA（card-data の nationality={spec['nationality']} から自動）")
     print("  python3 scripts/generate_country_pages_en.py  # EN")
-    print("  # 最後に決定論チェック")
+    print("  # 新規ページの完成検査（構造・cite・JSON-LD 実体準拠）")
+    print(f"  python3 scripts/check_new_photographer.py --slug {spec['id']}")
+    print("  # 最後に決定論チェック（push 前ネット）")
     print("  python3 scripts/preflight.py")
     print("\n注意: generate_photographer_pages.py / generate_archive_pages.py は旧デザイン=実行禁止（ガード済み）。")
+
+
+def print_manual_checklist(spec: dict):
+    """データ投入では埋まらない「次に手作業で埋めるもの」を明示する。
+    自動化されるのは card-data / 星データ / 貼り付けカードまで。本体ページと
+    EN 正本・本文・出典は手作業。check_new_photographer.py が後で完成度を検査する。"""
+    sid = spec["id"]
+    print("\n" + "=" * 70)
+    print("次に手作業で埋めるもの（データ投入では埋まらない）")
+    print("=" * 70)
+    print(f"□ photographers/{sid}.html を作成")
+    print("    最善手＝完成済み photographers/winogrand.html を丸ごとコピーして")
+    print("    名前・本文・slug だけ差し替える（canonical/hreflang/OGP/Twitter/")
+    print("    description/JSON-LD(Person)/data-nosnippet/GA が最初から入る）。")
+    print(f"    ・canonical / og:url / JSON-LD url を /photographers/{sid}.html に統一")
+    print(f"    ・JSON-LD は @type:Person、name/alternateName/birthDate/deathDate を {spec['nameJa']} 実体に")
+    print("    ・meta description と JSON-LD 本文は捏造せず、検証済み情報だけ手書き")
+    print("□ 本文（§ 解説 / 経歴・表現解説・批評と受容）を出典準拠で執筆")
+    print("    ・本文中の実在写真家/運動を初出1回リンク化（JA=/photographers,/movements）")
+    print("    ・sup-ref *N と 出典 cite-N を 1:1 対応（欠番・重複・dangling なし）")
+    print("□ thesis（この写真家が変えたこと）— 断定度基準に従う（最上級表現を避ける）")
+    print("□ § REL 関連する写真家・運動、§ REF さらに読む（写真集/DB）を記入")
+    print(f"□ EN 正本 data/photographers-en-content.json に {sid}.html を追加")
+    print(f"    body_html / thesis_html / site_directory_html を入れて")
+    print(f"    python3 scripts/build_photographers_en.py --slug {sid} で生成")
+    print("□ entry-meta 国名・キーワードのリンク後処理")
+    print("    python3 scripts/link_country_keywords.py（実行後 git diff で巻き込み確認）")
+    print("□ 各分類ページへカード手貼り（上の貼り付け用カード参照）＋件数 +1")
 
 
 def main():
