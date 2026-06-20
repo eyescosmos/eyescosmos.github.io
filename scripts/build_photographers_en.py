@@ -72,6 +72,8 @@ COUNTRY_JA_TO_EN = {
     '中国': 'China',
     '韓国': 'South Korea',
     'インド': 'India',
+    'ナイジェリア': 'Nigeria',
+    'イラン': 'Iran',
 }
 
 PILOT_SLUGS = ['ansel-adams', 'moriyama', 'jp-植田正治', 'alexander-gardner', 'aglaia-konrad']
@@ -471,6 +473,9 @@ def translate_meta_values(fragment):
     for ja_c, en_c in COUNTRY_JA_TO_EN.items():
         fragment = fragment.replace('<strong>' + ja_c + '</strong>', '<strong>' + en_c + '</strong>')
         fragment = fragment.replace('Country<strong>' + ja_c, 'Country<strong>' + en_c)
+        # dual-nationality plain-text country (unlinked side of "A / B" in a dd)
+        fragment = fragment.replace('<dd>' + ja_c + ' /', '<dd>' + en_c + ' /')
+        fragment = fragment.replace('/ ' + ja_c + '</dd>', '/ ' + en_c + '</dd>')
         # channel suffix " · JAPAN" stays as-is (already roman)
     # Movement terms — only translate visible text (between > and <), never
     # inside href slugs (link localization handles hrefs separately).
