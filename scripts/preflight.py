@@ -376,7 +376,7 @@ def check_country_en() -> None:
         if slug not in changed:
             warnings.append(
                 f"[EN country {slug}] 生成物 en/countries/{name} を直接編集した疑い。"
-                f"正本は {COUNTRY_JSON}。generate_country_pages_en.py で再生成すること")
+                f"正本は {COUNTRY_JSON}。generate_country_pages_en.py --country {slug} で再生成すること")
 
 
 def check_taxonomy_en() -> None:
@@ -417,9 +417,10 @@ def check_taxonomy_en() -> None:
             if slug not in work_g:       # JA 名スタブ等は正本キーに無い → 対象外
                 continue
             if slug not in changed:
+                regen_flag = f"--era {slug}" if group == "eras" else f"--slug {slug}"
                 warnings.append(
                     f"[EN {group}/{slug}] 生成物 {rel_dir}/{name} を直接編集した疑い。"
-                    f"正本は {TAXONOMY_JSON}。build_taxonomy_en.py で再生成すること")
+                    f"正本は {TAXONOMY_JSON}。build_taxonomy_en.py {regen_flag} で再生成すること")
 
 
 def check_archive_en() -> None:

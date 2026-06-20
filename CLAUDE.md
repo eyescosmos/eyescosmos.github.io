@@ -22,8 +22,8 @@
 
 ### その他の正本
 - アーカイブ: `archive.html` が JA 正本。`en/archive.html` は `scripts/build_archive_en.py` で生成。`scripts/generate_archive_pages.py` は実行禁止。
-- 国別ページ: `data/country-pages.json` が正本。`scripts/generate_country_pages.py` / `scripts/generate_country_pages_en.py` で生成。
-- 年代・運動ページ: JA HTML が正本。EN は `scripts/build_taxonomy_en.py` で生成。
+- 国別ページ: `data/country-pages.json` が正本。`scripts/generate_country_pages.py` / `scripts/generate_country_pages_en.py` で生成。スコープフラグ必須（`--country <slug>` 通常 / `--all` 全生成）。無指定は拒否。
+- 年代・運動ページ: JA HTML が正本。EN は `scripts/build_taxonomy_en.py` で生成。スコープフラグ必須（`--era <YYYY>` / `--slug <movement>` 通常 / `--all` 全生成）。無指定は拒否。写真家1人追加で `--all` は不要（`docs/generators-and-guards.md`「フルリビルド・ガード」）。
 
 ### 実務ルール
 - 事実修正（生没年・地名・書名・出版社・年・ISBN・URLなど）は、出力HTMLだけでなく正本へ入れる。捏造禁止・出典準拠。

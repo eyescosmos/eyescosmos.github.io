@@ -12,7 +12,12 @@
   一度だけブートストラップ済み。**移行後は旧 h1 markup が無いので再ブート不可**。
   以後は JSON を直接編集する。
 - ページ生成は `scripts/generate_country_pages.py`。`data/country-pages.json` と
-  `card-data.json`・`archive.html`・`eras/1839.html`（CSS）を読み、全ページを上書き生成。
+  `card-data.json`・`archive.html`・`eras/1839.html`（CSS）を読む。
+  **スコープフラグ必須（無指定はガードで拒否＝1ファイルも書かない）。**
+  通常は対象 slug だけ再生成し、全再生成は明示時のみ：
+  - `python3 scripts/generate_country_pages.py --country japan`（複数可・主表記）
+  - `--all` で registry 全ページ（旧無指定と byte 一致）。`--only` は `--country` の旧別名（残置）。
+  - typo の slug は照合で拒否され、全生成へ化けない。
 - カード変換ロジック（href 相対化・target 除去・国コード置換・ledeJa 全文）は
   年代ページの `add_missing_era_cards.py` と共有。カードCSSは `archive.html` の
   バリアント定義を流用（`.cards` masonry ＋ `body.v51` ＋ 全 `pc-top--*`）。
@@ -97,3 +102,6 @@
   から抽出。h1=英名・period=和名、運動ドロップダウンは有効な EN movement 8件、
   era 系リンクは `/en/eras/`・`/en/archive.html`（旧EN国別は誤って `/eras/` を指していた）。
   複合は EN redirect スタブ（→ `/en/countries/<target>`、JA スタブの転送先を踏襲）。
+  EN もスコープフラグ必須：`python3 scripts/generate_country_pages_en.py --country japan`
+  （対象1ページのみ・複合スタブは触らない）／`--all`（全ページ＋スタブ再生成・旧無指定と byte 一致）。
+  無指定はガードで拒否。

@@ -10,6 +10,7 @@ to other countries later.
 """
 from __future__ import annotations
 
+import argparse
 import glob
 import html as html_module
 import json
@@ -782,8 +783,66 @@ def filter_country_links(fragment: str, allowed: set[str]) -> str:
     return fragment
 
 
-def main() -> None:
+USAGE_EXAMPLES = """\
+Scope is required (this prevents an accidental full rebuild from clobbering
+unrelated country pages). Choose one:
+
+  --all                  rebuild every country page in the registry
+  --country japan        rebuild only countries/japan.html (repeatable)
+
+Examples:
+  python3 scripts/generate_country_pages.py --country japan
+  python3 scripts/generate_country_pages.py --country united-states --country france
+  python3 scripts/generate_country_pages.py --all
+"""
+
+
+def _parse_scope(argv, valid_slugs):
+    """Return the set of slugs to build, or None for a full rebuild.
+    Refuse (exit non-zero, write nothing) when no scope is given or a slug is
+    unknown — a typo must never silently fall through to a full rebuild."""
+    parser = argparse.ArgumentParser(
+        description="Generate JA country hub pages (countries/*.html). "
+                    "A scope flag is mandatory to avoid accidental full rebuilds.",
+        epilog=USAGE_EXAMPLES,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument('--all', action='store_true',
+                        help='rebuild every country page in the registry')
+    parser.add_argument('--country', action='append', metavar='SLUG', default=[],
+                        help='rebuild one country page by slug, e.g. --country japan (repeatable)')
+    # --only is a deprecated alias of --country, kept for old muscle memory.
+    parser.add_argument('--only', action='append', metavar='SLUG', default=[],
+                        help=argparse.SUPPRESS)
+    args = parser.parse_args(argv)
+
+    targets = list(args.country) + list(args.only)
+    if not (args.all or targets):
+        sys.stderr.write(
+            "ERROR: refusing to run without a scope flag — no files written.\n\n"
+            + USAGE_EXAMPLES)
+        sys.exit(2)
+    if args.all and targets:
+        sys.stderr.write("ERROR: --all cannot be combined with --country/--only.\n")
+        sys.exit(2)
+    if args.all:
+        return None
+    bad = [s for s in targets if s not in valid_slugs]
+    if bad:
+        sys.stderr.write(
+            f"ERROR: unknown country slug(s): {', '.join(bad)}\n"
+            f"Valid slugs: {', '.join(sorted(valid_slugs))}\n")
+        sys.exit(2)
+    return set(targets)
+
+
+def main(argv=None) -> None:
     global MOVEMENTS_SELECT, COUNTRIES_SELECT, SITE_DIR_COUNTRIES
+
+    # Scope gate first (refuse no-scope / validate slugs) before any heavy work.
+    registry = json.loads((REPO / "data" / "country-pages.json").read_text(encoding="utf-8"))
+    allowed_slugs = {r["slug"] for r in registry}
+    only = _parse_scope(argv, allowed_slugs)
 
     # Load era page for style block
     era_path = REPO / "eras" / "1839.html"
@@ -808,13 +867,10 @@ def main() -> None:
     MOVEMENTS_SELECT = build_movements_select()
     print(f"Movements dropdown: {MOVEMENTS_SELECT.count('<option')} options")
 
-    # Load the country-page registry (source of truth)
-    registry = json.loads((REPO / "data" / "country-pages.json").read_text(encoding="utf-8"))
     print(f"Country registry: {len(registry)} pages")
 
     # Restrict country nav + site directory to pages that still exist as full
     # pages (composite pages are retired to redirect stubs).
-    allowed_slugs = {r["slug"] for r in registry}
     COUNTRIES_SELECT = filter_country_links(COUNTRIES_SELECT, allowed_slugs)
     SITE_DIR_COUNTRIES = filter_country_links(SITE_DIR_COUNTRIES, allowed_slugs)
     print(f"Country nav restricted to {len(allowed_slugs)} single pages")
@@ -822,9 +878,6 @@ def main() -> None:
     # Ordered (slug, label) pairs for the horizontal "国から読む" strip
     strip_pairs = re.findall(
         r'<option value="/countries/([^"]+)\.html">([^<]+)</option>', COUNTRIES_SELECT)
-
-    # Optional: limit to given slugs (e.g. python3 … --only france)
-    only = set(sys.argv[2:]) if len(sys.argv) > 1 and sys.argv[1] == "--only" else None
 
     # Generate pages
     total = 0

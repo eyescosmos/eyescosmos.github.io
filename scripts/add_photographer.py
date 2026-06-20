@@ -485,6 +485,20 @@ def scaffold_page(spec: dict, apply: bool):
     return True
 
 
+def resolve_country_slugs(nationality: str) -> list[str]:
+    """Map a card nationality code (e.g. "JP" or "US / FR") to the single-country
+    page slug(s) this photographer appears on, using data/country-pages.json as
+    the source of truth. A member belongs to every single page whose codes are a
+    subset of the photographer's nationality tokens (so "US / FR" → both
+    united-states and france). Returns slugs in registry order."""
+    reg_path = REPO / "data" / "country-pages.json"
+    if not reg_path.exists():
+        return []
+    registry = json.loads(reg_path.read_text(encoding="utf-8"))
+    tokens = {t.strip() for t in nationality.split("/") if t.strip()}
+    return [r["slug"] for r in registry if set(r.get("codes", [])) <= tokens and r.get("codes")]
+
+
 def print_snippets_and_runbook(spec: dict):
     cd = json.loads(CARD_DATA.read_text(encoding="utf-8"))
     idx = next((p["idx"] for p in cd["photographers"] if p["id"] == spec["id"]), spec.get("idx", "?"))
@@ -514,9 +528,16 @@ def print_snippets_and_runbook(spec: dict):
     print("=" * 70)
     print("  # EN アーカイブを card-data.json から再生成")
     print("  python3 scripts/build_archive_en.py")
-    print("  # 国ページ（nationality に該当する国 slug を指定）")
-    print(f"  python3 scripts/generate_country_pages.py    # JA（card-data の nationality={spec['nationality']} から自動）")
-    print("  python3 scripts/generate_country_pages_en.py  # EN")
+    print("  # 国ページ（この写真家が載る単国 slug だけを再生成。無指定はガードで拒否）")
+    country_slugs = resolve_country_slugs(spec["nationality"])
+    if country_slugs:
+        flags = " ".join(f"--country {s}" for s in country_slugs)
+        print(f"  python3 scripts/generate_country_pages.py {flags}     # JA")
+        print(f"  python3 scripts/generate_country_pages_en.py {flags}  # EN")
+    else:
+        print(f"  # nationality={spec['nationality']} に対応する単国ページが registry に無い")
+        print(f"  # （該当 slug を確認のうえ）python3 scripts/generate_country_pages.py --country <slug>")
+        print(f"  #                         python3 scripts/generate_country_pages_en.py --country <slug>")
     print("  # 新規ページの完成検査（構造・cite・JSON-LD 実体準拠）")
     print(f"  python3 scripts/check_new_photographer.py --slug {spec['id']}")
     print("  # 最後に決定論チェック（push 前ネット）")

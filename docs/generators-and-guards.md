@@ -51,6 +51,59 @@ pc-card を翻訳生成）。`generate_archive_pages.py` を実行すると v5.1
 
 ---
 
+## フルリビルド・ガード — 無指定実行は拒否 — CRITICAL — 2026-06-21 追加
+
+**問題（2026-06-21）:** 写真家追加作業で `build_taxonomy_en.py` を無指定（フルリビルド）
+実行し、en/eras 全11・en/movements 全31・en/countries 複数を巻き込み **43ファイルを手で
+revert** した。EN 分類ページは正本 JSON より HTML が本文リッチなケースがあり、フルリビルドは
+手編集を JSON 由来へ巻き戻す（＝静かに劣化させる）。
+
+**対策:** 広範囲生成スクリプト3本に**スコープフラグを必須化**した。無指定実行は
+**非0終了・1ファイルも書かず・有効な実行例を表示して拒否**する。typo の era/slug/country は
+既知テーブル／registry と照合して拒否し、全生成へ化けない。
+
+| スクリプト | フルリビルド | ターゲット（通常運用） |
+|---|---|---|
+| `scripts/build_taxonomy_en.py` | `--all` | `--era 2010` / `--slug street-photography`（各複数可） |
+| `scripts/generate_country_pages.py`（JA） | `--all` | `--country japan`（複数可。`--only` は旧別名・残置） |
+| `scripts/generate_country_pages_en.py`（EN） | `--all` | `--country japan`（対象1ページのみ・複合スタブ非関与） |
+
+- `--all` の出力は**旧無指定実行と byte 完全一致**（挙動は変えていない＝invocation のゲートと
+  targeting だけ追加）。
+- targeted は当該ページだけ再生成（`git diff --stat` で1ファイルのみ変わることを確認できる）。
+- `build_archive_en.py` は単一ファイル出力なので対象外（ガード不要）。
+
+### 写真家1人追加時の安全な生成コマンド集
+
+`add_photographer.py` の末尾ランブックも、この targeted 形を案内する（nationality コードから
+該当単国 slug を `data/country-pages.json` で解決して印字。複合国籍は両単国ページ分を印字）。
+手で打つ場合の型：
+
+```bash
+# 1) EN アーカイブ（card-data.json から・単一ファイル出力）
+python3 scripts/build_archive_en.py
+
+# 2) 国ページ（この写真家が載る単国 slug だけ。複合国籍は両方指定）
+python3 scripts/generate_country_pages.py    --country <slug> [--country <slug2>]   # JA
+python3 scripts/generate_country_pages_en.py --country <slug> [--country <slug2>]   # EN
+
+# 3) 年代ページ（その写真家の era だけ）
+python3 scripts/build_taxonomy_en.py --era <YYYY>
+
+# 4) 運動ページ（関係する運動 slug だけ。複数可）
+python3 scripts/build_taxonomy_en.py --slug <movement-slug>
+
+# 5) 完成検査 → 決定論チェック
+python3 scripts/check_new_photographer.py --slug <id>
+python3 scripts/preflight.py
+```
+
+**原則：写真家1人の追加で `--all` は不要。** 触るのは「その写真家が載るページ」だけ。
+`--all` を使うのは、テンプレ・共通CSS・builder ロジック・正本JSONを横断的に変えて
+全ページを意図的に作り直すときに限る（その場合も push 前に `git diff` で巻き込みを精査）。
+
+---
+
 ## 機械チェック（地雷の門番）— 文章ルールより優先 — 2026-06-16 追加
 
 CLAUDE.md の多くのルールは過去の事故の再発防止。重要なものは機械チェックへ移管済み：

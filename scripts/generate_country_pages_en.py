@@ -12,6 +12,7 @@ data/country-pages.json (single pages only) is the source of truth.
 """
 from __future__ import annotations
 
+import argparse
 import glob
 import json
 import re
@@ -364,9 +365,63 @@ STUB = """<!DOCTYPE html>
 """
 
 
-def main() -> None:
+USAGE_EXAMPLES = """\
+Scope is required (this prevents an accidental full rebuild from clobbering
+unrelated EN country pages). Choose one:
+
+  --all                  rebuild every EN country page (+ refresh composite stubs)
+  --country japan        rebuild only en/countries/japan.html (repeatable)
+
+Examples:
+  python3 scripts/generate_country_pages_en.py --country japan
+  python3 scripts/generate_country_pages_en.py --country united-states --country france
+  python3 scripts/generate_country_pages_en.py --all
+"""
+
+
+def _parse_scope(argv, valid_slugs):
+    """Return the set of slugs to build, or None for a full rebuild.
+    Refuse (exit non-zero, write nothing) on no scope or unknown slug — a typo
+    must never silently fall through to a full rebuild."""
+    parser = argparse.ArgumentParser(
+        description="Generate EN country hub pages (en/countries/*.html). "
+                    "A scope flag is mandatory to avoid accidental full rebuilds.",
+        epilog=USAGE_EXAMPLES,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument('--all', action='store_true',
+                        help='rebuild every EN country page and refresh composite redirect stubs')
+    parser.add_argument('--country', action='append', metavar='SLUG', default=[],
+                        help='rebuild one EN country page by slug, e.g. --country japan (repeatable)')
+    # --only is a deprecated alias of --country, kept for old muscle memory.
+    parser.add_argument('--only', action='append', metavar='SLUG', default=[],
+                        help=argparse.SUPPRESS)
+    args = parser.parse_args(argv)
+
+    targets = list(args.country) + list(args.only)
+    if not (args.all or targets):
+        sys.stderr.write(
+            "ERROR: refusing to run without a scope flag — no files written.\n\n"
+            + USAGE_EXAMPLES)
+        sys.exit(2)
+    if args.all and targets:
+        sys.stderr.write("ERROR: --all cannot be combined with --country/--only.\n")
+        sys.exit(2)
+    if args.all:
+        return None
+    bad = [s for s in targets if s not in valid_slugs]
+    if bad:
+        sys.stderr.write(
+            f"ERROR: unknown country slug(s): {', '.join(bad)}\n"
+            f"Valid slugs: {', '.join(sorted(valid_slugs))}\n")
+        sys.exit(2)
+    return set(targets)
+
+
+def main(argv=None) -> None:
     registry = json.loads((REPO / "data" / "country-pages.json").read_text(encoding="utf-8"))
     singles = {r["slug"]: r for r in registry}
+    only = _parse_scope(argv, set(singles))
     card_data = json.loads((REPO / "card-data.json").read_text(encoding="utf-8"))["photographers"]
     card_map = {p["id"]: p for p in card_data}
 
@@ -386,9 +441,11 @@ def main() -> None:
     dir_photographers = build_dir_photographers(card_map)
 
     # ── retire composite EN pages (mirror JA stub targets) ──
+    # Targeted runs touch only the requested single page(s); stub refresh is a
+    # full-rebuild concern, so skip it unless --all.
     en_files = {Path(f).stem for f in glob.glob(str(REPO / "en" / "countries" / "*.html"))
                 if not f.endswith("-backup.html")}
-    composites = sorted(en_files - set(singles))
+    composites = [] if only is not None else sorted(en_files - set(singles))
     stub_n = 0
     for cslug in composites:
         ja_stub = (REPO / "countries" / f"{cslug}.html").read_text(encoding="utf-8")
@@ -404,6 +461,8 @@ def main() -> None:
     # ── generate single EN pages ──
     page_n = 0
     for cfg in registry:
+        if only is not None and cfg["slug"] not in only:
+            continue
         members = get_members(cfg, card_data)
         assert_members(cfg, members)
         cards = []

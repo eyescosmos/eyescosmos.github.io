@@ -10,9 +10,14 @@ English content priority:
   2. build_archive_en.py MOVEMENT_LEDES table
   3. Manual English translations of Japanese source content
 
-Run: python3 scripts/build_taxonomy_en.py
+A scope flag is MANDATORY (running with no scope is refused) so an accidental
+full rebuild can no longer clobber unrelated EN taxonomy pages:
+  python3 scripts/build_taxonomy_en.py --era 2010                  # one era page
+  python3 scripts/build_taxonomy_en.py --slug street-photography   # one movement
+  python3 scripts/build_taxonomy_en.py --all                       # full rebuild
 """
 
+import argparse
 import json
 import os
 import re
@@ -1756,7 +1761,7 @@ def process_era_page(era_id, en_data, id_to_card):
     return missing_cards
 
 
-def build_movements():
+def build_movements(only_slugs=None):
     en_data = json.load(open(os.path.join(ROOT, 'data/taxonomy-en-content.json'), encoding='utf-8'))
     id_to_card = load_en_archive_cards()
 
@@ -1764,6 +1769,8 @@ def build_movements():
     generated = 0
 
     for ja_name, slug in STUB_TO_SLUG.items():
+        if only_slugs is not None and slug not in only_slugs:
+            continue
         print(f"  movement: {slug}")
         ph_ids, missing = process_movement_page(ja_name, slug, en_data, id_to_card)
         if missing:
@@ -1774,7 +1781,7 @@ def build_movements():
     return generated, all_missing
 
 
-def build_eras():
+def build_eras(only_eras=None):
     en_data = json.load(open(os.path.join(ROOT, 'data/taxonomy-en-content.json'), encoding='utf-8'))
     id_to_card = load_en_archive_cards(swap_nationality=True)
 
@@ -1782,6 +1789,8 @@ def build_eras():
     generated = 0
 
     for era_id in ERA_ORDER:
+        if only_eras is not None and era_id not in only_eras:
+            continue
         print(f"  era: {era_id}")
         missing = process_era_page(era_id, en_data, id_to_card)
         if missing:
@@ -1792,16 +1801,82 @@ def build_eras():
     return generated, all_missing
 
 
-def main():
+USAGE_EXAMPLES = """\
+Scope is required (this prevents an accidental full rebuild from clobbering
+unrelated EN taxonomy pages). Choose one:
+
+  --all                       full rebuild: all 31 movements + 11 eras
+  --era 2010                  rebuild only en/eras/2010.html (repeatable)
+  --slug new-topographics     rebuild only that en/movements/<slug>.html (repeatable)
+
+Examples:
+  python3 scripts/build_taxonomy_en.py --era 2010
+  python3 scripts/build_taxonomy_en.py --slug street-photography
+  python3 scripts/build_taxonomy_en.py --all
+"""
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(
+        description="Rebuild EN taxonomy pages (en/movements + en/eras). "
+                    "A scope flag is mandatory to avoid accidental full rebuilds.",
+        epilog=USAGE_EXAMPLES,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument('--all', action='store_true',
+                        help='full rebuild: all 31 movements + 11 eras (byte-identical to legacy run)')
+    parser.add_argument('--era', action='append', metavar='YYYY', default=[],
+                        help='rebuild one era page by id, e.g. --era 2010 (repeatable)')
+    parser.add_argument('--slug', action='append', metavar='MOVEMENT', default=[],
+                        help='rebuild one movement page by EN slug, e.g. --slug new-color (repeatable)')
+    args = parser.parse_args(argv)
+
+    # ── Guard: no scope → refuse, write nothing, non-zero exit ──────────────
+    if not (args.all or args.era or args.slug):
+        sys.stderr.write(
+            "ERROR: refusing to run without a scope flag — no files written.\n\n"
+            + USAGE_EXAMPLES)
+        return 2
+
+    if args.all and (args.era or args.slug):
+        sys.stderr.write("ERROR: --all cannot be combined with --era/--slug.\n")
+        return 2
+
+    # ── Validate targets against the known tables (typo must not silently
+    #    fall through to a full rebuild) ──────────────────────────────────
+    if not args.all:
+        bad_eras = [e for e in args.era if e not in ERA_ORDER]
+        if bad_eras:
+            sys.stderr.write(
+                f"ERROR: unknown era id(s): {', '.join(bad_eras)}\n"
+                f"Valid eras: {', '.join(ERA_ORDER)}\n")
+            return 2
+        bad_slugs = [s for s in args.slug if s not in SLUG_TO_STUB]
+        if bad_slugs:
+            sys.stderr.write(
+                f"ERROR: unknown movement slug(s): {', '.join(bad_slugs)}\n"
+                f"Valid slugs: {', '.join(sorted(SLUG_TO_STUB))}\n")
+            return 2
+
+    only_slugs = None if args.all else (set(args.slug) if args.slug else set())
+    only_eras = None if args.all else (set(args.era) if args.era else set())
+
     print("Building EN taxonomy pages...")
-    print("\n[1/2] Movements:")
-    mvt_count, mvt_missing = build_movements()
-    print(f"\n[2/2] Eras:")
-    era_count, era_missing = build_eras()
+    mvt_count = mvt_missing = era_count = era_missing = None
+
+    # In --all mode both run fully. In targeted mode only the requested kind runs.
+    if args.all or only_slugs:
+        print("\n[movements]")
+        mvt_count, mvt_missing = build_movements(only_slugs=only_slugs)
+    if args.all or only_eras:
+        print("\n[eras]")
+        era_count, era_missing = build_eras(only_eras=only_eras)
 
     print(f"\n=== Done ===")
-    print(f"Movements generated: {mvt_count}")
-    print(f"Eras generated: {era_count}")
+    if mvt_count is not None:
+        print(f"Movements generated: {mvt_count}")
+    if era_count is not None:
+        print(f"Eras generated: {era_count}")
 
     if mvt_missing:
         print(f"\nMissing photographer cards in movements ({len(mvt_missing)}):")
@@ -1813,6 +1888,8 @@ def main():
         for era_id, pid in era_missing:
             print(f"  {era_id}: {pid}")
 
+    return 0
+
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
