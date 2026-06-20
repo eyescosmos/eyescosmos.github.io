@@ -5700,6 +5700,26 @@
       "style": "pc-top--kanji",
       "artText": "毒花",
       "hintText": "TOYOKO TOKIWA · 1928–2019"
+    },
+    {
+      "type": "photographer",
+      "id": "kenta-cobayashi",
+      "href": "photographers/kenta-cobayashi.html",
+      "idx": 286,
+      "nameJa": "小林健太",
+      "nameEn": "Kenta Cobayashi",
+      "metaJa": "日本 · 1992–",
+      "era": "2010",
+      "nationality": "JP",
+      "ledeJa": "小林健太（1992年神奈川生まれ）は、自ら撮影した写真をPhotoshopのスミアツールで引き伸ばす《#smudge》などで知られ、撮影後の編集画面・ピクセル・AI生成までを写真の現場として扱い、デジタル環境で現実がいかに編集されるかを問う写真家。",
+      "channel": "写真史の論点 · デジタル写真",
+      "tags": [
+        "デジタル写真",
+        "日本写真"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "健太",
+      "hintText": "KENTA COBAYASHI · 1992–"
     }
   ],
   "movements": [

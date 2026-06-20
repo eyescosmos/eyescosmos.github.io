@@ -1454,7 +1454,50 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "kenta-cobayashi",
+    "name": "Kenta Cobayashi",
+    "nameJa": "小林健太",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1992–",
+    "gender": "男性",
+    "era": "2010",
+    "movements": [
+      "日本写真",
+      "デジタル写真"
+    ],
+    "thumbnail": "",
+    "links": [
+      {
+        "label": "Official Portfolio",
+        "url": "https://www.kentacobayashi.com/portfolio2025-en"
+      },
+      {
+        "label": "美術手帖 — 小林健太",
+        "url": "https://bijutsutecho.com/artists/2065"
+      }
+    ],
+    "amazon": "",
+    "context": {
+      "text": "小林健太（1992年神奈川生まれ）は、自ら撮影した写真をPhotoshopのスミアツールで引き伸ばす《#smudge》で知られ、編集画面そのものを写真の知覚の場として前景化した*1。Tokyo Débrisやレンチキュラー、生成AIを用いた《#copycat》へと展開し、写真をプリント、物体、データ、インターフェースのあいだを移動するものとして扱う*2。",
+      "textEn": "Kenta Cobayashi (b. 1992, Kanagawa) is known for #smudge, in which he stretches his own photographs with Photoshop's smudge tool, foregrounding the editing screen itself as a site of photographic perception*1. Extending into Tokyo Débris, lenticular works, and the AI-based #copycat, he treats photography as something that moves between print, object, data, and interface*2.",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Kenta Cobayashi official website — Portfolio 2025",
+          "url": "https://www.kentacobayashi.com/portfolio2025-en"
+        },
+        {
+          "num": 2,
+          "name": "WAITINGROOM — Kenta Cobayashi #copycat",
+          "url": "https://waitingroom.jp/en/exhibitions/copycat/"
+        }
+      ]
+    }
   }
+
 ,
 
 ];

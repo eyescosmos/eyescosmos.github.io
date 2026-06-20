@@ -111,6 +111,7 @@ GENRE_TAG = {
     '新しいヴィジョン': 'New Vision',
     '新即物主義': 'Neue Sachlichkeit',
     '日本写真': 'Japanese Photography',
+    'デジタル写真': 'Digital Photography',
     '明治ドキュメンタリー': 'Meiji documentary',
     '植民地写真': 'Colonial photography',
     '決定的瞬間': 'Decisive Moment',
