@@ -186,6 +186,38 @@ pages.update(stage4['pages'])         # data/photographers-en-stage4.json（12 e
 - 発火するのは現状 `missing_en_true` の `jp-*` スタブのみ（それらは builder が skip するので実出力には出ない）。
   あくまで Step3 注入時のための latent な土台。
 
+### Step3a: thesis の stage4 最小注入（`--update-en-json`）— 2026-06-21 追加
+
+EN 素材の **thesis_label / thesis_html だけ**を正本 `data/photographers-en-stage4.json` へ注入する半自動経路。
+新規写真家の EN 整備で thesis を手で content.json に書く手間を、決定論部分だけ機械化する。**注入対象は
+thesis のみ**（lead/sections/sources/site_directory は素材が新 v5.1 `ph-*` クラスで正本は旧クラス＝**要変換**の
+ため Step3b 送り。現状は手移植）。
+
+```bash
+# dry-run（既定・何も書かない。冪等判定・shadow note・asserts のプレビュー）
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --en SRCEN.html --update-en-json
+# 実書込（--apply 二重明示が必須）→ atomic 書込 → build → 非劣化検証
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --en SRCEN.html --update-en-json --apply
+```
+
+安全契約（コードで強制）:
+- **注入先は stage4.json のみ**。base = 現マージ正本（stage4 優先→content）の **full entry を deepcopy** し
+  thesis_label/thesis_html だけ上書き（builder は `pages.update()` の**浅い merge** なので partial entry は
+  不可＝full shadow が要る）。
+- **thesis_label はサイト定数 `"What this photographer changed"`** を入れる（content.json 全 entry で単一。
+  素材の表記揺れ「What This Artist Changed」等は採らない＝既存ラベルを退行させない）。
+- **手書き維持ページは拒否**（`stieglitz / annie-leibovitz / shoji-ueda / toyoko-tokiwa / lee-miller`）。
+- **stage4 dump は厳格**（`ensure_ascii=False, indent=2`・**末尾改行なし**で既存と byte 一致＝churn 防止）＋
+  **atomic write**（`.tmp`→`os.replace`）＋ **対象外キー完全不変 assert**。
+- 注入後に `build_photographers_en.py --slug` を回し、**SKIP なし / 対象1ページ / thesis 本文存在 /
+  cite・supref 非減少 / dangling 内部リンク無し / 対象外 EN HTML 差分ゼロ**（`git diff --name-only` の
+  before/after 比較）を検証。
+- **失敗時は自動ロールバック**（stage4.json と対象 EN HTML を注入前へ復元）＋手動復旧手順を印字。
+
+**footgun**: 既掲載 slug への注入は content.json 全体を stage4 へ shadow する＝以後その slug の
+content.json 編集が stage4 に隠れる（後勝ち）。Step3b で builder の **deep-merge 化**（stage4 を
+フィールド単位で content に上書き）すれば partial stage4 entry が可能になり解消予定。
+
 ---
 
 ## 機械チェック（地雷の門番）— 文章ルールより優先 — 2026-06-16 追加
