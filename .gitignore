@@ -10,3 +10,6 @@ build/
 
 # ローカル作業用（過去に誤コミット→削除済み。dd8bc74cf 参照）
 new-design/
+
+# importer プレビュー断片（誤コミット防止・Step2 2026-06-21）
+outputs/

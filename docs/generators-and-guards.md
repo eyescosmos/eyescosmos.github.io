@@ -110,6 +110,38 @@ python3 scripts/preflight.py
 
 ---
 
+## ChatGPT 素材インポータ（JA 整形 + EN 断片抽出）— 2026-06-21 追加
+
+`scripts/import_chatgpt_photographer.py` — ChatGPT 生成の写真家 HTML 素材を、**機械的に
+確定できる整形だけ**自動化して `photographers/<slug>.html` を作る半自動ツール（v1・独立・
+preflight/フック非連動）。前回（森村+小林）で push まで4時間超かかった統合作業のうち、
+決定論部分を機械化するのが目的。
+
+```bash
+# dry-run（既定・何も書かない。検証結果と差分サマリ・チェックリストを表示）
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html [--en SRCEN.html]
+# 実書き込み（既存は --force 必須・自動 backup）
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en SRCEN.html --apply [--force]
+```
+
+- **書き込みは `photographers/<slug>.html` のみ**。EN 素材を渡すと著者コンテンツの**プレビュー
+  断片**を `outputs/import-preview/<slug>.en-content-entry.json` に出力する（**正本
+  `data/photographers-en-content.json` には触れない**＝v2 で注入予定）。`outputs/` は .gitignore 済み。
+- **card-data / archive / 年代 / 国 / 運動 / 星マップ / EN 正本 JSON には触れない**（既存の
+  `add_photographer.py` と各ビルダーへ委譲＝blast radius を限定）。末尾に follow-up コマンドを印字。
+- 決定論変換: ① `<span class="rev2〜6">` の unwrap（ネスト対応）② `edit-red` クラストークン除去
+  ③ レビュー用 CSS（`.edit-red`/`.revN` ルール・`/* revision preview */`）除去 ④ hero 眉
+  `§ NNN` を card-data の idx（未登録は max+1 提案）へ採番 ⑤ 内部 `.html` リンクの実ファイル
+  存在チェックで **dangling を自動 de-link**（`/colophon` 等の拡張子なしルートは対象外＝残す）。
+  EN は加えてリンクを `/en/` 化＋運動 slug 変換し、EN 実在しないものを de-link。
+- 自己検証: span 開閉バランス・rev/edit-red/レビューCSS の残存ゼロを assert（破れば中断）。
+- **自動化しない編集判断**（サイドバー標準化・§MORE→§REF 統合・実在しない人物/運動の項目削除・
+  thesis 断定度・JSON-LD 等の実体置換）は**レビューチェックリストとして印字**する。
+- fixture 検証は**ゼロ diff 前提ではない**: 出荷済み `yasumasa-morimura`(134)・`kenta-cobayashi`(286)
+  で決定論部分の再現を確認済み（残差は上記の編集判断＋些末な記号正規化）。
+
+---
+
 ## 機械チェック（地雷の門番）— 文章ルールより優先 — 2026-06-16 追加
 
 CLAUDE.md の多くのルールは過去の事故の再発防止。重要なものは機械チェックへ移管済み：
