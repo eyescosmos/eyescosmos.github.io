@@ -198,18 +198,138 @@ def translate_movement_name(ja_name):
     return ja_name, None
 
 
+# ── HEAD meta fallback（Phase 2・Step3 注入の土台） ──────────────────────────
+# 注入が著者コンテンツのみ（head meta 欠落）でも head が壊れないよう、entry に値が
+# 無いフィールドだけを card-data / slug / years / EN lead_html から決定論導出する。
+# 契約: entry に値があれば最優先・無いときだけ導出・発動は WARN・既存フル装備 entry の
+# 出力は byte 不変（実ビルド 294 件は全フィールド完備なので導出は発火しない）。
+DEFAULT_OG_IMAGE = 'https://eyescosmos.github.io/assets/ogp-default.png'
+SITE_NAME = 'Photo Coordinates'
+_CARD_INDEX_CACHE = None
+
+
+def _card_index():
+    """slug → card-data エントリ（nameEn / nationality / era 等）。lazy・1回だけ読む。"""
+    global _CARD_INDEX_CACHE
+    if _CARD_INDEX_CACHE is None:
+        path = os.path.join(ROOT, 'card-data.json')
+        try:
+            data = json.load(open(path, encoding='utf-8')).get('photographers', [])
+        except (OSError, ValueError):
+            data = []
+        _CARD_INDEX_CACHE = {p.get('id'): p for p in data if p.get('id')}
+    return _CARD_INDEX_CACHE
+
+
+def _slug_to_title(slug):
+    return ' '.join(w.capitalize() for w in slug.split('-'))
+
+
+def _fb_title(page, slug):
+    card = _card_index().get(slug) or {}
+    return card.get('nameEn') or _slug_to_title(slug)
+
+
+def _fb_desc(page):
+    """EN lead_html からタグ除去・短縮（~155字・語境界）。lead 無ければ ''。"""
+    lead = page.get('lead_html') or ''
+    if not lead:
+        return ''
+    text = re.sub(r'<[^>]+>', '', lead)
+    text = re.sub(r'\s+', ' ', text).strip()
+    if len(text) <= 155:
+        return text
+    cut = text[:155]
+    sp = cut.rfind(' ')
+    return (cut[:sp] if sp > 80 else cut).rstrip() + '…'
+
+
+def _parse_years(years):
+    """'1951–' / '1908–1995' → (birth, death|None)。解釈不能なら (None, None)。"""
+    if not years:
+        return None, None
+    nums = re.findall(r'\d{4}', years)
+    if not nums:
+        return None, None
+    birth = nums[0]
+    death = nums[1] if len(nums) > 1 else None
+    return birth, death
+
+
+def _fb_og(title, desc):
+    og = {'type': 'article', 'site_name': SITE_NAME, 'title': title,
+          'locale': 'en_US', 'image': DEFAULT_OG_IMAGE}
+    if desc:
+        og['description'] = desc
+    return og
+
+
+def _fb_twitter(title, desc):
+    tw = {'card': 'summary', 'title': title, 'image': DEFAULT_OG_IMAGE}
+    if desc:
+        tw['description'] = desc
+    return tw
+
+
+def _fb_jsonld(page, slug, title):
+    """最小 WebPage + Person + BreadcrumbList を決定論生成（JA JSON-LD は英訳しない）。"""
+    en_url = f'{BASE}/en/photographers/{slug}.html'
+    person = {'@type': 'Person', 'name': title}
+    birth, death = _parse_years(page.get('years'))
+    if birth:
+        person['birthDate'] = birth
+    if death:
+        person['deathDate'] = death
+    graph = [
+        {'@context': 'https://schema.org', '@type': 'WebPage',
+         'name': title, 'url': en_url, 'inLanguage': 'en',
+         'isPartOf': {'@type': 'WebSite', 'name': SITE_NAME, 'url': BASE}},
+        {'@context': 'https://schema.org', **person},
+        {'@context': 'https://schema.org', '@type': 'BreadcrumbList',
+         'itemListElement': [
+             {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': f'{BASE}/en/'},
+             {'@type': 'ListItem', 'position': 2, 'name': 'Photographers',
+              'item': f'{BASE}/en/archive.html'},
+             {'@type': 'ListItem', 'position': 3, 'name': title, 'item': en_url},
+         ]},
+    ]
+    return graph
+
+
 # ── HEAD rebuild ───────────────────────────────────────────────────────────
-def build_head_meta(page, slug, noindex=False):
+def build_head_meta(page, slug, noindex=False, warnings=None):
     en_url = f'{BASE}/en/photographers/{slug}.html'
     hreflang = page.get('hreflang') or {}
     ja_url = hreflang.get('ja') or f'{BASE}/photographers/{slug}.html'
     en_href = hreflang.get('en') or en_url
     xd = hreflang.get('x-default') or ja_url
 
-    title = page.get('title') or page.get('h1', '')
-    desc = page.get('meta_description') or ''
-    og = page.get('og') or {}
-    tw = page.get('twitter') or {}
+    # per-field fallback: entry に値があれば最優先・無いときだけ導出（発動は WARN）。
+    fired = []
+    title = page.get('title') or page.get('h1')
+    if not title:
+        title = _fb_title(page, slug)
+        fired.append('title')
+    desc = page.get('meta_description')
+    if not desc:
+        desc = _fb_desc(page)
+        if desc:
+            fired.append('meta_description')
+    og = page.get('og')
+    if not og:
+        og = _fb_og(title, desc)
+        fired.append('og')
+    tw = page.get('twitter')
+    if not tw:
+        tw = _fb_twitter(title, desc)
+        fired.append('twitter')
+    jsonld = page.get('jsonld')
+    if not jsonld:
+        jsonld = _fb_jsonld(page, slug, title)
+        fired.append('jsonld')
+    if fired and warnings is not None:
+        warnings.append(f'{slug}: head fallback fired for {fired} '
+                        f'(entry lacked these; injected deterministic minimal head)')
 
     lines = []
     lines.append(f'<title>{esc(unesc(title))}</title>')
@@ -245,7 +365,7 @@ def build_head_meta(page, slug, noindex=False):
     if tw.get('image'):
         lines.append(f'<meta name="twitter:image" content="{attr_esc(tw["image"])}">')
     # JSON-LD
-    for block in (page.get('jsonld') or []):
+    for block in jsonld:
         if isinstance(block, (dict, list)):
             txt = json.dumps(block, ensure_ascii=False, indent=2)
         else:
@@ -290,7 +410,7 @@ def _strip_ja_head_meta(head_html):
     return head_html
 
 
-def replace_head(html, page, slug):
+def replace_head(html, page, slug, warnings=None):
     """Strip ALL JA per-page meta across the entire <head> (wherever it sits,
     before or after the fonts link) and insert the EN meta block right after the
     viewport meta. Preserve charset/viewport/fonts/style/GA."""
@@ -309,7 +429,7 @@ def replace_head(html, page, slug):
     # Re-find viewport in the cleaned fragment (offsets shifted by removals).
     vp2 = re.search(r'<meta name="viewport"[^>]*>', cleaned)
     head_open_end = vp2.end()
-    new_block = '\n' + build_head_meta(page, slug, noindex=noindex) + '\n'
+    new_block = '\n' + build_head_meta(page, slug, noindex=noindex, warnings=warnings) + '\n'
     new_head_inner = cleaned[:head_open_end] + new_block + cleaned[head_open_end:]
     return html[:head_m.start(1)] + new_head_inner + html[head_m.end(1):]
 
@@ -1517,7 +1637,7 @@ def process_page(ja_file, page, ja_to_en, warnings):
 
     prev_link = compute_prev_link(html, ja_to_en)
 
-    html = replace_head(html, page, slug)
+    html = replace_head(html, page, slug, warnings=warnings)
     html = strip_body_jsonld(html)
     html = insert_readability_style(html)
     html = rebuild_header(html, page, slug, ja_file)

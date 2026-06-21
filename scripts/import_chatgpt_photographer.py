@@ -286,49 +286,428 @@ def process_ja(html: str, idx: int) -> tuple[str, dict]:
     return html, report
 
 
-# ── EN 著者コンテンツ断片の抽出 ────────────────────────────────────────────
+# ── EN 著者コンテンツ断片の抽出（正本候補フィールドへ拡張・v2） ─────────────
+#
+# Phase 1（Step2.5）: 正本 JSON には一切書かない。EN 素材から正本スキーマと同名の
+# 候補フィールドを抽出してプレビュー断片に並べ、コーパス監査で既存正本と diff する。
+#
+# EN 素材は2系統あることが判明している（監査で実数を確認する）:
+#   Family B = 新 v5.1 テンプレ（ph-abstract / ph-thesis / ph-keywords / ph-section /
+#              ph-sources / ph-cite / ph-rel）。正本JSON（旧クラス体系 lead/essay/
+#              page-keywords/sources/site-directory-links）とは構造が違う＝要変換。
+#   Family A = 旧テンプレ（lead / essay / sources / cite-item / site-directory-links）。
+#              正本JSONとクラス体系が一致＝ほぼ素通しで対応。
+# どちらも「中身（テキスト）」は正本と一致しうる。監査は normalize-text 一致と
+# raw-markup 一致を分けて測り、差分が毎回同じ形か（＝変換ルールへ昇格できるか）を見る。
 
-PH_SECTION_RE = re.compile(
-    r'<section class="ph-section[^"]*"[^>]*>(.*?)</section>', re.S)
-SECTION_NAME_RE = re.compile(r'<span class="ph-section__name">([^<]+)</span>')
+# 正本スキーマと同名の著者コンテンツ候補フィールド（head/meta 系は対象外）
+EN_CANDIDATE_FIELDS = [
+    "lead_html", "thesis_label", "thesis_html", "keywords_html",
+    "view_works_note", "view_works_links_html", "sections",
+    "sources_html", "cite_ids", "supref_ids", "site_directory_html",
+    "notable_works_html", "external_links_html",
+]
+
+SECTION_NUMBERED_RE = re.compile(r'§\s*\d+\s*/\s*\d+')  # 「§ 01 / 04」= 本文 section
+CITE_ID_RE = re.compile(r'id="cite-(\d+)"')
+SUPREF_RE = re.compile(r'href="#cite-(\d+)"')
+
+
+def _body_of(html: str) -> str:
+    """先頭の <style>…</style> を捨てて body 相当だけ返す（CSS 内のクラス名誤検知を避ける）。"""
+    i = html.rfind("</style>")
+    return html[i + len("</style>"):] if i >= 0 else html
+
+
+def norm_text(html: str | None) -> str:
+    """タグ除去＋実体・引用符正規化＋空白畳み込み。テキスト一致判定の正規形。"""
+    if not html:
+        return ""
+    t = re.sub(r"<[^>]+>", " ", html)
+    for a, b in (("&amp;", "&"), ("&nbsp;", " "), ("&lt;", "<"), ("&gt;", ">"),
+                 ("&#39;", "'"), ("&quot;", '"'), ("’", "'"), ("‘", "'"),
+                 ("“", '"'), ("”", '"'), ("—", "-"), ("–", "-")):
+        t = t.replace(a, b)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def slice_by_class(html: str, tag: str, cls: str, start: int = 0):
+    """`start` 以降で最初に現れる class に `cls` トークンを含む <tag> を、同名タグの
+    入れ子を数えて閉じまで切り出す。返り値 (outer, inner, end) または None。"""
+    open_re = re.compile(r'<%s\b[^>]*class="([^"]*)"[^>]*>' % tag, re.I)
+    scan_re = re.compile(r'<%s\b|</%s>' % (tag, tag), re.I)
+    for m in open_re.finditer(html, start):
+        if cls not in m.group(1).split():
+            continue
+        depth = 0
+        for t in scan_re.finditer(html, m.start()):
+            if t.group(0).startswith("</"):
+                depth -= 1
+                if depth == 0:
+                    return html[m.start():t.end()], html[m.end():t.start()], t.end()
+            else:
+                depth += 1
+        return html[m.start():], html[m.end():], len(html)  # 閉じ欠け
+    return None
+
+
+def _extract_family_b(body: str, fields: dict, meta: dict) -> None:
+    """新 v5.1 テンプレ（ph-*）から候補フィールドを抽出。"""
+    ab = slice_by_class(body, "div", "ph-abstract")
+    if ab:
+        inner = re.sub(r'<div class="ph-abstract__label">.*?</div>', "",
+                       ab[1], flags=re.S).strip()
+        fields["lead_html"] = inner or None
+    th = slice_by_class(body, "div", "ph-thesis")
+    if th:
+        lbl = re.search(r'ph-thesis__label">([^<]*)<', th[1])
+        fields["thesis_label"] = lbl.group(1).strip() if lbl else None
+        tb = slice_by_class(th[1], "p", "ph-thesis__body")
+        fields["thesis_html"] = tb[1].strip() if tb else None
+    kw = slice_by_class(body, "div", "ph-keywords")
+    if kw:
+        fields["keywords_html"] = kw[0].strip()
+
+    sections = []
+    start = 0
+    while True:
+        sl = slice_by_class(body, "section", "ph-section", start)
+        if not sl:
+            break
+        outer, inner, start = sl
+        num_m = re.search(r'ph-section__num">([^<]*)<', inner)
+        name_m = re.search(r'ph-section__name">([^<]*)<', inner)
+        num = (num_m.group(1).strip() if num_m else "")
+        name = (name_m.group(1).strip() if name_m else None)
+        bb = slice_by_class(inner, "div", "ph-section__body")
+        binner = (bb[1] if bb else inner).strip()
+        if SECTION_NUMBERED_RE.search(num):
+            sections.append({"num": num, "title": name, "body_html": binner})
+        elif "WORKS" in num:
+            note = re.search(r'ph-works-note">(.*?)</p>', binner, re.S)
+            if note:
+                fields["view_works_note"] = norm_text(note.group(1))
+            links = slice_by_class(binner, "div", "ph-works-links")
+            if links:
+                fields["view_works_links_html"] = links[0].strip()
+        elif "SRC" in num:
+            src = slice_by_class(binner, "div", "ph-sources")
+            fields["sources_html"] = (src[0] if src else binner).strip()
+        elif "REL" in num:
+            fields["site_directory_html"] = binner
+        else:
+            # §MORE / §REF / §LINK / §READ 等の付加節（external_links / notable_works /
+            # further_reading 候補）。Phase 1 では手当て対象として記録のみ。
+            meta["supplementary"].append(
+                {"num": num, "title": name, "chars": len(binner)})
+    fields["sections"] = sections or None
+
+
+def _extract_family_a(body: str, fields: dict, meta: dict) -> None:
+    """旧テンプレ（lead / essay / sources / site-directory-links）からの best-effort 抽出。"""
+    lead = slice_by_class(body, "p", "lead")
+    if lead:
+        fields["lead_html"] = lead[0].strip()
+    src = slice_by_class(body, "div", "sources")
+    if src:
+        fields["sources_html"] = src[0].strip()
+    nav = slice_by_class(body, "nav", "site-directory-links")
+    if nav:
+        fields["site_directory_html"] = nav[0].strip()
+    essay = slice_by_class(body, "div", "essay")
+    if essay:
+        # 旧テンプレは本文が単一 essay（h3 小節）で番号 section に割れていない。
+        fields["sections"] = [{"num": None, "title": "Essay",
+                               "body_html": essay[0].strip()}]
+
+
+def extract_en_candidate_fields(en_html: str, slug: str) -> tuple[dict, dict]:
+    """EN 素材から正本候補フィールドを抽出（正本 JSON には書かない）。
+    返り値: (fields, meta)。fields は EN_CANDIDATE_FIELDS をキーに持つ（無いものは None）。"""
+    n_rev = len(REV_OPEN_RE.findall(en_html))
+    n_editred = en_html.count("edit-red")
+    cleaned = unwrap_rev_spans(strip_edit_red(strip_review_css(en_html)))
+    cleaned, delinked = localize_en_links(cleaned)
+    body = _body_of(cleaned)
+
+    fields = {k: None for k in EN_CANDIDATE_FIELDS}
+    meta = {
+        "rev_unwrapped": n_rev,
+        "edit_red_removed": n_editred,
+        "delinked": delinked,
+        "supplementary": [],
+        "checks": self_check(cleaned, context="EN"),
+    }
+    if "ph-section__num" in body or "ph-abstract" in body:
+        family = "B"
+    elif re.search(r'class="[^"]*\blead\b', body) or 'class="essay"' in body:
+        family = "A"
+    else:
+        family = "unknown"
+    meta["family"] = family
+
+    cite_ids = [int(x) for x in CITE_ID_RE.findall(body)]
+    fields["cite_ids"] = cite_ids or None
+    supref = sorted({int(x) for x in SUPREF_RE.findall(body)})
+    fields["supref_ids"] = supref or None
+
+    if family == "B":
+        _extract_family_b(body, fields, meta)
+    elif family == "A":
+        _extract_family_a(body, fields, meta)
+    return fields, meta
 
 
 def extract_en_fragment(en_html: str, slug: str) -> tuple[dict, dict]:
-    """EN 素材から著者コンテンツの断片を抽出（正本 JSON には書かない）。
-    rev/edit-red を整形し、リンクを EN へ localize したうえで section 単位に分解する。"""
-    report: dict = {}
-    n_rev = len(REV_OPEN_RE.findall(en_html))
-    n_editred = en_html.count("edit-red")
-    en_html = strip_review_css(en_html)
-    en_html = strip_edit_red(en_html)
-    en_html = unwrap_rev_spans(en_html)
-    en_html, delinked = localize_en_links(en_html)
-    report["rev_unwrapped"] = n_rev
-    report["edit_red_removed"] = n_editred
-    report["delinked"] = delinked
-    report["checks"] = self_check(en_html, context="EN")
-
-    sections = []
-    for m in PH_SECTION_RE.finditer(en_html):
-        block = m.group(1)
-        nm = SECTION_NAME_RE.search(block)
-        title = nm.group(1).strip() if nm else None
-        sections.append({"title": title, "body_html": block.strip()})
-
+    """importer の --en パス用ラッパ。候補フィールド抽出を呼び、人手移植用の
+    プレビュー断片に整形する（返り値の契約は v1 と互換＋候補フィールドを同梱）。"""
+    fields, meta = extract_en_candidate_fields(en_html, slug)
+    sections = fields.get("sections") or []
     fragment = {
-        "_note": "v1 抽出のプレビュー断片。正本 data/photographers-en-content.json には未注入。",
+        "_note": "v2 抽出のプレビュー断片。正本 data/photographers-en-content.json には未注入。",
         "slug": slug,
+        "family": meta["family"],
         "section_count": len(sections),
-        "sections": sections,
+        "candidate_fields": fields,
         "_review": [
-            "section の粒度・タイトルが正本スキーマ（Biography/Expression 等）に対応するか確認",
+            "section の粒度・タイトルが正本スキーマ（Background/Core 等）に対応するか確認",
+            "Family B は ph-* クラス体系。正本（旧クラス体系）へ移植時にクラス変換が要る",
             "lead / thesis / sources(cite) / site_directory を正本フィールドへ手で割り当てる",
             "localize 済みリンク・de-link 済み箇所が意図どおりか確認",
         ],
     }
-    report["section_count"] = len(sections)
-    report["section_titles"] = [s["title"] for s in sections]
+    report = {
+        "rev_unwrapped": meta["rev_unwrapped"],
+        "edit_red_removed": meta["edit_red_removed"],
+        "delinked": meta["delinked"],
+        "checks": meta["checks"],
+        "family": meta["family"],
+        "section_count": len(sections),
+        "section_titles": [s.get("title") for s in sections],
+        "extracted_fields": [k for k, v in fields.items() if v],
+        "supplementary": meta["supplementary"],
+    }
     return fragment, report
+
+
+# ── 読み取り専用コーパス監査（Phase 1・正本/HTML 不可触・書込は outputs/ のみ） ─
+
+CONTENT_JSON = REPO / "data" / "photographers-en-content.json"
+STAGE4_JSON = REPO / "data" / "photographers-en-stage4.json"
+
+# EN 素材ファイルの判定（JA 素材を除外）。大文字 "EN" サフィックス（例 morimuraEN /
+# 「… EN」）または小文字トークン "_en" / "-en"（例 michio-hoshino_en / toyoko-tokiwa-en）。
+# IGNORECASE は使わない（"eugene" の "en"・"kenta" の "en" を誤検知するため）。
+EN_FILE_RE = re.compile(r'EN|[_-]en')
+
+
+def _load_canonical_pages() -> dict:
+    """正本 EN ページ = content.json['pages'] に stage4['pages'] を後勝ち merge（builder と同順）。"""
+    pages = dict(json.loads(CONTENT_JSON.read_text(encoding="utf-8"))["pages"])
+    if STAGE4_JSON.exists():
+        pages.update(json.loads(STAGE4_JSON.read_text(encoding="utf-8")).get("pages", {}))
+    return pages
+
+
+def _hero_name(en_html: str) -> str | None:
+    body = _body_of(en_html)
+    m = re.search(r'ph-hero__name">([^<]+)<', body) or re.search(r'<h1[^>]*>(.*?)</h1>', body, re.S)
+    return norm_text(m.group(1)) if m else None
+
+
+def _build_name_index(pages: dict) -> dict:
+    """正本 h1 / title 先頭 → page-key。素材の hero 名で正本エントリを引くため。"""
+    idx = {}
+    for key, e in pages.items():
+        h1 = (e.get("h1") or "").strip()
+        if h1:
+            idx.setdefault(norm_text(h1).lower(), key)
+    return idx
+
+
+def _match_canonical(en_html: str, pages: dict, name_index: dict) -> tuple[str | None, str | None]:
+    """素材を正本 page-key に対応づける。返り値 (key, hero_name)。"""
+    hero = _hero_name(en_html)
+    if not hero:
+        return None, None
+    key = name_index.get(hero.lower())
+    if key:
+        return key, hero
+    # ゆるい部分一致（hero がフルネーム、正本 h1 がその一部などの揺れ吸収）
+    hl = hero.lower()
+    for nm, k in name_index.items():
+        if nm and (nm in hl or hl in nm):
+            return k, hero
+    return None, hero
+
+
+def _compare_field(field: str, extracted, canonical) -> dict:
+    """1 フィールドの抽出↔正本 diff。テキスト一致と raw 一致を分けて記録。"""
+    ext_present = extracted not in (None, [], "")
+    can_present = canonical not in (None, [], "")
+    rec = {"extracted": ext_present, "canonical": can_present}
+    if field in ("cite_ids", "supref_ids"):
+        es, cs = set(extracted or []), set(canonical or [])
+        rec.update({
+            "extracted_count": len(es), "canonical_count": len(cs),
+            "set_equal": es == cs,
+            "only_extracted": sorted(es - cs), "only_canonical": sorted(cs - es),
+        })
+        return rec
+    if field == "sections":
+        ex, cn = extracted or [], canonical or []
+        rec.update({
+            "extracted_count": len(ex), "canonical_count": len(cn),
+            "count_match": len(ex) == len(cn),
+            "extracted_titles": [s.get("title") for s in ex],
+            "canonical_titles": [s.get("title") for s in cn],
+            "title_text_match": [norm_text(s.get("title")) for s in ex]
+                                == [norm_text(s.get("title")) for s in cn],
+        })
+        if ex and cn and len(ex) == len(cn):
+            rec["body_text_match"] = all(
+                norm_text(a.get("body_html")) == norm_text(b.get("body_html"))
+                for a, b in zip(ex, cn))
+        return rec
+    if ext_present and can_present:
+        rec["text_match"] = norm_text(extracted) == norm_text(canonical)
+        rec["markup_identical"] = str(extracted).strip() == str(canonical).strip()
+    return rec
+
+
+def run_audit(corpus_dir: Path) -> int:
+    """素材 dir の EN 素材を一括抽出し、既存正本と read-only で diff。
+    レポートを outputs/import-preview/audit-<ts>.{json,md} へ書く。正本/HTML は触らない。"""
+    import datetime
+    if not corpus_dir.exists():
+        sys.stderr.write(f"ERROR: 監査対象 dir が見つからない: {corpus_dir}\n")
+        return 2
+    pages = _load_canonical_pages()
+    name_index = _build_name_index(pages)
+    text_fields = [f for f in EN_CANDIDATE_FIELDS
+                   if f not in ("cite_ids", "supref_ids", "sections")]
+
+    en_files = sorted(p for p in corpus_dir.glob("*.html") if EN_FILE_RE.search(p.name))
+    per_file = []
+    for p in en_files:
+        en_html = p.read_text(encoding="utf-8", errors="replace")
+        try:
+            fields, meta = extract_en_candidate_fields(en_html, p.stem)
+        except AssertionError as e:
+            per_file.append({"file": p.name, "error": str(e)})
+            continue
+        key, hero = _match_canonical(en_html, pages, name_index)
+        entry = {
+            "file": p.name, "hero": hero, "family": meta["family"],
+            "matched_key": key,
+            "delinked": meta["delinked"], "supplementary": meta["supplementary"],
+            "extracted": {f: (fields[f] not in (None, [], "")) for f in EN_CANDIDATE_FIELDS},
+        }
+        if key and pages.get(key):
+            can = pages[key]
+            entry["fields"] = {
+                f: _compare_field(f, fields.get(f), can.get(f))
+                for f in EN_CANDIDATE_FIELDS
+            }
+        per_file.append(entry)
+
+    # ── 集計（family 別） ───────────────────────────────────────────────
+    summary = {}
+    for fam in ("A", "B", "unknown"):
+        rows = [e for e in per_file if e.get("family") == fam and "fields" in e]
+        if not rows:
+            summary[fam] = {"matched_files": 0}
+            continue
+        fam_sum = {"matched_files": len(rows), "fields": {}}
+        for f in EN_CANDIDATE_FIELDS:
+            recs = [e["fields"][f] for e in rows]
+            extracted = sum(1 for r in recs if r["extracted"])
+            comparable = [r for r in recs if r["extracted"] and r["canonical"]]
+            d = {"extracted": extracted, "of": len(rows),
+                 "comparable": len(comparable)}
+            if f in ("cite_ids", "supref_ids"):
+                d["set_equal"] = sum(1 for r in comparable if r.get("set_equal"))
+            elif f == "sections":
+                d["count_match"] = sum(1 for r in comparable if r.get("count_match"))
+                d["body_text_match"] = sum(1 for r in comparable if r.get("body_text_match"))
+            else:
+                d["text_match"] = sum(1 for r in comparable if r.get("text_match"))
+                d["markup_identical"] = sum(1 for r in comparable if r.get("markup_identical"))
+            fam_sum["fields"][f] = d
+        summary[fam] = fam_sum
+
+    PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
+    ts = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    report = {
+        "_note": "Phase 1 read-only audit。正本/HTML は不可触。書込は outputs/ のみ。",
+        "generated_at": ts, "corpus_dir": str(corpus_dir),
+        "en_files": len(en_files),
+        "matched": sum(1 for e in per_file if e.get("matched_key")),
+        "summary": summary, "per_file": per_file,
+    }
+    out_json = PREVIEW_DIR / f"audit-{ts}.json"
+    out_json.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    out_md = PREVIEW_DIR / f"audit-{ts}.md"
+    out_md.write_text(_render_audit_md(report), encoding="utf-8")
+
+    print(f"監査: EN素材 {len(en_files)} 件 / 正本マッチ {report['matched']} 件")
+    for fam in ("A", "B", "unknown"):
+        s = summary[fam]
+        print(f"  Family {fam}: matched={s['matched_files']}")
+    print(f"  → {out_json.relative_to(REPO)}")
+    print(f"  → {out_md.relative_to(REPO)}")
+    return 0
+
+
+def _render_audit_md(report: dict) -> str:
+    L = []
+    L.append(f"# EN 抽出カバレッジ監査 — {report['generated_at']}")
+    L.append("")
+    L.append(f"- 素材dir: `{report['corpus_dir']}`")
+    L.append(f"- EN素材: {report['en_files']} 件 / 正本マッチ: {report['matched']} 件")
+    L.append("- **read-only**: 正本JSON・HTMLは不可触。書込は `outputs/import-preview/` のみ。")
+    L.append("")
+    for fam, label in (("A", "旧テンプレ＝正本と同クラス体系"),
+                       ("B", "新v5.1 ph-* テンプレ＝要クラス変換"),
+                       ("unknown", "判定不能")):
+        s = report["summary"].get(fam, {})
+        n = s.get("matched_files", 0)
+        L.append(f"## Family {fam} — {label}（マッチ {n} 件）")
+        if not n:
+            L.append("\n（該当なし）\n")
+            continue
+        L.append("")
+        L.append("| field | 抽出/対象 | 比較可 | テキスト一致 | raw一致/構造 |")
+        L.append("|---|---|---|---|---|")
+        for f in EN_CANDIDATE_FIELDS:
+            d = s["fields"][f]
+            ext = f"{d['extracted']}/{d['of']}"
+            comp = d["comparable"]
+            if f in ("cite_ids", "supref_ids"):
+                tm = f"set_equal {d.get('set_equal', 0)}/{comp}"
+                rm = "—"
+            elif f == "sections":
+                tm = f"body {d.get('body_text_match', 0)}/{comp}"
+                rm = f"count {d.get('count_match', 0)}/{comp}"
+            else:
+                tm = f"{d.get('text_match', 0)}/{comp}"
+                rm = f"{d.get('markup_identical', 0)}/{comp}"
+            L.append(f"| {f} | {ext} | {comp} | {tm} | {rm} |")
+        L.append("")
+    L.append("## ファイル別")
+    L.append("")
+    L.append("| file | family | matched key | 抽出フィールド数 | de-link | supplementary |")
+    L.append("|---|---|---|---|---|---|")
+    for e in report["per_file"]:
+        if "error" in e:
+            L.append(f"| {e['file']} | — | ERROR | {e['error'][:40]} | — | — |")
+            continue
+        nf = sum(1 for v in e["extracted"].values() if v)
+        supp = ",".join(s["num"] for s in e.get("supplementary", [])) or "—"
+        L.append(f"| {e['file']} | {e['family']} | {e.get('matched_key') or '—'} "
+                 f"| {nf}/{len(EN_CANDIDATE_FIELDS)} | {len(e.get('delinked', []))} | {supp} |")
+    L.append("")
+    return "\n".join(L)
 
 
 # ── レビューチェックリスト（自動化しない編集判断） ─────────────────────────
@@ -365,15 +744,25 @@ def print_runbook(slug: str, wrote_ja: bool, wrote_en: bool):
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(
-        description="ChatGPT 写真家 HTML 素材の決定論インポータ（JA 整形 + EN 断片抽出・v1）",
+        description="ChatGPT 写真家 HTML 素材の決定論インポータ（JA 整形 + EN 候補抽出・v2）",
         formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--slug", required=True, help="出力 slug（例 yasumasa-morimura）")
-    ap.add_argument("--ja", required=True, help="JA 素材 HTML のパス")
-    ap.add_argument("--en", help="EN 素材 HTML のパス（省略可。あれば断片を抽出）")
+    ap.add_argument("--slug", help="出力 slug（例 yasumasa-morimura）")
+    ap.add_argument("--ja", help="JA 素材 HTML のパス")
+    ap.add_argument("--en", help="EN 素材 HTML のパス（省略可。あれば候補抽出）")
     ap.add_argument("--idx", type=int, help="hero 眉採番に使う idx（省略時 card-data から解決）")
     ap.add_argument("--apply", action="store_true", help="実書き込み（無指定は dry-run）")
     ap.add_argument("--force", action="store_true", help="既存 photographers/<slug>.html を上書き（backup あり）")
+    ap.add_argument("--audit-corpus", metavar="DIR",
+                    help="読み取り専用監査モード: DIR の EN 素材を一括抽出し既存正本と diff "
+                         "（正本/HTML 不可触・書込は outputs/import-preview/ のみ）")
     args = ap.parse_args(argv)
+
+    # 監査モード（read-only）。slug/ja は不要。
+    if args.audit_corpus:
+        return run_audit(Path(args.audit_corpus).expanduser())
+
+    if not args.slug or not args.ja:
+        ap.error("通常モードは --slug と --ja が必須（監査は --audit-corpus）")
 
     ja_src = Path(args.ja)
     if not ja_src.exists():

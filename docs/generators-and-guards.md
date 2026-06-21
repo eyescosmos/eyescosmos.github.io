@@ -127,6 +127,13 @@ python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en 
 - **書き込みは `photographers/<slug>.html` のみ**。EN 素材を渡すと著者コンテンツの**プレビュー
   断片**を `outputs/import-preview/<slug>.en-content-entry.json` に出力する（**正本
   `data/photographers-en-content.json` には触れない**＝v2 で注入予定）。`outputs/` は .gitignore 済み。
+- **v2（2026-06-21・Step2.5 Phase1）**: EN 抽出を正本候補フィールドへ拡張（`extract_en_candidate_fields()`
+  ＝ `lead_html / thesis_label / thesis_html / keywords_html / view_works_* / sections / sources_html /
+  cite_ids / supref_ids / site_directory_html`）。**正本 JSON には依然書かない**（注入は Step3）。
+  読み取り専用の**コーパス監査** `--audit-corpus DIR` を追加（既存 EN 素材を一括抽出し正本と diff、
+  レポートを `outputs/import-preview/audit-<ts>.{json,md}` へ）。EN 素材は2系統と判明:
+  **Family A**（旧テンプレ `lead`/`essay`/`sources`/`site-directory-links`＝正本と同クラス体系・ただし
+  内容ドリフトあり）と **Family B**（新 v5.1 `ph-*` テンプレ＝正本へ移植時にクラス変換が要る）。
 - **card-data / archive / 年代 / 国 / 運動 / 星マップ / EN 正本 JSON には触れない**（既存の
   `add_photographer.py` と各ビルダーへ委譲＝blast radius を限定）。末尾に follow-up コマンドを印字。
 - 決定論変換: ① `<span class="rev2〜6">` の unwrap（ネスト対応）② `edit-red` クラストークン除去
@@ -139,6 +146,45 @@ python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en 
   thesis 断定度・JSON-LD 等の実体置換）は**レビューチェックリストとして印字**する。
 - fixture 検証は**ゼロ diff 前提ではない**: 出荷済み `yasumasa-morimura`(134)・`kenta-cobayashi`(286)
   で決定論部分の再現を確認済み（残差は上記の編集判断＋些末な記号正規化）。
+
+---
+
+## EN 正本の合成・"stage 4" の二義・head fallback — 2026-06-21 追加
+
+EN 写真家ページの正本データは **2 ファイルの後勝ち合成**で、`build_photographers_en.py` が読む:
+
+```python
+pages = content['pages']              # data/photographers-en-content.json（約 298 entry）
+pages.update(stage4['pages'])         # data/photographers-en-stage4.json（12 entry・後勝ち）
+```
+
+- **キーは `<slug>.html`（拡張子付き）**。`pages.update(...)` で **stage4 が content を上書き**する。
+- どちらの entry も基本フルスキーマ（head meta ＋著者コンテンツ全部）。
+- **`data/photographers-en-stage4.json`** = late-stage の手動補完・上書き・新規 EN 本文を置く場所。
+  content.json を churn させずに後発分を載せるバケット。**Step3（EN 正本自動注入）の初期注入先**はここを想定。
+
+**"Stage 4" という語は別物が 2 つある。混同しない:**
+
+| 呼称 | 実体 | builder の挙動 |
+|---|---|---|
+| stage4 **オーバーライド** | `data/photographers-en-stage4.json` | `pages.update()` で content に**後勝ち merge** |
+| **`missing_en_true`** バケット | classification の集合（kanji-key の `jp-*` スタブ等） | 対象 JA を**丸ごと skip**し警告 `'... in missing_en_true, skipped (Stage 4)'` |
+
+警告文に "Stage 4" と出るのは後者（skip）。前者の override file とは無関係。
+
+### head fallback（`build_head_meta`）— Step3 注入の土台 — Phase 2
+
+`build_head_meta()` は entry から `title / meta_description / og / twitter / jsonld` を読む。Step3 で
+**著者コンテンツだけ**（head meta なし）を注入しても head が壊れないよう、**entry に値が無いフィールド
+だけ**を決定論導出する fallback を入れた:
+
+- 契約: **entry に値があれば最優先**・無いときだけ導出・**導出の発動は WARN**・
+  **実ビルドされる全 entry（h1 あり＝294 件は全フィールド完備）では発火しない＝出力 byte 不変**。
+- 導出元: `title`=card-data `nameEn`→slug、`meta_description`=EN `lead_html` のタグ除去・~155字短縮、
+  `og`/`twitter`=既定画像 `assets/ogp-default.png`＋title/description、
+  `jsonld`=最小 WebPage+Person(+years から birth/death)+BreadcrumbList を決定論生成（**JA JSON-LD は英訳しない**）。
+- 発火するのは現状 `missing_en_true` の `jp-*` スタブのみ（それらは builder が skip するので実出力には出ない）。
+  あくまで Step3 注入時のための latent な土台。
 
 ---
 
