@@ -30,6 +30,7 @@ import copy
 import json
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -786,9 +787,20 @@ def _print_step3a_runbook(slug: str) -> None:
     print( "\n注意: 注入は thesis_label / thesis_html のみ。sections 等は Step3b（クラス変換）で。")
 
 
-def _verify_after_inject(slug: str, key: str, new_entry: dict, old_html: str) -> int:
-    """注入＋ stage4 書込の後に build し、非劣化を検証。"""
-    import subprocess
+def _git_dirty_en() -> set | None:
+    """en/photographers/ 配下で HEAD と差分のあるファイル集合（git 不可なら None）。"""
+    try:
+        r = subprocess.run(
+            ["git", "-C", str(REPO), "diff", "--name-only", "--", "en/photographers/"],
+            capture_output=True, text=True, check=True)
+        return {ln.strip() for ln in r.stdout.splitlines() if ln.strip()}
+    except (OSError, subprocess.CalledProcessError):
+        return None
+
+
+def _verify_after_inject(slug: str, key: str, new_entry: dict, old_html: str,
+                         en_before: set | None) -> int:
+    """注入＋ stage4 書込の後に build し、非劣化を検証。失敗なら 0 以外を返す（呼び元が rollback）。"""
     print("\n── 注入後の検証（build → 非劣化チェック） ──")
     r = subprocess.run(
         [sys.executable, str(REPO / "scripts" / "build_photographers_en.py"), "--slug", slug],
@@ -800,9 +812,22 @@ def _verify_after_inject(slug: str, key: str, new_entry: dict, old_html: str) ->
     if "Wrote 1 page" not in out and "Would write" not in out:
         sys.stderr.write(f"ERROR: builder が対象 1 ページを書いていない。出力:\n{out[-400:]}\n")
         return 3
+
+    # 対象 slug 以外の EN HTML 差分ゼロ（契約をコード assert 化。pre-existing drift と分離するため
+    # before/after を比較し、注入で新たに dirty になったのは対象 1 ファイルだけ、を確認）。
+    target_rel = f"en/photographers/{slug}.html"
+    en_after = _git_dirty_en()
+    if en_before is None or en_after is None:
+        print("  対象外HTML差分 : SKIP（git 不可・runbook の git diff で手動確認）")
+    else:
+        newly = en_after - en_before
+        if not newly <= {target_rel}:
+            sys.stderr.write(f"ERROR: 対象以外の EN HTML が変化した: {sorted(newly - {target_rel})}\n")
+            return 3
+        print(f"  対象外HTML差分 : なし（新規 dirty = {sorted(newly) or '無し'}）")
+
     new_path = EN_DIR / f"{slug}.html"
     new_html = new_path.read_text(encoding="utf-8")
-
     if norm_text(new_entry["thesis_html"]) not in norm_text(new_html):
         sys.stderr.write("ERROR: 注入後 HTML に thesis 本文が見当たらない。\n")
         return 3
@@ -881,14 +906,34 @@ def inject_thesis_to_stage4(slug: str, en_path: str, apply: bool) -> int:
         _print_step3a_runbook(slug)
         return 0
 
+    # ── トランザクション: 失敗時は stage4.json と EN HTML を注入前へ自動ロールバック ──
+    stage4_orig = STAGE4_JSON.read_text(encoding="utf-8")          # 復元用スナップショット
     old_html_path = EN_DIR / f"{slug}.html"
-    old_html = old_html_path.read_text(encoding="utf-8") if old_html_path.exists() else ""
+    html_existed = old_html_path.exists()
+    old_html = old_html_path.read_text(encoding="utf-8") if html_existed else ""
+    en_before = _git_dirty_en()                                    # 注入前の dirty 集合
+
     tmp = STAGE4_JSON.with_name(STAGE4_JSON.name + ".tmp")
     tmp.write_text(new_text, encoding="utf-8")
     os.replace(tmp, STAGE4_JSON)  # atomic
     print(f"  ✅ stage4 atomic 書込: {STAGE4_JSON.relative_to(REPO)}")
 
-    return _verify_after_inject(slug, key, new_entry, old_html)
+    rc = _verify_after_inject(slug, key, new_entry, old_html, en_before)
+    if rc != 0:
+        # 自動ロールバック（stage4 と、build が書き換えた可能性のある EN HTML を復元）
+        rb = STAGE4_JSON.with_name(STAGE4_JSON.name + ".rbtmp")
+        rb.write_text(stage4_orig, encoding="utf-8")
+        os.replace(rb, STAGE4_JSON)
+        if html_existed:
+            old_html_path.write_text(old_html, encoding="utf-8")
+        elif old_html_path.exists():
+            old_html_path.unlink()  # build が新規作成したものを撤去
+        sys.stderr.write(
+            "\n↩ ロールバック完了: data/photographers-en-stage4.json と "
+            f"en/photographers/{slug}.html を注入前へ復元した。\n"
+            "  手動確認する場合: git status --short / "
+            "git checkout -- data/photographers-en-stage4.json en/photographers/" + slug + ".html\n")
+    return rc
 
 
 # ── レビューチェックリスト（自動化しない編集判断） ─────────────────────────
