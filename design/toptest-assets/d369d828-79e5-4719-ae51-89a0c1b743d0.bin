@@ -1496,7 +1496,52 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "mayumi-hosokura",
+    "name": "Mayumi Hosokura",
+    "nameJa": "細倉真弓",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1979–",
+    "gender": "女性",
+    "era": "2010",
+    "movements": [
+      "コンセプチュアルアート",
+      "フェミニズム写真",
+      "私写真",
+      "日本写真"
+    ],
+    "thumbnail": "",
+    "links": [
+      {
+        "label": "MACK — New Skin",
+        "url": "https://mackbooks.co.uk/products/new-skin-mayumi-hosokura"
+      },
+      {
+        "label": "Takuro Someya Contemporary Art — Mayumi Hosokura",
+        "url": "https://tsca.jp/ja/artist/mayumi-hosokura/"
+      }
+    ],
+    "amazon": "",
+    "context": {
+      "text": "細倉真弓（1979年京都生まれ）は、2010年代以後の日本写真において、身体を見る視線の問題を扱う作家。写真集《Transparency is the new mystery》ではヌードと鉱物を透過的な白黒像として構成し、《NEW SKIN》では男性身体・ゲイ雑誌・彫刻・セルフィーをデジタルコラージュで重ね、身体と視線の境界を問い直した*1*2。",
+      "textEn": "Mayumi Hosokura (b. 1979, Kyoto) addresses the gaze on the body in Japanese photography since the 2010s. In Transparency is the new mystery she composed nudes and minerals as translucent black-and-white images, and in NEW SKIN she layered the male body, gay magazines, sculpture, and selfies through digital collage to reconsider the boundary of body and gaze*1*2.",
+      "citations": [
+        {
+          "num": 1,
+          "name": "MACK — New Skin",
+          "url": "https://mackbooks.co.uk/products/new-skin-mayumi-hosokura"
+        },
+        {
+          "num": 2,
+          "name": "KYOTOGRAPHIE 2022 — NEW SKIN",
+          "url": "https://2022.kyotographie.jp/exhibitions/mayumi-hosokura/"
+        }
+      ]
+    }
   }
+
 
 ,
 
