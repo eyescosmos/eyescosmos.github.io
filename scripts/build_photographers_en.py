@@ -1726,6 +1726,25 @@ def main():
         if page is None:
             warnings.append(f'{ja_file}: no harvest content, skipped')
             continue
+        # REQUIRED-FIELD GUARD: a real content page (sections >= 1) must carry
+        # the photographer's English name (h1). Silently writing an empty h1
+        # produces a hero with no name (see hosokura, 2026-06-21). Stub /
+        # missing_en / sectionless placeholders are exempt — they never reach
+        # rebuild_hero with content. h1 is a hard error; years is only a loud
+        # warning because some legitimate entries (collectives, duos) have none.
+        if len(page.get('sections') or []) >= 1:
+            if not (page.get('h1') or '').strip():
+                sys.stderr.write(
+                    f'ERROR: {en_file_key}: required field "h1" (English '
+                    f'photographer name) is empty on a content page '
+                    f'(sections>=1). Refusing to write a nameless hero. '
+                    f'Set "h1" in data/photographers-en-content.json '
+                    f'(or stage4) for this slug.\n')
+                sys.exit(1)
+            if not (page.get('years') or '').strip():
+                warnings.append(
+                    f'{en_file_key}: required field "years" is empty on a '
+                    f'content page (sections>=1); hero years will be blank')
         # per-page sanity warnings
         if not page.get('photobooks_html'):
             warnings.append(f'{ja_file}: no photobooks_html')
