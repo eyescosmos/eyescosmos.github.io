@@ -26,6 +26,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import os
 import re
@@ -710,6 +711,186 @@ def _render_audit_md(report: dict) -> str:
     return "\n".join(L)
 
 
+# ── Step3a: EN 正本 stage4 への thesis 最小注入（Claude×Codex×Daisuke 合意 2026-06-21） ──
+#
+# スコープ（合意済・最小）: 注入先は data/photographers-en-stage4.json のみ。注入フィールドは
+# thesis_label / thesis_html だけ（sections 等は Step3b＝ph-* → 旧クラス変換器を入れてから）。
+# 安全契約: `--update-en-json` 既定OFF・`--apply` 二重明示で実書込・slug 単位 replace/add・
+# 対象外 JSON 差分ゼロ assert・atomic write・手書き維持ページ拒否・churn なし（dump 厳格）・
+# 注入後に build → thesis 不消失 / sources・cite・supref 非減少 / dangling なし を検証。
+
+# thesis_label はサイト全体で単一定数（content.json 全 entry で一致）。素材の表記揺れは採らない。
+CANONICAL_THESIS_LABEL = "What this photographer changed"
+
+# 手書き維持ページ（ブラインド再生成・注入禁止）。正は scripts/check_en_entry.py の
+# HAND_MAINTAINED_EN。lee-miller は feedback_lee_miller_no_blind_rebuild に従い追加。
+HAND_MAINTAINED_EN = {
+    'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html',
+    'toyoko-tokiwa.html', 'lee-miller.html',
+}
+
+# EN 内部リンク（生成物の規約 = /en/<種別>/<slug>.html）
+EN_INTERNAL_HREF_RE = re.compile(r'/en/(photographers|movements|countries|eras)/([^"#?]+\.html)')
+
+
+def _dump_stage4(data) -> str:
+    """stage4.json の既存フォーマットに完全一致する dump（ensure_ascii=False, indent=2,
+    末尾改行なし）。これを外すと無関係行の churn が出るため厳格に合わせる。"""
+    return json.dumps(data, ensure_ascii=False, indent=2)
+
+
+def _count_cite_supref(html: str) -> tuple[int, int]:
+    cites = set(re.findall(r'id="cite-(\d+)"', html))
+    suprefs = set(re.findall(r'href="#cite-(\d+)"', html))
+    return len(cites), len(suprefs)
+
+
+def _dangling_internal_en_links(html: str) -> list[str]:
+    """生成物 EN HTML 内の /en/.../<slug>.html リンクのうち、実ファイルが無いものを列挙。"""
+    masked, _ = _mask_scripts(html)
+    bad = []
+    for m in ANCHOR_RE.finditer(masked):
+        href = m.group(1)
+        mm = EN_INTERNAL_HREF_RE.fullmatch(href)
+        if mm and not (REPO / "en" / mm.group(1) / mm.group(2)).exists():
+            bad.append(href)
+    return bad
+
+
+def _assert_only_key_changed(old: dict, new: dict, key: str) -> None:
+    """stage4 全体で『pages[key] 以外は完全に不変』を assert（対象外 JSON 差分ゼロ）。"""
+    assert set(old) == set(new), "トップレベルキーが変化した"
+    for tk in old:
+        if tk == "pages":
+            continue
+        assert old[tk] == new[tk], f"トップレベル {tk} が変化した"
+    op, np_ = old.get("pages", {}), new.get("pages", {})
+    assert set(np_) - set(op) <= {key}, "対象以外の新規キーが増えた"
+    assert set(op) - set(np_) == set(), "既存キーが消えた"
+    for k in op:
+        if k == key:
+            continue
+        a = json.dumps(op[k], ensure_ascii=False, sort_keys=True)
+        b = json.dumps(np_[k], ensure_ascii=False, sort_keys=True)
+        assert a == b, f"対象外キー {k} の内容が変化した"
+
+
+def _print_step3a_runbook(slug: str) -> None:
+    print("\n" + "=" * 70)
+    print("Step3a の後段（push 前に必須・対象 slug スコープ）")
+    print("=" * 70)
+    print(f"  python3 scripts/build_photographers_en.py --slug {slug}   # EN 再生成（注入反映）")
+    print(f"  python3 scripts/check_new_photographer.py --slug {slug}   # 完成検査")
+    print( "  git diff --name-only en/photographers/                    # 対象 1 ファイルだけのはず")
+    print( "  python3 scripts/preflight.py                              # push 前ネット")
+    print( "\n注意: 注入は thesis_label / thesis_html のみ。sections 等は Step3b（クラス変換）で。")
+
+
+def _verify_after_inject(slug: str, key: str, new_entry: dict, old_html: str) -> int:
+    """注入＋ stage4 書込の後に build し、非劣化を検証。"""
+    import subprocess
+    print("\n── 注入後の検証（build → 非劣化チェック） ──")
+    r = subprocess.run(
+        [sys.executable, str(REPO / "scripts" / "build_photographers_en.py"), "--slug", slug],
+        capture_output=True, text=True)
+    out = r.stdout + r.stderr
+    if "SKIPPED" in out and key in out:
+        sys.stderr.write("ERROR: builder が content-loss guard で SKIP（手書き内容消失の恐れ）。注入を見直す。\n")
+        return 3
+    if "Wrote 1 page" not in out and "Would write" not in out:
+        sys.stderr.write(f"ERROR: builder が対象 1 ページを書いていない。出力:\n{out[-400:]}\n")
+        return 3
+    new_path = EN_DIR / f"{slug}.html"
+    new_html = new_path.read_text(encoding="utf-8")
+
+    if norm_text(new_entry["thesis_html"]) not in norm_text(new_html):
+        sys.stderr.write("ERROR: 注入後 HTML に thesis 本文が見当たらない。\n")
+        return 3
+    oc, osup = _count_cite_supref(old_html)
+    nc, nsup = _count_cite_supref(new_html)
+    if nc < oc or nsup < osup:
+        sys.stderr.write(f"ERROR: cite/supref が減少（cite {oc}->{nc} / supref {osup}->{nsup}）。\n")
+        return 3
+    dang = _dangling_internal_en_links(new_html)
+    if dang:
+        sys.stderr.write(f"ERROR: dangling 内部リンク発生: {dang}\n")
+        return 3
+
+    print(f"  build           : OK（対象1ページ・SKIP なし）")
+    print(f"  thesis 本文存在 : OK")
+    print(f"  cite / supref   : {oc}→{nc} / {osup}→{nsup}（非減少）")
+    print(f"  dangling 内部   : なし")
+    print(f"  対象 HTML       : {'変化なし（冪等注入＝byte不変）' if new_html == old_html else '変化あり（thesis 更新）'}")
+    _print_step3a_runbook(slug)
+    return 0
+
+
+def inject_thesis_to_stage4(slug: str, en_path: str, apply: bool) -> int:
+    """Step3a: EN 素材の thesis_label / thesis_html を stage4.json へ最小注入。"""
+    key = slug + ".html"
+    print(f"Step3a thesis 注入  slug={slug}  key={key}  mode={'APPLY' if apply else 'dry-run'}")
+
+    if key in HAND_MAINTAINED_EN:
+        sys.stderr.write(f"ERROR: {key} は手書き維持ページ。注入を拒否（HAND_MAINTAINED_EN）。\n")
+        return 2
+
+    en_src = Path(en_path)
+    if not en_src.exists():
+        sys.stderr.write(f"ERROR: EN 素材が見つからない: {en_src}\n")
+        return 2
+    fields, meta = extract_en_candidate_fields(en_src.read_text(encoding="utf-8"), slug)
+    thesis_html = (fields.get("thesis_html") or "").strip()
+    if not thesis_html:
+        sys.stderr.write("ERROR: EN 素材から thesis_html を抽出できない"
+                         f"（family={meta['family']}）。Family B の ph-thesis を持つ素材のみ対象。\n")
+        return 2
+
+    content = json.loads(CONTENT_JSON.read_text(encoding="utf-8"))
+    stage4 = json.loads(STAGE4_JSON.read_text(encoding="utf-8"))
+    s4pages = stage4.setdefault("pages", {})
+    in_stage4 = key in s4pages
+    base = s4pages.get(key) or content.get("pages", {}).get(key)
+    if base is None or not base.get("h1"):
+        sys.stderr.write("ERROR: 既存フル正本 entry が無い。Step3a は既掲載写真家の thesis 更新のみ"
+                         "（新規写真家のフルページ作成は対象外）。\n")
+        return 2
+
+    old_label, old_thesis = base.get("thesis_label"), (base.get("thesis_html") or "").strip()
+    new_entry = copy.deepcopy(base)
+    new_entry["thesis_label"] = CANONICAL_THESIS_LABEL
+    new_entry["thesis_html"] = thesis_html
+
+    idempotent = (old_label == CANONICAL_THESIS_LABEL and old_thesis == thesis_html)
+    print(f"  thesis_label : {old_label!r} → {CANONICAL_THESIS_LABEL!r}"
+          f"{'（不変）' if old_label == CANONICAL_THESIS_LABEL else '（定数へ正規化）'}")
+    print(f"  thesis_html  : {'不変（冪等）' if old_thesis == thesis_html else '更新'}")
+    print(f"  base 由来     : {'stage4 既存 shadow' if in_stage4 else 'content.json（→ stage4 へ full shadow 作成）'}")
+    if not in_stage4:
+        print("  ⚠ NOTE: stage4 に full shadow を作る。以後この slug は content.json 編集が"
+              " stage4 に隠れる（後勝ち）。Step3b で部分マージ化を検討。")
+
+    new_stage4 = copy.deepcopy(stage4)
+    new_stage4["pages"][key] = new_entry
+    _assert_only_key_changed(stage4, new_stage4, key)  # 対象外 JSON 差分ゼロ
+    new_text = _dump_stage4(new_stage4)
+
+    if not apply:
+        print("\n  (dry-run) stage4 未書込。実書込＋ビルド検証は `--apply` を付ける。")
+        if idempotent:
+            print("  （注: 抽出 thesis は現正本と一致＝冪等。注入してもビルド出力は byte 不変の見込み）")
+        _print_step3a_runbook(slug)
+        return 0
+
+    old_html_path = EN_DIR / f"{slug}.html"
+    old_html = old_html_path.read_text(encoding="utf-8") if old_html_path.exists() else ""
+    tmp = STAGE4_JSON.with_name(STAGE4_JSON.name + ".tmp")
+    tmp.write_text(new_text, encoding="utf-8")
+    os.replace(tmp, STAGE4_JSON)  # atomic
+    print(f"  ✅ stage4 atomic 書込: {STAGE4_JSON.relative_to(REPO)}")
+
+    return _verify_after_inject(slug, key, new_entry, old_html)
+
+
 # ── レビューチェックリスト（自動化しない編集判断） ─────────────────────────
 
 REVIEW_CHECKLIST = [
@@ -755,11 +936,20 @@ def main(argv=None) -> int:
     ap.add_argument("--audit-corpus", metavar="DIR",
                     help="読み取り専用監査モード: DIR の EN 素材を一括抽出し既存正本と diff "
                          "（正本/HTML 不可触・書込は outputs/import-preview/ のみ）")
+    ap.add_argument("--update-en-json", action="store_true",
+                    help="Step3a: EN 素材の thesis を data/photographers-en-stage4.json へ最小注入"
+                         "（--apply 二重明示で実書込・atomic・非劣化検証。--slug と --en 必須）")
     args = ap.parse_args(argv)
 
     # 監査モード（read-only）。slug/ja は不要。
     if args.audit_corpus:
         return run_audit(Path(args.audit_corpus).expanduser())
+
+    # Step3a 注入モード。--ja は不要（EN 正本 JSON への注入のみ）。
+    if args.update_en_json:
+        if not args.slug or not args.en:
+            ap.error("--update-en-json は --slug と --en が必須")
+        return inject_thesis_to_stage4(args.slug, args.en, args.apply)
 
     if not args.slug or not args.ja:
         ap.error("通常モードは --slug と --ja が必須（監査は --audit-corpus）")
