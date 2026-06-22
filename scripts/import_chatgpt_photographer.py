@@ -814,6 +814,293 @@ def run_extract_bundle(path: Path, lang: str | None) -> int:
     return 0
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# M3: JA scaffold-inject render_ja_page — bundle から JA 正本 HTML を生成
+#
+# docs/importer-scaffold-inject-spec.md §4。add_photographer.build_scaffold_html
+# （= ansel-adams コピー + 機械確定フィールド）の出力を土台に使い（§C scaffold
+# 再実装禁止＝head/SEO/JSON-LD/chrome/サイドバーの取りこぼし事故回避）、本文の
+# 可変部（lead / thesis / WORKS / essay+TOC / REL / REF / SRC / 本文内リンク）だけを
+# 正典マーカー（§ WORKS / §NN / § REL / § REF / § SRC）に差し込む。
+# taxonomy・同一性（era/country/channel/movement/names/years/id）は spec が供給する。
+# ─────────────────────────────────────────────────────────────────────────────
+
+JA_THESIS_LABEL = "この写真家が変えたこと"  # サイト定数（素材表記は採らない）
+JA_WORKS_NOTE = "本サイトでは作品画像を掲載していません。下記の公式アーカイブで作品をご覧ください。"
+
+
+def _ja_essay_body(blocks_html: str) -> str:
+    inner = (blocks_html or "").strip()
+    if not inner.startswith('<div class="essay"'):
+        inner = '<div class="essay">' + inner + '</div>'
+    return inner
+
+
+def _build_ja_sections_and_toc(sections: list) -> tuple[str, str]:
+    n = len(sections)
+    sec_blocks, toc_items = [], []
+    for i, sec in enumerate(sections, 1):
+        sid = f"sec-{i:02d}"
+        name = sec.get("title") or ""
+        body = _ja_essay_body(sec.get("blocks_html", ""))
+        sec_blocks.append(
+            f'      <section class="ph-section" id="{sid}">\n'
+            f'        <div class="ph-section__head">\n'
+            f'          <div class="ph-section__title">\n'
+            f'            <span class="ph-section__num">§ {i:02d} / {n:02d}</span>\n'
+            f'            <span class="ph-section__name">{name}</span>\n'
+            f'          </div>\n'
+            f'        </div>\n'
+            f'        <div class="ph-section__body">\n'
+            f'          {body}\n'
+            f'        </div>\n'
+            f'      </section>')
+        toc_items.append(
+            f'            <li class="toc-section"><a href="#{sid}">'
+            f'<span class="toc-num">§ {i:02d}</span> {name}</a></li>')
+    return "\n".join(toc_items), "\n\n".join(sec_blocks)
+
+
+def _build_ja_works_body(works: list) -> str | None:
+    if not works:
+        return None
+    chips = "\n            ".join(
+        f'<a class="chip-link" href="{w["url"]}" rel="noopener" '
+        f'target="_blank">{w["label"]} ↗</a>' for w in works)
+    return (f'<p class="ph-works-note">{JA_WORKS_NOTE}</p>\n'
+            f'          <div class="ph-works-links">\n'
+            f'            {chips}\n          </div>')
+
+
+def _rel_li(item: dict, kind: str) -> str:
+    name, slug = item.get("name") or "", item.get("slug")
+    reason = item.get("reason") or ""
+    tail = f' — {reason}' if reason else ''
+    if slug:
+        href = (f'/photographers/{slug}.html' if kind == "people"
+                else f'/movements/{slug}.html')
+        return f'<li><a href="{href}">{name}</a>{tail}</li>'
+    return f'<li>{name}{tail}</li>'  # de-link 済みは素テキスト保持
+
+
+def _build_ja_rel_body(people: list, movements: list) -> str | None:
+    parts = []
+    if people:
+        lis = "\n".join(_rel_li(p, "people") for p in people)
+        parts.append('<div class="ph-rel-label">Photographers</div>\n'
+                     '          <ul class="ph-rel-list">\n' + lis +
+                     '\n          </ul>')
+    if movements:
+        lis = "\n".join(_rel_li(m, "movements") for m in movements)
+        parts.append('<div class="ph-rel-label">Movements / Contexts</div>\n'
+                     '          <ul class="ph-rel-list ph-rel-movements">\n' + lis +
+                     '\n          </ul>')
+    return "\n          ".join(parts) if parts else None
+
+
+def _build_ja_ref_body(books: list, links: list) -> str | None:
+    parts = []
+    for b in books:
+        blk = ['<div class="ph-book">']
+        if b.get("title_html"):
+            blk.append(f'            <div class="ph-book__title">{b["title_html"]}</div>')
+        if b.get("meta"):
+            blk.append(f'            <div class="ph-book__meta">{b["meta"]}</div>')
+        if b.get("note"):
+            blk.append(f'            <div class="ph-book__note">{b["note"]}</div>')
+        if b.get("cta_url"):
+            blk.append(f'            <a class="ph-book-cta" href="{b["cta_url"]}" '
+                       f'rel="noopener" target="_blank">{b.get("cta_label") or "Link ↗"}</a>')
+        blk.append('          </div>')
+        parts.append("\n".join(blk))
+    if links:
+        lis = "\n".join(
+            f'            <li><a href="{l["url"]}" rel="noopener" '
+            f'target="_blank">{l["label"]}</a></li>' for l in links)
+        parts.append('<ul class="ph-further-links">\n' + lis + '\n          </ul>')
+    return "\n          ".join(parts) if parts else None
+
+
+def _build_ja_src_body(sources: list) -> str | None:
+    cites = "".join(
+        f'<div class="ph-cite" id="cite-{s["num"]}">'
+        f'<span class="ph-cite__num">*{s["num"]}</span>'
+        f'<span>{s["anchor_html"]}</span></div>'
+        for s in sources if s.get("anchor_html"))
+    return f'<div class="ph-sources">{cites}</div>' if cites else None
+
+
+def _set_section_body(html: str, num_token: str, new_inner: str | None) -> str:
+    """§-num で節を特定し、その ph-section__body の内側を new_inner で置換。"""
+    if new_inner is None:
+        return html
+    m = re.search(r'<span class="ph-section__num">' + re.escape(num_token) +
+                  r'</span>', html)
+    if not m:
+        return html
+    bstart = html.find('<div class="ph-section__body">', m.end())
+    if bstart < 0:
+        return html
+    open_end = bstart + len('<div class="ph-section__body">')
+    depth, end = 1, None
+    for t in re.compile(r'<div\b|</div>').finditer(html, open_end):
+        if t.group(0) == '</div>':
+            depth -= 1
+            if depth == 0:
+                end = t.start()
+                break
+        else:
+            depth += 1
+    if end is None:
+        return html
+    return html[:open_end] + '\n          ' + new_inner + '\n        ' + html[end:]
+
+
+def _replace_essays_and_toc(html: str, toc_items: str, sections_html: str) -> str:
+    tm = re.search(r'(<ol class="toc-list">)(.*?)(</ol>)', html, re.S)
+    if tm:
+        html = (html[:tm.start()] + tm.group(1) + '\n' + toc_items +
+                '\n          ' + tm.group(3) + html[tm.end():])
+    secs = list(re.finditer(r'<section class="ph-section" id="sec-\d+">', html))
+    if secs:
+        fs = secs[0].start()
+        while fs > 0 and html[fs - 1] in ' \t':
+            fs -= 1
+        last_block = _slice_element(html, secs[-1].start(), "section")
+        last_end = secs[-1].start() + len(last_block)
+        html = html[:fs] + sections_html + html[last_end:]
+    return html
+
+
+def _inject_abstract_thesis(html: str, lead: str | None, thesis: str | None) -> str:
+    new = ('      <div class="ph-abstract">\n'
+           '        <div class="ph-abstract__label">Abstract</div>\n'
+           f'        <p>{lead or ""}</p>\n'
+           '      </div>')
+    if thesis:
+        new += ('\n\n      <div class="ph-thesis">\n'
+                f'        <div class="ph-thesis__label">{JA_THESIS_LABEL}</div>\n'
+                f'        <p class="ph-thesis__body">{thesis}</p>\n'
+                '      </div>')
+    return re.sub(
+        r'<div class="ph-abstract">\s*<div class="ph-abstract__label">Abstract'
+        r'</div>\s*<p></p>\s*</div>', lambda _m: new, html, count=1)
+
+
+def _inject_movement(html: str, movement_label: str | None) -> str:
+    if not movement_label:
+        return html
+    html = html.replace('<dt>Movement</dt><dd>—</dd>',
+                        f'<dt>Movement</dt><dd>{movement_label}</dd>', 1)
+    html = html.replace(
+        '<span class="ph-side-meta-key">Movement</span>'
+        '<span class="ph-side-meta-val">—</span>',
+        f'<span class="ph-side-meta-key">Movement</span>'
+        f'<span class="ph-side-meta-val">{movement_label}</span>', 1)
+    return html
+
+
+def _mask_anchors(html: str) -> tuple[str, list]:
+    saved: list = []
+
+    def st(m: re.Match) -> str:
+        saved.append(m.group(0))
+        return f"\x00A{len(saved) - 1}\x00"
+    return re.sub(r'<a\b[^>]*>.*?</a>', st, html, flags=re.S), saved
+
+
+def _unmask_anchors(html: str, saved: list) -> str:
+    return re.sub(r'\x00A(\d+)\x00', lambda m: saved[int(m.group(1))], html)
+
+
+def _build_name_slug_map(self_slug: str) -> dict:
+    data = json.loads(CARD_DATA.read_text(encoding="utf-8"))
+    out = {}
+    for p in data.get("photographers", []):
+        nj, pid = p.get("nameJa"), p.get("id")
+        if nj and pid and pid != self_slug and ja_page_exists(pid):
+            out[nj] = pid
+    return out
+
+
+def _link_body_names(essays_html: str, self_slug: str) -> str:
+    """essay 本文の実在写真家名（card-data nameJa）を初出1回だけ /photographers へ
+    リンク化（§4.2 E）。既存 <a> の内側は masking で保護。"""
+    name_map = _build_name_slug_map(self_slug)
+    if not name_map:
+        return essays_html
+    masked, saved = _mask_anchors(essays_html)
+    for nm in sorted(name_map, key=len, reverse=True):  # 長い名前優先（部分一致回避）
+        idx = masked.find(nm)
+        if idx < 0:
+            continue
+        masked = (masked[:idx] +
+                  f'<a href="/photographers/{name_map[nm]}.html">{nm}</a>' +
+                  masked[idx + len(nm):])
+    return _unmask_anchors(masked, saved)
+
+
+def render_ja_page(bundle: dict, spec: dict, idx=None) -> str:
+    """ContentBundle（JA）+ spec から JA 正本 HTML を生成（§4 scaffold-inject）。
+    必須欠落は assert_bundle_complete で中断（空埋め禁止）。"""
+    from add_photographer import build_scaffold_html  # import 副作用なし（main ガード済）
+
+    info_required = {f: bundle.get(f) for f in required_fields_for("ja")}
+    missing = [k for k, v in info_required.items()
+               if (k in ("sections",) and not v)
+               or (k == "sources" and not bundle.get("sources"))
+               or (k not in ("sections", "sources") and not (v and str(v).strip()))]
+    if missing:
+        raise BundleIncomplete(spec.get("id"), missing)
+
+    idx = idx if idx is not None else spec.get("idx")
+    html = build_scaffold_html(spec, idx)
+
+    # lead + thesis（scaffold は ph-thesis を持たないのでブロックごと注入）
+    html = _inject_abstract_thesis(html, bundle.get("lead_inner_html"),
+                                   bundle.get("thesis_inner_html"))
+    # entry-meta / サイドバー Movement（spec の movements から）
+    movement_label = "・".join(spec.get("movements") or []) or None
+    html = _inject_movement(html, movement_label)
+    # § WORKS
+    html = _set_section_body(html, "§ WORKS", _build_ja_works_body(bundle.get("works") or []))
+    # essay + TOC（節数可変・本文内リンクは essay にだけ適用）
+    toc_items, sections_html = _build_ja_sections_and_toc(bundle.get("sections") or [])
+    sections_html = _link_body_names(sections_html, spec.get("id", ""))
+    html = _replace_essays_and_toc(html, toc_items, sections_html)
+    # § REL / § REF / § SRC
+    html = _set_section_body(html, "§ REL",
+                             _build_ja_rel_body(bundle.get("related_people") or [],
+                                                bundle.get("related_movements") or []))
+    html = _set_section_body(html, "§ REF",
+                             _build_ja_ref_body(bundle.get("further_books") or [],
+                                                bundle.get("further_links") or []))
+    html = _set_section_body(html, "§ SRC", _build_ja_src_body(bundle.get("sources") or []))
+    return html
+
+
+def run_render_ja(material: Path, spec_path: Path, idx, lang: str | None) -> int:
+    """M3 検証用 read-only エントリ: 素材から JA bundle を抽出し spec で render、
+    HTML を stdout 出力（正本・HTML には書かない）。"""
+    if not material.exists():
+        sys.stderr.write(f"ERROR: 素材が見つからない: {material}\n")
+        return 2
+    if not spec_path.exists():
+        sys.stderr.write(f"ERROR: spec が見つからない: {spec_path}\n")
+        return 2
+    spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    bundle, _info = extract_bundle(
+        material.read_text(encoding="utf-8", errors="replace"),
+        lang or "ja", slug=spec.get("id"))
+    try:
+        out = render_ja_page(bundle, spec, idx)
+    except BundleIncomplete as e:
+        sys.stderr.write(f"ERROR: {e}\n")
+        return 1
+    sys.stdout.write(out)
+    return 0
+
+
 def extract_en_fragment(en_html: str, slug: str) -> tuple[dict, dict]:
     """importer の --en パス用ラッパ。候補フィールド抽出を呼び、人手移植用の
     プレビュー断片に整形する（返り値の契約は v1 と互換＋候補フィールドを同梱）。"""
@@ -1342,7 +1629,12 @@ def main(argv=None) -> int:
                     help="M2 検証（read-only）: 単一素材から ContentBundle を抽出し JSON を "
                          "stdout 出力（正本・HTML は不可触）")
     ap.add_argument("--lang", choices=("ja", "en"),
-                    help="--extract-bundle の素材言語（省略時はファイル名から推定）")
+                    help="--extract-bundle / --render-ja の素材言語（省略時はファイル名から推定）")
+    ap.add_argument("--render-ja", metavar="PATH",
+                    help="M3 検証（read-only）: JA 素材から bundle を抽出し --spec で "
+                         "render_ja_page を実行、JA HTML を stdout 出力（正本・HTML 不可触）")
+    ap.add_argument("--spec", metavar="PATH",
+                    help="--render-ja の spec.json（taxonomy/同一性を供給）")
     args = ap.parse_args(argv)
 
     # 監査モード（read-only）。slug/ja は不要。
@@ -1352,6 +1644,13 @@ def main(argv=None) -> int:
     # M2 bundle 抽出検証（read-only）。slug/ja は不要。
     if args.extract_bundle:
         return run_extract_bundle(Path(args.extract_bundle).expanduser(), args.lang)
+
+    # M3 render_ja_page 検証（read-only）。slug/ja は不要。
+    if args.render_ja:
+        if not args.spec:
+            ap.error("--render-ja は --spec が必須")
+        return run_render_ja(Path(args.render_ja).expanduser(),
+                             Path(args.spec).expanduser(), args.idx, args.lang)
 
     # Step3a 注入モード。--ja は不要（EN 正本 JSON への注入のみ）。
     if args.update_en_json:
