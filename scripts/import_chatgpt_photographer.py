@@ -667,14 +667,17 @@ def _extract_sections(body: str) -> list:
             break
         outer, inner, pos = sl
         num_m = re.search(r'ph-section__num">([^<]*)<', inner)
-        name_m = re.search(r'ph-section__name">([^<]*)<', inner)
+        # 見出しが <span class="ph-section__name"><span>名前</span></span> のように
+        # ネスト span で包まれていても拾えるよう、閉じ </span> まで取ってタグ除去する
+        # （素朴な [^<]* だと直後の入れ子 <span> で止まり空文字になる）。
+        name_m = re.search(r'ph-section__name">(.*?)</span>', inner, re.S)
+        name = re.sub(r'<[^>]+>', '', name_m.group(1)).strip() if name_m else None
         num = num_m.group(1).strip() if num_m else ""
         if not SECTION_NUMBERED_RE.search(num):
             continue  # WORKS/REL/REF/SRC/IMAGE LINKS 等は本文節ではない
         bb = slice_by_class(inner, "div", "ph-section__body")
         blocks = (bb[1] if bb else inner).strip()
-        out.append({"title": name_m.group(1).strip() if name_m else None,
-                    "blocks_html": blocks})
+        out.append({"title": name or None, "blocks_html": blocks})
     if not out:  # Family A: 単一 essay
         essay = slice_by_class(body, "div", "essay")
         if essay:
