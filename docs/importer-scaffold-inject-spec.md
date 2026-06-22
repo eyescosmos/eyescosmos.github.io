@@ -234,6 +234,34 @@ builder が `name="viewport"` 等を見つけられず **EN ビルドが "no vie
 - 現 `import_chatgpt_photographer.py` の `extract_en_candidate_fields()`：Family B(ph-*)抽出の現行版。
   sources取りこぼしバグ（付録3.3）の監査対象
 
+## 12. 既存ページ更新モード（A=carry-forward / B=spec自動導出 / D=差分・read-only）
+更新案件（既存写真家の本文を新素材へ差し替え）は、scaffold-inject が再生成のため新素材に
+無い手キュレーション資産（§REF/further・Period・description・EN external_links/photobooks）を
+取りこぼす。これを逐次 WARN/FAIL で踏んで気づくループを潰すため、`--update-existing`（現状
+read-only / dry-run のみ）を用意：
+- **B**：`derive_spec_from_existing(slug)` が card-data（同一性・taxonomy）＋既存ページ
+  （years/countryJa/**period**/movements）から spec を自動導出。spec 手組みが不要に。
+- **D**：`_ja_metrics` で本文字数・unique出典・sup-ref(+dangling)・§REL件数・作品リンクを
+  既存→新で並べ、痩せ細りを一目で判定（生 sup-ref 数の増減に振り回されない＝過剰検証を不要化）。
+- **A**：§REF が既存=実リンク／新=「準備中」なら「引き継ぐ」と明示。Period・description の
+  扱い、EN の external_links_html/photobooks_html を1ショット表示。
+- **未実装（要承認・後続）**：carry-forward の**実適用**書込と、C＝EN 全フィールドマージ
+  （`--update-en-json` の全フィールド版）。現状は計画提示まで。
+
+## 13. 素材生成チェックリスト（ChatGPT プロンプトへ反映 = 摩擦の源流カット）
+素材側を締めると下流の手作業が消える。新素材を作る際は以下を満たす：
+- **§ REF / further-reading を必ず含める**（関連DB・アーカイブ・インタビュー等の外部リンク）。
+  無いと更新時に既存 §REF の carry-forward が要る。←今日の残手作業①の源流。
+- **works リンクのラベルは英語名を併記**（特に美術館の展覧会名。例「光―呼吸 そこにいる、
+  そこにいない」→「Photo-Respiration: Presence or Absence」）。JA固有名のままだと EN ビルドで
+  `untranslated works label` 警告＋ui-terms 追加が要る。←今日の残手作業②の源流。
+- **meta description を入れる**（hero説明 or lead 要約）。無くても engine が lead から導出するが、
+  明示があれば意図どおりの説明になる。
+- **section 名は素のテキスト**（`<span class="ph-section__name">背景と時代</span>`。`<span><span>…
+  </span></span>` のネストは避ける）。※現在は抽出器がネストも許容するが、素のほうが安全。
+- **関連写真家/運動は正式名**（slug が引ける表記）。de-link を減らせる。
+- 出典は `id="cite-N"`、本文参照は `href="#cite-N"` で対応させる（既存ルール）。
+
 ## 付録E：Codex/Daisuke との合意済み判断
 - ContentBundle は JA/EN 共通中間表現。`source_lang` + 言語別必須検証で分ける。
 - `build_sections_and_toc` は密結合importせず、importer最小実装＋同出力テスト→安定後に共通化。

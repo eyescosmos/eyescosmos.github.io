@@ -1309,6 +1309,146 @@ def run_bundle_to_en(material: Path, slug: str | None, lang: str | None) -> int:
     return 0
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# 既存ページ更新モード（A=carry-forward 計画 / B=spec 自動導出 / D=フィデリティ差分）
+#
+# 既存写真家の本文を新素材へ差し替える更新案件向け。read-only（--dry-run のみ）。
+# scaffold-inject は再生成なので、新素材に無い手キュレーション資産（§REF/further・
+# Period・description 等）を既存ページから引き継ぐ「計画」と、痩せ細りを一目で判じる
+# 「差分」を1ショットで出す。逐次に WARN/FAIL を踏んで気づくループを潰すのが狙い。
+# 書込（carry-forward 適用）と EN 全フィールドマージは後続フェーズ（要承認）。
+# ─────────────────────────────────────────────────────────────────────────────
+
+def derive_spec_from_existing(slug: str) -> dict:
+    """card-data.json（同一性・taxonomy）＋ 既存 photographers/<slug>.html（years/
+    countryJa/period/movements）から render_ja_page 用の spec を自動導出する（B）。"""
+    cd = json.loads(CARD_DATA.read_text(encoding="utf-8"))
+    card = next((p for p in cd.get("photographers", []) if p.get("id") == slug), None)
+    if not card:
+        raise SystemExit(f"card-data.json に slug が無い: {slug}")
+    page = JA_DIR / f"{slug}.html"
+    html = page.read_text(encoding="utf-8") if page.exists() else ""
+
+    def g1(pat: str, default: str = "") -> str:
+        m = re.search(pat, html, re.S)
+        return re.sub(r"<[^>]+>", "", m.group(1)).strip() if m else default
+
+    years = g1(r'ph-hero__years">([^<]*)<')
+    country = g1(r'Country<strong>([^<]*)<')
+    period = g1(r'Period<strong>([^<]*)<')
+    channel = g1(r'Channel<strong>([^<]*)<') or card.get("channel", "")
+    mv = g1(r'<dt>Movement</dt><dd>(.*?)</dd>')
+    movements = [] if mv in ("", "—") else [m.strip() for m in re.split(r"[・,]", mv) if m.strip()]
+
+    spec = {
+        "id": slug,
+        "nameJa": card["nameJa"], "nameEn": card["nameEn"],
+        "years": years or card.get("years", ""),
+        "nationality": card["nationality"],
+        "countryJa": country, "era": card["era"],
+        "channel": channel, "tags": card.get("tags") or [],
+        "style": card.get("style", "pc-top--kanji"),
+        "artText": card.get("artText", ""),
+        "ledeShortJa": card.get("ledeJa", ""),
+        "movements": movements,
+    }
+    if period:  # 手キュレーション Period を保持（無ければ scaffold が era 由来へ）
+        spec["period"] = period
+    return spec
+
+
+def _section_body(html: str, marker: str) -> str:
+    """§ マーカー（例 '§ REF'）の ph-section__body 内側 HTML を返す。"""
+    m = re.search(re.escape(marker) + r"<.*?ph-section__body\">(.*?)</section>", html, re.S)
+    return m.group(1) if m else ""
+
+
+def _ja_metrics(html: str) -> dict:
+    """痩せ細りを判じるためのページ指標（D）。"""
+    suprefs = re.findall(r'href="#cite-(\d+)"', html)
+    cites = set(re.findall(r'id="cite-(\d+)"', html))
+    body_chars = 0
+    for m in re.finditer(r'ph-section__num">§ \d[^<]*<.*?ph-section__body\">(.*?)</section>',
+                         html, re.S):
+        body_chars += len(re.sub(r"<[^>]+>", "", m.group(1)).strip())
+    ref = _section_body(html, "§ REF")
+    return {
+        "body_chars": body_chars,
+        "unique_cites": len(cites),
+        "suprefs": len(suprefs),
+        "dangling": sorted(set(suprefs) - cites, key=lambda s: int(s)),
+        "rel_items": _section_body(html, "§ REL").count("<li"),
+        "works_links": _section_body(html, "§ WORKS").count("<a "),
+        "ref_links": 0 if ("prep-block" in ref or "準備中" in ref) else ref.count("<a "),
+        "ref_is_prep": ("prep-block" in ref or "準備中" in ref),
+    }
+
+
+def run_update_existing(slug: str, ja_path: Path, en_path: Path | None) -> int:
+    """既存ページ更新モード dry-run: spec 自動導出 → 新 render → 既存との差分と
+    carry-forward 計画を1ショットで表示（read-only・書込なし）。"""
+    page = JA_DIR / f"{slug}.html"
+    if not page.exists():
+        sys.stderr.write(f"ERROR: 既存ページが無い（新規は通常フロー）: {page}\n")
+        return 2
+    if not ja_path.exists():
+        sys.stderr.write(f"ERROR: JA 素材が無い: {ja_path}\n")
+        return 2
+
+    spec = derive_spec_from_existing(slug)
+    old_html = page.read_text(encoding="utf-8")
+    bundle, _info = extract_bundle(ja_path.read_text(encoding="utf-8", errors="replace"),
+                                   "ja", slug=slug)
+    try:
+        new_html = render_ja_page(bundle, spec)
+    except BundleIncomplete as e:
+        sys.stderr.write(f"ERROR: {e}\n")
+        return 1
+    o, n = _ja_metrics(old_html), _ja_metrics(new_html)
+
+    print(f"── 既存ページ更新モード (dry-run): {slug} ──")
+    print("[B] 導出 spec（card-data + 既存ページ）:")
+    print(f"    years={spec['years']!r} country={spec['countryJa']!r} "
+          f"era={spec['era']} period={spec.get('period','(era由来)')!r}")
+    print(f"    channel={spec['channel']!r} tags={spec['tags']} movements={spec['movements']}")
+
+    print("[D] フィデリティ差分（既存 → 新 render）:")
+    print(f"    本文(§body) : {o['body_chars']:>6} → {n['body_chars']:>6} 字")
+    print(f"    unique出典  : {o['unique_cites']:>6} → {n['unique_cites']:>6}")
+    print(f"    sup-ref     : {o['suprefs']:>6} → {n['suprefs']:>6}   dangling(新)={n['dangling'] or 'なし'}")
+    print(f"    関連(§REL)  : {o['rel_items']:>6} → {n['rel_items']:>6} 件")
+    print(f"    作品リンク  : {o['works_links']:>6} → {n['works_links']:>6}")
+    for label, ov, nv in (("本文", o["body_chars"], n["body_chars"]),
+                          ("unique出典", o["unique_cites"], n["unique_cites"])):
+        if nv < ov:
+            print(f"    ⚠ {label} が減少（{ov}→{nv}）= 痩せ細りの可能性。要確認")
+
+    print("[A] carry-forward 計画（新素材に無く既存から引き継ぐ）:")
+    plan = []
+    if o["ref_links"] and n["ref_is_prep"]:
+        plan.append(f"§REF/further : 既存{o['ref_links']}件 → 新「準備中」 ⇒ 既存を引き継ぐ")
+    if spec.get("period"):
+        plan.append(f"Period       : {spec['period']}（spec.period で保持済）")
+    desc = _derive_meta_description(spec, bundle)
+    plan.append(f"description  : {'lead 由来で自動充填' if desc else '導出不可＝要手記入'}"
+                + (f"（{desc[:32]}…）" if desc else ""))
+    if en_path and CONTENT_JSON.exists():
+        pages = json.loads(CONTENT_JSON.read_text(encoding="utf-8")).get("pages", {})
+        cur = pages.get(f"{slug}.html", {})
+        for k in ("external_links_html", "photobooks_html", "further_reading_html",
+                  "notable_works_html", "entry_meta_html"):
+            v = cur.get(k)
+            if v:
+                plan.append(f"[EN] {k} : 既存{len(v)}字 ⇒ C(EN全フィールドマージ)で保全予定")
+    for p in plan:
+        print(f"    • {p}")
+
+    print("[残る手作業] §REF/further の確定貼り・works 固有名の ui-terms 追加")
+    print("書込なし（--update-existing は現状 dry-run のみ。carry-forward 適用と "
+          "EN マージは後続フェーズ＝要承認）")
+    return 0
+
+
 def extract_en_fragment(en_html: str, slug: str) -> tuple[dict, dict]:
     """importer の --en パス用ラッパ。候補フィールド抽出を呼び、人手移植用の
     プレビュー断片に整形する（返り値の契約は v1 と互換＋候補フィールドを同梱）。"""
@@ -1846,7 +1986,19 @@ def main(argv=None) -> int:
     ap.add_argument("--bundle-to-en", metavar="PATH",
                     help="M5 検証（read-only）: EN 素材から bundle→en-content エントリを "
                          "生成し JSON を stdout 出力（正本 JSON 不可触）")
+    ap.add_argument("--update-existing", action="store_true",
+                    help="既存ページ更新モード（read-only / dry-run のみ）: spec を card-data+"
+                         "既存ページから自動導出し、新素材 render との差分と carry-forward 計画を"
+                         "表示（--slug と --ja 必須・--en 任意。書込なし）")
     args = ap.parse_args(argv)
+
+    # 既存ページ更新モード（read-only / dry-run）。spec 自動導出・書込なし。
+    if args.update_existing:
+        if not args.slug or not args.ja:
+            ap.error("--update-existing は --slug と --ja が必須")
+        return run_update_existing(
+            args.slug, Path(args.ja).expanduser(),
+            Path(args.en).expanduser() if args.en else None)
 
     # 監査モード（read-only）。slug/ja は不要。
     if args.audit_corpus:
