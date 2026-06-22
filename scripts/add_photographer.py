@@ -272,7 +272,9 @@ def _scaffold_body(spec: dict, idx) -> str:
     entry_no = f"{int(idx):03d}" if str(idx).isdigit() else str(idx)
     kw = tags[0] if tags else ""
     era = spec["era"]
-    period = f"{era}年代"
+    # 活動期が era と一致しないとき spec.period で手キュレーション範囲を指定できる
+    # （例 "1980–1990s"）。未指定は era 由来にフォールバック（既存挙動・byte不変）。
+    period = spec.get("period") or f"{era}年代"
     updated = date.today().strftime("%Y.%m.%d")
 
     kw_chips = "\n        ".join(f'<span class="ph-kw">{t}</span>' for t in tags) or \

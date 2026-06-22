@@ -1006,6 +1006,38 @@ def _inject_abstract_thesis(html: str, lead: str | None, thesis: str | None) -> 
         r'</div>\s*<p></p>\s*</div>', lambda _m: new, html, count=1)
 
 
+def _derive_meta_description(spec: dict, bundle: dict, limit: int = 155) -> str:
+    """description を決める。spec.meta_description があれば最優先（手キュレーション）、
+    無ければ bundle の lead 本文から導出（タグ除去→句点で自然に切る）。捏造はしない
+    （素材本文の範囲のみ）。空なら空文字を返し、注入側は据え置く。"""
+    desc = (spec.get("meta_description") or "").strip()
+    if desc:
+        return desc
+    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", bundle.get("lead_inner_html") or "")).strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    for sep in ("。", "．", ". "):
+        i = cut.rfind(sep)
+        if i >= limit * 0.5:
+            return cut[: i + len(sep)].strip()
+    return cut.rstrip() + "…"
+
+
+def _inject_description(html: str, desc: str) -> str:
+    """scaffold が空白化した description / og:description / twitter:description を埋める。
+    desc が空なら何もしない（scaffold の空タグを残す＝従来挙動）。"""
+    if not desc:
+        return html
+    esc = (desc.replace("&", "&amp;").replace('"', "&quot;")
+               .replace("<", "&lt;").replace(">", "&gt;"))
+    for pat in (r'(<meta name="description" content=")(")',
+                r'(<meta property="og:description" content=")(")',
+                r'(<meta name="twitter:description" content=")(")'):
+        html = re.sub(pat, lambda m: m.group(1) + esc + m.group(2), html, count=1)
+    return html
+
+
 def _inject_movement(html: str, movement_label: str | None) -> str:
     if not movement_label:
         return html
@@ -1071,6 +1103,9 @@ def render_ja_page(bundle: dict, spec: dict, idx=None) -> str:
     idx = idx if idx is not None else spec.get("idx")
     html = build_scaffold_html(spec, idx)
 
+    # description（scaffold は捏造回避で空白化する）→ spec.meta_description 優先・
+    # 無ければ lead から導出して name/og/twitter description を埋める
+    html = _inject_description(html, _derive_meta_description(spec, bundle))
     # lead + thesis（scaffold は ph-thesis を持たないのでブロックごと注入）
     html = _inject_abstract_thesis(html, bundle.get("lead_inner_html"),
                                    bundle.get("thesis_inner_html"))
