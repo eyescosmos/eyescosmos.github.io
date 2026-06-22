@@ -50,6 +50,9 @@ SUPPLEMENT = REPO / "data/photographers-supplement.js"
 STAR_BIN = REPO / "design/toptest-assets/d369d828-79e5-4719-ae51-89a0c1b743d0.bin"
 # scaffold のコピー元は参照実装で固定（winogrand は薄い型なので使わない）
 SCAFFOLD_BASE = REPO / "photographers/ansel-adams.html"
+
+sys.path.insert(0, str(REPO / "scripts"))
+from build_taxonomy_en import STUB_TO_SLUG  # noqa: E402  JA運動名→ENスラッグ（main ガード済み）
 SITE = "https://eyescosmos.github.io"
 
 REQUIRED = [
@@ -600,7 +603,14 @@ def plan_surfaces(spec: dict) -> None:
     print(f"  en/archive.html              : python3 scripts/build_archive_en.py")
     print(f"  en/eras/{era}.html            : python3 scripts/build_taxonomy_en.py --era {era}")
     for mv in movements:
-        print(f"  en/movements/(対応slug).html : python3 scripts/build_taxonomy_en.py --slug {mv}")
+        # build_taxonomy_en --slug は EN slug を要求する（JA名は unknown movement slug で拒否）
+        en_slug = STUB_TO_SLUG.get(mv)
+        if en_slug:
+            print(f"  en/movements/{en_slug}.html : "
+                  f"python3 scripts/build_taxonomy_en.py --slug {en_slug}")
+        else:
+            print(f"  [要確認] movements/{mv}.html → EN slug が STUB_TO_SLUG 未登録。"
+                  f"build_taxonomy_en は EN slug を要求するためコマンド省略（マッピング追加が必要）")
     country_slugs = resolve_country_slugs(spec["nationality"])
     if country_slugs:
         flags = " ".join(f"--country {s}" for s in country_slugs)
