@@ -460,6 +460,360 @@ def extract_en_candidate_fields(en_html: str, slug: str) -> tuple[dict, dict]:
     return fields, meta
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# M2: 役割ベース抽出器 extract_bundle — ContentBundle 中間表現（JA/EN 共用）
+#
+# docs/importer-scaffold-inject-spec.md §2,§3。素材の outer layout / sidebar /
+# nav / §マーカー名 / head 属性順は「読まない・信用しない」。役割は内側クラス
+# （ph-abstract / ph-thesis__body / ph-section / ph-works-links / ph-rel-list /
+#  ph-book / ph-cite …）と cite-N の id で判定する。
+#
+# 既知バグの是正（§3.3）: 旧 _extract_family_b は SRC 節を「num に 'SRC' を含む」で
+# 判定していたため、素材の見出しが「§ SOURCES」だと "SRC" not in "SOURCES" で取り
+# こぼし sources_html=None になっていた（細倉EN・cite 28件あるのに空）。本抽出器は
+# 節マーカー名を一切見ず、本文中の id="cite-N" を直接拾うので影響を受けない。
+# ─────────────────────────────────────────────────────────────────────────────
+
+# §2「中断ライン」= 一次抽出で取れなければ空埋めせず中断する必須フィールド。
+BUNDLE_REQUIRED_COMMON = ["years", "lead_inner_html", "thesis_inner_html",
+                          "sections", "sources"]
+
+
+def required_fields_for(lang: str) -> list[str]:
+    """言語別の必須フィールド集合（§2: 検証を言語別に分ける）。"""
+    name = "name_ja" if lang == "ja" else "name_en"
+    return [name] + BUNDLE_REQUIRED_COMMON
+
+
+class BundleIncomplete(Exception):
+    """必須フィールドが一次抽出で取れず中断（空埋め禁止・§3.4 fail-loud）。"""
+
+    def __init__(self, slug: str | None, missing: list[str]):
+        self.slug, self.missing = slug, missing
+        super().__init__(
+            f"{slug or '<material>'}: 必須フィールド欠落（空埋め禁止）: "
+            f"{', '.join(missing)}")
+
+
+def _slice_element(html: str, start: int, tag: str) -> str:
+    """`start`（開きタグ先頭）から同名タグの入れ子を数えて閉じまで切り出す。"""
+    scan_re = re.compile(r'<%s\b|</%s>' % (tag, tag), re.I)
+    depth = 0
+    for t in scan_re.finditer(html, start):
+        if t.group(0).startswith("</"):
+            depth -= 1
+            if depth == 0:
+                return html[start:t.end()]
+        else:
+            depth += 1
+    return html[start:]  # 閉じ欠け
+
+
+def _slug_from_href(href: str) -> str | None:
+    """`/photographers/x.html` / `/en/photographers/x.html` → `x`。"""
+    href = href.split("#", 1)[0].split("?", 1)[0]
+    m = re.search(r'/([^/]+)\.html$', href)
+    return m.group(1) if m else None
+
+
+def _first_anchor(html: str):
+    """ネスト（div/span/二重span）に関わらず最初の <a href>…</a> を1つ返す。"""
+    return re.search(r'<a\b[^>]*\bhref="[^"]*"[^>]*>.*?</a>', html, re.S)
+
+
+def _extract_hero(body: str, lang: str) -> dict:
+    nm = slice_by_class(body, "h1", "ph-hero__name")
+    hero_name = norm_text(nm[1]) if nm else None
+    years, other = None, None
+    en = slice_by_class(body, "div", "ph-hero__en")
+    if en:
+        ym = re.search(r'ph-hero__years">(.*?)</span>', en[1], re.S)
+        years = ym.group(1).strip() if ym else None
+        txt = re.sub(r'<span class="ph-hero__years">.*?</span>', "", en[1], flags=re.S)
+        other = norm_text(txt) or None
+    # JA 素材: ph-hero__name=和名 / ph-hero__en テキスト=英名。
+    # EN 素材: ph-hero__name=英名 / ph-hero__en テキストも英名（同一になりがち）。
+    if lang == "ja":
+        return {"name_ja": hero_name, "name_en": other, "years": years}
+    return {"name_ja": (other if other and other != hero_name else None),
+            "name_en": hero_name, "years": years}
+
+
+def _extract_lead(body: str) -> str | None:
+    ab = slice_by_class(body, "div", "ph-abstract")
+    if ab:
+        inner = re.sub(r'<div class="ph-abstract__label">.*?</div>', "",
+                       ab[1], flags=re.S)
+        p = re.search(r'<p\b[^>]*>(.*?)</p>', inner, re.S)
+        return p.group(1).strip() if p else (norm_text(inner) or None)
+    lead = slice_by_class(body, "p", "lead")  # Family A
+    return lead[1].strip() if lead else None
+
+
+def _extract_thesis(body: str) -> str | None:
+    tb = slice_by_class(body, "p", "ph-thesis__body")
+    if tb:
+        return tb[1].strip()
+    th = slice_by_class(body, "div", "ph-thesis")
+    if th:
+        p = re.search(r'<p\b[^>]*>(.*?)</p>', th[1], re.S)
+        if p:
+            return p.group(1).strip()
+    return None
+
+
+def _extract_keywords(body: str) -> list:
+    kw = slice_by_class(body, "div", "ph-keywords")
+    if not kw:
+        return []
+    return [norm_text(x) for x in
+            re.findall(r'<span class="ph-kw">(.*?)</span>', kw[1], re.S)
+            if norm_text(x)]
+
+
+def _extract_works(body: str) -> list:
+    wl = slice_by_class(body, "div", "ph-works-links")
+    out = []
+    if wl:
+        for a in re.finditer(r'<a\b[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>', wl[1], re.S):
+            label = norm_text(a.group(2)).rstrip(" ↗").strip()
+            out.append({"label": label, "url": a.group(1)})
+    return out
+
+
+def _parse_rel_item(html: str) -> dict:
+    a = _first_anchor(html)
+    if a:
+        href = re.search(r'href="([^"]*)"', a.group(0)).group(1)
+        slug = _slug_from_href(href)
+        name = norm_text(re.sub(r'</?a\b[^>]*>', "", a.group(0)))
+        reason = norm_text(html[a.end():]).lstrip("—–- ").strip()
+    else:  # de-link 済み（slug=None で保持・§3.3）
+        parts = re.split(r'\s[—–-]\s', norm_text(html), 1)
+        slug = None
+        name = parts[0].strip()
+        reason = parts[1].strip() if len(parts) > 1 else ""
+    return {"slug": slug, "name": name, "reason": reason}
+
+
+def _extract_related(body: str):
+    people, movements = [], []
+    pos = 0
+    while True:
+        sl = slice_by_class(body, "ul", "ph-rel-list", pos)
+        if not sl:
+            break
+        outer, inner, pos = sl
+        is_mv = "ph-rel-movements" in outer[:outer.find(">")]
+        items = [_parse_rel_item(li.group(1))
+                 for li in re.finditer(r'<li\b[^>]*>(.*?)</li>', inner, re.S)]
+        (movements if is_mv else people).extend(items)
+    return people, movements
+
+
+def _extract_books(body: str) -> list:
+    out, pos = [], 0
+    while True:
+        sl = slice_by_class(body, "div", "ph-book", pos)
+        if not sl:
+            break
+        outer, inner, pos = sl
+        title = slice_by_class(inner, "div", "ph-book__title")
+        meta = slice_by_class(inner, "div", "ph-book__meta")
+        note = slice_by_class(inner, "div", "ph-book__note")
+        cta = re.search(
+            r'<a\b[^>]*class="[^"]*ph-book-cta[^"]*"[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>',
+            inner, re.S)
+        out.append({
+            "title_html": title[1].strip() if title else None,
+            "meta": norm_text(meta[1]) if meta else None,
+            "note": note[1].strip() if note else None,
+            "cta_url": cta.group(1) if cta else None,
+            "cta_label": norm_text(cta.group(2)) if cta else None,
+        })
+    return out
+
+
+def _extract_further_links(body: str) -> list:
+    fl = slice_by_class(body, "ul", "ph-further-links")
+    out = []
+    if fl:
+        for a in re.finditer(r'<a\b[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>', fl[1], re.S):
+            out.append({"label": norm_text(a.group(2)), "url": a.group(1)})
+    return out
+
+
+def _extract_sections(body: str) -> list:
+    out, pos = [], 0
+    while True:
+        sl = slice_by_class(body, "section", "ph-section", pos)
+        if not sl:
+            break
+        outer, inner, pos = sl
+        num_m = re.search(r'ph-section__num">([^<]*)<', inner)
+        name_m = re.search(r'ph-section__name">([^<]*)<', inner)
+        num = num_m.group(1).strip() if num_m else ""
+        if not SECTION_NUMBERED_RE.search(num):
+            continue  # WORKS/REL/REF/SRC/IMAGE LINKS 等は本文節ではない
+        bb = slice_by_class(inner, "div", "ph-section__body")
+        blocks = (bb[1] if bb else inner).strip()
+        out.append({"title": name_m.group(1).strip() if name_m else None,
+                    "blocks_html": blocks})
+    if not out:  # Family A: 単一 essay
+        essay = slice_by_class(body, "div", "essay")
+        if essay:
+            out.append({"title": None, "blocks_html": essay[1].strip()})
+    return out
+
+
+def _extract_sources(body: str) -> list:
+    """本文中の id="cite-N" を持つ要素を役割として直接拾う（§マーカー名を見ない）。
+    内側マークアップ寛容（§3.3）: num が div/span いずれでも、アンカーがネストでも
+    最初の <a href>…</a> を1つ抜く。"""
+    out = []
+    for m in re.finditer(r'<(div|li|p)\b[^>]*\bid="cite-(\d+)"[^>]*>', body):
+        tag, num = m.group(1), int(m.group(2))
+        block = _slice_element(body, m.start(), tag)
+        a = _first_anchor(block)
+        out.append({"num": num, "anchor_html": a.group(0).strip() if a else None})
+    out.sort(key=lambda d: d["num"])
+    return out
+
+
+def _extract_meta(full_html: str) -> dict:
+    t = re.search(r'<title>(.*?)</title>', full_html, re.S)
+    d = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', full_html)
+    cm = slice_by_class(full_html, "dl", "ph-entry-meta")
+    country = None
+    if cm:
+        cm2 = re.search(r'<dt>Country</dt>\s*<dd>(.*?)</dd>', cm[1], re.S)
+        if cm2:
+            country = norm_text(cm2.group(1)) or None
+    return {
+        "title": norm_text(t.group(1)) if t else None,
+        "meta_description": d.group(1) if d else None,
+        "country_ja": country,
+    }
+
+
+ROLE_HEADING_HINTS = {
+    "sources": ("source", "出典", "reference"),
+    "related": ("related", "関連"),
+    "works": ("works", "作品"),
+    "further": ("books", "further", "さらに読む", "reading", "参考"),
+    "lead": ("lead", "summary", "導入", "abstract", "概要"),
+    "thesis": ("thesis", "changed", "変えた"),
+}
+
+
+def _secondary_review(body: str, bundle: dict) -> list:
+    """§3.2 二次フォールバック: 一次が空の役割について見出しテキストで領域を推定し、
+    review 注記だけ出す（自動採用しない・section を推測で作らない）。"""
+    heads = re.findall(r'ph-section__num">([^<]*)<|ph-section__name">([^<]*)<'
+                       r'|<h[23]\b[^>]*>(.*?)</h[23]>', body, re.S)
+    htexts = [norm_text(a or b or c) for a, b, c in heads]
+    empty = {
+        "sources": not bundle["sources"],
+        "related": not (bundle["related_people"] or bundle["related_movements"]),
+        "works": not bundle["works"],
+        "further": not (bundle["further_books"] or bundle["further_links"]),
+        "lead": not bundle["lead_inner_html"],
+        "thesis": not bundle["thesis_inner_html"],
+    }
+    notes = []
+    for role, hints in ROLE_HEADING_HINTS.items():
+        if not empty.get(role):
+            continue
+        for ht in htexts:
+            if ht and any(h in ht.lower() for h in hints):
+                notes.append(f"二次シグナル: 見出し '{ht}' は {role} らしいが一次抽出が空。"
+                             f"自動採用せず要確認")
+                break
+    return notes
+
+
+def extract_bundle(raw_html: str, source_lang: str,
+                   slug: str | None = None) -> tuple[dict, dict]:
+    """素材 HTML（単一言語）から ContentBundle を抽出（§2 スキーマ）。
+    返り値: (bundle, info)。info は delinked / checks / review / _unresolved を持つ。
+    必須欠落は info['_unresolved'] に列挙（中断は assert_bundle_complete で行う＝
+    抽出は純粋関数のまま・監査は中断せず観測できる）。"""
+    if source_lang not in ("ja", "en"):
+        raise ValueError(f"source_lang は 'ja' / 'en' のみ: {source_lang!r}")
+    cleaned = unwrap_rev_spans(strip_edit_red(strip_review_css(raw_html)))
+    delinked: list[str] = []
+    if source_lang == "en":
+        cleaned, delinked = localize_en_links(cleaned)
+    body = _body_of(cleaned)
+    checks = self_check(cleaned, context=source_lang.upper())
+
+    hero = _extract_hero(body, source_lang)
+    people, movements = _extract_related(body)
+    sources = _extract_sources(body)
+    bundle = {
+        "source_lang": source_lang,
+        "slug": slug,
+        "name_ja": hero["name_ja"],
+        "name_en": hero["name_en"],
+        "years": hero["years"],
+        "lead_inner_html": _extract_lead(body),
+        "thesis_inner_html": _extract_thesis(body),
+        "keywords": _extract_keywords(body),
+        "works": _extract_works(body),
+        "sections": _extract_sections(body),
+        "related_people": people,
+        "related_movements": movements,
+        "further_books": _extract_books(body),
+        "further_links": _extract_further_links(body),
+        "sources": sources,
+        "cite_ids": sorted({s["num"] for s in sources}),
+        "supref_ids": sorted({int(x) for x in SUPREF_RE.findall(body)}),
+    }
+    bundle.update(_extract_meta(cleaned))
+
+    missing = []
+    for f in required_fields_for(source_lang):
+        v = bundle.get(f)
+        if f == "sections":
+            if not v:
+                missing.append("sections>=1")
+        elif f == "sources":
+            if not v:
+                missing.append("sources>=1")
+        elif not (v and str(v).strip()):
+            missing.append(f)
+
+    info = {
+        "delinked": delinked,
+        "checks": checks,
+        "review": _secondary_review(body, bundle),
+        "_unresolved": missing,
+    }
+    return bundle, info
+
+
+def assert_bundle_complete(bundle: dict, info: dict, slug: str | None = None) -> None:
+    """§3.4 fail-loud 契約: 必須欠落があれば BundleIncomplete を送出して中断。
+    render_ja_page / bundle_to_en_entry はこのゲートを通してから生成する。"""
+    if info.get("_unresolved"):
+        raise BundleIncomplete(slug or bundle.get("slug"), info["_unresolved"])
+
+
+def run_extract_bundle(path: Path, lang: str | None) -> int:
+    """M2 検証用 read-only エントリ: 単一素材から bundle を抽出し JSON を stdout 出力。
+    正本・HTML には一切書かない。"""
+    if not path.exists():
+        sys.stderr.write(f"ERROR: 素材が見つからない: {path}\n")
+        return 2
+    if lang is None:
+        lang = "en" if EN_FILE_RE.search(path.name) else "ja"
+    html = path.read_text(encoding="utf-8", errors="replace")
+    bundle, info = extract_bundle(html, lang, slug=path.stem)
+    print(json.dumps({"lang": lang, "bundle": bundle, "info": info},
+                     ensure_ascii=False, indent=2))
+    return 0
+
+
 def extract_en_fragment(en_html: str, slug: str) -> tuple[dict, dict]:
     """importer の --en パス用ラッパ。候補フィールド抽出を呼び、人手移植用の
     プレビュー断片に整形する（返り値の契約は v1 と互換＋候補フィールドを同梱）。"""
@@ -984,11 +1338,20 @@ def main(argv=None) -> int:
     ap.add_argument("--update-en-json", action="store_true",
                     help="Step3a: EN 素材の thesis を data/photographers-en-stage4.json へ最小注入"
                          "（--apply 二重明示で実書込・atomic・非劣化検証。--slug と --en 必須）")
+    ap.add_argument("--extract-bundle", metavar="PATH",
+                    help="M2 検証（read-only）: 単一素材から ContentBundle を抽出し JSON を "
+                         "stdout 出力（正本・HTML は不可触）")
+    ap.add_argument("--lang", choices=("ja", "en"),
+                    help="--extract-bundle の素材言語（省略時はファイル名から推定）")
     args = ap.parse_args(argv)
 
     # 監査モード（read-only）。slug/ja は不要。
     if args.audit_corpus:
         return run_audit(Path(args.audit_corpus).expanduser())
+
+    # M2 bundle 抽出検証（read-only）。slug/ja は不要。
+    if args.extract_bundle:
+        return run_extract_bundle(Path(args.extract_bundle).expanduser(), args.lang)
 
     # Step3a 注入モード。--ja は不要（EN 正本 JSON への注入のみ）。
     if args.update_en_json:
