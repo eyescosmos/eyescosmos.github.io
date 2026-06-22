@@ -485,6 +485,22 @@ def required_fields_for(lang: str) -> list[str]:
     return [name] + BUNDLE_REQUIRED_COMMON
 
 
+def _missing_required(bundle: dict, lang: str) -> list[str]:
+    """中断ライン（§2）の欠落フィールドを列挙。sections/sources は件数で判定。"""
+    miss = []
+    for f in required_fields_for(lang):
+        v = bundle.get(f)
+        if f == "sections":
+            if not v:
+                miss.append("sections>=1")
+        elif f == "sources":
+            if not bundle.get("sources"):
+                miss.append("sources>=1")
+        elif not (v and str(v).strip()):
+            miss.append(f)
+    return miss
+
+
 class BundleIncomplete(Exception):
     """必須フィールドが一次抽出で取れず中断（空埋め禁止・§3.4 fail-loud）。"""
 
@@ -680,9 +696,19 @@ def _extract_sources(body: str) -> list:
     return out
 
 
+def _meta_content(full_html: str, name: str) -> str | None:
+    """<meta name="X" content="Y"> を属性順非依存で拾う（content 先頭でも可・§付録C）。"""
+    for m in re.finditer(r'<meta\b[^>]*>', full_html):
+        tag = m.group(0)
+        if re.search(r'name="%s"' % re.escape(name), tag):
+            cm = re.search(r'content="([^"]*)"', tag)
+            if cm:
+                return cm.group(1)
+    return None
+
+
 def _extract_meta(full_html: str) -> dict:
     t = re.search(r'<title>(.*?)</title>', full_html, re.S)
-    d = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', full_html)
     cm = slice_by_class(full_html, "dl", "ph-entry-meta")
     country = None
     if cm:
@@ -691,7 +717,7 @@ def _extract_meta(full_html: str) -> dict:
             country = norm_text(cm2.group(1)) or None
     return {
         "title": norm_text(t.group(1)) if t else None,
-        "meta_description": d.group(1) if d else None,
+        "meta_description": _meta_content(full_html, "description"),
         "country_ja": country,
     }
 
@@ -771,17 +797,7 @@ def extract_bundle(raw_html: str, source_lang: str,
     }
     bundle.update(_extract_meta(cleaned))
 
-    missing = []
-    for f in required_fields_for(source_lang):
-        v = bundle.get(f)
-        if f == "sections":
-            if not v:
-                missing.append("sections>=1")
-        elif f == "sources":
-            if not v:
-                missing.append("sources>=1")
-        elif not (v and str(v).strip()):
-            missing.append(f)
+    missing = _missing_required(bundle, source_lang)
 
     info = {
         "delinked": delinked,
@@ -1045,11 +1061,7 @@ def render_ja_page(bundle: dict, spec: dict, idx=None) -> str:
     必須欠落は assert_bundle_complete で中断（空埋め禁止）。"""
     from add_photographer import build_scaffold_html  # import 副作用なし（main ガード済）
 
-    info_required = {f: bundle.get(f) for f in required_fields_for("ja")}
-    missing = [k for k, v in info_required.items()
-               if (k in ("sections",) and not v)
-               or (k == "sources" and not bundle.get("sources"))
-               or (k not in ("sections", "sources") and not (v and str(v).strip()))]
+    missing = _missing_required(bundle, "ja")
     if missing:
         raise BundleIncomplete(spec.get("id"), missing)
 
@@ -1098,6 +1110,164 @@ def run_render_ja(material: Path, spec_path: Path, idx, lang: str | None) -> int
         sys.stderr.write(f"ERROR: {e}\n")
         return 1
     sys.stdout.write(out)
+    return 0
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# M5: bundle_to_en_entry（= Step3b）— EN bundle を en-content.json の page dict へ
+#
+# docs/importer-scaffold-inject-spec.md §7 / 付録A。build_photographers_en.py が
+# 消費する正フォーマットへ変換する。核心は付録3.3/付録Aの2変換：
+#   - sources: ph-cite → cite-item 形式（`<div class="sources"><div class="cite-item"
+#     id="cite-N"><div class="cite-num">*N</div>{anchor}</div>…</div>`）。ph-cite のまま
+#     だと §SRC 空＋全 sup-ref がプレーン化される。
+#   - related: site-directory-links nav 形式（リンクのみ・reason は EN では落ちる仕様）。
+# 機械生成一本化はしない（HAND_MAINTAINED は手編集維持）。仕上げは
+# build_photographers_en.py --slug X --force。
+# ─────────────────────────────────────────────────────────────────────────────
+
+SITE_URL = "https://eyescosmos.github.io"
+EN_SITE_NAME = "Photo Coordinates"
+
+
+def _en_sections(sections: list) -> list:
+    out = []
+    for sec in sections:
+        body = (sec.get("blocks_html") or "").strip()
+        if not body.startswith('<div class="essay"'):
+            body = '<div class="essay">' + body + '</div>'
+        out.append({"num": None, "title": sec.get("title"), "body_html": body})
+    return out
+
+
+def _en_sources_html(sources: list) -> str | None:
+    items = "".join(
+        f'<div class="cite-item" id="cite-{s["num"]}">'
+        f'<div class="cite-num">*{s["num"]}</div>{s["anchor_html"]}</div>'
+        for s in sources if s.get("anchor_html"))
+    return f'<div class="sources">{items}</div>' if items else None
+
+
+def _en_directory_group(rows: list, base: str, label: str) -> str | None:
+    links = "".join(f'<a href="{base}{r["slug"]}.html">{r["name"]}</a>'
+                    for r in rows if r.get("slug"))  # リンクのみ（de-link は落ちる）
+    if not links:
+        return None
+    return ('        <div class="site-directory-group site-directory-group-contextual">\n'
+            f'          <div class="site-directory-label">{label}</div>\n'
+            f'          <div class="site-directory-items">{links}</div>\n'
+            '        </div>')
+
+
+def _en_site_directory_html(people: list, movements: list) -> str | None:
+    groups = [g for g in (
+        _en_directory_group(people, "/en/photographers/",
+                            "Related people &amp; photographers"),
+        _en_directory_group(movements, "/en/movements/", "Related movements"),
+    ) if g]
+    if not groups:
+        return None
+    return ('<nav class="site-directory-links" aria-label="Site links" data-nosnippet>\n'
+            + "\n".join(groups) + '\n      </nav>')
+
+
+def _en_keywords_html(keywords: list) -> str | None:
+    if not keywords:
+        return None
+    chips = "\n".join(f'<span class="ph-kw">{k}</span>' for k in keywords)
+    return ('<div class="ph-keywords">\n'
+            '<span class="ph-keywords__label">Keywords</span>\n'
+            + chips + '\n</div>')
+
+
+def _en_further_reading_html(books: list, links: list) -> str | None:
+    parts = []
+    for b in books:
+        seg = ['<div class="ph-book">']
+        if b.get("title_html"):
+            seg.append(f'<div class="ph-book__title">{b["title_html"]}</div>')
+        if b.get("meta"):
+            seg.append(f'<div class="ph-book__meta">{b["meta"]}</div>')
+        if b.get("note"):
+            seg.append(f'<div class="ph-book__note">{b["note"]}</div>')
+        if b.get("cta_url"):
+            seg.append(f'<a class="ph-book-cta" href="{b["cta_url"]}" rel="noopener" '
+                       f'target="_blank">{b.get("cta_label") or "Link ↗"}</a>')
+        seg.append('</div>')
+        parts.append("".join(seg))
+    if links:
+        lis = "".join(f'<li><a href="{l["url"]}" rel="noopener" '
+                      f'target="_blank">{l["label"]}</a></li>' for l in links)
+        parts.append(f'<ul class="ph-further-links">{lis}</ul>')
+    return "\n".join(parts) if parts else None
+
+
+def _en_view_works_links_html(works: list) -> str | None:
+    if not works:
+        return None
+    chips = "".join(f'<a class="chip-link" href="{w["url"]}" rel="noopener" '
+                    f'target="_blank">{w["label"]} ↗</a>' for w in works)
+    return f'<div class="ph-works-links">{chips}</div>'
+
+
+def bundle_to_en_entry(bundle: dict, slug: str | None = None) -> dict:
+    """EN bundle を data/photographers-en-content.json の page エントリ dict へ変換。
+    必須欠落は中断（§3.4）。HAND_MAINTAINED の維持は呼び出し側の責務（機械生成一本化
+    はしない）。本文は EN 素材由来で既に英語＝ここでの和→英翻訳・ui-terms 追記は不要。"""
+    slug = slug or bundle.get("slug")
+    missing = _missing_required(bundle, "en")
+    if missing:
+        raise BundleIncomplete(slug, missing)
+
+    title = bundle.get("title") or bundle["name_en"]
+    # description は任意（△）。素材に無ければ lead から導出し builder のクラッシュを防ぐ。
+    desc = bundle.get("meta_description") or norm_text(bundle.get("lead_inner_html")) or ""
+    canonical = f"{SITE_URL}/en/photographers/{slug}.html"
+    ja_url = f"{SITE_URL}/photographers/{slug}.html"
+    return {
+        "h1": bundle["name_en"],
+        "years": bundle.get("years"),
+        "title": title,
+        "meta_description": desc,
+        "has_ga": True,
+        "lead_html": (f'<p class="lead">{bundle["lead_inner_html"]}</p>'
+                      if bundle.get("lead_inner_html") else None),
+        "thesis_label": None,  # builder が "What this photographer changed" を強制
+        "thesis_html": bundle.get("thesis_inner_html"),
+        "keywords_html": _en_keywords_html(bundle.get("keywords")),
+        "sections": _en_sections(bundle.get("sections") or []),
+        "sources_html": _en_sources_html(bundle.get("sources") or []),
+        "site_directory_html": _en_site_directory_html(
+            bundle.get("related_people") or [], bundle.get("related_movements") or []),
+        "further_reading_html": _en_further_reading_html(
+            bundle.get("further_books") or [], bundle.get("further_links") or []),
+        "view_works_links_html": _en_view_works_links_html(bundle.get("works") or []),
+        "view_works_note": None,
+        "cite_ids": bundle.get("cite_ids") or None,
+        "supref_ids": bundle.get("supref_ids") or None,
+        "canonical": canonical,
+        "hreflang": {"ja": ja_url, "en": canonical, "x-default": ja_url},
+        "og": {"type": "article", "site_name": EN_SITE_NAME, "title": title,
+               "description": desc, "url": canonical},
+        "twitter": {"card": "summary", "title": title, "description": desc},
+    }
+
+
+def run_bundle_to_en(material: Path, slug: str | None, lang: str | None) -> int:
+    """M5 検証用 read-only エントリ: EN 素材から bundle→en-content エントリを生成し
+    JSON を stdout 出力（正本 JSON には書かない）。"""
+    if not material.exists():
+        sys.stderr.write(f"ERROR: 素材が見つからない: {material}\n")
+        return 2
+    bundle, _info = extract_bundle(
+        material.read_text(encoding="utf-8", errors="replace"),
+        lang or "en", slug=slug or material.stem)
+    try:
+        entry = bundle_to_en_entry(bundle, slug=slug)
+    except BundleIncomplete as e:
+        sys.stderr.write(f"ERROR: {e}\n")
+        return 1
+    print(json.dumps(entry, ensure_ascii=False, indent=2))
     return 0
 
 
@@ -1635,6 +1805,9 @@ def main(argv=None) -> int:
                          "render_ja_page を実行、JA HTML を stdout 出力（正本・HTML 不可触）")
     ap.add_argument("--spec", metavar="PATH",
                     help="--render-ja の spec.json（taxonomy/同一性を供給）")
+    ap.add_argument("--bundle-to-en", metavar="PATH",
+                    help="M5 検証（read-only）: EN 素材から bundle→en-content エントリを "
+                         "生成し JSON を stdout 出力（正本 JSON 不可触）")
     args = ap.parse_args(argv)
 
     # 監査モード（read-only）。slug/ja は不要。
@@ -1651,6 +1824,11 @@ def main(argv=None) -> int:
             ap.error("--render-ja は --spec が必須")
         return run_render_ja(Path(args.render_ja).expanduser(),
                              Path(args.spec).expanduser(), args.idx, args.lang)
+
+    # M5 bundle_to_en_entry 検証（read-only）。slug/ja は不要。
+    if args.bundle_to_en:
+        return run_bundle_to_en(Path(args.bundle_to_en).expanduser(),
+                                args.slug, args.lang)
 
     # Step3a 注入モード。--ja は不要（EN 正本 JSON への注入のみ）。
     if args.update_en_json:
