@@ -702,6 +702,24 @@ def check_new_photographer_pages() -> None:
                 f"（アーカイブ/星座に出ない。add_photographer.py で投入）")
 
 
+def check_scaffold_inject_determinism() -> None:
+    """importer scaffold-inject の決定論不変条件（M4・合格条件B）。
+    構造の違う2ソースを render_ja_page に食わせ、出力が byte 同一かつ常に正典
+    chrome になることを hermetic に検証する（test_importer_scaffold_inject.py）。
+    決定論で現在グリーンなので HARD（素材の器が出力へ漏れたら push をブロック）。"""
+    path = REPO / "scripts" / "test_importer_scaffold_inject.py"
+    if not path.exists():
+        return
+    proc = subprocess.run([sys.executable, str(path)],
+                          capture_output=True, text=True, cwd=REPO)
+    if proc.returncode != 0:
+        out = (proc.stdout + proc.stderr).strip()
+        tail = out.splitlines()[-1] if out else "test_importer_scaffold_inject.py"
+        hard_failures.append(
+            "scaffold-inject の byte 一致検証が失敗（render_ja_page に素材の器が"
+            f"漏れている疑い）: {tail}")
+
+
 def run_existing_check(script: str) -> None:
     path = REPO / "scripts" / script
     if not path.exists():
@@ -735,6 +753,7 @@ def main() -> int:
     check_ja_seo_holes()
     check_ja_classification_loss()
     check_new_photographer_pages()
+    check_scaffold_inject_determinism()
     run_existing_check("check_photographer_link_integrity.py")
 
     if warnings:
