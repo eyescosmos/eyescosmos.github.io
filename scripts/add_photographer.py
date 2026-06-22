@@ -499,6 +499,117 @@ def resolve_country_slugs(nationality: str) -> list[str]:
     return [r["slug"] for r in registry if set(r.get("codes", [])) <= tokens and r.get("codes")]
 
 
+def archive_card_html(spec: dict) -> str:
+    """archive 系（archive.html / cards-archive.html / new-design/cards-archive.html）の
+    pc-card。card_html と違い data-era/data-search/data-country フィルタ属性と
+    target="_blank" を持ち、既存カードと同じ整形（フィルタ/検索が効く正の形）。"""
+    tags = spec.get("tags") or []
+    data_search = " ".join([spec["nameJa"], spec["nameEn"], spec["channel"],
+                            *tags, spec["countryJa"]])
+    tag_html = "".join(f'<span class="pc-body__tag">{t}</span>' for t in tags)
+    return (
+        f'<article class="pc-card pc-card--photographer" data-type="photographer" '
+        f'data-era="{spec["era"]}" data-search="{data_search}" '
+        f'data-country="{spec["nationality"]}">\n'
+        f'  <a href="photographers/{spec["id"]}.html" target="_blank">\n'
+        f'    <div data-nosnippet class="pc-top {spec["style"]}">\n'
+        f'      <div class="pc-top__meta"><span class="idx">{spec.get("idx","?")}</span>'
+        f'<span>PHOTOGRAPHER</span></div>\n'
+        f'      <div class="pc-top__art">{spec["artText"]}</div>\n'
+        f'      <div class="pc-top__hint">{spec["nameEn"].upper()} · {spec["years"]}</div>\n'
+        f'    </div>\n'
+        f'    <div class="pc-body">\n'
+        f'      <span class="pc-body__kind">Photographer</span>\n'
+        f'      <div><h3 class="pc-body__name">{spec["nameJa"]}</h3>'
+        f'<div class="pc-body__name-en">{spec["nameEn"]}</div></div>\n'
+        f'      <div class="pc-body__meta">{spec["countryJa"]} · {spec["years"]}</div>\n'
+        f'      <p class="pc-body__lede">{spec["ledeShortJa"]}</p>\n'
+        f'      <div class="pc-body__channel">{spec["channel"]}</div>\n'
+        f'      <div class="pc-body__tags">{tag_html}</div>\n'
+        f'      <div class="pc-body__cta" data-nosnippet><span>写真史上の位置を読む</span>'
+        f'<span>→</span></div>\n'
+        f'    </div>\n'
+        f'  </a>\n'
+        f'</article>')
+
+
+def _surface_status(rel: str, slug: str) -> dict:
+    """サーフェスファイルの存在・掲載済み・写真家カード数を返す（read-only）。"""
+    path = REPO / rel
+    if not path.exists():
+        return {"rel": rel, "exists": False}
+    html = path.read_text(encoding="utf-8")
+    return {
+        "rel": rel, "exists": True,
+        "present": f"photographers/{slug}.html" in html,
+        "ph_cards": html.count("pc-card--photographer"),
+    }
+
+
+def plan_surfaces(spec: dict) -> None:
+    """M6 v2（read-only）: 写真家を全サーフェスへ載せるための挿入計画を dry-run 表示する。
+    どのファイルの・どのアンカー前後に・何件 挿入/更新するか（＋掲載済みなら skip）を出す。
+    実書き込みはしない（v3 --apply-surfaces は別途・カード系は保護対象のため慎重に）。"""
+    slug = spec["id"]
+    era = spec["era"]
+    movements = [m for m in (spec.get("movements") or [])
+                 if (REPO / "movements" / f"{m}.html").exists()]
+    lastname = spec["nameEn"].split()[-1]
+
+    print("\n" + "=" * 70)
+    print(f"SURFACE PLAN（dry-run・read-only）: {slug} / era={era}")
+    print("=" * 70)
+
+    def mark(st):
+        if not st["exists"]:
+            return "MISSING-FILE"
+        return "ALREADY（skip）" if st["present"] else "INSERT"
+
+    print("\n■ INSERT 面（JA 手貼り／v3 で自動化予定）")
+    for rel in ("archive.html", "cards-archive.html", "new-design/cards-archive.html"):
+        st = _surface_status(rel, slug)
+        extra = f" / 写真家カード {st['ph_cards']}件→{st['ph_cards']+1}" if st.get("exists") and not st.get("present") else ""
+        print(f"  [{mark(st)}] {rel}")
+        if st.get("exists") and not st.get("present"):
+            print(f"      anchor: 最初の <article class=\"pc-card pc-card--movement\"> の直前へ挿入{extra}")
+            print(f"      card  : archive_card_html（data-era/data-search/data-country 付き）")
+
+    st = _surface_status(f"eras/{era}.html", slug)
+    print(f"  [{mark(st)}] eras/{era}.html")
+    if st.get("exists") and not st.get("present"):
+        print(f"      anchor: グリッド閉じ </div></div></section></main> の直前（最後の </article> の後）")
+        print(f"      card  : card_html(ja, label={spec['nationality']}, href_prefix='../')")
+
+    for mv in movements:
+        st = _surface_status(f"movements/{mv}.html", slug)
+        print(f"  [{mark(st)}] movements/{mv}.html")
+        if st.get("exists") and not st.get("present"):
+            html = (REPO / "movements" / f"{mv}.html").read_text(encoding="utf-8")
+            hero = re.search(r'Photographers<strong>(\d+)</strong>', html)
+            side = re.search(r'<span class="ph-side-meta-key">Photogs</span>'
+                             r'<span[^>]*>(\d+)</span>', html)
+            print(f"      anchor: グリッド閉じの直前へ card_html(ja, label={spec['nationality']}, href_prefix='../')")
+            if hero:
+                print(f"      count : hero Photographers<strong>{hero.group(1)}</strong> → {int(hero.group(1))+1}")
+            if side:
+                print(f"      count : sidebar Photogs {side.group(1)} → {int(side.group(1))+1}")
+            print(f"      chip  : 「Photographers · 写真家」ブロックへ "
+                  f'<span class="ph-side-chip"><a href="../photographers/{slug}.html">{lastname}</a></span>')
+
+    print("\n■ REGEN 面（手貼りせず再生成）")
+    print(f"  en/archive.html              : python3 scripts/build_archive_en.py")
+    print(f"  en/eras/{era}.html            : python3 scripts/build_taxonomy_en.py --era {era}")
+    for mv in movements:
+        print(f"  en/movements/(対応slug).html : python3 scripts/build_taxonomy_en.py --slug {mv}")
+    country_slugs = resolve_country_slugs(spec["nationality"])
+    if country_slugs:
+        flags = " ".join(f"--country {s}" for s in country_slugs)
+        print(f"  countries/*.html             : python3 scripts/generate_country_pages.py {flags}")
+        print(f"  en/countries/*.html          : python3 scripts/generate_country_pages_en.py {flags}")
+    print("\n（dry-run。v3 --apply-surfaces 未実装＝カード系は保護対象。"
+          "上記アンカーで手貼り、または別途 apply を実装する）")
+
+
 def print_snippets_and_runbook(spec: dict):
     cd = json.loads(CARD_DATA.read_text(encoding="utf-8"))
     idx = next((p["idx"] for p in cd["photographers"] if p["id"] == spec["id"]), spec.get("idx", "?"))
@@ -586,6 +697,11 @@ def main():
     if not paths:
         fail("spec.json のパスを指定してください（--apply で実投入 / --scaffold で空骨格ページ生成）")
     spec = load_spec(paths[0])
+
+    # M6 v2: サーフェス挿入計画の dry-run 表示（read-only・データ投入はしない）
+    if "--plan-surfaces" in args:
+        plan_surfaces(spec)
+        return
 
     if spec["id"] in {p.get("id") for p in json.loads(CARD_DATA.read_text(encoding='utf-8'))["photographers"]} \
        or spec["id"] in js_existing_ids():
