@@ -37,7 +37,7 @@
 ### 8.1 本文改訂で強める論点
 ミヒャエル・ヴェゼリー（Michael Wesely）は、1980–1990年代の写真史で long exposure photography, architecture photography と結びつけて整理したい作家である。活動地域・制度的文脈としては Germany を軸に、museum exhibitions, photobooks / monographs, gallery and archive circulation, critical journals を通じて作品が流通した点を確認する必要がある。略歴だけではなく、construction sites, flowers, urban transformation, time を、extreme long exposure, fixed camera, temporal accumulation によってどのように写真の問題へ変えたのかを中心に読むと、本文に厚みが出る。
 
-表現解説では、duration, time as image, architectural change を中心語にしつつ、作品を単なる代表作紹介で終わらせないことが重要である。とくに、なぜこの方法が1980–1990年代の美術館制度、写真集文化、ポストモダン以後のイメージ批評、グローバル化する都市・身体・社会の文脈で意味を持ったのかを説明したい。比較対象としては Hiroshi Sugimoto, Gábor Ősz, Jikei Sato を優先し、浅い類似ではなく、写真観、方法、対象の捉え方、受容史の差異を整理する。
+表現解説では、duration, time as image, architectural change を中心語にしつつ、作品を単なる代表作紹介で終わらせないことが重要である。とくに、なぜこの方法が1980–1990年代の美術館制度、写真集文化、ポストモダン以後のイメージ批評、グローバル化する都市・身体・社会の文脈で意味を持ったのかを説明したい。比較対象としては Hiroshi Sugimoto, Gábor Ősz, Tokihiro Sato を優先し、浅い類似ではなく、写真観、方法、対象の捉え方、受容史の差異を整理する。
 
 評価・批評では、同時代の展覧会、写真集、ギャラリーでの流通、後年の美術館・研究機関による再評価を分けて扱う。ミヒャエル・ヴェゼリーは1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。 この一文を起点に、本文では「何を撮ったか」よりも「その方法が何を変えたか」を中心に組み立てる。
 
@@ -55,8 +55,8 @@ platforms: ["museum exhibitions", "photobooks / monographs", "gallery and archiv
 subjects: ["construction sites", "flowers", "urban transformation", "time"]
 methods: ["extreme long exposure", "fixed camera", "temporal accumulation"]
 concepts: ["duration", "time as image", "architectural change"]
-influenced_by: ["Hiroshi Sugimoto", "Gábor Ősz", "Jikei Sato"]
-related_figures: ["Hiroshi Sugimoto", "Gábor Ősz", "Jikei Sato"]
+influenced_by: ["Hiroshi Sugimoto", "Gábor Ősz", "Tokihiro Sato"]
+related_figures: ["Hiroshi Sugimoto", "Gábor Ősz", "Tokihiro Sato"]
 description_short: "ミヒャエル・ヴェゼリーは1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。"
 confidence: 0.72
 source_basis: ["ChatGPT 1980s source packet audited and expanded by Codex", "museum / archive / publisher / library / scholarly source candidates listed below", "Wikipedia and Britannica are not used as textual basis"]
@@ -78,7 +78,7 @@ axes:
   materiality: 3
 surface_connections: ["long exposure photography, architecture photography", "Germany / 1980–1990s"]
 deep_connections: ["ミヒャエル・ヴェゼリーは1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。", "extreme long exposure, fixed camera, temporal accumulationという方法を通じて、duration, time as image, architectural changeを写真史的な問題として扱う。"]
-comparison_targets: ["Hiroshi Sugimoto", "Gábor Ősz", "Jikei Sato"]
+comparison_targets: ["Hiroshi Sugimoto", "Gábor Ősz", "Tokihiro Sato"]
 one_sentence_connection: "ミヒャエル・ヴェゼリーは1980–1990年代以降の写真表現を、制度、メディア、場所、主体の問題として読み直すための重要な作家。"
 tags: ["duration", "time as image", "architectural change"]
 ```

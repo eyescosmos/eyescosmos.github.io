@@ -3086,7 +3086,7 @@ PHOTOGRAPHERS.push(
 },
 {
   "id": "jikei-sato",
-  "name": "Jikei Sato",
+  "name": "Tokihiro Sato",
   "nameJa": "佐藤時啓",
   "nationality": "JP",
   "flag": "🇯🇵",
