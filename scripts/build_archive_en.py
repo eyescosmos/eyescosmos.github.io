@@ -120,6 +120,7 @@ GENRE_TAG = {
     '社会ドキュメンタリー': 'Social Documentary',
     '社会的写真': 'Concerned photography',
     '私写真': 'I-Photography',
+    '写真集文化': 'Photobook Culture',
     '科学写真': 'Scientific photography',
     '肖像写真': 'Portrait photography',
     '自然主義写真': 'Naturalistic Photography',

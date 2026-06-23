@@ -1540,7 +1540,52 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "sakiko-nomura",
+    "name": "Sakiko Nomura",
+    "nameJa": "野村佐紀子",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1967–",
+    "gender": "女性",
+    "era": "1990",
+    "movements": [
+      "日本写真",
+      "私写真",
+      "写真集文化",
+      "身体表象"
+    ],
+    "thumbnail": "",
+    "links": [
+      {
+        "label": "Sakiko Nomura official website — Books",
+        "url": "https://sakikonomura.com/en_books/"
+      },
+      {
+        "label": "Fundación MAPFRE — Tender is the night",
+        "url": "https://www.fundacionmapfre.org/en/art-and-culture/exhibitions/historical/year-2025/sakiko-nomura/"
+      }
+    ],
+    "amazon": "",
+    "context": {
+      "text": "野村佐紀子（1967年下関生まれ）は、荒木経惟以後の日本写真において男性ヌードを主題に選び、弱い光と黒い印画、写真集の順序によって、裸体を性的対象から共有された時間と記憶の像へと押し広げた写真家*1*2。",
+      "textEn": "Sakiko Nomura (b. 1967, Shimonoseki) chose the male nude as her central subject in Japanese photography after Araki, using weak light, black printing, and the sequence of the photobook to push the nude from a sexual object toward an image of shared time and memory*1*2.",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Sakiko Nomura official website — Profile",
+          "url": "https://sakikonomura.com/en_profile/"
+        },
+        {
+          "num": 2,
+          "name": "Fundación MAPFRE — Sakiko Nomura. Tender is the night",
+          "url": "https://www.fundacionmapfre.org/en/art-and-culture/exhibitions/historical/year-2025/sakiko-nomura/"
+        }
+      ]
+    }
   }
+
 
 
 ,

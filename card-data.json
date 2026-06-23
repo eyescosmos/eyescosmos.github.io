@@ -5742,6 +5742,28 @@
       "style": "pc-top--kanji",
       "artText": "真弓",
       "hintText": "MAYUMI HOSOKURA · 1979–"
+    },
+    {
+      "type": "photographer",
+      "id": "sakiko-nomura",
+      "href": "photographers/sakiko-nomura.html",
+      "idx": 288,
+      "nameJa": "野村佐紀子",
+      "nameEn": "Sakiko Nomura",
+      "metaJa": "日本 · 1967–",
+      "era": "1990",
+      "nationality": "JP",
+      "ledeJa": "野村佐紀子（1967年下関生まれ）は、男性ヌード、夜、花、海を黒の濃度と写真集の順序で結びつける写真家。荒木経惟に師事しながら、露骨なエロスへ進まず、裸体を共有された時間と記憶の像として見せた。",
+      "channel": "写真集という方法 · JAPAN",
+      "tags": [
+        "日本写真",
+        "私写真",
+        "写真集文化",
+        "日本"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "紀子",
+      "hintText": "SAKIKO NOMURA · 1967–"
     }
   ],
   "movements": [
