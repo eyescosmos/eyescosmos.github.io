@@ -701,6 +701,45 @@ def print_manual_checklist(spec: dict):
     print("□ 各分類ページへカード手貼り（上の貼り付け用カード参照）＋件数 +1")
 
 
+def _lint_unmapped_tags(spec: dict) -> list[str]:
+    """spec.tags のうち build_archive_en.tr_tag が訳せない日本語 tag を返す。
+
+    未マップ語があると build_archive_en が `SystemExit('Unmapped Japanese tag')` で
+    en/archive ビルドを中断し、en/countries まで連鎖欠落する（実例: 写真集文化）。
+    着手前に気づくための事前 lint（read-only・GENRE_TAG/COUNTRY_TAG と突き合わせるだけ）。"""
+    try:
+        from build_archive_en import GENRE_TAG, COUNTRY_TAG
+    except Exception:
+        return []
+    cjk = re.compile(r'[぀-ヿ一-鿿]')
+    unmapped = []
+    for tag in (spec.get("tags") or []):
+        if not cjk.search(tag):
+            continue  # ローマ字 tag は tr_tag が素通しするので対象外
+        if tag in GENRE_TAG or tag in COUNTRY_TAG:
+            continue
+        parts = [p.strip() for p in tag.split('/')]
+        if len(parts) > 1 and all(p in COUNTRY_TAG for p in parts):
+            continue  # 「A / B」型の複合国は tr_tag が処理できる
+        unmapped.append(tag)
+    return unmapped
+
+
+def _print_tag_lint(spec: dict) -> None:
+    """未マップ tag があれば警告ブロックを出す（無ければ無音）。dry-run/apply 共通の事前 lint。"""
+    unmapped = _lint_unmapped_tags(spec)
+    if not unmapped:
+        return
+    print("\n" + "!" * 70)
+    print("⚠ 未マップ tag を検出（このまま EN を再生成すると en/archive ビルドが中断）")
+    print("!" * 70)
+    for t in unmapped:
+        print(f"  ・「{t}」が scripts/build_archive_en.py の GENRE_TAG / COUNTRY_TAG に無い")
+    print("  → GENRE_TAG に英訳を1行追加してから build_archive_en / generate_country_pages_en を回す。")
+    print("    （未対応だと tr_tag が SystemExit('Unmapped Japanese tag') で止まり、")
+    print("     en/archive → en/countries が連鎖で欠落します）")
+
+
 def main():
     args = sys.argv[1:]
     apply = "--apply" in args
@@ -709,6 +748,9 @@ def main():
     if not paths:
         fail("spec.json のパスを指定してください（--apply で実投入 / --scaffold で空骨格ページ生成）")
     spec = load_spec(paths[0])
+
+    # ④ 事前 lint: 未マップ tag を着手前に警告（en/archive 中断→en/countries 連鎖欠落の予防）
+    _print_tag_lint(spec)
 
     # M6 v2: サーフェス挿入計画の dry-run 表示（read-only・データ投入はしない）
     if "--plan-surfaces" in args:
