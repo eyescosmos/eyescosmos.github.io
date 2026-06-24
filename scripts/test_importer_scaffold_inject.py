@@ -144,7 +144,9 @@ SPEC = {
     "id": "test-taro-m4", "nameJa": "試験 太郎", "nameEn": "Taro Shiken",
     "years": "1970–", "nationality": "JP", "countryJa": "日本", "era": "1970",
     "idx": 999, "channel": "テスト · TEST", "tags": ["語1", "語2"],
-    "movements": ["新即物主義", "テスト運動"],
+    # 翻訳不能語を先頭に、翻訳可能語（STUB_TO_SLUG 在＝新即物主義）を後ろに置く。
+    # Movement 表示欄は順序でなく「翻訳可能な語」を1語選ぶことを検証するため。
+    "movements": ["テスト運動", "新即物主義"],
 }
 
 CONTENT_KEYS = ["lead_inner_html", "thesis_inner_html", "works", "sections",
@@ -197,6 +199,16 @@ def main() -> int:
     # 4) 素材の器（汚れ）が出力に一切漏れていない
     for leak in LEAK_TOKENS:
         assert leak not in ha, f"FAIL: source 構造が出力に漏れた: {leak!r}"
+
+    # 5) Movement 表示欄は単一の翻訳可能運動（・連結 compound を作らない）。
+    #    EN ビルダは単語単位でしか訳せず compound は未翻訳のまま残るため。
+    #    movements=["テスト運動","新即物主義"] から順序によらず翻訳可能語を選ぶ。
+    assert '<dt>Movement</dt><dd>新即物主義</dd>' in ha, \
+        "FAIL: Movement 欄が単一の翻訳可能運動になっていない"
+    assert '<span class="ph-side-meta-val">新即物主義</span>' in ha, \
+        "FAIL: サイドバー Movement が単一の翻訳可能運動になっていない"
+    assert 'テスト運動・新即物主義' not in ha and '新即物主義・テスト運動' not in ha, \
+        "FAIL: Movement 欄に「・」連結 compound が残っている（EN で未翻訳になる）"
 
     print("M4 PASS:「器を捨てた」証明")
     print("  ・構造の違う2ソース（content先頭head / Profile型sidebar / 非正規§マーカー /")

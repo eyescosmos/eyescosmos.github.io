@@ -1038,6 +1038,29 @@ def _inject_description(html: str, desc: str) -> str:
     return html
 
 
+def _primary_movement_label(spec: dict) -> str | None:
+    """Movement 表示欄に入れる単一の運動名を選ぶ。
+
+    EN ビルダ（build_photographers_en）の Movement 翻訳は単一 STUB_TO_SLUG 語の
+    `>term<` 置換でしか効かないため、「・」連結 compound（例 "日本写真・私写真・…"）は
+    EN ページで未翻訳のまま残る（untranslated term 警告）。よって表示欄は **翻訳可能
+    （STUB_TO_SLUG 在）な運動を1語だけ** 選ぶ。`spec["movements"]` は star の座標計算
+    （add_photographer）用に全運動を保持したまま＝表示と座標を分離する。
+
+    優先順: ①spec["movementSlugJa"]（curate された主運動） ②movements のうち
+    STUB_TO_SLUG 在の最初の語 ③（どれも訳せないとき）単一語フォールバックで compound を回避。
+    """
+    candidates: list[str] = []
+    primary = spec.get("movementSlugJa")
+    if primary:
+        candidates.append(primary)
+    candidates.extend(spec.get("movements") or [])
+    for m in candidates:
+        if m in STUB_TO_SLUG:
+            return m
+    return candidates[0] if candidates else None
+
+
 def _inject_movement(html: str, movement_label: str | None) -> str:
     if not movement_label:
         return html
@@ -1110,7 +1133,9 @@ def render_ja_page(bundle: dict, spec: dict, idx=None) -> str:
     html = _inject_abstract_thesis(html, bundle.get("lead_inner_html"),
                                    bundle.get("thesis_inner_html"))
     # entry-meta / サイドバー Movement（spec の movements から）
-    movement_label = "・".join(spec.get("movements") or []) or None
+    # Movement 表示欄は単一の翻訳可能運動（・連結 compound は EN で訳されず残るため）。
+    # star 用の spec["movements"] は全運動のまま（座標計算は別経路）。
+    movement_label = _primary_movement_label(spec)
     html = _inject_movement(html, movement_label)
     # § WORKS
     html = _set_section_body(html, "§ WORKS", _build_ja_works_body(bundle.get("works") or []))
