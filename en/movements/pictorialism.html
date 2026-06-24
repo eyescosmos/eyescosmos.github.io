@@ -159,8 +159,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── MOVEMENT HERO ─────────────────────────────────────── */
@@ -891,7 +891,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 02</span><span class="ph-section__name">Criticism and Reception</span></div></div><div class="ph-section__body"><p>Photo-Secession grew out of pictorialist values, especially the belief that photography needed its own artistic institutions, but it also exposed the limits of a purely painterly defense of the medium. Alfred Stieglitz’s circle used Camera Work and 291 to promote pictorialist photography while also opening a path toward a sharper modernist language.<sup class="sup-ref"><a href="#cite-5">*5</a></sup> Straight photography later defined itself against pictorialism’s atmospheres and handwork. The disagreement was not just about manipulation; it was about whether photography should prove itself by resembling older arts or by making a new aesthetic from lens description, tonal clarity, and the specific qualities of the photographic print.<sup class="sup-ref"><a href="#cite-6">*6</a></sup></p><p>Pictorialism changed photography by forcing the question of where photographic authorship resides. It made printing, editioning, exhibition, and critical language part of the medium’s history, even when later modernists rejected its look. Gertrude Käsebier’s work shows how portraiture, motherhood, and public exhibition could all be folded into art photography.<sup class="sup-ref"><a href="#cite-7">*7</a></sup> The movement also shows that photography did not enter museums only by becoming sharper or more documentary. It first had to build a culture of prints, journals, clubs, collectors, and arguments about taste. Those structures continued to shape photographic reception even after the pictorialist style lost authority.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p></div></section>
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 03</span><span class="ph-section__name">Related Movements</span></div></div><div class="ph-section__body"><p>Cameron’s later reception also shows why pictorialism should not be reduced to a single recipe for blur. Her portraits became a reference point for thinking about focus, intimacy, and theatrical presence before the word pictorialism was fixed as a movement label.<sup class="sup-ref"><a href="#cite-8">*8</a></sup> Emerson’s changing ideas about naturalistic photography complicate the story as well. His writing and photographs show that nineteenth-century debates about art photography already included arguments over vision, optics, and how much intervention a photograph could bear.<sup class="sup-ref"><a href="#cite-9">*9</a></sup> Edward Steichen’s Photo-Secession years make the transition visible: the same network that refined pictorialist print culture also helped prepare the modernist break that would challenge it. Reading pictorialism beside Photo-Secession, Naturalistic Photography, and Straight Photography shows the shift from art print to modern camera language.<sup class="sup-ref"><a href="#cite-10">*10</a></sup></p></div></section>
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 04</span><span class="ph-section__name">Photographers</span></div></div><div class="ph-section__body"><div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="デイヴィッド・オクタヴィアス・ヒル David Octavius Hill Building the institution · PICTORIALISM Calotype Pictorialism Portrait photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="デイヴィッド・オクタヴィアス・ヒル David Octavius Hill Building the institution · PICTORIALISM Calotype Pictorialism Portrait photography" data-country="GB">
   <a href="../photographers/david-octavius-hill.html" >
     <div data-nosnippet class="pc-top pc-top--rotate">
       <div class="pc-top__meta"><span class="idx">49</span><span>PHOTOGRAPHER</span></div>
@@ -909,7 +909,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ジュリア・マーガレット・キャメロン Julia Margaret Cameron Building the institution · PICTORIALISM Pictorialism Portrait United Kingdom">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ジュリア・マーガレット・キャメロン Julia Margaret Cameron Building the institution · PICTORIALISM Pictorialism Portrait United Kingdom" data-country="GB">
   <a href="../photographers/cameron.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">13</span><span>PHOTOGRAPHER</span></div>
@@ -927,7 +927,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="ガートルード・ケーゼビア Gertrude Käsebier Building the institution · PICTORIALISM Pictorialism Photo-Secession Portrait">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="ガートルード・ケーゼビア Gertrude Käsebier Building the institution · PICTORIALISM Pictorialism Photo-Secession Portrait" data-country="US">
   <a href="../photographers/kasebier.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">16</span><span>PHOTOGRAPHER</span></div>
@@ -945,7 +945,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="フレデリック・H・エヴァンズ Frederick H. Evans Building the institution · PICTORIALISM Straight Photography Architectural photography Pictorialism">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="フレデリック・H・エヴァンズ Frederick H. Evans Building the institution · PICTORIALISM Straight Photography Architectural photography Pictorialism" data-country="GB">
   <a href="../photographers/frederick-h-evans.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">53</span><span>PHOTOGRAPHER</span></div>
@@ -963,7 +963,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="アルフレッド・スティーグリッツ Alfred Stieglitz Building the institution · PICTORIALISM Pictorialism Photo-Secession Straight Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="アルフレッド・スティーグリッツ Alfred Stieglitz Building the institution · PICTORIALISM Pictorialism Photo-Secession Straight Photography" data-country="US">
   <a href="../photographers/stieglitz.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">15</span><span>PHOTOGRAPHER</span></div>
@@ -981,7 +981,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="エドワード・スタイケン Edward Steichen Building the institution · PICTORIALISM Pictorialism Photo-Secession Portrait">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="エドワード・スタイケン Edward Steichen Building the institution · PICTORIALISM Pictorialism Photo-Secession Portrait" data-country="LU / US">
   <a href="../photographers/steichen.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">17</span><span>PHOTOGRAPHER</span></div>
@@ -999,7 +999,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="ロベール・ドマシー Robert Demachy Building the institution · PICTORIALISM Pictorialism France">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="ロベール・ドマシー Robert Demachy Building the institution · PICTORIALISM Pictorialism France" data-country="FR">
   <a href="../photographers/demachy.html" >
     <div data-nosnippet class="pc-top pc-top--cite">
       <div class="pc-top__meta"><span class="idx">18</span><span>PHOTOGRAPHER</span></div>
@@ -1017,7 +1017,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="福原信三 Shinzo Fukuhara Building the institution · PICTORIALISM Japanese Photography Pictorialism Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="福原信三 Shinzo Fukuhara Building the institution · PICTORIALISM Japanese Photography Pictorialism Japan" data-country="JP">
   <a href="../photographers/jp-福原信三.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">65</span><span>PHOTOGRAPHER</span></div>

@@ -162,8 +162,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── ERA HERO ─────────────────────────────────────────────── */
@@ -749,7 +749,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <nav class="era-nav" aria-label="Era navigation"><div class="era-nav__label">§ — Eras</div><div class="era-nav__strip"><a class="era-nav__item" href="1839.html">1839–60s</a><a class="era-nav__item" href="1870.html">1870–90s</a><a class="era-nav__item" href="1890.html">1890–1910s</a><a class="era-nav__item" href="1910.html">1910–20s</a><a class="era-nav__item is-active" href="1930.html">1930–40s</a><a class="era-nav__item" href="1950.html">1950–60s</a><a class="era-nav__item" href="1970.html">1970–80s</a><a class="era-nav__item" href="1980.html">1980–90s</a><a class="era-nav__item" href="1990.html">1990–2000s</a><a class="era-nav__item" href="2000.html">2000–10s</a><a class="era-nav__item" href="2010.html">2010–20s</a></div></nav>
 <div class="era-outer"><div class="era-layout">
 <main class="era-main"><div class="ph-abstract"><div class="ph-abstract__label">Overview</div><p>From the Great Depression to the atomic bomb, photography was mobilized by states, magazines, and agencies. FSA, LIFE, and Magnum Photos built the institutions of photojournalism. Cartier-Bresson's Decisive Moment, Capa's combat photography, and Lange's Migrant Mother shaped how photography bore historical witness.</p></div><div class="ph-thesis"><div class="ph-thesis__label">What This Era Changed</div><p class="ph-thesis__body">This era confirmed that <em>photography is not only a technology of images but a technology of power</em> — capable of mobilizing public opinion, documenting social crisis, serving state propaganda, and bearing witness to historical catastrophe, sometimes within the same project.</p></div><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ CTX</span><span class="ph-section__name">Context of This Era</span></div></div><div class="ph-section__body"><div class="era-context-grid"><div class="era-context-block"><div class="era-context-label">Politics &amp; Society</div><p class="era-context-text">The Great Depression (1929), the rise of Hitler (1933), the Spanish Civil War (1936), World War II (1939–45), and the atomic bombings of Hiroshima and Nagasaki defined the decade as a crisis of democracy and human survival.</p></div><div class="era-context-block"><div class="era-context-label">FSA and Documentary</div><p class="era-context-text">Within Roosevelt's Farm Security Administration photography project (1935–44), Roy Stryker directed Dorothea Lange, Walker Evans, and others to systematically record rural poverty, leaving behind roughly 170,000 images.</p></div><div class="era-context-block"><div class="era-context-label">LIFE Magazine and Photojournalism</div><p class="era-context-text">LIFE magazine (launched 1936) sold millions of copies weekly and established photography as the primary medium of news and public memory. The picture essay — multi-image narrative journalism — defined how the world understood photojournalism.</p></div><div class="era-context-block"><div class="era-context-label">The Founding of Magnum</div><p class="era-context-text">In 1947, Robert Capa, Henri Cartier-Bresson, George Rodger, and others founded Magnum Photos — an independent cooperative that secured photographer copyright and autonomy, reshaping the economics and ethics of photojournalism.</p></div></div></div></section><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ PH</span><span class="ph-section__name">Photographers of This Era</span></div></div><div class="ph-section__body"><div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ドロシア・ラング Dorothea Lange Documentary as reading · DOCUMENTARY FSA Photography Social Documentary Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ドロシア・ラング Dorothea Lange Documentary as reading · DOCUMENTARY FSA Photography Social Documentary Documentary" data-country="US">
   <a href="../photographers/lange.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">25</span><span>US</span></div>
@@ -767,7 +767,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ウォーカー・エヴァンス Walker Evans City and the moment · STREET FSA Photography Documentary Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ウォーカー・エヴァンス Walker Evans City and the moment · STREET FSA Photography Documentary Street Photography" data-country="US">
   <a href="../photographers/evans.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">26</span><span>US</span></div>
@@ -785,7 +785,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="アンリ・カルティエ＝ブレッソン Henri Cartier-Bresson City and the moment · STREET Decisive Moment Photojournalism Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="アンリ・カルティエ＝ブレッソン Henri Cartier-Bresson City and the moment · STREET Decisive Moment Photojournalism Street Photography" data-country="FR">
   <a href="../photographers/cartierbresson.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">27</span><span>FR</span></div>
@@ -803,7 +803,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ロバート・キャパ Robert Capa Documentary as reading · DOCUMENTARY War photography Photojournalism Magnum">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ロバート・キャパ Robert Capa Documentary as reading · DOCUMENTARY War photography Photojournalism Magnum" data-country="HU">
   <a href="../photographers/capa.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">28</span><span>HU</span></div>
@@ -821,7 +821,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="W・ユージン・スミス W. Eugene Smith Documentary as reading · DOCUMENTARY War photography Social Documentary Photojournalism">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="W・ユージン・スミス W. Eugene Smith Documentary as reading · DOCUMENTARY War photography Social Documentary Photojournalism" data-country="US">
   <a href="../photographers/eugenesmith.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">30</span><span>US</span></div>
@@ -839,7 +839,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="土門拳 Ken Domon Topics in photo history · SOCIAL DOCUMENTARY Social Documentary Realism Photography Japanese Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="土門拳 Ken Domon Topics in photo history · SOCIAL DOCUMENTARY Social Documentary Realism Photography Japanese Photography" data-country="JP">
   <a href="../photographers/domon.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">29</span><span>JP</span></div>
@@ -857,7 +857,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ビル・ブラント Bill Brandt An entry into photo history · PHOTO HISTORY MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ビル・ブラント Bill Brandt An entry into photo history · PHOTO HISTORY MoMA" data-country="GB">
   <a href="../photographers/bill-brandt.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">73</span><span>GB</span></div>
@@ -875,7 +875,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ブラッサイ Brassaï An entry into photo history · PHOTO HISTORY MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ブラッサイ Brassaï An entry into photo history · PHOTO HISTORY MoMA" data-country="HU / FR">
   <a href="../photographers/brassai.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">74</span><span>HU / FR</span></div>
@@ -893,7 +893,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="植田正治 Shoji Ueda Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="植田正治 Shoji Ueda Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/jp-植田正治.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">80</span><span>JP</span></div>
@@ -911,7 +911,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="マーガレット・バーク＝ホワイト Margaret Bourke-White An entry into photo history · PHOTO HISTORY MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="マーガレット・バーク＝ホワイト Margaret Bourke-White An entry into photo history · PHOTO HISTORY MoMA" data-country="US">
   <a href="../photographers/margaret-bourke-white.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">76</span><span>US</span></div>
@@ -929,7 +929,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="アンセル・アダムス Ansel Adams Topics in photo history · STRAIGHT PHOTOGRAPHY Straight Photography Landscape photography American photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="アンセル・アダムス Ansel Adams Topics in photo history · STRAIGHT PHOTOGRAPHY Straight Photography Landscape photography American photography" data-country="US">
   <a href="../photographers/ansel-adams.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">90</span><span>US</span></div>
@@ -947,7 +947,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ロベール・ドアノー Robert Doisneau An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ロベール・ドアノー Robert Doisneau An entry into photo history · PHOTO HISTORY" data-country="FR">
   <a href="../photographers/robert-doisneau.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">77</span><span>FR</span></div>
@@ -965,7 +965,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="マヌエル・アルバレス・ブラボ Manuel Álvarez Bravo An entry into photo history · PHOTO HISTORY MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="マヌエル・アルバレス・ブラボ Manuel Álvarez Bravo An entry into photo history · PHOTO HISTORY MoMA" data-country="MX">
   <a href="../photographers/manuel-alvarez-bravo.html" >
     <div data-nosnippet class="pc-top pc-top--title">
       <div class="pc-top__meta"><span class="idx">75</span><span>MX</span></div>
@@ -983,7 +983,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="フランソワ・コラー François Kollar An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="フランソワ・コラー François Kollar An entry into photo history · PHOTO HISTORY" data-country="SK / FR">
   <a href="../photographers/francois-kollar.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">78</span><span>SK / FR</span></div>
@@ -1001,7 +1001,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="マルセル・ボヴィス Marcel Bovis An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="マルセル・ボヴィス Marcel Bovis An entry into photo history · PHOTO HISTORY" data-country="FR">
   <a href="../photographers/marcel-bovis.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">79</span><span>FR</span></div>
@@ -1019,7 +1019,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="金丸重嶺 Shigene Kanamaru Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="金丸重嶺 Shigene Kanamaru Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/jp-金丸重嶺.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">81</span><span>JP</span></div>
@@ -1037,7 +1037,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="鈴木八郎 Hachiro Suzuki Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="鈴木八郎 Hachiro Suzuki Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/jp-鈴木八郎.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">82</span><span>JP</span></div>
@@ -1055,7 +1055,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="長谷川伝次郎 Denjiro Hasegawa Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="長谷川伝次郎 Denjiro Hasegawa Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/jp-長谷川伝次郎.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">83</span><span>JP</span></div>
@@ -1073,7 +1073,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="デヴィッド・シーモア David Seymour An entry into photo history · PHOTO HISTORY Magnum">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="デヴィッド・シーモア David Seymour An entry into photo history · PHOTO HISTORY Magnum" data-country="PL / US">
   <a href="../photographers/david-seymour.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">84</span><span>PL / US</span></div>
@@ -1091,7 +1091,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ジョン・ヴァション John Vachon An entry into photo history · PHOTO HISTORY FSA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ジョン・ヴァション John Vachon An entry into photo history · PHOTO HISTORY FSA" data-country="US">
   <a href="../photographers/john-vachon.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">85</span><span>US</span></div>
@@ -1109,7 +1109,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="アーサー・ロススタイン Arthur Rothstein An entry into photo history · PHOTO HISTORY FSA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="アーサー・ロススタイン Arthur Rothstein An entry into photo history · PHOTO HISTORY FSA" data-country="US">
   <a href="../photographers/arthur-rothstein.html" >
     <div data-nosnippet class="pc-top pc-top--outline">
       <div class="pc-top__meta"><span class="idx">86</span><span>US</span></div>
@@ -1127,7 +1127,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ジャック・デラーノ Jack Delano An entry into photo history · PHOTO HISTORY FSA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ジャック・デラーノ Jack Delano An entry into photo history · PHOTO HISTORY FSA" data-country="UA / US">
   <a href="../photographers/jack-delano.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">87</span><span>UA / US</span></div>
@@ -1145,7 +1145,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ラッセル・リー Russell Lee An entry into photo history · PHOTO HISTORY FSA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ラッセル・リー Russell Lee An entry into photo history · PHOTO HISTORY FSA" data-country="US">
   <a href="../photographers/russell-lee.html" >
     <div data-nosnippet class="pc-top pc-top--rotate">
       <div class="pc-top__meta"><span class="idx">88</span><span>US</span></div>
@@ -1163,7 +1163,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ベン・シャーン Ben Shahn An entry into photo history · PHOTO HISTORY FSA MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ベン・シャーン Ben Shahn An entry into photo history · PHOTO HISTORY FSA MoMA" data-country="LT / US">
   <a href="../photographers/ben-shahn.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">89</span><span>LT / US</span></div>
@@ -1181,7 +1181,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="マイナー・ホワイト Minor White An entry into photo history · PHOTO HISTORY Aperture MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="マイナー・ホワイト Minor White An entry into photo history · PHOTO HISTORY Aperture MoMA" data-country="US">
   <a href="../photographers/minor-white.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">91</span><span>US</span></div>
@@ -1199,7 +1199,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ヘレン・レヴィット Helen Levitt An entry into photo history · PHOTO HISTORY MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ヘレン・レヴィット Helen Levitt An entry into photo history · PHOTO HISTORY MoMA" data-country="US">
   <a href="../photographers/helen-levitt.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">92</span><span>US</span></div>
@@ -1217,7 +1217,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="影山光洋 Koyo Kageyama Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="影山光洋 Koyo Kageyama Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/jp-影山光洋.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">93</span><span>JP</span></div>
@@ -1235,7 +1235,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="リー・ミラー Lee Miller Topics in photo history · SURREALISM Surrealism War photography Vogue">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="リー・ミラー Lee Miller Topics in photo history · SURREALISM Surrealism War photography Vogue" data-country="US">
   <a href="../photographers/lee-miller.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">268</span><span>US</span></div>
@@ -1253,7 +1253,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ジョージ・ロジャー George Rodger Documentary as reading · DOCUMENTARY War photography Documentary Magnum">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ジョージ・ロジャー George Rodger Documentary as reading · DOCUMENTARY War photography Documentary Magnum" data-country="GB">
   <a href="../photographers/george-rodger.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">269</span><span>GB</span></div>
@@ -1271,7 +1271,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ウィリアム・ヴァンディヴァート William Vandivert Documentary as reading · DOCUMENTARY War photography Documentary Magnum">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ウィリアム・ヴァンディヴァート William Vandivert Documentary as reading · DOCUMENTARY War photography Documentary Magnum" data-country="US">
   <a href="../photographers/william-vandivert.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">270</span><span>US</span></div>

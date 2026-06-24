@@ -737,10 +737,29 @@ def run_existing_check(script: str) -> None:
             warnings.append(f"{script} 出力に '{token}' を検出（要確認）")
 
 
+def check_en_lang_toggle_active() -> None:
+    """EN pages must not keep the Japanese page's active JP language toggle."""
+    offenders: list[str] = []
+    for f in sorted((REPO / "en").rglob("*.html")):
+        html = f.read_text(encoding="utf-8", errors="ignore")
+        m = re.search(r'<div class="head__lang">.*?</div>', html, flags=re.S)
+        if not m:
+            continue
+        if re.search(r'<button[^>]*class="[^"]*\bis-active\b[^"]*"[^>]*>\s*JP\s*</button>', m.group(0)):
+            offenders.append(str(f.relative_to(REPO)))
+    if offenders:
+        hard_failures.append(
+            "ENページの言語トグルに JP active button が残存: "
+            + ", ".join(offenders[:12])
+            + (" …" if len(offenders) > 12 else "")
+        )
+
+
 def main() -> int:
     check_dup_ids_js()
     check_dup_ids_carddata()
     check_ga_coverage()
+    check_en_lang_toggle_active()
     check_en_content_loss()
     check_en_changed_slug_closure()
     check_en_direct_edit()

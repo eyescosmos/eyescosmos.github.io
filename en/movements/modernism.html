@@ -159,8 +159,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── MOVEMENT HERO ─────────────────────────────────────── */
@@ -891,7 +891,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 02</span><span class="ph-section__name">Criticism and Reception</span></div></div><div class="ph-section__body"><p>On this site, photographers connected to Modernism appear mainly from 1890–1910s to 1950–1960s, often overlapping with Straight Photography, Pictorialism, Photo-Secession, and Vorticism.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p></div></section>
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 03</span><span class="ph-section__name">Related Movements</span></div></div><div class="ph-section__body"><p>Modernism often overlaps with Straight Photography, Pictorialism, Photo-Secession, and Vorticism. Reading those pages together makes it easier to see where method, institution, or critical language begins to diverge.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p></div></section>
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 04</span><span class="ph-section__name">Photographers</span></div></div><div class="ph-section__body"><div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="アルフレッド・スティーグリッツ Alfred Stieglitz Building the institution · PICTORIALISM Pictorialism Photo-Secession Straight Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="アルフレッド・スティーグリッツ Alfred Stieglitz Building the institution · PICTORIALISM Pictorialism Photo-Secession Straight Photography" data-country="US">
   <a href="../photographers/stieglitz.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">15</span><span>PHOTOGRAPHER</span></div>
@@ -909,7 +909,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アルヴィン・ラングドン・コバーン Alvin Langdon Coburn Topics in photo history · MODERNISM Modernism Vorticism Experimental techniques">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アルヴィン・ラングドン・コバーン Alvin Langdon Coburn Topics in photo history · MODERNISM Modernism Vorticism Experimental techniques" data-country="US / GB">
   <a href="../photographers/coburn.html" >
     <div data-nosnippet class="pc-top pc-top--fragment">
       <div class="pc-top__meta"><span class="idx">20</span><span>PHOTOGRAPHER</span></div>
@@ -927,7 +927,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="チャールズ・シェラー Charles Sheeler Topics in photo history · MODERNISM Modernism Straight Photography United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="チャールズ・シェラー Charles Sheeler Topics in photo history · MODERNISM Modernism Straight Photography United States" data-country="US">
   <a href="../photographers/charles-sheeler.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">72</span><span>PHOTOGRAPHER</span></div>
@@ -945,7 +945,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ポール・ストランド Paul Strand Documentary as reading · DOCUMENTARY Straight Photography Modernism Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ポール・ストランド Paul Strand Documentary as reading · DOCUMENTARY Straight Photography Modernism Documentary" data-country="US">
   <a href="../photographers/strand.html" >
     <div data-nosnippet class="pc-top pc-top--twosize">
       <div class="pc-top__meta"><span class="idx">19</span><span>PHOTOGRAPHER</span></div>
@@ -963,7 +963,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アレクサンドル・ロトチェンコ Alexander Rodchenko Topics in photo history · MODERNISM Modernism New Vision Russia">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アレクサンドル・ロトチェンコ Alexander Rodchenko Topics in photo history · MODERNISM Modernism New Vision Russia" data-country="RU">
   <a href="../photographers/alexander-rodchenko.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">67</span><span>PHOTOGRAPHER</span></div>
@@ -981,7 +981,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アルベルト・レンガー＝パッチュ Albert Renger-Patzsch Topics in photo history · NEUE SACHLICHKEIT Neue Sachlichkeit Modernism Bauhaus">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アルベルト・レンガー＝パッチュ Albert Renger-Patzsch Topics in photo history · NEUE SACHLICHKEIT Neue Sachlichkeit Modernism Bauhaus" data-country="DE">
   <a href="../photographers/renger.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">24</span><span>PHOTOGRAPHER</span></div>
@@ -999,7 +999,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ジェルメーヌ・クリュル Germaine Krull Documentary as reading · DOCUMENTARY Modernism Photojournalism MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ジェルメーヌ・クリュル Germaine Krull Documentary as reading · DOCUMENTARY Modernism Photojournalism MoMA" data-country="DE">
   <a href="../photographers/germaine-krull.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">69</span><span>PHOTOGRAPHER</span></div>
@@ -1017,7 +1017,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ラースロー・モホイ＝ナジ László Moholy-Nagy Topics in photo history · BAUHAUS Bauhaus New Vision Rayograph">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ラースロー・モホイ＝ナジ László Moholy-Nagy Topics in photo history · BAUHAUS Bauhaus New Vision Rayograph" data-country="HU / DE">
   <a href="../photographers/moholy.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">22</span><span>PHOTOGRAPHER</span></div>

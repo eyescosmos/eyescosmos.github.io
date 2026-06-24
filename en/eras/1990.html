@@ -162,8 +162,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── ERA HERO ─────────────────────────────────────────────── */
@@ -752,7 +752,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <article class="pc-card pc-card--photographer"><a href="../photographers/rineke-dijkstra.html"><div data-nosnippet class="pc-top pc-top--year"><div class="pc-top__meta"><span class="idx">01</span><span>NL</span></div><div class="pc-top__art"><span class="yr-birth">1959</span><span class="yr-dash">—</span></div><div class="pc-top__hint">RINEKE DIJKSTRA · 1959–</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">Rineke Dijkstra</h3><div class="pc-body__name-en">リネケ・ダイクストラ</div></div><div class="pc-body__meta">NL · 1959–</div><p class="pc-body__lede">Photographed teenagers on beaches, mothers after childbirth, and soldiers head-on in large-format color, fixing body, identity, and rites of passage in still photographs.</p><div class="pc-body__channel">Conceptual · Typology</div><div class="pc-body__tags"><span class="pc-body__tag">Typology</span><span class="pc-body__tag">Portrait</span></div><div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div></div></a></article>
 <article class="pc-card pc-card--photographer"><a href="../photographers/boris-mikhailov.html"><div data-nosnippet class="pc-top pc-top--fragment"><div class="pc-top__meta"><span class="idx">02</span><span>UA</span></div><div class="pc-top__art">B</div><div class="pc-top__hint">BORIS MIKHAILOV · 1938–</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">Boris Mikhailov</h3><div class="pc-body__name-en">ボリス・ミハイロフ</div></div><div class="pc-body__meta">UA · 1938–</div><p class="pc-body__lede">Recorded the collapse of Soviet society, the homeless of Kharkiv, and the socially excluded in raw color and black and white. Case History (1997) is his major work.</p><div class="pc-body__channel">Social documentary · Conceptual</div><div class="pc-body__tags"><span class="pc-body__tag">Social documentary</span><span class="pc-body__tag">Post-Soviet</span></div><div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div></div></a></article>
 <article class="pc-card pc-card--photographer"><a href="../photographers/thomas-struth.html"><div data-nosnippet class="pc-top pc-top--slash"><div class="pc-top__meta"><span class="idx">03</span><span>DE</span></div><div class="pc-top__art"><span class="fn">THOMAS</span><span class="ln">STRUTH</span></div><div class="pc-top__hint">THOMAS STRUTH · 1954–</div></div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">Thomas Struth</h3><div class="pc-body__name-en">トーマス・シュトルート</div></div><div class="pc-body__meta">DE · 1954–</div><p class="pc-body__lede">His Museum Photographs, large-format color images of visitors inside museums, reexamined the three-way relation among photography, painting, and the viewer. A broad practice extending to cities, nature, and family portraits.</p><div class="pc-body__channel">Düsseldorf School</div><div class="pc-body__tags"><span class="pc-body__tag">Düsseldorf School</span><span class="pc-body__tag">Large format</span></div><div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div></div></a></article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ルック・ドラエー Luc Delahaye Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ルック・ドラエー Luc Delahaye Questioning the image · CONCEPTUAL Conceptual Art" data-country="FR">
   <a href="../photographers/luc-delahaye.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">212</span><span>FR</span></div>
@@ -770,7 +770,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="2000" data-search="蜷川実花（ミカ・ニナガワ） Mika Ninagawa Questioning the image · CONCEPTUAL Japanese Photography Conceptual Art Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="2000" data-search="蜷川実花（ミカ・ニナガワ） Mika Ninagawa Questioning the image · CONCEPTUAL Japanese Photography Conceptual Art Japan" data-country="JP">
   <a href="../photographers/mika-ninagawa.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">258</span><span>JP</span></div>
@@ -788,7 +788,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1980" data-search="川内倫子 Rinko Kawauchi Questioning the image · CONCEPTUAL Japanese Photography Conceptual Art Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1980" data-search="川内倫子 Rinko Kawauchi Questioning the image · CONCEPTUAL Japanese Photography Conceptual Art Japan" data-country="JP">
   <a href="../photographers/rinko-kawauchi.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">145</span><span>JP</span></div>
@@ -799,14 +799,14 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
       <span class="pc-body__kind">Photographer</span>
       <div><h3 class="pc-body__name">Rinko Kawauchi</h3><div class="pc-body__name-en">川内倫子</div></div>
       <div class="pc-body__meta">JP · 1980s</div>
-      <p class="pc-body__lede">Japanese photographer born in 1972 in Shiga Prefecture. Became widely known in the early 2000s through photobooks such as Utatane, Hanabi, and Hanako, and has remained a key …</p>
+      <p class="pc-body__lede">Rinko Kawauchi is a key figure in contemporary Japanese photography whose pale 6×6 color photographs and edited photobooks bring everyday details, light, and cycles of life and …</p>
       <div class="pc-body__channel">Questioning the image · CONCEPTUAL</div>
       <div class="pc-body__tags"><span class="pc-body__tag">Japanese Photography</span><span class="pc-body__tag">Conceptual Art</span><span class="pc-body__tag">Japan</span></div>
       <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="アンデルス・ペーターセン Anders Petersen An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="アンデルス・ペーターセン Anders Petersen An entry into photo history · PHOTO HISTORY" data-country="SE">
   <a href="../photographers/anders-petersen.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">110</span><span>SE</span></div>
@@ -824,7 +824,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="アン＝ミー・レー An-My Lê Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="アン＝ミー・レー An-My Lê Questioning the image · CONCEPTUAL Conceptual Art" data-country="VN / US">
   <a href="../photographers/an-my-le.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">113</span><span>VN / US</span></div>
@@ -842,7 +842,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="トーマス・デマンド Thomas Demand Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="トーマス・デマンド Thomas Demand Topics in photo history · CONCEPTUAL Conceptual" data-country="DE">
   <a href="../photographers/thomas-demand.html" >
     <div data-nosnippet class="pc-top pc-top--rotate">
       <div class="pc-top__meta"><span class="idx">186</span><span>DE</span></div>
@@ -860,7 +860,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ニッキー・S・リー Nikki S. Lee Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ニッキー・S・リー Nikki S. Lee Topics in photo history · CONCEPTUAL Conceptual" data-country="KR / US">
   <a href="../photographers/nikki-s-lee.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">188</span><span>KR / US</span></div>
@@ -878,7 +878,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="シャロン・ロックハート Sharon Lockhart Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="シャロン・ロックハート Sharon Lockhart Topics in photo history · CONCEPTUAL Conceptual" data-country="US">
   <a href="../photographers/sharon-lockhart.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">189</span><span>US</span></div>
@@ -896,7 +896,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ローラ・レティンスキー Laura Letinsky Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ローラ・レティンスキー Laura Letinsky Topics in photo history · CONCEPTUAL Conceptual" data-country="CA / US">
   <a href="../photographers/laura-letinsky.html" >
     <div data-nosnippet class="pc-top pc-top--cite">
       <div class="pc-top__meta"><span class="idx">190</span><span>CA / US</span></div>
@@ -914,7 +914,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジェームズ・ウェリング James Welling Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジェームズ・ウェリング James Welling Topics in photo history · CONCEPTUAL Conceptual" data-country="US">
   <a href="../photographers/james-welling.html" >
     <div data-nosnippet class="pc-top pc-top--twosize">
       <div class="pc-top__meta"><span class="idx">191</span><span>US</span></div>
@@ -932,7 +932,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アクセル・ヒュッテ Axel Hütte Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アクセル・ヒュッテ Axel Hütte Topics in photo history · CONCEPTUAL Conceptual" data-country="DE">
   <a href="../photographers/axel-hutte.html" >
     <div data-nosnippet class="pc-top pc-top--fragment">
       <div class="pc-top__meta"><span class="idx">192</span><span>DE</span></div>
@@ -950,7 +950,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジェームズ・ケースベア James Casebere Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジェームズ・ケースベア James Casebere Topics in photo history · CONCEPTUAL Conceptual" data-country="US">
   <a href="../photographers/james-casebere.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">193</span><span>US</span></div>
@@ -968,7 +968,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="トレイシー・モファット Tracey Moffatt Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="トレイシー・モファット Tracey Moffatt Topics in photo history · CONCEPTUAL Conceptual" data-country="AU">
   <a href="../photographers/tracey-moffatt.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">194</span><span>AU</span></div>
@@ -986,7 +986,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="エルヴィン・ヴルム Erwin Wurm Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="エルヴィン・ヴルム Erwin Wurm Topics in photo history · CONCEPTUAL Conceptual" data-country="AT">
   <a href="../photographers/erwin-wurm.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">195</span><span>AT</span></div>
@@ -1004,7 +1004,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="マンフレッド・ヴィルマン Manfred Willmann Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="マンフレッド・ヴィルマン Manfred Willmann Topics in photo history · CONCEPTUAL Conceptual" data-country="AT">
   <a href="../photographers/manfred-willmann.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">196</span><span>AT</span></div>
@@ -1022,7 +1022,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ロイ・アーデン Roy Arden Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ロイ・アーデン Roy Arden Questioning the image · CONCEPTUAL Conceptual Art" data-country="CA">
   <a href="../photographers/roy-arden.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">197</span><span>CA</span></div>
@@ -1040,7 +1040,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アトラス・グループ／ワリド・ラード The Atlas Group / Walid Raad Questioning the image · CONCEPTUAL Conceptual Art Lebanon / United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アトラス・グループ／ワリド・ラード The Atlas Group / Walid Raad Questioning the image · CONCEPTUAL Conceptual Art Lebanon / United States" data-country="LB / US">
   <a href="../photographers/the-atlas-group-walid-raad.html" >
     <div data-nosnippet class="pc-top pc-top--title">
       <div class="pc-top__meta"><span class="idx">198</span><span>LB / US</span></div>
@@ -1058,7 +1058,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ソン・ウー・ベク Seung Woo Back Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ソン・ウー・ベク Seung Woo Back Questioning the image · CONCEPTUAL Conceptual Art" data-country="KR">
   <a href="../photographers/seung-woo-back.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">199</span><span>KR</span></div>
@@ -1076,7 +1076,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="イト・バラダ Yto Barrada Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="イト・バラダ Yto Barrada Questioning the image · CONCEPTUAL Conceptual Art" data-country="MA / FR">
   <a href="../photographers/yto-barrada.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">200</span><span>MA / FR</span></div>
@@ -1094,7 +1094,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ヴァレリー・ベラン Valérie Belin Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ヴァレリー・ベラン Valérie Belin Questioning the image · CONCEPTUAL Conceptual Art" data-country="FR">
   <a href="../photographers/valerie-belin.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">201</span><span>FR</span></div>
@@ -1112,7 +1112,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="リチャード・ビリンガム Richard Billingham Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="リチャード・ビリンガム Richard Billingham Questioning the image · CONCEPTUAL Conceptual Art" data-country="GB">
   <a href="../photographers/richard-billingham.html" >
     <div data-nosnippet class="pc-top pc-top--outline">
       <div class="pc-top__meta"><span class="idx">202</span><span>GB</span></div>
@@ -1130,7 +1130,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ザビーネ・ビター／ヘルムート・ウェーバー Sabine Bitter / Helmut Weber Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ザビーネ・ビター／ヘルムート・ウェーバー Sabine Bitter / Helmut Weber Questioning the image · CONCEPTUAL Conceptual Art" data-country="AT / CA">
   <a href="../photographers/sabine-bitter-helmut-weber.html" >
     <div data-nosnippet class="pc-top pc-top--rotate">
       <div class="pc-top__meta"><span class="idx">203</span><span>AT / CA</span></div>
@@ -1148,7 +1148,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アヌシュカ・ブロマース／ニールス・シュム Anuschka Blommers / Niels Schumm Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アヌシュカ・ブロマース／ニールス・シュム Anuschka Blommers / Niels Schumm Questioning the image · CONCEPTUAL Conceptual Art" data-country="NL">
   <a href="../photographers/anuschka-blommers-niels-schumm.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">204</span><span>NL</span></div>
@@ -1166,7 +1166,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ソニア・ブラス Sonja Braas Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ソニア・ブラス Sonja Braas Questioning the image · CONCEPTUAL Conceptual Art" data-country="DE">
   <a href="../photographers/sonja-braas.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">205</span><span>DE</span></div>
@@ -1184,7 +1184,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="セルゲイ・ブラトコフ Sergey Bratkov Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="セルゲイ・ブラトコフ Sergey Bratkov Questioning the image · CONCEPTUAL Conceptual Art" data-country="UA">
   <a href="../photographers/sergey-bratkov.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">206</span><span>UA</span></div>
@@ -1202,7 +1202,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アダム・ブルームバーグ／オリヴァー・チャナリン Adam Broomberg / Oliver Chanarin Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アダム・ブルームバーグ／オリヴァー・チャナリン Adam Broomberg / Oliver Chanarin Questioning the image · CONCEPTUAL Conceptual Art" data-country="ZA / GB">
   <a href="../photographers/adam-broomberg-oliver-chanarin.html" >
     <div data-nosnippet class="pc-top pc-top--cite">
       <div class="pc-top__meta"><span class="idx">207</span><span>ZA / GB</span></div>
@@ -1220,7 +1220,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="シュテファン・ブルガー Stefan Burger Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="シュテファン・ブルガー Stefan Burger Questioning the image · CONCEPTUAL Conceptual Art" data-country="CH">
   <a href="../photographers/stefan-burger.html" >
     <div data-nosnippet class="pc-top pc-top--twosize">
       <div class="pc-top__meta"><span class="idx">208</span><span>CH</span></div>
@@ -1238,7 +1238,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジェラード・バーン Gerard Byrne Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジェラード・バーン Gerard Byrne Questioning the image · CONCEPTUAL Conceptual Art" data-country="IE">
   <a href="../photographers/gerard-byrne.html" >
     <div data-nosnippet class="pc-top pc-top--fragment">
       <div class="pc-top__meta"><span class="idx">209</span><span>IE</span></div>
@@ -1256,7 +1256,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="クロード・クロスキー Claude Closky Questioning the image · CONCEPTUAL Conceptual Art France">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="クロード・クロスキー Claude Closky Questioning the image · CONCEPTUAL Conceptual Art France" data-country="FR">
   <a href="../photographers/claude-closky.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">210</span><span>FR</span></div>
@@ -1274,7 +1274,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="collectif_fact collectif_fact Questioning the image · CONCEPTUAL Conceptual Art Switzerland">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="collectif_fact collectif_fact Questioning the image · CONCEPTUAL Conceptual Art Switzerland" data-country="CH">
   <a href="../photographers/collectif-fact.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">211</span><span>CH</span></div>
@@ -1292,7 +1292,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="シャルロット・デュマ Charlotte Dumas Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="シャルロット・デュマ Charlotte Dumas Questioning the image · CONCEPTUAL Conceptual Art" data-country="NL">
   <a href="../photographers/charlotte-dumas.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">213</span><span>NL</span></div>
@@ -1310,7 +1310,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ルーカス・アインゼレ Lukas Einsele Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ルーカス・アインゼレ Lukas Einsele Questioning the image · CONCEPTUAL Conceptual Art" data-country="DE">
   <a href="../photographers/lukas-einsele.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">214</span><span>DE</span></div>
@@ -1328,7 +1328,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ルート・ファン・エンペル Ruud van Empel Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ルート・ファン・エンペル Ruud van Empel Questioning the image · CONCEPTUAL Conceptual Art" data-country="NL">
   <a href="../photographers/ruud-van-empel.html" >
     <div data-nosnippet class="pc-top pc-top--title">
       <div class="pc-top__meta"><span class="idx">215</span><span>NL</span></div>
@@ -1346,7 +1346,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="J・H・エングストローム J. H. Engström Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="J・H・エングストローム J. H. Engström Questioning the image · CONCEPTUAL Conceptual Art" data-country="SE">
   <a href="../photographers/j-h-engstrom.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">216</span><span>SE</span></div>
@@ -1364,7 +1364,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ロー・エスリッジ Roe Ethridge Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ロー・エスリッジ Roe Ethridge Questioning the image · CONCEPTUAL Conceptual Art" data-country="US">
   <a href="../photographers/roe-ethridge.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">217</span><span>US</span></div>
@@ -1382,7 +1382,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="シャルル・フレジェ Charles Fréger Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="シャルル・フレジェ Charles Fréger Questioning the image · CONCEPTUAL Conceptual Art" data-country="FR">
   <a href="../photographers/charles-freger.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">218</span><span>FR</span></div>
@@ -1400,7 +1400,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="スティーヴン・ギル Stephen Gill Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="スティーヴン・ギル Stephen Gill Questioning the image · CONCEPTUAL Conceptual Art" data-country="GB">
   <a href="../photographers/stephen-gill.html" >
     <div data-nosnippet class="pc-top pc-top--outline">
       <div class="pc-top__meta"><span class="idx">219</span><span>GB</span></div>
@@ -1418,7 +1418,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アンソニー・ゴイコレア Anthony Goicolea Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アンソニー・ゴイコレア Anthony Goicolea Questioning the image · CONCEPTUAL Conceptual Art" data-country="US">
   <a href="../photographers/anthony-goicolea.html" >
     <div data-nosnippet class="pc-top pc-top--rotate">
       <div class="pc-top__meta"><span class="idx">220</span><span>US</span></div>
@@ -1436,7 +1436,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="G.R.A.M. G.R.A.M. Questioning the image · CONCEPTUAL Conceptual Art Austria">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="G.R.A.M. G.R.A.M. Questioning the image · CONCEPTUAL Conceptual Art Austria" data-country="AT">
   <a href="../photographers/g-r-a-m.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">221</span><span>AT</span></div>
@@ -1454,7 +1454,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アネタ・グジェシコフスカ Aneta Grzeszykowska Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アネタ・グジェシコフスカ Aneta Grzeszykowska Questioning the image · CONCEPTUAL Conceptual Art" data-country="PL">
   <a href="../photographers/aneta-grzeszykowska.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">222</span><span>PL</span></div>
@@ -1472,7 +1472,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ホセ・アントニオ・エルナンデス＝ディエス José Antonio Hernández-Diez Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ホセ・アントニオ・エルナンデス＝ディエス José Antonio Hernández-Diez Questioning the image · CONCEPTUAL Conceptual Art" data-country="VE">
   <a href="../photographers/jose-antonio-hernandez-diez.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">223</span><span>VE</span></div>
@@ -1490,7 +1490,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="スゼ・ツン・レオン Sze Tsung Leong Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="スゼ・ツン・レオン Sze Tsung Leong Questioning the image · CONCEPTUAL Conceptual Art" data-country="US">
   <a href="../photographers/sze-tsung-leong.html" >
     <div data-nosnippet class="pc-top pc-top--cite">
       <div class="pc-top__meta"><span class="idx">224</span><span>US</span></div>
@@ -1508,7 +1508,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ポール・アルベルト・ライトナー Paul Albert Leitner Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ポール・アルベルト・ライトナー Paul Albert Leitner Questioning the image · CONCEPTUAL Conceptual Art" data-country="AT">
   <a href="../photographers/paul-albert-leitner.html" >
     <div data-nosnippet class="pc-top pc-top--twosize">
       <div class="pc-top__meta"><span class="idx">225</span><span>AT</span></div>
@@ -1526,7 +1526,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ネイト・ロウマン Nate Lowman Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ネイト・ロウマン Nate Lowman Questioning the image · CONCEPTUAL Conceptual Art" data-country="US">
   <a href="../photographers/nate-lowman.html" >
     <div data-nosnippet class="pc-top pc-top--fragment">
       <div class="pc-top__meta"><span class="idx">226</span><span>US</span></div>
@@ -1544,7 +1544,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="オリヴァー・ムソヴィク Oliver Musovik Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="オリヴァー・ムソヴィク Oliver Musovik Questioning the image · CONCEPTUAL Conceptual Art" data-country="MK">
   <a href="../photographers/oliver-musovik.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">227</span><span>MK</span></div>
@@ -1562,7 +1562,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ムルティプリシティ Multiplicity Questioning the image · CONCEPTUAL Conceptual Art Italy">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ムルティプリシティ Multiplicity Questioning the image · CONCEPTUAL Conceptual Art Italy" data-country="IT">
   <a href="../photographers/multiplicity.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">228</span><span>IT</span></div>
@@ -1580,7 +1580,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ワンゲチ・ムトゥ Wangechi Mutu Questioning the image · CONCEPTUAL Conceptual Art Kenya / United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ワンゲチ・ムトゥ Wangechi Mutu Questioning the image · CONCEPTUAL Conceptual Art Kenya / United States" data-country="KE / US">
   <a href="../photographers/wangechi-mutu.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">229</span><span>KE / US</span></div>
@@ -1598,7 +1598,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アルノ・ノレン Arno Nollen Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アルノ・ノレン Arno Nollen Questioning the image · CONCEPTUAL Conceptual Art" data-country="NL">
   <a href="../photographers/arno-nollen.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">230</span><span>NL</span></div>
@@ -1616,7 +1616,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="オハイオ Ohio Questioning the image · CONCEPTUAL Conceptual Art Germany">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="オハイオ Ohio Questioning the image · CONCEPTUAL Conceptual Art Germany" data-country="DE">
   <a href="../photographers/ohio.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">231</span><span>DE</span></div>
@@ -1634,7 +1634,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="マルティン・ポラク／ルーカス・ヤサンスキー Martin Polak / Lukas Jasansky Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="マルティン・ポラク／ルーカス・ヤサンスキー Martin Polak / Lukas Jasansky Questioning the image · CONCEPTUAL Conceptual Art" data-country="CZ">
   <a href="../photographers/martin-polak-lukas-jasansky.html" >
     <div data-nosnippet class="pc-top pc-top--title">
       <div class="pc-top__meta"><span class="idx">232</span><span>CZ</span></div>
@@ -1652,7 +1652,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="マルコ・ポローニ Marco Poloni Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="マルコ・ポローニ Marco Poloni Questioning the image · CONCEPTUAL Conceptual Art" data-country="CH">
   <a href="../photographers/marco-poloni.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">233</span><span>CH</span></div>
@@ -1670,7 +1670,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ゴンサロ・プフ Gonzalo Puch Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ゴンサロ・プフ Gonzalo Puch Questioning the image · CONCEPTUAL Conceptual Art" data-country="ES">
   <a href="../photographers/gonzalo-puch.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">234</span><span>ES</span></div>
@@ -1688,7 +1688,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アンリ・サラ Anri Sala Questioning the image · CONCEPTUAL Conceptual Art Albania">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アンリ・サラ Anri Sala Questioning the image · CONCEPTUAL Conceptual Art Albania" data-country="AL">
   <a href="../photographers/anri-sala.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">235</span><span>AL</span></div>
@@ -1706,7 +1706,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジュール・シュピナッチュ Jules Spinatsch Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジュール・シュピナッチュ Jules Spinatsch Questioning the image · CONCEPTUAL Conceptual Art" data-country="CH">
   <a href="../photographers/jules-spinatsch.html" >
     <div data-nosnippet class="pc-top pc-top--outline">
       <div class="pc-top__meta"><span class="idx">236</span><span>CH</span></div>
@@ -1724,7 +1724,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="エリック・シュタインブレッヒャー Erik Steinbrecher Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="エリック・シュタインブレッヒャー Erik Steinbrecher Questioning the image · CONCEPTUAL Conceptual Art" data-country="CH">
   <a href="../photographers/erik-steinbrecher.html" >
     <div data-nosnippet class="pc-top pc-top--rotate">
       <div class="pc-top__meta"><span class="idx">237</span><span>CH</span></div>
@@ -1742,7 +1742,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="イヴ・サスマン Eve Sussman Questioning the image · CONCEPTUAL Conceptual Art United Kingdom / United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="イヴ・サスマン Eve Sussman Questioning the image · CONCEPTUAL Conceptual Art United Kingdom / United States" data-country="GB / US">
   <a href="../photographers/eve-sussman.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">238</span><span>GB / US</span></div>
@@ -1760,7 +1760,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="フィリップ・テリエ＝エルマン Philippe Terrier-Hermann Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="フィリップ・テリエ＝エルマン Philippe Terrier-Hermann Questioning the image · CONCEPTUAL Conceptual Art" data-country="FR">
   <a href="../photographers/philippe-terrier-hermann.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">239</span><span>FR</span></div>
@@ -1778,7 +1778,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アナ・トルフス Ana Torfs Questioning the image · CONCEPTUAL Conceptual Art BE">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="アナ・トルフス Ana Torfs Questioning the image · CONCEPTUAL Conceptual Art BE" data-country="BE">
   <a href="../photographers/ana-torfs.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">240</span><span>BE</span></div>
@@ -1796,7 +1796,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジャナイナ・チェペ Janaina Tschäpe Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ジャナイナ・チェペ Janaina Tschäpe Questioning the image · CONCEPTUAL Conceptual Art" data-country="DE / BR">
   <a href="../photographers/janaina-tschape.html" >
     <div data-nosnippet class="pc-top pc-top--cite">
       <div class="pc-top__meta"><span class="idx">241</span><span>DE / BR</span></div>
@@ -1814,7 +1814,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="イェンス・ウルリッヒ Jens Ullrich Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="イェンス・ウルリッヒ Jens Ullrich Questioning the image · CONCEPTUAL Conceptual Art" data-country="DE">
   <a href="../photographers/jens-ullrich.html" >
     <div data-nosnippet class="pc-top pc-top--twosize">
       <div class="pc-top__meta"><span class="idx">242</span><span>DE</span></div>
@@ -1832,7 +1832,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ユースフル・フォトグラフィー Useful Photography Questioning the image · CONCEPTUAL Conceptual Art Netherlands">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="ユースフル・フォトグラフィー Useful Photography Questioning the image · CONCEPTUAL Conceptual Art Netherlands" data-country="NL">
   <a href="../photographers/useful-photography.html" >
     <div data-nosnippet class="pc-top pc-top--fragment">
       <div class="pc-top__meta"><span class="idx">243</span><span>NL</span></div>
@@ -1850,7 +1850,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="オノデラユキ Yuki Onodera Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="オノデラユキ Yuki Onodera Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/yuki-onodera.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">244</span><span>JP</span></div>
@@ -1868,11 +1868,24 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer"><a href="../photographers/sakiko-nomura.html"><div data-nosnippet class="pc-top pc-top--kanji">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1990" data-search="野村佐紀子 Sakiko Nomura The photobook as method · JAPAN Japanese Photography I-Photography Photobook Culture Japan" data-country="JP">
+  <a href="../photographers/sakiko-nomura.html" >
+    <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">288</span><span>JP</span></div>
       <div class="pc-top__art">紀子</div>
       <div class="pc-top__hint">SAKIKO NOMURA · 1967–</div>
-    </div><div class="pc-body"><span class="pc-body__kind">Photographer</span><div><h3 class="pc-body__name">Sakiko Nomura</h3><div class="pc-body__name-en">野村佐紀子</div></div><div class="pc-body__meta">JP · 1967–</div><p class="pc-body__lede">Sakiko Nomura (b. 1967, Shimonoseki) links male nudes, night, flowers, and the sea through the density of black and the sequence of the photobook. A student of Nobuyoshi Araki, she turns the nude away from explicit eros toward an image of shared time and memory.</p><div class="pc-body__channel">The photobook as method · JAPAN</div><div class="pc-body__tags"><span class="pc-body__tag">Japanese Photography</span><span class="pc-body__tag">I-Photography</span><span class="pc-body__tag">Photobook Culture</span><span class="pc-body__tag">Japan</span></div><div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div></div></a></article>
+    </div>
+    <div class="pc-body">
+      <span class="pc-body__kind">Photographer</span>
+      <div><h3 class="pc-body__name">Sakiko Nomura</h3><div class="pc-body__name-en">野村佐紀子</div></div>
+      <div class="pc-body__meta">JP · 1967–</div>
+      <p class="pc-body__lede">Sakiko Nomura is a photographer who has brought together male nudes, night, flowers, rooms, the sea, and scenes of travel through dense blacks and the sequence of the photobook …</p>
+      <div class="pc-body__channel">The photobook as method · JAPAN</div>
+      <div class="pc-body__tags"><span class="pc-body__tag">Japanese Photography</span><span class="pc-body__tag">I-Photography</span><span class="pc-body__tag">Photobook Culture</span><span class="pc-body__tag">Japan</span></div>
+      <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
+    </div>
+  </a>
+</article>
 </div></div></section></main>
 <aside class="era-side" data-nosnippet>            <div class="ph-side-search">
         <form class="ph-side-search__form" onsubmit="return false;">

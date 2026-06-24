@@ -163,8 +163,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── ERA HERO ─────────────────────────────────────────────── */
@@ -827,7 +827,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
         </div>
         <div class="ph-section__body">
           <div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ニセフォール・ニエプス Nicéphore Niépce Topics in photo history · INVENTION &amp; TECHNOLOGY Invention &amp; technology Heliography France">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ニセフォール・ニエプス Nicéphore Niépce Topics in photo history · INVENTION &amp; TECHNOLOGY Invention &amp; technology Heliography France" data-country="FR">
   <a href="../photographers/nicephore-niepce.html" >
     <div data-nosnippet class="pc-top pc-top--twosize">
       <div class="pc-top__meta"><span class="idx">265</span><span>FR</span></div>
@@ -845,7 +845,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ルイ・ダゲール Louis Daguerre Topics in photo history · INVENTION &amp; TECHNOLOGY Invention &amp; technology France">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ルイ・ダゲール Louis Daguerre Topics in photo history · INVENTION &amp; TECHNOLOGY Invention &amp; technology France" data-country="FR">
   <a href="../photographers/daguerre.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">01</span><span>FR</span></div>
@@ -863,7 +863,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ウィリアム・ヘンリー・フォックス・タルボット William Henry Fox Talbot Topics in photo history · INVENTION &amp; TECHNOLOGY Invention &amp; technology United Kingdom">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ウィリアム・ヘンリー・フォックス・タルボット William Henry Fox Talbot Topics in photo history · INVENTION &amp; TECHNOLOGY Invention &amp; technology United Kingdom" data-country="GB">
   <a href="../photographers/talbot.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">02</span><span>GB</span></div>
@@ -881,7 +881,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="デイヴィッド・オクタヴィアス・ヒル David Octavius Hill Building the institution · PICTORIALISM Calotype Pictorialism Portrait photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="デイヴィッド・オクタヴィアス・ヒル David Octavius Hill Building the institution · PICTORIALISM Calotype Pictorialism Portrait photography" data-country="GB">
   <a href="../photographers/david-octavius-hill.html" >
     <div data-nosnippet class="pc-top pc-top--rotate">
       <div class="pc-top__meta"><span class="idx">49</span><span>GB</span></div>
@@ -899,7 +899,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ジュリア・マーガレット・キャメロン Julia Margaret Cameron Building the institution · PICTORIALISM Pictorialism Portrait United Kingdom">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ジュリア・マーガレット・キャメロン Julia Margaret Cameron Building the institution · PICTORIALISM Pictorialism Portrait United Kingdom" data-country="GB">
   <a href="../photographers/cameron.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">13</span><span>GB</span></div>
@@ -917,7 +917,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ロジャー・フェントン Roger Fenton Documentary as reading · DOCUMENTARY Documentary War photography United Kingdom">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ロジャー・フェントン Roger Fenton Documentary as reading · DOCUMENTARY Documentary War photography United Kingdom" data-country="GB">
   <a href="../photographers/fenton.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">03</span><span>GB</span></div>
@@ -935,7 +935,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ギュスターヴ・ル・グレー Gustave Le Gray Topics in photo history · LANDSCAPE PHOTOGRAPHY Landscape photography Invention &amp; technology France">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ギュスターヴ・ル・グレー Gustave Le Gray Topics in photo history · LANDSCAPE PHOTOGRAPHY Landscape photography Invention &amp; technology France" data-country="FR">
   <a href="../photographers/legray.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">06</span><span>FR</span></div>
@@ -953,7 +953,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ナダール Nadar Topics in photo history · PORTRAIT Portrait France">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ナダール Nadar Topics in photo history · PORTRAIT Portrait France" data-country="FR">
   <a href="../photographers/nadar.html" >
     <div data-nosnippet class="pc-top pc-top--title">
       <div class="pc-top__meta"><span class="idx">05</span><span>FR</span></div>
@@ -971,7 +971,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="アレクサンダー・ガードナー Alexander Gardner Documentary as reading · DOCUMENTARY War photography Documentary United Kingdom / United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="アレクサンダー・ガードナー Alexander Gardner Documentary as reading · DOCUMENTARY War photography Documentary United Kingdom / United States" data-country="GB / US">
   <a href="../photographers/alexander-gardner.html" >
     <div data-nosnippet class="pc-top pc-top--fragment">
       <div class="pc-top__meta"><span class="idx">266</span><span>GB / US</span></div>
@@ -989,7 +989,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ロバート・アダムソン Robert Adamson Topics in photo history · CALOTYPE Calotype Portrait photography Camera Work">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ロバート・アダムソン Robert Adamson Topics in photo history · CALOTYPE Calotype Portrait photography Camera Work" data-country="GB">
   <a href="../photographers/robert-adamson.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">50</span><span>GB</span></div>
@@ -1007,7 +1007,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="マシュー・ブレイディ Mathew Brady Documentary as reading · DOCUMENTARY Portrait Documentary War photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="マシュー・ブレイディ Mathew Brady Documentary as reading · DOCUMENTARY Portrait Documentary War photography" data-country="US">
   <a href="../photographers/brady.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">12</span><span>US</span></div>
@@ -1025,7 +1025,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="フェリーチェ・ベアト Felice Beato Documentary as reading · DOCUMENTARY Documentary War photography Colonial photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="フェリーチェ・ベアト Felice Beato Documentary as reading · DOCUMENTARY Documentary War photography Colonial photography" data-country="IT / GB">
   <a href="../photographers/beato.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">04</span><span>IT / GB</span></div>
@@ -1043,7 +1043,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ティモシー・オサリヴァン Timothy O'Sullivan Documentary as reading · DOCUMENTARY War photography Landscape photography Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1839" data-search="ティモシー・オサリヴァン Timothy O'Sullivan Documentary as reading · DOCUMENTARY War photography Landscape photography Documentary" data-country="US">
   <a href="../photographers/timothy-osullivan.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">267</span><span>US</span></div>

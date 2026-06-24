@@ -162,8 +162,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── ERA HERO ─────────────────────────────────────────────── */
@@ -749,7 +749,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <nav class="era-nav" aria-label="Era navigation"><div class="era-nav__label">§ — Eras</div><div class="era-nav__strip"><a class="era-nav__item" href="1839.html">1839–60s</a><a class="era-nav__item" href="1870.html">1870–90s</a><a class="era-nav__item" href="1890.html">1890–1910s</a><a class="era-nav__item is-active" href="1910.html">1910–20s</a><a class="era-nav__item" href="1930.html">1930–40s</a><a class="era-nav__item" href="1950.html">1950–60s</a><a class="era-nav__item" href="1970.html">1970–80s</a><a class="era-nav__item" href="1980.html">1980–90s</a><a class="era-nav__item" href="1990.html">1990–2000s</a><a class="era-nav__item" href="2000.html">2000–10s</a><a class="era-nav__item" href="2010.html">2010–20s</a></div></nav>
 <div class="era-outer"><div class="era-layout">
 <main class="era-main"><div class="ph-abstract"><div class="ph-abstract__label">Overview</div><p>World War I, the Russian Revolution, and the Bauhaus transformed visual culture. The Leica small camera made mobility the defining condition of 20th-century photography. Dada, New Vision, and Straight Photography each claimed photography could do something new.</p></div><div class="ph-thesis"><div class="ph-thesis__label">What This Era Changed</div><p class="ph-thesis__body">The 1910s and 1920s established that <em>photography's formal possibilities — angle, abstraction, close-up, sequence — were not limitations to overcome but tools for making modernity visible</em>, transforming the medium from record to visual argument.</p></div><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ CTX</span><span class="ph-section__name">Context of This Era</span></div></div><div class="ph-section__body"><div class="era-context-grid"><div class="era-context-block"><div class="era-context-label">Politics &amp; Society</div><p class="era-context-text">World War I (1914–18) brought an unprecedented scale of industrialized death through machine guns, poison gas, and aerial bombardment. The Russian Revolution (1917) transformed the political map of Europe. These upheavals shook the foundations of 19th-century culture and opened space for radical experiment in the arts.</p></div><div class="era-context-block"><div class="era-context-label">The Avant-Garde and Photography</div><p class="era-context-text">In the United States, Paul Strand decisively broke with Pictorialism in 1916–17, helping define Straight Photography. In Europe, Dada (founded Zurich 1916), the Russian avant-garde, and the Bauhaus (founded 1919) made photography central to new visual languages — photomontage, photogram, experimental composition.</p></div><div class="era-context-block"><div class="era-context-label">Technological Change</div><p class="era-context-text">The Leica 35mm camera (1925) and improvements in film sensitivity made mobility the defining condition of 20th-century photography. Small cameras meant photographers could work in low light, crowds, and fast-moving situations — changing what it meant to photograph the street.</p></div><div class="era-context-block"><div class="era-context-label">Modern Photography in Japan</div><p class="era-context-text">Japan's Taisho Democracy (1912–26) and rapid urban growth created conditions for modern photography. Influenced by European constructivism and Bauhaus ideas, Japanese photographers explored abstraction, close-ups, and experimental forms — a local version of the New Vision movement.</p></div></div></div></section><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ PH</span><span class="ph-section__name">Photographers of This Era</span></div></div><div class="ph-section__body"><div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ポール・ストランド Paul Strand Documentary as reading · DOCUMENTARY Straight Photography Modernism Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ポール・ストランド Paul Strand Documentary as reading · DOCUMENTARY Straight Photography Modernism Documentary" data-country="US">
   <a href="../photographers/strand.html" >
     <div data-nosnippet class="pc-top pc-top--twosize">
       <div class="pc-top__meta"><span class="idx">19</span><span>US</span></div>
@@ -767,7 +767,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="マン・レイ Man Ray Topics in photo history · DADA Dada Surrealism Rayograph">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="マン・レイ Man Ray Topics in photo history · DADA Dada Surrealism Rayograph" data-country="US / FR">
   <a href="../photographers/manray.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">21</span><span>US / FR</span></div>
@@ -785,7 +785,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ラースロー・モホイ＝ナジ László Moholy-Nagy Topics in photo history · BAUHAUS Bauhaus New Vision Rayograph">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ラースロー・モホイ＝ナジ László Moholy-Nagy Topics in photo history · BAUHAUS Bauhaus New Vision Rayograph" data-country="HU / DE">
   <a href="../photographers/moholy.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">22</span><span>HU / DE</span></div>
@@ -803,7 +803,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アウグスト・ザンダー August Sander Topics in photo history · NEUE SACHLICHKEIT Neue Sachlichkeit Social Documentary Portrait">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アウグスト・ザンダー August Sander Topics in photo history · NEUE SACHLICHKEIT Neue Sachlichkeit Social Documentary Portrait" data-country="DE">
   <a href="../photographers/sander.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">23</span><span>DE</span></div>
@@ -821,7 +821,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アルベルト・レンガー＝パッチュ Albert Renger-Patzsch Topics in photo history · NEUE SACHLICHKEIT Neue Sachlichkeit Modernism Bauhaus">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アルベルト・レンガー＝パッチュ Albert Renger-Patzsch Topics in photo history · NEUE SACHLICHKEIT Neue Sachlichkeit Modernism Bauhaus" data-country="DE">
   <a href="../photographers/renger.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">24</span><span>DE</span></div>
@@ -839,7 +839,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アレクサンドル・ロトチェンコ Alexander Rodchenko Topics in photo history · MODERNISM Modernism New Vision Russia">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アレクサンドル・ロトチェンコ Alexander Rodchenko Topics in photo history · MODERNISM Modernism New Vision Russia" data-country="RU">
   <a href="../photographers/alexander-rodchenko.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">67</span><span>RU</span></div>
@@ -857,7 +857,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アンドレ・ケルテス André Kertész City and the moment · STREET Street Photography Documentary MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アンドレ・ケルテス André Kertész City and the moment · STREET Street Photography Documentary MoMA" data-country="HU">
   <a href="../photographers/andre-kertesz.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">68</span><span>HU</span></div>
@@ -875,7 +875,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="福原信三 Shinzo Fukuhara Building the institution · PICTORIALISM Japanese Photography Pictorialism Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="福原信三 Shinzo Fukuhara Building the institution · PICTORIALISM Japanese Photography Pictorialism Japan" data-country="JP">
   <a href="../photographers/jp-福原信三.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">65</span><span>JP</span></div>
@@ -893,7 +893,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="安井仲治 Nakaji Yasui Building the institution · PICTORIALISM Japanese Photography Pictorialism Modernism">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="安井仲治 Nakaji Yasui Building the institution · PICTORIALISM Japanese Photography Pictorialism Modernism" data-country="JP">
   <a href="../photographers/jp-安井仲治.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">71</span><span>JP</span></div>
@@ -911,7 +911,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ジェルメーヌ・クリュル Germaine Krull Documentary as reading · DOCUMENTARY Modernism Photojournalism MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="ジェルメーヌ・クリュル Germaine Krull Documentary as reading · DOCUMENTARY Modernism Photojournalism MoMA" data-country="DE">
   <a href="../photographers/germaine-krull.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">69</span><span>DE</span></div>
@@ -929,7 +929,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アルヴィン・ラングドン・コバーン Alvin Langdon Coburn Topics in photo history · MODERNISM Modernism Vorticism Experimental techniques">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アルヴィン・ラングドン・コバーン Alvin Langdon Coburn Topics in photo history · MODERNISM Modernism Vorticism Experimental techniques" data-country="US / GB">
   <a href="../photographers/coburn.html" >
     <div data-nosnippet class="pc-top pc-top--fragment">
       <div class="pc-top__meta"><span class="idx">20</span><span>US / GB</span></div>
@@ -947,7 +947,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="野島康三 Yasuzo Nojima Building the institution · PICTORIALISM Japanese Photography Pictorialism Portrait">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="野島康三 Yasuzo Nojima Building the institution · PICTORIALISM Japanese Photography Pictorialism Portrait" data-country="JP">
   <a href="../photographers/jp-野島康三.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">66</span><span>JP</span></div>
@@ -965,7 +965,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="中山岩太 Iwata Nakayama Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Modernism Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="中山岩太 Iwata Nakayama Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Modernism Japan" data-country="JP">
   <a href="../photographers/jp-中山岩太.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">70</span><span>JP</span></div>
@@ -983,7 +983,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="チャールズ・シェラー Charles Sheeler Topics in photo history · MODERNISM Modernism Straight Photography United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="チャールズ・シェラー Charles Sheeler Topics in photo history · MODERNISM Modernism Straight Photography United States" data-country="US">
   <a href="../photographers/charles-sheeler.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">72</span><span>US</span></div>

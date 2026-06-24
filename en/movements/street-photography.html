@@ -159,8 +159,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── MOVEMENT HERO ─────────────────────────────────────── */
@@ -891,7 +891,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 02</span><span class="ph-section__name">Criticism and Reception</span></div></div><div class="ph-section__body"><p>On this site, photographers connected to Street Photography appear mainly from 1910–1920s to 1970–1980s, often overlapping with Documentary, Photojournalism, FSA Photography, and Decisive Moment.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p></div></section>
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 03</span><span class="ph-section__name">Related Movements</span></div></div><div class="ph-section__body"><p>Street Photography often overlaps with Documentary, Photojournalism, FSA Photography, and Decisive Moment. Reading those pages together makes it easier to see where method, institution, or critical language begins to diverge.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p></div></section>
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 04</span><span class="ph-section__name">Photographers</span></div></div><div class="ph-section__body"><div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アンドレ・ケルテス André Kertész City and the moment · STREET Street Photography Documentary MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1910" data-search="アンドレ・ケルテス André Kertész City and the moment · STREET Street Photography Documentary MoMA" data-country="HU">
   <a href="../photographers/andre-kertesz.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">68</span><span>PHOTOGRAPHER</span></div>
@@ -909,7 +909,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="アンリ・カルティエ＝ブレッソン Henri Cartier-Bresson City and the moment · STREET Decisive Moment Photojournalism Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="アンリ・カルティエ＝ブレッソン Henri Cartier-Bresson City and the moment · STREET Decisive Moment Photojournalism Street Photography" data-country="FR">
   <a href="../photographers/cartierbresson.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">27</span><span>PHOTOGRAPHER</span></div>
@@ -927,7 +927,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ロバート・フランク Robert Frank City and the moment · STREET American photography Documentary Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ロバート・フランク Robert Frank City and the moment · STREET American photography Documentary Street Photography" data-country="CH">
   <a href="../photographers/robertfrank.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">31</span><span>PHOTOGRAPHER</span></div>
@@ -945,7 +945,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ウィリアム・クライン William Klein City and the moment · STREET Street Photography American photography Photojournalism">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ウィリアム・クライン William Klein City and the moment · STREET Street Photography American photography Photojournalism" data-country="US">
   <a href="../photographers/williamklein.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">32</span><span>PHOTOGRAPHER</span></div>
@@ -963,7 +963,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ゲリー・ウィノグランド Garry Winogrand City and the moment · STREET Street Photography American photography Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ゲリー・ウィノグランド Garry Winogrand City and the moment · STREET Street Photography American photography Documentary" data-country="US">
   <a href="../photographers/winogrand.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">35</span><span>PHOTOGRAPHER</span></div>
@@ -981,7 +981,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="リー・フリードランダー Lee Friedlander City and the moment · STREET Street Photography American photography Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="リー・フリードランダー Lee Friedlander City and the moment · STREET Street Photography American photography Documentary" data-country="US">
   <a href="../photographers/friedlander.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">36</span><span>PHOTOGRAPHER</span></div>
@@ -999,7 +999,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ウォーカー・エヴァンス Walker Evans City and the moment · STREET FSA Photography Documentary Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ウォーカー・エヴァンス Walker Evans City and the moment · STREET FSA Photography Documentary Street Photography" data-country="US">
   <a href="../photographers/evans.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">26</span><span>PHOTOGRAPHER</span></div>
@@ -1017,7 +1017,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="森山大道 Daido Moriyama The photobook as method · JAPAN Provoke Japanese Photography Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="森山大道 Daido Moriyama The photobook as method · JAPAN Provoke Japanese Photography Street Photography" data-country="JP">
   <a href="../photographers/moriyama.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">38</span><span>PHOTOGRAPHER</span></div>

@@ -783,12 +783,12 @@ def translate_html_ui(html, page_type='movement'):
         ('<html lang="ja">', '<html lang="en">'),
         # header brand
         ('<span class="head__brand-photo">写真</span>の座標', '<span class="head__brand-photo">Photo</span> Coordinates'),
+        # linked language toggle
+        ('.head__lang button {', '.head__lang button, .head__lang a {'),
+        ('.head__lang button.is-active {', '.head__lang button.is-active, .head__lang a.is-active {'),
         # crumbs based on type
         ('<em>MOVEMENTS</em>', '<em>MOVEMENTS</em>'),
         ('<em>ERAS</em>', '<em>ERAS</em>'),
-        # lang buttons
-        ('<button class="is-active">JP</button><button>EN</button>',
-         '<button>JP</button><button class="is-active">EN</button>'),
         # mobile search
         ('SEARCH · 写真家を探す</label>', 'SEARCH · Find a photographer</label>'),
         ('placeholder="SEARCH · 写真家を探す"', 'placeholder="Search photographers"'),
@@ -1388,19 +1388,19 @@ def add_lang_toggle_href(html, slug_or_era, page_type='movement'):
         ja_url = f'https://eyescosmos.github.io/eras/{slug_or_era}.html'
         en_url = f'https://eyescosmos.github.io/en/eras/{slug_or_era}.html'
 
-    # Replace lang toggle - head__lang buttons don't have hrefs in v5.1
-    # They use JS onclick; we'll add onclick behavior via data attrs
-    # Replace the button structure with links
-    html = re.sub(
-        r'<div class="head__lang"><button class="is-active">JP</button><button>EN</button></div>',
-        f'<div class="head__lang"><a href="{ja_url}" class="lang-btn">JP</a><a href="{en_url}" class="lang-btn is-active">EN</a></div>',
-        html
+    toggle = (
+        f'<div class="head__lang"><a href="{ja_url}" class="lang-btn">JP</a>'
+        f'<a href="{en_url}" class="lang-btn is-active">EN</a></div>'
     )
-    html = re.sub(
-        r'<div class="head__lang"><button>JP</button><button class="is-active">EN</button></div>',
-        f'<div class="head__lang"><a href="{ja_url}" class="lang-btn">JP</a><a href="{en_url}" class="lang-btn is-active">EN</a></div>',
-        html
+    html, count = re.subn(
+        r'<div class="head__lang">.*?</div>',
+        toggle,
+        html,
+        count=1,
+        flags=re.S,
     )
+    if count != 1:
+        raise RuntimeError(f"head__lang not found while building EN {page_type}: {slug_or_era}")
     return html
 
 

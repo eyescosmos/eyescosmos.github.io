@@ -162,8 +162,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── ERA HERO ─────────────────────────────────────────────── */
@@ -749,7 +749,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <nav class="era-nav" aria-label="Era navigation"><div class="era-nav__label">§ — Eras</div><div class="era-nav__strip"><a class="era-nav__item" href="1839.html">1839–60s</a><a class="era-nav__item is-active" href="1870.html">1870–90s</a><a class="era-nav__item" href="1890.html">1890–1910s</a><a class="era-nav__item" href="1910.html">1910–20s</a><a class="era-nav__item" href="1930.html">1930–40s</a><a class="era-nav__item" href="1950.html">1950–60s</a><a class="era-nav__item" href="1970.html">1970–80s</a><a class="era-nav__item" href="1980.html">1980–90s</a><a class="era-nav__item" href="1990.html">1990–2000s</a><a class="era-nav__item" href="2000.html">2000–10s</a><a class="era-nav__item" href="2010.html">2010–20s</a></div></nav>
 <div class="era-outer"><div class="era-layout">
 <main class="era-main"><div class="ph-abstract"><div class="ph-abstract__label">Overview</div><p>Dry-plate technology, Kodak roll film, and halftone printing transformed photography into a mass medium between the 1870s and 1890s. Industrialization, urbanization, and print culture made photographs part of everyday life, while Pictorialism arose to claim photography's place as art.</p></div><div class="ph-thesis"><div class="ph-thesis__label">What This Era Changed</div><p class="ph-thesis__body">The period between 1870 and 1900 made photography <em>socially ubiquitous</em> — through dry plates, roll film, halftone printing, and the Kodak camera — while simultaneously producing the conditions for photography's first sustained claim to artistic status.</p></div><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ CTX</span><span class="ph-section__name">Context of This Era</span></div></div><div class="ph-section__body"><div class="era-context-grid"><div class="era-context-block"><div class="era-context-label">Politics &amp; Society</div><p class="era-context-text">France lost the Franco-Prussian War (1870–71) and the German Empire was founded. The Paris Commune uprising and its violent suppression became an early photographic document of civil conflict. Industrialization accelerated in Europe and North America, expanding rail networks, factory labor, and print culture.</p></div><div class="era-context-block"><div class="era-context-label">Industrialization and Photography</div><p class="era-context-text">Maddox's dry plate (1871) transformed photography into a more portable practice because photographers no longer had to coat plates immediately before exposure. The Eastman Kodak roll-film camera (1888) brought photography to amateurs and launched a mass market.</p></div><div class="era-context-block"><div class="era-context-label">Technological Change</div><p class="era-context-text">Halftone printing (c. 1880s) allowed photographs to be printed directly in newspapers and magazines. This shift made photographic images part of everyday news consumption, laying the structural basis for photojournalism in the next century.</p></div><div class="era-context-block"><div class="era-context-label">Directions of Expression</div><p class="era-context-text">Pictorialism emerged in the 1880s as photographers like P. H. Emerson argued for photography's artistic status. Soft focus, handcrafted printing, and careful composition countered the idea that photography was mere mechanical recording.</p></div></div></div></section><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ PH</span><span class="ph-section__name">Photographers of This Era</span></div></div><div class="ph-section__body"><div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="エドワード・マイブリッジ Eadweard Muybridge Topics in photo history · SCIENTIFIC PHOTOGRAPHY Scientific photography Experimental techniques United Kingdom / United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="エドワード・マイブリッジ Eadweard Muybridge Topics in photo history · SCIENTIFIC PHOTOGRAPHY Scientific photography Experimental techniques United Kingdom / United States" data-country="GB / US">
   <a href="../photographers/muybridge.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">07</span><span>GB / US</span></div>
@@ -767,7 +767,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="エティエンヌ＝ジュール・マレー Étienne-Jules Marey Topics in photo history · SCIENTIFIC PHOTOGRAPHY Scientific photography Experimental techniques France">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="エティエンヌ＝ジュール・マレー Étienne-Jules Marey Topics in photo history · SCIENTIFIC PHOTOGRAPHY Scientific photography Experimental techniques France" data-country="FR">
   <a href="../photographers/marey.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">08</span><span>FR</span></div>
@@ -785,7 +785,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="ジェイコブ・リース Jacob Riis Documentary as reading · DOCUMENTARY Social Documentary Documentary Denmark / United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="ジェイコブ・リース Jacob Riis Documentary as reading · DOCUMENTARY Social Documentary Documentary Denmark / United States" data-country="DK / US">
   <a href="../photographers/riis.html" >
     <div data-nosnippet class="pc-top pc-top--outline">
       <div class="pc-top__meta"><span class="idx">09</span><span>DK / US</span></div>
@@ -803,7 +803,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="シャルル・マルヴィル Charles Marville Documentary as reading · DOCUMENTARY Documentary Urban documentation France">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="シャルル・マルヴィル Charles Marville Documentary as reading · DOCUMENTARY Documentary Urban documentation France" data-country="FR">
   <a href="../photographers/marville.html" >
     <div data-nosnippet class="pc-top pc-top--rotate">
       <div class="pc-top__meta"><span class="idx">10</span><span>FR</span></div>
@@ -821,7 +821,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="トーマス・アナン Thomas Annan Documentary as reading · DOCUMENTARY Social Documentary Documentary United Kingdom">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="トーマス・アナン Thomas Annan Documentary as reading · DOCUMENTARY Social Documentary Documentary United Kingdom" data-country="GB">
   <a href="../photographers/annan.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">11</span><span>GB</span></div>
@@ -839,7 +839,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="横山松三郎 Yokoyama Matsusaburo Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Photolithography Meiji documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="横山松三郎 Yokoyama Matsusaburo Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Photolithography Meiji documentary" data-country="JP">
   <a href="../photographers/jp-横山松三郎.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">51</span><span>JP</span></div>
@@ -857,7 +857,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="冨重利平 Tomishige Rihei Documentary as reading · DOCUMENTARY Japanese Photography Documentary Portrait photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="冨重利平 Tomishige Rihei Documentary as reading · DOCUMENTARY Japanese Photography Documentary Portrait photography" data-country="JP">
   <a href="../photographers/jp-冨重利平.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">52</span><span>JP</span></div>
@@ -875,7 +875,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="フレデリック・H・エヴァンズ Frederick H. Evans Building the institution · PICTORIALISM Straight Photography Architectural photography Pictorialism">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="フレデリック・H・エヴァンズ Frederick H. Evans Building the institution · PICTORIALISM Straight Photography Architectural photography Pictorialism" data-country="GB">
   <a href="../photographers/frederick-h-evans.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">53</span><span>GB</span></div>
@@ -893,7 +893,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="冨重徳次 Tomishige Tokuji Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="冨重徳次 Tomishige Tokuji Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/jp-冨重徳次.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">54</span><span>JP</span></div>

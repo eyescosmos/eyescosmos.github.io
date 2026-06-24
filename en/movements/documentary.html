@@ -159,8 +159,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── MOVEMENT HERO ─────────────────────────────────────── */
@@ -891,7 +891,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 02</span><span class="ph-section__name">Criticism and Reception</span></div></div><div class="ph-section__body"><p>On this site, photographers connected to Documentary appear mainly from 1839–1860s to 1980–1990s, often overlapping with Social Documentary, Street Photography, FSA Photography, and Photojournalism.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p></div></section>
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 03</span><span class="ph-section__name">Related Movements</span></div></div><div class="ph-section__body"><p>Documentary often overlaps with Social Documentary, Street Photography, FSA Photography, and Photojournalism. Reading those pages together makes it easier to see where method, institution, or critical language begins to diverge.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p></div></section>
 <section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ 04</span><span class="ph-section__name">Photographers</span></div></div><div class="ph-section__body"><div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="ウジェーヌ・アジェ Eugène Atget Documentary as reading · DOCUMENTARY Documentary Urban documentation MoMA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="ウジェーヌ・アジェ Eugène Atget Documentary as reading · DOCUMENTARY Documentary Urban documentation MoMA" data-country="FR">
   <a href="../photographers/eugene-atget.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">55</span><span>PHOTOGRAPHER</span></div>
@@ -902,14 +902,14 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
       <span class="pc-body__kind">Photographer</span>
       <div><h3 class="pc-body__name">Eugène Atget</h3><div class="pc-body__name-en">ウジェーヌ・アジェ</div></div>
       <div class="pc-body__meta">FR · 1857–1927</div>
-      <p class="pc-body__lede">Atget took up the camera around 1897, at forty. Having given up his hopes as actor and painter, he printed 'Documents pour artistes' on his card and made his living selling …</p>
+      <p class="pc-body__lede">Eugène Atget photographed the streets, shopfronts, gardens, and urban margins of Old Paris for nearly three decades, producing what he marketed to painters and architects as …</p>
       <div class="pc-body__channel">Documentary as reading · DOCUMENTARY</div>
       <div class="pc-body__tags"><span class="pc-body__tag">Documentary</span><span class="pc-body__tag">Urban documentation</span><span class="pc-body__tag">MoMA</span></div>
       <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="ジェイコブ・リース Jacob Riis Documentary as reading · DOCUMENTARY Social Documentary Documentary Denmark / United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1870" data-search="ジェイコブ・リース Jacob Riis Documentary as reading · DOCUMENTARY Social Documentary Documentary Denmark / United States" data-country="DK / US">
   <a href="../photographers/riis.html" >
     <div data-nosnippet class="pc-top pc-top--outline">
       <div class="pc-top__meta"><span class="idx">09</span><span>PHOTOGRAPHER</span></div>
@@ -927,7 +927,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="ルイス・ハイン Lewis Hine Documentary as reading · DOCUMENTARY Social Documentary Documentary FSA">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1890" data-search="ルイス・ハイン Lewis Hine Documentary as reading · DOCUMENTARY Social Documentary Documentary FSA" data-country="US">
   <a href="../photographers/lewis-hine.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">58</span><span>PHOTOGRAPHER</span></div>
@@ -945,7 +945,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ドロシア・ラング Dorothea Lange Documentary as reading · DOCUMENTARY FSA Photography Social Documentary Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ドロシア・ラング Dorothea Lange Documentary as reading · DOCUMENTARY FSA Photography Social Documentary Documentary" data-country="US">
   <a href="../photographers/lange.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">25</span><span>PHOTOGRAPHER</span></div>
@@ -963,7 +963,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ウォーカー・エヴァンス Walker Evans City and the moment · STREET FSA Photography Documentary Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1930" data-search="ウォーカー・エヴァンス Walker Evans City and the moment · STREET FSA Photography Documentary Street Photography" data-country="US">
   <a href="../photographers/evans.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">26</span><span>PHOTOGRAPHER</span></div>
@@ -981,7 +981,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ダイアン・アーバス Diane Arbus Documentary as reading · DOCUMENTARY Documentary Portrait Social Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ダイアン・アーバス Diane Arbus Documentary as reading · DOCUMENTARY Documentary Portrait Social Documentary" data-country="US">
   <a href="../photographers/arbus.html" >
     <div data-nosnippet class="pc-top pc-top--cite">
       <div class="pc-top__meta"><span class="idx">37</span><span>PHOTOGRAPHER</span></div>
@@ -999,7 +999,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ロバート・フランク Robert Frank City and the moment · STREET American photography Documentary Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ロバート・フランク Robert Frank City and the moment · STREET American photography Documentary Street Photography" data-country="CH">
   <a href="../photographers/robertfrank.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">31</span><span>PHOTOGRAPHER</span></div>
@@ -1017,7 +1017,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1980" data-search="セバスチャン・サルガド Sebastião Salgado Documentary as reading · DOCUMENTARY Documentary Concerned photography Environmental photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1980" data-search="セバスチャン・サルガド Sebastião Salgado Documentary as reading · DOCUMENTARY Documentary Concerned photography Environmental photography" data-country="BR">
   <a href="../photographers/salgado.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">46</span><span>PHOTOGRAPHER</span></div>

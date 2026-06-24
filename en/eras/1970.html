@@ -162,8 +162,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── ERA HERO ─────────────────────────────────────────────── */
@@ -749,7 +749,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <nav class="era-nav" aria-label="Era navigation"><div class="era-nav__label">§ — Eras</div><div class="era-nav__strip"><a class="era-nav__item" href="1839.html">1839–60s</a><a class="era-nav__item" href="1870.html">1870–90s</a><a class="era-nav__item" href="1890.html">1890–1910s</a><a class="era-nav__item" href="1910.html">1910–20s</a><a class="era-nav__item" href="1930.html">1930–40s</a><a class="era-nav__item" href="1950.html">1950–60s</a><a class="era-nav__item is-active" href="1970.html">1970–80s</a><a class="era-nav__item" href="1980.html">1980–90s</a><a class="era-nav__item" href="1990.html">1990–2000s</a><a class="era-nav__item" href="2000.html">2000–10s</a><a class="era-nav__item" href="2010.html">2010–20s</a></div></nav>
 <div class="era-outer"><div class="era-layout">
 <main class="era-main"><div class="ph-abstract"><div class="ph-abstract__label">Overview</div><p>Photography entered the art market and museum as never before. Conceptual art made photography a tool of ideas rather than images. The Pictures Generation questioned the meaning of originality. Feminism challenged how photography represented women. Japanese I-Photography deepened its investigation of private life.</p></div><div class="ph-thesis"><div class="ph-thesis__label">What This Era Changed</div><p class="ph-thesis__body">The entry of photography into museums, galleries, and auction houses in the 1970s was not simply a change of venue but <em>a transformation of photography's self-understanding</em> — making questions of authorship, originality, and market value unavoidable.</p></div><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ CTX</span><span class="ph-section__name">Context of This Era</span></div></div><div class="ph-section__body"><div class="era-context-grid"><div class="era-context-block"><div class="era-context-label">Politics &amp; Society</div><p class="era-context-text">The Vietnam War continued until the fall of Saigon in 1975, and televised images played a major role in shifting U.S. public opinion. Second-wave feminism, civil rights movements, and anti-colonial struggles demanded new forms of representation. The oil crisis of 1973 reshaped the global economy.</p></div><div class="era-context-block"><div class="era-context-label">Photography and the Art Market</div><p class="era-context-text">In 1970s New York, a market emerged in which photography was exhibited and sold in museums and galleries at rising prices. The Museum of Modern Art's photography department, Aperture, and dealers like Witkin Gallery made photography collectible. This shift created the conditions for the Pictures Generation.</p></div><div class="era-context-block"><div class="era-context-label">Pictures Generation</div><p class="era-context-text">The 1977 exhibition 'Pictures' in New York gathered artists who quoted ready-made images — from advertising, film, and television — to question authorship, originality, and gender representation. Cindy Sherman, Richard Prince, and Sherrie Levine became the central figures of this turn.</p></div><div class="era-context-block"><div class="era-context-label">Japan: The Deepening of I-Photography</div><p class="era-context-text">The Provoke movement (1968–70) and its aftermath intensified Japanese photography's focus on the subjective body and private life. Nobuyoshi Araki, Masahisa Fukase, and others developed an I-Photography (shi-shashin) that turned family, lovers, loss, and memory into photographic form.</p></div></div></div></section><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ PH</span><span class="ph-section__name">Photographers of This Era</span></div></div><div class="ph-section__body"><div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ダイアン・アーバス Diane Arbus Documentary as reading · DOCUMENTARY Documentary Portrait Social Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ダイアン・アーバス Diane Arbus Documentary as reading · DOCUMENTARY Documentary Portrait Social Documentary" data-country="US">
   <a href="../photographers/arbus.html" >
     <div data-nosnippet class="pc-top pc-top--cite">
       <div class="pc-top__meta"><span class="idx">37</span><span>US</span></div>
@@ -767,7 +767,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="森山大道 Daido Moriyama The photobook as method · JAPAN Provoke Japanese Photography Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="森山大道 Daido Moriyama The photobook as method · JAPAN Provoke Japanese Photography Street Photography" data-country="JP">
   <a href="../photographers/moriyama.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">38</span><span>JP</span></div>
@@ -785,7 +785,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="シンディ・シャーマン Cindy Sherman Questioning the image · CONCEPTUAL Pictures Generation Conceptual Feminist Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="シンディ・シャーマン Cindy Sherman Questioning the image · CONCEPTUAL Pictures Generation Conceptual Feminist Photography" data-country="US">
   <a href="../photographers/sherman.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">39</span><span>US</span></div>
@@ -803,7 +803,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ロバート・メイプルソープ Robert Mapplethorpe Topics in photo history · CONCEPTUAL Conceptual Portrait United States">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ロバート・メイプルソープ Robert Mapplethorpe Topics in photo history · CONCEPTUAL Conceptual Portrait United States" data-country="US">
   <a href="../photographers/mapplethorpe.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">40</span><span>US</span></div>
@@ -821,7 +821,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ウィリアム・エグルストン William Eggleston Documentary as reading · DOCUMENTARY Color Photography American photography Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ウィリアム・エグルストン William Eggleston Documentary as reading · DOCUMENTARY Color Photography American photography Documentary" data-country="US">
   <a href="../photographers/eggleston.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">42</span><span>US</span></div>
@@ -839,7 +839,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="中平卓馬 Takuma Nakahira Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="中平卓馬 Takuma Nakahira Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/takuma-nakahira.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">111</span><span>JP</span></div>
@@ -857,7 +857,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="杉本博司 Hiroshi Sugimoto Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Conceptual Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="杉本博司 Hiroshi Sugimoto Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Conceptual Japan" data-country="JP">
   <a href="../photographers/hiroshi-sugimoto.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">112</span><span>JP</span></div>
@@ -875,7 +875,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="潮田登久子 Tokuko Ushioda The photobook as method · JAPAN Japanese Photography I-Photography Typological Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="潮田登久子 Tokuko Ushioda The photobook as method · JAPAN Japanese Photography I-Photography Typological Photography" data-country="JP">
   <a href="../photographers/tokuko-ushioda.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">280</span><span>JP</span></div>
@@ -893,7 +893,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="スティーヴン・ショア Stephen Shore Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="スティーヴン・ショア Stephen Shore Topics in photo history · CONCEPTUAL Conceptual" data-country="US">
   <a href="../photographers/stephen-shore.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">104</span><span>US</span></div>
@@ -911,7 +911,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="クリス・キリップ Chris Killip Documentary as reading · DOCUMENTARY Documentary British photography United Kingdom">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="クリス・キリップ Chris Killip Documentary as reading · DOCUMENTARY Documentary British photography United Kingdom" data-country="GB">
   <a href="../photographers/chris-killip.html" >
     <div data-nosnippet class="pc-top pc-top--title">
       <div class="pc-top__meta"><span class="idx">276</span><span>GB</span></div>
@@ -929,7 +929,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="アニー・リーボヴィッツ Annie Leibovitz Questioning the image · CONCEPTUAL Portrait Staged Photography Color Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="アニー・リーボヴィッツ Annie Leibovitz Questioning the image · CONCEPTUAL Portrait Staged Photography Color Photography" data-country="US">
   <a href="../photographers/annie-leibovitz.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">283</span><span>US</span></div>
@@ -947,7 +947,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ジョエル・スターンフェルド Joel Sternfeld An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ジョエル・スターンフェルド Joel Sternfeld An entry into photo history · PHOTO HISTORY" data-country="US">
   <a href="../photographers/joel-sternfeld.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">109</span><span>US</span></div>
@@ -965,7 +965,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="バーバラ・クルーガー Barbara Kruger Questioning the image · CONCEPTUAL Pictures Generation Conceptual Feminist Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="バーバラ・クルーガー Barbara Kruger Questioning the image · CONCEPTUAL Pictures Generation Conceptual Feminist Photography" data-country="US">
   <a href="../photographers/kruger.html" >
     <div data-nosnippet class="pc-top pc-top--title">
       <div class="pc-top__meta"><span class="idx">41</span><span>US</span></div>
@@ -983,7 +983,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ルイス・ボルツ Lewis Baltz An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ルイス・ボルツ Lewis Baltz An entry into photo history · PHOTO HISTORY" data-country="US">
   <a href="../photographers/lewis-baltz.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">105</span><span>US</span></div>
@@ -1001,7 +1001,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ジョエル・マイロウィッツ Joel Meyerowitz An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ジョエル・マイロウィッツ Joel Meyerowitz An entry into photo history · PHOTO HISTORY" data-country="US">
   <a href="../photographers/joel-meyerowitz.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">106</span><span>US</span></div>
@@ -1019,7 +1019,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ロバート・アダムス Robert Adams An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ロバート・アダムス Robert Adams An entry into photo history · PHOTO HISTORY" data-country="US">
   <a href="../photographers/robert-adams.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">107</span><span>US</span></div>
@@ -1037,7 +1037,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ウィリアム・クリステンベリー William Christenberry An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ウィリアム・クリステンベリー William Christenberry An entry into photo history · PHOTO HISTORY" data-country="US">
   <a href="../photographers/william-christenberry.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">108</span><span>US</span></div>
@@ -1055,7 +1055,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ヨッヘン・レンペルト Jochen Lempert Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ヨッヘン・レンペルト Jochen Lempert Questioning the image · CONCEPTUAL Conceptual Art" data-country="DE">
   <a href="../photographers/jochen-lempert.html" >
     <div data-nosnippet class="pc-top pc-top--initials">
       <div class="pc-top__meta"><span class="idx">116</span><span>DE</span></div>
@@ -1073,7 +1073,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ジャン＝リュック・ムレーヌ Jean-Luc Moulène Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="ジャン＝リュック・ムレーヌ Jean-Luc Moulène Questioning the image · CONCEPTUAL Conceptual Art" data-country="FR">
   <a href="../photographers/jean-luc-moulene.html" >
     <div data-nosnippet class="pc-top pc-top--year">
       <div class="pc-top__meta"><span class="idx">117</span><span>FR</span></div>
@@ -1091,7 +1091,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="サンティアゴ・シエラ Santiago Sierra Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="サンティアゴ・シエラ Santiago Sierra Questioning the image · CONCEPTUAL Conceptual Art" data-country="ES">
   <a href="../photographers/santiago-sierra.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">120</span><span>ES</span></div>
@@ -1109,7 +1109,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="サントス・R・バスケス Santos R. Vasquez Questioning the image · CONCEPTUAL Conceptual Art">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="サントス・R・バスケス Santos R. Vasquez Questioning the image · CONCEPTUAL Conceptual Art" data-country="US">
   <a href="../photographers/santos-r-vasquez.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">121</span><span>US</span></div>
@@ -1127,7 +1127,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="須田一政 Issei Suda Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="須田一政 Issei Suda Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/issei-suda.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">122</span><span>JP</span></div>
@@ -1145,7 +1145,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="野町和嘉 Kazuyoshi Nomachi Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="野町和嘉 Kazuyoshi Nomachi Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/kazuyoshi-nomachi.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">123</span><span>JP</span></div>
@@ -1163,7 +1163,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="岩合光昭 Mitsuaki Iwago Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="岩合光昭 Mitsuaki Iwago Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/mitsuaki-iwago.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">124</span><span>JP</span></div>
@@ -1181,7 +1181,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="大石芳野 Yoshino Oishi Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="大石芳野 Yoshino Oishi Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/yoshino-oishi.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">126</span><span>JP</span></div>
@@ -1199,7 +1199,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="土田ヒロミ Hiromi Tsuchida Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1970" data-search="土田ヒロミ Hiromi Tsuchida Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/hiromi-tsuchida.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">128</span><span>JP</span></div>

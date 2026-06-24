@@ -162,8 +162,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── ERA HERO ─────────────────────────────────────────────── */
@@ -749,7 +749,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 <nav class="era-nav" aria-label="Era navigation"><div class="era-nav__label">§ — Eras</div><div class="era-nav__strip"><a class="era-nav__item" href="1839.html">1839–60s</a><a class="era-nav__item" href="1870.html">1870–90s</a><a class="era-nav__item" href="1890.html">1890–1910s</a><a class="era-nav__item" href="1910.html">1910–20s</a><a class="era-nav__item" href="1930.html">1930–40s</a><a class="era-nav__item is-active" href="1950.html">1950–60s</a><a class="era-nav__item" href="1970.html">1970–80s</a><a class="era-nav__item" href="1980.html">1980–90s</a><a class="era-nav__item" href="1990.html">1990–2000s</a><a class="era-nav__item" href="2000.html">2000–10s</a><a class="era-nav__item" href="2010.html">2010–20s</a></div></nav>
 <div class="era-outer"><div class="era-layout">
 <main class="era-main"><div class="ph-abstract"><div class="ph-abstract__label">Overview</div><p>Postwar reconstruction and Cold War anxiety shaped photography's institutions. LIFE magazine reached its peak circulation and began to decline. Robert Frank's The Americans (1958) opened a new photographic vernacular. Japanese photography developed its own postwar forms and gained international recognition.</p></div><div class="ph-thesis"><div class="ph-thesis__label">What This Era Changed</div><p class="ph-thesis__body">The 1950s and 1960s showed that <em>the institutions of photojournalism — the picture magazine, the agency, the cooperative — shaped how the world was seen as much as the photographers within them</em>, and that challenges to those institutions created new photographic possibilities.</p></div><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ CTX</span><span class="ph-section__name">Context of This Era</span></div></div><div class="ph-section__body"><div class="era-context-grid"><div class="era-context-block"><div class="era-context-label">Politics &amp; Society</div><p class="era-context-text">As the Cold War began, the threat of nuclear annihilation hung over global politics. The Korean War (1950–53) and the Suez Crisis (1956) showed the new shape of imperial conflict. In the United States, McCarthyism suppressed political dissent while the civil rights movement gathered force.</p></div><div class="era-context-block"><div class="era-context-label">The Golden Age and End of LIFE Magazine</div><p class="era-context-text">In the 1950s, LIFE magazine, with a peak circulation of 8.5 million, stood at the summit of photojournalism. By the late 1960s, television would displace it; LIFE ceased weekly publication in 1972. The era also saw Robert Frank complete The Americans (1958), a decisive turn away from the heroic photojournalistic mode.</p></div><div class="era-context-block"><div class="era-context-label">The Internationalization of Japanese Photography</div><p class="era-context-text">Postwar Japanese photography emerged from the ruins of wartime mobilization. Ken Domon's Realism, Shoji Ueda's staged surrealism, and the provocations of the VIVO group (founded 1959) created a distinctive postwar visual culture that gained international recognition through the 1960s.</p></div><div class="era-context-block"><div class="era-context-label">Magnum Consolidated</div><p class="era-context-text">Magnum Photos consolidated its model of independent photojournalism, shaping how conflict, poverty, and social change were represented globally. The concept of the concerned photographer — committed yet independent — became the dominant ethical framework for documentary work.</p></div></div></div></section><section class="ph-section"><div class="ph-section__head"><div class="ph-section__title"><span class="ph-section__num">§ PH</span><span class="ph-section__name">Photographers of This Era</span></div></div><div class="ph-section__body"><div class="er-cards">
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ロバート・フランク Robert Frank City and the moment · STREET American photography Documentary Street Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ロバート・フランク Robert Frank City and the moment · STREET American photography Documentary Street Photography" data-country="CH">
   <a href="../photographers/robertfrank.html" >
     <div data-nosnippet class="pc-top pc-top--serif">
       <div class="pc-top__meta"><span class="idx">31</span><span>CH</span></div>
@@ -767,7 +767,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ウィリアム・クライン William Klein City and the moment · STREET Street Photography American photography Photojournalism">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ウィリアム・クライン William Klein City and the moment · STREET Street Photography American photography Photojournalism" data-country="US">
   <a href="../photographers/williamklein.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">32</span><span>US</span></div>
@@ -785,7 +785,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="東松照明 Shomei Tomatsu Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Social Documentary Provoke">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="東松照明 Shomei Tomatsu Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Social Documentary Provoke" data-country="JP">
   <a href="../photographers/tomatsu.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">34</span><span>JP</span></div>
@@ -803,7 +803,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ゲリー・ウィノグランド Garry Winogrand City and the moment · STREET Street Photography American photography Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ゲリー・ウィノグランド Garry Winogrand City and the moment · STREET Street Photography American photography Documentary" data-country="US">
   <a href="../photographers/winogrand.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">35</span><span>US</span></div>
@@ -821,7 +821,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="リー・フリードランダー Lee Friedlander City and the moment · STREET Street Photography American photography Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="リー・フリードランダー Lee Friedlander City and the moment · STREET Street Photography American photography Documentary" data-country="US">
   <a href="../photographers/friedlander.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">36</span><span>US</span></div>
@@ -839,7 +839,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="荒木経惟 Nobuyoshi Araki The photobook as method · JAPAN I-Photography Japanese Photography Provoke">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="荒木経惟 Nobuyoshi Araki The photobook as method · JAPAN I-Photography Japanese Photography Provoke" data-country="JP">
   <a href="../photographers/araki.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">33</span><span>JP</span></div>
@@ -857,7 +857,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="川田喜久治 Kikuji Kawada Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="川田喜久治 Kikuji Kawada Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/kikuji-kawada.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">272</span><span>JP</span></div>
@@ -875,7 +875,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="深瀬昌久 Masahisa Fukase The photobook as method · JAPAN Japanese Photography I-Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="深瀬昌久 Masahisa Fukase The photobook as method · JAPAN Japanese Photography I-Photography Japan" data-country="JP">
   <a href="../photographers/masahisa-fukase.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">273</span><span>JP</span></div>
@@ -893,7 +893,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="アーヴィング・ペン Irving Penn Seeing in series · TYPOLOGY Modernism Straight Photography Typological Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="アーヴィング・ペン Irving Penn Seeing in series · TYPOLOGY Modernism Straight Photography Typological Photography" data-country="US">
   <a href="../photographers/irving-penn.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">277</span><span>US</span></div>
@@ -911,7 +911,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ドン・マクリン Don McCullin Documentary as reading · DOCUMENTARY War photography Documentary British photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ドン・マクリン Don McCullin Documentary as reading · DOCUMENTARY War photography Documentary British photography" data-country="GB">
   <a href="../photographers/don-mccullin.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">275</span><span>GB</span></div>
@@ -929,7 +929,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="リチャード・アヴェドン Richard Avedon Documentary as reading · DOCUMENTARY Photojournalism Documentary Staged Photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="リチャード・アヴェドン Richard Avedon Documentary as reading · DOCUMENTARY Photojournalism Documentary Staged Photography" data-country="US">
   <a href="../photographers/richard-avedon.html" >
     <div data-nosnippet class="pc-top pc-top--kanji-foreign">
       <div class="pc-top__meta"><span class="idx">278</span><span>US</span></div>
@@ -947,7 +947,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="アーネスト・コール Ernest Cole Documentary as reading · DOCUMENTARY Photojournalism Social Documentary Documentary">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="アーネスト・コール Ernest Cole Documentary as reading · DOCUMENTARY Photojournalism Social Documentary Documentary" data-country="ZA">
   <a href="../photographers/ernest-cole.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">279</span><span>ZA</span></div>
@@ -965,7 +965,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ルイス・フォーラー Louis Faurer An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ルイス・フォーラー Louis Faurer An entry into photo history · PHOTO HISTORY" data-country="US">
   <a href="../photographers/louis-faurer.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">94</span><span>US</span></div>
@@ -983,7 +983,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="イジス Izis An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="イジス Izis An entry into photo history · PHOTO HISTORY" data-country="LT / FR">
   <a href="../photographers/izis.html" >
     <div data-nosnippet class="pc-top pc-top--stacked">
       <div class="pc-top__meta"><span class="idx">95</span><span>LT / FR</span></div>
@@ -1001,7 +1001,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ドロシー・ボーム Dorothy Bohm An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ドロシー・ボーム Dorothy Bohm An entry into photo history · PHOTO HISTORY" data-country="LT / GB">
   <a href="../photographers/dorothy-bohm.html" >
     <div data-nosnippet class="pc-top pc-top--cite">
       <div class="pc-top__meta"><span class="idx">96</span><span>LT / GB</span></div>
@@ -1019,7 +1019,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="エド・ファン・デル・エルスケン Ed van der Elsken An entry into photo history · PHOTO HISTORY">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="エド・ファン・デル・エルスケン Ed van der Elsken An entry into photo history · PHOTO HISTORY" data-country="NL">
   <a href="../photographers/ed-van-der-elsken.html" >
     <div data-nosnippet class="pc-top pc-top--twosize">
       <div class="pc-top__meta"><span class="idx">97</span><span>NL</span></div>
@@ -1037,7 +1037,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="セイドゥ・ケイタ Seydou Keïta Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="セイドゥ・ケイタ Seydou Keïta Topics in photo history · CONCEPTUAL Conceptual" data-country="ML">
   <a href="../photographers/seydou-keita.html" >
     <div data-nosnippet class="pc-top pc-top--fragment">
       <div class="pc-top__meta"><span class="idx">98</span><span>ML</span></div>
@@ -1055,7 +1055,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="田沼武能 Takeyoshi Tanuma Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="田沼武能 Takeyoshi Tanuma Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/takeyoshi-tanuma.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">99</span><span>JP</span></div>
@@ -1073,7 +1073,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="芳賀日出男 Hideo Haga Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="芳賀日出男 Hideo Haga Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/hideo-haga.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">100</span><span>JP</span></div>
@@ -1091,7 +1091,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ラリー・クラーク Larry Clark Topics in photo history · CONCEPTUAL Conceptual">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="ラリー・クラーク Larry Clark Topics in photo history · CONCEPTUAL Conceptual" data-country="US">
   <a href="../photographers/larry-clark.html" >
     <div data-nosnippet class="pc-top pc-top--country">
       <div class="pc-top__meta"><span class="idx">101</span><span>US</span></div>
@@ -1109,7 +1109,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="細江英公 Eikoh Hosoe Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="細江英公 Eikoh Hosoe Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/eikoh-hosoe.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">102</span><span>JP</span></div>
@@ -1127,7 +1127,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="篠山紀信 Kishin Shinoyama Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="篠山紀信 Kishin Shinoyama Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/kishin-shinoyama.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">103</span><span>JP</span></div>
@@ -1145,7 +1145,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="岩宮武二 Takeji Iwamiya Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="岩宮武二 Takeji Iwamiya Topics in photo history · JAPANESE PHOTOGRAPHY Japanese Photography Japan" data-country="JP">
   <a href="../photographers/takeji-iwamiya.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">271</span><span>JP</span></div>
@@ -1163,7 +1163,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="フィリップ・ジョーンズ・グリフィス Philip Jones Griffiths Documentary as reading · DOCUMENTARY War photography Documentary British photography">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="フィリップ・ジョーンズ・グリフィス Philip Jones Griffiths Documentary as reading · DOCUMENTARY War photography Documentary British photography" data-country="GB">
   <a href="../photographers/philip-jones-griffiths.html" >
     <div data-nosnippet class="pc-top pc-top--slash">
       <div class="pc-top__meta"><span class="idx">274</span><span>GB</span></div>
@@ -1181,7 +1181,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     </div>
   </a>
 </article>
-<article class="pc-card pc-card--photographer">
+<article class="pc-card pc-card--photographer" data-type="photographer" data-era="1950" data-search="常盤とよ子 Toyoko Tokiwa Topics in photo history · SOCIAL DOCUMENTARY Social Documentary Working Women Japanese Photography" data-country="JP">
   <a href="../photographers/toyoko-tokiwa.html" >
     <div data-nosnippet class="pc-top pc-top--kanji">
       <div class="pc-top__meta"><span class="idx">285</span><span>JP</span></div>
@@ -1192,9 +1192,9 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
       <span class="pc-body__kind">Photographer</span>
       <div><h3 class="pc-body__name">Toyoko Tokiwa</h3><div class="pc-body__name-en">常盤とよ子</div></div>
       <div class="pc-body__meta">JP · 1928–2019</div>
-      <p class="pc-body__lede">Toyoko Tokiwa photographed "working women" in post-occupation Yokohama — red-light district, clinics, women wrestlers, and welfare facilities. Her 1957 photobook Dangerous Poisonous Flowers combined …</p>
+      <p class="pc-body__lede">Toyoko Tokiwa photographed the lives of “working women” in post-occupation Yokohama: the akasen red-light district, clinics, women’s professional wrestling, nude shooting …</p>
       <div class="pc-body__channel">Topics in photo history · SOCIAL DOCUMENTARY</div>
-      <div class="pc-body__tags"><span class="pc-body__tag">Social Documentary</span><span class="pc-body__tag">Japanese Photography</span></div>
+      <div class="pc-body__tags"><span class="pc-body__tag">Social Documentary</span><span class="pc-body__tag">Working Women</span><span class="pc-body__tag">Japanese Photography</span></div>
       <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
     </div>
   </a>
