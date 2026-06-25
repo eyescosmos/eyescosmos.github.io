@@ -203,6 +203,19 @@ def check_ja(slug: str, html: str) -> list[Finding]:
     if not re.search(r'hreflang=', html, re.I) and "noindex" not in html and has_en:
         f.append(Finding("hreflang_absent", WARN, "hreflang 未設定"))
 
+    # 言語トグル: EN ボタンは <a href="/en/photographers/*.html"> で囲む。
+    #   素材手組み時に link ラッパを付け忘れた bare <button>EN</button> を検出する
+    #   （JA から EN へ切り替わらない・mayumi-hosokura で実発生）。
+    #   EN slug は JA slug と異なる正当ケース（jp-* → romaji）があるためリンク先 slug は
+    #   固定せず、EN ビルドは JA 確定後のため対象ファイルの実在も要求しない。
+    lang_m = re.search(r'<div class="head__lang">(.*?)</div>', html, re.S)
+    if lang_m and re.search(r'>\s*EN\s*<', lang_m.group(1)) and not re.search(
+            r'href=["\']/en/photographers/[^"\']+\.html["\'][^>]*>\s*<button[^>]*>\s*EN\s*<',
+            lang_m.group(1)):
+        f.append(Finding("en_toggle_unlinked", GATE,
+                         "言語トグルの EN ボタンが /en/photographers/*.html へ"
+                         "リンクされていない（bare <button>EN</button>）"))
+
     # JSON-LD（JA=Person 存在＋parse 可）
     f += _check_jsonld_ja(html, self_tail)
 
