@@ -910,18 +910,29 @@ def rebuild_related(html, page):
         # remove the whole REL section
         return html[:sec_open].rstrip('\n ') + '\n\n' + html[sec_end:].lstrip('\n')
 
+    # Optional per-item English annotations: { href: "one-line note (HTML)" }.
+    # When present, render "<a>name</a> — note"; when absent, render the bare
+    # name exactly as before. Pages without this field are unaffected.
+    notes = page.get('related_annotations') or {}
+
+    def _rel_li(href, name):
+        note = notes.get(href)
+        if note:
+            return f'            <li><a href="{href}">{name}</a> &mdash; {note}</li>'
+        return f'            <li><a href="{href}">{name}</a></li>'
+
     body_parts = []
     if people:
         body_parts.append('          <div class="ph-rel-label">Related photographers</div>')
         body_parts.append('          <ul class="ph-rel-list">')
         for href, name in people:
-            body_parts.append(f'            <li><a href="{href}">{name}</a></li>')
+            body_parts.append(_rel_li(href, name))
         body_parts.append('          </ul>')
     if movements:
         body_parts.append('          <div class="ph-rel-label">Related movements</div>')
         body_parts.append('          <ul class="ph-rel-list ph-rel-movements">')
         for href, name in movements:
-            body_parts.append(f'            <li><a href="{href}">{name}</a></li>')
+            body_parts.append(_rel_li(href, name))
         body_parts.append('          </ul>')
 
     new_sec = (
