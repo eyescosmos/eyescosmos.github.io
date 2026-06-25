@@ -237,6 +237,75 @@ def cmd_apply(args):
     return 0
 
 
+EN_DIR = os.path.join(ROOT, 'en', 'photographers')
+
+
+def inject_html_for_slug(slug, annotations):
+    """Surgically add ' &mdash; blurb' to the §REL bare <li> links of the EN
+    HTML, editing only those lines. Used for older pages where a full builder
+    rebuild would drift unrelated markup (e.g. regress dual-nationality country
+    chips back to Japanese). Returns (changed:int, html or None)."""
+    path = os.path.join(EN_DIR, slug + '.html')
+    if not os.path.exists(path):
+        return (0, None)
+    html = open(path, encoding='utf-8').read()
+    # restrict edits to the §REL ph-rel-list <ul> blocks
+    changed = [0]
+
+    def repl_ul(m):
+        block = m.group(0)
+
+        def repl_li(lm):
+            href, name = lm.group('href'), lm.group('name')
+            blurb = annotations.get(href)
+            if not blurb:
+                return lm.group(0)
+            if '&mdash;' in lm.group(0) or '—' in lm.group(0):
+                return lm.group(0)  # already annotated
+            changed[0] += 1
+            return ('<li><a href="%s">%s</a> &mdash; %s</li>'
+                    % (href, name, blurb))
+
+        return re.sub(
+            r'<li><a href="(?P<href>[^"]+)">(?P<name>[^<]+)</a></li>',
+            repl_li, block)
+
+    new_html = re.sub(r'<ul class="ph-rel-list[^"]*">.*?</ul>',
+                      repl_ul, html, flags=re.S)
+    if changed[0] == 0:
+        return (0, None)
+    return (changed[0], new_html)
+
+
+def cmd_inject_html(args):
+    """Inject related_annotations into the live EN HTML §REL <li> directly,
+    without a full rebuild. --slug narrows scope; default = all pages that
+    carry related_annotations."""
+    pages = load_pages()['pages']
+    targets = ([s + '.html' for s in args.slug] if args.slug
+               else list(pages.keys()))
+    total = 0
+    touched = 0
+    for key in targets:
+        entry = pages.get(key)
+        if not entry:
+            continue
+        ann = entry.get('related_annotations') or {}
+        if not ann:
+            continue
+        slug = key[:-5]
+        n, new_html = inject_html_for_slug(slug, ann)
+        if n and new_html is not None:
+            tmp = os.path.join(EN_DIR, slug + '.html.tmp')
+            with open(tmp, 'w', encoding='utf-8') as fh:
+                fh.write(new_html)
+            os.replace(tmp, os.path.join(EN_DIR, slug + '.html'))
+            total += n
+            touched += 1
+    print('injected %d blurb(s) into %d page(s)' % (total, touched))
+    return 0
+
+
 def cmd_apply_batch(args):
     """--from FILE = { "<slug>": { "<en_href>": "blurb", ... }, ... }"""
     if not args.from_file:
@@ -270,6 +339,7 @@ def main():
     ap.add_argument('--emit-worklist', action='store_true')
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--apply-batch', action='store_true')
+    ap.add_argument('--inject-html', action='store_true')
     ap.add_argument('--slug', action='append')
     ap.add_argument('--files', nargs='*')
     ap.add_argument('--from', dest='from_file')
@@ -278,6 +348,8 @@ def main():
         sys.exit(cmd_emit_worklist(args))
     if args.apply_batch:
         sys.exit(cmd_apply_batch(args))
+    if args.inject_html:
+        sys.exit(cmd_inject_html(args))
     if args.apply:
         sys.exit(cmd_apply(args))
     sys.exit(cmd_audit(args))
