@@ -290,6 +290,37 @@ def check_en_changed_slug_integrity() -> None:
             warnings.append(f"[EN {slug}] {f}")
 
 
+def check_en_rel_annotations() -> None:
+    """触った EN ページで、JA §REL に一言解説がある関連リンクなのに EN の
+    related_annotations が欠けている取りこぼしを検知（WARN）。
+    年代バッチの §REL 埋めで JA HTML と site_directory_html を更新したとき、
+    EN の一言（related_annotations）を入れ忘れる divergence を毎回可視化する。
+    backfill は scripts/sync_en_rel_annotations.py（--emit-worklist / --apply）。"""
+    try:
+        sys.path.insert(0, str(REPO / "scripts"))
+        import sync_en_rel_annotations as sra  # noqa: PLC0415
+    except Exception:  # noqa: BLE001
+        return
+    try:
+        pages = sra.load_pages()
+    except Exception:  # noqa: BLE001
+        return
+    for key in _touched_en():  # keys are "<slug>.html"
+        slug = key[:-5] if key.endswith(".html") else key
+        entry = pages.get("pages", {}).get(key)
+        if not entry:
+            continue
+        try:
+            rows = sra.page_alignment(slug, entry)
+        except Exception:  # noqa: BLE001
+            continue
+        missing = [r for r in rows if r[0] == "need"]
+        if missing:
+            warnings.append(
+                f"[EN {slug}] §REL 一言解説 未注入 {len(missing)}件"
+                f"（JAにあり/ENに無し）: sync_en_rel_annotations.py で backfill")
+
+
 # ── 写真家以外の EN ページ（国別 / 年代・運動 / アーカイブ）の軽量ガード ──────
 # 設計（Codex 合意 2026-06-19）:
 #   - 正本 JSON のエントリ内容消失 = HARD（変更が無ければ必ずグリーン＝門にできる）
@@ -764,6 +795,7 @@ def main() -> int:
     check_en_changed_slug_closure()
     check_en_direct_edit()
     check_en_changed_slug_integrity()
+    check_en_rel_annotations()
     check_country_en()
     check_taxonomy_en()
     check_archive_en()
