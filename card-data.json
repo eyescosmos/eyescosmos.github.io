@@ -5764,6 +5764,196 @@
       "style": "pc-top--kanji",
       "artText": "紀子",
       "hintText": "SAKIKO NOMURA · 1967–"
+    },
+    {
+      "type": "photographer",
+      "id": "alec-soth",
+      "href": "photographers/alec-soth.html",
+      "idx": 289,
+      "nameJa": "アレック・ソス",
+      "nameEn": "Alec Soth",
+      "metaJa": "アメリカ · 1969–",
+      "era": "2000",
+      "nationality": "US",
+      "ledeJa": "アレック・ソスは、ミシシッピ川沿いの人物・風景・部屋の断片を大判カラーと写真集編集で結び、アメリカの孤独と憧れを読む経験へ変えた写真家。",
+      "channel": "写真集という方法 · DOCUMENTARY",
+      "tags": [
+        "ドキュメンタリー",
+        "写真集",
+        "アメリカ写真"
+      ],
+      "style": "pc-top--number",
+      "artText": "AS",
+      "hintText": "ALEC SOTH · 2000s / 2000年代"
+    },
+    {
+      "type": "photographer",
+      "id": "boris-mikhailov",
+      "href": "photographers/boris-mikhailov.html",
+      "idx": 290,
+      "nameJa": "ボリス・ミハイロフ",
+      "nameEn": "Boris Mikhailov",
+      "metaJa": "ウクライナ · 1938–",
+      "era": "1990",
+      "nationality": "UA",
+      "ledeJa": "ボリス・ミハイロフは、手彩色・流用・演技・粗さを通じてソ連末期からポストソ連の社会崩壊と写真の倫理を露出させたウクライナの写真家。",
+      "channel": "写真史の論点 · ポストソ連",
+      "tags": [
+        "ポストソ連",
+        "社会ドキュメンタリー",
+        "コンセプチュアル"
+      ],
+      "style": "pc-top--slash",
+      "artText": "BM",
+      "hintText": "BORIS MIKHAILOV · 1990s / 1990年代"
+    },
+    {
+      "type": "photographer",
+      "id": "edward-burtynsky",
+      "href": "photographers/edward-burtynsky.html",
+      "idx": 291,
+      "nameJa": "エドワード・バートンスキー",
+      "nameEn": "Edward Burtynsky",
+      "metaJa": "カナダ · 1955–",
+      "era": "2000",
+      "nationality": "CA",
+      "ledeJa": "エドワード・バートンスキーは、採石場・鉱山・石油・工場を大判写真で撮影し、美しさと環境不安が分離できない産業風景を可視化した写真家。",
+      "channel": "写真史の論点 · 環境写真",
+      "tags": [
+        "環境写真",
+        "人新世",
+        "産業風景"
+      ],
+      "style": "pc-top--stacked",
+      "artText": "EB",
+      "hintText": "EDWARD BURTYNSKY · 2000s / 2000年代"
+    },
+    {
+      "type": "photographer",
+      "id": "gregory-crewdson",
+      "href": "photographers/gregory-crewdson.html",
+      "idx": 292,
+      "nameJa": "グレゴリー・クルードソン",
+      "nameEn": "Gregory Crewdson",
+      "metaJa": "アメリカ · 1962–",
+      "era": "2000",
+      "nationality": "US",
+      "ledeJa": "グレゴリー・クルードソンは、俳優・照明・セットを用いてアメリカ郊外の日常を前後不明の不穏な静止画へ変える演出写真の作家。",
+      "channel": "写真史の論点 · 演出写真",
+      "tags": [
+        "演出写真",
+        "映画的写真",
+        "郊外"
+      ],
+      "style": "pc-top--initials",
+      "artText": "GC",
+      "hintText": "GREGORY CREWDSON · 2000s / 2000年代"
+    },
+    {
+      "type": "photographer",
+      "id": "masashi-asada",
+      "href": "photographers/masashi-asada.html",
+      "idx": 293,
+      "nameJa": "浅田政志",
+      "nameEn": "Masashi Asada",
+      "metaJa": "日本 · 1979–",
+      "era": "2010",
+      "nationality": "JP",
+      "ledeJa": "浅田政志は、家族が役を演じて写真を作る『浅田家』から震災後の写真洗浄とアルバム保存まで、写真を撮る・残す・返す行為として扱う写真家。",
+      "channel": "写真史の論点 · 家族写真",
+      "tags": [
+        "家族写真",
+        "演出写真",
+        "日本写真"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "政志",
+      "hintText": "MASASHI ASADA · 1979–"
+    },
+    {
+      "type": "photographer",
+      "id": "rineke-dijkstra",
+      "href": "photographers/rineke-dijkstra.html",
+      "idx": 294,
+      "nameJa": "リネケ・ダイクストラ",
+      "nameEn": "Rineke Dijkstra",
+      "metaJa": "オランダ · 1959–",
+      "era": "1990",
+      "nationality": "NL",
+      "ledeJa": "リネケ・ダイクストラは、若者・出産直後の母親・兵士・難民など社会的役割へ入る前後の身体を正面性と距離によって保留する肖像写真家。",
+      "channel": "写真史の論点 · ポートレート",
+      "tags": [
+        "ポートレート",
+        "移行期",
+        "身体"
+      ],
+      "style": "pc-top--grid",
+      "artText": "RD",
+      "hintText": "RINEKE DIJKSTRA · 1990s / 1990年代"
+    },
+    {
+      "type": "photographer",
+      "id": "thomas-struth",
+      "href": "photographers/thomas-struth.html",
+      "idx": 295,
+      "nameJa": "トーマス・シュトルート",
+      "nameEn": "Thomas Struth",
+      "metaJa": "ドイツ · 1954–",
+      "era": "1990",
+      "nationality": "DE",
+      "ledeJa": "トーマス・シュトルートは、無人街路・家族肖像・美術館の鑑賞者・科学技術施設を大判写真で撮り、人間が作った制度と視線の構造を可視化する写真家。",
+      "channel": "写真史の論点 · デュッセルドルフ派",
+      "tags": [
+        "デュッセルドルフ派",
+        "大判写真",
+        "美術館"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "TS",
+      "hintText": "THOMAS STRUTH · 1990s / 1990年代"
+    },
+    {
+      "type": "photographer",
+      "id": "zanele-muholi",
+      "href": "photographers/zanele-muholi.html",
+      "idx": 296,
+      "nameJa": "ザネレ・ムホリ",
+      "nameEn": "Zanele Muholi",
+      "metaJa": "南アフリカ · 1972–",
+      "era": "2010",
+      "nationality": "ZA",
+      "ledeJa": "ザネレ・ムホリは、黒人LGBTQIA+コミュニティの肖像と演劇的セルフポートレートを通じて、写真を可視化・抵抗・記憶のアーカイブとして用いるヴィジュアル・アクティヴィスト。",
+      "channel": "写真史の論点 · アクティヴィズム",
+      "tags": [
+        "ヴィジュアル・アクティヴィズム",
+        "クィア・アーカイブ",
+        "ポートレート"
+      ],
+      "style": "pc-top--year",
+      "artText": "ZM",
+      "hintText": "ZANELE MUHOLI · 2010s / 2010年代"
+    },
+    {
+      "type": "photographer",
+      "id": "arata-dodo",
+      "href": "photographers/arata-dodo.html",
+      "idx": 297,
+      "nameJa": "百々新",
+      "nameEn": "Arata Dodo",
+      "metaJa": "日本 · 1974–",
+      "era": "2000",
+      "nationality": "JP",
+      "ledeJa": "百々新は、上海・カスピ海沿岸・シルクロード・京都などを移動し、土地の生活感覚と見る者の距離を写真集として編む現代日本の写真家。",
+      "channel": "写真集という方法 · 旅",
+      "tags": [
+        "ドキュメンタリー",
+        "写真集",
+        "旅写真",
+        "日本写真"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "百々",
+      "hintText": "ARATA DODO · 1974–"
     }
   ],
   "movements": [
