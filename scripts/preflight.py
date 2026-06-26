@@ -154,12 +154,21 @@ def _en_entry_metrics(entry: dict) -> dict:
          + [s.get("body_html", "") for s in (entry.get("sections") or [])])
     )
     links = {h for h in re.findall(r'href="(https?://[^"]+)"', _all_link_html(entry))}
+    cite_id_set = set(re.findall(r'id="cite-(\d+)"', sources))
+    # 本文の脚注参照は「sources に実在する cite を指すものだけ」を一意に数える。
+    # 旧自動版 JSON に残っていた描画されない重複／壊れアンカー（同一 cite-N の
+    # 重複・sources に無い cite-N）を HEAD 本文同期で除去しても、それは実体の
+    # 消失ではないので偽陽性 HARD にしない。一方、実在する被引用への参照が
+    # 本当に消えた場合は集合が縮むため依然 HARD（era1980 bruno-serralongue /
+    # beate-gutschow の偽陽性根治・commit 33a775400 参照）。
+    reachable_suprefs = {n for n in re.findall(r'href="#cite-(\d+)"', body)
+                         if n in cite_id_set}
     return {
-        "cite": len(set(re.findall(r'id="cite-(\d+)"', sources))),
+        "cite": len(cite_id_set),
         "sections": len(entry.get("sections") or []),
         "links": links,
         "thesis": bool((entry.get("thesis_html") or "").strip()),
-        "supref": len(re.findall(r'href="#cite-\d+"', body)),
+        "supref": len(reachable_suprefs),
     }
 
 
