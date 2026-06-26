@@ -5954,6 +5954,28 @@
       "style": "pc-top--kanji",
       "artText": "百々",
       "hintText": "ARATA DODO · 1974–"
+    },
+    {
+      "type": "photographer",
+      "id": "jp-木村伊兵衛",
+      "href": "photographers/jp-木村伊兵衛.html",
+      "idx": 298,
+      "nameJa": "木村伊兵衛",
+      "nameEn": "Ihei Kimura",
+      "metaJa": "日本 · 1901–1974",
+      "era": "1930",
+      "nationality": "JP",
+      "ledeJa": "木村伊兵衛は、小型カメラの速写性を文芸家ポートレート・東京の街角・秋田の生活へ接続し、戦後日本のリアリズムと写真制度を形づくった写真家。",
+      "channel": "写真史の論点 · リアリズム写真",
+      "tags": [
+        "リアリズム写真",
+        "報道写真",
+        "日本写真",
+        "ライカ"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "伊兵衛",
+      "hintText": "IHEI KIMURA · 1901–1974"
     }
   ],
   "movements": [
