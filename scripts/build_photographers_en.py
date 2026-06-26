@@ -20,6 +20,7 @@ Never touches en/photographers/jp-*.html or stieglitz-backup.html.
 """
 
 import argparse
+import copy
 import html as htmllib
 import json
 import os
@@ -1727,6 +1728,25 @@ def process_page(ja_file, page, ja_to_en, warnings):
     return slug, html
 
 
+def _deep_merge_page(base: dict, override: dict) -> dict:
+    """Field-level deep merge of two page dicts.
+
+    Rules:
+    - Keys only in override → added to result.
+    - Keys only in base → kept in result.
+    - Keys in both → if both values are dict, recurse; otherwise override wins (replace).
+    - Lists are always replaced (never element-merged) to avoid corrupting
+      sections / cite_ids / supref_ids etc.
+    """
+    result = copy.deepcopy(base)
+    for key, val in override.items():
+        if key in result and isinstance(result[key], dict) and isinstance(val, dict):
+            result[key] = _deep_merge_page(result[key], val)
+        else:
+            result[key] = copy.deepcopy(val)
+    return result
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--slug', action='append', default=[])
@@ -1745,7 +1765,12 @@ def main():
     stage4_json = os.path.join(ROOT, 'data', 'photographers-en-stage4.json')
     if os.path.exists(stage4_json):
         stage4 = json.load(open(stage4_json, encoding='utf-8'))
-        pages.update(stage4.get('pages', {}))
+        s4_pages = stage4.get('pages', {})
+        for k, v in s4_pages.items():
+            if k in pages and isinstance(pages[k], dict) and isinstance(v, dict):
+                pages[k] = _deep_merge_page(pages[k], v)
+            else:
+                pages[k] = v
     classification = load_classification()
     ja_to_en, en_to_ja = build_jp_slug_map(classification)
     missing_true = set(classification.get('missing_en_true', []))
