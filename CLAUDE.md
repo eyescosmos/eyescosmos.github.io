@@ -67,6 +67,7 @@ push 前には必ず `git status --short` と `git diff --name-only` / `git diff
 - 大きなリファクタは依頼された場合のみ行う
 - 最小差分で修正する
 - 変更後の報告は簡潔にする
+- 写真家の追加・修正、およびその他のページ修正があったときは、常に実測して `docs/importer-run-log.md` に記録する（客観項目は作業側、wall-time は Daisuke 記入。写真家以外は軽量行で可）。詳細は同ファイル冒頭と `AGENTS.md`「実測ログ — Required」
 
 ## 渡された素材（HTML 含む）の扱い — 全般ルール — CRITICAL
 
