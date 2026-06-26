@@ -1039,6 +1039,46 @@ def extract_directory_group(sd_html, label_prefix):
 
 
 # ── FURTHER READING section ────────────────────────────────────────────────
+def _extract_ph_book_blocks(fr_html: str) -> list:
+    """Extract balanced <div class="ph-book"> blocks from further_reading_html."""
+    blocks = []
+    pos = 0
+    while True:
+        start = fr_html.find('<div class="ph-book">', pos)
+        if start == -1:
+            break
+        depth = 0
+        i = start
+        end = -1
+        while i < len(fr_html):
+            if fr_html[i:i+4] == '<div':
+                depth += 1
+                nxt = fr_html.find('>', i)
+                i = (nxt + 1) if nxt != -1 else len(fr_html)
+            elif fr_html[i:i+6] == '</div>':
+                depth -= 1
+                i += 6
+                if depth == 0:
+                    end = i
+                    break
+            else:
+                i += 1
+        if end > start:
+            blocks.append(fr_html[start:end])
+            pos = end
+        else:
+            break
+    return blocks
+
+
+def _extract_ph_further_lis(fr_html: str) -> list:
+    """Extract <li> items from <ul class=\"ph-further-links\"> in further_reading_html."""
+    lis = []
+    for ul_m in re.finditer(r'<ul class="ph-further-links">(.*?)</ul>', fr_html, re.S):
+        lis.extend(re.findall(r'<li>.*?</li>', ul_m.group(1), re.S))
+    return lis
+
+
 def rebuild_further(html, page):
     refnum = re.search(r'<span class="ph-section__num">§ REF</span>', html)
     if not refnum:
@@ -1048,27 +1088,42 @@ def rebuild_further(html, page):
         return html
     _, sec_end, _ = extract_balanced(html, sec_open, 'section')
 
+    fr = page.get('further_reading_html') or ''
+    # further_reading_html が ph-book 形式（新型）を含む場合は構造分解して適切な位置に配置。
+    # 旧型（<div class="book">）は verbatim のまま追加。
+    if '<div class="ph-book">' in fr:
+        fr_book_blocks = _extract_ph_book_blocks(fr)
+        fr_link_lis = _extract_ph_further_lis(fr)
+        fr_verbatim = None
+    else:
+        fr_book_blocks = []
+        fr_link_lis = []
+        fr_verbatim = fr or None
+
     body_parts = []
-    # Photobooks
+    # Photobooks (book-card 形式 + ph-book 形式の両方)
     photobooks = parse_photobooks(page.get('photobooks_html') or '')
-    if photobooks:
+    if photobooks or fr_book_blocks:
         body_parts.append('          <div class="ph-rel-label">Photobooks</div>')
         for pb in photobooks:
             body_parts.append(render_book(pb))
-    # Databases & archives (external links)
+        for bk in fr_book_blocks:
+            body_parts.append('          ' + bk.strip())
+    # Databases & archives (external links + further_reading_html の追加リンク)
     ext = page.get('external_links_html') or ''
     ext_links = re.findall(r'<a class="chip-link"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', ext, re.S)
-    if ext_links:
+    if ext_links or fr_link_lis:
         body_parts.append('          <div class="ph-rel-label">Databases &amp; archives</div>')
         body_parts.append('          <ul class="ph-further-links">')
         for href, text in ext_links:
             text = re.sub(r'\s*↗\s*$', '', text.strip())
             body_parts.append(f'            <li><a href="{href}" target="_blank" rel="noopener">{text}</a></li>')
+        for li in fr_link_lis:
+            body_parts.append(f'            {li}')
         body_parts.append('          </ul>')
-    # further_reading_html (append verbatim)
-    fr = page.get('further_reading_html')
-    if fr:
-        body_parts.append('          ' + fr.strip())
+    # 旧型 further_reading_html は verbatim で追加
+    if fr_verbatim:
+        body_parts.append('          ' + fr_verbatim.strip())
 
     if not body_parts:
         return html[:sec_open].rstrip('\n ') + '\n\n' + html[sec_end:].lstrip('\n')

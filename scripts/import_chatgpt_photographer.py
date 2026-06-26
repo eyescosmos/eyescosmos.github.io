@@ -1184,7 +1184,8 @@ def run_render_ja(material: Path, spec_path: Path, idx, lang: str | None) -> int
 #   - sources: ph-cite → cite-item 形式（`<div class="sources"><div class="cite-item"
 #     id="cite-N"><div class="cite-num">*N</div>{anchor}</div>…</div>`）。ph-cite のまま
 #     だと §SRC 空＋全 sup-ref がプレーン化される。
-#   - related: site-directory-links nav 形式（リンクのみ・reason は EN では落ちる仕様）。
+#   - related: site-directory-links nav 形式（リンク）＋ related_annotations
+#     （reason=EN素材の §REL 一言を { en_href: blurb } で保持。builder が付与）。
 # 機械生成一本化はしない（HAND_MAINTAINED は手編集維持）。仕上げは
 # build_photographers_en.py --slug X --force。
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1232,6 +1233,28 @@ def _en_site_directory_html(people: list, movements: list) -> str | None:
         return None
     return ('<nav class="site-directory-links" aria-label="Site links" data-nosnippet>\n'
             + "\n".join(groups) + '\n      </nav>')
+
+
+def _en_related_annotations(people: list, movements: list) -> dict | None:
+    """素材EN の §REL 一言（reason）を { en_href: blurb } へ変換する。
+    site_directory_html と同じ EN href をキーにし、リンク（slug）と reason の
+    両方を持つ項目だけ採る。builder.rebuild_related が href 一致で ' — blurb' を
+    付ける（reason は _parse_rel_item で先頭ダッシュ除去済みの素テキスト）。
+    全項目に reason が無ければ None（＝フィールド無し＝従来どおり素の名前）。
+    これにより新規追加時に EN §REL の一言欠落が構造的に発生しなくなる。"""
+    # 素材が "&mdash;" 等のエンティティで区切る場合、_parse_rel_item の
+    # lstrip("—–- ") はリテラル文字しか落とせず reason 先頭にダッシュが残る。
+    # builder が ' &mdash; ' を前置するので二重化を防ぐため先頭区切りを除去する。
+    lead_dash = re.compile(r"^(?:&mdash;|&ndash;|&#821[12];|[—–\-])\s*")
+    ann = {}
+    for rows, base in ((people, "/en/photographers/"),
+                       (movements, "/en/movements/")):
+        for r in rows:
+            slug = r.get("slug")
+            reason = lead_dash.sub("", (r.get("reason") or "").strip()).strip()
+            if slug and reason:
+                ann[f"{base}{slug}.html"] = reason
+    return ann or None
 
 
 def _en_keywords_html(keywords: list) -> str | None:
@@ -1301,6 +1324,8 @@ def bundle_to_en_entry(bundle: dict, slug: str | None = None) -> dict:
         "sections": _en_sections(bundle.get("sections") or []),
         "sources_html": _en_sources_html(bundle.get("sources") or []),
         "site_directory_html": _en_site_directory_html(
+            bundle.get("related_people") or [], bundle.get("related_movements") or []),
+        "related_annotations": _en_related_annotations(
             bundle.get("related_people") or [], bundle.get("related_movements") or []),
         "further_reading_html": _en_further_reading_html(
             bundle.get("further_books") or [], bundle.get("further_links") or []),
