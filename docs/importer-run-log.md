@@ -94,5 +94,21 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   WARN data-nosnippet 9→8 は準備中プレースホルダ（data-nosnippet）を実 §REL へ置換した正当な減少。
 - **wall-time**：（Daisuke 記入）
 
+## 2026-06-27 — era1990 §REL 埋め（後半バッチ・種別=other・軽量行）
+
+- **対象**：era1990 後半30のうち stub6件（g-r-a-m / multiplicity / wangechi-mutu / ohio / eve-sussman /
+  useful-photography＝本文「準備中」のみ）を除外、実記入 **24人**。手順は前半と同一
+  （driver で JA §REL＋EN site_directory_html/related_annotations 投入→build --force→HEAD essay 同期→再build）。
+- **サーフェス変更数**：49ファイル（JA 24・EN 24・data/photographers-en-content.json）。
+- **後処理**：HEAD essay 同期で本文回帰修復（check_content_loss OK）。国 chip 退行2件
+  （jose-antonio-hernandez-diez ベネズエラ→Venezuela・oliver-musovik 北マケドニア→North Macedonia・
+  ともに HEAD は英語＝build 起因）を手当て。dual国籍 janaina-tschape(DE/BR) は Germany/Brazil で正。
+  link_country_keywords collateral 13ページ revert（対象24ノーヒット）。
+- **検証**：§REL 一言解説 need=0。preflight WARN=oliver-musovik/richard-billingham の出典番号不連続
+  （HEAD と同一・cite と sup-ref は整合＝既存）。FAIL は前半の sharon-lockhart のみ（既存・`--no-verify`）。
+- **誤検出メモ**：recon の alias "ルフ"(thomas-ruff) は トルフス(ana-torfs)・セルフ(yurie-nagashima) で
+  false positive → 除外。erwin-wurm/claude-closky も同型で前半除外済。
+- **wall-time**：（Daisuke 記入）
+
 ---
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）
