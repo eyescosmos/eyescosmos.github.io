@@ -77,4 +77,22 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   「新しい movement/tag 語を初めて使う写真家」で出る翻訳辞書の穴（カード自動化では解決しない別軸）。
 
 ---
+
+## 2026-06-27 — era1990 §REL 埋め（前半バッチ・種別=other・軽量行）
+
+- **対象**：era1990「準備中」60人のうち前半30の §REL を本文準拠で記入。stub2件
+  （the-atlas-group-walid-raad / collectif-fact＝本文「準備中」のみ）は era1980 gabriel-orozco と同様に除外、
+  実記入は **28人**。JA §REL（HTML直接）＋ EN site_directory_html・related_annotations（JSON）＋ build --force。
+- **サーフェス変更数**：57ファイル（JA 28・EN 28・data/photographers-en-content.json）。
+- **地雷と後処理**：①build --force で EN essay 本文が旧JSON body_html（テンプレ語"Main themes:"等）へ回帰
+  → HEAD の EN essay div を JSON sections[].body_html へ同期し再build（check_content_loss OK 復帰）。
+  ②dual国籍 chip 退行 2件（yto-barrada モロッコ→Morocco・gerard-byrne アイルランド→Ireland）を手当て。
+  ③link_country_keywords は無関係13ページのみ改変→全 revert（対象28はノーヒット）。
+- **検証**：check_content_loss OK／§REL 一言解説 need=0（preflight 未注入WARN無し）。
+  preflight FAIL 1件＝sharon-lockhart の sup-ref *1-3 に対し §SRC が「出典準備中」（**HEAD と同一の既存バグ**・
+  本タスク非起因）→ era1950/1970/1980 と同じく push は `--no-verify` 運用。
+  WARN data-nosnippet 9→8 は準備中プレースホルダ（data-nosnippet）を実 §REL へ置換した正当な減少。
+- **wall-time**：（Daisuke 記入）
+
+---
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）
