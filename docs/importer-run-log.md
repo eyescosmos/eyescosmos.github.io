@@ -110,5 +110,17 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   false positive → 除外。erwin-wurm/claude-closky も同型で前半除外済。
 - **wall-time**：（Daisuke 記入）
 
+## 2026-06-27 — era2000(17)+era2010(2) §REL 埋め（種別=other・軽量行）
+
+- **era2000=17人（commit 1dcad3836）/ era2010=2人（commit 8860783d6）**。前半era1990と同じ driver フロー。
+  stub（era2000:1・era2010:0）除外。**これで本文ありページの §REL は全年代完了**（残り準備中=stub10件のみ保留）。
+- **サーフェス**：era2000=35（17JA+17EN+JSON）/ era2010=5（2JA+2EN+JSON）。
+- **後処理**：era2000は本文回帰 sync 1件のみ（EN新しめでdrift小）・国chip退行なし。era2010は amalia-ulman(AR/ES) の
+  chip退行（アルゼンチン→Argentina）手当て。link_country_keywords collateral 13ページ毎回revert。
+- **検証**：両バッチとも check_content_loss OK・preflight OK（FAILなし＝これらは出典完備）。
+- **判断メモ**：pieter-hugo は本文がポートレート系譜を詳述＝関連写真家6名（Ruff/Arbus/Dijkstra/Keïta/Soth/Cole）。
+  mika-ninagawa の「木村伊兵衛」は**賞名**ゆえ関連写真家にしない。daisuke-yokota はカメラレス系譜で Man Ray/Moholy-Nagy＋レイオグラフ。
+- **wall-time**：（Daisuke 記入）
+
 ---
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）
