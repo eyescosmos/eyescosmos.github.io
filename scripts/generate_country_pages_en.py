@@ -477,7 +477,7 @@ def main(argv=None) -> None:
                            mobile_search=mobile_search, bottom_scripts=bottom_scripts,
                            strip_pairs=strip_pairs, dir_eras=dir_eras,
                            dir_countries=dir_countries, dir_photographers=dir_photographers,
-                           cards_html="\n".join(cards), member_count=len(members))
+                           cards_html="\n".join(cards), member_count=len(cards))
         (REPO / "en" / "countries" / f"{cfg['slug']}.html").write_text(html, encoding="utf-8")
         page_n += 1
 

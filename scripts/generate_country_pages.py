@@ -532,7 +532,6 @@ def generate_country_page(config: dict, era_style_block: str,
     members = get_members(config, card_data)
     assert_members(config, members)
 
-    member_count = len(members)
     card_map = {p["id"]: p for p in card_data}
 
     # Build transformed cards HTML
@@ -546,6 +545,9 @@ def generate_country_page(config: dict, era_style_block: str,
         transformed = transform_card(article, pid, card_map.get(pid, {}))
         cards_html_parts.append(transformed)
     cards_html = "\n".join(cards_html_parts)
+    # Hero count reflects the cards actually rendered (skips members absent from
+    # archive.html), so the displayed number always matches the visible cards.
+    member_count = len(cards_html_parts)
 
     codes = config["codes"]
     code = codes[0]

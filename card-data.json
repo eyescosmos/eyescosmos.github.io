@@ -5976,6 +5976,26 @@
       "style": "pc-top--kanji",
       "artText": "伊兵衛",
       "hintText": "IHEI KIMURA · 1901–1974"
+    },
+    {
+      "type": "photographer",
+      "id": "nerhol",
+      "href": "photographers/nerhol.html",
+      "idx": 299,
+      "nameJa": "ネルホル",
+      "nameEn": "Nerhol",
+      "metaJa": "日本 · 2007–",
+      "era": "2010",
+      "nationality": "JP",
+      "ledeJa": "田中義久と飯田竜太によるアーティストデュオ（2007年結成）。積層・切断・彫刻という物体的プロセスで写真を再定義し、expanded photographyとphotographic objectの文脈で世界的に評価される。",
+      "channel": "写真史の論点 · 写真と彫刻",
+      "tags": [
+        "ポートレート",
+        "日本写真"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "N<span>H</span>",
+      "hintText": "NERHOL · 2007–"
     }
   ],
   "movements": [

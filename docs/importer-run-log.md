@@ -123,4 +123,80 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **wall-time**：（Daisuke 記入）
 
 ---
+
+## 2026-06-28 — nerhol（new / 新規追加・idx299・era2010）+ miyako-ishiuchi（update / 既存刷新）
+
+### nerhol（新規追加）
+
+- **wall-time**：（Daisuke 記入）
+- **bug**：0。M2-M6 全安定。
+- **手作業点（実測）**：
+  1. **spec.json 手作成**：nameJa/nameEn/years/era/period/channel/movements/tags/starText/citations 手記入。
+  2. **GENRE_TAG 未マップタグ対応**：素材タグ（写真と彫刻/積層写真/時間の断面/写真的オブジェクト/ブックアート）は全未マップ
+     → spec.tags を既存マップ済み `['ポートレート', '日本写真']` に変更（eyebrow と card channel はこの2語で表示）。
+     写真と彫刻は Movement フィールドに残す（STUB_TO_SLUG 未登録のため EN では untranslated WARN → ui-terms.terms に追加）。
+  3. **ui-terms 追加 5件**（durable）：terms に「写真と彫刻」、works_labels に「千葉市美術館 - 水平線を捲る」「上野の森美術館 - VOCA展2020 Remove」「SFMOMA - ひろしま/hiroshima #71」「National Museum of Art - Endless Night / 1・9・4・7 / SCAR」「MIMOCA - 石内都 絹の夢」。
+     ※ 後者3件は miyako の ui-terms 追加と同時作業。
+  4. **EN entry 手 insert**：bundle-to-en stdout を data/photographers-en-content.json に挿入（キー = nerhol.html）。
+- **サーフェス変更数**：9ファイル（新規2=JA+EN個別ページ、更新=card-data/supplement.js/star bin/en-content.json/ui-terms.json、spec.json+バックアップ3件は未追跡）。Phase 2 残=archive/cards-archive×3/eras/2010/en/eras/2010/countries/japan。
+- **フィデリティ**：JA 本文 chars大（28 cite・0 dangling）。EN cite 28・supref 28 dangling 0。JA==EN 出典一致。
+  check_new_photographer OK（en_graph_absent=EN全共通WARN）。check_content_loss OK。preflight OK。
+- **発火した engine 改良**：なし（既存エンジン正常動作）。
+- **WARN 残（非ブロック）**：EN: no photobooks_html / no external_links_html / jsonld fallback（いずれもコンテンツ有で正常）。
+
+### miyako-ishiuchi（update / 既存刷新）
+
+- **wall-time**：（Daisuke 記入）
+- **bug**：0。
+- **手作業点（実測）**：
+  1. **バックアップ**：JA+EN 両ページを -backup.html にコピー（guardrail 準拠）。
+  2. **--update-existing dry-run 実行**：フィデリティ差分確認（本文 1026→8855字、出典 2→31、sup-ref 6→67）。
+     carry-forward 計画：§REF 既存2件（SFMOMA/Tate Modern）→ 新「準備中」に手貼り。
+  3. **spec.json 手作成**：derive_spec から years/period/channel/era/idx 引き継ぎ。movements は素材から 私写真/ドキュメンタリー追加。
+  4. **§REF 手貼り**：backup から SFMOMA/Tate Modern リンク2件を新 JA ページの §REF body へ差込（prep-block → actual content）。
+  5. **EN entry 手 insert**：bundle-to-en stdout を data/photographers-en-content.json に挿入（既存エントリを新内容で置換）。
+     further_reading_html を手動追加（SFMOMA/Tate Modern リンク英語版）。
+  6. **ui-terms 追加**（miyako 固有 3件）：works_labels に「SFMOMA - ひろしま/hiroshima #71」「National Museum of Art - Endless Night / 1・9・4・7 / SCAR」「MIMOCA - 石内都 絹の夢」。
+- **サーフェス変更数**：5ファイル更新（JA/EN 個別ページ・en-content.json・ui-terms.json）。card-data/supplement.js/star bin は変更なし（既存写真家＝不触）。
+- **フィデリティ**：JA 31 cite・31 supref dangling 0。EN 31 cite・31 supref dangling 0。JA==EN 出典一致。
+  data-nosnippet 9→8（JA）/ 8→7（EN）: 「準備中」prep-block 2件が実コンテンツへ置換された正当な減少。
+  check_new_photographer OK。check_content_loss OK。preflight OK（WARN=nosnippet減少=上記理由で正常）。
+- **WARN 残（非ブロック）**：EN: no photobooks_html / no external_links_html / jsonld fallback（旧エントリ由来フィールドは Phase 2 EN全フィールドマージで対応）。
+
+### Phase 2 — nerhol サーフェス統合（miyako は既存写真家＝サーフェス作業不要）
+
+- **キーワードチップ修正**（Phase 1 後の content-fidelity fix・両写真家）：render が `ph-kw`/`ph-side-chip` を spec.tags（2語）から
+  埋めて素材の rich keyword を落としていた。素材どおりに手修正。nerhol=6語（写真と彫刻/ポートレート/積層写真/時間の断面/
+  写真的オブジェクト/ブックアート、sidebar 先頭4）。miyako=9語（横須賀/私写真/暗室/表面/染織/衣服/傷跡/戦後日本/記憶、sidebar 先頭4）。
+  **coordinator は miyako を「8語・私写真不在」と誤認したが、JA/EN 素材とも実際は 9語（私写真/Shishashin 含む）**＝素材忠実に 9 維持。
+  EN keywords_html は既に正しく 9（変更なし）。card-data tags は不触。
+- **JA カード手貼り 4面**：archive.html / cards-archive.html / new-design/cards-archive.html（前者2はトラッキング・後者は
+  gitignore 済の runtime コピー＝コミット対象外）の最初の `.pc-card--movement` 直前へ archive_card_html（data-country=JP）。
+  eras/2010.html のグリッド末尾へ era card。eras hero count 8→11 に是正（**旧 8 は既存の stale。実カード数は 10＋nerhol=11**）。
+  写真と彫刻に運動ページなし＝運動カード挿入なし。
+- **engine fix（durable）**：`build_archive_en.GENRE_TAG` に `'写真と彫刻': 'Photography and Sculpture'` 追加。
+  これが無いと nerhol channel 接尾辞「写真と彫刻」で `SystemExit('Unmapped Japanese tag')`→en/archive 中断（sakiko の写真集文化と同型）。
+- **EN/派生再生成（順序厳守）**：build_archive_en（320カード）→ build_taxonomy_en --era 2010 → generate_country_pages --country japan
+  → generate_country_pages_en --country japan。
+- **8面プレゼンス確認**：archive / cards-archive / new-design/cards-archive / eras/2010 / countries/japan / en/archive /
+  en/eras/2010 / en/countries/japan すべて nerhol 掲載 ✓。
+- **collateral 確認・revert なし**：
+  - countries/japan・en/countries/japan の hero count 57→61 は generator がカードデータ実数（JP=61）へ是正した正当な決定論差分（既存 stale の追いつき）。
+  - en/countries/japan の `.head__lang` CSS に `, .head__lang a` セレクタ追加は generator の lang-toggle fix（退行でなく改善）。lang toggle は EN active / JP→JA で正。
+  - 他写真家カード・dual国籍 chip・TOP12（pc-top--XXX）・filter/sort UI・カード JS への混入差分ゼロ（確認済）。
+  - link_country_keywords は実行せず（指示どおり）。
+- **検証**：check_content_loss OK。preflight OK（WARN=①en/countries・en/eras「直接編集疑い」＝正規再生成済の既知偽陽性 ②miyako nosnippet 減少＝prep-block 置換の正当減少）。
+- **監督後修正（Opus・同日）**：
+  1. **miyako キーワード 9→8**：Daisuke 指示で `私写真`/`Shishashin` を keyword chip から除去（JA chip・JA sidebar・EN keywords_html・EN再ビルド）。
+     本文 prose の shishashin 論（受容・批評）は substantive のため残置。card-data tags は不変。
+  2. **国別 generator の人数表示バグを修正（durable）**：`generate_country_pages.py` / `generate_country_pages_en.py` の
+     `member_count` を **`len(members)`（card-data 実数）→ 実際にレンダリングしたカード数** に変更。原因＝archive.html に未掲載の
+     メンバーはカード生成ループで skip されるのに hero 人数は card-data 実数を表示し、**日本のみ 61 表示 / 58 カードの不整合**が出た
+     （他国は drift なしで一致＝唯一の不整合）。Daisuke 判断「範囲を絞る」を採用し japan を **58/58 で整合**（HEAD 57/57 + nerhol）。
+     他国は drift がないため数値不変（regen していないので committed も不変）。
+  3. **別件として記録した既存 drift**：archive.html に card-data の 10名が未掲載（alec-soth/boris-mikhailov/edward-burtynsky/
+     gregory-crewdson/masashi-asada/rineke-dijkstra/thomas-struth/zanele-muholi/arata-dodo/jp-木村伊兵衛）。本タスク範囲外。
+- **wall-time**：（Daisuke 記入）
+
+---
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）

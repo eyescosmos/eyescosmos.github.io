@@ -5063,3 +5063,43 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "nerhol",
+  "name": "Nerhol",
+  "nameJa": "ネルホル",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "2007–",
+  "gender": "混合",
+  "era": "2010",
+  "movements": [
+    "写真と彫刻"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Yutaka Kikutake Gallery",
+      "url": "https://www.yutakakikutakegallery.com/artists/nerhol/"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "写真を平面プリントの外へ押し出し、積層・切断・彫刻というプロセスで像の成立条件を問い直すアーティストデュオ。expanded photographyとphotographic objectの文脈から世界の美術館・ギャラリーで評価される *1 *2 。",
+    "textEn": "An artist duo pushing photography beyond the flat print, questioning the conditions of the image through layering, cutting, and carving. Internationally recognized within expanded photography and photographic object contexts *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Dentsu-ho — Interview with Artist Unit Nerhol",
+        "url": "https://dentsu-ho.com/en/articles/3220"
+      },
+      {
+        "num": 2,
+        "name": "Foam — Nerhol: Index",
+        "url": "https://www.foam.org/events/nerhol"
+      }
+    ]
+  }
+}
+);
