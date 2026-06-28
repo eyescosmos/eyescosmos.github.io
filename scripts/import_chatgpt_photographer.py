@@ -1074,6 +1074,43 @@ def _inject_movement(html: str, movement_label: str | None) -> str:
     return html
 
 
+def _inject_ja_keywords(html: str, keywords: list) -> str:
+    """scaffold が spec.tags（カード用2語）で埋めた ph-kw / ph-side-chip を、素材由来の
+    rich keyword（bundle.keywords）で差し替える。参照実装 ansel-adams / nerhol / miyako
+    と同じく ph-kw=全件、サイドバー ph-side-chip=先頭4件（is-primary は先頭1）。
+    bundle.keywords が空なら従来どおり scaffold の spec.tags フォールバックを維持する。
+    EN の _en_keywords_html と対になる JA 版（ラベルは Keywords で共通）。"""
+    keywords = [k for k in (keywords or []) if k]
+    if not keywords:
+        return html
+
+    # main: ph-keywords 内の ph-kw 群を全件で差し替え（先頭チップの indent を踏襲）
+    def repl_kw(m: re.Match) -> str:
+        sep = m.group(1)
+        chips = sep.join(f'<span class="ph-kw">{k}</span>' for k in keywords)
+        return ('<span class="ph-keywords__label">Keywords</span>'
+                f'{sep}{chips}{m.group(2)}')
+    html = re.sub(
+        r'<span class="ph-keywords__label">Keywords</span>'
+        r'(\n[ ]*)<span class="ph-kw">.*?</span>(\n[ ]*</div>)',
+        repl_kw, html, count=1, flags=re.S)
+
+    # sidebar: ph-side-chip 群を先頭4件で差し替え（is-primary は先頭1）
+    side = keywords[:4]
+
+    def repl_side(m: re.Match) -> str:
+        sep = m.group(1)
+        chips = sep.join(
+            f'<span class="ph-side-chip{" is-primary" if i == 0 else ""}">{k}</span>'
+            for i, k in enumerate(side))
+        return f'<div class="ph-side-chips">{sep}{chips}{m.group(2)}</div>'
+    html = re.sub(
+        r'<div class="ph-side-chips">'
+        r'(\n[ ]*)<span class="ph-side-chip.*?</span>(\n[ ]*)</div>',
+        repl_side, html, count=1, flags=re.S)
+    return html
+
+
 def _mask_anchors(html: str) -> tuple[str, list]:
     saved: list = []
 
@@ -1137,6 +1174,9 @@ def render_ja_page(bundle: dict, spec: dict, idx=None) -> str:
     # star 用の spec["movements"] は全運動のまま（座標計算は別経路）。
     movement_label = _primary_movement_label(spec)
     html = _inject_movement(html, movement_label)
+    # Keywords：scaffold の spec.tags（カード用2語）を素材の rich keyword で差し替える。
+    # 空なら scaffold フォールバック維持（EN _en_keywords_html と対）。
+    html = _inject_ja_keywords(html, bundle.get("keywords"))
     # § WORKS
     html = _set_section_body(html, "§ WORKS", _build_ja_works_body(bundle.get("works") or []))
     # essay + TOC（節数可変・本文内リンクは essay にだけ適用）
@@ -2005,6 +2045,134 @@ def print_runbook(slug: str, wrote_ja: bool, wrote_en: bool):
     print("\n注意: card-data / 年代 / 国 / 運動 / 星 / EN 正本 JSON は本ツールでは触れていない。")
 
 
+# ── ② 素材プリチェック（read-only）──────────────────────────────────────────
+
+def _cjk_ratio(text: str) -> float:
+    """CJK文字比率（CJK / (英字 + CJK)）。空文字 → 0.0。"""
+    cjk = len(re.findall(r'[぀-ヿ一-鿿]', text))
+    alpha = len(re.findall(r'[A-Za-z]', text))
+    denom = cjk + alpha
+    return cjk / denom if denom else 0.0
+
+
+def run_precheck(slug: str, ja_path: Path, en_path: Path | None) -> int:
+    """素材プリチェック（read-only）。書き込みなし。
+
+    (a) 既存 slug か新規かを判定して明示表示。
+    (b) 素材言語を CJK比率で判定し、取り違えを WARN。
+    (c) extract_bundle で素材内容（キーワード/運動/出典件数）と
+        STUB_TO_SLUG / GENRE_TAG 有無を表示。"""
+    ok = True
+
+    # (a) 既存 slug 判定 ─────────────────────────────────────────────────────
+    try:
+        card_ids = {p["id"] for p in
+                    json.loads(CARD_DATA.read_text(encoding="utf-8"))["photographers"]}
+    except Exception as e:
+        sys.stderr.write(f"WARN: card-data.json 読み込み失敗: {e}\n")
+        card_ids = set()
+
+    in_card = slug in card_ids
+    page_exists = (JA_DIR / f"{slug}.html").exists()
+    if in_card or page_exists:
+        print(f"[MODE] update（既存）— card-data: {'✓' if in_card else '✗'}"
+              f" / JA page: {'✓' if page_exists else '✗'}")
+    else:
+        print(f"[MODE] new（新規）— card-data: 未登録 / JA page: 未存在")
+
+    # (b) 素材言語判定 ──────────────────────────────────────────────────────
+    print()
+    for label, path, expected_lang in [("--ja", ja_path, "ja"),
+                                        ("--en", en_path, "en")]:
+        if path is None:
+            continue
+        if not path.exists():
+            sys.stderr.write(f"ERROR: {label} ファイルが見つからない: {path}\n")
+            return 2
+        text = path.read_text(encoding="utf-8", errors="replace")
+        ratio = _cjk_ratio(text)
+        lang_guess = "ja" if ratio >= 0.15 else "en"
+        mismatch = lang_guess != expected_lang
+        marker = "⚠ WARN" if mismatch else "OK"
+        print(f"[LANG] {label} {path.name}: CJK比率={ratio:.2%} → 推定言語={lang_guess}"
+              f" [{marker}]")
+        if mismatch:
+            print(f"  ⚠ 言語取り違えの疑い（{label} に {lang_guess} 素材が渡されている可能性）。")
+            ok = False
+
+    # (c) 素材内容チェック ──────────────────────────────────────────────────
+    if not ja_path.exists():
+        sys.stderr.write(f"ERROR: --ja ファイルが見つからない: {ja_path}\n")
+        return 2
+    ja_html = ja_path.read_text(encoding="utf-8", errors="replace")
+
+    # 辞書読み込み（失敗は握りつぶし）
+    try:
+        from build_taxonomy_en import STUB_TO_SLUG as _S2S  # noqa: E402
+        stub_to_slug = _S2S
+    except Exception:
+        stub_to_slug = None
+    try:
+        from build_archive_en import GENRE_TAG as _GT  # noqa: E402
+        genre_tag = _GT
+    except Exception:
+        genre_tag = None
+
+    dict_available = stub_to_slug is not None and genre_tag is not None
+
+    print()
+    print("[BUNDLE] JA 素材解析 ─────────────────────────────────")
+    try:
+        bundle, info = extract_bundle(ja_html, "ja", slug=slug)
+    except Exception as e:
+        sys.stderr.write(f"WARN: JA bundle 抽出失敗: {e}\n")
+        bundle = None
+
+    if bundle:
+        kw_cnt = len(bundle.get("keywords") or [])
+        mv_list = bundle.get("related_movements") or []
+        src_cnt = len(bundle.get("sources") or [])
+        print(f"  keywords     : {kw_cnt} 件")
+        print(f"  related_movements: {len(mv_list)} 件")
+        print(f"  sources      : {src_cnt} 件")
+
+        if dict_available:
+            for mv in mv_list:
+                # 関連運動は "名 ― 一言" 形（区切りは ―/—/–/- いずれも）。先頭の運動名だけ
+                # 辞書照合する（reason 全文を照合すると常に未登録になり無意味なため）。
+                mv_raw = mv.get("name") or ""
+                mv_name = re.split(r'\s*[―—–\-]\s*', mv_raw, 1)[0].strip()
+                if not mv_name:
+                    continue
+                in_stub = mv_name in stub_to_slug          # 運動ページリンク用
+                in_genre = mv_name in genre_tag            # タグ/channel接尾辞に流用する場合
+                print(f"    運動「{mv_name}」→ STUB_TO_SLUG: "
+                      f"{'✓' if in_stub else '✗（未登録＝EN §REL/運動リンクで要英訳）'}"
+                      f" / GENRE_TAG: {'✓' if in_genre else '✗'}")
+            print("  ※ tag の GENRE_TAG 照合は spec 確定後に add_photographer の事前 lint（④）で行う。")
+        else:
+            print("  辞書チェックskip（build_taxonomy_en/build_archive_en のインポート失敗）")
+
+    print()
+    if en_path and en_path.exists():
+        en_html = en_path.read_text(encoding="utf-8", errors="replace")
+        print("[BUNDLE] EN 素材解析 ─────────────────────────────────")
+        try:
+            en_bundle, en_info = extract_bundle(en_html, "en", slug=slug)
+            kw_cnt = len(en_bundle.get("keywords") or [])
+            mv_list = en_bundle.get("related_movements") or []
+            src_cnt = len(en_bundle.get("sources") or [])
+            print(f"  keywords     : {kw_cnt} 件")
+            print(f"  related_movements: {len(mv_list)} 件")
+            print(f"  sources      : {src_cnt} 件")
+        except Exception as e:
+            sys.stderr.write(f"WARN: EN bundle 抽出失敗: {e}\n")
+        print()
+
+    print("[DONE] precheck 完了" + ("" if ok else " — 上記 WARN を確認してください"))
+    return 0 if ok else 1
+
+
 # ── main ───────────────────────────────────────────────────────────────────
 
 def main(argv=None) -> int:
@@ -2040,7 +2208,19 @@ def main(argv=None) -> int:
                     help="既存ページ更新モード（read-only / dry-run のみ）: spec を card-data+"
                          "既存ページから自動導出し、新素材 render との差分と carry-forward 計画を"
                          "表示（--slug と --ja 必須・--en 任意。書込なし）")
+    ap.add_argument("--precheck", action="store_true",
+                    help="② 素材プリチェック（read-only）: slug の新規/既存判定・素材言語確認・"
+                         "bundle内容表示（--slug と --ja 必須。書込なし）")
     args = ap.parse_args(argv)
+
+    # ② 素材プリチェック（read-only）。書込なし。
+    if args.precheck:
+        if not args.slug or not args.ja:
+            ap.error("--precheck は --slug と --ja が必須")
+        return run_precheck(
+            args.slug,
+            Path(args.ja).expanduser(),
+            Path(args.en).expanduser() if args.en else None)
 
     # 既存ページ更新モード（read-only / dry-run）。spec 自動導出・書込なし。
     if args.update_existing:

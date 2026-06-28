@@ -502,6 +502,56 @@ def check_archive_en() -> None:
             f"正本は {CARD_DATA_JSON}。build_archive_en.py で再生成すること")
 
 
+# ── ③ ドリフト検知（WARN のみ・archive掲載漏れ＋country hero 件数ズレ）────────────
+
+def check_archive_presence() -> None:
+    """card-data.json の全 photographer id が archive.html に掲載されているか検知（WARN）。
+    archive.html への未掲載 = 国別ページのカウント崩れの根になる。"""
+    try:
+        card_data = json.loads((REPO / "card-data.json").read_text(encoding="utf-8"))
+    except Exception:
+        return
+    archive_path = REPO / "archive.html"
+    if not archive_path.exists():
+        return
+    html = archive_path.read_text(encoding="utf-8", errors="ignore")
+    archived_slugs = set(re.findall(r'href="photographers/([^"]+)\.html"', html))
+    all_ids = [p["id"] for p in card_data.get("photographers", []) if p.get("id")]
+    missing = [pid for pid in all_ids if pid not in archived_slugs]
+    if missing:
+        sample = missing[:15]
+        warnings.append(
+            f"archive.html に未掲載の photographers: {len(missing)} 件"
+            f"（国別カウント崩れの根。先頭{len(sample)}件: {sample}"
+            + (" …" if len(missing) > 15 else "")
+            + "）"
+        )
+
+
+def check_country_hero_counts() -> None:
+    """countries/*.html の hero 表示人数と実カード数がズレていないか検知（WARN）。
+    <span class="era-hero__meta-item">Photographers <strong>N</strong></span> の N と
+    pc-card--photographer の出現数を比較する。"""
+    countries_dir = REPO / "countries"
+    if not countries_dir.exists():
+        return
+    for fpath in sorted(countries_dir.glob("*.html")):
+        try:
+            html = fpath.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+        m = re.search(r'Photographers\s*<strong>(\d+)</strong>', html)
+        if not m:
+            continue  # hero meta が無いページは skip
+        hero_n = int(m.group(1))
+        card_n = html.count('pc-card--photographer')
+        if hero_n != card_n:
+            warnings.append(
+                f"countries/{fpath.name}: hero人数 {hero_n} / 実カード {card_n}"
+                f" ＝ drift か手編集の兆候"
+            )
+
+
 # ── SEO / 不可視必須要素 & JA 分類ページの本文消失（baseline 比較・触ったものだけ）──
 # 設計（2026-06-19 追加）:
 #   - 既存ページには穴がある前提で「baseline にあった要素が消えた」ときだけ HARD。
@@ -808,6 +858,8 @@ def main() -> int:
     check_country_en()
     check_taxonomy_en()
     check_archive_en()
+    check_archive_presence()      # ③ archive 掲載漏れ（WARN）
+    check_country_hero_counts()   # ③ country hero件数ズレ（WARN）
     check_content_loss_guard()
     check_seo_invisible_loss()
     check_ja_seo_holes()

@@ -199,4 +199,34 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **wall-time**：（Daisuke 記入）
 
 ---
+
+## 2026-06-28 — importer engine 改善4点（nerhol/石内都の摩擦の源流つぶし・種別=engine・軽量行）
+
+写真家追加ではなく engine 修正（実案件で踏んだ摩擦の恒久化）。別セッションの archive バックフィルと
+同じ working tree 上で並行実施（こちらは scripts/ の importer engine、向こうは archive/countries の生成物）。
+
+- **① JAキーワードを素材から入れる（最優先）**：`import_chatgpt_photographer.render_ja_page` が scaffold の
+  `ph-kw`/`ph-side-chip` を spec.tags（カード用2語）のまま出し素材の rich keyword を落としていた恒久バグを是正。
+  `_inject_ja_keywords` を追加し、scaffold 出力後に `ph-kw`=bundle.keywords 全件、サイドバー `ph-side-chip`=先頭4件
+  （is-primary 先頭1）へ差し替え。空なら従来 spec.tags フォールバック維持。EN `_en_keywords_html` と対。
+  検証：`--render-ja photographers/nerhol.html`（既存 nerhol を素材代用）で ph-kw=6語・side-chip 先頭4が
+  committed の手修正ページと完全一致（修正前は spec.tags の2語のみ）。`test_importer_scaffold_inject` に
+  「ph-kw/side-chip が bundle.keywords 由来・spec.tags 由来でない・先頭4切り」assert 追加（素材語を tags と別語に）。
+- **② 素材プリチェック CLI**：`--precheck --slug X --ja A.html [--en B.html]`（read-only・書込なし）。(a)新規/既存判定
+  (b)CJK比率で日英取り違え警告（nerhol が日英とも EN だった事故の予防）(c)keyword/運動/出典件数＋運動名（―区切りを
+  クリーン）の STUB_TO_SLUG/GENRE_TAG 有無。tag×GENRE_TAG は spec 確定後の add_photographer 事前 lint（④）へ委譲。
+- **③ ドリフト検知を preflight に追加（WARN）**：`check_archive_presence`（card-data 全 id が archive.html に在るか＝
+  国別カウント崩れの根）＋ `check_country_hero_counts`（countries/*.html の hero 人数==実カード数）。現在は並行
+  バックフィルで整合済のため検知0件＝将来ドリフトの番兵。
+- **④ channel 接尾辞 lint**：`add_photographer._lint_unmapped_tags` を spec.tags に加え channel の `' · '` 接尾辞も
+  GENRE_TAG 未登録なら着手前警告（今回 channel 接尾辞「写真と彫刻」で `SystemExit('Unmapped Japanese tag')`）。
+  返り値を (語,出所) 化し `_print_tag_lint` で出所表示。spec.md §13 に1行追記。
+- **触ったファイル（5）**：scripts/import_chatgpt_photographer.py・scripts/preflight.py・scripts/add_photographer.py・
+  scripts/test_importer_scaffold_inject.py・docs/importer-scaffold-inject-spec.md。**並行セッションの archive/countries/
+  build_archive_en/generate_country_pages_en/本ログの差分には触れていない**。
+- **検証**：py_compile OK・test_importer_scaffold_inject PASS（byte同一）・check_content_loss OK・preflight OK
+  （新 FAIL なし・既知良性 WARN のみ）。
+- **wall-time**：（Daisuke 記入）
+
+---
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）

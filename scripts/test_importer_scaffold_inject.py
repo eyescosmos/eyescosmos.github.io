@@ -32,8 +32,13 @@ CONTENT_MAIN = (
     '<p>これはリードの本文。</p></div>'
     '<div class="ph-thesis"><div class="ph-thesis__label">XXX</div>'
     '<p class="ph-thesis__body">この写真家が変えたことの本文。</p></div>'
+    # 素材の rich keyword は spec.tags（カード用2語=語1/語2）と別語にする。
+    # これで ph-kw / side-chip が bundle.keywords 由来（spec.tags 由来でない）こと、
+    # サイドバーが先頭4件に切られることを検証できる。
     '<div class="ph-keywords"><span class="ph-keywords__label">Keywords</span>'
-    '<span class="ph-kw">語1</span><span class="ph-kw">語2</span></div>'
+    '<span class="ph-kw">KW一</span><span class="ph-kw">KW二</span>'
+    '<span class="ph-kw">KW三</span><span class="ph-kw">KW四</span>'
+    '<span class="ph-kw">KW五</span></div>'
     '<section class="ph-section"><div class="ph-section__head">'
     '<div class="ph-section__title">'
     '<span class="ph-section__num">§ WORKS</span>'
@@ -149,9 +154,9 @@ SPEC = {
     "movements": ["テスト運動", "新即物主義"],
 }
 
-CONTENT_KEYS = ["lead_inner_html", "thesis_inner_html", "works", "sections",
-                "related_people", "related_movements", "further_books",
-                "further_links", "sources"]
+CONTENT_KEYS = ["lead_inner_html", "thesis_inner_html", "keywords", "works",
+                "sections", "related_people", "related_movements",
+                "further_books", "further_links", "sources"]
 
 # 出力に必ず在るべき正典 chrome / §構成 / サイドバー / SEO
 CANONICAL_TOKENS = [
@@ -209,6 +214,28 @@ def main() -> int:
         "FAIL: サイドバー Movement が単一の翻訳可能運動になっていない"
     assert 'テスト運動・新即物主義' not in ha and '新即物主義・テスト運動' not in ha, \
         "FAIL: Movement 欄に「・」連結 compound が残っている（EN で未翻訳になる）"
+
+    # 6) Keywords は素材（bundle.keywords）由来であり spec.tags（カード用2語）由来でない。
+    #    ph-kw=全件・サイドバー ph-side-chip=先頭4件（is-primary は先頭1）。
+    for k in ("KW一", "KW二", "KW三", "KW四", "KW五"):
+        assert f'<span class="ph-kw">{k}</span>' in ha, \
+            f"FAIL: ph-kw に素材 keyword {k!r} が無い（bundle.keywords が反映されていない）"
+    for t in ("語1", "語2"):
+        assert f'<span class="ph-kw">{t}</span>' not in ha, \
+            f"FAIL: ph-kw に spec.tags {t!r} が残っている（素材で差し替えられていない）"
+    # サイドバーは先頭4件・is-primary は先頭のみ・5件目は出ない
+    assert '<span class="ph-side-chip is-primary">KW一</span>' in ha, \
+        "FAIL: サイドバー先頭 chip が is-primary + 素材 keyword でない"
+    for k in ("KW二", "KW三", "KW四"):
+        assert f'<span class="ph-side-chip">{k}</span>' in ha, \
+            f"FAIL: サイドバー ph-side-chip に {k!r} が無い（先頭4件でない）"
+    assert '<span class="ph-side-chip">KW五</span>' not in ha and \
+        '<span class="ph-side-chip is-primary">KW五</span>' not in ha, \
+        "FAIL: サイドバーが先頭4件に切られていない（5件目 KW五 が出ている）"
+    for t in ("語1", "語2"):
+        assert f'<span class="ph-side-chip">{t}</span>' not in ha and \
+            f'<span class="ph-side-chip is-primary">{t}</span>' not in ha, \
+            f"FAIL: サイドバー chip に spec.tags {t!r} が残っている"
 
     print("M4 PASS:「器を捨てた」証明")
     print("  ・構造の違う2ソース（content先頭head / Profile型sidebar / 非正規§マーカー /")

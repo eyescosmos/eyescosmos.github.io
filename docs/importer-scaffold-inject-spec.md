@@ -269,6 +269,7 @@ read-only / dry-run のみ）を用意：
   `build_taxonomy_en.STUB_TO_SLUG`、タグは `build_archive_en.GENRE_TAG`/`COUNTRY_TAG` に英訳を足す。
   タグ未登録は `add_photographer` が**着手前に警告する**（④ `_print_tag_lint`・push 4009a2492）が、
   実際の1行追記は手作業。
+- **channel の接尾辞（' · ' 以降）に新ジャンル語を使う場合も `build_archive_en.GENRE_TAG` 登録が要る**（未登録だと tr_channel → tr_tag が SystemExit で en/archive 中断。`add_photographer` の事前 lint が channel 接尾辞も警告する）。
 
 ## 付録F：実装済み改善（importer 摩擦の恒久修正・2026-06-24）
 sakiko-nomura 追加で踏んだ摩擦4点のうち3点をコード化（③は本 §13 の運用ルール）。次の新規追加から効く。
