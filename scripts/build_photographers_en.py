@@ -69,6 +69,7 @@ COUNTRY_JA_TO_EN = {
     'チェコ': 'Czech Republic',
     'ブラジル': 'Brazil',
     'メキシコ': 'Mexico',
+    'ベトナム': 'Vietnam',
     'オーストラリア': 'Australia',
     '中国': 'China',
     '韓国': 'South Korea',
@@ -597,6 +598,8 @@ def translate_meta_values(fragment):
         # dual-nationality plain-text country (unlinked side of "A / B" in a dd)
         fragment = fragment.replace('<dd>' + ja_c + ' /', '<dd>' + en_c + ' /')
         fragment = fragment.replace('/ ' + ja_c + '</dd>', '/ ' + en_c + '</dd>')
+        # dual-nationality trailing side inside hero strong ("A / B</strong>")
+        fragment = fragment.replace('/ ' + ja_c + '</strong>', '/ ' + en_c + '</strong>')
         # channel suffix " · JAPAN" stays as-is (already roman)
     # Movement terms — only translate visible text (between > and <), never
     # inside href slugs (link localization handles hrefs separately).
