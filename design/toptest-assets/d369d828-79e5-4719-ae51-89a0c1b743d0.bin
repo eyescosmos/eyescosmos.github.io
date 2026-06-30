@@ -1622,10 +1622,47 @@ const PHOTOGRAPHERS = [
       ]
     }
   }
-
-
-
-
-,
-
+  ,
+  {
+    "id": "miyako-ishiuchi",
+    "name": "Miyako Ishiuchi",
+    "nameJa": "石内都",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1947–",
+    "gender": "女性",
+    "era": "1970",
+    "movements": [
+      "ドキュメンタリー",
+      "日本写真"
+    ],
+    "thumbnail": "",
+    "links": [
+      {
+        "label": "SFMOMA — Miyako Ishiuchi",
+        "url": "https://www.sfmoma.org/artist/Miyako_Ishiuchi"
+      },
+      {
+        "label": "J. Paul Getty Museum — Ishiuchi Miyako: Postwar Shadows",
+        "url": "https://www.getty.edu/art/exhibitions/ishiuchi/ishiuchi_gallery_text.pdf"
+      }
+    ],
+    "amazon": "",
+    "context": {
+      "text": "石内都（1947年群馬県桐生生まれ）は、横須賀、古いアパート、傷跡、母の遺品、被爆者の衣服、桐生の絹を通して、戦後の場所と女性たちの生活が物や身体にどう残るかを撮影した写真家。《Yokosuka Story》《Mother’s》《ひろしま/hiroshima》で、戦後日本の記憶を身体と物質の細部から見せた*1*2。",
+      "textEn": "Miyako Ishiuchi (b. 1947, Kiryu, Gunma) used Yokosuka, old apartments, scars, her mother’s belongings, the clothing of atomic-bomb victims, and silk from Kiryu to photograph how postwar places and women’s lives remain in objects and bodies. In Yokosuka Story, Mother’s, and Hiroshima she showed postwar Japanese memory through the details of body and material*1*2.",
+      "citations": [
+        {
+          "num": 1,
+          "name": "SFMOMA — Miyako Ishiuchi",
+          "url": "https://www.sfmoma.org/artist/Miyako_Ishiuchi"
+        },
+        {
+          "num": 2,
+          "name": "J. Paul Getty Museum — Ishiuchi Miyako: Postwar Shadows",
+          "url": "https://www.getty.edu/art/exhibitions/ishiuchi/ishiuchi_gallery_text.pdf"
+        }
+      ]
+    }
+  }
 ];

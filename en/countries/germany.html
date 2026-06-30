@@ -115,8 +115,8 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
 }
 .head__meta { display: flex; align-items: center; gap: 16px; }
 .head__lang { display: inline-flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.head__lang button { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
-.head__lang button.is-active { background: var(--text-main); color: var(--rev-text); }
+.head__lang button, .head__lang a { padding: 4px 10px; color: var(--text-sub); font-family: var(--font-mo); font-size: 10px; letter-spacing: 0.20em; }
+.head__lang button.is-active, .head__lang a.is-active { background: var(--text-main); color: var(--rev-text); }
 .head__mobile-search{display:none;}
 
 /* ── ERA HERO ─────────────────────────────────────────────── */
@@ -768,7 +768,7 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
     <div class="era-hero__period">ドイツ</div>
     <p class="era-hero__lead">This page gathers photographers connected to Germany and traces how each links to a period and movement in the history of photography.</p>
     <div class="era-hero__meta-row">
-      <span class="era-hero__meta-item">Photographers <strong>29</strong></span>
+      <span class="era-hero__meta-item">Photographers <strong>30</strong></span>
       <span class="era-hero__meta-item">Country <strong>Germany</strong></span>
       <span class="era-hero__meta-item">Code <strong>DE</strong></span>
       <span class="era-hero__meta-item">Vol <strong>COUNTRY · DE</strong></span>
@@ -904,42 +904,6 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
       <p class="pc-body__lede">German-born photographer known for the photobook Métal, which edits industrial structures through fragmentation and diagonals. She moved across avant-garde practice, photobooks …</p>
       <div class="pc-body__channel">Documentary as reading · DOCUMENTARY</div>
       <div class="pc-body__tags"><span class="pc-body__tag">Modernism</span><span class="pc-body__tag">Photojournalism</span><span class="pc-body__tag">MoMA</span></div>
-      <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
-    </div>
-  </a>
-</article>
-<article class="pc-card pc-card--photographer">
-  <a href="../photographers/barbara-probst.html">
-    <div data-nosnippet class="pc-top pc-top--title">
-      <div class="pc-top__meta"><span class="idx">114</span><span>DE</span></div>
-      <div class="pc-top__art" style="font-size:72px;">Conceptual</div>
-      <div class="pc-top__hint">BARBARA PROBST · 1970s</div>
-    </div>
-    <div class="pc-body">
-      <span class="pc-body__kind">Photographer</span>
-      <div><h3 class="pc-body__name">Barbara Probst</h3><div class="pc-body__name-en">バーバラ・プロブスト</div></div>
-      <div class="pc-body__meta">1970s</div>
-      <p class="pc-body__lede">German artist and photographer, born in 1964. Historical significance: she is significant because she made photographic multiplicity itself into the subject of art. Her work …</p>
-      <div class="pc-body__channel">Questioning the image · CONCEPTUAL</div>
-      <div class="pc-body__tags"><span class="pc-body__tag">Conceptual Art</span></div>
-      <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
-    </div>
-  </a>
-</article>
-<article class="pc-card pc-card--photographer">
-  <a href="../photographers/simone-nieweg.html">
-    <div data-nosnippet class="pc-top pc-top--country">
-      <div class="pc-top__meta"><span class="idx">115</span><span>DE</span></div>
-      <div class="pc-top__art">SN</div>
-      <div class="pc-top__hint">SIMONE NIEWEG · 1970s</div>
-    </div>
-    <div class="pc-body">
-      <span class="pc-body__kind">Photographer</span>
-      <div><h3 class="pc-body__name">Simone Nieweg</h3><div class="pc-body__name-en">シモーヌ・ニーヴェフ</div></div>
-      <div class="pc-body__meta">1970s</div>
-      <p class="pc-body__lede">German photographer, born in 1962, associated with the Düsseldorf / Becher-school context while developing a distinct body of large-format color landscape work. Historical …</p>
-      <div class="pc-body__channel">Questioning the image · CONCEPTUAL</div>
-      <div class="pc-body__tags"><span class="pc-body__tag">Conceptual Art</span></div>
       <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
     </div>
   </a>
@@ -1197,6 +1161,24 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
   </a>
 </article>
 <article class="pc-card pc-card--photographer">
+  <a href="../photographers/simone-nieweg.html">
+    <div data-nosnippet class="pc-top pc-top--country">
+      <div class="pc-top__meta"><span class="idx">115</span><span>DE</span></div>
+      <div class="pc-top__art">SN</div>
+      <div class="pc-top__hint">SIMONE NIEWEG · 1970s</div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-body__kind">Photographer</span>
+      <div><h3 class="pc-body__name">Simone Nieweg</h3><div class="pc-body__name-en">シモーヌ・ニーヴェフ</div></div>
+      <div class="pc-body__meta">DE · 1962–</div>
+      <p class="pc-body__lede">German photographer, born in 1962, associated with the Düsseldorf / Becher-school context while developing a distinct body of large-format color landscape work. Historical …</p>
+      <div class="pc-body__channel">Questioning the image · CONCEPTUAL</div>
+      <div class="pc-body__tags"><span class="pc-body__tag">Conceptual Art</span></div>
+      <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
+    </div>
+  </a>
+</article>
+<article class="pc-card pc-card--photographer">
   <a href="../photographers/thomas-demand.html">
     <div data-nosnippet class="pc-top pc-top--rotate">
       <div class="pc-top__meta"><span class="idx">186</span><span>DE</span></div>
@@ -1334,6 +1316,42 @@ button { font-family: inherit; cursor: pointer; background: transparent; border:
       <div><h3 class="pc-body__name">Jens Ullrich</h3><div class="pc-body__name-en">イェンス・ウルリッヒ</div></div>
       <div class="pc-body__meta">1990s</div>
       <p class="pc-body__lede">German artist born in 1972, working with photography, sculpture, collage, and installation. His practice often revisits existing images and cultural forms through repetition …</p>
+      <div class="pc-body__channel">Questioning the image · CONCEPTUAL</div>
+      <div class="pc-body__tags"><span class="pc-body__tag">Conceptual Art</span></div>
+      <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
+    </div>
+  </a>
+</article>
+<article class="pc-card pc-card--photographer">
+  <a href="../photographers/thomas-struth.html">
+    <div data-nosnippet class="pc-top pc-top--kanji">
+      <div class="pc-top__meta"><span class="idx">295</span><span>DE</span></div>
+      <div class="pc-top__art">TS</div>
+      <div class="pc-top__hint">THOMAS STRUTH · 1954–</div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-body__kind">Photographer</span>
+      <div><h3 class="pc-body__name">Thomas Struth</h3><div class="pc-body__name-en">トーマス・シュトルート</div></div>
+      <div class="pc-body__meta">DE · 1954–</div>
+      <p class="pc-body__lede">Thomas Struth is a photographer who has expanded his subjects from deserted streets, family portraits, viewers inside museums, and tropical forests to scientific and …</p>
+      <div class="pc-body__channel">Topics in photo history · DUSSELDORF SCHOOL</div>
+      <div class="pc-body__tags"><span class="pc-body__tag">Dusseldorf School</span><span class="pc-body__tag">Large-format photography</span><span class="pc-body__tag">Museums</span></div>
+      <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>
+    </div>
+  </a>
+</article>
+<article class="pc-card pc-card--photographer">
+  <a href="../photographers/barbara-probst.html">
+    <div data-nosnippet class="pc-top pc-top--title">
+      <div class="pc-top__meta"><span class="idx">114</span><span>DE</span></div>
+      <div class="pc-top__art" style="font-size:72px;">Conceptual</div>
+      <div class="pc-top__hint">BARBARA PROBST · 1970s</div>
+    </div>
+    <div class="pc-body">
+      <span class="pc-body__kind">Photographer</span>
+      <div><h3 class="pc-body__name">Barbara Probst</h3><div class="pc-body__name-en">バーバラ・プロブスト</div></div>
+      <div class="pc-body__meta">DE · 1964–</div>
+      <p class="pc-body__lede">German artist and photographer, born in 1964. Historical significance: she is significant because she made photographic multiplicity itself into the subject of art. Her work …</p>
       <div class="pc-body__channel">Questioning the image · CONCEPTUAL</div>
       <div class="pc-body__tags"><span class="pc-body__tag">Conceptual Art</span></div>
       <div class="pc-body__cta" data-nosnippet><span>Read their place in photo history</span><span>→</span></div>

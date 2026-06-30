@@ -32,6 +32,9 @@ from generate_country_pages import (  # noqa: E402  reuse proven helpers
 )
 
 EN_ARCHIVE_HREF_RE = re.compile(r'href="/en/photographers/([^"]+)\.html"')
+# JA-only entries (NO_EN_PAGE in build_archive_en.py): their en/archive.html card
+# is EN-translated but links back to the JA page (/photographers/…). List them too.
+JA_ONLY_HREF_RE = re.compile(r'href="/photographers/([^"]+)\.html"')
 
 ERA_LABELS = [
     ("1839", "1839–1860s"), ("1870", "1870–1890s"), ("1890", "1890–1910s"),
@@ -83,6 +86,10 @@ def build_en_archive_lookup(arch_html: str) -> dict[str, str]:
     lookup: dict[str, str] = {}
     for article in extract_articles(arch_html):
         m = EN_ARCHIVE_HREF_RE.search(article)
+        if m:
+            lookup[m.group(1)] = article
+            continue
+        m = JA_ONLY_HREF_RE.search(article)
         if m:
             lookup[m.group(1)] = article
     return lookup

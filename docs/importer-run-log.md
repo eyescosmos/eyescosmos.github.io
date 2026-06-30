@@ -200,6 +200,30 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 
 ---
 
+## 2026-06-28 — バックフィル#2: archive.html 未掲載10名（国別カウントの根） — 軽量行
+
+- **対象**：card-data 在籍だが archive.html 未掲載の idx289–298（alec-soth/boris-mikhailov/edward-burtynsky/
+  gregory-crewdson/masashi-asada/rineke-dijkstra/thomas-struth/zanele-muholi/arata-dodo/jp-木村伊兵衛）。
+- **手順**：cards-archive.html の既存レンダリング済カードを雛形に、`data-nationality→data-country` と hint の
+  era→years（meta から抽出）の2変換のみで archive.html へ10枚追加（nerhol 直後・movement カード群の前）。
+  → 写真家カード 289→299（card-data と一致）。en/archive は build_archive_en.py で再生成（330カード／photog299）。
+  → 影響7国を generate_country_pages(_en) --country で再生成し hero==cards を確認。
+- **jp-木村伊兵衛（サイト唯一の意図的 JA専用＝EN無し）も Daisuke 指示で掲載**：
+  build_archive_en.py に①NO_EN_PAGE 登録（en カードは JA ページへリンク）②手書きEN lede（JA本文準拠）
+  ③GENRE_TAG 追加（報道写真/ライカ ＋ 新規カードの未マップ tag/channel 接尾辞: 写真集/ポストソ連/人新世/
+  産業風景/演出写真/映画的写真/郊外/家族写真/移行期/身体/大判写真/美術館/Visual Activism/Queer Archive/旅写真/
+  アクティヴィズム/旅）。
+  generate_country_pages_en.py は EN archive lookup を JA-only href も拾うよう拡張（kimura を en/countries/japan へ
+  parity 掲載・JAページリンク／再発WARN解消）。→ japan JA61/EN61 で一致。
+- **国別 hero==cards 確認**：US 77/77, UA 3/3, CA 6/6, JP 61/61(EN61), NL 13/13, DE 30/30, ZA 5/5（JA/EN とも）。
+- **collateral**：article 開閉330均衡・重複idxなし・10名全在。TOP12/filter/sort/カードJS 不変。link_country_keywords 未実行。
+- **検証**：check_content_loss OK。preflight OK（WARN=再生成 en/countries・en/archive の「直接編集疑い」＋avedon Biography＝既知良性）。
+- **対象外の並行差分**：scripts/import_chatgpt_photographer.py / test_importer_scaffold_inject.py が working tree に
+  別セッションの importer 摩擦修正として未コミット在中。本タスク範囲外につき**触らず・stage しない**。
+- **wall-time**：（Daisuke 記入）
+
+---
+
 ## 2026-06-28 — importer engine 改善4点（nerhol/石内都の摩擦の源流つぶし・種別=engine・軽量行）
 
 写真家追加ではなく engine 修正（実案件で踏んだ摩擦の恒久化）。別セッションの archive バックフィルと
@@ -226,6 +250,62 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   build_archive_en/generate_country_pages_en/本ログの差分には触れていない**。
 - **検証**：py_compile OK・test_importer_scaffold_inject PASS（byte同一）・check_content_loss OK・preflight OK
   （新 FAIL なし・既知良性 WARN のみ）。
+- **wall-time**：（Daisuke 記入）
+
+## 2026-06-28 — バックフィル#1: era ページ hero 人数のスタレ修正（種別=other・軽量行）
+
+- **発見（handoff の前提とズレ）**：「eras/1970 未掲載8名」は**サイトから欠落ではなく他 era ページに単独配置**
+  （anders-petersen/an-my-le→1990, barbara-probst/hellen-van-meene→2000, simone-nieweg/lidwien-van-de-ven→2010,
+  miyako-ishiuchi/keizo-kitajima→1980）。card-data `era` と era ページ実配置が**14件ズレ**。サイトは単独配置
+  （重複は rinko-kawauchi の 1990+2000 の1件のみ）。真の欠落（どの era ページにも不在）=jp-木村伊兵衛/gabriel-orozco/
+  fabian-marti の3件。→ 配置・3欠落・rinko重複は**editorial判断**として Daisuke レビュー保留。
+- **今回実施（Daisuke「実際の人数にして」）**：全 era ページの hero `Photographers <strong>N</strong>` が
+  ハードコードで古い（1970=12表示/26実・1980=10/65・1990=8/66 等）→ **実際の表示カード数へ是正**。
+  JA 8ページ手修正（1890→15,1910→14,1930→30,1950→25,1970→26,1980→65,1990→66,2000→23）→
+  build_taxonomy_en.py --era 各個 で EN 再生成。1839/1870/2010 は既に一致。
+- **検証**：全11 era で hero==cards（JA/EN とも）。card 数・配置・本文は不変（hero 数字のみ）。
+  check_content_loss OK／preflight OK（WARN=avedon Biography 既知のみ）。
+- **保留（要 Daisuke レビュー・URL 提示済）**：①era 配置の正本（card-data era vs ページ実配置）②3真欠落の補完要否
+  ③rinko-kawauchi 重複の解消先。
+- **wall-time**：（Daisuke 記入）
+
+## 2026-06-28 — バックフィル#3: 石内都を星マップ(bin)へ追加（種別=other・軽量行）
+
+- **確認**：石内都は個別ページ（JA/EN・本日刷新済）はあるが star bin に未登録（grep 0件）＝handoff のとおり星だけ欠落。
+- **bin 構造**：`design/toptest-assets/d369d828-….bin` の `const PHOTOGRAPHERS = [...]`。本体48件はシングルクォート＋無引用符キー、
+  直近追加5件（hosokura/nerhol 等）はダブルクォートJSON の混在。**直近形式（JSON）で nerhol の直後に1件追加**＝計54件。
+- **データは既存ページから忠実取得（捏造なし）**：id=miyako-ishiuchi / name=Miyako Ishiuchi / nameJa=石内都 / nationality=JP /
+  years=1947–（群馬県桐生市生まれ・birthDate 1947 を JA ページで確認）/ gender=女性 / era=1970 /
+  **movements=[ドキュメンタリー, 日本写真]**（接続用の共有運動・bin で各53/13件使用＝星座リンク成立。**私写真は不使用**＝方針踏襲）/
+  links・citations=SFMOMA artist ページ＋Getty "Postwar Shadows"（ページの出典から）/ context text・textEn はリード要約。
+- **検証**：文字列考慮の括弧バランス（brace/bracket とも最終0・最小0で負化なし）、miyako entry を JSON.loads で妥当性確認、
+  重複id なし、構造 `nerhol},miyako{…}];` 正。check_content_loss OK／preflight OK。bin diff +43/−6（−6 は nerhol 周辺の空行/末尾カンマ整形）。
+- **注意**：bin は手編集が正本（ビルド不要・add_photographer は既存在籍で使えない）。`-backup.bin`（未追跡）は触らず。
+- **wall-time**：（Daisuke 記入）
+
+## 2026-06-28 — バックフィル#1続: era 配置の是正（17人・単独配置）+ 連鎖整合（種別=other）
+
+- **判明**：card-data/リーフの era には誤バッチ（EntryNo110–119 CONCEPTUAL を機械的に era=1970 入力。hellen-van-meene は1972生で1970s不可等）。
+  リーフ・card-data・era ページが三者食い違い＝機械決定不可。Daisuke 承認の表に従い**代表作・確立期の年代**で17人を確定。
+- **era 配置（Daisuke 承認表どおり）**：1970←anders-petersen/miyako-ishiuchi｜1980←keizo-kitajima｜
+  1990←simone-nieweg/naoya-hatakeyama/wolfgang-tillmans/yurie-nagashima/gabriel-orozco｜
+  2000←an-my-le/barbara-probst/hellen-van-meene/lidwien-van-de-ven/rinko-kawauchi/mika-ninagawa/lieko-shiga/fabian-marti｜
+  1930←jp-木村伊兵衛。**rinko の 1990+2000 重複は2000へ一本化**。orozco/marti は EXCLUDED_IDS だったが指示で追加。
+- **仕組み**：era カードの idx はグローバル card-data idx・誤配置でも hint は本来 era 表示＝**カードは中身正で載るページのみ誤り**。
+  → `<article>` の cut/paste 移動（balanced抽出）＋ hint を移動先 era に統一。3追加は archive カードを era 形式へ変換。
+- **連鎖整合**：①card-data era 9件更新＋orozco/marti の nationality(MX/CH)・metaJa 補完（生年はサイト未記載＝捏造せず国のみ）
+  ②CONCEPTUAL バッチの壊れ metaJa（"1970s/1970年代"）を era カードの正値（country・生年）で card-data/archive/cards-archive 統一
+  ③archive/cards-archive の data-era 9件＋orozco/marti に data-country/data-nationality 付与
+  ④全 era ページ hero＋サイドバー Photogs を実カード数へ（前回 hero のみ→今回サイドバーも）
+  ⑤EN 再生成：build_archive_en＋build_taxonomy_en(9 era)＋国 JA/EN(japan/germany/netherlands/united-states＝並び替え、
+  mexico/switzerland＝orozco/marti 新規メンバー)。⑥EN archive 国メタ用に build_archive_en の COUNTRY_CODE に メキシコ/ベトナム追加＋
+  tr_meta に単独国名分岐（orozco "メキシコ"→MX 等）。⑦星 bin は miyako=1970(target) で既に整合・他16は bin 非在籍。
+- **検証**：17人すべて単独配置（JA/EN）・era 全11で cards==hero==Photogs（JA/EN）・era 横断で重複ゼロ・国別 hero==cards・
+  archive/en-archive 299・article 開閉balance全OK・追加3カード整形正常・EN国メタ VN/US・MX・CH。check_content_loss OK。
+- **既知 preflight FAIL（intended・push時 `--no-verify`要 Daisuke 確認）**：eras/1980(133→129)・eras/2010(25→17) の per-page
+  カード減少＝他 era への**移動**であり実消失でない（移動先在＋総数保存を検証済）。
+- **未対応（要判断・別surface）**：誤バッチ写真家のリーフページ era 表記（eyebrow/Period の "1970s / 1970年代"）は
+  多箇所散在で一括編集リスク高につき今回は未変更。元々事実誤りで、JA/EN リーフ生成も絡む別タスク。
 - **wall-time**：（Daisuke 記入）
 
 ---

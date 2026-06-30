@@ -58,6 +58,7 @@ COUNTRY_CODE = {
     'カナダ': 'CA', 'スイス': 'CH', 'ロシア': 'RU', 'ブラジル': 'BR',
     'ハンガリー': 'HU', 'デンマーク': 'DK', 'ルクセンブルク': 'LU',
     'レバノン': 'LB', 'ケニア': 'KE', '南アフリカ': 'ZA', 'アルバニア': 'AL',
+    'メキシコ': 'MX', 'ベトナム': 'VN',
     'BE': 'BE',
 }
 
@@ -122,6 +123,25 @@ GENRE_TAG = {
     '私写真': 'I-Photography',
     '写真集文化': 'Photobook Culture',
     '写真と彫刻': 'Photography and Sculpture',
+    '報道写真': 'Press Photography',
+    'ライカ': 'Leica',
+    '写真集': 'Photobook',
+    'ポストソ連': 'Post-Soviet',
+    '人新世': 'Anthropocene',
+    '産業風景': 'Industrial landscape',
+    '演出写真': 'Staged Photography',
+    '映画的写真': 'Cinematic Photography',
+    '郊外': 'Suburbia',
+    '家族写真': 'Family photography',
+    '移行期': 'Transition',
+    '身体': 'The Body',
+    '大判写真': 'Large-format photography',
+    '美術館': 'Museums',
+    'ヴィジュアル・アクティヴィズム': 'Visual Activism',
+    'クィア・アーカイブ': 'Queer Archive',
+    '旅写真': 'Travel photography',
+    'アクティヴィズム': 'Activism',
+    '旅': 'Travel',
     '科学写真': 'Scientific photography',
     '肖像写真': 'Portrait photography',
     '自然主義写真': 'Naturalistic Photography',
@@ -150,6 +170,7 @@ MANUAL_LEDES = {
     'jacques-henri-lartigue': "Jacques Henri Lartigue began photographing in 1901, at the age of seven. With cameras given by his wealthy industrialist father, he photographed family games at the house in Boulogne, early aviation experiments, motor races, and skiing.",
     'gabriel-orozco': "A conceptual artist from Mexico, Orozco records the poetry latent in everyday things in photographs while working across sculpture, painting, and installation. Key works include La DS and Empty Shoe Box.",
     'fabian-marti': "A Swiss artist combining photography, painting, and collage, Marti works on themes of mysticism and altered states of consciousness, known for his idiosyncratic use of darkroom processes and light-sensitive materials.",
+    'jp-木村伊兵衛': "Ihei Kimura connected the speed of the small camera to literary-figure portraits, the street corners of Tokyo, and everyday life in Akita, helping to shape postwar Japanese realism and the institutions of photography. Known as a master of the Leica, his influence runs through the postwar realism debate, print media, and the Ihei Kimura Photography Award that bears his name.",
 }
 
 # 運動カード31件の英語 lede（ledeJa からの翻訳）。キーは nameEn
@@ -189,7 +210,7 @@ MOVEMENT_LEDES = {
 
 # 英語個別ページが存在しない写真家（日本語ページへリンクする）
 # fabian-marti / gabriel-orozco は EN ページ作成済みのため除外（2026-06-19）
-NO_EN_PAGE: set[str] = set()
+NO_EN_PAGE: set[str] = {'jp-木村伊兵衛'}
 
 
 def esc(t):
@@ -312,6 +333,9 @@ def main():
             parts = [p.strip() for p in m.group(1).split('/')]
             codes = [COUNTRY_CODE.get(p, p) for p in parts]
             return ' / '.join(codes) + ' · ' + m.group(2)
+        # bare JA country name with no years (e.g. stub entries orozco/marti)
+        if meta in COUNTRY_CODE:
+            return COUNTRY_CODE[meta]
         return meta
 
     def tr_channel(ch):
