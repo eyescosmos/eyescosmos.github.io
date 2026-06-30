@@ -309,4 +309,24 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **wall-time**：（Daisuke 記入）
 
 ---
+
+## 2026-06-30 — トップ虫眼鏡検索を全アーカイブ化（other）
+
+- **type**：other（バグ修正・JSのみ）
+- **bug**：`index.html` / `en/index.html` のヘッダ虫眼鏡検索が、検索インデックスを
+  静的 `.pc-card`（DOM上の TOP12 のみ）から構築していたため、TOP12 以外＝新規追加を含む
+  約287名がヒットせず「該当なし」になっていた。カードビューのツールバー検索・archive.html・
+  写真家ページのサイドバー検索は `card-data.json`（全299名）を参照しており正常だった。
+- **手作業点**：1（`searchIndex` 静的構築を `buildSearchIndex()` 関数化し、`cvPhData`+`cvMvData`
+  〔card-data.json 由来〕優先・未取得時のみ DOM フォールバックへ。`runSearch` の参照を差し替え）。
+- **サーフェス変更数**：2ファイル（index.html / en/index.html・各 +11/-2 行）。
+- **検証**：ローカルサーバ＋ブラウザ実機。修正後、虫眼鏡で 石内都/Nerhol/川内倫子/フランス13件
+  ヒット・nonsense は「該当なし」。EN も Ishiuchi/Nerhol/Moriyama ヒット（href は /en/ 配下の
+  EN 個別ページへ解決・存在確認済）。check_content_loss / preflight 通過。
+- **残（データモデル制約・今回対象外）**：card-data の国名が日本語（metaJa）のため
+  EN 側で "United States" 等の英語国名検索は全検索共通で 0 件。movement 名（例「プロヴォーク」）も
+  per-photographer フィールドが無く全検索共通でヒットしない（channel は英語カテゴリ名のみ）。
+- **wall-time**：（Daisuke 記入）
+
+---
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）

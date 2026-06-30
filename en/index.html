@@ -2850,17 +2850,28 @@ body {
   const searchInput  = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
 
-  // Build index from card HTML
-  const searchIndex = Array.from(document.querySelectorAll('.pc-card')).map(card => {
-    const link = card.querySelector('a');
-    return {
-      href:    link ? link.getAttribute('href') : '#',
-      name:    card.querySelector('.pc-body__name')?.textContent.trim() || '',
-      nameEn:  card.querySelector('.pc-body__name-en')?.textContent.trim() || '',
-      meta:    card.querySelector('.pc-body__meta')?.textContent.trim() || '',
-      channel: card.querySelector('.pc-body__channel')?.textContent.trim() || '',
-    };
-  });
+  // Build index — 全アーカイブ(card-data.json)を優先し、未取得時は静的カードにフォールバック
+  function buildSearchIndex() {
+    if (typeof cvPhData !== 'undefined' && (cvPhData.length || cvMvData.length)) {
+      return [...cvPhData, ...cvMvData].map(p => ({
+        href:    p.href || '#',
+        name:    p.nameJa || '',
+        nameEn:  p.nameEn || '',
+        meta:    p.metaJa || '',
+        channel: p.channel || '',
+      }));
+    }
+    return Array.from(document.querySelectorAll('.pc-card')).map(card => {
+      const link = card.querySelector('a');
+      return {
+        href:    link ? link.getAttribute('href') : '#',
+        name:    card.querySelector('.pc-body__name')?.textContent.trim() || '',
+        nameEn:  card.querySelector('.pc-body__name-en')?.textContent.trim() || '',
+        meta:    card.querySelector('.pc-body__meta')?.textContent.trim() || '',
+        channel: card.querySelector('.pc-body__channel')?.textContent.trim() || '',
+      };
+    });
+  }
 
   function toKatakana(s){return s.replace(/[ぁ-ゖ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
   function runSearch(q) {
@@ -2868,7 +2879,7 @@ body {
     if (!q) return;
     const lower = q.toLowerCase();
     const qk = toKatakana(q);
-    const hits = searchIndex.filter(p =>
+    const hits = buildSearchIndex().filter(p =>
       p.name.includes(q) || p.name.includes(qk) || p.nameEn.toLowerCase().includes(lower) ||
       p.meta.toLowerCase().includes(lower) || p.channel.toLowerCase().includes(lower)
     );
