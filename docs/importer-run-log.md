@@ -354,4 +354,28 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **wall-time**：（Daisuke 記入）
 
 ---
+
+## 2026-07-01 — movements 掲載漏れ監査＋backfill（種別=other・軽量行）
+
+- **対象**：正本（photographers.js／-supplement.js／-manual-additions.js の movements[] 統合290名）と
+  movements/*.html 31枚を突き合わせ、掲載漏れ・逆ドリフトを監査。小規模backfill5ページ・計14名を追加。
+  社会ドキュメンタリー（annan/domon/lange/paul-geniaux/sander/tomatsu 6名）・モダニズム
+  （irving-penn/jp-中山岩太/jp-安井仲治 3名）・ピクトリアリズム（jp-安井仲治/jp-野島康三 2名）・
+  私写真（araki/masahisa-fukase 2名）・リアリズム写真（domon 1名）。カード内容は card-data.json の
+  nameJa/nameEn/metaJa/ledeJa/channel/tags/style/artText/hintText を転記。
+- **対象外（Daisuke判断）**：コンセプチュアルアート（正本115・掲載7）とドキュメンタリー（正本37・掲載8）は
+  規模が桁違いで、ページが1960-70年代の狭い歴史的運動として書かれている一方、正本タグは写真史全般へ
+  広く付与されており性質が異なる。ページ性格を維持し今回は対象外。逆ドリフト14件（stieglitz/moholy/
+  salgado/goldin 等、正本 movements[] に無いがページには掲載）も現状維持で確認のみ・変更なし。
+  `コンセプチュアル`(37名)と`コンセプチュアルアート`(115名)が別タグとして併存している点は別途要検討。
+- **副産物**：jp-木村伊兵衛はリーフページが存在し Movement=リアリズム写真 を明記しているが、3つの
+  movements[] 正本ファイルのどこにもエントリが無い（build_taxonomy_en.py も同一警告＝MISSING CARDS）。
+  掲載自体は正しいが正本データにこの写真家が丸ごと欠落。報告のみ・対応せず。
+- **サーフェス変更数**：10ファイル（JA 5・EN 5、build_taxonomy_en.py --slug で個別再生成）。
+- **検証**：各対象ページで カード数==hero==サイドバー件数を確認（13/11/10/6/2）。check_content_loss.py OK。
+  preflight.py OK（EN側5件は「直接編集疑い」WARNのみ＝写真家カードがJA HTML由来でJSON側は不変という
+  既知の偽陽性パターン、他era backfillと同型）。無関係ページの巻き込みなし（git diff --stat で確認）。
+- **wall-time**：（Daisuke 記入）
+
+---
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）
