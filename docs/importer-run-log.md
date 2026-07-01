@@ -329,4 +329,29 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **wall-time**：（Daisuke 記入）
 
 ---
+
+## 2026-07-01 — link integrity チェックの整理＋preflight実ガード化（other）
+
+- **type**：other（スクリプト整理・preflight配線修正のみ、ページ本文は不変更）
+- **bug**：`scripts/check_photographer_link_integrity.py` が冒頭で実行禁止の
+  `generate_photographer_pages` に依存し、旧構造（`<section class="section"><h2>関連作品</h2>`
+  等）を基準に検査していたため、v5.1 現行構造（`ph-section` / `ph-works-links` / `ph-section__name`）
+  へ移行済みの現行ページで常に誤検出していた（作品欄44件＝22名×2言語＋Biography先頭一致2件＝計46件、
+  実害ゼロ）。preflight 側もこれを「既知ノイズ・非ブロック」として丸ごと無視しており、本物のリンク
+  退行が起きても検知できない状態だった。
+- **対応**：①旧ジェネレータ依存・overrides.js 基準の作品欄検査（WORKS_REQUIRED_IDS /
+  RESTORED_EXTERNAL_LINK_IDS ループ）を除去。②h1と写真集見出しの照合（`<h2>...Photobooks</h2>`）は
+  現行ページに該当構造が存在せず恒久的に不発の死んだ検査だったため除去。③1文字外部リンクテキスト検査
+  はセレクタ非依存で現行ページでも有効なため維持。④Avedon⇄Penn の Biography 先頭一致・本文混入検査は
+  セレクタを現行 `ph-section__name`/`essay` 構造へ更新し維持（相互混入の逆方向チェックも追加）。
+  ⑤`scripts/preflight.py` の `run_existing_check()` を非ブロックの `known_warnings` 蓄積から
+  `hard_failures` 蓄積（実ガード）へ変更、既存の1文字リンク用トークンスキャン workaround も
+  本チェックが blocking になったため撤去。
+- **手作業点**：0（ページ本文は不触。スクリプト2本のみ変更）。
+- **サーフェス変更数**：2ファイル（scripts/check_photographer_link_integrity.py・scripts/preflight.py）。
+- **検証**：`check_photographer_link_integrity.py` 単体 exit 0（46→0件）。`preflight.py` exit 0
+  （このチェックが hard_failures 経路でグリーン通過することを確認）。`check_content_loss.py` exit 0。
+- **wall-time**：（Daisuke 記入）
+
+---
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）

@@ -818,13 +818,7 @@ def run_existing_check(script: str) -> None:
     out = (proc.stdout + proc.stderr).strip()
     if proc.returncode != 0:
         tail = out.splitlines()[-1] if out else script
-        known_warnings.append(
-            f"{script} が非0終了（既知ノイズ・非ブロック: Biography 先頭文言等の既存指摘）: 末尾→ {tail}"
-        )
-    # 1文字リンク等の致命傷は returncode に関わらず拾い、要確認として上げる
-    for token in ("museumangewandtekunst", ">S</a>"):
-        if token in out:
-            warnings.append(f"{script} 出力に '{token}' を検出（要確認）")
+        hard_failures.append(f"{script} が非0終了: 末尾→ {tail}\n{out}")
 
 
 def check_en_lang_toggle_active() -> None:
