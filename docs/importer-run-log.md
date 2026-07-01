@@ -378,4 +378,26 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **wall-time**：（Daisuke 記入）
 
 ---
+## 2026-07-01 — 誤バッチ写真家9名のリーフera表記backfill（種別=other・軽量行）
+
+- **対象**：commit 3304539c8 で card-data era を訂正した9名（an-my-le/barbara-probst/
+  hellen-van-meene/lidwien-van-de-ven/simone-nieweg/gabriel-orozco/naoya-hatakeyama/
+  rinko-kawauchi/keizo-kitajima）のリーフページ(photographers/*.html)側のera表記
+  （title/og/twitter・hero Period・hero Years・entry-meta Period・side-meta Period）を
+  新eraへ統一。rinko-kawauchiは既に正しく変更不要。本文プロース中の活動期記述（例:
+  「1980年代から…」）は事実記述として据え置き、機械一括置換はせず1人ずつ判断。
+- **副産物発見**：gabriel-orozcoのentry-meta（`<dl class="ph-entry-meta">`側のみ、
+  サイドバー側は無事）で `dt>Country` に国名でなくera値（旧"1980s / 1980年代"）が入り
+  `dt>Years` が空という既存の構造バグを発見。今回はera数値のみ新eraへ更新し、
+  dt/ddの誤対応自体は範囲外として温存（要Daisuke判断）。
+- **EN反映**：8名分 `build_photographers_en.py --slug <id>` で再生成（JSON側は無変更のため
+  preflightは「EN直接編集疑い」WARN×8＝既知の偽陽性パターン、他era backfillと同型）。
+- **サーフェス変更数**：16ファイル（JA 8・EN 8）。
+- **検証**：`check_content_loss.py` OK。`preflight.py` OK（HARDなし、WARNのみ＝上記EN偽陽性＋
+  an-my-le側の既存supref[29]欠損cite・今回変更とは無関係の既知データ不備）。
+  `git diff --stat` で対象16ファイル以外の巻き込みなしを確認。
+- **wall-time**：（Daisuke 記入）
+
+---
+
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）
