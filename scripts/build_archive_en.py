@@ -90,6 +90,7 @@ GENRE_TAG = {
     'デュッセルドルフ派': 'Dusseldorf School',
     'ドキュメンタリー': 'Documentary',
     'ニューカラー': 'New Color',
+    'ニュー・トポグラフィックス': 'New Topographics',
     'バウハウス': 'Bauhaus',
     'ピクチャーズ世代': 'Pictures Generation',
     'ピクトリアリズム': 'Pictorialism',

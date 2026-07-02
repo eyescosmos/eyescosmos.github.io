@@ -1421,7 +1421,8 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1970",
   "movements": [
-    "コンセプチュアル"
+    "ニュー・トポグラフィックス",
+    "ニューカラー"
   ],
   "thumbnail": "",
   "links": [],
@@ -1441,7 +1442,9 @@ PHOTOGRAPHERS.push(
   "years": "1970s / 1970年代",
   "gender": "男性",
   "era": "1970",
-  "movements": [],
+  "movements": [
+    "ニュー・トポグラフィックス"
+  ],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -1479,7 +1482,9 @@ PHOTOGRAPHERS.push(
   "years": "1970s / 1970年代",
   "gender": "男性",
   "era": "1970",
-  "movements": [],
+  "movements": [
+    "ニュー・トポグラフィックス"
+  ],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -1641,7 +1646,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "1970",
   "movements": [
-    "コンセプチュアルアート"
+    "デュッセルドルフ派"
   ],
   "thumbnail": "",
   "links": [],
@@ -2338,7 +2343,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1980",
   "movements": [
-    "コンセプチュアルアート"
+    "ニュー・トポグラフィックス"
   ],
   "thumbnail": "",
   "links": [],
@@ -2905,7 +2910,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1980",
   "movements": [
-    "コンセプチュアルアート"
+    "ニュー・トポグラフィックス"
   ],
   "thumbnail": "",
   "links": [],
@@ -3073,7 +3078,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1980",
   "movements": [
-    "コンセプチュアルアート"
+    "ニュー・トポグラフィックス"
   ],
   "thumbnail": "",
   "links": [],

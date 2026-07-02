@@ -24,6 +24,8 @@
 |---|---|---|---|---|---|---|---|---|
 | 2026-06-22 | jikei-sato | update | ~20分※ | 1（ネストspan節名） | 5→改良後2 | 0（既存） | 972→10233 | 3→25 |
 | 2026-06-23 | sakiko-nomura | new | ~20分 | 0 | 4（下記） | 16ファイル | 8184 | 38(JA)/37(EN) |
+| 2026-07-01 | (運動)new-topographics | other | （Daisuke記入） | 2 | 3（下記） | 27ファイル | N/A | 4 |
+| 2026-07-01 | (運動)newtopo第2弾3名 | other | （Daisuke記入） | 0 | 1（下記） | 15ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -399,5 +401,38 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **wall-time**：（Daisuke 記入）
 
 ---
+
+### 2026-07-01 — 運動「ニュー・トポグラフィックス」新設＋4名再分類（other / コンセプチュアルアート解体1運動目）
+- **内容**：新運動ページ movements/ニュー・トポグラフィックス.html 新規（コンセプチュアルアート.html雛形・
+  本文は出典準拠ドラフト cite4本）。frank-van-der-salm/takashi-homma/john-riddy→ニュートポ、
+  simone-nieweg→既存デュッセルドルフ派へ移動。本文・§REL不介入（機能タグのみ）。
+- **サーフェス**：JS(supplement)4名・leaf機能タグ4枚・星bin(d632c32e 4名+ffc7bdc4 META)・data/movements.js・
+  build_taxonomy_en.py 4辞書・taxonomy-en-content.json sections・photographers-en-content.json SEO36箇所・
+  card-data.json tags4名・cards-archive/archive/eras静的カード・EN再生成一式＝計27ファイル。
+- **bug/発見（2件）**：①EN運動ページはtaxonomy-en-content.json/ABSTRACTS_EN/THESES_EN未登録だとJA本文が
+  fallbackで残る（検出→3系統登録で解消）②build_archive_en.py GENRE_TAG未登録だとSystemExit（1行追加）。
+  ③既知メモの「card-data.jsonはmovement無関係」は誤り＝tags[]が運動名を保持しカード面の正（メモ訂正済）。
+- **手作業点（3）**：①新ページ本文ドラフト（機械化対象外）②EN builder 4辞書＋JSON sections のEN文（同）
+  ③era1990のsimoneカード既存ドリフト（誤カナ・旧タグ）の個別判断修正。
+- **検証**：check_content_loss OK / preflight OK（WARN3=EN再生成の既知偽陽性）/ カード面・leaf機能タグ・
+  星binの残存ゼロをスクリプト監査 / git diff 25M+2untracked=全て対象内。
+- **分業**：fable監督・Sonnetサブエージェント（カードtags置換～EN再生成～検証、91 tool uses / 約6.7分）。
+- **wall-time**：（Daisuke 記入）
+
+### 2026-07-01 — ニュートポ第2弾: 1975年展出品者3名追加（other / Daisuke指摘起点）
+- **内容**：robert-adams `[]`→ニュートポ / lewis-baltz `[]`→ニュートポ / stephen-shore `['コンセプチュアル']`→
+  ニュートポ＋ニューカラー（ニューカラーページ1→2名）。becherは現状維持（Daisuke決定）。
+- **起点**：Daisukeの「ニュートポにロバートアダムス入ってなくない？」→ 調査で**プール定義の穴**発見＝
+  厳密一致抽出が別名`'コンセプチュアル'`単独30名と無所属`[]`27名を取りこぼし。恒久ルール化（新運動ごとに
+  全体スキャン＋確認）をmemoryへ。
+- **サーフェス**：JS・星bin・card-data tags・leaf機能タグ3枚（adams/baltzはtitleのera1970テーマ語置換＋
+  eyebrow/breadcrumb/kw/chip補完、shoreは別名→2運動化）・静的カード3面・ニュートポページ+3カード(3→6)・
+  ニューカラーページ+1カード(1→2)・EN JSON SEO 27箇所・EN再生成（archive→taxonomy→photographers順）。
+- **手作業点（1）**：era1970のshoreカードledeに旧つづり「ニュー・トポグラフィクス」が既存（タグのみ正式つづりで
+  統一・ledeは不変・要将来判断）。
+- **検証**：残存ゼロ監査 / check_content_loss OK / preflight OK（WARN5=EN再生成の既知偽陽性）/
+  星bin差分=意図7名+META1行のみをdiffで確認。
+- **分業**：fable監督・Sonnet委譲（151 tool uses / 約12分）。
+- **wall-time**：（Daisuke 記入）
 
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）
