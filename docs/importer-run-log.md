@@ -464,4 +464,20 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 
 ---
 
+## 2026-07-02 — importer rev多桁span対応（lieko-shiga摩擦の源流つぶし・種別=engine・軽量行）
+
+- **起点**：lieko-shiga刷新で素材の `rev19/20/21` span 計77個（rev19×35/rev20×29/rev21×13）が
+  unwrap も self_check 残存assertも**両方すり抜け**、手動除去が必要になった。
+- **原因**：`import_chatgpt_photographer.py` のrev処理4正規表現が `rev[0-9]`（1桁限定）。
+  2桁クラスは REV_OPEN_RE 不一致で素通り、self_check も同パターンのため検知不能＝盲点が対称。
+- **対応**：4箇所（REV_OPEN_RE / REVIEW_CSS_RULE_RE / self_check残存チェック2本）を `rev[0-9]+` へ。
+  `test_importer_scaffold_inject.py` に `test_unwrap_rev_spans_multidigit`（多桁＋ネストunwrap・
+  非revスパン保持・self_checkの多桁残存検知）を追加。
+- **検証**：M4決定論テスト＋新テスト全PASS / lieko素材の再render（scratchpad出力のみ）でrev残存0 /
+  preflight OK / check_content_loss OK / 差分2ファイルのみ。
+- **分業**：fable監督・Sonnet委譲（初回1箇所で停止→再指示で完遂、計12 tool uses）。
+- **wall-time**：（Daisuke 記入）
+
+---
+
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）

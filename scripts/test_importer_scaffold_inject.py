@@ -17,7 +17,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from import_chatgpt_photographer import extract_bundle, render_ja_page  # noqa: E402
+from import_chatgpt_photographer import (  # noqa: E402
+    extract_bundle, render_ja_page, unwrap_rev_spans, self_check,
+)
 
 # ── A / B で完全一致させる役割要素（＝中身） ────────────────────────────────
 HERO = (
@@ -183,6 +185,34 @@ LEAK_TOKENS = [
 ]
 
 
+def test_unwrap_rev_spans_multidigit() -> None:
+    """rev[0-9]+ 対応: 2桁以上の rev クラス（rev19 等）もネスト込みで unwrap される。
+    非 rev span とのネストは保持される（志賀理江子刷新での実害の再発防止）。"""
+    src = '<span class="rev19">a<span class="rev2">b</span>c</span>'
+    out = unwrap_rev_spans(src)
+    assert out == "abc", f"FAIL: 多桁 rev span が unwrap されていない: {out!r}"
+
+    # 非 rev span とのネストは維持される
+    src2 = ('<span class="rev123">a<span class="keep">b</span>c</span>'
+            '<span class="rev7">d</span>')
+    out2 = unwrap_rev_spans(src2)
+    assert out2 == 'a<span class="keep">b</span>cd', \
+        f"FAIL: 非rev spanが保持されていない: {out2!r}"
+
+    # self_check も多桁 rev 残存を検知できること（assert しない前提の残留チェック）
+    dirty = '<span class="rev42">残存</span>'
+    try:
+        self_check(dirty, context="test")
+        raise AssertionError("FAIL: self_check が多桁 rev 残存を検知できていない")
+    except AssertionError as e:
+        if "self_check が多桁 rev 残存を検知できていない" in str(e):
+            raise
+        # 期待通り AssertionError（rev スパンが残存している）が飛ぶ
+
+    print("test_unwrap_rev_spans_multidigit PASS: 多桁 rev（rev19/rev123等）も"
+          "unwrap・非revネスト保持・self_check残存検知OK")
+
+
 def main() -> int:
     ba, _ = extract_bundle(SOURCE_A, "ja", slug=SPEC["id"])
     bb, _ = extract_bundle(SOURCE_B, "ja", slug=SPEC["id"])
@@ -244,6 +274,8 @@ def main() -> int:
     print("    canonical/hreflang/GA/JSON-LD）")
     print("  ・素材の器（§IMAGE LINKS / §SOURCES / Profile / ダーティtitle 等）の漏れゼロ")
     print(f"  render 出力サイズ: {len(ha.encode('utf-8'))} bytes（A==B）")
+
+    test_unwrap_rev_spans_multidigit()
     return 0
 
 

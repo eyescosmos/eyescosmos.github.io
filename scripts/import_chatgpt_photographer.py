@@ -75,7 +75,7 @@ def repo_file_exists(rel: str) -> bool:
 
 # ── 決定論変換（JA / EN 共有） ─────────────────────────────────────────────
 
-REV_OPEN_RE = re.compile(r'<span class="rev[0-9]">')
+REV_OPEN_RE = re.compile(r'<span class="rev[0-9]+">')
 SPAN_TAG_RE = re.compile(r'<span\b[^>]*>|</span>')
 
 
@@ -88,13 +88,13 @@ def strip_edit_red(html: str) -> str:
     return re.sub(r'class="([^"]*)"', repl, html)
 
 
-# レビュー用 CSS（`.edit-red`/`.revN` セレクタのルール）と注釈コメント
-REVIEW_CSS_RULE_RE = re.compile(r'[^{}]*\.(?:edit-red|rev[0-9])[^{}]*\{[^}]*\}')
+# レビュー用 CSS（`.edit-red`/`.rev[0-9]+` セレクタのルール）と注釈コメント
+REVIEW_CSS_RULE_RE = re.compile(r'[^{}]*\.(?:edit-red|rev[0-9]+)[^{}]*\{[^}]*\}')
 REVIEW_COMMENT_RE = re.compile(r'/\*\s*revision preview\s*\*/')
 
 
 def strip_review_css(html: str) -> str:
-    """<style> ブロック内のレビュー用 CSS（.edit-red / .rev[0-9] ルール）と
+    """<style> ブロック内のレビュー用 CSS（.edit-red / .rev[0-9]+ ルール）と
     `/* revision preview */` コメントを除去。本番ページには残さない（出荷済みと一致）。"""
     def repl(m: re.Match) -> str:
         style = m.group(0)
@@ -105,7 +105,7 @@ def strip_review_css(html: str) -> str:
 
 
 def unwrap_rev_spans(html: str) -> str:
-    """<span class="rev[0-9]">…</span> をネスト対応で unwrap（中身は保持）。
+    """<span class="rev[0-9]+">…</span> をネスト対応で unwrap（中身は保持）。
     rev 以外の <span> と入れ子になっていても、対応する開閉だけを取り除く。"""
     out = []
     pos = 0
@@ -246,9 +246,9 @@ def self_check(html: str, *, context: str) -> list[str]:
     n_close = len(re.findall(r"</span>", html))
     if n_open != n_close:
         raise AssertionError(f"[{context}] span 開閉数が不一致: open={n_open} close={n_close}")
-    if re.search(r'<span class="rev[0-9]"', html):
+    if re.search(r'<span class="rev[0-9]+"', html):
         raise AssertionError(f"[{context}] rev スパンが残存している")
-    if re.search(r'\.(?:edit-red|rev[0-9])\b', html):
+    if re.search(r'\.(?:edit-red|rev[0-9]+)\b', html):
         raise AssertionError(f"[{context}] レビュー用 CSS セレクタ（.edit-red/.revN）が残存している")
     if "edit-red" in html:
         raise AssertionError(f"[{context}] edit-red トークンが残存している")
