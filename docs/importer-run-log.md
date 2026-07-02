@@ -26,6 +26,7 @@
 | 2026-06-23 | sakiko-nomura | new | ~20分 | 0 | 4（下記） | 16ファイル | 8184 | 38(JA)/37(EN) |
 | 2026-07-01 | (運動)new-topographics | other | （Daisuke記入） | 2 | 3（下記） | 27ファイル | N/A | 4 |
 | 2026-07-01 | (運動)newtopo第2弾3名 | other | （Daisuke記入） | 0 | 1（下記） | 15ファイル | N/A | N/A |
+| 2026-07-02-03 | (運動)contemporary-still-life | other | （Daisuke記入） | 3 | 2（下記） | 29ファイル | N/A | 4 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -480,5 +481,20 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **wall-time**：（Daisuke 記入）
 
 ---
+
+### 2026-07-02〜03 — 運動「スティルライフ」新設＋6名再分類（other / コンセプチュアルアート解体2運動目）
+- **内容**：movements/スティルライフ.html 新規（EN=Contemporary Still Life / slug contemporary-still-life・cite4本）。
+  laura-letinsky / takashi-yasumura / valerie-belin / gabriel-orozco / anuschka-blommers-niels-schumm / roe-ethridge の
+  6名を単独タグ/別名タグ→スティルライフへ。tillmans/shahbazi/rdland/mouleneはレビューで据え置き。
+- **プール拡張初適用**：厳密105名に加え別名30名・無所属27名を含む155名から候補化（恒久ルール初回）。
+- **bug/発見（3）**：①Sonnet委譲エージェントが実作業せず幻の再委譲→2回の再指示で完走（委譲プロンプトに
+  「Agent系ツール禁止」を明記すべき教訓）②ffc7bdc4星binでスティルライフ行が既存行と同一行に連結される書式欠陥
+  →監査で検出し改行修正③出典URL: MoMA /artists/ はcurl/WebFetch双方403でbot遮断＝検証不能→検証可能な
+  Gagosian頁へ差し替え（AIC letinsky/Thames&Hudson/MoMA orozco展caléndarは200検証済）。
+- **orozco特殊形**：title運動語なし→title不触。en-content JSONにキー無し→EN WARNは既知偽陽性。entry-metaバグ温存。
+- **検証**：全カード面・leaf機能タグ・星binの残存ゼロ（channel/§REL/本文の正当残存は除外判定）/
+  check_content_loss OK / preflight OK（WARN3=既知偽陽性のみ）/ 対象27M+新規2のみ巻き込みゼロ。
+- **分業**：fable監督・監査（出典URL自主検証・bin書式修正含む）、Sonnet実装（計3ラウンド・セッション上限で1回中断）。
+- **wall-time**：（Daisuke 記入）
 
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）

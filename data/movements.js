@@ -32,6 +32,7 @@ const MOVEMENT_TAXONOMY = {
     'ステージド写真',
     'フェミニズム写真',
     'シネマトグラフィック写真',
+    'スティルライフ',
   ],
   aliases: {
     'コンセプチュアル': 'コンセプチュアルアート',
@@ -283,6 +284,7 @@ const MOVEMENTS_META = {
   'LGBTQ+': { en: 'LGBTQ+ Photography', desc: '性的マイノリティの経験、親密圏、身体の表象を写真によって可視化する実践。', descEn: 'Photography that makes visible queer experience, intimacy, and the representation of the body.' },
   'イギリス写真': { en: 'British Photography', desc: '戦後イギリスの階級、消費社会、観光文化を批評的に見つめる写真実践。', descEn: 'Photography that critically reflects on postwar British class structure, consumer culture, and tourism.' },
   'コンセプチュアルアート': { en: 'Conceptual Art', desc: '作品の物質性よりも、概念や制度批評を前景化する美術の文脈。写真はその思考を支える媒体として用いられた。', descEn: 'An art-historical context that foregrounds concepts and institutional critique over material form; photography often served as a supporting medium for that thinking.' },
+  'スティルライフ': { en: 'Contemporary Still Life', desc: '日常の事物・見過ごされたものを主題に、静物を現代写真の批評的ジャンルとして更新した実践。1990年代以降の現代アート写真で確立した。', descEn: 'Photography that takes everyday objects and overlooked things as its subject, renewing still life as a critical genre of contemporary art photography from the 1990s onward.' },
   'ニュー・トポグラフィックス': { en: 'New Topographics', desc: '人間が改変した風景——郊外の宅地、工業地帯、駐車場、造成地——を、感情を排した即物的・記述的なスタイルで捉える写真。1975年の展覧会「New Topographics」に由来する。', descEn: 'Photography that records man-altered landscapes—suburban tracts, industrial zones, parking lots, and graded land—in a detached, descriptive style; the term derives from the 1975 exhibition “New Topographics.”' },
   'シネマトグラフィック写真': { en: 'Cinematographic Photography', desc: '映画のような時間感覚、構図、光の演出を静止画の中に持ち込む写真表現。', descEn: 'Photography that brings cinematic duration, framing, and lighting into the still image.' },
   'ステージド写真': { en: 'Staged Photography', desc: '現実を偶然に待つのではなく、場面を構成・演出して撮影する写真実践。', descEn: 'Photography that constructs and stages scenes rather than waiting for reality to unfold by chance.' },

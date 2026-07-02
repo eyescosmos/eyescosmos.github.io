@@ -83,6 +83,7 @@ GENRE_TAG = {
     'シネマトグラフィック写真': 'Cinematographic Photography',
     'シュルレアリスム': 'Surrealism',
     'ステージド写真': 'Staged Photography',
+    'スティルライフ': 'Contemporary Still Life',
     'ストリート写真': 'Street Photography',
     'ストレート写真': 'Straight Photography',
     'タイポロジー写真': 'Typological Photography',
