@@ -435,4 +435,33 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **分業**：fable監督・Sonnet委譲（151 tool uses / 約12分）。
 - **wall-time**：（Daisuke 記入）
 
+## 2026-07-02 — lieko-shiga（update / 既存刷新・idx261・era2000）
+
+- **wall-time**：（Daisuke 記入）
+- **bug**：0（engine 正常。素材側に review-preview の rev19/20/21 span が JA/EN 計75個混入＝素材品質問題、下記手作業3）。
+- **手作業点（実測）**：
+  1. **バックアップ**：JA+EN 両ページを -backup.html にコピー。
+  2. **spec.json 手作成**：derive_spec から years/period(`2000–2010s`)/channel/era/idx 引き継ぎ。movements は素材の
+     「日本現代写真」がページ非実在のため採らず、既存の ステージド写真 のみ（movementSlugJa 同値・リンク切れ回避）。
+  3. **rev-highlight 除去**：素材 JA/EN 双方に rev19/20/21 span 計75個混入。importer は未知クラスで素通り
+     → JA レンダ出力・EN bundle エントリ双方からテキスト保持で除去（ネスト対応 innermost-first）。
+  4. **§REF/§REL carry-forward**：新素材は §REF「準備中」・§REL なし → backup から MoMA/Getty Iris 外部リンク2件を
+     §REF へ、ステージド写真 の §REL 1件を splice（EN site_directory_html は field-merge で保全）。
+  5. **EN field-merge**：bundle-to-en 出力を en-content.json 既存エントリへ空値スキップで merge
+     （photobooks/external_links/footer/jsonld/site_directory 等の既存値保全・diff は lieko ブロックのみ確認済）。
+  6. **ui-terms 追加 1件**：works_labels「Art Platform Japan - 螺旋海岸」→ Rasen Kaigan（untranslated WARN 解消）。
+- **サーフェス変更数**：4ファイル更新（JA/EN 個別ページ・en-content.json・ui-terms.json）。card-data/supplement.js/
+  star bin/archive/era/国/運動は不触（既存写真家）。未追跡=backup 2件+spec 1件（stage しない）。
+- **フィデリティ**：本文 773→11,169字・出典 3→33・sup-ref 5→63。JA==EN cite 33 一致・dangling 0（両言語）。
+  keywords は engine 改善どおり bundle 由来 8語自動（sidebar 先頭4）。description は lead 由来自動充填。
+  Period 3箇所 `2000–2010s` 保持。
+- **検証**：check_new_photographer OK / check_content_loss OK / preflight **FAIL 1件**＝
+  「SFMOMA リンク消失 `.../artist/lieko_shiga/`」＝実体は URL 大小文字変更のみ（新は `Lieko_Shiga`・同一ページ・
+  SFMOMA リンク自体は増加）＝content-loss ガードの case-sensitive 偽陽性。push 時 Daisuke 確認の上 --no-verify 案件。
+  WARN 2件＝nosnippet 9→8/8→7（prep-block→実コンテンツ置換の正当減少・miyako と同型）。
+- **発火した engine 改良**：keyword bundle 由来注入・description 自動充填・Period spec 化（いずれも正常動作）。
+- **分業**：fable監督・Opusサブエージェント実装（41 tool uses / 約5.7分）。
+
+---
+
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）
