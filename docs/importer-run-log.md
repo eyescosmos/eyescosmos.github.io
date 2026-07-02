@@ -460,7 +460,7 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   SFMOMA リンク自体は増加）＝content-loss ガードの case-sensitive 偽陽性。push 時 Daisuke 確認の上 --no-verify 案件。
   WARN 2件＝nosnippet 9→8/8→7（prep-block→実コンテンツ置換の正当減少・miyako と同型）。
 - **発火した engine 改良**：keyword bundle 由来注入・description 自動充填・Period spec 化（いずれも正常動作）。
-- **分業**：fable監督・Opusサブエージェント実装（41 tool uses / 約5.7分）。
+- **分業**：fable監督・Opusサブエージェント実装（41 tool uses / 約5.7分 / subagent約122kトークン）。
 
 ---
 
@@ -475,7 +475,8 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   非revスパン保持・self_checkの多桁残存検知）を追加。
 - **検証**：M4決定論テスト＋新テスト全PASS / lieko素材の再render（scratchpad出力のみ）でrev残存0 /
   preflight OK / check_content_loss OK / 差分2ファイルのみ。
-- **分業**：fable監督・Sonnet委譲（初回1箇所で停止→再指示で完遂、計12 tool uses）。
+- **分業**：fable監督・Sonnet委譲（初回1箇所で停止→再指示で完遂、計12 tool uses / subagent約79k
+  トークン=うち約39kは停止分の無駄。この規模の数行修正は委譲オーバーヘッドの方が高い可能性あり）。
 - **wall-time**：（Daisuke 記入）
 
 ---
