@@ -498,3 +498,22 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **wall-time**：（Daisuke 記入）
 
 （次の実案件からはこのテンプレで追記。空欄は「測れた範囲だけ」でよい。）
+
+---
+
+### 2026-07-03 — 運動「ポストインターネット」新設＋5名再分類（other / コンセプチュアルアート解体3運動目）
+- **内容**：movements/ポストインターネット.html 新規（EN=Post-Internet Photography / slug post-internet-photography・cite5本、
+  Vierkant論考PDF/UCCA2014展/New Museum(Ulman)/Aperture(Photography Is Magic)/Tate(Performing for the Camera)＝全URL挿入前検証済）。
+  lucas-blalock / kate-steciw / artie-vierkant / sara-vanderbeek / amalia-ulman の5名を別名タグ「コンセプチュアル」→ポストインターネットへ。
+  quinlan/eaton はレビューで見送り（素材主義的抽象・光学プロセス＝ネット流通と別軸）。mcginley はインティメイト候補へ送り。
+- **命名調査**：Daisuke質問「世界共通の用語か」→Olson(2006–08)/McHugh(2009)/Vierkant(2010)/UCCA(2014)/Cotton『Photography Is Magic』(2015)で
+  確立済みと確認。「ポスト写真」(Mitchell/Fontcuberta系の別概念)は併記せず切り離し（Daisuke承認）。
+- **プール実測**：単独97＋別名27＋無所属25＝149名（正パーサ3条件）。プール外の全サイトledeスキャン＝該当ゼロ。
+- **bug/発見（2）**：①Sonnet の step⑩ 一括regexが非greedy `.*?` で無関係カード30枚超を破損→Sonnet自身が diff --stat で検出し
+  checkout--で復旧・article境界分割で再実行（最終diffは対象のみ）②era2000 EN再生成が志賀理江子の旧EN lede既存ドリフトを
+  巻き込み→1行手動revertでスコープ維持（**既存ドリフトとして未解消・次のera2000再生成時に再浮上する**）。
+- **教訓の効果**：委譲プロンプトに「Agent系ツール禁止」明記→幻の再委譲ゼロ・1ラウンド完走（前回3ラウンド）。
+- **検証**：星bin=META1行追加＋d632c32e値5箇所のみ / 全カード面・leaf機能タグ置換済（channel/§REL/本文の正当残存のみ）/
+  check_content_loss OK / preflight OK（WARN2=既知偽陽性）/ 26M＋新規2のみ巻き込みゼロ。
+- **分業**：fable監督・監査（命名調査・出典検証・支給文字列作成・監査）、Sonnet実装（1ラウンド完走・216k tokens・160 tool calls・約12分）。
+- **wall-time**：（Daisuke 記入）

@@ -4444,7 +4444,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "2000",
   "movements": [
-    "コンセプチュアル"
+    "ポストインターネット"
   ],
   "thumbnail": "",
   "links": [],
@@ -4528,7 +4528,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "2000",
   "movements": [
-    "コンセプチュアル"
+    "ポストインターネット"
   ],
   "thumbnail": "",
   "links": [],
@@ -4549,7 +4549,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "2000",
   "movements": [
-    "コンセプチュアル"
+    "ポストインターネット"
   ],
   "thumbnail": "",
   "links": [],
@@ -4591,7 +4591,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "2000",
   "movements": [
-    "コンセプチュアル"
+    "ポストインターネット"
   ],
   "thumbnail": "",
   "links": [],
@@ -4760,7 +4760,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "2010",
   "movements": [
-    "コンセプチュアル"
+    "ポストインターネット"
   ],
   "thumbnail": "",
   "links": [],
