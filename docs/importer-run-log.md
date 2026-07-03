@@ -537,3 +537,21 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **分業**：fable監督・監査（相談・命名・提案マップ・出典検証・支給文字列・監査修正3件・nav一括）、Sonnet実装
   （プール抽出45k＋本体実装315k tokens・計226+10 tool calls・約20分・1ラウンド完走）。
 - **wall-time**：（Daisuke 記入）
+
+## 2026-07-03 — 既存運動へ25名再分類（コンセプチュアルアート解体・第2弾＝新運動ページ作成なし・種別=other・軽量行）
+- **対象**：単独タグ/空movementsの25名を既存13運動へ再分類（新運動ページなし）。FSA写真+5 / デュッセルドルフ派+2 /
+  ニューカラー+3 / ストリート写真+4 / フォトジャーナリズム+2 / ストレート写真+1（weston既掲載） / モダニズム+1 /
+  ピクチャーズ世代+1 / ステージド写真+4 / シネマトグラフィック写真+1 / ドキュメンタリー+1 / カラー写真+1 / タイポロジー写真+1。
+  dual6名=meyerowitz/weston/levine/demand/casebere/graham（levine/demand/casebereは第2タグにコンセプチュアルアート維持）。
+- **面**：supplement.js / 星bin(d632c32e。dcf38762は写真家12エントリにmovementsありだが25名該当なし・fbdfe095はcuratedConnections手書きペアでラベル整合のため、いずれも不触=fable監査で裏取り済) / JA leaf25枚機能タグ
+  （標準型10=シェリー・レヴィーン型置換・eraテーマ語型15=adams/petersen前例・機関chip型4=運動chip先頭挿入+機関chip降格） /
+  13運動ページカード+chips+件数3箇所 / card-data.json / archive+cards-archive+eras6 / EN JSON SEO 24名×7フィールド
+  （weston EN=手書きタイトル保持で不触） / EN再生成（archive+taxonomy13+6+photographers25）。
+- **地雷実績**：(h) ben-shahn/dorothy-bohm Country「リトアニア」和訳戻り2件revert（seymour/delano発生なし）。
+  (g) era EN再生成の無関係ドリフト=なし（diffはtags/data-searchのみ）。
+- **検証**：check_content_loss=OK / preflight=OK（WARN=EN再生成の既知偽陽性のみ） / 13運動ページ cards=hero=Photogs=chips 全一致 /
+  件数ドリフト=実カード基準で存在せず（旧hero=旧実数一致・新hero=旧+追加数どおり）。
+- **wall-time**：（Daisuke 記入）
+- **分業**：fable監督・監査（提案マップ25名・dual/単独の判定・recon・委譲・監査=dcf38762実態裏取り含む）、
+  Sonnet実装（セッション上限で1回中断→state実測+SendMessage再開で完走・計537k tokens・114 tool calls・約21分）。
+- **wall-time**：（Daisuke 記入）

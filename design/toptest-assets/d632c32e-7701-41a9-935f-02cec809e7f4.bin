@@ -290,7 +290,10 @@ PHOTOGRAPHERS.push(
   "years": "1900s / 1900年代",
   "gender": "",
   "era": "1890",
-  "movements": [],
+  "movements": [
+    "ストレート写真",
+    "モダニズム"
+  ],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -740,7 +743,9 @@ PHOTOGRAPHERS.push(
   "years": "1930s / 1930年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": [
+    "フォトジャーナリズム"
+  ],
   "thumbnail": "",
   "links": [
     { "label": "ICP — Margaret Bourke-White", "url": "https://www.icp.org/browse/archive/objects/margaret-bourke-white" },
@@ -953,7 +958,9 @@ PHOTOGRAPHERS.push(
   "years": "1940s / 1940年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": [
+    "フォトジャーナリズム"
+  ],
   "thumbnail": "",
   "links": [
     { "label": "Magnum Photos — David Seymour", "url": "https://www.magnumphotos.com/photographer/david-seymour/" },
@@ -980,7 +987,9 @@ PHOTOGRAPHERS.push(
   "years": "1940s / 1940年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": [
+    "FSA写真"
+  ],
   "thumbnail": "",
   "links": [
     { "label": "Library of Congress — John Vachon Papers", "url": "https://findingaids.loc.gov/repositories/17/resources/1646" },
@@ -1005,7 +1014,9 @@ PHOTOGRAPHERS.push(
   "years": "1940s / 1940年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": [
+    "FSA写真"
+  ],
   "thumbnail": "",
   "links": [
     { "label": "ICP — Arthur Rothstein", "url": "https://www.icp.org/browse/archive/constituents/arthur-rothstein" },
@@ -1032,7 +1043,9 @@ PHOTOGRAPHERS.push(
   "years": "1940s / 1940年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": [
+    "FSA写真"
+  ],
   "thumbnail": "",
   "links": [
     { "label": "Archives of American Art — Jack Delano Papers", "url": "https://www.aaa.si.edu/collections/jack-delano-papers-9300/more-information" },
@@ -1059,7 +1072,9 @@ PHOTOGRAPHERS.push(
   "years": "1940s / 1940年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": [
+    "FSA写真"
+  ],
   "thumbnail": "",
   "links": [
     { "label": "Library of Congress — Russell Lee Biography", "url": "https://www.loc.gov/item/prn-21-012/definitive-biography-brings-life-of-influential-documentary-photographer-russell-lee-out-of-the-shadows-drawing-on-librarys-photography-archive/2021-03-01/" },
@@ -1084,7 +1099,9 @@ PHOTOGRAPHERS.push(
   "years": "1940s / 1940年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": [
+    "FSA写真"
+  ],
   "thumbnail": "",
   "links": [
     { "label": "Smithsonian American Art Museum — Ben Shahn", "url": "https://americanart.si.edu/artist/ben-shahn-4330" },
@@ -1135,7 +1152,9 @@ PHOTOGRAPHERS.push(
   "years": "1940s / 1940年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": [
+    "ストレート写真"
+  ],
   "thumbnail": "",
   "links": [
     { "label": "MoMA — Minor White, the eye that shapes", "url": "https://www.moma.org/documents/moma_catalogue_2130_300062906.pdf" },
@@ -1160,7 +1179,9 @@ PHOTOGRAPHERS.push(
   "years": "1940s / 1940年代",
   "gender": "",
   "era": "1930",
-  "movements": [],
+  "movements": [
+    "ストリート写真"
+  ],
   "thumbnail": "",
   "links": [
     { "label": "MoMA — Helen Levitt", "url": "https://www.moma.org/artists/3520" },
@@ -1218,7 +1239,9 @@ PHOTOGRAPHERS.push(
   "years": "1950s / 1950年代",
   "gender": "",
   "era": "1950",
-  "movements": [],
+  "movements": [
+    "ストリート写真"
+  ],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -1256,7 +1279,9 @@ PHOTOGRAPHERS.push(
   "years": "1950s / 1950年代",
   "gender": "",
   "era": "1950",
-  "movements": [],
+  "movements": [
+    "ストリート写真"
+  ],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -1463,7 +1488,10 @@ PHOTOGRAPHERS.push(
   "years": "1970s / 1970年代",
   "gender": "",
   "era": "1970",
-  "movements": [],
+  "movements": [
+    "ニューカラー",
+    "ストリート写真"
+  ],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -1503,7 +1531,9 @@ PHOTOGRAPHERS.push(
   "years": "1970s / 1970年代",
   "gender": "",
   "era": "1970",
-  "movements": [],
+  "movements": [
+    "ニューカラー"
+  ],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -1522,7 +1552,9 @@ PHOTOGRAPHERS.push(
   "years": "1970s / 1970年代",
   "gender": "",
   "era": "1970",
-  "movements": [],
+  "movements": [
+    "ニューカラー"
+  ],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -1963,7 +1995,8 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1980",
   "movements": [
-    "コンセプチュアル"
+    "ピクチャーズ世代",
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -1984,7 +2017,7 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1980",
   "movements": [
-    "コンセプチュアル"
+    "デュッセルドルフ派"
   ],
   "thumbnail": "",
   "links": [],
@@ -2005,7 +2038,7 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1980",
   "movements": [
-    "コンセプチュアル"
+    "シネマトグラフィック写真"
   ],
   "thumbnail": "",
   "links": [],
@@ -2026,7 +2059,8 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1980",
   "movements": [
-    "コンセプチュアル"
+    "ドキュメンタリー",
+    "カラー写真"
   ],
   "thumbnail": "",
   "links": [],
@@ -2870,7 +2904,7 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1980",
   "movements": [
-    "コンセプチュアルアート"
+    "ステージド写真"
   ],
   "thumbnail": "",
   "links": [],
@@ -3143,7 +3177,8 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "ステージド写真",
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -3269,7 +3304,7 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "デュッセルドルフ派"
   ],
   "thumbnail": "",
   "links": [],
@@ -3290,7 +3325,8 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "ステージド写真",
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -3311,7 +3347,7 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "ステージド写真"
   ],
   "thumbnail": "",
   "links": [],
@@ -3815,7 +3851,7 @@ PHOTOGRAPHERS.push(
   "gender": "",
   "era": "1990",
   "movements": [
-    "コンセプチュアルアート"
+    "タイポロジー写真"
   ],
   "thumbnail": "",
   "links": [],
