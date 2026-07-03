@@ -1256,7 +1256,7 @@ const PHOTOGRAPHERS = [
     years: '1953–',
     gender: '女性',
     era: '1980',
-    movements: ['ドキュメンタリー', 'プライベート写真', 'LGBTQ+'],
+    movements: ['ドキュメンタリー', 'インティメイト・ライフ', 'LGBTQ+'],
     thumbnail: '',
     links: [
       { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Nan_Goldin' },

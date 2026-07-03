@@ -517,3 +517,23 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   check_content_loss OK / preflight OK（WARN2=既知偽陽性）/ 26M＋新規2のみ巻き込みゼロ。
 - **分業**：fable監督・監査（命名調査・出典検証・支給文字列作成・監査）、Sonnet実装（1ラウンド完走・216k tokens・160 tool calls・約12分）。
 - **wall-time**：（Daisuke 記入）
+
+## 2026-07-03 インティメイト・ライフ新設・12名再分類＋mvt-nav相互リンク一括更新（コンセプチュアルアート解体4運動目・最終）
+- **対象**：新運動「インティメイト・ライフ」(Intimate Life / intimate-life) 新設。12名再分類=larry-clark/anders-petersen/
+  goldin/elina-brotherus/diana-scheunemann/richard-billingham/j-h-engstrom/wolfgang-tillmans/manfred-willmann/
+  paul-albert-leitner/hellen-van-meene/ryan-mcginley。goldinのみプール外（プライベート写真alias→私写真から移設・
+  私写真ページ6→5名）。tillmansは3回目審査で採用（Cotton "Intimate Life"章の代表格＝最後の受け皿）。
+- **命名**：JA/EN/slugともCotton章名準拠「インティメイト・ライフ」（"Intimate Photography"はブドワール検索衝突で不採用・Daisuke確定）。
+- **差分**：修正49＋新規2（movements/インティメイト・ライフ.html、en/movements/intimate-life.html）＋nav一括（JA35＋EN34）。
+  出典5本=Luhring Augustine/Aperture/MoMA calendar/MACK/Thames&Hudson（全URL WebFetch検証済・MoMA /artists/不使用）。
+- **mvt-nav一括**：4運動完成を受け全35運動ページのnavを35項目正準ストリップへ統一（自運動is-active・ニュートポは
+  デュッセルドルフ派の前・他3つは末尾）。EN全35slug再生成。
+- **監査での検出・修正3件**（fable）：①petersen title旧era テーマ語残存→adams前例に合わせJA/EN SEO置換
+  ②goldin側chip/kw欄がリンクなしspan（旧プライベート写真構造の引き継ぎ）→リンク化 ③私写真.htmlのgoldin本文言及3件=
+  本文不介入原則で意図的据え置き（john-riddy前例と同型）。
+- **地雷実績**：(g)志賀理江子era2000 ENドリフト=今回意図的更新として取り込み（Daisuke事前承認枠）。(h)scheunemann dual国籍
+  Country欄=巻き戻りなし。billingham出典番号不連続[1,3,4,5]=既存バグ（本件と無関係・未対応）。
+- **検証**：星bin=META1行＋12名のみ / check_content_loss=goldin意図的WARN1のみ / preflight OK（WARN=EN再生成の既知偽陽性）。
+- **分業**：fable監督・監査（相談・命名・提案マップ・出典検証・支給文字列・監査修正3件・nav一括）、Sonnet実装
+  （プール抽出45k＋本体実装315k tokens・計226+10 tool calls・約20分・1ラウンド完走）。
+- **wall-time**：（Daisuke 記入）

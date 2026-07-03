@@ -85,6 +85,7 @@ GENRE_TAG = {
     'ステージド写真': 'Staged Photography',
     'スティルライフ': 'Contemporary Still Life',
     'ポストインターネット': 'Post-Internet',
+    'インティメイト・ライフ': 'Intimate Life',
     'ストリート写真': 'Street Photography',
     'ストレート写真': 'Straight Photography',
     'タイポロジー写真': 'Typological Photography',

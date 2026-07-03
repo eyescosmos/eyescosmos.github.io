@@ -1358,7 +1358,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1950",
   "movements": [
-    "コンセプチュアル"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
@@ -1541,7 +1541,9 @@ PHOTOGRAPHERS.push(
   "years": "1970s / 1970年代",
   "gender": "男性",
   "era": "1970",
-  "movements": [],
+  "movements": [
+    "インティメイト・ライフ"
+  ],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -1709,7 +1711,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "1970",
   "movements": [
-    "コンセプチュアルアート"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
@@ -2151,7 +2153,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "1980",
   "movements": [
-    "コンセプチュアルアート"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
@@ -2973,7 +2975,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "1980",
   "movements": [
-    "コンセプチュアルアート"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
@@ -3162,7 +3164,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
@@ -3351,7 +3353,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
@@ -3477,7 +3479,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1990",
   "movements": [
-    "コンセプチュアルアート"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
@@ -3771,7 +3773,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1990",
   "movements": [
-    "コンセプチュアルアート"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
@@ -3960,7 +3962,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1990",
   "movements": [
-    "コンセプチュアルアート"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
@@ -4401,7 +4403,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "2000",
   "movements": [
-    "コンセプチュアル"
+    "インティメイト・ライフ"
   ],
   "thumbnail": "",
   "links": [],
