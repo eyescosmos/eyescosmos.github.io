@@ -29,6 +29,7 @@
 | 2026-07-02-03 | (運動)contemporary-still-life | other | （Daisuke記入） | 3 | 2（下記） | 29ファイル | N/A | 4 |
 | 2026-07-04 | lieko-shiga | other | （Daisuke記入） | 0 | 0 | 2ファイル | N/A | N/A |
 | 2026-07-05 | yurie-nagashima | update | ~13分 | 0 | 6 | 4ファイル | 787→9849 | 3→38 |
+| 2026-07-05 | lieko-shiga(EN JSON同期) | other | （Daisuke記入） | 0 | 1 | 1ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -625,3 +626,13 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   GA/canonical/hreflang/OG/JSON-LD 引き継ぎ・§REL 全リンク（JA root絶対形式・EN /en/ 形式）の実在を監督側で独立再確認。
 - **発火した engine 改良**：keyword bundle 由来注入・description 自動充填・Period spec 化（正常動作）。
 - **分業**：fable監督・Opusサブエージェント実装（48 tool uses / 約6.4分 / subagent約68kトークン）。
+
+---
+
+## 2026-07-05 — lieko-shiga EN写真集AmazonリンクのJSON同期（種別=other・軽量行）
+
+- **対象**：264beb05a でEN HTMLへ直接追加されたAmazonリンク4冊が EN正本 `photobooks_html` 未反映＝`--force`再生成で消失する状態を解消。
+- **面**：data/photographers-en-content.json のみ（1フィールド・-1/+1行）。§REFのAmazon 4冊は `rebuild_further()`→`parse_photobooks()` 経由の `photobooks_html` 由来、MoMA/Gettyは `external_links_html` 由来（不触）と特定。
+- **検証**：再生成HTMLが現行と**byte一致**（cmp＋監督側の独立再ビルドでも差分0）。他slug差分0・check_content_loss OK・preflight OK。
+- **分業**：fable監督・Sonnetサブエージェント実装（14 tool uses / 約2.9分 / 約46kトークン。初回spawnが誤待機停止→再指示1回）。
+- **wall-time**：（Daisuke 記入）
