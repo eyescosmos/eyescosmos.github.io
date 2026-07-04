@@ -213,6 +213,36 @@ def test_unwrap_rev_spans_multidigit() -> None:
           "unwrap・非revネスト保持・self_check残存検知OK")
 
 
+def test_unwrap_revision_word_spans() -> None:
+    """revision-<word> 語形対応: yurie-nagashima 素材の revision-fifth/third/red 等が
+    数字形と同様に unwrap される（07-05 実走で85個/ファイル手除去した実害の再発防止）。"""
+    src = ('<span class="revision-fifth">a<span class="revision-third">b</span>c</span>'
+           '<span class="revision-red">d</span><span class="revision-new">e</span>')
+    out = unwrap_rev_spans(src)
+    assert out == "abcde", f"FAIL: revision-* 語形 span が unwrap されていない: {out!r}"
+
+    # 非 rev span とのネストは維持・revision を含むだけの無関係クラスは触らない
+    src2 = ('<span class="revision-sixth">a<span class="keep">b</span>c</span>'
+            '<span class="ph-revisionist">d</span>')
+    out2 = unwrap_rev_spans(src2)
+    assert out2 == 'a<span class="keep">b</span>c<span class="ph-revisionist">d</span>', \
+        f"FAIL: 非rev span が保持されていない: {out2!r}"
+
+    # self_check が語形残存と語形CSSセレクタ残存を検知できること
+    for dirty in ('<span class="revision-fourth">残存</span>',
+                  '<style>.revision-red { color: red }</style>'):
+        try:
+            self_check(dirty, context="test")
+            raise AssertionError(f"FAIL: self_check が revision-* 残存を検知できていない: {dirty!r}")
+        except AssertionError as e:
+            if "検知できていない" in str(e):
+                raise
+            # 期待通り残存 AssertionError が飛ぶ
+
+    print("test_unwrap_revision_word_spans PASS: 語形 rev（revision-fifth等）の"
+          "unwrap・非revネスト保持・self_check残存/CSS検知OK")
+
+
 def main() -> int:
     ba, _ = extract_bundle(SOURCE_A, "ja", slug=SPEC["id"])
     bb, _ = extract_bundle(SOURCE_B, "ja", slug=SPEC["id"])
@@ -276,6 +306,7 @@ def main() -> int:
     print(f"  render 出力サイズ: {len(ha.encode('utf-8'))} bytes（A==B）")
 
     test_unwrap_rev_spans_multidigit()
+    test_unwrap_revision_word_spans()
     return 0
 
 

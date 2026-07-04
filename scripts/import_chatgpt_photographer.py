@@ -75,7 +75,10 @@ def repo_file_exists(rel: str) -> bool:
 
 # ── 決定論変換（JA / EN 共有） ─────────────────────────────────────────────
 
-REV_OPEN_RE = re.compile(r'<span class="rev[0-9]+">')
+# rev ハイライトのクラス語形: 数字形 rev19 と語形 revision-fifth の両系統
+# （lieko=数字形 / yurie=語形。素材世代でつづりが揺れるため両対応）
+REV_CLASS_PAT = r'rev[0-9]+|revision-[a-z0-9]+(?:-[a-z0-9]+)*'
+REV_OPEN_RE = re.compile(r'<span class="(?:' + REV_CLASS_PAT + r')">')
 SPAN_TAG_RE = re.compile(r'<span\b[^>]*>|</span>')
 
 
@@ -88,13 +91,14 @@ def strip_edit_red(html: str) -> str:
     return re.sub(r'class="([^"]*)"', repl, html)
 
 
-# レビュー用 CSS（`.edit-red`/`.rev[0-9]+` セレクタのルール）と注釈コメント
-REVIEW_CSS_RULE_RE = re.compile(r'[^{}]*\.(?:edit-red|rev[0-9]+)[^{}]*\{[^}]*\}')
+# レビュー用 CSS（`.edit-red`/`.revN`/`.revision-*` セレクタのルール）と注釈コメント
+REVIEW_CSS_RULE_RE = re.compile(
+    r'[^{}]*\.(?:edit-red|' + REV_CLASS_PAT + r')[^{}]*\{[^}]*\}')
 REVIEW_COMMENT_RE = re.compile(r'/\*\s*revision preview\s*\*/')
 
 
 def strip_review_css(html: str) -> str:
-    """<style> ブロック内のレビュー用 CSS（.edit-red / .rev[0-9]+ ルール）と
+    """<style> ブロック内のレビュー用 CSS（.edit-red / .revN / .revision-* ルール）と
     `/* revision preview */` コメントを除去。本番ページには残さない（出荷済みと一致）。"""
     def repl(m: re.Match) -> str:
         style = m.group(0)
@@ -105,7 +109,7 @@ def strip_review_css(html: str) -> str:
 
 
 def unwrap_rev_spans(html: str) -> str:
-    """<span class="rev[0-9]+">…</span> をネスト対応で unwrap（中身は保持）。
+    """<span class="revN"> / <span class="revision-*"> をネスト対応で unwrap（中身は保持）。
     rev 以外の <span> と入れ子になっていても、対応する開閉だけを取り除く。"""
     out = []
     pos = 0
@@ -246,9 +250,9 @@ def self_check(html: str, *, context: str) -> list[str]:
     n_close = len(re.findall(r"</span>", html))
     if n_open != n_close:
         raise AssertionError(f"[{context}] span 開閉数が不一致: open={n_open} close={n_close}")
-    if re.search(r'<span class="rev[0-9]+"', html):
+    if re.search(r'<span class="(?:' + REV_CLASS_PAT + r')"', html):
         raise AssertionError(f"[{context}] rev スパンが残存している")
-    if re.search(r'\.(?:edit-red|rev[0-9]+)\b', html):
+    if re.search(r'\.(?:edit-red|' + REV_CLASS_PAT + r')\b', html):
         raise AssertionError(f"[{context}] レビュー用 CSS セレクタ（.edit-red/.revN）が残存している")
     if "edit-red" in html:
         raise AssertionError(f"[{context}] edit-red トークンが残存している")
@@ -1474,9 +1478,37 @@ def _ja_metrics(html: str) -> dict:
     }
 
 
-def run_update_existing(slug: str, ja_path: Path, en_path: Path | None) -> int:
+def _prepare_update(slug: str, spec: dict) -> None:
+    """update 案件冒頭の定型準備を一括実行（--prepare）:
+    ①JA/EN ページを -backup.html へコピー ②導出 spec を scripts/<slug>-spec.json へ書出。
+    既存の backup / spec は上書きしない（変更前状態の backup を潰さない）。
+    period 採否・movements 取捨の人間判断は、書き出した spec の編集として残す。"""
+    print("[--prepare] backup + spec 書出:")
+    for page in (JA_DIR / f"{slug}.html", EN_DIR / f"{slug}.html"):
+        if not page.exists():
+            print(f"    - {page.relative_to(REPO)} なし → backup スキップ")
+            continue
+        bak = page.with_name(page.stem + "-backup" + page.suffix)
+        if bak.exists():
+            print(f"    - {bak.relative_to(REPO)} 既存 → 上書きせずスキップ（変更前 backup を保持）")
+            continue
+        bak.write_text(page.read_text(encoding="utf-8"), encoding="utf-8")
+        print(f"    ✓ backup → {bak.relative_to(REPO)}")
+    spec_path = REPO / "scripts" / f"{slug}-spec.json"
+    if spec_path.exists():
+        print(f"    - {spec_path.relative_to(REPO)} 既存 → 上書きせずスキップ")
+    else:
+        spec_path.write_text(
+            json.dumps(spec, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"    ✓ spec → {spec_path.relative_to(REPO)}")
+    print("    次: spec の period/movements を確認・編集 → importer を --apply --force で実行")
+
+
+def run_update_existing(slug: str, ja_path: Path, en_path: Path | None,
+                        prepare: bool = False) -> int:
     """既存ページ更新モード dry-run: spec 自動導出 → 新 render → 既存との差分と
-    carry-forward 計画を1ショットで表示（read-only・書込なし）。"""
+    carry-forward 計画を1ショットで表示（read-only・書込なし）。
+    --prepare 付きのときだけ backup + spec 書出を行う（本文への書込は依然なし）。"""
     page = JA_DIR / f"{slug}.html"
     if not page.exists():
         sys.stderr.write(f"ERROR: 既存ページが無い（新規は通常フロー）: {page}\n")
@@ -1534,8 +1566,11 @@ def run_update_existing(slug: str, ja_path: Path, en_path: Path | None) -> int:
         print(f"    • {p}")
 
     print("[残る手作業] §REF/further の確定貼り・works 固有名の ui-terms 追加")
-    print("書込なし（--update-existing は現状 dry-run のみ。carry-forward 適用と "
-          "EN マージは後続フェーズ＝要承認）")
+    if prepare:
+        _prepare_update(slug, spec)
+    else:
+        print("書込なし（--update-existing は現状 dry-run のみ。--prepare で backup+spec 書出。"
+              "carry-forward 適用と EN マージは後続フェーズ＝要承認）")
     return 0
 
 
@@ -2205,13 +2240,20 @@ def main(argv=None) -> int:
                     help="M5 検証（read-only）: EN 素材から bundle→en-content エントリを "
                          "生成し JSON を stdout 出力（正本 JSON 不可触）")
     ap.add_argument("--update-existing", action="store_true",
-                    help="既存ページ更新モード（read-only / dry-run のみ）: spec を card-data+"
+                    help="既存ページ更新モード（dry-run）: spec を card-data+"
                          "既存ページから自動導出し、新素材 render との差分と carry-forward 計画を"
-                         "表示（--slug と --ja 必須・--en 任意。書込なし）")
+                         "表示（--slug と --ja 必須・--en 任意。本文への書込なし）")
+    ap.add_argument("--prepare", action="store_true",
+                    help="--update-existing 専用: dry-run 表示に加えて JA/EN ページの "
+                         "-backup.html コピーと scripts/<slug>-spec.json 書出を一括実行"
+                         "（既存 backup / spec は上書きしない）")
     ap.add_argument("--precheck", action="store_true",
                     help="② 素材プリチェック（read-only）: slug の新規/既存判定・素材言語確認・"
                          "bundle内容表示（--slug と --ja 必須。書込なし）")
     args = ap.parse_args(argv)
+
+    if args.prepare and not args.update_existing:
+        ap.error("--prepare は --update-existing 専用")
 
     # ② 素材プリチェック（read-only）。書込なし。
     if args.precheck:
@@ -2222,13 +2264,14 @@ def main(argv=None) -> int:
             Path(args.ja).expanduser(),
             Path(args.en).expanduser() if args.en else None)
 
-    # 既存ページ更新モード（read-only / dry-run）。spec 自動導出・書込なし。
+    # 既存ページ更新モード（dry-run。--prepare 付きのときだけ backup+spec 書出）。
     if args.update_existing:
         if not args.slug or not args.ja:
             ap.error("--update-existing は --slug と --ja が必須")
         return run_update_existing(
             args.slug, Path(args.ja).expanduser(),
-            Path(args.en).expanduser() if args.en else None)
+            Path(args.en).expanduser() if args.en else None,
+            prepare=args.prepare)
 
     # 監査モード（read-only）。slug/ja は不要。
     if args.audit_corpus:

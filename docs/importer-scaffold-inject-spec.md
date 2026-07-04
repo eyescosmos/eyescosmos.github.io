@@ -261,6 +261,10 @@ read-only / dry-run のみ）を用意：
   `untranslated works label` 警告＋ui-terms 追加が要る。←今日の残手作業②の源流。
 - **meta description を入れる**（hero説明 or lead 要約）。無くても engine が lead から導出するが、
   明示があれば意図どおりの説明になる。
+- **レビュー用ハイライトを素材に含めない**（`<span class="rev19">` 数字形・`<span class="revision-fifth">`
+  語形・対応する `<style>` ルール）。importer は両語形とも自動 unwrap するが（lieko=数字形75個 /
+  yurie=語形85個の実害から両対応済）、**想定外の第3の語形**が来ると素通りし得るため、素材出力時に
+  ハイライト抜きで出させるのが源流カット。
 - **section 名は素のテキスト**（`<span class="ph-section__name">背景と時代</span>`。`<span><span>…
   </span></span>` のネストは避ける）。※現在は抽出器がネストも許容するが、素のほうが安全。
 - **関連写真家/運動は正式名**（slug が引ける表記）。de-link を減らせる。

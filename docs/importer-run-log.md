@@ -30,6 +30,7 @@
 | 2026-07-04 | lieko-shiga | other | （Daisuke記入） | 0 | 0 | 2ファイル | N/A | N/A |
 | 2026-07-05 | yurie-nagashima | update | ~13分 | 0 | 6 | 4ファイル | 787→9849 | 3→38 |
 | 2026-07-05 | lieko-shiga(EN JSON同期) | other | （Daisuke記入） | 0 | 1 | 1ファイル | N/A | N/A |
+| 2026-07-05 | (engine)時間短縮①② | engine | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -628,6 +629,26 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **分業**：fable監督・Opusサブエージェント実装（48 tool uses / 約6.4分 / subagent約68kトークン）。
 
 ---
+
+## 2026-07-05 — importer時間短縮①②実装（yurie実測起票の源流つぶし・種別=engine・軽量行）
+
+- **① revision-* 語形unwrap拡張**：rev処理の正規表現4箇所を共通トークン `REV_CLASS_PAT`
+  （`rev[0-9]+|revision-[a-z0-9]+(?:-[a-z0-9]+)*`）へ統一し、yurie素材で85個/ファイル手除去した
+  `revision-fifth` 等の語形に対応（数字形は07-02対応済）。self_check の残存検知・レビューCSS除去も
+  同トークン化＝盲点の対称性を排除。`test_unwrap_revision_word_spans` 新設（語形unwrap・ネスト・
+  非rev保持・self_check検知）。**yurie実素材で検証＝JA/EN各 rev span 55→0・CSSセレクタ残0・
+  span開閉均衡・render指標が committed ページと一致**。spec.md §13 に「レビュー用ハイライトを
+  素材に含めない」源流カット項を追記。
+- **② --prepare 実装**：`--update-existing --prepare` で update案件冒頭の定型準備
+  （JA/EN→-backup.htmlコピー・derive_spec→scripts/<slug>-spec.json書出）を一括化。
+  **既存 backup/spec は上書きしない**（変更前状態の保全が目的のため）。period/movements の
+  人間判断は書出後のspec編集に残す。yurieで両パス実機検証（既存スキップ／新規作成→git復元で原状回復）。
+- **検証時ヒヤリ**：新規作成パス検証でJA/EN backupを同一scratchdirへ退避→同名衝突でJA原本消失
+  →git履歴(a83f49c6e^)から完全復元・cmp一致確認済。教訓＝同名ファイルの退避はサブディレクトリを分ける。
+- **サーフェス変更数**：3ファイル（import_chatgpt_photographer.py / test_importer_scaffold_inject.py /
+  importer-scaffold-inject-spec.md）。ページ本文・正本は不触。
+- **検証**：importer全テストPASS / check_content_loss OK / preflight OK。
+- **wall-time**：（Daisuke 記入）
 
 ## 2026-07-05 — lieko-shiga EN写真集AmazonリンクのJSON同期（種別=other・軽量行）
 
