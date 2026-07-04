@@ -27,6 +27,7 @@
 | 2026-07-01 | (運動)new-topographics | other | （Daisuke記入） | 2 | 3（下記） | 27ファイル | N/A | 4 |
 | 2026-07-01 | (運動)newtopo第2弾3名 | other | （Daisuke記入） | 0 | 1（下記） | 15ファイル | N/A | N/A |
 | 2026-07-02-03 | (運動)contemporary-still-life | other | （Daisuke記入） | 3 | 2（下記） | 29ファイル | N/A | 4 |
+| 2026-07-04 | lieko-shiga | other | （Daisuke記入） | 0 | 0 | 2ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -585,4 +586,11 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   （§REL解説文のConceptual Art言及は本文不介入原則で意図的据え置き）。
 - **分業**：fable監督・監査（提案マップ・lockhart出典修復・hosokura EN整合・監査）、Sonnet実装（watchdog停止1回→state実測
   +SendMessage再開で完走・計333k tokens・375 tool calls・約63分）。
+- **wall-time**：（Daisuke 記入）
+
+## 2026-07-04 — lieko-shiga § REF 写真集リンク追加（種別=other・軽量行）
+- **対象**：§ REF「さらに読む / Further reading」に写真集ラベル＋Amazonアフィリエイトリンク4冊を追加（JA/EN各4冊・計8リンク）。
+- **面**：photographers/lieko-shiga.html（`ph-rel-label` 直前へ挿入）・en/photographers/lieko-shiga.html（同構造・EN手組みページのため直接編集）。
+- **本文根拠**：4冊とも既存本文（螺旋海岸=北釜での中心的仕事、CANARY=2000年代半ばの初期代表作、Blind Date=丸亀市猪熊弦一郎現代美術館個展、Lilly=CANARYと同時期の初期作品集）に基づくnote文で新規事実の追加なし。
+- **検証**：`git diff --stat` で対象2ファイルのみに差分を確認。amzn.to URL 8本を目視突合（JA4/EN4・取り違えなし）。
 - **wall-time**：（Daisuke 記入）
