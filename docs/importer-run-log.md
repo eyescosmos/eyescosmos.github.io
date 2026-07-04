@@ -28,7 +28,7 @@
 | 2026-07-01 | (運動)newtopo第2弾3名 | other | （Daisuke記入） | 0 | 1（下記） | 15ファイル | N/A | N/A |
 | 2026-07-02-03 | (運動)contemporary-still-life | other | （Daisuke記入） | 3 | 2（下記） | 29ファイル | N/A | 4 |
 | 2026-07-04 | lieko-shiga | other | （Daisuke記入） | 0 | 0 | 2ファイル | N/A | N/A |
-| 2026-07-05 | yurie-nagashima | update | （Daisuke記入） | 0 | 6 | 4ファイル | 787→9849 | 3→38 |
+| 2026-07-05 | yurie-nagashima | update | ~13分 | 0 | 6 | 4ファイル | 787→9849 | 3→38 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -600,7 +600,7 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 
 ## 2026-07-05 — yurie-nagashima（update / 既存刷新・idx245・era1990）
 
-- **wall-time**：（Daisuke 記入）
+- **wall-time**：約13分（Daisuke 申告・2026-07-05）
 - **bug**：0（engine 正常。素材側に revision-* span 混入＝素材品質問題、下記手作業3）。
 - **手作業点（実測）**：
   1. **バックアップ**：JA+EN 両ページを -backup.html にコピー。
