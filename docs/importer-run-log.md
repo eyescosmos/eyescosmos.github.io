@@ -555,3 +555,34 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **分業**：fable監督・監査（提案マップ25名・dual/単独の判定・recon・委譲・監査=dcf38762実態裏取り含む）、
   Sonnet実装（セッション上限で1回中断→state実測+SendMessage再開で完走・計537k tokens・114 tool calls・約21分）。
 - **wall-time**：（Daisuke 記入）
+
+## 2026-07-03 — コンセプチュアルアート正規メンバー確定＋表記正準化（解体タスク2・種別=other・軽量行）
+- **対象**：(a)タグから除去3名（mapplethorpe/pieter-hugo/mayumi-hosokura・他タグ残存）＋ページからカード除去 /
+  (b)無所属化3名（seydou-keita=era1950テーマ語・eileen-quinlan/jessica-eaton=era2000テーマ語） /
+  (c)ステージド写真へ移送4名（kaoru-izima/michael-janiszewski/sonja-braas/jean-pierre-khazem） /
+  (d)表記正準化9名（kruger/sherman=多タグ内置換・sophie-calle/erwin-wurm/shannon-ebner/nikki-s-lee/james-welling=
+  単独置換＋ページ掲載・sharon-lockhart/rashid-johnson=正準化のみ）。コンセプチュアルアートページ8−3＋17＝22名
+  （A組12名=JS不変・掲載のみ）・ステージド写真7→11名。
+- **面**：photographers.js+manual-additions.js+supplement.js / 星bin（d369d828=4名・d632c32e=14名。dcf38762=19名該当なし・
+  fbdfe095=名前リストのみで不触） / JA leaf19枚機能タグ（title×3/meta/JSON-LD/ph-abstract定型文/breadcrumb/eyebrow/
+  ph-kw/side-chip。無所属型=doisneau/kollar前例の空欄形・Channel行不介入） / 両運動ページカード+hero+chips
+  （22・11一致） / card-data.json（機関・国タグ保持） / archive+cards-archive+eras6面 / EN JSON SEO 17名
+  （sherman/mayumi-hosokura=SEO言及なしで不変・pieter-hugo/krugerはdescription内タグ列も修正） /
+  EN再生成（archive+taxonomy2+eras6+photographers18・sherman=手書き保護スキップ→EN HTML直接2行修正=lee-miller前例）。
+- **地雷実績**：(h) seydou-keita EN Country「マリ」和訳戻り1件revert（他発生なし）。(g) era再生成の無関係ドリフト=なし
+  （JA/EN diffともtags/data-searchのみ・19名分と一致）。
+- **残存チェック**：'コンセプチュアル'単独=19名スコープでJS/card-data 0件（残5件=sugimoto/morimura/hausswolff/sassen/
+  mikhailov等スコープ外・aliasマップ行は保険で維持）。「コンセプチュアルアートアート」=全域0件。
+- **検証**：check_content_loss=WARN2（kruger/mapplethorpe abstract定型文=意図的変更のみ） / preflight=WARN（EN再生成の
+  既知偽陽性）＋FAIL1（sharon-lockhart dangling cite=既存バグ・HEAD比較で本件差分と無関係を確認済） /
+  両ページ cards=hero=Photogs=chips 全一致（22/11）。
+- **メモ**：eras/1970 mapplethorpe名「マッピルソープ」誤字（既存・不触）。mayumi-hosokura EN ph-kw=keywords_htmlが正本で
+  SEO headフィールド外のため据え置き（JA/EN不整合1件・要判断）。en/movements/pictures-generation.html等の他運動ページの
+  kruger/shermanカード旧表記=「他の運動ページ不変」原則で据え置き。
+- **fable監査追記**：①push阻害FAIL=sharon-lockhart宙吊りcite（既知バグ・今回leaf接触で発火）→本文が名指しする出典3本
+  （Hammer 2009展/公式スタジオ/MCA 2001回顧展・全URL WebFetch検証済）で出典欄を修復しpreflight exit 0へ。EN側はsup-ref
+  リンク自体なし=自己整合で不触。②hosokura EN側side-chip「conceptual art」1個を手維持EN前例（sherman方式）で直接除去
+  （§REL解説文のConceptual Art言及は本文不介入原則で意図的据え置き）。
+- **分業**：fable監督・監査（提案マップ・lockhart出典修復・hosokura EN整合・監査）、Sonnet実装（watchdog停止1回→state実測
+  +SendMessage再開で完走・計333k tokens・375 tool calls・約63分）。
+- **wall-time**：（Daisuke 記入）

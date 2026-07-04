@@ -383,7 +383,7 @@ const PHOTOGRAPHER_MANUAL_ADDITIONS = [
     years: '1976-',
     gender: '男性',
     era: '2000',
-    movements: ['ポートレート', '社会的写真', 'コンセプチュアルアート'],
+    movements: ['ポートレート', '社会的写真'],
     thumbnail: '',
     links: [
       { label: 'Pieter Hugo — Information', url: 'https://pieterhugo.com/Information' },

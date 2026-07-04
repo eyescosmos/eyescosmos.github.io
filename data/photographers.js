@@ -1136,7 +1136,7 @@ const PHOTOGRAPHERS = [
     years: '1954–',
     gender: '女性',
     era: '1970',
-    movements: ['ピクチャーズ世代', 'コンセプチュアル', 'フェミニズム写真'],
+    movements: ['ピクチャーズ世代', 'コンセプチュアルアート', 'フェミニズム写真'],
     thumbnail: '',
     links: [
       { label: 'MoMA', url: 'https://www.moma.org/artists/5376' },
@@ -1165,7 +1165,7 @@ const PHOTOGRAPHERS = [
     years: '1946–1989',
     gender: '男性',
     era: '1970',
-    movements: ['コンセプチュアル', 'ポートレート'],
+    movements: ['ポートレート'],
     thumbnail: '',
     links: [
       { label: 'Wikipedia (EN)', url: 'https://en.wikipedia.org/wiki/Robert_Mapplethorpe' },
@@ -1194,7 +1194,7 @@ const PHOTOGRAPHERS = [
     years: '1945–',
     gender: '女性',
     era: '1970',
-    movements: ['ピクチャーズ世代', 'コンセプチュアル', 'フェミニズム写真'],
+    movements: ['ピクチャーズ世代', 'コンセプチュアルアート', 'フェミニズム写真'],
     thumbnail: '',
     links: [
       { label: 'The Broad', url: 'https://www.thebroad.org/art/barbara-kruger/untitled-your-body-battleground' },

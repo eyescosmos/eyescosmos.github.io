@@ -1319,9 +1319,7 @@ PHOTOGRAPHERS.push(
   "years": "1950s / 1950年代",
   "gender": "男性",
   "era": "1950",
-  "movements": [
-    "コンセプチュアル"
-  ],
+  "movements": [],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -1974,7 +1972,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "1980",
   "movements": [
-    "コンセプチュアル"
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -2400,7 +2398,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1980",
   "movements": [
-    "コンセプチュアルアート"
+    "ステージド写真"
   ],
   "thumbnail": "",
   "links": [],
@@ -2568,7 +2566,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1980",
   "movements": [
-    "コンセプチュアルアート"
+    "ステージド写真"
   ],
   "thumbnail": "",
   "links": [],
@@ -2589,7 +2587,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1980",
   "movements": [
-    "コンセプチュアルアート"
+    "ステージド写真"
   ],
   "thumbnail": "",
   "links": [],
@@ -3220,7 +3218,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -3241,7 +3239,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -3283,7 +3281,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -3368,7 +3366,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "1990",
   "movements": [
-    "コンセプチュアル"
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -3578,7 +3576,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "1990",
   "movements": [
-    "コンセプチュアルアート"
+    "ステージド写真"
   ],
   "thumbnail": "",
   "links": [],
@@ -4503,7 +4501,7 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "2000",
   "movements": [
-    "コンセプチュアル"
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -4523,9 +4521,7 @@ PHOTOGRAPHERS.push(
   "years": "2000s / 2000年代",
   "gender": "女性",
   "era": "2000",
-  "movements": [
-    "コンセプチュアル"
-  ],
+  "movements": [],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -4544,9 +4540,7 @@ PHOTOGRAPHERS.push(
   "years": "2000s / 2000年代",
   "gender": "女性",
   "era": "2000",
-  "movements": [
-    "コンセプチュアル"
-  ],
+  "movements": [],
   "thumbnail": "",
   "links": [],
   "amazon": "",
@@ -4608,7 +4602,7 @@ PHOTOGRAPHERS.push(
   "gender": "男性",
   "era": "2000",
   "movements": [
-    "コンセプチュアル"
+    "コンセプチュアルアート"
   ],
   "thumbnail": "",
   "links": [],
@@ -5024,7 +5018,6 @@ PHOTOGRAPHERS.push(
   "gender": "女性",
   "era": "2010",
   "movements": [
-    "コンセプチュアルアート",
     "フェミニズム写真",
     "私写真",
     "日本写真"
