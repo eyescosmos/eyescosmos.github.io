@@ -28,6 +28,7 @@
 | 2026-07-01 | (運動)newtopo第2弾3名 | other | （Daisuke記入） | 0 | 1（下記） | 15ファイル | N/A | N/A |
 | 2026-07-02-03 | (運動)contemporary-still-life | other | （Daisuke記入） | 3 | 2（下記） | 29ファイル | N/A | 4 |
 | 2026-07-04 | lieko-shiga | other | （Daisuke記入） | 0 | 0 | 2ファイル | N/A | N/A |
+| 2026-07-05 | yurie-nagashima | update | （Daisuke記入） | 0 | 6 | 4ファイル | 787→9849 | 3→38 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -594,3 +595,33 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **本文根拠**：4冊とも既存本文（螺旋海岸=北釜での中心的仕事、CANARY=2000年代半ばの初期代表作、Blind Date=丸亀市猪熊弦一郎現代美術館個展、Lilly=CANARYと同時期の初期作品集）に基づくnote文で新規事実の追加なし。
 - **検証**：`git diff --stat` で対象2ファイルのみに差分を確認。amzn.to URL 8本を目視突合（JA4/EN4・取り違えなし）。
 - **wall-time**：（Daisuke 記入）
+
+---
+
+## 2026-07-05 — yurie-nagashima（update / 既存刷新・idx245・era1990）
+
+- **wall-time**：（Daisuke 記入）
+- **bug**：0（engine 正常。素材側に revision-* span 混入＝素材品質問題、下記手作業3）。
+- **手作業点（実測）**：
+  1. **バックアップ**：JA+EN 両ページを -backup.html にコピー。
+  2. **spec.json 手作成**：derive_spec から years/period(`1990–2000s`・素材の`1990s—2020s`は不採用)/era/idx 引き継ぎ。
+     movements は既存 chip `私写真`/`フェミニズム写真` を carry-forward（JA/EN 運動ページ実在確認済）。
+  3. **revision-* span 除去**：素材 JA/EN 双方に `revision-fifth/third/sixth/red/fourth/new` span 計85個/ファイル混入。
+     07-02 の engine fix（rev多桁span対応）は `rev[0-9]+` 数字形のみ対応で**語形 `revision-<word>` は素通り**
+     → JA レンダ出力・EN バンドル出力双方からテキスト保持・ネスト対応(innermost-first)で除去。残存0検証済。
+     **2件連続発生＝importer unwrap を `revision-*` 語形へ拡張するか、素材プロンプトで rev-highlight 抜き出力を徹底する価値あり**。
+  4. **carry-forward 不要**：素材が §REF(13リンク)/§REL(6件=写真家4+運動2)/出典(38) すべて充実・「準備中」マーカー0。
+     keyword chip は素材 rich 版6語（engine 改善どおり bundle 由来）。
+  5. **EN field-merge**：bundle 出力を en-content.json 既存エントリへ空値スキップ merge（更新15フィールド・
+     保全4=photobooks 229/external_links 660/footer 468/jsonld 2056）。他 slug 差分0 assert・末尾改行なし dump。
+  6. **ui-terms 追加 2件**：works_labels「TOP Museum - 展覧会作品」「TOP Museum - 黄色い野生の花」
+     （untranslated WARN 2件解消・EN素材の "Exhibition Works"/"Yellow Wildflowers" 表記に統一）。
+- **サーフェス変更数**：4ファイル更新（JA/EN 個別ページ・en-content.json・ui-terms.json）。card-data/supplement.js/
+  star bin/archive/era/国/運動は不触（既存写真家）。未追跡=backup 2件+spec 1件（stage しない）。
+- **フィデリティ**：本文 787→9,849字・出典 3→38・sup-ref 5→88・§REL 2→6・作品リンク 0→3。
+  **JA==EN cite 38 / supref 88 一致・dangling 0（両言語）**。Period 3箇所 `1990–2000s` 保持・description lead 由来自動充填。
+- **検証**：check_new_photographer OK / check_content_loss OK / preflight **OK・FAIL 0**。WARN 2件のみ＝
+  nosnippet JA 9→8 / EN 8→7（prep-block→実コンテンツ置換の正当減少・lieko/miyako と同型）。
+  GA/canonical/hreflang/OG/JSON-LD 引き継ぎ・§REL 全リンク（JA root絶対形式・EN /en/ 形式）の実在を監督側で独立再確認。
+- **発火した engine 改良**：keyword bundle 由来注入・description 自動充填・Period spec 化（正常動作）。
+- **分業**：fable監督・Opusサブエージェント実装（48 tool uses / 約6.4分 / subagent約68kトークン）。
