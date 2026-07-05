@@ -13,6 +13,7 @@ books/further/sources）と spec だけに依存し、素材の outer layout・s
 ブラックボックスで確認する（hermetic＝外部コーパス非依存・リポ内 card-data と
 ansel-adams scaffold のみ使用）。
 """
+import json
 import sys
 from pathlib import Path
 
@@ -243,6 +244,198 @@ def test_unwrap_revision_word_spans() -> None:
           "unwrap・非revネスト保持・self_check残存/CSS検知OK")
 
 
+def test_bare_revision_and_nonspan_rev_classes() -> None:
+    """裸 `revision`（接尾辞なし）と span 以外の要素の rev クラス対応
+    （mika-ninagawa 素材で `<p class="revision">` 27箇所が render へ素通りした実害の
+    再発防止）。誤爆ガード（review / revised / revisionist / ph-rev-* は不可触）も検証。"""
+    from import_chatgpt_photographer import (
+        clean_rev_markup, strip_rev_class_tokens, strip_review_css)
+
+    # 1) 裸 revision: 純 rev span は unwrap、<p class="revision"> は要素保持で属性削除
+    src = ('<span class="revision">a</span>'
+           '<p class="revision">本文</p>'
+           '<p class="revision revision-v4">両方rev</p>')
+    out = clean_rev_markup(src)
+    assert out == 'a<p>本文</p><p>両方rev</p>', \
+        f"FAIL: 裸 revision の unwrap/属性削除が不正: {out!r}"
+
+    # 2) 複合クラス（mika 実素材の形）: 要素保持・rev トークンだけ除去
+    src2 = ('<div class="ph-cite revision-final" id="cite-1">c</div>'
+            '<a class="chip-link revision-v3" href="https://x">L</a>'
+            '<p class="ph-thesis__body revision">t</p>'
+            '<div class="essay revision">e</div>'
+            '<li class="revision-new">i</li>'
+            '<span class="ph-section__name revision-final">n</span>')
+    out2 = clean_rev_markup(src2)
+    assert out2 == ('<div class="ph-cite" id="cite-1">c</div>'
+                    '<a class="chip-link" href="https://x">L</a>'
+                    '<p class="ph-thesis__body">t</p>'
+                    '<div class="essay">e</div>'
+                    '<li>i</li>'
+                    '<span class="ph-section__name">n</span>'), \
+        f"FAIL: 複合クラスの rev トークン除去が不正: {out2!r}"
+
+    # 3) 誤爆ガード: rev を含むだけの正規クラス・単語はトークン fullmatch 外＝不可触
+    src3 = ('<p class="review">r</p><p class="revised">s</p>'
+            '<div class="ph-rev-note">n</div><span class="revisionist">z</span>'
+            '<p>本文中の revision という単語や review 文字列も無事</p>')
+    assert clean_rev_markup(src3) == src3, \
+        "FAIL: 正規クラス（review/revised/ph-rev-*/revisionist）が誤って消された"
+    assert strip_rev_class_tokens(src3) == src3
+
+    # 4) self_check がタグ種を問わず rev トークン残存を検知する
+    for dirty in ('<p class="revision">残</p>',
+                  '<div class="ph-cite revision-final">残</div>',
+                  '<li class="revision-new">残</li>'):
+        try:
+            self_check(dirty, context="test")
+            raise AssertionError(f"FAIL: self_check が非span rev 残存を検知できていない: {dirty!r}")
+        except AssertionError as e:
+            if "検知できていない" in str(e):
+                raise
+    # 正規クラスでは fail しない
+    self_check('<p class="review">ok</p><span class="revisionist">ok</span>',
+               context="test")
+
+    # 5) CSS 除去: 裸 .revision ルールは除去・.revisionist 等の正規ルールは保持
+    css = ('<style>.revision { background: yellow } '
+           '.revision-final { color: red } '
+           '.revisionist { color: blue } '
+           '.essay p { margin: 0 }</style><p>x</p>')
+    out5 = strip_review_css(css)
+    assert '.revision {' not in out5 and '.revision-final' not in out5, \
+        f"FAIL: 裸 .revision / .revision-final ルールが除去されていない: {out5!r}"
+    assert '.revisionist { color: blue }' in out5 and '.essay p { margin: 0 }' in out5, \
+        f"FAIL: 正規 CSS ルールが誤って消された: {out5!r}"
+
+    print("test_bare_revision_and_nonspan_rev_classes PASS: 裸revision unwrap/属性削除・"
+          "非span複合クラスのトークン除去・誤爆ガード・self_check/CSS連動OK")
+
+
+def test_en_merge_skip_empty_and_invariance() -> None:
+    """③ EN field-merge のロジック: skip-empty（空値で既存を消さない・bundle 非生成
+    フィールドを保全）と、他 slug が byte/値レベルで不変であることを検証する。"""
+    from import_chatgpt_photographer import (
+        _apply_merge, _merge_field_plan, _assert_only_key_changed,
+        _is_empty_merge_value, _dump_content_json)
+
+    # skip-empty: 新値が空('', None, [], {})なら既存維持。非空なら上書き。add も。
+    current = {
+        "h1": "Old Name", "lead_html": "<p>old lead</p>",
+        "sources_html": "<div>old</div>",
+        # bundle_to_en_entry が生成しないフィールド（保全されるべき）:
+        "entry_meta_html": "<dl>KEEP</dl>", "photobooks_html": "<div>KEEP</div>",
+        "footer_html": "<footer>KEEP</footer>",
+    }
+    new = {
+        "h1": "New Name",            # replace
+        "lead_html": "",             # skip-empty（空で消さない）
+        "sources_html": None,        # skip-empty
+        "keywords_html": "<div>kw</div>",  # add
+        # entry_meta_html 等は new に無い → 保全
+    }
+    merged = _apply_merge(current, new)
+    assert merged["h1"] == "New Name", "FAIL: 非空フィールドが replace されていない"
+    assert merged["lead_html"] == "<p>old lead</p>", \
+        "FAIL: 空文字で既存 lead が消された（skip-empty 破れ）"
+    assert merged["sources_html"] == "<div>old</div>", \
+        "FAIL: None で既存 sources が消された"
+    assert merged["keywords_html"] == "<div>kw</div>", "FAIL: 新規 add されていない"
+    for k in ("entry_meta_html", "photobooks_html", "footer_html"):
+        assert merged[k] == current[k], f"FAIL: bundle 非生成フィールド {k} が保全されていない"
+
+    assert _is_empty_merge_value("") and _is_empty_merge_value(None) \
+        and _is_empty_merge_value([]) and _is_empty_merge_value({}), \
+        "FAIL: 空値判定が不正"
+    assert not _is_empty_merge_value("x") and not _is_empty_merge_value(["x"]), \
+        "FAIL: 非空を空と誤判定"
+
+    plan = {p["key"]: p["action"] for p in _merge_field_plan(current, new)}
+    assert plan["h1"] == "replace", f"FAIL: h1 plan={plan['h1']}"
+    assert plan["lead_html"] == "skip-empty", f"FAIL: lead plan={plan['lead_html']}"
+    assert plan["keywords_html"] == "add", f"FAIL: keywords plan={plan['keywords_html']}"
+    assert plan["entry_meta_html"] == "skip-empty", \
+        f"FAIL: 非生成 entry_meta plan={plan['entry_meta_html']}"
+
+    # 他 slug 不変 assert: 対象 slug 以外のエントリを1文字でも変えたら fail する
+    content = {"_meta": {"count": 2}, "pages": {
+        "target.html": dict(current), "other.html": {"h1": "Untouched"}}}
+    good = {"_meta": {"count": 2}, "pages": {
+        "target.html": merged, "other.html": {"h1": "Untouched"}}}
+    _assert_only_key_changed(content, good, "target.html")  # 通る
+    bad = {"_meta": {"count": 2}, "pages": {
+        "target.html": merged, "other.html": {"h1": "Tampered"}}}
+    try:
+        _assert_only_key_changed(content, bad, "target.html")
+        raise AssertionError("FAIL: 他 slug 改変を assert が検知できていない")
+    except AssertionError as e:
+        if "検知できていない" in str(e):
+            raise
+    # _meta 改変も検知
+    bad_meta = {"_meta": {"count": 99}, "pages": good["pages"]}
+    try:
+        _assert_only_key_changed(content, bad_meta, "target.html")
+        raise AssertionError("FAIL: _meta 改変を assert が検知できていない")
+    except AssertionError as e:
+        if "検知できていない" in str(e):
+            raise
+
+    # dump が round-trip byte 一致（末尾改行なし・churn なし）
+    d = {"_meta": {"count": 1}, "pages": {"x.html": {"h1": "あ", "years": "1970–"}}}
+    assert json.loads(_dump_content_json(d)) == d, "FAIL: dump round-trip 破れ"
+    assert not _dump_content_json(d).endswith("\n"), "FAIL: dump 末尾に改行"
+
+    print("test_en_merge_skip_empty_and_invariance PASS: skip-empty で空値既存維持・"
+          "bundle非生成フィールド保全・他slug/_meta不変assert・dump churnなし")
+
+
+def test_update_existing_carry_forward_helpers() -> None:
+    """④ carry-forward のロジック: §REF body 抽出・backup 必須ガード・検証失敗時の
+    ロールバックを、リポの実ページに触れずに検証する（JA_DIR を tmp へ差し替え）。"""
+    import tempfile
+    import import_chatgpt_photographer as imp
+    from import_chatgpt_photographer import _extract_ref_body
+
+    # §REF body 抽出（_set_section_body と対称・div 入れ子対応）
+    page = (
+        '<section class="ph-section"><div class="ph-section__head">'
+        '<div class="ph-section__title">'
+        '<span class="ph-section__num">§ REF</span>'
+        '<span class="ph-section__name">さらに読む</span></div></div>'
+        '<div class="ph-section__body">'
+        '<ul class="ph-further-links"><li><a href="https://ex.org/db">DB'
+        '</a></li></ul></div></section>')
+    ref = _extract_ref_body(page)
+    assert ref and "ph-further-links" in ref and "https://ex.org/db" in ref, \
+        f"FAIL: §REF body 抽出が不正: {ref!r}"
+    assert _extract_ref_body('<div>no ref</div>') is None, \
+        "FAIL: §REF が無いのに None を返さない"
+
+    # backup 必須ガード（安全契約 b）: backup が無ければ書込せず非0
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        orig_ja = imp.JA_DIR
+        try:
+            imp.JA_DIR = tmp
+            (tmp / "someone.html").write_text("<html>current</html>", encoding="utf-8")
+            # backup 無し → rc=2 で停止、ページ不変
+            spec = {"id": "someone"}
+            o = {"body_chars": 100, "unique_cites": 2, "suprefs": 2,
+                 "ref_links": 1, "ref_is_prep": False}
+            n = {"ref_is_prep": True, "ref_links": 0}
+            rc = imp._apply_update_existing(
+                "someone", spec, {}, "<html>old</html>",
+                "<html>new</html>", o, n)
+            assert rc == 2, f"FAIL: backup 無しで停止していない（rc={rc}）"
+            assert (tmp / "someone.html").read_text(encoding="utf-8") == \
+                "<html>current</html>", "FAIL: backup 無しなのにページが書き換わった"
+        finally:
+            imp.JA_DIR = orig_ja
+
+    print("test_update_existing_carry_forward_helpers PASS: §REF抽出・backup必須ガード"
+          "（無backupで無書込・非0終了）OK")
+
+
 def main() -> int:
     ba, _ = extract_bundle(SOURCE_A, "ja", slug=SPEC["id"])
     bb, _ = extract_bundle(SOURCE_B, "ja", slug=SPEC["id"])
@@ -307,6 +500,9 @@ def main() -> int:
 
     test_unwrap_rev_spans_multidigit()
     test_unwrap_revision_word_spans()
+    test_bare_revision_and_nonspan_rev_classes()
+    test_en_merge_skip_empty_and_invariance()
+    test_update_existing_carry_forward_helpers()
     return 0
 
 

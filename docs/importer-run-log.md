@@ -658,3 +658,17 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：再生成HTMLが現行と**byte一致**（cmp＋監督側の独立再ビルドでも差分0）。他slug差分0・check_content_loss OK・preflight OK。
 - **分業**：fable監督・Sonnetサブエージェント実装（14 tool uses / 約2.9分 / 約46kトークン。初回spawnが誤待機停止→再指示1回）。
 - **wall-time**：（Daisuke 記入）
+
+## 2026-07-05 — mika-ninagawa 刷新（update・新素材差し替え）＋③④実装初実走＋Amazonリンク13本
+
+- **種別**：update（既存815字→新素材6143字の全文刷新）。素材=re-photographer/mika-ninagawa.html（JA/EN・v5.1 ph-*）。
+- **③④をこの案件で実装**（Daisuke指示どおり実案件検証しながら・Opusサブエージェント実装/fable監督）：
+  - **③ `--merge-to-en`**＝EN field-merge のCLI化。既定dry-run（field別 add/replace/preserve/skip-empty計画表示）→`--apply`でatomic書込。skip-empty・他slug/_meta byte不変assert・違反時ロールバック・HAND_MAINTAINED_EN拒否・末尾改行なしdump（round-trip byte一致実測）。
+  - **④ `--update-existing --apply`**＝carry-forward実適用の解禁実装。安全契約(a)-(f)全部=--applyなし常時dry-run／backup必須（--prepare前段）／render→description注入→§REFスプライス／適用後検証（§REF実在・フィデリティ非減少・dangling 0・check_content_loss）／失敗時自動ロールバック／書込対象1ファイル限定。
+- **engineバグ発見1件（修正済）**：①のREV_CLASS_PATが**裸 `revision`（接尾辞なし）とspan以外の要素class属性**（`<p class="revision">`×27）を素通し。→PAT拡張＋`strip_rev_class_tokens()`（全要素class属性からトークン単位除去・review/revisionist等は誤爆ガード）＋self_check全要素化。テスト追加。修正後再適用でrev 0。
+- **実走**：--prepare→④apply（1回目でrev残存発見→importer修正→再apply）→③apply→build --force。works固有名 ui-terms 1件追加（東京都庭園美術館 - 瞬く光の庭）。
+- **結果**：本文815→6143字・出典5→30・sup-ref 5→64（JA==EN 65一致・dangling 0）・§REL 1→6件・作品リンク0→5。check_new_photographer/check_content_loss OK。
+- **preflight**：FAIL 1件=EN正本の旧公式バイオURL消失（www.mikaninagawa.com/html/biography/→mikaninagawa.com/biography/への意図的置換・新URL 200確認済）＝jikei同型の正常フラグ。WARN=data-nosnippet減（scaffold正典標準数）。
+- **Amazonリンク**：JA7冊（§REF内ph-book）/EN6冊（正本photobooks_html経由→再生成）。タイトル・出版社・年はAmazon実ページから取得（Sonnetサブエージェント）、一言解説は商品説明＋本文出典済み記述＋nippon.com裏取り（Pink Rose Suite=木村伊兵衛賞対象）準拠・捏造なし。
+- **分業**：fable監督・監査／Opus=③④実装＋①穴修正（2走・計約70万tok）／Sonnet=Amazonタイトル・説明取得（2走・計約10万tok）。
+- **wall-time**：約26分（Daisuke実測。③④実装＋①穴修正＋Amazonリンク13冊を同一案件に同梱した時間）

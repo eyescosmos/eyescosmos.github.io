@@ -75,11 +75,38 @@ def repo_file_exists(rel: str) -> bool:
 
 # ── 決定論変換（JA / EN 共有） ─────────────────────────────────────────────
 
-# rev ハイライトのクラス語形: 数字形 rev19 と語形 revision-fifth の両系統
-# （lieko=数字形 / yurie=語形。素材世代でつづりが揺れるため両対応）
-REV_CLASS_PAT = r'rev[0-9]+|revision-[a-z0-9]+(?:-[a-z0-9]+)*'
+# rev ハイライトのクラス語形: 数字形 rev19 / 語形 revision-fifth / 裸 revision の3系統
+# （lieko=数字形 / yurie=語形 / mika=裸 revision＋非span要素。素材世代で揺れるため3対応）
+REV_CLASS_PAT = r'rev[0-9]+|revision(?:-[a-z0-9]+(?:-[a-z0-9]+)*)?'
 REV_OPEN_RE = re.compile(r'<span class="(?:' + REV_CLASS_PAT + r')">')
 SPAN_TAG_RE = re.compile(r'<span\b[^>]*>|</span>')
+# トークン単位 fullmatch 判定（誤爆ガード: review / revised / revisionist / ph-rev-* 等の
+# 「rev を含むだけ」の正規クラスは消さない。判定は class トークン全体一致のみ）
+REV_TOKEN_FULL_RE = re.compile(r'(?:' + REV_CLASS_PAT + r')\Z')
+
+
+def strip_rev_class_tokens(html: str) -> str:
+    """unwrap の後段パス: span 以外の要素（<p class="revision"> / <div class="ph-cite
+    revision-final"> / <a class="chip-link revision-v3"> 等）や複合クラス span の
+    class 属性から rev トークンだけ除去する（要素自体は保持）。トークンが rev のみ
+    なら class 属性ごと削除（<p class="revision"> → <p>）。mika 素材の実害
+    （裸 revision 27箇所が render へ素通り）の恒久修正。"""
+    def repl(m: re.Match) -> str:
+        tokens = m.group(2).split()
+        kept = [t for t in tokens if not REV_TOKEN_FULL_RE.match(t)]
+        if kept == tokens:
+            return m.group(0)  # rev トークンなし＝無変更（churn 回避）
+        if not kept:
+            return ""  # rev のみ → class 属性ごと削除（先行スペースも落とす）
+        return f'{m.group(1)}class="{" ".join(kept)}"'
+    return re.sub(r'(\s?)class="([^"]*)"', repl, html)
+
+
+def clean_rev_markup(html: str) -> str:
+    """rev ハイライト除去の正規手順（1呼び出しで完結）:
+    ①純 rev span を unwrap（要素ごと除去・中身保持）
+    ②残る class 属性から rev トークンを除去（非 span / 複合クラス対応）。"""
+    return strip_rev_class_tokens(unwrap_rev_spans(html))
 
 
 def strip_edit_red(html: str) -> str:
@@ -91,9 +118,11 @@ def strip_edit_red(html: str) -> str:
     return re.sub(r'class="([^"]*)"', repl, html)
 
 
-# レビュー用 CSS（`.edit-red`/`.revN`/`.revision-*` セレクタのルール）と注釈コメント
+# レビュー用 CSS（`.edit-red`/`.revN`/`.revision(-*)` セレクタのルール）と注釈コメント。
+# 末尾 lookahead はセレクタ境界の誤爆ガード（`.revisionist` 等の正規クラスへの
+# 前方一致で正当なルールを消さない）。
 REVIEW_CSS_RULE_RE = re.compile(
-    r'[^{}]*\.(?:edit-red|' + REV_CLASS_PAT + r')[^{}]*\{[^}]*\}')
+    r'[^{}]*\.(?:edit-red|' + REV_CLASS_PAT + r')(?![A-Za-z0-9_-])[^{}]*\{[^}]*\}')
 REVIEW_COMMENT_RE = re.compile(r'/\*\s*revision preview\s*\*/')
 
 
@@ -250,10 +279,15 @@ def self_check(html: str, *, context: str) -> list[str]:
     n_close = len(re.findall(r"</span>", html))
     if n_open != n_close:
         raise AssertionError(f"[{context}] span 開閉数が不一致: open={n_open} close={n_close}")
-    if re.search(r'<span class="(?:' + REV_CLASS_PAT + r')"', html):
-        raise AssertionError(f"[{context}] rev スパンが残存している")
-    if re.search(r'\.(?:edit-red|' + REV_CLASS_PAT + r')\b', html):
-        raise AssertionError(f"[{context}] レビュー用 CSS セレクタ（.edit-red/.revN）が残存している")
+    # rev クラス残存はタグ種を問わず class トークン単位で検知（<p class="revision"> /
+    # 複合 class="ph-cite revision-final" 等も検出。review 等の正規クラスは fullmatch 外）
+    for m in re.finditer(r'class="([^"]*)"', html):
+        for tok in m.group(1).split():
+            if REV_TOKEN_FULL_RE.match(tok):
+                raise AssertionError(
+                    f"[{context}] rev クラストークンが残存している: {tok!r}（{m.group(0)}）")
+    if re.search(r'\.(?:edit-red|' + REV_CLASS_PAT + r')(?![A-Za-z0-9_-])', html):
+        raise AssertionError(f"[{context}] レビュー用 CSS セレクタ（.edit-red/.revN/.revision）が残存している")
     if "edit-red" in html:
         raise AssertionError(f"[{context}] edit-red トークンが残存している")
     notes.append(f"span balance OK ({n_open}) / rev・edit-red・レビューCSS 残存ゼロ")
@@ -275,13 +309,19 @@ def resolve_idx(slug: str, override: int | None) -> tuple[int, str]:
 
 # ── JA 整形パイプライン ────────────────────────────────────────────────────
 
+def _count_rev_tokens(html: str) -> int:
+    """class 属性内の rev トークン総数（span 以外・複合クラス込み。報告用）。"""
+    return sum(1 for m in re.finditer(r'class="([^"]*)"', html)
+               for t in m.group(1).split() if REV_TOKEN_FULL_RE.match(t))
+
+
 def process_ja(html: str, idx: int) -> tuple[str, dict]:
     report: dict = {}
-    n_rev = len(REV_OPEN_RE.findall(html))
+    n_rev = _count_rev_tokens(html)
     n_editred = html.count("edit-red")
     html = strip_review_css(html)
     html = strip_edit_red(html)
-    html = unwrap_rev_spans(html)
+    html = clean_rev_markup(html)
     html, old_no, new_no = renumber_eyebrow(html, idx)
     html, delinked = delink_missing(html, repo_file_exists, label="JA")
     report["rev_unwrapped"] = n_rev
@@ -430,9 +470,9 @@ def _extract_family_a(body: str, fields: dict, meta: dict) -> None:
 def extract_en_candidate_fields(en_html: str, slug: str) -> tuple[dict, dict]:
     """EN 素材から正本候補フィールドを抽出（正本 JSON には書かない）。
     返り値: (fields, meta)。fields は EN_CANDIDATE_FIELDS をキーに持つ（無いものは None）。"""
-    n_rev = len(REV_OPEN_RE.findall(en_html))
+    n_rev = _count_rev_tokens(en_html)
     n_editred = en_html.count("edit-red")
-    cleaned = unwrap_rev_spans(strip_edit_red(strip_review_css(en_html)))
+    cleaned = clean_rev_markup(strip_edit_red(strip_review_css(en_html)))
     cleaned, delinked = localize_en_links(cleaned)
     body = _body_of(cleaned)
 
@@ -773,7 +813,7 @@ def extract_bundle(raw_html: str, source_lang: str,
     抽出は純粋関数のまま・監査は中断せず観測できる）。"""
     if source_lang not in ("ja", "en"):
         raise ValueError(f"source_lang は 'ja' / 'en' のみ: {source_lang!r}")
-    cleaned = unwrap_rev_spans(strip_edit_red(strip_review_css(raw_html)))
+    cleaned = clean_rev_markup(strip_edit_red(strip_review_css(raw_html)))
     delinked: list[str] = []
     if source_lang == "en":
         cleaned, delinked = localize_en_links(cleaned)
@@ -1404,6 +1444,198 @@ def run_bundle_to_en(material: Path, slug: str | None, lang: str | None) -> int:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# ③ EN field-merge（--merge-to-en）— bundle_to_en_entry の出力を正本
+# data/photographers-en-content.json の pages[<slug>.html] へ skip-empty マージ。
+#
+# 安全契約（Daisuke 解禁・段階）:
+#   - 既定は dry-run レポート。フィールドごとに preserve / replace / add を明示表示。
+#   - --apply 指定時のみ書込。merge = dict(current) を土台に、新値が空(''/None/[]/{})
+#     でないフィールドだけ上書き（skip-empty＝空値で既存を消さない）。entry_meta_html /
+#     footer_html / jsonld / external_links_html / photobooks_html / notable_works_html は
+#     bundle_to_en_entry が生成しない（キーに無い）ため自動的に保全される。
+#   - dump は現ファイルと byte 一致（ensure_ascii=False / indent=2 / 末尾改行なし）。
+#     読込→無変更ダンプが byte 一致することを実測確認済み。
+#   - 書込後 assert: 対象 slug の 1 ブロック以外は byte/値レベルで不変
+#     （_assert_only_key_changed を content.json トップレベル {_meta,pages} で流用）。
+#     違反したら書込前スナップショットへ巻き戻して失敗終了。
+#   - 手書き維持ページ（HAND_MAINTAINED_EN）は拒否。
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _rel(path: Path):
+    """REPO 相対表示（REPO 外なら絶対のまま）。書込成功後の print で
+    .relative_to が ValueError で落ちないようにする防御。"""
+    try:
+        return path.relative_to(REPO)
+    except ValueError:
+        return path
+
+
+def _is_empty_merge_value(v) -> bool:
+    """skip-empty 判定: 空文字 / None / 空 list / 空 dict は「空」= 既存を消さない。
+    0 や False は「空」扱いしない（EN entry には現れないが安全側）。"""
+    return v in ("", None) or (isinstance(v, (list, dict)) and len(v) == 0)
+
+
+def _dump_content_json(data) -> str:
+    """content.json の既存フォーマットに完全一致する dump（ensure_ascii=False,
+    indent=2, 末尾改行なし）。round-trip byte 一致を実測確認済み。"""
+    return json.dumps(data, ensure_ascii=False, indent=2)
+
+
+# ③ で明示レポートする主要フィールド（表示順・§13/付録A の要注意群）。
+# ここに無いキーも merge 対象（下の all_keys ループが拾う）だが、まず主要群を並べる。
+MERGE_REPORT_KEYS = [
+    "h1", "years", "title", "meta_description",
+    "lead_html", "thesis_html", "sections", "sources_html",
+    "site_directory_html", "keywords_html", "view_works_links_html",
+    "further_reading_html", "related_annotations",
+    "canonical", "hreflang", "og", "twitter", "has_ga",
+]
+
+
+def _merge_field_plan(current: dict, new: dict) -> list:
+    """フィールドごとの merge 計画（表示用）。返り値は
+    [{key, action('preserve'|'replace'|'add'|'skip-empty'), old_len, new_len, note}]。
+    action の意味:
+      add        : current に無く new が非空 → 追加
+      replace    : current にあり new が非空で異なる → 置換
+      preserve   : new が非空だが current と同値 → 無変更
+      skip-empty : new が空 or new にキーが無い → 既存維持（空値で消さない）
+    """
+    def _clen(v):
+        if v is None:
+            return 0
+        if isinstance(v, str):
+            return len(v)
+        return len(json.dumps(v, ensure_ascii=False))
+
+    ordered = [k for k in MERGE_REPORT_KEYS if (k in current or k in new)]
+    ordered += [k for k in sorted(set(current) | set(new)) if k not in MERGE_REPORT_KEYS]
+    plan = []
+    for k in ordered:
+        in_cur, in_new = k in current, k in new
+        nv = new.get(k)
+        cv = current.get(k)
+        if not in_new or _is_empty_merge_value(nv):
+            action, note = "skip-empty", ("bundle 非生成" if not in_new else "新値が空")
+        elif not in_cur or _is_empty_merge_value(cv):
+            action, note = "add", ""
+        elif cv == nv:
+            action, note = "preserve", "同値"
+        else:
+            action, note = "replace", ""
+        plan.append({"key": k, "action": action,
+                     "old_len": _clen(cv), "new_len": _clen(nv), "note": note})
+    return plan
+
+
+def _apply_merge(current: dict, new: dict) -> dict:
+    """skip-empty マージ: merged=dict(current); 新値が非空のフィールドだけ上書き。
+    bundle_to_en_entry が生成しないキー（entry_meta_html/footer_html/jsonld/
+    external_links_html/photobooks_html/notable_works_html）は new に無く自動保全。"""
+    merged = dict(current)
+    for k, v in new.items():
+        if not _is_empty_merge_value(v):
+            merged[k] = v
+    return merged
+
+
+def merge_bundle_to_en_json(bundle: dict, slug: str, apply: bool) -> int:
+    """③: EN bundle → en-content エントリを既存正本 pages[<slug>.html] へ skip-empty
+    マージ。既定 dry-run（フィールド plan 表示）、--apply で実書込（他 slug 不変 assert・
+    失敗ロールバック）。手書き維持ページは拒否。"""
+    key = slug + ".html"
+    print(f"③ EN field-merge  slug={slug}  key={key}  mode={'APPLY' if apply else 'dry-run'}")
+
+    if key in HAND_MAINTAINED_EN:
+        sys.stderr.write(f"ERROR: {key} は手書き維持ページ。マージを拒否（HAND_MAINTAINED_EN）。\n")
+        return 2
+    if not CONTENT_JSON.exists():
+        sys.stderr.write(f"ERROR: 正本 JSON が無い: {CONTENT_JSON}\n")
+        return 2
+
+    try:
+        new_entry = bundle_to_en_entry(bundle, slug=slug)
+    except BundleIncomplete as e:
+        sys.stderr.write(f"ERROR: {e}\n")
+        return 1
+
+    content_orig = CONTENT_JSON.read_text(encoding="utf-8")
+    content = json.loads(content_orig)
+    pages = content.setdefault("pages", {})
+    current = pages.get(key, {})
+    is_new = key not in pages
+
+    plan = _merge_field_plan(current, new_entry)
+    print(f"  対象 entry : {'新規追加（pages に未登録）' if is_new else '既存を skip-empty マージ'}")
+    print("  ── フィールド別 merge 計画 ──")
+    print(f"  {'field':<26}{'action':<12}{'len(old→new)':<16}note")
+    for p in plan:
+        lens = f"{p['old_len']}→{p['new_len']}"
+        print(f"  {p['key']:<26}{p['action']:<12}{lens:<16}{p['note']}")
+    counts = {}
+    for p in plan:
+        counts[p["action"]] = counts.get(p["action"], 0) + 1
+    print(f"  合計: " + " / ".join(f"{a}={counts.get(a,0)}"
+          for a in ("add", "replace", "preserve", "skip-empty")))
+    preserved = [p["key"] for p in plan
+                 if p["action"] == "skip-empty" and p["key"] in current]
+    if preserved:
+        print(f"  保全（新が空/非生成で既存維持）: {preserved}")
+
+    merged = _apply_merge(current, new_entry)
+    new_content = copy.deepcopy(content)
+    new_content["pages"][key] = merged
+    # 他 slug が byte/値レベルで不変であることを assert（_meta も比較）
+    _assert_only_key_changed(content, new_content, key)
+    new_text = _dump_content_json(new_content)
+
+    if not apply:
+        print("\n  (dry-run) 正本 JSON 未書込。実書込は `--apply` を付ける。")
+        print("  次（apply 後）: python3 scripts/build_photographers_en.py "
+              f"--slug {slug} --force  → check_new_photographer / preflight")
+        return 0
+
+    # ── トランザクション: 書込後に再パースして他 slug 不変を再検証、違反で巻き戻し ──
+    tmp = CONTENT_JSON.with_name(CONTENT_JSON.name + ".tmp")
+    tmp.write_text(new_text, encoding="utf-8")
+    os.replace(tmp, CONTENT_JSON)  # atomic
+    print(f"  ✅ 正本 JSON atomic 書込: {_rel(CONTENT_JSON)}")
+
+    # 書込後 assert: 読み直して他 slug 不変を byte/値で再確認（ディスク上の実体で検証）
+    try:
+        reread = json.loads(CONTENT_JSON.read_text(encoding="utf-8"))
+        _assert_only_key_changed(json.loads(content_orig), reread, key)
+        # 対象 slug エントリが意図どおり merged と一致
+        assert reread["pages"][key] == merged, "対象 slug エントリが書込内容と不一致"
+    except (AssertionError, KeyError, ValueError) as e:
+        # ロールバック
+        rb = CONTENT_JSON.with_name(CONTENT_JSON.name + ".rbtmp")
+        rb.write_text(content_orig, encoding="utf-8")
+        os.replace(rb, CONTENT_JSON)
+        sys.stderr.write(f"\nERROR: 書込後検証に失敗（{e}）。\n"
+                         "↩ ロールバック完了: data/photographers-en-content.json を書込前へ復元した。\n")
+        return 3
+    print("  書込後検証 : OK（対象 slug 以外は byte/値不変・対象 entry は merged と一致）")
+    print("  次: python3 scripts/build_photographers_en.py "
+          f"--slug {slug} --force  → check_new_photographer / preflight")
+    return 0
+
+
+def run_merge_to_en(material: Path, slug: str | None, lang: str | None,
+                    apply: bool) -> int:
+    """③ CLI エントリ: EN 素材から bundle を抽出し merge_bundle_to_en_json を呼ぶ。"""
+    if not material.exists():
+        sys.stderr.write(f"ERROR: EN 素材が見つからない: {material}\n")
+        return 2
+    slug = slug or material.stem
+    bundle, _info = extract_bundle(
+        material.read_text(encoding="utf-8", errors="replace"),
+        lang or "en", slug=slug)
+    return merge_bundle_to_en_json(bundle, slug, apply)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # 既存ページ更新モード（A=carry-forward 計画 / B=spec 自動導出 / D=フィデリティ差分）
 #
 # 既存写真家の本文を新素材へ差し替える更新案件向け。read-only（--dry-run のみ）。
@@ -1504,11 +1736,133 @@ def _prepare_update(slug: str, spec: dict) -> None:
     print("    次: spec の period/movements を確認・編集 → importer を --apply --force で実行")
 
 
+def _extract_ref_body(html: str) -> str | None:
+    """§ REF の ph-section__body 内側 HTML を返す（carry-forward splice 用）。
+    _set_section_body と対称: <span class="ph-section__num">§ REF</span> の後の
+    ph-section__body の内側だけ切り出す（節末 </section> で閉じない・div 入れ子対応）。"""
+    m = re.search(r'<span class="ph-section__num">§ REF</span>', html)
+    if not m:
+        return None
+    bstart = html.find('<div class="ph-section__body">', m.end())
+    if bstart < 0:
+        return None
+    open_end = bstart + len('<div class="ph-section__body">')
+    depth, end = 1, None
+    for t in re.compile(r'<div\b|</div>').finditer(html, open_end):
+        if t.group(0) == '</div>':
+            depth -= 1
+            if depth == 0:
+                end = t.start()
+                break
+        else:
+            depth += 1
+    if end is None:
+        return None
+    return html[open_end:end].strip()
+
+
+def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
+                           new_html: str, o: dict, n: dict) -> int:
+    """④ carry-forward の実適用（安全契約 b–f）。photographers/<slug>.html のみ書込。
+    返り値 0=成功、非0=失敗（呼び元が非ゼロ終了）。検証失敗は自動ロールバック。"""
+    page = JA_DIR / f"{slug}.html"
+    backup = page.with_name(page.stem + "-backup" + page.suffix)
+
+    # (b) backup 必須（--prepare 済みを要求）
+    if not backup.exists():
+        try:
+            shown = backup.relative_to(REPO)
+        except ValueError:
+            shown = backup
+        sys.stderr.write(
+            f"ERROR: backup が無い（{shown}）。"
+            "先に `--update-existing --prepare` を実行せよ（安全契約 b）。\n")
+        return 2
+
+    # (c) 適用内容: new_html は既に render_ja_page 出力（description 注入込み）。
+    # §REF/further が新素材で「準備中」なら旧ページの §REF body を splice。
+    carried_ref = False
+    if n["ref_is_prep"] and o["ref_links"]:
+        old_ref = _extract_ref_body(old_html)
+        if old_ref:
+            spliced = _set_section_body(new_html, "§ REF", old_ref)
+            if spliced != new_html:
+                new_html = spliced
+                carried_ref = True
+            else:
+                sys.stderr.write("ERROR: §REF splice に失敗（新ページに §REF 節が無い）。\n")
+                return 3
+    n2 = _ja_metrics(new_html)  # splice 後の指標で検証
+
+    # (d) 検証（書込前に評価）: 引き継いだ §REF が新ページに実在 / フィデリティ非減少 /
+    #     dangling ゼロ。失敗なら書込まず（＝ロールバック不要）に非ゼロ終了。
+    problems = []
+    if carried_ref:
+        old_ref_norm = norm_text(_extract_ref_body(old_html))
+        if old_ref_norm and old_ref_norm not in norm_text(new_html):
+            problems.append("carry-forward した §REF 内容が新ページに見当たらない")
+        if n2["ref_is_prep"]:
+            problems.append("§REF が splice 後も「準備中」のまま")
+    if n2["body_chars"] < o["body_chars"]:
+        problems.append(f"本文字数が減少（{o['body_chars']}→{n2['body_chars']}）")
+    if n2["unique_cites"] < o["unique_cites"]:
+        problems.append(f"unique 出典が減少（{o['unique_cites']}→{n2['unique_cites']}）")
+    if n2["suprefs"] < o["suprefs"]:
+        problems.append(f"sup-ref が減少（{o['suprefs']}→{n2['suprefs']}）")
+    if n2["dangling"]:
+        problems.append(f"dangling sup-ref: {n2['dangling']}")
+    if problems:
+        sys.stderr.write("ERROR: 適用前検証に失敗（書込せず中止・安全契約 d）:\n")
+        for p in problems:
+            sys.stderr.write(f"  ✗ {p}\n")
+        return 3
+
+    # (f) 書込対象は photographers/<slug>.html のみ。スナップショットを取ってから書込。
+    snapshot = page.read_text(encoding="utf-8")  # ロールバック用（= 変更前の実体）
+    tmp = page.with_name(page.name + ".tmp")
+    tmp.write_text(new_html, encoding="utf-8")
+    os.replace(tmp, page)  # atomic
+    print(f"  ✅ 書込: {_rel(page)}"
+          + ("（§REF carry-forward splice 済）" if carried_ref else ""))
+
+    # (d) 適用後 check_content_loss.py 通過。(e) 失敗なら自動ロールバック。
+    written = page.read_text(encoding="utf-8")
+    n3 = _ja_metrics(written)
+    post_problems = []
+    if carried_ref and norm_text(_extract_ref_body(old_html)) not in norm_text(written):
+        post_problems.append("書込後ページに carry-forward した §REF が無い")
+    if n3["body_chars"] < o["body_chars"] or n3["unique_cites"] < o["unique_cites"] \
+            or n3["suprefs"] < o["suprefs"] or n3["dangling"]:
+        post_problems.append("書込後フィデリティが既存を下回る/dangling あり")
+    clr = subprocess.run(
+        [sys.executable, str(REPO / "scripts" / "check_content_loss.py")],
+        capture_output=True, text=True)
+    if clr.returncode != 0:
+        post_problems.append(f"check_content_loss.py が非ゼロ終了（rc={clr.returncode}）:\n"
+                             + (clr.stdout + clr.stderr)[-600:])
+    if post_problems:
+        page.write_text(snapshot, encoding="utf-8")  # (e) 自動ロールバック
+        sys.stderr.write("ERROR: 適用後検証に失敗。\n")
+        for p in post_problems:
+            sys.stderr.write(f"  ✗ {p}\n")
+        sys.stderr.write(f"↩ ロールバック完了: {_rel(page)} を書込前へ復元した。\n")
+        return 3
+
+    print("  適用後検証 : OK（§REF実在 / フィデリティ非減少 / dangling なし / "
+          "check_content_loss 通過）")
+    print(f"  本文(§body) {o['body_chars']}→{n3['body_chars']} / unique出典 "
+          f"{o['unique_cites']}→{n3['unique_cites']} / sup-ref {o['suprefs']}→{n3['suprefs']}")
+    print("  次: python3 scripts/preflight.py → git diff（対象1ファイルのはず）")
+    return 0
+
+
 def run_update_existing(slug: str, ja_path: Path, en_path: Path | None,
-                        prepare: bool = False) -> int:
-    """既存ページ更新モード dry-run: spec 自動導出 → 新 render → 既存との差分と
-    carry-forward 計画を1ショットで表示（read-only・書込なし）。
-    --prepare 付きのときだけ backup + spec 書出を行う（本文への書込は依然なし）。"""
+                        prepare: bool = False, apply: bool = False,
+                        force: bool = False) -> int:
+    """既存ページ更新モード: spec 自動導出 → 新 render → 既存との差分と
+    carry-forward 計画を1ショットで表示。--apply なしは read-only（書込なし）。
+    --prepare 付きのときだけ backup + spec 書出を行う。
+    --apply 付きのとき carry-forward を photographers/<slug>.html へ実適用（安全契約 b–f）。"""
     page = JA_DIR / f"{slug}.html"
     if not page.exists():
         sys.stderr.write(f"ERROR: 既存ページが無い（新規は通常フロー）: {page}\n")
@@ -1565,12 +1919,23 @@ def run_update_existing(slug: str, ja_path: Path, en_path: Path | None,
     for p in plan:
         print(f"    • {p}")
 
-    print("[残る手作業] §REF/further の確定貼り・works 固有名の ui-terms 追加")
+    print("[残る手作業] works 固有名の ui-terms 追加（EN 側）")
     if prepare:
         _prepare_update(slug, spec)
-    else:
-        print("書込なし（--update-existing は現状 dry-run のみ。--prepare で backup+spec 書出。"
-              "carry-forward 適用と EN マージは後続フェーズ＝要承認）")
+
+    if apply:
+        # ④ carry-forward 実適用（安全契約 b–f）。既存 photographers/<slug>.html を
+        # 上書きするため --force を要求（通常インポータと同じ契約）。
+        if not force:
+            sys.stderr.write(
+                "ERROR: --update-existing --apply は既存ページ上書きのため --force が必須。\n")
+            return 2
+        print("\n[④ carry-forward 実適用] (--apply)")
+        return _apply_update_existing(slug, spec, bundle, old_html, new_html, o, n)
+
+    if not prepare:
+        print("書込なし（--update-existing は既定 dry-run。--prepare で backup+spec 書出、"
+              "--apply --force で carry-forward を JA ページへ実適用）")
     return 0
 
 
@@ -2239,10 +2604,16 @@ def main(argv=None) -> int:
     ap.add_argument("--bundle-to-en", metavar="PATH",
                     help="M5 検証（read-only）: EN 素材から bundle→en-content エントリを "
                          "生成し JSON を stdout 出力（正本 JSON 不可触）")
+    ap.add_argument("--merge-to-en", metavar="PATH",
+                    help="③ EN field-merge: EN 素材から bundle→en-content エントリを生成し、"
+                         "正本 data/photographers-en-content.json の pages[<slug>.html] へ "
+                         "skip-empty マージ（既定 dry-run で field 別 plan 表示・--apply で "
+                         "実書込＋他 slug 不変 assert・失敗ロールバック。--slug 必須・HAND_MAINTAINED 拒否）")
     ap.add_argument("--update-existing", action="store_true",
-                    help="既存ページ更新モード（dry-run）: spec を card-data+"
+                    help="既存ページ更新モード: spec を card-data+"
                          "既存ページから自動導出し、新素材 render との差分と carry-forward 計画を"
-                         "表示（--slug と --ja 必須・--en 任意。本文への書込なし）")
+                         "表示（--slug と --ja 必須・--en 任意。既定は書込なし。--apply --force で "
+                         "carry-forward を photographers/<slug>.html へ実適用＝安全契約つき）")
     ap.add_argument("--prepare", action="store_true",
                     help="--update-existing 専用: dry-run 表示に加えて JA/EN ページの "
                          "-backup.html コピーと scripts/<slug>-spec.json 書出を一括実行"
@@ -2264,14 +2635,15 @@ def main(argv=None) -> int:
             Path(args.ja).expanduser(),
             Path(args.en).expanduser() if args.en else None)
 
-    # 既存ページ更新モード（dry-run。--prepare 付きのときだけ backup+spec 書出）。
+    # 既存ページ更新モード（既定 dry-run。--prepare で backup+spec 書出、
+    # --apply --force で carry-forward を JA ページへ実適用）。
     if args.update_existing:
         if not args.slug or not args.ja:
             ap.error("--update-existing は --slug と --ja が必須")
         return run_update_existing(
             args.slug, Path(args.ja).expanduser(),
             Path(args.en).expanduser() if args.en else None,
-            prepare=args.prepare)
+            prepare=args.prepare, apply=args.apply, force=args.force)
 
     # 監査モード（read-only）。slug/ja は不要。
     if args.audit_corpus:
@@ -2292,6 +2664,13 @@ def main(argv=None) -> int:
     if args.bundle_to_en:
         return run_bundle_to_en(Path(args.bundle_to_en).expanduser(),
                                 args.slug, args.lang)
+
+    # ③ EN field-merge（既定 dry-run・--apply で正本 JSON へ書込）。--ja 不要。
+    if args.merge_to_en:
+        if not args.slug:
+            ap.error("--merge-to-en は --slug が必須")
+        return run_merge_to_en(Path(args.merge_to_en).expanduser(),
+                               args.slug, args.lang, args.apply)
 
     # Step3a 注入モード。--ja は不要（EN 正本 JSON への注入のみ）。
     if args.update_en_json:
