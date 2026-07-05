@@ -31,6 +31,7 @@
 | 2026-07-05 | yurie-nagashima | update | ~13分 | 0 | 6 | 4ファイル | 787→9849 | 3→38 |
 | 2026-07-05 | lieko-shiga(EN JSON同期) | other | （Daisuke記入） | 0 | 1 | 1ファイル | N/A | N/A |
 | 2026-07-05 | (engine)時間短縮①② | engine | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
+| 2026-07-05 | yurie-nagashima(写真集Amazonリンク4+3冊) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
