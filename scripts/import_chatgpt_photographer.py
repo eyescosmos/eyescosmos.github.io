@@ -39,11 +39,14 @@ sys.path.insert(0, str(REPO / "scripts"))
 
 # データ表のみ import（build_taxonomy_en は main ガード済みで import 副作用なし）
 from build_taxonomy_en import STUB_TO_SLUG, SLUG_TO_EN_NAME  # noqa: E402
+# CJK 判定は build_photographers_en の定義を共用（判定基準を単一化・ズレ防止）。
+from build_photographers_en import CJK_RE  # noqa: E402
 
 CARD_DATA = REPO / "card-data.json"
 JA_DIR = REPO / "photographers"
 EN_DIR = REPO / "en" / "photographers"
 PREVIEW_DIR = REPO / "outputs" / "import-preview"
+UI_TERMS_JSON = REPO / "data" / "photographers-en-ui-terms.json"
 
 
 # ── 存在チェック（de-link 判定の正） ───────────────────────────────────────
@@ -632,12 +635,74 @@ def _extract_keywords(body: str) -> list:
 
 
 def _extract_works(body: str) -> list:
-    wl = slice_by_class(body, "div", "ph-works-links")
+    return _extract_works_by_class(body, "ph-works-links")
+
+
+# works チップは主節（§VIEW＝ph-works-links）に加え、サイドバー（ph-side-works）にも
+# 短縮ラベルで重複して現れる（例: JA「公式 — 古着のポートレート」/ サイドバー「古着の
+# ポートレート」）。① works ui-terms 自動追加は両方から拾う（WORKS_LINK_CLASSES）。
+WORKS_LINK_CLASSES = ("ph-works-links", "ph-side-works")
+
+
+def _extract_works_by_class(body: str, cls: str) -> list:
+    """chip-link 一覧を class 指定で抽出（norm_text 正規化＝ダッシュ等を畳み込み済み。
+    レンダー後 JA ページの実文言と一致させるための正規形）。"""
+    wl = slice_by_class(body, "div", cls)
     out = []
     if wl:
         for a in re.finditer(r'<a\b[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>', wl[1], re.S):
             label = norm_text(a.group(2)).rstrip(" ↗").strip()
             out.append({"label": label, "url": a.group(1)})
+    return out
+
+
+def _extract_works_raw_by_class(body: str, cls: str) -> list:
+    """chip-link 一覧を class 指定で抽出（タグ除去＋実体参照デコードのみ・ダッシュ等の
+    タイポグラフィは保持）。① works ui-terms の英語側 value 表示用（em/en dash を保つ）。"""
+    wl = slice_by_class(body, "div", cls)
+    out = []
+    if wl:
+        for a in re.finditer(r'<a\b[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>', wl[1], re.S):
+            inner = re.sub(r"<[^>]+>", " ", a.group(2))
+            for e_a, e_b in (("&amp;", "&"), ("&nbsp;", " "), ("&lt;", "<"), ("&gt;", ">"),
+                             ("&#39;", "'"), ("&quot;", '"'), ("’", "'"), ("‘", "'"),
+                             ("“", '"'), ("”", '"')):
+                inner = inner.replace(e_a, e_b)
+            label = re.sub(r"\s+", " ", inner).strip().rstrip(" ↗").strip()
+            out.append({"label": label, "url": a.group(1)})
+    return out
+
+
+def propose_works_ui_terms(ja_body: str, en_body: str) -> list:
+    """① works ui-terms 自動追加候補: JA/EN 素材の works チップを section 別
+    （ph-works-links どうし・ph-side-works どうし）に URL で突き合わせ、CJK を含む
+    JA ラベルに英語対応があるものだけ {key, value, url, section} で返す。
+    URL のみでの突合せは section をまたぐと曖昧（例: 主節の「公式 — X」とサイドバーの
+    「X」が同一 URL で衝突）になるため、必ず同じ section 同士でのみ対応付ける。"""
+    proposals = []
+    for cls in WORKS_LINK_CLASSES:
+        ja_items = _extract_works_by_class(ja_body, cls)
+        en_items = _extract_works_raw_by_class(en_body, cls)
+        en_by_url = {}
+        for it in en_items:
+            en_by_url.setdefault(it["url"], it["label"])
+        for it in ja_items:
+            key = it["label"]
+            if not key or not CJK_RE.search(key):
+                continue
+            en_label = en_by_url.get(it["url"])
+            if not en_label:
+                continue
+            proposals.append({"key": key, "value": en_label,
+                              "url": it["url"], "section": cls})
+    # 重複除去（同一 key が複数 section から同じ value で出るケース）。
+    seen = {}
+    out = []
+    for p in proposals:
+        if p["key"] in seen:
+            continue
+        seen[p["key"]] = p["value"]
+        out.append(p)
     return out
 
 
@@ -1622,17 +1687,94 @@ def merge_bundle_to_en_json(bundle: dict, slug: str, apply: bool) -> int:
     return 0
 
 
+def _load_ui_terms_raw() -> dict:
+    return json.loads(UI_TERMS_JSON.read_text(encoding="utf-8"))
+
+
+def works_ui_terms_plan(proposals: list) -> dict:
+    """① works ui-terms 候補を既存 data/photographers-en-ui-terms.json の
+    works_labels と突き合わせ、add（新規）/ preserve（既存と同値）/
+    conflict（既存キーが異なる値）に分類する（read-only）。"""
+    data = _load_ui_terms_raw() if UI_TERMS_JSON.exists() else {}
+    labels = data.get("works_labels", {})
+    add, conflict, preserve = [], [], []
+    for p in proposals:
+        cur = labels.get(p["key"])
+        if cur is None:
+            add.append(p)
+        elif cur == p["value"]:
+            preserve.append(p)
+        else:
+            conflict.append({**p, "existing": cur})
+    return {"add": add, "conflict": conflict, "preserve": preserve}
+
+
+def apply_works_ui_terms(add: list) -> None:
+    """① add 分を data/photographers-en-ui-terms.json の works_labels 末尾へ
+    atomic 書込（既存フォーマット踏襲＝ indent=2 / ensure_ascii=False / 末尾改行）。
+    既存キーは絶対に上書きしない（呼び出し側で conflict を除外済みが前提・ここでも
+    二重防御で skip）。"""
+    if not add:
+        return
+    data = _load_ui_terms_raw()
+    labels = data.setdefault("works_labels", {})
+    for p in add:
+        if p["key"] not in labels:
+            labels[p["key"]] = p["value"]
+    text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+    tmp = UI_TERMS_JSON.with_name(UI_TERMS_JSON.name + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    os.replace(tmp, UI_TERMS_JSON)
+
+
 def run_merge_to_en(material: Path, slug: str | None, lang: str | None,
-                    apply: bool) -> int:
-    """③ CLI エントリ: EN 素材から bundle を抽出し merge_bundle_to_en_json を呼ぶ。"""
+                    apply: bool, ja_material: Path | None = None) -> int:
+    """③ CLI エントリ: EN 素材から bundle を抽出し merge_bundle_to_en_json を呼ぶ。
+    続けて ① works ui-terms 自動追加候補を JA↔EN works チップの URL 突合せで算出し、
+    dry-run では計画を表示するだけ、--apply では正本 JSON マージと同じゲートで
+    data/photographers-en-ui-terms.json へ実書込する（キー競合は上書きせず報告のみ）。"""
     if not material.exists():
         sys.stderr.write(f"ERROR: EN 素材が見つからない: {material}\n")
         return 2
     slug = slug or material.stem
-    bundle, _info = extract_bundle(
-        material.read_text(encoding="utf-8", errors="replace"),
-        lang or "en", slug=slug)
-    return merge_bundle_to_en_json(bundle, slug, apply)
+    en_raw = material.read_text(encoding="utf-8", errors="replace")
+    bundle, _info = extract_bundle(en_raw, lang or "en", slug=slug)
+    rc = merge_bundle_to_en_json(bundle, slug, apply)
+    if rc != 0:
+        return rc
+
+    # ① works ui-terms 追加候補: JA 素材（--ja があれば優先）→ 無ければ
+    # 既存 photographers/<slug>.html（レンダー後 JA ページ）にフォールバック。
+    ja_src = ja_material if (ja_material and ja_material.exists()) else (JA_DIR / f"{slug}.html")
+    print(f"\n① works ui-terms 追加候補（JA↔EN works チップを URL 突合せ・"
+          f"JA 素材={_rel(ja_src) if ja_src.exists() else ja_src}）:")
+    if not ja_src.exists():
+        print("  スキップ（JA 素材/ページが見つからない）")
+        return 0
+
+    en_body = _body_of(clean_rev_markup(strip_edit_red(strip_review_css(en_raw))))
+    ja_raw = ja_src.read_text(encoding="utf-8", errors="replace")
+    ja_body = _body_of(clean_rev_markup(strip_edit_red(strip_review_css(ja_raw))))
+    proposals = propose_works_ui_terms(ja_body, en_body)
+    plan = works_ui_terms_plan(proposals)
+
+    if not (plan["add"] or plan["conflict"] or plan["preserve"]):
+        print("  対象なし（CJK を含む JA works ラベルで EN 対応が見つかる組が無い）")
+    for p in plan["add"]:
+        print(f"  + add      works_labels[{p['key']!r}] = {p['value']!r}  ({p['section']})")
+    for p in plan["preserve"]:
+        print(f"  = preserve works_labels[{p['key']!r}]（既存と同値・変更なし）")
+    for p in plan["conflict"]:
+        print(f"  ! CONFLICT works_labels[{p['key']!r}]: 既存={p['existing']!r} "
+              f"≠ 新提案={p['value']!r}（上書きしない・要手動確認）")
+
+    if apply:
+        if plan["add"]:
+            apply_works_ui_terms(plan["add"])
+            print(f"  ✅ 書込: {_rel(UI_TERMS_JSON)}（{len(plan['add'])} 件追加）")
+    elif plan["add"]:
+        print("  (dry-run) 未書込。--apply で works_labels へ追加。")
+    return 0
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2670,7 +2812,8 @@ def main(argv=None) -> int:
         if not args.slug:
             ap.error("--merge-to-en は --slug が必須")
         return run_merge_to_en(Path(args.merge_to_en).expanduser(),
-                               args.slug, args.lang, args.apply)
+                               args.slug, args.lang, args.apply,
+                               ja_material=Path(args.ja).expanduser() if args.ja else None)
 
     # Step3a 注入モード。--ja は不要（EN 正本 JSON への注入のみ）。
     if args.update_en_json:

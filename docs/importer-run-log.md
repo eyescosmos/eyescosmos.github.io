@@ -32,6 +32,8 @@
 | 2026-07-05 | lieko-shiga(EN JSON同期) | other | （Daisuke記入） | 0 | 1 | 1ファイル | N/A | N/A |
 | 2026-07-05 | (engine)時間短縮①② | engine | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-05 | yurie-nagashima(写真集Amazonリンク4+3冊) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
+| 2026-07-07 | yuki-onodera | update | （Daisuke記入） | 0 | 1（§REL手復元） | 7ファイル | 763→9763 | 4→32 |
+| 2026-07-07 | (engine)works ui-terms自動化＋intentional-replacements | engine | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -672,3 +674,16 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **Amazonリンク**：JA7冊（§REF内ph-book）/EN6冊（正本photobooks_html経由→再生成）。タイトル・出版社・年はAmazon実ページから取得（Sonnetサブエージェント）、一言解説は商品説明＋本文出典済み記述＋nippon.com裏取り（Pink Rose Suite=木村伊兵衛賞対象）準拠・捏造なし。
 - **分業**：fable監督・監査／Opus=③④実装＋①穴修正（2走・計約70万tok）／Sonnet=Amazonタイトル・説明取得（2走・計約10万tok）。
 - **wall-time**：約26分（Daisuke実測。③④実装＋①穴修正＋Amazonリンク13冊を同一案件に同梱した時間）
+
+## 2026-07-07 — yuki-onodera 刷新（update・新素材差し替え）＋改善2件実装（works ui-terms自動化・intentional-replacements宣言）
+
+- **種別**：update（既存763字→新素材9763字の全文刷新）。素材=re-photographer/yuki-onodera.html（JA/EN・v5.1 ph-*・clean＝revision残存0）。
+- **改善2件をこの案件で実装**（Daisuke指示どおり実案件検証しながら・Opus監督/Sonnetサブエージェント実装）：
+  - **① works固有名 ui-terms 自動化**：`--merge-to-en` 時にJA/EN素材のworksチップをURL突き合わせ→CJK JAラベルの英訳を `photographers-en-ui-terms.json` works_labels へ自動追記（既定dry-runで追記案表示・`--apply`で書込・既存差異値は上書きせずconflict報告）。新関数 `propose_works_ui_terms`/`works_ui_terms_plan`/`apply_works_ui_terms`＋`_extract_works_by_class`（本文＋ph-side-works両方）。既存 `_extract_works` は不改変。**Onoderaで5件自動追記→EN再生成のuntranslated works label WARN=0**（従来は毎案件必ず1回の手作業）。
+  - **② intentional-replacements 宣言ファイル**：`scripts/intentional-replacements.json`（`{slug,url,reason,declared}` の使い捨てリスト）＋preflight `check_content_loss_guard` を (slug×url) 部分一致で消失HARDから除外。`_filter_loss_items_by_declarations` は純関数（unit検証）。消費宣言はINFO・不一致宣言はstale WARNで削除を促す。origin/main合流後は自然にstale化＝自動失効。目的は**--no-verify全素通しの回避**（jikei・mikaで2回発生の意図的URL置換FAILをスコープ限定でPASS）。
+- **手作業1件（§REL手復元）＋guard-hole発見**：新素材に§RELセクションが無く、carry-forward render が§RELを`準備中`にして既存の「コンセプチュアルアート」運動関連を暗黙ドロップ。`_apply_update_existing`の安全チェックも`check_content_loss.py`も§REL件数を追跡せず（cite/section/FIG/thesis/leadのみ）＝無警告ですり抜ける穴。backup(457行)からverbatim復元（捏造なし・新本文のconceptual photo記述と整合）。→**§REF同様の§RELスプライス/件数ガードは未実装＝次案件の改善候補**。
+- **実走**：--prepare→④--update-existing --apply --force→③--merge-to-en --apply→build_photographers_en.py --slug --force→--dry-run（SKIPPEDなし）。
+- **結果**：本文763→9763字・出典4→32・sup-ref 5→59・作品リンク0→5・§REL 1（手復元）。EN merge=add4/replace9/preserve5/skip-empty10（site_directory/external_links/photobooks は空bundleのためpreserve）。en-content.jsonは yuki-onodera キーのみ変更・他slug不変。check_content_loss OK。
+- **preflight**：**OK**（FAILなし＝intentional-replacements.jsonは`[]`。今回は意図的URL消失が発生せずmika型FAILなし）。WARN=data-nosnippet減（8→7/9→8・scaffold正典標準数）。importer test 5/5 PASS。
+- **分業**：Opus監督・レビュー（source探索・pipeline確定・feature設計・§REL復元判定・出力全検証）／Sonnetサブエージェント実装（pipeline実走＋feature①②実装＋検証・約18万tok・113 tool uses）。
+- **wall-time**：22分（Daisuke実測。内訳の主因＝Sonnet実装+検証走 約15分（うち改善2件のimporter/preflight実装+unit/rebuild検証、§REL穴の調査+手復元）／素材フォルダ探索（repo外・記載名と不一致）数分／監督のcontext構築+出力レビュー）。§REL保留・push。

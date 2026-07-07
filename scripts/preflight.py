@@ -29,6 +29,9 @@ PUBLIC_HTML_DIRS = [".", "photographers", "movements", "eras", "countries",
 hard_failures: list[str] = []
 warnings: list[str] = []          # 要確認（今回の変更に起因しうる）
 known_warnings: list[str] = []    # 既知・非ブロック（環境差や既存ノイズ）
+infos: list[str] = []             # 消費された intentional-replacement 宣言など（ブロックしない）
+
+INTENTIONAL_REPLACEMENTS_JSON = REPO / "scripts" / "intentional-replacements.json"
 
 # check_en_entry の検査ロジックを再利用する
 sys.path.insert(0, str(REPO / "scripts"))
@@ -709,13 +712,62 @@ def check_ja_classification_loss() -> None:
             warnings.append(f"[JA分類 {rel}] 指標が減少（要確認）: " + " / ".join(warn))
 
 
+def _load_intentional_replacements() -> list[dict]:
+    """scripts/intentional-replacements.json を読む（無ければ空リスト・壊れていても
+    フェイルオープンで空リスト＝宣言ファイルの不備で他のガードを巻き込んで壊さない）。
+    各エントリ: {"slug": str, "url": str, "reason": str, "declared": "YYYY-MM-DD"}。"""
+    if not INTENTIONAL_REPLACEMENTS_JSON.exists():
+        return []
+    try:
+        data = json.loads(INTENTIONAL_REPLACEMENTS_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    return data if isinstance(data, list) else []
+
+
+def _filter_loss_items_by_declarations(items: list[dict], declarations: list[dict]) -> tuple[list[dict], set[int]]:
+    """items（[{file, detail}]）を declarations（[{slug, url, ...}]）で絞り込む純粋関数。
+    (slug, url) は「file に slug が部分一致」×「detail に url が部分一致」で判定する。
+    戻り値: (remaining, consumed_indices)。remaining=宣言に一致しなかった item のみ。
+    consumed_indices=実際にどれか1件以上を除外できた宣言（declarations の index 集合）。
+    副作用なし（hard_failures/warnings/infos に触らない）＝ unit test しやすい形。"""
+    remaining = []
+    consumed: set[int] = set()
+    for it in items:
+        matched_idx = None
+        for i, decl in enumerate(declarations):
+            slug, url = decl.get("slug", ""), decl.get("url", "")
+            if not slug or not url:
+                continue
+            if slug in it["file"] and url in it["detail"]:
+                matched_idx = i
+                break
+        if matched_idx is not None:
+            consumed.add(matched_idx)
+        else:
+            remaining.append(it)
+    return remaining, consumed
+
+
 def check_content_loss_guard() -> None:
     """写真家リーフ（JA + EN）の本文消失をブロック経路へ昇格する。
     check_content_loss.py を preflight と共通の baseline・--strict で実行し:
       - 明確な消失（出典 / 本文セクション / FIG / thesis / lead）= HARD
       - 構造不変のまま文面だけ変化した「書き換えの疑い」= WARN（ブロックしない）
     触ったファイルだけが対象なので、変更が無ければ必ずグリーン＝門にできる。
-    JA 写真家 HTML（正本）の本文消失はこれまで手動チェック頼みだった穴を塞ぐ。"""
+    JA 写真家 HTML（正本）の本文消失はこれまで手動チェック頼みだった穴を塞ぐ。
+
+    scripts/intentional-replacements.json（① 意図的URL置換の宣言・使い捨て設計）:
+    事実の出典/公式URLを新しい参照へ意図的に差し替えたとき、旧URLが「消失」として
+    HARD FAIL するのを、宣言済み (slug, url) の項目だけスコープを絞って通す。
+    (slug, url) は「file パスに slug が含まれる」×「消失 detail 文字列に url が
+    部分一致する」で判定する（detail の文字列そのものに URL が出ない消失種別
+    （出典件数・section数・FIG数など）は原理上マッチしない＝宣言してもすり抜けを
+    防げない。URL がそのまま出る種別だけが対象）。
+    自動失効は作らない：宣言を使って push しベースラインが origin/main へ進めば、
+    次回 diff ではその URL はもう「消えていない」ので自然に不整合（stale）になる。
+    stale 宣言は毎回 WARN で報告するので、それを見て手で削除するのがクリーンアップの
+    合図（詳細は docs/generators-and-guards.md）。"""
     script = REPO / "scripts" / "check_content_loss.py"
     if not script.exists():
         return
@@ -725,6 +777,8 @@ def check_content_loss_guard() -> None:
         capture_output=True, text=True, cwd=REPO)
     out = proc.stdout
     loss_part, _, rewrite_part = out.partition("⚠ 本文の書き換え")
+    declarations = _load_intentional_replacements()
+    consumed: set[int] = set()
     # 消失（HARD）— --strict は損失検知時のみ exit 1
     if proc.returncode != 0:
         items, cur = [], None
@@ -733,12 +787,30 @@ def check_content_loss_guard() -> None:
             if s.startswith("✋"):
                 cur = s[1:].strip()
             elif s.startswith("−") and cur:
-                items.append(f"{cur}（{s[1:].strip()}）")
-        detail = " / ".join(items[:6]) if items else \
-            "scripts/check_content_loss.py を実行して確認"
-        hard_failures.append(
-            "本文消失の疑い（check_content_loss・JA/EN 写真家）: " + detail
-            + "。意図的でなければ正本(JA HTML / photographers-en-content.json)へ復元")
+                items.append({"file": cur, "detail": s[1:].strip()})
+
+        remaining, consumed = _filter_loss_items_by_declarations(items, declarations)
+
+        if remaining:
+            detail = " / ".join(f"{r['file']}（{r['detail']}）" for r in remaining[:6])
+            hard_failures.append(
+                "本文消失の疑い（check_content_loss・JA/EN 写真家）: " + detail
+                + "。意図的でなければ正本(JA HTML / photographers-en-content.json)へ復元。"
+                + "意図的な置換なら scripts/intentional-replacements.json へ宣言を追加")
+
+    for i in consumed:
+        decl = declarations[i]
+        infos.append(
+            f"intentional-replacement 適用: slug={decl.get('slug')} url={decl.get('url')}"
+            f"（{decl.get('reason', '(理由未記入)')}・宣言日={decl.get('declared', '?')}）"
+            "＝ 消失HARDから除外")
+    for i, decl in enumerate(declarations):
+        if i not in consumed:
+            warnings.append(
+                "stale intentional-replacement 宣言（今回の消失検知に一致せず・削除候補）: "
+                f"slug={decl.get('slug')} url={decl.get('url')}"
+                "（scripts/intentional-replacements.json）")
+
     # 書き換え（WARN）— 文面だけの変化。事実すり替えの疑いとして目視
     if rewrite_part.strip():
         files = [l.strip()[1:].strip() for l in rewrite_part.splitlines()
@@ -862,6 +934,10 @@ def main() -> int:
     check_scaffold_inject_determinism()
     run_existing_check("check_photographer_link_integrity.py")
 
+    if infos:
+        print("── INFO（宣言により処理済み・ブロックしない）──")
+        for i in infos:
+            print("  ℹ " + i)
     if warnings:
         print("── WARN（要確認・ブロックしない）──")
         for w in warnings:
