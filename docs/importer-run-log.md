@@ -716,3 +716,42 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **Codexのトークン使用量は取得できず**：MCP経由（`mcp__codex__codex`）の応答に usage が含まれないため。
   測るなら Bash の `codex exec --json`（`turn.completed.usage`）で回す必要がある。
 - **wall-time**：（Daisuke 記入。監督側の実測は開始14:33→終了14:54＝約21分。うち大半は書名・出版社・年の裏取り調査）
+
+## 2026-07-08 — EN §REL 誤情報除去（8ページ）＋entry-meta Country修正（2ページ）＋ENビルダー2バグ修正（種別=engine+other）
+
+- **発端**：「JA §REL が空のページを年代ごとに埋める」タスクの残り10ページを片付ける依頼。着手前の実測で
+  **10ページ全部が本文「準備中。」・出典0・thesis無しのスタブ**と判明（`§REL` が空なのは書き忘れではなくページ自体が空）。
+  本文根拠ゼロで関連写真家を並べるのは捏造になるため、**§REL記入は本文執筆待ちとして中止**。実行可能な部分だけへ再スコープ。
+- **やったこと**
+  1. **EN の誤「Related photographers」撤去（8ページ）**：`collectif-fact / eve-sussman / g-r-a-m / multiplicity /
+     ohio / the-atlas-group-walid-raad / useful-photography / wangechi-mutu`。JA が「準備中」なのに EN だけ
+     `site_directory`（名簿の近傍エントリ＝相互に指し合う無関係5名）が §REL 見出し下に出ていた＝**本番に出ていた誤情報**。
+     正本 `data/photographers-en-content.json` の `site_directory_html` を `""` にして `--slug` 再生成。
+  2. **entry-meta Country バグ修正（2ページ）**：`gabriel-orozco`（→メキシコ）/ `fabian-marti`（→スイス）。
+     `<dt>Country</dt>` の dd に era 文字列が入っていた。国は `card-data.json` の nationality（MX / CH）が根拠。
+     JA を直し `rebuild_entry_meta()` の翻訳経由で EN も追従（EN HTML 直編集なし）。
+- **ENビルダーのバグ2件を修正**（`scripts/build_photographers_en.py`）
+  - **① 混在チップの国名が未翻訳**（memory「dual国籍chip和訳戻り」の正体）。`_translate_node()` の
+    `re.fullmatch(r'<a …>(.*?)</a>')` が `.*?` で `</a> / <a>` を飲み込むため、`<a>イギリス</a> / <a>アメリカ</a>` も
+    `ケニア / <a>アメリカ</a>` も丸ごと `_translate_compound` に渡り未翻訳のまま残る。アンカーごと／裸断片ごとに
+    独立翻訳するよう修正。**該当9ページ**（eve-sussman, the-atlas-group, wangechi-mutu ＋ **未再生成の時限爆弾6件**：
+    alexander-gardner, beato, coburn, manray, muybridge, riis）。この6件は EN が現在正しいが、次に `--slug` を
+    掛けた瞬間に日本語へ退行するところだった。回帰テスト `scripts/test_build_en_chip_translation.py` 新規（4ケース）。
+  - **② §REL を削除でなく prep-block に**。`rebuild_related()` は people/movements が両方空だと §REL セクションごと
+    削除する仕様で、`check_content_loss.py` が「本文セクション1個消失」→ **preflight HARD FAIL**。しかもこの消失種別は
+    `scripts/intentional-replacements.json` では**原理上宣言できない**（preflight.py の docstring 参照）。
+    セクションを残して `<div class="prep-block" data-nosnippet>In preparation</div>` を出すよう変更。
+    結果ガードはグリーンのまま、**JA（§REL＋準備中）と EN で構造が揃う**。
+- **やらなかったこと（実測して「バグではない」と判明）** — 2件とも危うく2ページだけ直して不整合を作るところだった
+  - `<dt>Years</dt>` の空欄：JA写真家299ページ中 **153ページが空**＝生没年サイト未記載時の標準。orozco だけ行を消すと逆に不整合。
+  - `ph-hero__meta-item` / `ph-side-meta-row` / 埋め込みJSON の Country に era 文字列：**147ページが同じ形**
+    （国名表示は152ページ）。era表記backfill（ec317aa3e）が entry-meta だけ直して残りを温存した既存不整合。別タスク。
+- **効果**：`sync_en_rel_annotations.py --audit` の review items **70 → 54**（C分類「JA準備中×EN汎用リンク」16件が消滅）。
+  なお audit の残 54 のうち **44 items は slug 偽陽性**（JA=`jp-中山岩太.html` / EN=`iwata-nakayama.html` の対応表欠落）。
+- **分業**：**Opus監督・調査・設計／Sonnet実装**（サブエージェント2回）。1回目は指示の前提誤り（「サイドバーは既に正しい」）と
+  `--force` 由来の退行3件を**自分で検知して停止・報告**＝正しい振る舞い。2回目でビルダー修正＋再生成。
+  Opus 側は「バグに見えるものが実はサイト標準」を2回とも実測で捕まえた（Years / hero Country）。
+- **検証**：`check_content_loss.py` OK（消失なし）／`preflight.py` **exit 0**（WARN 2件は orozco・fabian-marti の
+  「EN HTML直接編集の疑い」＝JA正本追従の再生成に対する既知の誤検知）／時限爆弾6ページの diff 0／
+  退行3ページの国名 diff 0／GA・canonical・hreflang・OG・JSON-LD 維持／`--all` 不使用・対象外ファイル巻き込み0。
+- **wall-time**：（Daisuke 記入。監督側の実測は調査〜検証完了まで約35分。うち大半は「本当にバグか」の実測4回）

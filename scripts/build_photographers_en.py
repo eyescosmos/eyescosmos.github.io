@@ -910,10 +910,6 @@ def rebuild_related(html, page):
         return html
     _, sec_end, _ = extract_balanced(html, sec_open, 'section')
 
-    if not people and not movements:
-        # remove the whole REL section
-        return html[:sec_open].rstrip('\n ') + '\n\n' + html[sec_end:].lstrip('\n')
-
     # Optional per-item English annotations: { href: "one-line note (HTML)" }.
     # When present, render "<a>name</a> — note"; when absent, render the bare
     # name exactly as before. Pages without this field are unaffected.
@@ -926,6 +922,8 @@ def rebuild_related(html, page):
         return f'            <li><a href="{href}">{name}</a></li>'
 
     body_parts = []
+    if not people and not movements:
+        body_parts.append('          <div class="prep-block" data-nosnippet>In preparation</div>')
     if people:
         body_parts.append('          <div class="ph-rel-label">Related photographers</div>')
         body_parts.append('          <ul class="ph-rel-list">')
@@ -1545,13 +1543,30 @@ def translate_residuals(html, page, slug, ja_file, warnings):
 
     # Helper: translate a CJK text node that may be bare or wrapped in <a>…</a>
     def _translate_node(inner):
-        am = re.fullmatch(r'(\s*<a [^>]*>)(.*?)(</a>\s*)', inner, re.S)
-        if am:
-            txt = am.group(2).strip()
-            if not CJK_RE.search(txt):
-                return inner
-            new = _translate_compound(txt, terms, countries, warnings, page_label)
-            return am.group(1) + new + am.group(3)
+        if '<a ' in inner:
+            # 混在コンテンツ: "<a>A</a> / <a>B</a>" や "ケニア / <a>アメリカ</a>"
+            def _a(m):
+                txt = m.group(2).strip()
+                if not CJK_RE.search(txt):
+                    return m.group(0)
+                return m.group(1) + _translate_term(txt, terms, countries, warnings, page_label) + m.group(3)
+
+            out = re.sub(r'(<a [^>]*>)(.*?)(</a>)', _a, inner, flags=re.S)
+
+            def _bare(seg):
+                if not CJK_RE.search(seg):
+                    return seg
+                outp = []
+                for tok in re.split(r'(\s*/\s*)', seg):
+                    if tok and CJK_RE.search(tok):
+                        outp.append(_translate_term(tok.strip(), terms, countries, warnings, page_label))
+                    else:
+                        outp.append(tok)
+                return ''.join(outp)
+
+            parts = re.split(r'(<a [^>]*>.*?</a>)', out, flags=re.S)
+            return ''.join(p if i % 2 else _bare(p) for i, p in enumerate(parts))
+
         txt = inner.strip()
         if not CJK_RE.search(txt):
             return inner
