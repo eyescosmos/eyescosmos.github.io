@@ -34,6 +34,7 @@
 | 2026-07-05 | yurie-nagashima(写真集Amazonリンク4+3冊) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-07 | yuki-onodera | update | （Daisuke記入） | 0 | 1（§REL手復元） | 7ファイル | 763→9763 | 4→32 |
 | 2026-07-07 | (engine)works ui-terms自動化＋intentional-replacements | engine | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
+| 2026-07-08 | yuki-onodera(写真集Amazonリンク3+4冊＋§REL写真家3名) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -687,3 +688,31 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **preflight**：**OK**（FAILなし＝intentional-replacements.jsonは`[]`。今回は意図的URL消失が発生せずmika型FAILなし）。WARN=data-nosnippet減（8→7/9→8・scaffold正典標準数）。importer test 5/5 PASS。
 - **分業**：Opus監督・レビュー（source探索・pipeline確定・feature設計・§REL復元判定・出力全検証）／Sonnetサブエージェント実装（pipeline実走＋feature①②実装＋検証・約18万tok・113 tool uses）。
 - **wall-time**：22分（Daisuke実測。内訳の主因＝Sonnet実装+検証走 約15分（うち改善2件のimporter/preflight実装+unit/rebuild検証、§REL穴の調査+手復元）／素材フォルダ探索（repo外・記載名と不一致）数分／監督のcontext構築+出力レビュー）。§REL保留・push。
+
+## 2026-07-08 — yuki-onodera 写真集Amazonリンク（JA3冊/EN4冊）＋§REL関連写真家3名（種別=other）
+
+- **種別**：other（既存ページへの追記のみ。本文・thesis・出典は不触）。**Codex CLI を実装役に使った初案件**。
+- **面**：3ファイル（`photographers/yuki-onodera.html` +35行 / `data/photographers-en-content.json` +6-3行 /
+  `en/photographers/yuki-onodera.html` +39行＝正本JSONから再生成）。EN HTML直編集なし。
+- **調査（監督側・捏造防止）**：渡されたのは `amzn.to` 短縮URL 7本のみで書名不明。curl でリダイレクト解決→ASIN確定
+  （JA: 4891764775 / 4473036650 / 4902080478、EN: 1590050274 / 159005086X / 4473036669 / 4902080478）。
+  AmazonはWebFetch 500で読めず、書名・出版社・年は**公式 yukionodera.fr/en/publications/**（既存cite同源）と
+  ISBN照合で確定。淡交社の連番2冊（…3665-0=JA版 / …3666-9=EN版）と Nazraeli 2冊（How to Make a Pearl 2002 /
+  Transvest 2004）の対応もここで分離。第28回木村伊兵衛賞（カメラキメラ）は**東文研アーカイブDB**で裏取り（本文に未記載の新情報）。
+- **§REL**：既存は運動1件のみ。関連写真家3名を追加＝杉本博司（装置・露光条件の主題化）/ 石内都（他者の衣服＝
+  《古着のポートレート》と主題共有）/ ソフィ・カル（規則駆動の連作・パリ拠点）。EN は `related_annotations` 3件追加で
+  ビルダーが §REL へ注入。ボルタンスキーは本文言及ありだがサイトに個別ページ無しのため見送り。
+- **分業**：**Opus監督・監査／Codex（gpt-5.5・reasoning=high）実装**。Codex呼び出しは1回（MCP `mcp__codex__codex`、
+  `sandbox=workspace-write` / `approval-policy=never`）。事実・書名・解説文は全て監督側で確定してから渡し、
+  Codexには「一字一句そのまま使う・Web検索禁止・触ってよいファイル2つのみ」を明示。**Codexのバグ0・逸脱0**。
+- **落とし穴（事前に潰した）**：`photographers-en-content.json` は 26,711行。素朴な `json.dump` だと全体が再整形される。
+  `json.dumps(d, ensure_ascii=False, indent=2)`（**末尾改行なし**）でバイト一致することを監督側で先に実測し、Codexに強制。
+  結果、JSON差分は3キー6行のみ・他297ページ byte不変を確認。
+- **EN正規化の把握**：正本の `book-card` / `affiliate-disclosure` / `data-affiliate-section` はビルダーが
+  `ph-book` / `ph-aff`（"* Affiliate link"）へ正規化する（長島ページと同型）。EN HTML側に book-card は現れないのが正。
+- **検証**：JA3本/EN4本のリンクが**言語別に正しく分離**（相互混入0）・`rel="noopener sponsored"` 全数付与・
+  check_content_loss OK・preflight OK・ビルダー再実行で冪等・SEO一式（GA/canonical/hreflang/OG/JSON-LD）維持・
+  cite数/section数/further-links数 不変・依頼対象外ファイルの巻き込み0。
+- **Codexのトークン使用量は取得できず**：MCP経由（`mcp__codex__codex`）の応答に usage が含まれないため。
+  測るなら Bash の `codex exec --json`（`turn.completed.usage`）で回す必要がある。
+- **wall-time**：（Daisuke 記入。監督側の実測は開始14:33→終了14:54＝約21分。うち大半は書名・出版社・年の裏取り調査）
