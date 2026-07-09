@@ -1322,6 +1322,14 @@ def run_render_ja(material: Path, spec_path: Path, idx, lang: str | None) -> int
         sys.stderr.write(f"ERROR: {e}\n")
         return 1
     sys.stdout.write(out)
+    cite_ids = set(re.findall(r'id="cite-(\d+)"', out))
+    supref = re.findall(r'href="#cite-(\d+)"', out)
+    dangling = sorted({t for t in supref if t not in cite_ids})
+    sec = len(re.findall(r'id="sec-\d+"', out))
+    sys.stderr.write(
+        f"[render-ja] slug={spec.get('id')} idx={idx} cite={len(cite_ids)} "
+        f"sec={sec} supref={len(supref)} dangling={len(dangling)}"
+        + (f"  ⚠ DANGLING cite-{dangling}" if dangling else "") + "\n")
     return 0
 
 

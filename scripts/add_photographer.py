@@ -637,7 +637,7 @@ def print_snippets_and_runbook(spec: dict):
     print("=" * 70)
     print("\n--- archive.html / cards-archive.html / new-design/cards-archive.html"
           " の該当年代カード群末尾へ（JA, label=PHOTOGRAPHER）---")
-    print(card_html(spec, "ja", label="PHOTOGRAPHER", href_prefix=""))
+    print(archive_card_html(spec))
     print("\n--- eras/{era}.html の年代グリッド末尾へ（JA, label=国コード, href_prefix='../'）---".format(era=spec["era"]))
     print(card_html(spec, "ja", label=spec["nationality"], href_prefix="../"))
     print("\n--- en/eras/{era}.html（EN, label=国コード, href_prefix='../'）---".format(era=spec["era"]))
