@@ -6016,6 +6016,26 @@
       "style": "pc-top--kanji",
       "artText": "N<span>H</span>",
       "hintText": "NERHOL · 2007–"
+    },
+    {
+      "type": "photographer",
+      "id": "asako-narahashi",
+      "href": "photographers/asako-narahashi.html",
+      "idx": 300,
+      "nameJa": "楢橋朝子",
+      "nameEn": "Asako Narahashi",
+      "metaJa": "日本 · 1959–",
+      "era": "2000",
+      "nationality": "JP",
+      "ledeJa": "1959年東京生まれ。手持ちのカメラで歩きながら大量に撮り、後から写真を選ぶ方法を続けてきた写真家。代表作《half awake and half asleep in the water》では、波が身体とカメラを上下させ、目が波と安全を確かめる一方でカメラは陸へ向き、撮影時に本人が確認できなかった画面が残る。身体・カメラ・その場の動きから生まれた写真を後から選ぶことを制作の中心に置く。",
+      "channel": "写真史の論点 · 日本写真",
+      "tags": [
+        "日本写真",
+        "日本"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "水面",
+      "hintText": "ASAKO NARAHASHI · 1959–"
     }
   ],
   "movements": [

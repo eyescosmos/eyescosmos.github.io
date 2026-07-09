@@ -67,6 +67,12 @@ def eval_photographers() -> list[dict]:
         capture_output=True,
     )
     payload = proc.stderr.decode("utf-8") or proc.stdout.decode("utf-8")
+    # osascript(JavaScript) は稀に JSON 行の前後へ警告行を混ぜる（"Extra data" で
+    # json.loads が落ち、重複チェックが黙ってスキップされる）。先頭が '[' の行だけ拾う。
+    for line in payload.splitlines():
+        line = line.strip()
+        if line.startswith("["):
+            return json.loads(line)
     return json.loads(payload)
 
 

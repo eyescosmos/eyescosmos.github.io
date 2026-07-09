@@ -91,7 +91,13 @@ def js_existing_ids() -> set[str]:
     proc = subprocess.run(["osascript", "-l", "JavaScript"],
                           input="\n".join(src).encode("utf-8"), capture_output=True)
     payload = proc.stderr.decode() or proc.stdout.decode()
-    return {i for i in json.loads(payload) if i}
+    # osascript(JXA) は稀に JSON 行の前後へ警告行を混ぜる（"Extra data" で json.loads が落ちる）。
+    # 先頭が '[' の行＝id 配列だけを拾う。
+    for line in payload.splitlines():
+        line = line.strip()
+        if line.startswith("["):
+            return {i for i in json.loads(line) if i}
+    raise ValueError(f"js_existing_ids: JSON 配列行が見つからない: {payload[:200]!r}")
 
 
 def backup(path: Path):

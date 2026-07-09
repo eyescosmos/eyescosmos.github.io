@@ -755,3 +755,38 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   「EN HTML直接編集の疑い」＝JA正本追従の再生成に対する既知の誤検知）／時限爆弾6ページの diff 0／
   退行3ページの国名 diff 0／GA・canonical・hreflang・OG・JSON-LD 維持／`--all` 不使用・対象外ファイル巻き込み0。
 - **wall-time**：（Daisuke 記入。監督側の実測は調査〜検証完了まで約35分。うち大半は「本当にバグか」の実測4回）
+
+## 2026-07-09 — asako-narahashi（new / 新規追加・楢橋朝子・idx300・era2000）＋engine robustness 2件（Codex実装）
+
+- **種別**：new（純・新規追加）。素材=re-photographer/asako-narahashi.html（JA/EN・v5.1・clean）。
+  読み=**Asako**（依頼文の「asaka」は誤り。楢橋朝子＝Asako Narahashi）。slug=asako-narahashi。
+- **分業**：**Opus監督・監査／Codex（reasoning=high・MCP mcp__codex__codex）実装**。監督側で全判断
+  （spec.json 全項目・idx・era・starText・citations・movementSlugJa・両renderの read-only 事前検証・
+  card 文字列と挿入アンカーの確定・ui-terms 英訳語の確定）を先に固め、Codex には決定論コマンド列と
+  byte-exact な挿入スクリプトだけを渡した（Web検索禁止・触ってよいファイル明示）。
+- **判断点（実測）**：
+  1. **era=2000 / movementSlugJa=風景写真**：素材の side Movement は 日本写真 だが、EN 翻訳可能で
+     ジャンルを正確に表す **風景写真（→Landscape Photography・STUB_TO_SLUG 在）** を Movement 欄に採用。
+     eyebrow/channel は 日本写真。star 用 movements=[風景写真, 写真集文化, 日本写真]。
+  2. **運動ページ面＝なし**：3運動（自主ギャラリー/写真集文化/風景写真）とも movements/*.html が未存在。
+     plan_surfaces は存在フィルタで自動 skip。§REL の運動リンクは importer が自動 de-link（dangling 0）。
+     新規運動ページは作らない（依頼「あれば」＝該当なし）。
+  3. **§REL**：JA/EN とも関連写真家3名（森山大道/石内都/マーティン・パー＝素材の一言解説つき・実在ページ）で対称。
+- **engine robustness 2件（durable・別バグ）**：`add_photographer.py` と `preflight.py` の
+  `js_existing_ids`/`eval_photographers` が osascript(JavaScript) の稀な**前後警告行混入**で
+  `json.loads` "Extra data" → add_photographer は**クラッシュ**、preflight は**重複チェックを黙ってスキップ**。
+  両者を「先頭が `[` の行だけ拾う」ループに変更（既存の "known非ブロック" スキップも解消＝dedup が実走するように）。
+- **面**：tracked 14（archive/cards-archive 各JA・card-data・countries japan JA/EN・en-content(+127)・
+  ui-terms(+2key)・supplement・star bin・en/archive・eras2000 JA/EN・add_photographer・preflight）＋
+  new-design/cards-archive.html（**git-ignore なので diff 非表示・disk 上は投入済**）＋新規 JA/EN 個別ページ2・spec.json。
+- **手作業1件**：EN untranslated 2件を ui-terms へ。works_labels `"MOMAT - 楢橋朝子 所蔵作品" →
+  "MOMAT — Works by Asako Narahashi"`（EN素材の同URL チップが正）、terms `"NU・E"→"NU・E"`（誌名・恒等）。
+  → EN 再ビルドで untranslated WARN 0。
+- **フィデリティ**：JA 本文 4節・31 cite・66 sup-ref・dangling 0。EN 4節・§REL 3名・dangling 0。
+- **検証**：check_new_photographer OK（en_graph_absent=EN標準WARN）／check_content_loss OK／
+  **preflight exit 0**（残WARN2＝en/countries/japan・en/eras/2000 の「直接編集疑い」＝scoped 再生成に対する
+  既知の誤検知・07-08 と同型）。`--all` 不使用・link_country_keywords 不実行・対象外巻き込み0。
+- **Codex 挙動**：逸脱0。Step1 で私の grep -c 閾値ミス（cite は1行に集約→行数=1）を正しく FAIL 検知して停止＝
+  正しい振る舞い（実カウントは31で正常と監督側が確認）。Step4 の osascript バグも停止・報告。
+- **backup（未追跡・GH Pages 実機確認後に削除）**：card-data-backup.json / -supplement-backup.js / star -backup.bin。
+- **wall-time**：24分（Daisuke 実測）。

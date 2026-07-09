@@ -1663,5 +1663,49 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "asako-narahashi",
+    "name": "Asako Narahashi",
+    "nameJa": "楢橋朝子",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1959–",
+    "gender": "女性",
+    "era": "2000",
+    "movements": [
+      "風景写真",
+      "写真集文化",
+      "日本写真"
+    ],
+    "thumbnail": "",
+    "links": [
+      {
+        "label": "SFMOMA — Asako Narahashi",
+        "url": "https://www.sfmoma.org/artist/Asako_Narahashi/"
+      },
+      {
+        "label": "東京国立近代美術館 — 楢橋朝子",
+        "url": "https://www.momat.go.jp/artists/ana157"
+      }
+    ],
+    "amazon": "",
+    "context": {
+      "text": "手持ちのカメラで歩きながら大量に撮り、後から写真を選ぶ方法を続けてきた写真家。代表作《half awake and half asleep in the water》では、波が身体とカメラを上下させ、目が波と安全を確かめる一方でカメラは陸へ向き、撮影時に本人が確認できなかった画面が残る *1 *2 。",
+      "textEn": "A photographer who walks with a handheld camera, shooting in quantity and choosing the pictures afterward. In her signature series half awake and half asleep in the water, waves lift and drop both body and camera; while her eyes watch the waves and her own safety, the lens faces the shore, leaving frames she could not verify at the moment of exposure *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "SFMOMA — Asako Narahashi",
+          "url": "https://www.sfmoma.org/artist/Asako_Narahashi/"
+        },
+        {
+          "num": 2,
+          "name": "東京国立近代美術館 — half awake and half asleep in the water MEKARI",
+          "url": "https://www.momat.go.jp/collection/ph1468"
+        }
+      ]
+    }
   }
+
 ];
