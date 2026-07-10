@@ -36,6 +36,7 @@
 | 2026-07-07 | (engine)works ui-terms自動化＋intentional-replacements | engine | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-08 | yuki-onodera(写真集Amazonリンク3+4冊＋§REL写真家3名) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-10 | (JSON-LD birthDate/deathDate復元＋preflight) | other | （Daisuke記入） | 1（v5.1移行でJSON-LD日付欠落） | 0（機械復元・機械検証） | 154ファイル | N/A | N/A |
+| 2026-07-10 | (JSON-LD初期欠落11件補完＋presenceガード) | other | （Daisuke記入） | 1（JSON-LD日付キー初期欠落） | 0（機械照合・機械検証） | 11ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -988,3 +989,12 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **フィデリティ差分**: N/A。本文・出典・関連欄は変更せず、JSON-LD script内に `birthDate` 143件・`deathDate` 33件を追加。
 - **発火した engine 改良**: `preflight.py` に `_JA_DEATH_RE` / `_ja_body_death_years()` を追加し、JA本文の没年が一意に取れる場合のみ `deathDate` 不一致をHARD FAIL化。
 - **検証**: dry-run 176件・153ファイル PASS（JA本文+EN 137 / ENのみ 34 / JA本文のみ 5）。変更行は全てJSON-LD script内。JSON-LD load OK。`preflight.py` OK（既存WARN 3件のみ）/ `check_content_loss.py` OK。mutation testで `deathDate` / `birthDate` の本文不一致を各1件HARD FAIL確認後、復元。
+
+### 2026-07-10 — JSON-LD初期欠落11件補完＋presenceガード（other）
+- **wall-time**: （Daisuke記入）。
+- **bug**: v5.1移行前から単一 Person JSON-LD に `birthDate` / `deathDate` キーが無かったページが残存。値不一致ガードだけではキー欠落を検知できなかった。
+- **手作業点**: 0。対象11キーを本文正規表現 `_JA_BIRTH_RE` / `_JA_DEATH_RE` で一意照合。EN `years` がパース可能な `jp-冨重徳次` は `tomishige-tokuji.html` の `1862–1938` と一致。
+- **サーフェス変更数**: 11ファイル（JA写真家HTML 10 + `scripts/preflight.py`）。`louis-vaire.html` は `birthDate` / `deathDate` の2キー補完。EN HTML / `<dt>Years</dt>` / hero は変更なし。
+- **フィデリティ差分**: N/A。本文・出典・関連欄は変更せず、JSON-LD script内に `birthDate` 10件・`deathDate` 1件を追加。
+- **発火した engine 改良**: `preflight.py` に presence ガードを追加。JA本文から生年/没年が一意に取れ、かつPersonノードが存在する場合、全Personノードで該当キーが無ければHARD FAIL。Personノードなしページは誤検知防止のため対象外。
+- **検証**: Personなし実測は `multiplicity.html` 1件、ld+jsonなしは0件。タスクA適用後 `preflight.py` OK（誤検知0）/ `check_content_loss.py` OK。mutation testで birthDateキー削除 / deathDateキー削除 / deathDate値不一致を各1件HARD FAIL確認後、復元。

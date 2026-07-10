@@ -771,12 +771,20 @@ def check_jsonld_birthdate() -> None:
         confirmed_body_year = next(iter(body_years)) if len(body_years) == 1 else None
         death_body_years = _ja_body_death_years(html) if is_ja else set()
         confirmed_death_body_year = next(iter(death_body_years)) if len(death_body_years) == 1 else None
+        saw_person_node = False
+        person_has_birth = False
+        person_has_death = False
         for m in JSONLD_SCRIPT_RE.finditer(html):
             try:
                 data = json.loads(m.group(1))
             except json.JSONDecodeError:
                 continue
             for node in _jsonld_nodes(data):
+                is_person = _jsonld_is_person(node)
+                if is_person:
+                    saw_person_node = True
+                    person_has_birth = person_has_birth or "birthDate" in node
+                    person_has_death = person_has_death or "deathDate" in node
                 for key in ("birthDate", "deathDate"):
                     if key not in node:
                         continue
@@ -784,7 +792,7 @@ def check_jsonld_birthdate() -> None:
                     if not isinstance(value, str) or not JSONLD_DATE_RE.fullmatch(value):
                         hard_failures.append(
                             f"[JSON-LD {rel}] {key} has invalid date value: {value!r}")
-                    if not _jsonld_is_person(node):
+                    if not is_person:
                         hard_failures.append(
                             f"[JSON-LD {rel}] {key} is present on non-Person @type: "
                             f"{node.get('@type')!r}")
@@ -808,6 +816,15 @@ def check_jsonld_birthdate() -> None:
                     hard_failures.append(
                         f"[JSON-LD {rel}] deathDate {death!r} differs from body year "
                         f"{confirmed_death_body_year}")
+        if is_ja and saw_person_node:
+            if confirmed_body_year and not person_has_birth:
+                hard_failures.append(
+                    f"[JSON-LD {rel}] birthDate missing despite body year "
+                    f"{confirmed_body_year}")
+            if confirmed_death_body_year and not person_has_death:
+                hard_failures.append(
+                    f"[JSON-LD {rel}] deathDate missing despite body year "
+                    f"{confirmed_death_body_year}")
 
 
 def _load_intentional_replacements() -> list[dict]:
