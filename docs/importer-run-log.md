@@ -37,6 +37,7 @@
 | 2026-07-08 | yuki-onodera(写真集Amazonリンク3+4冊＋§REL写真家3名) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-10 | (JSON-LD birthDate/deathDate復元＋preflight) | other | （Daisuke記入） | 1（v5.1移行でJSON-LD日付欠落） | 0（機械復元・機械検証） | 154ファイル | N/A | N/A |
 | 2026-07-10 | (JSON-LD初期欠落11件補完＋presenceガード) | other | （Daisuke記入） | 1（JSON-LD日付キー初期欠落） | 0（機械照合・機械検証） | 11ファイル | N/A | N/A |
+| 2026-07-10 | (JSON-LD hero年照合ガード) | other | （Daisuke記入） | 1（本文で取れない日付キー欠落の死角） | 0（機械照合・機械検証） | 2ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -998,3 +999,12 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **フィデリティ差分**: N/A。本文・出典・関連欄は変更せず、JSON-LD script内に `birthDate` 10件・`deathDate` 1件を追加。
 - **発火した engine 改良**: `preflight.py` に presence ガードを追加。JA本文から生年/没年が一意に取れ、かつPersonノードが存在する場合、全Personノードで該当キーが無ければHARD FAIL。Personノードなしページは誤検知防止のため対象外。
 - **検証**: Personなし実測は `multiplicity.html` 1件、ld+jsonなしは0件。タスクA適用後 `preflight.py` OK（誤検知0）/ `check_content_loss.py` OK。mutation testで birthDateキー削除 / deathDateキー削除 / deathDate値不一致を各1件HARD FAIL確認後、復元。
+
+### 2026-07-10 — JSON-LD hero年照合ガード（other）
+- **wall-time**: （Daisuke記入）。
+- **bug**: 本文正規表現だけでは生没年を一意取得できないページがあり、JSON-LD日付キー欠落・値不一致の死角が残っていた。
+- **手作業点**: 0。`ph-hero__years` を読み取り専用で厳密パースし、`YYYY–YYYY` / `YYYY–` のみ確認源に採用。`2000s–` 等のera型は対象外。
+- **サーフェス変更数**: 2ファイル（`scripts/preflight.py` + `photographers/gregory-crewdson.html`）。hero表示 / `<dt>Years</dt>` / EN HTML は変更なし。
+- **フィデリティ差分**: N/A。本文・出典・関連欄は変更せず、hero照合で新たに検出した `gregory-crewdson` の `birthDate: 1962` をJSON-LD script内に追加。
+- **発火した engine 改良**: hero確認年を本文確認年と統合し、mismatch / presence の両方へ適用。本文年とhero年が両方あり矛盾する場合もHARD FAIL。
+- **検証**: strict hero parse 116件。本文に無くheroで増える確認源は birth 92件 / death 51件。本文×hero矛盾0件、既存JSON-LD値不一致0件。`preflight.py` OK / `check_content_loss.py` OK。mutation testで hero由来birthDateキー削除 / hero由来birthDate値不一致 / era型無視 / 既存本文照合デグレなしを確認後、復元。

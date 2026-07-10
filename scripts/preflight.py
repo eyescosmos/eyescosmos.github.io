@@ -723,6 +723,11 @@ JSONLD_SCRIPT_RE = re.compile(
     r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
     re.S | re.I,
 )
+HERO_YEARS_RE = re.compile(
+    r'class=["\'][^"\']*ph-hero__years[^"\']*["\'][^>]*>(.*?)<',
+    re.S | re.I,
+)
+HERO_LIFESPAN_RE = re.compile(r'^\s*((?:18|19|20)\d{2})\s*[–—-]\s*((?:18|19|20)\d{2})?\s*$')
 # 年と生まれの間は「、」＋漢字/カタカナ地名だけを許可し、人物出生以外の文脈を除外する。
 _JA_BIRTH_RE = re.compile(r'(1[89]\d{2}|20\d{2})\s*年(?:、)?[一-鿿ー゠-ヿ]{0,10}(?:に)?生まれ')
 # 年と死去語の間は短い漢字/カタカナだけを許可し、作品名・節タイトル等への誤爆を避ける。
@@ -759,6 +764,17 @@ def _ja_body_death_years(html: str) -> set[str]:
     return set(_JA_DEATH_RE.findall(body))
 
 
+def _hero_lifespan_years(html: str) -> tuple[str | None, str | None]:
+    m = HERO_YEARS_RE.search(html)
+    if not m:
+        return (None, None)
+    text = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', m.group(1))).strip()
+    m = HERO_LIFESPAN_RE.fullmatch(text)
+    if not m:
+        return (None, None)
+    return (m.group(1), m.group(2) or None)
+
+
 def check_jsonld_birthdate() -> None:
     """JSON-LD の birthDate/deathDate に era 文字列や非 Person 混入がないか検査する。"""
     targets = list((REPO / "photographers").glob("*.html"))
@@ -771,6 +787,17 @@ def check_jsonld_birthdate() -> None:
         confirmed_body_year = next(iter(body_years)) if len(body_years) == 1 else None
         death_body_years = _ja_body_death_years(html) if is_ja else set()
         confirmed_death_body_year = next(iter(death_body_years)) if len(death_body_years) == 1 else None
+        hero_birth_year, hero_death_year = _hero_lifespan_years(html) if is_ja else (None, None)
+        if confirmed_body_year and hero_birth_year and confirmed_body_year != hero_birth_year:
+            hard_failures.append(
+                f"[JSON-LD {rel}] body birth year {confirmed_body_year} "
+                f"differs from hero year {hero_birth_year}")
+        if confirmed_death_body_year and hero_death_year and confirmed_death_body_year != hero_death_year:
+            hard_failures.append(
+                f"[JSON-LD {rel}] body death year {confirmed_death_body_year} "
+                f"differs from hero year {hero_death_year}")
+        confirmed_birth_year = confirmed_body_year or hero_birth_year
+        confirmed_death_year = confirmed_death_body_year or hero_death_year
         saw_person_node = False
         person_has_birth = False
         person_has_death = False
@@ -799,11 +826,11 @@ def check_jsonld_birthdate() -> None:
 
                 birth = node.get("birthDate")
                 if isinstance(birth, str) and JSONLD_DATE_RE.fullmatch(birth):
-                    if confirmed_body_year and birth[:4] != confirmed_body_year:
+                    if confirmed_birth_year and birth[:4] != confirmed_birth_year:
                         hard_failures.append(
-                            f"[JSON-LD {rel}] birthDate {birth!r} differs from body year "
-                            f"{confirmed_body_year}")
-                    if confirmed_body_year is None and re.fullmatch(r"\d{4}", birth):
+                            f"[JSON-LD {rel}] birthDate {birth!r} differs from confirmed year "
+                            f"{confirmed_birth_year}")
+                    if confirmed_birth_year is None and re.fullmatch(r"\d{4}", birth):
                         year = int(birth)
                         if year % 10 == 0 and re.search(rf'href=["\'][^"\']*eras/{birth}\.html', html):
                             warnings.append(
@@ -812,19 +839,19 @@ def check_jsonld_birthdate() -> None:
                 death = node.get("deathDate")
                 if not isinstance(death, str) or not JSONLD_DATE_RE.fullmatch(death):
                     continue
-                if confirmed_death_body_year and death[:4] != confirmed_death_body_year:
+                if confirmed_death_year and death[:4] != confirmed_death_year:
                     hard_failures.append(
-                        f"[JSON-LD {rel}] deathDate {death!r} differs from body year "
-                        f"{confirmed_death_body_year}")
+                        f"[JSON-LD {rel}] deathDate {death!r} differs from confirmed year "
+                        f"{confirmed_death_year}")
         if is_ja and saw_person_node:
-            if confirmed_body_year and not person_has_birth:
+            if confirmed_birth_year and not person_has_birth:
                 hard_failures.append(
-                    f"[JSON-LD {rel}] birthDate missing despite body year "
-                    f"{confirmed_body_year}")
-            if confirmed_death_body_year and not person_has_death:
+                    f"[JSON-LD {rel}] birthDate missing despite confirmed year "
+                    f"{confirmed_birth_year}")
+            if confirmed_death_year and not person_has_death:
                 hard_failures.append(
-                    f"[JSON-LD {rel}] deathDate missing despite body year "
-                    f"{confirmed_death_body_year}")
+                    f"[JSON-LD {rel}] deathDate missing despite confirmed year "
+                    f"{confirmed_death_year}")
 
 
 def _load_intentional_replacements() -> list[dict]:
