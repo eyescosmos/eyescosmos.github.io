@@ -275,9 +275,9 @@ def _check_jsonld_ja(html: str, self_tail: str) -> list[Finding]:
         _person_urls(obj, urls)
     if parse_failed:
         f.append(Finding("jsonld_parse", HARD, "JSON-LD が parse 不能"))
-    if "Person" not in types:
+    if "Person" not in types and "Organization" not in types:
         f.append(Finding("jsonld_no_person", GATE,
-                         "JSON-LD に Person 型が無い（JA は Person 実体準拠）"))
+                         "JSON-LD に Person/Organization 型が無い（JA は実体準拠）"))
     if urls and not any(u.endswith(self_tail) for u in urls):
         f.append(Finding("jsonld_url_mismatch", HARD,
                          f"JSON-LD Person.url が自slug不一致: {urls[:2]}"))

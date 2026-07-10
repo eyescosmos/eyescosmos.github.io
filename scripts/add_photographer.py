@@ -194,10 +194,14 @@ def card_html(spec: dict, lang: str, *, label: str, href_prefix: str) -> str:
 
 def _parse_years(years: str) -> tuple[str, str]:
     """'1928–2019' → ('1928','2019')。存命 '1948–' → ('1948','')。"""
-    parts = re.split(r"\s*[–—\-]\s*", (years or "").strip())
-    birth = parts[0].strip() if parts else ""
-    death = parts[1].strip() if len(parts) > 1 and parts[1].strip() else ""
-    return birth, death
+    s = (years or "").strip()
+    if not s:
+        return "", ""
+    # era（年代）文字列は birthDate に流さない。
+    m = re.fullmatch(r"(\d{4})(?:\s*[–—\-]\s*(\d{4})?)?", s)
+    if not m:
+        return "", ""
+    return m.group(1), (m.group(2) or "")
 
 
 def _hero_initials(name_en: str) -> str:

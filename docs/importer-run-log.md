@@ -923,3 +923,58 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **Codex 挙動**：逸脱0。予告した4つの数値（766 / 721 / 27 / 0）を全て的中させ、冪等性も自主検証。
   `core.quotepath` は監督側が事前に実測して指示に含めた。日付マーカー厳密化は監督側で後追い実施。
 - **分業メモ**：設計判断（mtime vs git日付・churnの質の評価）と地雷の事前実測は Opus、実装と検証実行は Codex。
+
+## 2026-07-10 — JSON-LD birthDate の era 混入を修正（22ページ）＋パーサ2件を堅牢化＋preflight ガード追加（種別=data+engine）
+
+- **wall-time**: （Daisuke 記入）
+- **対象**: `photographers/*.html` の JSON-LD `birthDate`。**JAのみ。EN は無変更**（EN は全件正しい値を保持していた）。
+- **根本原因（git で特定）**: 発生源は `8ab5c9569`「v5.1 全ページ移行完了」(2026-06-08)。
+  同commitが全写真家の JSON-LD を `@graph` → 単一 `Person` へ平坦化した際、`card-data.json` に
+  **`years` フィールドが存在せず `era` しか無い**ため、era 文字列を `birthDate` に流し込んだ。
+  **同commitはスクリプトを1本も触っていない**（＝未commitのアドホックスクリプトで実行された）。
+  これが「どの生成スクリプトを読んでも `"1970"` を再現できない」理由。
+  その後 `5c2cddb9a`(07-06 importer) が `add_photographer._parse_years`（ダッシュ分割のみ）で
+  蜷川実花を `"2000s / 2000年代"` へ**二重に**破壊した。移行前(`5d6c07c3c`)は蜷川=1972・中平=1938/2015 と**正しかった**。
+- **件数の訂正**: 依頼時の検出コマンドは `birthDate` を**ページ先頭の `eras/YYYY.html` リンク1本**としか
+  突き合わせないため **5件取りこぼす**。実際の破損は **17件ではなく22件**。
+  追加分＝`eikoh-hosoe`(1960→1933) / `jp-影山光洋`(1940→1907) / `keizo-kitajima`(1970→1954) /
+  `kishin-shinoyama`(1960→1940) / `naoya-hatakeyama`(1980→1958)。5件とも本文・git移行前・ENの3点で一致。
+- **裏取り**: 21件の生年は「本文 / 移行前git値 / ENページ」の**3独立ソース**が一致。
+  本文に生年が無い2件のみ外部出典で確認 —
+  蜷川実花 **1972**（東京オペラシティ アートギャラリー 公式プロフィール）、
+  オノデラユキ **1962**（作家公式サイト "born in Tokyo (1962)"）。両者とも移行前git値・ENページと一致。捏造なし。
+- **multiplicity.html**: イタリアの研究集団。本文に生年・結成年の記述が一切無い。
+  `@type: Person` → `Organization`、`birthDate` 削除、`nationality` → `address.addressCountry: "IT"`。
+  **`foundingDate` は本文に典拠が無いため追加しない**（Daisuke 判断）。
+- **エンジン修正2件（再発防止の本体）**:
+  - `add_photographer._parse_years`: ダッシュ分割のみ→lifespan 厳密判定。era 文字列は `("","")` を返す。
+  - `build_photographers_en._parse_years`: `re.findall(r'\d{4}')` が **`"2000s / 2000年代"` → birth=2000, death=2000**
+    と解釈し**存命作家を没年つきで出力する潜在バグ**だった。同じ厳密判定で `(None,None)` 化。
+- **`years` の二重責務（設計上の真因）**: `years` は EN hero の表示文字列（`ph-hero__years">2000s`）と
+  `birthDate` の供給元を**兼ねている**。hero の era 文字列はサイト標準（147p）なので `years` 自体は直せない。
+  よってパーサ側で「lifespan 形でなければ birthDate を出さない」と**縁を切る**のが正解。
+  `data/photographers-en-content.json` の `pages["mika-ninagawa.html"].years` は現在も `"2000s"` だが、
+  同entryは正しい `jsonld` を持ちフォールバックが発火しないため**実害なし**。堅牢化後は仮に発火しても birthDate を出さない。
+- **preflight ガード `check_jsonld_birthdate()`**（JA/EN 両方を走査）:
+  1. HARD: `birthDate`/`deathDate` が `^\d{4}(-\d{2}(-\d{2})?)?$` 以外（`jp-植田正治` の `1913-03-27` は通す）
+  2. HARD: JA本文から**厳密正規表現**で生年を1件だけ特定できる場合、`birthDate` と不一致なら失敗
+  3. HARD: `@type` が Person でないノードに `birthDate`/`deathDate` がある
+  4. WARN: `birthDate` が10の倍数 かつ 同年の `eras/YYYY.html` リンクがあり 本文で確証が取れない
+- **正規表現の誤検知を実測で潰した**: 初版 `年[^。\n]{0,12}?生まれ` は
+  「2000年頃の城ヶ島で偶然**生まれ**た2点」(asako-narahashi・作品)、
+  「2004年に同エージェンシーから**生まれ**たOstkreuzschule」(sibylle-bergemann・学校)、
+  「1858年（一部の資料では1861年）に**生まれ**た」(jp-亀井茲明・括弧内の異説) を拾い **3件の誤検知**。
+  年と生まれの間を「`、`＋漢字/カタカナ地名のみ」に制限（ひらがなを挟ませない）して解消。
+- **ガードの実測**: 修正後コーパス **PASS=36 / SKIP=100 / FAIL=0（誤検知0）**。
+  破損していた旧値21件を replay して **21/21 を HARD FAIL で捕捉**（19件が本文照合、2件が形式）。
+  4ルールとも手動で mutation テストし発火を確認（JA era回帰 / 不正形式 / 非Person / EN側形式）→ 復元後 OK。
+- **検証**: `check_content_loss.py` OK ／ `preflight.py` OK ／ 変更26ファイル
+  （JA html 22 ＋ `add_photographer.py` / `build_photographers_en.py` / `preflight.py` / `check_new_photographer.py`）／
+  **`<dt>Years</dt>`・hero の変更行数 0** ／ EN・data 無変更 ／ 未追跡10件は未stage ／ staged 0。
+- **積み残し（別タスク・Daisuke 承認済）**: 同 `8ab5c9569` は **deathDate を33ページから、birthDate を144ページから
+  完全に削除**している（中平の `deathDate:2015`、篠山の `2024` 等）。今回は対象外。移行前git値の妥当性を
+  1件ずつ検証する必要があるため独立PRで扱う。今回のガードで**再発は阻止済み**。
+- **Codex 挙動**: 逸脱0。監督側の rule 2 正規表現が誤検知3件を出した際、**content ページを勝手に直さず停止して報告**
+  （指示通り）。誤りは監督側の仕様。EN 正本 `years="2000s"` の潜在回帰は Codex は検知せず、監督側が実測で発見。
+- **分業メモ**: 根本原因の git 追跡・件数の実測訂正・外部出典の裏取り・正規表現の誤検知潰しと全コーパス検証は Opus、
+  22ファイルの機械置換・パーサ堅牢化・ガード実装は Codex。

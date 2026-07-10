@@ -248,14 +248,14 @@ def _fb_desc(page):
 
 def _parse_years(years):
     """'1951–' / '1908–1995' → (birth, death|None)。解釈不能なら (None, None)。"""
-    if not years:
+    s = (years or '').strip()
+    if not s:
         return None, None
-    nums = re.findall(r'\d{4}', years)
-    if not nums:
+    # era（年代）文字列は birthDate/deathDate に流さない。
+    m = re.fullmatch(r'(\d{4})(?:\s*[–—\-]\s*(\d{4})?)?', s)
+    if not m:
         return None, None
-    birth = nums[0]
-    death = nums[1] if len(nums) > 1 else None
-    return birth, death
+    return m.group(1), m.group(2)
 
 
 def _fb_og(title, desc):

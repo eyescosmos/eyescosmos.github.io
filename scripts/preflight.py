@@ -718,6 +718,80 @@ def check_ja_classification_loss() -> None:
             warnings.append(f"[JA分類 {rel}] 指標が減少（要確認）: " + " / ".join(warn))
 
 
+JSONLD_DATE_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
+JSONLD_SCRIPT_RE = re.compile(
+    r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+    re.S | re.I,
+)
+# 年と生まれの間は「、」＋漢字/カタカナ地名だけを許可し、人物出生以外の文脈を除外する。
+_JA_BIRTH_RE = re.compile(r'(1[89]\d{2}|20\d{2})\s*年(?:、)?[一-鿿ー゠-ヿ]{0,10}(?:に)?生まれ')
+
+
+def _jsonld_nodes(data) -> list[dict]:
+    if isinstance(data, dict) and isinstance(data.get("@graph"), list):
+        return [n for n in data["@graph"] if isinstance(n, dict)]
+    if isinstance(data, dict):
+        return [data]
+    return []
+
+
+def _jsonld_is_person(node: dict) -> bool:
+    t = node.get("@type")
+    if t == "Person":
+        return True
+    if isinstance(t, list) and "Person" in t:
+        return True
+    return False
+
+
+def _ja_body_birth_years(html: str) -> set[str]:
+    body = re.sub(r'<script.*?</script>', '', html, flags=re.S)
+    body = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', body))
+    return set(_JA_BIRTH_RE.findall(body))
+
+
+def check_jsonld_birthdate() -> None:
+    """JSON-LD の birthDate/deathDate に era 文字列や非 Person 混入がないか検査する。"""
+    targets = list((REPO / "photographers").glob("*.html"))
+    targets += list((REPO / "en" / "photographers").glob("*.html"))
+    for path in sorted(targets):
+        rel = str(path.relative_to(REPO))
+        html = path.read_text(encoding="utf-8", errors="ignore")
+        is_ja = path.parent == (REPO / "photographers")
+        body_years = _ja_body_birth_years(html) if is_ja else set()
+        confirmed_body_year = next(iter(body_years)) if len(body_years) == 1 else None
+        for m in JSONLD_SCRIPT_RE.finditer(html):
+            try:
+                data = json.loads(m.group(1))
+            except json.JSONDecodeError:
+                continue
+            for node in _jsonld_nodes(data):
+                for key in ("birthDate", "deathDate"):
+                    if key not in node:
+                        continue
+                    value = node.get(key)
+                    if not isinstance(value, str) or not JSONLD_DATE_RE.fullmatch(value):
+                        hard_failures.append(
+                            f"[JSON-LD {rel}] {key} has invalid date value: {value!r}")
+                    if not _jsonld_is_person(node):
+                        hard_failures.append(
+                            f"[JSON-LD {rel}] {key} is present on non-Person @type: "
+                            f"{node.get('@type')!r}")
+
+                birth = node.get("birthDate")
+                if not isinstance(birth, str) or not JSONLD_DATE_RE.fullmatch(birth):
+                    continue
+                if confirmed_body_year and birth[:4] != confirmed_body_year:
+                    hard_failures.append(
+                        f"[JSON-LD {rel}] birthDate {birth!r} differs from body year "
+                        f"{confirmed_body_year}")
+                if confirmed_body_year is None and re.fullmatch(r"\d{4}", birth):
+                    year = int(birth)
+                    if year % 10 == 0 and re.search(rf'href=["\'][^"\']*eras/{birth}\.html', html):
+                        warnings.append(
+                            f"[JSON-LD {rel}] birthDate {birth!r} may be era contamination")
+
+
 def _load_intentional_replacements() -> list[dict]:
     """scripts/intentional-replacements.json を読む（無ければ空リスト・壊れていても
     フェイルオープンで空リスト＝宣言ファイルの不備で他のガードを巻き込んで壊さない）。
@@ -936,6 +1010,7 @@ def main() -> int:
     check_seo_invisible_loss()
     check_ja_seo_holes()
     check_ja_classification_loss()
+    check_jsonld_birthdate()
     check_new_photographer_pages()
     check_scaffold_inject_determinism()
     run_existing_check("check_photographer_link_integrity.py")
