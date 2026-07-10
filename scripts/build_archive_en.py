@@ -430,9 +430,9 @@ def main():
                       '<div class="pc-body__meta">JP · Meiji era</div>')
 
     # ── ページ chrome ──
-    JA_TITLE = '写真家アーカイブ｜時代・国・運動から探す｜写真の座標'
+    JA_TITLE = '写真家一覧｜写真史を時代・国・運動から探す｜写真の座標'
     EN_TITLE = 'Photographer Archive | Browse by Era, Country, and Movement | Photo Coordinates'
-    JA_DESC = ('写真史を316枚のカードで整理した写真家アーカイブ。世界と日本の写真家285人と31の写真運動を、'
+    JA_DESC = ('写真史を316枚のカードで整理した写真家一覧。世界と日本の写真家285人と31の写真運動を、'
                '時代・国・運動・タグで検索・絞り込みできる。各カードから写真史上の位置づけの解説ページへ。')
     EN_DESC = ('Browse global and Japanese photographers by era, country, movement, and visual approach. '
                'Using museum, archive, and specialist sources, Photo Coordinates organizes relationships '

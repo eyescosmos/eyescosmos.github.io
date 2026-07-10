@@ -790,3 +790,59 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   正しい振る舞い（実カウントは31で正常と監督側が確認）。Step4 の osascript バグも停止・報告。
 - **backup（未追跡・GH Pages 実機確認後に削除）**：card-data-backup.json / -supplement-backup.js / star -backup.bin。
 - **wall-time**：24分（Daisuke 実測）。
+
+---
+
+## 2026-07-10 — GSC由来 SEO メタ修正（JA・杉本博司 / archive）
+
+- **種別**：other（メタのみ・本文ゼロ変更）／**wall-time**：__分（Daisuke 記入）
+- **面（tracked 3）**：`photographers/hiroshi-sugimoto.html`・`archive.html`・`scripts/build_archive_en.py`
+- **入力**：GSC 2026-06-10〜07-07 のページ/クエリCSV。JA課題は CTR ではなく順位。
+- **変更**：
+  - 杉本：title/og:title/twitter:title の3箇所を `日本写真とコンセプチュアル` → `海景・劇場・ジオラマから読む写真表現`。
+    素クエリ「杉本博司」42位に対し「杉本博司 カメラ」9.75位＝修飾語つき複合クエリを取る判断。
+    あわせて JSON-LD `birthDate` の era 混入 `1970` → `1948`（根拠＝同ページ `Years: 1948–`。外部調査不要）。
+  - archive：title 3箇所 `写真家アーカイブ｜時代・国・運動から探す` → `写真家一覧｜写真史を時代・国・運動から探す`。
+    description 3箇所は「写真家アーカイブ」→「写真家一覧」の1語のみ。5.94位 / CTR 0% への対処。
+    H1「カードで読む写真史」・ナビUI の「アーカイブ」表記は据え置き（サイト内概念）。
+- **地雷1件（事前検知・対処済）**：`build_archive_en.py:433-436` が archive.html の title/desc を**完全一致で置換**し、
+  不一致で `SystemExit('Chrome string not found')` ハード停止する。JA_TITLE/JA_DESC を同一差分で同期。
+  EN_TITLE/EN_DESC は不変 → `build_archive_en.py` 実行後も `en/archive.html` はバイト不変を実測確認。
+- **ガードの穴（記録のみ）**：`check_content_loss.py` の `SCOPE_DIRS` は `photographers`/`en/photographers` のみ＝
+  `archive.html` は本文消失ガードの対象外。今回はメタのみなので実害なし。
+- **検証**：check_content_loss exit 0／preflight OK。残WARN2件（`en/photographers/eugenesmith.html`・`moriyama.html`）は
+  **並行実行中の別セッション（EN作業）由来**で本作業の差分ではない。`git diff` は12挿入/12削除＝全てメタ行。
+- **副産物（別タスクへ切り出し）**：
+  - JSON-LD `birthDate` の era 混入が他に約17件（16件が era 年代と完全一致＋2件が `"2000s / 2000年代"` 等の不正 Date）。
+    杉本以外は `Years` 欄も年代文字列で**正しい生年がページ上に無く、外部出典の裏取りが要る**ため分離。
+  - `sitemap.xml` が `new-design/<slug>.html` を **325 URL** 送信。全ページ `robots: index,follow` かつ
+    canonical は `photographers/` を指す＝正規化で必ず捨てられる重複。GSC 実データにも1件も出現せず。
+- **Codex 挙動**：逸脱0。read-only での方針レビュー→workspace-write で実装。
+  レビュー時に `twitter:title` の存在を指摘（監督側の grep 見落とし）＝有効な貢献。
+  実装後に `new-design/hiroshi-sugimoto.html` の旧title残存を自主報告（canonical で正規化されるため実害なし）。
+- **分業メモ**：判断（クエリ解釈・title文言・スコープ切り分け）は Opus、機械置換と検証実行は Codex。
+
+## 2026-07-10 — GSC由来 SEO メタ修正（EN・別セッション作業／JA側で合流検証）
+
+- **種別**：other（入口のみ・本文/出典/注番号ゼロ変更）／**wall-time**：__分（Daisuke 記入）
+- **面（tracked 4）**：`data/photographers-en-content.json`（lead_html 2件）・`en/photographers/moriyama.html`・
+  `en/photographers/eugenesmith.html`・`en/photographers/sibylle-bergemann.html`
+- **入力**：GSC 同期間。EN は表示回数が JA を圧倒するのに CTR ほぼ0（moriyama 1172表示/1click、eugenesmith 853/1、sibylle 683/0）。
+- **変更**：
+  - moriyama：lead に are-bure-boke の語義と Provoke 文脈を1文追加（`are bure boke meaning authoritative source` 系クエリ群に対応）。
+  - eugenesmith：lead に 1971年移住・Aileen Mioko Smith・チッソ・3か月予定が3年 を1文追加
+    （`w. eugene smith minamata duration stay` / `why did w. eugene smith go to minamata` に対応）。
+  - sibylle-bergemann：title系4箇所（`<title>`/`og:title`/`twitter:title`/JSON-LD `name`）を
+    `East German Photography, Fashion and Das Denkmal` → `East German Photographer of Fashion, Portraits and Das Denkmal`。
+- **合流時の監督側検証（JAセッション＝Opus が実施）**：
+  - **捏造チェック合格**。EN lead の追加事実はいずれも JA 正本に裏付けあり。
+    eugenesmith → JA本文「アイリーン・美緒子・スミスの共同作業であり、当初3か月予定だった滞在が3年に及んだ」「1971年には水俣病の現場を記録するため日本へ渡り」。
+    moriyama → JA本文の MoMA 出典*4「プロヴォークのアレ、ブレ、ボケが…フォトジャーナリズムや直截的な商業写真に寄りがちだった日本の写真文化を揺さぶろうとした」＋「Provoke, 1968–1970」。
+  - **巻き戻りリスク検証**：`sibylle-bergemann` は `photographers-en-content.json` の 302 ページに**存在しない**。
+    `build_photographers_en.py --slug sibylle-bergemann --dry-run` → `no harvest content, skipped`（0 page）＝
+    **ビルダーが上書きし得ない**ので EN HTML が正本。`--all` を回しても巻き戻らない。
+  - `--slug moriyama` / `--slug eugenesmith` の dry-run は **SKIPPED せず**（CLAUDE.md 必須検査を通過）＝ JSON 正本と HTML が整合。
+- **検証**：check_content_loss exit 0／preflight OK。
+  残WARN2種は**いずれも想定内**: ①eugenesmith/moriyama の lead 文面変化（＝意図した加筆）
+  ②sibylle の「EN HTML 直接編集疑い」（＝builder 対象外のため WARN の助言「JSONを直して再生成」は本ページには当てはまらない・既知の誤検知）。
+- **分業メモ**：EN 実装は別セッション、合流時の消失/巻き込み/巻き戻り検証と push は JA セッション（Opus）。
