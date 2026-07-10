@@ -1498,21 +1498,24 @@ def bundle_to_en_entry(bundle: dict, slug: str | None = None) -> dict:
     }
 
 
-def run_bundle_to_en(material: Path, slug: str | None, lang: str | None) -> int:
+def run_bundle_to_en(material: Path, slug: str | None, lang: str | None,
+                     ja_material: Path | None = None, apply: bool = False) -> int:
     """M5 検証用 read-only エントリ: EN 素材から bundle→en-content エントリを生成し
-    JSON を stdout 出力（正本 JSON には書かない）。"""
+    JSON を stdout 出力（正本 JSON には書かない）。続けて works ui-terms 追加候補を
+    表示し、--apply 時は data/photographers-en-ui-terms.json に add 分だけ書く。"""
     if not material.exists():
         sys.stderr.write(f"ERROR: 素材が見つからない: {material}\n")
         return 2
-    bundle, _info = extract_bundle(
-        material.read_text(encoding="utf-8", errors="replace"),
-        lang or "en", slug=slug or material.stem)
+    slug = slug or material.stem
+    en_raw = material.read_text(encoding="utf-8", errors="replace")
+    bundle, _info = extract_bundle(en_raw, lang or "en", slug=slug)
     try:
         entry = bundle_to_en_entry(bundle, slug=slug)
     except BundleIncomplete as e:
         sys.stderr.write(f"ERROR: {e}\n")
         return 1
     print(json.dumps(entry, ensure_ascii=False, indent=2))
+    report_works_ui_terms(slug, en_raw, ja_material, apply)
     return 0
 
 
@@ -1735,22 +1738,10 @@ def apply_works_ui_terms(add: list) -> None:
     os.replace(tmp, UI_TERMS_JSON)
 
 
-def run_merge_to_en(material: Path, slug: str | None, lang: str | None,
-                    apply: bool, ja_material: Path | None = None) -> int:
-    """③ CLI エントリ: EN 素材から bundle を抽出し merge_bundle_to_en_json を呼ぶ。
-    続けて ① works ui-terms 自動追加候補を JA↔EN works チップの URL 突合せで算出し、
-    dry-run では計画を表示するだけ、--apply では正本 JSON マージと同じゲートで
-    data/photographers-en-ui-terms.json へ実書込する（キー競合は上書きせず報告のみ）。"""
-    if not material.exists():
-        sys.stderr.write(f"ERROR: EN 素材が見つからない: {material}\n")
-        return 2
-    slug = slug or material.stem
-    en_raw = material.read_text(encoding="utf-8", errors="replace")
-    bundle, _info = extract_bundle(en_raw, lang or "en", slug=slug)
-    rc = merge_bundle_to_en_json(bundle, slug, apply)
-    if rc != 0:
-        return rc
-
+def report_works_ui_terms(slug: str, en_raw: str, ja_material: Path | None,
+                          apply: bool) -> None:
+    """① works ui-terms 追加候補を JA↔EN works チップの URL 突合せで表示し、
+    --apply 時は add 分だけ data/photographers-en-ui-terms.json へ書く。"""
     # ① works ui-terms 追加候補: JA 素材（--ja があれば優先）→ 無ければ
     # 既存 photographers/<slug>.html（レンダー後 JA ページ）にフォールバック。
     ja_src = ja_material if (ja_material and ja_material.exists()) else (JA_DIR / f"{slug}.html")
@@ -1758,7 +1749,7 @@ def run_merge_to_en(material: Path, slug: str | None, lang: str | None,
           f"JA 素材={_rel(ja_src) if ja_src.exists() else ja_src}）:")
     if not ja_src.exists():
         print("  スキップ（JA 素材/ページが見つからない）")
-        return 0
+        return
 
     en_body = _body_of(clean_rev_markup(strip_edit_red(strip_review_css(en_raw))))
     ja_raw = ja_src.read_text(encoding="utf-8", errors="replace")
@@ -1782,6 +1773,24 @@ def run_merge_to_en(material: Path, slug: str | None, lang: str | None,
             print(f"  ✅ 書込: {_rel(UI_TERMS_JSON)}（{len(plan['add'])} 件追加）")
     elif plan["add"]:
         print("  (dry-run) 未書込。--apply で works_labels へ追加。")
+
+
+def run_merge_to_en(material: Path, slug: str | None, lang: str | None,
+                    apply: bool, ja_material: Path | None = None) -> int:
+    """③ CLI エントリ: EN 素材から bundle を抽出し merge_bundle_to_en_json を呼ぶ。
+    続けて ① works ui-terms 自動追加候補を JA↔EN works チップの URL 突合せで算出し、
+    dry-run では計画を表示するだけ、--apply では正本 JSON マージと同じゲートで
+    data/photographers-en-ui-terms.json へ実書込する（キー競合は上書きせず報告のみ）。"""
+    if not material.exists():
+        sys.stderr.write(f"ERROR: EN 素材が見つからない: {material}\n")
+        return 2
+    slug = slug or material.stem
+    en_raw = material.read_text(encoding="utf-8", errors="replace")
+    bundle, _info = extract_bundle(en_raw, lang or "en", slug=slug)
+    rc = merge_bundle_to_en_json(bundle, slug, apply)
+    if rc != 0:
+        return rc
+    report_works_ui_terms(slug, en_raw, ja_material, apply)
     return 0
 
 
@@ -2753,7 +2762,8 @@ def main(argv=None) -> int:
                     help="--render-ja の spec.json（taxonomy/同一性を供給）")
     ap.add_argument("--bundle-to-en", metavar="PATH",
                     help="M5 検証（read-only）: EN 素材から bundle→en-content エントリを "
-                         "生成し JSON を stdout 出力（正本 JSON 不可触）")
+                         "生成し JSON を stdout 出力（正本 JSON 不可触）。出力後に works "
+                         "ui-terms 候補も表示し、--apply 時は ui-terms JSON に add 分だけ書込")
     ap.add_argument("--merge-to-en", metavar="PATH",
                     help="③ EN field-merge: EN 素材から bundle→en-content エントリを生成し、"
                          "正本 data/photographers-en-content.json の pages[<slug>.html] へ "
@@ -2813,7 +2823,9 @@ def main(argv=None) -> int:
     # M5 bundle_to_en_entry 検証（read-only）。slug/ja は不要。
     if args.bundle_to_en:
         return run_bundle_to_en(Path(args.bundle_to_en).expanduser(),
-                                args.slug, args.lang)
+                                args.slug, args.lang,
+                                ja_material=Path(args.ja).expanduser() if args.ja else None,
+                                apply=args.apply)
 
     # ③ EN field-merge（既定 dry-run・--apply で正本 JSON へ書込）。--ja 不要。
     if args.merge_to_en:

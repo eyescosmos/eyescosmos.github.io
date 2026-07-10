@@ -6036,6 +6036,27 @@
       "style": "pc-top--kanji",
       "artText": "水面",
       "hintText": "ASAKO NARAHASHI · 1959–"
+    },
+    {
+      "type": "photographer",
+      "id": "eiko-yamazawa",
+      "href": "photographers/eiko-yamazawa.html",
+      "idx": 301,
+      "nameJa": "山沢栄子",
+      "nameEn": "Eiko Yamazawa",
+      "metaJa": "日本 · 1899–1995",
+      "era": "1930",
+      "nationality": "JP",
+      "ledeJa": "1899年生まれ。1920年代にサンフランシスコのコンスエロ・カナガのスタジオで写真を学び、帰国後は大阪で自らのスタジオを開いた女性職業写真家の先駆者。写真集『遠近』を経て、撮影前に物体・色・光を構成する抽象写真へ進み、代表作〈What I Am Doing〉では写真用品や過去の自作まで撮影素材にして、写真を作る材料と手順そのものを主題にした。",
+      "channel": "写真史の論点 · 抽象写真",
+      "tags": [
+        "抽象写真",
+        "日本写真",
+        "日本"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "抽象",
+      "hintText": "EIKO YAMAZAWA · 1899–1995"
     }
   ],
   "movements": [

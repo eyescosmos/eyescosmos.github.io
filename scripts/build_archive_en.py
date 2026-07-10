@@ -80,6 +80,7 @@ GENRE_TAG = {
     'カロタイプ': 'Calotype',
     'コンセプチュアル': 'Conceptual',
     'コンセプチュアルアート': 'Conceptual Art',
+    '抽象写真': 'Abstract Photography',
     'シネマトグラフィック写真': 'Cinematographic Photography',
     'シュルレアリスム': 'Surrealism',
     'ステージド写真': 'Staged Photography',

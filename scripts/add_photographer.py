@@ -561,10 +561,97 @@ def _surface_status(rel: str, slug: str) -> dict:
     }
 
 
+def _backup_once(path: Path) -> tuple[str, bool]:
+    """同ディレクトリへ <name>-backup.<ext> を作る。既存 backup は保持する。"""
+    bak = path.with_name(path.stem + "-backup" + path.suffix)
+    if bak.exists():
+        return f"backup exists: {bak.relative_to(REPO)}", False
+    shutil.copy2(path, bak)
+    return f"backup: {bak.relative_to(REPO)}", True
+
+
+def _restore_surface(path: Path, original: str, backup_created: bool) -> None:
+    bak = path.with_name(path.stem + "-backup" + path.suffix)
+    if backup_created and bak.exists():
+        shutil.copy2(bak, path)
+    else:
+        path.write_text(original, encoding="utf-8")
+
+
+def apply_surfaces(spec: dict) -> None:
+    """JA カード4面（archive 3面 + eras/<era>.html）へ決定論アンカーで実挿入する。
+    movements 面は対象外（従来どおり手貼り）。"""
+    spec = dict(spec)
+    slug = spec["id"]
+    if not spec.get("idx") and CARD_DATA.exists():
+        data = json.loads(CARD_DATA.read_text(encoding="utf-8"))
+        idx = next((p.get("idx") for p in data.get("photographers", [])
+                    if p.get("id") == slug), None)
+        if idx is not None:
+            spec["idx"] = idx
+    target = f"photographers/{slug}.html"
+    archive_anchor = '<article class="pc-card pc-card--movement"'
+    archive_card = archive_card_html(spec)
+
+    print("\n" + "=" * 70)
+    print(f"SURFACE APPLY（JAカード4面）: {slug} / era={spec['era']}")
+    print("=" * 70)
+
+    for rel in ("archive.html", "cards-archive.html", "new-design/cards-archive.html"):
+        path = REPO / rel
+        if not path.exists():
+            print(f"  [MISSING-FILE] {rel}: skip")
+            continue
+        html = path.read_text(encoding="utf-8")
+        if target in html:
+            print(f"  [ALREADY] {rel}: skip")
+            continue
+        pos = html.find(archive_anchor)
+        if pos < 0:
+            print(f"  [FAIL] {rel}: anchor not found")
+            raise SystemExit(1)
+        before_count = html.count("pc-card--photographer")
+        backup_note, backup_created = _backup_once(path)
+        new = html[:pos] + archive_card + "\n" + html[pos:]
+        path.write_text(new, encoding="utf-8")
+        check = path.read_text(encoding="utf-8")
+        after_count = check.count("pc-card--photographer")
+        if target not in check or after_count != before_count + 1:
+            _restore_surface(path, html, backup_created)
+            print(f"  [FAIL] {rel}: post-write verification failed; restored")
+            raise SystemExit(1)
+        print(f"  [INSERT] {rel}: photographer cards {before_count}→{after_count}; {backup_note}")
+
+    era_rel = f"eras/{spec['era']}.html"
+    era_path = REPO / era_rel
+    if not era_path.exists():
+        print(f"  [MISSING-FILE] {era_rel}: skip")
+        return
+    html = era_path.read_text(encoding="utf-8")
+    if target in html:
+        print(f"  [ALREADY] {era_rel}: skip")
+        return
+    marker = "</article></div></div></section></main>"
+    marker_count = html.count(marker)
+    if marker_count != 1:
+        print(f"  [FAIL] {era_rel}: marker count {marker_count} != 1")
+        raise SystemExit(1)
+    backup_note, backup_created = _backup_once(era_path)
+    era_card = card_html(spec, "ja", label=spec["nationality"], href_prefix="../")
+    replacement = "</article>\n" + era_card + "\n</div></div></section></main>"
+    era_path.write_text(html.replace(marker, replacement, 1), encoding="utf-8")
+    check = era_path.read_text(encoding="utf-8")
+    if target not in check:
+        _restore_surface(era_path, html, backup_created)
+        print(f"  [FAIL] {era_rel}: post-write verification failed; restored")
+        raise SystemExit(1)
+    print(f"  [INSERT] {era_rel}: {backup_note}")
+
+
 def plan_surfaces(spec: dict) -> None:
-    """M6 v2（read-only）: 写真家を全サーフェスへ載せるための挿入計画を dry-run 表示する。
+    """M6 v2/v3: 写真家を全サーフェスへ載せるための挿入計画を dry-run 表示する。
     どのファイルの・どのアンカー前後に・何件 挿入/更新するか（＋掲載済みなら skip）を出す。
-    実書き込みはしない（v3 --apply-surfaces は別途・カード系は保護対象のため慎重に）。"""
+    JA カード4面は --apply-surfaces で実書込できる（movements 面は手貼り）。"""
     slug = spec["id"]
     era = spec["era"]
     movements = [m for m in (spec.get("movements") or [])
@@ -580,7 +667,7 @@ def plan_surfaces(spec: dict) -> None:
             return "MISSING-FILE"
         return "ALREADY（skip）" if st["present"] else "INSERT"
 
-    print("\n■ INSERT 面（JA 手貼り／v3 で自動化予定）")
+    print("\n■ INSERT 面（JA archive 3面 + era 1面は --apply-surfaces で自動挿入可）")
     for rel in ("archive.html", "cards-archive.html", "new-design/cards-archive.html"):
         st = _surface_status(rel, slug)
         extra = f" / 写真家カード {st['ph_cards']}件→{st['ph_cards']+1}" if st.get("exists") and not st.get("present") else ""
@@ -628,8 +715,8 @@ def plan_surfaces(spec: dict) -> None:
         flags = " ".join(f"--country {s}" for s in country_slugs)
         print(f"  countries/*.html             : python3 scripts/generate_country_pages.py {flags}")
         print(f"  en/countries/*.html          : python3 scripts/generate_country_pages_en.py {flags}")
-    print("\n（dry-run。v3 --apply-surfaces 未実装＝カード系は保護対象。"
-          "上記アンカーで手貼り、または別途 apply を実装する）")
+    print("\n（dry-run。JA archive 3面 + era 1面は --apply-surfaces で実書込可。"
+          "movements 面は上記アンカーで従来どおり手貼り）")
 
 
 def print_snippets_and_runbook(spec: dict):
@@ -768,11 +855,19 @@ def _print_tag_lint(spec: dict) -> None:
 
 def main():
     args = sys.argv[1:]
+    if "--help" in args or "-h" in args:
+        print("usage: python3 scripts/add_photographer.py spec.json [--apply] [--scaffold] [--plan-surfaces] [--apply-surfaces]")
+        print("  --apply           card-data / star data を実書込")
+        print("  --scaffold        photographers/<id>.html の空骨格を生成（--apply と併用で書込）")
+        print("  --plan-surfaces   JA/EN サーフェス反映計画を dry-run 表示")
+        print("  --apply-surfaces  JAカード4面（archive 3面 + era 1面）だけ実書込")
+        return
     apply = "--apply" in args
     scaffold = "--scaffold" in args
+    apply_surfaces_flag = "--apply-surfaces" in args
     paths = [a for a in args if not a.startswith("--")]
     if not paths:
-        fail("spec.json のパスを指定してください（--apply で実投入 / --scaffold で空骨格ページ生成）")
+        fail("spec.json のパスを指定してください（--apply で実投入 / --scaffold で空骨格ページ生成 / --apply-surfaces でJAカード4面挿入）")
     spec = load_spec(paths[0])
 
     # ④ 事前 lint: 未マップ tag を着手前に警告（en/archive 中断→en/countries 連鎖欠落の予防）
@@ -781,6 +876,11 @@ def main():
     # M6 v2: サーフェス挿入計画の dry-run 表示（read-only・データ投入はしない）
     if "--plan-surfaces" in args:
         plan_surfaces(spec)
+        return
+
+    # M6 v3: --apply-surfaces 単独なら JA カード4面だけを実書込して終了。
+    if apply_surfaces_flag and not apply:
+        apply_surfaces(spec)
         return
 
     if spec["id"] in {p.get("id") for p in json.loads(CARD_DATA.read_text(encoding='utf-8'))["photographers"]} \
@@ -797,6 +897,8 @@ def main():
         print("\n── 生成ページの完成検査（未記入箇所が WARN で出る）──")
         subprocess.run([sys.executable, str(REPO / "scripts/check_new_photographer.py"),
                         "--slug", spec["id"]])
+    if apply_surfaces_flag:
+        apply_surfaces(spec)
     if apply:
         print("\n── preflight ──")
         subprocess.run([sys.executable, str(REPO / "scripts/preflight.py")])

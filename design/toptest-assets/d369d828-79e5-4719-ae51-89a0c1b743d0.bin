@@ -1706,6 +1706,50 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "eiko-yamazawa",
+    "name": "Eiko Yamazawa",
+    "nameJa": "山沢栄子",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1899–1995",
+    "gender": "女性",
+    "era": "1930",
+    "movements": [
+      "モダニズム",
+      "抽象写真",
+      "構成写真"
+    ],
+    "thumbnail": "",
+    "links": [
+      {
+        "label": "TOP Museum — Eiko Yamazawa: What I Am Doing",
+        "url": "https://topmuseum.jp/exhibition/3445/?lang=en"
+      },
+      {
+        "label": "The Third Gallery Aya — 山沢栄子",
+        "url": "https://thethirdgalleryaya.com/artists/yamazawa_eiko/"
+      }
+    ],
+    "amazon": "",
+    "context": {
+      "text": "1920年代にサンフランシスコでコンスエロ・カナガに写真を学び、帰国後は大阪で自らのスタジオを開いた女性職業写真家の先駆者。写真集『遠近』を経て、撮影前に物体・色・光を構成する抽象写真へ進み、代表作〈What I Am Doing〉では写真用品や過去の自作まで撮影素材にした *1 *2 。",
+      "textEn": "A pioneer among Japan's professional women photographers, she learned photography under Consuelo Kanaga in 1920s San Francisco and opened her own studio in Osaka after returning to Japan. Following the photobook Far and Near she moved into abstract photography composed of objects, color, and light arranged before shooting; in her signature series What I Am Doing she turned photographic supplies and even her own past works into material *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "The Third Gallery Aya — 山沢栄子",
+          "url": "https://thethirdgalleryaya.com/artists/yamazawa_eiko/"
+        },
+        {
+          "num": 2,
+          "name": "東京都写真美術館 — Eiko Yamazawa: What I Am Doing",
+          "url": "https://topmuseum.jp/exhibition/3445/?lang=en"
+        }
+      ]
+    }
   }
+
 
 ];

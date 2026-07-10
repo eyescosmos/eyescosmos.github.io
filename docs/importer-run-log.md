@@ -1008,3 +1008,38 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **フィデリティ差分**: N/A。本文・出典・関連欄は変更せず、hero照合で新たに検出した `gregory-crewdson` の `birthDate: 1962` をJSON-LD script内に追加。
 - **発火した engine 改良**: hero確認年を本文確認年と統合し、mismatch / presence の両方へ適用。本文年とhero年が両方あり矛盾する場合もHARD FAIL。
 - **検証**: strict hero parse 116件。本文に無くheroで増える確認源は birth 92件 / death 51件。本文×hero矛盾0件、既存JSON-LD値不一致0件。`preflight.py` OK / `check_content_loss.py` OK。mutation testで hero由来birthDateキー削除 / hero由来birthDate値不一致 / era型無視 / 既存本文照合デグレなしを確認後、復元。
+
+## 2026-07-10 — eiko-yamazawa（new / 新規追加・山沢栄子・idx301・era1930）＋importer時短2件を実装（②--apply-surfaces / ③bundle側ui-terms）
+
+- **種別**：new（純・新規追加）。素材=re-photographer/eiko-yamazawa.html / -en.html（JA/EN・v5.1・clean・Amazonリンク入り）。slug=eiko-yamazawa。
+- **分業**：**Fable監督・監査／Codex（reasoning=high・MCP）実装**。監督側で全判断（spec全項目・idx=301・era=1930・
+  movementSlugJa=モダニズム・GENRE_TAG/terms追加語・de-link判断・挿入アンカー）、Codexはimporter改善2件の実装のみ
+  （触ってよいファイル明示・Web検索禁止・実行はpy_compileまで）。パイプライン実行は監督側。
+- **importer時短2件（積み残し2026-07-09分・今回実装＋本番テスト）**：
+  - **② `add_photographer.py --apply-surfaces`**：JAカード4面（archive.html / cards-archive.html /
+    new-design/cards-archive.html / eras/<era>.html）を決定論アンカーで自動挿入。backup（既存backup上書きなし）＋
+    冪等skip＋書込後検証（ref存在・写真家カード+1）失敗時restore。`--apply --apply-surfaces` 併用時はデータ投入後に
+    surfaces実行（監査でearly-return罠を検出→修正済）。**本番初回で4面すべてINSERT成功・手貼りゼロ**。
+  - **③ `--bundle-to-en` に works ui-terms 提案を配線**：run_merge_to_en の①ブロックを `report_works_ui_terms()` へ
+    抽出し両経路から呼ぶ（merge側は挙動不変のリファクタ）。新規経路で3件提案→--applyで自動書込
+    （ToMuCo—Transparent Blue / Third Gallery Aya—Works and Chronology / Transparent Blue）。**手作業だったui-terms works登録が消えた**。
+- **判断点（実測）**：
+  1. **movementSlugJa=モダニズム**：素材heroのMovementは抽象写真だが movements/抽象写真.html 未存在＋STUB_TO_SLUG未登録。
+     entry-meta/§RELが唯一リンクする既存運動＝モダニズム（modernism）を運動ページ面に採用。star用movements=[モダニズム,抽象写真,構成写真]。
+  2. **GENRE_TAG追加1語**：「抽象写真」→ Abstract Photography（build_archive_en.py。未登録のままだとen/archive連鎖停止）。
+     ui-terms terms にも「抽象写真」→ Abstract photography を追加（hero眉/Channel未翻訳WARN 2件解消）。
+  3. **de-link 2名**：consuelo-kanaga / imogen-cunningham はページ未存在→JA本文・§RELの計4リンクを名前だけ残して除去
+     （EN側はimporterが自動de-link・dangling 0実測）。
+- **面（tracked 17）**：新規JA/EN個別ページ2＋archive/cards-archive JA・card-data・countries japan JA/EN・
+  en-content(+94)・ui-terms(+4)・supplement・star bin・en/archive・eras1930 JA/EN・モダニズム JA/EN（件数12→13・chip追加）・
+  scripts3（add_photographer / import_chatgpt / build_archive_en 1行）＋new-design/cards-archive.html（git-ignore・disk投入済）。
+- **フィデリティ**：JA 3節・18 cite・50 sup-ref・dangling 0（[render-ja]自己検査）。EN merge add=20/skip-empty=2・
+  他slug byte不変assert通過。EN残WARN3（no photobooks_html / no external_links_html / jsonld WebPageフォールバック）は
+  asako同型の標準（amzn.to 2件はfurther_reading経由で反映済を実測）。
+- **検証**：check_new_photographer OK（WARN=節名非標準〔素材準拠〕・en_graph_absent〔EN標準〕）／check_content_loss OK／
+  link integrity OK／**preflight exit 0**（残WARN3＝en/countries/japan・en/eras/1930・en/movements/modernism の
+  「直接編集疑い」＝scoped再生成への既知の誤検知・07-09と同型）。`--all` 不使用・link_country_keywords 不実行・対象外巻き込み0。
+- **Codex 挙動**：逸脱0。②のCLIフラグ併用罠（--apply --apply-surfaces でデータ投入がearly-returnでスキップ）を監査で指摘→即修正。
+- **backup（未追跡・GH Pages 実機確認後に削除）**：archive-backup.html / cards-archive-backup.html / eras/1930-backup.html /
+  movements/モダニズム-backup.html / card-data-backup.json / -supplement-backup.js / star -backup.bin。
+- **wall-time**：30分未満（Daisuke 概算・計測忘れ）。
