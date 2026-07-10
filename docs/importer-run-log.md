@@ -846,3 +846,42 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   残WARN2種は**いずれも想定内**: ①eugenesmith/moriyama の lead 文面変化（＝意図した加筆）
   ②sibylle の「EN HTML 直接編集疑い」（＝builder 対象外のため WARN の助言「JSONを直して再生成」は本ページには当てはまらない・既知の誤検知）。
 - **分業メモ**：EN 実装は別セッション、合流時の消失/巻き込み/巻き戻り検証と push は JA セッション（Opus）。
+
+## 2026-07-10 — sitemap.xml から new-design/ の 325 URL を除去＋生成元を修正
+
+- **種別**：other（sitemap とその生成元のみ。HTML・本文・出典・メタはゼロ変更）／**wall-time**：__分（Daisuke 記入）
+- **面（tracked 2）**：`sitemap.xml`（1300行削除・追加0）・`scripts/generate_sitemap.py`（+3行）
+- **入力**：直前エントリの「副産物」として切り出した課題。
+- **前提の訂正 — 重要**：直前エントリは 325 URL を「robots: index,follow ＋ canonical が `photographers/` を指す
+  ＝正規化で捨てられる重複」と記録したが、**誤り**。実際は **全 325 URL が本番で 404**。
+  `new-design/` は `.gitignore:12` で除外されており git 追跡ファイル 0 件＝**デプロイされていない**。
+  curl で 6 カテゴリ全て 404 を実測（`<slug>` / `movements/` / `jp-` / `eras/` / `index.html` / `cards-archive.html`）。
+  対して `photographers/ansel-adams.html` は 200。GSC に出現しない理由も「canonical で除外」ではなく 404 と考えるのが自然。
+- **根本原因**：`generate_sitemap.py:27` の `REPO_ROOT.rglob("*.html")` が **git ではなくディスクを走査**するため、
+  gitignore 済みの `new-design/` のローカル 286 ファイルを全部拾う。時系列が符合する：
+  `dd8bc74cf`(2026-06-08) new-design を git から削除 → `4ea56655b`(2026-06-12) gitignore 追加 →
+  `1e5d0ab7b`(2026-06-19) sitemap 再生成で **ディスクから 325 件が復活**。
+- **325 件の内訳**：写真家 `<slug>.html` 265 ／ `movements/` 31 ／ `jp-<日本語名>.html` 16 ／ `eras/` 11 ／
+  `index.html` 1 ／ `cards-archive.html` 1。
+- **変更**：
+  - `sitemap.xml`：`<loc>` に `/new-design/` を含む `<url>` ブロック 325 個を外科的に除去（325×4行＝1300行）。
+    **再生成はしない**。残る 748 ブロックはバイト不変（`git show HEAD:sitemap.xml` を同条件でフィルタ→`cmp` 一致で証明）。
+    loc 1073 → 748。
+  - `generate_sitemap.py`：`html_files()` の `templates/` スキップの隣に `rel.startswith("new-design/")` スキップを追加。
+    末尾スラッシュ必須なので `new-design-foo.html` を誤爆しない。
+- **不採用の選択肢（記録）**：
+  - `new-design/*.html` に `robots: noindex` → **無意味**。本番にファイルが無く Google が meta を読めない。
+  - `new-design/` 自体の削除 → **反対**。`cards-archive.html` がカードの正データ（CLAUDE.md 7項）。SEO 上は既に無害。
+  - sitemap 再生成 → **今回は不可**。`lastmod` が mtime 由来で **728 件 churn** し、無関係差分で diff が読めなくなる。
+- **触っていないもの**：`new-design/` 配下は 1 バイトも変更なし。sitemap の `<loc>` 行を消すこととファイルを触ることは別問題。
+  TOP12 カード・フィルター/ソート UI・カード JS も無変更。
+- **検証**：`grep -c "<loc>" sitemap.xml` = 748 ／ `grep -c "<loc>.*new-design"` = 0 ／ XML パース OK ／
+  check_content_loss exit 0 ／ preflight OK ／ `git diff --stat` = 2 files, +3 / -1300 ／ 未追跡 10 件は未 stage。
+  **巻き添え除外の否定**：パッチ後の生成元を書き込みなし dry-run したところ、現行 748 URL が **1 件も落ちない**
+  （`cur - new = 0`）＝正規ページを誤って除外していない。
+- **副産物（別タスクへ切り出し）**：パッチ後の再生成は **実在する未掲載ページ 18 件**を新たに拾う
+  （`en/photographers/asako-narahashi.html`・`en/movements/new-topographics.html` 等、200 実測済）。
+  ただし同時に `lastmod` 728 件が churn するため分離。sitemap 追加は別途 Daisuke 判断。
+- **Codex 挙動**：逸脱 0。診断は監督（Opus）が実施し、Codex は実装と検証のみ。
+  バイト不変性を `git show HEAD:sitemap.xml` からの再構成＋`cmp` で自主的に証明＝有効な貢献。
+- **分業メモ**：診断・前提の訂正・不採用判断・Daisuke への方針確認は Opus、機械的な除去と検証実行は Codex。

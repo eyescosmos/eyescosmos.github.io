@@ -28,6 +28,9 @@ def html_files() -> list[Path]:
         rel = path.relative_to(REPO_ROOT).as_posix()
         if rel.startswith("templates/"):
             continue
+        # new-design/ is gitignored local-only source and is not deployed.
+        if rel.startswith("new-design/"):
+            continue
         if re.fullmatch(r"google[0-9a-f]+\.html", path.name):
             continue
         if path.name.endswith("-backup.html"):
