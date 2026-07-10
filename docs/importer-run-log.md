@@ -35,6 +35,7 @@
 | 2026-07-07 | yuki-onodera | update | （Daisuke記入） | 0 | 1（§REL手復元） | 7ファイル | 763→9763 | 4→32 |
 | 2026-07-07 | (engine)works ui-terms自動化＋intentional-replacements | engine | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-08 | yuki-onodera(写真集Amazonリンク3+4冊＋§REL写真家3名) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
+| 2026-07-10 | (JSON-LD birthDate/deathDate復元＋preflight) | other | （Daisuke記入） | 1（v5.1移行でJSON-LD日付欠落） | 0（機械復元・機械検証） | 154ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -978,3 +979,12 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   （指示通り）。誤りは監督側の仕様。EN 正本 `years="2000s"` の潜在回帰は Codex は検知せず、監督側が実測で発見。
 - **分業メモ**: 根本原因の git 追跡・件数の実測訂正・外部出典の裏取り・正規表現の誤検知潰しと全コーパス検証は Opus、
   22ファイルの機械置換・パーサ堅牢化・ガード実装は Codex。
+
+### 2026-07-10 — JSON-LD birthDate/deathDate復元＋preflight（other）
+- **wall-time**: （Daisuke記入）。
+- **bug**: v5.1移行 `8ab5c9569` で、JA写真家ページの単一 Person JSON-LD から `birthDate` / `deathDate` が欠落。
+- **手作業点**: 0。旧 `@graph` Person 値と本文/EN years照合に基づく機械復元。jp-* 5件の `deathDate` はJA本文の一意な没年から補完。
+- **サーフェス変更数**: 154ファイル（JA写真家HTML 153 + `scripts/preflight.py`）。EN HTML / `<dt>Years</dt>` / hero は変更なし。
+- **フィデリティ差分**: N/A。本文・出典・関連欄は変更せず、JSON-LD script内に `birthDate` 143件・`deathDate` 33件を追加。
+- **発火した engine 改良**: `preflight.py` に `_JA_DEATH_RE` / `_ja_body_death_years()` を追加し、JA本文の没年が一意に取れる場合のみ `deathDate` 不一致をHARD FAIL化。
+- **検証**: dry-run 176件・153ファイル PASS（JA本文+EN 137 / ENのみ 34 / JA本文のみ 5）。変更行は全てJSON-LD script内。JSON-LD load OK。`preflight.py` OK（既存WARN 3件のみ）/ `check_content_loss.py` OK。mutation testで `deathDate` / `birthDate` の本文不一致を各1件HARD FAIL確認後、復元。
