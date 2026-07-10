@@ -885,3 +885,41 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **Codex 挙動**：逸脱 0。診断は監督（Opus）が実施し、Codex は実装と検証のみ。
   バイト不変性を `git show HEAD:sitemap.xml` からの再構成＋`cmp` で自主的に証明＝有効な貢献。
 - **分業メモ**：診断・前提の訂正・不採用判断・Daisuke への方針確認は Opus、機械的な除去と検証実行は Codex。
+
+## 2026-07-10 — sitemap 未掲載18件を追加＋lastmod を mtime から git コミット日へ
+
+- **種別**：other（sitemap とその生成元のみ。HTML・本文・出典・メタはゼロ変更）／**wall-time**：__分（Daisuke 記入）
+- **面（tracked 2）**：`sitemap.xml`・`scripts/generate_sitemap.py`
+- **入力**：直前エントリで「別タスクへ切り出し」とした積み残し。
+- **課題**：sitemap が 2026-06-19 以降再生成されておらず、**本番200の実在ページ18件が未掲載**だった。
+  内訳＝JA写真家5（asako-narahashi / kenta-cobayashi / mayumi-hosokura / nerhol / sakiko-nomura）＋同EN5＋
+  JA運動4（インティメイト・ライフ / スティルライフ / ニュー・トポグラフィックス / ポストインターネット）＋同EN4。
+- **前回見立ての訂正**：直前エントリは「再生成すると lastmod が728件 churn するので分離」と書いたが、
+  **churn は案を問わず不可避**だった。現行 sitemap の lastmod は既に古く（例：`archive.html` は `2026-06-18` だが
+  実際は `2026-07-10` に変更済）、2026-06-19 以降に触った約721ページで嘘になっている。
+  争点は「churn するか否か」ではなく「churn 後の値が真か嘘か」だった。
+- **変更**：
+  - `generate_sitemap.py`：`<lastmod>` を **mtime → git コミット日**へ。`git -c core.quotepath=false log
+    --format=C%as --name-only -- '*.html'` の一括1パスで `{rel: YYYY-MM-DD}` を作る（newest-first なので初出が最新）。
+    mtime 経路は**未commitファイル用のフォールバックとして残す**。
+    mtime は clone/checkout でリセットされ、同一内容を書き直す横断スクリプトでも進むため、公開日として嘘をつく。
+  - `sitemap.xml`：再生成。loc **748 → 766**（+18）。既存721件の lastmod が**真の値へ一度だけ補正**、27件は不変、
+    失われたURL **0件**。
+- **地雷2件（実測で検知・対処済）**：
+  - **`core.quotepath`**：無指定だと git が非ASCIIパスを `"movements/\343\202\263..."` とエスケープし、
+    **52ページが無言でフォールバックに落ちる**。このリポジトリは日本語ファイル名が多く必ず踏む。`-c core.quotepath=false` で0件化。
+  - **日付マーカーの誤読**：`--format=C%as` の行判定が `line.startswith("C")` だと、将来 `Contact.html` のような
+    **Cで始まるパス**を日付行と誤認する。現状該当0件だが `re.fullmatch(r"C(\d{4}-\d{2}-\d{2})$")` へ厳密化。
+    厳密化後も sitemap.xml はバイト不変を確認（＝挙動を変えていない）。
+- **副作用の検証**：`photographers/jp-木村伊兵衛.html` が alternate 3本を新規獲得したが、これは 06-19 以降に
+  JA HTML へ hreflang が入った結果を正しく拾ったもの。指す先3本とも **200 実測**。
+  **既存URLが alternate を失った件数は0**（`<url>` ブロック単位で新旧を突き合わせ）。
+- **検証**：loc=766 ／ new-design loc=0 ／ XMLパースOK ／ 消失URL=0 ／ git日付なし(mtimeフォールバック)=0 ／
+  **冪等性**＝2回実行して `cmp` 一致 ／ check_content_loss exit 0 ／ preflight OK ／ 未追跡10件は未stage。
+- **並行作業**：`photographers/*.html` の JSON-LD `birthDate` 修正が**別セッションで進行中**。
+  本作業は `photographers/` を一切触らず、重なるのは本ファイルのみ。commit 直前に pull して衝突を回避した。
+  なお birthDate の**正しい生年は各ページの本文と meta description に既にある**（細江1933・中平1938・畠山1958・北島1954を実測）。
+  直前エントリの「正しい生年がページ上に無く外部出典の裏取りが要る」は**誤り**。外部調査は不要。
+- **Codex 挙動**：逸脱0。予告した4つの数値（766 / 721 / 27 / 0）を全て的中させ、冪等性も自主検証。
+  `core.quotepath` は監督側が事前に実測して指示に含めた。日付マーカー厳密化は監督側で後追い実施。
+- **分業メモ**：設計判断（mtime vs git日付・churnの質の評価）と地雷の事前実測は Opus、実装と検証実行は Codex。

@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote, urlsplit, urlunsplit
 import re
+import subprocess
 
 
 BASE_URL = "https://eyescosmos.github.io"
@@ -66,6 +67,38 @@ def to_lastmod(path: Path) -> str:
     return mtime.date().isoformat()
 
 
+def git_lastmod_dates() -> dict[str, str]:
+    result = subprocess.run(
+        [
+            "git",
+            "-c",
+            "core.quotepath=false",
+            "log",
+            "--format=C%as",
+            "--name-only",
+            "--",
+            "*.html",
+        ],
+        cwd=REPO_ROOT,
+        check=True,
+        text=True,
+        stdout=subprocess.PIPE,
+    )
+    # `git log` is newest-first, so the first path occurrence is its latest commit.
+    # Match the date marker strictly: a path such as "Contact.html" also starts with "C".
+    date_marker = re.compile(r"C(\d{4}-\d{2}-\d{2})$")
+    dates: dict[str, str] = {}
+    current_date = ""
+    for line in result.stdout.splitlines():
+        marker = date_marker.fullmatch(line)
+        if marker:
+            current_date = marker.group(1)
+            continue
+        if line and current_date and line not in dates:
+            dates[line] = current_date
+    return dates
+
+
 def counterpart_rel(rel: str) -> tuple[str, str] | None:
     pairs = (
         ("photographers/", "en/photographers/"),
@@ -124,11 +157,14 @@ def alternate_urls_from_html(path: Path) -> dict[str, str]:
 def pages() -> list[Page]:
     file_list = html_files()
     existing = {path.relative_to(REPO_ROOT).as_posix() for path in file_list}
+    # Git commit dates are stable across clone/checkout and script rewrites;
+    # filesystem mtimes are reset by both, so use mtime only for untracked files.
+    lastmod_dates = git_lastmod_dates()
     return [
         Page(
             rel=path.relative_to(REPO_ROOT).as_posix(),
             url=to_url(path.relative_to(REPO_ROOT).as_posix()),
-            lastmod=to_lastmod(path),
+            lastmod=lastmod_dates.get(path.relative_to(REPO_ROOT).as_posix()) or to_lastmod(path),
             alternates=alternate_urls_from_html(path) or alternate_urls(path.relative_to(REPO_ROOT).as_posix(), existing),
         )
         for path in file_list
