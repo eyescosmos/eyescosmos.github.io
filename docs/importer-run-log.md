@@ -38,6 +38,7 @@
 | 2026-07-10 | (JSON-LD birthDate/deathDate復元＋preflight) | other | （Daisuke記入） | 1（v5.1移行でJSON-LD日付欠落） | 0（機械復元・機械検証） | 154ファイル | N/A | N/A |
 | 2026-07-10 | (JSON-LD初期欠落11件補完＋presenceガード) | other | （Daisuke記入） | 1（JSON-LD日付キー初期欠落） | 0（機械照合・機械検証） | 11ファイル | N/A | N/A |
 | 2026-07-10 | (JSON-LD hero年照合ガード) | other | （Daisuke記入） | 1（本文で取れない日付キー欠落の死角） | 0（機械照合・機械検証） | 2ファイル | N/A | N/A |
+| 2026-07-11 | asako-narahashi(写真集Amazonリンク JA3冊/EN3冊) | other | 10分弱 | 0 | 0 | 3ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1043,3 +1044,12 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **backup（未追跡・GH Pages 実機確認後に削除）**：archive-backup.html / cards-archive-backup.html / eras/1930-backup.html /
   movements/モダニズム-backup.html / card-data-backup.json / -supplement-backup.js / star -backup.bin。
 - **wall-time**：30分未満（Daisuke 概算・計測忘れ）。
+
+## 2026-07-11 — asako-narahashi 写真集Amazonリンク（JA3冊/EN3冊・種別=other）
+
+- **種別**：other（既存ページ§REFへの追記のみ。本文・thesis・出典は不触）。onodera 07-08 と同じプレイブックの5回目実走。
+- **面**：3ファイル（`photographers/asako-narahashi.html` +29行 / `data/photographers-en-content.json` +3-1行＝photobooks_html新キー追加 / `en/photographers/asako-narahashi.html` +25行＝`--slug`再生成）。EN HTML直編集なし。
+- **調査（監督側・捏造防止）**：渡されたのは amzn.to 短縮URL 6本のみ。curl でASIN解決（JA: 4938628279 / 4905254027 / 4905254086、EN: 1590052153 / 4938628279 / 4905254124）。Amazonは直接読めないため、書名・出版社・年は 蒼穹舎既刊リスト・日本の古本屋（NU・E＝蒼穹舎1997）／pg-web.net（Ever After＝オシリス2013・カラー58点・付録インタビュー）／shashasha（ギプス＝オシリス2018・1991年骨折時のモノクロ）／Antenne Books ほか（Dawn in Spring＝オシリス2022・1989年「春は曙」初書籍化）／AbeBooks・josefchladek（half awake…＝Nazraeli 2007・Parr/Nazraeli Edition of Ten 第2作・Martin Parr文）で確定。解説文はJA本文の記述（03FOTOS 17回展・骨折旅行撮影）と整合させた。
+- **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。書名・年・解説文・挿入位置・JSON書き戻し方式（`json.dumps(..., ensure_ascii=False, indent=2)` 末尾改行なし）まで全て監督側で確定して一字一句指定。Codex呼び出し1回・**バグ0・逸脱0**。
+- **検証**：言語別リンク完全分離（JA 3本/EN 3本・相互混入0）・`rel="noopener sponsored"` 全6本・既存 ph-further-links 4件無傷・JSON差分は該当ページのみ・check_content_loss OK・preflight OK（exit 0）・対象外巻き込み0。
+- **wall-time**：10分弱（Daisuke 実測）。大半は書誌裏取り。
