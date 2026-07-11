@@ -1857,12 +1857,14 @@ def _ja_metrics(html: str) -> dict:
                          html, re.S):
         body_chars += len(re.sub(r"<[^>]+>", "", m.group(1)).strip())
     ref = _section_body(html, "§ REF")
+    rel = _section_body(html, "§ REL")
     return {
         "body_chars": body_chars,
         "unique_cites": len(cites),
         "suprefs": len(suprefs),
         "dangling": sorted(set(suprefs) - cites, key=lambda s: int(s)),
-        "rel_items": _section_body(html, "§ REL").count("<li"),
+        "rel_items": rel.count("<li"),
+        "rel_is_prep": ("prep-block" in rel or "準備中" in rel),
         "works_links": _section_body(html, "§ WORKS").count("<a "),
         "ref_links": 0 if ("prep-block" in ref or "準備中" in ref) else ref.count("<a "),
         "ref_is_prep": ("prep-block" in ref or "準備中" in ref),
@@ -1895,11 +1897,11 @@ def _prepare_update(slug: str, spec: dict) -> None:
     print("    次: spec の period/movements を確認・編集 → importer を --apply --force で実行")
 
 
-def _extract_ref_body(html: str) -> str | None:
-    """§ REF の ph-section__body 内側 HTML を返す（carry-forward splice 用）。
-    _set_section_body と対称: <span class="ph-section__num">§ REF</span> の後の
+def _extract_section_body_by_marker(html: str, marker: str) -> str | None:
+    """指定した § マーカーの ph-section__body 内側 HTML を返す。
+    _set_section_body と対称: <span class="ph-section__num">...</span> の後の
     ph-section__body の内側だけ切り出す（節末 </section> で閉じない・div 入れ子対応）。"""
-    m = re.search(r'<span class="ph-section__num">§ REF</span>', html)
+    m = re.search(r'<span class="ph-section__num">' + re.escape(marker) + r'</span>', html)
     if not m:
         return None
     bstart = html.find('<div class="ph-section__body">', m.end())
@@ -1918,6 +1920,16 @@ def _extract_ref_body(html: str) -> str | None:
     if end is None:
         return None
     return html[open_end:end].strip()
+
+
+def _extract_ref_body(html: str) -> str | None:
+    """§ REF の ph-section__body 内側 HTML を返す（互換ラッパ）。"""
+    return _extract_section_body_by_marker(html, "§ REF")
+
+
+def _extract_rel_body(html: str) -> str | None:
+    """§ REL の ph-section__body 内側 HTML を返す（carry-forward splice 用）。"""
+    return _extract_section_body_by_marker(html, "§ REL")
 
 
 def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
@@ -1951,6 +1963,17 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
             else:
                 sys.stderr.write("ERROR: §REF splice に失敗（新ページに §REF 節が無い）。\n")
                 return 3
+    carried_rel = False
+    if n["rel_is_prep"] and o["rel_items"]:
+        old_rel = _extract_rel_body(old_html)
+        if old_rel:
+            spliced = _set_section_body(new_html, "§ REL", old_rel)
+            if spliced != new_html:
+                new_html = spliced
+                carried_rel = True
+            else:
+                sys.stderr.write("ERROR: §REL splice に失敗（新ページに §REL 節が無い）。\n")
+                return 3
     n2 = _ja_metrics(new_html)  # splice 後の指標で検証
 
     # (d) 検証（書込前に評価）: 引き継いだ §REF が新ページに実在 / フィデリティ非減少 /
@@ -1962,6 +1985,15 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
             problems.append("carry-forward した §REF 内容が新ページに見当たらない")
         if n2["ref_is_prep"]:
             problems.append("§REF が splice 後も「準備中」のまま")
+    if carried_rel:
+        old_rel_norm = norm_text(_extract_rel_body(old_html))
+        if old_rel_norm and old_rel_norm not in norm_text(new_html):
+            problems.append("carry-forward した §REL 内容が新ページに見当たらない")
+        if n2["rel_is_prep"]:
+            problems.append("§REL が splice 後も「準備中」のまま")
+    if n2["rel_items"] < o["rel_items"] and os.environ.get("ALLOW_REL_REDUCTION") != "1":
+        problems.append(f"関連(§REL)件数が減少（{o['rel_items']}→{n2['rel_items']}）。"
+                        "意図的な削減なら ALLOW_REL_REDUCTION=1 で再実行")
     if n2["body_chars"] < o["body_chars"]:
         problems.append(f"本文字数が減少（{o['body_chars']}→{n2['body_chars']}）")
     if n2["unique_cites"] < o["unique_cites"]:
@@ -1982,7 +2014,8 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
     tmp.write_text(new_html, encoding="utf-8")
     os.replace(tmp, page)  # atomic
     print(f"  ✅ 書込: {_rel(page)}"
-          + ("（§REF carry-forward splice 済）" if carried_ref else ""))
+          + ("（§REF carry-forward splice 済）" if carried_ref else "")
+          + ("（§REL carry-forward splice 済）" if carried_rel else ""))
 
     # (d) 適用後 check_content_loss.py 通過。(e) 失敗なら自動ロールバック。
     written = page.read_text(encoding="utf-8")
@@ -1990,6 +2023,10 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
     post_problems = []
     if carried_ref and norm_text(_extract_ref_body(old_html)) not in norm_text(written):
         post_problems.append("書込後ページに carry-forward した §REF が無い")
+    if carried_rel and norm_text(_extract_rel_body(old_html)) not in norm_text(written):
+        post_problems.append("書込後ページに carry-forward した §REL が無い")
+    if n3["rel_items"] < o["rel_items"] and os.environ.get("ALLOW_REL_REDUCTION") != "1":
+        post_problems.append("書込後§REL件数が既存を下回る")
     if n3["body_chars"] < o["body_chars"] or n3["unique_cites"] < o["unique_cites"] \
             or n3["suprefs"] < o["suprefs"] or n3["dangling"]:
         post_problems.append("書込後フィデリティが既存を下回る/dangling あり")
@@ -2007,7 +2044,7 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
         sys.stderr.write(f"↩ ロールバック完了: {_rel(page)} を書込前へ復元した。\n")
         return 3
 
-    print("  適用後検証 : OK（§REF実在 / フィデリティ非減少 / dangling なし / "
+    print("  適用後検証 : OK（§REF/§REL実在 / フィデリティ非減少 / dangling なし / "
           "check_content_loss 通過）")
     print(f"  本文(§body) {o['body_chars']}→{n3['body_chars']} / unique出典 "
           f"{o['unique_cites']}→{n3['unique_cites']} / sup-ref {o['suprefs']}→{n3['suprefs']}")
@@ -2062,6 +2099,11 @@ def run_update_existing(slug: str, ja_path: Path, en_path: Path | None,
     plan = []
     if o["ref_links"] and n["ref_is_prep"]:
         plan.append(f"§REF/further : 既存{o['ref_links']}件 → 新「準備中」 ⇒ 既存を引き継ぐ")
+    if o["rel_items"] and n["rel_is_prep"]:
+        plan.append(f"§REL/関連    : 既存{o['rel_items']}件 → 新「準備中」 ⇒ 既存を引き継ぐ")
+    elif n["rel_items"] < o["rel_items"]:
+        plan.append(f"⚠ §REL件数減少: 既存{o['rel_items']}件 → 新{n['rel_items']}件"
+                    "（--apply は HARD FAIL。意図的なら ALLOW_REL_REDUCTION=1）")
     if spec.get("period"):
         plan.append(f"Period       : {spec['period']}（spec.period で保持済）")
     desc = _derive_meta_description(spec, bundle)

@@ -5231,3 +5231,49 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "mari-katayama",
+  "name": "Mari Katayama",
+  "nameJa": "片山真理",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1987–",
+  "gender": "女性",
+  "era": "2010",
+  "movements": [
+    "ステージド写真",
+    "日本写真",
+    "セルフポートレート"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Tate — I'm wearing little high heels, I have child's feet",
+      "url": "https://www.tate.org.uk/art/artworks/katayama-im-wearing-little-high-heels-i-have-childs-feet-p15466"
+    },
+    {
+      "label": "森美術館 — Mari Katayama Collection",
+      "url": "https://www.mori.art.museum/en/collection/artworks/katayamamari/"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "義足や手縫いの分身を自ら作り、それらと自身の身体を緻密に配置して撮影するセルフポートレートで、障害のある女性の身体を医療や克服の物語だけで示さず、装い、欲望、生活、他者との関係の中に置いた。写真集『GIFT』と第58回ヴェネチア・ビエンナーレでの展示は第45回木村伊兵衛写真賞の対象となった *1 *2 。",
+    "textEn": "In staged self-portraits made with hand-sewn body doubles and decorated prosthetic legs of her own making, she places the body of a disabled woman within dress, desire, daily life, and relations with others rather than within narratives of medicine or overcoming. Her photobook GIFT and her installation at the 58th Venice Biennale were recognized by the 45th Kimura Ihei Photography Award *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Tate — Mari Katayama: Art should be for everyone",
+        "url": "https://www.tate.org.uk/art/artists/mari-katayama-30022/art-should-be-for-everyone---mari-katayama"
+      },
+      {
+        "num": 2,
+        "name": "朝日新聞出版 — 第45回木村伊兵衛写真賞",
+        "url": "https://publications.asahi.com/news/1346.html"
+      }
+    ]
+  }
+}
+);

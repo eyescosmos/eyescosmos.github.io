@@ -6057,6 +6057,27 @@
       "style": "pc-top--kanji",
       "artText": "抽象",
       "hintText": "EIKO YAMAZAWA · 1899–1995"
+    },
+    {
+      "type": "photographer",
+      "id": "mari-katayama",
+      "href": "photographers/mari-katayama.html",
+      "idx": 302,
+      "nameJa": "片山真理",
+      "nameEn": "Mari Katayama",
+      "metaJa": "日本 · 1987–",
+      "era": "2010",
+      "nationality": "JP",
+      "ledeJa": "1987年埼玉県生まれ、群馬県育ち。先天性脛骨欠損症により9歳で両脚の切断手術を受け、義足とともに生きてきた経験を背景に、手縫いのオブジェや装飾した義足を自ら作り、それらと自身の身体を緻密に配置して撮影するセルフポートレートを展開した。写真集『GIFT』と第58回ヴェネチア・ビエンナーレでの展示は第45回木村伊兵衛写真賞の対象となり、義足で履けるハイヒールを作る「ハイヒールプロジェクト」など、装いと身体の選択肢そのものを制作の対象にしている。",
+      "channel": "写真史の論点 · セルフポートレート",
+      "tags": [
+        "ステージド写真",
+        "日本写真",
+        "日本"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "義足",
+      "hintText": "MARI KATAYAMA · 1987–"
     }
   ],
   "movements": [

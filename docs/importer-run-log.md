@@ -1053,3 +1053,20 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。書名・年・解説文・挿入位置・JSON書き戻し方式（`json.dumps(..., ensure_ascii=False, indent=2)` 末尾改行なし）まで全て監督側で確定して一字一句指定。Codex呼び出し1回・**バグ0・逸脱0**。
 - **検証**：言語別リンク完全分離（JA 3本/EN 3本・相互混入0）・`rel="noopener sponsored"` 全6本・既存 ph-further-links 4件無傷・JSON差分は該当ページのみ・check_content_loss OK・preflight OK（exit 0）・対象外巻き込み0。
 - **wall-time**：10分弱（Daisuke 実測）。大半は書誌裏取り。
+
+## 2026-07-11 — mari-katayama（new / 新規追加・片山真理・idx302・era2010）＋§REL carry-forwardガード実装
+
+- **種別**：new（純・新規追加）。素材=re-photographer/mari-katayama.html / -en.html（JA/EN・v5.1・clean・Amazonリンク各2冊入り）。slug=mari-katayama。表記は素材どおり「片山真理」（依頼文の「真里」は誤記と判断）。
+- **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。監督側で全判断（spec全項目・idx=302・era=2010・movementSlugJa=ステージド写真・§RELリンク先・件数アンカー・GENRE_TAG追加語）、Codex呼び出し2回（①JA§REL修正5編集＋EN正本JSON2キー＋運動ページJA手挿入 ②§RELガード実装）。パイプライン実行と監査は監督側。**Codexバグ0・逸脱0**。
+- **判断点（実測）**：
+  1. **運動面=ステージド写真**（§04が演出写真史に位置づけ・JA/ENページ既存・featured登録済・11→12名）。フェミニズム写真もfeaturedだがJA/EN不整合リスク（EN自動メンバー化）のためstar用movements=[ステージド写真,日本写真,セルフポートレート]からも除外。
+  2. **GENRE_TAG追加1語**：「セルフポートレート」→ Self-Portrait（build_archive_en.py。未登録でen/archive連鎖停止＝eikoの抽象写真と同型）。ui-terms terms は既登録で追加不要。
+  3. **§REL修正**：素材の morimura.html は dangling（正=yasumasa-morimura.html）。sherman/miyako-ishiuchi/yurie-nagashima をリンク化、テーマにステージド写真リンクを追加。
+  4. **EN §REL抽出漏れ**：素材§RELラベル「Related Photographers and Themes / Related Themes」を importer が site_directory_html に抽出できず「In preparation」化→ 正本JSONへ site_directory_html＋related_annotations 5件を手投入して --force 再生成で解消（新規経路にも§REL落ちの穴がある実例）。
+  5. **運動ページサイドバー Photogs=7 は stale**（実カード11）→ 挿入後の実数12に合わせて修正。
+- **importer改善（積み残し2026-07-07分・今回実装）**：**§REL carry-forwardガード**を _apply_update_existing に追加（Codex実装/Fable監査）。新素材の§RELが「準備中」なら旧§RELを§REF同型でsplice、件数減はHARD FAIL（意図的削減は ALLOW_REL_REDUCTION=1）。書込前後の二重検証＋dry-run計画表示。合成素材（onodera §REL除去版）dry-runと関数テストで検証済。**実update案件での --apply 実走検証は次回update時**。
+- **面（tracked 16）**：新規JA/EN個別ページ2＋archive/cards-archive JA・card-data・countries japan JA/EN・en-content(+119)・ui-terms(+2 works)・supplement・star bin・en/archive・eras2010 JA/EN・ステージド写真 JA/EN（11→12・chip追加・stale7→12）・scripts2（build_archive_en 1行 / import_chatgpt +49-7）＋new-design/cards-archive.html（git-ignore・投入済）。
+- **フィデリティ**：JA 4節・27 cite・48 sup-ref・dangling 0（render-ja自己検査）。EN merge add=18/skip-empty=4・他slug byte不変assert通過。EN残WARN3（no photobooks_html / no external_links_html / jsonld fallback）=eiko同型の標準（amzn.to 2件はfurther_reading経由で反映済を実測）。
+- **検証**：check_new_photographer OK（WARN=en_graph_absent〔EN標準〕のみ）／check_content_loss OK／link integrity OK／**preflight exit 0**（残WARN3=en/countries/japan・en/eras/2010・en/movements/staged-photography の「直接編集疑い」＝scoped再生成への既知の誤検知・07-10と同型）。--all 不使用・link_country_keywords 不実行・対象外巻き込み0。
+- **backup（未追跡・GH Pages 実機確認後に削除）**：archive-backup.html / cards-archive-backup.html / eras/2010-backup.html / movements/ステージド写真-backup2.html / card-data-backup.json / -supplement-backup.js / star -backup.bin。
+- **wall-time**：（Daisuke記入）
