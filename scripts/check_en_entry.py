@@ -50,7 +50,9 @@ PROHIBITED_SOURCE_DOMAINS = (
 #   よって JSON からの再生成は禁止（正しい HTML を壊す）。HTML を手編集で維持する。
 # - toyoko-tokiwa: EN HTML は手作りで JSON 正本（photographers-en-content.json）に未登録。
 #   ビルダーは JSON に無いため SKIP する＝再生成対象外。SEO ヘッドは HTML を手編集で維持する。
-HAND_MAINTAINED_EN = {'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html', 'toyoko-tokiwa.html'}
+# - lee-miller: 手書き §REL 解説と3節本文が JSON に無く、再生成すると劣化する
+#   （feedback_lee_miller_no_blind_rebuild）。HTML を手編集で維持する。
+HAND_MAINTAINED_EN = {'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html', 'toyoko-tokiwa.html', 'lee-miller.html'}
 # Amazon 検索結果・トラッキングの兆候
 AMAZON_SEARCH_SIGNS = ('/s?', '/s/ref', '?k=', '&k=', 'field-keywords', '/gp/search')
 

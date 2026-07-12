@@ -39,6 +39,15 @@ from build_taxonomy_en import (  # noqa: E402
     FALLBACK_COUNTRY_EN,
 )
 
+# Hand-maintained EN pages (registry of record: check_en_entry.py).
+try:
+    from check_en_entry import HAND_MAINTAINED_EN  # noqa: E402
+except Exception:
+    HAND_MAINTAINED_EN = {
+        'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html',
+        'toyoko-tokiwa.html', 'lee-miller.html',
+    }
+
 CONTENT_JSON = os.path.join(ROOT, 'data', 'photographers-en-content.json')
 CLASSIFICATION_JSON = os.path.join(ROOT, 'data', 'photographers-en-classification.json')
 JA_DIR = os.path.join(ROOT, 'photographers')
@@ -1873,6 +1882,15 @@ def main():
         if out is None:
             continue
         out_path = os.path.join(EN_DIR, slug + '.html')
+        # SAFETY GUARD: hand-maintained EN pages must never be regenerated
+        # (--force included) — the JSON source lacks their hand-written content.
+        # Registry lives in check_en_entry.py. Override: ALLOW_HAND_MAINTAINED_REBUILD=1
+        if (slug + '.html' in HAND_MAINTAINED_EN and os.path.exists(out_path)
+                and os.environ.get('ALLOW_HAND_MAINTAINED_REBUILD') != '1'):
+            guard_skips.append((slug + '.html',
+                                'HAND_MAINTAINED_EN（手書き維持・再生成禁止。'
+                                '解除は ALLOW_HAND_MAINTAINED_REBUILD=1）'))
+            continue
         # SAFETY GUARD: never silently delete hand-added thesis/related that is
         # not reproduced from the JSON source. Skip the page and report instead.
         if not args.force and os.path.exists(out_path):
