@@ -85,6 +85,7 @@ GENRE_TAG = {
     'シネマトグラフィック写真': 'Cinematographic Photography',
     'シュルレアリスム': 'Surrealism',
     'ステージド写真': 'Staged Photography',
+    'スナップショット': 'Snapshot Photography',
     'スティルライフ': 'Contemporary Still Life',
     'ポストインターネット': 'Post-Internet',
     'インティメイト・ライフ': 'Intimate Life',

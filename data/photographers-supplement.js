@@ -5277,3 +5277,49 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "aya-fujioka",
+  "name": "Aya Fujioka",
+  "nameJa": "藤岡亜弥",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1972–",
+  "gender": "女性",
+  "era": "2010",
+  "movements": [
+    "スナップショット",
+    "写真集文化",
+    "日本写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "The Guardian — Hiroshima today in pictures",
+      "url": "https://www.theguardian.com/artanddesign/gallery/2025/aug/07/wild-swimming-and-tiktok-dances-hiroshima-today-in-pictures"
+    },
+    {
+      "label": "東京都写真美術館 — 藤岡亜弥 収蔵作品検索",
+      "url": "https://collection.topmuseum.jp/Publish/search?aate=%E8%97%A4%E5%B2%A1+%E4%BA%9C%E5%BC%A5&aaty=contains&dt=0&oc=title&ow=asc"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "旅先や家族、移り住んだ街を膨大なスナップショットに撮りため、後年の選択と写真集の構成によって、撮影時には気づかなかった経験を確かめる方法を続けてきた。2013年から広島市で川沿いを歩きながら制作した『川はゆく』（赤々舎、2017年）は、原爆ドームの前で踊る高校生など現在の日常に歴史の重なりを示し、第41回伊奈信男賞、林忠彦賞、木村伊兵衛写真賞を受賞した *1 *2 。",
+    "textEn": "Accumulating vast numbers of snapshots of her travels, her family, and the cities she moved to, Fujioka has sustained a practice of discovering, through later selection and photobook sequencing, experiences she did not recognize at the moment of shooting. Here Goes River (AKAAKA, 2017), made while walking along Hiroshima's rivers after moving to the city in 2013, revealed the layers of history within everyday life—such as high-school students dancing in front of the Atomic Bomb Dome—and received the 41st Ina Nobuo Award, the Hayashi Tadahiko Award, and the Kimura Ihei Photography Award *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "藤岡亜弥 公式サイト — Profile",
+        "url": "https://ayafujioka.net/profile_2025/"
+      },
+      {
+        "num": 2,
+        "name": "赤々舎 — 藤岡亜弥『川はゆく』",
+        "url": "https://akaaka.com/publishing/bk-kawahayuku-fujioka/"
+      }
+    ]
+  }
+}
+);

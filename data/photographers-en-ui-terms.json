@@ -74,7 +74,8 @@
     "現代日本写真": "Contemporary Japanese photography",
     "写真と彫刻": "Photography and Sculpture",
     "NU・E": "NU・E",
-    "抽象写真": "Abstract photography"
+    "抽象写真": "Abstract photography",
+    "スナップショット": "Snapshot Photography"
   },
   "countries": {
     "日本": "Japan",
@@ -136,6 +137,7 @@
     "本サイトでは作品画像を掲載していません。下記の公式・美術館・出版社資料で作品情報をご覧ください。": "This site does not display work images. Please see the official, museum, and publisher resources below.",
     "本サイトでは作品画像を掲載していません。下記の公式アーカイブで作品をご覧ください。": "This site does not display work images. Please visit the official archives below.",
     "作品画像を各美術館・コレクションの公式ページで確認する。": "View works on official museum and collection pages.",
+    "作品画像を各美術館・コレクション、作家公式サイト、出版社の公式ページで確認する。": "View works on official museum and collection pages, the artist's official website, and publisher pages.",
     "本サイトでは作品画像を掲載していません。以下の美術館・コレクションの公式ページで、本文に登場する作品と関連作品を確認できます。": "This site does not reproduce artwork images. The works discussed here, along with related photographs, can be viewed on the official museum and collection pages below."
   },
   "works_labels": {
@@ -300,6 +302,12 @@
     "The Third Gallery Aya - 作品・年譜": "The Third Gallery Aya — Works and Chronology",
     "透明な青": "Transparent Blue",
     "東京都写真美術館 - 片山真理 収蔵作品": "Tokyo Photographic Art Museum — Works by Mari Katayama",
-    "森美術館 - Mari Katayama Collection": "Mori Art Museum — Mari Katayama Collection"
+    "森美術館 - Mari Katayama Collection": "Mori Art Museum — Mari Katayama Collection",
+    "公式サイト — 『私は眠らない』": "Official Site — I Don't Sleep",
+    "東京都写真美術館 — 〈川はゆく〉": "Tokyo Photographic Art Museum — Here Goes River",
+    "赤々舎 — 『Life Studies』": "Akaaka — Life Studies",
+    "公式 — 私は眠らない": "Official — I Don't Sleep",
+    "TOP — 川はゆく": "TOP Museum — Here Goes River",
+    "赤々舎 — Life Studies": "Akaaka — Life Studies"
   }
 }

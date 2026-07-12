@@ -631,15 +631,16 @@ def apply_surfaces(spec: dict) -> None:
     if target in html:
         print(f"  [ALREADY] {era_rel}: skip")
         return
-    marker = "</article></div></div></section></main>"
-    marker_count = html.count(marker)
-    if marker_count != 1:
-        print(f"  [FAIL] {era_rel}: marker count {marker_count} != 1")
+    marker_re = re.compile(r"</article>\s*</div></div></section></main>")
+    marker_matches = list(marker_re.finditer(html))
+    if len(marker_matches) != 1:
+        print(f"  [FAIL] {era_rel}: marker count {len(marker_matches)} != 1")
         raise SystemExit(1)
     backup_note, backup_created = _backup_once(era_path)
     era_card = card_html(spec, "ja", label=spec["nationality"], href_prefix="../")
+    m = marker_matches[0]
     replacement = "</article>\n" + era_card + "\n</div></div></section></main>"
-    era_path.write_text(html.replace(marker, replacement, 1), encoding="utf-8")
+    era_path.write_text(html[:m.start()] + replacement + html[m.end():], encoding="utf-8")
     check = era_path.read_text(encoding="utf-8")
     if target not in check:
         _restore_surface(era_path, html, backup_created)

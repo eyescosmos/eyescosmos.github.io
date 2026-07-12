@@ -6078,6 +6078,26 @@
       "style": "pc-top--kanji",
       "artText": "義足",
       "hintText": "MARI KATAYAMA · 1987–"
+    },
+    {
+      "type": "photographer",
+      "id": "aya-fujioka",
+      "href": "photographers/aya-fujioka.html",
+      "idx": 303,
+      "nameJa": "藤岡亜弥",
+      "nameEn": "Aya Fujioka",
+      "metaJa": "日本 · 1972–",
+      "era": "2010",
+      "nationality": "JP",
+      "ledeJa": "1972年広島県呉市生まれ。日本大学芸術学部写真学科卒業。旅先や台湾・ニューヨークでの生活、呉の家族を膨大なスナップショットに撮りため、時間を置いた選択と写真集の構成によって、撮影時には気づかなかった経験を作品化してきた。2013年から広島市で暮らしながら川沿いの日常を撮った『川はゆく』（赤々舎、2017年）は、原爆ドームの前で踊る高校生など現在の生活に歴史の重なりを示し、第41回伊奈信男賞、林忠彦賞、木村伊兵衛写真賞を受賞。2023年には「New Stories」「花のゆくえ」など近年の活動により東川賞新人作家賞を受けた。",
+      "channel": "写真史の論点 · スナップショット",
+      "tags": [
+        "日本写真",
+        "日本"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "亜弥",
+      "hintText": "AYA FUJIOKA · 1972–"
     }
   ],
   "movements": [

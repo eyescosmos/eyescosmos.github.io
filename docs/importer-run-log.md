@@ -1070,3 +1070,20 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：check_new_photographer OK（WARN=en_graph_absent〔EN標準〕のみ）／check_content_loss OK／link integrity OK／**preflight exit 0**（残WARN3=en/countries/japan・en/eras/2010・en/movements/staged-photography の「直接編集疑い」＝scoped再生成への既知の誤検知・07-10と同型）。--all 不使用・link_country_keywords 不実行・対象外巻き込み0。
 - **backup（未追跡・GH Pages 実機確認後に削除）**：archive-backup.html / cards-archive-backup.html / eras/2010-backup.html / movements/ステージド写真-backup2.html / card-data-backup.json / -supplement-backup.js / star -backup.bin。
 - **wall-time**：（Daisuke記入）
+
+## 2026-07-12 — aya-fujioka（new / 新規追加・藤岡亜弥・idx303・era2010）＋era面アンカー恒久修正
+
+- **種別**：new（純・新規追加）。素材=re-photographer/aya-fujioka.html / -en.html（JA/EN・v5.1・clean・書籍リンク入り＝JA Amazon3冊/EN shashasha3冊）。slug=aya-fujioka。
+- **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。監督側で全判断（spec全項目・idx=303・era=2010・channel=スナップショット・運動ページ面skip判断・リンク化対象と挿入位置・GENRE_TAG/terms追加語・shashasha URL裏取り）、Codex呼び出し4回（①EN正本further_reading復元＋ui-terms3種＋GENRE_TAG ②era面アンカー修正 ③head属性順正規化＋ENトグル復元 ④本文初出リンク化JA/EN各4）。パイプライン実行と監査は監督側。**Codexバグ0・逸脱0**。
+- **判断点（実測）**：
+  1. **運動ページ面=skip**：hero Movement=スナップショットは movements/ページ未存在＋素材の§REL文脈（スナップショット/写真集文化/広島と戦後記憶）にリンク一切なし＝eiko型の「§RELが唯一リンクする既存運動」も不在。asako-narahashi 前例（運動ページ非掲載）に合わせた。star用movements=[スナップショット,写真集文化,日本写真]（写真集文化でnarahashiと星座接続）。
+  2. **GENRE_TAG/terms追加1語**：「スナップショット」→ Snapshot Photography（build_archive_en.py と ui-terms terms の2箇所）。
+  3. **hero Channel正規化**：素材の「写真集」は非標準→カードと同じ「写真史の論点 · スナップショット」へ（narahashi/katayama と同型）。
+  4. **EN further_reading 抽出漏れ**：importer が ph-book の note＋第2CTA（shashasha）＋flexラッパを脱落させ簡略版のみ抽出→素材原文3ブロックを正本JSONへ復元（shashasha 3URLは実在裏取り済＝here-goes-river-1がI don't sleepなのはshashasha側の実slug）。**新規経路の既知の穴・3例目**。
+  5. **本文初出リンク化 JA/EN各4**：カルティエ＝ブレッソン/土門拳/中平卓馬/『PROVOKE』（多木浩二・笹岡啓子はページ未存在で据え置き）。
+- **importer恒久修正（今回実装）**：**era面挿入アンカーの空白許容化**（add_photographer.py）。前回挿入が `</article>\n</div>...` と改行を残すため二世代目の同一era実行で完全一致markerが0件→FAILする設計バグ。regex `</article>\s*</div></div></section></main>` へ変更（Codex実装/Fable監査）。eras/2010で本番実証。他に importer render-ja が素材の属性順（content先行）をそのまま出す件は今回手修正（viewport/canonical/OGP/description/hreflang）＝**未自動化の積み残し**。ENトグルはEN未存在時にimporterがde-linkするため新規は毎回復元が要る（既知）。
+- **面（tracked 14＋新規2）**：新規JA/EN個別ページ2＋archive/cards-archive JA・card-data・countries japan JA/EN・en-content(+114)・ui-terms(+12行)・supplement・star bin・en/archive・eras2010 JA/EN・scripts2（add_photographer +6-5 / build_archive_en 1行）＋new-design/cards-archive.html（git-ignore・投入済）。
+- **フィデリティ**：JA 4節・25 cite・54 sup-ref・dangling 0。EN merge add=20/skip-empty=2・他slug byte不変assert通過。EN残WARN3（no photobooks_html / no external_links_html / jsonld fallback）=eiko/mari同型の標準（shashasha 3件はfurther_reading経由で反映済を実測）。
+- **検証**：check_new_photographer OK（WARN=en_graph_absent〔EN標準〕のみ）／check_content_loss OK／link integrity OK／**preflight exit 0**（残WARN2=en/countries/japan・en/eras/2010 の「直接編集疑い」＝scoped再生成への既知の誤検知）。--all 不使用・link_country_keywords 不実行・対象外巻き込み0・タグ開閉均衡JA/EN実測OK。
+- **backup（未追跡・GH Pages 実機確認後に削除）**：mari回の既存backupを温存（上書きなしガード）＋今回新規なし（既存backupへ相乗り）。
+- **wall-time**：28分（Daisuke実測）
