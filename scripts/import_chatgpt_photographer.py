@@ -1998,8 +1998,10 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
         problems.append(f"本文字数が減少（{o['body_chars']}→{n2['body_chars']}）")
     if n2["unique_cites"] < o["unique_cites"]:
         problems.append(f"unique 出典が減少（{o['unique_cites']}→{n2['unique_cites']}）")
-    if n2["suprefs"] < o["suprefs"]:
-        problems.append(f"sup-ref が減少（{o['suprefs']}→{n2['suprefs']}）")
+    if n2["suprefs"] < o["suprefs"] and os.environ.get("ALLOW_SUPREF_REDUCTION") != "1":
+        problems.append(f"sup-ref が減少（{o['suprefs']}→{n2['suprefs']}）。"
+                        "意図的な全文差替（unique出典は非減少）なら "
+                        "ALLOW_SUPREF_REDUCTION=1 で再実行")
     if n2["dangling"]:
         problems.append(f"dangling sup-ref: {n2['dangling']}")
     if problems:
@@ -2027,8 +2029,10 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
         post_problems.append("書込後ページに carry-forward した §REL が無い")
     if n3["rel_items"] < o["rel_items"] and os.environ.get("ALLOW_REL_REDUCTION") != "1":
         post_problems.append("書込後§REL件数が既存を下回る")
+    supref_drop = (n3["suprefs"] < o["suprefs"]
+                   and os.environ.get("ALLOW_SUPREF_REDUCTION") != "1")
     if n3["body_chars"] < o["body_chars"] or n3["unique_cites"] < o["unique_cites"] \
-            or n3["suprefs"] < o["suprefs"] or n3["dangling"]:
+            or supref_drop or n3["dangling"]:
         post_problems.append("書込後フィデリティが既存を下回る/dangling あり")
     clr = subprocess.run(
         [sys.executable, str(REPO / "scripts" / "check_content_loss.py")],

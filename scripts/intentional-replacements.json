@@ -1,1 +1,224 @@
-[]
+[
+  {
+    "slug": "steichen",
+    "url": "https://en.wikipedia.org/wiki/Edward_Steichen",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "steichen",
+    "url": "https://www.theartstory.org/artist/steichen-edward/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "jacques-henri-lartigue",
+    "url": "https://en.wikipedia.org/wiki/Jacques_Henri_Lartigue",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "jacques-henri-lartigue",
+    "url": "https://www.moma.org/artists/3433",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "eikoh-hosoe",
+    "url": "https://www.artic.edu/artworks/271947/eikoh-hosoe-tokyo-japan",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "eikoh-hosoe",
+    "url": "https://www.icp.org/browse/archive/constituents/eikoh-hosoe",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "winogrand",
+    "url": "https://en.wikipedia.org/wiki/Garry_Winogrand",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "winogrand",
+    "url": "https://publicdelivery.org/garry-winogrand-women-are-beautiful/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "winogrand",
+    "url": "https://www.britannica.com/biography/Garry-Winogrand",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "winogrand",
+    "url": "https://www.denverartmuseum.org/en/exhibitions/garry-winogrand-women-are-beautiful",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "winogrand",
+    "url": "https://www.moma.org/collection/works/111102",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "winogrand",
+    "url": "https://www.phaidon.com/en-us/blogs/artspace/the-pioneering-photography-of-garry-winogrand",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "kikuji-kawada",
+    "url": "https://www.michaelhoppengallery.com/artists/26-kikuji-kawada/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "kikuji-kawada",
+    "url": "https://www.moma.org/calendar/exhibitions/2525/installation_images/21575",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "kikuji-kawada",
+    "url": "https://www.sfmoma.org/artist/Kikuji_Kawada/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "araki",
+    "url": "https://artscape.jp/artword/index.php/%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "araki",
+    "url": "https://ja.wikipedia.org/wiki/%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "araki",
+    "url": "https://read.dukeupress.edu/trans-asia-photography/article/doi/10.1215/215820251_1-2-205/312607/Crossing-Boundaries-An-Interview-with-Nobuyoshi",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "araki",
+    "url": "https://www.anothermag.com/art-photography/8792/exposing-nobuyoshi-arakis-most-sentimental-series",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "araki",
+    "url": "https://www.p55.art/en/blogs/p55-magazine/who-was-the-japanese-photographer-nobuyoshi-araki",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "araki",
+    "url": "https://www.shashasha.co/en/book/nobuyoshi-araki-sentimental-journey-1971-2017",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "araki",
+    "url": "https://www.singulart.com/blog/en/2024/06/03/sentimental-journey-by-nobuyoshi-araki/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "tomatsu",
+    "url": "https://aperture.org/editorial/remembering-shomei-tomatsu-1930-2012/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "tomatsu",
+    "url": "https://asia-archive.si.edu/exhibition/tomatsu-shomei/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "tomatsu",
+    "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%9D%BE%E7%85%A7%E6%98%8E",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "tomatsu",
+    "url": "https://www.michaelhoppengallery.com/artists/64-shomei-tomatsu/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "tomatsu",
+    "url": "https://www.sfmoma.org/artist/shomei_tomatsu/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "tomatsu",
+    "url": "https://www.shashasha.co/en/artist/shomei-tomatsu",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "williamklein",
+    "url": "https://en.wikipedia.org/wiki/William_Klein_(photographer)",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "williamklein",
+    "url": "https://i-d.co/article/william-klein-photography/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "williamklein",
+    "url": "https://www.artforum.com/features/william-klein-and-the-radioactive-fifties-214042/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "williamklein",
+    "url": "https://www.icp.org/browse/archive/constituents/william-klein",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "williamklein",
+    "url": "https://www.metmuseum.org/art/collection/search/266102",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "friedlander",
+    "url": "https://en.wikipedia.org/wiki/Lee_Friedlander",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "friedlander",
+    "url": "https://whitney.org/artists/465",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "friedlander",
+    "url": "https://www.moma.org/calendar/exhibitions/113",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  },
+  {
+    "slug": "friedlander",
+    "url": "https://www.theartstory.org/artist/friedlander-lee/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-13バッチ）で外部リンク欄を新出典セットへ意図的置換",
+    "declared": "2026-07-13"
+  }
+]

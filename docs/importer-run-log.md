@@ -39,6 +39,7 @@
 | 2026-07-10 | (JSON-LD初期欠落11件補完＋presenceガード) | other | （Daisuke記入） | 1（JSON-LD日付キー初期欠落） | 0（機械照合・機械検証） | 11ファイル | N/A | N/A |
 | 2026-07-10 | (JSON-LD hero年照合ガード) | other | （Daisuke記入） | 1（本文で取れない日付キー欠落の死角） | 0（機械照合・機械検証） | 2ファイル | N/A | N/A |
 | 2026-07-11 | asako-narahashi(写真集Amazonリンク JA3冊/EN3冊) | other | 10分弱 | 0 | 0 | 3ファイル | N/A | N/A |
+| 2026-07-13 | **9名バッチupdate**(steichen/lartigue/hosoe/winogrand/kawada/araki/tomatsu/klein/friedlander) | update | 30分 | 4（engine穴・下記） | 0（全機械化） | 22ファイル | 計8664→39668 | 計40→190 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1087,3 +1088,22 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：check_new_photographer OK（WARN=en_graph_absent〔EN標準〕のみ）／check_content_loss OK／link integrity OK／**preflight exit 0**（残WARN2=en/countries/japan・en/eras/2010 の「直接編集疑い」＝scoped再生成への既知の誤検知）。--all 不使用・link_country_keywords 不実行・対象外巻き込み0・タグ開閉均衡JA/EN実測OK。
 - **backup（未追跡・GH Pages 実機確認後に削除）**：mari回の既存backupを温存（上書きなしガード）＋今回新規なし（既存backupへ相乗り）。
 - **wall-time**：28分（Daisuke実測）
+
+## 2026-07-13 — 9名バッチupdate（ChatGPT新素材で本文全刷新・steichen/jacques-henri-lartigue/eikoh-hosoe/winogrand/kikuji-kawada/araki/tomatsu/williamklein/friedlander）
+
+- **種別**：update×9（既存本文722〜1335字 → 新素材4012〜4664字の全文刷新）。素材=re-photographer/photographers_batch_20260713_final/（JA/EN・v5.1 ph-*・clean）。eugene-atget は既存本文十分のため不使用（Daisuke指示）。
+- **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。パイロット（steichen）→監査→残り8名逐次。Codex呼び出し4回・Codexバグ0・逸脱0（安全契約FAILで2回正しく自主停止）。
+- **監督判断（実測）**：
+  1. **§REL全員「既存維持」**：既存§RELは全件サイト内リンク付き（8/5/3/4/3/4/7/3/6件）、新素材§RELは6件中1〜3件しかリンクなし（Rodin等ページ未存在の裸名あり）→素材から§REL節だけ除去したスクラッチコピーを作成し、§RELガードの「準備中→既存verbatimスプライス」経路に載せた。**§REL carry-forwardガード（07-11実装）の実update発動を9/9で確認＝検証完了**。
+  2. **sup-ref減少2件は正当**：hosoe 25→13 / kawada 24→16 は旧ページが同一3出典を繰返す旧型で、unique出典は3→22 / 3→20と大幅増＝意図的全文差替。
+- **engine穴4件（発見→即修正）**：
+  1. **JA §REF写真集ブロック(ph-book)脱落**：carry-forwardが新素材§REFで丸ごと置換しAmazonカードを落とす（7/9名で計19冊）→ scratchpad/restore_books.py でbackupからverbatim復元（§REF内カウント検証つき）。**恒久対応=importerの「ph-book丸ごと抽出」（aya-fujioka回からの積み残し）が本修正で必要性実証**。
+  2. **EN §REFリンク重複**：merge-to-enが旧external_links_htmlをpreserveしつつ新further_reading_htmlをaddし同一リンクが二重表示→ fix_en_ref_links.py で新リンクをchip-link化しexternal_links_htmlへ移設・further_reading空化（Databases & archivesラベル付き正規形）。
+  3. **EN og:image/twitter:image脱落**：merge-to-enのog/twitter replaceが素材由来dict（image系キーなし）で上書き→9名全員のog:image+width/height/alt+locale・twitter:imageをorigin/main JSONから機械復元・再生成。**merge-to-enのog/twitterマージをキー単位skip-emptyにする恒久修正が次回候補**。
+  4. **sup-ref減少ガードにオーバーライドなし**：ALLOW_REL_REDUCTION と非対称→ `ALLOW_SUPREF_REDUCTION=1` を実装（pre/post両検証・unique出典/本文字数ガードは維持・unit test 5/5 PASS）。
+- **preflight配線1件**：check_en_content_loss（EN JSONリンク消失HARD）に intentional-replacements.json フィルタが未配線だった→ _filter_loss_items_by_declarations をURL単位で適用・消費宣言はinfo・stale判定は両ガード共有。今回の意図的リンク置換37件を宣言（push後にstale WARN→削除の合図）。
+- **面（tracked 22）**：JA9＋EN9＋en-content.json（対象9キーのみ・他slug不変assert通過）＋importer＋preflight＋intentional-replacements.json。ui-terms変更なし（works対象なし）。カード・年代・国・運動・スターマップ面は不触（既存写真家のため）。
+- **フィデリティ（9名計）**：本文8664→39668字・unique出典40→190・§REL全員既存件数維持・JA/EN books/amzn件数一致（19冊無傷）・dangling 0。
+- **検証**：check_content_loss OK／9slug --dry-run SKIPPEDなし／**preflight OK**（残WARN=data-nosnippet 9→8・8→7×5名＝scaffold正典標準数・onodera回と同型）／対象外巻き込み0。
+- **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×9・en/photographers/<slug>-backup.html×9・scripts/<slug>-spec.json×9。
+- **wall-time**：30分（Daisuke実測。9名バッチとしては速い＝1名あたり約3.3分）
