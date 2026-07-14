@@ -743,19 +743,7 @@ def _extract_books(body: str) -> list:
         if not sl:
             break
         outer, inner, pos = sl
-        title = slice_by_class(inner, "div", "ph-book__title")
-        meta = slice_by_class(inner, "div", "ph-book__meta")
-        note = slice_by_class(inner, "div", "ph-book__note")
-        cta = re.search(
-            r'<a\b[^>]*class="[^"]*ph-book-cta[^"]*"[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>',
-            inner, re.S)
-        out.append({
-            "title_html": title[1].strip() if title else None,
-            "meta": norm_text(meta[1]) if meta else None,
-            "note": note[1].strip() if note else None,
-            "cta_url": cta.group(1) if cta else None,
-            "cta_label": norm_text(cta.group(2)) if cta else None,
-        })
+        out.append({"inner_html": inner})
     return out
 
 
@@ -1029,6 +1017,9 @@ def _build_ja_rel_body(people: list, movements: list) -> str | None:
 def _build_ja_ref_body(books: list, links: list) -> str | None:
     parts = []
     for b in books:
+        if "inner_html" in b:
+            parts.append(f'<div class="ph-book">{b["inner_html"]}</div>')
+            continue
         blk = ['<div class="ph-book">']
         if b.get("title_html"):
             blk.append(f'            <div class="ph-book__title">{b["title_html"]}</div>')
@@ -1426,6 +1417,9 @@ def _en_keywords_html(keywords: list) -> str | None:
 def _en_further_reading_html(books: list, links: list) -> str | None:
     parts = []
     for b in books:
+        if "inner_html" in b:
+            parts.append(f'<div class="ph-book">{b["inner_html"]}</div>')
+            continue
         seg = ['<div class="ph-book">']
         if b.get("title_html"):
             seg.append(f'<div class="ph-book__title">{b["title_html"]}</div>')
@@ -1438,11 +1432,15 @@ def _en_further_reading_html(books: list, links: list) -> str | None:
                        f'target="_blank">{b.get("cta_label") or "Link ↗"}</a>')
         seg.append('</div>')
         parts.append("".join(seg))
-    if links:
-        lis = "".join(f'<li><a href="{l["url"]}" rel="noopener" '
-                      f'target="_blank">{l["label"]}</a></li>' for l in links)
-        parts.append(f'<ul class="ph-further-links">{lis}</ul>')
     return "\n".join(parts) if parts else None
+
+
+def _en_external_links_html(links: list) -> str | None:
+    if not links:
+        return None
+    anchors = "".join(f'<a class="chip-link" href="{l["url"]}" target="_blank" '
+                      f'rel="noopener">{l["label"]} ↗</a>' for l in links)
+    return f'<div class="links">{anchors}</div>'
 
 
 def _en_view_works_links_html(works: list) -> str | None:
@@ -1486,6 +1484,7 @@ def bundle_to_en_entry(bundle: dict, slug: str | None = None) -> dict:
             bundle.get("related_people") or [], bundle.get("related_movements") or []),
         "further_reading_html": _en_further_reading_html(
             bundle.get("further_books") or [], bundle.get("further_links") or []),
+        "external_links_html": _en_external_links_html(bundle.get("further_links") or []),
         "view_works_links_html": _en_view_works_links_html(bundle.get("works") or []),
         "view_works_note": None,
         "cite_ids": bundle.get("cite_ids") or None,
@@ -1599,7 +1598,7 @@ def _merge_field_plan(current: dict, new: dict) -> list:
         elif cv == nv:
             action, note = "preserve", "同値"
         else:
-            action, note = "replace", ""
+            action, note = "replace", ("キー単位 skip-empty" if k in ("og", "twitter") else "")
         plan.append({"key": k, "action": action,
                      "old_len": _clen(cv), "new_len": _clen(nv), "note": note})
     return plan
@@ -1612,7 +1611,24 @@ def _apply_merge(current: dict, new: dict) -> dict:
     merged = dict(current)
     for k, v in new.items():
         if not _is_empty_merge_value(v):
-            merged[k] = v
+            if k in ("og", "twitter") and isinstance(v, dict) and isinstance(current.get(k), dict):
+                merged[k] = dict(current[k])
+                merged[k].update({dk: dv for dk, dv in v.items()
+                                  if not _is_empty_merge_value(dv)})
+            elif k == "external_links_html" and current.get(k):
+                anchors = re.findall(r'<a\b[^>]*class="[^"]*chip-link[^"]*"[^>]*>.*?</a>',
+                                     current[k] + v, re.S)
+                book_hrefs = set(re.findall(
+                    r'href="([^"]+)"', new.get("further_reading_html") or ""))
+                seen, unique = set(), []
+                for anchor in anchors:
+                    href = re.search(r'href="([^"]+)"', anchor)
+                    if href and href.group(1) not in seen and href.group(1) not in book_hrefs:
+                        seen.add(href.group(1))
+                        unique.append(anchor)
+                merged[k] = '<div class="links">' + "".join(unique) + '</div>'
+            else:
+                merged[k] = v
     return merged
 
 
@@ -1824,9 +1840,14 @@ def derive_spec_from_existing(slug: str) -> dict:
     channel = g1(r'Channel<strong>([^<]*)<') or card.get("channel", "")
     mv = g1(r'<dt>Movement</dt><dd>(.*?)</dd>')
     movements = [] if mv in ("", "—") else [m.strip() for m in re.split(r"[・,]", mv) if m.strip()]
+    idx = card.get("idx")
+    if idx is None:
+        old_idx = g1(r'<dt>Entry</dt><dd>No\.\s*(\d+)</dd>')
+        idx = int(old_idx) if old_idx else None
 
     spec = {
         "id": slug,
+        "idx": idx,
         "nameJa": card["nameJa"], "nameEn": card["nameEn"],
         "years": years or card.get("years", ""),
         "nationality": card["nationality"],
@@ -1932,6 +1953,21 @@ def _extract_rel_body(html: str) -> str | None:
     return _extract_section_body_by_marker(html, "§ REL")
 
 
+def _entry_country_inner(html: str) -> str | None:
+    """entry-meta の Country <dd> inner HTML（hero Country とは別値）を返す。"""
+    m = re.search(r'<dt>Country</dt><dd>(.*?)</dd>', html, re.S)
+    return m.group(1) if m else None
+
+
+def _carry_entry_country(html: str, source_html: str) -> str:
+    """既存 entry-meta Country のリンク等を inner HTML ごと verbatim 維持する。"""
+    country = _entry_country_inner(source_html)
+    if country is None:
+        return html
+    return re.sub(r'(<dt>Country</dt><dd>).*?(</dd>)',
+                  lambda m: m.group(1) + country + m.group(2), html, count=1, flags=re.S)
+
+
 def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
                            new_html: str, o: dict, n: dict) -> int:
     """④ carry-forward の実適用（安全契約 b–f）。photographers/<slug>.html のみ書込。
@@ -1949,6 +1985,11 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
             f"ERROR: backup が無い（{shown}）。"
             "先に `--update-existing --prepare` を実行せよ（安全契約 b）。\n")
         return 2
+
+    # hero Country と entry-meta Country は別値になり得る。変更前 backup の
+    # entry-meta <dd> をリンクを含め verbatim carry-forward する。
+    backup_html = backup.read_text(encoding="utf-8")
+    new_html = _carry_entry_country(new_html, backup_html)
 
     # (c) 適用内容: new_html は既に render_ja_page 出力（description 注入込み）。
     # §REF/further が新素材で「準備中」なら旧ページの §REF body を splice。
@@ -1991,6 +2032,8 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
             problems.append("carry-forward した §REL 内容が新ページに見当たらない")
         if n2["rel_is_prep"]:
             problems.append("§REL が splice 後も「準備中」のまま")
+    if _entry_country_inner(new_html) != _entry_country_inner(backup_html):
+        problems.append("entry-meta Country が変更前 backup と一致しない")
     if n2["rel_items"] < o["rel_items"] and os.environ.get("ALLOW_REL_REDUCTION") != "1":
         problems.append(f"関連(§REL)件数が減少（{o['rel_items']}→{n2['rel_items']}）。"
                         "意図的な削減なら ALLOW_REL_REDUCTION=1 で再実行")
@@ -2027,6 +2070,8 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
         post_problems.append("書込後ページに carry-forward した §REF が無い")
     if carried_rel and norm_text(_extract_rel_body(old_html)) not in norm_text(written):
         post_problems.append("書込後ページに carry-forward した §REL が無い")
+    if _entry_country_inner(written) != _entry_country_inner(backup_html):
+        post_problems.append("書込後 entry-meta Country が変更前 backup と一致しない")
     if n3["rel_items"] < o["rel_items"] and os.environ.get("ALLOW_REL_REDUCTION") != "1":
         post_problems.append("書込後§REL件数が既存を下回る")
     supref_drop = (n3["suprefs"] < o["suprefs"]

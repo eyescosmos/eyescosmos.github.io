@@ -40,6 +40,7 @@
 | 2026-07-10 | (JSON-LD hero年照合ガード) | other | （Daisuke記入） | 1（本文で取れない日付キー欠落の死角） | 0（機械照合・機械検証） | 2ファイル | N/A | N/A |
 | 2026-07-11 | asako-narahashi(写真集Amazonリンク JA3冊/EN3冊) | other | 10分弱 | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-13 | **9名バッチupdate**(steichen/lartigue/hosoe/winogrand/kawada/araki/tomatsu/klein/friedlander) | update | 30分 | 4（engine穴・下記） | 0（全機械化） | 22ファイル | 計8664→39668 | 計40→190 |
+| 2026-07-14 | **6名バッチupdate**(don-mccullin/ed-van-der-elsken/seydou-keita/larry-clark/philip-jones-griffiths/kishin-shinoyama) | update | （Daisuke記入） | 4（engine穴・下記） | 0（全機械化） | 16ファイル | 計5826→28006 | 計16→135 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1107,3 +1108,27 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：check_content_loss OK／9slug --dry-run SKIPPEDなし／**preflight OK**（残WARN=data-nosnippet 9→8・8→7×5名＝scaffold正典標準数・onodera回と同型）／対象外巻き込み0。
 - **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×9・en/photographers/<slug>-backup.html×9・scripts/<slug>-spec.json×9。
 - **wall-time**：30分（Daisuke実測。9名バッチとしては速い＝1名あたり約3.3分）
+
+## 2026-07-14 — 6名バッチupdate（ChatGPT新素材で本文全刷新・don-mccullin/ed-van-der-elsken/seydou-keita/larry-clark/philip-jones-griffiths/kishin-shinoyama）
+
+- **種別**：update×6（既存本文905〜1095字 → 新素材3627〜5742字の全文刷新）。素材=re-photographer/20260714/（JA/EN・v5.1 ph-*・clean。Amazonカードなし・ph-book書誌カード2〜3枚/名）。
+- **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。パイロット（don-mccullin）→監査→残り5名逐次。Codex呼び出し8回・Codexバグ0・逸脱0（安全契約系で4回正しく自主停止）。
+- **監督判断（実測）**：
+  1. **§REL全員「既存維持」**：素材§RELに裸名（W・ユージン・スミス等）・seydou-keitaはリンク0 → 前回同様、素材から§REL節を除去したスクラッチコピーで既存verbatimスプライス経路に載せた。6/6維持確認。
+  2. **sup-ref減少2件は正当**：philip 20→19 / kishin 22→17（旧反復出典型・unique出典2→21/3→20）→ `ALLOW_SUPREF_REDUCTION=1`。
+  3. **hero Years空欄・Country年代文字列は既存維持**（サイト標準153p/147p・素材値へ「補正」しない）。
+  4. **1文字アンカー de-link**：kishin本文の《家》/`Ie` 外部リンクをJA/ENともプレーン化（URLは作品チップ・§REF・出典に残存。JA=HTML直編集・EN=正本JSON経由）。
+- **engine穴4件（発見→恒久修正）**：
+  1. **ph-book note脱落**：`_extract_books()` が `div.ph-book__note` 限定で素材の `p.ph-book__note` を落とす → **積み残し①「ph-bookブロックinner HTML無加工保持」を実装**（JA/EN両レンダラー・note/第2CTA/flexラッパの類型ごと解消）。
+  2. **merge-to-en og/twitter dict丸ごとreplace**（前回9名全員で発生した既知バグ） → **積み残し①c「キー単位skip-emptyマージ」を実装**。今回6名でog:image系消失ゼロを実地確認。
+  3. **idx未導出→Entry「§ None / No. None」**：derive_spec_from_existing() がidxをspecに入れず → card-data導出＋既存Entryフォールバックを実装。
+  4. **entry-meta Countryへhero用spec値流用**（ed実例: リンク付「オランダ」→「1950s / 1950年代」に化ける） → 既存<dd>のverbatim carry-forward＋書込前後検証を実装。hero Countryとentry-metaは別値になり得る仕様として分離。
+  - 付随: **積み残し①d相当**（further_reading×external_linksのURL-union重複排除・ph-book CTAとの同一URL重複排除）も実装。
+- **intentional-replacements**：前回9名バッチの37宣言（push済でstale化）を削除。今回の旧cite由来消失2件（don-mccullin Tate shop / ed Stedelijk）を新規宣言 → **push後にstale WARN化したら削除**。
+- **ui-terms（durable）**：countries「マリ→Mali」、works_labels「ToMuCo - 《家》1975 → ToMuCo — Ie, 1975」「ToMuCo - 小林旭, 1974 → ToMuCo — Kobayashi Akira, 1974」。
+- **EN Countryリンクのプレーン化は標準への収束**：donのEN backupのみ旧link_country_keywords時代のリンク持ち。前回9名の再生成ENは全員プレーン表記＝現行ビルダー標準。link_country_keywords.pyは実行せず。
+- **面（tracked 16）**：JA6＋EN6＋en-content.json（対象6キーのみ・top-level/page key set不変assert通過）＋ui-terms.json＋importer＋intentional-replacements.json。カード・年代・国・運動・スターマップ面は不触（既存写真家）。
+- **フィデリティ（6名計）**：本文5826→28006字・unique出典16→135・§REL全員既存verbatim維持・ph-book素材とinner HTML完全一致（note/CTA無傷）・dangling 0・Entry番号6名JA/EN一致。
+- **検証**：check_content_loss OK／6slug --dry-run SKIPPEDなし・untranslated 0／**preflight FAIL 0・WARN 0**／en-content変更は対象6キーのみ／対象外巻き込み0。
+- **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×6・en/photographers/<slug>-backup.html×6・scripts/<slug>-spec.json×6。
+- **wall-time**：（Daisuke記入）
