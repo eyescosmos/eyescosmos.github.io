@@ -42,6 +42,7 @@
 | 2026-07-13 | **9名バッチupdate**(steichen/lartigue/hosoe/winogrand/kawada/araki/tomatsu/klein/friedlander) | update | 30分 | 4（engine穴・下記） | 0（全機械化） | 22ファイル | 計8664→39668 | 計40→190 |
 | 2026-07-14 | **6名バッチupdate**(don-mccullin/ed-van-der-elsken/seydou-keita/larry-clark/philip-jones-griffiths/kishin-shinoyama) | update | 41分 | 4（engine穴・下記） | 0（全機械化） | 16ファイル | 計5826→28006 | 計16→135 |
 | 2026-07-14 | capa(本文組版の標準化・文言不変) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
+| 2026-07-14 | h4→h3一括変換(69ページ・266見出し・文言不変) | other | （Daisuke記入） | 0 | 0 | 69ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1140,3 +1141,9 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **内容**：①JA §02の小見出し5本が**CSS定義のない`<h4>`**（素のブラウザ表示）だった→標準の`<h3 id="h3-01..05">`へ変換（赤ボーダーの標準スタイルが適用される）。ENはビルダーがh4→h3変換済みで対応不要。②壁段落の分割: JA/EN §01を3段落・§03を2段落へ（文境界のみ・JAはHTML直編集、ENはen-content.json文字列置換→builder再生成）。
 - **検証**：preflight OK／check_content_loss rc=0（構造変化WARNは目視＝再組版のみと確認済）／JSON変更はcapaキーのみ／EN --dry-run SKIPPEDなし。
 - **メモ**：capaのCSSは標準と同一だった。差は本文マークアップのみ（h4問題）。同様の「h4残存」ページが他にもある可能性→必要なら `grep -l '<h4' photographers/*.html` で母数を数えてから対応。
+
+## 2026-07-14 — h4→h3一括変換（69ページ・種別=other・軽量行）
+
+- **対象**：capa回で発見した「CSS定義のない`<h4>`小見出し」の残り全ページ。**事前実測**＝69ページ・266見出し・全て属性なし`<h4>`・セクション本文内のみ・既存h3との混在ゼロ・`#h3-`アンカー参照ゼロ・全ページに`.essay h3`CSS定義あり・**EN側69ページはh4ゼロ（ビルダー変換済み）＝EN/JSON対応不要**。
+- **内容**：`<h4>` → `<h3 id="h3-NN">`（ページ内出現順連番・文言不変）。ページごとに可視テキストcharacter-identical・変換完全性・連番一意性をassertしながら機械変換。
+- **検証**：変更69ファイル全てphotographers/配下・EN/JSON差分ゼロ・h4残存ゼロ（JA/EN）・check_content_loss OK（WARNなし）・preflight OK。
