@@ -41,6 +41,7 @@
 | 2026-07-11 | asako-narahashi(写真集Amazonリンク JA3冊/EN3冊) | other | 10分弱 | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-13 | **9名バッチupdate**(steichen/lartigue/hosoe/winogrand/kawada/araki/tomatsu/klein/friedlander) | update | 30分 | 4（engine穴・下記） | 0（全機械化） | 22ファイル | 計8664→39668 | 計40→190 |
 | 2026-07-14 | **6名バッチupdate**(don-mccullin/ed-van-der-elsken/seydou-keita/larry-clark/philip-jones-griffiths/kishin-shinoyama) | update | 41分 | 4（engine穴・下記） | 0（全機械化） | 16ファイル | 計5826→28006 | 計16→135 |
+| 2026-07-14 | capa(本文組版の標準化・文言不変) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1132,3 +1133,10 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：check_content_loss OK／6slug --dry-run SKIPPEDなし・untranslated 0／**preflight FAIL 0・WARN 0**／en-content変更は対象6キーのみ／対象外巻き込み0。
 - **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×6・en/photographers/<slug>-backup.html×6・scripts/<slug>-spec.json×6。
 - **wall-time**：41分（Daisuke実測。engine穴4件の発見→恒久修正込み。1名あたり約6.8分）
+
+## 2026-07-14 — capa（本文組版の標準化・種別=other・軽量行）
+
+- **対象**：photographers/capa.html＋en/photographers/capa.html（正本JSON経由）。**文言変更ゼロ**（JA/ENとも可視テキストのcharacter-identicalを機械照合済み）。
+- **内容**：①JA §02の小見出し5本が**CSS定義のない`<h4>`**（素のブラウザ表示）だった→標準の`<h3 id="h3-01..05">`へ変換（赤ボーダーの標準スタイルが適用される）。ENはビルダーがh4→h3変換済みで対応不要。②壁段落の分割: JA/EN §01を3段落・§03を2段落へ（文境界のみ・JAはHTML直編集、ENはen-content.json文字列置換→builder再生成）。
+- **検証**：preflight OK／check_content_loss rc=0（構造変化WARNは目視＝再組版のみと確認済）／JSON変更はcapaキーのみ／EN --dry-run SKIPPEDなし。
+- **メモ**：capaのCSSは標準と同一だった。差は本文マークアップのみ（h4問題）。同様の「h4残存」ページが他にもある可能性→必要なら `grep -l '<h4' photographers/*.html` で母数を数えてから対応。
