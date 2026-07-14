@@ -40,7 +40,7 @@
 | 2026-07-10 | (JSON-LD hero年照合ガード) | other | （Daisuke記入） | 1（本文で取れない日付キー欠落の死角） | 0（機械照合・機械検証） | 2ファイル | N/A | N/A |
 | 2026-07-11 | asako-narahashi(写真集Amazonリンク JA3冊/EN3冊) | other | 10分弱 | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-13 | **9名バッチupdate**(steichen/lartigue/hosoe/winogrand/kawada/araki/tomatsu/klein/friedlander) | update | 30分 | 4（engine穴・下記） | 0（全機械化） | 22ファイル | 計8664→39668 | 計40→190 |
-| 2026-07-14 | **6名バッチupdate**(don-mccullin/ed-van-der-elsken/seydou-keita/larry-clark/philip-jones-griffiths/kishin-shinoyama) | update | （Daisuke記入） | 4（engine穴・下記） | 0（全機械化） | 16ファイル | 計5826→28006 | 計16→135 |
+| 2026-07-14 | **6名バッチupdate**(don-mccullin/ed-van-der-elsken/seydou-keita/larry-clark/philip-jones-griffiths/kishin-shinoyama) | update | 41分 | 4（engine穴・下記） | 0（全機械化） | 16ファイル | 計5826→28006 | 計16→135 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1131,4 +1131,4 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **フィデリティ（6名計）**：本文5826→28006字・unique出典16→135・§REL全員既存verbatim維持・ph-book素材とinner HTML完全一致（note/CTA無傷）・dangling 0・Entry番号6名JA/EN一致。
 - **検証**：check_content_loss OK／6slug --dry-run SKIPPEDなし・untranslated 0／**preflight FAIL 0・WARN 0**／en-content変更は対象6キーのみ／対象外巻き込み0。
 - **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×6・en/photographers/<slug>-backup.html×6・scripts/<slug>-spec.json×6。
-- **wall-time**：（Daisuke記入）
+- **wall-time**：41分（Daisuke実測。engine穴4件の発見→恒久修正込み。1名あたり約6.8分）
