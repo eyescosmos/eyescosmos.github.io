@@ -1,14 +1,38 @@
 [
   {
-    "slug": "don-mccullin",
-    "url": "https://shop.tate.org.uk/don-mccullin-hessel-street-palace-poster/23024.html",
-    "reason": "ChatGPT新素材による全文差し替え（2026-07-14バッチ）で旧本文cite由来リンクを新出典セットへ意図的置換",
-    "declared": "2026-07-14"
+    "slug": "joel-sternfeld",
+    "url": "https://www.metmuseum.org/art/collection/search/285439",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-15バッチ）で旧本文cite由来リンクを新出典セットへ意図的置換",
+    "declared": "2026-07-15"
   },
   {
-    "slug": "ed-van-der-elsken",
-    "url": "https://www.stedelijk.nl/en/news/more-than-100-works-by-ed-van-der-elsken-added-to-dutch-public-collections",
-    "reason": "ChatGPT新素材による全文差し替え（2026-07-14バッチ）で旧本文cite由来リンクを新出典セットへ意図的置換",
-    "declared": "2026-07-14"
+    "slug": "lewis-baltz",
+    "url": "https://www.getty.edu/news/getty-research-institute-acquires-lewis-baltz-archive",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-15バッチ）で旧本文cite由来リンクを新出典セットへ意図的置換",
+    "declared": "2026-07-15"
+  },
+  {
+    "slug": "mapplethorpe",
+    "url": "https://www.icp.org/browse/archive/constituents/robert-mapplethorpe",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-15バッチ）で旧本文cite由来リンクを新出典セットへ意図的置換",
+    "declared": "2026-07-15"
+  },
+  {
+    "slug": "mapplethorpe",
+    "url": "https://www.mapplethorpe.org/selected-publications/the-perfect-moment",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-15バッチ）で旧本文cite由来リンクを新出典セットへ意図的置換",
+    "declared": "2026-07-15"
+  },
+  {
+    "slug": "mapplethorpe",
+    "url": "https://www.smithsonianmag.com/arts-culture/how-museum-cancelling-controversial-mapplethorpe-exhibition-changed-my-life-180959311/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-15バッチ）で旧本文cite由来リンクを新出典セットへ意図的置換",
+    "declared": "2026-07-15"
+  },
+  {
+    "slug": "mapplethorpe",
+    "url": "https://www.smithsonianmag.com/history/when-art-fought-law-and-art-won-180956810/",
+    "reason": "ChatGPT新素材による全文差し替え（2026-07-15バッチ）で旧本文cite由来リンクを新出典セットへ意図的置換",
+    "declared": "2026-07-15"
   }
 ]

@@ -43,6 +43,7 @@
 | 2026-07-14 | **6名バッチupdate**(don-mccullin/ed-van-der-elsken/seydou-keita/larry-clark/philip-jones-griffiths/kishin-shinoyama) | update | 41分 | 4（engine穴・下記） | 0（全機械化） | 16ファイル | 計5826→28006 | 計16→135 |
 | 2026-07-14 | capa(本文組版の標準化・文言不変) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-14 | h4→h3一括変換(69ページ・266見出し・文言不変) | other | （Daisuke記入） | 0 | 0 | 69ファイル | N/A | N/A |
+| 2026-07-15 | **5名バッチupdate**(joel-meyerowitz/joel-sternfeld/lewis-baltz/robert-adams/mapplethorpe) | update | 29分 | 0（engine穴なし） | 0（全機械化・§RELリンク化2名はスクラッチ機械編集） | 12ファイル | 計5287→21715 | 計17→84 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1147,3 +1148,20 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **対象**：capa回で発見した「CSS定義のない`<h4>`小見出し」の残り全ページ。**事前実測**＝69ページ・266見出し・全て属性なし`<h4>`・セクション本文内のみ・既存h3との混在ゼロ・`#h3-`アンカー参照ゼロ・全ページに`.essay h3`CSS定義あり・**EN側69ページはh4ゼロ（ビルダー変換済み）＝EN/JSON対応不要**。
 - **内容**：`<h4>` → `<h3 id="h3-NN">`（ページ内出現順連番・文言不変）。ページごとに可視テキストcharacter-identical・変換完全性・連番一意性をassertしながら機械変換。
 - **検証**：変更69ファイル全てphotographers/配下・EN/JSON差分ゼロ・h4残存ゼロ（JA/EN）・check_content_loss OK（WARNなし）・preflight OK。
+
+## 2026-07-15 — 5名バッチupdate（ChatGPT新素材で本文全刷新・joel-meyerowitz/joel-sternfeld/lewis-baltz/robert-adams/mapplethorpe）
+
+- **種別**：update×5（既存本文869〜1269字 → 新素材3754〜4995字の全文刷新）。素材=re-photographer/20260715/（JA/EN・clean。masahisa-fukase-final.htmlはEN素材が無く**対象外・保留**）。
+- **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。パイロット（robert-adams）→監査→残り4名。Codex呼び出し6回・Codexバグ0・engine穴0（前回までの恒久修正が全部効いた）。安全ガードで3回正しく自主停止（Sternfeld/Baltz のEN Related置換ガード2回・EN JSONリンク消失HARD FAIL 1回）。
+- **監督判断（実測）**：
+  1. **§RELは今回「素材採用」**（前回までの「既存維持」と逆）：meyerowitz 7/7・baltz 6/6・adams 6/6 は素材リンク全実在でそのまま採用。**sternfeld は素材の裸項目5件（Eggleston/Shore/Robert Adams/New Color/New Topographics）をスクラッチコピーでリンク化**・Postdocumentary（ページ無し）は項目削除→7/7。**mapplethorpe は裸項目5件（ページ無し）を削除し既存 Staged Photography 項目を合流**→3/3。JA/EN一致。
+  2. **旧EN Related 5リンクの置換ガード（sternfeld 3・baltz 2）**：§REL全面刷新に伴う意図的置換と認定し `build_photographers_en.py --force`。
+  3. **旧Sources URL消失6件**（sternfeld Met 1 / baltz Getty 1 / mapplethorpe ICP・mapplethorpe.org・Smithsonian×2）：全刷新に伴う正当な置換 → intentional-replacements 6宣言追加。**push後にstale WARN化したら削除**。前回バッチのstale 2宣言（don-mccullin Tate / ed Stedelijk）は削除済。
+  4. **hero Years空欄・Country年代文字列は既存維持**（サイト標準・補正しない）。precheckのCJK比率言語WARN 4件は英語出典が多い素材の誤検知と判断（advisory）。
+  5. **data-nosnippet 各1減WARN**は旧prep-block（作品リンク準備中）→実コンテンツ置換によるもの。正当・許容。
+- **ui-terms**：追加0（untranslated WARN 0。ポストドキュメンタリー等の未登録運動語はkeywords面に出ず発火せず）。
+- **面（tracked 12）**：JA5＋EN5＋en-content.json（対象5キーのみ・assert通過）＋intentional-replacements.json。カード・年代・国・運動・スターマップ面は不触（既存写真家）。
+- **フィデリティ（5名計）**：本文5287→21715字・unique cite 17→84・sup-ref 28→132・dangling 0・Entry/idx・entry-meta Country（リンク付）全員verbatim維持・EN不可視要素（GA/canonical/hreflang/OG/og:image/JSON-LD日付/data-nosnippet）全員維持。
+- **検証**：check_content_loss OK／5slug --dry-run SKIPPEDなし・untranslated 0／**preflight FAIL 0**（WARNは許容済data-nosnippetのみ）／en-content変更は対象5キーのみ／対象外巻き込み0／素材原本ハッシュ不変。
+- **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×5・en/photographers/<slug>-backup.html×5・scripts/<slug>-spec.json×5。
+- **wall-time**：29分（Daisuke実測。engine穴0・全機械化。1名あたり約5.8分＝過去最速）
