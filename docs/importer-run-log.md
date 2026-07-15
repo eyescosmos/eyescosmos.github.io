@@ -1165,3 +1165,14 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：check_content_loss OK／5slug --dry-run SKIPPEDなし・untranslated 0／**preflight FAIL 0**（WARNは許容済data-nosnippetのみ）／en-content変更は対象5キーのみ／対象外巻き込み0／素材原本ハッシュ不変。
 - **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×5・en/photographers/<slug>-backup.html×5・scripts/<slug>-spec.json×5。
 - **wall-time**：29分（Daisuke実測。engine穴0・全機械化。1名あたり約5.8分＝過去最速）
+
+## 2026-07-15 — masahisa-fukase（ChatGPT新素材で本文全刷新）
+
+- **種別**：update（JA本文882→7104字、unique出典3→17、sup-ref 24→38、§REL 2→7、作品リンク2→8）。
+- **bug / engine改良**：なし。Related置換ガードは発火せず、EN JSONリンク消失HARDは承認済みArtforum PDF 1件だけを scoped intentional-replacement 宣言で処理。
+- **手作業点**：3点。①素材§RELの裸WORKSHOP項目をJA/EN各1件削除、②external_links_html全刷新（MoMA後継URL採用・Setanta shop意図的削除）の監督承認、③works ui-terms 6件の文言監査・承認。ボトルネックは§RELの実在リンク判定と旧URL消失の意図確認。
+- **面（tracked 6）**：JA/EN個別ページ2＋en-content.json（masahisa-fukase.htmlキーのみ）＋ui-terms.json（6件）＋intentional-replacements.json（1件）＋本ログ。カード・年代・国・運動・スターマップ面は不触。
+- **フィデリティ**：JA適用後検証OK、ENビルド1ページ・dry-run SKIPPEDなし、§REL 7リンク全て実在、Entry/Country JA/ENともbackupからverbatim維持、GA/canonical/hreflang/og:image/JSON-LD維持。
+- **検証**：check_content_loss OK／preflight FAIL 0（既存他作家のstale intentional-replacement WARN 6件のみ）／対象外巻き込み0／素材原本ハッシュ不変。
+- **commit**：未コミット。
+- **wall-time**：13分（Daisuke実測）。
