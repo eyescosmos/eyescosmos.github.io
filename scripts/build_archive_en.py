@@ -88,6 +88,7 @@ GENRE_TAG = {
     'スナップショット': 'Snapshot Photography',
     'スティルライフ': 'Contemporary Still Life',
     'ポストインターネット': 'Post-Internet',
+    'ポスト・フォトグラフィー': 'Post-Photography',
     'インティメイト・ライフ': 'Intimate Life',
     'ストリート写真': 'Street Photography',
     'ストレート写真': 'Straight Photography',

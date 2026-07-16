@@ -1127,7 +1127,7 @@ def rebuild_further(html, page):
         body_parts.append('          <div class="ph-rel-label">Databases &amp; archives</div>')
         body_parts.append('          <ul class="ph-further-links">')
         for href, text in ext_links:
-            text = re.sub(r'\s*↗\s*$', '', text.strip())
+            text = _strip_trailing_arrow(text)
             body_parts.append(f'            <li><a href="{href}" target="_blank" rel="noopener">{text}</a></li>')
         for li in fr_link_lis:
             body_parts.append(f'            {li}')
@@ -1474,8 +1474,19 @@ def _translate_compound(value, terms, countries, warnings, page_label):
     )
 
 
-def _strip_arrow(s):
-    return s[:-2].rstrip() if s.endswith(' ↗') else s
+def _strip_trailing_arrow(s):
+    """末尾の ↗ とその前後の空白を除去する（呼び出し箇所で挙動を統一）。"""
+    return re.sub(r'\s*↗\s*$', '', s.strip())
+
+
+def _works_label_verbatim(s):
+    """works lookup 第1キー: ↗除去後、区切り記号を保ったまま空白だけ畳む。"""
+    return re.sub(r'\s+', ' ', _strip_trailing_arrow(s)).strip()
+
+
+def _works_label_legacy_key(s):
+    """works lookup 第2キー: 旧挙動どおり em/en dash を hyphen へ畳む。"""
+    return _works_label_verbatim(s).replace('—', '-').replace('–', '-')
 
 
 def translate_residuals(html, page, slug, ja_file, warnings):
@@ -1485,6 +1496,14 @@ def translate_residuals(html, page, slug, ja_file, warnings):
     channels = ui['channels']
     fixed = ui['fixed']
     works_labels = ui['works_labels']
+    works_labels_verbatim = {
+        _works_label_verbatim(key): value for key, value in works_labels.items()
+    }
+    # 旧「 - 」キーを残した既存データと、新しい em/en dash 保持キーの双方を
+    # 同じ従来正規形から引ける互換インデックス。直接一致（第1段）を常に優先する。
+    works_labels_legacy = {}
+    for key, value in works_labels.items():
+        works_labels_legacy.setdefault(_works_label_legacy_key(key), value)
     page_label = ja_file
 
     # (a) Brand: 写真の座標 → Photo Coordinates
@@ -1624,13 +1643,14 @@ def translate_residuals(html, page, slug, ja_file, warnings):
     # (e) chip-link labels (works links + side works)
     def repl_chip_link(m):
         pre, inner = m.group(1), m.group(2)
-        base = _strip_arrow(inner)
-        had_arrow = inner.endswith(' ↗')
+        base = _works_label_verbatim(inner)
+        had_arrow = bool(re.search(r'\s*↗\s*$', inner))
         if not CJK_RE.search(base):
             return m.group(0)
-        if base in works_labels:
-            new = works_labels[base]
-        else:
+        new = works_labels_verbatim.get(base)
+        if new is None:
+            new = works_labels_legacy.get(_works_label_legacy_key(base))
+        if new is None:
             warnings.append(f'{page_label}: untranslated works label: {base}')
             new = base
         return pre + new + (' ↗' if had_arrow else '') + '</a>'

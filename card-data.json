@@ -6098,6 +6098,26 @@
       "style": "pc-top--kanji",
       "artText": "亜弥",
       "hintText": "AYA FUJIOKA · 1972–"
+    },
+    {
+      "type": "photographer",
+      "id": "yuki-tawada",
+      "href": "photographers/yuki-tawada.html",
+      "idx": 304,
+      "nameJa": "多和田有希",
+      "nameEn": "Yuki Tawada",
+      "metaJa": "日本 · 1978–",
+      "era": "2000",
+      "nationality": "JP",
+      "ledeJa": "1978年生まれ。都市、群衆、家族、海を撮影したプリントを削り、燃やし、重ねる制作を続ける。《WHITE OUT》《Burnt Photographs》《I am in You》を通して、大量消費される画像に手の痕跡を戻し、写真を保存装置から、忘却、治癒、儀礼を試す物体へ変えてきた。",
+      "channel": "写真史の論点 · ポスト・フォトグラフィー",
+      "tags": [
+        "ポスト・フォトグラフィー",
+        "日本写真"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "治癒",
+      "hintText": "YUKI TAWADA · 1978–"
     }
   ],
   "movements": [

@@ -126,7 +126,8 @@ def strip_edit_red(html: str) -> str:
 # 前方一致で正当なルールを消さない）。
 REVIEW_CSS_RULE_RE = re.compile(
     r'[^{}]*\.(?:edit-red|' + REV_CLASS_PAT + r')(?![A-Za-z0-9_-])[^{}]*\{[^}]*\}')
-REVIEW_COMMENT_RE = re.compile(r'/\*\s*revision preview\s*\*/')
+REVIEW_COMMENT_RE = re.compile(
+    r'/\*\s*(?:revision preview|編集確認用：今回の修正箇所のみ)\s*\*/')
 
 
 def strip_review_css(html: str) -> str:
@@ -681,7 +682,9 @@ def propose_works_ui_terms(ja_body: str, en_body: str) -> list:
     「X」が同一 URL で衝突）になるため、必ず同じ section 同士でのみ対応付ける。"""
     proposals = []
     for cls in WORKS_LINK_CLASSES:
-        ja_items = _extract_works_by_class(ja_body, cls)
+        # works_labels のキーは実際の JA チップ文言そのものを正とする。
+        # norm_text は em/en dash を "-" に畳むため、キー生成では使わない。
+        ja_items = _extract_works_raw_by_class(ja_body, cls)
         en_items = _extract_works_raw_by_class(en_body, cls)
         en_by_url = {}
         for it in en_items:
@@ -729,10 +732,27 @@ def _extract_related(body: str):
         if not sl:
             break
         outer, inner, pos = sl
-        is_mv = "ph-rel-movements" in outer[:outer.find(">")]
-        items = [_parse_rel_item(li.group(1))
-                 for li in re.finditer(r'<li\b[^>]*>(.*?)</li>', inner, re.S)]
-        (movements if is_mv else people).extend(items)
+        open_tag = outer[:outer.find(">")]
+        before = body[:body.find(outer, max(0, pos - len(outer)))]
+        labels = list(re.finditer(
+            r'<div\b[^>]*class="[^"]*\bph-rel-label\b[^"]*"[^>]*>(.*?)</div>',
+            before, re.S | re.I))
+        label = norm_text(labels[-1].group(1)).lower() if labels else ""
+        label_is_people = ("related photographer" in label)
+        label_is_movements = any(x in label for x in (
+            "related movement", "related theme", "related concept"))
+        default_is_mv = ("ph-rel-movements" in open_tag or
+                         (label_is_movements and not label_is_people))
+        for li in re.finditer(r'<li\b[^>]*>(.*?)</li>', inner, re.S):
+            item = _parse_rel_item(li.group(1))
+            href_m = re.search(r'<a\b[^>]*\bhref="([^"]*)"', li.group(1), re.S)
+            href = href_m.group(1) if href_m else ""
+            if "/movements/" in href:
+                movements.append(item)
+            elif "/photographers/" in href:
+                people.append(item)
+            else:
+                (movements if default_is_mv else people).append(item)
     return people, movements
 
 
@@ -1234,24 +1254,78 @@ def _build_name_slug_map(self_slug: str) -> dict:
     return out
 
 
-def _link_body_names(essays_html: str, self_slug: str) -> str:
-    """essay 本文の実在写真家名（card-data nameJa）を初出1回だけ /photographers へ
-    リンク化（§4.2 E）。既存 <a> の内側は masking で保護。"""
-    name_map = _build_name_slug_map(self_slug)
-    if not name_map:
-        return essays_html
-    masked, saved = _mask_anchors(essays_html)
-    for nm in sorted(name_map, key=len, reverse=True):  # 長い名前優先（部分一致回避）
-        idx = masked.find(nm)
-        if idx < 0:
-            continue
-        masked = (masked[:idx] +
-                  f'<a href="/photographers/{name_map[nm]}.html">{nm}</a>' +
-                  masked[idx + len(nm):])
-    return _unmask_anchors(masked, saved)
+def _normalize_head_attribute_order(html: str) -> str:
+    """head 内の meta/link 属性を後段ビルダーが期待する決定論順へ並べ替える。
+    属性値・属性集合は変えず、meta は識別属性、link は rel を先頭へ移す。"""
+    hm = re.search(r'<head\b[^>]*>(.*?)</head>', html, re.S | re.I)
+    if not hm:
+        return html
+
+    attr_re = re.compile(
+        r'[^\s=/>]+(?:\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>]+))?')
+
+    def reorder(m: re.Match) -> str:
+        tag_name, raw = m.group(1), m.group(2)
+        slash = "/" if raw.rstrip().endswith("/") else ""
+        attrs_raw = raw.rstrip()
+        if slash:
+            attrs_raw = attrs_raw[:-1].rstrip()
+        attrs = attr_re.findall(attrs_raw)
+        if not attrs:
+            return m.group(0)
+        preferred = (("name", "property", "http-equiv")
+                     if tag_name.lower() == "meta" else ("rel",))
+
+        def attr_name(token: str) -> str:
+            return re.split(r'\s*=', token, 1)[0].lower()
+
+        first_index = next((i for key in preferred for i, a in enumerate(attrs)
+                            if attr_name(a) == key), None)
+        if first_index is None or first_index == 0:
+            return m.group(0)
+        ordered = [attrs[first_index]] + attrs[:first_index] + attrs[first_index + 1:]
+        return f'<{tag_name} ' + " ".join(ordered) + slash + ">"
+
+    head = hm.group(1)
+    head = re.sub(r'<(meta|link)\b((?:[^>"\']|"[^"]*"|\'[^\']*\')*)>',
+                  reorder, head, flags=re.I)
+    return html[:hm.start(1)] + head + html[hm.end(1):]
 
 
-def render_ja_page(bundle: dict, spec: dict, idx=None) -> str:
+def _ensure_ja_en_toggle(html: str, slug: str) -> str:
+    """新規 JA render の言語トグルを対象 EN URL に固定する。"""
+    target = f'/en/photographers/{slug}.html'
+    block = slice_by_class(html, "div", "head__lang")
+    if not block:
+        return html
+    outer, inner, end = block
+    en_button = re.search(r'<button\b[^>]*>\s*EN\s*</button>', inner, re.S | re.I)
+    if not en_button:
+        replacement = inner.rstrip() + f'\n      <a href="{target}"><button>EN</button></a>\n    '
+    else:
+        wrapped = re.search(
+            r'<a\b[^>]*>\s*<button\b[^>]*>\s*EN\s*</button>\s*</a>', inner,
+            re.S | re.I)
+        if wrapped:
+            anchor = wrapped.group(0)
+            href_m = re.search(r'\bhref="([^"]*)"', anchor, re.I)
+            if href_m and href_m.group(1) == target:
+                return html  # 既に正しい場合は byte 不変
+            if href_m:
+                anchor = (anchor[:href_m.start(1)] + target + anchor[href_m.end(1):])
+            else:
+                anchor = re.sub(r'<a\b', f'<a href="{target}"', anchor,
+                                count=1, flags=re.I)
+            replacement = inner[:wrapped.start()] + anchor + inner[wrapped.end():]
+        else:
+            anchor = f'<a href="{target}">{en_button.group(0)}</a>'
+            replacement = inner[:en_button.start()] + anchor + inner[en_button.end():]
+    new_outer = outer[:outer.find(">") + 1] + replacement + "</div>"
+    start = end - len(outer)
+    return html[:start] + new_outer + html[end:]
+
+
+def render_ja_page(bundle: dict, spec: dict, idx=None, *, new_import: bool = True) -> str:
     """ContentBundle（JA）+ spec から JA 正本 HTML を生成（§4 scaffold-inject）。
     必須欠落は assert_bundle_complete で中断（空埋め禁止）。"""
     from add_photographer import build_scaffold_html  # import 副作用なし（main ガード済）
@@ -1279,9 +1353,8 @@ def render_ja_page(bundle: dict, spec: dict, idx=None) -> str:
     html = _inject_ja_keywords(html, bundle.get("keywords"))
     # § WORKS
     html = _set_section_body(html, "§ WORKS", _build_ja_works_body(bundle.get("works") or []))
-    # essay + TOC（節数可変・本文内リンクは essay にだけ適用）
+    # essay + TOC（節数可変）。本文リンクは precheck で候補を出すだけで自動付与しない。
     toc_items, sections_html = _build_ja_sections_and_toc(bundle.get("sections") or [])
-    sections_html = _link_body_names(sections_html, spec.get("id", ""))
     html = _replace_essays_and_toc(html, toc_items, sections_html)
     # § REL / § REF / § SRC
     html = _set_section_body(html, "§ REL",
@@ -1291,6 +1364,9 @@ def render_ja_page(bundle: dict, spec: dict, idx=None) -> str:
                              _build_ja_ref_body(bundle.get("further_books") or [],
                                                 bundle.get("further_links") or []))
     html = _set_section_body(html, "§ SRC", _build_ja_src_body(bundle.get("sources") or []))
+    if new_import:
+        html = _ensure_ja_en_toggle(html, spec.get("id", ""))
+        html = _normalize_head_attribute_order(html)
     return html
 
 
@@ -2121,7 +2197,7 @@ def run_update_existing(slug: str, ja_path: Path, en_path: Path | None,
     bundle, _info = extract_bundle(ja_path.read_text(encoding="utf-8", errors="replace"),
                                    "ja", slug=slug)
     try:
-        new_html = render_ja_page(bundle, spec)
+        new_html = render_ja_page(bundle, spec, new_import=False)
     except BundleIncomplete as e:
         sys.stderr.write(f"ERROR: {e}\n")
         return 1
@@ -2705,6 +2781,43 @@ def _cjk_ratio(text: str) -> float:
     return cjk / denom if denom else 0.0
 
 
+def _hero_eyebrow(html: str) -> str | None:
+    m = re.search(
+        r'<div\b[^>]*class="[^"]*\bph-hero__eyebrow\b[^"]*"[^>]*>(.*?)</div>',
+        html, re.S | re.I)
+    if not m:
+        return None
+    # norm_text は em/en dash を "-" に畳むため、標準形判定では使わない。
+    text = re.sub(r'<[^>]+>', ' ', m.group(1))
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def _unlinked_body_candidates(bundle: dict, slug: str) -> tuple[list[str], list[str]]:
+    """JA 本文にある未リンクの既存写真家名・運動ページ名を印字用に抽出する。"""
+    sections_html = "\n".join(
+        sec.get("blocks_html") or "" for sec in (bundle.get("sections") or []))
+    without_links = re.sub(r'<a\b[^>]*>.*?</a>', " ", sections_html,
+                           flags=re.S | re.I)
+    body_text = norm_text(without_links)
+
+    photographers = []
+    try:
+        data = json.loads(CARD_DATA.read_text(encoding="utf-8"))
+        for p in data.get("photographers", []):
+            name = p.get("nameJa")
+            if name and p.get("id") != slug and name in body_text:
+                photographers.append(name)
+    except Exception:
+        pass
+
+    movements = []
+    for path in sorted((REPO / "movements").glob("*.html")):
+        name = path.stem
+        if name in body_text:
+            movements.append(name)
+    return sorted(set(photographers)), sorted(set(movements))
+
+
 def run_precheck(slug: str, ja_path: Path, en_path: Path | None) -> int:
     """素材プリチェック（read-only）。書き込みなし。
 
@@ -2770,6 +2883,23 @@ def run_precheck(slug: str, ja_path: Path, en_path: Path | None) -> int:
 
     dict_available = stub_to_slug is not None and genre_tag is not None
 
+    eyebrow = _hero_eyebrow(ja_html)
+    eyebrow_m = re.fullmatch(
+        r'§\s*\d+\s+—\s+Photographer Index\s+—\s+(.+)', eyebrow or "")
+    if not eyebrow_m:
+        print(f"⚠ WARN: hero眉が標準形「§ NNN — Photographer Index — ジャンル語」ではありません: "
+              f"{eyebrow or '（未検出）'}")
+    genre_m = eyebrow_m or re.search(r'Photographer Index\s+—\s+(.+)$', eyebrow or "")
+    if genre_m:
+        genre = genre_m.group(1).strip()
+        try:
+            ui_terms = json.loads(UI_TERMS_JSON.read_text(encoding="utf-8")).get("terms", {})
+        except Exception:
+            ui_terms = {}
+        if genre not in (genre_tag or {}) and genre not in ui_terms:
+            print(f"⚠ WARN: hero眉ジャンル語「{genre}」は GENRE_TAG / ui-terms terms の"
+                  "どちらにも未登録です（自動登録しません）。")
+
     print()
     print("[BUNDLE] JA 素材解析 ─────────────────────────────────")
     try:
@@ -2802,6 +2932,11 @@ def run_precheck(slug: str, ja_path: Path, en_path: Path | None) -> int:
             print("  ※ tag の GENRE_TAG 照合は spec 確定後に add_photographer の事前 lint（④）で行う。")
         else:
             print("  辞書チェックskip（build_taxonomy_en/build_archive_en のインポート失敗）")
+
+        people_candidates, movement_candidates = _unlinked_body_candidates(bundle, slug)
+        print("\n[本文初出リンク候補]（印字のみ・自動リンク化なし）")
+        print("  写真家: " + (" / ".join(people_candidates) if people_candidates else "なし"))
+        print("  運動  : " + (" / ".join(movement_candidates) if movement_candidates else "なし"))
 
     print()
     if en_path and en_path.exists():

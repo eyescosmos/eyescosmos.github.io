@@ -75,7 +75,8 @@
     "写真と彫刻": "Photography and Sculpture",
     "NU・E": "NU・E",
     "抽象写真": "Abstract photography",
-    "スナップショット": "Snapshot Photography"
+    "スナップショット": "Snapshot Photography",
+    "ポスト・フォトグラフィー": "Post-photography"
   },
   "countries": {
     "日本": "Japan",
@@ -317,6 +318,13 @@
     "東京都写真美術館 - 〈ブクブク〉1991年": "Tokyo Photographic Art Museum — Bukubuku, 1991",
     "Foam - 《Kill the Pig》ほか": "Foam — Kill the Pig and Other Works",
     "The New Yorker - 〈Afterword〉／サスケ二世": "The New Yorker — Afterword / Sasuke II",
-    "Michael Hoppen Gallery - 〈ベロベロ〉〈Hibi〉": "Michael Hoppen Gallery — Berobero and Hibi"
+    "Michael Hoppen Gallery - 〈ベロベロ〉〈Hibi〉": "Michael Hoppen Gallery — Berobero and Hibi",
+    "公式サイト — WHITE OUT / Crowds": "Official Website — WHITE OUT / Crowds",
+    "公式サイト — Shells / Family Ritual": "Official Website — Shells / Family Ritual",
+    "公式サイト — I am in You": "Official Website — I am in You",
+    "東京都写真美術館 — 見るは触れる": "Tokyo Photographic Art Museum — Seeing as Though Touching",
+    "公式 — WHITE OUT": "Official — WHITE OUT",
+    "公式 — Shells": "Official — Shells",
+    "公式 — I am in You": "Official — I am in You"
   }
 }

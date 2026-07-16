@@ -1176,3 +1176,29 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：check_content_loss OK／preflight FAIL 0（既存他作家のstale intentional-replacement WARN 6件のみ）／対象外巻き込み0／素材原本ハッシュ不変。
 - **commit**：未コミット。
 - **wall-time**：13分（Daisuke実測）。
+
+## 2026-07-17 — yuki-tawada（new / 新規追加・多和田有希・idx304・era2000）＋importer積み残し7件を実装
+
+- **種別**：new（純・新規追加）。素材=re-photographer/yuki-tawada(8).html / yuki-tawada-en.html（JA/EN・v5.1型・revision-latest赤字マーカー入り）。slug=yuki-tawada。
+- **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。監督側で全判断（spec全項目・idx=304・era=2000・artText=治癒・GENRE_TAG/terms追加語・運動ページ面スキップ判断）とパイプライン実行。Codexはimporter機能実装のみ（触ってよいファイル明示・Web検索禁止・py_compileまで）。Codex呼び出し2回・逸脱0。
+- **importer積み残し実装（memoの残り全件＋新規1件）**：
+  - **②render-ja head属性順正規化**（新規経路のみ・meta=name/property/http-equiv先頭・link=rel先頭。素材のcontent-first meta 12→0を実測）。
+  - **③ENトグル自動リンク**（新規renderで /en/photographers/<slug>.html を保証・既に正しければbyte不変）。
+  - **④works_labelsキー正規化＋↗strip統一**（キー=実ラベルverbatim・em dash保持／`\s*↗\s*$` の単一ヘルパー `_strip_trailing_arrow` に統一）。
+  - **①e §RELラベル抽出許容拡大**（"Related Photographers…"/"Related Movements…"/"Related Themes…"包含判定＋href種別優先）。
+  - **⑤precheck WARN 2種**（ジャンル語GENRE_TAG/ui-terms未登録・hero眉標準形）— 本番で両方正しく発火。
+  - **⑦本文初出リンク候補の印字**（precheckで印字のみ・**render_ja_pageの全自動 `_link_body_names` は撤去**＝メモの「全自動禁止→半自動」方針どおり。今回素材は候補0）。
+  - **（新規）revision-latestマーカーstrip**（span unwrap・複合classからトークン除去・編集確認用CSS除去。JA/EN各15箇所→出力0・可視テキスト不変）。
+- **engine穴1件（発見→即修正）**：④でui-terms新キーがem dash保持になった一方、build_photographers_en.py のworksルックアップがdash潰し正規化キーで照合→untranslated WARN 4件。**verbatim→legacy正規化キーの2段フォールバック**をCodexが実装（旧「 - 」キーの後方互換維持）。修正後WARN 0。
+- **判断点（実測）**：
+  1. **運動ページ面はスキップ**：hero Movement=ポスト・フォトグラフィーは movements/ページ未存在・STUB_TO_SLUG未登録・素材の§REL運動3項目（ポスト・フォトグラフィー/写真の物質性/写真療法）も全て裸テキスト＝リンクすべき既存運動ページなし。eiko回（抽象写真→モダニズム採用）と違い、entry-meta/§RELがリンクする既存運動が無いため無理な所属付けをしない。star用movementsに日本写真を入れ星座接続は確保。
+  2. **GENRE_TAG/terms追加1語**：「ポスト・フォトグラフィー」→ Post-Photography（build_archive_en.py）/ Post-photography（ui-terms terms）。
+  3. **works ui-terms 7件**：merge-to-en自動提案を全承認（素材EN準拠・em dash保持を確認）。
+  4. **check_new_photographer残WARN 2件は許容**：body_links_scarce（precheck候補0＝素材に既存slug該当名なし）・en_graph_absent（EN標準）。
+  5. **en/countries/japan.html のTomatsu lede差し替え1件**は正本card-data準拠への追い付き（stale HTML→再生成）で消失ではない。
+  6. stale intentional-replacement（masahisa-fukase Artforum PDF・push済）を削除→preflight WARN解消。
+- **面（tracked 16）**：新規JA/EN個別ページ2（未追跡）＋archive/cards-archive JA・card-data・countries japan JA/EN・eras2000 JA/EN・en/archive・en-content(+21 add/replace 0)・ui-terms(+8=works7+terms1)・supplement・star bin・scripts3（import_chatgpt / build_photographers_en / build_archive_en 1行）＋intentional-replacements.json（-1）＋new-design/cards-archive.html（git-ignore・投入済）。
+- **フィデリティ**：JA 4節・cite 25・sup-ref 35・dangling 0・span balance OK。EN merge add=21/replace=0・他slug byte不変assert通過。ph-book「Her smoke rose up forever」JA/EN inner HTML無傷。EN不可視要素（GA/canonical/hreflang×3/JSON-LD/data-nosnippet）維持。全7面で本人参照=1・photographers.js混入0（星bin/supplement各1）。
+- **検証**：check_new_photographer OK／check_content_loss OK／link integrity OK／EN --slug --dry-run SKIPPEDなし／**preflight FAIL 0**（残WARN=en/countries/japan・en/eras/2000の「直接編集疑い」＝scoped再生成への既知の誤検知）。`--all`不使用・link_country_keywords不実行・対象外巻き込み0・素材原本ハッシュ不変。
+- **backup（未追跡・GH Pages実機確認後に削除）**：archive-backup.html等は前回分が既存のため据え置き＋eras/2000-backup.html・new-design/cards-archive-backup.html・card-data-backup.json・supplement/star binバックアップ（add_photographer自動）・scripts/yuki-tawada-spec.json（未追跡のまま残す）。
+- **wall-time**：23分（Daisuke実測。importer積み残し7件＋engine穴1件の実装込み）

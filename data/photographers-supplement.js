@@ -5323,3 +5323,49 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "yuki-tawada",
+  "name": "Yuki Tawada",
+  "nameJa": "多和田有希",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1978–",
+  "gender": "女性",
+  "era": "2000",
+  "movements": [
+    "ポスト・フォトグラフィー",
+    "写真の物質性",
+    "日本写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Yuki Tawada Official Website",
+      "url": "https://www.yukitawada.com/bio"
+    },
+    {
+      "label": "東京都写真美術館 — 展覧会",
+      "url": "https://topmuseum.jp/exhibition/4282/"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "都市、群衆、家族、海を撮影したプリントを削り、燃やし、重ねる写真家。《WHITE OUT》《Burnt Photographs》《I am in You》を通して、大量消費される画像に手の痕跡を戻し、写真を保存装置から、忘却、治癒、儀礼を試す物体へ変えてきた *1 *2 。",
+    "textEn": "A photographer who scrapes, burns, and layers prints of cities, crowds, family members, and the sea. Through WHITE OUT, Burnt Photographs, and I am in You, she returns the mark of the hand to mass-consumed images, transforming photography from a device of preservation into an object through which forgetting, healing, and ritual can be tested *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Yuki Tawada Official Website — Biography",
+        "url": "https://www.yukitawada.com/bio"
+      },
+      {
+        "num": 2,
+        "name": "東京都写真美術館 — 展覧会",
+        "url": "https://topmuseum.jp/exhibition/4282/"
+      }
+    ]
+  }
+}
+);
