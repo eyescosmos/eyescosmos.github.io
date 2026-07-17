@@ -1219,3 +1219,17 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×3・en/photographers/<slug>-backup.html×3・scripts/<slug>-spec.json×3（specは未追跡のまま残す）。
 - **commit**：あり（本行のコミットと同一）。
 - **wall-time**：16分（Daisuke実測。1名あたり約5.3分）
+
+## 2026-07-18 — 2名バッチupdate（ChatGPT新素材で本文全刷新・stephen-shore/eggleston）
+
+- **種別**：update×2（既存本文1253/1143字 → 新素材5531/4743字の全文刷新）。素材=re-photographer/直下（stephen-shore-final(1).html / stephen-shore-en.html / william-eggleston-revised(8).html / william-eggleston-english-final.html）。カード・年代・国・運動・スターマップ・archive面は不触。
+- **手作業点**：6系統。①Shore EN §RELのJA形movement URL 3件を正規EN slugへ補正、②Shore/Egglestonの旧Related chip各1件を監督承認後に`--force`生成、③Eggleston JA Amazonカード3枚をbackupからverbatim復元、④Eggleston EN Amazonカード3枚をEN backup由来の英語文面・EN専用URLで正本JSONへ復元、⑤works ui-terms 1件（Whitney - 展覧会作品12点）を素材EN準拠でadd-only追加、⑥旧Sources 4URL（Shore Met 1 / Eggleston Aperture・Hasselblad・MoMA 3）をscoped intentional-replacements宣言。ボトルネックは§RELのJA形URL補正と、JA/ENで異なるAmazon URLの保全確認。
+- **bug / engine改良**：なし。既存のcarry-forward、EN field-merge、Related置換ガード、intentional-replacementsが想定どおり作動。ui-terms候補発火時は監督承認まで停止。
+- **面（tracked 8）**：JA2＋EN2＋en-content.json（対象2キー）＋ui-terms.json（+1）＋intentional-replacements.json（Sources 4件）＋本ログ。stale化した旧chip宣言2件はpreflight確認後に削除。
+- **フィデリティ**：本文2396→10274字、unique出典9→59、sup-ref13→98、§REL 5→8 / 3→6、作品リンク0→8 / 0→4、dangling 0。Eggleston AmazonはJA=3（41jyR0f/4taRX4P/47TI8zM）・EN=3（48nZiFL/4tzM7tB/4mjT5QT）、ShoreはJA/ENとも0。JA/ENともdiv・section開閉一致、EN不可視要素（GA/canonical/hreflang/og:image/JSON-LD/data-nosnippet）維持。
+- **検証**：2slug --dry-run SKIPPEDなし・untranslated 0／check_en_entryはShore OK・Eggleston Wikipedia非推奨ドメインWARN 1件／check_content_loss OK／link integrity OK／preflight FAIL 0（data-nosnippet各1減×JA/EN 2名=既知正当・監督確認済）／素材原本4ファイルmtime・サイズ・SHA-256不変。
+- **追補（監督）**：Shore EN §REL一言解説3件（new-color/new-topographics/color-photography）を標準手順（sync_en_rel_annotations.py apply-batch→inject-html）で注入→audit missing 0・preflight WARN解消。
+- **素材SHA-256**：Shore JA `ab9bd9b1f776d0da0ce084a38dc54361590639c6879f11d37dda6aa0b9ab4d94` / EN `fd27917ba836e1f2d33597ab1491b9586dea827bd5e8710fd0c9a5eaf724ac6b`、Eggleston JA `489d9dc9eae88dfdaa676c9bc59501b307dcb92742ae3a0be4cf2a0dabf4f534` / EN `7058bfa52c7397c5c2e084c34d4053fdbf4e952c7ce3de1a7d430664f010ffa1`。
+- **backup（未追跡）**：photographers/<slug>-backup.html×2・en/photographers/<slug>-backup.html×2・scripts/<slug>-spec.json×2。
+- **commit**：あり（本行のコミットと同一）。
+- **wall-time**：19分（Daisuke実測。1名あたり約9.5分＝§REL URL補正・Amazon二系統復元の裁定込み）。
