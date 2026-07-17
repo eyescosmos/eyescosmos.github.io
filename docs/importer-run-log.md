@@ -1202,3 +1202,20 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：check_new_photographer OK／check_content_loss OK／link integrity OK／EN --slug --dry-run SKIPPEDなし／**preflight FAIL 0**（残WARN=en/countries/japan・en/eras/2000の「直接編集疑い」＝scoped再生成への既知の誤検知）。`--all`不使用・link_country_keywords不実行・対象外巻き込み0・素材原本ハッシュ不変。
 - **backup（未追跡・GH Pages実機確認後に削除）**：archive-backup.html等は前回分が既存のため据え置き＋eras/2000-backup.html・new-design/cards-archive-backup.html・card-data-backup.json・supplement/star binバックアップ（add_photographer自動）・scripts/yuki-tawada-spec.json（未追跡のまま残す）。
 - **wall-time**：23分（Daisuke実測。importer積み残し7件＋engine穴1件の実装込み）
+
+## 2026-07-18 — 3名バッチupdate（ChatGPT新素材で本文全刷新・takuma-nakahira/chris-killip/kruger）
+
+- **種別**：update×3（既存本文1213/891/1559字 → 新素材5035/5142/5264字の全文刷新）。素材=re-photographer/0717/（killip・kruger JA/EN）＋re-photographer/直下（takuma-nakahira-final-complete.html / takuma-nakahira-en.html）。依頼文は「新規追加」だったが、**3名とも全サーフェス（個別JA/EN・card-data・archive3面・eras/1970・国・運動計3〜5面・星bin）収録済みを事前実測**→update認定・カード/年代/国/運動/星マップ面は不触（追加不要＝既に整合）。
+- **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。パイロット（takuma-nakahira）→監査→残り2名。Codex呼び出し5回・Codexバグ0・逸脱0（ui-terms候補で2回・preflight HARDで1回、正しく自主停止）。engine穴0。
+- **監督判断（実測）**：
+  1. **§REL全員「素材採用」**：素材§RELリンク先全実在（moriyama/parr/sherman/arbus＋各運動ページ）・既存§RELリンクは全て素材に包含＝消失なし（2→7・1→7・4→7件）。ガード発火なし・--force不使用。
+  2. **precheck言語WARN 2件（killip 14.38%/kruger 14.74%→en誤判定）は誤検知**：英語見出し・引用の多い素材（07-15バッチと同型のadvisory）。
+  3. **works ui-terms 2件承認**（素材EN準拠）：MOMAT — Takuma Nakahira: Burn—Overflow / Smithsonian — Belief+Doubt (video)。
+  4. **kruger旧Sources 3URL消失（ICP pictures-generation/Tate artist/TheArtStory）は正当置換**：3URLとも新素材JA/EN不在を実測→intentional-replacements 3宣言追加。**push後にstale WARN化したら削除**。
+  5. hero Years空欄・Country値は既存維持（サイト標準・補正しない）。data-nosnippet各1減WARNは旧prep-block→実コンテンツ置換の既知正当パターン。
+- **面（tracked 9）**：JA3＋EN3＋en-content.json（対象3キーのみ・他slug不変assert通過）＋ui-terms.json（+2）＋intentional-replacements.json（+3）。
+- **フィデリティ（3名計）**：本文3663→15441字・unique出典12→81・§REL 7/7/7・EN photobooks_html carry-forward 3名（229/226/2030字無傷）・dangling 0・Entry/idx verbatim維持（No.111等）・JA/ENともdiv/section開閉一致・revisionマーカー残存0・EN不可視要素（GA/canonical/hreflang/og:image/JSON-LD/data-nosnippet）全員維持。
+- **検証**：check_content_loss OK／link integrity OK／3slug --dry-run SKIPPEDなし・untranslated 0／**preflight FAIL 0**（WARN=data-nosnippet 6件のみ=許容済）／対象外巻き込み0（card-data/archive/eras/countries/movements/star bin差分ゼロ）／素材原本6ファイルmtime・サイズ不変。
+- **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×3・en/photographers/<slug>-backup.html×3・scripts/<slug>-spec.json×3（specは未追跡のまま残す）。
+- **commit**：あり（本行のコミットと同一）。
+- **wall-time**：16分（Daisuke実測。1名あたり約5.3分）
