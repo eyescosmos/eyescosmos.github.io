@@ -1233,3 +1233,21 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **backup（未追跡）**：photographers/<slug>-backup.html×2・en/photographers/<slug>-backup.html×2・scripts/<slug>-spec.json×2。
 - **commit**：あり（本行のコミットと同一）。
 - **wall-time**：19分（Daisuke実測。1名あたり約9.5分＝§REL URL補正・Amazon二系統復元の裁定込み）。
+
+## 2026-07-18 — 4名バッチupdate（ChatGPT新素材で本文全刷新・issei-suda/kazuyoshi-nomachi/becher/goldin）
+
+- **種別**：update×4（既存本文826/703/1613/1011字 → 新素材5143/5499/10523/6093字の全文刷新）。素材=re-photographer/0718/（suda・nomachi JA(8)/EN(9)）＋re-photographer/直下（becher-final-cross-sources / becher-en-final / nan-goldin-ja-final-reading-cleaned / nan-goldin-en-final）。依頼文は「新規追加＋星・アーカイブ・カード・国・運動への追加」だったが、**4名とも全サーフェス（個別JA/EN・card-data・archive3面・eras・国・運動0〜4面・星bin）収録済みを事前実測**→update認定・カード/年代/国/運動/星マップ面は不触。須田・野町の運動面は movements=［日本写真］のみで該当運動ページ自体が存在せず追加対象なし（becher 4面・goldin 4面は既掲載）。
+- **分業**：**Fable監督・監査／Codex（MCP・workspace-write/never）実装**。パイロット（issei-suda）→監査→残り3名→星タスク。Codex呼び出し7回・Codexバグ0・逸脱0（ui-terms候補で2回・Related置換ガードで2回、正しく自主停止）。**星タスクで監督指示の誤り（becher/goldin星bin未収録との誤認＝`id: 'slug'`のスペース有り形式をgrepパターンから漏らした測定ミス）をCodexが実データ矛盾として検知し未編集停止**＝bin不触で正解。4名とも星bin収録済み（suda/nomachi=d632c32e・becher/goldin=d369d828）。
+- **監督判断（実測）**：
+  1. **§REL全員「素材採用」**：suda=7件構成。becher/goldinはEN Related置換ガード発火→新JA正本に素材§REL全項目（becher: Sander/Evans/Gursky＋運動4＝Ruff/Struthは§REL外へ・goldin: 写真家7名・運動4件・外部リンク3本完全収録）を実測確認→Shore/Eggleston前例と同型の正当置換として`--force`承認×2。
+  2. **works ui-terms 10件承認**（素材EN準拠を全件実測）：suda4（Fushikaden/TPAM Fushikaden/Monogusa Shūi/Waga Tokyo 100）・nomachi4（Sahara Horizon/Tibetan Plateau/Mecca/世田谷 Human Earth）・goldin2（Princeton Ballad/Grand Palais This Will Not End Well）。
+  3. **旧Sources消失10URLは全て正当置換認定**（10URLとも新素材JA/EN不在を実測）→**HARD検知された7件のみ宣言**（suda1/becher2/goldin4）。carry-forward済みで検知されない分は宣言せず（パイロットでstale WARN化した suda 2宣言は即削除＝使い捨て設計どおり）。
+  4. goldin素材の用語「内部者ドキュメンタリー」（運動ページ不在）は素材どおり無リンクspan維持を事前指示→EN §REL/chipへの混入なしを確認。
+  5. precheck言語判定は4素材ともCJK 17〜23%で[OK]・誤検知なし。
+- **面（tracked 12）**：JA4＋EN4＋en-content.json（対象4キー）＋ui-terms.json（+10）＋intentional-replacements.json（7宣言・**push後にstale WARN化したら削除**）＋本ログ。
+- **フィデリティ（4名計）**：本文4153→27258字（§body）・タグ除去全文テキストはJA 9425→41114字/EN 12641→90112字（行数減 約2900→800行/頁は旧整形の解消＝消失でないことを独自実測）・§REL 7/6/7/14項目・dangling 0・JA/ENともdiv/section開閉一致・EN不可視要素（GA/canonical/hreflang×3/og:image/JSON-LD/data-nosnippet7）4名全維持・EN §REL一言解説 audit missing 0（4slug）。
+- **検証**：check_content_loss OK／link integrity OK／4slug --dry-run SKIPPEDなし／check_en_entry＝becher・goldinにWikipedia非推奨ドメインWARN各1（素材由来・Eggleston前例と同型の許容）／**preflight FAIL 0**（WARN=data-nosnippet各1減×JA/EN 4名＝旧prep-block→実コンテンツ置換の既知正当のみ）／対象外巻き込み0（card-data/archive/eras/countries/movements/design/星bin差分ゼロ）／素材原本8ファイルSHA-256不変（作業前後で結合ハッシュ一致）。
+- **素材SHA-256**：suda JA `4e277845…19c4a`/EN `98745caa…e9c735`、nomachi JA `a6bb9b03…ee6dfb`/EN `253a394c…f4a562`、becher JA `f903ec1c…d498a6`/EN `5fa7d769…8edde9`、goldin JA `3dd6e97e…951708`/EN `37c9b33f…d18714b`（各先頭8桁＋末尾。全文はセッションログ）。
+- **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×4・en/photographers/<slug>-backup.html×4・scripts/<slug>-spec.json×4（specは未追跡のまま残す）。
+- **commit**：あり（本行のコミットと同一）。
+- **wall-time**：（Daisuke記入）
