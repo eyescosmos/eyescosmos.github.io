@@ -1250,4 +1250,4 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **素材SHA-256**：suda JA `4e277845…19c4a`/EN `98745caa…e9c735`、nomachi JA `a6bb9b03…ee6dfb`/EN `253a394c…f4a562`、becher JA `f903ec1c…d498a6`/EN `5fa7d769…8edde9`、goldin JA `3dd6e97e…951708`/EN `37c9b33f…d18714b`（各先頭8桁＋末尾。全文はセッションログ）。
 - **backup（未追跡・GH Pages実機確認後に削除）**：photographers/<slug>-backup.html×4・en/photographers/<slug>-backup.html×4・scripts/<slug>-spec.json×4（specは未追跡のまま残す）。
 - **commit**：あり（本行のコミットと同一）。
-- **wall-time**：（Daisuke記入）
+- **wall-time**：26分（Daisuke実測。1名あたり約6.5分）
