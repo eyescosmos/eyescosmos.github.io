@@ -44,7 +44,7 @@
 | 2026-07-14 | capa(本文組版の標準化・文言不変) | other | （Daisuke記入） | 0 | 0 | 3ファイル | N/A | N/A |
 | 2026-07-14 | h4→h3一括変換(69ページ・266見出し・文言不変) | other | （Daisuke記入） | 0 | 0 | 69ファイル | N/A | N/A |
 | 2026-07-15 | **5名バッチupdate**(joel-meyerowitz/joel-sternfeld/lewis-baltz/robert-adams/mapplethorpe) | update | 29分 | 0（engine穴なし） | 0（全機械化・§RELリンク化2名はスクラッチ機械編集） | 12ファイル | 計5287→21715 | 計17→84 |
-| 2026-07-20 | **4名バッチupdate**(gursky/thomas-ruff/salgado/sherrie-levine) | update | （Daisuke記入） | 3（下記・engine変更なし） | 6系統（下記） | 12ファイル | 計3819→31301 | 計12→141 |
+| 2026-07-20 | **4名バッチupdate**(gursky/thomas-ruff/salgado/sherrie-levine) | update | 16分 | 3（下記・engine変更なし） | 6系統（下記） | 12ファイル | 計3819→31301 | 計12→141 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1264,5 +1264,5 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：4slug `check_content_loss` OK・preflight FAIL 0・builder dry-run SKIPPEDなし。check_en_entryはthomas-ruff OK、gursky Wikipedia WARN 1、salgado孤立cite 7＋Wikipedia WARN 1、sherrie-levine孤立cite 10（いずれも素材由来）。preflight WARNはJA/EN各4ページのdata-nosnippet 1減のみ。GA/canonical/hreflang/OG/JSON-LD/data-nosnippet維持、revisionマーカー0、素材原本6ファイル＋gursky2ファイルのSHA-256不変、対象外巻き込みなし。
 - **素材SHA-256（今回追加3名）**：thomas-ruff JA `650f37eb9a804935682bb3e556e937d017210eb3250542e3020eb3198e0ad0ab` / EN `244c439d2f75850068c6876687d04d2910054f57941567945324f47817488b7e`、salgado JA `9e2e40eeca6f1fa5d2918b72faea8cf538f9f10191dcb009abfede140d4628c6` / EN `3c217b94319cccce4da5d4f343e8050768f15623b29e64ae59d68a6689b65ba0`、sherrie-levine JA `83abfa391802a93c99d0a49e8ee335c7e742c899cb8a4f1e8d69865758383842` / EN `5b22fda979f49ad37267aff35fcbf2694ba9b274685563154691f5e415aef81c`。
 - **backup（未追跡）**：`photographers/<slug>-backup.html`・`en/photographers/<slug>-backup.html`・`scripts/<slug>-spec.json` 各4名分。
-- **commit**：なし（監督監査後に実施）。
-- **wall-time**：（Daisuke記入）
+- **commit**：あり（監督監査後 29f6c1594）。
+- **wall-time**：16分（Daisuke実測。1名あたり4分）
