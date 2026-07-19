@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "slug": "gursky",
+    "url": "https://www.guggenheim.org/artwork/artist/andreas-gursky",
+    "reason": "ChatGPT新素材による本文・外部リンク全面刷新で、新素材収録リンクへ意図的に置換",
+    "declared": "2026-07-20"
+  },
+  {
+    "slug": "gursky",
+    "url": "https://www.tate.org.uk/art/artists/andreas-gursky-2826",
+    "reason": "ChatGPT新素材による本文・外部リンク全面刷新で、新素材収録リンクへ意図的に置換",
+    "declared": "2026-07-20"
+  },
+  {
+    "slug": "salgado",
+    "url": "https://www.institutoterra.org/",
+    "reason": "ChatGPT新素材による本文・外部リンク全面刷新で、新素材収録リンクへ意図的に置換",
+    "declared": "2026-07-20"
+  },
+  {
+    "slug": "salgado",
+    "url": "https://www.magnumphotos.com/photographer/sebastiao-salgado/",
+    "reason": "ChatGPT新素材による本文・外部リンク全面刷新で、新素材収録リンクへ意図的に置換",
+    "declared": "2026-07-20"
+  },
+  {
+    "slug": "salgado",
+    "url": "https://www.theguardian.com/artanddesign/sebastiao-salgado",
+    "reason": "ChatGPT新素材による本文・外部リンク全面刷新で、新素材収録リンクへ意図的に置換",
+    "declared": "2026-07-20"
+  }
+]
