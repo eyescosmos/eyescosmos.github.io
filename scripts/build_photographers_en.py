@@ -72,6 +72,7 @@ COUNTRY_JA_TO_EN = {
     'ベルギー': 'Belgium',
     'スイス': 'Switzerland',
     'スウェーデン': 'Sweden',
+    'ノルウェー': 'Norway',
     'ロシア': 'Russia',
     'ハンガリー': 'Hungary',
     'ポーランド': 'Poland',
