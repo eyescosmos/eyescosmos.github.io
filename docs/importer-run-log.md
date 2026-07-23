@@ -46,6 +46,7 @@
 | 2026-07-15 | **5名バッチupdate**(joel-meyerowitz/joel-sternfeld/lewis-baltz/robert-adams/mapplethorpe) | update | 29分 | 0（engine穴なし） | 0（全機械化・§RELリンク化2名はスクラッチ機械編集） | 12ファイル | 計5287→21715 | 計17→84 |
 | 2026-07-20 | **4名バッチupdate**(gursky/thomas-ruff/salgado/sherrie-levine) | update | 16分 | 3（下記・engine変更なし） | 6系統（下記） | 12ファイル | 計3819→31301 | 計12→141 |
 | 2026-07-22 | **10名バッチupdate**(bruno-serralongue/naoya-hatakeyama/paul-graham/philip-lorca-dicorcia/simon-norfolk/sophie-calle/takashi-homma/torbjrn-rdland/wang-qingsong/yang-fudong) | update | （Daisuke記入） | 1（既存・国名辞書ノルウェー欠落をadd-only補完） | §REL意図差し替え5名（旧movement→新person・--force）＋Norway辞書1行 | 23ファイル | 計8495→62751 | 計35→213 |
+| 2026-07-23 | **11名バッチupdate**(james-casebere/laura-letinsky/luc-delahaye/richard-billingham/roe-ethridge/seung-woo-back/sharon-lockhart/the-atlas-group-walid-raad/tracey-moffatt/valerie-belin/yto-barrada) | update | 50分 | 3（rev-red第5系統／Atlas EN prep-block／JSON-LD Personキー消失） | 監督判断6系統＋§REL意図差し替え4名（下記） | 24ファイル | 計7889→46113 | 計39→220 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1339,3 +1340,50 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **残る限界（既知・許容）**：①ガードは既存 orphan トークンを自動許容するため、**既存の正当クラス名と同じ名前**でマーカーが来た場合は検知しない。②importer を通さず手貼りした HTML は `self_check` を通らないが、preflight 側の orphan ガードは push 前に効く。③二重ダッシュ検知は JA §REL 内に限定（EN は `&mdash;` 標準で該当なし）。
 - **commit**：あり（本行のコミットと同一）。
 - **wall-time**：（Daisuke記入）
+
+## 2026-07-23 — 11名バッチupdate（ChatGPT新素材で本文全刷新・Opus監督/Codex実装）
+
+- **種別**：update。既存スタブ11名のJA/EN本文・thesis・出典・§REL等を、ChatGPT新素材22ファイルで全刷新。
+- **分業**：Opus（メイン会話）が監督、Codex MCP（`workspace-write` / `approval=never`）が実装。Codexの自主停止は**7回**（①james-casebere precheck WARN、②laura-letinsky Related削除SKIP、③richard-billingham Related削除SKIP、④the-atlas-group-walid-raad EN Years変更、⑤preflight FAIL＝`rev-red` orphan＋Atlas `prep-block` orphan、⑥`rev-current`を陰性とする初回テスト基準の矛盾指摘、⑦Atlas EN §RELで裸テキスト6件を要求する指示と既存builder仕様の矛盾指摘）。これとは別に、監督指定のパイロット停止をstep 2後・step 5後の**2回**実施。seung-woo-back / tracey-moffattのRelated削除SKIPは、訂正後の常設条件3点を満たすことを実測し、承認済み手順で停止せず進行。
+- **対象と素材**：`james-casebere` / `laura-letinsky` / `luc-delahaye` / `richard-billingham` / `roe-ethridge` / `seung-woo-back` / `sharon-lockhart` / `the-atlas-group-walid-raad` / `tracey-moffatt` / `valerie-belin` / `yto-barrada`。素材は `/Users/aiharadaisuke/Desktop/claude code/photography history/re-photographer/0723/` 配下の指定済みJA/EN各11件（計22件）。`photo-pages-english-final.zip`は不使用、素材ファイルは読み取りのみ。
+- **パイプライン**：各slugで `import_chatgpt_photographer.py --precheck` → `--update-existing --prepare` → `--update-existing --apply --force` → `--merge-to-en --apply` → `build_photographers_en.py --slug`。ENは正本 `data/photographers-en-content.json` 経由で再生成し、EN HTMLの直接編集なし。works ui-terms追加候補は0件。全11slugで最終builder `--dry-run`がSKIPPED 0件。
+- **監督判断**：
+  1. hero眉は既存（card-data由来）を維持し、素材の未登録ジャンル語は不採用。
+  2. LANG WARNはタグ/CSS/JS込み比率による誤検知。監督が本文CJK **60〜68%**を実測し、素材取り違えなしと判定。
+  3. 未登録運動は§RELで裸テキストのまま保持し、存在しないmovementページへのhrefを作らない。
+  4. Related削除SKIP 4名は日英対称の意図的置換として`--force`を承認。判定範囲は当初の「素材ファイル全体」ではなく、監督が途中で「**§RELブロック内**」へ訂正。対象は laura-letinsky（`color-photography`）、richard-billingham（`documentary`）、seung-woo-back（`large-format-color`）、tracey-moffatt（`feminist-photography`）。
+  5. AtlasのEN Yearsは既存`1989–2004`を維持し、素材の`1967–`（Walid Raad個人の生年）は不採用。JAとの整合と、ページ主題が個人ではなくThe Atlas Groupプロジェクトであることに合わせた。
+  6. AtlasのEN §RELはリンク可能なSophie Calle / Joachim Koesterの2件のみ。EN §RELが裸テキスト項目を落とすサイト標準に合わせ、builderは拡張しない。
+- **bug・engine改良**：
+  - `rev-red`をレビューマーカーの**第5系統**として新発見。`strip_review_css`が隣接する`.edit-red`とともに`.rev-red`のCSSだけを除去する一方、span本体はunwrapされず、対応CSSのないorphan classになっていた。`REV_CLASS_PAT`へadd-only追加し、コメントを4系統から5系統へ更新（diffは**2行追加・1行削除**。機能追加は2行のみで既存4系統の挙動は不変）。
+  - 陽性5語 `rev-red` / `rev-current` / `is-revised-2` / `revision3` / `second-revision-mark` は全てマッチ。陰性10語 `red` / `rev` / `revised` / `edit-red` / `is-revised` / `redux` / `covered` / `hundred` / `reverse` / `preview` は全て非マッチ。
+  - importer既存unwrap関数を再利用して対象11名から除去。JA対象6ページ、EN正本JSON内18文字列で、除去前後のタグ除去後テキストは全件完全一致。対象22ページの`rev-red`は0件。`test_importer_scaffold_inject.py`はEXIT 0。
+  - 前日2026-07-23に追加したpreflight orphan classガードがpush前に検知した、**ガードが実戦で機能した初事例**。
+  - Atlasでは、JA §RELが実データで埋まって`.prep-block` CSSが不要判定で除去された一方、ENだけbuilderフォールバックの`prep-block`が残り、未スタイル表示になっていた。EN正本の`site_directory_html`と`related_annotations`へリンク可能な2件の実データを入れて再生成し、`prep-block`を解消。最終状態はJA §REL 6件、EN §REL 2件、リンク先2ファイル実在、`1967` 0件、EN hero Years `1989–2004`。
+  - push前の構造化データ監査で、JA JSON-LD Personキーの消失を検出（`birthDate` 10件・`description` 11件・`sameAs` 5件）。原因はupdate時のscaffold再生成に既存Personキーのcarry-forwardが無く、meta description注入もJSON-LDへ同期されなかったこと。preflightは本文/heroから確定年を導ける場合しか`birthDate`欠落をHARD FAILにできず、今回は既知の死角を通過した。life datesはHEADの検証済み値を復元、descriptionは旧スタブ文言を戻さず現ページのmeta descriptionと同期、sameAsはHEAD値のうち現ページ内に実在するURLだけ復元（Laura LetinskyのSmart Museum URL、Richard BillinghamのGloucestershire PDF URLは現ページに無いため不採用）。importerへ`birthDate` / `deathDate` / `sameAs`のcarry-forward、description同期、既存Personキー非減少アサーションを追加した。同種の消失は過去バッチ8ページ（bruno-serralongue / naoya-hatakeyama / paul-graham / sophie-calle / takashi-homma / wang-qingsong / yang-fudong / daisuke-yokota）ですでにpush済みで、別タスク候補。
+- **面（tracked 24）**：正本JSON 1（`data/photographers-en-content.json`）＋JA写真家HTML 11＋EN写真家HTML 11＋`scripts/import_chatgpt_photographer.py` 1。本ログは実測記録。禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / new-design）の差分0。
+- **フィデリティ**：
+  - JA本文字数／unique出典：james-casebere `802→4694` / `4→20`、laura-letinsky `742→4351` / `4→20`、luc-delahaye `850→4047` / `3→20`、richard-billingham `818→4220` / `4→20`、roe-ethridge `754→4298` / `3→20`、seung-woo-back `807→4118` / `6→20`、sharon-lockhart `745→3931` / `3→20`、the-atlas-group-walid-raad `4→3996` / `0→20`、tracey-moffatt `817→4176` / `4→20`、valerie-belin `774→4459` / `4→20`、yto-barrada `776→3823` / `4→20`。合計 **`7889→46113` / `39→220`**。
+  - EN本文字数／unique出典：james-casebere `3127→13412` / `4→20`、laura-letinsky `3324→11614` / `4→20`、luc-delahaye `3322→10962` / `3→20`、richard-billingham `4383→11303` / `4→20`、roe-ethridge `3185→11095` / `3→20`、seung-woo-back `3885→10782` / `6→20`、sharon-lockhart `3088→10236` / `0→20`、the-atlas-group-walid-raad `12→10847` / `0→20`、tracey-moffatt `2973→10154` / `4→20`、valerie-belin `3168→12253` / `4→20`、yto-barrada `3109→10222` / `4→20`。合計 **`33576→122880` / `36→220`**。
+  - 全11名JA/ENともsup-ref dangling **0**。sharon-lockhartの既知不整合（sup-refに対し§SRCが「出典準備中」）は刷新で解消し、EN出典`0→20`。the-atlas-group-walid-raadはJA本文4字の「準備中」空スタブから初めて本文を投入。
+- **検証**：
+  - `check_content_loss.py`は`✅ Content-loss guard: no regressions detected.`。`preflight.py`は**EXIT 0 / FAIL 0**。全11slugのbuilder `--dry-run`はSKIPPED 0。
+  - `data/photographers-en-content.json`はキー数306→306、追加/削除0、変更キーは対象11slugのみ、`_meta`不変。
+  - EN不可視要素は全11slugで各backupと同数（GA `G-2VRTV8BZEJ` 2、canonical 1、hreflang 3、og:image 1、JSON-LD 2）。
+  - 監督の独立検証：全22ページで`rev-red` 0、二重ダッシュ0、`prep-block` 0、タグ開閉一致。§RELリンク切れ0、`mayumi-hosokura`差分0、禁止面差分0、importer差分はadd-onlyの機能追加2行。
+  - 既知事項（今回の回帰ではない）：①JA §RELラベルの`Photographers` / `Movements / Contexts`はimporter既存標準出力で、HEAD時点ですでにJA 43ページに存在するため不触。②`mayumi-hosokura`のJA/EN 2ページにはHEADから`rev-red`が残存するが対象外・別タスク候補。③裸テキスト人名のうち実在ページがあるもの15件（別タスク候補）：james-casebere＝トーマス・デマンド→`thomas-demand`、ジェフ・ウォール→`wall`、シンディ・シャーマン→`sherman`／luc-delahaye＝サイモン・ノーフォーク→`simon-norfolk`、ジェフ・ウォール→`wall`／richard-billingham＝ラリー・クラーク→`larry-clark`／roe-ethridge＝ウォルフガング・ティルマンス→`wolfgang-tillmans`、トールビョルン・ロドランド→`torbjrn-rdland`／seung-woo-back＝ヨアヒム・ケスター→`joachim-koester`／the-atlas-group-walid-raad＝ソフィ・カル→`sophie-calle`、ヨアヒム・コースター→`joachim-koester`／tracey-moffatt＝ジェフ・ウォール→`wall`／valerie-belin＝リネケ・ダイクストラ→`rineke-dijkstra`、トーマス・ルフ→`thomas-ruff`、シンディ・シャーマン→`sherman`。④preflight WARNはAmazon検索結果URL 8件とdata-nosnippet減12件のみ。後者はプレースホルダが実コンテンツへ置換された正当な減少。⑤yto-barradaのbuilder WARN `untranslated term: モロッコ`はdual国籍chipの既知事象。
+- **素材SHA-256**：作業前後で22ファイルすべて不変。
+  - james-casebere：JA `e31e3b139296adae8c969a901911c7bfffd16d1fef33c6dc0b84c036a80be577` / EN `53230a8fd07d4bfebc7e78f4fc4cc8dd7624cbf40b0bbd05c4b031510ff8f1e8`
+  - laura-letinsky：JA `6a6c4951e1f15782522eed64c9f768c1394eaa272c47419a78432f5f7f8d9eac` / EN `8db9180c5c0ab7ea41fb00ce5738e6d16a8ec0f3561302d0810f06010bcf16a2`
+  - luc-delahaye：JA `765b141220d825d0f494dac52734693fbaebf6a8a8b76519dfcf8ff500cc1f33` / EN `e3b4da739293c35ef299d5a59adc697a54d5d65a3c0db380a8b398d2c8edcfbc`
+  - richard-billingham：JA `ee4999595455c86cff9a527e9edf1d0adc8f4b1cd7f761bf3b0708aac894e941` / EN `b241987b638aab2f1f3e5c749eead9bdd0b11c0e939251d4390fbfa8c04328ea`
+  - roe-ethridge：JA `9bc6ce9b4d8dd6aefd507f5109bf83ef7a42014680d384cef127497c2cebe818` / EN `8122c069fd960c43e4700b086dcc1762a6675307bf49fb75029ecaf3588cc440`
+  - seung-woo-back：JA `da7459bbf7ce91bd050f7964433dd1282abe53542e6a7df2d3f647bb38300a09` / EN `dc03af01714472926ac7c31415cfe6fc9d9f96dc47fb809e00ff7b8cf65cbae3`
+  - sharon-lockhart：JA `349171bdfa0496b4d48a292182840555b3b470583bd10e977698672a3171a7ff` / EN `b6f02da9d57d0e44f8c338458b50338d4deaae2d71aae5a0f7da8472b55d847a`
+  - the-atlas-group-walid-raad：JA `79478636207bf8c8361c2ade1e97fa62ab7e25ed313601a16d08ca17799846d0` / EN `a3c8ba27fcb9c788cb73bff509ffaa06e68b5a9eb85fb4486e5ef06c65a94805`
+  - tracey-moffatt：JA `28a4c98011605157189f4cbf7dee8c6cdaf7a91a1bfec785143315663c5934ae` / EN `2147d9d24af5a56f1f3d8212f504156ed183e9bc42c054e5044bfd5798077286`
+  - valerie-belin：JA `9d035e7e5965026f5dfb96059d6bc0e8ee488cb9e82dd0369e768595cb128ad9` / EN `4127351bd8304ae59bf7c4cd2591907c0fa4ba2daa13c7014d8677a9d6ceddc1`
+  - yto-barrada：JA `86c1b49e5bec7f19045394d83e6086d9b73786d8df26ad263233be3cd15cfece` / EN `7905e39b0f0acbe1ba4a59a4aed3e4de906cbf967a0febc490f72be1d07ece79`
+- **backup**：未追跡でJA backup 11件、EN backup 11件、`scripts/<slug>-spec.json` 11件。GH Pages実機確認後に削除する。
+- **commit**：なし（監督報告時点で未コミット・Daisuke承認待ち）。
+- **wall-time**：50分（Daisuke実測。11名バッチ＝1名あたり約4.5分。Opus監督+Codex実装構成。engine不具合2件の発見・修正を含む）

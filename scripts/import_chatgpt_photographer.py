@@ -81,10 +81,11 @@ def repo_file_exists(rel: str) -> bool:
 # ── 決定論変換（JA / EN 共有） ─────────────────────────────────────────────
 
 # rev ハイライトのクラス語形: rev19 / revision7 / revision-fifth / 裸 revision、
-# is-revised-2、second-revision-mark、rev-current の4系統
+# is-revised-2、second-revision-mark、rev-current、rev-red の5系統
 # （素材世代で揺れるため全系統に対応）
 REV_CLASS_PAT = (
     r'rev(?:[0-9]+|-current)'
+    r'|rev-red'
     r'|revision(?:[0-9]+|-[a-z0-9]+(?:-[a-z0-9]+)*)?'
     r'|is-revised-[0-9]+'
     r'|[a-z0-9]+-revision-mark'
@@ -284,7 +285,79 @@ def localize_en_links(html: str) -> tuple[str, list[str]]:
 
 # ── 自己検証 ───────────────────────────────────────────────────────────────
 
-def self_check(html: str, *, context: str) -> list[str]:
+JSONLD_SCRIPT_RE = re.compile(
+    r'(<script\s+type=["\']application/ld\+json["\']>\s*)(.*?)(\s*</script>)', re.S)
+
+
+def _person_jsonld(html: str) -> tuple[re.Match, dict, dict] | None:
+    """最初のJSON-LD Personノードを (script match, document, node) で返す。"""
+    for m in JSONLD_SCRIPT_RE.finditer(html):
+        try:
+            doc = json.loads(m.group(2))
+        except json.JSONDecodeError:
+            continue
+        candidates = [doc] if isinstance(doc, dict) else []
+        if isinstance(doc, dict) and isinstance(doc.get("@graph"), list):
+            candidates += [n for n in doc["@graph"] if isinstance(n, dict)]
+        for node in candidates:
+            node_type = node.get("@type")
+            if node_type == "Person" or (
+                    isinstance(node_type, list) and "Person" in node_type):
+                return m, doc, node
+    return None
+
+
+def _meta_description(html: str) -> str:
+    m = re.search(
+        r'<meta\s+name=(["\'])description\1\s+content=(["\'])(.*?)\2', html, re.S)
+    return html_lib.unescape(m.group(3)).strip() if m else ""
+
+
+def _ordered_person(node: dict) -> dict:
+    """サイト標準のPersonキー順へ整える（未知キーは元順のまま末尾へ）。"""
+    priority = (
+        "@context", "@type", "name", "alternateName", "nationality",
+        "description", "url", "birthDate", "deathDate", "sameAs",
+    )
+    return ({k: node[k] for k in priority if k in node}
+            | {k: v for k, v in node.items() if k not in priority})
+
+
+def _sync_update_person_jsonld(html: str, existing_html: str, material_html: str) -> str:
+    """update時のPersonをmeta description同期＋既存life dates/sameAs保持で更新する。"""
+    found = _person_jsonld(html)
+    if not found:
+        raise AssertionError("[JA update] 出力にJSON-LD Personノードが無い")
+    m, doc, person = found
+    existing = _person_jsonld(existing_html)
+    material = _person_jsonld(material_html)
+    old_person = existing[2] if existing else {}
+    material_person = material[2] if material else {}
+
+    desc = _meta_description(html)
+    if not desc:
+        raise AssertionError("[JA update] meta descriptionが空のためJSON-LDへ同期できない")
+    person["description"] = desc
+    for key in ("birthDate", "deathDate", "sameAs"):
+        if key in old_person:
+            person[key] = copy.deepcopy(old_person[key])
+        elif key in material_person:
+            person[key] = copy.deepcopy(material_person[key])
+        else:
+            person.pop(key, None)  # 既存にも素材にも無い値は捏造しない
+
+    ordered = _ordered_person(person)
+    if person is doc:
+        doc = ordered
+    else:
+        person.clear()
+        person.update(ordered)
+    rendered = json.dumps(doc, ensure_ascii=False, indent=2)
+    return html[:m.start(2)] + rendered + html[m.end(2):]
+
+
+def self_check(html: str, *, context: str,
+               preserve_person_keys_from: str | None = None) -> list[str]:
     """決定論整形後の不変条件を assert（破ったら例外）。返り値は情報用の注記。"""
     notes = []
     n_open = len(re.findall(r"<span\b", html))
@@ -302,6 +375,17 @@ def self_check(html: str, *, context: str) -> list[str]:
         raise AssertionError(f"[{context}] レビュー用 CSS セレクタ（.edit-red/.revN/.revision）が残存している")
     if "edit-red" in html:
         raise AssertionError(f"[{context}] edit-red トークンが残存している")
+    if preserve_person_keys_from is not None:
+        old = _person_jsonld(preserve_person_keys_from)
+        new = _person_jsonld(html)
+        if old and not new:
+            raise AssertionError(f"[{context}] 既存JSON-LD Personノードが消失")
+        if old and new:
+            missing = sorted(set(old[2]) - set(new[2]))
+            if missing:
+                raise AssertionError(
+                    f"[{context}] 既存JSON-LD Personキーが消失: {missing}")
+            notes.append("既存JSON-LD Personキー非減少")
     notes.append(f"span balance OK ({n_open}) / rev・edit-red・レビューCSS 残存ゼロ")
     return notes
 
@@ -2106,7 +2190,8 @@ def _carry_entry_country(html: str, source_html: str) -> str:
 
 
 def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
-                           new_html: str, o: dict, n: dict) -> int:
+                           new_html: str, o: dict, n: dict,
+                           material_html: str = "") -> int:
     """④ carry-forward の実適用（安全契約 b–f）。photographers/<slug>.html のみ書込。
     返り値 0=成功、非0=失敗（呼び元が非ゼロ終了）。検証失敗は自動ロールバック。"""
     page = JA_DIR / f"{slug}.html"
@@ -2127,6 +2212,10 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
     # entry-meta <dd> をリンクを含め verbatim carry-forward する。
     backup_html = backup.read_text(encoding="utf-8")
     new_html = _carry_entry_country(new_html, backup_html)
+    new_html = _sync_update_person_jsonld(new_html, old_html, material_html)
+    self_check(
+        new_html, context="JA update carry-forward",
+        preserve_person_keys_from=old_html)
 
     # (c) 適用内容: new_html は既に render_ja_page 出力（description 注入込み）。
     # §REF/further が新素材で「準備中」なら旧ページの §REF body を splice。
@@ -2201,6 +2290,9 @@ def _apply_update_existing(slug: str, spec: dict, bundle: dict, old_html: str,
 
     # (d) 適用後 check_content_loss.py 通過。(e) 失敗なら自動ロールバック。
     written = page.read_text(encoding="utf-8")
+    self_check(
+        written, context="JA update written",
+        preserve_person_keys_from=old_html)
     n3 = _ja_metrics(written)
     post_problems = []
     if carried_ref and norm_text(_extract_ref_body(old_html)) not in norm_text(written):
@@ -2255,8 +2347,8 @@ def run_update_existing(slug: str, ja_path: Path, en_path: Path | None,
 
     spec = derive_spec_from_existing(slug)
     old_html = page.read_text(encoding="utf-8")
-    bundle, _info = extract_bundle(ja_path.read_text(encoding="utf-8", errors="replace"),
-                                   "ja", slug=slug)
+    material_html = ja_path.read_text(encoding="utf-8", errors="replace")
+    bundle, _info = extract_bundle(material_html, "ja", slug=slug)
     try:
         new_html = render_ja_page(bundle, spec, new_import=False)
     except BundleIncomplete as e:
@@ -2283,6 +2375,12 @@ def run_update_existing(slug: str, ja_path: Path, en_path: Path | None,
 
     print("[A] carry-forward 計画（新素材に無く既存から引き継ぐ）:")
     plan = []
+    old_person = _person_jsonld(old_html)
+    old_person = old_person[2] if old_person else {}
+    plan.append("JSON-LD description : 新meta descriptionと同期")
+    for key in ("birthDate", "deathDate", "sameAs"):
+        if key in old_person:
+            plan.append(f"JSON-LD {key} : 既存値を保持")
     if o["ref_links"] and n["ref_is_prep"]:
         plan.append(f"§REF/further : 既存{o['ref_links']}件 → 新「準備中」 ⇒ 既存を引き継ぐ")
     if o["rel_items"] and n["rel_is_prep"]:
@@ -2318,7 +2416,9 @@ def run_update_existing(slug: str, ja_path: Path, en_path: Path | None,
                 "ERROR: --update-existing --apply は既存ページ上書きのため --force が必須。\n")
             return 2
         print("\n[④ carry-forward 実適用] (--apply)")
-        return _apply_update_existing(slug, spec, bundle, old_html, new_html, o, n)
+        return _apply_update_existing(
+            slug, spec, bundle, old_html, new_html, o, n,
+            material_html=material_html)
 
     if not prepare:
         print("書込なし（--update-existing は既定 dry-run。--prepare で backup+spec 書出、"
