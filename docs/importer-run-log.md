@@ -47,6 +47,7 @@
 | 2026-07-20 | **4名バッチupdate**(gursky/thomas-ruff/salgado/sherrie-levine) | update | 16分 | 3（下記・engine変更なし） | 6系統（下記） | 12ファイル | 計3819→31301 | 計12→141 |
 | 2026-07-22 | **10名バッチupdate**(bruno-serralongue/naoya-hatakeyama/paul-graham/philip-lorca-dicorcia/simon-norfolk/sophie-calle/takashi-homma/torbjrn-rdland/wang-qingsong/yang-fudong) | update | （Daisuke記入） | 1（既存・国名辞書ノルウェー欠落をadd-only補完） | §REL意図差し替え5名（旧movement→新person・--force）＋Norway辞書1行 | 23ファイル | 計8495→62751 | 計35→213 |
 | 2026-07-23 | **11名バッチupdate**(james-casebere/laura-letinsky/luc-delahaye/richard-billingham/roe-ethridge/seung-woo-back/sharon-lockhart/the-atlas-group-walid-raad/tracey-moffatt/valerie-belin/yto-barrada) | update | 50分 | 3（rev-red第5系統／Atlas EN prep-block／JSON-LD Personキー消失） | 監督判断6系統＋§REL意図差し替え4名（下記） | 24ファイル | 計7889→46113 | 計39→220 |
+| 2026-07-24 | (engine)JSON-LD Personキー退行ガード | engine | （Daisuke記入） | 1（確定年を導出できないページでキー消失を見逃す死角） | 0（機械検証） | 2ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1387,3 +1388,16 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **backup**：未追跡でJA backup 11件、EN backup 11件、`scripts/<slug>-spec.json` 11件。GH Pages実機確認後に削除する。
 - **commit**：なし（監督報告時点で未コミット・Daisuke承認待ち）。
 - **wall-time**：50分（Daisuke実測。11名バッチ＝1名あたり約4.5分。Opus監督+Codex実装構成。engine不具合2件の発見・修正を含む）
+
+## 2026-07-24 — JSON-LD Personキー退行ガードの追加
+
+- **種別**：engine/ガード追加のみ。恒久変更は `scripts/preflight.py` と本ログの2ファイル。写真家ページ・正本JSON・importerの変更ゼロ。
+- **穴の内容**：既存の `check_jsonld_birthdate()` は、本文またはheroから確定年を導出できる場合だけ `birthDate` 欠落をHARD FAILにするため、年を導出できないページではPersonノードの `birthDate` / `description` / `sameAs` 等が消えてもpreflight EXIT 0になる死角があった。
+- **実装**：`check_jsonld_person_key_regression()` を追加。`_baseline_ref()` / `_git_show()` を使い、差分のある `photographers/*.html` / `en/photographers/*.html`（backup除外）について、baselineのJSON-LD Personノード群（`@graph`および配列`@type`対応）のキー集合と現行を比較する。キー消失だけをHARD FAIL、追加・値変更は許容。現行JSON-LDのparse失敗もHARD FAIL。新規ページ／baselineにPersonがないページはスキップ。意図的消失は `ALLOW_JSONLD_PERSON_KEY_LOSS` の空白/カンマ区切りslugで一時許容できる。
+- **陽性/陰性テスト**：`photographers/james-casebere.html` でPersonの `birthDate` を1キーだけ削除 → 対象ページとキー名を列挙してpreflight **EXIT 1**。`sameAs` を1キーだけ削除 → 同じく **EXIT 1**。`additionalType` を1キー追加 → **EXIT 0**（キー追加は許容）。各テスト後、対象ページはSHA-256 `e9950735c45d9a360c4847a2a84944636cb838fc83dc04eda35ab575c471f246` および `git diff --exit-code HEAD` の両方でbyte一致復元を確認。
+- **歴史データ実証**：直親 `cf5218014` の `james-casebere` Personには `birthDate` / `description` / `sameAs` が存在することを確認。`PREFLIGHT_BASE=cf5218014` とし、当時の不具合中間出力と同じ3キー欠落を一時再現してpreflightを実行 → `birthDate, description, sameAs` を列挙して **EXIT 1**。このガードがあれば今回のpushを止めていた。実証後は上記SHA-256とHEAD diff 0へ復元。
+- **過去8ページの実測**：bruno-serralongue / naoya-hatakeyama / paul-graham / sophie-calle / takashi-homma / wang-qingsong / yang-fudong / daisuke-yokota は、`origin/main` と現行の8ページすべてでdiff 0、Personの `birthDate` / `description` / `sameAs` はbaseline/currentとも各 `0/0`。したがって既に欠落後のbaselineを基準にする現状では発火しない、という理解どおり。今後baselineに残る別キーが消えれば発火するが、既消失キーを遡及検出・復元するガードではない。
+- **面（tracked 2）**：`scripts/preflight.py` ＋本ログ。
+- **残る限界（既知・許容）**：①baseline時点ですでに無いキーは検知できない。②Personノード群のキー集合比較なので、複数Personノード間で同名キーが移動した場合は消失とみなさない。③値の変更・空値化はこのガードの対象外（既存の値検証ガードと別軸）。
+- **commit**：なし（指示によりgit add / commit / push不実施）。
+- **wall-time**：（Daisuke記入）

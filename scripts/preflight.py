@@ -982,6 +982,61 @@ def _jsonld_is_person(node: dict) -> bool:
     return False
 
 
+def _jsonld_person_keys(html: str) -> tuple[set[str], list[int]]:
+    """JSON-LD Personノード群のキー集合と、JSON parse失敗block番号を返す。"""
+    keys: set[str] = set()
+    invalid_blocks: list[int] = []
+    for block_no, match in enumerate(JSONLD_SCRIPT_RE.finditer(html), start=1):
+        try:
+            data = json.loads(match.group(1))
+        except json.JSONDecodeError:
+            invalid_blocks.append(block_no)
+            continue
+        candidates = [data] if isinstance(data, dict) else []
+        if isinstance(data, dict) and isinstance(data.get("@graph"), list):
+            candidates += [node for node in data["@graph"] if isinstance(node, dict)]
+        for node in candidates:
+            if _jsonld_is_person(node):
+                keys.update(node)
+    return keys, invalid_blocks
+
+
+def check_jsonld_person_key_regression() -> None:
+    """baselineにあったJSON-LD Personキーの消失を touched page でHARD検知する。"""
+    baseline = _baseline_ref()
+    allowed_slugs = {
+        slug for slug in re.split(
+            r'[\s,]+', os.environ.get("ALLOW_JSONLD_PERSON_KEY_LOSS", "").strip())
+        if slug
+    }
+    for rel, work_html in _touched_html(
+            baseline, ["photographers", "en/photographers"]):
+        baseline_html = _git_show(baseline, rel)
+        if baseline_html is None:
+            continue
+        baseline_keys, _ = _jsonld_person_keys(baseline_html)
+        work_keys, invalid_blocks = _jsonld_person_keys(work_html)
+        if invalid_blocks:
+            hard_failures.append(
+                f"[JSON-LD Person {rel}] JSON parse failure in block(s): "
+                + ", ".join(str(n) for n in invalid_blocks))
+            continue
+        if not baseline_keys:
+            continue
+        lost_keys = sorted(baseline_keys - work_keys)
+        if not lost_keys:
+            continue
+        slug = Path(rel).stem
+        if slug in allowed_slugs:
+            warnings.append(
+                f"[JSON-LD Person {rel}] key loss allowed by "
+                f"ALLOW_JSONLD_PERSON_KEY_LOSS: {', '.join(lost_keys)}")
+            continue
+        hard_failures.append(
+            f"[JSON-LD Person {rel}] keys removed since {baseline}: "
+            + ", ".join(lost_keys))
+
+
 def _ja_body_birth_years(html: str) -> set[str]:
     body = re.sub(r'<script.*?</script>', '', html, flags=re.S)
     body = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', body))
@@ -1304,6 +1359,7 @@ def main() -> int:
     check_ja_seo_holes()
     check_ja_classification_loss()
     check_jsonld_birthdate()
+    check_jsonld_person_key_regression()
     check_new_photographer_pages()
     check_scaffold_inject_determinism()
     run_existing_check("check_photographer_link_integrity.py")

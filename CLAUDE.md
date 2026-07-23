@@ -63,6 +63,7 @@ git diff origin/main
 | `new-design/index.html` / `index-v51.html` / `cards-archive.html` / `card-data.json` / カード CSS | `docs/card-design-system.md`（変更禁止項目・スタイル割り振り・CSS体系） |
 | スクリプト実行・EN 写真家ページ編集・テンプレ移行・機械チェックの意味 | `docs/generators-and-guards.md` |
 | Codex 並行作業・横断スクリプト・`overrides.js`・本文自動リンク/エイリアス | `docs/content-preservation.md` |
+| **ChatGPT新素材で写真家をバッチ update する（Opus監督/Codex実装）** | `docs/importer-scaffold-inject-spec.md` §14「バッチ update のキックオフ定型」（既知WARN許可リスト・Related削除SKIPの常設承認条件・既存維持フィールド・**パイロット1名で回す検証項目**）。**最初のプロンプトにこれを入れないと往復が増える** |
 
 新規 JA 写真家ページの最善手＝参照実装 `photographers/ansel-adams.html` を丸ごとコピーして
 名前・本文だけ全置換する（SEO 一式と本文レイアウトの正の型が最初から入る）。詳細は
