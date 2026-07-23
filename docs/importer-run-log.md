@@ -1401,3 +1401,14 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **残る限界（既知・許容）**：①baseline時点ですでに無いキーは検知できない。②Personノード群のキー集合比較なので、複数Personノード間で同名キーが移動した場合は消失とみなさない。③値の変更・空値化はこのガードの対象外（既存の値検証ガードと別軸）。
 - **commit**：なし（指示によりgit add / commit / push不実施）。
 - **wall-time**：（Daisuke記入）
+
+## 2026-07-24 — JA §REL 裸テキスト人名15件のリンク化（0723バッチ既知事項③の消化）
+
+- **種別**：other（ページ修正のみ・写真家追加なし）。JA写真家8ページの §REL `ph-rel-list`（Photographers）に裸テキストで出ていた実在写真家名15件をサイト内リンク化。
+- **方針判断**：恒久解決＝importer辞書補完を検討したが、`scripts/import_chatgpt_photographer.py` の `_build_name_slug_map()` は**定義のみで未使用（dead code）**。§REL の裸/リンク状態は素材が与えたものを `_parse_rel_item()` がそのまま保持する仕様で、裸名を自動リンクする経路は無い。自動リンカ追加は importer 自動化に当たり、Daisukeの打ち止め方針（2026-07-17）に抵触。JA HTMLは正本（手編集・永続）のため、正本を直接手編集する経路を採用。
+- **面（8）**：`photographers/{james-casebere, luc-delahaye, richard-billingham, roe-ethridge, seung-woo-back, the-atlas-group-walid-raad, tracey-moffatt, valerie-belin}.html`。各 §REL li を `<li><a href="/photographers/<slug>.html">名</a> ― 理由</li>` 形式へ1:1置換（区切りは既存 `―`）。挿入15／削除15、本文・他セクション不触。
+- **koester表記の統一（Daisuke決定）**：joachim-koester の正本表示名は card-data/ページ見出しとも「ヨアヒム・クスター」。§RELでは seung-woo-back=「ケスター」/ the-atlas-group=「コースター」と3表記に割れていたため、両リンクの表示テキストを正本「ヨアヒム・クスター」へ統一。
+- **検証**：`check_content_loss.py` OK / `preflight.py` EXIT 0 / 追加15 href すべて実ファイル存在（リンク切れ0）/ `git status --short` は対象8ファイルのみ・他面差分0。
+- **EN**：未対応（今回スコープ外）。対応する場合は `data/photographers-en-content.json` の `site_directory_html` / `related_annotations` を直し `build_photographers_en.py --slug <slug>` で再生成する。
+- **commit**：なし（Daisuke承認待ち）。
+- **wall-time**：（Daisuke記入）
