@@ -1282,3 +1282,25 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **backup（未追跡）**：`photographers/<slug>-backup.html`・`en/photographers/<slug>-backup.html`・`scripts/<slug>-spec.json` 各10名分（GH Pages実機確認後に削除）。
 - **commit**：あり（監督監査後）。
 - **wall-time**：25分（Daisuke実測。1名あたり2.5分・Opus監督+Codex実装構成）
+
+## 2026-07-23 — 1名update（ChatGPT新素材で本文全刷新・daisuke-yokota・Opus監督/Codex実装）
+
+- **種別**：update×1（既存本文 JA 1006字 / EN 2215字 のスタブ → 新素材 JA 4991字 / EN 13656字の全文刷新）。素材=`photography history/re-photographer/daisuke-yokota(7).html`（JA）/ `daisuke-yokota-en.html`（EN）。カード・年代・国・運動・スターマップ・archive面は不触。
+- **分業**：Fable監督を依頼されたが **Fable 5 が usage credits 不足で起動不可**（API error で即終了・作業ツリー無傷）。代替として **Opus（メイン会話）が監督、Codex MCP（workspace-write / approval=never）が実装**＝2026-07-22の10名バッチと同一構成。Codex呼び出し6回・逸脱0・自主停止4回（precheck WARN / ui-terms候補 / EN builder SKIP / preflight FAIL、いずれも正しく停止して監督判断を仰いだ）。
+- **パイプライン**：①`--precheck` →②`--update-existing --slug daisuke-yokota --ja J --en E`（dry-run）→③同`--prepare`（backup+spec）→④同`--apply --force`（JA HTMLへ carry-forward 適用）→⑤`--merge-to-en E --slug daisuke-yokota --apply`（en-content.json へ skip-empty マージ・他slug byte不変assert通過・ui-terms add分自動書込）→⑥`build_photographers_en.py --slug daisuke-yokota --force`。
+- **監督判断（実測）**：
+  1. **precheck の言語WARN は誤検知**。CJK 14.19% は CSS/JS 込みの全ファイル比で、タグ除去後の本文は CJK **55.3%**（9647字中5334字）＝明確に日本語。素材取り違えなし。
+  2. **hero眉は既存 `§ 264 — Photographer Index — 日本写真`（card-data由来）を維持**。素材の「実験写真／ポストデジタル」は GENRE_TAG / ui-terms 未登録のため不採用（自動登録しない）。
+  3. **Years `2010s / 2010年代`・Country `日本`（既存ページ由来）を維持**。素材の `1983–` は不採用（当サイトの Years 欄は年代文字列が標準形）。Keywords は素材5件（写真の物質性／再撮影／熱湯現像／フォトブック／ZINE／Matter）へ差し替え。
+  4. **EN builder の Related削除SKIP は意図的置換として `--force` 承認**。削除3件は Man Ray / László Moholy-Nagy / Rayograph-Photogram のみで想定どおり。現行JAの§RELも同3件（Man Ray / Moholy / レイオグラフ）で、新素材JA/ENのどちらにもこの3件は不在＝日英対称の置換と実測確認。
+  5. **works ui-terms 1件 add-only 承認**：`Canon - 制作過程と作品` → `Canon — Process and Works`（JA素材チップ「Canon — 制作過程と作品」/ EN素材「Canon — Process and Works」に完全一致を実測）。
+  6. **旧リンク3件消失は scoped intentional-replacements 宣言**：`phillips.com/detail/daisuke-yokota/88658`（旧cite-3）・`artscape.jp/report/review/10128482_1735.html`（旧cite-4）・`metmuseum.org/art/collection/search/818005`（旧cite-5）。旧EN §SRC 全5件が新素材30件へ全面差し替えられた結果で、3件とも新素材JA/EN・新JA/ENページに不在（grep 0×4ファイル）、旧JA/EN backup には各1件を実測。`external_links_html` は旧 Canon・Foam を保全した上で shashasha・KYOTOGRAPHIE を追加（354→477字）＝リンク欄の劣化なし。
+- **bug / engine改良**：なし（engineコード無変更）。既存の carry-forward / EN field-merge / Related置換ガード / intentional-replacements が想定どおり作動。
+- **既知事項（今回の回帰ではない・未修正で正）**：①JA §REL のリンク項目に `</a> — ―` の二重ダッシュが出るが、既存 **33ページ・152箇所**に同型が存在する既存importer癖（EN側は0件）。1ページだけ直すと不整合になるため不触。②EN §REL が裸テキスト（リンクなし）項目を落とすのはサイト標準（takashi-homma JA8→EN2 / naoya-hatakeyama JA8→EN1 と同型）。本件も JA7→EN2。
+- **面（tracked 6）**：`photographers/daisuke-yokota.html` ＋ `en/photographers/daisuke-yokota.html` ＋ `data/photographers-en-content.json`（変更キーは `daisuke-yokota.html` の1件のみ・キー追加/削除0・対象外キー byte差分0／全306キー）＋ `data/photographers-en-ui-terms.json`（+1）＋ `scripts/intentional-replacements.json`（+3宣言・**push後にstale WARN化したら削除**）＋本ログ。
+- **フィデリティ**：本文 JA 1006→4991字 / EN 2215→13656字、unique出典 5→30、sup-ref 5→42、作品リンク 0→5、§REL JA 3→7 / EN 3→2（EN標準どおり）、**dangling 0**（素材JA/ENとも孤立cite・未定義cite なし）。EN は `entry_meta_html` / `footer_html` / `jsonld` / `notable_works_html` / `photobooks_html` / `thesis_label` / `view_works_note` を skip-empty carry-forward。
+- **検証**：`preflight.py` **EXIT 0**（FAIL/✗ 0・INFO=intentional-replacement 3件適用）。`check_content_loss.py` OK。`build_photographers_en.py --slug daisuke-yokota --dry-run` SKIPPEDなし。`check_en_entry.py daisuke-yokota` EXIT 0（WARN 1＝Medium 非推奨ドメイン・素材由来）。EN不可視要素は backup と同数維持（GA `G-2VRTV8BZEJ` 2 / canonical 1 / hreflang 3 / og:image 1 / JSON-LD 2）。preflight WARN は data-nosnippet の JA 9→8・EN 8→7 のみ＝prep-block（作品準備中プレースホルダ）が実コンテンツへ置換された既知の正当減少。タグ開閉一致（JA div 105/105・section 9/9、EN div 166/166・section 9/9）。対象外ファイルの巻き込み0（card-data / cards-archive / archive / eras / countries / movements / design / styles に差分なし）。素材原本2ファイルの SHA-256 は作業後も不変。
+- **素材SHA-256**：JA `ac65cefd36cd8b63712c170f19b420d528b27096ed02fe1bf7f2c53404c07be0` / EN `a6fcc76dac560ead9f8a0eaea597e7cf41a07aefcf59ff8e6a73439409996bac`。
+- **backup（未追跡・GH Pages実機確認後に削除）**：`photographers/daisuke-yokota-backup.html` / `en/photographers/daisuke-yokota-backup.html` / `scripts/daisuke-yokota-spec.json`。
+- **commit**：なし（監督報告時点で未コミット・Daisuke承認待ち）。
+- **wall-time**：（Daisuke記入）
