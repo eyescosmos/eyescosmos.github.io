@@ -27,11 +27,13 @@ from __future__ import annotations
 
 import argparse
 import copy
+import html as html_lib
 import json
 import os
 import re
 import subprocess
 import sys
+import unicodedata
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -387,6 +389,60 @@ def norm_text(html: str | None) -> str:
     return re.sub(r"\s+", " ", t).strip()
 
 
+HTML_ENTITY_RE = re.compile(
+    r'&(?:#[0-9]+|#[xX][0-9A-Fa-f]+|[A-Za-z][A-Za-z0-9]+);')
+
+
+def _dash_token_end(text: str, pos: int) -> int | None:
+    """pos の1文字またはHTML entityが区切りダッシュなら、その直後を返す。
+
+    Unicodeカテゴリ Pd 全体に加え、数学用マイナス U+2212 と全角ハイフン
+    U+FF0D を区切りとして扱う。U+30FC（カタカナ長音記号、Lm）は対象外。
+    """
+    if pos >= len(text):
+        return None
+    ch = text[pos]
+    if unicodedata.category(ch) == "Pd" or ch in {"−", "－", "-"}:
+        return pos + 1
+    entity = HTML_ENTITY_RE.match(text, pos)
+    if not entity:
+        return None
+    decoded = html_lib.unescape(entity.group(0))
+    if decoded and all(
+            unicodedata.category(c) == "Pd" or c in {"−", "－", "-"}
+            for c in decoded):
+        return entity.end()
+    return None
+
+
+def _strip_leading_dash_run(text: str) -> str:
+    """先頭の区切りダッシュ列（HTML entity形を含む）と周囲空白を除去する。"""
+    text = text.lstrip()
+    pos = 0
+    saw_dash = False
+    while pos < len(text):
+        end = _dash_token_end(text, pos)
+        if end is not None:
+            saw_dash = True
+            pos = end
+            continue
+        if saw_dash and text[pos].isspace():
+            pos += 1
+            continue
+        break
+    return text[pos:].lstrip() if saw_dash else text
+
+
+def _split_rel_separator(text: str) -> tuple[str, str]:
+    """リンクなしREL項目を、空白に続くUnicodeダッシュ列の最初の1箇所で分割。"""
+    for space in re.finditer(r"\s+", text):
+        tail = text[space.end():]
+        stripped = _strip_leading_dash_run(tail)
+        if stripped != tail.lstrip():
+            return text[:space.start()].strip(), stripped.strip()
+    return text.strip(), ""
+
+
 def slice_by_class(html: str, tag: str, cls: str, start: int = 0):
     """`start` 以降で最初に現れる class に `cls` トークンを含む <tag> を、同名タグの
     入れ子を数えて閉じまで切り出す。返り値 (outer, inner, end) または None。"""
@@ -721,12 +777,11 @@ def _parse_rel_item(html: str) -> dict:
         href = re.search(r'href="([^"]*)"', a.group(0)).group(1)
         slug = _slug_from_href(href)
         name = norm_text(re.sub(r'</?a\b[^>]*>', "", a.group(0)))
-        reason = norm_text(html[a.end():]).lstrip("—–―- ").strip()
+        reason = _strip_leading_dash_run(
+            norm_text(html[a.end():])).strip()
     else:  # de-link 済み（slug=None で保持・§3.3）
-        parts = re.split(r'\s[—–―-]\s', norm_text(html), 1)
+        name, reason = _split_rel_separator(norm_text(html))
         slug = None
-        name = parts[0].strip()
-        reason = parts[1].strip() if len(parts) > 1 else ""
     return {"slug": slug, "name": name, "reason": reason}
 
 
@@ -1472,18 +1527,16 @@ def _en_related_annotations(people: list, movements: list) -> dict | None:
     付ける（reason は _parse_rel_item で先頭ダッシュ除去済みの素テキスト）。
     全項目に reason が無ければ None（＝フィールド無し＝従来どおり素の名前）。
     これにより新規追加時に EN §REL の一言欠落が構造的に発生しなくなる。"""
-    # 素材が "&mdash;" / "&horbar;" 等のエンティティで区切る場合、
-    # _parse_rel_item の lstrip("—–―- ") はリテラル文字しか落とせず
-    # reason 先頭にダッシュが残る。
+    # 素材が "&mdash;" / "&horbar;" 等のエンティティで区切る場合も、
+    # Unicodeカテゴリベースの共通ヘルパーで先頭区切りを除去する。
     # builder が ' &mdash; ' を前置するので二重化を防ぐため先頭区切りを除去する。
-    lead_dash = re.compile(
-        r"^(?:&mdash;|&ndash;|&horbar;|&#821[123];|[—–―\-])\s*")
     ann = {}
     for rows, base in ((people, "/en/photographers/"),
                        (movements, "/en/movements/")):
         for r in rows:
             slug = r.get("slug")
-            reason = lead_dash.sub("", (r.get("reason") or "").strip()).strip()
+            reason = _strip_leading_dash_run(
+                (r.get("reason") or "").strip()).strip()
             if slug and reason:
                 ann[f"{base}{slug}.html"] = reason
     return ann or None

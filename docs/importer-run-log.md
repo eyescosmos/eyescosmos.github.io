@@ -1320,3 +1320,22 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **再発防止**：`REV_CLASS_PAT` 修正により、以後のimportでマーカーが残った場合は既存の残存検知アサーションが **AssertionError で HARD FAIL** する。ダッシュ側は `_rel_li` が `― ` を出力するため素材の区切り文字に依らず二重化しない。
 - **commit**：あり（本行のコミットと同一）。
 - **wall-time**：（Daisuke記入）
+
+## 2026-07-23 — 再発防止ガードの追加（ダッシュ文字種の網羅＋orphan class 汎用ガード・Opus監督/Codex実装）
+
+- **種別**：engine/ガード追加のみ。ページ・正本JSONの変更ゼロ。同日の `034d3d9f6` で塞いだ2件について、**変種が来たら再発する**ことを監督が実測で確認したため、その穴を塞ぐ。
+- **穴の実測**：
+  1. **ダッシュ**：`_parse_rel_item`→`_rel_li` に実際に通したところ、`‐`U+2010 / `‒`U+2012 / `−`U+2212 / `－`U+FF0D / `⸺`U+2E3A で**二重ダッシュが再発**（修正済みの `—` `–` `―` `-` `--` はOK）。しかも二重ダッシュには検知ガードが無く、今回の152箇所も誰にも気づかれず溜まっていた。
+  2. **マーカー**：`chatgpt-edit-3` / `edit-mark-2` / `highlight-new` / `changed-v2` / `draft-3` は `REV_TOKEN_FULL_RE` にも `self_check` にも掛からず**除去も検知もされない**。同日 `is-revised-N` 526箇所が見つかったのと同じ構図で、命名を変えられると際限がない。
+- **Phase A（`import_chatgpt_photographer.py`）**：先頭ダッシュ除去 `_strip_leading_dash_run` と de-link 側の区切り分割 `_split_rel_separator` を、**個別文字の列挙をやめて Unicode カテゴリ `Pd` ＋ `−`U+2212 ＋ `－`U+FF0D ＋ ASCII `-` 連続**ベースへ。HTMLエンティティ（`&mdash;` `&ndash;` `&horbar;` `&dash;` `&#8208;`〜`&#8213;` `&#x2010;`〜`&#x2015;`）も同経路で処理。`ー`U+30FC（長音）は対象外＝本文を壊さない。`_en_related_annotations` の `lead_dash` も同関数へ統一。
+  - **初回実装で `norm_text` のダッシュASCII正規化を外す副作用**（`_norm_rel_text` 新設）が入り、実データ1135件中8件（sibylle-bergemann）の§REL出力が変化することを監督の新旧差分監査で検知 → **依頼外の挙動変更として差し戻し**、`norm_text` を維持したまま先頭除去/分割だけUnicode化する最小差分へ修正。
+  - **回帰検証**：現行全 `photographers/*.html` の §REL `<li>` **1135件**を `origin/main` 版と新版の `_parse_rel_item` / `_rel_li` に通して比較 → **差分0件**。新ダッシュ14パターンは全て ` ― ` へ正規化。長音・ダッシュなし・途中のダッシュは従来どおり。`test_importer_scaffold_inject.py` EXIT 0。
+- **Phase B（`preflight.py`）**：`check_orphan_class_tokens()` を新設し `main()` へ登録。**命名に依存しない症状ベースのガード**＝「対応CSSが存在しないクラスが本番ページに残っている」を検知する。
+  - `styles/*.css` 全ルール＋各ページ内 `<style>` から定義クラスを収集 → JA/EN写真家ページの class トークンと突合 → orphan を集計 → **`_baseline_ref()` 側の同集計との差分**を取り、**今回新規に出現した orphan のみ HARD FAIL**。既存の正当 orphan（`ph-side-search__form` / `inline-work-link` / `essay-subhead` / `keywords` の4種＝生成スクリプト・正本JSON由来）は自動許容され、許容リストの手動維持が不要。逃げ道は env `ALLOW_ORPHAN_CLASS`（空白/カンマ区切り）。
+  - 併せて JA §REL の**二重ダッシュ検知**も追加（`</a>` / `<li>` 直後の dash＋空白＋dash を Unicode `Pd` ベースで判定・**baseline比の新規増分のみ HARD FAIL**）。
+- **ガードの有効性検証（歴史データ）**：`edd6d441f` 時点の `photographers/araki.html`（`is-revised-2/3` 入り）と `photographers/becher.html`（二重ダッシュ7件）を一時配置して preflight を実行 → **`is-revised-2` / `is-revised-3` の orphan HARD FAIL 2件＋becher の二重ダッシュ7件/1ページ HARD FAIL** が発火。**今日の2つのバグは、このガードがあれば push 前に止まっていた**ことを実証。配置したページは HEAD と byte 一致で復元済み。
+- **陽性/陰性テスト**：未知命名 `chatgpt-edit-3` を1箇所差し込み → HARD FAIL（EXIT 1）／二重ダッシュ1件差し込み → HARD FAIL／いずれも復元後に HEAD と byte 一致。**現状の作業ツリーでは誤検知0（preflight EXIT 0）**。
+- **面（tracked 3）**：`scripts/import_chatgpt_photographer.py` ＋ `scripts/preflight.py` ＋ 本ログ。**写真家ページ・`data/*.json` の変更ゼロ**。
+- **残る限界（既知・許容）**：①ガードは既存 orphan トークンを自動許容するため、**既存の正当クラス名と同じ名前**でマーカーが来た場合は検知しない。②importer を通さず手貼りした HTML は `self_check` を通らないが、preflight 側の orphan ガードは push 前に効く。③二重ダッシュ検知は JA §REL 内に限定（EN は `&mdash;` 標準で該当なし）。
+- **commit**：あり（本行のコミットと同一）。
+- **wall-time**：（Daisuke記入）

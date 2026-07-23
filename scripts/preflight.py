@@ -11,12 +11,15 @@
 CLAUDE.md の「不可視の必須要素」「重複防止」を文章ルールから機械チェックへ移管する土台。
 """
 from __future__ import annotations
+import html as html_lib
 import functools
 import json
 import os
 import re
 import subprocess
 import sys
+import unicodedata
+from collections import Counter, defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -157,6 +160,214 @@ def _git_show(ref: str, rel_path: str) -> str | None:
     proc = subprocess.run(["git", "show", f"{ref}:{rel_path}"],
                           capture_output=True, text=True, cwd=REPO)
     return proc.stdout if proc.returncode == 0 else None
+
+
+CSS_CLASS_RE = re.compile(r'(?<![A-Za-z0-9_-])\.([A-Za-z_][A-Za-z0-9_-]*)')
+CLASS_ATTR_RE = re.compile(r'\bclass\s*=\s*(["\'])(.*?)\1', re.S | re.I)
+STYLE_BLOCK_RE = re.compile(r'<style\b[^>]*>(.*?)</style>', re.S | re.I)
+
+
+def _css_defined_classes(css: str) -> set[str]:
+    """CSSの各 `{` 直前にあるselector preludeからclass名を集める。"""
+    css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
+    out: set[str] = set()
+    boundary = 0
+    for i, ch in enumerate(css):
+        if ch == "{":
+            out.update(CSS_CLASS_RE.findall(css[boundary:i]))
+            boundary = i + 1
+        elif ch == "}":
+            boundary = i + 1
+    return out
+
+
+def _html_class_tokens(html: str) -> set[str]:
+    """HTMLのclass属性をトークン単位で返す。"""
+    return {
+        token
+        for match in CLASS_ATTR_RE.finditer(html)
+        for token in match.group(2).split()
+        if token
+    }
+
+
+def _page_inline_classes(html: str) -> set[str]:
+    """ページ内styleルールで定義されたclass名を返す。"""
+    out: set[str] = set()
+    for css in STYLE_BLOCK_RE.findall(html):
+        out.update(_css_defined_classes(css))
+    return out
+
+
+def _ref_paths(ref: str, *roots: str) -> list[str]:
+    """ref時点のtracked path一覧。"""
+    proc = subprocess.run(
+        ["git", "ls-tree", "-r", "--name-only", ref, "--", *roots],
+        capture_output=True, text=True, cwd=REPO)
+    return proc.stdout.splitlines() if proc.returncode == 0 else []
+
+
+def _photographer_html_paths_worktree() -> list[str]:
+    out: list[str] = []
+    for rel_dir in ("photographers", "en/photographers"):
+        for path in sorted((REPO / rel_dir).glob("*.html")):
+            if path.name.endswith("-backup.html"):
+                continue
+            out.append(path.relative_to(REPO).as_posix())
+    return out
+
+
+def _photographer_html_paths_ref(ref: str) -> list[str]:
+    return [
+        rel for rel in _ref_paths(ref, "photographers", "en/photographers")
+        if rel.endswith(".html")
+        and not rel.endswith("-backup.html")
+        and os.path.dirname(rel) in {"photographers", "en/photographers"}
+    ]
+
+
+def _global_css_classes_worktree() -> set[str]:
+    out: set[str] = set()
+    for path in sorted((REPO / "styles").glob("*.css")):
+        out.update(_css_defined_classes(path.read_text(
+            encoding="utf-8", errors="ignore")))
+    return out
+
+
+def _global_css_classes_ref(ref: str) -> set[str]:
+    out: set[str] = set()
+    for rel in _ref_paths(ref, "styles"):
+        if not rel.endswith(".css") or os.path.dirname(rel) != "styles":
+            continue
+        css = _git_show(ref, rel)
+        if css is not None:
+            out.update(_css_defined_classes(css))
+    return out
+
+
+def _orphan_class_usage_worktree() -> dict[str, set[str]]:
+    global_defined = _global_css_classes_worktree()
+    usage: dict[str, set[str]] = defaultdict(set)
+    for rel in _photographer_html_paths_worktree():
+        html = (REPO / rel).read_text(encoding="utf-8", errors="ignore")
+        defined = global_defined | _page_inline_classes(html)
+        for token in _html_class_tokens(html) - defined:
+            usage[token].add(rel)
+    return usage
+
+
+def _orphan_class_usage_ref(ref: str) -> dict[str, set[str]]:
+    global_defined = _global_css_classes_ref(ref)
+    usage: dict[str, set[str]] = defaultdict(set)
+    for rel in _photographer_html_paths_ref(ref):
+        html = _git_show(ref, rel)
+        if html is None:
+            continue
+        defined = global_defined | _page_inline_classes(html)
+        for token in _html_class_tokens(html) - defined:
+            usage[token].add(rel)
+    return usage
+
+
+def _is_rel_dash_char(ch: str) -> bool:
+    """Phase Aと同じ区切り集合。U+30FC（長音記号）は含まない。"""
+    return unicodedata.category(ch) == "Pd" or ch in {"−", "－", "-"}
+
+
+def _has_spaced_double_dash(text: str) -> bool:
+    """dash + 空白 + dash の並びをUnicodeカテゴリベースで検出する。"""
+    text = html_lib.unescape(re.sub(r'<[^>]+>', '', text))
+    for i, ch in enumerate(text):
+        if not _is_rel_dash_char(ch):
+            continue
+        pos = i + 1
+        if pos >= len(text) or not text[pos].isspace():
+            continue
+        while pos < len(text) and text[pos].isspace():
+            pos += 1
+        if pos < len(text) and _is_rel_dash_char(text[pos]):
+            return True
+    return False
+
+
+def _rel_double_dash_examples(html: str) -> list[str]:
+    """JA §RELのlinked/linkless liから二重区切り例を返す。"""
+    examples: list[str] = []
+    for section in re.findall(r'<section\b.*?</section>', html, re.S | re.I):
+        if "ph-section__num" not in section or not re.search(
+                r'§\s*REL\b', section, re.I):
+            continue
+        for item in re.findall(
+                r'<li\b[^>]*>.*?(?:</li>|(?=<li\b)|$)', section, re.S | re.I):
+            anchor_end = re.search(r'</a\s*>', item, re.I)
+            candidate = item[anchor_end.end():] if anchor_end else re.sub(
+                r'^<li\b[^>]*>', '', item, count=1, flags=re.I)
+            if _has_spaced_double_dash(candidate):
+                examples.append(re.sub(r'\s+', ' ', item).strip())
+    return examples
+
+
+def _rel_double_dash_usage_worktree() -> dict[str, list[str]]:
+    out: dict[str, list[str]] = {}
+    for path in sorted((REPO / "photographers").glob("*.html")):
+        if path.name.endswith("-backup.html"):
+            continue
+        examples = _rel_double_dash_examples(path.read_text(
+            encoding="utf-8", errors="ignore"))
+        if examples:
+            out[path.relative_to(REPO).as_posix()] = examples
+    return out
+
+
+def _rel_double_dash_usage_ref(ref: str) -> dict[str, list[str]]:
+    out: dict[str, list[str]] = {}
+    for rel in _photographer_html_paths_ref(ref):
+        if os.path.dirname(rel) != "photographers":
+            continue
+        html = _git_show(ref, rel)
+        if html is None:
+            continue
+        examples = _rel_double_dash_examples(html)
+        if examples:
+            out[rel] = examples
+    return out
+
+
+def check_orphan_class_tokens() -> None:
+    """新規orphan classとJA §REL二重ダッシュをbaseline差分でHARD検出する。
+
+    orphan classの明示的な一時許容は環境変数 ``ALLOW_ORPHAN_CLASS`` に
+    class名を空白またはカンマ区切りで指定する。意図的な恒久classは原則として
+    CSS定義を追加し、環境変数は緊急時の限定的な逃げ道としてのみ使用する。
+    """
+    baseline = _baseline_ref()
+    allowed = {
+        token for token in re.split(
+            r'[\s,]+', os.environ.get("ALLOW_ORPHAN_CLASS", "").strip())
+        if token
+    }
+    base_orphans = _orphan_class_usage_ref(baseline)
+    work_orphans = _orphan_class_usage_worktree()
+    for token in sorted(set(work_orphans) - set(base_orphans) - allowed):
+        pages = sorted(work_orphans[token])
+        hard_failures.append(
+            f"新規 orphan class token {token!r}: {len(pages)}ページ"
+            f"（例 {pages[0]}）。レビュー用マーカーの残骸ではないか確認。"
+            "意図的な新クラスならCSSを追加するか ALLOW_ORPHAN_CLASS 許容リストへ")
+
+    base_dash = _rel_double_dash_usage_ref(baseline)
+    work_dash = _rel_double_dash_usage_worktree()
+    increased: list[tuple[str, int, str]] = []
+    for rel, examples in work_dash.items():
+        delta = len(examples) - len(base_dash.get(rel, []))
+        if delta > 0:
+            increased.append((rel, delta, examples[0]))
+    if increased:
+        total = sum(delta for _, delta, _ in increased)
+        rel, _, example = increased[0]
+        hard_failures.append(
+            f"JA §RELに新規二重ダッシュ: {total}件/{len(increased)}ページ"
+            f"（例 {rel}: {example}）。importerの区切り重複を確認")
 
 
 def _en_entry_metrics(entry: dict) -> dict:
@@ -1077,6 +1288,7 @@ def main() -> int:
     check_dup_ids_carddata()
     check_ga_coverage()
     check_en_lang_toggle_active()
+    check_orphan_class_tokens()
     check_en_content_loss()
     check_en_changed_slug_closure()
     check_en_direct_edit()
