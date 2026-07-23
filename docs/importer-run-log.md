@@ -1304,3 +1304,19 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **backup（未追跡・GH Pages実機確認後に削除）**：`photographers/daisuke-yokota-backup.html` / `en/photographers/daisuke-yokota-backup.html` / `scripts/daisuke-yokota-spec.json`。
 - **commit**：なし（監督報告時点で未コミット・Daisuke承認待ち）。
 - **wall-time**：（Daisuke記入）
+
+## 2026-07-23 — importer取りこぼし2件の修正＋既存ページ一括バックフィル（Opus監督/Codex実装）
+
+- **種別**：engine修正×2＋バックフィル。写真家本文の追加・修正ではなく、importer出力の表記/残骸クリーンアップ。カード・年代・国・運動・スターマップ・archive面は不触。
+- **不具合①（JA §REL 二重ダッシュ）**：`_parse_rel_item` の `lstrip("—–- ")` が U+2014/U+2013/U+002D しか落とさず、ChatGPT素材が使う **U+2015 `―`（HORIZONTAL BAR）** が残留。`_rel_li` の `tail = ' — '` と重なって `</a> — ― 解説` になっていた。修正＝lstrip・split・`lead_dash` 正規表現へ `―`／`&horbar;`／`&#8213;` を追加し、`_rel_li` の JA 出力を **サイト標準の `' ― '`（実測824件）** へ統一（EN標準は `&mdash;` のため未変更）。
+- **不具合②（revisionマーカー残存）**：`REV_CLASS_PAT` が `rev19` / `revision` / `revision-fifth` の3系統しか想定せず、**4系統ある実在マーカーのうち3系統が素通り**していた。`strip_review_css` / span unwrap / 残存検知アサーションが全て無効化されていた。修正＝4系統対応へ拡張。
+  - 実在4系統（全サーフェス実測・**対応CSSルールは全系統0件＝表示影響ゼロ**）：`is-revised-N` 526箇所 / `<word>-revision-mark` 197箇所 / `revisionN`（revision2〜10）98箇所 / `rev-current` 52箇所＝**計873箇所・19名**。
+  - 誤爆ガード検証：`review` / `revised` / `revisionist` / `revisional` / `ph-rev-2` / `ph-review` / `is-revised`（数字なし）/ `reverse` / `reversed` / `revert` / `preview` / `revenue` が全件**非マッチ**。884 HTML 全走査でマッチしたのは4系統13トークン873箇所のみ＝**系統外マッチ0**。
+- **バックフィル①（ダッシュ）**：`</a> — ― ` 152箇所/33ページ（リンク付き項目）＋ `— ― ` 6箇所/3ページ（**リンクなし項目・監督の初回集計が `</a>` 前提で取りこぼしていた分**、eiko-yamazawa 2 / goldin 3 / gursky 1）＝**計158箇所を `― ` へ統一**。EN は0件で不触。単独 `' — '` 47件と区切りなしは対象外（別形として残置）。
+- **バックフィル②（マーカー）**：19名 JA/EN 計38ページから873箇所を除去。**アドホック正規表現を書かず importer の既存除去関数を再利用**（将来のimportと同一結果になることを保証）。JA=HTML直接／EN=`photographers-en-content.json` 経由＋`build_photographers_en.py --slug` 再生成（EN HTML直接編集なし）。
+  - **EN再生成ドリフト基線テストを全19 slugで事前実施**：JSON未変更のまま builder を回して現HTMLと byte diff → **19 slug すべて diff 0・SKIP 0**。これを確認してから JSON を変更した（再生成による無関係な巻き戻りが起きないことの事前保証）。
+- **面（tracked 66）**：`scripts/import_chatgpt_photographer.py` ＋ JA写真家HTML 45 ＋ EN写真家HTML 19 ＋ `data/photographers-en-content.json`（変更キー19・キー数306→306・追加/削除0・対象外キー byte 不変）＋本ログ。
+- **検証**：変更HTML **64件すべてでタグ除去後テキストが HEAD と完全一致**（意図的なダッシュ統一分のみ正規化して比較）＝**本文の変化ゼロ**。4系統マーカー残存0／`— ―` 残存0（JA/EN全写真家ページ）／EN不可視要素（GA 2・canonical 1・hreflang 3・og:image 1・JSON-LD 2・data-nosnippet）は19 slug とも除去前後で同数／`check_content_loss` は本文消失0（`asako-narahashi` / `torbjrn-rdland` / `daisuke-yokota` の「書き換えの疑い」WARN は span unwrap によるマークアップのみの変化で、テキスト同一を独立検証済み）／`preflight.py` **EXIT 0**（FAIL 0）／禁止範囲（card-data・cards-archive・archive・eras・countries・movements・design・styles）の差分**0**。
+- **再発防止**：`REV_CLASS_PAT` 修正により、以後のimportでマーカーが残った場合は既存の残存検知アサーションが **AssertionError で HARD FAIL** する。ダッシュ側は `_rel_li` が `― ` を出力するため素材の区切り文字に依らず二重化しない。
+- **commit**：あり（本行のコミットと同一）。
+- **wall-time**：（Daisuke記入）

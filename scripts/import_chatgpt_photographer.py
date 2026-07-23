@@ -78,9 +78,15 @@ def repo_file_exists(rel: str) -> bool:
 
 # ── 決定論変換（JA / EN 共有） ─────────────────────────────────────────────
 
-# rev ハイライトのクラス語形: 数字形 rev19 / 語形 revision-fifth / 裸 revision の3系統
-# （lieko=数字形 / yurie=語形 / mika=裸 revision＋非span要素。素材世代で揺れるため3対応）
-REV_CLASS_PAT = r'rev[0-9]+|revision(?:-[a-z0-9]+(?:-[a-z0-9]+)*)?'
+# rev ハイライトのクラス語形: rev19 / revision7 / revision-fifth / 裸 revision、
+# is-revised-2、second-revision-mark、rev-current の4系統
+# （素材世代で揺れるため全系統に対応）
+REV_CLASS_PAT = (
+    r'rev(?:[0-9]+|-current)'
+    r'|revision(?:[0-9]+|-[a-z0-9]+(?:-[a-z0-9]+)*)?'
+    r'|is-revised-[0-9]+'
+    r'|[a-z0-9]+-revision-mark'
+)
 REV_OPEN_RE = re.compile(r'<span class="(?:' + REV_CLASS_PAT + r')">')
 SPAN_TAG_RE = re.compile(r'<span\b[^>]*>|</span>')
 # トークン単位 fullmatch 判定（誤爆ガード: review / revised / revisionist / ph-rev-* 等の
@@ -715,9 +721,9 @@ def _parse_rel_item(html: str) -> dict:
         href = re.search(r'href="([^"]*)"', a.group(0)).group(1)
         slug = _slug_from_href(href)
         name = norm_text(re.sub(r'</?a\b[^>]*>', "", a.group(0)))
-        reason = norm_text(html[a.end():]).lstrip("—–- ").strip()
+        reason = norm_text(html[a.end():]).lstrip("—–―- ").strip()
     else:  # de-link 済み（slug=None で保持・§3.3）
-        parts = re.split(r'\s[—–-]\s', norm_text(html), 1)
+        parts = re.split(r'\s[—–―-]\s', norm_text(html), 1)
         slug = None
         name = parts[0].strip()
         reason = parts[1].strip() if len(parts) > 1 else ""
@@ -1011,7 +1017,7 @@ def _build_ja_works_body(works: list) -> str | None:
 def _rel_li(item: dict, kind: str) -> str:
     name, slug = item.get("name") or "", item.get("slug")
     reason = item.get("reason") or ""
-    tail = f' — {reason}' if reason else ''
+    tail = f' ― {reason}' if reason else ''
     if slug:
         href = (f'/photographers/{slug}.html' if kind == "people"
                 else f'/movements/{slug}.html')
@@ -1466,10 +1472,12 @@ def _en_related_annotations(people: list, movements: list) -> dict | None:
     付ける（reason は _parse_rel_item で先頭ダッシュ除去済みの素テキスト）。
     全項目に reason が無ければ None（＝フィールド無し＝従来どおり素の名前）。
     これにより新規追加時に EN §REL の一言欠落が構造的に発生しなくなる。"""
-    # 素材が "&mdash;" 等のエンティティで区切る場合、_parse_rel_item の
-    # lstrip("—–- ") はリテラル文字しか落とせず reason 先頭にダッシュが残る。
+    # 素材が "&mdash;" / "&horbar;" 等のエンティティで区切る場合、
+    # _parse_rel_item の lstrip("—–―- ") はリテラル文字しか落とせず
+    # reason 先頭にダッシュが残る。
     # builder が ' &mdash; ' を前置するので二重化を防ぐため先頭区切りを除去する。
-    lead_dash = re.compile(r"^(?:&mdash;|&ndash;|&#821[12];|[—–\-])\s*")
+    lead_dash = re.compile(
+        r"^(?:&mdash;|&ndash;|&horbar;|&#821[123];|[—–―\-])\s*")
     ann = {}
     for rows, base in ((people, "/en/photographers/"),
                        (movements, "/en/movements/")):
