@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "slug": "lucas-blalock",
+    "url": "https://time.com/5590616/2019-whitney-biennial-compelling-works/",
+    "reason": "新素材22出典への総入れ替えに伴う旧出典URLの意図的削除",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "lucas-blalock",
+    "url": "https://www.moma.org/calendar/exhibitions/1539/installation_images/11609",
+    "reason": "同じMoMA展覧会の短い正規URLへ置換",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "shannon-ebner",
+    "url": "https://altmansiegel.com/usr/documents/press/download_url/65/2011_se_aia_hammer.pdf",
+    "reason": "新素材25出典への総入れ替えと同ギャラリー現行作家ページ採録に伴う旧URL削除",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "shannon-ebner",
+    "url": "https://www.frieze.com/article/shannon-ebner",
+    "reason": "新素材25出典への総入れ替えに伴う旧出典URLの意図的削除",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "roe-ethridge",
+    "url": "https://www.amazon.co.jp/s?k=Roe+Ethridge+American+Polychronic",
+    "reason": "監督が書誌・版を照合したAmazon商品ページ /dp/1913620654 への置換",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "roe-ethridge",
+    "url": "https://www.amazon.co.jp/s?k=Roe+Ethridge+Neighbors",
+    "reason": "監督が書誌・版を照合したAmazon商品ページ /dp/1910164720 への置換",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "sharon-lockhart",
+    "url": "https://www.amazon.co.jp/s?k=Sharon+Lockhart+Pine+Flat",
+    "reason": "監督がCharta版と照合したAmazon商品ページ /dp/8881586037 への置換",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "sharon-lockhart",
+    "url": "https://www.amazon.co.jp/s?k=Sharon+Lockhart+Lunch+Break",
+    "reason": "監督が書誌・版を照合したAmazon商品ページ /dp/0936316292 への置換",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "tracey-moffatt",
+    "url": "https://www.amazon.co.jp/s?k=Tracey+Moffatt+My+Horizon",
+    "reason": "監督が公式刊行物と照合したAmazon商品ページ /dp/0500500991 への置換",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "tracey-moffatt",
+    "url": "https://www.amazon.co.jp/s?k=Tracey+Moffatt+Montages",
+    "reason": "書籍ではなく映像作品群で検証済みAmazon商品ページが存在しないためCTAを除去",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "yto-barrada",
+    "url": "https://www.amazon.co.jp/s?k=Yto+Barrada+A+Life+Full+of+Holes",
+    "reason": "監督が書誌・版を照合したAmazon商品ページ /dp/1899282955 への置換",
+    "declared": "2026-07-27"
+  },
+  {
+    "slug": "yto-barrada",
+    "url": "https://www.amazon.co.jp/s?k=Yto+Barrada+Part-Time+Abstractionist",
+    "reason": "検証済みAmazon商品ページが存在しないためCTAを除去",
+    "declared": "2026-07-27"
+  }
+]

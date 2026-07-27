@@ -249,7 +249,26 @@ def test_bare_revision_and_nonspan_rev_classes() -> None:
     （mika-ninagawa 素材で `<p class="revision">` 27箇所が render へ素通りした実害の
     再発防止）。誤爆ガード（review / revised / revisionist / ph-rev-* は不可触）も検証。"""
     from import_chatgpt_photographer import (
-        clean_rev_markup, strip_rev_class_tokens, strip_review_css)
+        REV_TOKEN_FULL_RE, clean_rev_markup, strip_rev_class_tokens,
+        strip_review_css)
+
+    # 0) rev-* 一般化の陽性・陰性。class トークン全体一致だけを対象にする。
+    positives = (
+        "rev-red", "rev-current", "rev1", "rev-add", "rev-third",
+        "rev-fifth", "rev-sixth", "rev-seventh", "rev-eighth",
+        "rev-final", "rev-rework", "is-revised-2", "revision3",
+        "second-revision-mark",
+    )
+    negatives = (
+        "rev", "red", "revised", "edit-red", "is-revised", "redux",
+        "covered", "hundred", "reverse", "preview", "ph-rev-block",
+    )
+    for token in positives:
+        assert REV_TOKEN_FULL_RE.fullmatch(token), \
+            f"FAIL: rev系陽性トークンが未検出: {token!r}"
+    for token in negatives:
+        assert not REV_TOKEN_FULL_RE.fullmatch(token), \
+            f"FAIL: rev系陰性トークンを誤検出: {token!r}"
 
     # 1) 裸 revision: 純 rev span は unwrap、<p class="revision"> は要素保持で属性削除
     src = ('<span class="revision">a</span>'
@@ -308,8 +327,21 @@ def test_bare_revision_and_nonspan_rev_classes() -> None:
     assert '.revisionist { color: blue }' in out5 and '.essay p { margin: 0 }' in out5, \
         f"FAIL: 正規 CSS ルールが誤って消された: {out5!r}"
 
+    # 6) CSSカスタムプロパティ --rev-* と利用ルールは正規資産として保持する。
+    css_vars = ('<style>:root{--rev-bg:#fff;--rev-text:#111}'
+                '.ph-book-cta:hover{color:var(--rev-text)}'
+                '.rev-add{background:yellow}</style>')
+    out6 = strip_review_css(css_vars)
+    assert '--rev-bg:#fff' in out6 and '--rev-text:#111' in out6, \
+        f"FAIL: --rev-* CSSカスタムプロパティが消えた: {out6!r}"
+    assert '.ph-book-cta:hover{color:var(--rev-text)}' in out6, \
+        f"FAIL: var(--rev-text) 利用ルールが消えた: {out6!r}"
+    assert '.rev-add{' not in out6, \
+        f"FAIL: レビュー用 .rev-add ルールが残った: {out6!r}"
+
     print("test_bare_revision_and_nonspan_rev_classes PASS: 裸revision unwrap/属性削除・"
-          "非span複合クラスのトークン除去・誤爆ガード・self_check/CSS連動OK")
+          "rev-*一般化・非span複合クラスのトークン除去・誤爆ガード・"
+          "CSSカスタムプロパティ保持・self_check/CSS連動OK")
 
 
 def test_en_merge_skip_empty_and_invariance() -> None:

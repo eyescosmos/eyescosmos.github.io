@@ -80,12 +80,11 @@ def repo_file_exists(rel: str) -> bool:
 
 # ── 決定論変換（JA / EN 共有） ─────────────────────────────────────────────
 
-# rev ハイライトのクラス語形: rev19 / revision7 / revision-fifth / 裸 revision、
-# is-revised-2、second-revision-mark、rev-current、rev-red の5系統
+# rev ハイライトのクラス語形: rev19 / rev-current / rev-red / rev-add 等、
+# revision7 / revision-fifth / 裸 revision、is-revised-2、second-revision-mark
 # （素材世代で揺れるため全系統に対応）
 REV_CLASS_PAT = (
-    r'rev(?:[0-9]+|-current)'
-    r'|rev-red'
+    r'rev(?:[0-9]+|-[a-z0-9]+(?:-[a-z0-9]+)*)'
     r'|revision(?:[0-9]+|-[a-z0-9]+(?:-[a-z0-9]+)*)?'
     r'|is-revised-[0-9]+'
     r'|[a-z0-9]+-revision-mark'

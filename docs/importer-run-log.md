@@ -48,6 +48,7 @@
 | 2026-07-22 | **10名バッチupdate**(bruno-serralongue/naoya-hatakeyama/paul-graham/philip-lorca-dicorcia/simon-norfolk/sophie-calle/takashi-homma/torbjrn-rdland/wang-qingsong/yang-fudong) | update | （Daisuke記入） | 1（既存・国名辞書ノルウェー欠落をadd-only補完） | §REL意図差し替え5名（旧movement→新person・--force）＋Norway辞書1行 | 23ファイル | 計8495→62751 | 計35→213 |
 | 2026-07-23 | **11名バッチupdate**(james-casebere/laura-letinsky/luc-delahaye/richard-billingham/roe-ethridge/seung-woo-back/sharon-lockhart/the-atlas-group-walid-raad/tracey-moffatt/valerie-belin/yto-barrada) | update | 50分 | 3（rev-red第5系統／Atlas EN prep-block／JSON-LD Personキー消失） | 監督判断6系統＋§REL意図差し替え4名（下記） | 24ファイル | 計7889→46113 | 計39→220 |
 | 2026-07-24 | (engine)JSON-LD Personキー退行ガード | engine | （Daisuke記入） | 1（確定年を導出できないページでキー消失を見逃す死角） | 0（機械検証） | 2ファイル | N/A | N/A |
+| 2026-07-27 | **7名バッチupdate**(amalia-ulman/artie-vierkant/eileen-quinlan/james-welling/lucas-blalock/shannon-ebner/thomas-demand) | update | 60分 | 1（`rev-*`列挙方式の限界→正規表現一般化） | 監督判断7系統＋PHASE 3相乗り＋既存Amazon検索URL8本是正 | 34ファイル | JA計6192→36139 / EN計18478→95397 | JA/ENとも計28→200 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -1409,6 +1410,53 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **面（8）**：`photographers/{james-casebere, luc-delahaye, richard-billingham, roe-ethridge, seung-woo-back, the-atlas-group-walid-raad, tracey-moffatt, valerie-belin}.html`。各 §REL li を `<li><a href="/photographers/<slug>.html">名</a> ― 理由</li>` 形式へ1:1置換（区切りは既存 `―`）。挿入15／削除15、本文・他セクション不触。
 - **koester表記の統一（Daisuke決定）**：joachim-koester の正本表示名は card-data/ページ見出しとも「ヨアヒム・クスター」。§RELでは seung-woo-back=「ケスター」/ the-atlas-group=「コースター」と3表記に割れていたため、両リンクの表示テキストを正本「ヨアヒム・クスター」へ統一。
 - **検証**：`check_content_loss.py` OK / `preflight.py` EXIT 0 / 追加15 href すべて実ファイル存在（リンク切れ0）/ `git status --short` は対象8ファイルのみ・他面差分0。
-- **EN**：未対応（今回スコープ外）。対応する場合は `data/photographers-en-content.json` の `site_directory_html` / `related_annotations` を直し `build_photographers_en.py --slug <slug>` で再生成する。
+- **EN**：**2026-07-27の7名バッチに相乗りして対応済**（本ログ 2026-07-27 の項）。`data/photographers-en-content.json` の `site_directory_html` / `related_annotations` を直し `build_photographers_en.py --slug <slug>` で再生成。the-atlas-group-walid-raad の2件はEN側では対応済だったため、新規リンク化は13件。
 - **commit**：なし（Daisuke承認待ち）。
 - **wall-time**：（Daisuke記入）
+## 2026-07-27 — 7名バッチupdate（ChatGPT新素材で本文全刷新・Opus監督/Codex実装）
+
+- **種別**：update。既存スタブ7名（`amalia-ulman` / `artie-vierkant` / `eileen-quinlan` / `james-welling` / `lucas-blalock` / `shannon-ebner` / `thomas-demand`）のJA/EN本文・thesis・出典・§REL等を、ChatGPT新素材14ファイルで全刷新。
+- **分業と停止**：Opus（メイン会話）が監督、Codex（`workspace-write` / `approval=never`）が実装。Codexの自主停止は**3回**。①パイロットで存在しないHito SteyerlへのhrefとAmazon検索URLを検出、②PHASE 2でJames Wellingの未対応`rev-*` 8系統と旧出典URL4件の消失ガードを検出、③PHASE 3でHEAD由来のRoe Ethridge Amazon検索URL2本による`check_en_entry` HARD FAILを検出。各回とも監督が独立実測して判断を返した。これとは別に、監督指定のパイロット完了停止とPHASE 2完了停止を各1回実施し、承認後だけ次phaseへ進行。
+- **パイプライン**：各slugで `import_chatgpt_photographer.py --precheck` → `--update-existing --prepare` → `--update-existing --apply --force` → `--merge-to-en --apply` → `build_photographers_en.py --slug`。ENは正本 `data/photographers-en-content.json` 経由で再生成し、EN HTMLの直接編集なし。既存維持フィールドはhero眉 / Years / Country / Movement、素材採用フィールドはKeywords / description / 本文 / 出典 / thesis / §REL。works ui-termsは `公式サイト — Works Archive` → `Official Website — Works Archive` の1件だけadd-only追加。
+- **監督判断**：
+  1. `hito-steyerl`はリポジトリに実在しないため、amalia-ulman / artie-vierkantのJA §RELは裸テキスト化。解説文は保持し、ENもリンクなしで日英対称。
+  2. amalia-ulmanのAmazon検索URL `/s?k=` は、書誌・ISBN照合済みの商品URL `https://www.amazon.com/Excellences-Perfections-Amalia-Ulman/dp/379138418X` へ差し替え。
+  3. 素材の誤slugは実在slugへ張り替え：`jeff-wall`→`wall`、`barbara-kruger`→`kruger`、`walker-evans`→`evans`、`andreas-gursky`→`gursky`。JA/ENを対称化し、解説文を保持。
+  4. thomas-demandのpercent-encoded movement hrefは、実在するサイト慣習形 `/movements/コンセプチュアルアート.html` へ非エンコード正規化。
+  5. lucas-blalock 2件、shannon-ebner 2件の旧出典URL消失は、新素材の意図的な出典総入れ替えとして承認。4件を `scripts/intentional-replacements.json` に宣言。
+  6. thomas-demand §RELで素材が裸テキストだったジェフ・ウォール / シェリー・レヴィーンは実在ページへリンク化。EN §RELは5→7項目となり、全リンク先実在。
+  7. thomas-demandの旧`Staged Photography`削除SKIPは、①新JA/EN素材の§REL内に削除対象なし、②適用後JA §RELにもなし、③旧項目で新素材に対応物なし、の常設3条件を満たしたため`--force`を承認。
+- **engine改良（`REV_CLASS_PAT`一般化）**：
+  - ChatGPTが毎回 `rev-add` / `rev-third` … `rev-rework` のような新名称を作るため、8系統を列挙追加しても追いつかない。従来の `rev(?:[0-9]+|-current)|rev-red` を `rev(?:[0-9]+|-[a-z0-9]+(?:-[a-z0-9]+)*)` へ一般化し、他の3 alternative（`revision…` / `is-revised-…` / `…-revision-mark`）は不変。
+  - リポジトリ全体で正規資産として使われる`rev-*`クラストークンは0件。CSSカスタムプロパティ`--rev-bg` / `--rev-text`はJames Wellingとansel-adamsで、適用前後ともそれぞれ3件 / 5件、`var(--rev-text)` 4件、`.ph-book-cta:hover` 1件、CSS byte一致で無傷。
+  - 陽性14語（`rev-red` / `rev-current` / `rev1` / `rev-add` / `rev-third` / `rev-fifth` / `rev-sixth` / `rev-seventh` / `rev-eighth` / `rev-final` / `rev-rework` / `is-revised-2` / `revision3` / `second-revision-mark`）は全マッチ。陰性11語（`rev` / `red` / `revised` / `edit-red` / `is-revised` / `redux` / `covered` / `hundred` / `reverse` / `preview` / `ph-rev-block`）は全非マッチ。
+  - 既存unwrap関数でJames WellingのJA HTML / EN正本JSONを処理し再生成。タグ除去後テキストSHA-256は除去前後で完全一致（JA `947f5974930d22822cf2f04a747864968aa3cb7707c6fd189bbde029e32b435d`、EN HTML `bd9ce5973e9fb841fd2b1a91ef2972f51def971c6cce3616dae79293a66ed166`、EN JSON `621055d1b29a0d5aea558e3e1f83ba5693985b59e8edf13c02e78854ac1112b2`）。対象7名JA/ENの`rev-*`クラストークンは0。`pytest`は環境に未導入のため起動不可だったが、既存の直接実行 `python3 scripts/test_importer_scaffold_inject.py` はEXIT 0。
+- **フィデリティ**：
+  - JA本文字数／unique出典：amalia-ulman `1045→4220` / `4→22`、artie-vierkant `920→3816` / `3→22`、eileen-quinlan `839→5199` / `3→24`、james-welling `687→6394` / `4→30`、lucas-blalock `888→3831` / `5→22`、shannon-ebner `959→4270` / `5→25`、thomas-demand `850→8409` / `4→55`。合計 **`6192→36139` / `28→200`**。
+  - EN本文字数／unique出典：amalia-ulman `2050→10106` / `4→22`、artie-vierkant `2078→10347` / `3→22`、eileen-quinlan `1986→13370` / `3→24`、james-welling `3167→16571` / `4→30`、lucas-blalock `1769→10160` / `5→22`、shannon-ebner `1933→10726` / `5→25`、thomas-demand `3495→23117` / `4→55`。合計 **`18478→95397` / `28→200`**。
+  - 全7名JA/ENともsup-ref dangling 0。JA/ENのタグ開閉（div / section）一致、レビューマーカー5種・二重ダッシュ・`prep-block`残存0。
+- **検証**：
+  - `check_content_loss.py`はOK、`preflight.py`はEXIT 0。対象7slugとPHASE 3対象9slugの`check_en_entry.py`はEXIT 0、builder `--dry-run`は全件SKIPPED 0。
+  - JSON-LD Personキー集合は対象JA/ENで減少0。EN不可視要素はGA `G-2VRTV8BZEJ` / canonical / hreflang / og:image / JSON-LDがbaselineと同数。対象7名の§RELリンク切れ0。
+  - `data/photographers-en-content.json`はキー数306不変、`_meta`不変。最終変更キー17件は7名バッチ、PHASE 3の実差分8件、Amazon相乗り2件のみ。`data/photographers-en-ui-terms.json`の差分は上記1件のみ。
+  - 禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / new-design / relations）の差分0。
+- **PHASE 3相乗り**：
+  - EN §RELの裸名リンク化15件 / 8slugを確認。うちthe-atlas-group-walid-raadのSophie Calle / Joachim Koester 2件は作業開始時点ですでに正本JSON・EN HTMLとも指定リンク済みで、残る13件を追加。全15 hrefは各1件、リンク先11ファイルは全て実在。再生成差分は§RELだけで、本文・thesis・出典・JSON-LDは不変。
+  - becher EN JSON-LD PersonへJAと同じ `birthDate:"1931"` / `deathDate:"2007"` を追加。Personキー集合はこの2キーの増加だけで、本文・§REL・出典は不変。
+  - PHASE 3対象のJA 8slug+becherは原則差分0。後述のAmazon是正対象と重なるroe-ethridge / tracey-moffattだけは、監督追加指示どおりJA写真集CTAのみ変更し、それ以外は不変。
+- **今回のついで対応（HEAD由来Amazon検索URL8本）**：
+  - サイト全体再走査で見つかったroe-ethridge / sharon-lockhart / tracey-moffatt / yto-barradaのJA/EN各2本を是正。監督が書誌・版を照合した6本はamazon.comの検証済み`/dp/`へ置換し、`Tracey Moffatt: Montages`と`Yto Barrada: Part-Time Abstractionist`は検証済み商品ページが無いためCTA要素だけを除去。書名・meta・noteは不変。
+  - 旧8URLを理由付きintentional replacementとして宣言。4slugの`check_en_entry.py`はEXIT 0。trackedサイト全体の `amazon.*/(s?|s/ref|gp/search|field-keywords)` URLは0件。
+  - **フォローアップ候補**：Montages / Part-Time Abstractionistへ後日リンクを付ける場合は、Daisuke側での書誌・商品ページ確定が必要。代替URLは推測しない。
+- **素材SHA-256**：作業前後で14ファイルすべて不変。
+  - amalia-ulman：JA `28a2ded1a0c15e0757c9eed94cac8c2871f5325f5dca94e3d6886bc9e68d1b12` / EN `12864610062e8bc4548a23742076abc3be9208c69c72728e43b50b7d213c204e`
+  - artie-vierkant：JA `7c410849897dedcbe4a6d8ca36ba33d90655c7f1398c0751b9f7cb93412eceb6` / EN `b838159786041dffb1a345aafb60e9e6060afa0d80bfa0861ed62df749a7023e`
+  - eileen-quinlan：JA `4b3bab4b2ea90db661a65800518f74ab08828638225f5caa05b0a59c1916da7a` / EN `1f830849b2b1a33a199b11d070e57755b01610fb44ab7a6675d4dfe76e42b461`
+  - james-welling：JA `fc6afb868c3309549a854a43117502195b33017d0bf3b1f51f21b1a66ae7ae43` / EN `fabf12a7ebf7a7fcaa457becd47531418ada6718615184d6990226aef9338180`
+  - lucas-blalock：JA `76ed60ac366ed881be320ed935dd02eeff33b7c9b44b78c21d4f91bca24d1634` / EN `7b4f458a363d06c1d09c09d341204ca3caa76fbf0861e6c9970b3008d415292c`
+  - shannon-ebner：JA `04691780a39415c3c599cf629a46623086509fa326067f8775b44936fe632d48` / EN `47ba617a7612353fd6dfff0b4767394a3c8d075bb9a30e862bf4711535d388d9`
+  - thomas-demand：JA `9406ed950ef53038be907f8b771e534d2f2a964e5a98756fb6a66307508608cc` / EN `b29cbc07d129f1cfd736d672f90626385f6598bd0418c800e3cb214cbc69d935`
+- **面（tracked 34）**：JA写真家HTML 11、EN写真家HTML 17、EN正本JSON 1、ui-terms 1、engine/test/intentional-replacements 3、本ログ1。禁止面差分0。
+- **backup**：7名バッチのJA/EN backupとspecは未追跡のまま保持。GH Pages実機確認後に削除する。
+- **commit**：Daisuke承認のうえ push（2026-07-27）。
+- **wall-time**：60分（Daisuke実測。7名バッチ＝1名あたり約8.6分。Opus監督+Codex実装構成。engine一般化1件＋相乗りタスク3件〈EN §REL裸名15件・becher JSON-LD・Amazon検索URL8本是正〉を含むため、11名50分（1名4.5分）より1名あたりは遅い。刷新そのものの速度は同等）。
