@@ -1460,3 +1460,42 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **backup**：7名バッチのJA/EN backupとspecは未追跡のまま保持。GH Pages実機確認後に削除する。
 - **commit**：Daisuke承認のうえ push（2026-07-27）。
 - **wall-time**：60分（Daisuke実測。7名バッチ＝1名あたり約8.6分。Opus監督+Codex実装構成。engine一般化1件＋相乗りタスク3件〈EN §REL裸名15件・becher JSON-LD・Amazon検索URL8本是正〉を含むため、11名50分（1名4.5分）より1名あたりは遅い。刷新そのものの速度は同等）。
+
+## 2026-07-30 — 4名バッチupdate（ChatGPT新素材で本文全刷新・Opus監督/Codex実装）
+
+- **種別**：update。対象は `natalie-czech` / `rashid-johnson` / `ryan-mcginley` / `viviane-sassen`。既存JA/EN本文・thesis・出典・§REL等を、`photography history/re-photographer/20260729/` のChatGPT新素材8ファイルで全刷新。カード・archive・年代・国・運動・スターマップ・共通CSS等は不触。
+- **分業と停止**：Opus（メイン会話）が監督、Codex（`workspace-write` / `approval=never`）が実装。Codexの自主停止は**2回**。①PHASE 1で`--update-existing`が毎回無条件印字する「works ui-terms追加候補」を検出結果と誤認して停止。監督が実検出器`--bundle-to-en`を独立実行し「対象なし」＝定型注意書きと実測して却下。②PHASE 2で旧出典URL3本の消失をpreflightがHARD検出して停止。監督が新素材への非存在を実測し、新素材20出典への意図的総入れ替えとして承認。これとは別に、監督指定のパイロット完了停止とPHASE 2完了停止を各1回実施し、承認後だけ次phaseへ進行。
+- **パイプライン**：各slugで `import_chatgpt_photographer.py --precheck` → `--update-existing --prepare` → `--update-existing --apply --force` → `--merge-to-en --apply` → `build_photographers_en.py --slug`。ENは正本`data/photographers-en-content.json`経由で再生成し、EN HTMLの直接編集なし。既存維持＝hero眉 / Years / Country / Movement、素材採用＝Keywords / description / 本文 / 出典 / thesis / §REL。works ui-terms追加は0件。
+- **手作業点 / engine改良**：手作業は3系統。①JA/EN §RELの既存優先add-only統合と実在ページへのリンク化、②素材ENのJA向け§REL href 2本をEN正本で`/en/`付きへ正規化、③旧出典URL3本の意図的消失宣言。手作業ボトルネックは、ryan-mcginleyの同義語・人物重複を既存解説ごと保持する§REL統合と、JA複合1項目をEN builderのディレクトリ形式へ写像する確認。**engine改良0件**。
+- **監督判断**：
+  1. **§RELは削除ゼロ方針**を採用。spec §14 Bの機械適用では削除承認になり得るが、写真概念主義↔コンセプチュアルアート、構成写真↔ステージド写真は実質同一物で条件3が成立しないため、「既存項目を全維持したうえで素材の非重複項目を追記、重複は既存優先」に変更。結果、Related削除SKIPは発生せずbuilder `--force`不要。
+  2. §REL人名は、実ページのある`shannon-ebner` / `thomas-ruff` / `larry-clark` / `wall` / `gregory-crewdson` / `manray` / `mika-ninagawa`をリンク化。ページ非実在のEd Ruscha / John Baldessari / Lorna Simpson / Carrie Mae Weems / David Hammons / Glenn Ligon / Deana Lawsonは裸テキスト維持。素材の運動語11件は対応movementsページが無いため全て裸テキスト。
+  3. ryan-mcginleyの「ジェフ・ウォール／グレゴリー・クリュードソン」は、JAでは1項目のまま各人名を`wall` / `gregory-crewdson`へリンク化。EN builderのディレクトリ形式では2リンク項目に分かれるため、両項目の解説に相手方を明記。
+  4. 素材ENの§REL内リンクがJAページを指すバグ（`/photographers/goldin.html` / `/photographers/lee-miller.html`）を、EN正本JSON側で`/en/`付きへ正規化。素材原本は不触。
+  5. 旧出典URL3本（`https://www.hauserwirth.com/artists/2830-rashid-johnson` / `https://www.moma.org/collection/artists/42465` / `https://www.moma.org/artists/72358`）の消失は、新素材20出典への意図的総入れ替えとして承認し、`scripts/intentional-replacements.json`へ宣言（12→15要素、既存12要素は完全一致）。3本とも新素材6ファイルに非存在をgrep実測し、作家プロフィール一覧ページが個別作品・展覧会URLへ置換された形と判断。
+  6. works ui-terms追加候補による停止は誤検知。`--update-existing`が無条件印字する定型行で、実検出器`--bundle-to-en`は4slugとも「対象なし」。worksチップのラベルがJA素材側から英語表記で、和訳対象が存在しない。
+- **`photographer-index`の削除（既知・実害なし）**：全8ページで`<script id="photographer-index" type="application/json">`が1→0。今回のregressionではなくimporterの既存挙動。サイト全体でもJA 304ページ中210・EN 320ページ中210のみが保持し、2026-07-27バッチの7名も既に0（push済・受容済）。消費側は`getElementById('photographer-index')`がnullなら`fetch('/card-data.json')`へフォールバックし、新ページにも当該コードがJA/ENとも残存するためページ内検索は動作する。ファイルサイズ大幅減の主因もこれで、JAは107〜108KB→65〜71KB、ENは105〜106KB→68〜73KB。
+- **フィデリティ**：
+
+  | slug | JA本文字数 | EN本文字数 | JA unique出典 | EN unique出典 |
+  |---|---:|---:|---:|---:|
+  | natalie-czech | 781→3,945 | 1,811→10,631 | 4→20 | 4→20 |
+  | rashid-johnson | 1,128→4,871 | 2,311→12,742 | 5→20 | 5→20 |
+  | ryan-mcginley | 855→4,557 | 1,947→12,228 | 4→20 | 4→20 |
+  | viviane-sassen | 957→5,085 | 2,041→13,196 | 4→20 | 4→20 |
+  | **合計** | **3,721→18,458** | **8,110→48,797** | **17→80** | **17→80** |
+
+  全4名JA/ENともsup-ref dangling 0、レビューマーカー0、JA §REL二重ダッシュ0、`prep-block` 1→0。タグ開閉はJA全員div 92/92・section 9/9、ENはnatalie-czech 133/133・rashid-johnson 132/132・ryan-mcginley 133/133・viviane-sassen 133/133、sectionは全員9/9。
+- **ファイルサイズ（bytes）**：natalie-czech JA `107759→65840` / EN `105519→68641`、rashid-johnson JA `108997→69184` / EN `106548→71220`、ryan-mcginley JA `108407→68558` / EN `106239→71891`、viviane-sassen JA `108471→71335` / EN `105941→73239`。
+- **Amazon / photobooks**：4名ともJA/ENの写真集欄は「準備中」プレースホルダでAmazonリンク0。既存維持ルール（既存があれば維持／無ければ素材採用、ASIN解決はバッチ内で行わない。Daisuke再確認2026-07-30）は今回no-op。EN正本の準備中`photobooks_html`は4名ともbyte一致（227/228字）、同セクションの`data-nosnippet`は1→1、新規`/s?k=`検索URL0。公開HTMLの`data-nosnippet`はJA 9→8 / EN 8→7で、WORKSの`prep-block`実本文化1件分のみ減少。
+- **検証**：4slugの`check_en_entry.py`は全件OK。`check_content_loss.py` OK、`preflight.py` EXIT 0、builder `--dry-run`は4slugともSKIPPED 0。preflightは上記intentional-replacement 3件をINFO適用し、4名JA/ENの`data-nosnippet`各1減を既知WARNとして表示（既存stale宣言WARNは今回の回帰ではない）。JSON-LD Personキーは全4名JA 8→8 / EN 9→9で減少0。EN不可視要素は全員GA 2 / canonical 1 / hreflang 3 / og:image 1 / JSON-LD 2でbackupと同数。§RELリンクはJA/ENとも実ファイルを`ls`確認して切れ0、EN §REL内の`/photographers/`直下href 0。
+- **正本・禁止面**：`data/photographers-en-content.json`はキー数306不変、`_meta`不変、変更キーは対象4slugのみ。`data/photographers-en-ui-terms.json`差分0。禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / new-design / relations / supplement / essay-overrides）差分0、他写真家ページ差分0。
+- **面（tracked 11）**：JA写真家HTML 4、EN写真家HTML 4、EN正本JSON 1、intentional-replacements 1、本ログ1。`docs/importer-scaffold-inject-spec.md`のAmazonリンク優先順位ルール13行は作業前からあるDaisukeの別件未コミット差分で、この面数に含めず不触。
+- **素材SHA-256**：作業前後で8ファイルすべて不変。
+  - natalie-czech：JA `0783670ba2faa2d43dbae164d9658f3958e9cad57b4934fe4c58264e66baaf7b` / EN `11d4aeb7d3f1283f486c923f8921ebb167a4f636e83e9229ae4c491b7b0f93b3`
+  - rashid-johnson：JA `eff0dacd4bad0c544a48d13d70dafefbb61a6837727a9f62ee74c822d4f61217` / EN `3ba273f038da17d66f1f6ad056e26f351f690032f93bb8303ddccbcc77e6e255`
+  - ryan-mcginley：JA `89a29df1ab87f89d05ea11f2453408749621ca05c29e5dbb654593386f7f3e24` / EN `fa76aea94a500afc0be49649f89e73c5e5da28e55fb192b302e9d4ed05ca65ff`
+  - viviane-sassen：JA `7c5a7c2cdf3f3e1530dd7ea87aed291bdd9103c83a469f13f06ccbda6937aa33` / EN `50ccff9c470a80eed9bd1caf7afe2a7b3f539df0a4b608d84d4f7cf54ebadfe7`
+- **backup**：4名分のJA/EN backup各4件と`scripts/<slug>-spec.json` 4件は未追跡のまま保持。GH Pages実機確認後に削除する。
+- **commit**：Daisuke承認のうえ push（2026-07-30）。
+- **wall-time**：27分（Daisuke実測。4名バッチ＝1名あたり約6.8分。Opus監督+Codex実装構成。相乗りタスクなし・素材が過去バッチより清潔〈`rev-*`マーカー0・Amazonリンク0・存在しない内部リンク0・works ラベル英語表記済〉だったため、7名60分（1名8.6分）より1名あたり速い。11名50分（1名4.5分）より遅いのはバッチ規模が小さく固定費の按分が効かないため）。

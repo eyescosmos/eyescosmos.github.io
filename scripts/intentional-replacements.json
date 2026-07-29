@@ -70,5 +70,23 @@
     "url": "https://www.amazon.co.jp/s?k=Yto+Barrada+Part-Time+Abstractionist",
     "reason": "検証済みAmazon商品ページが存在しないためCTAを除去",
     "declared": "2026-07-27"
+  },
+  {
+    "slug": "rashid-johnson",
+    "url": "https://www.hauserwirth.com/artists/2830-rashid-johnson",
+    "reason": "新素材20出典への総入れ替えに伴う旧出典URLの意図的削除（作家プロフィール一覧ページ→個別作品・展覧会URLへ置換）",
+    "declared": "2026-07-30"
+  },
+  {
+    "slug": "rashid-johnson",
+    "url": "https://www.moma.org/collection/artists/42465",
+    "reason": "新素材20出典への総入れ替えに伴う旧出典URLの意図的削除（MoMA作家一覧→個別作品・展覧会URLへ置換）",
+    "declared": "2026-07-30"
+  },
+  {
+    "slug": "ryan-mcginley",
+    "url": "https://www.moma.org/artists/72358",
+    "reason": "新素材20出典への総入れ替えに伴う旧出典URLの意図的削除（MoMA作家一覧→MoMA個別URL4本ほかへ置換）",
+    "declared": "2026-07-30"
   }
 ]
