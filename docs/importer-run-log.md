@@ -1529,3 +1529,11 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **監督が独立実測で見つけた欠陥（ガード未検出）**：JA §REFの旧「関連データベース・アーカイブ」リンクが素材の§REFで総入れ替えされ、ENは merge の skip-empty で保持されるため**日英が非対称**になっていた。`preflight.py` も `check_content_loss.py` も検出しない。5名計14リンクをJAへadd-only復元して集合一致させた。§REL同様「§REFも削除ゼロ・add-only・既存優先」を今後の既定とする。
 - **commit**：Daisuke承認のうえ push（2026-07-30）。
 - **wall-time**：40分（Daisuke実測。5名バッチ＝1名あたり約8.0分。Opus監督+Codex実装構成。相乗りタスク1件〈サイト全体の内部デッドリンク監査＋7箇所是正〉と、監督の前提誤りによる往復2回を含む。相乗り無し・素材清潔だった4名27分（1名6.8分）より1名あたり遅いのは、この往復2回と§REF非対称の発見・14リンク復元が加わったぶん）。
+
+## 2026-07-30 — preflight に内部デッドリンク検査を追加（種別=other / ガード追加）
+
+- **動機**：同日の0730バッチで、ChatGPT素材の §REL が実在しない slug（`bernd-hilla-becher` / `sugimoto` / `helen-van-meene`）を指していたが、`preflight.py` に**ファイル実在判定が1つも無く**（`os.path.exists` 等0件）機械が検出できなかった。単発スクリプトで初めてサイト全体7箇所（7種8箇所のうち`/en/colophon.html`以外）を発見したため、同種の再発を自動で止める。Daisuke判断で「検査のみ追加／素材の正規化プリステップは見送り」。
+- **実装**：`scripts/preflight.py` に `check_internal_dead_links()` を追加し `main()` の `check_en_lang_toggle_active()` 直後へ配線。公開HTMLの `href="/….html"` を **URLデコードしてから**実在判定する（`movements/` は日本語ファイル名が正のため、デコードを忘れると全件デッドリンクに見える）。段階付けは preflight の設計方針（HARD は現在グリーンな不変条件のみ）に合わせた: **変更したページのデッドリンク=HARD / 未変更ページの既存デッドリンク=WARN / `KNOWN_MISSING_HREFS`=既知WARN**。コロフォン2件（`/colophon` 900ページ・`/en/colophon.html` 1ページ）を方針未決として辞書登録。
+- **検証（4挙動を実測）**：①クリーンツリーで EXIT 0・コロフォン2件が既知WARN表示。②`photographers/nerhol.html` の `jikei-sato`→`tokihiro-sato` を1件注入すると **HARD FAIL でブロック**（`preflight: FAILED`）、revert で復帰。③`photographers/eugene-atget.html` のURLエンコード済み日本語href 5件を**誤検出0**。④`KNOWN_MISSING_HREFS` を空にすると未変更ページの `/en/colophon.html` が **HARD 0件・WARN 1件**に落ちる。
+- **面（tracked 3）**：`scripts/preflight.py`（+約75行）、`docs/generators-and-guards.md`（「機械チェック」節へ仕様・注意・是正方針を追記）、本ログ1。ページHTML・正本JSON・禁止面の差分0。
+- **wall-time**：Daisuke記入。

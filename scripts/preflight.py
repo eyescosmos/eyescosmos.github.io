@@ -21,6 +21,7 @@ import sys
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
+from urllib.parse import unquote
 
 REPO = Path(__file__).resolve().parent.parent
 GA_TOKEN = "googletagmanager"
@@ -1338,11 +1339,90 @@ def check_en_lang_toggle_active() -> None:
         )
 
 
+# 実在しないことが既知で、方針決定待ちの内部リンク（HARD にしない）。
+# `/colophon`（拡張子なし・900ページの標準フッター）と、toyoko-tokiwa EN だけが持つ
+# `/en/colophon.html` は同根の「コロフォンページ欠落」。ページ新設 or リンク削除の
+# 方針が決まり次第まとめて解消する。解消したらこの辞書から消すこと。
+KNOWN_MISSING_HREFS = {
+    "/colophon": "コロフォンページ未作成（方針未決・900ページの標準フッター）",
+    "/en/colophon.html": "同上（en/photographers/toyoko-tokiwa.html のみ拡張子つきで参照）",
+}
+
+INTERNAL_HREF_RE = re.compile(r'href="(/[^"\s]*?\.html)(?:[#?][^"]*)?"')
+
+
+def _internal_dead_links(html: str) -> list[str]:
+    """ページ内の内部リンク href="/….html" のうち、実ファイルが無いものを返す。
+    href は URL エンコードされている場合がある（movements/ は日本語ファイル名が正）ので
+    必ずデコードしてから実在判定する。デコードを忘れると全件デッドリンクに見える。"""
+    dead: list[str] = []
+    for href in dict.fromkeys(INTERNAL_HREF_RE.findall(html)):
+        if href in KNOWN_MISSING_HREFS:
+            continue
+        target = REPO / unquote(href.lstrip("/"))
+        if not target.exists():
+            dead.append(href)
+    return dead
+
+
+def check_internal_dead_links() -> None:
+    """内部リンクの実在検査。
+
+    - 今回の変更で触ったページのデッドリンクは HARD（＝この変更が入れた事故）
+    - 触っていないページの既存デッドリンクは WARN（既存ノイズなのでブロックしない）
+    - KNOWN_MISSING_HREFS は方針決定待ちとして既知 WARN
+
+    2026-07-30 の0730バッチで、ChatGPT素材の §REL が実在しない slug
+    （bernd-hilla-becher / sugimoto / helen-van-meene）を指していたのを
+    機械が検出できず、単発スクリプトで初めて7箇所見つかったため追加。
+    """
+    baseline = _baseline_ref()
+    touched = {rel for rel, _ in _touched_html(baseline, PUBLIC_HTML_DIRS)}
+
+    hard_hits: list[str] = []
+    warn_hits: list[str] = []
+    known_hit_hrefs: set[str] = set()
+    for d in PUBLIC_HTML_DIRS:
+        p = REPO / d
+        if not p.is_dir():
+            continue
+        for f in sorted(p.glob("*.html")):
+            if f.name.endswith("-backup.html") or f.name.startswith("google"):
+                continue
+            rel = str(f.relative_to(REPO))
+            html = f.read_text(encoding="utf-8", errors="ignore")
+            if is_redirect_stub(html):
+                continue
+            known_hit_hrefs |= {h for h in KNOWN_MISSING_HREFS
+                                if f'href="{h}"' in html}
+            dead = _internal_dead_links(html)
+            if not dead:
+                continue
+            entry = f"{rel} → " + ", ".join(dead[:6]) + (" …" if len(dead) > 6 else "")
+            (hard_hits if rel in touched else warn_hits).append(entry)
+
+    if hard_hits:
+        hard_failures.append(
+            f"今回変更したページに実在しない内部リンク {len(hard_hits)}件"
+            "（素材の slug 誤り／存在しないページへの href の疑い。"
+            "実ページがあるなら slug を是正し、無いなら裸テキストにする）: "
+            + " / ".join(hard_hits[:8]) + (" …" if len(hard_hits) > 8 else ""))
+    if warn_hits:
+        warnings.append(
+            f"既存ページに実在しない内部リンク {len(warn_hits)}件"
+            "（今回の変更対象外・ブロックしない）: "
+            + " / ".join(warn_hits[:8]) + (" …" if len(warn_hits) > 8 else ""))
+    for href in sorted(known_hit_hrefs):
+        known_warnings.append(
+            f"未作成ページへの既知リンク {href}: {KNOWN_MISSING_HREFS[href]}")
+
+
 def main() -> int:
     check_dup_ids_js()
     check_dup_ids_carddata()
     check_ga_coverage()
     check_en_lang_toggle_active()
+    check_internal_dead_links()
     check_orphan_class_tokens()
     check_en_content_loss()
     check_en_changed_slug_closure()

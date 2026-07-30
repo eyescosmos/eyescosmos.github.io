@@ -241,6 +241,20 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
   - **生成物の EN HTML を直接編集した疑い**（HTML 変更なのに JSON 不変）＝WARN
   - sup/cite・リンクの健全性＝WARN。手書き維持ページ（`annie-leibovitz` / `stieglitz`）は closure 例外。
   既存不具合 10 件は「触った時だけ」可視化され、無関係な push はブロックしない（スコープが baseline）。
+- **preflight の内部デッドリンク検査（`check_internal_dead_links` / 2026-07-30 追加）** — 公開HTMLの
+  `href="/….html"` を**URLデコードしてから**実在判定する。
+  - **今回変更したページのデッドリンク＝HARD**（push ブロック）。「この変更が入れた事故」と断定できるため
+  - **未変更ページの既存デッドリンク＝WARN**（既存ノイズなのでブロックしない）
+  - **`KNOWN_MISSING_HREFS`＝既知WARN**。方針決定待ちの `/colophon`（900ページの標準フッター）と
+    `/en/colophon.html` を登録済み。**コロフォンページを作る／リンクを外したらこの辞書から削除する**
+  - 追加動機：2026-07-30 の0730バッチで ChatGPT素材の §REL が実在しない slug
+    （`bernd-hilla-becher` / `sugimoto` / `helen-van-meene`）を指しており、preflight に
+    **ファイル実在判定が1つも無かったため機械が検出できず**、単発スクリプトで初めて7箇所見つかった
+  - **注意：`movements/` は日本語ファイル名が正**（`モダニズム.html` 等）なので、href のURLデコードを
+    忘れると全件デッドリンクに見える。是正するときも**エンコード済みhrefは正常なので直さない**
+  - 素材のslug誤りが出たら、**実ページがあるなら slug を是正**（`bernd-hilla-becher`→`becher`、
+    `sugimoto`→`hiroshi-sugimoto`、`helen-van-meene`→`hellen-van-meene`）、
+    **無いなら裸テキスト**にする（存在しないページへの href を作らない）
 - **preflight の EN ガード（写真家以外・2026-06-19 追加）** — 同じ baseline 比較で、触れた
   国別 / 年代・運動 / アーカイブ EN ページにも軽量保護をかける。**正本 JSON のエントリ内容消失＝HARD**
   （国別=`data/country-pages.json` の lead/nameEn/nameJa/codes、年代・運動=`data/taxonomy-en-content.json`
