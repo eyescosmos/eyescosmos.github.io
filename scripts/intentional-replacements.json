@@ -88,5 +88,11 @@
     "url": "https://www.moma.org/artists/72358",
     "reason": "新素材20出典への総入れ替えに伴う旧出典URLの意図的削除（MoMA作家一覧→MoMA個別URL4本ほかへ置換）",
     "declared": "2026-07-30"
+  },
+  {
+    "slug": "barbara-probst",
+    "url": "https://assets.moma.org/documents/moma_press-release_389305.pdf",
+    "reason": "新素材23出典への総入れ替えに伴う旧出典URLの意図的削除（MoMAプレスリリース→MoMA個別作品・展覧会・音声ガイドURLへ置換）",
+    "declared": "2026-07-30"
   }
 ]

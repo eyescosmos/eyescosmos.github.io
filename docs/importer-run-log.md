@@ -1499,3 +1499,33 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **backup**：4名分のJA/EN backup各4件と`scripts/<slug>-spec.json` 4件は未追跡のまま保持。GH Pages実機確認後に削除する。
 - **commit**：Daisuke承認のうえ push（2026-07-30）。
 - **wall-time**：27分（Daisuke実測。4名バッチ＝1名あたり約6.8分。Opus監督+Codex実装構成。相乗りタスクなし・素材が過去バッチより清潔〈`rev-*`マーカー0・Amazonリンク0・存在しない内部リンク0・works ラベル英語表記済〉だったため、7名60分（1名8.6分）より1名あたり速い。11名50分（1名4.5分）より遅いのはバッチ規模が小さく固定費の按分が効かないため）。
+
+## 2026-07-30 — 5名バッチupdate（ChatGPT新素材で本文全刷新・PHASE 2完了）
+
+- **種別**：update。`an-my-le` / `barbara-probst` / `jean-luc-moulene` / `jochen-lempert` / `simone-nieweg` のJA/EN本文・thesis・出典・§REL等を、`photography history/re-photographer/0730/` のChatGPT新素材10ファイルで全刷新。
+- **パイプライン**：各slugで `--precheck` → `--update-existing --prepare` → `--update-existing --apply --force` → `--merge-to-en` dry-run / apply → `build_photographers_en.py --slug`。ENは正本 `data/photographers-en-content.json` 経由で再生成し、EN HTMLの直接編集なし。
+- **手作業点 / bug / engine改良**：手作業3系統。①§RELの既存項目・annotationを既存表現優先で復元し、素材の非重複項目をadd-only追記。②素材§RELの誤slug `bernd-hilla-becher` を `becher` へ是正し、ENは `/en/photographers/` へ正規化。サイドナビ由来の `sugimoto` / `barbara-probst` / `helen-van-meene` は転用なし。③5名のJA §REFへbackupの「関連データベース・アーカイブ」計14リンクを素材リンクより上へ復元し、JA/ENの§REF集合を一致。bug 0、engine改良0。
+- **フィデリティ**：
+
+  | slug | JA本文字数 | EN本文字数 | JA unique出典 | EN unique出典 | JA bytes | EN bytes |
+  |---|---:|---:|---:|---:|---:|---:|
+  | an-my-le | 674→4,876 | 2,143→12,827 | 3→25 | 3→25 | 107,036→69,393 | 105,575→72,232 |
+  | barbara-probst | 738→5,198 | 1,720→13,255 | 3→23 | 3→23 | 106,957→70,441 | 105,034→72,095 |
+  | jean-luc-moulene | 765→5,452 | 2,463→14,130 | 3→27 | 3→27 | 108,030→72,570 | 106,409→74,792 |
+  | jochen-lempert | 787→4,781 | 2,376→12,691 | 3→24 | 3→24 | 107,550→69,768 | 105,961→72,490 |
+  | simone-nieweg | 776→4,768 | 2,524→12,563 | 3→22 | 3→22 | 108,091→69,095 | 106,686→71,060 |
+  | **合計** | **3,740→25,075** | **11,226→65,466** | **15→121** | **15→121** |  |  |
+
+- **構造・不可視要素**：全5名JA/ENともsup-ref dangling 0、revマーカー0、二重ダッシュ0、`prep-block` `2→0`。タグ開閉はJA div `75/75または76/76→95〜100/95〜100`・section全員 `8/8→9/9`、EN div `75/75または76/76→139〜154/139〜154`・section全員 `8/8→9/9`。節見出し数は全員JA/ENとも `7→8` で減少0。JSON-LD Personキーは全員JA `8→8` / EN `9→9`、減少0。ENのGA 2 / canonical 1 / hreflang 3 / og:image 1 / JSON-LD 2は全員backupと同数。
+- **§REF / §SRC**：5名全員でJA/ENの現§REF URL集合が一致（an-my-le 7 / barbara-probst 6 / 他3名各7）、§SRC URL集合も一致（25 / 23 / 27 / 24 / 22）。旧URLで両言語ページから消えたものは監督承認済みBarbara ProbstのMoMA PDF 1本だけ。`intentional-replacements.json`へ1件add-only宣言し、要素数 `15→16`、既存15要素は完全一致。
+- **§REL / Amazon**：JA/ENの§RELリンク先は全件 `ls` 実在、切れ0、EN §REL内の `/photographers/` 直下href 0。Simone Niewegだけ素材の `https://www.amazon.co.jp/dp/3829605944` をJA/ENへ各1本採用。他4名0、新規 `/s?k=`検索URL0。
+- **検証**：5slugの`check_en_entry.py`全件OK、`check_content_loss.py` OK、`preflight.py` EXIT 0、builder dry-runは全件SKIPPED 0。preflightはMoMA PDF 1件のintentional replacementをINFO適用し、各JA/ENの`data-nosnippet`各1減を既知WARNとして表示。既存stale宣言WARN15件は今回の回帰でなく不触。
+- **正本・禁止面**：`data/photographers-en-content.json`はキー数306不変、変更キーは対象5slugのみ、他301キーと `_meta` は値不変。禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / new-design / relations / supplement / essay-overrides / ui-terms）差分0、対象外写真家ページ差分0。
+- **素材SHA-256**：作業前後で10ファイルすべて不変（提示値と一致）。
+- **面（tracked 13）**：JA写真家HTML 5、EN写真家HTML 5、EN正本JSON 1、intentional-replacements 1、本ログ1。対象5名のJA/EN backup各5件とspec 5件は未追跡のまま保持。
+- **手作業ボトルネック**：§REL add-only統合の既存annotation復元と、§REF / §SRC旧URLのJA/EN集合比較・旧リンク14件のJA再移植。
+- **PHASE 3相乗り（種別=other）**：サイト内部デッドリンクを最小差分で是正。JAは `thomas-demand` 1件（`andreas-gursky`→`gursky`）、`sakiko-nomura` 4件（`nan-goldin`→`goldin` 1件、`nobuyoshi-araki`→`araki` 3件）、`miyako-ishiuchi` 1件（`fukase`→`masahisa-fukase`）、`nerhol` 2件（`tokihiro-sato`→`jikei-sato`）、`emerson` 1件（存在しない`group-f64`へのアンカーを解除）。Emerson ENは正本JSONの同アンカーだけを解除してbuilder再生成し、HTML差分はアンカー解除1行と承認済みテンプレ追随4行のみ（`data-nosnippet` `3→7`、Worksの`↗` `5→8`）。8ディレクトリ1,020 HTML・内部HTML href 17,120件をURLデコード後に再監査し、残存デッドリンクは既知の `en/photographers/toyoko-tokiwa.html`→`/en/colophon.html` 1件のみ。PHASE 3対象は0件。touchedはJA 5、EN 1、EN正本JSON 1、本ログ1（既存バッチ差分との重複を含む）。engine改良0、フィデリティN/A。
+- **監督の指示ミスと往復**：Codexの自主停止は**4回**、うち**2回は監督の前提誤り**。①`data/photographers-en-content.json` の `pages` キーが拡張子つき `<slug>.html` であることを見落とし、拡張子なしで存在確認して「5slug未登録・キー数306→311」という誤条件を渡した（実際は全件登録済み・306不変）。同じ誤りでPHASE 3の `emerson` にも「EN正本未登録＝EN HTML直編集が正しい」と誤指示した（実際は登録済みで、JSON修正＋再生成が正）。②`sakiko-nomura` の `nobuyoshi-araki` を href集合化して数えたため「2箇所」と伝えたが実際は3箇所（§RELの1件を落としていた）。残り2回は正当な停止（Barbara ProbstのMoMA PDF消失のHARD検出／emerson EN再生成が指定外の4行差分を生む件）で、いずれも監督が実測して承認した。**再発防止**：正本JSONの登録有無は必ず `<slug>.html` で照合するか `build_photographers_en.py --slug S --dry-run` の SKIPPED 有無で判定する。href件数は集合化せず出現回数で数える。
+- **監督が独立実測で見つけた欠陥（ガード未検出）**：JA §REFの旧「関連データベース・アーカイブ」リンクが素材の§REFで総入れ替えされ、ENは merge の skip-empty で保持されるため**日英が非対称**になっていた。`preflight.py` も `check_content_loss.py` も検出しない。5名計14リンクをJAへadd-only復元して集合一致させた。§REL同様「§REFも削除ゼロ・add-only・既存優先」を今後の既定とする。
+- **commit**：Daisuke承認のうえ push（2026-07-30）。
+- **wall-time**：40分（Daisuke実測。5名バッチ＝1名あたり約8.0分。Opus監督+Codex実装構成。相乗りタスク1件〈サイト全体の内部デッドリンク監査＋7箇所是正〉と、監督の前提誤りによる往復2回を含む。相乗り無し・素材清潔だった4名27分（1名6.8分）より1名あたり遅いのは、この往復2回と§REF非対称の発見・14リンク復元が加わったぶん）。
