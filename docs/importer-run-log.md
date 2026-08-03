@@ -1537,3 +1537,41 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証（4挙動を実測）**：①クリーンツリーで EXIT 0・コロフォン2件が既知WARN表示。②`photographers/nerhol.html` の `jikei-sato`→`tokihiro-sato` を1件注入すると **HARD FAIL でブロック**（`preflight: FAILED`）、revert で復帰。③`photographers/eugene-atget.html` のURLエンコード済み日本語href 5件を**誤検出0**。④`KNOWN_MISSING_HREFS` を空にすると未変更ページの `/en/colophon.html` が **HARD 0件・WARN 1件**に落ちる。
 - **面（tracked 3）**：`scripts/preflight.py`（+約75行）、`docs/generators-and-guards.md`（「機械チェック」節へ仕様・注意・是正方針を追記）、本ログ1。ページHTML・正本JSON・禁止面の差分0。
 - **wall-time**：Daisuke記入。
+
+## 2026-08-03 — 14名バッチupdate（ChatGPT新素材で本文全刷新・Opus監督/Codex実装）
+
+- **種別**：update。対象は `annika-von-hausswolff` / `beate-gutschow` / `jitka-hanzlova` / `marnix-goossens` / `takashi-yasumura` / `dirk-braeckman` / `elina-brotherus` / `hellen-van-meene` / `lidwien-van-de-ven` / `olivo-barbieri` / `rut-blees-luxemburg` / `santiago-sierra` / `santos-r-vasquez` / `tacita-dean`。`0803/` のChatGPT新素材28ファイルでJA/EN本文・thesis・出典・§REL等を全刷新。Annikaをパイロットとして監督が独立実測・承認後、残り13名を3〜4名単位で中間検査しながら実施。
+- **パイプライン**：各slugで `--precheck` → `--update-existing --prepare` → `--update-existing --apply --force` → `--merge-to-en` dry-run / apply → `build_photographers_en.py --slug`。ENは正本 `data/photographers-en-content.json` の拡張子つきキー経由で再生成し、EN HTML直接編集なし。hero眉 / Years / Country / Movementは既存維持、AmazonのASIN・`/dp/`調査は不実施。
+- **手作業点 / bug / engine改良**：手作業3系統。①§RELを既存項目・既存annotation優先のadd-onlyで統合し、素材の非重複項目を追記。②backupの§REF旧リンクを素材リンクより上へ復元し、全14名でJA/EN URL集合を一致。③JA §RELの裸人名を実在確認して4件リンク化。bug 0、engine改良0。手作業ボトルネックは§RELの人物同定・slug実測と、機械が検出しない§REF旧URLの集合比較。
+- **フィデリティ**：
+
+  | slug | JA本文字数 | EN本文字数 | JA unique出典 | EN unique出典 | JA bytes | EN bytes |
+  |---|---:|---:|---:|---:|---:|---:|
+  | annika-von-hausswolff | 1,247→5,646 | 3,693→12,917 | 4→22 | 4→22 | 110,377→72,051 | 110,480→74,071 |
+  | beate-gutschow | 1,263→4,480 | 5,117→11,635 | 4→22 | 4→22 | 112,331→69,018 | 113,445→71,991 |
+  | jitka-hanzlova | 664→5,372 | 3,162→12,952 | 3→22 | 3→22 | 107,681→70,076 | 108,875→72,522 |
+  | marnix-goossens | 657→4,427 | 3,045→10,438 | 3→22 | 3→22 | 107,310→68,180 | 108,806→69,838 |
+  | takashi-yasumura | 628→5,139 | 2,833→12,395 | 3→22 | 3→22 | 107,429→69,484 | 108,708→72,828 |
+  | dirk-braeckman | 949→3,422 | 3,630→9,596 | 4→25 | 4→25 | 108,438→65,997 | 109,448→69,565 |
+  | elina-brotherus | 830→3,591 | 3,200→9,767 | 3→27 | 3→27 | 108,280→67,125 | 108,731→70,962 |
+  | hellen-van-meene | 738→3,919 | 2,223→10,655 | 3→20 | 3→20 | 107,943→69,138 | 106,069→71,284 |
+  | lidwien-van-de-ven | 750→4,378 | 2,023→11,301 | 2→17 | 2→17 | 108,176→69,046 | 105,776→70,393 |
+  | olivo-barbieri | 839→3,632 | 3,167→10,011 | 3→26 | 3→26 | 108,178→67,654 | 108,714→71,231 |
+  | rut-blees-luxemburg | 862→3,783 | 3,161→10,123 | 3→25 | 3→25 | 108,730→67,606 | 109,051→71,148 |
+  | santiago-sierra | 833→4,825 | 2,491→12,418 | 2→20 | 2→20 | 108,530→71,955 | 106,220→73,992 |
+  | santos-r-vasquez | 4→2,840 | 12→6,516 | 0→13 | 0→13 | 102,215→61,184 | 100,599→61,478 |
+  | tacita-dean | 682→3,852 | 3,047→9,886 | 3→27 | 3→27 | 107,492→67,439 | 108,224→70,762 |
+
+- **Santos抽出確認**：素材が他より小さいため個別確認。JA/ENとも本文節4、JA本文2,840字 / EN本文6,516字、unique出典13 / 13、sup-ref dangling 0で、空抽出・節欠落なし。
+- **§REL相乗り**：新規リンク化4件＝アン＝ソフィ・シデン→`ann-sofi-siden`、サンナ・カンニスト→`sanna-kannisto`、リネケ・ダイクストラ→`rineke-dijkstra`、シンディ・シャーマン→`sherman`。見送り16件＝ベルティアン・ファン・マネン、エルスペス・ディーデリクス、ロレッタ・ラックス、イネス・ファン・ラムスウィールド／ヴィノード・マタディン、アラン・セクラ、マーサ・ロスラー、アリ・マルコポロス、エミリー・ジャシール、ハンス・ハーケ、アラン・セクラ、タニア・ブルゲラ、テレサ・マルゴレス、ウィリアム・リーヴィット、クリストファー・ウィリアムズ、イ・ジヨン、マレン・リュプケ＝ティドウ。いずれも候補slugを`ls`してページ非実在のため裸テキスト維持。
+- **素材誤slug是正**：`cindy-sherman→sherman` / `jeff-wall→wall` / `andreas-gursky→gursky` / `welling→james-welling` / `ruff→thomas-ruff` / `kawauchi→rinko-kawauchi` / `sugimoto→hiroshi-sugimoto`。JA/ENとも実在slugへ統一。Hellen本人のslug・canonical等は全て `hellen-van-meene`（l 2個）を維持。
+- **構造・不可視要素**：全14名JA/ENでJSON-LD Personキー減少0、sup-ref dangling 0、rev等レビューマーカー0、JA §REL二重ダッシュ0、`prep-block`残存0。div / sectionは全28ページで開閉一致。EN不可視要素は全員GA 2 / canonical 1 / hreflang 3 / og:image 1 / JSON-LD 2でbackupと同数。
+- **§REL / §REF / Amazon**：§RELリンク数（JA/EN）はAnnika 7/7、Beate 6/6、Jitka 3/3、Marnix 4/4、Takashi 7/7、Dirk 5/5、Elina 6/6、Hellen 4/4、Lidwien 2/2、Olivo 5/5、Rut 5/5、Santiago 1/1、Santos 1/1、Tacita 5/5。計122リンクを全件`ls`実在確認し切れ0、EN §RELの`/photographers/`直下href 0。§REF URL集合は全14名でJA/EN一致（6 / 6 / 6 / 6 / 6 / 5 / 6 / 13 / 10 / 6 / 6 / 13 / 5 / 6）。新規Amazon `/s?k=`検索URL0。
+- **検証**：3〜4名ごとの`check_content_loss.py`は全回OK、`preflight.py`は全回EXIT 0。最終も`check_content_loss.py` OK / `preflight.py` EXIT 0。14slugの`check_en_entry.py`は全件EXIT 0、builder `--dry-run`は全件EXIT 0・SKIPPED 0。Elinaの未翻訳語`フィンランド`WARN、data-nosnippetのJA/EN減少、既存stale intentional-replacement WARNのみ非ブロック。
+- **正本・禁止面**：`data/photographers-en-content.json`はpagesキー数306不変、変更キーは対象14slugの拡張子つきキーのみ、`_meta`不変。禁止面・対象外写真家ページのtracked差分0。
+- **素材SHA-256**：作業前後で28ファイルすべて不変（28/28一致、mismatch 0）。
+- **面（tracked 30）**：JA写真家HTML 14、EN写真家HTML 14、EN正本JSON 1、本ログ1。JA/EN backup各14件とspec 14件は未追跡のまま保持。
+- **監督の独立監査**：Codex報告を鵜呑みにせず、監督側で①§RELリンク122本の実在、②§REF URL集合のJA/EN一致、③JSON-LD Personキー、④sup-ref dangling、⑤div開閉、⑥h3数のJA/EN一致、⑦EN本文のCJK混入、⑧EN正本のキー数・変更キー・`_meta`、⑨素材28ファイルのSHA-256、⑩相乗りで見送った16人名のページ非実在、を全て再実測。Codex報告との齟齬0。`santos-r-vasquez` のEN JSON-LD PersonキーだけJA/他13名の9に対し8だが、backupも8で**今回の減少ではない**（元からbirthDate無し）ことを確認。
+- **事故・往復**：Codexの自主停止0、監督の前提誤り0。パイロット1名→監督監査→残り13名一括の型がそのまま通った。唯一の事象はMCPのアイドルタイムアウト（1800秒）でCodexの応答チャネルが切れたこと。作業自体は完走しており、以後の検証は監督側の独立実測で代替した。**14名規模のバッチはMCPのタイムアウトを超えうるため、次回以降は分割投入するか、タイムアウトを延ばしてから流す**。
+- **commit**：Daisuke承認のうえ push（2026-08-03）。
+- **wall-time**：48分（Daisuke実測。14名バッチ＝**1名あたり約3.4分**でこれまでの最速。既知記録は11名50分＝1名4.5分、5名40分＝1名8.0分、4名27分＝1名6.8分。バッチ規模が大きいほど固定費（spec読み・段取り・最終検証一式）が按分されて1名あたりが下がる傾向が、14名でも継続して確認できた。相乗りタスク1件〈JA §REL裸人名リンク化・4件〉を含む）。
