@@ -1575,3 +1575,31 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **事故・往復**：Codexの自主停止0、監督の前提誤り0。パイロット1名→監督監査→残り13名一括の型がそのまま通った。唯一の事象はMCPのアイドルタイムアウト（1800秒）でCodexの応答チャネルが切れたこと。作業自体は完走しており、以後の検証は監督側の独立実測で代替した。**14名規模のバッチはMCPのタイムアウトを超えうるため、次回以降は分割投入するか、タイムアウトを延ばしてから流す**。
 - **commit**：Daisuke承認のうえ push（2026-08-03）。
 - **wall-time**：48分（Daisuke実測。14名バッチ＝**1名あたり約3.4分**でこれまでの最速。既知記録は11名50分＝1名4.5分、5名40分＝1名8.0分、4名27分＝1名6.8分。バッチ規模が大きいほど固定費（spec読み・段取り・最終検証一式）が按分されて1名あたりが下がる傾向が、14名でも継続して確認できた。相乗りタスク1件〈JA §REL裸人名リンク化・4件〉を含む）。
+
+---
+
+## 2026-08-04 — sitemap 再生成（種別=other・軽量行）
+
+- **対象**：7月に追加した4名（`aya-fujioka` / `eiko-yamazawa` / `mari-katayama` / `yuki-tawada`）が
+  `sitemap.xml` 未掲載だったため再生成。GSC効果検証の副産物として発見。
+- **サーフェス変更数**：2ファイル（`sitemap.xml`・`scripts/generate_sitemap.py`）。写真家ページ本体は無変更。
+- **結果**：766 → **774 URL**。追加8件（上記4名の JA+EN）、削除0件、lastmod更新357件
+  （git 実コミット日ベース。`archive.html` 等4件を `git log -1 --format=%as` と突き合わせ一致を検算）。
+- **地雷（重大・push前に検知）**：素で再生成したら **766 → 3,097 URL** に膨張。原因は `.claude/worktrees/` に
+  残っていた**3つの放置worktree（各131MB・サイト全体の完全な複製）**で、2,322件の重複URLが流入していた。
+  `generate_sitemap.py` が `rglob("*.html")` でリポジトリ全走査する一方、ドットディレクトリの除外が
+  無かったため。**そのまま push していれば全ページ分の重複コンテンツをGoogleへ提出していた。**
+  差し戻したうえで生成元に除外を追加（再発防止）。
+- **生成元の恒久修正2件**：①パス途中の `.` 始まりディレクトリを除外。②backup判定を
+  `-backup.html` 完全一致から `-backup\d*\.html` へ一般化（`movements/ステージド写真-backup2.html` が
+  すり抜けて1件混入していた）。
+- **検証の罠**：`git status --porcelain | grep '\.html$'` は git が日本語パスをクォートするため
+  **末尾の `"` で外れ、非ASCIIの未追跡HTMLを取りこぼす**（これで一度「未追跡ゼロ」と誤判定）。
+  同じく sitemap とディスクの突き合わせは `urllib.parse.unquote` 必須（素の basename 比較で
+  `jp-中山岩太.html` 等23件を「未掲載」と誤集計し、訂正した）。
+- **検証**：`check_content_loss.py` OK / `preflight.py` EXIT 0。WARN は既存の stale
+  intentional-replacement 16件と colophon 2件のみで、本タスク非起因。tracked 差分は上記2ファイルのみ。
+- **未確定**：`fabian-marti` / `gabriel-orozco` は `noindex` 指定があるため sitemap 非掲載で正しいが、
+  noindex の理由は未確認（意図的か事故かDaisuke確認待ち）。
+- **状態**：**未コミット**（push 指示待ち）。
+- **wall-time**：（Daisuke 記入）

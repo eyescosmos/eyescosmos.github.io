@@ -27,6 +27,10 @@ def html_files() -> list[Path]:
     files: list[Path] = []
     for path in sorted(REPO_ROOT.rglob("*.html")):
         rel = path.relative_to(REPO_ROOT).as_posix()
+        # Dot-directories hold tooling state, not site content. `.claude/worktrees/`
+        # in particular keeps full site copies that would be emitted as duplicates.
+        if any(part.startswith(".") for part in rel.split("/")[:-1]):
+            continue
         if rel.startswith("templates/"):
             continue
         # new-design/ is gitignored local-only source and is not deployed.
@@ -34,7 +38,8 @@ def html_files() -> list[Path]:
             continue
         if re.fullmatch(r"google[0-9a-f]+\.html", path.name):
             continue
-        if path.name.endswith("-backup.html"):
+        # `-backup2.html` and friends are hand-made copies, not site content.
+        if re.search(r"-backup\d*\.html$", path.name):
             continue
         content = path.read_text(encoding="utf-8", errors="ignore")
         if re.search(r'<meta\s+name=["\']robots["\']\s+content=["\'][^"\']*noindex', content, re.I):
