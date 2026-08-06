@@ -309,7 +309,7 @@ sakiko-nomura 追加で踏んだ摩擦4点のうち3点をコード化（③は�
 |---|---|
 | precheck `hero眉が標準形ではありません` / `ジャンル語が GENRE_TAG / ui-terms に未登録` | **既存眉（card-data由来）を維持**。素材の眉は不採用。辞書に自動登録しない |
 | precheck `言語取り違えの疑い`（CJK比率が低い） | **誤検知**。タグ/CSS/JS込みの全ファイル比のため。本文のみなら CJK 60〜68% |
-| §REL の未登録運動が裸テキストで出る | **期待どおり**。存在しない movements ページへの href を作らないこと |
+| §REL の未登録運動が裸テキストで出る | **ページが実在しない場合に限り期待どおり**。存在しない movements ページへの href を作らないこと。**実在するのに裸なら張り忘れ＝要是正**（下の D 参照） |
 | Keywords / description が素材由来に差し替わる | **正**（本文・出典・thesis・§REL も素材が正） |
 | `data-nosnippet` の減少 | prep-block（準備中プレースホルダ）が実コンテンツへ置換された**正当な減少** |
 | EN §REL が JA より項目数が少ない | **サイト標準**。EN §REL はリンク項目のみ持ち、裸テキスト項目は落ちる（JA8→EN2 等） |
@@ -350,6 +350,11 @@ Keywords / description / 本文 / 出典 / thesis / §REL は**素材が正**。
 - EN不可視要素（GA / canonical / hreflang / og:image / JSON-LD）が backup と同数
 - タグ開閉一致（div / section）
 - §REL のリンク切れ0（href 先のファイル実在を `ls` で実測）
+- **§REL のリンク張り忘れ0**（＝裸テキストなのに実ページがある項目。`preflight.py` の
+  `check_rel_unlinked_names()` が WARN で出す。人名の slug は**必ず `card-data.json` の日本語名から引く**
+  — ローマ字化して `ls` すると `robert-frank`✗ / 実在は `robertfrank`✓ のように取りこぼす。運動は
+  JA `movements/<日本語表記>.html` / EN `en/movements/<slug>.html` の実ファイル存在で判定）。
+  **対象slugが既存分の WARN に出ていたら、同じバッチの中で一緒に是正する**（掃除だけの単独バッチは組まない）
 - レビューマーカー残存0・二重ダッシュ0・`prep-block` 残存0（残る場合は対応CSSの存在を確認）
 - `data/photographers-en-content.json` のキー数不変・変更キーが対象slugのみ・`_meta` 不変
 - 禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / new-design）差分0
