@@ -1692,3 +1692,42 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   JSON-LD ブロック304件が JSON として parse 可能。
 - **engine改良**：0（インポータ側は `1715c86f5` で修正済み）。フィデリティ列 N/A。
 - **wall-time**：（Daisuke記入）
+
+---
+
+## 2026-08-07 — 0807写真家6名 update バッチ完了
+
+- **種別 / 範囲**：update。`florian-maier-aichen` / `jean-luc-mylayne` / `pertti-kekarainen` / `sanna-kannisto` / `zbigniew-libera` / `zwelethu-mthethwa` のJA正本HTML、EN正本JSON、生成EN HTMLを0807素材で刷新。
+- **bug / engine改良**：engine変更0。EN builderのCountry表示で `フィンランド` が未翻訳になる辞書穴を実測し、`data/photographers-en-ui-terms.json` のcountriesへ `フィンランド → Finland` を純追加1行。
+- **手作業点**：§RELの裸人名を`card-data.json`のnameJa/nameEnからslug解決し、JA/EN実ファイル双方を確認して13件リンク化。素材の `構成写真 / Constructed Photography` は監督実測により正規語 `ステージド写真 / Staged Photography` と同一概念と判断し、見出し語を寄せて新注釈を維持。`構成された風景写真` は撮影・合成・再演・デジタル描画による風景の事実性検査であり、場面・光・人物・道具の事前構成を扱うステージド写真とは別概念のため裸を維持。PerttiのEN Yearsは素材 `1965–2021` を採らず旧 `1965–` を維持。Florianの旧Gagosian PDFは新素材に代替URLがなくpreflightが消失をHARD検出したため、既存ラベル・URLのままEN external linksへcarry-forward。手作業ボトルネックは§REL異表記の概念照合とlocale別リンク正本化。
+- **Related削除ガード**：旧ENから削除した項目はFlorian/Mylayne/Perttiの`Large-Format Color`各1、Liberaの`Conceptual Art`1、Mthethwaの`Social Documentary`と`Large-Format Color`各1。各対象について新JA素材§REL・新EN素材§REL・適用後JA§RELの3範囲で不在を確認し、新項目が旧movement leadと同一概念でないことも確認して、§14 B承認条件成立後にbuilder `--force`。
+- **フィデリティ（実測）**：
+
+  | slug | JA本文字数 | EN本文字数 | JA unique出典 | EN unique出典 | JA bytes | EN bytes |
+  |---|---:|---:|---:|---:|---:|---:|
+  | florian-maier-aichen | 869→4,609 | 3,235→11,973 | 4→25 | 4→25 | 109,103→68,320 | 110,013→72,496 |
+  | jean-luc-mylayne | 696→4,615 | 3,238→12,041 | 3→23 | 3→23 | 107,507→67,989 | 109,051→71,408 |
+  | pertti-kekarainen | 830→4,238 | 2,694→11,639 | 3→25 | 3→25 | 108,336→67,595 | 108,416→71,816 |
+  | sanna-kannisto | 890→4,645 | 2,898→12,569 | 3→26 | 3→26 | 108,339→68,243 | 108,324→72,825 |
+  | zbigniew-libera | 848→4,584 | 2,792→11,718 | 3→26 | 3→26 | 108,242→68,713 | 108,128→71,422 |
+  | zwelethu-mthethwa | 616→5,126 | 2,949→13,325 | 4→29 | 4→29 | 108,281→71,291 | 109,052→74,449 |
+  | **合計** | **4,749→27,817** | **17,806→73,265** | **20→154** | **20→154** | **649,808→412,151** | **652,984→434,416** |
+
+- **構造 / 正本**：全12ページでJSON-LD Personキー減少0、sup-ref dangling 0、レビューマーカー0、二重ダッシュ0、`prep-block` 0、div/section開閉一致。EN不可視要素は全員GA 2 / canonical 1 / hreflang 3 / og:image 1 / JSON-LD 2でbackupと同数。EN正本pages 306→306、変更キーは対象6slugのみ、各entryキー数不変、`_meta`不変。Amazon `/s?k=` は全12ページ0→0。
+- **§REL / SHA**：JA 17リンク / EN 17リンクの計34本をhrefごとに`ls`し切れ0。JAの裸項目13件は、対応するcard-data人物またはmovement実ファイルが無いため維持。preflightの変更ページ§RELリンク張り忘れは対象6slug 0件。0807素材12/12のSHA-256は作業前後一致（mismatch 0）。
+- **検証**：全6slugのEN builder `--dry-run`は全件`Would write 1 page(s)`でSKIPPED 0・WARN 0。`check_en_entry.py`は全6件OK。`check_content_loss.py` OK、`preflight.py` EXIT 0。新規WARNは全12ページの`data-nosnippet`各1減のみ（prep-block置換による承認済み減少）。
+- **面**：公開HTML12、EN正本1、EN UI翻訳辞書1、本ログ1。engine・禁止面・対象外写真家ページのtracked差分0。backup JA/EN各6とspec 6は未追跡。
+- **commit**：Daisuke承認のうえ push（2026-08-07）。
+- **wall-time**：37分（Daisuke実測。**下の相乗りタスク〈§REL張り忘れ22件の全消化〉を含むセッション全体の値**。6名バッチ＝**1名あたり6.2分**。既知記録は14名48分＝3.4分、10名55分＝5.5分、11名50分＝4.5分、4名27分＝6.8分、5名40分＝8.0分、7名60分＝8.6分。10名（5.5分）と同水準で、規模按分の傾向は継続。0806で入った engine 互換修正4系統が0807素材でそのまま効き **engine修正0・素材由来の停止0** で通ったぶん、6名という小規模にしては速い。停止は監督判断1回のみ〈`構成写真`→`ステージド写真` の異表記照合〉で、0806の「Related削除SKIPで停止」は §14 B の常設承認条件が効いて0回だった）。
+
+---
+
+## 2026-08-07 — §REL リンク張り忘れ22件を是正（種別=other・軽量行）
+
+- **位置づけ**：2026-08-06「preflight に §REL リンク張り忘れ検査を追加」の項で積み残しにした既存22件のクローズ。Daisuke指示「掃除だけの単独バッチは組まない／写真家 update バッチの中で一緒に是正する」に従い、**0807バッチ6名と同一コミットの相乗りとして**実施した（対象slugが来たものだけでなく全22件をまとめて消化）。以後この積み残しは残数0。
+- **対象 / 実装**：`preflight.py` が検出していた17ページ・22件（JA写真家16ページ・21件＋HAND_MAINTAINED_ENの`en/photographers/shoji-ueda.html` 1件）を、注釈・語順・区切り文字を変えず既存テキストへ`<a href>`を巻く1行置換だけでリンク化。EN builder・EN正本JSONは無変更。
+- **手作業点**：指定22リンク先を重複込みで1件ずつ`ls`して実在確認後に置換。Shojiの元ファイルがEOF改行なしだったため、apply時に付いた末尾改行だけを除去して差分を§REL 1行へ限定。手作業ボトルネックは1行に§REL全項目を持つHAND_MAINTAINED_ENの差分形状維持。
+- **実測**：対象差分は17ファイル、追加22行・削除22行。href 22本を再度個別`ls`しリンク切れ0。全17ページでdiv/section開閉数はHEAD比不変。`check_rel_unlinked_names()`は17ページ・22件→0ページ・0件となり、preflightの「既存ページ」「今回変更したページ」§RELリンク張り忘れWARNはいずれも0。
+- **検証**：`check_content_loss.py` OK、`preflight.py` EXIT 0、`git diff --check` OK。禁止面・対象外ファイル・engine・`data/photographers-en-content.json`の追加差分0。フィデリティ列N/A。
+- **touched files**：公開HTML17＋本ログ1。0807バッチと同一コミットで push（2026-08-07）。
+- **wall-time**：上の0807バッチ項の37分に含む（相乗りのため単独計測なし）。
