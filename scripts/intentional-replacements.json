@@ -94,5 +94,11 @@
     "url": "https://assets.moma.org/documents/moma_press-release_389305.pdf",
     "reason": "新素材23出典への総入れ替えに伴う旧出典URLの意図的削除（MoMAプレスリリース→MoMA個別作品・展覧会・音声ガイドURLへ置換）",
     "declared": "2026-07-30"
+  },
+  {
+    "slug": "michael-janiszewski",
+    "url": "https://www.iberlibro.com/9783900508302/Fotoarbeiten-1990-1999-Photography-3900508305/plp",
+    "reason": "新素材20出典への総入れ替えに伴い、旧書店URLをCamera Austria公式刊行物URLへ置換",
+    "declared": "2026-08-06"
   }
 ]

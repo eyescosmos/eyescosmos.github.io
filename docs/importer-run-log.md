@@ -1601,5 +1601,44 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
   intentional-replacement 16件と colophon 2件のみで、本タスク非起因。tracked 差分は上記2ファイルのみ。
 - **未確定**：`fabian-marti` / `gabriel-orozco` は `noindex` 指定があるため sitemap 非掲載で正しいが、
   noindex の理由は未確認（意図的か事故かDaisuke確認待ち）。
-- **状態**：**未コミット**（push 指示待ち）。
+- **状態**：push 済み（2026-08-04・`30a0f5fa4`）。
 - **wall-time**：（Daisuke 記入）
+
+## 2026-08-06 — aglaia-konrad パイロット（update / 0806バッチ）
+
+- **種別 / 範囲**：update。0806素材20ファイルのうち `aglaia-konrad` のJA/EN 2ファイルだけを使い、JA正本HTML・EN正本JSON・生成EN HTMLを全刷新。残り9名は未着手。
+- **wall-time**：下の「0806写真家10名 update バッチ完了」に合算（パイロット単独の計測は取っていない）。
+- **bug（4系統）/ engine改良**：①素材の thesis が `div.ph-thesis__body`、注IDが `src-N` のため抽出0になる互換性穴を、タグ寛容化＋抽出時 `src-N→cite-N` 正規化で修正。②現行entry-metaより旧hero/card `metaJa` を優先して Country=`1980s / 1980年代` と誤導出するspec穴を、entry-meta優先へ修正。③素材の節名が `h2.ph-section__name` のためEN sections.titleがNoneになりbuilderがTypeErrorになる穴を、同一タグ閉じの役割抽出へ修正。④素材JSON-LDの `deathDate:null` を公開JAへ足す穴を、非空値だけcarry-forwardするよう修正。
+- **手作業点（2系統）**：①JA §REL裸人名「畠山直哉」を候補slugの実在確認後にリンク化1件。②旧EN §RELのConceptual Art 1件削除について、JA素材§REL・EN素材§REL・適用後JA§RELの3範囲で不在を実測し、§14 B承認条件成立後にbuilder `--force`。手作業ボトルネックは素材マークアップ世代差の初回診断。
+- **フィデリティ（実測）**：JA本文（importer §body）1,022→3,602字、EN本文（sections body_htmlのタグ除去）4,037→10,646字。unique出典はJA/ENとも4→20。bytesはJA 109,443→64,076、EN 110,464→68,471。sup-ref dangling JA/EN 0。Amazon `/s?k=` はJA/ENとも0→0。
+- **構造 / 正本**：JSON-LD Personキー減少JA/ENとも0。EN不可視要素はGA 2 / canonical 1 / hreflang 3 / og:image 1 / JSON-LD 2でbackupと同数。divはJA 92/92・EN 132/132、sectionはJA/ENとも9/9。h3はJA/ENとも10、EN本文CJK 0。EN正本pages 306→306、変更キー `aglaia-konrad.html` のみ、`_meta`不変。
+- **§REL相乗り / SHA**：JA §RELリンク4件・EN 3件を全件`ls`し切れ0。リンク化1件＝畠山直哉→`naoya-hatakeyama`、見送り人名0。0806素材20/20のSHA-256は作業前後一致（mismatch 0）。
+- **面**：公開コンテンツ3面（JA HTML 1 / EN正本JSON 1 / 生成EN HTML 1）。加えてengine 1、本ログ1のtracked差分。backup JA/EN各1とspec 1は未追跡。禁止面・対象外写真家ページのtracked差分0。
+- **commit**：下のバッチ完了行と同一コミットで push（2026-08-06）。
+
+## 2026-08-06 — 0806写真家10名 update バッチ完了
+
+- **種別 / 範囲**：update。`aglaia-konrad` / `iosif-kiraly` / `jean-pierre-khazem` / `joachim-koester` / `justine-kurland` / `juul-hondius` / `kaoru-izima` / `luisa-lambri` / `marine-hugonnier` / `michael-janiszewski` のJA正本HTML、EN正本JSON、生成EN HTMLを0806素材で刷新。
+- **bug / engine改良**：パイロットで承認済みの4系統（Person JSON-LD空値スキップ、素材抽出時の`src-N→cite-N`正規化、thesis div＋節見出しタグ一般化、entry-meta Country優先）を本バッチへ適用。追加のengine修正0。
+- **手作業点**：§RELの裸人名を`card-data.json`の日本語名からslug解決し、裸運動をJA/EN各movement実在確認後にリンク化。人名6件、運動7件をリンク化。旧EN Related削除は対象ごとに新JA素材§REL・新EN素材§REL・適用後JA§RELの3範囲で不在確認後、承認済み`--force`を使用。JA §REFへ旧JA由来の外部リンク27件を加算復元し、全10名でJA/EN URL集合を一致。Michael Janiszewskiの旧IberLibro出典URLは新素材のCamera Austria公式刊行物URLへ置換済みのため、scoped intentional-replacementsを1件宣言。手作業ボトルネックはlocale別の§REL実在slug解決とRelated削除3点照合。
+- **フィデリティ（実測）**：
+
+  | slug | JA本文字数 | EN本文字数 | JA unique出典 | EN unique出典 | JA bytes | EN bytes |
+  |---|---:|---:|---:|---:|---:|---:|
+  | aglaia-konrad | 1,022→3,602 | 4,037→10,646 | 4→20 | 4→20 | 109,443→64,657 | 110,464→68,471 |
+  | iosif-kiraly | 780→3,682 | 3,111→9,874 | 3→20 | 3→20 | 107,982→65,593 | 108,998→67,933 |
+  | jean-pierre-khazem | 582→3,961 | 2,902→10,384 | 3→20 | 3→20 | 107,425→66,588 | 108,629→68,903 |
+  | joachim-koester | 718→4,013 | 3,179→10,822 | 3→21 | 3→21 | 107,740→65,713 | 108,936→68,585 |
+  | justine-kurland | 982→3,864 | 3,196→10,177 | 3→24 | 3→24 | 108,548→67,295 | 108,797→70,330 |
+  | juul-hondius | 906→3,805 | 2,652→10,438 | 3→20 | 3→20 | 107,813→65,865 | 107,857→67,982 |
+  | kaoru-izima | 929→3,715 | 3,065→10,565 | 3→24 | 3→24 | 107,839→66,942 | 108,407→70,486 |
+  | luisa-lambri | 675→3,656 | 3,288→10,214 | 3→21 | 3→21 | 107,194→65,412 | 108,878→68,876 |
+  | marine-hugonnier | 591→3,800 | 3,198→10,020 | 3→20 | 3→20 | 107,228→65,666 | 108,968→68,955 |
+  | michael-janiszewski | 613→3,860 | 2,539→9,404 | 3→20 | 3→20 | 106,694→66,308 | 108,464→68,202 |
+  | **合計** | **7,798→37,958** | **31,167→102,544** | **31→210** | **31→210** | **1,077,906→660,039** | **1,088,398→688,723** |
+
+- **構造 / 正本**：全20ページでJSON-LD Personキー減少0、sup-ref dangling 0、レビューマーカー0、JA §REL二重ダッシュ0、`prep-block` 0、div/section開閉一致。EN不可視要素は全員GA 2 / canonical 1 / hreflang 3 / og:image 1 / JSON-LD 2でbackupと同数。§RELはJA 46リンク / EN 43リンクの計89本を`ls`し切れ0、EN §RELの`/photographers/`直下href 0。§REF URL集合は全10名でJA/EN一致。EN正本pages 306→306、変更キーは対象10名のみ、`_meta`不変。
+- **面 / SHA**：公開HTML20、EN正本1、engine1、intentional-replacements 1、本ログ1。禁止面・対象外写真家ページのtracked差分0。0806素材SHA-256は20/20一致（mismatch 0）。
+- **検証**：全10slugのEN builder `--dry-run`は全件`Would write 1 page(s)`でSKIPPED 0。`check_en_entry.py`は全10件EXIT 0（既知のwordpress / note.com WARNのみ）。`check_content_loss.py` OK、`preflight.py` EXIT 0。
+- **commit**：Daisuke承認のうえ push（2026-08-06）。
+- **wall-time**：55分（Daisuke実測。10名バッチ＝**1名あたり5.5分**。既知記録は14名48分＝1名3.4分、11名50分＝1名4.5分、4名27分＝1名6.8分、5名40分＝1名8.0分、7名60分＝1名8.6分。14名（3.4分）より1名あたり遅いのは、①素材のマークアップ世代差でインポータ互換修正4系統が必要になった初回診断、②Related削除SKIPの停止1回と、監督実測による§RELリンク退行3件の是正（`robert-frank`✗→`robertfrank`✓・ステージド写真・フェミニズム写真）、③相乗りタスク〈JA §REL裸項目のリンク化・人名6件＋運動7件〉のぶん。engine修正が入った分を除けば規模按分の傾向自体は継続している）。

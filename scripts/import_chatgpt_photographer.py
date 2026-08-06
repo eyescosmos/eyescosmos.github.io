@@ -338,9 +338,9 @@ def _sync_update_person_jsonld(html: str, existing_html: str, material_html: str
         raise AssertionError("[JA update] meta descriptionが空のためJSON-LDへ同期できない")
     person["description"] = desc
     for key in ("birthDate", "deathDate", "sameAs"):
-        if key in old_person:
+        if old_person.get(key) not in (None, "", []):
             person[key] = copy.deepcopy(old_person[key])
-        elif key in material_person:
+        elif material_person.get(key) not in (None, "", []):
             person[key] = copy.deepcopy(material_person[key])
         else:
             person.pop(key, None)  # 既存にも素材にも無い値は捏造しない
@@ -546,6 +546,13 @@ def slice_by_class(html: str, tag: str, cls: str, start: int = 0):
     return None
 
 
+def normalize_material_ref_ids(html: str) -> str:
+    """素材内の ``src-N`` 注IDを正本標準の ``cite-N`` へ抽出時だけ正規化する。"""
+    return re.sub(r'(?<=["\'])#?src-(\d+)(?=["\'])',
+                  lambda m: ("#" if m.group(0).startswith("#") else "")
+                  + f"cite-{m.group(1)}", html)
+
+
 def _extract_family_b(body: str, fields: dict, meta: dict) -> None:
     """新 v5.1 テンプレ（ph-*）から候補フィールドを抽出。"""
     ab = slice_by_class(body, "div", "ph-abstract")
@@ -622,6 +629,7 @@ def extract_en_candidate_fields(en_html: str, slug: str) -> tuple[dict, dict]:
     n_rev = _count_rev_tokens(en_html)
     n_editred = en_html.count("edit-red")
     cleaned = clean_rev_markup(strip_edit_red(strip_review_css(en_html)))
+    cleaned = normalize_material_ref_ids(cleaned)
     cleaned, delinked = localize_en_links(cleaned)
     body = _body_of(cleaned)
 
@@ -760,9 +768,10 @@ def _extract_lead(body: str) -> str | None:
 
 
 def _extract_thesis(body: str) -> str | None:
-    tb = slice_by_class(body, "p", "ph-thesis__body")
-    if tb:
-        return tb[1].strip()
+    for tag in ("p", "div"):
+        tb = slice_by_class(body, tag, "ph-thesis__body")
+        if tb:
+            return tb[1].strip()
     th = slice_by_class(body, "div", "ph-thesis")
     if th:
         p = re.search(r'<p\b[^>]*>(.*?)</p>', th[1], re.S)
@@ -931,8 +940,11 @@ def _extract_sections(body: str) -> list:
         # 見出しが <span class="ph-section__name"><span>名前</span></span> のように
         # ネスト span で包まれていても拾えるよう、閉じ </span> まで取ってタグ除去する
         # （素朴な [^<]* だと直後の入れ子 <span> で止まり空文字になる）。
-        name_m = re.search(r'ph-section__name">(.*?)</span>', inner, re.S)
-        name = re.sub(r'<[^>]+>', '', name_m.group(1)).strip() if name_m else None
+        name_m = re.search(
+            r'<(?P<tag>h[1-6]|span|div)\b[^>]*class="[^"]*\bph-section__name\b[^"]*"[^>]*>'
+            r'(?P<text>.*?)</(?P=tag)>', inner, re.S | re.I)
+        name = (re.sub(r'<[^>]+>', '', name_m.group('text')).strip()
+                if name_m else None)
         num = num_m.group(1).strip() if num_m else ""
         if not SECTION_NUMBERED_RE.search(num):
             continue  # WORKS/REL/REF/SRC/IMAGE LINKS 等は本文節ではない
@@ -1031,6 +1043,7 @@ def extract_bundle(raw_html: str, source_lang: str,
     if source_lang not in ("ja", "en"):
         raise ValueError(f"source_lang は 'ja' / 'en' のみ: {source_lang!r}")
     cleaned = clean_rev_markup(strip_edit_red(strip_review_css(raw_html)))
+    cleaned = normalize_material_ref_ids(cleaned)
     delinked: list[str] = []
     if source_lang == "en":
         cleaned, delinked = localize_en_links(cleaned)
@@ -2054,9 +2067,14 @@ def derive_spec_from_existing(slug: str) -> dict:
         m = re.search(pat, html, re.S)
         return re.sub(r"<[^>]+>", "", m.group(1)).strip() if m else default
 
-    years = g1(r'ph-hero__years">([^<]*)<')
-    country = g1(r'Country<strong>([^<]*)<')
-    period = g1(r'Period<strong>([^<]*)<')
+    # 現行テンプレでは entry-meta を分類値の正とする。hero meta は旧生成物で
+    # Country に card-data.metaJa（年代文字列）が入った例があるため fallback のみ。
+    years = (g1(r'<dt>Years</dt>\s*<dd>(.*?)</dd>') or
+             g1(r'ph-hero__years">([^<]*)<'))
+    country = (g1(r'<dt>Country</dt>\s*<dd>(.*?)</dd>') or
+               g1(r'Country<strong>([^<]*)<'))
+    period = (g1(r'<dt>Period</dt>\s*<dd>(.*?)</dd>') or
+              g1(r'Period<strong>([^<]*)<'))
     channel = g1(r'Channel<strong>([^<]*)<') or card.get("channel", "")
     mv = g1(r'<dt>Movement</dt><dd>(.*?)</dd>')
     movements = [] if mv in ("", "—") else [m.strip() for m in re.split(r"[・,]", mv) if m.strip()]
