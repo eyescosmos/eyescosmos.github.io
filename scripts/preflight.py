@@ -1417,12 +1417,162 @@ def check_internal_dead_links() -> None:
             f"未作成ページへの既知リンク {href}: {KNOWN_MISSING_HREFS[href]}")
 
 
+# ── §REL の「リンク張り忘れ」（裸テキスト → 実在ページ）──────────────
+# check_internal_dead_links とは逆方向の検査。あちらは「リンク → 実在しないページ」、
+# こちらは「裸テキスト → 実在するページ」を見る。
+#
+# 2026-08-06 の0806バッチで、ChatGPT素材の §REL に裸で入っていた
+# ロバート・フランク（実slugは robertfrank）／ステージド写真／フェミニズム写真の3件が
+# 実在ページなのにリンク化されず通りかけた（フェミニズム写真は旧ENが既にリンク済み＝退行）。
+# 監督の手作業監査でしか見つからなかったため追加。
+#
+# 誤検知の抑制: サイトには実在しない運動名が裸で入るのが正のケースが大量にある
+# （建築写真 / コンセプチュアル写真 / ロード写真 …）。判定は必ず実ファイルの存在で行い、
+# 名前の類似では一切判定しない。
+
+REL_UL_RE = re.compile(r'<ul class="([^"]*ph-rel-list[^"]*)"[^>]*>(.*?)</ul>', re.S)
+REL_LI_RE = re.compile(r'<li\b[^>]*>(.*?)</li>', re.S)
+REL_TAG_RE = re.compile(r'<[^>]+>')
+REL_DESC_SPLIT_RE = re.compile(r'[―—–]')   # 「名前 ― 説明文」の区切り
+REL_H1_RE = re.compile(r'<h1[^>]*>(.*?)</h1>', re.S)
+
+
+def _rel_text(frag: str) -> str:
+    return html_lib.unescape(REL_TAG_RE.sub("", frag)).strip()
+
+
+def _rel_key_ja(s: str) -> str:
+    """中黒・長音・各種ハイフン・空白の揺れを吸収する照合キー。
+    実例: 素材の「ロザンジェラ・レノ」と card-data の「ロザンジェラ・レノー」を同一視する。"""
+    return re.sub(r'[\sー・=＝\-‐–—―]', '', unicodedata.normalize("NFKC", s))
+
+
+def _rel_key_en(s: str) -> str:
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return re.sub(r'[^a-z0-9]', '', s.lower())
+
+
+@functools.lru_cache(maxsize=1)
+def _rel_people_index() -> tuple[dict[str, str], dict[str, str]]:
+    """card-data.json の表示名 → slug。ローマ字化して推測しない（robertfrank 等が外れる）。
+    正規化キーが衝突する名前は曖昧なので採用しない。"""
+    data = json.loads((REPO / CARD_DATA_JSON).read_text(encoding="utf-8"))
+    ja: dict[str, set[str]] = defaultdict(set)
+    en: dict[str, set[str]] = defaultdict(set)
+    for p in data.get("photographers", []):
+        pid = p.get("id")
+        if not pid:
+            continue
+        if p.get("nameJa"):
+            ja[_rel_key_ja(p["nameJa"])].add(pid)
+        if p.get("nameEn"):
+            en[_rel_key_en(p["nameEn"])].add(pid)
+    return ({k: next(iter(v)) for k, v in ja.items() if len(v) == 1},
+            {k: next(iter(v)) for k, v in en.items() if len(v) == 1})
+
+
+@functools.lru_cache(maxsize=4)
+def _rel_movement_index(subdir: str) -> dict[str, str]:
+    """実在する運動ページのファイル名索引。キーはファイル名（JA は日本語ファイル名が正）と
+    ページ h1 の表記の両方。索引の元は実ファイルだけなので、存在しない運動は決して当たらない。"""
+    idx: dict[str, str] = {}
+    d = REPO / subdir
+    if not d.is_dir():
+        return idx
+    for f in sorted(d.glob("*.html")):
+        if f.name.endswith("-backup.html") or f.name.startswith("google"):
+            continue
+        names = [f.stem]
+        m = REL_H1_RE.search(f.read_text(encoding="utf-8", errors="ignore"))
+        if m:
+            names.append(_rel_text(m.group(1)))
+        for n in names:
+            if not n:
+                continue
+            idx.setdefault(_rel_key_ja(n), f.name)
+            idx.setdefault(_rel_key_en(n), f.name)
+    return idx
+
+
+def _rel_unlinked_names(rel_path: str, html: str) -> list[str]:
+    """§REL の <li> のうち href を持たない項目で、実在ページがあるものを返す。"""
+    is_en = rel_path.startswith("en/")
+    people = _rel_people_index()[1 if is_en else 0]
+    prefix = "/en/" if is_en else "/"
+    hits: list[str] = []
+    for cls, body in REL_UL_RE.findall(html):
+        is_movement = "ph-rel-movements" in cls
+        for li in REL_LI_RE.findall(body):
+            if "href=" in li:
+                continue
+            name = REL_DESC_SPLIT_RE.split(_rel_text(li))[0].strip()
+            if not name:
+                continue
+            key = _rel_key_en(name) if is_en else _rel_key_ja(name)
+            if not key:
+                continue
+            if is_movement:
+                fname = _rel_movement_index("en/movements" if is_en else "movements").get(key)
+                if fname:
+                    hits.append(f"{name} → {prefix}movements/{fname}")
+            else:
+                slug = people.get(key)
+                if not slug:
+                    continue
+                if (REPO / ("en/photographers" if is_en else "photographers") / f"{slug}.html").exists():
+                    hits.append(f"{name} → {prefix}photographers/{slug}.html")
+    return hits
+
+
+def check_rel_unlinked_names() -> None:
+    """§REL のリンク張り忘れ検査（裸テキストなのに実在ページがある）。
+
+    まずは全件 WARN で始める（誤検知の実数を見てから HARD 化を判断する）。
+    いきなり HARD にすると既存ページの積み残しで全員の push が止まる。
+    """
+    baseline = _baseline_ref()
+    touched = {rel for rel, _ in _touched_html(baseline, PUBLIC_HTML_DIRS)}
+
+    touched_hits: list[str] = []
+    other_hits: list[str] = []
+    for d in PUBLIC_HTML_DIRS:
+        p = REPO / d
+        if not p.is_dir():
+            continue
+        for f in sorted(p.glob("*.html")):
+            if f.name.endswith("-backup.html") or f.name.startswith("google"):
+                continue
+            rel = str(f.relative_to(REPO))
+            html = f.read_text(encoding="utf-8", errors="ignore")
+            if is_redirect_stub(html):
+                continue
+            miss = _rel_unlinked_names(rel, html)
+            if not miss:
+                continue
+            entry = f"{rel} → " + ", ".join(miss[:6]) + (" …" if len(miss) > 6 else "")
+            (touched_hits if rel in touched else other_hits).append(entry)
+
+    if touched_hits:
+        warnings.append(
+            f"今回変更したページの §REL にリンク張り忘れ {len(touched_hits)}件"
+            "（裸テキストだが実在ページあり。素材の slug 誤りで非実在と誤判定した疑い。"
+            "実在するなら <a href> を張る）: "
+            + " / ".join(touched_hits[:8]) + (" …" if len(touched_hits) > 8 else ""))
+    if other_hits:
+        warnings.append(
+            f"既存ページの §REL にリンク張り忘れ {len(other_hits)}件"
+            "（今回の変更対象外・ブロックしない）: "
+            + " / ".join(other_hits[:8]) + (" …" if len(other_hits) > 8 else ""))
+
+
 def main() -> int:
     check_dup_ids_js()
     check_dup_ids_carddata()
     check_ga_coverage()
     check_en_lang_toggle_active()
     check_internal_dead_links()
+    check_rel_unlinked_names()
     check_orphan_class_tokens()
     check_en_content_loss()
     check_en_changed_slug_closure()

@@ -1642,3 +1642,14 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：全10slugのEN builder `--dry-run`は全件`Would write 1 page(s)`でSKIPPED 0。`check_en_entry.py`は全10件EXIT 0（既知のwordpress / note.com WARNのみ）。`check_content_loss.py` OK、`preflight.py` EXIT 0。
 - **commit**：Daisuke承認のうえ push（2026-08-06）。
 - **wall-time**：55分（Daisuke実測。10名バッチ＝**1名あたり5.5分**。既知記録は14名48分＝1名3.4分、11名50分＝1名4.5分、4名27分＝1名6.8分、5名40分＝1名8.0分、7名60分＝1名8.6分。14名（3.4分）より1名あたり遅いのは、①素材のマークアップ世代差でインポータ互換修正4系統が必要になった初回診断、②Related削除SKIPの停止1回と、監督実測による§RELリンク退行3件の是正（`robert-frank`✗→`robertfrank`✓・ステージド写真・フェミニズム写真）、③相乗りタスク〈JA §REL裸項目のリンク化・人名6件＋運動7件〉のぶん。engine修正が入った分を除けば規模按分の傾向自体は継続している）。
+
+## 2026-08-06 — preflight に §REL リンク張り忘れ検査を追加（種別=other / ガード追加）
+
+- **動機**：同日の0806バッチで、ChatGPT素材の §REL に裸テキストで入っていた3件（`ロバート・フランク`＝実slug `robertfrank`・`ステージド写真`・`フェミニズム写真`）が**実在ページなのにリンク化されず通りかけた**。`フェミニズム写真` は旧ENが既にリンク済みで、そのまま通せば既存の有効な内部リンクを失う退行だった。監督の手作業監査でしか見つからなかった。0730追加の `check_internal_dead_links()` は**リンク→非実在ページ**の方向しか見ておらず、**裸テキスト→実在ページ**の方向は誰も見ていなかった。
+- **実装**：`scripts/preflight.py` に `check_rel_unlinked_names()` を追加し `main()` の `check_internal_dead_links()` 直後へ配線（+約150行）。`<ul class="…ph-rel-list…">` 内で `href` を持たない `<li>` を拾い、テキストを `―`／`—`／`–` で分割した先頭を項目名として実在ページを引く。解決経路は**人名**＝`card-data.json` の `nameJa` / `nameEn` → `id`（ローマ字化して推測しない。`robert-frank`✗ / `robertfrank`✓）、**運動**＝JA `movements/<日本語ファイル名>.html` / EN `en/movements/<slug>.html` の**実ファイル索引**（ファイル名＋ページ `h1` 表記）。照合キーは中黒・長音・各種ハイフン・空白を落として正規化（素材の `ロザンジェラ・レノ` と card-data の `ロザンジェラ・レノー` を同一視するため）。正規化キーが衝突する人名は曖昧として不採用（現在の304件で衝突0）。
+- **段階付け**：**まず全件 WARN**（触ったページ／未変更ページの2区分で別行に出す）。既存ページの積み残しで全員の push が止まる事故を避けるため、誤検知の実数を見てから HARD 化を判断する。
+- **誤検知の抑制**：実在判定は必ず実ファイルの存在で行い、名前の類似では一切判定しない。0806バッチの裸テキスト24件／20種（`建築写真` `コンセプチュアル写真` `ロード写真` 等＝実在しないのが正）は**全件非検出**を実測。
+- **検証（実測）**：①クリーンツリーで `preflight.py` **EXIT 0**、`check_content_loss.py` OK。②**回帰テスト**＝0806で是正した3件を裸へ戻した再現フィクスチャ（`1715c86f5^` の親は刷新前ページで裸状態を含まないため、現行ページから当該 `<a>` を外して再現。scratchpad のみ・作業ツリーへ書き戻さず）で **JA 3/3・EN 3/3 検出**。現行の是正済みページは0件。③サイト全体（`PUBLIC_HTML_DIRS` 全10ディレクトリ）で **17ページ・22件**を検出（内訳：人名16件・運動6件。JA 21件／EN 1件）＝WARN 2行に収まる規模で、preflight の可読性を壊さない。
+- **検出内容（既存の張り忘れ22件・本タスクでは是正しない）**：`goldin`（ラリー・クラーク／ヴォルフガング・ティルマンス／リチャード・ビリンガム／カラー写真／私写真＝5件）、`barbara-probst`（エドワード・マイブリッジ／ジェフ・ウォール）、`an-my-le`（ジェフ・ウォール）、`daisuke-yokota`（スティーヴン・ギル）、`jean-luc-moulene`（トーマス・ルフ）、`jikei-sato`（ミヒャエル・ヴェーゼリー）、`jochen-lempert`（ヴォルフガング・ティルマンス）、`kenta-cobayashi`（ポストインターネット）、`kruger`（シェリー・レヴィーン）、`marine-hugonnier`（コンセプチュアル・アート＝他102ページがリンク済み）、`mayumi-hosokura`（野村佐紀子）、`naoya-hatakeyama`（ニュー・トポグラフィックス）、`simon-norfolk`（ロジャー・フェントン）、`takashi-homma`（森山大道）、`takuma-nakahira`（東松照明）、`torbjrn-rdland`（フィリップ＝ロルカ・ディコルシア）、`en/photographers/shoji-ueda`（Staged photography）。
+- **面（tracked 2）**：`scripts/preflight.py`、本ログ1。ページHTML・正本JSON・禁止面の差分0（`git diff --name-only` で実測）。
+- **wall-time**：（Daisuke 記入）
