@@ -1653,3 +1653,42 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検出内容（既存の張り忘れ22件・本タスクでは是正しない）**：`goldin`（ラリー・クラーク／ヴォルフガング・ティルマンス／リチャード・ビリンガム／カラー写真／私写真＝5件）、`barbara-probst`（エドワード・マイブリッジ／ジェフ・ウォール）、`an-my-le`（ジェフ・ウォール）、`daisuke-yokota`（スティーヴン・ギル）、`jean-luc-moulene`（トーマス・ルフ）、`jikei-sato`（ミヒャエル・ヴェーゼリー）、`jochen-lempert`（ヴォルフガング・ティルマンス）、`kenta-cobayashi`（ポストインターネット）、`kruger`（シェリー・レヴィーン）、`marine-hugonnier`（コンセプチュアル・アート＝他102ページがリンク済み）、`mayumi-hosokura`（野村佐紀子）、`naoya-hatakeyama`（ニュー・トポグラフィックス）、`simon-norfolk`（ロジャー・フェントン）、`takashi-homma`（森山大道）、`takuma-nakahira`（東松照明）、`torbjrn-rdland`（フィリップ＝ロルカ・ディコルシア）、`en/photographers/shoji-ueda`（Staged photography）。
 - **面（tracked 2）**：`scripts/preflight.py`、本ログ1。ページHTML・正本JSON・禁止面の差分0（`git diff --name-only` で実測）。
 - **wall-time**：（Daisuke 記入）
+
+---
+
+## 2026-08-06 — JA写真家ページ JSON-LD `nationality` の年代文字列を国名へ是正（135枚・種別=other・軽量行）
+
+- **対象**：JA写真家ページ `photographers/*.html` のうち、JSON-LD `Person.nationality` に国名ではなく
+  年代文字列が入っていた **135枚**（`1990s / 1990年代` 47、`1980s / 1980年代` 39、`2000s / 2000年代` 14、
+  `1970s / 1970年代` 11、`1940s / 1940年代` 8、ほか16）。EN は `{"@type":"Country","name":...}` 形式で
+  元から正常につき該当0件・無変更。
+- **原因（既に対処済・再発しない）**：`import_chatgpt_photographer.py` の `derive_spec_from_existing()` が
+  hero meta の `Country<strong>…` を国名として読んでいた。現行v5.1テンプレではその位置に年代文字列が
+  入るのが仕様で、正しい国名は entry-meta `<dt>Country</dt><dd>` 側。**インポータ本体は `1715c86f5` で
+  entry-meta 優先へ修正済み**。今回は過去生成分の出力値だけを是正した。
+- **手作業点**：0（スクリプトで一括。国名は entry-meta からタグを除いて機械抽出）。
+- **サーフェス変更数**：136ファイル（JA写真家135＋本ログ1）。禁止面・EN・hero表示は無変更。
+- **導出規則の事前検証**：置換前に、**既に正しい値を持つ158枚**へ同じ抽出規則を当てて
+  **156枚が完全一致**することを確認してから適用した（規則の妥当性を先に実証）。残り2枚は
+  今回の対象外（下記）。
+- **消失防止の機械的契約**：parse-and-redump を禁止し、1ページ1か所の素の文字列置換に限定。
+  各ファイルで `after == before.replace(old, new, 1)` に加え、置換位置前後のバイト一致・
+  長さ差の一致・断片の一意性（全135枚で出現1回）・断片が Person ノード上にあること・
+  hero `Country<strong>` の不変を assert。1件でも崩れたら書かない設計（refused 0）。
+- **diff形状での証明**：変更135ファイル・**追加135行/削除135行＝ちょうど135×2**、
+  1ファイルあたり例外なく 1+/1-。`photographers/*.html` 以外の差分0、未追跡0。
+  parse-and-redump が混入していれば必ず超過するため、これが最終的な担保。
+- **今回触っていない既存の不一致2件（要判断・別件）**：`ana-torfs`（JSON-LD `'BE'` に対し
+  entry-meta `ベルギー`＝国コード表記の孤例）、`sibylle-bergemann`（JSON-LD `ドイツ` に対し
+  entry-meta `東ドイツ / ドイツ`）。いずれも年代文字列ではなく本タスクの対象外のため無変更。
+- **副次的に露出した既存WARN1件（無変更）**：`oliver-musovik` の出典番号が `[1, 2, 4]` と不連続。
+  preflight は変更のあったページだけを検査するため、今回ファイルに触れたことで顕在化しただけで、
+  `cite-1/2/4` は HEAD 時点から同じ。出典は不可触につき是正せず記録のみ。
+- **二重国籍**：`南アフリカ / イギリス` 等の ` / ` 連記はサイト既存の慣習（既に正しい12枚が同形式）
+  のため、曖昧扱いにせず entry-meta のまま採用した。一意に決まらず保留したページは0件。
+- **検証**：`check_content_loss.py` OK / `preflight.py` EXIT 0（WARN は clean tree のベースラインと
+  差分比較し、上記 `oliver-musovik` 1件を除いて完全一致＝新規WARNの持ち込みなし）。
+  再走査で年代文字列の残存0件、135枚とも entry-meta の国名と一致、全304ページの
+  JSON-LD ブロック304件が JSON として parse 可能。
+- **engine改良**：0（インポータ側は `1715c86f5` で修正済み）。フィデリティ列 N/A。
+- **wall-time**：（Daisuke記入）
