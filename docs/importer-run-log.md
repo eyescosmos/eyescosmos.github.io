@@ -1732,3 +1732,37 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：`check_content_loss.py` OK、`preflight.py` EXIT 0、`git diff --check` OK。禁止面・対象外ファイル・engine・`data/photographers-en-content.json`の追加差分0。フィデリティ列N/A。
 - **touched files**：公開HTML17＋本ログ1。0807バッチと同一コミットで push（2026-08-07）。
 - **wall-time**：上の0807バッチ項の37分に含む（相乗りのため単独計測なし）。
+
+---
+
+## 2026-08-11 — 0810写真家12名 update バッチ完了
+
+- **種別 / 範囲**：update。`ann-sofi-siden` / `clunie-reid` / `diana-scheunemann` / `gabor-osz` / `guadalupe-ruiz` / `heidi-specker` / `john-riddy` / `michael-wesely` / `peter-piller` / `rosangela-renno` / `shirana-shahbazi` / `xavier-ribas` のJA正本HTML、EN正本JSON、生成EN HTMLを0810素材で刷新。
+- **bug / engine改良**：engine変更0。`scripts/`差分0。UI辞書はadd-onlyでcountries `イラン → Iran` 1件、works labels `公式サイト — Projects → Official Website — Projects` と `Magasin III - Who Told the Chambermaid?（映像作品） → Magasin III - Who Told the Chambermaid?` の2件を純追加（既存キー変更0・削除0）。
+- **手作業点**：`card-data.json`のnameJa/nameEnからslugを引き、§RELを8件リンク化（Ann=Sophie Calle、Gábor=Tacita Dean、Guadalupe=Shirana Shahbazi / Rosângela Rennó、Heidi=Bernd and Hilla Becher / Thomas Ruff / Aglaia Konrad、Rosângela=Sherrie Levine）。注釈・語順・区切りは不変。日英素材で異なるworks URLはbuilder採用URLへ同期。素材のreview class属性はread-only原本を変えず一時コピーで除去。PeterのEN cite-5はJA素材と同じKraft記述へsup-refを補いdangling 0。手作業ボトルネックは§RELのcard-data解決、運動概念の同一性確認、carry-forwardのURL集合照合。
+- **carry-forward**：全12名でhero眉 / Years / Country / Movement / Periodを既存維持。EN external linksの旧URL集合を全件維持し、旧PDF 4本（Gábor / Heidi / John / Peter）も保持。EN photobooksは全12名で既存値を維持。新素材に§REFがないJA 6名（Clunie / Diana / John / Michael / Shirana / Xavier）は旧§REFを維持し、Annは旧3本（Moderna Museet / Benveniste / Bilbao Museoa）と新Ekebergparkenを併存。Amazonは既存リンク維持、ASIN解決なし。
+- **Related削除ガード**：承認済み`--force`は8slug。Ann=`Documentary`、Diana=`I-Photography (Shi-shashin)`、Gábor=`Conceptual Art`、Guadalupe=`Conceptual Art`、Heidi=`Conceptual Art`、John=`Large-Format Color`、Peter=`Conceptual Art`、Rosângela=`Conceptual Art`。各項目は新JA素材§REL / 新EN素材§REL / 適用後JA§RELで完全一致0 / 0 / 0を実測し、旧項目に新素材の対応物なし。部分文字列一致は数えず、別概念へ寄せていない。最終builder dry-runは全12件`Would write 1 page(s)`、SKIPPED 0。
+- **フィデリティ（実測）**：
+
+  | slug | JA本文字数 | EN本文字数 | JA unique出典 | EN unique出典 | JA bytes | EN bytes |
+  |---|---:|---:|---:|---:|---:|---:|
+  | ann-sofi-siden | 996→4,511 | 3,270→11,107 | 3→24 | 3→24 | 108,756→66,129 | 108,845→68,564 |
+  | clunie-reid | 1,013→4,331 | 3,467→10,259 | 3→24 | 3→24 | 108,688→66,618 | 109,053→68,862 |
+  | diana-scheunemann | 694→4,278 | 2,933→10,440 | 2→23 | 2→23 | 107,299→65,988 | 107,647→68,940 |
+  | gabor-osz | 970→4,160 | 2,997→10,088 | 3→24 | 3→24 | 108,356→64,704 | 108,553→67,358 |
+  | guadalupe-ruiz | 862→3,942 | 3,140→10,264 | 3→23 | 3→23 | 108,190→63,488 | 108,887→67,638 |
+  | heidi-specker | 849→4,257 | 3,440→11,077 | 3→26 | 3→26 | 107,798→65,569 | 109,171→69,627 |
+  | john-riddy | 1,068→4,132 | 3,965→9,939 | 6→26 | 6→26 | 109,386→66,592 | 110,625→69,348 |
+  | michael-wesely | 908→4,029 | 3,382→10,020 | 3→24 | 3→24 | 108,242→64,725 | 109,177→68,084 |
+  | peter-piller | 1,002→4,724 | 3,177→12,153 | 3→25 | 3→25 | 108,083→66,908 | 108,433→69,776 |
+  | rosangela-renno | 889→4,686 | 3,298→11,764 | 4→27 | 4→27 | 108,419→67,564 | 109,496→70,115 |
+  | shirana-shahbazi | 865→3,974 | 3,238→10,197 | 3→28 | 3→28 | 108,452→66,601 | 108,884→70,200 |
+  | xavier-ribas | 678→4,486 | 3,057→11,251 | 3→25 | 3→25 | 107,866→67,340 | 108,325→70,591 |
+  | **合計** | **10,794→51,510** | **39,364→128,559** | **39→299** | **39→299** | **1,299,535→792,226** | **1,307,096→829,103** |
+
+- **構造 / 正本**：全24ページでJSON-LD Personキー減少0、div/section開閉一致、§RELリンク切れ0・張り忘れ0、レビューマーカー0、本文二重ダッシュ0。EN不可視要素は全12名でGA 2→2 / canonical 1→1 / hreflang 3→3 / og:image 1→1 / JSON-LD 2→2。`prep-block`は標準CSS存在を確認し、MichaelはJA/ENのworks各1、PeterはEN §REL 1（リンク可能項目0）のみ。EN正本pages 306→306、変更キーは対象12slugのみ、各entryキー28→28、`_meta`不変。
+- **§REL / SHA**：JA 25リンク / EN 25リンクの計50本をhrefごとに実在確認し切れ0。裸維持10項目は Harun Farocki / Feminist Documentary / Vera Lutter / Media archaeology / Latin American Photobook Culture / Hans-Peter Feldmann / Richard Prince / Archive Art / Alfredo Jaar / Counter-Archive。人名はcard-data登録とJA/ENファイル、運動はlocale別movement実ファイルがいずれも無いことを実測。0810素材24/24のSHA-256は作業前後一致（mismatch 0）。
+- **検証**：全12slugの`check_en_entry.py` OK、`check_content_loss.py` OK、`preflight.py` EXIT 0、`git diff --check` OK。preflightのバッチ由来新規WARNは承認済み`data-nosnippet`減少21件（JA 11 / EN 10）のみで、それ以外0。禁止面・対象外写真家・engine差分0。
+- **面**：公開HTML24、EN正本1、EN UI翻訳辞書1、本ログ1のtracked 27ファイル。backup JA/EN各12とspec 12を含む未追跡ファイルは未stage。commit / pushなし。
+- **commit**：Daisuke承認のうえ push（2026-08-11）。
+- **wall-time**：44分（Daisuke実測。12名バッチ＝**1名あたり3.7分**。既知記録は14名48分＝3.4分、11名50分＝4.5分、10名55分＝5.5分、6名37分＝6.2分、4名27分＝6.8分、5名40分＝8.0分、7名60分＝8.6分で、**14名（3.4分）に次ぐ2番目の効率**。「同質素材なら大きめバッチほど1名あたりが速い」傾向をさらに裏づけた。engine修正0・素材由来の停止0。停止は監督判断2回のみ：①`Documentary` 削除の可否（`ドキュメンタリー` と `フェミニズム写真` が別ページで並存する実測から、新素材の `フェミニスト・ドキュメンタリー` を別概念と判定して §14 B 承認）、②**Codex が `build_photographers_en.py` の engine 改造を提案してきたのを却下**（peter-piller の EN §REL がリンク0で `prep-block` になる件。既存 EN 写真家 **172ページが既に `prep-block` を含む**＝標準挙動であり、`preflight.py` に `prep-block` 検査は無く `check_orphan_class_tokens()` も `.prep-block` の CSS が実在するため発火しないことを実測して否定した）。②は §14 D の「`prep-block` 残存0」を絶対条件と誤読したことが原因で、括弧書きの「残る場合は対応CSSの存在を確認」が本体である旨を次回のために明記しておく）。

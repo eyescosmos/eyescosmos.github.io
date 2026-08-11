@@ -111,7 +111,8 @@
     "ケニア": "Kenya",
     "レバノン": "Lebanon",
     "ルクセンブルク": "Luxembourg",
-    "マリ": "Mali"
+    "マリ": "Mali",
+    "イラン": "Iran"
   },
   "channels": {
     "写真史の論点": "Issues in photo history",
@@ -346,6 +347,8 @@
     "森美術館 - Follow Me": "Mori Art Museum — Follow Me",
     "作家公式 - 作品アーカイブ": "Official Artist Site — Works Archive",
     "Canon - 制作過程と作品": "Canon — Process and Works",
-    "公式サイト — Works Archive": "Official Website — Works Archive"
+    "公式サイト — Works Archive": "Official Website — Works Archive",
+    "Magasin III - Who Told the Chambermaid?（映像作品）": "Magasin III - Who Told the Chambermaid?",
+    "公式サイト — Projects": "Official Website — Projects"
   }
 }
