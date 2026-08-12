@@ -1766,3 +1766,31 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **面**：公開HTML24、EN正本1、EN UI翻訳辞書1、本ログ1のtracked 27ファイル。backup JA/EN各12とspec 12を含む未追跡ファイルは未stage。commit / pushなし。
 - **commit**：Daisuke承認のうえ push（2026-08-11）。
 - **wall-time**：44分（Daisuke実測。12名バッチ＝**1名あたり3.7分**。既知記録は14名48分＝3.4分、11名50分＝4.5分、10名55分＝5.5分、6名37分＝6.2分、4名27分＝6.8分、5名40分＝8.0分、7名60分＝8.6分で、**14名（3.4分）に次ぐ2番目の効率**。「同質素材なら大きめバッチほど1名あたりが速い」傾向をさらに裏づけた。engine修正0・素材由来の停止0。停止は監督判断2回のみ：①`Documentary` 削除の可否（`ドキュメンタリー` と `フェミニズム写真` が別ページで並存する実測から、新素材の `フェミニスト・ドキュメンタリー` を別概念と判定して §14 B 承認）、②**Codex が `build_photographers_en.py` の engine 改造を提案してきたのを却下**（peter-piller の EN §REL がリンク0で `prep-block` になる件。既存 EN 写真家 **172ページが既に `prep-block` を含む**＝標準挙動であり、`preflight.py` に `prep-block` 検査は無く `check_orphan_class_tokens()` も `.prep-block` の CSS が実在するため発火しないことを実測して否定した）。②は §14 D の「`prep-block` 残存0」を絶対条件と誤読したことが原因で、括弧書きの「残る場合は対応CSSの存在を確認」が本体である旨を次回のために明記しておく）。
+
+## 2026-08-12 — 0812写真家8名 update バッチ完了
+
+- **種別 / 範囲**：update。`adam-broomberg-oliver-chanarin` / `anuschka-blommers-niels-schumm` / `frank-van-der-salm` / `ricarda-roggan` / `roy-arden` / `sabine-bitter-helmut-weber` / `sergey-bratkov` / `sonja-braas` のJA正本HTML、EN正本JSON、生成EN HTMLを0812素材で刷新。
+- **bug / engine改良**：bug 0、engine変更0、`scripts/` tracked差分0、UI辞書追加0。素材のreview classは原本を変えずimporterで除去。
+- **手作業点**：`card-data.json` の `nameJa` / `nameEn` からslugを引き、§RELを13件手是正（Adam=The Atlas Group / Walid Raad、Anuschka=Roe Ethridge / Torbjørn Rødland / Nan Goldin、Ricarda=Thomas Demand、Roy=Eugène Atget / Walker Evans / Sherrie Levine、Sabine=Bernd and Hilla Becher / Multiplicity、Sergey=Boris Mikhailov、Sonja=Thomas Demand / James Casebere）。特に `torbjrn-rdland` / `the-atlas-group-walid-raad` / `evans` / `becher` はローマ字推測を使わずcard-dataのidを採用。Ricardaの旧SMB PDFを正本へcarry-forward。duo 3件のEN `years` は素材値を採らず既存値（Adam=`null`、Anuschka=`1969–`、Sabine=`null`）を維持。手作業ボトルネックは複数人物を1項目に含む§RELのリンク単位分割、nameEn表記のMultiplicity検出、旧PDFを含むURL集合照合。
+- **carry-forward**：全8名でhero眉 / Years / Country / Movement / Periodを既存維持。EN external linksの旧URL集合22/22本を保持し、旧HTMLの出典にのみあったRicardaのSMB PDF 1本も保持。EN `photobooks_html` は全8名でbyte一致。全素材に§REFがあり、JA §REFは22→40リンク（旧のみcarry-forward対象0）。Amazonリンク・検索URLはJA/EN合計0→0、バッチで新たに増えたAmazon検索URLは**0本**、ASIN解決なし。
+- **Related削除ガード**：承認済み`--force`は7slug・10項目。Adam=`Documentary` / `Conceptual Art`、Anuschka=`Staged Photography`、Frank=`Documentary`、Roy=`Conceptual Art` / `Documentary`、Sabine=`Documentary`、Sergey=`Social Documentary`、Sonja=`Large-Format Color` / `Documentary`。各項目は新JA素材§REL / 新EN素材§REL / 適用後JA§RELで完全一致0 / 0 / 0を個別実測し、旧項目に新素材の対応物なし。Adamの`Critical Documentary in the 1970s`は`Documentary`の部分一致として数えず、別項目へ寄せていない。Ricardaは通常buildでSKIPなし。最終builder dry-runは全8件`Would write 1 page(s)`、SKIPPED 0。
+- **フィデリティ（実測）**：
+
+  | slug | JA本文字数 | EN本文字数 | JA unique出典 | EN unique出典 | JA bytes | EN bytes |
+  |---|---:|---:|---:|---:|---:|---:|
+  | adam-broomberg-oliver-chanarin | 1,074→4,259 | 3,060→11,104 | 3→23 | 3→23 | 111,544→67,585 | 111,322→71,356 |
+  | anuschka-blommers-niels-schumm | 872→4,226 | 3,141→10,984 | 3→21 | 3→21 | 110,120→66,493 | 110,791→70,000 |
+  | frank-van-der-salm | 901→5,416 | 3,230→13,780 | 3→26 | 3→26 | 108,627→74,901 | 108,824→77,915 |
+  | ricarda-roggan | 866→5,854 | 3,237→14,496 | 3→25 | 3→25 | 108,026→73,671 | 108,580→77,778 |
+  | roy-arden | 815→4,784 | 3,282→11,360 | 3→26 | 3→26 | 109,466→68,690 | 110,181→71,977 |
+  | sabine-bitter-helmut-weber | 656→4,428 | 3,232→11,313 | 3→23 | 3→23 | 109,558→68,260 | 110,703→71,424 |
+  | sergey-bratkov | 779→4,605 | 3,240→11,104 | 2→21 | 2→21 | 107,890→66,849 | 108,359→68,816 |
+  | sonja-braas | 745→4,041 | 3,029→9,983 | 3→26 | 3→26 | 107,541→66,050 | 108,321→69,257 |
+  | **合計** | **6,708→37,613** | **25,451→94,124** | **23→191** | **23→191** | **872,772→552,499** | **877,081→578,523** |
+
+- **構造 / 正本**：全16ページでJSON-LD Personキー集合の減少0、div/section開閉一致、レビューマーカー0、本文二重ダッシュ0、`prep-block` 0。EN不可視要素は全8名でGA 2→2 / canonical 1→1 / hreflang 3→3 / og:image 1→1 / JSON-LD 2→2。EN正本pages 306→306、変更キーは対象8slugのみ、各entryキー28→28、`_meta`不変。duo 2件のbuilder `years` 空欄WARNは既存値維持による承認済み出力。
+- **§REL / SHA**：JA 24リンク / EN 24リンクの計48本をhrefごとにrepo root起点で実在確認し切れ0・張り忘れ0。裸維持は Adam=`Allan Sekula` / `Martha Rosler` / `Critical Documentary in the 1970s`、Anuschka=`Inez van Lamsweerde` / `Vinoodh Matadin` / `Guy Bourdin` / `Helmut Newton` / `Juergen Teller`、Frank=`Hans Aarsman` / `Edwin Zwakman`、Ricarda=`Timm Rautert`、Roy=`Stan Douglas` / `Rodney Graham` / `Richard Prince`、Sabine=`Allan Sekula` / `Martha Rosler`、Sergey=`Sergey Solonsky` / `Vita Mikhailova` / `Vremya Group` / `Gosprom Group`、Sonja=`Robert Smithson`。人名はcard-dataのnameJa/nameEnとJA/ENページh1、運動・グループはlocale別movement実ファイルがいずれも無いことを実測。0812素材16/16のSHA-256は作業前後一致（mismatch 0）。
+- **検証**：`check_en_entry.py`は7slug OK、Adamのみ素材由来のPhotoparley（WordPress）非推奨ドメインWARN 1件。`check_content_loss.py` OK、`preflight.py` EXIT 0、`git diff --check` OK。preflightのバッチ由来新規WARNは承認済み`data-nosnippet`減少6件（Frank / Ricarda / SonjaのJA/EN各1）のみ。既存stale intentional-replacement宣言と既知`/colophon` WARNは対象外。禁止面・対象外写真家・engine差分0。
+- **面**：公開HTML16、EN正本1、本ログ1のtracked 18ファイル。backup JA/EN各8とspec 8の未追跡24ファイルは未stage。commit / pushなし。
+- **commit**：Daisuke承認のうえ push（2026-08-12）。
+- **wall-time**：29分（Daisuke実測。8名バッチ＝**1名あたり3.6分**。既知記録は14名48分＝3.4分、12名44分＝3.7分、11名50分＝4.5分、10名55分＝5.5分、6名37分＝6.2分、4名27分＝6.8分、5名40分＝8.0分、7名60分＝8.6分で、**14名（3.4分）に次ぐ2番目の効率**。8名という中規模でありながら12名（3.7分）を上回っており、「同質素材なら大きめバッチほど1名あたりが速い」という規模按分の傾向だけでは説明がつかない。効いたのは §14 のキックオフ定型を初回プロンプトに全部載せたこと（既知WARN一覧・§14 B の常設承認条件・engine改造は実装せず提案のみ・§REL slug は card-data 経由）で、**engine修正0・素材由来の停止0・監督判断による停止0**。0810 で残した「`prep-block` 残存0は絶対条件ではない」の追記が効き、同種の提案は今回上がってこなかった。素材側も §13 のチェックリストを満たしており（全16ファイルに §REF あり・section 名は素のテキスト・review マーカーは既知2語形のみ）、UI辞書追加0で通った）。
