@@ -1794,3 +1794,40 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **面**：公開HTML16、EN正本1、本ログ1のtracked 18ファイル。backup JA/EN各8とspec 8の未追跡24ファイルは未stage。commit / pushなし。
 - **commit**：Daisuke承認のうえ push（2026-08-12）。
 - **wall-time**：29分（Daisuke実測。8名バッチ＝**1名あたり3.6分**。既知記録は14名48分＝3.4分、12名44分＝3.7分、11名50分＝4.5分、10名55分＝5.5分、6名37分＝6.2分、4名27分＝6.8分、5名40分＝8.0分、7名60分＝8.6分で、**14名（3.4分）に次ぐ2番目の効率**。8名という中規模でありながら12名（3.7分）を上回っており、「同質素材なら大きめバッチほど1名あたりが速い」という規模按分の傾向だけでは説明がつかない。効いたのは §14 のキックオフ定型を初回プロンプトに全部載せたこと（既知WARN一覧・§14 B の常設承認条件・engine改造は実装せず提案のみ・§REL slug は card-data 経由）で、**engine修正0・素材由来の停止0・監督判断による停止0**。0810 で残した「`prep-block` 残存0は絶対条件ではない」の追記が効き、同種の提案は今回上がってこなかった。素材側も §13 のチェックリストを満たしており（全16ファイルに §REF あり・section 名は素のテキスト・review マーカーは既知2語形のみ）、UI辞書追加0で通った）。
+
+## 2026-08-14 — 0813写真家15名 update バッチ完了
+
+- **種別 / 範囲**：update。`aneta-grzeszykowska` / `anthony-goicolea` / `charles-freger` / `charlotte-dumas` / `claude-closky` / `collectif-fact` / `g-r-a-m` / `gerard-byrne` / `j-h-engstrom` / `jose-antonio-hernandez-diez` / `lukas-einsele` / `ruud-van-empel` / `stefan-burger` / `stephen-gill` / `sze-tsung-leong` のJA正本HTML、EN正本JSON、生成EN HTMLを0813素材で刷新。
+- **bug / engine改良**：素材30ファイルに想定外レビューclass `rev` 1,108 token / `revision` 772 token。要素をunwrapせず、作業コピーのclass属性から完全一致tokenだけを除去して本文要素を保持。素材原本・engine変更0、`scripts/` tracked差分0、UI辞書追加0。
+- **手作業点**：3種。① `p.revision` / `li.revision` をJA 115/115件テキスト・href単位で照合、② §RELを8リンク手是正（Anthony=`ステージド写真`、Charles=`タイポロジー写真` / `ステージド写真`、Charlotte=`Jean-Luc Mylayne` / `Sanna Kannisto`、Claude=`Barbara Kruger`、Gerard=`Tacita Dean`、Stefan=`Peter Piller`）、③ Related削除12項目を§RELブロック限定・完全一致で判定。人名slugはすべて`card-data.json`の`nameJa` / `nameEn`を使用。手作業ボトルネックは異表記movementの既存多数派ラベル照合と未知review classの非破壊除去。
+- **carry-forward**：全15名でhero眉 / Years / Country / Movement / Periodを既存維持。EN external linksは旧39/39本を保持し、新§REFと統合して88本。`photobooks_html`は全15名でbyte一致（3,433→3,433 bytes）。Amazonリンク・検索URLはJA/EN合計0→0、バッチで新たに増えた検索URLは**0本**、ASIN解決なし。
+- **Related削除ガード**：承認済み`--force`は11slug・12項目。Stephen=`Bernd & Hilla Becher` / `Documentary`、Aneta=`Staged Photography`、Charlotte=`Documentary`、Claude / Gerard / Stefan=`Conceptual Art`、J.H. Engström / Lukas=`Documentary`、José / Ruud=`Staged Photography`、Sze=`Large-Format Color`。各項目は新JA素材§REL / 新EN素材§REL / 適用後JA§RELで完全一致0 / 0 / 0、旧項目に新素材の対応物なし。`Post-documentary`等の部分一致は同一項目に数えず、Anthony=`Staged Photography`とCharles=`Typological Photography`は条件不成立のためforceせず実在movementへ復元。最終builder dry-runは全15件`Would write 1 page(s)`、SKIPPED 0。
+- **フィデリティ（実測）**：
+
+  | slug | JA本文字数 | EN本文字数 | JA unique出典 | EN unique出典 | JA bytes | EN bytes |
+  |---|---:|---:|---:|---:|---:|---:|
+  | aneta-grzeszykowska | 787→4,458 | 2,961→10,605 | 3→23 | 3→23 | 109,647→66,996 | 110,341→69,790 |
+  | anthony-goicolea | 1,031→4,777 | 3,775→11,071 | 4→22 | 4→22 | 111,109→68,274 | 111,975→69,688 |
+  | charles-freger | 771→4,656 | 2,886→11,260 | 3→23 | 3→23 | 109,262→68,079 | 110,104→70,132 |
+  | charlotte-dumas | 828→3,823 | 3,019→9,537 | 3→23 | 3→23 | 108,920→65,850 | 109,852→69,043 |
+  | claude-closky | 893→3,580 | 3,304→8,602 | 3→22 | 3→22 | 108,135→63,027 | 108,815→66,709 |
+  | collectif-fact | 4→4,110 | 12→9,195 | 0→21 | 0→21 | 101,675→63,327 | 100,356→66,116 |
+  | g-r-a-m | 4→5,722 | 12→11,972 | 0→25 | 0→25 | 101,590→70,113 | 100,145→70,385 |
+  | gerard-byrne | 699→3,825 | 3,037→9,135 | 3→22 | 3→22 | 109,258→63,511 | 110,142→67,282 |
+  | j-h-engstrom | 832→5,009 | 3,069→11,519 | 3→25 | 3→25 | 109,736→69,195 | 110,568→70,762 |
+  | jose-antonio-hernandez-diez | 723→4,748 | 2,606→10,844 | 2→21 | 2→21 | 108,677→67,204 | 108,355→69,712 |
+  | lukas-einsele | 736→3,715 | 3,113→9,186 | 3→22 | 3→22 | 108,773→64,067 | 109,466→67,860 |
+  | ruud-van-empel | 724→4,537 | 3,053→10,522 | 3→21 | 3→21 | 108,847→66,474 | 109,742→68,003 |
+  | stefan-burger | 752→3,544 | 2,956→8,340 | 3→22 | 3→22 | 107,725→62,533 | 108,367→66,265 |
+  | stephen-gill | 864→4,199 | 3,054→9,562 | 3→22 | 3→22 | 108,627→65,243 | 109,063→67,261 |
+  | sze-tsung-leong | 751→4,555 | 2,918→11,409 | 3→26 | 3→26 | 107,510→66,447 | 108,414→70,585 |
+  | **合計** | **10,399→65,258** | **39,775→152,759** | **39→340** | **39→340** | **1,619,491→990,340** | **1,625,705→1,029,593** |
+
+- **構造 / 正本**：全30ページでJSON-LD Personキー集合の減少0、div/section開閉一致、review token残存0、本文二重ダッシュ0、`prep-block` 0。必須構造classはJA/EN全15名で欠落0（`essay` 4以上 / `ph-section__body` 8 / `ph-sources` 1 / `ph-entry-meta` 1 / `ph-keywords` 1 / `ph-hero__info` 1）。EN不可視要素は全15名でGA 2→2 / canonical 1→1 / hreflang 3→3 / og:image 1→1 / JSON-LD 2→2。EN正本pages 306→306、変更キーは対象15slugのみ、`_meta`不変。entryは13件28→28、Collectif fact / G.R.A.M.のみ`related_annotations`追加で27→28（削除キー0）。
+- **段落 / §REL / SHA**：revision付きJA要素はAneta 21/21、Anthony 11/11、Charles 11/11、G.R.A.M. 9/9、J.H. Engström 11/11、José 18/18、Ruud 8/8、Stephen 7/7、Sze 19/19、他6名0/0で取りこぼし0。§RELはJA 34リンク / EN 34リンクの計68本をhrefごとにrepo root起点で実在確認し切れ0・張り忘れ0。裸テキスト25項目はcard-dataのnameJa/nameEnとJA/EN movement実ファイルを照合し、解決可能項目0。0813素材30/30のSHA-256は作業前後一致（mismatch 0）。
+- **検証**：`check_en_entry.py`全15件OK、`check_content_loss.py` OK、`preflight.py` EXIT 0、全15slugのbuilder dry-runはSKIPPED 0、`git diff --check` OK。preflightのバッチ由来WARNは承認済み`data-nosnippet`減少12ページ（Claude / Collectif / G.R.A.M. / Stefan / Stephen / SzeのJA/EN）のみ。既存stale intentional-replacement宣言と既知`/colophon` WARNは対象外。禁止面・対象外写真家・engine差分0。
+- **面**：公開HTML30、EN正本1、本ログ1のtracked 32ファイル。backup JA/EN各15とspec 15の未追跡45ファイルは未stage。commit / pushなし。
+- **監督側の独立実測（Codex報告の裏取り）**：報告を鵜呑みにせず監督（Opus）側で再測し全項目一致を確認した。tracked差分32件＝期待集合と完全一致・禁止面0・対象外写真家0、素材SHA-256 30/30不変、`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、内部ページリンク98本の実在確認で切れ0、`rev`/`revision`/`revN`/`revision-*` のclassトークン残存0、EN正本 pages 306→306・変更キーは対象15slugのみ・フィールド欠落0・`_meta`不変（`collectif-fact` / `g-r-a-m` の2件のみ `related_annotations` 追加で27→28）、出典id 680件でdangling参照0・未参照出典0。**`git diff origin/main` の78,007行削除は本文消失ではない**ことを内訳実測で確定：削除行はタグ/短片62,523・CSS 14,550・空行303・prep-block/準備中22・素テキストを含む行262で、素テキスト69,233字は旧JA本文10,359字＋旧EN本文39,775字＋meta/nosnippet相当＝**差し替え対象の旧本文そのもの**。`<div class="essay">` の素テキスト量を監督側の独立パーサで再測すると **JA 10,359→64,044字（6.2倍）/ EN 39,775→152,759字（3.8倍）で減少slugは0**（例：charles-fregerの旧768字はessay#1 116＋#2 492＋#3 160の内訳一致を実測）。旧ページが約108KBで本文700字前後だったのは定型スキャフォールドが大半を占めていたためで、bytes減（1,619,491→990,340）はその置換による正当な減少。
+- **commit**：なし（Daisuke承認待ち）。
+- **wall-time**：36分（Daisuke実測。15名バッチ＝**1名あたり2.4分で既知最速**。既知記録は14名48分＝3.4分、8名29分＝3.6分、12名44分＝3.7分、11名50分＝4.5分、10名55分＝5.5分、6名37分＝6.2分、4名27分＝6.8分、5名40分＝8.0分、7名60分＝8.6分で、これまで最速だった14名（3.4分）を1名あたり1.0分更新した。「同質素材なら大きめバッチほど1名あたりが速い」という規模按分の傾向と整合し、15名は実測中の最大規模。効いたのは0812に続き §14 のキックオフ定型を初回プロンプトに全部載せたことで、**engine修正0・素材由来の停止0**。停止は監督判断1回のみ〈Anthony `演出写真` / Charles `類型写真` の異表記照合〉で、Codexが §14 B 条件1の不成立を自力で検出して正しく停止した（`--force` で押し通さなかった）ぶん手戻り0。0807の「構成写真→ステージド写真」と同型のため、判断は既存リンクラベルの出現数実測（ステージド写真90件 vs 演出写真4件 / タイポロジー写真24件 vs 類型学1件）で即決でき、往復1回で済んだ）。
+- **素材側の積み残し（次回ChatGPTプロンプトへ）**：`docs/importer-scaffold-inject-spec.md` §13 が警戒していた「想定外の第3の語形」が実際に到来。ただし既知の `rev19`（数字形）/ `revision-fifth`（語形）とは**性質が異なる**ため同じ unwrap では処理できない点を記録する。①`rev` は**ラッパーではなく構造要素への追加クラス**（`<div class="essay rev">` / `<div class="ph-section__body rev">` / `<div class="ph-sources rev">` / `<dl class="ph-entry-meta rev">`）で、unwrap すると節・出典ブロックごと壊れる。正しい扱いは class リストから `rev` トークンのみを落として要素を残す。②`<p class="revision">` / `<li class="revision">` は**本文段落そのもの**（sze-tsung-leong は本文全段落がこの形）で、unwrap も要素削除も不可。素材30ファイル全体で `rev` 1,108箇所 / `revision` 772箇所、全ファイルに存在（最少 stephen-gill 32 / 最多 sze-tsung-leong 106）。今回は engine を変えず正本側で除去し、revision付きJA要素115/115保持を実測して通した。**源流カットは素材出力時にハイライト抜きで出させること**（§13 の既存項目のまま）。
