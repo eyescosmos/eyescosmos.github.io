@@ -1865,4 +1865,5 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 
 - **種別 / 範囲**：update追補 / 1slug（`paul-albert-leitner`）。0820改訂素材の日英本文3箇所を反映（旅と報道写真をつなぐ段落1件追加、フリードランダー／ベッヒャー比較と近年の再評価の2段落を加筆置換）。JA正本HTML、EN正本JSON、生成EN HTMLのみ変更。engine改良0、手作業点3、サーフェス変更3＋本ログ。
 - **実測 / 検証**：HEAD比で本文はJA 9,769→10,337字（+568）/ EN 24,597→26,158字（+1,561）、本文段落35→36（全`ph-section`では36→37）、h3 18→18、出典33→33、unique外部リンク39→39、§RELリンク6→6。本文・出典・リンク・構造の減少0。§REL切れ0・張り忘れ0、JSON-LD Personキー減少0、EN不可視要素同数、div/section開閉一致、review token・二重ダッシュ・dangling sup-ref・`prep-block`残存0。EN正本pages 306不変・変更キー1件のみ・`_meta`不変・フィールド欠落0。素材SHA-256前後一致。`check_en_entry.py` OK、builder dry-run SKIPPED 0、`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、`git diff --check` OK。フィデリティ差分は本文増加のみ。commit / pushなし。
-- **wall-time**：
+- **面 / commit**：tracked 4ファイル（JA正本1 / EN正本1 / 生成EN 1 / 本ログ1）。対象外の写真家ページ差分**0**、禁止面差分0。被リンク側（`card-data.json` / `cards-archive.html` / `archive.html` / `eras/1990.html` / 他ページの§REL）はslug・パス不変のため無影響を実測。Daisuke承認のうえ push（`a9b8b5d7f`）。
+- **wall-time**：12分（Daisuke実測。1slugの本文差し替え追補。構造・出典・リンクが不変で本文3箇所のみの改訂だったため、新規取り込みではなく差分反映として処理できた。バッチの1名あたり実測（0820は7名24分＝3.4分/名）とは性質が違うので、**同列に平均へ混ぜない**。素材が同構造で再出力された場合の再反映コストの目安として記録する。）
