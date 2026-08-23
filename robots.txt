@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://eyescosmos.github.io/sitemap.xml
+Sitemap: https://eyescosmos.github.io/sitemap-full.xml

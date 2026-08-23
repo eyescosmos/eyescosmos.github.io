@@ -12,6 +12,10 @@ import subprocess
 BASE_URL = "https://eyescosmos.github.io"
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SITEMAP_ROOT_PATH = REPO_ROOT / "sitemap.xml"
+# GSC の /sitemap.xml エントリは 2026-04 の登録以降ずっと「読み込めませんでした」から回復しない
+# （ファイル・配信は実測で全項目正常、Googlebot のライブテストも成功。GSC 側のレコードが壊れている疑い）。
+# 壊れたレコードをバイパスするため、同一内容のミラーを別パスにも出力して別エントリとして登録する。
+SITEMAP_MIRROR_PATH = REPO_ROOT / "sitemap-full.xml"
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
 
@@ -195,7 +199,10 @@ def render_urlset(page_list: list[Page]) -> str:
 
 def write_sitemaps() -> None:
     page_list = pages()
-    SITEMAP_ROOT_PATH.write_text(render_urlset(page_list), encoding="utf-8")
+    xml = render_urlset(page_list)
+    # 2本は常にバイト同一に保つ（片方だけ古くなると GSC の比較実験が成立しない）
+    SITEMAP_ROOT_PATH.write_text(xml, encoding="utf-8")
+    SITEMAP_MIRROR_PATH.write_text(xml, encoding="utf-8")
 
 
 if __name__ == "__main__":
