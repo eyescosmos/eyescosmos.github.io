@@ -6028,11 +6028,11 @@ The work’s place in photographic history is strongest when tied to the expansi
       ]
     },
     "erik-steinbrecher": {
-      leadJa: `エリック・シュタインブレッヒャー（1963年ドイツ生まれ）は、写真・彫刻・テキスト・インスタレーションにわたって活動するアーティスト。日常的な物や標識を最小限の手つきで扱い、言語・労働・流通の社会的構造を静かに問う。`,
-      leadEn: `German artist born in 1963, working across photography, sculpture, text, installation, and conceptual formats. His practice often addresses language, displacement, labor, and the unstable status of everyday objects and signs.`,
+      leadJa: `エリック・シュタインブレッヒャー（1963年スイス生まれ）は、写真・彫刻・テキスト・インスタレーションにわたって活動するアーティスト。日常的な物や標識を最小限の手つきで扱い、言語・労働・流通の社会的構造を静かに問う。`,
+      leadEn: `Swiss artist born in 1963, working across photography, sculpture, text, installation, and conceptual formats. His practice often addresses language, displacement, labor, and the unstable status of everyday objects and signs.`,
       textJa: `経歴
 
-1963年ドイツ生まれ。写真、彫刻、テキスト、インスタレーション、コンセプチュアルな形式にわたって活動するアーティスト。言語・移動・労働・日常的な物や標識の不安定な地位を扱う実践で知られる。*1
+1963年スイス生まれ。写真、彫刻、テキスト、インスタレーション、コンセプチュアルな形式にわたって活動するアーティスト。言語・移動・労働・日常的な物や標識の不安定な地位を扱う実践で知られる。*1
 
 表現解説
 
@@ -6043,7 +6043,7 @@ The work’s place in photographic history is strongest when tied to the expansi
 美術館やギャラリーの資料は一貫して、シュタインブレッヒャーを写真が複数のメディアのひとつに過ぎないコンセプチュアル・アーティストとして位置づける。厳密に写真的な系譜に押し込むのではなく、そのイメージが言語と流通のより広い操作の中でいかに機能するかを見ることが、より的確な読み方となる。写真が1990年代に単独の中心性を失いながら批評的な力を失わなかったことを示した作家として写真史に位置づけられる。*2`,
       textEn: `Biography
 
-German artist born in 1963, working across photography, sculpture, text, installation, and conceptual formats.*1*2
+Swiss artist born in 1963, working across photography, sculpture, text, installation, and conceptual formats.*1*2
 
 His practice often addresses language, displacement, labor, and the unstable status of everyday objects and signs.*1*2
 

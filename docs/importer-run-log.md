@@ -1894,3 +1894,13 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **個別ページ / リンク**：JA/ENとも本文4節・出典30・div 180/180・section 9/9。§RELはJA 8リンク＋裸2（HIROMIX / やなぎみわ＝card-data・実ファイルとも不存在）、EN 8リンク。内部リンク16/16実在、張り忘れ0。GA 2、canonical 1、hreflang 3、OG 6、JSON-LDはJA1 / EN3。
 - **検証**：`check_new_photographer.py` OK（`en_graph_absent`既知WARNのみ）、`check_en_entry.py` OK、`check_photographer_link_integrity.py` OK、`check_content_loss.py` OK、`preflight.py` EXIT 0、builder dry-run SKIPPED 0。フェーズ1・2の6slug日英12ファイルは開始時SHA-256照合12/12一致、0823素材14/14不変。commit / pushなし。
 - **wall-time**：39分（Daisuke実測。0823バッチ7名＝update6＋新規1。1名あたり約5.6分）
+
+## 2026-08-24 — erik-steinbrecher カード lede の国籍誤り訂正（軽量）
+
+- **種別 / 範囲**：事実訂正 / 1slug。カード lede の「1963年ドイツ生まれ」→「1963年スイス生まれ」（EN は `German artist born in 1963` → `Swiss artist born in 1963`）。1963年バーゼル生まれで card-data の `nationality` も元から `CH`、0823素材の新本文もスイスと記述しており、カード lede だけが旧スタブ由来の誤りだった（Kunsthaus Baselland / JRP\|Editions / Wikidata Q1354128）。
+- **正本 / 反映経路**：JA は `card-data.json` の `ledeJa` と描画済み4面（`archive.html` / `cards-archive.html` / `eras/1990.html` / `countries/switzerland.html`）＋ローカル専用 `new-design/cards-archive.html` を同一文字列置換（`ドイツ`→`スイス` は3字で長さ不変＝カードの truncate 位置も不変）。EN は `data/photographer-essay-overrides.js` の `leadEn`（`build_archive_en.parse_overrides_lead_en` が EN カード lede の第1優先）を直し、`build_archive_en.py` / `build_taxonomy_en.py --era 1990` / `generate_country_pages_en.py --country switzerland` で再生成。再生成に載らない `data/taxonomy-en-content.json` のキャッシュ2件も同時訂正して再発を防止。
+- **同名の別人を巻き込まない確認**：「1963年ドイツ生まれ」は `michael-wesely` / `lukas-einsele`（ともに実際にドイツ生まれ）でも使われているため、カード名で帰属を実測してから Steinbrecher の該当箇所のみ置換。両名の記述は不変。
+- **副次差分（catch-up）**：`en/countries/switzerland.html` の再生成で、既に更新済みだった EN 個別ページ由来の lede 2件（Shirana Shahbazi / Stefan Burger）と card-data 由来のタグ1件（Diana Scheunemann `Conceptual Art`→`Intimate Life`）が追いついた。いずれも既存の正本データに一致させる同期で、削除・捏造なし。カード枚数は全面で不変。
+- **積み残し**：`photographer-essay-overrides.js` の Steinbrecher `textJa` / `textEn` は0823刷新前の旧スタブ本文のままで、「1990年代ドイツのコンセプチュアル・アートの文脈」等の記述が残る。どのページからも読まれない死にデータ（overrides.js を読み込む HTML は0件・ビルド時に `leadEn` のみ消費）のため今回は触っていない。
+- **検証**：`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0。tracked 差分10ファイル・17行、カード削除0、`card-data.json` の変更は当該 `ledeJa` 1行のみ。
+- **wall-time**：（Daisuke記入）
