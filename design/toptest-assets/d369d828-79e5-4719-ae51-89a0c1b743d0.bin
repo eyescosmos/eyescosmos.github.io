@@ -1878,7 +1878,55 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "tomoko-sawada",
+    "name": "Tomoko Sawada",
+    "nameJa": "澤田知子",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1977–",
+    "gender": "女性",
+    "era": "1990",
+    "movements": [
+      "ステージド写真",
+      "日本写真"
+    ],
+    "thumbnail": "",
+    "links": [
+      {
+        "label": "Tomoko Sawada Official — Works",
+        "url": "https://tomokosawada.com/works/"
+      },
+      {
+        "label": "Tokyo Photographic Art Museum — Tomoko Sawada",
+        "url": "https://topmuseum.jp/exhibition/3848/"
+      }
+    ],
+    "amazon": "",
+    "context": {
+      "text": "澤田知子は、証明写真機を使った卒業制作《ID400》で、自身の外見を400通りに変え、同一規格の肖像が人物認識をどう形づくるかを示した。*1 《OMIAI♡》では商業写真館、《School Days》では学校集合写真の形式を用い、結婚や集団における外見の読み方を検討した。*2 *3",
+      "textEn": "In her graduation work ID400, Tomoko Sawada used an ID-photo booth to transform her appearance four hundred times, showing how standardized portraits shape the recognition of a person. *1 In OMIAI♡ she used a commercial portrait studio, and in School Days the format of the school group photograph, examining how appearance is read in marriage and collective identity. *2 *3",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Tomoko Sawada Official — ID400",
+          "url": "https://tomokosawada.com/sp_faq/002/"
+        },
+        {
+          "num": 2,
+          "name": "Brooklyn Museum — Untitled from OMIAI",
+          "url": "https://www.brooklynmuseum.org/objects/5178"
+        },
+        {
+          "num": 3,
+          "name": "SFMOMA — Tomoko Sawada, School Days, 2004",
+          "url": "https://www.sfmoma.org/artwork/2007.68/"
+        }
+      ]
+    }
   }
+
 
 
 

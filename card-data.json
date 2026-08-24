@@ -6118,6 +6118,26 @@
       "style": "pc-top--kanji",
       "artText": "治癒",
       "hintText": "YUKI TAWADA · 1978–"
+    },
+    {
+      "type": "photographer",
+      "id": "tomoko-sawada",
+      "href": "photographers/tomoko-sawada.html",
+      "idx": 305,
+      "nameJa": "澤田知子",
+      "nameEn": "Tomoko Sawada",
+      "metaJa": "日本 · 1977–",
+      "era": "1990",
+      "nationality": "JP",
+      "ledeJa": "澤田知子は、自身の顔と身体を用い、証明写真、見合い写真、学校写真、履歴書写真など社会で使われる肖像形式を反復する写真家。《ID400》以後、外見から人物像を判断する慣習と写真の働きを検討している。",
+      "channel": "写真史の論点 · 日本写真",
+      "tags": [
+        "日本写真",
+        "日本"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "知子",
+      "hintText": "TOMOKO SAWADA · 1977–"
     }
   ],
   "movements": [

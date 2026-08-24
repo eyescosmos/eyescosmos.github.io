@@ -1867,3 +1867,30 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **実測 / 検証**：HEAD比で本文はJA 9,769→10,337字（+568）/ EN 24,597→26,158字（+1,561）、本文段落35→36（全`ph-section`では36→37）、h3 18→18、出典33→33、unique外部リンク39→39、§RELリンク6→6。本文・出典・リンク・構造の減少0。§REL切れ0・張り忘れ0、JSON-LD Personキー減少0、EN不可視要素同数、div/section開閉一致、review token・二重ダッシュ・dangling sup-ref・`prep-block`残存0。EN正本pages 306不変・変更キー1件のみ・`_meta`不変・フィールド欠落0。素材SHA-256前後一致。`check_en_entry.py` OK、builder dry-run SKIPPED 0、`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、`git diff --check` OK。フィデリティ差分は本文増加のみ。commit / pushなし。
 - **面 / commit**：tracked 4ファイル（JA正本1 / EN正本1 / 生成EN 1 / 本ログ1）。対象外の写真家ページ差分**0**、禁止面差分0。被リンク側（`card-data.json` / `cards-archive.html` / `archive.html` / `eras/1990.html` / 他ページの§REL）はslug・パス不変のため無影響を実測。Daisuke承認のうえ push（`a9b8b5d7f`）。
 - **wall-time**：12分（Daisuke実測。1slugの本文差し替え追補。構造・出典・リンクが不変で本文3箇所のみの改訂だったため、新規取り込みではなく差分反映として処理できた。バッチの1名あたり実測（0820は7名24分＝3.4分/名）とは性質が違うので、**同列に平均へ混ぜない**。素材が同構造で再出力された場合の再反映コストの目安として記録する。）
+
+## 2026-08-24 — 0823写真家7名 update パイロット（anri-sala）
+
+- **種別 / 範囲**：updateパイロット / 1slug（`anri-sala`）。0823素材の日英本文・description・keywords・thesis・§REL・出典を反映。JA正本HTML、EN正本JSON、生成EN HTMLのみ変更。hero眉 / Years / Country / Movement / Period は既存維持。Amazon検索URLはJA/ENとも0→0、ASIN解決なし。
+- **bug / 手作業 / engine**：bug 0、本文への手作業0、engine改良0。carry-forward apply とEN全フィールドマージが自動完走し、既存EN photobooks 223字とJSON-LDを保持。§RELは素材どおり写真家1＋運動1に更新され、Related削除SKIPなし。
+- **フィデリティ / 構造**：JA本文768→5,760字、unique出典3→27、sup-ref 5→35（dangling 0）、§REL 1→2、作品リンク0→3。JSON-LD PersonキーはJA 8→8 / EN 9→9（減少0）。JA div 99/99・section 9/9、EN div 154/154・section 9/9。review marker・本文二重ダッシュ・`prep-block`はいずれも0。
+- **正本 / 不可視要素 / §REL / SHA**：EN正本pages 306→306、変更キーは`anri-sala.html`のみ、`_meta`不変。EN不可視要素はGA 2→2 / canonical 1→1 / hreflang 3→3 / og:image 1→1 / JSON-LD 2→2。§RELはJA2＋EN2の4リンクを`ls`で実在確認し切れ0、裸項目0・張り忘れ0。0823素材14/14のSHA-256は作業前後一致。
+- **検証 / 面**：builder dry-runは`Would write 1 page(s)`・SKIPPED 0、`check_en_entry.py` OK、`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0。tracked 4ファイル（JA正本1 / EN正本1 / 生成EN 1 / 本ログ1）、禁止面差分0。backup JA/EN各1とspec 1は未追跡・未stage。commit / pushなし。
+- **wall-time**：39分（Daisuke実測。0823バッチ7名＝update6＋新規1。1名あたり約5.6分）
+
+## 2026-08-24 — 0823写真家5名 update（フェーズ2）
+
+- **種別 / 範囲**：update / 5slug（`erik-steinbrecher` / `gonzalo-puch` / `jules-spinatsch` / `marco-poloni` / `martin-polak-lukas-jasansky`）。JA正本5、EN正本JSON、生成EN 5を刷新。`tomoko-sawada`は未着手。hero眉 / Years / Country / Movement / Period は全件で既存維持。
+- **bug / 手作業 / engine**：engine変更0。デュオでEN素材由来のh1音写・Yearsがマージされたため旧値へ復元し、JA JSON-LDに追加された無効な複合`birthDate`も旧どおり削除。さらに5名の旧Country表示（JA=`1990s / 1990年代`、EN=`1990s`）を§14 Cどおり維持（手作業8点）。Related削除SKIPは3slug・4旧項目で発火し、各項目について新JA素材§REL / 新EN素材§REL / 適用後JA§RELに無いことと対応物なしを実測して承認済み`--force`を使用（Jules=`Photojournalism` / `Documentary`、Marco=`Documentary`、デュオ=`Documentary`）。
+- **フィデリティ**：JA本文は計3,681→31,685字、unique出典11→136。slug別はErik 641→6,691 / 2→28 / §REL 1、Gonzalo 719→5,648 / 2→27 / §REL 3、Jules 958→6,480 / 3→27 / §REL 2、Marco 650→5,997 / 2→27 / §REL 2、デュオ713→6,869 / 2→27 / §REL 3。全件dangling 0。
+- **検証 / 正本**：各slugでbuilder dry-run SKIPPED 0、`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、JSON-LD Personキー減少0、div/section開閉一致、§RELリンク切れ0・張り忘れ0、EN正本の差分キーは当該slugのみ、禁止面差分0。EN正本pages 306→306、フェーズ2変更キー5件のみ、`_meta`不変。素材14/14のSHA-256は作業前後一致。commit / pushなし。
+- **Years確定（追補）**：Daisuke指示により今回のみ§14 Cの既存維持を上書き。Erik=`1963–`、Gonzalo=`1950–`、Jules=`1964–`、Marco=`1962–`、デュオ（表示名順）=`1966– / 1965–`をJA hero / entry meta / sidebarへ反映し、EN正本JSON（個人4名は既存値一致、デュオを追加）経由で生成ENも同期。個人4名の既存JSON-LD `birthDate` と一致し、デュオは`birthDate`なしを維持。
+- **wall-time**：39分（Daisuke実測。0823バッチ7名＝update6＋新規1。1名あたり約5.6分）
+
+## 2026-08-24 — tomoko-sawada（new / 新規追加・澤田知子・idx305・era1990）
+
+- **種別 / 範囲**：new。0823のJA/EN素材を正本へ投入し、個別ページ、カード、星、archive、年代1990、国japan、運動staged-photographyの全指定面を生成。specは監督確定値を使用し、lede/star本文は素材Abstract・本文・§SRCのみから作成。
+- **bug / 手作業 / engine**：engine変更0。importerがBeautifulSoup属性順のviewportを認識できずEN builderが一度停止したため、JA head属性順を標準化。素材眉を標準眉`§ 305 — Photographer Index — 日本写真`へ置換し、EN公開後にJA言語トグルをリンク化。運動JAは構造を変えずカード1・Sawadaチップ1・件数3箇所を12→13。既存JA 2ページの「澤田知子」初出を各1リンク化。
+- **登録 / 重複 / 面**：card-data exact entry 1（idx305）、supplement 1、`data/photographers.js` 0、star bin 1。archive JA/EN、cards-archive、new-design/cards-archive、era JA/EN、country JA/EN、movement JA/ENの全10面でSawadaカード各1。movementのみカード＋チップでraw slug 2。EN正本pages 306→307、追加キー`tomoko-sawada.html`のみ、`_meta`不変。
+- **個別ページ / リンク**：JA/ENとも本文4節・出典30・div 180/180・section 9/9。§RELはJA 8リンク＋裸2（HIROMIX / やなぎみわ＝card-data・実ファイルとも不存在）、EN 8リンク。内部リンク16/16実在、張り忘れ0。GA 2、canonical 1、hreflang 3、OG 6、JSON-LDはJA1 / EN3。
+- **検証**：`check_new_photographer.py` OK（`en_graph_absent`既知WARNのみ）、`check_en_entry.py` OK、`check_photographer_link_integrity.py` OK、`check_content_loss.py` OK、`preflight.py` EXIT 0、builder dry-run SKIPPED 0。フェーズ1・2の6slug日英12ファイルは開始時SHA-256照合12/12一致、0823素材14/14不変。commit / pushなし。
+- **wall-time**：39分（Daisuke実測。0823バッチ7名＝update6＋新規1。1名あたり約5.6分）
