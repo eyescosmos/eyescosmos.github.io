@@ -356,6 +356,13 @@ Keywords / description / 本文 / 出典 / thesis / §REL は**素材が正**。
   JA `movements/<日本語表記>.html` / EN `en/movements/<slug>.html` の実ファイル存在で判定）。
   **対象slugが既存分の WARN に出ていたら、同じバッチの中で一緒に是正する**（掃除だけの単独バッチは組まない）
 - レビューマーカー残存0・二重ダッシュ0・`prep-block` 残存0（残る場合は対応CSSの存在を確認）
+- **サイドバー検索の配線が生きていること**（2026-08-25 追加。scaffold コピー由来で341枚が無反応だった事故の再発監視）
+  - 生成後のページに `input.ph-side-search__input:not([id*=mobile])` を使う **runtime 解決形**が入っていること
+  - `ph-search-input…` / `ph-search-suggestions…` の**文字列リテラルがページ内に1つも残っていない**こと
+    （残る場合は、それがそのページに実在する id か必ず確認する。他ページの slug が焼き込まれていたら停止）
+  - `preflight.py` の `check_sidebar_search_wiring()` が HARD FAIL で自動検出するが、**バッチ報告に実測値を1行書く**
+    （例: `検索配線 OK（runtime解決形 N/N・未解決リテラル0）`）。ガードは `ph-search-*` リテラルしか見ないので、
+    scaffold に**別の自slug固定値**が新しく増えていないかは目視でも確認する
 - `data/photographers-en-content.json` のキー数不変・変更キーが対象slugのみ・`_meta` 不変
 - 禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / new-design）差分0
 - 素材原本の SHA-256 が作業前後で不変
