@@ -2914,10 +2914,8 @@ sup{line-height:0;}
 </script>
 <script>
 (function(){
-  var inputId  = 'ph-search-input-axel-hutte';
-  var listId   = 'ph-search-suggestions-axel-hutte';
-  var input    = document.getElementById(inputId);
-  var list     = document.getElementById(listId);
+  var input    = document.querySelector('input.ph-side-search__input:not([id*=mobile])');
+  var list     = input ? document.getElementById(input.getAttribute('aria-controls')) : null;
   if(!input||!list) return;
   var indexEl  = document.getElementById('photographer-index');
   if(!indexEl) return;

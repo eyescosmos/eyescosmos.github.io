@@ -336,6 +336,10 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
     書誌は残らない（hero+main+aside を空骨格に作り替える）。**既存ページは上書きしない**。生成後に
     `check_new_photographer.py --slug <id>` を自動実行し、未記入箇所を WARN 表示する。手コピー時の
     slug 置換ミス・残骸消し残しを無くすのが目的。あとは要素を流し込むだけ。
+    **参照実装に slug 固定値を書くとコピー先で必ず壊れる**ため、共通UIの要素解決は runtime で行う。
+    サイドバー検索は `input.ph-side-search__input:not([id*=mobile])` と `aria-controls` から入力欄・候補欄を
+    解決し、`preflight.py` の `check_sidebar_search_wiring()` が構文に依存せず、script内の検索IDリテラルが
+    ページ内IDへ解決できない状態、入力欄の複数化、`aria-controls` の参照切れを HARD FAIL でブロックする。
 - **`scripts/check_new_photographer.py --slug <slug>`** — 新規／触った写真家ページの**完成検査**
   （構造健全さ＋決定論 cite 整合＋JSON-LD 実体準拠＝JA は Person を要求＋**本文レイアウトの型**
   ＝背景と時代/表現の核心/代表作・方法・媒体/批評と写真史上の位置 に揃っているかの soft ナッジ）。

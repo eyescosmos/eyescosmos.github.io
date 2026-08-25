@@ -814,8 +814,8 @@ sup { line-height:0; }
 </div><!-- end .page -->
 <script>
 (function(){
-  var inputId='ph-search-input-ansel-adams', listId='ph-search-suggestions-ansel-adams';
-  var input=document.getElementById(inputId), list=document.getElementById(listId);
+  var input=document.querySelector('input.ph-side-search__input:not([id*=mobile])');
+  var list=input?document.getElementById(input.getAttribute('aria-controls')):null;
   if(!input||!list) return;
   var photographers=[];
   fetch('/card-data.json').then(function(r){return r.json();}).then(function(data){

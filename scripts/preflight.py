@@ -1339,6 +1339,90 @@ def check_en_lang_toggle_active() -> None:
         )
 
 
+SIDEBAR_SEARCH_INPUT_RE = re.compile(r'<input\b[^>]*>', re.S | re.I)
+SIDEBAR_SEARCH_ATTR_RE = re.compile(
+    r'\b([A-Za-z_:][-A-Za-z0-9_:.]*)\s*=\s*(["\'])(.*?)\2', re.S)
+SIDEBAR_SEARCH_SCRIPT_RE = re.compile(r'<script\b([^>]*)>(.*?)</script>', re.S | re.I)
+SIDEBAR_SEARCH_ID_LITERAL_RE = re.compile(
+    r'(["\'])(ph-search-(?:input|suggestions)[^\s"\'\\]*)\1')
+
+
+def check_sidebar_search_wiring() -> None:
+    """サイドバー検索の要素解決が slug 固定値や壊れた参照へ退行していないか。"""
+    unresolved_literals: list[str] = []
+    ambiguous: list[str] = []
+    broken_controls: list[str] = []
+
+    for d in PUBLIC_HTML_DIRS:
+        p = REPO / d
+        if not p.is_dir():
+            continue
+        for f in sorted(p.glob("*.html")):
+            if re.search(r'-backup(?:\d+)?\.html$', f.name) or f.name.startswith("google"):
+                continue
+            rel = str(f.relative_to(REPO))
+            html = f.read_text(encoding="utf-8", errors="ignore")
+            if is_redirect_stub(html):
+                continue
+
+            inputs: list[dict[str, str]] = []
+            for tag in SIDEBAR_SEARCH_INPUT_RE.findall(html):
+                attrs = {name.lower(): value
+                         for name, _, value in SIDEBAR_SEARCH_ATTR_RE.findall(tag)}
+                if "ph-side-search__input" not in attrs.get("class", "").split():
+                    continue
+                if "mobile" in attrs.get("id", ""):
+                    continue
+                inputs.append(attrs)
+            if not inputs:
+                continue
+
+            page_ids = {
+                value
+                for tag in re.findall(r'<[^>]+>', html, flags=re.S)
+                for name, _, value in SIDEBAR_SEARCH_ATTR_RE.findall(tag)
+                if name.lower() == "id"
+            }
+            bad_literals: list[str] = []
+            for script_attrs_raw, body in SIDEBAR_SEARCH_SCRIPT_RE.findall(html):
+                script_attrs = {
+                    name.lower(): value
+                    for name, _, value in SIDEBAR_SEARCH_ATTR_RE.findall(script_attrs_raw)
+                }
+                if script_attrs.get("type", "").lower() == "application/ld+json":
+                    continue
+                for _, literal in SIDEBAR_SEARCH_ID_LITERAL_RE.findall(body):
+                    if literal not in page_ids:
+                        bad_literals.append(literal)
+            unresolved_literals.extend(
+                f"{rel} → {literal}" for literal in dict.fromkeys(bad_literals))
+
+            if len(inputs) >= 2:
+                ambiguous.append(f"{rel} ({len(inputs)}個)")
+            controls = inputs[0].get("aria-controls", "")
+            if not controls or controls not in page_ids:
+                broken_controls.append(f"{rel} (aria-controls={controls or '欠落'})")
+
+    if unresolved_literals:
+        hard_failures.append(
+            "サイドバー検索スクリプトの検索IDリテラルがページ内要素へ解決できない "
+            f"{len(unresolved_literals)}件。参照実装のコピーで他ページの id を焼き込むと"
+            "検索窓が無反応になるため、ページ内に実在する id を参照してください: "
+            + ", ".join(unresolved_literals[:12])
+            + (" …" if len(unresolved_literals) > 12 else ""))
+    if ambiguous:
+        hard_failures.append(
+            f"デスクトップ用 ph-side-search__input が複数あり一意に解決できない {len(ambiguous)}件。"
+            "検索スクリプトが誤った入力欄へ接続するため、id に mobile を含まない要素を1個にしてください: "
+            + ", ".join(ambiguous[:12]) + (" …" if len(ambiguous) > 12 else ""))
+    if broken_controls:
+        hard_failures.append(
+            f"デスクトップ検索 input の aria-controls 参照先が存在しない {len(broken_controls)}件。"
+            "候補リストを取得できず検索が無反応になるため、実在する suggestions id を指定してください: "
+            + ", ".join(broken_controls[:12])
+            + (" …" if len(broken_controls) > 12 else ""))
+
+
 # 実在しないことが既知で、方針決定待ちの内部リンク（HARD にしない）。
 # `/colophon`（拡張子なし・900ページの標準フッター）と、toyoko-tokiwa EN だけが持つ
 # `/en/colophon.html` は同根の「コロフォンページ欠落」。ページ新設 or リンク削除の
@@ -1571,6 +1655,7 @@ def main() -> int:
     check_dup_ids_carddata()
     check_ga_coverage()
     check_en_lang_toggle_active()
+    check_sidebar_search_wiring()
     check_internal_dead_links()
     check_rel_unlinked_names()
     check_orphan_class_tokens()

@@ -1934,3 +1934,10 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **Years確定（追補）**：Daisuke指示により今回のみ§14 Cの既存維持を上書きし、`janaina-tschape=1973–` / `jens-ullrich=1968–` / `philippe-terrier-hermann=1970–`をJA hero・entry meta・sidebarの各3箇所へ反映。EN正本JSONの`years`（Janaina=`1973–` / Jens=`1968–` / Philippe=`1970–`）から生成ENも同期した。JSON-LD `birthDate`はJanaina=`1973` / Philippe=`1970`を既存維持。Jensのみ旧`1972`をJA/ENとも`1968`へ是正した。適用済みJA/EN本文がZKM / Goethe-Institut Villa Kamogawa / Deutsche Digitale Bibliothekの出典付きで1968年トゥクユ生まれを示し、旧来の1972年ドイツ生まれを明示的に否定しているため。
 - **検証 / 面**：5slugのbuilder通常dry-runはすべて`Would write 1 page(s)`・SKIPPED 0、`check_en_entry.py`全5件OK、`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、`git diff --check` EXIT 0。PHASE 2で増えたtracked面は公開HTML10＋EN正本1＋本ログ1の12ファイル。全作業ツリーではPHASE 1を含むtracked 14ファイル。禁止面・対象外写真家ページ差分0。backup JA/EN各5とspec 5は未追跡・未stage。commit / add / pushなし。
 - **wall-time**：18分（Daisuke実測。0825バッチ6名＝update6。1名あたり約3.0分）
+
+## 2026-08-25 — 全写真家ページのサイドバー検索配線修正（軽量）
+
+- **種別 / bug**：other。参照実装のslug固定 `inputId` がコピー先で一致せず、サイドバー検索が初期化前に停止する不具合1系統を修正。
+- **手作業点 / 面**：手作業0（FORM A 352枚 / FORM B 236枚を文字列一致で機械置換）。公開HTML 588枚（JA 294 / EN 294）＋preflightガード1＋仕様書1＋本ログ。本文・出典・§REL・head・JSON-LD・CSSの変更0、フィデリティ差分N/A。
+- **engine改良 / 検証**：要素解決をruntime化し、`check_sidebar_search_wiring()` をHARD FAILとして追加。588/588でデスクトップinput一意・`aria-controls`先実在、死んだ配線0。置換期待値とのbyte比較588/588一致、EN再生成byte一致、content-loss / preflight / diff check通過。陽性試験で旧ハードコード1件を検出後に完全復元。commit / add / pushなし。
+- **wall-time**：（Daisuke記入）
