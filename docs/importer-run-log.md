@@ -1904,3 +1904,33 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **積み残し**：`photographer-essay-overrides.js` の Steinbrecher `textJa` / `textEn` は0823刷新前の旧スタブ本文のままで、「1990年代ドイツのコンセプチュアル・アートの文脈」等の記述が残る。どのページからも読まれない死にデータ（overrides.js を読み込む HTML は0件・ビルド時に `leadEn` のみ消費）のため今回は触っていない。
 - **検証**：`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0。tracked 差分10ファイル・17行、カード削除0、`card-data.json` の変更は当該 `ledeJa` 1行のみ。
 - **wall-time**：（Daisuke記入）
+
+## 2026-08-25 — 0825写真家6名 update パイロット（ana-torfs / PHASE 1）
+
+- **種別 / 範囲**：updateパイロット / 1slug（`ana-torfs`）。0825素材の日英本文・description・keywords・thesis・§REL・出典を反映。JA正本HTML、EN正本JSON、生成EN HTMLのみ変更。PHASE 2の残り5slugは未着手。hero眉 `§ 240 — Photographer Index — コンセプチュアルアート` / Years `1963–` / Country `ベルギー`（hero `BE`）/ Movement `—` / Period `1990–2000s` は既存維持。Amazon CTAはJA/ENとも0→0、新規検索URL0、ASIN解決なし。
+- **bug / 手作業 / engine**：bug 0、本文への手作業0、engine改良0。手作業判断1系統＝EN builderのRelated削除ガード。削除対象 `Staged Photography` は、新JA素材§REL / 新EN素材§REL / 適用後JA§RELの各ブロックで0件、旧項目で新素材に対応物なしの常設3条件を満たしたため、`ana-torfs`のみ承認済み`--force`で生成。works ui-terms実検出は対象なし。
+- **フィデリティ**：JA本文733→3,765字、EN本文2,964→9,428字。unique出典はJA/ENとも3→25。sup-refはJA 5→26 / EN 40→26（dangling 0）。§RELはJA/ENとも1→4、作品リンクはJA/ENとも0→3。bytesはJA 107,520→64,385 / EN 108,536→67,603。
+- **構造 / 正本 / 不可視要素**：JSON-LD PersonキーはJA 8→8 / EN 9→9で減少0。EN不可視要素はGA `G-2VRTV8BZEJ` 2→2 / canonical 1→1 / hreflang 3→3 / og:image 1→1 / JSON-LD 2→2。`data-nosnippet`はJA 9→8 / EN 8→7（WORKSのprep-block置換による既知の正当減少）。div/sectionはJA 96/96・9/9、EN 147/147・9/9。review marker / `rev*` class / 二重ダッシュ / `prep-block` / dangling sup-refはいずれも0。EN正本pages 307→307、変更キーは`ana-torfs.html`のみ、`_meta`不変、stage4 byte不変。
+- **§REL / SHA / 禁止面**：JA4＋EN4の全8リンクをrepo root起点で実在確認し切れ0。`preflight.py`の同じ名前解決ロジックでも対象JA/ENの裸名張り忘れ0。0825素材12/12のSHA-256は作業前後一致。禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / new-design / `data/photographers.js` / sitemap・star bin）差分0、対象外写真家ページ差分0。
+- **検証 / 面**：`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、`check_en_entry.py ana-torfs` OK、builder通常dry-runは`Would write 1 page(s)`・SKIPPED 0、`git diff --check` EXIT 0。tracked 4ファイル（JA正本1 / EN正本1 / 生成EN 1 / 本ログ1）。backup JA/EN各1とspec 1は未追跡・未stage。commit / pushなし。PHASE 1で停止し、監督承認待ち。
+- **wall-time**：18分（Daisuke実測。0825バッチ6名＝update6。1名あたり約3.0分）
+
+## 2026-08-25 — 0825写真家5名 update（PHASE 2完了）
+
+- **種別 / 範囲**：update / 5slug（`eve-sussman` / `janaina-tschape` / `jens-ullrich` / `philippe-terrier-hermann` / `useful-photography`）。JA正本5、EN正本JSON、生成EN 5を0825素材で刷新。hero眉 / Years / Country / Movement / Periodは全件既存維持。`janaina-tschape`はslugと既存表示名（JA=`ジャナイナ・チェペ` / EN=`Janaina Tschäpe`）を維持。`useful-photography`は個人化せず、Years=`2000s–` / Country=`オランダ` / JSON-LD `Person`型と既存キーを維持。Amazon CTAは全10ページ0→0、新規検索URL0、ASIN解決なし。
+- **bug / 手作業 / engine**：engine bug 0、engine改良0。手作業2系統。①EN mergeが素材値へ動かしたYearsを§14 Cどおり復元（`jens-ullrich` EN正本 `1972–`、`useful-photography` 公開表示由来 `2000s–`）。この復元時に文脈不足パッチで対象外`bruno-serralongue.years`へ一時差分1件を作ったが、正本変更キー監査で検出しPHASE 2 baselineの`1968–`へ復元、最終対象外entry差分0。②Related削除ガード3slug・3項目をブロック単位で判定し、常設3条件成立後だけ`--force`を使用（`janaina-tschape`=`Staged Photography`、`jens-ullrich`=`Conceptual Art`、`philippe-terrier-hermann`=`Staged Photography`）。works ui-terms実検出は全件対象なし。
+- **フィデリティ**：JA本文計2,202→22,701字 / EN本文計8,317→52,664字、unique出典はJA/ENとも計8→129。slug別は下表。全10ページでdangling sup-ref 0。
+
+  | slug | JA本文字数 | EN本文字数 | JA/EN unique出典 | JA sup-ref | EN sup-ref | JA/EN §REL | JA/EN作品リンク |
+  |---|---:|---:|---:|---:|---:|---:|---:|
+  | eve-sussman | 4→4,490 | 12→9,762 | 0→26 | 0→30 | 0→30 | 0→4 | 0→3 |
+  | janaina-tschape | 791→4,651 | 3,047→10,932 | 3→28 | 6→34 | 40→34 | 1→2 | 3→3 |
+  | jens-ullrich | 590→4,626 | 2,127→10,662 | 2→25 | 5→26 | 24→26 | 1→2 | 2→3 |
+  | philippe-terrier-hermann | 813→4,866 | 3,119→11,732 | 3→26 | 6→38 | 32→38 | 1→3 | 3→3 |
+  | useful-photography | 4→4,068 | 12→9,576 | 0→24 | 0→25 | 0→25 | 0→2 | 0→3 |
+
+- **構造 / 正本 / 不可視要素**：JSON-LD Personキー減少0（JAはeve/useful 8→8・他3件9→9、ENはuseful 8→8・他4件9→9）。全件`@type=Person`不変。EN不可視要素は各slugでGA `G-2VRTV8BZEJ` 2→2 / canonical 1→1 / hreflang 3→3 / og:image 1→1 / JSON-LD 2→2。div/sectionはJA eve 97/97・janaina 99/99・jens 96/96・philippe 97/97・useful 95/95、ENは150/150・156/156・147/147・150/150・144/144、sectionは全件9/9。review marker / `rev*` class / 二重ダッシュ / `prep-block` / dangling sup-refはいずれも0。
+- **§REL / 正本 / SHA**：§RELはJA13＋EN13の全26リンクをrepo root起点で実在確認し切れ0。`preflight.py`と同じcard-data/movement名前解決でも10ページの裸名張り忘れ0。EN正本pages 307→307、PHASE 2 baseline比の変更キーは対象5slugのみ、`_meta`不変、stage4 byte不変。0825素材12/12のSHA-256はPHASE 1開始時・PHASE 2開始時・作業後で一致。
+- **Years確定（追補）**：Daisuke指示により今回のみ§14 Cの既存維持を上書きし、`janaina-tschape=1973–` / `jens-ullrich=1968–` / `philippe-terrier-hermann=1970–`をJA hero・entry meta・sidebarの各3箇所へ反映。EN正本JSONの`years`（Janaina=`1973–` / Jens=`1968–` / Philippe=`1970–`）から生成ENも同期した。JSON-LD `birthDate`はJanaina=`1973` / Philippe=`1970`を既存維持。Jensのみ旧`1972`をJA/ENとも`1968`へ是正した。適用済みJA/EN本文がZKM / Goethe-Institut Villa Kamogawa / Deutsche Digitale Bibliothekの出典付きで1968年トゥクユ生まれを示し、旧来の1972年ドイツ生まれを明示的に否定しているため。
+- **検証 / 面**：5slugのbuilder通常dry-runはすべて`Would write 1 page(s)`・SKIPPED 0、`check_en_entry.py`全5件OK、`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、`git diff --check` EXIT 0。PHASE 2で増えたtracked面は公開HTML10＋EN正本1＋本ログ1の12ファイル。全作業ツリーではPHASE 1を含むtracked 14ファイル。禁止面・対象外写真家ページ差分0。backup JA/EN各5とspec 5は未追跡・未stage。commit / add / pushなし。
+- **wall-time**：18分（Daisuke実測。0825バッチ6名＝update6。1名あたり約3.0分）
