@@ -1953,3 +1953,11 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **§REL / SHA / 禁止面**：§RELはJA4＋EN4の全8リンクをrepo root起点で `ls` 実在確認し切れ0、`preflight.py` の名前解決でも張り忘れ0。0825素材2件のSHA-256は作業前後で一致（JA `e3e8839c…` / EN `f60121fa…`）。禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / new-design）差分0、対象外写真家ページ差分0。
 - **検証**：`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、`check_en_entry.py jean-luc-mylayne` OK、builder dry-run `Would write 1 page(s)`・SKIPPED 0、`git diff --check` EXIT 0。backup JA/EN各1とspec 1は未追跡・未stage（specは作業前から存在し上書きなし）。commit / add / pushなし。
 - **wall-time**：18分（Daisuke実測。0825素材の単体update 1名）
+
+## 2026-08-25 — intentional-replacements の stale 宣言23件を掃除（軽量）
+
+- **種別 / 範囲**：other / `scripts/intentional-replacements.json` のみ。push 済みでベースラインが `origin/main` へ進み、全23件が「今回の消失検知に一致せず」＝役目を終えた状態だったため空配列へ。宣言の内訳は 2026-07-27 が12件 / 07-30 が4件 / 08-06 が1件 / 08-25（jean-luc-mylayne）が6件。
+- **削除前の安全確認**：①作業開始時に tracked 差分0・`HEAD == origin/main`（`b77234f27`）を実測。②`preflight.py` が23件すべてを stale と報告（＝どのガードにも消費されていない）。③各宣言URLが宣言ファイル自身を除いてリポジトリに残るのは9件で、すべて `data/photographer-essay-overrides.js`。`check_content_loss.py` の `SCOPE_DIRS` は `photographers` / `en/photographers` のみ、URL単位の消失検知は `data/photographers-en-content.json` を見る `check_en_content_loss()` 側なので、overrides.js 残存は両ガードの対象外＝23件とも完全に用済みと確定。
+- **陽性試験（ガードが空ファイルでフェイルオープンしていないことの確認）**：EN正本JSONの `jean-luc-mylayne.sources_html` から Le Monde の出典URL 1件を意図的に差し替えたところ、`preflight.py` が EXIT 1 で `リンク1件消失` を HARD FAIL 検出（`[EN closure]` も同時に発火）。宣言を空にしてもガードは生存している。試験後にバックアップから復元し、`git diff --stat` がバイト単位で空＝完全復元を確認。JA側でも同様の試験を行ったが、JA HTMLの消失検知は出典「件数」ベースでURL単位ではない（URLを別URLへ置換すると件数が変わらず発火しない）ことを実測。これは宣言機構の対象外＝設計どおりで、こちらも完全復元済み。
+- **検証**：`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、HARD FAIL 0、stale WARN 23→0、`intentional-replacement` 関連の出力行 0。tracked 差分は当該JSON 1ファイル（+1 / −140行）と本ログのみ。公開HTML・EN正本JSON・card-data・禁止面の差分0。
+- **wall-time**：（Daisuke記入）
