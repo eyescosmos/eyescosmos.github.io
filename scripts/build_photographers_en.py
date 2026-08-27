@@ -925,11 +925,11 @@ def rebuild_related(html, page):
     # name exactly as before. Pages without this field are unaffected.
     notes = page.get('related_annotations') or {}
 
-    def _rel_li(href, name):
+    def _rel_li(href, name, prefix=''):
         note = notes.get(href)
         if note:
-            return f'            <li><a href="{href}">{name}</a> &mdash; {note}</li>'
-        return f'            <li><a href="{href}">{name}</a></li>'
+            return f'            <li>{prefix}<a href="{href}">{name}</a> &mdash; {note}</li>'
+        return f'            <li>{prefix}<a href="{href}">{name}</a></li>'
 
     body_parts = []
     if not people and not movements:
@@ -937,14 +937,14 @@ def rebuild_related(html, page):
     if people:
         body_parts.append('          <div class="ph-rel-label">Related photographers</div>')
         body_parts.append('          <ul class="ph-rel-list">')
-        for href, name in people:
-            body_parts.append(_rel_li(href, name))
+        for href, name, prefix in people:
+            body_parts.append(_rel_li(href, name, prefix))
         body_parts.append('          </ul>')
     if movements:
         body_parts.append('          <div class="ph-rel-label">Related movements</div>')
         body_parts.append('          <ul class="ph-rel-list ph-rel-movements">')
-        for href, name in movements:
-            body_parts.append(_rel_li(href, name))
+        for href, name, prefix in movements:
+            body_parts.append(_rel_li(href, name, prefix))
         body_parts.append('          </ul>')
 
     new_sec = (
@@ -1035,7 +1035,7 @@ def detect_content_loss(old_html, new_html):
 
 
 def extract_directory_group(sd_html, label_prefix):
-    """Return list of (href, name) for a contextual directory group."""
+    """Return list of (href, name, optional visible prefix) for a directory group."""
     # find the label then the following items div
     out = []
     for gm in re.finditer(r'<div class="site-directory-group site-directory-group-contextual">(.*?)</div>\s*</div>', sd_html, re.S):
@@ -1045,8 +1045,11 @@ def extract_directory_group(sd_html, label_prefix):
             continue
         if not lm.group(1).strip().startswith(label_prefix):
             continue
-        for am in re.finditer(r'<a href="([^"]+)">([^<]+)</a>', group):
-            out.append((am.group(1), am.group(2)))
+        for am in re.finditer(r'<a([^>]*)href="([^"]+)"([^>]*)>([^<]+)</a>', group):
+            attrs = am.group(1) + am.group(3)
+            pm = re.search(r'data-rel-prefix="([^"]*)"', attrs)
+            prefix = htmllib.unescape(pm.group(1)) if pm else ''
+            out.append((am.group(2), am.group(4), prefix))
     return out
 
 

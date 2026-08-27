@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "slug": "keizo-kitajima",
+    "url": "https://www.bankart1929.com/news/2023/news/23_018-en.html",
+    "reason": "The supplied 2026-08-27 JA and EN source sets replace the prior three-source entry and do not include this BankART exhibition URL.",
+    "declared": "2026-08-28"
+  },
+  {
+    "slug": "hideo-haga",
+    "url": "https://www.jps.gr.jp/wp-content/uploads/2023/04/jps-kaihou_179.pdf",
+    "reason": "The supplied 2026-08-27 JA and EN source sets replace the prior source list and do not include this JPS newsletter URL.",
+    "declared": "2026-08-28"
+  },
+  {
+    "slug": "hiromi-tsuchida",
+    "url": "https://asia.si.edu/explore-art-culture/interactives/japan-modern-photography-from-the-gloria-katz-and-willard-huyck-collection/japan-modern-people/tsuchida-hiromi/",
+    "reason": "The supplied 2026-08-27 JA and EN source sets replace the prior source list and do not include this Smithsonian interactive URL.",
+    "declared": "2026-08-28"
+  },
+  {
+    "slug": "mitsuaki-iwago",
+    "url": "https://www.simonandschuster.com/authors/Mitsuaki-Iwago/454393249",
+    "reason": "The supplied 2026-08-27 JA and EN source sets replace the prior source list and do not include this Simon & Schuster author URL.",
+    "declared": "2026-08-28"
+  },
+  {
+    "slug": "takeji-iwamiya",
+    "url": "https://fujifilmsquare.jp/activityreport/pack/pdf/activity_report_2019.pdf",
+    "reason": "The supplied 2026-08-27 JA and EN source sets replace the prior source list and do not include this Fujifilm activity-report URL.",
+    "declared": "2026-08-28"
+  },
+  {
+    "slug": "takeyoshi-tanuma",
+    "url": "https://www.asahi.com/ajw/articles/14636750",
+    "reason": "The supplied 2026-08-27 JA and EN source sets replace the prior source list and do not include this Asahi article URL.",
+    "declared": "2026-08-28"
+  },
+  {
+    "slug": "yoshino-oishi",
+    "url": "https://www.fujifilm.co.jp/photosalon/osaka/09110602.html",
+    "reason": "The supplied 2026-08-27 JA and EN source sets replace the prior source list and do not include this Fujifilm Photo Salon URL.",
+    "declared": "2026-08-28"
+  },
+  {
+    "slug": "yoshino-oishi",
+    "url": "https://www.jcii-cameramuseum.jp/photosalon/2011/03/29/7487/",
+    "reason": "The supplied 2026-08-27 JA and EN source sets replace the prior source list and do not include this JCII Photo Salon URL.",
+    "declared": "2026-08-28"
+  }
+]

@@ -1990,3 +1990,36 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **BWT**：新サイト `https://eyescosmos.com/` を追加。GSCからのインポートが通らなかったため **XMLファイル方式**（`BingSiteAuth.xml` をルート直下）で認証。sitemap 送信済み。送信直後の検出URL数0は非同期処理のため正常。旧サイトは削除しない。
 - **IndexNow**：ホストが変わり Bing から見て全URLが新規のため、例外的に `--all` で776件送信。**初回は HTTP 403**（キー無効）だったが、キーファイルは本番でバイト単位まで正しく（`od -c` で確認）、単発GET形式は200だったため一時的な検証遅延と判断。数分後の再実行で **HTTP 200 受理**。教訓は `playbook_indexnow_submit.md` に追記。
 - **wall-time**：（Daisuke記入）
+
+## 2026-08-28 — 0827写真家8名 update パイロット（keizo-kitajima / PHASE 1）
+
+- **種別 / 範囲**：updateパイロット / 1slug（`keizo-kitajima`）。0827素材の日英本文・description・keywords・thesis・§REL・出典・作品リンクを反映。残り7slugは未着手。hero眉 / Years `1980s / 1980年代` / Country `日本` / Movement `—` / Period `1980–1990s` は既存維持。Amazon検索URLはJA/ENとも0→0、ASIN解決なし。
+- **bug / 手作業 / engine**：engine変更0。手作業2系統。①素材の§RELで裸だった実在項目トーマス・ルフを、確定表どおりJA `/photographers/thomas-ruff.html`・EN `/en/photographers/thomas-ruff.html`へリンク化し、EN説明を正本`related_annotations`へ保持。②旧EN出典BankART URL 1件が新JA/EN素材の双方で0件であることを実測し、`intentional-replacements.json`へ1URL限定・declared=`2026-08-28`で宣言。works ui-termsはURL照合から「東京都写真美術館 - イースト・ヴィレッジ」英訳1件を自動追加。Related削除SKIPなし、builder `--force`不使用。
+- **フィデリティ**：JA本文1,004→6,547字 / EN本文2,054→17,371字、unique出典はJA/ENとも3→26、sup-refはJA6→47 / EN0→47、§RELはJA3→7 / EN3→6、作品リンクはJA/ENとも0→4、bytesはJA108,544→77,523 / EN106,162→81,149。全sup-ref dangling 0。
+- **構造 / 正本 / 不可視要素**：JSON-LDキー減少0（JA Person 8→8、EN WebPage 8 / WebSite 3 / Person 9 / Country 2 / BreadcrumbList 3 / ListItem 4は全て不変）。GA `G-2VRTV8BZEJ`はJA/ENとも2→2、canonical 1→1、hreflang 3→3、JSON-LD scriptはJA1→1 / EN2→2、og:imageはJA0→0 / EN1→1。`data-nosnippet`はJA9→8 / EN8→7（prep-block置換による既知の正当減少）。タグ開閉はJA div98/98・section9/9、EN div151/151・section9/9。素材の裸`revision`はJA/EN各130 class token＋レビューCSS各7、適用後はreview class / CSS selector / 二重ダッシュ / `prep-block`すべて0。EN正本pages 307→307、変更キーは`keizo-kitajima.html`のみ、entryキー28→28・欠落0、`_meta`不変。
+- **検索配線 / §REL / SHA**：JA/ENともruntime解決形`input.ph-side-search__input:not([id*=mobile])`各1、他slug固定値0。§RELはJA6＋EN6の全12リンクをrepo root起点で実在確認し切れ0、確定表とpreflight名前解決で張り忘れ0。素材16/16のSHA-256は作業前後一致（mismatch 0）。
+- **検証 / 面**：`check_en_entry.py keizo-kitajima` EXIT 0、`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、builder通常dry-runは`Would write 1 page(s)`・SKIPPED 0。新規WARNは`data-nosnippet`減少のJA/EN各1行のみ。tracked面はJA正本1 / EN正本JSON1 / EN ui-terms1 / 生成EN1 / intentional-replacements1 / 本ログ1。禁止面・対象外写真家ページ差分0。backup JA/EN各1とspec 1は未追跡・未stage。commit / add / push / stashなし。PHASE 1で停止し、監督監査待ち。
+- **wall-time**：PHASE 2と合算（下記）
+
+## 2026-08-28 — 0827写真家8名 update バッチ完了（残り7slug / PHASE 2）
+
+- **種別 / 範囲**：update 7名（`hideo-haga` / `kelli-connell` / `mitsuaki-iwago` / `takeji-iwamiya` / `takeyoshi-tanuma` / `yoshino-oishi` / `hiromi-tsuchida`）。PHASE 1の`keizo-kitajima`と合わせて対象8名を完了。JA HTML正本、EN JSON正本、builder生成ENへ0827素材の本文・description・keywords・thesis・§REL・出典・作品リンクを反映。hero眉 / Years / Country / Movement / Period はJA/ENともbackup一致。Yoshinoのみ**Daisuke指示により§14 Cの既存維持を上書き**し、EN正本`years`を`1948–`→`1944–`へ是正した（適用済みJA/EN本文がArt Platform Japan `https://artplatform.go.jp/ja/artists/A2310`（cite-21）を出典に1944年5月28日東京生まれと明記しており、旧`1948–`は本文と矛盾するため）。JSON-LD `birthDate`はJA/ENとも`1944`で本文と一致。可視Yearsは`1970s / 1970年代`の年代文字列（サイト標準）で生年欄ではないため表示変化なし。EN再生成の結果HTMLはbyte不変（`years`はstored `jsonld`不在時のフォールバック経路でのみ消費されるため）。
+- **手作業 / engine**：§RELの素材側リンク張り忘れを確定表どおりJA/EN正本双方で補正（Haga→Iwamiya、Connell→Sherman/Weston、Iwago→Hoshino/Nomachi、Iwamiya→Domon、Tanuma→Kimura、Oishi→Tsuchida、Tsuchida→Tomatsu/Ishiuchi）。Kelliの複合名は表示文字列を維持しWeston部分だけリンク化するため、EN builderに任意`data-rel-prefix`読取を追加。既定値`''`で既存出力を維持し、生成HTMLには属性を出さない。旧EN片側だけのHaga=`Edward Steichen` / Tanuma=`Hideo Haga` / Oishi=`Documentary`は§14 Bの3条件と監督承認に基づき、この3slugだけ`--force`で削除。他4slugとKeizoは通常生成。旧出典URL7件は新JA/EN素材双方0件を実測してintentional replacement宣言（declared=`2026-08-28`）。works ui-termsは残り7名分15件を追加。
+- **フィデリティ**：
+
+  | slug | JA本文字数 | EN本文字数 | unique出典 JA/EN | sup-ref JA/EN | §REL JA/EN（リンク） | 作品 JA/EN | bytes JA / EN |
+  |---|---:|---:|---:|---:|---:|---:|---:|
+  | hideo-haga | 858→4,552 | 2,122→12,729 | 3→21 / 3→21 | 18→32 / 18→32 | 2→3 (2) / 2→2 (2) | 2→3 / 2→3 | 109,790→67,756 / 107,714→70,587 |
+  | kelli-connell | 795→5,109 | 1,779→12,056 | 4→20 / 4→20 | 5→29 / 5→29 | 2→3 (3) / 2→3 (3) | 0→3 / 0→3 | 108,130→67,659 / 105,937→69,253 |
+  | mitsuaki-iwago | 834→4,511 | 2,085→11,229 | 3→25 / 3→25 | 6→33 / 0→33 | 1→4 (3) / 1→3 (3) | 0→3 / 0→3 | 107,160→68,833 / 105,539→70,410 |
+  | takeji-iwamiya | 1,059→4,810 | 2,698→12,611 | 4→22 / 4→22 | 11→33 / 11→33 | 2→3 (2) / 2→2 (2) | 3→3 / 3→3 | 110,684→68,485 / 108,854→70,683 |
+  | takeyoshi-tanuma | 974→4,976 | 2,595→13,453 | 4→27 / 4→27 | 12→35 / 12→35 | 2→3 (2) / 2→2 (2) | 3→3 / 3→3 | 110,235→71,157 / 108,786→73,276 |
+  | yoshino-oishi | 631→4,747 | 2,452→13,304 | 4→27 / 4→27 | 5→34 / 0→34 | 2→3 (2) / 2→2 (2) | 0→3 / 0→3 | 107,544→70,612 / 106,527→72,978 |
+  | hiromi-tsuchida | 947→6,490 | 2,074→17,716 | 3→25 / 3→25 | 6→43 / 0→43 | 2→7 (6) / 2→6 (6) | 0→3 / 0→3 | 107,737→78,696 / 105,782→81,922 |
+
+- **監査追補 / carry-forward**：件数ガード通過後の独立監査で、旧JA §REFの手キュレーション外部リンク17件が8slugから落ちていることを検出。各`-backup.html`から旧ラベル・URL・グループ見出し「関連データベース・アーカイブ」を原文のまま新素材リンクの前へ復元した。復元後の§REF href集合はJA/ENともHaga 7 / Tsuchida 11 / Kitajima 10 / Connell 5 / Iwago 5 / Iwamiya 5 / Tanuma 6 / Oishi 5で8/8完全一致（計54件）、旧backup href欠落0・新素材href欠落0。さらにMitsuakiの旧JA §RELにあった`ドキュメンタリー`リンクと注記を原文のままmovementsグループへ復元し、JA/ENのリンク項目を3/3へ対称化。EN正本変更は不要だったが、JAテンプレ同期確認のため対象8slugだけ通常builderで再生成し、8/8 SKIPPED 0・生成bytes不変。
+- **bytes / 構造**：全7名の旧ページにlegacy `photographer-index`があり、script blockはJA各63,532 bytes / EN各61,530 bytes。これを旧bytesから除いた値に対し、新bytesはJA +21,333〜+34,491 / EN +23,359〜+37,670で全14面が純増し、減少は全件index除去だけで説明可能。JSON-LDキー減少0（JA PersonはHaga/Iwamiya/Tanuma 10→10、他4名8→8。ENはWebPage 8 / WebSite 3 / Country 2 / BreadcrumbList 3 / ListItem 4不変、Personは同3名10、他4名9で不変）。div/section開閉は全14面一致。GA 2、canonical 1、hreflang 3、JA JSON-LD 1、EN JSON-LD 2、JA og:image 0、EN og:image 1は各面でbackup比不変。`data-nosnippet`はKelli/Iwago/Oishi/TsuchidaのみJA 9→8・EN 8→7、他3名はJA 8→8・EN 7→7。
+- **§REL / マーカー / 配線**：残り7名の§RELリンクJA20＋EN20＝40件をrepo root起点で実在確認し切れ0、確定表の張り忘れ0。dangling sup-ref、二重ダッシュ、`prep-block`はいずれも0。Hiromi素材はJA/EN各review class token 139＋レビューCSS selector 7、適用後は全7名JA/ENでreview class/CSSとも0。検索runtime解決形は14面各1、リテラルは各面自slug 4＋generic mobile 4、他slug焼き込み0。
+- **builder回帰**：対象8slug外で`data-rel-prefix`を持たず、Related people / movements双方を持つ10件（amalia-ulman / an-my-le / aneta-grzeszykowska / annie-leibovitz / annika-von-hausswolff / anri-sala / anthony-goicolea / araki / arbus / arthur-rothstein）を改変後builderでメモリ生成し、現行EN HTMLと10/10 byte一致。対象8生成HTMLの`data-rel-prefix`残存0。`htmllib` importはHEAD 1→作業後1で追加0。
+- **正本 / 検証 / 面**：EN正本pages 307→307、HEAD比変更キーは対象8slugのみ、`_meta`不変。builder最終通常dry-runは8/8 `Would write 1 page(s)`・SKIPPED 0。`check_en_entry.py`は8/8 EXIT 0（Hiromiのみ既存方針外note.com URLのWARN 4、他0）。`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、`git diff --check` EXIT 0。preflight baselineからの増分WARNは`data-nosnippet`減少10行のみ（Keizoを含む5slug×JA/EN）。禁止面差分0、対象外写真家ページ差分0。素材16/16 SHA-256一致。backup/specは未追跡・未stage、git add / commit / push / stashなし。
+- **wall-time**：52分（Daisuke実測。0827素材8名＝update8のPHASE 1＋PHASE 2＋監査追補のcarry-forward＋Yoshino years是正を含む総所要。1名あたり約6.5分）
