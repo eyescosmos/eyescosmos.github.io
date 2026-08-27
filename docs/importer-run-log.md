@@ -1981,3 +1981,12 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **push 後の実測**：canonical / hreflang が新ドメイン（JA・EN 両方）、`robots.txt` の Sitemap 2行が新ドメイン、`sitemap.xml` は `<loc>` 776件で旧ドメイン残存0、旧URLは 301 で新URLへ転送、`http://` は 301 で `https://` へ強制、IndexNow キーファイルは新ドメイン直下で 200。JAページ 92,520 bytes / トップ 142,946 bytes で本文欠落なし。
 - **未実施**：Phase 4（GSC ドメインプロパティ＋アドレス変更ツール、Bing 登録、IndexNow 送信）は Daisuke の確認待ちで未着手。
 - **wall-time**：（Daisuke記入）
+
+## 2026-08-27 — 独自ドメイン移行 Phase 4: 検索エンジンへの移転申告（軽量）
+
+- **種別 / 範囲**：other / GSC・BWT・IndexNow。リポジトリ変更は `BingSiteAuth.xml` 追加のみ（commit `599b8812c`）。コンテンツ変更なし。
+- **GSC**：新プロパティは **URLプレフィックス型 `https://eyescosmos.com/`**。旧サイトの認証ファイル `google739a609ca0f00aca.html` が新ドメインでもそのまま配信されるため**所有権は自動確認**で即通過（HTMLファイル＋Google Analytics）。旧プロパティの「設定 → アドレス変更」から移転を申告し、Google が5ページ（yuki-tawada / hiroshi-sugimoto / lieko-shiga / muybridge / marey）の301を実地確認して合格 → 「移動を確認」で確定。効力は約180日。旧プロパティは削除しない。
+- **★GSCサイトマップ問題は解消**：新プロパティで `sitemap.xml` を送信したところ**初回で「成功しました」／検出776ページ**。旧 `eyescosmos.github.io` プロパティで長期間「取得できませんでした・検出0」だったのは Google 側の恒久的な問題ではなく**旧プロパティ／github.io 固有の問題**だった。移行前の「ドメイン移行では直らない」という判断は誤りで、メモリ2件を訂正済み。旧プロパティのサイトマップは引き続き触らない。
+- **BWT**：新サイト `https://eyescosmos.com/` を追加。GSCからのインポートが通らなかったため **XMLファイル方式**（`BingSiteAuth.xml` をルート直下）で認証。sitemap 送信済み。送信直後の検出URL数0は非同期処理のため正常。旧サイトは削除しない。
+- **IndexNow**：ホストが変わり Bing から見て全URLが新規のため、例外的に `--all` で776件送信。**初回は HTTP 403**（キー無効）だったが、キーファイルは本番でバイト単位まで正しく（`od -c` で確認）、単発GET形式は200だったため一時的な検証遅延と判断。数分後の再実行で **HTTP 200 受理**。教訓は `playbook_indexnow_submit.md` に追記。
+- **wall-time**：（Daisuke記入）
