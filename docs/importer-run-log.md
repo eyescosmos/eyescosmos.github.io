@@ -1971,3 +1971,13 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：置換以外の差分0行（`git diff -U0` の +/- 行でドメイン文字列を含まないもの＝0）。旧ドメイン残存0件。`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0。**preflight の WARN 群は stash で置換前状態に戻して再実行した出力と完全一致**＝すべて既存分で今回の置換とは無関係と確定（EN直接編集疑い13件＋国別24件＋運動4件＋archive、出典番号不連続2件、`/colophon` 既知リンク2件）。canonical / hreflang / og:url / JSON-LD `url` / robots.txt の Sitemap 行 / IndexNow `HOST` を実測サンプルで確認。
 - **push しない理由**：DNS 切替（Phase 2）の HTTPS 確認直後に push することで、「転送は新ドメイン・canonical は旧ドメイン」という矛盾状態の窓を数分に圧縮する。設計図 Phase 3 の手順どおり。
 - **wall-time**：（Daisuke記入）
+
+## 2026-08-27 — 独自ドメイン移行 Phase 2後半〜3: 切替と push（軽量）
+
+- **種別 / 範囲**：other / DNS・GitHub Pages 設定と Phase 1 コミットの push。コンテンツ変更なし。
+- **DNS の罠（重要）**：XServer の「DNSレコード設定」が編集するゾーンは `ns1〜3.xdomain.ne.jp` にあるのに、登録直後のレジストリ委任先は `NS1〜5.XSERVER.JP` だった。**「ネームサーバー設定」で `ns1〜3.xdomain.ne.jp` へ変更するまでレコードは外から一切引けない**（`ns4/ns5.xdomain.ne.jp` は存在しない）。レコード9件（A×4 / AAAA×4 / www CNAME）はホスト名**空欄**で apex 登録（`@` は入力不可）。委任切替はレジストリに数分で反映。
+- **証明書**：Custom domain 保存から数分で Let's Encrypt 発行（対象 `eyescosmos.com` / `www.eyescosmos.com`、2026-08-27→11-25）。GitHub UI の「Enforce HTTPS — Unavailable」は発行前に開いた画面の残留表示で、再読込で解消。
+- **push 前検証**：`origin/main` が GitHub の `CNAME` 自動コミットで1件進んだため rebase。**逆置換バイト同一性テスト**（現ツリーを `eyescosmos.com`→`eyescosmos.github.io` と逆置換して `origin/main` と比較）で911ファイル中910が完全一致、不一致は本ログ1件のみ＝変更がドメイン文字列だけで完全に可逆であることを証明。削除/追加/リネーム 0、ドメイン文字列を含まない差分行は本ログ追記の空行2行のみ。`check_content_loss.py` OK / `preflight.py` OK（WARNは置換前と同一群）。
+- **push 後の実測**：canonical / hreflang が新ドメイン（JA・EN 両方）、`robots.txt` の Sitemap 2行が新ドメイン、`sitemap.xml` は `<loc>` 776件で旧ドメイン残存0、旧URLは 301 で新URLへ転送、`http://` は 301 で `https://` へ強制、IndexNow キーファイルは新ドメイン直下で 200。JAページ 92,520 bytes / トップ 142,946 bytes で本文欠落なし。
+- **未実施**：Phase 4（GSC ドメインプロパティ＋アドレス変更ツール、Bing 登録、IndexNow 送信）は Daisuke の確認待ちで未着手。
+- **wall-time**：（Daisuke記入）
