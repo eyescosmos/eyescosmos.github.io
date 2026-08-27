@@ -661,9 +661,9 @@ gtag('config', 'G-2VRTV8BZEJ');
 
 def build_head_meta_movement(slug, en_name, en_desc, old_meta):
     """Build the complete <head> section for a movement EN page"""
-    en_url = f'https://eyescosmos.github.io/en/movements/{slug}.html'
+    en_url = f'https://eyescosmos.com/en/movements/{slug}.html'
     ja_stub = SLUG_TO_STUB.get(slug, slug)
-    ja_url = f'https://eyescosmos.github.io/movements/{ja_stub}.html'
+    ja_url = f'https://eyescosmos.com/movements/{ja_stub}.html'
 
     title = old_meta.get('title') or f'{en_name} | Photography Movement | Photo Coordinates'
     desc = old_meta.get('description') or en_desc or f'This page examines {en_name} through its origins, key photographers, visual methods, and meaning in photography history.'
@@ -686,13 +686,13 @@ def build_head_meta_movement(slug, en_name, en_desc, old_meta):
       "isPartOf": {{
         "@type": "WebSite",
         "name": "Photo Coordinates",
-        "url": "https://eyescosmos.github.io/en/"
+        "url": "https://eyescosmos.com/en/"
       }}
     }},
     {{
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {{"@type": "ListItem", "position": 1, "name": "Photo Coordinates", "item": "https://eyescosmos.github.io/en/"}},
+        {{"@type": "ListItem", "position": 1, "name": "Photo Coordinates", "item": "https://eyescosmos.com/en/"}},
         {{"@type": "ListItem", "position": 2, "name": "{esc(en_name)}", "item": "{en_url}"}}
       ]
     }}
@@ -711,11 +711,11 @@ def build_head_meta_movement(slug, en_name, en_desc, old_meta):
 <meta property="og:title" content="{esc(og_title)}">
 <meta property="og:description" content="{esc(og_desc)}">
 <meta property="og:url" content="{en_url}">
-<meta property="og:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
+<meta property="og:image" content="https://eyescosmos.com/assets/ogp-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Photo Coordinates">
-<meta name="twitter:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
+<meta name="twitter:image" content="https://eyescosmos.com/assets/ogp-default.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(tw_title)}">
 <meta name="twitter:description" content="{esc(tw_desc)}">
@@ -729,8 +729,8 @@ def build_head_meta_era(era_id, old_meta):
     """Build the complete <head> section for an era EN page"""
     period = ERA_META[era_id]['period']
     title_en = ERA_META[era_id]['title_en']
-    en_url = f'https://eyescosmos.github.io/en/eras/{era_id}.html'
-    ja_url = f'https://eyescosmos.github.io/eras/{era_id}.html'
+    en_url = f'https://eyescosmos.com/en/eras/{era_id}.html'
+    ja_url = f'https://eyescosmos.com/eras/{era_id}.html'
 
     title = old_meta.get('title') or f'{period} Photo History | {title_en} | Photo Coordinates'
     desc = old_meta.get('description') or f'Photography history of {period} — {title_en} — through photographers, movements, social context, and changes in visual expression.'
@@ -753,13 +753,13 @@ def build_head_meta_era(era_id, old_meta):
       "isPartOf": {{
         "@type": "WebSite",
         "name": "Photo Coordinates",
-        "url": "https://eyescosmos.github.io/en/"
+        "url": "https://eyescosmos.com/en/"
       }}
     }},
     {{
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {{"@type": "ListItem", "position": 1, "name": "Photo Coordinates", "item": "https://eyescosmos.github.io/en/"}},
+        {{"@type": "ListItem", "position": 1, "name": "Photo Coordinates", "item": "https://eyescosmos.com/en/"}},
         {{"@type": "ListItem", "position": 2, "name": "{esc(period)} Photo History", "item": "{en_url}"}}
       ]
     }}
@@ -778,11 +778,11 @@ def build_head_meta_era(era_id, old_meta):
 <meta property="og:title" content="{esc(og_title)}">
 <meta property="og:description" content="{esc(og_desc)}">
 <meta property="og:url" content="{en_url}">
-<meta property="og:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
+<meta property="og:image" content="https://eyescosmos.com/assets/ogp-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Photo Coordinates">
-<meta name="twitter:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
+<meta name="twitter:image" content="https://eyescosmos.com/assets/ogp-default.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(tw_title)}">
 <meta name="twitter:description" content="{esc(tw_desc)}">
@@ -1398,11 +1398,11 @@ def add_lang_toggle_href(html, slug_or_era, page_type='movement'):
     """Update the lang toggle buttons to link to correct pages"""
     if page_type == 'movement':
         ja_stub = SLUG_TO_STUB.get(slug_or_era, slug_or_era)
-        ja_url = f'https://eyescosmos.github.io/movements/{ja_stub}.html'
-        en_url = f'https://eyescosmos.github.io/en/movements/{slug_or_era}.html'
+        ja_url = f'https://eyescosmos.com/movements/{ja_stub}.html'
+        en_url = f'https://eyescosmos.com/en/movements/{slug_or_era}.html'
     else:
-        ja_url = f'https://eyescosmos.github.io/eras/{slug_or_era}.html'
-        en_url = f'https://eyescosmos.github.io/en/eras/{slug_or_era}.html'
+        ja_url = f'https://eyescosmos.com/eras/{slug_or_era}.html'
+        en_url = f'https://eyescosmos.com/en/eras/{slug_or_era}.html'
 
     toggle = (
         f'<div class="head__lang"><a href="{ja_url}" class="lang-btn">JP</a>'

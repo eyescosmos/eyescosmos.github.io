@@ -63,8 +63,8 @@ JA テンプレ:
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "写真の座標", "item": "https://eyescosmos.github.io/"},
-    {"@type": "ListItem", "position": 2, "name": "写真家一覧", "item": "https://eyescosmos.github.io/archive.html"},
+    {"@type": "ListItem", "position": 1, "name": "写真の座標", "item": "https://eyescosmos.com/"},
+    {"@type": "ListItem", "position": 2, "name": "写真家一覧", "item": "https://eyescosmos.com/archive.html"},
     {"@type": "ListItem", "position": 3, "name": "<写真家名>"}
   ]
 }
@@ -76,8 +76,8 @@ EN テンプレ:
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Photo Coordinates", "item": "https://eyescosmos.github.io/en/"},
-    {"@type": "ListItem", "position": 2, "name": "Photographers", "item": "https://eyescosmos.github.io/en/archive.html"},
+    {"@type": "ListItem", "position": 1, "name": "Photo Coordinates", "item": "https://eyescosmos.com/en/"},
+    {"@type": "ListItem", "position": 2, "name": "Photographers", "item": "https://eyescosmos.com/en/archive.html"},
     {"@type": "ListItem", "position": 3, "name": "<Photographer Name>"}
   ]
 }

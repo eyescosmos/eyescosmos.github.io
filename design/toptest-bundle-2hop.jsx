@@ -17,8 +17,8 @@ function ensureTopPageManualPhotographers() {
       era: '1930',
       movements: ['モダニズム', 'ストレート写真', 'タイポロジー写真'],
       influence: 8.9,
-      url: 'https://eyescosmos.github.io/photographers/irving-penn.html',
-      urlEn: 'https://eyescosmos.github.io/en/photographers/irving-penn.html',
+      url: 'https://eyescosmos.com/photographers/irving-penn.html',
+      urlEn: 'https://eyescosmos.com/en/photographers/irving-penn.html',
       x: 0.49,
       y: 0.43
     },
@@ -34,8 +34,8 @@ function ensureTopPageManualPhotographers() {
       era: '1950',
       movements: ['フォトジャーナリズム', 'ドキュメンタリー', 'ステージド写真'],
       influence: 8.9,
-      url: 'https://eyescosmos.github.io/photographers/richard-avedon.html',
-      urlEn: 'https://eyescosmos.github.io/en/photographers/richard-avedon.html',
+      url: 'https://eyescosmos.com/photographers/richard-avedon.html',
+      urlEn: 'https://eyescosmos.com/en/photographers/richard-avedon.html',
       x: 0.52,
       y: 0.47
     },
@@ -51,8 +51,8 @@ function ensureTopPageManualPhotographers() {
       era: '1950',
       movements: ['フォトジャーナリズム', '社会ドキュメンタリー', 'ドキュメンタリー'],
       influence: 8.8,
-      url: 'https://eyescosmos.github.io/photographers/ernest-cole.html',
-      urlEn: 'https://eyescosmos.github.io/en/photographers/ernest-cole.html',
+      url: 'https://eyescosmos.com/photographers/ernest-cole.html',
+      urlEn: 'https://eyescosmos.com/en/photographers/ernest-cole.html',
       x: 0.31,
       y: 0.61
     },
@@ -68,8 +68,8 @@ function ensureTopPageManualPhotographers() {
       era: '2000',
       movements: ['ポートレート', '社会的写真', 'コンセプチュアルアート'],
       influence: 7.4,
-      url: 'https://eyescosmos.github.io/photographers/pieter-hugo.html',
-      urlEn: 'https://eyescosmos.github.io/en/photographers/pieter-hugo.html',
+      url: 'https://eyescosmos.com/photographers/pieter-hugo.html',
+      urlEn: 'https://eyescosmos.com/en/photographers/pieter-hugo.html',
       x: 0.73,
       y: 0.76
     },
@@ -85,8 +85,8 @@ function ensureTopPageManualPhotographers() {
       era: '1970',
       movements: ['日本写真', '私写真', 'タイポロジー写真', 'プライベート写真'],
       influence: 7.2,
-      url: 'https://eyescosmos.github.io/photographers/tokuko-ushioda.html',
-      urlEn: 'https://eyescosmos.github.io/en/photographers/tokuko-ushioda.html',
+      url: 'https://eyescosmos.com/photographers/tokuko-ushioda.html',
+      urlEn: 'https://eyescosmos.com/en/photographers/tokuko-ushioda.html',
       x: 0.58,
       y: 0.66
     },
@@ -102,8 +102,8 @@ function ensureTopPageManualPhotographers() {
       era: '1970',
       movements: ['ポートレート', 'ステージド写真', 'カラー写真'],
       influence: 7.4,
-      url: 'https://eyescosmos.github.io/photographers/annie-leibovitz.html',
-      urlEn: 'https://eyescosmos.github.io/en/photographers/annie-leibovitz.html',
+      url: 'https://eyescosmos.com/photographers/annie-leibovitz.html',
+      urlEn: 'https://eyescosmos.com/en/photographers/annie-leibovitz.html',
       x: 0.62,
       y: 0.52
     },
@@ -119,8 +119,8 @@ function ensureTopPageManualPhotographers() {
       era: '1980',
       movements: ['ドキュメンタリー'],
       influence: 7.1,
-      url: 'https://eyescosmos.github.io/photographers/michio-hoshino.html',
-      urlEn: 'https://eyescosmos.github.io/en/photographers/michio-hoshino.html',
+      url: 'https://eyescosmos.com/photographers/michio-hoshino.html',
+      urlEn: 'https://eyescosmos.com/en/photographers/michio-hoshino.html',
       x: 0.67,
       y: 0.69
     },
@@ -136,8 +136,8 @@ function ensureTopPageManualPhotographers() {
       era: '1980',
       movements: ['東ドイツ写真', 'ファッション写真', 'ドキュメンタリー'],
       influence: 7.3,
-      url: 'https://eyescosmos.github.io/photographers/sibylle-bergemann.html',
-      urlEn: 'https://eyescosmos.github.io/en/photographers/sibylle-bergemann.html',
+      url: 'https://eyescosmos.com/photographers/sibylle-bergemann.html',
+      urlEn: 'https://eyescosmos.com/en/photographers/sibylle-bergemann.html',
       x: 0.45,
       y: 0.50
     }
@@ -1155,7 +1155,7 @@ function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated, is
   const p = byId[selected];
   if (!p) return null;
   const detailPath = `${isEnglish ? '/en' : ''}/photographers/${p.id}.html`;
-  const detailUrl = (isEnglish ? (p.urlEn || '') : '') || p.url || `https://eyescosmos.github.io${detailPath}`;
+  const detailUrl = (isEnglish ? (p.urlEn || '') : '') || p.url || `https://eyescosmos.com${detailPath}`;
   const neighbors = (adj[selected] || []).slice(0, 40);
   // group neighbors by movement
   const byMove = {};
@@ -1210,7 +1210,7 @@ function InfoCard({ selected, isOpen, onToggleOpen, onClose, onSelectRelated, is
           })}
         </div>
         <a href={detailUrl} target="_blank" rel="noopener" className="hint" style={{ display: 'block', textDecoration: 'none' }}>
-          → {isEnglish ? 'Open detail page' : '詳細ページを開く'} / {detailUrl.replace('https://eyescosmos.github.io', '')}
+          → {isEnglish ? 'Open detail page' : '詳細ページを開く'} / {detailUrl.replace('https://eyescosmos.com', '')}
         </a>
       </div>
     </>);

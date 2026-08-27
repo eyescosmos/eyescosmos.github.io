@@ -916,7 +916,7 @@ function InfoCard({ selected, onClose, onSelectRelated }) {
         })}
       </div>
       <a href={p.url} target="_blank" rel="noopener" className="hint" style={{ display: 'block', textDecoration: 'none' }}>
-        → 詳細ページを開く / {p.url.replace('https://eyescosmos.github.io', '')}
+        → 詳細ページを開く / {p.url.replace('https://eyescosmos.com', '')}
       </a>
     </div>);
 

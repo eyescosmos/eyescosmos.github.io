@@ -49,7 +49,7 @@ def audit(slug, html):
 
     # canonical self URL
     cm = re.search(r'<link rel="canonical" href="([^"]+)">', html)
-    expected = f'https://eyescosmos.github.io/en/photographers/{slug}.html'
+    expected = f'https://eyescosmos.com/en/photographers/{slug}.html'
     if not cm:
         fails.append('no canonical')
     elif cm.group(1) != expected:

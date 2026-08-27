@@ -27,7 +27,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
-HOST = "eyescosmos.github.io"
+HOST = "eyescosmos.com"
 ORIGIN = f"https://{HOST}"
 ENDPOINT = "https://api.indexnow.org/IndexNow"
 SITEMAP = ROOT / "sitemap.xml"

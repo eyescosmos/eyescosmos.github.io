@@ -9,7 +9,7 @@ import re
 import subprocess
 
 
-BASE_URL = "https://eyescosmos.github.io"
+BASE_URL = "https://eyescosmos.com"
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SITEMAP_ROOT_PATH = REPO_ROOT / "sitemap.xml"
 # GSC の /sitemap.xml エントリは 2026-04 の登録以降ずっと「読み込めませんでした」から回復しない

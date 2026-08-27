@@ -220,8 +220,8 @@ def render_page(cfg: dict, *, era_style, archive_card_css, mobile_search,
     title = f"{name_en} Photo History | Photographers and Visual Culture | Photo Coordinates"
     desc = (f"An overview of photographers connected to {name_en}, tracing how they relate "
             f"to movements, eras, and the wider history of photography.")
-    canon = f"https://eyescosmos.github.io/en/countries/{slug}.html"
-    ja_url = f"https://eyescosmos.github.io/countries/{slug}.html"
+    canon = f"https://eyescosmos.com/en/countries/{slug}.html"
+    ja_url = f"https://eyescosmos.com/countries/{slug}.html"
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -239,11 +239,11 @@ def render_page(cfg: dict, *, era_style, archive_card_css, mobile_search,
 <meta property="og:site_name" content="Photo Coordinates">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
+<meta property="og:image" content="https://eyescosmos.com/assets/ogp-default.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{desc}">
-<meta name="twitter:image" content="https://eyescosmos.github.io/assets/ogp-default.png">
+<meta name="twitter:image" content="https://eyescosmos.com/assets/ogp-default.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {GOOGLE_FONTS}
@@ -362,7 +362,7 @@ STUB = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,follow">
 <title>{target_en} | Photo Coordinates</title>
-<link rel="canonical" href="https://eyescosmos.github.io/en/countries/{target}.html">
+<link rel="canonical" href="https://eyescosmos.com/en/countries/{target}.html">
 <meta http-equiv="refresh" content="0; url=/en/countries/{target}.html">
 </head>
 <body>

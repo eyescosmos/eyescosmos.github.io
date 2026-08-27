@@ -22,7 +22,7 @@ STUB = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,follow">
 <title>{name_ja}｜写真の座標</title>
-<link rel="canonical" href="https://eyescosmos.github.io/countries/{target}.html">
+<link rel="canonical" href="https://eyescosmos.com/countries/{target}.html">
 <meta http-equiv="refresh" content="0; url=/countries/{target}.html">
 </head>
 <body>

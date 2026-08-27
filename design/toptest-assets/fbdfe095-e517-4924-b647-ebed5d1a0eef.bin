@@ -161,7 +161,7 @@
       flag: p.flag || '',
       influence: featured.has(p.id) ? 9 + Math.floor(hash(p.id) * 2) : 4 + Math.floor(hash(p.id) * 4),
       movements: (p.movements || []).slice(),
-      url: `https://eyescosmos.github.io/photographers/${p.id}.html`,
+      url: `https://eyescosmos.com/photographers/${p.id}.html`,
       x: pos.x,
       y: pos.y,
       year,

@@ -574,9 +574,9 @@ def generate_country_page(config: dict, era_style_block: str,
         for s, label in strip_pairs
     )
 
-    canonical_url = f"https://eyescosmos.github.io/countries/{slug}.html"
-    en_url = f"https://eyescosmos.github.io/en/countries/{slug}.html"
-    og_image = "https://eyescosmos.github.io/assets/ogp-default.png"
+    canonical_url = f"https://eyescosmos.com/countries/{slug}.html"
+    en_url = f"https://eyescosmos.com/en/countries/{slug}.html"
+    og_image = "https://eyescosmos.com/assets/ogp-default.png"
     title = f"{name_ja}の写真史｜写真家と表現の流れ｜写真の座標"
     description = f"美術館・アーカイブ資料を手がかりに、{name_ja}の写真史を、代表的な写真家・運動・時代背景の関係から整理します。"
 

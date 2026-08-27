@@ -17,7 +17,7 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_URL = 'https://eyescosmos.github.io'
+BASE_URL = 'https://eyescosmos.com'
 OGP_IMAGE = f'{BASE_URL}/assets/ogp-default.png'
 SITE_NAME_JA = '写真の座標'
 SITE_NAME_EN = 'Photo Coordinates'

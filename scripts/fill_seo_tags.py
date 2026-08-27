@@ -19,7 +19,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-SITE = "https://eyescosmos.github.io"
+SITE = "https://eyescosmos.com"
 TARGET_GLOB = "photographers/*.html"
 
 

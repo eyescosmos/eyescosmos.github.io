@@ -1571,7 +1571,7 @@ def run_render_ja(material: Path, spec_path: Path, idx, lang: str | None) -> int
 # build_photographers_en.py --slug X --force。
 # ─────────────────────────────────────────────────────────────────────────────
 
-SITE_URL = "https://eyescosmos.github.io"
+SITE_URL = "https://eyescosmos.com"
 EN_SITE_NAME = "Photo Coordinates"
 
 

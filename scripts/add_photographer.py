@@ -53,7 +53,7 @@ SCAFFOLD_BASE = REPO / "photographers/ansel-adams.html"
 
 sys.path.insert(0, str(REPO / "scripts"))
 from build_taxonomy_en import STUB_TO_SLUG  # noqa: E402  JA運動名→ENスラッグ（main ガード済み）
-SITE = "https://eyescosmos.github.io"
+SITE = "https://eyescosmos.com"
 
 REQUIRED = [
     "id", "nameJa", "nameEn", "years", "nationality", "countryJa", "era",

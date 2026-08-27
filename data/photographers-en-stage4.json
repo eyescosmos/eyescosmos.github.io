@@ -3,26 +3,26 @@
     "alec-soth.html": {
       "title": "Alec Soth | Road Trips and the Storytelling of the Photobook | Photo Coordinates",
       "meta_description": "Alec Soth connects people, landscapes, rooms, and letter-like fragments along the Mississippi River through large-format color and photobook editing, turning American loneliness and longing into something to be read.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/alec-soth.html",
+      "canonical": "https://eyescosmos.com/en/photographers/alec-soth.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/alec-soth.html",
-        "en": "https://eyescosmos.github.io/en/photographers/alec-soth.html",
-        "x-default": "https://eyescosmos.github.io/photographers/alec-soth.html"
+        "ja": "https://eyescosmos.com/photographers/alec-soth.html",
+        "en": "https://eyescosmos.com/en/photographers/alec-soth.html",
+        "x-default": "https://eyescosmos.com/photographers/alec-soth.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Alec Soth | Road Trips and the Storytelling of the Photobook",
         "description": "Alec Soth connects people, landscapes, rooms, and letter-like fragments along the Mississippi River through large-format color and photobook editing, turning American loneliness and longing into something to be read.",
-        "url": "https://eyescosmos.github.io/en/photographers/alec-soth.html",
+        "url": "https://eyescosmos.com/en/photographers/alec-soth.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Alec Soth | Road Trips and the Storytelling of the Photobook",
         "description": "Alec Soth connects people, landscapes, rooms, and letter-like fragments along the Mississippi River through large-format color and photobook editing, turning American loneliness and longing into something to be read."
@@ -73,32 +73,32 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/robertfrank.html\">Robert Frank</a><a href=\"/en/photographers/stephen-shore.html\">Stephen Shore</a><a href=\"/en/photographers/eggleston.html\">William Eggleston</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"><a href=\"/en/movements/documentary.html\">Documentary</a></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/alec-soth.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/alec-soth.html\",\n      \"name\": \"Alec Soth | Road Trips and the Storytelling of the Photobook | Photo Coordinates\",\n      \"description\": \"Alec Soth connects people, landscapes, rooms, and letter-like fragments along the Mississippi River through large-format color and photobook editing, turning American loneliness and longing into something to be read.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/alec-soth.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/alec-soth.html#person\",\n      \"name\": \"Alec Soth\",\n      \"description\": \"Alec Soth connects people, landscapes, rooms, and letter-like fragments along the Mississippi River through large-format color and photobook editing, turning American loneliness and longing into something to be read.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/alec-soth.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1969\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"United States\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Alec_Soth\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/alec-soth.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/alec-soth.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/alec-soth.html\",\n      \"name\": \"Alec Soth | Road Trips and the Storytelling of the Photobook | Photo Coordinates\",\n      \"description\": \"Alec Soth connects people, landscapes, rooms, and letter-like fragments along the Mississippi River through large-format color and photobook editing, turning American loneliness and longing into something to be read.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/alec-soth.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/alec-soth.html#person\",\n      \"name\": \"Alec Soth\",\n      \"description\": \"Alec Soth connects people, landscapes, rooms, and letter-like fragments along the Mississippi River through large-format color and photobook editing, turning American loneliness and longing into something to be read.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/alec-soth.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1969\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"United States\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Alec_Soth\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/alec-soth.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "arata-dodo.html": {
       "title": "Arata Dodo | The Opposite Shore and the Travel Photobook | Photo Coordinates",
       "meta_description": "Arata Dodo is a contemporary Japanese photographer who travels through Shanghai, the Caspian coast, the Silk Road, and Kyoto, editing the lived sense of a place and the viewer’s distance into photobooks.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/arata-dodo.html",
+      "canonical": "https://eyescosmos.com/en/photographers/arata-dodo.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/arata-dodo.html",
-        "en": "https://eyescosmos.github.io/en/photographers/arata-dodo.html",
-        "x-default": "https://eyescosmos.github.io/photographers/arata-dodo.html"
+        "ja": "https://eyescosmos.com/photographers/arata-dodo.html",
+        "en": "https://eyescosmos.com/en/photographers/arata-dodo.html",
+        "x-default": "https://eyescosmos.com/photographers/arata-dodo.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Arata Dodo | The Opposite Shore and the Travel Photobook",
         "description": "Arata Dodo is a contemporary Japanese photographer who travels through Shanghai, the Caspian coast, the Silk Road, and Kyoto, editing the lived sense of a place and the viewer’s distance into photobooks.",
-        "url": "https://eyescosmos.github.io/en/photographers/arata-dodo.html",
+        "url": "https://eyescosmos.com/en/photographers/arata-dodo.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Arata Dodo | The Opposite Shore and the Travel Photobook",
         "description": "Arata Dodo is a contemporary Japanese photographer who travels through Shanghai, the Caspian coast, the Silk Road, and Kyoto, editing the lived sense of a place and the viewer’s distance into photobooks."
@@ -148,32 +148,32 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/moriyama.html\">Daido Moriyama</a><a href=\"/en/photographers/naoya-hatakeyama.html\">Naoya Hatakeyama</a><a href=\"/en/photographers/alec-soth.html\">Alec Soth</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"><a href=\"/en/movements/documentary.html\">Documentary</a></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/arata-dodo.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/arata-dodo.html\",\n      \"name\": \"Arata Dodo | The Opposite Shore and the Travel Photobook | Photo Coordinates\",\n      \"description\": \"Arata Dodo is a contemporary Japanese photographer who travels through Shanghai, the Caspian coast, the Silk Road, and Kyoto, editing the lived sense of a place and the viewer’s distance into photobooks.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/arata-dodo.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/arata-dodo.html#person\",\n      \"name\": \"Arata Dodo\",\n      \"description\": \"Arata Dodo is a contemporary Japanese photographer who travels through Shanghai, the Caspian coast, the Silk Road, and Kyoto, editing the lived sense of a place and the viewer’s distance into photobooks.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/arata-dodo.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1974\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Japan\"\n      },\n      \"sameAs\": [\n        \"https://www.shashasha.co/en/artist/arata-dodo\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/arata-dodo.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/arata-dodo.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/arata-dodo.html\",\n      \"name\": \"Arata Dodo | The Opposite Shore and the Travel Photobook | Photo Coordinates\",\n      \"description\": \"Arata Dodo is a contemporary Japanese photographer who travels through Shanghai, the Caspian coast, the Silk Road, and Kyoto, editing the lived sense of a place and the viewer’s distance into photobooks.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/arata-dodo.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/arata-dodo.html#person\",\n      \"name\": \"Arata Dodo\",\n      \"description\": \"Arata Dodo is a contemporary Japanese photographer who travels through Shanghai, the Caspian coast, the Silk Road, and Kyoto, editing the lived sense of a place and the viewer’s distance into photobooks.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/arata-dodo.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1974\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Japan\"\n      },\n      \"sameAs\": [\n        \"https://www.shashasha.co/en/artist/arata-dodo\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/arata-dodo.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "boris-mikhailov.html": {
       "title": "Boris Mikhailov | Post-Soviet Life and the Unease of the Photograph | Photo Coordinates",
       "meta_description": "Boris Mikhailov is a Ukrainian photographer who, through hand-coloring, appropriation, performance, coarseness, and the depiction of the body, exposed the social collapse from the late Soviet to the post-Soviet era and the ethics of photography.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/boris-mikhailov.html",
+      "canonical": "https://eyescosmos.com/en/photographers/boris-mikhailov.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/boris-mikhailov.html",
-        "en": "https://eyescosmos.github.io/en/photographers/boris-mikhailov.html",
-        "x-default": "https://eyescosmos.github.io/photographers/boris-mikhailov.html"
+        "ja": "https://eyescosmos.com/photographers/boris-mikhailov.html",
+        "en": "https://eyescosmos.com/en/photographers/boris-mikhailov.html",
+        "x-default": "https://eyescosmos.com/photographers/boris-mikhailov.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Boris Mikhailov | Post-Soviet Life and the Unease of the Photograph",
         "description": "Boris Mikhailov is a Ukrainian photographer who, through hand-coloring, appropriation, performance, coarseness, and the depiction of the body, exposed the social collapse from the late Soviet to the post-Soviet era and the ethics of photography.",
-        "url": "https://eyescosmos.github.io/en/photographers/boris-mikhailov.html",
+        "url": "https://eyescosmos.com/en/photographers/boris-mikhailov.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Boris Mikhailov | Post-Soviet Life and the Unease of the Photograph",
         "description": "Boris Mikhailov is a Ukrainian photographer who, through hand-coloring, appropriation, performance, coarseness, and the depiction of the body, exposed the social collapse from the late Soviet to the post-Soviet era and the ethics of photography."
@@ -224,32 +224,32 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/goldin.html\">Nan Goldin</a><a href=\"/en/photographers/zanele-muholi.html\">Zanele Muholi</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"><a href=\"/en/movements/documentary.html\">Documentary</a></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/boris-mikhailov.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/boris-mikhailov.html\",\n      \"name\": \"Boris Mikhailov | Post-Soviet Life and the Unease of the Photograph | Photo Coordinates\",\n      \"description\": \"Boris Mikhailov is a Ukrainian photographer who, through hand-coloring, appropriation, performance, coarseness, and the depiction of the body, exposed the social collapse from the late Soviet to the post-Soviet era and the ethics of photography.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/boris-mikhailov.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/boris-mikhailov.html#person\",\n      \"name\": \"Boris Mikhailov\",\n      \"description\": \"Boris Mikhailov is a Ukrainian photographer who, through hand-coloring, appropriation, performance, coarseness, and the depiction of the body, exposed the social collapse from the late Soviet to the post-Soviet era and the ethics of photography.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/boris-mikhailov.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1938\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Ukraine\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Boris_Mikhailov_(photographer)\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/boris-mikhailov.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/boris-mikhailov.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/boris-mikhailov.html\",\n      \"name\": \"Boris Mikhailov | Post-Soviet Life and the Unease of the Photograph | Photo Coordinates\",\n      \"description\": \"Boris Mikhailov is a Ukrainian photographer who, through hand-coloring, appropriation, performance, coarseness, and the depiction of the body, exposed the social collapse from the late Soviet to the post-Soviet era and the ethics of photography.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/boris-mikhailov.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/boris-mikhailov.html#person\",\n      \"name\": \"Boris Mikhailov\",\n      \"description\": \"Boris Mikhailov is a Ukrainian photographer who, through hand-coloring, appropriation, performance, coarseness, and the depiction of the body, exposed the social collapse from the late Soviet to the post-Soviet era and the ethics of photography.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/boris-mikhailov.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1938\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Ukraine\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Boris_Mikhailov_(photographer)\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/boris-mikhailov.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "edward-burtynsky.html": {
       "title": "Edward Burtynsky | Industrial Landscapes and the Anthropocene | Photo Coordinates",
       "meta_description": "Edward Burtynsky is a photographer who shoots quarries, mines, oil, water, recycling, and factories in large-format, high-resolution photographs, making visible industrial landscapes in which beauty and environmental anxiety cannot be separated.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/edward-burtynsky.html",
+      "canonical": "https://eyescosmos.com/en/photographers/edward-burtynsky.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/edward-burtynsky.html",
-        "en": "https://eyescosmos.github.io/en/photographers/edward-burtynsky.html",
-        "x-default": "https://eyescosmos.github.io/photographers/edward-burtynsky.html"
+        "ja": "https://eyescosmos.com/photographers/edward-burtynsky.html",
+        "en": "https://eyescosmos.com/en/photographers/edward-burtynsky.html",
+        "x-default": "https://eyescosmos.com/photographers/edward-burtynsky.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Edward Burtynsky | Industrial Landscapes and the Anthropocene",
         "description": "Edward Burtynsky is a photographer who shoots quarries, mines, oil, water, recycling, and factories in large-format, high-resolution photographs, making visible industrial landscapes in which beauty and environmental anxiety cannot be separated.",
-        "url": "https://eyescosmos.github.io/en/photographers/edward-burtynsky.html",
+        "url": "https://eyescosmos.com/en/photographers/edward-burtynsky.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Edward Burtynsky | Industrial Landscapes and the Anthropocene",
         "description": "Edward Burtynsky is a photographer who shoots quarries, mines, oil, water, recycling, and factories in large-format, high-resolution photographs, making visible industrial landscapes in which beauty and environmental anxiety cannot be separated."
@@ -299,32 +299,32 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/gursky.html\">Andreas Gursky</a><a href=\"/en/photographers/becher.html\">Bernd &amp; Hilla Becher</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"><a href=\"/en/movements/documentary.html\">Documentary</a></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/edward-burtynsky.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/edward-burtynsky.html\",\n      \"name\": \"Edward Burtynsky | Industrial Landscapes and the Anthropocene | Photo Coordinates\",\n      \"description\": \"Edward Burtynsky is a photographer who shoots quarries, mines, oil, water, recycling, and factories in large-format, high-resolution photographs, making visible industrial landscapes in which beauty and environmental anxiety cannot be separated.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/edward-burtynsky.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/edward-burtynsky.html#person\",\n      \"name\": \"Edward Burtynsky\",\n      \"description\": \"Edward Burtynsky is a photographer who shoots quarries, mines, oil, water, recycling, and factories in large-format, high-resolution photographs, making visible industrial landscapes in which beauty and environmental anxiety cannot be separated.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/edward-burtynsky.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1955\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Canada\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Edward_Burtynsky\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/edward-burtynsky.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/edward-burtynsky.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/edward-burtynsky.html\",\n      \"name\": \"Edward Burtynsky | Industrial Landscapes and the Anthropocene | Photo Coordinates\",\n      \"description\": \"Edward Burtynsky is a photographer who shoots quarries, mines, oil, water, recycling, and factories in large-format, high-resolution photographs, making visible industrial landscapes in which beauty and environmental anxiety cannot be separated.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/edward-burtynsky.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/edward-burtynsky.html#person\",\n      \"name\": \"Edward Burtynsky\",\n      \"description\": \"Edward Burtynsky is a photographer who shoots quarries, mines, oil, water, recycling, and factories in large-format, high-resolution photographs, making visible industrial landscapes in which beauty and environmental anxiety cannot be separated.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/edward-burtynsky.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1955\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Canada\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Edward_Burtynsky\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/edward-burtynsky.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "gregory-crewdson.html": {
       "title": "Gregory Crewdson | Cinematic Photographs That Freeze the Suburbs | Photo Coordinates",
       "meta_description": "Gregory Crewdson is a staged-photography artist who uses actors, lighting, sets, and production crews to turn everyday American suburbia into uneasy still images with no clear before or after.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/gregory-crewdson.html",
+      "canonical": "https://eyescosmos.com/en/photographers/gregory-crewdson.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/gregory-crewdson.html",
-        "en": "https://eyescosmos.github.io/en/photographers/gregory-crewdson.html",
-        "x-default": "https://eyescosmos.github.io/photographers/gregory-crewdson.html"
+        "ja": "https://eyescosmos.com/photographers/gregory-crewdson.html",
+        "en": "https://eyescosmos.com/en/photographers/gregory-crewdson.html",
+        "x-default": "https://eyescosmos.com/photographers/gregory-crewdson.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Gregory Crewdson | Cinematic Photographs That Freeze the Suburbs",
         "description": "Gregory Crewdson is a staged-photography artist who uses actors, lighting, sets, and production crews to turn everyday American suburbia into uneasy still images with no clear before or after.",
-        "url": "https://eyescosmos.github.io/en/photographers/gregory-crewdson.html",
+        "url": "https://eyescosmos.com/en/photographers/gregory-crewdson.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Gregory Crewdson | Cinematic Photographs That Freeze the Suburbs",
         "description": "Gregory Crewdson is a staged-photography artist who uses actors, lighting, sets, and production crews to turn everyday American suburbia into uneasy still images with no clear before or after."
@@ -377,32 +377,32 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/wall.html\">Jeff Wall</a><a href=\"/en/photographers/sherman.html\">Cindy Sherman</a><a href=\"/en/photographers/philip-lorca-dicorcia.html\">Philip-Lorca diCorcia</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"><a href=\"/en/movements/staged-photography.html\">Staged Photography</a></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/gregory-crewdson.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/gregory-crewdson.html\",\n      \"name\": \"Gregory Crewdson | Cinematic Photographs That Freeze the Suburbs | Photo Coordinates\",\n      \"description\": \"Gregory Crewdson is a staged-photography artist who uses actors, lighting, sets, and production crews to turn everyday American suburbia into uneasy still images with no clear before or after.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/gregory-crewdson.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/gregory-crewdson.html#person\",\n      \"name\": \"Gregory Crewdson\",\n      \"description\": \"Gregory Crewdson is a staged-photography artist who uses actors, lighting, sets, and production crews to turn everyday American suburbia into uneasy still images with no clear before or after.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/gregory-crewdson.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1962\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"United States\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Gregory_Crewdson\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/gregory-crewdson.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/gregory-crewdson.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/gregory-crewdson.html\",\n      \"name\": \"Gregory Crewdson | Cinematic Photographs That Freeze the Suburbs | Photo Coordinates\",\n      \"description\": \"Gregory Crewdson is a staged-photography artist who uses actors, lighting, sets, and production crews to turn everyday American suburbia into uneasy still images with no clear before or after.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/gregory-crewdson.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/gregory-crewdson.html#person\",\n      \"name\": \"Gregory Crewdson\",\n      \"description\": \"Gregory Crewdson is a staged-photography artist who uses actors, lighting, sets, and production crews to turn everyday American suburbia into uneasy still images with no clear before or after.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/gregory-crewdson.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1962\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"United States\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Gregory_Crewdson\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/gregory-crewdson.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "ihei-kimura.html": {
       "title": "Ihei Kimura | The Leica and Postwar Realism | Photo Coordinates",
       "meta_description": "Ihei Kimura connected the speed of the small camera to literary portraits, Tokyo street corners, life in Akita, and the circulation of photojournalism, shaping postwar Japanese realism and its photographic institutions.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/ihei-kimura.html",
+      "canonical": "https://eyescosmos.com/en/photographers/ihei-kimura.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/jp-%E6%9C%A8%E6%9D%91%E4%BC%8A%E5%85%B5%E8%A1%9B.html",
-        "en": "https://eyescosmos.github.io/en/photographers/ihei-kimura.html",
-        "x-default": "https://eyescosmos.github.io/photographers/jp-%E6%9C%A8%E6%9D%91%E4%BC%8A%E5%85%B5%E8%A1%9B.html"
+        "ja": "https://eyescosmos.com/photographers/jp-%E6%9C%A8%E6%9D%91%E4%BC%8A%E5%85%B5%E8%A1%9B.html",
+        "en": "https://eyescosmos.com/en/photographers/ihei-kimura.html",
+        "x-default": "https://eyescosmos.com/photographers/jp-%E6%9C%A8%E6%9D%91%E4%BC%8A%E5%85%B5%E8%A1%9B.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Ihei Kimura | The Leica and Postwar Realism",
         "description": "Ihei Kimura connected the speed of the small camera to literary portraits, Tokyo street corners, life in Akita, and the circulation of photojournalism, shaping postwar Japanese realism and its photographic institutions.",
-        "url": "https://eyescosmos.github.io/en/photographers/ihei-kimura.html",
+        "url": "https://eyescosmos.com/en/photographers/ihei-kimura.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Ihei Kimura | The Leica and Postwar Realism",
         "description": "Ihei Kimura connected the speed of the small camera to literary portraits, Tokyo street corners, life in Akita, and the circulation of photojournalism, shaping postwar Japanese realism and its photographic institutions."
@@ -463,32 +463,32 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/domon.html\">Ken Domon</a><a href=\"/en/photographers/shigene-kanamaru.html\">Shigene Kanamaru</a><a href=\"/en/photographers/yasuzo-nojima.html\">Yasuzo Nojima</a><a href=\"/en/photographers/iwata-nakayama.html\">Iwata Nakayama</a><a href=\"/en/photographers/moriyama.html\">Daido Moriyama</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"><a href=\"/en/movements/realism-photography.html\">Realism Photography</a><a href=\"/en/movements/photojournalism.html\">Photojournalism</a><a href=\"/en/movements/street-photography.html\">Street Photography</a></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/ihei-kimura.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/ihei-kimura.html\",\n      \"name\": \"Ihei Kimura | The Leica and Postwar Realism | Photo Coordinates\",\n      \"description\": \"Ihei Kimura connected the speed of the small camera to literary portraits, Tokyo street corners, life in Akita, and the circulation of photojournalism, shaping postwar Japanese realism and its photographic institutions.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/ihei-kimura.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/ihei-kimura.html#person\",\n      \"name\": \"Ihei Kimura\",\n      \"description\": \"Ihei Kimura connected the speed of the small camera to literary portraits, Tokyo street corners, life in Akita, and the circulation of photojournalism, shaping postwar Japanese realism and its photographic institutions.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/ihei-kimura.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1901\",\n      \"deathDate\": \"1974\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Japan\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Ihei_Kimura\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/ihei-kimura.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/ihei-kimura.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/ihei-kimura.html\",\n      \"name\": \"Ihei Kimura | The Leica and Postwar Realism | Photo Coordinates\",\n      \"description\": \"Ihei Kimura connected the speed of the small camera to literary portraits, Tokyo street corners, life in Akita, and the circulation of photojournalism, shaping postwar Japanese realism and its photographic institutions.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/ihei-kimura.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/ihei-kimura.html#person\",\n      \"name\": \"Ihei Kimura\",\n      \"description\": \"Ihei Kimura connected the speed of the small camera to literary portraits, Tokyo street corners, life in Akita, and the circulation of photojournalism, shaping postwar Japanese realism and its photographic institutions.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/ihei-kimura.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1901\",\n      \"deathDate\": \"1974\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Japan\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Ihei_Kimura\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/ihei-kimura.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "masashi-asada.html": {
       "title": "Masashi Asada | A Place That Makes Family Photographs and Memory | Photo Coordinates",
       "meta_description": "Masashi Asada is a photographer who treats photography as the act of taking, keeping, and returning — from Asadake, where the family performs roles to make pictures, to the washing of photographs and the preservation of albums after the earthquake.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/masashi-asada.html",
+      "canonical": "https://eyescosmos.com/en/photographers/masashi-asada.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/masashi-asada.html",
-        "en": "https://eyescosmos.github.io/en/photographers/masashi-asada.html",
-        "x-default": "https://eyescosmos.github.io/photographers/masashi-asada.html"
+        "ja": "https://eyescosmos.com/photographers/masashi-asada.html",
+        "en": "https://eyescosmos.com/en/photographers/masashi-asada.html",
+        "x-default": "https://eyescosmos.com/photographers/masashi-asada.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Masashi Asada | A Place That Makes Family Photographs and Memory",
         "description": "Masashi Asada is a photographer who treats photography as the act of taking, keeping, and returning — from Asadake, where the family performs roles to make pictures, to the washing of photographs and the preservation of albums after the earthquake.",
-        "url": "https://eyescosmos.github.io/en/photographers/masashi-asada.html",
+        "url": "https://eyescosmos.com/en/photographers/masashi-asada.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Masashi Asada | A Place That Makes Family Photographs and Memory",
         "description": "Masashi Asada is a photographer who treats photography as the act of taking, keeping, and returning — from Asadake, where the family performs roles to make pictures, to the washing of photographs and the preservation of albums after the earthquake."
@@ -541,32 +541,32 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/gregory-crewdson.html\">Gregory Crewdson</a><a href=\"/en/photographers/rineke-dijkstra.html\">Rineke Dijkstra</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"><a href=\"/en/movements/staged-photography.html\">Staged Photography</a></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/masashi-asada.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/masashi-asada.html\",\n      \"name\": \"Masashi Asada | A Place That Makes Family Photographs and Memory | Photo Coordinates\",\n      \"description\": \"Masashi Asada is a photographer who treats photography as the act of taking, keeping, and returning — from Asadake, where the family performs roles to make pictures, to the washing of photographs and the preservation of albums after the earthquake.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/masashi-asada.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/masashi-asada.html#person\",\n      \"name\": \"Masashi Asada\",\n      \"description\": \"Masashi Asada is a photographer who treats photography as the act of taking, keeping, and returning — from Asadake, where the family performs roles to make pictures, to the washing of photographs and the preservation of albums after the earthquake.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/masashi-asada.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1979\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Japan\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Masashi_Asada\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/masashi-asada.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/masashi-asada.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/masashi-asada.html\",\n      \"name\": \"Masashi Asada | A Place That Makes Family Photographs and Memory | Photo Coordinates\",\n      \"description\": \"Masashi Asada is a photographer who treats photography as the act of taking, keeping, and returning — from Asadake, where the family performs roles to make pictures, to the washing of photographs and the preservation of albums after the earthquake.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/masashi-asada.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/masashi-asada.html#person\",\n      \"name\": \"Masashi Asada\",\n      \"description\": \"Masashi Asada is a photographer who treats photography as the act of taking, keeping, and returning — from Asadake, where the family performs roles to make pictures, to the washing of photographs and the preservation of albums after the earthquake.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/masashi-asada.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1979\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Japan\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Masashi_Asada\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/masashi-asada.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "rineke-dijkstra.html": {
       "title": "Rineke Dijkstra | Bodies in Transition and the Frontal Portrait | Photo Coordinates",
       "meta_description": "Rineke Dijkstra is a portrait photographer who holds bodies in suspension — adolescents, mothers just after birth, soldiers, refugees, people dancing in clubs — before and after they enter social roles, through frontality and distance.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/rineke-dijkstra.html",
+      "canonical": "https://eyescosmos.com/en/photographers/rineke-dijkstra.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/rineke-dijkstra.html",
-        "en": "https://eyescosmos.github.io/en/photographers/rineke-dijkstra.html",
-        "x-default": "https://eyescosmos.github.io/photographers/rineke-dijkstra.html"
+        "ja": "https://eyescosmos.com/photographers/rineke-dijkstra.html",
+        "en": "https://eyescosmos.com/en/photographers/rineke-dijkstra.html",
+        "x-default": "https://eyescosmos.com/photographers/rineke-dijkstra.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Rineke Dijkstra | Bodies in Transition and the Frontal Portrait",
         "description": "Rineke Dijkstra is a portrait photographer who holds bodies in suspension — adolescents, mothers just after birth, soldiers, refugees, people dancing in clubs — before and after they enter social roles, through frontality and distance.",
-        "url": "https://eyescosmos.github.io/en/photographers/rineke-dijkstra.html",
+        "url": "https://eyescosmos.com/en/photographers/rineke-dijkstra.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Rineke Dijkstra | Bodies in Transition and the Frontal Portrait",
         "description": "Rineke Dijkstra is a portrait photographer who holds bodies in suspension — adolescents, mothers just after birth, soldiers, refugees, people dancing in clubs — before and after they enter social roles, through frontality and distance."
@@ -618,32 +618,32 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/sander.html\">August Sander</a><a href=\"/en/photographers/thomas-ruff.html\">Thomas Ruff</a><a href=\"/en/photographers/goldin.html\">Nan Goldin</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/rineke-dijkstra.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/rineke-dijkstra.html\",\n      \"name\": \"Rineke Dijkstra | Bodies in Transition and the Frontal Portrait | Photo Coordinates\",\n      \"description\": \"Rineke Dijkstra is a portrait photographer who holds bodies in suspension — adolescents, mothers just after birth, soldiers, refugees, people dancing in clubs — before and after they enter social roles, through frontality and distance.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/rineke-dijkstra.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/rineke-dijkstra.html#person\",\n      \"name\": \"Rineke Dijkstra\",\n      \"description\": \"Rineke Dijkstra is a portrait photographer who holds bodies in suspension — adolescents, mothers just after birth, soldiers, refugees, people dancing in clubs — before and after they enter social roles, through frontality and distance.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/rineke-dijkstra.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1959\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Netherlands\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Rineke_Dijkstra\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/rineke-dijkstra.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/rineke-dijkstra.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/rineke-dijkstra.html\",\n      \"name\": \"Rineke Dijkstra | Bodies in Transition and the Frontal Portrait | Photo Coordinates\",\n      \"description\": \"Rineke Dijkstra is a portrait photographer who holds bodies in suspension — adolescents, mothers just after birth, soldiers, refugees, people dancing in clubs — before and after they enter social roles, through frontality and distance.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/rineke-dijkstra.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/rineke-dijkstra.html#person\",\n      \"name\": \"Rineke Dijkstra\",\n      \"description\": \"Rineke Dijkstra is a portrait photographer who holds bodies in suspension — adolescents, mothers just after birth, soldiers, refugees, people dancing in clubs — before and after they enter social roles, through frontality and distance.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/rineke-dijkstra.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1959\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Netherlands\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Rineke_Dijkstra\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/rineke-dijkstra.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "thomas-struth.html": {
       "title": "Thomas Struth | Institutions and the Gaze in Large-Format Photography | Photo Coordinates",
       "meta_description": "Thomas Struth photographs deserted streets, family portraits, viewers in museums, and scientific and technological facilities in large-format photography, making visible the structures of institutions and the gaze that human beings have built.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/thomas-struth.html",
+      "canonical": "https://eyescosmos.com/en/photographers/thomas-struth.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/thomas-struth.html",
-        "en": "https://eyescosmos.github.io/en/photographers/thomas-struth.html",
-        "x-default": "https://eyescosmos.github.io/photographers/thomas-struth.html"
+        "ja": "https://eyescosmos.com/photographers/thomas-struth.html",
+        "en": "https://eyescosmos.com/en/photographers/thomas-struth.html",
+        "x-default": "https://eyescosmos.com/photographers/thomas-struth.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Thomas Struth | Institutions and the Gaze in Large-Format Photography",
         "description": "Thomas Struth photographs deserted streets, family portraits, viewers in museums, and scientific and technological facilities in large-format photography, making visible the structures of institutions and the gaze that human beings have built.",
-        "url": "https://eyescosmos.github.io/en/photographers/thomas-struth.html",
+        "url": "https://eyescosmos.com/en/photographers/thomas-struth.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Thomas Struth | Institutions and the Gaze in Large-Format Photography",
         "description": "Thomas Struth photographs deserted streets, family portraits, viewers in museums, and scientific and technological facilities in large-format photography, making visible the structures of institutions and the gaze that human beings have built."
@@ -693,32 +693,32 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/becher.html\">Bernd &amp; Hilla Becher</a><a href=\"/en/photographers/thomas-ruff.html\">Thomas Ruff</a><a href=\"/en/photographers/gursky.html\">Andreas Gursky</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"><a href=\"/en/movements/dusseldorf-school.html\">Dusseldorf School</a></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/thomas-struth.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/thomas-struth.html\",\n      \"name\": \"Thomas Struth | Institutions and the Gaze in Large-Format Photography | Photo Coordinates\",\n      \"description\": \"Thomas Struth photographs deserted streets, family portraits, viewers in museums, and scientific and technological facilities in large-format photography, making visible the structures of institutions and the gaze that human beings have built.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/thomas-struth.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/thomas-struth.html#person\",\n      \"name\": \"Thomas Struth\",\n      \"description\": \"Thomas Struth photographs deserted streets, family portraits, viewers in museums, and scientific and technological facilities in large-format photography, making visible the structures of institutions and the gaze that human beings have built.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/thomas-struth.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1954\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Germany\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Thomas_Struth\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/thomas-struth.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/thomas-struth.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/thomas-struth.html\",\n      \"name\": \"Thomas Struth | Institutions and the Gaze in Large-Format Photography | Photo Coordinates\",\n      \"description\": \"Thomas Struth photographs deserted streets, family portraits, viewers in museums, and scientific and technological facilities in large-format photography, making visible the structures of institutions and the gaze that human beings have built.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/thomas-struth.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/thomas-struth.html#person\",\n      \"name\": \"Thomas Struth\",\n      \"description\": \"Thomas Struth photographs deserted streets, family portraits, viewers in museums, and scientific and technological facilities in large-format photography, making visible the structures of institutions and the gaze that human beings have built.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/thomas-struth.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1954\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"Germany\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Thomas_Struth\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/thomas-struth.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "zanele-muholi.html": {
       "title": "Zanele Muholi | Portraiture, Community, and Resistance to the Gaze | Photo Coordinates",
       "meta_description": "Zanele Muholi is a visual activist who uses photography as an archive of visibility, resistance, and memory, through portraits of the Black LGBTQIA+ community and theatrical self-portraits.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/zanele-muholi.html",
+      "canonical": "https://eyescosmos.com/en/photographers/zanele-muholi.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/zanele-muholi.html",
-        "en": "https://eyescosmos.github.io/en/photographers/zanele-muholi.html",
-        "x-default": "https://eyescosmos.github.io/photographers/zanele-muholi.html"
+        "ja": "https://eyescosmos.com/photographers/zanele-muholi.html",
+        "en": "https://eyescosmos.com/en/photographers/zanele-muholi.html",
+        "x-default": "https://eyescosmos.com/photographers/zanele-muholi.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Zanele Muholi | Portraiture, Community, and Resistance to the Gaze",
         "description": "Zanele Muholi is a visual activist who uses photography as an archive of visibility, resistance, and memory, through portraits of the Black LGBTQIA+ community and theatrical self-portraits.",
-        "url": "https://eyescosmos.github.io/en/photographers/zanele-muholi.html",
+        "url": "https://eyescosmos.com/en/photographers/zanele-muholi.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
       },
       "twitter": {
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "card": "summary_large_image",
         "title": "Zanele Muholi | Portraiture, Community, and Resistance to the Gaze",
         "description": "Zanele Muholi is a visual activist who uses photography as an archive of visibility, resistance, and memory, through portraits of the Black LGBTQIA+ community and theatrical self-portraits."
@@ -770,26 +770,26 @@
       "site_directory_html": "<nav class=\"site-directory-links\" aria-label=\"Site links\" data-nosnippet>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related people &amp; photographers</div>\n          <div class=\"site-directory-items\"><a href=\"/en/photographers/rineke-dijkstra.html\">Rineke Dijkstra</a><a href=\"/en/photographers/goldin.html\">Nan Goldin</a><a href=\"/en/photographers/boris-mikhailov.html\">Boris Mikhailov</a></div>\n        </div>\n        <div class=\"site-directory-group site-directory-group-contextual\">\n          <div class=\"site-directory-label\">Related movements</div>\n          <div class=\"site-directory-items\"><a href=\"/en/movements/documentary.html\">Documentary</a></div>\n        </div>\n      </nav>",
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/zanele-muholi.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/zanele-muholi.html\",\n      \"name\": \"Zanele Muholi | Portraiture, Community, and Resistance to the Gaze | Photo Coordinates\",\n      \"description\": \"Zanele Muholi is a visual activist who uses photography as an archive of visibility, resistance, and memory, through portraits of the Black LGBTQIA+ community and theatrical self-portraits.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/zanele-muholi.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/zanele-muholi.html#person\",\n      \"name\": \"Zanele Muholi\",\n      \"description\": \"Zanele Muholi is a visual activist who uses photography as an archive of visibility, resistance, and memory, through portraits of the Black LGBTQIA+ community and theatrical self-portraits.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/zanele-muholi.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1972\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"South Africa\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Zanele_Muholi\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/zanele-muholi.html\"\n      }\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/zanele-muholi.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/zanele-muholi.html\",\n      \"name\": \"Zanele Muholi | Portraiture, Community, and Resistance to the Gaze | Photo Coordinates\",\n      \"description\": \"Zanele Muholi is a visual activist who uses photography as an archive of visibility, resistance, and memory, through portraits of the Black LGBTQIA+ community and theatrical self-portraits.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/zanele-muholi.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/zanele-muholi.html#person\",\n      \"name\": \"Zanele Muholi\",\n      \"description\": \"Zanele Muholi is a visual activist who uses photography as an archive of visibility, resistance, and memory, through portraits of the Black LGBTQIA+ community and theatrical self-portraits.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/zanele-muholi.html\",\n      \"jobTitle\": \"Photographer\",\n      \"birthDate\": \"1972\",\n      \"nationality\": {\n        \"@type\": \"Country\",\n        \"name\": \"South Africa\"\n      },\n      \"sameAs\": [\n        \"https://en.wikipedia.org/wiki/Zanele_Muholi\"\n      ],\n      \"subjectOf\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/zanele-muholi.html\"\n      }\n    }\n  ]\n}"
       ]
     },
     "fabian-marti.html": {
       "title": "Fabian Marti | Photo Coordinates",
       "meta_description": "Swiss-born artist who combines photography, painting, and collage, working on themes of mysticism and altered states of consciousness. Known for works that make idiosyncratic use of darkroom processes and light-sensitive materials.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/fabian-marti.html",
+      "canonical": "https://eyescosmos.com/en/photographers/fabian-marti.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/fabian-marti.html",
-        "en": "https://eyescosmos.github.io/en/photographers/fabian-marti.html",
-        "x-default": "https://eyescosmos.github.io/photographers/fabian-marti.html"
+        "ja": "https://eyescosmos.com/photographers/fabian-marti.html",
+        "en": "https://eyescosmos.com/en/photographers/fabian-marti.html",
+        "x-default": "https://eyescosmos.com/photographers/fabian-marti.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Fabian Marti | Photo Coordinates",
         "description": "Swiss-born artist who combines photography, painting, and collage, working on themes of mysticism and altered states of consciousness. Known for works that make idiosyncratic use of darkroom processes and light-sensitive materials.",
-        "url": "https://eyescosmos.github.io/en/photographers/fabian-marti.html",
+        "url": "https://eyescosmos.com/en/photographers/fabian-marti.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
@@ -798,7 +798,7 @@
         "card": "summary_large_image",
         "title": "Fabian Marti | Photo Coordinates",
         "description": "Swiss-born artist who combines photography, painting, and collage, working on themes of mysticism and altered states of consciousness. Known for works that make idiosyncratic use of darkroom processes and light-sensitive materials.",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png"
+        "image": "https://eyescosmos.com/assets/ogp-default.png"
       },
       "has_ga": true,
       "h1": "Fabian Marti",
@@ -821,26 +821,26 @@
       "site_directory_html": null,
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/fabian-marti.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/fabian-marti.html\",\n      \"name\": \"Fabian Marti | Photo Coordinates\",\n      \"description\": \"Swiss-born artist who combines photography, painting, and collage, working on themes of mysticism and altered states of consciousness. Known for works that make idiosyncratic use of darkroom processes and light-sensitive materials.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/fabian-marti.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/fabian-marti.html#person\",\n      \"name\": \"Fabian Marti\",\n      \"description\": \"Swiss-born artist who combines photography, painting, and collage, working on themes of mysticism and altered states of consciousness. Known for works that make idiosyncratic use of darkroom processes and light-sensitive materials.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/fabian-marti.html\",\n      \"jobTitle\": \"Artist\"\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/fabian-marti.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/fabian-marti.html\",\n      \"name\": \"Fabian Marti | Photo Coordinates\",\n      \"description\": \"Swiss-born artist who combines photography, painting, and collage, working on themes of mysticism and altered states of consciousness. Known for works that make idiosyncratic use of darkroom processes and light-sensitive materials.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/fabian-marti.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/fabian-marti.html#person\",\n      \"name\": \"Fabian Marti\",\n      \"description\": \"Swiss-born artist who combines photography, painting, and collage, working on themes of mysticism and altered states of consciousness. Known for works that make idiosyncratic use of darkroom processes and light-sensitive materials.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/fabian-marti.html\",\n      \"jobTitle\": \"Artist\"\n    }\n  ]\n}"
       ]
     },
     "gabriel-orozco.html": {
       "title": "Gabriel Orozco | Photo Coordinates",
       "meta_description": "Mexican conceptual artist who records the latent poetry of everyday objects in photographs, working across sculpture, painting, and installation. Major works include La DS and Empty Shoe Box.",
-      "canonical": "https://eyescosmos.github.io/en/photographers/gabriel-orozco.html",
+      "canonical": "https://eyescosmos.com/en/photographers/gabriel-orozco.html",
       "hreflang": {
-        "ja": "https://eyescosmos.github.io/photographers/gabriel-orozco.html",
-        "en": "https://eyescosmos.github.io/en/photographers/gabriel-orozco.html",
-        "x-default": "https://eyescosmos.github.io/photographers/gabriel-orozco.html"
+        "ja": "https://eyescosmos.com/photographers/gabriel-orozco.html",
+        "en": "https://eyescosmos.com/en/photographers/gabriel-orozco.html",
+        "x-default": "https://eyescosmos.com/photographers/gabriel-orozco.html"
       },
       "og": {
         "type": "article",
         "site_name": "Photo Coordinates",
         "title": "Gabriel Orozco | Photo Coordinates",
         "description": "Mexican conceptual artist who records the latent poetry of everyday objects in photographs, working across sculpture, painting, and installation. Major works include La DS and Empty Shoe Box.",
-        "url": "https://eyescosmos.github.io/en/photographers/gabriel-orozco.html",
+        "url": "https://eyescosmos.com/en/photographers/gabriel-orozco.html",
         "locale": "en_US",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png",
+        "image": "https://eyescosmos.com/assets/ogp-default.png",
         "image:width": "1200",
         "image:height": "630",
         "image:alt": "Photo Coordinates"
@@ -849,7 +849,7 @@
         "card": "summary_large_image",
         "title": "Gabriel Orozco | Photo Coordinates",
         "description": "Mexican conceptual artist who records the latent poetry of everyday objects in photographs, working across sculpture, painting, and installation. Major works include La DS and Empty Shoe Box.",
-        "image": "https://eyescosmos.github.io/assets/ogp-default.png"
+        "image": "https://eyescosmos.com/assets/ogp-default.png"
       },
       "has_ga": true,
       "h1": "Gabriel Orozco",
@@ -872,7 +872,7 @@
       "site_directory_html": null,
       "footer_html": null,
       "jsonld": [
-        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/gabriel-orozco.html\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/gabriel-orozco.html\",\n      \"name\": \"Gabriel Orozco | Photo Coordinates\",\n      \"description\": \"Mexican conceptual artist who records the latent poetry of everyday objects in photographs, working across sculpture, painting, and installation. Major works include La DS and Empty Shoe Box.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.github.io/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.github.io/en/photographers/gabriel-orozco.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.github.io/en/photographers/gabriel-orozco.html#person\",\n      \"name\": \"Gabriel Orozco\",\n      \"description\": \"Mexican conceptual artist who records the latent poetry of everyday objects in photographs, working across sculpture, painting, and installation. Major works include La DS and Empty Shoe Box.\",\n      \"url\": \"https://eyescosmos.github.io/en/photographers/gabriel-orozco.html\",\n      \"jobTitle\": \"Artist\"\n    }\n  ]\n}"
+        "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebPage\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/gabriel-orozco.html\",\n      \"url\": \"https://eyescosmos.com/en/photographers/gabriel-orozco.html\",\n      \"name\": \"Gabriel Orozco | Photo Coordinates\",\n      \"description\": \"Mexican conceptual artist who records the latent poetry of everyday objects in photographs, working across sculpture, painting, and installation. Major works include La DS and Empty Shoe Box.\",\n      \"inLanguage\": \"en\",\n      \"isPartOf\": {\n        \"@type\": \"WebSite\",\n        \"name\": \"Photo Coordinates\",\n        \"url\": \"https://eyescosmos.com/en/\"\n      },\n      \"about\": {\n        \"@id\": \"https://eyescosmos.com/en/photographers/gabriel-orozco.html#person\"\n      }\n    },\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://eyescosmos.com/en/photographers/gabriel-orozco.html#person\",\n      \"name\": \"Gabriel Orozco\",\n      \"description\": \"Mexican conceptual artist who records the latent poetry of everyday objects in photographs, working across sculpture, painting, and installation. Major works include La DS and Empty Shoe Box.\",\n      \"url\": \"https://eyescosmos.com/en/photographers/gabriel-orozco.html\",\n      \"jobTitle\": \"Artist\"\n    }\n  ]\n}"
       ]
     }
   }

@@ -14,7 +14,7 @@ import generate_taxonomy_pages as taxonomy_meta
 
 
 REPO = Path(__file__).resolve().parent.parent
-SITE = "https://eyescosmos.github.io"
+SITE = "https://eyescosmos.com"
 GA_ID = "G-2VRTV8BZEJ"
 ASSET_VERSION = "20260517d"
 GLOBAL_SEARCH_VERSION = "20260508a"

@@ -53,7 +53,7 @@ CLASSIFICATION_JSON = os.path.join(ROOT, 'data', 'photographers-en-classificatio
 JA_DIR = os.path.join(ROOT, 'photographers')
 EN_DIR = os.path.join(ROOT, 'en', 'photographers')
 
-BASE = 'https://eyescosmos.github.io'
+BASE = 'https://eyescosmos.com'
 
 # ── JA country name → EN display name (slug comes from the JA href) ────────
 COUNTRY_JA_TO_EN = {
@@ -215,7 +215,7 @@ def translate_movement_name(ja_name):
 # 無いフィールドだけを card-data / slug / years / EN lead_html から決定論導出する。
 # 契約: entry に値があれば最優先・無いときだけ導出・発動は WARN・既存フル装備 entry の
 # 出力は byte 不変（実ビルド 294 件は全フィールド完備なので導出は発火しない）。
-DEFAULT_OG_IMAGE = 'https://eyescosmos.github.io/assets/ogp-default.png'
+DEFAULT_OG_IMAGE = 'https://eyescosmos.com/assets/ogp-default.png'
 SITE_NAME = 'Photo Coordinates'
 _CARD_INDEX_CACHE = None
 
