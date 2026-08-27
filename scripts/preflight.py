@@ -141,6 +141,43 @@ def check_ga_coverage() -> None:
         )
 
 
+def check_legacy_domain() -> None:
+    """git 追跡ファイルへの旧本番ドメイン再混入を検出（HARD）。"""
+    allowed = {
+        "docs/importer-run-log.md",
+        "docs/generators-and-guards.md",  # このガード自体の解説で旧ドメインを例示する
+        "scripts/preflight.py",
+        "SEO_MIGRATION_NOTES.md",
+        "README.md",
+    }
+    proc = subprocess.run(
+        ["git", "-c", "core.quotepath=off", "grep", "-n", "--fixed-strings",
+         "eyescosmos.github.io", "--", "."],
+        capture_output=True, text=True, cwd=REPO)
+    if proc.returncode == 1:
+        return  # git grep: match なし
+    if proc.returncode != 0:
+        detail = (proc.stderr or proc.stdout).strip()
+        hard_failures.append(
+            "旧ドメイン混入チェックを実行できない"
+            + (f": {detail}" if detail else ""))
+        return
+
+    hits: list[str] = []
+    for line in proc.stdout.splitlines():
+        rel_path, sep, rest = line.partition(":")
+        if not sep or rel_path in allowed:
+            continue
+        line_no, sep, _ = rest.partition(":")
+        hits.append(f"{rel_path}:{line_no}" if sep else line)
+    if hits:
+        shown = ", ".join(hits[:5])
+        remainder = f" —（他{len(hits) - 5}件）" if len(hits) > 5 else ""
+        hard_failures.append(
+            f"旧ドメインが混入: {shown}{remainder}。本番URLは eyescosmos.com。"
+            "素材由来のURLをそのまま貼っていないか確認する")
+
+
 def _baseline_ref() -> str:
     """比較基準。push 時に実効化するため「公開済み側」を優先する。
     upstream（@{u}）→ origin/main → HEAD の順で最初に解決できたものを使う。
@@ -1654,6 +1691,7 @@ def main() -> int:
     check_dup_ids_js()
     check_dup_ids_carddata()
     check_ga_coverage()
+    check_legacy_domain()
     check_en_lang_toggle_active()
     check_sidebar_search_wiring()
     check_internal_dead_links()

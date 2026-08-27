@@ -241,6 +241,13 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
   - **生成物の EN HTML を直接編集した疑い**（HTML 変更なのに JSON 不変）＝WARN
   - sup/cite・リンクの健全性＝WARN。手書き維持ページ（`annie-leibovitz` / `stieglitz`）は closure 例外。
   既存不具合 10 件は「触った時だけ」可視化され、無関係な push はブロックしない（スコープが baseline）。
+- **preflight の旧ドメイン混入検査（`check_legacy_domain` / 2026-08-27 追加）** — 追跡ファイルに
+  `eyescosmos.github.io` が現れたら **HARD FAIL（push ブロック）**。本番URLは `eyescosmos.com`
+  （2026-08-27 にドメイン移行済み）。ChatGPT素材や過去ページの引き写しで旧URLが再混入するのを止める。
+  - 検出は `git grep --fixed-strings`。未追跡ファイルと `.claude/` は対象外
+  - 許可リスト（移行の経緯やガード自体を説明する文書なので除外）: `docs/importer-run-log.md` /
+    `docs/generators-and-guards.md`（このファイル）/ `scripts/preflight.py` / `SEO_MIGRATION_NOTES.md` / `README.md`
+  - 出力は先頭5件＋残り件数。旧URLを見つけたら新ドメインへ直す（`301` で転送はされるが canonical が濁る）
 - **preflight の内部デッドリンク検査（`check_internal_dead_links` / 2026-07-30 追加）** — 公開HTMLの
   `href="/….html"` を**URLデコードしてから**実在判定する。
   - **今回変更したページのデッドリンク＝HARD**（push ブロック）。「この変更が入れた事故」と断定できるため
