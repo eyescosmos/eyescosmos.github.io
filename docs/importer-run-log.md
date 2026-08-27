@@ -1961,3 +1961,13 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **陽性試験（ガードが空ファイルでフェイルオープンしていないことの確認）**：EN正本JSONの `jean-luc-mylayne.sources_html` から Le Monde の出典URL 1件を意図的に差し替えたところ、`preflight.py` が EXIT 1 で `リンク1件消失` を HARD FAIL 検出（`[EN closure]` も同時に発火）。宣言を空にしてもガードは生存している。試験後にバックアップから復元し、`git diff --stat` がバイト単位で空＝完全復元を確認。JA側でも同様の試験を行ったが、JA HTMLの消失検知は出典「件数」ベースでURL単位ではない（URLを別URLへ置換すると件数が変わらず発火しない）ことを実測。これは宣言機構の対象外＝設計どおりで、こちらも完全復元済み。
 - **検証**：`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、HARD FAIL 0、stale WARN 23→0、`intentional-replacement` 関連の出力行 0。tracked 差分は当該JSON 1ファイル（+1 / −140行）と本ログのみ。公開HTML・EN正本JSON・card-data・禁止面の差分0。
 - **wall-time**：（Daisuke記入）
+
+## 2026-08-27 — 独自ドメイン移行 Phase 1: 全URLを eyescosmos.com へ一括置換（軽量・push保留）
+
+- **種別 / 範囲**：other / サイト全面のURL文字列のみ。作業ブランチ `domain/eyescosmos-com`（main は無変更）。`eyescosmos.github.io` → `eyescosmos.com` を git 追跡ファイル 910件 / 20,554箇所で置換。内訳は .html 883/8,406、.xml 2/6,184、.json 4/5,112、.csv 1/786、.py 15/40、.jsx 1/18、.md 1/4、.bin 2/2、.txt 1/2。未追跡182件（`-backup*.html` / spec json 等）と `.claude/` は `git ls-files -z` 経由の列挙で自動除外し、stage もしていない。
+- **実装分担**：Opus 監督 / Codex 実装（MCP）。Codex は workspace-write サンドボックスで `.git` が読み取り専用のため stash を作れず、置換前 preflight の取得（stash → 実行 → pop）は Opus 側で実行した。
+- **置換の安全性（事前実測）**：全20,554件のうち `https://` 付きURLが20,551件、素の出現が3件（`design/toptest.html` / `design/toptest-extracted.html` のコメント、`scripts/indexnow_submit.py` の `HOST` 定数）。`github.com/eyescosmos` 形のクローンURLは0件で、置換で git 設定を壊す経路なし。`design/toptest-assets/*.bin` は拡張子に反して中身が UTF-8 テキスト（JSX ソース）だったため通常置換で対応。
+- **sitemap**：再生成せず文字列置換のみ（`.claude/worktrees/` 複製で 776→3,097 に膨張する既知の罠を回避）。`<loc>` 数は sitemap.xml / sitemap-full.xml とも 776 で置換前後不変。
+- **検証**：置換以外の差分0行（`git diff -U0` の +/- 行でドメイン文字列を含まないもの＝0）。旧ドメイン残存0件。`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0。**preflight の WARN 群は stash で置換前状態に戻して再実行した出力と完全一致**＝すべて既存分で今回の置換とは無関係と確定（EN直接編集疑い13件＋国別24件＋運動4件＋archive、出典番号不連続2件、`/colophon` 既知リンク2件）。canonical / hreflang / og:url / JSON-LD `url` / robots.txt の Sitemap 行 / IndexNow `HOST` を実測サンプルで確認。
+- **push しない理由**：DNS 切替（Phase 2）の HTTPS 確認直後に push することで、「転送は新ドメイン・canonical は旧ドメイン」という矛盾状態の窓を数分に圧縮する。設計図 Phase 3 の手順どおり。
+- **wall-time**：（Daisuke記入）
