@@ -46,5 +46,35 @@
     "url": "https://www.jcii-cameramuseum.jp/photosalon/2011/03/29/7487/",
     "reason": "The supplied 2026-08-27 JA and EN source sets replace the prior source list and do not include this JCII Photo Salon URL.",
     "declared": "2026-08-28"
+  },
+  {
+    "slug": "anders-petersen",
+    "url": "https://www.spothomegallery.com/en/artist/anders-petersen/",
+    "reason": "The supplied 2026-08-29 JA and EN source sets replace the prior source list and do not include this Spot Home Gallery URL.",
+    "declared": "2026-08-29"
+  },
+  {
+    "slug": "izis",
+    "url": "https://www.moma.org/momaorg/shared/pdfs/docs/press_archives/1573/releases/MOMA_1951_0091_1951-12-13_511213-77.pdf",
+    "reason": "The supplied 2026-08-29 JA and EN source sets replace the prior source list and do not include this MoMA press-archive PDF URL.",
+    "declared": "2026-08-29"
+  },
+  {
+    "slug": "kate-steciw",
+    "url": "https://www.artspace.com/artists/kate_steciw",
+    "reason": "The supplied 2026-08-29 JA and EN source sets replace the prior source list and do not include this Artspace artist URL.",
+    "declared": "2026-08-29"
+  },
+  {
+    "slug": "kate-steciw",
+    "url": "https://www.moma.org/calendar/exhibitions/1539",
+    "reason": "The supplied 2026-08-29 JA and EN source sets replace the prior source list and do not include this MoMA exhibition URL.",
+    "declared": "2026-08-29"
+  },
+  {
+    "slug": "sara-vanderbeek",
+    "url": "https://www.moma.org/documents/moma_press-release_387191.pdf",
+    "reason": "The supplied 2026-08-29 JA and EN source sets replace the prior source list and do not include this MoMA press-release PDF URL.",
+    "declared": "2026-08-29"
   }
 ]
