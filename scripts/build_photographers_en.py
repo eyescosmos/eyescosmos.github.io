@@ -1345,8 +1345,9 @@ def rebuild_footer(html):
     privacy = '/en/privacy-policy.html' if file_exists_rel(os.path.join(ROOT, 'en', 'privacy-policy.html')) else '/privacy-policy.html'
     html = re.sub(r'<a href="/privacy-policy\.html">プライバシーポリシー</a>',
                   f'<a href="{privacy}">Privacy</a>', html)
+    colophon = '/en/colophon' if file_exists_rel(os.path.join(ROOT, 'en', 'colophon', 'index.html')) else '/colophon'
     html = re.sub(r'<a href="/colophon">コロフォン</a>',
-                  '<a href="/colophon">Colophon</a>', html)
+                  f'<a href="{colophon}">Colophon</a>', html)
     return html
 
 

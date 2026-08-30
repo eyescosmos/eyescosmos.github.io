@@ -13,9 +13,12 @@ HTML 断片を translate_residuals に直接渡して検証する（hermetic・�
 """
 import sys
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_photographers_en import translate_residuals  # noqa: E402
+import build_photographers_en as builder  # noqa: E402
+
+translate_residuals = builder.translate_residuals
 
 FAILURES = []
 
@@ -80,6 +83,23 @@ check(
     must_contain=['>Switzerland<'],
     must_not_contain=['スイス'],
 )
+
+# Footer language routing: use the EN colophon when it exists, otherwise the
+# JA fallback. This prevents EN page regeneration from silently reverting the
+# shipped /en/colophon link.
+footer_in = '<a href="/colophon">コロフォン</a>'
+with patch.object(builder, 'file_exists_rel', return_value=True):
+    footer_en = builder.rebuild_footer(footer_in)
+with patch.object(builder, 'file_exists_rel', return_value=False):
+    footer_fallback = builder.rebuild_footer(footer_in)
+if ('href="/en/colophon">Colophon</a>' in footer_en
+        and 'href="/colophon">Colophon</a>' in footer_fallback):
+    print('PASS [footer colophon language routing]')
+else:
+    print('FAIL [footer colophon language routing]')
+    print(f'  EN output: {footer_en}')
+    print(f'  fallback output: {footer_fallback}')
+    FAILURES.append('footer colophon language routing')
 
 if FAILURES:
     print(f'\n{len(FAILURES)} test(s) failed: {FAILURES}')

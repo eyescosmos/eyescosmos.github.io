@@ -1524,6 +1524,7 @@ def check_ai_disclosure() -> None:
     missing: list[str] = []
     stale: list[str] = []
     no_link: list[str] = []
+    wrong_colophon: list[str] = []
     for rel in inj.tracked_html():
         path = REPO / rel
         if not path.exists():
@@ -1546,6 +1547,10 @@ def check_ai_disclosure() -> None:
             stale.append(rel)
         if not re.search(r'href="[^"]*colophon"', html):
             no_link.append(rel)
+        else:
+            expected_colophon = "/en/colophon" if rel.startswith("en/") else "/colophon"
+            if not re.search(rf'href="{re.escape(expected_colophon)}"', html):
+                wrong_colophon.append(rel)
 
     def _fmt(items: list[str]) -> str:
         head = ", ".join(items[:5])
@@ -1564,6 +1569,10 @@ def check_ai_disclosure() -> None:
         hard_failures.append(
             f"フッターにコロフォンリンクが無いページ {len(no_link)}件: {_fmt(no_link)}。"
             "開示ブロックからはリンクしない方針なので、フッターが唯一の導線")
+    if wrong_colophon:
+        hard_failures.append(
+            f"言語とコロフォンURLが一致しないページ {len(wrong_colophon)}件: "
+            f"{_fmt(wrong_colophon)}。ENページは /en/colophon、JAページは /colophon を指すこと")
 
 
 def check_internal_dead_links() -> None:

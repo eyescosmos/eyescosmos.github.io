@@ -80,14 +80,15 @@ def repo_file_exists(rel: str) -> bool:
 
 # ── 決定論変換（JA / EN 共有） ─────────────────────────────────────────────
 
-# rev ハイライトのクラス語形: rev19 / rev-current / rev-red / rev-add 等、
+# rev ハイライトのクラス語形: 裸 rev / rev19 / rev-current / rev-red / rev-add 等、
 # revision7 / revision-fifth / 裸 revision、is-revised-2、second-revision-mark
-# （素材世代で揺れるため全系統に対応）
+# および audit-change（素材世代で揺れるため全系統に対応）
 REV_CLASS_PAT = (
-    r'rev(?:[0-9]+|-[a-z0-9]+(?:-[a-z0-9]+)*)'
+    r'rev(?:[0-9]+|-[a-z0-9]+(?:-[a-z0-9]+)*)?'
     r'|revision(?:[0-9]+|-[a-z0-9]+(?:-[a-z0-9]+)*)?'
     r'|is-revised-[0-9]+'
     r'|[a-z0-9]+-revision-mark'
+    r'|audit-change'
 )
 REV_OPEN_RE = re.compile(r'<span class="(?:' + REV_CLASS_PAT + r')">')
 SPAN_TAG_RE = re.compile(r'<span\b[^>]*>|</span>')

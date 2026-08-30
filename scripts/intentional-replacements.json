@@ -76,5 +76,23 @@
     "url": "https://www.moma.org/documents/moma_press-release_387191.pdf",
     "reason": "The supplied 2026-08-29 JA and EN source sets replace the prior source list and do not include this MoMA press-release PDF URL.",
     "declared": "2026-08-29"
+  },
+  {
+    "slug": "taiji-matsue",
+    "url": "https://www.art-it.asia/en/partners_e/museum_e/hmoca_e/194364/",
+    "reason": "The supplied 2026-08-30 JA and EN source sets replace the prior EN-only source list; measured 0 occurrences of this ART iT museum-partner URL in both new materials (the new set cites five different ART iT article URLs instead).",
+    "declared": "2026-08-30"
+  },
+  {
+    "slug": "taiji-matsue",
+    "url": "https://www.taronasugallery.com/en/artists/taiji-matsue/",
+    "reason": "The supplied 2026-08-30 JA and EN source sets replace the prior EN-only source list; measured 0 occurrences of this /en/ locale path in both new materials (the new set cites the gallery's default-locale artist page instead).",
+    "declared": "2026-08-30"
+  },
+  {
+    "slug": "taiji-matsue",
+    "url": "https://www.tokyoartbeat.com/en/events/-/2021/F98D",
+    "reason": "The supplied 2026-08-30 JA and EN source sets replace the prior EN-only source list; measured 0 occurrences of this Tokyo Art Beat event URL in both new materials.",
+    "declared": "2026-08-30"
   }
 ]

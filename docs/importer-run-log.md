@@ -2093,3 +2093,44 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **検証**：変更HTML 778枚の全件について、ブロックを外し・コロフォンリンクの変更を戻すと **HEAD とバイト単位で完全一致**（差分ゼロ）。`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0。マーカーは全777枚で各1組。`ensure()` の冪等性・JA↔EN相互変換の可逆性も単体で確認。`git add` は新規ファイル5点（コロフォン2・スクリプト3）のみ、commit / push / stash / checkout なし（`checkout HEAD --` はドリフト巻き込みの復旧に3枚使用）。
 - **未確認**：`/colophon` · `/en/colophon` の本番200応答（push後に要確認）。sitemap は778 URLへ更新済みだが、`lastmod` は git コミット日基準なので**このコミット後にもう一度 `generate_sitemap.py` を回す**と777枚が当日日付になる。
 - **wall-time**：（Daisuke記入）
+
+## 2026-08-30 — 0830写真家12名 update パイロット（alec-soth / PHASE 1）
+
+- **種別 / 範囲**：updateパイロット / 1slug（`alec-soth`）。0830素材の日英本文・description・keywords・thesis・§REL・出典・作品リンクを反映。残り11slugは未着手。既存JA §REF 4リンクを原文のままcarry-forwardし、旧JA §RELのWilliam Eggleston 1項目を和集合として復元。最終§REF href集合はJA/ENとも10件で完全一致、§RELはJA/ENとも11件・全件リンク、repo実在確認で切れ0・張り忘れ0。
+- **engine / 正本移行**：裸`rev`と`audit-change`のunwrap・CSS除去をimporterへ追加し、誤爆ガードの回帰テストを追加。素材のreview class tokenはJA/EN各73→適用後0、review CSS ruleも各5→0。EN builderのColophon言語URL分岐とpreflight HARDガードを追加（重複ブランド副題行の空白除去も一度入れたが、依頼外のengine変更で全ENページの再生成結果に影響するため revert し、engine変更は①rev/audit-change ②Colophon言語URL ③preflightガードの3点に確定）。非公開stage4レイヤーの後勝ちを検出し、完成したbaseを標準28キー（欠落0、`jsonld`・`thesis_label`実値あり）へそろえてから`alec-soth.html`だけをstage4から削除。base pages 307→308、stage4 pages 12→11、各変更キーは`alec-soth.html`のみ、`_meta`不変・stage4他11キー不変。削除前後の生成結果は110,353 bytes・SHA-256一致。
+- **フィデリティ**：JA本文589→12,964字 / EN本文1,255→31,715字、unique出典はJA/ENとも4→55、sup-refはJA/ENとも7→102、§RELはJA4→11（リンク4→11）/ EN4→11（リンク4→11）、作品リンクはJA/ENとも3→8、bytesはJA43,722→108,471 / EN45,046→110,353。Amazon検索URLはJA/ENとも0→0。dangling sup-ref 0。
+- **既存値 / 不可視要素**：Years 1969–、Country JA=アメリカ / EN=United States、Movement JA=ドキュメンタリー / EN=Documentary、Period 2000—2010sはbackup一致。hero眉の分類語は一致し、index番号のみbackupの旧119から`card-data.json`正本 idx=289へ是正。JSON-LDキー減少0（JA Personは`nationality`追加、EN WebPage / WebSite / Person / Countryは全キー維持し、BreadcrumbList / ListItemを追加）。GA 2、canonical 1、hreflang 3、og:image JA0 / EN1はbackup比不変。JSON-LD scriptはJA1→1 / EN1→2。div/section開閉はJA134/134・9/9、EN246/246・9/9。フッターはJA=`/colophon`、EN=`/en/colophon`。
+- **配線 / 検証 / 面**：検索runtime解決形はJA/EN各1、他slug焼き込み0。EN builder通常dry-runは`Would write 1 page(s)`・SKIPPED 0。`check_en_entry.py alec-soth` / `check_new_photographer.py --slug alec-soth` / `check_content_loss.py` / `preflight.py` / `git diff --check` / importer・builderテストはいずれもEXIT 0。preflight WARNはPHASE 0着手前15行→13行（増分-2、新規WARN 0）。素材24/24 SHA-256一致。禁止面・対象外写真家ページ差分0。backup JA/EN各1とspec 1は未追跡・未stage、git add / commit / push / stashなし。PHASE 1で停止。
+- **wall-time**：（Daisuke記入）
+
+## 2026-08-30 — 0830写真家12名 update バッチ完了（残り11slug / PHASE 2）
+
+- **種別 / 範囲**：update 11名（`arata-dodo` / `boris-mikhailov` / `edward-burtynsky` / `fabian-marti` / `gabriel-orozco` / `gregory-crewdson` / `masashi-asada` / `rineke-dijkstra` / `taiji-matsue` / `thomas-struth` / `zanele-muholi`）。PHASE 1の`alec-soth`と合わせて対象12名を完了。JA HTML正本・EN正本JSON・builder生成ENへ0830素材の本文・description・keywords・thesis・§REL・出典・作品リンクを反映。対象外の`ansel-adams`のみ hero眉是正のため例外的に変更（下記）。
+- **体制 / 中断**：Opus監督・Codex実装。Codex が PHASE 2 途中で利用上限に到達したため、残作業（taiji-matsue のEN正本リンク3件・AI開示ブロック11枚・§REL張り忘れ4件・EN §REL一言解説9件・og:image退行10枚・run-log）は Daisuke の指示で Opus が引き取って完了させた。
+- **hero眉の是正（§14 C の例外・Daisuke指示）**：眉番号が`card-data.json`の idx とズレていたページを実測（全305ページ中282ページが一致＝サイト標準、ズレは9件のみ）。Daisuke判断で9件すべてを idx へ是正した。対象8名は118〜126（古いscaffoldの連番）→289/290/291/292/293/294/295/296/297、`alec-soth`は119→289（PHASE 1で実施）、対象外の`ansel-adams`は016→090。表記は3桁ゼロ埋め（実測: 全ページが3桁）。`ansel-adams`のEN再生成にあたり、EN正本の`keywords_html`が旧`page-keywords`形（日本語ラベル）のまま古く、素で再生成すると退行するため、shippedの`ph-keywords`形へ正本を同期してから生成。`ansel-adams`の最終差分はJA=眉1行のみ、EN=眉・`data-nosnippet`追加3箇所・サイドバーKeywords 5→6（本文6/サイドバー5という同一ページ内の非対称の解消）の13行に限定。
+- **engine**：本バッチのengine変更は3点に確定。①importerの`REV_CLASS_PAT`へ裸`rev`と`audit-change`を追加（素材に裸`rev` 386トークン・`audit-change` 4トークンがあり、従来パターンはunwrapも残存検知もできず本番へ素通りする経路だった）。②`build_photographers_en.rebuild_footer`のColophon URLを`en/colophon/index.html`の実在で分岐（従来は`/colophon`固定で、再生成のたびにENページが`/en/colophon`から静かに巻き戻る経路だった）。③`preflight.check_ai_disclosure`へ言語とColophon URLの対応チェックをHARD FAILで追加（従来はリンクの有無しか見ておらず②を検知できなかった）。誤爆ガード（`review`/`revised`/`revisionist`/`ph-rev-*`）の回帰テストを追加。変更前後のbuilder出力比較で対象外25slugがColophon行以外 差分0。
+- **正本移行（stage4）**：`data/photographers-en-stage4.json` が base より**後勝ち**でdeep mergeされる影の正本レイヤーであることを検出。CLAUDE.mdの正本マトリクスに載っておらず、マトリクスに従ってbaseを直しても静かに握り潰される経路だった。stage4の12キーは本バッチ対象11名＋`ihei-kimura.html`で、対象11名をno-loss条件（28キー・欠落0・`jsonld`と`thesis_label`実値あり・削除前後の生成SHA-256一致）を満たしてからbaseへ移行。base pages 307→318、stage4 pages 12→1。**`ihei-kimura.html`はstage4に残る**（対象外・新素材なしのため今回は移行しない。将来の update 時にbaseへ寄せるとstage4を空にできる）。
+- **carry-forward**：旧JA §REFの手キュレーション外部リンク28件を`-backup.html`とのhref集合diffで検出し、原文のまま復元。旧JA §RELは旧∪新の和集合を維持し削除0、`ALLOW_REL_REDUCTION`・builder `--force`とも不使用。**最終的にJA §REF/出典のhref集合はEN と 12/12 で完全一致**。§RELで裸だった実在項目4件を`card-data.json`の日本語名からslug解決してJAでリンク化（`arata-dodo`→alec-soth / `boris-mikhailov`→alexander-rodchenko / `fabian-marti`→thomas-ruff / `zanele-muholi`→rineke-dijkstra。EN側は既にリンク済で変更不要）。EN §REL一言解説の未注入9件（6slug）はJA原文から英訳して正本`related_annotations`へ入れ、`--inject-html`で反映（`--rebuild`は国chip退行のため不使用）。旧EN出典3URL（`taiji-matsue`のART iT / Taro Nasu `/en/` locale / Tokyo Art Beat）は新JA/EN素材の双方で0件を実測し`intentional-replacements.json`へdeclared=`2026-08-30`で宣言。
+- **og:image退行の是正**：stage4から移行した10slugのbaseエントリに`og.image` / `image:width` / `image:height` / `image:alt` / `og.locale` / `twitter.image`が欠けており、EN 10枚で`og:image` 4→0の退行が出ていた。各`-backup.html`から実値を取り出して正本へ復元し再生成（値は全件サイト共通の`https://eyescosmos.com/assets/ogp-default.png` 1200×630 / alt `Photo Coordinates` / `en_US`）。是正後は24面すべてで不可視要素の減少0。
+- **フィデリティ**：
+
+  | slug | JA本文字数 | EN本文字数 | unique出典 JA/EN | bytes JA / EN |
+  |---|---:|---:|---:|---:|
+  | alec-soth | 2,565→18,398 | 3,812→35,706 | 4→55 / 4→55 | 43,722→108,471 / 45,046→110,358 |
+  | arata-dodo | 2,234→6,585 | 3,462→14,783 | 3→20 / 3→20 | 42,624→68,176 / 43,970→72,069 |
+  | boris-mikhailov | 2,449→9,384 | 3,797→17,823 | 4→31 / 4→31 | 43,522→74,248 / 45,074→77,403 |
+  | edward-burtynsky | 2,436→9,127 | 3,957→17,324 | 4→24 / 4→24 | 43,521→73,991 / 45,041→77,705 |
+  | fabian-marti | 919→7,905 | 1,376→15,342 | 0→20 / 0→20 | 101,946→70,560 / 100,448→72,857 |
+  | gabriel-orozco | 903→9,130 | 1,379→17,652 | 0→22 / 0→22 | 101,967→74,351 / 100,308→76,500 |
+  | gregory-crewdson | 2,458→7,952 | 3,726→14,514 | 5→26 / 5→26 | 43,575→70,135 / 45,130→73,036 |
+  | masashi-asada | 2,161→7,335 | 3,989→17,653 | 5→22 / 5→22 | 43,347→71,659 / 45,579→75,334 |
+  | rineke-dijkstra | 2,504→15,316 | 3,650→29,163 | 5→38 / 5→38 | 43,785→95,188 / 45,108→95,534 |
+  | taiji-matsue | 2,110→14,673 | 3,569→32,734 | 5→39 / 5→39 | 108,886→95,475 / 106,999→100,806 |
+  | thomas-struth | 2,354→16,436 | 3,833→33,200 | 4→38 / 4→38 | 43,203→98,817 / 45,003→100,118 |
+  | zanele-muholi | 2,539→8,384 | 3,579→15,468 | 5→23 / 5→23 | 43,834→70,850 / 44,559→73,634 |
+
+- **bytes減少の説明**：減少したのは legacy inline `photographer-index` を持つ3名のみ。index分（JA 68,473 bytes / EN 66,425 bytes）を旧bytesから除いた値に対し、純増は`fabian-marti` JA +37,087 / EN +38,834、`gabriel-orozco` JA +40,857 / EN +42,617、`taiji-matsue` JA +55,062 / EN +60,232 で全6面が純増。他9名は素の純増。
+- **構造 / 不可視要素**：24面すべてでJSON-LDキー減少0、GA `G-2VRTV8BZEJ` / canonical / hreflang / `og:image` / `twitter:image` / JSON-LD script数はbackup比で減少0、div / section開閉一致。rev / revision / audit-change の class トークン残存0、レビューCSS残存0、`prep-block`残存0、dangling sup-ref 0。AI開示マーカーは24面すべて各1組（JA 11枚は`inject_ai_disclosure.py --only`で個別注入。`--all`は未実行）。フッターはJA 12枚=`/colophon`、EN 12枚=`/en/colophon`。検索runtime解決形は24面各1、他slug焼き込み0。内部リンク（photographers / movements / countries / eras）は24面すべてrepo実在確認で切れ0。
+- **`taiji-matsue`のoverrides.js**：`data/photographer-essay-overrides.js`に本バッチ対象で唯一エントリを持つ（`leadJa`/`leadEn`/`textJa`/`textEn`）。`build_archive_en.py`・`global-search.js`・`photographer-page.js`が読む旧経路で、変更するとarchive（禁止面）へ波及するため**本バッチでは変更していない**（0827/0829バッチも同様）。新本文は約14,673字で overrides の`textJa`（旧本文ベース・約2,000字規模）とは全面的に別物になっており、**アーカイブ側の解説と個別ページの本文が乖離した状態**。後日の同期要否はDaisuke判断。
+- **検証 / 面**：`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、EN builder通常dry-run 12/12 `Would write 1 page(s)`・SKIPPED 0。preflight WARNはベースライン15行→15行で、増分は`taiji-matsue`のJA/EN各1行（`data-nosnippet` JA 10→9・EN 9→8）のみ。これは`prep-block`（準備中プレースホルダ）2件が実コンテンツへ置換された§14 A の正当な減少で、失われた`data-nosnippet`要素が`prep-block`だけであることを実測確認済。`git diff --check`はEXIT 2だが、検出は builder が元から出す空白のみ行9件で、**既存EN写真家ページ321枚中297枚が同じ空白のみ行を持つ**サイト標準（Codexが一度入れた空白除去は依頼外のengine変更のため revert 済）。素材原本24/24 SHA-256一致。禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / sitemap / robots / colophon）差分0。写真家ページの変更は対象12名＋`ansel-adams`のJA/EN計26枚のみ。backup 24枚とspecは未追跡・未stage、0829由来の未追跡backupは未操作。git add / commit / push / stashなし。
+- **wall-time**：1時間51分（Daisuke実測。0830素材12名＝update12のPHASE 0＋0b＋PHASE 1＋PHASE 2＋監督の質問待ち時間を含む総所要。1名あたり約9.3分。Codexの利用上限到達による実装者交代と、engine/正本の経路バグ4件の是正を含む）

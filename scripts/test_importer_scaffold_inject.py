@@ -245,7 +245,7 @@ def test_unwrap_revision_word_spans() -> None:
 
 
 def test_bare_revision_and_nonspan_rev_classes() -> None:
-    """裸 `revision`（接尾辞なし）と span 以外の要素の rev クラス対応
+    """裸 `rev` / `revision` と `audit-change`、span 以外の要素の rev クラス対応
     （mika-ninagawa 素材で `<p class="revision">` 27箇所が render へ素通りした実害の
     再発防止）。誤爆ガード（review / revised / revisionist / ph-rev-* は不可触）も検証。"""
     from import_chatgpt_photographer import (
@@ -254,14 +254,14 @@ def test_bare_revision_and_nonspan_rev_classes() -> None:
 
     # 0) rev-* 一般化の陽性・陰性。class トークン全体一致だけを対象にする。
     positives = (
-        "rev-red", "rev-current", "rev1", "rev-add", "rev-third",
+        "rev", "audit-change", "rev-red", "rev-current", "rev1", "rev-add", "rev-third",
         "rev-fifth", "rev-sixth", "rev-seventh", "rev-eighth",
         "rev-final", "rev-rework", "is-revised-2", "revision3",
         "second-revision-mark",
     )
     negatives = (
-        "rev", "red", "revised", "edit-red", "is-revised", "redux",
-        "covered", "hundred", "reverse", "preview", "ph-rev-block",
+        "red", "review", "revised", "revisionist", "edit-red", "is-revised", "redux",
+        "covered", "hundred", "reverse", "preview", "ph-rev-block", "ph-rev-x",
     )
     for token in positives:
         assert REV_TOKEN_FULL_RE.fullmatch(token), \
@@ -270,13 +270,16 @@ def test_bare_revision_and_nonspan_rev_classes() -> None:
         assert not REV_TOKEN_FULL_RE.fullmatch(token), \
             f"FAIL: rev系陰性トークンを誤検出: {token!r}"
 
-    # 1) 裸 revision: 純 rev span は unwrap、<p class="revision"> は要素保持で属性削除
-    src = ('<span class="revision">a</span>'
+    # 1) 裸 rev/revision と audit-change: 純 rev span は unwrap、非spanは属性削除
+    src = ('<span class="rev">r</span>'
+           '<span class="audit-change">u</span>'
+           '<span class="revision">a</span>'
            '<p class="revision">本文</p>'
-           '<p class="revision revision-v4">両方rev</p>')
+           '<p class="revision revision-v4">両方rev</p>'
+           '<p class="ph-thesis__body audit-change">監査</p>')
     out = clean_rev_markup(src)
-    assert out == 'a<p>本文</p><p>両方rev</p>', \
-        f"FAIL: 裸 revision の unwrap/属性削除が不正: {out!r}"
+    assert out == 'rua<p>本文</p><p>両方rev</p><p class="ph-thesis__body">監査</p>', \
+        f"FAIL: 裸 rev/revision・audit-change の unwrap/属性削除が不正: {out!r}"
 
     # 2) 複合クラス（mika 実素材の形）: 要素保持・rev トークンだけ除去
     src2 = ('<div class="ph-cite revision-final" id="cite-1">c</div>'
@@ -316,14 +319,17 @@ def test_bare_revision_and_nonspan_rev_classes() -> None:
     self_check('<p class="review">ok</p><span class="revisionist">ok</span>',
                context="test")
 
-    # 5) CSS 除去: 裸 .revision ルールは除去・.revisionist 等の正規ルールは保持
-    css = ('<style>.revision { background: yellow } '
+    # 5) CSS 除去: 裸 .rev/.audit-change/.revision は除去・正規ルールは保持
+    css = ('<style>.rev { outline: 1px solid red } '
+           '.audit-change { text-decoration: underline } '
+           '.revision { background: yellow } '
            '.revision-final { color: red } '
            '.revisionist { color: blue } '
            '.essay p { margin: 0 }</style><p>x</p>')
     out5 = strip_review_css(css)
-    assert '.revision {' not in out5 and '.revision-final' not in out5, \
-        f"FAIL: 裸 .revision / .revision-final ルールが除去されていない: {out5!r}"
+    assert all(selector not in out5 for selector in (
+            '.rev {', '.audit-change {', '.revision {', '.revision-final')), \
+        f"FAIL: レビュー用 CSS ルールが除去されていない: {out5!r}"
     assert '.revisionist { color: blue }' in out5 and '.essay p { margin: 0 }' in out5, \
         f"FAIL: 正規 CSS ルールが誤って消された: {out5!r}"
 
@@ -339,7 +345,7 @@ def test_bare_revision_and_nonspan_rev_classes() -> None:
     assert '.rev-add{' not in out6, \
         f"FAIL: レビュー用 .rev-add ルールが残った: {out6!r}"
 
-    print("test_bare_revision_and_nonspan_rev_classes PASS: 裸revision unwrap/属性削除・"
+    print("test_bare_revision_and_nonspan_rev_classes PASS: 裸rev/revision・audit-change unwrap/属性削除・"
           "rev-*一般化・非span複合クラスのトークン除去・誤爆ガード・"
           "CSSカスタムプロパティ保持・self_check/CSS連動OK")
 
