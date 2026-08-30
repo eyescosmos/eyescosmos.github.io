@@ -371,6 +371,14 @@ def _rel_double_dash_usage_ref(ref: str) -> dict[str, list[str]]:
     return out
 
 
+# CSS定義を持たないが意図的に恒久で使うclass。
+# ai-disclosure: 全ページ末尾のAI開示ブロック（scripts/ai_disclosure.py）。
+#   共通stylesheetを持たないページ（写真家ページはCSSがHTML埋め込み、index.html は
+#   サイトCSSを読まない）にも同一の見た目で載せる必要があるため、スタイルはインラインで
+#   完結させている。class は将来CSSやJSから掴むためのフックとして残してある。
+PERMANENT_ORPHAN_CLASSES = frozenset({"ai-disclosure"})
+
+
 def check_orphan_class_tokens() -> None:
     """新規orphan classとJA §REL二重ダッシュをbaseline差分でHARD検出する。
 
@@ -379,7 +387,8 @@ def check_orphan_class_tokens() -> None:
     CSS定義を追加し、環境変数は緊急時の限定的な逃げ道としてのみ使用する。
     """
     baseline = _baseline_ref()
-    allowed = {
+    allowed = set(PERMANENT_ORPHAN_CLASSES)
+    allowed |= {
         token for token in re.split(
             r'[\s,]+', os.environ.get("ALLOW_ORPHAN_CLASS", "").strip())
         if token
@@ -1464,10 +1473,9 @@ def check_sidebar_search_wiring() -> None:
 # `/colophon`（拡張子なし・900ページの標準フッター）と、toyoko-tokiwa EN だけが持つ
 # `/en/colophon.html` は同根の「コロフォンページ欠落」。ページ新設 or リンク削除の
 # 方針が決まり次第まとめて解消する。解消したらこの辞書から消すこと。
-KNOWN_MISSING_HREFS = {
-    "/colophon": "コロフォンページ未作成（方針未決・900ページの標準フッター）",
-    "/en/colophon.html": "同上（en/photographers/toyoko-tokiwa.html のみ拡張子つきで参照）",
-}
+# コロフォンは 2026-08-30 に colophon/index.html · en/colophon/index.html として実在化した。
+# 実在検査は check_ai_disclosure() が担当する。
+KNOWN_MISSING_HREFS: dict[str, str] = {}
 
 INTERNAL_HREF_RE = re.compile(r'href="(/[^"\s]*?\.html)(?:[#?][^"]*)?"')
 
@@ -1484,6 +1492,78 @@ def _internal_dead_links(html: str) -> list[str]:
         if not target.exists():
             dead.append(href)
     return dead
+
+
+def check_ai_disclosure() -> None:
+    """AI開示ブロックの全ページ網羅を検査（HARD）。
+
+    2026-08-30 導入。各ページ末尾の「出典 / 本文執筆＝AI / 構成・編集」の3行と短縮版が、
+    新規ページや再生成で抜け落ちないようにする。正本は scripts/ai_disclosure.py。
+    欠けている・文面がずれている場合の修復コマンドは
+
+        python3 scripts/inject_ai_disclosure.py --all
+
+    コロフォン（/colophon · /en/colophon）の実在もここで見る。ブロックからは
+    コロフォンへリンクしない方針なので、各ページのフッターにリンクがあることも確認する。
+    """
+    sys.path.insert(0, str(REPO / "scripts"))
+    try:
+        import ai_disclosure as ai
+        import inject_ai_disclosure as inj
+    except Exception as e:  # pragma: no cover
+        hard_failures.append(f"AI開示ブロックの検査を実行できない: {type(e).__name__}: {e}")
+        return
+
+    for rel in ("colophon/index.html", "en/colophon/index.html"):
+        if not (REPO / rel).exists():
+            hard_failures.append(
+                f"コロフォンページが無い: {rel}。"
+                "全ページのフッターが /colophon · /en/colophon を指している。"
+                "`python3 scripts/build_colophon.py` で生成する")
+
+    missing: list[str] = []
+    stale: list[str] = []
+    no_link: list[str] = []
+    for rel in inj.tracked_html():
+        path = REPO / rel
+        if not path.exists():
+            continue
+        try:
+            html = path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            continue
+        ok, _why = inj.is_target(rel, html)
+        if not ok:
+            continue
+        lang = inj.lang_of(rel)
+        if not ai.has_block(html):
+            missing.append(rel)
+            continue
+        want = ai.block(lang).strip()
+        got = html[html.index(ai.MARKER_OPEN):
+                   html.index(ai.MARKER_CLOSE) + len(ai.MARKER_CLOSE)].strip()
+        if got != want or html.count(ai.MARKER_OPEN) != 1:
+            stale.append(rel)
+        if not re.search(r'href="[^"]*colophon"', html):
+            no_link.append(rel)
+
+    def _fmt(items: list[str]) -> str:
+        head = ", ".join(items[:5])
+        return head + (f" —（他{len(items) - 5}件）" if len(items) > 5 else "")
+
+    if missing:
+        hard_failures.append(
+            f"AI開示ブロックが無いページ {len(missing)}件: {_fmt(missing)}。"
+            "`python3 scripts/inject_ai_disclosure.py --all` で入れる")
+    if stale:
+        hard_failures.append(
+            f"AI開示ブロックが正本とズレているページ {len(stale)}件: {_fmt(stale)}。"
+            "正本は scripts/ai_disclosure.py。"
+            "`python3 scripts/inject_ai_disclosure.py --all` で揃える")
+    if no_link:
+        hard_failures.append(
+            f"フッターにコロフォンリンクが無いページ {len(no_link)}件: {_fmt(no_link)}。"
+            "開示ブロックからはリンクしない方針なので、フッターが唯一の導線")
 
 
 def check_internal_dead_links() -> None:
@@ -1715,6 +1795,7 @@ def main() -> int:
     check_jsonld_person_key_regression()
     check_new_photographer_pages()
     check_scaffold_inject_determinism()
+    check_ai_disclosure()
     run_existing_check("check_photographer_link_integrity.py")
 
     if infos:

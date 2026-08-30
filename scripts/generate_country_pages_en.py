@@ -23,6 +23,7 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 from generate_country_pages import (  # noqa: E402  reuse proven helpers
+
     extract_articles,
     extract_era_style_block,
     extract_archive_card_css,
@@ -30,6 +31,11 @@ from generate_country_pages import (  # noqa: E402  reuse proven helpers
     get_members,
     assert_members,
 )
+
+# ── AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本） ──
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import ai_disclosure as _ai_disclosure
 
 EN_ARCHIVE_HREF_RE = re.compile(r'href="/en/photographers/([^"]+)\.html"')
 # JA-only entries (NO_EN_PAGE in build_archive_en.py): their en/archive.html card
@@ -485,6 +491,7 @@ def main(argv=None) -> None:
                            strip_pairs=strip_pairs, dir_eras=dir_eras,
                            dir_countries=dir_countries, dir_photographers=dir_photographers,
                            cards_html="\n".join(cards), member_count=len(cards))
+        html, _ = _ai_disclosure.ensure(html, "en")
         (REPO / "en" / "countries" / f"{cfg['slug']}.html").write_text(html, encoding="utf-8")
         page_n += 1
 

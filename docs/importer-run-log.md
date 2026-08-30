@@ -49,6 +49,7 @@
 | 2026-07-23 | **11名バッチupdate**(james-casebere/laura-letinsky/luc-delahaye/richard-billingham/roe-ethridge/seung-woo-back/sharon-lockhart/the-atlas-group-walid-raad/tracey-moffatt/valerie-belin/yto-barrada) | update | 50分 | 3（rev-red第5系統／Atlas EN prep-block／JSON-LD Personキー消失） | 監督判断6系統＋§REL意図差し替え4名（下記） | 24ファイル | 計7889→46113 | 計39→220 |
 | 2026-07-24 | (engine)JSON-LD Personキー退行ガード | engine | （Daisuke記入） | 1（確定年を導出できないページでキー消失を見逃す死角） | 0（機械検証） | 2ファイル | N/A | N/A |
 | 2026-07-27 | **7名バッチupdate**(amalia-ulman/artie-vierkant/eileen-quinlan/james-welling/lucas-blalock/shannon-ebner/thomas-demand) | update | 60分 | 1（`rev-*`列挙方式の限界→正規表現一般化） | 監督判断7系統＋PHASE 3相乗り＋既存Amazon検索URL8本是正 | 34ファイル | JA計6192→36139 / EN計18478→95397 | JA/ENとも計28→200 |
+| 2026-08-30 | (全ページ)AI開示ブロック＋コロフォン | other | （Daisuke記入） | 2 | 3（下記） | 780ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -2080,3 +2081,15 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **構造 / 不可視 / 正本**：JSON-LD減少キー0（JA Person各8〜10、EN WebPage 8 / WebSite 3 / Person各9〜10 / Country 2 / BreadcrumbList 3 / ListItem 4は全てbackup比不変）。GA 2、canonical 1、hreflang 3、JA JSON-LD 1、EN JSON-LD 2、JA og:image 0、EN og:image 1は全26面で不変。`data-nosnippet`はJessica / Kate / Norihiko / Noriko / Sara / WilliamのみJA9→8・EN8→7、他7名はJA8→8・EN7→7。divはJA95〜103・EN139〜162で全26面開閉一致、sectionは全26面9/9。dangling sup-ref / review class / review CSS / 二重ダッシュ / `prep-block`は全て0。検索runtime解決形は全26面各1、他slug固定値0。
 - **正本 / 検証 / 面**：EN正本pages 307→307、HEAD比変更キーは対象14slug（PHASE 1含む）のみ、各entryキー欠落0、`_meta`不変。通常builder最終dry-runは13/13 `Would write 1 page(s)`・SKIPPED 0。`check_en_entry.py`は13/13 EXIT 0（Norikoのみ素材由来WordPress URLの非推奨WARN 1）。`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、`git diff --check` EXIT 0。PHASE 1 baseline比の増分WARNは`data-nosnippet`減少12行のみ、増分INFOはintentional replacement 4行。素材28/28 SHA-256一致。禁止面・対象外写真家HTML差分0。backup/spec 39件は未追跡・未stage、git add / commit / push / stash / checkout / restoreなし。
 - **wall-time**：約50分（Daisuke実測。0829素材14名＝update14のPHASE 1＋PHASE 2＋§REL和集合判断の停止1回を含む総所要。1名あたり約3.6分）
+
+## 2026-08-30 — 全ページへAI開示ブロックを導入＋コロフォン新設（other）
+
+- **種別 / 範囲**：サイト全ページに「出典 — 美術館・アーカイブ・専門資料（このページの §SRC に個別記載）/ 本文執筆 — AI / 構成・編集 — 写真の座標 管理人」の3行＋短縮版を挿入。あわせて `/colophon` · `/en/colophon` を新設。対象は777ページ（写真家JA305・EN321、国別JA/EN各62、年代JA/EN各11、運動JA35・EN66、ルート/en計9のうちシム・除外を引いた実数）。対象外はリダイレクトシム105枚・`design/`2枚・`cards-archive.html`・Search Console確認ファイル・コロフォン本体2枚。
+- **挿入位置**：最後の `</main>` の直前（無ければ `<footer` の直前）。写真家ページでは §SRC セクションの直後、国別・年代・運動では最終セクション（§PH）の直後にあたる。年代ページはHTMLが1行にミニファイされているため、アンカー行の行頭インデントまで戻って差し込む実装にした。
+- **手作業点（3）**：①Chrome拡張が未接続でパイロットの実機レンダリング確認ができず、目視OKは Daisuke 待ち（ブロックは冪等なので調整は `--all` 1本で全ページへ反映できる）。②`/colophon` を拡張子なしで解決させるため、`colophon.html` ではなくディレクトリ+`index.html` を選択（GitHub Pages の拡張子なし解決に依存しない形）。③フッターにコロフォンリンクを持たないページが286枚あることを実測で発見し、標準形（`プライバシー · コロフォン`）へ揃えた。「ブロックからコロフォンへリンクしない」方針はフッターのリンクが全ページにある前提だったため。
+- **bug（2）**：①生成スクリプトへの `import` 自動挿入が2ファイルで複数行 import の途中に入り SyntaxError（`build_photographers_en.py` / `generate_country_pages_en.py`。閉じ括弧の後へ移動して解消）。②配線確認のために `build_photographers_en.py` / `generate_country_pages.py` / `generate_country_pages_en.py` を実走させたところ、開示ブロックとは無関係な既存の再生成ドリフト（EN本文の差し替え・`pc-body__tag` の変更・`head__lang` CSS更新）を3枚に巻き込んだ。HEADへ戻して意図した2種の変更だけ再適用。**教訓＝配線確認で生成スクリプトを追跡ページに対して実走させない**（`--dry-run` か関数の単体確認で足りる）。
+- **リンク整備**：`href="#"` の死んだコロフォンリンク JA15枚・EN13枚、`/en/colophon.html`（形が違う）1枚を修正。EN全ページの参照先を `/colophon`（JA）から `/en/colophon` へ統一。最終的に JA390枚が `/colophon`、EN388枚が `/en/colophon` を指し、死んだリンク0。
+- **仕組み化**：`scripts/ai_disclosure.py`（正本）+ `scripts/inject_ai_disclosure.py`（冪等な全ページ適用）。生成5本（`build_photographers_en.py` / `generate_country_pages.py` / `generate_country_pages_en.py` / `build_taxonomy_en.py` / `build_archive_en.py`）が書き込み直前に `ensure()` を呼ぶよう配線。新規JA写真家ページは参照実装 `ansel-adams.html` のコピーで自動的に入る。`preflight.py` に `check_ai_disclosure()` を追加（ブロックの有無・文面一致・フッターのコロフォンリンク・コロフォン2枚の実在をHARD FAIL）。実際に文面を1文字変えて FAIL することを実測確認。
+- **検証**：変更HTML 778枚の全件について、ブロックを外し・コロフォンリンクの変更を戻すと **HEAD とバイト単位で完全一致**（差分ゼロ）。`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0。マーカーは全777枚で各1組。`ensure()` の冪等性・JA↔EN相互変換の可逆性も単体で確認。`git add` は新規ファイル5点（コロフォン2・スクリプト3）のみ、commit / push / stash / checkout なし（`checkout HEAD --` はドリフト巻き込みの復旧に3枚使用）。
+- **未確認**：`/colophon` · `/en/colophon` の本番200応答（push後に要確認）。sitemap は778 URLへ更新済みだが、`lastmod` は git コミット日基準なので**このコミット後にもう一度 `generate_sitemap.py` を回す**と777枚が当日日付になる。
+- **wall-time**：（Daisuke記入）

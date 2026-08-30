@@ -23,6 +23,12 @@ import os
 import re
 import sys
 
+# ── AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本） ──
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import ai_disclosure as _ai_disclosure
+
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # ── Japanese movement filename ↔ English slug mapping ──────────────────────
@@ -1614,7 +1620,8 @@ def process_movement_page(ja_name, slug, en_data, id_to_card):
     html = apply_id_aliases(html)
     html = unlink_orphan_cite_refs(html)
 
-    # 18. Write output
+    # 18. Write output（JA由来の開示ブロックをEN版へ差し替える）
+    html, _ = _ai_disclosure.ensure(html, 'en')
     os.makedirs(os.path.dirname(en_fp), exist_ok=True)
     with open(en_fp, 'w', encoding='utf-8') as f:
         f.write(html)
@@ -1769,7 +1776,8 @@ def process_era_page(era_id, en_data, id_to_card):
     html = apply_id_aliases(html)
     html = unlink_orphan_cite_refs(html)
 
-    # 18. Write output
+    # 18. Write output（JA由来の開示ブロックをEN版へ差し替える）
+    html, _ = _ai_disclosure.ensure(html, 'en')
     os.makedirs(os.path.dirname(en_fp), exist_ok=True)
     with open(en_fp, 'w', encoding='utf-8') as f:
         f.write(html)

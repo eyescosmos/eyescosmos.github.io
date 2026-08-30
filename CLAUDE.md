@@ -14,7 +14,8 @@
 4. **事実修正を出力HTMLだけに入れない**。必ず正本へ入れる（再生成で誤情報が復活するため）。
 5. **捏造しない**。出典にない評価・書誌・年・URL・Amazonリンクを推測で作らない。出典準拠。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードが拒否）。写真家1人追加で `--all` は不要（`docs/generators-and-guards.md`「フルリビルド・ガード」）。
-7. **TOP12 ハードコードカード（`pc-top` / `idx` / `pc-top--XXX`）、フィルター/ソートUI、カードJSは依頼がない限り触らない**。カードの正は `cards-archive.html` / `card-data.json`。
+7. **AI開示ブロック（`<!-- AI-DISCLOSURE -->` で括られた3行＋短縮版）を個別HTMLで直さない**。正本は `scripts/ai_disclosure.py`。直しても preflight の `check_ai_disclosure()` が HARD FAIL で止める。文面変更は正本を直して `python3 scripts/inject_ai_disclosure.py --all`。
+8. **TOP12 ハードコードカード（`pc-top` / `idx` / `pc-top--XXX`）、フィルター/ソートUI、カードJSは依頼がない限り触らない**。カードの正は `cards-archive.html` / `card-data.json`。
 
 ## 正本(source of truth)マトリクス — CRITICAL
 
@@ -27,6 +28,8 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` | |
 | 国別 JA/EN | `data/country-pages.json` | `generate_country_pages.py` / `generate_country_pages_en.py`。`--country <slug>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 | 年代・運動 EN | JA HTML | `python3 scripts/build_taxonomy_en.py`。`--era <YYYY>` / `--slug <movement>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
+| AI開示ブロック（全ページ末尾） | `scripts/ai_disclosure.py` | `python3 scripts/inject_ai_disclosure.py --all`（`--only <path>` で1枚） | 個別HTMLを直接編集しない。文面はこのモジュールが正本 |
+| コロフォン `/colophon` · `/en/colophon` | `scripts/build_colophon.py` | `python3 scripts/build_colophon.py` | 実体は `colophon/index.html` / `en/colophon/index.html` |
 
 ### EN写真家ページの編集手順
 - EN の本文 / thesis / §REL を直すときは EN HTML を触らず、正本JSONを直して `python3 scripts/build_photographers_en.py --slug <slug>` で再生成する。

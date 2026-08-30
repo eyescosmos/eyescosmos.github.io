@@ -15,6 +15,12 @@ import os
 import re
 import sys
 
+# ── AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本） ──
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import ai_disclosure as _ai_disclosure
+
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -489,6 +495,7 @@ def main():
             raise SystemExit(f'Chrome string not found: {a[:60]}')
         out = out.replace(a, b)
 
+    out, _ = _ai_disclosure.ensure(out, 'en')
     dst = os.path.join(ROOT, 'en/archive.html')
     open(dst, 'w', encoding='utf-8').write(out)
     n = len(re.findall(r'<article class="pc-card', out))

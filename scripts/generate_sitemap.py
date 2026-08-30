@@ -62,11 +62,22 @@ def xml_escape(text: str) -> str:
     )
 
 
+# ディレクトリ + index.html で拡張子なしURLを提供しているページ。
+# 全ページのフッターが /colophon · /en/colophon を指しているため、sitemap も
+# そのURLで出す（/colophon/index.html を出すと canonical と食い違う）。
+DIRECTORY_INDEX_URLS = {
+    "colophon/index.html": "/colophon",
+    "en/colophon/index.html": "/en/colophon",
+}
+
+
 def to_url(rel: str) -> str:
     if rel == "index.html":
         return f"{BASE_URL}/"
     if rel == "en/index.html":
         return f"{BASE_URL}/en/"
+    if rel in DIRECTORY_INDEX_URLS:
+        return f"{BASE_URL}{DIRECTORY_INDEX_URLS[rel]}"
     encoded_rel = quote(rel, safe="/-_.~")
     return f"{BASE_URL}/{encoded_rel}"
 

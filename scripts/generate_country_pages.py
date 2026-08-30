@@ -18,6 +18,12 @@ import re
 import sys
 from pathlib import Path
 
+# ── AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本） ──
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import ai_disclosure as _ai_disclosure
+
+
 REPO = Path(__file__).resolve().parent.parent
 
 # ---------------------------------------------------------------------------
@@ -888,6 +894,7 @@ def main(argv=None) -> None:
             continue
         html = generate_country_page(config, era_style_block, archive_card_css,
                                      archive_lookup, card_data, strip_pairs)
+        html, _ = _ai_disclosure.ensure(html, "ja")
         out_path = REPO / "countries" / f"{config['slug']}.html"
         out_path.write_text(html, encoding="utf-8")
         total += 1

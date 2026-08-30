@@ -33,11 +33,17 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 
 # Reuse tables from the taxonomy builder (import has no side effects; main-guarded)
 from build_taxonomy_en import (  # noqa: E402
+
     STUB_TO_SLUG,
     SLUG_TO_STUB,
     SLUG_TO_EN_NAME,
     FALLBACK_COUNTRY_EN,
 )
+
+# ── AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本） ──
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import ai_disclosure as _ai_disclosure
 
 # Hand-maintained EN pages (registry of record: check_en_entry.py).
 try:
@@ -1915,6 +1921,9 @@ def main():
                                 'HAND_MAINTAINED_EN（手書き維持・再生成禁止。'
                                 '解除は ALLOW_HAND_MAINTAINED_REBUILD=1）'))
             continue
+        # AI開示ブロック（全ページ共通）。本文消失ガードより前に入れて、
+        # 既存ページ（ブロックあり）と新出力を同条件で比較させる。
+        out, _ = _ai_disclosure.ensure(out, 'en')
         # SAFETY GUARD: never silently delete hand-added thesis/related that is
         # not reproduced from the JSON source. Skip the page and report instead.
         if not args.force and os.path.exists(out_path):

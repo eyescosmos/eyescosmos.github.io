@@ -438,3 +438,45 @@ python3 scripts/insert_ga_tags.py
   （noindex は検索除外であって計測除外ではない）
 - アーカイブ英語版は `scripts/build_archive_en.py` が SEO メタの日→英変換を含むため、
   日本語 archive.html に必須要素を入れてから再生成すれば英語側にも引き継がれる
+
+## AI開示ブロック（全ページ末尾）— 2026-08-30 導入
+
+各ページの本文末尾（写真家ページは §SRC の直後、その他は最終セクションの直後）に、
+制作体制の3行と短縮版を置いている。
+
+```
+出典 — 美術館・アーカイブ・専門資料（このページの §SRC に個別記載）
+本文執筆 — AI
+構成・編集 — 写真の座標 管理人
+```
+
+- **正本は `scripts/ai_disclosure.py`**。文面・見た目を直したらここを直して
+  `python3 scripts/inject_ai_disclosure.py --all` で全ページへ再適用する。個別HTMLを
+  直接編集しても次の適用で戻る。
+- ブロックは `<!-- AI-DISCLOSURE -->` … `<!-- /AI-DISCLOSURE -->` で括ってあり、
+  挿入は完全に冪等。`strip_block()` は `_insert()` の厳密な逆操作なので、ブロックを
+  外すと元のHTMLへ1バイト残さず戻る。注入スクリプトはこれを毎回自己検査していて、
+  ブロック以外に差分が出た時点で ABORT する。
+- スタイルはインラインで完結させている。写真家ページはCSSがHTML埋め込み、`index.html` は
+  サイトCSSを読まないなど、全ページ共通のstylesheetが無いため。`ai-disclosure` class は
+  CSS定義を持たないので `preflight.py` の `PERMANENT_ORPHAN_CLASSES` に登録済み。
+- **対象外**（意図的）: リダイレクトシム105枚 / `design/` / `cards-archive.html` /
+  Search Console 確認ファイル / コロフォン本体2枚。対象は777ページ。
+- **生成スクリプトへ配線済み**（新規ページでも自動で入る）:
+  `build_photographers_en.py` / `generate_country_pages.py` / `generate_country_pages_en.py` /
+  `build_taxonomy_en.py` / `build_archive_en.py` が書き込み直前に `ensure()` を呼ぶ。
+  `build_taxonomy_en.py` と `build_archive_en.py` は JA HTML 由来なので、JA版ブロックを
+  EN版へ差し替える動きになる（`ensure()` はマーカーで外して入れ直すため言語を問わない）。
+  新規 JA 写真家ページは参照実装 `photographers/ansel-adams.html` のコピーで入る。
+- **機械ガード**: `preflight.py` の `check_ai_disclosure()` が、全対象ページについて
+  ①ブロックの有無 ②文面が正本と一致するか ③フッターにコロフォンリンクがあるか
+  ④コロフォン2枚の実在 を HARD FAIL で検査する。修復コマンドはメッセージに出る。
+
+### コロフォン
+
+`/colophon` · `/en/colophon` の実体は `colophon/index.html` / `en/colophon/index.html`。
+ディレクトリ + index.html にしているのは、サイト全ページのフッターが拡張子なしの
+`/colophon` を指しているため（ディレクトリindexなら確実に解決する）。生成は
+`python3 scripts/build_colophon.py`。`privacy-policy.html` の chrome を型にしていて、
+SEO一式・GA・検索・フッターはそこから引き継ぐ。sitemap では
+`generate_sitemap.py` の `DIRECTORY_INDEX_URLS` が拡張子なしURLへ変換する。
