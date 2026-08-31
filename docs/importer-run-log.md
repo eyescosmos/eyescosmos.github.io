@@ -2225,3 +2225,15 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
 監督 Opus / 実装 Codex。**Codex が停止条件で6回止め、いずれも真の問題を検出した**（TSVの重複行・`NO-EN` フラグの誤り・`kenta-cobayashi` の欠損span／退行4件／EN正本の明示 `jsonld` が `years` を上書きしない件／sugimoto整形差分／自身のJSON誤挿入の自己申告）。監督側は一次情報の裏取り・退行判定・根本原因特定・JSONの復旧を担当。
 
 - **wall-time**：（Daisuke記入）
+
+## 2026-09-01 — 生没年の区切りをエンダッシュへ統一（22名）＋川田喜久治の誤没年を除去
+
+- **種別 / 範囲**：other（表示メタ）/ JA22枚・EN22枚・`data/photographers-en-content.json` ＝45ファイル。コミット `d0b01d75e`。本文の変更なし。
+- **区切りの統一**：22ページが ASCIIハイフン（`1821-1882`）でサイト標準のエンダッシュ U+2013 から外れていた。JA表示3ヶ所を正規化しEN再生成。**年の数字は変更していない**。`annie-leibovitz` / `lee-miller` は `HAND_MAINTAINED_EN` のため EN 手編集。EN正本JSON の `years` は22件とも元からエンダッシュ形で正しく未変更。作業後、全写真家ページで ASCIIハイフン残存 **0件**。
+- **★`kikuji-kawada`＝存命の写真家を故人と表示していた**：`Years 1933-2021` / JSON-LD `deathDate: 2021` は誤り。**当該ページの本文自身が「京都市京セラ美術館の2024年展は、1933年生まれの川田が現在まで制作を継続し」と書いて矛盾していた**。外部確認＝Japan House London「KYOTOGRAPHIE: Kawada Kikuji x Iwane Ai」2026-06-03〜10-18 が `Kawada Kikuji (b. 1933)` 表記、東京都写真美術館 30周年記念展（2025-10〜2026-01）に出品。→ `1933–` へ是正し JA HTML と EN正本JSONの埋め込み `jsonld` から `deathDate` を削除。**EN正本JSON の `years` は元から `1933–` で正しく、誤っていたのは HTML 表示と JSON-LD だけだった**（0831バッチの `becher` と同じ構図＝正本とHTMLの食い違いは実在する）。
+- **没年の総点検**：`deathDate` を持つ全ページで「没年より後の展覧会・活動の記述」を機械検出したところ16件ヒットしたが、**15件は没後の回顧展で正常**（`capa` の2026年回顧展など）。真の問題は `kikuji-kawada` 1件のみだった。
+- **ガード迂回（事前報告済み）**：誤った `deathDate` の削除を `check_jsonld_person_key_regression()` が HARD FAIL で正しく検知したため、設計どおりの解除手段 `ALLOW_JSONLD_PERSON_KEY_LOSS=kikuji-kawada` で WARN へ落として push。**この1 slug 限定・一度きり**（push後はベースラインが進むので次回から不要）。
+- **検証**：`check_content_loss.py` OK / `preflight.py` OK。22 slug の JA・EN 3ヶ所一致（不一致0）、全件 U+2013 をコードポイントで実測。禁止面（card-data / cards-archive / archive / `jp-*`シム / backup / worktrees）差分0。末尾改行差分0（Codexの編集ツールが足した末尾LF 31件を HEAD 基準で除去）。
+- **手順の教訓**：`git add -A <dir>` は**未追跡の `-backup.html` 284件を巻き込む**。`git diff --name-only -z | xargs -0 git add --` で追跡済み変更のみを stage すること（0831バッチで実際に踏んだ）。
+- **持ち越し（タスク登録済み）**：`multiplicity` の結成年確定（出典が Viafarini 1995 / IFFR 2000 で割れており `1990s–` 据え置き）／`check_en_direct_edit()` の偽陽性162件の解消／`card-data.json` の `metaJa`・`hintText` との突き合わせ（`ledeJa` は不可侵）。
+- **wall-time**：（Daisuke記入）
