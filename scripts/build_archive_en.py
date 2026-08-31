@@ -442,27 +442,28 @@ def main():
     # ── ページ chrome ──
     JA_TITLE = '写真家一覧｜写真史を時代・国・運動から探す｜写真の座標'
     EN_TITLE = 'Photographer Archive | Browse by Era, Country, and Movement | Photo Coordinates'
-    JA_DESC = ('写真史を316枚のカードで整理した写真家一覧。世界と日本の写真家285人と31の写真運動を、'
-               '時代・国・運動・タグで検索・絞り込みできる。各カードから写真史上の位置づけの解説ページへ。')
+    # JA description は枚数（総数/写真家数/運動数）を含み card-data.json 由来で増える。
+    # ベタ書きすると scripts/sync_card_counts.py が直した数字をこのビルダーが巻き戻すので、
+    # 数字部分は \d+ にして正規表現で捕まえる。
+    JA_DESC_RE = re.compile(
+        r'写真史を\d+枚のカードで整理した写真家一覧。世界と日本の写真家\d+人と\d+の写真運動を、'
+        r'時代・国・運動・タグで検索・絞り込みできる。各カードから写真史上の位置づけの解説ページへ。')
     EN_DESC = ('Browse global and Japanese photographers by era, country, movement, and visual approach. '
                'Using museum, archive, and specialist sources, Photo Coordinates organizes relationships '
                'among photographers and their place in photo history.')
     chrome = [
         ('<html lang="ja">', '<html lang="en">'),
         (f'<title>{JA_TITLE}</title>', f'<title>{EN_TITLE}</title>'),
-        (f'<meta name="description" content="{JA_DESC}">', f'<meta name="description" content="{EN_DESC}">'),
         ('<link rel="canonical" href="https://eyescosmos.com/archive.html">',
          '<link rel="canonical" href="https://eyescosmos.com/en/archive.html">'),
         ('<meta property="og:site_name" content="写真の座標 Photo Coordinates">',
          '<meta property="og:site_name" content="Photo Coordinates">'),
         (f'<meta property="og:title" content="{JA_TITLE}">', f'<meta property="og:title" content="{EN_TITLE}">'),
-        (f'<meta property="og:description" content="{JA_DESC}">', f'<meta property="og:description" content="{EN_DESC}">'),
         ('<meta property="og:url" content="https://eyescosmos.com/archive.html">',
          '<meta property="og:url" content="https://eyescosmos.com/en/archive.html">'),
         ('<meta property="og:locale" content="ja_JP">', '<meta property="og:locale" content="en_US">'),
         ('<meta property="og:locale:alternate" content="en_US">', '<meta property="og:locale:alternate" content="ja_JP">'),
         (f'<meta name="twitter:title" content="{JA_TITLE}">', f'<meta name="twitter:title" content="{EN_TITLE}">'),
-        (f'<meta name="twitter:description" content="{JA_DESC}">', f'<meta name="twitter:description" content="{EN_DESC}">'),
         ('<link rel="stylesheet" href="styles/card-v4-base.css">', '<link rel="stylesheet" href="/styles/card-v4-base.css">'),
         ('<link rel="stylesheet" href="styles/card-v5-overrides.css">', '<link rel="stylesheet" href="/styles/card-v5-overrides.css">'),
         ('<body class="lang-jp v51">', '<body class="lang-en v51">'),
@@ -481,8 +482,6 @@ def main():
          '<button class="mobile-filter-chip" data-mobile-type="photographer">Photographers</button>'),
         ('<button class="mobile-filter-chip" data-mobile-type="movement">運動</button>',
          '<button class="mobile-filter-chip" data-mobile-type="movement">Movements</button>'),
-        ('表示中 <span class="result-bar__num" id="visible-count">316</span> / 316',
-         'Showing <span class="result-bar__num" id="visible-count">316</span> / 316'),
         ('<div class="no-results" id="no-results" data-nosnippet>該当するカードが見つかりませんでした</div>',
          '<div class="no-results" id="no-results" data-nosnippet>No matching cards found</div>'),
         ('<div class="foot__center">美術館・アーカイブ・専門資料に基づく</div>',
@@ -494,6 +493,20 @@ def main():
         if a not in out:
             raise SystemExit(f'Chrome string not found: {a[:60]}')
         out = out.replace(a, b)
+
+    # ── 枚数を含む chrome（数字非依存・正規表現で置換）──
+    # 表示枚数の正本は card-data.json（scripts/sync_card_counts.py が JA 側を同期する）。
+    # ここで数字をベタ書きすると en/archive.html を再生成したとき枚数が巻き戻る。
+    chrome_re = [
+        (JA_DESC_RE, EN_DESC, 3, 'meta description / og / twitter'),
+        (re.compile(r'表示中 (<span class="result-bar__num" id="visible-count">\d+</span>'
+                    r'\s*/\s*<span[^>]*id="total-count"[^>]*>\d+</span>)'),
+         r'Showing \1', 1, '結果バー 表示中 N / M'),
+    ]
+    for pattern, repl, expected, label in chrome_re:
+        out, n = pattern.subn(repl, out)
+        if n != expected:
+            raise SystemExit(f'Chrome regex matched {n}/{expected}: {label}')
 
     out, _ = _ai_disclosure.ensure(out, 'en')
     dst = os.path.join(ROOT, 'en/archive.html')

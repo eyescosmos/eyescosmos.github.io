@@ -52,6 +52,7 @@
 | 2026-08-30 | (全ページ)AI開示ブロック＋コロフォン | other | （Daisuke記入） | 2 | 3（下記） | 780ファイル | N/A | N/A |
 | 2026-08-31 | (カード解説)taiji-matsue/fabian-marti/gabriel-orozco＋全従属面同期 | other | （Daisuke記入） | 3（build_archive_en.py 2件＋生成3本のコロフォン退行・下記）＋スコープ誤り1（下記） | 0（機械置換＋スコープ付き再生成） | 22ファイル | N/A | N/A |
 | 2026-09-01 | stieglitz | other | （Daisuke記入） | 0 | 1（EN経路の判別＝HAND_MAINTAINED_EN） | 4ファイル | N/A | N/A |
+| 2026-09-01 | (engine)カード枚数表示の自動生成化＋cards-archive欠落カード1枚 | engine | （Daisuke記入） | 4（分母ベタ書き/初期applyFilters欠落/ENビルダーのベタ書き/cards-archiveのカード欠落） | 0（機械同期・機械検証） | 9ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -2249,4 +2250,23 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
 - **★正本JSONにも同じ修正を入れた（巻き戻り防止）**：`data/photographers-en-content.json` の `pages['stieglitz.html'].sections[0].body_html` に**旧文が残っていた**ため、EN HTML と同じ文へ更新した（CLAUDE.md「事実修正を出力HTMLだけに入れない」）。これを怠ると、将来ガードを解除して再生成した瞬間に旧文へ戻る。**なお本ファイルの写真家エントリは `pages` の下にネストされている**（トップレベルは `_meta` / `pages` の2キーのみ、`pages` に318件）。トップレベルを見て「未登録」と誤判定しないこと。JSON は生テキスト置換で1件のみ差し替え、`json.loads` で構文を検証、末尾改行も不変。
 - **バックアップ**：`photographers/stieglitz-backup.html` / `en/photographers/stieglitz-backup.html` を編集前に作成（spec の必須手順）。未追跡のまま stage しない。
 - **検証**：`check_content_loss.py` ＝ 対象2ファイルの「本文の書き換え（消失ではない）」WARN のみ＝意図どおり。`preflight.py` ＝ `OK（決定論チェック全通過）`。`git diff --stat` は 3 files / 3 insertions / 3 deletions で対象外の巻き込み0。出典番号の `*10` 欠番 WARN は**編集前のバックアップと同一＝既存**で今回起因ではない。
+- **wall-time**：（Daisuke記入）
+
+## 2026-09-01 — カード枚数表示をベタ書きから自動生成へ（`scripts/sync_card_counts.py` 新設）
+
+- **種別 / 範囲**：engine / 新規 `scripts/sync_card_counts.py`、`scripts/build_archive_en.py`、`scripts/add_photographer.py`、`scripts/preflight.py`、`archive.html`、`en/archive.html`、`cards-archive.html`、`index.html`、`en/index.html` ＝9ファイル（＋docs 2件）。カードの追加・削除はしていない。
+- **発端**：「archive の『285 photographers〜』は追加のたびに更新されているのか」という Daisuke の質問。手動更新案と自動生成案を提示し、**自動生成案を選択**（「これから更新するごとに増えるように」）。
+- **実測したズレ**：正本 `card-data.json` は写真家305 / 運動31 / 合計336。archive.html の実カード数（`data-type=` 出現数）も 305 / 31 で一致。一方**表示は 316 / 285 / 283 の3種類が併存**し、9箇所（5ファイル）がズレていた。
+- **★バグ3件（いずれも実測で確認）**：
+  1. **結果バーの分母がベタ書き**（`... / 316`）で JS は分子しか更新しない。
+  2. **初期表示時に `applyFilters()` が呼ばれない**（呼び出しが全てユーザー操作のイベント内）。→ この2つの組み合わせで、読み込み直後は「316 / 316」、一度フィルターを押して「すべて」に戻すと分子だけ実数になり **「336 / 316」という壊れた表示**になっていた。分母を `<span id="total-count">` に出し、IIFE 末尾で `applyFilters()` を1回呼ぶよう是正。
+  3. **`build_archive_en.py` に 316 / 285 がベタ書き**（`JA_DESC` の description 3ペア＋結果バーの置換ペア）。**HTML だけ直して再生成すると巻き戻る**状態だった。数字非依存の正規表現（`JA_DESC_RE` / `chrome_re`）へ移し、マッチ数が期待と違えば `SystemExit` で止める。
+- **設計**：置換は数字ベタ打ちの検索置換ではなく正規表現（9規則・期待マッチ数つき＝サイレント no-op を作らない）。**検算つき**で、`card-data.json` と `archive.html` の実カード数が食い違ったら**何も書かずに exit 2**（カード同期の破損を枚数書き換えで隠さない）。結果バーの正規表現は**旧形（裸数字の分母）にもマッチして新形へ正規化**するので移行が1回で済む。
+- **配線**：`add_photographer.py` の `--apply-surfaces` 完了直後に `sync_card_counts()` を実行（2つの呼び出し経路の両方）。手貼り運用向けに末尾ランブックと手作業チェックリストにも案内を追記。
+- **ガード**：`preflight.py` に `check_card_counts()` を追加（**HARD FAIL**・復旧コマンド提示）。規則は `sync_card_counts.py` を import して共有＝二重管理にしない。カード数不一致時は正しい表示値を決められないので枚数検査を WARN でスキップする。
+- **検証**：`sync_card_counts.py --check` グリーン。**故障注入**＝archive.html の hero を 305→299 に壊して `preflight.py` が `── FAIL（push をブロック）──` になることを実証し、復旧コマンド1本で復元。**`build_archive_en.py` を再実行して en/archive.html が byte 完全一致**（＝巻き戻りなし・ビルダーとHTMLが完全一致）。`check_content_loss.py` OK / `preflight.py` OK。`git status --short` に `.claude/worktrees/`・`-backup.html`・未追跡の巻き込み 0。
+- **★併せて是正＝`cards-archive.html` に `kenta-cobayashi` のカードが無かった**（写真家304枚 / `archive.html` と `card-data.json` は305）。作業中に検算で発見した既存ドリフト。`archive.html` にある当該カード（`add_photographer.py` が挿入した実体そのもの）を、**同じ並び位置**（`daisuke-yokota` の直後 / `nicephore-niepce` の直前）へ丸ごと挿入した。挿入後 **3面とも 336 枚**、`archive.html` と `cards-archive.html` の**カード集合が完全一致**。
+  - **並び順ドリフト18箇所は据え置き**：`archive.html` と `cards-archive.html` は idx 287 以降で並びが食い違う。**挿入前後で18箇所のまま不変**＝今回起因ではない既存ドリフトなので、並べ替えは行っていない（大差分になるため別案件）。
+  - `cards-archive.html` のカード形式は多数派が `data-country` / `data-nosnippet` なしの整形済み（324/335）だが、**`add_photographer.py` が挿入する形（＝残り11枚と同じ）に合わせた**。ツールが今後入れる形と一致させるため。
+- **既知WARN**：`[EN archive] 生成物 en/archive.html を直接編集した疑い` が出るが、この判定は「en/archive.html が変わり card-data.json が変わっていない」だけを見るヒューリスティック。今回の変更は archive.html 由来の chrome 変更で、**ビルダー再実行と byte 完全一致**であることを実測済み＝偽陽性。
 - **wall-time**：（Daisuke記入）

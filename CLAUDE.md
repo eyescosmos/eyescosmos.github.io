@@ -30,6 +30,7 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 | 年代・運動 EN | JA HTML | `python3 scripts/build_taxonomy_en.py`。`--era <YYYY>` / `--slug <movement>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 | AI開示ブロック（全ページ末尾） | `scripts/ai_disclosure.py` | `python3 scripts/inject_ai_disclosure.py --all`（`--only <path>` で1枚） | 個別HTMLを直接編集しない。文面はこのモジュールが正本 |
 | コロフォン `/colophon` · `/en/colophon` | `scripts/build_colophon.py` | `python3 scripts/build_colophon.py` | 実体は `colophon/index.html` / `en/colophon/index.html` |
+| カード枚数表示（archive hero・「表示中 N / M」・トップ/archive の meta 枚数） | `card-data.json` | `python3 scripts/sync_card_counts.py`（`--check` で検査のみ） | 手で数字を打ち直さない。`add_photographer.py --apply-surfaces` 後に自動実行。preflight `check_card_counts()` が HARD FAIL |
 
 ### EN写真家ページの編集手順
 - EN の本文 / thesis / §REL を直すときは EN HTML を触らず、正本JSONを直して `python3 scripts/build_photographers_en.py --slug <slug>` で再生成する。

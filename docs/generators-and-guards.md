@@ -480,3 +480,72 @@ python3 scripts/insert_ga_tags.py
 `python3 scripts/build_colophon.py`。`privacy-policy.html` の chrome を型にしていて、
 SEO一式・GA・検索・フッターはそこから引き継ぐ。sitemap では
 `generate_sitemap.py` の `DIRECTORY_INDEX_URLS` が拡張子なしURLへ変換する。
+
+## カード枚数表示の自動同期（`scripts/sync_card_counts.py`）— 2026-09-01 導入
+
+archive 系ページの枚数表示は**すべてベタ書き**で、写真家を追加するたびに手で打ち直されて
+きた。結果、実数が 336（写真家305 + 運動31）なのに **316 / 285 / 283 の3種類が併存**して
+いた。枚数は `card-data.json` から機械的に導出できるので、一元化した。
+
+**正本は `card-data.json`**（`photographers` / `movements` の要素数。total は合計）。
+
+```bash
+python3 scripts/sync_card_counts.py            # 実書き換え
+python3 scripts/sync_card_counts.py --check    # 書き換えず、ズレたら exit 1（--dry-run も同義）
+```
+
+### 同期する箇所（9規則・5ファイル）
+
+| ファイル | 箇所 |
+|---|---|
+| `archive.html` / `en/archive.html` / `cards-archive.html` | hero サブタイトル `N PHOTOGRAPHERS · N MOVEMENTS · N TOTAL` |
+| 同上 | 結果バー `表示中 N / M`（EN は `Showing N / M`） |
+| `archive.html` | meta description / og:description / twitter:description の「写真史をN枚のカードで整理した…写真家N人とNの写真運動を」 |
+| `index.html` | meta 3種の「世界と日本の写真家N人とNの写真運動」 |
+| `en/index.html` | meta 3種の「Explore N photographers and N photographic movements」 |
+
+- 置換は**数字ベタ打ちの検索置換ではなく正規表現**（`(\d+) PHOTOGRAPHERS · …` 等）。
+  次回以降の枚数変化にも効く。
+- 規則ごとに**期待マッチ数**を持つ。文言の形が変わってマッチしなくなったら WARN を出す
+  （サイレント no-op を作らない）。
+- **検算つき**：`card-data.json` と `archive.html` の実カード数（`data-type="photographer"` /
+  `data-type="movement"` の出現数）が食い違ったら**何も書かずに FAIL（exit 2）**する。
+  食い違いはカード同期そのものの破損（archive 掲載漏れ等）で、枚数だけ書き換えると
+  破損を隠してしまうため。
+- 存在しないファイル（ローカル専用の `new-design/` 等）は自動で対象外。
+
+### 結果バーの分母バグも同時に是正した
+
+`archive.html` / `en/archive.html` の絞り込み JS には次の2つのバグがあった。
+
+1. 分母がベタ書き（`... / 316`）で、JS は分子しか更新しない
+2. 初期表示時に `applyFilters()` が呼ばれない（呼び出しが全てユーザー操作のイベント内）
+
+このため読み込み直後は「316 / 316」、一度フィルターを押して「すべて」に戻すと分子だけ
+実数になり **「336 / 316」という壊れた表示**になっていた。対策として分母を
+`<span id="total-count">` に出し（sync の置換対象）、IIFE 末尾で `applyFilters()` を1回
+呼ぶようにした。RESULT_BAR 正規表現は**旧形（裸数字の分母）にもマッチして新形へ正規化**する。
+
+### ベタ書きの巻き戻り源を塞いだ — 重要
+
+`en/archive.html` は `scripts/build_archive_en.py` が `archive.html` から生成する。その
+`JA_DESC`（description 3ペア）と結果バーの置換ペアに **316 / 285 がベタ書き**されており、
+HTML だけ直して再生成すると元に戻る状態だった。両方とも数字非依存の正規表現
+（`JA_DESC_RE` / `chrome_re`）へ移した。マッチ数が期待と違えば `SystemExit` で止まる。
+
+### 写真家追加時の配線
+
+`scripts/add_photographer.py` の `--apply-surfaces`（JAカード4面の実書込）が終わった直後に
+`sync_card_counts()` を呼ぶ。**カードを挿せば枚数表示は自動で増える**。手貼り運用の場合は
+末尾ランブックが `python3 scripts/sync_card_counts.py` を案内する。
+
+### 機械ガード
+
+`preflight.py` の **`check_card_counts()`＝HARD FAIL**。表示値と正本がズレていたら push を
+ブロックし、メッセージに復旧コマンド `python3 scripts/sync_card_counts.py` を出す
+（`check_ai_disclosure()` と同じ「HARD FAIL ＋ 再生成コマンド提示」の型）。
+
+- 規則は `sync_card_counts.py` を import して共有する（二重管理にしない）。
+- `card-data.json` と `archive.html` の実カード数が食い違うときは、正しい表示値を決められない
+  ので**枚数検査を WARN でスキップ**する（掲載漏れ自体は `check_archive_presence` が別途 WARN
+  で拾う）。文言がマッチしない場合も WARN（規則の更新が必要というシグナル）。

@@ -649,6 +649,19 @@ def apply_surfaces(spec: dict) -> None:
     print(f"  [INSERT] {era_rel}: {backup_note}")
 
 
+def sync_card_counts() -> None:
+    """カード枚数表示（archive hero / 結果バー / meta description）を card-data.json から同期する。
+    apply_surfaces でカードを挿し込んだ直後に呼ぶ。正本と実カード数が食い違う場合、
+    sync 側が何も書かずに FAIL するので、その旨だけ表示して続行する（ここでは中断しない）。"""
+    print("\n" + "=" * 70)
+    print("カード枚数表示の同期（scripts/sync_card_counts.py）")
+    print("=" * 70)
+    rc = subprocess.run([sys.executable, str(REPO / "scripts/sync_card_counts.py")]).returncode
+    if rc != 0:
+        print(f"  [注意] sync_card_counts.py が非0終了（rc={rc}）。"
+              "枚数表示は未更新のまま。上のメッセージに従って解消すること。")
+
+
 def plan_surfaces(spec: dict) -> None:
     """M6 v2/v3: 写真家を全サーフェスへ載せるための挿入計画を dry-run 表示する。
     どのファイルの・どのアンカー前後に・何件 挿入/更新するか（＋掲載済みなら skip）を出す。
@@ -747,6 +760,9 @@ def print_snippets_and_runbook(spec: dict):
     print("\n" + "=" * 70)
     print("次に実行するコマンド（順に）")
     print("=" * 70)
+    print("  # カード枚数表示（archive hero / 結果バー / meta）を card-data.json から同期")
+    print("  #   ※ --apply-surfaces で挿入した場合は自動実行済み。手貼りしたときはここで1回")
+    print("  python3 scripts/sync_card_counts.py")
     print("  # EN アーカイブを card-data.json から再生成")
     print("  python3 scripts/build_archive_en.py")
     print("  # 国ページ（この写真家が載る単国 slug だけを再生成。無指定はガードで拒否）")
@@ -797,6 +813,8 @@ def print_manual_checklist(spec: dict):
     print("□ entry-meta 国名・キーワードのリンク後処理")
     print("    python3 scripts/link_country_keywords.py（実行後 git diff で巻き込み確認）")
     print("□ 各分類ページへカード手貼り（上の貼り付け用カード参照）＋件数 +1")
+    print("    ・archive の hero『N PHOTOGRAPHERS · … TOTAL』と「表示中 N / M」は手で直さない。")
+    print("      python3 scripts/sync_card_counts.py が card-data.json から自動同期する。")
 
 
 def _lint_unmapped_tags(spec: dict) -> list[tuple[str, str]]:
@@ -882,6 +900,7 @@ def main():
     # M6 v3: --apply-surfaces 単独なら JA カード4面だけを実書込して終了。
     if apply_surfaces_flag and not apply:
         apply_surfaces(spec)
+        sync_card_counts()
         return
 
     if spec["id"] in {p.get("id") for p in json.loads(CARD_DATA.read_text(encoding='utf-8'))["photographers"]} \
@@ -900,6 +919,7 @@ def main():
                         "--slug", spec["id"]])
     if apply_surfaces_flag:
         apply_surfaces(spec)
+        sync_card_counts()
     if apply:
         print("\n── preflight ──")
         subprocess.run([sys.executable, str(REPO / "scripts/preflight.py")])

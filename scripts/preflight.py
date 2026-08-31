@@ -838,6 +838,48 @@ def check_country_hero_counts() -> None:
             )
 
 
+def check_card_counts() -> None:
+    """カード枚数表示（archive hero / 結果バー / トップ meta）のズレを検知（HARD）。
+
+    2026-09-01 導入。表示枚数はもともと全てベタ書きで、写真家を追加するたびに手で
+    打ち直されてきた結果 316 / 285 / 283 の3種類が併存していた。正本は card-data.json
+    （photographers / movements の要素数）で、同期は
+
+        python3 scripts/sync_card_counts.py
+
+    規則（正規表現・対象箇所）は scripts/sync_card_counts.py が持ち、ここはそれを
+    import して同じ規則で検査する（二重管理にしない）。
+
+    card-data.json と archive.html の実カード数が食い違っているときは、正しい表示値を
+    決められないので枚数検査を WARN でスキップする（掲載漏れ自体は
+    check_archive_presence が別途 WARN で拾う）。
+    """
+    sys.path.insert(0, str(REPO / "scripts"))
+    try:
+        import sync_card_counts as scc
+    except Exception as e:  # pragma: no cover
+        hard_failures.append(f"カード枚数表示の検査を実行できない: {type(e).__name__}: {e}")
+        return
+
+    sync_errs = scc.verify_card_sync()
+    if sync_errs:
+        warnings.append(
+            "card-data.json と archive.html のカード数が不一致のため枚数表示の検査をスキップ: "
+            + " / ".join(sync_errs)
+            + "（カード同期を直してから python3 scripts/sync_card_counts.py）")
+        return
+
+    drift, missing, _ = scc.collect(apply=False)
+    for m in missing:
+        warnings.append(f"カード枚数表示の文言がマッチしない（規則の更新が要るかも）: {m}")
+    if drift:
+        ph, mv, total = scc.compute_counts()
+        hard_failures.append(
+            f"カード枚数表示が正本とズレている（正: 写真家{ph} / 運動{mv} / 合計{total}）: "
+            + " / ".join(drift)
+            + "。修復コマンド: python3 scripts/sync_card_counts.py")
+
+
 # ── SEO / 不可視必須要素 & JA 分類ページの本文消失（baseline 比較・触ったものだけ）──
 # 設計（2026-06-19 追加）:
 #   - 既存ページには穴がある前提で「baseline にあった要素が消えた」ときだけ HARD。
@@ -1796,6 +1838,7 @@ def main() -> int:
     check_archive_en()
     check_archive_presence()      # ③ archive 掲載漏れ（WARN）
     check_country_hero_counts()   # ③ country hero件数ズレ（WARN）
+    check_card_counts()           # カード枚数表示のズレ（HARD）
     check_content_loss_guard()
     check_seo_invisible_loss()
     check_ja_seo_holes()
