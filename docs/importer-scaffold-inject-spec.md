@@ -328,6 +328,40 @@ EN builder が Related 削除で SKIP したとき、**次の3点を実測して
 （例：Atlas Group の Years は `1989–2004` を維持。素材の `1967–` は Walid Raad 個人の生年でページ主題とずれる。）
 Keywords / description / 本文 / 出典 / thesis / §REL は**素材が正**。
 
+#### ただし `Years` の「既存維持」は**中身がある場合だけ** — Daisuke決定 2026-08-31
+**空欄・年代文字列（`1970s / 1970年代` 等）は「既存」ではなく欠落**。維持してはいけない。
+素材に生没年が無くても**そのまま空で通さず、作業側（Claude）が調べて入れる**。
+
+探す順序（上から。だいたい1〜2手で埋まる）：
+
+1. **そのページ自身の JSON-LD** の `birthDate` / `deathDate`
+2. **`data/photographers-en-content.json` の `pages[<slug>.html].years`**
+3. **そのページが既に持っている出典**（`§ SRC` の美術館・アーカイブ・ギャラリーURL）
+4. 1〜3に無ければ**一次情報を調べる**（美術館・公的アーカイブ・所属ギャラリー・
+   artplatform.go.jp・Wikidata等。`memory/reference_research_sites.md` の優先参照先）
+
+**確定できたら3ヶ所すべてに入れる**（下記「表示3ヶ所」）。**加えて JSON-LD の
+`birthDate` / `deathDate` も揃える**（表示だけ直すと preflight の JSON-LD 日付ガードが
+キー欠落を HARD FAIL する）。
+
+**どうしても一次情報で確定できない場合だけ**、年代文字列のまま残してよい。その場合は
+**なぜ確定できないかを run-log に書く**（例：`multiplicity` は結成年が Viafarini＝1995年の
+展覧会・IFFR＝2000年設立で割れており据え置き）。**推測で単一年を作らない。**
+
+##### 表示3ヶ所（1ヶ所でも欠けると不整合）
+```html
+<span class="ph-hero__years">1864–1946</span>
+<dt>Years</dt><dd>1864–1946</dd>
+<div class="ph-side-meta-row"><span class="ph-side-meta-key">Years</span><span class="ph-side-meta-val">1864–1946</span></div>
+```
+- 区切りは**エンダッシュ `–`（U+2013）**。ASCIIハイフン `-` ではない
+- 存命は `1943–`（後ろを空ける）
+- **個人名デュオは両者を `/` 併記**（`becher` = `1931–2007 / 1934–2015`）。片方を消さない
+- **団体名は結成年**（`G.R.A.M.` = `1987–`、`collectif-fact` = `2000–`）。JSON-LD は
+  `@type: Person` のまま結成年を `birthDate` に入れるのが既存慣習
+- 参照実装は `photographers/stieglitz.html`
+- **`<dt>Period</dt>` は別物**（`1970–1980s` の年代リンク）。触らない
+
 #### Amazonリンク（書籍欄 `ph-book-cta`）の優先順位 — Daisuke決定 2026-07-27
 | 既存ページの状態 | 採る値 |
 |---|---|

@@ -92,6 +92,15 @@ COUNTRY_JA_TO_EN = {
     'インド': 'India',
     'ナイジェリア': 'Nigeria',
     'イラン': 'Iran',
+    'スロバキア': 'Slovakia',
+    'リトアニア': 'Lithuania',
+    'ルクセンブルク': 'Luxembourg',
+    '東ドイツ': 'East Germany',
+    'ケニア': 'Kenya',
+    'モロッコ': 'Morocco',
+    'レバノン': 'Lebanon',
+    'アルゼンチン': 'Argentina',
+    'フィンランド': 'Finland',
 }
 
 PILOT_SLUGS = ['ansel-adams', 'moriyama', 'jp-植田正治', 'alexander-gardner', 'aglaia-konrad']
@@ -779,7 +788,10 @@ def build_essay_body(body_html, h3_counter):
 
 
 def build_sections_and_toc(page):
-    sections = page.get('sections') or []
+    sections = [
+        sec for sec in (page.get('sections') or [])
+        if not str(sec.get('title') or '').strip().startswith('Related photographers')
+    ]
     n = len(sections)
     h3_counter = [1]
     section_blocks = []

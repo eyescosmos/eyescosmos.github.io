@@ -2164,3 +2164,64 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **副次差分**：再生成により en/archive.html の lede が計19件更新された。うち3件が今回の対象で、**残り16件は 0830 バッチ以降 en/archive.html が再生成されていなかったことによる持ち越し分**（Alec Soth / Rineke Dijkstra / Thomas Struth / Zanele Muholi 等）。いずれも現行 EN 正本ページの冒頭段落そのままで、新規の評価・調査は入っていない。
 - **検証**：`check_content_loss.py` EXIT 0 / `preflight.py` EXIT 0。差分7ファイル（`archive.html` / `cards-archive.html` / `card-data.json` / `en/archive.html` / `overrides.js` / `scripts/build_archive_en.py` / `docs/importer-run-log.md`）、`photographers/` · `en/photographers/` の差分0、未追跡0。`card-data.json` は生テキスト置換で3行のみ変更（indent再整形の巻き込みなし）。カード枚数は archive 336 / cards-archive 335 / card-data 305+31 で変化なし。3面の文面一致を機械照合し ALL MATCH。なお3ファイル段階では preflight が `[EN archive] 生成物を直接編集した疑い（正本は card-data.json）` を WARN していた。**これはスコープ誤りの正しい早期シグナルだった**が、当時は「card-data.json 据え置き方針による誤検知」と誤って処理した。card-data.json を更新した現在この WARN は消えている。**この WARN を誤検知として片付けない**。
 - **wall-time**：（Daisuke記入）
+
+## 2026-08-31 — 写真家ページの生没年バックフィル（JA/EN 182名・全件完了）
+
+- **種別 / 範囲**：other（表示メタ＋正本是正）/ JA写真家173枚・EN写真家181枚・`data/photographers-en-content.json`・`scripts/build_photographers_en.py` ＝計356ファイル（＋本ログ）。**本文・出典・§REL本文の変更なし**（`check_content_loss.py` OK で実証）。未commit。
+- **依頼**：ヒーロー（名前の下）とデータ欄に生没年を出す。引き継ぎメモ `handoff-years-backfill.md`（対象184名）を起点に、最終的に Daisuke の指示で**保留を作らず全件**実施した。
+- **結果**：**182 slug すべてで JA 3ヶ所・EN 3ヶ所が目標値と一致（不一致0）**。値は全件エンダッシュ U+2013。
+
+### 実測で覆した引き継ぎメモの前提3件
+1. **表示は2ヶ所ではなく3ヶ所**。`ph-hero__years` / `<dt>Years</dt><dd>` に加えサイドバーの `ph-side-meta-key">Years` がある。
+2. **worklist の `NO-EN` 18件は誤り**。`jp-*` のJAページは `data/photographers-en-classification.json` の `jp_slug_mapping` 経由で**ローマ字名のENページ**を出力する（`jp-横山松三郎` → `yokoyama-matsusaburo.html`）。`en/photographers/jp-*.html` は784バイト前後のリダイレクトシム（差分0を確認）。ビルダーの `--slug` には**JAスラッグ**を渡す（`--slug yokoyama-matsusaburo` は "JA source missing, skipped"）。
+3. **正しい値の多くは EN正本JSON の `years` に既にあった**。184名中152名で worklist の `proposed`（ページのJSON-LD由来）と一致。
+
+### EN経路の性質（実測・今後の作業の前提になる）
+EN写真家ビルダーは**冪等**（JA無変更で再生成するとバイト一致）。かつ EN の years 3ヶ所は **JA HTML からそのまま引き継がれる**（`rebuild_hero` が years span を温存）。JSON の `years` は JSON-LD の birth/deathDate 生成にのみ使う。よって「JAを直す→`--slug` で再生成」で JA/EN が揃う。
+
+### 事実の裏取りが要った9名（一次情報で確定）
+| slug | 確定値 | 根拠 |
+|---|---|---|
+| robert-adams | 1937– | Fraenkel Gallery（2026年も新刊 *Contact*・活動中） |
+| joel-meyerowitz | 1938– | joelmeyerowitz.com / ICP（存命） |
+| hiromi-tsuchida | 1939– | ふげん社 2025年8月個展 / FUJIFILM SQUARE |
+| norihiko-matsumoto | 1936– | artplatform.go.jp/artists/A6551（生1936・没年記載なし） |
+| kaoru-izima | **1954–** | artplatform.go.jp/ja/artists/A2287（1954-5-19）。**ページのJSON-LD `birthDate` が 1965 で誤りだったので併せて是正** |
+| pertti-kekarainen | **1965–2021** | Wikidata Q43132407（没2021-07-18・出典 Helsingin Sanomat）。EN正本JSONの `1965–` を是正 |
+| becher | **1931–2007 / 1934–2015** | Aperture / artnet / Bloomberg / RIBAJ。**JA HTML の `1934–2022` はヒラ・ベッヒャーの没年の誤り**。EN正本JSONは元から正しかった |
+| adam-broomberg-oliver-chanarin | 1970– / 1971– | Tate |
+| sabine-bitter-helmut-weber | 1993– | 当該ページ本文§01＋SFU（1993年から共同制作） |
+
+- **コレクティブの表記規則**：サイトの既存先例に合わせた。**個人名デュオは両者を `/` 併記**（`becher` / `martin-polak-lukas-jasansky` / `adam-broomberg-oliver-chanarin`）、**団体名は結成年**（G.R.A.M. `1987–` が先例。`collectif-fact` `2000–`＝ページのJSON-LDと本文「2000年代初頭」に一致、`useful-photography` `2000–`＝出典\*21 Leiden University、`sabine-bitter-helmut-weber` `1993–`）。JSON-LD は `@type: Person` のまま結成年を `birthDate` に入れるのが既存慣習（`collectif-fact` / `useful-photography` が先例）。
+- **`multiplicity` だけ `1990s–` で据え置き**。結成年が出典で確定しない（Viafarini は1995年の展覧会とだけ記し「mid-1990s の議論から生まれた」、IFFR は2000年設立とする）。**単一年をでっち上げないための意図的な判断**で、3ヶ所は既に一貫している。
+
+### 退行を作らないために正本／ビルダー側を直した3件
+1. **`hiroshi-sugimoto`**：EN正本JSONの `sections` に「Related photographers and movements」が**旧マークアップのまま5番目の要素として残存**しており、再生成すると番号付き `§ 05` の重複Relatedが増え、さらに `keywords_html` が旧 `page-keywords` 形式のためデザインが巻き戻っていた。**最初は正本JSONから当該セクションを削除しようとしたが、`preflight` の `check_content_loss_guard()` がセクション数減少を HARD FAIL で正しくブロックした**（`intentional-replacements.json` の宣言機構は設計上 URL 消失専用で、section数には使えないと docstring に明記されている）。→ **正本は HEAD のまま復元し、ビルダー `build_sections_and_toc()` 側で「Related photographers で始まる正本セクションは番号・TOC・`sec_id` 算出の前に除外」する形に変更**。`keywords_html` のみ現行 `ph-keywords` 形式へ更新。結果、セクションは `§ WORKS / § 01〜04 / § REL / § REF / § SRC` となりJAおよび全ENページと一致。
+2. **`francois-kollar`**：再生成で Country が `Slovakia` → `スロバキア` へ和訳戻り。原因は **`COUNTRY_JA_TO_EN` の項目不足**（29件）。リンクの無い平文の国名はこの辞書でしか訳されない。→ 実測で不足していた9件（スロバキア/リトアニア/ルクセンブルク/東ドイツ/ケニア/モロッコ/レバノン/アルゼンチン/フィンランド。EN名はリポジトリ内の既存ENページの表示実測値）を追加。
+3. **副産物の是正3件**：`elina-brotherus` の EN Country `フィンランド`→`Finland`、および **HEAD時点から既にENページに日本語が出ていた既存バグ** `yto-barrada`（`モロッコ`→`Morocco`）と `amalia-ulman`（`アルゼンチン`→`Argentina`）。作業後、全ENページで上記9国名の日本語残存は**0件**。
+
+### JSON-LD の是正2件（preflightのガードが検知）
+- `eikoh-hosoe`：表示を `1933–2024` にした結果、**`deathDate` キー欠落**を JSON-LD 日付ガードが HARD FAIL で検知。JA HTML と EN正本JSONの `jsonld`（明示配列があり `years` を上書きする）双方へ `deathDate: "2024"` を追加。
+- `sabine-bitter-helmut-weber`：`1993–` を入れた結果 `birthDate` 欠落を検知。JA/EN 双方へ `birthDate: "1993"` を追加。
+- **どちらもガードが設計どおり機能した実例**。表示だけ直して JSON-LD を放置する事故を機械的に防いでいる。
+
+### 特例2件
+- `kenta-cobayashi`：hero に years span が存在しなかったため新規追加（dt/dd と side-meta は元から `1992–`）。
+- `jp-植田正治` の出力先 `shoji-ueda.html` は `HAND_MAINTAINED_EN` 登録済で再生成が拒否されるため、EN HTML を手編集（この1件のみEN直接編集を承認）。
+
+### 想定内ノイズ
+EN 21ファイルで `data-nosnippet` 属性が63行追加（`head__mobile-search` / `ph-side-search` / `ph-search-suggestions`）。既存ページ側の欠落をビルダーが是正したもので CLAUDE.md が必須としている属性。`hiroshi-sugimoto` のサイドバーKeywordsが複数行→1行へ整形されたが、チップの中身はバイト一致で、**1行形式はサイト多数派**（EN写真家ページ実測で1行212枚 / 複数行93枚）。
+
+### preflight WARN の急増は偽陽性（重要・再発する）
+HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTMLが変わったのにJSONが変わっていない＝手編集の疑い」。この判定は **JA HTML起因でEN HTMLが正当に変わる経路をモデル化していない**（コードを読んで確認）。実体を見る HARD 版 `check_en_changed_slug_closure()`（EN HTML vs JSON の整合）は全slugで不発火。**JA起点でENを一括再生成する作業のたびに同じWARNが出る**ので、判定に `ja_changed` を加えるかは別途検討。
+
+### 検証
+`check_content_loss.py` OK / `preflight.py` OK（FAIL 0）。**182 slug の JA 3ヶ所・EN 3ヶ所とも一致（不一致0）**。ビルダー変更の非波及を、Relatedセクションを持たないENページ10枚の再生成バイト一致で実証。末尾改行差分0（Codexの一括編集が足した末尾LFを HEAD 基準で55ファイル分戻した）。`en/photographers/jp-*.html` シム18件の差分0。`-backup.html` / `.claude/worktrees/` / `card-data.json` / `cards-archive.html` / `archive.html` の混入0。staged 0、未追跡284件は未操作。
+
+### 未了 / 持ち越し
+`multiplicity` の結成年（出典が割れており据え置き）。`card-data.json` の `metaJa` / `hintText` との突き合わせ（カードの `ledeJa` は方針どおり不可侵）。`check_en_direct_edit()` の偽陽性対応。
+
+### 体制
+監督 Opus / 実装 Codex。**Codex が停止条件で6回止め、いずれも真の問題を検出した**（TSVの重複行・`NO-EN` フラグの誤り・`kenta-cobayashi` の欠損span／退行4件／EN正本の明示 `jsonld` が `years` を上書きしない件／sugimoto整形差分／自身のJSON誤挿入の自己申告）。監督側は一次情報の裏取り・退行判定・根本原因特定・JSONの復旧を担当。
+
+- **wall-time**：（Daisuke記入）
