@@ -2134,3 +2134,14 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 - **`taiji-matsue`のoverrides.js**：`data/photographer-essay-overrides.js`に本バッチ対象で唯一エントリを持つ（`leadJa`/`leadEn`/`textJa`/`textEn`）。`build_archive_en.py`・`global-search.js`・`photographer-page.js`が読む旧経路で、変更するとarchive（禁止面）へ波及するため**本バッチでは変更していない**（0827/0829バッチも同様）。新本文は約14,673字で overrides の`textJa`（旧本文ベース・約2,000字規模）とは全面的に別物になっており、**アーカイブ側の解説と個別ページの本文が乖離した状態**。後日の同期要否はDaisuke判断。
 - **検証 / 面**：`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、EN builder通常dry-run 12/12 `Would write 1 page(s)`・SKIPPED 0。preflight WARNはベースライン15行→15行で、増分は`taiji-matsue`のJA/EN各1行（`data-nosnippet` JA 10→9・EN 9→8）のみ。これは`prep-block`（準備中プレースホルダ）2件が実コンテンツへ置換された§14 A の正当な減少で、失われた`data-nosnippet`要素が`prep-block`だけであることを実測確認済。`git diff --check`はEXIT 2だが、検出は builder が元から出す空白のみ行9件で、**既存EN写真家ページ321枚中297枚が同じ空白のみ行を持つ**サイト標準（Codexが一度入れた空白除去は依頼外のengine変更のため revert 済）。素材原本24/24 SHA-256一致。禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / sitemap / robots / colophon）差分0。写真家ページの変更は対象12名＋`ansel-adams`のJA/EN計26枚のみ。backup 24枚とspecは未追跡・未stage、0829由来の未追跡backupは未操作。git add / commit / push / stashなし。
 - **wall-time**：1時間51分（Daisuke実測。0830素材12名＝update12のPHASE 0＋0b＋PHASE 1＋PHASE 2＋監督の質問待ち時間を含む総所要。1名あたり約9.3分。Codexの利用上限到達による実装者交代と、engine/正本の経路バグ4件の是正を含む）
+
+## 2026-08-31 — sitemap の掲載漏れ2名を是正＋lastmod 更新（軽量）
+
+- **種別 / 範囲**：other / `sitemap.xml`・`sitemap-full.xml` のみ。コンテンツ・本文・構造の変更なし。commit `f57ea08cc`。
+- **発端**：0830バッチ（`4f8fa29aa`）push 後の IndexNow が対象26枚のうち22枚しか送れなかった。`indexnow_submit.py` は sitemap に無いURLを落とす仕様のため、掲載漏れが露見した。
+- **是正**：`fabian-marti` / `gabriel-orozco` の JA/EN 計4URLを追加（778→782）。この2名は 2026-08-04 時点では `noindex` 指定があり**非掲載で正しかった**（当時 Daisuke 確認済）が、0830バッチで本文が入り `index, follow` へ変わったため掲載対象になった。sitemap 側が追随していなかった。
+- **lastmod**：22件を実コミット日へ更新。**全782件について git コミット日との一致を検算し不一致0**。これにより run-log に残っていた「AI開示ブロック導入コミット後に `generate_sitemap.py` を回す必要がある」という持ち越しも解消した（実際に古かったのは22件のみで、777件が動くという当初の見積もりは過大だった）。
+- **調査で判明したこと（対応不要）**：`en/photographers/jp-*.html` 16件の非掲載は**正しい**。実体は 750〜858 bytes の `noindex, follow` リダイレクトシムで、canonical は各 romaji ページを指す。JA 側の `photographers/jp-*.html` は**元から全件掲載済み**で、未掲載に見えたのは **sitemap のパーセントエンコードを `urllib.parse.unquote` せずに突き合わせた集計ミス**（`reference_sitemap_generator_pitfalls.md` が警告している罠を監督自身が踏んだ。最初の報告「未掲載19件」は誤りで、正しくは4件）。
+- **膨張ガードの実効性**：`.claude/worktrees/` の3 worktree（計388MB）は**まだ残存**しているが、2026-08-04 に入れたドットディレクトリ除外が効き、混入0。`-backup*.html` / `new-design/` / `templates/` の混入も0。追加4・削除0で、URL数の変動は想定どおり。
+- **検証**：`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0（pre-pushフックでも通過）。`sitemap.xml` と `sitemap-full.xml` は同一内容。4URLの本番200確認後、IndexNow へ `--urls` で送信し HTTP 200 受理。
+- **wall-time**：（Daisuke記入）
