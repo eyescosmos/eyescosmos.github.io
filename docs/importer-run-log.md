@@ -51,6 +51,7 @@
 | 2026-07-27 | **7名バッチupdate**(amalia-ulman/artie-vierkant/eileen-quinlan/james-welling/lucas-blalock/shannon-ebner/thomas-demand) | update | 60分 | 1（`rev-*`列挙方式の限界→正規表現一般化） | 監督判断7系統＋PHASE 3相乗り＋既存Amazon検索URL8本是正 | 34ファイル | JA計6192→36139 / EN計18478→95397 | JA/ENとも計28→200 |
 | 2026-08-30 | (全ページ)AI開示ブロック＋コロフォン | other | （Daisuke記入） | 2 | 3（下記） | 780ファイル | N/A | N/A |
 | 2026-08-31 | (カード解説)taiji-matsue/fabian-marti/gabriel-orozco＋全従属面同期 | other | （Daisuke記入） | 3（build_archive_en.py 2件＋生成3本のコロフォン退行・下記）＋スコープ誤り1（下記） | 0（機械置換＋スコープ付き再生成） | 22ファイル | N/A | N/A |
+| 2026-09-01 | stieglitz | other | （Daisuke記入） | 0 | 1（EN経路の判別＝HAND_MAINTAINED_EN） | 4ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -2236,4 +2237,16 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
 - **検証**：`check_content_loss.py` OK / `preflight.py` OK。22 slug の JA・EN 3ヶ所一致（不一致0）、全件 U+2013 をコードポイントで実測。禁止面（card-data / cards-archive / archive / `jp-*`シム / backup / worktrees）差分0。末尾改行差分0（Codexの編集ツールが足した末尾LF 31件を HEAD 基準で除去）。
 - **手順の教訓**：`git add -A <dir>` は**未追跡の `-backup.html` 284件を巻き込む**。`git diff --name-only -z | xargs -0 git add --` で追跡済み変更のみを stage すること（0831バッチで実際に踏んだ）。
 - **持ち越し（タスク登録済み）**：`multiplicity` の結成年確定（出典が Viafarini 1995 / IFFR 2000 で割れており `1990s–` 据え置き）／`check_en_direct_edit()` の偽陽性162件の解消／`card-data.json` の `metaJa`・`hintText` との突き合わせ（`ledeJa` は不可侵）。
+- **wall-time**：（Daisuke記入）
+
+## 2026-09-01 — スティーグリッツ §01 の人名カナ是正＋ベルリン留学の順序補足（JA/EN）
+
+- **種別 / 範囲**：other（本文1文）/ `photographers/stieglitz.html`・`en/photographers/stieglitz.html`・`data/photographer-essay-overrides.js` ＝3ファイル、各1行。本文の他部分・構造・出典・§REL は無変更。
+- **発端**：「ページに実弟ジュリアス・スティーグリッツの情報が混在しているのでは」という指摘。**全サーフェスを調査した結果、混在は無かった**（`Julius` / `ジュリアス` / `ユリウス` / `Leopold` / `レオポルド` はリポジトリ全体で0件。ページ上の年号17個・所属機関・専門分野を総当たりしたが、ジュリアス固有の情報＝ベルリン大学PhD1889・ゲッティンゲン・シカゴ大学・米国化学会会長・スティーグリッツ転位はいずれも不在。`Chicago` の4箇所は全てシカゴ美術館）。**混在の修正は不要**と判定し、調査過程で見つかった別の2点だけを是正した。
+- **是正1（人名カナ）**：`ヘルマン・ウォーゲル` → `ヘルマン・フォーゲル`。Hermann Wilhelm Vogel のドイツ語読み。リポジトリ内の `ウォーゲル` はこの2箇所のみで、作業後の残存0件。EN は元から `Hermann Wilhelm Vogel` で誤りなし。
+- **是正2（順序の補足）**：旧「ベルリン工科大学で写真化学者…に師事し」は写真化学を最初から専攻したように読め、**ジュリアス（ベルリンで化学を学び1890年帰国）と経歴が重なって見える原因**でもあった。事実（1882年に機械工学の学生として入学 → 1883年にフォーゲルの講義で写真に出会う）の順序を補った。**1文を1文に置換**したので出典 `*1` の被覆範囲は変えていない。
+- **★EN の経路がタスク指示と違っていた（実測で判明）**：タスクには「EN は正本JSONを直して `build_photographers_en.py --slug stieglitz` で再生成」と書いてあったが、**`stieglitz` は `HAND_MAINTAINED_EN` に登録済**で、`--dry-run` は `🛑 SKIPPED … HAND_MAINTAINED_EN（手書き維持・再生成禁止）` を返す。→ **EN は HTML を手編集するのが正**。**ガード迂回（`ALLOW_HAND_MAINTAINED_REBUILD`）は使っていない。**
+- **★正本JSONにも同じ修正を入れた（巻き戻り防止）**：`data/photographers-en-content.json` の `pages['stieglitz.html'].sections[0].body_html` に**旧文が残っていた**ため、EN HTML と同じ文へ更新した（CLAUDE.md「事実修正を出力HTMLだけに入れない」）。これを怠ると、将来ガードを解除して再生成した瞬間に旧文へ戻る。**なお本ファイルの写真家エントリは `pages` の下にネストされている**（トップレベルは `_meta` / `pages` の2キーのみ、`pages` に318件）。トップレベルを見て「未登録」と誤判定しないこと。JSON は生テキスト置換で1件のみ差し替え、`json.loads` で構文を検証、末尾改行も不変。
+- **バックアップ**：`photographers/stieglitz-backup.html` / `en/photographers/stieglitz-backup.html` を編集前に作成（spec の必須手順）。未追跡のまま stage しない。
+- **検証**：`check_content_loss.py` ＝ 対象2ファイルの「本文の書き換え（消失ではない）」WARN のみ＝意図どおり。`preflight.py` ＝ `OK（決定論チェック全通過）`。`git diff --stat` は 3 files / 3 insertions / 3 deletions で対象外の巻き込み0。出典番号の `*10` 欠番 WARN は**編集前のバックアップと同一＝既存**で今回起因ではない。
 - **wall-time**：（Daisuke記入）
