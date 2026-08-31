@@ -350,7 +350,7 @@ def render_page(cfg: dict, *, era_style, archive_card_css, mobile_search,
 <footer class="foot" data-nosnippet>
   <div>© Photo Coordinates · 写真の座標</div>
   <div class="foot__center">Based on museum, archive, and specialist sources</div>
-  <div class="foot__right"><a href="/en/privacy-policy.html">Privacy</a></div>
+  <div class="foot__right"><a href="/en/privacy-policy.html">Privacy</a> · <a href="/en/colophon">Colophon</a></div>
 </footer>
 
 </div><!-- /.page -->

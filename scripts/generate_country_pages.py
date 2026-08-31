@@ -745,7 +745,7 @@ def generate_country_page(config: dict, era_style_block: str,
 <footer class="foot" data-nosnippet>
   <div>© Photo Coordinates · 写真の座標</div>
   <div class="foot__center">美術館・アーカイブ・専門資料に基づく</div>
-  <div class="foot__right"><a href="/privacy-policy.html">プライバシー</a></div>
+  <div class="foot__right"><a href="/privacy-policy.html">プライバシー</a> · <a href="/colophon">コロフォン</a></div>
 </footer>
 
 </div><!-- /.page -->

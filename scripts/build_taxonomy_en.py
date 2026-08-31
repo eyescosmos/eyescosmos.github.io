@@ -1129,6 +1129,8 @@ def translate_footer(html, page_type, label=''):
     )
     html = html.replace('>プライバシー<', '>Privacy<')
     html = html.replace('>コロフォン<', '>Colophon<')
+    # EN ページからは EN コロフォンへ張る（JA の /colophon をそのまま残さない）
+    html = html.replace('href="/colophon"', 'href="/en/colophon"')
     return html
 
 

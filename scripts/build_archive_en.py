@@ -33,7 +33,7 @@ def build_movement_slug_map():
             continue
         with open(os.path.join(d, fn), encoding='utf-8') as f:
             head = f.read(1000)
-        m = re.search(r'url=https://eyescosmos\.github\.io/en/movements/([^"]+?\.html)', head)
+        m = re.search(r'url=https://eyescosmos\.(?:com|github\.io)/en/movements/([^"]+?\.html)', head)
         if m:
             mapping[fn] = m.group(1)
     return mapping
@@ -487,8 +487,8 @@ def main():
          '<div class="no-results" id="no-results" data-nosnippet>No matching cards found</div>'),
         ('<div class="foot__center">美術館・アーカイブ・専門資料に基づく</div>',
          '<div class="foot__center">Based on museum, archive, and specialist sources</div>'),
-        ('<div class="foot__right"><a href="privacy-policy.html">プライバシー</a> · <a href="#">コロフォン</a></div>',
-         '<div class="foot__right"><a href="/en/privacy-policy.html">Privacy</a> · <a href="#">Colophon</a></div>'),
+        ('<div class="foot__right"><a href="privacy-policy.html">プライバシー</a> · <a href="/colophon">コロフォン</a></div>',
+         '<div class="foot__right"><a href="/en/privacy-policy.html">Privacy</a> · <a href="/en/colophon">Colophon</a></div>'),
     ]
     for a, b in chrome:
         if a not in out:
