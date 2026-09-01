@@ -2282,3 +2282,19 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
 - **★並行タスクとのコンフリクト（実際に発生）**：同時に走っていたカード枚数自動生成タスクが先に push（`8e3db9ca2`）し、`archive.html`・`cards-archive.html` を同じく変更していた。preflight が `data-nosnippet 44→42` の WARN を出したのは**自分の編集ではなくローカルが origin/main より古かったため**。stash → `pull --rebase` → stash pop で解決（両ファイルとも auto-merge 成功、行が別のため衝突なし）。取り込み後に**双方の成果が共存**していることを確認（枚数表示 `305 PHOTOGRAPHERS · 31 MOVEMENTS · 336 TOTAL` と新リード文の両方）。**教訓：並行セッションがある間は編集前にも `git fetch` して WARN の原因を自分の差分と切り分ける。**
 - **検証**：`sync_card_counts.py --check` OK（並行タスクの新ガード）/ `check_content_loss.py` OK（消失・書き換えなし）/ `preflight.py` OK（決定論チェック全通過・WARN 0）。`git diff --stat` は 5 files / 5 insertions / 5 deletions で対象外の巻き込み0。EN 3面は 177字のまま無変更。
 - **wall-time**：（Daisuke記入）
+
+## 2026-09-01 — multiplicity の結成年を1993年で確定（生没年バックフィルの残1件）
+
+- **種別 / 範囲**：other（表示メタ）/ JA1枚・EN1枚・`data/photographers-en-content.json`。本文の変更なし。
+- **経緯**：0831〜0901 のバックフィルで唯一 `1990s–` のまま据え置いた1件。出典が Viafarini 1995 / IFFR 2000 / 一部1993 で割れており、推測で単一年を作らない方針で保留していた。
+- **決着＝1993年**。年を明記する出典が2系統そろい、対立説が反証できたため確定した。
+  - **Stefano Boeri Architetti 公式バイオ（一次情報・創設者本人の事務所）**："In 1993, he founded *Multiplicity*, a research agency bringing together artists, photographers, and analysts to explore the relationship between geopolitics and urban planning."
+  - **Domus**（独立した建築誌）も同旨："In 1993 he founded Multiplicity, a research agency that involves artists, photographers, analysts…"
+  - **IFFR の2000年説（創設者6名を列挙）は棄却**。Viafarini が記録する《Multiplicity—Mappe》展（1995年12月4〜11日）で既に Multiplicity の名が使われており、2000年結成と両立しない。
+  - **当該ページの本文とも整合**。本文は1995年の Viafarini 作品を「初期から示されていた」と位置づけており、1993年結成なら矛盾しない（2000年だと本文と食い違う）。
+  - Kunstinstituut Melly / FKA Witte de With / Generali Foundation は結成年を記さずメンバー名のみ＝年の典拠にならないことも確認した。
+- **反映**：表示3ヶ所を `1993–`（U+2013 をコードポイントで実測）。団体名なので JSON-LD は `@type: Person` のまま `birthDate: "1993"` を追加（先例 `collectif-fact` = 2000 / `useful-photography` = 2000）。JA HTML・EN正本JSON の埋め込み `jsonld` 双方へ入れ、`years` も `1993–` へ。EN は `--slug multiplicity` で再生成。
+- **これで全写真家305ページの生没年が `YYYY–[YYYY]` 形に揃った**（空欄・年代文字列・形式外＝**JA 0件 / EN 0件** を実測）。0831〜0901 の一連のバックフィルはこれで完了。
+- **既知の無害な警告**：EN builder が `multiplicity.html: no site_directory_html (no RELATED)` を出すが、**HEAD で再生成しても同じ警告が出る既存事象**で今回の変更が原因ではない。`§ REL` の件数も HEAD と同じ1件で変化なし。
+- **検証**：`check_content_loss.py` OK / `preflight.py` OK（FAIL 0）。JSON差分は `multiplicity.html` の `years` / `jsonld` のみで他slugへの波及0。末尾改行差分0。禁止面（card-data / cards-archive / archive / `jp-*`シム / backup / worktrees）差分0。
+- **wall-time**：（Daisuke記入）
