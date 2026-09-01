@@ -78,6 +78,7 @@ COUNTRY_CODE = {
 # ── タグ（国名はチップとして読めるよう正式名称にする） ──
 COUNTRY_TAG = {
     'アメリカ': 'United States', 'イギリス': 'United Kingdom', 'フランス': 'France',
+    'スペイン': 'Spain',
     'ドイツ': 'Germany', '日本': 'Japan', 'イタリア': 'Italy', 'オランダ': 'Netherlands',
     'オーストリア': 'Austria', 'カナダ': 'Canada', 'スイス': 'Switzerland',
     'ロシア': 'Russia', 'ブラジル': 'Brazil', 'ハンガリー': 'Hungary',

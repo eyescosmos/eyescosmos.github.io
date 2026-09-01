@@ -6138,6 +6138,256 @@
       "style": "pc-top--kanji",
       "artText": "知子",
       "hintText": "TOMOKO SAWADA · 1977–"
+    },
+    {
+      "type": "photographer",
+      "id": "anna-atkins",
+      "href": "photographers/anna-atkins.html",
+      "idx": 306,
+      "nameJa": "アンナ・アトキンス",
+      "nameEn": "Anna Atkins",
+      "metaJa": "イギリス · 1799–1871 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "アンナ・アトキンスは、ジョン・ハーシェルのシアノタイプ法を使って1843年から『Photographs of British Algae: Cyanotype Impressions』を自費刊行した植物学者・写真家。藻類やシダを感光紙へ直接置き、輪郭と半透明部分を白とプルシアンブルーの像として記録した。分冊、差替え、ラテン名、手書き文字まで写真工程へ組み込んだ仕事は、植物分類、カメラレス写真、写真集、女性の科学参加が交差する初期写真の重要な事例である。",
+      "channel": "写真史の論点 · 科学写真",
+      "tags": [
+        "科学写真",
+        "写真集",
+        "イギリス"
+      ],
+      "style": "pc-top--grid",
+      "artText": "AA",
+      "hintText": "ANNA ATKINS · 1799–1871"
+    },
+    {
+      "type": "photographer",
+      "id": "antoine-claudet",
+      "href": "photographers/antoine-claudet.html",
+      "idx": 307,
+      "nameJa": "アントワーヌ・クローデ",
+      "nameEn": "Antoine Claudet",
+      "metaJa": "フランス / イギリス · 1797–1867 · 1839–1860s",
+      "era": "1839",
+      "nationality": "FR / GB",
+      "ledeJa": "アントワーヌ・クローデは、フランスからロンドンへ移り、1840年代からダゲレオタイプ肖像館を運営した写真家・発明家。アデレード・ギャラリーやリージェント・ストリートの「Temple of Photography」で露光短縮、焦点測定、背景、手彩色を改良し、1850年代にはステレオ・ダゲレオタイプや立体視と屈折の研究へ進んだ。商業肖像と王立協会での光学研究を並行した彼の写真館は、撮影所、実験室、見世物、店舗という複数の機能を一つの空間に集めていた。",
+      "channel": "写真史の論点 · 肖像写真",
+      "tags": [
+        "肖像写真",
+        "発明・技術",
+        "フランス / イギリス"
+      ],
+      "style": "pc-top--initials",
+      "artText": "AC",
+      "hintText": "ANTOINE CLAUDET · 1797–1867"
+    },
+    {
+      "type": "photographer",
+      "id": "bisson-freres",
+      "href": "photographers/bisson-freres.html",
+      "idx": 308,
+      "nameJa": "ビソン兄弟",
+      "nameEn": "Bisson Frères",
+      "metaJa": "フランス · 1814–1876 / 1826–1900 · 1839–1860s",
+      "era": "1839",
+      "nationality": "FR",
+      "ledeJa": "ビソン兄弟は、ルイ＝オーギュストと弟オーギュスト＝ロザリーが1852–63年に共同で運営したパリの写真工房。大型ガラス・ネガとアルブメン・プリントでフランス各地・欧州の建築を高精細に撮影・出版し、1861年にはカメラ、薬品、携帯暗室を25人のポーターらと山上へ運びモンブラン撮影を実現した。建築では細部を比較できる出版図版を、山岳では都市の観客が実際には行けない高所の様子を伝える写真を作った。",
+      "channel": "写真史の論点 · 建築写真",
+      "tags": [
+        "建築写真",
+        "風景写真",
+        "フランス"
+      ],
+      "style": "pc-top--slash",
+      "artText": "BF",
+      "hintText": "BISSON FRÈRES · 1814–1876 / 1826–1900"
+    },
+    {
+      "type": "photographer",
+      "id": "charles-clifford",
+      "href": "photographers/charles-clifford.html",
+      "idx": 309,
+      "nameJa": "チャールズ・クリフォード",
+      "nameEn": "Charles Clifford",
+      "metaJa": "イギリス / スペイン · c.1820–1863 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB / ES",
+      "ledeJa": "チャールズ・クリフォードは、1850年代のマドリードを拠点に、サラマンカ、トレド、グラナダなどの歴史建築、イサベル2世の巡幸、マドリードの給水事業を大判写真で記録した写真家。紙ネガから大型ガラス・ネガへ技術を更新し、修復前の建物の細部を残す一方、王室の移動や新しい公共事業もアルバムとして記録した。19世紀スペインで写真が文化財調査、王室広報、公共事業の記録にどう使われたかを一人のキャリアから追える。",
+      "channel": "写真史の論点 · 建築写真",
+      "tags": [
+        "建築写真",
+        "都市記録",
+        "イギリス / スペイン"
+      ],
+      "style": "pc-top--stacked",
+      "artText": "CC",
+      "hintText": "CHARLES CLIFFORD · c.1820–1863"
+    },
+    {
+      "type": "photographer",
+      "id": "henri-le-secq",
+      "href": "photographers/henri-le-secq.html",
+      "idx": 310,
+      "nameJa": "アンリ・ル・セック",
+      "nameEn": "Henri Le Secq",
+      "metaJa": "フランス · 1818–1882 · 1839–1860s",
+      "era": "1839",
+      "nationality": "FR",
+      "ledeJa": "アンリ・ル・セックは、画家・版画家として学んだのちギュスターヴ・ル・グレーから紙ネガ技法を学び、1851年のミッション・エリオグラフィックでランス、ストラスブールなどの歴史建築を撮影した写真家。国家委嘱では修復判断に使える全景と細部が求められたが、ル・セックは斜光、近接、斜めの視点を選び、石の損傷や彫刻の凹凸まで強く写し出した。文化財記録に撮影位置と光の判断がどこまで影響するかを考えるうえで重要な作家である。",
+      "channel": "写真史の論点 · 建築写真",
+      "tags": [
+        "建築写真",
+        "カロタイプ",
+        "フランス"
+      ],
+      "style": "pc-top--number",
+      "artText": "HLS",
+      "hintText": "HENRI LE SECQ · 1818–1882"
+    },
+    {
+      "type": "photographer",
+      "id": "hippolyte-bayard",
+      "href": "photographers/hippolyte-bayard.html",
+      "idx": 311,
+      "nameJa": "イポリット・バヤール",
+      "nameEn": "Hippolyte Bayard",
+      "metaJa": "フランス · 1801–1887 · 1839–1860s",
+      "era": "1839",
+      "nationality": "FR",
+      "ledeJa": "イポリット・バヤールは、パリの大蔵省官吏として働きながら1839年に紙上直接陽画法を開発し、静物、石膏像、庭、自画像、パリの街路、歴史建築を撮った初期写真家。代表作《溺死者に扮した自画像》では、自身を死体として演じた像に手書きの文章を添え、発明者としての承認をめぐる状況を作品化した。その後は塩化銀紙、紙ネガ、ガラスネガも用い、1848年革命後のパリやミッション・エリオグラフィックの建築記録へ制作を広げた。",
+      "channel": "写真史の論点 · 発明・技術",
+      "tags": [
+        "発明・技術",
+        "セルフポートレート",
+        "フランス"
+      ],
+      "style": "pc-top--title",
+      "artText": "HB",
+      "hintText": "HIPPOLYTE BAYARD · 1801–1887"
+    },
+    {
+      "type": "photographer",
+      "id": "hugh-welch-diamond",
+      "href": "photographers/hugh-welch-diamond.html",
+      "idx": 312,
+      "nameJa": "ヒュー・ウェルチ・ダイアモンド",
+      "nameEn": "Hugh Welch Diamond",
+      "metaJa": "イギリス · 1808/09–1886 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "ヒュー・ウェルチ・ダイアモンドは、精神科医としてサリー州精神病院の女性患者を撮影し、表情や衣服を病状の記録・比較・診断に使おうとした初期医療写真の重要人物。同時にPhotographic Societyの形成、技術普及、古美術撮影にも関わった。写真なら患者の外見を正確に固定できると考えたが、実際の像にはポーズ、衣服、小道具、撮影者の判断も写り込んでおり、19世紀医学が写真に期待した「客観的な診断資料」がどう作られたのかを検討する資料になっている。",
+      "channel": "写真史の論点 · 科学写真",
+      "tags": [
+        "科学写真",
+        "肖像写真",
+        "イギリス"
+      ],
+      "style": "pc-top--grid",
+      "artText": "HWD",
+      "hintText": "HUGH WELCH DIAMOND · 1808/09–1886"
+    },
+    {
+      "type": "photographer",
+      "id": "john-jabez-edwin-mayall",
+      "href": "photographers/john-jabez-edwin-mayall.html",
+      "idx": 313,
+      "nameJa": "ジョン・ジェイビズ・エドウィン・メイオール",
+      "nameEn": "John Jabez Edwin Mayall",
+      "metaJa": "イギリス / アメリカ · 1813–1901 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB / US",
+      "ledeJa": "ジョン・ジェイビズ・エドウィン・メイオールは、フィラデルフィアで磨いた大型ダゲレオタイプの明晰さをロンドンへ持ち込み、科学者や文化人、ヴィクトリア女王一家を撮った肖像写真家。1860年の《Royal Album》では王室肖像を名刺判写真（カルト・ド・ヴィジット）として一般販売し、同じ肖像を多数の家庭へ届けた。王族の写真を買い、交換し、自分の家族や著名人の写真と同じアルバムへ並べる19世紀の肖像文化を考えるうえで重要な作家である。",
+      "channel": "写真史の論点 · 肖像写真",
+      "tags": [
+        "肖像写真",
+        "イギリス / アメリカ"
+      ],
+      "style": "pc-top--initials",
+      "artText": "JEM",
+      "hintText": "JOHN JABEZ EDWIN MAYALL · 1813–1901"
+    },
+    {
+      "type": "photographer",
+      "id": "josiah-hawes",
+      "href": "photographers/josiah-hawes.html",
+      "idx": 314,
+      "nameJa": "ジョサイア・ホーズ",
+      "nameEn": "Josiah Johnson Hawes",
+      "metaJa": "アメリカ · 1808–1901 · 1839–1860s",
+      "era": "1839",
+      "nationality": "US",
+      "ledeJa": "ジョサイア・ホーズは、画家を志したのちダゲレオタイプへ転じ、1843年からアルバート・サンズ・サウスワースとボストンでサウスワース＆ホーズを運営した写真家。大型ホールプレート銀板、天窓の自然光、姿勢と背景の細かな設計によって政治家、作家、市民、学校、手術室、街路を撮影し、立体視カメラや連続露光も試した。個人帰属を確定できない作品が多く、家族、技師、着彩、機材改良を含む共同スタジオの制作体制が、初期アメリカ肖像写真の造形と商業を支えていた。",
+      "channel": "写真史の論点 · 肖像写真",
+      "tags": [
+        "肖像写真",
+        "アメリカ"
+      ],
+      "style": "pc-top--stacked",
+      "artText": "JJH",
+      "hintText": "JOSIAH JOHNSON HAWES · 1808–1901"
+    },
+    {
+      "type": "photographer",
+      "id": "louis-desire-blanquart-evrard",
+      "href": "photographers/louis-desire-blanquart-evrard.html",
+      "idx": 315,
+      "nameJa": "ルイ・デジレ・ブランカール＝エヴラール",
+      "nameEn": "Louis Désiré Blanquart-Evrard",
+      "metaJa": "フランス · 1802–1872 · 1839–1860s",
+      "era": "1839",
+      "nationality": "FR",
+      "ledeJa": "ルイ・デジレ・ブランカール＝エヴラールは、リールを拠点に紙ネガ・ポジ法を改良し、1847年にフランス科学アカデミーへ工程を発表した写真技術者・出版者。1850年にはアルブミン紙の印画法を公表し、1851年にImprimerie photographiqueを開設した。自身の撮影に加え、シャルル・マルヴィル、マクシム・デュ・カンらのネガを多数印画し、建築、美術複製、旅行写真をアルバムや分冊として流通させた。写真を撮影後の印画、編集、出版まで含む生産工程として組織した人物である。",
+      "channel": "写真史の論点 · 発明・技術",
+      "tags": [
+        "発明・技術",
+        "写真集",
+        "フランス"
+      ],
+      "style": "pc-top--number",
+      "artText": "LBE",
+      "hintText": "LOUIS DÉSIRÉ BLANQUART-EVRARD · 1802–1872"
+    },
+    {
+      "type": "photographer",
+      "id": "maxime-du-camp",
+      "href": "photographers/maxime-du-camp.html",
+      "idx": 316,
+      "nameJa": "マクシム・デュ・カン",
+      "nameEn": "Maxime Du Camp",
+      "metaJa": "フランス · 1822–1894 · 1839–1860s",
+      "era": "1839",
+      "nationality": "FR",
+      "ledeJa": "マクシム・デュ・カンは、ギュスターヴ・フローベールと1849–51年にエジプト、ヌビア、パレスチナを旅し、200点を超える紙ネガで遺跡を撮影した作家。正面性、真昼の光、人物による尺度表示を使い、遺跡の形と大きさを比較しやすい写真にした。1852年の写真集『Égypte, Nubie, Palestine et Syrie』では125点を同じ出版形式で提示したが、その画面は現地の生活より古代遺跡を優先し、19世紀フランスの考古学とオリエンタリズムの視線も伝えている。",
+      "channel": "写真史の論点 · 旅写真",
+      "tags": [
+        "旅写真",
+        "写真集",
+        "フランス"
+      ],
+      "style": "pc-top--slash",
+      "artText": "MDC",
+      "hintText": "MAXIME DU CAMP · 1822–1894"
+    },
+    {
+      "type": "photographer",
+      "id": "richard-beard",
+      "href": "photographers/richard-beard.html",
+      "idx": 317,
+      "nameJa": "リチャード・ビアード",
+      "nameEn": "Richard Beard",
+      "metaJa": "イギリス · 1801–1885 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "リチャード・ビアードは、ロンドンの石炭商から写真事業へ参入し、1841年にロイヤル・ポリテクニック・インスティテューション屋上でダゲレオタイプ肖像館を開いた企業家。ウォルコット式カメラを導入し、英国のダゲレオタイプ特許権を軸に複数の店舗と地方ライセンスを展開した。「Beard Patentee」と刻まれた肖像の多くは雇用技師が撮影しており、作品の画面と同時に、ケース、商標、特許、分業が初期写真を商品と職業へ編成した過程を伝えている。",
+      "channel": "写真史の論点 · 発明・技術",
+      "tags": [
+        "発明・技術",
+        "肖像写真",
+        "イギリス"
+      ],
+      "style": "pc-top--title",
+      "artText": "RB",
+      "hintText": "RICHARD BEARD · 1801–1885"
     }
   ],
   "movements": [

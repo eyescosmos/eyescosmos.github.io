@@ -55,10 +55,35 @@
 | 2026-09-01 | (engine)カード枚数表示の自動生成化＋cards-archive欠落カード1枚 | engine | （Daisuke記入） | 4（分母ベタ書き/初期applyFilters欠落/ENビルダーのベタ書き/cards-archiveのカード欠落） | 0（機械同期・機械検証） | 9ファイル | N/A | N/A |
 | 2026-09-01 | g-r-a-m | other | （Daisuke記入） | 0 | 1（カード用短縮リード文の執筆） | 5ファイル | N/A | N/A |
 | 2026-09-01 | (engine)カード生没年・国名・年代の全面是正（Opus監督/Codex実装） | engine | （Daisuke記入） | 6（becher没年/kawada存命/salgado没年/国名欠落147/区切り23/ENビルダーのCOUNTRY_CODE欠落22） | 4（年代ラベルの導出方式・EN書式のコード形統一・spec JSONの「誤り≠不完全」線引き・EN従属ページの最小置換） | 246ファイル | N/A | N/A |
+| 2026-09-02 | **12名バッチnew**(anna-atkins/antoine-claudet/bisson-freres/charles-clifford/henri-le-secq/hippolyte-bayard/hugh-welch-diamond/john-jabez-edwin-mayall/josiah-hawes/louis-desire-blanquart-evrard/maxime-du-camp/richard-beard) | new | （Daisuke記入） | 5（下記・全て既存engineの潜在デグレ） | 監督判断7系統（下記） | 49ファイル（tracked25＋新規24） | JA計249,092 / EN計346,442 | 計303 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+
+## 2026-09-02 — 12名バッチ new（0901素材・19世紀初期写真／Opus監督・Codex実装）
+
+- **種別 / 範囲**：new（純・新規追加）× 12。全員 era=1839（1839–1860s）。素材=`re-photographer/0901/`（JA/EN 各12・v5.1・clean）。idx 306〜317。既存ページ・card-data のいずれにも未登録であることを着手前に実測。
+- **分業**：**Opus監督・監査 / Codex（MCP・workspace-write・approval=never・network=false）実装**。監督側で全判断（spec 12本の全項目・idx・era・country・channel/tags・生没年・§REL リンク先・出典ラベル是正表・title/description 採否）。Codex は機械適用と実測のみ。**Codex の逸脱0**（想定外は5回とも正しく自主停止）。
+- **spec の確定値**：channel は既存 GENRE_TAG 登録語だけで構成し**新規ジャンル語0**（科学写真3 / 建築写真3 / 肖像写真3 / 発明・技術3 相当）。`period` は全件 `1839–1860s`、`movements[0]` は GENRE_TAG 登録語にして EN の Movement 欄が未翻訳で残らないようにした。国は二重国籍4名（クローデ=FR/GB、クリフォード=GB/ES、メイオール=GB/US ほか）とも**両方の単国ページへ掲載**（複合ページは作らない）。
+- **生没年（§14 C）**：素材に無い/割れているものを監督が裏取り。`bisson-freres` は Getty で兄弟の生没年を確認し becher 先例に従って `1814–1876 / 1826–1900`（個人名デュオ併記）。`charles-clifford`（The Met 1819 / Prado c.1820）と `hugh-welch-diamond`（NPG 1808 / Orsay・Getty ULAN 1809）は**主要機関で割れており単一年を確定できない**ため素材表記 `c.1820–1863` / `1808/09–1886` を維持し、JSON-LD の日付キーも意図的に置かない（推測で単一年を作らない）。
+- **踏んだ既存 engine の潜在デグレ 5件（すべて今回が初検出・修正済）**：
+  1. **era 面の挿入アンカーが全11枚で 0 件**。2026-08-30 の AI開示ブロック一括挿入で `</section>` と `</main>` の間にブロックが入り、`add_photographer.apply_surfaces` の旧アンカー `</article>\s*</div></div></section></main>` が全滅していた。`</main>` を見ない形へ一般化し、**マッチした閉じタグ列は原文バイト保存**する replacement へ変更。全11枚で1件ずつマッチを実測。
+  2. **`card-data.metaJa` が2部構成**。既存305枚は全て3部（`国 · 生没年 · 年代ラベル`）。`ERA_META[era]['period']` を正本として3部構成へ。
+  3. **`card_html()` の `pc-body__meta` が2部構成**（JA/EN 両分岐）。同上で3部へ。
+  4. **`archive_card_html()` の `pc-body__meta` も2部構成**（③とは別関数・別経路）。同上。既に挿入済みの11名×archive 3面＝33カードを事後補正（各1ヒットを実測）。
+  5. **scaffold 由来ページに `.prep-block` の CSS ルートが無い**。参照実装 `photographers/ansel-adams.html` 自体がルールを持たないため、EN builder が `In preparation` を出すページで preflight の orphan class ガードが HARD FAIL する。→ **`ansel-adams.html` は触らず**、実際に prep-block が残る `hugh-welch-diamond` 1枚にだけ既存ページ原文の2行を追加。**参照実装側の同じ穴は未修正の積み残し**（次に scaffold から §REL 皆無のページを作ると再発する）。
+- **AI開示ブロックの取りこぼし**：`add_photographer.build_scaffold_html` 経由の生成物はマーカー0個（参照実装は2個）。engine は変えず、生成直後に `inject_ai_disclosure.py --only <path>` を回す運用で全24ページ2個を確保。**これも scaffold 側の積み残し**。
+- **監督判断 7系統**：①channel/tags を素材の3語 compound から既存登録語1語へ正規化 ②title/description は**素材の値を採用**（scaffold の tags 由来自動生成より具体的なため）＋区切りをサイト多数派の `｜` へ正規化（実測 282/305） ③Country を `<dt>Country</dt><dd>` のみリンク形へ（実測 281/305 が リンク形。hero と side-meta はプレーンが標準） ④§SRC/§WORKS の**英語出典名に混入したカタカナ人名29件**を英語表記へ是正（4slug。`Anna Atkins` / `Southworth & Hawes` / `Richard Beard` / `R. Derek Wood` 等）。**英題を確定できない1件**（`Daguerreotype Case Backs: ウォートンの1841年意匠`）と、素で日本語の展覧会名（仙台メディアテーク）は**意図的に据え置き** ⑤§REL のリンク張り9件（うち4件は表記も是正＝素材の `ロベール・フェントン`→`ロジャー・フェントン`、`ル・グレイ`→`ル・グレー`、`マキシム`→`マクシム`、`ルイ＝デジレ`→`ルイ・デジレ`。slug は card-data の日本語名から解決） ⑥`build_archive_en.COUNTRY_TAG` へ `スペイン: Spain` を1行追加（未登録だと en/archive が SystemExit） ⑦`generate_country_pages.FRANCE_EXPECTED_IDS` を30→36件へ更新（パイロット時の回帰ガードで、France にメンバーが増えるたび更新するのが正しい運用。追加6・削除0・既存順序不変を実測）。
+- **実行順の落とし穴（新規に判明）**：**`generate_country_pages_en.py` は `en/archive.html` からカードを引く**ため、`build_archive_en.py` より先に走らせると新規カードを拾えず `WARN: <slug> missing in en/archive.html` を出して0件生成になる。同様に **`build_taxonomy_en.py --era` も en/archive.html 依存**で、先に走らせると EN 年代ページに**日本語のままのカード**が入る（今回 en/eras/1839.html で実際に発生。監督監査で検出し再生成で是正）。正しい順序は **build_archive_en.py → generate_country_pages_en.py / build_taxonomy_en.py**。
+- **面（tracked 25 / 新規24）**：新規 JA/EN 個別ページ24＋`card-data.json`・`archive.html`・`cards-archive.html`・`new-design/cards-archive.html`（gitignore）・`eras/1839.html`・`en/eras/1839.html`・`en/archive.html`・`countries/` 4面・`en/countries/` 4面・`data/photographers-en-content.json`（318→330）・`data/photographers-en-ui-terms.json`（+1）・`data/photographers-supplement.js`・星bin・`index.html`/`en/index.html`（枚数同期）・`sitemap.xml`/`sitemap-full.xml`（782→806・+24）・scripts 3本。
+- **フィデリティ**：JA 全12件が4節・dangling 0（cite 23〜28 / sup-ref 24〜36）。JA 本文は約19,956〜21,194字（サイト中央値5,258字の約4倍）。EN merge は12件とも新規追加のみ・既存318キーの変更0・`_meta` 不変。
+- **検証**：`check_new_photographer.py` 12/12 EXIT 0（WARN は `body_links_scarce` / `en_graph_absent` の既知2件のみ）／`check_en_entry.py` 12/12 EXIT 0・WARN 0／`check_photographer_link_integrity.py` OK／`check_content_loss.py` EXIT 0／**`preflight.py` EXIT 0**。24ページの内部リンク切れ0（先頭 `/` を外して repo ルート起点で解決。※Codex が一度これを FS ルート起点で叩いて誤検知した）／タグ開閉一致 24/24／AI開示2個・JA `/colophon`・EN `/en/colophon` 24/24／検索配線は runtime 解決形＋自 slug と `-mobile` 以外のリテラル0。EN 6面（archive・eras・countries 4）で新規12名のリード文に**日本語混入0**を実測。
+- **preflight 残 WARN 5件の判定**：`[EN country france/united-kingdom/united-states/spain]` と `[EN eras/1839]` の「直接編集した疑い」は、**5面とも再生成してバイト同一（冪等）**であることを実測したため**誤検知**と判定（scoped 再生成に対する既知の誤検知・run-log 前例14件）。他の残 WARN は既存の stale intentional-replacement 16件で今回と無関係。
+- **禁止面・素材**：`movements/` `en/movements/` `styles/` `robots.txt` `CNAME` `docs/`（本ログを除く）と**対象外の写真家ページ**は差分0。素材24ファイルの SHA-256 は作業前後で全件一致。`--all` 不使用・`link_country_keywords.py` 不実行・`--force` / `ALLOW_*` 不使用。git add / commit / push / stash / checkout / restore なし・staged 0件。
+- **積み残し（次バッチで効く）**：①参照実装 `ansel-adams.html` に `.prep-block` の CSS ルートが無い ②scaffold 経由の生成物に AI開示ブロックが入らない（現状は `inject_ai_disclosure.py --only` で毎回補う運用） ③`発明・技術` の EN 表記がサイト内で二本立て（`ui-terms`=`Invention & technique` 26件 / `GENRE_TAG`=`Invention & technology` 16件。今回は既存多数派の前者に合わせた）。
+- **wall-time**：（Daisuke記入）
 
 ## 2026-09-01 — カード生没年・国名・年代の全面是正（Opus監督 / Codex実装）
 

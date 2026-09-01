@@ -52,7 +52,7 @@ STAR_BIN = REPO / "design/toptest-assets/d369d828-79e5-4719-ae51-89a0c1b743d0.bi
 SCAFFOLD_BASE = REPO / "photographers/ansel-adams.html"
 
 sys.path.insert(0, str(REPO / "scripts"))
-from build_taxonomy_en import STUB_TO_SLUG  # noqa: E402  JA運動名→ENスラッグ（main ガード済み）
+from build_taxonomy_en import STUB_TO_SLUG, ERA_META  # noqa: E402  JA運動名→ENスラッグ（main ガード済み）
 SITE = "https://eyescosmos.com"
 
 REQUIRED = [
@@ -115,7 +115,7 @@ def insert_card_data(spec: dict, apply: bool):
     entry = {
         "type": "photographer", "id": spec["id"], "href": f"photographers/{spec['id']}.html",
         "idx": idx, "nameJa": spec["nameJa"], "nameEn": spec["nameEn"],
-        "metaJa": f"{spec['countryJa']} · {spec['years']}", "era": spec["era"],
+        "metaJa": f"{spec['countryJa']} · {spec['years']} · {ERA_META[spec['era']]['period']}", "era": spec["era"],
         "nationality": spec["nationality"], "ledeJa": spec["ledeShortJa"],
         "channel": spec["channel"], "tags": spec["tags"], "style": spec["style"],
         "artText": spec["artText"], "hintText": f"{spec['nameEn'].upper()} · {spec['years']}",
@@ -171,12 +171,12 @@ def card_html(spec: dict, lang: str, *, label: str, href_prefix: str) -> str:
     """v5.1 pc-card（年代/運動ページ用の最小形）。lang: 'ja'|'en'"""
     if lang == "ja":
         name, name2 = spec["nameJa"], spec["nameEn"]
-        meta = f"{spec['countryJa']} · {spec['years']}"
+        meta = f"{spec['countryJa']} · {spec['years']} · {ERA_META[spec['era']]['period']}"
         lede, channel = spec["ledeShortJa"], spec["channel"]
         tags = spec["tags"]; cta = "写真史上の位置を読む"
     else:
         name, name2 = spec["nameEn"], spec["nameJa"]
-        meta = f"{spec['nationality']} · {spec['years']}"
+        meta = f"{spec['nationality']} · {spec['years']} · {ERA_META[spec['era']]['period']}"
         lede, channel = spec["ledeShortEn"], spec["channelEnUpper"]
         tags = spec["tagsEn"]; cta = "Read their place in photo history"
     tag_html = "".join(f'<span class="pc-body__tag">{t}</span>' for t in tags)
@@ -537,7 +537,8 @@ def archive_card_html(spec: dict) -> str:
         f'      <span class="pc-body__kind">Photographer</span>\n'
         f'      <div><h3 class="pc-body__name">{spec["nameJa"]}</h3>'
         f'<div class="pc-body__name-en">{spec["nameEn"]}</div></div>\n'
-        f'      <div class="pc-body__meta">{spec["countryJa"]} · {spec["years"]}</div>\n'
+        f'      <div class="pc-body__meta">{spec["countryJa"]} · {spec["years"]} · '
+        f'{ERA_META[spec["era"]]["period"]}</div>\n'
         f'      <p class="pc-body__lede">{spec["ledeShortJa"]}</p>\n'
         f'      <div class="pc-body__channel">{spec["channel"]}</div>\n'
         f'      <div class="pc-body__tags">{tag_html}</div>\n'
@@ -631,7 +632,9 @@ def apply_surfaces(spec: dict) -> None:
     if target in html:
         print(f"  [ALREADY] {era_rel}: skip")
         return
-    marker_re = re.compile(r"</article>\s*</div></div></section></main>")
+    # 2026-08-30 の AI開示ブロック一括挿入で </section> と </main> の間にブロックが入り、
+    # 旧アンカー（…</section></main>）が era 11ページ全部で 0 件になった。</main> は見ない。
+    marker_re = re.compile(r"</article>\s*</div>\s*(?:<!--.*?-->\s*)?</div>\s*</section>")
     marker_matches = list(marker_re.finditer(html))
     if len(marker_matches) != 1:
         print(f"  [FAIL] {era_rel}: marker count {len(marker_matches)} != 1")
@@ -639,7 +642,8 @@ def apply_surfaces(spec: dict) -> None:
     backup_note, backup_created = _backup_once(era_path)
     era_card = card_html(spec, "ja", label=spec["nationality"], href_prefix="../")
     m = marker_matches[0]
-    replacement = "</article>\n" + era_card + "\n</div></div></section></main>"
+    tail = html[m.start() + len("</article>"):m.end()]   # 元の閉じタグ列を原文のまま維持
+    replacement = "</article>\n" + era_card + tail
     era_path.write_text(html[:m.start()] + replacement + html[m.end():], encoding="utf-8")
     check = era_path.read_text(encoding="utf-8")
     if target not in check:

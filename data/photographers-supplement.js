@@ -5419,3 +5419,555 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "anna-atkins",
+  "name": "Anna Atkins",
+  "nameJa": "アンナ・アトキンス",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1799–1871",
+  "gender": "女性",
+  "era": "1839",
+  "movements": [
+    "科学写真",
+    "フォトグラム",
+    "写真集文化"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "National Gallery of Art — Anna Atkins",
+      "url": "https://www.nga.gov/artists/30440-anna-atkins"
+    },
+    {
+      "label": "New York Public Library — Celebrating the Life & Legacy of Anna Atkins",
+      "url": "https://www.nypl.org/blog/2018/09/07/celebrating-life-legacy-anna-atkins"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "ジョン・ハーシェルのシアノタイプ法を使い、1843年から『Photographs of British Algae: Cyanotype Impressions』を分冊で自費刊行した植物学者・写真家。藻類やシダを感光紙へ直接置き、輪郭と半透明部分を白とプルシアンブルーの像として記録した *1 *2 。",
+    "textEn": "A botanist and photographer who used John Herschel's cyanotype process to self-publish Photographs of British Algae: Cyanotype Impressions in fascicles from 1843, placing algae and ferns directly on sensitized paper so that outlines and translucent structures were recorded as white forms against Prussian blue *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Natural History Museum — Anna Atkins's cyanotypes: the first book of photographs",
+        "url": "https://www.nhm.ac.uk/discover/anna-atkins-cyanotypes-the-first-book-of-photographs.html"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — Photographs of British Algae: Cyanotype Impressions",
+        "url": "https://www.metmuseum.org/art/collection/search/286656"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "antoine-claudet",
+  "name": "Antoine Claudet",
+  "nameJa": "アントワーヌ・クローデ",
+  "nationality": "FR / GB",
+  "flag": "🇫🇷",
+  "years": "1797–1867",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "肖像写真",
+    "ダゲレオタイプ",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "National Portrait Gallery — Antoine Claudet",
+      "url": "https://www.npg.org.uk/collections/search/person/mp06792/antoine-claudet"
+    },
+    {
+      "label": "National Gallery of Art — Antoine Claudet",
+      "url": "https://www.nga.gov/artists/38909-antoine-claudet"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "フランスからロンドンへ移り、1840年代からダゲレオタイプ肖像館を運営した写真家・発明家。露光短縮や焦点測定の改良、ステレオ・ダゲレオタイプの制作、王立協会での光学研究を並行させ、写真館を撮影所・実験室・見世物・店舗が重なる場所として運営した *1 *2 。",
+    "textEn": "A photographer and inventor who moved from France to London and ran daguerreotype portrait studios from the 1840s. He combined work on shorter exposures and focusing devices, stereoscopic daguerreotypes, and optical research presented to the Royal Society, operating his studios as portrait studio, laboratory, public spectacle, and shop at once *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Science Museum Group — Antoine Claudet",
+        "url": "https://collection.sciencemuseumgroup.org.uk/people/cp43185"
+      },
+      {
+        "num": 2,
+        "name": "Getty Museum — Antoine Claudet",
+        "url": "https://www.getty.edu/art/collection/person/103KJ3"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "bisson-freres",
+  "name": "Bisson Frères",
+  "nameJa": "ビソン兄弟",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1814–1876 / 1826–1900",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "建築写真",
+    "大判写真",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Getty Research Institute — Bisson frères",
+      "url": "https://www.getty.edu/research/collections/group/10WG37"
+    },
+    {
+      "label": "Museo Nacional del Prado — Bisson Frères",
+      "url": "https://www.museodelprado.es/coleccion/artista/bisson-freres/94e2ce68-0bc2-457e-a899-e4ecc1e03c40"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "ルイ＝オーギュストと弟オーギュスト＝ロザリーが1852–63年に運営したパリの写真工房。大型ガラス・ネガで欧州の建築を高精細に撮影・出版し、1861年には機材を25人のポーターらと運んでモンブラン山頂の撮影を実現した *1 *2 。",
+    "textEn": "A Paris photographic studio run by Louis-Auguste Bisson and his younger brother Auguste-Rosalie from 1852 to 1863. Working with large glass negatives, they photographed and published European architecture at high resolution, and in 1861 carried their equipment up Mont Blanc with twenty-five porters to make exposures at the summit *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "The Metropolitan Museum of Art — The Ascent of Mont Blanc",
+        "url": "https://www.metmuseum.org/art/collection/search/283137"
+      },
+      {
+        "num": 2,
+        "name": "Musée d'Orsay — Bisson frères",
+        "url": "https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/bisson-freres-37075"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "charles-clifford",
+  "name": "Charles Clifford",
+  "nameJa": "チャールズ・クリフォード",
+  "nationality": "GB / ES",
+  "flag": "🇬🇧",
+  "years": "c.1820–1863",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "建築写真",
+    "都市記録",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Städel Museum — Charles Clifford",
+      "url": "https://sammlung.staedelmuseum.de/en/person/clifford-charles"
+    },
+    {
+      "label": "Canadian Centre for Architecture — Guide to the Photography Collection",
+      "url": "https://www.cca.qc.ca/en/34085/guide-to-the-photography-collection"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "1850年代のマドリードを拠点に、サラマンカやトレドの歴史建築、イサベル2世の巡幸、マドリードの給水事業を大判写真で記録した写真家。文化財調査、王室広報、公共事業の記録という19世紀スペインの写真需要が、一人のキャリアに重なって現れている *1 *2 。",
+    "textEn": "Working from Madrid in the 1850s, Clifford recorded historic architecture in Salamanca and Toledo, the royal progresses of Isabella II, and Madrid's new water-supply works in large-format photographs. Heritage study, royal publicity, and the documentation of public works — the photographic demands of nineteenth-century Spain — converge in a single career *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "National Gallery of Art — Charles Clifford",
+        "url": "https://www.nga.gov/artists/13444-charles-clifford"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — Portal of the Convent of Sancti Spiritu, Salamanca",
+        "url": "https://www.metmuseum.org/art/collection/search/267097"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "henri-le-secq",
+  "name": "Henri Le Secq",
+  "nameJa": "アンリ・ル・セック",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1818–1882",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "建築写真",
+    "カロタイプ",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Paris Musées — Henri Le Secq works search",
+      "url": "https://www.parismuseescollections.paris.fr/fr/recherche/AND/auteur/Le%20Secq%2C%20Henri"
+    },
+    {
+      "label": "National Galleries of Scotland — Amiens Cathedral",
+      "url": "https://www.nationalgalleries.org/art-and-artists/57578"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "ル・グレーから紙ネガ技法を学び、1851年のミッション・エリオグラフィックでランスやストラスブールの歴史建築を撮影した。修復判断のための記録という委嘱の枠内で、斜光・近接・斜めの視点を選び、石の損傷や彫刻の凹凸を強く写し出した *1 *2 。",
+    "textEn": "Having learned the paper-negative process from Gustave Le Gray, Le Secq photographed historic architecture at Reims and Strasbourg for the 1851 Mission Héliographique. Within a commission meant to serve restoration decisions, he chose raking light, close viewpoints, and oblique angles that made damaged stone and carved relief strongly legible *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "The Metropolitan Museum of Art — The Mission Héliographique, 1851",
+        "url": "https://www.metmuseum.org/essays/mission-hliographique-1851"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — Large Figures on the North Porch, Chartres",
+        "url": "https://www.metmuseum.org/art/collection/search/266284"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "hippolyte-bayard",
+  "name": "Hippolyte Bayard",
+  "nameJa": "イポリット・バヤール",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1801–1887",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "発明・技術",
+    "セルフポートレート",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Musée d'Orsay — Hippolyte Bayard",
+      "url": "https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/hippolyte-bayard-2413"
+    },
+    {
+      "label": "Getty Museum — The Bayard Album",
+      "url": "https://www.getty.edu/art/collection/object/1040J2"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "大蔵省官吏として働きながら1839年に紙上直接陽画法を開発した初期写真家。代表作《溺死者に扮した自画像》では、自身を死体として演じた像に手書きの文章を添え、発明者としての承認をめぐる状況そのものを作品化した *1 *2 。",
+    "textEn": "An early photographer who developed a direct-positive paper process in 1839 while working as a civil servant at the French Ministry of Finance. In Self-Portrait as a Drowned Man he posed as a corpse and attached a handwritten text, turning his own lack of recognition as an inventor into the subject of the work *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Getty Museum — Hippolyte Bayard: A Persistent Pioneer",
+        "url": "https://www.getty.edu/art/exhibitions/bayard/"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — The Windmills of Montmartre",
+        "url": "https://www.metmuseum.org/art/collection/search/285909"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "hugh-welch-diamond",
+  "name": "Hugh Welch Diamond",
+  "nameJa": "ヒュー・ウェルチ・ダイアモンド",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1808/09–1886",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "科学写真",
+    "肖像写真",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Wellcome Collection — Hugh Welch Diamond works search",
+      "url": "https://wellcomecollection.org/search/works?query=Hugh%20Welch%20Diamond"
+    },
+    {
+      "label": "Musée d'Orsay — Portrait de folle",
+      "url": "https://www.musee-orsay.fr/fr/oeuvres/portrait-de-folle-101474"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "精神科医としてサリー州精神病院の女性患者を撮影し、表情や衣服を病状の記録・比較・診断に使おうとした初期医療写真の重要人物。その像にはポーズ、衣服、小道具、撮影者の判断も同時に写り込み、「客観的な診断資料」がどう作られたのかを示している *1 *2 。",
+    "textEn": "A psychiatrist who photographed female patients at Surrey County Asylum, seeking to use expression and clothing for medical recording, comparison, and diagnosis. The images also register poses, clothing, props, and the photographer's decisions, showing how an “objective” diagnostic record was in fact constructed *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "J. Paul Getty Museum — Hugh Welch Diamond",
+        "url": "https://www.getty.edu/art/collection/person/103KGX"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — Patient, Surrey County Lunatic Asylum",
+        "url": "https://www.metmuseum.org/art/collection/search/283091"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "john-jabez-edwin-mayall",
+  "name": "John Jabez Edwin Mayall",
+  "nameJa": "ジョン・ジェイビズ・エドウィン・メイオール",
+  "nationality": "GB / US",
+  "flag": "🇬🇧",
+  "years": "1813–1901",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "肖像写真",
+    "ダゲレオタイプ",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "J. Paul Getty Museum — John Jabez Edwin Mayall",
+      "url": "https://www.getty.edu/art/collection/person/103KJV"
+    },
+    {
+      "label": "Science Museum Group Collection — John Jabez Edwin Mayall",
+      "url": "https://collection.sciencemuseumgroup.org.uk/people/cp105248/john-jabez-edwin-mayall"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "フィラデルフィアで磨いた大型ダゲレオタイプの明晰さをロンドンへ持ち込んだ肖像写真家。1860年の《Royal Album》で王室肖像を名刺判写真として一般販売し、王族の写真を買い、交換し、家族写真と同じアルバムへ並べる19世紀の肖像文化を作った *1 *2 。",
+    "textEn": "A portrait photographer who brought the clarity of his large Philadelphia daguerreotypes to London. With the 1860 Royal Album he put royal portraits on public sale as cartes-de-visite, helping create a nineteenth-century portrait culture in which images of royalty were bought, exchanged, and pasted into the same albums as family photographs *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "National Portrait Gallery — John Jabez Edwin Mayall",
+        "url": "https://www.npg.org.uk/collections/search/person/mp53668/john-jabez-edwin-mayall"
+      },
+      {
+        "num": 2,
+        "name": "Royal Collection Trust — Queen Victoria and Prince Albert, 1860",
+        "url": "https://www.rct.uk/collection/2907745/queen-victoria-1819-1901-and-prince-albert-the-prince-consort-1819-61"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "josiah-hawes",
+  "name": "Josiah Johnson Hawes",
+  "nameJa": "ジョサイア・ホーズ",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1808–1901",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "肖像写真",
+    "ダゲレオタイプ",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "National Portrait Gallery — Josiah Johnson Hawes",
+      "url": "https://npg.si.edu/object/npg_43.1427_MFAB"
+    },
+    {
+      "label": "National Gallery of Art — The Letter",
+      "url": "https://www.nga.gov/artworks/110216-letter"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "画家を志したのちダゲレオタイプへ転じ、1843年からボストンでサウスワース＆ホーズを運営した。大型ホールプレート銀板と天窓の自然光による肖像は個人帰属を確定できないものが多く、共同スタジオの体制が初期アメリカ肖像写真を支えていたことを示す *1 *2 。",
+    "textEn": "Hawes turned from painting to the daguerreotype and from 1843 ran Southworth & Hawes in Boston. Many of the studio's whole-plate portraits, made under natural skylight, cannot be assigned to one author, showing how a collaborative studio system underpinned early American portrait photography *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Getty Museum — Southworth & Hawes",
+        "url": "https://www.getty.edu/art/collection/group/103KM4"
+      },
+      {
+        "num": 2,
+        "name": "International Center of Photography — Young America: The Daguerreotypes of Southworth and Hawes",
+        "url": "https://www.icp.org/exhibitions/young-america-the-daguerrotypes-of-southworth-and-hawes"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "louis-desire-blanquart-evrard",
+  "name": "Louis Désiré Blanquart-Evrard",
+  "nameJa": "ルイ・デジレ・ブランカール＝エヴラール",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1802–1872",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "発明・技術",
+    "写真集文化",
+    "カロタイプ"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Getty News — Digitizing Photography Incunabula",
+      "url": "https://www.getty.edu/news/digitizing-photography-incunabula/"
+    },
+    {
+      "label": "The Metropolitan Museum of Art — Album Photographique",
+      "url": "https://www.metmuseum.org/art/collection/search/269056"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "リールを拠点に紙ネガ・ポジ法を改良し、1851年にImprimerie photographiqueを開設した写真技術者・出版者。マルヴィルやデュ・カンらのネガを多数印画し、写真を撮影後の印画・編集・出版まで含む生産工程として組織した *1 *2 。",
+    "textEn": "A photographic technician and publisher in Lille who improved the paper negative-positive process and opened the Imprimerie photographique in 1851. Printing large numbers of negatives by Marville, Du Camp, and others, he organized photography as a production process reaching beyond exposure into printing, editing, and publication *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Getty Museum — Louis Désiré Blanquart-Evrard",
+        "url": "https://www.getty.edu/art/collection/person/103KJH"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — The Rise of Paper Photography in 1850s France",
+        "url": "https://www.metmuseum.org/essays/the-rise-of-paper-photography-in-1850s-france"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "maxime-du-camp",
+  "name": "Maxime Du Camp",
+  "nameJa": "マクシム・デュ・カン",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1822–1894",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "旅写真",
+    "写真集文化",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "J. Paul Getty Museum — Maxime Du Camp",
+      "url": "https://www.getty.edu/art/collection/person/104N57"
+    },
+    {
+      "label": "Harry Ransom Center — Egypt, Nubia, Palestine and Syria",
+      "url": "https://research.hrc.utexas.edu/photopublic/fullDisplay.cfm?CollID=16417"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "フローベールと1849–51年にエジプト、ヌビア、パレスチナを旅し、200点を超える紙ネガで遺跡を撮影した。正面性・真昼の光・人物による尺度表示で比較可能な図版を作り、1852年の写真集に125点を同じ形式で並べた *1 *2 。",
+    "textEn": "Traveling with Flaubert through Egypt, Nubia, and Palestine in 1849–51, Du Camp photographed monuments on more than two hundred paper negatives. Frontality, midday light, and figures used as a scale produced comparable plates, 125 of which he presented in a single consistent format in his 1852 book *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "BnF Bibliothèques d'Orient — Maxime Du Camp",
+        "url": "https://heritage.bnf.fr/bibliothequesorient/maxime-camp-1822-1894"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — Égypte, Nubie, Syrie: Paysages et Monuments",
+        "url": "https://www.metmuseum.org/art/collection/search/286683"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "richard-beard",
+  "name": "Richard Beard",
+  "nameJa": "リチャード・ビアード",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1801–1885",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "発明・技術",
+    "肖像写真",
+    "ダゲレオタイプ"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "National Gallery of Art — Portrait of a Boy",
+      "url": "https://www.nga.gov/artworks/221186-portrait-boy"
+    },
+    {
+      "label": "Science Museum Group — Portrait of a Young Man",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co8384344/portrait-of-a-young-man"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "ロンドンの石炭商から写真事業へ参入し、1841年にダゲレオタイプ肖像館を開いた企業家。英国の特許権を軸に店舗と地方ライセンスを広げ、「Beard Patentee」と刻まれた肖像の多くは雇用技師が撮影した。初期写真が商品と職業へ編成される過程を示す *1 *2 。",
+    "textEn": "An entrepreneur who moved from the London coal trade into photography, opening a daguerreotype portrait studio in 1841 and building premises and regional licenses around British patent rights. Many portraits stamped “Beard Patentee” were made by employed operators, marking the process by which early photography became a commodity and a profession *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Science Museum Group — Richard Beard",
+        "url": "https://collection.sciencemuseumgroup.org.uk/people/cp40983"
+      },
+      {
+        "num": 2,
+        "name": "National Portrait Gallery — Richard Beard",
+        "url": "https://www.npg.org.uk/collections/search/person/mp06664/richard-beard"
+      }
+    ]
+  }
+}
+);
