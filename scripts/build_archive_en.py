@@ -470,7 +470,7 @@ def main():
         ('<a href="index.html" class="head__brand"', '<a href="/en/" class="head__brand"'),
         ('<em>INDEX</em><span class="sep">/</span><a href="index.html">TOP</a>',
          '<em>INDEX</em><span class="sep">/</span><a href="/en/">TOP</a>'),
-        ('<div class="head__lang"><button class="is-active">JP</button><button>EN</button></div>',
+        ('<div class="head__lang"><button class="is-active">JP</button><button onclick="location.href=\'/en/archive.html\'">EN</button></div>',
          '<div class="head__lang"><button onclick="location.href=\'/archive.html\'">JP</button><button class="is-active">EN</button></div>'),
         ('<h1 class="archive-hero__title"><em>カード</em>で読む<br>写真史</h1>',
          '<h1 class="archive-hero__title">Photo history<br><em>in cards</em></h1>'),

@@ -2298,3 +2298,15 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
 - **既知の無害な警告**：EN builder が `multiplicity.html: no site_directory_html (no RELATED)` を出すが、**HEAD で再生成しても同じ警告が出る既存事象**で今回の変更が原因ではない。`§ REL` の件数も HEAD と同じ1件で変化なし。
 - **検証**：`check_content_loss.py` OK / `preflight.py` OK（FAIL 0）。JSON差分は `multiplicity.html` の `years` / `jsonld` のみで他slugへの波及0。末尾改行差分0。禁止面（card-data / cards-archive / archive / `jp-*`シム / backup / worktrees）差分0。
 - **wall-time**：（Daisuke記入）
+
+## 2026-09-01 — archive.html の JP/EN 切り替えが効かない不具合を修正＋全888ページ監査（種別=other・軽量行）
+
+- **種別 / 範囲**：other（chrome）/ `archive.html`・`cards-archive.html`・`scripts/build_archive_en.py` の3枚。本文・カード・CSS の変更なし。
+- **症状**：`https://eyescosmos.com/archive.html` のヘッダー右上 JP/EN トグルの EN が無反応。原因は `<button>EN</button>` に `onclick` も `href` も無く、**ボタンが最初から遷移先を持っていなかった**こと（EN側 `en/archive.html` は正しく `location.href='/archive.html'` を持っていた＝片側だけの欠落）。
+- **修正**：`<button onclick="location.href='/en/archive.html'">EN</button>`。EN側と同じ書き方に揃えた。
+- **★ジェネレータ側も同時修正（これを忘れると次の再生成で EN 側が壊れる）**：`build_archive_en.py` は JA の**旧・壊れた文字列に完全一致**で EN トグルへ置換していた（L473）。JA を直すと置換が空振りし、`en/archive.html` に JA 用トグルが残る。置換元パターンを新文字列へ更新し、`build_archive_en.py` を実走して `en/archive.html` の**差分0**（＝EN側は従来どおり正しく生成される）を確認した。
+- **横断監査（全 `.html` 888枚）**：`head__lang` を持つ全ページについて「ボタン2個・`is-active` 1個・非activeに遷移先あり・遷移先ファイルが実在」を機械チェック。**欠陥は上記2枚のみ**で他は全て正常だった。
+  - `head__lang` を持たない110枚は**いずれも正常**：二重国籍 `countries/*-*.html`（58枚・複合ページ廃止予定）/ `en/movements/<カナ>.html`・`en/photographers/jp-<漢字>.html` のリダイレクトシム（47枚・meta refresh）/ `relations.html`・`en/relations.html`（孤立独自UI・据え置き決定済）/ `design/`（ローカル）/ Google 認証ファイル。
+- **`cards-archive.html` の EN 遷移先について**：このページに EN 版は存在しない（sitemap にも hreflang 無しで単独登録）ため、EN の最も近い対応面である `/en/archive.html` を指すようにした。
+- **検証**：`check_content_loss.py` OK / `preflight.py` OK（FAIL 0・WARN は既知の stale intentional-replacement のみ）。`git diff --stat` は 3 files / 3 insertions / 3 deletions で対象外の巻き込み0。`en/archive.html` は再生成後も差分0。
+- **wall-time**：（Daisuke記入）
