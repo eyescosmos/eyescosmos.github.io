@@ -53,6 +53,7 @@
 | 2026-08-31 | (カード解説)taiji-matsue/fabian-marti/gabriel-orozco＋全従属面同期 | other | （Daisuke記入） | 3（build_archive_en.py 2件＋生成3本のコロフォン退行・下記）＋スコープ誤り1（下記） | 0（機械置換＋スコープ付き再生成） | 22ファイル | N/A | N/A |
 | 2026-09-01 | stieglitz | other | （Daisuke記入） | 0 | 1（EN経路の判別＝HAND_MAINTAINED_EN） | 4ファイル | N/A | N/A |
 | 2026-09-01 | (engine)カード枚数表示の自動生成化＋cards-archive欠落カード1枚 | engine | （Daisuke記入） | 4（分母ベタ書き/初期applyFilters欠落/ENビルダーのベタ書き/cards-archiveのカード欠落） | 0（機械同期・機械検証） | 9ファイル | N/A | N/A |
+| 2026-09-01 | g-r-a-m | other | （Daisuke記入） | 0 | 1（カード用短縮リード文の執筆） | 5ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -2269,4 +2270,15 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
   - **並び順ドリフト18箇所は据え置き**：`archive.html` と `cards-archive.html` は idx 287 以降で並びが食い違う。**挿入前後で18箇所のまま不変**＝今回起因ではない既存ドリフトなので、並べ替えは行っていない（大差分になるため別案件）。
   - `cards-archive.html` のカード形式は多数派が `data-country` / `data-nosnippet` なしの整形済み（324/335）だが、**`add_photographer.py` が挿入する形（＝残り11枚と同じ）に合わせた**。ツールが今後入れる形と一致させるため。
 - **既知WARN**：`[EN archive] 生成物 en/archive.html を直接編集した疑い` が出るが、この判定は「en/archive.html が変わり card-data.json が変わっていない」だけを見るヒューリスティック。今回の変更は archive.html 由来の chrome 変更で、**ビルダー再実行と byte 完全一致**であることを実測済み＝偽陽性。
+- **wall-time**：（Daisuke記入）
+
+## 2026-09-01 — G.R.A.M. の日本語カードのリード文が「G.R.」4文字だった欠損を是正
+
+- **種別 / 範囲**：other（カード表示）/ `card-data.json` ＋ JA カード4面（`archive.html`・`cards-archive.html`・`eras/1990.html`・`countries/austria.html`）＝5ファイル、各1行。
+- **症状**：JA の `ledeJa` と4面の `pc-body__lede` がすべて **`G.R.` の4文字**。他の写真家は60〜150字。「G.R.A.M.」をピリオド区切りの文と誤認して切断した事故と思われる。**EN 3面（`en/archive.html`・`en/eras/1990.html`・`en/countries/austria.html`）は元から正常**なので触っていない。
+- **対象面の確定**：`grep -rn 'photographers/g-r-a-m\.html"' --include='*.html'` の結果から、カード実体は上記4面のみと確認（`movements/*.html` には無し）。写真家ページ側の大量ヒットはサイドバー photographer-index の JSON でカードではないため対象外。`.claude/worktrees/` と `-backup.html` は除外。
+- **新リード文（84字）**：`G.R.A.M.は1987年グラーツ結成のアーティスト集団。パパラッチ写真や議会写真など報道で定着した画像を自分たちの身体で再演し、「ニュースらしさ」の型を露わにする。` 正本ページの Abstract から抽出しつつカード用に短縮（メモリ `feedback-card-lede-policy` の方針）。**個人ではなく1987年グラーツ結成の集団**である点はページ §01 の本文（「1987年、グラーツでギュンター・ホラー＝シュスターら4人によって」）と `Years 1987–` で裏取り済み。
+- **★84字にした理由（切り詰め規則の実測）**：カードHTMLの lede は **`ledeJa` の先頭85字＋`…`** という規則（`daguerre`/`talbot`/`fenton`/`beato`/`nadar`/`legray` の6件で「HTML本文85字・前方一致True」を確認）。**85字以内に収めれば `…` が付かず全文が表示される**ため、84字に調整した。305枚中102枚は同様に切れていない。
+- **★並行タスクとのコンフリクト（実際に発生）**：同時に走っていたカード枚数自動生成タスクが先に push（`8e3db9ca2`）し、`archive.html`・`cards-archive.html` を同じく変更していた。preflight が `data-nosnippet 44→42` の WARN を出したのは**自分の編集ではなくローカルが origin/main より古かったため**。stash → `pull --rebase` → stash pop で解決（両ファイルとも auto-merge 成功、行が別のため衝突なし）。取り込み後に**双方の成果が共存**していることを確認（枚数表示 `305 PHOTOGRAPHERS · 31 MOVEMENTS · 336 TOTAL` と新リード文の両方）。**教訓：並行セッションがある間は編集前にも `git fetch` して WARN の原因を自分の差分と切り分ける。**
+- **検証**：`sync_card_counts.py --check` OK（並行タスクの新ガード）/ `check_content_loss.py` OK（消失・書き換えなし）/ `preflight.py` OK（決定論チェック全通過・WARN 0）。`git diff --stat` は 5 files / 5 insertions / 5 deletions で対象外の巻き込み0。EN 3面は 177字のまま無変更。
 - **wall-time**：（Daisuke記入）
