@@ -5,7 +5,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "デイヴィッド・オクタヴィアス・ヒル",
   "nationality": "GB",
   "flag": "🇬🇧",
-  "years": "1802-1870",
+  "years": "1802–1870",
   "gender": "男性",
   "era": "1839",
   "movements": ["カロタイプ", "ピクトリアリズム", "肖像写真"],
@@ -33,7 +33,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ロバート・アダムソン",
   "nationality": "GB",
   "flag": "🇬🇧",
-  "years": "1821-1848",
+  "years": "1821–1848",
   "gender": "男性",
   "era": "1839",
   "movements": ["カロタイプ", "肖像写真"],
@@ -60,7 +60,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "横山松三郎",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1838-1884",
+  "years": "1838–1884",
   "gender": "男性",
   "era": "1870",
   "movements": [
@@ -92,7 +92,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "冨重利平",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1837-1922",
+  "years": "1837–1922",
   "gender": "男性",
   "era": "1870",
   "movements": [
@@ -123,7 +123,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "フレデリック・H・エヴァンズ",
   "nationality": "GB",
   "flag": "🇬🇧",
-  "years": "1853-1943",
+  "years": "1853–1943",
   "gender": "男性",
   "era": "1870",
   "movements": [
@@ -154,7 +154,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "冨重徳次",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "明治期",
+  "years": "1862–1938",
   "gender": "男性",
   "era": "1870",
   "movements": [
@@ -287,7 +287,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "エドワード・ウェストン",
   "nationality": "",
   "flag": "",
-  "years": "1900s / 1900年代",
+  "years": "1886–1958",
   "gender": "男性",
   "era": "1890",
   "movements": [
@@ -361,7 +361,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ルイ・ヴェール",
   "nationality": "",
   "flag": "",
-  "years": "1900s / 1900年代",
+  "years": "1865–1924",
   "gender": "男性",
   "era": "1890",
   "movements": [],
@@ -662,7 +662,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ビル・ブラント",
   "nationality": "",
   "flag": "",
-  "years": "1930s / 1930年代",
+  "years": "1904–1983",
   "gender": "男性",
   "era": "1930",
   "movements": [],
@@ -687,7 +687,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ブラッサイ",
   "nationality": "",
   "flag": "",
-  "years": "1930s / 1930年代",
+  "years": "1899–1984",
   "gender": "男性",
   "era": "1930",
   "movements": [],
@@ -713,7 +713,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マヌエル・アルバレス・ブラボ",
   "nationality": "",
   "flag": "",
-  "years": "1930s / 1930年代",
+  "years": "1902–2002",
   "gender": "男性",
   "era": "1930",
   "movements": [],
@@ -740,7 +740,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マーガレット・バーク＝ホワイト",
   "nationality": "",
   "flag": "",
-  "years": "1930s / 1930年代",
+  "years": "1904–1971",
   "gender": "女性",
   "era": "1930",
   "movements": [
@@ -768,7 +768,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ロベール・ドアノー",
   "nationality": "",
   "flag": "",
-  "years": "1930s / 1930年代",
+  "years": "1912–1994",
   "gender": "男性",
   "era": "1930",
   "movements": [],
@@ -793,7 +793,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "フランソワ・コラー",
   "nationality": "",
   "flag": "",
-  "years": "1930s / 1930年代",
+  "years": "1904–1979",
   "gender": "男性",
   "era": "1930",
   "movements": [],
@@ -820,7 +820,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マルセル・ボヴィス",
   "nationality": "",
   "flag": "",
-  "years": "1930s / 1930年代",
+  "years": "1904–1997",
   "gender": "男性",
   "era": "1930",
   "movements": [],
@@ -845,7 +845,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "植田正治",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1930s / 1930年代",
+  "years": "1913–2000",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -874,7 +874,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "金丸重嶺",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1930s / 1930年代",
+  "years": "1900–1977",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -901,7 +901,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "鈴木八郎",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1930s / 1930年代",
+  "years": "1900–1985",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -928,7 +928,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "長谷川伝次郎",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1930s / 1930年代",
+  "years": "1894–1976",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -955,7 +955,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "デヴィッド・シーモア",
   "nationality": "",
   "flag": "",
-  "years": "1940s / 1940年代",
+  "years": "1911–1956",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -984,7 +984,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジョン・ヴァション",
   "nationality": "",
   "flag": "",
-  "years": "1940s / 1940年代",
+  "years": "1914–1975",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -1011,7 +1011,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アーサー・ロススタイン",
   "nationality": "",
   "flag": "",
-  "years": "1940s / 1940年代",
+  "years": "1915–1985",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -1040,7 +1040,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジャック・デラーノ",
   "nationality": "",
   "flag": "",
-  "years": "1940s / 1940年代",
+  "years": "1914–1997",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -1069,7 +1069,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ラッセル・リー",
   "nationality": "",
   "flag": "",
-  "years": "1940s / 1940年代",
+  "years": "1903–1986",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -1096,7 +1096,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ベン・シャーン",
   "nationality": "",
   "flag": "",
-  "years": "1940s / 1940年代",
+  "years": "1898–1969",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -1123,7 +1123,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アンセル・アダムス",
   "nationality": "",
   "flag": "",
-  "years": "1940s / 1940年代",
+  "years": "1902–1984",
   "gender": "男性",
   "era": "1930",
   "movements": ["ストレート写真", "風景写真", "アメリカ写真"],
@@ -1149,7 +1149,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マイナー・ホワイト",
   "nationality": "",
   "flag": "",
-  "years": "1940s / 1940年代",
+  "years": "1908–1976",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -1176,7 +1176,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ヘレン・レヴィット",
   "nationality": "",
   "flag": "",
-  "years": "1940s / 1940年代",
+  "years": "1913–2009",
   "gender": "女性",
   "era": "1930",
   "movements": [
@@ -1205,7 +1205,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "影山光洋",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1940s / 1940年代",
+  "years": "1907–1981",
   "gender": "男性",
   "era": "1930",
   "movements": [
@@ -1236,7 +1236,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ルイス・フォーラー",
   "nationality": "",
   "flag": "",
-  "years": "1950s / 1950年代",
+  "years": "1916–2001",
   "gender": "男性",
   "era": "1950",
   "movements": [
@@ -1257,7 +1257,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "イジス",
   "nationality": "",
   "flag": "",
-  "years": "1950s / 1950年代",
+  "years": "1911–1980",
   "gender": "男性",
   "era": "1950",
   "movements": [],
@@ -1276,7 +1276,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ドロシー・ボーム",
   "nationality": "",
   "flag": "",
-  "years": "1950s / 1950年代",
+  "years": "1924–2023",
   "gender": "女性",
   "era": "1950",
   "movements": [
@@ -1297,7 +1297,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "エド・ファン・デル・エルスケン",
   "nationality": "",
   "flag": "",
-  "years": "1950s / 1950年代",
+  "years": "1925–1990",
   "gender": "男性",
   "era": "1950",
   "movements": [],
@@ -1316,7 +1316,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "セイドゥ・ケイタ",
   "nationality": "",
   "flag": "",
-  "years": "1950s / 1950年代",
+  "years": "1921–2001",
   "gender": "男性",
   "era": "1950",
   "movements": [],
@@ -1335,7 +1335,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "田沼武能",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1950s / 1950年代",
+  "years": "1929–2022",
   "gender": "男性",
   "era": "1950",
   "movements": [
@@ -1356,7 +1356,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "芳賀日出男",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1950s / 1950年代",
+  "years": "1921–2022",
   "gender": "男性",
   "era": "1950",
   "movements": [
@@ -1377,7 +1377,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ラリー・クラーク",
   "nationality": "",
   "flag": "",
-  "years": "1960s / 1960年代",
+  "years": "1943–",
   "gender": "男性",
   "era": "1950",
   "movements": [
@@ -1398,7 +1398,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "細江英公",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1960s / 1960年代",
+  "years": "1933–2024",
   "gender": "男性",
   "era": "1950",
   "movements": [
@@ -1419,7 +1419,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "篠山紀信",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1960s / 1960年代",
+  "years": "1940–2024",
   "gender": "男性",
   "era": "1950",
   "movements": [
@@ -1440,7 +1440,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "スティーヴン・ショア",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1947–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1462,7 +1462,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ルイス・ボルツ",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1945–2014",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1483,7 +1483,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジョエル・マイロウィッツ",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1938–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1505,7 +1505,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ロバート・アダムス",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1937–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1526,7 +1526,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ウィリアム・クリステンベリー",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1936–2016",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1547,7 +1547,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジョエル・スターンフェルド",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1944–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1568,7 +1568,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アンデルス・ペーターセン",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1944–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1589,7 +1589,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "中平卓馬",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1970s / 1970年代",
+  "years": "1938–2015",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1610,7 +1610,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "杉本博司",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1970s / 1970年代",
+  "years": "1948–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1632,7 +1632,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アン＝ミー・レー",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1960–",
   "gender": "女性",
   "era": "1970",
   "movements": [
@@ -1653,7 +1653,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "バーバラ・プロブスト",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1964–",
   "gender": "女性",
   "era": "1970",
   "movements": [
@@ -1674,7 +1674,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "シモーヌ・ニーヴェフ",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1962–",
   "gender": "女性",
   "era": "1970",
   "movements": [
@@ -1695,7 +1695,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ヨッヘン・レンペルト",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1958–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1716,7 +1716,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジャン＝リュック・ムレーヌ",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1955–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1737,7 +1737,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ヘレン・ファン・メーネ",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1972–",
   "gender": "女性",
   "era": "1970",
   "movements": [
@@ -1758,7 +1758,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "リドウィエン・ファン・デ・フェン",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1963–",
   "gender": "女性",
   "era": "1970",
   "movements": [
@@ -1779,7 +1779,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "サンティアゴ・シエラ",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1966–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1800,7 +1800,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "サントス・R・バスケス",
   "nationality": "",
   "flag": "",
-  "years": "1970s / 1970年代",
+  "years": "1963–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1821,7 +1821,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "須田一政",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1970s / 1970年代",
+  "years": "1940–2019",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1842,7 +1842,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "野町和嘉",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1970s / 1970年代",
+  "years": "1946–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1863,7 +1863,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "岩合光昭",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1970s / 1970年代",
+  "years": "1950–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1884,7 +1884,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "石内都",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1970s / 1970年代",
+  "years": "1947–",
   "gender": "女性",
   "era": "1970",
   "movements": [
@@ -1905,7 +1905,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "大石芳野",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1970s / 1970年代",
+  "years": "1944–",
   "gender": "女性",
   "era": "1970",
   "movements": [
@@ -1926,7 +1926,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "北島敬三",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1970s / 1970年代",
+  "years": "1954–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1947,7 +1947,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "土田ヒロミ",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1970s / 1970年代",
+  "years": "1939–",
   "gender": "男性",
   "era": "1970",
   "movements": [
@@ -1968,7 +1968,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ソフィ・カル",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1953–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -1989,7 +1989,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "シェリー・レヴィーン",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1947–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2011,7 +2011,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "トーマス・ルフ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1958–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2032,7 +2032,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "フィリップ＝ロルカ・ディコルシア",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1951–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2053,7 +2053,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ポール・グラハム",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1956–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2075,7 +2075,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "森村泰昌",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1980s / 1980年代",
+  "years": "1951–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2097,7 +2097,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ガブリエル・オロスコ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1962–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2118,7 +2118,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "オリーヴォ・バルビエリ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1954–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2139,7 +2139,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ルット・ブレス・ルクセンブルク",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1967–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2160,7 +2160,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ディルク・ブレークマン",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1958–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2181,7 +2181,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "エリナ・ブロテルス",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1972–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2202,7 +2202,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "タシタ・ディーン",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1965–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2223,7 +2223,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マーニクス・ホーセンス",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1967–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2244,7 +2244,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ベアーテ・ギュチョウ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1970–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2265,7 +2265,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "イトカ・ハンツロヴァー",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1958–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2286,7 +2286,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アンニカ・フォン・ハウスヴォルフ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1967–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2308,7 +2308,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "川内倫子",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1980s / 1980年代",
+  "years": "1972–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2330,7 +2330,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "安村崇",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1972–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2351,7 +2351,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "畠山直哉",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1980s / 1980年代",
+  "years": "1958–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2373,7 +2373,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ホンマタカシ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1962–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2394,7 +2394,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "イジマカオル",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1954–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2415,7 +2415,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジュスティーヌ・カーランド",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1969–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2436,7 +2436,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アグライア・コンラート",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1960–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2457,7 +2457,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ルイーザ・ランブリ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1969–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2478,7 +2478,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マリーヌ・ユゴニエ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1969–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2499,7 +2499,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ユール・ホンディウス",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1970–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2520,7 +2520,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ヨアヒム・クスター",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1962–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2541,7 +2541,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ヨーシフ・キライ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1957–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2562,7 +2562,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マイケル・ジャニシェフスキ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1957–2019",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2583,7 +2583,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジャン＝ピエール・カゼム",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1968–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2604,7 +2604,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ペルッティ・ケカライネン",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1965–2021",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2625,7 +2625,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "サンナ・カンニスト",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1974–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2646,7 +2646,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ズビグニェフ・リベラ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1959–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2667,7 +2667,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "フロリアン・マイヤー＝アイヒェン",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1973–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2688,7 +2688,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジャン＝リュック・ミレーヌ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1946–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2709,7 +2709,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ズウェレトゥ・ムテスワ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1960–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2730,7 +2730,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "サイモン・ノーフォーク",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1963–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2751,7 +2751,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ガーボル・ウーズ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1962–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2772,7 +2772,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ピーター・ピラー",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1968–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2793,7 +2793,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ロザンジェラ・レノー",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1962–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2814,7 +2814,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "グアダルーペ・ルイス",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1978–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2835,7 +2835,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アン＝ソフィ・シデン",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1962–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2856,7 +2856,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ハイディ・シュペッカー",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1962–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2877,7 +2877,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ミヒャエル・ヴェゼリー",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1963–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2898,7 +2898,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "王慶松",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1966–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2919,7 +2919,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "楊福東",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1971–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2940,7 +2940,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジョン・リディ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1959–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -2961,7 +2961,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "クルーニー・リード",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1971–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -2982,7 +2982,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ザビエ・リバス",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1960–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -3003,7 +3003,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ディアナ・ショイネマン",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1975–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -3024,7 +3024,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ブルーノ・セラロング",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1968–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -3045,7 +3045,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "シラナ・シャーバジ",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1974–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -3066,7 +3066,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "トルビョルン・ロドランド",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1970–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -3087,7 +3087,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "リカルダ・ロガン",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1972–",
   "gender": "女性",
   "era": "1980",
   "movements": [
@@ -3108,7 +3108,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "フランク・ファン・デル・サルム",
   "nationality": "",
   "flag": "",
-  "years": "1980s / 1980年代",
+  "years": "1964–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -3129,7 +3129,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "佐藤時啓",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1980s / 1980年代",
+  "years": "1957–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -3150,7 +3150,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "松本徳彦",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1980s / 1980年代",
+  "years": "1936–",
   "gender": "男性",
   "era": "1980",
   "movements": [
@@ -3171,7 +3171,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "トーマス・デマンド",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1964–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3193,7 +3193,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ヴォルフガング・ティルマンス",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1968–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3214,7 +3214,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ニッキー・S・リー",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1970–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -3235,7 +3235,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "シャロン・ロックハート",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1964–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -3256,7 +3256,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ローラ・レティンスキー",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1962–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -3277,7 +3277,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジェームズ・ウェリング",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1951–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3298,7 +3298,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アクセル・ヒュッテ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1951–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3319,7 +3319,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジェームズ・ケースベア",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1953–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3341,7 +3341,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "トレイシー・モファット",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1960–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -3362,7 +3362,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "エルヴィン・ヴルム",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1954–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3383,7 +3383,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マンフレッド・ヴィルマン",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1952–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3404,7 +3404,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ロイ・アーデン",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1957–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3446,7 +3446,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ソン・ウー・ベク",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1973–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3467,7 +3467,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "イト・バラダ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1971–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -3488,7 +3488,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ヴァレリー・ベラン",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1964–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -3509,7 +3509,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "リチャード・ビリンガム",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1970–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3530,7 +3530,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ザビーネ・ビター／ヘルムート・ウェーバー",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1993–",
   "gender": "",
   "era": "1990",
   "movements": [
@@ -3551,7 +3551,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アヌシュカ・ブロマース／ニールス・シュム",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1969–",
   "gender": "",
   "era": "1990",
   "movements": [
@@ -3572,7 +3572,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ソニア・ブラス",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1968–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -3593,7 +3593,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "セルゲイ・ブラトコフ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1960–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3614,7 +3614,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アダム・ブルームバーグ／オリヴァー・チャナリン",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1970– / 1971–",
   "gender": "",
   "era": "1990",
   "movements": [
@@ -3635,7 +3635,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "シュテファン・ブルガー",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1977–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3656,7 +3656,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジェラード・バーン",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1969–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3698,7 +3698,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "collectif_fact",
   "nationality": "CH",
   "flag": "🇨🇭",
-  "years": "2000s–",
+  "years": "2000–",
   "gender": "",
   "era": "1990",
   "movements": [
@@ -3719,7 +3719,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ルック・ドラエー",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1962–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3740,7 +3740,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "シャルロット・デュマ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1977–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -3761,7 +3761,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ルーカス・アインゼレ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1963–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3782,7 +3782,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ルート・ファン・エンペル",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1958–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3803,7 +3803,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "J・H・エングストローム",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1969–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3824,7 +3824,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ロー・エスリッジ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1969–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3845,7 +3845,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "シャルル・フレジェ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1975–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3866,7 +3866,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "スティーヴン・ギル",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1971–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3887,7 +3887,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アンソニー・ゴイコレア",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1971–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3929,7 +3929,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アネタ・グジェシコフスカ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1974–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -3950,7 +3950,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ホセ・アントニオ・エルナンデス＝ディエス",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1964–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3971,7 +3971,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "スゼ・ツン・レオン",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1970–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -3992,7 +3992,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ポール・アルベルト・ライトナー",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1957–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4013,7 +4013,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ネイト・ロウマン",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1979–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4034,7 +4034,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "オリヴァー・ムソヴィク",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1971–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4055,7 +4055,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ムルティプリシティ",
   "nationality": "IT",
   "flag": "🇮🇹",
-  "years": "1990s–",
+  "years": "1993–",
   "gender": "",
   "era": "1990",
   "movements": [
@@ -4097,7 +4097,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アルノ・ノレン",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1964–2022",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4139,7 +4139,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マルティン・ポラク／ルーカス・ヤサンスキー",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1966– / 1965–",
   "gender": "",
   "era": "1990",
   "movements": [
@@ -4160,7 +4160,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "マルコ・ポローニ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1962–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4181,7 +4181,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ゴンサロ・プフ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1950–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4223,7 +4223,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジュール・シュピナッチュ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1964–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4244,7 +4244,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "エリック・シュタインブレッヒャー",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1963–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4286,7 +4286,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "フィリップ・テリエ＝エルマン",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1970–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4328,7 +4328,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジャナイナ・チェペ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1973–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -4349,7 +4349,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "イェンス・ウルリッヒ",
   "nationality": "",
   "flag": "",
-  "years": "1990s / 1990年代",
+  "years": "1968–",
   "gender": "男性",
   "era": "1990",
   "movements": [
@@ -4370,7 +4370,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ユースフル・フォトグラフィー",
   "nationality": "NL",
   "flag": "🇳🇱",
-  "years": "2000s–",
+  "years": "2000–",
   "gender": "",
   "era": "1990",
   "movements": [
@@ -4391,7 +4391,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "オノデラユキ",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1990s / 1990年代",
+  "years": "1962–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -4412,7 +4412,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "長島有里枝",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "1990s / 1990年代",
+  "years": "1973–",
   "gender": "女性",
   "era": "1990",
   "movements": [
@@ -4433,7 +4433,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ライアン・マッギンレー",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1977–",
   "gender": "男性",
   "era": "2000",
   "movements": [
@@ -4454,7 +4454,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ヴィヴィアン・サッセン",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1972–",
   "gender": "女性",
   "era": "2000",
   "movements": [
@@ -4476,7 +4476,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "サラ・ヴァンダービーク",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1976–",
   "gender": "女性",
   "era": "2000",
   "movements": [
@@ -4497,7 +4497,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "シャノン・エブナー",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1971–",
   "gender": "女性",
   "era": "2000",
   "movements": [
@@ -4518,7 +4518,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ジェシカ・イートン",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1977–",
   "gender": "女性",
   "era": "2000",
   "movements": [],
@@ -4537,7 +4537,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アイリーン・クインラン",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1972–",
   "gender": "女性",
   "era": "2000",
   "movements": [],
@@ -4556,7 +4556,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ルーカス・ブレイロック",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1978–",
   "gender": "男性",
   "era": "2000",
   "movements": [
@@ -4577,7 +4577,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ケイト・ステシウ",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1978–",
   "gender": "女性",
   "era": "2000",
   "movements": [
@@ -4598,7 +4598,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ラシード・ジョンソン",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1977–",
   "gender": "男性",
   "era": "2000",
   "movements": [
@@ -4619,7 +4619,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アーティ・ヴィアカント",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1986–",
   "gender": "男性",
   "era": "2000",
   "movements": [
@@ -4640,7 +4640,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ケリー・コネル",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1974–",
   "gender": "女性",
   "era": "2000",
   "movements": [
@@ -4661,7 +4661,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ナタリー・チェコ",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1976–",
   "gender": "女性",
   "era": "2000",
   "movements": [
@@ -4682,7 +4682,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "蜷川実花（ミカ・ニナガワ）",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "2000s / 2000年代",
+  "years": "1972–",
   "gender": "女性",
   "era": "2000",
   "movements": [
@@ -4704,7 +4704,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "ファビアン・マルティ",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1979–",
   "gender": "男性",
   "era": "2000",
   "movements": [
@@ -4725,7 +4725,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "松江泰治",
   "nationality": "",
   "flag": "",
-  "years": "2000s / 2000年代",
+  "years": "1963–",
   "gender": "男性",
   "era": "2000",
   "movements": [
@@ -4746,7 +4746,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "志賀理江子",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "2000s / 2000年代",
+  "years": "1980–",
   "gender": "女性",
   "era": "2000",
   "movements": [
@@ -4767,7 +4767,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "林典子",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "2000s / 2000年代",
+  "years": "1983–",
   "gender": "女性",
   "era": "2000",
   "movements": [
@@ -4788,7 +4788,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "アマリア・ウルマン",
   "nationality": "",
   "flag": "",
-  "years": "2010s / 2010年代",
+  "years": "1989–",
   "gender": "女性",
   "era": "2010",
   "movements": [
@@ -4809,7 +4809,7 @@ PHOTOGRAPHERS.push(
   "nameJa": "横田大輔",
   "nationality": "JP",
   "flag": "🇯🇵",
-  "years": "2010s / 2010年代",
+  "years": "1983–",
   "gender": "男性",
   "era": "2010",
   "movements": [

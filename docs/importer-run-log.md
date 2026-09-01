@@ -54,10 +54,71 @@
 | 2026-09-01 | stieglitz | other | （Daisuke記入） | 0 | 1（EN経路の判別＝HAND_MAINTAINED_EN） | 4ファイル | N/A | N/A |
 | 2026-09-01 | (engine)カード枚数表示の自動生成化＋cards-archive欠落カード1枚 | engine | （Daisuke記入） | 4（分母ベタ書き/初期applyFilters欠落/ENビルダーのベタ書き/cards-archiveのカード欠落） | 0（機械同期・機械検証） | 9ファイル | N/A | N/A |
 | 2026-09-01 | g-r-a-m | other | （Daisuke記入） | 0 | 1（カード用短縮リード文の執筆） | 5ファイル | N/A | N/A |
+| 2026-09-01 | (engine)カード生没年・国名・年代の全面是正（Opus監督/Codex実装） | engine | （Daisuke記入） | 6（becher没年/kawada存命/salgado没年/国名欠落147/区切り23/ENビルダーのCOUNTRY_CODE欠落22） | 4（年代ラベルの導出方式・EN書式のコード形統一・spec JSONの「誤り≠不完全」線引き・EN従属ページの最小置換） | 246ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-01 — カード生没年・国名・年代の全面是正（Opus監督 / Codex実装）
+
+- **種別 / 範囲**：engine / 246ファイル（HTML 163面 ＋ `card-data.json` ＋ データ層3本 ＋ `build_archive_en.py` ほか）。
+  0831〜0901 の生没年バックフィルに対する**カード側の突き合わせ**が発端。
+- **発端**：「`card-data.json` の `metaJa` / `hintText` がページの表示値と食い違っていないか全件実測して一覧化」。
+  実測の結果を受けて Daisuke が「全部治して」「両方入れる（国名・生没年・年代を併記）」と決定。
+- **確定した新書式**：`metaJa` = **`国名 · 生没年 · 年代ラベル`**（例 `アメリカ · 1902–1984 · 1930–1940s`）。
+  `hintText` = `名前 · 生没年`（年代ラベルは入れない）。EN カードは `国コード · 生没年 · 年代ラベル`。
+  年代ラベルは**カードの既存 `era` フィールドから機械導出**（1839→`1839–1860s` … 2010→`2010–2020s`）。
+  活動年代のデータを持たない129枚に年代を創作しない＝捏造回避のため。
+- **★実測で判明した内訳（当初「年代 vs 生没年の種別違い」と分類したのは誤りで訂正した）**：
+  `metaJa` の年スロットは3種に割れていた。**147枚は「年代を採用した」のではなく国名が丸ごと欠落**
+  （`ansel-adams` = `1940s / 1940年代` のみ。EN も `1940s` で国コードが無い）／29枚は `日本 · 1960s` の混在形／
+  126枚が正常形。era バケットで割れておらず（era 1930＝生没年11/年代21）、方針差ではなくカード書式の新旧混在だった。
+- **事実として誤っていた生没年3件**：`becher` ヒラの没年 2022→**2015**、`kikuji-kawada` **存命なのに没年2021**を表示、
+  `salgado` 2025年の没年が未反映。`salgado` は依頼時の指定に無く、全件実測で発見した。
+- **★正本が5層に分かれていた**（1件ずつ発見するのを止めるため全228データファイルを一括監査した）：
+  1. `card-data.json` / `cards-archive.html` / `archive.html`（並列コピー）
+  2. 従属面 JA/EN（countries・eras・movements）
+  3. `index.html` / `en/index.html` / `index-v51.html` の**インラインJSフォールバック表202件**（`<article>` を持たず通常のカード走査に掛からない）
+  4. `data/photographer-essay-overrides.js`（`leadEn` は**再生成で EN へ誤年を再注入する経路**。バッククォート形なので `parse_overrides_lead_en()` に確実に拾われる）
+  5. **`data/photographers.js` / `-supplement.js` / `-manual-additions.js`** ＝ `relations.html` と
+     **`scripts/global-search.js`（サイト全体検索）が読む生データ**。`years` に年代文字列187件＋誤り3件が残っていた（計213件を是正）。
+- **`scripts/*-spec.json` 200件の線引き**：正しい47 / 空欄133 / 年代文字列20 / **事実として誤り2**。
+  **「誤り ≠ 不完全」**として、誤りの2件（becher / kikuji-kawada）だけ直し、空欄・年代文字列は触らない。いずれも未追跡で stage していない。
+- **`build_archive_en.py` の欠陥**：`COUNTRY_CODE` が**22件しか無く必要な43件に21件不足**していた。
+  147枚に国名が無かったため今まで露呈しなかった。22件を追加し、**未登録の JA 国名が黙って素通りしていた挙動を `SystemExit` へ**変更（再発防止）。
+  死にコード3箇所（`^(\d{4}s) / \d{4}年代$` 分岐・後処理・`明治期` の replace 2つ）は**マッチ0件を実測してから**削除。
+- **ページ側も是正**：hero `Country` が年代文字列だった**75枚**（sidebar 70枚は部分集合）＝**145箇所**。
+  当初 sidebar しか数えず70枚と誤指定していたのを Codex が検出。`<dt>Country</dt>` は305枚とも正常で不変。
+  **復元した国名は当該ページ自身の `<dt>Country</dt>` と 75/75 で完全一致**＝外部から推測で持ち込んだ値ではないことを実証。
+- **リード文の扱い**：`feedback_card_lede_policy` の不可侵方針を維持し、**becher と kikuji-kawada の誤年のみ**例外修正。
+  値単位で 2,533 値を HEAD と比較し、**変更は7値・全て当該2名**（他0）を実証。`card-data.json` のフィールド別変更も
+  `metaJa` 305 / `hintText` 220 / `ledeJa` 2 のみで他フィールド0。
+- **温存したもの**：主題ラベル hint 45出現（`BERND & HILLA BECHER · TYPOLOGIES` / `AUGUST SANDER · MENSCHEN DES 20. JAHRHUNDERTS` /
+  `WALKER EVANS · FSA · AMERICAN PHOTOGRAPHS`）は年データではないので置換対象から除外した。
+- **★EN従属ページは再生成せずカード単位で置換**（`reference_generator_chrome_drift` の chrome 剥がれ事故を避けるため）。
+  正当性の実証＝**EN従属ページの (meta, hint) 856組すべてが `en/archive.html` と完全一致**。
+  将来再生成しても同じ値が出る＝巻き戻りが起きないことを数値で確認した。
+- **preflight WARN 78件の triage**：`[EN country/movement/era] 直接編集の疑い` は上記856組一致をもって**偽陽性と確定**。
+  判定は「EN が変わったのに `data/country-pages.json` が変わっていない」だけを見るヒューリスティックで、
+  今回変更したフィールドの正本は `en/archive.html` 側。
+- **★EN従属ページのリード文取りこぼし1件**：`en/archive.html` は直ったのに `en/countries/japan.html` /
+  `en/eras/1950.html` に `died in 2021` が残っていた。**`en/archive.html` の文字列で丸ごと上書きしてはいけない**
+  （EN従属ページの lede は archive と一致しないものが多い＝`en/countries/germany.html` は30件中11件が不一致）。
+  プレフィックス `Born in 1933 and died in 2021, ` → `Born in 1933, ` の最小置換で対処した。
+- **並行作業との衝突**：作業中に別セッションが `7dde01a81`（lang-toggle 修正）をコミットし HEAD が動いた。
+  同コミットは `build_archive_en.py` も変更しているため Phase 4 で巻き戻さないよう明示。作業後も両ファイルに1件ずつ保持を確認。
+- **検証**：全888ファイル走査で meta 2,662 / hint 2,662 とも**期待値と不一致0件**。データ層296件も完全一致。
+  年代文字列の残存0件・誤年文字列7パターンすべて0件。`sync_card_counts.py --check` グリーン（305/31/336・枚数変化0）。
+  `check_content_loss.py` OK / `preflight.py` OK（**HARD FAIL 0**、WARN 94＝EN直接編集78＋stale 16）。
+  **`build_archive_en.py` を再実行して `en/archive.html` が byte 完全一致**（ビルダーとHTMLの一致＝巻き戻りなし）。
+  禁止面（backup 84件 / worktrees / `new-design/`）差分0、末尾改行変化0、`git diff --check` 0。
+  差分規模 246 files / 5,485 insertions / 5,483 deletions、ファイル追加削除0。
+- **段取りの教訓**：Codex が**4回**「計画データと実データの食い違い」で停止し、4回とも正解だった
+  （card-data.json 限定の hint 異形3件 / hero Country 75 vs sidebar 70 / `overrides.js` の再注入経路 /
+  `photographers-manual-additions.js`）。**停止条件を明示的に渡す運用が効いた。**
+  一方、監督側（Opus）は1件ずつ後追いするより**同種の正本を最初に全網羅監査すべきだった**（228ファイル一括監査に切り替えて収束した）。
+- **wall-time**：（Daisuke記入）
 
 ### 2026-06-22 — jikei-sato（update / 既存刷新）
 - **wall-time**：約20分（Daisuke 自己申告）。内訳の体感＝バグ調査+修正と過剰検証が大半。

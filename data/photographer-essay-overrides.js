@@ -216,11 +216,11 @@ Iwamiya has been received as an important mediator between postwar photographic 
       ]
     },
     'kikuji-kawada': {
-      leadJa: `1933年生まれ、2021年没。写真家集団「VIVO」のメンバーとして知られ、代表作『地図』（1959〜1965年）でフォトブック史に独自の位置を占める。戦後の記憶・広島・占領の痕跡・敗戦と高度成長の間に横たわる心的後像を主題とし、暗い色調・断片・象徴的なシーケンスによる表現で知られる。`,
-      leadEn: `Born in 1933 and died in 2021, Kikuji Kawada is known as a member of VIVO and as the maker of The Map (1959–1965), one of the defining photobooks of postwar Japanese photography. His work centers on memory after the war, Hiroshima, traces of occupation, and the psychic afterimage suspended between defeat and rapid economic growth.`,
+      leadJa: `1933年生まれ。写真家集団「VIVO」のメンバーとして知られ、代表作『地図』（1959〜1965年）でフォトブック史に独自の位置を占める。戦後の記憶・広島・占領の痕跡・敗戦と高度成長の間に横たわる心的後像を主題とし、暗い色調・断片・象徴的なシーケンスによる表現で知られる。`,
+      leadEn: `Born in 1933, Kikuji Kawada is known as a member of VIVO and as the maker of The Map (1959–1965), one of the defining photobooks of postwar Japanese photography. His work centers on memory after the war, Hiroshima, traces of occupation, and the psychic afterimage suspended between defeat and rapid economic growth.`,
       textJa: `経歴
 
-1933年生まれ、2021年没。1950年代後半から写真家集団「VIVO」（東松照明・細江英公らと結成）のメンバーとして活動。1959〜1965年に制作した写真集『地図』（The Map）は、原爆ドーム・軍事的痕跡・傷んだ表面を断片的に収めた作品として、戦後日本写真史における最重要のフォトブックのひとつに数えられる*1*2*3。
+1933年生まれ。1950年代後半から写真家集団「VIVO」（東松照明・細江英公らと結成）のメンバーとして活動。1959〜1965年に制作した写真集『地図』（The Map）は、原爆ドーム・軍事的痕跡・傷んだ表面を断片的に収めた作品として、戦後日本写真史における最重要のフォトブックのひとつに数えられる*1*2*3。
 
 表現解説
 

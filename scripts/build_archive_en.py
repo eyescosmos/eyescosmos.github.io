@@ -64,7 +64,14 @@ COUNTRY_CODE = {
     'カナダ': 'CA', 'スイス': 'CH', 'ロシア': 'RU', 'ブラジル': 'BR',
     'ハンガリー': 'HU', 'デンマーク': 'DK', 'ルクセンブルク': 'LU',
     'レバノン': 'LB', 'ケニア': 'KE', '南アフリカ': 'ZA', 'アルバニア': 'AL',
-    'メキシコ': 'MX', 'ベトナム': 'VN',
+    'メキシコ': 'MX', 'ベトナム': 'VN', 'アイルランド': 'IE',
+    'アルゼンチン': 'AR', 'イラン': 'IR', 'ウクライナ': 'UA',
+    'オーストラリア': 'AU', 'スウェーデン': 'SE', 'スペイン': 'ES',
+    'スロバキア': 'SK', 'チェコ': 'CZ', 'ナイジェリア': 'NG',
+    'ノルウェー': 'NO', 'フィンランド': 'FI', 'ベネズエラ': 'VE',
+    'ベルギー': 'BE', 'ポーランド': 'PL', 'マリ': 'ML',
+    'モロッコ': 'MA', 'リトアニア': 'LT', 'ルーマニア': 'RO',
+    '中国': 'CN', '北マケドニア': 'MK', '韓国': 'KR',
     'BE': 'BE',
 }
 
@@ -336,20 +343,22 @@ def main():
 
     def tr_meta(meta):
         meta = unesc(meta)
-        m = re.match(r'^(\d{4}s) / \d{4}年代$', meta)
-        if m:
-            return m.group(1)
         m = re.match(r'^1 photographers linked$', meta)
         if m:
             return '1 photographer linked'
         m = re.match(r'^(.+?) · (.+)$', meta)
         if m and re.search(r'[぀-ヿ一-鿿]', m.group(1)):
             parts = [p.strip() for p in m.group(1).split('/')]
-            codes = [COUNTRY_CODE.get(p, p) for p in parts]
+            unknown = [p for p in parts if p not in COUNTRY_CODE]
+            if unknown:
+                raise SystemExit(f'Unmapped Japanese country in meta: {" / ".join(unknown)}')
+            codes = [COUNTRY_CODE[p] for p in parts]
             return ' / '.join(codes) + ' · ' + m.group(2)
         # bare JA country name with no years (e.g. stub entries orozco/marti)
         if meta in COUNTRY_CODE:
             return COUNTRY_CODE[meta]
+        if re.search(r'[぀-ヿ一-鿿]', meta):
+            raise SystemExit(f'Unmapped Japanese country in meta: {meta}')
         return meta
 
     def tr_channel(ch):
@@ -431,13 +440,6 @@ def main():
         return card
 
     out = re.sub(r'<article class="pc-card.*?</article>', tr_card, src, flags=re.S)
-
-    # hint / meta に残る年代表記
-    out = re.sub(r'(\d{4}s) / \d{4}年代', r'\1', out)
-    out = out.replace('<div class="pc-top__hint">TOMISHIGE TOKUJI · 明治期</div>',
-                      '<div class="pc-top__hint">TOMISHIGE TOKUJI · MEIJI ERA</div>')
-    out = out.replace('<div class="pc-body__meta">JP · 明治期</div>',
-                      '<div class="pc-body__meta">JP · Meiji era</div>')
 
     # ── ページ chrome ──
     JA_TITLE = '写真家一覧｜写真史を時代・国・運動から探す｜写真の座標'
