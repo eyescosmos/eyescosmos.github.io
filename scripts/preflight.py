@@ -54,6 +54,8 @@ try:
 except Exception:  # noqa: BLE001
     cnp = None
 
+from sync_card_counts import PHOTO_ARTICLE_RE, PHOTO_HREF_RE  # noqa: E402
+
 EN_CONTENT_JSON = "data/photographers-en-content.json"
 
 
@@ -897,6 +899,74 @@ def check_card_counts() -> None:
             f"カード枚数表示が正本とズレている（正: 写真家{ph} / 運動{mv} / 合計{total}）: "
             + " / ".join(drift)
             + "。修復コマンド: python3 scripts/sync_card_counts.py")
+
+
+CARD_TAG_RE = re.compile(r'pc-body__tag">([^<]*)')
+CARD_PHOTOGRAPHER_SLUG_RE = re.compile(
+    r'href="[^"]*photographers/([^"/]+)\.html"')
+
+
+def _card_tag_mismatch_count(html: str, tags_by_slug: dict[str, list[str]]) -> int:
+    """写真家カードの表示タグが card-data の先頭から一致しない枚数。"""
+    mismatches = 0
+    for match in PHOTO_ARTICLE_RE.finditer(html):
+        card = match.group(1)
+        if not PHOTO_HREF_RE.search(card):
+            continue
+        slug_match = CARD_PHOTOGRAPHER_SLUG_RE.search(card)
+        if not slug_match:
+            continue
+        expected_tags = tags_by_slug.get(slug_match.group(1))
+        if expected_tags is None:
+            continue
+        shown_tags = CARD_TAG_RE.findall(card)
+        if shown_tags != expected_tags[:len(shown_tags)]:
+            mismatches += 1
+    return mismatches
+
+
+def _card_tag_surface_paths() -> list[Path]:
+    paths = [REPO / "archive.html", REPO / "cards-archive.html"]
+    for directory in ("movements", "eras", "countries"):
+        paths.extend(
+            path for path in sorted((REPO / directory).glob("*.html"))
+            if not path.name.endswith("-backup.html")
+        )
+    return paths
+
+
+def check_card_tag_prefix() -> None:
+    """JAカードtagの非前方一致がbaseline比で増えたファイルをHARD検出する。"""
+    baseline = _baseline_ref()
+    work_data = json.loads((REPO / "card-data.json").read_text(encoding="utf-8"))
+    base_data_raw = _git_show(baseline, "card-data.json")
+    try:
+        base_data = json.loads(base_data_raw) if base_data_raw else {"photographers": []}
+    except json.JSONDecodeError:
+        base_data = {"photographers": []}
+    work_tags = {p["id"]: p.get("tags", []) for p in work_data.get("photographers", [])}
+    base_tags = {p["id"]: p.get("tags", []) for p in base_data.get("photographers", [])}
+
+    total = 0
+    increases = []
+    for path in _card_tag_surface_paths():
+        if not path.exists():
+            continue
+        rel = path.relative_to(REPO).as_posix()
+        work_count = _card_tag_mismatch_count(
+            path.read_text(encoding="utf-8"), work_tags)
+        base_html = _git_show(baseline, rel)
+        base_count = _card_tag_mismatch_count(base_html, base_tags) if base_html else 0
+        total += work_count
+        if work_count > base_count:
+            increases.append(f"{rel} {base_count}→{work_count}")
+
+    if increases:
+        hard_failures.append(
+            "カードtagの非前方一致がbaseline比で増加: " + " / ".join(increases))
+    elif total:
+        warnings.append(
+            f"カードtagの非前方一致: 計{total}枚（既存分・baseline比 増加なし）")
 
 
 # ── SEO / 不可視必須要素 & JA 分類ページの本文消失（baseline 比較・触ったものだけ）──
@@ -1858,6 +1928,7 @@ def main() -> int:
     check_archive_presence()      # ③ archive 掲載漏れ（WARN）
     check_country_hero_counts()   # ③ country hero件数ズレ（WARN）
     check_card_counts()           # カード枚数表示のズレ（HARD）
+    check_card_tag_prefix()       # JAカードtagの前方一致（増加だけHARD）
     check_content_loss_guard()
     check_seo_invisible_loss()
     check_ja_seo_holes()

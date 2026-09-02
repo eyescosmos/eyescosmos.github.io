@@ -66,6 +66,61 @@
 
 
 
+
+## 2026-09-02 — 運動ページのカードtag 10枚を是正＋card-data 1件補完＋再発防止ガード（Opus監督 / Codex実装）
+
+- **依頼**：Daisuke「8枚を修正しましょう。あなたが調べ、本文を読んで、正しいものに揃えて。今後、更新でも新規追加でもこういうことがないように」。
+- **前提の是正（監督）**：当初「JA運動ページのカードtagが121枚ズレている」と報告したが**不正確だった**。
+  カードは `card-data.json` の `tags` の**先頭N個を切り出す**のが実態（228枚中218枚。117枚が3個ちょうど）で、
+  111枚は単なる切り詰め＝仕様。**「前方一致でないもの」で数え直すと10枚**で、これが真のズレ。
+- **10枚の確定（本文・実データで裏取り）**：
+  | ページ / slug | 旧 | 新 | 根拠 |
+  |---|---|---|---|
+  | リアリズム写真 / `jp-木村伊兵衛` | リアリズム写真・**ドキュメンタリー** | リアリズム写真・**報道写真**・日本写真 | `ドキュメンタリー` は card-data にも本文にも無い。個別ページ Abstract「報道写真の流通へ接続」・Keywords に `報道写真`。彼が載る運動ページはリアリズム写真のみ |
+  | リアリズム写真 / `domon` | 順序違い | card-data 順へ | — |
+  | ドキュメンタリー / `goldin` | **プライベート写真** | **インティメイト・ライフ** | `movements/プライベート写真.html` は**存在しない**。2026-07-03 の運動再編で移行し、インティメイト・ライフ側には goldin 掲載済。ドキュメンタリーページだけ未追随 |
+  | 社会ドキュメンタリー / `toyoko-tokiwa` | 働く女性が欠落 | 先頭3へ | — |
+  | ピクチャーズ世代・フェミニズム写真 / `kruger`・`sherman`（4枚） | **コンセプチュアル** | **コンセプチュアルアート** | card-data 内 105件 vs 5件、運動ページ名も当人の card-data も `コンセプチュアルアート` |
+  | 私写真・フェミニズム写真 / `mayumi-hosokura`（2枚） | コンセプチュアルアート・私写真 | 日本写真・私写真・フェミニズム写真 | 下記 card-data 補完後の先頭3 |
+- **card-data の補完（1件）**：`mayumi-hosokura` の `tags` に `私写真` が欠落していた。
+  `movements/私写真.html` に載る5名のうち**他4名全員が card-data に `私写真` を持つ**ことを実測し、
+  card-data 側の漏れと判断して `["日本写真","私写真","フェミニズム写真","日本"]` へ。従属8面へ反映
+  （JA 5面は直接、EN 3面は `build_archive_en.py` → `generate_country_pages_en.py --country japan`
+  → `build_taxonomy_en.py --era 2010` の順で再生成）。
+- **監査で検出した自己退行1件（修正済）**：`en/movements/realism-photography.html` の
+  `jp-木村伊兵衛` カードに**日本語のまま `報道写真`** が出た。原因は
+  `build_taxonomy_en.load_en_archive_cards()` が href `/en/photographers/…` のカードしか索引せず、
+  **彼だけ EN ページの slug が `ihei-kimura` で id と食い違う**ため `en/archive.html` 上の href が
+  JAパスになり索引落ち→`translate_ja_card_fallback()` 経路に入るが、その辞書 `FALLBACK_TERM_EN` に
+  `報道写真` が無かった。**この辞書が効くのは全317名中この1名だけ**（監督実測）なので、
+  5語を GENRE_TAG／サイト実測値へ合わせた：`報道写真`→`Press Photography`（新規）、
+  `ライカ`→`Leica`（新規）、`写真史の論点`→`Topics in photo history`（新規。en/archive の channel 実測113件）、
+  `リアリズム写真`／`日本写真` は小文字→GENRE_TAG の大文字表記へ。
+  これで彼の EN 2枚（`en/eras/1930.html`・`en/movements/realism-photography.html`）から
+  `ライカ`／`写真史の論点`／`報道写真` の未翻訳が消え、同ページの `domon` と表記もそろった。
+- **再発防止（PHASE C）**：`preflight.py` に `check_card_tag_prefix()` を追加。JA カード面
+  （archive / cards-archive / movements / eras / countries）の写真家カードの `pc-body__tag` 列は
+  **card-data の `tags` の前方一致**であることを要求し、**baseline 比で非前方一致が増えたら HARD FAIL**。
+  現時点で eras 92 / countries 25 / cards-archive 11 の**既存ズレ128枚**があるため、
+  いきなり全体 HARD にせず「増加のみブロック」の段階導入とした（既存の baseline 差分パターンに合わせる）。
+  カード抽出は `sync_card_counts.PHOTO_ARTICLE_RE` を import して計数規則を一本化。
+  `movements/ダダ.html` のタグを1つ改竄して **HARD FAIL（`0→1`）が出ることを実測**し、revert 後 EXIT 0 も確認。
+- **検証**：確定表と10/10一致。`movements/*.html` の非前方一致 **10→0**。変更14 HTML すべてで
+  写真家カード・運動カード枚数不変、写真家の欠落0、不可視要素（GA/canonical/hreflang/og:/data-nosnippet/
+  JSON-LD/AI開示）の減少0。card-data は `photographers` 317→317・変更は `mayumi-hosokura` のみ・
+  `movements` 31件不変。`check_content_loss.py` / `preflight.py` / `sync_card_counts.py --check` /
+  `check_photographer_link_integrity.py` / `git diff --check` すべて EXIT 0。
+  禁止面（`photographers/` `en/photographers/` `styles/` `sitemap*.xml` `robots.txt` `CNAME`）差分0。
+- **EN 再生成の持ち越し差分**：長く再生成されていなかった EN 分類ページで lede の持ち越し更新が同時に入った
+  （`en/countries/japan.html` kikuji-kawada / `documentary` 6名 / `pictures-generation` sherrie-levine /
+  `social-documentary` 2名）。いずれも現行 `en/archive.html` の lede と一致することを実測（新規執筆なし）。
+- **積み残し（別タスク化）**：①カードtag非前方一致の既存128枚（eras 92 / countries 25 / cards-archive 11）。
+  ②`報道写真` の英訳がサイト内で3系統（`Press Photography` / `News Photography` / `Photojournalism`）。
+  ③運動ページが4枚（インティメイト・ライフ / スティルライフ / ニュー・トポグラフィックス / ポストインターネット）
+  card-data に運動カードを持たず**アーカイブに出ない**。④`jp-木村伊兵衛` は id と EN slug（`ihei-kimura`）が
+  食い違い、EN カードの href が JA ページを指している。
+- **wall-time**：（Daisuke記入）
+
 ## 2026-09-02 — 運動カードの「N photographers linked」を実カード枚数へ是正（31運動中21件）＋自動同期化（種別=engine+other）
 
 - **依頼 / 定義の確定**：Daisuke「Aで進めて」。**A＝その運動ページに実際に載っている写真家カードの枚数**を正とする

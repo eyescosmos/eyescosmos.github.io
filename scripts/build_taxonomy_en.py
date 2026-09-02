@@ -1189,12 +1189,14 @@ FALLBACK_TERM_EN = {
     '制度を作る写真': 'Building the institution',
     '幕末': 'Bakumatsu', '地方写真': 'Regional photography',
     '戦争写真': 'War photography', '組織写真': 'Institutional photography',
-    '日本写真': 'Japanese photography', 'ポートレート': 'Portrait',
+    '日本写真': 'Japanese Photography', 'ポートレート': 'Portrait',
     'ポストソ連': 'Post-Soviet', 'ラージフォーマット': 'Large format',
     'ノワール': 'Noir', 'アジア写真': 'Asian photography',
     'クィア写真': 'Queer photography', '家族写真': 'Family photography',
     '地域写真': 'Regional photography', '震災後写真': 'Post-disaster photography',
-    'リアリズム写真': 'Realism photography', '日本': 'Japan',
+    'リアリズム写真': 'Realism Photography', '日本': 'Japan',
+    '報道写真': 'Press Photography', 'ライカ': 'Leica',
+    '写真史の論点': 'Topics in photo history',
 }
 
 FALLBACK_COUNTRY_EN = {
