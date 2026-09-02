@@ -63,6 +63,37 @@
 
 
 
+
+## 2026-09-02 — 新規追加のたびに件数表示が自動更新されるようにした（種別=engine・軽量行）
+
+- **依頼**：Daisuke「新規があるたびに更新されるようにしといて」。直前の年代ページ hero スタレ是正の再発防止。
+- **問題**：`add_photographer.py --apply-surfaces` は archive 3面と era 面へ**カードを挿すだけ**で、
+  件数表示を持つ従属面（`en/archive.html` / 国ページ JA/EN / EN 年代ページ）の再生成は
+  **手作業の「実行コマンド」案内に任せていた**。誰かが思い出して回すまで古いまま残り、
+  実際に年代ページ hero が5枚ズレていた。
+- **実装**：`refresh_downstream(spec)` を追加し、`--apply-surfaces` の2経路（単独／`--apply` 併用）から呼ぶ。
+  再生成対象は **`en/archive.html` → 国ページ JA/EN（その写真家の国だけ） → EN 年代ページ**。
+  失敗面があれば手動実行コマンドを印字して続行する（黙って落ちない）。
+- **実行順を関数内に固定**：`build_archive_en.py` を必ず先。後続2本は `en/archive.html` からカードを引くため、
+  先に走らせると新規カードを拾えず **EN 年代ページに日本語のままのカードが入る**（同日 en/eras/1839.html で実際に発生）。
+- **国の解決はハードコードしない**：`data/country-pages.json`（33件）を正本に `_country_slug_by_ja()` で引く。
+  最初ハードコード表で書いたが、`FRANCE_EXPECTED_IDS` と同じ「黙って古くなる」型なのでレジストリ参照へ差し替えた。
+  単独国ページを持たない国（`リトアニア` など二重国籍の片側にしか出ない10件）は `[skip]` 印字で対象外。
+- **`--all` は使わない**（フルリビルド・ガードに従いスコープフラグ付きのみ）。
+- **検証（実測）**：既存 slug で `--apply-surfaces` を再実行し、カード4面は全て `[ALREADY] skip`、
+  従属面は全て `[OK ]`、**リポジトリ差分0（冪等）**。単一国（`josiah-hawes`=アメリカ）と
+  二重国籍（`antoine-claudet`=フランス/イギリス、`charles-clifford`=イギリス/スペイン）で
+  国ページが**両方とも**再生成されることを実測。`countries/` `en/countries/` `eras/` `en/eras/` の
+  全ページで hero == 実カード数（STALE 0）。`check_content_loss.py` / `preflight.py` /
+  `sync_card_counts.py --check` / `check_photographer_link_integrity.py` / `git diff --check` すべて OK。
+- **差分**：`scripts/add_photographer.py`（+83 -3）と `docs/generators-and-guards.md`（+14 -0）の2ファイルのみ。
+  **コンテンツページの差分0**（自動化のみで、既に同期済みだったため書き換えが発生しない＝冪等性の裏取りにもなっている）。
+- **既知の残ドリフト（今回は対象外）**：`card-data.json` の `movements[].metaJa`「N photographers linked」が
+  **31運動中21件**で運動ページの実カード数とズレている（例 ドキュメンタリー: 表示10 / 実際38）。
+  運動ページへの写真家掲載は手キュレーションで、新規写真家追加では自動更新できないため別件。
+  運動ページ hero 自体は29/31が実カード数と一致（不一致は `フェミニズム写真` 2/3 と、旧マークアップの `リアリズム写真`）。
+- **wall-time**：（Daisuke記入）
+
 ## 2026-09-02 — 年代ページ hero 人数のスタレ是正（5年代）＋再発ガード（種別=other+engine・軽量行）
 
 - **発端**：Daisuke の「アーカイブページの写真家数とかも更新されてる？」。archive 3面・トップ meta は

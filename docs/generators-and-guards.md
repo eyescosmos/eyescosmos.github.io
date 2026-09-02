@@ -81,6 +81,20 @@ revert** した。EN 分類ページは正本 JSON より HTML が本文リッ�
 
 ### 写真家1人追加時の安全な生成コマンド集
 
+**2026-09-02 以降、下記 1〜3 は `add_photographer.py --apply-surfaces` が自動で実行する**
+（`refresh_downstream()`）。手で打つ必要があるのは 4（運動ページ）と 5（検査）だけ。
+自動化の理由は「件数表示が誰かが思い出して回すまで古いままになる」事故が実際に起きたため
+（年代ページ hero が5枚ズレていた。`docs/importer-run-log.md` 2026-09-02 の項）。
+
+**実行順は固定で、変えてはいけない**：
+`build_archive_en.py` → `generate_country_pages(_en).py` → `build_taxonomy_en.py`。
+後ろ2つは `en/archive.html` からカードを引くため、先に走らせると新規カードを拾えず
+**EN 年代ページに日本語のままのカードが入る**（2026-09-02 に en/eras/1839.html で実際に発生）。
+
+国の解決は `data/country-pages.json` を正本にする（ハードコードしない）。単独国ページを
+持たない国（二重国籍の片側にしか出ない国）は `[skip]` と印字して対象外にする。
+
+
 `add_photographer.py` の末尾ランブックも、この targeted 形を案内する（nationality コードから
 該当単国 slug を `data/country-pages.json` で解決して印字。複合国籍は両単国ページ分を印字）。
 手で打つ場合の型：

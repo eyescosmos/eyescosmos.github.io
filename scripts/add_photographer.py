@@ -10,8 +10,12 @@
   （archive / cards-archive / new-design / 年代 / 運動。JA/EN 両方）。
   多数の HTML を自動で書き換えるとアンカー誤爆で新たな事故になりうるため、あえて手貼り。
 - 旧デザイン生成器（generate_photographer_pages.py / generate_archive_pages.py）は
-  ガード済みで呼ばない。EN アーカイブは build_archive_en.py、国ページは
-  generate_country_pages(_en).py を「実行コマンド」として案内する。
+  ガード済みで呼ばない。
+- **件数表示を持つ従属面は --apply-surfaces が自動で再生成する**（2026-09-02 導入。
+  refresh_downstream()）。対象は en/archive.html → 国ページ JA/EN（その写真家の国だけ）
+  → EN 年代ページ の順で、いずれもスコープフラグ付き（`--all` は使わない）。
+  従来はこれを手作業の案内に任せていたため、国ページ hero の Photographers 件数と
+  EN 年代ページが「誰かが思い出して回すまで古いまま」になっていた。
 - 最後に preflight.py を実行して決定論チェック。
 
 使い方:
@@ -667,6 +671,79 @@ def apply_surfaces(spec: dict) -> None:
     print(f"  [INSERT] {era_rel}: {backup_note}")
 
 
+COUNTRY_PAGES_JSON = REPO / "data/country-pages.json"
+
+
+def _country_slug_by_ja() -> dict[str, str]:
+    """日本語国名 → countries/<slug>.html の slug。正本は data/country-pages.json。
+
+    ここをハードコードすると国ページが増えたときに黙って古くなる（FRANCE_EXPECTED_IDS で
+    実際に踏んだ型）。単独国ページを持たない国（二重国籍の片側にしか出ない国など）は
+    この表に載らないので、呼び出し側は「未登録＝再生成対象なし」として扱う。
+    """
+    try:
+        entries = json.loads(COUNTRY_PAGES_JSON.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"  [注意] {COUNTRY_PAGES_JSON.name} を読めない（{type(e).__name__}）。"
+              f"国ページの再生成をスキップする")
+        return {}
+    return {e["nameJa"]: e["slug"] for e in entries
+            if e.get("nameJa") and e.get("slug")}
+
+
+def refresh_downstream(spec: dict) -> None:
+    """新規追加のたびに、件数表示を持つ従属面をスコープ付きで再生成する。
+
+    2026-09-02 導入。従来は archive 3面と era 面のカードだけを挿し、国ページ/EN年代ページの
+    再生成は手作業の「実行コマンド」案内に任せていた。その結果、国ページ hero の
+    `Photographers <strong>N</strong>` と EN 年代ページの件数が、誰かが思い出して回すまで
+    古いままになっていた（実測で年代5枚がズレていた）。
+
+    **実行順が重要**: generate_country_pages_en.py と build_taxonomy_en.py は
+    en/archive.html からカードを引くため、build_archive_en.py を必ず先に走らせる。
+    先に走らせないと新規カードを拾えず、EN 年代ページに日本語のままのカードが入る
+    （2026-09-02 に en/eras/1839.html で実際に発生）。
+
+    スコープフラグは必ず付ける（`--all` は使わない＝フルリビルド・ガードに従う）。
+    """
+    print("\n" + "=" * 70)
+    print("従属面の再生成（スコープ付き・--all は使わない）")
+    print("=" * 70)
+
+    slug_by_ja = _country_slug_by_ja()
+    countries = [c.strip() for c in str(spec.get("countryJa", "")).split("/") if c.strip()]
+    slugs, unknown = [], []
+    for c in countries:
+        slug = slug_by_ja.get(c)
+        (slugs.append(slug) if slug else unknown.append(c))
+    for c in unknown:
+        print(f"  [skip] 国 '{c}' は単独国ページを持たない（data/country-pages.json に未登録）")
+
+    steps = [("en/archive.html", ["build_archive_en.py"])]
+    for slug in slugs:
+        if (REPO / "countries" / f"{slug}.html").exists():
+            steps.append((f"countries/{slug}.html",
+                          ["generate_country_pages.py", "--country", slug]))
+        if (REPO / "en" / "countries" / f"{slug}.html").exists():
+            steps.append((f"en/countries/{slug}.html",
+                          ["generate_country_pages_en.py", "--country", slug]))
+    era = spec.get("era")
+    if era and (REPO / "en" / "eras" / f"{era}.html").exists():
+        steps.append((f"en/eras/{era}.html", ["build_taxonomy_en.py", "--era", era]))
+
+    failed = []
+    for label, argv in steps:
+        rc = subprocess.run([sys.executable, str(REPO / "scripts" / argv[0])] + argv[1:],
+                            capture_output=True, text=True).returncode
+        print(f"  [{'OK ' if rc == 0 else 'FAIL'}] {label}  ({' '.join(argv)})")
+        if rc != 0:
+            failed.append((label, argv))
+    if failed:
+        print("\n  [注意] 再生成に失敗した面がある。手で実行して原因を確認すること:")
+        for label, argv in failed:
+            print(f"    python3 scripts/{' '.join(argv)}   # {label}")
+
+
 def sync_card_counts() -> None:
     """カード枚数表示（archive hero / 結果バー / meta description）を card-data.json から同期する。
     apply_surfaces でカードを挿し込んだ直後に呼ぶ。正本と実カード数が食い違う場合、
@@ -897,7 +974,8 @@ def main():
         print("  --apply           card-data / star data を実書込")
         print("  --scaffold        photographers/<id>.html の空骨格を生成（--apply と併用で書込）")
         print("  --plan-surfaces   JA/EN サーフェス反映計画を dry-run 表示")
-        print("  --apply-surfaces  JAカード4面（archive 3面 + era 1面）だけ実書込")
+        print("  --apply-surfaces  JAカード4面（archive 3面 + era 1面）を実書込し、"
+              "従属面（en/archive・国ページJA/EN・EN年代）をスコープ再生成して枚数表示を同期")
         return
     apply = "--apply" in args
     scaffold = "--scaffold" in args
@@ -918,6 +996,7 @@ def main():
     # M6 v3: --apply-surfaces 単独なら JA カード4面だけを実書込して終了。
     if apply_surfaces_flag and not apply:
         apply_surfaces(spec)
+        refresh_downstream(spec)
         sync_card_counts()
         return
 
@@ -937,6 +1016,7 @@ def main():
                         "--slug", spec["id"]])
     if apply_surfaces_flag:
         apply_surfaces(spec)
+        refresh_downstream(spec)
         sync_card_counts()
     if apply:
         print("\n── preflight ──")
