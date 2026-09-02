@@ -56,10 +56,20 @@
 | 2026-09-01 | g-r-a-m | other | （Daisuke記入） | 0 | 1（カード用短縮リード文の執筆） | 5ファイル | N/A | N/A |
 | 2026-09-01 | (engine)カード生没年・国名・年代の全面是正（Opus監督/Codex実装） | engine | （Daisuke記入） | 6（becher没年/kawada存命/salgado没年/国名欠落147/区切り23/ENビルダーのCOUNTRY_CODE欠落22） | 4（年代ラベルの導出方式・EN書式のコード形統一・spec JSONの「誤り≠不完全」線引き・EN従属ページの最小置換） | 246ファイル | N/A | N/A |
 | 2026-09-02 | **12名バッチnew**(anna-atkins/antoine-claudet/bisson-freres/charles-clifford/henri-le-secq/hippolyte-bayard/hugh-welch-diamond/john-jabez-edwin-mayall/josiah-hawes/louis-desire-blanquart-evrard/maxime-du-camp/richard-beard) | new | （Daisuke記入） | 5（下記・全て既存engineの潜在デグレ） | 監督判断7系統（下記） | 49ファイル（tracked25＋新規24） | JA計249,092 / EN計346,442 | 計303 |
+| 2026-09-03 | (`報道写真` EN表記統一) | other | （Daisuke記入） | 2（後勝ち年代ラベル／旧Country残骸） | 2（stage4・手書き例外の事前確認／生成差分監査） | 9ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-03 — `報道写真` の英訳を `Press Photography` へ統一（種別=other・Opus監督 / Codex実装）
+
+- **範囲 / 裁定**：運動ページを持つ `フォトジャーナリズム → Photojournalism` と、運動ページを持たないジャンル語 `報道写真` を別語として維持し、後者だけを `Press Photography` へ統一。`GENRE_TAG` / `FALLBACK_TERM_EN` は既に同値のため不変。`ERA_KEYWORD_TRANSLATIONS`、EN写真家UI辞書、1980年代の複合見出し2経路、英語済みkeyword正本3件（bruno-serralongue / juul-hondius / thomas-demand）を変更した。Nate Lowmanの `Press photography`、G.R.A.M.、`読む報道写真 → Documentary as reading`、`フォトジャーナリズム` 系は不変。
+- **事前ガード**：対象4 slugはいずれも `HAND_MAINTAINED_EN` 外。stage4は `ihei-kimura.html` だけに存在したが `keywords_html=null` で置換対象を持たず、他3件はstage4登録なし。4件の `--dry-run` は全て `Would write`、SKIPPED 0（木村の既知 `no photobooks_html` WARNのみ）。
+- **生成 / 面**：EN写真家4面を対象slugで再生成し、`en/archive.html` を先に再生成（352カード・差分0）してから `en/eras/1980.html` だけをスコープ再生成。年代keywordの裸の `報道写真` は現行0面、複合見出しは1980の1面だけと実測したため他年代・運動面は生成していない。最初の1980生成が差分0だったことで、参照されない辞書行とは別に実出力へ効く後勝ち `ERA_CONTEXT_BLOCKS_EN['1980']` の同文言を検出し、監督承認後に同じ訳へそろえて再生成した。
+- **生成差分**：Brunoはkeyword 2＋Country残骸 `1980s→France` 2、Juulはkeyword 2、Thomas Demandはkeyword 2＋Country残骸 `1990s→Germany` 2、木村伊兵衛はkeyword 2（誤ったPhotojournalism運動リンクも除去）＋`data-nosnippet` 補完2行＋空行1行、EN年代1980は `Globalization and Photojournalism → Globalization and Press Photography` 1箇所。CountryはJA側0件・EN旧生成物に残った年代文字列の段階的是正、`data-nosnippet` は必須SEO要素の補完として監督受理。残存74ページのCountry一括是正は今回対象外。
+- **フィデリティ / 実測**：上記許容差分を逆正規化すると、生成HTML 5面すべてがHEADとSHA-256比較でバイト一致。本文節・出典・書籍欄・カード枚数は全て不変。リンク集合は木村の誤リンク2本が外れた分だけで、他は一致。4辞書の `報道写真` は全て `Press Photography`、対象keywordと1980見出しにも旧 `News Photography` / `Photojournalism` は残らず、`フォトジャーナリズム` 由来の表示は不変。
+- **検証**：`check_content_loss.py` OK（本文消失・書き換え0）／`preflight.py` OK（非前方一致91・baseline比増加なし）／`sync_card_counts.py --check` OK（317+35=352）／`check_photographer_link_integrity.py` OK／`git diff --check` OK。preflightの木村・EN年代1980の直接編集疑いWARNは、上記スコープ生成を実行済みであることを確認した生成物ヒューリスティックの誤検知。engine改良なし、commit未作成、wall-time：（Daisuke記入）。
 
 ## 2026-09-02 — JAカードtag非前方一致の限定是正（種別=other・Opus監督 / Codex実装）
 

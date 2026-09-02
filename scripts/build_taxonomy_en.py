@@ -224,7 +224,7 @@ ERA_CONTEXT_LABELS_EN = {
     # 1980
     'デュッセルドルフ派': 'Dusseldorf School',
     'エイズ危機と写真': 'AIDS Crisis and Photography',
-    'グローバル化と報道写真': 'Globalization and Photojournalism',
+    'グローバル化と報道写真': 'Globalization and Press Photography',
     # 1990
     'デジタル化':    'Digitalization',
     '写真集ルネサンス': 'Photobook Renaissance',
@@ -383,7 +383,7 @@ ERA_CONTEXT_BLOCKS_EN = {
             'text': 'Nan Goldin\'s "The Ballad of Sexual Dependency" (begun as a slideshow in the late 1970s, published 1986) and the collaborative projects of ACT UP and Gran Fury turned photography into an instrument of political visibility and mourning.'
         },
         {
-            'label': 'Globalization and Photojournalism',
+            'label': 'Globalization and Press Photography',
             'text': 'Cable news, fax machines, and early digital image transmission accelerated the circulation of photojournalism. The collapse of picture magazines was partially offset by new commissions from NGOs, news agencies, and the emerging documentary photography market.'
         }
     ],
@@ -1097,7 +1097,7 @@ def translate_sidebar_chips_era(html, era_id):
         '肖像写真': 'Portrait Photography',
         '風景写真': 'Landscape Photography',
         '記録写真': 'Documentary Photography',
-        '報道写真': 'News Photography',
+        '報道写真': 'Press Photography',
         '広告写真': 'Commercial Photography',
         'ファッション写真': 'Fashion Photography',
         '植民地写真': 'Colonial Photography',
