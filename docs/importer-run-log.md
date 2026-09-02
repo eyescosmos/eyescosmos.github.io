@@ -58,10 +58,18 @@
 | 2026-09-02 | **12名バッチnew**(anna-atkins/antoine-claudet/bisson-freres/charles-clifford/henri-le-secq/hippolyte-bayard/hugh-welch-diamond/john-jabez-edwin-mayall/josiah-hawes/louis-desire-blanquart-evrard/maxime-du-camp/richard-beard) | new | （Daisuke記入） | 5（下記・全て既存engineの潜在デグレ） | 監督判断7系統（下記） | 49ファイル（tracked25＋新規24） | JA計249,092 / EN計346,442 | 計303 |
 | 2026-09-03 | (`報道写真` EN表記統一) | other | （Daisuke記入） | 2（後勝ち年代ラベル／旧Country残骸） | 2（stage4・手書き例外の事前確認／生成差分監査） | 9ファイル | N/A | N/A |
 | 2026-09-03 | (`jp-木村伊兵衛` id↔EN slug 食い違い解消) | engine | （Daisuke記入） | 3（下流2経路が旧IDで索引／サイドバー別経路／alias実装の絶対href・ループ位置） | 1（alias定義の単一化） | 8ファイル | N/A | N/A |
+| 2026-09-03 | (EN写真家73ページ Country是正＋見出し2件の表記統一) | other | （Daisuke記入） | 0 | 0（機械再生成・機械検証） | 76ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-03 — EN写真家73ページの Country 是正＋本文見出し2件の表記統一（種別=other・Opus実装）
+
+- **① Country 年代文字列の解消**：EN写真家ページ 73枚で hero `ph-hero__meta-item">Country` と sidebar `ph-side-meta-row` に国名でなく年代文字列（`1930s` 等）が残っていた。**JA側は0枚**で、ビルダーは既に正しい国名を出すため、`build_photographers_en.py --slug <slug>` をスコープ付きで73回まわして解消。73件とも正本JSON登録済み・stage4なし・`HAND_MAINTAINED_EN` なしを事前確認。差分は **282行すべてが Country**（1ページ2箇所×73＝146行の増減）。`seydou-keita` だけ本文2文字減だが `1950s`→`Mali` の文字数差で消失ではない。実測後、年代文字列が残るページは0、国名65種。
+- **② 本文見出しの `News Photography` → `Press Photography`**：`juul-hondius`（JA「報道写真らしい完成度に、説明できない細部を残す」）と `kikuji-kawada`（JA「新潮社とVIVO——報道写真から自律したシリーズへ」）はどちらも JA の `報道写真` の訳。正本 `data/photographers-en-content.json` の該当 `body_html` を直して再生成。見出しとTOCの計8行。
+- **意図的に直さなかったもの**：`juul-hondius` の `<title>` / `og:title` / `twitter:title`（"Staged News Photography and Images of Migration"）。JA のタイトルは「ユール・ホンディウス｜コンセプチュアルアート｜写真の座標」で、**EN タイトルは翻訳ではなく独立に書かれた SEO タイトル**。変更すると GSC の順位・CTR の連続性が切れるため Daisuke 裁定で据え置き。3箇所の不変を実測で確認。
+- **検証**：差分290行の内訳＝Country 282 / 見出し・TOC 8、その他0。canonical / hreflang / JSON-LD / data-nosnippet / description / og / twitter / GA / `<h3>` / `ph-cite` / `ph-kw` / `<article>` はどのページでも減少0、href の消失0、本文の4文字以上の減少0。`check_content_loss.py` は②の2ページを「本文の書き換え（消失ではない）」として警告するが、再生成後の SHA が冪等＝正本 JSON と一致、`<h3>` 数も JA と一致（7 / 4）することを確認済みの真陽性。`preflight.py` OK（HARD 0）／`sync_card_counts.py --check` OK（317+35=352）／`check_photographer_link_integrity.py` OK／`git diff --check` OK。wall-time：（Daisuke記入）。
 
 ## 2026-09-03 — `jp-木村伊兵衛` の id と EN slug の食い違いを解消（種別=engine・Opus監督 / Codex実装 → Opus介完）
 
