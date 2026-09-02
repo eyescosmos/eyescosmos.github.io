@@ -67,6 +67,46 @@
 
 
 
+
+## 2026-09-02 — アーカイブ未掲載だった運動4件のカードを追加（Opus監督 / Codex実装）
+
+- **発端**：直前のカードtag作業中に、`movements/` の実ページ35枚に対し `card-data.json` の運動カードが
+  **31件しか無い**ことを実測。差の4件（`インティメイト・ライフ` / `スティルライフ` /
+  `ニュー・トポグラフィックス` / `ポストインターネット`）は **2026-07-01〜03 のコンセプチュアルアート解体**で
+  新設された運動で、**JA/EN ページは完成していて写真家カードも hero 件数も正しいのに、
+  アーカイブに運動カードが無いので一覧から辿れない**状態だった（カード登録だけ漏れていた）。
+- **確定した値（監督）**：既存31件の書式（15キー・`era`/`nationality` は空文字）に完全にそろえ、idx 32–35 を
+  末尾へ追加。掲載写真家数は各ページの実カード数から `6 / 12 / 6 / 5`。
+  | idx | id | nameEn | metaJa | style |
+  |---|---|---|---|---|
+  | 32 | ニュー・トポグラフィックス | New Topographics | 6 photographers linked | `pc-top--slash` |
+  | 33 | インティメイト・ライフ | Intimate Life | 12 photographers linked | `pc-top--stacked` |
+  | 34 | スティルライフ | Contemporary Still Life | 6 photographers linked | `pc-top--stacked` |
+  | 35 | ポストインターネット | Post-Internet Photography | 5 photographers linked | `pc-top--slash` |
+- **本文は捏造していない**：`ledeJa` は各運動ページの `mvt-hero__lead` からの**原文抜粋**（冒頭2文。
+  既存31件も同じ作り方であることを `ピクトリアリズム` / `ステージド写真` で照合して確認）。
+  EN 側 `MOVEMENT_LEDES` の4件も **EN 運動ページの `mvt-hero__lead` からの原文抜粋**で、新規翻訳はしていない。
+  適用後に4件とも「ledeJa がページ本文に実在」を機械照合で確認。
+- **面**：`card-data.json`（movements 31→35・`photographers` と既存31運動は**バイト不変**）/
+  JA カード3面（`archive.html` / `cards-archive.html` / `new-design/cards-archive.html`）へ
+  運動カードHTMLを idx 順で挿入（雛形は同スタイルの既存カード `ストレート写真` / `モダニズム`。書式を発明しない）/
+  `scripts/build_archive_en.py` の `MOVEMENT_SLUG_MAP` と `MOVEMENT_LEDES` へ各4件追記 /
+  `en/archive.html` 再生成 / `sync_card_counts.py` で枚数同期。
+- **枚数**：`317 PHOTOGRAPHERS · 35 MOVEMENTS · 352 TOTAL` を JA/EN アーカイブ3面へ同期、
+  トップ JA/EN の meta も `写真家317人と35の写真運動` / `317 photographers and 35 photographic movements` へ追随。
+- **検証**：4面すべてで運動カード 31→35・**写真家カードは不変**（archive/cards-archive/en-archive 317、
+  new-design 306）。写真家・運動とも**欠落0**。card-data は `photographers` 317不変・既存31運動の変更0。
+  4件の href 先（JA/EN 各4）を `ls` で実在確認。変更した全ページで不可視要素（GA/canonical/hreflang/og:/
+  data-nosnippet/JSON-LD/AI開示）の減少0。`check_content_loss.py` / `preflight.py` /
+  `sync_card_counts.py --check` / `check_photographer_link_integrity.py` / `git diff --check` すべて EXIT 0。
+  禁止面（`photographers/` `en/photographers/` `movements/` `en/movements/` `countries/` `en/countries/`
+  `eras/` `en/eras/` `styles/` `sitemap*.xml` `robots.txt` `CNAME`）差分0。
+- **監督のブリーフ誤り1件（Codexが正しく検知して停止）**：受入値に
+  「`new-design/cards-archive.html` の写真家カード 317→317」と書いたが、同ファイルは**306枚**だった。
+  `new-design/` は `.gitignore` 対象で git 管理下0ファイル・sitemap 非掲載の**ローカル専用面**で、
+  11枚差は着手前からの既存差。受入値を「306→306（不変）」へ訂正した。**11枚を補う作業はしていない**。
+- **wall-time**：（Daisuke記入）
+
 ## 2026-09-02 — 運動ページのカードtag 10枚を是正＋card-data 1件補完＋再発防止ガード（Opus監督 / Codex実装）
 
 - **依頼**：Daisuke「8枚を修正しましょう。あなたが調べ、本文を読んで、正しいものに揃えて。今後、更新でも新規追加でもこういうことがないように」。

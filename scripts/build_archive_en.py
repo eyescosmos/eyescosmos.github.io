@@ -40,6 +40,12 @@ def build_movement_slug_map():
 
 
 MOVEMENT_SLUG_MAP = build_movement_slug_map()
+MOVEMENT_SLUG_MAP.update({
+    'ニュー・トポグラフィックス.html': 'new-topographics.html',
+    'インティメイト・ライフ.html': 'intimate-life.html',
+    'スティルライフ.html': 'contemporary-still-life.html',
+    'ポストインターネット.html': 'post-internet-photography.html',
+})
 
 LEDE_MAX = 178  # 日本語版の86字トランケートに視覚的に相当する英語の長さ
 
@@ -228,6 +234,10 @@ MOVEMENT_LEDES = {
     'Staged Photography': "Staged photography does not wait for chance reality but constructs the situation before shooting — scene, light, placement of figures, props, at times digital compositing. It turns to its advantage the fact that even a staged scene carries photographic conviction.",
     'Feminist Photography': "Feminist photography is not a label for work by women photographers but a practice that critically asks how photography has represented women's bodies, domestic labor, desire, advertising, family, and work — recasting photography as a site where the power of the gaze operates.",
     'Cinematographic Photography': "Cinematographic photography is not a name for stills that merely look like film; it is a tendency in contemporary photography concerned with how much a single image can carry — the before and after of a scene, the artificiality of lighting, the gaps in a story.",
+    'New Topographics': "New Topographics refers to a lineage of photography that records the man-altered landscape — suburban tracts, industrial parks, parking lots, graded land — in a detached, descriptive style. The term derives from the 1975 exhibition “New Topographics: Photographs of a Man-Altered Landscape” at the George Eastman House in Rochester, New York.",
+    'Intimate Life': "Photography that records the closest sphere of life — family, lovers, friends, and the photographer's own body — from a diary-like distance. The lineage begins with Larry Clark's Tulsa (1971), found its defining form in Nan Goldin's The Ballad of Sexual Dependency (1986), and spread across Europe and the United States in the 1990s.",
+    'Contemporary Still Life': "Still life is one of the oldest genres in painting, but contemporary photography since the 1990s has renewed it as a critical form. By carefully photographing insignificant things — leftovers after a meal, household goods, commodities, fragments of the street — it makes visible consumption, desire, and the materiality of everyday life.",
+    'Post-Internet Photography': "Post-internet refers to practices that respond to the condition, from the late 2000s onward, in which the internet is no longer a novelty but an everyday given. In photography, the very conditions under which images circulate across screens, social media, and stock databases become the subject.",
 }
 
 # 英語個別ページが存在しない写真家（日本語ページへリンクする）

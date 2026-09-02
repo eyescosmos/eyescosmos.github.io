@@ -7044,6 +7044,94 @@
       "style": "pc-top--title",
       "artText": "Cinematographic\nPhotography",
       "hintText": "Cinematographic Photography · MOVEMENT"
+    },
+    {
+      "type": "movement",
+      "id": "ニュー・トポグラフィックス",
+      "href": "movements/ニュー・トポグラフィックス.html",
+      "idx": 32,
+      "nameJa": "ニュー・トポグラフィックス",
+      "nameEn": "New Topographics",
+      "metaJa": "6 photographers linked",
+      "era": "",
+      "nationality": "",
+      "ledeJa": "ニュー・トポグラフィックスは、人間の手が加わった風景——郊外の宅地、工業団地、駐車場、造成地——を、感情を排した即物的で記述的なスタイルで撮る写真の系譜である。1975年、ニューヨーク州ロチェスターのジョージ・イーストマン・ハウスで開かれた展覧会「New Topographics: Photographs of a Man-Altered Landscape」に由来する。",
+      "channel": "写真運動 · NEW TOPOGRAPHICS",
+      "tags": [
+        "New Topographics",
+        "ロバート・アダムス",
+        "ルイス・ボルツ",
+        "スティーヴン・ショア"
+      ],
+      "style": "pc-top--slash",
+      "artText": "New\nTopographics",
+      "hintText": "New Topographics · MOVEMENT"
+    },
+    {
+      "type": "movement",
+      "id": "インティメイト・ライフ",
+      "href": "movements/インティメイト・ライフ.html",
+      "idx": 33,
+      "nameJa": "インティメイト・ライフ",
+      "nameEn": "Intimate Life",
+      "metaJa": "12 photographers linked",
+      "era": "",
+      "nationality": "",
+      "ledeJa": "家族・恋人・友人、そして自分自身の生活という最も近い圏域を、日記のような距離から撮る写真の系譜。ラリー・クラーク『Tulsa』（1971年）を起点に、ナン・ゴールディン『The Ballad of Sexual Dependency』（1986年）で決定的な形式を得て、1990年代の欧米へ広がった。",
+      "channel": "写真運動 · INTIMATE LIFE",
+      "tags": [
+        "Intimate Life",
+        "ラリー・クラーク",
+        "ナン・ゴールディン",
+        "アンデルス・ペーターセン"
+      ],
+      "style": "pc-top--stacked",
+      "artText": "Intimate Life",
+      "hintText": "Intimate Life · MOVEMENT"
+    },
+    {
+      "type": "movement",
+      "id": "スティルライフ",
+      "href": "movements/スティルライフ.html",
+      "idx": 34,
+      "nameJa": "スティルライフ",
+      "nameEn": "Contemporary Still Life",
+      "metaJa": "6 photographers linked",
+      "era": "",
+      "nationality": "",
+      "ledeJa": "スティルライフ（静物）は絵画の最も古いジャンルのひとつだが、1990年代以降の現代写真はこれを批評的な形式として更新した。食後の残り物、日用品、商品、路上の断片といった「取るに足らないもの」を注意深く撮ることで、消費・欲望・日常の物質性を可視化する。",
+      "channel": "写真運動 · CONTEMPORARY STILL LIFE",
+      "tags": [
+        "Contemporary Still Life",
+        "ローラ・レティンスキー",
+        "ヴァレリー・ベラン",
+        "ガブリエル・オロスコ"
+      ],
+      "style": "pc-top--stacked",
+      "artText": "Contemporary\nStill Life",
+      "hintText": "Contemporary Still Life · MOVEMENT"
+    },
+    {
+      "type": "movement",
+      "id": "ポストインターネット",
+      "href": "movements/ポストインターネット.html",
+      "idx": 35,
+      "nameJa": "ポストインターネット",
+      "nameEn": "Post-Internet Photography",
+      "metaJa": "5 photographers linked",
+      "era": "",
+      "nationality": "",
+      "ledeJa": "ポストインターネットは、インターネットが目新しい技術ではなく日常の前提となった2000年代後半以降の条件に応答する実践を指す。写真においては、画像がスクリーン・SNS・ストックデータベースを循環する流通の条件そのものが主題になる。",
+      "channel": "写真運動 · POST-INTERNET PHOTOGRAPHY",
+      "tags": [
+        "Post-Internet Photography",
+        "アーティ・ヴィアカント",
+        "ケイト・ステシウ",
+        "アマリア・ウルマン"
+      ],
+      "style": "pc-top--slash",
+      "artText": "Post-Internet\nPhotography",
+      "hintText": "Post-Internet Photography · MOVEMENT"
     }
   ]
 }
