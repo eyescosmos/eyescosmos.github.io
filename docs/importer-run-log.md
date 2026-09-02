@@ -64,6 +64,52 @@
 
 
 
+
+## 2026-09-02 — 積み残し3件を解消（AI開示の配線 / .prep-block CSS / 発明・技術の英訳統一）（種別=engine+other）
+
+0901 バッチの報告で挙げた積み残し3件を、依頼を受けてまとめて解消した。**着手順は 2→1→3**
+（1 を先にやると 2 の受入テストが崩れるため。参照実装を変えると scaffold 出力が変わる）。
+
+### ① AI開示ブロックを importer へ配線（積み残し②）
+- `import_chatgpt_photographer.render_ja_page()` の末尾で `ai_disclosure.ensure(html, 'ja')` を呼ぶよう配線（+2行と import 1行）。
+  従来は `build_scaffold_html` 経由の生成物がマーカー **0個**で、生成のたびに
+  `inject_ai_disclosure.py --only` を人が回す運用だった（0901 バッチで24回）。
+- **受入テスト（12/12 PASS）**：HEAD 版スクリプトを一時的に復元して同条件で12名を再レンダリングし、
+  ①`strip_block(新) == 旧`（増えたのはブロックだけ）②`ensure(旧) == 新`（`--only` を回した結果と一致）
+  ③新はマーカー2個 ④旧はマーカー0個（バグの実在確認）⑤`ensure(新)` が `unchanged`（冪等）を全件で確認。
+  JA なのでコロフォンリンクが `/colophon` であることも実測。
+- **当初書いた受入条件「既存12ページと SHA 一致」は誤りだった**。出荷済みページには
+  title/description の差し替え・Country リンク化・出典ラベル是正など**レンダリング後の手編集**が
+  入っており、素のレンダリングと一致するはずがない。A/B（旧スクリプト vs 新スクリプト）で比較する形へ直した。
+
+### ② 参照実装に `.prep-block` の CSS ルールを追加（積み残し①）
+- `photographers/ansel-adams.html` に `photographers/riis.html` の原文コピー2行を `.ph-side-search{` の直前へ追加。
+  EN も `build_photographers_en.py --slug ansel-adams` で再生成し、**差分は同じ CSS 2行だけ**
+  （0830 で懸念された `keywords_html` 退行は起きない）。
+- 新 scaffold 出力が `.prep-block{`=1・`AI-DISCLOSURE`=2 を持つことを実測。
+  既に個別対応済みの `hugh-welch-diamond` の挿入位置が**新 scaffold の出力とバイト一致**することも確認したので、
+  そちらは触っていない（churn を作らない）。
+
+### ③ `発明・技術` の英訳を `Invention & technology` へ統一（積み残し③）
+- **どちらへ寄せるかは辞書内部の整合で決めた**：`実験的技法 → Experimental techniques` が
+  `GENRE_TAG` と `ui-terms` の**両方**にあり、この codebase は 技法=technique / 技術=technology で
+  一貫している。よって `ui-terms` の `発明・技術 → Invention & technique` が外れ値（多数派ではあったが誤り）。
+- `data/photographers-en-ui-terms.json` の1エントリを修正し、影響する EN 写真家ページ7枚
+  （daguerre / hippolyte-bayard / legray / louis-desire-blanquart-evrard / nicephore-niepce /
+  richard-beard / talbot）を `--slug` で再生成。`technique` 表記は **28→0**（残る1件は本ログの経緯記述）、
+  `technology` は 43→70。同一ページ内で Movement と眉の表記が割れていた状態も解消。
+- **再生成で出た副次差分は `data-nosnippet` 属性の追加のみ**（daguerre / legray / talbot の各3箇所＝
+  `head__mobile-search` / `ph-side-search` / `ph-search-suggestions`）。CLAUDE.md が必須としている属性の
+  取りこぼしをビルダーが是正したもので、0830 の21ファイル63行と同型。**削除・本文変更は0**。
+
+### 検証 / 面
+- `check_content_loss.py` EXIT 0 / `preflight.py` EXIT 0 / `sync_card_counts.py --check` OK /
+  `check_photographer_link_integrity.py` OK / `git diff --check` OK / `check_en_entry.py` 8slug 全通過。
+- 面は11ファイル（`scripts/import_chatgpt_photographer.py` +9-0 / `data/photographers-en-ui-terms.json` +1-1 /
+  JA `ansel-adams` +2-0 / EN 8枚）。**card-data / archive 3面 / 国ページ / 年代ページ / 運動ページ /
+  sitemap / styles は差分0**。`ansel-adams` 以外の JA 写真家ページも差分0。
+- **wall-time**：（Daisuke記入）
+
 ## 2026-09-02 — 新規追加のたびに件数表示が自動更新されるようにした（種別=engine・軽量行）
 
 - **依頼**：Daisuke「新規があるたびに更新されるようにしといて」。直前の年代ページ hero スタレ是正の再発防止。

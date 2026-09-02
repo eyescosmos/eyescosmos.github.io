@@ -43,6 +43,8 @@ sys.path.insert(0, str(REPO / "scripts"))
 from build_taxonomy_en import STUB_TO_SLUG, SLUG_TO_EN_NAME  # noqa: E402
 # CJK 判定は build_photographers_en の定義を共用（判定基準を単一化・ズレ防止）。
 from build_photographers_en import CJK_RE  # noqa: E402
+# AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本）。
+import ai_disclosure as _ai_disclosure  # noqa: E402
 
 CARD_DATA = REPO / "card-data.json"
 JA_DIR = REPO / "photographers"
@@ -1525,6 +1527,13 @@ def render_ja_page(bundle: dict, spec: dict, idx=None, *, new_import: bool = Tru
     if new_import:
         html = _ensure_ja_en_toggle(html, spec.get("id", ""))
         html = _normalize_head_attribute_order(html)
+    # AI開示ブロック（CLAUDE.md 禁止事項7・正本は scripts/ai_disclosure.py）。
+    # 2026-09-02 配線。参照実装 ansel-adams.html はブロックを持つが build_scaffold_html は
+    # <main> より後ろを組み直すため生成物では 0 個になり、preflight の check_ai_disclosure()
+    # が HARD FAIL していた。従来は生成後に inject_ai_disclosure.py --only を人が回す運用で、
+    # 回し忘れると push 直前まで気づかない（0901 バッチでは24回手で回した）。
+    # ensure() は冪等なので、後から --only を回しても差分は出ない。
+    html, _ = _ai_disclosure.ensure(html, 'ja')
     return html
 
 
