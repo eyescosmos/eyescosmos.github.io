@@ -62,6 +62,19 @@
 ## 詳細
 
 
+
+## 2026-09-02 — 年代ページ hero 人数のスタレ是正（5年代）＋再発ガード（種別=other+engine・軽量行）
+
+- **発端**：Daisuke の「アーカイブページの写真家数とかも更新されてる？」。archive 3面・トップ meta は
+  `sync_card_counts.py` が正しく 317 へ同期済みだったが、**年代ページ hero の `Photographers <strong>N</strong>` は対象外**で、実測したら5年代がズレていた。
+- **原因（2系統）**：①`add_photographer.py --apply-surfaces` は era 面へカードを挿すが hero 件数を更新しない。年代ページは JA HTML が正本で生成器が無いため、そのまま静かに残る。②`preflight.check_country_hero_counts()` は **`countries/` しか見ていなかった**（`eras/` はガード外）。
+- **是正**：JA 5枚の hero を実カード数へ。`1839` 13→25（**今回の12名バッチ由来**）、`1930` 31→32 / `1990` 67→68 / `2000` 27→29 / `2010` 7→9（**いずれも本バッチ以前からの持ち越し・計+6**）。EN 5枚は `build_taxonomy_en.py --era <YYYY>` で再生成（EN は JA の hero を複製する設計）。
+- **engine（再発防止）**：①`add_photographer.apply_surfaces` の era 書込で hero 件数を実カード数へ同時更新し `[HERO] N → M` を印字（hero が見つからない場合は注意表示）。②`preflight.check_country_hero_counts()` の走査対象へ `eras/` を追加（`-backup.html` は除外）。**`eras/1870.html` の hero を 9→99 に改竄して WARN が実際に出ることを確認し、revert 後に WARN 0 へ戻ることも実測**。
+- **副次差分**：`en/eras/2010.html` に lede 4件（zanele-muholi / masashi-asada / amalia-ulman / daisuke-yokota）の**持ち越し更新**が入った。0830 以降この年代ページが再生成されていなかったためで、4件とも現行 EN 写真家ページの Abstract 冒頭と一致することを実測（新規の調査・執筆は無し）。
+- **面**：JA eras 5 / EN eras 5 / `scripts/add_photographer.py` / `scripts/preflight.py` ＝12ファイル。差分は hero 1行×10（`en/eras/2010.html` のみ lede 4行を含む +5-5）。
+- **検証**：`eras/` `en/eras/` `countries/` `en/countries/` の**全ページで hero == 実カード数**（STALE 0）。EN 再生成5枚で写真家カードの増減・欠落0。`check_content_loss.py` EXIT 0 / `preflight.py` EXIT 0 / `sync_card_counts.py --check` OK / `git diff --check` OK。写真家ページ・card-data・archive 3面・sitemap は差分0。
+- **wall-time**：（Daisuke記入）
+
 ## 2026-09-02 — 12名バッチ new（0901素材・19世紀初期写真／Opus監督・Codex実装）
 
 - **種別 / 範囲**：new（純・新規追加）× 12。全員 era=1839（1839–1860s）。素材=`re-photographer/0901/`（JA/EN 各12・v5.1・clean）。idx 306〜317。既存ページ・card-data のいずれにも未登録であることを着手前に実測。

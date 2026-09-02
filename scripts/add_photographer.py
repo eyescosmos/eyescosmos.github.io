@@ -644,7 +644,21 @@ def apply_surfaces(spec: dict) -> None:
     m = marker_matches[0]
     tail = html[m.start() + len("</article>"):m.end()]   # 元の閉じタグ列を原文のまま維持
     replacement = "</article>\n" + era_card + tail
-    era_path.write_text(html[:m.start()] + replacement + html[m.end():], encoding="utf-8")
+    new_html = html[:m.start()] + replacement + html[m.end():]
+    # hero の Photographers 件数も同時に更新する。年代ページは JA HTML が正本で生成器が
+    # 無いため、ここで直さないと静かにズレたまま残る（2026-09-02 に 1839=13/25 ほか
+    # 計5年代のズレを実測して発覚）。EN は build_taxonomy_en.py が JA の hero を複製する
+    # ので JA を直せば追従する。preflight の check_country_hero_counts() が再発を WARN。
+    hero_m = re.search(r'(Photographers\s*<strong>)(\d+)(</strong>)', new_html)
+    if hero_m:
+        card_n = new_html.count('pc-card--photographer')
+        new_html = (new_html[:hero_m.start()]
+                    + f"{hero_m.group(1)}{card_n}{hero_m.group(3)}"
+                    + new_html[hero_m.end():])
+        print(f"  [HERO] {era_rel}: Photographers {hero_m.group(2)} → {card_n}")
+    else:
+        print(f"  [注意] {era_rel}: hero の Photographers 件数が見つからない（要手動確認）")
+    era_path.write_text(new_html, encoding="utf-8")
     check = era_path.read_text(encoding="utf-8")
     if target not in check:
         _restore_surface(era_path, html, backup_created)

@@ -815,27 +815,37 @@ def check_archive_presence() -> None:
 
 
 def check_country_hero_counts() -> None:
-    """countries/*.html の hero 表示人数と実カード数がズレていないか検知（WARN）。
+    """countries/ と eras/ の hero 表示人数と実カード数がズレていないか検知（WARN）。
     <span class="era-hero__meta-item">Photographers <strong>N</strong></span> の N と
-    pc-card--photographer の出現数を比較する。"""
-    countries_dir = REPO / "countries"
-    if not countries_dir.exists():
-        return
-    for fpath in sorted(countries_dir.glob("*.html")):
-        try:
-            html = fpath.read_text(encoding="utf-8", errors="ignore")
-        except Exception:
+    pc-card--photographer の出現数を比較する。
+
+    2026-09-02 に eras/ を対象へ追加。countries/*.html は generate_country_pages(_en).py が
+    hero 人数を毎回書き直すのでズレないが、eras/*.html は JA HTML が正本で生成器が無く、
+    add_photographer.py --apply-surfaces がカードを挿しても hero を更新しないため
+    静かにズレる（1839 は 13/25、他4年代も +1〜+2 ずれていた）。EN 側は
+    build_taxonomy_en.py が JA の hero をそのまま複製するので JA を直せば追従する。
+    """
+    for subdir in ("countries", "eras"):
+        base = REPO / subdir
+        if not base.exists():
             continue
-        m = re.search(r'Photographers\s*<strong>(\d+)</strong>', html)
-        if not m:
-            continue  # hero meta が無いページは skip
-        hero_n = int(m.group(1))
-        card_n = html.count('pc-card--photographer')
-        if hero_n != card_n:
-            warnings.append(
-                f"countries/{fpath.name}: hero人数 {hero_n} / 実カード {card_n}"
-                f" ＝ drift か手編集の兆候"
-            )
+        for fpath in sorted(base.glob("*.html")):
+            if fpath.name.endswith("-backup.html"):
+                continue
+            try:
+                html = fpath.read_text(encoding="utf-8", errors="ignore")
+            except Exception:
+                continue
+            m = re.search(r'Photographers\s*<strong>(\d+)</strong>', html)
+            if not m:
+                continue  # hero meta が無いページは skip
+            hero_n = int(m.group(1))
+            card_n = html.count('pc-card--photographer')
+            if hero_n != card_n:
+                warnings.append(
+                    f"{subdir}/{fpath.name}: hero人数 {hero_n} / 実カード {card_n}"
+                    f" ＝ drift か手編集の兆候"
+                )
 
 
 def check_card_counts() -> None:
