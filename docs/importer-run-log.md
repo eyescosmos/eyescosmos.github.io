@@ -57,10 +57,24 @@
 | 2026-09-01 | (engine)カード生没年・国名・年代の全面是正（Opus監督/Codex実装） | engine | （Daisuke記入） | 6（becher没年/kawada存命/salgado没年/国名欠落147/区切り23/ENビルダーのCOUNTRY_CODE欠落22） | 4（年代ラベルの導出方式・EN書式のコード形統一・spec JSONの「誤り≠不完全」線引き・EN従属ページの最小置換） | 246ファイル | N/A | N/A |
 | 2026-09-02 | **12名バッチnew**(anna-atkins/antoine-claudet/bisson-freres/charles-clifford/henri-le-secq/hippolyte-bayard/hugh-welch-diamond/john-jabez-edwin-mayall/josiah-hawes/louis-desire-blanquart-evrard/maxime-du-camp/richard-beard) | new | （Daisuke記入） | 5（下記・全て既存engineの潜在デグレ） | 監督判断7系統（下記） | 49ファイル（tracked25＋新規24） | JA計249,092 / EN計346,442 | 計303 |
 | 2026-09-03 | (`報道写真` EN表記統一) | other | （Daisuke記入） | 2（後勝ち年代ラベル／旧Country残骸） | 2（stage4・手書き例外の事前確認／生成差分監査） | 9ファイル | N/A | N/A |
+| 2026-09-03 | (`jp-木村伊兵衛` id↔EN slug 食い違い解消) | engine | （Daisuke記入） | 3（下流2経路が旧IDで索引／サイドバー別経路／alias実装の絶対href・ループ位置） | 1（alias定義の単一化） | 8ファイル | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-03 — `jp-木村伊兵衛` の id と EN slug の食い違いを解消（種別=engine・Opus監督 / Codex実装 → Opus介完）
+
+- **問題**：317名中この1名だけ `card-data.json` の `id`（`jp-木村伊兵衛`）と EN ページの slug（`ihei-kimura`）が不一致。実害2つ＝①`en/archive.html` の彼のカードが日本語ページへ飛ぶ ②`build_taxonomy_en.load_en_archive_cards()` が索引できず `MISSING CARDS: ['jp-木村伊兵衛']` が毎回出て、EN 分類ページで劣化した `translate_ja_card_fallback()` 経路のカードが使われていた。
+- **裁定**：ハンドオーバー推奨の **B案**（EN カードの href をマッピングで解決）を採用。A案（id 改名）は JA の URL が変わり 301 の手当てが要るため却下、C案（JAパスも索引）は実害①が残るため却下。**全317名を実測し、同型の食い違いは彼1名のみ**であることを確認してから着手。
+- **実装**：alias の定義は **`build_archive_en.EN_SLUG_BY_ID` の1箇所だけ**とし、他2スクリプトはこれを import する。alias に載らない id の挙動は一切変えない（フォールバック）。
+  - `build_archive_en.py`：`NO_EN_PAGE` から `EN_SLUG_BY_ID` へ移し、EN カードの href を `/en/photographers/ihei-kimura.html` にする
+  - `build_taxonomy_en.load_en_archive_cards()`：EN slug のカードを card-data の id でも引けるようにする（国コードは id 側で解決）
+  - `build_taxonomy_en.FALLBACK_ID_ALIAS`：空の既存フックを `dict(EN_SLUG_BY_ID)` から導出し、サイドバー Photographers チップの JA パスも是正
+  - `generate_country_pages_en.build_en_archive_lookup()` / `transform_card_en()`：索引と相対 href 化の両方で slug を解決
+- **踏んだ罠3件**：①B案の `build_archive_en.py` 1ファイルだけでは下流2経路（taxonomy / country）が旧 ID で索引するため `MISSING CARDS` が消えず、Japan を再生成すると彼のカードが**欠落**する ②サイドバーの Photographers チップは `apply_id_aliases()` という別経路で、`FALLBACK_ID_ALIAS` が空のまま放置されていた ③初回実装が alias カードの href を絶対パスへ変換していた（他カードは相対）うえ、alias ループが `if m:` の外にあり `ph_id` / `fixed` を持ち越す形だった。いずれも監督の差分実測で検出。
+- **結果**：`MISSING CARDS` 消滅。彼が載る4面すべてで href が `../photographers/ihei-kimura.html`（`en/archive.html` のみ絶対＝同面の標準）、表示テキストが英語、国コード `JP`。EN 分類ページの彼のカードは劣化フォールバック版から `en/archive.html` の正規カードへ置き換わり、`pc-card--photographer` / `data-search` / `data-era` / channel の大文字表記が他316名と揃った（`en/movements/realism-photography.html` は 1→2枚。JA 側は元から2名で、EN が1枚だったのがバグ）。**JA 側の href と URL は不変**、他316名の href は1つも変化なし。
+- **検証**：`check_content_loss.py` OK／`preflight.py` OK（非前方一致91・baseline比増加なし）／`sync_card_counts.py --check` OK（317+35=352）／`check_photographer_link_integrity.py` OK／`git diff --check` OK。`en/countries/japan.html` は67枚不変。canonical / hreflang は無傷。wall-time：（Daisuke記入）。
 
 ## 2026-09-03 — `報道写真` の英訳を `Press Photography` へ統一（種別=other・Opus監督 / Codex実装）
 

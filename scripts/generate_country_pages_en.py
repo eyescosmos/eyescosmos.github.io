@@ -36,6 +36,7 @@ from generate_country_pages import (  # noqa: E402  reuse proven helpers
 import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import ai_disclosure as _ai_disclosure
+from build_archive_en import EN_SLUG_BY_ID
 
 EN_ARCHIVE_HREF_RE = re.compile(r'href="/en/photographers/([^"]+)\.html"')
 # JA-only entries (NO_EN_PAGE in build_archive_en.py): their en/archive.html card
@@ -93,7 +94,11 @@ def build_en_archive_lookup(arch_html: str) -> dict[str, str]:
     for article in extract_articles(arch_html):
         m = EN_ARCHIVE_HREF_RE.search(article)
         if m:
-            lookup[m.group(1)] = article
+            en_slug = m.group(1)
+            lookup[en_slug] = article
+            for card_id, alias_slug in EN_SLUG_BY_ID.items():
+                if en_slug == alias_slug:
+                    lookup.setdefault(card_id, article)
             continue
         m = JA_ONLY_HREF_RE.search(article)
         if m:
@@ -104,8 +109,10 @@ def build_en_archive_lookup(arch_html: str) -> dict[str, str]:
 def transform_card_en(article: str, pid: str, code_str: str) -> str:
     r = re.sub(r'<article[^>]*>',
                '<article class="pc-card pc-card--photographer">', article, count=1)
-    r = r.replace(f'href="/en/photographers/{pid}.html"',
-                  f'href="../photographers/{pid}.html"', 1)
+    # card-data の id と EN ページの slug が異なる写真家は slug 側で置換する
+    en_slug = EN_SLUG_BY_ID.get(pid, pid)
+    r = r.replace(f'href="/en/photographers/{en_slug}.html"',
+                  f'href="../photographers/{en_slug}.html"', 1)
     r = r.replace(' target="_blank"', '', 1)
     r = re.sub(r'(<span class="idx">\d+</span>)<span>PHOTOGRAPHER</span>',
                lambda m: m.group(1) + f'<span>{code_str}</span>', r, count=1)

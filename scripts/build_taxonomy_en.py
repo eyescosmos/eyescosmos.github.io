@@ -27,6 +27,7 @@ import sys
 import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import ai_disclosure as _ai_disclosure
+from build_archive_en import EN_SLUG_BY_ID
 
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -610,6 +611,20 @@ def load_en_archive_cards(swap_nationality=False):
                 if nationality and '<span>PHOTOGRAPHER</span>' in fixed:
                     fixed = fixed.replace('<span>PHOTOGRAPHER</span>', f'<span>{nationality}</span>', 1)
             id_to_card[ph_id] = fixed
+            # card-data の id が EN ページの slug と異なる写真家は id でも引けるようにする。
+            # JA 側の分類ページは card-data の id を使うため、これが無いと索引から落ちる。
+            for card_id, en_slug in EN_SLUG_BY_ID.items():
+                if ph_id != en_slug:
+                    continue
+                alias_card = fixed
+                if swap_nationality:
+                    # 国コードは card-data の id で引く（EN slug では引けない）
+                    nationality = _nationality_map.get(card_id, '')
+                    if nationality and '<span>PHOTOGRAPHER</span>' in alias_card:
+                        alias_card = alias_card.replace(
+                            '<span>PHOTOGRAPHER</span>',
+                            f'<span>{nationality}</span>', 1)
+                id_to_card.setdefault(card_id, alias_card)
     return id_to_card
 
 
@@ -1205,7 +1220,9 @@ FALLBACK_COUNTRY_EN = {
 }
 
 # 日本語ファイル名 href の付け替えは行わない（jp-福原信三 等は EN ページが実在する）
-FALLBACK_ID_ALIAS = {}
+# card-data の id と EN ページの slug が異なる写真家。
+# 正本は build_archive_en.EN_SLUG_BY_ID（ここで別表を持たない）。
+FALLBACK_ID_ALIAS = dict(EN_SLUG_BY_ID)
 
 
 def translate_ja_card_fallback(card, ph_id):

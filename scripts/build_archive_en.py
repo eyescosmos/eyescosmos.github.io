@@ -240,9 +240,13 @@ MOVEMENT_LEDES = {
     'Post-Internet Photography': "Post-internet refers to practices that respond to the condition, from the late 2000s onward, in which the internet is no longer a novelty but an everyday given. In photography, the very conditions under which images circulate across screens, social media, and stock databases become the subject.",
 }
 
+# card-data の id と EN 個別ページの slug が異なる写真家
+EN_SLUG_BY_ID: dict[str, str] = {
+    'jp-木村伊兵衛': 'ihei-kimura',
+}
+
 # 英語個別ページが存在しない写真家（日本語ページへリンクする）
-# fabian-marti / gabriel-orozco は EN ページ作成済みのため除外（2026-06-19）
-NO_EN_PAGE: set[str] = {'jp-木村伊兵衛'}
+NO_EN_PAGE: set[str] = set()
 
 
 def esc(t):
@@ -443,7 +447,9 @@ def main():
                 new_href = href
         else:
             pid = name_en2id.get(name_en, '')
-            if pid in NO_EN_PAGE:
+            if pid in EN_SLUG_BY_ID:
+                new_href = f'/en/photographers/{EN_SLUG_BY_ID[pid]}.html'
+            elif pid in NO_EN_PAGE:
                 new_href = '/' + href.lstrip('/')
             else:
                 new_href = '/en/' + href.lstrip('/')
