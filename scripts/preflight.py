@@ -825,7 +825,16 @@ def check_country_hero_counts() -> None:
     静かにズレる（1839 は 13/25、他4年代も +1〜+2 ずれていた）。EN 側は
     build_taxonomy_en.py が JA の hero をそのまま複製するので JA を直せば追従する。
     """
-    for subdir in ("countries", "eras"):
+    # 計数規則は sync_card_counts に一本化する（二重管理にしない）。
+    # `pc-card--photographer` を数える方式は旧マークアップ（裸の class="pc-card"）を
+    # 取りこぼし、movements/リアリズム写真.html を 0 と誤判定していた。
+    sys.path.insert(0, str(REPO / "scripts"))
+    try:
+        from sync_card_counts import count_photographer_cards
+    except Exception as e:  # pragma: no cover
+        warnings.append(f"hero人数の検査を実行できない: {type(e).__name__}: {e}")
+        return
+    for subdir in ("countries", "eras", "movements"):
         base = REPO / subdir
         if not base.exists():
             continue
@@ -840,7 +849,7 @@ def check_country_hero_counts() -> None:
             if not m:
                 continue  # hero meta が無いページは skip
             hero_n = int(m.group(1))
-            card_n = html.count('pc-card--photographer')
+            card_n = count_photographer_cards(html)
             if hero_n != card_n:
                 warnings.append(
                     f"{subdir}/{fpath.name}: hero人数 {hero_n} / 実カード {card_n}"

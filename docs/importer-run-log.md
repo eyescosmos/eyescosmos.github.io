@@ -65,6 +65,41 @@
 
 
 
+
+## 2026-09-02 — 運動カードの「N photographers linked」を実カード枚数へ是正（31運動中21件）＋自動同期化（種別=engine+other）
+
+- **依頼 / 定義の確定**：Daisuke「Aで進めて」。**A＝その運動ページに実際に載っている写真家カードの枚数**を正とする
+  （カード文言が "linked" であり、クリックした先の枚数と一致すべきため）。B案（card-data 上でその運動タグを持つ写真家数）は不採用。
+- **計数規則の是正が前提だった**：従来の `pc-card--photographer` を数える方式は
+  ①**旧マークアップ**（裸の `class="pc-card"`）を取りこぼす（`movements/リアリズム写真.html` を 0 と誤判定。実際は木村伊兵衛・土門拳の2枚）
+  ②href の slug を `[a-z0-9-]` で書くと **`jp-木村伊兵衛` のような非ASCII slug** を取りこぼす（eras/1870 で 9→6 と誤判定）。
+  → `count_photographer_cards()` を「`pc-card` 系 article のうち `photographers/` へのリンクを含むもの」で実装。
+  **158枚で hero と突合し、一致しないのは真のズレ2枚（フェミニズム写真 JA/EN）だけ**であることを実測してから採用した。
+- **是正**：`card-data.json` の `movements[].metaJa` 21件と、焼き込み4面（`archive.html` 26件 / `cards-archive.html` 26件 /
+  `new-design/cards-archive.html` 26件 / `en/archive.html` 21件）を実カード枚数へ。
+  例：ドキュメンタリー 10→38 / コンセプチュアルアート 10→22 / ステージド写真 3→13 / 私写真 6→5。
+  **面の件数（26）が card-data の件数（21）より多いのは、焼き込み側が card-data とも既にズレていた分**（5件）。
+- **hero の是正**：`movements/フェミニズム写真.html` の hero を 2→3（実カード3）。EN は
+  `build_taxonomy_en.py --slug feminist-photography` で再生成。
+- **自動化 / ガード**：`sync_card_counts.py` に `collect_movements()` を追加し `main()` から呼ぶ。
+  以後 `python3 scripts/sync_card_counts.py` で自動是正、`--check` で検出、
+  `preflight.check_card_counts()` が同モジュールを import しているので **HARD FAIL で再発をブロック**する。
+  あわせて `preflight.check_country_hero_counts()` の走査対象へ `movements/` を追加し、
+  計数関数も `sync_card_counts.count_photographer_cards` へ一本化（二重管理をやめた）。
+  `movements/ダダ.html` の hero を 1→42 に改竄して WARN が出ることを実測し、revert 後 0 に戻ることも確認。
+- **副次差分**：`en/movements/feminist-photography.html` の再生成で Kruger の lede と3名の tags が更新された。
+  **0830 以降このページが再生成されていなかった持ち越し分**で、lede は現行 EN 写真家ページの Abstract 冒頭と一致、
+  tags は `card-data.json` の `tags` を `GENRE_TAG`/`COUNTRY_TAG` で訳した値と3名とも完全一致することを実測（新規の執筆・調査なし）。
+- **検証**：数字以外の差分行は**0**（4面 + card-data の全差分行が `photographers linked` を含む）。
+  写真家カード 317→317・運動カード 31→31・写真家の欠落0・card-data の写真家エントリ変更0件・
+  運動エントリの `metaJa` 以外の変更0件。同期後に4面 + card-data の**全31運動で不一致0**。
+  `check_content_loss.py` EXIT 0 / `preflight.py` EXIT 0 / `sync_card_counts.py --check` OK /
+  `check_photographer_link_integrity.py` OK / `git diff --check` OK。
+  写真家ページ・国ページ・年代ページ・sitemap・styles は差分0。
+- **残**：JA 運動ページのカード tags は手キュレーションで card-data と一致しない（EN は card-data 由来なので割れる）。
+  これは本件以前からの構造的な差で、今回は触っていない。
+- **wall-time**：（Daisuke記入）
+
 ## 2026-09-02 — 積み残し3件を解消（AI開示の配線 / .prep-block CSS / 発明・技術の英訳統一）（種別=engine+other）
 
 0901 バッチの報告で挙げた積み残し3件を、依頼を受けてまとめて解消した。**着手順は 2→1→3**
