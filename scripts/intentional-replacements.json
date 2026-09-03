@@ -94,5 +94,77 @@
     "url": "https://www.tokyoartbeat.com/en/events/-/2021/F98D",
     "reason": "The supplied 2026-08-30 JA and EN source sets replace the prior EN-only source list; measured 0 occurrences of this Tokyo Art Beat event URL in both new materials.",
     "declared": "2026-08-30"
+  },
+  {
+    "slug": "araki",
+    "url": "https://am-project.jp/",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace the prior source list and do not include this AM Project URL; it is absent from both updated pages after the add-only reference merge.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "araki",
+    "url": "https://cir.nii.ac.jp/all?q=%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace the prior source list and do not include this CiNii Research URL; it is absent from both updated pages after the add-only reference merge.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "araki",
+    "url": "https://ndlsearch.ndl.go.jp/search?cs=bib&amp;keyword=%E8%8D%92%E6%9C%A8%E7%B5%8C%E6%83%9F",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace the prior source list and do not include this NDL Search URL; it is absent from both updated pages after the add-only reference merge.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "araki",
+    "url": "https://www.antonkerngallery.com/exhibitions/521-nobuyoshi-araki-and-roe-ethridge/",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace the prior source list and do not include this Anton Kern Gallery URL; it is absent from both updated pages after the add-only reference merge.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "araki",
+    "url": "https://www.britishmuseum.org/collection/object/A_2007-3007-6",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace the prior source list and do not include this British Museum object URL; it is absent from both updated pages after the add-only reference merge.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "araki",
+    "url": "https://www.britishmuseum.org/collection/search?keyword=Nobuyoshi%20Araki",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace the prior source list and do not include this British Museum search URL; it is absent from both updated pages after the add-only reference merge.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "araki",
+    "url": "https://www.tate.org.uk/search?q=Nobuyoshi%20Araki",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace the prior source list and do not include this Tate search URL; it is absent from both updated pages after the add-only reference merge.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "araki",
+    "url": "https://www.tokyoartbeat.com/en/events/-/2017%2F62CF",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace the prior source list and do not include this Tokyo Art Beat URL; it is absent from both updated pages after the add-only reference merge.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "cartierbresson",
+    "url": "https://emuseum.mfah.org/objects/70861/boston-heat-wave",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace the prior source list and omit this MFAH object URL; the new object-level references instead use MoMA work pages 44586, 56129, 88041, and 98333.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "cartierbresson",
+    "url": "https://www.icp.org/content/decisive-moment-0",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace this prior ICP content URL with the more specific ICP exhibition URL https://www.icp.org/exhibitions/henri-cartier-bresson-decisive-moment.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "cartierbresson",
+    "url": "https://www.metmuseum.org/art/collection/search/283312",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace this prior Met object URL with the institutional essay https://www.metmuseum.org/essays/henri-cartier-bresson-1908-2004.",
+    "declared": "2026-09-03"
+  },
+  {
+    "slug": "cartierbresson",
+    "url": "https://www.moma.org/artists/1000-henri-cartier-bresson",
+    "reason": "The supplied 2026-09-03 JA and EN source sets replace this MoMA artist-list URL with individual work pages 44586, 56129, 88041, and 98333 plus exhibition page https://www.moma.org/calendar/exhibitions/967.",
+    "declared": "2026-09-03"
   }
 ]

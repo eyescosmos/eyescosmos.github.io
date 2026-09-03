@@ -62,6 +62,7 @@
 | 2026-09-03 | (`jp-木村伊兵衛` id↔EN slug 食い違い解消) | engine | （Daisuke記入） | 3（下流2経路が旧IDで索引／サイドバー別経路／alias実装の絶対href・ループ位置） | 1（alias定義の単一化） | 8ファイル | N/A | N/A |
 | 2026-09-03 | (EN写真家73ページ Country是正＋見出し2件の表記統一) | other | （Daisuke記入） | 0 | 0（機械再生成・機械検証） | 76ファイル | N/A | N/A |
 | 2026-09-03 | (preflight に check_en_entry_point を追加) | other | （Daisuke記入） | 0 | 0（ガード追加のみ） | 2ファイル +53行 | N/A | N/A |
+| 2026-09-03 | **3名バッチupdate**(araki/cartierbresson/takuma-nakahira) | update | （Daisuke記入） | 2（素材audit-fix残存／EN書籍二経路重複） | 7系統（下記） | 10ファイル | JA計16174→27063 / EN計43849→73817 | 計77→113 |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
@@ -2713,4 +2714,15 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
   - `head__lang` を持たない110枚は**いずれも正常**：二重国籍 `countries/*-*.html`（58枚・複合ページ廃止予定）/ `en/movements/<カナ>.html`・`en/photographers/jp-<漢字>.html` のリダイレクトシム（47枚・meta refresh）/ `relations.html`・`en/relations.html`（孤立独自UI・据え置き決定済）/ `design/`（ローカル）/ Google 認証ファイル。
 - **`cards-archive.html` の EN 遷移先について**：このページに EN 版は存在しない（sitemap にも hreflang 無しで単独登録）ため、EN の最も近い対応面である `/en/archive.html` を指すようにした。
 - **検証**：`check_content_loss.py` OK / `preflight.py` OK（FAIL 0・WARN は既知の stale intentional-replacement のみ）。`git diff --stat` は 3 files / 3 insertions / 3 deletions で対象外の巻き込み0。`en/archive.html` は再生成後も差分0。
+- **wall-time**：（Daisuke記入）
+
+## 2026-09-03 — 0903写真家3名 update 完了（araki / cartierbresson / takuma-nakahira）
+
+- **種別 / 範囲**：update×3。JA HTML正本・EN JSON正本・builder生成ENを0903素材で全刷新。tracked変更はJA/EN写真家HTML各3、EN正本JSON、works ui-terms、`intentional-replacements.json`、本ログの10ファイル。カード・archive・年代・国・運動・design・styles・new-design・relations・supplement・essay-overrides・他写真家HTMLは不触。commit未作成。
+- **パイプライン / carry-forward**：3名とも `--precheck` → `--update-existing --prepare` → `--update-existing --apply --force` → `--merge-to-en` dry-run / apply → slug限定EN build。hero眉 / Years / Country / Movement / JSON-LD birthDate/deathDateをbackup一致で維持。写真集欄は既存優先で丸ごと維持し、`ph-book`はaraki・cartierbressonがJA/EN 3→3、takuma-nakahiraが2→2。タイトル・meta・note・CTA href/ラベルの署名は全6面でbackup一致、新規Amazon `/s?k=` 0、ASIN解決なし。
+- **手作業点 / bug / engine**：手作業7系統。①3名の旧§REFを既存優先add-onlyで復元、②takuma-nakahiraの既存EN-only §REF 3本をJAへ追加して集合一致、③§RELの既存項目・annotationを優先し、takuma-nakahiraの新規Tomatsuだけ追記、④素材ENのJA向けhrefを`/en/`化、⑤素材由来`audit-fix` classをJA/EN正本から除去、⑥EN mergeが素材書籍を`further_reading_html`へ追加・置換した箇所を既存へ復元、⑦araki hero眉の自動標準化を既存値へ復元。works ui-termsは実検出1件（`Taka Ishii Gallery - 氾濫 / Overflow`）だけadd-only。bug 2件＝素材のreview classをimporterが除去しない点と、既存`photobooks_html`に素材`further_reading_html`が併記され書籍が重複する点。engine改良0。ボトルネックは§REFの日英和集合と書籍二経路の切り分け。
+- **§REF / §SRC / intentional replacement**：非Amazon §REFはJA==ENで araki 6 / cartierbresson 9 / takuma-nakahira 16、backupリンク消失0。§SRCもJA==ENで31 / 41 / 41。ページ全体の実消失はaraki 8、cartierbresson 4、takuma-nakahira 0。実消失12件だけをadd-only宣言し、配列16→28（PHASE 2基準24→28）、既存要素は完全一致。
+- **フィデリティ**：importerの`§body`基準でJAは araki 4,503→6,773 / cartierbresson 6,636→9,099 / takuma-nakahira 5,035→11,191（計16,174→27,063）。ENは12,666→19,043 / 16,420→22,939 / 14,763→31,835（計43,849→73,817）。unique出典は20→31 / 28→41 / 29→41（計77→113、JA/EN同数）。監督の可視本文テキスト基準でも全員増加を独立確認済み。
+- **§REL / 構造**：§RELリンクはJA/ENで araki 4/4、cartierbresson 9/9、takuma-nakahira 3/3。計32リンク（重複除外28ファイル）をURLデコード後`ls`して切れ0。takuma-nakahiraのJA裸4項目（高梨豊 / 多木浩二 / 風景論 / 写真集）はページ非実在のため維持。全6面でdiv/section開閉一致、review class・`prep-block`・sup-ref dangling 0。JSON-LD Personキー減少0、EN不可視要素維持、検索runtime解決形あり・未解決JS文字列リテラル0。
+- **正本 / 検証**：EN正本pages 342→342、変更キーは対象3件のみ、`_meta`不変。`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0・HARD 0。WARNは既存カードtag非前方一致91枚と既存slugのstale intentional-replacement 16件のみで新規WARN 0。3slugのbuilder `--dry-run`は各1 page・SKIPPED 0、`check_en_entry.py`は3件ともOK。素材6ファイルSHA-256不変、禁止面・対象外写真家HTML差分0。
 - **wall-time**：（Daisuke記入）
