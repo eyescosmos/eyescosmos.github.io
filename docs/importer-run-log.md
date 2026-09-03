@@ -59,10 +59,21 @@
 | 2026-09-03 | (`報道写真` EN表記統一) | other | （Daisuke記入） | 2（後勝ち年代ラベル／旧Country残骸） | 2（stage4・手書き例外の事前確認／生成差分監査） | 9ファイル | N/A | N/A |
 | 2026-09-03 | (`jp-木村伊兵衛` id↔EN slug 食い違い解消) | engine | （Daisuke記入） | 3（下流2経路が旧IDで索引／サイドバー別経路／alias実装の絶対href・ループ位置） | 1（alias定義の単一化） | 8ファイル | N/A | N/A |
 | 2026-09-03 | (EN写真家73ページ Country是正＋見出し2件の表記統一) | other | （Daisuke記入） | 0 | 0（機械再生成・機械検証） | 76ファイル | N/A | N/A |
+| 2026-09-03 | (preflight に check_en_entry_point を追加) | other | （Daisuke記入） | 0 | 0（ガード追加のみ） | 2ファイル +53行 | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-03 — preflight に `check_en_entry_point` を追加（種別=other・Opus監督/Codex実装）
+
+- **目的**：`jp-木村伊兵衛` と同型の「card-data の `id` と EN 実ページの slug の食い違い」を機械で検出する。事故当時の症状は静かで、EN アーカイブのカードが JA ページを指し、`build_taxonomy_en` が索引できず劣化フォールバックカードが使われていたが、**これを検出する検査が存在しなかった**。
+- **実測で判明したサイトの規約**（検査の前提）：JA ページの `hreflang="en"` が EN 実ページの正で **317/317 で引ける**。`id` が非ASCII（`jp-漢字`）の17名は、**実ページをローマ字 slug に置き `en/photographers/<id>.html` に784バイト前後のリダイレクト shim を置く**のが規約で、16名がこの形（`is_redirect_stub()` 全件 True）。木村だけ shim が無く `EN_SLUG_BY_ID` 登録で解決している。
+- **検査の内容**：card-data の全 id について ①JA の `hreflang="en"` から EN slug X を取る（取れなければ WARN）②`en/photographers/<X>.html` が無ければ HARD ③ビルダー入口 `entry = EN_SLUG_BY_ID.get(id, id)` のページが無ければ **HARD**（＝木村ケース。メッセージに「shim を置くか `EN_SLUG_BY_ID` に登録する」と復旧手順を書く）④`entry != X` かつ入口が `is_redirect_stub()` でなければ HARD（EN 実ページの二重）。`EN_SLUG_BY_ID` の正本は `build_archive_en.py` で、preflight 側に別表を持たない（import）。
+- **現ツリーの結果**：**HARD 0 / WARN 0**。内訳＝直接実ページ300名 / shim 経由16名 / `EN_SLUG_BY_ID` 経由1名＝317名。
+- **発火確認**：3分岐すべてを実ファイルを汚さずに検証（関数に一時 dict を注入）。空 dict で `jp-木村伊兵衛` が HARD、mapping 先を実在ページにすると「二重に存在する」HARD、存在しない slug にすると「入口が存在しない」HARD。いずれも復旧手順つきのメッセージが出る。
+- **影響**：変更は `scripts/preflight.py`（+52行・既存関数の挙動は不変）と `docs/generators-and-guards.md`（+1行）のみ。追加も削除もHTML・データには無し。preflight の実行時間は 24.4秒 → 20.4秒（検査単体 0.046秒）で延びていない。
+- wall-time：（Daisuke記入）。
 
 ## 2026-09-03 — EN写真家73ページの Country 是正＋本文見出し2件の表記統一（種別=other・Opus実装）
 

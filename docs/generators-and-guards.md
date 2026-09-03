@@ -255,6 +255,7 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
   - **生成物の EN HTML を直接編集した疑い**（HTML 変更なのに JSON 不変）＝WARN
   - sup/cite・リンクの健全性＝WARN。手書き維持ページ（`annie-leibovitz` / `stieglitz`）は closure 例外。
   既存不具合 10 件は「触った時だけ」可視化され、無関係な push はブロックしない（スコープが baseline）。
+- **preflight の EN 写真家入口ガード（`check_en_entry_point`）** — JA `hreflang="en"` の実ページと `build_archive_en.EN_SLUG_BY_ID`／リダイレクト shim を含むビルダー入口の不整合を全カードで検査し、リンク切れ・入口欠落・実ページ二重化を HARD FAIL にする。
 - **preflight の旧ドメイン混入検査（`check_legacy_domain` / 2026-08-27 追加）** — 追跡ファイルに
   `eyescosmos.github.io` が現れたら **HARD FAIL（push ブロック）**。本番URLは `eyescosmos.com`
   （2026-08-27 にドメイン移行済み）。ChatGPT素材や過去ページの引き写しで旧URLが再混入するのを止める。

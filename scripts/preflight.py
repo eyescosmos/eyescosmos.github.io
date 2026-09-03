@@ -43,6 +43,8 @@ _en_consumed_decl_indices: set[int] = set()
 
 # check_en_entry の検査ロジックを再利用する
 sys.path.insert(0, str(REPO / "scripts"))
+from build_archive_en import EN_SLUG_BY_ID  # noqa: E402
+
 try:
     import check_en_entry as cee  # noqa: E402
 except Exception:  # noqa: BLE001
@@ -118,6 +120,55 @@ def check_dup_ids_carddata() -> None:
 
 def is_redirect_stub(html: str) -> bool:
     return ("noindex" in html) and ("http-equiv" in html.lower() and "refresh" in html.lower())
+
+
+def check_en_entry_point(slug_by_id: dict[str, str] | None = None) -> None:
+    """JA hreflang の EN 実ページと、EN ビルダーが使う入口の整合を検査。"""
+    if slug_by_id is None:
+        slug_by_id = EN_SLUG_BY_ID
+    data = json.loads((REPO / "card-data.json").read_text(encoding="utf-8"))
+    for card in data.get("photographers", []):
+        photographer_id = card.get("id")
+        if not photographer_id:
+            continue
+        ja_path = REPO / "photographers" / f"{photographer_id}.html"
+        if not ja_path.exists():
+            continue
+        ja_html = ja_path.read_text(encoding="utf-8", errors="ignore")
+        link = re.search(
+            r'<link\b(?=[^>]*\bhreflang=["\']en["\'])[^>]*\bhref=["\']([^"\']+)["\'][^>]*>',
+            ja_html,
+            re.IGNORECASE,
+        )
+        slug_match = re.search(r"/en/photographers/([^/?#]+)\.html(?:[?#]|$)", link.group(1)) \
+            if link else None
+        if not slug_match:
+            warnings.append(
+                f"[EN entry {photographer_id}] photographers/{photographer_id}.html から "
+                'hreflang="en" の EN slug を取得できない')
+            continue
+
+        en_slug = unquote(slug_match.group(1))
+        en_page = REPO / "en" / "photographers" / f"{en_slug}.html"
+        if not en_page.exists():
+            hard_failures.append(
+                f"[EN entry {photographer_id}] hreflang のリンク切れ: "
+                f"en/photographers/{en_slug}.html が存在しない")
+
+        entry = slug_by_id.get(photographer_id, photographer_id)
+        entry_page = REPO / "en" / "photographers" / f"{entry}.html"
+        if not entry_page.exists():
+            hard_failures.append(
+                f"[EN entry {photographer_id}] ビルダー入口 "
+                f"en/photographers/{entry}.html が存在しない。"
+                f"en/photographers/{photographer_id}.html にリダイレクト shim を置くか、"
+                f"build_archive_en.EN_SLUG_BY_ID に {photographer_id} → {en_slug} を登録する")
+        elif entry != en_slug:
+            entry_html = entry_page.read_text(encoding="utf-8", errors="ignore")
+            if not is_redirect_stub(entry_html):
+                hard_failures.append(
+                    f"[EN entry {photographer_id}] hreflang の実ページは {en_slug}.html だが、"
+                    f"ビルダー入口 {entry}.html も実ページであり二重に存在する")
 
 
 def check_ga_coverage() -> None:
@@ -1922,6 +1973,7 @@ def main() -> int:
     check_en_direct_edit()
     check_en_changed_slug_integrity()
     check_en_rel_annotations()
+    check_en_entry_point()
     check_country_en()
     check_taxonomy_en()
     check_archive_en()
