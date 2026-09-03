@@ -56,6 +56,8 @@
 | 2026-09-01 | g-r-a-m | other | （Daisuke記入） | 0 | 1（カード用短縮リード文の執筆） | 5ファイル | N/A | N/A |
 | 2026-09-01 | (engine)カード生没年・国名・年代の全面是正（Opus監督/Codex実装） | engine | （Daisuke記入） | 6（becher没年/kawada存命/salgado没年/国名欠落147/区切り23/ENビルダーのCOUNTRY_CODE欠落22） | 4（年代ラベルの導出方式・EN書式のコード形統一・spec JSONの「誤り≠不完全」線引き・EN従属ページの最小置換） | 246ファイル | N/A | N/A |
 | 2026-09-02 | **12名バッチnew**(anna-atkins/antoine-claudet/bisson-freres/charles-clifford/henri-le-secq/hippolyte-bayard/hugh-welch-diamond/john-jabez-edwin-mayall/josiah-hawes/louis-desire-blanquart-evrard/maxime-du-camp/richard-beard) | new | （Daisuke記入） | 5（下記・全て既存engineの潜在デグレ） | 監督判断7系統（下記） | 49ファイル（tracked25＋新規24） | JA計249,092 / EN計346,442 | 計303 |
+| 2026-09-03 | **12名バッチnew**(0902素材・idx 318–329) | new | **1時間18分** | 0 | 監督判断7系統（下記） | 公開HTML 40面＋sitemap 2面 | JA計55,247 | 計306 |
+| 2026-09-03 | (JA表記統一：ル・グレー5ページ＋英題内人名2ページ) | other | （Daisuke記入） | 0 | 2系統（文字列置換のみ） | JA写真家7ファイル | N/A（本文字数不変） | N/A |
 | 2026-09-03 | (`報道写真` EN表記統一) | other | （Daisuke記入） | 2（後勝ち年代ラベル／旧Country残骸） | 2（stage4・手書き例外の事前確認／生成差分監査） | 9ファイル | N/A | N/A |
 | 2026-09-03 | (`jp-木村伊兵衛` id↔EN slug 食い違い解消) | engine | （Daisuke記入） | 3（下流2経路が旧IDで索引／サイドバー別経路／alias実装の絶対href・ループ位置） | 1（alias定義の単一化） | 8ファイル | N/A | N/A |
 | 2026-09-03 | (EN写真家73ページ Country是正＋見出し2件の表記統一) | other | （Daisuke記入） | 0 | 0（機械再生成・機械検証） | 76ファイル | N/A | N/A |
@@ -333,6 +335,50 @@
 - **面**：JA eras 5 / EN eras 5 / `scripts/add_photographer.py` / `scripts/preflight.py` ＝12ファイル。差分は hero 1行×10（`en/eras/2010.html` のみ lede 4行を含む +5-5）。
 - **検証**：`eras/` `en/eras/` `countries/` `en/countries/` の**全ページで hero == 実カード数**（STALE 0）。EN 再生成5枚で写真家カードの増減・欠落0。`check_content_loss.py` EXIT 0 / `preflight.py` EXIT 0 / `sync_card_counts.py --check` OK / `git diff --check` OK。写真家ページ・card-data・archive 3面・sitemap は差分0。
 - **wall-time**：（Daisuke記入）
+
+## 2026-09-03 — JA表記統一（ル・グレー5ページ＋英題内人名2ページ・種別=other）
+
+- **範囲**：JA正本7ページのみ。`james-welling` / `henri-le-secq` / `maxime-du-camp` / `florian-maier-aichen` / `john-riddy` の「ル・グレイ」計13件を「ル・グレー」へ統一し、`anna-atkins` / `josiah-hawes` の `.ph-book__title` 各1件に混入したカタカナ人名を `Anna Atkins` / `Southworth &amp; Hawes` へ是正。EN正本・EN HTML・`richard-beard`は変更なし。
+- **保全 / 差分**：仕様どおり編集前backup 7枚を `photographers/*-backup.html` に作成し、未追跡のまま保持。backup対現行の行差分は順に `1/1, 4/4, 1/1, 1/1, 2/2, 1/1, 1/1`（削除/追加）で、指定文字列以外の変更0。5ページの本文字数は全件不変。`john-riddy` の `h3-04` / `h3-07` IDとTOCの節リンク `#sec-01`〜`#sec-04` は前後一致し、元からh3サブリンクなし。
+- **検証**：`check_content_loss.py` EXIT 0（対象5ページの本文書き換えWARNは指定表記置換の真陽性・消失なし）、`preflight.py` EXIT 0（新規WARNは同5ページの書き換え。ほかは0902バッチ監査済みEN従属面4件＋baseline 17件）、`check_photographer_link_integrity.py` EXIT 0。生成スクリプト・横断リンクスクリプト・ガード迂回は不使用。
+- **wall-time**：（Daisuke記入）
+
+## 2026-09-03 — 12名バッチ new（0902素材・1850年代の英仏写真／Opus監督・Codex実装）
+
+- **種別 / 範囲 / 分業**：new（純・新規追加）×12。idx 318–329（326を含む連番）、全員 era=1839・period=`1839–1860s`。素材=`re-photographer/0902/` のJA/EN各12・計24 HTML。Opusが事実・表記・リンク・国・不確実年を全判断し、Codexは機械適用と実測を担当。フェーズ分割で自主停止3回（うち監督判断が必要だった2回＝Nègre素材の既存href／Penllergare WordPress出典）を行い、いずれも監督判断後に再開。Codexの逸脱0、ガード迂回0。
+- **フェーズ実行 / パイロット確定規約**：Oscarパイロット→第1波5名→第2波6名で適用。監督確定specへ素材からAbstract、§SRC先頭2件、§REF先頭2件を機械抽出し、scaffold-injectでJAの本文4節・thesis・WORKS・REL・REF・SRCを標準leaf構造へ注入。素材の外枠・サイドバー・節マーカーは不採用。ENは正本JSONへ追加し、全slugを限定dry-run（SKIPPED 0）後に生成した。パイロットでJA title=`｜` / EN title=` | `、標準4節、entry-metaのCountryだけリンク形、hero / side-metaはプレーン、§RELは実在ページだけリンク、AI開示は生成後に対象JA/ENへ注入、という規約を確定。第1波の実測値と検証結果は下表・全体検証へ統合した。
+- **spec / engine / 回帰ガード**：新規ジャンル語0、`GENRE_TAG`追加0。`scripts/build_archive_en.py` の `COUNTRY_TAG` に `スウェーデン: Sweden` を1行だけ追加。`scripts/generate_country_pages.py` の `FRANCE_EXPECTED_IDS` は36→38（Disdéri / Nègreを追加2、削除0、既存順序不変）。specは12本とも監督確定値＋素材からのAbstract・先頭2出典・先頭2外部リンクのみで構成。
+- **監督判断① title区切り**：JA `<title>` / og:title / twitter:title は全角 `｜`、ENはASCII ` | `。監督の全体実測（EN ASCII 375 / 全角1、JA 全角334 / ASCII26）を受け、パイロットOscarのEN 3項目をASCIIへ是正してslug限定再生成。最終12名はJA全角24個・ASCII 0、EN全角0・ASCII 24個。
+- **監督判断② Country**：Robertson（素材=英国 / オスマン帝国）、Llewelyn（ウェールズ / 英国）、Tripe（英国 / インド）は国籍に従いUnited Kingdom単国へ寄せた。Rejlanderだけは実在するSweden / United Kingdom両ページへ掲載し、entry-metaのCountryを二重リンク、hero / side-metaはプレーン表示。
+- **監督判断③ years / JSON-LD**：Bedford `1815/16–1894`、Robertson `1813/14–1888`、England `c.1830–1896` は不確実なため、Personの`birthDate` / `deathDate`を片方だけにせず両方省略。Robertson素材の`1813/1814`→`1813/14`はサイト表記への正規化で、単一年は推測していない。他9名は両キーあり。
+- **監督判断④⑤ §REL表記と既存href**：表記是正3件＝「ジョン・ジェイビズ・エドウィン・メイオール」「ギュスターヴ・ル・グレー」「テレザ・ディルウィン・ルウェリン」（最後は本文・Abstract・カード・星データも統一）。素材に既存hrefがあり監督確定値と完全一致する場合はhrefを保持して表示だけ是正し、食い違いなら停止、裸テキストへリンク指定なら付与、「裸のまま」指定にhrefがあれば停止、という常設判断を適用。Nègre→Le Grayは既存`/photographers/legray.html`を保持した。
+- §REL の表記是正を本文にも反映（negre 1箇所 / llewelyn 4箇所）。同じ表記ゆれを持つ既存6ページは今回のバッチと無関係のため対象外。
+- **監督判断⑥ Penllergare出典**：Llewelynの出典*19 `penllergare.wordpress.com` はそのまま維持。`PROHIBITED_SOURCE_DOMAINS`ではWARN止まりで非ブロッキング、同種の既存ページが複数あり、Penllergare Trustという主題に直結する実在団体の公式サイトであるため。代替URLは推測せず、警告抑制辞書も変更していない。
+- **監督判断⑦ 逆向き§REL**：今回の新規12名が原因のpreflight WARNを全件走査し、1件を是正。`photographers/henri-le-secq.html` の「シャルル・ネグル」へ`/photographers/charles-negre.html`を付与し、EN正本`henri-le-secq.html`にも`/en/photographers/charles-negre.html`と素材由来注釈を追加してslug限定再生成（SKIPPED 0・削除0）。加えてバッチ内後追いとしてOscarの「ウィリアム・レイク・プライス」をJA/EN正本でリンク化。最終preflightの逆向き張り忘れWARNは0。
+- **フィデリティ実測（JA：本文字数 / unique出典 / sup-ref / dangling / §REL / works）**：
+
+  | slug | 本文字数 | 出典 | sup-ref | dangling | §REL | works |
+  |---|---:|---:|---:|---:|---:|---:|
+  | oscar-rejlander | 3,673 | 24 | 29 | 0 | 3 | 3 |
+  | andre-adolphe-eugene-disderi | 4,452 | 28 | 32 | 0 | 3 | 3 |
+  | benjamin-brecknell-turner | 4,552 | 21 | 26 | 0 | 3 | 3 |
+  | charles-negre | 4,720 | 29 | 32 | 0 | 3 | 3 |
+  | francis-bedford | 4,668 | 22 | 31 | 0 | 3 | 3 |
+  | james-robertson | 4,530 | 27 | 30 | 0 | 3 | 3 |
+  | john-dillwyn-llewelyn | 4,486 | 24 | 30 | 0 | 3 | 3 |
+  | linnaeus-tripe | 4,389 | 27 | 32 | 0 | 3 | 3 |
+  | martin-laroche | 4,592 | 24 | 30 | 0 | 3 | 3 |
+  | philip-henry-delamotte | 5,310 | 29 | 33 | 0 | 3 | 3 |
+  | william-england | 5,074 | 27 | 35 | 0 | 3 | 3 |
+  | william-lake-price | 4,801 | 24 | 29 | 0 | 3 | 3 |
+  | **計** | **55,247** | **306** | **369** | **0** | **36** | **36** |
+
+- **正本 / 配列 / sitemap**：EN正本`pages`はフェーズごとに330→331→336→342、追加12キー、削除0、既存変更は承認済み逆向きリンクの`henri-le-secq.html`だけ、`_meta`不変。`card-data.json`はphotographers 317→329、id重複0・idx重複0、306–329は欠番0。星map `PHOTOGRAPHERS` は72→84、12名全員あり・重複0。`sitemap.xml` / `sitemap-full.xml` は806→830 URLでbyte一致、loc削除0・追加24（新規JA/ENリーフ）、残りはlastmod更新のみ、`-backup` / `.claude/worktrees/`混入0。
+- **サーフェス**：公開HTML 40面＝新規JA/ENリーフ24、archive 3、era 1839 JA/EN 2、country France / Sweden / United KingdomのJA/EN 6、index JA/EN 2、gitignore下new-design archive 1、逆向きリンクのHenri Le Secq JA/EN 2。別途sitemap 2面。最終順序は`build_archive_en.py`→`generate_country_pages_en.py --country france --country sweden --country united-kingdom`→`build_taxonomy_en.py --era 1839`。EN従属5面は再生成前後SHA-256完全一致で、preflightの直接編集疑いがヒューリスティックの誤検知であることを実証。`sync_card_counts.py --check`は329 photographers / 35 movements / 364 totalでOK。
+- **構造 / ラベル**：全24新規リーフでAI開示各1、JA `/colophon` 12/12、EN `/en/colophon` 12/12、検索runtime解決24/24・未解決JSリテラル0、div / section開閉一致、`prep-block`要素0、§RELリンク切れ0。英語の機関名・作品名ラベルへのカタカナ人名混入0、是正0。0901からの積み残しだった`.prep-block` CSSとAI開示配線は2026-09-02のengine修正で既に解消済みで、今回も新scaffoldにCSS 1、render後AI開示1を確認したため再掲する未了事項なし。
+- **検証**：12名の`check_new_photographer.py`は全件EXIT 0（既知`body_links_scarce` / `en_graph_absent`のみ）。`check_en_entry.py`は全件EXIT 0（LlewelynのWordPress出典WARN 1は上記承認済み）。全EN builder通常dry-runはSKIPPED 0。`check_photographer_link_integrity.py` EXIT 0、`check_content_loss.py` EXIT 0、`preflight.py` EXIT 0、`git diff --check` EXIT 0。preflightはbaseline 17件（stale intentional-replacement 16＋カードtag非前方一致1）から増分4件＝EN country France / Sweden / United KingdomとEN era 1839の直接編集疑いのみで、上記SHA冪等性により4件とも誤検知と判定。逆向き張り忘れWARNは是正前1→最終0。禁止面（movements / en/movements / styles / robots.txt / CNAME / run-log以外のdocs）差分0、対象外写真家は承認済みHenri Le Secqの§REL 1項目だけ。素材24ファイルのSHA-256は作業前後完全一致。
+- **手作業ボトルネック**：素材の本文・thesis・WORKS・REL・REF・SRCを標準leaf構造へ移植し、監督確定表と§RELの既存href・裸テキストを1項目ずつ照合する工程。engine改良の追加発火0。
+- **wall-time**：**1時間18分**（Daisuke実測。0901バッチ12名と同規模・同素材シリーズ。掃除タスク〈ル・グレー統一ほか〉の時間は含まない）
 
 ## 2026-09-02 — 12名バッチ new（0901素材・19世紀初期写真／Opus監督・Codex実装）
 

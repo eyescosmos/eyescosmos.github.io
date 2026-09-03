@@ -489,6 +489,7 @@ FRANCE_EXPECTED_IDS = [
     "daguerre", "nadar", "legray", "nicephore-niepce",
     "antoine-claudet", "bisson-freres", "henri-le-secq",
     "hippolyte-bayard", "louis-desire-blanquart-evrard", "maxime-du-camp",
+    "andre-adolphe-eugene-disderi", "charles-negre",
     "marey", "marville", "demachy", "eugene-atget",
     "jacques-henri-lartigue", "paul-geniaux", "louis-vaire", "manray",
     "cartierbresson", "brassai", "robert-doisneau", "francois-kollar",

@@ -85,6 +85,7 @@ COUNTRY_CODE = {
 COUNTRY_TAG = {
     'アメリカ': 'United States', 'イギリス': 'United Kingdom', 'フランス': 'France',
     'スペイン': 'Spain',
+    'スウェーデン': 'Sweden',
     'ドイツ': 'Germany', '日本': 'Japan', 'イタリア': 'Italy', 'オランダ': 'Netherlands',
     'オーストリア': 'Austria', 'カナダ': 'Canada', 'スイス': 'Switzerland',
     'ロシア': 'Russia', 'ブラジル': 'Brazil', 'ハンガリー': 'Hungary',

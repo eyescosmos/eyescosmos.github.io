@@ -5971,3 +5971,493 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "oscar-rejlander",
+  "name": "Oscar Rejlander",
+  "nameJa": "オスカー・レイランダー",
+  "nationality": "SE / GB",
+  "flag": "🇸🇪",
+  "years": "1813–1875",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "演出写真",
+    "組合せ印画",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "NGA — Oscar Gustaf Rejlander",
+      "url": "https://www.nga.gov/artists/13394-oscar-gustaf-rejlander"
+    },
+    {
+      "label": "NGA — Ariadne",
+      "url": "https://www.nga.gov/artworks/137736-ariadne"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "オスカー・レイランダーは、1850年代から1870年代に英国で活動したスウェーデン生まれの写真家。《The Two Ways of Life》では30点以上のネガを一枚へ焼き合わせ、歴史画規模の寓意を写真で構成した。肖像、子どもの身振り、チャールズ・ダーウィン『人及び動物の表情について』の写真も制作し、演出・合成によって作られた像が芸術では物語、科学では観察資料として働くという、写真の「事実らしさ」の複雑さを早い時期に示した *1 *2 。",
+    "textEn": "Oscar Rejlander was a Swedish-born photographer active in Britain from the 1850s through the 1870s. In The Two Ways of Life, he combined more than thirty negatives into a single print to construct a photographic allegory on the scale of history painting. He also made portraits, studies of children’s gestures, and photographs for Charles Darwin’s The Expression of the Emotions in Man and Animals. His work exposed an early tension in photography’s claim to factual truth: images created through staging and combination could function as narrative in art and as comparative evidence in science *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Getty — Oscar Rejlander: Artist Photographer",
+        "url": "https://www.getty.edu/art/exhibitions/rejlander/"
+      },
+      {
+        "num": 2,
+        "name": "Getty — Exhibition record",
+        "url": "https://www.getty.edu/art/collection/exhibition/103QAQ"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "andre-adolphe-eugene-disderi",
+  "name": "André-Adolphe-Eugène Disdéri",
+  "nameJa": "アンドレ・アドルフ・ディスデリ",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1819–1889",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "肖像写真",
+    "カルト・ド・ヴィジット",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1850年代半ばから1860年代の第二帝政期フランスで、カルト・ド・ヴィジット肖像を巨大な市場へ育てた写真家。四眼カメラと可動式ホルダーで一枚の湿板原板に複数ポーズを記録し、鶏卵紙をカード寸法に裁断して販売した。ナポレオン3世、ヴェルディ、市民の全身像、未裁断シート、家庭アルバムを手掛かりに、肖像写真が一回限りの注文品から、複数枚を交換・収集する大衆メディアへ変わった過程をたどる。 *1 *2 。",
+    "textEn": "Active in France from the mid-1850s through the 1860s, during the Second Empire, André-Adolphe-Eugène Disdéri helped turn the carte-de-visite portrait into a vast commercial market. Using a four-lens camera and a movable plate holder, he recorded multiple poses on a single wet-collodion glass negative, then printed them on albumen paper and cut the sheet into card-sized portraits. Photographs of Napoleon III, Verdi, and ordinary sitters, together with uncut sheets and family albums, show how portrait photography moved from a one-time commission toward a mass medium whose images could be purchased in multiples, exchanged, and collected. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Princeton University — A. A. E. Disdéri and the Carte de Visite Portrait Photograph",
+        "url": "https://artandarchaeology.princeton.edu/research/faculty-bookshelf/e-disderi-and-carte-de-visite-portrait-photograph"
+      },
+      {
+        "num": 2,
+        "name": "Bibliothèque nationale de France — Le portrait carte-de-visite / ressources Les Nadar",
+        "url": "https://classes.bnf.fr/les-nadar/ressources2.htm"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "benjamin-brecknell-turner",
+  "name": "Benjamin Brecknell Turner",
+  "nameJa": "ベンジャミン・ブレックネル・ターナー",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1815–1894",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "風景写真",
+    "カロタイプ",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "NGA - Benjamin Brecknell Turner Collection",
+      "url": "https://www.nga.gov/research/library/image-collections/photographs-artists"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "ベンジャミン・ブレックネル・ターナーは、1849年に写真を始め、1850年代を中心に活動した英国のアマチュア写真家。ロンドンで蝋燭・石鹸の家業を営む一方、カロタイプの紙ネガで田園、古木、修道院跡、クリスタル・パレスを撮り、『Photographic Views from Nature』に編集した。新しいガラス湿板が普及する時代に紙ネガを選んだ理由と、近代建築から田園へ進むアルバムの構成を通して、産業化期の英国で何を残すべき風景として見たのかを考える。 *1 *2 。",
+    "textEn": "Benjamin Brecknell Turner was a British amateur photographer who began working with photography in 1849 and was most active in the 1850s. While running his family candle and soap business in London, he used calotype paper negatives to photograph rural landscapes, old trees, ruined abbeys, and the Crystal Palace, then assembled them in Photographic Views from Nature. His continued use of paper negatives as the new wet-collodion glass process spread, and the album’s progression from modern architecture into the countryside, reveal what he chose to preserve as a British landscape during a period of rapid industrialization. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "V&A — Benjamin Brecknell Turner",
+        "url": "https://www.vam.ac.uk/collections/benjamin-brecknell-turner"
+      },
+      {
+        "num": 2,
+        "name": "The Met — Rural England through a Victorian Lens",
+        "url": "https://www.metmuseum.org/exhibitions/listings/2002/benjamin-brecknell-turner"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "charles-negre",
+  "name": "Charles Nègre",
+  "nameJa": "シャルル・ネグル",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1820–1880",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "カロタイプ",
+    "写真製版",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1840年代末から1850年代のフランスで、絵画、紙ネガ写真、写真製版を往復した写真家・版画家。パリの《The Chimney Sweeps》、南フランスとシャルトルの建築、ヴァンセンヌ帝国療養所を撮り、さらに写真像をインクで刷るヘリオグラヴュールを改良した。動く市民を短い露光で捉えることと、建築の細部を退色しにくい印刷版へ残すことを同じ制作の問題として扱った点から、初期写真の「瞬間」と「複製」を読み直す。 *1 *2 。",
+    "textEn": "Active in France from the late 1840s through the 1850s, Charles Nègre moved among painting, paper-negative photography, and photomechanical printing. He photographed <i>The Chimney Sweeps</i> in Paris, architecture in southern France and Chartres, and the Imperial Asylum at Vincennes, while also refining heliogravure techniques for printing photographic images in ink. His work connects two problems of early photography: how to register moving figures with short exposures and how to preserve architectural detail in durable printed form. Through that connection, the “instant” and the “reproduction” emerge as related concerns rather than separate histories. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "The Metropolitan Museum of Art — Spartan Soldier",
+        "url": "https://www.metmuseum.org/art/collection/search/283133"
+      },
+      {
+        "num": 2,
+        "name": "J. Paul Getty Museum — Charles Nègre",
+        "url": "https://www.getty.edu/art/collection/person/103KG7"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "francis-bedford",
+  "name": "Francis Bedford",
+  "nameJa": "フランシス・ベッドフォード",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1815/16–1894",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "建築写真",
+    "旅写真",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Royal Collection - Beaufort Castle, Lebanon",
+      "url": "https://www.rct.uk/collection/2700953/belfort-castle-beaufort-castle-lebanon"
+    },
+    {
+      "label": "Rijksmuseum Research Library - Cairo to Constantinople",
+      "url": "https://www.rijksmuseum.nl/en/collection/publication/Cairo-to-Constantinople-Francis-Bedfords-photographs-of-the-Middle-East--b7818bcd22cd623f66fa08d0d881eecc"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "フランシス・ベッドフォードは、1850年代から1870年代を中心に活動した英国の建築・旅行写真家。建築製図とリトグラフの経験を湿板写真へ生かし、英国の聖堂や風景を出版したほか、1862年には皇太子の中東巡幸へ公式写真家として同行した。200点を超えるネガを撮影し、日付・地名・番号を伴う系列を展覧会、王室アルバム、市販写真へ展開した。その仕事から、旅行写真が場所を記録するだけでなく、王室の旅程、聖書・古典の知識、出版市場によって「どこを見るべきか」を組織した仕組みを考える。 *1 *2 。",
+    "textEn": "Francis Bedford was a British architectural and travel photographer active chiefly from the 1850s through the 1870s. He brought experience in architectural drawing and lithography to wet-plate photography, publishing photographs of British cathedrals and landscapes and, in 1862, accompanying the Prince of Wales on a tour of the Middle East as official photographer. He made more than two hundred negatives and used the dated, numbered, place-specific series across exhibitions, royal albums, and photographs for sale. His work shows how travel photography could do more than record places: the royal itinerary, biblical and classical knowledge, and the publishing market helped organize which sites became worth seeing for British audiences. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Royal Collection Trust — Cairo to Constantinople",
+        "url": "https://www.rct.uk/collection/publications/cairo-to-constantinople"
+      },
+      {
+        "num": 2,
+        "name": "National Galleries of Scotland — Francis Bedford",
+        "url": "https://www.nationalgalleries.org/art-and-artists/artists/francis-bedford"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "james-robertson",
+  "name": "James Robertson",
+  "nameJa": "ジェームズ・ロバートソン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1813/14–1888",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "戦争写真",
+    "旅写真",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1850年代にコンスタンティノープルを拠点とし、オスマン帝国造幣局の彫版師から写真家へ進んだジェームズ・ロバートソン。1853–54年のアテネ古代遺跡、イスタンブール、1855–56年、クリミア戦争末期から講和前後のセヴァストポリを撮影し、フェリーチェ・ベアトとの共同名義でも活動した。砲台、港、城壁、廃墟を広い画面で追う写真から、初期戦争写真が戦闘の瞬間より「戦争が地形と都市へ残したもの」をどう記録したかを考える。 *1 *2 。",
+    "textEn": "Based in Constantinople in the 1850s, James Robertson moved from engraving at the Ottoman Imperial Mint into photography. He photographed ancient sites in Athens in 1853–54, Istanbul, and Sevastopol from the final phase of the Crimean War through the period around the peace settlement in 1855–56, and he also worked under a joint credit with Felice Beato. His broad views of batteries, harbors, fortifications, and ruins show how early war photography often recorded what conflict left in the landscape and city more readily than the instant of battle itself. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "British Museum — James Robertson",
+        "url": "https://www.britishmuseum.org/collection/term/BIOG181281"
+      },
+      {
+        "num": 2,
+        "name": "Benaki Museum — Robertson James",
+        "url": "https://www.benaki.org/index.php?collectionId=49&id=97&lang=en&option=com_collections&view=creator"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "john-dillwyn-llewelyn",
+  "name": "John Dillwyn Llewelyn",
+  "nameJa": "ジョン・ディルウィン・ルウェリン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1810–1882",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "科学写真",
+    "カロタイプ",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "The Met - The Wigwam, a Canadian Scene at Penllergare",
+      "url": "https://www.metmuseum.org/en/art/collection/search/285667"
+    },
+    {
+      "label": "Museum Wales - Thereza Llewelyn photograph",
+      "url": "https://museum.wales/collections/online/object/fecd6f73-12d2-39ce-a2b9-b4e957d4a63d/Thereza-Llewelyn-photograph/"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "ジョン・ディルウィン・ルウェリンは、1840年代から1850年代を中心にウェールズのPenllergareで活動した初期写真家・科学者。土地を相続した地主として庭園、湖、温室、観測所を整え、タルボット家との親族関係や科学者との交流を背景に、家族、植物、海岸、波、船、月を撮影した。1856年には湿板を屋外で扱いやすくするオキシメル法を考案し、娘テレザらも撮影・印画・天文観測に参加した。写真技術が個人の発明だけでなく、資金、設備、家族の分業、地域の科学文化から成立したことを示す人物である。 *1 *2 。",
+    "textEn": "John Dillwyn Llewelyn was an early photographer and scientist active chiefly at Penllergare in Wales during the 1840s and 1850s. Having inherited the estate, he developed gardens, lakes, greenhouses, and an observatory at Penllergare and, through family ties to the Talbots and contact with scientists, photographed family members, plants, coastlines, waves, ships, and the moon. In 1856 he devised the oxymel process to make wet plates easier to use outdoors, while his daughter Thereza and other relatives took part in photographing, printing, and astronomical observation. His work shows that photographic technology emerged not from individual invention alone but from money, equipment, domestic division of labor, and regional scientific culture. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Museum Wales — John Dillwyn Llewelyn, Welsh Pioneer Photographer",
+        "url": "https://museum.wales/blog/972/John-Dillwyn-Llewelyn--Welsh-Pioneer-Photographer/"
+      },
+      {
+        "num": 2,
+        "name": "National Library of Wales — Early Swansea Photography",
+        "url": "https://www.library.wales/discover-learn/digital-exhibitions/photographs/early-swansea-photography"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "linnaeus-tripe",
+  "name": "Linnaeus Tripe",
+  "nameJa": "リンネウス・トライプ",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1822–1902",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "建築写真",
+    "植民地写真",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1854年から1860年にかけて、東インド会社軍の士官として南インドとビルマ（現ミャンマー）の寺院、宮殿、碑文、彫刻、都市景観を撮影したリンネウス・トライプ。1855年のビルマ使節団とMadras Presidencyの政府写真家として、蝋引き紙ネガを携行し、建築を複数方向から番号・キャプション付きで記録した。行政が求めた正確な情報と、雲や植生をネガへ描き足す手作業が同居する写真から、植民地調査における「客観的な記録」がどのように作られたかを考える。 *1 *2 。",
+    "textEn": "Between 1854 and 1860, Linnaeus Tripe, an officer in the East India Company army, photographed temples, palaces, inscriptions, sculpture, and urban views in southern India and Burma (now Myanmar). As photographer to the 1855 diplomatic mission to Burma and later Government Photographer to the Madras Presidency, he traveled with waxed-paper negatives and recorded buildings from multiple directions with numbered views and captions. His photographs combine the administrative demand for accurate information with handwork added directly to the negative, including clouds and vegetation. They show how an apparently “objective record” in colonial survey photography was constructed through institutions, materials, viewpoint, editing, and manual intervention. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "V&A — Linnaeus Tripe: life and work",
+        "url": "https://www.vam.ac.uk/articles/linnaeus-tripe-life-and-work"
+      },
+      {
+        "num": 2,
+        "name": "National Gallery of Art — Captain Linnaeus Tripe: Photographer of India and Burma, 1852–1862",
+        "url": "https://www.nga.gov/exhibitions/captain-linnaeus-tripe-photographer-india-and-burma-1852-1862"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "martin-laroche",
+  "name": "Martin Laroche",
+  "nameJa": "マーティン・ラローシュ",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1814–1886",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "肖像写真",
+    "湿板写真",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Cambridge University Press - Sally Barnden, Still Shakespeare and the Photography of Performance",
+      "url": "https://www.cambridge.org/core/books/still-shakespeare-and-the-photography-of-performance/59266CF362E510B49C175EADA45C3F95"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "マーティン・ラローシュは、本名William Henry Silvesterで、1840年代末から1860年代にロンドンを中心に活動した職業写真家。ダゲレオタイプ肖像館を営み、1854年のTalbot v. Laroche裁判で湿板コロジオン使用をめぐってタルボットと争った。チャールズ・キーンの《Richard II》《King Lear》などの舞台を再構成した写真も残り、初期写真を発明史だけでなく、営業写真館、特許、複製可能な俳優像の市場から考えるための人物である。 *1 *2 。",
+    "textEn": "Martin Laroche, born William Henry Silvester, was a professional photographer active mainly in London from the late 1840s through the 1860s. He ran a daguerreotype portrait studio and contested Talbot’s claim over the use of wet-plate collodion in the 1854 case Talbot v. Laroche. He also made reconstructed theatrical photographs of Charles Kean’s productions, including Richard II and King Lear. His career allows early photography to be understood through commercial studios, patents, and the market for reproducible images of actors as well as through histories of invention. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "National Portrait Gallery — Martin Laroche",
+        "url": "https://www.npg.org.uk/collections/search/person/mp15217/martin-laroche-william-henry-silvester"
+      },
+      {
+        "num": 2,
+        "name": "R. Derek Wood — The Calotype Patent Lawsuit of Talbot v. Laroche",
+        "url": "https://midley.co.uk/laroche/talbotvlaroche.html"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "philip-henry-delamotte",
+  "name": "Philip Henry Delamotte",
+  "nameJa": "フィリップ・ヘンリー・デラモット",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1821–1889",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "建築写真",
+    "建設記録",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1852年から1855年を中心に、ロンドン万国博覧会のクリスタル・パレスがハイド・パークからシドナムへ移築・再建される工程を連続撮影した英国の写真家。柱の設置、梁と足場、蒸気機関、作業員、歴史展示の搬入、開館式までを追い、『Photographic Views of the Progress of the Crystal Palace, Sydenham』に160点を収録した。1850年代の建築写真が完成建物だけでなく、建設の時間と産業労働を記録する媒体へ広がった過程を示す。 *1 *2 。",
+    "textEn": "Working primarily from 1852 to 1855, Philip Henry Delamotte photographed the Crystal Palace as it was dismantled after the Great Exhibition in Hyde Park and reconstructed at Sydenham. He followed the installation of columns, beams and scaffolding, steam machinery, construction workers, the arrival of historical displays, and the opening ceremony, assembling 160 photographs in Photographic Views of the Progress of the Crystal Palace, Sydenham. His series shows architectural photography in the 1850s expanding beyond finished buildings to record construction time, industrial labor, and the stages through which a modern structure came into being. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "The Metropolitan Museum of Art — The Upper Gallery",
+        "url": "https://www.metmuseum.org/art/collection/search/269621"
+      },
+      {
+        "num": 2,
+        "name": "Historic England — Philip Henry Delamotte Archive Collection",
+        "url": "https://historicengland.org.uk/images-books/photos/collection/DLM01"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "william-england",
+  "name": "William England",
+  "nameJa": "ウィリアム・イングランド",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "c.1830–1896",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "旅写真",
+    "ステレオ写真",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1854年頃から1880年代まで活動し、北米、パリ、アルプス、イタリア、1862年ロンドン国際博覧会をステレオ写真として大量に出版した英国の写真家。London Stereoscopic Companyの撮影者として出発し、独立後は旅行シリーズを自ら販売した。左右一対の像をビューアで重ねると生じる奥行きを前提に、橋、山道、列柱、滝を手前から遠景へ配置した画面から、写真と観光と出版が同じ時期に大衆化した仕組みを読む。 *1 *2 。",
+    "textEn": "Active from about 1854 through the 1880s, William England was a British photographer who published stereoscopic views of North America, Paris, the Alps, Italy, and the 1862 International Exhibition in London on a large scale. He began as a photographer for the London Stereoscopic Company and later sold travel series under his own name. His compositions place bridges, mountain paths, colonnades, and waterfalls at carefully staged distances from foreground to background, anticipating the depth produced when the paired images are fused in a stereoscope. His work shows how photography, tourism, and publishing expanded together in the mid-nineteenth century. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Universität Hamburg — Ferne Länder in 3-D: Die stereoskopische Reisefotografie von William England",
+        "url": "https://ediss.sub.uni-hamburg.de/handle/ediss/7214"
+      },
+      {
+        "num": 2,
+        "name": "London Stereoscopic Company — William England: Much Esteemed, Mostly Forgotten",
+        "url": "https://www.londonstereo.com/william-england1.html"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "william-lake-price",
+  "name": "William Lake Price",
+  "nameJa": "ウィリアム・レイク・プライス",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1810–1896",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "演出写真",
+    "組合せ印画",
+    "初期写真"
+  ],
+  "thumbnail": "",
+  "links": [
+    {
+      "label": "Getty - Roger Fenton catalogue",
+      "url": "https://www.getty.edu/publications/resources/virtuallibrary/0892363673.pdf"
+    },
+    {
+      "label": "University of Michigan - Emily Talbot, The Photographic Effect",
+      "url": "https://deepblue.lib.umich.edu/items/e77e0cd2-3164-4f76-84c1-b48fb7b4875e"
+    }
+  ],
+  "amazon": "",
+  "context": {
+    "text": "ウィリアム・レイク・プライスは、1850年代から1860年代初頭に写真家・著述家として活動した英国の水彩画家出身の写真家。建築画の訓練を背景に、《Don Quixote in His Study》など文学や歴史を演じ直すタブロー、芸術家肖像、ロンドン都市景観、美術複製と写真製版を手がけた。撮影前の演技と構図、撮影後の印刷・出版までを制作工程として捉え、写真に「構図」をどう導入するかを実作と文章の双方で論じた人物である。 *1 *2 。",
+    "textEn": "William Lake Price was a British photographer and writer, trained as a watercolorist, who worked in photography from the 1850s into the early 1860s. Drawing on his background in architectural drawing, he made tableaux that reenacted literary and historical subjects, including Don Quixote in His Study, as well as artists’ portraits, London views, art reproductions, and photomechanical prints. Through both photographs and writing, he treated performance and composition before exposure, and printing and publication afterward, as parts of a single production process, making photographic composition an explicit problem to be solved. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Getty ULAN — William Henry Lake Price",
+        "url": "https://www.getty.edu/vow/ULANFullDisplay?find=&nation=Finnish&role=&subjectid=500022807"
+      },
+      {
+        "num": 2,
+        "name": "Harry Ransom Center — Lake Price Album",
+        "url": "https://research.hrc.utexas.edu/photopublic/fullDisplay.cfm?CollID=16482"
+      }
+    ]
+  }
+}
+);

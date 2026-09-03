@@ -6396,6 +6396,258 @@
       "style": "pc-top--title",
       "artText": "RB",
       "hintText": "RICHARD BEARD · 1801–1885"
+    },
+    {
+      "type": "photographer",
+      "id": "oscar-rejlander",
+      "href": "photographers/oscar-rejlander.html",
+      "idx": 326,
+      "nameJa": "オスカー・レイランダー",
+      "nameEn": "Oscar Rejlander",
+      "metaJa": "スウェーデン / イギリス · 1813–1875 · 1839–1860s",
+      "era": "1839",
+      "nationality": "SE / GB",
+      "ledeJa": "オスカー・レイランダーは、1850年代から1870年代に英国で活動したスウェーデン生まれの写真家。《The Two Ways of Life》では30点以上のネガを一枚へ焼き合わせ、歴史画規模の寓意を写真で構成した。肖像、子どもの身振り、チャールズ・ダーウィン『人及び動物の表情について』の写真も制作し、演出・合成によって作られた像が芸術では物語、科学では観察資料として働くという、写真の「事実らしさ」の複雑さを早い時期に示した。",
+      "channel": "写真史の論点 · 演出写真",
+      "tags": [
+        "演出写真",
+        "肖像写真",
+        "スウェーデン / イギリス"
+      ],
+      "style": "pc-top--slash",
+      "artText": "OR",
+      "hintText": "OSCAR REJLANDER · 1813–1875"
+    },
+    {
+      "type": "photographer",
+      "id": "andre-adolphe-eugene-disderi",
+      "href": "photographers/andre-adolphe-eugene-disderi.html",
+      "idx": 318,
+      "nameJa": "アンドレ・アドルフ・ディスデリ",
+      "nameEn": "André-Adolphe-Eugène Disdéri",
+      "metaJa": "フランス · 1819–1889 · 1839–1860s",
+      "era": "1839",
+      "nationality": "FR",
+      "ledeJa": "1850年代半ばから1860年代の第二帝政期フランスで、カルト・ド・ヴィジット肖像を巨大な市場へ育てた写真家。四眼カメラと可動式ホルダーで一枚の湿板原板に複数ポーズを記録し、鶏卵紙をカード寸法に裁断して販売した。ナポレオン3世、ヴェルディ、市民の全身像、未裁断シート、家庭アルバムを手掛かりに、肖像写真が一回限りの注文品から、複数枚を交換・収集する大衆メディアへ変わった過程をたどる。",
+      "channel": "写真史の論点 · 肖像写真",
+      "tags": [
+        "肖像写真",
+        "発明・技術",
+        "フランス"
+      ],
+      "style": "pc-top--grid",
+      "artText": "AD",
+      "hintText": "ANDRÉ-ADOLPHE-EUGÈNE DISDÉRI · 1819–1889"
+    },
+    {
+      "type": "photographer",
+      "id": "benjamin-brecknell-turner",
+      "href": "photographers/benjamin-brecknell-turner.html",
+      "idx": 319,
+      "nameJa": "ベンジャミン・ブレックネル・ターナー",
+      "nameEn": "Benjamin Brecknell Turner",
+      "metaJa": "イギリス · 1815–1894 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "ベンジャミン・ブレックネル・ターナーは、1849年に写真を始め、1850年代を中心に活動した英国のアマチュア写真家。ロンドンで蝋燭・石鹸の家業を営む一方、カロタイプの紙ネガで田園、古木、修道院跡、クリスタル・パレスを撮り、『Photographic Views from Nature』に編集した。新しいガラス湿板が普及する時代に紙ネガを選んだ理由と、近代建築から田園へ進むアルバムの構成を通して、産業化期の英国で何を残すべき風景として見たのかを考える。",
+      "channel": "写真史の論点 · 風景写真",
+      "tags": [
+        "風景写真",
+        "カロタイプ",
+        "イギリス"
+      ],
+      "style": "pc-top--initials",
+      "artText": "BBT",
+      "hintText": "BENJAMIN BRECKNELL TURNER · 1815–1894"
+    },
+    {
+      "type": "photographer",
+      "id": "charles-negre",
+      "href": "photographers/charles-negre.html",
+      "idx": 320,
+      "nameJa": "シャルル・ネグル",
+      "nameEn": "Charles Nègre",
+      "metaJa": "フランス · 1820–1880 · 1839–1860s",
+      "era": "1839",
+      "nationality": "FR",
+      "ledeJa": "1840年代末から1850年代のフランスで、絵画、紙ネガ写真、写真製版を往復した写真家・版画家。パリの《The Chimney Sweeps》、南フランスとシャルトルの建築、ヴァンセンヌ帝国療養所を撮り、さらに写真像をインクで刷るヘリオグラヴュールを改良した。動く市民を短い露光で捉えることと、建築の細部を退色しにくい印刷版へ残すことを同じ制作の問題として扱った点から、初期写真の「瞬間」と「複製」を読み直す。",
+      "channel": "写真史の論点 · カロタイプ",
+      "tags": [
+        "カロタイプ",
+        "建築写真",
+        "フランス"
+      ],
+      "style": "pc-top--slash",
+      "artText": "CN",
+      "hintText": "CHARLES NÈGRE · 1820–1880"
+    },
+    {
+      "type": "photographer",
+      "id": "francis-bedford",
+      "href": "photographers/francis-bedford.html",
+      "idx": 321,
+      "nameJa": "フランシス・ベッドフォード",
+      "nameEn": "Francis Bedford",
+      "metaJa": "イギリス · 1815/16–1894 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "フランシス・ベッドフォードは、1850年代から1870年代を中心に活動した英国の建築・旅行写真家。建築製図とリトグラフの経験を湿板写真へ生かし、英国の聖堂や風景を出版したほか、1862年には皇太子の中東巡幸へ公式写真家として同行した。200点を超えるネガを撮影し、日付・地名・番号を伴う系列を展覧会、王室アルバム、市販写真へ展開した。その仕事から、旅行写真が場所を記録するだけでなく、王室の旅程、聖書・古典の知識、出版市場によって「どこを見るべきか」を組織した仕組みを考える。",
+      "channel": "写真史の論点 · 建築写真",
+      "tags": [
+        "建築写真",
+        "旅写真",
+        "イギリス"
+      ],
+      "style": "pc-top--stacked",
+      "artText": "FB",
+      "hintText": "FRANCIS BEDFORD · 1815/16–1894"
+    },
+    {
+      "type": "photographer",
+      "id": "james-robertson",
+      "href": "photographers/james-robertson.html",
+      "idx": 322,
+      "nameJa": "ジェームズ・ロバートソン",
+      "nameEn": "James Robertson",
+      "metaJa": "イギリス · 1813/14–1888 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "1850年代にコンスタンティノープルを拠点とし、オスマン帝国造幣局の彫版師から写真家へ進んだジェームズ・ロバートソン。1853–54年のアテネ古代遺跡、イスタンブール、1855–56年、クリミア戦争末期から講和前後のセヴァストポリを撮影し、フェリーチェ・ベアトとの共同名義でも活動した。砲台、港、城壁、廃墟を広い画面で追う写真から、初期戦争写真が戦闘の瞬間より「戦争が地形と都市へ残したもの」をどう記録したかを考える。",
+      "channel": "写真史の論点 · 戦争写真",
+      "tags": [
+        "戦争写真",
+        "旅写真",
+        "イギリス"
+      ],
+      "style": "pc-top--number",
+      "artText": "JR",
+      "hintText": "JAMES ROBERTSON · 1813/14–1888"
+    },
+    {
+      "type": "photographer",
+      "id": "john-dillwyn-llewelyn",
+      "href": "photographers/john-dillwyn-llewelyn.html",
+      "idx": 323,
+      "nameJa": "ジョン・ディルウィン・ルウェリン",
+      "nameEn": "John Dillwyn Llewelyn",
+      "metaJa": "イギリス · 1810–1882 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "ジョン・ディルウィン・ルウェリンは、1840年代から1850年代を中心にウェールズのPenllergareで活動した初期写真家・科学者。土地を相続した地主として庭園、湖、温室、観測所を整え、タルボット家との親族関係や科学者との交流を背景に、家族、植物、海岸、波、船、月を撮影した。1856年には湿板を屋外で扱いやすくするオキシメル法を考案し、娘テレザらも撮影・印画・天文観測に参加した。写真技術が個人の発明だけでなく、資金、設備、家族の分業、地域の科学文化から成立したことを示す人物である。",
+      "channel": "写真史の論点 · 科学写真",
+      "tags": [
+        "科学写真",
+        "カロタイプ",
+        "イギリス"
+      ],
+      "style": "pc-top--title",
+      "artText": "JDL",
+      "hintText": "JOHN DILLWYN LLEWELYN · 1810–1882"
+    },
+    {
+      "type": "photographer",
+      "id": "linnaeus-tripe",
+      "href": "photographers/linnaeus-tripe.html",
+      "idx": 324,
+      "nameJa": "リンネウス・トライプ",
+      "nameEn": "Linnaeus Tripe",
+      "metaJa": "イギリス · 1822–1902 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "1854年から1860年にかけて、東インド会社軍の士官として南インドとビルマ（現ミャンマー）の寺院、宮殿、碑文、彫刻、都市景観を撮影したリンネウス・トライプ。1855年のビルマ使節団とMadras Presidencyの政府写真家として、蝋引き紙ネガを携行し、建築を複数方向から番号・キャプション付きで記録した。行政が求めた正確な情報と、雲や植生をネガへ描き足す手作業が同居する写真から、植民地調査における「客観的な記録」がどのように作られたかを考える。",
+      "channel": "写真史の論点 · 建築写真",
+      "tags": [
+        "建築写真",
+        "植民地写真",
+        "イギリス"
+      ],
+      "style": "pc-top--grid",
+      "artText": "LT",
+      "hintText": "LINNAEUS TRIPE · 1822–1902"
+    },
+    {
+      "type": "photographer",
+      "id": "martin-laroche",
+      "href": "photographers/martin-laroche.html",
+      "idx": 325,
+      "nameJa": "マーティン・ラローシュ",
+      "nameEn": "Martin Laroche",
+      "metaJa": "イギリス · 1814–1886 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "マーティン・ラローシュは、本名William Henry Silvesterで、1840年代末から1860年代にロンドンを中心に活動した職業写真家。ダゲレオタイプ肖像館を営み、1854年のTalbot v. Laroche裁判で湿板コロジオン使用をめぐってタルボットと争った。チャールズ・キーンの《Richard II》《King Lear》などの舞台を再構成した写真も残り、初期写真を発明史だけでなく、営業写真館、特許、複製可能な俳優像の市場から考えるための人物である。",
+      "channel": "写真史の論点 · 肖像写真",
+      "tags": [
+        "肖像写真",
+        "発明・技術",
+        "イギリス"
+      ],
+      "style": "pc-top--initials",
+      "artText": "ML",
+      "hintText": "MARTIN LAROCHE · 1814–1886"
+    },
+    {
+      "type": "photographer",
+      "id": "philip-henry-delamotte",
+      "href": "photographers/philip-henry-delamotte.html",
+      "idx": 327,
+      "nameJa": "フィリップ・ヘンリー・デラモット",
+      "nameEn": "Philip Henry Delamotte",
+      "metaJa": "イギリス · 1821–1889 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "1852年から1855年を中心に、ロンドン万国博覧会のクリスタル・パレスがハイド・パークからシドナムへ移築・再建される工程を連続撮影した英国の写真家。柱の設置、梁と足場、蒸気機関、作業員、歴史展示の搬入、開館式までを追い、『Photographic Views of the Progress of the Crystal Palace, Sydenham』に160点を収録した。1850年代の建築写真が完成建物だけでなく、建設の時間と産業労働を記録する媒体へ広がった過程を示す。",
+      "channel": "写真史の論点 · 建築写真",
+      "tags": [
+        "建築写真",
+        "都市記録",
+        "イギリス"
+      ],
+      "style": "pc-top--stacked",
+      "artText": "PHD",
+      "hintText": "PHILIP HENRY DELAMOTTE · 1821–1889"
+    },
+    {
+      "type": "photographer",
+      "id": "william-england",
+      "href": "photographers/william-england.html",
+      "idx": 328,
+      "nameJa": "ウィリアム・イングランド",
+      "nameEn": "William England",
+      "metaJa": "イギリス · c.1830–1896 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "1854年頃から1880年代まで活動し、北米、パリ、アルプス、イタリア、1862年ロンドン国際博覧会をステレオ写真として大量に出版した英国の写真家。London Stereoscopic Companyの撮影者として出発し、独立後は旅行シリーズを自ら販売した。左右一対の像をビューアで重ねると生じる奥行きを前提に、橋、山道、列柱、滝を手前から遠景へ配置した画面から、写真と観光と出版が同じ時期に大衆化した仕組みを読む。",
+      "channel": "写真史の論点 · 旅写真",
+      "tags": [
+        "旅写真",
+        "風景写真",
+        "イギリス"
+      ],
+      "style": "pc-top--number",
+      "artText": "WE",
+      "hintText": "WILLIAM ENGLAND · c.1830–1896"
+    },
+    {
+      "type": "photographer",
+      "id": "william-lake-price",
+      "href": "photographers/william-lake-price.html",
+      "idx": 329,
+      "nameJa": "ウィリアム・レイク・プライス",
+      "nameEn": "William Lake Price",
+      "metaJa": "イギリス · 1810–1896 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "ウィリアム・レイク・プライスは、1850年代から1860年代初頭に写真家・著述家として活動した英国の水彩画家出身の写真家。建築画の訓練を背景に、《Don Quixote in His Study》など文学や歴史を演じ直すタブロー、芸術家肖像、ロンドン都市景観、美術複製と写真製版を手がけた。撮影前の演技と構図、撮影後の印刷・出版までを制作工程として捉え、写真に「構図」をどう導入するかを実作と文章の双方で論じた人物である。",
+      "channel": "写真史の論点 · 演出写真",
+      "tags": [
+        "演出写真",
+        "肖像写真",
+        "イギリス"
+      ],
+      "style": "pc-top--title",
+      "artText": "WLP",
+      "hintText": "WILLIAM LAKE PRICE · 1810–1896"
     }
   ],
   "movements": [
