@@ -125,6 +125,26 @@
   既存写真家の本文・出典・リンク・カードの消失0（era 1890 は JA/EN とも 15→16枚で追加は Wellington のみ）。
 - **監督メモ**：Codex は残り11名の実装途中で ChatGPT 側の利用上限（〜2026-09-07）に達したため、
   最終の差分監査・§REL 検証・run-log 整備は監督（Opus）が実測で実施した。commit 未作成。
+- **【追補 2026-09-05】運動ページの反映漏れを是正**：バッチ完了後に Daisuke の指摘で全面を再実測したところ、
+  **運動ページだけ反映が抜けていた**（バッチ時に「movements は触らない」と監督が判断したが、これは誤り）。
+  実測＝`ピクトリアリズム` は掲載10 / tag保持12 で、未掲載2名が今回の `henry-peach-robinson` と
+  `james-booker-blakemore-wellington` **のみ**（他10名は全員掲載＝このページは「tagを持つ全員を載せる」規約）。
+  `社会ドキュメンタリー` は掲載13 / tag15 で `john-thomson` が未掲載。JA 2面へカードを追加し、
+  EN は `build_taxonomy_en.py --slug pictorialism --slug social-documentary` で再生成、`sync_card_counts.py` で
+  運動カードの「N photographers linked」を card-data / archive 3面へ同期（ピクトリアリズム10→12・社会ドキュメンタリー13→14）。
+  カード面7種（archive / cards-archive / en-archive / 年代JA・EN / 国別JA・EN）と星bin・supplement.js は
+  **バッチ時点で12名とも反映済み**だったことも実測で確認（欠落0・supplement.js と photographers.js の二重登録0）。
+- **踏んだ罠2件（追補時）**：①`cards-archive.html` からカードをコピーすると `data-search` / `data-era` /
+  `data-country` / `target="_blank"` が付いてくるが、運動ページのカードは `<article class="pc-card pc-card--photographer">`
+  の素の形（既存249枚すべて）。正規化してから挿入する。②**`build_taxonomy_en.py` は EN 運動ページの
+  カードlede を `en/archive.html` の汎用ledeで上書きする**。`en/movements/pictorialism.html` の `steichen` が持っていた
+  運動固有lede（"Steichen's starting point in Pictorialism was…"＝JA面の「スタイケンがピクトリアリズムに向かった出発点は…」の訳）が
+  再生成で汎用ledeへ置き換わって消えたため、HEAD から復元した。**運動ページを再生成したら、カード単位で
+  lede/tags/channel/name を HEAD と突き合わせること**（JA面の運動固有ledeは EN 側では再現されない）。
+  最終実測＝4面とも消えたカード0・既存カードの内容変更0・追加のみ。
+- **是正しなかった既存の未掲載3件**（今回のバッチ起因ではない・別判断）：`社会ドキュメンタリー` の `boris-mikhailov`、
+  `ドキュメンタリー` の `alec-soth`、`デュッセルドルフ派` の `thomas-struth`。
+  `コンセプチュアルアート` は掲載22 / tag105 で「tag＝掲載」ではない設計のため、機械的にそろえない。
 - **wall-time**：（Daisuke記入）。
 
 ## 2026-09-03 — preflight に `check_en_entry_point` を追加（種別=other・Opus監督/Codex実装）
