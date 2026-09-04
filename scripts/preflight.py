@@ -1917,6 +1917,103 @@ def _rel_unlinked_names(rel_path: str, html: str) -> list[str]:
     return hits
 
 
+def check_taxonomy_presence() -> None:
+    """card-data の全写真家が「年代ページ」「国別ページ」の JA/EN に載っているか（HARD）。
+
+    年代・国は必須サーフェス（Daisuke 決定 2026-09-05）。`add_photographer.py --apply-surfaces`
+    が自動反映するが、スコープ指定ミス・生成失敗・手作業での追加時に静かに抜けうる。
+    2026-09-04 の 0904 バッチでは運動ページが実際に抜けた（運動は必須ではないので本検査の対象外）。
+
+    判定:
+      - 年代 = `eras/<era>.html` と `en/eras/<era>.html`
+      - 国   = `data/country-pages.json` の各 config について codes ⊆ nationality なら、
+               その `countries/<slug>.html` と `en/countries/<slug>.html` に載っていること
+               （二重国籍は該当する全ページが対象）
+      - EN 面の href は `jp-漢字` id をそのまま使う規約があるため、id と
+        JA ページの hreflang="en" から引いた EN slug の**どちらか**で載っていれば可
+        （docs: reference_jp_kanji_id_en_shim_convention）
+
+    導入時 2026-09-05 の実測ベースライン = 4面すべて 0 件。
+    """
+    try:
+        card_data = json.loads((REPO / "card-data.json").read_text(encoding="utf-8"))
+        configs = json.loads((REPO / "data" / "country-pages.json").read_text(encoding="utf-8"))
+    except Exception as e:
+        hard_failures.append(f"年代・国ページ在籍検査を実行できない: {type(e).__name__}: {e}")
+        return
+
+    photographers = [p for p in card_data.get("photographers", []) if p.get("id")]
+    if not photographers or not configs:
+        return
+
+    en_slug: dict[str, str] = {}
+    for p in photographers:
+        f = REPO / "photographers" / f"{p['id']}.html"
+        if not f.exists():
+            continue
+        m = re.search(r'hreflang="en"\s+href="[^"]*/en/photographers/([^"]+)\.html"',
+                      f.read_text(encoding="utf-8", errors="ignore"))
+        if m:
+            en_slug[p["id"]] = m.group(1)
+
+    _links: dict[str, set[str] | None] = {}
+
+    def linked(rel: str) -> set[str] | None:
+        if rel not in _links:
+            f = REPO / rel
+            _links[rel] = (set(re.findall(r'photographers/([^"]+)\.html',
+                                          f.read_text(encoding="utf-8", errors="ignore")))
+                           if f.exists() else None)
+        return _links[rel]
+
+    def missing(rel: str, pid: str) -> bool:
+        """そのページに載っていなければ True。ページ自体が無い場合は別途 report。"""
+        L = linked(rel)
+        if L is None:
+            return False
+        return pid not in L and en_slug.get(pid, pid) not in L
+
+    def toks(v: str) -> set[str]:
+        return {t.strip() for t in (v or "").split("/") if t.strip()}
+
+    gaps: dict[str, list[str]] = {}
+    nopage: list[str] = []
+    for p in photographers:
+        pid, era = p["id"], str(p.get("era") or "")
+        if era:
+            for rel in (f"eras/{era}.html", f"en/eras/{era}.html"):
+                if linked(rel) is None:
+                    continue
+                if missing(rel, pid):
+                    gaps.setdefault(rel, []).append(pid)
+        nat = toks(p.get("nationality") or "")
+        pages = [c for c in configs if set(c.get("codes") or []) <= nat and c.get("codes")]
+        if not pages:
+            nopage.append(f"{pid}（nationality={p.get('nationality')!r}）")
+        for c in pages:
+            for rel in (f"countries/{c['slug']}.html", f"en/countries/{c['slug']}.html"):
+                if linked(rel) is None:
+                    continue
+                if missing(rel, pid):
+                    gaps.setdefault(rel, []).append(pid)
+
+    if gaps:
+        total = sum(len(v) for v in gaps.values())
+        detail = " / ".join(
+            f"{rel}→{v[:6]}" + (" …" if len(v) > 6 else "")
+            for rel, v in sorted(gaps.items())[:8])
+        hard_failures.append(
+            f"年代・国ページへの掲載漏れ {total}件（必須サーフェス）: {detail}"
+            + (" …" if len(gaps) > 8 else "")
+            + "\n     復旧: python3 scripts/add_photographer.py scripts/<slug>-spec.json --apply-surfaces"
+            "（既存分は該当ページをスコープ指定で再生成する）")
+    if nopage:
+        warnings.append(
+            f"どの国別ページ config にも一致しない nationality {len(nopage)}件"
+            "（data/country-pages.json に config が要る可能性）: "
+            + ", ".join(nopage[:6]) + (" …" if len(nopage) > 6 else ""))
+
+
 def check_rel_unlinked_names() -> None:
     """§REL のリンク張り忘れ検査（裸テキストなのに実在ページがある）。
 
@@ -1978,6 +2075,7 @@ def main() -> int:
     check_taxonomy_en()
     check_archive_en()
     check_archive_presence()      # ③ archive 掲載漏れ（WARN）
+    check_taxonomy_presence()     # 年代・国ページの掲載漏れ（HARD）
     check_country_hero_counts()   # ③ country hero件数ズレ（WARN）
     check_card_counts()           # カード枚数表示のズレ（HARD）
     check_card_tag_prefix()       # JAカードtagの前方一致（増加だけHARD）

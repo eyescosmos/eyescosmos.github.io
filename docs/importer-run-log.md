@@ -64,10 +64,38 @@
 | 2026-09-03 | (EN写真家73ページ Country是正＋見出し2件の表記統一) | other | （Daisuke記入） | 0 | 0（機械再生成・機械検証） | 76ファイル | N/A | N/A |
 | 2026-09-03 | (preflight に check_en_entry_point を追加) | other | （Daisuke記入） | 0 | 0（ガード追加のみ） | 2ファイル +53行 | N/A | N/A |
 | 2026-09-03 | **3名バッチupdate**(araki/cartierbresson/takuma-nakahira) | update | （Daisuke記入） | 2（素材audit-fix残存／EN書籍二経路重複） | 7系統（下記） | 10ファイル | JA計16174→27063 / EN計43849→73817 | 計77→113 |
+| 2026-09-05 | (preflight に check_taxonomy_presence を追加) | other | （Daisuke記入） | 0 | 0（ガード追加のみ） | 2ファイル +121行 | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-05 — preflight に `check_taxonomy_presence` を追加（種別=other・Opus実装）
+
+- **目的**：0904バッチの点検で「運動ページだけ反映が抜けていた」ことが判明した際、Daisuke 裁定で
+  **年代ページと国別ページは必須サーフェス／運動ページは必須ではない**と確定した。前者を機械で守る。
+- **検査の内容**：card-data の全写真家について ①`eras/<era>.html` と `en/eras/<era>.html`
+  ②`data/country-pages.json` の各 config で `codes ⊆ nationality` なら
+  `countries/<slug>.html` と `en/countries/<slug>.html`（二重国籍は該当全ページ）に載っているか。
+  未掲載があれば **HARD FAIL**（復旧コマンド `--apply-surfaces` をメッセージに出す）。
+  どの国 config にも一致しない `nationality` は WARN。
+- **踏んだ設計上の罠**：EN 分類ページの href は `jp-漢字` id をそのまま使う規約なので、
+  ローマ字 slug だけで引くと**日本人17名が全員誤検知**になる。id と JA の `hreflang="en"` から引いた
+  EN slug の**どちらか**で照合する形にして解消した。
+- **現ツリーの結果**：4面すべて **0件**（年代JA 0 / 年代EN 0 / 国JA 0 / 国EN 0）、
+  国 config 不一致の nationality も 0。341名すべてが必須4面に載っていることを実測。
+- **発火確認**：`eras/1839.html` から `thomas-keith` のカードリンク、
+  `en/countries/united-kingdom.html` から `lewis-carroll` のそれを一時的に消して実行し、
+  2件とも HARD で出ることを確認。**復元後の SHA-256 が事前値と一致**することも確認済み。
+- **運動ページを対象外にした理由**：`ピクトリアリズム` は 掲載12/tag12 で「tag保持者＝全員掲載」だが、
+  `コンセプチュアルアート` は 掲載22/tag105 で tag ≠ 掲載の設計。掲載可否がキュレーション判断のため
+  機械的にそろえると情報が壊れる。既存の未掲載3件（`社会ドキュメンタリー`→boris-mikhailov /
+  `ドキュメンタリー`→alec-soth / `デュッセルドルフ派`→thomas-struth）は別タスクへ積んだ。
+- **影響**：変更は `scripts/preflight.py`（+98行・既存関数の挙動は不変）と
+  `docs/generators-and-guards.md`（+23行）のみ。HTML・データの追加も削除も無し。
+  preflight の実行時間は 26.7秒で、追加前と体感差なし。
+- **wall-time**：（Daisuke記入）。
+
 
 ## 2026-09-04 — 0904素材の12名を新規追加（idx 330–341・種別=new・Opus監督 / Codex実装）
 

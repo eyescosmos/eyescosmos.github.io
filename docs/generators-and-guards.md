@@ -564,3 +564,26 @@ HTML だけ直して再生成すると元に戻る状態だった。両方とも
 - `card-data.json` と `archive.html` の実カード数が食い違うときは、正しい表示値を決められない
   ので**枚数検査を WARN でスキップ**する（掲載漏れ自体は `check_archive_presence` が別途 WARN
   で拾う）。文言がマッチしない場合も WARN（規則の更新が必要というシグナル）。
+
+## 年代・国ページの掲載漏れ — `check_taxonomy_presence()`＝HARD FAIL（2026-09-05 追加）
+
+**年代ページと国別ページは必須サーフェス**（Daisuke 決定 2026-09-05）。写真家を追加したのに
+どちらかに載っていない状態を `preflight.py` の `check_taxonomy_presence()` が **HARD FAIL** で止める。
+
+- 判定は card-data の全 photographer について
+  ①`eras/<era>.html` と `en/eras/<era>.html`
+  ②`data/country-pages.json` の各 config で `codes ⊆ nationality` なら、その
+  `countries/<slug>.html` と `en/countries/<slug>.html`（**二重国籍は該当する全ページが対象**）
+- EN 面の href は `jp-漢字` id をそのまま使う規約があるため、**id と JA ページの
+  `hreflang="en"` から引いた EN slug のどちらかで載っていれば可**とする
+  （`reference_jp_kanji_id_en_shim_convention`。この吸収が無いと日本人17名が全部誤検知になる）
+- どの国別 config にも一致しない `nationality` は WARN（config 追加が要るシグナル）
+- メッセージに復旧コマンド `add_photographer.py <spec> --apply-surfaces` を出す
+- **導入時の実測ベースライン = 4面すべて 0 件**。発火確認も実施（JA年代・EN国それぞれから
+  カードリンクを1本消すと HARD で出て、SHA 一致で復元できることを確認済み）
+
+**運動ページ（`movements/`）は対象外**。運動は「その運動の tag を持つ全員を載せる」ページ
+（例 `ピクトリアリズム` = 掲載12 / tag12）と、そうでないページ（例 `コンセプチュアルアート`
+= 掲載22 / tag105）が混在し、掲載可否がキュレーション判断だから。機械的にそろえると情報が壊れる
+（`reference_era_card_tags_are_not_card_data` と同じ構図）。運動ページは
+`--apply-surfaces` でも反映されないので、**必要なら手で入れる**。
