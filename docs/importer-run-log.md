@@ -57,6 +57,7 @@
 | 2026-09-01 | (engine)カード生没年・国名・年代の全面是正（Opus監督/Codex実装） | engine | （Daisuke記入） | 6（becher没年/kawada存命/salgado没年/国名欠落147/区切り23/ENビルダーのCOUNTRY_CODE欠落22） | 4（年代ラベルの導出方式・EN書式のコード形統一・spec JSONの「誤り≠不完全」線引き・EN従属ページの最小置換） | 246ファイル | N/A | N/A |
 | 2026-09-02 | **12名バッチnew**(anna-atkins/antoine-claudet/bisson-freres/charles-clifford/henri-le-secq/hippolyte-bayard/hugh-welch-diamond/john-jabez-edwin-mayall/josiah-hawes/louis-desire-blanquart-evrard/maxime-du-camp/richard-beard) | new | （Daisuke記入） | 5（下記・全て既存engineの潜在デグレ） | 監督判断7系統（下記） | 49ファイル（tracked25＋新規24） | JA計249,092 / EN計346,442 | 計303 |
 | 2026-09-03 | **12名バッチnew**(0902素材・idx 318–329) | new | **1時間18分** | 0 | 監督判断7系統（下記） | 公開HTML 40面＋sitemap 2面 | JA計55,247 | 計306 |
+| 2026-09-04 | **12名バッチnew**(0904素材・idx 330–341) | new | （Daisuke記入） | 3（下記） | 6系統（下記） | 公開HTML 45面＋sitemap 2面 | JA計60,576 / EN計128,711 | 計347 |
 | 2026-09-03 | (JA表記統一：ル・グレー5ページ＋英題内人名2ページ) | other | （Daisuke記入） | 0 | 2系統（文字列置換のみ） | JA写真家7ファイル | N/A（本文字数不変） | N/A |
 | 2026-09-03 | (`報道写真` EN表記統一) | other | （Daisuke記入） | 2（後勝ち年代ラベル／旧Country残骸） | 2（stage4・手書き例外の事前確認／生成差分監査） | 9ファイル | N/A | N/A |
 | 2026-09-03 | (`jp-木村伊兵衛` id↔EN slug 食い違い解消) | engine | （Daisuke記入） | 3（下流2経路が旧IDで索引／サイドバー別経路／alias実装の絶対href・ループ位置） | 1（alias定義の単一化） | 8ファイル | N/A | N/A |
@@ -67,6 +68,64 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-04 — 0904素材の12名を新規追加（idx 330–341・種別=new・Opus監督 / Codex実装）
+
+- **範囲**：new×12。1850–1900年代の英米写真家。`carleton-watkins`(330) / `clementina-hawarden`(331) /
+  `francis-frith`(332) / `henry-dixon`(333) / `henry-peach-robinson`(334) /
+  `james-booker-blakemore-wellington`(335) / `john-thomson`(336) / `lewis-carroll`(337) /
+  `robert-howlett`(338) / `samuel-bourne`(339) / `thomas-keith`(340) / `william-henry-jackson`(341)。
+  JA/EN リーフ24枚を scaffold-inject で新規生成（素材の外枠・サイドバー・節マーカーは不採用、本文は標準節へ注入。
+  EN は正本 `data/photographers-en-content.json` 経由）。
+- **監督確定タクソノミー（実装側で変更しない前提で先渡し）**：era は素材の `<dt>Period</dt>`（活動年幅）ではなく
+  代表作の年代で割当＝**1839 が7名 / 1870 が3名 / 1890 が1名（+ thomas-keith の1839）**。
+  素材の Country 欄に活動地が混じる2名（`john-thomson`=イギリス/中国/東南アジア、`samuel-bourne`=イギリス/インド）は
+  **nationality=GB 単独**（先例＝インドで活動した `linnaeus-tripe` / エジプトの `maxime-du-camp`）。
+  したがって**新規の国ページ・複合国ページは作らず**、触った国面は united-kingdom(+9) / united-states(+2) の JA/EN のみ。
+  素材の Movement 欄の語（測量写真・西部風景・地誌写真・家庭内肖像・ヴィクトリア朝写真・組合せ印画・写真産業・
+  旅行写真・産業写真・ヴィクトリア朝肖像）は `GENRE_TAG` 未登録のため tags に採らず既存語へマップ。
+  **`GENRE_TAG` / `COUNTRY_TAG` への語追加0**。
+- **サーフェス反映**：card-data 329→341 / archive 3面 / eras 1839・1870・1890 の JA・EN / countries
+  united-kingdom・united-states の JA・EN / en/archive / index 枚数同期 / sitemap 830→854（`<loc>` 削除0・追加24）/
+  星bin 36→48ブロック / supplement / ui-terms。
+- **フィデリティ実測（12名×JA/EN の3列照合）**：`<h3>` / `id="cite-"` / `class="ph-work` / `ph-kw` /
+  §REF further-links の href 数が **素材＝生成JA＝素材EN＝生成EN で24枚とも完全一致・ミスマッチ0**。
+  JA本文計 60,576字 / EN本文計 128,711字 / unique出典計 347。
+  素材24ファイルの SHA-256 は作業前後で不変。
+- **§REL の解決**：12名×3＝36項目を `card-data.json` の**日本語名から**引き直してリンク化。
+  リンク済み31 / 裸のまま6（ジョージ・デイヴィソン・ホースリー・ヒントン・トーマス・モラン・ジョン・バーク・
+  ジョセフ・カンドール・アルフレッド、ジョン・ブール＝いずれも実ページ無しで裸が正）。
+  表記ゆれ1件（`robert-howlett` 素材の「フィリップ・ヘンリー・**ド**ラモット」）をサイト表記
+  「フィリップ・ヘンリー・**デ**ラモット」へ寄せて `philip-henry-delamotte` にリンク。
+  **バッチ内相互参照4本**（hawarden↔carroll / wellington→robinson / jackson→watkins）は
+  card-data 追加後に §REL を解決し直すことでリンク化。
+  **逆向きの張り忘れも同時是正**＝既存6名（`francis-bedford` / `linnaeus-tripe` / `maxime-du-camp` /
+  `oscar-rejlander` / `william-england` / `william-lake-price`）の JA/EN §REL で今回の12名を指す裸テキストを
+  リンクへ変換（`linnaeus-tripe` EN の `prep-block`「In preparation」は実 Related ブロックへ置換）。
+  この6名の差分は**追加のみで本文・出典の削除0**。
+- **bug 3件 / engine**：①通常の new importer `--apply` は素材 head を属性順ごと保持し、EN builder の viewport regex に
+  一致せず `ValueError: no viewport meta`。M3 `--render-ja --spec`（scaffold-inject）出力へ切替えて解消。
+  ②素材の段落 class `essay-p` が生成物に残り preflight の orphan-class HARD。生成JAとEN正本の両方から除去。
+  ③`--plan-surfaces` / `--apply-surfaces` が gitignored の `new-design/cards-archive.html` も対象に含める
+  （＝ローカル専用面。最終的にはツール既定どおり12名を入れた状態で確定）。engine コードの変更0。
+- **手作業点6系統**：①素材の lead / title / description / 出典から spec 12本を作成、②旧 clean 経路の出力を
+  scaffold-inject 完成形へ置換、③orphan `essay-p` 除去、④JA/EN Person JSON-LD を参照実装と同じ9キーへ補完し
+  EN を WebPage / Person / BreadcrumbList の3ブロック化（24枚とも同形）、⑤§REL の slug 解決と表記正規化、
+  ⑥バッチ内相互参照のための再生成順序の入れ替え。
+- **既知WARN（停止不要と事前に通知した分）**：EN builder の `no photobooks_html`＝0904素材には
+  `class="ph-book"` の書籍カードが元から0で §REF は `ph-further-links` リスト（正しい状態）。
+  `check_new_photographer` の `en_graph_absent`。EN §REL が JA より項目数が少ない（リンク項目のみ保持＝サイト標準）。
+- **検証**：`check_content_loss.py` OK（本文の消失・書き換え0）／`preflight.py` EXIT 0・**HARD 0**／
+  `sync_card_counts.py --check` OK（341+35=376）／`check_photographer_link_integrity.py` OK／`git diff --check` OK。
+  `build_photographers_en.py --slug <各slug> --dry-run` は12名とも **SKIPPED 0**。
+  EN 正本のキーは 342→354（追加12・削除0・`_meta` 不変・既存キーの変更は上記6名のみ）。
+  Years 表示3ヶ所×JA/EN が決定表と一致（区切りは U+2013）、JSON-LD の `birthDate`/`deathDate` も一致。
+  rev系マーカー残存0・`prep-block` 要素0・`essay-p` 残存0、サイドバー検索は参照実装と同一の runtime 解決形。
+  tracked 差分の削除行は**枚数文字列・lastmod・リンク化前の裸名・カード追記に伴う行分割のみ**で、
+  既存写真家の本文・出典・リンク・カードの消失0（era 1890 は JA/EN とも 15→16枚で追加は Wellington のみ）。
+- **監督メモ**：Codex は残り11名の実装途中で ChatGPT 側の利用上限（〜2026-09-07）に達したため、
+  最終の差分監査・§REL 検証・run-log 整備は監督（Opus）が実測で実施した。commit 未作成。
+- **wall-time**：（Daisuke記入）。
 
 ## 2026-09-03 — preflight に `check_en_entry_point` を追加（種別=other・Opus監督/Codex実装）
 

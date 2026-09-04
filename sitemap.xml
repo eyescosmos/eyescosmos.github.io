@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://eyescosmos.com/archive.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/archive.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/archive.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/archive.html"/>
@@ -91,7 +91,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/countries/france.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/countries/france.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/countries/france.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/countries/france.html"/>
@@ -231,7 +231,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/countries/united-kingdom.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/countries/united-kingdom.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/countries/united-kingdom.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/countries/united-kingdom.html"/>
@@ -344,7 +344,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/countries/france.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/countries/france.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/countries/france.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/countries/france.html"/>
@@ -484,7 +484,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/countries/united-kingdom.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/countries/united-kingdom.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/countries/united-kingdom.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/countries/united-kingdom.html"/>
@@ -505,7 +505,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/eras/1839.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/eras/1839.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/eras/1839.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/eras/1839.html"/>
@@ -582,7 +582,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/"/>
@@ -988,7 +988,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/araki.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/araki.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/araki.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/araki.html"/>
@@ -1148,8 +1148,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/capa.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.com/en/photographers/carleton-watkins.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/carleton-watkins.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/carleton-watkins.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/carleton-watkins.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.com/en/photographers/cartierbresson.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/cartierbresson.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/cartierbresson.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/cartierbresson.html"/>
@@ -1202,6 +1209,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/claude-closky.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/claude-closky.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/claude-closky.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/clementina-hawarden.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/clementina-hawarden.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/clementina-hawarden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/clementina-hawarden.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/clunie-reid.html</loc>
@@ -1442,6 +1456,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/francis-bedford.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.com/en/photographers/francis-frith.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/francis-frith.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/francis-frith.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/francis-frith.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.com/en/photographers/francois-kollar.html</loc>
     <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/francois-kollar.html"/>
@@ -1576,10 +1597,24 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/henri-le-secq.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/henri-le-secq.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/henri-le-secq.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/henri-le-secq.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/henry-dixon.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/henry-dixon.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/henry-dixon.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/henry-dixon.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/henry-peach-robinson.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/henry-peach-robinson.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/henry-peach-robinson.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/henry-peach-robinson.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/hideo-haga.html</loc>
@@ -1678,6 +1713,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/jacques-henri-lartigue.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/jacques-henri-lartigue.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/jacques-henri-lartigue.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/james-booker-blakemore-wellington.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/james-booker-blakemore-wellington.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/james-casebere.html</loc>
@@ -1804,6 +1846,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/john-riddy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/john-riddy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/john-riddy.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/john-thomson.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/john-thomson.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/john-thomson.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/john-thomson.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/john-vachon.html</loc>
@@ -1986,6 +2035,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/lewis-baltz.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/lewis-baltz.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/lewis-baltz.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/lewis-carroll.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/lewis-carroll.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/lewis-carroll.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/lewis-carroll.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/lewis-hine.html</loc>
@@ -2527,6 +2583,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/robert-doisneau.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.com/en/photographers/robert-howlett.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/robert-howlett.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/robert-howlett.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/robert-howlett.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.com/en/photographers/robertfrank.html</loc>
     <lastmod>2026-08-30</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/robertfrank.html"/>
@@ -2609,6 +2672,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/salgado.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/salgado.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/salgado.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/samuel-bourne.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/samuel-bourne.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/samuel-bourne.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/samuel-bourne.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/sander.html</loc>
@@ -2850,7 +2920,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/takuma-nakahira.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/takuma-nakahira.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/takuma-nakahira.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/takuma-nakahira.html"/>
@@ -2875,6 +2945,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/thomas-demand.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/thomas-demand.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/thomas-demand.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/thomas-keith.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/thomas-keith.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/thomas-keith.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/thomas-keith.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/thomas-ruff.html</loc>
@@ -3008,6 +3085,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/william-england.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/william-england.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/william-england.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/william-henry-jackson.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/william-henry-jackson.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/william-henry-jackson.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/william-henry-jackson.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/william-lake-price.html</loc>
@@ -3151,7 +3235,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/eras/1839.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/eras/1839.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/eras/1839.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/eras/1839.html"/>
@@ -3232,7 +3316,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/"/>
@@ -3575,7 +3659,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/anna-atkins.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/anna-atkins.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/anna-atkins.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/anna-atkins.html"/>
@@ -3638,7 +3722,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/araki.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/araki.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/araki.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/araki.html"/>
@@ -3798,8 +3882,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/capa.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.com/photographers/carleton-watkins.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/carleton-watkins.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/carleton-watkins.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/carleton-watkins.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.com/photographers/cartierbresson.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/cartierbresson.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/cartierbresson.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/cartierbresson.html"/>
@@ -3852,6 +3943,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/claude-closky.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/claude-closky.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/claude-closky.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/clementina-hawarden.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/clementina-hawarden.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/clementina-hawarden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/clementina-hawarden.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/clunie-reid.html</loc>
@@ -4072,7 +4170,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/florian-maier-aichen.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/florian-maier-aichen.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/florian-maier-aichen.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/florian-maier-aichen.html"/>
@@ -4083,6 +4181,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/francis-bedford.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/francis-bedford.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/francis-bedford.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/francis-frith.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/francis-frith.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/francis-frith.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/francis-frith.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/francois-kollar.html</loc>
@@ -4212,10 +4317,24 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/henri-le-secq.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/henri-le-secq.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/henri-le-secq.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/henri-le-secq.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/henry-dixon.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/henry-dixon.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/henry-dixon.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/henry-dixon.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/henry-peach-robinson.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/henry-peach-robinson.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/henry-peach-robinson.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/henry-peach-robinson.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/hideo-haga.html</loc>
@@ -4302,6 +4421,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/jacques-henri-lartigue.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.com/photographers/james-booker-blakemore-wellington.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/james-booker-blakemore-wellington.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/james-booker-blakemore-wellington.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.com/photographers/james-casebere.html</loc>
     <lastmod>2026-09-01</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/james-casebere.html"/>
@@ -4317,7 +4443,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/james-welling.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/james-welling.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/james-welling.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/james-welling.html"/>
@@ -4422,10 +4548,17 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/john-riddy.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/john-riddy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/john-riddy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/john-riddy.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/john-thomson.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/john-thomson.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/john-thomson.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/john-thomson.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/john-vachon.html</loc>
@@ -4443,7 +4576,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/josiah-hawes.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/josiah-hawes.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/josiah-hawes.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/josiah-hawes.html"/>
@@ -4701,6 +4834,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/lewis-baltz.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.com/photographers/lewis-carroll.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/lewis-carroll.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/lewis-carroll.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/lewis-carroll.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.com/photographers/lewis-hine.html</loc>
     <lastmod>2026-08-30</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/lewis-hine.html"/>
@@ -4891,7 +5031,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/maxime-du-camp.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/maxime-du-camp.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/maxime-du-camp.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/maxime-du-camp.html"/>
@@ -5233,6 +5373,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/robert-doisneau.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.com/photographers/robert-howlett.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/robert-howlett.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/robert-howlett.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/robert-howlett.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.com/photographers/robertfrank.html</loc>
     <lastmod>2026-08-30</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/robertfrank.html"/>
@@ -5308,6 +5455,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/salgado.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/salgado.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/salgado.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/samuel-bourne.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/samuel-bourne.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/samuel-bourne.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/samuel-bourne.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/sander.html</loc>
@@ -5528,7 +5682,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/takuma-nakahira.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/takuma-nakahira.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/takuma-nakahira.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/takuma-nakahira.html"/>
@@ -5553,6 +5707,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/thomas-demand.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/thomas-demand.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/thomas-demand.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/thomas-keith.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/thomas-keith.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/thomas-keith.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/thomas-keith.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/thomas-ruff.html</loc>
@@ -5672,6 +5833,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/william-england.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/william-england.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/william-england.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/william-henry-jackson.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/william-henry-jackson.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/william-henry-jackson.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/william-henry-jackson.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/william-lake-price.html</loc>

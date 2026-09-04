@@ -6648,6 +6648,258 @@
       "style": "pc-top--title",
       "artText": "WLP",
       "hintText": "WILLIAM LAKE PRICE · 1810–1896"
+    },
+    {
+      "type": "photographer",
+      "id": "thomas-keith",
+      "href": "photographers/thomas-keith.html",
+      "idx": 340,
+      "nameJa": "トーマス・キース",
+      "nameEn": "Thomas Keith",
+      "metaJa": "イギリス · 1827–1895 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "1827年にスコットランドのセント・サイラスに生まれ、1852年頃から1857年頃を中心に写真を制作したトーマス・キースは、エディンバラで診療する外科医でもあった。蝋引き紙ネガと塩紙プリントを用い、旧市街の路地・階段・石造建築、スコットランド西岸のアイオナ島の修道院跡などを撮影した。早朝や夕方の斜光を選び、建築の凹凸と深い影を大きな面として構成した写真は、都市改造で失われた場所の記録であると同時に、紙ネガの柔らかな描写を生かした独自の都市・建築写真として評価されている。",
+      "channel": "写真史の論点 · カロタイプ",
+      "tags": [
+        "カロタイプ",
+        "建築写真",
+        "イギリス"
+      ],
+      "style": "pc-top--number",
+      "artText": "TK",
+      "hintText": "THOMAS KEITH · 1827–1895"
+    },
+    {
+      "type": "photographer",
+      "id": "carleton-watkins",
+      "href": "photographers/carleton-watkins.html",
+      "idx": 330,
+      "nameJa": "カールトン・E・ワトキンス",
+      "nameEn": "Carleton E. Watkins",
+      "metaJa": "アメリカ · 1829–1916 · 1839–1860s",
+      "era": "1839",
+      "nationality": "US",
+      "ledeJa": "カールトン・E・ワトキンスは1829年ニューヨーク州オネオンタ生まれ。1850年代にカリフォルニアへ移り、1860〜90年代にヨセミテ、鉱山、鉄道、コロンビア川などアメリカ西部を撮影した。約18×22インチのマンモス・プレートとステレオ写真を使い分け、遠隔地の巨大な地形を精密に伝えた一方、その像は自然保護、観光、投資、資源開発という異なる目的に利用された。",
+      "channel": "写真史の論点 · 風景写真",
+      "tags": [
+        "風景写真",
+        "大判写真",
+        "アメリカ"
+      ],
+      "style": "pc-top--grid",
+      "artText": "CW",
+      "hintText": "CARLETON E. WATKINS · 1829–1916"
+    },
+    {
+      "type": "photographer",
+      "id": "clementina-hawarden",
+      "href": "photographers/clementina-hawarden.html",
+      "idx": 331,
+      "nameJa": "クレメンティナ・ホーワーデン",
+      "nameEn": "Clementina Hawarden",
+      "metaJa": "イギリス · 1822–1865 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "1822年にスコットランドのカンバーノールド近郊に生まれ、1857年頃から1864年まで撮影したクレメンティナ・ホーワーデンは、ロンドンの自宅5 Princes Gardensで娘たちを集中的に撮影した。窓からの自然光、鏡、衣装、二人組のポーズ、家具を減らした室内を反復し、「Photographic Study」「Studies from Life」として発表した。家庭の内部を人物、光、鏡像の変化を試す撮影空間にし、ヴィクトリア朝の家族写真と芸術写真の境界を広げた写真家である。",
+      "channel": "写真史の論点 · 肖像写真",
+      "tags": [
+        "肖像写真",
+        "家族写真",
+        "イギリス"
+      ],
+      "style": "pc-top--initials",
+      "artText": "CH",
+      "hintText": "CLEMENTINA HAWARDEN · 1822–1865"
+    },
+    {
+      "type": "photographer",
+      "id": "francis-frith",
+      "href": "photographers/francis-frith.html",
+      "idx": 332,
+      "nameJa": "フランシス・フリス",
+      "nameEn": "Francis Frith",
+      "metaJa": "イギリス · 1822–1898 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "1822年にイングランドのチェスターフィールドに生まれ、1850年代後半から1860年代を中心に活動した写真家・出版事業者。エジプト、シナイ、パレスチナを大判の湿板写真で記録し、『Egypt and Palestine Photographed and Described』では写真と地理・聖書解説を組み合わせた。帰国後はFrancis Frith &amp; Co.を組織し、英国各地の町村写真を規格化して販売した。旅行写真を出版、観光、地誌、宗教的知識と結びつけ、大規模な視覚アーカイブへ展開した人物である。",
+      "channel": "写真史の論点 · 旅写真",
+      "tags": [
+        "旅写真",
+        "写真集",
+        "イギリス"
+      ],
+      "style": "pc-top--slash",
+      "artText": "FF",
+      "hintText": "FRANCIS FRITH · 1822–1898"
+    },
+    {
+      "type": "photographer",
+      "id": "henry-dixon",
+      "href": "photographers/henry-dixon.html",
+      "idx": 333,
+      "nameJa": "ヘンリー・ディクソン",
+      "nameEn": "Henry Dixon",
+      "metaJa": "イギリス · 1820–1893 · 1870–1890s",
+      "era": "1870",
+      "nationality": "GB",
+      "ledeJa": "ヘンリー・ディクソンは1820年生まれ。1860年代からロンドンで写真業を営み、1870〜80年代にはSociety for Photographing Relics of Old London（SPROL）のため、解体が迫る建築を記録した。ブール兄弟との分業、湿板ネガ、保存性を重視したカーボン印画を通して、写真が都市の消失を事前に記録し、後世の建築史資料として残る仕組みを考える。",
+      "channel": "写真史の論点 · 建築写真",
+      "tags": [
+        "都市記録",
+        "建築写真",
+        "イギリス"
+      ],
+      "style": "pc-top--stacked",
+      "artText": "HD",
+      "hintText": "HENRY DIXON · 1820–1893"
+    },
+    {
+      "type": "photographer",
+      "id": "henry-peach-robinson",
+      "href": "photographers/henry-peach-robinson.html",
+      "idx": 334,
+      "nameJa": "ヘンリー・ピーチ・ロビンソン",
+      "nameEn": "Henry Peach Robinson",
+      "metaJa": "イギリス · 1830–1901 · 1870–1890s",
+      "era": "1870",
+      "nationality": "GB",
+      "ledeJa": "1830年にイングランドのラドローに生まれ、1850年代から1890年代にかけて活動したヘンリー・ピーチ・ロビンソンは、写真家、写真館経営者、理論家として英国の芸術写真を論じ続けた。代表作《Fading Away》では複数のネガを一枚へ焼き合わせる組合せ印画を用い、1869年の『Pictorial Effect in Photography』では構図、明暗、撮影後の合成を体系的に解説した。後にはLinked Ringの形成に関わり、写真における構成、加工、真実性、作者性をめぐる19世紀後半の論争を代表する人物となった。",
+      "channel": "制度を作る写真 · PICTORIALISM",
+      "tags": [
+        "ピクトリアリズム",
+        "演出写真",
+        "イギリス"
+      ],
+      "style": "pc-top--number",
+      "artText": "HR",
+      "hintText": "HENRY PEACH ROBINSON · 1830–1901"
+    },
+    {
+      "type": "photographer",
+      "id": "james-booker-blakemore-wellington",
+      "href": "photographers/james-booker-blakemore-wellington.html",
+      "idx": 335,
+      "nameJa": "J・B・B・ウェリントン",
+      "nameEn": "James Booker Blakemore Wellington",
+      "metaJa": "イギリス · 1858–1939 · 1890–1910s",
+      "era": "1890",
+      "nationality": "GB",
+      "ledeJa": "ジェームズ・ブッカー・ブレイクモア・ウェリントンは1858年バース近郊ランズダウン生まれ。1880〜90年代にピクトリアル写真を制作し、1892年にはLinked Ringへ参加した一方、1890年代以降はWellington &amp; Wardで乾板、フィルム、印画紙の製造を担った。《Eventide》などの合成と柔らかな階調を、作品の「作風」だけでなく、それを可能にした乳剤、紙、複製法、写真材料産業まで含めて考えられる写真家・技術者である。",
+      "channel": "制度を作る写真 · PICTORIALISM",
+      "tags": [
+        "ピクトリアリズム",
+        "発明・技術",
+        "イギリス"
+      ],
+      "style": "pc-top--title",
+      "artText": "JW",
+      "hintText": "JAMES BOOKER BLAKEMORE WELLINGTON · 1858–1939"
+    },
+    {
+      "type": "photographer",
+      "id": "john-thomson",
+      "href": "photographers/john-thomson.html",
+      "idx": 336,
+      "nameJa": "ジョン・トムソン",
+      "nameEn": "John Thomson",
+      "metaJa": "イギリス · 1837–1921 · 1870–1890s",
+      "era": "1870",
+      "nationality": "GB",
+      "ledeJa": "ジョン・トムソンは1837年エディンバラ生まれ。1860年代から東南アジアと中国で活動し、1870年代には『Illustrations of China and Its People』、帰国後の1877〜78年にはアドルフ・スミスと『Street Life in London』を刊行した。湿板写真を文章と連続出版に組み込み、遠隔地や都市の生活を具体的に伝える一方、人々を職業・民族・階層の「タイプ」として整理する近代の分類視線にも関わった。",
+      "channel": "読む報道写真 · DOCUMENTARY",
+      "tags": [
+        "社会ドキュメンタリー",
+        "旅写真",
+        "イギリス"
+      ],
+      "style": "pc-top--grid",
+      "artText": "JT",
+      "hintText": "JOHN THOMSON · 1837–1921"
+    },
+    {
+      "type": "photographer",
+      "id": "lewis-carroll",
+      "href": "photographers/lewis-carroll.html",
+      "idx": 337,
+      "nameJa": "ルイス・キャロル",
+      "nameEn": "Lewis Carroll",
+      "metaJa": "イギリス · 1832–1898 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "ルイス・キャロルは、チャールズ・ラトウィッジ・ドジソンが文学作品に用いた筆名である。1832年にイングランド・チェシャーのデアズベリーに生まれ、オックスフォード大学Christ Churchで数学を教える一方、1856年から1880年まで写真を制作した。Christ Church学寮長の娘で『不思議の国のアリス』成立の着想源となったアリス・リデル、同僚の娘アレクサンドラ・キッチン（愛称ジー）、芸術家や知人を繰り返し撮影し、衣装、物語的な演技、私的アルバムを用いて肖像を構成した。ヴィクトリア朝の芸術写真を代表する一人であり、現在は写真史上の達成と子どもを撮る成人撮影者の権力差の双方から検討されている。",
+      "channel": "写真史の論点 · 肖像写真",
+      "tags": [
+        "肖像写真",
+        "演出写真",
+        "イギリス"
+      ],
+      "style": "pc-top--initials",
+      "artText": "LC",
+      "hintText": "LEWIS CARROLL · 1832–1898"
+    },
+    {
+      "type": "photographer",
+      "id": "robert-howlett",
+      "href": "photographers/robert-howlett.html",
+      "idx": 338,
+      "nameJa": "ロバート・ハウレット",
+      "nameEn": "Robert Howlett",
+      "metaJa": "イギリス · 1831–1858 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "1831年にイングランドのサフォーク州に生まれ、1850年代にロンドンで活動したロバート・ハウレットは、王室委嘱、クリミア戦争帰還兵の肖像、風景、産業写真を手がけた写真家である。代表作は、当時世界最大級の蒸気船Great Easternの建造現場と、その設計者イザムバード・キングダム・ブルネルを撮った1857年の系列。人間、鎖、船体、足場を同じ画面に入れて巨大な工業設備の尺度を伝え、写真を新聞版画やステレオへ展開したことで、産業の記録が公共的なニュース像になる過程を示した。",
+      "channel": "写真史の論点 · 肖像写真",
+      "tags": [
+        "肖像写真",
+        "産業風景",
+        "イギリス"
+      ],
+      "style": "pc-top--slash",
+      "artText": "RH",
+      "hintText": "ROBERT HOWLETT · 1831–1858"
+    },
+    {
+      "type": "photographer",
+      "id": "samuel-bourne",
+      "href": "photographers/samuel-bourne.html",
+      "idx": 339,
+      "nameJa": "サミュエル・ボーン",
+      "nameEn": "Samuel Bourne",
+      "metaJa": "イギリス · 1834–1912 · 1839–1860s",
+      "era": "1839",
+      "nationality": "GB",
+      "ledeJa": "サミュエル・ボーンは1834年イングランドのマックルストーン生まれ。銀行員から職業写真家へ転じ、1863〜70年にインドで活動し、三度のヒマラヤ遠征を行った。大判湿板、携帯暗室、多数の運搬人を必要とする制作を、Bourne &amp; Shepherdの番号付きカタログと販売網へつなげ、山岳、寺院、都市を購入可能な「インドのビュー」として広く流通させた。その形式美と技術的達成は、植民地の交通・労働・市場と不可分に成立していた。",
+      "channel": "写真史の論点 · 旅写真",
+      "tags": [
+        "旅写真",
+        "植民地写真",
+        "イギリス"
+      ],
+      "style": "pc-top--stacked",
+      "artText": "SB",
+      "hintText": "SAMUEL BOURNE · 1834–1912"
+    },
+    {
+      "type": "photographer",
+      "id": "william-henry-jackson",
+      "href": "photographers/william-henry-jackson.html",
+      "idx": 341,
+      "nameJa": "ウィリアム・ヘンリー・ジャクソン",
+      "nameEn": "William Henry Jackson",
+      "metaJa": "アメリカ · 1843–1942 · 1870–1890s",
+      "era": "1870",
+      "nationality": "US",
+      "ledeJa": "ウィリアム・ヘンリー・ジャクソンは1843年ニューヨーク州キーズビル生まれ。1870〜78年にF・V・ヘイデンの連邦地質調査へ参加し、イエローストーンやロッキー山脈を大型湿板で撮影した。1890年代には鉄道や世界交通を撮り、後年はDetroit Publishing CompanyでPhotochromの大量流通にも関与した。調査の「証拠」から観光商品まで、同じ土地の写真が制度と市場によって別の意味を持つ過程を一生の仕事で示した。",
+      "channel": "写真史の論点 · 風景写真",
+      "tags": [
+        "風景写真",
+        "旅写真",
+        "アメリカ"
+      ],
+      "style": "pc-top--title",
+      "artText": "WJ",
+      "hintText": "WILLIAM HENRY JACKSON · 1843–1942"
     }
   ],
   "movements": [

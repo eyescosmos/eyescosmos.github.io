@@ -6461,3 +6461,435 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "thomas-keith",
+  "name": "Thomas Keith",
+  "nameJa": "トーマス・キース",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1827–1895",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "カロタイプ",
+    "建築写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1827年にスコットランドのセント・サイラスに生まれ、1852年頃から1857年頃を中心に写真を制作したトーマス・キースは、エディンバラで診療する外科医でもあった。蝋引き紙ネガと塩紙プリントを用い、旧市街の路地・階段・石造建築、スコットランド西岸のアイオナ島の修道院跡などを撮影した。早朝や夕方の斜光を選び、建築の凹凸と深い影を大きな面として構成した写真は、都市改造で失われた場所の記録であると同時に、紙ネガの柔らかな描写を生かした独自の都市・建築写真として評価されている。 *1 *2 。",
+    "textEn": "Born in St Cyrus, Scotland, in 1827 and active in photography chiefly from about 1852 to 1857, Thomas Keith was also a practicing surgeon in Edinburgh. Using waxed-paper negatives and salted paper prints, he photographed lanes, stairs, and stone architecture in the Old Town as well as monastic ruins on the island of Iona off Scotland’s west coast. He chose raking light in the early morning or late afternoon, organizing architectural relief and deep shadow into broad tonal masses. The photographs are now valued both as records of places later altered or destroyed by urban redevelopment and as distinctive urban and architectural photographs that make use of the softer rendering of the paper negative. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Royal Scottish Academy — Thomas Keith: Edinburgh Photographs",
+        "url": "https://www.royalscottishacademy.org/publications/10-thomas-keith-edinburgh-photographs/"
+      },
+      {
+        "num": 2,
+        "name": "National Galleries of Scotland — Thomas Keith",
+        "url": "https://www.nationalgalleries.org/art-and-artists/artists/thomas-keith"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "carleton-watkins",
+  "name": "Carleton E. Watkins",
+  "nameJa": "カールトン・E・ワトキンス",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1829–1916",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "西部風景",
+    "測量写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "カールトン・E・ワトキンスは1829年ニューヨーク州オネオンタ生まれ。1850年代にカリフォルニアへ移り、1860〜90年代にヨセミテ、鉱山、鉄道、コロンビア川などアメリカ西部を撮影した。約18×22インチのマンモス・プレートとステレオ写真を使い分け、遠隔地の巨大な地形を精密に伝えた一方、その像は自然保護、観光、投資、資源開発という異なる目的に利用された。 *1 *2 。",
+    "textEn": "Carleton E. Watkins was born in Oneonta, New York, in 1829. After moving to California in the 1850s, he photographed Yosemite, mines, railroads, the Columbia River, and other parts of the American West from the 1860s through the 1890s. He worked with both mammoth plates measuring roughly 18 × 22 inches and stereographs, using each format to convey vast and remote terrain with precision. His images circulated in support of conservation, tourism, investment, and resource development. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Smithsonian American Art Museum — Carleton E. Watkins",
+        "url": "https://americanart.si.edu/artist/carleton-e-watkins-5251"
+      },
+      {
+        "num": 2,
+        "name": "Getty Education — Meet Carleton Watkins",
+        "url": "https://www.getty.edu/education/k-12-learning/meet-carleton-watkins/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "clementina-hawarden",
+  "name": "Clementina Hawarden",
+  "nameJa": "クレメンティナ・ホーワーデン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1822–1865",
+  "gender": "女性",
+  "era": "1839",
+  "movements": [
+    "家庭内肖像",
+    "ヴィクトリア朝写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1822年にスコットランドのカンバーノールド近郊に生まれ、1857年頃から1864年まで撮影したクレメンティナ・ホーワーデンは、ロンドンの自宅5 Princes Gardensで娘たちを集中的に撮影した。窓からの自然光、鏡、衣装、二人組のポーズ、家具を減らした室内を反復し、「Photographic Study」「Studies from Life」として発表した。家庭の内部を人物、光、鏡像の変化を試す撮影空間にし、ヴィクトリア朝の家族写真と芸術写真の境界を広げた写真家である。 *1 *2 。",
+    "textEn": "Born near Cumbernauld, Scotland, in 1822 and active as a photographer from about 1857 through 1864, Clementina Hawarden concentrated on photographing her daughters at the family home at 5 Princes Gardens in London. She repeatedly worked with natural window light, mirrors, costume, paired poses, and sparsely furnished interiors, exhibiting the results under titles such as “Photographic Study” and “Studies from Life.” She turned the domestic interior into a space for testing changes in figure, light, and reflection, extending the possibilities of Victorian family portraiture within art photography. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Victoria and Albert Museum — The pioneering photography of Lady Clementina Hawarden",
+        "url": "https://www.vam.ac.uk/articles/lady-clementina-hawarden-an-introduction"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — Photographic Study",
+        "url": "https://www.metmuseum.org/art/collection/search/283095"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "francis-frith",
+  "name": "Francis Frith",
+  "nameJa": "フランシス・フリス",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1822–1898",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "旅行写真",
+    "地誌写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1822年にイングランドのチェスターフィールドに生まれ、1850年代後半から1860年代を中心に活動した写真家・出版事業者。エジプト、シナイ、パレスチナを大判の湿板写真で記録し、『Egypt and Palestine Photographed and Described』では写真と地理・聖書解説を組み合わせた。帰国後はFrancis Frith &amp; Co.を組織し、英国各地の町村写真を規格化して販売した。旅行写真を出版、観光、地誌、宗教的知識と結びつけ、大規模な視覚アーカイブへ展開した人物である。 *1 *2 。",
+    "textEn": "Born in Chesterfield, England, in 1822, Francis Frith was a photographer and publisher active chiefly from the late 1850s through the 1860s. He documented Egypt, Sinai, and Palestine with large-format wet-plate photographs and paired photographs with geographical and biblical commentary in Egypt and Palestine Photographed and Described. After returning to Britain, he organized Francis Frith &amp; Co., which standardized and sold photographs of towns and villages across the country. His career linked travel photography to publishing, tourism, topography, and religious knowledge, eventually producing a large-scale visual archive. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "The Metropolitan Museum of Art — Pyramids from the Southwest, Giza",
+        "url": "https://www.metmuseum.org/art/collection/search/262482"
+      },
+      {
+        "num": 2,
+        "name": "Harry Ransom Center — Egypt and Palestine, Photographed and Described by Francis Frith",
+        "url": "https://research.hrc.utexas.edu/photoPublic/fullDisplay.cfm?CollID=16467"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "henry-dixon",
+  "name": "Henry Dixon",
+  "nameJa": "ヘンリー・ディクソン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1820–1893",
+  "gender": "男性",
+  "era": "1870",
+  "movements": [
+    "都市記録",
+    "建築写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ヘンリー・ディクソンは1820年生まれ。1860年代からロンドンで写真業を営み、1870〜80年代にはSociety for Photographing Relics of Old London（SPROL）のため、解体が迫る建築を記録した。ブール兄弟との分業、湿板ネガ、保存性を重視したカーボン印画を通して、写真が都市の消失を事前に記録し、後世の建築史資料として残る仕組みを考える。 *1 *2 。",
+    "textEn": "Henry Dixon was born in 1820. He worked professionally as a photographer in London from the 1860s and, during the 1870s and 1880s, documented buildings threatened with demolition for the Society for Photographing Relics of Old London (SPROL). His collaboration with the Bool brothers, use of wet-plate negatives, and emphasis on durable carbon prints show how photography could anticipate urban loss and preserve architectural evidence for later study. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "University of Birmingham Special Collections — Society for Photographing Relics of Old London",
+        "url": "https://calmview.bham.ac.uk/Record.aspx?id=XAT%2F1%2F168&src=CalmView.Catalog"
+      },
+      {
+        "num": 2,
+        "name": "Historic England — SPR01 collection overview",
+        "url": "https://historicengland.org.uk/images-books/photos/collection/SPR01"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "henry-peach-robinson",
+  "name": "Henry Peach Robinson",
+  "nameJa": "ヘンリー・ピーチ・ロビンソン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1830–1901",
+  "gender": "男性",
+  "era": "1870",
+  "movements": [
+    "組合せ印画",
+    "ピクトリアリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1830年にイングランドのラドローに生まれ、1850年代から1890年代にかけて活動したヘンリー・ピーチ・ロビンソンは、写真家、写真館経営者、理論家として英国の芸術写真を論じ続けた。代表作《Fading Away》では複数のネガを一枚へ焼き合わせる組合せ印画を用い、1869年の『Pictorial Effect in Photography』では構図、明暗、撮影後の合成を体系的に解説した。後にはLinked Ringの形成に関わり、写真における構成、加工、真実性、作者性をめぐる19世紀後半の論争を代表する人物となった。 *1 *2 。",
+    "textEn": "Born in Ludlow, England, in 1830 and active from the 1850s through the 1890s, Henry Peach Robinson worked as a photographer, studio proprietor, and theorist who argued continuously for art photography in Britain. In Fading Away, he combined several negatives into one print, and in the 1869 Pictorial Effect in Photography he systematically explained composition, light and shade, and post-exposure combination printing. He later helped form the Linked Ring and became a central figure in late nineteenth-century debates about construction, manipulation, truth, and authorship in photography. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "The Metropolitan Museum of Art — Fading Away",
+        "url": "https://www.metmuseum.org/art/collection/search/302289"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — She Never Told Her Love",
+        "url": "https://www.metmuseum.org/art/collection/search/283090"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "james-booker-blakemore-wellington",
+  "name": "James Booker Blakemore Wellington",
+  "nameJa": "J・B・B・ウェリントン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1858–1939",
+  "gender": "男性",
+  "era": "1890",
+  "movements": [
+    "ピクトリアリズム",
+    "写真産業"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ジェームズ・ブッカー・ブレイクモア・ウェリントンは1858年バース近郊ランズダウン生まれ。1880〜90年代にピクトリアル写真を制作し、1892年にはLinked Ringへ参加した一方、1890年代以降はWellington &amp; Wardで乾板、フィルム、印画紙の製造を担った。《Eventide》などの合成と柔らかな階調を、作品の「作風」だけでなく、それを可能にした乳剤、紙、複製法、写真材料産業まで含めて考えられる写真家・技術者である。 *1 *2 。",
+    "textEn": "James Booker Blakemore Wellington was born in Lansdown near Bath in 1858. He made pictorial photographs during the 1880s and 1890s and joined the Linked Ring in 1892, while from the 1890s onward he also helped manufacture dry plates, film, and printing papers through Wellington &amp; Ward. His composites and soft tonal effects, including Eventide, are best understood through both their pictorial style and the emulsions, papers, reproductive processes, and photographic-materials industry that made them possible. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Luminous-Lint — J.B.B. Wellington biography",
+        "url": "https://luminous-lint.com/phoenix.php/photographers/single/James_Booker_Blakemore__Wellington/biography/"
+      },
+      {
+        "num": 2,
+        "name": "De Montfort University — RPS Members: J. B. B. Wellington",
+        "url": "https://rpsmembers.dmu.ac.uk/rps_results.php?mid=1457"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "john-thomson",
+  "name": "John Thomson",
+  "nameJa": "ジョン・トムソン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1837–1921",
+  "gender": "男性",
+  "era": "1870",
+  "movements": [
+    "旅行写真",
+    "社会ドキュメンタリー"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ジョン・トムソンは1837年エディンバラ生まれ。1860年代から東南アジアと中国で活動し、1870年代には『Illustrations of China and Its People』、帰国後の1877〜78年にはアドルフ・スミスと『Street Life in London』を刊行した。湿板写真を文章と連続出版に組み込み、遠隔地や都市の生活を具体的に伝える一方、人々を職業・民族・階層の「タイプ」として整理する近代の分類視線にも関わった。 *1 *2 。",
+    "textEn": "John Thomson was born in Edinburgh in 1837. From the 1860s he worked across Southeast Asia and China, publishing Illustrations of China and Its People in the 1870s and, after returning to Britain, Street Life in London with Adolphe Smith in 1877–78. He integrated wet-plate photography with extended text and serial publication, giving readers detailed views of distant places and urban life while also participating in modern systems that classified people by occupation, ethnicity, and class. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "National Portrait Gallery — John Thomson",
+        "url": "https://www.npg.org.uk/collections/search/person/mp68784/john-thomson"
+      },
+      {
+        "num": 2,
+        "name": "National Galleries of Scotland — John Thomson",
+        "url": "https://www.nationalgalleries.org/art-and-artists/artists/john-thomson"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "lewis-carroll",
+  "name": "Lewis Carroll",
+  "nameJa": "ルイス・キャロル",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1832–1898",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "ヴィクトリア朝肖像",
+    "演出写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ルイス・キャロルは、チャールズ・ラトウィッジ・ドジソンが文学作品に用いた筆名である。1832年にイングランド・チェシャーのデアズベリーに生まれ、オックスフォード大学Christ Churchで数学を教える一方、1856年から1880年まで写真を制作した。Christ Church学寮長の娘で『不思議の国のアリス』成立の着想源となったアリス・リデル、同僚の娘アレクサンドラ・キッチン（愛称ジー）、芸術家や知人を繰り返し撮影し、衣装、物語的な演技、私的アルバムを用いて肖像を構成した。ヴィクトリア朝の芸術写真を代表する一人であり、現在は写真史上の達成と子どもを撮る成人撮影者の権力差の双方から検討されている。 *1 *2 。",
+    "textEn": "Lewis Carroll was the pen name Charles Lutwidge Dodgson used for his literary work. Born in Daresbury, Cheshire, in 1832, he taught mathematics at Christ Church, Oxford, while pursuing photography from 1856 to 1880. He repeatedly photographed Alice Liddell, the daughter of the dean of Christ Church and an important source for the story that became Alice’s Adventures in Wonderland; Alexandra Kitchin, nicknamed Xie, the daughter of a colleague; and artists, scientists, and acquaintances. Costumes, narrative role-playing, and private albums were central to the way he constructed portraits. He is now studied both as a major practitioner of Victorian art photography and through the unequal power relationship between an adult photographer and the children he photographed. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "UBC Press — The Photographs of Lewis Carroll: A Catalogue Raisonné",
+        "url": "https://www.ubcpress.ca/the-photographs-of-lewis-carroll"
+      },
+      {
+        "num": 2,
+        "name": "SFMOMA — Dreaming in Pictures: The Photography of Lewis Carroll",
+        "url": "https://www.sfmoma.org/exhibition/dreaming-in-pictures/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "robert-howlett",
+  "name": "Robert Howlett",
+  "nameJa": "ロバート・ハウレット",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1831–1858",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "産業写真",
+    "肖像写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1831年にイングランドのサフォーク州に生まれ、1850年代にロンドンで活動したロバート・ハウレットは、王室委嘱、クリミア戦争帰還兵の肖像、風景、産業写真を手がけた写真家である。代表作は、当時世界最大級の蒸気船Great Easternの建造現場と、その設計者イザムバード・キングダム・ブルネルを撮った1857年の系列。人間、鎖、船体、足場を同じ画面に入れて巨大な工業設備の尺度を伝え、写真を新聞版画やステレオへ展開したことで、産業の記録が公共的なニュース像になる過程を示した。 *1 *2 。",
+    "textEn": "Born in Suffolk, England, in 1831 and active in London during the 1850s, Robert Howlett worked across royal commissions, portraits of soldiers returning from the Crimean War, landscape, and industrial photography. His best-known body of work is the 1857 series on the construction of the Great Eastern, then one of the largest steamships in the world, and its designer Isambard Kingdom Brunel. By placing people, chains, the hull, and scaffolding within the same frames, he made the scale of industrial machinery visually legible. The circulation of these photographs as newspaper engravings and stereographs also shows how records of industry became public news images. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Victoria and Albert Museum — Photographing the Great Eastern",
+        "url": "https://www.vam.ac.uk/articles/photographing-the-great-eastern"
+      },
+      {
+        "num": 2,
+        "name": "The Metropolitan Museum of Art — Brunel before the Launching Chains",
+        "url": "https://www.metmuseum.org/art/collection/search/283083"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "samuel-bourne",
+  "name": "Samuel Bourne",
+  "nameJa": "サミュエル・ボーン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1834–1912",
+  "gender": "男性",
+  "era": "1839",
+  "movements": [
+    "旅行写真",
+    "植民地写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "サミュエル・ボーンは1834年イングランドのマックルストーン生まれ。銀行員から職業写真家へ転じ、1863〜70年にインドで活動し、三度のヒマラヤ遠征を行った。大判湿板、携帯暗室、多数の運搬人を必要とする制作を、Bourne &amp; Shepherdの番号付きカタログと販売網へつなげ、山岳、寺院、都市を購入可能な「インドのビュー」として広く流通させた。その形式美と技術的達成は、植民地の交通・労働・市場と不可分に成立していた。 *1 *2 。",
+    "textEn": "Samuel Bourne was born in Mucklestone, England, in 1834. He moved from banking into professional photography, worked in India from 1863 to 1870, and made three major Himalayan expeditions. His large wet plates required portable darkrooms and substantial teams of porters; Bourne &amp; Shepherd then connected those negatives to numbered catalogs and sales networks, circulating mountains, temples, and cities as purchasable “views of India.” The formal refinement and technical achievement of these photographs depended on colonial systems of transportation, labor, and market exchange. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "National Galleries of Scotland — Samuel Bourne",
+        "url": "https://www.nationalgalleries.org/art-and-artists/artists/samuel-bourne"
+      },
+      {
+        "num": 2,
+        "name": "J. Paul Getty Museum / Getty Research — Samuel Bourne",
+        "url": "https://www.getty.edu/research/collections/component/1YCKP7"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "william-henry-jackson",
+  "name": "William Henry Jackson",
+  "nameJa": "ウィリアム・ヘンリー・ジャクソン",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1843–1942",
+  "gender": "男性",
+  "era": "1870",
+  "movements": [
+    "測量写真",
+    "西部風景"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ウィリアム・ヘンリー・ジャクソンは1843年ニューヨーク州キーズビル生まれ。1870〜78年にF・V・ヘイデンの連邦地質調査へ参加し、イエローストーンやロッキー山脈を大型湿板で撮影した。1890年代には鉄道や世界交通を撮り、後年はDetroit Publishing CompanyでPhotochromの大量流通にも関与した。調査の「証拠」から観光商品まで、同じ土地の写真が制度と市場によって別の意味を持つ過程を一生の仕事で示した。 *1 *2 。",
+    "textEn": "William Henry Jackson was born in Keeseville, New York, in 1843. From 1870 to 1878 he joined F. V. Hayden’s federal geological surveys, photographing Yellowstone and the Rocky Mountains with large wet plates. In the 1890s he photographed railroads and transportation around the world, and later participated in the mass circulation of Photochrom images through the Detroit Publishing Company. Across his long career, photographs of land moved from survey “evidence” to tourist commodities as institutions and markets gave the same geography different uses. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Smithsonian American Art Museum — William H. Jackson",
+        "url": "https://americanart.si.edu/artist/william-h-jackson-2424"
+      },
+      {
+        "num": 2,
+        "name": "National Park Service — William Henry Jackson",
+        "url": "https://home.nps.gov/people/william-henry-jackson.htm"
+      }
+    ]
+  }
+}
+);
