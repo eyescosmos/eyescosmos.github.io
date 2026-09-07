@@ -313,6 +313,59 @@ sakiko-nomura 追加で踏んだ摩擦4点のうち3点をコード化（③は�
 | Keywords / description が素材由来に差し替わる | **正**（本文・出典・thesis・§REL も素材が正） |
 | `data-nosnippet` の減少 | prep-block（準備中プレースホルダ）が実コンテンツへ置換された**正当な減少** |
 | EN §REL が JA より項目数が少ない | **サイト標準**。EN §REL はリンク項目のみ持ち、裸テキスト項目は落ちる（JA8→EN2 等） |
+| preflight `新規 orphan class token 'inline-' / 'inline-link'` | **素材のクラス名が壊れているだけ。停止不要で既存標準クラスへ寄せる**（下の A-2） |
+| preflight `新規 orphan class token 'is-revised' / 'is-revision' / 'audit-fix' / 'essay-p' / 'rev-*'` | **素材のレビュー用マーカーの残骸。class 属性ごと除去**（下の A-2） |
+| preflight `[EN country <slug>] / [EN eras/<era>] 生成物を直接編集した疑い` | **写真家追加のたびに構造的に出る偽陽性**。正本が写真家ロスターを持たないため（下の A-4） |
+| preflight `[EN movements/<slug>] 生成物を直接編集した疑い` | **運動EN面に限り出たままが正。再生成で消そうとしない**（下の A-4） |
+
+#### A-2. 素材由来の壊れクラス・レビュー残骸の扱い（Daisuke承認済み・2026-09-05 確定）
+ChatGPT 素材は**正しいクラス名を出せないことがある**。`preflight.py` の orphan-class は HARD なので必ず止まるが、
+**判断は毎回同じ**なので最初から実行してよい（監督への確認不要）。**CSS は絶対に追加しない。**
+
+| 素材に出た値 | 直す先 | 根拠 |
+|---|---|---|
+| `class="inline-"`（接尾辞が欠落） | `class="inline-work-link"` | 中身は美術館・アーカイブ等への**外部作品リンク**。EN 素材の同一リンクは正しく `inline-work-link` になっていることが多い。既存43ページで使用（CSS定義は無く `.essay a` を継承するのが既存の形） |
+| `class="inline-link"` | `class="inline-photographer-link"` | 写真家ページ宛ての内部リンク。既存74ページで使用・`styles/photographer-page.css` に定義あり。あわせて href を `/photographers/<slug>.html`（EN は `/en/photographers/…`）の**絶対パス形へ正規化** |
+| `class="is-revised"` / `is-revision` / `audit-fix` / `essay-p` / `rev-*` | **class 属性ごと削除** | レビュー用マーカー・素材テンプレの残骸。前例＝0903 `audit-fix` / 0904 `essay-p` / 0905 `is-revised` |
+
+- **href・リンクテキスト・本文は1文字も変えない。class 属性値だけ**を触る。
+- **EN 側は `en/photographers/*.html` を直接編集しない。** `data/photographers-en-content.json` の `body_html` を直して
+  `build_photographers_en.py --slug <slug>` で再生成する。
+- **着手前に素材を grep して有無を先に確認する**（パイロットで一緒に潰せば往復が1回減る）:
+  ```bash
+  grep -ho 'class="[^"]*"' <素材ディレクトリ>/*.html | tr ' ' '\n' | grep -oE '[a-z-]+"?$' | sort -u | head -40
+  ```
+- 上表に無い未知クラスが出たら**勝手にCSSを足さず停止して監督に報告**する。
+
+#### A-3. 生没年が資料で割れているときの JSON-LD（Daisuke承認済み・2026-09-05 確定）
+§14-C の「素材に生没年が無ければ調べて入れる」の**例外側の運用**。前例＝`alfred-rosling`
+（NGA=1802–1882 / Getty=1802–1880s / BL=c.1802–1889 で没年が割れ、素材本文自身がその資料差を明記していた）。
+
+1. **表示は素材の表記をそのまま維持**（例 `1802–1880s?`）。表示4ヶ所（`ph-hero__years` / `<dt>Years</dt>` /
+   `ph-side-meta-row` の Years / card-data `metaJa`）で一致させる。
+2. **JSON-LD には「複数の一次資料が一致している側の年だけ」入れる**（rosling は `birthDate: "1802"` のみ）。
+   **割れている側（deathDate）は入れない。推測で単一年を作らない。**
+3. preflight の JSON-LD 日付ガードは「本文・hero から確定年を導出できるのにキーが無い」ことを HARD で見る。
+   **片側だけ入れれば通る**（2026-09-05 実測）。**ガード本体の変更・許容リストへの追加は禁止。**
+4. なぜ確定できないかを run-log に1行書く。
+
+#### A-4. 「生成物を直接編集した疑い」WARN の判定（2026-09-05 実測で確定）
+このWARNは「EN生成物のHTMLが変わったのに対応する正本JSONが変わっていない」だけを見るヒューリスティック。
+**誤検知と決めつけず、面ごとに次の扱いを取る。**
+
+- **`[EN country <slug>]` / `[EN eras/<era>]` … 構造的な偽陽性。** `data/country-pages.json` は
+  `codes/lead/nameEn/nameJa/slug/updated` しか持たず、`data/taxonomy-en-content.json` も prose（meta/sections）だけで、
+  **写真家カードは JA HTML 由来**。写真家追加のたびに必ず出る。
+  実証はスコープ付き再生成→**SHA-256 が byte 一致**することの確認でよい（`--all` は使わない）。
+- **★`[EN movements/<slug>]` … 再生成で消そうとしない。出たままが正。**
+  `build_taxonomy_en.py --slug <movement>` は **(a) 運動固有 lede を `en/archive.html` の汎用 lede で潰し、
+  (b) 追加カードの meta を国コード（`GB`）から `PHOTOGRAPHER` へ退行させる**（2026-09-05 に pictorialism で実測）。
+  `check_content_loss.py` も `preflight.py` もこれを検知しない。**運動EN面の正しい更新方法は最小差分挿入**であり、
+  このWARNは「手編集が誤り」ではなく builder が非可逆であることの反映。
+- 検証のために再生成を試す場合は、**必ず `<path>.preverify.bak` を先に取り、1バイトでも違えば即復元**して報告する。
+  作業後に `.preverify.bak` が0件であることを実測する。
+- **例外**：`[EN archive]` は**真陽性だった前例がある**（2026-08-31・card-data.json 据え置きというスコープ誤りの正しい早期シグナル）。
+  これだけは偽陽性として片付けない。
 
 ### B. Related削除SKIP の常設承認条件（毎回止めない）
 EN builder が Related 削除で SKIP したとき、**次の3点を実測して全部成立するなら `--force` 承認済み**として進む。
@@ -379,6 +432,11 @@ Keywords / description / 本文 / 出典 / thesis / §REL は**素材が正**。
 **パイロットの時点で以下を全部回す。**
 
 - `check_content_loss.py` OK / `preflight.py` EXIT 0
+- **preflight の残 WARN を1件ずつ判定してから次へ進む**（2026-09-05 追加。ここを後回しにすると
+  「終わったつもり」から検証ラウンドが1回生える）。`[EN country]` / `[EN eras]` はスコープ再生成の
+  byte 一致で偽陽性を実証、`[EN movements]` は**再生成せず出たままが正**。判定基準は上の A-4。
+- **素材由来の壊れクラス・レビュー残骸をパイロットの時点で総ざらいする**（A-2 の grep）。
+  11人目で出ると往復が増えるだけで、判断は毎回同じ。
 - `build_photographers_en.py --slug S --dry-run` が SKIPPED しない
 - **JSON-LD Person の キー集合を baseline と diff し、減ったキーが0**（← 2026-07-23 はこれを push 直前まで回さず手戻り）
 - EN不可視要素（GA / canonical / hreflang / og:image / JSON-LD）が backup と同数
