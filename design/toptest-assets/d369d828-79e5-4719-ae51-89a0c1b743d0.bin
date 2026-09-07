@@ -3732,7 +3732,416 @@ const PHOTOGRAPHERS = [
       "textEn": "Ihei Kimura is a photographer who connected the quick-shooting capacity of the small camera to literary portraits, Tokyo street corners, life in Akita, and the circulation of photojournalism. Beyond the common epithet of “master of the Leica,” this page sets out his institutional influence, reaching into postwar realism, print media, the Japan Professional Photographers Society, and the Kimura Ihei Award.",
       "citations": []
     }
+  },
+  {
+    "id": "frank-sutcliffe",
+    "name": "Frank Meadow Sutcliffe",
+    "nameJa": "フランク・サトクリフ",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1853–1941",
+    "gender": "男性",
+    "era": "1870",
+    "movements": [
+      "自然主義写真",
+      "ピクトリアリズム"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1853年リーズのヘディングリー生まれ。画家の父からカメラを与えられ、1870年に家族でウィットビーへ移住した。翌年父を失い、18歳で母と7人の弟妹を支えるため写真を職業にし、肖像写真館を営みながら、港、漁師、子ども、船、街路を数十年撮影した。《The Water Rats》《Dinnertime》などをLinked Ring周辺の美術写真へ発展させた一方、漁港と観光地が重なる町の社会史も残した。その二つの働きが同じ画面にどう成立したかをたどる。 *1 *2 。",
+      "textEn": "Born in Headingley, Leeds, in 1853, Frank Sutcliffe was given a camera by his painter father and moved with his family to Whitby in 1870. His father died the following year, and at eighteen Sutcliffe turned photography into a profession to support his mother and seven younger siblings. While running a portrait studio, he photographed Whitby’s harbor, fishermen, children, boats, and streets over several decades. Works such as The Water Rats and Dinnertime entered the art-photography world around the Linked Ring, while the same body of work preserved the social history of a town shaped by both fishing and tourism. This page examines how those two functions coexist within the photographs. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "The Metropolitan Museum of Art — Display of Whitby Seascape Photographs",
+          "url": "https://www.metmuseum.org/art/collection/search/899526"
+        },
+        {
+          "num": 2,
+          "name": "MoMA — A Personal View: Photography in the Collection of Paul F. Walter",
+          "url": "https://assets.moma.org/documents/moma_catalogue_2200_300062735.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "id": "alfred-rosling",
+    "name": "Alfred Rosling",
+    "nameJa": "アルフレッド・ロスリング",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1802–1880s?",
+    "gender": "男性",
+    "era": "1839",
+    "movements": [
+      "初期紙ネガ写真",
+      "地誌写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1802年頃生まれとされるアルフレッド・ロスリングは、材木商であり、1850年代のロンドン、ウェールズ、庭園、橋、採石場などを紙ネガ系の技法で撮影し、Photographic Societyの創設期から展覧会や共同アルバムに参加したアマチュア写真家である。出生地、没年、作品単位の帰属には資料差が残るため、《The Float at Swansea》など技術記録の明確な作品と、後年フランシス・フリスが印刷・出版した地誌写真を軸に、初期写真の作者性、階級的なアマチュア文化、商業流通の変化を検討する。 *1 *2 。",
+      "textEn": "Believed to have been born around 1802, Alfred Rosling was a timber merchant and amateur photographer who used paper-negative processes to photograph London, Wales, gardens, bridges, quarries, and related subjects in the 1850s. From the early years of the Photographic Society, he participated in exhibitions and collaborative albums. Because sources disagree over his birthplace, date of death, and the attribution of individual works, this page focuses on photographs with clear technical documentation, including The Float at Swansea, and on topographical images later printed and published by Francis Frith, using them to examine authorship, class-based amateur culture, and changing systems of commercial circulation in early photography. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "British Library — The Float at Swansea, September 1853",
+          "url": "https://searcharchives.bl.uk/catalog/040-003237750"
+        },
+        {
+          "num": 2,
+          "name": "Royal Collection Trust — Southwark Bridge, London",
+          "url": "https://albert.rct.uk/collections/photographs-collection/photographs-1842-61/southwark-bridge-london"
+        }
+      ]
+    }
+  },
+  {
+    "id": "edward-l-wilson",
+    "name": "Edward L. Wilson",
+    "nameJa": "エドワード・L・ウィルソン",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1838–1903",
+    "gender": "男性",
+    "era": "1870",
+    "movements": [
+      "Photographic Publishing",
+      "Stereography"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1838年ニュージャージー州フレミントン生まれ。1860年代初頭にフィラデルフィアのフレデリック・グーテクンストのスタジオで働き、1864年に専門誌『The Philadelphia Photographer』を創刊した。ステレオ写真やエジプト・パレスチナの旅行写真も制作しながら、実物印画を綴じ込む雑誌、年鑑、技術書、ランタン上映を連動させた。南北戦争後のアメリカで、写真を個々の撮影者の技能から、共有・批評・教育・販売を伴う専門文化へ育てた人物である。 *1 *2 。",
+      "textEn": "Born in Flemington, New Jersey, in 1838, Edward Livingston Wilson entered photography in the early 1860s while working in Frederick Gutekunst’s Philadelphia studio. In 1864 he founded the professional journal The Philadelphia Photographer. Alongside stereographs and travel photographs made in Egypt and Palestine, he developed a network of illustrated journals containing original prints, annuals, technical manuals, and lantern lectures. In the post–Civil War United States, Wilson helped turn photography from knowledge held within individual studios into a professional culture organized around exchange, criticism, education, and commerce. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "John Hannavy (ed.), Encyclopedia of Nineteenth-Century Photography — Edward L. Wilson entry",
+          "url": "https://phsc.ca/camera/wp-content/uploads/2019/07/Encyclopedia-of-19th-Century-Photography.pdf"
+        },
+        {
+          "num": 2,
+          "name": "Princeton Graphic Arts — An Index to the Original Photographs in The Philadelphia Photographer",
+          "url": "https://graphicarts.princeton.edu/2016/06/22/an-index-to-the-original-photographs-in-the-philadelphia-photographer/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ernest-farmer",
+    "name": "Ernest Howard Farmer",
+    "nameJa": "アーネスト・ハワード・ファーマー",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1856–1944",
+    "gender": "男性",
+    "era": "1870",
+    "movements": [
+      "Photographic Education",
+      "Technical Photography"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1856年ブライトン生まれ。父ロバートは同地の初期肖像写真家で、ファーマーは幼少期から写真と化学が身近にある家庭に育った。物理学を学び、1882年からRegent Street Polytechnicで写真を教え、のちに写真学校の初代責任者となる。Farmer’s Reducerとして定着した画像減力法、写真工程やカメラの特許、《A Wiltshire Thatcher》やストーンヘンジの野外写真を通じ、露光・材料・現像・補正を分解して教えられる知識へ整理した。写真が徒弟的な技能から高等・職業教育の専門領域へ移る過程を体現した写真家・教育者である。 *1 *2 。",
+      "textEn": "Born in Brighton in 1856, Ernest Howard Farmer grew up in a household where photography and chemistry were already familiar: his father Robert was an early portrait photographer in the city. Farmer studied physics, began teaching photography at the Regent Street Polytechnic in 1882, and later became the first head of its school of photography. Through the image-reduction process known as Farmer’s Reducer, patents relating to photographic processes and cameras, and field photographs such as A Wiltshire Thatcher and his views of Stonehenge, he broke exposure, materials, development, and correction into forms of knowledge that could be taught. His career embodies the movement of photography from apprenticeship-based skill toward a specialized field of higher and vocational education. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "University of Westminster — Photographer of Led Zeppelin IV album cover revealed as former Westminster head",
+          "url": "https://www.westminster.ac.uk/news/photographer-of-led-zeppelin-iv-album-cover-revealed-as-former-westminster-head"
+        },
+        {
+          "num": 2,
+          "name": "Wiltshire Museum — Wiltshire Thatcher appeal",
+          "url": "https://www.wiltshiremuseum.org.uk/wiltshire-thatcher-appeal/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "george-davison",
+    "name": "George Davison",
+    "nameJa": "ジョージ・デイヴィソン",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1854–1930",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "Naturalistic Photography",
+      "Pictorialism",
+      "Linked Ring"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1854年イングランド東部ローストフトの船大工の家庭に生まれ、官吏として働きながら1885年頃に写真を始めた。ピーター・ヘンリー・エマーソンの自然主義写真を学んだ後、1890年の《The Onion Field》ではピンホールによって細部を大きく抑え、写真の鮮明さをめぐる論争の中心に立った。1892年にはLinked Ringの創設に参加し、のちにKodak英国法人の経営者、キリスト教社会主義や社会改革運動の支援者となる。画面のぼけに加え、階級上昇、写真産業、展示制度、政治思想が交差する位置からピクトリアリズムを考えるうえで重要な写真家である。 *1 *2 。",
+      "textEn": "Born in 1854 in Lowestoft, eastern England, to a shipwright’s family, George Davison began making photographs around 1885 while working as a civil servant. After studying the naturalistic photography of Peter Henry Emerson, he used a pinhole to suppress detail in The Onion Field (1890), placing himself at the center of a debate over photographic sharpness. He helped found the Linked Ring in 1892 and later became an executive in Kodak’s British operations while supporting Christian socialism and social reform. His work is important to the history of Pictorialism because soft focus intersected in his career with social mobility, the photographic industry, exhibition institutions, and political thought. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "National Science and Media Museum — O is for Onion Field",
+          "url": "https://blog.scienceandmediamuseum.org.uk/a-z-of-photography-george-davison-pictorialism-vs-straight-photography/"
+        },
+        {
+          "num": 2,
+          "name": "Science Museum Group Collection — George Davison",
+          "url": "https://collection.sciencemuseumgroup.org.uk/people/cp40991/george-davison"
+        }
+      ]
+    }
+  },
+  {
+    "id": "henry-hamilton-bennett",
+    "name": "Henry Hamilton Bennett",
+    "nameJa": "ヘンリー・ハミルトン・ベネット",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1843–1908",
+    "gender": "男性",
+    "era": "1870",
+    "movements": [
+      "Stereography",
+      "Landscape Photography"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1843年カナダ東部ファーナム生まれ。少年期にウィスコンシンへ移り、南北戦争で腕を負傷して大工仕事へ戻れなくなった後、1865年にキルボーン・シティ（現在のウィスコンシン・デルズ）で写真館を買い取った。ウィスコンシン川の岩場をステレオ写真の連続シリーズとして売り、《Stand Rock》では自作シャッターで跳躍を止め、量産設備や鉄道宣伝まで組み合わせてデルズの観光像を作った。Ho-Chunkの人々も商品写真へ組み込まれたため、地方景観の発見に加え、観光資本と先住民表象の歴史から読む必要がある。 *1 *2 。",
+      "textEn": "Born in Farnham, Canada East, in 1843, Henry Hamilton Bennett moved to Wisconsin as a boy. After a Civil War injury left him unable to return to carpentry, he purchased a photographic studio in Kilbourn City, now Wisconsin Dells, in 1865. He sold the rock formations of the Wisconsin River as sequential stereographic series, froze a leap at Stand Rock with a shutter of his own design, and combined mass-production equipment with railroad promotion to shape the tourist image of the Dells. Because Ho-Chunk people were also incorporated into this commercial picture economy, Bennett’s archive links the discovery and promotion of regional scenery to tourism capital and to the ways Indigenous people were pictured for visitors. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "H. H. Bennett Studio / Wisconsin Historical Society — History of the Studio",
+          "url": "https://hhbennettstudio.wisconsinhistory.org/explore/history-hh-bennett-studio/"
+        },
+        {
+          "num": 2,
+          "name": "Wisconsin Historical Society — H. H. Bennett: Photographer of the Dells",
+          "url": "https://legacy.wisconsinhistory.org/Records/Article/CS3954"
+        }
+      ]
+    }
+  },
+  {
+    "id": "horsley-hinton",
+    "name": "Alfred Horsley Hinton",
+    "nameJa": "ホースリー・ヒントン",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1863–1908",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "ピクトリアリズム",
+      "Linked Ring"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1863年ロンドン生まれ。少年期から風景を素描し、前景の草木や地形を素早く記録する手段としてカメラを使い始めたアルフレッド・ホースリー・ヒントンは、ピーター・ヘンリー・エマーソンの自然主義写真から刺激を受けつつ、霧、雲、川岸、田園を大きな明暗と階調で構成した。Linked Ringの活動、『The Amateur Photographer』編集、技法書、展覧会評を通じて、急増するアマチュア写真家に美術写真の制作法と評価基準を伝えた。 *1 *2 。",
+      "textEn": "Born in London in 1863, Alfred Horsley Hinton sketched landscapes from childhood and began using a camera as a faster way to record foreground vegetation and terrain. Stimulated by Peter Henry Emerson’s naturalistic photography, he organized mist, clouds, riverbanks, and rural scenery into broad masses of light, dark, and tone. Through the Linked Ring, his editorship of The Amateur Photographer, instructional books, and exhibition criticism, he helped transmit methods and standards for art photography to a rapidly expanding amateur public. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "The Metropolitan Museum of Art — A Handbook of Illustration",
+          "url": "https://www.metmuseum.org/art/collection/search/351632"
+        },
+        {
+          "num": 2,
+          "name": "Project Gutenberg — A Handbook of Illustration",
+          "url": "https://www.gutenberg.org/ebooks/43557"
+        }
+      ]
+    }
+  },
+  {
+    "id": "james-craig-annan",
+    "name": "James Craig Annan",
+    "nameJa": "ジェームズ・クレイグ・アナン",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1864–1946",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "ピクトリアリズム",
+      "Linked Ring"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1864年スコットランドのハミルトン生まれ。化学と自然哲学を学んだ後、写真家トーマス・アナンの家業で撮影と印刷に入り、1883年にウィーンでフォトグラヴュール技法を習得した。Linked Ringや『Camera Work』を通じて国際的なピクトリアリズムに参加し、自作の旅・肖像写真とヒル＆アダムソンの1840年代のネガを同じ版画技術で再制作した。撮影、印刷、複製、展覧会、写真史の形成を連続した仕事として扱った点に特色がある。 *1 *2 。",
+      "textEn": "Born in Hamilton, Scotland, in 1864, James Craig Annan studied chemistry and natural philosophy before entering the family photographic business of his father, Thomas Annan, where photography and printing were closely connected. In 1883 he learned photogravure in Vienna. Through the Linked Ring and Camera Work, he took part in international Pictorialism, using the same intaglio process for his own travel and portrait photographs and for new prints from Hill and Adamson’s 1840s negatives. His importance lies in treating photography, printing, reproduction, exhibition, and the writing of photographic history as connected forms of work. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "National Galleries of Scotland — James Craig Annan",
+          "url": "https://www.nationalgalleries.org/art-and-artists/artists/james-craig-annan"
+        },
+        {
+          "num": 2,
+          "name": "National Galleries of Scotland — Hill and Adamson",
+          "url": "https://www.nationalgalleries.org/art-and-artists/features/hill-adamson"
+        }
+      ]
+    }
+  },
+  {
+    "id": "john-benjamin-stone",
+    "name": "John Benjamin Stone",
+    "nameJa": "ジョン・ベンジャミン・ストーン",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1838–1914",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "Survey Photography",
+      "Photographic Archive"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1838年バーミンガム近郊アストン生まれ。ガラス製造と製紙業で財を築き、地方政治家、国会議員として活動する一方、古物・地誌資料の収集から写真へ入り、英国各地の建築、祭礼、職業習慣、国会を大量の写真と詳細なキャプションで記録した。1897年にはNational Photographic Record Associationを主導し、撮影、分類、保存、公共アーカイブへの収蔵を一つの計画として整えた。写真を将来の歴史資料として制度化した人物であり、その制度がどの「英国」を保存対象に選んだかも現在の重要な批評点である。 *1 *2 。",
+      "textEn": "Born in Aston near Birmingham in 1838, John Benjamin Stone made his fortune in glass manufacturing and the paper industry and later served in local politics and Parliament. His photography grew out of collecting antiquarian and topographical material, and he recorded architecture, ceremonies, occupational customs, and Parliament across Britain in large numbers of photographs accompanied by detailed captions. In 1897 he led the formation of the National Photographic Record Association, bringing photography, classification, preservation, and deposit in public archives into a single program. Stone helped institutionalize photography as historical evidence for the future; today, an equally important question is which version of “Britain” that system chose to preserve. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Library of Birmingham — The Benjamin Stone Collection",
+          "url": "https://www.birmingham.gov.uk/info/50165/birmingham_connection/1601/benjamin_stone_collection/"
+        },
+        {
+          "num": 2,
+          "name": "Library of Birmingham — Benjamin Stone: biography",
+          "url": "https://www.birmingham.gov.uk/info/50165/birmingham_connection/1601/benjamin_stone_collection/2"
+        }
+      ]
+    }
+  },
+  {
+    "id": "paul-martin",
+    "name": "Paul Martin",
+    "nameJa": "ポール・マーティン",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1864–1944",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "街頭写真",
+      "初期スナップ写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1864年フランス北東部エルブヴィル生まれ。少年期に英国へ移り、シアノタイプを試した後、木版職人として働きながら写真を趣味として続けたポール・マーティンは、1892年頃から包みのように偽装した小型乾板カメラでロンドンの市場、売り子、労働者、子どもを撮影した。昼は人々が撮影を意識する前の身振りを短い露光で捉え、夜はガス灯と濡れた路面を長時間露光した。《The Magazine Seller》《Trafalgar Square on a Very Wet Night》を通して、都市写真の時間と撮影者の存在感を変えた方法を検討する。 *1 *2 。",
+      "textEn": "Born in Elbeuf in northeastern France in 1864, Paul Martin moved to Britain as a child. After experimenting with cyanotype, he continued photography as an amateur while working as a wood engraver. Around 1892 he began using a small dry-plate camera disguised as a parcel to photograph London markets, street sellers, workers, and children. By day he used short exposures to record gestures before people became aware of being photographed; by night he made long exposures of gaslight and wet streets. Through works such as The Magazine Seller and Trafalgar Square on a Very Wet Night, this page examines how he changed the temporal scale of urban photography and the visible presence of the photographer. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "London Museum — A Magazine Seller at Ludgate Circus, 1893",
+          "url": "https://www.londonmuseum.org.uk/collections/v/object-450035/a-magazine-seller-at-ludgate-circus-1893/"
+        },
+        {
+          "num": 2,
+          "name": "London Museum — Street Urchins, 1893",
+          "url": "https://www.londonmuseum.org.uk/collections/v/object-448431/street-urchins-1893/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tempest-anderson",
+    "name": "Tempest Anderson",
+    "nameJa": "テンペスト・アンダーソン",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1846–1913",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "科学写真",
+      "地質写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1846年ヨーク生まれ。眼科医として診療しながら山岳・氷河観察を続け、やがて火山学へ進んだテンペスト・アンダーソンは、乾板、パノラマ、幻灯を使って噴火と地形変化を記録した。1902年のスフリエール山・プレー山調査と『Volcanic Studies in Many Lands』を軸に、写真を現地観察、学会報告、公共講演へ連続させた科学写真の方法をたどる。 *1 *2 。",
+      "textEn": "Born in York in 1846, Tempest Anderson practiced as an ophthalmologist while pursuing mountaineering and glacial observation before turning increasingly to volcanology. He used dry plates, panoramic photography, and lantern slides to record eruptions and changes in terrain. Centering on his 1902 investigations of La Soufrière and Mount Pelée and his book Volcanic Studies in Many Lands, this page traces a method of scientific photography that linked field observation, learned-society reports, and public lectures. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "York Museums Trust — Tempest Anderson: The Man Behind the Camera",
+          "url": "https://www.yorkmuseumstrust.org.uk/blog/tempest-anderson-the-man-behind-the-camera-by-rebecca-hall-science-team-volunteer/"
+        },
+        {
+          "num": 2,
+          "name": "Yorkshire Museum — Tempest Anderson: Explorer and Surgeon",
+          "url": "https://www.yorkshiremuseum.org.uk/collections/collections-highlights/temptest-anderson-explorer-and-surgeon/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "valentine-blanchard",
+    "name": "Valentine Blanchard",
+    "nameJa": "ヴァレンタイン・ブランシャール",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1831–1901",
+    "gender": "男性",
+    "era": "1839",
+    "movements": [
+      "Instantaneous Photography",
+      "Stereography"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1831年、イングランドのケンブリッジシャー生まれ。1850年代にロンドンで写真家となり、肖像、建築、ステレオ写真を制作した。湿板コロジオンの感光液と現像、明るいレンズ、馬車を改造した移動暗室を組み合わせ、1860年代初頭の《Instantaneous Views of London》では馬車や歩行者が行き交う街路を短時間露光で定着した。大型機材と現地処理が必要な時代に、建築の形に加えて都市の交通や群衆まで写真の歴史資料にできることを早い段階で示した。 *1 *2 。",
+      "textEn": "Born in Cambridgeshire, England, in 1831, Valentine Blanchard became a photographer in London in the 1850s, producing portraits, architectural views, and stereographs. By combining adjustments to wet-collodion sensitizing and development with fast lenses and a horse-drawn mobile darkroom, he used short exposures in his early-1860s Instantaneous Views of London to register streets filled with carriages and pedestrians. At a time when photography required bulky equipment and on-site processing, Blanchard showed at an early stage that photographs could preserve urban traffic and crowds as historical evidence alongside the forms of buildings. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "National Portrait Gallery — Valentine Blanchard",
+          "url": "https://www.npg.org.uk/collections/search/person/mp86780/valentine-blanchard"
+        },
+        {
+          "num": 2,
+          "name": "National Science and Media Museum — Instantaneous photography: capturing motion",
+          "url": "https://blog.scienceandmediamuseum.org.uk/photography-a-z-instantaneous-photography-capturing-motion/"
+        }
+      ]
+    }
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
