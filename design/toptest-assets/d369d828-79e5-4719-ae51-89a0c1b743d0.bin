@@ -4129,7 +4129,216 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "clarence-h-white",
+    "name": "Clarence H. White",
+    "nameJa": "クラレンス・H・ホワイト",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1871–1925",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "ピクトリアリズム",
+      "写真分離派",
+      "写真教育"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1871年、オハイオ州ウェスト・カーライル生まれのクラレンス・H・ホワイトは、簿記係を続けながら独学で写真を始め、妻や子ども、友人を自宅の窓辺や庭、早朝の光の中に配した作品で評価された。Photo-Secessionで活動した後、Arthur Wesley Dowのデザイン理論を写真教育へ取り込み、Clarence H. White Schoolから広告、ファッション、ドキュメンタリー、モダニズムへ進む世代を育てた。 *1 *2 。",
+      "textEn": "Born in 1871 in West Carlisle, Ohio, Clarence H. White began photography as a self-taught practitioner while continuing to work as a bookkeeper. He became known for carefully arranged photographs of his wife, children, and friends in domestic interiors, gardens, and early-morning light. After participating in Photo-Secession, he brought Arthur Wesley Dow’s design theory into photographic education. Through the Clarence H. White School, he trained a generation that moved into advertising, fashion, documentary photography, and modernism. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Princeton University Art Museum — Clarence H. White and His World",
+          "url": "https://artmuseum.princeton.edu/art/stories-perspectives/clarence-h-white-and-his-world-art-and-craft-photography-1895-1925"
+        },
+        {
+          "num": 2,
+          "name": "Princeton University Art Museum — Clarence H. White, artist",
+          "url": "https://artmuseum.princeton.edu/art/stories-perspectives/clarence-h-white-artist"
+        }
+      ]
+    }
+  },
+  {
+    "id": "adolf-de-meyer",
+    "name": "Adolf de Meyer",
+    "nameJa": "アドルフ・ド・メイヤー",
+    "nationality": "FR / GB / US",
+    "flag": "🇫🇷",
+    "years": "1868–1946",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "ピクトリアリズム",
+      "写真分離派",
+      "ファッション写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1868年、パリ生まれのアドルフ・ド・メイヤーは、家族や親しい友人のスナップから写真に入り、Linked Ring、Photo-Secessionを経て、ニジンスキーの《L’Après-midi d’un faune》、社交界肖像、静物、『Vogue』『Vanity Fair』『Harper’s Bazaar』のファッション写真へ進んだ。日本旅行で深めた平面構成と逆光、反射する布や宝飾の階調を誌面にも用い、美術写真と近代ファッション写真が接続する過程を考えるうえで重要な写真家である。 *1 *2 。",
+      "textEn": "Born in Paris in 1868, Adolf de Meyer entered photography through snapshots of family and close friends, then moved through the Linked Ring and Photo-Secession into society portraiture, still life, his photographs of Nijinsky in L’Après-midi d’un faune, and fashion work for Vogue, Vanity Fair, and Harper’s Bazaar. The planar compositions, backlighting, and luminous treatment of reflective fabrics and jewelry that he developed further during a trip to Japan also carried into his magazine work, making him a key figure in the transition between art photography and modern fashion photography. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Getty Museum — Baron Adolf de Meyer",
+          "url": "https://www.getty.edu/art/collection/person/103KJP"
+        },
+        {
+          "num": 2,
+          "name": "The Met — Quicksilver Brilliance: Adolf de Meyer Photographs",
+          "url": "https://www.metmuseum.org/exhibitions/listings/2017/quicksilver-brilliance"
+        }
+      ]
+    }
+  },
+  {
+    "id": "alexander-keighley",
+    "name": "Alexander Keighley",
+    "nameJa": "アレグザンダー・キーグリー",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1861–1947",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "ピクトリアリズム",
+      "Linked Ring"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1861年、ウェスト・ヨークシャーのキーグリーに生まれたアレグザンダー・キーグリーは、毛織物業の経営に携わりながら写真を続け、初期の演出人物写真から森、雪、農村、古建築、海外旅行の風景へ主題を広げた。撮影したネガを段階的に拡大し、その途中で細部を修整して炭素印画へ仕上げる方法と、Linked RingやYorkshire Photographic Unionを介した展覧会活動を通じ、地方のアマチュア制作を国際的な美術写真へ結びつけた。 *1 *2 。",
+      "textEn": "Born in Keighley, West Yorkshire, in 1861, Alexander Keighley pursued photography while helping run the family wool business. His subjects expanded from early staged figure studies to woods, snow, rural life, old buildings, and landscapes made during overseas travel. He enlarged negatives in stages, retouched details along the way, and finished them as carbon prints; through exhibitions with the Linked Ring and the Yorkshire Photographic Union, he also connected a regional amateur practice to international art photography. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "The Met — The Dayspring from on High",
+          "url": "https://www.metmuseum.org/art/collection/search/269686"
+        },
+        {
+          "num": 2,
+          "name": "British Library — The Amateur Photographer prize pictures / Photography as a recreation",
+          "url": "https://searcharchives.bl.uk/catalog/032-003235006"
+        }
+      ]
+    }
+  },
+  {
+    "id": "frances-benjamin-johnston",
+    "name": "Frances Benjamin Johnston",
+    "nameJa": "フランシス・ベンジャミン・ジョンストン",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1864–1952",
+    "gender": "女性",
+    "era": "1890",
+    "movements": [
+      "社会ドキュメンタリー",
+      "建築写真",
+      "職業写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1864年、ウェストヴァージニア州グラフトン生まれのフランシス・ベンジャミン・ジョンストンは、パリで美術を学んだ後、ワシントンD.C.で独立写真家となり、政治家肖像、雑誌報道、自画像、《Hampton Album》、庭園、南部建築調査まで仕事を広げた。依頼主や展示目的に応じて一枚の肖像、連続写真、索引付きアーカイブを使い分け、女性が写真を専門職として担う可能性と、記録写真が制度の価値観を帯びる問題を同時に残した。 *1 *2 。",
+      "textEn": "Born in Grafton, West Virginia, in 1864, Frances Benjamin Johnston studied art in Paris before establishing herself as an independent photographer in Washington, D.C. Her work ranged from portraits of politicians, magazine journalism, and self-portraiture to the Hampton Album, garden photography, and surveys of Southern architecture. She shifted among single portraits, photographic sequences, and indexed archives according to the needs of a commission or exhibition, leaving a record both of women’s expanding professional possibilities in photography and of the ways documentary images can carry the values of the institutions that commission them. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Library of Congress — Frances Benjamin Johnston Collection",
+          "url": "https://www.loc.gov/collections/frances-benjamin-johnston/about-this-collection/"
+        },
+        {
+          "num": 2,
+          "name": "National Portrait Gallery, London — Frances Benjamin Johnston",
+          "url": "https://www.npg.org.uk/collections/search/person/mp68458/frances-benjamin-johnston"
+        }
+      ]
+    }
+  },
+  {
+    "id": "frank-eugene",
+    "name": "Frank Eugene",
+    "nameJa": "フランク・ユージーン",
+    "nationality": "US / DE",
+    "flag": "🇺🇸",
+    "years": "1865–1936",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "ピクトリアリズム",
+      "写真分離派",
+      "写真教育"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1865年、ニューヨーク生まれのフランク・ユージーンは、ミュンヘンで絵画を学び、肖像画制作の補助として使い始めた写真を、やがて独立した作品媒体へ変えていった。ネガの乳剤を針で削り、筆や鉛筆で描き直した像をフォトグラヴュールとして複製し、Photo-Secessionと『Camera Work』で発表した。後年はミュンヘン、ライプツィヒで写真教育にも携わり、写真、絵画、版画、教育をまたぐ制作を続けた。 *1 *2 。",
+      "textEn": "Born in New York in 1865, Frank Eugene studied painting in Munich and gradually turned photography, which he first used as an aid in making painted portraits, into an independent medium. He scratched the emulsion of his negatives with a needle, reworked images with brush and pencil, reproduced them as photogravures, and published them through Photo-Secession and Camera Work. Later he also taught photography in Munich and Leipzig, sustaining a career that moved among photography, painting, printmaking, and education. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "The Met — Adam and Eve",
+          "url": "https://www.metmuseum.org/art/collection/search/260240"
+        },
+        {
+          "num": 2,
+          "name": "Art Institute of Chicago — Frank Eugene",
+          "url": "https://archive.artic.edu/stieglitz/frank-eugene/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "fred-holland-day",
+    "name": "F. Holland Day",
+    "nameJa": "フレッド・ホランド・デイ",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1864–1933",
+    "gender": "男性",
+    "era": "1890",
+    "movements": [
+      "ピクトリアリズム",
+      "ステージド写真",
+      "出版"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1864年、マサチューセッツ州ノーウッド生まれのF・ホランド・デイは、出版社Copeland and Dayで書物の紙、活字、挿絵、装丁に関わった後、写真で男性裸体、黒人青年、文学者、宗教的セルフポートレートを制作した。《The Seven Words》の連作、プラチナ印画、1900年ロンドン展を通じ、撮影だけでなく身体の演出、印画、配列、展示までを一つの制作として扱った。 *1 *2 。",
+      "textEn": "Born in Norwood, Massachusetts, in 1864, F. Holland Day first worked through the publishing house Copeland and Day, shaping books through paper, typography, illustration, and binding before turning to photography. His photographs include male nudes, portraits of Black youths and literary figures, and religious self-portraits. Through the sequence The Seven Words, platinum printing, and the 1900 London exhibition The New School of American Photography, he treated bodily staging, printing, sequencing, and exhibition as parts of a single photographic production. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Library of Congress — F. Holland Day Papers",
+          "url": "https://findingaids.loc.gov/repositories/19/resources/5429"
+        },
+        {
+          "num": 2,
+          "name": "The Met — Zaida Ben-Yusuf",
+          "url": "https://www.metmuseum.org/art/collection/search/267547"
+        }
+      ]
+    }
   }
+
+
+
+
+
+
 
 
 

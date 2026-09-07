@@ -491,7 +491,7 @@ FRANCE_EXPECTED_IDS = [
     "hippolyte-bayard", "louis-desire-blanquart-evrard", "maxime-du-camp",
     "andre-adolphe-eugene-disderi", "charles-negre",
     "marey", "marville", "demachy", "eugene-atget",
-    "jacques-henri-lartigue", "paul-geniaux", "louis-vaire", "manray",
+    "jacques-henri-lartigue", "paul-geniaux", "louis-vaire", "adolf-de-meyer", "manray",
     "cartierbresson", "brassai", "robert-doisneau", "francois-kollar",
     "marcel-bovis", "izis", "jean-luc-moulene", "sophie-calle",
     "marine-hugonnier", "jean-pierre-khazem", "jean-luc-mylayne",

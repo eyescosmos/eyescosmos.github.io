@@ -59,6 +59,7 @@
 | 2026-09-03 | **12名バッチnew**(0902素材・idx 318–329) | new | **1時間18分** | 0 | 監督判断7系統（下記） | 公開HTML 40面＋sitemap 2面 | JA計55,247 | 計306 |
 | 2026-09-04 | **12名バッチnew**(0904素材・idx 330–341) | new | （Daisuke記入） | 3（下記） | 6系統（下記） | 公開HTML 45面＋sitemap 2面 | JA計60,576 / EN計128,711 | 計347 |
 | 2026-09-05 | **12名バッチnew**(0905素材・idx 342–353) | new | **1時間30分** | 4（下記） | 7系統（下記） | 公開HTML 47面＋sitemap 2面 | 本文h3 JA/EN各123 | 計330 |
+| 2026-09-08 | **6名バッチnew**(0907素材・idx 354–359) | new | **60分** | 2（下記） | 7系統（下記） | 公開HTML 36面＋sitemap 2面 | 本文h3 JA/EN各72 | 計174 |
 | 2026-09-03 | (JA表記統一：ル・グレー5ページ＋英題内人名2ページ) | other | （Daisuke記入） | 0 | 2系統（文字列置換のみ） | JA写真家7ファイル | N/A（本文字数不変） | N/A |
 | 2026-09-03 | (`報道写真` EN表記統一) | other | （Daisuke記入） | 2（後勝ち年代ラベル／旧Country残骸） | 2（stage4・手書き例外の事前確認／生成差分監査） | 9ファイル | N/A | N/A |
 | 2026-09-03 | (`jp-木村伊兵衛` id↔EN slug 食い違い解消) | engine | （Daisuke記入） | 3（下流2経路が旧IDで索引／サイドバー別経路／alias実装の絶対href・ループ位置） | 1（alias定義の単一化） | 8ファイル | N/A | N/A |
@@ -71,6 +72,41 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-08 — 0907素材の6名を新規追加（idx 354–359・種別=new・Opus監督 / Codex実装）
+
+- **範囲**：new×6。`adolf-de-meyer`(354) / `alexander-keighley`(355) /
+  `clarence-h-white`(356) / `frances-benjamin-johnston`(357) / `frank-eugene`(358) /
+  `fred-holland-day`(359)。素材JA/EN各6枚の内容だけを標準テンプレートへ注入し、ENは正本
+  `data/photographers-en-content.json` 経由で生成。素材HTMLは変更0、SHA-256は作業前後一致。
+- **手作業点・bug・engine**：手作業7系統＝①spec 6件、②監督確定§RELのJA/EN投入、
+  ③`rev-change`トークンのみの除去、④素材のtitle/meta/JSON-LD Personキーの保持、
+  ⑤運動8面への既存カード不変の最小差分挿入、⑥France完全一致ガードの正規保守、
+  ⑦国名リンク後処理の対象外差分復元。bug 2件＝複合classの`rev-change`でclass属性全削除が不適切な実データ、
+  France追加により`FRANCE_EXPECTED_IDS`のスナップショット更新が必要になったこと。engine/CSS変更0。
+- **正本・データの増減**：card-data 353→359、EN正本 pages 366→372（追加6キーのみ・`_meta`不変）、
+  星bin id 71→77、archive 353→359、sitemap loc 878→890（追加12・削除0）。idxは354–359を欠番なく固定。
+  Amazon `/s?k=` 検索URLの新規増加0。
+- **フィデリティ**：素材＝生成の `<h3>` / `id="cite-"` / `class="ph-work` / `ph-kw` /
+  §REF href は6名のJA/ENで完全一致。合計は72 / 174 / 12 / 18 / 17、ミスマッチ0。
+  `rev-change`は生成JA・EN正本bodyとも0、`ph-cite` / `ph-thesis__body` は素材と同数。
+- **分類面**：era1890 22→28。France 38→39、United Kingdom 65→67、United States 83→88、
+  Germany 30→31（すべてJA=EN）。de Meyerの`FR / GB / US`は3国すべてへ掲載し、国表示・国タグは
+  `フランス / イギリス / アメリカ`の結合形を保持。運動はピクトリアリズム16→21、写真分離派4→7、
+  ステージド写真13→14、社会ドキュメンタリー14→15（各JA/EN）。既存driftはhero 14→19、13→14のまま維持。
+- **§REL・構造・検証**：White↔EugeneをJA/ENとも相互リンク化。既存ページで今回6名を指す裸参照は0件。
+  §RELリンク切れ0、登録済み人物の裸項目0。Yearsはhero / `<dt>Years</dt>` / side / card-dataの4面一致、
+  JSON-LD Personキー減少0、birth/deathはYears一致。div/section開閉差0、検索配線runtime形1・固定id文字列0、
+  AI開示あり、review marker / prep-block / 可視ASCII二重ダッシュ0。運動8面は既存カードのbyte変更0、
+  ENカードmetaの`PHOTOGRAPHER`退行0。全21従属面でhref消失0。
+- **検査結果**：`sync_card_counts.py --check` / `check_content_loss.py` / `preflight.py` /
+  `check_photographer_link_integrity.py` / 6名分の`check_new_photographer.py`・`check_en_entry.py`はEXIT 0。
+  EN 6名のdry-run SKIPPED 0。preflight HARD 0。WARNは既存drift、正本を持つ分類面の直接編集疑い、
+  既存タグ辞書・stale-entryの既知分類のみで、未知WARN 0。
+- **Franceガード更新の経緯**：3国籍de MeyerをFranceへ追加した時点で、France専用の完全一致スナップショット
+  `FRANCE_EXPECTED_IDS`が発火。監督承認後、実際のera↑→idx↑順どおり`louis-vaire`直後・`manray`直前へ
+  `"adolf-de-meyer"`を1件だけ追加した。`assert_members`本体・他国ガード・許容機構は無変更。
+- **wall-time**：**1時間**（Daisuke実測。0905の12名バッチ=1時間30分・0903の12名バッチ=1時間18分と同水準で、名数あたりでは同等）。
 
 ## 2026-09-07 — 星マップの掲載漏れ18名を補完（種別=other・Opus実装）
 

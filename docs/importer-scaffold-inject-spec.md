@@ -314,7 +314,7 @@ sakiko-nomura 追加で踏んだ摩擦4点のうち3点をコード化（③は�
 | `data-nosnippet` の減少 | prep-block（準備中プレースホルダ）が実コンテンツへ置換された**正当な減少** |
 | EN §REL が JA より項目数が少ない | **サイト標準**。EN §REL はリンク項目のみ持ち、裸テキスト項目は落ちる（JA8→EN2 等） |
 | preflight `新規 orphan class token 'inline-' / 'inline-link'` | **素材のクラス名が壊れているだけ。停止不要で既存標準クラスへ寄せる**（下の A-2） |
-| preflight `新規 orphan class token 'is-revised' / 'is-revision' / 'audit-fix' / 'essay-p' / 'rev-*'` | **素材のレビュー用マーカーの残骸。class 属性ごと除去**（下の A-2） |
+| preflight `新規 orphan class token 'is-revised' / 'is-revision' / 'audit-fix' / 'essay-p' / 'rev-*'` | **素材のレビュー用マーカーの残骸。該当トークンだけ除去**（下の A-2） |
 | preflight `[EN country <slug>] / [EN eras/<era>] 生成物を直接編集した疑い` | **写真家追加のたびに構造的に出る偽陽性**。正本が写真家ロスターを持たないため（下の A-4） |
 | preflight `[EN movements/<slug>] 生成物を直接編集した疑い` | **運動EN面に限り出たままが正。再生成で消そうとしない**（下の A-4） |
 
@@ -326,9 +326,18 @@ ChatGPT 素材は**正しいクラス名を出せないことがある**。`pref
 |---|---|---|
 | `class="inline-"`（接尾辞が欠落） | `class="inline-work-link"` | 中身は美術館・アーカイブ等への**外部作品リンク**。EN 素材の同一リンクは正しく `inline-work-link` になっていることが多い。既存43ページで使用（CSS定義は無く `.essay a` を継承するのが既存の形） |
 | `class="inline-link"` | `class="inline-photographer-link"` | 写真家ページ宛ての内部リンク。既存74ページで使用・`styles/photographer-page.css` に定義あり。あわせて href を `/photographers/<slug>.html`（EN は `/en/photographers/…`）の**絶対パス形へ正規化** |
-| `class="is-revised"` / `is-revision` / `audit-fix` / `essay-p` / `rev-*` | **class 属性ごと削除** | レビュー用マーカー・素材テンプレの残骸。前例＝0903 `audit-fix` / 0904 `essay-p` / 0905 `is-revised` |
+| `class="is-revised"` / `is-revision` / `audit-fix` / `essay-p` / `rev-*`（`rev-change` 等） | **その1トークンだけを除去**（残りが空になったときだけ class 属性ごと削除） | レビュー用マーカー・素材テンプレの残骸。前例＝0903 `audit-fix` / 0904 `essay-p` / 0905 `is-revised` / 0907 `rev-change` |
 
 - **href・リンクテキスト・本文は1文字も変えない。class 属性値だけ**を触る。
+- **★「class 属性ごと削除」を機械的に適用しない（2026-09-08・0907 実データで確定）。** レビューマーカーは
+  **単独で付く形と、実クラスと併記される形の2形態**がある。除去してよいのは**そのトークンだけ**。
+  - `<p class="rev-change">` … `rev-change` 単独 → class 属性ごと削除して `<p>` にする
+  - `<div class="ph-cite rev-change" id="cite-22">` / `<p class="ph-thesis__body rev-change">` … 実クラスと併記
+    → **`rev-change` トークンだけ**を外し、`ph-cite` / `ph-thesis__body` は必ず残す（余分な空白も詰める）
+  - 0907 素材では 212 件中に両形態が混在しており、属性ごと削除していたら `ph-cite` 30本 ×12枚と
+    `ph-thesis__body` を丸ごと壊していた。**preflight も check_content_loss もこの破壊を検知しない**
+  - 処理後の実測を必ず1行報告する：生成物（JA HTML / EN 正本 `body_html`）でマーカー**0件**、かつ
+    `ph-cite` / `ph-thesis__body` 等の**実クラス数が素材と同数**であること
 - **EN 側は `en/photographers/*.html` を直接編集しない。** `data/photographers-en-content.json` の `body_html` を直して
   `build_photographers_en.py --slug <slug>` で再生成する。
 - **着手前に素材を grep して有無を先に確認する**（パイロットで一緒に潰せば往復が1回減る）:
