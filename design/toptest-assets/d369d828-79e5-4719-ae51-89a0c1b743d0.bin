@@ -3291,6 +3291,447 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    id: 'irving-penn',
+    name: 'Irving Penn',
+    nameJa: 'アーヴィング・ペン',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1917–2009',
+    gender: '男性',
+    era: '1950',
+    movements: ['モダニズム', 'ストレート写真', 'タイポロジー写真'],
+    thumbnail: '',
+    links: [],
+    amazon: '',
+    context: {
+      text: 'Vogueの誌面で磨いたデザイン感覚を白背景の肖像・Small Trades・静物へ展開し、商業写真と美術写真の境界を静かに組み替えたアメリカの写真家（1917–2009）。プラチナ・パラジウム・プリントへの傾注が、印画紙の質感を表現の中心に据えた。',
+      textEn: 'Irving Penn (1917–2009) extended the design intelligence he developed at Vogue into white-backdrop portraits, Small Trades, still lifes, and platinum-palladium prints, quietly rearranging the boundary between commercial and fine-art photography.',
+      citations: [],
+    },
+  },
+  {
+    id: 'richard-avedon',
+    name: 'Richard Avedon',
+    nameJa: 'リチャード・アヴェドン',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1923–2004',
+    gender: '男性',
+    era: '1950',
+    movements: ['フォトジャーナリズム', 'ドキュメンタリー', 'ステージド写真'],
+    thumbnail: '',
+    links: [],
+    amazon: '',
+    context: {
+      text: 'Harper\'s Bazaar、Vogue、The New Yorkerの誌面でファッション写真と肖像を押し広げ、白背景と動き、印刷面によって表面を意味の場として組み立てたアメリカの写真家（1923–2004）。《In the American West》では、西部の神話を人物の身体・職業・視線に置き換えた。',
+      textEn: 'Richard Avedon (1923–2004) expanded fashion photography and portraiture through Harper\'s Bazaar, Vogue, and The New Yorker, making the photographic surface a charged field read through body, clothing, and pose. In the American West shifted attention from landscape myth to people\'s occupations and direct gaze.',
+      citations: [],
+    },
+  },
+  {
+    id: 'ernest-cole',
+    name: 'Ernest Cole',
+    nameJa: 'アーネスト・コール',
+    nationality: 'ZA',
+    flag: '🇿🇦',
+    years: '1940–1990',
+    gender: '男性',
+    era: '1950',
+    movements: ['フォトジャーナリズム', '社会ドキュメンタリー', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [
+      { label: 'Ernest Cole Award — About Ernest Cole', url: 'https://www.ernestcoleaward.co.za/about-ernest-cole' },
+      { label: 'Grey Art Museum — Ernest Cole: Photographer', url: 'https://greyartmuseum.nyu.edu/exhibition/ernest-cole-photographer/' },
+      { label: 'MoMA — Ernest Cole’s House of Bondage', url: 'https://www.moma.org/calendar/galleries/5591' },
+      { label: 'Deutsche Börse Photography Foundation — Ernest Cole', url: 'https://www.deutscheboersephotographyfoundation.org/en/exhibit/exhibitions/2023/ernest-cole.php' },
+    ],
+    amazon: '',
+    context: {
+      text: 'アーネスト・コール（1940-1990）は、南アフリカのアパルトヘイト体制を内部から撮影し、写真集『House of Bondage』（1967年）によって世界に告発した写真家である。1960年代初頭から『Drum』や『Rand Daily Mail』などで写真を発表し、黒人として日常的に受ける移動制限、鉱山労働、教育、警察権力、都市生活の分断を、自分自身が被る現実として記録した*1。\n\n代表作『House of Bondage』は、1966年に南アフリカを離れた後、持ち出したネガをもとにニューヨークで出版された。写真と短いテキストを結びつけ、アパルトヘイトが例外的な暴力ではなく、通勤、学校、病院、住居、労働の細部まで浸透する支配構造であることを示した点で、20世紀フォトジャーナリズムの重要な写真集とされる*2*3。出版後、コールの本は南アフリカで発禁となり、彼自身も長い亡命生活を送った。北米では街頭写真にも取り組んだが、1970年代以降は生活が困難になり、写真家としての活動は途絶えていった*4。\n\nコールの重要性は、証言写真を「遠くの苦難の記録」ではなく、抑圧された当事者が自ら制度を解析する視覚的言語へ変えたことにある。近年は遺族や美術館による再評価が進み、『House of Bondage』の再刊や展覧会によって、彼の仕事は南アフリカ写真史だけでなく、植民地主義、人種隔離、亡命、写真集の政治性を考えるための中心的な座標となっている*2*4。',
+      textEn: 'Ernest Cole (1940-1990) was a South African photographer who exposed apartheid from within the system that shaped his own daily life. From the early 1960s his photographs appeared in Drum, the Rand Daily Mail, The World, and other publications, recording pass laws, mine labor, segregated education, police power, housing, and the ordinary humiliations imposed on Black South Africans*1.\n\nHis landmark book House of Bondage was published in New York in 1967 after Cole left South Africa in 1966 with the negatives that formed the project. By pairing photographs with concise written testimony, the book showed apartheid not as occasional violence but as an entire structure reaching into commuting, school, work, hospitals, and domestic life*2*3. The book was banned in South Africa, and Cole spent the rest of his life in exile. In North America he continued photographing street life for a period, but by the early 1970s his life had become precarious and his photographic career largely broke down*4.\n\nCole matters because he turned witness photography into a form of self-authored political analysis. His camera did not look at oppression from a safe distance; it mapped the system from the position of someone subjected to it. Recent exhibitions and republications have restored House of Bondage to a central place in histories of photojournalism, South African photography, exile, race, and the politics of the photobook*2*4.',
+      citations: [
+        { num: 1, name: 'Ernest Cole Award — About Ernest Cole', url: 'https://www.ernestcoleaward.co.za/about-ernest-cole' },
+        { num: 2, name: 'Grey Art Museum — Ernest Cole: Photographer', url: 'https://greyartmuseum.nyu.edu/exhibition/ernest-cole-photographer/' },
+        { num: 3, name: 'MoMA — Ernest Cole’s House of Bondage', url: 'https://www.moma.org/calendar/galleries/5591' },
+        { num: 4, name: 'Deutsche Börse Photography Foundation — Ernest Cole: House of Bondage', url: 'https://www.deutscheboersephotographyfoundation.org/en/exhibit/exhibitions/2023/ernest-cole.php' },
+      ],
+    },
+  },
+  {
+    id: 'tokuko-ushioda',
+    name: 'Tokuko Ushioda',
+    nameJa: '潮田登久子',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1940–',
+    gender: '女性',
+    era: '1970',
+    movements: ['日本写真', '私写真', 'タイポロジー写真', 'プライベート写真'],
+    thumbnail: '',
+    links: [
+      { label: 'FUJIFILM SQUARE — 潮田登久子', url: 'https://fujifilmsquare.jp/profile/tokuko_ushioda.html' },
+      { label: 'PGI — Tokuko Ushioda', url: 'https://www.pgi.ac/en/artists/4102/' },
+      { label: 'Nikon THE GALLERY — 本の景色 BIBLIOTHECA', url: 'https://nij.nikon.com/enjoy/exhibition/thegallery/events/201706/20180410.html' },
+      { label: 'torch press — マイハズバンド', url: 'https://www.torchpress.net/product/3825/' },
+    ],
+    amazon: '',
+    context: {
+      text: '潮田登久子（1940年東京生まれ）は、冷蔵庫、本、家族の部屋といった日常の対象を通じて、生活に残る時間と物質的な記憶を写してきた写真家である。桑沢デザイン研究所で石元泰博、大辻清司に学び、1960年代後半から写真教育にも携わった*1*2。\n\n代表作『冷蔵庫／ICE BOX』では、家庭の冷蔵庫を反復的に撮影し、食生活や家族の気配を生活装置の表面から読み取るように見せた。1995年からの『BIBLIOTHECA／本の景色』では、本を情報の媒体としてではなく、造本、棚、修復、保存空間を含む物質的な存在として撮影している*3。2022年刊行の『マイハズバンド』は、夫の島尾伸三と娘まほとの暮らしを撮った約40年前の写真群を再編集した写真集で、Paris Photo-Aperture PhotoBook Awardsの審査員特別賞を受けた*4。\n\n潮田の仕事は、静物写真、私写真、家庭の記録、アーカイブの感覚が重なる地点にある。声高に出来事を語るのではなく、モノと写真の束に残された時間を見つめることで、日常を記憶と物質の座標へ変えている。',
+      textEn: 'Tokuko Ushioda (born 1940 in Tokyo) is a Japanese photographer who has photographed refrigerators, books, family rooms, and other everyday things as places where time and material memory accumulate. She studied at Kuwasawa Design School with Yasuhiro Ishimoto and Kiyoji Otsuji, and later taught photography in the late 1960s and 1970s*1*2.\n\nIn ICE BOX, Ushioda repeatedly photographed domestic refrigerators, turning an ordinary appliance into a quiet record of food, family rhythms, and lived traces. In BIBLIOTHECA, begun in 1995, she looks at books not primarily as carriers of information but as material objects shaped by binding, shelving, repair, and storage spaces*3. My Husband, published in 2022, revisits photographs of her husband Shinzō Shimao and daughter Maho made around forty years earlier; the book received a Jurors’ Special Mention at the Paris Photo-Aperture PhotoBook Awards*4.\n\nUshioda’s work sits between still life, private photography, domestic documentation, and archival memory. Rather than dramatizing events, she lets time become visible through things and through the delayed life of photographs themselves.',
+      citations: [
+        { num: 1, name: 'FUJIFILM SQUARE — 潮田登久子', url: 'https://fujifilmsquare.jp/profile/tokuko_ushioda.html' },
+        { num: 2, name: 'PGI — Tokuko Ushioda', url: 'https://www.pgi.ac/en/artists/4102/' },
+        { num: 3, name: 'Nikon THE GALLERY — 本の景色 BIBLIOTHECA', url: 'https://nij.nikon.com/enjoy/exhibition/thegallery/events/201706/20180410.html' },
+        { num: 4, name: 'torch press — マイハズバンド', url: 'https://www.torchpress.net/product/3825/' },
+      ],
+    },
+  },
+  {
+    id: 'pieter-hugo',
+    name: 'Pieter Hugo',
+    nameJa: 'ピーター・ヒューゴ',
+    nationality: 'ZA',
+    flag: '🇿🇦',
+    years: '1976–',
+    gender: '男性',
+    era: '2000',
+    movements: ['ポートレート', '社会的写真'],
+    thumbnail: '',
+    links: [
+      { label: 'Pieter Hugo — Information', url: 'https://pieterhugo.com/Information' },
+      { label: 'Stevenson — Pieter Hugo', url: 'https://www.stevenson.info/artist/pieter-hugo' },
+      { label: 'Stevenson — Pieter Hugo Exhibitions', url: 'https://www.stevenson.info/artist/pieter-hugo/exhibitions' },
+      { label: 'Fondation Henri Cartier-Bresson — Pieter Hugo', url: 'https://www.henricartierbresson.org/en/expositions/pieter-hugo/' },
+    ],
+    amazon: '',
+    context: {
+      text: 'ピーター・ヒューゴ（Pieter Hugo、1976年ヨハネスブルグ生まれ）は、ケープタウンを拠点に活動する南アフリカの写真家である。主にポートレートを用い、アパルトヘイト後の南アフリカとアフリカ大陸をめぐる視線、周縁化、白人性、身体、労働、消費、暴力の記憶を扱ってきた*1。\n\n初期の代表作には、ナイジェリアの動物使いたちを撮影した『The Hyena and Other Men』、ガーナの電子廃棄物集積地アグボグブロシーを扱った『Permanent Error』、南アフリカの家族・土地・人種的記憶をめぐる『Kin』がある*2*3。これらの作品では、被写体をドラマ化して消費する危うさと、見ることから逃げない必要性が同時に露出する。ヒューゴの写真はしばしば正面性と硬い光を用い、被写体を類型化しながらも、鑑賞者の欲望や偏見を画面へ跳ね返す構造を持つ。\n\n2008年にアルル国際写真祭ディスカバリー賞とKLM Paul Huf Awardを受賞し、2011年にはバマコ・アフリカ写真ビエンナーレのSeydou Keita Awardを受けた。2012年にはDeutsche Börse Photography Prizeの候補となり、欧米の主要美術館・写真機関で個展と収蔵が続いている*1。写真史の座標では、アーネスト・コール以後の南アフリカ写真が、直接的な告発から、表象する側とされる側の関係そのものを問う批評的ポートレートへ拡張していく地点に置くことができる。',
+      textEn: 'Pieter Hugo (born 1976 in Johannesburg) is a South African photographic artist based in Cape Town. Working largely through portraiture, he examines post-apartheid South Africa and the wider African continent through questions of looking, marginalization, whiteness, bodies, labor, consumption, and the memory of violence*1.\n\nImportant bodies of work include The Hyena and Other Men, on animal handlers in Nigeria; Permanent Error, photographed at the Agbogbloshie e-waste site in Ghana; and Kin, which turns toward family, land, race, and historical memory in South Africa*2*3. These projects keep two pressures visible at once: the danger of consuming other people as spectacle, and the ethical impossibility of simply looking away. Hugo often uses frontal portraiture and hard, clear light, creating images that classify their subjects while also reflecting the viewer’s assumptions and desire back toward the viewer.\n\nHugo received the Rencontres d’Arles Discovery Award and the KLM Paul Huf Award in 2008, the Seydou Keita Award at the Bamako African Photography Biennial in 2011, and was shortlisted for the Deutsche Börse Photography Prize in 2012*1. Within this site’s coordinates, he belongs after Ernest Cole as part of a South African photographic line that moves from direct anti-apartheid witness toward a more reflexive contemporary portrait practice, one that asks who is represented, who is looking, and what power remains inside the image.',
+      citations: [
+        { num: 1, name: 'Pieter Hugo — Information', url: 'https://pieterhugo.com/Information' },
+        { num: 2, name: 'Stevenson — Pieter Hugo Exhibitions', url: 'https://www.stevenson.info/artist/pieter-hugo/exhibitions' },
+        { num: 3, name: 'Stevenson — Pieter Hugo: Permanent Error', url: 'https://archive.stevenson.info/exhibitionsbs/hugo/index2010.htm' },
+        { num: 4, name: 'Fondation Henri Cartier-Bresson — Pieter Hugo', url: 'https://www.henricartierbresson.org/en/expositions/pieter-hugo/' },
+      ],
+    },
+  },
+  {
+    id: 'michio-hoshino',
+    name: 'Michio Hoshino',
+    nameJa: '星野道夫',
+    nationality: 'JP',
+    flag: '🇯🇵',
+    years: '1952–1996',
+    gender: '男性',
+    era: '1980',
+    movements: ['日本写真', '環境写真', 'ドキュメンタリー'],
+    thumbnail: '',
+    links: [],
+    amazon: '',
+    context: {
+      text: "星野道夫は1952年、千葉県市川市に生まれ、アラスカの野生動物、風景、人々の暮らし、神話を写真と文章で記録した写真家。十九歳のときに見たシシュマレフ村の航空写真をきっかけに土地へ入り、以後、極北の自然を「人間の外にある景色」ではなく、移動、狩猟、記憶、死生観を含む長い時間として読ませた。アラスカ大学北方博物館や海外出版資料にも足跡が残る。",
+      textEn: "Michio Hoshino was born in 1952 in Ichikawa, Chiba Prefecture, and photographed Alaska's wildlife, landscapes, human lives, and myths through both images and prose. His encounter with an aerial photograph of Shishmaref at the age of nineteen led him toward Alaska, where he came to present Arctic nature not as scenery outside human life, but as a long field of migration, hunting, memory, and life and death. His work also remains visible in overseas publications and museum collections, including those in Alaska.",
+      citations: [],
+    },
+  },
+  {
+    id: 'annie-leibovitz',
+    name: 'Annie Leibovitz',
+    nameJa: 'アニー・リーボヴィッツ',
+    nationality: 'US',
+    flag: '🇺🇸',
+    years: '1949–',
+    gender: '女性',
+    era: '1970',
+    movements: ['ポートレート', 'ステージド写真', 'カラー写真'],
+    thumbnail: '',
+    links: [],
+    amazon: '',
+    context: {
+      text: 'アニー・リーボヴィッツは、Rolling Stone、Vanity Fair、Vogueを横断し、音楽、映画、ファッション、政治、私的記憶を公共的な肖像イメージへ変換してきたアメリカの写真家。',
+      textEn: 'Annie Leibovitz is an American photographer who moved through Rolling Stone, Vanity Fair, and Vogue, turning music, film, fashion, politics, and private memory into public portrait images.',
+      citations: [],
+    },
+  },
+  {
+    "id": "sibylle-bergemann",
+    "name": "Sibylle Bergemann",
+    "nameJa": "ジビレ・ベルゲマン",
+    "nationality": "DE",
+    "flag": "🇩🇪",
+    "years": "1941–2010",
+    "gender": "女性",
+    "era": "1980",
+    "movements": [
+      "東ドイツ写真",
+      "ファッション写真"
+    ],
+    "thumbnail": "",
+    "links": [
+      {
+        "label": "Sibylle Bergemann Estate — Biography",
+        "url": "https://sibyllebergemann.com/biography"
+      },
+      {
+        "label": "Berlinische Galerie — Sibylle Bergemann",
+        "url": "https://berlinischegalerie.de/en/exhibition/sibylle-bergemann/"
+      },
+      {
+        "label": "OSTKREUZ — Sibylle Bergemann",
+        "url": "https://www.ostkreuz.de/en/photographers/sibylle-bergemann/"
+      }
+    ],
+    "amazon": "",
+    "context": {
+      "text": "ジビレ・ベルゲマンは、東ドイツの文化誌『Sibylle』を舞台に、ファッション写真を都市と社会のなかの肖像として撮り直した写真家。アルノ・フィッシャーの写真教育と写真エッセイの方法を受け継ぎ、人物と環境、服や記念碑との関係を連作へ編んだ。代表作《記念碑（Das Denkmal）》ではマルクス＝エンゲルス像の制作過程を11年にわたり追い、統一後はOstkreuz（オストクロイツ）の設立と教育を通じて後続世代へ著者性の方法を手渡した。",
+      "textEn": "Sibylle Bergemann reframed fashion photography as portraiture within the city and society, working through the East German cultural magazine Sibylle. Building on Arno Fischer's teaching and the photo-essay tradition, she wove people together with their clothes, interiors, streets and monuments into long series. Her landmark Das Denkmal followed the eleven-year making of East Berlin's Marx-Engels monument, and after reunification she co-founded the Ostkreuz agency.",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Sibylle Bergemann Estate — Biography",
+          "url": "https://sibyllebergemann.com/biography"
+        },
+        {
+          "num": 2,
+          "name": "Berlinische Galerie — Sibylle Bergemann",
+          "url": "https://berlinischegalerie.de/en/exhibition/sibylle-bergemann/"
+        },
+        {
+          "num": 3,
+          "name": "OSTKREUZ — Sibylle Bergemann",
+          "url": "https://www.ostkreuz.de/en/photographers/sibylle-bergemann/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "alec-soth",
+    "name": "Alec Soth",
+    "nameJa": "アレック・ソス",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1969–",
+    "era": "2000",
+    "movements": [
+      "ドキュメンタリー",
+      "写真集",
+      "アメリカ写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "アレック・ソスは、アメリカ各地で出会った人物、モーテル、ベッド、看板、室内を撮り、『Sleeping by the Mississippi』『NIAGARA』『Songbook』などの写真集へまとめてきた写真家。ロードトリップ、撮影リスト、8×10大判カメラ、写真集のシークエンスを組み合わせ、孤独、愛、逃走、共同体への願望のように一枚の写真では直接説明できないものを、複数の写真の連なりで扱ってきた。写真が時間の前後や因果を十分には語れないという性質を、作品を組み立てる条件にした。",
+      "textEn": "Alec Soth photographs people, motels, beds, signs, and interiors encountered across the United States, bringing them together in photobooks such as Sleeping by the Mississippi, NIAGARA, and Songbook. He combines road trips, shooting lists, an 8×10 view camera, and photobook sequencing to address things a single photograph cannot directly explain—loneliness, love, escape, and the desire for community. The limited ability of photography to narrate temporal sequence or causality becomes one of the conditions through which he constructs his work.",
+      "citations": []
+    }
+  },
+  {
+    "id": "boris-mikhailov",
+    "name": "Boris Mikhailov",
+    "nameJa": "ボリス・ミハイロフ",
+    "nationality": "UA",
+    "flag": "🇺🇦",
+    "years": "1938–",
+    "era": "1990",
+    "movements": [
+      "ポストソ連",
+      "社会ドキュメンタリー",
+      "コンセプチュアル"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ボリス・ミハイロフは、ソ連期からポストソ連期のハルキウを、手彩色、二重投影、粗いスナップ、写真と文章、演出された身体によって記録してきたウクライナの写真家である。《Red》《Yesterday’s Sandwich》《Unfinished Dissertation》《At Dusk》《Case History》を軸に、公式写真が隠した日常をどう写したか、なぜ「きれいで正しい写真」を避けたのか、そして記録と演技を混ぜる方法がドキュメンタリーの倫理をどう揺さぶったのかをたどる。",
+      "textEn": "Boris Mikhailov is a Ukrainian photographer who has recorded Kharkiv from the Soviet period into the post-Soviet era through hand-coloring, double projection, rough snapshots, combinations of photographs and text, and staged bodies. Across Red, Yesterday’s Sandwich, Unfinished Dissertation, At Dusk, and Case History, he photographed forms of everyday life excluded from official imagery, rejected polished and “correct” photography, and mixed document with performance in ways that unsettled the ethics of documentary photography.",
+      "citations": []
+    }
+  },
+  {
+    "id": "edward-burtynsky",
+    "name": "Edward Burtynsky",
+    "nameJa": "エドワード・バートンスキー",
+    "nationality": "CA",
+    "flag": "🇨🇦",
+    "years": "1955–",
+    "era": "2000",
+    "movements": [
+      "環境写真",
+      "人新世",
+      "産業風景"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "エドワード・バーティンスキーは、鉱山、採石場、工場、船舶解体、油田、水利施設、農地など、資源の採掘・加工・輸送・消費によって変形した土地を撮ってきたカナダの写真家。『Manufactured Landscapes』『Oil』『Water』『Anthropocene』では、遠隔地に分散した産業現場を長期のシリーズとして結び、色彩、反復、地形のパターンを保った画面の中に環境負荷を置く。工業都市での経験、ニュー・トポグラフィックス以後の風景写真、美と環境危機をめぐる論争、労働・消費・航空視点への批判が、その写真の主要な論点である。",
+      "textEn": "Edward Burtynsky is a Canadian photographer who has photographed landscapes transformed by the extraction, processing, transport, and consumption of resources: mines, quarries, factories, shipbreaking yards, oil fields, water infrastructure, and farmland. In Manufactured Landscapes, Oil, Water, and Anthropocene, he links industrial sites dispersed across distant regions into long-term series, presenting environmental damage within compositions shaped by color, repetition, and topographic pattern. His upbringing in an industrial city, the legacy of New Topographics, debates over beauty and environmental crisis, and critiques concerning labor, consumption, and aerial vision are central to understanding his photographs.",
+      "citations": []
+    }
+  },
+  {
+    "id": "gregory-crewdson",
+    "name": "Gregory Crewdson",
+    "nameJa": "グレゴリー・クルードソン",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1962–",
+    "era": "2000",
+    "movements": [
+      "演出写真",
+      "映画的写真",
+      "郊外"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "グレゴリー・クルードソンは、俳優、照明、美術、ロケーション制作を用い、アメリカ郊外の家、道路、森を精密に演出する写真家である。《Twilight》《Beneath the Roses》《Cathedral of the Pines》《An Eclipse of Moths》《Eveningside》を通じて、映画制作に近い工程を一枚の静止画へ集中させてきた。日常的な郊外を、何かが起きる直前または直後のような停止した場面にすることで、演出写真と映画的タブローの展開に大きな位置を占める。",
+      "textEn": "Gregory Crewdson constructs meticulously staged photographs of houses, roads, and forests in American suburbia using actors, lighting, set design, and location production. Across Twilight, Beneath the Roses, Cathedral of the Pines, An Eclipse of Moths, and Eveningside, he has concentrated a production process close to filmmaking into a single still image. By turning familiar suburban settings into suspended scenes that seem to fall just before or after an unexplained event, he has become a major figure in staged photography and the cinematic tableau.",
+      "citations": []
+    }
+  },
+  {
+    "id": "masashi-asada",
+    "name": "Masashi Asada",
+    "nameJa": "浅田政志",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1979–",
+    "era": "2010",
+    "movements": [
+      "家族写真",
+      "演出写真",
+      "日本写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "浅田政志は、自身を含む家族が消防士、バンドマン、ラーメン店などの役を演じる写真集『浅田家』で知られる写真家。卒業制作を起点に、自分の家族から他者の家族へと撮影を広げ、相談、衣装、小道具、撮影時間まで参加者と共有する記念写真を続けてきた。東日本大震災後の『アルバムのチカラ』では、泥をかぶった写真の洗浄と返却を記録し、家族写真を撮影時の表現だけでなく、保存され、見返され、持ち主へ戻る物として扱っている。",
+      "textEn": "Masashi Asada is best known for the photobook Asada Family, in which he appears with his family as they play roles such as firefighters, musicians, and ramen-shop workers. Beginning with his graduation project, he extended this method from his own family to other families, making commemorative photographs through shared discussions, costumes, props, and time spent on the shoot. After the Great East Japan Earthquake, The Power of Albums documented the cleaning and return of mud-damaged photographs, treating family pictures not simply as images made at the moment of exposure, but as objects that are preserved, revisited, and returned to their owners.",
+      "citations": []
+    }
+  },
+  {
+    "id": "rineke-dijkstra",
+    "name": "Rineke Dijkstra",
+    "nameJa": "リネケ・ダイクストラ",
+    "nationality": "NL",
+    "flag": "🇳🇱",
+    "years": "1959–",
+    "era": "1990",
+    "movements": [
+      "ポートレート",
+      "移行期",
+      "身体"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "リネケ・ダイクストラは、《Beach Portraits》《New Mothers》《Almerisa》、兵士やクラブの若者を扱う写真・映像で知られるオランダの写真家。正面から立つ人物、簡素な背景、同じ人物を追う連作によって、思春期、出産、入隊、移住など、身体や社会的役割が変わる時期を撮ってきた。商業肖像と1991年のセルフポートレートを経て、人物の性格を説明する肖像から距離を取り、本人が作ろうとする自己像と、年齢、身体、服装、制度から現れる姿が一致しきらない状態を主題にした。写真と映像を横断するその仕事は、1990年代以降の肖像写真における個人と社会の関係を考える重要な位置を占める。",
+      "textEn": "Rineke Dijkstra is a Dutch photographer known for Beach Portraits, New Mothers, Almerisa, and photographs and videos of soldiers and young clubgoers. Through frontal figures, spare backgrounds, and series that return to the same person over time, she has photographed periods when bodies and social roles are changing—adolescence, childbirth, military service, and migration. Following commercial portrait work and a 1991 self-portrait, she moved away from portraits that explain a person through character, focusing instead on moments when the self-image a sitter tries to project does not fully coincide with what appears through age, body, clothing, and institutions. Her work across photography and video occupies a central place in the history of portraiture since the 1990s, particularly in questions of how individuals take shape within social forms.",
+      "citations": []
+    }
+  },
+  {
+    "id": "thomas-struth",
+    "name": "Thomas Struth",
+    "nameJa": "トーマス・シュトルート",
+    "nationality": "DE",
+    "flag": "🇩🇪",
+    "years": "1954–",
+    "era": "1990",
+    "movements": [
+      "デュッセルドルフ派",
+      "大判写真",
+      "美術館"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "トーマス・シュトゥルートは、無人の都市街路、家族肖像、美術館の観客、熱帯雨林、NASAやCERNなどの科学技術施設を撮影してきたドイツの写真家。《Unconscious Places》《Family Portraits》《Museum Photographs》《New Pictures from Paradise》《Nature & Politics》を軸に、大判写真と反復撮影を使いながら、街や家族、文化施設、技術装置に人間の歴史と価値判断がどう残るかを追った。絵画から写真へ転じた理由と、ベッヒャーの方法をどこで受け継ぎ、どこで離れたのかを中心に読む。",
+      "textEn": "Thomas Struth is a German photographer whose subjects have ranged from unpeopled city streets and family portraits to museum visitors, tropical rainforests, and scientific and technological facilities such as NASA and CERN. Across Unconscious Places, Family Portraits, Museum Photographs, New Pictures from Paradise, and Nature & Politics, he has used large-format photography and sustained serial work to examine how human history and acts of judgment remain embedded in streets, families, cultural institutions, and technological systems. The central questions here are why he moved from painting to photography, what he absorbed from the Bechers, and where his method departed from theirs.",
+      "citations": []
+    }
+  },
+  {
+    "id": "zanele-muholi",
+    "name": "Zanele Muholi",
+    "nameJa": "ザネレ・ムホリ",
+    "nationality": "ZA",
+    "flag": "🇿🇦",
+    "years": "1972–",
+    "era": "2010",
+    "movements": [
+      "ヴィジュアル・アクティヴィズム",
+      "クィア・アーカイブ",
+      "ポートレート"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ザネレ・ムホリは、自らを「ヴィジュアル・アクティヴィスト」と呼び、南アフリカの黒人LGBTQIA+コミュニティと自身を長期的に撮る作家である。《Only Half the Picture》《Faces and Phases》《Being》《Brave Beauties》《Somnyama Ngonyama》で、暴力の記録、正面肖像、親密な日常、セルフポートレートを使い分けてきた。ポスト・アパルトヘイト社会で法的平等と差別・暴力が併存する状況を、当事者の名前と像を残すアーカイブとして写真化した点が重要である。",
+      "textEn": "Zanele Muholi, who describes themself as a “visual activist,” has photographed Black LGBTQIA+ communities in South Africa as well as themself over an extended period. Across Only Half the Picture, Faces and Phases, Being, Brave Beauties, and Somnyama Ngonyama, Muholi moves among records of violence, frontal portraiture, intimate daily life, and self-portraiture. Their photography turns legal equality alongside continuing discrimination and violence in post-apartheid South Africa into an archive that preserves participants’ names and images.",
+      "citations": []
+    }
+  },
+  {
+    "id": "arata-dodo",
+    "name": "Arata Dodo",
+    "nameJa": "百々新",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1974–",
+    "gender": "男性",
+    "era": "2000",
+    "movements": [
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [
+      { "label": "shashasha — Arata DODO", "url": "https://www.shashasha.co/en/artist/arata-dodo" },
+      { "label": "Akaaka — 対岸 / Taigan", "url": "https://akaaka.com/publishing/dodo-taigan/" },
+      { "label": "Case Publishing — White Map on the Silk Road", "url": "https://case-publishing.jp/en/publication/white-map-on-the-silk-road" }
+    ],
+    "amazon": "",
+    "context": {
+      "text": "百々新は1974年大阪生まれの写真家。『上海の流儀』『対岸』『White Map on the Silk Road』などで、上海、カスピ海沿岸、シルクロード、京都などを移動しながら、人々の生活、土地の空気、見る者との距離を写真集として編んできた*1。\n\n代表作『対岸』はカスピ海を囲む地域をめぐるシリーズで、地理的な向こう岸だけでなく、自分と他者、現在と未来の距離を考えるための言葉として「対岸」を扱う*2。『White Map on the Silk Road』では複数の旅の写真が組み直され、異国趣味ではなく、生活の多様な形に近づく視線が前面に出る*3。\n\n写真史上は、旅写真を観光的な記録にとどめず、写真集の順序と断片によって、移動する身体と土地の生活感覚のあいだに生まれる距離を見せる現代ドキュメンタリーの作家として位置づけられる。『対岸』で木村伊兵衛写真賞を受賞した*1。",
+      "textEn": "Arata Dodo is a Japanese photographer born in Osaka in 1974. His books, including Shanghai Style, Taigan, and White Map on the Silk Road, build travel into a form of contemporary documentary, moving through Shanghai, the Caspian Sea region, the Silk Road, and Kyoto while attending to everyday life, distance, and the rhythm of the photobook*1.\n\nTaigan follows places around the Caspian Sea and treats the idea of the opposite shore not only as geography, but also as a way to think about the distance between self, others, present life, and possible futures*2. White Map on the Silk Road gathers several journeys into a book that looks less for exotic difference than for the many ways people organize daily life*3.\n\nWithin photography history, Dodo is best understood as a contemporary Japanese photographer who turns travel into a photobook structure: fragments of streets, people, light, and movement become a way to measure the relation between the photographer's body and the places he encounters. Taigan received the Kimura Ihei Photography Award*1.",
+      "citations": [
+        { "num": 1, "name": "shashasha — Arata DODO", "url": "https://www.shashasha.co/en/artist/arata-dodo" },
+        { "num": 2, "name": "Akaaka — 対岸 / Taigan", "url": "https://akaaka.com/publishing/dodo-taigan/" },
+        { "num": 3, "name": "Case Publishing — White Map on the Silk Road", "url": "https://case-publishing.jp/en/publication/white-map-on-the-silk-road" }
+      ]
+    }
+  },
+  {
+    "id": "jp-木村伊兵衛",
+    "name": "Ihei Kimura",
+    "nameJa": "木村伊兵衛",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1901–1974",
+    "era": "1930",
+    "movements": [
+      "リアリズム写真",
+      "報道写真",
+      "日本写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "木村伊兵衛は、小型カメラの速写性を文芸家ポートレート、東京の街角、秋田の生活、報道写真の流通へ接続した写真家である。「ライカの名手」という通称に加え、戦後リアリズム、印刷メディア、日本写真家協会、木村伊兵衛写真賞へ伸びる制度的な影響を整理する。",
+      "textEn": "Ihei Kimura is a photographer who connected the quick-shooting capacity of the small camera to literary portraits, Tokyo street corners, life in Akita, and the circulation of photojournalism. Beyond the common epithet of “master of the Leica,” this page sets out his institutional influence, reaching into postwar realism, print media, the Japan Professional Photographers Society, and the Kimura Ihei Award.",
+      "citations": []
+    }
   }
 
 

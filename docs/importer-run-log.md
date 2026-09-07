@@ -65,10 +65,65 @@
 | 2026-09-03 | (preflight に check_en_entry_point を追加) | other | （Daisuke記入） | 0 | 0（ガード追加のみ） | 2ファイル +53行 | N/A | N/A |
 | 2026-09-03 | **3名バッチupdate**(araki/cartierbresson/takuma-nakahira) | update | （Daisuke記入） | 2（素材audit-fix残存／EN書籍二経路重複） | 7系統（下記） | 10ファイル | JA計16174→27063 / EN計43849→73817 | 計77→113 |
 | 2026-09-05 | (preflight に check_taxonomy_presence を追加) | other | （Daisuke記入） | 0 | 0（ガード追加のみ） | 2ファイル +121行 | N/A | N/A |
+| 2026-09-07 | (星マップの掲載漏れ18名を補完) | other | （Daisuke記入） | 1（素材側プレースホルダの持ち込み） | 2（movements導出規則の検証・エンティティ混入の是正） | 1ファイル +441行 | N/A | N/A |
 
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-07 — 星マップの掲載漏れ18名を補完（種別=other・Opus実装）
+
+- **問題**：トップ（`index.html` / `en/index.html` が iframe で読む `design/toptest-extracted.html`）の星マップに
+  **card-data 341名のうち18名の星が無かった**。トップは「写真家341人」と表示しているのに実際の星は323個。
+  抜けは **idx 277–284（8名）と 289–298（10名）の連続2ブロック**で、過去2回の追加で星の登録だけ落ちたもの。
+  0904バッチ（idx 330–341）は12名とも登録済みで、本件はそれ以前の積み残し。
+- **データ源の実測**：星マップが読むのは `design/toptest-assets/` の bin 3本だけで、
+  **`data/photographers.js` / `photographers-supplement.js` / `photographers-manual-additions.js` は読まない**
+  （`toptest-extracted.html` に参照が無い）。18名のうち9名は**サイト側の `data/*.js` には居た**
+  （manual-additions 7名・supplement 2名）＝「サイトには足したが星の bin に足していない」が抜けの実体。
+  残る9名はどこにも無かった。
+- **座標に関する既存メモの訂正**：`reference_starmap_architecture` の「座標は era+movements で自動計算」は**誤り**。
+  実際は `bridge.js` が **id をシードにした Poisson-disk サンプリング**で実行時に決める（コード中に
+  「movement クラスタリングは右側に輪ができるので廃止」と明記）。era 順と生年は使う。
+  **座標を書く必要は無く、エントリを足せば星が出る**。`movements` は星座の接続線（`byMove` のペア生成）に効く。
+- **実装**：`d369d828-…bin` の `PHOTOGRAPHERS` 末尾へ18件追記。
+  9名は `data/*.js` から**括弧対応で切り出して verbatim コピー**（字下げのみ正規化）、
+  9名は正本から構築（`id/name/nameJa/nationality/era`=card-data、`years`=JAページの hero と `<dt>Years</dt>` の
+  一致を assert、`flag`=**`scripts/site.js` のコード→国旗マップ**、`text`=JAページの `ph-abstract` lead、
+  `textEn`=`photographers-en-content.json` の `lead_html`、`citations`=[]）。
+  `movements` は「card-data の tags のうち `GENRE_TAG` にあり `COUNTRY_TAG` でないもの」という規則を
+  **既存324件で検証してから**適用（271件で実際と一致、差53件は個別キュレーション）。
+  `gender` は**どこにも一次情報が無く描画にも使われない**ため構築9名では省略（捏造しない）。
+- **踏んだ罠3件**：
+  ① `data/photographers-manual-additions.js` の `michio-hoshino` は本文が
+     **「本文は準備中です。」/「This essay is in preparation.」のプレースホルダ**だった。verbatim コピーすると
+     星データ唯一のプレースホルダを持ち込むことになるため（既存 bin 3本のプレースホルダは0件）、
+     実ページの lead へ差し替えた。**素材が既存ファイルでも中身を検査する**。
+  ② HTML から lead を取ると**エンティティが残る**（`Alaska&#x27;s` / `Nature &amp; Politics`）。
+     既存の星データにエンティティは0件なので3箇所をアンエスケープ。HEAD 由来の18件（`&#39;`×12・`&amp;`×6）は不変。
+  ③ 追記時に `rstrip()` すると**末尾の空行パディング42行が消えて差分が「441追加・42削除」になる**。
+     HEAD の末尾バイト列を取り直して復元し、**削除0の純粋な追加**にした。
+- **検証**：`node` が無いため **macOS の JXA（`osascript -l JavaScript`）で bin を実際に eval** して検証した。
+  結果＝`PHOTOGRAPHERS` 324→342（+18）/ `PHOTOGRAPHER_MANUAL_ADDITIONS` 12 不変 / bin間の既存重複13件も不変 /
+  **星ユニーク 323→341 = card-data 341 と完全一致・未登録0**。
+  HEAD と現在の全エントリをオブジェクト単位で突合し、**消えたid 0・内容が変わった既存id 0・追加18のみ**。
+  18名すべてに `flag` / `years` / `movements` / `nameJa` / text / textEn が入り、`nameJa`・`nameEn`・
+  `nationality`・`era` が card-data と一致、置換文字・`undefined` 混入0。
+  差分は **1ファイル441行の追加のみ（削除0）**、変更ファイルは bin 1本だけで `data/` は無変更。
+  `check_content_loss.py` / `preflight.py`（HARD 0）/ `sync_card_counts.py --check` /
+  `check_photographer_link_integrity.py` / `git diff --check` すべて EXIT 0。
+- **未対応（報告のみ）**：既存エントリのうち **154件に `flag` が無い**（今回の18名は全員あり）。本件とは別の積み残し。
+  再発防止ガード（card-data の全員が星データ源に居るか）は**ベースラインが0になったので HARD 化できる状態**だが、
+  Daisuke へ提案してからにする。
+- **【追補】再発防止ガードを追加（Daisuke指示）**：`preflight.py` に `check_star_presence()` を **HARD FAIL** で追加。
+  card-data の全 id を星 bin 3本（`STAR_BINS`）と突き合わせ、未登録があれば push をブロックする。
+  id 表記は `id: 'x'` と `"id": "x"` の混在を両方拾い、**直前が単語文字なら除外**する
+  （本文中の `said: '…'` を id と誤認する実例が1件あったため）。抽出規則は JXA の eval 結果と 341/341 で一致。
+  bin 自体が消えていたら別メッセージで HARD。**発火確認は3分岐**（新規 JSON 形の欠落=thomas-struth・
+  土台 JS 形の欠落=stieglitz・bin 消失）で、いずれも HARD が出たうえ **bin の SHA-256 が事前値と一致**して復元。
+  変更は `scripts/preflight.py`（+59行・既存関数の挙動は不変）と `docs/generators-and-guards.md`（+21行）のみ。
+- **wall-time**：（Daisuke記入）。
+
 
 ## 2026-09-05 — preflight に `check_taxonomy_presence` を追加（種別=other・Opus実装）
 

@@ -587,3 +587,20 @@ HTML だけ直して再生成すると元に戻る状態だった。両方とも
 = 掲載22 / tag105）が混在し、掲載可否がキュレーション判断だから。機械的にそろえると情報が壊れる
 （`reference_era_card_tags_are_not_card_data` と同じ構図）。運動ページは
 `--apply-surfaces` でも反映されないので、**必要なら手で入れる**。
+
+## 星マップの登録漏れ — `check_star_presence()`＝HARD FAIL（2026-09-07 追加）
+
+トップの星マップ（`index.html` / `en/index.html` の iframe → `design/toptest-extracted.html`）が読むのは
+**`design/toptest-assets/` の bin 3本だけ**で、`data/photographers*.js` は読まない。
+そのためサイト側の js にだけ足すと星が出ず、しかも静かに落ちる。
+`check_star_presence()` が card-data の全 id を bin 3本と突き合わせ、未登録があれば push をブロックする。
+
+- 対象 bin は `STAR_BINS`（`d369d828`=`const PHOTOGRAPHERS`／`d632c32e`=`PHOTOGRAPHERS.push`／
+  `dcf38762`=`PHOTOGRAPHER_MANUAL_ADDITIONS`）。**bin 自体が消えていたら別メッセージで HARD**
+- id の表記は `id: 'x'`（土台の JS 形）と `"id": "x"`（push分・新規の JSON 形）が混在するので両方拾う。
+  **直前が単語文字なら除外する**（本文中の `said: '…'` を id と誤認する実例が1件あった）
+- 抽出規則は **JXA（`osascript -l JavaScript`）で bin を実際に eval した結果と 341/341 で一致**
+  することを確認済み。`node` はこの環境に無いので、bin を機械的に検証したいときは JXA を使う
+- メッセージに復旧手順（`d369d828` の配列末尾へ追記／**座標は書かない**／末尾の空行パディングを消さない）を出す
+- **導入時の実測ベースライン = 0件（341/341）**。発火確認も3分岐で実施
+  （新規 JSON 形の欠落・土台 JS 形の欠落・bin 消失。いずれも HARD で出て、SHA 一致で復元できることを確認）

@@ -2014,6 +2014,64 @@ def check_taxonomy_presence() -> None:
             + ", ".join(nopage[:6]) + (" …" if len(nopage) > 6 else ""))
 
 
+STAR_BINS = [
+    "design/toptest-assets/d369d828-79e5-4719-ae51-89a0c1b743d0.bin",  # const PHOTOGRAPHERS = [...]
+    "design/toptest-assets/d632c32e-7701-41a9-935f-02cec809e7f4.bin",  # PHOTOGRAPHERS.push(...)
+    "design/toptest-assets/dcf38762-edac-4046-b31d-c93eaf76e1b7.bin",  # const PHOTOGRAPHER_MANUAL_ADDITIONS
+]
+
+# `id: 'x'`（土台の JS 形）と `"id": "x"`（push分・新規の JSON 形）の両方を拾う。
+# 直前が単語文字なら除外する（本文中の "said: '…'" を id と誤認しないため。2026-09-07 実測で1件出た）
+_STAR_ID_RE = re.compile(r"""(?<![\w$])["']?id["']?\s*:\s*["']([^"']+)["']""")
+
+
+def check_star_presence() -> None:
+    """card-data の全写真家がトップの星マップに登録されているか（HARD）。
+
+    星マップ（`index.html` / `en/index.html` の iframe → `design/toptest-extracted.html`）が読むのは
+    `design/toptest-assets/` の bin 3本だけで、**`data/photographers*.js` は読まない**。
+    そのためサイト側の js にだけ足すと星が出ず、しかも静かに落ちる。
+    2026-09-07 に card-data 341名を全数照合して18名の抜けが見つかったのを受けた再発防止
+    （トップは「写真家341人」と表示しているのに実際の星は323個だった）。
+
+    抽出規則は同日 JXA（`osascript -l JavaScript`）で bin を実際に eval した結果と
+    341/341 で一致することを確認済み。導入時ベースライン = 0件。
+    """
+    try:
+        card_data = json.loads((REPO / "card-data.json").read_text(encoding="utf-8"))
+    except Exception as e:
+        hard_failures.append(f"星マップ登録検査を実行できない: {type(e).__name__}: {e}")
+        return
+
+    ids = [p["id"] for p in card_data.get("photographers", []) if p.get("id")]
+    if not ids:
+        return
+
+    registered: set[str] = set()
+    missing_bins: list[str] = []
+    for rel in STAR_BINS:
+        f = REPO / rel
+        if not f.exists():
+            missing_bins.append(rel)
+            continue
+        registered |= set(_STAR_ID_RE.findall(f.read_text(encoding="utf-8", errors="ignore")))
+
+    if missing_bins:
+        # bin が消えている＝マップ自体が壊れる。掲載判定より先に報告する
+        hard_failures.append(
+            "星マップのデータ bin が見つからない: " + ", ".join(missing_bins))
+        return
+
+    missing = [pid for pid in ids if pid not in registered]
+    if missing:
+        sample = missing[:15]
+        hard_failures.append(
+            f"星マップに未登録の写真家 {len(missing)}件（トップの星が出ない）: {sample}"
+            + (" …" if len(missing) > 15 else "")
+            + "\n     復旧: design/toptest-assets/d369d828-…bin の PHOTOGRAPHERS 配列末尾へ追記する"
+            "（座標は書かない＝bridge.js が id シードで実行時に決める。末尾の空行パディングを消さない）")
+
+
 def check_rel_unlinked_names() -> None:
     """§REL のリンク張り忘れ検査（裸テキストなのに実在ページがある）。
 
@@ -2076,6 +2134,7 @@ def main() -> int:
     check_archive_en()
     check_archive_presence()      # ③ archive 掲載漏れ（WARN）
     check_taxonomy_presence()     # 年代・国ページの掲載漏れ（HARD）
+    check_star_presence()         # 星マップの登録漏れ（HARD）
     check_country_hero_counts()   # ③ country hero件数ズレ（WARN）
     check_card_counts()           # カード枚数表示のズレ（HARD）
     check_card_tag_prefix()       # JAカードtagの前方一致（増加だけHARD）
