@@ -7547,3 +7547,419 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "karl-blossfeldt",
+  "name": "Karl Blossfeldt",
+  "nameJa": "カール・ブロスフェルト",
+  "nationality": "DE",
+  "flag": "🇩🇪",
+  "years": "1865–1932",
+  "gender": "男性",
+  "era": "1910",
+  "movements": [
+    "新即物主義"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1865年、プロイセン王国ハルツ地方シーロに生まれたカール・ブロスフェルトは、植物の芽、茎、種子、花序を拡大し、単純な背景で撮影した造形教育者・写真家である。1890年代から工芸教育の教材として蓄積した写真は、1928年の『Urformen der Kunst』、1929年の《Film und Foto》を経て、新即物主義やNew Visionの文脈で再評価された。教育、倍率、比較、写真集、ベンヤミンやバタイユの同時代批評から、教材写真が近代写真へ読み替えられた過程を追う。",
+    "textEn": "Karl Blossfeldt, born in 1865 in Schielo in the Harz region of the Kingdom of Prussia, was a design educator and photographer who enlarged plant buds, stems, seed heads, and inflorescences against plain backgrounds. Photographs accumulated since the 1890s as teaching aids for applied-art education were reappraised in the contexts of New Objectivity and New Vision after Urformen der Kunst (1928) and the Film und Foto exhibition (1929). The trajectory from teaching, magnification, and comparison to the photobook and contemporary criticism by Walter Benjamin and Georges Bataille shows how instructional photographs were recast as modern photography.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "MoMA — Karl Blossfeldt",
+        "url": "https://www.moma.org/collection/artists/24413"
+      },
+      {
+        "num": 2,
+        "name": "Staatliche Museen zu Berlin — Form Follows Flower",
+        "url": "https://www.smb.museum/en/exhibitions/detail/form-follows-flower/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "edward-s-curtis",
+  "name": "Edward S. Curtis",
+  "nameJa": "エドワード・カーティス",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1868–1952",
+  "gender": "男性",
+  "era": "1890",
+  "movements": [
+    "ピクトリアリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1868年、アメリカのウィスコンシン州ホワイトウォーター近郊に生まれたエドワード・カーティスは、北米各地の先住民を撮影し、写真、文章、語彙、録音を1907〜30年刊の全20巻『The North American Indian』へまとめた写真家である。プラチナ印画、フォトグラヴュール、衣装や場面の演出による統一された像は広く流通する一方、「消滅する民族」という植民地主義的な時間観を強化した。同化政策、資金、先住民協力者、映画、現在の共同体による再解釈まで追う。",
+    "textEn": "Edward S. Curtis, born near Whitewater, Wisconsin, in 1868, photographed Indigenous peoples across North America and assembled photographs, texts, vocabularies, and sound recordings in the twenty-volume The North American Indian, published from 1907 to 1930. His unified visual language—platinum printing, photogravure, and the staging of clothing and scenes—circulated widely while reinforcing a colonial idea of Indigenous peoples as a “vanishing race.” The project also involved assimilation policy, patronage, Indigenous collaborators, film, and the ways communities today reinterpret the archive.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Library of Congress — Edward Curtis and the Background of the Collection",
+        "url": "https://www.loc.gov/pictures/collection/ecur/background.html"
+      },
+      {
+        "num": 2,
+        "name": "Seattle Art Museum — Double Exposure",
+        "url": "https://seattleartmuseum.org/whats-on/exhibitions/double-exposure-curtis-nicolson-rector-wilson"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "erich-salomon",
+  "name": "Erich Salomon",
+  "nameJa": "エーリヒ・ザロモン",
+  "nationality": "DE",
+  "flag": "🇩🇪",
+  "years": "1886–1944",
+  "gender": "男性",
+  "era": "1910",
+  "movements": [
+    "フォトジャーナリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1886年ベルリン生まれのエーリヒ・ザロモンは、1920年代末からエルマノックス小型カメラと室内の自然光を用い、法廷、国際会議、外交官、政治家を公式行事の前後や進行中に撮影した写真家である。長くその場に留まり、フラッシュを避け、ときにカメラを隠す方法によって、疲労、雑談、待機、交渉の身振りをニュースにした。彼の仕事は、小型カメラの技術革新だけでなく、記者のアクセス、被写体との関係、撮影許可、雑誌の大量流通が一体になって成立した近代フォトジャーナリズムの条件を示す。",
+    "textEn": "Born in Berlin in 1886, Erich Salomon used the compact Ermanox camera and available interior light from the late 1920s onward to photograph courtrooms, international conferences, diplomats, and politicians before, during, and after official events. By remaining in a room for long periods, avoiding flash, and at times concealing his camera, he turned fatigue, conversation, waiting, and negotiation into news. His work reveals the conditions under which modern photojournalism developed: advances in compact cameras, journalists’ access, relationships with subjects, permission to photograph, and the mass circulation of illustrated magazines all worked together.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Erich Salomon — International Center of Photography",
+        "url": "https://www.icp.org/browse/archive/constituents/erich-salomon"
+      },
+      {
+        "num": 2,
+        "name": "Erich Salomon Fonds — Berlinische Galerie",
+        "url": "https://berlinischegalerie.de/en/collection/collection-online/erich-salomon-funds/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "frantisek-drtikol",
+  "name": "František Drtikol",
+  "nameJa": "フランティシェク・ドルティコル",
+  "nationality": "CZ",
+  "flag": "🇨🇿",
+  "years": "1883–1961",
+  "gender": "男性",
+  "era": "1910",
+  "movements": [
+    "ピクトリアリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1883年、オーストリア＝ハンガリー帝国領ボヘミアのプシーブラムに生まれたフランティシェク・ドルティコルは、プラハの肖像スタジオを基盤に、裸体、幾何学的セット、強い光と影を構成した写真家である。象徴主義的な初期作から、1920年代のモダニスト裸体、1930年代の紙・木の人形へ進み、後年は仏教研究、翻訳、絵画へ活動を移した。身体、舞台、光を撮影前から設計する方法と、写真を離れるまで続いた精神的関心をたどる。",
+    "textEn": "František Drtikol, born in Příbram in Bohemia, then part of Austria-Hungary, in 1883, built his career on a Prague portrait studio while constructing photographs of the nude through geometric sets and forceful light and shadow. His work moved from early Symbolist imagery to modernist nudes in the 1920s and paper and wooden figures in the 1930s; later he shifted toward Buddhist study, translation, and painting. His career traces a method of designing body, stage, and light before exposure alongside a sustained spiritual interest that eventually carried him beyond photography.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Museum of Decorative Arts in Prague — František Drtikol 140th anniversary",
+        "url": "https://www.upm.cz/frantisek-drtikol-vyroci-narozeni/"
+      },
+      {
+        "num": 2,
+        "name": "Galerie Františka Drtikola Příbram — Fotograf František Drtikol",
+        "url": "https://www.galerie-drtikol.com/drtikol.php"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "hannah-hoch",
+  "name": "Hannah Höch",
+  "nameJa": "ハンナ・ヘッヒ",
+  "nationality": "DE",
+  "flag": "🇩🇪",
+  "years": "1889–1978",
+  "gender": "女性",
+  "era": "1910",
+  "movements": [
+    "ダダ"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1889年ドイツ、ゴータ生まれのハンナ・ヘッヒは、新聞、雑誌、広告の写真を切り抜き、異なる身体、機械、文字、民族資料の図像を不連続な縮尺で接続したベルリン・ダダの作家である。《Cut with the Kitchen Knife》や連作《From an Ethnographic Museum》では、ワイマール期の「新しい女性」、政治家、芸能人、非西洋文化の表象が衝突する。大量印刷が作る身体像をその印刷物自体から切り出し、ジェンダー、政治、人種化された分類が画像によって作られる仕組みを批判した。",
+    "textEn": "Born in Gotha, Germany, in 1889, Hannah Höch was a Berlin Dada artist who cut photographs from newspapers, magazines, and advertisements and reassembled bodies, machines, words, and ethnographic imagery at disjunctive scales. In works such as Cut with the Kitchen Knife and the series From an Ethnographic Museum, the Weimar-era “New Woman,” politicians, entertainers, and representations of non-Western cultures collide. By cutting apart the very printed images through which mass media produced social ideas of the body, Höch examined how gender, politics, and racialized categories were made through images.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Photomontage — National Galleries of Scotland",
+        "url": "https://www.nationalgalleries.org/art-and-artists/glossary-terms/photomontage"
+      },
+      {
+        "num": 2,
+        "name": "Hannah Höch — MoMA",
+        "url": "https://www.moma.org/collection/artists/2675"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "herbert-ponting",
+  "name": "Herbert Ponting",
+  "nameJa": "ハーバート・ポンティング",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1870–1935",
+  "gender": "男性",
+  "era": "1910",
+  "movements": [],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1870年、イングランドのソールズベリーに生まれたハーバート・ポンティングは、日本やアジアを撮る旅行写真家を経て、スコットのTerra Nova遠征（1910–13）で公式写真家・映画撮影者を務めた。氷山、基地、科学者、船員をガラス乾板と映画で記録し、帰国後は幻灯講演、著書『The Great White South』、映画『The Great White Silence』へ再編集した。科学記録、探検広報、英雄化が同じ画像群からどう作られたかをたどる。",
+    "textEn": "Herbert Ponting, born in Salisbury, England, in 1870, worked as a travel photographer in Japan and Asia before serving as official photographer and cinematographer on Scott’s Terra Nova Expedition (1910–13). Using glass plates and motion-picture film, he recorded icebergs, the base, scientists, and crew, then re-edited the material after returning home into lantern-slide lectures, his book The Great White South, and the film The Great White Silence. The same body of images moved among scientific record, expedition publicity, and the later construction of heroic memory.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "National Portrait Gallery — Herbert George Ponting",
+        "url": "https://www.npg.org.uk/collections/search/person/mp07443/herbert-george-ponting"
+      },
+      {
+        "num": 2,
+        "name": "The Polar Journal — A person separate",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/2154896X.2011.568792"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "imogen-cunningham",
+  "name": "Imogen Cunningham",
+  "nameJa": "イモージェン・カニンガム",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1883–1976",
+  "gender": "女性",
+  "era": "1910",
+  "movements": [
+    "ストレート写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1883年、アメリカのオレゴン州ポートランドに生まれたイモージェン・カニンガムは、植物、裸体、肖像、家族、工業景観、路上を70年以上撮影した写真家である。写真化学と商業スタジオの経験を基盤に、《Magnolia Blossom》、1929年の《Film und Foto》、1932年のGroup f/64（西海岸で鮮明な写真表現を掲げたグループ）、Martha Grahamや『Vanity Fair』の肖像へ展開した。家庭、職業、モダニズムが長期実践の中でどう結びついたかを追う。",
+    "textEn": "Imogen Cunningham, born in Portland, Oregon, in 1883, photographed plants, nudes, portraits, family life, industrial landscapes, and the street over a career spanning more than seventy years. Building on training in photographic chemistry and commercial studio work, she moved through Magnolia Blossom, the 1929 Film und Foto exhibition, Group f/64—a West Coast group founded in 1932 around a commitment to sharply rendered photography—and portraits of Martha Graham and work for Vanity Fair. Her career shows how domestic life, professional work, and modernism became intertwined over the long term.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "University of Washington — Imogen Cunningham",
+        "url": "https://www.cs.washington.edu/who-we-are/art-allen-school/uw-artists/imogen-cunningham/"
+      },
+      {
+        "num": 2,
+        "name": "Imogen Cunningham Trust — Timeline",
+        "url": "https://www.imogencunningham.com/imogens-timeline"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "j-dudley-johnston",
+  "name": "J. Dudley Johnston",
+  "nameJa": "J・ダドリー・ジョンストン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1868–1955",
+  "gender": "男性",
+  "era": "1890",
+  "movements": [
+    "ピクトリアリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1868年、イギリスのリヴァプールに生まれたJ・ダドリー・ジョンストンは、港湾都市やヴェネツィアをガム・ダイクロメート印画、オイル印画で制作したピクトリアリストである。1907年にLinked Ringへ参加し、1920年代以降はRPSの会長・名誉キュレーターとして歴史的写真を収集した。",
+    "textEn": "Born in Liverpool in 1868, J. Dudley Johnston combined Pictorialist printmaking with the institutional work of collecting and preserving photographic history at the Royal Photographic Society.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "National Gallery of Art — John Dudley Johnston",
+        "url": "https://www.nga.gov/artists/50926-john-dudley-johnston"
+      },
+      {
+        "num": 2,
+        "name": "PhotoSeed — Liverpool—an Impression",
+        "url": "https://photoseed.com/collection/single/liverpool-an-impression/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "james-van-der-zee",
+  "name": "James Van Der Zee",
+  "nameJa": "ジェームズ・ヴァン・デル・ジー",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1886–1983",
+  "gender": "男性",
+  "era": "1910",
+  "movements": [],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "1886年マサチューセッツ州レノックス生まれのジェームズ・ヴァン・デル・ジーは、ハーレムの住民と組織を長期に撮影し、依頼者が望む自己像をスタジオ技法によって共同で形にした。",
+    "textEn": "James Van Der Zee photographed Harlem residents and organizations over many decades, using studio techniques to help clients shape their desired self-images.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Studio Museum in Harlem — James Van Der Zee",
+        "url": "https://www.studiomuseum.org/artists/james-van-der-zee"
+      },
+      {
+        "num": 2,
+        "name": "National Gallery of Art — James Van Der Zee",
+        "url": "https://www.nga.gov/artists/23911-james-van-der-zee"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "john-heartfield",
+  "name": "John Heartfield",
+  "nameJa": "ジョン・ハートフィールド",
+  "nationality": "DE",
+  "flag": "🇩🇪",
+  "years": "1891–1968",
+  "gender": "男性",
+  "era": "1930",
+  "movements": [
+    "ダダ"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ジョン・ハートフィールドは、新聞写真と広告文字を切断・合成し、制作から大量印刷と流通までを政治的介入の工程にした。",
+    "textEn": "John Heartfield cut and recombined press photographs and advertising text, treating production, mass printing, and circulation as political intervention.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Heartfield Online — Biography",
+        "url": "https://www.heartfield.adk.de/en/john-heartfield-biography"
+      },
+      {
+        "num": 2,
+        "name": "Berlinische Galerie — DADA Berlin",
+        "url": "https://berlinischegalerie.de/sammlung/sammlung-online/dada-berlin/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "josef-sudek",
+  "name": "Josef Sudek",
+  "nameJa": "ヨゼフ・スデク",
+  "nationality": "CZ",
+  "flag": "🇨🇿",
+  "years": "1896–1976",
+  "gender": "男性",
+  "era": "1930",
+  "movements": [
+    "モダニズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ヨゼフ・スデクは、プラハの街路、工場、ガラス器、アトリエの窓、庭、静物を半世紀にわたり撮影し、物質観察と私的な反復撮影を連続させた。",
+    "textEn": "Josef Sudek photographed Prague streets, factories, glassware, his studio window, gardens, and still lifes, connecting material observation with sustained private series.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Museum of Decorative Arts in Prague — Josef Sudek",
+        "url": "https://www.upm.cz/photographer-josef-sudek/"
+      },
+      {
+        "num": 2,
+        "name": "Getty Museum — Jaromír Funke",
+        "url": "https://www.getty.edu/art/collection/person/103KFT"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "richard-polak",
+  "name": "Richard Polak",
+  "nameJa": "リヒャルト・ポラック",
+  "nationality": "NL",
+  "flag": "🇳🇱",
+  "years": "1870–1956",
+  "gender": "男性",
+  "era": "1890",
+  "movements": [
+    "ピクトリアリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "リヒャルト・ポラックは、17世紀オランダ絵画を思わせる室内を組み、家具、衣装、人物、北向きの光、プリントまでを統制して撮影した。",
+    "textEn": "Richard Polak built interiors recalling seventeenth-century Dutch painting and controlled furniture, costume, figures, north light, and printing as one process.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Leiden University — Richard Polak",
+        "url": "https://depthoffield.universiteitleiden.nl/0815f02en/"
+      },
+      {
+        "num": 2,
+        "name": "Rijksmuseum — Richard Polak collection",
+        "url": "https://www.rijksmuseum.nl/en/collection/object/Groep-van-61-foto-s-van-Egypte-en-Syri%C3%AB-verzameld-door-Richard-Polak--5689efdbbed2a4e41a2a577b4250a6b6"
+      }
+    ]
+  }
+}
+);

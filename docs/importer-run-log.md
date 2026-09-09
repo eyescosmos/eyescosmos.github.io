@@ -60,6 +60,9 @@
 | 2026-09-04 | **12名バッチnew**(0904素材・idx 330–341) | new | （Daisuke記入） | 3（下記） | 6系統（下記） | 公開HTML 45面＋sitemap 2面 | JA計60,576 / EN計128,711 | 計347 |
 | 2026-09-05 | **12名バッチnew**(0905素材・idx 342–353) | new | **1時間30分** | 4（下記） | 7系統（下記） | 公開HTML 47面＋sitemap 2面 | 本文h3 JA/EN各123 | 計330 |
 | 2026-09-08 | **6名バッチnew**(0907素材・idx 354–359) | new | **60分** | 2（下記） | 7系統（下記） | 公開HTML 36面＋sitemap 2面 | 本文h3 JA/EN各72 | 計174 |
+| 2026-09-09 | **1名パイロットnew**(0909素材・idx 370) | new | （下の合計に含む） | 3（下記） | 6系統（下記） | 公開HTML 11面＋sitemap 2面 | 本文h3 JA/EN各8 | JA32 / EN30 |
+| 2026-09-09 | **6名バッチnew**(0909素材フェーズ2-A・idx 360–365) | new | （下の合計に含む） | 0 | 7系統（下記） | 公開HTML 34面＋sitemap 2面 | 本文h3 JA/EN各58 | JA176 / EN175 |
+| 2026-09-09 | **5名バッチnew**(0909素材フェーズ2-B・idx 366–371) | new | **12名通しで1時間40分弱**（Daisuke実測・パイロット＋2-A＋2-Bの合計） | 3（下記） | 7系統（下記） | 公開HTML 32面＋sitemap 2面 | 本文h3 JA/EN各56 | JA136 / EN150 |
 | 2026-09-03 | (JA表記統一：ル・グレー5ページ＋英題内人名2ページ) | other | （Daisuke記入） | 0 | 2系統（文字列置換のみ） | JA写真家7ファイル | N/A（本文字数不変） | N/A |
 | 2026-09-03 | (`報道写真` EN表記統一) | other | （Daisuke記入） | 2（後勝ち年代ラベル／旧Country残骸） | 2（stage4・手書き例外の事前確認／生成差分監査） | 9ファイル | N/A | N/A |
 | 2026-09-03 | (`jp-木村伊兵衛` id↔EN slug 食い違い解消) | engine | （Daisuke記入） | 3（下流2経路が旧IDで索引／サイドバー別経路／alias実装の絶対href・ループ位置） | 1（alias定義の単一化） | 8ファイル | N/A | N/A |
@@ -72,6 +75,73 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-09 — 0909素材パイロット `karl-blossfeldt`（idx 370・種別=new・Opus監督 / Codex実装）
+
+- **範囲**：フェーズ1の new×1 のみ。JA/EN素材の本文・thesis・作品リンク・出典・メタを scaffold-inject し、ENは `data/photographers-en-content.json` 経由で生成。card-data 359→360、EN正本 pages 372→373、archive 359→360、era1910 14→15、Germany 31→32、新即物主義 2→3、sitemap 890→892（追加2・削除0）、星bin 77→78。wall-time は 0909 の12名通しで計上（下の フェーズ2-B の節を参照）。
+- **手作業点・bug・engine**：手作業6系統＝spec、素材本文に明記された既存4名＋新即物主義の§REL、`revision`トークン除去、運動JA/EN最小差分挿入、既存 `jochen-lempert` の裸参照をJA/EN正本でリンク化、分類面byte再生成検証。素材の未登録カードタグ `植物写真` は辞書を変更せずJA/ENカードから削除。**engine/CSS変更0**。
+- **フィデリティ・構造**：`revision` はJA生成物・EN正本由来生成物とも0。`ph-cite` は素材＝生成 JA 32 / EN 30、`ph-thesis__body` は各1、`ph-kw` は各6で一致。`ph-section__name` は素材 JA 7 / EN 7 に対し生成各8（標準§RELを1節追加した差）。JSON-LD Personキー減少0、birth/death=1865/1932。div 114/114（JA）、172/172（EN）、section 9/9。検索配線runtime形1/1・JS固定id参照0。Amazon `/s?k=` 新規0。
+- **作品リンク**：0909素材12名の実測でJA/ENが割れた5名は `frantisek-drtikol`（JA4/EN3・ENのみ1/JAのみ2）、`herbert-ponting`（4/3・2/3）、`imogen-cunningham`（4/3・3/4）、`j-dudley-johnston`（3/2・1/2）、`karl-blossfeldt`（4/3・3/4）。素材リンクを失わずJA=ENのsite標準を保つため、JA worksを **JA素材 ∪ EN素材** とする常設ルールを採用。パイロットはJA 4→7、stock builderでEN 7、EN正本 `view_works_links_html` は素材3本のまま据え置き。engine変更0。
+- **検査**：`check_content_loss.py` / `preflight.py`（HARD 0）/ `check_photographer_link_integrity.py` / `sync_card_counts.py --check` / `check_new_photographer.py` / `check_en_entry.py` はEXIT 0。EN dry-runはSKIPPED 0。素材24枚のSHA-256は作業前後一致。国Germany・era1910のEN再生成は再実行でbyte一致、`.preverify.bak` 残存0。運動ENは固有lede保全のため再生成せず最小差分挿入。
+- **既知WARN判定**：precheckの非標準hero眉は素材chrome不採用の既知WARN。preflightのEN country/era直接編集疑いはスコープ再生成byte一致で偽陽性、EN movementはA-4どおり残置。既存のmovement hero drift 2面、非前方一致91枚、stale intentional-replacement群はbaseline既存。`jochen-lempert`本文書換疑いは人名2箇所を新規ページへリンク化した意図的最小差分。
+
+## 2026-09-09 — 0909素材フェーズ2-Bの5名追加（idx 366–371・種別=new・Opus監督兼実装）
+
+- **範囲**：`j-dudley-johnston`(366) / `james-van-der-zee`(367) / `john-heartfield`(368) /
+  `josef-sudek`(369) / `richard-polak`(371) の new×5。これで0909素材12名が完結。
+  **Codex が ChatGPT のクレジット上限に達して spec 5件を書いた時点で停止したため、以降は Opus が実装した**
+  （Daisuke 裁定）。card-data 366→371、EN正本 pages 379→384、archive 366→371、
+  sitemap 904→914（追加10・削除0）、星bin 純粋追加386行・削除0。
+- **手作業点・bug・engine**：手作業7系統＝spec への `gender` 補完（`add_photographer.py` の必須キー）、
+  `revision` トークン除去、JA works の和集合化（johnston +1）、素材§RELのリンク解決、
+  JSON-LD `description` の後段注入、EN正本への `jsonld` / `site_directory_html` 手書き、
+  運動6面（JA3・EN3）の最小差分挿入。**engine/CSS変更0**。
+- **踏んだ罠3件**：
+  ① **素材の §REL マーカー名が `関連作家・運動` で、johnston 以外の4名は抽出器が拾えていた**が、
+     人名・運動の href 解決は入らない。`card-data.json` の日本語名で厳密一致させて
+     `frantisek-drtikol` / `eugene-atget` / `hannah-hoch` / 運動3件をリンク化した。
+     **あいまい一致を使うと `カール・ヴァン・ヴェクテン`→`karl-blossfeldt` のような誤リンクが出る**ので厳密一致のみ。
+  ② **`build_archive_en.py` は未登録タグで `SystemExit` するため、`チェコ` タグ1件で
+     `en/archive.html` の生成が丸ごと止まり、その結果 `en/countries/{czech-republic,netherlands}` から
+     2名が欠落した**（EN国ページは `en/archive.html` をカード源にしている）。§14 R2 どおり
+     辞書は変更せず `josef-sudek` のカードから `チェコ` を落として解消。`オランダ` は COUNTRY_TAG にあるので維持。
+  ③ **`--render-ja` の後に `§REF` が prep-block のまま残る**ことがある（johnston は JA素材に
+     further reading が無く、EN素材にだけ RPS のリンクがあった）。works と同じ和集合方針で JA へ入れ、
+     JAページの `prep-block` はサイト全体で0件になった。
+- **作品リンク**：johnston のみ JA3/EN2 で割れており、EN素材のみの PhotoSeed 1件を JA へ追記して
+  JA=EN 4本にそろえた。他4名は素材時点で一致。12名すべてで JA/EN の href 集合が完全一致。
+- **分類面**：era 1890 → johnston / polak、1910 → van der zee、1930 → heartfield / sudek。
+  国は United Kingdom / United States / Germany / Czech Republic / Netherlands の JA・EN 各1面。
+  運動はピクトリアリズム 23→25、ダダ 2→3、モダニズム 13→14（各JA/EN）。van der zee は運動カードなし。
+  `eras/1930` の JA27/EN28 差は既存の `ihei-kimura` シム（jp-漢字id 規約）で本件とは無関係。
+- **§REL 相互リンク**：フェーズ2-Aで裸テキストへ戻していた `hannah-hoch` → John Heartfield を
+  JA/EN ともリンク化し、Heartfield 側からも Höch へ張って日英で相互になった。
+  van der zee は §REL の人物・運動がサイト未掲載のため JA は裸テキスト、EN は
+  `site_directory_html` を持たず prep-block（既存5枚と同じサイト標準）。
+- **検査**：`check_content_loss.py` / `preflight.py`（HARD 0・✗ 0件）/
+  `check_photographer_link_integrity.py` / `sync_card_counts.py --check` /
+  5名分の `check_new_photographer.py`・`check_en_entry.py` はすべて EXIT 0。EN dry-run SKIPPED 0。
+  12名の JA/EN で `revision` 0（EN curtis の1件は本文の英単語 revisions）、div/section 開閉一致、
+  §REL リンク切れ0、検索配線 runtime解決形 24/24・他slug固定id 0、JSON-LD Person に
+  `description`/`birthDate`/`deathDate` あり・Years と一致。Amazon `/s?k=` 新規0。
+  素材24枚は mtime・内容とも不変。`scripts/*.py` の差分0、削除ファイル0。
+- **wall-time**：**1時間40分弱**（Daisuke実測。0909素材12名を パイロット1名 → フェーズ2-A 6名 →
+  フェーズ2-B 5名 の3本立てで通した合計。0905の12名バッチ=1時間30分・0903の12名バッチ=1時間18分と
+  同水準だが、**今回は Codex が途中でクレジット上限に達して残り5名を Opus が実装した**分と、
+  engine変更の却下・作品リンク方針の確定で監督往復が3回入った分が上乗せされている）。
+- **未対応（報告のみ）**：フェーズ2-Aの6枚は `revision` 除去に使った perl の
+  `s/  +/ /g` が **class を含む行の字下げも畳んでいる**（先頭12スペース→1スペース）。表示・検査には
+  影響しないが、パイロットと0907以前のページは字下げを保っている。整形のみの差でリスクの方が大きいため
+  今回は追随せず、5名も同じ扱いにして batch 内で統一した。
+
+## 2026-09-09 — 0909素材フェーズ2-Aの6名追加（idx 360–365・種別=new・Opus監督 / Codex実装）
+
+- **範囲**：`edward-s-curtis` / `erich-salomon` / `frantisek-drtikol` / `hannah-hoch` / `herbert-ponting` / `imogen-cunningham` の new×6。JA/EN素材の本文・thesis・作品リンク・出典・メタを標準scaffoldへ注入し、ENは正本JSON経由で生成。card-data 360→366、EN正本 pages 373→379、archive 360→366、星bin 78→84。idx 366–369 / 371は未使用のまま。wall-time は 0909 の12名通しで計上（下の フェーズ2-B の節を参照）。
+- **手作業点・bug・engine**：手作業7系統＝spec 6件、`revision`トークン除去、JA worksをJA/EN素材の和集合化（Drtikol +1 / Ponting +2 / Cunningham +3）、素材言及に基づく§REL、本文初出リンク、運動JA/EN最小差分挿入、既存 `eiko-yamazawa` / `wangechi-mutu` の裸参照リンク化。`チェコ`がカードtag辞書未登録だったためR2どおりタグから落とした。**engine/CSS変更0**。
+- **フィデリティ・構造**：`revision`は生成JA・EN正本由来生成物とも0。素材→生成は `ph-cite` JA 176→176 / EN 175→175、`ph-thesis__body` 6→6 / 6→6、`ph-kw` 36→36 / 36→36。`ph-section__name` はJA 40→48、EN 44→48（標準§REL/§REF追加差）。JSON-LD Personキー減少0、birth/deathは6名すべてYears一致。Amazon `/s?k=` 新規0。
+- **分類面**：era1890 28→29、era1910 15→20。United States 88→90、Germany 32→34、Czech Republic 2→3、United Kingdom 67→68（JA=EN）。運動はピクトリアリズム21→23、フォトジャーナリズム9→10、ダダ1→2、ストレート写真9→10（各JA/EN）。Herbert Pontingは指定どおり運動カードなし。
+- **検査**：`check_content_loss.py` / `preflight.py`（HARD 0）/ `check_photographer_link_integrity.py` / `sync_card_counts.py --check` / 6名分の`check_new_photographer.py`・`check_en_entry.py`は全てEXIT 0。EN dry-run SKIPPED 0。素材24枚のSHA-256は24/24一致。sitemapは本バッチ追加12（現ツリーのKarl込みでHEAD比+14）・削除0。検索配線runtime形12/12・JS固定id参照0、§REL 20リンク・切れ0、分類面スコープ再生成10/10 byte一致、`.preverify.bak`残存0。
+- **既知WARN判定**：precheckの非標準hero眉・言語疑いは素材chrome不採用/CJK比率由来。EN country/era直接編集疑いはスコープ付き再生成のbyte一致で偽陽性を実証し、EN movementはA-4どおり再生成せず残置。§REL注釈未注入と`data-nosnippet`減は準備中ブロックを実リンクへ置換した差。既存movement drift・非前方一致91枚・stale intentional-replacement群はbaseline既存。
 
 ## 2026-09-08 — 0907素材の6名を新規追加（idx 354–359・種別=new・Opus監督 / Codex実装）
 
