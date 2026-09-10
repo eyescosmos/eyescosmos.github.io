@@ -752,7 +752,9 @@ importer 新エンジンで通した**初の純・新規追加**（jikei-sato �
 Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer --apply` + `--plan-surfaces`
 手貼り + `--bundle-to-en` で全サーフェスを通し切った。素材は clean v5.1 ph-*（JA/EN とも）。
 
-- **wall-time**：Daisuke 記入。
+- **wall-time**：**2時間**（Daisuke実測。0909の12名バッチ=1時間40分弱・0905の12名バッチ=1時間30分と比べ、
+  名数が18へ増えた分と、素材の `§ 01` マーカー由来の本文消失の発見・復旧、§REL/§REF の全面再構築、
+  Codex のクレジット切れ後の Opus 実装が上乗せされている）。。
 - **bug**：0。エンジン本体のバグなし（M2-M6 は安定）。render は一発で §WORKS/REL/REF/SRC・
   38 cite・59 sup-ref・dangling 0・eyebrow/Period/description 全部正しく出た。
 - **手作業点（実測4点）**：
@@ -3009,3 +3011,128 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
 - **「直接編集疑い」WARN 8件の判定（冪等性実測）**：スコープ付き再生成→SHA-256照合で、`en/countries/united-kingdom` `en/countries/united-states` `en/eras/1839` `en/eras/1870` `en/eras/1890` の**5面は byte 完全一致＝偽陽性と実証**（`data/country-pages.json` は codes/lead/nameEn/nameJa/slug/updated しか持たず、`data/taxonomy-en-content.json` も prose のみで、写真家カードは JA HTML 由来のため写真家追加のたびに構造的に出る）。
 - **★運動EN 3面は再生成してはいけない（実測で確定・2026-09-05）**：`build_taxonomy_en.py --slug pictorialism` を試すと **(a) Steichen の運動固有 lede が汎用 lede へ置き換わり、(b) 今回追加した4カードの meta が国コード `GB` から `PHOTOGRAPHER` へ退行**した。バックアップから即時復元済み（復元後SHA `b3498cfe82691ffb21e3e6b17363fb8abc18daf328bc85abf6b2c417aded37cb`）。`naturalistic-photography` / `street-photography` は同じ退行を避けるため**検証再生成そのものを実行していない**。**運動EN面の正しい更新方法は最小差分挿入であり、この3件のWARNは「手編集が誤り」ではなく builder 側が非可逆であることの反映**。既存カードのbyte変更0・カードmetaは既存慣習（EN は国コード）と一致することを実測済み。`.preverify.bak` 残存0。
 - **wall-time**：**1時間30分**（Daisuke実測。0903の12名バッチ=1時間18分と同水準）
+## 2026-09-10 — 0910素材の18名を新規追加（idx 372–389・種別=new・Opus監督 / Codex実装 → 途中からOpus実装）
+
+- **範囲**：`re-photographer/0910` の18名を全サーフェスへ新規追加。
+  idx 372–389（`aaron-siskind` 372 / `alfred-eisenstaedt` 373 / `berenice-abbott` 374 /
+  `cecil-beaton` 375 / `claude-cahun` 376 / `erwin-blumenfeld` 377 / `florence-henri` 378 /
+  `frederick-sommer` 379 / `gerda-taro` 380 / `hiroshi-hamaya` 381 / `ilse-bing` 382 /
+  `kansuke-yamamoto` 383 / `martin-munkacsi` 384 / `tadahiko-hayashi` 385 / `tina-modotti` 386 /
+  `umbo` 387 / `weegee` 388 / `willy-ronis` 389）。
+  card-data 371→389、EN正本 pages 384→402（`_meta` 不変）、sitemap loc 914→950（追加36・削除0）、
+  星bin 純増592行・削除0、新規ファイル36枚（JA18 / EN18）。**engine/CSS変更0**
+  （唯一の例外は `FRANCE_EXPECTED_IDS` への4件追加＝正規手順）。
+
+- **★最重要の発見：素材の節マーカーが `§ 01` 形式だと本文の65〜81%が黙って落ちる。**
+  `import_chatgpt_photographer.py` の抽出器は `§ 01 / 04` 形式を前提にしており、
+  `§ 01`（分母なし）だと numbered section を1個しか認識しない。0910素材18枚のうち6枚
+  （`aaron-siskind` / `alfred-eisenstaedt` / `erwin-blumenfeld` / `ilse-bing` /
+  `kansuke-yamamoto` / `martin-munkacsi`）がこの形式だった。実測（本文字数 素材→生成）は
+  siskind 6,746→2,336 / eisenstaedt 6,016→1,427 / blumenfeld 5,982→1,153。
+  **`check_content_loss.py` も `preflight.py` もこれを検知しない**（新規ページなので比較対象が無い）。
+  対処＝素材を**一時コピー上で** `§ NN` → `§ NN / 04` へ正規化して再 render し、既に公開済みの3枚は
+  numbered section ブロックだけを外科的に差し替え（§WORKS/§REL/§REF/§SRC は不可触）。
+  **恒久対処は未実施＝次回も素材のマーカー形式を最初に grep すること。**
+  検証コマンド: `--render-ja` の stderr が `sec=4` になっているか（`sec=1` なら落ちている）。
+
+- **踏んだ罠（上記以外）**：
+  ① **`--apply-surfaces` を EN リーフ生成前に回すと `build_archive_en.py` が英語lede不足で停止する。**
+     正しい順序は spec → `--apply --scaffold` → `--render-ja` → EN正本merge → `build_photographers_en.py`
+     → **その後に** `--apply-surfaces`。
+  ② **`ph-related-grid` 形式の §REL を抽出器が丸ごと落とす。** `tadahiko-hayashi` / `weegee` /
+     `willy-ronis` の §REL が空になっていた。`ph-book-simple` 形式の §REF も同様に落ち、
+     6枚が `prep-block`（準備中）のまま残った。
+  ③ **形式Bの素材では §REL の終端を取り違え、§REF の Web/Archive リンクが `related_people` に混入する。**
+     同時に本文末尾の `*NN` を人名と誤認する。
+  ④ **§REL の slug 解決が推測ベースで、実在しない `henri-cartier-bresson.html` を作る**
+     （実在は `cartierbresson`）。また EN ページに **JA パス** `/photographers/…` を書き込む事故が
+     3枚（eisenstaedt / blumenfeld / henri）で発生していた。
+  ⑤ `link_country_keywords.py` は毎回**対象外の230ページ**を書き換える。実行のたびに revert が必要。
+  ⑥ `check_en_entry.py` は**位置引数**（`--slug` は EXIT 2）。
+
+- **§REL / §REF の全面再構築**：素材18×2枚から §REL を機械抽出し直し、人名は
+  `card-data.json` の日本語名／英語名で**厳密一致**、別名3件（`ジェルメーヌ・クルル`→`germaine-krull` /
+  `アンドレ・ケルテース`→`andre-kertesz` / `エーリッヒ・ザロモン`→`erich-salomon`）と
+  運動別名2件（`ニュー・ヴィジョン`→`新しいヴィジョン` / `ニュー・ヴィジョン / モダニズム`→`モダニズム`）
+  のみ手当て。ページ非実在のものは**裸テキストで保持**（従前は丸ごと削除されていた）。
+  JA §REL 項目は18名合計92件、EN は site 標準どおりリンク項目のみ63件で、**注記の無い項目は0**。
+  素材がリンクだけで注記を持たない6名分25件は監督(Opus)が本文に基づいて執筆。
+  §REF は **JA素材 ∪ EN素材** の和集合とし、`prep-block` はサイト全体で0件になった。
+
+- **ガード迂回（報告）**：`build_photographers_en.py --force` を3枚
+  （`alfred-eisenstaedt` / `erwin-blumenfeld` / `florence-henri`）で使用。
+  guard の「Related link を削除する」は**実体が「EN ページに残っていた JA パスのリンクを
+  正しい EN パスへ置換する」差分**であり、削除される人名は新素材の §REL にも JA ページにも
+  存在することを事前に実測して確認した。作業後、EN18枚の `href="/photographers/` は
+  **各1件（自ページへの言語トグル）のみ**。
+
+- **JSON-LD**：JA の `description` が12枚で欠落していたため spec の `meta_description` から補完
+  （サイト全体では389枚中318枚が保持＝これが標準）。EN正本の `jsonld` は新規6名で未生成のため
+  監督が生成。18名すべてで `description` / `birthDate` / `deathDate` があり Years と一致。
+
+- **分類面（実測・すべて JA=EN でカード数一致）**：
+  年代は 1910 21→24(+3) / 1930 34→44(+10) / 1950 25→30(+5)＝**合計+18**。
+  国は United States 91→99(+8)、Germany 35→40(+5)、France 39→44(+5)、Japan 67→70(+3)、
+  Italy 4→5、Mexico 3→4、Hungary 5→6、United Kingdom 69→70＝**合計+25**
+  （二重国籍7名 eisenstaedt / blumenfeld / henri / taro / bing / munkacsi / modotti が
+  両方の単国ページに載るため 18+7=25。複合国ページは作らない）。
+  運動は フォトジャーナリズム 10→14(+4)、シュルレアリスム 2→5(+3)、新しいヴィジョン 2→5(+3)、
+  社会ドキュメンタリー 15→17(+2)、ストレート写真 10→11、ダダ 3→4、モダニズム 14→15、
+  バウハウス 1→2、ドキュメンタリー 38→39＝**合計+17**（`cecil-beaton` は運動掲載なしのため 18-1）。
+  **hero人数の drift を今回触った16面で解消**（例 フォトジャーナリズム 10→14）。
+  `ピクトリアリズム` 23/25 は今回対象外のため既存 drift のまま維持。
+  `FRANCE_EXPECTED_IDS` へ `claude-cahun` / `florence-henri` / `gerda-taro` / `ilse-bing` /
+  `willy-ronis` を era昇順→idx昇順の正しい位置へ追加（`assert_members` 本体・他国ガードは無変更）。
+  `tina-modotti` の `メキシコ` タグは辞書未登録で `build_archive_en.py` が停止するため R2 どおり
+  カードから削除（Italy / Mexico 両国ページへの掲載と国表示は維持）。
+
+- **§REL 相互リンク**：既存3ページの裸参照をリンク化（`erich-salomon`→Eisenstaedt / Umbo、
+  `eugene-atget`→Abbott、`keizo-kitajima`→Weegee）。**EN 側は既存ページの正本を触らない判断**とし、
+  EN §REL は従来の集合のまま（サイト標準＝EN §REL はリンク項目の部分集合）。
+
+- **未対応（報告のみ）**：運動ページのサイドバー `ph-side-chips` には新規18名を追加していない。
+  0909の `john-heartfield`、既存の `john-thomson` も同様に未登録で、**カードグリッドのみ更新するのが
+  直近の慣習**のため踏襲した。是正するなら全運動ページ横断の別タスクにすること。
+
+- **検査**：`check_content_loss.py` / `preflight.py`（EXIT 0・HARD 0・✗ 0件）/
+  `check_photographer_link_integrity.py` / `sync_card_counts.py --check` はすべて EXIT 0。
+  18名分の `check_new_photographer.py` と `check_en_entry.py` も全て EXIT 0、
+  EN dry-run の SKIPPED 0。本文字数は JA/EN とも素材＝生成で18名全一致（欠損0）。
+  Years は hero / `<dt>` / side / card-data の4面一致（区切りは U+2013）、
+  div/section 開閉差0、§REL のリンク切れ0、`revision` 残存0、`prep-block` 残存0。
+  EN国8面・EN年代3面はスコープ再生成で **byte 完全一致＝偽陽性を実証**、`.preverify.bak` 残存0。
+  運動EN 9面の「直接編集疑い」は A-4 どおり**再生成せず残置**。`[EN archive]` WARN と未知WARN は0。
+  素材36枚の SHA-256 は作業前後で一致。tracked 差分57ファイル・依頼対象外の巻き込み0・
+  `styles/` と `new-design/` の差分0。
+
+- **Codex トークン実測（0909の A-1b 施策の効果測定）**：
+  | セッション | 名数 | トークン | ログ | exec | 素の `git diff` |
+  |---|---|---|---|---|---|
+  | パイロット(abbott) | 1 | 178,202 | 813KB | 50 | 6 |
+  | フェーズ2（形式B×5） | 5 | 203,761 | 2,269KB | 66 | 1 |
+  | フェーズ3（形式A×6・途中でクレジット切れ） | 6(未完) | 213,984 | 3,769KB | 78 | 0 |
+  合計 595,947。**比較可能な「新規セッション1本あたり トークン/名」はフェーズ2の 40,752 で、
+  0909ベースライン 46,462 に対し −12.3%**。素の `git diff` はキックオフに規律を書いた効果で
+  セッションを追うごとに 6→1→0 に減った。ただし**ログ総量は逆に増えており（813KB→3,769KB）、
+  トークン削減の主因は diff ではなく1セッションあたりの名数**と見るのが妥当。
+  **フェーズ3の途中で ChatGPT のクレジット上限（復帰 9/11 2:02）に達したため、
+  以降は Opus が実装した**（0909 と同じ事象・2回目）。
+
+- **wall-time**：Daisuke 記入
+
+## 2026-09-10 — 0910形式Bパイロット `berenice-abbott`（idx 374・種別=new・Opus監督 / Codex実装）
+
+- **範囲**：new×1。JA/EN素材の本文・thesis・作品・§REF・出典を scaffold-inject / EN正本JSON経由で追加。card-data 371→372、EN正本 pages 384→385、archive 371→372、era1930 34→35、United States 91→92、Straight Photography 10→11、sitemap 914→916、星bin +1。commit / pushなし。wall-time は Daisuke 記入。
+- **形式B抽出の実測**：`ph-side-meta-row` が無く hero眉が `§ — —` の素材でも必須項目（name / years / lead / thesis / essay 4節 / sources 32）は取得でき、見出し語 `関連する写真家・運動` も取得できた。ただし `_extract_related` がページ全体の全 `.ph-rel-list` を対象にするため、§REF の Web / Archive 3件を人物へ誤分類し、関連人物 Walker Evans / Margaret Bourke-White は文末sup-refを名前 `*31` と誤取得した（正3＋誤5＝8件、正しい人物2件を実質欠落）。さらに Web / Archive は `further_links` 0件として落ちた。Country / Period / Movement / era / channel / birth_year / death_year / country_slug は形式Bメタから未取得だが、これらは確定taxonomy/specを正として補った。JA/ENの一時作業コピーだけで§REL境界・厳密slugを補正し、SRCは不触。
+- **手作業点・罠**：手作業7系統＝spec、§REL境界補正、登録済み人物5名のcard-data日本語名厳密一致リンク、本文初出リンク、JSON-LD Person description、運動JA/EN最小差分挿入、横断 `link_country_keywords.py` の対象外230枚復元。`--render-ja` 後の実要素 `prep-block` はJA/ENとも0（CSS文字列のみ各1）。worksと§REFは素材JA=ENで各3 / 7 href、生成JA/ENも完全一致。`--apply-surfaces` はENリーフ前のため初回 `build_archive_en.py` がlede不足で停止し、EN生成後の再実行で解消。またローカル専用 `new-design/cards-archive.html` も更新したため直前backupへ復元。`check_en_entry.py --slug` はCLI非対応（EXIT 2）で、正規の位置引数でEXIT 0。engine/CSS変更0。
+- **フィデリティ・構造**：素材→生成の実クラス数はJA/ENとも `ph-cite` 32→32 / `ph-thesis__body` 1→1 / `ph-kw` 8→8。JA素材の `revision` 15トークン→生成0、EN生成0。div はJA 117/117・EN 183/183、sectionは各9/9。§RELはJA/EN各6リンク（人物5＋運動1）・リンク切れ0、登録済み人物の裸名0。検索はruntime selector各1、固定id文字列リテラル0。PersonはJA/ENとも description / birthDate=1898 / deathDate=1991 を保持し、Years 4面は `1898–1991`（U+2013）で一致。
+- **検査**：`check_content_loss.py` / `preflight.py`（EXIT 0・HARD 0）/ `check_photographer_link_integrity.py` / `sync_card_counts.py --check` / `check_new_photographer.py` / `check_en_entry.py` はEXIT 0。EN dry-runは1 page・SKIPPED 0。素材36枚SHA-256前後一致。国US・era1930のEN再生成は2回目byte一致、`.preverify.bak` 残存0。全分類面で追加前の既存カードbyte一致。禁止面の既存部分・styles差分0、new-designは復元済み。
+- **既知WARN判定**：precheckの非標準hero眉・未登録hero眉語は素材chrome不採用。preflightのEN country/era直接編集疑いはスコープ再生成2回目byte一致で偽陽性、EN movementは固有lede保全のため再生成せず残置。`check_new_photographer` のEN `@graph` / BreadcrumbList不足は直前パイロット `karl-blossfeldt` にも同じく出る任意改善WARN、EN dry-runの `no photobooks_html` は§REF 7リンクを `further_reading_html` に保持しているため欠落ではない。既存movement hero drift 4面、カードtag非前方一致91枚、stale intentional-replacement群はbaseline既存。未知WARNなし。
+## 2026-09-10 — 0910素材フェーズ2・形式Bの残り5名（idx 375–387・種別=new・Opus監督 / Codex実装）
+
+- **範囲**：`cecil-beaton`(375) / `claude-cahun`(376) / `florence-henri`(378) / `tina-modotti`(386) / `umbo`(387) の new×5。card-data 372→377、EN正本 pages 385→390、archive 372→377、sitemap 916→926（追加10・削除0）、星bin +5・削除0。wall-time は Daisuke 記入。
+- **手作業点・bug・engine**：手作業7系統＝spec 5件、形式Bの§REL終端誤認補正、`*N`誤認除去、§REF Web/Archiveの復元、works JA/EN和集合確認、運動JA/EN最小差分挿入、Franceガード定数へ `florence-henri` / `claude-cahun` をera・idx順で追加。`tina-modotti` の未登録国タグ `メキシコ` はR2どおりカードから落とし、Italy / Mexicoの国表示と両国ページ掲載は維持。engine変更は許可された `FRANCE_EXPECTED_IDS` 定数2件のみ、CSS変更0。
+- **フィデリティ・構造**：素材→生成の実クラスは JA/EN とも `ph-cite` 157→157、`ph-thesis__body` 5→5、`ph-kw` 40→40。`revision` は生成JA/ENとも0。5名×JA/ENのdiv・section開閉一致、Years 4面一致、JSON-LD Personの description / birthDate / deathDate は全5名一致。
+- **分類面**：era1910 21→24、era1930 35→37。United Kingdom 69→70、France 39→41、United States 92→93、Italy 4→5、Mexico 3→4、Germany 35→36（各JA=EN）。運動はSurrealism 2→3、New Vision 2→3、Modernism 14→15、Bauhaus 1→2（各JA=EN）。Cecil Beatonは運動掲載0。
+- **検査**：`check_content_loss.py` / `preflight.py`（EXIT 0・HARD 0）/ `check_photographer_link_integrity.py` / `sync_card_counts.py --check` / 5名分の `check_new_photographer.py`・`check_en_entry.py` はEXIT 0。EN dry-runは5/5でSKIPPED 0。国JA/EN 12面＋EN年代2面は再実行byte一致14/14。素材36枚SHA-256は36/36一致。sitemapの `worktrees` / `-backup` URLは0。
+- **既知WARN判定**：precheckの非標準hero眉・CJK言語誤判定、EN country/era直接編集疑い、EN movement直接編集疑い、既存movement drift・非前方一致・stale宣言は既知。EN archive WARN 0、未知WARN 0。

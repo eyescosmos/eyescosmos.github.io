@@ -7963,3 +7963,631 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "berenice-abbott",
+  "name": "Berenice Abbott",
+  "nameJa": "ベレニス・アボット",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1898–1991",
+  "gender": "女性",
+  "era": "1930",
+  "movements": [
+    "ストレート写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ベレニス・アボットは、アジェの作品保存、《Changing New York》、科学写真を通じて、写真を後から比較し検証できる公共的な知識として設計した。",
+    "textEn": "Berenice Abbott used the preservation of Atget’s work, Changing New York, and scientific photography to design photographs as public knowledge that could later be compared and tested.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "MoMA — Berenice Abbott",
+        "url": "https://www.moma.org/artists/41-berenice-abbott"
+      },
+      {
+        "num": 2,
+        "name": "New York State Museum — About Abbott",
+        "url": "https://www.nysm.nysed.gov/berenice-abbott-changing-new-york/about-abbott"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "cecil-beaton",
+  "name": "Cecil Beaton",
+  "nameJa": "セシル・ビートン",
+  "nationality": "GB",
+  "flag": "🇬🇧",
+  "years": "1904–1980",
+  "gender": "男性",
+  "era": "1930",
+  "movements": [],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ビートンは、衣装、花、鏡、描き背景、照明を組み、人物がどの階級、役割、時代を体現する存在として見えるかを撮影前から設計した。その技法は『Vogue』のファッション、王室肖像、第二次大戦の情報省公式写真という異なる制度で使われた。",
+    "textEn": "Beaton arranged costume, flowers, mirrors, painted backdrops, and lighting before exposure so that a sitter would appear to embody a particular class, social role, and historical moment.He used this approach within very different institutions: Vogue fashion pages, royal portraiture, and official Ministry of Information photography during World War II.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Victoria and Albert Museum — Cecil Beaton: an introduction",
+        "url": "https://www.vam.ac.uk/articles/cecil-beaton-an-introduction"
+      },
+      {
+        "num": 2,
+        "name": "Victoria and Albert Museum — Cecil Beaton: royal photographer",
+        "url": "https://www.vam.ac.uk/articles/cecil-beaton-royal-photographer"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "claude-cahun",
+  "name": "Claude Cahun",
+  "nameJa": "クロード・カアン",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1894–1954",
+  "gender": "女性",
+  "era": "1930",
+  "movements": [
+    "シュルレアリスム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "カアンは、同じ身体を剃髪、衣装、仮面、鏡像、二重像として反復し、顔が鮮明に写っていても一つの性別や人格へ確定しにくい肖像を作った。マルセル・ムーアとの共同制作では、モデル、撮影者、編集者、作者名の境界まで一人に固定しにくくなる。",
+    "textEn": "Cahun repeatedly restaged the same body through a shaved head, costume, masks, mirror images, and doubling, producing portraits in which even a sharply rendered face resists being fixed as one gender or one personality.In work made with Marcel Moore, the roles of model, photographer, editor, and named author also resist assignment to a single person.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "MoMA — Claude Cahun",
+        "url": "https://www.moma.org/artists/8195-claude-cahun"
+      },
+      {
+        "num": 2,
+        "name": "MoMA — Claude Cahun, Marcel Moore, Untitled, 1921–22",
+        "url": "https://www.moma.org/collection/works/83692"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "florence-henri",
+  "name": "Florence Henri",
+  "nameJa": "フローレンス・アンリ",
+  "nationality": "US / FR",
+  "flag": "🇺🇸 / 🇫🇷",
+  "years": "1893–1982",
+  "gender": "女性",
+  "era": "1910",
+  "movements": [
+    "新しいヴィジョン"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "アンリは、球体、果物、木枠、身体を鏡の前に配置し、実物、反射、影、背景がどこでつながるのかを一枚の写真の中で判断しにくくした。絵画で培った幾何学構成を、実在する物と光だけで撮影前に組み立てたことが方法の基礎にある。",
+    "textEn": "Henri placed spheres, fruit, wooden frames, and bodies in front of mirrors, making it difficult to determine where object, reflection, shadow, and background joined within a single photograph.Her method began by building the geometry of the image before exposure from actual objects and light.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "MoMA — Florence Henri",
+        "url": "https://www.moma.org/artists/2595"
+      },
+      {
+        "num": 2,
+        "name": "MoMA Object:Photo — Composition No. 19",
+        "url": "https://www.moma.org/interactives/objectphoto/objects/83777.html"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "tina-modotti",
+  "name": "Tina Modotti",
+  "nameJa": "ティナ・モドッティ",
+  "nationality": "IT / MX",
+  "flag": "🇮🇹 / 🇲🇽",
+  "years": "1896–1942",
+  "gender": "女性",
+  "era": "1910",
+  "movements": [
+    "モダニズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "モドッティは、輪郭、反復、俯瞰、切り取りを使い、労働者の行進、手、鎌、弾帯、壁画を、新聞や雑誌の小さな印刷面でも形と主題が崩れにくい像にした。1920年代のモダニズムが追求した明快な構図を、革命後メキシコの労働運動、壁画記録、雑誌出版に実際に働かせたことで、前衛写真の造形が美術作品と政治的な複製画像の双方を同じ撮影技術から成立させ得ることを具体的に示した。",
+    "textEn": "Modotti used contour, repetition, elevated viewpoints, and cropping to make workers’ marches, hands, sickles, cartridge belts, and murals hold their form and subject even on the small printed pages of newspapers and magazines.By putting the visual clarity pursued by 1920s modernism to work in labor activism, mural documentation, and magazine publishing in postrevolutionary Mexico, she demonstrated in concrete terms that the formal language of avant-garde photography could serve both as an art object and as a reproducible political image through the same photographic techniques.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "MoMA — Tina Modotti",
+        "url": "https://www.moma.org/artists/4039-tina-modotti"
+      },
+      {
+        "num": 2,
+        "name": "MoMA — Telephone Wires, Mexico, 1924",
+        "url": "https://www.moma.org/collection/works/56288"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "umbo",
+  "name": "Umbo (Otto Umbehr)",
+  "nameJa": "ウンボ",
+  "nationality": "DE",
+  "flag": "🇩🇪",
+  "years": "1902–1980",
+  "gender": "男性",
+  "era": "1910",
+  "movements": [
+    "バウハウス"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ウンボは、俯瞰、仰角、顔の極端な近接、斜線、夜景を使い、交通、広告、群衆、孤独、速度が断片的に現れるベルリンの都市経験を画面にした。1928年に参加したDEPHOTでは、それらの視点が写真エッセイや挿絵雑誌の連続したページで使われた。",
+    "textEn": "Umbo used overhead and low-angle views, extreme facial close-ups, diagonals, and night photography to construct a Berlin of traffic, advertising, crowds, solitude, and speed.At DEPHOT, which he helped found in 1928, those viewpoints were used across photo essays and sequences in illustrated magazines.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Berlinische Galerie — Umbo. Photographer. Works 1926–1956",
+        "url": "https://berlinischegalerie.de/en/exhibition/umbo-photographer/"
+      },
+      {
+        "num": 2,
+        "name": "Berlinische Galerie — The Estate of the Photographer Umbo",
+        "url": "https://berlinischegalerie.de/en/collection/collection-online/umbo-estate/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "aaron-siskind",
+  "name": "Aaron Siskind",
+  "nameJa": "アーロン・シスキン",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1903–1991",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "社会ドキュメンタリー"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "シスキンは、Photo Leagueの共同社会記録で培った現実への注意を壁や看板の近接撮影へ持続させ、写真の記録性を保ったまま戦後抽象絵画と接する画面を作った。",
+    "textEn": "Siskind carried the attentiveness to the material world developed through the Photo League’s collective documentary work into close photographs of walls and signs, creating images that met postwar abstract painting while retaining photography’s tie to recorded reality.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Center for Creative Photography — Aaron Siskind",
+        "url": "https://ccp.arizona.edu/artists/aaron-siskind/"
+      },
+      {
+        "num": 2,
+        "name": "International Center of Photography — Aaron Siskind",
+        "url": "https://www.icp.org/browse/archive/constituents/aaron-siskind"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "alfred-eisenstaedt",
+  "name": "Alfred Eisenstaedt",
+  "nameJa": "アルフレッド・アイゼンスタット",
+  "nationality": "DE / US",
+  "flag": "🇩🇪 / 🇺🇸",
+  "years": "1898–1995",
+  "gender": "男性",
+  "era": "1930",
+  "movements": [
+    "フォトジャーナリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "アイゼンスタットは、小型カメラの機動性を週刊誌の編集工程へ結びつけ、遠いニュースや公的人物を読者が身近な出来事として記憶する写真を大量に送り出した。",
+    "textEn": "Eisenstaedt joined the mobility of the small camera to the editorial machinery of a weekly magazine, producing a vast body of photographs through which distant news and public figures could enter readers’ memory at an intimate scale.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "International Center of Photography — Alfred Eisenstaedt",
+        "url": "https://www.icp.org/browse/archive/constituents/alfred-eisenstaedt"
+      },
+      {
+        "num": 2,
+        "name": "MoMA — Alfred Eisenstaedt",
+        "url": "https://www.moma.org/artists/1707-alfred-eisenstaedt"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "erwin-blumenfeld",
+  "name": "Erwin Blumenfeld",
+  "nameJa": "アーウィン・ブルーメンフェルド",
+  "nationality": "DE / US",
+  "flag": "🇩🇪 / 🇺🇸",
+  "years": "1897–1969",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "ダダ"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ブルーメンフェルドは、ダダの切断と再構成を暗室操作、カラー、雑誌印刷へつなぎ、撮影後の工程まで含めて一枚の商業画像を設計した。",
+    "textEn": "Blumenfeld linked Dada’s cutting and reassembly to darkroom manipulation, color, and magazine printing, designing commercial images through the stages that followed exposure as well as through the shoot itself.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Erwin Blumenfeld Estate — Biography",
+        "url": "https://erwinblumenfeld.com/biography/"
+      },
+      {
+        "num": 2,
+        "name": "Erwin Blumenfeld Estate — Work",
+        "url": "https://erwinblumenfeld.com/work/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "frederick-sommer",
+  "name": "Frederick Sommer",
+  "nameJa": "フレデリック・ゾマー",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1905–1999",
+  "gender": "男性",
+  "era": "1930",
+  "movements": [
+    "シュルレアリスム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ゾマーは、8×10カメラと密着焼きの精密さを死骸、内臓、地平線のない砂漠、拾得物へ向け、正確に写るほど被写体の意味と序列が不安定になる写真を作った。",
+    "textEn": "Sommer used the precision of an 8×10 camera and contact printing on carcasses, entrails, horizonless desert terrain, and found objects, producing photographs in which greater descriptive accuracy makes the meaning and hierarchy of subjects less stable.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Center for Creative Photography — Frederick Sommer",
+        "url": "https://ccp.arizona.edu/artists/frederick-sommer/"
+      },
+      {
+        "num": 2,
+        "name": "Getty — The Photographs of Frederick Sommer",
+        "url": "https://www.getty.edu/art/exhibitions/sommer/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "gerda-taro",
+  "name": "Gerda Taro",
+  "nameJa": "ゲルダ・タロー",
+  "nationality": "DE / FR",
+  "flag": "🇩🇪 / 🇫🇷",
+  "years": "1910–1937",
+  "gender": "女性",
+  "era": "1930",
+  "movements": [
+    "フォトジャーナリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "タローの仕事では、亡命者として反ファシズムの前線へ接近した写真と、「Capa」という共同名義から独立していく作者の過程が重なり、戦争写真が何を写したかだけでなく、誰の名で流通したかまで作品史の問題になった。",
+    "textEn": "Taro’s work brings together her close approach to an anti-fascist front as an exile and her emergence as an author separate from the shared “Capa” identity, making the name under which a war photograph circulated as important to its history as what it showed.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "International Center of Photography — Gerda Taro",
+        "url": "https://www.icp.org/browse/archive/constituents/gerda-taro"
+      },
+      {
+        "num": 2,
+        "name": "ICP — Gerda Taro retrospective collection",
+        "url": "https://www.icp.org/browse/archive/collections/gerda-taro-september-26-2007-january-6-2008"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "hiroshi-hamaya",
+  "name": "Hiroshi Hamaya",
+  "nameJa": "濱谷浩",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1915–1999",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "ドキュメンタリー"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "濱谷は、同じ豪雪地域へ季節を越えて戻り、祭礼、労働、住居、移動を写真集の順序で結ぶことで、気候と生活の仕組みを長い時間から読ませる方法を示した。",
+    "textEn": "Hamaya returned to the same heavy-snow region across seasons and linked festivals, labor, housing, and movement through the sequence of the photobook, offering a way of understanding climate and daily life over extended time.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Getty — Japan's Modern Divide",
+        "url": "https://www.getty.edu/art/exhibitions/japans_moderndivide/"
+      },
+      {
+        "num": 2,
+        "name": "Getty — Exhibition Presents 2 Sides of Modern Japanese Photography",
+        "url": "https://www.getty.edu/news/japan-modern-divide-photographs-hiroshi-hamaya-and-kansuke-yamamoto/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "ilse-bing",
+  "name": "Ilse Bing",
+  "nameJa": "イルゼ・ビング",
+  "nationality": "DE / FR",
+  "flag": "🇩🇪",
+  "years": "1899–1998",
+  "gender": "女性",
+  "era": "1930",
+  "movements": [
+    "新しいヴィジョン"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "イルゼ・ビングは、ライカ1台でパリの街路、建築、舞踊、ファッションを撮り、《Self-Portrait in Mirrors》では撮影者自身を二つの鏡像へ分けて画面に戻した。",
+    "textEn": "Ilse Bing photographed Paris streets, architecture, dance, and fashion with a single Leica, and in Self-Portrait in Mirrors returned the photographer to the frame as two mirrored images.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Victoria and Albert Museum — Ilse Bing: Life and Work",
+        "url": "https://www.vam.ac.uk/articles/ilse-bing-life-and-work"
+      },
+      {
+        "num": 2,
+        "name": "Victoria and Albert Museum — Ilse Bing: Working Methods",
+        "url": "https://www.vam.ac.uk/articles/ilse-bing-working-methods"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "kansuke-yamamoto",
+  "name": "Kansuke Yamamoto",
+  "nameJa": "山本悍右",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1914–1987",
+  "gender": "男性",
+  "era": "1930",
+  "movements": [
+    "シュルレアリスム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "山本悍右は、写真、コラージュ、フォトグラム、詩、雑誌を往復し、戦時下の検閲と名古屋の出版網の中で日本のシュルレアリスムを長く実践した。",
+    "textEn": "Kansuke Yamamoto moved between photography, collage, photograms, poetry, and magazines, sustaining Surrealism in Japan within Nagoya's publishing networks and under wartime censorship.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "J. Paul Getty Museum — Kansuke Yamamoto, Japan's Modern Divide",
+        "url": "https://www.getty.edu/art/exhibitions/japans_moderndivide/yamamoto.html"
+      },
+      {
+        "num": 2,
+        "name": "J. Paul Getty Museum — Japan's Modern Divide",
+        "url": "https://www.getty.edu/art/exhibitions/japans_moderndivide/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "martin-munkacsi",
+  "name": "Martin Munkácsi",
+  "nameJa": "マルティン・ムンカーチ",
+  "nationality": "HU / US",
+  "flag": "🇭🇺",
+  "years": "1896–1963",
+  "gender": "男性",
+  "era": "1930",
+  "movements": [
+    "新しいヴィジョン"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "マルティン・ムンカーチは、ベルリンの挿絵新聞で培った瞬間の判断を『Harper's Bazaar』へ持ち込み、モデルを海岸や街路で動かして報道写真の速度をファッションへ移した。",
+    "textEn": "Martin Munkácsi brought the split-second judgment of Berlin's illustrated papers to Harper's Bazaar, moving models onto beaches and streets and transferring the speed of press photography to fashion.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "International Center of Photography — Martin Munkacsi",
+        "url": "https://www.icp.org/browse/archive/constituents/martin-munkacsi"
+      },
+      {
+        "num": 2,
+        "name": "International Center of Photography — Martin Munkacsi: Think While You Shoot",
+        "url": "https://www.icp.org/exhibitions/martin-munkacsi-think-while-you-shoot"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "tadahiko-hayashi",
+  "name": "Tadahiko Hayashi",
+  "nameJa": "林忠彦",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1918–1990",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "フォトジャーナリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "林忠彦は、戦後東京の焼け跡や闇市と、太宰治ら文士の肖像を同じ雑誌メディアの速度で撮り、写真が戦後の公共像をどう作ったかを示した。",
+    "textEn": "Tadahiko Hayashi photographed the ruins and black markets of postwar Tokyo and the portraits of writers such as Osamu Dazai at the same magazine speed, showing how photography built postwar public images.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Smithsonian National Museum of Asian Art — Hayashi Tadahiko",
+        "url": "https://asia.si.edu/explore-art-culture/interactives/japan-modern-photography-from-the-gloria-katz-and-willard-huyck-collection/japan-modern-people/hayashi-tadahiko/"
+      },
+      {
+        "num": 2,
+        "name": "FUJIFILM SQUARE — 林忠彦 写真家プロフィール",
+        "url": "https://fujifilmsquare.jp/profile/tadahiko_hayashi.html"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "weegee",
+  "name": "Weegee (Arthur Fellig)",
+  "nameJa": "ウィージー",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1899–1968",
+  "gender": "男性",
+  "era": "1930",
+  "movements": [
+    "フォトジャーナリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ウィージーは、警察無線と直射フラッシュでニューヨークの事件と夜の群衆を撮り、『Naked City』で事件を見る人々や新聞のキャプションまでニュースの構成要素として扱った。",
+    "textEn": "Weegee used a police radio and direct flash to photograph New York's crimes and nighttime crowds, treating onlookers and newspaper captions in Naked City as components of the news itself.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "International Center of Photography — Weegee",
+        "url": "https://www.icp.org/browse/archive/constituents/weegee"
+      },
+      {
+        "num": 2,
+        "name": "University of California Press — Weegee and Naked City",
+        "url": "https://www.ucpress.edu/books/weegee-and-naked-city/paper"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "willy-ronis",
+  "name": "Willy Ronis",
+  "nameJa": "ウィリー・ロニス",
+  "nationality": "FR",
+  "flag": "🇫🇷",
+  "years": "1910–2009",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "社会ドキュメンタリー"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ウィリー・ロニスは、ベルヴィル＝メニルモンタンの街路、工場、ストライキ、家族を撮り、日常の身振りと都市の構図を戦後フランスの人間主義写真として結んだ。",
+    "textEn": "Willy Ronis photographed the streets of Belleville-Ménilmontant, factories, strikes, and family life, tying everyday gesture to the composition of the city in postwar French humanist photography.",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Médiathèque du patrimoine et de la photographie — Willy Ronis",
+        "url": "https://mediatheque-patrimoine.culture.gouv.fr/collection/periode/willy-ronis"
+      },
+      {
+        "num": 2,
+        "name": "Médiathèque du patrimoine et de la photographie — Willy Ronis (1910–2009)",
+        "url": "https://mediatheque-patrimoine.culture.gouv.fr/collection/objet/willy-ronis-1910-2009"
+      }
+    ]
+  }
+}
+);
