@@ -754,7 +754,7 @@ Runbook B（新規追加）どおり importer `--render-ja` + `add_photographer 
 
 - **wall-time**：**2時間**（Daisuke実測。0909の12名バッチ=1時間40分弱・0905の12名バッチ=1時間30分と比べ、
   名数が18へ増えた分と、素材の `§ 01` マーカー由来の本文消失の発見・復旧、§REL/§REF の全面再構築、
-  Codex のクレジット切れ後の Opus 実装が上乗せされている）。。
+  Codex のクレジット切れ後の Opus 実装が上乗せされている）。
 - **bug**：0。エンジン本体のバグなし（M2-M6 は安定）。render は一発で §WORKS/REL/REF/SRC・
   38 cite・59 sup-ref・dangling 0・eyebrow/Period/description 全部正しく出た。
 - **手作業点（実測4点）**：
