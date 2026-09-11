@@ -13,3 +13,6 @@ new-design/
 
 # importer プレビュー断片（誤コミット防止・Step2 2026-06-21）
 outputs/
+
+# SEO選定ツールのデータ（公開リポジトリのため置かない。正は photography history/seo-watch/）
+data/seo/
