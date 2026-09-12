@@ -154,7 +154,7 @@ button{font-family:inherit;cursor:pointer;background:transparent;border:0;color:
 .toc-sub a:hover{color:var(--accent-a);}
 /* ESSAY */
 .essay{font-size:17px;line-height:1.95;color:var(--text-main);max-width:42em;}
-.essay p{margin-bottom:1.6em;text-align:justify;font-family:var(--font-se-jp);line-height:1.95;color:#1a1a1a;font-weight:500;font-size:16.5px;}
+.essay p{margin-bottom:0.6em;text-align:justify;font-family:var(--font-se-jp);line-height:1.95;color:#1a1a1a;font-weight:500;font-size:16.5px;}
 .essay p:last-child{margin-bottom:0;}
 .essay h3{font-family:var(--font-jp);font-weight:700;font-size:18.5px;letter-spacing:0.02em;color:var(--text-main);margin:2.4em 0 0.65em;padding-left:14px;border-left:3px solid var(--accent-a);scroll-margin-top:20px;}
 .essay h3:first-child{margin-top:0;}
@@ -267,11 +267,12 @@ sup{line-height:0;}
 .toc-section.is-active .toc-num::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent-h);margin-right:4px;vertical-align:1px;}
 
 /* ESSAY SECTIONS — ivory reading bg */
-#sec-01, #sec-02, #sec-03 { background: #fffff8; }
+#sec-01, #sec-02, #sec-03, #sec-04 { background: #fffff8; }
 /* LIME DOTS */
 #sec-01 .ph-section__num::before,
 #sec-02 .ph-section__num::before,
-#sec-03 .ph-section__num::before {
+#sec-03 .ph-section__num::before,
+#sec-04 .ph-section__num::before {
   content: '';
   display: inline-block;
   width: 11px; height: 11px;
@@ -306,6 +307,8 @@ sup{line-height:0;}
   .essay p { font-size: 15px; }
 }
 
+
+/* REVIEW ADDITIONS — remove after approval */
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VRTV8BZEJ"></script>
 <script>
@@ -359,14 +362,14 @@ sup{line-height:0;}
 
       <div class="ph-abstract">
         <div class="ph-abstract__label">Abstract</div>
-        <p>単一乾板に複数露光を重ねるクロノフォトグラフィーで、運動を時間の解析図として可視化した生理学者。マイブリッジが系列として時間を分解したのに対し、マレーは時間を一枚の画像に凝縮し、身体・労働・飛翔を科学的計測の対象へ変えた。</p>
+        <p >エティエンヌ＝ジュール・マレー（1830–1904）はフランス・ボーヌ生まれ。医学・生理学を学び、コレージュ・ド・フランスで血流、呼吸、筋運動など連続する身体現象の計測に取り組んだ。1880年代に写真を研究装置へ導入し、写真銃、固定板式クロノフォトグラフィー、連続フィルム装置へ発展させた。単一乾板に運動の複数相を重ねる方法は、写真を瞬間の記録から時間の解析へ広げ、科学写真と映画前史の両方に位置する。</p>
       </div>
 
 
 
       <div class="ph-thesis">
         <div class="ph-thesis__label">この写真家が変えたこと</div>
-        <p class="ph-thesis__body">単一の乾板に複数の露光を重ねることで、運動を<em>時間の解析図として一枚の画像に凝縮する</em>クロノフォトグラフィーを開発し、肉眼では追えない身体・飛翔・流体の動きを計測可能な視覚形式へと変えた。マイブリッジが時間を独立したコマへ展開したのに対し、マレーは時間を空間へ折りたたむという対照的な方法を選択し、後のモダニズム絵画が運動を分割面として表現するときの視覚的参照点を先行して提供した。写真を美的表現の手段ではなく生理学的計測の装置として運用する姿勢は、身体を科学的データとして扱う近代的視線の形成にも接続し、写真史と科学史の両面から継続的に論じられている。</p>
+        <p class="ph-thesis__body">19世紀の写真が一瞬の外観を固定する媒体として発展する一方、マレーは生理学の計測から出発し、運動を時間に沿って比較できるデータへ変えようとした。単一乾板に複数の姿勢を重ねるクロノフォトグラフィーによって、<em>写真を「瞬間の保存」だけでなく「時間の構造を解析する図」として機能させた</em>ことが最大の転換である。マイブリッジが運動を別々のフレームへ分解したのに対し、マレーは一枚の画面に時間を折りたたみ、身体・飛翔・流体の変化を連続した軌跡として比較可能にした。さらに写真銃から固定板式、連続フィルム装置へ進む過程で、写真は観察の補助ではなく、肉眼が見落とす時間を自動的に記録する研究機器になった。重要なのは、この方法が科学計測の精度を高めただけでなく、時間を連続画像へ変換する装置研究を通して映画カメラへ近づき、未来派やモダニズムが運動を可視化する際の視覚的語彙にも接続した点にある。</p>
       </div>
 
       <dl class="ph-entry-meta">
@@ -414,7 +417,12 @@ sup{line-height:0;}
             </li>
             <li class="toc-section"><a href="#sec-02"><span class="toc-num">§ 02</span> 表現の核心</a>
             </li>
-            <li class="toc-section"><a href="#sec-03"><span class="toc-num">§ 03</span> 批評と写真史上の位置</a>
+            <li class="toc-section"><a href="#sec-03"><span class="toc-num">§ 03</span> 装置・方法・代表作</a>
+
+            </li>
+
+            <li class="toc-section"><a href="#sec-04"><span class="toc-num">§ 04</span> 批評と写真史上の位置</a>
+
             </li>
           </ol>
         </div>
@@ -423,42 +431,78 @@ sup{line-height:0;}
       <section class="ph-section" id="sec-01">
         <div class="ph-section__head">
           <div class="ph-section__title">
-            <span class="ph-section__num">§ 01 / 03</span>
+            <span class="ph-section__num">§ 01 / 04</span>
             <span class="ph-section__name">背景と時代</span>
           </div>
         </div>
         <div class="ph-section__body">
           <div class="essay">
+<h3 >マレーの生理学研究と写真への転換</h3>
             <p>エティエンヌ＝ジュール・マレーは1830年にフランスのボーヌに生まれ、パリで医学・生理学の教育を受けた。コレージュ・ド・フランスで生理学の教授職を務め、血液循環、呼吸、筋収縮など身体機能の計測と記録に長年取り組んだ。<sup class="sup-ref"><a href="#cite-1">*1</a></sup> 写真を研究ツールとして採用したのは1880年代以降で、単一の写真乾板に複数の露光を重ねる「クロノフォトグラフィー」の手法を開発した。<sup class="sup-ref"><a href="#cite-2">*2</a></sup> この技術により、鳥の飛翔、人体の走行や跳躍、空気の流れなどを視覚的な解析図として記録することが可能になった。<sup class="sup-ref"><a href="#cite-3">*3</a></sup> 1882年にはクロノフォトグラフィック・ガンを完成させ、秒間12コマの連続撮影を実現した。1904年にパリで没した。<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
-          </div>
+          
+<p >マレーの出発点は写真家ではなく生理学者だった。人や動物の運動、呼吸、血流のように連続して変化する現象を、時間に沿った線や図として測定する「グラフィック・メソッド」を発展させており、写真はその研究を置き換えたのではなく、機械の針ではなく動く身体そのものの形を時間軸上に残すために導入された。クロノフォトグラフィーをこの延長に置くと、それが美しい連続像を作るためではなく、生理学的な計測装置として成立したことが見える。<sup class="sup-ref"><a href="#cite-24">*24</a></sup></p>
+
+<p >Mark Patersonは、マレーの「グラフィック・メソッド」を現代のモーションキャプチャへ連なる視覚技術の前史として捉えている。マレーにとって写真は完成された像を得ること自体が目的ではなく、運動を線、軌跡、時間間隔へ転写し、知覚だけでは比較できない現象を別の記号形式へ移すための装置だった。<sup class="sup-ref"><a href="#cite-30">*30</a></sup> この視点に立つと、クロノフォトグラフィーは写真史だけでなく、身体をデータ化する科学史の中に位置づく。</p></div>
         </div>
       </section>
 
       <section class="ph-section" id="sec-02">
         <div class="ph-section__head">
           <div class="ph-section__title">
-            <span class="ph-section__num">§ 02 / 03</span>
+            <span class="ph-section__num">§ 02 / 04</span>
             <span class="ph-section__name">表現の核心</span>
           </div>
         </div>
         <div class="ph-section__body">
           <div class="essay">
-            <h3 id="h3-01">クロノフォトグラフィーの方法</h3><p>マレーの方法の核心は、単一の乾板上に複数の露光を重ねることで、時間の流れを一枚の画像に解析的に凝縮する点にある。メトロポリタン美術館の《Bird in Flight》は、この技法の典型例として広く参照されており、鳥の翼の動きが複数の像として重なり合い、一枚の写真の中で運動のすべての相が同時に見える。<sup class="sup-ref"><a href="#cite-5">*5</a></sup> 同美術館の《Chronophotograph》解説は、「マイブリッジの運動研究とは異なり、マレーは単一の乾板に複数露光を重ねた」と明示し、両者の方法論的差異を写真史の重要な対照として位置づけている。<sup class="sup-ref"><a href="#cite-6">*6</a></sup> マレーにとって写真は美的表現の手段ではなく、肉眼では把握できない運動法則を定量化するための計測装置であった。Linda Hall Libraryの解説は、マレーの科学史的位置づけを「生理学的運動計測と写真の結合という、十九世紀後半の知の交差点」として整理している。<sup class="sup-ref"><a href="#cite-7">*7</a></sup> クロノフォトグラフィーが可視化したのは、時間の「瞬間」ではなく、時間の「構造」であったといえる。</p><h3 id="h3-02">身体・労働・科学との接続</h3><p>マレーの研究は鳥の飛翔やアクロバットにとどまらず、労働する身体にも向けられた。研究者フレモンとの共同による身体運動とエネルギー消費の研究は、近代産業生産の効率化の基礎原理に接続する含意をもっていた。<sup class="sup-ref"><a href="#cite-8">*8</a></sup> Université Paris Cité Éditionsが刊行する「クロノフォトグラフィー：科学と芸術」という副題をもつ出版物は、マレーの仕事を科学と芸術の交差点に位置づけつつ、スポーツや労働、比較生理学まで含む広い問題系と結びつけて論じている。<sup class="sup-ref"><a href="#cite-9">*9</a></sup> Cinémathèque françaiseの教材は、彼のクロノフォトグラフィーを映画と運動解析の前史として示しており、連続映像を生み出す光学装置への道筋を提供したとする解釈は映画史の観点からも有効である。<sup class="sup-ref"><a href="#cite-10">*10</a></sup> Camera Museumの常設展解説も同様に、マレーの手法が映画の世紀を準備した技術革新のひとつとして位置づけられている。<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p><h3 id="h3-03">マイブリッジとの対照とその射程</h3><p><a class="inline-photographer-link" href="/photographers/muybridge.html">エドワード・マイブリッジ</a>との比較は、マレーの固有性を際立たせる。マイブリッジが複数のカメラで時間を分割し、独立した静止像の系列として展開したのに対し、マレーは単一の画面に時間を折りたたんだ。<sup class="sup-ref"><a href="#cite-12">*12</a></sup> このちがいは視覚的な方法の差異にとどまらず、写真に何をさせるかという問いの差異でもある。マレーの単一像は、動きを抽象的な図として、つまり時間を空間へ変換した形式として提示した。<sup class="sup-ref"><a href="#cite-13">*13</a></sup> このモデルは、後のモダニズム絵画や未来派が運動を分割面として表現するときの視覚的参照点となり、映画前史のみならず二十世紀の視覚文化とも接続する。ACMIはマレーのクロノフォトグラフィー・プリントをスクリーン文化の文脈で所蔵・展示しており、運動写真と映像文化の連続性を示している。<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
-          </div>
+            <h3 >19世紀生理学と身体の数量化</h3>
+<p >マレーが写真へ向かった背景には、19世紀生理学が身体を解剖学的な形だけでなく、時間の中で変化する力、圧力、速度として測ろうとした流れがある。マレー自身の1883年の論文でも、歩行や走行に伴う力を計測し、身体運動を数量として比較する研究が扱われている。<sup class="sup-ref"><a href="#cite-25">*25</a></sup> クロノフォトグラフィーは、この数量化の論理を写真へ移し、身体の輪郭を時間間隔と対応する視覚データへした。</p>
+<p >この方法は、近代産業社会が身体を効率の観点から分析する動きとも接続した。労働史研究では、マレーやマイブリッジの運動研究がフレデリック・テイラー以前から、労働する身体を細分化し、効率を可視化する語彙を準備したと論じられている。<sup class="sup-ref"><a href="#cite-26">*26</a></sup> ここで重要なのは、マレー自身を単純に工場管理の思想家とみなすことではない。生理学の計測技術が、身体を個人の経験ではなく比較可能な運動単位として扱う近代的な視線へつながった点である。</p>
+<h3 id="h3-01" >クロノフォトグラフィーの原理</h3><p>マレーの方法の核心は、単一の乾板上に複数の露光を重ねることで、時間の流れを一枚の画像に解析的に凝縮する点にある。メトロポリタン美術館の《Bird in Flight》は、この技法の典型例として広く参照されており、鳥の翼の動きが複数の像として重なり合い、一枚の写真の中で運動のすべての相が同時に見える。<sup class="sup-ref"><a href="#cite-5">*5</a></sup> <span >ウフィツィ美術館の『Le Mouvement』（1894年）解説では、同一乾板に身体の位置を連続して記録することで、運動の各段階を比較できる方法としてクロノフォトグラフィーが説明されている。<sup class="sup-ref"><a href="#cite-6">*6</a></sup></span> マレーにとって写真は美的表現の手段ではなく、肉眼では把握できない運動法則を定量化するための計測装置であった。<span >コレージュ・ド・フランスの研究史も、彼が生理現象の機械的記録から人間・動物の運動解析へ進み、その研究が1880年代のクロノフォトグラフィーへ結実したと位置づけている。<sup class="sup-ref"><a href="#cite-7">*7</a></sup></span> クロノフォトグラフィーが可視化したのは、時間の「瞬間」ではなく、時間の「構造」であったといえる。</p><h3 id="h3-02" >労働する身体と効率</h3><p>マレーの研究は鳥の飛翔やアクロバットにとどまらず、労働する身体にも向けられた。研究者フレモンとの共同による身体運動とエネルギー消費の研究は、近代産業生産の効率化の基礎原理に接続する含意をもっていた。<sup class="sup-ref"><a href="#cite-8">*8</a></sup> <span >コレージュ・ド・フランスの2024年展覧会資料は、マレーが生命現象にも機械的原理を適用できるという立場から、目に見えない運動を装置によって可視化・計測しようとした過程をたどっている。写真導入以前のグラフィック・メソッドからクロノフォトグラフィーまでを連続した計測史として見ることで、彼の写真が科学と視覚文化の境界に生まれた理由がより明確になる。<sup class="sup-ref"><a href="#cite-9">*9</a></sup></span> Cinémathèque françaiseの教材は、彼のクロノフォトグラフィーを映画と運動解析の前史として示しており、連続映像を生み出す光学装置への道筋を提供したとする解釈は映画史の観点からも有効である。<sup class="sup-ref"><a href="#cite-10">*10</a></sup> Camera Museumの常設展解説も同様に、マレーの手法が映画の世紀を準備した技術革新のひとつとして位置づけられている。<sup class="sup-ref"><a href="#cite-11">*11</a></sup></p>
+<p >Patersonはまた、マレーの運動記録が20世紀初頭のテイラー主義的な労働研究へつながる前史として受け継がれたことを指摘している。<sup class="sup-ref"><a href="#cite-30">*30</a></sup> 写真が身体の美しい姿勢を示すだけでなく、動作を分節し、比較し、無駄を抽出できる形式になったとき、運動研究は医学や生理学から工場・労働管理へ応用可能な知識へ変わる。マレーの重要性には、動きを可視化した革新と同時に、近代社会が身体を測定可能な資源として扱う視覚制度を準備した側面がある。</p><h3 id="h3-03" >マイブリッジとの方法の違い</h3><p><a class="inline-photographer-link" href="/photographers/muybridge.html">エドワード・マイブリッジ</a>との比較は、マレーの固有性を際立たせる。マイブリッジが複数のカメラで時間を分割し、独立した静止像の系列として展開したのに対し、マレーは単一の画面に時間を折りたたんだ。<sup class="sup-ref"><a href="#cite-12">*12</a></sup> このちがいは視覚的な方法の差異にとどまらず、写真に何をさせるかという問いの差異でもある。マレーの単一像は、動きを抽象的な図として、つまり時間を空間へ変換した形式として提示した。<sup class="sup-ref"><a href="#cite-13">*13</a></sup> このモデルは、後のモダニズム絵画や未来派が運動を分割面として表現するときの視覚的参照点となり、映画前史のみならず二十世紀の視覚文化とも接続する。ACMIはマレーのクロノフォトグラフィー・プリントをスクリーン文化の文脈で所蔵・展示しており、運動写真と映像文化の連続性を示している。<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
+          
+
+</div>
         </div>
       </section>
 
       <section class="ph-section" id="sec-03">
         <div class="ph-section__head">
           <div class="ph-section__title">
-            <span class="ph-section__num">§ 03 / 03</span>
+            <span class="ph-section__num">§ 03 / 04</span>
+            <span class="ph-section__name">装置・方法・代表作</span>
+          </div>
+        </div>
+        <div class="ph-section__body">
+          <div class="essay">
+<h3 >写真銃と固定板式クロノフォトグラフ</h3>
+<p >1882年、マレーは天文学者ピエール＝ジュール＝セザール・ジャンサンの「写真リボルバー」に着想を得て、銃の形をしたフォトグラフィック・ガンを考案した。飛ぶ鳥などを追いながら、一台の装置で毎秒およそ12コマを記録できたため、マイブリッジのように多数のカメラを並べる必要がなかった。<sup class="sup-ref"><a href="#cite-22">*22</a></sup></p>
+<p >同年、マレーはさらに固定板式へ進み、黒い背景の前で動く被写体を、スリットを切った回転シャッターによって同じ乾板へ一定間隔で反復露光した。Science Museum Groupは、この固定板式クロノフォトグラフを1882年頃の装置として位置づけている。<sup class="sup-ref"><a href="#cite-21">*21</a></sup> 腕や脚の軌跡を読みやすくするため、黒衣に白線や反射点を付けることもあり、各瞬間を別々の写真へ分けず、一枚の画面内で時間を空間的な軌跡へ変換した。<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<h3 >フィルム式クロノフォトグラフと映画前史</h3>
+<p >その後の装置では、固定乾板だけでなくセルロイドの帯を間欠的に送って連続像を記録する方向へ発展した。Science Museum Groupは1890年の二用途カメラを、撮影とフィルム送りという映画カメラの基本特性へ接近した装置として位置づけている。<sup class="sup-ref"><a href="#cite-23">*23</a></sup> 映画へつながるのは一枚の完成写真というより、時間を等間隔の視覚情報へ変換し、連続した支持体へ記録する仕組みだった。こうした装置史が、マレーを映画の単純な「発明者」ではなく、運動研究から連続撮影の技術へ進んだ重要な前史として位置づける理由になる。<sup class="sup-ref"><a href="#cite-24">*24</a></sup></p>
+</div>
+        </div>
+      </section>
+
+      <section class="ph-section" id="sec-04">
+        <div class="ph-section__head">
+          <div class="ph-section__title">
+            <span class="ph-section__num">§ 04 / 04</span>
             <span class="ph-section__name">批評と写真史上の位置</span>
           </div>
         </div>
         <div class="ph-section__body">
           <div class="essay">
+<h3 >幾何学的身体と訓練</h3>
+<p >マレーの助手ジョルジュ・ドゥムニーは、黒い衣服の上に白い線や点を付け、身体を骨格に近い幾何学的な軌跡として記録する方法を発展させた。MoMA所蔵の《Untitled (Sprinter)》は、走者の歩幅に合わせて露光間隔を設定した作例で、ドゥムニーが後にマレーの方法をフランス軍の身体訓練へ応用したことも同館の解説に記されている。<sup class="sup-ref"><a href="#cite-27">*27</a></sup> 写真はここで、身体の外見を保存する肖像ではなく、どの角度で手足が動き、どこへ力が移るかを比較する図になった。</p>
+
+<p >Park Sangwooは、複数露光が重なって身体の輪郭を読み取りにくくなる問題に対し、マレーが黒い衣服上の白線や関節点だけを記録する方法へ進み、身体を線と点という幾何学的要素へ還元していった過程を分析している。<sup class="sup-ref"><a href="#cite-31">*31</a></sup> ここでは写真の「リアルさ」が増すのではなく、むしろ身体の外観を捨てるほど運動の構造が読みやすくなる。写真と図表の境界を往復するこの方法こそ、マレーが写真家より生理学者として像を使っていたことを端的に示す。</p><h3 >未来派とデュシャン——科学画像の美術への移動</h3>
+<p >クロノフォトグラフィーは科学研究の内部に留まらなかった。MoMAは、マレーの連続像がジャコモ・バッラやジーノ・セヴェリーニなど未来派の画家に与えた影響を、運動を一つの身体の複数相として表す視覚語彙の代表例として挙げている。<sup class="sup-ref"><a href="#cite-27">*27</a></sup> 近年の身体史研究も、マレーの幾何学的な運動像がマルセル・デュシャン《階段を降りる裸体 No.2》を含む20世紀初頭の視覚文化へ波及したことを整理している。<sup class="sup-ref"><a href="#cite-28">*28</a></sup> その重要性は、科学写真がそのまま「芸術化」したことより、時間を線、反復、軌跡として表す形式が、科学と美術の双方で共有できる視覚言語になった点にある。</p>
+
+<p >Giovanni Listaは未来派写真の研究で、マレーのクロノフォトグラフがバッラ、ルッソロ、カッラなどのイタリア未来派に限らず、デュシャン、マレーヴィチ、ラリオーノフらヨーロッパの前衛へ広く影響したと整理している。<sup class="sup-ref"><a href="#cite-32">*32</a></sup> 科学的分析のために作られた時間の重なりが、美術では速度、反復、同時性を表す造形語彙へ転用された。マレーの像が重要なのは、科学写真が美術へ「引用」されたからだけでなく、時間を空間へ変換する視覚形式そのものを20世紀美術へ提供したためである。</p><h3 >クロノフォトグラフィーの受容と映画前史</h3>
             <p>マレーの受容は、MoMA、Musée d'Orsay、SFMOMAなど写真史・映画史の両面から評価する機関による所蔵と展覧会によって積み上げられてきた。<sup class="sup-ref"><a href="#cite-15">*15</a></sup> Musée d'Orsayが開催した「大気の運動：流体を撮影したマレー」展は、クロノフォトグラフィーを視覚芸術の文脈に再置換する重要な試みとして注目された。<sup class="sup-ref"><a href="#cite-16">*16</a></sup> Science Museum Groupの所蔵するクロノフォトグラフィー・フィルムは、映画前史の物的証拠として保存されており、技術史の資料としても参照される。<sup class="sup-ref"><a href="#cite-17">*17</a></sup> 批評的には、マレーの写真は美的表現を目的にしたものではないが、身体を計測可能な運動パターンとして扱う視点が、後の身体科学・スポーツ計測・映像分析の基礎をなすとともに、身体を情報として扱う近代的視線の問題を提起している。<sup class="sup-ref"><a href="#cite-18">*18</a></sup> OpenEditionおよびCNRS Éditionsが刊行する学術論考は、マレーの実践を単なる技術史に閉じず、近代的身体概念の形成とのかかわりで論じており、批評的関心の継続を示している。<sup class="sup-ref"><a href="#cite-19">*19</a></sup> National Gallery of Canadaが所蔵する《Study in Motion by Chronophotography》は、マレーの写真が美術館コレクションにも定着した水準の作品として受け継がれていることを示す。<sup class="sup-ref"><a href="#cite-20">*20</a></sup></p>
-          </div>
+          
+<p >一方、身体計測の歴史は中立的な技術進歩としてだけでは読めない。Marta BraunとElizabeth Whitcombeは、マレー、マイブリッジ、アルベール・ロンドによる病的歩行の写真を、19世紀末の神経疾患研究と比較し、臨床医学が身体表面の異常を分類する際に連続写真をどう用いたかを検討している。<sup class="sup-ref"><a href="#cite-29">*29</a></sup> 運動を測る能力は、正常な身体の仕組みを説明すると同時に、「正常」と「病理」を視覚的に区分する制度にも使われた。マレーの写真史上の位置を考えるには、映画へ続く時間表現だけでなく、近代医学が身体を観察・分類する視線も含める必要がある。</p></div>
         </div>
       </section>
 
@@ -526,10 +570,10 @@ sup{line-height:0;}
 <div class="ph-cite" id="cite-3"><div class="ph-cite__num">*3</div><div><a href="https://www.sfmoma.org/artist/Etienne-Jules_Marey/" rel="noopener" target="_blank">SFMOMA — Étienne-Jules Marey</a></div></div>
 <div class="ph-cite" id="cite-4"><div class="ph-cite__num">*4</div><div><a href="https://www.lindahall.org/about/news/scientist-of-the-day/etienne-jules-marey/" rel="noopener" target="_blank">Linda Hall Library — Étienne-Jules Marey</a></div></div>
 <div class="ph-cite" id="cite-5"><div class="ph-cite__num">*5</div><div><a href="https://www.metmuseum.org/art/collection/search/286544" rel="noopener" target="_blank">Metropolitan Museum of Art — [Bird in Flight] (object record)</a></div></div>
-<div class="ph-cite" id="cite-6"><div class="ph-cite__num">*6</div><div><a href="https://www.metmuseum.org/art/collection/search/265094" rel="noopener" target="_blank">Metropolitan Museum of Art — Chronophotograph (Muybridge comparison note)</a></div></div>
-<div class="ph-cite" id="cite-7"><div class="ph-cite__num">*7</div><div><a href="https://www.lindahall.org/about/news/scientist-of-the-day/etienne-jules-marey/" rel="noopener" target="_blank">Linda Hall Library — Étienne-Jules Marey (science history)</a></div></div>
+<div class="ph-cite" id="cite-6"><div class="ph-cite__num">*6</div><div><a href="https://www.uffizi.it/en/artworks/le-mouvement-marey" rel="noopener" target="_blank">Uffizi Galleries — Étienne-Jules Marey, <em>Le Mouvement</em></a></div></div>
+<div class="ph-cite" id="cite-7"><div class="ph-cite__num">*7</div><div><a href="https://www.college-de-france.fr/media/en-publications/UPL2428539170034082168_J2ENGLISH.pdf" rel="noopener" target="_blank">Collège de France — The origins of the Institut Marey and French neurophysiology</a></div></div>
 <div class="ph-cite" id="cite-8"><div class="ph-cite__num">*8</div><div><a href="https://editions.u-pariscite.fr/etienne-jules-marey/" rel="noopener" target="_blank">Université Paris Cité Éditions — Étienne-Jules Marey: chronophotographie, sciences et arts</a></div></div>
-<div class="ph-cite" id="cite-9"><div class="ph-cite__num">*9</div><div><a href="https://editions.u-pariscite.fr/etienne-jules-marey/" rel="noopener" target="_blank">Université Paris Cité Éditions — Étienne-Jules Marey publication</a></div></div>
+<div class="ph-cite" id="cite-9"><div class="ph-cite__num">*9</div><div><a href="https://www.college-de-france.fr/sites/default/files/media/document/2024-04/2024%20Exposition%20ABLC.pdf" rel="noopener" target="_blank">Collège de France — <em>À bras-le-corps ! Savants et instruments au Collège de France au XIXe siècle</em></a></div></div>
 <div class="ph-cite" id="cite-10"><div class="ph-cite__num">*10</div><div><a href="https://www.cinematheque.fr/intervention/1766.html" rel="noopener" target="_blank">La Cinémathèque française — La chronophotographie, comment ça marche ?</a></div></div>
 <div class="ph-cite" id="cite-11"><div class="ph-cite__num">*11</div><div><a href="https://www.cameramuseum.ch/en/discover/permanent-exhibition/the-century-of-the-film/breaking-down-movement/" rel="noopener" target="_blank">Camera Museum — Breaking down movement (permanent exhibition)</a></div></div>
 <div class="ph-cite" id="cite-12"><div class="ph-cite__num">*12</div><div><a href="https://artsandculture.google.com/asset/chronophotographic-view-made-with-chronophotographic-gun-bird-in-flight/qQGGmxepeCksog" rel="noopener" target="_blank">Google Arts &amp; Culture — Chronophotographic gun, Bird in flight</a></div></div>
@@ -541,7 +585,20 @@ sup{line-height:0;}
 <div class="ph-cite" id="cite-18"><div class="ph-cite__num">*18</div><div><a href="https://archive.org/search?query=%22La+chronophotographie%22+Marey" rel="noopener" target="_blank">Internet Archive — La chronophotographie (Marey, primary publication)</a></div></div>
 <div class="ph-cite" id="cite-19"><div class="ph-cite__num">*19</div><div><a href="https://books.openedition.org/editionscnrs/2753?lang=en" rel="noopener" target="_blank">OpenEdition / CNRS Éditions — Retour sur Marey (scholarly chapter)</a></div></div>
 <div class="ph-cite" id="cite-20"><div class="ph-cite__num">*20</div><div><a href="https://www.gallery.ca/collection/artwork/study-in-motion-by-chronophotography" rel="noopener" target="_blank">National Gallery of Canada — Study in Motion by Chronophotography</a></div></div>
-          </div>
+          
+<div class="ph-cite" id="cite-21"><div class="ph-cite__num">*21</div><div><a href="https://collection.sciencemuseumgroup.org.uk/objects/co18359/mareys-camera-for-chronophotography" rel="noopener" target="_blank">Science Museum Group — Marey’s Camera for Chronophotography</a></div></div>
+<div class="ph-cite" id="cite-22"><div class="ph-cite__num">*22</div><div><a href="https://www.victorian-cinema.net/marey" rel="noopener" target="_blank">Victorian Cinema — Étienne-Jules Marey</a></div></div>
+<div class="ph-cite" id="cite-23"><div class="ph-cite__num">*23</div><div><a href="https://collection.sciencemuseumgroup.org.uk/objects/co18360/chronophotographe-double-use-camera" rel="noopener" target="_blank">Science Museum Group — Chronophotographe double use camera</a></div></div>
+<div class="ph-cite" id="cite-24"><div class="ph-cite__num">*24</div><div><a href="https://collection.sciencemuseumgroup.org.uk/objects/co18358/chronophotographic-camera" rel="noopener" target="_blank">Science Museum Group — Chronophotographic camera</a></div></div>
+<div class="ph-cite" id="cite-25"><div class="ph-cite__num">*25</div><div><a href="https://cnum.cnam.fr/pgi/redir.php?ident=4B50.7" rel="noopener" target="_blank">Conservatoire numérique des Arts et Métiers — Marey, « De la mesure des forces dans les différents actes de la locomotion » (1883)</a></div></div>
+<div class="ph-cite" id="cite-26"><div class="ph-cite__num">*26</div><div><a href="https://www.tandfonline.com/doi/abs/10.1177/1744935908092134" rel="noopener" target="_blank">Management & Organizational History — “Towards neuroscientific management? Geometric chronophotography and the thin-slicing of the labouring body”</a></div></div>
+<div class="ph-cite" id="cite-27"><div class="ph-cite__num">*27</div><div><a href="https://www.moma.org/collection/works/50087" rel="noopener" target="_blank">MoMA — Étienne-Jules Marey / Georges Demenÿ, Untitled (Sprinter), after 1893</a></div></div>
+<div class="ph-cite" id="cite-28"><div class="ph-cite__num">*28</div><div><a href="https://journals.sagepub.com/doi/full/10.1177/1357034X241262176" rel="noopener" target="_blank">Body & Society — “Efficiency and the Productive Body: The Gilbreths’ Photographic Motion Studies of Work”</a></div></div>
+<div class="ph-cite" id="cite-29"><div class="ph-cite__num">*29</div><div><a href="https://www.tandfonline.com/doi/abs/10.1080/03087298.1999.10443324" rel="noopener" target="_blank">Marta Braun & Elizabeth Whitcombe — “Marey, Muybridge, and Londe: The Photography of Pathological Locomotion”</a></div></div>
+<div class="ph-cite" id="cite-30"><div class="ph-cite__num">*30</div><div><a href="https://journals.sagepub.com/doi/10.1177/26349795211040323" rel="noopener" target="_blank">Mark Paterson — “The birth of motion capture: Transcribing the phenomena of bodily movement through the graphic method”</a></div></div>
+<div class="ph-cite" id="cite-31"><div class="ph-cite__num">*31</div><div><a href="https://journal.kci.go.kr/kahoma/archive/articleView?artiId=ART001778466" rel="noopener" target="_blank">Park Sangwoo — “Image and Graph: Marey’s Chronophotography”</a></div></div>
+<div class="ph-cite" id="cite-32"><div class="ph-cite__num">*32</div><div><a href="https://www.futurismo.org/wp-content/uploads/2020/11/lista-futurist_photography.pdf" rel="noopener" target="_blank">Giovanni Lista — “Futurist Photography”</a></div></div>
+</div>
         </div>
       </section>
 

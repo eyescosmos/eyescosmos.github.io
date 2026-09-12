@@ -212,7 +212,7 @@ button{font-family:inherit;cursor:pointer;background:transparent;border:0;color:
 .toc-sub a:hover{color:var(--accent-a);}
 /* ESSAY */
 .essay{font-size:17px;line-height:1.95;color:var(--text-main);max-width:42em;}
-.essay p{margin-bottom:1.6em;text-align:justify;font-family:var(--font-se-jp);line-height:1.95;color:#1a1a1a;font-weight:500;font-size:16.5px;}
+.essay p{margin-bottom:0.6em;text-align:justify;font-family:var(--font-se-jp);line-height:1.95;color:#1a1a1a;font-weight:500;font-size:16.5px;}
 .essay p:last-child{margin-bottom:0;}
 .essay h3{font-family:var(--font-jp);font-weight:700;font-size:18.5px;letter-spacing:0.02em;color:var(--text-main);margin:2.4em 0 0.65em;padding-left:14px;border-left:3px solid var(--accent-a);scroll-margin-top:20px;}
 .essay h3:first-child{margin-top:0;}
@@ -325,11 +325,12 @@ sup{line-height:0;}
 .toc-section.is-active .toc-num::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent-h);margin-right:4px;vertical-align:1px;}
 
 /* ESSAY SECTIONS — ivory reading bg */
-#sec-01, #sec-02, #sec-03 { background: #fffff8; }
+#sec-01, #sec-02, #sec-03, #sec-04 { background: #fffff8; }
 /* LIME DOTS */
 #sec-01 .ph-section__num::before,
 #sec-02 .ph-section__num::before,
-#sec-03 .ph-section__num::before {
+#sec-03 .ph-section__num::before,
+#sec-04 .ph-section__num::before {
   content: '';
   display: inline-block;
   width: 11px; height: 11px;
@@ -364,6 +365,8 @@ sup{line-height:0;}
   .essay p { font-size: 15px; }
 }
 
+
+/* REVIEW ADDITIONS — remove after approval */
 </style>
 <style>.essay p,.ph-abstract p,.ph-thesis__body{text-align:left;}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VRTV8BZEJ"></script>
@@ -391,7 +394,7 @@ sup{line-height:0;}
       <button class="is-active">EN</button>
     </div>
   </div>
-<div class="head__mobile-search"><form class="ph-side-search__form" onsubmit="return false;"><label class="ph-side-search__label" for="ph-search-input-mobile">SEARCH · Find a photographer</label><div class="ph-side-search__field"><input class="ph-side-search__input" id="ph-search-input-mobile" type="search" placeholder="SEARCH · Find a photographer" autocomplete="off" aria-autocomplete="list" aria-controls="ph-search-suggestions-mobile" aria-expanded="false"><button class="ph-side-search__btn" type="button" aria-label="Search"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div></form><ul class="ph-search-suggestions" id="ph-search-suggestions-mobile" role="listbox" hidden></ul></div></header>
+<div class="head__mobile-search" data-nosnippet><form class="ph-side-search__form" onsubmit="return false;"><label class="ph-side-search__label" for="ph-search-input-mobile">SEARCH · Find a photographer</label><div class="ph-side-search__field"><input class="ph-side-search__input" id="ph-search-input-mobile" type="search" placeholder="SEARCH · Find a photographer" autocomplete="off" aria-autocomplete="list" aria-controls="ph-search-suggestions-mobile" aria-expanded="false"><button class="ph-side-search__btn" type="button" aria-label="Search"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div></form><ul class="ph-search-suggestions" id="ph-search-suggestions-mobile" role="listbox" hidden data-nosnippet></ul></div></header>
 
 <section class="ph-hero">
   <div class="ph-hero__art">N<span>R</span></div>
@@ -417,12 +420,12 @@ sup{line-height:0;}
 
       <div class="ph-abstract">
         <div class="ph-abstract__label">Abstract</div>
-        <p>Nadar moved from journalism and caricature into portrait photography around 1853, establishing a spare studio approach — plain grey background, natural light, no props — aimed at revealing character rather than status. He expanded photography&#x27;s technical and social reach through aerial photography from a balloon (1858), electric-light work in the Paris catacombs (1861), and lending his studio for the first Impressionist exhibition (1874).</p>
+        <p>Nadar (1820–1910) was born in Paris as Gaspard-Félix Tournachon. After working as a journalist and caricaturist, he turned to photography in the 1850s, portraying such contemporary cultural figures as Baudelaire, Hugo, and Sand with spare backgrounds and carefully directed light. He expanded the technical scope of the medium through experiments with aerial photography in 1858, a patent for photography by electric light in 1861, photographs of the catacombs in 1862, and photographs of the sewers in 1865. His studio at 35 Boulevard des Capucines also became a meeting point for commerce, culture, and avant-garde art.</p>
       </div>
 
       <div class="ph-thesis">
         <div class="ph-thesis__label">What this photographer changed</div>
-        <p class="ph-thesis__body">Nadar deliberately stripped away the markers of social rank — opulent backdrops, props, and costumes — that had governed portrait staging, working instead with a plain grey ground and natural light to draw out the sitter's inner presence, an <em>aesthetic reorientation of portrait photography</em>. This approach lay at the heart of photography's adoption as a means of visually fixing individual identity. His balloon-borne aerial photographs of 1858 and his electric-light photographs made underground in 1861 are recorded as technical experiments showing that photography could work beyond the constraints of available light, gravity, and space.</p>
+        <p class="ph-thesis__body">In mid-nineteenth-century portrait studios, backdrops, props, and costumes served as important signs of social standing. Nadar subdued these elements and sought to draw out an “intimate likeness” through light, posture, expression, and dialogue between photographer and sitter. His first major shift was to <em>move portrait photography away from the performance of status and toward a modern representation of the individual that invited viewers to read intellect and character</em>. At the same time, through aerial photography, underground photography by electric light, and a vast commercial studio, he reconfigured the technical and social conditions governing where, under what light, and whom photography could depict. His importance lies in more than the distinguished portraits he left behind. He established the photographer as image maker, technical experimenter, entrepreneur, and intermediary within a network of cultural figures, demonstrating that photography could become a medium for organizing information and character in urban society.</p>
       </div>
 
       <dl class="ph-entry-meta">
@@ -453,9 +456,10 @@ sup{line-height:0;}
         <div class="ph-section__body">
           <p class="ph-works-note">This site does not display work images. Please visit the official archives below.</p>
           <div class="ph-works-links">
-            <a class="chip-link" href="https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/" target="_blank" rel="noopener">Nadar works (album) (J. Paul Getty Museum) ↗</a>
-            <a class="chip-link" href="https://www.moma.org/artists/4213" target="_blank" rel="noopener">Nadar works (album) (MoMA) ↗</a>
-            
+            <a class="chip-link" href="https://www.moma.org/collection/works/127280" target="_blank" rel="noopener">Nadar — Théophile Gautier, 1855 (MoMA) ↗</a>
+            <a class="chip-link" href="https://www.moma.org/collection/works/46061" target="_blank" rel="noopener">Nadar — Catacombs of Paris, 1862 (MoMA) ↗</a>
+            <a class="chip-link" href="https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/" target="_blank" rel="noopener">Nadar at the J. Paul Getty Museum ↗</a>
+            <a class="chip-link" href="https://www.moma.org/artists/4213" target="_blank" rel="noopener">Nadar at MoMA ↗</a>
           </div>
         </div>
       </section>
@@ -464,9 +468,38 @@ sup{line-height:0;}
         <summary>Contents · Table of Contents</summary>
         <div class="toc-body">
           <ol class="toc-list">
-            <li class="toc-section is-active"><a href="#sec-01"><span class="toc-num">§ 01</span> Biography</a></li>
-            <li class="toc-section"><a href="#sec-02"><span class="toc-num">§ 02</span> Expression / method</a></li>
-            <li class="toc-section"><a href="#sec-03"><span class="toc-num">§ 03</span> Criticism and reception</a></li>
+            <li class="toc-section is-active">
+              <a href="#sec-01"><span class="toc-num">§ 01</span> Biography</a>
+              <ul class="toc-sub">
+                <li><a href="#h3-01">Nadar’s Career and Nineteenth-Century Paris</a></li>
+              </ul>
+            </li>
+            <li class="toc-section">
+              <a href="#sec-02"><span class="toc-num">§ 02</span> Expression / method</a>
+              <ul class="toc-sub">
+                <li><a href="#h3-02">Portrait Photography—Light and Psychological Likeness</a></li>
+                <li><a href="#h3-03">The Portrait Industry under the Second Empire</a></li>
+                <li><a href="#h3-04">35 Boulevard des Capucines—Commercial Studio and Cultural Circle</a></li>
+                <li><a href="#h3-05">Disdéri and Nadar—Mass Portraiture and Psychological Portraiture</a></li>
+              </ul>
+            </li>
+            <li class="toc-section">
+              <a href="#sec-03"><span class="toc-num">§ 03</span> Key Works, Methods, and Media</a>
+              <ul class="toc-sub">
+                <li><a href="#h3-06">Aerial Photography—The Experiments of 1858 and Paris in 1868</a></li>
+                <li><a href="#h3-07">Artificial Light—Photographing the Catacombs in 1862</a></li>
+              </ul>
+            </li>
+            <li class="toc-section">
+              <a href="#sec-04"><span class="toc-num">§ 04</span> Criticism and reception</a>
+              <ul class="toc-sub">
+                <li><a href="#h3-08">Nadar’s Place in Photographic History</a></li>
+                <li><a href="#h3-09">From Portrait as Commodity to the Representation of the Individual</a></li>
+                <li><a href="#h3-10">Nadar’s Portraits and Celebrity Culture</a></li>
+                <li><a href="#h3-11">Documentary Photography and Scientific Vision</a></li>
+                <li><a href="#h3-12">Collections and Scholarship on Nadar</a></li>
+              </ul>
+            </li>
           </ol>
         </div>
       </details>
@@ -475,12 +508,19 @@ sup{line-height:0;}
       <section class="ph-section" id="sec-01">
         <div class="ph-section__head">
           <div class="ph-section__title">
-            <span class="ph-section__num">§ 01 / 03</span>
+            <span class="ph-section__num">§ 01 / 04</span>
             <span class="ph-section__name">Biography</span>
           </div>
         </div>
         <div class="ph-section__body">
-          <div class="essay"><p>Gaspard-Félix Tournachon, who worked under the name Nadar, was born in Paris in 1820. He began as a journalist and caricaturist; his large lithograph the Panthéon Nadar (1854) depicted more than 250 notable contemporaries and demonstrates the breadth of his cultural network. Around 1853 he turned to photography and opened a studio on the rue Saint-Lazare<sup class="sup-ref"><a href="#cite-1">*1</a></sup>.</p><p>From around 1854–55 he became established as a portrait photographer, building a reputation through portraits of Victor Hugo, Charles Baudelaire, Hector Berlioz, Sarah Bernhardt, Eugène Delacroix, George Sand, and many others. He eliminated elaborate backgrounds, props, and theatrical costumes, working instead with a plain grey background and natural light alone. His reasoning, which he stated explicitly, was that decoration conceals the sitter&#x27;s real character<sup class="sup-ref"><a href="#cite-2">*2</a></sup>.</p><p>In 1858 he made one of the earliest aerial photographs from a balloon over Paris. In 1861 he photographed the Paris catacombs and sewers using carbon arc lighting — the first application of electric light to photography in a space unreachable by natural light<sup class="sup-ref"><a href="#cite-3">*3</a></sup>.</p><p>In April 1874 he lent his rue Saint-Lazare studio free of charge to Monet, Degas, Pissarro, Renoir, and their colleagues for the first Impressionist exhibition — formally titled the Exhibition of the Société Anonyme des Artistes Peintres, Sculpteurs, Graveurs, etc.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p><p>After passing the business to his son Paul, he maintained his interest in photography until his death in Paris in 1910.</p></div>
+          <div class="essay">
+<h3 id="h3-01">Nadar’s Career and Nineteenth-Century Paris</h3>
+<p>Gaspard-Félix Tournachon, known as Nadar, was born in Paris on April 6, 1820. The BnF authority record also documents his death in Paris on March 20, 1910.<sup class="sup-ref"><a href="#cite-18">*18</a></sup> Before becoming a photographer, he worked as a journalist, writer, and caricaturist in the Parisian press and literary worlds. His large 1854 lithograph <em>Panthéon Nadar</em> assembled such contemporary cultural figures as George Sand, Victor Hugo, Balzac, and Alexandre Dumas. Even before he photographed people, he was already mapping those who shaped the culture of his time as a network of faces.<sup class="sup-ref"><a href="#cite-15">*15</a></sup></p>
+<p>Around 1854, he established a commercial photography studio at 113 Rue Saint-Lazare and produced portraits primarily of his friends among writers, artists, and actors. The BnF emphasizes how Nadar’s bohemian circle converged with portraiture as a commodity, distinguishing his operation from the large commercial studios of the period.<sup class="sup-ref"><a href="#cite-19">*19</a></sup> In 1860, he moved to a large studio at 35 Boulevard des Capucines, developing an enterprise that The Met describes as one of the foremost portrait studios in Paris.<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
+<p>“Nadar,” however, was never a name fixed exclusively to Félix’s signature. A BnF retrospective examines three Nadars—including his brother Adrien and his son Paul—and shows how the studio name developed into both a family-based production system and a commercial brand.<sup class="sup-ref"><a href="#cite-2">*2</a></sup> Distinguishing later works credited to “Atelier Nadar” from photographs made by Félix himself is therefore important when assessing dates and authorship.</p>
+<p>Nadar also took photographic technology beyond the studio. He began experimenting with aerial photography in 1858, patented a photographic process using electric light in 1861, photographed the catacombs in 1862, and photographed the sewers in 1865. He did not use the giant balloon <em>Le Géant</em> for the experiments of 1858; <em>Le Géant</em> belonged to a separate aeronautical venture of the 1860s. By photographing from the opposite extremes of the air and the underground, he sought to free the photographic viewpoint from ground level and natural light at a time when transportation, sanitation, and urban reconstruction were transforming Paris under the Second Empire.<sup class="sup-ref"><a href="#cite-21">*21</a></sup></p>
+<p>In April 1874, Nadar’s former studio at 35 Boulevard des Capucines hosted the first Impressionist exhibition, featuring Monet, Degas, Pissarro, Renoir, and others. The fact that a portrait studio, aeronautical experiments, records of the urban underground, and a venue for avant-garde art all intersect in one life makes Nadar more than a celebrated portrait photographer.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+</div>
         </div>
       </section>
 
@@ -488,12 +528,21 @@ sup{line-height:0;}
       <section class="ph-section" id="sec-02">
         <div class="ph-section__head">
           <div class="ph-section__title">
-            <span class="ph-section__num">§ 02 / 03</span>
+            <span class="ph-section__num">§ 02 / 04</span>
             <span class="ph-section__name">Expression / method</span>
           </div>
         </div>
         <div class="ph-section__body">
-          <div class="essay"><p>Nadar&#x27;s portrait innovation lies in philosophy of staging rather than technique. He consciously rejected the conventions of daguerreotype-era portraiture — elaborate backgrounds and furnishings deployed to signal social status — and aimed for a representation that worked through face, body, posture, and expression alone<sup class="sup-ref"><a href="#cite-5">*5</a></sup>. This approach is inseparable from the journalistic and caricaturist&#x27;s eye he had trained before moving to photography.</p><p>The portrait of Hugo (c.1878) transmits the carved intelligence of the old novelist directly. The portrait of Baudelaire (c.1855) lets the poet&#x27;s sharpness and tension read more clearly in the absence of decorative framing. These portraits occupy a historical moment when photography was establishing its social function as the technology that fixes individual identity visually<sup class="sup-ref"><a href="#cite-6">*6</a></sup>.</p><p>The 1861 catacomb photographs were a technical feat. Photographing skeletons and stone walls in underground spaces required sustained illumination where natural light could not reach, achieved through carbon arc lamps and multiple batteries — the first demonstration that photography could operate as a recording instrument independent of daylight<sup class="sup-ref"><a href="#cite-7">*7</a></sup>.</p></div>
+          <div class="essay">
+<h3 id="h3-02">Portrait Photography—Light and Psychological Likeness</h3>
+<p>In his portraits, Nadar kept the background spare and directed attention toward the face, posture, hands, clothing, and the angle of the light, instead of explaining social status through layers of opulent furniture and painted scenery. In Nadar’s own words, preserved by the BnF, photographic technique can be learned, but a feeling for light and the ability to understand the sitter’s “psychological side” cannot easily be taught.<sup class="sup-ref"><a href="#cite-19">*19</a></sup> Portraiture thus shifted from a setting filled with signs of rank to a question of how the photographer sees and forms a relationship with the subject.</p>
+<h3 id="h3-03">The Portrait Industry under the Second Empire</h3>
+<p>Portrait photography was itself becoming rapidly accessible to a mass public in the 1850s and 1860s, as Nadar developed his studio. In 1854, André-Adolphe-Eugène Disdéri patented the <em>châssis multiplicateur</em>, which made it possible to take several small portraits on a single glass plate and thereby lowered production costs and retail prices. The BnF explains that this invention brought the carte-de-visite portrait within reach of a broader clientele.<sup class="sup-ref"><a href="#cite-23">*23</a></sup> Nadar’s portraits emerged within a market in which photographs of faces were beginning to circulate widely as commodities, after the era when studios served only a small number of privileged clients.</p>
+<h3 id="h3-04">35 Boulevard des Capucines—Commercial Studio and Cultural Circle</h3>
+<p>The large studio that opened in 1860 was a commercial portrait business visited by ordinary bourgeois clients as well as a private setting where Nadar photographed his artist friends. The Met describes it as one of the leading portrait enterprises in Paris and notes that Nadar’s own photography coexisted with a high volume of commercial work made by his staff.<sup class="sup-ref"><a href="#cite-14">*14</a></sup> The aesthetic of the “natural portrait” took shape within the studio system that produced photographs as repeatable commodities. This conjunction was central to the modernity of nineteenth-century portrait photography.</p>
+<h3 id="h3-05">Disdéri and Nadar—Mass Portraiture and Psychological Portraiture</h3>
+<p>Disdéri’s carte-de-visite process efficiently placed multiple poses on a single plate and reduced the price of a portrait. Nadar, while embracing the commercial studio system, foregrounded the adjustment of light, posture, expression, and conversation for each sitter as the source of a portrait’s value. The distinction cannot be reduced to “mass production versus art.” Musée Carnavalet holds a carte-de-visite portrait by Atelier Nadar, confirming that Nadar’s own studio participated in the commercial circulation of small-format portraits.<sup class="sup-ref"><a href="#cite-24">*24</a></sup> The difference lay in changing how a person was presented within the same commercial market, not in rejecting the format.</p>
+</div>
         </div>
       </section>
 
@@ -501,12 +550,51 @@ sup{line-height:0;}
       <section class="ph-section" id="sec-03">
         <div class="ph-section__head">
           <div class="ph-section__title">
-            <span class="ph-section__num">§ 03 / 03</span>
+            <span class="ph-section__num">§ 03 / 04</span>
+            <span class="ph-section__name">Key Works, Methods, and Media</span>
+          </div>
+        </div>
+        <div class="ph-section__body">
+          <div class="essay">
+<h3 id="h3-06">Aerial Photography—The Experiments of 1858 and Paris in 1868</h3>
+<p>In 1858, Nadar experimented with making wet-plate photographs from a balloon. The BnF reports that he achieved his first success over Petit-Bicêtre in the autumn of that year, although no print survives.<sup class="sup-ref"><a href="#cite-12">*12</a></sup> The Smithsonian National Air and Space Museum identifies a photograph taken over Boston by James Wallace Black in 1860 as the oldest surviving aerial photograph.<sup class="sup-ref"><a href="#cite-13">*13</a></sup> The 2026 exhibition at the Catacombs of Paris further presents Nadar’s 1868 aerial view of Paris as one of the earliest surviving urban aerial photographs, showing how a viewpoint from the sky changed representations of the modern city.<sup class="sup-ref"><a href="#cite-21">*21</a></sup></p>
+<p>The wet-plate collodion process required the photographer to expose and develop a sensitized glass plate before it dried. Aerial photography therefore required bringing not just the camera but also darkroom work into the balloon. The innovation consisted of moving the entire photographic process, previously bound to a ground-based working environment, into the air and detaching the photographer’s viewpoint from the earth, as well as photographing from a great height.<sup class="sup-ref"><a href="#cite-13">*13</a></sup></p>
+<h3 id="h3-07">Artificial Light—Photographing the Catacombs in 1862</h3>
+<p>Nadar began experimenting with photography by artificial light around 1859 and obtained a patent in 1861. The BnF describes his photographs of the catacombs in 1862 and the sewers in 1865 as later developments of this work.<sup class="sup-ref"><a href="#cite-17">*17</a></sup> The Met’s <em>Catacombs, Paris</em>, made in April 1862, is held as an example produced with an early arc lamp designed by Nadar himself.<sup class="sup-ref"><a href="#cite-16">*16</a></sup> Underground photography became more than a novel technical experiment: it also documented urban infrastructure hidden from street level during Haussmann’s reconstruction of Paris. The exhibition at the Catacombs of Paris treats aerial and underground photography as two vertical perspectives on a city being remade.<sup class="sup-ref"><a href="#cite-21">*21</a></sup></p>
+<p>A technical history focused only on the ability to illuminate darkness cannot fully account for the photographs of the catacombs and sewers. Shao-Chien Tseng interprets Nadar’s images of subterranean Paris made by electric light as a map of the “urban body,” showing how the Haussmann-era city isolated, sanitized, and managed corpses, sewage, and waste.<sup class="sup-ref"><a href="#cite-25">*25</a></sup> Beneath the modern order taking shape above ground lay the infrastructure of death and excretion that sustained it. Nadar’s artificial light made hidden sites photographable and brought before the public an urban interior that modernization had rendered invisible.</p>
+</div>
+        </div>
+      </section>
+
+      <!-- sec-04 -->
+      <section class="ph-section" id="sec-04">
+        <div class="ph-section__head">
+          <div class="ph-section__title">
+            <span class="ph-section__num">§ 04 / 04</span>
             <span class="ph-section__name">Criticism and reception</span>
           </div>
         </div>
         <div class="ph-section__body">
-          <div class="essay"><p>Nadar&#x27;s position in photographic history is evaluated less as the maker of individual masterpieces than as an aesthetic intervention into the genre of portraiture as a whole. The plain background and natural light he established became one of the aesthetic standards for portrait photography, connecting forward to twentieth-century celebrity portraiture from Yousuf Karsh to <a class="inline-photographer-link" href="/en/photographers/annie-leibovitz.html">Annie Leibovitz</a><sup class="sup-ref"><a href="#cite-8">*8</a></sup>.</p><p>The Metropolitan Museum holds an important group of Nadar&#x27;s photographs, and the Bibliothèque nationale de France holds a large collection<sup class="sup-ref"><a href="#cite-9">*9</a></sup>. The loan of his studio for the 1874 Impressionist exhibition is consistently cited in art history as evidence that Nadar was not only a portrait photographer but an active supporter of the avant-garde cultural movements of his time<sup class="sup-ref"><a href="#cite-10">*10</a></sup>.</p><p>When Nadar began photography, the democratization of portraiture — making likenesses accessible to the middle class rather than reserved for oil painting — was already reshaping the art market. The emergence of Impressionism was linked in part to this renegotiation of what painting could do that photography could not. Nadar stood at that intersection<sup class="sup-ref"><a href="#cite-11">*11</a></sup>.</p></div>
+          <div class="essay">
+<h3 id="h3-08">Nadar’s Place in Photographic History</h3>
+<p>Nadar’s portraits hold an important place in photographic history for more than the visual spareness of their backgrounds. He combined the observational experience of a journalist and caricaturist, direct ties to a bohemian cultural circle, and the mass-production setting of a commercial studio. In doing so, he moved portraiture away from images that defined a sitter through social signs and toward photographs that sought to read individual character and intellect. The BnF distinguishes Nadar’s work from that of the large studios of his day by describing his portraits as lively, sympathetic to their subjects, and artistic.<sup class="sup-ref"><a href="#cite-19">*19</a></sup></p>
+<p>From <em>Panthéon Nadar</em> through his studio portraits, Nadar did more than photograph nineteenth-century Parisian cultural figures one by one: he visualized a human network spanning literature, art, theater, and journalism. At the same time, 35 Boulevard des Capucines was a commercial establishment serving the general public, where artistic portraiture and the photographic industry operated in the same place. The BnF chronology documents the development of the business, including the move to a large studio and its high operating costs.<sup class="sup-ref"><a href="#cite-20">*20</a></sup></p>
+<p>Aerial and underground photography were not sidelines unrelated to Nadar’s portraits. Just as he removed extraneous staging from the sitter in his portraiture, his technical experiments removed the assumptions that photography depended on the ground, natural light, and the studio. The paired directions—from above to survey the city and from below to examine its internal structure—helped turn photography into a means of visualizing the modern city. The current exhibition at the Catacombs of Paris likewise reassesses this work in relation to the urban transformation of the Haussmann era.<sup class="sup-ref"><a href="#cite-21">*21</a></sup></p>
+<p>The use of his former studio for the first Impressionist exhibition in 1874 also shows that photography and painting cannot be understood solely in terms of simple competition. Moving among the roles of photographer, entrepreneur, aeronautical experimenter, and friend to cultural figures, Nadar embodied the ways photography was produced, commercialized, and shared within nineteenth-century urban culture.<sup class="sup-ref"><a href="#cite-4">*4</a></sup></p>
+<p>Stephen Bann examines Nadar as more than a hero who achieved a succession of technical “firsts.” He presents him as a figure who continued to reflect through both photography and writing on the historical experience of a nineteenth century shaped by the intersections of revolution, war, and social and economic progress.<sup class="sup-ref"><a href="#cite-26">*26</a></sup> Viewed as a continuous body of work, the aerial photographs, underground images, portraits, and memoirs share more than a curiosity about new technology. Across these different endeavors runs the question of how photography records a rapidly changing society and how people come to understand that change as history.</p>
+<h3 id="h3-09">From Portrait as Commodity to the Representation of the Individual</h3>
+<p>Within the portrait market of the Second Empire, Nadar’s spare backgrounds did not signify an escape from commercial photography. At a time when the carte de visite had turned the face into a commodity that could be exchanged and collected in large numbers, Nadar placed greater value on subtle differences in faces and bodies than on backdrops and props, while working within the same studio economy.<sup class="sup-ref"><a href="#cite-23">*23</a></sup> His shift did not rescue portraiture from mass circulation. It demonstrated that even after mass circulation had been established, the relationship between photographer and sitter could itself become the content of a photograph.</p>
+<h3 id="h3-10">Nadar’s Portraits and Celebrity Culture</h3>
+<p>Nadar’s portraits were also bound up with the expanding nineteenth-century culture of possessing and viewing the faces of celebrities. His portrait of Théophile Gautier in MoMA’s collection dates to 1855, while the portrait of Honoré Daumier in the National Gallery of Art was made in 1856–58. Private relationships with writers and artists were thus transferred into a commercial network of portraiture.<sup class="sup-ref"><a href="#cite-6">*6</a></sup> The NGA describes the Daumier portrait as an expression of esteem for a fellow artist and notes that Nadar may have charged less than his usual fee.<sup class="sup-ref"><a href="#cite-8">*8</a></sup> These works clearly demonstrate Nadar’s method of constructing a persona through a spare background, clothing, posture, and gaze, without using props to explain the sitter’s celebrity.</p>
+<p>Nadar’s studio, however, was a business that mass-produced portraits as commodities, as well as a salon for friends. The 1857 <em>Portrait de femme</em> in the Musée d’Orsay bears the stamp “NADAR &amp; Cie, SOCIETE DE PHOTOGRAPHIE ARTISTIQUE, 113 R. St LAZARE,” showing that the ideal of artistic portraiture operated within a corporate organization and the mechanisms of commercial photography.<sup class="sup-ref"><a href="#cite-9">*9</a></sup> The many portraits held by MoMA also make it possible to trace, work by work, the breadth of his portrait photography from the 1850s onward.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<p>Nadar himself was not an observer standing outside this culture of celebrity. Jillian Lerner analyzes how, during his transition from caricature to photography, he repeatedly used signatures, self-portraits, images combining photographs and illustrations, and advertising to establish “Nadar” as a recognizable brand across multiple media.<sup class="sup-ref"><a href="#cite-27">*27</a></sup> Artistic portraiture and commercial publicity were compatible here. Photographing cultural figures, performing as a cultural figure himself, and making the studio a recognized urban landmark together created a single photography business.</p>
+<p>His conception of portraiture was not limited to the face. Emily Eastgate Brink discusses <em>La main du banquier D.</em> as a modern “portrait in pieces” that attempts to read character and identity from a banker’s hand alone.<sup class="sup-ref"><a href="#cite-28">*28</a></sup> Nadar’s portraiture matters for more than his use of simplified backgrounds to photograph faces: it connected photography to the nineteenth-century problem of representing character itself, asking whether a person could also be read through fragments such as handwriting, a hand, or posture.</p>
+<h3 id="h3-11">Documentary Photography and Scientific Vision</h3>
+<p>The photographic activity of the Nadar family extended beyond portraiture and aerial photography. The BnF details the family’s involvement in photographic applications connected with the observational sciences, including medicine, anthropometry, anthropology, agriculture, cartography, and military strategy.<sup class="sup-ref"><a href="#cite-10">*10</a></sup> Unlike portraits constructed as psychological character studies, these applications called for seemingly objective forms such as frontal views, clarity, and the recording of detail. Read as extensions of documentary photography, Nadar’s aerial and underground images show that he did not repeat a single style but reconfigured the appearance of photographs according to their purpose.</p>
+<p>Artificial light was not introduced suddenly for underground photography. The photographic records of the French Ministry of Culture include the 1861 <em>Effet de lumière sur une main</em>, an experiment in lighting a hand with artificial light.<sup class="sup-ref"><a href="#cite-11">*11</a></sup> This experiment, which led to the catacomb photographs of the following year, mattered both as the technical achievement of photographing in darkness and as a change to the spatial and temporal constraints of photography, made possible by the photographer’s active design of light.</p>
+<h3 id="h3-12">Collections and Scholarship on Nadar</h3>
+<p>The Met, George Eastman Museum, and Getty Museum hold substantial groups of Nadar’s portraits and technical experiments, allowing the date and process of individual works to be compared.<sup class="sup-ref"><a href="#cite-1">*1</a></sup> The Eastman Museum presents materials on Nadar as a major figure in the history of photographic technology, while the Getty organizes groups of portraits by maker.<sup class="sup-ref"><a href="#cite-3">*3</a></sup> The Met’s monograph <em>Nadar</em> spans portraiture, technical experimentation, and cultural history, showing that his current reputation extends beyond that of a portraitist of celebrities.<sup class="sup-ref"><a href="#cite-22">*22</a></sup> The Getty’s object records likewise provide a basis for examining the studio’s long activity work by work.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+</div>
         </div>
       </section>
 
@@ -521,10 +609,10 @@ sup{line-height:0;}
         <div class="ph-section__body">
           <div class="ph-rel-label">Related photographers</div>
           <ul class="ph-rel-list">
-            <li><a href="/en/photographers/legray.html">Gustave Le Gray</a> &mdash; A contemporary French photographer who ran the photography school where Nadar studied, and who worked alongside him as a pioneer of technical innovation.</li>
-            <li><a href="/en/photographers/daguerre.html">Louis Daguerre</a> &mdash; The inventor of the daguerreotype, who opened the era in which Nadar turned to photography; Nadar consciously moved beyond its stylistic conventions.</li>
-            <li><a href="/en/photographers/annie-leibovitz.html">Annie Leibovitz</a> &mdash; A portrait photographer who carried Nadar&rsquo;s tradition of celebrity portraits with simple backgrounds and natural light into the twentieth century.</li>
-            <li><a href="/en/photographers/cameron.html">Julia Margaret Cameron</a> &mdash; A British photographer who sought to capture the inner life of her sitters, sharing an aesthetic interest in portraiture stripped of ornament.</li>
+            <li><a href="/en/photographers/legray.html">Gustave Le Gray</a> &mdash; A contemporary French photographer who ran the photography school where Nadar studied and who pursued technical innovation alongside him.</li>
+            <li><a href="/en/photographers/daguerre.html">Louis Daguerre</a> &mdash; The inventor of the daguerreotype, which opened the era in which Nadar turned to photography; Nadar consciously moved beyond its stylistic conventions.</li>
+            <li><a href="/en/photographers/annie-leibovitz.html">Annie Leibovitz</a> &mdash; A portrait photographer who carried Nadar’s tradition of celebrity portraiture with simple backgrounds and natural light into the twentieth century.</li>
+            <li><a href="/en/photographers/cameron.html">Julia Margaret Cameron</a> &mdash; A British photographer who sought to capture the inner lives of her contemporaries in portraits and shared Nadar’s aesthetic interest in portraiture stripped of ornament.</li>
           </ul>
         </div>
       </section>
@@ -565,17 +653,34 @@ sup{line-height:0;}
         </div>
         <div class="ph-section__body">
           <div class="ph-sources">
-            <div class="ph-cite" id="cite-1"><div class="ph-cite__num">*1</div><div><a href="https://www.metmuseum.org/art/collection/search?q=nadar&amp;perPage=20&amp;sortBy=Relevance&amp;offset=0&amp;pageSize=0" target="_blank" rel="noopener">Metropolitan Museum of Art — Nadar (Gaspard-Félix Tournachon)</a></div></div>
-            <div class="ph-cite" id="cite-2"><div class="ph-cite__num">*2</div><div><a href="https://www.metmuseum.org/art/collection/search?q=nadar&amp;perPage=20&amp;sortBy=Relevance&amp;offset=0&amp;pageSize=0" target="_blank" rel="noopener">Metropolitan Museum of Art — Nadar (Gaspard-Félix Tournachon)</a></div></div>
+            <div class="ph-cite" id="cite-1"><div class="ph-cite__num">*1</div><div><a href="https://www.metmuseum.org/art/collection/search?q=nadar&amp;perPage=20&amp;sortBy=Relevance&amp;offset=0&amp;pageSize=0" target="_blank" rel="noopener">The Metropolitan Museum of Art — Nadar (Gaspard-Félix Tournachon)</a></div></div>
+            <div class="ph-cite" id="cite-2"><div class="ph-cite__num">*2</div><div><a href="https://expositions.bnf.fr/les-nadar/en/the-nadars.html" target="_blank" rel="noopener">Bibliothèque nationale de France — The Nadars</a></div></div>
             <div class="ph-cite" id="cite-3"><div class="ph-cite__num">*3</div><div><a href="https://www.eastman.org/nadar" target="_blank" rel="noopener">George Eastman Museum — Nadar</a></div></div>
-            <div class="ph-cite" id="cite-4"><div class="ph-cite__num">*4</div><div><a href="https://www.metmuseum.org/toah/hd/impr/hd_impr.htm" target="_blank" rel="noopener">Metropolitan Museum of Art — The First Impressionist Exhibition, 1874</a></div></div>
+            <div class="ph-cite" id="cite-4"><div class="ph-cite__num">*4</div><div><a href="https://www.metmuseum.org/toah/hd/impr/hd_impr.htm" target="_blank" rel="noopener">The Metropolitan Museum of Art — The First Impressionist Exhibition, 1874</a></div></div>
             <div class="ph-cite" id="cite-5"><div class="ph-cite__num">*5</div><div><a href="https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/" target="_blank" rel="noopener">J. Paul Getty Museum — Nadar</a></div></div>
-            <div class="ph-cite" id="cite-6"><div class="ph-cite__num">*6</div><div><a href="https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/" target="_blank" rel="noopener">J. Paul Getty Museum — Nadar</a></div></div>
-            <div class="ph-cite" id="cite-7"><div class="ph-cite__num">*7</div><div><a href="https://www.eastman.org/nadar" target="_blank" rel="noopener">George Eastman Museum — Nadar</a></div></div>
-            <div class="ph-cite" id="cite-8"><div class="ph-cite__num">*8</div><div><a href="https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/" target="_blank" rel="noopener">J. Paul Getty Museum — Nadar</a></div></div>
-            <div class="ph-cite" id="cite-9"><div class="ph-cite__num">*9</div><div><a href="https://www.metmuseum.org/art/collection/search?q=nadar&amp;perPage=20&amp;sortBy=Relevance&amp;offset=0&amp;pageSize=0" target="_blank" rel="noopener">Metropolitan Museum of Art — Nadar (Gaspard-Félix Tournachon)</a></div></div>
-            <div class="ph-cite" id="cite-10"><div class="ph-cite__num">*10</div><div><a href="https://www.metmuseum.org/toah/hd/impr/hd_impr.htm" target="_blank" rel="noopener">Metropolitan Museum of Art — The First Impressionist Exhibition, 1874</a></div></div>
-            <div class="ph-cite" id="cite-11"><div class="ph-cite__num">*11</div><div><a href="https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/" target="_blank" rel="noopener">J. Paul Getty Museum — Nadar</a></div></div>
+            <div class="ph-cite" id="cite-6"><div class="ph-cite__num">*6</div><div><a href="https://www.moma.org/collection/works/127280" target="_blank" rel="noopener">The Museum of Modern Art — Théophile Gautier, 1855</a></div></div>
+            <div class="ph-cite" id="cite-7"><div class="ph-cite__num">*7</div><div><a href="https://www.moma.org/artists/4196-nadar-gaspard-felix-tournachon" target="_blank" rel="noopener">The Museum of Modern Art — Nadar (Gaspard-Félix Tournachon), Artist Collection</a></div></div>
+            <div class="ph-cite" id="cite-8"><div class="ph-cite__num">*8</div><div><a href="https://www.nga.gov/artworks/92770-honore-daumier" target="_blank" rel="noopener">National Gallery of Art — Honoré Daumier, 1856/1858</a></div></div>
+            <div class="ph-cite" id="cite-9"><div class="ph-cite__num">*9</div><div><a href="https://www.musee-orsay.fr/fr/oeuvres/portrait-de-femme-29331" target="_blank" rel="noopener">Musée d’Orsay — Portrait de femme, March 1857</a></div></div>
+            <div class="ph-cite" id="cite-10"><div class="ph-cite__num">*10</div><div><a href="https://expositions.bnf.fr/les-nadar/en/documentary-uses-of-photography.html" target="_blank" rel="noopener">Bibliothèque nationale de France — Documentary Uses of Photography</a></div></div>
+            <div class="ph-cite" id="cite-11"><div class="ph-cite__num">*11</div><div><a href="https://pop.culture.gouv.fr/notice/memoire/APNADAR022177" target="_blank" rel="noopener">French Ministry of Culture — Effet de lumière sur une main, 1861</a></div></div>
+            <div class="ph-cite" id="cite-12"><div class="ph-cite__num">*12</div><div><a href="https://expositions.bnf.fr/les-nadar/en/innovation.html" target="_blank" rel="noopener">Bibliothèque nationale de France — The Nadars: Innovation</a></div></div>
+            <div class="ph-cite" id="cite-13"><div class="ph-cite__num">*13</div><div><a href="https://airandspace.si.edu/stories/editorial/birds-eye-viewfinder-160-years-aerial-photography" target="_blank" rel="noopener">Smithsonian National Air and Space Museum — Bird’s Eye Viewfinder: 160 Years of Aerial Photography</a></div></div>
+            <div class="ph-cite" id="cite-14"><div class="ph-cite__num">*14</div><div><a href="https://www.metmuseum.org/de/essays/nadar-1820-1910" target="_blank" rel="noopener">The Metropolitan Museum of Art — Nadar (1820–1910)</a></div></div>
+            <div class="ph-cite" id="cite-15"><div class="ph-cite__num">*15</div><div><a href="https://www.metmuseum.org/art/collection/search/366762" target="_blank" rel="noopener">The Metropolitan Museum of Art — Nadar’s Pantheon</a></div></div>
+            <div class="ph-cite" id="cite-16"><div class="ph-cite__num">*16</div><div><a href="https://www.metmuseum.org/art/collection/search/286161" target="_blank" rel="noopener">The Metropolitan Museum of Art — Catacombs, Paris</a></div></div>
+            <div class="ph-cite" id="cite-17"><div class="ph-cite__num">*17</div><div><a href="https://expositions.bnf.fr/les-nadar/en/innovation/underground-paris.html" target="_blank" rel="noopener">Bibliothèque nationale de France — Félix Nadar: Underground Paris</a></div></div>
+            <div class="ph-cite" id="cite-18"><div class="ph-cite__num">*18</div><div><a href="https://catalogue.bnf.fr/ark:/12148/cb119173388" target="_blank" rel="noopener">Bibliothèque nationale de France — Nadar, Authority Record</a></div></div>
+            <div class="ph-cite" id="cite-19"><div class="ph-cite__num">*19</div><div><a href="https://expositions.bnf.fr/les-nadar/en/the-art-of-the-portrait.html" target="_blank" rel="noopener">Bibliothèque nationale de France — The Art of the Portrait</a></div></div>
+            <div class="ph-cite" id="cite-20"><div class="ph-cite__num">*20</div><div><a href="https://expositions.bnf.fr/les-nadar/chronologie/index.php" target="_blank" rel="noopener">Bibliothèque nationale de France — The Nadars: Chronology</a></div></div>
+            <div class="ph-cite" id="cite-21"><div class="ph-cite__num">*21</div><div><a href="https://www.catacombes.paris.fr/en/discover/exhibition/nadar-inventing-paris-depths-sky" target="_blank" rel="noopener">Catacombs of Paris — Nadar: Inventing Paris, from the Depths to the Sky</a></div></div>
+            <div class="ph-cite" id="cite-22"><div class="ph-cite__num">*22</div><div><a href="https://www.metmuseum.org/met-publications/nadar" target="_blank" rel="noopener">The Metropolitan Museum of Art — Nadar (Publication)</a></div></div>
+            <div class="ph-cite" id="cite-23"><div class="ph-cite__num">*23</div><div><a href="https://classes.bnf.fr/les-nadar/ressources2.htm" target="_blank" rel="noopener">Bibliothèque nationale de France — The Carte-de-Visite Portrait / André-Adolphe-Eugène Disdéri</a></div></div>
+            <div class="ph-cite" id="cite-24"><div class="ph-cite__num">*24</div><div><a href="https://www.parismuseescollections.paris.fr/en/node/552945" target="_blank" rel="noopener">Paris Musées / Musée Carnavalet — Atelier Nadar, Carte-de-Visite Portrait of Nadar in a Balloon Basket</a></div></div>
+            <div class="ph-cite" id="cite-25"><div class="ph-cite__num">*25</div><div><a href="https://www.tandfonline.com/doi/abs/10.1080/03087298.2014.881150" target="_blank" rel="noopener">Shao-Chien Tseng — “Nadar’s Photography of Subterranean Paris: Mapping the Urban Body”</a></div></div>
+            <div class="ph-cite" id="cite-26"><div class="ph-cite__num">*26</div><div><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1468-2303.2009.00521.x" target="_blank" rel="noopener">Stephen Bann — “‘When I Was a Photographer’: Nadar and History”</a></div></div>
+            <div class="ph-cite" id="cite-27"><div class="ph-cite__num">*27</div><div><a href="https://www.tandfonline.com/doi/full/10.1080/03087298.2017.1279924" target="_blank" rel="noopener">Jillian Lerner — “Nadar’s Signatures: Caricature, Self-Portrait, Publicity”</a></div></div>
+            <div class="ph-cite" id="cite-28"><div class="ph-cite__num">*28</div><div><a href="https://www.tandfonline.com/doi/full/10.1080/02666286.2020.1801028" target="_blank" rel="noopener">Emily Eastgate Brink — “A Portrait in Pieces: Félix Nadar’s La main du banquier D.”</a></div></div>
           </div>
         </div>
       </section>
@@ -592,7 +697,7 @@ sup{line-height:0;}
 
     <aside class="ph-side" data-nosnippet>
 
-      <div class="ph-side-search">
+      <div class="ph-side-search" data-nosnippet>
         <form class="ph-side-search__form" onsubmit="return false;">
           <label class="ph-side-search__label" for="ph-search-input-nadar">SEARCH · Find a photographer</label>
           <div class="ph-side-search__field">
@@ -602,7 +707,7 @@ sup{line-height:0;}
             </button>
           </div>
         </form>
-        <ul class="ph-search-suggestions" id="ph-search-suggestions-nadar" role="listbox" hidden></ul>
+        <ul class="ph-search-suggestions" id="ph-search-suggestions-nadar" role="listbox" hidden data-nosnippet></ul>
       </div>
 
       <div class="ph-side-block">
@@ -631,8 +736,8 @@ sup{line-height:0;}
       <div class="ph-side-block">
         <div class="ph-side-block__head">Works · Links</div>
         <div class="ph-side-block__body ph-side-works">
-          <a class="chip-link" href="https://www.getty.edu/art/collection/artists/2530/nadar-gaspard-felix-tournachon-french-1820-1910/" target="_blank" rel="noopener">Nadar works (album) (J. Paul Getty Museum) ↗</a>
-          <a class="chip-link" href="https://www.moma.org/artists/4213" target="_blank" rel="noopener">Nadar works (album) (MoMA) ↗</a>
+          <a class="chip-link" href="https://www.moma.org/collection/works/127280" target="_blank" rel="noopener">Nadar — Théophile Gautier, 1855 (MoMA) ↗</a>
+          <a class="chip-link" href="https://www.moma.org/collection/works/46061" target="_blank" rel="noopener">Nadar — Catacombs of Paris, 1862 (MoMA) ↗</a>
           
         </div>
       </div>

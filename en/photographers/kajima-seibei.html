@@ -207,7 +207,7 @@ button{font-family:inherit;cursor:pointer;background:transparent;border:0;color:
 .toc-sub a:hover{color:var(--accent-a);}
 /* ESSAY */
 .essay{font-size:17px;line-height:1.95;color:var(--text-main);max-width:42em;}
-.essay p{margin-bottom:1.6em;text-align:justify;font-family:var(--font-se-jp);line-height:1.95;color:#1a1a1a;font-weight:500;font-size:16.5px;}
+.essay p{margin-bottom:0.6em;text-align:justify;font-family:var(--font-se-jp);line-height:1.95;color:#1a1a1a;font-weight:500;font-size:16.5px;}
 .essay p:last-child{margin-bottom:0;}
 .essay h3{font-family:var(--font-jp);font-weight:700;font-size:18.5px;letter-spacing:0.02em;color:var(--text-main);margin:2.4em 0 0.65em;padding-left:14px;border-left:3px solid var(--accent-a);scroll-margin-top:20px;}
 .essay h3:first-child{margin-top:0;}
@@ -320,11 +320,12 @@ sup{line-height:0;}
 .toc-section.is-active .toc-num::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent-h);margin-right:4px;vertical-align:1px;}
 
 /* ESSAY SECTIONS — ivory reading bg */
-#sec-01, #sec-02, #sec-03 { background: #fffff8; }
+#sec-01, #sec-02, #sec-03, #sec-04 { background: #fffff8; }
 /* LIME DOTS */
 #sec-01 .ph-section__num::before,
 #sec-02 .ph-section__num::before,
-#sec-03 .ph-section__num::before {
+#sec-03 .ph-section__num::before,
+#sec-04 .ph-section__num::before {
   content: '';
   display: inline-block;
   width: 11px; height: 11px;
@@ -359,6 +360,8 @@ sup{line-height:0;}
   .essay p { font-size: 15px; }
 }
 
+
+/* REVIEW ADDITIONS — remove after approval */
 </style>
 <style>.essay p,.ph-abstract p,.ph-thesis__body{text-align:left;}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VRTV8BZEJ"></script>
@@ -412,12 +415,12 @@ sup{line-height:0;}
 
       <div class="ph-abstract">
         <div class="ph-abstract__label">Abstract</div>
-        <p>Kajima Seibei was a Meiji-era photography patron known as the &quot;photographic magnate.&quot; Operating the Genroku-kan studio in Ginza, founding a domestic dry plate manufacturing company, organizing the Japan Photographic Society, and publicly demonstrating X-ray photography, he built the institutional infrastructure of Meiji photography. He is also known for donating twenty-four photographs of Mount Fuji to Emperor Meiji.</p>
+        <p>Kajima Seibei (1866–1924) was born in Osaka. The second son of the Osaka sake wholesaler Kajimaya, he became the eighth Kajima Seibei through his marriage to Nofu, heiress to the main Kajimaya house in Shinkawa, Tokyo. He was known as the "photographic magnate" for investing the family fortune in photography on a grand scale. He supported the Tsukiji Dry Plate Manufacturing Company, the Photographic Society of Japan, the Greater Japan Photography Exhibition, the Genrokukan studio in Kobikicho, the Japan Magic Lantern Society, and demonstrations of new lighting technologies, while also producing his own portraits and <em>Twenty-Four Views of Mount Fuji</em>. In later life, he left the Kajima family, operated photography studios, and eventually became a Noh flutist.</p>
       </div>
 
       <div class="ph-thesis">
         <div class="ph-thesis__label">What this photographer changed</div>
-        <p class="ph-thesis__body">Kajima Seibei invested his wealth and time not in making photographs himself but in building the conditions for photography — founding a domestic dry-plate company, organizing the Japan Photographic Society, and running the Genrokukan studio — and through these activities <em>helped lay the institutional foundations of the Meiji-era photographic world</em>. His case shows that photography's establishment also required patrons who treated the medium as an industrial and social infrastructure rather than as a personal artistic practice.</p>
+        <p class="ph-thesis__body">Photography in mid-Meiji Japan depended on imported materials, individual studios, and the limited activities of a few organizations. Kajima Seibei did more than make photographs himself. By financing the Tsukiji Dry Plate Manufacturing Company, participating in and supporting the Photographic Society of Japan and the Greater Japan Photography Exhibition, establishing the Genrokukan, and conducting public experiments with magic lanterns, X-rays, and artificial lighting, he simultaneously developed the materials for making photographs, places to learn techniques, forums for evaluating work, and venues for presenting it to audiences. His distinctive contribution to photographic history was to <em>move photography from the realm of individual skill and luxurious recreation toward a cultural system of sustained production, evaluation, and public display</em>. His importance does not rest on the invention of a new style. Kajima's activities demonstrate concretely that the establishment of modern photography required patrons who could connect funding, materials, facilities, organizations, and public presentation technologies, as well as photographers.</p>
       </div>
 
       <dl class="ph-entry-meta">
@@ -459,17 +462,42 @@ sup{line-height:0;}
         <summary>Contents · Table of Contents</summary>
         <div class="toc-body">
           <ol class="toc-list">
-            <li class="toc-section is-active"><a href="#sec-01"><span class="toc-num">§ 01</span> Biography</a></li>
+            <li class="toc-section is-active">
+              <a href="#sec-01"><span class="toc-num">§ 01</span> Biography</a>
+              <ul class="toc-sub">
+                <li><a href="#h3-01">Kajima Seibei's Life and the "Photographic Magnate"</a></li>
+                <li><a href="#h3-02">Dry Plates and Reproductive Technologies in the Meiji Period</a></li>
+                <li><a href="#h3-03">The Genrokukan's Facilities and Photographic Culture</a></li>
+              </ul>
+            </li>
             <li class="toc-section">
               <a href="#sec-02"><span class="toc-num">§ 02</span> Expression / method</a>
               <ul class="toc-sub">
-                <li><a href="#h3-01">Domestic dry plate manufacturing and technical independence</a></li>
-                <li><a href="#h3-02">Organizing the Japan Photographic Society</a></li>
-                <li><a href="#h3-03">Public demonstration of X-ray photography</a></li>
-                <li><a href="#h3-04">Mount Fuji and the imperial donation</a></li>
+                <li><a href="#h3-04">The Tsukiji Dry Plate Manufacturing Company and Domestic Dry Plates</a></li>
+                <li><a href="#h3-05">The Photographic Society of Japan and the Greater Japan Photography Exhibition</a></li>
+                <li><a href="#h3-06">Dividing the Work with Ogawa Kazumasa—Photography, Reproduction, and Circulation</a></li>
+                <li><a href="#h3-07">X-Ray Photography and Night Photography</a></li>
               </ul>
             </li>
-            <li class="toc-section"><a href="#sec-03"><span class="toc-num">§ 03</span> Criticism and reception</a></li>
+            <li class="toc-section">
+              <a href="#sec-03"><span class="toc-num">§ 03</span> Key Works, Methods, and Media</a>
+              <ul class="toc-sub">
+                <li><a href="#h3-08">The Genrokukan and Theatrical Photography</a></li>
+                <li><a href="#h3-09">The Japan Magic Lantern Society and Projection Culture</a></li>
+                <li><a href="#h3-10">Mount Fuji Photographs and Meiji Landscape Media</a></li>
+                <li><a href="#h3-11"><em>Photographic Record of the Sino-Japanese War</em>—War and Modern Media</a></li>
+                <li><a href="#h3-12"><em>Twenty-Four Views of Mount Fuji</em> and the Imperial Family</a></li>
+                <li><a href="#h3-13">The "Photographic Magnate" as a Patron of Photography</a></li>
+              </ul>
+            </li>
+            <li class="toc-section">
+              <a href="#sec-04"><span class="toc-num">§ 04</span> Critical Reception and Place in Photographic History</a>
+              <ul class="toc-sub">
+                <li><a href="#h3-14">Kajima Seibei and Ogawa Kazumasa—Institutions, Technology, and Circulation</a></li>
+                <li><a href="#h3-15">Later Years after Leaving the Kajima Family</a></li>
+                <li><a href="#h3-16">Surviving Works and Current Reassessment</a></li>
+              </ul>
+            </li>
           </ol>
         </div>
       </details>
@@ -478,15 +506,23 @@ sup{line-height:0;}
       <section class="ph-section" id="sec-01">
         <div class="ph-section__head">
           <div class="ph-section__title">
-            <span class="ph-section__num">§ 01 / 03</span>
+            <span class="ph-section__num">§ 01 / 04</span>
             <span class="ph-section__name">Biography</span>
           </div>
         </div>
         <div class="ph-section__body">
           <div class="essay">
-<p>Kajima Seibei was born in 1866 and died in 1924. He was born into the Kajima family, wealthy sake merchants and traders based in Yokohama and Ginza, and directed the family's resources toward the dissemination and institutionalization of photography.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
-<p>He opened the "Genroku-kan" studio in Ginza, operating it both as his personal studio and as a hub for other photographers' activities. By the 1890s he had become a leading figure in the Tokyo photography world, earning the nickname "shashin daijin" (photographic magnate) — an Edo-period term for a person of great wealth who spends lavishly, indicating Kajima's readiness to invest freely in the spread of photography.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
-<p>Kajima was also actively engaged in technical experimentation: public demonstrations of X-ray photography, large-format printing, and night photography with magnesium flash. He photographed Mount Fuji from twenty-four angles and donated the resulting album to Emperor Meiji — indicating that photography had come to be recognized as an official documentary medium with significance in relation to the imperial household.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
+<h3 id="h3-01">Kajima Seibei's Life and the "Photographic Magnate"</h3>
+<p>Kajima Seibei was born in 1866 as Masanosuke, the second son of Kajima Seiemon, head of the Osaka sake wholesaler Kajimaya.<sup class="sup-ref"><a href="#cite-1">*1</a></sup> After marrying Nofu, heiress to the main Kajimaya house in Shinkawa, Tokyo, he took the name Kajima Seibei VIII. Beginning in 1885, he invited the Asakusa photographer Imazu Shojiro to his home to teach him photography. In 1888, he established the Tsukiji Dry Plate Manufacturing Company with Ogawa Kazumasa and William K. Burton. The following year, he joined the Photographic Society of Japan, and in 1893 he became vice president of the Greater Japan Photography Exhibition.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<p>The name "photographic magnate" arose from his lavish use of a wealthy merchant family's resources for expensive equipment, large-format photographs, the administration of photographic organizations, and experiments with new technologies. He should be understood as more than an extravagant hobbyist. At a time when photography in Japan still depended heavily on imports and individual expertise, he devoted his private wealth to developing it into a culture encompassing materials, organizations, exhibitions, publishing, and public demonstrations. A FUJIFILM exhibition likewise presents the Tsukiji Dry Plate Manufacturing Company, the Photographic Society of Japan, the Greater Japan Photography Exhibition, and the Genrokukan as a connected series of achievements.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>The relationship between the Kajima family fortune and his spending on photography should not be reduced to a simple causal account. Research by Wako University observes that although the main Kajima house had amassed immense wealth since the closing years of the Tokugawa shogunate, the liquor trade itself was changing during the Meiji period. The dissolution of merchant guilds, changes in sake transportation routes, the shift from barrels to bottles, and direct sales by Nada brewers had already begun to erode the family business.<sup class="sup-ref"><a href="#cite-22">*22</a></sup> Seibei's extravagant lifestyle and massive investment in photography coincided with these developments. The evidence therefore supports an account in which changes in distribution structures and his personal spending and investments proceeded simultaneously, rather than one that attributes the wholesaler's decline to his expenditure on photography alone.</p>
+<h3 id="h3-02">Dry Plates and Reproductive Technologies in the Meiji Period</h3>
+<p>The 1880s and 1890s, when Kajima invested heavily in photography, also saw changes in how photographs were made and circulated. Gelatin dry plates eliminated the wet-plate requirement that chemicals be applied at the shooting location and the plate developed before it dried. Photographers could instead carry factory-made light-sensitive plates and develop them later. A technical account by the Tokyo Photographic Art Museum explains that this change reduced the burden of carrying a portable darkroom and a full set of chemicals for outdoor work, allowing photographers to concentrate on making pictures.<sup class="sup-ref"><a href="#cite-16">*16</a></sup></p>
+<p>During the same period, Ogawa Kazumasa expanded beyond dry plates into photomechanical reproduction, printing, and publishing, transforming photography from a medium of single prints into one capable of mass reproduction. Research by the Tokyo Photographic Art Museum notes that Ogawa created the foundations that allowed photography to function in society through dry-plate production, printing, and publishing.<sup class="sup-ref"><a href="#cite-17">*17</a></sup> Kajima's distinctive contribution went beyond financing this technological transition. Through the Tsukiji Dry Plate Manufacturing Company, the Genrokukan, exhibitions, and magazine frontispieces, he supported material production, photography, display, and reproduction as interconnected aspects of photographic culture.</p>
+<p>The spread of dry plates also changed the social composition of those able to make photographs. Research on photographic history by the International Research Center for Japanese Studies explains that simpler techniques and lighter equipment increased the number of amateur photographers in the mid-Meiji period. Equipment remained expensive, however, and early users were largely drawn from affluent groups such as the aristocracy, senior officials, wealthy merchants, physicians, and university professors.<sup class="sup-ref"><a href="#cite-21">*21</a></sup> Kajima was an extreme example of this early amateur class. By connecting his personal enthusiasm to organizations and systems of evaluation such as the Photographic Society of Japan and the Greater Japan Photography Exhibition, he also shows how an elite pastime contributed to the organization of photographic culture.</p>
+<h3 id="h3-03">The Genrokukan's Facilities and Photographic Culture</h3>
+<p>Established in 1895 in Kobikicho, near present-day Ginza, the Genrokukan was a large photographic facility with an art gallery, a revolving stage, and powerful arc lamps. A contemporary advertisement at the end of <em>Shashin Shinsho</em> stated that the studio offered night photography and enlargements up to eight shaku square. By incorporating large-format photography, artificial lighting, and exhibition space into a facility whose functions extended beyond portraiture, the Genrokukan reveals that Seibei regarded photography as a means of presentation to an audience as well as a technique for making pictures.<sup class="sup-ref"><a href="#cite-10">*10</a></sup></p>
+<p>In the same year, he founded the Japan Magic Lantern Society with Toda Ujikyo and others. He conducted a public experiment in X-ray photography in 1896, followed in 1897 by outdoor night photography using magnesium flash at the funeral of Empress Dowager Eisho. His simultaneous engagement with photography, magic lanterns, X-rays, and artificial lighting as technologies for showing new kinds of images in public further clarifies the character of the Genrokukan.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
 </div>
         </div>
       </section>
@@ -495,22 +531,21 @@ sup{line-height:0;}
       <section class="ph-section" id="sec-02">
         <div class="ph-section__head">
           <div class="ph-section__title">
-            <span class="ph-section__num">§ 02 / 03</span>
+            <span class="ph-section__num">§ 02 / 04</span>
             <span class="ph-section__name">Expression / method</span>
           </div>
         </div>
         <div class="ph-section__body">
           <div class="essay">
-<h3 id="h3-01">Domestic dry plate manufacturing and technical independence</h3>
-<p>Among Kajima's most significant contributions to photographic history is the founding of the Tsukiji Dry Plate Manufacturing Company. In Meiji Japan, most photographic materials were imported, and the spread of photography depended on the cost and supply of those imports. Kajima's promotion of domestic dry plate production created a foundation on which the cost of photography could be reduced and the practice more widely disseminated.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
-<p>This initiative reflects an awareness of photography as something to be established as part of Japan's industry and technology rather than confined to hobbyist or commercial contexts. The Fujifilm Square commentary positions Kajima's activities as pioneering in the formation of the industrial infrastructure of Meiji photography.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
-<h3 id="h3-02">Organizing the Japan Photographic Society</h3>
-<p>Kajima founded the Japan Photographic Society (Nihon Shashin-kai) as a venue for photographers to gather, evaluate work, and exchange information, and organized the Grand Japan Photography Exhibition (Dai-Nihon Shashin Hinpyōkai) as a competitive forum for photographic quality and expression. These activities moved photography from individual hobby or commercial service toward organized cultural activity.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
-<p>Materials related to Kajima held at the Shozokan illustrate the breadth of his activities and how they have been preserved as institutional memory within Japanese photographic history.<sup class="sup-ref"><a href="#cite-4">*4</a></sup> The Fujifilm Square 2006 feature article on Kajima positions his activities as pioneering in the industrial infrastructure of Meiji photography, specifically recognizing his role in spreading domestic dry plates in the late Meiji period.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
-<h3 id="h3-03">Public demonstration of X-ray photography</h3>
-<p>Shortly after Röntgen's discovery of X-rays in 1895, Kajima staged a public demonstration of X-ray photography (röntgenography) in Japan — one of the earliest such demonstrations in the country. This was characteristic of his approach: to actively incorporate the technical frontier and demonstrate it widely. The public demonstration also served an educational function, showing society that photography was a modern recording technology connected to science.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
-<h3 id="h3-04">Mount Fuji and the imperial donation</h3>
-<p>Kajima's donation of twenty-four Mount Fuji photographs to Emperor Meiji sits within a context of establishing photography as a medium capable of visually recording and transmitting the symbols of the nation rather than being limited to entertainment or commercial record. An exhibition at the Maison de la Culture du Japon à Paris is one example of Kajima's photographs being introduced in an international context.<sup class="sup-ref"><a href="#cite-5">*5</a></sup></p>
+<h3 id="h3-04">The Tsukiji Dry Plate Manufacturing Company and Domestic Dry Plates</h3>
+<p>In 1888, Seibei established the Tsukiji Dry Plate Manufacturing Company with Ogawa Kazumasa and William K. Burton. Japan then relied on imports for many photographic materials, including dry plates, and the attempt to manufacture them domestically was itself an effort to build an industrial foundation distinct from the photographer's craft. Seibei's role was less that of an inventor than that of a financial backer who made the experiments of engineers and photographers possible.<sup class="sup-ref"><a href="#cite-7">*7</a></sup></p>
+<h3 id="h3-05">The Photographic Society of Japan and the Greater Japan Photography Exhibition</h3>
+<p>He joined the Photographic Society of Japan in 1889 and served as vice president of the Greater Japan Photography Exhibition, founded in 1893. His provision of funding and organizational support for places where photographers could gather, compare their work, and have it evaluated—not simply make pictures—was important to the institutionalization of photography in Meiji Japan. Technical information and standards of judgment that were difficult for individual studios to accumulate could now be shared through organizations and exhibitions.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
+<p>The Photographic Society of Japan was formed in Tokyo in May 1889. Its membership included university professors, engineers, merchants, and foreign residents of Japan as well as professional photographers, and it helped disseminate photographic knowledge by introducing overseas techniques and presenting work. Art Platform Japan's record of the organization also confirms Kajima's participation.<sup class="sup-ref"><a href="#cite-24">*24</a></sup> This cross-disciplinary membership shows photography moving beyond the specialized work of the studio and becoming a field of collaborative inquiry linking science, commerce, recreation, and art.</p>
+<h3 id="h3-06">Dividing the Work with Ogawa Kazumasa—Photography, Reproduction, and Circulation</h3>
+<p>Although Kajima Seibei and Ogawa Kazumasa both participated in the Meiji photographic world, they played different roles. Ogawa worked as a photographer and developed techniques for printing images in quantity through his photomechanical printing business and publishing activities. Kajima joined Ogawa and Burton in experimenting with dry-plate production, invested in exhibitions and the Genrokukan, and created places where engineers, photographers, and audiences could meet. A landscape published in the magazine <em>Taiyo</em> in 1895 and credited both "Photographed by Genrokukan" and "Photographic engraving, plate-making, and printing by Ogawa Kazumasa" demonstrates how photography and reproduction were linked as distinct forms of expertise.<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
+<h3 id="h3-07">X-Ray Photography and Night Photography</h3>
+<p>Seibei was also active in presenting new photographic technologies to the public. In 1896, he successfully conducted a public experiment in X-ray photography at the Greater Japan Photography Exhibition. The following year, he photographed the funeral of Empress Dowager Eisho outdoors at night using magnesium flash. FUJIFILM's chronology identifies the latter as Japan's first use of magnesium flash for outdoor night photography.<sup class="sup-ref"><a href="#cite-7">*7</a></sup> Together with the Genrokukan's arc lamps, these activities show his effort to use artificial light to expand the times and places in which photography, previously dependent on natural light, could be undertaken.</p>
 </div>
         </div>
       </section>
@@ -519,16 +554,50 @@ sup{line-height:0;}
       <section class="ph-section" id="sec-03">
         <div class="ph-section__head">
           <div class="ph-section__title">
-            <span class="ph-section__num">§ 03 / 03</span>
-            <span class="ph-section__name">Criticism and reception</span>
+            <span class="ph-section__num">§ 03 / 04</span>
+            <span class="ph-section__name">Key Works, Methods, and Media</span>
           </div>
         </div>
         <div class="ph-section__body">
           <div class="essay">
-<p>In photographic history, Kajima Seibei is positioned not as "an artistic photographer who makes works" but as "a patron who builds the institutions of photography." This duality is one reason he sits awkwardly in standard photographic narratives.<sup class="sup-ref"><a href="#cite-1">*1</a></sup></p>
-<p>Fujifilm Square's ongoing publication and commentary on Kajima materials since 2006 indicates that the view of him as a pioneer of Japan's photography industry has become established. He has also been referenced in a Dobson lecture at the SieboldHuis in Leiden, making him a case study cited by international researchers approaching the institutional history of Meiji photography.<sup class="sup-ref"><a href="#cite-3">*3</a></sup></p>
-<p>The most consistently evaluated aspect of Kajima's legacy is his institutional contribution: the promotion of domestic dry plate manufacturing and the organization of photographic societies. His activities are a basic reference point in Meiji photographic history research as a key case study in the process by which photography became established as a cultural industry with an infrastructure in Japanese society.<sup class="sup-ref"><a href="#cite-2">*2</a></sup></p>
-<p>The shashinshi.biz database of late Edo and Meiji photographers records the details of Kajima's technical experiments and activities, serving as a verification resource for photographic history researchers. The Fujifilm Square 2019 activity report also documents the results of the exhibition and related research, indicating that scholarly attention to Kajima remains active. His nickname "shashin daijin" — the photographic magnate — remains a key entry point into understanding Meiji photography's transition from a technology of individual craft into an organized cultural industry.<sup class="sup-ref"><a href="#cite-8">*8</a></sup></p>
+<h3 id="h3-08">The Genrokukan and Theatrical Photography</h3>
+<p>The Genrokukan was both a photographic studio that showcased the latest equipment and a place where kabuki and its actors were translated into photographic media. A Meiji University study of theatrical photography devotes a separate chapter to "Kajima Seibei and the Genrokukan" in its account of how theatrical photographs circulated to broad audiences through magazines, postcards, and photobooks from the late 1880s onward.<sup class="sup-ref"><a href="#cite-8">*8</a></sup> By turning actors' appearances from singular events onstage into reproducible printed matter, the Genrokukan became more than a portrait studio: it was a production center linking theater and modern media.</p>
+<p>Murashima Ayaka's study <em>Omokage of the Stage: Theatrical Photography, Actors, and Photographers</em> includes a chapter titled "Kajima Seibei and <em>Kabuki Shinpo</em>," examining Kajima within the modern visual culture that developed from actor prints through theatrical photography to print and publishing media.<sup class="sup-ref"><a href="#cite-15">*15</a></sup> The Genrokukan's importance lies less in preserving the stage exactly as it appeared than in photographing actors and making their images reproducible beyond the theater through magazines and other publications. Theatrical photography connected the commercial work of the studio with modern entertainment media, which is one reason Kajima's activities cannot be explained simply as a wealthy man's fascination with technology.</p>
+<p>The setting for theatrical photography also shifted during the Meiji period from the studio toward the theater. A research bulletin from the National Museum of Modern Art, Tokyo, traces a progression from a time when kabuki actors visited studios such as the Genrokukan for costumed portraits to the establishment, as photographic techniques improved, of an outdoor shooting area with a hanging backdrop behind the Kabukiza dressing rooms. Photography thus moved closer to the space of performance.<sup class="sup-ref"><a href="#cite-23">*23</a></sup> Kajima's theatrical work stands at the threshold between the early system that brought actors into the studio and the next phase, when photographic equipment moved toward the theater. Murashima Ayaka's decision to devote a chapter to Kajima and <em>Kabuki Shinpo</em> likewise reflects photography's role in circulating stage imagery to magazine readers, beyond merely preserving actors' likenesses.<sup class="sup-ref"><a href="#cite-15">*15</a></sup></p>
+<h3 id="h3-09">The Japan Magic Lantern Society and Projection Culture</h3>
+<p>The Japan Magic Lantern Society, which Seibei founded in 1895, shows his involvement in a culture that used light to project images for an audience as well as in the production of photographic prints. FUJIFILM's detailed chronology places the opening of the Genrokukan and the founding of the Society in the same year, followed by the public X-ray experiment in 1896.<sup class="sup-ref"><a href="#cite-7">*7</a></sup> Viewed as a continuum, his work with studios, exhibitions, magic lanterns, and X-rays makes clear that his central concern was how new images could be produced and presented in public, beyond the skillful making of a single photograph.</p>
+<h3 id="h3-10">Mount Fuji Photographs and Meiji Landscape Media</h3>
+<p>Kajima's photographs of Mount Fuji extend beyond the works presented to the Imperial family. In a JCII Photo Salon exhibition of photographs of Mount Fuji from the final years of the Tokugawa shogunate and the Meiji period, Kajima's <em>View of Mount Fuji from Tagonoura</em> appeared alongside works by Beato, Stillfried, and others. The exhibition situated it within the transition from an era in which foreign photographers shaped a touristic image of Japan to one in which Japanese photographers themselves incorporated Mount Fuji into modern photographic representation.<sup class="sup-ref"><a href="#cite-13">*13</a></sup></p>
+<p>Volume 1, no. 9 of Hakubunkan's <em>Taiyo</em>, published in 1895, also featured a landscape photograph as a frontispiece in its "Twelve Views of Japan" series, credited to "Genrokukan, photographer" and "Ogawa Kazumasa, photographic engraving, plate-making, and printing." The image made at the Genrokukan was transferred to mass magazine printing through Ogawa's photomechanical process. This example shows how Kajima's work reached beyond the studio to the formation of shared images of the Japanese landscape in modern publishing.<sup class="sup-ref"><a href="#cite-14">*14</a></sup></p>
+<h3 id="h3-11"><em>Photographic Record of the Sino-Japanese War</em>—War and Modern Media</h3>
+<p>The Tokyo Photographic Art Museum holds a substantial group of works attributed to Kajima under the title <em>Photographic Record of the Sino-Japanese War, No. 1</em>. In addition to harbor views such as <em>View of the Japanese Settlement from the Busan Harbor Anchorage</em>, the group includes laborers assembled before the Japanese consulate, the training of military horses, captured ships, fortifications, and camps.<sup class="sup-ref"><a href="#cite-18">*18</a></sup> Its documentary value lies in recording logistics, personnel, ports, and military facilities as a series, instead of concentrating exclusively on dramatic moments of battle.</p>
+<p><em>The Captured Ship Hanyang</em> takes the seized vessel itself as its subject, while another plate records soldiers camped near Pyongyang.<sup class="sup-ref"><a href="#cite-19">*19</a></sup> Seen alongside his photographs of Mount Fuji and actors, these images show that Kajima's production extended beyond aesthetic landscapes and commercial portraiture to encompass images of national events, war, and the records required by publishers.<sup class="sup-ref"><a href="#cite-20">*20</a></sup> At a time when Meiji photography was expanding simultaneously into art, entertainment, news, and state documentation, Kajima supported these varied uses through the same network of facilities and financing.</p>
+<h3 id="h3-12"><em>Twenty-Four Views of Mount Fuji</em> and the Imperial Family</h3>
+<p>Seibei produced <em>Twenty-Four Views of Mount Fuji</em>, photographing the mountain from multiple directions. An album dating from around 1895 is held by the Museum of the Imperial Collections, Sannomaru Shozokan. The Genrokukan name remains in the work's record, confirming that he fashioned his photographs of Mount Fuji into a cohesive series presenting a national symbol through modern photography, instead of treating them as a private travel record.<sup class="sup-ref"><a href="#cite-4">*4</a></sup> Exhibition materials from the Sannomaru Shozokan list both <em>Photograph of Snow-Capped Mount Fuji</em> from 1894 and <em>Twenty-Four Views of Mount Fuji</em> from around 1895, confirming the presence of several Mount Fuji works by Kajima in the Imperial collection.<sup class="sup-ref"><a href="#cite-12">*12</a></sup></p>
+<h3 id="h3-13">The "Photographic Magnate" as a Patron of Photography</h3>
+<p>The name "photographic magnate" can overemphasize anecdotes of extravagance, but Seibei's funds were distributed across dry-plate production, photographic organizations, exhibitions, studios, publishing, and public presentations of new technologies. Works from the Sino-Japanese War period held by the Tokyo Photographic Art Museum also show that he photographed contemporary events in addition to Mount Fuji and portraits.<sup class="sup-ref"><a href="#cite-11">*11</a></sup> The convergence of patron and photographer in one person makes Kajima significant to the formation of photographic institutions in Meiji Japan.</p>
+</div>
+        </div>
+      </section>
+
+      <!-- sec-04 -->
+      <section class="ph-section" id="sec-04">
+        <div class="ph-section__head">
+          <div class="ph-section__title">
+            <span class="ph-section__num">§ 04 / 04</span>
+            <span class="ph-section__name">Critical Reception and Place in Photographic History</span>
+          </div>
+        </div>
+        <div class="ph-section__body">
+          <div class="essay">
+<h3 id="h3-14">Kajima Seibei and Ogawa Kazumasa—Institutions, Technology, and Circulation</h3>
+<p>Kajima Seibei's place in photographic history becomes clearer when compared with that of Ogawa Kazumasa. Ogawa circulated photography through society as a reproducible print medium by means of photography, photomechanical reproduction, and publishing. Kajima funded dry-plate production and supported photographic organizations, exhibitions, the Genrokukan, magic lanterns, and artificial lighting, taking responsibility for the institutional structures that sustained production and public presentation. Research on Ogawa by the Tokyo Photographic Art Museum shows that dry-plate manufacture, printing, and publishing were essential conditions in transforming photography into a social medium.<sup class="sup-ref"><a href="#cite-17">*17</a></sup> Kajima's significance lies in investing his private wealth in several mechanisms that linked photographers, engineers, funding, facilities, and audiences, rather than consolidating these conditions in a single enterprise.</p>
+<h3 id="h3-15">Later Years after Leaving the Kajima Family</h3>
+<p>After investing large sums in expensive equipment, large-format photographs, dry-plate production, photographic organizations, and the Genrokukan, Seibei left the Kajima family and closed the Genrokukan in 1897. Research examining contemporary sources notes both the studio's extensive equipment and services as described in its advertisements and the circumstances of his departure from his adoptive family that year.<sup class="sup-ref"><a href="#cite-10">*10</a></sup> No confirmed evidence establishes his spending on photography as the sole cause of the sake wholesaler's decline. It is therefore more appropriate to distinguish his large-scale investment of family resources in photography from his departure than to reduce the story to the claim that photography ruined the family business.</p>
+<p>After leaving the family, he bought Ponta out of her geisha contract and opened a photography studio in Kyoto, but the business did not succeed. He later opened the Harukikan studio across from the Hongoza theater in Tokyo. After losing his right thumb in a magnesium explosion, he closed the studio and subsequently became a flutist of the Morita school of Noh under the name Miki Kisaragi. Art Platform Japan records his death on August 6, 1924.<sup class="sup-ref"><a href="#cite-9">*9</a></sup> His later years allow the "photographic magnate" to be understood through both the splendor of his privately financed support for photographic institutions and the personal history that made it impossible for him to sustain those activities.</p>
+<h3 id="h3-16">Surviving Works and Current Reassessment</h3>
+<p>Treating Kajima solely as an institutional supporter obscures his own photographic activity. The Tokyo Photographic Art Museum holds his <em>Taedong Gate and the Walls of Pyongyang</em>, made during the Sino-Japanese War in 1894–95, confirming that contemporary wartime landscapes joined Mount Fuji, portraiture, and theater among his subjects.<sup class="sup-ref"><a href="#cite-11">*11</a></sup> Considered together with <em>Twenty-Four Views of Mount Fuji</em> at the Museum of the Imperial Collections, Sannomaru Shozokan, the Genrokukan's activities encompassed a mode of production that circulated photographs of landscapes, public events, and theater, in addition to investment in the photographic industry.</p>
+<p>Recent research and exhibitions have also moved Kajima beyond the anecdotal image of a man who spent his fortune on a hobby and returned him to the history of photography's institutional formation. In a lecture at the SieboldHuis, Sebastian Dobson discussed Kajima within the international setting of Meiji photography.<sup class="sup-ref"><a href="#cite-3">*3</a></sup> A program at the Maison de la culture du Japon à Paris also presented Kajima as a figure through whom to consider Japanese photography after Yokohama shashin.<sup class="sup-ref"><a href="#cite-5">*5</a></sup> The 2019 exhibition at FUJIFILM SQUARE offered a comprehensive account of the "photographic magnate's" life and achievements, and an exhibition record also remains on Tokyo Art Beat.<sup class="sup-ref"><a href="#cite-6">*6</a></sup> This reassessment corresponds to a broader approach that considers not only individual photographers' masterpieces but also those who supported materials, facilities, exhibitions, and publishing as subjects of photographic history.</p>
 </div>
         </div>
       </section>
@@ -544,9 +613,9 @@ sup{line-height:0;}
         <div class="ph-section__body">
           <div class="ph-rel-label">Related photographers</div>
           <ul class="ph-rel-list">
-            <li><a href="/en/photographers/koreaki-kamei.html">Koreaki Kamei</a></li>
-            <li><a href="/en/photographers/yokoyama-matsusaburo.html">Yokoyama Matsusaburo</a></li>
-            <li><a href="/en/photographers/kohei-yasu.html">Kohei Yasu</a></li>
+            <li><a href="/en/photographers/koreaki-kamei.html">Koreaki Kamei</a> &mdash; Koreaki Kamei was a contemporary photographic patron and aristocratic photographer who organized photographic documentation of the Sino-Japanese War; from a different position, he and Kajima both supported the institutionalization of Meiji photography.</li>
+            <li><a href="/en/photographers/yokoyama-matsusaburo.html">Yokoyama Matsusaburo</a> &mdash; Yokoyama Matsusaburo taught at the Technical Art School in the early Meiji period and was involved in photographic technology and education during Japan's drive toward modernization, helping establish foundations that preceded the institutional structures of the 1890s in which Kajima worked.</li>
+            <li><a href="/en/photographers/kohei-yasu.html">Kohei Yasu</a> &mdash; Kohei Yasu was a contemporary photographer who traveled from Japan to Guatemala and opened a studio abroad, exemplifying the international expansion of Japanese photographers' activities during the period when Kajima advanced institutionalization at home.</li>
           </ul>
         </div>
       </section>
@@ -568,6 +637,7 @@ sup{line-height:0;}
             <li><a href="https://collection.shozokan.nich.go.jp/en/object/SZK001538" target="_blank" rel="noopener">Shozokan — Kajima Seibei material</a></li>
             <li><a href="https://www.mcjp.fr/ja/agenda/yokohama-shashin-iv-kajima-seibei" target="_blank" rel="noopener">Japanese source — mcjp.fr</a></li>
             <li><a href="https://fujifilmsquare.jp/profile/seibei_kajima.html" target="_blank" rel="noopener">Japanese source — fujifilmsquare.jp</a></li>
+            <li><a href="https://shashinshi.biz/archives/11947" target="_blank" rel="noopener">Bakumatsu-Meiji Photography — Kajima Seibei</a></li>
           </ul>
         </div>
       </section>
@@ -582,14 +652,30 @@ sup{line-height:0;}
         </div>
         <div class="ph-section__body">
           <div class="ph-sources">
-            <div class="ph-cite" id="cite-1"><div class="ph-cite__num">*1</div><div><a href="https://fujifilmsquare.jp/en/detail/19060104.html" target="_blank" rel="noopener">Fujifilm Square — Kajima Seibei (EN)</a></div></div>
-            <div class="ph-cite" id="cite-2"><div class="ph-cite__num">*2</div><div><a href="https://fujifilmsquare.jp/detail/19060104.html" target="_blank" rel="noopener">Japanese source — fujifilmsquare.jp</a></div></div>
-            <div class="ph-cite" id="cite-3"><div class="ph-cite__num">*3</div><div><a href="https://www.sieboldhuis.org/en/activities/lz-20230923dobson/" target="_blank" rel="noopener">SieboldHuis — Dobson Lecture (Meiji photography)</a></div></div>
-            <div class="ph-cite" id="cite-4"><div class="ph-cite__num">*4</div><div><a href="https://collection.shozokan.nich.go.jp/en/object/SZK001538" target="_blank" rel="noopener">Shozokan — Kajima Seibei material</a></div></div>
-            <div class="ph-cite" id="cite-5"><div class="ph-cite__num">*5</div><div><a href="https://www.mcjp.fr/ja/agenda/yokohama-shashin-iv-kajima-seibei" target="_blank" rel="noopener">Japanese source — mcjp.fr</a></div></div>
-            <div class="ph-cite" id="cite-6"><div class="ph-cite__num">*6</div><div><a href="https://www.tokyoartbeat.com/events/-/2019%2F1F38" target="_blank" rel="noopener">Japanese source — tokyoartbeat.com</a></div></div>
-            <div class="ph-cite" id="cite-7"><div class="ph-cite__num">*7</div><div><a href="https://fujifilmsquare.jp/profile/seibei_kajima.html" target="_blank" rel="noopener">Japanese source — fujifilmsquare.jp</a></div></div>
-            <div class="ph-cite" id="cite-8"><div class="ph-cite__num">*8</div><div><a href="https://shashinshi.biz/archives/11947" target="_blank" rel="noopener">Japanese source — shashinshi.biz</a></div></div>
+            <div class="ph-cite" id="cite-1"><div class="ph-cite__num">*1</div><div><a href="https://fujifilmsquare.jp/en/detail/19060104.html" target="_blank" rel="noopener">FUJIFILM SQUARE — Kajima Seibei</a></div></div>
+            <div class="ph-cite" id="cite-2"><div class="ph-cite__num">*2</div><div><a href="https://fujifilmsquare.jp/detail/19060104.html" target="_blank" rel="noopener">FUJIFILM SQUARE — Kajima Seibei</a></div></div>
+            <div class="ph-cite" id="cite-3"><div class="ph-cite__num">*3</div><div><a href="https://www.sieboldhuis.org/en/activities/lz-20230923dobson/" target="_blank" rel="noopener">SieboldHuis — Dobson Lecture on Meiji Photography</a></div></div>
+            <div class="ph-cite" id="cite-4"><div class="ph-cite__num">*4</div><div><a href="https://collection.shozokan.nich.go.jp/en/object/SZK001538" target="_blank" rel="noopener">Museum of the Imperial Collections, Sannomaru Shozokan — Kajima Seibei Collection Record</a></div></div>
+            <div class="ph-cite" id="cite-5"><div class="ph-cite__num">*5</div><div><a href="https://www.mcjp.fr/ja/agenda/yokohama-shashin-iv-kajima-seibei" target="_blank" rel="noopener">Maison de la culture du Japon à Paris — Kajima Seibei</a></div></div>
+            <div class="ph-cite" id="cite-6"><div class="ph-cite__num">*6</div><div><a href="https://www.tokyoartbeat.com/events/-/2019%2F1F38" target="_blank" rel="noopener">Tokyo Art Beat — Kajima Seibei Exhibition</a></div></div>
+            <div class="ph-cite" id="cite-7"><div class="ph-cite__num">*7</div><div><a href="https://fujifilmsquare.jp/profile/seibei_kajima.html" target="_blank" rel="noopener">FUJIFILM SQUARE — Kajima Seibei Profile</a></div></div>
+            <div class="ph-cite" id="cite-8"><div class="ph-cite__num">*8</div><div><a href="https://meiji.repo.nii.ac.jp/record/17255/files/557_rep.pdf" target="_blank" rel="noopener">Meiji University Academic Repository — "The Birth and Development of Theatrical Photography: Actors, Photographers, and Media in Tokyo"</a></div></div>
+            <div class="ph-cite" id="cite-9"><div class="ph-cite__num">*9</div><div><a href="https://artplatform.go.jp/ja/artists/A6270" target="_blank" rel="noopener">Art Platform Japan — Kajima Seibei</a></div></div>
+            <div class="ph-cite" id="cite-10"><div class="ph-cite__num">*10</div><div><a href="https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&amp;itemId=info%3Andljp%2Fpid%2F8558090" target="_blank" rel="noopener">Wako University Research Center for General Culture, <em>Tozai Nanboku 2012</em> — Genrokukan Advertisements and Kajima Family Materials</a></div></div>
+            <div class="ph-cite" id="cite-11"><div class="ph-cite__num">*11</div><div><a href="https://museumcollection.tokyo/works/74089/" target="_blank" rel="noopener">Tokyo Museum Collection / Tokyo Photographic Art Museum — <em>Taedong Gate and the Walls of Pyongyang</em>, Kajima Seibei</a></div></div>
+            <div class="ph-cite" id="cite-12"><div class="ph-cite__num">*12</div><div><a href="https://shozokan.nich.go.jp/research/exhibition-catalogues/46fujiyamawoutsushi_fullpage.pdf" target="_blank" rel="noopener">Museum of the Imperial Collections, Sannomaru Shozokan — Exhibition 46, <em>Capturing Mount Fuji, Contemplating the Mountain</em>, List of Works</a></div></div>
+            <div class="ph-cite" id="cite-13"><div class="ph-cite__num">*13</div><div><a href="https://www.jcii-cameramuseum.jp/photosalon/2014/01/06/9063/" target="_blank" rel="noopener">JCII Photo Salon — <em>Mount Fuji in the Late Tokugawa and Meiji Periods</em></a></div></div>
+            <div class="ph-cite" id="cite-14"><div class="ph-cite__num">*14</div><div><a href="https://narapu.repo.nii.ac.jp/record/1291/files/k270307.pdf" target="_blank" rel="noopener">Nara Prefectural University Research Paper — "The Influence of Publishing on the Formation of Landscape in the Meiji Period"</a></div></div>
+            <div class="ph-cite" id="cite-15"><div class="ph-cite__num">*15</div><div><a href="https://ci.nii.ac.jp/ncid/BC14831324" target="_blank" rel="noopener">Murashima Ayaka, <em>Omokage of the Stage: Theatrical Photography, Actors, and Photographers</em> — Chapter 7, "Kajima Seibei and <em>Kabuki Shinpo</em>"</a></div></div>
+            <div class="ph-cite" id="cite-16"><div class="ph-cite__num">*16</div><div><a href="https://topmuseum.jp/upload/3/3453/listofeworks_kanto_20201013.pdf" target="_blank" rel="noopener">Tokyo Photographic Art Museum — Gelatin Dry Plates and Modern Photographic Technology, List of Works for <em>The Origin of Photography: Great Britain</em></a></div></div>
+            <div class="ph-cite" id="cite-17"><div class="ph-cite__num">*17</div><div><a href="https://topmuseum.jp/contents/images/info/journal/kiyou_02/05.pdf" target="_blank" rel="noopener">Tokyo Photographic Art Museum Bulletin — Okatsuka Akiko, "Ogawa Kazumasa's Photographs for the Kinki Treasure Survey"</a></div></div>
+            <div class="ph-cite" id="cite-18"><div class="ph-cite__num">*18</div><div><a href="https://museumcollection.tokyo/works/6599027/" target="_blank" rel="noopener">Tokyo Museum Collection — <em>View of the Japanese Settlement from the Busan Harbor Anchorage</em></a></div></div>
+            <div class="ph-cite" id="cite-19"><div class="ph-cite__num">*19</div><div><a href="https://museumcollection.tokyo/works/6599045/" target="_blank" rel="noopener">Tokyo Museum Collection — <em>The Captured Ship Hanyang</em></a></div></div>
+            <div class="ph-cite" id="cite-20"><div class="ph-cite__num">*20</div><div><a href="https://collection.topmuseum.jp/Publish/detailPage/46325/" target="_blank" rel="noopener">Tokyo Photographic Art Museum — <em>Soldiers of the 22nd Regiment Camped below Moranbong in Pyongyang</em></a></div></div>
+            <div class="ph-cite" id="cite-21"><div class="ph-cite__num">*21</div><div><a href="https://nichibun.repo.nii.ac.jp/record/5560/files/tosh_013__11__5_15__11_21.pdf" target="_blank" rel="noopener">International Research Center for Japanese Studies — The Dry-Plate Era, Amateur Photographers, and Photographic Organizations in the Mid-Meiji Period</a></div></div>
+            <div class="ph-cite" id="cite-22"><div class="ph-cite__num">*22</div><div><a href="https://wako.repo.nii.ac.jp/record/1285/files/2012-0412-1418.pdf" target="_blank" rel="noopener">Wako University Research Center for General Culture — Research Project "The Life and Culture of a Tokyo Citizen: Materials on Kajima Seibei and the Kajima Family"</a></div></div>
+            <div class="ph-cite" id="cite-23"><div class="ph-cite__num">*23</div><div><a href="https://momat.repo.nii.ac.jp/record/20/files/kiyo_22_41-71.pdf" target="_blank" rel="noopener">The National Museum of Modern Art, Tokyo, Research Bulletin — Motoji Akihiko, "On <em>Momijigari</em>"</a></div></div>
+            <div class="ph-cite" id="cite-24"><div class="ph-cite__num">*24</div><div><a href="https://artplatform.go.jp/ja/artists/A5482" target="_blank" rel="noopener">Art Platform Japan — Photographic Society of Japan (Nihon Shashinkai)</a></div></div>
           </div>
         </div>
       </section>
