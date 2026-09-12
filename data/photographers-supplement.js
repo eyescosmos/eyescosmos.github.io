@@ -8807,3 +8807,217 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "christer-stromholm",
+  "name": "Christer Strömholm",
+  "nameJa": "クリステル・ストレムホルム",
+  "nationality": "SE / FR",
+  "flag": "🇸🇪",
+  "years": "1918–2002",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "ストリート写真",
+    "社会ドキュメンタリー"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "クリステル・ストレムホルム（1918–2002）はスウェーデン、ストックホルム生まれ。絵画とグラフィック・アートを学び、戦後のパリで写真へ進み、1949年頃からドイツのFotoformと主観写真の動向に関わった。パリのPlace Blancheで知り合ったトランス女性たちを長期に撮影し、1962年から1974年までストックホルムのFotoskolanを率いた。1967年に写真集『Poste Restante』、1983年に『Vännerna från Place Blanche』を刊行し、1997年にHasselblad Awardを受賞した。 *1 *2 。",
+    "textEn": "Christer Strömholm (1918–2002) was born in Stockholm, Sweden. He studied painting and graphic art, turned to photography in postwar Paris, and became associated around 1949 with the German Fotoform group and the movement known as Subjective Photography. He photographed transgender women he came to know around Place Blanche in Paris over an extended period, and led Fotoskolan in Stockholm from 1962 to 1974. He published the photobook Poste Restante in 1967 and Vännerna från Place Blanche in 1983, and received the Hasselblad Award in 1997. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Moderna Museet — Christer Strömholm",
+        "url": "https://www.modernamuseet.se/en/stockholm/exhibitions/arbus-model-stromholm/christer-stromholm/"
+      },
+      {
+        "num": 2,
+        "name": "Moderna Museet — Reality Revisited: Photographers",
+        "url": "https://www.modernamuseet.se/en/stockholm/exhibitions/reality-revisited/photographers/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "david-goldblatt",
+  "name": "David Goldblatt",
+  "nameJa": "デイヴィッド・ゴールドブラット",
+  "nationality": "ZA",
+  "flag": "🇿🇦",
+  "years": "1930–2018",
+  "gender": "男性",
+  "era": "1970",
+  "movements": [
+    "社会ドキュメンタリー"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "デイヴィッド・ゴールドブラット（1930–2018）は南アフリカ、ランドフォンテイン生まれ。金鉱山の町で育ち、紳士服店で働きながら撮影を続け、父の死後に店を売却して1960年代初頭から写真に専念した。鉱山、アフリカーナー社会、住宅、道路、教会、土地を長期撮影し、『On the Mines』『Some Afrikaners Photographed』『The Transported of KwaNdebele』『The Structure of Things Then』などへまとめた。1989年にはMarket Photo Workshopを設立し、カラー作品にも取り組んだ。 *1 *2 。",
+    "textEn": "David Goldblatt (1930–2018) was born in Randfontein, South Africa. He grew up in a gold-mining town, continued photographing while working in his family’s men’s clothing store, and after his father’s death sold the business and devoted himself to photography from the early 1960s. Over decades he photographed mines, Afrikaner society, houses, roads, churches, and land, publishing bodies of work including On the Mines, Some Afrikaners Photographed, The Transported of KwaNdebele, and The Structure of Things Then. In 1989 he founded the Market Photo Workshop and later worked extensively in color. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "MoMA — David Goldblatt: Photographs from South Africa",
+        "url": "https://www.moma.org/interactives/exhibitions/1998/goldblatt/"
+      },
+      {
+        "num": 2,
+        "name": "MoMA — David Goldblatt: Photographs from South Africa exhibition",
+        "url": "https://www.moma.org/calendar/exhibitions/217"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "elliott-erwitt",
+  "name": "Elliott Erwitt",
+  "nameJa": "エリオット・アーウィット",
+  "nationality": "FR / US",
+  "flag": "🇫🇷",
+  "years": "1928–2023",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "フォトジャーナリズム",
+    "ストリート写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "エリオット・アーウィット（1928–2023）はフランス、パリ生まれ。ロシア系ユダヤ人の両親とヨーロッパからアメリカへ移住し、ロサンゼルスで写真を学んだ後、ニューヨークのNew Schoolで映画を学んだ。ロイ・ストライカーの調査写真、米軍での写真任務を経て、1953年にMagnum Photosへ参加した。報道、雑誌、広告、映画制作と並行し、犬、恋人、家族、観光客、政治家、街路の偶然を長く撮影した。1959年のニクソンとフルシチョフの《Kitchen Debate》など歴史的な報道写真でも知られる。 *1 *2 。",
+    "textEn": "Elliott Erwitt (1928–2023) was born in Paris, France. He emigrated from Europe to the United States with his Russian Jewish parents, studied photography in Los Angeles, and later studied film at the New School in New York. After working on Roy Stryker’s documentary projects and serving in a photographic role in the U.S. Army, he joined Magnum Photos in 1953. Alongside journalism, magazines, advertising, and filmmaking, he photographed dogs, lovers, families, tourists, politicians, and chance encounters in the street for decades. He is also known for historic news photographs, including the 1959 Kitchen Debate between Richard Nixon and Nikita Khrushchev. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Elliott Erwitt — About",
+        "url": "https://www.elliotterwitt.com/about"
+      },
+      {
+        "num": 2,
+        "name": "Elliott Erwitt — Galleries",
+        "url": "https://www.elliotterwitt.com/galleries"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "roy-decarava",
+  "name": "Roy DeCarava",
+  "nameJa": "ロイ・デカラヴァ",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1919–2009",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "モダニズム",
+    "ドキュメンタリー"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ロイ・デカラヴァ（1919–2009）はアメリカ、ニューヨークのハーレム生まれ。Cooper Unionで絵画と版画を学び、Harlem Community Art Centerなどを経て、版画の資料として使っていた写真を1940年代末から主な表現にした。1952年にGuggenheim Fellowshipを受け、1955年にはラングストン・ヒューズとの写真集『The Sweet Flypaper of Life』を刊行した。ジャズ、家族、街路、労働、政治運動を長く撮影し、1975年以降はHunter Collegeで写真教育にも携わった。 *1 *2 。",
+    "textEn": "Roy DeCarava (1919–2009) was born in Harlem, New York. He studied painting and printmaking at Cooper Union and later at the Harlem Community Art Center, then shifted in the late 1940s from using photography as a reference for prints to treating it as his primary medium. He received a Guggenheim Fellowship in 1952 and published The Sweet Flypaper of Life with Langston Hughes in 1955. Over decades he photographed jazz, family, street life, labor, and political movements, and from 1975 he also taught photography at Hunter College. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "National Gallery of Art — Roy DeCarava",
+        "url": "https://www.nga.gov/artworks/provenance/23163-roy-decarava"
+      },
+      {
+        "num": 2,
+        "name": "MoMA — Roy DeCarava",
+        "url": "https://www.moma.org/artists/1422-roy-decarava"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "saul-leiter",
+  "name": "Saul Leiter",
+  "nameJa": "ソール・ライター",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1923–2013",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "カラー写真",
+    "ストリート写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ソール・ライター（1923–2013）はアメリカ、ペンシルベニア州ピッツバーグ生まれ。ラビを目指して神学校で学んだ後、1946年に画家を志してニューヨークへ移り、リチャード・プーセット＝ダート、W・ユージン・スミスらとの交流を通じて写真へ進んだ。1940年代末からカラー・スライドを使い、1950年代以降は『Harper’s Bazaar』などのファッション仕事と街路での個人制作を並行した。2006年の写真集『Early Color』以後、初期カラー作品が国際的に再評価された。 *1 *2 。",
+    "textEn": "Saul Leiter (1923–2013) was born in Pittsburgh, Pennsylvania. After studying at a theological seminary with the expectation that he would become a rabbi, he moved to New York in 1946 to pursue painting and turned increasingly to photography through his friendships with Richard Pousette-Dart and W. Eugene Smith. He began using color slide film in the late 1940s and, from the 1950s onward, worked in fashion for publications including Harper’s Bazaar while continuing his personal street photography. Following the publication of Early Color in 2006, his early color work received renewed international attention. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Saul Leiter Foundation — Biography",
+        "url": "https://www.saulleiterfoundation.org/biography"
+      },
+      {
+        "num": 2,
+        "name": "Saul Leiter Foundation — Chronology",
+        "url": "https://www.saulleiterfoundation.org/chronology"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "vivian-maier",
+  "name": "Vivian Maier",
+  "nameJa": "ヴィヴィアン・マイヤー",
+  "nationality": "US / FR",
+  "flag": "🇺🇸",
+  "years": "1926–2009",
+  "gender": "女性",
+  "era": "1950",
+  "movements": [
+    "ストリート写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ヴィヴィアン・マイヤー（1926–2009）はアメリカ、ニューヨーク生まれ。幼少期から青年期にアメリカとフランスを往復し、1950年代初頭にニューヨークで撮影を始め、1956年以降は主にシカゴで乳母・ケア労働者として働きながら写真を続けた。Rolleiflexによる白黒の正方形写真に加え、35mmカラー、Super 8映画、録音も残した。生前に公的な写真家キャリアを築かず、作品の大半は未発表のまま分散したため、2007年以降の発見、収集、プリント、展覧会、研究を通じて作家像が形成された。 *1 *2 。",
+    "textEn": "Vivian Maier (1926–2009) was born in New York. She moved between the United States and France during childhood and early adulthood, began photographing in New York in the early 1950s, and after 1956 continued making photographs while working primarily in Chicago as a nanny and caregiver. Alongside square black-and-white photographs made with a Rolleiflex, she left 35mm color work, Super 8 films, and audio recordings. Because she did not establish a public career as a photographer during her lifetime and most of her work remained unpublished and dispersed, the image of Maier as an artist has largely been formed through discoveries, collecting, printing, exhibitions, and research since 2007. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Chicago History Museum — Vivian Maier: In Color",
+        "url": "https://www.chicagohistory.org/exhibition/vivian-maier-her-chicago/"
+      },
+      {
+        "num": 2,
+        "name": "Chicago History Museum — Vivian Maier Photographs Collection FAQs (PDF)",
+        "url": "https://images.chicagohistory.org/wp-content/uploads/2021/05/Vivian-Maier-Public-FAQs.pdf"
+      }
+    ]
+  }
+}
+);

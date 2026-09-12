@@ -22,6 +22,8 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-12 | christer-stromholm（idx 396・0912パイロット） | new | 60分（0912バッチ全体・Daisuke実測） | 2（render-ja引数例とFrance guard順） | 3系統（下記） | 20ファイル | JA/EN素材どおり | 33/33 |
+| 2026-09-12 | 0912素材残り5名（idx 397–401） | new×5 | 同上（バッチ合算60分） | 0 | 4系統（下記） | 公開HTML 25面 | JA/EN素材どおり | 184/184 |
 | 2026-09-12 | 0911素材6名（idx 390–395） | new×6 | （Daisuke記入） | 1（パイロット時のEN merge前surface生成失敗） | 7系統（下記） | 63ファイル | JA/EN素材どおり | 178/178 |
 | 2026-06-22 | jikei-sato | update | ~20分※ | 1（ネストspan節名） | 5→改良後2 | 0（既存） | 972→10233 | 3→25 |
 | 2026-06-23 | sakiko-nomura | new | ~20分 | 0 | 4（下記） | 16ファイル | 8184 | 38(JA)/37(EN) |
@@ -76,6 +78,34 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-12 — 0912素材パイロット `christer-stromholm`（idx 396・種別=new・Opus監督 / Codex実装）
+
+- **範囲**：JA/ENリーフ各1、EN正本、card-data・supplement・星bin、archive/card/index、1950年代JA/EN、France/Sweden JA/EN、spec、France guard、本ログ。計20ファイル。commit / pushなし。
+- **手作業点 / bug / engine**：3系統。①素材と確定taxonomyからspec作成、②`FRANCE_EXPECTED_IDS`へ実カード順で追記、③JA/EN Person JSON-LD descriptionと既定og:image補完。bug 2件＝キックオフの`--render-ja /dev/stdout`が現行CLIでは素材パス扱いとなる引数例不一致、France guardの初回挿入位置が実カード順と不一致。engine/CSS変更0。
+- **フィデリティ / 検証**：JA/ENとも本文4節、§WORKS/REL/REF/SRC各1、出典33/33、§RELリンク3/3・切れ0、div/section開閉一致、実DOMのprep-block 0、検索runtime解決形1/1・旧固定JS文字列0。EN正本pages 408→409、追加キーは`christer-stromholm.html`のみ、既存キー変更0、`_meta`不変。素材SHA-256前後一致。`check_new_photographer` / `check_en_entry` / builder dry-run / `sync_card_counts --check` / `check_content_loss` / `preflight`はexit 0、builder SKIPPED 0。
+- **WARN / ボトルネック**：写真集なしは素材どおり。分類面直接編集疑い3件はスコープ生成物。新規存在により既存`anders-petersen` §RELの裸テキストがリンク候補化したWARN 1件は、既存ページ変更禁止のため未変更・監督判断待ち。ボトルネックはJSON-LD/OG不可視要素の手補完。
+- **wall-time**：0912バッチ全体で60分（Daisuke実測。パイロット／残り5名／フェーズ3の合算）
+
+## 2026-09-12 — 0912素材の残り5名追加（idx 397–401・種別=new×5・Opus監督 / Codex実装）
+
+- **範囲**：`david-goldblatt` / `elliott-erwitt` / `roy-decarava` / `saul-leiter` / `vivian-maier`。各名を spec→card/star/scaffold→JA render→EN dry-run/apply→EN build→surface apply の順で完了。公開HTML 25面（リーフJA/EN 10、archive/card/index 5、国JA/EN 6、年代JA/EN 4）、対象spec 5、共通正本・データ・guard・本ログを更新。commit / pushなし。
+- **手作業点 / bug / engine**：4系統。①確定taxonomyと素材からspec 5件作成、②JA/EN Person JSON-LDのdescription・birthDate・deathDateと既定og:image補完、③`FRANCE_EXPECTED_IDS`へ `elliott-erwitt` / `vivian-maier` を実カード順で追記、④自動追加された作品UI語1件を「辞書へ足さない」指示に従い除去。新規bug 0、engine/CSS変更0。
+- **フィデリティ / 検証**：全名JA/ENとも本文4節、§WORKS/REL/REF/SRC各1、出典は順に37/37・37/37・37/37・38/38・35/35（計184/184）。§RELリンク切れ0、実在ページの裸テキスト残り0、div/section開閉一致、実DOM prep-block 0、検索runtime固定id文字列0。EN正本pages 409→414、追加キーは対象5slugのみ、既存キー変更0、`_meta`不変。素材10枚SHA-256前後一致。各check / builder dry-run、`sync_card_counts --check`、`check_content_loss`、`preflight`はexit 0、builder SKIPPED 0。
+- **WARN / ボトルネック**：写真集なしは素材どおり。`elliott-erwitt` / `saul-leiter` のEN builderはChannel内の未訳語（フォトジャーナリズム / カラー写真）をWARNするが、分類辞書を変更しない指示に従い残置。`@graph` / BreadcrumbList欠落・本文内リンクなし、分類面直接編集疑い、既存§RELリンク候補4件、既存movement hero drift・非前方一致・stale宣言は既知または対象外。ボトルネックは5名分のJSON-LD/OG不可視要素の手補完。
+- **wall-time**：0912バッチ全体で60分（Daisuke実測。パイロット／残り5名／フェーズ3の合算）
+
+## 2026-09-12 — 0912バッチ フェーズ3（運動面・sitemap・裸参照リンク化）
+
+- **種別**：other。wall-time は0912バッチ全体で60分（Daisuke実測）。commit / push は0912バッチ一括（下記）。
+- **範囲と実測**：sitemap 962→974 loc（追加12・削除0）。運動カードは JA/EN 各6面へ計20枚追加し、同一運動の両言語件数を 19 / 22 / 18 / 17 / 41 / 5 に同期。既存カード変更0。運動件数の派生表示を `card-data.json` と archive 4面へ同期。
+- **裸参照リンク**：JA 本文13本＋§REL 4本、EN本文13本＋§REL 4本を追加。EN写真家12ページは正本JSONからslug別再生成し、ENカラー写真面のみ直接編集。`james-van-der-zee` は既存正本に `site_directory_html` が無く annotation 単独では描画されないため、Roy DeCarava 1件の最小ディレクトリを補完。
+- **手作業点 / ボトルネック**：運動12面へのカード挿入、本文・関連欄の裸参照17組、EN正本のnested `sections[].body_html` 更新。運動ENビルダーは既知のlede退行を避け未実行。フィデリティ差分はリンクタグと James の指定解説以外0。engine改良なし。
+- **監督（Opus）の後追い是正**：EN §REL に JA と同じリンク項目が出ていない4ページを実測で検出し、正本 `data/photographers-en-content.json` の `site_directory_html` へ1件ずつ追記して再生成した（`anders-petersen`←`christer-stromholm` / `ernst-haas`←`saul-leiter` / `zwelethu-mthethwa`←`david-goldblatt` / `james-van-der-zee`←`gordon-parks`）。**`related_annotations` だけを足しても §REL には出ない**（リンクの実体は `site_directory_html`）。`gordon-parks` は JA 側も一言解説が無かったため JA/EN そろえて追記。是正後、対象16ページで「JAにあってENに無いリンク項目」は0。
+- **監督（Opus）の独立監査**：本文量は6名とも素材比 −0.5〜0.8%（見出し正規化分のみ）で、出典数と本文からの参照数は JA=EN で完全一致。sitemap は `sitemap.xml` / `sitemap-full.xml` とも 962→974（追加12・削除0・禁止URL 0）。素材12枚の SHA-256 は作業前後で不変。`link_country_keywords.py` 実行後の対象外巻き込みは残滓0。`check_content_loss.py` / `preflight.py` / `sync_card_counts.py --check` / `check_photographer_link_integrity.py` は全て EXIT 0。
+- **今回触らなかった既存の掲載漏れ**：運動ページに tag 上は該当するが未掲載の既存分が10件ある（`boris-mikhailov` / `martin-munkacsi` / `ilse-bing` / `alec-soth` / `john-benjamin-stone` / `jp-中山岩太` / `jp-安井仲治` / `jp-冨重利平` / `jp-亀井茲明` / `jp-鳥居龍蔵`）。今回のバッチ対象外として据え置いた。
+- **バックアップ掃除（Daisuke指示・2026-09-12）**：過去バッチが残していた未追跡の `*-backup.*` 109ファイル（11.2MB・HTML106 / json1 / js1 / bin1）を削除した。削除前に**全109件について元ファイルが git 追跡下に実在すること**を機械照合してから実行（`risky=0`）。追跡ファイルの削除は0件。`scripts/*-spec.json` 299件は backup ではなく `--update-existing --prepare` が再利用する作業入力のため**残置**（従来から git 非追跡）。
+
 
 ## 2026-09-09 — 0909素材パイロット `karl-blossfeldt`（idx 370・種別=new・Opus監督 / Codex実装）
 

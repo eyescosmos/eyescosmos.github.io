@@ -496,7 +496,7 @@ FRANCE_EXPECTED_IDS = [
     "cartierbresson", "brassai", "robert-doisneau", "francois-kollar",
     "marcel-bovis", "claude-cahun", "gerda-taro", "ilse-bing", "izis", "willy-ronis",
     "edouard-boubat",
-    "sabine-weiss",
+    "sabine-weiss", "christer-stromholm", "elliott-erwitt", "vivian-maier",
     "jean-luc-moulene", "sophie-calle",
     "marine-hugonnier", "jean-pierre-khazem", "jean-luc-mylayne",
     "bruno-serralongue", "yto-barrada", "valerie-belin", "claude-closky",
