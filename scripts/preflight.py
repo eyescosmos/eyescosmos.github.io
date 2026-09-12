@@ -202,6 +202,10 @@ def check_legacy_domain() -> None:
         "scripts/preflight.py",
         "SEO_MIGRATION_NOTES.md",
         "README.md",
+        # SEO選定ツールは GSC の新旧2プロパティを毎回合算する。旧 github.io 側にも
+        # 数字が入り続けているため、プロパティ名としての旧ドメインは意図的に残す。
+        "scripts/seo_fetch.py",
+        "docs/seo-selector-spec.md",
     }
     proc = subprocess.run(
         ["git", "-c", "core.quotepath=off", "grep", "-n", "--fixed-strings",
@@ -551,6 +555,22 @@ def _touched_en() -> dict:
     return touched
 
 
+def _rendered_ph_section_count(rel_path: str, ref: str | None) -> int | None:
+    """描画後の EN ページの ph-section 数。ref=None なら作業ツリー。読めなければ None。"""
+    if ref is None:
+        path = REPO / rel_path
+        if not path.exists():
+            return None
+        html = path.read_text(encoding="utf-8", errors="ignore")
+    else:
+        proc = subprocess.run(["git", "show", f"{ref}:{rel_path}"],
+                              capture_output=True, text=True, cwd=REPO)
+        if proc.returncode != 0:
+            return None
+        html = proc.stdout
+    return len(re.findall(r'<section class="ph-section"', html))
+
+
 def check_en_content_loss() -> None:
     """JSON-vs-baseline: 触った EN エントリが本文・出典・リンクを失っていないか（HARD）。
     変更が無ければ必ずグリーンなので門にできる。"""
@@ -565,7 +585,19 @@ def check_en_content_loss() -> None:
         if new["cite"] < old["cite"]:
             losses.append(f"出典 {old['cite']}→{new['cite']}")
         if new["sections"] < old["sections"]:
-            losses.append(f"本文セクション {old['sections']}→{new['sections']}")
+            # JSON の sections[] は過去の harvest で §REL 等を本文節として
+            # 取り込んでいる個体がある。描画後のページで節が減っていなければ
+            # データ構造の整理であって本文消失ではないので WARN に落とす。
+            rel_html = f"en/photographers/{slug}"
+            base_n = _rendered_ph_section_count(rel_html, _baseline_ref())
+            work_n = _rendered_ph_section_count(rel_html, None)
+            if base_n is not None and work_n is not None and work_n >= base_n:
+                warnings.append(
+                    f"{EN_CONTENT_JSON} の {slug}: JSON の本文セクション "
+                    f"{old['sections']}→{new['sections']} だが描画後のページは "
+                    f"{base_n}→{work_n} で減っていない＝構造の整理と判断した")
+            else:
+                losses.append(f"本文セクション {old['sections']}→{new['sections']}")
         if new["supref"] < old["supref"]:
             losses.append(f"本文 sup-ref {old['supref']}→{new['supref']}")
         if old["thesis"] and not new["thesis"]:
@@ -1381,25 +1413,65 @@ def _load_intentional_replacements() -> list[dict]:
     return data if isinstance(data, list) else []
 
 
-def _filter_loss_items_by_declarations(items: list[dict], declarations: list[dict]) -> tuple[list[dict], set[int]]:
-    """items（[{file, detail}]）を declarations（[{slug, url, ...}]）で絞り込む純粋関数。
-    (slug, url) は「file に slug が部分一致」×「detail に url が部分一致」で判定する。
-    戻り値: (remaining, consumed_indices)。remaining=宣言に一致しなかった item のみ。
-    consumed_indices=実際にどれか1件以上を除外できた宣言（declarations の index 集合）。
+def _section_labels(html: str) -> set[str]:
+    """ページ内の ph-section ラベル（"§ WORKS" / "§ 01 / 04" / "§ ARCHIVES" 等）の集合。"""
+    return {m.strip() for m in re.findall(r'ph-section__num">\s*(§[^<]*?)\s*<', html)}
+
+
+def _section_removed(rel_path: str, label: str, baseline: str) -> bool:
+    """rel_path について「baseline には label のセクションがあり、作業ツリーには無い」を検証する。
+    宣言を書けば無条件で通るのを避けるための裏取り。読み取りのみ。"""
+    old = subprocess.run(["git", "show", f"{baseline}:{rel_path}"],
+                         capture_output=True, text=True, cwd=REPO)
+    if old.returncode != 0:
+        return False
+    path = REPO / rel_path
+    if not path.exists():
+        return False
+    new_html = path.read_text(encoding="utf-8", errors="ignore")
+    return label in _section_labels(old.stdout) and label not in _section_labels(new_html)
+
+
+def _filter_loss_items_by_declarations(
+        items: list[dict], declarations: list[dict],
+        section_verifier=None) -> tuple[list[dict], set[int]]:
+    """items（[{file, detail}]）を declarations で絞り込む純粋関数。
+
+    宣言は2種類。
+      ① URL 置換  {slug, url}  … 「file に slug が部分一致」×「detail に url が部分一致」
+      ② セクション削除 {slug, section} … detail が「本文セクション N 個」のときだけ対象。
+         section_verifier(file, section) が True を返した宣言だけ数え、
+         その数が N 以上のときに限りその item を除外する（足りなければ HARD のまま）。
+         section_verifier は baseline に存在し作業ツリーに無いことを実地で確認する
+         （_section_removed）。None のときは②を一切適用しない。
+
+    戻り値: (remaining, consumed_indices)。remaining=宣言で説明できなかった item のみ。
     副作用なし（hard_failures/warnings/infos に触らない）＝ unit test しやすい形。"""
     remaining = []
     consumed: set[int] = set()
     for it in items:
-        matched_idx = None
-        for i, decl in enumerate(declarations):
-            slug, url = decl.get("slug", ""), decl.get("url", "")
-            if not slug or not url:
-                continue
-            if slug in it["file"] and url in it["detail"]:
-                matched_idx = i
-                break
-        if matched_idx is not None:
-            consumed.add(matched_idx)
+        matched: set[int] = set()
+        m = re.match(r"本文セクション\s*(\d+)\s*個", it["detail"])
+        if m and section_verifier is not None:
+            need = int(m.group(1))
+            for i, decl in enumerate(declarations):
+                slug, section = decl.get("slug", ""), decl.get("section", "")
+                if not slug or not section or slug not in it["file"]:
+                    continue
+                if section_verifier(it["file"], section):
+                    matched.add(i)
+            if len(matched) < need:
+                matched = set()
+        if not matched:
+            for i, decl in enumerate(declarations):
+                slug, url = decl.get("slug", ""), decl.get("url", "")
+                if not slug or not url:
+                    continue
+                if slug in it["file"] and url in it["detail"]:
+                    matched = {i}
+                    break
+        if matched:
+            consumed |= matched
         else:
             remaining.append(it)
     return remaining, consumed
@@ -1418,8 +1490,14 @@ def check_content_loss_guard() -> None:
     HARD FAIL するのを、宣言済み (slug, url) の項目だけスコープを絞って通す。
     (slug, url) は「file パスに slug が含まれる」×「消失 detail 文字列に url が
     部分一致する」で判定する（detail の文字列そのものに URL が出ない消失種別
-    （出典件数・section数・FIG数など）は原理上マッチしない＝宣言してもすり抜けを
+    （出典件数・FIG数など）は原理上マッチしない＝宣言してもすり抜けを
     防げない。URL がそのまま出る種別だけが対象）。
+
+    scripts/intentional-replacements.json（② 意図的セクション削除の宣言）:
+    {slug, section} 形式。リーフ型仕様が捨てると定めた独自セクション（§ ARCHIVES や
+    独自ラベルなど）を正規化で落としたときに「本文セクション N 個」の HARD を通す。
+    宣言しただけでは通らない：baseline に当該ラベルのセクションが実在し、作業ツリーに
+    無いことを git show で実地確認し、確認できた宣言の数が N 以上のときだけ除外する。
     自動失効は作らない：宣言を使って push しベースラインが origin/main へ進めば、
     次回 diff ではその URL はもう「消えていない」ので自然に不整合（stale）になる。
     stale 宣言は毎回 WARN で報告するので、それを見て手で削除するのがクリーンアップの
@@ -1445,7 +1523,9 @@ def check_content_loss_guard() -> None:
             elif s.startswith("−") and cur:
                 items.append({"file": cur, "detail": s[1:].strip()})
 
-        remaining, consumed = _filter_loss_items_by_declarations(items, declarations)
+        remaining, consumed = _filter_loss_items_by_declarations(
+            items, declarations,
+            section_verifier=lambda f, label: _section_removed(f, label, baseline))
 
         if remaining:
             detail = " / ".join(f"{r['file']}（{r['detail']}）" for r in remaining[:6])
@@ -1456,8 +1536,10 @@ def check_content_loss_guard() -> None:
 
     for i in consumed:
         decl = declarations[i]
+        what = (f"url={decl.get('url')}" if decl.get("url")
+                else f"section={decl.get('section')}")
         infos.append(
-            f"intentional-replacement 適用: slug={decl.get('slug')} url={decl.get('url')}"
+            f"intentional-replacement 適用: slug={decl.get('slug')} {what}"
             f"（{decl.get('reason', '(理由未記入)')}・宣言日={decl.get('declared', '?')}）"
             "＝ 消失HARDから除外")
     for i, decl in enumerate(declarations):
