@@ -24,10 +24,12 @@
 **現在の正（source of truth）:**
 - 日本語写真家ページの**構造・デザイン・ヘッダー・言語トグルは `photographers/*.html` 自身**
   （JA HTML が正）。構造・本文・解説・出典・関連欄の修正は HTML を直接編集する。
-- EN 写真家本文の正本は `data/photographers-en-content.json`。
+- **既存の EN 写真家ページは `en/photographers/*.html` 自身が正本**（2026-09-13 の HTML 正本化・最小版。
+  `docs/en-html-canon-migration.md` §2a）。本文・thesis・§REL・出典は EN HTML を直接編集する。
   `data/photographer-essay-overrides.js` の `textEn` に同じ文が残る場合は、事実修正時に両方をそろえる。
-- 英語ページは `scripts/build_photographers_en.py` が JA HTML を入力に再生成する
-  （この EN ビルダーは現行デザインを生成するので実行してよい）。
+- `scripts/build_photographers_en.py` は**新規 EN ページの作成専用**になった。既存ページへの書き込みは
+  既定で拒否され `🛑 REFUSED` を出す（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。
+  `data/photographers-en-content.json` は新規作成の入力データで、既存ページの正本ではない。
 
 **言語トグルが再び壊れていないかの確認:**
 ```bash
@@ -251,9 +253,13 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
 - **preflight の EN ガード（push 時に実効）** — baseline（`origin/main` 等）と比較し、触れた EN slug
   （`data/photographers-en-content.json` の差分 ∪ `en/photographers/*.html` の差分）について：
   - **本文・出典・thesis・リンクの消失**＝HARD（push ブロック）
-  - **EN HTML が JSON 宣言と乖離（再生成漏れ・生成物の直接編集）**＝HARD
-  - **生成物の EN HTML を直接編集した疑い**（HTML 変更なのに JSON 不変）＝WARN
-  - sup/cite・リンクの健全性＝WARN。手書き維持ページ（`annie-leibovitz` / `stieglitz`）は closure 例外。
+  - **keyword chip（`ph-kw` / `ph-side-chip`）のリンク退行**＝HARD。baseline でリンク付きだった chip が
+    裸 span になる・href が変わると止める（2026-09-13 追加。`--all` 再生成で 28 ページに起きる事故クラス）
+  - **JA と EN の §REL 非対称**（人物・運動の slug 集合）＝今回入れた分は HARD / baseline にも在る分は WARN
+  - **JA と EN の本文節ラベル（`ph-section__num`）の非対称**＝同じ判定（2026-09-13 追加）
+  - sup/cite・リンクの健全性＝WARN。
+  - **JSON closure と「EN HTML 直接編集疑い」は 2026-09-13 に削除した**。EN HTML の直接編集が通常手順に
+    なったため（`docs/en-html-canon-migration.md` §2a）。
   既存不具合 10 件は「触った時だけ」可視化され、無関係な push はブロックしない（スコープが baseline）。
 - **preflight の EN 写真家入口ガード（`check_en_entry_point`）** — JA `hreflang="en"` の実ページと `build_archive_en.EN_SLUG_BY_ID`／リダイレクト shim を含むビルダー入口の不整合を全カードで検査し、リンク切れ・入口欠落・実ページ二重化を HARD FAIL にする。
 - **preflight の旧ドメイン混入検査（`check_legacy_domain` / 2026-08-27 追加）** — 追跡ファイルに
@@ -372,19 +378,24 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
 - 旧デザイン生成器2本（写真家・アーカイブ）は実行されると物理ガードで中断する（上記）。
 
 ### EN 写真家ページ編集の必須フロー — スキップ禁止
-1. `python3 scripts/en_entry.py <slug>` — 対象 slug の EN 正本を確認
-2. `data/photographers-en-content.json` を修正（**EN HTML を直接編集しない。生成物**）
-3. `python3 scripts/build_photographers_en.py --slug <slug>` で EN HTML 再生成
-   （`--force` は消失ガードを外すので常用しない。誤発火時のみ）
-4. `python3 scripts/check_en_entry.py <slug>` — 対象 slug を検査
-5. `python3 scripts/preflight.py` → push（pre-push でも自動実行）
+
+**既存ページの修正（通常）:**
+1. `en/photographers/<slug>.html` を直接編集する（JSON も builder も使わない）
+2. `python3 scripts/check_en_entry.py <slug>` — 対象 slug を検査
+3. `python3 scripts/preflight.py` → push（pre-push でも自動実行）
+
+**新規ページの作成（当面のみ JSON + builder）:**
+1. `data/photographers-en-content.json` に entry を入れる
+2. `python3 scripts/build_photographers_en.py --slug <slug>`（出力先が未作成のときだけ書ける）
+3. 以降の修正は EN HTML を直接編集する
 
 ---
 
 ## Content storage — CRITICAL
 - JA 写真家ページ `photographers/*.html` は HTML 自身が正本。本文・解説・thesis・§REL・出典は HTML を直接編集する。
-- EN 写真家ページ `en/photographers/*.html` は出力物。本文系を直接編集してはならない。正本は `data/photographers-en-content.json`。
-- EN の本文は `body_html`、thesis は `thesis_html`、§REL は `site_directory_html` に入れてから `scripts/build_photographers_en.py --slug <slug>` で再生成する。
+- 既存の EN 写真家ページ `en/photographers/*.html` も HTML 自身が正本。JA と同じく直接編集する（2026-09-13〜）。
+- 新規 EN ページを作るときだけ `data/photographers-en-content.json` の `body_html` / `thesis_html` /
+  `site_directory_html` に入れて `scripts/build_photographers_en.py --slug <slug>` で1回生成する。
 - EN の事実修正は、必要に応じて `data/photographer-essay-overrides.js` の `textEn` も同じ内容にそろえる。
 
 ## 手書き追加が再生成で消えないためのルール — CRITICAL
@@ -394,14 +405,11 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
 | ページ種別 | 正本（手書きしてよい場所） | 再生成で消えるか |
 |---|---|---|
 | JA 写真家ページ `photographers/*.html` | **HTML 自身**（JA ジェネレータは実行禁止＋物理ガード） | 消えない |
-| EN 写真家ページ `en/photographers/*.html` | **`data/photographer-essay-overrides.js`… ではなく** EN は `data/photographers-en-content.json`（`thesis_html` / `site_directory_html` 等） | **JSON に無いものは `build_photographers_en.py` で消える** |
+| EN 写真家ページ `en/photographers/*.html` | **HTML 自身**（2026-09-13〜。builder は既存ページへの書き込みを拒否） | 消えない |
 
-- **EN 写真家ページの本文系（thesis「この写真家が変えたこと」/ §REL 関連写真家・運動 など）を
-  HTML に直接手書きしてはならない。** 必ず `data/photographers-en-content.json` の該当キー
-  （`thesis_html` は英訳本文、`site_directory_html` は `Related people` / `Related movements` の
-  contextual グループ）に入れてから `build_photographers_en.py` で再生成する。
-  JA 由来の §REL とミラーさせたいときは JSON の `site_directory_html` を JA §REL から作り直す
-  （実例：`scripts/fix_1839_en_thesis_related.py`）。
+- **EN 写真家ページの本文系（thesis「この写真家が変えたこと」/ §REL 関連写真家・運動 など）は
+  EN HTML に直接書いてよい**（2026-09-13〜）。既存ページを builder で再生成しない限り消えない。
+  JA §REL とそろえるのは手作業で、preflight の日英対称性ガードが取りこぼしを HARD で止める。
 - **安全装置（2026-06-16 追加）:** `build_photographers_en.py` は、上書きしようとしている EN ページの
   手書き thesis / §REL リンクが新出力に再現されない（＝消える）と検知したら、**そのページだけ
   上書きせずスキップし `🛑 SKIPPED … would delete:` と表示する**。黙って消えることはない。

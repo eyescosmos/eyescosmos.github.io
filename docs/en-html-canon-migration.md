@@ -58,6 +58,35 @@ Codex の初回見積もりは合計5日だったが、**付け替えと抽出�
 
 ---
 
+## 2a-DONE. 最小版は 2026-09-13 に実装済み（現況）
+
+**§2a の4項目はすべて入っている。以降の記述は背景として読む。**
+
+| 項目 | 実装 |
+|---|---|
+| 1. `check_en_direct_edit()` 削除 | 削除済み。**あわせて `check_en_changed_slug_closure()` も削除**（EN HTML に cite を直接足すと JSON と集合が食い違い HARD FAIL になり、最小版が成立しないため）。`scripts/check_en_entry.py` の `check_html_vs_json()` も既存ページでは検査しない（同じ理由。通常フローの検査が毎回 FAIL するため） |
+| 2. builder が既存ページを拒否 | `build_photographers_en.py` は `out_path` が実在すると `🛑 REFUSED` でスキップ。`--force` でも `--dry-run` でも解除されない。解除は `ALLOW_EN_REBUILD=1` のみ |
+| 3. 新規ガード3本 | `check_en_keyword_chip_preservation()` / `check_ja_en_rel_symmetry()` / `check_ja_en_section_symmetry()` を `preflight.py` に追加 |
+| 4. 文書更新 | `CLAUDE.md` / `AGENTS.md` / `docs/generators-and-guards.md` の正本マトリクスとENフローを更新 |
+
+**ガード3本の判定方式は「回帰検知」にした（設計の変更点）。** §3 は touched-only HARD を求めているが、
+実測した既存バックログが §REL人物 27ページ / §REL運動 11ページ / 節数 8ページ /
+chip本文-sidebar不一致 7ページ（401ペア中）あり、現在値でHARDにすると無関係な push が止まる。
+そこで **baseline（`origin/main`）にも在った非対称は WARN、今回の変更で新しく出たものだけ HARD** にした。
+`check_content_loss_guard` と同じ設計で、狙っている事故（JA を直して EN を忘れる／chip のリンクが剥がれる）は
+すべて「新しく出たもの」なので取りこぼさない。
+
+**フェーズB の完了条件は実データで確認済み。** builder の出力を書き込まずに再現して
+`preflight._chip_map` で比較したところ、**リンク付き chip が裸 span に退行するページを 28 件検出**した
+（§0 の実測値と一致）。ansel-adams で chip 裸化 / JA §REL 1件削除 / EN 節1つ削除を実際に作って
+`PREFLIGHT_BASE=HEAD python3 scripts/preflight.py` が HARD FAIL することも確認した。
+
+**既知の副作用（未対応・フェーズE で片付ける）**：`scripts/import_chatgpt_photographer.py` の
+`_verify_after_inject()` は既存ページに対し builder を回して結果を検証するので、**既存ページへの
+thesis 注入フローは REFUSED で止まる**。既存ページの修正は EN HTML の直接編集に切り替える（それが最小版の狙い）。
+
+---
+
 ## 2a. ★まず読む — 「昇格」自体はほぼタダ。3日の中身は昇格ではない
 
 **今のHTMLを正本と宣言するだけなら、ほぼ何もしなくてよい。** EN ページは既に HTML から配信されており、

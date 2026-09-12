@@ -6,8 +6,8 @@
 
 1. **`python3 scripts/generate_photographer_pages.py` を実行しない**。旧デザインを生成し、JAページ全体を巻き戻す。物理ガードがあっても解除しない。
 2. **`python3 scripts/generate_archive_pages.py` を実行しない**。
-3. **`en/photographers/*.html` を直接手編集しない**。再生成で消える。正本 `data/photographers-en-content.json` を直して再生成する。
-4. **事実修正を出力HTMLだけに入れない**。必ず正本へ入れる。再生成で誤情報が復活する。
+3. **既存の `en/photographers/*.html` を再生成しない**。既存ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は既存ページへの書き込みを既定で拒否する（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。**新規ENページの作成だけ** `data/photographers-en-content.json` + builder のまま。詳細 `docs/en-html-canon-migration.md` §2a。
+4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる。再生成で誤情報が復活する。JA写真家ページと既存EN写真家ページは HTML 自身が正本なので対象外。
 5. **捏造しない**。出典にない評価・書誌・URL・Amazonリンクを推測で作らない。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードで拒否）。写真家1人追加で `--all` は不要。安全な生成コマンド集は `docs/generators-and-guards.md`「フルリビルド・ガード」。
 7. **TOP12 ハードコードカード（`pc-top` / `idx` / `pc-top--XXX`）、フィルター/ソートUI、カードJSは依頼がない限り触らない**。カードの正は `cards-archive.html` / `card-data.json`。
@@ -17,34 +17,50 @@
 | サーフェス | 正本 | 生成コマンド | 備考 |
 |---|---|---|---|
 | JA写真家 `photographers/*.html` | **HTML自身** | なし（手編集・永続） | 本文・thesis・関連欄・出典・Amazon欄を手編集してよい |
-| EN写真家 `en/photographers/*.html` | `data/photographers-en-content.json` | `python3 scripts/build_photographers_en.py --slug <slug>` | `body_html`=本文 / `thesis_html`=thesis / `site_directory_html`=Related people・movements |
+| EN写真家 `en/photographers/*.html`（**既存**） | **HTML自身** | なし（手編集・永続） | JA と同じく直接編集してよい。JSON は読まれない |
+| EN写真家 `en/photographers/*.html`（**新規作成のみ**） | `data/photographers-en-content.json` | `python3 scripts/build_photographers_en.py --slug <slug>` | 出力先が未作成のときだけ書ける。既存ページは builder が拒否 |
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` | |
 | 国別 JA/EN | `data/country-pages.json` | `generate_country_pages.py` / `generate_country_pages_en.py`。`--country <slug>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 | 年代・運動 EN | JA HTML | `python3 scripts/build_taxonomy_en.py`。`--era <YYYY>` / `--slug <movement>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 
-- EN写真家の作業前に `python3 scripts/en_entry.py <slug>` で対象slugだけを確認する。巨大JSON全体を読む必要はない。
+- 既存EN写真家ページは HTML 自身が正本なので、`en/photographers/<slug>.html` を直接編集して終わり。JSON は読まれない。
 - EN本文の事実を直すときは、必要に応じて `data/photographer-essay-overrides.js` の `textEn` も同じ内容にそろえる。片方だけ直すと旧経路との不整合が残る。
-- EN生成は JA を読むだけで、JA を書き換えない。逆に EN HTML の手書き修正は、正本データに入っていない限り消える。
+- JA を直したら EN も同じ構造にそろえる。節や §REL を JA にだけ足すと preflight の日英対称性ガードが HARD で止める。
 
 ## EN 写真家ページ編集フロー — Required
 
+**既存ページの修正**（通常はこちら）:
+
 ```bash
-python3 scripts/en_entry.py <slug>
-# data/photographers-en-content.json を修正（EN HTMLは直接編集しない）
-python3 scripts/build_photographers_en.py --slug <slug>
+# en/photographers/<slug>.html を直接編集する（JSON も builder も使わない）
 python3 scripts/check_en_entry.py <slug>
 python3 scripts/preflight.py
 ```
 
-- ENページを修正・追加・新規作成したら、作業終了前に必ず `python3 scripts/check_en_entry.py <slug>` と `python3 scripts/preflight.py` を実行する。EN HTMLだけの差分で終えない。
-- `--force` は消失ガードを外すため常用しない。誤検知や意図的な削除時だけ使う。
+**新規ページの作成**（当面のみ JSON + builder）:
+
+```bash
+python3 scripts/en_entry.py <slug>
+# data/photographers-en-content.json に entry を入れる
+python3 scripts/build_photographers_en.py --slug <slug>   # 出力先が未作成のときだけ書ける
+python3 scripts/check_en_entry.py <slug>
+python3 scripts/preflight.py
+```
+
+- 既存ページに対して builder を回すと `🛑 REFUSED` で拒否される。これは正常。直接編集に切り替える。
+  `ALLOW_EN_REBUILD=1` は移行監査・緊急 rollback 比較だけに使う。
+- ENページを修正・追加・新規作成したら、作業終了前に必ず `python3 scripts/check_en_entry.py <slug>` と `python3 scripts/preflight.py` を実行する。
 - `preflight.py` は baseline（通常 `origin/main`）と比較し、触ったEN slugだけを検査する。既存不具合は無関係なpushをブロックしない。
+- preflight の EN 向け HTML ガード（2026-09-13 追加）:
+  - keyword chip（`ph-kw` / `ph-side-chip`）のリンクが baseline 比で裸span化・href変更した場合は HARD。
+  - JA と EN の §REL（人物・運動の slug 集合）の非対称は、今回入れたものが HARD、既存分は WARN。
+  - JA と EN の本文節ラベル（`ph-section__num`）の非対称も同じ判定。
 
 ## Required Workflow
 
 - 事実修正(生没年・地名・書名・出版社・年・ISBN・URLなど)は、必ず正本に入れる。
   - JA 写真家ページなら `photographers/*.html`。
-  - EN 写真家ページなら `data/photographers-en-content.json` の該当 `body_html` / `thesis_html` / `site_directory_html` と、必要なら `data/photographer-essay-overrides.js` の `textEn`。
+  - EN 写真家ページなら `en/photographers/*.html`（既存ページは HTML 自身が正本）と、必要なら `data/photographer-essay-overrides.js` の `textEn`。新規作成中のページだけ `data/photographers-en-content.json`。
 - 横断後処理 `scripts/link_country_keywords.py` は全ページを直接編集する。実行したら必ず `git status` / `git diff` で対象外ページの混入を確認し、巻き込みは revert する。二重国籍の国名が畳まれていないかも確認する。
 
 ### 実測ログ — Required
@@ -63,7 +79,7 @@ python3 scripts/preflight.py
 python3 scripts/add_photographer.py spec.json --apply --scaffold
 # --scaffold で photographers/<id>.html の安全な空骨格が生成される（既存は上書きしない）
 # 出力された貼り付けカードと手作業チェックリストに従う
-# ENは data/photographers-en-content.json を正本として編集し、build_photographers_en.py --slug <slug> で生成
+# EN新規ページは data/photographers-en-content.json に entry を入れ、build_photographers_en.py --slug <slug> で生成（以後の修正は EN HTML を直接編集）
 python3 scripts/check_new_photographer.py --slug <slug>
 python3 scripts/preflight.py
 ```
@@ -77,15 +93,16 @@ python3 scripts/preflight.py
 
 ## Content Preservation Guards
 
-- `scripts/build_photographers_en.py` の content-loss guard は、再生成で thesis / §RELリンク / cite-N / FIG / lead が消えるページを検知し、そのページだけ上書きせず `🛑 SKIPPED` を出す。
+- `scripts/build_photographers_en.py` は**既存 EN ページへの書き込みを既定で拒否**し `🛑 REFUSED` を出す（既存ページは HTML 自身が正本）。解除は `ALLOW_EN_REBUILD=1` のみ。
+- 新規作成時に効く content-loss guard は、再生成で thesis / §RELリンク / cite-N / FIG / lead が消えるページを検知し、そのページだけ上書きせず `🛑 SKIPPED` を出す。
   - 意図的に消す場合のみ `--force`。
   - 監査だけなら `--dry-run`。
 - `scripts/check_content_loss.py` は読み取り専用の横断チェック。JA/EN両方で HEAD 比の出典・セクション・FIG・thesis・lead の減少を報告する。
   - `--strict` は消失時のみ非0終了。
   - 文面だけの変化は「事実すり替えの疑い」として警告される場合がある。警告は目視確認する。
 - `scripts/en_entry.py <slug>` / `scripts/check_en_entry.py <slug>` は EN 写真家ページの対象slugだけを読む・検査するためのツール。通称slugも可（例: `atget` -> `eugene-atget`）。
-- `scripts/preflight.py` と `.githooks/pre-push` は id重複、card-data重複、GA欠落、触ったEN slugの内容消失、EN HTMLとJSONの乖離、EN HTML直接編集疑いなどを検査する。FAILなら push しない。緊急回避は `git push --no-verify`。
-  - EN写真家: `data/photographers-en-content.json` と `en/photographers/*.html` の差分から対象slugを推定し、内容消失・再生成漏れ・直接編集疑いを検知する。
+- `scripts/preflight.py` と `.githooks/pre-push` は id重複、card-data重複、GA欠落、触ったEN slugの内容消失、EN keyword chip のリンク消失、JA/EN の §REL・本文節の非対称などを検査する。FAILなら push しない。緊急回避は `git push --no-verify`。
+  - EN写真家: 触った `en/photographers/*.html` を baseline と比較し、本文・出典の消失、keyword chip のリンク退行、JA ページとの §REL・本文節の非対称を検知する。EN HTML の直接編集は通常手順なので警告しない。
   - EN国別: `data/country-pages.json` の主要情報消失をHARD、`en/countries/*.html` だけの変更を直接編集疑いWARNにする。
   - EN年代/運動: `data/taxonomy-en-content.json` のメタ・セクション消失をHARD、`en/eras/*.html` / `en/movements/*.html` だけの変更を直接編集疑いWARNにする。
   - ENアーカイブ: `card-data.json` のカード数・id・`nameEn` / `nameJa` / `href` 消失をHARD、`en/archive.html` だけの変更を直接編集疑いWARNにする。
@@ -111,7 +128,7 @@ git diff origin/main
 
 - `git diff origin/main` では、本文・thesis・関連欄・出典・作品画像・外部リンク・Amazonリンク・SEOタグが意図せず消えていないか目視する。
 - push 前に必ず `git status --short` と `git diff --name-only` / `git diff --stat` を見て、依頼対象外ファイルの巻き込み、生成前状態への巻き戻り、本文・構造・リンク・出典の消失、意図しない差分がないことを確認する。未追跡ファイルは依頼対象でない限り stage しない。
-- 警告が出た場合は、意図した変更か、正本(JA HTML / `data/photographers-en-content.json` / `data/photographer-essay-overrides.js`)と一致しているか確認してから push する。
+- 警告が出た場合は、意図した変更か、正本(JA HTML / EN HTML。写真家ページはどちらも HTML 自身)と一致しているか確認してから push する。
 
 ## 詳細仕様の参照先 — タスク開始前に該当ファイルを読む
 

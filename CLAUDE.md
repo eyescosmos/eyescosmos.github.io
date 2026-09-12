@@ -10,8 +10,8 @@
 
 1. **`scripts/generate_photographer_pages.py` を実行しない**。旧デザインを生成し、JAページを旧構造と言語トグル破損へ巻き戻す。物理ガードを解除しない。
 2. **`scripts/generate_archive_pages.py` を実行しない**。
-3. **`en/photographers/*.html` を直接手編集しない**。再生成で消える。正本 `data/photographers-en-content.json` を直して再生成する。
-4. **事実修正を出力HTMLだけに入れない**。必ず正本へ入れる（再生成で誤情報が復活するため）。
+3. **既存の `en/photographers/*.html` を `build_photographers_en.py` で再生成しない**。既存ENページは **HTML 自身が正本**（2026-09-13〜）。builder は既存ページへの書き込みを既定で拒否する（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。**新規ENページの作成だけ** 当面 `data/photographers-en-content.json` + builder のまま。詳細 `docs/en-html-canon-migration.md` §2a。
+4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ / コロフォン / AI開示）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる（再生成で誤情報が復活するため）。JA写真家ページと既存EN写真家ページは HTML 自身が正本なので、この項の対象外。
 5. **捏造しない**。出典にない評価・書誌・年・URL・Amazonリンクを推測で作らない。出典準拠。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードが拒否）。写真家1人追加で `--all` は不要（`docs/generators-and-guards.md`「フルリビルド・ガード」）。
 7. **AI開示ブロック（`<!-- AI-DISCLOSURE -->` で括られた3行＋短縮版）を個別HTMLで直さない**。正本は `scripts/ai_disclosure.py`。直しても preflight の `check_ai_disclosure()` が HARD FAIL で止める。文面変更は正本を直して `python3 scripts/inject_ai_disclosure.py --all`。
@@ -24,7 +24,8 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 | サーフェス | 正本 | 生成コマンド | 備考 |
 |---|---|---|---|
 | JA写真家 `photographers/*.html` | **HTML自身** | なし（手編集・永続） | 本文・thesis・§REL・出典・書籍欄を手編集してよい |
-| EN写真家 `en/photographers/*.html` | `data/photographers-en-content.json` | `python3 scripts/build_photographers_en.py --slug <slug>` | `body_html`=本文 / `thesis_html`=thesis / `site_directory_html`=Related people・movements |
+| EN写真家 `en/photographers/*.html`（**既存**） | **HTML自身** | なし（手編集・永続） | JA と同じく直接編集してよい。JSON は読まれない |
+| EN写真家 `en/photographers/*.html`（**新規作成のみ**） | `data/photographers-en-content.json` | `python3 scripts/build_photographers_en.py --slug <slug>` | 出力先が未作成のときだけ書ける。既存ページは builder が拒否 |
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` | |
 | 国別 JA/EN | `data/country-pages.json` | `generate_country_pages.py` / `generate_country_pages_en.py`。`--country <slug>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 | 年代・運動 EN | JA HTML | `python3 scripts/build_taxonomy_en.py`。`--era <YYYY>` / `--slug <movement>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
@@ -33,10 +34,18 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 | カード枚数表示（archive hero・「表示中 N / M」・トップ/archive の meta 枚数） | `card-data.json` | `python3 scripts/sync_card_counts.py`（`--check` で検査のみ） | 手で数字を打ち直さない。`add_photographer.py --apply-surfaces` 後に自動実行。preflight `check_card_counts()` が HARD FAIL |
 
 ### EN写真家ページの編集手順
-- EN の本文 / thesis / §REL を直すときは EN HTML を触らず、正本JSONを直して `python3 scripts/build_photographers_en.py --slug <slug>` で再生成する。
-- EN 本文の事実を直す場合は、`data/photographers-en-content.json` の該当 `body_html` と、必要なら旧経路の `data/photographer-essay-overrides.js` の `textEn` を**両方**そろえる。片方だけだと不整合が残る。
-- EN ページを修正・追加・新規作成したら、**作業終了前に必ず**: `data/photographers-en-content.json`（同slugがあれば `data/photographers-en-stage4.json` も）を確認し、`python3 scripts/build_photographers_en.py --slug <slug> --dry-run` が `SKIPPED` しないことを確認する。EN HTMLだけの差分で終えない。
-- 詳細な EN 編集フロー・手書き保持ルールは `docs/generators-and-guards.md`。
+
+- **既存ページの修正**：`en/photographers/<slug>.html` を直接編集して終わり。JSON は直さない。
+  builder も走らせない（走らせても既定で拒否される）。JA と同じ「直して終わり」。
+- **新規ページの作成**：当面これまでどおり `data/photographers-en-content.json` に entry を入れて
+  `python3 scripts/build_photographers_en.py --slug <slug>`。出力先が存在しないときだけ書ける。
+- EN の事実を直すとき、旧経路 `data/photographer-essay-overrides.js` の `textEn` に同じ本文がある場合は
+  そちらもそろえる（撤去までの暫定）。
+- 検査は `python3 scripts/check_en_entry.py <slug>`（JSON closure は既存ページでは実施しない）と
+  `python3 scripts/preflight.py`。preflight は EN HTML を正本として次を見る:
+  keyword chip のリンク保存 / JA・EN の §REL 対称性 / JA・EN の本文節の対称性。
+- **JA を直したら EN も同じ構造にする**。節を足した・§REL を足したのに EN を忘れると preflight が HARD で止める。
+- 移行の背景と残りフェーズは `docs/en-html-canon-migration.md`。
 
 ### 横断スクリプト後の確認
 - `scripts/link_country_keywords.py` など横断スクリプトを回したら、`git status` / `git diff` で対象外ページの巻き込みを確認し、混入差分は revert する。二重国籍の国名が畳まれていないかも確認する。
@@ -53,7 +62,7 @@ python3 scripts/preflight.py
 git diff origin/main
 ```
 
-- 警告が出たら、意図した変更か、正本（JA HTML / `data/photographers-en-content.json` / `data/photographer-essay-overrides.js`）と一致しているか確認してから push する。
+- 警告が出たら、意図した変更か、正本（JA HTML / EN HTML。写真家ページはどちらも HTML 自身）と一致しているか確認してから push する。
 - 必ず `git status --short` と `git diff --name-only` / `git diff --stat` も確認し、次がないことを確かめる: 依頼対象外ファイルの巻き込み / 生成前状態への巻き戻り / 本文・構造・リンク・出典の消失 / 意図しない差分。
 - 未追跡ファイルは依頼対象でない限り stage しない。
 - 機械チェック（preflight / pre-push フック）が多くの事故を自動ブロックする。仕組みの詳細は `docs/generators-and-guards.md`。

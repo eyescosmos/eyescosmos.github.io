@@ -10,6 +10,9 @@ English content from data/photographers-en-content.json.
 
 Idempotent overwrite generator. Python 3 stdlib only.
 
+既存 EN ページは HTML 自身が正本なので、通常は再生成を拒否する。
+この builder は新規ページ作成と、明示した移行監査・緊急比較にだけ使う。
+
   python3 scripts/build_photographers_en.py --pilot
   python3 scripts/build_photographers_en.py --slug ansel-adams [--slug ...]
   python3 scripts/build_photographers_en.py --all
@@ -1869,6 +1872,7 @@ def main():
     warnings = []
     written = []
     guard_skips = []
+    existing_refusals: list[str] = []
     for ja_file in targets:
         if ja_file in missing_true:
             warnings.append(f'{ja_file}: in missing_en_true, skipped (Stage 4)')
@@ -1934,6 +1938,11 @@ def main():
                                 'HAND_MAINTAINED_EN（手書き維持・再生成禁止。'
                                 '解除は ALLOW_HAND_MAINTAINED_REBUILD=1）'))
             continue
+        # 既存 EN ページは HTML 自身が正本。JSON からの再生成による手編集の
+        # 消失を防ぐため、移行監査・緊急 rollback 比較以外は書き込みを拒否する。
+        if os.path.exists(out_path) and os.environ.get('ALLOW_EN_REBUILD') != '1':
+            existing_refusals.append(slug + '.html')
+            continue
         # AI開示ブロック（全ページ共通）。本文消失ガードより前に入れて、
         # 既存ページ（ブロックあり）と新出力を同条件で比較させる。
         out, _ = _ai_disclosure.ensure(out, 'en')
@@ -1961,6 +1970,14 @@ def main():
             print('  ✋ %s — would delete: %s' % (fn, loss))
         print('  → 手書き内容を data/photographers-en-content.json に入れてから再実行してください\n'
               '    （thesis_html / site_directory_html）。意図的に消す場合のみ --force。')
+    if existing_refusals:
+        print('\n🛑 REFUSED %d page(s): 既存 EN ページは HTML 自身が正本（再生成しない）'
+              % len(existing_refusals))
+        for fn in existing_refusals:
+            print('  ✋ %s' % fn)
+        print('  → 既存ページの修正は en/photographers/<slug>.html を直接編集する。\n'
+              '    JSON を直して再生成する運用は終了（docs/en-html-canon-migration.md §2a）。\n'
+              '    移行監査・緊急 rollback 比較のみ ALLOW_EN_REBUILD=1 で解除できる。')
     if warnings:
         print('\nWarnings (%d):' % len(warnings))
         for w in warnings:

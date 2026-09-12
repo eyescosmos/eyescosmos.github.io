@@ -183,7 +183,14 @@ def check_links(entry, rep):
 
 
 def check_html_vs_json(entry, slug, rep):
-    """再生成済み EN HTML が JSON 宣言と一致するか（HTML-vs-JSON closure）。"""
+    """再生成済み EN HTML が JSON 宣言と一致するか（HTML-vs-JSON closure）。
+
+    2026-09-13 の HTML 正本化（最小版・docs/en-html-canon-migration.md §2a）以降、
+    既存 EN ページは HTML 自身が正本で、JSON は再生成しない参照データに降格した。
+    HTML を直接編集すれば JSON と乖離するのが正常なので、実ページが存在する場合は
+    この closure 検査を行わない（行うと通常運用が毎回 FAIL する）。
+    新規ページ作成は当面 JSON + builder のままなので、関数自体は残す。
+    """
     if slug in HAND_MAINTAINED_EN:
         rep.warn('EN 手書き維持ページ（%s）: JSON は正本でないため closure 検査スキップ' % slug)
         return
@@ -191,30 +198,8 @@ def check_html_vs_json(entry, slug, rep):
     if not os.path.exists(path):
         rep.warn('EN HTML 未生成: en/photographers/%s（closure 検査スキップ）' % slug)
         return
-    with open(path, encoding='utf-8') as fh:
-        html = fh.read()
-
-    html_cite = set(int(x) for x in CITE_ID_RE.findall(html))
-    json_cite = set(int(x) for x in CITE_ID_RE.findall(entry.get('sources_html') or ''))
-    if html_cite != json_cite:
-        only_html = sorted(html_cite - json_cite)
-        only_json = sorted(json_cite - html_cite)
-        rep.fail('HTML と JSON の cite-id 集合が不一致'
-                 + (' HTMLのみ:%s' % only_html if only_html else '')
-                 + (' JSONのみ:%s' % only_json if only_json else ''))
-
-    # 作品/外部リンクと Amazon リンクの集合が HTML から欠落していないか。
-    # ただし禁止ドメイン（Wikipedia 等）はビルダーが意図的に落とすので closure 対象外
-    # （混入自体は別途 prohibited-domain WARN で検出する）。
-    def keep(h):
-        low = h.lower()
-        return h.startswith('http') and not any(d in low for d in PROHIBITED_SOURCE_DOMAINS)
-    json_links = {h for h, _ in iter_anchors(all_link_html(entry)) if keep(h)}
-    html_links = {h for h, _ in iter_anchors(html) if h.startswith('http')}
-    missing = sorted(l for l in json_links if l not in html_links)
-    if missing:
-        rep.fail('JSON にあるが再生成 HTML に無いリンク（%d件・要EN再生成）: %s'
-                 % (len(missing), missing[:5] + (['…'] if len(missing) > 5 else [])))
+    rep.warn('既存 EN ページは HTML 自身が正本（%s）。JSON closure 検査はスキップ'
+             '（docs/en-html-canon-migration.md §2a）' % slug)
 
 
 def check_git_scope(slug, rep):

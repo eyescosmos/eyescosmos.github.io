@@ -56,6 +56,12 @@ try:
 except Exception:  # noqa: BLE001
     cnp = None
 
+try:
+    sys.path.insert(0, str(REPO / "scripts"))
+    from build_taxonomy_en import STUB_TO_SLUG as _MOVEMENT_JA_TO_EN  # noqa: E402
+except Exception:  # noqa: BLE001
+    _MOVEMENT_JA_TO_EN = {}
+
 from sync_card_counts import PHOTO_ARTICLE_RE, PHOTO_HREF_RE  # noqa: E402
 
 EN_CONTENT_JSON = "data/photographers-en-content.json"
@@ -513,9 +519,6 @@ def _all_link_html(entry: dict) -> str:
     return "\n".join(chunks)
 
 
-HAND_MAINTAINED_EN = getattr(cee, "HAND_MAINTAINED_EN", {"stieglitz.html", "annie-leibovitz.html"})
-
-
 @functools.lru_cache(maxsize=1)
 def _touched_en() -> dict:
     """baseline（origin/main 等）と作業ツリーを比較し、触れた EN slug を集める。
@@ -627,33 +630,297 @@ def check_en_content_loss() -> None:
             )
 
 
-def check_en_changed_slug_closure() -> None:
-    """触った slug の EN HTML が JSON 宣言と一致するか（HARD）。
-    JSON を直して再生成し忘れた／生成物を直接編集して JSON と乖離した状態を捕捉。"""
-    if cee is None:
+PH_KW_RE = re.compile(r'<span class="ph-kw[^"]*">(.*?)</span>', re.S)
+PH_SIDE_RE = re.compile(r'<span class="ph-side-chip[^"]*">(.*?)</span>', re.S)
+CHIP_A_RE = re.compile(r'<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', re.S)
+SEC_NUM_RE = re.compile(r'<span class="ph-section__num">(.*?)</span>', re.S)
+
+
+def _chip_term(s: str) -> str:
+    """表示語の正規化キー（タグ除去・実体参照復元・NFKC・空白畳み・小文字）。"""
+    text = html_lib.unescape(re.sub(r'<[^>]+>', '', s))
+    text = unicodedata.normalize("NFKC", text)
+    return re.sub(r'\s+', ' ', text).strip().lower()
+
+
+def _chip_map(html: str, pat: re.Pattern) -> dict[str, str | None]:
+    """chip の {正規化表示語: href または None}。アンカーの表示語を優先する。"""
+    out: dict[str, str | None] = {}
+    for inner in pat.findall(html):
+        anchor = CHIP_A_RE.search(inner)
+        term = _chip_term(anchor.group(2) if anchor else inner)
+        if term:
+            out[term] = anchor.group(1) if anchor else None
+    return out
+
+
+def _rel_slug_sets(html: str, is_en: bool) -> tuple[set[str], set[str]]:
+    """§REL の href から、人物 slug 集合と運動 slug 集合を分けて返す。"""
+    people: set[str] = set()
+    movements: set[str] = set()
+    prefix = r"/en" if is_en else ""
+    person_re = re.compile(
+        rf'{prefix}/photographers/([^/?#"]+)\.html(?:[?#][^"]*)?$')
+    movement_re = re.compile(
+        rf'{prefix}/movements/([^/?#"]+)\.html(?:[?#][^"]*)?$')
+    for attrs, body in re.findall(r'<ul\b([^>]*)>(.*?)</ul>', html, re.S | re.I):
+        class_match = re.search(r'\bclass\s*=\s*(["\'])(.*?)\1', attrs, re.S | re.I)
+        classes = class_match.group(2).split() if class_match else []
+        if "ph-rel-list" not in classes:
+            continue
+        is_movement_list = "ph-rel-movements" in classes
+        slug_re = movement_re if is_movement_list else person_re
+        target = movements if is_movement_list else people
+        for href in re.findall(r'\bhref\s*=\s*["\']([^"\']+)["\']', body, re.I):
+            match = slug_re.search(unquote(href))
+            if match:
+                target.add(match.group(1))
+    return people, movements
+
+
+def _section_num_labels(html: str) -> list[str]:
+    """言語非依存の ph-section__num ラベルを正規化して返す。"""
+    return sorted(
+        re.sub(r'\s+', '', _chip_term(raw)).upper()
+        for raw in SEC_NUM_RE.findall(html)
+    )
+
+
+@functools.lru_cache(maxsize=1)
+def _ja_en_photographer_slug_map() -> tuple[dict[str, str], dict[str, str]]:
+    """JA HTML の hreflang=en から (JA→EN, EN→JA) slug 対応を作る。"""
+    ja_to_en: dict[str, str] = {}
+    en_to_ja: dict[str, str] = {}
+    for path in sorted((REPO / "photographers").glob("*.html")):
+        if path.name.endswith("-backup.html"):
+            continue
+        raw = path.read_text(encoding="utf-8", errors="ignore")
+        link = re.search(
+            r'<link\b(?=[^>]*\bhreflang=["\']en["\'])[^>]*'
+            r'\bhref=["\'][^"\']*/en/photographers/([^/?#"\']+)\.html(?:[?#][^"\']*)?["\'][^>]*>',
+            raw,
+            re.I,
+        )
+        if not link:
+            continue
+        ja_slug = path.stem
+        en_slug = unquote(link.group(1))
+        ja_to_en[ja_slug] = en_slug
+        en_to_ja[en_slug] = ja_slug
+    return ja_to_en, en_to_ja
+
+
+def _real_photographer_html(rel: str, ref: str | None = None) -> str | None:
+    """作業ツリーまたは ref の実ページを読む。shim と backup は None。"""
+    if rel.endswith("-backup.html"):
+        return None
+    if ref is None:
+        path = REPO / rel
+        if not path.exists():
+            return None
+        raw = path.read_text(encoding="utf-8", errors="ignore")
+    else:
+        raw = _git_show(ref, rel)
+        if raw is None:
+            return None
+    return None if is_redirect_stub(raw) else raw
+
+
+def _touched_ja_en_photographer_pairs() -> list[tuple[str, str]]:
+    """JA / EN のどちらかが touched な実ページペアを返す。"""
+    baseline = _baseline_ref()
+    ja_to_en, en_to_ja = _ja_en_photographer_slug_map()
+    pairs: set[tuple[str, str]] = set()
+    for rel, _ in _touched_html(baseline, ["photographers", "en/photographers"]):
+        slug = Path(rel).stem
+        if rel.startswith("en/"):
+            ja_slug = en_to_ja.get(slug)
+            if ja_slug:
+                pairs.add((ja_slug, slug))
+        else:
+            en_slug = ja_to_en.get(slug)
+            if en_slug:
+                pairs.add((slug, en_slug))
+    return sorted(
+        (ja_slug, en_slug)
+        for ja_slug, en_slug in pairs
+        if _real_photographer_html(f"photographers/{ja_slug}.html") is not None
+        and _real_photographer_html(f"en/photographers/{en_slug}.html") is not None
+    )
+
+
+def check_en_keyword_chip_preservation() -> None:
+    """EN keyword chip のリンク消失・変更と本文/sidebarの新規不一致を検出する。"""
+    baseline = _baseline_ref()
+    try:
+        touched = _touched_html(baseline, ["en/photographers"])
+    except Exception:  # noqa: BLE001
         return
-    for slug, info in _touched_en().items():
-        if slug in HAND_MAINTAINED_EN or info["work"] is None:
+    for rel, work_html in touched:
+        base_html = _git_show(baseline, rel)
+        if base_html is None or is_redirect_stub(base_html):
+            continue  # 新規ページと baseline shim は保存比較の対象外
+        slug = Path(rel).stem
+        surfaces = (("本文", PH_KW_RE), ("sidebar", PH_SIDE_RE))
+        maps: dict[str, tuple[dict[str, str | None], dict[str, str | None]]] = {}
+        for surface, pat in surfaces:
+            base_map = _chip_map(base_html, pat)
+            work_map = _chip_map(work_html, pat)
+            maps[surface] = (base_map, work_map)
+            for term, old_href in sorted(base_map.items()):
+                if old_href is None:
+                    continue
+                if term not in work_map:
+                    warnings.append(
+                        f"[EN keyword {slug}] {surface} chip {term!r} が消失"
+                        f"（旧href={old_href}）")
+                elif work_map[term] is None:
+                    hard_failures.append(
+                        f"[EN keyword {slug}] {surface} chip {term!r} がリンク付きから裸spanへ退行"
+                        f"（旧href={old_href}）。en/photographers/{slug}.html の該当 chip に "
+                        f"<a href=\"{old_href}\"> を戻す")
+                elif work_map[term] != old_href:
+                    hard_failures.append(
+                        f"[EN keyword {slug}] {surface} chip {term!r} の href が変更"
+                        f"（旧href={old_href} / 新href={work_map[term]}）。"
+                        f"en/photographers/{slug}.html の該当 chip に "
+                        f"<a href=\"{old_href}\"> を戻す")
+
+        base_mismatch = maps["本文"][0] != maps["sidebar"][0]
+        work_mismatch = maps["本文"][1] != maps["sidebar"][1]
+        if work_mismatch:
+            message = (
+                f"[EN keyword {slug}] 本文chipとsidebar chipが不一致"
+                f"（本文={maps['本文'][1]} / sidebar={maps['sidebar'][1]}）")
+            if base_mismatch:
+                warnings.append(message + "。baseline にも在る既存不一致")
+            else:
+                hard_failures.append(
+                    message + f"。en/photographers/{slug}.html の該当 chip に "
+                    "<a href=\"...\"> を戻す")
+
+
+def _rel_asymmetry(ja_html: str, en_html: str,
+                   ref: str | None) -> set[tuple[str, str, str]]:
+    """比較対象の実ページを持つ §REL slug の片側欠落を返す。"""
+    ja_to_en, en_to_ja = _ja_en_photographer_slug_map()
+    ja_people_raw, ja_movements_raw = _rel_slug_sets(ja_html, False)
+    en_people_raw, en_movements_raw = _rel_slug_sets(en_html, True)
+
+    ja_people = {
+        ja_to_en[slug] for slug in ja_people_raw
+        if slug in ja_to_en
+        and _real_photographer_html(
+            f"en/photographers/{ja_to_en[slug]}.html", ref) is not None
+    }
+    en_people = {
+        slug for slug in en_people_raw
+        if slug in en_to_ja
+        and _real_photographer_html(
+            f"photographers/{en_to_ja[slug]}.html", ref) is not None
+    }
+    ja_movements = {
+        _MOVEMENT_JA_TO_EN[slug] for slug in ja_movements_raw
+        if slug in _MOVEMENT_JA_TO_EN
+        and _real_photographer_html(
+            f"en/movements/{_MOVEMENT_JA_TO_EN[slug]}.html", ref) is not None
+    }
+    en_movements = {
+        slug for slug in en_movements_raw
+        if _real_photographer_html(f"en/movements/{slug}.html", ref) is not None
+    }
+
+    out: set[tuple[str, str, str]] = set()
+    out.update(("JA にだけ有る", "人物", slug) for slug in ja_people - en_people)
+    out.update(("EN にだけ有る", "人物", slug) for slug in en_people - ja_people)
+    out.update(("JA にだけ有る", "運動", slug) for slug in ja_movements - en_movements)
+    out.update(("EN にだけ有る", "運動", slug) for slug in en_movements - ja_movements)
+    return out
+
+
+def check_ja_en_rel_symmetry() -> None:
+    """touched な写真家ペアの §REL 非対称を baseline 比で検出する。"""
+    if not _MOVEMENT_JA_TO_EN:
+        return
+    baseline = _baseline_ref()
+    try:
+        pairs = _touched_ja_en_photographer_pairs()
+    except Exception:  # noqa: BLE001
+        return
+    for ja_slug, en_slug in pairs:
+        ja_rel = f"photographers/{ja_slug}.html"
+        en_rel = f"en/photographers/{en_slug}.html"
+        ja_html = _real_photographer_html(ja_rel)
+        en_html = _real_photographer_html(en_rel)
+        if ja_html is None or en_html is None:
             continue
-        rep = cee.Report(slug)
-        cee.check_html_vs_json(info["work"], slug, rep)
-        for f in rep.fails:
+        now = _rel_asymmetry(ja_html, en_html, None)
+        base_ja = _real_photographer_html(ja_rel, baseline)
+        base_en = _real_photographer_html(en_rel, baseline)
+        base = (_rel_asymmetry(base_ja, base_en, baseline)
+                if base_ja is not None and base_en is not None else set())
+        for side, kind, slug in sorted(now - base):
             hard_failures.append(
-                f"[EN closure] {f}（build_photographers_en.py --slug {slug[:-5]} を実行）")
-
-
-def check_en_direct_edit() -> None:
-    """生成物の EN HTML が直接編集された疑いを検知（WARN）。
-    EN HTML が変わったのに対応する JSON が変わっていない＝手編集の兆候。
-    手書き維持ページ（annie-leibovitz / stieglitz）は例外。"""
-    for slug, info in _touched_en().items():
-        if slug in HAND_MAINTAINED_EN:
-            continue
-        if info["html_changed"] and not info["json_changed"]:
+                f"[JA/EN §REL {ja_slug} ↔ {en_slug}] 今回の非対称: "
+                f"{side} {kind} slug={slug}")
+        for side, kind, slug in sorted(now & base):
             warnings.append(
-                f"[EN {slug}] 生成物の EN HTML を直接編集した疑い。正本は {EN_CONTENT_JSON}。"
-                f"JSON を直して build_photographers_en.py --slug {slug[:-5]} で再生成すること"
-            )
+                f"[JA/EN §REL {ja_slug} ↔ {en_slug}] baseline にも在る既存非対称: "
+                f"{side} {kind} slug={slug}")
+
+
+def _section_asymmetry(ja_labels: list[str], en_labels: list[str]) -> set[tuple[str, str, int]]:
+    """重複ラベルも区別し、JA/EN の片側に余る節ラベルを返す。"""
+    ja_counts = Counter(ja_labels)
+    en_counts = Counter(en_labels)
+    out: set[tuple[str, str, int]] = set()
+    for label in sorted(ja_counts.keys() | en_counts.keys()):
+        if ja_counts[label] > en_counts[label]:
+            out.update(("JA にだけ有る", label, n)
+                       for n in range(en_counts[label] + 1, ja_counts[label] + 1))
+        elif en_counts[label] > ja_counts[label]:
+            out.update(("EN にだけ有る", label, n)
+                       for n in range(ja_counts[label] + 1, en_counts[label] + 1))
+    return out
+
+
+def check_ja_en_section_symmetry() -> None:
+    """touched な写真家ペアの節ラベル非対称を baseline 比で検出する。"""
+    baseline = _baseline_ref()
+    try:
+        pairs = _touched_ja_en_photographer_pairs()
+    except Exception:  # noqa: BLE001
+        return
+    for ja_slug, en_slug in pairs:
+        ja_rel = f"photographers/{ja_slug}.html"
+        en_rel = f"en/photographers/{en_slug}.html"
+        ja_html = _real_photographer_html(ja_rel)
+        en_html = _real_photographer_html(en_rel)
+        if ja_html is None or en_html is None:
+            continue
+        ja_labels = _section_num_labels(ja_html)
+        en_labels = _section_num_labels(en_html)
+        now = _section_asymmetry(ja_labels, en_labels)
+        base_ja = _real_photographer_html(ja_rel, baseline)
+        base_en = _real_photographer_html(en_rel, baseline)
+        if base_ja is not None and base_en is not None:
+            base = _section_asymmetry(
+                _section_num_labels(base_ja), _section_num_labels(base_en))
+        else:
+            base = set()
+        new_items = now - base
+        old_items = now & base
+        new_labels = [f"{side} {label}" for side, label, _ in sorted(new_items)]
+        old_labels = [f"{side} {label}" for side, label, _ in sorted(old_items)]
+        detail = f"JA={ja_labels} / EN={en_labels}"
+        if new_items:
+            hard_failures.append(
+                f"[JA/EN sections {ja_slug} ↔ {en_slug}] 今回の節非対称: "
+                f"{detail} / 差分={new_labels}")
+        if old_items:
+            warnings.append(
+                f"[JA/EN sections {ja_slug} ↔ {en_slug}] baseline にも在る既存節非対称: "
+                f"{detail} / 差分={old_labels}")
 
 
 def check_en_changed_slug_integrity() -> None:
@@ -1532,7 +1799,7 @@ def check_content_loss_guard() -> None:
             detail = " / ".join(f"{r['file']}（{r['detail']}）" for r in remaining[:6])
             hard_failures.append(
                 "本文消失の疑い（check_content_loss・JA/EN 写真家）: " + detail
-                + "。意図的でなければ正本(JA HTML / photographers-en-content.json)へ復元。"
+                + "。意図的でなければ正本(JA HTML / EN HTML＝どちらも HTML 自身)へ復元。"
                 + "意図的な置換なら scripts/intentional-replacements.json へ宣言を追加")
 
     for i in consumed:
@@ -2209,8 +2476,9 @@ def main() -> int:
     check_rel_unlinked_names()
     check_orphan_class_tokens()
     check_en_content_loss()
-    check_en_changed_slug_closure()
-    check_en_direct_edit()
+    check_en_keyword_chip_preservation()
+    check_ja_en_rel_symmetry()
+    check_ja_en_section_symmetry()
     check_en_changed_slug_integrity()
     check_en_rel_annotations()
     check_en_entry_point()

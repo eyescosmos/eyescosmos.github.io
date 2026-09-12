@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-13 | (engine)EN写真家ページ HTML正本化 最小版（§2a） | engine | （Daisuke記入） | 0 | 3（下記） | 7ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-12 | christer-stromholm（idx 396・0912パイロット） | new | 60分（0912バッチ全体・Daisuke実測） | 2（render-ja引数例とFrance guard順） | 3系統（下記） | 20ファイル | JA/EN素材どおり | 33/33 |
 | 2026-09-12 | 0912素材残り5名（idx 397–401） | new×5 | 同上（バッチ合算60分） | 0 | 4系統（下記） | 公開HTML 25面 | JA/EN素材どおり | 184/184 |
 | 2026-09-12 | 0911素材6名（idx 390–395） | new×6 | （Daisuke記入） | 1（パイロット時のEN merge前surface生成失敗） | 7系統（下記） | 63ファイル | JA/EN素材どおり | 178/178 |
@@ -3203,3 +3204,40 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
 - **判断して素材を採らなかった点**：`jp-鹿島清兵衛` の §SRC から `shashinshi.biz` 1本が落ちた。新本文は24本の機関ソースに置き換わり、この出典に対応する記述が本文から消えているため、参照のない出典を出典欄へ戻すと本文との一対一が崩れる。読者向けリンクとして JA §REF と EN `external_links_html` へ移して保全した。
 - **検査**：`check_content_loss.py`（sibylle の §ARCHIVES 削除は宣言で除外）/ `preflight.py`（EXIT 0・HARD 0）/ `check_photographer_link_integrity.py` はEXIT 0。EN dry-run は9/9で SKIPPED 0。20ページ（JA10＋EN10）で AI開示ブロックは言語別正本と完全一致、GA 2箇所・hreflang 3本を全ページで保持。
 - **既知WARN判定**：`[EN sibylle-bergemann.html] 生成物の EN HTML を直接編集した疑い` は正本JSON未登録ページの既知の偽陽性（ビルダーが skip する側）。`hiroshi-sugimoto` の `no photobooks_html` / `no external_links_html`、`yuki-tawada` の `jsonld` head fallback は baseline 既存。既存 movement hero drift・カードtag非前方一致91枚・stale 宣言群も baseline 既存。未知WARNなし。
+
+
+## 2026-09-13 — EN写真家ページ 正本HTML化・最小版（`docs/en-html-canon-migration.md` §2a・種別=engine・Opus監督 / Codex実装）
+
+- **範囲**：`scripts/preflight.py` / `scripts/build_photographers_en.py` / `scripts/check_en_entry.py` と
+  `CLAUDE.md` / `AGENTS.md` / `docs/generators-and-guards.md` / `docs/en-html-canon-migration.md` の7ファイル。
+  **公開HTML・JSON・カードデータの変更は0**。commit / push なし。wall-time は Daisuke 記入。
+- **実装した4項目**：① `check_en_direct_edit()` を削除 ② builder が既存 EN ページへの書き込みを既定で拒否
+  （`🛑 REFUSED`・解除は `ALLOW_EN_REBUILD=1` のみ。`--force` でも `--dry-run` でも解除されない）
+  ③ 新規ガード3本（keyword chip リンク保存 / JA・EN §REL 対称性 / JA・EN 本文節ラベル対称性）
+  ④ 正本マトリクスと EN フローの文書更新。
+- **仕様に無いが必須だった追加2件**：`check_en_changed_slug_closure()`（preflight・HARD）と
+  `check_en_entry.check_html_vs_json()` も無効化した。**EN HTML に出典を1件直接足すと JSON と cite 集合が
+  食い違い HARD FAIL する**ことを実測で確認（`check_en_entry.py ansel-adams` が
+  `HTML と JSON の cite-id 集合が不一致 HTMLのみ:[99]` で FAIL）。残すと最小版の通常フローが毎回止まる。
+- **設計変更（監督判断）**：§3 は touched-only HARD を求めているが、401ペアを実測したところ既存バックログが
+  §REL人物 27ページ / §REL運動 11ページ / 節数 8ページ / chip本文-sidebar不一致 7ページあった。
+  現在値でHARDにすると無関係な push が止まるため、**baseline にも在った非対称は WARN、今回の変更で
+  新しく出たものだけ HARD** とする回帰検知方式にした（`check_content_loss_guard` と同じ設計）。
+- **フェーズB完了条件の実測**：builder の出力を書き込まずに全ページ再現し `preflight._chip_map` で比較した結果、
+  **リンク付き chip が裸 span へ退行するページを 28 件・56面 検出**（§0 の実測値と一致）。
+  さらに ansel-adams で ①EN chip の裸化 ②JA §REL に EN 未掲載の人物を1件追加 ③JA に本文節を1つ追加 を作り、
+  `PREFLIGHT_BASE=HEAD python3 scripts/preflight.py` が3件とも HARD FAIL することを確認（検証後すべて復元）。
+  逆に **EN HTML へ出典を直接足す編集は HARD 0 で通る**ことも確認＝最小版の狙いどおり。
+- **検査**：`preflight.py` EXIT 0（HARD 0・所要26秒）、`check_content_loss.py` OK、
+  `test_build_en_chip_translation.py` / `test_importer_scaffold_inject.py` は全 PASS。
+- **Codex 実装の実測**：2セッションに分割（A=builder拒否＋preflight削除 32,778 tokens / B=新規ガード3本 94,385 tokens・合計127,163）。
+  仕様書は監督が実測してから書き、検証手順と期待値まで明記した結果、**両セッションとも初回で仕様どおり**。
+  `codex exec` は前回どおり `< /dev/null` と最小 CODEX_HOME（`auth.json` コピー＋`model_reasoning_effort` 1行＋
+  `[features] multi_agent = false`）で起動。MCP サーバーは今回も CONNECTION_CLOSED。
+- **手作業点（3系統）**：① `check_en_entry.py` の closure 無効化（Codex へ渡さず監督が実装。死にコード除去を含む）
+  ② 文書4本の記述差し替え ③ `check_content_loss_guard` の復旧メッセージから JSON 正本の記述を除去。
+- **既知の副作用（未対応・フェーズEで解消）**：`import_chatgpt_photographer.py` の `_verify_after_inject()` は
+  既存ページに対し builder を回して検証するため、**既存ページへの thesis 注入フローは REFUSED で止まる**。
+  既存ページの修正は EN HTML の直接編集に切り替える（それが最小版の狙い）。
+- **効果測定の次の一手**：移行後に1バッチ回し、ENに触れたコマンド数を数える。**baseline は 2026-09-12 の
+  6名バッチで91回**（JAは30回）。ここが減らなければ最小版は失敗、減れば C 以降へ進むか判断する。
