@@ -3026,6 +3026,8 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
 - 分類面: card-data 390→395、EN正本403→408、JA leaf 390→395、EN leaf 406→411、sitemap 952→962。運動14面は既存カードbyte変更0。取りこぼし補完は社会ドキュメンタリー18→20（Boubat / Weiss）、ドキュメンタリー39→40（Bischof。いずれもJA/EN同数）。
 - engine改良: なし。許可された `FRANCE_EXPECTED_IDS` 2行以外の `scripts/*.py` 変更0。
 - 手作業ボトルネック: 運動JA/ENのカード・chip・件数最小挿入、§RELの確定名簿照合、Person JSON-LD補完。
+- 事実修正1件（Daisuke指示で裏取り後に修正）: `sabine-weiss` の §REL「ドロシア・ラング ― Raphoと人間主義写真の同時代作家」は誤り。Rapho の所属写真家一覧（Wikipedia / Karsh財団の Charles Rado 資料）にラングは無く、ラングは FSA / OWI と Life が実際の所属。JA HTML と EN正本 `related_annotations` の両方を「FSAの政府事業として社会記録を担った同世代のアメリカの写真家」へ差し替え、`--slug sabine-weiss` でEN再生成。
+- push: `0d0747ba1`（59ファイル）。push前チェックは `git pull` / `check_content_loss` / `preflight` / `check_photographer_link_integrity` / `sync_card_counts --check` が全て EXIT 0、sitemap は origin比で削除0・追加12。IndexNow は `--since 'origin/main@{1}'`（26 URL）と `--urls`（トップ2本＋JA運動7本）の2本で HTTP 200。
 
 ## 2026-09-10 — 0910素材の18名を新規追加（idx 372–389・種別=new・Opus監督 / Codex実装 → 途中からOpus実装）
 
