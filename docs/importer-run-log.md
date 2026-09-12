@@ -105,6 +105,10 @@
 - **監督（Opus）の独立監査**：本文量は6名とも素材比 −0.5〜0.8%（見出し正規化分のみ）で、出典数と本文からの参照数は JA=EN で完全一致。sitemap は `sitemap.xml` / `sitemap-full.xml` とも 962→974（追加12・削除0・禁止URL 0）。素材12枚の SHA-256 は作業前後で不変。`link_country_keywords.py` 実行後の対象外巻き込みは残滓0。`check_content_loss.py` / `preflight.py` / `sync_card_counts.py --check` / `check_photographer_link_integrity.py` は全て EXIT 0。
 - **今回触らなかった既存の掲載漏れ**：運動ページに tag 上は該当するが未掲載の既存分が10件ある（`boris-mikhailov` / `martin-munkacsi` / `ilse-bing` / `alec-soth` / `john-benjamin-stone` / `jp-中山岩太` / `jp-安井仲治` / `jp-冨重利平` / `jp-亀井茲明` / `jp-鳥居龍蔵`）。今回のバッチ対象外として据え置いた。
 - **バックアップ掃除（Daisuke指示・2026-09-12）**：過去バッチが残していた未追跡の `*-backup.*` 109ファイル（11.2MB・HTML106 / json1 / js1 / bin1）を削除した。削除前に**全109件について元ファイルが git 追跡下に実在すること**を機械照合してから実行（`risky=0`）。追跡ファイルの削除は0件。`scripts/*-spec.json` 299件は backup ではなく `--update-existing --prepare` が再利用する作業入力のため**残置**（従来から git 非追跡）。
+- **push**：`50f4d2e84`（69ファイル＝変更57＋新規12。`scripts/*-spec.json` 299件は従来どおり非追跡で stage せず）。push前チェックは `git pull origin main`（Already up to date）/ `check_content_loss.py` / `preflight.py` / `sync_card_counts.py --check` / `check_photographer_link_integrity.py` が全て EXIT 0。pre-push フックの preflight も通過。`origin/main` 比で 3,003 insertions / 208 deletions。
+- **push前の独立実測**：変更した写真家ページ20枚のうち、タグを剥がしたプレーンテキストが変わったのは意図した5枚のみ（EN anders-petersen +117 / EN ernst-haas +149 / EN james-van-der-zee +288 / EN zwelethu-mthethwa +158 / JA james-van-der-zee +86。いずれも §REL のリンクと一言解説の追加分）。残り15枚は完全一致。
+- **IndexNow**：2本に分けて送信し、いずれも HTTP 200。①`--since 'origin/main@{1}'` で53 URL。②`--urls` で8 URL（トップ `/` と `/en/`、および JA 運動6面）。**②が必要な理由＝`--since` はトップの更新を拾わず、さらに JA 運動ページの非ASCIIパスも取りこぼす**（今回の実測で運動は EN 6面だけが①に含まれ JA 6面は0件だった）。JA 運動 URL は `urllib.parse.quote` で percent-encode して渡す。
+- **残WARN（既知・停止不要）**：`本文の書き換えの疑い`（リンク挿入した6ページ。プレーンテキスト不変を実測済み）、`[SEO en/photographers/james-van-der-zee.html] data-nosnippet 9→8`（`In preparation` プレースホルダの実コンテンツ置換）、`stale intentional-replacement 宣言`群（baseline 既存）。
 
 
 ## 2026-09-09 — 0909素材パイロット `karl-blossfeldt`（idx 370・種別=new・Opus監督 / Codex実装）
