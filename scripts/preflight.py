@@ -206,6 +206,7 @@ def check_legacy_domain() -> None:
         # 数字が入り続けているため、プロパティ名としての旧ドメインは意図的に残す。
         "scripts/seo_fetch.py",
         "docs/seo-selector-spec.md",
+        ".claude/skills/seo-selector/SKILL.md",
     }
     proc = subprocess.run(
         ["git", "-c", "core.quotepath=off", "grep", "-n", "--fixed-strings",
@@ -1544,9 +1545,11 @@ def check_content_loss_guard() -> None:
             "＝ 消失HARDから除外")
     for i, decl in enumerate(declarations):
         if i not in consumed and i not in _en_consumed_decl_indices:
+            what = (f"url={decl.get('url')}" if decl.get("url")
+                    else f"section={decl.get('section')}")
             warnings.append(
                 "stale intentional-replacement 宣言（今回の消失検知に一致せず・削除候補）: "
-                f"slug={decl.get('slug')} url={decl.get('url')}"
+                f"slug={decl.get('slug')} {what}"
                 "（scripts/intentional-replacements.json）")
 
     # 書き換え（WARN）— 文面だけの変化。事実すり替えの疑いとして目視

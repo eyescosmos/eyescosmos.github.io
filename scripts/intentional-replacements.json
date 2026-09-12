@@ -166,11 +166,5 @@
     "url": "https://www.moma.org/artists/1000-henri-cartier-bresson",
     "reason": "The supplied 2026-09-03 JA and EN source sets replace this MoMA artist-list URL with individual work pages 44586, 56129, 88041, and 98333 plus exhibition page https://www.moma.org/calendar/exhibitions/967.",
     "declared": "2026-09-03"
-  },
-  {
-    "slug": "sibylle-bergemann",
-    "section": "§ ARCHIVES",
-    "reason": "リーフ型仕様が捨てると定めた独自セクション。5本のリンクはすべて §WORKS（作品を見る）へ統合済みで消失していない。ラベルも § RELATED / § SOURCES を許可値の § REL / § SRC へ正規化した。",
-    "declared": "2026-09-12"
   }
 ]
