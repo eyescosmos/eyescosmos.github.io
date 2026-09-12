@@ -5280,7 +5280,211 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "edouard-boubat",
+    "name": "Édouard Boubat",
+    "nameJa": "エドゥアール・ブーバ",
+    "nationality": "FR",
+    "flag": "🇫🇷",
+    "years": "1923–1999",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "ストリート写真",
+      "社会ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1923年、フランス・パリ生まれ。École Estienneでグラフィックと印刷に関わる教育を受け、第二次世界大戦後に写真を始めた。初期にはLellaを継続して撮影し、1951年のLa Huneでの展示を契機に雑誌『Réalités』の仕事へ進んだ。以後、同誌の取材でヨーロッパ、アジア、中東、南北アメリカを旅しながら、パリの街路、子ども、家族、旅先の人々を長く撮影した。 *1 *2 。",
+      "textEn": "Born in Paris in 1923, Édouard Boubat studied graphics and printing at the École Estienne and began photographing after World War II. His early work repeatedly returned to Lella, and a 1951 exhibition at La Hune led to assignments for Réalités. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Le Monde — Edouard Boubat, visions enchantées et reportages oubliés",
+          "url": "https://www.lemonde.fr/culture/article/2008/01/17/photographie-edouard-boubat-visions-enchantees-et-reportages-oublies_1000494_3246.html"
+        },
+        {
+          "num": 2,
+          "name": "Centre Pompidou — Lella, 1947",
+          "url": "https://www.centrepompidou.fr/fr/ressources/oeuvre/cpg4qXG"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ernst-haas",
+    "name": "Ernst Haas",
+    "nameJa": "エルンスト・ハース",
+    "nationality": "AT / US",
+    "flag": "🇦🇹",
+    "years": "1921–1986",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "カラー写真",
+      "フォトジャーナリズム"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1921年、オーストリア・ウィーン生まれ。第二次世界大戦後に本格的に写真へ向かい、1947年に帰還兵と家族の再会を撮ったシリーズで注目された。1949年にロバート・キャパの招きでMagnum Photosへ参加し、その後ニューヨークを拠点に活動した。1950年代からKodachromeによるカラー、低速シャッター、流し撮り、反射、ぼけを探究し、『Life』のカラー・エッセイや映画関連の仕事、1962年のMoMA個展へ展開した。 *1 *2 。",
+      "textEn": "Born in Vienna in 1921, Ernst Haas turned seriously to photography after World War II and gained attention in 1947 for a series on returning prisoners of war and their families. Invited by Robert Capa, he joined Magnum Photos in 1949 and later based himself in New York. From the 1950s onward he explored Kodachrome color, slow shutter speeds, panning, reflections, and blur. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Ernst Haas Estate — Biography",
+          "url": "https://ernst-haas.com/biography/"
+        },
+        {
+          "num": 2,
+          "name": "Hasselblad Foundation — Ernst Haas",
+          "url": "https://www.hasselbladfoundation.org/en/ernst-haas/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gordon-parks",
+    "name": "Gordon Parks",
+    "nameJa": "ゴードン・パークス",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1912–2006",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "フォトジャーナリズム",
+      "社会ドキュメンタリー",
+      "FSA写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1912年、アメリカ・カンザス州フォート・スコット生まれ。1930年代末に独学で写真を始め、シカゴで肖像・ファッション写真を手がけた後、1942年にFSA／OWIでロイ・ストライカーのもとに参加した。1948年から『Life』で活動し、人種差別、貧困、犯罪、家族、著名人をピクチャー・エッセイとして取材した。のちに小説、自伝、音楽、映画へ活動を広げ、『The Learning Tree』『Shaft』などを監督した。 *1 *2 。",
+      "textEn": "Born in Fort Scott, Kansas, in 1912, Gordon Parks taught himself photography in the late 1930s. After working in portraiture and fashion in Chicago, he joined Roy Stryker at the FSA/OWI in 1942. From 1948 he worked for Life, producing picture essays on racism, poverty, crime, family life, and public figures. He later expanded into fiction, autobiography, music, and film. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "National Gallery of Art — Gordon Parks Photography",
+          "url": "https://www.nga.gov/educational-resources/uncovering-america/gordon-parks-photography"
+        },
+        {
+          "num": 2,
+          "name": "National Gallery of Art — Gordon Parks: Camera Portraits",
+          "url": "https://www.nga.gov/exhibitions/gordon-parks-camera-portraits-corcoran-collection"
+        }
+      ]
+    }
+  },
+  {
+    "id": "harry-callahan",
+    "name": "Harry Callahan",
+    "nameJa": "ハリー・キャラハン",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1912–1999",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "モダニズム"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1912年、アメリカ・デトロイト生まれ。会社員として働きながら1938年ごろに写真を始め、Detroit Camera Guildとアンセル・アダムスのワークショップを経て、1946年からシカゴのInstitute of Designで教えた。1961年にRISDへ移り写真教育を整備し、妻エレノア、娘バーバラ、都市、草木や水面を、多重露光、接写、8×10判から35mmまでの異なる方法で反復撮影した。 *1 *2 。",
+      "textEn": "Born in Detroit, Michigan, in 1912, Harry Callahan began making photographs around 1938 while working for Chrysler. After joining the Detroit Camera Guild and attending an Ansel Adams workshop, he began teaching at Chicago’s Institute of Design in 1946. He moved to RISD in 1961, where he helped build its photography program. Across decades, he repeatedly photographed his wife Eleanor, their daughter Barbara, city streets, plants, and water. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "RISD Museum — Eleanor",
+          "url": "https://risdmuseum.org/art-design/collection/eleanor-78040"
+        },
+        {
+          "num": 2,
+          "name": "SFMOMA — Taken by Design: Photographs from the Institute of Design",
+          "url": "https://www.sfmoma.org/press/release/taken-by-design-photographs-from-the-institute-of/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sabine-weiss",
+    "name": "Sabine Weiss",
+    "nameJa": "サビーヌ・ヴァイス",
+    "nationality": "CH / FR",
+    "flag": "🇨🇭",
+    "years": "1924–2021",
+    "gender": "女性",
+    "era": "1950",
+    "movements": [
+      "ストリート写真",
+      "社会ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1924年、スイスのSaint-Gingolph生まれ。ジュネーヴのStudio Boissonnasで写真技術を学び、1945年に資格を得てスタジオを開いた。翌年パリへ移り、Willy Maywaldの助手を経て、1950年代からRaphoとVogueで活動した。街路、子ども、労働、夜景、芸術家を撮る自主制作と、ファッション、広告、雑誌報道の依頼を並行し、戦後フランスを拠点に長く写真家として活動した。 *1 *2 。",
+      "textEn": "Born in Saint-Gingolph, Switzerland, in 1924, Sabine Weiss trained in photography at Studio Boissonnas in Geneva, received her professional qualification in 1945, and opened a studio. She moved to Paris the following year, worked as an assistant to Willy Maywald, and from the 1950s worked with Rapho and Vogue. Across a long career based in postwar France, she pursued self-directed and commissioned work. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Sabine Weiss — Official biography",
+          "url": "https://sabineweissphotographe.fr/biographie/"
+        },
+        {
+          "num": 2,
+          "name": "Maison Européenne de la Photographie — Sabine Weiss: Un demi-siècle de photographies",
+          "url": "https://www.mep-fr.org/event/sabine-weiss/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "werner-bischof",
+    "name": "Werner Bischof",
+    "nameJa": "ヴェルナー・ビショフ",
+    "nationality": "CH",
+    "flag": "🇨🇭",
+    "years": "1916–1954",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "フォトジャーナリズム",
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "1916年、スイス・チューリヒ生まれ。チューリヒのKunstgewerbeschuleでハンス・フィンスラーに写真を学び、静物、広告、ファッション、雑誌制作を経験した。1942年から文化誌『Du』で仕事をし、戦後はヨーロッパの復興と難民生活を取材、1949年にMagnum Photosへ参加した。1951年以降はインド、日本、朝鮮、インドシナ、南米を撮影し、1954年にペルーで事故死した。 *1 *2 。",
+      "textEn": "Born in Zurich in 1916, Werner Bischof studied photography with Hans Finsler at the Kunstgewerbeschule, where he worked across still life, advertising, fashion, and magazine production. From 1942 he contributed to the cultural magazine Du. After the war he photographed reconstruction and displaced life across Europe, joined Magnum Photos in 1949, and from 1951 worked in India, Japan, Korea, Indochina, and South America. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Werner Bischof Estate — Early Works",
+          "url": "https://wernerbischof.com/early-works-2/"
+        },
+        {
+          "num": 2,
+          "name": "The Metropolitan Museum of Art — In the Court of the Meiji Temple",
+          "url": "https://www.metmuseum.org/art/collection/search/270122"
+        }
+      ]
+    }
   }
+
+
+
+
+
+
 
 
 

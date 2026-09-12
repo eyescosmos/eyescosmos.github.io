@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-12 | 0911素材6名（idx 390–395） | new×6 | （Daisuke記入） | 1（パイロット時のEN merge前surface生成失敗） | 7系統（下記） | 63ファイル | JA/EN素材どおり | 178/178 |
 | 2026-06-22 | jikei-sato | update | ~20分※ | 1（ネストspan節名） | 5→改良後2 | 0（既存） | 972→10233 | 3→25 |
 | 2026-06-23 | sakiko-nomura | new | ~20分 | 0 | 4（下記） | 16ファイル | 8184 | 38(JA)/37(EN) |
 | 2026-07-01 | (運動)new-topographics | other | （Daisuke記入） | 2 | 3（下記） | 27ファイル | N/A | 4 |
@@ -3015,6 +3016,17 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
 - **「直接編集疑い」WARN 8件の判定（冪等性実測）**：スコープ付き再生成→SHA-256照合で、`en/countries/united-kingdom` `en/countries/united-states` `en/eras/1839` `en/eras/1870` `en/eras/1890` の**5面は byte 完全一致＝偽陽性と実証**（`data/country-pages.json` は codes/lead/nameEn/nameJa/slug/updated しか持たず、`data/taxonomy-en-content.json` も prose のみで、写真家カードは JA HTML 由来のため写真家追加のたびに構造的に出る）。
 - **★運動EN 3面は再生成してはいけない（実測で確定・2026-09-05）**：`build_taxonomy_en.py --slug pictorialism` を試すと **(a) Steichen の運動固有 lede が汎用 lede へ置き換わり、(b) 今回追加した4カードの meta が国コード `GB` から `PHOTOGRAPHER` へ退行**した。バックアップから即時復元済み（復元後SHA `b3498cfe82691ffb21e3e6b17363fb8abc18daf328bc85abf6b2c417aded37cb`）。`naturalistic-photography` / `street-photography` は同じ退行を避けるため**検証再生成そのものを実行していない**。**運動EN面の正しい更新方法は最小差分挿入であり、この3件のWARNは「手編集が誤り」ではなく builder 側が非可逆であることの反映**。既存カードのbyte変更0・カードmetaは既存慣習（EN は国コード）と一致することを実測済み。`.preverify.bak` 残存0。
 - **wall-time**：**1時間30分**（Daisuke実測。0903の12名バッチ=1時間18分と同水準）
+## 2026-09-12 — 0911素材6名（idx 390–395・種別=new・Opus監督 / Codex実装）
+
+- wall-time: （Daisuke記入）
+- bug: 1件（パイロット既報）。`edouard-boubat` でEN正本merge前にsurface生成を行い、EN archive生成が1回失敗。残り5名はEN正本merge後にsurfaceを反映し再発0。
+- 手作業点: 7系統。①spec 6件、②一時コピー上の本文4節名・TOC標準化、③運動JA/EN 14面のカード・chip・件数最小挿入、④既存裸参照5件のJA/ENリンク化、⑤§RELの確定名簿リンク補完、⑥Person JSON-LD description補完、⑦France guard 2行追加。
+- サーフェス変更: 65ファイル。JA/EN leaf 12、EN正本、card-data、supplement、星bin、カード4面・従属面、運動JA/EN 14面、既存参照JA/EN 10面、sitemap 2面、spec 6、France guard、本ログ。commit / pushなし。
+- フィデリティ: 6名ともJA/EN本文4節、works 3でhref集合一致。出典はBoubat/Haas/Parks/Callahan/Weiss/Bischof = 30/30/30/30/28/30（JA=EN、計178/178）。素材本文・h3・出典・リンクは節名以外不変更。
+- 分類面: card-data 390→395、EN正本403→408、JA leaf 390→395、EN leaf 406→411、sitemap 952→962。運動14面は既存カードbyte変更0。取りこぼし補完は社会ドキュメンタリー18→20（Boubat / Weiss）、ドキュメンタリー39→40（Bischof。いずれもJA/EN同数）。
+- engine改良: なし。許可された `FRANCE_EXPECTED_IDS` 2行以外の `scripts/*.py` 変更0。
+- 手作業ボトルネック: 運動JA/ENのカード・chip・件数最小挿入、§RELの確定名簿照合、Person JSON-LD補完。
+
 ## 2026-09-10 — 0910素材の18名を新規追加（idx 372–389・種別=new・Opus監督 / Codex実装 → 途中からOpus実装）
 
 - **範囲**：`re-photographer/0910` の18名を全サーフェスへ新規追加。
