@@ -108,19 +108,34 @@ def aggregate_bwt(snapshot: dict | None) -> dict[str, dict]:
 
 
 # 本文を厚くした update と、横断スクリプトの機械的な差分を分ける閾値。
-# AI開示ブロック追加・ドメイン一括置換・サイドバー検索修正・エンダッシュ統一は
-# いずれも1コミットあたり 1〜9 行だった（2026-09-11 実測）。本文追加はこれを大きく超える。
-SUBSTANTIVE_ADDED_LINES = 50
+# **追加行数ではなく「追加＋削除」で見る**（2026-09-13 修正）。
+# 旧版は追加50行を閾値にしていたが、0911バッチで素材を「HTMLを整形しない完成形」で
+# 受け取るようにしたら差分が縮み、実際に本文を厚くした richard-avedon(+48) と
+# hiroshi-sugimoto(+38) が閾値を下回って除外されず、翌月の名簿に再登場した。
+# 改善そのものが除外条件を壊した形なので、差分の向きに依存しない指標へ変える。
+#
+# 2026-09-13 の実測（過去5か月・写真家HTML 1ファイルあたりの 追加＋削除）:
+#   本文 update（0911 SEO選定10名）  : 中央値 94 / 最小 54 / 最大 144
+#   新規追加                          : 1ファイル 730〜760
+#   横断スクリプト・機械的な一括修正  : 2〜9（生没年統一・カード是正・バックフィル等）
+#   §REL のリンク追加など小さな手直し : 2
+# 30 なら本文 update の最小54と機械差分の最大9の中間で、両側に余裕がある。
+SUBSTANTIVE_DIFF_LINES = 30
 
 
 def last_enriched() -> dict[str, date]:
     """写真家ページの本文が最後に**実質的に**更新された日を git から引く。
 
     単なる最終コミット日では使えない。横断スクリプトが全ページを触るため、
-    それを拾うと候補のほぼ全員が除外される。追加行数で実質の update だけを見る。
+    それを拾うと候補のほぼ全員が除外される。差分の大きさで実質の update だけを見る。
+
+    `core.quotepath=false` が必須。既定では git が非ASCIIパスを
+    `"photographers/jp-\351\271\277..."` とクォートして出すため、`.html` 終端判定に
+    一致せず `jp-鹿島清兵衛` のような日本語ファイル名が丸ごと落ちる（2026-09-13 に実害）。
     """
     out = subprocess.run(
-        ["git", "log", "--numstat", "--pretty=format:@%cs", "--since=8 months ago", "--", "photographers"],
+        ["git", "-c", "core.quotepath=false", "log", "--numstat", "--pretty=format:@%cs",
+         "--since=8 months ago", "--", "photographers"],
         cwd=ROOT, capture_output=True, text=True,
     ).stdout
     enriched: dict[str, date] = {}
@@ -133,15 +148,21 @@ def last_enriched() -> dict[str, date]:
                 current = None
             continue
         parts = line.split("\t")
-        if len(parts) != 3 or not current or not parts[2].endswith(".html"):
+        if len(parts) != 3 or not current:
+            continue
+        path = parts[2]
+        if path.startswith('"') and path.endswith('"'):
+            # quotepath=false でも空白や引用符を含むパスはクォートされる
+            path = path[1:-1]
+        if not path.endswith(".html"):
             continue
         try:
-            added = int(parts[0])
+            changed = int(parts[0]) + int(parts[1])
         except ValueError:  # バイナリ差分の "-"
             continue
-        if added < SUBSTANTIVE_ADDED_LINES:
+        if changed < SUBSTANTIVE_DIFF_LINES:
             continue
-        slug = Path(parts[2]).stem
+        slug = Path(path).stem
         if slug not in enriched:  # git log は新しい順
             enriched[slug] = current
     return enriched
