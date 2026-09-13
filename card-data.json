@@ -8127,6 +8127,27 @@
       "style": "pc-top--year",
       "artText": "1926—2009",
       "hintText": "VIVIAN MAIER · 1926–2009"
+    },
+    {
+      "type": "photographer",
+      "id": "ed-ruscha",
+      "href": "photographers/ed-ruscha.html",
+      "idx": 402,
+      "nameJa": "エド・ルシェ",
+      "nameEn": "Ed Ruscha",
+      "metaJa": "アメリカ · 1937– · 1950–1960s",
+      "era": "1950",
+      "nationality": "US",
+      "ledeJa": "エド・ルシェ（1937–）は、ネブラスカ州オマハ生まれ、オクラホマシティ育ちのアメリカの美術家。1956年にロサンゼルスへ移り、Chouinard Art Instituteで商業美術を学んだ。Plantin Pressで活版印刷を経験し、広告制作や『Artforum』のレイアウトを経て、1960年代から絵画、版画、写真、映画、アーティストブックを制作してきた。現在もロサンゼルスを拠点に活動している。",
+      "channel": "イメージを疑う · CONCEPTUAL",
+      "tags": [
+        "コンセプチュアルアート",
+        "写真集",
+        "アメリカ"
+      ],
+      "style": "pc-top--initials",
+      "artText": "ER",
+      "hintText": "ED RUSCHA · 1937–"
     }
   ],
   "movements": [
@@ -8684,7 +8705,7 @@
       "idx": 27,
       "nameJa": "コンセプチュアルアート",
       "nameEn": "Conceptual Art",
-      "metaJa": "22 photographers linked",
+      "metaJa": "23 photographers linked",
       "era": "",
       "nationality": "",
       "ledeJa": "コンセプチュアルアートにおける写真は、美しい像を作るためのものというより、アイデア、指示、記録、制度批評を成立させるための媒体として使われた。1960年代後半から70年代にかけて、作品の物質性より概念や手続きが重視されるようになると、写真はその実行や証拠を担う柔軟な道具になる。",

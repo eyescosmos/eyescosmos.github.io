@@ -5674,7 +5674,310 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "ed-ruscha",
+    "name": "Ed Ruscha",
+    "nameJa": "エド・ルシェ",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1937–",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "コンセプチュアルアート"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "エド・ルシェ（1937–）は、ネブラスカ州オマハ生まれ、オクラホマシティ育ちのアメリカの美術家。1956年にロサンゼルスへ移り、Chouinard Art Instituteで商業美術を学んだ。Plantin Pressで活版印刷を経験し、広告制作や『Artforum』のレイアウトを経て、1960年代から絵画、版画、写真、映画、アーティストブックを制作してきた。現在もロサンゼルスを拠点に活動している。",
+      "textEn": "Ed Ruscha (1937–) is an American artist born in Omaha, Nebraska, and raised in Oklahoma City. He moved to Los Angeles in 1956 and studied commercial art at the Chouinard Art Institute. After working with letterpress at Plantin Press and in advertising and layout, including for Artforum, he began producing paintings, prints, photographs, films, and artists’ books in the 1960s. He continues to work in Los Angeles.",
+      "citations": [
+        {
+          "num": 1,
+          "name": "National Gallery of Art — Ed Ruscha",
+          "url": "https://www.nga.gov/artists/2724-ed-ruscha"
+        },
+        {
+          "num": 2,
+          "name": "SFMOMA — Ed Ruscha",
+          "url": "https://www.sfmoma.org/artist/Ed_Ruscha/"
+        },
+        {
+          "num": 3,
+          "name": "Moderna Museet — Biography Ed Ruscha",
+          "url": "https://www.modernamuseet.se/en/stockholm/exhibitions/ed-ruscha/biography-ed-ruscha/"
+        },
+        {
+          "num": 4,
+          "name": "LACMA — ED RUSCHA / NOW THEN",
+          "url": "https://www.lacma.org/zap/node/43727"
+        },
+        {
+          "num": 5,
+          "name": "Walker Art Center — Edward Ruscha",
+          "url": "https://www.walkerart.org/collections/artist/edward-ruscha/"
+        },
+        {
+          "num": 6,
+          "name": "ARTIST ROOMS — Ed Ruscha Learning Resource",
+          "url": "https://www.artistrooms.org/sites/default/files/downloads/EdRuschaLearningResource.pdf"
+        },
+        {
+          "num": 7,
+          "name": "LACMA Unframed — Hit the Streets of Los Angeles with Ed Ruscha",
+          "url": "https://unframed.lacma.org/2024/06/14/hit-streets-los-angeles-ed-ruscha"
+        },
+        {
+          "num": 8,
+          "name": "University of New Mexico — “Twenty-Six Gasoline Stations: The Photograph as Fact and Other Aspects”",
+          "url": "https://digitalrepository.unm.edu/arth_etds/224/"
+        },
+        {
+          "num": 9,
+          "name": "MoMA Audio — Twentysix Gasoline Stations",
+          "url": "https://www.moma.org/audio/playlist/297/4433"
+        },
+        {
+          "num": 10,
+          "name": "MoMA — Twentysix Gasoline Stations",
+          "url": "https://www.moma.org/collection/works/146929"
+        },
+        {
+          "num": 11,
+          "name": "Whitney Museum — Shell, Daggett, California",
+          "url": "https://whitney.org/collection/works/21021"
+        },
+        {
+          "num": 12,
+          "name": "J. Paul Getty Museum — In Focus: Ed Ruscha",
+          "url": "https://www.getty.edu/art/exhibitions/focus_ruscha/"
+        },
+        {
+          "num": 13,
+          "name": "Walker Art Center — Text/Messages: Books by Artists",
+          "url": "https://www.walkerart.org/whats-on/text-messages-books-by-artists/"
+        },
+        {
+          "num": 14,
+          "name": "Metropolitan Museum Journal — “The Toughest, Meanest Art I Was Making”: Edward Ruscha’s Books",
+          "url": "https://www.journals.uchicago.edu/doi/10.1086/712770"
+        },
+        {
+          "num": 15,
+          "name": "Art History — Margaret Iversen, “Auto-maticity: Ruscha and Performative Photography”",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1467-8365.2009.00707.x"
+        },
+        {
+          "num": 16,
+          "name": "Art Institute of Chicago — Light Years: Camera Work",
+          "url": "https://archive.artic.edu/lightyears/camera/"
+        },
+        {
+          "num": 17,
+          "name": "The Metropolitan Museum of Art — Every Building on the Sunset Strip",
+          "url": "https://www.metmuseum.org/art/collection/search/294423"
+        },
+        {
+          "num": 18,
+          "name": "MoMA — Every Building on the Sunset Strip",
+          "url": "https://www.moma.org/collection/works/146931"
+        },
+        {
+          "num": 19,
+          "name": "MoMA Archives — Oral History: Edward Ruscha",
+          "url": "https://www.moma.org/momaorg/shared/pdfs/docs/learn/archives/transcript_ruscha.pdf"
+        },
+        {
+          "num": 20,
+          "name": "Nasher Museum of Art at Duke University — Ed Ruscha: Parking Lots",
+          "url": "https://nasher.duke.edu/exhibitions/ed-ruscha-parking-lots/"
+        },
+        {
+          "num": 21,
+          "name": "SFMOMA — May Company, 6150 Laurel Canyon, North Hollywood",
+          "url": "https://www.sfmoma.org/artwork/ST2010.051/"
+        },
+        {
+          "num": 22,
+          "name": "Aperture — Unpacking Ed Ruscha",
+          "url": "https://aperture.org/editorial/ed-ruscha/"
+        },
+        {
+          "num": 23,
+          "name": "MoMA — Nine Swimming Pools and a Broken Glass",
+          "url": "https://www.moma.org/collection/works/146934"
+        },
+        {
+          "num": 24,
+          "name": "Whitney Museum — Edward Ruscha",
+          "url": "https://whitney.org/artists/9343"
+        },
+        {
+          "num": 25,
+          "name": "Getty Research Institute — Streets of Los Angeles Archive",
+          "url": "https://www.getty.edu/research/special_collections/notable/ruscha.html"
+        },
+        {
+          "num": 26,
+          "name": "Getty Research Institute — 12 Sunsets",
+          "url": "https://12sunsets.getty.edu/"
+        },
+        {
+          "num": 27,
+          "name": "Getty Publications — Ed Ruscha’s Streets of Los Angeles",
+          "url": "https://www.getty.edu/publications/ruscha/"
+        },
+        {
+          "num": 28,
+          "name": "National Gallery of Art — Conceptual Art",
+          "url": "https://www.nga.gov/artworks/conceptual-art"
+        },
+        {
+          "num": 29,
+          "name": "Rhode Island School of Design — Twentysix gasoline stations",
+          "url": "https://digitalcommons.risd.edu/specialcollections_artistsbooks/179/"
+        },
+        {
+          "num": 30,
+          "name": "Reed College — Ed Ruscha: Twenty-Six Gasoline Stations",
+          "url": "https://www.reed.edu/artbooks/ruscha-gas.html"
+        },
+        {
+          "num": 31,
+          "name": "Getty Research Institute — Overdrive: L.A. Constructs the Future, 1940–1990: Car Culture",
+          "url": "https://www.getty.edu/art/exhibitions/overdrive/car_culture.html"
+        },
+        {
+          "num": 32,
+          "name": "Weitzman School of Design, University of Pennsylvania — “Ed Ruscha and Urban Transformation” excerpt",
+          "url": "https://www.design.upenn.edu/post/excerpt-ammon-goldstein-and-nelson-ed-ruscha-and-urban-transformation"
+        },
+        {
+          "num": 33,
+          "name": "LACMA — New Topographics: Photographs of a Man-Altered Landscape",
+          "url": "https://www.lacma.org/art/exhibition/new-topographics-photographs-man-altered-landscape"
+        },
+        {
+          "num": 34,
+          "name": "MIT Press — Alexandra Schwartz, Ed Ruscha’s Los Angeles",
+          "url": "https://mitpress.mit.edu/9780262013642/ed-ruschas-los-angeles/"
+        },
+        {
+          "num": 35,
+          "name": "The Metropolitan Museum of Art — Photography in Düsseldorf",
+          "url": "https://www.metmuseum.org/ko/essays/photography-in-dusseldorf"
+        },
+        {
+          "num": 36,
+          "name": "Getty — Greetings from L.A.: Artists and Publics, 1950–1980",
+          "url": "https://www.getty.edu/news/getty-presents-greetings-from-la-artists-and-publics-1950-1980/"
+        },
+        {
+          "num": 37,
+          "name": "The Metropolitan Museum of Art — John Baldessari: Pure Beauty",
+          "url": "https://www.metmuseum.org/exhibitions/listings/2010/john-baldessari"
+        },
+        {
+          "num": 38,
+          "name": "University of East Anglia / Journal of American Studies — Sarah Garland, “Picturing Distance: Ed Ruscha’s Los Angeles Photobooks”",
+          "url": "https://research-portal.uea.ac.uk/en/publications/picturing-distance-ed-ruschas-los-angeles-photobooks/"
+        },
+        {
+          "num": 39,
+          "name": "Los Angeles Times — “What a big Ed Ruscha exhibition misses about Southern California”",
+          "url": "https://www.latimes.com/entertainment/arts/la-ca-cm-ed-ruscha-de-young-20160921-snap-htmlstory.html"
+        },
+        {
+          "num": 40,
+          "name": "MIT Press — Ed Ruscha, Leave Any Information at the Signal: Writings, Interviews, Bits, Pages",
+          "url": "https://mitpress.mit.edu/9780262681520/leave-any-information-at-the-signal/"
+        },
+        {
+          "num": 41,
+          "name": "Ellen Lupton & Jennifer Tobias — “Production: Eddie Russia” (MoMA-authorized excerpt; quoting John Coplans, 1965)",
+          "url": "https://scratchingthesurface.fm/stories/2023-9-7-ed-ruscha/"
+        },
+        {
+          "num": 42,
+          "name": "Whitney Museum — Ed Ruscha and Photography (curated by Sylvia Wolf, 2004)",
+          "url": "https://whitney.org/exhibitions/ed-ruscha-photography"
+        },
+        {
+          "num": 43,
+          "name": "Walker Art Center — The Last Picture Show: Artists Using Photography, 1960–1982",
+          "url": "https://www.walkerart.org/whats-on/the-last-picture-show-artists-using-photography/"
+        },
+        {
+          "num": 44,
+          "name": "Aron Vinegar — “Ed Ruscha, Heidegger, and Deadpan Photography,” Art History",
+          "url": "https://academic.oup.com/arthistory/article-abstract/32/5/852/7277954"
+        },
+        {
+          "num": 45,
+          "name": "Clive Phillpot — “Twentysix Gasoline Stations that Shook the World,” Art Libraries Journal",
+          "url": "https://www.cambridge.org/core/journals/art-libraries-journal/article/abs/twentysix-gasoline-stations-that-shook-the-world-the-rise-and-fall-of-cheap-booklets-as-art/62B0142B74805E075750ADB21BE1F7B2"
+        },
+        {
+          "num": 46,
+          "name": "Johanna Drucker — The Century of Artists’ Books",
+          "url": "https://books.google.com/books/about/The_Century_of_Artists_Books.html?id=cLQQAQAAMAAJ"
+        },
+        {
+          "num": 47,
+          "name": "Steidl / Gagosian — Edward Ruscha: Catalogue Raisonné of the Books, Prints, and Photographic Editions, 1960–2022",
+          "url": "https://steidl.de/Books/Catalogue-Raisonne-of-the-Books-Prints-and-Photographic-Editions-1960-2022-0920295558.html"
+        },
+        {
+          "num": 48,
+          "name": "MIT Press — Various Small Books: Referencing Various Small Books by Ed Ruscha",
+          "url": "https://mitpress.mit.edu/9780262018777/various-small-books/"
+        },
+        {
+          "num": 49,
+          "name": "Reyner Banham — Los Angeles: The Architecture of Four Ecologies, University of California Press",
+          "url": "https://www.ucpress.edu/book/9780520260153/los-angeles"
+        },
+        {
+          "num": 50,
+          "name": "Robert Venturi, Denise Scott Brown, Steven Izenour — Learning from Las Vegas, MIT Press",
+          "url": "https://mitpress.mit.edu/9780262036962/learning-from-las-vegas/"
+        },
+        {
+          "num": 51,
+          "name": "The Museum of Modern Art — Ed Ruscha / Now Then: A Retrospective",
+          "url": "https://store.moma.org/products/ed-ruscha-now-then-a-retrospective-hardcover"
+        },
+        {
+          "num": 52,
+          "name": "Jennifer Quick — Back to the Drawing Board: Ed Ruscha, Art, and Design in the 1960s, Yale University Press",
+          "url": "https://yalebooks.yale.edu/book/9780300256925/back-to-the-drawing-board/"
+        },
+        {
+          "num": 53,
+          "name": "Kunstgeschichte. Open Peer Reviewed Journal — “Rethinking the Index: Ed Ruscha’s Photography”",
+          "url": "https://www.kunstgeschichte-ejournal.net/archiv/2009/roemer/"
+        },
+        {
+          "num": 54,
+          "name": "Critical Inquiry — “Agency and Automatism: Photography as Art Since the Sixties”",
+          "url": "https://criticalinquiry.uchicago.edu/agency_and_automatism_photography_as_art_since_the_sixties/"
+        },
+        {
+          "num": 55,
+          "name": "Jennifer Quick — “Pasteup Pictures: Ed Ruscha’s Every Building on the Sunset Strip,” The Art Bulletin",
+          "url": "https://www.tandfonline.com/doi/full/10.1080/00043079.2018.1393327"
+        },
+        {
+          "num": 56,
+          "name": "Getty Projects — Ed Ruscha’s Streets of Los Angeles",
+          "url": "https://www.getty.edu/projects/ed-ruschas-streets-los-angeles/"
+        }
+      ]
+    }
   }
+
 
 
 

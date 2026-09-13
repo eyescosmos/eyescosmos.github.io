@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-13 | ed-ruscha（idx 402・0913素材） | new | （Daisuke記入） | 0 | 4（下記） | 公開HTML 17面 | JA/EN素材どおり | 56/56 |
 | 2026-09-13 | (engine)EN写真家ページ HTML正本化 最小版（§2a） | engine | （Daisuke記入） | 0 | 3（下記） | 7ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-12 | christer-stromholm（idx 396・0912パイロット） | new | 60分（0912バッチ全体・Daisuke実測） | 2（render-ja引数例とFrance guard順） | 3系統（下記） | 20ファイル | JA/EN素材どおり | 33/33 |
 | 2026-09-12 | 0912素材残り5名（idx 397–401） | new×5 | 同上（バッチ合算60分） | 0 | 4系統（下記） | 公開HTML 25面 | JA/EN素材どおり | 184/184 |
@@ -3241,3 +3242,44 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
   既存ページの修正は EN HTML の直接編集に切り替える（それが最小版の狙い）。
 - **効果測定の次の一手**：移行後に1バッチ回し、ENに触れたコマンド数を数える。**baseline は 2026-09-12 の
   6名バッチで91回**（JAは30回）。ここが減らなければ最小版は失敗、減れば C 以降へ進むか判断する。
+
+
+## 2026-09-13 — 0913素材 `ed-ruscha`（idx 402・種別=new・**HTML正本化・最小版の後の初回追加**）
+
+- **範囲**：JA/ENリーフ各1（新規）、EN正本JSON、card-data・supplement・星bin、archive/cards-archive/index JA/EN、
+  eras/1950 JA/EN、United States JA/EN、コンセプチュアルアート JA/EN、既存4ページの §REL（`natalie-czech` /
+  `shannon-ebner` の JA/EN）、sitemap 2本、spec、本ログ。commit / push なし。wall-time は Daisuke 記入。
+- **素材の検分（A-0）**：`ph-section__num` は JA/EN とも `§ 01 / 04`〜`§ 04 / 04` + WORKS/REL/REF/SRC で正規形。
+  `ph-book-simple` / `ph-related-grid` は0。**差し戻し不要**。`--render-ja` の `sec=4` / `dangling=0` も一致。
+- **手作業点（4系統）**：① spec 作成（taxonomy は素材の hero から確定。era は `1960` が存在しないため
+  `1950`＝1950–1960s を採用）② JA/EN の Person JSON-LD `description` と既定 og:image 補完
+  ③ 運動ページ JA/EN へのカード・サイドバーchip・hero件数（2箇所）の最小差分挿入
+  ④ 本文初出リンク2件（becher / manray）を JA/EN 両方へ。engine / CSS 変更0、bug 0。
+- **フィデリティ**：本文（`<p>`+`<h3>`）は **JA 9,551字 / EN 19,488字 で素材と完全一致（41要素・差0）**。
+  cite は JA/EN とも 56→56、節8→8、dangling 0、div/section の開閉一致、`revision` 残骸0、prep-block 0。
+  §WORKS は JA=EN で3本一致、§REL は人物4（evans / robertfrank / becher / stephen-shore）＋運動2で JA=EN 一致。
+  本文内リンクも JA=EN で6 slug 一致。素材2枚の SHA-256 は作業前後で不変。
+- **サーフェス**：card-data 401→402、archive / cards-archive / en-archive 401→402、eras/1950 JA/EN 41→42、
+  United States JA/EN 106→107、コンセプチュアルアート JA/EN 22→23（hero 2箇所とサイドバーchipも+1）、
+  sitemap 974→976（追加2・削除0・禁止URL 0）、星bin +1（重複登録なし）。EN正本 pages 414→415。
+- **★HTML正本化・最小版の効果（初回計測）**：既存 EN ページ2枚（`natalie-czech` / `shannon-ebner`）の §REL に
+  Ed Ruscha の項目を足す作業が、**EN HTML の直接編集1回で完了**した。旧手順なら
+  正本JSON の `site_directory_html` を1件ずつ編集 → `build_photographers_en.py --slug` ×2 → 生成物の再検証、
+  で最低6コマンド必要だった（0912 フェーズ3で監督が実際に踏んだ経路）。**ENに触れたコマンドは全体で15回**。
+  ただし今回は new×1 なので、91回ベースライン（0912・new6名＋既存12ページ）との直接比較はできない。
+  **次の update 中心バッチで測り直す。**
+- **新規ガード3本の実挙動**：JA §REL に Ed Ruscha を足した時点で EN 側が未対応だと
+  `check_ja_en_rel_symmetry()` が HARD FAIL する設計どおり、JA/EN を同時に直して EXIT 0。
+  keyword chip 保存と節ラベル対称性は新規ページのため baseline 無しで無風。
+  builder の REFUSED ガードは**新規ページには発火せず**、`Wrote 1 page(s)` で通った（想定どおり）。
+- **検査**：`preflight.py`（EXIT 0・HARD 0）/ `check_content_loss.py` / `check_photographer_link_integrity.py` /
+  `sync_card_counts.py --check` / `check_new_photographer.py --slug ed-ruscha` / `check_en_entry.py ed-ruscha`
+  はいずれも合格。`sync_card_counts` は運動カード件数のズレを検出したので正規の修復コマンドで同期した
+  （手で数字を打ち直していない）。
+- **既知WARN判定**：precheck の `hero眉が標準形ではありません` は素材 chrome 不採用の既知。
+  preflight の `[EN country united-states]` / `[EN eras/1950]` 直接編集疑いは、スコープ再生成2回目が
+  **byte一致**することを実測して偽陽性と確定。`[EN movements/conceptual-art]` は A-4 どおり残置（固有lede保全のため再生成しない）。
+  `check_new_photographer` の `en_graph_absent` は直近バッチと同じ任意改善WARN。EN builder の
+  `no photobooks_html` / `no external_links_html` は素材に写真集欄が無いため（欠落ではない）。
+  既存 `movements/ピクトリアリズム.html` の hero drift と stale intentional-replacement 群は baseline 既存。
+- **バックアップ**：本作業が生成した未追跡 `-backup` 6件は、原本が git 追跡下にあることを機械照合してから削除した。
