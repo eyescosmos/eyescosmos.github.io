@@ -3283,3 +3283,11 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
   `no photobooks_html` / `no external_links_html` は素材に写真集欄が無いため（欠落ではない）。
   既存 `movements/ピクトリアリズム.html` の hero drift と stale intentional-replacement 群は baseline 既存。
 - **バックアップ**：本作業が生成した未追跡 `-backup` 6件は、原本が git 追跡下にあることを機械照合してから削除した。
+- **push**：`8eaa3880e`（24ファイル＝変更22＋新規2。`scripts/ed-ruscha-spec.json` は従来どおり非追跡）。
+  push前チェックは `git pull origin main`（Already up to date）/ `check_content_loss.py` / `preflight.py` /
+  `sync_card_counts.py --check` / `check_photographer_link_integrity.py` が全て EXIT 0。pre-push フックの preflight も通過。
+  `origin/main` 比で 2,851 insertions / 76 deletions。
+- **IndexNow**：2本に分けて送信し、いずれも HTTP 200。①`--since 'origin/main@{1}'` で17 URL。
+  ②`--urls` で5 URL（トップ `/` と `/en/`、JA 運動ページ、archive JA/EN）。
+  **②が必要な理由は 0912 と同じ**＝`--since` はトップを拾わず、JA 運動ページの非ASCIIパスも取りこぼす
+  （`urllib.parse.quote` で percent-encode して渡す）。
