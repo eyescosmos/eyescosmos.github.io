@@ -455,6 +455,13 @@ def emit_summary(ledger: dict) -> None:
     print(json.dumps(meta, ensure_ascii=False, indent=2), file=sys.stderr)
 
 
+def comparison_ledger(ledger: dict) -> dict:
+    """Return a comparison copy without scan-time-only metadata."""
+    comparable = json.loads(json.dumps(ledger, ensure_ascii=False))
+    comparable.get("_meta", {}).pop("generated_at_commit", None)
+    return comparable
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group()
@@ -478,14 +485,31 @@ def main() -> int:
         if not LEDGER_JSON.exists():
             print(f"OUT OF DATE: {LEDGER_JSON.relative_to(ROOT)} does not exist", file=sys.stderr)
             status = 1
-        elif LEDGER_JSON.read_bytes() != payload:
-            print(
-                f"OUT OF DATE: {LEDGER_JSON.relative_to(ROOT)} differs from the fresh scan",
-                file=sys.stderr,
-            )
-            status = 1
         else:
-            print(f"OK: {LEDGER_JSON.relative_to(ROOT)} matches the fresh scan", file=sys.stderr)
+            try:
+                current = json.loads(LEDGER_JSON.read_text(encoding="utf-8"))
+            except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+                print(f"OUT OF DATE: {LEDGER_JSON.relative_to(ROOT)} cannot be read: {exc}",
+                      file=sys.stderr)
+                status = 1
+            else:
+                old_commit = current.get("_meta", {}).get("generated_at_commit")
+                new_commit = ledger.get("_meta", {}).get("generated_at_commit")
+                if old_commit != new_commit:
+                    print(
+                        f"NOTE: generated_at_commit {old_commit} → {new_commit}"
+                        "（スキャン時点の記録。母集団の差ではない）",
+                        file=sys.stderr,
+                    )
+                if comparison_ledger(current) != comparison_ledger(ledger):
+                    print(
+                        f"OUT OF DATE: {LEDGER_JSON.relative_to(ROOT)} differs from the fresh scan",
+                        file=sys.stderr,
+                    )
+                    status = 1
+                else:
+                    print(f"OK: {LEDGER_JSON.relative_to(ROOT)} matches the fresh scan",
+                          file=sys.stderr)
 
     counts = ledger["_meta"]["counts"]
     if counts["exception"] or counts["unclassified"]:

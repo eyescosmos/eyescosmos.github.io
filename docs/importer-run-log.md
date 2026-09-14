@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-14 | (engine)フェーズE-1 読み取り経路切替 | engine | （Daisuke記入） | 0 | 3（判定リストの復旧・台帳--check・判定の取り下げ） | 8ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズD EN正本昇格 | engine | （Daisuke記入） | 0 | 1（履歴の台帳移管を差し戻し） | 5ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズA EN移行台帳 | engine | （Daisuke記入） | 0 | 1（台帳スキーマ設計） | 2ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズC `render_en_page` | engine | （Daisuke記入） | 1（作品ラベル死蔵経路） | 2系統（下記） | 3ファイル（公開HTML 0） | N/A | N/A |
@@ -3476,4 +3477,33 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
 - **検査**：preflight 作業前後で出力差分0 / check_content_loss OK /
   `test_render_en_roundtrip.py` ROUNDTRIP 8/8・EXPECTED_FAIL 2/2（フェーズCの退行なし）/
   台帳 `--check` EXIT 0 / `git diff --stat` に `build_photographers_en.py` は0回。
+
+
+## 2026-09-14 — フェーズE-1 読み取り経路の切替（種別=engine・Opus監督 / Codex実装）
+
+- **範囲**：`en_content.py` / `check_en_entry.py` / `check_new_photographer.py` / `en_entry.py` /
+  `peek.py` / `preflight.py`（1行）/ `build_en_migration_ledger.py` / 台帳 の8ファイル。
+  **公開HTMLの変更0**。wall-time は Daisuke 記入。
+- **本丸**：`check_en_entry.py` は D のあとも**検査を EN 正本 JSON に対して行っていた**
+  （`entry = pages[slug]`）。正本から降ろした陳腐化データを見ていて、ライブの EN HTML を見ていなかった。
+- **切替の実測**：走査 slug 415（JSON keys）→ **418**（EN HTML）。WARN 総数 558 → **139**
+  （「HTML正本スキップ」415→0 / 出典系 75→73 / 禁止ドメイン 66→63 / 欠番 2→3）。FAIL は
+  `sakiko-nomura` 1 slug で前後同じ。増えた3 slug は**台帳の `no_json_entry` / `stage4_only_canon` と完全一致**。
+  消えた指摘は全件「JSONにだけ残る古いリンク・古いcite集合」で説明できた。
+- **★bug 1件＝監督のブリーフ不備で検査が2つ消えかけた**。ブリーフに「cite は dangling / 孤立 の2種」と
+  書いたが、**旧 `check_cite_supref()` は5判定あった**。`cite-id が重複`（FAIL）と `cite-id に欠番`（WARN）が
+  落ちていたのをレビューで検知し、旧文言のまま復旧。`保存 cite_ids との不一致`だけは JSON 専用なので削除で正。
+  **復旧後の欠番3件はすべて実在**（emerson cite-4 / sakiko-nomura cite-34 / stieglitz cite-10。
+  stieglitz は preflight の既知 intentional-replacement 宣言と一致）。
+- **手作業点3**：① 上記の判定リスト復旧 ② 台帳 `--check` の設計不備修正（`generated_at_commit` が
+  比較対象に入っていて**どのコミット直後でも必ず EXIT 1** になる構造だった。除外して NOTE 表示へ）
+  ③ ブリーフにあった「内部リンク実在の追加」の取り下げ（`preflight.py:2112` の
+  `check_internal_dead_links()` が既にサイト全体で見ており二重化になる）。
+- **D の残件が解消**：`toyoko-tokiwa` / `sibylle-bergemann` が EXIT 0 で検査されるようになった。
+  shim 16件は本文検査の対象外になり転送先の実在だけを見る。`en_json_absent` は廃止。
+- **preflight の `check_en_content_loss()` は変更していない**（JSON の内容消失ガード。F まで併走）。
+- **検査**：公開HTML 820枚の sha256 完全一致 / preflight 出力差分0 / content_loss OK /
+  roundtrip 8/8・2/2 / 台帳 `--check` EXIT 0・records 418件不変 /
+  EN正本JSON 3本・凍結builder・CLAUDE.md・AGENTS.md は差分に現れない。
+- **教訓**：既存関数を別の入力へ移すときは、**先に旧実装の判定を全部列挙してからブリーフを書く**。
 

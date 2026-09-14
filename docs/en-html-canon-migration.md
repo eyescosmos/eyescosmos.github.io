@@ -305,11 +305,11 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 
 # ★フェーズC 引き継ぎ（2026-09-14・新規セッションはここから読む）
 
-> **2026-09-14 追記: C・A・D は完了した。次はフェーズE-1（読み取り経路の切替）。**
-> 結果は「§8 フェーズC」「§9 フェーズA」「§10 フェーズD」にある。
-> 以下 §1〜§7 は着手前の記述で、§8〜§10 が上書きする箇所がある。**先に §8〜§10 を読むこと。**
+> **2026-09-14 追記: C・A・D・E-1 は完了した。次はフェーズE-2（書き込む側の切替）。**
+> 結果は「§8 フェーズC」「§9 フェーズA」「§10 フェーズD」「§11 フェーズE-1」にある。
+> 以下 §1〜§7 は着手前の記述で、§8〜§11 が上書きする箇所がある。**先に §8〜§11 を読むこと。**
 
-**以降 E-1 → E-2 → F と続ける。E・F はバッチと並行不可。連続した1本として通す。**
+**以降 E-2 → F と続ける。E-2・F はバッチと並行不可。連続した1本として通す。**
 
 ## 1. いまどこまで終わっているか
 
@@ -319,7 +319,7 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 | B ガード | 新規3本は稼働中（chip保存 / §REL対称 / 節ラベル対称）。既存ガードの読み先付け替えは未 |
 | C-spike / C | **完了（2026-09-14）。§8 を読む** |
 | D 昇格 | **完了（2026-09-14）。公開HTML 820枚の sha256 不変で証明済。§10 を読む** |
-| E 経路切替 | **次はこれ（E-1 から）。** 17本中3本のみ（`preflight.py` / `check_en_entry.py` / `build_photographers_en.py`） |
+| E 経路切替 | **E-1 完了（2026-09-14）。次は E-2。** 読み取り6本を EN HTML へ付け替え済。§11 を読む |
 | F JSON降格 | 未着手。`data/photographers-en-content.json` は 415 entries のまま |
 
 **実運用**：既存ENページは HTML 直接編集で完結する。2026-09-14 の5名 update で実証済み
@@ -663,4 +663,99 @@ D では直さず、該当箇所に1行コメントを置いて台帳と本記�
 - `preflight.py` の `check_en_content_loss` 系（`EN_CONTENT_JSON` を見る 528〜629行）は
   **JSON の内容消失ガード**。E-1 で HTML 側へ向け直すが、**JSON 側のガードを先に外さない**
   （F で JSON を降格するまで併走させる）
+
+---
+
+## 11. フェーズE-1 完了記録（2026-09-14・Opus監督 / Codex実装）
+
+### 11.1 E-1 が直した本丸
+
+**`scripts/check_en_entry.py` は D のあとも検査を EN 正本 JSON に対して行っていた**
+（`run_one()` の `entry = pages[slug]`）。JSON は既存ページの正本ではなくなったのに、
+**この検査は陳腐化したデータを見ていて、ライブの EN HTML を見ていなかった。**
+
+| `check_en_entry.py --all` | before | after |
+|---|---:|---:|
+| 走査した slug 数 | 415（**JSON の pages キー**）| **418**（**EN HTML ファイル**）|
+| WARN 総数 | 558 | **139** |
+| 「既存ENはHTML正本」スキップ WARN | 415 | **0**（空関数を削除）|
+| 出典系 WARN（孤立） | 75 | 73 |
+| 禁止ドメイン WARN | 66 | 63 |
+| cite-id 欠番 WARN | 2（JSON基準）| **3**（HTML実態）|
+| FAIL slug | 1（`sakiko-nomura`）| 1（同じ）|
+
+**増えた3 slug は台帳の `no_json_entry` / `stage4_only_canon` と完全一致**
+（`ihei-kimura` / `sibylle-bergemann` / `toyoko-tokiwa`）。
+消えた指摘は全件が「JSON にだけ残る古いリンク・古い cite 集合」で説明できた
+（例: `sherman` / `stieglitz` の Wikipedia リンクは JSON にあって公開HTMLには無い）。
+**新規に出た `ihei-kimura` の cite-8 孤立は公開HTMLの実態。**
+
+復旧後の cite 欠番3件はすべて実在する: `emerson` cite-4 / `sakiko-nomura` cite-34 /
+`stieglitz` cite-10（**`stieglitz` cite-10 は preflight の既知 intentional-replacement 宣言と一致**）。
+
+### 11.2 変更した8ファイル
+
+| ファイル | 内容 |
+|---|---|
+| `scripts/en_content.py` | `load_en_page_keys()`（418件）/ `is_shim()`（16件）/ `shim_target()` / `load_en_html()` / `extract_en_summary()` を追加。**`resolve_slug()` はシグネチャも中身も変えていない**（キーしか見ないため）。JSON helper は残すが docstring に「既存ページの検査には使わない」と明記 |
+| `scripts/check_en_entry.py` | 検査対象を EN HTML の `<main>` へ。shim は「転送先の実ページが存在するか」だけ検査（§5）。空関数 `check_html_vs_json()` を削除。`check_git_scope()` の expected から EN正本JSON を除去 |
+| `scripts/check_new_photographer.py` | `en_json_absent`（SOFT）を削除。slug 解決を HTML 実在へ。`en_missing` の案内を `--render-en` へ更新 |
+| `scripts/en_entry.py` / `scripts/peek.py` | 表示を HTML ベースへ。JSON を読まない |
+| `scripts/preflight.py` | **1行だけ**。メッセージ文字列の `正本(JA HTML / photographers-en-content.json・overrides.js)` → `正本(JA HTML / EN HTML)`。**`check_en_content_loss()` は変更していない**（§10.5 どおり F まで併走） |
+| `scripts/build_en_migration_ledger.py` / 台帳 | 下記 11.4 |
+
+### 11.3 ★監督のブリーフ不備で検査が2つ消えかけた（差し戻して復旧）
+
+ブリーフに「cite は dangling / 孤立 の2種」と書いたが、**変更前の `check_cite_supref()` は5判定あった**。
+Codex はそのとおり2つで実装し、**`cite-id が重複`（FAIL）と `cite-id に欠番`（WARN）が消えていた**。
+レビューで検知して差し戻し、旧実装のメッセージ文言のまま復旧した。
+
+| # | 判定 | 段位 | E-1 後 |
+|---|---|---|---|
+| 1 | `cite-id が重複` | FAIL | **復旧** |
+| 2 | `本文 sup-ref *N に対応する出典 cite-id が無い` | FAIL | 維持 |
+| 3 | `出典 cite-N が…参照されていない（孤立）` | WARN | 維持 |
+| 4 | `cite-id に欠番` | WARN | **復旧** |
+| 5 | `保存 cite_ids / supref_ids が実体と不一致` | WARN | **削除して正**（JSON の保存済み配列との比較。HTML 正本では意味を持たない） |
+
+リンク判定5件（1〜2文字アンカーFAIL / 空・`#` href WARN / utm FAIL / Amazon検索URL FAIL /
+禁止ドメインWARN）は**文言も段位も変えずに全部 HTML へ移した**。
+ブリーフにあった「内部リンク実在の追加」は**取り下げた** —
+`preflight.py:2112` の `check_internal_dead_links()` が既にサイト全体で HARD/WARN 二段＋
+既知例外リスト付きで見ており、二重化になるため。
+
+**教訓：既存関数を別の入力へ移すときは、先に旧実装の判定を全部列挙してからブリーフを書く。**
+
+### 11.4 台帳生成器の設計不備を直した
+
+`_meta.generated_at_commit` が `--check` の比較対象に入っていたため、
+**コミットのたびに HEAD が動いて、どのコミット直後でも必ず EXIT 1 になる**構造だった。
+`generated_at_commit` を比較から除外し、差があるときは EXIT 0 のまま stderr に NOTE を出す形にした。
+**`records` / `counts` / `findings` / `canon` の差は従来どおり EXIT 1。**
+
+### 11.5 検証
+
+- **公開HTML 820枚（EN 418 + JA 402）の sha256 集合が作業前後で完全一致**
+- `preflight.py` 作業前後で**出力差分0**、EXIT 0
+- `check_content_loss.py` OK / `test_render_en_roundtrip.py` 8/8・2/2
+- 台帳 `--check` EXIT 0、`records` 418件不変
+- EN正本JSON 3本・`build_photographers_en.py`・`CLAUDE.md`・`AGENTS.md` は差分に**現れない**
+- **D で見つかった2件が解消**：`toyoko-tokiwa` / `sibylle-bergemann` とも EXIT 0 で検査が走る
+- shim は本文検査の対象外になり、転送先の実在だけを見る（16件すべて実在）
+- `check_new_photographer.py` は `en_json_absent` を出さない
+
+### 11.6 次（フェーズE-2）への申し送り
+
+- **E-2 の対象は書き込む2本**：`import_chatgpt_photographer.py` / `add_photographer.py`
+- **中身は「新規EN作成を JSON+builder から `render_en_page` へ切り替える」**。
+  フェーズC で `--render-en` は既に動いていて、既存ファイルへの書込みは常に REFUSED。
+  **やるのは呼び出し側の付け替えであって、renderer の新規開発ではない**
+- 具体的には `import_chatgpt_photographer.py` の
+  `merge_bundle_to_en_json()` / `run_merge_to_en()`（`--merge-to-en`）を通常フローから外し、
+  `_verify_after_inject()` が builder を回している箇所（§2a-DONE の既知副作用）も付け替える
+- **E-2 で初めて `CLAUDE.md` / `AGENTS.md` の正本マトリクスを更新する。**
+  「EN写真家ページ（新規作成のみ）＝ `data/photographers-en-content.json`」の行を落とし、
+  JA と同じ「HTML自身が正本」1行にまとめる。**E-2 より前に書き換えないこと**
+- 完了条件は §2b のとおり「**通常フローに JSON 編集と builder 実行が一度も現れない**」。
+  D・E-1 と同じく **820枚の sha256 不変**も入れる
 

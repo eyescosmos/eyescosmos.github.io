@@ -1826,7 +1826,7 @@ def check_content_loss_guard() -> None:
         warnings.append(
             "本文の書き換えの疑い（構造不変のまま文面が変化・要目視）: "
             + ", ".join(files[:6])
-            + "。正本(JA HTML / photographers-en-content.json・overrides.js)と一致するか確認")
+            + "。正本(JA HTML / EN HTML)と一致するか確認")
 
 
 def check_new_photographer_pages() -> None:

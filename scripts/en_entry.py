@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
-"""Read-only viewer for a single EN photographer entry.
+"""Read-only summary viewer for one canonical EN photographer HTML page.
 
-data/photographers-en-content.json は 297 slug を抱える巨大な単一ファイル
-（約 24k 行）。EN 写真家ページの本文系を直す前に、対象 slug のフィールドだけを
-安全に確認するための読み取り専用ツール。
-
-このスクリプトは JSON も HTML も一切書き換えない。
+対象 EN HTML から lead / thesis / 節見出し / cite / <main> 内リンク / SEO必須値を
+抽出して表示する。JSON は読まず、HTML も書き換えない。
 
 使い方:
-    python3 scripts/en_entry.py atget                 # 通称 atget→eugene-atget を自動解決
-    python3 scripts/en_entry.py atget --field thesis_html   # 1フィールドだけ
-    python3 scripts/en_entry.py atget --raw           # 該当エントリの生 JSON
-    python3 scripts/en_entry.py --list                # 全 slug を一覧
-    python3 scripts/en_entry.py --list atg            # 部分一致で slug を検索
+    python3 scripts/en_entry.py atget
+    python3 scripts/en_entry.py atget --field thesis
+    python3 scripts/en_entry.py atget --raw
+    python3 scripts/en_entry.py --list
+    python3 scripts/en_entry.py --list atg
 """
 import argparse
-import json
 import signal
 import sys
 
@@ -25,133 +21,128 @@ import en_content
 if hasattr(signal, 'SIGPIPE'):
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 
-# 表示順（読みたい順に並べる）。ここに無いキーは末尾に「その他」として出す。
-DISPLAY_ORDER = [
-    'h1', 'years', 'title', 'meta_description',
-    'thesis_label', 'thesis_html',
-    'lead_html',
-    'entry_meta_html', 'keywords_html',
-    'view_works_note', 'view_works_links_html',
-    'sections',
-    'notable_works_html', 'photobooks_html',
-    'external_links_html', 'further_reading_html',
-    'sources_html', 'supref_ids', 'cite_ids',
-    'site_directory_html',
-    'canonical', 'hreflang', 'has_ga',
-]
-# 通常は省略する重複・定型フィールド（--all で表示）
-VERBOSE_ONLY = {'og', 'twitter', 'jsonld', 'footer_html'}
+DISPLAY_ORDER = ('lead', 'thesis', 'sections', 'cites', 'links', 'seo')
 
 
-def is_empty(v):
-    return v in (None, '', 'None')
-
-
-def list_slugs(pages, needle=None):
-    keys = sorted(pages)
+def list_slugs(page_keys, needle=None):
+    keys = page_keys
     if needle:
-        keys = [k for k in keys if needle.lower() in k.lower()]
-    for k in keys:
-        print(k[:-5] if k.endswith('.html') else k)
+        keys = [key for key in keys if needle.lower() in key.lower()]
+    for key in keys:
+        print(key[:-5])
     print('\n%d slug%s' % (len(keys), '' if len(keys) == 1 else 's'))
 
 
-def fmt_value(key, val):
-    """1フィールドを読みやすい文字列にする。"""
-    if is_empty(val):
-        return '(empty)'
-    if key == 'sections' and isinstance(val, list):
-        out = []
-        for s in val:
-            num = s.get('num', '?')
-            title = s.get('title', '')
-            body = s.get('body_html', '') or ''
-            out.append('  § %s  %s\n%s' % (num, title, _indent(body)))
-        return '\n'.join(out)
-    if isinstance(val, (list, dict)):
-        return json.dumps(val, ensure_ascii=False, indent=2)
-    return str(val)
+def _fmt_sections(summary):
+    sections = summary['sections']
+    if not sections:
+        return '(none)'
+    return '\n'.join('  %s  %s' % (item['num'], item['name']) for item in sections)
 
 
-def _indent(text, pad='    '):
-    return '\n'.join(pad + line for line in text.splitlines())
+def _fmt_cites(summary):
+    ids = summary['cite_ids']
+    return '%d cite(s): %s' % (
+        summary['cite_count'], ', '.join('cite-%d' % n for n in ids) if ids else '(none)')
 
 
-def show_entry(entry, only_field=None, show_all=False):
+def _fmt_links(summary):
+    links = list(dict.fromkeys((item['href'], item['text']) for item in summary['links']))
+    if not links:
+        return '(none)'
+    return '\n'.join('  - %s -> %s' % (text or '(no text)', href or '(empty)')
+                     for href, text in links)
+
+
+def _fmt_seo(summary):
+    seo = summary['seo']
+    hreflang = seo['hreflang']
+    rows = [
+        '  title: %s' % (seo['title'] or '(missing)'),
+        '  description: %s' % (seo['description'] or '(missing)'),
+        '  canonical: %s' % (seo['canonical'] or '(missing)'),
+    ]
+    if hreflang:
+        rows.append('  hreflang:')
+        rows.extend('    %s: %s' % (lang, href) for lang, href in hreflang)
+    else:
+        rows.append('  hreflang: (missing)')
+    rows.extend([
+        '  og:image: %s' % (seo['og:image'] or '(missing)'),
+        '  GA: %s' % seo['GA'],
+    ])
+    return '\n'.join(rows)
+
+
+def field_value(summary, field):
+    if field == 'lead':
+        return summary['lead'] or '(empty)'
+    if field == 'thesis':
+        return summary['thesis'] or '(empty)'
+    if field == 'sections':
+        return _fmt_sections(summary)
+    if field == 'cites':
+        return _fmt_cites(summary)
+    if field == 'links':
+        return _fmt_links(summary)
+    if field == 'seo':
+        return _fmt_seo(summary)
+    raise KeyError(field)
+
+
+def show_summary(summary, only_field=None):
     if only_field:
-        if only_field not in entry:
+        try:
+            print(field_value(summary, only_field))
+        except KeyError:
             print('フィールドが存在しません: %s' % only_field, file=sys.stderr)
-            print('利用可能: %s' % ', '.join(entry), file=sys.stderr)
+            print('利用可能: %s' % ', '.join(DISPLAY_ORDER), file=sys.stderr)
             return 2
-        print(fmt_value(only_field, entry[only_field]))
         return 0
 
-    shown = set()
-    keys = list(DISPLAY_ORDER)
-    # DISPLAY_ORDER に無い未知キーを末尾へ
-    keys += [k for k in entry if k not in DISPLAY_ORDER and k not in VERBOSE_ONLY]
-    if show_all:
-        keys += [k for k in VERBOSE_ONLY if k in entry]
-
-    for k in keys:
-        if k in shown or k not in entry:
-            continue
-        shown.add(k)
-        print('\n\033[1m── %s ──\033[0m' % k)
-        print(fmt_value(k, entry[k]))
-
-    # cite/supref の食い違いを軽く知らせる（検査本体は check_en_entry.py）
-    cite = set(entry.get('cite_ids') or [])
-    sup = set(entry.get('supref_ids') or [])
-    if cite or sup:
-        miss_cite = sorted(sup - cite)   # 本文が参照するが出典に無い
-        orphan = sorted(cite - sup)      # 出典にあるが本文が参照しない
-        if miss_cite or orphan:
-            print('\n\033[33m⚠ cite/supref 不一致のヒント（詳細は check_en_entry.py）\033[0m')
-            if miss_cite:
-                print('  本文 sup-ref があるのに出典に無い: %s' % miss_cite)
-            if orphan:
-                print('  出典にあるのに本文 sup-ref が無い: %s' % orphan)
+    for field in DISPLAY_ORDER:
+        print('\n\033[1m── %s ──\033[0m' % field)
+        print(field_value(summary, field))
     return 0
 
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('slug', nargs='?', help='対象 slug（.html は省略可）')
-    ap.add_argument('--field', help='指定フィールドだけ表示')
-    ap.add_argument('--raw', action='store_true', help='該当エントリの生 JSON を出力')
-    ap.add_argument('--all', action='store_true', help='og/twitter/jsonld/footer も表示')
+    ap.add_argument('slug', nargs='?', help='対象 slug（通称・.html 省略可）')
+    ap.add_argument('--field', choices=DISPLAY_ORDER, help='指定した意味ブロックだけ表示')
+    ap.add_argument('--raw', action='store_true', help='該当 EN HTML をそのまま出力')
     ap.add_argument('--list', dest='do_list', action='store_true',
                     help='全 slug を一覧（slug を部分一致の絞り込みに使える）')
     args = ap.parse_args(argv)
 
-    pages = en_content.load_pages()
-
+    page_keys = en_content.load_en_page_keys()
     if args.do_list:
-        list_slugs(pages, needle=args.slug)
+        list_slugs(page_keys, needle=args.slug)
         return 0
-
     if not args.slug:
         ap.error('slug を指定するか --list を使ってください')
 
-    slug, cands = en_content.resolve_slug(args.slug, pages)
+    slug, candidates = en_content.resolve_slug(args.slug, page_keys)
     if slug is None:
-        if cands:
+        if candidates:
             print('slug が一意に決まりません: %s' % args.slug, file=sys.stderr)
-            print('候補:', ', '.join(c[:-5] for c in cands[:15]), file=sys.stderr)
+            print('候補:', ', '.join(key[:-5] for key in candidates[:15]), file=sys.stderr)
         else:
             print('slug が見つかりません: %s' % args.slug, file=sys.stderr)
         return 2
 
-    entry = pages[slug]
+    html = en_content.load_en_html(slug)
     if args.raw:
-        print(json.dumps(entry, ensure_ascii=False, indent=2))
+        print(html, end='')
+        return 0
+    if en_content.is_shim(slug):
+        print('\033[1mEN HTML: %s\033[0m' % slug)
+        print('shim -> %s' % (en_content.shim_target(slug) or '(target missing)'))
         return 0
 
-    if not args.field:
-        print('\033[1mEN entry: %s\033[0m' % slug)
-    return show_entry(entry, only_field=args.field, show_all=args.all)
+    print('\033[1mEN HTML: %s\033[0m' % slug)
+    return show_summary(en_content.extract_en_summary(html), only_field=args.field)
 
 
 if __name__ == '__main__':

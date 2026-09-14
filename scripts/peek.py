@@ -1,26 +1,25 @@
 #!/usr/bin/env python3
 """長い行を持つ正本ファイルを、文脈を汚さずに覗くための読み取り専用ヘルパー。
 
-このリポジトリは1行が非常に長い（EN正本JSON は最大22KB、写真家HTML は最大8.7KB）。
+このリポジトリは1行が非常に長い（写真家HTML は最大8.7KB）。
 `grep -n` や `sed -n` で覗くと1行ヒットしただけで数十KBが出力に入る。
 本スクリプトは必ず既定300文字で切り、切った分は `…(+N chars)` と明示する。
 
 使い方:
   python3 scripts/peek.py grep  <file> <regex> [--max 300] [--limit 20]
   python3 scripts/peek.py lines <file> <start> <end> [--max 300]
-  python3 scripts/peek.py en    <slug> [field ...] [--max 300]   # EN正本JSONの1ページ
-  python3 scripts/peek.py keys  <slug>                            # EN正本の持つキーと各長さ
+  python3 scripts/peek.py       <slug> [block ...] [--max 300]   # EN HTMLの意味ブロック
+  python3 scripts/peek.py en    <slug> [block ...] [--max 300]   # 上と同じ（旧CLI互換）
+  python3 scripts/peek.py keys  <slug>                            # 意味ブロックと各長さ
 
 書き込みは一切しない。
 """
 import argparse
-import json
 import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-EN_JSON = ROOT / "data" / "photographers-en-content.json"
+import en_content
 
 
 def clip(s, n):
@@ -49,31 +48,61 @@ def cmd_lines(a):
 
 
 def _page(slug):
-    pages = json.loads(EN_JSON.read_text(encoding="utf-8"))["pages"]
-    key = slug if slug.endswith(".html") else f"{slug}.html"
-    if key not in pages:
-        sys.exit(f"ERROR: {key} は EN正本に存在しない（キーは <slug>.html 形式）")
-    return key, pages[key]
+    keys = en_content.load_en_page_keys()
+    key, candidates = en_content.resolve_slug(slug, keys)
+    if key is None:
+        if candidates:
+            sys.exit(f"ERROR: {slug} は一意に決まらない: {', '.join(candidates[:15])}")
+        sys.exit(f"ERROR: {slug} は EN HTML に存在しない")
+    html = en_content.load_en_html(key)
+    if en_content.is_shim(key):
+        return key, {"shim": en_content.shim_target(key) or "(target missing)"}
+    return key, en_content.extract_en_summary(html)
+
+
+def _block_value(page, field):
+    if field == "sections":
+        return " | ".join(f"{item['num']} {item['name']}" for item in page[field]) or "(none)"
+    if field == "cites":
+        ids = page["cite_ids"]
+        return f"{page['cite_count']} cite(s): " + (
+            ", ".join(f"cite-{n}" for n in ids) if ids else "(none)")
+    if field == "links":
+        links = list(dict.fromkeys((item["href"], item["text"]) for item in page[field]))
+        return " | ".join(f"{text or '(no text)'} -> {href or '(empty)'}"
+                          for href, text in links) or "(none)"
+    if field == "seo":
+        seo = page[field]
+        hreflang = ", ".join(f"{lang}={href}" for lang, href in seo["hreflang"])
+        return (f"title={seo['title']} | description={seo['description']} | "
+                f"canonical={seo['canonical']} | hreflang={hreflang or '(missing)'} | "
+                f"og:image={seo['og:image']} | GA={seo['GA']}")
+    value = page[field]
+    return str(value)
 
 
 def cmd_en(a):
     key, page = _page(a.slug)
-    fields = a.fields or list(page)
+    fields = a.fields or (["shim"] if "shim" in page else
+                          ["lead", "thesis", "sections", "cites", "links", "seo"])
     print(f"# {key}")
     for f in fields:
         if f not in page:
+            if f == "cites" and "cite_count" in page:
+                print(f"{f}: {clip(_block_value(page, f), a.max)}")
+                continue
             print(f"{f}: (キーなし)")
             continue
-        v = page[f]
-        print(f"{f}: {clip(v if isinstance(v, str) else json.dumps(v, ensure_ascii=False), a.max)}")
+        print(f"{f}: {clip(_block_value(page, f), a.max)}")
 
 
 def cmd_keys(a):
     key, page = _page(a.slug)
-    print(f"# {key}  keys={len(page)}")
-    for f, v in page.items():
-        n = len(v) if isinstance(v, str) else len(json.dumps(v, ensure_ascii=False))
-        print(f"  {f:26s} {n:7d}")
+    fields = (["shim"] if "shim" in page else
+              ["lead", "thesis", "sections", "cites", "links", "seo"])
+    print(f"# {key}  blocks={len(fields)}")
+    for field in fields:
+        print(f"  {field:26s} {len(_block_value(page, field)):7d}")
 
 
 def main():
@@ -92,7 +121,10 @@ def main():
 
     k = sub.add_parser("keys"); k.add_argument("slug"); k.set_defaults(fn=cmd_keys)
 
-    a = ap.parse_args()
+    argv = sys.argv[1:]
+    if argv and argv[0] not in {"grep", "lines", "en", "keys"}:
+        argv.insert(0, "en")
+    a = ap.parse_args(argv)
     a.fn(a)
 
 

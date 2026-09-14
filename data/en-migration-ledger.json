@@ -2,7 +2,7 @@
   "_meta": {
     "schema_version": 1,
     "generated_by": "scripts/build_en_migration_ledger.py",
-    "generated_at_commit": "eda2cda01",
+    "generated_at_commit": "1ef927ad0",
     "canon": {
       "policy": "html",
       "declared_at": "2026-09-14 phase D",

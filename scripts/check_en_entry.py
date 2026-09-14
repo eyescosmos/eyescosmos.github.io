@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
-"""Per-slug integrity checks for one EN photographer entry.
+"""Per-slug integrity checks for one EN photographer HTML page.
 
-対象 slug だけを検査する読み取り専用ツール。JSON も HTML も書き換えない。
+対象 slug の EN HTML だけを検査する読み取り専用ツール。HTML は書き換えない。
 EN 写真家本文を直す前後に、対象ページだけを安全に点検するために使う。
 
 検査項目:
-  1. sup-ref ↔ cite-id の対応（本文の *N と出典 cite-N、保存済み配列との整合）
-  2. cite-id の重複
-  3. Amazon 検索結果 URL / utm_source の混入
-  4. 作品・外部リンクの誤 URL（1文字アンカー・既知の誤ドメイン・空 href）
-  5. Wikipedia / ブログ等の禁止出典の混入
-  6. EN HTML 再生成後に JSON 宣言と一致しているか（HTML-vs-JSON closure）
-  7. （任意）対象外ファイル混入の補助チェック（--git-scope）
+  1. <main> 内の sup-ref ↔ cite-id の対応
+  2. <main> 内の Amazon 検索結果 URL / utm_source の混入
+  3. <main> 内の作品・外部リンクの誤 URL（1文字アンカー・既知の誤ドメイン・空 href）
+  4. <main> 内の Wikipedia / ブログ等の禁止出典の混入
+  5. shim の転送先 EN 実ページの存在
+  6. （任意）対象外ファイル混入の補助チェック（--git-scope）
 
 使い方:
     python3 scripts/check_en_entry.py atget
@@ -29,15 +28,8 @@ import sys
 import en_content
 
 ROOT = en_content.ROOT
-JSON_PATH = en_content.JSON_PATH
 EN_DIR = os.path.join(ROOT, 'en', 'photographers')
 
-# 本文系（sup-ref が出てよい場所）
-BODY_FIELDS = ('lead_html', 'thesis_html')
-# リンク全般を走査する場所
-LINK_FIELDS = ('lead_html', 'thesis_html', 'keywords_html', 'view_works_links_html',
-               'notable_works_html', 'photobooks_html', 'external_links_html',
-               'further_reading_html', 'sources_html', 'site_directory_html')
 # 禁止出典ドメイン（CLAUDE.md: Wikipedia 回避・信頼ソース優先）
 PROHIBITED_SOURCE_DOMAINS = (
     'wikipedia.org', 'wikimedia.org', 'blogspot.', 'wordpress.com',
@@ -56,6 +48,11 @@ SUPREF_RE = re.compile(r'href="#cite-(\d+)"')
 CITE_ID_RE = re.compile(r'id="cite-(\d+)"')
 ANCHOR_RE = re.compile(r'<a\b([^>]*)>(.*?)</a>', re.S)
 HREF_RE = re.compile(r'href="([^"]*)"')
+MAIN_RE = re.compile(r'<main\b[^>]*>(.*?)</main>', re.S | re.I)
+SECTION_RE = re.compile(r'<section\b[^>]*>.*?</section>', re.S | re.I)
+SRC_LABEL_RE = re.compile(
+    r'<span\b[^>]*class="[^"]*\bph-section__num\b[^"]*"[^>]*>\s*§\s*SRC\s*</span>',
+    re.S | re.I)
 
 
 class Report:
@@ -63,6 +60,7 @@ class Report:
         self.slug = slug
         self.fails = []
         self.warns = []
+        self.ok_detail = ''
 
     def fail(self, msg):
         self.fails.append(msg)
@@ -76,7 +74,8 @@ class Report:
     def emit(self):
         head = '■ %s' % self.slug
         if not self.fails and not self.warns:
-            print('%s  \033[32mOK\033[0m' % head)
+            detail = ('  %s' % self.ok_detail) if self.ok_detail else ''
+            print('%s  \033[32mOK\033[0m%s' % (head, detail))
             return
         print(head)
         for m in self.fails:
@@ -85,32 +84,17 @@ class Report:
             print('  \033[33mWARN\033[0m %s' % m)
 
 
-def section_bodies(entry):
-    out = []
-    for f in BODY_FIELDS:
-        v = entry.get(f)
-        if v and v != 'None':
-            out.append(v)
-    for s in entry.get('sections') or []:
-        b = s.get('body_html')
-        if b:
-            out.append(b)
-    return out
+def main_html(html):
+    """サイト共通 chrome を除いた <main> の内側を返す。"""
+    match = MAIN_RE.search(html)
+    return match.group(1) if match else ''
 
 
-def all_link_html(entry):
-    chunks = list(section_bodies(entry))
-    for f in LINK_FIELDS:
-        v = entry.get(f)
-        if v and v != 'None':
-            chunks.append(v)
-    return '\n'.join(chunks)
-
-
-def check_cite_supref(entry, rep):
-    body = '\n'.join(section_bodies(entry))
+def check_cite_supref(html, rep):
+    sources = next((section for section in SECTION_RE.findall(html)
+                    if SRC_LABEL_RE.search(section)), '')
+    body = html.replace(sources, '', 1) if sources else html
     sup_actual = [int(x) for x in SUPREF_RE.findall(body)]
-    sources = entry.get('sources_html') or ''
     cite_actual = [int(x) for x in CITE_ID_RE.findall(sources)]
 
     # 重複 cite-id
@@ -135,16 +119,6 @@ def check_cite_supref(entry, rep):
         if gaps:
             rep.warn('cite-id に欠番: %s' % gaps)
 
-    # 保存済み配列とのズレ（生成時のスナップショットが古い兆候）
-    stored_cite = set(entry.get('cite_ids') or [])
-    stored_sup = set(entry.get('supref_ids') or [])
-    if stored_cite and stored_cite != cite_set:
-        rep.warn('保存 cite_ids %s が sources_html 実体 %s と不一致'
-                 % (sorted(stored_cite), sorted(cite_set)))
-    if stored_sup and stored_sup != sup_set:
-        rep.warn('保存 supref_ids %s が本文実体 %s と不一致'
-                 % (sorted(stored_sup), sorted(sup_set)))
-
 
 def iter_anchors(html):
     for m in ANCHOR_RE.finditer(html):
@@ -155,8 +129,7 @@ def iter_anchors(html):
         yield href, plain
 
 
-def check_links(entry, rep):
-    html = all_link_html(entry)
+def check_links(html, rep):
     for href, text in iter_anchors(html):
         low = href.lower()
         # 1文字アンカー（>S</a> 事故。過去の museumangewandtekunst.de 誤リンクもこれで捕捉）
@@ -178,23 +151,6 @@ def check_links(entry, rep):
                 rep.warn('禁止/非推奨ドメインへのリンク: %s（text=%r）' % (href, text))
 
 
-def check_html_vs_json(entry, slug, rep):
-    """再生成済み EN HTML が JSON 宣言と一致するか（HTML-vs-JSON closure）。
-
-    2026-09-13 の HTML 正本化（最小版・docs/en-html-canon-migration.md §2a）以降、
-    既存 EN ページは HTML 自身が正本で、JSON は再生成しない参照データに降格した。
-    HTML を直接編集すれば JSON と乖離するのが正常なので、実ページが存在する場合は
-    この closure 検査を行わない（行うと通常運用が毎回 FAIL する）。
-    新規ページ作成は当面 JSON + builder のままなので、関数自体は残す。
-    """
-    path = os.path.join(EN_DIR, slug)
-    if not os.path.exists(path):
-        rep.warn('EN HTML 未生成: en/photographers/%s（closure 検査スキップ）' % slug)
-        return
-    rep.warn('既存 EN ページは HTML 自身が正本（%s）。JSON closure 検査はスキップ'
-             '（docs/en-html-canon-migration.md §2a）' % slug)
-
-
 def check_git_scope(slug, rep):
     """対象外ファイルが git 差分に混ざっていないかの補助チェック。"""
     try:
@@ -206,7 +162,6 @@ def check_git_scope(slug, rep):
     changed = [f for f in out.splitlines() if f.strip()]
     base = slug[:-5] if slug.endswith('.html') else slug
     expected = (
-        'data/photographers-en-content.json',
         'en/photographers/%s' % slug,
         'photographers/%s' % slug,
         'scripts/en_entry.py', 'scripts/check_en_entry.py',
@@ -217,12 +172,26 @@ def check_git_scope(slug, rep):
                  + '\n    '.join(extra))
 
 
-def run_one(pages, slug, git_scope=False):
+def run_one(slug, git_scope=False):
     rep = Report(slug)
-    entry = pages[slug]
-    check_cite_supref(entry, rep)
-    check_links(entry, rep)
-    check_html_vs_json(entry, slug, rep)
+    path = os.path.join(EN_DIR, slug)
+    if en_content.is_shim(slug):
+        target = en_content.shim_target(slug)
+        target_path = os.path.join(EN_DIR, target) if target else ''
+        if not target:
+            rep.fail('shim の転送先 EN ファイル名を取得できない')
+        elif not os.path.isfile(target_path):
+            rep.fail('shim の転送先 EN 実ページが存在しない: %s' % target)
+        elif en_content.is_shim(target):
+            rep.fail('shim の転送先が EN 実ページではない: %s' % target)
+        else:
+            rep.ok_detail = 'shim 転送先 EN 実ページが存在: %s' % target
+    else:
+        with open(path, encoding='utf-8', errors='replace') as fh:
+            html = fh.read()
+        body = main_html(html)
+        check_cite_supref(body, rep)
+        check_links(body, rep)
     if git_scope:
         check_git_scope(slug, rep)
     return rep
@@ -237,24 +206,22 @@ def main(argv=None):
                     help='git 差分に対象外ファイルが混ざっていないか補助チェック')
     args = ap.parse_args(argv)
 
-    pages = en_content.load_pages()
+    page_keys = en_content.load_en_page_keys()
 
     if args.all:
         n_fail = 0
-        for slug in sorted(pages):
-            rep = run_one(pages, slug, git_scope=False)
+        for slug in page_keys:
+            rep = run_one(slug, git_scope=False)
             if not rep.ok() or rep.warns:
                 rep.emit()
             if not rep.ok():
                 n_fail += 1
-        print('\n%d/%d slug に FAIL' % (n_fail, len(pages)))
+        print('\n%d/%d slug に FAIL' % (n_fail, len(page_keys)))
         return 1 if n_fail else 0
 
     if not args.slug:
         ap.error('slug を指定するか --all を使ってください')
-    # E-1 予定: slug 解決が EN 正本 JSON 経由のため、JSON 未登録の実ページ
-    # （toyoko-tokiwa / sibylle-bergemann）が解決できない。HTML 実在ベースへ移す。
-    slug, cands = en_content.resolve_slug(args.slug, pages)
+    slug, cands = en_content.resolve_slug(args.slug, page_keys)
     if slug is None:
         if cands:
             print('slug が一意に決まりません: %s' % args.slug, file=sys.stderr)
@@ -262,7 +229,7 @@ def main(argv=None):
         else:
             print('slug が見つかりません: %s' % args.slug, file=sys.stderr)
         return 2
-    rep = run_one(pages, slug, git_scope=args.git_scope)
+    rep = run_one(slug, git_scope=args.git_scope)
     rep.emit()
     return 0 if rep.ok() else 1
 

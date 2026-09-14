@@ -42,7 +42,7 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 try:
-    import en_content  # noqa: E402  EN slug 解決と pages 読み込み
+    import en_content  # noqa: E402  EN HTML 実在ベースの slug 解決
 except Exception:  # noqa: BLE001
     en_content = None
 
@@ -359,12 +359,14 @@ def _check_completeness(html: str) -> list[Finding]:
 
 
 # ── EN 軽量検査（EN closure は preflight 既存ガードに委譲・重複しない）─────
-def check_en(slug: str, en_pages: dict | None) -> list[Finding]:
+def check_en(slug: str) -> list[Finding]:
     f: list[Finding] = []
     p = en_path(slug)
     if not p.exists():
         f.append(Finding("en_missing", SOFT,
-                         "EN ページ未生成（build_photographers_en.py --slug で生成）"))
+                         "EN ページ未生成（python3 scripts/import_chatgpt_photographer.py "
+                         "--render-en <EN素材> --slug <slug> --apply で生成。"
+                         "フェーズCで追加・既存ページには書けない）"))
         return f
     html = p.read_text(encoding="utf-8", errors="ignore")
     blocks = _jsonld_blocks(html)
@@ -387,11 +389,6 @@ def check_en(slug: str, en_pages: dict | None) -> list[Finding]:
     if "BreadcrumbList" not in types and not parse_failed and blocks:
         f.append(Finding("en_breadcrumb_absent", SOFT,
                          "EN JSON-LD に BreadcrumbList が無い（任意改善）"))
-    # EN 正本 JSON に slug があるか（無い＝EN closure 対象外の手作業ページの疑い）
-    if en_pages is not None and f"{slug}.html" not in en_pages:
-        f.append(Finding("en_json_absent", SOFT,
-                         f"EN 正本 {en_content.JSON_PATH if en_content else 'photographers-en-content.json'}"
-                         f" に {slug} が無い"))
     return f
 
 
@@ -421,13 +418,7 @@ def check_slug(slug: str) -> tuple[str, list[Finding]]:
                               f"photographers/{slug}.html が存在しない")]
     html = p.read_text(encoding="utf-8", errors="ignore")
     findings += check_ja(slug, html)
-    en_pages = None
-    if en_content is not None:
-        try:
-            en_pages = en_content.load_pages()
-        except Exception:  # noqa: BLE001
-            en_pages = None
-    findings += check_en(slug, en_pages)
+    findings += check_en(slug)
     if slug not in carddata_ids():
         findings.append(Finding("not_in_carddata", SOFT,
                                 "card-data.json に未登録（アーカイブ/星座に出ない）"))
@@ -436,12 +427,13 @@ def check_slug(slug: str) -> tuple[str, list[Finding]]:
 
 # ── CLI ───────────────────────────────────────────────────────
 def _resolve(slug_arg: str) -> str | None:
-    """通称を実 slug stem に解決。EN pages 経由（無ければ素通し）。"""
+    """通称を実 slug stem に解決。EN HTML 実在経由（無ければ素通し）。"""
     if ja_path(slug_arg).exists():
         return slug_arg
     if en_content is not None:
         try:
-            resolved, _cands = en_content.resolve_slug(slug_arg, en_content.load_pages())
+            resolved, _cands = en_content.resolve_slug(
+                slug_arg, en_content.load_en_page_keys())
             if resolved:
                 return resolved[:-5]  # '.html' を外して JA stem へ
         except Exception:  # noqa: BLE001
