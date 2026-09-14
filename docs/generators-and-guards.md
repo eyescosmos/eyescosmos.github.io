@@ -24,12 +24,13 @@
 **現在の正（source of truth）:**
 - 日本語写真家ページの**構造・デザイン・ヘッダー・言語トグルは `photographers/*.html` 自身**
   （JA HTML が正）。構造・本文・解説・出典・関連欄の修正は HTML を直接編集する。
-- **既存の EN 写真家ページは `en/photographers/*.html` 自身が正本**（2026-09-13 の HTML 正本化・最小版。
-  `docs/en-html-canon-migration.md` §2a）。本文・thesis・§REL・出典は EN HTML を直接編集する。
+- **EN 写真家ページは新規・既存とも `en/photographers/*.html` 自身が正本**（2026-09-15 フェーズE-2。
+  `docs/en-html-canon-migration.md` §11）。本文・thesis・§REL・出典は EN HTML を直接編集する。
   `data/photographer-essay-overrides.js` の `textEn` に同じ文が残る場合は、事実修正時に両方をそろえる。
-- `scripts/build_photographers_en.py` は**新規 EN ページの作成専用**になった。既存ページへの書き込みは
-  既定で拒否され `🛑 REFUSED` を出す（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。
-  `data/photographers-en-content.json` は新規作成の入力データで、既存ページの正本ではない。
+- 新規 EN は `scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`
+  で JA→EN の順に HTML を直接生成する。既存 EN 出力先への書込みは `--force` の有無によらず拒否される。
+- `scripts/build_photographers_en.py` と EN JSON は移行監査・緊急 rollback 比較専用の旧経路。
+  通常フローでは読まず、実行しない。
 
 **言語トグルが再び壊れていないかの確認:**
 ```bash
@@ -126,10 +127,10 @@ python3 scripts/preflight.py
 
 ---
 
-## ChatGPT 素材インポータ（JA 整形 + EN 断片抽出）— 2026-06-21 追加
+## ChatGPT 素材インポータ（JA 整形 + EN HTML 直接生成）— 2026-06-21 追加・2026-09-15 更新
 
 `scripts/import_chatgpt_photographer.py` — ChatGPT 生成の写真家 HTML 素材を、**機械的に
-確定できる整形だけ**自動化して `photographers/<slug>.html` を作る半自動ツール（v1・独立・
+確定できる整形だけ**自動化し、JA と EN の新規HTMLを作る半自動ツール（v1・独立・
 preflight/フック非連動）。前回（森村+小林）で push まで4時間超かかった統合作業のうち、
 決定論部分を機械化するのが目的。
 
@@ -140,9 +141,10 @@ python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html [--en
 python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en SRCEN.html --apply [--force]
 ```
 
-- **書き込みは `photographers/<slug>.html` のみ**。EN 素材を渡すと著者コンテンツの**プレビュー
-  断片**を `outputs/import-preview/<slug>.en-content-entry.json` に出力する（**正本
-  `data/photographers-en-content.json` には触れない**＝v2 で注入予定）。`outputs/` は .gitignore 済み。
+- **通常モードの書込みは JA→EN の順**。EN 素材を渡すと `render_en_page` で
+  `en/photographers/<slug>.html` を直接新規生成する。既存 EN への上書きは常に拒否し、JA 用の
+  `--force` は EN に波及しない。EN JSON の編集も builder 実行も行わない。
+- dry-run で JA ページがまだ無い場合、EN は描画せず「JA ページ作成後に生成」と表示して正常終了する。
 - **v2（2026-06-21・Step2.5 Phase1）**: EN 抽出を正本候補フィールドへ拡張（`extract_en_candidate_fields()`
   ＝ `lead_html / thesis_label / thesis_html / keywords_html / view_works_* / sections / sources_html /
   cite_ids / supref_ids / site_directory_html`）。**正本 JSON には依然書かない**（注入は Step3）。
@@ -150,7 +152,7 @@ python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en 
   レポートを `outputs/import-preview/audit-<ts>.{json,md}` へ）。EN 素材は2系統と判明:
   **Family A**（旧テンプレ `lead`/`essay`/`sources`/`site-directory-links`＝正本と同クラス体系・ただし
   内容ドリフトあり）と **Family B**（新 v5.1 `ph-*` テンプレ＝正本へ移植時にクラス変換が要る）。
-- **card-data / archive / 年代 / 国 / 運動 / 星マップ / EN 正本 JSON には触れない**（既存の
+- **card-data / archive / 年代 / 国 / 運動 / 星マップ / 旧 EN JSON には触れない**（既存の
   `add_photographer.py` と各ビルダーへ委譲＝blast radius を限定）。末尾に follow-up コマンドを印字。
 - 決定論変換: ① `<span class="rev2〜6">` の unwrap（ネスト対応）② `edit-red` クラストークン除去
   ③ レビュー用 CSS（`.edit-red`/`.revN` ルール・`/* revision preview */`）除去 ④ hero 眉
@@ -166,6 +168,9 @@ python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en 
 ---
 
 ## EN 正本の合成・"stage 4" の二義・head fallback — 2026-06-21 追加
+
+> **非推奨の旧経路。** 以下は移行監査・緊急 rollback 用に残した `--merge-to-en` / `--update-en-json`
+> の履歴と安全契約。通常の新規作成は上の importer 通常モードで EN HTML を直接生成する。
 
 EN 写真家ページの正本データは **2 ファイルの後勝ち合成**で、`build_photographers_en.py` が読む:
 
@@ -356,7 +361,7 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
 - **`scripts/add_photographer.py` ＋ `scripts/photographer-spec.example.json`** — 新規写真家を
   card-data.json／supplement.js／スターマップ bin へ重複ガード付きで投入し、v5.1 カードの
   貼り付け用 HTML と実行コマンドを出力する半自動ヘルパー。**末尾に「次に手作業で埋めるもの」
-  チェックリスト（ページ作成／本文・thesis・§REL・cite／EN 正本 JSON／リンク後処理）を出す**ので、
+  チェックリスト（ページ作成／本文・thesis・§REL・cite／EN HTML生成／リンク後処理）を出す**ので、
   それに従えば 1 パスで作れる。
   - **`--scaffold`（`python3 scripts/add_photographer.py <spec.json> --apply --scaffold`）**：
     参照実装 `ansel-adams.html` をコピーし、**機械的に確定できる項目だけ**（slug / canonical /
@@ -386,18 +391,18 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
 2. `python3 scripts/check_en_entry.py <slug>` — 対象 slug を検査
 3. `python3 scripts/preflight.py` → push（pre-push でも自動実行）
 
-**新規ページの作成（当面のみ JSON + builder）:**
-1. `data/photographers-en-content.json` に entry を入れる
-2. `python3 scripts/build_photographers_en.py --slug <slug>`（出力先が未作成のときだけ書ける）
-3. 以降の修正は EN HTML を直接編集する
+**新規ページの作成:**
+1. `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`
+2. `python3 scripts/check_en_entry.py <slug>` — 対象 slug を検査
+3. `python3 scripts/preflight.py` → push（EN 出力先が既存なら常に拒否される）
 
 ---
 
 ## Content storage — CRITICAL
 - JA 写真家ページ `photographers/*.html` は HTML 自身が正本。本文・解説・thesis・§REL・出典は HTML を直接編集する。
-- 既存の EN 写真家ページ `en/photographers/*.html` も HTML 自身が正本。JA と同じく直接編集する（2026-09-13〜）。
-- 新規 EN ページを作るときだけ `data/photographers-en-content.json` の `body_html` / `thesis_html` /
-  `site_directory_html` に入れて `scripts/build_photographers_en.py --slug <slug>` で1回生成する。
+- EN 写真家ページ `en/photographers/*.html` も、新規・既存とも HTML 自身が正本。JA と同じく直接編集する。
+- 新規 EN は importer の通常モードで `extract_bundle(..., "en")` → `render_en_page` を通して直接生成する。
+  EN JSON と builder は通常フローでは使わない。
 - EN の事実修正は、必要に応じて `data/photographer-essay-overrides.js` の `textEn` も同じ内容にそろえる。
 
 ## 手書き追加が再生成で消えないためのルール — CRITICAL

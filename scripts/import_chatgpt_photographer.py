@@ -7,11 +7,10 @@
     除去・hero 眉番号 §NNN の idx 採番・内部リンクの実ファイル存在チェックによる
     自動 de-link。判断が要る編集（サイドバー標準化・§統合・項目削除・thesis 断定度）は
     自動化せず、末尾にレビューチェックリストとして印字する。
-  - 書き込みは **photographers/<slug>.html の1ファイルのみ**（--apply 時）。既存上書きは
-    --force 必須＋自動バックアップ。dry-run 既定。
-  - EN 素材を渡したときは、正本 JSON には一切触れず、**完成形の著者コンテンツ断片**を
-    outputs/import-preview/<slug>.en-content-entry.json に出力する（v2 で正本へ注入予定）。
-  - card-data / archive / 年代 / 国 / 運動 / 星マップ / EN 正本 JSON には触れない
+  - --apply 時は photographers/<slug>.html を書き、EN 素材があれば
+    render_en_page で en/photographers/<slug>.html も直接新規作成する。JA の既存上書きは
+    --force 必須＋自動バックアップ。EN の既存上書きは常に拒否する。dry-run 既定。
+  - card-data / archive / 年代 / 国 / 運動 / 星マップ / 旧 EN JSON には触れない
     （既存の add_photographer.py と各ビルダーへ委譲）。
   - preflight / pre-push フックには連動しない（独立ツール）。
 
@@ -2001,19 +2000,26 @@ def _render_en_summary(html: str, bundle: dict, slug: str,
         f"warnings={len(warnings)}")
 
 
+def _refuse_existing_en(out_path: Path, apply: bool) -> bool:
+    """EN renderer 共通の既存ページ上書き拒否。--force では解除しない。"""
+    if not apply or not out_path.exists():
+        return False
+    sys.stderr.write(
+        "🛑 REFUSED 1 page(s): 既存 EN ページは HTML 自身が正本（再生成しない）\n"
+        f"  ✋ {out_path.name}\n"
+        "  → 既存ENページは HTML 自身が正本。"
+        "en/photographers/<slug>.html を直接編集すること。\n")
+    return True
+
+
 def run_render_en(material: Path, slug: str, lang: str | None,
-                  apply: bool = False) -> int:
+                  apply: bool = False, *, emit_html: bool = True) -> int:
     """EN 素材を描画し、既定は stdout、--apply 時だけ新規 EN HTML へ書く。"""
     if not material.exists():
         sys.stderr.write(f"ERROR: 素材が見つからない: {material}\n")
         return 2
     out_path = EN_DIR / f"{slug}.html"
-    if apply and out_path.exists():
-        sys.stderr.write(
-            "🛑 REFUSED 1 page(s): 既存 EN ページは HTML 自身が正本（再生成しない）\n"
-            f"  ✋ {out_path.name}\n"
-            "  → 既存ENページは HTML 自身が正本。"
-            "en/photographers/<slug>.html を直接編集すること。\n")
+    if _refuse_existing_en(out_path, apply):
         return 1
 
     raw = material.read_text(encoding="utf-8", errors="replace")
@@ -2028,9 +2034,10 @@ def run_render_en(material: Path, slug: str, lang: str | None,
         out_path.write_text(out, encoding="utf-8")
         written = out_path.read_text(encoding="utf-8")
         summary = _render_en_summary(written, bundle, slug, warnings)
-        sys.stderr.write(summary + f" wrote={out_path.relative_to(REPO)}\n")
+        sys.stderr.write(summary + f" wrote={_rel(out_path)}\n")
     else:
-        sys.stdout.write(out)
+        if emit_html:
+            sys.stdout.write(out)
         sys.stderr.write(_render_en_summary(out, bundle, slug, warnings) + "\n")
     for warning in warnings:
         sys.stderr.write(f"  ! {warning}\n")
@@ -2083,6 +2090,15 @@ def _rel(path: Path):
         return path.relative_to(REPO)
     except ValueError:
         return path
+
+
+def _print_deprecated_en_json_banner() -> None:
+    sys.stderr.write(
+        "⚠ 非推奨（2026-09-15 フェーズE-2）: このモードは EN 正本 JSON / stage4 へ書き込む旧経路です。\n"
+        "   通常フローでは使いません。EN 写真家ページの正本は en/photographers/*.html です。\n"
+        "   新規作成:  python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply\n"
+        "   既存修正:  en/photographers/<slug>.html を直接編集\n"
+        "   このモードは移行監査・緊急 rollback 用に残してあります（撤去はフェーズF）。\n")
 
 
 def _is_empty_merge_value(v) -> bool:
@@ -2337,6 +2353,7 @@ def run_merge_to_en(material: Path, slug: str | None, lang: str | None,
     続けて ① works ui-terms 自動追加候補を JA↔EN works チップの URL 突合せで算出し、
     dry-run では計画を表示するだけ、--apply では正本 JSON マージと同じゲートで
     data/photographers-en-ui-terms.json へ実書込する（キー競合は上書きせず報告のみ）。"""
+    _print_deprecated_en_json_banner()
     if not material.exists():
         sys.stderr.write(f"ERROR: EN 素材が見つからない: {material}\n")
         return 2
@@ -3135,6 +3152,7 @@ def _verify_after_inject(slug: str, key: str, new_entry: dict, old_html: str,
 
 def inject_thesis_to_stage4(slug: str, en_path: str, apply: bool) -> int:
     """Step3a: EN 素材の thesis_label / thesis_html を stage4.json へ最小注入。"""
+    _print_deprecated_en_json_banner()
     key = slug + ".html"
     print(f"Step3a thesis 注入  slug={slug}  key={key}  mode={'APPLY' if apply else 'dry-run'}")
 
@@ -3243,10 +3261,10 @@ def print_runbook(slug: str, wrote_ja: bool, wrote_en: bool):
     print(f"  python3 scripts/check_new_photographer.py --slug {slug}   # 完成検査")
     print(f"  python3 scripts/add_photographer.py <spec.json> --apply   # 全サーフェス反映")
     if wrote_en:
-        print(f"  # EN: outputs/import-preview/{slug}.en-content-entry.json を正本へ手で移植後")
-        print(f"  python3 scripts/build_photographers_en.py --slug {slug}")
+        print(f"  # EN: en/photographers/{slug}.html を直接生成済み")
+        print(f"  python3 scripts/check_en_entry.py {slug}")
     print(f"  python3 scripts/preflight.py                              # push 前ネット")
-    print("\n注意: card-data / 年代 / 国 / 運動 / 星 / EN 正本 JSON は本ツールでは触れていない。")
+    print("\n注意: EN ページは本ツールが直接生成する。card-data / 年代 / 国 / 運動 / 星は触れていない。")
 
 
 # ── ② 素材プリチェック（read-only）──────────────────────────────────────────
@@ -3563,6 +3581,17 @@ def main(argv=None) -> int:
         sys.stderr.write(f"ERROR: JA 素材が見つからない: {ja_src}\n")
         return 2
 
+    en_src = None
+    if args.en:
+        en_src = Path(args.en)
+        if not en_src.exists():
+            sys.stderr.write(f"ERROR: EN 素材が見つからない: {en_src}\n")
+            return 2
+        # JA の既存上書き判定・書込みより先に EN の不変条件を確定する。
+        # --force は JA 専用で、この拒否には一切波及させない。
+        if _refuse_existing_en(EN_DIR / f"{args.slug}.html", args.apply):
+            return 1
+
     idx, idx_note = resolve_idx(args.slug, args.idx)
     print(f"slug={args.slug} / idx={idx}（{idx_note}）")
 
@@ -3591,35 +3620,25 @@ def main(argv=None) -> int:
         if ja_out.exists():
             bak = ja_out.with_name(ja_out.stem + "-backup" + ja_out.suffix)
             bak.write_text(ja_out.read_text(encoding="utf-8"), encoding="utf-8")
-            print(f"  backup → {bak.relative_to(REPO)}")
+            print(f"  backup → {_rel(bak)}")
         ja_out.write_text(out_html, encoding="utf-8")
         wrote_ja = True
-        print(f"  ✅ 書込: {ja_out.relative_to(REPO)}")
+        print(f"  ✅ 書込: {_rel(ja_out)}")
     else:
-        print(f"  (dry-run) 書込先: {ja_out.relative_to(REPO)}（--apply で書込）")
+        print(f"  (dry-run) 書込先: {_rel(ja_out)}（--apply で書込）")
 
     wrote_en = False
-    if args.en:
-        en_src = Path(args.en)
-        if not en_src.exists():
-            sys.stderr.write(f"ERROR: EN 素材が見つからない: {en_src}\n")
-            return 2
-        fragment, en_report = extract_en_fragment(en_src.read_text(encoding="utf-8"), args.slug)
-        print("\n── EN 断片抽出（正本 JSON には書かない） ──")
-        print(f"  rev unwrap / edit-red 除去 : {en_report['rev_unwrapped']} / {en_report['edit_red_removed']}")
-        if en_report["delinked"]:
-            print(f"  EN localize de-link        : {len(en_report['delinked'])} 件 → {en_report['delinked']}")
-        print(f"  抽出 section               : {en_report['section_count']} 件 {en_report['section_titles']}")
-        for n in en_report["checks"]:
-            print(f"  自己検証                   : {n}")
-        out_json = PREVIEW_DIR / f"{args.slug}.en-content-entry.json"
-        if args.apply:
-            PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
-            out_json.write_text(json.dumps(fragment, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-            wrote_en = True
-            print(f"  ✅ 書込: {out_json.relative_to(REPO)}")
+    if en_src:
+        if not args.apply and not ja_out.is_file():
+            print("\n(dry-run) EN は JA ページ作成後に生成される"
+                  "（--apply で JA→EN の順に書く）")
         else:
-            print(f"  (dry-run) 断片出力先: {out_json.relative_to(REPO)}（--apply で書込）")
+            print("\n── EN ページ描画 ──")
+            rc = run_render_en(en_src, args.slug, "en", args.apply,
+                               emit_html=False)
+            if rc != 0:
+                return rc
+            wrote_en = args.apply
 
     print_runbook(args.slug, wrote_ja, wrote_en)
     return 0

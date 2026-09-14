@@ -305,11 +305,11 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 
 # ★フェーズC 引き継ぎ（2026-09-14・新規セッションはここから読む）
 
-> **2026-09-14 追記: C・A・D・E-1 は完了した。次はフェーズE-2（書き込む側の切替）。**
-> 結果は「§8 フェーズC」「§9 フェーズA」「§10 フェーズD」「§11 フェーズE-1」にある。
-> 以下 §1〜§7 は着手前の記述で、§8〜§11 が上書きする箇所がある。**先に §8〜§11 を読むこと。**
+> **2026-09-15 追記: C・A・D・E-1・E-2 は完了した。残りはフェーズF（JSON降格）だけ。**
+> 結果は §8（C）/ §9（A）/ §10（D）/ §11（E-1）/ §12（E-2）にある。
+> 以下 §1〜§7 は着手前の記述で、§8〜§12 が上書きする箇所がある。**先に §8〜§12 を読むこと。**
 
-**以降 E-2 → F と続ける。E-2・F はバッチと並行不可。連続した1本として通す。**
+**残るは F のみ。バッチと並行不可。**
 
 ## 1. いまどこまで終わっているか
 
@@ -319,8 +319,8 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 | B ガード | 新規3本は稼働中（chip保存 / §REL対称 / 節ラベル対称）。既存ガードの読み先付け替えは未 |
 | C-spike / C | **完了（2026-09-14）。§8 を読む** |
 | D 昇格 | **完了（2026-09-14）。公開HTML 820枚の sha256 不変で証明済。§10 を読む** |
-| E 経路切替 | **E-1 完了（2026-09-14）。次は E-2。** 読み取り6本を EN HTML へ付け替え済。§11 を読む |
-| F JSON降格 | 未着手。`data/photographers-en-content.json` は 415 entries のまま |
+| E 経路切替 | **完了（E-1 2026-09-14 / E-2 2026-09-15）。§11・§12 を読む** |
+| F JSON降格 | **次はこれ（最後）。** `data/photographers-en-content.json` は 415 entries のまま |
 
 **実運用**：既存ENページは HTML 直接編集で完結する。2026-09-14 の5名 update で実証済み
 （正本JSON編集0回・ビルダー実行0回・`git diff` で確認）。**新規作成だけが JSON + ビルダーのまま。**
@@ -758,4 +758,98 @@ Codex はそのとおり2つで実装し、**`cite-id が重複`（FAIL）と `c
   JA と同じ「HTML自身が正本」1行にまとめる。**E-2 より前に書き換えないこと**
 - 完了条件は §2b のとおり「**通常フローに JSON 編集と builder 実行が一度も現れない**」。
   D・E-1 と同じく **820枚の sha256 不変**も入れる
+
+---
+
+## 12. フェーズE-2 完了記録（2026-09-15・Opus監督 / Codex実装）
+
+### 12.1 これで「新規作成もHTML正本」になった
+
+**旧：** importer は EN 素材から**断片 JSON を `outputs/import-preview/` に吐くだけ**で、
+人間がそれを `data/photographers-en-content.json` へ手で移植し、
+`build_photographers_en.py --slug` を回して初めて EN ページが出来ていた。
+
+**新：** 通常モード1本で JA→EN の順に HTML を直接生成する。
+
+```bash
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply
+```
+
+§2b の完了条件「**通常フローに JSON 編集と builder 実行が一度も現れない**」を、
+通常モードの全出力に次の文字列が**各0回**であることで確認した:
+`photographers-en-content.json` / `build_photographers_en.py` / `outputs/import-preview`。
+
+### 12.2 着手前に列挙した旧経路9箇所と、その処遇
+
+E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で旧経路を全部洗い出してから**ブリーフを書いた。
+
+| # | 場所 | 処遇 |
+|---|---|---|
+| 1 | 通常モードの `if args.en:` ブロック | **`render_en_page` で EN HTML を直接生成**（本丸） |
+| 2-3 | `print_runbook()` の EN 分岐と末尾の注意書き | JSON 移植・builder の案内を削除 |
+| 4 | `--merge-to-en`（`merge_bundle_to_en_json`） | コードは残し**非推奨バナー**。撤去は F |
+| 5 | `--update-en-json`（`inject_thesis_to_stage4` + `_verify_after_inject` の builder subprocess） | 同上 |
+| 6 | `add_photographer.py` のチェックリスト3行 | `--render-en` の案内へ |
+| 7-8 | `CLAUDE.md` / `AGENTS.md` | **EN写真家の2行を1行に統合**（下記 12.3） |
+| 9 | `docs/generators-and-guards.md` の EN フロー節 | 新経路を正として更新 |
+
+### 12.3 正本マトリクスの統合
+
+```
+変更前:
+| EN写真家 …（**既存**）      | HTML自身 | なし（手編集・永続） |
+| EN写真家 …（**新規作成のみ**）| data/photographers-en-content.json | build_photographers_en.py --slug |
+
+変更後（1行）:
+| EN写真家 `en/photographers/*.html` | **HTML自身** | 新規のみ importer 通常モード | 既存への上書きは常に拒否 |
+```
+
+「絶対禁止」3番の「新規ENページの作成だけ 当面 JSON + builder のまま」も削除した。
+**これで JA と EN の正本ルールが同じ1行になった＝§2-1 の「正本が2系統のまま動いている」が解消。**
+
+### 12.4 実装で効いた2つの注意点
+
+- **dry-run の落とし穴**：EN scaffold は JA ページなので、新規 slug の dry-run では
+  JA がまだ書かれておらず `EnScaffoldMissing` で落ちる。
+  → dry-run で JA 未作成のときは EN 描画を試みず
+  `(dry-run) EN は JA ページ作成後に生成される（--apply で JA→EN の順に書く）` と表示して EXIT 0
+- **`--force` を EN 側に波及させない**：`--force` は JA ページ用。EN の既存ページ拒否は
+  `--force` を付けても効いたまま。**しかも拒否は書き込み前の事前チェック**で、
+  JA も含めて1バイトも書かれずに EXIT 1 する（実測で確認）
+
+### 12.5 検証
+
+| 検査 | 結果 |
+|---|---|
+| 公開HTML 820枚の sha256 | **完全一致**（新規ファイルも作っていない。EN 418 / JA 402 のまま）|
+| `preflight.py` | 作業前後で**出力差分0**、EXIT 0 |
+| `check_content_loss.py` | OK |
+| `test_render_en_roundtrip.py` | 8/8 PASS・EXPECTED_FAIL 2/2 |
+| 台帳 `--check` | EXIT 0 |
+| `check_en_entry.py --all` | **E-1 の結果とバイト単位で完全一致**（418 slug / WARN 139 / FAIL 1）|
+| EN正本JSON 3本・凍結 builder・`preflight.py` | 差分に**現れない** |
+
+**新規1名の実走（リポジトリ外の fixture）**：JA→EN が1コマンドで両方出来ることを確認。
+生成EN は `lang="en"` / `og:image` / JSON-LD Person / AI開示ブロックあり、
+`sec=4 / cite=56 / dangling=0 / works-cjk=0 / ga=2`、head fallback 0件。
+
+**既存ページへの `--apply --force`**：`🛑 REFUSED` で EXIT 1、EN・JA とも SHA-256 不変。
+
+### 12.6 次（フェーズF・最後）への申し送り
+
+§2b・§5 の裁定どおり **JSON は削除せず読み取り専用アーカイブへ移す**。1時間の想定。
+
+- **移す対象**：`data/photographers-en-content.json`（415 entries・12.4MB）/
+  `data/photographers-en-stage4.json`（1 entry）/ `data/photographers-en-classification.json`
+- **ただし `-classification.json` は `jp_slug_mapping`（17ペア）を
+  `build_photographers_en.build_jp_slug_map()` が現役で読む**（§9.5）。
+  凍結 builder は触らない方針なので、**このファイルだけは動かさないか、
+  builder が読める場所に残すかを先に決めること**
+- 完了条件は §2b の「**通常スクリプトから base/stage4 への読み書き参照が0**」
+- **撤去できるもの**（E-2 で非推奨バナーを付けた分）：
+  `--merge-to-en` / `--update-en-json` / `_verify_after_inject` /
+  `check_en_entry.HAND_MAINTAINED_EN`（§10.2 の残置ガード）。
+  **ただし `build_photographers_en.py` の `HAND_MAINTAINED_EN` 参照を道連れにしないこと**
+  （凍結ファイル。import が壊れると `ALLOW_EN_REBUILD=1` の監査経路が落ちる）
+- **F でも公開HTML 820枚の sha256 不変を完了条件に入れる**
 

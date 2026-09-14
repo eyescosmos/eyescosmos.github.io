@@ -10,8 +10,8 @@
 
 1. **`scripts/generate_photographer_pages.py` を実行しない**。旧デザインを生成し、JAページを旧構造と言語トグル破損へ巻き戻す。物理ガードを解除しない。
 2. **`scripts/generate_archive_pages.py` を実行しない**。
-3. **既存の `en/photographers/*.html` を `build_photographers_en.py` で再生成しない**。既存ENページは **HTML 自身が正本**（2026-09-13〜）。builder は既存ページへの書き込みを既定で拒否する（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。**新規ENページの作成だけ** 当面 `data/photographers-en-content.json` + builder のまま。詳細 `docs/en-html-canon-migration.md` §2a。
-4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ / コロフォン / AI開示）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる（再生成で誤情報が復活するため）。JA写真家ページと既存EN写真家ページは HTML 自身が正本なので、この項の対象外。
+3. **既存の `en/photographers/*.html` を `build_photographers_en.py` で再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。builder は既存ページへの書き込みを既定で拒否する（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。**新規作成も EN HTML を直接生成する（`--render-en` 相当）。JSON は読まない。** 詳細 `docs/en-html-canon-migration.md` §11。
+4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ / コロフォン / AI開示）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる（再生成で誤情報が復活するため）。JA写真家ページと EN写真家ページは HTML 自身が正本なので、この項の対象外。
 5. **捏造しない**。出典にない評価・書誌・年・URL・Amazonリンクを推測で作らない。出典準拠。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードが拒否）。写真家1人追加で `--all` は不要（`docs/generators-and-guards.md`「フルリビルド・ガード」）。
 7. **AI開示ブロック（`<!-- AI-DISCLOSURE -->` で括られた3行＋短縮版）を個別HTMLで直さない**。正本は `scripts/ai_disclosure.py`。直しても preflight の `check_ai_disclosure()` が HARD FAIL で止める。文面変更は正本を直して `python3 scripts/inject_ai_disclosure.py --all`。
@@ -24,8 +24,7 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 | サーフェス | 正本 | 生成コマンド | 備考 |
 |---|---|---|---|
 | JA写真家 `photographers/*.html` | **HTML自身** | なし（手編集・永続） | 本文・thesis・§REL・出典・書籍欄を手編集してよい |
-| EN写真家 `en/photographers/*.html`（**既存**） | **HTML自身** | なし（手編集・永続） | JA と同じく直接編集してよい。JSON は読まれない |
-| EN写真家 `en/photographers/*.html`（**新規作成のみ**） | `data/photographers-en-content.json` | `python3 scripts/build_photographers_en.py --slug <slug>` | 出力先が未作成のときだけ書ける。既存ページは builder が拒否 |
+| EN写真家 `en/photographers/*.html` | **HTML自身** | 新規のみ `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply` | JA と同じく直接編集してよい。既存ページへの上書きは常に拒否される |
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` | |
 | 国別 JA/EN | `data/country-pages.json` | `generate_country_pages.py` / `generate_country_pages_en.py`。`--country <slug>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 | 年代・運動 EN | JA HTML | `python3 scripts/build_taxonomy_en.py`。`--era <YYYY>` / `--slug <movement>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
@@ -37,8 +36,9 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 
 - **既存ページの修正**：`en/photographers/<slug>.html` を直接編集して終わり。JSON は直さない。
   builder も走らせない（走らせても既定で拒否される）。JA と同じ「直して終わり」。
-- **新規ページの作成**：当面これまでどおり `data/photographers-en-content.json` に entry を入れて
-  `python3 scripts/build_photographers_en.py --slug <slug>`。出力先が存在しないときだけ書ける。
+- **新規ページの作成**：JA・EN 素材を importer の通常モードへ渡し、JA→EN の順で HTML を直接生成する。
+  `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`。
+  EN 出力先が既に存在する場合は常に拒否され、`--force` でも上書きしない。
 - EN の事実を直すとき、旧経路 `data/photographer-essay-overrides.js` の `textEn` に同じ本文がある場合は
   そちらもそろえる（撤去までの暫定）。
 - 検査は `python3 scripts/check_en_entry.py <slug>`（JSON closure は既存ページでは実施しない）と

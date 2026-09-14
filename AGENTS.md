@@ -6,8 +6,8 @@
 
 1. **`python3 scripts/generate_photographer_pages.py` を実行しない**。旧デザインを生成し、JAページ全体を巻き戻す。物理ガードがあっても解除しない。
 2. **`python3 scripts/generate_archive_pages.py` を実行しない**。
-3. **既存の `en/photographers/*.html` を再生成しない**。既存ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は既存ページへの書き込みを既定で拒否する（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。**新規ENページの作成だけ** `data/photographers-en-content.json` + builder のまま。詳細 `docs/en-html-canon-migration.md` §2a。
-4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる。再生成で誤情報が復活する。JA写真家ページと既存EN写真家ページは HTML 自身が正本なので対象外。
+3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は既存ページへの書き込みを既定で拒否する（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。**新規作成も EN HTML を直接生成する（`--render-en` 相当）。JSON は読まない。** 詳細 `docs/en-html-canon-migration.md` §11。
+4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる。再生成で誤情報が復活する。JA写真家ページと EN写真家ページは HTML 自身が正本なので対象外。
 5. **捏造しない**。出典にない評価・書誌・URL・Amazonリンクを推測で作らない。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードで拒否）。写真家1人追加で `--all` は不要。安全な生成コマンド集は `docs/generators-and-guards.md`「フルリビルド・ガード」。
 7. **TOP12 ハードコードカード（`pc-top` / `idx` / `pc-top--XXX`）、フィルター/ソートUI、カードJSは依頼がない限り触らない**。カードの正は `cards-archive.html` / `card-data.json`。
@@ -17,13 +17,12 @@
 | サーフェス | 正本 | 生成コマンド | 備考 |
 |---|---|---|---|
 | JA写真家 `photographers/*.html` | **HTML自身** | なし（手編集・永続） | 本文・thesis・関連欄・出典・Amazon欄を手編集してよい |
-| EN写真家 `en/photographers/*.html`（**既存**） | **HTML自身** | なし（手編集・永続） | JA と同じく直接編集してよい。JSON は読まれない |
-| EN写真家 `en/photographers/*.html`（**新規作成のみ**） | `data/photographers-en-content.json` | `python3 scripts/build_photographers_en.py --slug <slug>` | 出力先が未作成のときだけ書ける。既存ページは builder が拒否 |
+| EN写真家 `en/photographers/*.html` | **HTML自身** | 新規のみ `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply` | JA と同じく直接編集してよい。既存ページへの上書きは常に拒否される |
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` | |
 | 国別 JA/EN | `data/country-pages.json` | `generate_country_pages.py` / `generate_country_pages_en.py`。`--country <slug>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 | 年代・運動 EN | JA HTML | `python3 scripts/build_taxonomy_en.py`。`--era <YYYY>` / `--slug <movement>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 
-- 既存EN写真家ページは HTML 自身が正本なので、`en/photographers/<slug>.html` を直接編集して終わり。JSON は読まれない。
+- EN写真家ページは HTML 自身が正本なので、`en/photographers/<slug>.html` を直接編集して終わり。JSON は読まれない。
 - EN本文の事実を直すときは、必要に応じて `data/photographer-essay-overrides.js` の `textEn` も同じ内容にそろえる。片方だけ直すと旧経路との不整合が残る。
 - JA を直したら EN も同じ構造にそろえる。節や §REL を JA にだけ足すと preflight の日英対称性ガードが HARD で止める。
 
@@ -37,12 +36,10 @@ python3 scripts/check_en_entry.py <slug>
 python3 scripts/preflight.py
 ```
 
-**新規ページの作成**（当面のみ JSON + builder）:
+**新規ページの作成**:
 
 ```bash
-python3 scripts/en_entry.py <slug>
-# data/photographers-en-content.json に entry を入れる
-python3 scripts/build_photographers_en.py --slug <slug>   # 出力先が未作成のときだけ書ける
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply
 python3 scripts/check_en_entry.py <slug>
 python3 scripts/preflight.py
 ```
@@ -60,7 +57,7 @@ python3 scripts/preflight.py
 
 - 事実修正(生没年・地名・書名・出版社・年・ISBN・URLなど)は、必ず正本に入れる。
   - JA 写真家ページなら `photographers/*.html`。
-  - EN 写真家ページなら `en/photographers/*.html`（既存ページは HTML 自身が正本）と、必要なら `data/photographer-essay-overrides.js` の `textEn`。新規作成中のページだけ `data/photographers-en-content.json`。
+  - EN 写真家ページなら `en/photographers/*.html`（新規作成も既存修正も HTML 自身が正本）と、必要なら `data/photographer-essay-overrides.js` の `textEn`。
 - 横断後処理 `scripts/link_country_keywords.py` は全ページを直接編集する。実行したら必ず `git status` / `git diff` で対象外ページの混入を確認し、巻き込みは revert する。二重国籍の国名が畳まれていないかも確認する。
 
 ### 実測ログ — Required
@@ -79,7 +76,7 @@ python3 scripts/preflight.py
 python3 scripts/add_photographer.py spec.json --apply --scaffold
 # --scaffold で photographers/<id>.html の安全な空骨格が生成される（既存は上書きしない）
 # 出力された貼り付けカードと手作業チェックリストに従う
-# EN新規ページは data/photographers-en-content.json に entry を入れ、build_photographers_en.py --slug <slug> で生成（以後の修正は EN HTML を直接編集）
+# EN新規ページは importer の通常モードで JA→EN の順に HTML を直接生成（既存 EN への上書きは常に拒否）
 python3 scripts/check_new_photographer.py --slug <slug>
 python3 scripts/preflight.py
 ```

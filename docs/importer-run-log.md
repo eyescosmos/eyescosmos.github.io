@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-15 | (engine)フェーズE-2 書き込み経路切替 | engine | （Daisuke記入） | 0 | 1（旧経路9箇所の事前列挙） | 5ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズE-1 読み取り経路切替 | engine | （Daisuke記入） | 0 | 3（判定リストの復旧・台帳--check・判定の取り下げ） | 8ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズD EN正本昇格 | engine | （Daisuke記入） | 0 | 1（履歴の台帳移管を差し戻し） | 5ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズA EN移行台帳 | engine | （Daisuke記入） | 0 | 1（台帳スキーマ設計） | 2ファイル（公開HTML 0） | N/A | N/A |
@@ -3506,4 +3507,31 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
   roundtrip 8/8・2/2 / 台帳 `--check` EXIT 0・records 418件不変 /
   EN正本JSON 3本・凍結builder・CLAUDE.md・AGENTS.md は差分に現れない。
 - **教訓**：既存関数を別の入力へ移すときは、**先に旧実装の判定を全部列挙してからブリーフを書く**。
+
+
+## 2026-09-15 — フェーズE-2 書き込み経路の切替（種別=engine・Opus監督 / Codex実装）
+
+- **範囲**：`import_chatgpt_photographer.py` / `add_photographer.py` / `CLAUDE.md` / `AGENTS.md` /
+  `docs/generators-and-guards.md` の5ファイル。**公開HTMLの変更0・新規ファイルも0**。
+  wall-time は Daisuke 記入。
+- **これで新規作成もHTML正本になった**。旧は「importer が断片JSONを `outputs/import-preview/` に吐く →
+  人間が正本JSONへ手で移植 → `build_photographers_en.py --slug`」。新は通常モード1本で JA→EN の順に
+  HTML を直接生成する（`--slug <slug> --ja JA.html --en EN.html --apply`）。
+- **§2b の完了条件を数字で確認**：通常モードの全出力に `photographers-en-content.json` /
+  `build_photographers_en.py` / `outputs/import-preview` が**各0回**。
+- **正本マトリクスを統合**：EN写真家の2行（既存＝HTML / 新規＝JSON）を1行にし、「絶対禁止」3番の
+  「新規ENページの作成だけ 当面 JSON + builder」も削除。**JA と EN の正本ルールが同じ1行になった**
+  ＝移行の動機だった「正本が2系統のまま動いている」が解消。
+- **旧経路は残して非推奨バナー**：`--merge-to-en` / `--update-en-json`（stage4 + builder subprocess）は
+  コードを残し、実行時に非推奨バナーを出す。撤去はフェーズF。
+- **手作業点1＝旧経路9箇所の事前列挙**。E-1 までブリーフ側の不備が3回続いたので、
+  着手前に `grep` で全箇所を洗い出してからブリーフを書いた。**今回の設計不備は0件**
+  （Codex の停止1回は「まだ書いていない §12 を参照先に書いた」という軽微なもの）。
+- **実装で効いた2点**：① dry-run の落とし穴＝EN scaffold は JA ページなので新規 slug の dry-run では
+  `EnScaffoldMissing` で落ちる → 案内を出して EXIT 0 にした ② `--force` を EN 側に波及させない。
+  **しかも拒否は書き込み前の事前チェックで、JA も含めて1バイトも書かれずに EXIT 1 する**（実測）。
+- **検査**：公開HTML 820枚の sha256 完全一致（枚数も 418/402 のまま）/ preflight 出力差分0 /
+  content_loss OK / roundtrip 8/8・2/2 / 台帳 `--check` EXIT 0 /
+  `check_en_entry.py --all` が **E-1 の結果とバイト単位で完全一致**（418 slug / WARN 139 / FAIL 1）。
+  リポジトリ外 fixture での新規1名実走は JA→EN 両方生成・head fallback 0件・dangling 0。
 
