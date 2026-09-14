@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-14 | (engine)フェーズA EN移行台帳 | engine | （Daisuke記入） | 0 | 1（台帳スキーマ設計） | 2ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズC `render_en_page` | engine | （Daisuke記入） | 1（作品ラベル死蔵経路） | 2系統（下記） | 3ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | 0914 SEO選定5名 update（niepce/talbot/stieglitz/robertfrank/leibovitz） | update×5 | （Daisuke記入） | 0 | 5（下記） | 公開HTML 10面 | JA素材どおり | 226/226 |
 | 2026-09-13 | ed-ruscha（idx 402・0913素材） | new | （Daisuke記入） | 0 | 4（下記） | 公開HTML 17面 | JA/EN素材どおり | 56/56 |
@@ -3418,3 +3419,31 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
 - **設計上の最大の発見**：計画で唯一の未知数とされた「EN scaffold」は存在しなかった。
   `process_page()` がJA HTMLを読んで組み直す作りのため、**EN scaffold＝同一人物のJAページ**。
   scaffoldファイルは1枚も作っていない。詳細は `docs/en-html-canon-migration.md` §8。
+
+
+## 2026-09-14 — フェーズA EN移行台帳（種別=engine・Opus監督 / Codex実装）
+
+- **範囲**：`scripts/build_en_migration_ledger.py`（483行）と `data/en-migration-ledger.json`
+  （617KB / 418 records）の新規2ファイルのみ。公開HTML・EN正本JSON・既存スクリプトの変更0。
+  完全 read-only の棚卸し。wall-time は Daisuke 記入。
+- **engine改良**：EN写真家ページの全母集団（EN HTML 418 ∪ ファイル無しJSON entry）を
+  `real_page 402 / shim 16 / unpublished_data 0 / exception 0 / unclassified 0` に分類し、
+  各ファイルの sha256 と構造指標（節数・h3・cite・works・§REL・§REF・chip・thesis有無・§REF形式）
+  を固定した。指標は `extract_bundle()` と `preflight._chip_map` を再利用し新しい正規表現を作っていない。
+- **bug 0件**（read-only のため）。**設計との食い違い0**。
+- **台帳が固定した主要事実**：EN正本JSON 415 entry のうち **16 は shim 向け**＝実ページ向けは399。
+  `ihei-kimura` は base に無く **stage4 単独が JSON 側の正本**。`sibylle-bergemann` / `toyoko-tokiwa`
+  は base・stage4 とも entry 無し。**`view_works_links_html` の死蔵 308件**（Fの降格対象の主内訳）。
+  旧形式§REF 2件。`jp-漢字` 17ペア中 `ihei-kimura` だけ shim が欠落。
+- **新しく可視化した日英非対称（棚卸しのみ・未修正）**：節数7 / cite集合17 / h3数21。
+  既存バックログであり移行が作った退行ではない。preflightの3ガードは回帰検知方式なので push は止まらない。
+  **専用セッションは組まず、該当ページを次に update するとき一緒に直す。**
+- **`preflight.py` には配線しない判断**：台帳は全ファイルのhashを持つので1枚直すたびに落ちる。
+  push ゲートではなく **D の完了条件「昇格コミットで EN HTML の内容差分0」を機械的に証明する道具**。
+- **検査**：`--apply` EXIT 0 / `--check` EXIT 0 / 2回生成で sha256 一致（決定論）/
+  台帳を1バイト改変すると `--check` が EXIT 1 でドリフト検知 / dry-run は書かない /
+  preflight は作業前後で出力差分0。
+- **副産物**：`data/photographers-en-classification.json` の陳腐化を確認
+  （`missing_en` 12件は全件 EN 実在、`jp_pages_without_en` も実態と不一致）。台帳が役割を置き換えるが、
+  `jp_slug_mapping` は builder が現役で読むのでファイル自体はフェーズFまで消さない。
+

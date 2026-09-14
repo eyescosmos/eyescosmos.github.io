@@ -305,20 +305,20 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 
 # ★フェーズC 引き継ぎ（2026-09-14・新規セッションはここから読む）
 
-> **2026-09-14 追記: フェーズC は完了した。次はフェーズA（移行台帳）。**
-> 実装の結果と、それによって変わった前提は「§8 フェーズC 完了記録」に書いてある。
-> 以下 §1〜§7 は着手前の記述で、§8 が上書きする箇所がある。**先に §8 を読むこと。**
+> **2026-09-14 追記: フェーズC と フェーズA は完了した。次はフェーズD（昇格）。**
+> 結果と、それによって変わった前提は「§8 フェーズC 完了記録」「§9 フェーズA 完了記録」にある。
+> 以下 §1〜§7 は着手前の記述で、§8・§9 が上書きする箇所がある。**先に §8・§9 を読むこと。**
 
-**以降 A → D → E-1 → E-2 → F と続ける。**
+**以降 D → E-1 → E-2 → F と続ける。D・E・F は連続した1本として通す（バッチと並行不可）。**
 
 ## 1. いまどこまで終わっているか
 
 | フェーズ | 状態 |
 |---|---|
-| A 台帳 | **次はこれ**（D・E の直前にやる。先に作っても古くなる） |
+| A 台帳 | **完了（2026-09-14）。`data/en-migration-ledger.json` + 再生成器。§9 を読む** |
 | B ガード | 新規3本は稼働中（chip保存 / §REL対称 / 節ラベル対称）。既存ガードの読み先付け替えは未 |
 | C-spike / C | **完了（2026-09-14）。§8 を読む** |
-| D 昇格 | 実質達成。残りは `HAND_MAINTAINED_EN` 5件の統合と履歴の台帳移管 |
+| D 昇格 | **次はこれ。** 実質達成済で、残りは `HAND_MAINTAINED_EN` 5件の統合と履歴の台帳移管（履歴は §9 の台帳へ移管済） |
 | E 経路切替 | 17本中3本のみ（`preflight.py` / `check_en_entry.py` / `build_photographers_en.py`） |
 | F JSON降格 | 未着手。`data/photographers-en-content.json` は 415 entries のまま |
 
@@ -498,4 +498,92 @@ SUMMARY: ROUNDTRIP 8/8 PASS; EXPECTED_FAIL 2/2 as expected
 - A が分類する対象に、C で判明した次の2つを足すこと:
   **旧形式 §REF の2枚**（`stieglitz` / `hiroshi-sugimoto`）と、
   **`view_works_links_html` を持つ308件が死蔵である**という事実（F の降格対象の内訳に効く）
+
+---
+
+## 9. フェーズA 完了記録（2026-09-14・Opus監督 / Codex実装）
+
+### 9.1 成果物
+
+| ファイル | 役割 |
+|---|---|
+| `data/en-migration-ledger.json`（約 617KB・418 records） | **機械可読な移行台帳。B・D・E・F はこれを読む** |
+| `scripts/build_en_migration_ledger.py`（483行） | 台帳の生成器。`--apply` / `--check` / 無指定=dry-run |
+
+**`--check` を `preflight.py` に配線していない。** 台帳は全ファイルの sha256 を持つので、
+ページを1枚直すたびに落ちる。これは push ゲートではなく、
+**D・E・F のセッションが「台帳が今のリポジトリと一致しているか」を確かめるための道具**。
+とくに **D の完了条件「昇格コミットで `en/photographers/*.html` の内容差分が0」は、
+台帳の sha256 集合で機械的に証明できる。**
+
+### 9.2 分類（未分類0・例外0）
+
+| class | 件数 |
+|---|---|
+| `real_page` | **402** |
+| `shim`（meta-refresh） | **16** |
+| `unpublished_data`（JSONだけでファイルが無い） | **0** |
+| `exception` | **0** |
+| `unclassified` | **0** |
+
+`exception` か `unclassified` が1件でも出たらスクリプトは EXIT 2 で止まり、人間に判断を求める。
+
+### 9.3 台帳が固定した事実
+
+| 項目 | 値 |
+|---|---|
+| EN正本JSON `pages` | 415 |
+| **うち shim 向け entry** | **16** → 実ページ向けは **399** |
+| ファイルを持たない entry | **0** |
+| stage4 entries | **1**（`ihei-kimura.html`）|
+| **`stage4_only_canon`** | `ihei-kimura` — **base に entry が無く、JSON側の正本が stage4 単独** |
+| `no_json_entry`（実ページだが base にも stage4 にも無い） | `sibylle-bergemann` / `toyoko-tokiwa` |
+| `hand_maintained_history` | 5（annie-leibovitz / lee-miller / shoji-ueda / stieglitz / toyoko-tokiwa）|
+| **`dead_view_works_links`** | **308**（§8.3 の死蔵データ。**F の降格対象の内訳はこれが主**）|
+| `notable_works_html`（builder が実際に読む唯一の作品フィールド） | 89 |
+| `old_ref_format` | `stieglitz` / `hiroshi-sugimoto`（§8.3 の裁定どおり対応しない）|
+| `jp_shim_missing` | `ihei-kimura`（`en/photographers/jp-木村伊兵衛.html` が無い。17ペア中ここだけ）|
+| `ja_missing` / `extract_failed` | **0 / 0** |
+
+### 9.4 台帳で新しく可視化された日英非対称（**A は棚卸しのみ。直していない**）
+
+| flag | 件数 | ページ |
+|---|---|---|
+| `section_count_asymmetry` | **7** | `annan` / `frederick-h-evans` / `marville` / `riis` / `tomishige-rihei` / `tomishige-tokuji` / `yokoyama-matsusaburo` |
+| `cite_set_asymmetry` | **17** | `edward-s-curtis` / `erich-salomon` / `frantisek-drtikol` / `frederick-sommer` / `gerda-taro` / `hannah-hoch` / `herbert-ponting` / `j-dudley-johnston` / `james-van-der-zee` / `john-heartfield` / `josef-sudek` / `karl-blossfeldt` / `richard-polak` / `sakiko-nomura` / `tadahiko-hayashi` / `weegee` / `willy-ronis` |
+| `h3_count_asymmetry` | **21** | `ansel-adams` ほか（§8.5 の既知件を含む）|
+
+**これは既存のバックログであって、移行が作った退行ではない。**
+§2a-DONE のとおり preflight の3ガードは回帰検知方式なので、これらでは push は止まらない。
+**専用セッションは組まず、該当ページを次に update するときに一緒に直す。**
+
+### 9.5 ついでに判明したこと
+
+**`data/photographers-en-classification.json` は陳腐化している。**
+`missing_en` に12件挙がっているが全件 EN ページが実在し、`jp_pages_without_en` の
+`jp-木村伊兵衛.html` も `ihei-kimura.html` として実在する。
+**今回の台帳がこのファイルの役割を置き換える。**
+ただし `jp_slug_mapping`（17ペア）は `build_photographers_en.build_jp_slug_map()` が現役で読むので、
+**このファイル自体はフェーズFまで消さない。**
+
+### 9.6 検証
+
+- `--apply` EXIT 0 / `--check` EXIT 0 / 2回生成で sha256 一致（決定論）
+- 台帳を1バイト改変すると `--check` が EXIT 1 でドリフトを検知
+- 無指定（dry-run）は書かない
+- `preflight.py` は作業前後で**出力差分0**
+- `git status` の差分は新規2ファイルのみ。公開HTML・EN正本JSON・既存スクリプトの変更 **0**
+
+### 9.7 次（フェーズD）への申し送り
+
+- **D からはバッチと並行できない**（§6）。素材が来ていない今が窓
+- D の完了条件「昇格コミットで EN HTML の内容差分0」は、
+  **`build_en_migration_ledger.py --check` が EXIT 0 のままであることで証明する**
+- D の実作業は3つ：
+  1. `HAND_MAINTAINED_EN`（5件）の仕組みを廃止し、全実ページを同じ HTML 正本として扱う
+     （履歴は台帳の `hand_maintained_history` flag に移管済み＝**コードから消してよい**）
+  2. `CLAUDE.md` / `AGENTS.md` の正本マトリクスから「新規のみ JSON 経由」の行を落とす
+     — **ただしこれは E-2 で経路を切り替えてから。D では触らない**
+  3. `stage4_only_canon` の `ihei-kimura` と `no_json_entry` の2件の扱いを決める
+     （§5 の裁定＝ファイル実在を公開正本の基準にする、で既に答えは出ている）
 
