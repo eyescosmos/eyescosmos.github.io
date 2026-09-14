@@ -40,8 +40,9 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 - **新規ページの作成**：JA・EN 素材を importer の通常モードへ渡し、JA→EN の順で HTML を直接生成する。
   `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`。
   EN 出力先が既に存在する場合は常に拒否され、`--force` でも上書きしない。
-- EN の事実を直すとき、旧経路 `data/photographer-essay-overrides.js` の `textEn` に同じ本文がある場合は
-  そちらもそろえる（撤去までの暫定）。
+- **`data/photographer-essay-overrides.js` の `textEn` はそろえなくてよい**（2026-09-15 実測で死蔵と確認）。
+  読んでいるのは `generate_photographer_pages.py` / `generate_archive_pages.py`（どちらも上の**実行禁止**1・2番）と、
+  `textEn` 自身を検査する `check_texten_completeness.py` だけ。**ライブページで `overrides.js` を読む枚数は 0**。
 - 検査は `python3 scripts/check_en_entry.py <slug>`（JSON closure は既存ページでは実施しない）と
   `python3 scripts/preflight.py`。preflight は EN HTML を正本として次を見る:
   keyword chip のリンク保存 / JA・EN の §REL 対称性 / JA・EN の本文節の対称性。

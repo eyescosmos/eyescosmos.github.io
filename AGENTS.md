@@ -24,7 +24,7 @@
 | 年代・運動 EN | JA HTML | `python3 scripts/build_taxonomy_en.py`。`--era <YYYY>` / `--slug <movement>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 
 - EN写真家ページは HTML 自身が正本なので、`en/photographers/<slug>.html` を直接編集して終わり。JSON は読まれない。
-- EN本文の事実を直すときは、必要に応じて `data/photographer-essay-overrides.js` の `textEn` も同じ内容にそろえる。片方だけ直すと旧経路との不整合が残る。
+- **`data/photographer-essay-overrides.js` の `textEn` はそろえなくてよい**（2026-09-15 実測で死蔵と確認）。読むのは実行禁止の旧ジェネレータ2本と `textEn` 自身の検査スクリプトだけで、ライブページで `overrides.js` を読む枚数は 0。
 - JA を直したら EN も同じ構造にそろえる。節や §REL を JA にだけ足すと preflight の日英対称性ガードが HARD で止める。
 
 ## EN 写真家ページ編集フロー — Required
@@ -58,7 +58,7 @@ python3 scripts/preflight.py
 
 - 事実修正(生没年・地名・書名・出版社・年・ISBN・URLなど)は、必ず正本に入れる。
   - JA 写真家ページなら `photographers/*.html`。
-  - EN 写真家ページなら `en/photographers/*.html`（新規作成も既存修正も HTML 自身が正本）と、必要なら `data/photographer-essay-overrides.js` の `textEn`。
+  - EN 写真家ページなら `en/photographers/*.html` だけ（新規作成も既存修正も HTML 自身が正本）。`overrides.js` の `textEn` は死蔵なのでそろえない。
 - 横断後処理 `scripts/link_country_keywords.py` は全ページを直接編集する。実行したら必ず `git status` / `git diff` で対象外ページの混入を確認し、巻き込みは revert する。二重国籍の国名が畳まれていないかも確認する。
 
 ### 実測ログ — Required
