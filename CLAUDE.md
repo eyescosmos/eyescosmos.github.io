@@ -37,9 +37,17 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 
 - **既存ページの修正**：`en/photographers/<slug>.html` を直接編集して終わり。JSON は直さない。
   builder も走らせない（走らせても既定で拒否される）。JA と同じ「直して終わり」。
-- **新規ページの作成**：JA・EN 素材を importer の通常モードへ渡し、JA→EN の順で HTML を直接生成する。
-  `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`。
-  EN 出力先が既に存在する場合は常に拒否され、`--force` でも上書きしない。
+- **新規ページの作成**：入口が2つある。**JA ページが既にあるかで選ぶ**。
+
+  | 状況 | コマンド |
+  |---|---|
+  | **JA も EN もこれから**（素材2本が揃っている） | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`（JA→EN の順に両方できる） |
+  | **JA は既にある。EN だけ足す**（`add_photographer.py` の後段など） | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --render-en EN.html --apply` |
+
+  上を JA 既存に対して使うと `--force` が要る（＝JA を書き直してしまう）ので、
+  **JA ができているなら必ず `--render-en` を使う**。
+  どちらも EN 出力先が既に存在すれば常に拒否され、`--force` でも上書きしない。
+  EN scaffold は同一人物の JA ページなので、**JA が無いと EN は描けない**（dry-run はその旨を表示して正常終了）。
 - **`data/photographer-essay-overrides.js` の `textEn` はそろえなくてよい**（2026-09-15 実測で死蔵と確認）。
   読んでいるのは `generate_photographer_pages.py` / `generate_archive_pages.py`（どちらも上の**実行禁止**1・2番）と、
   `textEn` 自身を検査する `check_texten_completeness.py` だけ。**ライブページで `overrides.js` を読む枚数は 0**。

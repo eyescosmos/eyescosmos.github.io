@@ -40,7 +40,10 @@ python3 scripts/preflight.py
 **新規ページの作成**:
 
 ```bash
+# JA も EN もこれから（素材2本）: JA→EN の順に両方できる
 python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply
+# JA は既にある・EN だけ足す（add_photographer.py の後段など）: JA を書き直さない
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --render-en EN.html --apply
 python3 scripts/check_en_entry.py <slug>
 python3 scripts/preflight.py
 ```
