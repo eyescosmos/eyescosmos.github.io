@@ -58,7 +58,7 @@ Codex の初回見積もりは合計5日だったが、**付け替えと抽出�
 
 ---
 
-## 2a-DONE. 最小版は 2026-09-13 に実装済み（現況）
+## 2a-DONE. 最小版は 2026-09-13 に完了・push 済み（`d09dbed7c`）
 
 **§2a の4項目はすべて入っている。以降の記述は背景として読む。**
 
@@ -300,3 +300,91 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 
 関連：`docs/importer-scaffold-inject-spec.md`（§1の3部品アーキテクチャ・§14のバッチ定型）/
 `docs/generators-and-guards.md`（機械チェックの意味）
+
+---
+
+# ★フェーズC 引き継ぎ（2026-09-14・新規セッションはここから読む）
+
+**着手するのはフェーズC（`render_en_page` の新設）。** 以降 A → D → E-1 → E-2 → F と続ける。
+
+## 1. いまどこまで終わっているか
+
+| フェーズ | 状態 |
+|---|---|
+| A 台帳 | 未着手（D・E の直前にやる。先に作っても古くなる） |
+| B ガード | 新規3本は稼働中（chip保存 / §REL対称 / 節ラベル対称）。既存ガードの読み先付け替えは未 |
+| C-spike / C | **これから。ただし後述のとおり未知数は半分潰れている** |
+| D 昇格 | 実質達成。残りは `HAND_MAINTAINED_EN` 5件の統合と履歴の台帳移管 |
+| E 経路切替 | 17本中3本のみ（`preflight.py` / `check_en_entry.py` / `build_photographers_en.py`） |
+| F JSON降格 | 未着手。`data/photographers-en-content.json` は 415 entries のまま |
+
+**実運用**：既存ENページは HTML 直接編集で完結する。2026-09-14 の5名 update で実証済み
+（正本JSON編集0回・ビルダー実行0回・`git diff` で確認）。**新規作成だけが JSON + ビルダーのまま。**
+
+## 2. なぜCをやるか — 「コマンド数」で測ると判断を誤る
+
+2026-09-13 に監督が「Cが買えるのは新規1名あたり3コマンドだけ」と見積もったが、
+**これはビルダーを1回呼ぶ手間しか数えていない誤った指標**だった（2026-09-14 に Daisuke の指摘で訂正）。
+Cが実際に消すのは次の4つで、どれもコマンド数には出ない。
+
+1. **正本が2系統のまま動いている。** 既存＝HTML / 新規＝JSON。ルールが2本同時に生きており、
+   マトリクスを読む人間もエージェントも両方を覚える必要がある。
+2. **JSONが増え続ける。** 写真家を1名足すたびに entry が1件増え、生成直後から誰も読まない死蔵データになる
+   （2026-09-13 の `ed-ruscha` で415件目）。
+3. **17本中14本がまだ JSON を読み書きする。** importer は新規作成で JSON に書く。
+   つまり「JSONを触らない」は機械ではなく規律で守られており、最小版が塞いだ事故クラスが新規側に残っている。
+4. **新規作成の経路が完成品を出さない。** `ed-ruscha` の EN 生成では、ビルダーが Person ではなく
+   WebPage の JSON-LD にフォールバックし、og:image も無く、結局あとから HTML を手で直した。
+   `render_en_page` はこれを直す作業でもある。
+
+## 3. 今日できた前進 — C-spike の半分は実証済み
+
+2026-09-14 の5名 update のために作った **`scripts/en_html_sync.py`** が、
+「意味データを抜く → EN HTML へ決定論的に注入する → 日英を機械照合する」を実ページ5枚で通した。
+**C-spike が確かめたかった「rebuild_* 相当の部品で EN ページを組み直せるか」のうち、注入側は済んでいる。**
+
+残る未知数は**白紙から EN の骨組み（scaffold）を起こせるか**だけ。§2 の記述どおり、ここだけはコードから読めない。
+
+## 4. Cでやること
+
+`extract_bundle(raw_html, "en")` は既に `"ja"` / `"en"` 両対応（0912 実測）。
+**`render_en_page` は新規開発ではなく抽出**：
+
+- 参考にする既存実装
+  - `scripts/import_chatgpt_photographer.py:1488` `render_ja_page`（52行の薄いオーケストレータ）
+  - `scripts/build_photographers_en.py` の `rebuild_*` **14本**
+    （header / crumbs / hero / abstract / thesis / entry_meta / keywords / works / related /
+    further / sources / sidebar / side_nav / footer）。**EN を描く部品はすべて既存。書き直さない**
+  - `scripts/add_photographer.py:476` `build_scaffold_html` と `SCAFFOLD_BASE`
+    （JA は `photographers/ansel-adams.html` を固定コピー元にしている）
+  - `scripts/en_html_sync.py`（今日追加。注入と照合の実装がある）
+- **EN scaffold は「既存の良いENページを1枚 clean up して置く」で足りる可能性が高い。**
+  候補は `en/photographers/ansel-adams.html`（JA の参照実装と対になる）。
+- **既存ファイルへの書込みは既定で拒否。`--force` を作らない**（§5 の裁定）。
+- 完了条件：抽出→描画→再抽出した意味データが一致し、JA renderer と同じ必須構造検査を通る。
+  最低限 `en_html_sync.py verify` の10項目と `check_new_photographer.py` / `check_en_entry.py` が通ること。
+- 巻き戻し：renderer と fixture のコミットを取り消す。ビルダーには影響させない。
+
+## 5. 順序とバッチ並行可否（§6 の再掲）
+
+C → A（3時間）→ D（2時間）→ E-1 → E-2 → F。
+**C と A は写真家バッチと並行してよい。D・E・F は不可**（正本が2系統同時に生きる窓ができる）。
+D・E・F は連続した1本の作業として通す。素材が来ていない時期を狙うのが安全。
+
+## 6. 今日踏んだ罠（Cの設計に効くもの）
+
+- **EN ページに `ph-thesis` ブロックが無い個体がある**（`robertfrank` / `annie-leibovitz`）。
+  注入器は黙って飛ばす。`render_en_page` は必須ブロックの欠落を fail-loud にすること。
+- **旧フォーマットの残骸**：`stieglitz` の EN には §REL を本文節として取り込んだ4節目があった。
+  JA と節数が合わない個体は他にもありうる。
+- **`§ NN / MM` の分母は JA から同期する。** 言語非依存なので EN 側で数え直さない。
+- **翻訳などの外部プロセスは出力を途中状態で書く。** 完了判定はファイルサイズでなくプロセス終了で見る。
+- **Met のような外部サイトは HTTP 429 を返す。** 作業中の自動事実確認はあてにしない
+  （素材の事実は Daisuke × ChatGPT 担当）。
+
+## 7. 最初に読むファイル
+
+1. 本文書（§1 全体方針 / §3 ガード / §4 スクリプト処遇 / §5 裁定 / §6 申し送り）
+2. `docs/importer-run-log.md` の 2026-09-13 と 2026-09-14 の節（最小版の実装と初回適用の実測）
+3. `scripts/en_html_sync.py` の docstring
+4. `CLAUDE.md` / `AGENTS.md` の正本マトリクス（既存＝HTML / 新規＝JSON の2行になっている）
