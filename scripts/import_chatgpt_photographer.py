@@ -45,6 +45,14 @@ from build_taxonomy_en import STUB_TO_SLUG, SLUG_TO_EN_NAME  # noqa: E402
 # （判定基準と描画挙動を単一化・ズレ防止）。
 import build_photographers_en as _en_builder  # noqa: E402
 from build_photographers_en import CJK_RE  # noqa: E402
+# HTML正本化前の履歴5件を、移行監査・緊急rollback経路で保護する残置ガード。
+try:
+    from check_en_entry import HAND_MAINTAINED_EN  # noqa: E402
+except Exception:
+    HAND_MAINTAINED_EN = {
+        'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html',
+        'toyoko-tokiwa.html', 'lee-miller.html',
+    }
 # AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本）。
 import ai_disclosure as _ai_disclosure  # noqa: E402
 
@@ -3004,13 +3012,6 @@ def _render_audit_md(report: dict) -> str:
 
 # thesis_label はサイト全体で単一定数（content.json 全 entry で一致）。素材の表記揺れは採らない。
 CANONICAL_THESIS_LABEL = "What this photographer changed"
-
-# 手書き維持ページ（ブラインド再生成・注入禁止）。正は scripts/check_en_entry.py の
-# HAND_MAINTAINED_EN。lee-miller は feedback_lee_miller_no_blind_rebuild に従い追加。
-HAND_MAINTAINED_EN = {
-    'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html',
-    'toyoko-tokiwa.html', 'lee-miller.html',
-}
 
 # EN 内部リンク（生成物の規約 = /en/<種別>/<slug>.html）
 EN_INTERNAL_HREF_RE = re.compile(r'/en/(photographers|movements|countries|eras)/([^"#?]+\.html)')

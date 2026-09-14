@@ -223,6 +223,8 @@ python3 scripts/import_chatgpt_photographer.py --slug <slug> --en SRCEN.html --u
 - **thesis_label はサイト定数 `"What this photographer changed"`** を入れる（content.json 全 entry で単一。
   素材の表記揺れ「What This Artist Changed」等は採らない＝既存ラベルを退行させない）。
 - **手書き維持ページは拒否**（`stieglitz / annie-leibovitz / shoji-ueda / toyoko-tokiwa / lee-miller`）。
+  2026-09-14 フェーズDで全EN実ページがHTML正本になった。この5件だけが特別なのではなく、
+  `ALLOW_EN_REBUILD=1` 経路専用の残置ガードとして残してある（撤去はフェーズF）。
 - **stage4 dump は厳格**（`ensure_ascii=False, indent=2`・**末尾改行なし**で既存と byte 一致＝churn 防止）＋
   **atomic write**（`.tmp`→`os.replace`）＋ **対象外キー完全不変 assert**。
 - 注入後に `build_photographers_en.py --slug` を回し、**SKIP なし / 対象1ページ / thesis 本文存在 /
@@ -417,6 +419,8 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
   - 意図的に消す場合のみ `--force`。
   - この門番は手書き維持ページ（`stieglitz` / `annie-leibovitz` の EN 等）が `--all` で
     巻き込まれて消えるのも自然に防ぐ。
+  - 2026-09-14 フェーズDで全EN実ページがHTML正本になった。この5件だけが特別なのではなく、
+    `ALLOW_EN_REBUILD=1` 経路専用の残置ガードとして残してある（撤去はフェーズF）。
 - **JA 写真家ページは HTML 直接編集が正**。手書き thesis/関連欄はそのまま永続する
   （旧ジェネレータを `ALLOW_LEGACY_PHOTOGRAPHER_GEN=1` で無理に動かさない限り消えない）。
 

@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-14 | (engine)フェーズD EN正本昇格 | engine | （Daisuke記入） | 0 | 1（履歴の台帳移管を差し戻し） | 5ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズA EN移行台帳 | engine | （Daisuke記入） | 0 | 1（台帳スキーマ設計） | 2ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズC `render_en_page` | engine | （Daisuke記入） | 1（作品ラベル死蔵経路） | 2系統（下記） | 3ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | 0914 SEO選定5名 update（niepce/talbot/stieglitz/robertfrank/leibovitz） | update×5 | （Daisuke記入） | 0 | 5（下記） | 公開HTML 10面 | JA素材どおり | 226/226 |
@@ -3446,4 +3447,33 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
 - **副産物**：`data/photographers-en-classification.json` の陳腐化を確認
   （`missing_en` 12件は全件 EN 実在、`jp_pages_without_en` も実態と不一致）。台帳が役割を置き換えるが、
   `jp_slug_mapping` は builder が現役で読むのでファイル自体はフェーズFまで消さない。
+
+
+## 2026-09-14 — フェーズD EN正本昇格（種別=engine・Opus監督 / Codex実装）
+
+- **範囲**：`check_en_entry.py` / `import_chatgpt_photographer.py` /
+  `build_en_migration_ledger.py` / `data/en-migration-ledger.json` / `docs/generators-and-guards.md`
+  の5ファイル。**公開HTMLの変更0**。wall-time は Daisuke 記入。
+- **昇格の証明**：公開HTML **820枚**（EN 418 + JA 402）の sha256 集合が作業前後で**完全一致**。
+  台帳の `records` 418件も完全一致（`_meta` の差分は `canon` 追加と `generated_at_commit` の HEAD 追従のみ）。
+- **監督の裁定＝`build_photographers_en.py` は1行も触らない**。§2b の「HAND_MAINTAINED 5件を通常実ページへ
+  統合」を素直にガード削除と読むと、`ALLOW_EN_REBUILD=1`（移行監査・緊急rollback）経路で**この5件だけが
+  保護を失う**。**昇格は宣言であってガードの取り外しではない**と整理し、通常運用側の例外クラスだけ消した。
+- **engine改良**：`check_html_vs_json()` の HAND_MAINTAINED 分岐を削除して一本化。
+  `import_chatgpt_photographer.py` にあった **HAND_MAINTAINED_EN の重複ハードコード定義を削除**し
+  `check_en_entry` からの import へ一本化（二重定義のドリフト源を解消）。台帳に `_meta.canon` で昇格を宣言。
+- **bug 0件。手作業点1＝履歴の台帳移管の差し戻し**：削除したコメントに**ページ別の理由**
+  （shoji-ueda の脚注番号不整合 / lee-miller の手書き§REL 等）が入っていたのに、台帳側は真偽フラグしか
+  持っておらず §5「履歴は台帳にだけ残す」を満たしていなかった。監督が差し戻し、
+  `_meta.canon.hand_maintained_history_notes` に5件の理由を全文で移した。
+- **ブリーフ側の不備1件（監督）**：完了条件に「分岐を削除」と「出力を完全一致」を同時に書いてしまい、
+  Codex が矛盾として停止。**「検査結論（終了コード・重大行集合・WARN件数）の不変」**へ具体化して再開。
+  20 slug（HAND_MAINTAINED 5件を全部含む）で全件一致し、変わったのは WARN 文言だけ＝D の目的どおり。
+- **E-1 の対象を1件発見（未修正）**：`toyoko-tokiwa` は台帳で `real_page` なのに `check_en_entry.py` が
+  slug を解決できず EXIT 2。原因は `en_content.resolve_slug()` が **EN正本JSON の pages キー**で
+  解決していること。台帳で `no_json_entry` の2件（toyoko-tokiwa / sibylle-bergemann）が該当。
+  **台帳が作られた初日に台帳が仕事をした最初の例。** E-1 で HTML 実在ベースへ移せば解消する。
+- **検査**：preflight 作業前後で出力差分0 / check_content_loss OK /
+  `test_render_en_roundtrip.py` ROUNDTRIP 8/8・EXPECTED_FAIL 2/2（フェーズCの退行なし）/
+  台帳 `--check` EXIT 0 / `git diff --stat` に `build_photographers_en.py` は0回。
 

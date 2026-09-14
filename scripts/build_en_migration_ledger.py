@@ -421,6 +421,24 @@ def build_ledger() -> dict:
             "schema_version": 1,
             "generated_by": "scripts/build_en_migration_ledger.py",
             "generated_at_commit": short_head(),
+            "canon": {
+                "policy": "html",
+                "declared_at": "2026-09-14 phase D",
+                "statement": "en/photographers/*.html の real_page 全件が HTML 自身の正本。再生成しない。",
+                "hand_maintained_is_history": True,
+                "hand_maintained_registry": "scripts/check_en_entry.py（ALLOW_EN_REBUILD=1 経路専用の残置ガード。撤去はフェーズF）",
+                # 撤去前に check_en_entry.py のコメントが持っていたページ別の理由。
+                # §5「履歴は台帳にだけ残す」の実体。コードから消えてもここに残す。
+                "hand_maintained_history_notes": {
+                    "shoji-ueda.html": "現 EN HTML が JA ページに対応した正（本文の脚注 *1..*17 と出典が整合）。JSON 側の sources_html / リンクは本文と番号が対応しない別系統の誤りで、JSON からの再生成は正しい HTML を壊した。",
+                    "toyoko-tokiwa.html": "EN HTML は手作りで EN 正本 JSON に未登録。ビルダーは JSON に無いため SKIP していた＝もともと再生成対象外。台帳では no_json_entry flag。",
+                    "lee-miller.html": "手書き §REL 解説と3節本文が JSON に無く、再生成すると劣化した（feedback_lee_miller_no_blind_rebuild）。",
+                    "stieglitz.html": "旧フォーマットの §REF（class=\"book\"）と手編集の本文を持ち、再生成で失われた。台帳では old_ref_format flag。",
+                    "annie-leibovitz.html": "EN に ph-thesis ブロックが無く、手編集で維持されていた個体。",
+                },
+                "new_page_path": "当面 data/photographers-en-content.json + build_photographers_en.py。切替はフェーズE-2",
+                "json_status": "既存ページについては参照データ。降格はフェーズF",
+            },
             "counts": counts,
             "findings": findings,
         },

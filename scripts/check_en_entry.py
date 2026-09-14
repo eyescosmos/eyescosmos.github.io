@@ -44,14 +44,10 @@ PROHIBITED_SOURCE_DOMAINS = (
     'ameblo.jp', 'note.com', 'fc2.com', 'hatenablog', 'medium.com',
     'pinterest.', 'tumblr.com',
 )
-# EN HTML を手書きで維持している例外ページ（JSON は正本ではないので closure 検査をしない）
-# - shoji-ueda: 現 EN HTML が JA ページに対応した正（本文の脚注 *1..*17 と出典が整合）。
-#   JSON 側の sources_html / リンクは別系統の誤りで、本文と番号が対応しない。
-#   よって JSON からの再生成は禁止（正しい HTML を壊す）。HTML を手編集で維持する。
-# - toyoko-tokiwa: EN HTML は手作りで JSON 正本（photographers-en-content.json）に未登録。
-#   ビルダーは JSON に無いため SKIP する＝再生成対象外。SEO ヘッドは HTML を手編集で維持する。
-# - lee-miller: 手書き §REL 解説と3節本文が JSON に無く、再生成すると劣化する
-#   （feedback_lee_miller_no_blind_rebuild）。HTML を手編集で維持する。
+# 2026-09-14 フェーズDで全402実ページがHTML自身の正本になった。この5件が特別なのではない。
+# 履歴は data/en-migration-ledger.json の hand_maintained_history flag が持つ。この集合は
+# build_photographers_en.py の ALLOW_EN_REBUILD=1（移行監査・緊急rollback）経路でだけ効く
+# 残置ガードとして残してある。撤去はフェーズF。
 HAND_MAINTAINED_EN = {'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html', 'toyoko-tokiwa.html', 'lee-miller.html'}
 # Amazon 検索結果・トラッキングの兆候
 AMAZON_SEARCH_SIGNS = ('/s?', '/s/ref', '?k=', '&k=', 'field-keywords', '/gp/search')
@@ -191,9 +187,6 @@ def check_html_vs_json(entry, slug, rep):
     この closure 検査を行わない（行うと通常運用が毎回 FAIL する）。
     新規ページ作成は当面 JSON + builder のままなので、関数自体は残す。
     """
-    if slug in HAND_MAINTAINED_EN:
-        rep.warn('EN 手書き維持ページ（%s）: JSON は正本でないため closure 検査スキップ' % slug)
-        return
     path = os.path.join(EN_DIR, slug)
     if not os.path.exists(path):
         rep.warn('EN HTML 未生成: en/photographers/%s（closure 検査スキップ）' % slug)
@@ -259,6 +252,8 @@ def main(argv=None):
 
     if not args.slug:
         ap.error('slug を指定するか --all を使ってください')
+    # E-1 予定: slug 解決が EN 正本 JSON 経由のため、JSON 未登録の実ページ
+    # （toyoko-tokiwa / sibylle-bergemann）が解決できない。HTML 実在ベースへ移す。
     slug, cands = en_content.resolve_slug(args.slug, pages)
     if slug is None:
         if cands:

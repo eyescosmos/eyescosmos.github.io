@@ -305,11 +305,11 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 
 # ★フェーズC 引き継ぎ（2026-09-14・新規セッションはここから読む）
 
-> **2026-09-14 追記: フェーズC と フェーズA は完了した。次はフェーズD（昇格）。**
-> 結果と、それによって変わった前提は「§8 フェーズC 完了記録」「§9 フェーズA 完了記録」にある。
-> 以下 §1〜§7 は着手前の記述で、§8・§9 が上書きする箇所がある。**先に §8・§9 を読むこと。**
+> **2026-09-14 追記: C・A・D は完了した。次はフェーズE-1（読み取り経路の切替）。**
+> 結果は「§8 フェーズC」「§9 フェーズA」「§10 フェーズD」にある。
+> 以下 §1〜§7 は着手前の記述で、§8〜§10 が上書きする箇所がある。**先に §8〜§10 を読むこと。**
 
-**以降 D → E-1 → E-2 → F と続ける。D・E・F は連続した1本として通す（バッチと並行不可）。**
+**以降 E-1 → E-2 → F と続ける。E・F はバッチと並行不可。連続した1本として通す。**
 
 ## 1. いまどこまで終わっているか
 
@@ -318,8 +318,8 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 | A 台帳 | **完了（2026-09-14）。`data/en-migration-ledger.json` + 再生成器。§9 を読む** |
 | B ガード | 新規3本は稼働中（chip保存 / §REL対称 / 節ラベル対称）。既存ガードの読み先付け替えは未 |
 | C-spike / C | **完了（2026-09-14）。§8 を読む** |
-| D 昇格 | **次はこれ。** 実質達成済で、残りは `HAND_MAINTAINED_EN` 5件の統合と履歴の台帳移管（履歴は §9 の台帳へ移管済） |
-| E 経路切替 | 17本中3本のみ（`preflight.py` / `check_en_entry.py` / `build_photographers_en.py`） |
+| D 昇格 | **完了（2026-09-14）。公開HTML 820枚の sha256 不変で証明済。§10 を読む** |
+| E 経路切替 | **次はこれ（E-1 から）。** 17本中3本のみ（`preflight.py` / `check_en_entry.py` / `build_photographers_en.py`） |
 | F JSON降格 | 未着手。`data/photographers-en-content.json` は 415 entries のまま |
 
 **実運用**：既存ENページは HTML 直接編集で完結する。2026-09-14 の5名 update で実証済み
@@ -586,4 +586,81 @@ SUMMARY: ROUNDTRIP 8/8 PASS; EXPECTED_FAIL 2/2 as expected
      — **ただしこれは E-2 で経路を切り替えてから。D では触らない**
   3. `stage4_only_canon` の `ihei-kimura` と `no_json_entry` の2件の扱いを決める
      （§5 の裁定＝ファイル実在を公開正本の基準にする、で既に答えは出ている）
+
+---
+
+## 10. フェーズD 完了記録（2026-09-14・Opus監督 / Codex実装）
+
+### 10.1 §2b の文字どおりの実行はしていない — 監督の裁定
+
+§2b は D の実体を「コード経路の削除と文書更新」とし、
+「`HAND_MAINTAINED_EN` の5件も通常実ページへ統合する」と書いている。
+**この「統合」を、凍結ファイルのガードを外すことと解釈しなかった。**
+
+`scripts/build_photographers_en.py:1932` の `HAND_MAINTAINED_EN` ガードは、
+`ALLOW_EN_REBUILD=1`（移行監査・緊急rollback比較）の escape hatch 内でだけ効く最後の砦である。
+素直に外すと、**監査経路でこの5ページだけが保護を失う**。
+§4 でこのファイルは分類 **c（凍結）**でもある。
+
+> **昇格は宣言であって、ガードの取り外しではない。**
+> D で削除するのは「JSON を既存ページの正本として扱うコード経路」だけで、安全網は残す。
+
+したがって **`build_photographers_en.py` は1行も変更していない。**
+
+### 10.2 実際にやったこと
+
+| 変更 | 内容 |
+|---|---|
+| `scripts/check_en_entry.py` | `check_html_vs_json()` の `HAND_MAINTAINED_EN` 分岐を削除して一本化。定数は残し、コメントを「この5件が特別なのではない／全402実ページがHTML正本／これは `ALLOW_EN_REBUILD=1` 経路専用の残置ガード／撤去はF」へ書き換え |
+| `scripts/import_chatgpt_photographer.py` | **`HAND_MAINTAINED_EN` の重複ハードコード定義を削除**し、`check_en_entry` からの import に一本化（二重定義のドリフト源を解消。挙動は同一） |
+| `scripts/build_en_migration_ledger.py` / 台帳 | `_meta.canon` を追加して昇格を宣言。**`records` は1つも変えない** |
+| `docs/generators-and-guards.md` | 「手書き維持ページは拒否」の2箇所に、全ENがHTML正本になったこと＋残置ガードである旨を**追記**（既存記述は消さない） |
+| `CLAUDE.md` / `AGENTS.md` | **変更しない。** 「新規ENページのみ JSON + builder」は **E-2 で経路を切り替えるまで事実として正しい** |
+
+**★履歴の移管を取りこぼしかけた点（監督が差し戻して修正）。**
+`check_en_entry.py` から消したコメントには**ページ別の理由**（`shoji-ueda` の脚注番号不整合 /
+`lee-miller` の手書き§REL / `stieglitz` の旧形式§REF 等）が入っていたのに、
+台帳側は `hand_maintained_history` という**真偽フラグしか持っていなかった**。
+§5 の「履歴は台帳にだけ残す」を満たさないので、
+`_meta.canon.hand_maintained_history_notes` に5件のページ別理由を全文で移した。
+
+### 10.3 昇格の証明（完了条件「EN HTML の内容差分0」）
+
+| 検査 | 結果 |
+|---|---|
+| **公開HTML の sha256 集合**（EN 418 + JA 402 = **820枚**） | **作業前後で完全一致** |
+| 台帳の `records`（418件） | **完全一致**（`_meta` の差分は `canon` 追加と `generated_at_commit` の HEAD 追従のみ） |
+| `check_en_entry.py` の検査結論（20 slug・`HAND_MAINTAINED_EN` 5件を全部含む） | 終了コード・重大行集合・WARN件数が**全件一致**。変わったのは WARN の文言だけ（＝D の目的そのもの） |
+| `preflight.py` | 作業前後で**出力差分0** |
+| `check_content_loss.py` | OK |
+| `test_render_en_roundtrip.py` | `ROUNDTRIP 8/8 PASS; EXPECTED_FAIL 2/2`（フェーズC の退行なし） |
+| `build_en_migration_ledger.py --check` | EXIT 0 |
+| `git diff --stat` に `build_photographers_en.py` | **0回**（凍結を維持） |
+
+### 10.4 D で見つかった E-1 の対象（**直していない**）
+
+**`toyoko-tokiwa` は台帳で `real_page` なのに `check_en_entry.py` が slug を解決できず EXIT 2 になる。**
+原因は同スクリプトが **slug 解決を EN正本JSON 経由でやっている**こと
+（`en_content.resolve_slug(args.slug, pages)`）。台帳で `no_json_entry` が立っている
+`toyoko-tokiwa` / `sibylle-bergemann` の2件が引っかかる。
+
+**これは E-1 の本体そのもの**（読み取り経路を JSON から HTML へ向け直す）。
+D では直さず、該当箇所に1行コメントを置いて台帳と本記録に残した。
+**台帳が作られた初日に、台帳が仕事をした最初の例。**
+
+### 10.5 次（フェーズE-1）への申し送り
+
+- **E-1 の対象（読み取り専用6本）**：`preflight.py` / `check_en_entry.py` /
+  `check_new_photographer.py` / `en_entry.py` / `peek.py` / `en_content.py`
+- **最初に直すのは `en_content.resolve_slug()`。** slug 解決を
+  「EN正本JSON の pages キー」から「`en/photographers/*.html` の実在」へ移す。
+  §5 の裁定「**ファイル実在を公開正本の基準にする**」の実装であり、
+  §10.4 の `toyoko-tokiwa` / `sibylle-bergemann` がこれで解消する
+- `check_new_photographer.check_en()` の `en_json_absent`（SOFT）も同じ理由で消える
+  （JSON に無い＝異常、ではなくなった）
+- **E-1 は読むだけなので公開HTMLは不可触。** D と同じく
+  **820枚の sha256 集合が不変であること**を完了条件に入れる
+- `preflight.py` の `check_en_content_loss` 系（`EN_CONTENT_JSON` を見る 528〜629行）は
+  **JSON の内容消失ガード**。E-1 で HTML 側へ向け直すが、**JSON 側のガードを先に外さない**
+  （F で JSON を降格するまで併走させる）
 
