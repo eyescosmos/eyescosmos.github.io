@@ -6,6 +6,8 @@ Idempotent: re-running detects already-applied changes and skips.
 """
 import json, os, re, sys
 
+import en_content
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CJ = os.path.join(ROOT, 'data', 'photographers-en-content.json')
 
@@ -136,6 +138,10 @@ SITE_DIR = (
 
 
 def main():
+    en_content.warn_en_json_archive_deprecated()
+    if "-h" in sys.argv[1:] or "--help" in sys.argv[1:]:
+        print(__doc__)
+        return
     data = json.load(open(CJ, encoding='utf-8'))
     p = data['pages']['eugenesmith.html']
     rep = []

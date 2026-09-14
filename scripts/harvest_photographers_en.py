@@ -10,7 +10,10 @@ import os
 import re
 import json
 import glob
+import sys
 from datetime import datetime, timezone
+
+import en_content
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -402,6 +405,10 @@ def parse_file(path: str) -> tuple[dict, list[str]]:
 # ---------------------------------------------------------------------------
 
 def main():
+    en_content.warn_en_json_archive_deprecated()
+    if "-h" in sys.argv[1:] or "--help" in sys.argv[1:]:
+        print(__doc__)
+        return
     files = sorted(glob.glob(os.path.join(EN_DIR, '*.html')))
     # Exclude stieglitz-backup.html
     files = [f for f in files if os.path.basename(f) != 'stieglitz-backup.html']

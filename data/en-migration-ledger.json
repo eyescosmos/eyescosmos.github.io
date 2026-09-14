@@ -2,7 +2,7 @@
   "_meta": {
     "schema_version": 1,
     "generated_by": "scripts/build_en_migration_ledger.py",
-    "generated_at_commit": "1ef927ad0",
+    "generated_at_commit": "fbc2b27e1",
     "canon": {
       "policy": "html",
       "declared_at": "2026-09-14 phase D",
@@ -16,8 +16,8 @@
         "stieglitz.html": "旧フォーマットの §REF（class=\"book\"）と手編集の本文を持ち、再生成で失われた。台帳では old_ref_format flag。",
         "annie-leibovitz.html": "EN に ph-thesis ブロックが無く、手編集で維持されていた個体。"
       },
-      "new_page_path": "当面 data/photographers-en-content.json + build_photographers_en.py。切替はフェーズE-2",
-      "json_status": "既存ページについては参照データ。降格はフェーズF"
+      "new_page_path": "python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply（フェーズE-2）",
+      "json_status": "読み取り専用アーカイブ（フェーズF・2026-09-15）。物理的には data/ に置いたまま。凍結中の build_photographers_en.py が読むため移動しない。preflight の check_en_json_frozen() が変更を HARD で止める"
     },
     "counts": {
       "records": 418,
@@ -65,6 +65,34 @@
         "section_count": 7,
         "h3_count": 21,
         "cite_set": 17
+      },
+      "en_rel_blurb_missing": {
+        "count": 89,
+        "pages": [
+          "denjiro-hasegawa",
+          "edward-s-curtis",
+          "eiko-yamazawa",
+          "frantisek-drtikol",
+          "hachiro-suzuki",
+          "herbert-ponting",
+          "ihei-kimura",
+          "imogen-cunningham",
+          "iwata-nakayama",
+          "kohei-yasu",
+          "koreaki-kamei",
+          "koyo-kageyama",
+          "nakaji-yasui",
+          "ryuzo-torii",
+          "shigene-kanamaru",
+          "shinzo-fukuhara",
+          "sibylle-bergemann",
+          "tomishige-rihei",
+          "tomishige-tokuji",
+          "wangechi-mutu",
+          "yasuzo-nojima",
+          "yokoyama-matsusaburo"
+        ],
+        "note": "EN HTML の §REL に一言解説が無いリンク。フェーズFで HTML ベース監査に切り替えて可視化した既存バックログで、移行が作った退行ではない。★内訳の大半は jp-漢字ペアのローマ字実ページ（iwata-nakayama / ihei-kimura 等 15枚）。旧 JSON 監査はこれらを一度も見ておらず、代わりに §REL を持たない jp-漢字 shim を検査して無意味な count mismatch を出していた＝構造的な検査漏れだった。該当ページを次に update するとき一緒に直す"
       }
     }
   },

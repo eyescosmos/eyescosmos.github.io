@@ -206,7 +206,7 @@ def main():
             for l in losses:
                 print('       − %s' % l)
         print('  → 意図的な削除でなければ復元してください。'
-              '生成で消えた場合は正本(JA HTML / photographers-en-content.json)に戻してから再生成。')
+              '生成で消えた場合は正本(JA HTML / EN HTML)に戻してから再生成。')
 
     if rewrite_findings:
         print('⚠ 本文の書き換え（消失ではない・構造不変のまま文面が変化＝事実すり替えの疑い・要目視）:')
@@ -215,7 +215,7 @@ def main():
             for r in rewrites:
                 print('       ~ %s' % r)
         print('  → 意図した修正なら問題なし。EN は再生成で巻き戻った可能性があるので、'
-              '正本(JA HTML / photographers-en-content.json・overrides.js)と一致しているか確認。')
+              '正本(JA HTML / EN HTML)と一致しているか確認。')
 
     # 書き換え警告だけのときは push を止めない（加筆・正当な修正で日常的に出るため）。
     return 1 if (findings and args.strict) else 0

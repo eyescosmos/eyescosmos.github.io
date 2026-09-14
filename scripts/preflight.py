@@ -64,7 +64,9 @@ except Exception:  # noqa: BLE001
 
 from sync_card_counts import PHOTO_ARTICLE_RE, PHOTO_HREF_RE  # noqa: E402
 
-EN_CONTENT_JSON = "data/photographers-en-content.json"
+EN_JSON_ARCHIVE_PATHS = tuple(
+    "data/photographers-en-" + name + ".json" for name in ("content", "stage4")
+)
 
 
 def eval_photographers() -> list[dict]:
@@ -522,40 +524,23 @@ def _all_link_html(entry: dict) -> str:
 @functools.lru_cache(maxsize=1)
 def _touched_en() -> dict:
     """baseline（origin/main 等）と作業ツリーを比較し、触れた EN slug を集める。
-    JSON エントリの変化と en/photographers/*.html の変化の両方を合流させる。
-    返り値 {slug: {"base", "work", "json_changed", "html_changed"}}。"""
+    返り値 {slug: {"base", "work", "html_changed"}}。"""
     baseline = _baseline_ref()
-    work_path = REPO / EN_CONTENT_JSON
-    try:
-        work_pages = json.loads(work_path.read_text(encoding="utf-8")).get("pages", {}) \
-            if work_path.exists() else {}
-    except Exception:  # noqa: BLE001
-        work_pages = {}
-    base_raw = _git_show(baseline, EN_CONTENT_JSON)
-    try:
-        base_pages = json.loads(base_raw).get("pages", {}) if base_raw else {}
-    except Exception:  # noqa: BLE001
-        base_pages = {}
-
     touched: dict[str, dict] = {}
-    # 1) JSON エントリの変化
-    for slug, we in work_pages.items():
-        be = base_pages.get(slug)
-        if be != we:
-            touched[slug] = {"base": be, "work": we, "json_changed": True, "html_changed": False}
-    # 2) en/photographers/*.html の変化
     proc = subprocess.run(["git", "diff", "--name-only", baseline, "--", "en/photographers"],
                           capture_output=True, text=True, cwd=REPO)
     for line in proc.stdout.splitlines():
-        name = os.path.basename(line.strip())
+        rel = line.strip()
+        name = os.path.basename(rel)
         if not name.endswith(".html") or name.startswith("jp-") or name.endswith("-backup.html"):
             continue
-        info = touched.get(name)
-        if info:
-            info["html_changed"] = True
-        else:
-            touched[name] = {"base": base_pages.get(name), "work": work_pages.get(name),
-                             "json_changed": False, "html_changed": True}
+        path = REPO / rel
+        work_html = path.read_text(encoding="utf-8", errors="ignore") if path.exists() else None
+        touched[name] = {
+            "base": _git_show(baseline, rel),
+            "work": work_html,
+            "html_changed": True,
+        }
     return touched
 
 
@@ -575,58 +560,24 @@ def _rendered_ph_section_count(rel_path: str, ref: str | None) -> int | None:
     return len(re.findall(r'<section class="ph-section"', html))
 
 
-def check_en_content_loss() -> None:
-    """JSON-vs-baseline: 触った EN エントリが本文・出典・リンクを失っていないか（HARD）。
-    変更が無ければ必ずグリーンなので門にできる。"""
-    for slug, info in _touched_en().items():
-        if not info["json_changed"]:
-            continue
-        be, we = info["base"], info["work"]
-        if be is None or we is None:
-            continue  # 新規 slug / 削除は loss 判定対象外
-        old, new = _en_entry_metrics(be), _en_entry_metrics(we)
-        losses = []
-        if new["cite"] < old["cite"]:
-            losses.append(f"出典 {old['cite']}→{new['cite']}")
-        if new["sections"] < old["sections"]:
-            # JSON の sections[] は過去の harvest で §REL 等を本文節として
-            # 取り込んでいる個体がある。描画後のページで節が減っていなければ
-            # データ構造の整理であって本文消失ではないので WARN に落とす。
-            rel_html = f"en/photographers/{slug}"
-            base_n = _rendered_ph_section_count(rel_html, _baseline_ref())
-            work_n = _rendered_ph_section_count(rel_html, None)
-            if base_n is not None and work_n is not None and work_n >= base_n:
-                warnings.append(
-                    f"{EN_CONTENT_JSON} の {slug}: JSON の本文セクション "
-                    f"{old['sections']}→{new['sections']} だが描画後のページは "
-                    f"{base_n}→{work_n} で減っていない＝構造の整理と判断した")
-            else:
-                losses.append(f"本文セクション {old['sections']}→{new['sections']}")
-        if new["supref"] < old["supref"]:
-            losses.append(f"本文 sup-ref {old['supref']}→{new['supref']}")
-        if old["thesis"] and not new["thesis"]:
-            losses.append("thesis が空に")
-        dropped = sorted(old["links"] - new["links"])
-        if dropped:
-            # 意図的URL置換の宣言（scripts/intentional-replacements.json）を
-            # URL 単位で適用して HARD から除外する（check_content_loss_guard と同じ設計）
-            declarations = _load_intentional_replacements()
-            items = [{"file": slug, "detail": u} for u in dropped]
-            remaining, consumed = _filter_loss_items_by_declarations(items, declarations)
-            for i in sorted(consumed):
-                decl = declarations[i]
-                infos.append(
-                    f"intentional-replacement 適用(EN JSON): slug={decl.get('slug')} "
-                    f"url={decl.get('url')}"
-                    f"（{decl.get('reason', '(理由未記入)')}・宣言日={decl.get('declared', '?')}）"
-                    "＝ リンク消失HARDから除外")
-                _en_consumed_decl_indices.add(i)
-            dropped = [it["detail"] for it in remaining]
-        if dropped:
-            losses.append(f"リンク{len(dropped)}件消失: {dropped[:3]}")
-        if losses:
+def check_en_json_frozen() -> None:
+    """読み取り専用アーカイブ2本の origin/main からの全変更を HARD にする。"""
+    if os.environ.get("ALLOW_EN_JSON_ARCHIVE_WRITE") == "1":
+        return
+    for rel in EN_JSON_ARCHIVE_PATHS:
+        base = subprocess.run(
+            ["git", "show", f"origin/main:{rel}"],
+            capture_output=True,
+            cwd=REPO,
+        )
+        path = REPO / rel
+        work = path.read_bytes() if path.exists() else None
+        if base.returncode != 0 or work != base.stdout:
             hard_failures.append(
-                f"{EN_CONTENT_JSON} の {slug} が内容を失っている: " + " / ".join(losses)
+                f"{rel}: EN正本JSON は読み取り専用アーカイブ（フェーズF・2026-09-15）。"
+                "EN ページの正本は en/photographers/*.html。"
+                "変更が必要な移行監査・緊急rollback のときだけ "
+                "ALLOW_EN_JSON_ARCHIVE_WRITE=1 で解除。"
             )
 
 
@@ -940,26 +891,21 @@ def check_en_changed_slug_integrity() -> None:
 
 def check_en_rel_annotations() -> None:
     """触った EN ページで、JA §REL に一言解説がある関連リンクなのに EN の
-    related_annotations が欠けている取りこぼしを検知（WARN）。
-    年代バッチの §REL 埋めで JA HTML と site_directory_html を更新したとき、
-    EN の一言（related_annotations）を入れ忘れる divergence を毎回可視化する。
-    backfill は scripts/sync_en_rel_annotations.py（--emit-worklist / --apply）。"""
+    HTML上の一言解説が欠けている取りこぼしを検知（WARN）。
+    backfill は scripts/sync_en_rel_annotations.py（--emit-worklist / --inject-html）。"""
     try:
         sys.path.insert(0, str(REPO / "scripts"))
         import sync_en_rel_annotations as sra  # noqa: PLC0415
     except Exception:  # noqa: BLE001
         return
-    try:
-        pages = sra.load_pages()
-    except Exception:  # noqa: BLE001
-        return
     for key in _touched_en():  # keys are "<slug>.html"
         slug = key[:-5] if key.endswith(".html") else key
-        entry = pages.get("pages", {}).get(key)
-        if not entry:
+        path = REPO / "en" / "photographers" / key
+        if not path.exists():
             continue
         try:
-            rows = sra.page_alignment(slug, entry)
+            rows = sra.page_alignment(
+                slug, path.read_text(encoding="utf-8", errors="ignore"))
         except Exception:  # noqa: BLE001
             continue
         missing = [r for r in rows if r[0] == "need"]
@@ -2475,7 +2421,7 @@ def main() -> int:
     check_internal_dead_links()
     check_rel_unlinked_names()
     check_orphan_class_tokens()
-    check_en_content_loss()
+    check_en_json_frozen()
     check_en_keyword_chip_preservation()
     check_ja_en_rel_symmetry()
     check_ja_en_section_symmetry()

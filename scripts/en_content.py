@@ -1,32 +1,38 @@
 #!/usr/bin/env python3
-"""EN 写真家コンテンツ系ツールの共通ヘルパー。
+"""EN 写真家 HTML 系ツールの共通ヘルパー。
 
 en_entry.py / check_en_entry.py / preflight.py から共有して使う。
-JSON も HTML も書き換えない（読み取り専用）。
+HTML は書き換えない（読み取り専用）。
 
 主な提供物:
     load_en_page_keys()       -> 実在する en/photographers/*.html のファイル名
     is_shim(key)              -> meta-refresh shim なら True
     shim_target(key)          -> shim の転送先 EN ファイル名
-    load_pages()              -> data/photographers-en-content.json の pages dict
-                                 （新規作成用。既存ページ検査には使わない）
     resolve_slug(arg, universe) -> (slug | None, candidates)
         短い通称（atget→eugene-atget）や .html 有無を吸収して slug を解決する。
         厳密に1つへ決まるときだけ slug を返し、複数候補なら None と候補一覧を返す。
 
-既存 EN 写真家ページの正本は HTML 自身。JSON helper はフェーズE-2までの
-新規ページ作成と build_photographers_en.py のために残している。
+既存・新規とも EN 写真家ページの正本は HTML 自身。
 """
-import json
 import os
 import re
+import sys
 from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-JSON_PATH = os.path.join(ROOT, 'data', 'photographers-en-content.json')
 EN_DIR = os.path.join(ROOT, 'en', 'photographers')
 GA_ID = 'G-2VRTV8BZEJ'
+
+
+def warn_en_json_archive_deprecated():
+    """EN 正本 JSON を使う旧経路の実行を stderr へ明示する。"""
+    print(
+        '⚠ 非推奨（2026-09-15 フェーズF）: このスクリプトは EN 正本 JSON を読み書きする旧経路です。\n'
+        '   EN 写真家ページの正本は en/photographers/*.html で、JSON は読み取り専用アーカイブです。\n'
+        '   preflight が JSON の変更を HARD で止めます（解除は ALLOW_EN_JSON_ARCHIVE_WRITE=1）。',
+        file=sys.stderr,
+    )
 
 
 def load_en_page_keys():
@@ -238,17 +244,6 @@ def extract_en_summary(html):
             'GA': GA_ID if GA_ID in html else '(missing)',
         },
     }
-
-
-def load_data():
-    """新規ENページ作成用JSONを読む。既存ページの検査には使わない。"""
-    with open(JSON_PATH, encoding='utf-8') as fh:
-        return json.load(fh)
-
-
-def load_pages():
-    """新規ENページ作成用pagesを読む。既存ページの正本はEN HTML。"""
-    return load_data()['pages']
 
 
 def _stem(slug):

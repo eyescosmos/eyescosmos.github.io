@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
-"""Keep EN §REL one-line annotations (related_annotations) in sync with the JA §REL.
+"""Keep EN §REL one-line annotations in sync with the JA §REL.
 
 Background
 ----------
-EN photographer pages render the §REL "Related photographers / movements" links
-from ``site_directory_html`` in ``data/photographers-en-content.json`` (bare
-links, owned by the era-batch §REL workflow). The one-line English blurb on each
-link comes from a separate, optional per-page field ``related_annotations``
-( href -> English HTML ), consumed by ``build_photographers_en.rebuild_related``.
+EN photographer pages store the §REL "Related photographers / movements" links
+and their optional one-line English blurbs directly in EN HTML.
 
 The JA page is the source of the blurb: each visible §REL item is
 ``<li><a href=...>name</a> ― one sentence.</li>``. This tool aligns the JA
-blurbs with the EN links and reports / scaffolds / writes the EN field, so the
+blurbs with the EN links and reports / scaffolds / writes the EN HTML, so the
 EN annotations never silently drift behind the JA §REL.
 
 Alignment
@@ -24,24 +21,28 @@ Count mismatches per group are reported as ``REVIEW`` rather than guessed.
 Modes
 -----
   --audit                 (default) report every EN page whose JA §REL has a
-                          blurb but related_annotations is missing it. Exit 1 if
+                          blurb but the EN HTML annotation is missing it. Exit 1 if
                           any gap, for preflight wiring. ``--slug``/``--files``
                           narrow the scope (touched-only).
   --emit-worklist --slug X [--slug Y ...]
                           print JSON [{slug, en_href, name_en, desc_ja}, ...] of
                           items needing an English blurb (translation input).
-  --apply --slug X --from FILE
+  --inject-html --slug X --from FILE
                           FILE = JSON { en_href: "English HTML blurb", ... }.
-                          Write those into related_annotations for slug X
-                          (additive; asserts no other JSON bytes change besides
-                          the inserted field). Re-run build separately.
+                          Add those blurbs directly to slug X's EN §REL.
+
+  --apply / --apply-batch Legacy JSON write paths retained only for migration
+                          audit and emergency rollback work.
 """
 import argparse
 import collections
 import json
 import os
+from urllib.parse import unquote, urlparse
 import re
 import sys
+
+import en_content
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JSON_PATH = os.path.join(ROOT, 'data', 'photographers-en-content.json')
@@ -75,8 +76,28 @@ def ja_rel_groups(ja_html):
 
 
 def en_dir_groups(site_directory_html):
-    """Return {'people': [(href,name),...], 'movements': [...]} in order."""
+    """Return {'people': [(href,name,blurb),...], 'movements': [...]} in order.
+
+    Current EN HTML ``ph-rel-list`` blocks are canonical. The legacy
+    ``site-directory-group`` form remains readable only by deprecated JSON
+    write modes.
+    """
     groups = {'people': [], 'movements': []}
+    for gm in re.finditer(r'<ul class="ph-rel-list([^"]*)">(.*?)</ul>',
+                          site_directory_html, re.S):
+        key = 'movements' if 'ph-rel-movements' in gm.group(1) else 'people'
+        for li in re.findall(r'<li>(.*?)</li>', gm.group(2), re.S):
+            am = re.search(r'<a href="([^"]+)">([^<]+)</a>', li)
+            if not am:
+                continue
+            tail = li[am.end():]
+            dash = re.match(r'\s*(?:&mdash;|&#8212;|&#x2014;|[―—–-])\s*(.*)',
+                            tail, re.S | re.I)
+            blurb = _strip_tags(dash.group(1)).strip() if dash else ''
+            groups[key].append((am.group(1), am.group(2), blurb))
+    if any(groups.values()):
+        return groups
+
     for gm in re.finditer(
             r'<div class="site-directory-group site-directory-group-contextual">(.*?)</div>\s*</div>',
             site_directory_html, re.S):
@@ -87,20 +108,34 @@ def en_dir_groups(site_directory_html):
         label = lm.group(1).strip().lower()
         key = 'movements' if 'movement' in label else 'people'
         for am in re.finditer(r'<a href="([^"]+)">([^<]+)</a>', group):
-            groups[key].append((am.group(1), am.group(2)))
+            groups[key].append((am.group(1), am.group(2), ''))
     return groups
 
 
-def page_alignment(slug, entry):
+def ja_file_for(slug, en_html):
+    """EN ページに対応する JA ファイル名を EN HTML 自身の hreflang="ja" から引く。
+
+    jp-漢字 slug（例 ihei-kimura ↔ jp-木村伊兵衛.html）は slug 名が一致しないので、
+    `<slug>.html` 決め打ちだと JA ページを見失う。EN 402枚すべてが hreflang="ja" を
+    持つので、レジストリ（classification.json）ではなく HTML 自身を正本にする。
+    """
+    m = re.search(r'hreflang="ja"\s+href="([^"]+)"', en_html)
+    if m:
+        name = unquote(os.path.basename(urlparse(m.group(1)).path))
+        if name.endswith('.html'):
+            return name
+    return slug + '.html'
+
+
+def page_alignment(slug, en_html):
     """Yield (status, en_href, name_en, desc_ja) for one page.
     status in {'have','need','review'}."""
-    ja_path = os.path.join(JA_DIR, slug + '.html')
+    ja_path = os.path.join(JA_DIR, ja_file_for(slug, en_html))
     if not os.path.exists(ja_path):
         return [('review', None, None, 'no JA page %s' % ja_path)]
     ja_html = open(ja_path, encoding='utf-8').read()
     ja = ja_rel_groups(ja_html)
-    en = en_dir_groups(entry.get('site_directory_html') or '')
-    ann = entry.get('related_annotations') or {}
+    en = en_dir_groups(en_html)
     rows = []
     for key in ('people', 'movements'):
         ja_linked = [x for x in ja[key] if x['ja_href']]
@@ -110,42 +145,37 @@ def page_alignment(slug, entry):
                          '%s group: JA linked=%d EN=%d (count mismatch)'
                          % (key, len(ja_linked), len(en_items))))
             continue
-        for jx, (href, name_en) in zip(ja_linked, en_items):
+        for jx, (href, name_en, blurb_en) in zip(ja_linked, en_items):
             if not jx['desc_ja']:
                 continue  # JA item has no blurb -> nothing to sync
-            status = 'have' if href in ann else 'need'
+            status = 'have' if blurb_en else 'need'
             rows.append((status, href, name_en, jx['desc_ja']))
     return rows
 
 
-def load_pages():
-    return json.load(open(JSON_PATH, encoding='utf-8'))
-
-
-def slugs_from_args(args, pages):
+def slugs_from_args(args, page_keys):
+    real_keys = {key for key in page_keys if not en_content.is_shim(key)}
     if args.slug:
-        return [s for s in args.slug]
+        requested = [s if s.endswith('.html') else s + '.html' for s in args.slug]
+        return [s[:-5] for s in requested if s in real_keys]
     if args.files:
         out = []
         for f in args.files:
             base = os.path.basename(f)
             base = re.sub(r'\.html$', '', base)
-            if base + '.html' in pages['pages']:
+            if base + '.html' in real_keys:
                 out.append(base)
         return out
-    return [k[:-5] for k in pages['pages'].keys()]  # strip .html
+    return [k[:-5] for k in page_keys if k in real_keys]
 
 
 def cmd_audit(args):
-    pages = load_pages()
+    page_keys = en_content.load_en_page_keys()
     total_need = 0
     total_review = 0
     affected = []
-    for slug in slugs_from_args(args, pages):
-        entry = pages['pages'].get(slug + '.html')
-        if not entry:
-            continue
-        rows = page_alignment(slug, entry)
+    for slug in slugs_from_args(args, page_keys):
+        rows = page_alignment(slug, en_content.load_en_html(slug + '.html'))
         need = [r for r in rows if r[0] == 'need']
         review = [r for r in rows if r[0] == 'review']
         if need or review:
@@ -164,13 +194,11 @@ def cmd_audit(args):
 
 
 def cmd_emit_worklist(args):
-    pages = load_pages()
+    page_keys = en_content.load_en_page_keys()
     work = []
-    for slug in slugs_from_args(args, pages):
-        entry = pages['pages'].get(slug + '.html')
-        if not entry:
-            continue
-        for status, href, name_en, desc_ja in page_alignment(slug, entry):
+    for slug in slugs_from_args(args, page_keys):
+        en_html = en_content.load_en_html(slug + '.html')
+        for status, href, name_en, desc_ja in page_alignment(slug, en_html):
             if status == 'need':
                 work.append({'slug': slug, 'en_href': href,
                              'name_en': name_en, 'desc_ja': desc_ja})
@@ -182,7 +210,7 @@ def _apply_to_entry(entry, translations):
     """Return a new OrderedDict entry with related_annotations merged
     (additive), placed right after site_directory_html. Validates hrefs."""
     valid = {h for grp in en_dir_groups(entry.get('site_directory_html') or '').values()
-             for (h, _) in grp}
+             for (h, _, _) in grp}
     bad = set(translations) - valid
     if bad:
         raise ValueError('hrefs not in site_directory_html: %s' % sorted(bad))
@@ -214,6 +242,7 @@ def _write_pages(data, raw):
 
 
 def cmd_apply(args):
+    en_content.warn_en_json_archive_deprecated()
     if not args.slug or len(args.slug) != 1:
         sys.exit('--apply requires exactly one --slug')
     if not args.from_file:
@@ -278,22 +307,26 @@ def inject_html_for_slug(slug, annotations):
 
 
 def cmd_inject_html(args):
-    """Inject related_annotations into the live EN HTML §REL <li> directly,
-    without a full rebuild. --slug narrows scope; default = all pages that
-    carry related_annotations."""
-    pages = load_pages()['pages']
-    targets = ([s + '.html' for s in args.slug] if args.slug
-               else list(pages.keys()))
+    """Inject supplied annotations into live EN HTML §REL without a rebuild."""
+    if not args.from_file:
+        sys.exit('--inject-html requires --from FILE')
+    supplied = json.load(open(args.from_file, encoding='utf-8'))
+    if not isinstance(supplied, dict) or not supplied:
+        sys.exit('--from FILE must be a non-empty annotation object')
+    if args.slug and len(args.slug) == 1 and all(isinstance(v, str) for v in supplied.values()):
+        batch = {args.slug[0].removesuffix('.html'): supplied}
+    elif all(isinstance(v, dict) for v in supplied.values()):
+        batch = {slug.removesuffix('.html'): value for slug, value in supplied.items()}
+    else:
+        sys.exit('--from FILE must be {href: blurb} with one --slug, or {slug: {href: blurb}}')
+    wanted = {slug.removesuffix('.html') for slug in (args.slug or batch)}
     total = 0
     touched = 0
-    for key in targets:
-        entry = pages.get(key)
-        if not entry:
+    for slug, ann in batch.items():
+        if slug not in wanted:
             continue
-        ann = entry.get('related_annotations') or {}
         if not ann:
             continue
-        slug = key[:-5]
         n, new_html = inject_html_for_slug(slug, ann)
         if n and new_html is not None:
             tmp = os.path.join(EN_DIR, slug + '.html.tmp')
@@ -308,6 +341,7 @@ def cmd_inject_html(args):
 
 def cmd_apply_batch(args):
     """--from FILE = { "<slug>": { "<en_href>": "blurb", ... }, ... }"""
+    en_content.warn_en_json_archive_deprecated()
     if not args.from_file:
         sys.exit('--apply-batch requires --from FILE')
     batch = json.load(open(args.from_file, encoding='utf-8'))

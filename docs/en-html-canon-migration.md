@@ -305,11 +305,9 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 
 # ★フェーズC 引き継ぎ（2026-09-14・新規セッションはここから読む）
 
-> **2026-09-15 追記: C・A・D・E-1・E-2 は完了した。残りはフェーズF（JSON降格）だけ。**
-> 結果は §8（C）/ §9（A）/ §10（D）/ §11（E-1）/ §12（E-2）にある。
-> 以下 §1〜§7 は着手前の記述で、§8〜§12 が上書きする箇所がある。**先に §8〜§12 を読むこと。**
-
-**残るは F のみ。バッチと並行不可。**
+> **★2026-09-15: 全フェーズ完了。この移行は終わった。**
+> 結果は §8（C）/ §9（A）/ §10（D）/ §11（E-1）/ §12（E-2）/ §13（F・総括）にある。
+> **§1〜§7 は着手前の計画で、§8〜§13 が上書きしている。新規セッションは §13 から読むこと。**
 
 ## 1. いまどこまで終わっているか
 
@@ -320,7 +318,7 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 | C-spike / C | **完了（2026-09-14）。§8 を読む** |
 | D 昇格 | **完了（2026-09-14）。公開HTML 820枚の sha256 不変で証明済。§10 を読む** |
 | E 経路切替 | **完了（E-1 2026-09-14 / E-2 2026-09-15）。§11・§12 を読む** |
-| F JSON降格 | **次はこれ（最後）。** `data/photographers-en-content.json` は 415 entries のまま |
+| F JSON降格 | **完了（2026-09-15）。** JSON は読み取り専用アーカイブ。preflight が変更を HARD で止める。§13 を読む |
 
 **実運用**：既存ENページは HTML 直接編集で完結する。2026-09-14 の5名 update で実証済み
 （正本JSON編集0回・ビルダー実行0回・`git diff` で確認）。**新規作成だけが JSON + ビルダーのまま。**
@@ -852,4 +850,140 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
   **ただし `build_photographers_en.py` の `HAND_MAINTAINED_EN` 参照を道連れにしないこと**
   （凍結ファイル。import が壊れると `ALLOW_EN_REBUILD=1` の監査経路が落ちる）
 - **F でも公開HTML 820枚の sha256 不変を完了条件に入れる**
+
+---
+
+## 13. フェーズF 完了記録 ＋ 移行の総括（2026-09-15・Opus監督 / Codex実装）
+
+### 13.1 ★この移行は完了した。新規セッションはここだけ読めばよい
+
+| 知りたいこと | 答え |
+|---|---|
+| EN写真家ページの正本は？ | **`en/photographers/*.html` そのもの。** 既存修正も新規作成も同じ |
+| 既存ページを直すには？ | **EN HTML を直接編集して終わり。** JA と同じ |
+| 新規ページを作るには？ | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`（JA→EN の順に両方できる） |
+| `data/photographers-en-content.json` は？ | **読み取り専用アーカイブ。編集すると preflight が HARD で止める** |
+| `build_photographers_en.py` は？ | **凍結。** 移行監査・緊急rollback 専用（`ALLOW_EN_REBUILD=1`）。通常運用では使わない |
+
+### 13.2 ★JSONファイルは物理的に動かさなかった（§2b からの意図的な逸脱）
+
+§2b は「アーカイブへ**移す**」と書いていたが、**移していない。** 理由:
+
+- `data/photographers-en-content.json` は**凍結中の `build_photographers_en.py` が読む**。
+  移動すれば凍結ファイルを直すことになり、直さなければ監査・rollback 経路が壊れる。**どちらも消失。**
+- `data/photographers-en-classification.json` の `jp_slug_mapping`（17ペア）も同じ（§9.5）
+
+**代わりに「降格」を次の3つで実装した。移動より強い。**
+
+1. **通常スクリプトからの読み書き参照を0にした**（§2b の完了条件そのもの）
+2. **`preflight.check_en_json_frozen()` を新設** —
+   base / stage4 が baseline から**1バイトでも変化したら HARD**。
+   解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1` のみ。実データで発火と解除を確認済み
+3. 文書・台帳で「読み取り専用アーカイブ」と宣言
+
+**`check_en_content_loss()`（JSON の内容"消失"だけを見ていた）はこれに置き換えた。
+カバレッジは縮小ではなく拡大**（消失だけでなく、あらゆる変更を止める）。
+
+### 13.3 参照0の証明（§2b の完了条件）
+
+`grep -rn "photographers-en-content\|photographers-en-stage4" scripts/*.py` の全ヒットは
+次の3分類だけで、**(d) それ以外＝0件**。
+
+| 分類 | スクリプト |
+|---|---|
+| (a) 凍結 builder | `build_photographers_en.py` |
+| (b) 台帳生成器（正当な読者） | `build_en_migration_ledger.py` |
+| (c) 非推奨バナー付きの旧経路 | `sync_en_rel_annotations.py` の `--apply`/`--apply-batch` / `reconcile_en_bodies.py` / `harvest_photographers_en.py` / `fix_1839_*` / `fix_1870_*` / `fix_1890_*` / `fix_eugenesmith_en.py` / `import_chatgpt_photographer.py` の `--merge-to-en`・`--update-en-json` |
+
+`en_content.py` の `load_data()` / `load_pages()` / `JSON_PATH` は**呼び出し元0を実測してから削除**した。
+
+### 13.4 ★F の本丸で見つかった構造的な検査漏れ
+
+`sync_en_rel_annotations.py` が**最後に残った通常スクリプトの JSON 読者**だった。
+これを EN HTML ベースへ付け替えたところ、**旧 JSON 監査が丸ごと見落としていたページ群が出た。**
+
+| audit | pages | missing(need) | review |
+|---|---:|---:|---:|
+| 旧（JSONベース・現行コード実測） | 81 | 10 | 96 |
+| 新（HTMLベース・最終） | **61** | **89** | 46 |
+
+消えた22件の内訳:
+- **16件が `jp-漢字` shim**。旧監査は§RELを持たない shim を検査して
+  無意味な `EN=0 (count mismatch)` を出していた（§5 どおり shim は対象外にした）
+- **6件が実ページ**（`sherman` / `stieglitz` / `kelli-connell` / `natalie-czech` /
+  `shannon-ebner` / `kajima-seibei`）。**JSON の `site_directory_html` が古くリンク数が少なかった**だけで、
+  EN HTML は JA と一致していた（実測: sherman JA=5 / JSON=4 / **HTML=5** 等）
+
+**★missing が 10 → 89 に増えた理由（これが発見）:**
+旧監査は **`jp-漢字`ペアのローマ字実ページ15枚**（`iwata-nakayama` / `ihei-kimura` 等）を
+**一度も検査していなかった**。JA ファイル名が `jp-中山岩太.html` で slug と一致しないため、
+`<slug>.html` 決め打ちの解決が失敗していたのが原因。
+実測すると `iwata-nakayama` の EN §REL は**一言解説が1つも付いていない**のに JA には全部ある。
+
+> **監督が `page_alignment()` に `ja_file_for()` を追加して修正した。**
+> レジストリ（`classification.json`）ではなく **EN HTML 自身の `hreflang="ja"` から JA 実体を引く**
+> （EN 402枚すべてが持っている）。HTML 正本の方針とも一致する。
+
+**memory の `project_en_rel_annotations_backfill` にある「need=0」は誤りだったことになる。**
+構造的に見えていなかっただけで、実際には 89件が欠けていた。
+
+**この89件は直していない。** F は配管のフェーズで、公開HTMLは1バイトも変えない。
+台帳の `_meta.findings.en_rel_blurb_missing`（count 89 / 22ページ）に経緯ごと記録した。
+**該当ページを次に update するとき一緒に直す。**
+
+### 13.5 検証
+
+| 検査 | 結果 |
+|---|---|
+| 公開HTML 820枚の sha256 | **完全一致**（枚数も 418 / 402）|
+| **EN正本JSON 3本の sha256** | **完全一致**（移動も内容変更もしていない）|
+| `preflight.py` | 作業前後で**出力差分0**、EXIT 0 |
+| 凍結ガード | JSON を1バイト変えると **HARD FAIL**、`ALLOW_EN_JSON_ARCHIVE_WRITE=1` で解除、`git checkout` で sha256 完全復元 |
+| `check_content_loss.py` / `test_render_en_roundtrip.py` | OK / 8:8・2:2 |
+| `check_en_entry.py --all` | **E-2 とバイト単位で完全一致** |
+| 台帳 `--check` / `records` | EXIT 0 / 418件完全一致 |
+| 非推奨バナー6本 | 全6本で1回ずつ出力を確認 |
+
+### 13.6 移行の総括 — §2-1 の4項目はどうなったか
+
+§2 は「C が実際に消すのは次の4つ」と書いていた。全部消えた。
+
+| # | 着手前の状態 | いま |
+|---|---|---|
+| 1 | **正本が2系統**（既存＝HTML / 新規＝JSON）で動いている | **1系統。** マトリクスは1行（E-2） |
+| 2 | 写真家を1名足すたび JSON entry が増え、死蔵データになる | **増えない。** 新規も HTML を直接作る（C・E-2） |
+| 3 | 17本中14本がまだ JSON を読み書きし、規律で守られている | **機械で守られている。** 通常経路の参照0＋凍結ガード（E-1・E-2・F） |
+| 4 | 新規作成の経路が完成品を出さない（`ed-ruscha` の head 欠陥） | **出す。** og:image・JSON-LD Person・AI開示つき、head fallback 0件（C） |
+
+### 13.7 移行が副産物として可視化した既存バックログ（**どれも移行が作った退行ではない**）
+
+**専用セッションは組まない。該当ページを次に update するときに一緒に直す。**
+
+| 件 | 数 | 出どころ |
+|---|---:|---|
+| EN §REL の一言解説が無いリンク | **89**（22ページ）| §13.4。うち大半が jp-漢字ローマ字実ページ15枚 |
+| JA/EN の cite 集合非対称 | 17ページ | §9.4 |
+| JA/EN の h3 数非対称 | 21ページ | §9.4（`ansel-adams` 含む）|
+| JA/EN の節数非対称 | 7ページ | §9.4 |
+| cite-id の欠番 | 3 | §11.3（emerson / sakiko-nomura / stieglitz）|
+| 旧形式 §REF | 2 | §8.3（stieglitz / hiroshi-sugimoto。**対応しない裁定**）|
+| `jp-漢字` shim の欠落 | 1 | §9.3（`ihei-kimura`。JA hreflang は正しいので実害なし）|
+
+### 13.8 残した escape hatch（**撤去しない**）
+
+| 仕組み | 解除キー | 理由 |
+|---|---|---|
+| 既存EN再生成の拒否 | `ALLOW_EN_REBUILD=1` | 移行監査・緊急rollback |
+| 手書き維持5件の再生成拒否 | `ALLOW_HAND_MAINTAINED_REBUILD=1` | 上の内側の最後の砦。**凍結 builder が import しているので撤去しない**（§10.1） |
+| EN正本JSON の凍結 | `ALLOW_EN_JSON_ARCHIVE_WRITE=1` | 同上 |
+
+### 13.9 この移行で効いた作業規律（次の engine 作業へ）
+
+- **既存関数を別の入力へ移すときは、先に旧実装の判定を全部列挙してからブリーフを書く。**
+  E-1 でこれを怠り、`cite-id が重複`（FAIL）と `cite-id に欠番`（WARN）を消しかけた（§11.3）
+- **旧経路の呼び出し箇所を着手前に grep で全部出す。** E-2 でそうしたら設計不備が0件になった（§12.2）
+- **件数ではなく集合で比較する。** 「WARN が減った」は改善にも退行にも見える。
+  消えた項目を全件分類して初めて判断できる（§11.1・§13.4）
+- **ガードは外さず置き換える。** `check_en_content_loss` → `check_en_json_frozen` はカバレッジ拡大（§13.2）
+- **凍結ファイルは触らない。** そのために JSON を動かさない判断をした（§13.2）
 

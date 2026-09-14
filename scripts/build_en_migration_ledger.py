@@ -27,6 +27,7 @@ from urllib.parse import unquote, urlparse
 from check_en_entry import HAND_MAINTAINED_EN
 from import_chatgpt_photographer import extract_bundle
 from preflight import PH_KW_RE, PH_SIDE_RE, _chip_map
+import sync_en_rel_annotations as sra
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -366,6 +367,17 @@ def build_ledger() -> dict:
     class_counts = {name: sum(r["class"] == name for r in records) for name in CLASSES}
     unclassified = sum(r["class"] not in CLASSES for r in records)
     real_records = [r for r in records if r["class"] == "real_page"]
+    en_rel_blurb_missing_pages: list[str] = []
+    en_rel_blurb_missing_count = 0
+    for record in real_records:
+        en_html = (EN_DIR / record["key"]).read_text(encoding="utf-8")
+        missing = [
+            row for row in sra.page_alignment(record["slug"], en_html)
+            if row[0] == "need"
+        ]
+        if missing:
+            en_rel_blurb_missing_pages.append(record["slug"])
+            en_rel_blurb_missing_count += len(missing)
     findings = {
         "en_files": len(en_paths),
         "en_real_pages": class_counts["real_page"],
@@ -407,6 +419,11 @@ def build_ledger() -> dict:
             "h3_count": sum("h3_count_asymmetry" in r["flags"] for r in real_records),
             "cite_set": sum("cite_set_asymmetry" in r["flags"] for r in real_records),
         },
+        "en_rel_blurb_missing": {
+            "count": en_rel_blurb_missing_count,
+            "pages": sorted(en_rel_blurb_missing_pages),
+            "note": "EN HTML の §REL に一言解説が無いリンク。フェーズFで HTML ベース監査に切り替えて可視化した既存バックログで、移行が作った退行ではない。★内訳の大半は jp-漢字ペアのローマ字実ページ（iwata-nakayama / ihei-kimura 等 15枚）。旧 JSON 監査はこれらを一度も見ておらず、代わりに §REL を持たない jp-漢字 shim を検査して無意味な count mismatch を出していた＝構造的な検査漏れだった。該当ページを次に update するとき一緒に直す",
+        },
     }
     counts = {
         "records": len(records),
@@ -436,8 +453,8 @@ def build_ledger() -> dict:
                     "stieglitz.html": "旧フォーマットの §REF（class=\"book\"）と手編集の本文を持ち、再生成で失われた。台帳では old_ref_format flag。",
                     "annie-leibovitz.html": "EN に ph-thesis ブロックが無く、手編集で維持されていた個体。",
                 },
-                "new_page_path": "当面 data/photographers-en-content.json + build_photographers_en.py。切替はフェーズE-2",
-                "json_status": "既存ページについては参照データ。降格はフェーズF",
+                "new_page_path": "python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply（フェーズE-2）",
+                "json_status": "読み取り専用アーカイブ（フェーズF・2026-09-15）。物理的には data/ に置いたまま。凍結中の build_photographers_en.py が読むため移動しない。preflight の check_en_json_frozen() が変更を HARD で止める",
             },
             "counts": counts,
             "findings": findings,

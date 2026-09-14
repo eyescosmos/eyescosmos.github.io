@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-15 | (engine)フェーズF JSON降格＝移行完了 | engine | （Daisuke記入） | 1（jp-漢字のJA解決漏れ） | 3（期待値の破棄・集合分類・Codex上限で監督が引き取り） | 15ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-15 | (engine)フェーズE-2 書き込み経路切替 | engine | （Daisuke記入） | 0 | 1（旧経路9箇所の事前列挙） | 5ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズE-1 読み取り経路切替 | engine | （Daisuke記入） | 0 | 3（判定リストの復旧・台帳--check・判定の取り下げ） | 8ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | (engine)フェーズD EN正本昇格 | engine | （Daisuke記入） | 0 | 1（履歴の台帳移管を差し戻し） | 5ファイル（公開HTML 0） | N/A | N/A |
@@ -3534,4 +3535,37 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
   content_loss OK / roundtrip 8/8・2/2 / 台帳 `--check` EXIT 0 /
   `check_en_entry.py --all` が **E-1 の結果とバイト単位で完全一致**（418 slug / WARN 139 / FAIL 1）。
   リポジトリ外 fixture での新規1名実走は JA→EN 両方生成・head fallback 0件・dangling 0。
+
+
+## 2026-09-15 — フェーズF JSON降格（種別=engine・Opus監督 / Codex実装）＝ EN正本HTML化 完了
+
+- **範囲**：15ファイル。**公開HTMLの変更0・EN正本JSON 3本の変更0**。wall-time は Daisuke 記入。
+- **★JSONは物理的に動かさない裁定**（Daisuke 承認）。`photographers-en-content.json` は
+  凍結中の `build_photographers_en.py` が読むので、移動すれば凍結ファイルを直すことになり、
+  直さなければ監査・rollback 経路が壊れる＝**どちらも消失**。代わりに
+  ①通常スクリプトの参照を0 ②`preflight.check_en_json_frozen()` 新設（1バイトでも変われば HARD・
+  解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`）③文書と台帳で宣言、の3つで降格した。
+  `check_en_content_loss()`（消失だけを見ていた）の**置き換えでカバレッジは拡大**。
+- **★bug 1件＝構造的な検査漏れを発見・修正**。最後の JSON 読者 `sync_en_rel_annotations.py` を
+  EN HTML ベースへ付け替えたところ、**旧監査が `jp-漢字`ペアのローマ字実ページ15枚
+  （iwata-nakayama / ihei-kimura 等）を一度も検査していなかった**ことが判明。
+  JA ファイル名が `jp-中山岩太.html` で slug と一致せず `<slug>.html` 決め打ちが失敗していた。
+  監督が `ja_file_for()` を追加し、**レジストリではなく EN HTML 自身の `hreflang="ja"` から
+  JA 実体を引く**形にして修正（EN 402枚すべてが持つ）。結果 missing 10 → **89**。
+  **memory の「EN §REL backfill need=0」は誤りだったことになる**（構造的に見えていなかった）。
+- **audit の前後**：旧(JSON) `81 / missing 10 / review 96` → 新(HTML) `61 / missing 89 / review 46`。
+  消えた22件は **shim 16件**（§RELを持たないのに検査されていた）＋**実ページ6件**
+  （JSONの `site_directory_html` が古くリンク数が少なかっただけ。HTML は JA と一致。実測: sherman JA=5/JSON=4/HTML=5）。
+  **集合で分類して「検知の消失」が0件であることを確認**（件数比較では判断できないため）。
+- **手作業点3**：① ブリーフの期待値（memory 由来 `67/0/86`）が現状と合っておらず破棄
+  ② 消えた項目の全件分類 ③ **Codex がクレジット上限で途中停止したため、残りの検証・修正・
+  台帳更新・記録を監督が引き取った**。
+- **89件は直していない**（F は配管のフェーズ）。台帳 `_meta.findings.en_rel_blurb_missing`
+  （count 89 / 22ページ）に経緯ごと記録。該当ページを次に update するとき一緒に直す。
+- **検査**：公開HTML 820枚 sha256 完全一致 / EN正本JSON 3本 sha256 完全一致 /
+  preflight 出力差分0 / 凍結ガードは実データで発火・解除・復元を確認 /
+  content_loss OK / roundtrip 8/8・2/2 / `check_en_entry --all` は E-2 とバイト一致 /
+  台帳 `--check` EXIT 0・records 418件一致 / 非推奨バナー6本を確認。
+- **総括は `docs/en-html-canon-migration.md` §13**。§2-1 が挙げた4つの問題
+  （正本2系統 / JSON が増え続ける / 14本が JSON を読み書き / 新規経路が完成品を出さない）は全部消えた。
 

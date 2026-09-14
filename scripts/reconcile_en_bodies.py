@@ -34,6 +34,8 @@ import subprocess
 import sys
 from typing import List, Optional, Set, Tuple
 
+import en_content
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT_JSON = os.path.join(ROOT, "data", "photographers-en-content.json")
 STAGE4_JSON = os.path.join(ROOT, "data", "photographers-en-stage4.json")
@@ -586,6 +588,7 @@ def cmd_apply(slugs: List[str], use_head: bool) -> None:
 
 
 def main() -> None:
+    en_content.warn_en_json_archive_deprecated()
     parser = argparse.ArgumentParser(
         description="EN 写真家ページ essay 本文のドリフトを一覧・同期するツール。"
     )

@@ -17,6 +17,8 @@ import os
 import re
 import sys
 
+import en_content
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from build_photographers_en import translate_movement_name  # noqa: E402
@@ -213,6 +215,10 @@ def build_site_directory(people_links, movement_links):
 
 
 def main():
+    en_content.warn_en_json_archive_deprecated()
+    if "-h" in sys.argv[1:] or "--help" in sys.argv[1:]:
+        print(__doc__)
+        return
     names = card_name_map()
     jamap = ja_to_en_filemap()
     content = json.load(open(CONTENT_JSON, encoding='utf-8'))
