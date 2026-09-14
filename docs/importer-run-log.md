@@ -3367,3 +3367,13 @@ metmuseum.org が HTTP 429 で読めず裏が取れていない。**要確認。
   `[新規写真家 stieglitz] 出典番号が不連続`（10番が欠番）は**素材の採番漏れ**で、参照は宙に浮いていない。
   既存 `movements/ピクトリアリズム.html` の hero drift と stale intentional-replacement 群は baseline 既存。
 - **バックアップ**：本作業が生成した未追跡 `-backup` 10件は、原本が git 追跡下にあることを機械照合してから削除した。
+- **push**：`cbb47dbc0`（12ファイル＝JA5・EN5・intentional-replacements・本ログ）。
+  push前チェックは `git pull origin main`（Already up to date）/ `check_content_loss.py` / `preflight.py` が
+  EXIT 0。`origin/main` 比で 2,166 insertions / 10,931 deletions。
+  **削除行が多いのは本文が減ったからではない**＝旧ページに残っていた 33〜53KB のインライン
+  `<script id="photographer-index">` が新テンプレで消え、`fetch('/card-data.json')` の実行時解決へ変わったため
+  （[[reference_legacy_inline_photographer_index]]）。参照実装 `ansel-adams` と同じ形になった。
+  JA のバイト数は 4枚で減り（robertfrank 138,132→99,828 など）、`stieglitz` だけ 73,046→99,852 と増えた。
+- **IndexNow**：`--since 'origin/main@{1}'` で10 URL、HTTP 200。トップも分類面も変わっていないので追加送信は不要。
+- **selection-log**：0913バッチに `actionDate=2026-09-14` / `reviewDueDate=2026-10-12` を記入。
+  着手は上位5名のみで6位以下は次点、という注記も入れた。効果判定は 2026-10-12 以降。
