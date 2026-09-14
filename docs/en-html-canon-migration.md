@@ -987,3 +987,85 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 - **ガードは外さず置き換える。** `check_en_content_loss` → `check_en_json_frozen` はカバレッジ拡大（§13.2）
 - **凍結ファイルは触らない。** そのために JSON を動かさない判断をした（§13.2）
 
+---
+
+## 13.10 ★次に写真家を update / 追加するときの検証（**初回は必ずこれを回す**）
+
+移行後の経路は **fixture でしか通していない**（`ed-ruscha` をコピーして slug 置換したもの）。
+**実素材での初回だけ**、下の項目を実測して `docs/importer-run-log.md` に残す。
+2回目以降は通常どおりでよい。
+
+### 共通（着手前・1回）
+
+```bash
+find en/photographers -name '*.html' | sort | xargs shasum -a 256 > /tmp/en-before.sha256
+find photographers   -name '*.html' | sort | xargs shasum -a 256 > /tmp/ja-before.sha256
+python3 scripts/preflight.py > /tmp/preflight-before.txt 2>&1
+```
+
+### A. 既存ページを update する場合
+
+| # | 見るもの | 期待 |
+|---|---|---|
+| 1 | `en_html_sync.py verify <slug>` | **10項目すべて OK** |
+| 2 | JSON を1度も開いていないこと | `git diff --name-only` に `data/photographers-en-*.json` が出ない |
+| 3 | JA §REF と EN §REF の href 集合 | 一致（`-backup.html` と差分を取る。既知の落とし穴） |
+| 4 | §REL の EN 一言 | 台帳 `en_rel_blurb_missing` に該当 slug があれば**ついでに埋める** |
+| 5 | `check_en_entry.py <slug>` / `check_new_photographer.py --slug <slug>` | EXIT 0 |
+| 6 | `preflight.py` | 新しい HARD / WARN が増えていない |
+
+### B. 新規1名を追加する場合（**未検証の経路。ここが本番初回**）
+
+| # | 見るもの | 期待 |
+|---|---|---|
+| 1 | **素材に `§ 01` マーカーがあるか**（着手前 grep） | 無いと本文が65〜81%落ちる（既知の罠）|
+| 2 | まず `--apply` **なし**で実行 | EXIT 0。JA 未作成なら `(dry-run) EN は JA ページ作成後に生成される` が出る |
+| 3 | `--apply` 実行後の `[render-en]` 行 | `dangling=0` / `works-cjk=0` / `ga=2` / `sec` が素材の節数と一致 |
+| 4 | warnings に `head fallback fired` | **0件**（出たら head が不完全） |
+| 5 | 生成EN の head | `og:image` / `og:image:width` / `twitter:image` / JSON-LD に `Person` / `<!-- AI-DISCLOSURE -->` が各1 |
+| 6 | 作品ラベル | 日本語が残っていないこと（残れば fail-loud で止まるはず） |
+| 7 | `en_html_sync.py verify <slug>` | 10項目すべて OK |
+| 8 | `check_new_photographer.py --slug <slug>` | `en_missing` が出ない |
+| 9 | JA/EN の節数・cite集合 | 一致（preflight の日英対称性ガードが見るが、目視でも確認） |
+
+**入口の選び方**（間違えると JA を書き直す）:
+- JA も EN もこれから → `--slug X --ja JA.html --en EN.html --apply`
+- JA は既にある → `--slug X --render-en EN.html --apply`
+
+### 終わったら
+
+```bash
+find en/photographers -name '*.html' | sort | xargs shasum -a 256 | diff /tmp/en-before.sha256 -
+python3 scripts/preflight.py | diff /tmp/preflight-before.txt -
+```
+**意図した slug 以外の差分が出たら止めて調べる。**
+
+### 実測を残す先
+`docs/importer-run-log.md` に「**移行後の実素材 初回**」と明記して1節。
+**ここで問題が出なければ、この §13.10 の初回扱いは終了**として次回から通常運用にしてよい。
+
+---
+
+## 14. この移行の対象外だったサーフェス（2026-09-15 時点の正本）
+
+**この移行は写真家ページだけ。** 下の3つは**手を付けていない**。正本は従来どおり。
+
+| サーフェス | 枚数 | 正本 | 生成コマンド | 既存ENへの上書き拒否ガード |
+|---|---:|---|---|---|
+| EN アーカイブ `en/archive.html` | 1 | **JA `archive.html`** | `build_archive_en.py` | **無し** |
+| EN 年代 `en/eras/*.html` | 11 | **JA `eras/*.html`** | `build_taxonomy_en.py --era <YYYY>` | **無し** |
+| EN 運動 `en/movements/*.html` | 66 | **JA `movements/*.html`** | `build_taxonomy_en.py --slug <movement>` | **無し** |
+| 国別 JA/EN `countries/` `en/countries/` | 62 / 62 | **`data/country-pages.json`** | `generate_country_pages*.py` | **無し** |
+
+**したがって `CLAUDE.md` 絶対禁止4番はこれらに対しては今も有効**：
+事実修正を EN 出力HTMLだけに入れてはいけない（再生成で消える）。
+
+**写真家ページとの違い**：EN 年代・運動・アーカイブの正本は **JA HTML** であって JSON ではないので、
+移行の動機だった「正本が2系統」「死蔵JSONが増える」という問題は**ここには無い**。
+残っているのは「**EN を直接編集すると再生成で黙って消える**」という一点で、
+これは絶対禁止4番が扱っている。
+
+**ただし写真家ビルダーにだけ入れた `🛑 REFUSED` ガードは、この3本には無い。**
+memory に記録のある「EN再生成は運動固有 lede を汎用 lede で潰す（ガード検知なし）」は
+このクラスの事故。**同じ移行をやるかは別途判断する（今回のスコープ外）。**
+

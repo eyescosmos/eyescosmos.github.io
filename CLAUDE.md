@@ -87,6 +87,8 @@ git diff origin/main
 | スクリプト実行・EN 写真家ページ編集・テンプレ移行・機械チェックの意味 | `docs/generators-and-guards.md` |
 | Codex 並行作業・横断スクリプト・`overrides.js`・本文自動リンク/エイリアス | `docs/content-preservation.md` |
 | **ChatGPT新素材で写真家をバッチ update する（Opus監督/Codex実装）** | `docs/importer-scaffold-inject-spec.md` §14「バッチ update のキックオフ定型」（既知WARN許可リスト・Related削除SKIPの常設承認条件・既存維持フィールド・**素材に生没年が無ければ調べて入れる**・**パイロット1名で回す検証項目**）。**最初のプロンプトにこれを入れないと往復が増える** |
+| ★**移行後はじめて写真家を update / 追加する**（2026-09-15 以降の初回だけ） | `docs/en-html-canon-migration.md` **§13.10「次に写真家を update / 追加するときの検証」**。移行後の経路は fixture でしか通していないので、**実素材の初回だけ**チェックリストを回して `docs/importer-run-log.md` に実測を残す。通れば初回扱いは終了 |
+| EN の**アーカイブ / 年代 / 運動 / 国**ページ（写真家ページではない） | `docs/en-html-canon-migration.md` **§14**。**これらは今回の移行の対象外**で、正本は JA HTML または `data/country-pages.json` のまま。EN 出力HTMLだけ直すと再生成で消える（絶対禁止4番）|
 
 新規 JA 写真家ページの最善手＝参照実装 `photographers/ansel-adams.html` を丸ごとコピーして
 名前・本文だけ全置換する（SEO 一式と本文レイアウトの正の型が最初から入る）。詳細は
