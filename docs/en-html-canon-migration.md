@@ -1069,3 +1069,6 @@ python3 scripts/preflight.py | diff /tmp/preflight-before.txt -
 memory に記録のある「EN再生成は運動固有 lede を汎用 lede で潰す（ガード検知なし）」は
 このクラスの事故。**同じ移行をやるかは別途判断する（今回のスコープ外）。**
 
+> **★続きの計画は `docs/post-migration-cleanup-plan.md` にある**（2026-09-15 作成）。
+> 再生成ドリフトの実測（**運動は 24/35 で退行を含む**）と、未決の論点4つを置いてある。
+
