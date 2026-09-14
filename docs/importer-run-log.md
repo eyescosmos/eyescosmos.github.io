@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-14 | 0914 SEO選定5名 update（niepce/talbot/stieglitz/robertfrank/leibovitz） | update×5 | （Daisuke記入） | 0 | 5（下記） | 公開HTML 10面 | JA素材どおり | 226/226 |
 | 2026-09-13 | ed-ruscha（idx 402・0913素材） | new | （Daisuke記入） | 0 | 4（下記） | 公開HTML 17面 | JA/EN素材どおり | 56/56 |
 | 2026-09-13 | (engine)EN写真家ページ HTML正本化 最小版（§2a） | engine | （Daisuke記入） | 0 | 3（下記） | 7ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-12 | christer-stromholm（idx 396・0912パイロット） | new | 60分（0912バッチ全体・Daisuke実測） | 2（render-ja引数例とFrance guard順） | 3系統（下記） | 20ファイル | JA/EN素材どおり | 33/33 |
@@ -3291,3 +3292,78 @@ HEAD 22件 → 184件。増分はすべて `check_en_direct_edit()` の「EN HTM
   ②`--urls` で5 URL（トップ `/` と `/en/`、JA 運動ページ、archive JA/EN）。
   **②が必要な理由は 0912 と同じ**＝`--since` はトップを拾わず、JA 運動ページの非ASCIIパスも取りこぼす
   （`urllib.parse.quote` で percent-encode して渡す）。
+
+
+## 2026-09-14 — 0914 SEO選定5名の update（種別=update×5・**HTML正本化・最小版の効果測定**・Opus監督 / Codex翻訳）
+
+- **範囲**：`nicephore-niepce` / `talbot` / `stieglitz` / `robertfrank` / `annie-leibovitz` の JA/EN 各1、
+  計10ページ。新規追加なしのため card-data・archive・sitemap・星bin・年代・国・運動は変更0。
+  ほかに `scripts/intentional-replacements.json` へ宣言2件。wall-time は Daisuke 記入。
+- **素材の検分（A-0）**：5枚とも `§ 01 / 03`〜`§ 03 / 03` + WORKS/REL/REF/SRC の正規形。
+  `ph-book-simple` / `ph-related-grid` は0。**差し戻し不要**。EN素材は無し（HANDOFF どおり EN は JA から翻訳）。
+
+### ★最小版の効果（この batch が測定対象）
+
+| 指標 | 0912（旧手順） | 0914（HTML正本） |
+|---|---|---|
+| `data/photographers-en-content.json` の編集 | 12ページ分 | **0**（git diff 空） |
+| `build_photographers_en.py` の実行 | 既存ページ分すべて | **0回** |
+| EN の修正経路 | JSON編集→ビルダー→生成物検証 | **EN HTML を直接編集して終わり** |
+
+**既存ENページ5枚を、正本JSONに一度も触らず、ビルダーを一度も回さずに更新できた。** これが §2a の狙いそのもの。
+EN に触れたコマンドは概算30回。0912 のベースライン91回は「新規6名＋既存12ページ」の混成なので直接比較にはならないが、
+**1ページあたりのビルダー往復が構造的に消えた**ことは git diff で確認できる。
+
+### JA の実測
+- 本文（`<p>`+`<h3>`）は**5枚とも素材と完全一致・欠落要素0**。
+  1,959→7,558 / 1,733→7,823 / 4,193→11,085 / 6,450→11,374 / 8,254→9,969 字。
+- 出典は 14→43 / 13→42 / 22→53 / 22→46 / 36→42（計226）。dangling 0。
+- 手順は `--update-existing --prepare` → `--apply --force`。5枚とも「適用後検証 OK」。
+
+### 踏んだ既知の穴（5枚とも・[[feedback_update_drops_ref_and_ja_rel]]）
+- **素材が §REF の「関連データベース・アーカイブ」ブロックを落とす。** 欠落は
+  niepce 2 / talbot 1 / stieglitz 6 / robertfrank 1 / leibovitz 16 本。旧ページから復元した。
+  URL自体は §SRC に出典として残っていたので**ページからの完全消失は0**だったが、
+  further-reading としての導線は消えていた。**件数ベースのガードでは検知されない**（今回も preflight は無反応）。
+- **復元時の注意（今回見つけた新しい罠）**：talbot と robertfrank は素材側にも `ph-further-links` があり、
+  素で足すと **UL が2本になり重複リンクが出る**。URL で dedup して1本に統合した。
+  niepce / stieglitz / leibovitz は素材側にブロックが無かったのでそのまま足せた。
+
+### EN 側で追加で直した構造の不整合（いずれも baseline から存在）
+- **`stieglitz`**：EN に旧フォーマットの4節目（`§ 04 / 04` = §REL を本文節として取り込んだ重複）が残っていた。
+  JA は3節なので削除し、節番号を `/ 03` に同期。`intentional-replacements.json` に section 宣言を追加。
+- **`stieglitz` の §REL が日英で不一致**：JA にある strand / riis / lewis-hine が EN に無く、
+  EN だけに frederick-h-evans と documentary があり、さらに**一言解説が1件も無かった**
+  （[[project_en_rel_annotations_backfill]] の「EN一言が欠けている4ページ」の1つ）。JA に合わせて作り直し、
+  一言解説9件を英訳して入れた。**EN だけにあった2件（frederick-h-evans / documentary）は落とした**＝要判断の持ち越し。
+- **`robertfrank` と `annie-leibovitz` の EN に `ph-thesis` ブロックが存在しなかった。** JA にはある。
+  新設した。robertfrank はこれが無いと出典24番が EN で宙に浮く（実際に verify が検出した）。
+- **`talbot` / `stieglitz` の §WORKS が日英で別URL**。素材が JA 側の作品選定を入れ替えたため、EN も同じURLへそろえた。
+
+### ★素材の事実で未解決（Daisuke × ChatGPT へ差し戻し）
+**`stieglitz` の Met 作品ID 267836 の同定が旧ページと新素材で食い違う。**
+旧ページは 267836 を《The Terminal》、新素材は《The Steerage》とし、《The Terminal》には 269300 を当てている。
+どちらか一方が誤り。新素材は §SRC の出典表記まで内部的に一貫しているので**素材を採用した**が、
+metmuseum.org が HTTP 429 で読めず裏が取れていない。**要確認。**
+
+### Codex 翻訳の実測
+- 1名1プロセス、5名で計 238,324 トークン（46,510 / 49,599 / 52,944 / 43,961 / 45,310）。
+  所要は 18:02〜18:27 の約25分（1名 4〜6分）。**5/5 が初回で機械検証をパス**。
+- 入力は JA ページから lead / thesis / 節 / 出典だけを抜いた 38〜49KB の JSON。出力も同じ形。
+  注入は決定論スクリプトが行い、内部リンクの `/photographers/` → `/en/photographers/` 書き換えと
+  節番号ラベルの JA からの同期もスクリプト側で処理した（翻訳側に触らせない）。
+- 機械検証21項目＝タグ列の一致 / 出典番号と URL の一致 / sup-ref 集合の一致 / CJK残存0 / 節ID順。
+  注入後にさらに10項目＝cite集合の日英一致 / dangling / 未参照cite / 節ラベル対称 / JAパス混入 /
+  CJK残存 / GA / h3数一致 / div・section開閉。
+- **`annie-leibovitz` で1度だけ空振り**：Codex が `{}` と `"cites": "__CITES__"` の途中状態を書くため、
+  ファイルサイズで完了を判定すると誤検知する。**完了判定は codex プロセスの終了で見る。**
+- 翻訳ハーネス（extract / inject / verify）は scratchpad に置いた。恒久化するかは次回バッチで判断する。
+- **`check_en_entry.py` は5名ともEXIT 0**。HTML正本化後は JSON closure を検査しないので、
+  直接編集した EN ページでも通る（これが 2026-09-13 の変更の効果）。
+
+- **検査**：`preflight.py`（EXIT 0・HARD 0）/ `check_content_loss.py` / `check_photographer_link_integrity.py` /
+  `sync_card_counts.py --check` / `check_en_entry.py` ×5 はすべて合格。
+- **既知WARN判定**：`[SEO photographers/stieglitz.html] data-nosnippet 10→9` は prep-block の実コンテンツ置換。
+  `[新規写真家 stieglitz] 出典番号が不連続`（10番が欠番）は**素材の採番漏れ**で、参照は宙に浮いていない。
+  既存 `movements/ピクトリアリズム.html` の hero drift と stale intentional-replacement 群は baseline 既存。
+- **バックアップ**：本作業が生成した未追跡 `-backup` 10件は、原本が git 追跡下にあることを機械照合してから削除した。

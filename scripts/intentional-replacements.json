@@ -166,5 +166,17 @@
     "url": "https://www.moma.org/artists/1000-henri-cartier-bresson",
     "reason": "The supplied 2026-09-03 JA and EN source sets replace this MoMA artist-list URL with individual work pages 44586, 56129, 88041, and 98333 plus exhibition page https://www.moma.org/calendar/exhibitions/967.",
     "declared": "2026-09-03"
+  },
+  {
+    "slug": "stieglitz",
+    "section": "§ 04 / 04",
+    "reason": "The EN page carried a legacy 4th essay section that duplicated the Related photographers & movements list (the JA page has 3 sections and a separate REL section). Removed so the JA/EN section structure matches; no text was lost that is not already in the REL section.",
+    "declared": "2026-09-14"
+  },
+  {
+    "slug": "stieglitz",
+    "url": "cite-10",
+    "reason": "Renumbering only. The 2026-09-14 JA source list omits number 10, and the source that was EN cite-10 (NGA Alfred Stieglitz Key Set 1902-1917) is still present in both the JA and EN pages under a different number.",
+    "declared": "2026-09-14"
   }
 ]
