@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-14 | (engine)フェーズC `render_en_page` | engine | （Daisuke記入） | 1（作品ラベル死蔵経路） | 2系統（下記） | 3ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-14 | 0914 SEO選定5名 update（niepce/talbot/stieglitz/robertfrank/leibovitz） | update×5 | （Daisuke記入） | 0 | 5（下記） | 公開HTML 10面 | JA素材どおり | 226/226 |
 | 2026-09-13 | ed-ruscha（idx 402・0913素材） | new | （Daisuke記入） | 0 | 4（下記） | 公開HTML 17面 | JA/EN素材どおり | 56/56 |
 | 2026-09-13 | (engine)EN写真家ページ HTML正本化 最小版（§2a） | engine | （Daisuke記入） | 0 | 3（下記） | 7ファイル（公開HTML 0） | N/A | N/A |
@@ -3384,3 +3385,36 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
 - **IndexNow**：`--since 'origin/main@{1}'` で10 URL、HTTP 200。トップも分類面も変わっていないので追加送信は不要。
 - **selection-log**：0913バッチに `actionDate=2026-09-14` / `reviewDueDate=2026-10-12` を記入。
   着手は上位5名のみで6位以下は次点、という注記も入れた。効果判定は 2026-10-12 以降。
+
+
+## 2026-09-14 — フェーズC `render_en_page`（種別=engine・Opus監督 / Codex実装）
+
+- **範囲**：`scripts/import_chatgpt_photographer.py` に EN renderer / head補完 / 構造検査 /
+  `--render-en` を追加し、`scripts/test_render_en_roundtrip.py` を新設。本ログを含む3ファイル。
+  公開HTML・EN正本JSON・凍結済み `build_photographers_en.py` の変更0。commit / push なし。
+  wall-time は Daisuke 記入。
+- **engine改良**：EN素材から抽出した bundle を、同一人物の JA HTML を scaffold として既存
+  `process_page()` へ渡す新規EN専用経路を追加。OGP/Twitter既定画像・JSON-LDを renderer 内で補完し、
+  head fallbackを0件にした。既存EN出力への `--apply` は `🛑 REFUSED` で常時拒否する。
+- **bug 1件**：415 entry中308件にある `view_works_links_html` を読むコードが0本で、EN作品ラベルが
+  ui-terms依存になっていた。renderer後処理でURL一致時にラベルだけをbundle由来へ戻し、未翻訳CJKは
+  fail-loudにした。`nicephore-niepce` の日英併記ラベルで修復を実証。
+- **手作業点 2系統**：① head / works / 必須構造の契約を renderer 内へ配線 ② 既知正規化3種だけを
+  許可する round-trip と、旧形式§REF 2件の期待失敗を固定。本文・出典・作品リンクの手移植は0。
+- **旧形式§REFの裁定**：EN旧 `.book` は2枚（`stieglitz` / `hiroshi-sugimoto`）、JA旧 `.book` は0枚
+  （EN新 `.ph-book` 182枚 / JA新 `.ph-book` 189枚）。新規ENはJA scaffoldなので旧形式は流入しない。
+  extractorは広げず、2枚が `EnRenderIncomplete`（`§ REF`）になることを期待失敗テストで固定した。
+- **検査**：round-trip 8/8 PASS、旧形式期待失敗2/2、一時repoの `phasec-temp` で stdout / apply とも
+  EXIT 0かつbyte一致。既存 `ansel-adams` への apply はEXIT 1・SHA-256不変。既存 importer回帰テストと
+  chip翻訳テストも全PASS。preflightは作業前後ともEXIT 0で新規HARD/WARN 0。
+- **監督側の独立検証**：リポジトリ外のJA scaffoldで新規1名を実走し、head fallback 0件・
+  `og:image`+`image:width/height`+`twitter:image`・JSON-LD に Person/WebPage/BreadcrumbList・
+  AI開示ブロックありを確認（= `ed-ruscha` で記録されたhead欠陥の解消）。既存ENへの `--apply` は
+  `--force` を足してもEXIT 1・SHA-256不変。JAページ不在は `EnScaffoldMissing` でEXIT 1。
+  `en_html_sync.py verify` の10項目を描画結果へ当てて7 slug 全通過（`iwata-nakayama` は
+  verify側がjp-漢字マッピングを持たないため対象外）。preflight出力は作業前後で完全一致。
+- **スコープ外と判定した既存の非対称**：`ansel-adams` は JA h3=15 / EN h3=8 で、**現行ライブが既にそう**。
+  renderer は忠実に再現しただけ。次にこのページをupdateするとき一緒に直す。
+- **設計上の最大の発見**：計画で唯一の未知数とされた「EN scaffold」は存在しなかった。
+  `process_page()` がJA HTMLを読んで組み直す作りのため、**EN scaffold＝同一人物のJAページ**。
+  scaffoldファイルは1枚も作っていない。詳細は `docs/en-html-canon-migration.md` §8。

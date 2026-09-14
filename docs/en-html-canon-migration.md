@@ -305,15 +305,19 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 
 # ★フェーズC 引き継ぎ（2026-09-14・新規セッションはここから読む）
 
-**着手するのはフェーズC（`render_en_page` の新設）。** 以降 A → D → E-1 → E-2 → F と続ける。
+> **2026-09-14 追記: フェーズC は完了した。次はフェーズA（移行台帳）。**
+> 実装の結果と、それによって変わった前提は「§8 フェーズC 完了記録」に書いてある。
+> 以下 §1〜§7 は着手前の記述で、§8 が上書きする箇所がある。**先に §8 を読むこと。**
+
+**以降 A → D → E-1 → E-2 → F と続ける。**
 
 ## 1. いまどこまで終わっているか
 
 | フェーズ | 状態 |
 |---|---|
-| A 台帳 | 未着手（D・E の直前にやる。先に作っても古くなる） |
+| A 台帳 | **次はこれ**（D・E の直前にやる。先に作っても古くなる） |
 | B ガード | 新規3本は稼働中（chip保存 / §REL対称 / 節ラベル対称）。既存ガードの読み先付け替えは未 |
-| C-spike / C | **これから。ただし後述のとおり未知数は半分潰れている** |
+| C-spike / C | **完了（2026-09-14）。§8 を読む** |
 | D 昇格 | 実質達成。残りは `HAND_MAINTAINED_EN` 5件の統合と履歴の台帳移管 |
 | E 経路切替 | 17本中3本のみ（`preflight.py` / `check_en_entry.py` / `build_photographers_en.py`） |
 | F JSON降格 | 未着手。`data/photographers-en-content.json` は 415 entries のまま |
@@ -388,3 +392,110 @@ D・E・F は連続した1本の作業として通す。素材が来ていない
 2. `docs/importer-run-log.md` の 2026-09-13 と 2026-09-14 の節（最小版の実装と初回適用の実測）
 3. `scripts/en_html_sync.py` の docstring
 4. `CLAUDE.md` / `AGENTS.md` の正本マトリクス（既存＝HTML / 新規＝JSON の2行になっている）
+
+---
+
+## 8. フェーズC 完了記録（2026-09-14・Opus監督 / Codex実装）
+
+### 8.1 結論：EN scaffold という未知数は存在しなかった
+
+§2 と §4 は「EN scaffold だけはコードから読めない唯一の未知数」「既存の良いENページを
+1枚 clean up して置くで足りる可能性が高い」と書いていた。**どちらも不要だった。**
+
+`build_photographers_en.process_page(ja_file, page, ja_to_en, warnings)` は
+**JA HTML を読み込んで各ブロックを EN へ組み直す**作りである。つまり
+
+> **EN の scaffold は「同じ slug の JA ページ」。新しい scaffold ファイルは1枚も要らない。**
+
+`add_photographer.SCAFFOLD_BASE`（JA が `photographers/ansel-adams.html` を固定コピー元に
+している仕組み）に対応する EN 版は作っていない。**今後も作らない。**
+副作用として、JA を先に作らないと EN を描けない＝ JA→EN の順序が構造的に強制され、
+preflight の日英対称性ガードの前提とそろう。
+
+### 8.2 実装したもの
+
+| 追加 | 場所 |
+|---|---|
+| `render_en_page(bundle, slug, *, ja_file=None) -> (html, warnings)` | `scripts/import_chatgpt_photographer.py`（`bundle_to_en_entry` の直後） |
+| `_en_head_complete()` — OGP/Twitter画像・決定論JSON-LDの補完 | 同上 |
+| `_en_apply_works_labels()` — 作品ラベルを EN bundle 由来へ戻す後処理 | 同上 |
+| `_validate_en_render()` — 生成後の必須構造検査（fail-loud 13項目） | 同上 |
+| `EnScaffoldMissing` / `EnRenderIncomplete` | 同上 |
+| CLI `--render-en <EN素材> --slug <slug>`（既定 stdout・`--apply` で新規書込） | 同上 |
+| `scripts/test_render_en_roundtrip.py` — 抽出→描画→再抽出の厳密照合 | 新規 |
+
+`bundle_to_en_entry` は1文字も変えていない（`--merge-to-en` の JSON 出力をバイト一致で保つため）。
+`build_photographers_en.py` も1行も変えていない（§4 分類c＝凍結。import して関数を使うだけ）。
+
+### 8.3 裁定した論点2件
+
+**(1) `view_works_links_html` が死蔵データだった（bug 1件）。**
+`rebuild_works()` が読むのは `notable_works_html` だけで、しかも「既存に無いURLを追記する」用途のみ。
+EN正本JSON 415 entry のうち **`view_works_links_html` を持つのは 308 件。これを読むコードは0本。**
+結果、EN ページの作品ラベルは JA ページ由来のまま出て、`translate_residuals` の ui-terms 辞書に
+載っている語だけが英訳されていた＝**辞書に無い作品名は日本語のまま新規ENページに出ていた**
+（`nicephore-niepce` の `ル・グラの窓からの眺め / View from the Window at Le Gras` が実例）。
+
+裁定：`rebuild_works()` は直さない（凍結ファイル・rollback比較の基準が動くため）。
+ui-terms 辞書にも足さない（作品名は写真家ごとに無限に増える）。
+**`render_en_page` 内の後処理に閉じて**、URL一致時にラベルだけを bundle 由来へ戻し、
+未翻訳CJKが1件でも残ったら fail-loud にした。
+
+**(2) 旧形式 §REF は extractor を広げない。**
+
+| 実測 | 値 |
+|---|---|
+| EN で旧形式 `class="book"` | **2**（`stieglitz` / `hiroshi-sugimoto`）|
+| EN で新形式 `class="ph-book"` | 182 |
+| **JA で旧形式 `class="book"`** | **0** |
+| JA で新形式 `class="ph-book"` | 189 |
+
+`render_en_page` は JA ページを scaffold にするので、**新規ENページに旧形式が現れる経路は無い**。
+`extract_bundle` は JA 経路と共用なので広げると影響範囲が `render_ja_page` 側まで伸びる。
+この2枚が `EnRenderIncomplete: § REF が無い` で止まるのは**ガードが正しく働いている**状態なので、
+テストの `EXPECTED_FAIL` 区画で固定した（黙って §REF を落としたら FAIL になる）。
+
+### 8.4 検証結果
+
+```
+$ python3 scripts/test_render_en_roundtrip.py
+ansel-adams / ed-ruscha / robertfrank / talbot /
+annie-leibovitz / daisuke-yokota / nicephore-niepce / iwata-nakayama  → 8/8 PASS
+stieglitz / hiroshi-sugimoto （旧形式§REF）                          → 2/2 as expected
+SUMMARY: ROUNDTRIP 8/8 PASS; EXPECTED_FAIL 2/2 as expected
+```
+
+許可した正規化は3種だけで、それ以外の差分は1件でも FAIL する:
+`N1 h3-id`（builder は h3 に id を必ず付ける）/ `N2 works-dedup`（同一URLの重複が畳まれる。
+`annie-leibovitz` の MoMA リンクが実在の重複）/ `N3 dash`（ui-terms の ` - ` → ` — ` 正規化）。
+**新しい差分クラスが出たら FAIL させ、人間が裁定してから許可リストに入れる。増やさない。**
+
+そのほか監督側で実測したもの:
+
+- **新規1名の実走**（リポジトリ外の JA scaffold で）：head fallback 0件、
+  `og:image` + `image:width/height` + `twitter:image` あり、JSON-LD に Person / WebPage /
+  BreadcrumbList、AI開示ブロックあり、`lang="en"`。**§2-4 に記録された `ed-ruscha` の head 欠陥は解消**
+- **既存ENへの `--apply` は `🛑 REFUSED` で EXIT 1・SHA-256不変。`--force` を足しても拒否**
+  （`--force` は `--render-en` に配線していない。環境変数の解除口も作っていない）
+- **JAページ不在での `--render-en` は `EnScaffoldMissing` で EXIT 1**
+- `preflight.py` は作業前後で**出力差分0**（新規 HARD / WARN 0件）。`check_content_loss.py` OK
+- `en_html_sync.py verify` の10項目を描画結果に当てて7 slug 全通過
+  （`iwata-nakayama` は verify 側が jp-漢字マッピングを持たないため対象外）
+
+### 8.5 既知の残件（フェーズCのせいではない・スコープ外）
+
+- **`ansel-adams` は JA h3=15 / EN h3=8** と本文の小見出し数が非対称。**現行ライブで既にそうで**、
+  renderer はそれを忠実に再現しただけ。preflight の対称性ガードは回帰検知なので止まらない。
+  このページを次に update するときに一緒に直す
+- `render_en_page` はまだ**どこからも呼ばれていない**。importer の新規作成フローを
+  JSON+builder から切り替えるのは **フェーズE-2**。C は手段を用意しただけで、経路は変えていない。
+  したがって `CLAUDE.md` / `AGENTS.md` の正本マトリクス（新規＝JSON経由）は**まだ正しい**
+
+### 8.6 次（フェーズA）への申し送り
+
+- A は読み取りのみ・3時間。バッチと並行してよい。**台帳は散文でなく機械可読ファイル1本**、
+  かつ**再生成できるスクリプト**にする（§2b）
+- A が分類する対象に、C で判明した次の2つを足すこと:
+  **旧形式 §REF の2枚**（`stieglitz` / `hiroshi-sugimoto`）と、
+  **`view_works_links_html` を持つ308件が死蔵である**という事実（F の降格対象の内訳に効く）
+

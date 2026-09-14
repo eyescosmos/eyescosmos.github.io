@@ -41,7 +41,9 @@ sys.path.insert(0, str(REPO / "scripts"))
 
 # データ表のみ import（build_taxonomy_en は main ガード済みで import 副作用なし）
 from build_taxonomy_en import STUB_TO_SLUG, SLUG_TO_EN_NAME  # noqa: E402
-# CJK 判定は build_photographers_en の定義を共用（判定基準を単一化・ズレ防止）。
+# CJK 判定と EN renderer 部品は build_photographers_en の定義を共用
+# （判定基準と描画挙動を単一化・ズレ防止）。
+import build_photographers_en as _en_builder  # noqa: E402
 from build_photographers_en import CJK_RE  # noqa: E402
 # AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本）。
 import ai_disclosure as _ai_disclosure  # noqa: E402
@@ -713,6 +715,25 @@ class BundleIncomplete(Exception):
         super().__init__(
             f"{slug or '<material>'}: 必須フィールド欠落（空埋め禁止）: "
             f"{', '.join(missing)}")
+
+
+class EnScaffoldMissing(RuntimeError):
+    """EN 描画元になる同一人物の JA ページが存在しない。"""
+
+    def __init__(self, slug: str, ja_file: str):
+        self.slug, self.ja_file = slug, ja_file
+        super().__init__(
+            f"{slug}: EN scaffold の JA ページ photographers/{ja_file} がありません。"
+            "JA ページを先に作ってください。")
+
+
+class EnRenderIncomplete(RuntimeError):
+    """EN 描画結果が新規ページの必須構造を満たさない。"""
+
+    def __init__(self, slug: str, problems: list[str]):
+        self.slug, self.problems = slug, problems
+        super().__init__(
+            f"{slug}: EN 描画結果の必須構造が不完全: " + "; ".join(problems))
 
 
 def _slice_element(html: str, start: int, tag: str) -> str:
@@ -1738,6 +1759,274 @@ def bundle_to_en_entry(bundle: dict, slug: str | None = None) -> dict:
                "description": desc, "url": canonical},
         "twitter": {"card": "summary", "title": title, "description": desc},
     }
+
+
+def _en_head_complete(entry: dict, bundle: dict, slug: str) -> dict:
+    """EN HTML 直接描画専用の head 必須値を浅いコピーへ補完する。
+
+    ``bundle_to_en_entry`` の JSON 向け出力契約は変えず、renderer 経路だけで
+    OGP/Twitter 画像と決定論 JSON-LD を揃える。
+    """
+    completed = dict(entry)
+    og = dict(completed.get("og") or {})
+    og.update({
+        "image": _en_builder.DEFAULT_OG_IMAGE,
+        "image:width": "1200",
+        "image:height": "630",
+        "locale": "en_US",
+    })
+    completed["og"] = og
+    twitter = dict(completed.get("twitter") or {})
+    twitter["image"] = _en_builder.DEFAULT_OG_IMAGE
+    completed["twitter"] = twitter
+    title = completed.get("title") or bundle.get("title") or completed.get("h1")
+    completed["jsonld"] = _en_builder._fb_jsonld(completed, slug, title)
+    return completed
+
+
+def _en_works_anchors(html: str) -> list[tuple[str, str]]:
+    """最初の ph-works-links 内から (正規化URL, ラベルHTML) を返す。"""
+    works = slice_by_class(html, "div", "ph-works-links")
+    if not works:
+        return []
+    anchors = []
+    for match in re.finditer(
+            r'<a\b(?=[^>]*\bclass="[^"]*\bchip-link\b[^"]*")([^>]*)>'
+            r'(.*?)</a>', works[1], re.S | re.I):
+        href = re.search(r'\bhref="([^"]*)"', match.group(1), re.I)
+        if href:
+            anchors.append((html_lib.unescape(href.group(1)), match.group(2)))
+    return anchors
+
+
+def _en_apply_works_labels(html: str, bundle: dict) -> str:
+    """ph-works-links の一致URLへ EN bundle の作品ラベルだけを適用する。
+
+    builder は ``view_works_links_html`` を読まないため、renderer 内の後処理に
+    閉じて補う。アンカー属性・bundle に無い URL・末尾の矢印は保持する。
+    """
+    labels = {}
+    for work in bundle.get("works") or []:
+        url = work.get("url")
+        label = work.get("label")
+        if url and label is not None:
+            labels.setdefault(html_lib.unescape(url), str(label))
+    if not labels:
+        return html
+
+    works = slice_by_class(html, "div", "ph-works-links")
+    if not works:
+        return html
+    outer, inner, end = works
+
+    def replace_anchor(match: re.Match) -> str:
+        open_tag, current = match.group(1), match.group(2)
+        href = re.search(r'\bhref="([^"]*)"', open_tag, re.I)
+        if not href:
+            return match.group(0)
+        label = labels.get(html_lib.unescape(href.group(1)))
+        if label is None:
+            return match.group(0)
+        arrow = re.search(r'(\s*↗\s*)$', current)
+        suffix = arrow.group(1) if arrow else ""
+        return open_tag + label + suffix + "</a>"
+
+    new_inner = re.sub(
+        r'(<a\b(?=[^>]*\bclass="[^"]*\bchip-link\b[^"]*")[^>]*>)'
+        r'(.*?)</a>', replace_anchor, inner, flags=re.S | re.I)
+    start = end - len(outer)
+    open_end = outer.find(">") + 1
+    new_outer = outer[:open_end] + new_inner + "</div>"
+    return html[:start] + new_outer + html[end:]
+
+
+def _en_works_label_stats(before: str, after: str) -> tuple[int, int]:
+    """作品ラベル後処理の (差替件数, 残存CJK件数) を返す。"""
+    old = _en_works_anchors(before)
+    new = _en_works_anchors(after)
+    replaced = sum(
+        1 for old_item, new_item in zip(old, new)
+        if old_item[0] == new_item[0] and old_item[1] != new_item[1])
+    remaining_cjk = sum(1 for _url, label in new if CJK_RE.search(label))
+    return replaced, remaining_cjk
+
+
+def _en_nonempty_class_body(html: str, tag: str, cls: str,
+                            child_cls: str | None = None) -> bool:
+    block = slice_by_class(html, tag, cls)
+    if not block:
+        return False
+    inner = block[1]
+    if child_cls:
+        child = re.search(
+            r'<[^>]+class="[^"]*\b%s\b[^"]*"[^>]*>(.*?)</[^>]+>'
+            % re.escape(child_cls), inner, re.S | re.I)
+        if not child:
+            return False
+        inner = child.group(1)
+    return bool(norm_text(inner))
+
+
+def _validate_en_render(html: str, bundle: dict, slug: str) -> dict:
+    """新規 EN ページの必須構造を検査し、不足時は fail-loud にする。"""
+    problems = []
+    h1_count = len(re.findall(r'<h1\b', html, re.I))
+    if h1_count != 1:
+        problems.append(f"h1={h1_count}（1個必要）")
+    abstract = slice_by_class(html, "div", "ph-abstract")
+    abstract_p = (re.search(r'<p\b[^>]*>(.*?)</p>', abstract[1], re.S | re.I)
+                  if abstract else None)
+    if not abstract_p or not norm_text(abstract_p.group(1)):
+        problems.append("ph-abstract が無いか空")
+    if not _en_nonempty_class_body(
+            html, "div", "ph-thesis", "ph-thesis__body"):
+        problems.append("ph-thesis が無いか空")
+
+    for label in ("WORKS", "REL", "REF", "SRC"):
+        if not re.search(
+                r'<span\b[^>]*class="[^"]*\bph-section__num\b[^"]*"[^>]*>'
+                r'\s*§\s*%s\s*</span>' % label, html, re.I):
+            problems.append(f"§ {label} が無い")
+
+    section_ids = re.findall(r'id="sec-(\d+)"', html)
+    expected_sections = len(bundle.get("sections") or [])
+    if len(section_ids) != expected_sections:
+        problems.append(
+            f"本文節={len(section_ids)}（bundle={expected_sections}）")
+
+    cite_ids = {int(n) for n in re.findall(r'id="cite-(\d+)"', html)}
+    expected_cites = {int(n) for n in (bundle.get("cite_ids") or [])}
+    if cite_ids != expected_cites:
+        problems.append(
+            f"cite集合不一致 output={sorted(cite_ids)} bundle={sorted(expected_cites)}")
+    suprefs = {int(n) for n in re.findall(r'href="#cite-(\d+)"', html)}
+    dangling = sorted(suprefs - cite_ids)
+    if dangling:
+        problems.append(f"dangling cite={dangling}")
+
+    if not re.search(r'<html\b[^>]*\blang="en"', html, re.I):
+        problems.append('lang="en" が無い')
+    main = re.search(r'<main\b[^>]*>(.*?)</main>', html, re.S | re.I)
+    body = main.group(1) if main else html
+    if 'href="/photographers/' in body:
+        problems.append("本文に JA 写真家パスが混入")
+
+    ga_count = html.count("G-2VRTV8BZEJ")
+    if ga_count != 2:
+        problems.append(f"GA ID={ga_count}（2個必要）")
+    div_open = len(re.findall(r'<div\b', html, re.I))
+    div_close = len(re.findall(r'</div\s*>', html, re.I))
+    if div_open != div_close:
+        problems.append(f"div開閉={div_open}/{div_close}")
+    section_open = len(re.findall(r'<section\b', html, re.I))
+    section_close = len(re.findall(r'</section\s*>', html, re.I))
+    if section_open != section_close:
+        problems.append(f"section開閉={section_open}/{section_close}")
+    if _ai_disclosure.MARKER_OPEN not in html:
+        problems.append("AI開示ブロックが無い")
+
+    works_cjk = sum(
+        1 for _url, label in _en_works_anchors(html) if CJK_RE.search(label))
+    if works_cjk:
+        problems.append(f"作品ラベルに未翻訳CJK={works_cjk}")
+    if problems:
+        raise EnRenderIncomplete(slug, problems)
+    return {
+        "h1": h1_count,
+        "sections": len(section_ids),
+        "cites": len(cite_ids),
+        "suprefs": len(re.findall(r'href="#cite-(\d+)"', html)),
+        "dangling": len(dangling),
+        "works_cjk": works_cjk,
+        "ga": ga_count,
+        "div": (div_open, div_close),
+        "section_tags": (section_open, section_close),
+    }
+
+
+def render_en_page(bundle: dict, slug: str | None = None,
+                   *, ja_file: str | None = None) -> tuple[str, list[str]]:
+    """ContentBundle（EN）+ 同一人物の JA scaffold から EN HTML を生成する。
+
+    ``render_ja_page`` と対になる薄いオーケストレータ。既存 builder の描画部品を
+    再利用し、ファイル書込みは行わない。
+    """
+    slug = slug or bundle["slug"]
+    missing = _missing_required(bundle, "en")
+    if missing:
+        raise BundleIncomplete(slug, missing)
+
+    entry = bundle_to_en_entry(bundle, slug=slug)
+    entry = _en_head_complete(entry, bundle, slug)
+    ja_to_en, en_to_ja = _en_builder.build_jp_slug_map(
+        _en_builder.load_classification())
+    ja_file = ja_file or en_to_ja.get(f"{slug}.html", f"{slug}.html")
+    if not (JA_DIR / ja_file).is_file():
+        raise EnScaffoldMissing(slug, ja_file)
+
+    warnings = []
+    _slug_out, html = _en_builder.process_page(
+        ja_file, entry, ja_to_en, warnings)
+    if html is None:
+        raise EnScaffoldMissing(slug, ja_file)
+    before_labels = html
+    html = _en_apply_works_labels(html, bundle)
+    replaced, remaining_cjk = _en_works_label_stats(before_labels, html)
+    warnings.append(
+        f"{slug}: works labels replaced={replaced}; "
+        f"untranslated CJK labels={remaining_cjk}")
+    html, _action = _ai_disclosure.ensure(html, "en")
+    if any("head fallback fired" in warning for warning in warnings):
+        raise EnRenderIncomplete(slug, ["head fallback fired"])
+    _validate_en_render(html, bundle, slug)
+    return html, warnings
+
+
+def _render_en_summary(html: str, bundle: dict, slug: str,
+                       warnings: list[str]) -> str:
+    result = _validate_en_render(html, bundle, slug)
+    return (
+        f"[render-en] slug={slug} h1={result['h1']} "
+        f"cite={result['cites']} sec={result['sections']} "
+        f"supref={result['suprefs']} dangling={result['dangling']} "
+        f"works-cjk={result['works_cjk']} ga={result['ga']} "
+        f"warnings={len(warnings)}")
+
+
+def run_render_en(material: Path, slug: str, lang: str | None,
+                  apply: bool = False) -> int:
+    """EN 素材を描画し、既定は stdout、--apply 時だけ新規 EN HTML へ書く。"""
+    if not material.exists():
+        sys.stderr.write(f"ERROR: 素材が見つからない: {material}\n")
+        return 2
+    out_path = EN_DIR / f"{slug}.html"
+    if apply and out_path.exists():
+        sys.stderr.write(
+            "🛑 REFUSED 1 page(s): 既存 EN ページは HTML 自身が正本（再生成しない）\n"
+            f"  ✋ {out_path.name}\n"
+            "  → 既存ENページは HTML 自身が正本。"
+            "en/photographers/<slug>.html を直接編集すること。\n")
+        return 1
+
+    raw = material.read_text(encoding="utf-8", errors="replace")
+    bundle, _info = extract_bundle(raw, lang or "en", slug=slug)
+    try:
+        out, warnings = render_en_page(bundle, slug=slug)
+    except (BundleIncomplete, EnScaffoldMissing, EnRenderIncomplete, ValueError) as exc:
+        sys.stderr.write(f"ERROR: {exc}\n")
+        return 1
+
+    if apply:
+        out_path.write_text(out, encoding="utf-8")
+        written = out_path.read_text(encoding="utf-8")
+        summary = _render_en_summary(written, bundle, slug, warnings)
+        sys.stderr.write(summary + f" wrote={out_path.relative_to(REPO)}\n")
+    else:
+        sys.stdout.write(out)
+        sys.stderr.write(_render_en_summary(out, bundle, slug, warnings) + "\n")
+    for warning in warnings:
+        sys.stderr.write(f"  ! {warning}\n")
+    return 0
 
 
 def run_bundle_to_en(material: Path, slug: str | None, lang: str | None,
@@ -3172,6 +3461,9 @@ def main(argv=None) -> int:
     ap.add_argument("--render-ja", metavar="PATH",
                     help="M3 検証（read-only）: JA 素材から bundle を抽出し --spec で "
                          "render_ja_page を実行、JA HTML を stdout 出力（正本・HTML 不可触）")
+    ap.add_argument("--render-en", metavar="PATH",
+                    help="EN 素材 HTML から EN ページを描画（--slug 必須。既定は stdout、"
+                         "--apply 時だけ新規 en/photographers/<slug>.html へ書込）")
     ap.add_argument("--spec", metavar="PATH",
                     help="--render-ja の spec.json（taxonomy/同一性を供給）")
     ap.add_argument("--bundle-to-en", metavar="PATH",
@@ -3233,6 +3525,13 @@ def main(argv=None) -> int:
             ap.error("--render-ja は --spec が必須")
         return run_render_ja(Path(args.render_ja).expanduser(),
                              Path(args.spec).expanduser(), args.idx, args.lang)
+
+    # フェーズC EN renderer（既定 read-only・既存出力への apply は常に拒否）。
+    if args.render_en:
+        if not args.slug:
+            ap.error("--render-en は --slug が必須")
+        return run_render_en(Path(args.render_en).expanduser(),
+                             args.slug, args.lang, args.apply)
 
     # M5 bundle_to_en_entry 検証（read-only）。slug/ja は不要。
     if args.bundle_to_en:
