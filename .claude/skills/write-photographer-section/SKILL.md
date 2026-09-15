@@ -12,7 +12,7 @@ description: 写真家の解説文・本文を書く/書き直すときに必ず
 
 ## 書き込み先の正本 — 最初に確認
 - JA: `photographers/*.html` に直接書く（HTML が正本）
-- EN: `data/photographers-en-content.json` に書き、`python3 scripts/build_photographers_en.py --slug <slug>` で再生成する。**EN HTML は直接編集しない**
+- EN: `en/photographers/*.html` に直接書く（**HTML が正本**・2026-09-15〜）。JSON から再生成する経路は無く、凍結EN JSON は編集しない（preflight が HARD で止める）。新規ページのみ `python3 scripts/import_chatgpt_photographer.py --slug <slug> --render-en EN.html --apply`
 - 構造の正典は `docs/photographer-leaf-spec.md`
 
 ## Core principles

@@ -26,9 +26,8 @@ JA ページをそのまま英語化すると壊れる箇所がある。EN で�
   主流は `Background and Period` / `Core of the Work` /
   `Key Works, Methods, and Media` / `Critical Reception and Place in Photographic History`。
 - 本文の小見出しは `h3`。サイトの EN 本文はほぼ h3 で、h4 は少数の古い形。
-- EN 写真家ページの正本は `data/photographers-en-content.json`。該当フィールドは
-  `lead_html` / `sections[].title` / `sections[].body_html` / `thesis_html` /
-  `sources_html` / `cite_ids` / `supref_ids` / `site_directory_html` / `related_annotations`。
+- **EN 写真家ページの正本は `en/photographers/<slug>.html` 自身**（2026-09-15〜）。
+  訳文はこの HTML の該当箇所へ直接書く。JSON から再生成する経路は無い。
 
 ---
 
