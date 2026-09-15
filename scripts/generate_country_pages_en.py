@@ -37,6 +37,7 @@ import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import ai_disclosure as _ai_disclosure
 from build_archive_en import EN_SLUG_BY_ID
+from gen_dry_run import DryRunReport
 
 EN_ARCHIVE_HREF_RE = re.compile(r'href="/en/photographers/([^"]+)\.html"')
 # JA-only entries (NO_EN_PAGE in build_archive_en.py): their en/archive.html card
@@ -413,6 +414,8 @@ def _parse_scope(argv, valid_slugs):
                         help='rebuild every EN country page and refresh composite redirect stubs')
     parser.add_argument('--country', action='append', metavar='SLUG', default=[],
                         help='rebuild one EN country page by slug, e.g. --country japan (repeatable)')
+    parser.add_argument('--dry-run', action='store_true',
+                        help='calculate and classify outputs without writing files')
     # --only is a deprecated alias of --country, kept for old muscle memory.
     parser.add_argument('--only', action='append', metavar='SLUG', default=[],
                         help=argparse.SUPPRESS)
@@ -428,20 +431,21 @@ def _parse_scope(argv, valid_slugs):
         sys.stderr.write("ERROR: --all cannot be combined with --country/--only.\n")
         sys.exit(2)
     if args.all:
-        return None
+        return None, args.dry_run
     bad = [s for s in targets if s not in valid_slugs]
     if bad:
         sys.stderr.write(
             f"ERROR: unknown country slug(s): {', '.join(bad)}\n"
             f"Valid slugs: {', '.join(sorted(valid_slugs))}\n")
         sys.exit(2)
-    return set(targets)
+    return set(targets), args.dry_run
 
 
 def main(argv=None) -> None:
     registry = json.loads((REPO / "data" / "country-pages.json").read_text(encoding="utf-8"))
     singles = {r["slug"]: r for r in registry}
-    only = _parse_scope(argv, set(singles))
+    only, is_dry_run = _parse_scope(argv, set(singles))
+    dry_run = DryRunReport(REPO) if is_dry_run else None
     card_data = json.loads((REPO / "card-data.json").read_text(encoding="utf-8"))["photographers"]
     card_map = {p["id"]: p for p in card_data}
 
@@ -474,8 +478,12 @@ def main(argv=None) -> None:
             raise SystemExit(f"Cannot resolve JA redirect target for {cslug}")
         target = m.group(1)
         target_en = singles[target]["nameEn"]
-        (REPO / "en" / "countries" / f"{cslug}.html").write_text(
-            STUB.format(target=target, target_en=target_en), encoding="utf-8")
+        out_path = REPO / "en" / "countries" / f"{cslug}.html"
+        html = STUB.format(target=target, target_en=target_en)
+        if dry_run is not None:
+            dry_run.record(out_path, html)
+        else:
+            out_path.write_text(html, encoding="utf-8")
         stub_n += 1
 
     # ── generate single EN pages ──
@@ -499,10 +507,16 @@ def main(argv=None) -> None:
                            dir_countries=dir_countries, dir_photographers=dir_photographers,
                            cards_html="\n".join(cards), member_count=len(cards))
         html, _ = _ai_disclosure.ensure(html, "en")
-        (REPO / "en" / "countries" / f"{cfg['slug']}.html").write_text(html, encoding="utf-8")
+        out_path = REPO / "en" / "countries" / f"{cfg['slug']}.html"
+        if dry_run is not None:
+            dry_run.record(out_path, html)
+        else:
+            out_path.write_text(html, encoding="utf-8")
         page_n += 1
 
     print(f"EN: {stub_n} composite stubs, {page_n} single pages generated")
+    if dry_run is not None:
+        dry_run.print_summary()
 
 
 if __name__ == "__main__":

@@ -22,6 +22,7 @@ from pathlib import Path
 import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import ai_disclosure as _ai_disclosure
+from gen_dry_run import DryRunReport
 
 
 REPO = Path(__file__).resolve().parent.parent
@@ -826,6 +827,8 @@ def _parse_scope(argv, valid_slugs):
                         help='rebuild every country page in the registry')
     parser.add_argument('--country', action='append', metavar='SLUG', default=[],
                         help='rebuild one country page by slug, e.g. --country japan (repeatable)')
+    parser.add_argument('--dry-run', action='store_true',
+                        help='calculate and classify outputs without writing files')
     # --only is a deprecated alias of --country, kept for old muscle memory.
     parser.add_argument('--only', action='append', metavar='SLUG', default=[],
                         help=argparse.SUPPRESS)
@@ -841,14 +844,14 @@ def _parse_scope(argv, valid_slugs):
         sys.stderr.write("ERROR: --all cannot be combined with --country/--only.\n")
         sys.exit(2)
     if args.all:
-        return None
+        return None, args.dry_run
     bad = [s for s in targets if s not in valid_slugs]
     if bad:
         sys.stderr.write(
             f"ERROR: unknown country slug(s): {', '.join(bad)}\n"
             f"Valid slugs: {', '.join(sorted(valid_slugs))}\n")
         sys.exit(2)
-    return set(targets)
+    return set(targets), args.dry_run
 
 
 def main(argv=None) -> None:
@@ -857,7 +860,8 @@ def main(argv=None) -> None:
     # Scope gate first (refuse no-scope / validate slugs) before any heavy work.
     registry = json.loads((REPO / "data" / "country-pages.json").read_text(encoding="utf-8"))
     allowed_slugs = {r["slug"] for r in registry}
-    only = _parse_scope(argv, allowed_slugs)
+    only, is_dry_run = _parse_scope(argv, allowed_slugs)
+    dry_run = DryRunReport(REPO) if is_dry_run else None
 
     # Load era page for style block
     era_path = REPO / "eras" / "1839.html"
@@ -903,9 +907,14 @@ def main(argv=None) -> None:
                                      archive_lookup, card_data, strip_pairs)
         html, _ = _ai_disclosure.ensure(html, "ja")
         out_path = REPO / "countries" / f"{config['slug']}.html"
-        out_path.write_text(html, encoding="utf-8")
+        if dry_run is not None:
+            dry_run.record(out_path, html)
+        else:
+            out_path.write_text(html, encoding="utf-8")
         total += 1
     print(f"\nGenerated {total} country pages.")
+    if dry_run is not None:
+        dry_run.print_summary()
 
 
 if __name__ == "__main__":

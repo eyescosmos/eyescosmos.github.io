@@ -10,6 +10,7 @@
 実行: python3 scripts/build_archive_en.py
 出力: en/archive.html
 """
+import argparse
 import json
 import os
 import re
@@ -19,6 +20,7 @@ import sys
 import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import ai_disclosure as _ai_disclosure
+from gen_dry_run import DryRunReport
 
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -318,7 +320,12 @@ def en_page_lede(pid):
     return txt
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Build the EN archive page.")
+    parser.add_argument('--dry-run', action='store_true',
+                        help='calculate and classify output without writing files')
+    args = parser.parse_args(argv)
+
     d = json.load(open(os.path.join(ROOT, 'card-data.json')))
     name_ja2en = {}
     for c in d['photographers'] + d['movements']:
@@ -530,9 +537,14 @@ def main():
 
     out, _ = _ai_disclosure.ensure(out, 'en')
     dst = os.path.join(ROOT, 'en/archive.html')
-    open(dst, 'w', encoding='utf-8').write(out)
     n = len(re.findall(r'<article class="pc-card', out))
-    print(f'Wrote {dst} ({n} cards, {len(out)} bytes)')
+    if args.dry_run:
+        dry_run = DryRunReport(ROOT)
+        dry_run.record(dst, out)
+        dry_run.print_summary()
+    else:
+        open(dst, 'w', encoding='utf-8').write(out)
+        print(f'Wrote {dst} ({n} cards, {len(out)} bytes)')
 
 
 if __name__ == '__main__':

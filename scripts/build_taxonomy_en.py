@@ -28,6 +28,7 @@ import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import ai_disclosure as _ai_disclosure
 from build_archive_en import EN_SLUG_BY_ID
+from gen_dry_run import DryRunReport
 
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -1447,7 +1448,7 @@ def add_lang_toggle_href(html, slug_or_era, page_type='movement'):
     return html
 
 
-def process_movement_page(ja_name, slug, en_data, id_to_card):
+def process_movement_page(ja_name, slug, en_data, id_to_card, dry_run=None):
     """Generate an English movement page from the Japanese v5.1 template"""
     ja_fp = os.path.join(ROOT, f'movements/{ja_name}.html')
     en_fp = os.path.join(ROOT, f'en/movements/{slug}.html')
@@ -1643,14 +1644,17 @@ def process_movement_page(ja_name, slug, en_data, id_to_card):
 
     # 18. Write output（JA由来の開示ブロックをEN版へ差し替える）
     html, _ = _ai_disclosure.ensure(html, 'en')
-    os.makedirs(os.path.dirname(en_fp), exist_ok=True)
-    with open(en_fp, 'w', encoding='utf-8') as f:
-        f.write(html)
+    if dry_run is not None:
+        dry_run.record(en_fp, html)
+    else:
+        os.makedirs(os.path.dirname(en_fp), exist_ok=True)
+        with open(en_fp, 'w', encoding='utf-8') as f:
+            f.write(html)
 
     return ph_ids, missing_cards
 
 
-def process_era_page(era_id, en_data, id_to_card):
+def process_era_page(era_id, en_data, id_to_card, dry_run=None):
     """Generate an English era page from the Japanese v5.1 template"""
     ja_fp = os.path.join(ROOT, f'eras/{era_id}.html')
     en_fp = os.path.join(ROOT, f'en/eras/{era_id}.html')
@@ -1799,14 +1803,17 @@ def process_era_page(era_id, en_data, id_to_card):
 
     # 18. Write output（JA由来の開示ブロックをEN版へ差し替える）
     html, _ = _ai_disclosure.ensure(html, 'en')
-    os.makedirs(os.path.dirname(en_fp), exist_ok=True)
-    with open(en_fp, 'w', encoding='utf-8') as f:
-        f.write(html)
+    if dry_run is not None:
+        dry_run.record(en_fp, html)
+    else:
+        os.makedirs(os.path.dirname(en_fp), exist_ok=True)
+        with open(en_fp, 'w', encoding='utf-8') as f:
+            f.write(html)
 
     return missing_cards
 
 
-def build_movements(only_slugs=None):
+def build_movements(only_slugs=None, dry_run=None):
     en_data = json.load(open(os.path.join(ROOT, 'data/taxonomy-en-content.json'), encoding='utf-8'))
     id_to_card = load_en_archive_cards()
 
@@ -1817,7 +1824,8 @@ def build_movements(only_slugs=None):
         if only_slugs is not None and slug not in only_slugs:
             continue
         print(f"  movement: {slug}")
-        ph_ids, missing = process_movement_page(ja_name, slug, en_data, id_to_card)
+        ph_ids, missing = process_movement_page(
+            ja_name, slug, en_data, id_to_card, dry_run=dry_run)
         if missing:
             all_missing.extend([(slug, pid) for pid in missing])
             print(f"    MISSING CARDS: {missing}")
@@ -1826,7 +1834,7 @@ def build_movements(only_slugs=None):
     return generated, all_missing
 
 
-def build_eras(only_eras=None):
+def build_eras(only_eras=None, dry_run=None):
     en_data = json.load(open(os.path.join(ROOT, 'data/taxonomy-en-content.json'), encoding='utf-8'))
     id_to_card = load_en_archive_cards(swap_nationality=True)
 
@@ -1837,7 +1845,7 @@ def build_eras(only_eras=None):
         if only_eras is not None and era_id not in only_eras:
             continue
         print(f"  era: {era_id}")
-        missing = process_era_page(era_id, en_data, id_to_card)
+        missing = process_era_page(era_id, en_data, id_to_card, dry_run=dry_run)
         if missing:
             all_missing.extend([(era_id, pid) for pid in missing])
             print(f"    MISSING CARDS: {missing}")
@@ -1874,6 +1882,8 @@ def main(argv=None):
                         help='rebuild one era page by id, e.g. --era 2010 (repeatable)')
     parser.add_argument('--slug', action='append', metavar='MOVEMENT', default=[],
                         help='rebuild one movement page by EN slug, e.g. --slug new-color (repeatable)')
+    parser.add_argument('--dry-run', action='store_true',
+                        help='calculate and classify outputs without writing files')
     args = parser.parse_args(argv)
 
     # ── Guard: no scope → refuse, write nothing, non-zero exit ──────────────
@@ -1905,6 +1915,7 @@ def main(argv=None):
 
     only_slugs = None if args.all else (set(args.slug) if args.slug else set())
     only_eras = None if args.all else (set(args.era) if args.era else set())
+    dry_run = DryRunReport(ROOT) if args.dry_run else None
 
     print("Building EN taxonomy pages...")
     mvt_count = mvt_missing = era_count = era_missing = None
@@ -1912,10 +1923,11 @@ def main(argv=None):
     # In --all mode both run fully. In targeted mode only the requested kind runs.
     if args.all or only_slugs:
         print("\n[movements]")
-        mvt_count, mvt_missing = build_movements(only_slugs=only_slugs)
+        mvt_count, mvt_missing = build_movements(
+            only_slugs=only_slugs, dry_run=dry_run)
     if args.all or only_eras:
         print("\n[eras]")
-        era_count, era_missing = build_eras(only_eras=only_eras)
+        era_count, era_missing = build_eras(only_eras=only_eras, dry_run=dry_run)
 
     print(f"\n=== Done ===")
     if mvt_count is not None:
@@ -1932,6 +1944,9 @@ def main(argv=None):
         print(f"\nMissing photographer cards in eras ({len(era_missing)}):")
         for era_id, pid in era_missing:
             print(f"  {era_id}: {pid}")
+
+    if dry_run is not None:
+        dry_run.print_summary()
 
     return 0
 
