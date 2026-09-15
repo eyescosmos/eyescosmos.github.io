@@ -63,6 +63,7 @@ CHANNEL_PREFIX = {
     '並べて見る写真': 'Seeing in series',
     '写真運動': 'Movement',
     '東ドイツ写真': 'East German Photography',
+    '形態を比較する写真': 'Comparing form',
 }
 
 # ── メタ行の国名 → コード（en/index.html の "US · 1864–1946" 形式に合わせる） ──
