@@ -584,8 +584,8 @@ def load_en_archive_cards(swap_nationality=False):
 
     swap_nationality: if True, replace <span>PHOTOGRAPHER</span> with the
     nationality code from card-data.json.  Pass True only for era pages;
-    movement pages keep the PHOTOGRAPHER placeholder so they stay in sync
-    with the Japanese movement pages.
+    movement pages inherit the Japanese source card's label later in
+    replace_cards_with_en().
     """
     fp = os.path.join(ROOT, 'en/archive.html')
     html = open(fp, encoding='utf-8').read()
@@ -627,6 +627,22 @@ def load_en_archive_cards(swap_nationality=False):
                             f'<span>{nationality}</span>', 1)
                 id_to_card.setdefault(card_id, alias_card)
     return id_to_card
+
+
+def load_photographer_names():
+    """Load photographer name pairs from card-data.json, keyed by page id."""
+    card_data_fp = os.path.join(ROOT, 'card-data.json')
+    with open(card_data_fp, encoding='utf-8') as f:
+        card_data = json.load(f)
+
+    names = {
+        p['id']: (p.get('nameJa', ''), p.get('nameEn', ''))
+        for p in card_data.get('photographers', [])
+    }
+    for card_id, en_slug in EN_SLUG_BY_ID.items():
+        if card_id in names:
+            names.setdefault(en_slug, names[card_id])
+    return names
 
 
 def get_photographers_in_movement(ja_html):
@@ -996,8 +1012,8 @@ def translate_context_blocks(html, era_id):
     return html
 
 
-def translate_sidebar_chips_movement(html, slug):
-    """Translate Japanese movement chips in sidebar to English slugs"""
+def translate_sidebar_chips_movement(html, slug, photographer_names):
+    """Translate Japanese movement and photographer chips in the sidebar."""
     def repl_chip_link(m):
         ja_fn = m.group(1)
         en_slug = STUB_TO_SLUG.get(ja_fn, '')
@@ -1012,6 +1028,31 @@ def translate_sidebar_chips_movement(html, slug):
         en_name = SLUG_TO_EN_NAME[en_slug]
         # Replace text in chip links and non-linked chips
         html = html.replace(f'>{ja_name}<', f'>{en_name}<')
+
+    def repl_photographer_chip(m):
+        ph_id, chip_text = m.group(2), m.group(3)
+        if not re.search(r'[\u3040-\u30ff\u3400-\u9fff]', chip_text):
+            return m.group(0)
+        name_pair = photographer_names.get(ph_id)
+        if not name_pair:
+            return m.group(0)
+        name_ja, name_en = name_pair
+        if chip_text == name_ja:
+            translated = name_en
+        elif name_ja.endswith(chip_text):
+            translated = name_en.rsplit(' ', 1)[-1]
+        elif name_ja.startswith(chip_text):
+            translated = name_en.split(' ', 1)[0]
+        else:
+            return m.group(0)
+        return m.group(1) + esc(translated) + m.group(4)
+
+    html = re.sub(
+        r'(<span class="ph-side-chip"[^>]*><a href="\.\./photographers/([^"/]+)\.html">)'
+        r'([^<]+)(</a>)',
+        repl_photographer_chip,
+        html,
+    )
 
     return html
 
@@ -1282,6 +1323,23 @@ def translate_ja_card_fallback(card, ph_id):
     return card
 
 
+def inherit_movement_card_label(en_card, ja_card):
+    """Copy the second pc-top__meta span from the Japanese source card."""
+    label_pattern = (r'<div class="pc-top__meta">\s*'
+                     r'<span\b[^>]*>.*?</span>\s*'
+                     r'<span\b[^>]*>(.*?)</span>\s*</div>')
+    source = re.search(label_pattern, ja_card, re.S)
+    if not source:
+        return en_card
+
+    target_pattern = (r'(<div class="pc-top__meta">\s*'
+                      r'<span\b[^>]*>.*?</span>\s*'
+                      r'<span\b[^>]*>)(.*?)(</span>)')
+    return re.sub(target_pattern,
+                  lambda m: m.group(1) + source.group(1) + m.group(3),
+                  en_card, count=1, flags=re.S)
+
+
 def replace_cards_with_en(html, ph_ids, id_to_card, page_type='movement'):
     """Replace pc-card photographer articles with EN versions.
     en/archive.html に無いカードは落とさず、テーブル翻訳して残す。"""
@@ -1300,12 +1358,15 @@ def replace_cards_with_en(html, ph_ids, id_to_card, page_type='movement'):
         ph_id = idm.group(1) if idm else ''
         alt_id = ph_id.replace('jp-', '') if ph_id.startswith('jp-') else f'jp-{ph_id}'
         if ph_id in id_to_card:
-            new_cards_html += '\n' + id_to_card[ph_id]
+            replacement = id_to_card[ph_id]
         elif alt_id in id_to_card:
-            new_cards_html += '\n' + id_to_card[alt_id]
+            replacement = id_to_card[alt_id]
         else:
             missing.append(ph_id)
-            new_cards_html += '\n' + translate_ja_card_fallback(article, ph_id)
+            replacement = translate_ja_card_fallback(article, ph_id)
+        if page_type == 'movement':
+            replacement = inherit_movement_card_label(replacement, article)
+        new_cards_html += '\n' + replacement
 
     new_html = (html[:m.start()] +
                 m.group(1) + new_cards_html + '\n' +
@@ -1448,7 +1509,8 @@ def add_lang_toggle_href(html, slug_or_era, page_type='movement'):
     return html
 
 
-def process_movement_page(ja_name, slug, en_data, id_to_card, dry_run=None):
+def process_movement_page(ja_name, slug, en_data, id_to_card,
+                          photographer_names, dry_run=None):
     """Generate an English movement page from the Japanese v5.1 template"""
     ja_fp = os.path.join(ROOT, f'movements/{ja_name}.html')
     en_fp = os.path.join(ROOT, f'en/movements/{slug}.html')
@@ -1607,7 +1669,7 @@ def process_movement_page(ja_name, slug, en_data, id_to_card, dry_run=None):
     html = translate_internal_links_movement(html, slug)
 
     # 13. Translate sidebar chips
-    html = translate_sidebar_chips_movement(html, slug)
+    html = translate_sidebar_chips_movement(html, slug, photographer_names)
 
     # 14. Translate sidebar meta values
     # Movement name value
@@ -1816,6 +1878,7 @@ def process_era_page(era_id, en_data, id_to_card, dry_run=None):
 def build_movements(only_slugs=None, dry_run=None):
     en_data = json.load(open(os.path.join(ROOT, 'data/taxonomy-en-content.json'), encoding='utf-8'))
     id_to_card = load_en_archive_cards()
+    photographer_names = load_photographer_names()
 
     all_missing = []
     generated = 0
@@ -1825,7 +1888,8 @@ def build_movements(only_slugs=None, dry_run=None):
             continue
         print(f"  movement: {slug}")
         ph_ids, missing = process_movement_page(
-            ja_name, slug, en_data, id_to_card, dry_run=dry_run)
+            ja_name, slug, en_data, id_to_card, photographer_names,
+            dry_run=dry_run)
         if missing:
             all_missing.extend([(slug, pid) for pid in missing])
             print(f"    MISSING CARDS: {missing}")
