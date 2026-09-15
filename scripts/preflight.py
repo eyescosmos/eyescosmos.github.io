@@ -61,14 +61,18 @@ try:
     from build_taxonomy_en import STUB_TO_SLUG as _MOVEMENT_JA_TO_EN  # noqa: E402
 except Exception:  # noqa: BLE001
     _MOVEMENT_JA_TO_EN = {}
+_MOVEMENT_EN_TO_JA = {slug: stub for stub, slug in _MOVEMENT_JA_TO_EN.items()}
 
 from sync_card_counts import PHOTO_ARTICLE_RE, PHOTO_HREF_RE  # noqa: E402
 
-EN_JSON_ARCHIVE_PATHS = tuple(
-    "data/archive/photographers-en-" + name + ".json" for name in ("content", "stage4")
+EN_JSON_ARCHIVE_PATHS = (
+    "data/archive/photographers-en-content.json",
+    "data/archive/photographers-en-stage4.json",
+    "data/archive/taxonomy-en-content.json",
 )
+# taxonomy の move がこの commit として origin/main に載ったら撤去してよい。
 EN_JSON_ARCHIVE_LEGACY_PATHS = {
-    rel: rel.replace("data/archive/", "data/", 1) for rel in EN_JSON_ARCHIVE_PATHS
+    "data/archive/taxonomy-en-content.json": "data/taxonomy-en-content.json",
 }
 
 
@@ -564,7 +568,7 @@ def _rendered_ph_section_count(rel_path: str, ref: str | None) -> int | None:
 
 
 def check_en_json_frozen() -> None:
-    """読み取り専用アーカイブ2本の origin/main からの全変更を HARD にする。"""
+    """読み取り専用 EN JSON アーカイブ3本の origin/main からの全変更を HARD にする。"""
     if os.environ.get("ALLOW_EN_JSON_ARCHIVE_WRITE") == "1":
         return
     for rel in EN_JSON_ARCHIVE_PATHS:
@@ -574,20 +578,29 @@ def check_en_json_frozen() -> None:
             cwd=REPO,
         )
         if base.returncode != 0:
-            # Phase 3 rename が origin/main に載るまでの移行用。この commit が
-            # main へ merge され、作業ブランチが全てそれ以降になれば削除できる。
-            legacy_rel = EN_JSON_ARCHIVE_LEGACY_PATHS[rel]
-            base = subprocess.run(
-                ["git", "show", f"origin/main:{legacy_rel}"],
-                capture_output=True,
-                cwd=REPO,
-            )
+            legacy_rel = EN_JSON_ARCHIVE_LEGACY_PATHS.get(rel)
+            if legacy_rel:
+                base = subprocess.run(
+                    ["git", "show", f"origin/main:{legacy_rel}"],
+                    capture_output=True,
+                    cwd=REPO,
+                )
         path = REPO / rel
         work = path.read_bytes() if path.exists() else None
         if base.returncode != 0 or work != base.stdout:
+            if rel == "data/archive/taxonomy-en-content.json":
+                canon = (
+                    "凍結EN JSON は読み取り専用アーカイブ（フェーズ6・2026-09-15）。"
+                    "EN タクソノミーページの正本は "
+                    "en/movements/*.html ・ en/eras/*.html。"
+                )
+            else:
+                canon = (
+                    "凍結EN JSON は読み取り専用アーカイブ（フェーズF・2026-09-15）。"
+                    "EN ページの正本は en/photographers/*.html。"
+                )
             hard_failures.append(
-                f"{rel}: 凍結EN JSON は読み取り専用アーカイブ（フェーズF・2026-09-15）。"
-                "EN ページの正本は en/photographers/*.html。"
+                f"{rel}: {canon}"
                 "変更が必要な移行監査・緊急rollback のときだけ "
                 "ALLOW_EN_JSON_ARCHIVE_WRITE=1 で解除。"
             )
@@ -928,16 +941,11 @@ def check_en_rel_annotations() -> None:
 
 
 # ── 写真家以外の EN ページ（国別 / 年代・運動 / アーカイブ）の軽量ガード ──────
-# 設計（Codex 合意 2026-06-19）:
-#   - 正本 JSON のエントリ内容消失 = HARD（変更が無ければ必ずグリーン＝門にできる）
-#   - 生成物 EN HTML の直接編集疑い = WARN
-#   - 触ったファイル / 触った正本エントリだけ検査（baseline は写真家ガードと共通）
-#   - 本文が JSON 外（build_taxonomy_en.py の直書き）にもある混在構造でも、
-#     「JSON が確実に内容を失った」ことだけを HARD にする。曖昧判定はしない。
-#   - per-slug リーダは追加しない（写真家のみで十分という方針）。
+# 国別とアーカイブは生成物のため、正本 JSON の内容消失=HARD・HTML直接編集疑い=WARN。
+# 年代・運動は HTML 自身が正本のため、touched な EN と対応する JA の節対称性を検査する。
+# taxonomy の旧 JSON は check_en_json_frozen() が1バイト単位で保護する。
 
 COUNTRY_JSON = "data/country-pages.json"
-TAXONOMY_JSON = "data/archive/taxonomy-en-content.json"
 CARD_DATA_JSON = "card-data.json"
 
 
@@ -1017,47 +1025,47 @@ def check_country_en() -> None:
 
 
 def check_taxonomy_en() -> None:
-    """年代・運動 EN（en/eras・en/movements）の正本 taxonomy-en-content.json の
-    内容消失=HARD、生成物 HTML の直接編集疑い=WARN。本文が builder 直書きにも
-    あるため、判定は「JSON が確実に失った」ものだけに限定する。"""
+    """touched な EN 年代・運動ページと対応する JA の節ラベルを baseline 比較する。"""
     baseline = _baseline_ref()
-    base, work = _load_json_ref(baseline, TAXONOMY_JSON)
-    if not isinstance(work, dict):
-        return
     for group, rel_dir in (("movements", "en/movements"), ("eras", "en/eras")):
-        base_g = (base or {}).get(group, {}) if isinstance(base, dict) else {}
-        work_g = work.get(group, {})
-        if not isinstance(work_g, dict):
-            continue
-        changed = {k for k, wv in work_g.items() if base_g.get(k) != wv}
-        # 内容消失（HARD）
-        for slug in changed:
-            be, we = base_g.get(slug), work_g.get(slug)
-            if be is None:
-                continue
-            losses = []
-            bmeta, wmeta = be.get("meta", {}), we.get("meta", {})
-            for field in ("title", "description"):
-                if _is_filled(bmeta.get(field)) and not _is_filled(wmeta.get(field)):
-                    losses.append(f"meta.{field}")
-            bsec, wsec = be.get("sections", {}), we.get("sections", {})
-            for key, bv in bsec.items():
-                if _is_filled(bv) and not _is_filled(wsec.get(key)):
-                    losses.append(f"section[{key}]")
-            if losses:
-                hard_failures.append(
-                    f"{TAXONOMY_JSON} の {group}/{slug} が内容を失っている: "
-                    + ", ".join(losses[:4]))
-        # 直接編集（WARN）
         for name in _changed_html_basenames(baseline, rel_dir):
-            slug = name[:-5]
-            if slug not in work_g:       # JA 名スタブ等は正本キーに無い → 対象外
+            en_slug = name[:-5]
+            if group == "movements":
+                ja_stub = _MOVEMENT_EN_TO_JA.get(en_slug)
+                if not ja_stub:
+                    continue
+                ja_rel = f"movements/{ja_stub}.html"
+            else:
+                ja_rel = f"eras/{en_slug}.html"
+            en_rel = f"{rel_dir}/{name}"
+            ja_html = _real_photographer_html(ja_rel)
+            en_html = _real_photographer_html(en_rel)
+            if ja_html is None or en_html is None:
                 continue
-            if slug not in changed:
-                regen_flag = f"--era {slug}" if group == "eras" else f"--slug {slug}"
+            ja_labels = _section_num_labels(ja_html)
+            en_labels = _section_num_labels(en_html)
+            now = _section_asymmetry(ja_labels, en_labels)
+            base_ja = _git_show(baseline, ja_rel)
+            base_en = _git_show(baseline, en_rel)
+            if base_ja is not None and base_en is not None:
+                base = _section_asymmetry(
+                    _section_num_labels(base_ja), _section_num_labels(base_en))
+            else:
+                base = set()
+            new_items = now - base
+            old_items = now & base
+            new_labels = [f"{side} {label}" for side, label, _ in sorted(new_items)]
+            old_labels = [f"{side} {label}" for side, label, _ in sorted(old_items)]
+            detail = f"JA={ja_labels} / EN={en_labels}"
+            pair = f"{ja_rel} ↔ {en_rel}"
+            if new_items:
+                hard_failures.append(
+                    f"[JA/EN taxonomy sections {pair}] 今回の節非対称: "
+                    f"{detail} / 差分={new_labels}")
+            if old_items:
                 warnings.append(
-                    f"[EN {group}/{slug}] 生成物 {rel_dir}/{name} を直接編集した疑い。"
-                    f"正本は {TAXONOMY_JSON}。build_taxonomy_en.py {regen_flag} で再生成すること")
+                    f"[JA/EN taxonomy sections {pair}] baseline にも在る既存節非対称: "
+                    f"{detail} / 差分={old_labels}")
 
 
 def check_archive_en() -> None:
