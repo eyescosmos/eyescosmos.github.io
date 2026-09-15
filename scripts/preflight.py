@@ -70,10 +70,6 @@ EN_JSON_ARCHIVE_PATHS = (
     "data/archive/photographers-en-stage4.json",
     "data/archive/taxonomy-en-content.json",
 )
-# taxonomy の move がこの commit として origin/main に載ったら撤去してよい。
-EN_JSON_ARCHIVE_LEGACY_PATHS = {
-    "data/archive/taxonomy-en-content.json": "data/taxonomy-en-content.json",
-}
 
 
 def eval_photographers() -> list[dict]:
@@ -577,14 +573,10 @@ def check_en_json_frozen() -> None:
             capture_output=True,
             cwd=REPO,
         )
-        if base.returncode != 0:
-            legacy_rel = EN_JSON_ARCHIVE_LEGACY_PATHS.get(rel)
-            if legacy_rel:
-                base = subprocess.run(
-                    ["git", "show", f"origin/main:{legacy_rel}"],
-                    capture_output=True,
-                    cwd=REPO,
-                )
+        # 旧パス（data/*.json）へのフォールバックはフェーズ3・6 の rename が
+        # どちらも origin/main に載ったため撤去した（2026-09-15）。
+        # 次にこの3本を move するときは、その push が済むまで同型の
+        # フォールバックを一時的に入れ直すこと。
         path = REPO / rel
         work = path.read_bytes() if path.exists() else None
         if base.returncode != 0 or work != base.stdout:

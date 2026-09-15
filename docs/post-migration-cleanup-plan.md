@@ -520,9 +520,11 @@ HARD にはならないが、載せるなら同じく手貼り。
 
 ## 11.6 フェーズ6 で残したもの
 
-- **`EN_JSON_ARCHIVE_LEGACY_PATHS` の taxonomy エントリ**は、この commit 群が `origin/main` に
-  載るまで必要。載ったら撤去してよい（コードにその条件をコメント済み）。
-  photographers 2本の旧エントリはフェーズ3分が `origin/main` に載ったため**撤去済み**。
+- ~~**`EN_JSON_ARCHIVE_LEGACY_PATHS` の taxonomy エントリ**~~ → **撤去済み**（`origin/main` へ push 後に実施）。
+  フェーズ3・6 の rename がどちらも `origin/main` に載ったので、旧パス（`data/*.json`）への
+  フォールバックは全廃した。**次にこの3本を move するときは、その push が済むまで
+  同型のフォールバックを一時的に入れ直すこと**（コードにコメント済み）。
+  撤去後に3本とも1バイト改変で HARD になることを実測済み。
 - **`data/archive/taxonomy-en-content.json` は消さない。** `ALLOW_TAXONOMY_REBUILD=1` の
   緊急 rollback は、この JSON から meta / sections を復元する経路として残っている。
 - §9.7 のバックログ（JA 年代の `PHOTOGRAPHER` 12件・JA 運動の `target="_blank"` 27件・
