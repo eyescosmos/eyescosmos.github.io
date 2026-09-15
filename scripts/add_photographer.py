@@ -727,9 +727,9 @@ def refresh_downstream(spec: dict) -> None:
         if (REPO / "en" / "countries" / f"{slug}.html").exists():
             steps.append((f"en/countries/{slug}.html",
                           ["generate_country_pages_en.py", "--country", slug]))
-    era = spec.get("era")
-    if era and (REPO / "en" / "eras" / f"{era}.html").exists():
-        steps.append((f"en/eras/{era}.html", ["build_taxonomy_en.py", "--era", era]))
+    # en/eras は 2026-09-15（総ざらい フェーズ6）に HTML 自身が正本へ昇格した。
+    # build_taxonomy_en.py は既存ページを 🛑 REFUSED で拒否するので、ここから呼ばない。
+    # カードは手で足す（下の注意書きを参照）。
 
     failed = []
     for label, argv in steps:
@@ -742,6 +742,13 @@ def refresh_downstream(spec: dict) -> None:
         print("\n  [注意] 再生成に失敗した面がある。手で実行して原因を確認すること:")
         for label, argv in failed:
             print(f"    python3 scripts/{' '.join(argv)}   # {label}")
+
+    era = spec.get("era")
+    if era and (REPO / "en" / "eras" / f"{era}.html").exists():
+        print(f"\n  [手作業] en/eras/{era}.html は再生成しない（2026-09-15〜 HTML 自身が正本）。")
+        print(f"    カードを手で足す。元カードは en/archive.html の {spec['id']} を流用し、")
+        print(f"    グリッド閉じの直前へ挿入 → hero / sidebar の枚数も +1 する。")
+        print(f"    ★入れ忘れると preflight の check_taxonomy_presence() が HARD FAIL で push を止める。")
 
 
 def sync_card_counts() -> None:
@@ -809,23 +816,23 @@ def plan_surfaces(spec: dict) -> None:
 
     print("\n■ REGEN 面（手貼りせず再生成）")
     print(f"  en/archive.html              : python3 scripts/build_archive_en.py")
-    print(f"  en/eras/{era}.html            : python3 scripts/build_taxonomy_en.py --era {era}")
+    print("\n■ EN タクソノミー面（2026-09-15〜 HTML 自身が正本。再生成しない＝手貼り）")
+    print(f"  en/eras/{era}.html            : カードを手で挿入（元カードは en/archive.html から流用）")
+    print(f"      ★必須サーフェス。抜けると preflight check_taxonomy_presence() が HARD FAIL")
     for mv in movements:
-        # build_taxonomy_en --slug は EN slug を要求する（JA名は unknown movement slug で拒否）
         en_slug = STUB_TO_SLUG.get(mv)
         if en_slug:
-            print(f"  en/movements/{en_slug}.html : "
-                  f"python3 scripts/build_taxonomy_en.py --slug {en_slug}")
+            print(f"  en/movements/{en_slug}.html : カードを手で挿入（任意サーフェス・載せるか毎回判断）")
         else:
             print(f"  [要確認] movements/{mv}.html → EN slug が STUB_TO_SLUG 未登録。"
-                  f"build_taxonomy_en は EN slug を要求するためコマンド省略（マッピング追加が必要）")
+                  f"EN 側の対応ページを確認すること")
     country_slugs = resolve_country_slugs(spec["nationality"])
     if country_slugs:
         flags = " ".join(f"--country {s}" for s in country_slugs)
         print(f"  countries/*.html             : python3 scripts/generate_country_pages.py {flags}")
         print(f"  en/countries/*.html          : python3 scripts/generate_country_pages_en.py {flags}")
     print("\n（dry-run。JA archive 3面 + era 1面は --apply-surfaces で実書込可。"
-          "movements 面は上記アンカーで従来どおり手貼り）")
+          "JA movements 面と EN タクソノミー面は上記アンカーで手貼り）")
 
 
 def print_snippets_and_runbook(spec: dict):
