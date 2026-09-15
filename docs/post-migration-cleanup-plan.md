@@ -8,9 +8,10 @@
 特に **§9.1（§2b の3主張のうち2つが実測で誤りと判明）** と
 **§9.2（`data/taxonomy-en-content.json` が EN 散文の正本＝§3 の前提が誤り）** を読み飛ばさない。
 実装は **§9.6 のフェーズ計画**の順に進める（順序に意味がある）。
-**★フェーズ0〜6 は完了（フェーズ0〜5 は push 済み `7c6edf54d`）。
-残るのはフェーズ7（クラス1＝原稿バックログ）だけで、これは専用セッションを組まない既定方針。
-フェーズ6 の実施結果は §11 にある。**
+**★フェーズ0〜6 は完了・push 済み。配管（正本の一本化・ガード）はクリーン。
+フェーズ6 の実施結果は §11。**
+**★残っているのは2つ：クラス2の残骸撤去（→ §12「残骸撤去の引き継ぎ」。次セッションはここだけ読めばよい）と、
+フェーズ7＝クラス1の原稿バックログ（専用セッションは組まない既定方針）。**
 
 ---
 
@@ -529,4 +530,135 @@ HARD にはならないが、載せるなら同じく手貼り。
   緊急 rollback は、この JSON から meta / sections を復元する経路として残っている。
 - §9.7 のバックログ（JA 年代の `PHOTOGRAPHER` 12件・JA 運動の `target="_blank"` 27件・
   `cards-archive.html` の旧語彙タグ50件）は**今回も直していない**。
+
+---
+
+# 12. ★残骸撤去の引き継ぎ（2026-09-15 作成・**次セッション用**）
+
+**フェーズ6 完了後に「EN JSON 移行は全部クリーンか」を実測した結果、クラス2（残骸）が
+3件残っていた。** 打ち手はそれぞれ違い、**1件は削除できない**（下の 12.3）。
+Daisuke 決定（2026-09-15）＝**この3件を撤去する**。
+
+**前提：配管そのものはクリーン。** ここから先は「消し忘れの掃除」であって、
+事故を起こす経路の修理ではない。**急ぎではないが、やるなら実測を先にやり直すこと**
+（下の数字は 2026-09-15 時点。撤去前に必ず測り直す）。
+
+## 12.0 全体の受け入れ条件（3件共通）
+
+- **公開HTML 1,080枚の sha256 を作業前後で全件照合**（対象＝tracked `*.html` から `design/` を除く）。
+  **変更0枚**が条件。1枚でも動いたら設計を間違えている
+- `preflight.py` の出力差分0・exit 0 ／ `check_content_loss.py` exit 0
+- **`build_archive_en.py --dry-run` が would-change 0 のままであること**（12.1 の要）
+- `git add -A` を使わない（未追跡 spec.json が305件ある）
+
+---
+
+## 12.1 `data/photographer-essay-overrides.js` — **半分だけ死蔵**（全消しは事故）
+
+**★このファイルは死蔵ではない。消す前に必ずこの節を読む。**
+
+実測（2026-09-15）:
+
+| 項目 | 値 |
+|---|---:|
+| ファイルサイズ | 2,649,290 bytes |
+| エントリ数 | 157 |
+| `leadJa` / `leadEn` を持つエントリ | **各100（生きている）** |
+| `textJa` / `textEn` を持つエントリ | 各76（死蔵）|
+| `textJa` + `textEn` が占めるバイト数 | **約 1,234,310（47%）** |
+
+**`leadEn` / `leadJa` の生きた読み手は2つ:**
+1. `build_archive_en.py`（`:5, 274-289, 336`）— `en/archive.html` のカード lede の**最優先ソース**
+   （`overrides.leadEn` → TOP12 → EN写真家ページ冒頭 → 手動辞書）
+2. `relations.html` / `en/relations.html` の**2枚**が `global-search.js:17` で実行時にロードし、
+   `:237-242` で `override.leadEn` / `override.leadJa` を表示に使う
+   （relations 2枚は v5.1 移行の据え置き例外＝[[project_v51_migration_status]]）
+
+**`textJa` / `textEn` が死蔵である根拠（全件 grep 済み）:**
+読み手は `check_texten_completeness.py` と、実行禁止の
+`generate_photographer_pages.py` / `generate_archive_pages.py` **だけ**。
+`global-search.js:241-242` の `context.textEn` は `data/photographers*.js` 由来で
+overrides ではない（`add_photographer.py:141` がその context を組んでいる）。
+
+### やること
+- **`textJa` / `textEn` を76エントリから削除**（−1.23MB）。`leadJa` / `leadEn` は**残す**
+- `check_texten_completeness.py` を削除（textEn 専用の検査スクリプト・110行）
+- `CLAUDE.md` の overrides 記述と `docs/content-preservation.md:31` の実行手順を更新
+
+### ★検証（ここを外すと en/archive.html が壊れる）
+- `python3 scripts/build_archive_en.py --dry-run` → **would-change 0**（撤去前後とも）
+- `relations.html` / `en/relations.html` の sha256 不変
+- 削除後に `leadEn` を持つエントリが **100件のまま**であること（件数で確認する）
+
+### 済んでいること
+`CLAUDE.md` の「**ライブページで `overrides.js` を読む枚数は 0**」は**誤りだったので訂正済み**
+（2026-09-15・実測2枚）。`textEn` が死蔵という記述のほうは正しい。
+
+---
+
+## 12.2 `HAND_MAINTAINED_EN` — 強制点を失った5件
+
+`check_en_entry.py:42` に `{'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html',
+'toyoko-tokiwa.html', 'lee-miller.html'}` が残っている。
+
+**フェーズ2で builder の再生成経路が消えたので、いまや全ENページが hand-maintained。**
+現在の唯一の役目は `build_en_migration_ledger.py:324` が
+`data/en-migration-ledger.json` に `hand_maintained_history` フラグを立てること（台帳内 6箇所）。
+**preflight は台帳を読んでいない**（grep 済み）ので、撤去してもガードは1つも減らない。
+
+### やること
+- `check_en_entry.py:41-42` の定数とコメントを削除
+- `build_en_migration_ledger.py:27` の import と `:324` のフラグ生成を削除
+- 台帳を再生成するか、**歴史記録として据え置くか**を決める（据え置きなら台帳は触らない）
+- `memory/feedback_lee_miller_no_blind_rebuild` と `memory/feedback_shoji_ueda_html_canonical` は
+  「機械ガード化済」と書いているので、**撤去したら両方を「HTML 直接編集が正規手順」へ更新する**
+
+---
+
+## 12.3 実行禁止スクリプト3本 — **1本は削除できない**
+
+| スクリプト | 行数 | 物理ガード | Python import | 判定 |
+|---|---:|---|---:|---|
+| `generate_photographer_pages.py` | 3,079 | `:2690` ABORT | 0 | **削除可** |
+| `generate_archive_pages.py` | 362 | `:300` ABORT | 0 | **削除可** |
+| `generate_taxonomy_pages.py` | 2,202 | 無し | **3** | **★削除できない** |
+
+### ★`generate_taxonomy_pages.py` を消してはいけない理由
+`link_country_keywords.py:30-32` が `COUNTRY_BASE_META`（`generate_taxonomy_pages.py:184`）を
+import して使っている。**`link_country_keywords.py` は生きた横断スクリプト**で、
+`CLAUDE.md:62` に実行後の確認手順が、`docs/content-preservation.md:112,122` に実装の説明がある。
+残り2つの import 元（`generate_archive_pages.py:7` / `generate_photographer_pages.py:13`）は
+どちらも削除対象なので、**実質の依存は `link_country_keywords.py` 1本**。
+
+→ **消したいなら `COUNTRY_BASE_META` を独立モジュール（例 `scripts/country_meta.py`）へ
+切り出して `link_country_keywords.py` の import を差し替えるのが先。**
+そこまでやらないなら `generate_taxonomy_pages.py` は残す（実行禁止リストにも載っていない）。
+
+### 削除する2本の波及（全部直す）
+- `CLAUDE.md` 絶対禁止 **1・2番**／`AGENTS.md` 絶対禁止 **1・2番** — 「実行しない」から
+  「**削除済み**」へ書き換える（履歴として何だったかは1行残す）
+- `scripts/add_photographer.py:12`（docstring）と `:884`（実行時の注意書き）
+- `scripts/photographer-page.js:2` のコメント
+- `scripts/build_photographers_en.py:20` の `Never imports/runs ...` の行
+- `scripts/add_taxonomy_nav_to_archive.py:22` のコメント
+- `scripts/build_photographers_en.SPEC.md` ／ `docs/content-preservation.md` ／
+  `docs/en-html-canon-migration.md` ／ `docs/photographer-leaf-spec.md` ／
+  `docs/generators-and-guards.md`
+- **`docs/importer-run-log.md` は履歴なので書き換えない**
+
+### ★削除前に確認すること
+`generate_photographer_pages.py` は3,079行あり、**旧デザインの唯一の実装記録**でもある。
+git に残るとはいえ、参照したくなる場面（過去のカード構造の確認など）があるか
+Daisuke に一度確認してから消す。
+
+---
+
+## 12.4 残骸ではないもの（消さない）
+
+| ファイル | 役割 |
+|---|---|
+| `data/photographers-en-classification.json` | 新規ENページ生成の生きた入力 |
+| `data/photographers-en-ui-terms.json` | 同上 |
+| `data/en-migration-ledger.json` | 移行台帳＝バックログの正本（EN §REL 89件など）|
+| `data/archive/*.json` 3本 | 凍結アーカイブ＝緊急 rollback の入力。`check_en_json_frozen()` が守る |
 
