@@ -6,7 +6,7 @@
 
 1. **`python3 scripts/generate_photographer_pages.py` を実行しない**。旧デザインを生成し、JAページ全体を巻き戻す。物理ガードがあっても解除しない。
 2. **`python3 scripts/generate_archive_pages.py` を実行しない**。
-3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は既存ページへの書き込みを既定で拒否する（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。**新規作成も EN HTML を直接生成する（`--render-en` 相当）。JSON は読まない。旧EN JSON書込CLIは撤去済み。** 詳細 `docs/en-html-canon-migration.md` §11。
+3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は **EN描画エンジンのモジュール**であり CLI ではない（直接実行は常に非0終了）。**新規作成は EN HTML を importer で直接生成する（`--render-en` 相当）。JSON から再生成する経路はなく、rollback は git で行う。** 詳細 `docs/en-html-canon-migration.md` §11。
 4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる。再生成で誤情報が復活する。JA写真家ページと EN写真家ページは HTML 自身が正本なので対象外。
 5. **捏造しない**。出典にない評価・書誌・URL・Amazonリンクを推測で作らない。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードで拒否）。写真家1人追加で `--all` は不要。安全な生成コマンド集は `docs/generators-and-guards.md`「フルリビルド・ガード」。
@@ -48,8 +48,7 @@ python3 scripts/check_en_entry.py <slug>
 python3 scripts/preflight.py
 ```
 
-- 既存ページに対して builder を回すと `🛑 REFUSED` で拒否される。これは正常。直接編集に切り替える。
-  `ALLOW_EN_REBUILD=1` は移行監査・緊急 rollback 比較だけに使う。
+- builder は module-only。直接実行は引数の有無にかかわらず非0で拒否される。既存ページは EN HTML を直接編集し、rollback は git で行う。
 - ENページを修正・追加・新規作成したら、作業終了前に必ず `python3 scripts/check_en_entry.py <slug>` と `python3 scripts/preflight.py` を実行する。
 - `preflight.py` は baseline（通常 `origin/main`）と比較し、触ったEN slugだけを検査する。既存不具合は無関係なpushをブロックしない。
 - preflight の EN 向け HTML ガード（2026-09-13 追加）:
@@ -94,10 +93,7 @@ python3 scripts/preflight.py
 
 ## Content Preservation Guards
 
-- `scripts/build_photographers_en.py` は**既存 EN ページへの書き込みを既定で拒否**し `🛑 REFUSED` を出す（既存ページは HTML 自身が正本）。解除は `ALLOW_EN_REBUILD=1` のみ。importer と §REL 同期ツールから旧EN JSONへ書くモードは撤去済み。
-- 新規作成時に効く content-loss guard は、再生成で thesis / §RELリンク / cite-N / FIG / lead が消えるページを検知し、そのページだけ上書きせず `🛑 SKIPPED` を出す。
-  - 意図的に消す場合のみ `--force`。
-  - 監査だけなら `--dry-run`。
+- `scripts/build_photographers_en.py` は module-only の EN 描画エンジン。公開HTMLへの書込み・EN正本JSONの読込み・escape hatch はフェーズ2で撤去済み。新規ENページは importer からエンジン関数を import して生成する。
 - `scripts/check_content_loss.py` は読み取り専用の横断チェック。JA/EN両方で HEAD 比の出典・セクション・FIG・thesis・lead の減少を報告する。
   - `--strict` は消失時のみ非0終了。
   - 文面だけの変化は「事実すり替えの疑い」として警告される場合がある。警告は目視確認する。

@@ -22,8 +22,6 @@ Never modifies photographers/ (JA pages are read-only).
 Never touches en/photographers/jp-*.html or stieglitz-backup.html.
 """
 
-import argparse
-import copy
 import html as htmllib
 import json
 import os
@@ -43,21 +41,6 @@ from build_taxonomy_en import (  # noqa: E402
     FALLBACK_COUNTRY_EN,
 )
 
-# ── AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本） ──
-import sys as _sys, os as _os
-_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-import ai_disclosure as _ai_disclosure
-
-# Hand-maintained EN pages (registry of record: check_en_entry.py).
-try:
-    from check_en_entry import HAND_MAINTAINED_EN  # noqa: E402
-except Exception:
-    HAND_MAINTAINED_EN = {
-        'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html',
-        'toyoko-tokiwa.html', 'lee-miller.html',
-    }
-
-CONTENT_JSON = os.path.join(ROOT, 'data', 'photographers-en-content.json')
 CLASSIFICATION_JSON = os.path.join(ROOT, 'data', 'photographers-en-classification.json')
 JA_DIR = os.path.join(ROOT, 'photographers')
 EN_DIR = os.path.join(ROOT, 'en', 'photographers')
@@ -1801,188 +1784,13 @@ def process_page(ja_file, page, ja_to_en, warnings):
     return slug, html
 
 
-def _deep_merge_page(base: dict, override: dict) -> dict:
-    """Field-level deep merge of two page dicts.
-
-    Rules:
-    - Keys only in override → added to result.
-    - Keys only in base → kept in result.
-    - Keys in both → if both values are dict, recurse; otherwise override wins (replace).
-    - Lists are always replaced (never element-merged) to avoid corrupting
-      sections / cite_ids / supref_ids etc.
-    """
-    result = copy.deepcopy(base)
-    for key, val in override.items():
-        if key in result and isinstance(result[key], dict) and isinstance(val, dict):
-            result[key] = _deep_merge_page(result[key], val)
-        else:
-            result[key] = copy.deepcopy(val)
-    return result
-
-
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--slug', action='append', default=[])
-    ap.add_argument('--pilot', action='store_true')
-    ap.add_argument('--all', action='store_true')
-    ap.add_argument('--force', action='store_true',
-                    help='overwrite even if it would delete hand-added '
-                         'thesis/related not present in the JSON source')
-    ap.add_argument('--dry-run', action='store_true',
-                    help='compute output and run the content-loss guard but '
-                         'write nothing; reports would-write / would-skip')
-    args = ap.parse_args()
-
-    content = json.load(open(CONTENT_JSON, encoding='utf-8'))
-    pages = content['pages']
-    stage4_json = os.path.join(ROOT, 'data', 'photographers-en-stage4.json')
-    if os.path.exists(stage4_json):
-        stage4 = json.load(open(stage4_json, encoding='utf-8'))
-        s4_pages = stage4.get('pages', {})
-        for k, v in s4_pages.items():
-            if k in pages and isinstance(pages[k], dict) and isinstance(v, dict):
-                pages[k] = _deep_merge_page(pages[k], v)
-            else:
-                pages[k] = v
-    classification = load_classification()
-    ja_to_en, en_to_ja = build_jp_slug_map(classification)
-    missing_true = set(classification.get('missing_en_true', []))
-
-    # Determine target JA files
-    if args.pilot:
-        targets = []
-        for s in PILOT_SLUGS:
-            targets.append(s + '.html')
-    elif args.slug:
-        targets = []
-        for s in args.slug:
-            fn = s if s.endswith('.html') else s + '.html'
-            targets.append(fn)
-    elif args.all:
-        targets = []
-        for fn in sorted(os.listdir(JA_DIR)):
-            if not fn.endswith('.html'):
-                continue
-            if fn.endswith('-backup.html'):
-                continue
-            targets.append(fn)
-    else:
-        ap.error('one of --pilot / --slug / --all required')
-
-    warnings = []
-    written = []
-    guard_skips = []
-    existing_refusals: list[str] = []
-    for ja_file in targets:
-        if ja_file in missing_true:
-            warnings.append(f'{ja_file}: in missing_en_true, skipped (Stage 4)')
-            continue
-        # harvest is keyed by JA filename for romaji pages, but by the EN
-        # output filename for kanji (jp-*) pages (the jp-*.html key, if present,
-        # is an empty stub). Prefer the EN-file key when it carries content.
-        en_file_key = ja_file_to_en_file(ja_file, ja_to_en)
-        page = None
-        if en_file_key != ja_file and pages.get(en_file_key) and pages[en_file_key].get('h1'):
-            page = pages[en_file_key]
-        if page is None:
-            page = pages.get(ja_file)
-        if page is None or not page.get('h1'):
-            page = pages.get(en_file_key)
-        if page is None:
-            warnings.append(f'{ja_file}: no harvest content, skipped')
-            continue
-        # REQUIRED-FIELD GUARD: a real content page (sections >= 1) must carry
-        # the photographer's English name (h1). Silently writing an empty h1
-        # produces a hero with no name (see hosokura, 2026-06-21). Stub /
-        # missing_en / sectionless placeholders are exempt — they never reach
-        # rebuild_hero with content. h1 is a hard error; years is only a loud
-        # warning because some legitimate entries (collectives, duos) have none.
-        if len(page.get('sections') or []) >= 1:
-            if not (page.get('h1') or '').strip():
-                sys.stderr.write(
-                    f'ERROR: {en_file_key}: required field "h1" (English '
-                    f'photographer name) is empty on a content page '
-                    f'(sections>=1). Refusing to write a nameless hero. '
-                    f'Set "h1" in data/photographers-en-content.json '
-                    f'(or stage4) for this slug.\n')
-                sys.exit(1)
-            if not (page.get('years') or '').strip():
-                warnings.append(
-                    f'{en_file_key}: required field "years" is empty on a '
-                    f'content page (sections>=1); hero years will be blank')
-        # per-page sanity warnings
-        if not page.get('photobooks_html'):
-            warnings.append(f'{ja_file}: no photobooks_html')
-        if not page.get('external_links_html'):
-            warnings.append(f'{ja_file}: no external_links_html')
-        if not page.get('site_directory_html'):
-            warnings.append(f'{ja_file}: no site_directory_html (no RELATED)')
-        if len(page.get('supref_ids', [])) and len(page.get('cite_ids', [])):
-            orphan = set(page['supref_ids']) - set(page['cite_ids'])
-            if orphan:
-                warnings.append(f'{ja_file}: supref→missing cites {sorted(orphan)} (will be unlinked)')
-        try:
-            slug, out = process_page(ja_file, page, ja_to_en, warnings)
-        except Exception as e:
-            warnings.append(f'{ja_file}: BUILD ERROR {type(e).__name__}: {e}')
-            continue
-        if out is None:
-            continue
-        out_path = os.path.join(EN_DIR, slug + '.html')
-        # SAFETY GUARD: hand-maintained EN pages must never be regenerated
-        # (--force included) — the JSON source lacks their hand-written content.
-        # Registry lives in check_en_entry.py. Override: ALLOW_HAND_MAINTAINED_REBUILD=1
-        if (slug + '.html' in HAND_MAINTAINED_EN and os.path.exists(out_path)
-                and os.environ.get('ALLOW_HAND_MAINTAINED_REBUILD') != '1'):
-            guard_skips.append((slug + '.html',
-                                'HAND_MAINTAINED_EN（手書き維持・再生成禁止。'
-                                '解除は ALLOW_HAND_MAINTAINED_REBUILD=1）'))
-            continue
-        # 既存 EN ページは HTML 自身が正本。JSON からの再生成による手編集の
-        # 消失を防ぐため、移行監査・緊急 rollback 比較以外は書き込みを拒否する。
-        if os.path.exists(out_path) and os.environ.get('ALLOW_EN_REBUILD') != '1':
-            existing_refusals.append(slug + '.html')
-            continue
-        # AI開示ブロック（全ページ共通）。本文消失ガードより前に入れて、
-        # 既存ページ（ブロックあり）と新出力を同条件で比較させる。
-        out, _ = _ai_disclosure.ensure(out, 'en')
-        # SAFETY GUARD: never silently delete hand-added thesis/related that is
-        # not reproduced from the JSON source. Skip the page and report instead.
-        if not args.force and os.path.exists(out_path):
-            old_html = open(out_path, encoding='utf-8').read()
-            loss = detect_content_loss(old_html, out)
-            if loss:
-                guard_skips.append((slug + '.html', loss))
-                continue
-        if not args.dry_run:
-            with open(out_path, 'w', encoding='utf-8') as f:
-                f.write(out)
-        written.append((slug + '.html', len(out.encode('utf-8'))))
-
-    print('%s %d page(s):' % ('Would write' if args.dry_run else 'Wrote',
-                              len(written)))
-    for fn, size in written:
-        print('  %-40s %8d bytes (%.1f KB)' % (fn, size, size / 1024))
-    if guard_skips:
-        print('\n🛑 SKIPPED %d page(s) to protect hand-written content '
-              '(NOT overwritten):' % len(guard_skips))
-        for fn, loss in guard_skips:
-            print('  ✋ %s — would delete: %s' % (fn, loss))
-        print('  → 手書き内容を data/photographers-en-content.json に入れてから再実行してください\n'
-              '    （thesis_html / site_directory_html）。意図的に消す場合のみ --force。')
-    if existing_refusals:
-        print('\n🛑 REFUSED %d page(s): 既存 EN ページは HTML 自身が正本（再生成しない）'
-              % len(existing_refusals))
-        for fn in existing_refusals:
-            print('  ✋ %s' % fn)
-        print('  → 既存ページの修正は en/photographers/<slug>.html を直接編集する。\n'
-              '    JSON を直して再生成する運用は終了（docs/en-html-canon-migration.md §2a）。\n'
-              '    移行監査・緊急 rollback 比較のみ ALLOW_EN_REBUILD=1 で解除できる。')
-    if warnings:
-        print('\nWarnings (%d):' % len(warnings))
-        for w in warnings:
-            print('  ! ' + w)
-
-
 if __name__ == '__main__':
-    main()
+    sys.stderr.write(
+        'ERROR: scripts/build_photographers_en.py is an EN rendering-engine '
+        'module, not a CLI.\n'
+        'Existing EN pages: edit en/photographers/<slug>.html directly.\n'
+        'New EN pages: python3 scripts/import_chatgpt_photographer.py '
+        '--slug <slug> --render-en EN.html --apply\n'
+        'There is no JSON regeneration path; use git for rollback.\n'
+    )
+    raise SystemExit(2)

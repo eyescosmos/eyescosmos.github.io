@@ -29,8 +29,8 @@
   `data/photographer-essay-overrides.js` の `textEn` に同じ文が残る場合は、事実修正時に両方をそろえる。
 - 新規 EN は `scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`
   で JA→EN の順に HTML を直接生成する。既存 EN 出力先への書込みは `--force` の有無によらず拒否される。
-- `scripts/build_photographers_en.py` と EN JSON は移行監査・緊急 rollback 比較専用の旧経路。
-  通常フローでは読まず、実行しない。
+- `scripts/build_photographers_en.py` は importer が import する EN 描画エンジンの module-only ファイル。
+  CLI と JSON 再生成経路はフェーズ2で撤去済みで、rollback は git で行う。
 
 **言語トグルが再び壊れていないかの確認:**
 ```bash
@@ -364,20 +364,14 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
 | ページ種別 | 正本（手書きしてよい場所） | 再生成で消えるか |
 |---|---|---|
 | JA 写真家ページ `photographers/*.html` | **HTML 自身**（JA ジェネレータは実行禁止＋物理ガード） | 消えない |
-| EN 写真家ページ `en/photographers/*.html` | **HTML 自身**（2026-09-13〜。builder は既存ページへの書き込みを拒否） | 消えない |
+| EN 写真家ページ `en/photographers/*.html` | **HTML 自身**（2026-09-13〜。builder は module-only） | 消えない |
 
 - **EN 写真家ページの本文系（thesis「この写真家が変えたこと」/ §REL 関連写真家・運動 など）は
   EN HTML に直接書いてよい**（2026-09-13〜）。既存ページを builder で再生成しない限り消えない。
   JA §REL とそろえるのは手作業で、preflight の日英対称性ガードが取りこぼしを HARD で止める。
-- **安全装置（2026-06-16 追加）:** `build_photographers_en.py` は、上書きしようとしている EN ページの
-  手書き thesis / §REL リンクが新出力に再現されない（＝消える）と検知したら、**そのページだけ
-  上書きせずスキップし `🛑 SKIPPED … would delete:` と表示する**。黙って消えることはない。
-  - 表示が出たら：手書き内容を `photographers-en-content.json` に入れてから再実行する。
-  - 意図的に消す場合のみ `--force`。
-  - この門番は手書き維持ページ（`stieglitz` / `annie-leibovitz` の EN 等）が `--all` で
-    巻き込まれて消えるのも自然に防ぐ。
-  - 2026-09-14 フェーズDで全EN実ページがHTML正本になった。この5件だけが特別なのではなく、
-    `ALLOW_EN_REBUILD=1` 経路専用の残置ガードとして残してある（撤去はフェーズF）。
+- **旧安全装置（2026-06-16〜フェーズ2）:** builder CLI の content-loss guard と、2つの
+  escape hatch（`ALLOW_EN_REBUILD` / `ALLOW_HAND_MAINTAINED_REBUILD`）は module-only 化で撤去済み。
+- `detect_content_loss()` は意図して残している dead code。同じ堅牢シグナルの参照実装として `check_content_loss.py` が名指している。
 - **JA 写真家ページは HTML 直接編集が正**。手書き thesis/関連欄はそのまま永続する
   （旧ジェネレータを `ALLOW_LEGACY_PHOTOGRAPHER_GEN=1` で無理に動かさない限り消えない）。
 
@@ -447,7 +441,7 @@ python3 scripts/insert_ga_tags.py
 - **対象外**（意図的）: リダイレクトシム105枚 / `design/` / `cards-archive.html` /
   Search Console 確認ファイル / コロフォン本体2枚。対象は777ページ。
 - **生成スクリプトへ配線済み**（新規ページでも自動で入る）:
-  `build_photographers_en.py` / `generate_country_pages.py` / `generate_country_pages_en.py` /
+  `generate_country_pages.py` / `generate_country_pages_en.py` /
   `build_taxonomy_en.py` / `build_archive_en.py` が書き込み直前に `ensure()` を呼ぶ。
   `build_taxonomy_en.py` と `build_archive_en.py` は JA HTML 由来なので、JA版ブロックを
   EN版へ差し替える動きになる（`ensure()` はマーカーで外して入れ直すため言語を問わない）。

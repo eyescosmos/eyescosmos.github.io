@@ -443,7 +443,7 @@ def build_ledger() -> dict:
                 "declared_at": "2026-09-14 phase D",
                 "statement": "en/photographers/*.html の real_page 全件が HTML 自身の正本。再生成しない。",
                 "hand_maintained_is_history": True,
-                "hand_maintained_registry": "scripts/check_en_entry.py（ALLOW_EN_REBUILD=1 経路専用の残置ガード。撤去はフェーズF）",
+                "hand_maintained_registry": "scripts/check_en_entry.py（フェーズ2で再生成ガードは撤去済み。履歴レジストリとしてのみ維持。rollback は git）",
                 # 撤去前に check_en_entry.py のコメントが持っていたページ別の理由。
                 # §5「履歴は台帳にだけ残す」の実体。コードから消えてもここに残す。
                 "hand_maintained_history_notes": {

@@ -65,7 +65,7 @@ Codex の初回見積もりは合計5日だったが、**付け替えと抽出�
 | 項目 | 実装 |
 |---|---|
 | 1. `check_en_direct_edit()` 削除 | 削除済み。**あわせて `check_en_changed_slug_closure()` も削除**（EN HTML に cite を直接足すと JSON と集合が食い違い HARD FAIL になり、最小版が成立しないため）。`scripts/check_en_entry.py` の `check_html_vs_json()` も既存ページでは検査しない（同じ理由。通常フローの検査が毎回 FAIL するため） |
-| 2. builder が既存ページを拒否 | `build_photographers_en.py` は `out_path` が実在すると `🛑 REFUSED` でスキップ。`--force` でも `--dry-run` でも解除されない。解除は `ALLOW_EN_REBUILD=1` のみ |
+| 2. builder が既存ページを拒否 | 当時は `🛑 REFUSED` と `ALLOW_EN_REBUILD=1` を導入。**その後、総ざらいフェーズ2で builder CLI と escape hatch を撤去済み。** 現在は module-only で、rollback は git で行う |
 | 3. 新規ガード3本 | `check_en_keyword_chip_preservation()` / `check_ja_en_rel_symmetry()` / `check_ja_en_section_symmetry()` を `preflight.py` に追加 |
 | 4. 文書更新 | `CLAUDE.md` / `AGENTS.md` / `docs/generators-and-guards.md` の正本マトリクスとENフローを更新 |
 
@@ -592,20 +592,20 @@ SUMMARY: ROUNDTRIP 8/8 PASS; EXPECTED_FAIL 2/2 as expected
 **この「統合」を、凍結ファイルのガードを外すことと解釈しなかった。**
 
 `scripts/build_photographers_en.py:1932` の `HAND_MAINTAINED_EN` ガードは、
-`ALLOW_EN_REBUILD=1`（移行監査・緊急rollback比較）の escape hatch 内でだけ効く最後の砦である。
-素直に外すと、**監査経路でこの5ページだけが保護を失う**。
-§4 でこのファイルは分類 **c（凍結）**でもある。
+当時 `ALLOW_EN_REBUILD=1`（移行監査・緊急rollback比較）の escape hatch 内でだけ効く最後の砦だった。
+そのためフェーズDでは外さず、§4 の分類 **c（凍結）**を維持した。
 
 > **昇格は宣言であって、ガードの取り外しではない。**
 > D で削除するのは「JSON を既存ページの正本として扱うコード経路」だけで、安全網は残す。
 
-したがって **`build_photographers_en.py` は1行も変更していない。**
+したがって **フェーズDでは `build_photographers_en.py` を1行も変更していない。**
+**その後、`docs/post-migration-cleanup-plan.md` §9.5 の4-1決定がこの裁定を上書きし、フェーズ2で CLI・ガード・escape hatch を撤去した。rollback は git で行う。**
 
 ### 10.2 実際にやったこと
 
 | 変更 | 内容 |
 |---|---|
-| `scripts/check_en_entry.py` | `check_html_vs_json()` の `HAND_MAINTAINED_EN` 分岐を削除して一本化。定数は残し、コメントを「この5件が特別なのではない／全402実ページがHTML正本／これは `ALLOW_EN_REBUILD=1` 経路専用の残置ガード／撤去はF」へ書き換え |
+| `scripts/check_en_entry.py` | `check_html_vs_json()` の `HAND_MAINTAINED_EN` 分岐を削除して一本化。フェーズD時点では定数を再生成ガード用に残した。**総ざらいフェーズ2以降は、台帳が読む履歴レジストリとしてのみ維持** |
 | `scripts/import_chatgpt_photographer.py` | **`HAND_MAINTAINED_EN` の重複ハードコード定義を削除**し、`check_en_entry` からの import に一本化（二重定義のドリフト源を解消。挙動は同一） |
 | `scripts/build_en_migration_ledger.py` / 台帳 | `_meta.canon` を追加して昇格を宣言。**`records` は1つも変えない** |
 | `docs/generators-and-guards.md` | 「手書き維持ページは拒否」の2箇所に、全ENがHTML正本になったこと＋残置ガードである旨を**追記**（既存記述は消さない） |
@@ -842,8 +842,8 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 - **撤去できるもの**（E-2 で非推奨バナーを付けた分）：
   importer の旧EN JSON field-merge・stage4注入・builder起動検証と、
   `check_en_entry.HAND_MAINTAINED_EN`（§10.2 の残置ガード）。
-  **ただし `build_photographers_en.py` の `HAND_MAINTAINED_EN` 参照を道連れにしないこと**
-  （凍結ファイル。import が壊れると `ALLOW_EN_REBUILD=1` の監査経路が落ちる）
+  この申し送りでは builder の `HAND_MAINTAINED_EN` 参照を保全したが、
+  **総ざらい§9.5の4-1決定によりフェーズ2で CLI とともに撤去済み**
 - **F でも公開HTML 820枚の sha256 不変を完了条件に入れる**
 
 ---
@@ -858,14 +858,14 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 | 既存ページを直すには？ | **EN HTML を直接編集して終わり。** JA と同じ |
 | 新規ページを作るには？ | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`（JA→EN の順に両方できる） |
 | `data/photographers-en-content.json` は？ | **読み取り専用アーカイブ。編集すると preflight が HARD で止める** |
-| `build_photographers_en.py` は？ | **凍結。** 移行監査・緊急rollback 専用（`ALLOW_EN_REBUILD=1`）。通常運用では使わない |
+| `build_photographers_en.py` は？ | **EN描画エンジンの module-only ファイル。** importer が関数を利用する。直接実行は非0終了し、JSON再生成経路はない。rollback は git |
 
 ### 13.2 ★JSONファイルは物理的に動かさなかった（§2b からの意図的な逸脱）
 
 §2b は「アーカイブへ**移す**」と書いていたが、**移していない。** 理由:
 
-- `data/photographers-en-content.json` は**凍結中の `build_photographers_en.py` が読む**。
-  移動すれば凍結ファイルを直すことになり、直さなければ監査・rollback 経路が壊れる。**どちらも消失。**
+- フェーズF当時は `data/photographers-en-content.json` を**凍結中の `build_photographers_en.py` が読んでいた**。
+  **総ざらいフェーズ2でこの読み込みは撤去済み。** 他の残存読者の処理と物理移動はフェーズ3で行う。
 - `data/photographers-en-classification.json` の `jp_slug_mapping`（17ペア）も同じ（§9.5）
 
 **代わりに「降格」を次の3つで実装した。移動より強い。**
@@ -964,13 +964,13 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 | 旧形式 §REF | 2 | §8.3（stieglitz / hiroshi-sugimoto。**対応しない裁定**）|
 | `jp-漢字` shim の欠落 | 1 | §9.3（`ihei-kimura`。JA hreflang は正しいので実害なし）|
 
-### 13.8 残した escape hatch（**撤去しない**）
+### 13.8 escape hatch の現状（総ざらいフェーズ2更新）
 
 | 仕組み | 解除キー | 理由 |
 |---|---|---|
-| 既存EN再生成の拒否 | `ALLOW_EN_REBUILD=1` | 移行監査・緊急rollback |
-| 手書き維持5件の再生成拒否 | `ALLOW_HAND_MAINTAINED_REBUILD=1` | 上の内側の最後の砦。**凍結 builder が import しているので撤去しない**（§10.1） |
-| EN正本JSON の凍結 | `ALLOW_EN_JSON_ARCHIVE_WRITE=1` | 同上 |
+| 既存EN再生成の拒否 | `ALLOW_EN_REBUILD=1` | **フェーズ2で CLI とともに撤去済み。** rollback は git |
+| 手書き維持5件の再生成拒否 | `ALLOW_HAND_MAINTAINED_REBUILD=1` | **フェーズ2で撤去済み。** `HAND_MAINTAINED_EN` は台帳用の履歴レジストリとしてのみ維持 |
+| EN正本JSON の凍結 | `ALLOW_EN_JSON_ARCHIVE_WRITE=1` | 読み取り専用アーカイブの変更を preflight が HARD で防ぐ |
 
 ### 13.9 この移行で効いた作業規律（次の engine 作業へ）
 
