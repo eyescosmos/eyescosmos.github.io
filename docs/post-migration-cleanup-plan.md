@@ -664,6 +664,54 @@ tag 名: **`legacy-generators-2026-09-15`**（annotated・origin へ push 済み
 
 ---
 
+## 12.5 ★実施結果（2026-09-15・完了）
+
+**3件とも撤去した。**公開HTML 1,080枚の sha256 は作業前後で全件一致（変更0枚）。
+コミットは打ち手ごとに分けた。
+
+| 単位 | commit | 実施内容 |
+|---|---|---|
+| 12.1 | `729f281ce` | `overrides.js` の `textJa`/`textEn` 446プロパティを撤去（3,631,495 → 1,409,312 bytes・−2.22MB）。`check_texten_completeness.py` 削除 |
+| 12.2 | `499512a8a` | `HAND_MAINTAINED_EN` を `check_en_entry.py` から撤去し、`build_en_migration_ledger.HAND_MAINTAINED_HISTORY` へ移設。台帳を再生成 |
+| 12.3 | `d2b5246cd` | `generate_photographer_pages.py`（3,079行）と `generate_archive_pages.py`（362行）を削除。波及13ファイルを「実行しない」→「削除済み・復活させない」へ更新 |
+
+### ★着手時に §12 の記述が誤っていた点（測り直して判明）
+
+1. **12.1 の実測値が全部ズレていた。** 記載「157エントリ / leadJa 100 / textJa 76 /
+   ファイル 2,649,290 bytes」に対し、実測は **265 slug / leadJa 265 / leadEn 265 /
+   textJa 222 / textEn 224 / 3,631,495 bytes**。
+   §12 が「撤去前に必ず測り直す」と書いていたのが効いた。
+2. **12.1 の読み手リストが不完全だった。** §12 は `textEn` の読み手を
+   `check_texten_completeness.py` と旧ジェネレータ2本「だけ」としていたが、
+   **`scripts/site.js:662` が `override.textJa`/`textEn` を主ソースとして読む**
+   （`:588` は lead へのフォールバック）。ただし **site.js を読み込む HTML は0枚**
+   （参照は docs と `generate_taxonomy_pages.py` のみ）なので死蔵で確定し、撤去は安全だった。
+   → **次に「死蔵」を判定するときは、ファイルを読む HTML の枚数まで数えること。**
+3. **`textJa`/`textEn` には2つの直列化形式があった。** バッククォートの
+   テンプレートリテラル形式（306）と、ダブルクォートの JSON 文字列形式（140）。
+   片方だけ消すと eval 後に 69 件残る。実装役（Codex）が期待値不一致で停止して発覚した。
+
+### 12.2 の未決論点は「移設」で決着
+
+§12.2 は「台帳を再生成するか据え置くか」を未決にしていた。**移設**を選んだ。
+完全削除だと台帳の `hand_maintained` flag が次の再生成で黙って消え、移行の履歴
+（ページ別の理由5件）が再現できなくなるため。台帳の再生成差分は
+`generated_at_commit` と `hand_maintained_registry` の2箇所のみで、
+`hand_maintained` の5件は撤去前と同一＝再現性を維持した。
+
+### 検証に使った実測（3件共通）
+
+- 公開HTML 1,080枚（tracked `*.html` − `design/`）の sha256 全件照合 → **変更0枚**
+- `preflight.py` の出力がベースラインと完全一致・exit 0
+- `check_content_loss.py` exit 0
+- `build_archive_en.py --dry-run` の出力がベースラインと完全一致（would-change 0）
+- `parse_overrides_lead_en()` の leadEn マップ196件が撤去前と完全一致
+- HEAD から当該プロパティのみを独立実装で除去した結果と**バイト単位一致**（12.1）
+- `link_country_keywords.py` が削除後も import できる（`COUNTRY_BASE_META` 43件・12.3 の罠）
+- `git add -A` は未使用。未追跡 spec.json 305件は最後まで未 stage
+
+---
+
 ## 12.4 残骸ではないもの（消さない）
 
 | ファイル | 役割 |
