@@ -36,10 +36,6 @@ PROHIBITED_SOURCE_DOMAINS = (
     'ameblo.jp', 'note.com', 'fc2.com', 'hatenablog', 'medium.com',
     'pinterest.', 'tumblr.com',
 )
-# 2026-09-14 フェーズDで全402実ページがHTML自身の正本になった。この5件が特別なのではない。
-# フェーズ2で builder の再生成ガードは撤去済み。この集合は履歴レジストリとしてだけ残し、
-# build_en_migration_ledger.py が data/en-migration-ledger.json の hand_maintained_history flag 生成に読む。
-HAND_MAINTAINED_EN = {'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html', 'toyoko-tokiwa.html', 'lee-miller.html'}
 # Amazon 検索結果・トラッキングの兆候
 AMAZON_SEARCH_SIGNS = ('/s?', '/s/ref', '?k=', '&k=', 'field-keywords', '/gp/search')
 

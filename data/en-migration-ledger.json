@@ -2,13 +2,13 @@
   "_meta": {
     "schema_version": 1,
     "generated_by": "scripts/build_en_migration_ledger.py",
-    "generated_at_commit": "8d8784926",
+    "generated_at_commit": "729f281ce",
     "canon": {
       "policy": "html",
       "declared_at": "2026-09-14 phase D",
       "statement": "en/photographers/*.html の real_page 全件が HTML 自身の正本。再生成しない。",
       "hand_maintained_is_history": true,
-      "hand_maintained_registry": "scripts/check_en_entry.py（フェーズ2で再生成ガードは撤去済み。履歴レジストリとしてのみ維持。rollback は git）",
+      "hand_maintained_registry": "scripts/build_en_migration_ledger.py の HAND_MAINTAINED_HISTORY（2026-09-15 §12.2 で check_en_entry.py から移設。ガードではなく履歴記録。rollback は git）",
       "hand_maintained_history_notes": {
         "shoji-ueda.html": "現 EN HTML が JA ページに対応した正（本文の脚注 *1..*17 と出典が整合）。JSON 側の sources_html / リンクは本文と番号が対応しない別系統の誤りで、JSON からの再生成は正しい HTML を壊した。",
         "toyoko-tokiwa.html": "EN HTML は手作りで EN 正本 JSON に未登録。ビルダーは JSON に無いため SKIP していた＝もともと再生成対象外。台帳では no_json_entry flag。",

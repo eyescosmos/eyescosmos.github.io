@@ -24,10 +24,18 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-from check_en_entry import HAND_MAINTAINED_EN
 from import_chatgpt_photographer import extract_bundle
 from preflight import PH_KW_RE, PH_SIDE_RE, _chip_map
 import sync_en_rel_annotations as sra
+
+# 2026-09-15 §12.2 で check_en_entry.py から移設。**ガードではなく履歴記録**。
+# フェーズDで EN 実ページは全件 HTML 自身が正本になり、フェーズ2で builder の再生成経路も
+# 消えたので「手書き維持」に強制力は無い。台帳の hand_maintained_history flag を
+# 再生成可能に保つためだけに残している。新規に足さないこと。
+HAND_MAINTAINED_HISTORY = {
+    'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html',
+    'toyoko-tokiwa.html', 'lee-miller.html',
+}
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -321,7 +329,7 @@ def build_ledger() -> dict:
                 ja_path, "ja", slug, ja_structure
             )
 
-        if key in HAND_MAINTAINED_EN:
+        if key in HAND_MAINTAINED_HISTORY:
             flags.append("hand_maintained_history")
         if json_info["in_stage4"] and not json_info["in_base"]:
             flags.append("stage4_only_canon")
@@ -443,7 +451,7 @@ def build_ledger() -> dict:
                 "declared_at": "2026-09-14 phase D",
                 "statement": "en/photographers/*.html の real_page 全件が HTML 自身の正本。再生成しない。",
                 "hand_maintained_is_history": True,
-                "hand_maintained_registry": "scripts/check_en_entry.py（フェーズ2で再生成ガードは撤去済み。履歴レジストリとしてのみ維持。rollback は git）",
+                "hand_maintained_registry": "scripts/build_en_migration_ledger.py の HAND_MAINTAINED_HISTORY（2026-09-15 §12.2 で check_en_entry.py から移設。ガードではなく履歴記録。rollback は git）",
                 # 撤去前に check_en_entry.py のコメントが持っていたページ別の理由。
                 # §5「履歴は台帳にだけ残す」の実体。コードから消えてもここに残す。
                 "hand_maintained_history_notes": {

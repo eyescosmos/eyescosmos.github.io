@@ -972,7 +972,7 @@ builder の CLI 読み込みを撤去し、フェーズ3で残る正当な読者
 | 仕組み | 解除キー | 理由 |
 |---|---|---|
 | 既存EN再生成の拒否 | `ALLOW_EN_REBUILD=1` | **フェーズ2で CLI とともに撤去済み。** rollback は git |
-| 手書き維持5件の再生成拒否 | `ALLOW_HAND_MAINTAINED_REBUILD=1` | **フェーズ2で撤去済み。** `HAND_MAINTAINED_EN` は台帳用の履歴レジストリとしてのみ維持 |
+| 手書き維持5件の再生成拒否 | `ALLOW_HAND_MAINTAINED_REBUILD=1` | **フェーズ2で撤去済み。** `check_en_entry.HAND_MAINTAINED_EN` も 2026-09-15 の §12.2 で撤去し、`build_en_migration_ledger.HAND_MAINTAINED_HISTORY` へ履歴記録として移設 |
 | EN正本JSON の凍結 | `ALLOW_EN_JSON_ARCHIVE_WRITE=1` | 読み取り専用アーカイブの変更を preflight が HARD で防ぐ |
 
 ### 13.9 この移行で効いた作業規律（次の engine 作業へ）
