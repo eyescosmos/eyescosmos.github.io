@@ -17,7 +17,6 @@ Idempotent overwrite generator. Python 3 stdlib only.
   python3 scripts/build_photographers_en.py --slug ansel-adams [--slug ...]
   python3 scripts/build_photographers_en.py --all
 
-Never imports/runs scripts/generate_photographer_pages.py.
 Never modifies photographers/ (JA pages are read-only).
 Never touches en/photographers/jp-*.html or stieglitz-backup.html.
 """

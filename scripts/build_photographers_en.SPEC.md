@@ -9,7 +9,7 @@
 - 出力ファイル名: JA と同名。ただし `jp-漢字.html` は classification の `jp_slug_mapping` を逆引きしてローマ字名で出力（例 `jp-植田正治.html` → `shoji-ueda.html`）
 - スキップ: classification `missing_en_true` の12件（英文なし、Stage 4）。`en/photographers/jp-*.html` のリダイレクトスタブと `stieglitz-backup.html` には触れない
 - CLI: `--slug X`（複数可）/ `--pilot`（ansel-adams, moriyama, jp-植田正治→shoji-ueda, alexander-gardner, aglaia-konrad）/ `--all`
-- `scripts/generate_photographer_pages.py` は実行・import しない。JA ページは一切変更しない
+- `scripts/generate_photographer_pages.py` は 2026-09-15 に削除済み。JA ページは一切変更しない
 
 ## 再利用
 - `scripts/build_taxonomy_en.py` を import し `STUB_TO_SLUG`（運動 JAファイル名→ENスラッグ）、

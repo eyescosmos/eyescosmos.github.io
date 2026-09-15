@@ -269,21 +269,13 @@ thesis は写真家の歴史的意義を述べる中核段落だが、評価が�
 
 ---
 
-## Section heading rules — CRITICAL
+## Section heading rules — 廃止（2026-09-15）
 
-> **適用範囲：ジェネレータ／`overrides.js` の textJa・textEn（旧経路）の見出し語彙ルール。**
-> 現行の手書き個別ページの本文節構成は上記「本文の構成」（4 節）が正で、これとは別物。
+この節は**旧経路（ジェネレータ ＋ `overrides.js` の textJa・textEn）専用の見出し語彙ルール**
+だった。旧経路は両方とも撤去された:
 
-textJa・textEn のメインセクション見出しは、ジェネレータの `ESSAY_HEADING_SET` に登録された語のみを使うこと。それ以外の語はh4（小見出し）になり、「解説」（デフォルト）という不要な見出しが出現する。
+- `overrides.js` の `textJa` / `textEn` — 2026-09-15 撤去（§12.1）
+- `scripts/generate_photographer_pages.py`（`ESSAY_HEADING_SET` の置き場） — 2026-09-15 削除（§12.3）
 
-### 許可される見出し語（これ以外は使わない）
-- textJa：`経歴`、`表現解説`、`批評と受容`
-- textEn：`Biography`、`Expression / method`、`Criticism and reception`
-
-### NG 例（使ってはいけない言い換え）
-- `経歴と背景` → `経歴` にする
-- `批評と評価` → `批評と受容` にする
-- `Background and formation` → `Biography` にする
-- `Critical reception` → `Criticism and reception` にする（大文字・語順に注意）
-
-新しい見出しパターンが必要な場合は、`scripts/generate_photographer_pages.py` の `ESSAY_HEADING_SET` に追加してから使う。
+**現行の本文節構成は上の「本文の構成」（4 節）が正。** 見出し語もそちらに従う。
+旧ルールの中身が要るときは `git show legacy-generators-2026-09-15:docs/photographer-leaf-spec.md`。

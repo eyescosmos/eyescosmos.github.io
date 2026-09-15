@@ -10,7 +10,7 @@
   （archive / cards-archive / new-design / 年代 / 運動。JA/EN 両方）。
   多数の HTML を自動で書き換えるとアンカー誤爆で新たな事故になりうるため、あえて手貼り。
 - 旧デザイン生成器（generate_photographer_pages.py / generate_archive_pages.py）は
-  ガード済みで呼ばない。
+  2026-09-15 に削除済み。呼ばない／復活させない。
 - **件数表示を持つ従属面は --apply-surfaces が自動で再生成する**（2026-09-02 導入。
   refresh_downstream()）。対象は en/archive.html → 国ページ JA/EN（その写真家の国だけ）
   → EN 年代ページ の順で、いずれもスコープフラグ付き（`--all` は使わない）。
@@ -881,7 +881,7 @@ def print_snippets_and_runbook(spec: dict):
     print(f"  python3 scripts/check_new_photographer.py --slug {spec['id']}")
     print("  # 最後に決定論チェック（push 前ネット）")
     print("  python3 scripts/preflight.py")
-    print("\n注意: generate_photographer_pages.py / generate_archive_pages.py は旧デザイン=実行禁止（ガード済み）。")
+    print("\n注意: generate_photographer_pages.py / generate_archive_pages.py は旧デザイン生成器で 2026-09-15 に削除済み。復活させないこと。")
 
 
 def print_manual_checklist(spec: dict):

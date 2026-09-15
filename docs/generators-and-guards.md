@@ -5,28 +5,35 @@
 
 ---
 
-## `scripts/generate_photographer_pages.py` は実行禁止 — 旧デザインで現行と乖離 — CRITICAL
+## 旧ジェネレータ2本は削除済み（2026-09-15・§12.3） — 復活させない — CRITICAL
 
-**絶対に `python3 scripts/generate_photographer_pages.py` を実行しないこと。**
+`scripts/generate_photographer_pages.py`（3,079行）と `scripts/generate_archive_pages.py`（362行）は
+**2026-09-15 に削除した**。どちらも長く「実行禁止」で物理ガード付きのまま放置されていた残骸で、
+Python の import 元は0（`generate_taxonomy_pages` を import する側だった）。
 
-**理由（2026-06-13 確認）:** 現行の日本語写真家ページは v5.1 新デザイン
-（`<header class="head">` ＋ `head__lang` トグル ＋ `<section class="ph-hero">`）に
-移行済み。一方この旧ジェネレータは**別物の旧デザイン**（`lang-toggle`/`lang-btn`・
-`title-block`・`lead-abstract`・`facts` テーブル等）を生成する。つまりジェネレータの
-出力は現行ページと一致しない。
+**なぜ禁止だったか（履歴）:** 現行の JA 写真家ページは v5.1 新デザイン
+（`<header class="head">` ＋ `head__lang` トグル ＋ `<section class="ph-hero">`）だが、
+旧ジェネレータは**別物の旧デザイン**（`lang-toggle`/`lang-btn`・`title-block`・
+`lead-abstract`・`facts` テーブル等）を出力した。実行すると JA 写真家ページ全枚の
+デザインが旧版へ巻き戻り、JA→EN 言語トグルが無反応の `<button>EN</button>` に戻り、
+`ph-hero`・現行ヘッダー・モバイル検索が消えた。`generate_archive_pages.py` は同様に
+v5.1 アーカイブ（`<article class="pc-card">`）を旧デザイン（`<div class="photographer-card">`
+＋ `toggleDetail()`）へ巻き戻した。
 
-**実行した場合に起きること:**
-- 294枚すべての JA 写真家ページの**デザインが旧版に巻き戻る**
-- 修正済みの JA→EN 言語トグル（`<a href="/en/photographers/…"><button>EN</button></a>`）が
-  消え、無反応の `<button>EN</button>` に戻る
-- `ph-hero` ヒーロー・現行ヘッダー・モバイル検索などの新要素が消失する
+**中身を見たいとき:**
+```bash
+git show legacy-generators-2026-09-15:scripts/generate_photographer_pages.py
+git show legacy-generators-2026-09-15:scripts/generate_archive_pages.py
+```
+tag `legacy-generators-2026-09-15`（annotated・origin へ push 済み）。**この tag は消さない。**
 
 **現在の正（source of truth）:**
 - 日本語写真家ページの**構造・デザイン・ヘッダー・言語トグルは `photographers/*.html` 自身**
   （JA HTML が正）。構造・本文・解説・出典・関連欄の修正は HTML を直接編集する。
 - **EN 写真家ページは新規・既存とも `en/photographers/*.html` 自身が正本**（2026-09-15 フェーズE-2。
   `docs/en-html-canon-migration.md` §11）。本文・thesis・§REL・出典は EN HTML を直接編集する。
-  `data/photographer-essay-overrides.js` の `textEn` に同じ文が残る場合は、事実修正時に両方をそろえる。
+  `data/photographer-essay-overrides.js` の `textJa` / `textEn` は 2026-09-15 に撤去済み（§12.1）。
+  そろえる対象はもう無い（`leadEn` / `leadJa` は残っており、これは消さない）。
 - 新規 EN は `scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`
   で JA→EN の順に HTML を直接生成する。既存 EN 出力先への書込みは `--force` の有無によらず拒否される。
 - `scripts/build_photographers_en.py` は importer が import する EN 描画エンジンの module-only ファイル。
@@ -40,17 +47,12 @@ grep -l '<button>EN</button>' photographers/*.html movements/*.html eras/*.html
 python3 scripts/fix_ja_lang_toggle.py --apply   # countries は除外・EN実在を検証
 ```
 
+アーカイブ側の現行の正は、JA `archive.html`（正本・手編集）と、そこから
+`scripts/build_archive_en.py` が card-data.json 経由で pc-card を翻訳生成する
+`en/archive.html`。
+
 旧ジェネレータを現行デザイン用に作り直す場合は、Daisuke の明示依頼があったときのみ着手し、
-着手前に本注意書きを更新すること。
-
-## `scripts/generate_archive_pages.py` も実行禁止 — 旧デザイン生成 — CRITICAL
-
-`generate_archive_pages.py` は旧デザイン（`<div class="photographer-card">` ＋ `toggleDetail()`）を
-出力する。現行の `archive.html` / `en/archive.html` は v5.1 の `<article class="pc-card">`
-（**JA archive.html が正本・手編集**、**EN は `scripts/build_archive_en.py`** が card-data.json から
-pc-card を翻訳生成）。`generate_archive_pages.py` を実行すると v5.1 アーカイブを旧デザインへ
-巻き戻す。2026-06-16 に `main()` 冒頭へ物理ガードを追加済み（解除は環境変数
-`ALLOW_LEGACY_ARCHIVE_GEN=1`、generate_photographer_pages.py は `ALLOW_LEGACY_PHOTOGRAPHER_GEN=1`）。
+着手前に本注意書きを更新すること。**復活させるのでなく、新規に書くこと。**
 
 ---
 

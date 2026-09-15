@@ -53,7 +53,7 @@ EN ビルダーを走らせるとき、`photographer-essay-overrides.js` を編�
 
 **過去に発生した問題：** 正本データ側に外部リンク・本文・出典が無い状態で生成/横断処理を実行すると、HTML に残っていた chip-link 外部リンクや本文要素が上書きで消える。
 
-**注意:** `python3 scripts/generate_photographer_pages.py` は実行禁止。EN 写真家ページも既存ページは
+**注意:** `scripts/generate_photographer_pages.py` は 2026-09-15 に削除済み（§12.3）。EN 写真家ページも既存ページは
 再生成せず、HTML自身を直接編集する。新規ENページは importer の renderer でHTMLを直接生成し、
 旧EN JSONへ書くCLIは使わない（撤去済み）。
 
@@ -95,7 +95,7 @@ grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
 **根本原因：** `should_skip_alias_boundary()` は ASCII 英数字の境界しかチェックしておらず、日本語（カタカナ）境界を検出できなかった。
 
 **実施済み対応：**
-- `scripts/generate_photographer_pages.py` の `should_skip_alias_boundary()` に `KATAKANA_RE` 境界チェックを追加。カタカナエイリアスの前後が隣接カタカナであればリンクをスキップする。
+- `scripts/generate_photographer_pages.py`（**2026-09-15 に削除済み**）の `should_skip_alias_boundary()` に `KATAKANA_RE` 境界チェックを追加。カタカナエイリアスの前後が隣接カタカナであればリンクをスキップする。
 - `'ペン': 'irving-penn'` は意図的な略称として維持し、境界チェックで誤マッチを防ぐ。
 
 **動作確認済みの境界チェック（ペンの場合）：**

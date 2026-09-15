@@ -18,8 +18,8 @@ Also: makes the row horizontally scrollable, colours the segment labels
 (Era / 国 / 運動) red, and mirrors the chips into the mobile filter strip.
 
 Idempotent: blocks are sentinel-wrapped and JS/attribute edits are guarded.
-Edits archive.html only (the v5.1 source-of-truth page;
-generate_archive_pages.py is the stale old-design generator, not run).
+Edits archive.html only (the v5.1 source-of-truth page; the stale old-design
+generate_archive_pages.py was deleted on 2026-09-15).
 EN (en/archive.html) handled separately.
 """
 from __future__ import annotations

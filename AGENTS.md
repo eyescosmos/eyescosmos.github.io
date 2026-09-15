@@ -4,8 +4,8 @@
 
 ## 絶対禁止 — NEVER — 最初に読む
 
-1. **`python3 scripts/generate_photographer_pages.py` を実行しない**。旧デザインを生成し、JAページ全体を巻き戻す。物理ガードがあっても解除しない。
-2. **`python3 scripts/generate_archive_pages.py` を実行しない**。
+1. **`scripts/generate_photographer_pages.py` は削除済み**（2026-09-15・§12.3）。旧デザインを生成し JA ページ全体を巻き戻す実行禁止スクリプトだった。**復活させない。** 中身は `git show legacy-generators-2026-09-15:scripts/generate_photographer_pages.py` で引ける。
+2. **`scripts/generate_archive_pages.py` も削除済み**（同上）。
 3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は **EN描画エンジンのモジュール**であり CLI ではない（直接実行は常に非0終了）。**新規作成は EN HTML を importer で直接生成する（`--render-en` 相当）。JSON から再生成する経路はなく、rollback は git で行う。** 詳細 `docs/en-html-canon-migration.md` §11。
 4. **生成物が正本でないサーフェス（国別 / ENアーカイブ）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる。再生成で誤情報が復活する。JA写真家ページ・EN写真家ページ・**EN年代/運動ページ**は HTML 自身が正本なので対象外。
 5. **捏造しない**。出典にない評価・書誌・URL・Amazonリンクを推測で作らない。
