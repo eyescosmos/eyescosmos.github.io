@@ -137,6 +137,8 @@ git diff origin/main
 | `new-design/index.html` / `index-v51.html` / `cards-archive.html` / `card-data.json` / カード CSS | `docs/card-design-system.md` |
 | スクリプト実行・EN 写真家ページ編集・テンプレ移行・機械チェックの意味 | `docs/generators-and-guards.md` |
 | Codex 並行作業・横断スクリプト・`overrides.js`・本文自動リンク/エイリアス | `docs/content-preservation.md` |
+| **ChatGPT新素材で写真家をバッチ update / 追加する** | `docs/importer-scaffold-inject-spec.md` §14「バッチ update のキックオフ定型」 |
+| ★★**移行後はじめて写真家を update / 追加する**（2026-09-15 以降の初回だけ・**次の写真家作業がこれ**） | `docs/next-photographer-batch.md` ＋ `docs/en-html-canon-migration.md` §13.10。**新規追加の経路は本番未検証**で、**次は新規6名**＝全員がその経路に乗る。初回だけ検証チェックリストを回して `docs/importer-run-log.md` に実測を残す |
 
 ## General Style
 
