@@ -8,8 +8,9 @@
 特に **§9.1（§2b の3主張のうち2つが実測で誤りと判明）** と
 **§9.2（`data/taxonomy-en-content.json` が EN 散文の正本＝§3 の前提が誤り）** を読み飛ばさない。
 実装は **§9.6 のフェーズ計画**の順に進める（順序に意味がある）。
-**★フェーズ0〜5 は完了・push 済み（`7c6edf54d`）。次はフェーズ6だけ。
-フェーズ6 から始める新規セッションは §10「フェーズ6 の引き継ぎ」を読めばよい。**
+**★フェーズ0〜6 は完了（フェーズ0〜5 は push 済み `7c6edf54d`）。
+残るのはフェーズ7（クラス1＝原稿バックログ）だけで、これは専用セッションを組まない既定方針。
+フェーズ6 の実施結果は §11 にある。**
 
 ---
 
@@ -315,7 +316,7 @@ title / OG / JSON-LD を全部持っており、EN タクソノミーHTML はそ
 | **3** | EN正本JSONの物理移動 | ✅ **完了（`959c3130f`）**。stale な update 表示を撤去し、corpus audit / `build_en_migration_ledger.py` / `preflight.py` の読取先を `data/archive/` へ移行。rename 直後用の baseline フォールバックを凍結ガードに追加。**`photographers-en-classification.json` は不変** | **0枚** |
 | **4** | タクソノミー生成器の欠陥修正 | ✅ **完了（`60aca8743`）**。運動カードのラベルを JA カードから継承（JA/EN 不一致 **22→0**）。`card-data.json` の `nameJa`/`nameEn` で人物名チップも訳す（`ルシェ→Ruscha`。同種は全35ページでこの1件のみ）。カードの `target` 除去は意図した正規化として維持。**年代は `swap_nationality` の挙動を変えない**（JA を鏡写しにすると JA 側の取りこぼし12件が EN へ逆流するため）| **0枚** |
 | **5** | **入力データ／コンテンツ修正＋一度だけ再生成** | ✅ **完了（`8537af7fd`）**。JA運動5ページの sidebar に5名追加／`build_archive_en.py` の `CHANNEL_PREFIX` に「形態を比較する写真→Comparing form」追加（再生成で英語→日本語へ戻る退行を検出したため）／**mali のタグは修正しない判断に変更**（§9.7）。改善: 陳腐化 lede **67→0**・EN カード内の日本語 **13→0**・JA/EN ラベル不一致 **22→0**。消失は全項目 **0** | **51枚**（en/movements 25・en/countries 13・movements 5・countries 4・en/eras 3・en/archive 1）|
-| **6** | **EN タクソノミーHTML を正本へ昇格** | `build_taxonomy_en.py` を新規ページ専用にし、既存出力への書込を `🛑 REFUSED` で拒否（解除は `ALLOW_TAXONOMY_REBUILD=1` のみ）。`taxonomy-en-content.json` を読み取り専用アーカイブへ降格し、`preflight` に凍結ガードを追加（`check_en_json_frozen()` と同型）。正本マトリクスと §14 を書き換え | **0枚** |
+| **6** | **EN タクソノミーHTML を正本へ昇格** | ✅ **完了（`5c82451bc` 〜 §11）**。`build_taxonomy_en.py` を新規ページ専用にし、既存46枚への書込を `🛑 REFUSED`（解除は `ALLOW_TAXONOMY_REBUILD=1` のみ・`--dry-run` でも解除されない）。`taxonomy-en-content.json` を `data/archive/` へ move し `check_en_json_frozen()` の凍結対象に追加。直接編集疑い WARN を JA↔EN 節対称性チェックへ置換。**副作用として `add_photographer.py --apply-surfaces` の EN年代再生成が使えなくなり、手貼り手順へ差し替えた** | **0枚** |
 | **7** | クラス1（原稿バックログ） | EN §REL 一言89件ほか §2f。**該当ページを update するとき一緒に直す既定方針のまま** | 都度 |
 
 **各フェーズ共通の検証**（`§6 作業規律`をそのまま適用）:
@@ -354,8 +355,10 @@ title / OG / JSON-LD を全部持っており、EN タクソノミーHTML はそ
 
 ## 9.8 まだ決めていないこと
 
-- **フェーズ6で `taxonomy-en-content.json` の `meta`（title / OG / JSON-LD）をどう扱うか。**
-  散文と違い SEO メタは機械生成のほうが安全な可能性がある。フェーズ5の実測後に決める。
+- ~~**フェーズ6で `taxonomy-en-content.json` の `meta`（title / OG / JSON-LD）をどう扱うか。**~~
+  **決着（2026-09-15・§11.1）。散文と同じく HTML を正本にした。**
+  「機械生成のほうが安全」は実測で否定された＝`meta` を持つ42件は**全件**が機械テンプレと不一致で、
+  機械生成へ寄せると公開42枚の title/description/OG/JSON-LD が書き換わる。
 - **JA タクソノミーHTML 側の hero 枚数（JA 8ページ・EN 5ページで実カード数と不一致）を、
   手で直すか実カード数から導出するか。** `sync_card_counts.py` の対象は archive とトップで、運動は入っていない。
 
@@ -439,3 +442,89 @@ Daisuke の決定（§9.5 の 4-2）＝ **(a) 昇格**。写真家ページと�
 
 EN §REL の一言解説89件ほか §2f / §9.7 のバックログは、
 **該当ページを次に update するときに一緒に直す**。専用セッションは組まない。
+
+---
+
+# 11. ★フェーズ6 の実施結果（2026-09-15・Opus監督 / Codex実装）
+
+**EN タクソノミーHTML（運動35＋年代11＝46枚）を正本へ昇格した。公開HTML 0枚。**
+作業前後で公開HTML **1,080枚の sha256 が完全一致**（追加・削除0）。preflight の出力差分も0。
+
+## 11.1 着手前の未決1件（§10.4-3）の決着 — meta は HTML 正本にした
+
+「散文と違い SEO メタは機械生成のほうが安全かもしれない」は**実測で否定された**。
+
+| 実測 | 値 |
+|---|---:|
+| `meta` を持つエントリ | 42（運動31 / 年代11）|
+| そのうち builder の機械テンプレと**一致**する数 | **0** |
+| `meta` を持たない運動（機械テンプレのまま公開中）| 4 |
+
+title の書式が JSON 側は `X | Meaning in Photography History | …`（30件）、
+テンプレ側は `X | Photography Movement | …` で、description も 42件全部が別文だった。
+機械生成へ寄せると**公開42枚の head が書き換わる**＝「公開HTML 0枚」条件を破る。
+
+**決定（Daisuke）**: (A) 散文と同じく HTML を正本にする ＋ 新規ページ用フォールバック title を
+公開済み31件の多数派書式（`| Meaning in Photography History |`）へそろえる。
+
+## 11.2 コミット
+
+| # | commit | 内容 | 公開HTML |
+|---|---|---|---|
+| 6-1 | `5c82451bc` | 生成器を新規ページ専用に。既存46枚は `🛑 REFUSED`（exit 1）。新規用フォールバック title を多数派書式へ。旧書式のまま公開されている4枚は `LEGACY_TITLE_SLUGS` で据え置き | 0 |
+| 6-2 | `22ab37d7d` | `data/taxonomy-en-content.json` → `data/archive/` へ move（git 上も pure rename・sha256 `8c284555…` 一致）。読み手2本の参照先を更新 | 0 |
+| 6-3 | `1146993bf` | `check_en_json_frozen()` の凍結対象に追加（3本目）。直接編集疑い WARN を JA↔EN 節対称性チェックへ置換。photographers の旧パス・フォールバックを撤去し taxonomy 用に入れ直し | 0 |
+| 6-4 | `97e7455f9` | `add_photographer.py` の EN年代再生成呼び出しを手貼り手順へ差し替え（下記 11.4）| 0 |
+
+## 11.3 ★ブリーフ不備を Codex が止めた（4回目・§10.5 の通り）
+
+フォールバック title を新書式へ変えると、**JSON に `meta` を持たない4運動**
+（`contemporary-still-life` / `post-internet-photography` / `new-topographics` / `intimate-life`）に効き、
+escape hatch（`ALLOW_TAXONOMY_REBUILD=1`）での rollback が **would-change 1 → 5** に劣化する。
+＝**凍結するアーカイブが公開状態を再現できなくなる。**
+
+JSON 側に title を書き足す案は、凍結ガードを入れるその push 自体で
+`ALLOW_EN_JSON_ARCHIVE_WRITE=1` の迂回が要る（ガードは `origin/main` と比較するため）。
+**迂回の要らない側＝builder に `LEGACY_TITLE_SLUGS`（旧書式のまま公開されている4枚）を置いて解決した。**
+結果、rollback は would-change 1（`color-photography` の手編集のみ）に戻った。
+
+## 11.4 ★昇格の代償 — 写真家追加フローが1手増えた（§10 が想定していなかった）
+
+`add_photographer.py --apply-surfaces` は `build_taxonomy_en.py --era <era>` を subprocess で呼んでいた。
+フェーズ6-1 以降これは必ず REFUSED（rc=1）になる。**放置すると**:
+EN 年代ページに新カードが入らない → `preflight.check_taxonomy_presence()` が
+**HARD FAIL で push を止める**（EN 年代は必須サーフェス・2026-09-05 決定）。
+
+対処（6-4）: 呼び出しを外し、**カードを手で足す手順**を表示するようにした
+（元カードは `en/archive.html` から流用 → グリッド閉じの直前へ挿入 → hero / sidebar の枚数を +1）。
+`plan_surfaces` の「REGEN 面」からも EN タクソノミーを外し、手貼り面として表示する。
+
+**EN 運動ページは任意サーフェス**（`feedback_movement_pages_are_a_surface_too`）なので
+HARD にはならないが、載せるなら同じく手貼り。
+
+## 11.5 検証（すべて実測）
+
+| 項目 | 結果 |
+|---|---|
+| 公開HTML 1,080枚の sha256 | **完全一致**（追加・削除0）|
+| `preflight.py` の出力 | 作業前と**差分0**・exit 0 |
+| `check_content_loss.py` | exit 0 |
+| `build_taxonomy_en.py --all --dry-run` | REFUSED 46 / 分類各0 / exit 1 |
+| 単体 `--slug`（dry-run・実行とも）| REFUSED 1 / exit 1 / **ファイル未書込** |
+| `ALLOW_TAXONOMY_REBUILD=1 --all --dry-run` | would-change **1**（`color-photography`）/ unchanged 45 / exit 0 |
+| スコープ無指定 | exit 2（既存ガード健在）|
+| 凍結ガード（JSON を1バイト改変）| **HARD FAIL・exit 1** → `git checkout` で復元し exit 0 |
+| `ALLOW_EN_JSON_ARCHIVE_WRITE=1` | その HARD が出ない（解除が効く）|
+| JA↔EN 節対称性 全46組 | mismatch **0**（置き換え先チェックは現状グリーン）|
+| 巻き込み | 未追跡 spec.json 305件は未 stage。`.html` の差分0 |
+
+## 11.6 フェーズ6 で残したもの
+
+- **`EN_JSON_ARCHIVE_LEGACY_PATHS` の taxonomy エントリ**は、この commit 群が `origin/main` に
+  載るまで必要。載ったら撤去してよい（コードにその条件をコメント済み）。
+  photographers 2本の旧エントリはフェーズ3分が `origin/main` に載ったため**撤去済み**。
+- **`data/archive/taxonomy-en-content.json` は消さない。** `ALLOW_TAXONOMY_REBUILD=1` の
+  緊急 rollback は、この JSON から meta / sections を復元する経路として残っている。
+- §9.7 のバックログ（JA 年代の `PHOTOGRAPHER` 12件・JA 運動の `target="_blank"` 27件・
+  `cards-archive.html` の旧語彙タグ50件）は**今回も直していない**。
+

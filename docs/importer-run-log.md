@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-15 | (engine)総ざらい フェーズ6 EN タクソノミーHTML を正本へ昇格 | engine | （Daisuke記入） | 0 | 4（未決の meta 扱いを実測で決着＝機械テンプレと42件全件不一致なので HTML 正本へ／新フォールバック title が meta 無しの4運動に効き rollback が would-change 1→5 に劣化するのを Codex が停止して指摘＝ブリーフ不備4回目／JSON 側で直すとガードを入れる push 自体で迂回が要るため builder の LEGACY_TITLE_SLUGS で解決／`add_photographer.py --apply-surfaces` の EN年代再生成が必ず REFUSED になる副作用を発見し手貼り手順へ差替） | 7ファイル・JSON 1本をrename（公開HTML 0・1,080枚 sha256 完全一致） | N/A | N/A |
 | 2026-09-15 | (content)総ざらい フェーズ5 入力修正＋一度だけ再生成 | other | （Daisuke記入） | 0 | 4（sidebar 5名はJAへ追加＝Daisuke判断／mali のタグは母数50件を数えて「足さない」へ判断変更／再生成で channel が英語→日本語へ戻る退行を検出し正本の翻訳表で修正／Saul Leiter のインラインリンクは再生成後に手で復旧） | 公開HTML 51枚（1,080枚中。追加削除0） | N/A | N/A |
 | 2026-09-15 | (engine)総ざらい フェーズ4 運動生成器の欠陥修正 | engine | （Daisuke記入） | 0 | 3（sidebar の JA 昇格は公開JAを変えるのでフェーズ5へ移した／target を JA 継承にした実装を監督が実測で差し戻し＝JAは298カード中27件で同一ページ内混在／Codexがクレジット上限で停止し監督が受け入れテストを引き取り） | 2ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-15 | (engine)総ざらい フェーズ3 EN正本JSONを data/archive/ へ移動 | engine | （Daisuke記入） | 0 | 3（生きた `--update-existing` が凍結JSONを読んで存在しない経路を案内していたのを発見・撤去／凍結ガードのbaselineがrename直後に取れない罠へフォールバック追加／Codexが報告した差分に検証中の1バイト改変が写っていたので監督が実ファイルを照合） | 15ファイル・JSON 2本をrename（公開HTML 0） | N/A | N/A |

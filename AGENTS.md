@@ -7,11 +7,12 @@
 1. **`python3 scripts/generate_photographer_pages.py` を実行しない**。旧デザインを生成し、JAページ全体を巻き戻す。物理ガードがあっても解除しない。
 2. **`python3 scripts/generate_archive_pages.py` を実行しない**。
 3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は **EN描画エンジンのモジュール**であり CLI ではない（直接実行は常に非0終了）。**新規作成は EN HTML を importer で直接生成する（`--render-en` 相当）。JSON から再生成する経路はなく、rollback は git で行う。** 詳細 `docs/en-html-canon-migration.md` §11。
-4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる。再生成で誤情報が復活する。JA写真家ページと EN写真家ページは HTML 自身が正本なので対象外。
+4. **生成物が正本でないサーフェス（国別 / ENアーカイブ）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる。再生成で誤情報が復活する。JA写真家ページ・EN写真家ページ・**EN年代/運動ページ**は HTML 自身が正本なので対象外。
 5. **捏造しない**。出典にない評価・書誌・URL・Amazonリンクを推測で作らない。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードで拒否）。写真家1人追加で `--all` は不要。安全な生成コマンド集は `docs/generators-and-guards.md`「フルリビルド・ガード」。
 7. **TOP12 ハードコードカード（`pc-top` / `idx` / `pc-top--XXX`）、フィルター/ソートUI、カードJSは依頼がない限り触らない**。カードの正は `cards-archive.html` / `card-data.json`。
-8. **凍結EN JSON（`data/archive/photographers-en-content.json` / `data/archive/photographers-en-stage4.json`）を編集しない**。読み取り専用アーカイブで、preflight が変更を HARD で止める（解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`・移行監査と緊急rollbackのみ）。EN ページの正本は `en/photographers/*.html`。
+8. **凍結EN JSON 3本（`data/archive/photographers-en-content.json` / `data/archive/photographers-en-stage4.json` / `data/archive/taxonomy-en-content.json`）を編集しない**。読み取り専用アーカイブで、preflight が変更を HARD で止める（解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`・移行監査と緊急rollbackのみ）。EN ページの正本は `en/photographers/*.html` と `en/movements/*.html` / `en/eras/*.html`。
+9. **既存の `en/movements/*.html` / `en/eras/*.html` を再生成しない**（2026-09-15〜）。`build_taxonomy_en.py` は新規ページ専用で、出力先が実在すれば `🛑 REFUSED`（解除は `ALLOW_TAXONOMY_REBUILD=1` のみ）。修正は EN HTML を直接編集する。
 
 ## 正本(source of truth)マトリクス — Critical
 
@@ -21,7 +22,7 @@
 | EN写真家 `en/photographers/*.html` | **HTML自身** | 新規のみ `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply` | JA と同じく直接編集してよい。既存ページへの上書きは常に拒否される |
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` | |
 | 国別 JA/EN | `data/country-pages.json` | `generate_country_pages.py` / `generate_country_pages_en.py`。`--country <slug>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
-| 年代・運動 EN | JA HTML | `python3 scripts/build_taxonomy_en.py`。`--era <YYYY>` / `--slug <movement>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
+| EN年代・運動 `en/eras/*.html` `en/movements/*.html` | **HTML自身** | 新規のみ `python3 scripts/build_taxonomy_en.py --slug <movement>` / `--era <YYYY>` | 直接編集してよい。既存ページへの上書きは常に拒否される |
 
 - EN写真家ページは HTML 自身が正本なので、`en/photographers/<slug>.html` を直接編集して終わり。JSON は読まれない。
 - **`data/photographer-essay-overrides.js` の `textEn` はそろえなくてよい**（2026-09-15 実測で死蔵と確認）。読むのは実行禁止の旧ジェネレータ2本と `textEn` 自身の検査スクリプトだけで、ライブページで `overrides.js` を読む枚数は 0。
@@ -101,7 +102,7 @@ python3 scripts/preflight.py
 - `scripts/preflight.py` と `.githooks/pre-push` は id重複、card-data重複、GA欠落、触ったEN slugの内容消失、EN keyword chip のリンク消失、JA/EN の §REL・本文節の非対称などを検査する。FAILなら push しない。緊急回避は `git push --no-verify`。
   - EN写真家: 触った `en/photographers/*.html` を baseline と比較し、本文・出典の消失、keyword chip のリンク退行、JA ページとの §REL・本文節の非対称を検知する。EN HTML の直接編集は通常手順なので警告しない。
   - EN国別: `data/country-pages.json` の主要情報消失をHARD、`en/countries/*.html` だけの変更を直接編集疑いWARNにする。
-  - EN年代/運動: `data/taxonomy-en-content.json` のメタ・セクション消失をHARD、`en/eras/*.html` / `en/movements/*.html` だけの変更を直接編集疑いWARNにする。
+  - EN年代/運動: HTML 自身が正本なので直接編集は警告しない。触った `en/eras/*.html` / `en/movements/*.html` と対応する JA ページの本文節の非対称を検知する（新規非対称=HARD / baseline にも在る非対称=WARN）。`data/archive/taxonomy-en-content.json` は `check_en_json_frozen()` が1バイト単位で凍結する。
   - ENアーカイブ: `card-data.json` のカード数・id・`nameEn` / `nameJa` / `href` 消失をHARD、`en/archive.html` だけの変更を直接編集疑いWARNにする。
   - 本文消失: `scripts/check_content_loss.py` を同じbaseline・`--strict`で実行して取り込む。写真家リーフ（JA + EN）の明確な本文消失（出典cite / 本文セクション / FIG / thesis / lead の減少）をHARD、構造不変のまま文面だけ変化した「書き換えの疑い」をWARNにする。JA写真家HTML（正本）の本文消失もpush前に自動ブロックされる。
   - SEO/不可視要素: 触った公開HTML（GAと同じ範囲）を baseline 比較し、baselineにあった canonical / JSON-LD / title / meta description / data-nosnippet の消失、または hreflang の減少をHARD。OGP/Twitter減・data-nosnippet部分減・新規ページのコア欠落をWARN。元から無いページ・新規ページはブロックしない（段階導入）。

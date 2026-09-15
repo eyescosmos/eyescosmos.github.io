@@ -11,12 +11,13 @@
 1. **`scripts/generate_photographer_pages.py` を実行しない**。旧デザインを生成し、JAページを旧構造と言語トグル破損へ巻き戻す。物理ガードを解除しない。
 2. **`scripts/generate_archive_pages.py` を実行しない**。
 3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は **EN描画エンジンのモジュール**であり CLI ではない（直接実行は常に非0終了）。**新規作成は EN HTML を importer で直接生成する（`--render-en` 相当）。JSON から再生成する経路はなく、rollback は git で行う。** 詳細 `docs/en-html-canon-migration.md` §11。
-4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ / コロフォン / AI開示）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる（再生成で誤情報が復活するため）。JA写真家ページと EN写真家ページは HTML 自身が正本なので、この項の対象外。
+4. **生成物が正本でないサーフェス（国別 / ENアーカイブ / コロフォン / AI開示）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる（再生成で誤情報が復活するため）。JA写真家ページ・EN写真家ページ・**EN年代/運動ページ**は HTML 自身が正本なので、この項の対象外。
 5. **捏造しない**。出典にない評価・書誌・年・URL・Amazonリンクを推測で作らない。出典準拠。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードが拒否）。写真家1人追加で `--all` は不要（`docs/generators-and-guards.md`「フルリビルド・ガード」）。
 7. **AI開示ブロック（`<!-- AI-DISCLOSURE -->` で括られた3行＋短縮版）を個別HTMLで直さない**。正本は `scripts/ai_disclosure.py`。直しても preflight の `check_ai_disclosure()` が HARD FAIL で止める。文面変更は正本を直して `python3 scripts/inject_ai_disclosure.py --all`。
 8. **TOP12 ハードコードカード（`pc-top` / `idx` / `pc-top--XXX`）、フィルター/ソートUI、カードJSは依頼がない限り触らない**。カードの正は `cards-archive.html` / `card-data.json`。
-9. **凍結EN JSON（`data/archive/photographers-en-content.json` / `data/archive/photographers-en-stage4.json`）を編集しない**。読み取り専用アーカイブで、preflight が変更を HARD で止める（解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`・移行監査と緊急rollbackのみ）。EN ページの正本は `en/photographers/*.html`。
+9. **凍結EN JSON 3本（`data/archive/photographers-en-content.json` / `data/archive/photographers-en-stage4.json` / `data/archive/taxonomy-en-content.json`）を編集しない**。読み取り専用アーカイブで、preflight が変更を HARD で止める（解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`・移行監査と緊急rollbackのみ）。EN ページの正本は `en/photographers/*.html` と `en/movements/*.html` / `en/eras/*.html`。
+10. **既存の `en/movements/*.html` / `en/eras/*.html` を再生成しない**（2026-09-15〜）。`build_taxonomy_en.py` は**新規ページ専用**で、出力先が実在すれば `🛑 REFUSED` で拒否する（解除は `ALLOW_TAXONOMY_REBUILD=1` のみ・`--dry-run` でも解除されない）。修正は EN HTML を直接編集する。詳細 `docs/post-migration-cleanup-plan.md` §10。
 
 ## 正本(source of truth)マトリクス — CRITICAL
 
@@ -28,7 +29,7 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 | EN写真家 `en/photographers/*.html` | **HTML自身** | 新規のみ `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply` | JA と同じく直接編集してよい。既存ページへの上書きは常に拒否される |
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` | |
 | 国別 JA/EN | `data/country-pages.json` | `generate_country_pages.py` / `generate_country_pages_en.py`。`--country <slug>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
-| 年代・運動 EN | JA HTML | `python3 scripts/build_taxonomy_en.py`。`--era <YYYY>` / `--slug <movement>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
+| EN年代・運動 `en/eras/*.html` `en/movements/*.html` | **HTML自身** | 新規のみ `python3 scripts/build_taxonomy_en.py --slug <movement>` / `--era <YYYY>` | JA・EN写真家と同じく直接編集してよい。既存ページへの上書きは常に拒否される（`ALLOW_TAXONOMY_REBUILD=1` の緊急rollback を除く） |
 | AI開示ブロック（全ページ末尾） | `scripts/ai_disclosure.py` | `python3 scripts/inject_ai_disclosure.py --all`（`--only <path>` で1枚） | 個別HTMLを直接編集しない。文面はこのモジュールが正本 |
 | コロフォン `/colophon` · `/en/colophon` | `scripts/build_colophon.py` | `python3 scripts/build_colophon.py` | 実体は `colophon/index.html` / `en/colophon/index.html` |
 | カード枚数表示（archive hero・「表示中 N / M」・トップ/archive の meta 枚数） | `card-data.json` | `python3 scripts/sync_card_counts.py`（`--check` で検査のみ） | 手で数字を打ち直さない。`add_photographer.py --apply-surfaces` 後に自動実行。preflight `check_card_counts()` が HARD FAIL |
@@ -88,7 +89,7 @@ git diff origin/main
 | Codex 並行作業・横断スクリプト・`overrides.js`・本文自動リンク/エイリアス | `docs/content-preservation.md` |
 | **ChatGPT新素材で写真家をバッチ update する（Opus監督/Codex実装）** | `docs/importer-scaffold-inject-spec.md` §14「バッチ update のキックオフ定型」（既知WARN許可リスト・Related削除SKIPの常設承認条件・既存維持フィールド・**素材に生没年が無ければ調べて入れる**・**パイロット1名で回す検証項目**）。**最初のプロンプトにこれを入れないと往復が増える** |
 | ★**移行後はじめて写真家を update / 追加する**（2026-09-15 以降の初回だけ） | `docs/en-html-canon-migration.md` **§13.10「次に写真家を update / 追加するときの検証」**。移行後の経路は fixture でしか通していないので、**実素材の初回だけ**チェックリストを回して `docs/importer-run-log.md` に実測を残す。通れば初回扱いは終了 |
-| EN の**アーカイブ / 年代 / 運動 / 国**ページ（写真家ページではない） | `docs/en-html-canon-migration.md` **§14**。**これらは今回の移行の対象外**で、正本は JA HTML または `data/country-pages.json` のまま。EN 出力HTMLだけ直すと再生成で消える（絶対禁止4番）|
+| EN の**アーカイブ / 国**ページ（写真家・年代・運動ページではない） | `docs/en-html-canon-migration.md` **§14**。**この2つは正本が生成元のまま**（アーカイブ＝JA `archive.html`、国別＝`data/country-pages.json`）。EN 出力HTMLだけ直すと再生成で消える（絶対禁止4番）。**EN年代・運動は 2026-09-15 に HTML 自身が正本へ昇格した**（`docs/post-migration-cleanup-plan.md` §10）|
 | ★**移行後の総ざらい（残骸の掃除・写真家以外の正本化）を始める** | `docs/post-migration-cleanup-plan.md`（**設計から始める引き継ぎ**。再生成ドリフトの実測・3クラスの切り分け・未決の論点4つ・作業規律）。**着手前に §2 の実測と §4 の論点を読む** |
 
 新規 JA 写真家ページの最善手＝参照実装 `photographers/ansel-adams.html` を丸ごとコピーして

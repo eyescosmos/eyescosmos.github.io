@@ -1046,26 +1046,31 @@ python3 scripts/preflight.py | diff /tmp/preflight-before.txt -
 
 ## 14. この移行の対象外だったサーフェス（2026-09-15 時点の正本）
 
-**この移行は写真家ページだけ。** 下の3つは**手を付けていない**。正本は従来どおり。
+**この移行（写真家ページ）の対象外だったサーフェスは4つあった。
+そのうち EN 年代・運動は、続く総ざらい フェーズ6 で同じ昇格を通した（2026-09-15）。**
 
 | サーフェス | 枚数 | 正本 | 生成コマンド | 既存ENへの上書き拒否ガード |
 |---|---:|---|---|---|
 | EN アーカイブ `en/archive.html` | 1 | **JA `archive.html`** | `build_archive_en.py` | **無し** |
-| EN 年代 `en/eras/*.html` | 11 | **JA `eras/*.html`** | `build_taxonomy_en.py --era <YYYY>` | **無し** |
-| EN 運動 `en/movements/*.html` | 66 | **JA `movements/*.html`** | `build_taxonomy_en.py --slug <movement>` | **無し** |
+| EN 年代 `en/eras/*.html` | 11 | **HTML 自身**（フェーズ6で昇格） | 新規のみ `build_taxonomy_en.py --era <YYYY>` | **有り**（`🛑 REFUSED`・解除は `ALLOW_TAXONOMY_REBUILD=1`）|
+| EN 運動 `en/movements/*.html` | 35 | **HTML 自身**（フェーズ6で昇格） | 新規のみ `build_taxonomy_en.py --slug <movement>` | **有り**（同上）|
 | 国別 JA/EN `countries/` `en/countries/` | 62 / 62 | **`data/country-pages.json`** | `generate_country_pages*.py` | **無し** |
 
-**したがって `CLAUDE.md` 絶対禁止4番はこれらに対しては今も有効**：
+**`CLAUDE.md` 絶対禁止4番が今も有効なのは、上の表で「無し」の2つ**（EN アーカイブ・国別）：
 事実修正を EN 出力HTMLだけに入れてはいけない（再生成で消える）。
+**EN 年代・運動はこの項の対象外になった**＝EN HTML を直接編集するのが正規手順。
 
-**写真家ページとの違い**：EN 年代・運動・アーカイブの正本は **JA HTML** であって JSON ではないので、
-移行の動機だった「正本が2系統」「死蔵JSONが増える」という問題は**ここには無い**。
-残っているのは「**EN を直接編集すると再生成で黙って消える**」という一点で、
-これは絶対禁止4番が扱っている。
+**国別を昇格しなかった理由**：正本 `data/country-pages.json` は散文の置き場ではなく
+**本物のデータ正本**（国の登録・掲載写真家の解決）で、二重正本の問題がそもそも無い。
 
-**ただし写真家ビルダーにだけ入れた `🛑 REFUSED` ガードは、この3本には無い。**
-memory に記録のある「EN再生成は運動固有 lede を汎用 lede で潰す（ガード検知なし）」は
-このクラスの事故。**同じ移行をやるかは別途判断する（今回のスコープ外）。**
+**EN 年代・運動を昇格した理由**：`data/taxonomy-en-content.json` が 35運動＋11年代の
+EN 本文・thesis・overview・SEO メタを全部持っており、**写真家ページと同じ「二重正本」構造が
+ここにあった**。昇格でこの JSON は読み取り専用アーカイブ（`data/archive/`）へ降格した。
+
+**昇格の代償（覚えておく）**：写真家を追加しても `build_taxonomy_en.py` が
+EN 年代・運動ページへカードを足さなくなった。**EN 年代ページは必須サーフェス**で、
+`preflight.check_taxonomy_presence()` が HARD で止めるので、カードは手で足す
+（`add_photographer.py` がその手順を表示する）。
 
 > **★続きの計画は `docs/post-migration-cleanup-plan.md` にある**（2026-09-15 作成）。
 > 再生成ドリフトの実測（**運動は 24/35 で退行を含む**）と、未決の論点4つを置いてある。

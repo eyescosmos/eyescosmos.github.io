@@ -244,11 +244,12 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
     **無いなら裸テキスト**にする（存在しないページへの href を作らない）
 - **preflight の EN ガード（写真家以外・2026-06-19 追加）** — 同じ baseline 比較で、触れた
   国別 / 年代・運動 / アーカイブ EN ページにも軽量保護をかける。**正本 JSON のエントリ内容消失＝HARD**
-  （国別=`data/country-pages.json` の lead/nameEn/nameJa/codes、年代・運動=`data/taxonomy-en-content.json`
-  の meta.title/description・sections、アーカイブ=`card-data.json` のカード数・id・nameEn/nameJa/href）、
-  **生成物 EN HTML の直接編集疑い（HTML 変更なのに正本 JSON 不変）＝WARN**。本文が builder 直書きにも
-  ある混在構造（taxonomy）は「JSON が確実に失った」ことだけを HARD にし、closure（再生成漏れ）の HARD は
-  写真家のみ。per-slug リーダは追加していない。
+  （国別=`data/country-pages.json` の lead/nameEn/nameJa/codes、アーカイブ=`card-data.json` のカード数・
+  id・nameEn/nameJa/href）、**生成物 EN HTML の直接編集疑い（HTML 変更なのに正本 JSON 不変）＝WARN**。
+  closure（再生成漏れ）の HARD は写真家のみ。per-slug リーダは追加していない。
+  **★2026-09-15（総ざらい フェーズ6）で年代・運動はこの枠から外れた。** EN タクソノミーHTML が正本へ
+  昇格したため直接編集疑い WARN は撤去し、JA↔EN の本文節対称性チェックへ置き換えた。
+  `data/archive/taxonomy-en-content.json` は `check_en_json_frozen()` の凍結対象。
 - **本文消失ガードをブロック経路へ昇格（2026-06-19 追加）** — `scripts/check_content_loss.py` を
   preflight が共通 baseline・`--strict` で実行し取り込む。**写真家リーフ（JA + EN）の明確な本文消失
   （出典 cite / 本文セクション / FIG / thesis / lead の減少）＝HARD**、**構造不変のまま文面だけ変化した
