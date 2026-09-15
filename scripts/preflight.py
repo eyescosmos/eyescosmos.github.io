@@ -937,7 +937,7 @@ def check_en_rel_annotations() -> None:
 #   - per-slug リーダは追加しない（写真家のみで十分という方針）。
 
 COUNTRY_JSON = "data/country-pages.json"
-TAXONOMY_JSON = "data/taxonomy-en-content.json"
+TAXONOMY_JSON = "data/archive/taxonomy-en-content.json"
 CARD_DATA_JSON = "card-data.json"
 
 

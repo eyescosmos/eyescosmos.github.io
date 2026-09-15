@@ -6,7 +6,7 @@ Rebuild en/movements/<slug>.html (31 files) and en/eras/<id>.html (11 files)
 using the v5.1 Japanese pages as templates, inserting English content.
 
 English content priority:
-  1. data/taxonomy-en-content.json  (harvested from old EN pages)
+  1. data/archive/taxonomy-en-content.json  (read-only archive harvested from old EN pages)
   2. build_archive_en.py MOVEMENT_LEDES table
   3. Manual English translations of Japanese source content
 
@@ -1917,7 +1917,7 @@ def process_era_page(era_id, en_data, id_to_card, dry_run=None):
 
 
 def build_movements(only_slugs=None, dry_run=None):
-    en_data = json.load(open(os.path.join(ROOT, 'data/taxonomy-en-content.json'), encoding='utf-8'))
+    en_data = json.load(open(os.path.join(ROOT, 'data/archive/taxonomy-en-content.json'), encoding='utf-8'))
     id_to_card = load_en_archive_cards()
     photographer_names = load_photographer_names()
 
@@ -1942,7 +1942,7 @@ def build_movements(only_slugs=None, dry_run=None):
 
 
 def build_eras(only_eras=None, dry_run=None):
-    en_data = json.load(open(os.path.join(ROOT, 'data/taxonomy-en-content.json'), encoding='utf-8'))
+    en_data = json.load(open(os.path.join(ROOT, 'data/archive/taxonomy-en-content.json'), encoding='utf-8'))
     id_to_card = load_en_archive_cards(swap_nationality=True)
 
     all_missing = []
