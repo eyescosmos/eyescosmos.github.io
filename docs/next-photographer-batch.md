@@ -97,6 +97,15 @@ python3 scripts/preflight.py > /tmp/preflight-before.txt 2>&1
 残骸撤去のときのような「sha256 全件一致」は条件にならない。**増えた分が意図どおりか**を見る。
 push 後は IndexNow を1本（[[playbook_indexnow_submit]]）。
 
+## 9. このバッチが終わってから考えること（先にやらない）
+
+`docs/post-migration-cleanup-plan.md` **§13** に保留2件を置いてある。
+
+- **EN アーカイブ・国別の「手編集検知」ガード**（未着手・Daisuke の指示待ち）。
+  この2面は上書き拒否ガードが無く、絶対禁止4番を規律だけで守っている。
+  **今日入れた消失検知とは別問題**（あちらは「消える」、こちらは「直したつもりが戻る」）
+- **国別・EN アーカイブを HTML 正本へ昇格するかは「しない」で決着済み**（再提案しない）
+
 ---
 
 **関連**: `docs/importer-scaffold-inject-spec.md` §14（キックオフ定型・最初のプロンプトに入れる）／
