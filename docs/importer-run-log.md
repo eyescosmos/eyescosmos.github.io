@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-15 | (engine)総ざらい フェーズ0 生成器に --dry-run | engine | （Daisuke記入） | 0 | 1（監督のブリーフに検証指示の矛盾＝bare `git diff --exit-code` はソース変更中に成立しない。Codexが指摘） | 5ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-15 | (設計)総ざらい §4 論点決定 spike | design | （Daisuke記入） | 0 | 3（plan §2b の3主張のうち2件が誤りと判明・監督のhref集合比較がspan要素を取りこぼし・Codexが誤って本体で生成器を1回実行→即復元） | 0ファイル（公開HTML 0・1069枚 sha256 HEAD一致） | N/A | N/A |
 | 2026-09-15 | (engine)フェーズF JSON降格＝移行完了 | engine | （Daisuke記入） | 1（jp-漢字のJA解決漏れ） | 3（期待値の破棄・集合分類・Codex上限で監督が引き取り） | 15ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-15 | (engine)フェーズE-2 書き込み経路切替 | engine | （Daisuke記入） | 0 | 1（旧経路9箇所の事前列挙） | 5ファイル（公開HTML 0） | N/A | N/A |

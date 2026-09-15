@@ -308,7 +308,7 @@ title / OG / JSON-LD を全部持っており、EN タクソノミーHTML はそ
 
 | # | フェーズ | 内容 | 公開HTML |
 |---|---|---|---|
-| **0** | 生成器に `--dry-run` | 4本（`build_taxonomy_en` / `build_archive_en` / `generate_country_pages` / `generate_country_pages_en`）。書込点は各1〜3箇所しかない | **0枚** |
+| **0** | 生成器に `--dry-run` | ✅ **完了（`c127f0b6e`）**。共通ヘルパ `scripts/gen_dry_run.py` で would-create / would-change / unchanged に分類。受け入れテストは §9.3 の実測と一致（taxonomy 26 / archive 0 / JA国別 4 / EN国別 13）| **0枚** |
 | **1** | 旧JSON書込経路の撤去 | `reconcile_en_bodies.py` / importer の `--merge-to-en`・`--update-en-json` / `sync_en_rel_annotations` の旧 `--apply`・`--apply-batch` / `harvest_photographers_en.py` / `fix_1839`・`fix_1870`・`fix_1890`・`fix_eugenesmith` | **0枚** |
 | **2** | builder を module-only 化 | `main()` / `_deep_merge_page()` / `CONTENT_JSON` / CLI専用 import を撤去。**エンジン部1,821行は不変更**。直接実行は「module-only」と明示して**非0終了**（現在 `REFUSED` が exit 0 で subprocess 誤判定源） | **0枚** |
 | **3** | EN正本JSONの物理移動 | main 撤去だけでは動かせない。残る読者を先に処理：importer corpus audit `:2804-2817` / `build_en_migration_ledger.py:27-38,324-329` / `preflight.py:67-69,563-581` / `sync_en_rel_annotations.py:48`。**`photographers-en-classification.json` は動かさない**（エンジン部が `jp_slug_mapping` を読む）| **0枚** |
