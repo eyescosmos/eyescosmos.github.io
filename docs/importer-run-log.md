@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-15 | (engine)総ざらい フェーズ4 運動生成器の欠陥修正 | engine | （Daisuke記入） | 0 | 3（sidebar の JA 昇格は公開JAを変えるのでフェーズ5へ移した／target を JA 継承にした実装を監督が実測で差し戻し＝JAは298カード中27件で同一ページ内混在／Codexがクレジット上限で停止し監督が受け入れテストを引き取り） | 2ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-15 | (engine)総ざらい フェーズ3 EN正本JSONを data/archive/ へ移動 | engine | （Daisuke記入） | 0 | 3（生きた `--update-existing` が凍結JSONを読んで存在しない経路を案内していたのを発見・撤去／凍結ガードのbaselineがrename直後に取れない罠へフォールバック追加／Codexが報告した差分に検証中の1バイト改変が写っていたので監督が実ファイルを照合） | 15ファイル・JSON 2本をrename（公開HTML 0） | N/A | N/A |
 | 2026-09-15 | (engine)総ざらい フェーズ2 builder を module-only 化 | engine | （Daisuke記入） | 0 | 2（監督のブリーフが「data/ は1バイトも変えない」と広すぎて台帳再生成と矛盾→Codexが実装前に停止・訂正／`detect_content_loss` を撤去対象から外す判断） | 9ファイル・-203行（公開HTML 0） | N/A | N/A |
 | 2026-09-15 | (engine)総ざらい フェーズ1 旧EN JSON書込経路の撤去 | engine | （Daisuke記入） | 0 | 2（`--bundle-to-en` の去就を実装前に判断させた／Codexが生きているエンジンの契約文書 head fallback まで消したので監督が復元） | 18ファイル・-3,290行（公開HTML 0） | N/A | N/A |
