@@ -1389,6 +1389,24 @@ def check_ja_seo_holes() -> None:
             warnings.append(f"[SEO穴 {rel}] 未設定: {', '.join(missing)}")
 
 
+def _classif_body_text_len(html: str) -> int:
+    """<main> 内の**解説文**の可視テキスト長。カード・AI開示・script/style は除く。
+
+    カード本文を含めると、カードのテキスト量が支配的になって解説文の消失が埋もれる
+    （実測: en/eras/1930.html は main 全体 15,814 文字に対し解説文は約 2,200 文字。
+    解説文を全部消しても全体では14%減にしかならず閾値に掛からなかった）。
+    カードの増減は `cards` メトリクスと `check_taxonomy_presence()` が別に見る。
+    AI開示は全ページ共通の定型で `check_ai_disclosure()` が守る。"""
+    m = re.search(r'<main\b[^>]*>(.*?)</main>', html, re.S | re.I)
+    body = m.group(1) if m else html
+    body = re.sub(r'<!-- AI-DISCLOSURE -->.*?<!-- /AI-DISCLOSURE -->', ' ', body, flags=re.S)
+    body = re.sub(r'<(script|style)\b.*?</\1>', ' ', body, flags=re.S | re.I)
+    body = re.sub(r'<article\b[^>]*class="[^"]*pc-card[^"]*".*?</article>', ' ', body,
+                  flags=re.S | re.I)
+    body = re.sub(r'<[^>]+>', ' ', body)
+    return len(re.sub(r'\s+', '', body))
+
+
 def _classif_metrics(html: str) -> dict:
     return {
         "main": len(re.findall(r'<main\b', html, re.I)),
@@ -1397,17 +1415,23 @@ def _classif_metrics(html: str) -> dict:
         "section": len(re.findall(r'<section\b', html, re.I)),
         "anchors": len(re.findall(r'<a\s', html, re.I)),
         "nosnippet": len(re.findall(r'data-nosnippet', html)),
+        "textlen": _classif_body_text_len(html),
     }
 
 
-def check_ja_classification_loss() -> None:
-    """JA 分類ページ（archive.html / eras / movements）の主要コンテンツが baseline 比で
+def check_classification_loss() -> None:
+    """分類ページ（archive / eras / movements）の主要コンテンツが baseline 比で
     大きく消えていないか。HTML が正本のため軽量メトリクスで明確な消失だけ拾う。
-    main 領域消失・h1 消失・カード数減＝HARD、section/リンク/nosnippet 減＝WARN。
-    国別は JSON 正本なので今回は対象外。"""
+    main 領域消失・h1 消失・カード数減・本文半減＝HARD、
+    section/リンク/nosnippet 減・本文15%減＝WARN。
+
+    ★2026-09-15 に EN 側（en/eras・en/movements・en/archive.html）へ拡張した。
+    EN 年代・運動は HTML 自身が正本へ昇格して **再生成で復元できなくなった**のに、
+    この検知が JA だけに掛かっていた（h1 を消しても素通りすることを実測で確認）。
+    国別は JSON 正本（再生成で戻る）なので対象外のまま。"""
     baseline = _baseline_ref()
-    targets = _touched_html(baseline, ["eras", "movements"])
-    targets += [(rel, html) for rel, html in _touched_html(baseline, ["."])
+    targets = _touched_html(baseline, ["eras", "movements", "en/eras", "en/movements"])
+    targets += [(rel, html) for rel, html in _touched_html(baseline, [".", "en"])
                 if os.path.basename(rel) == "archive.html"]
     for rel, work_html in targets:
         base_html = _git_show(baseline, rel)
@@ -1421,9 +1445,12 @@ def check_ja_classification_loss() -> None:
             hard.append("h1 消失")
         if wm["cards"] < bm["cards"]:
             hard.append(f"カード {bm['cards']}→{wm['cards']}")
+        text_hard = bm["textlen"] >= 200 and wm["textlen"] < bm["textlen"] * 0.5
+        if text_hard:
+            hard.append(f"本文 {bm['textlen']}→{wm['textlen']} 文字")
         if hard:
             hard_failures.append(
-                f"[JA分類 {rel}] 主要コンテンツが消失: " + " / ".join(hard))
+                f"[分類 {rel}] 主要コンテンツが消失: " + " / ".join(hard))
         warn = []
         if wm["section"] < bm["section"]:
             warn.append(f"section {bm['section']}→{wm['section']}")
@@ -1431,8 +1458,12 @@ def check_ja_classification_loss() -> None:
             warn.append(f"リンク {bm['anchors']}→{wm['anchors']}")
         if wm["nosnippet"] < bm["nosnippet"]:
             warn.append(f"data-nosnippet {bm['nosnippet']}→{wm['nosnippet']}")
+        if (not text_hard and bm["textlen"] >= 200
+                and bm["textlen"] - wm["textlen"] >= 200
+                and wm["textlen"] < bm["textlen"] * 0.85):
+            warn.append(f"本文 {bm['textlen']}→{wm['textlen']} 文字")
         if warn:
-            warnings.append(f"[JA分類 {rel}] 指標が減少（要確認）: " + " / ".join(warn))
+            warnings.append(f"[分類 {rel}] 指標が減少（要確認）: " + " / ".join(warn))
 
 
 JSONLD_DATE_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
@@ -2452,7 +2483,7 @@ def main() -> int:
     check_content_loss_guard()
     check_seo_invisible_loss()
     check_ja_seo_holes()
-    check_ja_classification_loss()
+    check_classification_loss()
     check_jsonld_birthdate()
     check_jsonld_person_key_regression()
     check_new_photographer_pages()

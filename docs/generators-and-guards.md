@@ -285,10 +285,19 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
   data-nosnippet が消失、または hreflang が減った場合＝HARD**。OGP・Twitter の減少・data-nosnippet の部分減・
   新規ページのコア要素欠落＝WARN。元から無いページ・新規ページはブロックしない（段階導入）。stub / backup /
   google確認ファイルは対象外。「既存の SEO/スニペット対策が作業で消える事故」を止めるのが目的（既存穴の全修正は別案件）。
-- **JA 分類ページの本文消失ガード（2026-06-19 追加）** — `check_ja_classification_loss()` が触った
-  `archive.html` / `eras/*` / `movements/*`（HTML が正本）を baseline 比較し、**`<main>` 領域消失・`<h1>` 消失・
-  `pc-card` 数の減少＝HARD**、section 数・リンク数の大幅減・data-nosnippet 減＝WARN。国別は JSON 正本のため
-  今回は対象外。軽量 HTML メトリクスで明確な消失だけを拾い、文言変更だけでは鳴らない。
+- **分類ページの本文消失ガード（2026-06-19 追加 / 2026-09-15 に EN へ拡張）** — `check_classification_loss()`
+  が触った `archive.html` / `eras/*` / `movements/*` と **`en/archive.html` / `en/eras/*` / `en/movements/*`**
+  （いずれも HTML が正本）を baseline 比較し、**`<main>` 領域消失・`<h1>` 消失・`pc-card` 数の減少・
+  解説文の半減＝HARD**、section 数・リンク数の大幅減・data-nosnippet 減・解説文の15%以上かつ200文字以上の
+  減少＝WARN。国別は JSON 正本（再生成で戻る）のため対象外。軽量 HTML メトリクスで明確な消失だけを拾い、
+  文言変更だけでは鳴らない。
+
+  **★EN へ拡張した理由（2026-09-15・実測）**: EN 年代・運動は HTML 自身が正本へ昇格して
+  **再生成で復元できなくなった**（`build_taxonomy_en.py` は既存を `🛑 REFUSED`）のに、この検知が
+  JA だけに掛かっていた。`en/eras/1930.html` の `<h1>` を消しても preflight が素通りすることを実測で確認した。
+  同時に**解説文の文字数**メトリクスを追加した。従来は JA・EN どちらも解説文だけの消失を検知できず、
+  これは両者に共通の死角だった。文字数はカードを除いて数える —— `en/eras/1930.html` は `<main>` 全体
+  15,814 文字に対し解説文は 1,449 文字しかなく、カード込みで測ると解説文を全部消しても14%減にしかならない。
 - **JA 写真家ページの SEO 穴検知 WARN（2026-06-19 追加）** — `check_ja_seo_holes()` が触った
   `photographers/*.html` を baseline 比較し、**canonical / OGP / data-nosnippet / hreflang / meta description /
   JSON-LD が「元から無い（付け忘れ・新規ページ）」場合に WARN**。上の消失ガードは「baseline にあったものが
