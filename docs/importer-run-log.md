@@ -128,6 +128,8 @@
 - **最終検証**：`check_content_loss` / `preflight` / `sync_card_counts --check` / `check_photographer_link_integrity` EXIT 0。作業前ベースラインからの新規 WARN は6件＝`[EN country …]` 5面（スコープ再生成で byte 一致を実測＝偽陽性）＋`本文の書き換えの疑い`（リンク挿入のみ・プレーンテキスト不変を実測）。`link_country_keywords.py` 未実行。
 - **Codex トークン**：blended 138,337（出力 24,396）。
 - **§13.10 の初回扱い**：新規追加経路は実素材で通過＝**終了**。ただし renderer の欠落2件（JA title 非伝播／EN Person JSON-LD）と素材 §REL 書式ずれは手補完のまま（engine 修正するかは Daisuke 判断待ち）。
+- **push**：`cfa465d47`（58ファイル＝変更46＋新規12。`scripts/*-spec.json` は従来どおり非追跡）。push前チェック `git pull`（up to date）/ `check_content_loss` / `preflight` / `sync_card_counts --check` / `check_photographer_link_integrity` / 6名の `check_en_entry`・`check_new_photographer` 全 EXIT 0。pre-push フック通過。本番で新規ページ 200 を確認。
+- **IndexNow**：①`--since 'origin/main@{1}'` 43 URL（トップ2件は既知どおり skip）②`--urls` でトップ `/`・`/en/` と JA 運動4面（percent-encode）＝6 URL。いずれも HTTP 200。
 - **wall-time**：（Daisuke記入）
 
 ## 2026-09-12 — 0912素材パイロット `christer-stromholm`（idx 396・種別=new・Opus監督 / Codex実装）
