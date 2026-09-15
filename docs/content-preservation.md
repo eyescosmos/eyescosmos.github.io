@@ -26,12 +26,13 @@ EN ビルダーを走らせるとき、`photographer-essay-overrides.js` を編�
   - 作品画像 / Work images セクション
   - 出典 / Sources セクション
   - **外部リンク（chip-link ボタン）** — 後述のジェネレータ実行前チェックで防ぐ
-- `photographer-essay-overrides.js` を編集した場合は、push 前に必ず以下を実行する：
-  ```
-  python3 scripts/check_texten_completeness.py
-  ```
-  - OK が出ればそのまま push する
-  - WARN が出たら、該当エントリの textEn が途中で切れていないか確認し、不足セクションを補完してから push する
+- `photographer-essay-overrides.js` の `textJa` / `textEn` は 2026-09-15 に撤去した（死蔵・446プロパティ）。
+  検査スクリプト `check_texten_completeness.py` も同時に削除済み。**書き戻さないこと。**
+  - 現在このファイルで生きているのは `leadEn` / `leadJa`（265件）。`build_archive_en.py` が
+    `en/archive.html` のカード lede の最優先ソースとして読み、`relations.html` / `en/relations.html` の
+    2枚が `global-search.js` 経由で実行時に読む。**lead 系を消すとこの3面が壊れる。**
+  - このファイルを編集したら `python3 scripts/build_archive_en.py --dry-run` が
+    would-change 0 のままであることを確認する。
   - このチェックで防ぐ問題：textJa には経歴・表現解説・批評と受容があるのに textEn が途中で切れている状態（過去に発生）
 
 ### Codex の変更を pull する前（必須）

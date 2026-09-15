@@ -21,7 +21,6 @@ disable-model-invocation: true
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` |
 
 - EN HTML を直接編集しても再生成で消える。必ず正本を直して再生成する
-- EN写真家の事実修正では、必要に応じて `data/photographer-essay-overrides.js` の `textEn` も同内容にそろえる
 - 手書き維持ページ（例: lee-miller, shoji-ueda）はブラインド再生成禁止。迷ったら `--dry-run` で確認する
 
 ## 英訳スタイルの正本
