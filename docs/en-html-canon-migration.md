@@ -1,6 +1,6 @@
 # EN写真家ページ 正本HTML化 — 移行計画（新規セッション用の引き継ぎ）
 
-**いつ読むか:** `en/photographers/*.html` の正本を `data/photographers-en-content.json` から
+**いつ読むか:** `en/photographers/*.html` の正本を `data/archive/photographers-en-content.json` から
 HTML自身へ移す作業を始めるとき。設計は 2026-09-12 に Opus 監督 / Codex 設計で確定。
 **この文書が方針の正本。** 実装セッションはまずこれを読む。
 
@@ -747,7 +747,7 @@ Codex はそのとおり2つで実装し、**`cite-id が重複`（FAIL）と `c
 - 具体的には importer の旧EN JSONマージ経路を通常フローから外し、旧stage4注入後に
   builderを起動していた検証も現行rendererへ付け替える
 - **E-2 で初めて `CLAUDE.md` / `AGENTS.md` の正本マトリクスを更新する。**
-  「EN写真家ページ（新規作成のみ）＝ `data/photographers-en-content.json`」の行を落とし、
+  「EN写真家ページ（新規作成のみ）＝ `data/archive/photographers-en-content.json`」の行を落とし、
   JA と同じ「HTML自身が正本」1行にまとめる。**E-2 より前に書き換えないこと**
 - 完了条件は §2b のとおり「**通常フローに JSON 編集と builder 実行が一度も現れない**」。
   D・E-1 と同じく **820枚の sha256 不変**も入れる
@@ -759,7 +759,7 @@ Codex はそのとおり2つで実装し、**`cite-id が重複`（FAIL）と `c
 ### 12.1 これで「新規作成もHTML正本」になった
 
 **旧：** importer は EN 素材から**断片 JSON を `outputs/import-preview/` に吐くだけ**で、
-人間がそれを `data/photographers-en-content.json` へ手で移植し、
+人間がそれを現在の `data/archive/photographers-en-content.json` へ手で移植し、
 `build_photographers_en.py --slug` を回して初めて EN ページが出来ていた。
 
 **新：** 通常モード1本で JA→EN の順に HTML を直接生成する。
@@ -791,7 +791,7 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 ```
 変更前:
 | EN写真家 …（**既存**）      | HTML自身 | なし（手編集・永続） |
-| EN写真家 …（**新規作成のみ**）| data/photographers-en-content.json | build_photographers_en.py --slug |
+| EN写真家 …（**新規作成のみ**）| data/archive/photographers-en-content.json | build_photographers_en.py --slug |
 
 変更後（1行）:
 | EN写真家 `en/photographers/*.html` | **HTML自身** | 新規のみ importer 通常モード | 既存への上書きは常に拒否 |
@@ -832,8 +832,8 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 
 §2b・§5 の裁定どおり **JSON は削除せず読み取り専用アーカイブへ移す**。1時間の想定。
 
-- **移す対象**：`data/photographers-en-content.json`（415 entries・12.4MB）/
-  `data/photographers-en-stage4.json`（1 entry）/ `data/photographers-en-classification.json`
+- **移す対象**：`data/archive/photographers-en-content.json`（415 entries・12.4MB）/
+  `data/archive/photographers-en-stage4.json`（1 entry）/ `data/photographers-en-classification.json`
 - **ただし `-classification.json` は `jp_slug_mapping`（17ペア）を
   `build_photographers_en.build_jp_slug_map()` が現役で読む**（§9.5）。
   凍結 builder は触らない方針なので、**このファイルだけは動かさないか、
@@ -857,20 +857,24 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 | EN写真家ページの正本は？ | **`en/photographers/*.html` そのもの。** 既存修正も新規作成も同じ |
 | 既存ページを直すには？ | **EN HTML を直接編集して終わり。** JA と同じ |
 | 新規ページを作るには？ | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`（JA→EN の順に両方できる） |
-| `data/photographers-en-content.json` は？ | **読み取り専用アーカイブ。編集すると preflight が HARD で止める** |
+| `data/archive/photographers-en-content.json` は？ | **読み取り専用アーカイブ。編集すると preflight が HARD で止める** |
 | `build_photographers_en.py` は？ | **EN描画エンジンの module-only ファイル。** importer が関数を利用する。直接実行は非0終了し、JSON再生成経路はない。rollback は git |
 
-### 13.2 ★JSONファイルは物理的に動かさなかった（§2b からの意図的な逸脱）
+### 13.2 ★フェーズ3で JSON アーカイブを物理移動した
 
-§2b は「アーカイブへ**移す**」と書いていたが、**移していない。** 理由:
+フェーズF当時は残存読者があったため物理移動を見送ったが、総ざらいフェーズ2で
+builder の CLI 読み込みを撤去し、フェーズ3で残る正当な読者を更新して次の2本を移動した。
 
-- フェーズF当時は `data/photographers-en-content.json` を**凍結中の `build_photographers_en.py` が読んでいた**。
-  **総ざらいフェーズ2でこの読み込みは撤去済み。** 他の残存読者の処理と物理移動はフェーズ3で行う。
-- `data/photographers-en-classification.json` の `jp_slug_mapping`（17ペア）も同じ（§9.5）
+- `data/archive/photographers-en-content.json`
+- `data/archive/photographers-en-stage4.json`
 
-**代わりに「降格」を次の3つで実装した。移動より強い。**
+`data/photographers-en-classification.json` はエンジン部の `jp_slug_mapping`（17ペア）が現役で読むため動かしていない。
+凍結ガードは rename 直後の `origin/main` に新パスが無い間だけ旧パスの baseline へフォールバックし、
+フェーズ3が main に載れば新パスを直接比較する。
 
-1. **通常スクリプトからの読み書き参照を0にした**（§2b の完了条件そのもの）
+**降格と凍結は次の3点で維持している。**
+
+1. **公開HTMLの通常生成・更新経路からの読み書き参照を0にした**
 2. **`preflight.check_en_json_frozen()` を新設** —
    base / stage4 が baseline から**1バイトでも変化したら HARD**。
    解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1` のみ。実データで発火と解除を確認済み
@@ -879,16 +883,15 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 **`check_en_content_loss()`（JSON の内容"消失"だけを見ていた）はこれに置き換えた。
 カバレッジは縮小ではなく拡大**（消失だけでなく、あらゆる変更を止める）。
 
-### 13.3 参照0の証明（§2b の完了条件）
+### 13.3 残存読者の全件（§2b の完了条件）
 
-`grep -rn "photographers-en-content\|photographers-en-stage4" scripts/*.py` の全ヒットは
-次の3分類だけで、**(d) それ以外＝0件**。
+新パスを読む経路は次の3分類だけで、通常の公開HTML生成経路に読者は無い。
 
 | 分類 | スクリプト |
 |---|---|
-| (a) 凍結 builder | `build_photographers_en.py` |
+| (a) コーパス監査（正当な読者） | `import_chatgpt_photographer.py --audit-corpus` |
 | (b) 台帳生成器（正当な読者） | `build_en_migration_ledger.py` |
-| (c) 旧JSON書込経路 | **フェーズ1で撤去済み。** importerの旧マージ・stage4注入・bundle出力CLI、§REL同期ツールのJSON適用2モード、移行監査2本、一回限り修正4本を削除 |
+| (c) 凍結ガード | `preflight.py` |
 
 `en_content.py` の `load_data()` / `load_pages()` / `JSON_PATH` は**呼び出し元0を実測してから削除**した。
 

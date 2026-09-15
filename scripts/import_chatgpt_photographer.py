@@ -1656,7 +1656,7 @@ def _en_view_works_links_html(works: list) -> str | None:
 
 
 def bundle_to_en_entry(bundle: dict, slug: str | None = None) -> dict:
-    """EN bundle を data/photographers-en-content.json の page エントリ dict へ変換。
+    """EN bundle を renderer が受け取る page エントリ dict へ変換。
     必須欠落は中断（§3.4）。HAND_MAINTAINED の維持は呼び出し側の責務（機械生成一本化
     はしない）。本文は EN 素材由来で既に英語＝ここでの和→英翻訳・ui-terms 追記は不要。"""
     slug = slug or bundle.get("slug")
@@ -2351,18 +2351,12 @@ def run_update_existing(slug: str, ja_path: Path, en_path: Path | None,
     desc = _derive_meta_description(spec, bundle)
     plan.append(f"description  : {'lead 由来で自動充填' if desc else '導出不可＝要手記入'}"
                 + (f"（{desc[:32]}…）" if desc else ""))
-    if en_path and CONTENT_JSON.exists():
-        pages = json.loads(CONTENT_JSON.read_text(encoding="utf-8")).get("pages", {})
-        cur = pages.get(f"{slug}.html", {})
-        for k in ("external_links_html", "photobooks_html", "further_reading_html",
-                  "notable_works_html", "entry_meta_html"):
-            v = cur.get(k)
-            if v:
-                plan.append(f"[EN] {k} : 既存{len(v)}字 ⇒ C(EN全フィールドマージ)で保全予定")
     for p in plan:
         print(f"    • {p}")
 
-    print("[残る手作業] works 固有名の ui-terms 追加（EN 側）")
+    if en_path:
+        print(f"[EN] このモードは EN を変更しない。"
+              f"en/photographers/{slug}.html の既存内容を直接確認する")
     if prepare:
         _prepare_update(slug, spec)
 
@@ -2390,7 +2384,7 @@ def extract_en_fragment(en_html: str, slug: str) -> tuple[dict, dict]:
     fields, meta = extract_en_candidate_fields(en_html, slug)
     sections = fields.get("sections") or []
     fragment = {
-        "_note": "v2 抽出のプレビュー断片。正本 data/photographers-en-content.json には未注入。",
+        "_note": "v2 抽出のプレビュー断片。読み取り専用 EN JSON アーカイブには未注入。",
         "slug": slug,
         "family": meta["family"],
         "section_count": len(sections),
@@ -2416,10 +2410,10 @@ def extract_en_fragment(en_html: str, slug: str) -> tuple[dict, dict]:
     return fragment, report
 
 
-# ── 読み取り専用コーパス監査（Phase 1・正本/HTML 不可触・書込は outputs/ のみ） ─
+# ── 読み取り専用コーパス監査（Phase 1・アーカイブ/HTML 不可触・書込は outputs/ のみ） ─
 
-CONTENT_JSON = REPO / "data" / "photographers-en-content.json"
-STAGE4_JSON = REPO / "data" / "photographers-en-stage4.json"
+ARCHIVED_CONTENT_JSON = REPO / "data" / "archive" / "photographers-en-content.json"
+ARCHIVED_STAGE4_JSON = REPO / "data" / "archive" / "photographers-en-stage4.json"
 
 # EN 素材ファイルの判定（JA 素材を除外）。大文字 "EN" サフィックス（例 morimuraEN /
 # 「… EN」）または小文字トークン "_en" / "-en"（例 michio-hoshino_en / toyoko-tokiwa-en）。
@@ -2427,11 +2421,11 @@ STAGE4_JSON = REPO / "data" / "photographers-en-stage4.json"
 EN_FILE_RE = re.compile(r'EN|[_-]en')
 
 
-def _load_canonical_pages() -> dict:
-    """正本 EN ページ = content.json['pages'] に stage4['pages'] を後勝ち merge（builder と同順）。"""
-    pages = dict(json.loads(CONTENT_JSON.read_text(encoding="utf-8"))["pages"])
-    if STAGE4_JSON.exists():
-        pages.update(json.loads(STAGE4_JSON.read_text(encoding="utf-8")).get("pages", {}))
+def _load_archived_en_pages() -> dict:
+    """凍結 EN JSON アーカイブの pages を当時の優先順位で読む。"""
+    pages = dict(json.loads(ARCHIVED_CONTENT_JSON.read_text(encoding="utf-8"))["pages"])
+    if ARCHIVED_STAGE4_JSON.exists():
+        pages.update(json.loads(ARCHIVED_STAGE4_JSON.read_text(encoding="utf-8")).get("pages", {}))
     return pages
 
 
@@ -2451,8 +2445,8 @@ def _build_name_index(pages: dict) -> dict:
     return idx
 
 
-def _match_canonical(en_html: str, pages: dict, name_index: dict) -> tuple[str | None, str | None]:
-    """素材を正本 page-key に対応づける。返り値 (key, hero_name)。"""
+def _match_archived(en_html: str, pages: dict, name_index: dict) -> tuple[str | None, str | None]:
+    """素材を凍結アーカイブの page-key に対応づける。返り値 (key, hero_name)。"""
     hero = _hero_name(en_html)
     if not hero:
         return None, None
@@ -2502,13 +2496,13 @@ def _compare_field(field: str, extracted, canonical) -> dict:
 
 
 def run_audit(corpus_dir: Path) -> int:
-    """素材 dir の EN 素材を一括抽出し、既存正本と read-only で diff。
-    レポートを outputs/import-preview/audit-<ts>.{json,md} へ書く。正本/HTML は触らない。"""
+    """素材 dir の EN 素材を一括抽出し、凍結アーカイブと read-only で diff。
+    レポートを outputs/import-preview/audit-<ts>.{json,md} へ書く。アーカイブ/HTML は触らない。"""
     import datetime
     if not corpus_dir.exists():
         sys.stderr.write(f"ERROR: 監査対象 dir が見つからない: {corpus_dir}\n")
         return 2
-    pages = _load_canonical_pages()
+    pages = _load_archived_en_pages()
     name_index = _build_name_index(pages)
     text_fields = [f for f in EN_CANDIDATE_FIELDS
                    if f not in ("cite_ids", "supref_ids", "sections")]
@@ -2522,7 +2516,7 @@ def run_audit(corpus_dir: Path) -> int:
         except AssertionError as e:
             per_file.append({"file": p.name, "error": str(e)})
             continue
-        key, hero = _match_canonical(en_html, pages, name_index)
+        key, hero = _match_archived(en_html, pages, name_index)
         entry = {
             "file": p.name, "hero": hero, "family": meta["family"],
             "matched_key": key,
@@ -2565,7 +2559,7 @@ def run_audit(corpus_dir: Path) -> int:
     PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
     ts = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     report = {
-        "_note": "Phase 1 read-only audit。正本/HTML は不可触。書込は outputs/ のみ。",
+        "_note": "Phase 1 read-only audit。凍結アーカイブ/HTML は不可触。書込は outputs/ のみ。",
         "generated_at": ts, "corpus_dir": str(corpus_dir),
         "en_files": len(en_files),
         "matched": sum(1 for e in per_file if e.get("matched_key")),
@@ -2576,7 +2570,7 @@ def run_audit(corpus_dir: Path) -> int:
     out_md = PREVIEW_DIR / f"audit-{ts}.md"
     out_md.write_text(_render_audit_md(report), encoding="utf-8")
 
-    print(f"監査: EN素材 {len(en_files)} 件 / 正本マッチ {report['matched']} 件")
+    print(f"監査: EN素材 {len(en_files)} 件 / アーカイブマッチ {report['matched']} 件")
     for fam in ("A", "B", "unknown"):
         s = summary[fam]
         print(f"  Family {fam}: matched={s['matched_files']}")
@@ -2590,8 +2584,8 @@ def _render_audit_md(report: dict) -> str:
     L.append(f"# EN 抽出カバレッジ監査 — {report['generated_at']}")
     L.append("")
     L.append(f"- 素材dir: `{report['corpus_dir']}`")
-    L.append(f"- EN素材: {report['en_files']} 件 / 正本マッチ: {report['matched']} 件")
-    L.append("- **read-only**: 正本JSON・HTMLは不可触。書込は `outputs/import-preview/` のみ。")
+    L.append(f"- EN素材: {report['en_files']} 件 / アーカイブマッチ: {report['matched']} 件")
+    L.append("- **read-only**: 凍結アーカイブ・HTMLは不可触。書込は `outputs/import-preview/` のみ。")
     L.append("")
     for fam, label in (("A", "旧テンプレ＝正本と同クラス体系"),
                        ("B", "新v5.1 ph-* テンプレ＝要クラス変換"),
@@ -2866,8 +2860,8 @@ def main(argv=None) -> int:
     ap.add_argument("--apply", action="store_true", help="実書き込み（無指定は dry-run）")
     ap.add_argument("--force", action="store_true", help="既存 photographers/<slug>.html を上書き（backup あり）")
     ap.add_argument("--audit-corpus", metavar="DIR",
-                    help="読み取り専用監査モード: DIR の EN 素材を一括抽出し既存正本と diff "
-                         "（正本/HTML 不可触・書込は outputs/import-preview/ のみ）")
+                    help="読み取り専用監査モード: DIR の EN 素材を一括抽出し凍結アーカイブと diff "
+                         "（アーカイブ/HTML 不可触・書込は outputs/import-preview/ のみ）")
     ap.add_argument("--extract-bundle", metavar="PATH",
                     help="M2 検証（read-only）: 単一素材から ContentBundle を抽出し JSON を "
                          "stdout 出力（正本・HTML は不可触）")

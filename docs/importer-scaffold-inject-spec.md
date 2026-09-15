@@ -492,7 +492,7 @@ Keywords / description / 本文 / 出典 / thesis / §REL は**素材が正**。
 探す順序（上から。だいたい1〜2手で埋まる）：
 
 1. **そのページ自身の JSON-LD** の `birthDate` / `deathDate`
-2. **`data/photographers-en-content.json` の `pages[<slug>.html].years`**
+2. **`data/archive/photographers-en-content.json` の `pages[<slug>.html].years`**
 3. **そのページが既に持っている出典**（`§ SRC` の美術館・アーカイブ・ギャラリーURL）
 4. 1〜3に無ければ**一次情報を調べる**（美術館・公的アーカイブ・所属ギャラリー・
    artplatform.go.jp・Wikidata等。`memory/reference_research_sites.md` の優先参照先）
@@ -559,7 +559,7 @@ Keywords / description / 本文 / 出典 / thesis / §REL は**素材が正**。
   - `preflight.py` の `check_sidebar_search_wiring()` が HARD FAIL で自動検出するが、**バッチ報告に実測値を1行書く**
     （例: `検索配線 OK（runtime解決形 N/N・未解決リテラル0）`）。ガードは `ph-search-*` リテラルしか見ないので、
     scaffold に**別の自slug固定値**が新しく増えていないかは目視でも確認する
-- `data/photographers-en-content.json` のキー数不変・変更キーが対象slugのみ・`_meta` 不変
+- `data/archive/photographers-en-content.json` は byte 不変（現在は読み取り専用アーカイブ）
 - 禁止面（card-data / cards-archive / archive / eras / countries / movements / design / styles / new-design）差分0
 - 素材原本の SHA-256 が作業前後で不変
 

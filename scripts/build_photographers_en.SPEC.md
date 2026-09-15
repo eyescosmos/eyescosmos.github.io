@@ -1,11 +1,11 @@
 # build_photographers_en.py 仕様（Stage 2/3 — 写真家ページ英語化）
 
 目的: JA v5.1 ページ（`photographers/*.html`、293件、構造は全ページ均一）をテンプレートに、
-収穫済み英文（`data/photographers-en-content.json` の `pages`、281件に本文あり）を流し込み、
+収穫済み英文（`data/archive/photographers-en-content.json` の `pages`、281件に本文あり）を流し込み、
 `en/photographers/<slug>.html` を上書き生成する冪等スクリプト。
 
 ## 入出力・対象
-- 入力: JA ページ、`data/photographers-en-content.json`、`data/photographers-en-classification.json`
+- 旧 CLI の入力: JA ページ、`data/archive/photographers-en-content.json`、`data/photographers-en-classification.json`
 - 出力ファイル名: JA と同名。ただし `jp-漢字.html` は classification の `jp_slug_mapping` を逆引きしてローマ字名で出力（例 `jp-植田正治.html` → `shoji-ueda.html`）
 - スキップ: classification `missing_en_true` の12件（英文なし、Stage 4）。`en/photographers/jp-*.html` のリダイレクトスタブと `stieglitz-backup.html` には触れない
 - CLI: `--slug X`（複数可）/ `--pilot`（ansel-adams, moriyama, jp-植田正治→shoji-ueda, alexander-gardner, aglaia-konrad）/ `--all`

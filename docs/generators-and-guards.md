@@ -206,7 +206,7 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
   読む導線・検査導線（読み取り専用）。slug は通称可（`atget`→`eugene-atget`）。共通解決は
   `scripts/en_content.py`。`check_en_entry.py --all` で全 297 件検査（既存不具合は WARN/FAIL で可視化）。
 - **preflight の EN ガード（push 時に実効）** — baseline（`origin/main` 等）と比較し、触れた EN slug
-  （`data/photographers-en-content.json` の差分 ∪ `en/photographers/*.html` の差分）について：
+  （`en/photographers/*.html` の差分）について：
   - **本文・出典・thesis・リンクの消失**＝HARD（push ブロック）
   - **keyword chip（`ph-kw` / `ph-side-chip`）のリンク退行**＝HARD。baseline でリンク付きだった chip が
     裸 span になる・href が変わると止める（2026-09-13 追加。`--all` 再生成で 28 ページに起きる事故クラス）
@@ -216,8 +216,8 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
   - **JSON closure と「EN HTML 直接編集疑い」は 2026-09-13 に削除した**。EN HTML の直接編集が通常手順に
     なったため（`docs/en-html-canon-migration.md` §2a）。
   既存不具合 10 件は「触った時だけ」可視化され、無関係な push はブロックしない（スコープが baseline）。
-- **preflight の EN正本JSON凍結ガード（`check_en_json_frozen()` / 2026-09-15 フェーズF）** —
-  `data/photographers-en-content.json` / `data/photographers-en-stage4.json` は物理的には `data/` に残すが、
+- **preflight の EN JSON アーカイブ凍結ガード（`check_en_json_frozen()` / 2026-09-15 フェーズF、フェーズ3で物理移動）** —
+  `data/archive/photographers-en-content.json` / `data/archive/photographers-en-stage4.json` は
   読み取り専用アーカイブ。`origin/main` から1バイトでも変化すると HARD FAIL する。EN 写真家ページの正本は
   `en/photographers/*.html`。解除は移行監査・緊急rollback時の `ALLOW_EN_JSON_ARCHIVE_WRITE=1` だけ。
 - **preflight の EN 写真家入口ガード（`check_en_entry_point`）** — JA `hreflang="en"` の実ページと `build_archive_en.EN_SLUG_BY_ID`／リダイレクト shim を含むビルダー入口の不整合を全カードで検査し、リンク切れ・入口欠落・実ページ二重化を HARD FAIL にする。

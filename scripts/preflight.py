@@ -65,8 +65,11 @@ except Exception:  # noqa: BLE001
 from sync_card_counts import PHOTO_ARTICLE_RE, PHOTO_HREF_RE  # noqa: E402
 
 EN_JSON_ARCHIVE_PATHS = tuple(
-    "data/photographers-en-" + name + ".json" for name in ("content", "stage4")
+    "data/archive/photographers-en-" + name + ".json" for name in ("content", "stage4")
 )
+EN_JSON_ARCHIVE_LEGACY_PATHS = {
+    rel: rel.replace("data/archive/", "data/", 1) for rel in EN_JSON_ARCHIVE_PATHS
+}
 
 
 def eval_photographers() -> list[dict]:
@@ -570,11 +573,20 @@ def check_en_json_frozen() -> None:
             capture_output=True,
             cwd=REPO,
         )
+        if base.returncode != 0:
+            # Phase 3 rename が origin/main に載るまでの移行用。この commit が
+            # main へ merge され、作業ブランチが全てそれ以降になれば削除できる。
+            legacy_rel = EN_JSON_ARCHIVE_LEGACY_PATHS[rel]
+            base = subprocess.run(
+                ["git", "show", f"origin/main:{legacy_rel}"],
+                capture_output=True,
+                cwd=REPO,
+            )
         path = REPO / rel
         work = path.read_bytes() if path.exists() else None
         if base.returncode != 0 or work != base.stdout:
             hard_failures.append(
-                f"{rel}: EN正本JSON は読み取り専用アーカイブ（フェーズF・2026-09-15）。"
+                f"{rel}: 凍結EN JSON は読み取り専用アーカイブ（フェーズF・2026-09-15）。"
                 "EN ページの正本は en/photographers/*.html。"
                 "変更が必要な移行監査・緊急rollback のときだけ "
                 "ALLOW_EN_JSON_ARCHIVE_WRITE=1 で解除。"

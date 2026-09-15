@@ -6,7 +6,7 @@ Stage 2/3 — Photographer-page Englishization.
 
 Rebuild en/photographers/<slug>.html using the v5.1 Japanese pages
 (photographers/*.html) as structural templates and injecting harvested
-English content from data/photographers-en-content.json.
+English content supplied by the caller; the former corpus is archived under data/archive/.
 
 Idempotent overwrite generator. Python 3 stdlib only.
 

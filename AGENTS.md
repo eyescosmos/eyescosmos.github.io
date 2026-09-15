@@ -11,7 +11,7 @@
 5. **捏造しない**。出典にない評価・書誌・URL・Amazonリンクを推測で作らない。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードで拒否）。写真家1人追加で `--all` は不要。安全な生成コマンド集は `docs/generators-and-guards.md`「フルリビルド・ガード」。
 7. **TOP12 ハードコードカード（`pc-top` / `idx` / `pc-top--XXX`）、フィルター/ソートUI、カードJSは依頼がない限り触らない**。カードの正は `cards-archive.html` / `card-data.json`。
-8. **EN正本JSON（`data/photographers-en-content.json` / `data/photographers-en-stage4.json`）を編集しない**。読み取り専用アーカイブで、preflight が変更を HARD で止める（解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`・移行監査と緊急rollbackのみ）。EN ページの正本は `en/photographers/*.html`。
+8. **凍結EN JSON（`data/archive/photographers-en-content.json` / `data/archive/photographers-en-stage4.json`）を編集しない**。読み取り専用アーカイブで、preflight が変更を HARD で止める（解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`・移行監査と緊急rollbackのみ）。EN ページの正本は `en/photographers/*.html`。
 
 ## 正本(source of truth)マトリクス — Critical
 

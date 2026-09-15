@@ -16,7 +16,7 @@
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードが拒否）。写真家1人追加で `--all` は不要（`docs/generators-and-guards.md`「フルリビルド・ガード」）。
 7. **AI開示ブロック（`<!-- AI-DISCLOSURE -->` で括られた3行＋短縮版）を個別HTMLで直さない**。正本は `scripts/ai_disclosure.py`。直しても preflight の `check_ai_disclosure()` が HARD FAIL で止める。文面変更は正本を直して `python3 scripts/inject_ai_disclosure.py --all`。
 8. **TOP12 ハードコードカード（`pc-top` / `idx` / `pc-top--XXX`）、フィルター/ソートUI、カードJSは依頼がない限り触らない**。カードの正は `cards-archive.html` / `card-data.json`。
-9. **EN正本JSON（`data/photographers-en-content.json` / `data/photographers-en-stage4.json`）を編集しない**。読み取り専用アーカイブで、preflight が変更を HARD で止める（解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`・移行監査と緊急rollbackのみ）。EN ページの正本は `en/photographers/*.html`。
+9. **凍結EN JSON（`data/archive/photographers-en-content.json` / `data/archive/photographers-en-stage4.json`）を編集しない**。読み取り専用アーカイブで、preflight が変更を HARD で止める（解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`・移行監査と緊急rollbackのみ）。EN ページの正本は `en/photographers/*.html`。
 
 ## 正本(source of truth)マトリクス — CRITICAL
 

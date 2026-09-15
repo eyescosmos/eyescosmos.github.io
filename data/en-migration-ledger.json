@@ -2,7 +2,7 @@
   "_meta": {
     "schema_version": 1,
     "generated_by": "scripts/build_en_migration_ledger.py",
-    "generated_at_commit": "23e563992",
+    "generated_at_commit": "8d8784926",
     "canon": {
       "policy": "html",
       "declared_at": "2026-09-14 phase D",
@@ -17,7 +17,7 @@
         "annie-leibovitz.html": "EN に ph-thesis ブロックが無く、手編集で維持されていた個体。"
       },
       "new_page_path": "python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply（フェーズE-2）",
-      "json_status": "読み取り専用アーカイブ（フェーズF・2026-09-15）。物理的には data/ に置いたまま。凍結中の build_photographers_en.py が読むため移動しない。preflight の check_en_json_frozen() が変更を HARD で止める"
+      "json_status": "読み取り専用アーカイブ。総ざらいフェーズ3（2026-09-15）で data/archive/ へ物理移動済み。build_photographers_en.py は module-only 化され JSON を読まない（フェーズ2）。preflight の check_en_json_frozen() が変更を HARD で止める"
     },
     "counts": {
       "records": 418,

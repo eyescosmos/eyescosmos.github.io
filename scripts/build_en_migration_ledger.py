@@ -33,8 +33,8 @@ import sync_en_rel_annotations as sra
 ROOT = Path(__file__).resolve().parent.parent
 EN_DIR = ROOT / "en" / "photographers"
 JA_DIR = ROOT / "photographers"
-BASE_JSON = ROOT / "data" / "photographers-en-content.json"
-STAGE4_JSON = ROOT / "data" / "photographers-en-stage4.json"
+BASE_JSON = ROOT / "data" / "archive" / "photographers-en-content.json"
+STAGE4_JSON = ROOT / "data" / "archive" / "photographers-en-stage4.json"
 LEDGER_JSON = ROOT / "data" / "en-migration-ledger.json"
 
 CLASSES = {"real_page", "shim", "unpublished_data", "exception"}
@@ -454,7 +454,7 @@ def build_ledger() -> dict:
                     "annie-leibovitz.html": "EN に ph-thesis ブロックが無く、手編集で維持されていた個体。",
                 },
                 "new_page_path": "python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply（フェーズE-2）",
-                "json_status": "読み取り専用アーカイブ（フェーズF・2026-09-15）。物理的には data/ に置いたまま。凍結中の build_photographers_en.py が読むため移動しない。preflight の check_en_json_frozen() が変更を HARD で止める",
+                "json_status": "読み取り専用アーカイブ。総ざらいフェーズ3（2026-09-15）で data/archive/ へ物理移動済み。build_photographers_en.py は module-only 化され JSON を読まない（フェーズ2）。preflight の check_en_json_frozen() が変更を HARD で止める",
             },
             "counts": counts,
             "findings": findings,
