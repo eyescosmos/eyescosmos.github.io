@@ -646,10 +646,21 @@ import して使っている。**`link_country_keywords.py` は生きた横断�
   `docs/generators-and-guards.md`
 - **`docs/importer-run-log.md` は履歴なので書き換えない**
 
-### ★削除前に確認すること
-`generate_photographer_pages.py` は3,079行あり、**旧デザインの唯一の実装記録**でもある。
-git に残るとはいえ、参照したくなる場面（過去のカード構造の確認など）があるか
-Daisuke に一度確認してから消す。
+### ★削除前のバックアップ＝**tag で取ってある**（2026-09-15・push 済み）
+
+Daisuke は「あとで確認したくなる」と明言している（2026-09-15）。**消してよいが、
+下の tag から必ず引けるようにしてある。** tag は `dad0c73cb`（削除前の最後の commit）を指す。
+
+```bash
+git show legacy-generators-2026-09-15:scripts/generate_photographer_pages.py > /tmp/old-gen.py
+git show legacy-generators-2026-09-15:scripts/generate_archive_pages.py       > /tmp/old-archive.py
+git show legacy-generators-2026-09-15:scripts/check_texten_completeness.py    > /tmp/old-texten.py
+git show legacy-generators-2026-09-15:data/photographer-essay-overrides.js    > /tmp/old-overrides.js
+```
+
+tag 名: **`legacy-generators-2026-09-15`**（annotated・origin へ push 済み）。
+12.1 の `textJa` / `textEn` 1.23MB もこの tag に入っている。
+**この tag は消さない。**
 
 ---
 
