@@ -1043,6 +1043,12 @@ python3 scripts/preflight.py | diff /tmp/preflight-before.txt -
 `docs/importer-run-log.md` に「**移行後の実素材 初回**」と明記して1節。
 **ここで問題が出なければ、この §13.10 の初回扱いは終了**として次回から通常運用にしてよい。
 
+> **★2026-09-16 B を実素材で通過＝初回扱いは終了**（0915バッチ新規6名・パイロット `yasuhiro-ishimoto`）。
+> 9項目は6名全員で期待どおり。fixture では出なかった手補完点が3つ残る：JA renderer が spec title を head に
+> 反映しない／EN renderer の JSON-LD Person が name=ページ title・4キー欠落／素材 §REL がリンクで一言まで包む形で
+> `page_alignment` が `need` 判定になる。入口は B 表の `--ja --en` ではなく scaffold-inject（`--render-ja --spec` → `--render-en`）で通した。
+> 実測は `docs/importer-run-log.md` 2026-09-16。
+
 ---
 
 ## 14. この移行の対象外だったサーフェス（2026-09-15 時点の正本）

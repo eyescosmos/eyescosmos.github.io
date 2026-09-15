@@ -22,6 +22,9 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-16 | (content)0915フェーズ3 運動6枚・sitemap+12・既存12面リンク化 | other | （Daisuke記入） | 0 | 2（シュルレアリスム件数表示の旧ズレ是正／anuschka EN §REL 併記項目の訳を監督是正） | 運動8・sitemap2・写真家12 | N/A | N/A |
+| 2026-09-16 | eve-arnold / guy-bourdin / inge-morath / marc-riboud / shigeichi-nagano（idx 404–408・0915残り5名） | new×5 | （Daisuke記入） | 2（パイロットと同じ renderer 欠落＋EN Channel 日本語残り3） | 8系統（下記） | 公開HTML 各リーフ2＋従属面 | 本文4節・素材と文字数一致 | 24/23/25/28/25 |
+| 2026-09-16 | yasuhiro-ishimoto（idx 403・0915バッチ移行後初回パイロット） | new | （Daisuke記入） | 2（JA title非伝播／EN Person JSON-LD不完全） | 5系統（下記） | 公開HTML 14面（JA/ENリーフ2＋従属面12） | 本文4節・h3 JA/EN各9 | JA23 / EN23 |
 | 2026-09-15 | (engine)分類ページ消失検知を EN へ拡張＋解説文メトリクス追加 | engine | （Daisuke記入） | 0 | 3（★EN年代・運動は HTML 正本へ昇格＝再生成で戻せないのに消失検知が JA だけに掛かっていた。`en/eras/1930.html` の h1 を消しても素通りすることを実際に壊して確認／★解説文だけの消失は JA・EN 共通の死角だった＝JA 側も同時に塞がった／★文字数を `<main>` 全体で測ると失敗。en/eras/1930 は main 15,814 文字に対し解説文 1,449 文字で、解説文を全部消しても14%減にしかならず閾値に掛からない → カードを除いて測る形へ較正し直した） | 3ファイル（`scripts/preflight.py` / `AGENTS.md` / `docs/generators-and-guards.md`）。commit `b5f8b916b`。**公開HTML 0枚変更・1,080枚 sha256 完全一致**。クリーンツリーで preflight 出力がベースラインと完全一致＝誤検知0 | N/A | N/A |
 | 2026-09-15 | (engine)クラス2 残骸撤去 §12.1–12.3（Opus監督/Codex実装） | engine | （Daisuke記入） | 0 | 5（★§12.1 の実測値が全項目ズレ＝265slug/leadJa 265/textJa 222 vs 記載157/100/76・撤去前の再実測で発覚／★§12.1 の読み手リストが不完全＝`site.js:662` が textJa/textEn を主ソースで読む。読み込む HTML が0枚だったので死蔵は成立したが「死蔵」判定はファイルを読む枚数まで数える必要／★textJa/textEn に直列化2形式（バッククォート306・ダブルクォート140）。片方だけ消すと eval 後69件残り、Codex が期待値不一致で停止＝ブリーフ不備（5回中5回監督側の落ち度）／12.2 の未決論点は完全削除でなく移設で決着＝台帳の再現性を保つため／`generate_taxonomy_pages.py` は §12.3 の罠どおり残置し link_country_keywords の import を実測確認） | 3コミット（`729f281ce`/`499512a8a`/`d2b5246cd`）。19ファイル変更＋3ファイル削除（3,551行）。overrides.js −2.22MB。**公開HTML 0枚変更・1,080枚 sha256 完全一致** | N/A | N/A |
 | 2026-09-15 | (engine)総ざらい フェーズ6 EN タクソノミーHTML を正本へ昇格 | engine | （Daisuke記入） | 0 | 4（未決の meta 扱いを実測で決着＝機械テンプレと42件全件不一致なので HTML 正本へ／新フォールバック title が meta 無しの4運動に効き rollback が would-change 1→5 に劣化するのを Codex が停止して指摘＝ブリーフ不備4回目／JSON 側で直すとガードを入れる push 自体で迂回が要るため builder の LEGACY_TITLE_SLUGS で解決／`add_photographer.py --apply-surfaces` の EN年代再生成が必ず REFUSED になる副作用を発見し手貼り手順へ差替） | 9ファイル・JSON 1本をrename（公開HTML 0・1,080枚 sha256 完全一致）。push `5e0f8458f` ＋ 後始末 `1d7ba1f06`（旧パス・フォールバック全廃）| N/A | N/A |
@@ -97,6 +100,35 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-16 — 0915バッチ移行後の実素材 初回 `yasuhiro-ishimoto`（idx 403・種別=new・Opus監督 / Codex実装）
+
+- **範囲**：JA/ENリーフ各1、card-data・supplement・星bin、archive/card/index、1950年代JA/EN、Japan/United States JA/EN、spec、本ログ。公開HTML 14面（リーフ2＋従属面12）。運動・sitemap・既存ページの裸テキストは未変更。commit / pushなし。
+- **手作業点 / bug / engine**：5系統。①確定taxonomyと素材からspec・短縮lede・根拠2件を作成、②JAの素材title・Person description・既定og:image補完、③新規ページ内の実在人物リンク4件と§REL 4件をJA/EN対称化（アーロン・シスキンドは素材カナを維持してcard-data slugへ）、④EN Person JSON-LDのnameと不足4キーを素材/taxonomyで補完、⑤EN年代カード1枚と件数表示を手貼り。実素材で発見したengine差2件＝JA rendererがspec `title` をheadへ反映せずtaxonomy由来titleになった／EN rendererがPerson.nameへページtitleを入れ、`alternateName`・`nationality`・`description`・`url`を欠落。engine/CSS変更0、発火したengine改良0。
+- **§13.10 B / フィデリティ**：B#1・#2は監督確認済み。render-enはdry/applyともEXIT 0、`dangling=0 / works-cjk=0 / ga=2 / sec=4 / cite=23 / supref=34 / warnings=1`（warningは作品ラベル統計、head fallback 0）。head各要素1、sync 10/10 OK、en_missing 0。JA/ENとも本文4節・h3 9・cite集合23・sup-ref 34で差0、§RELリンク4/4・切れ0。ブリーフのJA cite期待46はJA/EN合算値で、素材JA単体23と生成23が一致したため監督確認後に続行。
+- **検証 / WARN / ボトルネック**：`check_en_entry` / `check_new_photographer` / `check_content_loss` / `preflight` / `sync_card_counts --check` / `check_photographer_link_integrity` はEXIT 0。Personキー欠落0、div JA95/95・EN142/142、section各9/9、壊れclass・review・prep-block 0、検索runtime 1/1・固定ID 0。素材12本SHA-256一致、`data/archive/*.json`変更0。残WARNはEN `@graph` 無し（Christer同形の独立3 JSON-LD）、既存takeji-iwamiyaの新slugリンク候補、EN国別2面の直接編集疑い（スコープ再生成後SHA-256一致）、既存movement drift/tag/stale宣言。ボトルネックはEN年代手貼りとJA/EN head手補完。
+- **監督（Opus）の後追い是正と発見**：①**入口を変更**＝`next-photographer-batch.md` §3 の通常モード `--ja --en --apply` は `process_ja` で**素材HTMLをほぼ素通しで書く**（dry-run で hero 眉 `§ None` のまま）ため CLAUDE.md「素材構造を流用しない」と衝突。0909〜0912 と同じ **JA=`--render-ja --spec`（scaffold-inject）→ EN=`--render-en --apply`** で通した（B#2 は通常モード dry-run で EXIT 0 を確認済み）。②**★素材の §REL 書式ずれ**＝0915素材は `<li><a href>名前 — 一言</a></li>`（リンクが一言まで包む）。renderer はそのまま通し区切りを ` - ` に変える。**この形だと `sync_en_rel_annotations.page_alignment()` が全項目 `need` と判定し、台帳 `en_rel_blurb_missing` を新規だけで4件増やす**（実測）。preflight は検知しない。テキスト・href 不変を assert する正規化スクリプト（scratchpad `normalize_rel.py`）で標準形 `<a>名前</a> ― 一言`（EN ` &mdash; `）へ直し4件 `have` を実測。残り5名にも適用。③Codex 停止2回はいずれも監督側（カナ表記揺れの扱い未指定／cite 期待値 46 が JA/EN 合算値だった）。常設ルール化して後続ブリーフに入れた。
+- **Codex トークン**（`codex exec --json` の turn.completed 合算・blended＝非cache入力＋出力）：3ターン（停止→再開×2）で 329,014（入力 7,454,481 うち cache 7,177,792 / 出力 53,225）。**再開のたびに文脈を読み直すので停止1回の費用が大きい**。
+- **wall-time**：（Daisuke記入）
+
+## 2026-09-16 — 0915バッチ 残り5名（idx 404–408・種別=new×5・Opus監督 / Codex実装）
+
+- **範囲**：`eve-arnold` / `guy-bourdin` / `inge-morath` / `marc-riboud` / `shigeichi-nagano`。パイロットで確定した経路（spec→`add_photographer --apply --scaffold`→`--render-ja --spec`→`--render-en --apply`→head手補完→§REL正規化→`--apply-surfaces`→EN年代手貼り）を新規 Codex セッション1本で通した。Codex 停止0回・約20分。国：united-states / united-kingdom / france / austria / japan の JA/EN、年代 1950 JA/EN（43→48）。`FRANCE_EXPECTED_IDS` に `guy-bourdin` / `marc-riboud` を実カード順で追加。commit / push なし。
+- **手作業点 / bug / engine**：spec 5、JA head 5（title 3系統・og:image・Person description/生没年）、EN Person 5（name・alternateName・nationality・description・url。初回補完が WebPage 側へ当たったのを Codex が構造監査で検出し是正）、§REL JA/EN 各5、EN年代カード5、France 定数2、EN Channel 3（renderer が日本語のまま残した `フォトジャーナリズム` を `Photojournalism` へ）、EN §REL の木村伊兵衛リンクを実在 `ihei-kimura.html` へ（JA は `jp-木村伊兵衛`）。engine/CSS 変更0。**`--apply-surfaces` は EN年代で builder を呼ばず「手作業」と表示するだけ（REFUSED 0件）**＝パイロット時の記述と挙動が違う点に注意。
+- **§13.10 B（5名とも）**：`dangling=0 / works-cjk=0 / ga=2 / sec=4`、head fallback 0、EN head 各要素1、sync verify 10/10、en_missing 0。cite ID 集合は**素材JA＝生成JA＝生成EN**（24/23/25/28/25）、本文文字数は素材と完全一致。§REL EN 一言は全項目 `have`、内部リンク切れ0。6名同士の相互リンク（アーノルド⇔モラス、長野→石元）も対称。
+- **監督の独立監査**：上記を監督が別スクリプトで再実測し一致。素材12本 SHA-256 一致、`data/archive/*.json` byte 不変、既存 EN 写真家ページの変更0（フェーズ3の6枚を除く）。
+- **Codex トークン**：新規セッション1本で blended 307,065（入力 6,571,652 うち cache 6,308,352 / 出力 43,765）＝ **61,413 / 名**。0909 ベースライン 46,462/名比 +32%。**ただし 0909 の値が同じ定義（blended）かは rollout が残っておらず未確認**。新規追加は全サーフェス投入と head 手補完があり、1名あたりの手数が 0909 と揃っていない点も比較を濁す。Codex 枠は終了時点で 5h 53% / 週 73%。
+- **wall-time**：（Daisuke記入）
+
+## 2026-09-16 — 0915バッチ フェーズ3（運動ページ・sitemap・既存ページの裸テキストのリンク化）
+
+- **運動**：JA/EN 各4面へ計6枚を最小差分挿入（モダニズム 17→18 / フォトジャーナリズム 18→21 / シュルレアリスム 5→6 / ストリート写真 19→20、JA=EN）。既存カード byte 一致。`build_taxonomy_en.py` 未使用。シュルレアリスムの上部件数表示は旧値「2」が実カード5枚とずれていたので実数6へ統一。
+- **sitemap**：`sitemap.xml` / `sitemap-full.xml` とも loc 976→988（unquote 後 追加12・削除0・重複0・`-backup` 0）。
+- **裸テキストのリンク化（既存12面）**：takeji-iwamiya / tokuko-ushioda / hiroshi-hamaya / takeyoshi-tanuma →石元泰博、anuschka-blommers-niels-schumm / viviane-sassen →ギイ・ブルダン。本文は各ページ初出1件、JA §REL 裸項目2件は名前のみリンク、EN §REL に対応項目を2件追加（一言は JA の訳のみ）。**監督が HEAD 比で実測：タグを剥がしたプレーンテキストは EN §REL 追加2件以外の全12面で完全一致、href の削除0**。監督是正1件＝anuschka の JA §REL は「ギイ・ブルダン／ヘルムート・ニュートン ― …先行者」の併記項目なので、Codex の EN 訳（Bourdin 単独）を `Guy Bourdin &mdash; With Helmut Newton, a predecessor who…` へ直した（`/ Helmut Newton` をリンク直後に置くと `page_alignment` が `need` に落ちるのを実測したため一言側へ入れた）。`takeji-iwamiya → 石元泰博` のリンク張り忘れ WARN は解消。
+- **最終検証**：`check_content_loss` / `preflight` / `sync_card_counts --check` / `check_photographer_link_integrity` EXIT 0。作業前ベースラインからの新規 WARN は6件＝`[EN country …]` 5面（スコープ再生成で byte 一致を実測＝偽陽性）＋`本文の書き換えの疑い`（リンク挿入のみ・プレーンテキスト不変を実測）。`link_country_keywords.py` 未実行。
+- **Codex トークン**：blended 138,337（出力 24,396）。
+- **§13.10 の初回扱い**：新規追加経路は実素材で通過＝**終了**。ただし renderer の欠落2件（JA title 非伝播／EN Person JSON-LD）と素材 §REL 書式ずれは手補完のまま（engine 修正するかは Daisuke 判断待ち）。
+- **wall-time**：（Daisuke記入）
 
 ## 2026-09-12 — 0912素材パイロット `christer-stromholm`（idx 396・種別=new・Opus監督 / Codex実装）
 
@@ -3578,4 +3610,3 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
   台帳 `--check` EXIT 0・records 418件一致 / 非推奨バナー6本を確認。
 - **総括は `docs/en-html-canon-migration.md` §13**。§2-1 が挙げた4つの問題
   （正本2系統 / JSON が増え続ける / 14本が JSON を読み書き / 新規経路が完成品を出さない）は全部消えた。
-

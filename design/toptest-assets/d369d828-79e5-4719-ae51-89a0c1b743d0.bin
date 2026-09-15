@@ -5976,7 +5976,205 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "yasuhiro-ishimoto",
+    "name": "Yasuhiro Ishimoto",
+    "nameJa": "石元泰博",
+    "nationality": "JP / US",
+    "flag": "🇯🇵",
+    "years": "1921–2012",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "モダニズム"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "石元泰博（1921–2012）は、米国サンフランシスコに生まれ、高知で育った写真家である。戦時中の日系人収容所を経て、シカゴのInstitute of Designでハリー・キャラハン、アーロン・シスキンドらに学び、1953年に日本へ戻った。桂離宮、シカゴと東京の街路、伊勢神宮、現代建築を撮影し、写真集と展覧会を通して日米双方で活動した。 *1 *2 。",
+      "textEn": "Yasuhiro Ishimoto (1921–2012) was a photographer born in San Francisco and raised in Kochi, Japan. After being incarcerated in a Japanese American camp during World War II, he studied photography at Chicago’s Institute of Design with Harry Callahan, Aaron Siskind, and others, returning to Japan in 1953. He photographed Katsura Imperial Villa, the streets of Chicago and Tokyo, Ise Jingu, and modern architecture, and worked in both Japan and the United States through photobooks and exhibitions. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "MoMA — Yasuhiro Ishimoto, artist page",
+          "url": "https://www.moma.org/artists/2834-yasuhiro-ishimoto"
+        },
+        {
+          "num": 2,
+          "name": "Museum of Contemporary Photography — Photographers of the New Bauhaus",
+          "url": "https://www.mocp.org/resources/photographers-of-the-new-bauhaus/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eve-arnold",
+    "name": "Eve Arnold",
+    "nameJa": "イヴ・アーノルド",
+    "nationality": "US / GB",
+    "flag": "🇺🇸",
+    "years": "1912–2012",
+    "gender": "女性",
+    "era": "1950",
+    "movements": [
+      "フォトジャーナリズム"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "イヴ・アーノルド（1912–2012）は、フィラデルフィア生まれ。ハーレムの黒人ファッションショーを出発点にMagnumへ入り、モンロー、公民権運動、出産、中国などを長期取材した。 *1 *2 。",
+      "textEn": "Eve Arnold (1912–2012) was born in Philadelphia. Beginning with Black fashion shows in Harlem, she joined Magnum and spent extended periods photographing Marilyn Monroe, the civil rights movement, childbirth, China, and other subjects. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Eve Arnold Estate — Official site",
+          "url": "https://www.evearnold.com/"
+        },
+        {
+          "num": 2,
+          "name": "Eve Arnold Estate — About Eve",
+          "url": "https://www.evearnold.com/about-eve"
+        }
+      ]
+    }
+  },
+  {
+    "id": "guy-bourdin",
+    "name": "Guy Bourdin",
+    "nameJa": "ギイ・ブルダン",
+    "nationality": "FR",
+    "flag": "🇫🇷",
+    "years": "1928–1991",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "シュルレアリスム"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ギイ・ブルダン（1928–1991）は、パリ生まれ。Man Rayとの交流を経て1955年からフランス版『Vogue』で活動し、シャルル・ジョルダンの広告などで強い色彩と演出写真を展開した。 *1 *2 。",
+      "textEn": "Guy Bourdin (1928–1991) was born in Paris. After contact with Man Ray, he began working for French Vogue in 1955 and developed intensely colored, staged photographs for advertising, including campaigns for Charles Jourdan. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Guy Bourdin Estate — Guy Bourdin",
+          "url": "https://www.guybourdin.org/guy-bourdin"
+        },
+        {
+          "num": 2,
+          "name": "Guy Bourdin Estate — Official site",
+          "url": "https://www.guybourdin.org/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "inge-morath",
+    "name": "Inge Morath",
+    "nameJa": "インゲ・モラス",
+    "nationality": "AT / US",
+    "flag": "🇦🇹",
+    "years": "1923–2002",
+    "gender": "女性",
+    "era": "1950",
+    "movements": [
+      "フォトジャーナリズム"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "インゲ・モラス（1923–2002）は、グラーツ生まれ。翻訳者・編集者を経てMagnumに参加し、イラン、スペイン、ドナウ川流域、映画現場、芸術家の肖像を撮影した。 *1 *2 。",
+      "textEn": "Inge Morath (1923–2002) was born in Graz. After working as a translator and editor, she joined Magnum and photographed Iran, Spain, the Danube region, film sets, and portraits of writers and artists. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "International Center of Photography — Inge Morath",
+          "url": "https://www.icp.org/browse/archive/constituents/inge-morath"
+        },
+        {
+          "num": 2,
+          "name": "Beinecke Library — The Life and Legacy of Inge Morath",
+          "url": "https://beinecke.library.yale.edu/event/mondays-beinecke-online-life-and-legacy-inge-morath-rebecca-miller"
+        }
+      ]
+    }
+  },
+  {
+    "id": "marc-riboud",
+    "name": "Marc Riboud",
+    "nameJa": "マルク・リブー",
+    "nationality": "FR",
+    "flag": "🇫🇷",
+    "years": "1923–2016",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "フォトジャーナリズム"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "マルク・リブー（1923–2016）は、リヨン近郊生まれ。1953年にMagnumへ参加し、中国、ベトナム、インド、アフリカを長期取材した。《エッフェル塔の塗装工》《花の少女》で知られる。 *1 *2 。",
+      "textEn": "Marc Riboud (1923–2016) was born near Lyon. He joined Magnum in 1953 and spent decades photographing China, Vietnam, India, and Africa. His best-known works include The Eiffel Tower Painter and Flower Child. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Marc Riboud Estate — Official site",
+          "url": "https://marcriboud.com/en/"
+        },
+        {
+          "num": 2,
+          "name": "Marc Riboud Estate — Biography",
+          "url": "https://marcriboud.com/en/biography/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "shigeichi-nagano",
+    "name": "Shigeichi Nagano",
+    "nameJa": "長野重一",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1925–2019",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "ストリート写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "長野重一（1925–2019）は、大分市生まれ。『岩波写真文庫』、雑誌、映画、テレビを横断しながら、戦後東京の通勤者、群衆、工業地帯、郊外を撮影した。 *1 *2 。",
+      "textEn": "Shigeichi Nagano (1925–2019) was born in Oita. Working across the Iwanami Photo Library, magazines, film, and television, he photographed commuters, crowds, industrial districts, and suburbs in postwar Tokyo. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "東京文化財研究所 — 長野重一（物故者記事）",
+          "url": "https://www.tobunken.go.jp/materials/bukko/2040921.html"
+        },
+        {
+          "num": 2,
+          "name": "東京都写真美術館 — 「昭和」写真の1945–1989",
+          "url": "https://topmuseum.jp/exhibition/371/"
+        }
+      ]
+    }
   }
+
+
+
+
+
+
 
 
 

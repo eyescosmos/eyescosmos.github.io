@@ -39,12 +39,20 @@ update6＋新規1の7名バッチで 5.6分/名 だった。**6名全部が新�
 
 ## 3. 入口 — 新規は JA も EN もこれから
 
+> **★2026-09-16 実走で訂正（0915バッチ）。** 下の通常モード `--ja --en --apply` は `process_ja` で
+> **素材HTMLをほぼ素通しで書く**（hero 眉が `§ None` のまま残る）ので、CLAUDE.md「素材構造を流用しない」と衝突する。
+> 実際に通したのは 0909〜0912 と同じ **scaffold-inject 経路**:
+> `add_photographer.py <spec> --apply --scaffold` → `--render-ja 素材JA --spec <spec> --idx N > 一時ファイル`（`sec=4` 確認後に `photographers/<slug>.html` へ）
+> → `--slug <slug> --render-en 素材EN --apply` → `add_photographer.py <spec> --apply-surfaces`。
+> 実走で見つかった renderer の欠落（JA title 非伝播・EN Person JSON-LD）と素材 §REL 書式ずれの手補完は
+> `docs/importer-run-log.md` 2026-09-16 の3節を見る。
+
 ```bash
 python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply
 ```
 
 JA→EN の順に両方できる。**EN 出力先が既に存在すれば `--force` でも拒否される。**
-（`--render-en` は「JA は既にある・EN だけ足す」ときの入口。今回は使わない）
+（`--render-en` は「JA は既にある・EN だけ足す」ときの入口。上の訂正どおり、scaffold-inject 経路ではこちらを使う）
 
 ## 4. パイロットで回す検証（§13.10 B・9項目）
 
