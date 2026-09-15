@@ -3,8 +3,11 @@
 **いつ読むか:** EN写真家ページの正本HTML化（`docs/en-html-canon-migration.md`）が完了したあと、
 残った宿題・残骸・**写真家ページ以外のサーフェスの正本化**をまとめて片付けるとき。
 
-**このセッションでやること＝まず設計。** 実装はそのあと。
-下の §4「未決の論点」を決めるところから始める。**§2 の実測は再検証しなくてよい。**
+**★2026-09-15 更新：設計フェーズは終わった。§4 の4論点は決着している。**
+**新規セッションは §9「設計フェーズの結論」を最初に読む。§9 は §2〜§5 に優先する。**
+特に **§9.1（§2b の3主張のうち2つが実測で誤りと判明）** と
+**§9.2（`data/taxonomy-en-content.json` が EN 散文の正本＝§3 の前提が誤り）** を読み飛ばさない。
+実装は **§9.6 のフェーズ計画**の順に進める（順序に意味がある）。
 
 ---
 
@@ -232,3 +235,96 @@ Daisuke に確認済みの論点で、**エンジン部1,821行には触らな�
 3. `data/en-migration-ledger.json` の `_meta`（分類・findings・canon）
 4. `CLAUDE.md` の「絶対禁止」と正本マトリクス
 5. `docs/generators-and-guards.md`（機械チェックの意味）
+
+---
+
+# 9. ★設計フェーズの結論（2026-09-15・Opus監督 / Codex調査）
+
+**§4 の未決4論点は決着した。以降はこの §9 が §2〜§5 に優先する。**
+実測は `/tmp` の worktree で再生成 → diff。作業前後で公開HTML 1,069枚の sha256 は HEAD と完全一致（tracked 差分0）。
+
+## 9.1 ★§2b は3つの主張のうち2つが誤りだった（**先にこれを読む**）
+
+| §2b の主張 | 実測 |
+|---|---|
+| `<span>DE</span>`→`PHOTOGRAPHER` は 2026-06-12 に全廃した表示の復活 | **全廃されていない。** `archive.html` / `en/archive.html` は 402件とも `PHOTOGRAPHER`、JA運動ページも 246/298 が `PHOTOGRAPHER`。全廃したのは**年代ページだけ**（JA 12/402・EN 0/402）。ただし**退行であることは正しい**：JA/EN の一致が 274→246、不一致が 22→50 に悪化する |
+| hero の枚数は EN 公開側が正しく JA が古い | **両方とも古い。** hero とカード実数の不一致は **JA 8ページ / EN 5ページ**。`pictorialism` は EN も「23」でカードは25。誰も保守していない数字 |
+| 運動固有 lede を汎用 lede で潰す | **運動ページの散文（`mvt-hero__lead` / `ph-abstract` / `ph-thesis__body`）は再生成で1文字も変わらない**（実測0件）。潰れるのは**カードの lede**。しかも方向が逆で、**公開EN が古く、再生成が新しい内容を取り込む** |
+
+**教訓：`memory/reference_site_wide_norms_not_bugs`（バグに見えるサイト全体の標準）をもう一度踏んだ。
+「退行」と書く前に母数を数える。**
+
+## 9.2 ★設計を変えた発見 — `data/taxonomy-en-content.json` は EN 散文の正本
+
+§3 の「年代・運動・アーカイブの正本は JA HTML であって JSON ではないので、
+移行の動機だった『正本が2系統』はここには無い」は**誤り**。
+
+`data/taxonomy-en-content.json`（275KB）が **35運動＋11年代の EN 本文・thesis・overview・
+title / OG / JSON-LD を全部持っており、EN タクソノミーHTML はその純粋なレンダリング結果**。
+読者は `build_taxonomy_en.py`（`:1809-1831` で読み、`:1461-1469` `:1508-1516` `:1542-1572` で注入）と `preflight.py`。
+
+**＝写真家ページと同じ構造がここにある。** 現時点で JSON と公開HTMLは一致しており
+（散文の再生成差分は実測0件）、ドリフトはまだ起きていない——誰も EN タクソノミー散文を手で直していないから。
+
+依存の実体は **`EN写真家HTML → en/archive.html → EN taxonomy / EN country`**。
+`en/archive.html` のカード lede は JA archive の訳ではなく、
+`overrides.leadEn` → TOP12 → **EN写真家ページ冒頭** → 手動辞書 の優先順位で決まる（`build_archive_en.py:4-8, 271-343`）。
+**正本マトリクスの「ENアーカイブ ← archive.html（JA正本）」という1行はこの実態を写していない。**
+
+## 9.3 再生成で実際に失われるもの（**全件・集合で比較した結果**）
+
+| # | 失われるもの | 数 | 原因 |
+|---|---|---:|---|
+| 1 | sidebar の写真家チップ | **5** | bauhaus=Umbo / modernism=Modotti / new-vision=Henri / straight-photography=Abbott / surrealism=Cahun。**EN にだけあり JA に無い**。`build_taxonomy_en.py:998-1015` は sidebar の運動名しか訳さない |
+| 2 | カードの `pc-top__meta` ラベル | **38** | 生成器が JA 運動ページのカードではなく `en/archive.html` から取る |
+| 3 | `target="_blank"` | **16** | `build_taxonomy_en.py:605-607` が明示的に除去 |
+| 4 | 本文内リンク | **1** | `en/movements/color-photography.html` の Saul Leiter（カード lede 内の `inline-photographer-link`。lede 差し替えで巻き添え） |
+| 5 | 人物名の英訳 | **1** | conceptual-art の `Ruscha` が `ルシェ` に戻る |
+| 6 | カードのタグ | **1** | mali / Seydou Keïta の `コンセプチュアル`。`card-data.json` は `"tags": []` |
+
+**構造の消失は0**（`ph-section` 名・`cite-*`・`sup-ref` は全面で増減なし）。
+
+## 9.4 再生成で改善されるもの（**(a) を選ぶと手作業になる分**）
+
+| 改善 | 数 |
+|---|---:|
+| `en/archive.html` と食い違う陳腐化した lede | **67件 / 30ページ / 52名** |
+| EN ページに残った**日本語のまま**の lede・タグ・channel | **13件 / 6ページ**（dada 3・pictorialism 4・straight-photography 3・photojournalism 1・eras/1910 1・countries/germany 1）|
+
+## 9.5 決定（Daisuke・2026-09-15）
+
+| 論点 | 決定 |
+|---|---|
+| **4-1** `build_photographers_en.py` の `main()` 撤去 | **Yes。Codex 案の3コミット構成**（§9.6）|
+| **4-2** クラス3の設計 | **(a) EN タクソノミーHTML を正本へ昇格。** 写真家と同じ移行を運動・年代にも通す |
+| **4-3** 国別2生成器の「矛盾」 | **矛盾ではない。** `.head__lang a` は冗長な重複規則で、全ページに独立した `.head__lang a{…}` が別に存在し**見た目は同一**。実質の論点は mali のタグ1件のみ |
+| **4-4** スコープ | クラス1（原稿）とクラス2・3（配管）は同一フェーズに混ぜない。**ただし「カードのリード文233件のズレ」は既決の"直さない"案件**（`memory/feedback_card_lede_policy`）なので 4-2 の lede 差分と混同しない |
+| `target="_blank"` | **JA の実態に合わせる＝維持。** 実測 JA運動 372件 / EN運動 361件（再生成すると345）。**除去コード `build_taxonomy_en.py:605-607` を外す** |
+
+## 9.6 ★フェーズ計画
+
+**順序が重要。(a) 昇格を先にやると §9.4 の80件が永久に手作業になる。
+「欠陥を直す → 一度だけ再生成して現状を最新化する → 凍結して昇格」の順で通す。**
+
+| # | フェーズ | 内容 | 公開HTML |
+|---|---|---|---|
+| **0** | 生成器に `--dry-run` | 4本（`build_taxonomy_en` / `build_archive_en` / `generate_country_pages` / `generate_country_pages_en`）。書込点は各1〜3箇所しかない | **0枚** |
+| **1** | 旧JSON書込経路の撤去 | `reconcile_en_bodies.py` / importer の `--merge-to-en`・`--update-en-json` / `sync_en_rel_annotations` の旧 `--apply`・`--apply-batch` / `harvest_photographers_en.py` / `fix_1839`・`fix_1870`・`fix_1890`・`fix_eugenesmith` | **0枚** |
+| **2** | builder を module-only 化 | `main()` / `_deep_merge_page()` / `CONTENT_JSON` / CLI専用 import を撤去。**エンジン部1,821行は不変更**。直接実行は「module-only」と明示して**非0終了**（現在 `REFUSED` が exit 0 で subprocess 誤判定源） | **0枚** |
+| **3** | EN正本JSONの物理移動 | main 撤去だけでは動かせない。残る読者を先に処理：importer corpus audit `:2804-2817` / `build_en_migration_ledger.py:27-38,324-329` / `preflight.py:67-69,563-581` / `sync_en_rel_annotations.py:48`。**`photographers-en-classification.json` は動かさない**（エンジン部が `jp_slug_mapping` を読む）| **0枚** |
+| **4** | タクソノミー生成器の欠陥修正 | §9.3 の6件。sidebar 5名は**JA へ昇格**（EN にだけある＝JA が欠けている）、カードラベルは JA カードから取る、`target` 除去をやめる、Ruscha の人物名訳、lede 差し替え後にインラインリンクを再適用、mali タグは `card-data.json` へ | **0枚** |
+| **5** | **一度だけ再生成して最新化** | §9.4 の 67+13 件が解消し、§9.3 の6件が保全されることを**集合で確認**してから採用。差分は「意図した改善のみ」であること | **約39枚**（運動24・年代2・国13）|
+| **6** | **EN タクソノミーHTML を正本へ昇格** | `build_taxonomy_en.py` を新規ページ専用にし、既存出力への書込を `🛑 REFUSED` で拒否（解除は `ALLOW_TAXONOMY_REBUILD=1` のみ）。`taxonomy-en-content.json` を読み取り専用アーカイブへ降格し、`preflight` に凍結ガードを追加（`check_en_json_frozen()` と同型）。正本マトリクスと §14 を書き換え | **0枚** |
+| **7** | クラス1（原稿バックログ） | EN §REL 一言89件ほか §2f。**該当ページを update するとき一緒に直す既定方針のまま** | 都度 |
+
+**各フェーズ共通の検証**（`§6 作業規律`をそのまま適用）:
+公開HTMLの sha256 集合を作業前後で照合（フェーズ5のみ意図した39枚だけが変わる）／
+`preflight.py` の出力差分／`check_content_loss.py`／`git status --short` と `git diff --name-only` で
+対象外ファイルの巻き込みが0であること／**`git add -A <dir>` を使わない**（未追跡 spec.json が305件ある）。
+
+## 9.7 まだ決めていないこと
+
+- **フェーズ6で `taxonomy-en-content.json` の `meta`（title / OG / JSON-LD）をどう扱うか。**
+  散文と違い SEO メタは機械生成のほうが安全な可能性がある。フェーズ5の実測後に決める。
+- **JA タクソノミーHTML 側の hero 枚数（JA 8ページ・EN 5ページで実カード数と不一致）を、
+  手で直すか実カード数から導出するか。** `sync_card_counts.py` の対象は archive とトップで、運動は入っていない。
