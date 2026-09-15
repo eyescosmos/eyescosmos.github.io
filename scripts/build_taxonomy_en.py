@@ -32,6 +32,28 @@ from gen_dry_run import DryRunReport
 
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REFUSED_PAGES = []
+
+
+def _refuse_existing_taxonomy(en_fp):
+    """既存 EN タクソノミーページへの再生成を拒否する。"""
+    if (os.environ.get('ALLOW_TAXONOMY_REBUILD') == '1'
+            or not os.path.exists(en_fp)):
+        return False
+    REFUSED_PAGES.append(os.path.relpath(en_fp, ROOT))
+    return True
+
+
+def _print_refused_pages():
+    if not REFUSED_PAGES:
+        return
+    sys.stderr.write(
+        f"🛑 REFUSED {len(REFUSED_PAGES)} page(s): "
+        "既存 EN タクソノミーページは HTML 自身が正本（再生成しない）\n")
+    for path in REFUSED_PAGES:
+        sys.stderr.write(f"  ✋ {path}\n")
+    sys.stderr.write(
+        "  → en/movements/<slug>.html ・ en/eras/<id>.html を直接編集すること。\n")
 
 # ── Japanese movement filename ↔ English slug mapping ──────────────────────
 STUB_TO_SLUG = {
@@ -72,6 +94,16 @@ STUB_TO_SLUG = {
     '自然主義写真':          'naturalistic-photography',
 }
 SLUG_TO_STUB = {v: k for k, v in STUB_TO_SLUG.items()}
+
+# 2026-09-15 の title 書式そろえ（フェーズ6-1）より前に生成され、旧書式のまま公開されている4枚。
+# 公開HTML が正本になったので書式は追従させない。ALLOW_TAXONOMY_REBUILD=1 の
+# 緊急 rollback を byte 一致で保つための固定表であり、新規ページには適用されない。
+LEGACY_TITLE_SLUGS = {
+    'contemporary-still-life',
+    'post-internet-photography',
+    'new-topographics',
+    'intimate-life',
+}
 
 # ── English movement names (slug → display name) ───────────────────────────
 SLUG_TO_EN_NAME = {
@@ -703,7 +735,12 @@ def build_head_meta_movement(slug, en_name, en_desc, old_meta):
     ja_stub = SLUG_TO_STUB.get(slug, slug)
     ja_url = f'https://eyescosmos.com/movements/{ja_stub}.html'
 
-    title = old_meta.get('title') or f'{en_name} | Photography Movement | Photo Coordinates'
+    title = old_meta.get('title')
+    if not title:
+        if slug in LEGACY_TITLE_SLUGS:
+            title = f'{en_name} | Photography Movement | Photo Coordinates'
+        else:
+            title = f'{en_name} | Meaning in Photography History | Photo Coordinates'
     desc = old_meta.get('description') or en_desc or f'This page examines {en_name} through its origins, key photographers, visual methods, and meaning in photography history.'
     og_title = old_meta.get('og_title') or title
     og_desc = old_meta.get('og_description') or desc
@@ -1515,6 +1552,8 @@ def process_movement_page(ja_name, slug, en_data, id_to_card,
     ja_fp = os.path.join(ROOT, f'movements/{ja_name}.html')
     en_fp = os.path.join(ROOT, f'en/movements/{slug}.html')
 
+    if _refuse_existing_taxonomy(en_fp):
+        return None, None
     if not os.path.exists(ja_fp):
         print(f"  SKIP: missing JA source {ja_fp}")
         return [], []
@@ -1721,6 +1760,8 @@ def process_era_page(era_id, en_data, id_to_card, dry_run=None):
     ja_fp = os.path.join(ROOT, f'eras/{era_id}.html')
     en_fp = os.path.join(ROOT, f'en/eras/{era_id}.html')
 
+    if _refuse_existing_taxonomy(en_fp):
+        return None
     if not os.path.exists(ja_fp):
         print(f"  SKIP: missing JA source {ja_fp}")
         return []
@@ -1890,6 +1931,8 @@ def build_movements(only_slugs=None, dry_run=None):
         ph_ids, missing = process_movement_page(
             ja_name, slug, en_data, id_to_card, photographer_names,
             dry_run=dry_run)
+        if ph_ids is None:
+            continue
         if missing:
             all_missing.extend([(slug, pid) for pid in missing])
             print(f"    MISSING CARDS: {missing}")
@@ -1910,6 +1953,8 @@ def build_eras(only_eras=None, dry_run=None):
             continue
         print(f"  era: {era_id}")
         missing = process_era_page(era_id, en_data, id_to_card, dry_run=dry_run)
+        if missing is None:
+            continue
         if missing:
             all_missing.extend([(era_id, pid) for pid in missing])
             print(f"    MISSING CARDS: {missing}")
@@ -1922,7 +1967,7 @@ USAGE_EXAMPLES = """\
 Scope is required (this prevents an accidental full rebuild from clobbering
 unrelated EN taxonomy pages). Choose one:
 
-  --all                       full rebuild: all 31 movements + 11 eras
+  --all                       full rebuild: all 35 movements + 11 eras
   --era 2010                  rebuild only en/eras/2010.html (repeatable)
   --slug new-topographics     rebuild only that en/movements/<slug>.html (repeatable)
 
@@ -1934,6 +1979,7 @@ Examples:
 
 
 def main(argv=None):
+    REFUSED_PAGES.clear()
     parser = argparse.ArgumentParser(
         description="Rebuild EN taxonomy pages (en/movements + en/eras). "
                     "A scope flag is mandatory to avoid accidental full rebuilds.",
@@ -1941,7 +1987,7 @@ def main(argv=None):
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument('--all', action='store_true',
-                        help='full rebuild: all 31 movements + 11 eras (byte-identical to legacy run)')
+                        help='full rebuild: all 35 movements + 11 eras (byte-identical to legacy run)')
     parser.add_argument('--era', action='append', metavar='YYYY', default=[],
                         help='rebuild one era page by id, e.g. --era 2010 (repeatable)')
     parser.add_argument('--slug', action='append', metavar='MOVEMENT', default=[],
@@ -2012,7 +2058,8 @@ def main(argv=None):
     if dry_run is not None:
         dry_run.print_summary()
 
-    return 0
+    _print_refused_pages()
+    return 1 if REFUSED_PAGES else 0
 
 
 if __name__ == '__main__':
