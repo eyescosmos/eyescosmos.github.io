@@ -308,7 +308,7 @@ title / OG / JSON-LD を全部持っており、EN タクソノミーHTML はそ
 | # | フェーズ | 内容 | 公開HTML |
 |---|---|---|---|
 | **0** | 生成器に `--dry-run` | ✅ **完了（`c127f0b6e`）**。共通ヘルパ `scripts/gen_dry_run.py` で would-create / would-change / unchanged に分類。受け入れテストは §9.3 の実測と一致（taxonomy 26 / archive 0 / JA国別 4 / EN国別 13）| **0枚** |
-| **1** | 旧JSON書込経路の撤去 | ✅ **完了（commit: ）**。importerの旧マージ・stage4注入・bundle出力CLI、§REL同期ツールのJSON適用2モード、移行監査2本、一回限り修正4本を撤去 | **0枚** |
+| **1** | 旧JSON書込経路の撤去 | ✅ **完了（`a4e23210e`）**。importer の `--merge-to-en` / `--update-en-json` / `--bundle-to-en`、`sync_en_rel_annotations` の `--apply` / `--apply-batch`、スクリプト6本を撤去（-3,290行）。**builder を subprocess で呼ぶ箇所が0件になった＝フェーズ2の前提が整った** | **0枚** |
 | **2** | builder を module-only 化 | `main()` / `_deep_merge_page()` / `CONTENT_JSON` / CLI専用 import を撤去。**エンジン部1,821行は不変更**。直接実行は「module-only」と明示して**非0終了**（現在 `REFUSED` が exit 0 で subprocess 誤判定源） | **0枚** |
 | **3** | EN正本JSONの物理移動 | main 撤去だけでは動かせない。残る読者を先に処理：importer corpus audit / `build_en_migration_ledger.py` / `preflight.py`。**`photographers-en-classification.json` は動かさない**（エンジン部が `jp_slug_mapping` を読む）| **0枚** |
 | **4** | タクソノミー生成器の欠陥修正 | §9.3 の6件。sidebar 5名は**JA へ昇格**（EN にだけある＝JA が欠けている）、カードラベルは JA カードから取る、`target` 除去をやめる、Ruscha の人物名訳、lede 差し替え後にインラインリンクを再適用、mali タグは `card-data.json` へ | **0枚** |
