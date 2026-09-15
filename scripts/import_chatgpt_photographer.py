@@ -44,14 +44,6 @@ from build_taxonomy_en import STUB_TO_SLUG, SLUG_TO_EN_NAME  # noqa: E402
 # （判定基準と描画挙動を単一化・ズレ防止）。
 import build_photographers_en as _en_builder  # noqa: E402
 from build_photographers_en import CJK_RE  # noqa: E402
-# HTML正本化前の履歴5件を、移行監査・緊急rollback経路で保護する残置ガード。
-try:
-    from check_en_entry import HAND_MAINTAINED_EN  # noqa: E402
-except Exception:
-    HAND_MAINTAINED_EN = {
-        'stieglitz.html', 'annie-leibovitz.html', 'shoji-ueda.html',
-        'toyoko-tokiwa.html', 'lee-miller.html',
-    }
 # AI開示ブロック（全ページ共通・scripts/ai_disclosure.py が正本）。
 import ai_disclosure as _ai_disclosure  # noqa: E402
 
@@ -824,12 +816,6 @@ def _extract_works(body: str) -> list:
     return _extract_works_by_class(body, "ph-works-links")
 
 
-# works チップは主節（§VIEW＝ph-works-links）に加え、サイドバー（ph-side-works）にも
-# 短縮ラベルで重複して現れる（例: JA「公式 — 古着のポートレート」/ サイドバー「古着の
-# ポートレート」）。① works ui-terms 自動追加は両方から拾う（WORKS_LINK_CLASSES）。
-WORKS_LINK_CLASSES = ("ph-works-links", "ph-side-works")
-
-
 def _extract_works_by_class(body: str, cls: str) -> list:
     """chip-link 一覧を class 指定で抽出（norm_text 正規化＝ダッシュ等を畳み込み済み。
     レンダー後 JA ページの実文言と一致させるための正規形）。"""
@@ -839,58 +825,6 @@ def _extract_works_by_class(body: str, cls: str) -> list:
         for a in re.finditer(r'<a\b[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>', wl[1], re.S):
             label = norm_text(a.group(2)).rstrip(" ↗").strip()
             out.append({"label": label, "url": a.group(1)})
-    return out
-
-
-def _extract_works_raw_by_class(body: str, cls: str) -> list:
-    """chip-link 一覧を class 指定で抽出（タグ除去＋実体参照デコードのみ・ダッシュ等の
-    タイポグラフィは保持）。① works ui-terms の英語側 value 表示用（em/en dash を保つ）。"""
-    wl = slice_by_class(body, "div", cls)
-    out = []
-    if wl:
-        for a in re.finditer(r'<a\b[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>', wl[1], re.S):
-            inner = re.sub(r"<[^>]+>", " ", a.group(2))
-            for e_a, e_b in (("&amp;", "&"), ("&nbsp;", " "), ("&lt;", "<"), ("&gt;", ">"),
-                             ("&#39;", "'"), ("&quot;", '"'), ("’", "'"), ("‘", "'"),
-                             ("“", '"'), ("”", '"')):
-                inner = inner.replace(e_a, e_b)
-            label = re.sub(r"\s+", " ", inner).strip().rstrip(" ↗").strip()
-            out.append({"label": label, "url": a.group(1)})
-    return out
-
-
-def propose_works_ui_terms(ja_body: str, en_body: str) -> list:
-    """① works ui-terms 自動追加候補: JA/EN 素材の works チップを section 別
-    （ph-works-links どうし・ph-side-works どうし）に URL で突き合わせ、CJK を含む
-    JA ラベルに英語対応があるものだけ {key, value, url, section} で返す。
-    URL のみでの突合せは section をまたぐと曖昧（例: 主節の「公式 — X」とサイドバーの
-    「X」が同一 URL で衝突）になるため、必ず同じ section 同士でのみ対応付ける。"""
-    proposals = []
-    for cls in WORKS_LINK_CLASSES:
-        # works_labels のキーは実際の JA チップ文言そのものを正とする。
-        # norm_text は em/en dash を "-" に畳むため、キー生成では使わない。
-        ja_items = _extract_works_raw_by_class(ja_body, cls)
-        en_items = _extract_works_raw_by_class(en_body, cls)
-        en_by_url = {}
-        for it in en_items:
-            en_by_url.setdefault(it["url"], it["label"])
-        for it in ja_items:
-            key = it["label"]
-            if not key or not CJK_RE.search(key):
-                continue
-            en_label = en_by_url.get(it["url"])
-            if not en_label:
-                continue
-            proposals.append({"key": key, "value": en_label,
-                              "url": it["url"], "section": cls})
-    # 重複除去（同一 key が複数 section から同じ value で出るケース）。
-    seen = {}
-    out = []
-    for p in proposals:
-        if p["key"] in seen:
-            continue
-        seen[p["key"]] = p["value"]
-        out.append(p)
     return out
 
 
@@ -1596,17 +1530,16 @@ def run_render_ja(material: Path, spec_path: Path, idx, lang: str | None) -> int
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# M5: bundle_to_en_entry（= Step3b）— EN bundle を en-content.json の page dict へ
+# bundle_to_en_entry — EN bundle を renderer 内部の page dict へ
 #
-# docs/importer-scaffold-inject-spec.md §7 / 付録A。build_photographers_en.py が
-# 消費する正フォーマットへ変換する。核心は付録3.3/付録Aの2変換：
+# docs/importer-scaffold-inject-spec.md §7 / 付録A。renderer が再利用する
+# build_photographers_en のエンジンへ渡す正フォーマットに変換する。核心は2変換：
 #   - sources: ph-cite → cite-item 形式（`<div class="sources"><div class="cite-item"
 #     id="cite-N"><div class="cite-num">*N</div>{anchor}</div>…</div>`）。ph-cite のまま
 #     だと §SRC 空＋全 sup-ref がプレーン化される。
 #   - related: site-directory-links nav 形式（リンク）＋ related_annotations
 #     （reason=EN素材の §REL 一言を { en_href: blurb } で保持。builder が付与）。
-# 機械生成一本化はしない（HAND_MAINTAINED は手編集維持）。仕上げは
-# build_photographers_en.py --slug X --force。
+# JSONへは書かない。render_en_page() が新規EN HTMLを直接描画し、既存ENは手編集する。
 # ─────────────────────────────────────────────────────────────────────────────
 
 SITE_URL = "https://eyescosmos.com"
@@ -2044,45 +1977,6 @@ def run_render_en(material: Path, slug: str, lang: str | None,
     return 0
 
 
-def run_bundle_to_en(material: Path, slug: str | None, lang: str | None,
-                     ja_material: Path | None = None, apply: bool = False) -> int:
-    """M5 検証用 read-only エントリ: EN 素材から bundle→en-content エントリを生成し
-    JSON を stdout 出力（正本 JSON には書かない）。続けて works ui-terms 追加候補を
-    表示し、--apply 時は data/photographers-en-ui-terms.json に add 分だけ書く。"""
-    if not material.exists():
-        sys.stderr.write(f"ERROR: 素材が見つからない: {material}\n")
-        return 2
-    slug = slug or material.stem
-    en_raw = material.read_text(encoding="utf-8", errors="replace")
-    bundle, _info = extract_bundle(en_raw, lang or "en", slug=slug)
-    try:
-        entry = bundle_to_en_entry(bundle, slug=slug)
-    except BundleIncomplete as e:
-        sys.stderr.write(f"ERROR: {e}\n")
-        return 1
-    print(json.dumps(entry, ensure_ascii=False, indent=2))
-    report_works_ui_terms(slug, en_raw, ja_material, apply)
-    return 0
-
-
-# ─────────────────────────────────────────────────────────────────────────────
-# ③ EN field-merge（--merge-to-en）— bundle_to_en_entry の出力を正本
-# data/photographers-en-content.json の pages[<slug>.html] へ skip-empty マージ。
-#
-# 安全契約（Daisuke 解禁・段階）:
-#   - 既定は dry-run レポート。フィールドごとに preserve / replace / add を明示表示。
-#   - --apply 指定時のみ書込。merge = dict(current) を土台に、新値が空(''/None/[]/{})
-#     でないフィールドだけ上書き（skip-empty＝空値で既存を消さない）。entry_meta_html /
-#     footer_html / jsonld / external_links_html / photobooks_html / notable_works_html は
-#     bundle_to_en_entry が生成しない（キーに無い）ため自動的に保全される。
-#   - dump は現ファイルと byte 一致（ensure_ascii=False / indent=2 / 末尾改行なし）。
-#     読込→無変更ダンプが byte 一致することを実測確認済み。
-#   - 書込後 assert: 対象 slug の 1 ブロック以外は byte/値レベルで不変
-#     （_assert_only_key_changed を content.json トップレベル {_meta,pages} で流用）。
-#     違反したら書込前スナップショットへ巻き戻して失敗終了。
-#   - 手書き維持ページ（HAND_MAINTAINED_EN）は拒否。
-# ─────────────────────────────────────────────────────────────────────────────
-
 def _rel(path: Path):
     """REPO 相対表示（REPO 外なら絶対のまま）。書込成功後の print で
     .relative_to が ValueError で落ちないようにする防御。"""
@@ -2092,289 +1986,12 @@ def _rel(path: Path):
         return path
 
 
-def _print_deprecated_en_json_banner() -> None:
-    sys.stderr.write(
-        "⚠ 非推奨（2026-09-15 フェーズE-2）: このモードは EN 正本 JSON / stage4 へ書き込む旧経路です。\n"
-        "   通常フローでは使いません。EN 写真家ページの正本は en/photographers/*.html です。\n"
-        "   新規作成:  python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply\n"
-        "   既存修正:  en/photographers/<slug>.html を直接編集\n"
-        "   このモードは移行監査・緊急 rollback 用に残してあります（撤去はフェーズF）。\n")
-
-
-def _is_empty_merge_value(v) -> bool:
-    """skip-empty 判定: 空文字 / None / 空 list / 空 dict は「空」= 既存を消さない。
-    0 や False は「空」扱いしない（EN entry には現れないが安全側）。"""
-    return v in ("", None) or (isinstance(v, (list, dict)) and len(v) == 0)
-
-
-def _dump_content_json(data) -> str:
-    """content.json の既存フォーマットに完全一致する dump（ensure_ascii=False,
-    indent=2, 末尾改行なし）。round-trip byte 一致を実測確認済み。"""
-    return json.dumps(data, ensure_ascii=False, indent=2)
-
-
-# ③ で明示レポートする主要フィールド（表示順・§13/付録A の要注意群）。
-# ここに無いキーも merge 対象（下の all_keys ループが拾う）だが、まず主要群を並べる。
-MERGE_REPORT_KEYS = [
-    "h1", "years", "title", "meta_description",
-    "lead_html", "thesis_html", "sections", "sources_html",
-    "site_directory_html", "keywords_html", "view_works_links_html",
-    "further_reading_html", "related_annotations",
-    "canonical", "hreflang", "og", "twitter", "has_ga",
-]
-
-
-def _merge_field_plan(current: dict, new: dict) -> list:
-    """フィールドごとの merge 計画（表示用）。返り値は
-    [{key, action('preserve'|'replace'|'add'|'skip-empty'), old_len, new_len, note}]。
-    action の意味:
-      add        : current に無く new が非空 → 追加
-      replace    : current にあり new が非空で異なる → 置換
-      preserve   : new が非空だが current と同値 → 無変更
-      skip-empty : new が空 or new にキーが無い → 既存維持（空値で消さない）
-    """
-    def _clen(v):
-        if v is None:
-            return 0
-        if isinstance(v, str):
-            return len(v)
-        return len(json.dumps(v, ensure_ascii=False))
-
-    ordered = [k for k in MERGE_REPORT_KEYS if (k in current or k in new)]
-    ordered += [k for k in sorted(set(current) | set(new)) if k not in MERGE_REPORT_KEYS]
-    plan = []
-    for k in ordered:
-        in_cur, in_new = k in current, k in new
-        nv = new.get(k)
-        cv = current.get(k)
-        if not in_new or _is_empty_merge_value(nv):
-            action, note = "skip-empty", ("bundle 非生成" if not in_new else "新値が空")
-        elif not in_cur or _is_empty_merge_value(cv):
-            action, note = "add", ""
-        elif cv == nv:
-            action, note = "preserve", "同値"
-        else:
-            action, note = "replace", ("キー単位 skip-empty" if k in ("og", "twitter") else "")
-        plan.append({"key": k, "action": action,
-                     "old_len": _clen(cv), "new_len": _clen(nv), "note": note})
-    return plan
-
-
-def _apply_merge(current: dict, new: dict) -> dict:
-    """skip-empty マージ: merged=dict(current); 新値が非空のフィールドだけ上書き。
-    bundle_to_en_entry が生成しないキー（entry_meta_html/footer_html/jsonld/
-    external_links_html/photobooks_html/notable_works_html）は new に無く自動保全。"""
-    merged = dict(current)
-    for k, v in new.items():
-        if not _is_empty_merge_value(v):
-            if k in ("og", "twitter") and isinstance(v, dict) and isinstance(current.get(k), dict):
-                merged[k] = dict(current[k])
-                merged[k].update({dk: dv for dk, dv in v.items()
-                                  if not _is_empty_merge_value(dv)})
-            elif k == "external_links_html" and current.get(k):
-                anchors = re.findall(r'<a\b[^>]*class="[^"]*chip-link[^"]*"[^>]*>.*?</a>',
-                                     current[k] + v, re.S)
-                book_hrefs = set(re.findall(
-                    r'href="([^"]+)"', new.get("further_reading_html") or ""))
-                seen, unique = set(), []
-                for anchor in anchors:
-                    href = re.search(r'href="([^"]+)"', anchor)
-                    if href and href.group(1) not in seen and href.group(1) not in book_hrefs:
-                        seen.add(href.group(1))
-                        unique.append(anchor)
-                merged[k] = '<div class="links">' + "".join(unique) + '</div>'
-            else:
-                merged[k] = v
-    return merged
-
-
-def merge_bundle_to_en_json(bundle: dict, slug: str, apply: bool) -> int:
-    """③: EN bundle → en-content エントリを既存正本 pages[<slug>.html] へ skip-empty
-    マージ。既定 dry-run（フィールド plan 表示）、--apply で実書込（他 slug 不変 assert・
-    失敗ロールバック）。手書き維持ページは拒否。"""
-    key = slug + ".html"
-    print(f"③ EN field-merge  slug={slug}  key={key}  mode={'APPLY' if apply else 'dry-run'}")
-
-    if key in HAND_MAINTAINED_EN:
-        sys.stderr.write(f"ERROR: {key} は手書き維持ページ。マージを拒否（HAND_MAINTAINED_EN）。\n")
-        return 2
-    if not CONTENT_JSON.exists():
-        sys.stderr.write(f"ERROR: 正本 JSON が無い: {CONTENT_JSON}\n")
-        return 2
-
-    try:
-        new_entry = bundle_to_en_entry(bundle, slug=slug)
-    except BundleIncomplete as e:
-        sys.stderr.write(f"ERROR: {e}\n")
-        return 1
-
-    content_orig = CONTENT_JSON.read_text(encoding="utf-8")
-    content = json.loads(content_orig)
-    pages = content.setdefault("pages", {})
-    current = pages.get(key, {})
-    is_new = key not in pages
-
-    plan = _merge_field_plan(current, new_entry)
-    print(f"  対象 entry : {'新規追加（pages に未登録）' if is_new else '既存を skip-empty マージ'}")
-    print("  ── フィールド別 merge 計画 ──")
-    print(f"  {'field':<26}{'action':<12}{'len(old→new)':<16}note")
-    for p in plan:
-        lens = f"{p['old_len']}→{p['new_len']}"
-        print(f"  {p['key']:<26}{p['action']:<12}{lens:<16}{p['note']}")
-    counts = {}
-    for p in plan:
-        counts[p["action"]] = counts.get(p["action"], 0) + 1
-    print(f"  合計: " + " / ".join(f"{a}={counts.get(a,0)}"
-          for a in ("add", "replace", "preserve", "skip-empty")))
-    preserved = [p["key"] for p in plan
-                 if p["action"] == "skip-empty" and p["key"] in current]
-    if preserved:
-        print(f"  保全（新が空/非生成で既存維持）: {preserved}")
-
-    merged = _apply_merge(current, new_entry)
-    new_content = copy.deepcopy(content)
-    new_content["pages"][key] = merged
-    # 他 slug が byte/値レベルで不変であることを assert（_meta も比較）
-    _assert_only_key_changed(content, new_content, key)
-    new_text = _dump_content_json(new_content)
-
-    if not apply:
-        print("\n  (dry-run) 正本 JSON 未書込。実書込は `--apply` を付ける。")
-        print("  次（apply 後）: python3 scripts/build_photographers_en.py "
-              f"--slug {slug} --force  → check_new_photographer / preflight")
-        return 0
-
-    # ── トランザクション: 書込後に再パースして他 slug 不変を再検証、違反で巻き戻し ──
-    tmp = CONTENT_JSON.with_name(CONTENT_JSON.name + ".tmp")
-    tmp.write_text(new_text, encoding="utf-8")
-    os.replace(tmp, CONTENT_JSON)  # atomic
-    print(f"  ✅ 正本 JSON atomic 書込: {_rel(CONTENT_JSON)}")
-
-    # 書込後 assert: 読み直して他 slug 不変を byte/値で再確認（ディスク上の実体で検証）
-    try:
-        reread = json.loads(CONTENT_JSON.read_text(encoding="utf-8"))
-        _assert_only_key_changed(json.loads(content_orig), reread, key)
-        # 対象 slug エントリが意図どおり merged と一致
-        assert reread["pages"][key] == merged, "対象 slug エントリが書込内容と不一致"
-    except (AssertionError, KeyError, ValueError) as e:
-        # ロールバック
-        rb = CONTENT_JSON.with_name(CONTENT_JSON.name + ".rbtmp")
-        rb.write_text(content_orig, encoding="utf-8")
-        os.replace(rb, CONTENT_JSON)
-        sys.stderr.write(f"\nERROR: 書込後検証に失敗（{e}）。\n"
-                         "↩ ロールバック完了: data/photographers-en-content.json を書込前へ復元した。\n")
-        return 3
-    print("  書込後検証 : OK（対象 slug 以外は byte/値不変・対象 entry は merged と一致）")
-    print("  次: python3 scripts/build_photographers_en.py "
-          f"--slug {slug} --force  → check_new_photographer / preflight")
-    return 0
-
-
-def _load_ui_terms_raw() -> dict:
-    return json.loads(UI_TERMS_JSON.read_text(encoding="utf-8"))
-
-
-def works_ui_terms_plan(proposals: list) -> dict:
-    """① works ui-terms 候補を既存 data/photographers-en-ui-terms.json の
-    works_labels と突き合わせ、add（新規）/ preserve（既存と同値）/
-    conflict（既存キーが異なる値）に分類する（read-only）。"""
-    data = _load_ui_terms_raw() if UI_TERMS_JSON.exists() else {}
-    labels = data.get("works_labels", {})
-    add, conflict, preserve = [], [], []
-    for p in proposals:
-        cur = labels.get(p["key"])
-        if cur is None:
-            add.append(p)
-        elif cur == p["value"]:
-            preserve.append(p)
-        else:
-            conflict.append({**p, "existing": cur})
-    return {"add": add, "conflict": conflict, "preserve": preserve}
-
-
-def apply_works_ui_terms(add: list) -> None:
-    """① add 分を data/photographers-en-ui-terms.json の works_labels 末尾へ
-    atomic 書込（既存フォーマット踏襲＝ indent=2 / ensure_ascii=False / 末尾改行）。
-    既存キーは絶対に上書きしない（呼び出し側で conflict を除外済みが前提・ここでも
-    二重防御で skip）。"""
-    if not add:
-        return
-    data = _load_ui_terms_raw()
-    labels = data.setdefault("works_labels", {})
-    for p in add:
-        if p["key"] not in labels:
-            labels[p["key"]] = p["value"]
-    text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
-    tmp = UI_TERMS_JSON.with_name(UI_TERMS_JSON.name + ".tmp")
-    tmp.write_text(text, encoding="utf-8")
-    os.replace(tmp, UI_TERMS_JSON)
-
-
-def report_works_ui_terms(slug: str, en_raw: str, ja_material: Path | None,
-                          apply: bool) -> None:
-    """① works ui-terms 追加候補を JA↔EN works チップの URL 突合せで表示し、
-    --apply 時は add 分だけ data/photographers-en-ui-terms.json へ書く。"""
-    # ① works ui-terms 追加候補: JA 素材（--ja があれば優先）→ 無ければ
-    # 既存 photographers/<slug>.html（レンダー後 JA ページ）にフォールバック。
-    ja_src = ja_material if (ja_material and ja_material.exists()) else (JA_DIR / f"{slug}.html")
-    print(f"\n① works ui-terms 追加候補（JA↔EN works チップを URL 突合せ・"
-          f"JA 素材={_rel(ja_src) if ja_src.exists() else ja_src}）:")
-    if not ja_src.exists():
-        print("  スキップ（JA 素材/ページが見つからない）")
-        return
-
-    en_body = _body_of(clean_rev_markup(strip_edit_red(strip_review_css(en_raw))))
-    ja_raw = ja_src.read_text(encoding="utf-8", errors="replace")
-    ja_body = _body_of(clean_rev_markup(strip_edit_red(strip_review_css(ja_raw))))
-    proposals = propose_works_ui_terms(ja_body, en_body)
-    plan = works_ui_terms_plan(proposals)
-
-    if not (plan["add"] or plan["conflict"] or plan["preserve"]):
-        print("  対象なし（CJK を含む JA works ラベルで EN 対応が見つかる組が無い）")
-    for p in plan["add"]:
-        print(f"  + add      works_labels[{p['key']!r}] = {p['value']!r}  ({p['section']})")
-    for p in plan["preserve"]:
-        print(f"  = preserve works_labels[{p['key']!r}]（既存と同値・変更なし）")
-    for p in plan["conflict"]:
-        print(f"  ! CONFLICT works_labels[{p['key']!r}]: 既存={p['existing']!r} "
-              f"≠ 新提案={p['value']!r}（上書きしない・要手動確認）")
-
-    if apply:
-        if plan["add"]:
-            apply_works_ui_terms(plan["add"])
-            print(f"  ✅ 書込: {_rel(UI_TERMS_JSON)}（{len(plan['add'])} 件追加）")
-    elif plan["add"]:
-        print("  (dry-run) 未書込。--apply で works_labels へ追加。")
-
-
-def run_merge_to_en(material: Path, slug: str | None, lang: str | None,
-                    apply: bool, ja_material: Path | None = None) -> int:
-    """③ CLI エントリ: EN 素材から bundle を抽出し merge_bundle_to_en_json を呼ぶ。
-    続けて ① works ui-terms 自動追加候補を JA↔EN works チップの URL 突合せで算出し、
-    dry-run では計画を表示するだけ、--apply では正本 JSON マージと同じゲートで
-    data/photographers-en-ui-terms.json へ実書込する（キー競合は上書きせず報告のみ）。"""
-    _print_deprecated_en_json_banner()
-    if not material.exists():
-        sys.stderr.write(f"ERROR: EN 素材が見つからない: {material}\n")
-        return 2
-    slug = slug or material.stem
-    en_raw = material.read_text(encoding="utf-8", errors="replace")
-    bundle, _info = extract_bundle(en_raw, lang or "en", slug=slug)
-    rc = merge_bundle_to_en_json(bundle, slug, apply)
-    if rc != 0:
-        return rc
-    report_works_ui_terms(slug, en_raw, ja_material, apply)
-    return 0
-
-
 # ─────────────────────────────────────────────────────────────────────────────
 # 既存ページ更新モード（A=carry-forward 計画 / B=spec 自動導出 / D=フィデリティ差分）
 #
-# 既存写真家の本文を新素材へ差し替える更新案件向け。read-only（--dry-run のみ）。
-# scaffold-inject は再生成なので、新素材に無い手キュレーション資産（§REF/further・
-# Period・description 等）を既存ページから引き継ぐ「計画」と、痩せ細りを一目で判じる
-# 「差分」を1ショットで出す。逐次に WARN/FAIL を踏んで気づくループを潰すのが狙い。
-# 書込（carry-forward 適用）と EN 全フィールドマージは後続フェーズ（要承認）。
+# 既存写真家の本文を新素材へ差し替える更新案件向け。既定は read-only。
+# scaffold-inject で新素材に無い手キュレーション資産を失わないよう、引継ぎ計画と
+# フィデリティ差分を表示し、--apply --force 時は JA HTML だけへ安全契約つきで適用する。
 # ─────────────────────────────────────────────────────────────────────────────
 
 def derive_spec_from_existing(slug: str) -> dict:
@@ -3019,224 +2636,6 @@ def _render_audit_md(report: dict) -> str:
     return "\n".join(L)
 
 
-# ── Step3a: EN 正本 stage4 への thesis 最小注入（Claude×Codex×Daisuke 合意 2026-06-21） ──
-#
-# スコープ（合意済・最小）: 注入先は data/photographers-en-stage4.json のみ。注入フィールドは
-# thesis_label / thesis_html だけ（sections 等は Step3b＝ph-* → 旧クラス変換器を入れてから）。
-# 安全契約: `--update-en-json` 既定OFF・`--apply` 二重明示で実書込・slug 単位 replace/add・
-# 対象外 JSON 差分ゼロ assert・atomic write・手書き維持ページ拒否・churn なし（dump 厳格）・
-# 注入後に build → thesis 不消失 / sources・cite・supref 非減少 / dangling なし を検証。
-
-# thesis_label はサイト全体で単一定数（content.json 全 entry で一致）。素材の表記揺れは採らない。
-CANONICAL_THESIS_LABEL = "What this photographer changed"
-
-# EN 内部リンク（生成物の規約 = /en/<種別>/<slug>.html）
-EN_INTERNAL_HREF_RE = re.compile(r'/en/(photographers|movements|countries|eras)/([^"#?]+\.html)')
-
-
-def _dump_stage4(data) -> str:
-    """stage4.json の既存フォーマットに完全一致する dump（ensure_ascii=False, indent=2,
-    末尾改行なし）。これを外すと無関係行の churn が出るため厳格に合わせる。"""
-    return json.dumps(data, ensure_ascii=False, indent=2)
-
-
-def _count_cite_supref(html: str) -> tuple[int, int]:
-    cites = set(re.findall(r'id="cite-(\d+)"', html))
-    suprefs = set(re.findall(r'href="#cite-(\d+)"', html))
-    return len(cites), len(suprefs)
-
-
-def _dangling_internal_en_links(html: str) -> list[str]:
-    """生成物 EN HTML 内の /en/.../<slug>.html リンクのうち、実ファイルが無いものを列挙。"""
-    masked, _ = _mask_scripts(html)
-    bad = []
-    for m in ANCHOR_RE.finditer(masked):
-        href = m.group(1)
-        mm = EN_INTERNAL_HREF_RE.fullmatch(href)
-        if mm and not (REPO / "en" / mm.group(1) / mm.group(2)).exists():
-            bad.append(href)
-    return bad
-
-
-def _assert_only_key_changed(old: dict, new: dict, key: str) -> None:
-    """stage4 全体で『pages[key] 以外は完全に不変』を assert（対象外 JSON 差分ゼロ）。"""
-    assert set(old) == set(new), "トップレベルキーが変化した"
-    for tk in old:
-        if tk == "pages":
-            continue
-        assert old[tk] == new[tk], f"トップレベル {tk} が変化した"
-    op, np_ = old.get("pages", {}), new.get("pages", {})
-    assert set(np_) - set(op) <= {key}, "対象以外の新規キーが増えた"
-    assert set(op) - set(np_) == set(), "既存キーが消えた"
-    for k in op:
-        if k == key:
-            continue
-        a = json.dumps(op[k], ensure_ascii=False, sort_keys=True)
-        b = json.dumps(np_[k], ensure_ascii=False, sort_keys=True)
-        assert a == b, f"対象外キー {k} の内容が変化した"
-
-
-def _print_step3a_runbook(slug: str) -> None:
-    print("\n" + "=" * 70)
-    print("Step3a の後段（push 前に必須・対象 slug スコープ）")
-    print("=" * 70)
-    print(f"  python3 scripts/build_photographers_en.py --slug {slug}   # EN 再生成（注入反映）")
-    print(f"  python3 scripts/check_new_photographer.py --slug {slug}   # 完成検査")
-    print( "  git diff --name-only en/photographers/                    # 対象 1 ファイルだけのはず")
-    print( "  python3 scripts/preflight.py                              # push 前ネット")
-    print( "\n注意: 注入は thesis_label / thesis_html のみ。sections 等は Step3b（クラス変換）で。")
-
-
-def _git_dirty_en() -> set | None:
-    """en/photographers/ 配下で HEAD と差分のあるファイル集合（git 不可なら None）。"""
-    try:
-        r = subprocess.run(
-            ["git", "-C", str(REPO), "diff", "--name-only", "--", "en/photographers/"],
-            capture_output=True, text=True, check=True)
-        return {ln.strip() for ln in r.stdout.splitlines() if ln.strip()}
-    except (OSError, subprocess.CalledProcessError):
-        return None
-
-
-def _verify_after_inject(slug: str, key: str, new_entry: dict, old_html: str,
-                         en_before: set | None) -> int:
-    """注入＋ stage4 書込の後に build し、非劣化を検証。失敗なら 0 以外を返す（呼び元が rollback）。"""
-    print("\n── 注入後の検証（build → 非劣化チェック） ──")
-    r = subprocess.run(
-        [sys.executable, str(REPO / "scripts" / "build_photographers_en.py"), "--slug", slug],
-        capture_output=True, text=True)
-    out = r.stdout + r.stderr
-    if "SKIPPED" in out and key in out:
-        sys.stderr.write("ERROR: builder が content-loss guard で SKIP（手書き内容消失の恐れ）。注入を見直す。\n")
-        return 3
-    if "Wrote 1 page" not in out and "Would write" not in out:
-        sys.stderr.write(f"ERROR: builder が対象 1 ページを書いていない。出力:\n{out[-400:]}\n")
-        return 3
-
-    # 対象 slug 以外の EN HTML 差分ゼロ（契約をコード assert 化。pre-existing drift と分離するため
-    # before/after を比較し、注入で新たに dirty になったのは対象 1 ファイルだけ、を確認）。
-    target_rel = f"en/photographers/{slug}.html"
-    en_after = _git_dirty_en()
-    if en_before is None or en_after is None:
-        print("  対象外HTML差分 : SKIP（git 不可・runbook の git diff で手動確認）")
-    else:
-        newly = en_after - en_before
-        if not newly <= {target_rel}:
-            sys.stderr.write(f"ERROR: 対象以外の EN HTML が変化した: {sorted(newly - {target_rel})}\n")
-            return 3
-        print(f"  対象外HTML差分 : なし（新規 dirty = {sorted(newly) or '無し'}）")
-
-    new_path = EN_DIR / f"{slug}.html"
-    new_html = new_path.read_text(encoding="utf-8")
-    if norm_text(new_entry["thesis_html"]) not in norm_text(new_html):
-        sys.stderr.write("ERROR: 注入後 HTML に thesis 本文が見当たらない。\n")
-        return 3
-    oc, osup = _count_cite_supref(old_html)
-    nc, nsup = _count_cite_supref(new_html)
-    if nc < oc or nsup < osup:
-        sys.stderr.write(f"ERROR: cite/supref が減少（cite {oc}->{nc} / supref {osup}->{nsup}）。\n")
-        return 3
-    dang = _dangling_internal_en_links(new_html)
-    if dang:
-        sys.stderr.write(f"ERROR: dangling 内部リンク発生: {dang}\n")
-        return 3
-
-    print(f"  build           : OK（対象1ページ・SKIP なし）")
-    print(f"  thesis 本文存在 : OK")
-    print(f"  cite / supref   : {oc}→{nc} / {osup}→{nsup}（非減少）")
-    print(f"  dangling 内部   : なし")
-    print(f"  対象 HTML       : {'変化なし（冪等注入＝byte不変）' if new_html == old_html else '変化あり（thesis 更新）'}")
-    _print_step3a_runbook(slug)
-    return 0
-
-
-def inject_thesis_to_stage4(slug: str, en_path: str, apply: bool) -> int:
-    """Step3a: EN 素材の thesis_label / thesis_html を stage4.json へ最小注入。"""
-    _print_deprecated_en_json_banner()
-    key = slug + ".html"
-    print(f"Step3a thesis 注入  slug={slug}  key={key}  mode={'APPLY' if apply else 'dry-run'}")
-
-    if key in HAND_MAINTAINED_EN:
-        sys.stderr.write(f"ERROR: {key} は手書き維持ページ。注入を拒否（HAND_MAINTAINED_EN）。\n")
-        return 2
-
-    en_src = Path(en_path)
-    if not en_src.exists():
-        sys.stderr.write(f"ERROR: EN 素材が見つからない: {en_src}\n")
-        return 2
-    fields, meta = extract_en_candidate_fields(en_src.read_text(encoding="utf-8"), slug)
-    thesis_html = (fields.get("thesis_html") or "").strip()
-    if not thesis_html:
-        sys.stderr.write("ERROR: EN 素材から thesis_html を抽出できない"
-                         f"（family={meta['family']}）。Family B の ph-thesis を持つ素材のみ対象。\n")
-        return 2
-
-    content = json.loads(CONTENT_JSON.read_text(encoding="utf-8"))
-    stage4 = json.loads(STAGE4_JSON.read_text(encoding="utf-8"))
-    s4pages = stage4.setdefault("pages", {})
-    in_stage4 = key in s4pages
-    base = s4pages.get(key) or content.get("pages", {}).get(key)
-    if base is None or not base.get("h1"):
-        sys.stderr.write("ERROR: 既存フル正本 entry が無い。Step3a は既掲載写真家の thesis 更新のみ"
-                         "（新規写真家のフルページ作成は対象外）。\n")
-        return 2
-
-    old_label, old_thesis = base.get("thesis_label"), (base.get("thesis_html") or "").strip()
-    new_entry = copy.deepcopy(base)
-    new_entry["thesis_label"] = CANONICAL_THESIS_LABEL
-    new_entry["thesis_html"] = thesis_html
-
-    idempotent = (old_label == CANONICAL_THESIS_LABEL and old_thesis == thesis_html)
-    print(f"  thesis_label : {old_label!r} → {CANONICAL_THESIS_LABEL!r}"
-          f"{'（不変）' if old_label == CANONICAL_THESIS_LABEL else '（定数へ正規化）'}")
-    print(f"  thesis_html  : {'不変（冪等）' if old_thesis == thesis_html else '更新'}")
-    print(f"  base 由来     : {'stage4 既存 shadow' if in_stage4 else 'content.json（→ stage4 へ full shadow 作成）'}")
-    if not in_stage4:
-        print("  ⚠ NOTE: stage4 に full shadow を作る。以後この slug は content.json 編集が"
-              " stage4 に隠れる（後勝ち）。Step3b で部分マージ化を検討。")
-
-    new_stage4 = copy.deepcopy(stage4)
-    new_stage4["pages"][key] = new_entry
-    _assert_only_key_changed(stage4, new_stage4, key)  # 対象外 JSON 差分ゼロ
-    new_text = _dump_stage4(new_stage4)
-
-    if not apply:
-        print("\n  (dry-run) stage4 未書込。実書込＋ビルド検証は `--apply` を付ける。")
-        if idempotent:
-            print("  （注: 抽出 thesis は現正本と一致＝冪等。注入してもビルド出力は byte 不変の見込み）")
-        _print_step3a_runbook(slug)
-        return 0
-
-    # ── トランザクション: 失敗時は stage4.json と EN HTML を注入前へ自動ロールバック ──
-    stage4_orig = STAGE4_JSON.read_text(encoding="utf-8")          # 復元用スナップショット
-    old_html_path = EN_DIR / f"{slug}.html"
-    html_existed = old_html_path.exists()
-    old_html = old_html_path.read_text(encoding="utf-8") if html_existed else ""
-    en_before = _git_dirty_en()                                    # 注入前の dirty 集合
-
-    tmp = STAGE4_JSON.with_name(STAGE4_JSON.name + ".tmp")
-    tmp.write_text(new_text, encoding="utf-8")
-    os.replace(tmp, STAGE4_JSON)  # atomic
-    print(f"  ✅ stage4 atomic 書込: {STAGE4_JSON.relative_to(REPO)}")
-
-    rc = _verify_after_inject(slug, key, new_entry, old_html, en_before)
-    if rc != 0:
-        # 自動ロールバック（stage4 と、build が書き換えた可能性のある EN HTML を復元）
-        rb = STAGE4_JSON.with_name(STAGE4_JSON.name + ".rbtmp")
-        rb.write_text(stage4_orig, encoding="utf-8")
-        os.replace(rb, STAGE4_JSON)
-        if html_existed:
-            old_html_path.write_text(old_html, encoding="utf-8")
-        elif old_html_path.exists():
-            old_html_path.unlink()  # build が新規作成したものを撤去
-        sys.stderr.write(
-            "\n↩ ロールバック完了: data/photographers-en-stage4.json と "
-            f"en/photographers/{slug}.html を注入前へ復元した。\n"
-            "  手動確認する場合: git status --short / "
-            "git checkout -- data/photographers-en-stage4.json en/photographers/" + slug + ".html\n")
-    return rc
-
-
 # ── レビューチェックリスト（自動化しない編集判断） ─────────────────────────
 
 REVIEW_CHECKLIST = [
@@ -3469,9 +2868,6 @@ def main(argv=None) -> int:
     ap.add_argument("--audit-corpus", metavar="DIR",
                     help="読み取り専用監査モード: DIR の EN 素材を一括抽出し既存正本と diff "
                          "（正本/HTML 不可触・書込は outputs/import-preview/ のみ）")
-    ap.add_argument("--update-en-json", action="store_true",
-                    help="Step3a: EN 素材の thesis を data/photographers-en-stage4.json へ最小注入"
-                         "（--apply 二重明示で実書込・atomic・非劣化検証。--slug と --en 必須）")
     ap.add_argument("--extract-bundle", metavar="PATH",
                     help="M2 検証（read-only）: 単一素材から ContentBundle を抽出し JSON を "
                          "stdout 出力（正本・HTML は不可触）")
@@ -3485,15 +2881,6 @@ def main(argv=None) -> int:
                          "--apply 時だけ新規 en/photographers/<slug>.html へ書込）")
     ap.add_argument("--spec", metavar="PATH",
                     help="--render-ja の spec.json（taxonomy/同一性を供給）")
-    ap.add_argument("--bundle-to-en", metavar="PATH",
-                    help="M5 検証（read-only）: EN 素材から bundle→en-content エントリを "
-                         "生成し JSON を stdout 出力（正本 JSON 不可触）。出力後に works "
-                         "ui-terms 候補も表示し、--apply 時は ui-terms JSON に add 分だけ書込")
-    ap.add_argument("--merge-to-en", metavar="PATH",
-                    help="③ EN field-merge: EN 素材から bundle→en-content エントリを生成し、"
-                         "正本 data/photographers-en-content.json の pages[<slug>.html] へ "
-                         "skip-empty マージ（既定 dry-run で field 別 plan 表示・--apply で "
-                         "実書込＋他 slug 不変 assert・失敗ロールバック。--slug 必須・HAND_MAINTAINED 拒否）")
     ap.add_argument("--update-existing", action="store_true",
                     help="既存ページ更新モード: spec を card-data+"
                          "既存ページから自動導出し、新素材 render との差分と carry-forward 計画を"
@@ -3551,27 +2938,6 @@ def main(argv=None) -> int:
             ap.error("--render-en は --slug が必須")
         return run_render_en(Path(args.render_en).expanduser(),
                              args.slug, args.lang, args.apply)
-
-    # M5 bundle_to_en_entry 検証（read-only）。slug/ja は不要。
-    if args.bundle_to_en:
-        return run_bundle_to_en(Path(args.bundle_to_en).expanduser(),
-                                args.slug, args.lang,
-                                ja_material=Path(args.ja).expanduser() if args.ja else None,
-                                apply=args.apply)
-
-    # ③ EN field-merge（既定 dry-run・--apply で正本 JSON へ書込）。--ja 不要。
-    if args.merge_to_en:
-        if not args.slug:
-            ap.error("--merge-to-en は --slug が必須")
-        return run_merge_to_en(Path(args.merge_to_en).expanduser(),
-                               args.slug, args.lang, args.apply,
-                               ja_material=Path(args.ja).expanduser() if args.ja else None)
-
-    # Step3a 注入モード。--ja は不要（EN 正本 JSON への注入のみ）。
-    if args.update_en_json:
-        if not args.slug or not args.en:
-            ap.error("--update-en-json は --slug と --en が必須")
-        return inject_thesis_to_stage4(args.slug, args.en, args.apply)
 
     if not args.slug or not args.ja:
         ap.error("通常モードは --slug と --ja が必須（監査は --audit-corpus）")

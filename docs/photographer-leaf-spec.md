@@ -36,9 +36,9 @@
 （JA は `/photographers/…`・`/movements/…` の絶対パス、EN は `/en/…`。EN の運動 slug は
 実在確認。初出1回・隣接語の重複置換に注意）。実在しない名称はリンクしない。
 
-**EN 版は原則 `build_photographers_en.py` で生成する**
-EN 本文・thesis・§REL は `data/photographers-en-content.json` に入れ、`--slug <slug>` で再生成する。
-classification で `missing_en_true` のページなど、EN 正本データが未整備の例外だけは手作業方針を確認してから進める。
+**EN 版は HTML 自身が正本**
+新規ページは importer の通常モードまたは `--render-en` でHTMLを直接生成し、既存ページは
+`en/photographers/<slug>.html` を直接編集する。EN本文・thesis・§RELを旧EN JSONへ書く経路は使わない（撤去済み）。
 
 **ChatGPT 素材の事実・書誌・URL は捏造の可能性があるため、本文採用前に検証する**
 （「情報の捏造禁止とバックアップ」参照）。重要データ（生没年・書名・出版社・年・

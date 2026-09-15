@@ -14,7 +14,7 @@ HTML自身へ移す作業を始めるとき。設計は 2026-09-12 に Opus 監�
 | `build_photographers_en.py --all` で現HTMLと内容が変わるページ | **60 / 394（15%）** |
 | うちキーワードchipから運動ページへのリンクが消えるページ | **28**（`link_country_keywords.py` がHTMLへ直接張ったもの。JSONに存在しない） |
 | その消失を検知したガード | **0本**（`preflight` / `check_content_loss` / builder内 `detect_content_loss` すべて素通り） |
-| `reconcile_en_bodies.py --report` の drift | **1 / 414**（＝essay本文だけは同期している。ずれているのは本文の外側） |
+| 旧本文同期監査の drift | **1 / 414**（＝essay本文だけは同期している。ずれているのは本文の外側） |
 | 6名バッチでのENコマンド内訳（計91回） | ビルダー実行27(30%) / 生成HTMLを読んで検証26(29%) / 正本を覗く20(22%) / 正本を書換7(8%) / その他11(12%)。JAは30回 |
 
 **結論**：コストの主因は「JSONを直す→ビルダーを回す→生成物を読む」の往復で、劣化がゼロでも毎回発生する。
@@ -241,12 +241,8 @@ base / stage4 / 有効合成結果 / 移行台帳を読み取り専用アーカ�
 | `preflight.py` | touched EN HTMLを正本としてJA相当ガードと日英対称性を検査。HTML直接編集警告とJSON closureは削除 | a |
 | `sync_en_rel_annotations.py` | JA/EN HTML間のreportを主とし、適用は対象EN §RELの明示編集のみ | a |
 | `import_chatgpt_photographer.py` | `extract_bundle(..., "en")` → `render_en_page` でEN HTMLを直接新規作成 | a |
-| `harvest_photographers_en.py` | 移行時の監査スナップショット作成のみ。通常利用禁止 | c |
-| `reconcile_en_bodies.py` | **★(b)ではなく(c)**（監督修正）。フェーズA/Dで本文同期を証明する唯一の計測器。移行完了後に終了 | c |
-| `fix_1839_en_thesis_related.py` | 過去の一回限り処理として終了 | b |
-| `fix_1870_en_thesis_related.py` | 同上 | b |
-| `fix_1890_en_thesis_related.py` | 同上 | b |
-| `fix_eugenesmith_en.py` | 同上 | b |
+| 移行時の収穫・本文同期監査スクリプト | 移行完了後のフェーズ1で撤去 | c |
+| 年代別・個別の一回限り修正スクリプト4本 | 過去処理の完了後、フェーズ1で撤去 | b |
 
 `data/photographer-essay-overrides.js` の `textEn` も棚卸し対象（EN本文の影の正本）。原則EN用途を廃止する。
 
@@ -422,7 +418,7 @@ preflight の日英対称性ガードの前提とそろう。
 | CLI `--render-en <EN素材> --slug <slug>`（既定 stdout・`--apply` で新規書込） | 同上 |
 | `scripts/test_render_en_roundtrip.py` — 抽出→描画→再抽出の厳密照合 | 新規 |
 
-`bundle_to_en_entry` は1文字も変えていない（`--merge-to-en` の JSON 出力をバイト一致で保つため）。
+`bundle_to_en_entry` はrenderer内部のpage dict変換部品として維持した。
 `build_photographers_en.py` も1行も変えていない（§4 分類c＝凍結。import して関数を使うだけ）。
 
 ### 8.3 裁定した論点2件
@@ -748,9 +744,8 @@ Codex はそのとおり2つで実装し、**`cite-id が重複`（FAIL）と `c
 - **中身は「新規EN作成を JSON+builder から `render_en_page` へ切り替える」**。
   フェーズC で `--render-en` は既に動いていて、既存ファイルへの書込みは常に REFUSED。
   **やるのは呼び出し側の付け替えであって、renderer の新規開発ではない**
-- 具体的には `import_chatgpt_photographer.py` の
-  `merge_bundle_to_en_json()` / `run_merge_to_en()`（`--merge-to-en`）を通常フローから外し、
-  `_verify_after_inject()` が builder を回している箇所（§2a-DONE の既知副作用）も付け替える
+- 具体的には importer の旧EN JSONマージ経路を通常フローから外し、旧stage4注入後に
+  builderを起動していた検証も現行rendererへ付け替える
 - **E-2 で初めて `CLAUDE.md` / `AGENTS.md` の正本マトリクスを更新する。**
   「EN写真家ページ（新規作成のみ）＝ `data/photographers-en-content.json`」の行を落とし、
   JA と同じ「HTML自身が正本」1行にまとめる。**E-2 より前に書き換えないこと**
@@ -785,8 +780,8 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 |---|---|---|
 | 1 | 通常モードの `if args.en:` ブロック | **`render_en_page` で EN HTML を直接生成**（本丸） |
 | 2-3 | `print_runbook()` の EN 分岐と末尾の注意書き | JSON 移植・builder の案内を削除 |
-| 4 | `--merge-to-en`（`merge_bundle_to_en_json`） | コードは残し**非推奨バナー**。撤去は F |
-| 5 | `--update-en-json`（`inject_thesis_to_stage4` + `_verify_after_inject` の builder subprocess） | 同上 |
+| 4 | 旧EN JSON field-merge CLI | コードは非推奨として残置。後続フェーズ1で撤去 |
+| 5 | 旧stage4 thesis注入CLIとbuilder起動検証 | 同上 |
 | 6 | `add_photographer.py` のチェックリスト3行 | `--render-en` の案内へ |
 | 7-8 | `CLAUDE.md` / `AGENTS.md` | **EN写真家の2行を1行に統合**（下記 12.3） |
 | 9 | `docs/generators-and-guards.md` の EN フロー節 | 新経路を正として更新 |
@@ -845,7 +840,7 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
   builder が読める場所に残すかを先に決めること**
 - 完了条件は §2b の「**通常スクリプトから base/stage4 への読み書き参照が0**」
 - **撤去できるもの**（E-2 で非推奨バナーを付けた分）：
-  `--merge-to-en` / `--update-en-json` / `_verify_after_inject` /
+  importer の旧EN JSON field-merge・stage4注入・builder起動検証と、
   `check_en_entry.HAND_MAINTAINED_EN`（§10.2 の残置ガード）。
   **ただし `build_photographers_en.py` の `HAND_MAINTAINED_EN` 参照を道連れにしないこと**
   （凍結ファイル。import が壊れると `ALLOW_EN_REBUILD=1` の監査経路が落ちる）
@@ -893,7 +888,7 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 |---|---|
 | (a) 凍結 builder | `build_photographers_en.py` |
 | (b) 台帳生成器（正当な読者） | `build_en_migration_ledger.py` |
-| (c) 非推奨バナー付きの旧経路 | `sync_en_rel_annotations.py` の `--apply`/`--apply-batch` / `reconcile_en_bodies.py` / `harvest_photographers_en.py` / `fix_1839_*` / `fix_1870_*` / `fix_1890_*` / `fix_eugenesmith_en.py` / `import_chatgpt_photographer.py` の `--merge-to-en`・`--update-en-json` |
+| (c) 旧JSON書込経路 | **フェーズ1で撤去済み。** importerの旧マージ・stage4注入・bundle出力CLI、§REL同期ツールのJSON適用2モード、移行監査2本、一回限り修正4本を削除 |
 
 `en_content.py` の `load_data()` / `load_pages()` / `JSON_PATH` は**呼び出し元0を実測してから削除**した。
 
@@ -1071,4 +1066,3 @@ memory に記録のある「EN再生成は運動固有 lede を汎用 lede で�
 
 > **★続きの計画は `docs/post-migration-cleanup-plan.md` にある**（2026-09-15 作成）。
 > 再生成ドリフトの実測（**運動は 24/35 で退行を含む**）と、未決の論点4つを置いてある。
-

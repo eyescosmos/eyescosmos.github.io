@@ -17,9 +17,9 @@ Daisuke が校正で読みやすいためだけのもので、サイト構造に
 （in-place reshape）。器が標準に近いと速いが、独自構造だと手直しが出る。これは方針(=器を捨てる)と
 実装(=その場修正)がズレている。
 
-**作り替えの根本:** 正典のコンテンツ抽出器が無く、JA reshape も EN組立(Step3b) も毎回抽出を
+**作り替えの根本:** 正典のコンテンツ抽出器が無く、JA reshape も EN組立も毎回抽出を
 再発明していること。**役割ベース抽出器を1つ作り、JAは scaffold へ inject、ENは同じ抽出結果から
-JSON生成**する。これで素材の §マーカー名・サイドバー型・head属性順は「最初から見ない」。
+HTMLを直接描画**する。これで素材の §マーカー名・サイドバー型・head属性順は「最初から見ない」。
 
 補強の根拠（reshape→scaffold を先にやる理由）:
 - **EN builder は JA の HTML 構造に依存する**（`build_photographers_en.py` は JA を読んで英訳を差し込む）。
@@ -31,12 +31,13 @@ JSON生成**する。これで素材の §マーカー名・サイドバー型�
 ## 1. 中核アーキテクチャ：3部品 + 共有中間表現
 ```
 素材HTML(JA) ─extract_bundle()→ ContentBundle(ja) ─render_ja_page()──→ photographers/<slug>.html
-素材HTML(EN) ─extract_bundle()→ ContentBundle(en) ─bundle_to_en_entry()→ data/photographers-en-content.json
-                                                                          └build_photographers_en.py→ en/...
+素材HTML(EN) ─extract_bundle()→ ContentBundle(en) ─render_en_page()────→ en/photographers/<slug>.html
+                                                    └bundle_to_en_entry()（renderer内部のpage dict変換）
 ```
 - **`extract_bundle(html) -> ContentBundle`** … 役割ベース抽出器（JA/EN共用・キーストーン）
 - **`render_ja_page(bundle, idx) -> str`** … scaffold + inject（JA正本HTML生成）
-- **`bundle_to_en_entry(bundle) -> dict`** … en-content.json の page エントリ生成（= Step3b）
+- **`render_en_page(bundle) -> str`** … EN scaffoldへ注入して新規EN HTMLを直接描画
+- **`bundle_to_en_entry(bundle) -> dict`** … renderer内部で builderエンジンへ渡すpage dictを生成（JSONへは書かない）
 
 抽出器は「構造変換器」ではなく「素材から正本候補フィールドを取り出す器」。素材の outer layout /
 sidebar / nav / §マーカー名 / head属性順は**読まない・信用しない**。
@@ -151,13 +152,13 @@ scaffold-inject が即landしないなら、現 in-place importer に「head の
 
 ---
 
-## 7. 部品E（Step3b）：`bundle_to_en_entry`（抽出器が安定してから）
-EN bundle を en-content.json の page dict に写す。**付録A の変換を内蔵**：
+## 7. 部品E：`render_en_page` と `bundle_to_en_entry`
+EN bundle を renderer 内部の page dict に写し、EN HTMLを直接描画する。**付録A の変換を内蔵**：
 - sources → `cite-item` 形式（必須）／related → `site-directory-links` nav 形式
 - lead → `<p class="lead">…</p>`／thesis → inner のみ（label は builder が強制）
-- `h1`/`years` 必須セット／further_reading verbatim／未訳語は `photographers-en-ui-terms.json` に追記
-- **完全機械生成一本化はしない**。通常ページは機械生成、HAND_MAINTAINED は手編集維持。
-- 仕上げ `build_photographers_en.py --slug X --force`（関連差替で content-loss ガードが止まるため）。
+- `h1`/`years` 必須セット／further_reading verbatim。作品ラベルは `_en_apply_works_labels()` がEN素材から直接適用
+- 新規ページだけを描画し、既存ENページへの書込みは常に拒否する。既存ページはHTMLを直接編集する。
+- 旧EN JSONへ注入・マージするCLIと、それに付随したworks ui-terms自動登録は撤去済み。
 
 ---
 
@@ -191,7 +192,7 @@ EN bundle を en-content.json の page dict に写す。**付録A の変換を�
 2. extract_bundle() 実装（class-primary + heading-fallback(review) + インナー寛容）
 3. render_ja_page() scaffold-inject 実装（essay可変生成・本文リンクE）
 4. 実案件1件で検証（合格条件B：2つの汚いソースで chrome byte一致）
-5. bundle_to_en_entry() = Step3b（HAND_MAINTAINED維持）
+5. render_en_page() + bundle_to_en_entry()（新規EN HTMLを直接描画）
 6. surface plan/apply 自動化（v2→v3）
 ```
 Step3b を先にやると in-place reshape 由来の揺れを JSON注入側で吸収し始め責務が混ざる。
@@ -202,7 +203,7 @@ Step3b を先にやると in-place reshape 由来の揺れを JSON注入側で�
 ## 11. 受け入れ基準（全体）
 - ChatGPT素材の §マーカー名・サイドバー型・head属性順を変えても、生成JAページの chrome/SEO/§構成が標準で一定。
 - `check_new_photographer.py --slug X` OK（cite整合・JSON-LD実体・canonical/og/description）。
-- `build_photographers_en.py --slug X --dry-run` が **SKIPしない**（CLAUDE.md要件）。EN本文にサイドバーnav以外の日本語残存なし。
+- importer の `--render-en` が新規EN HTMLを描画し、EN本文にサイドバーnav以外の日本語残存なし。
 - `check_content_loss.py` OK、`preflight.py` OK、`git diff --name-only` が想定面のみ。
 - 必須欠落時に黙って空ページを作らず中断する。
 
@@ -220,7 +221,9 @@ Step3b を先にやると in-place reshape 由来の揺れを JSON注入側で�
 | `further_reading_html` | △ | §REF本文を verbatim（`ph-book`+`ph-further-links`）。**JA側が `§ REF` マーカーでないと発火しない**。Amazon CTAでない本は `photobooks_html` でなくこちら |
 | `keywords_html` | △ | `ph-keywords`/`ph-kw` passthrough |
 | `title/meta_description/og/twitter/canonical/hreflang/has_ga` | △ | 既存slugは構造再利用しテキスト差替 |
-| 未訳語 | — | `data/photographers-en-ui-terms.json` の `terms`/`works_labels`/`channels`/`fixed`/`countries` に追記（durable） |
+| 未訳語 | — | `data/photographers-en-ui-terms.json` の既存辞書はエンジンが読む。作品ラベルはEN bundleからrendererが直接適用 |
+
+works ui-terms の自動登録（2026-07-10導入）は旧EN JSONマージ経路の撤去で無くなったが、作品ラベルは renderer の `_en_apply_works_labels()` が直接当てるため手登録は不要のまま。
 
 ## 付録B：JA正典の節マーカー
 `§ WORKS` → essay `§ NN / NN` → `§ REL`(関連する写真家・運動) → `§ REF`(さらに読む) → `§ SRC`(出典)。
@@ -249,8 +252,7 @@ read-only / dry-run のみ）を用意：
   既存→新で並べ、痩せ細りを一目で判定（生 sup-ref 数の増減に振り回されない＝過剰検証を不要化）。
 - **A**：§REF が既存=実リンク／新=「準備中」なら「引き継ぐ」と明示。Period・description の
   扱い、EN の external_links_html/photobooks_html を1ショット表示。
-- **未実装（要承認・後続）**：carry-forward の**実適用**書込と、C＝EN 全フィールドマージ
-  （`--update-en-json` の全フィールド版）。現状は計画提示まで。
+- carry-forward の実適用はJA HTMLだけを対象にする。EN既存ページはHTMLを直接編集し、旧EN JSONへの全フィールドマージは行わない。
 
 ## 13. 素材生成チェックリスト（ChatGPT プロンプトへ反映 = 摩擦の源流カット）
 素材側を締めると下流の手作業が消える。新素材を作る際は以下を満たす：
@@ -391,9 +393,8 @@ grep -lE 'ph-book-simple|ph-related-grid' <素材ディレクトリ>/*.html
    1行だけ出して落ち、その結果 EN国ページから2名が欠落した。理由はその1行にしかない。
 3. **生成物の確認は本文をダンプせず、件数・href集合・開閉数で行う。** ログの20%が生HTML片だった。
    1ページ丸ごとや `sed -n '580,600p'` のような範囲取得は、必要なときだけ最後に使う。
-4. **正本ファイルを覗くときは `scripts/peek.py` を使う**（読み取り専用・既定300文字で切る）。
-   EN正本JSONは1行が最大22KBあるので生 grep は不向き。トークン削減量は上の1〜3に比べれば小さいが、
-   `peek.py keys <slug>` / `peek.py en <slug> <field>` は 11MB の JSON を扱う定型として有用。
+4. **EN正本HTMLを覗くときは `scripts/peek.py` / `scripts/en_entry.py` を使う**（読み取り専用）。
+   本文全体を出さず、HTMLから抽出した意味ブロックとSEO値だけを確認する。
 5. **run-log は節見出しの範囲で読む。** 526KB あり、新しい節は先頭に積むので行番号は毎回ずれる。
    `sed -n '/^## 2026-09-08/,/^## 2026-09-07/p' docs/importer-run-log.md`。
    **ファイル分割は不可**（`scripts/preflight.py` が読んでいる）。
@@ -430,10 +431,9 @@ ChatGPT 素材は**正しいクラス名を出せないことがある**。`pref
     → **`rev-change` トークンだけ**を外し、`ph-cite` / `ph-thesis__body` は必ず残す（余分な空白も詰める）
   - 0907 素材では 212 件中に両形態が混在しており、属性ごと削除していたら `ph-cite` 30本 ×12枚と
     `ph-thesis__body` を丸ごと壊していた。**preflight も check_content_loss もこの破壊を検知しない**
-  - 処理後の実測を必ず1行報告する：生成物（JA HTML / EN 正本 `body_html`）でマーカー**0件**、かつ
+  - 処理後の実測を必ず1行報告する：生成物（JA HTML / EN HTML）でマーカー**0件**、かつ
     `ph-cite` / `ph-thesis__body` 等の**実クラス数が素材と同数**であること
-- **EN 側は `en/photographers/*.html` を直接編集しない。** `data/photographers-en-content.json` の `body_html` を直して
-  `build_photographers_en.py --slug <slug>` で再生成する。
+- **EN 側はHTML自身が正本。** 新規はrendererで直接生成し、既存は `en/photographers/*.html` を直接編集する。
 - **着手前に素材を grep して有無を先に確認する**（パイロットで一緒に潰せば往復が1回減る）:
   ```bash
   grep -ho 'class="[^"]*"' <素材ディレクトリ>/*.html | tr ' ' '\n' | grep -oE '[a-z-]+"?$' | sort -u | head -40
@@ -470,8 +470,9 @@ ChatGPT 素材は**正しいクラス名を出せないことがある**。`pref
 - **例外**：`[EN archive]` は**真陽性だった前例がある**（2026-08-31・card-data.json 据え置きというスコープ誤りの正しい早期シグナル）。
   これだけは偽陽性として片付けない。
 
-### B. Related削除SKIP の常設承認条件（毎回止めない）
-EN builder が Related 削除で SKIP したとき、**次の3点を実測して全部成立するなら `--force` 承認済み**として進む。
+### B. Related削除SKIP の旧承認条件（履歴）
+これはEN JSONから既存ページを再生成していた時代の条件で、現行フローでは使わない。
+既存ENの§RELはHTMLを直接編集し、次の3点を目視確認する。
 
 1. 削除対象の項目が**新JA素材・新EN素材の §REL ブロック内に無い**（❌ 素材ファイル全体での grep は範囲が広すぎて誤判定する）
 2. 削除対象が**適用後のJAページ §REL にも無い**（＝日英対称）

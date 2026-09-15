@@ -167,81 +167,29 @@ python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en 
 
 ---
 
-## EN 正本の合成・"stage 4" の二義・head fallback — 2026-06-21 追加
+## 旧EN JSON書込経路 — 2026-09-15 撤去済み
 
-> **非推奨の旧経路。** 以下は移行監査・緊急 rollback 用に残した `--merge-to-en` / `--update-en-json`
-> の履歴と安全契約。通常の新規作成は上の importer 通常モードで EN HTML を直接生成する。
+EN写真家ページを旧EN JSONへ注入・マージし、builderで再生成するCLI経路はフェーズ1で撤去した。
+既存ページは `en/photographers/<slug>.html` を直接編集し、新規ページは importer の通常モードまたは
+`--render-en` でHTMLを直接生成する。`bundle_to_en_entry()` は renderer の内部変換部品として残るが、
+旧EN JSONへの書込みには使わない。旧JSONは読み取り専用アーカイブであり、preflight の凍結ガード対象。
 
-EN 写真家ページの正本データは **2 ファイルの後勝ち合成**で、`build_photographers_en.py` が読む:
+### head fallback（`build_head_meta`）— **現役**。新規EN作成で効く
 
-```python
-pages = content['pages']              # data/photographers-en-content.json（約 298 entry）
-pages.update(stage4['pages'])         # data/photographers-en-stage4.json（12 entry・後勝ち）
-```
+**旧経路と一緒に消さないこと。** `build_head_meta()` は `build_photographers_en.py:330` の
+**エンジン部**にあり、`rebuild_head`（`:462`）経由で **`render_en_page`（= importer の `--render-en`／
+`--ja --en` 新規作成）が使う**。撤去したのは CLI 側だけで、この契約は生きている。
 
-- **キーは `<slug>.html`（拡張子付き）**。`pages.update(...)` で **stage4 が content を上書き**する。
-- どちらの entry も基本フルスキーマ（head meta ＋著者コンテンツ全部）。
-- **`data/photographers-en-stage4.json`** = late-stage の手動補完・上書き・新規 EN 本文を置く場所。
-  content.json を churn させずに後発分を載せるバケット。**Step3（EN 正本自動注入）の初期注入先**はここを想定。
+`entry` から `title / meta_description / og / twitter / jsonld` を読み、**値が無いフィールドだけ**を
+決定論導出する:
 
-**"Stage 4" という語は別物が 2 つある。混同しない:**
-
-| 呼称 | 実体 | builder の挙動 |
-|---|---|---|
-| stage4 **オーバーライド** | `data/photographers-en-stage4.json` | `pages.update()` で content に**後勝ち merge** |
-| **`missing_en_true`** バケット | classification の集合（kanji-key の `jp-*` スタブ等） | 対象 JA を**丸ごと skip**し警告 `'... in missing_en_true, skipped (Stage 4)'` |
-
-警告文に "Stage 4" と出るのは後者（skip）。前者の override file とは無関係。
-
-### head fallback（`build_head_meta`）— Step3 注入の土台 — Phase 2
-
-`build_head_meta()` は entry から `title / meta_description / og / twitter / jsonld` を読む。Step3 で
-**著者コンテンツだけ**（head meta なし）を注入しても head が壊れないよう、**entry に値が無いフィールド
-だけ**を決定論導出する fallback を入れた:
-
-- 契約: **entry に値があれば最優先**・無いときだけ導出・**導出の発動は WARN**・
-  **実ビルドされる全 entry（h1 あり＝294 件は全フィールド完備）では発火しない＝出力 byte 不変**。
-- 導出元: `title`=card-data `nameEn`→slug、`meta_description`=EN `lead_html` のタグ除去・~155字短縮、
-  `og`/`twitter`=既定画像 `assets/ogp-default.png`＋title/description、
-  `jsonld`=最小 WebPage+Person(+years から birth/death)+BreadcrumbList を決定論生成（**JA JSON-LD は英訳しない**）。
-- 発火するのは現状 `missing_en_true` の `jp-*` スタブのみ（それらは builder が skip するので実出力には出ない）。
-  あくまで Step3 注入時のための latent な土台。
-
-### Step3a: thesis の stage4 最小注入（`--update-en-json`）— 2026-06-21 追加
-
-EN 素材の **thesis_label / thesis_html だけ**を正本 `data/photographers-en-stage4.json` へ注入する半自動経路。
-新規写真家の EN 整備で thesis を手で content.json に書く手間を、決定論部分だけ機械化する。**注入対象は
-thesis のみ**（lead/sections/sources/site_directory は素材が新 v5.1 `ph-*` クラスで正本は旧クラス＝**要変換**の
-ため Step3b 送り。現状は手移植）。
-
-```bash
-# dry-run（既定・何も書かない。冪等判定・shadow note・asserts のプレビュー）
-python3 scripts/import_chatgpt_photographer.py --slug <slug> --en SRCEN.html --update-en-json
-# 実書込（--apply 二重明示が必須）→ atomic 書込 → build → 非劣化検証
-python3 scripts/import_chatgpt_photographer.py --slug <slug> --en SRCEN.html --update-en-json --apply
-```
-
-安全契約（コードで強制）:
-- **注入先は stage4.json のみ**。base = 現マージ正本（stage4 優先→content）の **full entry を deepcopy** し
-  thesis_label/thesis_html だけ上書き（builder は `pages.update()` の**浅い merge** なので partial entry は
-  不可＝full shadow が要る）。
-- **thesis_label はサイト定数 `"What this photographer changed"`** を入れる（content.json 全 entry で単一。
-  素材の表記揺れ「What This Artist Changed」等は採らない＝既存ラベルを退行させない）。
-- **手書き維持ページは拒否**（`stieglitz / annie-leibovitz / shoji-ueda / toyoko-tokiwa / lee-miller`）。
-  2026-09-14 フェーズDで全EN実ページがHTML正本になった。この5件だけが特別なのではなく、
-  `ALLOW_EN_REBUILD=1` 経路専用の残置ガードとして残してある（撤去はフェーズF）。
-- **stage4 dump は厳格**（`ensure_ascii=False, indent=2`・**末尾改行なし**で既存と byte 一致＝churn 防止）＋
-  **atomic write**（`.tmp`→`os.replace`）＋ **対象外キー完全不変 assert**。
-- 注入後に `build_photographers_en.py --slug` を回し、**SKIP なし / 対象1ページ / thesis 本文存在 /
-  cite・supref 非減少 / dangling 内部リンク無し / 対象外 EN HTML 差分ゼロ**（`git diff --name-only` の
-  before/after 比較）を検証。
-- **失敗時は自動ロールバック**（stage4.json と対象 EN HTML を注入前へ復元）＋手動復旧手順を印字。
-
-**footgun**: 既掲載 slug への注入は content.json 全体を stage4 へ shadow する＝以後その slug の
-content.json 編集が stage4 に隠れる（後勝ち）。Step3b で builder の **deep-merge 化**（stage4 を
-フィールド単位で content に上書き）すれば partial stage4 entry が可能になり解消予定。
-
----
+- **entry に値があれば最優先**。無いときだけ導出する
+- **導出が発動したら WARN**（`head fallback fired`）。**新規作成の実走では0件が正常**
+  （出たら head が不完全。`docs/en-html-canon-migration.md` の検証表でも0件を期待値にしている）
+- 導出元: `title` = card-data の `nameEn` → slug ／ `meta_description` = EN `lead_html` の
+  タグ除去・約155字短縮 ／ `og` `twitter` = 既定画像 `assets/ogp-default.png` ＋ title/description ／
+  `jsonld` = 最小 WebPage + Person（years があれば birth/death）+ BreadcrumbList を決定論生成。
+  **JA の JSON-LD は英訳しない**
 
 ## 機械チェック（地雷の門番）— 文章ルールより優先 — 2026-06-16 追加
 

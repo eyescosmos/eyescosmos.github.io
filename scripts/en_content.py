@@ -16,23 +16,12 @@ HTML は書き換えない（読み取り専用）。
 """
 import os
 import re
-import sys
 from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EN_DIR = os.path.join(ROOT, 'en', 'photographers')
 GA_ID = 'G-2VRTV8BZEJ'
-
-
-def warn_en_json_archive_deprecated():
-    """EN 正本 JSON を使う旧経路の実行を stderr へ明示する。"""
-    print(
-        '⚠ 非推奨（2026-09-15 フェーズF）: このスクリプトは EN 正本 JSON を読み書きする旧経路です。\n'
-        '   EN 写真家ページの正本は en/photographers/*.html で、JSON は読み取り専用アーカイブです。\n'
-        '   preflight が JSON の変更を HARD で止めます（解除は ALLOW_EN_JSON_ARCHIVE_WRITE=1）。',
-        file=sys.stderr,
-    )
 
 
 def load_en_page_keys():

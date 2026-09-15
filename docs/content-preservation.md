@@ -52,11 +52,13 @@ EN ビルダーを走らせるとき、`photographer-essay-overrides.js` を編�
 
 **過去に発生した問題：** 正本データ側に外部リンク・本文・出典が無い状態で生成/横断処理を実行すると、HTML に残っていた chip-link 外部リンクや本文要素が上書きで消える。
 
-**注意:** `python3 scripts/generate_photographer_pages.py` は実行禁止。下記は EN ビルダーや横断スクリプトを動かす前の確認。
+**注意:** `python3 scripts/generate_photographer_pages.py` は実行禁止。EN 写真家ページも既存ページは
+再生成せず、HTML自身を直接編集する。新規ENページは importer の renderer でHTMLを直接生成し、
+旧EN JSONへ書くCLIは使わない（撤去済み）。
 
-1. EN を再生成する場合、対象ページの `data/photographers-en-content.json` に `body_html` / `thesis_html` / `site_directory_html` / `photobooks_html` / `external_links_html` が必要分入っているか確認する。
-2. EN の事実本文を直した場合、必要なら `data/photographer-essay-overrides.js` の `textEn` も同じ内容にそろえる。
-3. JA HTML に chip-link 外部リンクが存在する場合、EN 正本データ側にも必要なリンクが入っているか確認する。
+1. 既存ENの事実本文・thesis・§REL・外部リンクは `en/photographers/<slug>.html` に直接入れる。
+2. 新規ENは `extract_bundle(..., "en")` → `render_en_page()` で作り、生成後に本文・出典・作品リンクを確認する。
+3. JA/EN双方の chip-link と §REL を確認し、片側だけの消失を `check_en_entry.py` と preflight で検査する。
 
 ```bash
 # HTML に外部リンクがあるか確認するコマンド例
@@ -116,9 +118,8 @@ grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
 - キーワード：運動ページが実在すればリンク（JA は `/movements/{語}.html`、
   EN は slug 化して `/en/movements/{slug}.html`）。実在しない語（Magnum 等）は
   plain。`/keywords/` ページは無いのでリンクしない。
-- **`build_photographers_en.py` 等で EN 写真家ページを再生成したら、必ず
-  `python3 scripts/link_country_keywords.py` を再実行する**（JA ページは
-  source of truth なので直接編集が残るが、EN は再生成で消えるため）。
+- 新規EN写真家ページを renderer で生成した後、国名・キーワードのリンクが必要なら
+  `python3 scripts/link_country_keywords.py` を対象差分を監査しながら実行する。既存ENはHTML自身が正本なので再生成しない。
 - ただし `link_country_keywords.py` は JA+EN の多数ページを直接編集する横断処理。
   実行後は必ず `git status` / `git diff` で対象外ページの混入を確認し、作業対象外の差分は
   `git checkout -- <path>` で revert する。二重国籍の国名が単国へ畳まれていないかも確認する。
@@ -128,4 +129,4 @@ grep "chip-link" photographers/xxx.html | grep -v "amazon\|chip-link amazon"
   - `photographers/annie-leibovitz.html` / `en/photographers/annie-leibovitz.html`
   - `photographers/stieglitz.html` / `en/photographers/stieglitz.html`
 - JA は HTML 自身が正本なので直接編集してよい。
-- EN は原則どおり `data/photographers-en-content.json` を正本にする。EN HTML へ直接書いた重要本文は、再生成前に必ず JSON へ移す。
+- EN も HTML 自身が正本。重要本文は `en/photographers/<slug>.html` を直接編集し、旧EN JSONへは移さない。

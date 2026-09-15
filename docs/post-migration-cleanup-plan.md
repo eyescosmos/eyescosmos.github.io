@@ -109,9 +109,8 @@ render_en_page が呼ぶもの:
 
 ### 2g. 残骸の在庫
 
-- **非推奨バナー付きで生きている旧経路**：`import_chatgpt_photographer.py` の
-  `--merge-to-en` / `--update-en-json`、`reconcile_en_bodies.py`、`harvest_photographers_en.py`、
-  `fix_1839_*` / `fix_1870_*` / `fix_1890_*` / `fix_eugenesmith_en.py`
+- **旧EN JSON書込経路はフェーズ1で撤去済み**：importerの旧マージ・stage4注入・bundle出力CLI、
+  §REL同期ツールのJSON適用2モード、移行監査2本、一回限り修正4本
 - `HAND_MAINTAINED_EN`（5件）— 強制点は `build_photographers_en.py` の `main()` の中だけ
 - `data/photographer-essay-overrides.js`（3.6MB）— `textEn` 224件は**死蔵**
   （読むのは実行禁止の旧ジェネレータ2本と `textEn` 自身の検査だけ）。
@@ -127,8 +126,8 @@ render_en_page が呼ぶもの:
 
 - **89件のうち15ページ（jp-漢字ペア）は原因が1つ**なので、同質素材として**1バッチ**で処理できる
 - 残りは既定方針どおり「該当ページを update するとき一緒に直す」
-- 手順は `sync_en_rel_annotations.py` の `emit-worklist → 翻訳 → inject-html`
-  （`--apply` / `--apply-batch` は JSON 経由なので**使わない**。凍結ガードが止める）
+- 手順は `sync_en_rel_annotations.py` の `emit-worklist → 翻訳 → inject-html`。
+  JSON経由の適用モードはフェーズ1で撤去済み。
 
 ### クラス2 — 残骸
 
@@ -309,9 +308,9 @@ title / OG / JSON-LD を全部持っており、EN タクソノミーHTML はそ
 | # | フェーズ | 内容 | 公開HTML |
 |---|---|---|---|
 | **0** | 生成器に `--dry-run` | ✅ **完了（`c127f0b6e`）**。共通ヘルパ `scripts/gen_dry_run.py` で would-create / would-change / unchanged に分類。受け入れテストは §9.3 の実測と一致（taxonomy 26 / archive 0 / JA国別 4 / EN国別 13）| **0枚** |
-| **1** | 旧JSON書込経路の撤去 | `reconcile_en_bodies.py` / importer の `--merge-to-en`・`--update-en-json` / `sync_en_rel_annotations` の旧 `--apply`・`--apply-batch` / `harvest_photographers_en.py` / `fix_1839`・`fix_1870`・`fix_1890`・`fix_eugenesmith` | **0枚** |
+| **1** | 旧JSON書込経路の撤去 | ✅ **完了（commit: ）**。importerの旧マージ・stage4注入・bundle出力CLI、§REL同期ツールのJSON適用2モード、移行監査2本、一回限り修正4本を撤去 | **0枚** |
 | **2** | builder を module-only 化 | `main()` / `_deep_merge_page()` / `CONTENT_JSON` / CLI専用 import を撤去。**エンジン部1,821行は不変更**。直接実行は「module-only」と明示して**非0終了**（現在 `REFUSED` が exit 0 で subprocess 誤判定源） | **0枚** |
-| **3** | EN正本JSONの物理移動 | main 撤去だけでは動かせない。残る読者を先に処理：importer corpus audit `:2804-2817` / `build_en_migration_ledger.py:27-38,324-329` / `preflight.py:67-69,563-581` / `sync_en_rel_annotations.py:48`。**`photographers-en-classification.json` は動かさない**（エンジン部が `jp_slug_mapping` を読む）| **0枚** |
+| **3** | EN正本JSONの物理移動 | main 撤去だけでは動かせない。残る読者を先に処理：importer corpus audit / `build_en_migration_ledger.py` / `preflight.py`。**`photographers-en-classification.json` は動かさない**（エンジン部が `jp_slug_mapping` を読む）| **0枚** |
 | **4** | タクソノミー生成器の欠陥修正 | §9.3 の6件。sidebar 5名は**JA へ昇格**（EN にだけある＝JA が欠けている）、カードラベルは JA カードから取る、`target` 除去をやめる、Ruscha の人物名訳、lede 差し替え後にインラインリンクを再適用、mali タグは `card-data.json` へ | **0枚** |
 | **5** | **一度だけ再生成して最新化** | §9.4 の 67+13 件が解消し、§9.3 の6件が保全されることを**集合で確認**してから採用。差分は「意図した改善のみ」であること | **約39枚**（運動24・年代2・国13）|
 | **6** | **EN タクソノミーHTML を正本へ昇格** | `build_taxonomy_en.py` を新規ページ専用にし、既存出力への書込を `🛑 REFUSED` で拒否（解除は `ALLOW_TAXONOMY_REBUILD=1` のみ）。`taxonomy-en-content.json` を読み取り専用アーカイブへ降格し、`preflight` に凍結ガードを追加（`check_en_json_frozen()` と同型）。正本マトリクスと §14 を書き換え | **0枚** |

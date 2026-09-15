@@ -350,83 +350,6 @@ def test_bare_revision_and_nonspan_rev_classes() -> None:
           "CSSカスタムプロパティ保持・self_check/CSS連動OK")
 
 
-def test_en_merge_skip_empty_and_invariance() -> None:
-    """③ EN field-merge のロジック: skip-empty（空値で既存を消さない・bundle 非生成
-    フィールドを保全）と、他 slug が byte/値レベルで不変であることを検証する。"""
-    from import_chatgpt_photographer import (
-        _apply_merge, _merge_field_plan, _assert_only_key_changed,
-        _is_empty_merge_value, _dump_content_json)
-
-    # skip-empty: 新値が空('', None, [], {})なら既存維持。非空なら上書き。add も。
-    current = {
-        "h1": "Old Name", "lead_html": "<p>old lead</p>",
-        "sources_html": "<div>old</div>",
-        # bundle_to_en_entry が生成しないフィールド（保全されるべき）:
-        "entry_meta_html": "<dl>KEEP</dl>", "photobooks_html": "<div>KEEP</div>",
-        "footer_html": "<footer>KEEP</footer>",
-    }
-    new = {
-        "h1": "New Name",            # replace
-        "lead_html": "",             # skip-empty（空で消さない）
-        "sources_html": None,        # skip-empty
-        "keywords_html": "<div>kw</div>",  # add
-        # entry_meta_html 等は new に無い → 保全
-    }
-    merged = _apply_merge(current, new)
-    assert merged["h1"] == "New Name", "FAIL: 非空フィールドが replace されていない"
-    assert merged["lead_html"] == "<p>old lead</p>", \
-        "FAIL: 空文字で既存 lead が消された（skip-empty 破れ）"
-    assert merged["sources_html"] == "<div>old</div>", \
-        "FAIL: None で既存 sources が消された"
-    assert merged["keywords_html"] == "<div>kw</div>", "FAIL: 新規 add されていない"
-    for k in ("entry_meta_html", "photobooks_html", "footer_html"):
-        assert merged[k] == current[k], f"FAIL: bundle 非生成フィールド {k} が保全されていない"
-
-    assert _is_empty_merge_value("") and _is_empty_merge_value(None) \
-        and _is_empty_merge_value([]) and _is_empty_merge_value({}), \
-        "FAIL: 空値判定が不正"
-    assert not _is_empty_merge_value("x") and not _is_empty_merge_value(["x"]), \
-        "FAIL: 非空を空と誤判定"
-
-    plan = {p["key"]: p["action"] for p in _merge_field_plan(current, new)}
-    assert plan["h1"] == "replace", f"FAIL: h1 plan={plan['h1']}"
-    assert plan["lead_html"] == "skip-empty", f"FAIL: lead plan={plan['lead_html']}"
-    assert plan["keywords_html"] == "add", f"FAIL: keywords plan={plan['keywords_html']}"
-    assert plan["entry_meta_html"] == "skip-empty", \
-        f"FAIL: 非生成 entry_meta plan={plan['entry_meta_html']}"
-
-    # 他 slug 不変 assert: 対象 slug 以外のエントリを1文字でも変えたら fail する
-    content = {"_meta": {"count": 2}, "pages": {
-        "target.html": dict(current), "other.html": {"h1": "Untouched"}}}
-    good = {"_meta": {"count": 2}, "pages": {
-        "target.html": merged, "other.html": {"h1": "Untouched"}}}
-    _assert_only_key_changed(content, good, "target.html")  # 通る
-    bad = {"_meta": {"count": 2}, "pages": {
-        "target.html": merged, "other.html": {"h1": "Tampered"}}}
-    try:
-        _assert_only_key_changed(content, bad, "target.html")
-        raise AssertionError("FAIL: 他 slug 改変を assert が検知できていない")
-    except AssertionError as e:
-        if "検知できていない" in str(e):
-            raise
-    # _meta 改変も検知
-    bad_meta = {"_meta": {"count": 99}, "pages": good["pages"]}
-    try:
-        _assert_only_key_changed(content, bad_meta, "target.html")
-        raise AssertionError("FAIL: _meta 改変を assert が検知できていない")
-    except AssertionError as e:
-        if "検知できていない" in str(e):
-            raise
-
-    # dump が round-trip byte 一致（末尾改行なし・churn なし）
-    d = {"_meta": {"count": 1}, "pages": {"x.html": {"h1": "あ", "years": "1970–"}}}
-    assert json.loads(_dump_content_json(d)) == d, "FAIL: dump round-trip 破れ"
-    assert not _dump_content_json(d).endswith("\n"), "FAIL: dump 末尾に改行"
-
-    print("test_en_merge_skip_empty_and_invariance PASS: skip-empty で空値既存維持・"
-          "bundle非生成フィールド保全・他slug/_meta不変assert・dump churnなし")
-
-
 def test_update_existing_carry_forward_helpers() -> None:
     """④ carry-forward のロジック: §REF body 抽出・backup 必須ガード・検証失敗時の
     ロールバックを、リポの実ページに触れずに検証する（JA_DIR を tmp へ差し替え）。"""
@@ -539,7 +462,6 @@ def main() -> int:
     test_unwrap_rev_spans_multidigit()
     test_unwrap_revision_word_spans()
     test_bare_revision_and_nonspan_rev_classes()
-    test_en_merge_skip_empty_and_invariance()
     test_update_existing_carry_forward_helpers()
     return 0
 

@@ -6,7 +6,7 @@
 
 1. **`python3 scripts/generate_photographer_pages.py` を実行しない**。旧デザインを生成し、JAページ全体を巻き戻す。物理ガードがあっても解除しない。
 2. **`python3 scripts/generate_archive_pages.py` を実行しない**。
-3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は既存ページへの書き込みを既定で拒否する（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。**新規作成も EN HTML を直接生成する（`--render-en` 相当）。JSON は読まない。** 詳細 `docs/en-html-canon-migration.md` §11。
+3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は既存ページへの書き込みを既定で拒否する（解除は `ALLOW_EN_REBUILD=1`・移行監査と緊急 rollback 比較のみ）。**新規作成も EN HTML を直接生成する（`--render-en` 相当）。JSON は読まない。旧EN JSON書込CLIは撤去済み。** 詳細 `docs/en-html-canon-migration.md` §11。
 4. **生成物が正本でないサーフェス（国別 / 年代・運動EN / ENアーカイブ）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる。再生成で誤情報が復活する。JA写真家ページと EN写真家ページは HTML 自身が正本なので対象外。
 5. **捏造しない**。出典にない評価・書誌・URL・Amazonリンクを推測で作らない。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードで拒否）。写真家1人追加で `--all` は不要。安全な生成コマンド集は `docs/generators-and-guards.md`「フルリビルド・ガード」。
@@ -94,7 +94,7 @@ python3 scripts/preflight.py
 
 ## Content Preservation Guards
 
-- `scripts/build_photographers_en.py` は**既存 EN ページへの書き込みを既定で拒否**し `🛑 REFUSED` を出す（既存ページは HTML 自身が正本）。解除は `ALLOW_EN_REBUILD=1` のみ。
+- `scripts/build_photographers_en.py` は**既存 EN ページへの書き込みを既定で拒否**し `🛑 REFUSED` を出す（既存ページは HTML 自身が正本）。解除は `ALLOW_EN_REBUILD=1` のみ。importer と §REL 同期ツールから旧EN JSONへ書くモードは撤去済み。
 - 新規作成時に効く content-loss guard は、再生成で thesis / §RELリンク / cite-N / FIG / lead が消えるページを検知し、そのページだけ上書きせず `🛑 SKIPPED` を出す。
   - 意図的に消す場合のみ `--force`。
   - 監査だけなら `--dry-run`。

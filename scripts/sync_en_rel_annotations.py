@@ -31,11 +31,8 @@ Modes
                           FILE = JSON { en_href: "English HTML blurb", ... }.
                           Add those blurbs directly to slug X's EN §REL.
 
-  --apply / --apply-batch Legacy JSON write paths retained only for migration
-                          audit and emergency rollback work.
 """
 import argparse
-import collections
 import json
 import os
 from urllib.parse import unquote, urlparse
@@ -45,7 +42,6 @@ import sys
 import en_content
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-JSON_PATH = os.path.join(ROOT, 'data', 'photographers-en-content.json')
 JA_DIR = os.path.join(ROOT, 'photographers')
 
 DASH = re.compile(r'\s*[―—–\-]\s+')  # name ― desc  (require trailing space to avoid hyphenated names)
@@ -79,8 +75,7 @@ def en_dir_groups(site_directory_html):
     """Return {'people': [(href,name,blurb),...], 'movements': [...]} in order.
 
     Current EN HTML ``ph-rel-list`` blocks are canonical. The legacy
-    ``site-directory-group`` form remains readable only by deprecated JSON
-    write modes.
+    ``site-directory-group`` form remains readable for older HTML compatibility.
     """
     groups = {'people': [], 'movements': []}
     for gm in re.finditer(r'<ul class="ph-rel-list([^"]*)">(.*?)</ul>',
@@ -206,66 +201,6 @@ def cmd_emit_worklist(args):
     return 0
 
 
-def _apply_to_entry(entry, translations):
-    """Return a new OrderedDict entry with related_annotations merged
-    (additive), placed right after site_directory_html. Validates hrefs."""
-    valid = {h for grp in en_dir_groups(entry.get('site_directory_html') or '').values()
-             for (h, _, _) in grp}
-    bad = set(translations) - valid
-    if bad:
-        raise ValueError('hrefs not in site_directory_html: %s' % sorted(bad))
-    existing = collections.OrderedDict(entry.get('related_annotations') or {})
-    for h, blurb in translations.items():
-        existing[h] = blurb
-    new_entry = collections.OrderedDict()
-    placed = False
-    for k, v in entry.items():
-        if k == 'related_annotations':
-            continue
-        new_entry[k] = v
-        if k == 'site_directory_html':
-            new_entry['related_annotations'] = existing
-            placed = True
-    if not placed:
-        new_entry['related_annotations'] = existing
-    return new_entry
-
-
-def _write_pages(data, raw):
-    out = json.dumps(data, ensure_ascii=False, indent=2)
-    if raw.endswith('\n'):
-        out += '\n'
-    tmp = JSON_PATH + '.tmp'
-    with open(tmp, 'w', encoding='utf-8') as fh:
-        fh.write(out)
-    os.replace(tmp, JSON_PATH)
-
-
-def cmd_apply(args):
-    en_content.warn_en_json_archive_deprecated()
-    if not args.slug or len(args.slug) != 1:
-        sys.exit('--apply requires exactly one --slug')
-    if not args.from_file:
-        sys.exit('--apply requires --from FILE')
-    slug = args.slug[0]
-    translations = json.load(open(args.from_file, encoding='utf-8'))
-    if not isinstance(translations, dict) or not translations:
-        sys.exit('--from FILE must be a non-empty {en_href: blurb} object')
-
-    raw = open(JSON_PATH, encoding='utf-8').read()
-    data = json.loads(raw, object_pairs_hook=collections.OrderedDict)
-    key = slug + '.html'
-    if key not in data['pages']:
-        sys.exit('unknown slug: %s' % slug)
-    try:
-        data['pages'][key] = _apply_to_entry(data['pages'][key], translations)
-    except ValueError as e:
-        sys.exit('%s: %s' % (slug, e))
-    _write_pages(data, raw)
-    print('applied %d blurb(s) to %s' % (len(translations), slug))
-    return 0
-
-
 EN_DIR = os.path.join(ROOT, 'en', 'photographers')
 
 
@@ -339,40 +274,10 @@ def cmd_inject_html(args):
     return 0
 
 
-def cmd_apply_batch(args):
-    """--from FILE = { "<slug>": { "<en_href>": "blurb", ... }, ... }"""
-    en_content.warn_en_json_archive_deprecated()
-    if not args.from_file:
-        sys.exit('--apply-batch requires --from FILE')
-    batch = json.load(open(args.from_file, encoding='utf-8'))
-    if not isinstance(batch, dict) or not batch:
-        sys.exit('--from FILE must be a non-empty {slug: {href: blurb}} object')
-
-    raw = open(JSON_PATH, encoding='utf-8').read()
-    data = json.loads(raw, object_pairs_hook=collections.OrderedDict)
-    total = 0
-    for slug, translations in batch.items():
-        key = slug + '.html'
-        if key not in data['pages']:
-            sys.exit('unknown slug: %s' % slug)
-        if not translations:
-            continue
-        try:
-            data['pages'][key] = _apply_to_entry(data['pages'][key], translations)
-        except ValueError as e:
-            sys.exit('%s: %s' % (slug, e))
-        total += len(translations)
-    _write_pages(data, raw)
-    print('applied %d blurb(s) across %d page(s)' % (total, len(batch)))
-    return 0
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--audit', action='store_true')
     ap.add_argument('--emit-worklist', action='store_true')
-    ap.add_argument('--apply', action='store_true')
-    ap.add_argument('--apply-batch', action='store_true')
     ap.add_argument('--inject-html', action='store_true')
     ap.add_argument('--slug', action='append')
     ap.add_argument('--files', nargs='*')
@@ -380,12 +285,8 @@ def main():
     args = ap.parse_args()
     if args.emit_worklist:
         sys.exit(cmd_emit_worklist(args))
-    if args.apply_batch:
-        sys.exit(cmd_apply_batch(args))
     if args.inject_html:
         sys.exit(cmd_inject_html(args))
-    if args.apply:
-        sys.exit(cmd_apply(args))
     sys.exit(cmd_audit(args))
 
 
