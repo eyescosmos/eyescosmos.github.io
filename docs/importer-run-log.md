@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-15 | (content)総ざらい フェーズ5 入力修正＋一度だけ再生成 | other | （Daisuke記入） | 0 | 4（sidebar 5名はJAへ追加＝Daisuke判断／mali のタグは母数50件を数えて「足さない」へ判断変更／再生成で channel が英語→日本語へ戻る退行を検出し正本の翻訳表で修正／Saul Leiter のインラインリンクは再生成後に手で復旧） | 公開HTML 51枚（1,080枚中。追加削除0） | N/A | N/A |
 | 2026-09-15 | (engine)総ざらい フェーズ4 運動生成器の欠陥修正 | engine | （Daisuke記入） | 0 | 3（sidebar の JA 昇格は公開JAを変えるのでフェーズ5へ移した／target を JA 継承にした実装を監督が実測で差し戻し＝JAは298カード中27件で同一ページ内混在／Codexがクレジット上限で停止し監督が受け入れテストを引き取り） | 2ファイル（公開HTML 0） | N/A | N/A |
 | 2026-09-15 | (engine)総ざらい フェーズ3 EN正本JSONを data/archive/ へ移動 | engine | （Daisuke記入） | 0 | 3（生きた `--update-existing` が凍結JSONを読んで存在しない経路を案内していたのを発見・撤去／凍結ガードのbaselineがrename直後に取れない罠へフォールバック追加／Codexが報告した差分に検証中の1バイト改変が写っていたので監督が実ファイルを照合） | 15ファイル・JSON 2本をrename（公開HTML 0） | N/A | N/A |
 | 2026-09-15 | (engine)総ざらい フェーズ2 builder を module-only 化 | engine | （Daisuke記入） | 0 | 2（監督のブリーフが「data/ は1バイトも変えない」と広すぎて台帳再生成と矛盾→Codexが実装前に停止・訂正／`detect_content_loss` を撤去対象から外す判断） | 9ファイル・-203行（公開HTML 0） | N/A | N/A |

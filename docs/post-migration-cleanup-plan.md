@@ -312,7 +312,7 @@ title / OG / JSON-LD を全部持っており、EN タクソノミーHTML はそ
 | **2** | builder を module-only 化 | ✅ **完了（`7279c87a4`）**。`main()` / `_deep_merge_page()` / `CONTENT_JSON` / CLI専用 import / `ALLOW_EN_REBUILD`・`ALLOW_HAND_MAINTAINED_REBUILD` を撤去（1988→1796行）。**エンジン部は byte 一致で不変更**（`CLASSIFICATION_JSON`〜`process_page` 末尾 75,263 bytes）。直接実行は EXIT 2。`detect_content_loss()` は呼び出し元0になるが意図して残置 | **0枚** |
 | **3** | EN正本JSONの物理移動 | ✅ **完了（`959c3130f`）**。stale な update 表示を撤去し、corpus audit / `build_en_migration_ledger.py` / `preflight.py` の読取先を `data/archive/` へ移行。rename 直後用の baseline フォールバックを凍結ガードに追加。**`photographers-en-classification.json` は不変** | **0枚** |
 | **4** | タクソノミー生成器の欠陥修正 | ✅ **完了（`60aca8743`）**。運動カードのラベルを JA カードから継承（JA/EN 不一致 **22→0**）。`card-data.json` の `nameJa`/`nameEn` で人物名チップも訳す（`ルシェ→Ruscha`。同種は全35ページでこの1件のみ）。カードの `target` 除去は意図した正規化として維持。**年代は `swap_nationality` の挙動を変えない**（JA を鏡写しにすると JA 側の取りこぼし12件が EN へ逆流するため）| **0枚** |
-| **5** | **入力データ／コンテンツ修正＋一度だけ再生成して最新化** | §9.3 の残り3件（sidebar 5名を JA へ昇格、mali / Seydou Keïta のタグを `card-data.json` へ追加、color-photography の Saul Leiter インラインリンクを保全）を直す。そのうえで §9.4 の 67+13 件が解消し、5件のコンテンツが保全され、カードtargetが0へ正規化されることを**集合で確認**してから採用。差分は「意図した改善のみ」であること | **約44枚**（従来の EN 約39枚＋JA運動5枚。最終枚数は実測で確定）|
+| **5** | **入力データ／コンテンツ修正＋一度だけ再生成** | ✅ **完了（`8537af7fd`）**。JA運動5ページの sidebar に5名追加／`build_archive_en.py` の `CHANNEL_PREFIX` に「形態を比較する写真→Comparing form」追加（再生成で英語→日本語へ戻る退行を検出したため）／**mali のタグは修正しない判断に変更**（§9.7）。改善: 陳腐化 lede **67→0**・EN カード内の日本語 **13→0**・JA/EN ラベル不一致 **22→0**。消失は全項目 **0** | **51枚**（en/movements 25・en/countries 13・movements 5・countries 4・en/eras 3・en/archive 1）|
 | **6** | **EN タクソノミーHTML を正本へ昇格** | `build_taxonomy_en.py` を新規ページ専用にし、既存出力への書込を `🛑 REFUSED` で拒否（解除は `ALLOW_TAXONOMY_REBUILD=1` のみ）。`taxonomy-en-content.json` を読み取り専用アーカイブへ降格し、`preflight` に凍結ガードを追加（`check_en_json_frozen()` と同型）。正本マトリクスと §14 を書き換え | **0枚** |
 | **7** | クラス1（原稿バックログ） | EN §REL 一言89件ほか §2f。**該当ページを update するとき一緒に直す既定方針のまま** | 都度 |
 
@@ -328,6 +328,27 @@ title / OG / JSON-LD を全部持っており、EN タクソノミーHTML はそ
 | JA 年代ページに残る `PHOTOGRAPHER` | **12** | 1910: Florence Henri / Tina Modotti / Umbo ／ 1930: Alfred Eisenstaedt / Berenice Abbott / Cecil Beaton / Claude Cahun / Frederick Sommer / Gerda Taro ／ 1950: Aaron Siskind / Erwin Blumenfeld / Hiroshi Hamaya。2026-06-12 の国コード統一の取りこぼし。**EN 年代は 402件すべて国コードで完成している**ので、JA を直す話 |
 | JA 運動カードの `target="_blank"` | **27 / 298** | 11ページに散在し、**同一ページ内で混在**（バウハウスは Umbo だけ新規タブ・Moholy-Nagy は同一タブ）。EN は再生成で0へ正規化されるので、JA だけが不統一として残る |
 | `movements/リアリズム写真.html` のレガシーカード | **2** | `pc-card--photographer` ではなく素の `pc-card`。**運動35ページでここだけ**。ラベル修正は届いている（差分で確認済）|
+
+### 9.7.1 ★フェーズ5で判断を変えた件 — mali のタグ
+
+当初は `card-data.json` の `seydou-keita` に `コンセプチュアル` を足す計画だった
+（公開ページにあって正本に無いため）。**母数を数えたら覆った。**
+
+`cards-archive.html` にあって `card-data.json` に無いタグを持つカードは **50件**あり、
+その大半が**旧語彙**だった:
+
+| 旧語彙（cards-archive 側） | 新語彙（card-data 側） |
+|---|---|
+| `コンセプチュアル`（card-data では5件）| `コンセプチュアルアート`（**106件**）|
+| `FSA`（3件）| `FSA写真`（7件）|
+| `プライベート写真`（2件）| `インティメイト・ライフ`（12件）|
+
+＝ **`cards-archive.html` が旧語彙を抱えたままで、`card-data.json` のほうが新しい。**
+`seydou-keita` の `tags: []` は「この人にコンセプチュアルのタグは付けない」という
+決定の結果であり、**再生成がタグを落とすのは正しい伝播**。足していたら決着済みの
+整理を1ページだけ巻き戻していた。
+
+**バックログ: `new-design/cards-archive.html` の旧語彙タグ50件**（今回は直さない）。
 
 ## 9.8 まだ決めていないこと
 
