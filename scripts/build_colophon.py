@@ -21,6 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import ai_disclosure as d
+from gen_dry_run import DryRunReport
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -114,7 +115,7 @@ def render_main(lang):
     )
 
 
-def build(lang):
+def build(lang, dry_run=None):
     src = ROOT / ('en/privacy-policy.html' if lang == 'en' else 'privacy-policy.html')
     html = d.strip_block(src.read_text(encoding='utf-8'))
     b = BODY[lang]
@@ -179,12 +180,22 @@ def build(lang):
                   html, count=1, flags=re.S)
 
     out = ROOT / ('en/colophon/index.html' if lang == 'en' else 'colophon/index.html')
+    if dry_run is not None:
+        dry_run.record(out, html)
+        return out
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding='utf-8')
     return out
 
 
 if __name__ == '__main__':
+    # --dry-run は preflight.check_generated_surface_drift() が使う。
+    # 出力形式（would-change/create paths:）は gen_dry_run.DryRunReport に合わせる。
+    is_dry = '--dry-run' in sys.argv[1:]
+    report = DryRunReport(ROOT) if is_dry else None
     for lang in ('ja', 'en'):
-        p = build(lang)
-        print(f'wrote {p.relative_to(ROOT)}  ({p.stat().st_size:,} bytes)')
+        p = build(lang, dry_run=report)
+        if not is_dry:
+            print(f'wrote {p.relative_to(ROOT)}  ({p.stat().st_size:,} bytes)')
+    if report is not None:
+        report.print_summary()

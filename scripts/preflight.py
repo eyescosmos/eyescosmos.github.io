@@ -2377,6 +2377,7 @@ GENERATED_SURFACE_CMDS: list[tuple[str, list[str]]] = [
     ("EN アーカイブ", ["build_archive_en.py", "--dry-run"]),
     ("国別 JA", ["generate_country_pages.py", "--all", "--dry-run"]),
     ("国別 EN", ["generate_country_pages_en.py", "--all", "--dry-run"]),
+    ("コロフォン", ["build_colophon.py", "--dry-run"]),
 ]
 
 

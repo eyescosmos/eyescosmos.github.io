@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-17 | (guard)コロフォンをドリフト検知へ登録＋一括再生成の照合スクリプト | engine | （Daisuke記入） | 1（コロフォンが2026-08-30から生成器とずれていた・無検知） | 2（privacy-policy がコロフォンの chrome 正本／`--expect` は要素まるごと書く） | コロフォンJA/EN・privacy-policy JA/EN・preflight・build_colophon・新規スクリプト1 | N/A | N/A |
 | 2026-09-16 | (content)チリの国ページを新設（`sergio-larrain` の受け皿） | other | （Daisuke記入） | 0 | 1（JA の国ナビは `generate_country_pages.py` のハードコード定数なので registry 追加だけでは出ない） | 国別 JA/EN 各34（新規1＋既存33のナビ）・sitemap 1000→1002 | N/A | N/A |
 | 2026-09-16 | bruce-davidson / duane-michals / helmut-newton / ikko-narahara / paul-caponigro / sergio-larrain（idx 409–414・0916素材） | new×6 | （Daisuke記入） | 0 | 5（素材EN thesis の sup-ref／Codex がツール出力を JA運動4枚へ混入／運動8面の件数2系統が未更新／EN年代カード6枚が非標準形／§REL 張り忘れ2件） | 公開HTML 12枚新規＋従属面40 | 本文4節・JA/EN とも素材と完全一致 | JA 26/24/26/29/22/27 |
 | 2026-09-16 | annie-leibovitz（0915再更新・**移行後の実素材 update 初回パイロット**） | update | （Daisuke記入） | 0 | 3（未知class `citation-end` 68件／素材が §REF further-links を16→3に落とす／素材にない §SRC 1本が静かに消失＝監督監査で捕捉） | 公開HTML 2枚（JA/EN リーフのみ。card-data・archive・eras・countries・movements・sitemap・星bin は変更0） | 9,969→12,745 | 42→47 |
@@ -106,6 +107,62 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-17 — コロフォンのドリフト検知登録＋一括再生成の照合スクリプト（種別=engine・Opus実装）
+
+前日の「EN正本化で巻き戻りリスクは消えたか」という問いへの回答として2つの穴を塞いだ。Daisuke 指示。
+
+### 穴1：コロフォンがドリフト検知の対象外だった（実害あり）
+
+チリ追加のときに `build_colophon.py` を回したら**チリと無関係な footer 差分**が出た
+（`トップへ` → `トップへ · コロフォン`）。調べると **2026-08-30 の `2855ef3a6` 以来ずれていた**
+＝同じコミット内でコロフォンを建てた後にテンプレ元 `privacy-policy.html` へ `· コロフォン` が入り、
+コロフォンだけ1手遅れた。**約2週間どのガードも検知していない。**
+
+- **判定**：生成器の出力が正しく、公開中が古い（サイト全ページの footer 標準は `… · コロフォン`）。再生成が正。
+- `build_colophon.py` に `--dry-run` を追加（`gen_dry_run.DryRunReport` を使い出力形式を既存3本と統一）。
+- `preflight.GENERATED_SURFACE_CMDS` に `("コロフォン", [...])` を登録＝**監視対象が3面→4面**。
+- **受け入れテスト**：コロフォン出力から チリ リンクを手で削除 → **HARD・EXIT 1**。復元で EXIT 0。
+- **★副産物**：コロフォンの chrome は `privacy-policy.html` 由来で、**国ディレクトリの正本は privacy-policy**
+  （`data/country-pages.json` を読んでいない）。チリが4枚（コロフォンJA/EN・privacy-policy JA/EN）で
+  欠けていたので privacy-policy を直接編集（手管理ページなので直接編集が正）してから再生成。
+  **国を1つ増やすと触る場所は4つ**になる＝手順を `docs/generators-and-guards.md` に明記した。
+
+### 穴2：正本を間違えて全面に伝播するケースは無検知だった
+
+`check_generated_surface_drift()` は **出力HTML == 生成器(正本)** の1方向しか見ていない。
+**正本を間違えて再生成すると出力は正本と完全に整合するので preflight は緑になる。** 実証（作業後は復元）:
+
+| 注入した誤り | `check_content_loss` | `preflight` | `verify_bulk_regen` |
+|---|---|---|---|
+| 出力HTMLを手編集（コロフォンから1リンク削除） | EXIT 0 | **EXIT 1（HARD）** | — |
+| 正本 `country-pages.json` の `mali.nameJa` を誤記 → 再生成 | EXIT 0 | **EXIT 0（緑）** | **FAIL・2枚を名指し** |
+| 正本のチリ lead をベネズエラ文面へ → 再生成 | EXIT 0 | **EXIT 0（緑）** | （同型） |
+
+3行目は**チリのページに「ベネズエラに関わる写真家を…」と書かれ、EN は `connected to Chile` のまま**
+という日英不一致で push 前チェックを素通りする。
+
+- **`scripts/verify_bulk_regen.py` を新規追加**。各ファイルで
+  **`新 - (今回増えた --expect 該当箇所)` が `旧` と完全一致するか**を照合する。
+  これは 2026-09-16 にチリ追加の66枚に対して監督が手で書いた照合を、そのままスクリプト化したもの。
+- **実データ検算**：`--since 611197549^` で **意図どおり66 / 新規2 / 意図の外0**＝当時の手作業と同じ結論。
+- **★判定は旧・新の両側から `--expect` を落として比較する。** 初版は新側だけ剥がしていたため、
+  **元からあった該当箇所が新側でだけ消えて誤検知**した（自分の変更を検証しようとして踏んだ＝
+  privacy-policy の footer に既存の `· コロフォン` があった）。両側から落として相殺し、
+  あわせて該当箇所が減っていないことも見る（削除は「意図」に含めない）。
+- **★`--expect` は挿入された要素まるごとを書く。** キーワードだけ（`'chile'`）だと文字だけ剥がれて
+  `<a href="/countries/.html">チリ</a>` の殻が残り必ず FAIL する（初回実行で実際に踏んだ）。docstring と docs に明記。
+- **preflight には組み込まない。** 「何を意図したか」は人間しか知らないので `--expect` を毎回渡す必要があり、
+  自動化すると必ず形骸化する。**正本を編集して一括再生成したときだけ回す道具**と位置づけた。
+
+### 残る限界（明示しておく）
+
+- `verify_bulk_regen` が保証するのは「**意図した変更以外が混ざっていない**」ことだけ。
+  **意図した変更それ自体が正しいか**（チリの lead が本当にチリの説明か）は依然として人間が読むしかない。
+- 検知できるようになった面は4つ（ENアーカイブ・国別JA/EN・コロフォン）。
+  AI開示とカード枚数は別チェックが既にある。
+
+- **wall-time**：（Daisuke記入）
 
 ## 2026-09-16 — チリの国ページ新設（種別=other・Opus実装）
 

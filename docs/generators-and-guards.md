@@ -437,6 +437,36 @@ python3 scripts/insert_ga_tags.py
 - アーカイブ英語版は `scripts/build_archive_en.py` が SEO メタの日→英変換を含むため、
   日本語 archive.html に必須要素を入れてから再生成すれば英語側にも引き継がれる
 
+## コロフォンのドリフト検知 — `GENERATED_SURFACE_CMDS` に登録（2026-09-17 追加）
+
+コロフォンは `scripts/build_colophon.py` が正本だが、**ドリフト検知の対象外だった**ため
+「出力HTMLを手編集しても気づけない／生成器と公開物がずれても気づけない」状態が続いていた。
+
+2026-09-17 に実害を確認した。`build_colophon.py` を回したら**チリと無関係な footer 差分**が出た
+＝公開中のコロフォンと生成器が **2026-08-30 からずれていた**（同じコミット内でコロフォンを建てた後に
+テンプレ元 `privacy-policy.html` へ `· コロフォン` が入ったため、コロフォンだけ1手遅れた）。
+**どのガードも検知していなかった。**
+
+- `build_colophon.py` に **`--dry-run`** を追加（出力形式は `gen_dry_run.DryRunReport` に統一）
+- `preflight.GENERATED_SURFACE_CMDS` に `("コロフォン", ["build_colophon.py", "--dry-run"])` を登録
+- 受け入れテスト：コロフォン出力から1リンクを手で削除 → **HARD・EXIT 1**。復元で EXIT 0
+
+### ★コロフォンの chrome は `privacy-policy.html` 由来
+
+`build_colophon.py` は `privacy-policy.html` / `en/privacy-policy.html` の chrome を型として使う。
+つまり**コロフォンの国ディレクトリは privacy-policy が正本**で、`data/country-pages.json` を読んでいない。
+
+**国を追加したら privacy-policy JA/EN の site-directory にも手で足してからコロフォンを再生成する。**
+`privacy-policy.html` はどのスクリプトも生成しない手管理ページなので、直接編集が正しい。
+
+国を1つ増やすと触る場所は4つ:
+
+1. `data/country-pages.json`（レジストリ＝正本）
+2. `scripts/generate_country_pages.py` の `COUNTRIES_SELECT` / `SITE_DIR_COUNTRIES`
+   （**JAナビはハードコード定数**。EN は registry 駆動なので不要という非対称がある）
+3. `privacy-policy.html` / `en/privacy-policy.html` の site-directory（手編集）
+4. `python3 scripts/build_colophon.py`（3を反映させる）
+
 ## AI開示ブロック（全ページ末尾）— 2026-08-30 導入
 
 各ページの本文末尾（写真家ページは §SRC の直後、その他は最終セクションの直後）に、
@@ -653,3 +683,56 @@ EN 写真家76枚に残っていた「日本語版の名残」を一掃した（
 `[STYLE] 表記チェック` が、**着手前に素材のまま**同じ観点を出す（出典番号の位置 / Abstract・thesis 混入 /
 EN の和文記号・段落頭の `. ` / `</a>` の空白抜け / `word.Word`）。
 素材側で直してもらうのが正。急ぐときは素材を書き換えず一時コピー上で直してから流す。
+
+## 一括再生成の照合 — `scripts/verify_bulk_regen.py`（2026-09-17 追加）
+
+### なぜ要るか — ドリフト検知は「正本が正しいか」を見ていない
+
+`preflight.check_generated_surface_drift()` が照合しているのは
+
+```
+出力HTML == 生成器(正本)      ← これだけ
+正本の中身が正しいか           ← 誰も見ていない
+```
+
+の1方向だけ。**正本を間違えて再生成すると、出力は正本と完全に整合するので preflight は緑になる。**
+
+2026-09-17 に実証した（作業後は復元済み）:
+
+| 注入した誤り | `check_content_loss` | `preflight` | `verify_bulk_regen` |
+|---|---|---|---|
+| 出力HTMLを手編集（コロフォンから1リンク削除） | EXIT 0 | **EXIT 1（HARD）** | — |
+| **正本 `data/country-pages.json` の `mali.nameJa` を誤記 → 再生成** | EXIT 0 | **EXIT 0（緑）** | **FAIL・該当2枚を名指し** |
+| **正本のチリ lead をベネズエラ文面へ → 再生成** | EXIT 0 | **EXIT 0（緑）** | （同型） |
+
+2行目・3行目が穴。**日英で内容が食い違ったまま push 前チェックを素通りする。**
+生成物は正本1行が最大66枚へ伝播するので、写真家ページ（間違えても1枚）と爆発半径が桁違い。
+
+### 使う場面
+
+**正本を編集して一括再生成したとき（国の追加・lead 文面の変更・chrome の差し替え等）。**
+写真家1名追加のような通常運用では要らない（触る生成物が少なく、差分を直接読める）。
+
+```bash
+python3 scripts/verify_bulk_regen.py --since HEAD \
+    --expect '<a[^>]*countries/chile\.html[^>]*>[^<]*</a>' \
+    --paths countries en/countries
+```
+
+各ファイルについて **旧・新の両方から `--expect` 該当箇所を落とした結果が完全一致**すれば OK。
+両側から落とすのは、元からあった該当箇所を相殺するため（片側だけだと、既存の該当箇所が
+新側でだけ剥がれて誤検知する。2026-09-17 に privacy-policy の footer で実際に踏んだ）。
+あわせて該当箇所が**減っていない**ことも見る（削除は「意図した変更」に含めない）。
+一致しなければ「意図の外側の変更」＝ FAIL（EXIT 1）で、該当ファイルと差分行を出す。
+
+### ★`--expect` は挿入された要素まるごとを書く
+
+キーワードだけ（`--expect 'chile'`）にすると文字だけが剥がれて
+`<a href="/countries/.html">チリ</a>` の殻が残り、**必ず FAIL する**（初回実行で実際に踏んだ）。
+**タグの開きから閉じまでを含める。** FAIL したらまず `--expect` が狭すぎないかを疑い、
+正したうえでなお FAIL するならそれは本物の差分。
+
+### 実績
+
+チリ追加（`611197549`）の66枚を後から検算 → **意図どおり66 / 新規2 / 意図の外0**。
+これは当時 監督が手で書いた照合と同じ結論で、その手作業を置き換えるのが本スクリプト。
