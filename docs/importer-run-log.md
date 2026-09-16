@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-16 | (content)チリの国ページを新設（`sergio-larrain` の受け皿） | other | （Daisuke記入） | 0 | 1（JA の国ナビは `generate_country_pages.py` のハードコード定数なので registry 追加だけでは出ない） | 国別 JA/EN 各34（新規1＋既存33のナビ）・sitemap 1000→1002 | N/A | N/A |
 | 2026-09-16 | bruce-davidson / duane-michals / helmut-newton / ikko-narahara / paul-caponigro / sergio-larrain（idx 409–414・0916素材） | new×6 | （Daisuke記入） | 0 | 5（素材EN thesis の sup-ref／Codex がツール出力を JA運動4枚へ混入／運動8面の件数2系統が未更新／EN年代カード6枚が非標準形／§REL 張り忘れ2件） | 公開HTML 12枚新規＋従属面40 | 本文4節・JA/EN とも素材と完全一致 | JA 26/24/26/29/22/27 |
 | 2026-09-16 | annie-leibovitz（0915再更新・**移行後の実素材 update 初回パイロット**） | update | （Daisuke記入） | 0 | 3（未知class `citation-end` 68件／素材が §REF further-links を16→3に落とす／素材にない §SRC 1本が静かに消失＝監督監査で捕捉） | 公開HTML 2枚（JA/EN リーフのみ。card-data・archive・eras・countries・movements・sitemap・星bin は変更0） | 9,969→12,745 | 42→47 |
 | 2026-09-16 | (engine)生成物サーフェスの手編集検知ガード（EN アーカイブ・国別JA/EN） | engine | （Daisuke記入） | 0 | 1（既存の「直接編集の疑い」WARN と重複＝外すかは別判断で保留） | 公開HTML 0枚。`preflight.py` +docs 2 | N/A | N/A |
@@ -105,6 +106,43 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-16 — チリの国ページ新設（種別=other・Opus実装）
+
+0916バッチ（`a3f568625`）で `sergio-larrain`（nationality=`CL`）が**どの国ページにも載らない**状態になり、
+preflight が `どの国別ページ config にも一致しない nationality 1件` を WARN で出していた。Daisuke 指示で解消。
+
+- **正本**：`data/country-pages.json` に `chile` を1件追加（`canada` → **`chile`** → `china` の slug 順）。
+  lead は既存33ヶ国と同じ定型文。**既存33件は byte 不変**を機械照合。
+- **JA/EN 生成**：`generate_country_pages.py --country chile` / `generate_country_pages_en.py --country chile`。
+  生成された2枚は既存の小国ページ（`venezuela` / `mali`）と構造が一致（GA 2・canonical・hreflang 3・
+  `data-nosnippet` 8・JSON-LD 0 も同値）。掲載は `sergio-larrain` 1名。
+- **★JA の国ナビはハードコード定数だった**（今回の手作業点）。`data/country-pages.json` に足すだけでは
+  JA 側のナビに出ない。`scripts/generate_country_pages.py` の **`COUNTRIES_SELECT`** と
+  **`SITE_DIR_COUNTRIES`**（あいうえお順の静的リスト）に `チリ` を追加（`チェコ` の直後）。
+  **EN 側は registry 駆動なので変更不要**＝この非対称は今後も踏む。
+- **全面再生成**：定数追加後に JA/EN とも `--all`。**JA 33枚・EN 33枚とも HEAD との差分は
+  chile リンクのみ**（行単位で chile リンクを除去すると HEAD と完全一致することを機械照合）。
+  再生成の**冪等性も実測**（68枚 sha256 完全一致）＝`[EN country …] 生成物を直接編集した疑い` WARN 27件は
+  **定義上の偽陽性**（生成器の出力そのもの）。
+- **sitemap** 1000→1002（追加2・削除0・重複0・worktree/backup 0）。
+- **検証**：`check_content_loss` / `preflight` / `sync_card_counts --check` /
+  `check_photographer_link_integrity` **全 EXIT 0**。`どの国別ページ config にも一致しない nationality` WARN と
+  前段の `生成物が正本と一致しない 33件` WARN は**どちらも解消**。
+
+### ★残した1件 — コロフォンの国ディレクトリに チリ が無い
+
+`colophon/index.html` / `en/colophon/index.html` の site-directory は国33件のままで、`chile` を含まない。
+
+- コロフォンの chrome は **`scripts/build_colophon.py` に自前でハードコード**されており、
+  `data/country-pages.json` も国ページ生成器も読んでいない（`countries/` の参照が1件も無い）。
+- **`build_colophon.py` を素で再生成すると、今回と無関係な差分が出る**（footer に
+  `· コロフォン` / `· Colophon` の自己リンクが増える＝公開済みコロフォンと builder の既存ドリフト）。
+  そのため**再生成せず HEAD へ戻した**。絶対禁止4番により**出力HTMLの手編集もしない**。
+- 影響は小さい（国ページ自体は JA/EN 34枚のナビと sitemap から到達可能）。
+  **直すなら `build_colophon.py` の定数に チリ を足したうえで、footer ドリフトの是非を別途判断する**のが正しい順序。
+
+- **wall-time**：（Daisuke記入）
 
 ## 2026-09-16 — 0916素材 新規6名（idx 409–414・種別=new×6・Opus監督 / Codex実装）
 
