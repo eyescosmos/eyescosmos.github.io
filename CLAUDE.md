@@ -91,7 +91,7 @@ git diff origin/main
 | スクリプト実行・EN 写真家ページ編集・テンプレ移行・機械チェックの意味 | `docs/generators-and-guards.md` |
 | Codex 並行作業・横断スクリプト・`overrides.js`・本文自動リンク/エイリアス | `docs/content-preservation.md` |
 | **ChatGPT新素材で写真家をバッチ update する（Opus監督/Codex実装）** | `docs/importer-scaffold-inject-spec.md` §14「バッチ update のキックオフ定型」（既知WARN許可リスト・Related削除SKIPの常設承認条件・既存維持フィールド・**素材に生没年が無ければ調べて入れる**・**パイロット1名で回す検証項目**）。**最初のプロンプトにこれを入れないと往復が増える** |
-| ★★**移行後はじめて写真家を update / 追加する**（2026-09-15 以降の初回だけ・**次の写真家作業がこれ**） | `docs/en-html-canon-migration.md` **§13.10** ＋ `docs/next-photographer-batch.md`。移行後の経路は fixture でしか通していない（**新規追加は本番未検証**）ので、**実素材の初回だけ**チェックリストを回して `docs/importer-run-log.md` に実測を残す。**次は新規6名で確定**（Daisuke 2026-09-15）＝6名とも未検証の経路に乗る。**型＝パイロット1名→監査→残り5名一括**。通れば初回扱いは終了 |
+| ★**移行後はじめて写真家を update する**（既存ページ更新の初回だけ） | `docs/en-html-canon-migration.md` **§13.10 の A**（6項目）。**新規追加の初回検証（B）は 2026-09-16 の0915バッチで完了済み＝新規は通常運用でよい**。update は最後に実素材で通したのが移行途中（2026-09-14）で、そのあとに書き込み経路の切替（フェーズE-2/F）と importer の engine 修正が入っているため、**パイロット1名で A を1回**回す。実測は `docs/importer-run-log.md` へ |
 | EN の**アーカイブ / 国**ページ（写真家・年代・運動ページではない） | `docs/en-html-canon-migration.md` **§14**。**この2つは正本が生成元のまま**（アーカイブ＝JA `archive.html`、国別＝`data/country-pages.json`）。EN 出力HTMLだけ直すと再生成で消える（絶対禁止4番）。**EN年代・運動は 2026-09-15 に HTML 自身が正本へ昇格した**（`docs/post-migration-cleanup-plan.md` §10）|
 | ★**移行後の総ざらい（残骸の掃除・写真家以外の正本化）を始める** | `docs/post-migration-cleanup-plan.md`（**設計から始める引き継ぎ**。再生成ドリフトの実測・3クラスの切り分け・未決の論点4つ・作業規律）。**着手前に §2 の実測と §4 の論点を読む** |
 

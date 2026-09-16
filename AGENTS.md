@@ -138,7 +138,7 @@ git diff origin/main
 | スクリプト実行・EN 写真家ページ編集・テンプレ移行・機械チェックの意味 | `docs/generators-and-guards.md` |
 | Codex 並行作業・横断スクリプト・`overrides.js`・本文自動リンク/エイリアス | `docs/content-preservation.md` |
 | **ChatGPT新素材で写真家をバッチ update / 追加する** | `docs/importer-scaffold-inject-spec.md` §14「バッチ update のキックオフ定型」 |
-| ★★**移行後はじめて写真家を update / 追加する**（2026-09-15 以降の初回だけ・**次の写真家作業がこれ**） | `docs/next-photographer-batch.md` ＋ `docs/en-html-canon-migration.md` §13.10。**新規追加の経路は本番未検証**で、**次は新規6名**＝全員がその経路に乗る。初回だけ検証チェックリストを回して `docs/importer-run-log.md` に実測を残す |
+| ★**移行後はじめて写真家を update する**（既存ページ更新の初回だけ） | `docs/en-html-canon-migration.md` **§13.10 の A**（6項目）。**新規追加の初回検証（B）は 2026-09-16 の0915バッチで完了済み＝新規は通常運用でよい**。update は最後に実素材で通したのが移行途中（2026-09-14）で、そのあとに書き込み経路の切替（フェーズE-2/F）と importer の engine 修正が入っているため、**パイロット1名で A を1回**回す。実測は `docs/importer-run-log.md` へ |
 
 ## General Style
 
