@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-16 | annie-leibovitz（0915再更新・**移行後の実素材 update 初回パイロット**） | update | （Daisuke記入） | 0 | 3（未知class `citation-end` 68件／素材が §REF further-links を16→3に落とす／素材にない §SRC 1本が静かに消失＝監督監査で捕捉） | 公開HTML 2枚（JA/EN リーフのみ。card-data・archive・eras・countries・movements・sitemap・星bin は変更0） | 9,969→12,745 | 42→47 |
 | 2026-09-16 | (engine)生成物サーフェスの手編集検知ガード（EN アーカイブ・国別JA/EN） | engine | （Daisuke記入） | 0 | 1（既存の「直接編集の疑い」WARN と重複＝外すかは別判断で保留） | 公開HTML 0枚。`preflight.py` +docs 2 | N/A | N/A |
 | 2026-09-16 | (content+engine)EN Channel 未訳の辞書穴を塞ぎ既存EN 11枚を英語化＋`process_ja()` 撤去 | other | （Daisuke記入） | 0 | 2（接頭句の未訳は WARN すら出ない死角だった／`renumber_eyebrow`・`delink_missing` が未参照化＝撤去は別判断） | EN写真家 11枚・辞書1・engine 2 | N/A | N/A |
 | 2026-09-16 | (engine)importer の欠落3件を修正＋新規追加の入口を1本化 | engine | （Daisuke記入） | 0 | 3（EN Channel 未訳は辞書ファイル側のため未着手＝判断待ち／`process_ja()` が通常モードから外れて未参照化／既存EN 11枚の Channel 日本語残りを発見） | 公開HTML 0枚（1,094枚 sha256 完全一致）。コード2・docs 4 | N/A | N/A |
@@ -103,6 +104,90 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-16 — `annie-leibovitz` 0915 素材で再更新（種別=update・**移行後の実素材 update 初回＝§13.10 A**・Opus監督 / Codex実装）
+
+- **範囲**：`photographers/annie-leibovitz.html` / `en/photographers/annie-leibovitz.html` の2枚だけ。
+  新規追加ではないので card-data・cards-archive・archive・eras・countries・movements・sitemap・星bin は変更0。
+  `data/` 差分0（凍結EN JSON 3本に一度も触っていない）。wall-time は Daisuke 記入。
+- **★`docs/en-html-canon-migration.md` §13.10 の A（6項目）を実素材で通過＝update 側の初回扱いも終了。**
+  これで §13.10 は A（update）・B（new・2026-09-16 の0915パイロットで完了）とも消化済み。次回から通常運用でよい。
+- **2026-09-14 に同ページを更新した直後の再更新**（Daisuke 確認済み）。0915 素材は本文・出典とも上積み版。
+
+### §13.10 A の実測
+
+| # | 見るもの | 実測 |
+|---|---|---|
+| 1 | `en_html_sync.py verify annie-leibovitz` | **10/10 OK**（cite集合 JA47==EN47・dangling0・未参照cite0・節ラベル対称・JAパス0・CJK0・GA・h3 15/15・div 130/130・section 一致）|
+| 2 | JSON を1度も開いていない | `git diff --name-only` に `data/` **0件**。凍結3本の `git status` も0 |
+| 3 | JA §REF と EN §REF の href 集合 | **一致（20/20・差0）**。UL は JA/EN とも1本 |
+| 4 | §REL の EN 一言（台帳 `en_rel_blurb_missing`） | **該当なし**（22ページのリストに annie-leibovitz は無い）＝ついで作業は発生せず |
+| 5 | `check_en_entry.py` / `check_new_photographer.py` | ともに **EXIT 0** |
+| 6 | `preflight.py` | **EXIT 0・ベースラインと出力がバイト一致**（新規 HARD/WARN 0） |
+
+- 終了時チェック：JA 408枚 / EN 424枚の sha256 を取り直し、**差分は対象2枚のみ**。
+  素材原本2本の sha256 は作業前後で不変。`check_content_loss.py` EXIT 0。
+
+### フィデリティ（`--update-existing` の D 出力＋監督の独立実測）
+
+| 項目 | 適用前 | 適用後 |
+|---|---:|---:|
+| 本文（§01〜§03 の body） | 9,969 字 | 12,745 字 |
+| unique 出典（`.ph-cite`） | 42 | 47 |
+| sup-ref | 60 | 68 |
+| dangling sup-ref | 0 | 0 |
+| §REL | 5 | 5（同一5項目・一言だけ素材へ差し替え） |
+| §WORKS | 5 URL | 5 URL（集合同一） |
+| §REF further-links | 16 | **20**（JA/EN とも1 UL） |
+
+### 手作業点3（すべて着手前または監査で捕捉）
+
+1. **未知class `citation-end` 68件**（JA/EN 素材とも）。`<span class="citation-end">本文+sup-ref</span>` で
+   引用記号の行頭孤立を防ぐための素材独自クラス。**サイト全体で使用0・CSS定義0**なので preflight の
+   orphan-class が HARD で止まる。監督判断で **span をアンラップして中身は残す**（CSS は足さない）。
+   素材原本は書き換えず、scratchpad の一時コピー上で正規化した。処理後 JA/EN とも citation-end 0・
+   sup-ref 68・ph-cite 47 で対称。
+2. **素材が §REF「関連データベース・アーカイブ」を 16本→3本に落とす**（[[feedback_update_drops_ref_and_ja_rel]]・
+   2026-09-14 に同ページで16本欠落した既知の穴の再発）。backup の16本を全部残し、素材の3本
+   （Vanity Fair 3本）を追記して **UL 1本に統合**。dedup 後 19本。
+3. **★素材にない §SRC 1本が静かに消失していた**＝`https://www.brooklynmuseum.org/exhibitions/annie_leibovitz`
+   （旧 cite-14 / Brooklyn Museum — *A Photographer's Life, 1990–2005*）。新素材に対応物が無く、
+   §SRC 42→47 と**総数が増えているため件数ベースでは見えない**。
+   **`check_content_loss.py` も `preflight.py` も無反応**（実測）。Codex の報告にも出ていない。
+   監督が backup と新ページの**外部URL集合を差分して捕捉**し、§REF further-links へ復元した（→20本）。
+   復元後は JA/EN とも **外部URL の消失0**。
+   - **教訓**：update の消失検知は「§SRC の件数」でも「further-links の件数」でもなく、
+     **ページ全体の外部URL集合を backup と差分する**のが確実。出典が増えている update ほど
+     個別の脱落が埋もれる。§SRC から §REF へ移っただけの3本（Vanity Fair）と、
+     行き場を失った1本を、この差分だけが区別できた。
+
+### 経路（移行後の update はこうなる）
+
+- **JA**：`--update-existing --prepare` → `--update-existing --apply --force`。
+  carry-forward は JSON-LD description / birthDate / sameAs / Period / description。
+- **EN**：**ビルダーも正本JSONも使わない。** 今回は EN 素材があるので翻訳は不要で、
+  `en_html_sync.py extract`（新JAから）→ EN素材から同形の JSON を組む → `check-translation` PASS →
+  `inject` の順。`inject` が触らない §REF / §REL / §WORKS / Amazon は HTML を直接編集した。
+- **EN 素材の §REL href は JA パス**（`/photographers/…`・`/movements/フォトジャーナリズム.html`）という
+  既知の抽出バグ。**採用せず既存EN の `/en/…` を維持**し、一言解説だけ差し替えた。
+- **EN の Amazon 3本は既存維持**（`4um2FWM` / `4dhREQo` / `3Rcch7T`）。EN 素材は JA と同じ ASIN を
+  持ち込んでいたが、「既存があれば既存維持」の常設ルールどおり不採用。JA 3本は素材＝既存で同値。
+- **副次的に直ったもの**：JA の `meta description` に混入していた `*37`（lead 由来の自動充填が
+  sup-ref 記号ごと拾っていた）が、素材の meta description 採用で解消。og:description / twitter:description も同時に是正。
+
+### Codex 実測
+
+- **1セッション・停止0回で完走。消費 91,611 トークン**（exec 回数は10回台）。
+  キックオフに `docs/` 読み禁止（`AGENTS.md` のみ許可）・素の `git diff` 禁止・既知WARN一覧・
+  期待値の表・停止ポリシーを入れた（spec §14 A-1b-6 / A-1c）。
+  **update 1名の新規セッションあたり 91,611 トークン**が今後の比較用ベースライン。
+- **codex MCP は CONNECTION_CLOSED**（`~/.codex/config.toml` に `model = "gpt-5.6-sol"` が戻っていた）。
+  Daisuke の設定は触らず、最小 `CODEX_HOME=~/.codex-cli` の CLI で回避した（[[reference_codex_config_agents_key_breaks_cli]]）。
+- **Codex の報告で1点ずれ**：「SEO要素は backup と同数」の内訳に EN `data-nosnippet 8`（実測7）と
+  書いていた。backup も7なので実害は無いが、**報告値は監督が独立に数え直す**運用が正しい。
+  上の手作業点3を捕まえたのも同じ独立実測。
+
+- **バックアップ**：`-backup.html` 2枚は、原本が HEAD と sha256 一致することを機械照合してから削除した。
 
 ## 2026-09-16 — 生成物サーフェスの手編集検知ガード（種別=engine・Opus実装）
 

@@ -1043,6 +1043,16 @@ python3 scripts/preflight.py | diff /tmp/preflight-before.txt -
 `docs/importer-run-log.md` に「**移行後の実素材 初回**」と明記して1節。
 **ここで問題が出なければ、この §13.10 の初回扱いは終了**として次回から通常運用にしてよい。
 
+> **★2026-09-16 A を実素材で通過＝update 側の初回扱いも終了**（0915 素材・パイロット `annie-leibovitz`）。
+> 6項目すべて期待どおり（verify 10/10・`data/` 差分0・JA/EN §REF href 集合一致 20/20・台帳は該当なし・
+> entry checks EXIT 0・preflight はベースラインとバイト一致）。**§13.10 は A・B とも消化済み＝次回から通常運用。**
+> 経路は JA が `--update-existing --prepare` →`--apply --force`、EN が `en_html_sync.py`
+> extract→check-translation→inject＋`inject` が触らない §REF/§REL/§WORKS/Amazon の直接編集。
+> **ここで見つけた穴が1つ**：素材にない §SRC 1本（Brooklyn Museum）が静かに消え、
+> `check_content_loss.py` も `preflight.py` も無反応だった。出典が 42→47 と**増えている**ため
+> 件数ベースでは埋もれる。**update の消失検知は backup と新ページの「外部URL集合の差分」で行う**。
+> 実測は `docs/importer-run-log.md` 2026-09-16 の `annie-leibovitz` の節。
+
 > **★2026-09-16 B を実素材で通過＝初回扱いは終了**（0915バッチ新規6名・パイロット `yasuhiro-ishimoto`）。
 > 9項目は6名全員で期待どおり。fixture では出なかった手補完点が3つ残る：JA renderer が spec title を head に
 > 反映しない／EN renderer の JSON-LD Person が name=ページ title・4キー欠落／素材 §REL がリンクで一言まで包む形で
