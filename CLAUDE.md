@@ -10,7 +10,7 @@
 
 1. **`scripts/generate_photographer_pages.py` は削除済み**（2026-09-15・§12.3）。旧デザインを生成し JA ページを旧構造と言語トグル破損へ巻き戻す実行禁止スクリプトだった。**復活させない。** 中身を見たいときは `git show legacy-generators-2026-09-15:scripts/generate_photographer_pages.py`。
 2. **`scripts/generate_archive_pages.py` も削除済み**（同上）。JA 写真家ページ・アーカイブの正本は HTML 自身なので、生成し直す経路はもう無い。
-3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は **EN描画エンジンのモジュール**であり CLI ではない（直接実行は常に非0終了）。**新規作成は EN HTML を importer で直接生成する（`--render-en` 相当）。JSON から再生成する経路はなく、rollback は git で行う。** 詳細 `docs/en-html-canon-migration.md` §11。
+3. **既存の `en/photographers/*.html` を再生成しない**。ENページは **HTML 自身が正本**（2026-09-13〜）。`build_photographers_en.py` は **EN描画エンジンのモジュール**であり CLI ではない（直接実行は常に非0終了）。**JA/EN とも新規なら importer の通常モード（spec 必須・省略時 `scripts/<slug>-spec.json`）で scaffold-inject し、JA が既にある場合だけ `--render-en` で EN HTML を直接生成する。JSON から再生成する経路はなく、rollback は git で行う。** 詳細 `docs/en-html-canon-migration.md` §11。
 4. **生成物が正本でないサーフェス（国別 / ENアーカイブ / コロフォン / AI開示）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる（再生成で誤情報が復活するため）。JA写真家ページ・EN写真家ページ・**EN年代/運動ページ**は HTML 自身が正本なので、この項の対象外。
 5. **捏造しない**。出典にない評価・書誌・年・URL・Amazonリンクを推測で作らない。出典準拠。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードが拒否）。写真家1人追加で `--all` は不要（`docs/generators-and-guards.md`「フルリビルド・ガード」）。
@@ -26,7 +26,7 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 | サーフェス | 正本 | 生成コマンド | 備考 |
 |---|---|---|---|
 | JA写真家 `photographers/*.html` | **HTML自身** | なし（手編集・永続） | 本文・thesis・§REL・出典・書籍欄を手編集してよい |
-| EN写真家 `en/photographers/*.html` | **HTML自身** | 新規のみ `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply` | JA と同じく直接編集してよい。既存ページへの上書きは常に拒否される |
+| EN写真家 `en/photographers/*.html` | **HTML自身** | 新規のみ `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --spec scripts/<slug>-spec.json --apply`（既定位置なら `--spec` 省略可） | JA と同じく直接編集してよい。通常モードは JA を scaffold-inject し、既存ENへの上書きは常に拒否される |
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` | |
 | 国別 JA/EN | `data/country-pages.json` | `generate_country_pages.py` / `generate_country_pages_en.py`。`--country <slug>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 | EN年代・運動 `en/eras/*.html` `en/movements/*.html` | **HTML自身** | 新規のみ `python3 scripts/build_taxonomy_en.py --slug <movement>` / `--era <YYYY>` | JA・EN写真家と同じく直接編集してよい。既存ページへの上書きは常に拒否される（`ALLOW_TAXONOMY_REBUILD=1` の緊急rollback を除く） |
@@ -42,10 +42,10 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 
   | 状況 | コマンド |
   |---|---|
-  | **JA も EN もこれから**（素材2本が揃っている） | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`（JA→EN の順に両方できる） |
+  | **JA も EN もこれから**（素材2本＋specが揃っている） | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --spec scripts/<slug>-spec.json --apply`（既定位置なら `--spec` 省略可。JA は scaffold-inject、続いて EN を生成） |
   | **JA は既にある。EN だけ足す**（`add_photographer.py` の後段など） | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --render-en EN.html --apply` |
 
-  上を JA 既存に対して使うと `--force` が要る（＝JA を書き直してしまう）ので、
+  通常モードは spec が無ければ非0終了し、素材HTMLを素通しでは書かない。上を JA 既存に対して使うと `--force` が要る（＝JA を書き直してしまう）ので、
   **JA ができているなら必ず `--render-en` を使う**。
   どちらも EN 出力先が既に存在すれば常に拒否され、`--force` でも上書きしない。
   EN scaffold は同一人物の JA ページなので、**JA が無いと EN は描けない**（dry-run はその旨を表示して正常終了）。

@@ -48,6 +48,7 @@ from build_photographers_en import CJK_RE  # noqa: E402
 import ai_disclosure as _ai_disclosure  # noqa: E402
 
 CARD_DATA = REPO / "card-data.json"
+SCRIPTS_DIR = REPO / "scripts"
 JA_DIR = REPO / "photographers"
 EN_DIR = REPO / "en" / "photographers"
 PREVIEW_DIR = REPO / "outputs" / "import-preview"
@@ -836,6 +837,10 @@ def _parse_rel_item(html: str) -> dict:
         name = norm_text(re.sub(r'</?a\b[^>]*>', "", a.group(0)))
         reason = _strip_leading_dash_run(
             norm_text(html[a.end():])).strip()
+        if not reason:
+            split_name, split_reason = _split_rel_separator(name)
+            if split_reason:
+                name, reason = split_name, split_reason
     else:  # de-link 済み（slug=None で保持・§3.3）
         name, reason = _split_rel_separator(norm_text(html))
         slug = None
@@ -1720,7 +1725,39 @@ def _en_head_complete(entry: dict, bundle: dict, slug: str) -> dict:
     twitter["image"] = _en_builder.DEFAULT_OG_IMAGE
     completed["twitter"] = twitter
     title = completed.get("title") or bundle.get("title") or completed.get("h1")
-    completed["jsonld"] = _en_builder._fb_jsonld(completed, slug, title)
+    graph = _en_builder._fb_jsonld(completed, slug, title)
+    person_index = next(
+        (i for i, node in enumerate(graph)
+         if isinstance(node, dict) and node.get("@type") == "Person"), None)
+    if person_index is not None:
+        original = graph[person_index]
+        alternate_name = bundle.get("name_ja")
+        if not alternate_name:
+            ja_path = JA_DIR / f"{slug}.html"
+            if ja_path.is_file():
+                ja_person = _person_jsonld(
+                    ja_path.read_text(encoding="utf-8", errors="replace"))
+                if ja_person:
+                    alternate_name = ja_person[2].get("name")
+        person = {
+            "@context": original.get("@context", "https://schema.org"),
+            "@type": "Person",
+            "name": completed.get("h1"),
+        }
+        if alternate_name:
+            person["alternateName"] = alternate_name
+        if bundle.get("country_ja"):
+            person["nationality"] = bundle["country_ja"]
+        if completed.get("meta_description"):
+            person["description"] = completed["meta_description"]
+        if completed.get("canonical"):
+            person["url"] = completed["canonical"]
+        if original.get("birthDate"):
+            person["birthDate"] = original["birthDate"]
+        if original.get("deathDate"):
+            person["deathDate"] = original["deathDate"]
+        graph[person_index] = person
+    completed["jsonld"] = graph
     return completed
 
 
@@ -2874,7 +2911,8 @@ def main(argv=None) -> int:
                     help="EN 素材 HTML から EN ページを描画（--slug 必須。既定は stdout、"
                          "--apply 時だけ新規 en/photographers/<slug>.html へ書込）")
     ap.add_argument("--spec", metavar="PATH",
-                    help="--render-ja の spec.json（taxonomy/同一性を供給）")
+                    help="scaffold-inject 用 spec.json（通常モードでは省略時に "
+                         "scripts/<slug>-spec.json を探索）")
     ap.add_argument("--update-existing", action="store_true",
                     help="既存ページ更新モード: spec を card-data+"
                          "既存ページから自動導出し、新素材 render との差分と carry-forward 計画を"
@@ -2941,6 +2979,15 @@ def main(argv=None) -> int:
         sys.stderr.write(f"ERROR: JA 素材が見つからない: {ja_src}\n")
         return 2
 
+    spec_path = (Path(args.spec).expanduser() if args.spec
+                 else SCRIPTS_DIR / f"{args.slug}-spec.json")
+    if not spec_path.exists():
+        sys.stderr.write(
+            f"ERROR: 新規追加の scaffold-inject には spec が必要: {spec_path}\n"
+            "  → scripts/add_photographer.py 用の spec を作成し、--spec PATH で指定するか\n"
+            f"     scripts/{args.slug}-spec.json に置いてください。書き込みは行いません。\n")
+        return 2
+
     en_src = None
     if args.en:
         en_src = Path(args.en)
@@ -2955,20 +3002,24 @@ def main(argv=None) -> int:
     idx, idx_note = resolve_idx(args.slug, args.idx)
     print(f"slug={args.slug} / idx={idx}（{idx_note}）")
 
-    ja_html = ja_src.read_text(encoding="utf-8")
-    out_html, ja_report = process_ja(ja_html, idx)
+    spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    ja_bundle, ja_info = extract_bundle(
+        ja_src.read_text(encoding="utf-8", errors="replace"),
+        "ja", slug=args.slug)
+    try:
+        out_html = render_ja_page(ja_bundle, spec, idx)
+    except BundleIncomplete as exc:
+        sys.stderr.write(f"ERROR: {exc}\n")
+        return 1
 
-    print("\n── JA 決定論整形 ──")
-    print(f"  rev unwrap         : {ja_report['rev_unwrapped']} 箇所")
-    print(f"  edit-red 除去      : {ja_report['edit_red_removed']} 箇所")
-    old_no, new_no = ja_report["eyebrow"]
-    print(f"  hero 眉採番        : §{old_no} → §{new_no}" if old_no else "  hero 眉採番        : 眉が見つからない（要確認）")
-    if ja_report["delinked"]:
-        print(f"  自動 de-link       : {len(ja_report['delinked'])} 件 → {ja_report['delinked']}")
+    print("\n── JA scaffold-inject ──")
+    print(f"  spec               : {_rel(spec_path)}")
+    print(f"  sections / cites   : {len(ja_bundle.get('sections') or [])} / "
+          f"{len(ja_bundle.get('cite_ids') or [])}")
+    if ja_info.get("delinked"):
+        print(f"  自動 de-link       : {len(ja_info['delinked'])} 件 → {ja_info['delinked']}")
     else:
         print("  自動 de-link       : 0 件（dangling 内部リンクなし）")
-    for n in ja_report["checks"]:
-        print(f"  自己検証           : {n}")
 
     ja_out = JA_DIR / f"{args.slug}.html"
     wrote_ja = False

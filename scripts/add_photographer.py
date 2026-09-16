@@ -219,7 +219,7 @@ def _hero_initials(name_en: str) -> str:
 
 
 def _scaffold_jsonld(spec: dict) -> str:
-    """Person 型のみ（実体準拠）。description は捏造回避のため入れない。"""
+    """Person 型のみ（実体準拠）。description は素材由来の spec にある時だけ入れる。"""
     birth, death = _parse_years(spec["years"])
     obj = {
         "@context": "https://schema.org", "@type": "Person",
@@ -227,6 +227,8 @@ def _scaffold_jsonld(spec: dict) -> str:
         "nationality": spec["countryJa"],
         "url": f"{SITE}/photographers/{spec['id']}.html",
     }
+    if spec.get("meta_description"):
+        obj["description"] = spec["meta_description"]
     if birth:
         obj["birthDate"] = birth
     if death:
@@ -241,7 +243,7 @@ def _patch_head_and_header(prefix: str, spec: dict) -> str:
     pid = spec["id"]
     tags = spec.get("tags") or []
     kw_phrase = "・".join(tags[:2]) if tags else spec["nameEn"]
-    title = f"{spec['nameJa']}｜{kw_phrase}｜写真の座標"
+    title = spec.get("title") or f"{spec['nameJa']}｜{kw_phrase}｜写真の座標"
     ym = date.today().strftime("%Y.%m")
 
     # 1) URL の自slug（canonical / hreflang ja・en・x-default / og:url / 言語トグル EN /
@@ -255,6 +257,13 @@ def _patch_head_and_header(prefix: str, spec: dict) -> str:
                     rf"\g<1>{title}\g<2>", prefix)
     prefix = re.sub(r'(<meta name="twitter:title" content=")[^"]*(">)',
                     rf"\g<1>{title}\g<2>", prefix)
+
+    # 新規 scaffold の既定 OGP 画像。既に個別画像があれば保持する。
+    if not re.search(r'<meta\b[^>]*property="og:image"', prefix):
+        prefix = re.sub(
+            r'(<meta\b[^>]*property="og:url"[^>]*>)',
+            r'\1\n<meta property="og:image" content="https://eyescosmos.com/assets/ogp-default.png">',
+            prefix, count=1)
 
     # 3) description 系は捏造回避のため空にする（タグは残す＝手で記入）。
     for pat in (r'(<meta name="description" content=")[^"]*(">)',

@@ -34,8 +34,8 @@ tag `legacy-generators-2026-09-15`（annotated・origin へ push 済み）。**�
   `docs/en-html-canon-migration.md` §11）。本文・thesis・§REL・出典は EN HTML を直接編集する。
   `data/photographer-essay-overrides.js` の `textJa` / `textEn` は 2026-09-15 に撤去済み（§12.1）。
   そろえる対象はもう無い（`leadEn` / `leadJa` は残っており、これは消さない）。
-- 新規 EN は `scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`
-  で JA→EN の順に HTML を直接生成する。既存 EN 出力先への書込みは `--force` の有無によらず拒否される。
+- 新規 EN は `scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --spec scripts/<slug>-spec.json --apply`
+  （既定位置なら `--spec` 省略可）で、JA を scaffold-inject してから EN HTML を直接生成する。spec 不在は書込なし・非0終了。既存 EN 出力先への書込みは `--force` の有無によらず拒否される。
 - `scripts/build_photographers_en.py` は importer が import する EN 描画エンジンの module-only ファイル。
   CLI と JSON 再生成経路はフェーズ2で撤去済みで、rollback は git で行う。
 
@@ -138,12 +138,12 @@ preflight/フック非連動）。前回（森村+小林）で push まで4時�
 
 ```bash
 # dry-run（既定・何も書かない。検証結果と差分サマリ・チェックリストを表示）
-python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html [--en SRCEN.html]
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html [--en SRCEN.html] [--spec scripts/<slug>-spec.json]
 # 実書き込み（既存は --force 必須・自動 backup）
-python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en SRCEN.html --apply [--force]
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en SRCEN.html --spec scripts/<slug>-spec.json --apply [--force]
 ```
 
-- **通常モードの書込みは JA→EN の順**。EN 素材を渡すと `render_en_page` で
+- **通常モードの書込みは scaffold-inject による JA→EN の順**。spec は明示指定または `scripts/<slug>-spec.json` が必須。EN 素材を渡すと `render_en_page` で
   `en/photographers/<slug>.html` を直接新規生成する。既存 EN への上書きは常に拒否し、JA 用の
   `--force` は EN に波及しない。EN JSON の編集も builder 実行も行わない。
 - dry-run で JA ページがまだ無い場合、EN は描画せず「JA ページ作成後に生成」と表示して正常終了する。
@@ -172,8 +172,8 @@ python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja SRC.html --en 
 ## 旧EN JSON書込経路 — 2026-09-15 撤去済み
 
 EN写真家ページを旧EN JSONへ注入・マージし、builderで再生成するCLI経路はフェーズ1で撤去した。
-既存ページは `en/photographers/<slug>.html` を直接編集し、新規ページは importer の通常モードまたは
-`--render-en` でHTMLを直接生成する。`bundle_to_en_entry()` は renderer の内部変換部品として残るが、
+既存ページは `en/photographers/<slug>.html` を直接編集し、JA/EN とも新規なら importer の通常モード、
+JA が既にあり EN だけ新規なら `--render-en` でHTMLを直接生成する。`bundle_to_en_entry()` は renderer の内部変換部品として残るが、
 旧EN JSONへの書込みには使わない。旧JSONは読み取り専用アーカイブであり、preflight の凍結ガード対象。
 
 ### head fallback（`build_head_meta`）— **現役**。新規EN作成で効く
@@ -356,7 +356,8 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
 3. `python3 scripts/preflight.py` → push（pre-push でも自動実行）
 
 **新規ページの作成:**
-1. `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`
+1. `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --spec scripts/<slug>-spec.json --apply`（既定位置なら `--spec` 省略可）。通常モードは JA を scaffold-inject し、spec 不在なら書込なし・非0終了
+   - JA が既にあり EN だけ足す場合は `python3 scripts/import_chatgpt_photographer.py --slug <slug> --render-en EN.html --apply`
 2. `python3 scripts/check_en_entry.py <slug>` — 対象 slug を検査
 3. `python3 scripts/preflight.py` → push（EN 出力先が既存なら常に拒否される）
 

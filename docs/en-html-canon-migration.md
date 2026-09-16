@@ -766,7 +766,7 @@ Codex はそのとおり2つで実装し、**`cite-id が重複`（FAIL）と `c
 **新：** 通常モード1本で JA→EN の順に HTML を直接生成する。
 
 ```bash
-python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply
+python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --spec scripts/<slug>-spec.json --apply
 ```
 
 §2b の完了条件「**通常フローに JSON 編集と builder 実行が一度も現れない**」を、
@@ -857,7 +857,7 @@ E-1 までブリーフ側の不備が3回続いたので、**先に `grep` で�
 |---|---|
 | EN写真家ページの正本は？ | **`en/photographers/*.html` そのもの。** 既存修正も新規作成も同じ |
 | 既存ページを直すには？ | **EN HTML を直接編集して終わり。** JA と同じ |
-| 新規ページを作るには？ | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --apply`（JA→EN の順に両方できる） |
+| 新規ページを作るには？ | `python3 scripts/import_chatgpt_photographer.py --slug <slug> --ja JA.html --en EN.html --spec scripts/<slug>-spec.json --apply`（既定位置なら `--spec` 省略可。scaffold-inject で JA→EN の順に生成） |
 | `data/archive/photographers-en-content.json` は？ | **読み取り専用アーカイブ。編集すると preflight が HARD で止める** |
 | `build_photographers_en.py` は？ | **EN描画エンジンの module-only ファイル。** importer が関数を利用する。直接実行は非0終了し、JSON再生成経路はない。rollback は git |
 
@@ -1013,12 +1013,12 @@ python3 scripts/preflight.py > /tmp/preflight-before.txt 2>&1
 | 5 | `check_en_entry.py <slug>` / `check_new_photographer.py --slug <slug>` | EXIT 0 |
 | 6 | `preflight.py` | 新しい HARD / WARN が増えていない |
 
-### B. 新規1名を追加する場合（**未検証の経路。ここが本番初回**）
+### B. 新規1名を追加する場合（scaffold-inject 通常モード）
 
 | # | 見るもの | 期待 |
 |---|---|---|
 | 1 | **素材に `§ 01` マーカーがあるか**（着手前 grep） | 無いと本文が65〜81%落ちる（既知の罠）|
-| 2 | まず `--apply` **なし**で実行 | EXIT 0。JA 未作成なら `(dry-run) EN は JA ページ作成後に生成される` が出る |
+| 2 | まず `--apply` **なし**で実行 | EXIT 0。`JA scaffold-inject` と使用 spec が表示され、JA 未作成なら `(dry-run) EN は JA ページ作成後に生成される` が出る |
 | 3 | `--apply` 実行後の `[render-en]` 行 | `dangling=0` / `works-cjk=0` / `ga=2` / `sec` が素材の節数と一致 |
 | 4 | warnings に `head fallback fired` | **0件**（出たら head が不完全） |
 | 5 | 生成EN の head | `og:image` / `og:image:width` / `twitter:image` / JSON-LD に `Person` / `<!-- AI-DISCLOSURE -->` が各1 |
@@ -1028,7 +1028,7 @@ python3 scripts/preflight.py > /tmp/preflight-before.txt 2>&1
 | 9 | JA/EN の節数・cite集合 | 一致（preflight の日英対称性ガードが見るが、目視でも確認） |
 
 **入口の選び方**（間違えると JA を書き直す）:
-- JA も EN もこれから → `--slug X --ja JA.html --en EN.html --apply`
+- JA も EN もこれから → `--slug X --ja JA.html --en EN.html --spec scripts/X-spec.json --apply`（既定位置なら `--spec` 省略可。spec 不在は書込なし・非0終了）
 - JA は既にある → `--slug X --render-en EN.html --apply`
 
 ### 終わったら
@@ -1046,7 +1046,7 @@ python3 scripts/preflight.py | diff /tmp/preflight-before.txt -
 > **★2026-09-16 B を実素材で通過＝初回扱いは終了**（0915バッチ新規6名・パイロット `yasuhiro-ishimoto`）。
 > 9項目は6名全員で期待どおり。fixture では出なかった手補完点が3つ残る：JA renderer が spec title を head に
 > 反映しない／EN renderer の JSON-LD Person が name=ページ title・4キー欠落／素材 §REL がリンクで一言まで包む形で
-> `page_alignment` が `need` 判定になる。入口は B 表の `--ja --en` ではなく scaffold-inject（`--render-ja --spec` → `--render-en`）で通した。
+> `page_alignment` が `need` 判定になる。当時は `--render-ja --spec` → `--render-en` で通したが、現在は B 表の通常モード自体が同じ scaffold-inject 経路を使う。
 > 実測は `docs/importer-run-log.md` 2026-09-16。
 
 ---

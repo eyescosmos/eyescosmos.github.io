@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-16 | (engine)importer の欠落3件を修正＋新規追加の入口を1本化 | engine | （Daisuke記入） | 0 | 3（EN Channel 未訳は辞書ファイル側のため未着手＝判断待ち／`process_ja()` が通常モードから外れて未参照化／既存EN 11枚の Channel 日本語残りを発見） | 公開HTML 0枚（1,094枚 sha256 完全一致）。コード2・docs 4 | N/A | N/A |
 | 2026-09-16 | (content)0915フェーズ3 運動6枚・sitemap+12・既存12面リンク化 | other | （Daisuke記入） | 0 | 2（シュルレアリスム件数表示の旧ズレ是正／anuschka EN §REL 併記項目の訳を監督是正） | 運動8・sitemap2・写真家12 | N/A | N/A |
 | 2026-09-16 | eve-arnold / guy-bourdin / inge-morath / marc-riboud / shigeichi-nagano（idx 404–408・0915残り5名） | new×5 | （Daisuke記入） | 2（パイロットと同じ renderer 欠落＋EN Channel 日本語残り3） | 8系統（下記） | 公開HTML 各リーフ2＋従属面 | 本文4節・素材と文字数一致 | 24/23/25/28/25 |
 | 2026-09-16 | yasuhiro-ishimoto（idx 403・0915バッチ移行後初回パイロット） | new | （Daisuke記入） | 2（JA title非伝播／EN Person JSON-LD不完全） | 5系統（下記） | 公開HTML 14面（JA/ENリーフ2＋従属面12） | 本文4節・h3 JA/EN各9 | JA23 / EN23 |
@@ -100,6 +101,21 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-16 — importer の欠落3件を engine 修正＋新規追加の入口を1本化（種別=engine・Opus監督 / Codex実装）
+
+0915バッチで**毎名手で補っていた4種**を engine 側へ入れた。Daisuke 指示（2026-09-16）＝「importer 直しましょう。書式ずれも importer で正規化。3（docs の入口）は矛盾ないように」。
+
+- **修正1（JA title）**：`add_photographer._patch_head_and_header()` が spec の `title` を見ず常に `nameJa｜tags[:2]｜写真の座標` を組んでいた → `spec.get("title")` 優先（無ければ従来の導出＝後方互換）。
+- **修正2（JA head）**：`_scaffold_jsonld()` に `spec["meta_description"]` があるときだけ Person `description` を入れる。`og:image` が無ければ既定画像を og:url 直後に1行追加。**既存JA 395枚は og:image 無しが標準なので一括追加はしない**（新規生成時だけ）。
+- **修正3（§REL 書式ずれ・1箇所で3系統直る）**：原因は `_parse_rel_item()`。アンカーありの分岐で `name` にアンカーテキスト全体を入れており、0915素材の `<li><a>名前 — 一言</a></li>` では一言まで name に入り `reason` が空になっていた。`reason` が空のときだけ既存 `_split_rel_separator()` で分割。これで JA §REL・EN `site_directory_html`・`related_annotations`（＝`page_alignment` の `have` 判定）が同時に直る。**アンカー外に一言がある従来素材と人名内ハイフン（`Cartier-Bresson`）は非退行をユニットで固定。**
+- **修正4（EN Person JSON-LD）**：`_en_head_complete()` が `_fb_jsonld()` にページ title を渡し Person.name がページ title になっていた。renderer 側に閉じて Person ノードを組み直す（name=素材EN hero 名／alternateName=EN bundle `name_ja` 無ければJAページの Person `name`／nationality=EN素材 entry-meta Country／description=meta_description／url=canonical／生没年）。**凍結JSON・`build_photographers_en.py` は不変。**
+- **修正5（入口の1本化）**：通常モード（`--slug` + `--ja`）が `process_ja()` で**素材HTMLを素通しで書く**経路だったのを scaffold-inject へ寄せた。`--spec` 省略時は `scripts/<slug>-spec.json` を探索し、**spec が無ければ書き込まず EXIT 2**。`--force`／既存EN拒否／dry-run の契約は不変。docs 4ファイル（`CLAUDE.md` マトリクスと EN手順表・`next-photographer-batch.md` §3・`en-html-canon-migration.md` §13.10 B・`generators-and-guards.md` 新規フロー）を同じ入口へ統一。
+- **受け入れテスト（監督が独立に実測）**：0915の6名を素材から再生成し HEAD と比較 → **`guy-bourdin` は JA/EN とも byte 一致**。残差は (a) 人手で足した本文・§RELリンク（素材にリンクが無い項目＝card-data 参照が要る人手作業）、(b) EN Channel の未訳語のみ。**修正1〜4の対象（title 3タグ・og:image・JA Person description・EN Person 4キー・§REL 区切り）は6名すべて再生成だけで一致**。
+- **検証**：既存テスト3本 PASS（`test_importer_scaffold_inject` / `test_render_en_roundtrip` / `test_build_en_chip_translation`）、`preflight` / `check_content_loss` EXIT 0、**公開HTML 1,094枚 sha256 完全一致**（`git status` に公開HTMLが出ない）、spec 欠落で EXIT 2・書込0、`add_photographer` dry-run の重複ガード発火。
+- **★残（判断待ち）**：①**EN hero Channel の未訳**は `data/photographers-en-ui-terms.json` の `terms` に `フォトジャーナリズム` が無いのが原因（87語中に `ストリート写真` / `モダニズム` / `ファッション写真` / `社会ドキュメンタリー` / `報道写真` はある＝単なる穴）。**「辞書を変更しない」既存指示があるため未着手**。`カラー写真` も同様に無い。②この穴の既存被害＝**EN写真家ページ 11枚の Channel に日本語が出ている**（`Issues in photo history · カラー写真` 2枚、`フォトジャーナリズム` 1枚、残り8枚は `身体と光を構成する写真` 等の JA フレーズ）。今回のバッチ対象外で未修正。③`process_ja()` が通常モードから外れて**未参照**になった（テストからも呼ばれていない）。撤去するかは別途判断。
+- **Codex トークン**：blended 120,193（出力 19,141）。停止0回・9分。
+- **wall-time**：（Daisuke記入）
 
 ## 2026-09-16 — 0915バッチ移行後の実素材 初回 `yasuhiro-ishimoto`（idx 403・種別=new・Opus監督 / Codex実装）
 
