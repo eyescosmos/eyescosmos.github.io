@@ -2869,6 +2869,73 @@ def run_precheck(slug: str, ja_path: Path, en_path: Path | None) -> int:
             sys.stderr.write(f"WARN: EN bundle 抽出失敗: {e}\n")
         print()
 
+    # (d) 表記チェック（2026-09-16 追加）──────────────────────────────────
+    #     素材側で直っているのが正だが、直っていない素材を素通しすると
+    #     公開HTMLに入って preflight（check_supref_punctuation /
+    #     check_en_prose_hygiene）が HARD で止める。着手前にここで出す。
+    print("[STYLE] 表記チェック ─────────────────────────────────")
+    for label, path, lang in [("--ja", ja_path, "ja"), ("--en", en_path, "en")]:
+        if path is None or not path.exists():
+            continue
+        html = path.read_text(encoding="utf-8", errors="replace")
+        issues: list[str] = []
+
+        n = len(re.findall(r'</sup>[。.]', html))
+        if n:
+            issues.append(f"出典番号が句読点の前にある: {n}件"
+                          "（正: 文末の「。」「.」の後ろに <sup>）")
+
+        for cls, name in (("ph-abstract", "Abstract"), ("ph-thesis", "thesis")):
+            for m in re.finditer(r'<div class="%s">' % cls, html):
+                pstart = html.find("<p", m.end())
+                if pstart < 0:
+                    continue
+                end = html.find("</div>", pstart)
+                if end > 0 and 'class="sup-ref"' in html[pstart:end]:
+                    issues.append(f"{name} 欄に出典番号が入っている"
+                                  "（この2欄には置かない）")
+                    break
+
+        if lang == "en":
+            # 本文だけを見る。サイドバー・写真家カード・出典欄には日本語名が
+            # 正しく入るので、そこを数えると誤検知になる。
+            mm = re.search(r'<main.*?</main>', html, re.S)
+            prose = mm.group(0) if mm else html
+            for blk in re.findall(r'<div class="ph-sources">.*?(?=<section|</main>)',
+                                  prose, re.S):
+                prose = prose.replace(blk, "")
+            prose = re.sub(r'<(article|div)\b[^>]*class="[^"]*\bpc-[^"]*".*?</\1>',
+                           "", prose, flags=re.S)
+            # 英文で明確に誤りのものだけ。「」：？ は日本語の固有名詞で使うので見ない。
+            fw = sorted({c for c in prose if c in "《》『』。、（）"})
+            if fw:
+                issues.append("和文記号が残っている: " + " ".join(fw)
+                              + "（作品名は《》『』ではなく <i>…</i>、"
+                                "句読点は「。、（）」ではなく「. , ()」）")
+            k = len(re.findall(r'<p[^>]*>\s*\.\s', prose))
+            if k:
+                issues.append(f"段落が「. 」で始まっている: {k}件"
+                              "（前文の句点が「。」のまま残っている翻訳事故）")
+            k = len([m for m in re.finditer(r'</a>([A-Za-z])', prose)
+                     if not re.match(r's(?![A-Za-z])', prose[m.end() - 1:])])
+            if k:
+                issues.append(f"</a> の直後に空白が無い: {k}件")
+            k = len(re.findall(r'[a-z]\.[A-Z][a-z]', re.sub(r'<[^>]*>', " ", prose)))
+            if k:
+                issues.append(f"文末ピリオドの後に空白が無い: {k}件"
+                              "（例: seen.In → seen. In）")
+
+        if issues:
+            ok = False
+            print(f"  ⚠ {label} {path.name}")
+            for it in issues:
+                print(f"      - {it}")
+            print("      → 素材側で直してもらうのが正。急ぐなら素材は書き換えず"
+                  "一時コピー上で直してから流す。")
+        else:
+            print(f"  OK {label} {path.name}")
+    print()
+
     print("[DONE] precheck 完了" + ("" if ok else " — 上記 WARN を確認してください"))
     return 0 if ok else 1
 

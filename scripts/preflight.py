@@ -1894,9 +1894,9 @@ SUPREF_RUN = r'(?:' + SUPREF_TAG + r')+'
 SUPREF_NO_SPACE_NEEDED = re.compile(
     r'\s|</p|</li|</h|</div|</td|</ul|</ol|</blockquote|<br|$')
 SUPREF_INLINE_CLOSE = r'(?:</(?:span|em|i|b|strong|a|u)>)*'
-# EN 面に残る和文句点「。」の既知件数（2026-09-16 実測）。EN 本文の CJK 残骸は
-# 別途まとめて直す。ここでは「増やさない」ことだけを保証する。
-SUPREF_EN_KUTEN_BASELINE = 62
+# EN 面に残る和文句点「。」の許容数。2026-09-16 に EN 本文の CJK 残骸を一掃したので 0。
+# （残る「。」は日本語作品名の中の1個だけで、それは <sup> の直後ではないのでここには出ない）
+SUPREF_EN_KUTEN_BASELINE = 0
 
 
 def check_supref_punctuation() -> None:
@@ -1986,6 +1986,104 @@ def check_supref_punctuation() -> None:
             "EN 本文に和文句点「。」+ 出典番号が %d 件残っている（既知の CJK 残骸・"
             "別バックログ。baseline %d を超えたら HARD）"
             % (en_kuten, SUPREF_EN_KUTEN_BASELINE))
+
+
+# EN 本文（prose）の体裁ルール。2026-09-16 に EN 写真家76枚の和文記号・スペース抜けを
+# 一掃した時点の不変条件（`docs/generators-and-guards.md` の同名節）。
+# EN の作品名は <i>…</i> が標準（実測1,975件/284ページ）。《》『』は JA 表記の漏れ。
+EN_PROSE_SCOPES = ("en/photographers", "en/movements", "en/eras")
+# 日本語の固有名詞として**残すことに決めた**全角記号（EN prose 全体の合計）。
+#   「」：×2 = asako-narahashi の展覧会名「距離の不在：写真の現在」（本文に2回）
+#   、×2 。×1 ？×1 = yurie-nagashima の作品名「縫うこと、着ること、語ること。」と展示名
+# 新しく日本語の固有名詞を入れたときはここを増やす（増やさずに入れると HARD で止まる）。
+EN_PROSE_FULLWIDTH_ALLOWED = {"「": 2, "」": 2, "：": 2, "、": 2, "。": 1, "？": 1}
+EN_PROSE_CARD_BLOCK = re.compile(
+    r'<(article|div)\b[^>]*class="[^"]*\bpc-[^"]*".*?</\1>', re.S)
+
+
+def _en_prose(html: str, strip_cards: bool) -> str:
+    """<main> の中から、出典欄（日本語の資料名が正しく入る）と
+    写真家カードのグリッド（日本語名が正しく入る）を除いた本文を返す。"""
+    m = re.search(r'<main.*?</main>', html, re.S)
+    if not m:
+        return ""
+    seg = m.group(0)
+    for blk in re.findall(r'<div class="ph-sources">.*?(?=<section|</main>)', seg, re.S):
+        seg = seg.replace(blk, "")
+    if strip_cards:
+        seg = EN_PROSE_CARD_BLOCK.sub("", seg)
+    return seg
+
+
+def _text_nodes(seg: str) -> list[str]:
+    out, pos = [], 0
+    for m in re.finditer(r'<[^>]*>', seg):
+        if m.start() > pos:
+            out.append(seg[pos:m.start()])
+        pos = m.end()
+    if pos < len(seg):
+        out.append(seg[pos:])
+    return out
+
+
+def check_en_prose_hygiene() -> None:
+    """EN 本文の和文記号残骸とスペース抜けを検知する（HARD）。"""
+    fullwidth: dict[str, int] = {}
+    where: dict[str, set[str]] = {}
+    lead_period: list[str] = []
+    glued_anchor: list[str] = []
+    glued_sentence: list[str] = []
+
+    for scope in EN_PROSE_SCOPES:
+        d = REPO / scope
+        if not d.is_dir():
+            continue
+        strip_cards = scope != "en/photographers"
+        for f in sorted(d.glob("*.html")):
+            html = f.read_text(encoding="utf-8", errors="ignore")
+            seg = _en_prose(html, strip_cards)
+            if not seg:
+                continue
+            rel = f.relative_to(REPO).as_posix()
+
+            for ch in seg:
+                o = ord(ch)
+                if 0x3000 <= o <= 0x303f or 0xff00 <= o <= 0xffef:
+                    fullwidth[ch] = fullwidth.get(ch, 0) + 1
+                    where.setdefault(ch, set()).add(rel)
+
+            if re.search(r'<p[^>]*>\s*\.\s', seg):
+                lead_period.append(rel)
+
+            hits = [m for m in re.finditer(r'</a>([A-Za-z])', seg)
+                    if not re.match(r's(?![A-Za-z])', seg[m.end() - 1:])]
+            if hits:
+                glued_anchor.append("%s（%d）" % (rel, len(hits)))
+
+            n = sum(len(re.findall(r'[a-z]\.[A-Z][a-z]', t)) for t in _text_nodes(seg))
+            if n:
+                glued_sentence.append("%s（%d）" % (rel, n))
+
+    for ch, n in sorted(fullwidth.items()):
+        allowed = EN_PROSE_FULLWIDTH_ALLOWED.get(ch, 0)
+        if n > allowed:
+            hard_failures.append(
+                "EN 本文に和文記号 %r が %d 個ある（許容 %d）。作品名は 《》『』ではなく "
+                "<i>…</i>、句読点は「。、（）」ではなく「. , ()」。日本語の固有名詞として"
+                "残すなら preflight の EN_PROSE_FULLWIDTH_ALLOWED を増やす: %s"
+                % (ch, n, allowed, ", ".join(sorted(where[ch])[:8])))
+    if lead_period:
+        hard_failures.append(
+            "EN 本文で段落が「. 」で始まっている（前の文の句点が和文「。」のまま残り、"
+            "ピリオドだけ次段落の頭へ落ちた翻訳事故）: " + ", ".join(lead_period[:12]))
+    if glued_anchor:
+        hard_failures.append(
+            "EN 本文で </a> の直後に空白が無い（複数形の </a>s は除く）: "
+            + ", ".join(glued_anchor[:12]))
+    if glued_sentence:
+        hard_failures.append(
+            "EN 本文で文末ピリオドの後に空白が無い（例: seen.In → seen. In）: "
+            + ", ".join(glued_sentence[:12]))
 
 
 def run_existing_check(script: str) -> None:
@@ -2677,6 +2775,7 @@ def main() -> int:
     check_new_photographer_pages()
     check_scaffold_inject_determinism()
     check_supref_punctuation()  # 出典番号の位置・Abstract/thesis混入（HARD）
+    check_en_prose_hygiene()    # EN本文の和文記号残骸・スペース抜け（HARD）
     check_ai_disclosure()
     run_existing_check("check_photographer_link_integrity.py")
 
