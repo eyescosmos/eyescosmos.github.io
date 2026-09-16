@@ -86,7 +86,9 @@
     "スナップショット": "Snapshot Photography",
     "ポスト・フォトグラフィー": "Post-photography",
     "ファッション写真": "Fashion Photography",
-    "ファッション写真 / ポートレート": "Fashion Photography / Portraiture"
+    "ファッション写真 / ポートレート": "Fashion Photography / Portraiture",
+    "フォトジャーナリズム": "Photojournalism",
+    "カラー写真": "Color photography"
   },
   "countries": {
     "日本": "Japan",
@@ -143,7 +145,15 @@
     "社会ドキュメンタリー": "Social documentary",
     "シュルレアリスム": "Surrealism",
     "ダダ": "Dada",
-    "バウハウス": "Bauhaus"
+    "バウハウス": "Bauhaus",
+    "表象を批判的に読む写真": "Reading representation critically",
+    "現場を報じる写真": "Reporting from the scene",
+    "身体と光を構成する写真": "Composing body and light",
+    "画像を切断し再構成する写真": "Cutting and recomposing the image",
+    "探検を記録する写真": "Recording exploration",
+    "形態を明晰に見る写真": "Seeing form clearly",
+    "形態を比較する写真": "Comparing forms",
+    "ファッション写真": "Fashion photography"
   },
   "fixed": {
     "本サイトでは作品画像を掲載していません。公式アーカイブへのリンクは準備中です。": "This site does not display work images. Links to official archives are in preparation.",
@@ -402,6 +412,7 @@
     "《（脱衣棚と椅子）》": "Bathroom Shelf and Chair",
     "FUJIFILM SQUARE - 太宰治 酒場ルパンで、銀座、1946": "FUJIFILM SQUARE — Osamu Dazai at Bar Lupin, Ginza, 1946",
     "東京都写真美術館 - 「カストリ時代」より、1946-56": "Tokyo Photographic Art Museum — from Kasutori Jidai, 1946–56",
-    "POP - 人民戦線勝利の行進、1936": "POP — Popular Front Victory March, 1936"
+    "POP - 人民戦線勝利の行進、1936": "POP — Popular Front Victory March, 1936",
+    "Bunkamura - 展覧会構成": "Bunkamura - Exhibition structure"
   }
 }

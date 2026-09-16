@@ -415,21 +415,10 @@ def _count_rev_tokens(html: str) -> int:
                for t in m.group(1).split() if REV_TOKEN_FULL_RE.match(t))
 
 
-def process_ja(html: str, idx: int) -> tuple[str, dict]:
-    report: dict = {}
-    n_rev = _count_rev_tokens(html)
-    n_editred = html.count("edit-red")
-    html = strip_review_css(html)
-    html = strip_edit_red(html)
-    html = clean_rev_markup(html)
-    html, old_no, new_no = renumber_eyebrow(html, idx)
-    html, delinked = delink_missing(html, repo_file_exists, label="JA")
-    report["rev_unwrapped"] = n_rev
-    report["edit_red_removed"] = n_editred
-    report["eyebrow"] = (old_no, new_no)
-    report["delinked"] = delinked
-    report["checks"] = self_check(html, context="JA")
-    return html, report
+# process_ja()（素材HTMLを素通しで整形して公開する旧 v1 経路）は 2026-09-16 に撤去した。
+# 通常モードは scaffold-inject へ一本化され、この関数は参照ゼロになった。
+# 付随して renumber_eyebrow() / delink_missing() も現在は未参照（撤去は別途判断）。
+# 旧実装を見るときは git show e4cf03900^:scripts/import_chatgpt_photographer.py。
 
 
 # ── EN 著者コンテンツ断片の抽出（正本候補フィールドへ拡張・v2） ─────────────

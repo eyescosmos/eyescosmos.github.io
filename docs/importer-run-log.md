@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-16 | (content+engine)EN Channel 未訳の辞書穴を塞ぎ既存EN 11枚を英語化＋`process_ja()` 撤去 | other | （Daisuke記入） | 0 | 2（接頭句の未訳は WARN すら出ない死角だった／`renumber_eyebrow`・`delink_missing` が未参照化＝撤去は別判断） | EN写真家 11枚・辞書1・engine 2 | N/A | N/A |
 | 2026-09-16 | (engine)importer の欠落3件を修正＋新規追加の入口を1本化 | engine | （Daisuke記入） | 0 | 3（EN Channel 未訳は辞書ファイル側のため未着手＝判断待ち／`process_ja()` が通常モードから外れて未参照化／既存EN 11枚の Channel 日本語残りを発見） | 公開HTML 0枚（1,094枚 sha256 完全一致）。コード2・docs 4 | N/A | N/A |
 | 2026-09-16 | (content)0915フェーズ3 運動6枚・sitemap+12・既存12面リンク化 | other | （Daisuke記入） | 0 | 2（シュルレアリスム件数表示の旧ズレ是正／anuschka EN §REL 併記項目の訳を監督是正） | 運動8・sitemap2・写真家12 | N/A | N/A |
 | 2026-09-16 | eve-arnold / guy-bourdin / inge-morath / marc-riboud / shigeichi-nagano（idx 404–408・0915残り5名） | new×5 | （Daisuke記入） | 2（パイロットと同じ renderer 欠落＋EN Channel 日本語残り3） | 8系統（下記） | 公開HTML 各リーフ2＋従属面 | 本文4節・素材と文字数一致 | 24/23/25/28/25 |
@@ -101,6 +102,23 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-16 — EN Channel 未訳の辞書穴を塞ぐ＋既存EN 11枚を英語化＋`process_ja()` 撤去（種別=other+engine・Opus実装）
+
+engine 修正 `e4cf03900` の残（判断待ち3件）に対する Daisuke 指示＝「①は足す ②も修正 ③本当に必要なくなったら撤去」。
+
+- **①辞書の穴**：`data/photographers-en-ui-terms.json` に11語追加（+14/−3行・並びは既存維持）。
+  `terms` に `フォトジャーナリズム`→Photojournalism / `カラー写真`→Color photography（87語中に `ストリート写真`・`モダニズム`・`社会ドキュメンタリー`・`報道写真` は既にあり、単なる穴だった）。
+  `channels` に8語（`表象を批判的に読む写真`→Reading representation critically / `現場を報じる写真`→Reporting from the scene / `身体と光を構成する写真`→Composing body and light / `画像を切断し再構成する写真`→Cutting and recomposing the image / `探検を記録する写真`→Recording exploration / `形態を明晰に見る写真`→Seeing form clearly / `形態を比較する写真`→Comparing forms / `ファッション写真`→Fashion photography）。`works_labels` に `Bunkamura - 展覧会構成`→Bunkamura - Exhibition structure。
+- **②既存EN 11枚**：hero の `Channel<strong>` に日本語が出ていたページを、上の辞書が生成する文字列そのものへ書き換えた（HTML が正本なので直接編集）。
+  内訳＝接頭句が未訳 8枚（edward-s-curtis / erich-salomon / frantisek-drtikol / hannah-hoch / herbert-ponting / imogen-cunningham / karl-blossfeldt / richard-avedon）、ジャンル語が未訳 3枚（elliott-erwitt=フォトジャーナリズム、ernst-haas・saul-leiter=カラー写真）。saul-leiter は作品ラベル1件も英語化。
+  **実測：11枚とも変わったのは当該語句だけ（HEAD 比でプレーンテキスト差分は置換1〜2件のみ）・href 集合は全枚不変。** EN写真家ページ全体で hero Channel の日本語は **0件**。
+- **★死角だった理由（engine 修正）**：`build_photographers_en.repl_channel()` は `A · B` 形式のとき **接頭句 A が `channels` に無くても WARN を出さず JA のまま通していた**（B 側だけ `untranslated term` を出す）。ここに接頭句用の WARN を追加。これで同じ穴は次から WARN で見える。
+- **③`process_ja()` 撤去**：入口1本化で参照ゼロになったことをリポジトリ全体 grep で確認して削除（コメントで撤去理由と `git show e4cf03900^:` の参照先を残した）。
+  **付随して `renumber_eyebrow()` / `delink_missing()` が未参照になった**。撤去は別判断＝`delink_missing` は「JA 素材の壊れた内部リンクを自動 de-link する」機能で、scaffold-inject 経路には無い（現状は `check_photographer_link_integrity.py` と preflight が後段で受ける）。**入れ直すと EN 未作成時に言語トグルまで de-link する旧挙動が復活するため、安易に配線しない。**
+- **検証**：既存テスト3本 PASS、`preflight` / `check_content_loss` / `check_photographer_link_integrity` / `sync_card_counts --check` EXIT 0、11枚の `check_en_entry` OK、通常モード dry-run 正常（`spec` 表示・`[render-en] dangling=0 / works-cjk=0 / ga=2 / sec=4`）。
+  0915の3名（eve-arnold / inge-morath / marc-riboud）を再生成すると Channel が `Issues in photo history · Photojournalism` になり、**手補完が不要になったことを実測**。
+- **wall-time**：（Daisuke記入）
 
 ## 2026-09-16 — importer の欠落3件を engine 修正＋新規追加の入口を1本化（種別=engine・Opus監督 / Codex実装）
 

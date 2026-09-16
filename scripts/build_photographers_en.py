@@ -1553,6 +1553,12 @@ def translate_residuals(html, page, slug, ja_file, warnings):
         if ' · ' in val:
             seg0, seg1 = val.split(' · ', 1)
             seg0 = channels.get(seg0.strip(), seg0.strip())
+            # 接頭句が channels に無いと、ここは従来 JA のまま黙って通っていた
+            # （2026-09-16 に EN 11枚で日本語が出ているのを発見）。後段の suffix と
+            # 同じく WARN を出す。
+            if CJK_RE.search(seg0):
+                warnings.append(
+                    f'{page_label}: untranslated channel: {val.split(" · ", 1)[0].strip()}')
             if CJK_RE.search(seg1):
                 seg1 = _translate_term(seg1, terms, countries, warnings, page_label)
             new = seg0 + ' · ' + seg1
