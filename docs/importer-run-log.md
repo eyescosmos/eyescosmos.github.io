@@ -3756,3 +3756,37 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
   台帳 `--check` EXIT 0・records 418件一致 / 非推奨バナー6本を確認。
 - **総括は `docs/en-html-canon-migration.md` §13**。§2-1 が挙げた4つの問題
   （正本2系統 / JSON が増え続ける / 14本が JSON を読み書き / 新規経路が完成品を出さない）は全部消えた。
+
+
+## 2026-09-16 — 出典番号（sup-ref）の位置を全ページで統一（種別=表示修正・Opus監督 / Codex実装）
+
+- **範囲**：公開HTML 621枚（JA 318 / EN 303）。**本文テキストの増減0**・**§SRC（出典欄）の変更0**。
+  wall-time は Daisuke 記入。
+- **依頼**：ニエプス／フランク／スティーグリッツ／タルボットの4枚を起点に、
+  ① Abstract・thesis 欄からは出典番号を外す ② 本文は `文末文字+*N+。` ではなく `。+*N` にする
+  ③ 番号が次の文の頭に付いて見えないようにする ④ EN も同じにする ⑤ **同じ問題のある全ページを一括で**。
+- **実測（着手前）**：誤った順序 JA 9,535箇所/297ページ・EN 8,288箇所/263ページ。
+  正しい形（`。<sup>…</sup> ` ＝半角スペース1個）は既に JA 4,323・EN 4,496 箇所あり、
+  **これが社内の慣習**（参照実装 `photographers/aglaia-konrad.html`）。CSS は足さずこの形に寄せた。
+  sup-ref のマークアップは全28,402箇所が単一形式（リンク無し異形0）。
+- **実施**：Step A で `ph-abstract` / `ph-thesis` ブロック内の sup を削除（JA/EN 各 abstract 31・thesis 101 ＝計264）。
+  Step B で `(sup連続)。` → `。(sup連続)` に入替（JA 9,432 / EN 8,209）。
+  Step C で番号の直後が本文なら半角スペース1個を挿入（JA 7,926 / EN 359、計8,285）。
+  **読点「、」とカンマは対象外**（Daisuke 決定）。`new-design/` は gitignore 済のため対象外。
+- **★孤立出典6件は出典欄に残した**（Daisuke 決定・edward-s-curtis 2 / robertfrank / stieglitz /
+  shannon-ebner / thomas-demand 各1）。本文から参照されなくなるが出典情報の消失を避ける。
+  `check_en_entry.py` は「孤立」WARN を出す（FAIL ではない）。
+- **検査**：① sup を全除去し空白も全除去した文字列が変更前後で**完全一致**（621枚すべて／本文1文字も失われていない）
+  ② `<div class="ph-sources">` がバイト一致 ③ 空白の増分が Step C の挿入数と一致（減少0）
+  ④ 残存 `</sup>。`／`</sup>.` が0 ⑤ sup 総数 28,402 → 28,138（＝264減のみ）
+  ⑥ 冪等（2回目の差分0）⑦ `check_content_loss.py` EXIT 0 ⑧ `preflight.py` EXIT 0（決定論チェック全通過）。
+- **preflight の WARN は既存分**：`emerson` cite-4 欠番・`stieglitz` cite-10 欠番はどちらも HEAD 時点で既に0件
+  （今回の変更が原因ではない）。「本文の書き換えの疑い」WARN は本件の意図した変更。
+- **監督側の手戻り3回**（すべてブリーフの誤りで Codex が正しく停止）：
+  ① 検証条件「sup除去後に空白を1個へ正規化して完全一致」は Step C の挿入と構造的に両立しない
+  → **空白を全除去して比較**に訂正 ② EN の枚数を 404（sup を含むページ数）と書いた
+  → 実ファイルは **424枚**（差の20枚は `jp-漢字` の shim） ③ 空白増分の照合を生HTMLで数えていた
+  → SUP タグ自体が空白を2個含むため **sup 除去後に数える**へ訂正。
+- **Codex は `codex mcp-server` が CONNECTION_CLOSED で使えず、`codex exec --sandbox workspace-write` を使用**。
+  最小 `CODEX_HOME`（auth.json + `model_reasoning_effort` のみ）で起動。
+  apply_patch はプロジェクト外へ書けないため、スクリプトはリポジトリ直下に一時作成して実行後に削除した。
