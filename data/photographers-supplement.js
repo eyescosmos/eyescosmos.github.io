@@ -9536,3 +9536,202 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "bruce-davidson",
+  "name": "Bruce Davidson",
+  "nameJa": "ブルース・デヴィッドソン",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1933–",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "社会ドキュメンタリー",
+    "フォトジャーナリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ブルース・デヴィッドソン（1933–）は、米国イリノイ州生まれ。1958年にMagnum Photosへ参加し、《Brooklyn Gang》《East 100th Street》《Subway》などニューヨークの共同体と公民権運動を長期にわたり撮影した。 *1 *2 。",
+    "textEn": "Bruce Davidson (1933–) was born in Oak Park, Illinois, and joined Magnum Photos in 1958. In Brooklyn Gang, East 100th Street, and Subway he photographed New York communities and the civil rights movement over long periods. *1 *2 .",
+    "citations": []
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "duane-michals",
+  "name": "Duane Michals",
+  "nameJa": "デュアン・マイケルズ",
+  "nationality": "US",
+  "flag": "🇺🇸",
+  "years": "1932–2026",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "ステージド写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "デュアン・マイケルズ（1932–2026）、米国ペンシルベニア州マッキーズポート生まれ。大学卒業後にParsons School of Designで学び、グラフィックデザインの仕事を経て、1958年のソ連旅行を機に本格的に写真を始めた。1960年代から商業肖像と私的制作を並行し、《Chance Meeting》《Things Are Queer》《The Human Condition》などの連続写真、二重露光、手書きテキストによる作品を発表した。 *1 *2 。",
+    "textEn": "Duane Michals (1932–2026) was born in McKeesport, Pennsylvania. After college he studied at Parsons School of Design and worked in graphic design before beginning photography in earnest during a 1958 trip to the Soviet Union. From the 1960s onward he pursued commercial portraiture and private work in parallel, producing photographic sequences, double exposures, and handwritten text in works including Chance Meeting, Things Are Queer, and The Human Condition. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "The New Yorker — Sequence: Duane Michals",
+        "url": "https://www.newyorker.com/magazine/1971/01/16/sequence"
+      },
+      {
+        "num": 2,
+        "name": "Carnegie Museum of Art — Storyteller: The Photographs of Duane Michals",
+        "url": "https://carnegieart.org/exhibition/storyteller-the-photographs-of-duane-michals/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "helmut-newton",
+  "name": "Helmut Newton",
+  "nameJa": "ヘルムート・ニュートン",
+  "nationality": "DE / AU / FR",
+  "flag": "🇩🇪",
+  "years": "1920–2004",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "ステージド写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ヘルムート・ニュートン（1920–2004）、ドイツ・ベルリン生まれ。1936年からファッション写真家Yvaのスタジオで修業し、ナチ政権下の迫害を逃れて1938年にドイツを離れ、シンガポールを経てオーストラリアへ移住した。戦後はメルボルンでスタジオを構え、1961年にパリへ移った後、French Vogueをはじめとする国際誌を中心に活動した。 *1 *2 。",
+    "textEn": "Helmut Newton (1920–2004) was born in Berlin, Germany. Beginning in 1936, he apprenticed in the studio of fashion photographer Yva. He left Germany in 1938 to escape persecution under the Nazi regime, traveled through Singapore, and eventually settled in Australia. After the war he established a studio in Melbourne. In 1961 he moved to Paris, where he worked primarily for international magazines including French Vogue. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Helmut Newton Foundation — Helmut Newton",
+        "url": "https://newton-foundation.org/en/helmut-newton/"
+      },
+      {
+        "num": 2,
+        "name": "Helmut Newton Foundation — White Women / Sleepless Nights / Big Nudes",
+        "url": "https://newton-foundation.org/en/ausstellungen/helmut-newton-white-women-sleepless-nights-big-nudes/"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "ikko-narahara",
+  "name": "Ikko Narahara",
+  "nameJa": "奈良原一高",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1931–2020",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "奈良原一高（1931–2020）、福岡県生まれ。中央大学法学部を卒業後、早稲田大学大学院で美術史を学び、1956年の個展「人間の土地」で写真界に登場した。1959年に東松照明、細江英公らとVIVOを結成し、1962〜65年にヨーロッパ、1970〜74年にニューヨークへ滞在。《人間の土地》《王国》《ヨーロッパ・静止した時間》《消滅した時間》などを制作した。 *1 *2 。",
+    "textEn": "Ikko Narahara (1931–2020) was born in Fukuoka Prefecture. After graduating from the Faculty of Law at Chuo University, he studied art history in graduate school at Waseda University and emerged in the photographic world with his 1956 solo exhibition Human Land. In 1959 he co-founded VIVO with Shomei Tomatsu, Eikoh Hosoe, and others. He lived in Europe from 1962 to 1965 and in New York from 1970 to 1974, producing major bodies of work including Human Land, Domains, Where Time Has Stopped, and Where Time Has Vanished. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "長崎県美術館 — 奈良原一高「消滅した時間」",
+        "url": "https://www.nagasaki-museum.jp/archives/exhibition_post/23085"
+      },
+      {
+        "num": 2,
+        "name": "国立新美術館 Art Commons — 奈良原一高「静止した時間」",
+        "url": "https://www.nact.jp/english/artcommons/user/detail/46850"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "paul-caponigro",
+  "name": "Paul Caponigro",
+  "nameJa": "ポール・カポニグロ",
+  "nationality": "US / IE",
+  "flag": "🇺🇸",
+  "years": "1932–2024",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "ストレート写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "ポール・カポニグロ（1932–2024）、米国ボストン生まれ。幼少期からピアノを学び、十代で写真を始めた。1950年代後半にMinor Whiteのもとで学び、Ansel Adamsのゾーン・システムにも接しながら、米国、英国、アイルランドで森、石、古代遺構、静物を長期にわたり撮影した。《Redding Woods》《Stonehenge》《Avebury》などで知られる。 *1 *2 。",
+    "textEn": "Paul Caponigro (1932–2024) was born in Boston, Massachusetts. He studied piano from childhood and began photographing as a teenager. In the late 1950s he studied with Minor White and also encountered Ansel Adams’s Zone System. Over a long career in the United States, the United Kingdom, and Ireland, he photographed forests, stones, ancient sites, and still lifes, becoming especially known for Redding Woods, Stonehenge, and Avebury. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Smithsonian Archives of American Art — Oral History Interview with Paul Caponigro",
+        "url": "https://www.aaa.si.edu/collections/interviews/oral-history-interview-paul-caponigro-11968"
+      },
+      {
+        "num": 2,
+        "name": "LACMA — Redding, Connecticut",
+        "url": "https://collections.lacma.org/object/95467"
+      }
+    ]
+  }
+}
+);
+
+PHOTOGRAPHERS.push(
+{
+  "id": "sergio-larrain",
+  "name": "Sergio Larraín",
+  "nameJa": "セルヒオ・ラライン",
+  "nationality": "CL",
+  "flag": "🇨🇱",
+  "years": "1931–2012",
+  "gender": "男性",
+  "era": "1950",
+  "movements": [
+    "ストリート写真",
+    "フォトジャーナリズム"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "セルヒオ・ラライン（1931–2012）、チリ・サンティアゴ生まれ。1949年に米国へ渡って林学を学んだのち写真へ進み、1950年代からサンティアゴ、バルパライソ、ロンドンなどを撮影した。1959年にMagnumのアソシエイト、1961年に正会員となり、1960年代後半から職業写真の第一線を離れて、瞑想、文章、ドローイングへ時間を割いた。 *1 *2 。",
+    "textEn": "Sergio Larraín (1931–2012) was born in Santiago, Chile. He went to the United States in 1949 to study forestry before turning to photography, and from the 1950s photographed Santiago, Valparaíso, London, and other cities. He became an associate member of Magnum in 1959 and a full member in 1961. By the late 1960s he had stepped back from the front line of professional photography and devoted increasing time to meditation, writing, and drawing. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Magnum Consortium — Sergio Larraín",
+        "url": "https://magnumconsortium.net/index.php/people/LAS"
+      },
+      {
+        "num": 2,
+        "name": "Museo Nacional de Bellas Artes — Sergio Larraín: Retrospectiva",
+        "url": "https://www.mnba.gob.cl/noticias/sergio-larrain-retrospectiva"
+      }
+    ]
+  }
+}
+);

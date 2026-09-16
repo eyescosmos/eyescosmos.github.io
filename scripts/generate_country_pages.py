@@ -498,7 +498,7 @@ FRANCE_EXPECTED_IDS = [
     "marcel-bovis", "claude-cahun", "gerda-taro", "ilse-bing", "izis", "willy-ronis",
     "edouard-boubat",
     "sabine-weiss", "christer-stromholm", "elliott-erwitt", "vivian-maier",
-    "guy-bourdin", "marc-riboud",
+    "guy-bourdin", "marc-riboud", "helmut-newton",
     "jean-luc-moulene", "sophie-calle",
     "marine-hugonnier", "jean-pierre-khazem", "jean-luc-mylayne",
     "bruno-serralongue", "yto-barrada", "valerie-belin", "claude-closky",

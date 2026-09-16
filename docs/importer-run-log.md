@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-16 | bruce-davidson / duane-michals / helmut-newton / ikko-narahara / paul-caponigro / sergio-larrain（idx 409–414・0916素材） | new×6 | （Daisuke記入） | 0 | 5（素材EN thesis の sup-ref／Codex がツール出力を JA運動4枚へ混入／運動8面の件数2系統が未更新／EN年代カード6枚が非標準形／§REL 張り忘れ2件） | 公開HTML 12枚新規＋従属面40 | 本文4節・JA/EN とも素材と完全一致 | JA 26/24/26/29/22/27 |
 | 2026-09-16 | annie-leibovitz（0915再更新・**移行後の実素材 update 初回パイロット**） | update | （Daisuke記入） | 0 | 3（未知class `citation-end` 68件／素材が §REF further-links を16→3に落とす／素材にない §SRC 1本が静かに消失＝監督監査で捕捉） | 公開HTML 2枚（JA/EN リーフのみ。card-data・archive・eras・countries・movements・sitemap・星bin は変更0） | 9,969→12,745 | 42→47 |
 | 2026-09-16 | (engine)生成物サーフェスの手編集検知ガード（EN アーカイブ・国別JA/EN） | engine | （Daisuke記入） | 0 | 1（既存の「直接編集の疑い」WARN と重複＝外すかは別判断で保留） | 公開HTML 0枚。`preflight.py` +docs 2 | N/A | N/A |
 | 2026-09-16 | (content+engine)EN Channel 未訳の辞書穴を塞ぎ既存EN 11枚を英語化＋`process_ja()` 撤去 | other | （Daisuke記入） | 0 | 2（接頭句の未訳は WARN すら出ない死角だった／`renumber_eyebrow`・`delink_missing` が未参照化＝撤去は別判断） | EN写真家 11枚・辞書1・engine 2 | N/A | N/A |
@@ -104,6 +105,111 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-16 — 0916素材 新規6名（idx 409–414・種別=new×6・Opus監督 / Codex実装）
+
+- **範囲**：`bruce-davidson` / `duane-michals` / `helmut-newton` / `ikko-narahara` / `paul-caponigro` / `sergio-larrain`。
+  JA/ENリーフ各6、card-data・supplement・星bin、archive/cards-archive/index（JA/EN）、年代 1950 JA/EN（48→54）、
+  国 united-states / germany / australia / france / ireland / japan の JA/EN、運動 JA/EN 各5面、
+  `FRANCE_EXPECTED_IDS` に `helmut-newton`、辞書 `countries` に2語、sitemap 988→1000。commit / push なし。
+- **モデル**：Daisuke 指定で Codex CLI（`gpt-5.6-sol` / `model_reasoning_effort=low`）。codex MCP は
+  CONNECTION_CLOSED のため最小 `CODEX_HOME=~/.codex-cli` で回避（[[reference_codex_config_agents_key_breaks_cli]]）。
+- **型**：パイロット1名（bruce-davidson）→ 監督監査 → 残り5名を新規セッション1本。**残り5名は停止0回で完走。**
+
+### 着手前に監督が潰したもの
+
+- **素材EN 6本の thesis 欄に `sup-ref` が2件ずつ**（`preflight.check_supref_punctuation()` が HARD）。
+  §14 A-0 の「一時コピー上で直す」に従い scratchpad の複製で除去。**原本12本は SHA-256 不変**（作業後も照合済み）。
+  除去しても孤立 cite は発生しないことを事前に実測（該当 cite は本文からも参照されていた）。
+- 経路の曖昧さを dry-run で解消：**`add_photographer --scaffold` を付けてはいけない**。付けると JA ページが
+  先に出来て importer 通常モードが `--force` 要求で止まる。正しい順は
+  `add_photographer --apply`（--scaffold なし）→ `import_chatgpt_photographer --slug --ja --en --apply` → `--apply-surfaces`。
+- **辞書の穴2件**：`data/photographers-en-ui-terms.json` の `countries` に `チリ` / `アイルランド` が無く、
+  larrain・caponigro の EN サイドバーに日本語国名が出る状態だった。2語だけ追加（2026-09-16 の11語追加と同じ扱い）。
+
+### ★ブリーフ誤り2件（Codex がパイロットで止まった原因。両方とも監督側）
+
+[[feedback_codex_stops_means_brief_is_wrong]] の5回目。**Codex の指摘は2件とも正しかった。**
+
+1. **cite 集合の期待値を「JA==EN」と書いたのが誤り。** 正しくは **素材JA==生成JA** と **素材EN==生成EN** の2本だけ。
+   0916素材は EN の §SRC が JA より多い（JA 26/24/26/29/22/27 に対し EN 28/29/30/30/30/30）。
+   6名とも両方向で一致＝欠落も増加もなし（監督が独立実測）。
+2. **`build_photographers_en.py --dry-run` を検証項目に入れたのが誤り。** CLAUDE.md のとおり
+   これは EN 描画エンジンの**モジュール**で CLI ではなく、直接実行は常に非0終了する。項目ごと撤回。
+
+- あわせて **EN の未参照 cite は素材由来でサイト標準**と実測して後続ブリーフに明記した
+  （**EN写真家ページ 409枚中 79枚が未参照 cite を持つ**）。6名の未参照 cite は**素材原本の集合と完全一致**で、
+  生成側は1件も増減させていない。`en_html_sync.py verify` がこの1項目だけ FAIL するのは既知。
+
+### ★監督監査で捕まえた事故4系統（Codex の報告には出ていない）
+
+1. **★Codex がツール出力を公開HTMLへ混入させた**。`movements/ストレート写真.html` に preflight のログ
+   46行（WARN・FAIL・`intentional-replacement` 一覧・`preflight: FAILED`）が、他3枚
+   （ステージド写真2行 / ストリート写真1行 / フォトジャーナリズム1行）に runbook の
+   `＋ サイドバー Photographers に …` 行が本文として書き込まれていた。**合計50行**。
+   **`preflight` も `check_content_loss` も検知しない**（タグ開閉が崩れず、カード数も減らないため）。
+   捕捉したのは**カード roster 抽出時に巨大な非HTML文字列が混ざったこと**。
+   除去後、4枚とも HEAD 比で**削除0行**（件数行1本を除く）＝純粋追加であることを実測。
+   → **教訓：横断スクリプト後だけでなく、Codex が手編集した公開HTMLも「非HTML文字列が入っていないか」を見る。**
+2. **運動8面の件数表示2系統がどちらも未更新**。運動ページは
+   hero の `N PHOTOGRAPHERS` と サイドバーの `Photographers<strong>N</strong>` の**2箇所**を持つ。
+   preflight が見るのは**後者だけ**（`check_movement_hero_count`）。HEAD で一致していた6面を
+   我々が崩していた（ストレート写真 JA/EN は HEAD から既に1件ずれ＝既存drift）。8面とも実カード数へ統一。
+3. **EN年代ページのカード6枚が非標準形**。`en/eras/1950.html` の既存54枚中49枚は
+   `data-type` / `data-era` / `data-search` / `data-country` を持つが、**追加6枚は欠落**していた
+   （パイロット分は `PHOTOGRAPHER` 表示の旧形、残り5名は属性ごと欠落）。
+   ロバート・フランクのカードを正の型として6枚とも作り直し、**54枚全部が `data-search` を持つ**状態にした。
+   **JA 年代ページは逆に3枚しか持たないのが標準**なので触っていない。
+4. **§REL の張り忘れ2件を同バッチで是正**（§14 D）。
+   `bruce-davidson` → ゴードン・パークス（JA裸テキスト→リンク化・EN に対応項目追加）、
+   `guy-bourdin` → ヘルムート・ニュートン（同）。**JA はリンク化のみでプレーンテキスト不変**を実測。
+
+### 検証（監督が独立に再実測）
+
+| 見るもの | 実測 |
+|---|---|
+| cite 集合 素材JA==生成JA / 素材EN==生成EN | **6名とも両方 True** |
+| 本文プレーンテキスト 素材==生成（JA/EN） | **12本とも完全一致**（例 bruce JA 5,117字 / EN 10,371字） |
+| JSON-LD Person の `name`/`birthDate`/`nationality`/`description`/`url` | **JA/EN とも 6名すべて 5/5** |
+| §REL リンク切れ | **0**（href 先を実測） |
+| サイドバー検索配線 | 参照実装 `guy-bourdin` と同値（8/3/6）・`check_sidebar_search_wiring()` OK |
+| 年代・国・運動の roster | **全ページ removed=0**（純粋追加） |
+| sitemap | 988→1000（追加12・削除0・重複0・worktree/backup 0） |
+| 凍結EN JSON 3本 | **byte 不変** |
+| 素材原本12本 SHA-256 | **不変** |
+| `preflight` / `check_content_loss` / `sync_card_counts --check` / `check_photographer_link_integrity` | **全 EXIT 0** |
+| 6名の `check_new_photographer` / `check_en_entry` | **全 EXIT 0**・`en_missing` 0 |
+
+- **残WARN（baseline比の新規）は7件**。内訳＝`[EN country …]` 6面（**6面ともスコープ再生成で SHA-256 byte 一致を実測＝偽陽性確定**）
+  ＋下の「Daisuke 判断待ち」1件。`movements/ピクトリアリズム.html` の drift は**baseline から存在**する既存分。
+- `en/eras/1950.html` の `<div>` 開閉差2は **HEAD から同じ差2**＝既存（我々は増やしていない）。
+
+### ★Daisuke 判断待ち1件 — チリの国ページ
+
+`sergio-larrain`（nationality=`CL`）は **`data/country-pages.json` の33ヶ国に該当が無く、国ページに載らない**。
+preflight が `どの国別ページ config にも一致しない nationality 1件` を **WARN（非ブロック）**で出す。
+
+- 国ページを持たない国コードは他に10件（LU/SK/LT/VN/NG/IR/LB/MA/KE/AR＝12名）あり**それ自体は既存標準**だが、
+  それらは全員**もう一方の国籍が国ページを持つ**ため、この WARN は出ない。
+  **「どの国ページにも載らない写真家」はラライン がサイト初。**
+- `check_taxonomy_presence()` は country-pages.json にある国だけを見るので **HARD にはならない**。
+- 選択肢は (a) このまま（WARN 常設）/ (b) `chile` を国ページに追加（JA/EN の lead 文が要る＝サイトの守備範囲の判断）。
+  **どちらもこのバッチの範囲外なので未実施。**
+
+### Codex 実測（トークン）
+
+| セッション | 消費 | 停止 |
+|---|---:|---|
+| パイロット1名 | 120,851 | 2件報告して停止（上記ブリーフ誤り2件） |
+| 残り5名 | **156,206 ＝ 31,241 / 名** | **0回** |
+| 合計（6名） | 277,057 ＝ 46,176 / 名 | |
+
+**比較（新規セッション1本あたりの トークン/名）：0909 = 46,462 / 0915 = 61,413 / 今回 = 31,241。**
+0915比 **−49%**。効いたのは (a) `gpt-5.6-sol` low、(b) 経路と taxonomy を監督が dry-run で確定してから渡したこと、
+(c) パイロットで判明したブリーフ誤り2件を後続ブリーフへ明記したこと（停止0回）。
+**ただし監督側の監査工数は増えている**（上の事故4系統はすべて Codex の報告に出ていない）。
+
+- **wall-time**：（Daisuke記入）
 
 ## 2026-09-16 — `annie-leibovitz` 0915 素材で再更新（種別=update・**移行後の実素材 update 初回＝§13.10 A**・Opus監督 / Codex実装）
 
@@ -3849,3 +3955,12 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
   EN は `<main>` から出典欄とカードを除いて数える（サイドバーの日本語名で誤検知したため）。
   無傷の素材で 0 件、壊した素材で全分岐が出ることを実物で確認。
 - `SUPREF_EN_KUTEN_BASELINE` は 62 → **0** へ下げた（EN の `</sup>。` が0になったため）。
+
+
+### 2026-09-16 — 0916 batch remaining 5 (new)
+
+- duane-michals: type=new; bug=GENRE_TAG dictionary hole (コンセプチュアル写真); manual=EN era card, staged movement JA/EN, §REL link sync; surfaces=JA/EN leaf + archive/card/era/country/movement/sitemap; fidelity=source cite IDs and body plaintext matched; engine=build_archive_en GENRE_TAG; commit=not committed; wall-time=Daisuke.
+- helmut-newton: type=new; bug=France roster guard and composite-country tag dictionary hole; manual=EN era card, staged movement JA/EN, §REL reciprocal links; surfaces=JA/EN leaf + archive/card/era/3 countries/movement/sitemap; fidelity=source cite IDs and body plaintext matched; engine=FRANCE_EXPECTED_IDS and COUNTRY_TAG; commit=not committed; wall-time=Daisuke.
+- ikko-narahara: type=new; bug=none; manual=EN era card and §REL person links; surfaces=JA/EN leaf + archive/card/era/Japan/sitemap; fidelity=source cite IDs and body plaintext matched; engine=none; commit=not committed; wall-time=Daisuke.
+- paul-caponigro: type=new; bug=country tag dictionary hole; manual=EN era card, straight-photography movement JA/EN, §REL person link; surfaces=JA/EN leaf + archive/card/era/2 countries/movement/sitemap; fidelity=source cite IDs and body plaintext matched; engine=build_archive_en COUNTRY_TAG; commit=not committed; wall-time=Daisuke.
+- sergio-larrain: type=new; bug=Chile COUNTRY_CODE/COUNTRY_TAG dictionary hole; manual=EN era card, street/photojournalism movements JA/EN; surfaces=JA/EN leaf + archive/card/era/movements/sitemap (no country page); fidelity=source cite IDs and body plaintext matched; engine=build_archive_en country mappings; commit=not committed; wall-time=Daisuke.
