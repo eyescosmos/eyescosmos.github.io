@@ -3790,3 +3790,23 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
 - **Codex は `codex mcp-server` が CONNECTION_CLOSED で使えず、`codex exec --sandbox workspace-write` を使用**。
   最小 `CODEX_HOME`（auth.json + `model_reasoning_effort` のみ）で起動。
   apply_patch はプロジェクト外へ書けないため、スクリプトはリポジトリ直下に一時作成して実行後に削除した。
+
+
+## 2026-09-16 — 出典番号ルールを機械ガード化（`check_supref_punctuation`）＋素材側へ反映
+
+- 上のバッチ（`e90cba443`）で作った形を、preflight の HARD 不変条件として固定した。公開HTMLの変更は0枚。
+- **HARD 3分岐**：①句読点の後ろに番号が無い ②番号の直後が本文なのに半角スペースが無い
+  ③`ph-abstract` / `ph-thesis` に `sup-ref` がある。対象は写真家・運動・年代の JA/EN 計6ディレクトリ。
+  **導入時の実測は3分岐とも0件**。talbot を故意に3通り壊して3本ともHARDで出ること、復元で0に戻ることを確認。
+- **既知WARN 1本**：EN 面に和文句点「。」+ 出典番号が **62件** 残存。`SUPREF_EN_KUTEN_BASELINE=62` を
+  超えたら HARD になる。これは別問題（下記）。
+- **★別件で見つかった既存バックログ（今回の変更が原因ではないことを HEAD~1 と照合して確認済み）**
+  - EN 写真家・運動ページの本文に **CJK 記号が残存**: `。`73 / `《》`152・146 / `「」`28 / `『』`24 /
+    `、`18 / `（）`10（EN写真家 37ページ）。
+  - EN 写真家ページで **段落が `. ` で始まる**（文頭に孤立ピリオド）が **8箇所/8ページ**:
+    an-my-le / barbara-probst / benjamin-brecknell-turner / herbert-ponting / jean-luc-moulene /
+    jochen-lempert / simone-nieweg / wang-qingsong。
+    JA の「。」が残り、対応するピリオドが次段落の先頭へ落ちた翻訳時の事故に見える。
+    **機械的な入替では直らない（文の切り直しが要る）ので手を付けていない。**
+- 素材側の担保は `docs/importer-scaffold-inject-spec.md` §13-0（ChatGPT 自己チェック 5〜8番）と
+  §14 A-0（受け取り時 `grep -c -E '</sup>[。.]'`）。ガードの詳細は `docs/generators-and-guards.md`。

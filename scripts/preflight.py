@@ -1879,6 +1879,115 @@ def check_scaffold_inject_determinism() -> None:
             f"漏れている疑い）: {tail}")
 
 
+# 出典番号（sup-ref）の位置ルール。2026-09-16 に全ページを統一した時点の不変条件。
+#   ① 句読点は出典番号より前（`。<sup>*1</sup>` であって `<sup>*1</sup>。` ではない）
+#   ② 番号の直後が本文なら半角スペース1個で区切る（次の文の頭に見えないように）
+#   ③ Abstract / thesis 欄には出典番号を置かない
+# いずれも実測で 0 件のグリーン・決定論なので HARD。素材側が間違っていても
+# ここで push が止まる。例外は EN 面に残る CJK 句点「。」で、これは別バックログ
+# （EN 本文に和文記号が残っている問題）なので件数ベースラインで「増えたら HARD」。
+SUPREF_SCOPES_JA = ("photographers", "movements", "eras")
+SUPREF_SCOPES_EN = ("en/photographers", "en/movements", "en/eras")
+SUPREF_TAG = r'<sup class="sup-ref"><a href="#cite-\d+">\*\d+</a></sup>'
+SUPREF_RUN = r'(?:' + SUPREF_TAG + r')+'
+# 句読点 + 番号 のあとに区切りが要らない文脈（ブロックの終わり・既に空白がある）
+SUPREF_NO_SPACE_NEEDED = re.compile(
+    r'\s|</p|</li|</h|</div|</td|</ul|</ol|</blockquote|<br|$')
+SUPREF_INLINE_CLOSE = r'(?:</(?:span|em|i|b|strong|a|u)>)*'
+# EN 面に残る和文句点「。」の既知件数（2026-09-16 実測）。EN 本文の CJK 残骸は
+# 別途まとめて直す。ここでは「増やさない」ことだけを保証する。
+SUPREF_EN_KUTEN_BASELINE = 62
+
+
+def check_supref_punctuation() -> None:
+    """出典番号と句読点の位置・Abstract/thesis への混入を検知する（HARD）。"""
+    before_punct: list[str] = []
+    no_space: list[str] = []
+    in_abstract: list[str] = []
+    en_kuten = 0
+
+    run_then_text = re.compile('[。.]' + SUPREF_RUN + SUPREF_INLINE_CLOSE)
+
+    def block_span(html: str, cls: str) -> list[tuple[int, int]]:
+        spans = []
+        marker = '<div class="ph-%s">' % cls
+        pos = 0
+        while True:
+            start = html.find(marker, pos)
+            if start < 0:
+                return spans
+            p_at = html.find('<p', start + len(marker))
+            if p_at < 0:
+                return spans
+            end = html.find('</div>', p_at)
+            if end < 0:
+                return spans
+            spans.append((start, end))
+            pos = end + 6
+
+    for scope in SUPREF_SCOPES_JA + SUPREF_SCOPES_EN:
+        d = REPO / scope
+        if not d.is_dir():
+            continue
+        is_en = scope in SUPREF_SCOPES_EN
+        for f in sorted(d.glob("*.html")):
+            html = f.read_text(encoding="utf-8", errors="ignore")
+            if "sup-ref" not in html:
+                continue
+            rel = f.relative_to(REPO).as_posix()
+
+            # ① 句読点が出典番号の後ろに来ている
+            n_period = html.count("</sup>.")
+            n_kuten = html.count("</sup>。")
+            if n_period:
+                before_punct.append("%s（ピリオド %d）" % (rel, n_period))
+            if n_kuten:
+                if is_en:
+                    en_kuten += n_kuten
+                else:
+                    before_punct.append("%s（句点 %d）" % (rel, n_kuten))
+
+            # ② 句読点+番号 の直後が本文なのに区切りが無い
+            hits = sum(1 for m in run_then_text.finditer(html)
+                       if not SUPREF_NO_SPACE_NEEDED.match(html, m.end()))
+            if hits:
+                no_space.append("%s（%d）" % (rel, hits))
+
+            # ③ Abstract / thesis への混入
+            n_blk = 0
+            for cls in ("abstract", "thesis"):
+                for a, b in block_span(html, cls):
+                    n_blk += html.count('class="sup-ref"', a, b)
+            if n_blk:
+                in_abstract.append("%s（%d）" % (rel, n_blk))
+
+    if before_punct:
+        hard_failures.append(
+            "出典番号が句読点の前にある（正: 文末の「。」「.」の**後ろ**に <sup>）: "
+            + ", ".join(before_punct[:12])
+            + ("… 計%d件" % len(before_punct) if len(before_punct) > 12 else ""))
+    if no_space:
+        hard_failures.append(
+            "出典番号の直後に区切りが無く、次の文の頭に付いて見える"
+            "（正: </sup> のあとに半角スペース1個。段落末は不要）: "
+            + ", ".join(no_space[:12])
+            + ("… 計%d件" % len(no_space) if len(no_space) > 12 else ""))
+    if in_abstract:
+        hard_failures.append(
+            "Abstract / thesis 欄に出典番号が入っている（この2欄には置かない）: "
+            + ", ".join(in_abstract[:12])
+            + ("… 計%d件" % len(in_abstract) if len(in_abstract) > 12 else ""))
+    if en_kuten > SUPREF_EN_KUTEN_BASELINE:
+        hard_failures.append(
+            "EN 本文に和文句点「。」が増えた（%d > baseline %d）。EN は「.」で終える"
+            % (en_kuten, SUPREF_EN_KUTEN_BASELINE))
+    elif en_kuten:
+        known_warnings.append(
+            "EN 本文に和文句点「。」+ 出典番号が %d 件残っている（既知の CJK 残骸・"
+            "別バックログ。baseline %d を超えたら HARD）"
+            % (en_kuten, SUPREF_EN_KUTEN_BASELINE))
+
+
 def run_existing_check(script: str) -> None:
     path = REPO / "scripts" / script
     if not path.exists():
@@ -2567,6 +2676,7 @@ def main() -> int:
     check_jsonld_person_key_regression()
     check_new_photographer_pages()
     check_scaffold_inject_determinism()
+    check_supref_punctuation()  # 出典番号の位置・Abstract/thesis混入（HARD）
     check_ai_disclosure()
     run_existing_check("check_photographer_link_integrity.py")
 
