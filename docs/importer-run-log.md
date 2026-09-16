@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-16 | (engine)生成物サーフェスの手編集検知ガード（EN アーカイブ・国別JA/EN） | engine | （Daisuke記入） | 0 | 1（既存の「直接編集の疑い」WARN と重複＝外すかは別判断で保留） | 公開HTML 0枚。`preflight.py` +docs 2 | N/A | N/A |
 | 2026-09-16 | (content+engine)EN Channel 未訳の辞書穴を塞ぎ既存EN 11枚を英語化＋`process_ja()` 撤去 | other | （Daisuke記入） | 0 | 2（接頭句の未訳は WARN すら出ない死角だった／`renumber_eyebrow`・`delink_missing` が未参照化＝撤去は別判断） | EN写真家 11枚・辞書1・engine 2 | N/A | N/A |
 | 2026-09-16 | (engine)importer の欠落3件を修正＋新規追加の入口を1本化 | engine | （Daisuke記入） | 0 | 3（EN Channel 未訳は辞書ファイル側のため未着手＝判断待ち／`process_ja()` が通常モードから外れて未参照化／既存EN 11枚の Channel 日本語残りを発見） | 公開HTML 0枚（1,094枚 sha256 完全一致）。コード2・docs 4 | N/A | N/A |
 | 2026-09-16 | (content)0915フェーズ3 運動6枚・sitemap+12・既存12面リンク化 | other | （Daisuke記入） | 0 | 2（シュルレアリスム件数表示の旧ズレ是正／anuschka EN §REL 併記項目の訳を監督是正） | 運動8・sitemap2・写真家12 | N/A | N/A |
@@ -102,6 +103,30 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-16 — 生成物サーフェスの手編集検知ガード（種別=engine・Opus実装）
+
+`docs/post-migration-cleanup-plan.md` §13.1 の保留を Daisuke 指示で着手（「推奨案で」）。
+**EN アーカイブ `en/archive.html` と国別 JA/EN は出力HTMLが正本ではない**のに上書き拒否ガードが無く、
+絶対禁止4番を規律だけで守っていた（＝直したつもりの修正が次の再生成で黙って戻る）。
+
+- **実装**：`scripts/preflight.py` の `check_generated_surface_drift()`。生成器3本を `--dry-run` で回し
+  **would-change / would-create** を読む＝**正本から再生成した結果と実ファイルの突き合わせ**。
+  touched/untouched 方式で、**今回触った生成物のずれは HARD**（手編集の疑い）、**触っていない分は WARN**
+  （再生成忘れ・既存ドリフト）。dry-run が落ちたら「未検査」を WARN で出す。
+- **着手前の実測（§13.1 の指示どおり）**：ドリフト **0枚**（EN アーカイブ1 + 国別JA 33 + 国別EN 62＝96面一致）。
+  各 dry-run は 0.25 秒で、全件突き合わせでも実用範囲だと確認してから全面採用した。
+- **受け入れテスト3通り**：①`countries/austria.html` と `en/archive.html` を手編集 → **HARD・EXIT 1**
+  ②`data/country-pages.json` だけ直して再生成を忘れた → **WARN のみ（ブロックしない）**
+  ③正本を直して `--country austria` で再生成 → **EXIT 0**。テスト後は全ファイルを復元し、
+  `git status` は `scripts/preflight.py` だけ。
+- **コスト**：preflight **34.3 秒 → 36.1 秒（+1.8 秒）**。
+- **保留（判断待ち）**：既存の `[EN country <slug>] / [EN archive] 生成物を直接編集した疑い` WARN は
+  写真家追加のたびに構造的な偽陽性を出す（§14 A-4）。今回の検査が同じ面をより正確に見るため**落とせる**が、
+  `[EN archive]` に真陽性の前例（2026-08-31）があるため未実施。
+- **あわせて積みタスク化**：`renumber_eyebrow()` / `delink_missing()` の撤去は
+  **次に importer を触るとき一緒に**（§13.2b。単独セッションは組まない）。
+- **wall-time**：（Daisuke記入）
 
 ## 2026-09-16 — EN Channel 未訳の辞書穴を塞ぐ＋既存EN 11枚を英語化＋`process_ja()` 撤去（種別=other+engine・Opus実装）
 

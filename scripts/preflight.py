@@ -2150,6 +2150,84 @@ def check_internal_dead_links() -> None:
             f"未作成ページへの既知リンク {href}: {KNOWN_MISSING_HREFS[href]}")
 
 
+# ── 生成物サーフェスの手編集検知（EN アーカイブ / 国別 JA・EN）────────────
+# 2026-09-16 追加（docs/post-migration-cleanup-plan.md §13.1）。
+#
+# この3面は「出力HTMLが正本ではない」＝ `archive.html` と `data/country-pages.json` から
+# 毎回作り直される。写真家ページのような上書き拒否ガードが無いため、出力HTMLを直接
+# 直しても機械は止めず、次の再生成で黙って戻る（CLAUDE.md 絶対禁止4番を規律だけで守る状態）。
+#
+# 既存の「生成物を直接編集した疑い」WARN（check_country_en など）は
+# 「HTML が変わったのに正本JSONが変わっていない」ヒューリスティックで、写真家を追加する
+# たびに構造的な偽陽性を出す（§14 A-4）。こちらは **正本から再生成した結果と実ファイルを
+# 突き合わせる**ので偽陽性が出ない。
+#
+# 判定は他の検査と同じ touched/untouched 方式:
+#   - 今回の変更で触った生成物がずれている → HARD（＝この変更が入れた手編集）
+#   - 触っていない生成物のずれ → WARN（既存ドリフト。再生成忘れもここに出る）
+# 実測（2026-09-16 導入時）: 96面すべて一致・dry-run 3本で合計 0.6 秒。
+GENERATED_SURFACE_CMDS: list[tuple[str, list[str]]] = [
+    ("EN アーカイブ", ["build_archive_en.py", "--dry-run"]),
+    ("国別 JA", ["generate_country_pages.py", "--all", "--dry-run"]),
+    ("国別 EN", ["generate_country_pages_en.py", "--all", "--dry-run"]),
+]
+
+
+def _dry_run_would_change(script_args: list[str]) -> tuple[list[str], str | None]:
+    """生成器を dry-run し (would-change/create の相対パス, エラー文) を返す。"""
+    proc = subprocess.run([sys.executable, str(REPO / "scripts" / script_args[0]),
+                           *script_args[1:]],
+                          capture_output=True, text=True, cwd=REPO)
+    if proc.returncode != 0:
+        tail = (proc.stderr or proc.stdout).strip().splitlines()
+        return [], (tail[-1][:160] if tail else f"exit {proc.returncode}")
+    paths: list[str] = []
+    capture = False
+    for line in proc.stdout.splitlines():
+        if line.startswith(("would-change paths:", "would-create paths:")):
+            capture = True
+            continue
+        if capture:
+            if not line.startswith("  "):
+                capture = False
+                continue
+            val = line.strip()
+            if val and val != "(none)":
+                paths.append(val)
+    return paths, None
+
+
+def check_generated_surface_drift() -> None:
+    """EN アーカイブ・国別ページが正本から再生成した結果と一致するか。"""
+    baseline = _baseline_ref()
+    proc = subprocess.run(["git", "diff", "--name-only", baseline],
+                          capture_output=True, text=True, cwd=REPO)
+    touched = {l.strip() for l in proc.stdout.splitlines() if l.strip()}
+
+    hard_hits: list[str] = []
+    warn_hits: list[str] = []
+    for label, args in GENERATED_SURFACE_CMDS:
+        paths, err = _dry_run_would_change(args)
+        if err:
+            warnings.append(
+                f"[{label}] 手編集検知の dry-run が失敗したため未検査: {err}")
+            continue
+        for rel in paths:
+            (hard_hits if rel in touched else warn_hits).append(f"{label} {rel}")
+
+    if hard_hits:
+        hard_failures.append(
+            f"今回変更した生成物が正本から再生成した結果と一致しない {len(hard_hits)}件"
+            "（出力HTMLを直接編集した疑い。次の再生成で消える。"
+            "正本＝archive.html / data/country-pages.json を直してから再生成する）: "
+            + " / ".join(hard_hits[:8]) + (" …" if len(hard_hits) > 8 else ""))
+    if warn_hits:
+        warnings.append(
+            f"生成物が正本と一致しない {len(warn_hits)}件"
+            "（今回の変更対象外・再生成忘れか既存ドリフト。ブロックしない）: "
+            + " / ".join(warn_hits[:8]) + (" …" if len(warn_hits) > 8 else ""))
+
+
 # ── §REL の「リンク張り忘れ」（裸テキスト → 実在ページ）──────────────
 # check_internal_dead_links とは逆方向の検査。あちらは「リンク → 実在しないページ」、
 # こちらは「裸テキスト → 実在するページ」を見る。
@@ -2462,6 +2540,7 @@ def main() -> int:
     check_en_lang_toggle_active()
     check_sidebar_search_wiring()
     check_internal_dead_links()
+    check_generated_surface_drift()   # 生成物サーフェスの手編集検知（HARD/WARN）
     check_rel_unlinked_names()
     check_orphan_class_tokens()
     check_en_json_frozen()

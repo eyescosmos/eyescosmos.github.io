@@ -339,6 +339,13 @@ CLAUDE.md の多くのルールは過去の事故の再発防止。重要なも�
     サイドバー検索は `input.ph-side-search__input:not([id*=mobile])` と `aria-controls` から入力欄・候補欄を
     解決し、`preflight.py` の `check_sidebar_search_wiring()` が構文に依存せず、script内の検索IDリテラルが
     ページ内IDへ解決できない状態、入力欄の複数化、`aria-controls` の参照切れを HARD FAIL でブロックする。
+- **`preflight.check_generated_surface_drift()`**（2026-09-16 追加）— **EN アーカイブ `en/archive.html` と
+  国別 JA/EN は出力HTMLが正本ではない**（正本は `archive.html` と `data/country-pages.json`）。
+  この3面には写真家ページのような上書き拒否ガードが無いので、出力を直接直すと次の再生成で黙って戻る。
+  そこで3本の生成器を `--dry-run` で回し、**正本から再生成した結果と実ファイルを突き合わせる**。
+  **今回触った生成物がずれていれば HARD**（手編集の疑い）、**触っていない分は WARN**（再生成忘れ・既存ドリフト）。
+  導入時の実測＝96面すべて一致・preflight は +1.8 秒。既存の「生成物を直接編集した疑い」WARN と違い
+  ヒューリスティックではないので偽陽性が出ない。
 - **`scripts/check_new_photographer.py --slug <slug>`** — 新規／触った写真家ページの**完成検査**
   （構造健全さ＋決定論 cite 整合＋JSON-LD 実体準拠＝JA は Person を要求＋**本文レイアウトの型**
   ＝背景と時代/表現の核心/代表作・方法・媒体/批評と写真史上の位置 に揃っているかの soft ナッジ）。

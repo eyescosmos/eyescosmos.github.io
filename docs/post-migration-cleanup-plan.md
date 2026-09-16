@@ -729,7 +729,7 @@ tag 名: **`legacy-generators-2026-09-15`**（annotated・origin へ push 済み
 **2026-09-15 時点。どれも急ぎではない。新規6名バッチ（`docs/next-photographer-batch.md`）を
 先に回してから、必要性を感じた時点で着手する。勝手に始めない。**
 
-## 13.1 EN アーカイブ・国別の「手編集検知」ガード（★未着手・Daisuke の指示待ち）
+## 13.1 EN アーカイブ・国別の「手編集検知」ガード（★2026-09-16 実装済）
 
 **問題**: §14 の表のとおり、この2面は**既存出力への上書き拒否ガードが無い**。
 `CLAUDE.md` 絶対禁止4番（生成物の出力HTMLだけを直さない）を**規律だけで守っている**状態で、
@@ -748,6 +748,29 @@ tag 名: **`legacy-generators-2026-09-15`**（annotated・origin へ push 済み
 差分があれば「生成物を直接編集した疑い」として WARN/HARD を出す
 （`build_archive_en.py --dry-run` の would-change が既に近い形で存在する）。
 **着手するなら、まず現状で would-change が何枚出るかを実測すること**。
+
+### 実装（2026-09-16・Daisuke 指示「推奨案で」）
+`scripts/preflight.py` の **`check_generated_surface_drift()`**。正本から再生成した結果と
+実ファイルを突き合わせる（ヒューリスティックではない）。
+
+- 対象3面と方法：`build_archive_en.py --dry-run` / `generate_country_pages.py --all --dry-run` /
+  `generate_country_pages_en.py --all --dry-run` の **would-change / would-create** を読む。
+- 判定は既存検査と同じ touched/untouched：
+  **今回触った生成物がずれていれば HARD**（＝手編集の疑い・次の再生成で消える）、
+  **触っていない分は WARN**（再生成忘れ・既存ドリフト。ブロックしない）。
+- dry-run が失敗したときは「未検査」を WARN で出す（黙って素通りさせない）。
+
+**導入時の実測**：
+- 着手前のドリフトは **0枚**（EN アーカイブ1 + 国別JA 33 + 国別EN 62＝96面すべて一致）。
+- 受け入れテスト3通り：①`countries/austria.html` と `en/archive.html` を手編集 → **HARD で EXIT 1**、
+  ②`data/country-pages.json` だけ直して再生成を忘れた → **WARN（ブロックしない）**、
+  ③正本を直して `--country austria` で再生成 → **EXIT 0**。
+- preflight 実行時間 **34.3 秒 → 36.1 秒（+1.8 秒）**。
+
+**残る選択肢（未実施・要判断）**：既存の `[EN country <slug>] / [EN archive] 生成物を直接編集した疑い`
+WARN（`check_country_en` / `check_archive_en` のヒューリスティック）は、写真家追加のたびに
+構造的な偽陽性を出す（§14 A-4）。今回の検査がより正確に同じ面を見るので**重複した WARN を落とせる**が、
+`[EN archive]` には真陽性の前例（2026-08-31）があるため、外すかは別途判断。
 
 ## 13.2 ★正本をこれ以上 HTML へ寄せるのは「しない」で決着（2026-09-15）
 
@@ -773,6 +796,21 @@ EN アーカイブも約400枚のカードの翻訳投影で、再生成こそ�
 
 → **今回の移行の本質は「JSON だから直す」ではなく「JSON に散文が溜まって二重正本に
 なっていたから直す」だった。** この区別を次の設計判断でも使う。
+
+## 13.2b 積みタスク：`renumber_eyebrow()` / `delink_missing()` の撤去（触るときに一緒に）
+
+2026-09-16 の入口1本化で `process_ja()`（素材HTMLを素通しで公開する旧経路）を撤去した結果、
+この2部品が **参照ゼロ** になった。**単独セッションは組まない。次に
+`scripts/import_chatgpt_photographer.py` を触るとき一緒に落とす**（Daisuke 決定 2026-09-16）。
+
+- `renumber_eyebrow()` … hero 眉の採番。scaffold 側が入れるので**もう要らない**。そのまま落としてよい。
+- `delink_missing()` … JA 素材の「実在しないページへの内部リンク」を自動で外す部品。
+  **落とす前に確認すること**＝現在この機能は生成時には働いておらず、
+  `preflight.check_internal_dead_links()` が**事後**に受けている（触ったページは HARD）。
+  **単純に現経路へ配線し直してはいけない**：EN ページ作成前は JA→EN の言語トグルも
+  「存在しないページ」と判定され、旧経路では毎回トグルを復活させる手間が出ていた。
+
+---
 
 ## 13.3 積み残しの未決（§9.8 から再掲）
 
