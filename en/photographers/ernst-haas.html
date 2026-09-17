@@ -22,25 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Ernst Haas | Color Photography, Life, and Color in Motion | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/ernst-haas.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ernst Haas | Color Photography, Life, and Color in Motion | Photo Coordinates",
-  "birthDate": "1921",
-  "deathDate": "1986",
-  "description": "Ernst Haas was an Austrian-American Magnum photographer who made color and exposure time central subjects of photography through Kodachrome, slow shutter speeds, reflections, Life magazine essays, film work, and his 1962 MoMA exhibition."
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/ernst-haas.html",
+      "url": "https://eyescosmos.com/en/photographers/ernst-haas.html",
+      "name": "Ernst Haas | Color Photography, Life, and Color in Motion | Photo Coordinates",
+      "description": "Ernst Haas was an Austrian-American Magnum photographer who made color and exposure time central subjects of photography through Kodachrome, slow shutter speeds, reflections, Life magazine essays, film work, and his 1962 MoMA exhibition.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/ernst-haas.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/ernst-haas.html#person",
+      "name": "Ernst Haas",
+      "alternateName": "エルンスト・ハース",
+      "description": "Ernst Haas was an Austrian-American Magnum photographer who made color and exposure time central subjects of photography through Kodachrome, slow shutter speeds, reflections, Life magazine essays, film work, and his 1962 MoMA exhibition.",
+      "url": "https://eyescosmos.com/en/photographers/ernst-haas.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1921",
+      "deathDate": "1986",
+      "nationality": {
+        "@type": "Country",
+        "name": "Austria / United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/ernst-haas.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -51,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -63,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Ernst Haas | Color Photography, Life, and Color in Motion | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/ernst-haas.html"
+      "name": "Ernst Haas"
     }
   ]
 }

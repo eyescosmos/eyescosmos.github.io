@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Malick Sidibé | Bamako Nights and Studio Portraits | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/malick-sidibe.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Malick Sidibé",
-  "alternateName": "マリック・シディベ",
-  "nationality": "Mali",
-  "description": "Malick Sidibé photographed young people dancing, club culture, and fashion in Bamako around independence with a 35mm camera and direct flash. At Studio Malick, he developed poses in consultation with clients. His nightlife photographs, commissioned portraits, and print-ordering system reveal a photographic culture in which urban youth helped shape their own image.",
-  "url": "https://eyescosmos.com/en/photographers/malick-sidibe.html",
-  "birthDate": "1936",
-  "deathDate": "2016"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/malick-sidibe.html",
+      "url": "https://eyescosmos.com/en/photographers/malick-sidibe.html",
+      "name": "Malick Sidibé | Bamako Nights and Studio Portraits | Photo Coordinates",
+      "description": "Malick Sidibé photographed young people dancing, club culture, and fashion in Bamako around independence with a 35mm camera and direct flash. At Studio Malick, he developed poses in consultation with clients. His nightlife photographs, commissioned portraits, and print-ordering system reveal a photographic culture in which urban youth helped shape their own image.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/malick-sidibe.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/malick-sidibe.html#person",
+      "name": "Malick Sidibé",
+      "alternateName": "マリック・シディベ",
+      "description": "Malick Sidibé photographed young people dancing, club culture, and fashion in Bamako around independence with a 35mm camera and direct flash. At Studio Malick, he developed poses in consultation with clients. His nightlife photographs, commissioned portraits, and print-ordering system reveal a photographic culture in which urban youth helped shape their own image.",
+      "url": "https://eyescosmos.com/en/photographers/malick-sidibe.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1936",
+      "deathDate": "2016",
+      "nationality": {
+        "@type": "Country",
+        "name": "Mali"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/malick-sidibe.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Malick Sidibé | Bamako Nights and Studio Portraits | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/malick-sidibe.html"
+      "name": "Malick Sidibé"
     }
   ]
 }

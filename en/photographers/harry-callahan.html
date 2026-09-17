@@ -22,25 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Harry Callahan | Eleanor, Multiple Exposure, and the Institute of Design | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/harry-callahan.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Harry Callahan | Eleanor, Multiple Exposure, and the Institute of Design | Photo Coordinates",
-  "birthDate": "1912",
-  "deathDate": "1999",
-  "description": "Harry Callahan was born in Detroit in 1912 and developed a photographic practice spanning Eleanor Callahan, Chicago streets, plants, water, multiple exposure, large-format cameras, and photographic education at the Institute of Design and RISD."
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/harry-callahan.html",
+      "url": "https://eyescosmos.com/en/photographers/harry-callahan.html",
+      "name": "Harry Callahan | Eleanor, Multiple Exposure, and the Institute of Design | Photo Coordinates",
+      "description": "Harry Callahan was born in Detroit in 1912 and developed a photographic practice spanning Eleanor Callahan, Chicago streets, plants, water, multiple exposure, large-format cameras, and photographic education at the Institute of Design and RISD.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/harry-callahan.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/harry-callahan.html#person",
+      "name": "Harry Callahan",
+      "alternateName": "ハリー・キャラハン",
+      "description": "Harry Callahan was born in Detroit in 1912 and developed a photographic practice spanning Eleanor Callahan, Chicago streets, plants, water, multiple exposure, large-format cameras, and photographic education at the Institute of Design and RISD.",
+      "url": "https://eyescosmos.com/en/photographers/harry-callahan.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1912",
+      "deathDate": "1999",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/harry-callahan.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -51,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -63,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Harry Callahan | Eleanor, Multiple Exposure, and the Institute of Design | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/harry-callahan.html"
+      "name": "Harry Callahan"
     }
   ]
 }

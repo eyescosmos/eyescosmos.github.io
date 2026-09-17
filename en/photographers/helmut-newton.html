@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Helmut Newton | Fashion Photography, Power, and the Gaze | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/helmut-newton.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Helmut Newton",
-  "alternateName": "ヘルムート・ニュートン",
-  "nationality": "Germany / Australia / France",
-  "description": "Helmut Newton was a German-born photographer who turned fashion photography into a staged arena of desire, power, gender, and class. From his apprenticeship with Yva and his exile from Nazi Germany to French Vogue, Big Nudes, and his collaboration with June Newton, this page examines the tensions that made his images both influential and contested.",
-  "url": "https://eyescosmos.com/en/photographers/helmut-newton.html",
-  "birthDate": "1920",
-  "deathDate": "2004"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/helmut-newton.html",
+      "url": "https://eyescosmos.com/en/photographers/helmut-newton.html",
+      "name": "Helmut Newton | Fashion Photography, Power, and the Gaze | Photo Coordinates",
+      "description": "Helmut Newton was a German-born photographer who turned fashion photography into a staged arena of desire, power, gender, and class. From his apprenticeship with Yva and his exile from Nazi Germany to French Vogue, Big Nudes, and his collaboration with June Newton, this page examines the tensions that made his images both influential and contested.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/helmut-newton.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/helmut-newton.html#person",
+      "name": "Helmut Newton",
+      "alternateName": "ヘルムート・ニュートン",
+      "description": "Helmut Newton was a German-born photographer who turned fashion photography into a staged arena of desire, power, gender, and class. From his apprenticeship with Yva and his exile from Nazi Germany to French Vogue, Big Nudes, and his collaboration with June Newton, this page examines the tensions that made his images both influential and contested.",
+      "url": "https://eyescosmos.com/en/photographers/helmut-newton.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1920",
+      "deathDate": "2004",
+      "nationality": {
+        "@type": "Country",
+        "name": "Germany / Australia / France"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/helmut-newton.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Helmut Newton | Fashion Photography, Power, and the Gaze | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/helmut-newton.html"
+      "name": "Helmut Newton"
     }
   ]
 }

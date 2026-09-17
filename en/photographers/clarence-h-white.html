@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Clarence H. White | Pictorialism and Photographic Education | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/clarence-h-white.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Clarence H. White",
-  "alternateName": "クラレンス・H・ホワイト",
-  "nationality": "United States",
-  "description": "Clarence H. White was an American Pictorialist known for photographing family and friends in naturally lit interiors and gardens, and for the lasting influence of the Clarence H. White School. His career links Arthur Wesley Dow, Arts and Crafts, and Photo-Secession to later developments in advertising and fashion photography.",
-  "url": "https://eyescosmos.com/en/photographers/clarence-h-white.html",
-  "birthDate": "1871",
-  "deathDate": "1925"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/clarence-h-white.html",
+      "url": "https://eyescosmos.com/en/photographers/clarence-h-white.html",
+      "name": "Clarence H. White | Pictorialism and Photographic Education | Photo Coordinates",
+      "description": "Clarence H. White was an American Pictorialist known for photographing family and friends in naturally lit interiors and gardens, and for the lasting influence of the Clarence H. White School. His career links Arthur Wesley Dow, Arts and Crafts, and Photo-Secession to later developments in advertising and fashion photography.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/clarence-h-white.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/clarence-h-white.html#person",
+      "name": "Clarence H. White",
+      "alternateName": "クラレンス・H・ホワイト",
+      "description": "Clarence H. White was an American Pictorialist known for photographing family and friends in naturally lit interiors and gardens, and for the lasting influence of the Clarence H. White School. His career links Arthur Wesley Dow, Arts and Crafts, and Photo-Secession to later developments in advertising and fashion photography.",
+      "url": "https://eyescosmos.com/en/photographers/clarence-h-white.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1871",
+      "deathDate": "1925",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/clarence-h-white.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Clarence H. White",
-      "item": "https://eyescosmos.com/en/photographers/clarence-h-white.html"
+      "name": "Clarence H. White"
     }
   ]
 }

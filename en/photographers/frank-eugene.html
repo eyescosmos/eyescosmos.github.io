@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Frank Eugene | Manipulated Negatives and Pictorialism | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/frank-eugene.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Frank Eugene",
-  "alternateName": "フランク・ユージーン",
-  "nationality": "United States / Germany",
-  "description": "Frank Eugene was a Pictorialist photographer trained as a painter in Munich who scratched his negatives with a needle and worked into them with brush and pencil. Through Photo-Secession, Camera Work, photogravure, and photographic education in Germany, his career examined where the camera’s mechanical image meets the artist’s hand.",
-  "url": "https://eyescosmos.com/en/photographers/frank-eugene.html",
-  "birthDate": "1865",
-  "deathDate": "1936"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/frank-eugene.html",
+      "url": "https://eyescosmos.com/en/photographers/frank-eugene.html",
+      "name": "Frank Eugene | Manipulated Negatives and Pictorialism | Photo Coordinates",
+      "description": "Frank Eugene was a Pictorialist photographer trained as a painter in Munich who scratched his negatives with a needle and worked into them with brush and pencil. Through Photo-Secession, Camera Work, photogravure, and photographic education in Germany, his career examined where the camera’s mechanical image meets the artist’s hand.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/frank-eugene.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/frank-eugene.html#person",
+      "name": "Frank Eugene",
+      "alternateName": "フランク・ユージーン",
+      "description": "Frank Eugene was a Pictorialist photographer trained as a painter in Munich who scratched his negatives with a needle and worked into them with brush and pencil. Through Photo-Secession, Camera Work, photogravure, and photographic education in Germany, his career examined where the camera’s mechanical image meets the artist’s hand.",
+      "url": "https://eyescosmos.com/en/photographers/frank-eugene.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1865",
+      "deathDate": "1936",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States / Germany"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/frank-eugene.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Frank Eugene",
-      "item": "https://eyescosmos.com/en/photographers/frank-eugene.html"
+      "name": "Frank Eugene"
     }
   ]
 }

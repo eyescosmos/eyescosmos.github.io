@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Ernest Howard Farmer | Photographic Education and Farmer's Reducer | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/ernest-farmer.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ernest Howard Farmer",
-  "alternateName": "アーネスト・ハワード・ファーマー",
-  "nationality": "United Kingdom",
-  "description": "Ernest Howard Farmer was a British photographer and educator who led photographic teaching at the Regent Street Polytechnic and worked across photographic chemistry, patents, and field photography. Farmer’s Reducer and recently rediscovered photographs such as A Wiltshire Thatcher reveal how image making and technical education formed parts of the same career.",
-  "url": "https://eyescosmos.com/en/photographers/ernest-farmer.html",
-  "birthDate": "1856",
-  "deathDate": "1944"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/ernest-farmer.html",
+      "url": "https://eyescosmos.com/en/photographers/ernest-farmer.html",
+      "name": "Ernest Howard Farmer | Photographic Education and Farmer's Reducer | Photo Coordinates",
+      "description": "Ernest Howard Farmer was a British photographer and educator who led photographic teaching at the Regent Street Polytechnic and worked across photographic chemistry, patents, and field photography. Farmer’s Reducer and recently rediscovered photographs such as A Wiltshire Thatcher reveal how image making and technical education formed parts of the same career.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/ernest-farmer.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/ernest-farmer.html#person",
+      "name": "Ernest Howard Farmer",
+      "alternateName": "アーネスト・ハワード・ファーマー",
+      "description": "Ernest Howard Farmer was a British photographer and educator who led photographic teaching at the Regent Street Polytechnic and worked across photographic chemistry, patents, and field photography. Farmer’s Reducer and recently rediscovered photographs such as A Wiltshire Thatcher reveal how image making and technical education formed parts of the same career.",
+      "url": "https://eyescosmos.com/en/photographers/ernest-farmer.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1856",
+      "deathDate": "1944",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/ernest-farmer.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Ernest Howard Farmer",
-      "item": "https://eyescosmos.com/en/photographers/ernest-farmer.html"
+      "name": "Ernest Howard Farmer"
     }
   ]
 }

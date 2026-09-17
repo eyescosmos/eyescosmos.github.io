@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Clementina Hawarden | Daughters, Mirrors, Window Light, and Victorian Interior Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/clementina-hawarden.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Clementina Hawarden",
-  "alternateName": "クレメンティナ・ホーワーデン",
-  "nationality": "United Kingdom",
-  "description": "Clementina Hawarden’s portraits of her daughters are examined through the interiors of 5 Princes Gardens, mirrors, window light, costume, wet-plate collodion, women’s photographic production in the home, and later gender criticism.",
-  "url": "https://eyescosmos.com/en/photographers/clementina-hawarden.html",
-  "birthDate": "1822",
-  "deathDate": "1865"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/clementina-hawarden.html",
+      "url": "https://eyescosmos.com/en/photographers/clementina-hawarden.html",
+      "name": "Clementina Hawarden | Daughters, Mirrors, Window Light, and Victorian Interior Photography | Photo Coordinates",
+      "description": "Clementina Hawarden’s portraits of her daughters are examined through the interiors of 5 Princes Gardens, mirrors, window light, costume, wet-plate collodion, women’s photographic production in the home, and later gender criticism.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/clementina-hawarden.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/clementina-hawarden.html#person",
+      "name": "Clementina Hawarden",
+      "alternateName": "クレメンティナ・ホーワーデン",
+      "description": "Clementina Hawarden’s portraits of her daughters are examined through the interiors of 5 Princes Gardens, mirrors, window light, costume, wet-plate collodion, women’s photographic production in the home, and later gender criticism.",
+      "url": "https://eyescosmos.com/en/photographers/clementina-hawarden.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1822",
+      "deathDate": "1865",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/clementina-hawarden.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Clementina Hawarden | Daughters, Mirrors, Window Light, and Victorian Interior Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/clementina-hawarden.html"
+      "name": "Clementina Hawarden"
     }
   ]
 }

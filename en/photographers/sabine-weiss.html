@@ -22,25 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Sabine Weiss | Humanist Photography, Rapho, and Vogue | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/sabine-weiss.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Sabine Weiss | Humanist Photography, Rapho, and Vogue | Photo Coordinates",
-  "birthDate": "1924",
-  "deathDate": "2021",
-  "description": "Sabine Weiss was a Swiss-French professional photographer whose work moved across Rapho, Vogue, fashion, advertising, magazine reportage, street photography, children, labor, night scenes, and portraiture while challenging a narrow male-centered history of humanist photography."
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/sabine-weiss.html",
+      "url": "https://eyescosmos.com/en/photographers/sabine-weiss.html",
+      "name": "Sabine Weiss | Humanist Photography, Rapho, and Vogue | Photo Coordinates",
+      "description": "Sabine Weiss was a Swiss-French professional photographer whose work moved across Rapho, Vogue, fashion, advertising, magazine reportage, street photography, children, labor, night scenes, and portraiture while challenging a narrow male-centered history of humanist photography.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/sabine-weiss.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/sabine-weiss.html#person",
+      "name": "Sabine Weiss",
+      "alternateName": "サビーヌ・ヴァイス",
+      "description": "Sabine Weiss was a Swiss-French professional photographer whose work moved across Rapho, Vogue, fashion, advertising, magazine reportage, street photography, children, labor, night scenes, and portraiture while challenging a narrow male-centered history of humanist photography.",
+      "url": "https://eyescosmos.com/en/photographers/sabine-weiss.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1924",
+      "deathDate": "2021",
+      "nationality": {
+        "@type": "Country",
+        "name": "Switzerland / France"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/sabine-weiss.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -51,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -63,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Sabine Weiss | Humanist Photography, Rapho, and Vogue | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/sabine-weiss.html"
+      "name": "Sabine Weiss"
     }
   ]
 }

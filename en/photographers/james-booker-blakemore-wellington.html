@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "J. B. B. Wellington | Pictorialism and Photographic Materials | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "James Booker Blakemore Wellington",
-  "alternateName": "J・B・B・ウェリントン",
-  "nationality": "United Kingdom",
-  "description": "J. B. B. Wellington made Pictorialist photographs while working in the development and manufacture of dry plates, printing papers, and film through Eastman, Kodak, and Wellington &amp; Ward. His career brings art photography and the photographic industry into the same history.",
-  "url": "https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html",
-  "birthDate": "1858",
-  "deathDate": "1939"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html",
+      "url": "https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html",
+      "name": "J. B. B. Wellington | Pictorialism and Photographic Materials | Photo Coordinates",
+      "description": "J. B. B. Wellington made Pictorialist photographs while working in the development and manufacture of dry plates, printing papers, and film through Eastman, Kodak, and Wellington &amp; Ward. His career brings art photography and the photographic industry into the same history.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html#person",
+      "name": "James Booker Blakemore Wellington",
+      "alternateName": "J・B・B・ウェリントン",
+      "description": "J. B. B. Wellington made Pictorialist photographs while working in the development and manufacture of dry plates, printing papers, and film through Eastman, Kodak, and Wellington &amp; Ward. His career brings art photography and the photographic industry into the same history.",
+      "url": "https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1858",
+      "deathDate": "1939",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "J. B. B. Wellington | Pictorialism and Photographic Materials | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/james-booker-blakemore-wellington.html"
+      "name": "James Booker Blakemore Wellington"
     }
   ]
 }

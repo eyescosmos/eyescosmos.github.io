@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Alfred Horsley Hinton | British Pictorialism and The Amateur Photographer | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/horsley-hinton.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Alfred Horsley Hinton",
-  "alternateName": "ホースリー・ヒントン",
-  "nationality": "United Kingdom",
-  "description": "Born in London in 1863, Alfred Horsley Hinton combined Pictorial landscape photography with editing, criticism, technical writing, and the Linked Ring. His work with mist, tonal structure, platinum printing, and photographic magazines helped shape the standards by which British amateur art photography was made and judged.",
-  "url": "https://eyescosmos.com/en/photographers/horsley-hinton.html",
-  "birthDate": "1863",
-  "deathDate": "1908"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/horsley-hinton.html",
+      "url": "https://eyescosmos.com/en/photographers/horsley-hinton.html",
+      "name": "Alfred Horsley Hinton | British Pictorialism and The Amateur Photographer | Photo Coordinates",
+      "description": "Born in London in 1863, Alfred Horsley Hinton combined Pictorial landscape photography with editing, criticism, technical writing, and the Linked Ring. His work with mist, tonal structure, platinum printing, and photographic magazines helped shape the standards by which British amateur art photography was made and judged.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/horsley-hinton.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/horsley-hinton.html#person",
+      "name": "Alfred Horsley Hinton",
+      "alternateName": "ホースリー・ヒントン",
+      "description": "Born in London in 1863, Alfred Horsley Hinton combined Pictorial landscape photography with editing, criticism, technical writing, and the Linked Ring. His work with mist, tonal structure, platinum printing, and photographic magazines helped shape the standards by which British amateur art photography was made and judged.",
+      "url": "https://eyescosmos.com/en/photographers/horsley-hinton.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1863",
+      "deathDate": "1908",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/horsley-hinton.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Alfred Horsley Hinton",
-      "item": "https://eyescosmos.com/en/photographers/horsley-hinton.html"
+      "name": "Alfred Horsley Hinton"
     }
   ]
 }

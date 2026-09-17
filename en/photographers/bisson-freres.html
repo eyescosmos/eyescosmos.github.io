@@ -22,22 +22,40 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Bisson Frères | Large-Format Architectural Photography and Mont Blanc | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/bisson-freres.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Bisson Frères | Large-Format Architectural Photography and Mont Blanc | Photo Coordinates"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/bisson-freres.html",
+      "url": "https://eyescosmos.com/en/photographers/bisson-freres.html",
+      "name": "Bisson Frères | Large-Format Architectural Photography and Mont Blanc | Photo Coordinates",
+      "description": "Bisson Frères, the Paris studio of Louis-Auguste and Auguste-Rosalie Bisson, used large glass negatives for architectural publishing, photographic reproduction, and Alpine expeditions. This page examines their large-format precision, studio labor, photographic publishing, and the 1861 ascent of Mont Blanc.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/bisson-freres.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/bisson-freres.html#person",
+      "name": "Bisson Frères",
+      "alternateName": "ビソン兄弟",
+      "description": "Bisson Frères, the Paris studio of Louis-Auguste and Auguste-Rosalie Bisson, used large glass negatives for architectural publishing, photographic reproduction, and Alpine expeditions. This page examines their large-format precision, studio labor, photographic publishing, and the 1861 ascent of Mont Blanc.",
+      "url": "https://eyescosmos.com/en/photographers/bisson-freres.html",
+      "jobTitle": "Photographer",
+      "nationality": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/bisson-freres.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -48,7 +66,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -60,8 +78,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Bisson Frères | Large-Format Architectural Photography and Mont Blanc | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/bisson-freres.html"
+      "name": "Bisson Frères"
     }
   ]
 }

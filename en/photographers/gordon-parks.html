@@ -22,25 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Gordon Parks | American Gothic, Life, and the Civil Rights Movement | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/gordon-parks.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Gordon Parks | American Gothic, Life, and the Civil Rights Movement | Photo Coordinates",
-  "birthDate": "1912",
-  "deathDate": "2006",
-  "description": "Gordon Parks was a photographer, filmmaker, and writer whose work for the FSA/OWI and Life examined racism, poverty, crime, family, and civil rights while exposing the editorial power that shaped picture essays for mass audiences."
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/gordon-parks.html",
+      "url": "https://eyescosmos.com/en/photographers/gordon-parks.html",
+      "name": "Gordon Parks | American Gothic, Life, and the Civil Rights Movement | Photo Coordinates",
+      "description": "Gordon Parks was a photographer, filmmaker, and writer whose work for the FSA/OWI and Life examined racism, poverty, crime, family, and civil rights while exposing the editorial power that shaped picture essays for mass audiences.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/gordon-parks.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/gordon-parks.html#person",
+      "name": "Gordon Parks",
+      "alternateName": "ゴードン・パークス",
+      "description": "Gordon Parks was a photographer, filmmaker, and writer whose work for the FSA/OWI and Life examined racism, poverty, crime, family, and civil rights while exposing the editorial power that shaped picture essays for mass audiences.",
+      "url": "https://eyescosmos.com/en/photographers/gordon-parks.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1912",
+      "deathDate": "2006",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/gordon-parks.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -51,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -63,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Gordon Parks | American Gothic, Life, and the Civil Rights Movement | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/gordon-parks.html"
+      "name": "Gordon Parks"
     }
   ]
 }

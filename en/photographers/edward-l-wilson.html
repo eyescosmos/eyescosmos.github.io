@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Edward Livingston Wilson | The Philadelphia Photographer and Stereography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/edward-l-wilson.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Edward L. Wilson",
-  "alternateName": "エドワード・L・ウィルソン",
-  "nationality": "United States",
-  "description": "Edward Livingston Wilson organized late-nineteenth-century photography as shared professional knowledge and a system of circulation through The Philadelphia Photographer, journals containing original prints, stereography, Middle Eastern travel photography, and technical annuals.",
-  "url": "https://eyescosmos.com/en/photographers/edward-l-wilson.html",
-  "birthDate": "1838",
-  "deathDate": "1903"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/edward-l-wilson.html",
+      "url": "https://eyescosmos.com/en/photographers/edward-l-wilson.html",
+      "name": "Edward Livingston Wilson | The Philadelphia Photographer and Stereography | Photo Coordinates",
+      "description": "Edward Livingston Wilson organized late-nineteenth-century photography as shared professional knowledge and a system of circulation through The Philadelphia Photographer, journals containing original prints, stereography, Middle Eastern travel photography, and technical annuals.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/edward-l-wilson.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/edward-l-wilson.html#person",
+      "name": "Edward L. Wilson",
+      "alternateName": "エドワード・L・ウィルソン",
+      "description": "Edward Livingston Wilson organized late-nineteenth-century photography as shared professional knowledge and a system of circulation through The Philadelphia Photographer, journals containing original prints, stereography, Middle Eastern travel photography, and technical annuals.",
+      "url": "https://eyescosmos.com/en/photographers/edward-l-wilson.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1838",
+      "deathDate": "1903",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/edward-l-wilson.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Edward L. Wilson",
-      "item": "https://eyescosmos.com/en/photographers/edward-l-wilson.html"
+      "name": "Edward L. Wilson"
     }
   ]
 }

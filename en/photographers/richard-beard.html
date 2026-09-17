@@ -22,24 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Richard Beard | Daguerreotype Patents and British Portrait Studios | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/richard-beard.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Richard Beard | Daguerreotype Patents and British Portrait Studios | Photo Coordinates",
-  "birthDate": "1801",
-  "deathDate": "1885"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/richard-beard.html",
+      "url": "https://eyescosmos.com/en/photographers/richard-beard.html",
+      "name": "Richard Beard | Daguerreotype Patents and British Portrait Studios | Photo Coordinates",
+      "description": "Richard Beard was an entrepreneur who opened a daguerreotype portrait studio in London in 1841 and built a business around British patent rights, commercial studios, licensing, and employed operators. Objects stamped “Beard Patentee” show how early photographic authorship could be organized through trademarks, cases, legal rights, and divided labor.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/richard-beard.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/richard-beard.html#person",
+      "name": "Richard Beard",
+      "alternateName": "リチャード・ビアード",
+      "description": "Richard Beard was an entrepreneur who opened a daguerreotype portrait studio in London in 1841 and built a business around British patent rights, commercial studios, licensing, and employed operators. Objects stamped “Beard Patentee” show how early photographic authorship could be organized through trademarks, cases, legal rights, and divided labor.",
+      "url": "https://eyescosmos.com/en/photographers/richard-beard.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1801",
+      "deathDate": "1885",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/richard-beard.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -50,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -62,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Richard Beard | Daguerreotype Patents and British Portrait Studios | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/richard-beard.html"
+      "name": "Richard Beard"
     }
   ]
 }

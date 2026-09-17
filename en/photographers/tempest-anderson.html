@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Tempest Anderson | Volcano Photography, Panoramas, and Lantern Slides | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/tempest-anderson.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Tempest Anderson",
-  "alternateName": "テンペスト・アンダーソン",
-  "nationality": "United Kingdom",
-  "description": "Born in York in 1846, Tempest Anderson practiced as an ophthalmologist while pursuing mountaineering, glacial observation, and volcanology. Using dry plates, panoramas, and lantern slides, he linked field observation, scientific reports, public lectures, and the study of volcanic change.",
-  "url": "https://eyescosmos.com/en/photographers/tempest-anderson.html",
-  "birthDate": "1846",
-  "deathDate": "1913"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/tempest-anderson.html",
+      "url": "https://eyescosmos.com/en/photographers/tempest-anderson.html",
+      "name": "Tempest Anderson | Volcano Photography, Panoramas, and Lantern Slides | Photo Coordinates",
+      "description": "Born in York in 1846, Tempest Anderson practiced as an ophthalmologist while pursuing mountaineering, glacial observation, and volcanology. Using dry plates, panoramas, and lantern slides, he linked field observation, scientific reports, public lectures, and the study of volcanic change.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/tempest-anderson.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/tempest-anderson.html#person",
+      "name": "Tempest Anderson",
+      "alternateName": "テンペスト・アンダーソン",
+      "description": "Born in York in 1846, Tempest Anderson practiced as an ophthalmologist while pursuing mountaineering, glacial observation, and volcanology. Using dry plates, panoramas, and lantern slides, he linked field observation, scientific reports, public lectures, and the study of volcanic change.",
+      "url": "https://eyescosmos.com/en/photographers/tempest-anderson.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1846",
+      "deathDate": "1913",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/tempest-anderson.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Tempest Anderson",
-      "item": "https://eyescosmos.com/en/photographers/tempest-anderson.html"
+      "name": "Tempest Anderson"
     }
   ]
 }

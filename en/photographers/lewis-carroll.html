@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Lewis Carroll | Alice Liddell, Childhood Portraiture, and Staged Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/lewis-carroll.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Lewis Carroll",
-  "alternateName": "ルイス・キャロル",
-  "nationality": "United Kingdom",
-  "description": "Lewis Carroll’s photography is examined through Alice Liddell, Alexandra Kitchin, staged portraiture, private albums, Victorian ideas of childhood, and the ethics of photographing children.",
-  "url": "https://eyescosmos.com/en/photographers/lewis-carroll.html",
-  "birthDate": "1832",
-  "deathDate": "1898"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/lewis-carroll.html",
+      "url": "https://eyescosmos.com/en/photographers/lewis-carroll.html",
+      "name": "Lewis Carroll | Alice Liddell, Childhood Portraiture, and Staged Photography | Photo Coordinates",
+      "description": "Lewis Carroll’s photography is examined through Alice Liddell, Alexandra Kitchin, staged portraiture, private albums, Victorian ideas of childhood, and the ethics of photographing children.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/lewis-carroll.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/lewis-carroll.html#person",
+      "name": "Lewis Carroll",
+      "alternateName": "ルイス・キャロル",
+      "description": "Lewis Carroll’s photography is examined through Alice Liddell, Alexandra Kitchin, staged portraiture, private albums, Victorian ideas of childhood, and the ethics of photographing children.",
+      "url": "https://eyescosmos.com/en/photographers/lewis-carroll.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1832",
+      "deathDate": "1898",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/lewis-carroll.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Lewis Carroll | Alice Liddell, Childhood Portraiture, and Staged Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/lewis-carroll.html"
+      "name": "Lewis Carroll"
     }
   ]
 }

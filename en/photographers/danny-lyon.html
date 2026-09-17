@@ -26,27 +26,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Danny Lyon | The Bikeriders and Participatory Documentary | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/danny-lyon.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Danny Lyon",
-  "alternateName": "ダニー・ライアン",
-  "nationality": "United States",
-  "description": "Danny Lyon photographed from within the Civil Rights Movement, the Chicago Outlaws Motorcycle Club, and Texas prisons. In books such as The Bikeriders and Conversations with the Dead, he combined photographs with recorded speech, letters, drawings, and official documents, making participation and editorial authority central to documentary form.",
-  "url": "https://eyescosmos.com/en/photographers/danny-lyon.html",
-  "birthDate": "1942"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/danny-lyon.html",
+      "url": "https://eyescosmos.com/en/photographers/danny-lyon.html",
+      "name": "Danny Lyon | The Bikeriders and Participatory Documentary | Photo Coordinates",
+      "description": "Danny Lyon photographed from within the Civil Rights Movement, the Chicago Outlaws Motorcycle Club, and Texas prisons. In books such as The Bikeriders and Conversations with the Dead, he combined photographs with recorded speech, letters, drawings, and official documents, making participation and editorial authority central to documentary form.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/danny-lyon.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/danny-lyon.html#person",
+      "name": "Danny Lyon",
+      "alternateName": "ダニー・ライアン",
+      "description": "Danny Lyon photographed from within the Civil Rights Movement, the Chicago Outlaws Motorcycle Club, and Texas prisons. In books such as The Bikeriders and Conversations with the Dead, he combined photographs with recorded speech, letters, drawings, and official documents, making participation and editorial authority central to documentary form.",
+      "url": "https://eyescosmos.com/en/photographers/danny-lyon.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1942",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/danny-lyon.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -57,7 +71,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -69,8 +83,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Danny Lyon | The Bikeriders and Participatory Documentary | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/danny-lyon.html"
+      "name": "Danny Lyon"
     }
   ]
 }

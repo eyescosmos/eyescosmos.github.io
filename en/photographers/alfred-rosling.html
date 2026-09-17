@@ -22,27 +22,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Alfred Rosling | Paper Negatives and Urban Topography in the 1850s | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/alfred-rosling.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Alfred Rosling",
-  "alternateName": "アルフレッド・ロスリング",
-  "nationality": "United Kingdom",
-  "description": "Alfred Rosling, believed to have been born around 1802, was a British timber merchant and amateur photographer whose paper-negative views circulated through exhibitions, exchange albums, and later Francis Frith’s commercial topographical publications. His surviving works illuminate changing authorship, process, and circulation in early photography.",
-  "url": "https://eyescosmos.com/en/photographers/alfred-rosling.html",
-  "birthDate": "1802"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/alfred-rosling.html",
+      "url": "https://eyescosmos.com/en/photographers/alfred-rosling.html",
+      "name": "Alfred Rosling | Paper Negatives and Urban Topography in the 1850s | Photo Coordinates",
+      "description": "Alfred Rosling, believed to have been born around 1802, was a British timber merchant and amateur photographer whose paper-negative views circulated through exhibitions, exchange albums, and later Francis Frith’s commercial topographical publications. His surviving works illuminate changing authorship, process, and circulation in early photography.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/alfred-rosling.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/alfred-rosling.html#person",
+      "name": "Alfred Rosling",
+      "alternateName": "アルフレッド・ロスリング",
+      "description": "Alfred Rosling, believed to have been born around 1802, was a British timber merchant and amateur photographer whose paper-negative views circulated through exhibitions, exchange albums, and later Francis Frith’s commercial topographical publications. His surviving works illuminate changing authorship, process, and circulation in early photography.",
+      "url": "https://eyescosmos.com/en/photographers/alfred-rosling.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1802",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/alfred-rosling.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -53,7 +67,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -65,8 +79,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Alfred Rosling",
-      "item": "https://eyescosmos.com/en/photographers/alfred-rosling.html"
+      "name": "Alfred Rosling"
     }
   ]
 }

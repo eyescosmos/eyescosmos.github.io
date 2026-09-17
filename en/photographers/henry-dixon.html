@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Henry Dixon | Vanishing London and Carbon Prints | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/henry-dixon.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Henry Dixon",
-  "alternateName": "ヘンリー・ディクソン",
-  "nationality": "United Kingdom",
-  "description": "Henry Dixon photographed and printed London buildings threatened by redevelopment for Relics of Old London. His place in photographic history emerges through carbon printing, preservation movements, urban transformation, and the use of photography as a durable architectural record.",
-  "url": "https://eyescosmos.com/en/photographers/henry-dixon.html",
-  "birthDate": "1820",
-  "deathDate": "1893"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/henry-dixon.html",
+      "url": "https://eyescosmos.com/en/photographers/henry-dixon.html",
+      "name": "Henry Dixon | Vanishing London and Carbon Prints | Photo Coordinates",
+      "description": "Henry Dixon photographed and printed London buildings threatened by redevelopment for Relics of Old London. His place in photographic history emerges through carbon printing, preservation movements, urban transformation, and the use of photography as a durable architectural record.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/henry-dixon.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/henry-dixon.html#person",
+      "name": "Henry Dixon",
+      "alternateName": "ヘンリー・ディクソン",
+      "description": "Henry Dixon photographed and printed London buildings threatened by redevelopment for Relics of Old London. His place in photographic history emerges through carbon printing, preservation movements, urban transformation, and the use of photography as a durable architectural record.",
+      "url": "https://eyescosmos.com/en/photographers/henry-dixon.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1820",
+      "deathDate": "1893",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/henry-dixon.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Henry Dixon | Vanishing London and Carbon Prints | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/henry-dixon.html"
+      "name": "Henry Dixon"
     }
   ]
 }

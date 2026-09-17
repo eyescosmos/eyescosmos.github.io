@@ -22,23 +22,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Mari Katayama | Self-Portraiture, Prosthetic Legs, and GIFT | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/mari-katayama.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Mari Katayama | Self-Portraiture, Prosthetic Legs, and GIFT | Photo Coordinates",
-  "birthDate": "1987"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/mari-katayama.html",
+      "url": "https://eyescosmos.com/en/photographers/mari-katayama.html",
+      "name": "Mari Katayama | Self-Portraiture, Prosthetic Legs, and GIFT | Photo Coordinates",
+      "description": "An introduction to Mari Katayama’s self-portraits through prosthetic legs, gender, disability, pictorial composition, mirror images, and the photobooks GIFT and Synthesis, with comparisons to Cindy Sherman and Yasumasa Morimura, the High Heel Project, and her place in photographic history.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/mari-katayama.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/mari-katayama.html#person",
+      "name": "Mari Katayama",
+      "alternateName": "片山真理",
+      "description": "An introduction to Mari Katayama’s self-portraits through prosthetic legs, gender, disability, pictorial composition, mirror images, and the photobooks GIFT and Synthesis, with comparisons to Cindy Sherman and Yasumasa Morimura, the High Heel Project, and her place in photographic history.",
+      "url": "https://eyescosmos.com/en/photographers/mari-katayama.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1987",
+      "nationality": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/mari-katayama.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -49,7 +67,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -61,8 +79,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Mari Katayama | Self-Portraiture, Prosthetic Legs, and GIFT | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/mari-katayama.html"
+      "name": "Mari Katayama"
     }
   ]
 }

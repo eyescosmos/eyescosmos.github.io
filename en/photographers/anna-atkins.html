@@ -22,24 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Anna Atkins | Cyanotype and Photographs of British Algae | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/anna-atkins.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Anna Atkins | Cyanotype and Photographs of British Algae | Photo Coordinates",
-  "birthDate": "1799",
-  "deathDate": "1871"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/anna-atkins.html",
+      "url": "https://eyescosmos.com/en/photographers/anna-atkins.html",
+      "name": "Anna Atkins | Cyanotype and Photographs of British Algae | Photo Coordinates",
+      "description": "Anna Atkins was a botanist and photographer who used John Herschel’s cyanotype process to self-publish Photographs of British Algae: Cyanotype Impressions beginning in 1843. By placing specimens directly on sensitized paper, she integrated botanical classification, camera-less photography, editing, correction, and book production into a single photographic process.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/anna-atkins.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/anna-atkins.html#person",
+      "name": "Anna Atkins",
+      "alternateName": "アンナ・アトキンス",
+      "description": "Anna Atkins was a botanist and photographer who used John Herschel’s cyanotype process to self-publish Photographs of British Algae: Cyanotype Impressions beginning in 1843. By placing specimens directly on sensitized paper, she integrated botanical classification, camera-less photography, editing, correction, and book production into a single photographic process.",
+      "url": "https://eyescosmos.com/en/photographers/anna-atkins.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1799",
+      "deathDate": "1871",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/anna-atkins.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -50,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -62,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Anna Atkins | Cyanotype and Photographs of British Algae | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/anna-atkins.html"
+      "name": "Anna Atkins"
     }
   ]
 }

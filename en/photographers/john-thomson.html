@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "John Thomson | China Photography and Street Life in London | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/john-thomson.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "John Thomson",
-  "alternateName": "ジョン・トムソン",
-  "nationality": "United Kingdom",
-  "description": "John Thomson organized photographs and writing into sustained publications based on long travels in China and Southeast Asia and in Street Life in London. His work brings together wet-plate photography, Woodburytype reproduction, social classification, and the imperial gaze.",
-  "url": "https://eyescosmos.com/en/photographers/john-thomson.html",
-  "birthDate": "1837",
-  "deathDate": "1921"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/john-thomson.html",
+      "url": "https://eyescosmos.com/en/photographers/john-thomson.html",
+      "name": "John Thomson | China Photography and Street Life in London | Photo Coordinates",
+      "description": "John Thomson organized photographs and writing into sustained publications based on long travels in China and Southeast Asia and in Street Life in London. His work brings together wet-plate photography, Woodburytype reproduction, social classification, and the imperial gaze.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/john-thomson.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/john-thomson.html#person",
+      "name": "John Thomson",
+      "alternateName": "ジョン・トムソン",
+      "description": "John Thomson organized photographs and writing into sustained publications based on long travels in China and Southeast Asia and in Street Life in London. His work brings together wet-plate photography, Woodburytype reproduction, social classification, and the imperial gaze.",
+      "url": "https://eyescosmos.com/en/photographers/john-thomson.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1837",
+      "deathDate": "1921",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/john-thomson.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "John Thomson | China Photography and Street Life in London | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/john-thomson.html"
+      "name": "John Thomson"
     }
   ]
 }

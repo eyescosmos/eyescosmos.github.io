@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Adolf de Meyer | Pictorialism and Fashion Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/adolf-de-meyer.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Adolf de Meyer",
-  "alternateName": "アドルフ・ド・メイヤー",
-  "nationality": "France / United Kingdom / United States",
-  "description": "Adolf de Meyer carried the Pictorialist light and composition of Photo-Secession into photographs of Nijinsky and fashion work for Vogue, Vanity Fair, and Harper’s Bazaar. His travels in Japan, use of backlighting and reflection, and attention to the magazine page reveal why art and commercial photography remained continuous in his work.",
-  "url": "https://eyescosmos.com/en/photographers/adolf-de-meyer.html",
-  "birthDate": "1868",
-  "deathDate": "1946"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/adolf-de-meyer.html",
+      "url": "https://eyescosmos.com/en/photographers/adolf-de-meyer.html",
+      "name": "Adolf de Meyer | Pictorialism and Fashion Photography | Photo Coordinates",
+      "description": "Adolf de Meyer carried the Pictorialist light and composition of Photo-Secession into photographs of Nijinsky and fashion work for Vogue, Vanity Fair, and Harper’s Bazaar. His travels in Japan, use of backlighting and reflection, and attention to the magazine page reveal why art and commercial photography remained continuous in his work.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/adolf-de-meyer.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/adolf-de-meyer.html#person",
+      "name": "Adolf de Meyer",
+      "alternateName": "アドルフ・ド・メイヤー",
+      "description": "Adolf de Meyer carried the Pictorialist light and composition of Photo-Secession into photographs of Nijinsky and fashion work for Vogue, Vanity Fair, and Harper’s Bazaar. His travels in Japan, use of backlighting and reflection, and attention to the magazine page reveal why art and commercial photography remained continuous in his work.",
+      "url": "https://eyescosmos.com/en/photographers/adolf-de-meyer.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1868",
+      "deathDate": "1946",
+      "nationality": {
+        "@type": "Country",
+        "name": "France / United Kingdom / United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/adolf-de-meyer.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Adolf de Meyer",
-      "item": "https://eyescosmos.com/en/photographers/adolf-de-meyer.html"
+      "name": "Adolf de Meyer"
     }
   ]
 }

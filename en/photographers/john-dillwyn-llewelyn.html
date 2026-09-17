@@ -22,24 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "John Dillwyn Llewelyn | Penllergare, Family Photography, and the Oxymel Process | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/john-dillwyn-llewelyn.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "John Dillwyn Llewelyn | Penllergare, Family Photography, and the Oxymel Process | Photo Coordinates",
-  "birthDate": "1810",
-  "deathDate": "1882"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/john-dillwyn-llewelyn.html",
+      "url": "https://eyescosmos.com/en/photographers/john-dillwyn-llewelyn.html",
+      "name": "John Dillwyn Llewelyn | Penllergare, Family Photography, and the Oxymel Process | Photo Coordinates",
+      "description": "John Dillwyn Llewelyn’s family experiments at Penllergare, nature studies, and oxymel process show how early photographic invention developed through household resources and scientific networks.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/john-dillwyn-llewelyn.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/john-dillwyn-llewelyn.html#person",
+      "name": "John Dillwyn Llewelyn",
+      "alternateName": "ジョン・ディルウィン・ルウェリン",
+      "description": "John Dillwyn Llewelyn’s family experiments at Penllergare, nature studies, and oxymel process show how early photographic invention developed through household resources and scientific networks.",
+      "url": "https://eyescosmos.com/en/photographers/john-dillwyn-llewelyn.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1810",
+      "deathDate": "1882",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/john-dillwyn-llewelyn.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -50,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -62,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "John Dillwyn Llewelyn | Penllergare, Family Photography, and the Oxymel Process | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/john-dillwyn-llewelyn.html"
+      "name": "John Dillwyn Llewelyn"
     }
   ]
 }

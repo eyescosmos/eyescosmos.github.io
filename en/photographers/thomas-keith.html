@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Thomas Keith | Old Edinburgh, Waxed-Paper Negatives, and Urban Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/thomas-keith.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Thomas Keith",
-  "alternateName": "トーマス・キース",
-  "nationality": "United Kingdom",
-  "description": "Thomas Keith’s photography is examined through Old Edinburgh, waxed-paper negatives, salted paper prints, raking light, Iona, records of urban redevelopment, and Scottish photographic networks.",
-  "url": "https://eyescosmos.com/en/photographers/thomas-keith.html",
-  "birthDate": "1827",
-  "deathDate": "1895"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/thomas-keith.html",
+      "url": "https://eyescosmos.com/en/photographers/thomas-keith.html",
+      "name": "Thomas Keith | Old Edinburgh, Waxed-Paper Negatives, and Urban Photography | Photo Coordinates",
+      "description": "Thomas Keith’s photography is examined through Old Edinburgh, waxed-paper negatives, salted paper prints, raking light, Iona, records of urban redevelopment, and Scottish photographic networks.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/thomas-keith.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/thomas-keith.html#person",
+      "name": "Thomas Keith",
+      "alternateName": "トーマス・キース",
+      "description": "Thomas Keith’s photography is examined through Old Edinburgh, waxed-paper negatives, salted paper prints, raking light, Iona, records of urban redevelopment, and Scottish photographic networks.",
+      "url": "https://eyescosmos.com/en/photographers/thomas-keith.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1827",
+      "deathDate": "1895",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/thomas-keith.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Thomas Keith | Old Edinburgh, Waxed-Paper Negatives, and Urban Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/thomas-keith.html"
+      "name": "Thomas Keith"
     }
   ]
 }

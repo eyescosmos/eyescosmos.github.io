@@ -1714,39 +1714,24 @@ def _en_head_complete(entry: dict, bundle: dict, slug: str) -> dict:
     twitter["image"] = _en_builder.DEFAULT_OG_IMAGE
     completed["twitter"] = twitter
     title = completed.get("title") or bundle.get("title") or completed.get("h1")
-    graph = _en_builder._fb_jsonld(completed, slug, title)
-    person_index = next(
-        (i for i, node in enumerate(graph)
-         if isinstance(node, dict) and node.get("@type") == "Person"), None)
-    if person_index is not None:
-        original = graph[person_index]
-        alternate_name = bundle.get("name_ja")
-        if not alternate_name:
-            ja_path = JA_DIR / f"{slug}.html"
-            if ja_path.is_file():
-                ja_person = _person_jsonld(
-                    ja_path.read_text(encoding="utf-8", errors="replace"))
-                if ja_person:
-                    alternate_name = ja_person[2].get("name")
-        person = {
-            "@context": original.get("@context", "https://schema.org"),
-            "@type": "Person",
-            "name": completed.get("h1"),
-        }
-        if alternate_name:
-            person["alternateName"] = alternate_name
-        if bundle.get("country_ja"):
-            person["nationality"] = bundle["country_ja"]
-        if completed.get("meta_description"):
-            person["description"] = completed["meta_description"]
-        if completed.get("canonical"):
-            person["url"] = completed["canonical"]
-        if original.get("birthDate"):
-            person["birthDate"] = original["birthDate"]
-        if original.get("deathDate"):
-            person["deathDate"] = original["deathDate"]
-        graph[person_index] = person
-    completed["jsonld"] = graph
+    # JSON-LD の材料を completed へ載せてから renderer に組ませる。
+    # （2026-09-17 以前はここで Person ノードを後から差し替えており、
+    #   renderer 側の @graph 構造が丸ごと落ちて `en_graph_absent` を積んでいた）
+    alternate_name = bundle.get("name_ja")
+    if not alternate_name:
+        ja_path = JA_DIR / f"{slug}.html"
+        if ja_path.is_file():
+            ja_person = _person_jsonld(
+                ja_path.read_text(encoding="utf-8", errors="replace"))
+            if ja_person:
+                alternate_name = ja_person[2].get("name")
+    completed["person_name"] = completed.get("h1") or title
+    if alternate_name:
+        completed["alternate_name"] = alternate_name
+    if bundle.get("country_ja"):
+        # EN bundle なので country_ja には英語の国名が入る（"Czech Republic / France" 等）
+        completed["nationality_en"] = bundle["country_ja"]
+    completed["jsonld"] = _en_builder._fb_jsonld(completed, slug, title)
     return completed
 
 

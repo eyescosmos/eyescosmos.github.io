@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Sergio Larraín | Valparaíso, Street Photography, and Magnum | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/sergio-larrain.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Sergio Larraín",
-  "alternateName": "セルヒオ・ラライン",
-  "nationality": "Chile",
-  "description": "Sergio Larraín was a Chilean photographer who photographed the streets of Santiago, Valparaíso, and London with low viewpoints, tilted frames, deep shadows, and foreground obstructions. Through his work with Magnum, Valparaíso, London 1959, his photographs of street children, and his later withdrawal from professional photography, this page traces a form of street photography shaped by walking and chance.",
-  "url": "https://eyescosmos.com/en/photographers/sergio-larrain.html",
-  "birthDate": "1931",
-  "deathDate": "2012"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/sergio-larrain.html",
+      "url": "https://eyescosmos.com/en/photographers/sergio-larrain.html",
+      "name": "Sergio Larraín | Valparaíso, Street Photography, and Magnum | Photo Coordinates",
+      "description": "Sergio Larraín was a Chilean photographer who photographed the streets of Santiago, Valparaíso, and London with low viewpoints, tilted frames, deep shadows, and foreground obstructions. Through his work with Magnum, Valparaíso, London 1959, his photographs of street children, and his later withdrawal from professional photography, this page traces a form of street photography shaped by walking and chance.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/sergio-larrain.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/sergio-larrain.html#person",
+      "name": "Sergio Larraín",
+      "alternateName": "セルヒオ・ラライン",
+      "description": "Sergio Larraín was a Chilean photographer who photographed the streets of Santiago, Valparaíso, and London with low viewpoints, tilted frames, deep shadows, and foreground obstructions. Through his work with Magnum, Valparaíso, London 1959, his photographs of street children, and his later withdrawal from professional photography, this page traces a form of street photography shaped by walking and chance.",
+      "url": "https://eyescosmos.com/en/photographers/sergio-larrain.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1931",
+      "deathDate": "2012",
+      "nationality": {
+        "@type": "Country",
+        "name": "Chile"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/sergio-larrain.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Sergio Larraín | Valparaíso, Street Photography, and Magnum | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/sergio-larrain.html"
+      "name": "Sergio Larraín"
     }
   ]
 }

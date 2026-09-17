@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Carleton E. Watkins | Yosemite, Mammoth Plates, and the American West | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/carleton-watkins.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Carleton E. Watkins",
-  "alternateName": "カールトン・E・ワトキンス",
-  "nationality": "United States",
-  "description": "Carleton E. Watkins photographed Yosemite, mines, railroads, and the Pacific Coast with 18 × 22-inch mammoth plates and stereographs. His work reveals how landscape preservation and western development could converge in the same photographic language.",
-  "url": "https://eyescosmos.com/en/photographers/carleton-watkins.html",
-  "birthDate": "1829",
-  "deathDate": "1916"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/carleton-watkins.html",
+      "url": "https://eyescosmos.com/en/photographers/carleton-watkins.html",
+      "name": "Carleton E. Watkins | Yosemite, Mammoth Plates, and the American West | Photo Coordinates",
+      "description": "Carleton E. Watkins photographed Yosemite, mines, railroads, and the Pacific Coast with 18 × 22-inch mammoth plates and stereographs. His work reveals how landscape preservation and western development could converge in the same photographic language.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/carleton-watkins.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/carleton-watkins.html#person",
+      "name": "Carleton E. Watkins",
+      "alternateName": "カールトン・E・ワトキンス",
+      "description": "Carleton E. Watkins photographed Yosemite, mines, railroads, and the Pacific Coast with 18 × 22-inch mammoth plates and stereographs. His work reveals how landscape preservation and western development could converge in the same photographic language.",
+      "url": "https://eyescosmos.com/en/photographers/carleton-watkins.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1829",
+      "deathDate": "1916",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/carleton-watkins.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Carleton E. Watkins | Yosemite, Mammoth Plates, and the American West | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/carleton-watkins.html"
+      "name": "Carleton E. Watkins"
     }
   ]
 }

@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Larry Burrows | The Vietnam War and Color Photojournalism | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/larry-burrows.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Larry Burrows",
-  "alternateName": "ラリー・バロウズ",
-  "nationality": "United Kingdom",
-  "description": "Larry Burrows covered the Vietnam War for LIFE in color, using picture essays, repeated visits, and magazine sequence to extend war photography beyond the single dramatic image. His work follows combat, logistics, injury, treatment, and civilian aftermath while revealing how military access and LIFE’s editorial system shaped what readers saw.",
-  "url": "https://eyescosmos.com/en/photographers/larry-burrows.html",
-  "birthDate": "1926",
-  "deathDate": "1971"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/larry-burrows.html",
+      "url": "https://eyescosmos.com/en/photographers/larry-burrows.html",
+      "name": "Larry Burrows | The Vietnam War and Color Photojournalism | Photo Coordinates",
+      "description": "Larry Burrows covered the Vietnam War for LIFE in color, using picture essays, repeated visits, and magazine sequence to extend war photography beyond the single dramatic image. His work follows combat, logistics, injury, treatment, and civilian aftermath while revealing how military access and LIFE’s editorial system shaped what readers saw.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/larry-burrows.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/larry-burrows.html#person",
+      "name": "Larry Burrows",
+      "alternateName": "ラリー・バロウズ",
+      "description": "Larry Burrows covered the Vietnam War for LIFE in color, using picture essays, repeated visits, and magazine sequence to extend war photography beyond the single dramatic image. His work follows combat, logistics, injury, treatment, and civilian aftermath while revealing how military access and LIFE’s editorial system shaped what readers saw.",
+      "url": "https://eyescosmos.com/en/photographers/larry-burrows.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1926",
+      "deathDate": "1971",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/larry-burrows.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Larry Burrows | The Vietnam War and Color Photojournalism | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/larry-burrows.html"
+      "name": "Larry Burrows"
     }
   ]
 }

@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Inge Morath | Iran, Masks, and Photography as Language | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/inge-morath.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Inge Morath",
-  "alternateName": "インゲ・モラス",
-  "nationality": "Austria / United States",
-  "description": "Inge Morath (1923–2002) was born in Graz. After working as a translator and editor, she joined Magnum and photographed Iran, Spain, the Danube region, film sets, and portraits of writers and artists.",
-  "url": "https://eyescosmos.com/en/photographers/inge-morath.html",
-  "birthDate": "1923",
-  "deathDate": "2002"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/inge-morath.html",
+      "url": "https://eyescosmos.com/en/photographers/inge-morath.html",
+      "name": "Inge Morath | Iran, Masks, and Photography as Language | Photo Coordinates",
+      "description": "Inge Morath (1923–2002) was born in Graz. After working as a translator and editor, she joined Magnum and photographed Iran, Spain, the Danube region, film sets, and portraits of writers and artists.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/inge-morath.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/inge-morath.html#person",
+      "name": "Inge Morath",
+      "alternateName": "インゲ・モラス",
+      "description": "Inge Morath (1923–2002) was born in Graz. After working as a translator and editor, she joined Magnum and photographed Iran, Spain, the Danube region, film sets, and portraits of writers and artists.",
+      "url": "https://eyescosmos.com/en/photographers/inge-morath.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1923",
+      "deathDate": "2002",
+      "nationality": {
+        "@type": "Country",
+        "name": "Austria / United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/inge-morath.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Inge Morath | Iran, Masks, and Photography as Language | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/inge-morath.html"
+      "name": "Inge Morath"
     }
   ]
 }

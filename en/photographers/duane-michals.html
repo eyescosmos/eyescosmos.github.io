@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Duane Michals | Sequences, Handwritten Text, and Conceptual Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/duane-michals.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Duane Michals",
-  "alternateName": "デュアン・マイケルズ",
-  "nationality": "United States",
-  "description": "Duane Michals used photographic sequences, double exposure, and handwritten text to bring dreams, death, desire, time, and queer experience into photography. Through works including Chance Meeting, Things Are Queer, and The Human Condition, he developed an alternative to photography centered on the single decisive moment.",
-  "url": "https://eyescosmos.com/en/photographers/duane-michals.html",
-  "birthDate": "1932",
-  "deathDate": "2026"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/duane-michals.html",
+      "url": "https://eyescosmos.com/en/photographers/duane-michals.html",
+      "name": "Duane Michals | Sequences, Handwritten Text, and Conceptual Photography | Photo Coordinates",
+      "description": "Duane Michals used photographic sequences, double exposure, and handwritten text to bring dreams, death, desire, time, and queer experience into photography. Through works including Chance Meeting, Things Are Queer, and The Human Condition, he developed an alternative to photography centered on the single decisive moment.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/duane-michals.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/duane-michals.html#person",
+      "name": "Duane Michals",
+      "alternateName": "デュアン・マイケルズ",
+      "description": "Duane Michals used photographic sequences, double exposure, and handwritten text to bring dreams, death, desire, time, and queer experience into photography. Through works including Chance Meeting, Things Are Queer, and The Human Condition, he developed an alternative to photography centered on the single decisive moment.",
+      "url": "https://eyescosmos.com/en/photographers/duane-michals.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1932",
+      "deathDate": "2026",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/duane-michals.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Duane Michals | Sequences, Handwritten Text, and Conceptual Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/duane-michals.html"
+      "name": "Duane Michals"
     }
   ]
 }

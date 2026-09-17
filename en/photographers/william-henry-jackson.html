@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "William Henry Jackson | Yellowstone, Survey Photography, and Photochrom | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/william-henry-jackson.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "William Henry Jackson",
-  "alternateName": "ウィリアム・ヘンリー・ジャクソン",
-  "nationality": "United States",
-  "description": "William Henry Jackson recorded Yellowstone in wet-plate photographs for the Hayden Geological Survey and later worked across railroad promotion and Photochrom publishing. His career links federal surveys, national parks, tourism, and the photographic classification of Indigenous peoples.",
-  "url": "https://eyescosmos.com/en/photographers/william-henry-jackson.html",
-  "birthDate": "1843",
-  "deathDate": "1942"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/william-henry-jackson.html",
+      "url": "https://eyescosmos.com/en/photographers/william-henry-jackson.html",
+      "name": "William Henry Jackson | Yellowstone, Survey Photography, and Photochrom | Photo Coordinates",
+      "description": "William Henry Jackson recorded Yellowstone in wet-plate photographs for the Hayden Geological Survey and later worked across railroad promotion and Photochrom publishing. His career links federal surveys, national parks, tourism, and the photographic classification of Indigenous peoples.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/william-henry-jackson.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/william-henry-jackson.html#person",
+      "name": "William Henry Jackson",
+      "alternateName": "ウィリアム・ヘンリー・ジャクソン",
+      "description": "William Henry Jackson recorded Yellowstone in wet-plate photographs for the Hayden Geological Survey and later worked across railroad promotion and Photochrom publishing. His career links federal surveys, national parks, tourism, and the photographic classification of Indigenous peoples.",
+      "url": "https://eyescosmos.com/en/photographers/william-henry-jackson.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1843",
+      "deathDate": "1942",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/william-henry-jackson.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "William Henry Jackson | Yellowstone, Survey Photography, and Photochrom | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/william-henry-jackson.html"
+      "name": "William Henry Jackson"
     }
   ]
 }

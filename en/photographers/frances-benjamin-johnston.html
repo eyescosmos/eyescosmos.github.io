@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Frances Benjamin Johnston | The Hampton Album and Architectural Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/frances-benjamin-johnston.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Frances Benjamin Johnston",
-  "alternateName": "フランシス・ベンジャミン・ジョンストン",
-  "nationality": "United States",
-  "description": "Frances Benjamin Johnston was an American photographer whose work ranged from Washington portraiture and journalism to the Hampton Album, garden photography, and the Carnegie Survey. Her career reveals how photographic form was shaped by three intersecting concerns: women’s professional work, the depiction of educational institutions, and archival preservation of architecture.",
-  "url": "https://eyescosmos.com/en/photographers/frances-benjamin-johnston.html",
-  "birthDate": "1864",
-  "deathDate": "1952"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/frances-benjamin-johnston.html",
+      "url": "https://eyescosmos.com/en/photographers/frances-benjamin-johnston.html",
+      "name": "Frances Benjamin Johnston | The Hampton Album and Architectural Photography | Photo Coordinates",
+      "description": "Frances Benjamin Johnston was an American photographer whose work ranged from Washington portraiture and journalism to the Hampton Album, garden photography, and the Carnegie Survey. Her career reveals how photographic form was shaped by three intersecting concerns: women’s professional work, the depiction of educational institutions, and archival preservation of architecture.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/frances-benjamin-johnston.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/frances-benjamin-johnston.html#person",
+      "name": "Frances Benjamin Johnston",
+      "alternateName": "フランシス・ベンジャミン・ジョンストン",
+      "description": "Frances Benjamin Johnston was an American photographer whose work ranged from Washington portraiture and journalism to the Hampton Album, garden photography, and the Carnegie Survey. Her career reveals how photographic form was shaped by three intersecting concerns: women’s professional work, the depiction of educational institutions, and archival preservation of architecture.",
+      "url": "https://eyescosmos.com/en/photographers/frances-benjamin-johnston.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1864",
+      "deathDate": "1952",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/frances-benjamin-johnston.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Frances Benjamin Johnston",
-      "item": "https://eyescosmos.com/en/photographers/frances-benjamin-johnston.html"
+      "name": "Frances Benjamin Johnston"
     }
   ]
 }

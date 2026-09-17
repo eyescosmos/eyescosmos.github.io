@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "George Davison | The Onion Field and Pictorialism | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/george-davison.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "George Davison",
-  "alternateName": "ジョージ・デイヴィソン",
-  "nationality": "United Kingdom",
-  "description": "George Davison was a British photographer whose The Onion Field (1890), pinhole technique, and soft-focus imagery became central to debates over photographic sharpness and Pictorialism. His career also connected the Linked Ring, Camera Work, Kodak management, and social reform.",
-  "url": "https://eyescosmos.com/en/photographers/george-davison.html",
-  "birthDate": "1854",
-  "deathDate": "1930"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/george-davison.html",
+      "url": "https://eyescosmos.com/en/photographers/george-davison.html",
+      "name": "George Davison | The Onion Field and Pictorialism | Photo Coordinates",
+      "description": "George Davison was a British photographer whose The Onion Field (1890), pinhole technique, and soft-focus imagery became central to debates over photographic sharpness and Pictorialism. His career also connected the Linked Ring, Camera Work, Kodak management, and social reform.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/george-davison.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/george-davison.html#person",
+      "name": "George Davison",
+      "alternateName": "ジョージ・デイヴィソン",
+      "description": "George Davison was a British photographer whose The Onion Field (1890), pinhole technique, and soft-focus imagery became central to debates over photographic sharpness and Pictorialism. His career also connected the Linked Ring, Camera Work, Kodak management, and social reform.",
+      "url": "https://eyescosmos.com/en/photographers/george-davison.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1854",
+      "deathDate": "1930",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/george-davison.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "George Davison",
-      "item": "https://eyescosmos.com/en/photographers/george-davison.html"
+      "name": "George Davison"
     }
   ]
 }

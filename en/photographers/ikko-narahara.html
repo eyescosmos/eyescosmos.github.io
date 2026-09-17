@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Ikko Narahara | Personal Documentary, VIVO, and Postwar Japanese Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/ikko-narahara.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ikko Narahara",
-  "alternateName": "奈良原一高",
-  "nationality": "Japan",
-  "description": "Ikko Narahara was a Japanese photographer who developed what he called “personal documentary,” combining concrete social environments with the photographer’s own perception. From Human Land and Domains through his years in Europe and the United States, his work joined wide-angle vision, strong tonal contrast, photobook sequencing, and the institutional experiment of VIVO.",
-  "url": "https://eyescosmos.com/en/photographers/ikko-narahara.html",
-  "birthDate": "1931",
-  "deathDate": "2020"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/ikko-narahara.html",
+      "url": "https://eyescosmos.com/en/photographers/ikko-narahara.html",
+      "name": "Ikko Narahara | Personal Documentary, VIVO, and Postwar Japanese Photography | Photo Coordinates",
+      "description": "Ikko Narahara was a Japanese photographer who developed what he called “personal documentary,” combining concrete social environments with the photographer’s own perception. From Human Land and Domains through his years in Europe and the United States, his work joined wide-angle vision, strong tonal contrast, photobook sequencing, and the institutional experiment of VIVO.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/ikko-narahara.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/ikko-narahara.html#person",
+      "name": "Ikko Narahara",
+      "alternateName": "奈良原一高",
+      "description": "Ikko Narahara was a Japanese photographer who developed what he called “personal documentary,” combining concrete social environments with the photographer’s own perception. From Human Land and Domains through his years in Europe and the United States, his work joined wide-angle vision, strong tonal contrast, photobook sequencing, and the institutional experiment of VIVO.",
+      "url": "https://eyescosmos.com/en/photographers/ikko-narahara.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1931",
+      "deathDate": "2020",
+      "nationality": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/ikko-narahara.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Ikko Narahara | Personal Documentary, VIVO, and Postwar Japanese Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/ikko-narahara.html"
+      "name": "Ikko Narahara"
     }
   ]
 }

@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-17 | (engine+content)EN写真家ページの JSON-LD を正典形へ統一（`@graph` 欠落125枚） | other+engine | （Daisuke記入） | 1（renderer が flat 3本を返していた退行。`check_new_photographer` の `en_graph_absent` として125枚に蓄積・HARD にならず素通り） | 2（backfill が旧 Person の birthDate 33件・deathDate 24件を取りこぼす＝preflight の HARD が捕捉／`@context` は `@graph` 継承なのでガード側を精密化） | EN写真家 125枚・engine 2・preflight 1・新規スクリプト1 | N/A | N/A |
 | 2026-09-17 | danny-lyon / josef-koudelka / larry-burrows / malick-sidibe / raymond-depardon / yutaka-takanashi（idx 415–420・0917素材） | new×6 | 45分 | 0 | 4（素材EN 6本の和文記号《》『』＋`</a>`後の空白抜け＝複製上で正規化／`COUNTRY_TAG` に `チェコ`・`マリ` が未登録／EN年代カードの `data-*` 欠落は engine 側の既知の穴で今回も手当て／`raymond-depardon` の §REL 張り忘れ1件＋本文リンク0件＝監督が是正） | 公開HTML 12枚新規＋従属面37 | 本文4節・JA/EN とも素材と完全一致 | JA 30/32/33/32/31/32 |
 | 2026-09-17 | (guard)コロフォンをドリフト検知へ登録＋一括再生成の照合スクリプト | engine | （Daisuke記入） | 1（コロフォンが2026-08-30から生成器とずれていた・無検知） | 2（privacy-policy がコロフォンの chrome 正本／`--expect` は要素まるごと書く） | コロフォンJA/EN・privacy-policy JA/EN・preflight・build_colophon・新規スクリプト1 | N/A | N/A |
 | 2026-09-16 | (content)チリの国ページを新設（`sergio-larrain` の受け皿） | other | （Daisuke記入） | 0 | 1（JA の国ナビは `generate_country_pages.py` のハードコード定数なので registry 追加だけでは出ない） | 国別 JA/EN 各34（新規1＋既存33のナビ）・sitemap 1000→1002 | N/A | N/A |
@@ -108,6 +109,77 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-17 — EN 写真家ページの JSON-LD を正典形へ統一（種別=other+engine・Opus実装）
+
+0917バッチの報告で「Daisuke 判断待ち」に置いた `en_graph_absent` を、Daisuke の指示で解消した。
+
+### 実測して分かった壊れ方
+
+`check_new_photographer --all` は **HARD しか出さない**ので、モジュールを直接呼んで全420ページを集計した。
+
+| レベル | code | 前 | 後 |
+|---|---|---:|---:|
+| WARN | `en_graph_absent` | **125** | **0** |
+| SOFT | `en_breadcrumb_absent` | 48 | 11 |
+| ほか（`body_links_scarce` 245 / `cite_orphan` 67 / `body_shape_nonstandard` 19 / `cite_gap` 2 ほか） | — | 変化なし | 変化なし |
+
+- **idx で断層になっていた**：idx 1–300 は欠落5枚、**idx 301–420 は120枚が全滅**。
+  ぽつぽつ抜けたのではなく、**ある時点で renderer が `@graph` を出さなくなり以後の新規追加が全部踏んだ**。
+- 内訳は4形：`WebPage|Person|BreadcrumbList` 87枚 / `Person` のみ 37枚 /
+  `Person|Person|BreadcrumbList` 1枚（`ed-ruscha`＝Person が重複）/ **JSON-LD 皆無 16枚**。
+  最後の16枚は `jp-漢字` の EN shim で、`blocks` が空なので `en_graph_absent` は出ない。**対象外にした**（125＝141−16）。
+- **JA は 420/420 が flat Person で統一されており、退行していない**（`check_new` も JA に `@graph` を要求しない）。
+
+### 正典形は既存295枚の実測から決めた
+
+`WebPage` キーは295/295が同一、`Person` は `@id`/`jobTitle`/`subjectOf` を必ず持ち、
+`nationality` は Country オブジェクト（二重国籍は `"A / B"` の1文字列）、
+BreadcrumbList は283枚が完全同形（position 1 がサイト名・末尾は人名で `item` を持たない）。
+
+- **値は正典にしなかった**：295枚のうち **190枚は JSON-LD の `WebPage.name` が古い自動生成タイトルのまま**
+  （例 `Aglaia Konrad | Conceptual Art and 1980 — 1990s` に対し `<title>` は実タイトル）。
+  **295は「形の正典」であって「値の正典」ではない**ので、125枚の値は各ページ自身の
+  `<title>` / `<meta description>` / 既存 Person / `<h1>` から取った。**190枚の値ずれは今回の範囲外**（別途判断）。
+
+### 直したもの
+
+1. **renderer**（`build_photographers_en._fb_jsonld`）を正典形にした。あわせて
+   `import_chatgpt_photographer` が Person ノードを**後から差し替えていた**のをやめ、
+   材料（person_name / alternate_name / nationality_en / meta_description）を渡して renderer に組ませる形にした。
+   **この後差し替えが `@graph` を丸ごと潰していた実体**。
+2. **backfill**（新規 `scripts/backfill_en_jsonld_graph.py`・`--apply` で書込）で既存125枚を組み直した。
+   EN ページは HTML 自身が正本で再生成できないため（絶対禁止3）、JSON-LD ブロックだけを差し替える。
+3. **preflight の `_jsonld_person_keys`** を精密化。`@graph` の中の Person は wrapper の `@context` を
+   継承するので、ノード自身に無くても消失として数えない。**standalone ノードの `@context` 欠落は従来どおり HARD**。
+
+### ★ガードが捕まえた自分のバグ1件（push 前に修正）
+
+最初の backfill は「name が `<title>` と同じ Person は旧 fallback の残骸」として丸ごと捨てていた。
+ところが **39枚はその残骸にしか `birthDate`/`deathDate` が入っていなかった**。
+`preflight.check_jsonld_person_key_regression()` が
+**`birthDate` 33件・`deathDate` 24件の消失を HARD で125件まとめて止めた**。
+日付系は Person ノード全部から拾う形に直し、`anna-atkins`(1799–1871) 等の復活を実測。
+**このガードが無ければ静かに生没年を落としていた。**
+
+### 検証
+
+| 見るもの | 実測 |
+|---|---|
+| `en_graph_absent` | **125 → 0** |
+| 変更ファイル | **EN写真家125枚＋スクリプト3本だけ**（正典295枚・JA 420枚・shim 16枚は無変更） |
+| JSON-LD 以外の差分 | **125枚とも 0**（空白正規化して全文比較） |
+| Person キーの消失 | **0**（`@context` を除く全キーを HEAD と集合比較） |
+| 各ページの JSON-LD | 125枚とも「@graph(WebPage+Person) ＋ BreadcrumbList」の2本・parse 可・`@id` 相互リンク一致 |
+| renderer 出力 == backfill 結果 | **True**（danny-lyon を再描画して JSON-LD が完全一致＝今後ドリフトしない） |
+| `preflight` / `check_content_loss` / `check_photographer_link_integrity` / `sync_card_counts --check` | **全 EXIT 0** |
+
+- 副次的に **`alternateName` が 39枚で新規付与・12枚で是正**された
+  （その12枚は `alternateName` に英語名が入っており `name` と同値＝意味を成していなかった）。
+- **`jobTitle` は125枚とも `Photographer`** にした。既存で `Artist` なのは `fabian-marti` / `gabriel-orozco` の2枚のみ。
+  `ed-ruscha` はその前例に当てはまりうるが、**内容の判断なので触っていない**（Daisuke 判断）。
+
+- **wall-time**：（Daisuke記入）
 
 ## 2026-09-17 — 0917素材 新規6名（idx 415–420・種別=new×6・Opus監督 / Codex実装）
 

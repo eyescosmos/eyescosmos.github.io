@@ -22,24 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Martin Laroche | Talbot v. Laroche and Victorian Theatrical Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/martin-laroche.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Martin Laroche | Talbot v. Laroche and Victorian Theatrical Photography | Photo Coordinates",
-  "birthDate": "1814",
-  "deathDate": "1886"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/martin-laroche.html",
+      "url": "https://eyescosmos.com/en/photographers/martin-laroche.html",
+      "name": "Martin Laroche | Talbot v. Laroche and Victorian Theatrical Photography | Photo Coordinates",
+      "description": "Through Martin Laroche (William Henry Silvester), his professional portrait studio, the Talbot patent litigation, and photographs of Charles Kean’s theater, this page examines the relation between photographic technology, markets, and law.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/martin-laroche.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/martin-laroche.html#person",
+      "name": "Martin Laroche",
+      "alternateName": "マーティン・ラローシュ",
+      "description": "Through Martin Laroche (William Henry Silvester), his professional portrait studio, the Talbot patent litigation, and photographs of Charles Kean’s theater, this page examines the relation between photographic technology, markets, and law.",
+      "url": "https://eyescosmos.com/en/photographers/martin-laroche.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1814",
+      "deathDate": "1886",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/martin-laroche.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -50,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -62,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Martin Laroche | Talbot v. Laroche and Victorian Theatrical Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/martin-laroche.html"
+      "name": "Martin Laroche"
     }
   ]
 }

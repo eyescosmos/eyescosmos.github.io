@@ -23,23 +23,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Aya Fujioka | Here Goes River, Snapshot Photography, and Hiroshima Today | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/aya-fujioka.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Aya Fujioka | Here Goes River, Snapshot Photography, and Hiroshima Today | Photo Coordinates",
-  "birthDate": "1972"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/aya-fujioka.html",
+      "url": "https://eyescosmos.com/en/photographers/aya-fujioka.html",
+      "name": "Aya Fujioka | Here Goes River, Snapshot Photography, and Hiroshima Today | Photo Coordinates",
+      "description": "Aya Fujioka’s Here Goes River, I Don’t Sleep, and Life Studies are examined through travel, family, New York, Hiroshima, snapshot photography, and photobook sequencing.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/aya-fujioka.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/aya-fujioka.html#person",
+      "name": "Aya Fujioka",
+      "alternateName": "藤岡亜弥",
+      "description": "Aya Fujioka’s Here Goes River, I Don’t Sleep, and Life Studies are examined through travel, family, New York, Hiroshima, snapshot photography, and photobook sequencing.",
+      "url": "https://eyescosmos.com/en/photographers/aya-fujioka.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1972",
+      "nationality": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/aya-fujioka.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -50,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -62,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Aya Fujioka | Here Goes River, Snapshot Photography, and Hiroshima Today | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/aya-fujioka.html"
+      "name": "Aya Fujioka"
     }
   ]
 }

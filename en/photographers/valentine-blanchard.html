@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Valentine Blanchard | Instantaneous Photography and Victorian London | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/valentine-blanchard.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Valentine Blanchard",
-  "alternateName": "ヴァレンタイン・ブランシャール",
-  "nationality": "United Kingdom",
-  "description": "Valentine Blanchard was a British photographer and inventor who refined short-exposure photography in wet-collodion London, recording carriages, pedestrians, markets, and seaside activity. Through stereography and instantaneous views, he photographed the city as a place structured by movement as well as architecture.",
-  "url": "https://eyescosmos.com/en/photographers/valentine-blanchard.html",
-  "birthDate": "1831",
-  "deathDate": "1901"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/valentine-blanchard.html",
+      "url": "https://eyescosmos.com/en/photographers/valentine-blanchard.html",
+      "name": "Valentine Blanchard | Instantaneous Photography and Victorian London | Photo Coordinates",
+      "description": "Valentine Blanchard was a British photographer and inventor who refined short-exposure photography in wet-collodion London, recording carriages, pedestrians, markets, and seaside activity. Through stereography and instantaneous views, he photographed the city as a place structured by movement as well as architecture.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/valentine-blanchard.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/valentine-blanchard.html#person",
+      "name": "Valentine Blanchard",
+      "alternateName": "ヴァレンタイン・ブランシャール",
+      "description": "Valentine Blanchard was a British photographer and inventor who refined short-exposure photography in wet-collodion London, recording carriages, pedestrians, markets, and seaside activity. Through stereography and instantaneous views, he photographed the city as a place structured by movement as well as architecture.",
+      "url": "https://eyescosmos.com/en/photographers/valentine-blanchard.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1831",
+      "deathDate": "1901",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/valentine-blanchard.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Valentine Blanchard",
-      "item": "https://eyescosmos.com/en/photographers/valentine-blanchard.html"
+      "name": "Valentine Blanchard"
     }
   ]
 }

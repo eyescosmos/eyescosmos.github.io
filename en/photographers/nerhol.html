@@ -22,23 +22,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Nerhol | Photographic Objects and Layered Images | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/nerhol.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Nerhol | Photographic Objects and Layered Images | Photo Coordinates",
-  "birthDate": "2007"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/nerhol.html",
+      "url": "https://eyescosmos.com/en/photographers/nerhol.html",
+      "name": "Nerhol | Photographic Objects and Layered Images | Photo Coordinates",
+      "description": "Nerhol is an artist duo formed by Yoshihisa Tanaka and Ryuta Iida. Through expanded photography and the photographic object, their work reconsiders the conditions under which photographs are made: output, layering, cutting, display, and book form. Their practice has moved from portraiture to roadside trees, naturalized plants, and moving-image archives.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/nerhol.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/nerhol.html#person",
+      "name": "Nerhol",
+      "alternateName": "ネルホル",
+      "description": "Nerhol is an artist duo formed by Yoshihisa Tanaka and Ryuta Iida. Through expanded photography and the photographic object, their work reconsiders the conditions under which photographs are made: output, layering, cutting, display, and book form. Their practice has moved from portraiture to roadside trees, naturalized plants, and moving-image archives.",
+      "url": "https://eyescosmos.com/en/photographers/nerhol.html",
+      "jobTitle": "Photographer",
+      "birthDate": "2007",
+      "nationality": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/nerhol.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -49,7 +67,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -61,8 +79,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Nerhol | Photographic Objects and Layered Images | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/nerhol.html"
+      "name": "Nerhol"
     }
   ]
 }

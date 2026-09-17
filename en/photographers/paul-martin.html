@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Paul Martin | Street Snapshots and Night Photography in 1890s London | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/paul-martin.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Paul Martin",
-  "alternateName": "ポール・マーティン",
-  "nationality": "United Kingdom",
-  "description": "Born in Elbeuf, France, in 1864 and raised in Britain, Paul Martin used a disguised dry-plate camera to photograph London markets, workers, street sellers, and children, while also experimenting with long-exposure night photography. His work connects early snapshot technique with the social and ethical questions raised by hidden cameras.",
-  "url": "https://eyescosmos.com/en/photographers/paul-martin.html",
-  "birthDate": "1864",
-  "deathDate": "1944"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/paul-martin.html",
+      "url": "https://eyescosmos.com/en/photographers/paul-martin.html",
+      "name": "Paul Martin | Street Snapshots and Night Photography in 1890s London | Photo Coordinates",
+      "description": "Born in Elbeuf, France, in 1864 and raised in Britain, Paul Martin used a disguised dry-plate camera to photograph London markets, workers, street sellers, and children, while also experimenting with long-exposure night photography. His work connects early snapshot technique with the social and ethical questions raised by hidden cameras.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/paul-martin.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/paul-martin.html#person",
+      "name": "Paul Martin",
+      "alternateName": "ポール・マーティン",
+      "description": "Born in Elbeuf, France, in 1864 and raised in Britain, Paul Martin used a disguised dry-plate camera to photograph London markets, workers, street sellers, and children, while also experimenting with long-exposure night photography. His work connects early snapshot technique with the social and ethical questions raised by hidden cameras.",
+      "url": "https://eyescosmos.com/en/photographers/paul-martin.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1864",
+      "deathDate": "1944",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/paul-martin.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Paul Martin",
-      "item": "https://eyescosmos.com/en/photographers/paul-martin.html"
+      "name": "Paul Martin"
     }
   ]
 }

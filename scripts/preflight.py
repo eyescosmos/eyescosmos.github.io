@@ -1511,11 +1511,21 @@ def _jsonld_person_keys(html: str) -> tuple[set[str], list[int]]:
             invalid_blocks.append(block_no)
             continue
         candidates = [data] if isinstance(data, dict) else []
+        inherited: set[str] = set()
         if isinstance(data, dict) and isinstance(data.get("@graph"), list):
             candidates += [node for node in data["@graph"] if isinstance(node, dict)]
+            # @graph の中のノードは wrapper の @context を継承する。ノード自身に
+            # @context が無いのは JSON-LD として正しく、データの消失ではない。
+            # （2026-09-17: EN 125 枚を flat → @graph の正典形へ寄せたとき、
+            #   この差だけで 125 件 HARD になった。standalone ノードの @context
+            #   欠落は従来どおり検知する。）
+            if "@context" in data:
+                inherited.add("@context")
         for node in candidates:
             if _jsonld_is_person(node):
                 keys.update(node)
+                if node is not data:
+                    keys |= inherited
     return keys, invalid_blocks
 
 

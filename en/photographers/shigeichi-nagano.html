@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Shigeichi Nagano | Dream Age and Postwar Tokyo | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/shigeichi-nagano.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Shigeichi Nagano",
-  "alternateName": "長野重一",
-  "nationality": "Japan",
-  "description": "Shigeichi Nagano (1925–2019) was born in Oita. Working across the Iwanami Photo Library, magazines, film, and television, he photographed commuters, crowds, industrial districts, and suburbs in postwar Tokyo.",
-  "url": "https://eyescosmos.com/en/photographers/shigeichi-nagano.html",
-  "birthDate": "1925",
-  "deathDate": "2019"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/shigeichi-nagano.html",
+      "url": "https://eyescosmos.com/en/photographers/shigeichi-nagano.html",
+      "name": "Shigeichi Nagano | Dream Age and Postwar Tokyo | Photo Coordinates",
+      "description": "Shigeichi Nagano (1925–2019) was born in Oita. Working across the Iwanami Photo Library, magazines, film, and television, he photographed commuters, crowds, industrial districts, and suburbs in postwar Tokyo.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/shigeichi-nagano.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/shigeichi-nagano.html#person",
+      "name": "Shigeichi Nagano",
+      "alternateName": "長野重一",
+      "description": "Shigeichi Nagano (1925–2019) was born in Oita. Working across the Iwanami Photo Library, magazines, film, and television, he photographed commuters, crowds, industrial districts, and suburbs in postwar Tokyo.",
+      "url": "https://eyescosmos.com/en/photographers/shigeichi-nagano.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1925",
+      "deathDate": "2019",
+      "nationality": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/shigeichi-nagano.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Shigeichi Nagano | Dream Age and Postwar Tokyo | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/shigeichi-nagano.html"
+      "name": "Shigeichi Nagano"
     }
   ]
 }

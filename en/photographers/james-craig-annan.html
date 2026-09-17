@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "James Craig Annan | Photogravure and Camera Work | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/james-craig-annan.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "James Craig Annan",
-  "alternateName": "ジェームズ・クレイグ・アナン",
-  "nationality": "United Kingdom",
-  "description": "Born in Hamilton, Scotland, in 1864, James Craig Annan learned photography and printing in the family business and studied photogravure in Vienna in 1883. Through the Linked Ring and Camera Work, he connected his own Pictorialist photographs with the reprinting and historical reassessment of Hill and Adamson.",
-  "url": "https://eyescosmos.com/en/photographers/james-craig-annan.html",
-  "birthDate": "1864",
-  "deathDate": "1946"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/james-craig-annan.html",
+      "url": "https://eyescosmos.com/en/photographers/james-craig-annan.html",
+      "name": "James Craig Annan | Photogravure and Camera Work | Photo Coordinates",
+      "description": "Born in Hamilton, Scotland, in 1864, James Craig Annan learned photography and printing in the family business and studied photogravure in Vienna in 1883. Through the Linked Ring and Camera Work, he connected his own Pictorialist photographs with the reprinting and historical reassessment of Hill and Adamson.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/james-craig-annan.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/james-craig-annan.html#person",
+      "name": "James Craig Annan",
+      "alternateName": "ジェームズ・クレイグ・アナン",
+      "description": "Born in Hamilton, Scotland, in 1864, James Craig Annan learned photography and printing in the family business and studied photogravure in Vienna in 1883. Through the Linked Ring and Camera Work, he connected his own Pictorialist photographs with the reprinting and historical reassessment of Hill and Adamson.",
+      "url": "https://eyescosmos.com/en/photographers/james-craig-annan.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1864",
+      "deathDate": "1946",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/james-craig-annan.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "James Craig Annan",
-      "item": "https://eyescosmos.com/en/photographers/james-craig-annan.html"
+      "name": "James Craig Annan"
     }
   ]
 }

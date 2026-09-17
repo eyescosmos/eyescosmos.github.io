@@ -26,27 +26,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Raymond Depardon | Photojournalism, Film, and \"Distance\" | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/raymond-depardon.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Raymond Depardon",
-  "alternateName": "レイモン・ドパルドン",
-  "nationality": "France",
-  "description": "Raymond Depardon moved from fast-paced photojournalism to fixed-camera films, long-duration observation, and large-format photography. Across war reporting, courts, psychiatric settings, rural life, and provincial France, his work makes camera position, waiting, and the distribution of speech central to documentary form.",
-  "url": "https://eyescosmos.com/en/photographers/raymond-depardon.html",
-  "birthDate": "1942"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/raymond-depardon.html",
+      "url": "https://eyescosmos.com/en/photographers/raymond-depardon.html",
+      "name": "Raymond Depardon | Photojournalism, Film, and \"Distance\" | Photo Coordinates",
+      "description": "Raymond Depardon moved from fast-paced photojournalism to fixed-camera films, long-duration observation, and large-format photography. Across war reporting, courts, psychiatric settings, rural life, and provincial France, his work makes camera position, waiting, and the distribution of speech central to documentary form.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/raymond-depardon.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/raymond-depardon.html#person",
+      "name": "Raymond Depardon",
+      "alternateName": "レイモン・ドパルドン",
+      "description": "Raymond Depardon moved from fast-paced photojournalism to fixed-camera films, long-duration observation, and large-format photography. Across war reporting, courts, psychiatric settings, rural life, and provincial France, his work makes camera position, waiting, and the distribution of speech central to documentary form.",
+      "url": "https://eyescosmos.com/en/photographers/raymond-depardon.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1942",
+      "nationality": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/raymond-depardon.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -57,7 +71,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -69,8 +83,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Raymond Depardon | Photojournalism, Film, and \"Distance\" | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/raymond-depardon.html"
+      "name": "Raymond Depardon"
     }
   ]
 }

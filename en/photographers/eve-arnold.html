@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Eve Arnold | Harlem, Marilyn Monroe, and Photojournalism | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/eve-arnold.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Eve Arnold",
-  "alternateName": "イヴ・アーノルド",
-  "nationality": "United States / United Kingdom",
-  "description": "Eve Arnold (1912–2012) was born in Philadelphia. Beginning with Black fashion shows in Harlem, she joined Magnum and spent extended periods photographing Marilyn Monroe, the civil rights movement, childbirth, China, and other subjects.",
-  "url": "https://eyescosmos.com/en/photographers/eve-arnold.html",
-  "birthDate": "1912",
-  "deathDate": "2012"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/eve-arnold.html",
+      "url": "https://eyescosmos.com/en/photographers/eve-arnold.html",
+      "name": "Eve Arnold | Harlem, Marilyn Monroe, and Photojournalism | Photo Coordinates",
+      "description": "Eve Arnold (1912–2012) was born in Philadelphia. Beginning with Black fashion shows in Harlem, she joined Magnum and spent extended periods photographing Marilyn Monroe, the civil rights movement, childbirth, China, and other subjects.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/eve-arnold.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/eve-arnold.html#person",
+      "name": "Eve Arnold",
+      "alternateName": "イヴ・アーノルド",
+      "description": "Eve Arnold (1912–2012) was born in Philadelphia. Beginning with Black fashion shows in Harlem, she joined Magnum and spent extended periods photographing Marilyn Monroe, the civil rights movement, childbirth, China, and other subjects.",
+      "url": "https://eyescosmos.com/en/photographers/eve-arnold.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1912",
+      "deathDate": "2012",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States / United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/eve-arnold.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Eve Arnold | Harlem, Marilyn Monroe, and Photojournalism | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/eve-arnold.html"
+      "name": "Eve Arnold"
     }
   ]
 }

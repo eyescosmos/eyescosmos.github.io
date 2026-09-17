@@ -22,24 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Oscar Rejlander | The Two Ways of Life and Combination Printing | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/oscar-rejlander.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Oscar Rejlander | The Two Ways of Life and Combination Printing | Photo Coordinates",
-  "birthDate": "1813",
-  "deathDate": "1875"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/oscar-rejlander.html",
+      "url": "https://eyescosmos.com/en/photographers/oscar-rejlander.html",
+      "name": "Oscar Rejlander | The Two Ways of Life and Combination Printing | Photo Coordinates",
+      "description": "Oscar Rejlander’s The Two Ways of Life, combination printing, and work on expression with Darwin illuminate the relation between photographic truth, staging, and constructed evidence.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/oscar-rejlander.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/oscar-rejlander.html#person",
+      "name": "Oscar Rejlander",
+      "alternateName": "オスカー・レイランダー",
+      "description": "Oscar Rejlander’s The Two Ways of Life, combination printing, and work on expression with Darwin illuminate the relation between photographic truth, staging, and constructed evidence.",
+      "url": "https://eyescosmos.com/en/photographers/oscar-rejlander.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1813",
+      "deathDate": "1875",
+      "nationality": {
+        "@type": "Country",
+        "name": "Sweden / United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/oscar-rejlander.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -50,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -62,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Oscar Rejlander | The Two Ways of Life and Combination Printing | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/oscar-rejlander.html"
+      "name": "Oscar Rejlander"
     }
   ]
 }

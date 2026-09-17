@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Alexander Keighley | British Pictorialism and Yorkshire | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/alexander-keighley.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Alexander Keighley",
-  "alternateName": "アレグザンダー・キーグリー",
-  "nationality": "United Kingdom",
-  "description": "Alexander Keighley was a British Pictorialist who photographed figures and landscapes in Yorkshire and built his finished images through successive negative enlargements, retouching, and carbon printing. From early staged pictures to the Linked Ring, regional photographic clubs, and international salons, this page examines why darkroom intervention became central to his authorship.",
-  "url": "https://eyescosmos.com/en/photographers/alexander-keighley.html",
-  "birthDate": "1861",
-  "deathDate": "1947"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/alexander-keighley.html",
+      "url": "https://eyescosmos.com/en/photographers/alexander-keighley.html",
+      "name": "Alexander Keighley | British Pictorialism and Yorkshire | Photo Coordinates",
+      "description": "Alexander Keighley was a British Pictorialist who photographed figures and landscapes in Yorkshire and built his finished images through successive negative enlargements, retouching, and carbon printing. From early staged pictures to the Linked Ring, regional photographic clubs, and international salons, this page examines why darkroom intervention became central to his authorship.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/alexander-keighley.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/alexander-keighley.html#person",
+      "name": "Alexander Keighley",
+      "alternateName": "アレグザンダー・キーグリー",
+      "description": "Alexander Keighley was a British Pictorialist who photographed figures and landscapes in Yorkshire and built his finished images through successive negative enlargements, retouching, and carbon printing. From early staged pictures to the Linked Ring, regional photographic clubs, and international salons, this page examines why darkroom intervention became central to his authorship.",
+      "url": "https://eyescosmos.com/en/photographers/alexander-keighley.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1861",
+      "deathDate": "1947",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/alexander-keighley.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Alexander Keighley",
-      "item": "https://eyescosmos.com/en/photographers/alexander-keighley.html"
+      "name": "Alexander Keighley"
     }
   ]
 }

@@ -26,27 +26,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Josef Koudelka | Gypsies, Exile, and Panoramas | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/josef-koudelka.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Josef Koudelka",
-  "alternateName": "ジョセフ・クーデルカ",
-  "nationality": "Czech Republic / France",
-  "description": "Josef Koudelka moved from theater photography and long-term work with Roma communities to anonymous images of the 1968 invasion of Prague, the photobook Exiles, and panoramic studies of industrial and border landscapes. His changing formats track how movement, exile, memory, and territory leave traces on bodies and land.",
-  "url": "https://eyescosmos.com/en/photographers/josef-koudelka.html",
-  "birthDate": "1938"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/josef-koudelka.html",
+      "url": "https://eyescosmos.com/en/photographers/josef-koudelka.html",
+      "name": "Josef Koudelka | Gypsies, Exile, and Panoramas | Photo Coordinates",
+      "description": "Josef Koudelka moved from theater photography and long-term work with Roma communities to anonymous images of the 1968 invasion of Prague, the photobook Exiles, and panoramic studies of industrial and border landscapes. His changing formats track how movement, exile, memory, and territory leave traces on bodies and land.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/josef-koudelka.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/josef-koudelka.html#person",
+      "name": "Josef Koudelka",
+      "alternateName": "ジョセフ・クーデルカ",
+      "description": "Josef Koudelka moved from theater photography and long-term work with Roma communities to anonymous images of the 1968 invasion of Prague, the photobook Exiles, and panoramic studies of industrial and border landscapes. His changing formats track how movement, exile, memory, and territory leave traces on bodies and land.",
+      "url": "https://eyescosmos.com/en/photographers/josef-koudelka.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1938",
+      "nationality": {
+        "@type": "Country",
+        "name": "Czech Republic / France"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/josef-koudelka.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -57,7 +71,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -69,8 +83,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Josef Koudelka | Gypsies, Exile, and Panoramas | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/josef-koudelka.html"
+      "name": "Josef Koudelka"
     }
   ]
 }

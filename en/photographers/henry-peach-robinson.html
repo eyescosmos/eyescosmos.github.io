@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Henry Peach Robinson | Fading Away, Combination Printing, and Pictorialism | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/henry-peach-robinson.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Henry Peach Robinson",
-  "alternateName": "ヘンリー・ピーチ・ロビンソン",
-  "nationality": "United Kingdom",
-  "description": "Henry Peach Robinson’s Fading Away, combination printing, Pictorial Effect in Photography, his debate with Peter Henry Emerson, and the Linked Ring are examined through questions of photographic construction and truth.",
-  "url": "https://eyescosmos.com/en/photographers/henry-peach-robinson.html",
-  "birthDate": "1830",
-  "deathDate": "1901"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/henry-peach-robinson.html",
+      "url": "https://eyescosmos.com/en/photographers/henry-peach-robinson.html",
+      "name": "Henry Peach Robinson | Fading Away, Combination Printing, and Pictorialism | Photo Coordinates",
+      "description": "Henry Peach Robinson’s Fading Away, combination printing, Pictorial Effect in Photography, his debate with Peter Henry Emerson, and the Linked Ring are examined through questions of photographic construction and truth.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/henry-peach-robinson.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/henry-peach-robinson.html#person",
+      "name": "Henry Peach Robinson",
+      "alternateName": "ヘンリー・ピーチ・ロビンソン",
+      "description": "Henry Peach Robinson’s Fading Away, combination printing, Pictorial Effect in Photography, his debate with Peter Henry Emerson, and the Linked Ring are examined through questions of photographic construction and truth.",
+      "url": "https://eyescosmos.com/en/photographers/henry-peach-robinson.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1830",
+      "deathDate": "1901",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/henry-peach-robinson.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Henry Peach Robinson | Fading Away, Combination Printing, and Pictorialism | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/henry-peach-robinson.html"
+      "name": "Henry Peach Robinson"
     }
   ]
 }

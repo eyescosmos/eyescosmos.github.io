@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "John Benjamin Stone | Photographic Archives and the National Photographic Record Association | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/john-benjamin-stone.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "John Benjamin Stone",
-  "alternateName": "ジョン・ベンジャミン・ストーン",
-  "nationality": "United Kingdom",
-  "description": "John Benjamin Stone was a British photographer and politician who systematized records of architecture, customs, Parliament, and local ceremonies through large bodies of photographs and detailed captions, and helped establish photography as a public historical record through the National Photographic Record Association.",
-  "url": "https://eyescosmos.com/en/photographers/john-benjamin-stone.html",
-  "birthDate": "1838",
-  "deathDate": "1914"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/john-benjamin-stone.html",
+      "url": "https://eyescosmos.com/en/photographers/john-benjamin-stone.html",
+      "name": "John Benjamin Stone | Photographic Archives and the National Photographic Record Association | Photo Coordinates",
+      "description": "John Benjamin Stone was a British photographer and politician who systematized records of architecture, customs, Parliament, and local ceremonies through large bodies of photographs and detailed captions, and helped establish photography as a public historical record through the National Photographic Record Association.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/john-benjamin-stone.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/john-benjamin-stone.html#person",
+      "name": "John Benjamin Stone",
+      "alternateName": "ジョン・ベンジャミン・ストーン",
+      "description": "John Benjamin Stone was a British photographer and politician who systematized records of architecture, customs, Parliament, and local ceremonies through large bodies of photographs and detailed captions, and helped establish photography as a public historical record through the National Photographic Record Association.",
+      "url": "https://eyescosmos.com/en/photographers/john-benjamin-stone.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1838",
+      "deathDate": "1914",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/john-benjamin-stone.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "John Benjamin Stone",
-      "item": "https://eyescosmos.com/en/photographers/john-benjamin-stone.html"
+      "name": "John Benjamin Stone"
     }
   ]
 }

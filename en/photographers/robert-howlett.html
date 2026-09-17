@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Robert Howlett | Brunel, the Great Eastern, and Industrial Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/robert-howlett.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Robert Howlett",
-  "alternateName": "ロバート・ハウレット",
-  "nationality": "United Kingdom",
-  "description": "Robert Howlett’s portrait of Brunel and photographs of the Great Eastern are examined through the Photographic Institution, wet-plate collodion, Crimean Heroes, newspaper engraving, and stereoscopic circulation.",
-  "url": "https://eyescosmos.com/en/photographers/robert-howlett.html",
-  "birthDate": "1831",
-  "deathDate": "1858"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/robert-howlett.html",
+      "url": "https://eyescosmos.com/en/photographers/robert-howlett.html",
+      "name": "Robert Howlett | Brunel, the Great Eastern, and Industrial Photography | Photo Coordinates",
+      "description": "Robert Howlett’s portrait of Brunel and photographs of the Great Eastern are examined through the Photographic Institution, wet-plate collodion, Crimean Heroes, newspaper engraving, and stereoscopic circulation.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/robert-howlett.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/robert-howlett.html#person",
+      "name": "Robert Howlett",
+      "alternateName": "ロバート・ハウレット",
+      "description": "Robert Howlett’s portrait of Brunel and photographs of the Great Eastern are examined through the Photographic Institution, wet-plate collodion, Crimean Heroes, newspaper engraving, and stereoscopic circulation.",
+      "url": "https://eyescosmos.com/en/photographers/robert-howlett.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1831",
+      "deathDate": "1858",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/robert-howlett.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Robert Howlett | Brunel, the Great Eastern, and Industrial Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/robert-howlett.html"
+      "name": "Robert Howlett"
     }
   ]
 }

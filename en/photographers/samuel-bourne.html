@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Samuel Bourne | The Himalayas, Wet-Plate Photography, and Bourne & Shepherd | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/samuel-bourne.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Samuel Bourne",
-  "alternateName": "サミュエル・ボーン",
-  "nationality": "United Kingdom",
-  "description": "Samuel Bourne photographed Himalayan expeditions, architecture, and cities across India with large wet plates and circulated them through Bourne &amp; Shepherd’s numbered catalogs. His work connects landscape aesthetics, expedition labor, commerce, and the colonial gaze.",
-  "url": "https://eyescosmos.com/en/photographers/samuel-bourne.html",
-  "birthDate": "1834",
-  "deathDate": "1912"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/samuel-bourne.html",
+      "url": "https://eyescosmos.com/en/photographers/samuel-bourne.html",
+      "name": "Samuel Bourne | The Himalayas, Wet-Plate Photography, and Bourne & Shepherd | Photo Coordinates",
+      "description": "Samuel Bourne photographed Himalayan expeditions, architecture, and cities across India with large wet plates and circulated them through Bourne &amp; Shepherd’s numbered catalogs. His work connects landscape aesthetics, expedition labor, commerce, and the colonial gaze.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/samuel-bourne.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/samuel-bourne.html#person",
+      "name": "Samuel Bourne",
+      "alternateName": "サミュエル・ボーン",
+      "description": "Samuel Bourne photographed Himalayan expeditions, architecture, and cities across India with large wet plates and circulated them through Bourne &amp; Shepherd’s numbered catalogs. His work connects landscape aesthetics, expedition labor, commerce, and the colonial gaze.",
+      "url": "https://eyescosmos.com/en/photographers/samuel-bourne.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1834",
+      "deathDate": "1912",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/samuel-bourne.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Samuel Bourne | The Himalayas, Wet-Plate Photography, and Bourne & Shepherd | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/samuel-bourne.html"
+      "name": "Samuel Bourne"
     }
   ]
 }

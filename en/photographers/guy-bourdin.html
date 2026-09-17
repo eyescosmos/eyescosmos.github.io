@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Guy Bourdin | Vogue, Charles Jourdan, and Fashion Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/guy-bourdin.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Guy Bourdin",
-  "alternateName": "ギイ・ブルダン",
-  "nationality": "France",
-  "description": "Guy Bourdin (1928–1991) was born in Paris. After contact with Man Ray, he began working for French Vogue in 1955 and developed intensely colored, staged photographs for advertising, including campaigns for Charles Jourdan.",
-  "url": "https://eyescosmos.com/en/photographers/guy-bourdin.html",
-  "birthDate": "1928",
-  "deathDate": "1991"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/guy-bourdin.html",
+      "url": "https://eyescosmos.com/en/photographers/guy-bourdin.html",
+      "name": "Guy Bourdin | Vogue, Charles Jourdan, and Fashion Photography | Photo Coordinates",
+      "description": "Guy Bourdin (1928–1991) was born in Paris. After contact with Man Ray, he began working for French Vogue in 1955 and developed intensely colored, staged photographs for advertising, including campaigns for Charles Jourdan.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/guy-bourdin.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/guy-bourdin.html#person",
+      "name": "Guy Bourdin",
+      "alternateName": "ギイ・ブルダン",
+      "description": "Guy Bourdin (1928–1991) was born in Paris. After contact with Man Ray, he began working for French Vogue in 1955 and developed intensely colored, staged photographs for advertising, including campaigns for Charles Jourdan.",
+      "url": "https://eyescosmos.com/en/photographers/guy-bourdin.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1928",
+      "deathDate": "1991",
+      "nationality": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/guy-bourdin.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Guy Bourdin | Vogue, Charles Jourdan, and Fashion Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/guy-bourdin.html"
+      "name": "Guy Bourdin"
     }
   ]
 }

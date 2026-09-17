@@ -22,24 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Charles Nègre | The Chimney Sweeps, Calotype, and Heliogravure | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/charles-negre.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Charles Nègre | The Chimney Sweeps, Calotype, and Heliogravure | Photo Coordinates",
-  "birthDate": "1820",
-  "deathDate": "1880"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/charles-negre.html",
+      "url": "https://eyescosmos.com/en/photographers/charles-negre.html",
+      "name": "Charles Nègre | The Chimney Sweeps, Calotype, and Heliogravure | Photo Coordinates",
+      "description": "Charles Nègre’s chimney sweeps, Paris street scenes, architecture in southern France, and heliogravure are examined through his move from painting to photography and the continuity between making photographs and printing them.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/charles-negre.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/charles-negre.html#person",
+      "name": "Charles Nègre",
+      "alternateName": "シャルル・ネグル",
+      "description": "Charles Nègre’s chimney sweeps, Paris street scenes, architecture in southern France, and heliogravure are examined through his move from painting to photography and the continuity between making photographs and printing them.",
+      "url": "https://eyescosmos.com/en/photographers/charles-negre.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1820",
+      "deathDate": "1880",
+      "nationality": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/charles-negre.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -50,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -62,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Charles Nègre | The Chimney Sweeps, Calotype, and Heliogravure | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/charles-negre.html"
+      "name": "Charles Nègre"
     }
   ]
 }

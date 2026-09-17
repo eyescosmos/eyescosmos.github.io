@@ -26,27 +26,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Yutaka Takanashi | Toshi-e, Machi, and PROVOKE | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/yutaka-takanashi.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Yutaka Takanashi",
-  "alternateName": "高梨豊",
-  "nationality": "Japan",
-  "description": "Yutaka Takanashi moved from commercial photography and Tokyo-jin into PROVOKE, then edited the rapidly changing city into rough black-and-white fragments in the photobook Toshi-e. He later turned to a 4×5 camera, tripod, long exposures, and color for Machi. Across these projects, he repeatedly changed his photographic method to match the tempo of the city.",
-  "url": "https://eyescosmos.com/en/photographers/yutaka-takanashi.html",
-  "birthDate": "1935"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/yutaka-takanashi.html",
+      "url": "https://eyescosmos.com/en/photographers/yutaka-takanashi.html",
+      "name": "Yutaka Takanashi | Toshi-e, Machi, and PROVOKE | Photo Coordinates",
+      "description": "Yutaka Takanashi moved from commercial photography and Tokyo-jin into PROVOKE, then edited the rapidly changing city into rough black-and-white fragments in the photobook Toshi-e. He later turned to a 4×5 camera, tripod, long exposures, and color for Machi. Across these projects, he repeatedly changed his photographic method to match the tempo of the city.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/yutaka-takanashi.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/yutaka-takanashi.html#person",
+      "name": "Yutaka Takanashi",
+      "alternateName": "高梨豊",
+      "description": "Yutaka Takanashi moved from commercial photography and Tokyo-jin into PROVOKE, then edited the rapidly changing city into rough black-and-white fragments in the photobook Toshi-e. He later turned to a 4×5 camera, tripod, long exposures, and color for Machi. Across these projects, he repeatedly changed his photographic method to match the tempo of the city.",
+      "url": "https://eyescosmos.com/en/photographers/yutaka-takanashi.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1935",
+      "nationality": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/yutaka-takanashi.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -57,7 +71,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -69,8 +83,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Yutaka Takanashi | Toshi-e, Machi, and PROVOKE | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/yutaka-takanashi.html"
+      "name": "Yutaka Takanashi"
     }
   ]
 }

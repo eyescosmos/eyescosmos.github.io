@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Francis Frith | Egypt, Travel Publishing, and the Topographical Archive | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/francis-frith.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Francis Frith",
-  "alternateName": "フランシス・フリス",
-  "nationality": "United Kingdom",
-  "description": "Francis Frith’s photographs of Egypt, Sinai, and Palestine and the work of Francis Frith &amp; Co. are examined through wet-plate collodion, biblical geography, travel publishing, and the formation of a British topographical archive.",
-  "url": "https://eyescosmos.com/en/photographers/francis-frith.html",
-  "birthDate": "1822",
-  "deathDate": "1898"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/francis-frith.html",
+      "url": "https://eyescosmos.com/en/photographers/francis-frith.html",
+      "name": "Francis Frith | Egypt, Travel Publishing, and the Topographical Archive | Photo Coordinates",
+      "description": "Francis Frith’s photographs of Egypt, Sinai, and Palestine and the work of Francis Frith &amp; Co. are examined through wet-plate collodion, biblical geography, travel publishing, and the formation of a British topographical archive.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/francis-frith.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/francis-frith.html#person",
+      "name": "Francis Frith",
+      "alternateName": "フランシス・フリス",
+      "description": "Francis Frith’s photographs of Egypt, Sinai, and Palestine and the work of Francis Frith &amp; Co. are examined through wet-plate collodion, biblical geography, travel publishing, and the formation of a British topographical archive.",
+      "url": "https://eyescosmos.com/en/photographers/francis-frith.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1822",
+      "deathDate": "1898",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/francis-frith.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Francis Frith | Egypt, Travel Publishing, and the Topographical Archive | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/francis-frith.html"
+      "name": "Francis Frith"
     }
   ]
 }

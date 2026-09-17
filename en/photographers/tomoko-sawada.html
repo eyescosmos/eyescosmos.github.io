@@ -23,23 +23,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Tomoko Sawada | ID400, ID Photos, and Self-Portraiture | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/tomoko-sawada.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Tomoko Sawada | ID400, ID Photos, and Self-Portraiture | Photo Coordinates",
-  "birthDate": "1977"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/tomoko-sawada.html",
+      "url": "https://eyescosmos.com/en/photographers/tomoko-sawada.html",
+      "name": "Tomoko Sawada | ID400, ID Photos, and Self-Portraiture | Photo Coordinates",
+      "description": "Tomoko Sawada uses ID photos, self-portraiture, and typological repetition to examine the relation between appearance and inner self, photographic identification, Japanese women photographers since the 1990s, and her method of working without pressing the shutter herself.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/tomoko-sawada.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/tomoko-sawada.html#person",
+      "name": "Tomoko Sawada",
+      "alternateName": "澤田知子",
+      "description": "Tomoko Sawada uses ID photos, self-portraiture, and typological repetition to examine the relation between appearance and inner self, photographic identification, Japanese women photographers since the 1990s, and her method of working without pressing the shutter herself.",
+      "url": "https://eyescosmos.com/en/photographers/tomoko-sawada.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1977",
+      "nationality": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/tomoko-sawada.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -50,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -62,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Tomoko Sawada | ID400, ID Photos, and Self-Portraiture | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/tomoko-sawada.html"
+      "name": "Tomoko Sawada"
     }
   ]
 }

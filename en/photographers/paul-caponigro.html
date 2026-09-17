@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Paul Caponigro | Landscape Photography, Printing, and Perception | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/paul-caponigro.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Paul Caponigro",
-  "alternateName": "ポール・カポニグロ",
-  "nationality": "United States / Ireland",
-  "description": "Paul Caponigro was an American photographer who brought the precision of postwar straight photography together with sustained attention to perception. Working with forests, stones, ancient sites, and still life, he treated exposure, the negative, and the darkroom print as stages of interpretation rather than fixed technical steps.",
-  "url": "https://eyescosmos.com/en/photographers/paul-caponigro.html",
-  "birthDate": "1932",
-  "deathDate": "2024"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/paul-caponigro.html",
+      "url": "https://eyescosmos.com/en/photographers/paul-caponigro.html",
+      "name": "Paul Caponigro | Landscape Photography, Printing, and Perception | Photo Coordinates",
+      "description": "Paul Caponigro was an American photographer who brought the precision of postwar straight photography together with sustained attention to perception. Working with forests, stones, ancient sites, and still life, he treated exposure, the negative, and the darkroom print as stages of interpretation rather than fixed technical steps.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/paul-caponigro.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/paul-caponigro.html#person",
+      "name": "Paul Caponigro",
+      "alternateName": "ポール・カポニグロ",
+      "description": "Paul Caponigro was an American photographer who brought the precision of postwar straight photography together with sustained attention to perception. Working with forests, stones, ancient sites, and still life, he treated exposure, the negative, and the darkroom print as stages of interpretation rather than fixed technical steps.",
+      "url": "https://eyescosmos.com/en/photographers/paul-caponigro.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1932",
+      "deathDate": "2024",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States / Ireland"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/paul-caponigro.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Paul Caponigro | Landscape Photography, Printing, and Perception | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/paul-caponigro.html"
+      "name": "Paul Caponigro"
     }
   ]
 }

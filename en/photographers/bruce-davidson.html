@@ -26,27 +26,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Bruce Davidson | Social Documentary, Civil Rights, and New York | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/bruce-davidson.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Bruce Davidson",
-  "alternateName": "ブルース・デヴィッドソン",
-  "nationality": "United States",
-  "description": "Bruce Davidson is an American photographer known for long-term documentary projects including Brooklyn Gang, Time of Change, East 100th Street, and Subway. His work developed a form of documentary practice built on repeated visits, negotiation, visible equipment, returned prints, and sustained engagement with communities.",
-  "url": "https://eyescosmos.com/en/photographers/bruce-davidson.html",
-  "birthDate": "1933"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/bruce-davidson.html",
+      "url": "https://eyescosmos.com/en/photographers/bruce-davidson.html",
+      "name": "Bruce Davidson | Social Documentary, Civil Rights, and New York | Photo Coordinates",
+      "description": "Bruce Davidson is an American photographer known for long-term documentary projects including Brooklyn Gang, Time of Change, East 100th Street, and Subway. His work developed a form of documentary practice built on repeated visits, negotiation, visible equipment, returned prints, and sustained engagement with communities.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/bruce-davidson.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/bruce-davidson.html#person",
+      "name": "Bruce Davidson",
+      "alternateName": "ブルース・デヴィッドソン",
+      "description": "Bruce Davidson is an American photographer known for long-term documentary projects including Brooklyn Gang, Time of Change, East 100th Street, and Subway. His work developed a form of documentary practice built on repeated visits, negotiation, visible equipment, returned prints, and sustained engagement with communities.",
+      "url": "https://eyescosmos.com/en/photographers/bruce-davidson.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1933",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/bruce-davidson.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -57,7 +71,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -69,8 +83,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Bruce Davidson | Social Documentary, Civil Rights, and New York | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/bruce-davidson.html"
+      "name": "Bruce Davidson"
     }
   ]
 }

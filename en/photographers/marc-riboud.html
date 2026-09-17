@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Marc Riboud | China, Vietnam, and Humanist Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/marc-riboud.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Marc Riboud",
-  "alternateName": "マルク・リブー",
-  "nationality": "France",
-  "description": "Marc Riboud (1923–2016) was born near Lyon. He joined Magnum in 1953 and spent decades photographing China, Vietnam, India, and Africa. His best-known works include The Eiffel Tower Painter and Flower Child.",
-  "url": "https://eyescosmos.com/en/photographers/marc-riboud.html",
-  "birthDate": "1923",
-  "deathDate": "2016"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/marc-riboud.html",
+      "url": "https://eyescosmos.com/en/photographers/marc-riboud.html",
+      "name": "Marc Riboud | China, Vietnam, and Humanist Photography | Photo Coordinates",
+      "description": "Marc Riboud (1923–2016) was born near Lyon. He joined Magnum in 1953 and spent decades photographing China, Vietnam, India, and Africa. His best-known works include The Eiffel Tower Painter and Flower Child.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/marc-riboud.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/marc-riboud.html#person",
+      "name": "Marc Riboud",
+      "alternateName": "マルク・リブー",
+      "description": "Marc Riboud (1923–2016) was born near Lyon. He joined Magnum in 1953 and spent decades photographing China, Vietnam, India, and Africa. His best-known works include The Eiffel Tower Painter and Flower Child.",
+      "url": "https://eyescosmos.com/en/photographers/marc-riboud.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1923",
+      "deathDate": "2016",
+      "nationality": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/marc-riboud.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Marc Riboud | China, Vietnam, and Humanist Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/marc-riboud.html"
+      "name": "Marc Riboud"
     }
   ]
 }

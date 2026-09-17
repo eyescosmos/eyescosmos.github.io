@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Henry Hamilton Bennett | Stereography and the Wisconsin Dells | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/henry-hamilton-bennett.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Henry Hamilton Bennett",
-  "alternateName": "ヘンリー・ハミルトン・ベネット",
-  "nationality": "United States",
-  "description": "Henry Hamilton Bennett was an American photographer and inventor who sold the Wisconsin Dells as stereographic series, froze the leap at Stand Rock with a shutter of his own design, and linked photography, railroad promotion, tourism, and a regional studio. His Ho-Chunk portraits also require the archive to be read through the histories of tourism and colonial image-making.",
-  "url": "https://eyescosmos.com/en/photographers/henry-hamilton-bennett.html",
-  "birthDate": "1843",
-  "deathDate": "1908"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/henry-hamilton-bennett.html",
+      "url": "https://eyescosmos.com/en/photographers/henry-hamilton-bennett.html",
+      "name": "Henry Hamilton Bennett | Stereography and the Wisconsin Dells | Photo Coordinates",
+      "description": "Henry Hamilton Bennett was an American photographer and inventor who sold the Wisconsin Dells as stereographic series, froze the leap at Stand Rock with a shutter of his own design, and linked photography, railroad promotion, tourism, and a regional studio. His Ho-Chunk portraits also require the archive to be read through the histories of tourism and colonial image-making.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/henry-hamilton-bennett.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/henry-hamilton-bennett.html#person",
+      "name": "Henry Hamilton Bennett",
+      "alternateName": "ヘンリー・ハミルトン・ベネット",
+      "description": "Henry Hamilton Bennett was an American photographer and inventor who sold the Wisconsin Dells as stereographic series, froze the leap at Stand Rock with a shutter of his own design, and linked photography, railroad promotion, tourism, and a regional studio. His Ho-Chunk portraits also require the archive to be read through the histories of tourism and colonial image-making.",
+      "url": "https://eyescosmos.com/en/photographers/henry-hamilton-bennett.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1843",
+      "deathDate": "1908",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/henry-hamilton-bennett.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Henry Hamilton Bennett",
-      "item": "https://eyescosmos.com/en/photographers/henry-hamilton-bennett.html"
+      "name": "Henry Hamilton Bennett"
     }
   ]
 }

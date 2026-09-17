@@ -284,28 +284,57 @@ def _fb_twitter(title, desc):
 
 
 def _fb_jsonld(page, slug, title):
-    """最小 WebPage + Person + BreadcrumbList を決定論生成（JA JSON-LD は英訳しない）。"""
+    """EN 正典形の JSON-LD を決定論生成（JA JSON-LD は英訳しない）。
+
+    形は既存 EN 写真家ページ 295 枚の実測に合わせる（2026-09-17 実測）:
+      1本目 = @graph に WebPage + Person を入れ、`about` / `subjectOf` で相互リンク。
+              WebPage の @id はページURL、Person の @id は `<URL>#person`。
+              nationality は Country オブジェクト（二重国籍は "A / B" の1文字列）。
+      2本目 = BreadcrumbList（position 1 はサイト名、末尾は人名で `item` を持たない）。
+
+    2026-09-17 以前はここが flat な WebPage / Person / BreadcrumbList の3本を返しており、
+    `check_new_photographer` の `en_graph_absent` を 125 枚ぶん積み上げていた。
+    値は page 側から受け取る（person_name / alternate_name / nationality_en /
+    meta_description）。無ければそのキーを出さない＝空埋めしない。
+    """
     en_url = f'{BASE}/en/photographers/{slug}.html'
-    person = {'@type': 'Person', 'name': title}
+    person_id = f'{en_url}#person'
+    desc = page.get('meta_description') or ''
+    person_name = page.get('person_name') or page.get('h1') or title
+
+    webpage = {'@type': 'WebPage', '@id': en_url, 'url': en_url, 'name': title}
+    if desc:
+        webpage['description'] = desc
+    webpage['inLanguage'] = 'en'
+    webpage['isPartOf'] = {'@type': 'WebSite', 'name': SITE_NAME, 'url': f'{BASE}/en/'}
+    webpage['about'] = {'@id': person_id}
+
+    person = {'@type': 'Person', '@id': person_id, 'name': person_name}
+    if page.get('alternate_name'):
+        person['alternateName'] = page['alternate_name']
+    if desc:
+        person['description'] = desc
+    person['url'] = en_url
+    person['jobTitle'] = 'Photographer'
     birth, death = _parse_years(page.get('years'))
     if birth:
         person['birthDate'] = birth
     if death:
         person['deathDate'] = death
-    graph = [
-        {'@context': 'https://schema.org', '@type': 'WebPage',
-         'name': title, 'url': en_url, 'inLanguage': 'en',
-         'isPartOf': {'@type': 'WebSite', 'name': SITE_NAME, 'url': BASE}},
-        {'@context': 'https://schema.org', **person},
+    if page.get('nationality_en'):
+        person['nationality'] = {'@type': 'Country', 'name': page['nationality_en']}
+    person['subjectOf'] = {'@id': en_url}
+
+    return [
+        {'@context': 'https://schema.org', '@graph': [webpage, person]},
         {'@context': 'https://schema.org', '@type': 'BreadcrumbList',
          'itemListElement': [
-             {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': f'{BASE}/en/'},
+             {'@type': 'ListItem', 'position': 1, 'name': SITE_NAME, 'item': f'{BASE}/en/'},
              {'@type': 'ListItem', 'position': 2, 'name': 'Photographers',
               'item': f'{BASE}/en/archive.html'},
-             {'@type': 'ListItem', 'position': 3, 'name': title, 'item': en_url},
+             {'@type': 'ListItem', 'position': 3, 'name': person_name},
          ]},
     ]
-    return graph
 
 
 # ── HEAD rebuild ───────────────────────────────────────────────────────────

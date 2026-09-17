@@ -22,28 +22,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Frank Sutcliffe | Whitby, The Water Rats, and Naturalistic Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/frank-sutcliffe.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Frank Meadow Sutcliffe",
-  "alternateName": "フランク・サトクリフ",
-  "nationality": "United Kingdom",
-  "description": "Born in Headingley, Leeds, in 1853, Frank Sutcliffe built a portrait business in Whitby while photographing its harbor, fishing community, children, streets, and weather over several decades. His work connects Naturalistic and Pictorial photography with the long-term visual record of a fishing town becoming a tourist resort.",
-  "url": "https://eyescosmos.com/en/photographers/frank-sutcliffe.html",
-  "birthDate": "1853",
-  "deathDate": "1941"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/frank-sutcliffe.html",
+      "url": "https://eyescosmos.com/en/photographers/frank-sutcliffe.html",
+      "name": "Frank Sutcliffe | Whitby, The Water Rats, and Naturalistic Photography | Photo Coordinates",
+      "description": "Born in Headingley, Leeds, in 1853, Frank Sutcliffe built a portrait business in Whitby while photographing its harbor, fishing community, children, streets, and weather over several decades. His work connects Naturalistic and Pictorial photography with the long-term visual record of a fishing town becoming a tourist resort.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/frank-sutcliffe.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/frank-sutcliffe.html#person",
+      "name": "Frank Meadow Sutcliffe",
+      "alternateName": "フランク・サトクリフ",
+      "description": "Born in Headingley, Leeds, in 1853, Frank Sutcliffe built a portrait business in Whitby while photographing its harbor, fishing community, children, streets, and weather over several decades. His work connects Naturalistic and Pictorial photography with the long-term visual record of a fishing town becoming a tourist resort.",
+      "url": "https://eyescosmos.com/en/photographers/frank-sutcliffe.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1853",
+      "deathDate": "1941",
+      "nationality": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/frank-sutcliffe.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -54,7 +68,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -66,8 +80,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Frank Meadow Sutcliffe",
-      "item": "https://eyescosmos.com/en/photographers/frank-sutcliffe.html"
+      "name": "Frank Meadow Sutcliffe"
     }
   ]
 }

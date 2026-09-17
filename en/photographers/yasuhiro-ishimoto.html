@@ -26,28 +26,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Yasuhiro Ishimoto | Katsura Imperial Villa, Chicago, and Modernist Photography | Photo Coordinates",
-  "url": "https://eyescosmos.com/en/photographers/yasuhiro-ishimoto.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Photo Coordinates",
-    "url": "https://eyescosmos.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Yasuhiro Ishimoto",
-  "alternateName": "石元泰博",
-  "nationality": "Japan / United States",
-  "description": "Yasuhiro Ishimoto (1921–2012) was born in San Francisco and raised in Kochi, Japan. He studied photography at Chicago’s Institute of Design and photographed Katsura Imperial Villa, the streets of Chicago and Tokyo, Ise Jingu, and modern architecture.",
-  "url": "https://eyescosmos.com/en/photographers/yasuhiro-ishimoto.html",
-  "birthDate": "1921",
-  "deathDate": "2012"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://eyescosmos.com/en/photographers/yasuhiro-ishimoto.html",
+      "url": "https://eyescosmos.com/en/photographers/yasuhiro-ishimoto.html",
+      "name": "Yasuhiro Ishimoto | Katsura Imperial Villa, Chicago, and Modernist Photography | Photo Coordinates",
+      "description": "Yasuhiro Ishimoto (1921–2012) was born in San Francisco and raised in Kochi, Japan. He studied photography at Chicago’s Institute of Design and photographed Katsura Imperial Villa, the streets of Chicago and Tokyo, Ise Jingu, and modern architecture.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Photo Coordinates",
+        "url": "https://eyescosmos.com/en/"
+      },
+      "about": {
+        "@id": "https://eyescosmos.com/en/photographers/yasuhiro-ishimoto.html#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eyescosmos.com/en/photographers/yasuhiro-ishimoto.html#person",
+      "name": "Yasuhiro Ishimoto",
+      "alternateName": "石元泰博",
+      "description": "Yasuhiro Ishimoto (1921–2012) was born in San Francisco and raised in Kochi, Japan. He studied photography at Chicago’s Institute of Design and photographed Katsura Imperial Villa, the streets of Chicago and Tokyo, Ise Jingu, and modern architecture.",
+      "url": "https://eyescosmos.com/en/photographers/yasuhiro-ishimoto.html",
+      "jobTitle": "Photographer",
+      "birthDate": "1921",
+      "deathDate": "2012",
+      "nationality": {
+        "@type": "Country",
+        "name": "Japan / United States"
+      },
+      "subjectOf": {
+        "@id": "https://eyescosmos.com/en/photographers/yasuhiro-ishimoto.html"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -58,7 +72,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Photo Coordinates",
       "item": "https://eyescosmos.com/en/"
     },
     {
@@ -70,8 +84,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Yasuhiro Ishimoto | Katsura Imperial Villa, Chicago, and Modernist Photography | Photo Coordinates",
-      "item": "https://eyescosmos.com/en/photographers/yasuhiro-ishimoto.html"
+      "name": "Yasuhiro Ishimoto"
     }
   ]
 }
