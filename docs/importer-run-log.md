@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-17 | danny-lyon / josef-koudelka / larry-burrows / malick-sidibe / raymond-depardon / yutaka-takanashi（idx 415–420・0917素材） | new×6 | 45分 | 0 | 4（素材EN 6本の和文記号《》『』＋`</a>`後の空白抜け＝複製上で正規化／`COUNTRY_TAG` に `チェコ`・`マリ` が未登録／EN年代カードの `data-*` 欠落は engine 側の既知の穴で今回も手当て／`raymond-depardon` の §REL 張り忘れ1件＋本文リンク0件＝監督が是正） | 公開HTML 12枚新規＋従属面37 | 本文4節・JA/EN とも素材と完全一致 | JA 30/32/33/32/31/32 |
 | 2026-09-17 | (guard)コロフォンをドリフト検知へ登録＋一括再生成の照合スクリプト | engine | （Daisuke記入） | 1（コロフォンが2026-08-30から生成器とずれていた・無検知） | 2（privacy-policy がコロフォンの chrome 正本／`--expect` は要素まるごと書く） | コロフォンJA/EN・privacy-policy JA/EN・preflight・build_colophon・新規スクリプト1 | N/A | N/A |
 | 2026-09-16 | (content)チリの国ページを新設（`sergio-larrain` の受け皿） | other | （Daisuke記入） | 0 | 1（JA の国ナビは `generate_country_pages.py` のハードコード定数なので registry 追加だけでは出ない） | 国別 JA/EN 各34（新規1＋既存33のナビ）・sitemap 1000→1002 | N/A | N/A |
 | 2026-09-16 | bruce-davidson / duane-michals / helmut-newton / ikko-narahara / paul-caponigro / sergio-larrain（idx 409–414・0916素材） | new×6 | （Daisuke記入） | 0 | 5（素材EN thesis の sup-ref／Codex がツール出力を JA運動4枚へ混入／運動8面の件数2系統が未更新／EN年代カード6枚が非標準形／§REL 張り忘れ2件） | 公開HTML 12枚新規＋従属面40 | 本文4節・JA/EN とも素材と完全一致 | JA 26/24/26/29/22/27 |
@@ -107,6 +108,93 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-17 — 0917素材 新規6名（idx 415–420・種別=new×6・Opus監督 / Codex実装）
+
+- **範囲**：`danny-lyon` / `josef-koudelka` / `larry-burrows` / `malick-sidibe` / `raymond-depardon` / `yutaka-takanashi`。
+  JA/ENリーフ各6、card-data・supplement・星bin、archive/cards-archive/new-design/index（JA/EN）、
+  年代 1950 JA/EN（54→59）と 1970 JA/EN（29→30）、国 united-states / czech-republic / france /
+  united-kingdom / mali / japan の JA/EN、運動 JA/EN 各5面、`COUNTRY_TAG` に2語、
+  `FRANCE_EXPECTED_IDS` に2件、sitemap 1002→1014。commit / push なし。
+- **モデル**：Daisuke 指定で Codex CLI（`gpt-5.6-sol` / `model_reasoning_effort=low`）。
+  codex MCP は **今回も CONNECTION_CLOSED** のため最小 `CODEX_HOME=~/.codex-cli` で回避。
+- **型**：パイロット1名（danny-lyon）→ 監督監査 → 残り5名を新規セッション1本。**両セッションとも停止0回**。
+
+### 着手前に監督が潰したもの
+
+- **素材EN 6本に和文記号と空白抜け**（`preflight.check_en_prose_hygiene()` が HARD）。
+  `《X》`/`『X』` はすべてリンクテキストで計12組、`</a>` 直後の空白抜けは計18件。
+  §14 A-0 に従い scratchpad の複製上で `><i>X</i></a>` へ置換＋空白挿入。**原本12本は SHA-256 不変**（作業後も照合済み）。
+  `yutaka-takanashi` の `『都市へ』` は §SRC の日本語資料名なので precheck も対象外＝触っていない。
+- **辞書の穴2件**：`build_archive_en.COUNTRY_TAG` に `チェコ` / `マリ` が無く、そのままだと
+  `tr_tag` が `SystemExit('Unmapped Japanese tag')` で en/archive ビルドごと落ちる（0909 のチェコ再発）。
+  `add_photographer` の事前 lint が**着手前に**警告したので2語だけ追加。
+- **経路**：0916 と同じ `add_photographer --apply`（`--scaffold` なし）→ `import_chatgpt_photographer --apply` →
+  `--apply-surfaces`。dry-run で6名分の国スコープと運動面を確定してからブリーフへ書いた。
+
+### ★ブリーフ誤り 0件（0916 のパイロットで潰した2件が効いた）
+
+[[feedback_codex_stops_means_brief_is_wrong]] の系列では初めて**停止0回**。
+0916 で判明した2点（cite 期待値は「素材JA==生成JA / 素材EN==生成EN」の2本／
+`build_photographers_en.py --dry-run` は CLI ではないので検証項目に入れない）を最初から除いてある。
+
+### ★監督監査で捕まえたもの（Codex の報告には出ていない）
+
+1. **`raymond-depardon` の §REL 張り忘れ1件**。JA §REL の「ウォーカー・エヴァンズ」が裸テキストのまま。
+   **preflight の張り忘れ検知はカナ表記揺れで素通りする**（サイトの正は `evans` =「ウォーカー・エヴァン**ス**」）。
+   §14 A-1c に従いリンクテキストは素材表記のまま・href は card-data の slug。
+   **カナ揺れ正規化つきで6名×JA/EN の §REL を全数走査したが、該当はこの1件だけ**。
+2. **同 `raymond-depardon` が本文内部リンク0件**（`check_new_photographer` の `[body_links_scarce]`）。
+   他5名は 1〜3件持つ。素材が本文の「ウォーカー・エヴァンズ」「ポール・ストランド」を張っていなかったため。
+   両方とも実ページがある（`evans` / `strand`）ので初出をリンク化。**プレーンテキストは不変**を実測。
+3. **同 EN §REL に Related movements ブロックが無かった**。JA は `フォトジャーナリズム` を
+   リンクで持つのに EN は落ちる（EN renderer は素材にスラッグが無い運動名を EN 運動ページへ解決しない）。
+   **素材EN 自身が持っていた英文解説**をそのまま使って項目を補い、JA/EN を対称にした。
+4. **`photographers/takuma-nakahira.html` の §REL に「高梨豊」が裸テキスト**（preflight が WARN で検知）。
+   JA をリンク化し、EN にも対応項目を追加。**JA のプレーンテキストは 41,270字で不変**。
+
+### 検証（監督が独立に再実測）
+
+| 見るもの | 実測 |
+|---|---|
+| cite 集合 素材JA==生成JA / 素材EN==生成EN | **6名とも両方 True**（JA 30/32/33/32/31/32・EN 同数） |
+| 本文プレーンテキスト 素材==生成（JA/EN） | **12本とも完全一致**（JA 4,215〜4,743字 / EN 9,580〜10,535字） |
+| sup-ref 件数 素材==生成 | 一致（例 danny-lyon JA 33/33・EN 33/33） |
+| JSON-LD Person の `name`/`birthDate`/`nationality`/`description`/`url` | **JA/EN とも 6名すべて 5/5** |
+| §REL リンク切れ | **0** |
+| 年代・国・運動・アーカイブの roster | **26面すべて removed=0**（純粋追加） |
+| 運動10面の件数2系統（hero / サイドバー） | **10面とも hero == サイドバー == 実カード数** |
+| 公開HTMLへのツール出力混入（0916の事故1の再発チェック） | **0行** |
+| sitemap | 1002→1014（追加12・削除0・重複0・worktree/backup 0） |
+| 凍結EN JSON 3本 | **変更なし** |
+| 素材原本12本 SHA-256 | **不変** |
+| `preflight` / `check_content_loss` / `sync_card_counts --check` / `check_photographer_link_integrity` | **全 EXIT 0** |
+| 6名の `check_new_photographer` / `check_en_entry` | **全 EXIT 0** |
+
+- **残WARN は baseline と偽陽性のみ**。`[EN country <slug>]` 6面は**6面ともスコープ再生成で
+  SHA-256 byte 一致を実測＝偽陽性確定**。`movements/ピクトリアリズム.html` の件数 drift・
+  カードtag非前方一致90枚・stale intentional-replacement 30件は HEAD から存在。
+
+### ★Daisuke 判断待ち1件 — EN JSON-LD の `@graph` 欠落
+
+`check_new_photographer` が6名とも `[en_graph_absent] EN JSON-LD に @graph が無い` を出す。
+**0916 の6名も全員同じ**で、EN写真家ページ431枚のうち `@graph` を持つのは295枚。
+Person 本体は JA/EN とも5フィールド揃っており実害は確認できていないが、
+**EN renderer 側の穴で新規追加のたびに増える**。直すなら engine 修正＝このバッチの範囲外。
+
+### Codex 実測（トークン）
+
+| セッション | 消費 | 停止 |
+|---|---:|---|
+| パイロット1名 | 118,201 | **0回** |
+| 残り5名 | **109,590 ＝ 21,918 / 名** | **0回** |
+| 合計（6名） | 227,791 ＝ 37,965 / 名 | |
+
+**比較（新規セッション1本あたりの トークン/名）：0909 = 46,462 / 0915 = 61,413 / 0916 = 31,241 / 今回 = 21,918。**
+0916比 **−30%**。効いたのは (a) パイロットのブリーフをそのまま流用できたこと、
+(b) 5名分の諸元（idx・国コード・era・国スコープ・運動面）を表1枚でブリーフへ渡し、card-data を読ませなかったこと。
+
+- **wall-time**：**45分**（Daisuke 実測。6名＝7.5分/名。0916の6名と同規模）
 
 ## 2026-09-17 — コロフォンのドリフト検知登録＋一括再生成の照合スクリプト（種別=engine・Opus実装）
 

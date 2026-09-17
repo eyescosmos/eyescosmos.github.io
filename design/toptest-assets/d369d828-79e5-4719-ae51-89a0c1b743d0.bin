@@ -6349,7 +6349,209 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "danny-lyon",
+    "name": "Danny Lyon",
+    "nameJa": "ダニー・ライアン",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1942–",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "社会ドキュメンタリー",
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ダニー・ライアン（1942–）は、ニューヨーク、ブルックリン生まれの写真家・映画作家である。シカゴ大学在学中の1962年にSNCCへ加わり、公民権運動のスタッフ写真家として南部を撮影した。その後、Chicago Outlaws Motorcycle Clubと生活を共にし、『The Bikeriders』を制作する。テキサス州の刑務所を長期取材した『Conversations with the Dead』では、写真、録音、手紙、公文書を交錯させた。 *1 *2 。",
+      "textEn": "Danny Lyon (1942–) is a photographer and filmmaker born in Brooklyn, New York. While studying at the University of Chicago, he joined the Student Nonviolent Coordinating Committee (SNCC) in 1962 and photographed the Civil Rights Movement in the South as a staff photographer. He later shared the life of the Chicago Outlaws Motorcycle Club while making The Bikeriders. For Conversations with the Dead, his long-term project in Texas prisons, he brought photographs, recordings, letters, and official documents into the same book. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Whitney Museum — Danny Lyon: Message to the Future",
+          "url": "https://whitney.org/exhibitions/danny-lyon-message-to-the-future"
+        },
+        {
+          "num": 2,
+          "name": "Whitney Museum — Exhibition guide, Danny Lyon",
+          "url": "https://whitney.org/media/1376"
+        }
+      ]
+    }
+  },
+  {
+    "id": "josef-koudelka",
+    "name": "Josef Koudelka",
+    "nameJa": "ジョセフ・クーデルカ",
+    "nationality": "CZ / FR",
+    "flag": "🇨🇿",
+    "years": "1938–",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "ドキュメンタリー",
+      "フォトジャーナリズム"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ジョセフ・クーデルカ（1938–）は、チェコスロヴァキア（現チェコ）のボスコヴィツェ生まれの写真家である。工学を学びながら写真を始め、1960年代前半にはプラハの劇場を撮影したのち、ロマ共同体への長期取材と1968年のプラハ侵攻の匿名発表へ進んだ。1970年に西欧へ移り、Magnum Photosへの参加を経て、『Exiles』とパノラマ作品へ展開した。 *1 *2 。",
+      "textEn": "Josef Koudelka (1938–) is a photographer born in Boskovice, Czechoslovakia (present-day Czech Republic). He began photographing while studying engineering and, in the early 1960s, photographed theater in Prague before undertaking sustained work with Roma communities and anonymously publishing his photographs of the 1968 invasion of Prague. He moved to Western Europe in 1970, later joined Magnum Photos, and went on to develop the work that became Exiles and his panoramic projects. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Getty — Josef Koudelka: Nationality Doubtful",
+          "url": "https://www.getty.edu/art/exhibitions/koudelka/"
+        },
+        {
+          "num": 2,
+          "name": "Getty — Josef Koudelka retrospective press release",
+          "url": "https://www.getty.edu/news/getty-museum-presents-josef-koudelka-retrospective/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "larry-burrows",
+    "name": "Larry Burrows",
+    "nameJa": "ラリー・バロウズ",
+    "nationality": "GB",
+    "flag": "🇬🇧",
+    "years": "1926–1971",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "フォトジャーナリズム",
+      "カラー写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ラリー・バロウズ（1926–1971）は、ロンドン生まれのイギリス人写真家である。第二次世界大戦期にLIFE誌ロンドン支局の暗室助手となり、のちに同誌の写真家へ転じた。1962年からベトナム戦争を長期取材し、米軍部隊やヘリコプターに同行してカラーのピクチャー・エッセイを制作。1971年、ラオス上空で取材中のヘリコプターが撃墜され、同行記者とともに死亡した。 *1 *2 。",
+      "textEn": "Larry Burrows (1926–1971) was a British photographer born in London. During World War II he joined LIFE magazine’s London bureau as a darkroom assistant and later became a staff photographer. From 1962 he covered the Vietnam War over an extended period, accompanying U.S. military units and helicopters while producing color picture essays. In 1971, he was killed along with other journalists when the helicopter carrying them was shot down over Laos. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "LIFE — Larry Burrows photographer archive",
+          "url": "https://www.life.com/photographer/larry-burrows/"
+        },
+        {
+          "num": 2,
+          "name": "LIFE — Vietnam Photo Essay: One Ride with Yankee Papa 13",
+          "url": "https://www.life.com/history/vietnam-photo-essay-larry-burrows-one-ride-with-yankee-papa-13/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "malick-sidibe",
+    "name": "Malick Sidibé",
+    "nameJa": "マリック・シディベ",
+    "nationality": "ML",
+    "flag": "🇲🇱",
+    "years": "1936–2016",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "マリック・シディベ（1936–2016）は、フランス領スーダン（現マリ）のソロバ生まれの写真家である。バマコの工芸学校で素描と装飾を学び、写真家ジェラール・ギヤ＝ギニャールの助手を経て1958年に独立した。Studio Malickを拠点に、結婚式や家族行事、夜のパーティー、スタジオ肖像を撮影し、独立前後から1970年代のバマコを商業写真と社交の両面から捉えた。 *1 *2 。",
+      "textEn": "Malick Sidibé (1936–2016) was a photographer born in Soloba, French Sudan (present-day Mali). He studied drawing and decoration at the École des Artisans Soudanais in Bamako, worked as an assistant to photographer Gérard Guillat-Guignard, and began working independently in 1958. Based at Studio Malick, he photographed weddings, family events, nightlife, and studio portraits, documenting Bamako from around independence through the 1970s through both commercial photography and social life. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Fondation Cartier — Malick Sidibé",
+          "url": "https://www.fondationcartier.com/collection/artistes/malick-sidibe"
+        },
+        {
+          "num": 2,
+          "name": "Fondation Cartier — Malick Sidibé, Mali Twist",
+          "url": "https://www.fondationcartier.com/programme/exposition/malick-sidibe-mali-twist"
+        }
+      ]
+    }
+  },
+  {
+    "id": "raymond-depardon",
+    "name": "Raymond Depardon",
+    "nameJa": "レイモン・ドパルドン",
+    "nationality": "FR",
+    "flag": "🇫🇷",
+    "years": "1942–",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "フォトジャーナリズム",
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "レイモン・ドパルドン（1942–）は、フランスのヴィルフランシュ＝シュル＝ソーヌ近郊の農家に生まれた写真家・映画監督である。地元の写真店で修業し、1958年にパリの写真家ルイ・フシュランのもとで学んだ。翌1959年にDalmas通信社で報道写真の仕事を始め、1966年にGammaを共同設立した。その後はMagnum Photosに加わり、戦争・政治報道と映画制作を並行する。後年は精神医療、司法、警察、農村、地方都市へ主題を広げ、写真・映画・文章を横断している。 *1 *2 。",
+      "textEn": "Raymond Depardon (1942–) is a French photographer and filmmaker born to a farming family near Villefranche-sur-Saône. He trained at a local photography shop and studied under Paris photographer Louis Foucherand in 1958. The following year he began working in photojournalism for the Dalmas agency and co-founded Gamma in 1966. He later joined Magnum Photos, pursuing war and political reportage alongside filmmaking. In later decades he expanded his subjects to mental health care, the judicial system, policing, rural life, and provincial towns, working across photography, film, and writing. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Raymond Depardon — Official biography",
+          "url": "https://depardoncineaste.com/en/biography/"
+        },
+        {
+          "num": 2,
+          "name": "Raymond Depardon — Filmographie",
+          "url": "https://depardoncineaste.com/filmographie/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "yutaka-takanashi",
+    "name": "Yutaka Takanashi",
+    "nameJa": "高梨豊",
+    "nationality": "JP",
+    "flag": "🇯🇵",
+    "years": "1935–",
+    "gender": "男性",
+    "era": "1970",
+    "movements": [
+      "プロヴォーク"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "高梨豊（1935–）は東京生まれの写真家で、日本大学で写真を学びながら、広告・デザインの仕事と作家活動を並行した。1968年に中平卓馬、多木浩二、岡田隆彦らと『PROVOKE』を創刊し、1974年に写真集『都市へ』を刊行。1970年代後半からは『町』で4×5カメラとカラーへ転じ、東京を異なる速度と機材で撮り続けた。 *1 *2 。",
+      "textEn": "Yutaka Takanashi (1935–) is a Tokyo-born photographer who studied photography at Nihon University while working in advertising and design alongside his independent work. In 1968 he co-founded PROVOKE with Takuma Nakahira, Koji Taki, Takahiko Okada, and others, and in 1974 published the photobook Toshi-e. From the late 1970s, he turned to a 4×5 camera and color for Machi, continuing to photograph Tokyo at different speeds and with different tools. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Fondation Henri Cartier-Bresson — Yutaka Takanashi",
+          "url": "https://www.henricartierbresson.org/en/expositions/yuka-takanashi-2/"
+        },
+        {
+          "num": 2,
+          "name": "Fondation Henri Cartier-Bresson — Yutaka Takanashi, French page",
+          "url": "https://www.henricartierbresson.org/expositions/yuka-takanashi/"
+        }
+      ]
+    }
   }
+
+
+
+
+
+
 
 
 
