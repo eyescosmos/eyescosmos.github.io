@@ -23,7 +23,7 @@
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
 | 2026-09-17 | (engine+content)EN写真家ページの JSON-LD を正典形へ統一（`@graph` 欠落125枚） | other+engine | （Daisuke記入） | 1（renderer が flat 3本を返していた退行。`check_new_photographer` の `en_graph_absent` として125枚に蓄積・HARD にならず素通り） | 2（backfill が旧 Person の birthDate 33件・deathDate 24件を取りこぼす＝preflight の HARD が捕捉／`@context` は `@graph` 継承なのでガード側を精密化） | EN写真家 125枚・engine 2・preflight 1・新規スクリプト1 | N/A | N/A |
-| 2026-09-19 | bernard-plossu / emmet-gowin / katharina-sieverding / mary-ellen-mark / michael-schmidt / raghu-rai（idx 421–426・0919素材）＋インド国ページ新設 | new×6+other | （Daisuke記入） | 0 | 4（素材EN `mary-ellen-mark` の thesis に出典番号＝複製上で除去／`インド` が国辞書3か所に未登録／6名とも本文内部リンク0件＝監督が初出をリンク化／既存 `thomas-demand` §REL の「ミヒャエル・シュミット」裸テキスト＝JAリンク化＋EN項目追加） | 公開HTML 14枚新規（リーフ12・インドJA/EN）＋従属面97 | 本文4節・JA/EN とも素材と完全一致 | JA 34/39/32/38/34/34 |
+| 2026-09-19 | bernard-plossu / emmet-gowin / katharina-sieverding / mary-ellen-mark / michael-schmidt / raghu-rai（idx 421–426・0919素材）＋インド国ページ新設 | new×6+other | 34分 | 0 | 4（素材EN `mary-ellen-mark` の thesis に出典番号＝複製上で除去／`インド` が国辞書3か所に未登録／6名とも本文内部リンク0件＝監督が初出をリンク化／既存 `thomas-demand` §REL の「ミヒャエル・シュミット」裸テキスト＝JAリンク化＋EN項目追加） | 公開HTML 14枚新規（リーフ12・インドJA/EN）＋従属面97 | 本文4節・JA/EN とも素材と完全一致 | JA 34/39/32/38/34/34 |
 | 2026-09-17 | danny-lyon / josef-koudelka / larry-burrows / malick-sidibe / raymond-depardon / yutaka-takanashi（idx 415–420・0917素材） | new×6 | 45分 | 0 | 4（素材EN 6本の和文記号《》『』＋`</a>`後の空白抜け＝複製上で正規化／`COUNTRY_TAG` に `チェコ`・`マリ` が未登録／EN年代カードの `data-*` 欠落は engine 側の既知の穴で今回も手当て／`raymond-depardon` の §REL 張り忘れ1件＋本文リンク0件＝監督が是正） | 公開HTML 12枚新規＋従属面37 | 本文4節・JA/EN とも素材と完全一致 | JA 30/32/33/32/31/32 |
 | 2026-09-17 | (guard)コロフォンをドリフト検知へ登録＋一括再生成の照合スクリプト | engine | （Daisuke記入） | 1（コロフォンが2026-08-30から生成器とずれていた・無検知） | 2（privacy-policy がコロフォンの chrome 正本／`--expect` は要素まるごと書く） | コロフォンJA/EN・privacy-policy JA/EN・preflight・build_colophon・新規スクリプト1 | N/A | N/A |
 | 2026-09-16 | (content)チリの国ページを新設（`sergio-larrain` の受け皿） | other | （Daisuke記入） | 0 | 1（JA の国ナビは `generate_country_pages.py` のハードコード定数なので registry 追加だけでは出ない） | 国別 JA/EN 各34（新規1＋既存33のナビ）・sitemap 1000→1002 | N/A | N/A |
@@ -158,6 +158,8 @@
 
 比較（新規セッション1本あたり）：0916 = 31,241 / 0917 = 21,918（パイロット別・spec は監督作成）/ 今回 = 30,660（spec 作成と国ページ新設込み・パイロットなし）。
 0917 の合計（パイロット込み 37,965/名）比では **−19%**。
+
+- **wall-time**：**34分**（Daisuke 実測。6名＋インド国ページ＝5.7分/名。0917 の45分・7.5分/名から −24%）
 
 ## 2026-09-17 — EN 写真家ページの JSON-LD を正典形へ統一（種別=other+engine・Opus実装）
 
