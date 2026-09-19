@@ -183,6 +183,7 @@ COUNTRIES_SELECT = (
     '<option value="/countries/italy.html">イタリア</option>'
     '<option value="/countries/italy-united-kingdom.html">イタリア / イギリス</option>'
     '<option value="/countries/iran-switzerland.html">イラン / スイス</option>'
+    '<option value="/countries/india.html">インド</option>'
     '<option value="/countries/ukraine.html">ウクライナ</option>'
     '<option value="/countries/ukraine-united-states.html">ウクライナ / アメリカ</option>'
     '<option value="/countries/netherlands.html">オランダ</option>'
@@ -299,6 +300,7 @@ SITE_DIR_COUNTRIES = (
     '<a href="/countries/italy.html">イタリア</a>'
     '<a href="/countries/italy-united-kingdom.html">イタリア / イギリス</a>'
     '<a href="/countries/iran-switzerland.html">イラン / スイス</a>'
+    '<a href="/countries/india.html">インド</a>'
     '<a href="/countries/ukraine.html">ウクライナ</a>'
     '<a href="/countries/ukraine-united-states.html">ウクライナ / アメリカ</a>'
     '<a href="/countries/netherlands.html">オランダ</a>'
@@ -500,7 +502,7 @@ FRANCE_EXPECTED_IDS = [
     "marcel-bovis", "claude-cahun", "gerda-taro", "ilse-bing", "izis", "willy-ronis",
     "edouard-boubat",
     "sabine-weiss", "christer-stromholm", "elliott-erwitt", "vivian-maier",
-    "guy-bourdin", "marc-riboud", "helmut-newton", "josef-koudelka", "raymond-depardon",
+    "guy-bourdin", "marc-riboud", "helmut-newton", "josef-koudelka", "raymond-depardon", "bernard-plossu",
     "jean-luc-moulene", "sophie-calle",
     "marine-hugonnier", "jean-pierre-khazem", "jean-luc-mylayne",
     "bruno-serralongue", "yto-barrada", "valerie-belin", "claude-closky",

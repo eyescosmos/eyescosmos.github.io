@@ -6545,7 +6545,207 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "bernard-plossu",
+    "name": "Bernard Plossu",
+    "nameJa": "ベルナール・プロス",
+    "nationality": "FR",
+    "flag": "🇫🇷",
+    "years": "1945–",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "ストリート写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ベルナール・プロス（1945–）は、ベトナム南部ダラット生まれ、フランスを拠点とする写真家である。1965年のメキシコ旅行以後、旅・列車・街路・窓・家族・砂漠を50mmレンズで撮影した。『Le Voyage Mexicain』をはじめ、撮影から年月を隔てた写真集編集も制作の核となる。映画で培った時間感覚とFressonのマットな色調を重ね、写真・映画・写真集を横断しながら移動中の知覚を組み立てた。 *1 *2 。",
+      "textEn": "Bernard Plossu (1945–), born in Dalat in southern Vietnam, is a photographer based in France. Since a 1965 trip to Mexico, he has photographed journeys, trains, streets, windows, family, and desert landscapes with a 50mm lens. Editing photobooks years after the photographs were made became central to works such as Le Voyage Mexicain. A sense of time shaped by cinema and the matte color of Fresson printing connect his photography, film, and photobooks into an account of perception in motion. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Centre Pompidou — Bernard Plossu ↗",
+          "url": "https://www.centrepompidou.fr/en/ressources/personne/cAnrLj"
+        },
+        {
+          "num": 2,
+          "name": "Centre Pompidou — Bernard Plossu, 1963–1988: Les paysages intermédiaires ↗",
+          "url": "https://cataloguedesexpositions.centrepompidou.fr/Bernard_Plossu"
+        }
+      ]
+    }
+  },
+  {
+    "id": "emmet-gowin",
+    "name": "Emmet Gowin",
+    "nameJa": "エメット・ゴーウィン",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1941–",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "インティメイト・ライフ"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "エメット・ゴーウィン（1941–）は、ヴァージニア州ダンヴィル生まれのアメリカ人写真家である。1960〜70年代には妻イーディスとその家族を大判カメラで撮り、親密な肖像を長期の共同作業として育てた。1980年代以降は火山・核施設・採掘地・灌漑農地を上空から撮影し、『Changing the Earth』へ展開する。家族の身体と地表を同じ注意深さで見続け、肖像と航空写真を一つの制作史へ結んだ。 *1 *2 。",
+      "textEn": "Emmet Gowin (1941–), born in Danville, Virginia, is an American photographer. In the 1960s and 1970s he used a large-format camera to photograph his wife Edith and her family, developing intimate portraiture through long-term collaboration. From the 1980s onward he turned to aerial views of volcanoes, nuclear sites, mines, and irrigated farmland, work that culminated in Changing the Earth. The same close attention to family bodies and to the surface of the land links portraiture and aerial photography across his career. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Smithsonian Archives of American Art — Oral history interview with Emmet Gowin ↗",
+          "url": "https://www.aaa.si.edu/collections/interviews/oral-history-interview-emmet-gowin-15913"
+        },
+        {
+          "num": 2,
+          "name": "Princeton University Art Museum — The Emmet Gowin Archive ↗",
+          "url": "https://artmuseum.princeton.edu/art/collections/themes/emmet-gowin-archive"
+        }
+      ]
+    }
+  },
+  {
+    "id": "katharina-sieverding",
+    "name": "Katharina Sieverding",
+    "nameJa": "カタリーナ・ジーヴァーディング",
+    "nationality": "DE",
+    "flag": "🇩🇪",
+    "years": "1941–",
+    "gender": "女性",
+    "era": "1950",
+    "movements": [
+      "コンセプチュアルアート"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "カタリーナ・ジーヴァーディング（1941–）は、プラハ生まれ、デュッセルドルフとベルリンを拠点とするドイツ人美術家である。1960年代末の《Eigenbewegung》から、自己像を反復・合成する《Stauffenberg-Block》《Transformer》へ進んだ。写真はやがて巨大化し、映像や街頭ポスターへ展開する。写真・パフォーマンス・印刷物・公共空間を横断し、顔を政治・ジェンダー・戦後記憶が交差する媒体へ変えた。 *1 *2 。",
+      "textEn": "Katharina Sieverding (1941–), born in Prague, is a German artist based in Düsseldorf and Berlin. From Eigenbewegung in the late 1960s, she developed works such as Stauffenberg-Block and Transformer, repeating and compositing her own image. Her photographs grew to monumental scale and expanded into moving images and street posters. Across photography, performance, print, and public space, she turned the face into a medium through which politics, gender, and postwar memory intersect. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Kunstsammlung NRW — Katharina Sieverding ↗",
+          "url": "https://www.kunstsammlung.de/en/exhibitions/katharina-sieverding-en"
+        },
+        {
+          "num": 2,
+          "name": "Kunstsammlung NRW — Katharina Sieverding (DE) ↗",
+          "url": "https://www.kunstsammlung.de/de/exhibitions/katharina-sieverding"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mary-ellen-mark",
+    "name": "Mary Ellen Mark",
+    "nameJa": "メアリー・エレン・マーク",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1940–2015",
+    "gender": "女性",
+    "era": "1950",
+    "movements": [
+      "社会ドキュメンタリー",
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "メアリー・エレン・マーク（1940–2015）は、フィラデルフィア生まれのアメリカ人写真家である。『Ward 81』では精神科病棟に滞在し、『Falkland Road』ではムンバイの性労働者と長く向き合う。『Streetwise』ではシアトルの若者を写真と映画で追い、その後もTinyを三十年以上撮り続ける。雑誌・写真集・録音・映画を横断し、長期取材が生む親密さと編集する側の権力を同じ作品の中に残す。 *1 *2 。",
+      "textEn": "Mary Ellen Mark (1940–2015) was an American photographer born in Philadelphia. For Ward 81 she stayed inside a psychiatric ward, while Falkland Road grew from sustained contact with sex workers in Mumbai. Streetwise followed young people in Seattle through photography and film, and Mark continued photographing Tiny for more than thirty years. Across magazines, photobooks, audio recordings, and film, her work holds together the intimacy produced by long-term access and the power retained by the person who edits and publishes the images. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Philadelphia Museum of Art — Mary Ellen Mark: Photographs ↗",
+          "url": "https://www.philamuseum.org/exhibitions/mary-ellen-mark-photographs"
+        },
+        {
+          "num": 2,
+          "name": "ICP — In Memoriam: Mary Ellen Mark ↗",
+          "url": "https://www.icp.org/perspective/in-memoriam-mary-ellen-mark-1940-2015"
+        }
+      ]
+    }
+  },
+  {
+    "id": "michael-schmidt",
+    "name": "Michael Schmidt",
+    "nameJa": "ミヒャエル・シュミット",
+    "nationality": "DE",
+    "flag": "🇩🇪",
+    "years": "1945–2014",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ミヒャエル・シュミット（1945–2014）は、ベルリン生まれのドイツ人写真家である。1970年代のベルリン連作では街区を灰色の階調で撮り、『Waffenruhe』では壁と若者を断片的なシークエンスへ組んだ。『Ein-heit』では自作写真と新聞・宣伝画像を混在させ、『Frauen』『Lebensmittel』では人物や食品へ対象を移した。Werkstatt für Photographieの創設を通じ、西ベルリンに写真教育と国際交流の場も築いた。 *1 *2 。",
+      "textEn": "Michael Schmidt (1945–2014) was a German photographer born in Berlin. In his Berlin series of the 1970s, he photographed neighborhoods in muted gray tones; in Waffenruhe, walls and young people were assembled into fragmented sequences. Ein-heit mixed his own photographs with newspaper and propaganda imagery, while Frauen and Lebensmittel turned to people and food. Through the Werkstatt für Photographie, he also created a space for photographic education and international exchange in West Berlin. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Michael Schmidt Archive — Retrospective ↗",
+          "url": "https://www.archivmichaelschmidt.de/en/michael-schmidt-en/retrospective/"
+        },
+        {
+          "num": 2,
+          "name": "Staatliche Museen zu Berlin — Michael Schmidt Retrospective ↗",
+          "url": "https://www.smb.museum/en/museums-institutions/nationalgalerie/exhibitions/detail/michael-schmidt-retrospective/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "raghu-rai",
+    "name": "Raghu Rai",
+    "nameJa": "ラグー・ライ",
+    "nationality": "IN",
+    "flag": "🇮🇳",
+    "years": "1942–2026",
+    "gender": "男性",
+    "era": "1950",
+    "movements": [
+      "フォトジャーナリズム",
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ラグー・ライ（1942–2026）は、英領インドのジャング生まれ、デリーを拠点に活動したインド人写真家である。『The Statesman』『India Today』で政治・宗教・街路・災害を撮り、1977年にMagnum Photosへ加わった。群衆の中で複数の出来事が重なる画面と、1984年のボパール化学災害を数十年追う仕事を通じ、新聞写真・雑誌・写真集をまたぐ独立後インドの視覚史を築いた。 *1 *2 。",
+      "textEn": "Raghu Rai (1942–2026), born in Jhang in British India, was an Indian photographer based in Delhi. He photographed politics, religion, street life, and disaster for The Statesman and India Today, and joined Magnum Photos in 1977. Through frames in which several events unfold at once and a decades-long engagement with the 1984 Bhopal gas disaster, he built a visual history of post-independence India across newspapers, magazines, and photobooks. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "The Guardian — Raghu Rai obituary ↗",
+          "url": "https://www.theguardian.com/artanddesign/2026/may/04/raghu-rai-obituary"
+        },
+        {
+          "num": 2,
+          "name": "The Guardian — Raghu Rai interview ↗",
+          "url": "https://www.theguardian.com/artanddesign/2010/jan/17/raghu-rai-photography-exhibitions-london"
+        }
+      ]
+    }
   }
+
+
+
+
+
+
 
 
 

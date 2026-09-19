@@ -140,6 +140,16 @@
     "updated": "2026.06"
   },
   {
+    "slug": "india",
+    "codes": [
+      "IN"
+    ],
+    "nameJa": "インド",
+    "nameEn": "India",
+    "lead": "インドに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.09"
+  },
+  {
     "slug": "ireland",
     "codes": [
       "IE"

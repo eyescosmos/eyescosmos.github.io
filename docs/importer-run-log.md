@@ -23,6 +23,7 @@
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
 | 2026-09-17 | (engine+content)EN写真家ページの JSON-LD を正典形へ統一（`@graph` 欠落125枚） | other+engine | （Daisuke記入） | 1（renderer が flat 3本を返していた退行。`check_new_photographer` の `en_graph_absent` として125枚に蓄積・HARD にならず素通り） | 2（backfill が旧 Person の birthDate 33件・deathDate 24件を取りこぼす＝preflight の HARD が捕捉／`@context` は `@graph` 継承なのでガード側を精密化） | EN写真家 125枚・engine 2・preflight 1・新規スクリプト1 | N/A | N/A |
+| 2026-09-19 | bernard-plossu / emmet-gowin / katharina-sieverding / mary-ellen-mark / michael-schmidt / raghu-rai（idx 421–426・0919素材）＋インド国ページ新設 | new×6+other | （Daisuke記入） | 0 | 4（素材EN `mary-ellen-mark` の thesis に出典番号＝複製上で除去／`インド` が国辞書3か所に未登録／6名とも本文内部リンク0件＝監督が初出をリンク化／既存 `thomas-demand` §REL の「ミヒャエル・シュミット」裸テキスト＝JAリンク化＋EN項目追加） | 公開HTML 14枚新規（リーフ12・インドJA/EN）＋従属面97 | 本文4節・JA/EN とも素材と完全一致 | JA 34/39/32/38/34/34 |
 | 2026-09-17 | danny-lyon / josef-koudelka / larry-burrows / malick-sidibe / raymond-depardon / yutaka-takanashi（idx 415–420・0917素材） | new×6 | 45分 | 0 | 4（素材EN 6本の和文記号《》『』＋`</a>`後の空白抜け＝複製上で正規化／`COUNTRY_TAG` に `チェコ`・`マリ` が未登録／EN年代カードの `data-*` 欠落は engine 側の既知の穴で今回も手当て／`raymond-depardon` の §REL 張り忘れ1件＋本文リンク0件＝監督が是正） | 公開HTML 12枚新規＋従属面37 | 本文4節・JA/EN とも素材と完全一致 | JA 30/32/33/32/31/32 |
 | 2026-09-17 | (guard)コロフォンをドリフト検知へ登録＋一括再生成の照合スクリプト | engine | （Daisuke記入） | 1（コロフォンが2026-08-30から生成器とずれていた・無検知） | 2（privacy-policy がコロフォンの chrome 正本／`--expect` は要素まるごと書く） | コロフォンJA/EN・privacy-policy JA/EN・preflight・build_colophon・新規スクリプト1 | N/A | N/A |
 | 2026-09-16 | (content)チリの国ページを新設（`sergio-larrain` の受け皿） | other | （Daisuke記入） | 0 | 1（JA の国ナビは `generate_country_pages.py` のハードコード定数なので registry 追加だけでは出ない） | 国別 JA/EN 各34（新規1＋既存33のナビ）・sitemap 1000→1002 | N/A | N/A |
@@ -109,6 +110,54 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-09-19 — 0919素材 新規6名（idx 421–426・種別=new×6）＋インド国ページ新設（種別=other）・Opus監督 / Codex実装
+
+- **範囲**：`bernard-plossu`(FR) / `emmet-gowin`(US) / `katharina-sieverding`(DE) / `mary-ellen-mark`(US) /
+  `michael-schmidt`(DE) / `raghu-rai`(IN)。6名とも era 1950。JA/ENリーフ各6、card-data・supplement・星bin、
+  archive/cards-archive/index（JA/EN）、年代 1950 JA/EN（59→65）、運動 JA/EN 各6面
+  （ストリート写真 21→22・インティメイト・ライフ 12→13・コンセプチュアルアート 23→24・社会ドキュメンタリー 24→25・
+  ドキュメンタリー 45→48・フォトジャーナリズム 26→27）、`FRANCE_EXPECTED_IDS` に1件、sitemap。
+- **インド国ページ新設**：`raghu-rai`（IN）の受け皿。前例＝2026-09-16 チリ。`data/country-pages.json` に india、
+  `generate_country_pages.py` の `COUNTRIES_SELECT` / `SITE_DIR_COUNTRIES` に1行ずつ、国辞書3か所
+  （`build_archive_en.py` の COUNTRY_TAG・国名辞書／`photographers-en-ui-terms.json` countries）に `インド`。
+  国ナビのため JA/EN とも `--all` 再生成。**既存68枚の差分は india の nav/directory 行＋FR/DE/US へのカード追加と件数だけ**。
+  再実行で68枚＋en/archive の SHA-1 一致（冪等）を実測。
+- **モデル**：Codex CLI（`gpt-5.6-sol` / `model_reasoning_effort=low`）。codex MCP は今回も CONNECTION_CLOSED。
+  ★`~/.codex-cli/auth.json` の refresh token が失効（`refresh_token_reused`）→ `~/.codex/auth.json` を再コピーで復旧。
+- **型**：パイロットを省き**6名を新規セッション1本**で流した（0915〜0917 の3バッチで同手順が停止0まで収束したため）。
+  spec 6本も Codex に書かせた（分類＝国・era・tags・movements・channel は監督が表で決定、他は素材からの転記のみ）。**停止0回**。
+
+### 監督監査で直したもの（Codex の報告には「WARN」としてだけ出ていた）
+1. **6名とも本文内部リンク0件**。素材が本文の人名を張っていない。サイトにページがある人物の**初出だけ**をリンク化
+   （JA/EN 対称：plossu 3・gowin 3・sieverding 1・mark 1・schmidt 3・rai 1）。**§01〜§04 のプレーンテキストは不変**を実測。
+   ★監督の1回目のスクリプトは本文域の始点を「最初の `ph-section__body`」にしたため §WORKS 起点・§04 欠けになり5件取りこぼした。
+   **本文域は `§ 01 / 04` から `§ 04 / 04` の `</section>` まで**で取る。
+2. **既存 `thomas-demand` の §REL「ミヒャエル・シュミット」裸テキスト**（preflight WARN）。JA をリンク化し、
+   EN §REL に JA 一言解説の英訳で項目を追加（0917 の takanashi と同じ扱い）。
+
+### 検証（監督が独立に再実測）
+| 見るもの | 実測 |
+|---|---|
+| cite 集合・本文プレーンテキスト 素材==生成（JA/EN） | **24/24 一致** |
+| JSON-LD Person 5フィールド（JA/EN） | 6名とも 5/5 |
+| §REL 裸テキスト（カナ正規化つき全数） | ページ非実在の4語のみ（ボイス・ラグビール・シン・Fresson・Werkstatt）＝正 |
+| 年代・運動・アーカイブ roster | **全面 removed=0**、運動12面とも hero == サイドバー == 実カード数 |
+| 公開HTMLへのログ混入 | 0 |
+| 凍結EN JSON 3本 / 素材原本12本 SHA-256 | 変更なし / 不変 |
+| `preflight` / `check_content_loss` / `sync_card_counts --check` / `check_photographer_link_integrity` / 6名の `check_new_photographer`・`check_en_entry` | **全 EXIT 0** |
+
+- 残 WARN は既知のみ（`[EN country *]` 偽陽性・ピクトリアリズム件数 drift・tag 非前方一致・stale 宣言・plossu EN の Blogspot 出典＝素材由来）。
+- `</sup>` 直後の空白補正は JA 計134か所（サイト標準＝既存 JA も全件空白あり）。
+- 素材の没年：`raghu-rai` 1942–2026（素材の出典1＝The Guardian 追悼記事 2026-05-04）。
+
+### Codex 実測（トークン）
+| セッション | 消費 | 停止 |
+|---|---:|---|
+| 6名＋インド（spec作成込み・1本） | **183,958 ＝ 30,660 / 名** | **0回** |
+
+比較（新規セッション1本あたり）：0916 = 31,241 / 0917 = 21,918（パイロット別・spec は監督作成）/ 今回 = 30,660（spec 作成と国ページ新設込み・パイロットなし）。
+0917 の合計（パイロット込み 37,965/名）比では **−19%**。
 
 ## 2026-09-17 — EN 写真家ページの JSON-LD を正典形へ統一（種別=other+engine・Opus実装）
 
