@@ -4270,3 +4270,11 @@ metmuseum.org は HTTP 429 を返すことがあり、作業中の自動確認�
 - ikko-narahara: type=new; bug=none; manual=EN era card and §REL person links; surfaces=JA/EN leaf + archive/card/era/Japan/sitemap; fidelity=source cite IDs and body plaintext matched; engine=none; commit=not committed; wall-time=Daisuke.
 - paul-caponigro: type=new; bug=country tag dictionary hole; manual=EN era card, straight-photography movement JA/EN, §REL person link; surfaces=JA/EN leaf + archive/card/era/2 countries/movement/sitemap; fidelity=source cite IDs and body plaintext matched; engine=build_archive_en COUNTRY_TAG; commit=not committed; wall-time=Daisuke.
 - sergio-larrain: type=new; bug=Chile COUNTRY_CODE/COUNTRY_TAG dictionary hole; manual=EN era card, street/photojournalism movements JA/EN; surfaces=JA/EN leaf + archive/card/era/movements/sitemap (no country page); fidelity=source cite IDs and body plaintext matched; engine=build_archive_en country mappings; commit=not committed; wall-time=Daisuke.
+
+## 2026-10-03 — sitemap から開発用3枚を外す＋noindex（軽量）
+
+- **種別 / 範囲**：other / `index-v51.html`・`design/toptest.html`・`design/toptest-extracted.html` に robots meta を1行追加、`scripts/generate_sitemap.py` に除外1条件、`sitemap.xml`・`sitemap-full.xml` 再生成。本文・構造の変更なし。発端は `docs/seo-index-drop-handoff.md` タスク1。
+- **noindex**：`index-v51.html`（トップと title 完全一致）と `design/toptest.html`（19MB）は `noindex`。`design/toptest-extracted.html` はトップ JA/EN の iframe 中身なので **`noindex, indexifembedded`**（単独ページとしては外し、親ページへの埋め込み評価は従来どおり残す）。ファイルは消していない。
+- **sitemap**：1,028 → **1,025**。削除はこの3URLのみ、追加0。lastmod 89件が 2026-09-19（0919バッチ／JSON-LD修復のコミット日）へ更新＝前回生成後のコミット分で正常。worktree 3件は残存しているが混入0。
+- **検証**：`check_content_loss.py` OK、`preflight.py` OK。IndexNow は送らない（Bingは無傷のため不要・引き継ぎ書どおり）。
+- **wall-time**：（Daisuke記入）

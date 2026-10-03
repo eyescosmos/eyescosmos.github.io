@@ -70,7 +70,7 @@ GSC 直近7日（9/24〜9/30）
 
 ## 次にやること（優先順）
 
-### タスク1 — sitemap から開発用3枚を外す＋noindex（未着手・Daisuke承認済みの提案段階）
+### タスク1 — sitemap から開発用3枚を外す＋noindex（★2026-10-03 完了・push済。sitemap 1,028→1,025。`toptest-extracted.html` は iframe 中身なので `noindex, indexifembedded`）
 
 **問題**: sitemap が読者向けでないページを「索引に入れてほしい」と申告している。
 

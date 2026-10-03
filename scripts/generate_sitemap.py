@@ -40,6 +40,10 @@ def html_files() -> list[Path]:
         # new-design/ is gitignored local-only source and is not deployed.
         if rel.startswith("new-design/"):
             continue
+        # Dev/legacy pages, not reader-facing (also carry noindex). index-v51.html
+        # shares the top page's exact title; design/ is the star-map build (iframe source).
+        if rel == "index-v51.html" or rel.startswith("design/"):
+            continue
         if re.fullmatch(r"google[0-9a-f]+\.html", path.name):
             continue
         # `-backup2.html` and friends are hand-made copies, not site content.
