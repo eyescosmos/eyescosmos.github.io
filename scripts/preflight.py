@@ -210,6 +210,7 @@ def check_legacy_domain() -> None:
     allowed = {
         "docs/importer-run-log.md",
         "docs/generators-and-guards.md",  # このガード自体の解説で旧ドメインを例示する
+        "docs/seo-index-drop-handoff.md",  # 移行後のGSC調査メモ。旧プロパティ名として言及する
         "scripts/preflight.py",
         "SEO_MIGRATION_NOTES.md",
         "README.md",
