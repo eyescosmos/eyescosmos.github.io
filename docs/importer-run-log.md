@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-10-07 | christian-boltanski / claudia-andujar / graciela-iturbide / hans-peter-feldmann / henry-wessel / j-d-okhai-ojeikere（idx 427–432・0929素材）＋ナイジェリア国ページ新設 | new×6+other | （Daisuke記入） | 0 | run-log 本節参照（本文内部リンク9件・既存2名§REL・EN年代/運動カード手挿入） | 公開HTML 14枚新規＋従属面 | 本文4節・JA/EN とも素材と完全一致 | — |
 | 2026-09-17 | (engine+content)EN写真家ページの JSON-LD を正典形へ統一（`@graph` 欠落125枚） | other+engine | （Daisuke記入） | 1（renderer が flat 3本を返していた退行。`check_new_photographer` の `en_graph_absent` として125枚に蓄積・HARD にならず素通り） | 2（backfill が旧 Person の birthDate 33件・deathDate 24件を取りこぼす＝preflight の HARD が捕捉／`@context` は `@graph` 継承なのでガード側を精密化） | EN写真家 125枚・engine 2・preflight 1・新規スクリプト1 | N/A | N/A |
 | 2026-09-19 | bernard-plossu / emmet-gowin / katharina-sieverding / mary-ellen-mark / michael-schmidt / raghu-rai（idx 421–426・0919素材）＋インド国ページ新設 | new×6+other | 34分 | 0 | 4（素材EN `mary-ellen-mark` の thesis に出典番号＝複製上で除去／`インド` が国辞書3か所に未登録／6名とも本文内部リンク0件＝監督が初出をリンク化／既存 `thomas-demand` §REL の「ミヒャエル・シュミット」裸テキスト＝JAリンク化＋EN項目追加） | 公開HTML 14枚新規（リーフ12・インドJA/EN）＋従属面97 | 本文4節・JA/EN とも素材と完全一致 | JA 34/39/32/38/34/34 |
 | 2026-09-17 | danny-lyon / josef-koudelka / larry-burrows / malick-sidibe / raymond-depardon / yutaka-takanashi（idx 415–420・0917素材） | new×6 | 45分 | 0 | 4（素材EN 6本の和文記号《》『』＋`</a>`後の空白抜け＝複製上で正規化／`COUNTRY_TAG` に `チェコ`・`マリ` が未登録／EN年代カードの `data-*` 欠落は engine 側の既知の穴で今回も手当て／`raymond-depardon` の §REL 張り忘れ1件＋本文リンク0件＝監督が是正） | 公開HTML 12枚新規＋従属面37 | 本文4節・JA/EN とも素材と完全一致 | JA 30/32/33/32/31/32 |
@@ -110,6 +111,27 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-10-07 — 0929素材 新規6名（idx 427–432・種別=new×6）＋ナイジェリア国ページ新設（種別=other）・Opus監督 / Codex実装
+
+- **範囲**：`christian-boltanski`(FR) / `claudia-andujar`(BR / CH) / `graciela-iturbide`(MX) /
+  `hans-peter-feldmann`(DE) / `henry-wessel`(US) / `j-d-okhai-ojeikere`(NG)。6名とも era 1970。
+  JA/ENリーフ各6、card-data・supplement・星bin、archive/cards-archive/index（JA/EN）、年代1970 JA/EN、
+  運動 JA/EN 4面、国ページ JA/EN、sitemap を反映。`FRANCE_EXPECTED_IDS` に1件追加。
+- **ナイジェリア国ページ新設**：`data/country-pages.json`、国ナビ2定数、英語国辞書を追加し、JA/EN とも
+  `--all` で再生成。2回目の全生成後、国ページ130ファイル（既存backupを含む）の SHA-1 が一致。
+- **手作業点**：spec 6本作成、EN表示語3か所（New Topographics / Typological photography / Nigeria）、
+  本文内部リンク JA/EN 各9件（iturbide 1 / wessel 5 / ojeikere 3）、EN年代カード6件、
+  運動カード JA/EN 各7件、既存2名の §REL リンク化とEN対応項目追加、国辞書2語。
+- **サーフェス変更数**：新規リーフ12、既存リーフ4、国ページJA/EN 72（うち新規2）、年代2、運動8、
+  archive/cards/index 6、データ・生成器・sitemap・ログ。対象分類面は roster removed=0。
+- **フィデリティ**：§01〜§04本文プレーンテキストと cite 集合は素材JA/EN 12本すべて一致。
+  JSON-LD Person 5フィールドも12本すべて充足。素材原本12本・凍結EN JSON 3本は不変。
+- **engine 改良**：なし。手作業ボトルネックは EN年代・EN運動のHTML正本へのカード挿入と件数3系統の同期。
+- **モデル**：Codex CLI（`gpt-5.6-sol` / `model_reasoning_effort=low`）。codex MCP は今回も CONNECTION_CLOSED。パイロットなし・6名＋ナイジェリアを新規セッション1本。**停止0回・232,486 tok ＝ 38,748 / 名**（0919 = 30,660 / 名）。
+- **監督の独立再検証**：全変更面の写真家 roster removed=0／国ページ70面の差分は nigeria の nav・directory 行＋対象国へのカード追加と件数のみ／本文中のサイト掲載写真家の未リンク言及0（JA/EN）／sitemap 削除0・追加14／新規14枚の GA・canonical・hreflang・JSON-LD・og 実在／preflight・check_content_loss・sync_card_counts --check すべて EXIT 0、残WARNは既知のみ（`[EN country *]` 35件＝`--all` 再生成の構造的偽陽性）。
+- **commit**：監督が実施。
+- **wall-time**：Daisuke 記入。
 
 ## 2026-09-19 — 0919素材 新規6名（idx 421–426・種別=new×6）＋インド国ページ新設（種別=other）・Opus監督 / Codex実装
 

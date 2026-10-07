@@ -95,7 +95,8 @@ COUNTRY_TAG = {
     'ロシア': 'Russia', 'ブラジル': 'Brazil', 'ハンガリー': 'Hungary',
     'デンマーク': 'Denmark', 'ルクセンブルク': 'Luxembourg', 'レバノン': 'Lebanon',
     'ケニア': 'Kenya', '南アフリカ': 'South Africa', 'アルバニア': 'Albania',
-    'チェコ': 'Czech Republic', 'マリ': 'Mali',
+    'チェコ': 'Czech Republic', 'マリ': 'Mali', 'メキシコ': 'Mexico',
+    'ナイジェリア': 'Nigeria',
 }
 
 GENRE_TAG = {

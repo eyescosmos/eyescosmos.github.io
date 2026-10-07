@@ -205,6 +205,7 @@ COUNTRIES_SELECT = (
     '<option value="/countries/germany.html">ドイツ</option>'
     '<option value="/countries/germany-united-kingdom.html">ドイツ / イギリス</option>'
     '<option value="/countries/germany-brazil.html">ドイツ / ブラジル</option>'
+    '<option value="/countries/nigeria.html">ナイジェリア</option>'
     '<option value="/countries/nigeria-united-kingdom.html">ナイジェリア / イギリス</option>'
     '<option value="/countries/norway.html">ノルウェー</option>'
     '<option value="/countries/hungary.html">ハンガリー</option>'
@@ -322,6 +323,7 @@ SITE_DIR_COUNTRIES = (
     '<a href="/countries/germany.html">ドイツ</a>'
     '<a href="/countries/germany-united-kingdom.html">ドイツ / イギリス</a>'
     '<a href="/countries/germany-brazil.html">ドイツ / ブラジル</a>'
+    '<a href="/countries/nigeria.html">ナイジェリア</a>'
     '<a href="/countries/nigeria-united-kingdom.html">ナイジェリア / イギリス</a>'
     '<a href="/countries/norway.html">ノルウェー</a>'
     '<a href="/countries/hungary.html">ハンガリー</a>'
@@ -503,7 +505,7 @@ FRANCE_EXPECTED_IDS = [
     "edouard-boubat",
     "sabine-weiss", "christer-stromholm", "elliott-erwitt", "vivian-maier",
     "guy-bourdin", "marc-riboud", "helmut-newton", "josef-koudelka", "raymond-depardon", "bernard-plossu",
-    "jean-luc-moulene", "sophie-calle",
+    "jean-luc-moulene", "christian-boltanski", "sophie-calle",
     "marine-hugonnier", "jean-pierre-khazem", "jean-luc-mylayne",
     "bruno-serralongue", "yto-barrada", "valerie-belin", "claude-closky",
     "luc-delahaye", "charles-freger", "philippe-terrier-hermann",

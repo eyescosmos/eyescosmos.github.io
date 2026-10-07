@@ -6739,7 +6739,206 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "christian-boltanski",
+    "name": "Christian Boltanski",
+    "nameJa": "クリスチャン・ボルタンスキー",
+    "nationality": "FR",
+    "flag": "🇫🇷",
+    "years": "1944–2021",
+    "gender": "男性",
+    "era": "1970",
+    "movements": [
+      "コンセプチュアルアート"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "クリスチャン・ボルタンスキー（1944–2021）は、フランス・パリ生まれの美術家である。1960年代末に写真や所持品へ虚構を織り交ぜた自伝的作品を始め、1980年代に《Monuments》《Les Archives》を展開した。写真や文書、音・衣服を展示空間で組み合わせ、資料を保存しても個人の生を取り戻し切れない矛盾を扱った。 *1 *2 。",
+      "textEn": "Christian Boltanski (1944–2021) was an artist born in Paris, France. In the late 1960s, he began making autobiographical works that combined photographs and personal possessions with invented material; in the 1980s, he developed Monuments and Les Archives. By combining photographs, documents, sound, and garments within exhibition spaces, he addressed the paradox that preserving evidence cannot fully restore an individual life. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Centre Pompidou — Christian Boltanski ↗",
+          "url": "https://www.centrepompidou.fr/en/ressources/personne/z88xAxH"
+        },
+        {
+          "num": 2,
+          "name": "Centre Pompidou — Christian Boltanski, à l’épreuve du temps ↗",
+          "url": "https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/christian-boltanski-a-lepreuve-du-temps"
+        }
+      ]
+    }
+  },
+  {
+    "id": "claudia-andujar",
+    "name": "Claudia Andujar",
+    "nameJa": "クラウディア・アンドゥハル",
+    "nationality": "BR / CH",
+    "flag": "🇧🇷 🇨🇭",
+    "years": "1931–",
+    "gender": "女性",
+    "era": "1970",
+    "movements": [
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "クラウディア・アンドゥハル（1931–）は、スイス・ヌーシャテル生まれの写真家、活動家である。米国を経て1955年にブラジルへ移住し、1971年からヤノマミの人々と長期的な関係を築いた。赤外線や再撮影を用いた作品のほか、医療用の番号付き肖像《Marcados》を制作し、1978年以降は土地権運動に参加した。 *1 *2 。",
+      "textEn": "Claudia Andujar (born 1931) is a photographer and activist born in Neuchâtel, Switzerland. After living in the United States, she moved to Brazil in 1955 and began a lasting relationship with the Yanomami in 1971. Her work includes experiments with infrared photography and rephotography, the numbered medical portraits of Marcados, and participation in the campaign for Yanomami territorial rights. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Instituto Moreira Salles — Claudia Andujar: The Yanomami Struggle ↗",
+          "url": "https://ims.com.br/exposicao/claudia-andujar-the-yanomami-struggle/"
+        },
+        {
+          "num": 2,
+          "name": "Instituto Moreira Salles — The Yanomami Struggle: Exhibition Texts ↗",
+          "url": "https://ims.com.br/2019/10/25/claudia-andujar-the-yanomami-struggle-exhibition-texts/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "graciela-iturbide",
+    "name": "Graciela Iturbide",
+    "nameJa": "グラシエラ・イトゥルビデ",
+    "nationality": "MX",
+    "flag": "🇲🇽",
+    "years": "1942–",
+    "gender": "女性",
+    "era": "1970",
+    "movements": [
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "グラシエラ・イトゥルビデ（1942–）は、メキシコシティ生まれの写真家である。1969年に映画を学び、マヌエル・アルバレス・ブラボの助手を経て撮影を本格化させた。1978年のセリ（コムカーク）取材と1979年から約十年続けたフチタンの撮影を通じ、儀礼や労働、鳥・人物を写真集の連続で結んだ。 *1 *2 。",
+      "textEn": "Graciela Iturbide (born 1942) is a photographer from Mexico City. She studied film in 1969, then began photographing seriously after working as an assistant to Manuel Álvarez Bravo. Through a 1978 assignment among the Seri (Comcáac) and almost a decade of visits to Juchitán beginning in 1979, she brought together rituals, work, birds, and people in photobook sequences. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Museum of Fine Arts Boston — Graciela Iturbide’s Mexico ↗",
+          "url": "https://www.mfa.org/exhibitions/graciela-iturbides-mexico"
+        },
+        {
+          "num": 2,
+          "name": "Museum of Fine Arts Boston — exhibition press release ↗",
+          "url": "https://www.mfa.org/news/graciela-iturbides-mexico"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hans-peter-feldmann",
+    "name": "Hans-Peter Feldmann",
+    "nameJa": "ハンス＝ペーター・フェルドマン",
+    "nationality": "DE",
+    "flag": "🇩🇪",
+    "years": "1941–2023",
+    "gender": "男性",
+    "era": "1970",
+    "movements": [
+      "コンセプチュアルアート"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ハンス＝ペーター・フェルドマン（1941–2023）は、ドイツ・デュッセルドルフ生まれの美術家である。1960年代末から新聞写真や絵葉書・私写真を収集し、小冊子《Bilder》や連続写真《Time Series》を制作した。後に《100 Years》《Die Toten》や日用品を使う展示へ活動を広げ、画像の選択と配列が人や歴史の見え方を変える過程を作品にした。 *1 *2 。",
+      "textEn": "Hans-Peter Feldmann (1941–2023) was an artist born in Düsseldorf, Germany. From the late 1960s, he collected press photographs, postcards, and personal pictures, making the Bilder booklets and sequential photographs known as Time Series. He later developed 100 Years, Die Toten, and installations using everyday objects, making the selection and arrangement of images central to the ways people and history are seen. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "MACBA — Hans-Peter Feldmann ↗",
+          "url": "https://www.macba.cat/en/actor/hans-peter-feldmann/"
+        },
+        {
+          "num": 2,
+          "name": "Serpentine Galleries — Hans-Peter Feldmann ↗",
+          "url": "https://www.serpentinegalleries.org/whats-on/hans-peter-feldmann/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "henry-wessel",
+    "name": "Henry Wessel",
+    "nameJa": "ヘンリー・ウェッセル",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1942–2018",
+    "gender": "男性",
+    "era": "1970",
+    "movements": [
+      "ニュー・トポグラフィックス"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ヘンリー・ウェッセル（1942–2018）は、米国ニュージャージー州ティーネック生まれの写真家である。1960年代末から35mmカメラで米国各地を巡り、1975年の展覧会「New Topographics」に参加した。西部の道路や郊外住宅、看板・通行人を撮った仕事を《California and the West》《Night Walk》などの連作へ結実させた。 *1 *2 。",
+      "textEn": "Henry Wessel (1942–2018) was an American photographer born in Teaneck, New Jersey. From the late 1960s, he traveled across the United States with a 35mm camera and participated in the 1975 exhibition New Topographics. His photographs of western roads, suburban houses, signs, and passersby developed into series including California and the West and Night Walk. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "SFMOMA — Henry Wessel ↗",
+          "url": "https://www.sfmoma.org/artist/Henry_Wessel/"
+        },
+        {
+          "num": 2,
+          "name": "SFMOMA — Henry Wessel: Photographs ↗",
+          "url": "https://www.sfmoma.org/exhibition/henry-wessel/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "j-d-okhai-ojeikere",
+    "name": "J. D. 'Okhai Ojeikere",
+    "nameJa": "J・D・オケイ・オジェイケレ",
+    "nationality": "NG",
+    "flag": "🇳🇬",
+    "years": "1930–2014",
+    "gender": "男性",
+    "era": "1970",
+    "movements": [
+      "タイポロジー写真",
+      "ドキュメンタリー"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "J・D・オケイ・オジェイケレ（1930–2014）は、ナイジェリア南部オヴビオム生まれの写真家である。1950年代から官公庁やテレビ・広告業界で写真技術を磨き、1968年頃に女性の編み髪を長期撮影する《Hairstyles》を開始した。背面・側面からの白黒写真と髪型名を蓄積し、独立後ナイジェリアで移り変わる都市文化と身体装飾を記録した。 *1 *2 。",
+      "textEn": "J. D. ’Okhai Ojeikere (1930–2014) was a photographer born in Ovbiomu, southern Nigeria. He developed his photographic skills in government offices, television, and advertising during the 1950s, and around 1968 began the long-running series Hairstyles, devoted to women’s braided hairstyles. Through black-and-white views and hairstyle names, he traced changing urban culture and bodily adornment in post-independence Nigeria. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "MAGNIN-A — J.D. ’Okhai Ojeikere biography ↗",
+          "url": "https://www.magnin-a.com/en/artists/20-j.d.-okhai-ojeikere/biography/"
+        },
+        {
+          "num": 2,
+          "name": "Museum of the African Diaspora — Sartorial Moments and the Nearness of Yesterday ↗",
+          "url": "https://www.moadsf.org/exhibitions/j-d-okhai-ojeikere-sartorial-moments-and-the-nearness-of-yesterday"
+        }
+      ]
+    }
   }
+
+
+
+
+
+
 
 
 

@@ -210,6 +210,16 @@
     "updated": "2026.06"
   },
   {
+    "slug": "nigeria",
+    "codes": [
+      "NG"
+    ],
+    "nameJa": "ナイジェリア",
+    "nameEn": "Nigeria",
+    "lead": "ナイジェリアに関わる写真家を、各作家がどの時代・運動と結びつくのかとともにたどるページです。",
+    "updated": "2026.10"
+  },
+  {
     "slug": "north-macedonia",
     "codes": [
       "MK"
