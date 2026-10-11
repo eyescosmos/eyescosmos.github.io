@@ -123,6 +123,7 @@
 - **precheck**：STYLE WARN はJA/EN thesis内の出典番号、ENの和文記号『』。素材原本は変更せず importer の通常整形で生成。既知の非標準hero眉・未登録運動語WARNも確認。
 - **モデル**：Codex CLI（`gpt-5.6-sol` / `model_reasoning_effort=low`）。codex MCP は今回も CONNECTION_CLOSED。1名を新規セッション1本。**停止0回・184,035 tok / 名**（6名バッチの 0929 = 38,748 / 名。docs 読み・全体チェックの固定費が1名に乗るため割高）。
 - **監督の独立再検証**：§01〜§04 プレーンテキスト 素材==生成（JA/EN）／既存4リーフはページ全体のプレーンテキスト不変（リンク化のみ）／分類面9面 roster removed=0・added=shigeo-gocho のみ／thesis の出典番号0／GA・canonical・hreflang・JSON-LD・og 実在／sitemap 削除0・追加2（他は lastmod を実コミット日へ追従させた差分のみ）／素材2本・凍結EN JSON 3本 SHA-256 不変／preflight・check_content_loss・sync_card_counts --check EXIT 0。
+- **追補（同日・Daisuke 指示）**：本文の段落間余白を素材どおり `.essay p { margin-bottom:0 }` に（テンプレは 1.6em）、ページの Movement 表記を素材どおり「コンポラ写真 / Konpora Photography」に戻した（監督が spec で私写真にしていた）。私写真運動ページのカードは維持。★今後の方針：段落余白と Movement は素材に合わせる。Movement がサイトに無い運動なら Daisuke に確認してから決める。他の差異（EN §REL の非リンク項目落ち・DB欄の補足説明落ち等）は従来どおり。
 - **対象外として残したもの**：`data/movement-page-content.js` の牛腸茂雄の言及3か所（運動ページ本文）は未リンクのまま（JA運動ページ再生成を伴うため）。
 - **commit**：監督が実施。
 - **wall-time**：（Daisuke 記入）
