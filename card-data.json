@@ -8780,6 +8780,28 @@
       "style": "pc-top--slash",
       "artText": "JD/O",
       "hintText": "J. D. 'OKHAI OJEIKERE · 1930–2014"
+    },
+    {
+      "type": "photographer",
+      "id": "shigeo-gocho",
+      "href": "photographers/shigeo-gocho.html",
+      "idx": 433,
+      "nameJa": "牛腸茂雄",
+      "nameEn": "Shigeo Gocho",
+      "metaJa": "日本 · 1946–1983 · 1970–1980s",
+      "era": "1970",
+      "nationality": "JP",
+      "ledeJa": "牛腸茂雄（1946–1983）は、新潟県加茂市生まれの写真家である。桑沢デザイン研究所で大辻清司に学び、『日々』（1971）、『SELF AND OTHERS』（1977）、『見慣れた街の中で』（1981）を刊行した。正面肖像と街頭スナップを軸に、写真集の見開きとページ順、製版指示まで設計した。",
+      "channel": "写真集という方法 · JAPAN",
+      "tags": [
+        "日本写真",
+        "コンポラ写真",
+        "私写真",
+        "日本"
+      ],
+      "style": "pc-top--kanji",
+      "artText": "牛腸",
+      "hintText": "SHIGEO GOCHO · 1946–1983"
     }
   ],
   "movements": [
@@ -9211,7 +9233,7 @@
       "idx": 21,
       "nameJa": "私写真",
       "nameEn": "I-Photography (Shi-shashin)",
-      "metaJa": "5 photographers linked",
+      "metaJa": "6 photographers linked",
       "era": "",
       "nationality": "",
       "ledeJa": "私写真は、1970年代以降の日本で強く意識された写真表現で、家族、恋人、部屋、身体、記憶、死といったきわめて近い領域を主題にしながら、単なる私記録ではなく、見ることと生きることの距離そのものを作品化した実践である。ひとりの作家の宣言で始まった統一運動ではなく、写真集、スライドショー、日記的連作を通じて広がった複数の方…",

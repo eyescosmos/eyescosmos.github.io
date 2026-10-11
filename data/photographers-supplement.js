@@ -10372,3 +10372,38 @@ PHOTOGRAPHERS.push(
   }
 }
 );
+
+PHOTOGRAPHERS.push(
+{
+  "id": "shigeo-gocho",
+  "name": "Shigeo Gocho",
+  "nameJa": "牛腸茂雄",
+  "nationality": "JP",
+  "flag": "🇯🇵",
+  "years": "1946–1983",
+  "gender": "男性",
+  "era": "1970",
+  "movements": [
+    "私写真"
+  ],
+  "thumbnail": "",
+  "links": [],
+  "amazon": "",
+  "context": {
+    "text": "牛腸茂雄（1946–1983）は、新潟県加茂市生まれの写真家である。桑沢デザイン研究所で大辻清司に学び、『日々』（1971）、『SELF AND OTHERS』（1977）、『見慣れた街の中で』（1981）を刊行した。正面肖像と街頭スナップを軸に、写真集の見開きとページ順、製版指示まで設計した。 *1 *2 。",
+    "textEn": "Shigeo Gocho (1946–1983) was a photographer born in Kamo, Niigata Prefecture. He studied with Kiyoji Otsuji at Kuwasawa Design School and published Days (1971), SELF AND OTHERS (1977), and FAMILIAR STREET SCENES (1981). Working with frontal portraiture and street snapshots, he designed his photobooks’ spreads, sequences, and printing instructions. *1 *2 .",
+    "citations": [
+      {
+        "num": 1,
+        "name": "Art Platform Japan — 牛腸茂雄 ↗",
+        "url": "https://artplatform.go.jp/ja/artists/A1377"
+      },
+      {
+        "num": 2,
+        "name": "赤々舎 — 『牛腸茂雄全集 作品編』 ↗",
+        "url": "https://akaaka.com/publishing/bk-shigeogocho/"
+      }
+    ]
+  }
+}
+);

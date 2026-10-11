@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-10-11 | shigeo-gocho（idx 433・1009素材） | new | （Daisuke 記入） | 0 | 5（新タグ英訳辞書1・本文内部リンクJA/EN各8・既存2名JA/EN逆リンク・EN年代カード・私写真JA/ENカード） | 新規リーフ2＋従属面・既存リーフ4 | 本文4節・JA/EN とも素材と完全一致 | JA 37 / EN 37 |
 | 2026-10-07 | christian-boltanski / claudia-andujar / graciela-iturbide / hans-peter-feldmann / henry-wessel / j-d-okhai-ojeikere（idx 427–432・0929素材）＋ナイジェリア国ページ新設 | new×6+other | 26分 | 0 | run-log 本節参照（本文内部リンク9件・既存2名§REL・EN年代/運動カード手挿入） | 公開HTML 14枚新規＋従属面 | 本文4節・JA/EN とも素材と完全一致 | — |
 | 2026-09-17 | (engine+content)EN写真家ページの JSON-LD を正典形へ統一（`@graph` 欠落125枚） | other+engine | （Daisuke記入） | 1（renderer が flat 3本を返していた退行。`check_new_photographer` の `en_graph_absent` として125枚に蓄積・HARD にならず素通り） | 2（backfill が旧 Person の birthDate 33件・deathDate 24件を取りこぼす＝preflight の HARD が捕捉／`@context` は `@graph` 継承なのでガード側を精密化） | EN写真家 125枚・engine 2・preflight 1・新規スクリプト1 | N/A | N/A |
 | 2026-09-19 | bernard-plossu / emmet-gowin / katharina-sieverding / mary-ellen-mark / michael-schmidt / raghu-rai（idx 421–426・0919素材）＋インド国ページ新設 | new×6+other | 34分 | 0 | 4（素材EN `mary-ellen-mark` の thesis に出典番号＝複製上で除去／`インド` が国辞書3か所に未登録／6名とも本文内部リンク0件＝監督が初出をリンク化／既存 `thomas-demand` §REL の「ミヒャエル・シュミット」裸テキスト＝JAリンク化＋EN項目追加） | 公開HTML 14枚新規（リーフ12・インドJA/EN）＋従属面97 | 本文4節・JA/EN とも素材と完全一致 | JA 34/39/32/38/34/34 |
@@ -111,6 +112,20 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-10-11 — 1009素材 新規1名（牛腸茂雄 / shigeo-gocho・idx 433・種別=new）・Opus監督 / Codex実装
+
+- **範囲**：`shigeo-gocho` (JP)、era 1970。JA/ENリーフ、card-data・supplement・星bin、archive/cards-archive/index（JA/EN）、年代1970 JA/EN、日本国ページJA/EN、私写真JA/EN、sitemap。
+- **手作業点**：spec 1本、`コンポラ写真` のEN表示語 `Konpora Photography`、本文内部リンクJA/EN各8件、既存 `takashi-yasumura` / `tokuko-ushioda` のJA/EN本文逆リンク各1件、EN年代カード1件、私写真JA/ENカード各1件と件数・sidebar chip同期。
+- **サーフェス変更数**：新規リーフ2、既存リーフ4、国ページ2、年代2、運動2、archive/cards/index、データ・生成器・sitemap・ログ。対象分類面は roster removed=0。
+- **フィデリティ**：§01〜§04本文プレーンテキストと cite 集合は素材JA/ENとも一致。JSON-LD Person 5フィールド充足。素材原本2本・凍結EN JSON 3本は不変。
+- **engine 改良**：なし。手作業ボトルネックは EN年代・JA/EN運動HTML正本へのカード挿入と3系統の件数同期。`build_archive_en.py` の表示語辞書へ `コンポラ写真` を追加。
+- **precheck**：STYLE WARN はJA/EN thesis内の出典番号、ENの和文記号『』。素材原本は変更せず importer の通常整形で生成。既知の非標準hero眉・未登録運動語WARNも確認。
+- **モデル**：Codex CLI（`gpt-5.6-sol` / `model_reasoning_effort=low`）。codex MCP は今回も CONNECTION_CLOSED。1名を新規セッション1本。**停止0回・184,035 tok / 名**（6名バッチの 0929 = 38,748 / 名。docs 読み・全体チェックの固定費が1名に乗るため割高）。
+- **監督の独立再検証**：§01〜§04 プレーンテキスト 素材==生成（JA/EN）／既存4リーフはページ全体のプレーンテキスト不変（リンク化のみ）／分類面9面 roster removed=0・added=shigeo-gocho のみ／thesis の出典番号0／GA・canonical・hreflang・JSON-LD・og 実在／sitemap 削除0・追加2（他は lastmod を実コミット日へ追従させた差分のみ）／素材2本・凍結EN JSON 3本 SHA-256 不変／preflight・check_content_loss・sync_card_counts --check EXIT 0。
+- **対象外として残したもの**：`data/movement-page-content.js` の牛腸茂雄の言及3か所（運動ページ本文）は未リンクのまま（JA運動ページ再生成を伴うため）。
+- **commit**：監督が実施。
+- **wall-time**：（Daisuke 記入）
 
 ## 2026-10-07 — 0929素材 新規6名（idx 427–432・種別=new×6）＋ナイジェリア国ページ新設（種別=other）・Opus監督 / Codex実装
 

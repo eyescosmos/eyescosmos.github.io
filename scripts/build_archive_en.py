@@ -108,6 +108,7 @@ GENRE_TAG = {
     'コンセプチュアル': 'Conceptual',
     'コンセプチュアル写真': 'Conceptual Photography',
     'コンセプチュアルアート': 'Conceptual Art',
+    'コンポラ写真': 'Konpora Photography',
     '抽象写真': 'Abstract Photography',
     'セルフポートレート': 'Self-Portrait',
     'シネマトグラフィック写真': 'Cinematographic Photography',
