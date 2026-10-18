@@ -159,6 +159,15 @@ ChatGPT で素材 → 通常の update → 落ちていたページだけ URL検
    落ちた旧ページから約4枚を選び、**本文は変えず埋め込み JSON だけ外す**（サイドバー検索は `/card-data.json` の fetch に自動で切り替わる作り＝要確認）。
    A=書き直し／B=作りだけ／C=何もしない、で比較
 
+**積みタスク追加（Daisuke 2026-10-18・未着手）** ※1・2は上の積み1・2を具体化
+4. **`cards-archive.html`：canonical と meta description が無い → 自己参照 canonical などを追加**（Daisuke 案）。
+   上の積み2（sitemap除外＋noindex）と方針が分かれるので、着手時にどちらにするか Daisuke に確認。カード系の変更禁止（CLAUDE.md 禁止8）に触れないよう `<head>` の追加のみ
+5. **運動ページ70枚の `/privacy` → JA は `/privacy-policy.html`、EN は `/en/privacy-policy.html`**（積み1の具体化。EN側の行き先を英語版にする）。
+   `scripts/` に `/privacy` を出力する箇所は無い（2026-10-18 git grep で確認）＝HTML を直せば再発しない見込み。JA運動の生成元は着手時に再確認
+6. **`en/movements/post-internet-photography.html` の JSON-LD が JSON として無効**（全サイトでこの1枚だけ・2026-10-18 実測）。
+   description 内の `"The Image Object Post-Internet"` の引用符が未エスケープ。最終変更は `8537af7fd`（総ざらいフェーズ5の再生成）。
+   ページ側を直す（EN運動は HTML 正本）＋生成元 `scripts/build_taxonomy_en.py` の JSON-LD 組み立て（797行・864行付近）を `json.dumps` 等でエスケープするよう修正
+
 ---
 
 ## 残っている仮説
