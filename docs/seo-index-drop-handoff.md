@@ -139,6 +139,26 @@ botっぽい見た目ではなく「独自の文章が少ない」と判定さ�
 ChatGPT で素材 → 通常の update → 落ちていたページだけ URL検査で**1回だけ**登録リクエスト → **3〜4週間後に判定**。
 比較対象は書き直していない残りのクロール済み-未登録（約200枚）。鳥居龍蔵だけ戻れば「有名ほど外れる」仮説を支持。
 
+## ★2026-10-18 構造監査（4項目）の結果と、積みタスク3件
+
+**監査結果**（写真家ページ、登録 vs 落ちた vs 未クロール。読むだけの調査）
+- title / description / canonical / hreflang(3本) / GA / data-nosnippet / AI開示 / main・h1 各1 / タグ不整合 / JSON-LD 形式＝**全グループで差なし**
+- 9/13→9/22 の差分（804枚）：canonical・hreflang・robots の変更 0%。共通変更は出典番号の位置のみ（登録・落ちたとも81%）＝差を説明しない
+- sitemap 1,041 URL：実在しない0・canonical不一致0・noindex混入0。canonical無しは `cards-archive.html` の1件のみ
+- 本文の近似重複ペア0・title/description重複0・写真家ページの壊れ内部リンク0・hreflang先の欠落0
+- **唯一の偏り＝旧ページ（55KB の `<script id="photographer-index" type="application/json">` 埋め込み、約120KB）**：
+  落ちた率 JA 41% vs 登録 24%、EN 49% vs 27%。被リンク（有名度）でそろえると、被リンク少では差なし（17% vs 18%）、
+  被リンク多では 28% vs **43%**。画面に出ない JSON なので本文評価への影響は不明。update すると新テンプレで組み直され消える
+
+**積みタスク（Daisuke「一旦積んどいて」2026-10-18・未着手）**
+1. **運動ページ70枚（JA35・EN35）のフッター `/privacy` → `/privacy-policy.html`**（本番404）。生成スクリプト側に同じ誤りがあれば同時に直す。
+   EN運動は HTML 正本＝直接編集、JA運動は生成元を確認してから
+2. **`cards-archive.html` を sitemap から除外＋noindex**（トップが fetch するカード部品・canonical無し・クロール済み-未登録）。
+   `generate_sitemap.py` の除外に追加。カード系の変更禁止（CLAUDE.md 禁止8）に触れないよう meta 1行のみ
+3. **書き直し試験に B グループを追加**：試験4名（strand・cameron・jp-鳥居龍蔵・beato）は全員旧ページ＝update で埋め込みも消えて原因が混ざる。
+   落ちた旧ページから約4枚を選び、**本文は変えず埋め込み JSON だけ外す**（サイドバー検索は `/card-data.json` の fetch に自動で切り替わる作り＝要確認）。
+   A=書き直し／B=作りだけ／C=何もしない、で比較
+
 ---
 
 ## 残っている仮説
