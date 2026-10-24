@@ -3,14 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://eyescosmos.com/archive.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/archive.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/archive.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/archive.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/cards-archive.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-11</lastmod>
   </url>
   <url>
     <loc>https://eyescosmos.com/colophon</loc>
@@ -140,7 +140,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/countries/japan.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/countries/japan.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/countries/japan.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/countries/japan.html"/>
@@ -273,7 +273,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/archive.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/archive.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/archive.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/archive.html"/>
@@ -406,7 +406,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/countries/japan.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/countries/japan.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/countries/japan.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/countries/japan.html"/>
@@ -581,7 +581,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/eras/1970.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/eras/1970.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/eras/1970.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/eras/1970.html"/>
@@ -616,7 +616,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/"/>
@@ -700,7 +700,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/movements/i-photography-shi-shashin.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/movements/%E7%A7%81%E5%86%99%E7%9C%9F.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/movements/i-photography-shi-shashin.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/movements/%E7%A7%81%E5%86%99%E7%9C%9F.html"/>
@@ -1719,6 +1719,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/frank-eugene.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/frank-eugene.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/frank-eugene.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/frank-gohlke.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/frank-gohlke.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/frank-gohlke.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/frank-gohlke.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/frank-sutcliffe.html</loc>
@@ -2995,6 +3002,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/pertti-kekarainen.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.com/en/photographers/peter-hujar.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/peter-hujar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/peter-hujar.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/peter-hujar.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.com/en/photographers/peter-piller.html</loc>
     <lastmod>2026-10-07</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/peter-piller.html"/>
@@ -3042,6 +3056,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/raghu-rai.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/raghu-rai.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/raghu-rai.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/en/photographers/raghubir-singh.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/raghubir-singh.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/raghubir-singh.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/raghubir-singh.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/rashid-johnson.html</loc>
@@ -3507,7 +3528,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/takashi-yasumura.html</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/takashi-yasumura.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/takashi-yasumura.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/takashi-yasumura.html"/>
@@ -3598,7 +3619,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/en/photographers/tokuko-ushioda.html</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/tokuko-ushioda.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/tokuko-ushioda.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/tokuko-ushioda.html"/>
@@ -3955,7 +3976,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/eras/1970.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/eras/1970.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/eras/1970.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/eras/1970.html"/>
@@ -3990,7 +4011,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/"/>
@@ -4228,7 +4249,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/movements/%E7%A7%81%E5%86%99%E7%9C%9F.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/movements/%E7%A7%81%E5%86%99%E7%9C%9F.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/movements/i-photography-shi-shashin.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/movements/%E7%A7%81%E5%86%99%E7%9C%9F.html"/>
@@ -5086,6 +5107,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/frank-eugene.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/frank-eugene.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/frank-eugene.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/frank-gohlke.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/frank-gohlke.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/frank-gohlke.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/frank-gohlke.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/frank-sutcliffe.html</loc>
@@ -6425,6 +6453,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/pertti-kekarainen.html"/>
   </url>
   <url>
+    <loc>https://eyescosmos.com/photographers/peter-hujar.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/peter-hujar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/peter-hujar.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/peter-hujar.html"/>
+  </url>
+  <url>
     <loc>https://eyescosmos.com/photographers/peter-piller.html</loc>
     <lastmod>2026-10-07</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/peter-piller.html"/>
@@ -6472,6 +6507,13 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/raghu-rai.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/raghu-rai.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/raghu-rai.html"/>
+  </url>
+  <url>
+    <loc>https://eyescosmos.com/photographers/raghubir-singh.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/raghubir-singh.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/raghubir-singh.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/raghubir-singh.html"/>
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/rashid-johnson.html</loc>
@@ -6909,7 +6951,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/takashi-yasumura.html</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/takashi-yasumura.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/takashi-yasumura.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/takashi-yasumura.html"/>
@@ -7000,7 +7042,7 @@
   </url>
   <url>
     <loc>https://eyescosmos.com/photographers/tokuko-ushioda.html</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://eyescosmos.com/photographers/tokuko-ushioda.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://eyescosmos.com/en/photographers/tokuko-ushioda.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyescosmos.com/photographers/tokuko-ushioda.html"/>

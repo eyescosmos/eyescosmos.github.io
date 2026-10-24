@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-10-24 | frank-gohlke / peter-hujar / raghubir-singh（idx 434–436・1022素材） | new×3 | （Daisuke 記入） | 0 | 6（spec 3・一時素材thesis整形・本文内部リンクJA/EN各11・既存2名JA/EN逆リンク・EN年代カード3・運動JA/EN各4面） | 新規リーフ6＋従属面・既存リーフ4 | 本文4節・JA/EN とも素材と完全一致 | JA/EN 25 / 24 / 20 |
 | 2026-10-11 | shigeo-gocho（idx 433・1009素材） | new | （Daisuke 記入） | 0 | 5（新タグ英訳辞書1・本文内部リンクJA/EN各8・既存2名JA/EN逆リンク・EN年代カード・私写真JA/ENカード） | 新規リーフ2＋従属面・既存リーフ4 | 本文4節・JA/EN とも素材と完全一致 | JA 37 / EN 37 |
 | 2026-10-07 | christian-boltanski / claudia-andujar / graciela-iturbide / hans-peter-feldmann / henry-wessel / j-d-okhai-ojeikere（idx 427–432・0929素材）＋ナイジェリア国ページ新設 | new×6+other | 26分 | 0 | run-log 本節参照（本文内部リンク9件・既存2名§REL・EN年代/運動カード手挿入） | 公開HTML 14枚新規＋従属面 | 本文4節・JA/EN とも素材と完全一致 | — |
 | 2026-09-17 | (engine+content)EN写真家ページの JSON-LD を正典形へ統一（`@graph` 欠落125枚） | other+engine | （Daisuke記入） | 1（renderer が flat 3本を返していた退行。`check_new_photographer` の `en_graph_absent` として125枚に蓄積・HARD にならず素通り） | 2（backfill が旧 Person の birthDate 33件・deathDate 24件を取りこぼす＝preflight の HARD が捕捉／`@context` は `@graph` 継承なのでガード側を精密化） | EN写真家 125枚・engine 2・preflight 1・新規スクリプト1 | N/A | N/A |
@@ -112,6 +113,21 @@
 ※初回値。一度きりのバグ修正＋厚めの検証込みで、定常値ではない。
 
 ## 詳細
+
+## 2026-10-24 — 1022素材 新規3名（Frank Gohlke / Peter Hujar / Raghubir Singh・idx 434–436・種別=new×3）・Opus監督 / Codex実装
+
+- **範囲**：`frank-gohlke` (US) / `peter-hujar` (US) / `raghubir-singh` (IN)、3名とも era 1970。JA/ENリーフ、card-data・supplement・星bin、archive/cards-archive/index（JA/EN）、年代1970 JA/EN、アメリカ・インド国ページJA/EN、ニュー・トポグラフィックス／インティメイト・ライフ／カラー写真／ストリート写真JA/EN、sitemap。
+- **手作業点**：spec 3本、一時コピー上でJA/EN thesisの出典番号を除去し Frank EN の全角括弧を半角化、本文内部リンク Gohlke JA/EN各5・Hujar各1・Singh各5、既存 `alec-soth` / `raghu-rai` のJA/EN本文逆リンク各1、EN年代カード3件、運動カードJA/EN各4件とhero・meta・sidebar件数／sidebar chip同期、6リーフの `.essay p { margin-bottom:0 }`。
+- **サーフェス変更数**：新規リーフ6、既存リーフ4、国ページ4、年代2、運動8、archive/cards/index、データ・星bin・sitemap・ログ。対象分類面は roster removed=0。
+- **フィデリティ**：§01〜§04本文プレーンテキストと cite 集合は素材JA/EN 6本すべて一致。JSON-LD Person 5フィールドも6本すべて充足。素材原本6本・凍結EN JSON 3本は不変。
+- **engine 改良**：なし。手作業ボトルネックは EN年代・JA/EN運動HTML正本へのカード挿入、運動ページの件数3系統同期、本文と既存ページの初出リンク化。
+- **precheck**：Frank は EXIT 0。Hujar / Singh はCJK比率の言語取り違え疑いで EXIT 1。共通の非標準hero眉・未登録ジャンル語WARNはいずれも既知で、既存標準眉を維持した。
+- **モデル**：Codex CLI（`gpt-5.6-sol` / `model_reasoning_effort=low`）。codex MCP は今回も CONNECTION_CLOSED。3名を新規セッション1本。**停止0回・179,911 tok ＝ 59,970 / 名**（1009 = 184,035 / 名・0929 = 38,748 / 名）。
+- **監督監査で直したもの**：Movement 表記（hero dl とサイドバー Entry）がブリーフの「素材どおり」に反してサイト運動名（ニュー・トポグラフィックス／インティメイト・ライフ／カラー写真）に置き換わっていた → 6枚12か所を素材表記（「ニュー・トポグラフィックス・風景写真」「肖像写真・クィア文化」「カラー写真・ストリート写真」と EN 素材の対応表記）へ戻した。運動ページのカード掲載先は変更なし（Hujar のインティメイト・ライフは Daisuke 判断）。
+- **監督の独立再検証**：全変更面の roster removed=0・added は3名のみ／§01〜§04 プレーンテキストは空白差のみで素材と一致／外部URL集合 素材==生成（6枚）／既存 `alec-soth`・`raghu-rai`（JA/EN）と `index` はページ全体のプレーンテキスト不変（リンク化と人数表記のみ）／sitemap 削除0／素材6本・凍結EN JSON 3本 SHA-256 不変／preflight・check_content_loss・sync_card_counts --check・3名の check_new_photographer・check_en_entry すべて EXIT 0、残WARNは既知のみ。
+- **★push 時に pre-push の preflight が HARD で止めたもの**：EN §REL の対称性。JA §REL は Codex がリンク化したが、EN §REL は素材で未リンクだった項目が落ちたまま（Gohlke 3・Hujar 2・Singh 4＝Singh は §REL 全体が In preparation）。素材EN の一言解説・順序のまま `/en/photographers/<slug>.html` へのリンク付きで復元（Wojnarowicz はページ非実在で裸のまま落ちる＝標準）。**新規ページが未追跡のあいだは preflight の §REL 対称チェックに掛からず、Codex の検査も監督の commit 前検査も EXIT 0 だった**＝新規ページの検査は `git add -N` するか commit 後に preflight を回す。
+- **commit**：監督が実施。
+- **wall-time**：（Daisuke 記入）
 
 ## 2026-10-11 — 1009素材 新規1名（牛腸茂雄 / shigeo-gocho・idx 433・種別=new）・Opus監督 / Codex実装
 

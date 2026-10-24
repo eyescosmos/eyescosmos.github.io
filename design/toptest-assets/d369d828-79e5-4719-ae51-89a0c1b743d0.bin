@@ -6964,7 +6964,107 @@ const PHOTOGRAPHERS = [
         }
       ]
     }
+  },
+  {
+    "id": "frank-gohlke",
+    "name": "Frank Gohlke",
+    "nameJa": "フランク・ゴールケ",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1942–",
+    "gender": "男性",
+    "era": "1970",
+    "movements": [
+      "ニュー・トポグラフィックス"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "フランク・ゴールケ（Frank Gohlke、1942–）は、米国テキサス州ウィチタフォールズ生まれの写真家である。大学で英文学を学び、ウォーカー・エヴァンスやポール・カポニグロから写真の指導を受けた。1975年の『ニュー・トポグラフィックス』展に参加。穀物エレベーターや1979年の竜巻被災地を撮影し、1980年に噴火したセント・ヘレンズ山にもカメラを向けた。『Measure of Emptiness』や『Mount St. Helens: 1981–1990』では、地上と上空からの視点を組み合わせて土地の変化を追っている。 *1 *2 。",
+      "textEn": "Frank Gohlke (born 1942) is an American photographer from Wichita Falls, Texas. After studying English literature, he learned photography from Walker Evans and Paul Caponigro and participated in the 1975 New Topographics exhibition. He photographed grain elevators, his hometown after a 1979 tornado, and Mount St. Helens following its 1980 eruption. Books including Measure of Emptiness and Mount St. Helens: 1981–1990 combine ground-level and aerial viewpoints to study changes in the land. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "University of Nebraska — Encyclopedia of the Great Plains: Frank Gohlke ↗",
+          "url": "https://plainshumanities.unl.edu/encyclopedia/doc/egp.art.028.html"
+        },
+        {
+          "num": 2,
+          "name": "Smithsonian Institution — Accommodating Nature press release ↗",
+          "url": "https://www.si.edu/newsdesk/releases/smithsonian-american-art-museum-presents-nationally-touring-retrospective-acclaimed-photogr"
+        }
+      ]
+    }
+  },
+  {
+    "id": "peter-hujar",
+    "name": "Peter Hujar",
+    "nameJa": "ピーター・ヒュージャー",
+    "nationality": "US",
+    "flag": "🇺🇸",
+    "years": "1934–1987",
+    "gender": "男性",
+    "era": "1970",
+    "movements": [
+      "インティメイト・ライフ"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ピーター・ヒュージャー（Peter Hujar、1934–1987）は、米国ニュージャージー州トレントン生まれの写真家である。商業写真の現場で技術を学んだ後、ニューヨークのイースト・ヴィレッジで芸術家やダンサー、ドラァグ・パフォーマーらを白黒で撮影した。動物や無人の街路にもレンズを向けた。1976年の写真集『Portraits in Life and Death』では、生者の肖像とパレルモの地下墓所で撮影した遺骸を二部構成で対置した。序文はスーザン・ソンタグが寄せている。 *1 *2 。",
+      "textEn": "Peter Hujar (1934–1987) was an American photographer born in Trenton, New Jersey. After working in commercial photography, he made black-and-white portraits of artists, dancers, and drag performers in New York’s East Village, as well as photographs of animals and deserted streets. His 1976 book Portraits in Life and Death juxtaposed portraits of the living with bodies photographed in Palermo’s catacombs. Susan Sontag wrote its introduction. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "Peter Hujar Archive — About / bibliography ↗",
+          "url": "https://peterhujararchive.com/about/"
+        },
+        {
+          "num": 2,
+          "name": "The Ukrainian Museum — Peter Hujar: Rialto (2024) ↗",
+          "url": "https://www.theukrainianmuseum.org/peter-hujar-rialto/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "raghubir-singh",
+    "name": "Raghubir Singh",
+    "nameJa": "ラグビール・シン",
+    "nationality": "IN",
+    "flag": "🇮🇳",
+    "years": "1942–1999",
+    "gender": "男性",
+    "era": "1970",
+    "movements": [
+      "カラー写真",
+      "ストリート写真"
+    ],
+    "thumbnail": "",
+    "links": [],
+    "amazon": "",
+    "context": {
+      "text": "ラグビール・シン（Raghubir Singh、1942–1999）は、インドのジャイプル生まれの写真家である。1960年代後半から小型カメラとカラー・スライドを使い、インド各地の市場や街路を撮影した。河川や宗教儀礼、雨季の風景にも取り組んだ。1974年の『Ganga』や1998年の『River of Colour』を刊行。没後の2002年には『A Way Into India』も出版された。インドの宮廷細密画と西洋の街頭写真を参照し、色彩の重なりと複数の出来事を一画面に収める構図を追求した。 *1 *2 。",
+      "textEn": "Raghubir Singh (1942–1999) was an Indian photographer born in Jaipur. From the late 1960s, he photographed markets, streets, rivers, religious ceremonies, and monsoon scenes with a small camera and color slide film. His books include Ganga (1974) and River of Colour (1998); A Way Into India appeared posthumously in 2002. Drawing on Indian court painting and Western street photography, he developed compositions that combine layered color with simultaneous events. *1 *2 .",
+      "citations": [
+        {
+          "num": 1,
+          "name": "The Met — Modernism on the Ganges: Raghubir Singh Photographs ↗",
+          "url": "https://www.metmuseum.org/exhibitions/listings/2017/raghubir-singh-photographs"
+        },
+        {
+          "num": 2,
+          "name": "The Met — Modernism on the Ganges, press release ↗",
+          "url": "https://www.metmuseum.org/fr/press/exhibitions/2017/modernism-on-the-ganges"
+        }
+      ]
+    }
   }
+
+
+
 
 
 
