@@ -236,7 +236,7 @@ Daisuke の指摘（ansel-adams は残り kenta-cobayashi EN は落ちた＝競�
 - コロフォン（`/colophon` · `/en/colophon`）とフッターのコロフォンリンクは維持。preflight は逆検査（ブロックが残るページ＝HARD）
 - 付随：`en/photographers/toyoko-tokiwa.html` と `index-v51.html` だけフッターに `data-nosnippet` が無く、ブロックがページ唯一の nosnippet だった → 他1,043枚と同じ `<footer class="foot" data-nosnippet>` にそろえた
 - IndexNow・GSC の登録リクエストは送っていない。sitemap はコミット後に再生成して lastmod を更新
-- コミット：（push 後に記入）
+- コミット：`cabccee03`（本体）／`c08e87ad3`（sitemap lastmod）・2026-10-29 push 済
 - 基準（開始前）：10/19週 表示 54/日・クリック 1.0/日・新ドメイン割合 7%。Bing 10/19週 49クリック・1,945表示。判定は2月ごろ
 
 ---
