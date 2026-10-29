@@ -14,7 +14,7 @@
 4. **生成物が正本でないサーフェス（国別 / ENアーカイブ / コロフォン / AI開示）で、事実修正を出力HTMLだけに入れない**。必ず正本へ入れる（再生成で誤情報が復活するため）。JA写真家ページ・EN写真家ページ・**EN年代/運動ページ**は HTML 自身が正本なので、この項の対象外。
 5. **捏造しない**。出典にない評価・書誌・年・URL・Amazonリンクを推測で作らない。出典準拠。
 6. **国別・年代・運動の生成スクリプトをスコープフラグ無指定で実行しない**（無指定はガードが拒否）。写真家1人追加で `--all` は不要（`docs/generators-and-guards.md`「フルリビルド・ガード」）。
-7. **AI開示ブロック（`<!-- AI-DISCLOSURE -->` で括られた3行＋短縮版）を個別HTMLで直さない**。正本は `scripts/ai_disclosure.py`。直しても preflight の `check_ai_disclosure()` が HARD FAIL で止める。文面変更は正本を直して `python3 scripts/inject_ai_disclosure.py --all`。
+7. **AI開示ブロック（`<!-- AI-DISCLOSURE -->` で括られた3行＋短縮版）を個別HTMLで直さない**。正本は `scripts/ai_disclosure.py`。直しても preflight の `check_ai_disclosure()` が HARD FAIL で止める。文面変更は正本を直して `python3 scripts/inject_ai_disclosure.py --all`。**2026-10-29〜 試験Aで各ページから外している（`ENABLED = False`・コロフォンは維持）**。この間 preflight は逆向きに、ブロックが残っているページを HARD で止める。戻すときは `ENABLED = True`＋`inject --all`（`docs/ai-disclosure-removal-test-handoff.md`）。
 8. **TOP12 ハードコードカード（`pc-top` / `idx` / `pc-top--XXX`）、フィルター/ソートUI、カードJSは依頼がない限り触らない**。カードの正は `cards-archive.html` / `card-data.json`。
 9. **凍結EN JSON 3本（`data/archive/photographers-en-content.json` / `data/archive/photographers-en-stage4.json` / `data/archive/taxonomy-en-content.json`）を編集しない**。読み取り専用アーカイブで、preflight が変更を HARD で止める（解除は `ALLOW_EN_JSON_ARCHIVE_WRITE=1`・移行監査と緊急rollbackのみ）。EN ページの正本は `en/photographers/*.html` と `en/movements/*.html` / `en/eras/*.html`。
 10. **既存の `en/movements/*.html` / `en/eras/*.html` を再生成しない**（2026-09-15〜）。`build_taxonomy_en.py` は**新規ページ専用**で、出力先が実在すれば `🛑 REFUSED` で拒否する（解除は `ALLOW_TAXONOMY_REBUILD=1` のみ・`--dry-run` でも解除されない）。修正は EN HTML を直接編集する。詳細 `docs/post-migration-cleanup-plan.md` §10。
@@ -30,7 +30,7 @@ JA と EN で正本が違う。古い overrides 前提の指示と衝突する�
 | ENアーカイブ `en/archive.html` | `archive.html`（JA正本） | `python3 scripts/build_archive_en.py` | |
 | 国別 JA/EN | `data/country-pages.json` | `generate_country_pages.py` / `generate_country_pages_en.py`。`--country <slug>`（通常）/ `--all`（全生成） | スコープフラグ必須 |
 | EN年代・運動 `en/eras/*.html` `en/movements/*.html` | **HTML自身** | 新規のみ `python3 scripts/build_taxonomy_en.py --slug <movement>` / `--era <YYYY>` | JA・EN写真家と同じく直接編集してよい。既存ページへの上書きは常に拒否される（`ALLOW_TAXONOMY_REBUILD=1` の緊急rollback を除く） |
-| AI開示ブロック（全ページ末尾） | `scripts/ai_disclosure.py` | `python3 scripts/inject_ai_disclosure.py --all`（`--only <path>` で1枚） | 個別HTMLを直接編集しない。文面はこのモジュールが正本 |
+| AI開示ブロック（全ページ末尾） | `scripts/ai_disclosure.py` | `python3 scripts/inject_ai_disclosure.py --all`（`--only <path>` で1枚） | 個別HTMLを直接編集しない。文面はこのモジュールが正本。**2026-10-29〜 試験Aで各ページ非表示（`ENABLED=False`）。戻すときは True＋inject --all** |
 | コロフォン `/colophon` · `/en/colophon` | `scripts/build_colophon.py` | `python3 scripts/build_colophon.py` | 実体は `colophon/index.html` / `en/colophon/index.html` |
 | カード枚数表示（archive hero・「表示中 N / M」・トップ/archive の meta 枚数） | `card-data.json` | `python3 scripts/sync_card_counts.py`（`--check` で検査のみ） | 手で数字を打ち直さない。`add_photographer.py --apply-surfaces` 後に自動実行。preflight `check_card_counts()` が HARD FAIL |
 

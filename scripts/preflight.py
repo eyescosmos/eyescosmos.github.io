@@ -2246,6 +2246,10 @@ def check_ai_disclosure() -> None:
 
     コロフォン（/colophon · /en/colophon）の実在もここで見る。ブロックからは
     コロフォンへリンクしない方針なので、各ページのフッターにリンクがあることも確認する。
+
+    2026-10-29〜 試験A: ai_disclosure.ENABLED が False のあいだは逆向きに検査し、
+    ブロックが残っているページを HARD にする（消し忘れ・再生成での復活を止める）。
+    コロフォンの実在とフッターリンクの検査は ENABLED に関係なく続ける（読者向けの導線）。
     """
     sys.path.insert(0, str(REPO / "scripts"))
     try:
@@ -2263,6 +2267,7 @@ def check_ai_disclosure() -> None:
                 "`python3 scripts/build_colophon.py` で生成する")
 
     missing: list[str] = []
+    leftover: list[str] = []
     stale: list[str] = []
     no_link: list[str] = []
     wrong_colophon: list[str] = []
@@ -2278,14 +2283,18 @@ def check_ai_disclosure() -> None:
         if not ok:
             continue
         lang = inj.lang_of(rel)
-        if not ai.has_block(html):
+        if not ai.ENABLED:
+            if ai.has_block(html):
+                leftover.append(rel)
+        elif not ai.has_block(html):
             missing.append(rel)
             continue
-        want = ai.block(lang).strip()
-        got = html[html.index(ai.MARKER_OPEN):
-                   html.index(ai.MARKER_CLOSE) + len(ai.MARKER_CLOSE)].strip()
-        if got != want or html.count(ai.MARKER_OPEN) != 1:
-            stale.append(rel)
+        else:
+            want = ai.block(lang).strip()
+            got = html[html.index(ai.MARKER_OPEN):
+                       html.index(ai.MARKER_CLOSE) + len(ai.MARKER_CLOSE)].strip()
+            if got != want or html.count(ai.MARKER_OPEN) != 1:
+                stale.append(rel)
         if not re.search(r'href="[^"]*colophon"', html):
             no_link.append(rel)
         else:
@@ -2301,6 +2310,11 @@ def check_ai_disclosure() -> None:
         hard_failures.append(
             f"AI開示ブロックが無いページ {len(missing)}件: {_fmt(missing)}。"
             "`python3 scripts/inject_ai_disclosure.py --all` で入れる")
+    if leftover:
+        hard_failures.append(
+            f"AI開示ブロックが残っているページ {len(leftover)}件: {_fmt(leftover)}。"
+            "試験A中（scripts/ai_disclosure.py の ENABLED=False）は各ページに載せない。"
+            "`python3 scripts/inject_ai_disclosure.py --all` で外す")
     if stale:
         hard_failures.append(
             f"AI開示ブロックが正本とズレているページ {len(stale)}件: {_fmt(stale)}。"

@@ -22,6 +22,7 @@
 
 | 日付 | slug | 種別 | wall-time | bug | 手作業点 | サーフェス | 本文字数 | unique出典 |
 |---|---|---|---|---|---|---|---|---|
+| 2026-10-29 | (experiment)AI開示ブロックを全ページから外す（試験A・コロフォンは維持） | other+guard | （Daisuke 記入） | 0 | 2（`_validate_en_render` がブロック必須だったので ENABLED 連動に／toyoko-tokiwa EN・index-v51 はフッターに nosnippet が無くブロックが唯一だった＝preflight HARD → フッターを標準形へ） | 公開HTML 1,045面（ブロック削除のみ・バイト照合済）＋スクリプト4 | N/A | N/A |
 | 2026-10-24 | frank-gohlke / peter-hujar / raghubir-singh（idx 434–436・1022素材） | new×3 | （Daisuke 記入） | 0 | 6（spec 3・一時素材thesis整形・本文内部リンクJA/EN各11・既存2名JA/EN逆リンク・EN年代カード3・運動JA/EN各4面） | 新規リーフ6＋従属面・既存リーフ4 | 本文4節・JA/EN とも素材と完全一致 | JA/EN 25 / 24 / 20 |
 | 2026-10-11 | shigeo-gocho（idx 433・1009素材） | new | （Daisuke 記入） | 0 | 5（新タグ英訳辞書1・本文内部リンクJA/EN各8・既存2名JA/EN逆リンク・EN年代カード・私写真JA/ENカード） | 新規リーフ2＋従属面・既存リーフ4 | 本文4節・JA/EN とも素材と完全一致 | JA 37 / EN 37 |
 | 2026-10-07 | christian-boltanski / claudia-andujar / graciela-iturbide / hans-peter-feldmann / henry-wessel / j-d-okhai-ojeikere（idx 427–432・0929素材）＋ナイジェリア国ページ新設 | new×6+other | 26分 | 0 | run-log 本節参照（本文内部リンク9件・既存2名§REL・EN年代/運動カード手挿入） | 公開HTML 14枚新規＋従属面 | 本文4節・JA/EN とも素材と完全一致 | — |

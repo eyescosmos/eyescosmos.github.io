@@ -6,7 +6,8 @@
   python3 scripts/inject_ai_disclosure.py --all              # 全対象ページへ適用
 
 ブロックの文面・見た目は scripts/ai_disclosure.py が正本。文面を直したらこのスクリプトを
-`--all` で回し直せば全ページが揃う。
+`--all` で回し直せば全ページが揃う。ai_disclosure.ENABLED が False のときは、同じ操作で
+全ページからブロックを外す（2026-10-29〜 試験A）。
 
 対象外（意図的）:
   - リダイレクトシム（meta http-equiv=refresh のみのページ）
@@ -71,7 +72,7 @@ def main():
         ap.error('--all か --only を指定してください（無指定での全書き換えは禁止）')
 
     files = args.only if args.only else tracked_html()
-    stats = {'inserted': 0, 'updated': 0, 'unchanged': 0}
+    stats = {'inserted': 0, 'updated': 0, 'removed': 0, 'unchanged': 0}
     skipped = {}
     changed = []
 
@@ -107,7 +108,7 @@ def main():
 
     tag = '[dry-run] ' if args.dry_run else ''
     print(f'{tag}inserted={stats["inserted"]} updated={stats["updated"]} '
-          f'unchanged={stats["unchanged"]}')
+          f'removed={stats["removed"]} unchanged={stats["unchanged"]}')
     if skipped:
         print('skipped: ' + ', '.join(f'{k}={v}' for k, v in sorted(skipped.items())))
     if args.dry_run and changed:

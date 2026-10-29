@@ -1873,7 +1873,7 @@ def _validate_en_render(html: str, bundle: dict, slug: str) -> dict:
     section_close = len(re.findall(r'</section\s*>', html, re.I))
     if section_open != section_close:
         problems.append(f"section開閉={section_open}/{section_close}")
-    if _ai_disclosure.MARKER_OPEN not in html:
+    if _ai_disclosure.ENABLED and _ai_disclosure.MARKER_OPEN not in html:
         problems.append("AI開示ブロックが無い")
 
     works_cjk = sum(

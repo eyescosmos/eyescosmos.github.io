@@ -12,6 +12,12 @@
   （写真家ページはCSSがHTML内に埋め込まれており、共通stylesheetが無いページもあるため）
 """
 
+# 各ページへブロックを載せるかのスイッチ。
+# 2026-10-29〜 試験A（docs/ai-disclosure-removal-test-handoff.md）で False＝全ページから外す。
+# コロフォン（build_colophon.py）は _ROLES / _NOTE_TEXT をそのまま使うので影響しない。
+# 戻すときは True にして `python3 scripts/inject_ai_disclosure.py --all`。
+ENABLED = False
+
 MARKER_OPEN = '<!-- AI-DISCLOSURE -->'
 MARKER_CLOSE = '<!-- /AI-DISCLOSURE -->'
 
@@ -91,7 +97,12 @@ def ensure(html, lang='ja', indent='      '):
     """ブロックを1つだけ持つHTMLを返す。(html, action) を返す。
 
     action は 'inserted' / 'updated' / 'unchanged' / 'no-anchor'。
+    ENABLED が False のときはブロックを取り除いたHTMLを返す（'removed' / 'unchanged'）。
     """
+    if not ENABLED:
+        if MARKER_OPEN in html:
+            return strip_block(html), 'removed'
+        return html, 'unchanged'
     blk = block(lang, indent)
     if MARKER_OPEN in html:
         current = html[html.index(MARKER_OPEN):html.index(MARKER_CLOSE) + len(MARKER_CLOSE)]
