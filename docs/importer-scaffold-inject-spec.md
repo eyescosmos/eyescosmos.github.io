@@ -389,6 +389,20 @@ python3 scripts/import_chatgpt_photographer.py --precheck --slug <slug> --ja JA.
 | EN で `</a>` の直後・文末ピリオドの後の空白抜け | 同上 |
 
 急ぐときは**素材を書き換えず**一時コピー上で直してから流す（マーカー表記のときと同じ）。
+
+#### ★AI開示は素材にあっても公開ページへ入れない（2026-10-29〜 試験A）
+
+試験A中（`scripts/ai_disclosure.py` の `ENABLED = False`）は各ページに開示を載せない。素材には
+マーカー付き（0919・1009）とマーカー無しの `<div class="ai-disclosure">…本文執筆 — AI…</div>`（1022）の
+両方が入ってくる。`</main>` 直前にある分は importer が節の外として落とし、マーカー付きは `ensure()` が外す。
+**節の中に紛れていると素通りする**ので、受け取り時に有無を見ておく:
+
+```bash
+grep -lE 'AI-DISCLOSURE|ai-disclosure|本文執筆|Text written by' <素材ディレクトリ>/*.html
+```
+
+ヒットしても差し戻しは不要。生成後に公開ページへ残っていたら `preflight.check_ai_disclosure()` が
+HARD で止める（マーカー無しも文言・class で検知）ので、その行を手で消す。
   素材生成は §13-0 のプロンプトで担保する運用に決まっている（2026-09-11）。
 - 急ぎでその場を通すときは、**素材は書き換えず**一時コピー上で
   `§ NN` → `§ NN / <総数>` へ正規化してから `--render-ja` する。

@@ -2235,6 +2235,11 @@ def _internal_dead_links(html: str) -> list[str]:
     return dead
 
 
+# 試験A中に各ページへ紛れ込んだ開示を見つける（マーカー無しの素材由来も含む）。
+_AI_DISCLOSURE_TEXT_RE = re.compile(
+    r'class="ai-disclosure"|本文執筆\s*[—–-]\s*AI|Text written by\s*[—–-]\s*AI')
+
+
 def check_ai_disclosure() -> None:
     """AI開示ブロックの全ページ網羅を検査（HARD）。
 
@@ -2250,6 +2255,8 @@ def check_ai_disclosure() -> None:
     2026-10-29〜 試験A: ai_disclosure.ENABLED が False のあいだは逆向きに検査し、
     ブロックが残っているページを HARD にする（消し忘れ・再生成での復活を止める）。
     コロフォンの実在とフッターリンクの検査は ENABLED に関係なく続ける（読者向けの導線）。
+    ChatGPT 素材にはマーカー無しの開示（`<div class="ai-disclosure">…本文執筆 — AI…`）が
+    入っていることがある（1022素材で実測）ので、マーカーが無くても文言・class で検知する。
     """
     sys.path.insert(0, str(REPO / "scripts"))
     try:
@@ -2284,7 +2291,7 @@ def check_ai_disclosure() -> None:
             continue
         lang = inj.lang_of(rel)
         if not ai.ENABLED:
-            if ai.has_block(html):
+            if ai.has_block(html) or _AI_DISCLOSURE_TEXT_RE.search(html):
                 leftover.append(rel)
         elif not ai.has_block(html):
             missing.append(rel)
@@ -2314,7 +2321,8 @@ def check_ai_disclosure() -> None:
         hard_failures.append(
             f"AI開示ブロックが残っているページ {len(leftover)}件: {_fmt(leftover)}。"
             "試験A中（scripts/ai_disclosure.py の ENABLED=False）は各ページに載せない。"
-            "`python3 scripts/inject_ai_disclosure.py --all` で外す")
+            "マーカー付きは `python3 scripts/inject_ai_disclosure.py --all` で外す。"
+            "マーカー無し（素材由来の `<div class=\"ai-disclosure\">` 等）は手で削除する")
     if stale:
         hard_failures.append(
             f"AI開示ブロックが正本とズレているページ {len(stale)}件: {_fmt(stale)}。"
