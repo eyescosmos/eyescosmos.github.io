@@ -1,6 +1,6 @@
 # 引き継ぎ — Googleのインデックス急落（2026-09-15〜）
 
-最終更新 2026-10-03。**新規セッションはこれを最初に読む。**
+最終更新 2026-10-29。**新規セッションはこれを最初に読む。** AI開示の試験Aを実施する場合は `docs/ai-disclosure-removal-test-handoff.md` を先に。
 背景と調査過程はメモリ `project_gsc_index_drop_2026_09.md` にもある（相互に同じ内容）。
 
 ---
@@ -201,6 +201,7 @@ Daisuke の指摘（ansel-adams は残り kenta-cobayashi EN は落ちた＝競�
   クロールが少ないため結果まで 2〜3か月以上。ページ上の開示は60枚について否定（開示前の版で外れた）、**サイト単位で開示が効いている可能性は残る**
 - **基準データ**：`photography history/GSC/1029/…Coverage-Drilldown-2026-10-29/表.csv`（クロール済み-未登録）・`…-2026-10-29A/表.csv`（検出-未登録）
 - **Daisuke の判断待ち**：AI開示試験を A 全ページ（コロフォン残す）／B 全ページ（コロフォンも変える）／C やらない
+- **→ 2026-10-29 Daisuke が A を選択。新規セッションで実施。手順は `docs/ai-disclosure-removal-test-handoff.md`**
 - **Claude 推奨＝A**（JA コロフォンは検出-未登録で一度もクロールされず、EN コロフォンもクロール済み-未登録＝Google はほぼ見ていない→A でも B とほぼ同じことを確かめられ、姿勢は保てる。外すのも戻すのも `inject_ai_disclosure.py` で一括）
 
 **クロールの統計情報（新プロパティ・2026-10-29 エクスポート `photography history/GSC/1029/…Crawl-stats-2026-10-29/`）**
